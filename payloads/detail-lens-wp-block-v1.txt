@@ -1,0 +1,179 @@
+<!-- wp:html -->
+<style id="fv-detail-lens-style">
+figure.wp-block-image.fv-detail-ready{position:relative}
+.fv-detail-trigger{position:absolute;top:12px;right:12px;z-index:4;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;border:1px solid #514B42;border-radius:2px;background:#0A0B0B;color:#F4EFE6;font:700 11px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 6px 18px rgba(0,0,0,.24)}
+.fv-detail-trigger:hover,.fv-detail-trigger:focus-visible{border-color:#B8955E;color:#B8955E;outline:none}.fv-detail-trigger:focus-visible{box-shadow:0 0 0 3px rgba(184,149,94,.28)}
+#fv-detail-lens{width:min(1180px,calc(100vw - 32px));height:min(820px,calc(100dvh - 32px));max-width:none;max-height:none;margin:auto;padding:0;border:1px solid #34322E;border-radius:2px;background:#0A0B0B;color:#F4EFE6;box-shadow:0 28px 80px rgba(0,0,0,.55)}
+#fv-detail-lens::backdrop{background:rgba(0,0,0,.84)}
+.fv-detail-shell{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;background:#0A0B0B}
+.fv-detail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:18px 20px 16px;border-bottom:1px solid #34322E}.fv-detail-kicker{margin:0 0 4px;color:#B8955E;font:800 10px/1.2 system-ui,sans-serif;letter-spacing:.18em}.fv-detail-title{margin:0;color:#F4EFE6;font:600 clamp(20px,2.3vw,28px)/1.1 Georgia,"Times New Roman",serif}.fv-detail-count{margin:6px 0 0;color:#908A80;font:500 12px/1.4 system-ui,sans-serif}.fv-detail-close{flex:0 0 auto;min-width:44px;min-height:44px;border:1px solid #514B42;border-radius:2px;background:transparent;color:#F4EFE6;font:700 12px/1 system-ui,sans-serif}.fv-detail-close:hover,.fv-detail-close:focus-visible{border-color:#B8955E;color:#B8955E;outline:none}.fv-detail-close:focus-visible{box-shadow:0 0 0 3px rgba(184,149,94,.28)}
+.fv-detail-stage{position:relative;min-height:0;overflow:auto;overscroll-behavior:contain;background:#050606;scrollbar-color:#514B42 #121313}.fv-detail-stage:focus-visible{outline:2px solid #B8955E;outline-offset:-2px}.fv-detail-stage-inner{min-width:100%;min-height:100%;width:max-content;height:max-content;display:grid;place-items:center;padding:12px;box-sizing:border-box}.fv-detail-image{display:block;max-width:none!important;height:auto;object-fit:contain;background:#090A0A}.fv-detail-image[hidden]{display:none}.fv-detail-status{position:absolute;inset:0;display:grid;place-items:center;padding:24px;color:#908A80;font:600 13px/1.5 system-ui,sans-serif;text-align:center;pointer-events:none}.fv-detail-status[hidden]{display:none}
+.fv-detail-tools{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px;padding:12px 20px;border-top:1px solid #34322E;border-bottom:1px solid #34322E;background:#0E0F0F}.fv-detail-tools-group{display:flex;align-items:center;gap:8px}.fv-detail-tools-group:last-child{justify-content:flex-end}.fv-detail-tool{min-height:44px;min-width:44px;padding:8px 12px;border:1px solid #44413C;border-radius:2px;background:#121313;color:#D8D2C7;font:700 11px/1.2 system-ui,sans-serif;letter-spacing:.04em}.fv-detail-tool:hover,.fv-detail-tool:focus-visible{border-color:#B8955E;color:#F4EFE6;outline:none}.fv-detail-tool:focus-visible{box-shadow:0 0 0 3px rgba(184,149,94,.24)}.fv-detail-tool:disabled{opacity:.38;cursor:not-allowed}.fv-detail-zoom{min-width:58px;color:#B8955E;font:700 11px/1 system-ui,sans-serif;text-align:center;font-variant-numeric:tabular-nums}
+.fv-detail-meta{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(220px,.8fr);gap:28px;padding:16px 20px 18px;max-height:190px;overflow:auto}.fv-detail-caption{margin:0;color:#D8D2C7;font:500 13px/1.55 system-ui,sans-serif}.fv-detail-desc{margin:7px 0 0;color:#908A80;font:500 12px/1.55 system-ui,sans-serif}.fv-detail-desc strong{color:#B9B2A6;font-weight:700}.fv-detail-links{display:flex;align-items:flex-start;justify-content:flex-end;gap:8px;flex-wrap:wrap}.fv-detail-link{display:inline-flex;align-items:center;min-height:44px;padding:7px 10px;border:1px solid #44413C;border-radius:2px;color:#D8D2C7;text-decoration:none;font:700 10px/1.2 system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase}.fv-detail-link:hover,.fv-detail-link:focus-visible{border-color:#B8955E;color:#B8955E;outline:none}.fv-detail-link:focus-visible{box-shadow:0 0 0 3px rgba(184,149,94,.24)}
+body.fv-detail-lens-open{overflow:hidden}
+@media(max-width:700px){#fv-detail-lens{width:100vw;height:100dvh;border:0;border-radius:0}.fv-detail-head{padding:14px 12px 12px}.fv-detail-tools{grid-template-columns:1fr;gap:8px;padding:10px 12px}.fv-detail-tools-group,.fv-detail-tools-group:last-child{justify-content:center;flex-wrap:wrap}.fv-detail-meta{grid-template-columns:1fr;gap:10px;max-height:210px;padding:14px 12px 18px}.fv-detail-links{justify-content:flex-start}.fv-detail-trigger{top:8px;right:8px}}
+@media(max-width:380px){.fv-detail-tool{padding:8px 9px}.fv-detail-title{font-size:19px}.fv-detail-trigger{font-size:10px}}
+@media(prefers-reduced-motion:reduce){#fv-detail-lens,.fv-detail-stage{scroll-behavior:auto!important}.fv-detail-trigger,.fv-detail-tool,.fv-detail-close,.fv-detail-link{transition:none!important}}
+@media(forced-colors:active){.fv-detail-trigger,.fv-detail-tool,.fv-detail-close,.fv-detail-link,#fv-detail-lens{border:1px solid CanvasText}}
+</style>
+<dialog id="fv-detail-lens" aria-labelledby="fv-detail-lens-title">
+  <div class="fv-detail-shell">
+    <header class="fv-detail-head">
+      <div>
+        <p class="fv-detail-kicker">DETAIL LENS</p>
+        <h2 class="fv-detail-title" id="fv-detail-lens-title">Inspect image</h2>
+        <p class="fv-detail-count" data-fv-detail-count></p>
+      </div>
+      <button class="fv-detail-close" type="button" data-fv-detail-close aria-label="Close Detail Lens">Close</button>
+    </header>
+    <div class="fv-detail-stage" data-fv-detail-stage tabindex="0" role="region" aria-label="Zoomed image viewport">
+      <div class="fv-detail-stage-inner" data-fv-detail-inner>
+        <img class="fv-detail-image" data-fv-detail-image alt="" hidden>
+      </div>
+      <div class="fv-detail-status" data-fv-detail-status role="status" aria-live="polite">Loading detail…</div>
+    </div>
+    <div class="fv-detail-tools" aria-label="Image inspection controls">
+      <div class="fv-detail-tools-group">
+        <button class="fv-detail-tool" type="button" data-fv-detail-prev title="Previous figure ([)">Previous</button>
+        <button class="fv-detail-tool" type="button" data-fv-detail-next title="Next figure (])">Next</button>
+      </div>
+      <div class="fv-detail-tools-group">
+        <button class="fv-detail-tool" type="button" data-fv-detail-out title="Zoom out (-)" aria-label="Zoom out">−</button>
+        <span class="fv-detail-zoom" data-fv-detail-zoom aria-live="polite">Fit</span>
+        <button class="fv-detail-tool" type="button" data-fv-detail-in title="Zoom in (+)" aria-label="Zoom in">+</button>
+        <button class="fv-detail-tool" type="button" data-fv-detail-fit title="Fit image (0)">Fit</button>
+      </div>
+      <div class="fv-detail-tools-group"><span class="fv-detail-count">Drag/scroll to inspect</span></div>
+    </div>
+    <div class="fv-detail-meta">
+      <div>
+        <p class="fv-detail-caption" data-fv-detail-caption></p>
+        <p class="fv-detail-desc" data-fv-detail-desc></p>
+      </div>
+      <div class="fv-detail-links">
+        <a class="fv-detail-link" data-fv-detail-original target="_blank" rel="noopener">Open image ↗</a>
+        <a class="fv-detail-link" data-fv-detail-source target="_blank" rel="noopener" hidden>Source record ↗</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script id="fv-detail-lens-script">
+(()=>{
+  if(window.__fvDetailLens)return;
+  window.__fvDetailLens=true;
+  const supported=typeof HTMLDialogElement!=='undefined'&&typeof HTMLDialogElement.prototype.showModal==='function';
+  if(!supported)return;
+  const ready=fn=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn,{once:true}):fn();
+  ready(()=>{
+    if(!document.body.classList.contains('single-post'))return;
+    const dialog=document.getElementById('fv-detail-lens');
+    if(!dialog)return;
+    const root=[...document.querySelectorAll('main .wp-block-post-content,main article .entry-content,main article')].find(el=>el.querySelector('figure.wp-block-image img'))||document.querySelector('main');
+    if(!root)return;
+    const clean=s=>(s||'').replace(/\s+/g,' ').trim();
+    const captionText=fig=>{const cap=fig.querySelector('figcaption');if(!cap)return'';const clone=cap.cloneNode(true);clone.querySelectorAll('.fv-image-provenance').forEach(el=>el.remove());return clean(clone.textContent)};
+    const bestSrc=img=>{
+      const set=img.getAttribute('srcset')||'';
+      const candidates=set.split(',').map(part=>{const bits=part.trim().split(/\s+/);const w=bits[1]&&/^[0-9]+w$/.test(bits[1])?parseInt(bits[1],10):0;return{src:bits[0],w}}).filter(x=>x.src);
+      if(candidates.some(x=>x.w))return candidates.sort((a,b)=>b.w-a.w)[0].src;
+      return img.currentSrc||img.getAttribute('src')||'';
+    };
+    const records=[...root.querySelectorAll('figure.wp-block-image')].map((figure,index)=>{
+      if(figure.closest('header,footer,nav'))return null;
+      const img=figure.querySelector('img');
+      if(!img||img.classList.contains('avatar')||img.width<80&&img.height<80)return null;
+      const source=figure.querySelector('.fv-image-provenance a[href]');
+      return{figure,img,index,src:bestSrc(img),alt:clean(img.getAttribute('alt')),caption:captionText(figure),source:source?source.href:''};
+    }).filter(Boolean).map((r,i)=>({...r,index:i}));
+    if(!records.length)return;
+
+    const stage=dialog.querySelector('[data-fv-detail-stage]');
+    const view=dialog.querySelector('[data-fv-detail-image]');
+    const status=dialog.querySelector('[data-fv-detail-status]');
+    const count=dialog.querySelector('[data-fv-detail-count]');
+    const caption=dialog.querySelector('[data-fv-detail-caption]');
+    const desc=dialog.querySelector('[data-fv-detail-desc]');
+    const original=dialog.querySelector('[data-fv-detail-original]');
+    const source=dialog.querySelector('[data-fv-detail-source]');
+    const close=dialog.querySelector('[data-fv-detail-close]');
+    const prev=dialog.querySelector('[data-fv-detail-prev]');
+    const next=dialog.querySelector('[data-fv-detail-next]');
+    const zin=dialog.querySelector('[data-fv-detail-in]');
+    const zout=dialog.querySelector('[data-fv-detail-out]');
+    const fit=dialog.querySelector('[data-fv-detail-fit]');
+    const zoomLabel=dialog.querySelector('[data-fv-detail-zoom]');
+    const zooms=[1,1.25,1.6,2,2.6,3.4,4.5,6];
+    let active=0,zoomIndex=0,baseW=0,baseH=0,invoker=null,loadToken=0;
+
+    const updateZoomUI=()=>{
+      zoomLabel.textContent=zoomIndex===0?'Fit':`${Math.round(zooms[zoomIndex]*100)}%`;
+      zout.disabled=zoomIndex===0;
+      zin.disabled=zoomIndex===zooms.length-1;
+    };
+    const computeBase=()=>{
+      if(!view.naturalWidth||!view.naturalHeight)return;
+      const availW=Math.max(120,stage.clientWidth-24),availH=Math.max(120,stage.clientHeight-24);
+      const scale=Math.min(availW/view.naturalWidth,availH/view.naturalHeight,1);
+      baseW=Math.max(1,view.naturalWidth*scale);baseH=Math.max(1,view.naturalHeight*scale);
+    };
+    const applySize=(preserveCenter=false)=>{
+      if(!baseW||!baseH)return;
+      const oldW=Math.max(stage.scrollWidth,1),oldH=Math.max(stage.scrollHeight,1);
+      const cx=(stage.scrollLeft+stage.clientWidth/2)/oldW,cy=(stage.scrollTop+stage.clientHeight/2)/oldH;
+      view.style.width=`${Math.round(baseW*zooms[zoomIndex])}px`;
+      view.style.height=`${Math.round(baseH*zooms[zoomIndex])}px`;
+      updateZoomUI();
+      requestAnimationFrame(()=>{
+        if(preserveCenter){stage.scrollLeft=Math.max(0,cx*stage.scrollWidth-stage.clientWidth/2);stage.scrollTop=Math.max(0,cy*stage.scrollHeight-stage.clientHeight/2)}
+        else{stage.scrollLeft=Math.max(0,(stage.scrollWidth-stage.clientWidth)/2);stage.scrollTop=Math.max(0,(stage.scrollHeight-stage.clientHeight)/2)}
+      });
+    };
+    const fitImage=()=>{zoomIndex=0;computeBase();applySize(false)};
+    const setZoom=delta=>{const nextIndex=Math.max(0,Math.min(zooms.length-1,zoomIndex+delta));if(nextIndex===zoomIndex)return;zoomIndex=nextIndex;applySize(true)};
+    const render=i=>{
+      active=Math.max(0,Math.min(records.length-1,i));
+      const rec=records[active],token=++loadToken;
+      count.textContent=`Figure ${active+1} of ${records.length}`;
+      caption.textContent=rec.caption||'No caption is attached to this image.';
+      if(rec.alt){desc.hidden=false;desc.innerHTML='<strong>Image description:</strong> '+rec.alt.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+      else{desc.hidden=true;desc.textContent=''}
+      original.href=rec.src;
+      if(rec.source){source.href=rec.source;source.hidden=false}else{source.hidden=true;source.removeAttribute('href')}
+      prev.disabled=active===0;next.disabled=active===records.length-1;
+      status.hidden=false;status.textContent='Loading detail…';
+      view.hidden=true;view.alt=rec.alt;view.removeAttribute('src');view.style.width='';view.style.height='';
+      zoomIndex=0;baseW=0;baseH=0;updateZoomUI();
+      view.onload=()=>{if(token!==loadToken)return;status.hidden=true;view.hidden=false;fitImage()};
+      view.onerror=()=>{if(token!==loadToken)return;view.hidden=true;status.hidden=false;status.textContent='This image could not be opened at a larger size.'};
+      view.src=rec.src;
+    };
+    const openAt=(i,button)=>{
+      invoker=button;
+      document.body.classList.add('fv-detail-lens-open');
+      dialog.showModal();
+      render(i);
+      close.focus({preventScroll:true});
+    };
+    records.forEach((rec,i)=>{
+      rec.figure.classList.add('fv-detail-ready');
+      const button=document.createElement('button');button.type='button';button.className='fv-detail-trigger';button.textContent='Inspect detail';button.setAttribute('aria-label',`Inspect figure ${i+1} in Detail Lens`);
+      button.addEventListener('click',()=>openAt(i,button));rec.figure.appendChild(button);
+    });
+    close.addEventListener('click',()=>dialog.close());
+    prev.addEventListener('click',()=>{if(active>0)render(active-1)});
+    next.addEventListener('click',()=>{if(active<records.length-1)render(active+1)});
+    zin.addEventListener('click',()=>setZoom(1));zout.addEventListener('click',()=>setZoom(-1));fit.addEventListener('click',fitImage);
+    dialog.addEventListener('close',()=>{document.body.classList.remove('fv-detail-lens-open');if(invoker&&document.contains(invoker))invoker.focus({preventScroll:true})});
+    dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+    dialog.addEventListener('keydown',e=>{
+      if(e.key==='+'||e.key==='='){e.preventDefault();setZoom(1)}
+      else if(e.key==='-'){e.preventDefault();setZoom(-1)}
+      else if(e.key==='0'){e.preventDefault();fitImage()}
+      else if(e.key==='['&&active>0){e.preventDefault();render(active-1)}
+      else if(e.key===']'&&active<records.length-1){e.preventDefault();render(active+1)}
+    });
+    let resizeTimer=0;window.addEventListener('resize',()=>{if(!dialog.open||!view.naturalWidth)return;clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const z=zoomIndex;computeBase();zoomIndex=z;applySize(true)},80)},{passive:true});
+  });
+})();
+</script>
+<!-- /wp:html -->
