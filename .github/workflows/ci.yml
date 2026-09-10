@@ -1,0 +1,27 @@
+name: Final Vestige Site Layer CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - production
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Runtime versions
+        run: |
+          php --version
+          node --version
+          python3 --version
+      - name: PHP syntax
+        run: php -l final-vestige-site-layer.php
+      - name: Release integrity and JavaScript syntax
+        run: python3 tests/verify_release.py
