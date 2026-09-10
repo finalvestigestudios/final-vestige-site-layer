@@ -1,0 +1,176 @@
+<!-- wp:html -->
+<style id="fv-evidence-map-v1-css">
+.fv-em-launch{position:fixed;right:18px;bottom:22px;z-index:45;display:none;align-items:center;gap:8px;min-height:44px;max-width:min(260px,calc(100vw - 28px));padding:9px 12px;border:1px solid #4B463E;border-radius:2px;background:#0E0F0F;color:#F4EFE6;box-shadow:0 10px 30px rgba(0,0,0,.22);font:700 11px/1.25 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase}.fv-em-launch[data-ready="true"]{display:inline-flex}.fv-em-launch:hover,.fv-em-launch:focus-visible{border-color:#B8955E;color:#fff;outline:2px solid transparent}.fv-em-launch__mark{width:7px;height:7px;border:1px solid #B8955E;border-radius:50%;box-shadow:0 0 0 2px #0E0F0F,0 0 0 3px rgba(184,149,94,.28)}.fv-em-launch__state{color:#A39D92;font-weight:600;letter-spacing:.02em;text-transform:none}.fv-em-dialog{width:min(760px,calc(100vw - 28px));max-height:min(82vh,760px);padding:0;border:1px solid #4B463E;border-radius:3px;background:#0C0D0D;color:#D8D2C7;box-shadow:0 28px 90px rgba(0,0,0,.55)}.fv-em-dialog::backdrop{background:rgba(5,6,6,.76);backdrop-filter:blur(2px)}.fv-em-shell{display:flex;max-height:min(82vh,760px);flex-direction:column;overflow:hidden}.fv-em-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:22px 22px 17px;border-bottom:1px solid #302E2A}.fv-em-eyebrow{margin:0 0 7px;color:#B8955E;font:800 10px/1.2 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}.fv-em-title{margin:0;color:#F4EFE6;font-size:clamp(24px,4vw,34px);line-height:1.05;letter-spacing:-.025em}.fv-em-dek{max-width:580px;margin:9px 0 0;color:#AAA49A;font-size:13px;line-height:1.55}.fv-em-close{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid #3A3833;background:transparent;color:#D8D2C7;font-size:23px;line-height:1}.fv-em-close:hover,.fv-em-close:focus-visible{border-color:#B8955E;color:#fff;outline:2px solid #B8955E;outline-offset:2px}.fv-em-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid #302E2A}.fv-em-stat{padding:13px 16px;border-right:1px solid #302E2A}.fv-em-stat:last-child{border-right:0}.fv-em-stat b{display:block;color:#F4EFE6;font-size:20px;line-height:1}.fv-em-stat span{display:block;margin-top:4px;color:#8E887D;font:700 9px/1.2 system-ui,sans-serif;letter-spacing:.11em;text-transform:uppercase}.fv-em-tabs{display:flex;gap:4px;padding:12px 16px 0}.fv-em-tab{min-height:44px;padding:9px 12px;border:1px solid transparent;border-bottom:2px solid transparent;background:transparent;color:#9E988E;font:700 11px/1.2 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}.fv-em-tab[aria-selected="true"]{color:#F4EFE6;border-bottom-color:#B8955E}.fv-em-tab:focus-visible{outline:2px solid #B8955E;outline-offset:2px}.fv-em-body{min-height:0;overflow:auto;padding:12px 16px 20px;overscroll-behavior:contain}.fv-em-list{display:grid;gap:7px;margin:0;padding:0;list-style:none}.fv-em-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;width:100%;min-height:52px;padding:10px 12px;border:1px solid #302E2A;background:#111212;color:#D8D2C7;text-align:left}.fv-em-row:hover,.fv-em-row:focus-visible{border-color:#665D4E;background:#151514;outline:none}.fv-em-row[aria-current="true"]{border-color:#B8955E;background:#171512}.fv-em-row__title{display:block;color:#F4EFE6;font-size:14px;line-height:1.35}.fv-em-row__meta{display:block;margin-top:4px;color:#8F897F;font-size:11px;line-height:1.35}.fv-em-row__count{color:#B8955E;font:700 10px/1.2 system-ui,sans-serif;letter-spacing:.06em;white-space:nowrap}.fv-em-note{margin:14px 2px 0;color:#7F7A72;font-size:11px;line-height:1.5}.fv-em-target-flash{outline:2px solid #B8955E!important;outline-offset:5px!important}.fv-em-empty{padding:18px;color:#9A948A;font-size:13px;line-height:1.55}.fv-em-panel[hidden]{display:none!important}@media(max-width:620px){.fv-em-launch{right:12px;bottom:14px}.fv-em-dialog{width:calc(100vw - 16px);max-height:88vh}.fv-em-shell{max-height:88vh}.fv-em-head{padding:17px 14px 13px}.fv-em-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.fv-em-stat:nth-child(2){border-right:0}.fv-em-stat:nth-child(-n+2){border-bottom:1px solid #302E2A}.fv-em-body{padding:10px 10px 16px}.fv-em-row{min-height:56px;gap:8px}.fv-em-row__count{white-space:normal;text-align:right}}@media(max-width:360px){.fv-em-launch__state{display:none}.fv-em-tabs{padding-left:10px;padding-right:10px}.fv-em-tab{flex:1;padding-left:7px;padding-right:7px}}@media(prefers-reduced-motion:reduce){.fv-em-dialog::backdrop{backdrop-filter:none}.fv-em-target-flash{scroll-behavior:auto!important}}
+</style>
+<button class="fv-em-launch" type="button" data-fv-em-launch aria-haspopup="dialog" data-ready="false"><span class="fv-em-launch__mark" aria-hidden="true"></span><span>Evidence map</span><span class="fv-em-launch__state" data-fv-em-state></span></button>
+<dialog class="fv-em-dialog" data-fv-em-dialog aria-labelledby="fv-em-title" aria-describedby="fv-em-dek">
+  <div class="fv-em-shell">
+    <div class="fv-em-head">
+      <div><p class="fv-em-eyebrow">Page evidence</p><h2 class="fv-em-title" id="fv-em-title">Find what supports the story.</h2><p class="fv-em-dek" id="fv-em-dek">Jump through the investigation by section, then inspect the source trail without losing your place.</p></div>
+      <button class="fv-em-close" type="button" data-fv-em-close aria-label="Close evidence map">×</button>
+    </div>
+    <div class="fv-em-stats" data-fv-em-stats></div>
+    <div class="fv-em-tabs" role="tablist" aria-label="Evidence map views">
+      <button class="fv-em-tab" type="button" role="tab" id="fv-em-tab-story" aria-controls="fv-em-panel-story" aria-selected="true" data-fv-em-tab="story">Story map</button>
+      <button class="fv-em-tab" type="button" role="tab" id="fv-em-tab-sources" aria-controls="fv-em-panel-sources" aria-selected="false" data-fv-em-tab="sources">Source index</button>
+    </div>
+    <div class="fv-em-body">
+      <div class="fv-em-panel" role="tabpanel" id="fv-em-panel-story" aria-labelledby="fv-em-tab-story" data-fv-em-panel="story"><ol class="fv-em-list" data-fv-em-story></ol></div>
+      <div class="fv-em-panel" role="tabpanel" id="fv-em-panel-sources" aria-labelledby="fv-em-tab-sources" data-fv-em-panel="sources" hidden><ol class="fv-em-list" data-fv-em-sources></ol></div>
+      <p class="fv-em-note">Counts reflect citations and figures present on this page. They do not score source quality or claim certainty.</p>
+    </div>
+  </div>
+</dialog>
+<script id="fv-evidence-map-v1-js">
+(()=>{
+  if(window.__fvEvidenceMap)return;
+  window.__fvEvidenceMap=true;
+  const ready=fn=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn,{once:true}):fn();
+  ready(()=>{
+    try{
+      const root=document.querySelector('main');
+      const launch=document.querySelector('[data-fv-em-launch]');
+      const dialog=document.querySelector('[data-fv-em-dialog]');
+      if(!root||!launch||!dialog||typeof dialog.showModal!=='function')return;
+
+      const headings=[...root.querySelectorAll('h2')];
+      const sourceHeading=headings.find(h=>h.id==='sources'||/sources\s*(?:&|and)\s*(?:further\s*)?reading|sources$/i.test(h.textContent.trim()));
+      if(!sourceHeading)return;
+
+      const FOLLOWING=Node.DOCUMENT_POSITION_FOLLOWING;
+      const before=(a,b)=>!!(a.compareDocumentPosition(b)&FOLLOWING);
+      const findSourceList=()=>{
+        const direct=root.querySelector('.fv-source-list[data-fv-footnotes]');
+        if(direct&&before(sourceHeading,direct))return direct;
+        let n=sourceHeading.nextElementSibling,steps=0;
+        while(n&&steps++<8){
+          if(n.matches('ul,ol'))return n;
+          const inner=n.querySelector&&n.querySelector('ul,ol');
+          if(inner)return inner;
+          n=n.nextElementSibling;
+        }
+        return null;
+      };
+      const sourceList=findSourceList();
+      const sourceItems=sourceList?[...sourceList.querySelectorAll(':scope > li')]:[];
+      if(sourceItems.length<2)return;
+
+      const sections=headings.filter(h=>h!==sourceHeading&&before(h,sourceHeading)&&!/^(Evidence Notes|Sources(?:\s*&|\s+and)?\s*(?:Further\s*)?Reading)$/i.test(h.textContent.trim()));
+      if(sections.length<2)return;
+
+      const allRefs=[...root.querySelectorAll('a[href^="#"]')].filter(a=>before(a,sourceHeading)&&(/fv-fn-|footnote|fnref|fn-/i.test(a.getAttribute('href')||'')||a.closest('sup.fn,.fv-fn-mark')));
+      const figures=[...root.querySelectorAll('figure')].filter(f=>before(f,sourceHeading));
+      const statBox=dialog.querySelector('[data-fv-em-stats]');
+      const storyList=dialog.querySelector('[data-fv-em-story]');
+      const sourceIndex=dialog.querySelector('[data-fv-em-sources]');
+      const state=launch.querySelector('[data-fv-em-state]');
+      const closeBtn=dialog.querySelector('[data-fv-em-close]');
+      const tabs=[...dialog.querySelectorAll('[data-fv-em-tab]')];
+      let opener=null,navigating=false,currentSection=0;
+
+      const ensureId=(el,prefix,i)=>{if(!el.id)el.id=`${prefix}-${i+1}`;return el.id};
+      sections.forEach((h,i)=>ensureId(h,'fv-evidence-section',i));
+      sourceItems.forEach((li,i)=>ensureId(li,'fv-evidence-source',i));
+
+      const sectionBounds=sections.map((h,i)=>({h,next:sections[i+1]||sourceHeading}));
+      const inRange=(node,start,end)=>before(start,node)&&before(node,end);
+      const sectionData=sectionBounds.map(({h,next},i)=>({
+        el:h,
+        title:h.textContent.trim(),
+        citations:allRefs.filter(n=>inRange(n,h,next)).length,
+        figures:figures.filter(n=>inRange(n,h,next)).length,
+        i
+      }));
+
+      const sourceRefCount=li=>{
+        if(!li.id)return 0;
+        const escaped=CSS.escape(li.id);
+        return root.querySelectorAll(`a[href="#${escaped}"]`).length;
+      };
+      const domainFor=li=>{
+        const a=[...li.querySelectorAll('a[href]')].find(x=>{try{return new URL(x.href,location.href).origin!==location.origin}catch(_){return false}});
+        if(!a)return '';
+        try{return new URL(a.href,location.href).hostname.replace(/^www\./,'')}catch(_){return ''}
+      };
+      const cleanSourceTitle=(li,i)=>{
+        const clone=li.cloneNode(true);
+        clone.querySelectorAll('.fv-fn-backlinks,.fv-fn-back').forEach(n=>n.remove());
+        const t=clone.textContent.replace(/\s+/g,' ').trim();
+        return t.length>118?t.slice(0,115).trim()+'…':(t||`Source ${i+1}`);
+      };
+      const sourceData=sourceItems.map((li,i)=>({el:li,title:cleanSourceTitle(li,i),domain:domainFor(li),refs:sourceRefCount(li),i}));
+
+      statBox.innerHTML=[['Sections',sections.length],['Citations',allRefs.length],['Figures',figures.length],['Sources',sourceItems.length]].map(([label,value])=>`<div class="fv-em-stat"><b>${value}</b><span>${label}</span></div>`).join('');
+
+      const escapeHtml=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      const drawStory=()=>{
+        storyList.innerHTML=sectionData.map(d=>`<li><button class="fv-em-row" type="button" data-fv-em-jump="section" data-index="${d.i}" aria-current="${d.i===currentSection?'true':'false'}"><span><span class="fv-em-row__title">${escapeHtml(d.title)}</span><span class="fv-em-row__meta">${d.citations} citation${d.citations===1?'':'s'} · ${d.figures} figure${d.figures===1?'':'s'}</span></span><span class="fv-em-row__count">${d.i+1}/${sections.length}</span></button></li>`).join('');
+      };
+      const drawSources=()=>{
+        sourceIndex.innerHTML=sourceData.map(d=>`<li><button class="fv-em-row" type="button" data-fv-em-jump="source" data-index="${d.i}"><span><span class="fv-em-row__title">${escapeHtml(d.title)}</span><span class="fv-em-row__meta">${escapeHtml(d.domain||'Source record')}</span></span><span class="fv-em-row__count">${d.refs?`${d.refs} cite${d.refs===1?'':'s'}`:`Source ${d.i+1}`}</span></button></li>`).join('');
+      };
+      const updateLaunch=()=>{state.textContent=`${currentSection+1}/${sections.length} · ${sourceItems.length} sources`};
+      drawStory();drawSources();updateLaunch();launch.dataset.ready='true';
+
+      const setTab=(name,focus=false)=>{
+        tabs.forEach(t=>{const on=t.dataset.fvEmTab===name;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;if(on&&focus)t.focus()});
+        dialog.querySelectorAll('[data-fv-em-panel]').forEach(p=>p.hidden=p.dataset.fvEmPanel!==name);
+      };
+      tabs.forEach((tab,i)=>{
+        tab.addEventListener('click',()=>setTab(tab.dataset.fvEmTab));
+        tab.addEventListener('keydown',e=>{
+          if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+          e.preventDefault();
+          let next=i;
+          if(e.key==='ArrowLeft')next=(i-1+tabs.length)%tabs.length;
+          if(e.key==='ArrowRight')next=(i+1)%tabs.length;
+          if(e.key==='Home')next=0;
+          if(e.key==='End')next=tabs.length-1;
+          setTab(tabs[next].dataset.fvEmTab,true);
+        });
+      });
+
+      const open=from=>{opener=from||document.activeElement;drawStory();updateLaunch();dialog.showModal();closeBtn.focus()};
+      const close=()=>{if(dialog.open)dialog.close()};
+      launch.addEventListener('click',()=>open(launch));
+      closeBtn.addEventListener('click',close);
+      dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close()});
+      dialog.addEventListener('close',()=>{if(!navigating&&opener&&document.contains(opener))opener.focus();opener=null});
+
+      const jumpTo=el=>{
+        if(!el)return;
+        navigating=true;
+        dialog.close();
+        const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const hadTab=el.hasAttribute('tabindex');
+        if(!hadTab)el.setAttribute('tabindex','-1');
+        setTimeout(()=>{
+          el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+          el.classList.add('fv-em-target-flash');
+          el.focus({preventScroll:true});
+          setTimeout(()=>el.classList.remove('fv-em-target-flash'),1200);
+          const cleanup=()=>{if(!hadTab)el.removeAttribute('tabindex')};
+          el.addEventListener('blur',cleanup,{once:true});
+          navigating=false;opener=null;
+        },reduce?0:80);
+      };
+      dialog.addEventListener('click',e=>{
+        const btn=e.target.closest('[data-fv-em-jump]');if(!btn)return;
+        const i=Number(btn.dataset.index);
+        jumpTo(btn.dataset.fvEmJump==='section'?sectionData[i]?.el:sourceData[i]?.el);
+      });
+
+      if('IntersectionObserver'in window){
+        const io=new IntersectionObserver(entries=>{
+          const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>Math.abs(a.boundingClientRect.top)-Math.abs(b.boundingClientRect.top))[0];
+          if(!visible)return;
+          const i=sections.indexOf(visible.target);
+          if(i>=0&&i!==currentSection){currentSection=i;drawStory();updateLaunch()}
+        },{rootMargin:'-18% 0px -62% 0px',threshold:0});
+        sections.forEach(h=>io.observe(h));
+      }
+    }catch(e){console.warn('Final Vestige Evidence Map unavailable',e)}
+  });
+})();
+</script>
+<!-- /wp:html -->
