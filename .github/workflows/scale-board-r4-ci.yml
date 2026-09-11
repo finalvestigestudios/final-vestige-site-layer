@@ -1,0 +1,33 @@
+name: Scale Board R4 CI
+
+on:
+  pull_request:
+    branches: [production]
+    paths:
+      - 'payloads/scale-board-wp-block-r4.txt'
+      - 'tests/verify_scale_board_r4.py'
+      - 'tests/fixtures/scale-board-r4-*.html'
+      - 'tests/fixtures/scale-board-r3-*.html'
+      - 'tests/fixtures/scale-board-r2-*.html'
+      - 'tests/fixtures/scale-board-r1-*.html'
+      - '.github/workflows/scale-board-r4-ci.yml'
+      - 'SCALE_BOARD_R4.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact Scale Board R4 artifact and browser behavior
+        run: python tests/verify_scale_board_r4.py
