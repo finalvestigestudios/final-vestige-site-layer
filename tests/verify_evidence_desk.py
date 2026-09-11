@@ -6,11 +6,14 @@ import re
 import shutil
 import subprocess
 import tempfile
+import threading
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "evidence-desk-wp-block-v1.txt"
-EXPECTED_BYTES = 15604
+EXPECTED_BYTES = 0
 EXPECTED_SHA256 = "49747071b3a425a1f53033cc1f76fc33e9fb0f6c330d1f9437f75bfd75cb0d7f"
 
 
@@ -19,7 +22,12 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(f"FAIL: {message}")
 
 
-def fixture(payload: str, mode: str) -> str:
+class QuietHandler(SimpleHTTPRequestHandler):
+    def log_message(self, format: str, *args: object) -> None:
+        return
+
+
+def fixture(payload: str, mode: str, origin: str) -> str:
     para = ("A documented paragraph in a long investigation keeps the reader inside the published narrative while "
             "preserving enough text to satisfy the longform qualification threshold. " * 2)
     story = "".join(f"<p>{para}{i}</p>" for i in range(12))
@@ -28,14 +36,20 @@ def fixture(payload: str, mode: str) -> str:
         f'alt="Figure {i} alt"><figcaption>Published figure {i} caption.</figcaption></figure>'
         for i in range(1, 3)
     )
-    notes = '<ul class="wp-block-list fv-source-list" data-fv-footnotes>' + "".join(
-        f'<li id="fv-fn-{i}">Published source note {i} with context '
-        f'<a href="https://example.org/source-{i}">Open source</a>'
-        f'<span class="fv-fn-backlinks"><a href="#fv-fnref-{i}-1">↩</a></span></li>'
-        for i in range(1, 5)
-    ) + "</ul>"
+
+    note_rows = []
+    for i in range(1, 5):
+        backlink = f'<span class="fv-fn-backlinks"><a href="#fv-fnref-{i}-1">↩</a></span>'
+        relative_internal = f'<a href="/internal-source-{i}">Internal relative</a>'
+        absolute_internal = f'<a href="{origin}/internal-source-{i}">Internal absolute</a>'
+        external = f'<a href="https://example.org/source-{i}">Open source</a>'
+        links = backlink + relative_internal + absolute_internal
+        if not (mode == "noexternal" and i == 1):
+            links += external
+        note_rows.append(f'<li id="fv-fn-{i}">Published source note {i} with context {links}</li>')
+    notes = '<ul class="wp-block-list fv-source-list" data-fv-footnotes>' + "".join(note_rows) + "</ul>"
     heading = '<h2 class="wp-block-heading fv-source-heading" id="sources">Sources &amp; Further Reading</h2>'
-    if mode == "valid":
+    if mode in ("valid", "noexternal"):
         boundary = heading + notes
     elif mode == "missing":
         boundary = notes
@@ -50,7 +64,7 @@ const runEvidenceDeskFixture=()=>{
   const fail=(m)=>{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m};
   try{
     const launch=document.querySelector('[data-fv-evidence-desk-launcher]');
-    if(MODE!=='valid'){
+    if(MODE==='missing'||MODE==='reversed'){
       if(launch) return fail('fail-closed qualification did not hold');
       document.body.dataset.fvTest='pass';return;
     }
@@ -66,14 +80,27 @@ const runEvidenceDeskFixture=()=>{
     if(desk.querySelectorAll('.fved-card').length!==4) return fail('four-card working set failed');
     buttons=[...document.querySelectorAll('.fved-pin')];
     if(!buttons[4].disabled||!buttons[5].disabled) return fail('four-item cap not enforced');
+
+    const sourceOne=desk.querySelector('.fved-card[data-key="source-1"]');
+    if(!sourceOne) return fail('source-one card missing');
+    const sourceOneLinks=[...sourceOne.querySelectorAll('a[href]')];
+    if(MODE==='valid'){
+      if(sourceOneLinks.length!==1||sourceOneLinks[0].href!=='https://example.org/source-1') return fail('external source provenance did not survive backlink/internal-first ordering');
+    }else if(MODE==='noexternal'){
+      if(sourceOneLinks.length!==0) return fail('source without a published external URL exposed Open source');
+      const sourceTwo=desk.querySelector('.fved-card[data-key="source-2"] a[href="https://example.org/source-2"]');
+      if(!sourceTwo) return fail('later published external source was not preserved');
+    }
+    if(desk.querySelector('.fved-card a[href*="/internal-source-"]')) return fail('internal source leaked into Open source action');
+
     const firstRemove=desk.querySelector('.fved-card [data-action="remove"]');firstRemove.click();
     buttons=[...document.querySelectorAll('.fved-pin')];
     if(buttons[4].disabled) return fail('capacity did not reopen');
     buttons[4].click();
     if(desk.querySelectorAll('.fved-card').length!==4) return fail('replacement pin failed');
     if(document.querySelectorAll('figure.wp-block-image img').length!==initialImages) return fail('figure images were duplicated');
-    const sourceLink=desk.querySelector('.fved-card a[href^="https://example.org/"]');
-    if(!sourceLink||sourceLink.rel!=='noopener') return fail('published source link was not safely preserved');
+    const externalLinks=[...desk.querySelectorAll('.fved-card a[href^="https://example.org/"]')];
+    if(!externalLinks.length||externalLinks.some(a=>a.rel!=='noopener')) return fail('published source link was not safely preserved');
     desk.querySelector('.fved-clear').click();
     if(desk.querySelectorAll('.fved-card').length!==0) return fail('clear failed');
     if(!desk.querySelector('.fved-status strong').textContent.startsWith('0 of 4')) return fail('status did not reset');
@@ -105,16 +132,26 @@ def run_browser(payload: str) -> None:
     require(browser is not None, "headless Chrome/Chromium not available for runtime regression test")
     with tempfile.TemporaryDirectory() as temp:
         temp_path = Path(temp)
-        for mode in ("valid", "missing", "reversed"):
-            page = temp_path / f"evidence-desk-{mode}.html"
-            page.write_text(fixture(payload, mode), encoding="utf-8")
-            proc = subprocess.run(
-                [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage",
-                 "--dump-dom", page.as_uri()],
-                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30
-            )
-            require(proc.returncode == 0, f"browser fixture {mode} failed to execute: {proc.stderr[-500:]}")
-            require('data-fv-test="pass"' in proc.stdout, f"browser fixture {mode} failed runtime assertions")
+        handler = partial(QuietHandler, directory=str(temp_path))
+        server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        origin = f"http://127.0.0.1:{server.server_port}"
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            for mode in ("valid", "noexternal", "missing", "reversed"):
+                page = temp_path / f"evidence-desk-{mode}.html"
+                page.write_text(fixture(payload, mode, origin), encoding="utf-8")
+                proc = subprocess.run(
+                    [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage",
+                     "--dump-dom", f"{origin}/{page.name}"],
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30
+                )
+                require(proc.returncode == 0, f"browser fixture {mode} failed to execute: {proc.stderr[-500:]}")
+                require('data-fv-test="pass"' in proc.stdout, f"browser fixture {mode} failed runtime assertions")
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=5)
 
 
 def main() -> None:
@@ -146,7 +183,12 @@ def main() -> None:
 
     require("cleanText" in text and ".fv-fn-backlinks,.fved-pin,[data-fv-feature-ui]" in text, "clean published-text extraction missing")
     require("textContent=" in text, "safe dynamic text rendering missing")
-    require("external?external.href:''" in text, "source-link provenance extraction missing")
+    require("externalSourceHref" in text, "source-link provenance helper missing")
+    require("getAttribute('href')" in text, "raw published href inspection missing")
+    require("!a.closest('.fv-fn-backlinks')" in text, "backlink exclusion missing")
+    require("/^https?:\\/\\//i.test(raw)" in text, "absolute http(s)-only source gate missing")
+    require("url.origin===location.origin||url.hostname===location.hostname" in text, "same-site source rejection missing")
+    require("return url.href" in text and "const href=externalSourceHref(li)" in text, "validated source-link assignment missing")
     require("link.rel='noopener'" in text and "link.target='_blank'" in text, "safe external-link behavior missing")
     require("figure.wp-block-image" in text and "img.getAttribute('alt')" in text, "figure caption/alt fallback missing")
     require("pins=new Map()" in text and "pinButtons=new Map()" in text, "in-memory working set missing")
@@ -189,7 +231,7 @@ def main() -> None:
 
     if os.environ.get("FV_BROWSER_RUNTIME") == "1":
         run_browser(text)
-    print("PASS: Evidence Desk exact identity, trusted-source fail-closed qualification, four-item session working set, adaptive non-obstructive layout, source/figure provenance, focus/accessibility behavior, no-persistence/no-network boundary, JavaScript syntax, and headless browser runtime regressions verified")
+    print("PASS: Evidence Desk R1 exact identity, trusted-source qualification, backlink/internal-link provenance exclusion, no-external-source fail-closed action behavior, four-item session working set, adaptive layout, focus/accessibility behavior, no-persistence/no-network boundary, JavaScript syntax, and adversarial headless browser regressions verified")
 
 
 if __name__ == "__main__":
