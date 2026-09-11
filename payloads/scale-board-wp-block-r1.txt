@@ -19,33 +19,33 @@ const paragraphs=[...article.querySelectorAll('p')].filter(p=>before(p,sourceHea
 
 const words={zero:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,eighteen:18,nineteen:19,twenty:20,thirty:30,forty:40,fifty:50,sixty:60,seventy:70,eighty:80,ninety:90};
 const ones='(?:one|two|three|four|five|six|seven|eight|nine)',teens='(?:ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)',tens='(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)';
-const writtenNumber=`(?:zero|${ones}|${teens}|${tens}(?:(?:\s|-)+${ones})?)`,numericNumber='(?:\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)',numberPattern=`(?:${numericNumber}|${writtenNumber})`;
+const writtenNumber=String.raw`(?:zero|${ones}|${teens}|${tens}(?:(?:\s|-)+${ones})?)`,numericNumber=String.raw`(?:\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)`,numberPattern=String.raw`(?:${numericNumber}|${writtenNumber})`;
 const prefixWord='(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand)';
-const invalidWrittenPrefix=new RegExp(`${prefixWord}(?:\s|-)+(?:and(?:\s|-)+)?$`,'i');
+const invalidWrittenPrefix=new RegExp(String.raw`${prefixWord}(?:\s|-)+(?:and(?:\s|-)+)?$`,'i');
 const invalidNumberPrefix=(text,start)=>{if(start<=0)return false;const left=text.slice(0,start);if(/[\d,.+\-]$/.test(left))return true;return invalidWrittenPrefix.test(left)};
 const parseNumber=s=>{const t=s.toLowerCase().trim();if(/^\d/.test(t)){const clean=t.replace(/,/g,'');return /^\d+(?:\.\d+)?$/.test(clean)?Number(clean):NaN}const parts=t.split(/[\s-]+/);if(parts.length===1)return words[parts[0]]??NaN;if(parts.length===2){const a=words[parts[0]],b=words[parts[1]];if(a>=20&&a%10===0&&b>=1&&b<=9)return a+b}return NaN};
 const specs=[
- {key:'mph',label:'Speed · miles per hour',unit:'mph',re:new RegExp(`\b(${numberPattern})(?:\s|-)+miles?(?:\s|-)+(?:per|an)(?:\s|-)+hour\b|\b(${numberPattern})\s*mph\b`,'gi')},
- {key:'kmh',label:'Speed · kilometers per hour',unit:'km/h',re:new RegExp(`\b(${numberPattern})(?:\s|-)+kilomet(?:er|re)s?(?:\s|-)+(?:per|an)(?:\s|-)+hour\b|\b(${numberPattern})\s*km\/?h\b`,'gi')},
- {key:'percent',label:'Percent',unit:'%',re:new RegExp(`\b(${numberPattern})\s*(?:percent|per\s*cent|%)`,'gi')},
- {key:'feet',label:'Distance · feet',unit:'ft',re:new RegExp(`\b(${numberPattern})(?:\s|-)+(?:feet|foot)\b|\b(${numberPattern})\s*ft\.?\b`,'gi')},
- {key:'miles',label:'Distance · miles',unit:'mi',re:new RegExp(`\b(${numberPattern})(?:\s|-)+miles?\b`,'gi')},
- {key:'meters',label:'Distance · meters',unit:'m',re:new RegExp(`\b(${numberPattern})(?:\s|-)+met(?:er|re)s?\b`,'gi')},
- {key:'volts',label:'Voltage',unit:'V',re:new RegExp(`\b(${numberPattern})(?:\s|-)+volts?\b|\b(${numberPattern})\s*V\b`,'gi')},
- {key:'watts',label:'Power',unit:'W',re:new RegExp(`\b(${numberPattern})(?:\s|-)+watts?\b|\b(${numberPattern})\s*W\b`,'gi')},
- {key:'psi',label:'Pressure',unit:'psi',re:new RegExp(`\b(${numberPattern})\s*psi\b`,'gi')},
- {key:'knots',label:'Speed · knots',unit:'kn',re:new RegExp(`\b(${numberPattern})(?:\s|-)+knots?\b`,'gi')},
- {key:'kilograms',label:'Mass · kilograms',unit:'kg',re:new RegExp(`\b(${numberPattern})(?:\s|-)+kilograms?\b|\b(${numberPattern})\s*kg\b`,'gi')},
- {key:'pounds',label:'Mass · pounds',unit:'lb',re:new RegExp(`\b(${numberPattern})(?:\s|-)+pounds?\b|\b(${numberPattern})\s*lbs?\.?\b`,'gi')},
- {key:'tons',label:'Mass · tons',unit:'tons',re:new RegExp(`\b(${numberPattern})(?:\s|-)+tons?\b`,'gi')},
- {key:'seconds',label:'Duration · seconds',unit:'sec',re:new RegExp(`\b(${numberPattern})(?:\s|-)+seconds?\b`,'gi')},
- {key:'minutes',label:'Duration · minutes',unit:'min',re:new RegExp(`\b(${numberPattern})(?:\s|-)+minutes?\b`,'gi')},
- {key:'hours',label:'Duration · hours',unit:'hr',re:new RegExp(`\b(${numberPattern})(?:\s|-)+hours?\b`,'gi')},
- {key:'days',label:'Duration · days',unit:'days',re:new RegExp(`\b(${numberPattern})(?:\s|-)+days?\b`,'gi')},
- {key:'weeks',label:'Duration · weeks',unit:'weeks',re:new RegExp(`\b(${numberPattern})(?:\s|-)+weeks?\b`,'gi')},
- {key:'years',label:'Duration · years',unit:'years',re:new RegExp(`\b(${numberPattern})(?:\s|-)+years?\b`,'gi')},
- {key:'fahrenheit',label:'Temperature · Fahrenheit',unit:'°F',re:new RegExp(`\b(${numberPattern})\s*(?:°\s*)?F\b|\b(${numberPattern})(?:\s|-)+degrees?(?:\s|-)+Fahrenheit\b`,'gi')},
- {key:'celsius',label:'Temperature · Celsius',unit:'°C',re:new RegExp(`\b(${numberPattern})\s*(?:°\s*)?C\b|\b(${numberPattern})(?:\s|-)+degrees?(?:\s|-)+Celsius\b`,'gi')}
+ {key:'mph',label:'Speed · miles per hour',unit:'mph',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+miles?(?:\s|-)+(?:per|an)(?:\s|-)+hour\b|\b(${numberPattern})\s*mph\b`,'gi')},
+ {key:'kmh',label:'Speed · kilometers per hour',unit:'km/h',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+kilomet(?:er|re)s?(?:\s|-)+(?:per|an)(?:\s|-)+hour\b|\b(${numberPattern})\s*km\/?h\b`,'gi')},
+ {key:'percent',label:'Percent',unit:'%',re:new RegExp(String.raw`\b(${numberPattern})\s*(?:percent|per\s*cent|%)`,'gi')},
+ {key:'feet',label:'Distance · feet',unit:'ft',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+(?:feet|foot)\b|\b(${numberPattern})\s*ft\.?\b`,'gi')},
+ {key:'miles',label:'Distance · miles',unit:'mi',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+miles?\b`,'gi')},
+ {key:'meters',label:'Distance · meters',unit:'m',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+met(?:er|re)s?\b`,'gi')},
+ {key:'volts',label:'Voltage',unit:'V',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+volts?\b|\b(${numberPattern})\s*V\b`,'gi')},
+ {key:'watts',label:'Power',unit:'W',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+watts?\b|\b(${numberPattern})\s*W\b`,'gi')},
+ {key:'psi',label:'Pressure',unit:'psi',re:new RegExp(String.raw`\b(${numberPattern})\s*psi\b`,'gi')},
+ {key:'knots',label:'Speed · knots',unit:'kn',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+knots?\b`,'gi')},
+ {key:'kilograms',label:'Mass · kilograms',unit:'kg',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+kilograms?\b|\b(${numberPattern})\s*kg\b`,'gi')},
+ {key:'pounds',label:'Mass · pounds',unit:'lb',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+pounds?\b|\b(${numberPattern})\s*lbs?\.?\b`,'gi')},
+ {key:'tons',label:'Mass · tons',unit:'tons',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+tons?\b`,'gi')},
+ {key:'seconds',label:'Duration · seconds',unit:'sec',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+seconds?\b`,'gi')},
+ {key:'minutes',label:'Duration · minutes',unit:'min',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+minutes?\b`,'gi')},
+ {key:'hours',label:'Duration · hours',unit:'hr',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+hours?\b`,'gi')},
+ {key:'days',label:'Duration · days',unit:'days',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+days?\b`,'gi')},
+ {key:'weeks',label:'Duration · weeks',unit:'weeks',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+weeks?\b`,'gi')},
+ {key:'years',label:'Duration · years',unit:'years',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+years?\b`,'gi')},
+ {key:'fahrenheit',label:'Temperature · Fahrenheit',unit:'°F',re:new RegExp(String.raw`\b(${numberPattern})\s*(?:°\s*)?F\b|\b(${numberPattern})(?:\s|-)+degrees?(?:\s|-)+Fahrenheit\b`,'gi')},
+ {key:'celsius',label:'Temperature · Celsius',unit:'°C',re:new RegExp(String.raw`\b(${numberPattern})\s*(?:°\s*)?C\b|\b(${numberPattern})(?:\s|-)+degrees?(?:\s|-)+Celsius\b`,'gi')}
 ];
 const sentenceContext=(text,start,end)=>{const left=Math.max(text.lastIndexOf('.',start-1),text.lastIndexOf('!',start-1),text.lastIndexOf('?',start-1))+1,stops=[text.indexOf('.',end),text.indexOf('!',end),text.indexOf('?',end)].filter(x=>x>=0),right=stops.length?Math.min(...stops)+1:Math.min(text.length,end+140),s=text.slice(left,right).trim();return s.length>260?s.slice(0,257).trimEnd()+'…':s};
 const overlaps=(a,b)=>a.start<b.end&&a.end>b.start,items=[];
