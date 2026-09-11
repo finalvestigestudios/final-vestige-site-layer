@@ -54,7 +54,9 @@ def main() -> int:
         if names != expected_names:
             fail(f"ZIP allowlist mismatch expected={sorted(expected_names)} actual={sorted(names)}")
 
-        manifest = json.loads(zf.read(f"{ZIP_ROOT}/release-manifest.json").decode("utf-8"))
+        manifest = json.loads(
+            zf.read(f"{ZIP_ROOT}/release-manifest.json").decode("utf-8")
+        )
         if manifest.get("repository") != REPOSITORY:
             fail("manifest repository mismatch")
         if manifest.get("branch") != BRANCH:
@@ -98,38 +100,75 @@ def main() -> int:
     known_secret = "11" * 32
     known_timestamp = 1_700_000_000
     known_nonce = "FixedNonce_1234567890"
-    body, headers = deploy_bridge.build_signed_request(secret=known_secret, commit=commit, package=package, timestamp=known_timestamp, nonce=known_nonce)
+    body, headers = deploy_bridge.build_signed_request(
+        secret=known_secret,
+        commit=commit,
+        package=package,
+        timestamp=known_timestamp,
+        nonce=known_nonce,
+    )
     body_sha = hashlib.sha256(body).hexdigest()
-    canonical = "\n".join([str(known_timestamp), known_nonce, REPOSITORY, BRANCH, commit, body_sha])
-    expected_signature = "sha256=" + hmac.new(known_secret.encode("ascii"), canonical.encode("utf-8"), hashlib.sha256).hexdigest()
+    canonical = "\n".join(
+        [
+            str(known_timestamp),
+            known_nonce,
+            REPOSITORY,
+            BRANCH,
+            commit,
+            body_sha,
+        ]
+    )
+    expected_signature = "sha256=" + hmac.new(
+        known_secret.encode("ascii"),
+        canonical.encode("utf-8"),
+        hashlib.sha256,
+    ).hexdigest()
     if headers.get("X-FV-Signature") != expected_signature:
         fail("HMAC canonicalization mismatch")
-    if headers.get("X-FV-Repository") != REPOSITORY or headers.get("X-FV-Branch") != BRANCH or headers.get("X-FV-Commit") != commit:
-        fail("sender identity header mismatch")
+    if headers.get("X-FV-Repository") != REPOSITORY:
+        fail("sender repository header mismatch")
+    if headers.get("X-FV-Branch") != BRANCH:
+        fail("sender branch header mismatch")
+    if headers.get("X-FV-Commit") != commit:
+        fail("sender commit header mismatch")
 
     envelope = json.loads(body.decode("utf-8"))
     if envelope.get("package_sha256") != hashlib.sha256(package).hexdigest():
         fail("sender package hash mismatch")
     if base64.b64decode(envelope.get("package_base64", ""), validate=True) != package:
         fail("sender base64 payload mismatch")
-    if hashlib.sha256(body + b" ").hexdigest() == body_sha:
+
+    tampered = body + b" "
+    if hashlib.sha256(tampered).hexdigest() == body_sha:
         fail("tamper test did not alter body hash")
 
     workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
     required_workflow_fragments = [
-        "needs: verify", "github.ref == 'refs/heads/production'", "secrets.FV_WP_DEPLOY_SECRET",
-        "python3 ops/deploy_bridge.py", "git diff --quiet \"$RELEASE_COMMIT\" HEAD",
-        "FVSL-QD-PASS:", "FVSL-QD-HEAD:", "FVSL-PACKAGE-SHA256:", "APPROVED_PACKAGE_SHA",
-        f"actions/checkout@{CHECKOUT_SHA}", f"actions/upload-artifact@{UPLOAD_ARTIFACT_SHA}",
+        "needs: verify",
+        "github.ref == 'refs/heads/production'",
+        "secrets.FV_WP_DEPLOY_SECRET",
+        "python3 ops/deploy_bridge.py",
+        "git diff --quiet \"$RELEASE_COMMIT\" HEAD",
+        "FVSL-QD-PASS:",
+        "FVSL-QD-HEAD:",
+        "FVSL-PACKAGE-SHA256:",
+        "APPROVED_PACKAGE_SHA",
+        f"actions/checkout@{CHECKOUT_SHA}",
+        f"actions/upload-artifact@{UPLOAD_ARTIFACT_SHA}",
         "python3 tests/verify_case_search.py",
     ]
     for fragment in required_workflow_fragments:
         if fragment not in workflow:
             fail(f"workflow missing fail-closed contract: {fragment}")
+
     if "    env:\n      FV_WP_DEPLOY_SECRET:" in workflow:
         fail("deployment secret must not be exposed at job scope")
 
-    print("DEPLOY LANE VERIFY: PASS " f"commit={commit} package_sha256={hashlib.sha256(package).hexdigest()} " f"bytes={len(package)} files={len(PACKAGE_FILES)}")
+    print(
+        "DEPLOY LANE VERIFY: PASS "
+        f"commit={commit} package_sha256={hashlib.sha256(package).hexdigest()} "
+        f"bytes={len(package)} files={len(PACKAGE_FILES)}"
+    )
     return 0
 
 
