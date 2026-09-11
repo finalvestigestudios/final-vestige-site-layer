@@ -32,7 +32,10 @@ def browser_run(prefix: Path, suffix: Path, label: str) -> None:
             timeout=30,
         )
         require(proc.returncode == 0, f"browser fixture {label} failed: {proc.stderr[-500:]}")
-        require('data-fv-test="pass"' in proc.stdout, f"browser fixture {label} assertions failed")
+        if 'data-fv-test="pass"' not in proc.stdout:
+            reason = re.search(r'data-fv-reason="([^"]*)"', proc.stdout)
+            detail = reason.group(1) if reason else "no fixture reason surfaced"
+            require(False, f"browser fixture {label} assertions failed: {detail}")
 
 
 def main() -> None:
