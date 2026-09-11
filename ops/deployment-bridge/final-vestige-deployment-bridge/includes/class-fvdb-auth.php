@@ -3,7 +3,9 @@ defined('ABSPATH') || exit;
 
 final class FVDB_Auth {
     private const OPTION_SECRET = 'fvdb_secret_v1';
+    private const NONCE_PREFIX = 'fvdb_nonce_v2_';
     private const MAX_SKEW = 300;
+    private const NONCE_TTL = 600;
 
     public static function ensure_secret(): void {
         if (!get_option(self::OPTION_SECRET)) {
@@ -30,25 +32,64 @@ final class FVDB_Auth {
         ];
     }
 
-    public static function authenticate(array $h, string $body_sha) {
+    public static function authenticate_deploy(array $h, string $body_sha) {
+        $common = self::validate_common($h);
+        if (is_wp_error($common)) {
+            return $common;
+        }
+        $commit = strtolower((string) ($h['commit'] ?? ''));
+        if (!preg_match('/^[a-f0-9]{40}$/', $commit)) {
+            return new WP_Error('invalid_commit', 'Commit SHA is invalid.');
+        }
+        $canonical = implode("\n", [
+            (string) $common['timestamp'],
+            $common['nonce'],
+            FVDB_EXPECTED_REPOSITORY,
+            FVDB_EXPECTED_BRANCH,
+            $commit,
+            $body_sha,
+        ]);
+        $verified = self::verify_signature($canonical, (string) ($h['signature'] ?? ''));
+        if (is_wp_error($verified)) {
+            return $verified;
+        }
+        return self::claim_nonce($common['nonce'], 'deploy');
+    }
+
+    public static function authenticate_status(array $h) {
+        $common = self::validate_common($h);
+        if (is_wp_error($common)) {
+            return $common;
+        }
+        $canonical = implode("\n", [
+            (string) $common['timestamp'],
+            $common['nonce'],
+            FVDB_EXPECTED_REPOSITORY,
+            FVDB_EXPECTED_BRANCH,
+            'status',
+        ]);
+        $verified = self::verify_signature($canonical, (string) ($h['signature'] ?? ''));
+        if (is_wp_error($verified)) {
+            return $verified;
+        }
+        return self::claim_nonce($common['nonce'], 'status');
+    }
+
+    private static function validate_common(array $h) {
         $secret = self::current_secret();
         if (strlen($secret) !== 64 || !ctype_xdigit($secret)) {
             return new WP_Error('bridge_unconfigured', 'Deployment bridge has no valid secret.');
         }
-        if (!ctype_digit($h['timestamp'] ?? '')) {
+        if (!ctype_digit((string) ($h['timestamp'] ?? ''))) {
             return new WP_Error('invalid_timestamp', 'Missing or invalid timestamp.');
         }
         $ts = (int) $h['timestamp'];
         if (abs(time() - $ts) > self::MAX_SKEW) {
             return new WP_Error('stale_request', 'Deployment request timestamp is outside the allowed window.');
         }
-        $nonce = $h['nonce'] ?? '';
+        $nonce = (string) ($h['nonce'] ?? '');
         if (!preg_match('/^[A-Za-z0-9_-]{16,96}$/', $nonce)) {
             return new WP_Error('invalid_nonce', 'Missing or invalid deployment nonce.');
-        }
-        $nonce_key = 'fvdb_nonce_' . hash('sha256', $nonce);
-        if (get_transient($nonce_key)) {
-            return new WP_Error('replay_rejected', 'Deployment nonce has already been used.');
         }
         if (($h['repository'] ?? '') !== FVDB_EXPECTED_REPOSITORY) {
             return new WP_Error('repository_rejected', 'Repository is not allowlisted.');
@@ -56,31 +97,39 @@ final class FVDB_Auth {
         if (($h['branch'] ?? '') !== FVDB_EXPECTED_BRANCH) {
             return new WP_Error('branch_rejected', 'Branch is not allowlisted.');
         }
-        $commit = strtolower((string) ($h['commit'] ?? ''));
-        if (!preg_match('/^[a-f0-9]{40}$/', $commit)) {
-            return new WP_Error('invalid_commit', 'Commit SHA is invalid.');
-        }
-        $signature = strtolower((string) ($h['signature'] ?? ''));
+        return ['timestamp' => $ts, 'nonce' => $nonce];
+    }
+
+    private static function verify_signature(string $canonical, string $signature) {
+        $signature = strtolower($signature);
         if (!preg_match('/^sha256=[a-f0-9]{64}$/', $signature)) {
             return new WP_Error('invalid_signature', 'Signature header is invalid.');
         }
-        $canonical = implode("\n", [
-            (string) $ts,
-            $nonce,
-            FVDB_EXPECTED_REPOSITORY,
-            FVDB_EXPECTED_BRANCH,
-            $commit,
-            $body_sha,
-        ]);
-        $expected = 'sha256=' . hash_hmac('sha256', $canonical, $secret);
+        $expected = 'sha256=' . hash_hmac('sha256', $canonical, self::current_secret());
         if (!hash_equals($expected, $signature)) {
             return new WP_Error('signature_mismatch', 'Request signature did not verify.');
         }
-
-        // Burn a valid nonce before any package processing. A signed malformed request may
-        // fail, but it cannot be replayed within the acceptance window.
-        set_transient($nonce_key, '1', 10 * MINUTE_IN_SECONDS);
         return true;
+    }
+
+    private static function claim_nonce(string $nonce, string $purpose) {
+        $key = self::NONCE_PREFIX . hash('sha256', $purpose . "\n" . $nonce);
+        $expires = time() + self::NONCE_TTL;
+
+        // add_option is a single INSERT guarded by the unique option_name index, making
+        // the first claim atomic across concurrent PHP workers. No get-then-set window.
+        if (add_option($key, $expires, '', false)) {
+            return true;
+        }
+
+        $existing = (int) get_option($key, 0);
+        if ($existing > 0 && $existing < time()) {
+            delete_option($key);
+            if (add_option($key, $expires, '', false)) {
+                return true;
+            }
+        }
+        return new WP_Error('replay_rejected', 'Deployment nonce has already been used.');
     }
 
     private static function new_secret(): string {
