@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "visual-trail-wp-block-r1.txt"
-EXPECTED_BYTES = None
-EXPECTED_SHA256 = None
+EXPECTED_BYTES = 12632
+EXPECTED_SHA256 = "0d60fe40fb3c70e45133a3a47bd1db0c6bcc24687e1fcf787fe2e81a4980510a"
 
 
 def require(condition: bool, message: str) -> None:
@@ -140,10 +140,8 @@ def main() -> None:
     actual_hash = hashlib.sha256(raw).hexdigest()
     print(f"VISUAL_TRAIL_R1_BYTES={len(raw)}")
     print(f"VISUAL_TRAIL_R1_SHA256={actual_hash}")
-    if EXPECTED_BYTES is not None:
-        require(len(raw) == EXPECTED_BYTES, f"payload byte count drifted: {len(raw)}")
-    if EXPECTED_SHA256 is not None:
-        require(actual_hash == EXPECTED_SHA256, f"payload SHA-256 drifted: {actual_hash}")
+    require(len(raw) == EXPECTED_BYTES, f"payload byte count drifted: {len(raw)}")
+    require(actual_hash == EXPECTED_SHA256, f"payload SHA-256 drifted: {actual_hash}")
     require(text.count("<!-- wp:html -->") == 1 and text.count("<!-- /wp:html -->") == 1, "single isolated wp:html block required")
     require("article h2#sources.fv-source-heading" in text and "canonical.length!==1" in text, "exact canonical Sources gate missing")
     require("article.querySelectorAll('#sources, .fv-source-heading')" in text, "competing partial source-boundary candidate scan missing")
@@ -165,7 +163,7 @@ def main() -> None:
         js_path.unlink(missing_ok=True)
     if os.environ.get("FV_BROWSER_RUNTIME") == "1":
         run_browser(text)
-    print("PASS: Visual Trail R1 exact canonical boundary remains valid; every ID-only, class-only, duplicate, earlier/later partial or reversed boundary fails closed; core navigation/focus, evidence disclosure and zero-persistence/network boundaries verified")
+    print("PASS: Visual Trail R1 exact payload identity locked; exact canonical boundary remains valid; every ID-only, class-only, duplicate, earlier/later partial or reversed boundary fails closed; core navigation/focus, evidence disclosure and zero-persistence/network boundaries verified")
 
 
 if __name__ == "__main__":
