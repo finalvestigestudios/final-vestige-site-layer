@@ -1,14 +1,21 @@
-# Final Vestige Deployment Bridge — FVDB-001-R1 / v0.3.0
+# Final Vestige Deployment Bridge — FVDB-001-R1.1 / v0.3.1
 
-Review-only hardening candidate for the no-additional-WordPress-plan deployment lane. It does not install, activate, deploy, merge, publish, index, or change WordPress production by itself.
+Review-only successor candidate for the no-additional-WordPress-plan deployment lane. It does not install, activate, deploy, merge, publish, index, or change WordPress production by itself.
 
-## R1 security changes
-- Atomic deployment mutex using WordPress `add_option()` unique-key insertion; concurrent authenticated deployments cannot overlap target/backup swaps.
+## R1.1 concurrency repair
+- Expired deployment mutex reclamation now uses an exact stored-value compare-and-delete against the WordPress options table. A stale reader cannot delete a successor lease acquired after its read.
+- Lock release uses the same exact-value conditional delete, preventing an expired owner's late release from deleting a replacement lease.
+- Expired nonce reclamation uses exact stored-value compare-and-delete; multiple stale readers cannot erase a successor nonce claim.
+- The runtime harness deterministically forces multiple workers to observe the same expired mutex before takeover and requires exactly one surviving owner with maximum critical-section overlap of one.
+- The runtime harness applies the same forced stale-read race to expired nonce takeover and requires exactly one accepted request.
+
+## Preserved R1 security controls
+- Atomic deployment mutex using WordPress `add_option()` unique-key insertion for fresh ownership.
 - Explicit idempotency key = SHA-256(commit + package SHA). A repeated release returns `already_deployed` only after installed manifest/file bytes re-verify.
 - Race-safe single-use nonce claims use atomic `add_option()` insertion instead of transient get→set logic.
-- `/status` is now HMAC-authenticated and returns only bridge version plus `ZipArchive` / direct-filesystem capability booleans.
+- `/status` is HMAC-authenticated and returns only bridge version plus `ZipArchive` / direct-filesystem capability booleans.
 - Rollback success is checked; failed restoration emits a distinct fail-closed error.
-- Adversarial runtime harness covers replay races, concurrent lock ownership, stale/bad signatures, status authentication/minimality, malformed/oversized/path-traversal/duplicate/encrypted archives, manifest mismatch, failed target swap, and post-swap rollback.
+- Adversarial runtime coverage retains stale/bad signatures, status authentication/minimality, malformed/oversized/path-traversal/duplicate/encrypted archives, manifest mismatch, failed target swap, and post-swap rollback.
 
 ## Gate order
 1. Independent QD reviews the exact GitHub PR/head plus static/runtime test evidence.
