@@ -59,7 +59,7 @@ The first two rules intentionally reject the mixed exact-plus-partial boundary c
 - 44px minimum interactive targets.
 - Explicit pressed state for route-mode controls.
 - Keyboard transport: Left, Right, Home, End.
-- Original citation/source objects receive visible temporary focus treatment after a jump.
+- Original citation/source objects receive deterministic focus handoff plus visible temporary focus treatment after a jump.
 - At <=680px the dialog becomes a full-height mobile surface.
 - Dedicated 360px tuning.
 - Reduced-motion, forced-colors, and print handling.
@@ -77,12 +77,12 @@ The tool exposes structural facts only: citation order, source number, source re
 - Base at build: `a2a499455d714c0238241fde9b76188efd1d7b1d`
 - Branch: `feature/source-route-v1`
 - Payload: `payloads/source-route-wp-block-v1.txt`
-- Payload bytes: **13,716**
-- Payload SHA-256: **`f18f31958530c25b7145357c6187cc79df46582ca66cd067a90a84447bb0c250`**
+- Payload bytes: **13,696**
+- Payload SHA-256: **`317ccae3a7a8f7598001cba796878771271ed1c76be0aecb5bb69cb2f8eed711`**
 - Deterministic verifier: `tests/verify_source_route.py`
 - Dedicated workflow: `.github/workflows/source-route-ci.yml`
 
-The verifier locks payload identity, JavaScript syntax, one-block packaging, the hardened mixed-boundary contract, wrapper-free live citation-anchor compatibility, legacy-wrapper compatibility, exact citation-to-note mapping, bounded qualification, route modes, original-DOM focus return, accessibility/mobile controls, absence of network/persistence APIs, and headless-browser success/fail-closed fixtures.
+The verifier locks payload identity, JavaScript syntax, one-block packaging, the hardened mixed-boundary contract, wrapper-free live citation-anchor compatibility, legacy-wrapper compatibility, exact citation-to-note mapping, bounded qualification, route modes, original-DOM targeting and focus handoff, accessibility/mobile controls, absence of network/persistence APIs, and headless-browser success/fail-closed fixtures.
 
 ## Live-source compatibility target
 
