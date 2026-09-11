@@ -62,8 +62,8 @@ Case Compass reads only the current page DOM. It does not use cookies, browser p
 ## Frozen artifact identity
 
 - payload: `payloads/case-compass-wp-block-v1.txt`
-- bytes: `15715`
-- SHA-256: `d3ca15b270f3bb1ccfdd93d43563949614a007bbea6bdd5ed6a8b0017fa282a2`
+- bytes: `15713`
+- SHA-256: `6e4e0a8abb25676924d7a4f7bbfcbe024e7a3a19c1f267854ca16849dd7c37ee`
 - deterministic verifier: `tests/verify_case_compass.py`
 - dedicated workflow: `.github/workflows/case-compass-ci.yml`
 
