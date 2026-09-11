@@ -67,16 +67,26 @@ def write_entry(zf: zipfile.ZipFile, name: str, data: bytes) -> None:
     info.compress_type = zipfile.ZIP_STORED
     info.external_attr = 0o100644 << 16
     info.create_system = 3
-    zf.writestr(info, data, compress_type=zipfile.ZIP_STORED)
+    zf.writestr(
+        info,
+        data,
+        compress_type=zipfile.ZIP_STORED,
+    )
 
 
 def build(commit: str, output: Path) -> tuple[str, int]:
     output.parent.mkdir(parents=True, exist_ok=True)
     manifest_bytes = build_manifest(commit)
-    entries: dict[str, bytes] = {f"{ZIP_ROOT}/{rel}": (ROOT / rel).read_bytes() for rel in PACKAGE_FILES}
+
+    entries: dict[str, bytes] = {
+        f"{ZIP_ROOT}/{rel}": (ROOT / rel).read_bytes()
+        for rel in PACKAGE_FILES
+    }
     entries[f"{ZIP_ROOT}/release-manifest.json"] = manifest_bytes
 
-    with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_STORED) as zf:
+    with zipfile.ZipFile(
+        output, "w", compression=zipfile.ZIP_STORED
+    ) as zf:
         for name in sorted(entries):
             write_entry(zf, name, entries[name])
 
@@ -89,6 +99,7 @@ def main() -> int:
     parser.add_argument("commit")
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
+
     digest, size = build(args.commit.lower(), args.output)
     print(f"package={args.output}")
     print(f"sha256={digest}")
