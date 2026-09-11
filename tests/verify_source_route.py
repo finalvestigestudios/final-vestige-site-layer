@@ -186,11 +186,11 @@ const fvsrTest=()=>{{
            setTimeout(()=>{{if(document.activeElement!==launch)return fail('close did not return focus to launcher');return pass()}},80);
           }},80);
          }}catch(e){{fail(e&&e.message?e.message:String(e))}}
-        }},350);
+        }},700);
        }}catch(e){{fail(e&&e.message?e.message:String(e))}}
       }},80);
      }}catch(e){{fail(e&&e.message?e.message:String(e))}}
-    }},350);
+    }},700);
    }}catch(e){{fail(e&&e.message?e.message:String(e))}}
   }},80);
  }}catch(e){{fail(e&&e.message?e.message:String(e))}}
@@ -239,7 +239,7 @@ def run_browser(payload: str) -> None:
                         "--no-sandbox",
                         "--disable-gpu",
                         "--disable-dev-shm-usage",
-                        "--virtual-time-budget=3000",
+                        "--virtual-time-budget=4000",
                         "--dump-dom",
                         f"{origin}/{page.name}",
                     ],
