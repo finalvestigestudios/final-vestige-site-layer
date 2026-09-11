@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Final Vestige Site Layer
  * Description: Versioned, fail-closed delivery layer for QD-reviewed Final Vestige front-end features.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Final Vestige Studios
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -10,8 +10,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FVSL_VERSION', '0.1.0' );
-define( 'FVSL_RELEASE_ID', 'FVSL-BOOTSTRAP-001' );
+define( 'FVSL_VERSION', '0.2.0' );
+define( 'FVSL_RELEASE_ID', 'FVSL-CASE-SEARCH-001' );
 
 /**
  * Exact QD-reviewed payload identities. Any byte drift disables the entire layer.
@@ -34,6 +34,11 @@ function fvsl_release_manifest() {
             'file'   => 'detail-lens-wp-block-v1.txt',
             'bytes'  => 15617,
             'sha256' => 'a4c20692a2c51643af17a1502cd93aabcf5e0a6c2a64ffdd35096411129ce859',
+        ),
+        'case-search' => array(
+            'file'   => 'case-search-wp-block-v1.txt',
+            'bytes'  => 17534,
+            'sha256' => 'e313db1e31ff1fce01b8bbd5d8dda03673b9a52aadcc7cbecafd2cec50dcc6a7',
         ),
     );
 }
@@ -77,7 +82,7 @@ function fvsl_release_is_intact() {
 
 /**
  * Emit the exact reviewed payloads at the standard front-end footer hook.
- * Evidence Map and Detail Lens contain their own fail-closed page qualification.
+ * Individual payloads contain their own fail-closed page qualification.
  *
  * @return void
  */
