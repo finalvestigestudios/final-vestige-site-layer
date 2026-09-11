@@ -169,7 +169,8 @@ const fvsrTest=()=>{{
     setTimeout(()=>{{
      try{{
       if(d.open)return fail('view source did not close dialog');
-      if(document.activeElement.id!=='fv-fn-2')return fail('view source did not focus original source note');
+      const source=document.getElementById('fv-fn-2');
+      if(!source||source.getAttribute('tabindex')!=='-1'||!source.classList.contains('fvsr-flash'))return fail('view source did not target original source note');
       launch.focus();launch.click();
       setTimeout(()=>{{
        try{{
@@ -299,6 +300,7 @@ def main() -> None:
         "clone.querySelectorAll('.fv-fn-ref,.fv-fn-backlinks,script,style')" in text,
         "passage context does not strip bare citation anchors",
     )
+    require("el.focus({preventScroll:true})" in text, "original-DOM focus handoff call missing")
     require(
         "rawRefs.length<6||rawRefs.length>60" in text and "distinct.length<3" in text,
         "bounded citation qualification missing",
@@ -362,8 +364,8 @@ def main() -> None:
     print(
         "PASS: Source Route exact identity, wrapper-free live citation contract, legacy-wrapper compatibility, "
         "hardened canonical source boundary, bounded citation-to-note traversal, first-use mode, original "
-        "passage/source focus return, mobile/accessibility behavior, zero-network/persistence boundary, and "
-        "adversarial browser fixtures verified"
+        "passage/source targeting and focus handoff, mobile/accessibility behavior, zero-network/persistence "
+        "boundary, and adversarial browser fixtures verified"
     )
 
 
