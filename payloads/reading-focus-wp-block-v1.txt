@@ -1,0 +1,101 @@
+<!-- wp:html -->
+<style id="fv-reading-focus-v1-css">
+.fv-reading-focus-launch{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:28px auto;padding:14px 16px;max-width:760px;border-top:1px solid #3A3833;border-bottom:1px solid #3A3833;color:#AAA49A;background:#0E0F0F}
+.fv-reading-focus-launch__copy{margin:0;font-size:13px;line-height:1.5}
+.fv-reading-focus-launch__copy strong{display:block;margin-bottom:2px;color:#F4EFE6;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.fv-reading-focus-launch__button,.fv-reading-focus-dock button{min-height:44px;min-width:44px;border:1px solid #4A463F;border-radius:2px;background:#151515;color:#F4EFE6;font:700 12px/1.2 system-ui,sans-serif;letter-spacing:.02em;cursor:pointer}
+.fv-reading-focus-launch__button{flex:0 0 auto;padding:0 15px;color:#C7A66C}
+.fv-reading-focus-launch__button:hover,.fv-reading-focus-launch__button:focus-visible,.fv-reading-focus-dock button:hover,.fv-reading-focus-dock button:focus-visible{border-color:#B8955E;outline:2px solid transparent;color:#FFF8EC}
+.fv-reading-focus-launch__button[aria-pressed="true"]{background:#B8955E;border-color:#B8955E;color:#0A0B0B}
+.fv-reading-focus-dock{position:fixed;z-index:99990;left:50%;bottom:18px;transform:translateX(-50%);display:none;align-items:center;gap:7px;max-width:min(94vw,760px);padding:8px;background:rgba(10,11,11,.97);border:1px solid #4A463F;border-radius:4px;box-shadow:0 14px 40px rgba(0,0,0,.34)}
+body[data-fv-reading-focus="on"] .fv-reading-focus-dock{display:flex}
+.fv-reading-focus-dock button{padding:0 12px;white-space:nowrap}
+.fv-reading-focus-dock button[aria-pressed="true"]{border-color:#B8955E;color:#C7A66C}
+.fv-reading-focus-dock button:disabled{opacity:.42;cursor:not-allowed}
+.fv-reading-focus-dock__label{padding:0 5px;color:#908A80;font:700 10px/1.2 system-ui,sans-serif;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap}
+.fv-reading-focus-status{position:fixed!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+body[data-fv-reading-focus="on"] .fv-site-header,
+body[data-fv-reading-focus="on"] footer{display:none!important}
+body[data-fv-reading-focus="on"] .fv-reading-focus-root .fv-rf-prose{max-width:44rem;margin-left:auto!important;margin-right:auto!important;line-height:1.75!important;text-align:left!important;transition:max-width .14s ease,font-size .14s ease,background-color .14s ease,border-color .14s ease}
+body[data-fv-reading-focus="on"][data-fv-rf-measure="narrow"] .fv-reading-focus-root .fv-rf-prose{max-width:34rem}
+body[data-fv-reading-focus="on"][data-fv-rf-measure="wide"] .fv-reading-focus-root .fv-rf-prose{max-width:54rem}
+body[data-fv-reading-focus="on"][data-fv-rf-scale="115"] .fv-reading-focus-root .fv-rf-prose{font-size:1.15em!important}
+body[data-fv-reading-focus="on"][data-fv-rf-scale="130"] .fv-reading-focus-root .fv-rf-prose{font-size:1.30em!important}
+body[data-fv-reading-focus="on"] .fv-reading-focus-root .fv-rf-heading{max-width:54rem;margin-left:auto!important;margin-right:auto!important}
+body[data-fv-reading-focus="on"][data-fv-rf-guide="on"] .fv-reading-focus-root .fv-rf-current{padding-left:16px;border-left:3px solid #B8955E;background:rgba(184,149,94,.08)}
+body[data-fv-reading-focus="on"] .fv-reading-focus-root .fv-rf-prose,
+body[data-fv-reading-focus="on"] .fv-reading-focus-root .fv-rf-heading{scroll-margin-top:22vh}
+@media(max-width:620px){
+  .fv-reading-focus-launch{align-items:flex-start;flex-direction:column}
+  .fv-reading-focus-launch__button{width:100%}
+  .fv-reading-focus-dock{left:10px;right:10px;bottom:10px;transform:none;max-width:none;flex-wrap:wrap;justify-content:center}
+  .fv-reading-focus-dock__label{width:100%;text-align:center}
+  .fv-reading-focus-dock button{flex:1 1 auto}
+}
+@media(max-width:360px){
+  .fv-reading-focus-launch{margin:22px 0;padding:13px 0}
+  .fv-reading-focus-dock{left:6px;right:6px;bottom:6px;padding:6px}
+  .fv-reading-focus-dock button{padding:0 8px;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-fv-reading-focus="on"] .fv-reading-focus-root .fv-rf-prose{transition:none!important}
+}
+@media(forced-colors:active){
+  .fv-reading-focus-launch,.fv-reading-focus-dock,.fv-reading-focus-launch__button,.fv-reading-focus-dock button{border-color:CanvasText}
+  body[data-fv-reading-focus="on"][data-fv-rf-guide="on"] .fv-reading-focus-root .fv-rf-current{border-left-color:Highlight;background:Canvas}
+}
+@media print{
+  .fv-reading-focus-launch,.fv-reading-focus-dock,.fv-reading-focus-status{display:none!important}
+}
+</style>
+<script id="fv-reading-focus-v1-js">
+(()=>{if(window.__fvReadingFocus)return;window.__fvReadingFocus=true;
+const body=document.body;
+if(!body||(body.classList.contains('wp-admin')||body.classList.contains('admin-bar')&&location.pathname.includes('/wp-admin/')))return;
+const isSingle=body.classList.contains('single-post')||body.classList.contains('single');
+if(!isSingle)return;
+const root=document.querySelector('.wp-block-post-content')||document.querySelector('article .entry-content')||document.querySelector('article');
+if(!root)return;
+const excluded='[data-fv-footnotes],.fv-source-list,figcaption,nav,footer,.wp-block-navigation,.sharedaddy,.sd-sharing-enabled,.fv-reading-focus-launch,.fv-reading-focus-dock';
+const sourceHeading=root.querySelector('#sources,.fv-source-heading');
+const beforeSource=node=>!sourceHeading||Boolean(node.compareDocumentPosition(sourceHeading)&Node.DOCUMENT_POSITION_FOLLOWING);
+const prose=[...root.querySelectorAll('p')].filter(p=>beforeSource(p)&&!p.closest(excluded)&&p.textContent.trim().length>=55);
+const totalText=prose.reduce((n,p)=>n+p.textContent.trim().length,0);
+if(prose.length<12||totalText<3000)return;
+root.classList.add('fv-reading-focus-root');
+prose.forEach(p=>p.classList.add('fv-rf-prose'));
+[...root.querySelectorAll('h2,h3')].filter(beforeSource).forEach(h=>h.classList.add('fv-rf-heading'));
+const anchor=prose[Math.min(2,prose.length-1)];
+const launch=document.createElement('aside');
+launch.className='fv-reading-focus-launch';
+launch.setAttribute('aria-label','Reading focus');
+launch.innerHTML='<p class="fv-reading-focus-launch__copy"><strong>Reading focus</strong>Adjust text size, reading width, or guide one paragraph at a time. Nothing is saved.</p><button type="button" class="fv-reading-focus-launch__button" aria-pressed="false">Open reading focus</button>';
+anchor.insertAdjacentElement('afterend',launch);
+const launcher=launch.querySelector('button');
+const dock=document.createElement('section');
+dock.className='fv-reading-focus-dock';
+dock.setAttribute('role','region');
+dock.setAttribute('aria-label','Reading focus controls');
+dock.innerHTML='<span class="fv-reading-focus-dock__label">Reading focus</span><button type="button" data-rf="scale" aria-label="Text size: 100 percent">Text 100%</button><button type="button" data-rf="measure" aria-label="Reading width: standard">Width standard</button><button type="button" data-rf="guide" aria-pressed="false">Paragraph guide</button><button type="button" data-rf="prev" disabled aria-label="Previous paragraph">Previous</button><button type="button" data-rf="next" disabled aria-label="Next paragraph">Next</button><button type="button" data-rf="exit" aria-keyshortcuts="Escape">Exit</button>';
+body.appendChild(dock);
+const status=document.createElement('span');status.className='fv-reading-focus-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');body.appendChild(status);
+const scaleBtn=dock.querySelector('[data-rf="scale"]'),measureBtn=dock.querySelector('[data-rf="measure"]'),guideBtn=dock.querySelector('[data-rf="guide"]'),prevBtn=dock.querySelector('[data-rf="prev"]'),nextBtn=dock.querySelector('[data-rf="next"]'),exitBtn=dock.querySelector('[data-rf="exit"]');
+const scales=['100','115','130'],measures=['standard','narrow','wide'];let active=false,scaleIndex=0,measureIndex=0,guide=false,currentIndex=0,raf=0;
+const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+const announce=t=>{status.textContent='';requestAnimationFrame(()=>status.textContent=t)};
+const setCurrent=i=>{if(!prose.length)return;currentIndex=Math.max(0,Math.min(i,prose.length-1));prose.forEach((p,n)=>p.classList.toggle('fv-rf-current',n===currentIndex));prevBtn.disabled=!guide||currentIndex===0;nextBtn.disabled=!guide||currentIndex===prose.length-1};
+const nearestIndex=()=>{const target=innerHeight*.42;let best=0,dist=Infinity;prose.forEach((p,i)=>{const r=p.getBoundingClientRect();const center=r.top+Math.min(r.height,target)*.35;const d=Math.abs(center-target);if(d<dist){dist=d;best=i}});return best};
+const syncGuide=()=>{if(!active||!guide)return;setCurrent(nearestIndex())};
+const onScroll=()=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;syncGuide()})};
+const activate=()=>{if(active)return;active=true;body.setAttribute('data-fv-reading-focus','on');body.setAttribute('data-fv-rf-scale',scales[scaleIndex]);body.setAttribute('data-fv-rf-measure',measures[measureIndex]);body.setAttribute('data-fv-rf-guide',guide?'on':'off');launcher.setAttribute('aria-pressed','true');launcher.textContent='Reading focus on';setCurrent(nearestIndex());window.addEventListener('scroll',onScroll,{passive:true});scaleBtn.focus();announce('Reading focus on. Use the controls to adjust the article.')};
+const deactivate=()=>{if(!active)return;active=false;guide=false;body.removeAttribute('data-fv-reading-focus');body.removeAttribute('data-fv-rf-scale');body.removeAttribute('data-fv-rf-measure');body.removeAttribute('data-fv-rf-guide');prose.forEach(p=>p.classList.remove('fv-rf-current'));guideBtn.setAttribute('aria-pressed','false');prevBtn.disabled=true;nextBtn.disabled=true;launcher.setAttribute('aria-pressed','false');launcher.textContent='Open reading focus';window.removeEventListener('scroll',onScroll);launcher.focus();announce('Reading focus off.')};
+launcher.addEventListener('click',()=>active?deactivate():activate());
+scaleBtn.addEventListener('click',()=>{scaleIndex=(scaleIndex+1)%scales.length;const value=scales[scaleIndex];body.setAttribute('data-fv-rf-scale',value);scaleBtn.textContent=`Text ${value}%`;scaleBtn.setAttribute('aria-label',`Text size: ${value} percent`);announce(`Text size ${value} percent.`)});
+measureBtn.addEventListener('click',()=>{measureIndex=(measureIndex+1)%measures.length;const value=measures[measureIndex];body.setAttribute('data-fv-rf-measure',value);measureBtn.textContent=`Width ${value}`;measureBtn.setAttribute('aria-label',`Reading width: ${value}`);announce(`Reading width ${value}.`)});
+guideBtn.addEventListener('click',()=>{guide=!guide;body.setAttribute('data-fv-rf-guide',guide?'on':'off');guideBtn.setAttribute('aria-pressed',String(guide));guideBtn.textContent=guide?'Paragraph guide on':'Paragraph guide';setCurrent(nearestIndex());announce(guide?'Paragraph guide on. Previous and Next move through the article.':'Paragraph guide off.')});
+const move=delta=>{if(!guide)return;setCurrent(currentIndex+delta);prose[currentIndex].scrollIntoView({block:'center',behavior:reduced()?'auto':'smooth'});const excerpt=prose[currentIndex].textContent.trim().replace(/\s+/g,' ').slice(0,120);announce(`Paragraph ${currentIndex+1} of ${prose.length}. ${excerpt}`)};
+prevBtn.addEventListener('click',()=>move(-1));nextBtn.addEventListener('click',()=>move(1));exitBtn.addEventListener('click',deactivate);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&active&&!document.querySelector('dialog[open]')){e.preventDefault();deactivate()}});
+})();
+</script>
+<!-- /wp:html -->
