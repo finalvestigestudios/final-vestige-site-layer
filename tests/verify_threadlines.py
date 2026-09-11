@@ -78,16 +78,17 @@ const runThreadlinesFixture=()=>{{
     const button=section.querySelector('.fvt-load');button.click();
     setTimeout(()=>{{
       try{{
-        if(window.__fvFetchCalls.length!==2)return fail('expected exactly two public REST requests');
+        const expectedCalls={json.dumps(mode)}==='fetchfail'?1:2;
+        if(window.__fvFetchCalls.length!==expectedCalls)return fail(`expected ${{expectedCalls}} public REST request${{expectedCalls===1?'':'s'}}`);
         if(window.__fvFetchCalls.some(c=>new URL(c.url).origin!==location.origin))return fail('cross-origin request attempted');
         if(window.__fvFetchCalls.some(c=>c.opts.credentials!=='omit'))return fail('public REST requests included credentials');
         if(window.__fvFetchCalls.some(c=>!new URL(c.url).pathname.startsWith('/wp-json/wp/v2/')))return fail('request escaped WP public REST path');
-        if(!window.__fvFetchCalls[1].url.includes('status=publish')||!window.__fvFetchCalls[1].url.includes('_fields='))return fail('candidate request not bounded to published lightweight fields');
         if({json.dumps(mode)}==='fetchfail'){{
           if(button.disabled||button.textContent!=='Try again')return fail('retry state missing after REST failure');
           if(section.querySelectorAll('.fvt-card').length)return fail('failed load rendered candidates');
           document.body.dataset.fvTest='pass';return;
         }}
+        if(!window.__fvFetchCalls[1].url.includes('status=publish')||!window.__fvFetchCalls[1].url.includes('_fields='))return fail('candidate request not bounded to published lightweight fields');
         const links=[...section.querySelectorAll('.fvt-card a[href]')];
         if(links.length!==4)return fail('expected four ranked related investigations');
         if(links.some(a=>new URL(a.href).origin!==location.origin))return fail('external candidate link was not rejected');
