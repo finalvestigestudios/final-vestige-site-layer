@@ -9,7 +9,7 @@ file_put_contents($root . '/wp/wp-admin/includes/plugin.php', "<?php\n");
 define('ABSPATH', $root . '/wp/');
 define('WP_CONTENT_DIR', $root . '/content');
 define('WP_PLUGIN_DIR', $root . '/content/plugins');
-define('FVDB_VERSION', '0.3.0');
+define('FVDB_VERSION', '0.3.1');
 define('FVDB_EXPECTED_REPOSITORY', 'finalvestigestudios/final-vestige-site-layer');
 define('FVDB_EXPECTED_BRANCH', 'production');
 define('FVDB_TARGET_SLUG', 'final-vestige-site-layer');
@@ -44,6 +44,20 @@ function add_action(...$a): void {}
 function register_rest_route(...$a): void {}
 function __return_true(): bool { return true; }
 function is_plugin_active($plugin): bool { return false; }
+function wp_cache_delete($key, $group = ''): bool { return true; }
+function maybe_serialize($value) {
+    if (is_array($value) || is_object($value)) return serialize($value);
+    return (string)$value;
+}
+function maybe_unserialize($value) {
+    if (!is_string($value)) return $value;
+    $trim = trim($value);
+    if ($trim === 'N;' || preg_match('/^[aObisdC]:/', $trim)) {
+        $decoded = @unserialize($value);
+        if ($decoded !== false || $value === 'b:0;') return $decoded;
+    }
+    return $value;
+}
 
 function store_tx(callable $fn) {
     global $store;
@@ -69,6 +83,67 @@ function add_option($key, $value = '', $deprecated = '', $autoload = 'yes'): boo
 }
 function delete_option($key): bool {
     return store_tx(function($d) use ($key) { $had = array_key_exists($key, $d); unset($d[$key]); return [$d, $had]; });
+}
+function fvdb_test_barrier_after_raw_read(string $key): void {
+    $dir = getenv('FVDB_TEST_BARRIER_DIR') ?: '';
+    $prefix = getenv('FVDB_TEST_BARRIER_KEY_PREFIX') ?: '';
+    $count = (int)(getenv('FVDB_TEST_BARRIER_COUNT') ?: 0);
+    if ($dir === '' || $prefix === '' || $count < 2 || !str_starts_with($key, $prefix)) return;
+    if (!is_dir($dir)) @mkdir($dir, 0777, true);
+    file_put_contents($dir . '/' . getmypid(), $key);
+    $deadline = microtime(true) + 8.0;
+    while (count(glob($dir . '/*') ?: []) < $count) {
+        if (microtime(true) > $deadline) throw new RuntimeException('barrier timeout for ' . $key);
+        usleep(10000);
+    }
+}
+function fvdb_decode_prepared(string $prepared): array {
+    if (!str_starts_with($prepared, 'FVDB_PREP:')) throw new RuntimeException('unexpected SQL in test');
+    $decoded = json_decode((string)base64_decode(substr($prepared, 10), true), true);
+    if (!is_array($decoded) || !isset($decoded['args']) || !is_array($decoded['args'])) throw new RuntimeException('bad prepared SQL');
+    return $decoded;
+}
+final class FVDB_Test_WPDB {
+    public string $options = 'wp_options';
+    public function prepare(string $query, ...$args): string {
+        return 'FVDB_PREP:' . base64_encode(json_encode(['query'=>$query, 'args'=>$args], JSON_UNESCAPED_SLASHES));
+    }
+    public function get_var(string $prepared) {
+        $decoded = fvdb_decode_prepared($prepared);
+        $key = (string)($decoded['args'][0] ?? '');
+        $raw = store_tx(function($d) use ($key) {
+            $value = array_key_exists($key, $d) ? maybe_serialize($d[$key]) : null;
+            return [$d, $value];
+        });
+        fvdb_test_barrier_after_raw_read($key);
+        return $raw;
+    }
+    public function query(string $prepared): int {
+        $decoded = fvdb_decode_prepared($prepared);
+        $key = (string)($decoded['args'][0] ?? '');
+        $expected = (string)($decoded['args'][1] ?? '');
+        return store_tx(function($d) use ($key, $expected) {
+            if (!array_key_exists($key, $d) || maybe_serialize($d[$key]) !== $expected) return [$d, 0];
+            unset($d[$key]);
+            return [$d, 1];
+        });
+    }
+}
+$wpdb = new FVDB_Test_WPDB();
+
+function test_critical_enter(): void {
+    store_tx(function($d) {
+        $active = (int)($d['__critical_active'] ?? 0) + 1;
+        $d['__critical_active'] = $active;
+        $d['__critical_max'] = max((int)($d['__critical_max'] ?? 0), $active);
+        return [$d, null];
+    });
+}
+function test_critical_leave(): void {
+    store_tx(function($d) {
+        $d['__critical_active'] = max(0, (int)($d['__critical_active'] ?? 0) - 1);
+        return [$d, null];
+    });
 }
 
 if (!class_exists('ZipArchive')) {
@@ -140,10 +215,15 @@ if ($scenario === 'replay_worker') {
     echo is_wp_error($r) ? $r->get_error_code() : 'OK';
     exit;
 }
-if ($scenario === 'lock_worker') {
-    $token = FVDB_Lock::acquire('same-idempotency-key');
+if ($scenario === 'lock_worker' || $scenario === 'stale_lock_worker') {
+    $token = FVDB_Lock::acquire($scenario === 'lock_worker' ? 'same-idempotency-key' : 'stale-takeover-idempotency-key');
     if (is_wp_error($token)) { echo $token->get_error_code(); exit; }
-    echo 'ACQUIRED'; fflush(STDOUT); usleep(350000); FVDB_Lock::release($token); exit;
+    test_critical_enter();
+    echo 'ACQUIRED'; fflush(STDOUT);
+    usleep($scenario === 'stale_lock_worker' ? 800000 : 350000);
+    test_critical_leave();
+    FVDB_Lock::release($token);
+    exit;
 }
 
 $commit = str_repeat('a', 40);
