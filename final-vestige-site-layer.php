@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Final Vestige Site Layer
  * Description: Versioned, fail-closed delivery layer for QD-reviewed Final Vestige front-end features.
- * Version: 0.2.0
+ * Version: 0.2.1
  * Author: Final Vestige Studios
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -10,8 +10,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FVSL_VERSION', '0.2.0' );
-define( 'FVSL_RELEASE_ID', 'FVSL-CASE-SEARCH-001' );
+define( 'FVSL_VERSION', '0.2.1' );
+define( 'FVSL_RELEASE_ID', 'FVSL-E2E-CANARY-001' );
+define( 'FVSL_PIPELINE_CANARY', 'FVS-E2E-20260911-A' );
 
 /**
  * Exact QD-reviewed payload identities. Any byte drift disables the entire layer.
