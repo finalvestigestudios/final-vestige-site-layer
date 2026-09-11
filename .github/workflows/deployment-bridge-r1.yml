@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      FVDB_TEST_PHP_CMD: php -n
+      FVDB_TEST_PHP_CMD: php -n -d extension=ctype
     steps:
       - uses: actions/checkout@v4
 
