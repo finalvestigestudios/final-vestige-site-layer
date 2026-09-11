@@ -2,10 +2,10 @@
 
 ## 0.3.0 — FVSL-SCALE-BOARD-001
 
-- Integrates the exact QD-passed FVF-21 Scale Board R4 payload into the governed Site Layer runtime.
-- Preserves the reviewed Scale Board payload identity: 17,520 bytes, SHA-256 `ecd9a6aed288061abd2ec55d53a049595174f8579178be773802d8ce7b325fee`.
-- Adds the R4 browser/adversarial verifier and fixtures to the executable integration candidate.
-- Extends deterministic release/package integrity checks to include Scale Board.
+- Integrates the bounded FVF-21 Scale Board R5 executable repair into the governed Site Layer runtime.
+- Replaces the QD-blocked R4 story-jump behavior with nondestructive focus/highlight handling: no random story-point `id`, absent `tabindex` restored after focus, pre-owned/nondefault `tabindex` values preserved, and pre-owned flash classes left intact.
+- Preserves the R1–R4 extraction-truth, Sources-boundary, accessibility, privacy, no-network and no-storage contracts with exact-payload browser regressions.
+- Extends deterministic release/package integrity checks to the exact R5 payload identity.
 - Keeps merge, deployment, whole-site launch/indexing, and destination verification behind their existing governance gates.
 
 ## 0.1.0 — FVSL-BOOTSTRAP-001
