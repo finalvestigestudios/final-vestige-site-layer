@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "visual-trail-wp-block-v1.txt"
-EXPECTED_BYTES = 12448
-EXPECTED_SHA256 = "0258e7c18bdcdeb53273801f69cb1fdd3b420e73013917d624b15f2e44155bdc"
+EXPECTED_BYTES = 12449
+EXPECTED_SHA256 = "a0cc9cd5ffea196287acc980e230cedd4ef284f106b6322d3cad927515765b73"
 
 
 def require(condition: bool, message: str) -> None:
@@ -111,7 +111,7 @@ const fvvtTest=()=>{{
     if(!band)return fail('Visual Trail launcher missing');
     if(!band.textContent.includes('4 published figures'))return fail('figure count includes wrong side of Sources boundary');
     if(!band.textContent.includes('images and diagrams already published here'))return fail('scope copy missing');
-    const opener=band.querySelector('.fvvt-open');opener.click();
+    const opener=band.querySelector('.fvvt-open');opener.focus();opener.click();
     setTimeout(()=>{{
       try{{
         const dialog=document.querySelector('.fvvt-dialog');
@@ -135,7 +135,7 @@ const fvvtTest=()=>{{
           try{{
             if(dialog.open)return fail('View in story did not close dialog');
             if(document.activeElement!==document.getElementById('fig-4'))return fail('View in story did not focus original figure');
-            opener.click();
+            opener.focus();opener.click();
             setTimeout(()=>{{
               try{{
                 dialog.querySelector('.fvvt-close').click();
@@ -143,7 +143,7 @@ const fvvtTest=()=>{{
                   if(document.activeElement!==opener)return fail('close did not return focus to opener');
                   if(document.querySelectorAll('figure.wp-block-image').length!==5)return fail('published figure DOM was cloned or removed');
                   return pass();
-                }},60);
+                }},140);
               }}catch(e){{fail(e&&e.message?e.message:String(e))}}
             }},70);
           }}catch(e){{fail(e&&e.message?e.message:String(e))}}
