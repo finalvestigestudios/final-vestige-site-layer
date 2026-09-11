@@ -50,7 +50,7 @@ figure.wp-block-image>.fved-pin{margin-top:10px}
 </style>
 <script id="fv-evidence-desk-v1-js">
 (()=>{'use strict';
-if(window.__fvEvidenceDesk)return;window.__fvEvidenceDesk={version:'1.0.0'};
+if(window.__fvEvidenceDesk)return;window.__fvEvidenceDesk={version:'1.0.1'};
 const start=()=>{
   if(!document.body.classList.contains('single-post'))return;
   const article=document.querySelector('main article,article.single,article');if(!article)return;
@@ -75,11 +75,23 @@ const start=()=>{
     clone.querySelectorAll('.fv-fn-backlinks,.fved-pin,[data-fv-feature-ui]').forEach(n=>n.remove());
     return clone.textContent.replace(/\s+/g,' ').trim();
   };
+  const externalSourceHref=(li)=>{
+    const anchors=[...li.querySelectorAll('a[href]')].filter(a=>!a.closest('.fv-fn-backlinks'));
+    for(const a of anchors){
+      const raw=(a.getAttribute('href')||'').trim();
+      if(!/^https?:\/\//i.test(raw))continue;
+      let url;try{url=new URL(raw,document.baseURI)}catch(_){continue}
+      if(url.protocol!=='http:'&&url.protocol!=='https:')continue;
+      if(url.origin===location.origin||url.hostname===location.hostname)continue;
+      return url.href;
+    }
+    return '';
+  };
   const items=new Map();
   validNotes.forEach(li=>{
     const m=li.id.match(notePattern);if(!m)return;
-    const external=[...li.querySelectorAll('a[href]')].find(a=>/^https?:\/\//i.test(a.href||''));
-    items.set(`source-${m[1]}`,{key:`source-${m[1]}`,type:'source',label:`Source ${m[1]}`,target:li,text:cleanText(li),href:external?external.href:''});
+    const href=externalSourceHref(li);
+    items.set(`source-${m[1]}`,{key:`source-${m[1]}`,type:'source',label:`Source ${m[1]}`,target:li,text:cleanText(li),href});
   });
   figures.forEach((figure,i)=>{
     const caption=figure.querySelector('figcaption');
