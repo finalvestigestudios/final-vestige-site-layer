@@ -35,18 +35,20 @@ Only the valid canonical fixture may activate. The valid path also verifies boun
 - 44px controls, native dialog, reduced-motion/forced-colors/mobile/print handling preserved;
 - visible disclosure continues to state that Visual Trail does not rate evidentiary weight.
 
-## Artifact identity
+## Frozen R1 payload identity
 
 - Repository: `finalvestigestudios/final-vestige-site-layer`
 - PR: `#16`
 - Target: `production`
 - Branch: `feature/visual-trail-v1`
-- Production baseline when repair began: `8afbdeeb34a775e7ea9b0d3220923354797844b7`
+- Current production baseline incorporated before final freeze: `8afbdeeb34a775e7ea9b0d3220923354797844b7`
 - R1 payload: `payloads/visual-trail-wp-block-r1.txt`
+- Payload bytes: **12,632**
+- Payload SHA-256: **`0d60fe40fb3c70e45133a3a47bd1db0c6bcc24687e1fcf787fe2e81a4980510a`**
 - R1 verifier: `tests/verify_visual_trail_r1.py`
 - R1 workflow: `.github/workflows/visual-trail-r1-ci.yml`
 
-Exact head SHA, payload bytes and SHA-256 are frozen only after the final identity-lock update and successful exact-head CI. CI evidence is not merge/deploy authority.
+The final PR head SHA and exact-head CI run are frozen only after this identity-lock commit and all required CI are green. Any payload, verifier, workflow, contract, or code change after that freeze creates a new review identity.
 
 ## Delivery boundary
 
