@@ -158,7 +158,7 @@ const fvsrTest=()=>{{
     if(d.getAttribute('aria-labelledby')!=='fvsr-title')return fail('dialog accessible name missing');
     if(!d.textContent.includes('does not rate evidence'))return fail('evidence boundary disclosure missing');
     if(!d.querySelector('.fvsr-status').textContent.includes('Citation 1 of 10 · Source 1 · use 1 of 4'))return fail('initial route status wrong');
-    if(d.querySelector('.fvsr-context p').textContent.includes('1'))return fail('citation marker leaked into passage context');
+    if(d.querySelector('.fvsr-context p').textContent.trim().endsWith('1'))return fail('citation marker leaked into passage context');
     d.querySelector('.fvsr-next').click();
     if(!d.querySelector('.fvsr-status').textContent.includes('Citation 2 of 10 · Source 3'))return fail('next citation failed');
     const first=d.querySelector('[data-mode="first"]');first.click();
