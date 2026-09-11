@@ -1,0 +1,88 @@
+<!-- wp:html -->
+<style id="fv-case-search-v1-css">
+.fv-case-search{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;margin:34px 0;padding:18px 20px;background:#111212;border:1px solid #34322E;border-left:2px solid #B8955E;color:#D8D2C7}
+.fv-case-search__kicker{margin:0 0 5px;color:#B8955E;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.fv-case-search__title{margin:0;color:#F4EFE6;font-size:17px;font-weight:700;line-height:1.35}
+.fv-case-search__note{margin:5px 0 0;color:#908A80;font-size:12px;line-height:1.55}
+.fv-case-search__open,.fv-case-search__scope,.fv-case-search__result,.fv-case-search__close{min-height:44px;border:1px solid #4A4640;background:transparent;color:#D8D2C7;font:inherit;cursor:pointer}
+.fv-case-search__open{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:2px;font-size:11px;font-weight:800;letter-spacing:.05em}
+.fv-case-search__open:hover,.fv-case-search__open:focus-visible,.fv-case-search__scope:hover,.fv-case-search__scope:focus-visible,.fv-case-search__result:hover,.fv-case-search__result:focus-visible,.fv-case-search__close:hover,.fv-case-search__close:focus-visible{border-color:#B8955E;color:#F4EFE6;outline:2px solid transparent}
+.fv-case-search-dialog{width:min(860px,calc(100vw - 32px));max-height:min(760px,calc(100vh - 32px));padding:0;border:1px solid #4A4640;background:#111212;color:#D8D2C7;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.fv-case-search-dialog::backdrop{background:rgba(8,9,9,.72)}
+.fv-case-search__panel{display:grid;grid-template-rows:auto auto auto minmax(120px,1fr);max-height:min(760px,calc(100vh - 32px))}
+.fv-case-search__head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start;padding:20px 20px 14px;border-bottom:1px solid #2D2C29}
+.fv-case-search__dialog-title{margin:0;color:#F4EFE6;font-size:18px;line-height:1.3}
+.fv-case-search__dialog-note{margin:5px 0 0;color:#908A80;font-size:12px;line-height:1.5}
+.fv-case-search__close{width:44px;padding:0;border-radius:2px;font-size:20px;line-height:1}
+.fv-case-search__query-wrap{padding:16px 20px 10px}
+.fv-case-search__query{box-sizing:border-box;width:100%;min-height:48px;padding:10px 12px;border:1px solid #4A4640;border-radius:2px;background:#0B0C0C;color:#F4EFE6;font:inherit;font-size:16px;line-height:1.4}
+.fv-case-search__query::placeholder{color:#77736C}
+.fv-case-search__query:focus{border-color:#B8955E;outline:2px solid transparent;box-shadow:0 0 0 2px rgba(184,149,94,.2)}
+.fv-case-search__scopes{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px;border-bottom:1px solid #2D2C29}
+.fv-case-search__scope{flex:0 0 auto;min-width:64px;padding:8px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.04em}
+.fv-case-search__scope[aria-pressed="true"]{background:#B8955E;border-color:#B8955E;color:#0A0B0B}
+.fv-case-search__results{overflow:auto;padding:10px 12px 16px}
+.fv-case-search__empty{margin:0;padding:20px 10px;color:#908A80;font-size:13px;line-height:1.6}
+.fv-case-search__result{display:grid;width:100%;grid-template-columns:92px minmax(0,1fr);gap:12px;align-items:start;margin:0 0 7px;padding:12px;text-align:left;border-color:#2D2C29;border-radius:2px}
+.fv-case-search__kind{color:#B8955E;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.fv-case-search__context{display:block;margin:0 0 4px;color:#AAA49A;font-size:11px;font-weight:700;line-height:1.35}
+.fv-case-search__snippet{display:block;color:#D8D2C7;font-size:13px;line-height:1.5}
+.fv-case-search__snippet mark{padding:0 .08em;background:rgba(184,149,94,.22);color:#F4EFE6}
+.fv-case-search__status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.fv-case-search-target{scroll-margin-top:120px;outline:2px solid #B8955E;outline-offset:5px;background:rgba(184,149,94,.08)}
+@media(max-width:620px){.fv-case-search{grid-template-columns:1fr;align-items:start}.fv-case-search__open{width:100%}.fv-case-search-dialog{width:calc(100vw - 16px);max-height:calc(100vh - 16px)}.fv-case-search__panel{max-height:calc(100vh - 16px)}.fv-case-search__head{padding:16px 14px 12px}.fv-case-search__query-wrap{padding:14px 14px 9px}.fv-case-search__scopes{padding:0 14px 12px}.fv-case-search__results{padding:8px 8px 12px}.fv-case-search__result{grid-template-columns:72px minmax(0,1fr);padding:11px 9px}}
+@media(max-width:360px){.fv-case-search{margin:26px 0;padding:16px}.fv-case-search__title{font-size:16px}.fv-case-search__result{grid-template-columns:1fr;gap:4px}.fv-case-search-dialog{width:calc(100vw - 8px);max-height:calc(100vh - 8px)}.fv-case-search__panel{max-height:calc(100vh - 8px)}}
+@media(prefers-reduced-motion:reduce){.fv-case-search-dialog *,.fv-case-search-target{scroll-behavior:auto!important;transition:none!important}}
+@media(forced-colors:active){.fv-case-search,.fv-case-search-dialog,.fv-case-search__open,.fv-case-search__scope,.fv-case-search__result,.fv-case-search__close,.fv-case-search__query{border-color:CanvasText}.fv-case-search__scope[aria-pressed="true"]{background:Highlight;color:HighlightText}.fv-case-search-target{outline-color:Highlight}}
+@media print{.fv-case-search,.fv-case-search-dialog{display:none!important}.fv-case-search-target{outline:0;background:transparent}}
+</style>
+<script id="fv-case-search-v1-js">
+(()=>{if(window.__fvCaseSearch)return;window.__fvCaseSearch=true;
+const body=document.body;if(!body||(!body.classList.contains('single-post')&&!body.classList.contains('single')))return;
+const main=document.querySelector('main')||document;const article=main.querySelector('article')||main;
+const sourceRoot=article.querySelector('[data-fv-footnotes],.fv-source-list')||document.querySelector('[data-fv-footnotes],.fv-source-list');
+if(!article||!sourceRoot||!('HTMLDialogElement'in window))return;
+const beforeSource=node=>Boolean(node.compareDocumentPosition(sourceRoot)&Node.DOCUMENT_POSITION_FOLLOWING);
+const featureUi=node=>Boolean(node.closest('.fv-case-search,.fv-passage-kit,.fv-passage-kit-action,.fv-return-trail,.fv-reading-focus,.fv-evidence-trace,.fv-source-kit,.fv-chronology-rail,.fv-evidence-map,.fv-detail-lens'));
+const prose=[...article.querySelectorAll('p')].filter(p=>beforeSource(p)&&!featureUi(p)&&!p.closest('figure,figcaption,header,footer,nav,form,.sharedaddy,.sd-sharing-enabled,.wp-block-buttons')&&p.textContent.trim().length>=60);
+const totalText=prose.reduce((n,p)=>n+p.textContent.trim().length,0);
+const sources=[...sourceRoot.querySelectorAll('li[id^="fv-fn-"]')];
+const figures=[...article.querySelectorAll('figure.wp-block-image')].filter(beforeSource);
+if(prose.length<12||totalText<3000||sources.length<2)return;
+const clean=s=>String(s||'').replace(/\s+/g,' ').trim();
+const normalize=s=>clean(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase();
+const headings=[...article.querySelectorAll('h2,h3')].filter(h=>beforeSource(h)&&!featureUi(h));
+const sectionFor=block=>{let label='Opening';for(const h of headings){if(h===block)break;if(h.compareDocumentPosition(block)&Node.DOCUMENT_POSITION_FOLLOWING)label=clean(h.textContent)}return label};
+const sourceText=li=>{const clone=li.cloneNode(true);clone.querySelectorAll('.fv-fn-backlinks,.fv-fn-back,.fv-source-kit').forEach(n=>n.remove());return clean(clone.textContent)};
+let index=null;
+const buildIndex=()=>{if(index)return index;const items=[];
+headings.forEach((el,i)=>{const text=clean(el.textContent);if(text)items.push({scope:'story',kind:'SECTION',context:'Story section',text,target:el,order:i})});
+prose.forEach((el,i)=>{const text=clean(el.textContent);if(text)items.push({scope:'story',kind:'STORY',context:sectionFor(el),text,target:el,order:100+i})});
+sources.forEach((el,i)=>{const text=sourceText(el);if(text){const num=(el.id.match(/fv-fn-(\d+)/)||[])[1]||String(i+1);items.push({scope:'sources',kind:`SOURCE ${num}`,context:'Sources & Further Reading',text,target:el,order:1000+i})}});
+figures.forEach((el,i)=>{const caption=clean(el.querySelector('figcaption')?.textContent);const alt=clean(el.querySelector('img')?.getAttribute('alt'));const text=clean([caption,alt].filter(Boolean).join(' — '));if(text)items.push({scope:'figures',kind:'FIGURE',context:sectionFor(el)||`Figure ${i+1}`,text,target:el,order:2000+i})});
+index=items.map(item=>({...item,search:normalize(item.text)}));return index};
+const launcher=document.createElement('section');launcher.className='fv-case-search';launcher.setAttribute('role','region');launcher.setAttribute('aria-label','Case Search');
+launcher.innerHTML=`<div><p class="fv-case-search__kicker">CASE SEARCH</p><p class="fv-case-search__title">Find a detail without losing the thread.</p><p class="fv-case-search__note">Search this investigation’s story, ${sources.length} source ${sources.length===1?'note':'notes'}, and ${figures.length} figure ${figures.length===1?'caption':'captions'}.</p></div><button class="fv-case-search__open" type="button">Search this investigation</button>`;
+const firstHeading=headings[0];if(firstHeading)firstHeading.before(launcher);else prose[Math.min(2,prose.length-1)].after(launcher);
+const dialog=document.createElement('dialog');dialog.className='fv-case-search-dialog';dialog.setAttribute('aria-labelledby','fv-case-search-title');
+dialog.innerHTML=`<div class="fv-case-search__panel"><div class="fv-case-search__head"><div><p class="fv-case-search__kicker">CASE SEARCH</p><h2 class="fv-case-search__dialog-title" id="fv-case-search-title">Search this investigation</h2><p class="fv-case-search__dialog-note">Find exact words in the story, source notes, and figure captions. No search query is sent anywhere.</p></div><button class="fv-case-search__close" type="button" aria-label="Close Case Search">×</button></div><div class="fv-case-search__query-wrap"><label class="fv-case-search__status" for="fv-case-search-input">Search this investigation</label><input id="fv-case-search-input" class="fv-case-search__query" type="search" autocomplete="off" spellcheck="false" placeholder="Person, place, date, detail…"></div><div class="fv-case-search__scopes" aria-label="Search scope"><button class="fv-case-search__scope" type="button" data-scope="all" aria-pressed="true">All</button><button class="fv-case-search__scope" type="button" data-scope="story" aria-pressed="false">Story</button><button class="fv-case-search__scope" type="button" data-scope="sources" aria-pressed="false">Sources</button><button class="fv-case-search__scope" type="button" data-scope="figures" aria-pressed="false">Figures</button></div><div class="fv-case-search__results" role="region" aria-label="Search results"><p class="fv-case-search__empty">Search the published page. Browser Find still works normally.</p></div><p class="fv-case-search__status" role="status" aria-live="polite"></p></div>`;
+document.body.appendChild(dialog);
+const open=launcher.querySelector('.fv-case-search__open');const close=dialog.querySelector('.fv-case-search__close');const input=dialog.querySelector('.fv-case-search__query');const results=dialog.querySelector('.fv-case-search__results');const status=dialog.querySelector('[role="status"]');const scopes=[...dialog.querySelectorAll('.fv-case-search__scope')];
+let scope='all';let timer=0;let lastQuery='';let jumped=false;
+const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+const renderSnippet=(text,tokens)=>{const frag=document.createDocumentFragment();const re=new RegExp(`(${tokens.map(esc).sort((a,b)=>b.length-a.length).join('|')})`,'ig');const first=text.search(re);const start=Math.max(0,first>70?first-70:0);const end=Math.min(text.length,start+230);const slice=(start?'…':'')+text.slice(start,end)+(end<text.length?'…':'');let pos=0;for(const m of slice.matchAll(re)){if(m.index>pos)frag.append(document.createTextNode(slice.slice(pos,m.index)));const mark=document.createElement('mark');mark.textContent=m[0];frag.append(mark);pos=m.index+m[0].length}if(pos<slice.length)frag.append(document.createTextNode(slice.slice(pos)));return frag};
+const announce=text=>{status.textContent='';requestAnimationFrame(()=>status.textContent=text)};
+const empty=text=>{results.replaceChildren();const p=document.createElement('p');p.className='fv-case-search__empty';p.textContent=text;results.appendChild(p)};
+const search=()=>{clearTimeout(timer);const q=clean(input.value);lastQuery=q;if(q.length<2){empty(q?'Type at least two characters.':'Search the published page. Browser Find still works normally.');announce('Enter at least two characters to search.');return}const rawTokens=q.split(/\s+/).filter(Boolean);const tokens=rawTokens.map(normalize);const matches=buildIndex().filter(item=>(scope==='all'||item.scope===scope)&&tokens.every(token=>item.search.includes(token))).sort((a,b)=>a.order-b.order);results.replaceChildren();if(!matches.length){empty(`No ${scope==='all'?'page':scope} matches for “${q}”.`);announce(`No results for ${q}.`);return}matches.slice(0,60).forEach(item=>{const button=document.createElement('button');button.type='button';button.className='fv-case-search__result';const kind=document.createElement('span');kind.className='fv-case-search__kind';kind.textContent=item.kind;const body=document.createElement('span');const context=document.createElement('span');context.className='fv-case-search__context';context.textContent=item.context;const snippet=document.createElement('span');snippet.className='fv-case-search__snippet';snippet.appendChild(renderSnippet(item.text,rawTokens));body.append(context,snippet);button.append(kind,body);button.addEventListener('click',()=>jump(item));results.appendChild(button)});const shown=Math.min(matches.length,60);announce(`${matches.length} ${matches.length===1?'result':'results'} for ${q}.${matches.length>shown?` Showing first ${shown}.`:''}`)};
+const jump=item=>{jumped=true;dialog.close();requestAnimationFrame(()=>{const target=item.target;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});const hadTab=target.hasAttribute('tabindex');const oldTab=target.getAttribute('tabindex');target.setAttribute('tabindex','-1');target.classList.add('fv-case-search-target');target.focus({preventScroll:true});const cleanup=()=>{target.classList.remove('fv-case-search-target');if(!hadTab)target.removeAttribute('tabindex');else target.setAttribute('tabindex',oldTab);target.removeEventListener('blur',cleanup)};target.addEventListener('blur',cleanup);setTimeout(()=>target.classList.remove('fv-case-search-target'),1800)})};
+open.addEventListener('click',()=>{jumped=false;buildIndex();dialog.showModal();requestAnimationFrame(()=>{input.focus();input.select()})});
+close.addEventListener('click',()=>dialog.close());
+scopes.forEach(button=>button.addEventListener('click',()=>{scope=button.dataset.scope;scopes.forEach(b=>b.setAttribute('aria-pressed',b===button?'true':'false'));search();input.focus()}));
+input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(search,80)});
+input.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){const first=results.querySelector('.fv-case-search__result');if(first){e.preventDefault();first.focus()}}});
+results.addEventListener('keydown',e=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(e.key))return;const buttons=[...results.querySelectorAll('.fv-case-search__result')];if(!buttons.length)return;const current=buttons.indexOf(document.activeElement);let next=current;if(e.key==='ArrowDown')next=Math.min(buttons.length-1,current+1);if(e.key==='ArrowUp')next=Math.max(0,current-1);if(e.key==='Home')next=0;if(e.key==='End')next=buttons.length-1;if(next>=0){e.preventDefault();buttons[next].focus()}});
+dialog.addEventListener('close',()=>{clearTimeout(timer);if(!jumped)open.focus();jumped=false});
+dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close()});
+})();
+</script>
+<!-- /wp:html -->
