@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "threadlines-wp-block-v1.txt"
 EXPECTED_BYTES = 12126
-EXPECTED_SHA256 = "PENDING"
+EXPECTED_SHA256 = "99d8cdc0601f47068a10211c5a58a69d675f17cf50fb63c7dca1f37b24b11de0"
 
 
 def require(condition: bool, message: str) -> None:
