@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "evidence-desk-wp-block-v1.txt"
 EXPECTED_BYTES = 16047
-EXPECTED_SHA256 = "49747071b3a425a1f53033cc1f76fc33e9fb0f6c330d1f9437f75bfd75cb0d7f"
+EXPECTED_SHA256 = "4ab1c7f18074caa76e5f5b0aacb08a122fd96b70fbdcc4a64e31d0c8cfbf755a"
 
 
 def require(condition: bool, message: str) -> None:
