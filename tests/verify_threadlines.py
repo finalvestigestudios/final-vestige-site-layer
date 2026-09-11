@@ -7,6 +7,9 @@ import re
 import shutil
 import subprocess
 import tempfile
+import threading
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +21,11 @@ EXPECTED_SHA256 = "PENDING"
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise SystemExit(f"FAIL: {message}")
+
+
+class QuietHandler(SimpleHTTPRequestHandler):
+    def log_message(self, format: str, *args: object) -> None:
+        return
 
 
 def fixture(payload: str, mode: str, origin: str) -> str:
@@ -108,16 +116,23 @@ def run_browser(payload: str) -> None:
     require(browser is not None, "headless Chrome/Chromium not available")
     with tempfile.TemporaryDirectory() as temp:
         root = Path(temp)
-        for mode in ("valid", "fetchfail", "noid"):
-            page = root / f"threadlines-{mode}.html"
-            origin = page.as_uri().rsplit('/', 1)[0]
-            page.write_text(fixture(payload, mode, origin), encoding="utf-8")
-            proc = subprocess.run(
-                [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--virtual-time-budget=1200", "--dump-dom", page.as_uri()],
-                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30,
-            )
-            require(proc.returncode == 0, f"browser fixture {mode} failed to execute: {proc.stderr[-500:]}")
-            require('data-fv-test="pass"' in proc.stdout, f"browser fixture {mode} failed runtime assertions")
+        handler = partial(QuietHandler, directory=str(root))
+        server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        origin = f"http://127.0.0.1:{server.server_port}"
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            for mode in ("valid", "fetchfail", "noid"):
+                page = root / f"threadlines-{mode}.html"
+                page.write_text(fixture(payload, mode, origin), encoding="utf-8")
+                proc = subprocess.run(
+                    [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--virtual-time-budget=1200", "--dump-dom", f"{origin}/{page.name}"],
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30,
+                )
+                require(proc.returncode == 0, f"browser fixture {mode} failed to execute: {proc.stderr[-500:]}")
+                require('data-fv-test="pass"' in proc.stdout, f"browser fixture {mode} failed runtime assertions")
+        finally:
+            server.shutdown();server.server_close();thread.join(timeout=5)
 
 
 def main() -> None:
