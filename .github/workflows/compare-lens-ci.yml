@@ -1,0 +1,29 @@
+name: Compare Lens CI
+
+on:
+  pull_request:
+    branches: [production]
+    paths:
+      - 'payloads/compare-lens-wp-block-v1.txt'
+      - 'tests/verify_compare_lens.py'
+      - '.github/workflows/compare-lens-ci.yml'
+      - 'COMPARE-LENS.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Compare Lens artifact
+        run: python tests/verify_compare_lens.py
