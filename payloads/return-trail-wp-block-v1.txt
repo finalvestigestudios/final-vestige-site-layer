@@ -1,0 +1,68 @@
+<!-- wp:html -->
+<style id="fv-return-trail-v1-css">
+.fv-return-trail-card{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:26px auto;padding:14px 16px;max-width:780px;border-top:1px solid #3A3833;border-bottom:1px solid #3A3833;background:#0E0F0F;color:#AAA49A}
+.fv-return-trail-card__copy{min-width:0;margin:0;font-size:13px;line-height:1.5}
+.fv-return-trail-card__eyebrow{display:block;margin-bottom:3px;color:#B8955E;font:800 10px/1.25 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.fv-return-trail-card__title{display:block;color:#F4EFE6;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fv-return-trail-card__meta{display:block;margin-top:2px;color:#908A80;font-size:12px}
+.fv-return-trail-card__actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.fv-return-trail-card__button,.fv-return-trail-card__forget{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #4A463F;border-radius:2px;background:#151515;color:#F4EFE6;font:700 12px/1.2 system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.fv-return-trail-card__button{padding:0 15px;color:#C7A66C}
+.fv-return-trail-card__forget{padding:0 12px;color:#AAA49A}
+.fv-return-trail-card__button:hover,.fv-return-trail-card__button:focus-visible,.fv-return-trail-card__forget:hover,.fv-return-trail-card__forget:focus-visible{border-color:#B8955E;color:#FFF8EC;outline:2px solid transparent}
+.fv-return-trail-status{position:fixed!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.fv-return-trail-marker{scroll-margin-top:18vh}
+.fv-return-trail-marker.fv-return-trail-flash{outline:2px solid #B8955E;outline-offset:6px;background:rgba(184,149,94,.07)}
+@media(max-width:620px){.fv-return-trail-card{align-items:flex-start;flex-direction:column;margin:22px auto}.fv-return-trail-card__actions{width:100%}.fv-return-trail-card__button{flex:1 1 auto}.fv-return-trail-card__forget{flex:0 0 auto}}
+@media(max-width:360px){.fv-return-trail-card{margin:18px 0;padding:13px 0}.fv-return-trail-card__actions{gap:6px}.fv-return-trail-card__button,.fv-return-trail-card__forget{padding:0 10px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.fv-return-trail-marker.fv-return-trail-flash{transition:none!important}}
+@media(forced-colors:active){.fv-return-trail-card,.fv-return-trail-card__button,.fv-return-trail-card__forget{border-color:CanvasText}.fv-return-trail-marker.fv-return-trail-flash{outline-color:Highlight;background:Canvas}}
+@media print{.fv-return-trail-card,.fv-return-trail-status{display:none!important}}
+</style>
+<script id="fv-return-trail-v1-js">
+(()=>{if(window.__fvReturnTrail)return;window.__fvReturnTrail=true;
+const KEY='fvReturnTrailV1',TTL=30*24*60*60*1000,MAX=3;
+const body=document.body;if(!body)return;
+const status=document.createElement('span');status.className='fv-return-trail-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');body.appendChild(status);
+const announce=t=>{status.textContent='';requestAnimationFrame(()=>status.textContent=t)};
+const now=()=>Date.now();
+const safeParse=raw=>{try{const value=JSON.parse(raw||'[]');return Array.isArray(value)?value:[]}catch(_){return[]}};
+const read=()=>{try{return safeParse(localStorage.getItem(KEY)).filter(x=>x&&x.path&&x.updated&&now()-x.updated<TTL).slice(0,MAX)}catch(_){return[]}};
+const write=list=>{try{localStorage.setItem(KEY,JSON.stringify(list.slice(0,MAX)));return true}catch(_){return false}};
+const forget=path=>{const next=read().filter(x=>x.path!==path);try{next.length?write(next):localStorage.removeItem(KEY)}catch(_){return false}return true};
+const pct=n=>`${Math.max(0,Math.min(100,Math.round(n)))}%`;
+const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cleanTitle=t=>(t||'').trim().replace(/\s+/g,' ').slice(0,120);
+const createCard=(record,mode)=>{const card=document.createElement('aside');card.className='fv-return-trail-card';card.setAttribute('aria-label','Return trail');const copy=document.createElement('p');copy.className='fv-return-trail-card__copy';const eyebrow=document.createElement('span');eyebrow.className='fv-return-trail-card__eyebrow';eyebrow.textContent=mode==='same'?'Return trail':'Continue reading';const title=document.createElement('span');title.className='fv-return-trail-card__title';title.textContent=mode==='same'?(record.heading||'Your last place'):record.title;const meta=document.createElement('span');meta.className='fv-return-trail-card__meta';meta.textContent=`Last place ${pct(record.percent)} · saved only in this browser for up to 30 days.`;copy.append(eyebrow,title,meta);const actions=document.createElement('div');actions.className='fv-return-trail-card__actions';const go=mode==='same'?document.createElement('button'):document.createElement('a');go.className='fv-return-trail-card__button';go.textContent=mode==='same'?'Return to last place':'Resume';if(mode==='same'){go.type='button'}else{go.href=record.path+'#fv-return-trail';go.dataset.fvReturnTrailResume='1'}const clear=document.createElement('button');clear.type='button';clear.className='fv-return-trail-card__forget';clear.textContent='Forget';actions.append(go,clear);card.append(copy,actions);clear.addEventListener('click',()=>{forget(record.path);card.remove();announce('Saved place forgotten on this browser.')});return{card,go}};
+const path=location.pathname.replace(/\/{2,}/g,'/');
+const isSingle=body.classList.contains('single-post')||body.classList.contains('single');
+const root=document.querySelector('.wp-block-post-content')||document.querySelector('article .entry-content')||document.querySelector('article');
+if(isSingle&&root){
+  const sourceHeading=root.querySelector('#sources,.fv-source-heading');
+  const beforeSource=node=>!sourceHeading||Boolean(node.compareDocumentPosition(sourceHeading)&Node.DOCUMENT_POSITION_FOLLOWING);
+  const excluded='[data-fv-footnotes],.fv-source-list,figcaption,nav,footer,.wp-block-navigation,.sharedaddy,.sd-sharing-enabled,.fv-return-trail-card';
+  const prose=[...root.querySelectorAll('p')].filter(p=>beforeSource(p)&&!p.closest(excluded)&&p.textContent.trim().length>=55);
+  const totalText=prose.reduce((n,p)=>n+p.textContent.trim().length,0);
+  if(prose.length<12||totalText<3000)return;
+  const markers=[...root.querySelectorAll('h2,h3,p')].filter(el=>beforeSource(el)&&!el.closest(excluded)&&el.textContent.trim().length>=20);
+  if(markers.length<10)return;
+  markers.forEach((el,i)=>{el.dataset.fvReturnTrailIndex=String(i);el.classList.add('fv-return-trail-marker')});
+  const title=cleanTitle(document.querySelector('h1')?.textContent||document.title.replace(/\s*[|–—-].*$/,''));
+  const current=read().find(x=>x.path===path);
+  if(current&&current.index>=0&&current.index<markers.length&&current.percent>=5&&current.percent<95){
+    const slot=prose[Math.min(1,prose.length-1)];const ui=createCard(current,'same');slot.insertAdjacentElement('afterend',ui.card);const resume=()=>{const target=markers[current.index]||markers[0];target.scrollIntoView({block:'center',behavior:reduced()?'auto':'smooth'});target.classList.add('fv-return-trail-flash');setTimeout(()=>target.classList.remove('fv-return-trail-flash'),1400);target.setAttribute('tabindex','-1');target.focus({preventScroll:true});announce(`Returned to ${current.heading||'your last place'}, ${pct(current.percent)} through this page.`)};ui.go.addEventListener('click',resume);if(location.hash==='#fv-return-trail'){history.replaceState(null,'',path);requestAnimationFrame(()=>resume())}
+  }
+  let timer=0,lastIndex=-1,lastPercent=-1;
+  const snapshot=()=>{timer=0;const viewY=innerHeight*.42;let best=0,dist=Infinity;markers.forEach((el,i)=>{const r=el.getBoundingClientRect();const d=Math.abs(r.top-viewY);if(d<dist){dist=d;best=i}});const docTop=root.getBoundingClientRect().top+scrollY;const docHeight=Math.max(root.scrollHeight,root.getBoundingClientRect().height);const percent=docHeight>innerHeight?((scrollY+viewY-docTop)/(docHeight-innerHeight*.35))*100:100;const bounded=Math.max(0,Math.min(100,percent));if(bounded>=95){if(read().some(x=>x.path===path))forget(path);return}if(bounded<5)return;if(best===lastIndex&&Math.abs(bounded-lastPercent)<2)return;lastIndex=best;lastPercent=bounded;const heading=[...markers.slice(0,best+1)].reverse().find(el=>/^H[23]$/.test(el.tagName));const record={path,title,index:best,heading:cleanTitle(heading?.textContent||'Your last place'),percent:Math.round(bounded),updated:now()};const next=[record,...read().filter(x=>x.path!==path)];write(next)};
+  const queue=()=>{if(timer)clearTimeout(timer);timer=setTimeout(snapshot,850)};
+  addEventListener('scroll',queue,{passive:true});addEventListener('pagehide',snapshot);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')snapshot()});
+  return;
+}
+const allowedLanding=body.classList.contains('home')||body.classList.contains('blog')||body.classList.contains('archive')||['/','/blog/','/archive/','/investigations/'].includes(path.endsWith('/')?path:path+'/');
+if(!allowedLanding)return;
+const recent=read()[0];if(!recent||recent.path===path||recent.percent<5||recent.percent>=95)return;
+const main=document.querySelector('main')||document.querySelector('.wp-site-blocks');if(!main)return;
+const ui=createCard(recent,'other');main.insertAdjacentElement('afterbegin',ui.card);
+})();
+</script>
+<!-- /wp:html -->
