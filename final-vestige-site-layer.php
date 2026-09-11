@@ -41,9 +41,9 @@ function fvsl_release_manifest() {
             'sha256' => 'e313db1e31ff1fce01b8bbd5d8dda03673b9a52aadcc7cbecafd2cec50dcc6a7',
         ),
         'scale-board' => array(
-            'file'   => 'scale-board-wp-block-r4.txt',
-            'bytes'  => 17520,
-            'sha256' => 'ecd9a6aed288061abd2ec55d53a049595174f8579178be773802d8ce7b325fee',
+            'file'   => 'scale-board-wp-block-r5.txt',
+            'bytes'  => 17597,
+            'sha256' => '03419dfd7d0394fcb1d1139d5c412a884c602aebe34fa308fc77978359b13ffb',
         ),
     );
 }
