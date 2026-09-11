@@ -4,7 +4,7 @@ import hashlib, zipfile
 
 ROOT = Path(__file__).resolve().parent
 PLUGIN = ROOT / 'final-vestige-deployment-bridge'
-OUT = ROOT.parent.parent / 'final-vestige-deployment-bridge-0.2.0.zip'
+OUT = ROOT.parent.parent / 'final-vestige-deployment-bridge-0.3.0.zip'
 FIXED = (1980, 1, 1, 0, 0, 0)
 
 entries = sorted(p for p in PLUGIN.rglob('*') if p.is_file())
