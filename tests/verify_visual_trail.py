@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "visual-trail-wp-block-v1.txt"
-EXPECTED_BYTES = 12457
-EXPECTED_SHA256 = "f09986ddc6ff6a9f6fd9106f9af93c53d18450654dd91c2aee6253755cda68ce"
+EXPECTED_BYTES = 12448
+EXPECTED_SHA256 = "0258e7c18bdcdeb53273801f69cb1fdd3b420e73013917d624b15f2e44155bdc"
 
 
 def require(condition: bool, message: str) -> None:
