@@ -13,14 +13,15 @@
 1. A release candidate is reviewed and QD-approved at one exact PR head SHA and one exact deterministic package SHA-256.
 2. CI checks out that exact head, validates the runtime payloads, builds the Deployment Bridge ZIP twice with fixed ZIP metadata and stored (uncompressed) entries, requires byte-identical output, and verifies the bridge manifest/HMAC contract.
 3. The exact deterministic ZIP is retained as the PR CI artifact.
-4. The authorized merge must use a two-parent merge commit whose tree is byte-identical to the reviewed PR head and whose commit message carries all three exact QD markers:
+4. Third-party GitHub Actions used by this lane are pinned to exact commit SHAs. The WordPress deployment secret is not job-scoped; it is exposed only to the controlled secret-presence check and authenticated sender steps.
+5. The authorized merge must use a two-parent merge commit whose tree is byte-identical to the reviewed PR head and whose commit message carries all three exact QD markers:
    - `FVSL-QD-PASS: YES`
    - `FVSL-QD-HEAD: <40-character reviewed PR head>`
    - `FVSL-PACKAGE-SHA256: <64-character approved package hash>`
-5. Production deployment fails closed if any marker is missing, the reviewed SHA is not the merge commit's second parent, the merge tree differs from that reviewed head, or the rebuilt package SHA differs from the QD-approved package SHA. Direct pushes and squash/rebase merges cannot deploy.
-6. The production job binds the generated `release-manifest.json` to repository `finalvestigestudios/final-vestige-site-layer`, branch `production`, and the exact reviewed PR head SHA, then HMAC-signs the exact request body using `FV_WP_DEPLOY_SECRET`.
-7. The Deployment Bridge verifies authentication, nonce/timestamp, package SHA-256, manifest identity and file allowlist before swapping files. The bridge never auto-activates the Site Layer.
-8. Deployment success is not completion. Independently verify the installed bytes and live destination before marking the decision `IMPLEMENTED + VERIFIED`.
+6. Production deployment fails closed if any marker is missing, the reviewed SHA is not the merge commit's second parent, the merge tree differs from that reviewed head, or the rebuilt package SHA differs from the QD-approved package SHA. Direct pushes and squash/rebase merges cannot deploy.
+7. The production job binds the generated `release-manifest.json` to repository `finalvestigestudios/final-vestige-site-layer`, branch `production`, and the exact reviewed PR head SHA, then HMAC-signs the exact request body using `FV_WP_DEPLOY_SECRET`.
+8. The Deployment Bridge verifies authentication, nonce/timestamp, package SHA-256, manifest identity and file allowlist before swapping files. The bridge never auto-activates the Site Layer.
+9. Deployment success is not completion. Independently verify the installed bytes and live destination before marking the decision `IMPLEMENTED + VERIFIED`.
 
 The source `release-manifest.json` remains the reviewed feature/payload metadata. `ops/build_site_layer.py` deterministically adds the Deployment Bridge identity and complete regular-file allowlist to the manifest placed inside the deployment ZIP.
 

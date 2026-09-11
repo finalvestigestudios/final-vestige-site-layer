@@ -17,7 +17,7 @@ jobs:
       CHECKOUT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - name: Checkout candidate
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
         with:
           ref: ${{ env.CHECKOUT_REF }}
           fetch-depth: 0
@@ -72,7 +72,7 @@ jobs:
         run: python3 tests/verify_deploy_lane.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
 
       - name: Upload exact candidate package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 resolved SHA
         with:
           name: fvsl-package-${{ env.RELEASE_COMMIT }}
           path: dist/final-vestige-site-layer.zip
@@ -86,11 +86,9 @@ jobs:
     concurrency:
       group: fvsl-production-deploy
       cancel-in-progress: false
-    env:
-      FV_WP_DEPLOY_SECRET: ${{ secrets.FV_WP_DEPLOY_SECRET }}
     steps:
       - name: Checkout production
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
         with:
           fetch-depth: 0
 
@@ -134,6 +132,8 @@ jobs:
 
       - name: Require configured deployment secret
         shell: bash
+        env:
+          FV_WP_DEPLOY_SECRET: ${{ secrets.FV_WP_DEPLOY_SECRET }}
         run: |
           set -euo pipefail
           if [ -z "${FV_WP_DEPLOY_SECRET:-}" ]; then
@@ -157,5 +157,6 @@ jobs:
 
       - name: Send authenticated package to Deployment Bridge
         env:
+          FV_WP_DEPLOY_SECRET: ${{ secrets.FV_WP_DEPLOY_SECRET }}
           GITHUB_REF_NAME: production
         run: python3 ops/deploy_bridge.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
