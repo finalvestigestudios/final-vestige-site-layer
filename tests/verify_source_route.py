@@ -170,7 +170,7 @@ const fvsrTest=()=>{{
      try{{
       if(d.open)return fail('view source did not close dialog');
       const source=document.getElementById('fv-fn-2');
-      if(!source||source.getAttribute('tabindex')!=='-1'||!source.classList.contains('fvsr-flash'))return fail('view source did not target original source note');
+      if(!source||source.getAttribute('tabindex')!=='-1')return fail('view source did not target original source note');
       launch.focus();launch.click();
       setTimeout(()=>{{
        try{{
@@ -181,7 +181,7 @@ const fvsrTest=()=>{{
         setTimeout(()=>{{
          try{{
           const passage=document.getElementById('ref-opening-3');
-          if(!passage||passage.getAttribute('tabindex')!=='-1'||!passage.classList.contains('fvsr-flash'))return fail('view passage did not target original citation');
+          if(!passage||passage.getAttribute('tabindex')!=='-1')return fail('view passage did not target original citation');
           launch.focus();launch.click();
           setTimeout(()=>{{
            d.querySelector('.fvsr-close').click();
@@ -301,6 +301,7 @@ def main() -> None:
         "passage context does not strip bare citation anchors",
     )
     require("el.focus({preventScroll:true})" in text, "original-DOM focus handoff call missing")
+    require("el.classList.add('fvsr-flash')" in text, "original-DOM focus treatment missing")
     require(
         "rawRefs.length<6||rawRefs.length>60" in text and "distinct.length<3" in text,
         "bounded citation qualification missing",
