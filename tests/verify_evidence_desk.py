@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "evidence-desk-wp-block-v1.txt"
-EXPECTED_BYTES = 0
+EXPECTED_BYTES = 16047
 EXPECTED_SHA256 = "49747071b3a425a1f53033cc1f76fc33e9fb0f6c330d1f9437f75bfd75cb0d7f"
 
 
