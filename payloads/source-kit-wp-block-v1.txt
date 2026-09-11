@@ -1,0 +1,175 @@
+<!-- wp:html -->
+<style id="fv-source-kit-v1-css">
+.fv-sk{margin:18px 0 22px;padding:18px;border:1px solid #34322E;border-left:3px solid #B8955E;border-radius:2px;background:#0E0F0F;color:#D8D2C7}.fv-sk__top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}.fv-sk__eyebrow{margin:0 0 6px;color:#B8955E;font:800 10px/1.25 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.15em;text-transform:uppercase}.fv-sk__title{margin:0;color:#F4EFE6;font-size:clamp(20px,2.6vw,28px);line-height:1.08;letter-spacing:-.025em}.fv-sk__dek{max-width:650px;margin:8px 0 0;color:#AAA49A;font-size:13px;line-height:1.55}.fv-sk__stats{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px}.fv-sk__stat{display:inline-flex;align-items:center;min-height:30px;padding:5px 8px;border:1px solid #34322E;color:#9D978D;font:700 10px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.04em;white-space:nowrap}.fv-sk__stat b{margin-right:4px;color:#F4EFE6;font-size:12px}.fv-sk__actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.fv-sk__button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 12px;border:1px solid #4A463F;border-radius:1px;background:transparent;color:#E0D9CE;font:700 11px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.055em;text-transform:uppercase}.fv-sk__button:hover{border-color:#B8955E;color:#fff}.fv-sk__button:focus-visible{outline:2px solid #B8955E;outline-offset:2px;border-color:#B8955E}.fv-sk__button--primary{background:#B8955E;border-color:#B8955E;color:#0C0D0D}.fv-sk__button--primary:hover,.fv-sk__button--primary:focus-visible{background:#C7A66C;color:#080909}.fv-sk__note{margin:12px 0 0;color:#817B72;font-size:11px;line-height:1.5}.fv-sk__status{min-height:1.4em;margin:9px 0 0;color:#C7A66C;font:700 11px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.fv-sk__status:empty{display:none}@media(max-width:680px){.fv-sk{margin:16px 0 20px;padding:15px}.fv-sk__top{grid-template-columns:1fr}.fv-sk__stats{justify-content:flex-start}.fv-sk__actions{display:grid;grid-template-columns:1fr 1fr}.fv-sk__button{width:100%}.fv-sk__button--primary{grid-column:1/-1}}@media(max-width:380px){.fv-sk__actions{grid-template-columns:1fr}.fv-sk__button--primary{grid-column:auto}}@media(forced-colors:active){.fv-sk,.fv-sk__stat,.fv-sk__button{border-color:CanvasText}.fv-sk__button--primary{background:ButtonFace;color:ButtonText}}@media(prefers-reduced-motion:reduce){.fv-sk__button{scroll-behavior:auto}}
+</style>
+<script id="fv-source-kit-v1-js">
+(()=>{
+  if(window.__fvSourceKit)return;
+  window.__fvSourceKit=true;
+  const onReady=fn=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn,{once:true}):fn();
+  onReady(()=>{
+    try{
+      const root=document.querySelector('main');
+      if(!root)return;
+
+      const normalize=s=>String(s||'').replace(/\s+/g,' ').trim();
+      const sourcePattern=/^(sources?|references?|source notes?|sources?\s*(?:&|and)\s*(?:further\s*)?reading|notes?\s*&\s*sources?)\s*[:.]?$/i;
+      const headings=[...root.querySelectorAll('h2,h3')];
+      const sourceHeading=headings.find(h=>sourcePattern.test(normalize(h.textContent)));
+      if(!sourceHeading||sourceHeading.dataset.fvSourceKitBound==='true')return;
+
+      const follows=(a,b)=>!!(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING);
+      const findSourceList=()=>{
+        const known=[...root.querySelectorAll('.fv-source-list[data-fv-footnotes],.fv-source-list,ol.wp-block-list,ul.wp-block-list')]
+          .find(list=>follows(sourceHeading,list)&&list.querySelector('li'));
+        if(known){
+          const between=[...headings].find(h=>h!==sourceHeading&&follows(sourceHeading,h)&&follows(h,known));
+          if(!between)return known;
+        }
+        let node=sourceHeading.nextElementSibling,steps=0;
+        while(node&&steps++<10){
+          if(/^H[23]$/.test(node.tagName))break;
+          if(node.matches('ol,ul')&&node.querySelector('li'))return node;
+          const inner=node.querySelector&&node.querySelector('ol,ul');
+          if(inner&&inner.querySelector('li'))return inner;
+          node=node.nextElementSibling;
+        }
+        return null;
+      };
+
+      const sourceList=findSourceList();
+      if(!sourceList)return;
+      let items=[...sourceList.querySelectorAll(':scope > li')];
+      if(!items.length)items=[...sourceList.querySelectorAll('li')];
+      items=items.filter(li=>normalize(li.textContent).length>=8);
+      if(items.length<2)return;
+
+      const cloneClean=li=>{
+        const clone=li.cloneNode(true);
+        clone.querySelectorAll('.fv-fn-backlinks,.fv-fn-back,[data-fv-fn-back],a[href^="#fnref"],a[href^="#fv-fnref"]').forEach(n=>n.remove());
+        return clone;
+      };
+      const safeUrl=a=>{
+        if(!a)return'';
+        try{
+          const u=new URL(a.getAttribute('href')||'',location.href);
+          if(!/^https?:$/.test(u.protocol))return'';
+          if(u.origin===location.origin&&u.pathname===location.pathname&&u.hash)return'';
+          return u.href;
+        }catch(_){return''}
+      };
+      const anchorsFor=li=>[...cloneClean(li).querySelectorAll('a[href]')].map(a=>({text:normalize(a.textContent),url:safeUrl(a)})).filter(x=>x.url);
+      const primaryFor=links=>links.find(x=>{try{return new URL(x.url).origin!==location.origin}catch(_){return false}})||links[0]||null;
+      const sourceRecords=items.map((li,index)=>{
+        const clean=cloneClean(li);
+        const text=normalize(clean.textContent);
+        const links=anchorsFor(li);
+        return {index,text,links,primary:primaryFor(links)};
+      }).filter(r=>r.text);
+      if(sourceRecords.length<2)return;
+
+      const domains=new Set(sourceRecords.map(r=>r.primary&&r.primary.url).filter(Boolean).map(url=>{try{return new URL(url).hostname.replace(/^www\./,'')}catch(_){return''}}).filter(Boolean));
+      const pageTitle=normalize(root.querySelector('h1')?.textContent)||normalize(document.title)||'Final Vestige source trail';
+      const pageUrl=location.href.split('#')[0];
+      const escapeMd=s=>String(s).replace(/([\\\[\]])/g,'\\$1');
+      const markdownFor=r=>{
+        const clone=cloneClean(items[r.index]);
+        [...clone.querySelectorAll('a[href]')].forEach(a=>{
+          const url=safeUrl(a);
+          const label=normalize(a.textContent);
+          if(!url){a.replaceWith(document.createTextNode(label));return}
+          const md=label?`[${escapeMd(label)}](${url})`:url;
+          a.replaceWith(document.createTextNode(md));
+        });
+        return normalize(clone.textContent);
+      };
+      const plainText=()=>[
+        `Source trail — ${pageTitle}`,
+        pageUrl,
+        '',
+        ...sourceRecords.map((r,i)=>{
+          const suffix=r.primary&&r.primary.url&&!r.text.includes(r.primary.url)?`\n   ${r.primary.url}`:'';
+          return `${i+1}. ${r.text}${suffix}`;
+        })
+      ].join('\n');
+      const markdownText=()=>[
+        `# Source trail — ${pageTitle}`,
+        '',
+        `Source page: ${pageUrl}`,
+        '',
+        ...sourceRecords.map((r,i)=>`${i+1}. ${markdownFor(r)}`),
+        '',
+        '_Generated from the source text and links already published on this Final Vestige page; no citation style or source-quality score has been added._',
+        ''
+      ].join('\n');
+
+      const card=document.createElement('section');
+      card.className='fv-sk';
+      card.setAttribute('aria-labelledby','fv-sk-title');
+      card.innerHTML=`<div class="fv-sk__top"><div><p class="fv-sk__eyebrow">Source kit</p><h3 class="fv-sk__title" id="fv-sk-title">Take the source trail with you.</h3><p class="fv-sk__dek">Copy or download the sources already published on this page, without turning them into a new citation style or a confidence score.</p></div><div class="fv-sk__stats" aria-label="Source kit summary"><span class="fv-sk__stat"><b>${sourceRecords.length}</b> source${sourceRecords.length===1?'':'s'}</span><span class="fv-sk__stat"><b>${domains.size}</b> domain${domains.size===1?'':'s'}</span></div></div><div class="fv-sk__actions"><button class="fv-sk__button fv-sk__button--primary" type="button" data-fv-sk-action="copy-plain">Copy source list</button><button class="fv-sk__button" type="button" data-fv-sk-action="copy-md">Copy Markdown</button><button class="fv-sk__button" type="button" data-fv-sk-action="download-md">Download .md</button></div><p class="fv-sk__note">Uses only the source text and links visible in this source section. Original wording on the page remains unchanged.</p><p class="fv-sk__status" role="status" aria-live="polite" data-fv-sk-status></p>`;
+      sourceHeading.insertAdjacentElement('afterend',card);
+      sourceHeading.dataset.fvSourceKitBound='true';
+
+      const status=card.querySelector('[data-fv-sk-status]');
+      let statusTimer=0;
+      const announce=message=>{
+        status.textContent=message;
+        window.clearTimeout(statusTimer);
+        statusTimer=window.setTimeout(()=>{if(status.textContent===message)status.textContent=''},5000);
+      };
+      const fallbackCopy=text=>{
+        const ta=document.createElement('textarea');
+        ta.value=text;
+        ta.setAttribute('readonly','');
+        ta.style.position='fixed';
+        ta.style.left='-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        let ok=false;
+        try{ok=document.execCommand('copy')}catch(_){ok=false}
+        ta.remove();
+        return ok;
+      };
+      const copyText=async text=>{
+        if(navigator.clipboard&&window.isSecureContext){
+          try{await navigator.clipboard.writeText(text);return true}catch(_){}
+        }
+        return fallbackCopy(text);
+      };
+      const fileSlug=()=>{
+        const fromPath=location.pathname.split('/').filter(Boolean).pop()||'page';
+        return fromPath.toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,'').slice(0,72)||'page';
+      };
+      const downloadMarkdown=()=>{
+        const blob=new Blob([markdownText()],{type:'text/markdown;charset=utf-8'});
+        const url=URL.createObjectURL(blob);
+        const a=document.createElement('a');
+        a.href=url;
+        a.download=`final-vestige-source-trail-${fileSlug()}.md`;
+        a.style.display='none';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.setTimeout(()=>URL.revokeObjectURL(url),1000);
+      };
+
+      card.addEventListener('click',async event=>{
+        const button=event.target.closest('[data-fv-sk-action]');
+        if(!button)return;
+        const action=button.dataset.fvSkAction;
+        if(action==='download-md'){
+          downloadMarkdown();
+          announce(`Downloaded ${sourceRecords.length} sources as Markdown.`);
+          return;
+        }
+        const text=action==='copy-md'?markdownText():plainText();
+        const ok=await copyText(text);
+        announce(ok?`Copied ${sourceRecords.length} sources.`:'Copy was blocked by this browser. Download the Markdown file instead.');
+      });
+    }catch(_){
+      return;
+    }
+  });
+})();
+</script>
+<!-- /wp:html -->
