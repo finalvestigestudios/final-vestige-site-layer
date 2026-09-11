@@ -33,5 +33,9 @@ jobs:
           elif command -v chromium-browser >/dev/null 2>&1; then chromium-browser --version
           else echo "No Chrome/Chromium runtime found" >&2; exit 1
           fi
+      - name: Print exact Visual Trail payload identity
+        run: |
+          wc -c payloads/visual-trail-wp-block-v1.txt
+          sha256sum payloads/visual-trail-wp-block-v1.txt
       - name: Verify Visual Trail artifact and browser behavior
         run: python tests/verify_visual_trail.py
