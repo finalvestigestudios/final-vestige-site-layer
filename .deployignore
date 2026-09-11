@@ -1,0 +1,7 @@
+.github
+.github/**
+tests
+tests/**
+README.md
+.deployignore
+*.zip
