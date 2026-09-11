@@ -1,6 +1,6 @@
 {
-  "release_id": "FVSL-BOOTSTRAP-001",
-  "version": "0.1.0",
+  "release_id": "FVSL-CASE-SEARCH-001",
+  "version": "0.2.0",
   "delivery": {
     "wordpress_hook": "wp_footer",
     "priority": 99,
@@ -25,6 +25,12 @@
       "file": "payloads/detail-lens-wp-block-v1.txt",
       "bytes": 15617,
       "sha256": "a4c20692a2c51643af17a1502cd93aabcf5e0a6c2a64ffdd35096411129ce859"
+    },
+    {
+      "name": "Case Search",
+      "file": "payloads/case-search-wp-block-v1.txt",
+      "bytes": 17534,
+      "sha256": "e313db1e31ff1fce01b8bbd5d8dda03673b9a52aadcc7cbecafd2cec50dcc6a7"
     }
   ],
   "failure_policy": "If any payload is missing, has a byte-count mismatch, or has a SHA-256 mismatch, emit none of the site-layer payloads.",

@@ -19,6 +19,7 @@ FIXED_TIME = (1980, 1, 1, 0, 0, 0)
 
 PACKAGE_FILES = (
     "final-vestige-site-layer.php",
+    "payloads/case-search-wp-block-v1.txt",
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
     "payloads/signal-finder-wp-block-v1.txt",
@@ -42,8 +43,6 @@ def build_manifest(commit: str) -> bytes:
         data = path.read_bytes()
         files.append({"path": rel, "sha256": sha256(data), "bytes": len(data)})
 
-    # Preserve the reviewed release metadata while adding the identity/allowlist
-    # contract required by the fail-closed Deployment Bridge.
     manifest = dict(source)
     manifest["repository"] = REPOSITORY
     manifest["branch"] = BRANCH
