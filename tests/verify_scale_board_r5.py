@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-r5.txt"
-EXPECTED_BYTES = 17597
+EXPECTED_BYTES = 17579
 EXPECTED_SHA256 = "03419dfd7d0394fcb1d1139d5c412a884c602aebe34fa308fc77978359b13ffb"
 
 
@@ -37,8 +37,9 @@ def browser_run(prefix: str, suffix: str, label: str) -> None:
 def main() -> None:
     raw = PAYLOAD.read_bytes()
     text = raw.decode("utf-8")
+    actual_sha = hashlib.sha256(raw).hexdigest()
     require(len(raw) == EXPECTED_BYTES, f"payload bytes drifted: {len(raw)}")
-    require(hashlib.sha256(raw).hexdigest() == EXPECTED_SHA256, "payload SHA-256 drifted")
+    require(actual_sha == EXPECTED_SHA256, f"payload SHA-256 drifted: {actual_sha}")
     require(text.count("<!-- wp:html -->") == 1 and text.count("<!-- /wp:html -->") == 1, "single wp:html block required")
     for token in (
         'id="fv-scale-board-r5-css"', 'id="fv-scale-board-r5-js"', "window.__fvScaleBoardR5",
@@ -49,7 +50,6 @@ def main() -> None:
     ):
         require(token in text, f"preserved contract missing: {token}")
 
-    # R5 nondestructive existing-node contract.
     require("ensureId" not in text and "Math.random" not in text, "random story-point id mutation remains")
     require("hadTabindex=p.hasAttribute('tabindex')" in text, "pre-owned tabindex detection missing")
     require("if(!hadTabindex)p.setAttribute('tabindex','-1')" in text, "temporary focusability guard missing")
