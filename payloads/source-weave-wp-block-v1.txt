@@ -1,0 +1,173 @@
+<!-- wp:html -->
+<style id="fv-source-weave-v1-css">
+.fvsw-band{margin:clamp(30px,4vw,48px) 0 34px;padding:17px 18px;border:1px solid #3A3833;border-left:3px solid #B8955E;background:#111210;color:#D8D2C7;display:flex;align-items:center;justify-content:space-between;gap:18px}.fvsw-band-copy{min-width:0}.fvsw-kicker{margin:0 0 4px;color:#B8955E;font:800 10px/1.3 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}.fvsw-summary{margin:0;color:#D8D2C7;font-size:13px;line-height:1.55}.fvsw-note{display:block;margin-top:3px;color:#908A80;font-size:11px;line-height:1.45}.fvsw-open,.fvsw-close,.fvsw-filter,.fvsw-link,.fvsw-source-jump{appearance:none;min-height:44px;border:1px solid #514C44;background:transparent;color:#F4EFE6;font:700 11px/1.2 system-ui,sans-serif;cursor:pointer}.fvsw-open{flex:0 0 auto;padding:0 15px;letter-spacing:.04em}.fvsw-open:hover,.fvsw-open:focus-visible,.fvsw-close:hover,.fvsw-close:focus-visible,.fvsw-filter:hover,.fvsw-filter:focus-visible,.fvsw-link:hover,.fvsw-link:focus-visible,.fvsw-source-jump:hover,.fvsw-source-jump:focus-visible{border-color:#B8955E;outline:2px solid transparent;color:#FFF}.fvsw-dialog{width:min(1120px,calc(100vw - 40px));max-height:min(86vh,900px);padding:0;border:1px solid #3A3833;background:#0C0D0D;color:#D8D2C7;box-shadow:0 26px 80px rgba(0,0,0,.58)}.fvsw-dialog::backdrop{background:rgba(0,0,0,.78)}.fvsw-shell{display:flex;max-height:min(86vh,900px);flex-direction:column}.fvsw-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px 22px;border-bottom:1px solid #302E2A}.fvsw-head-copy{min-width:0}.fvsw-title{margin:0;color:#F4EFE6;font:700 clamp(22px,3vw,34px)/1.1 Georgia,serif}.fvsw-deck{max-width:760px;margin:8px 0 0;color:#BEB7AB;font-size:13px;line-height:1.55}.fvsw-close{flex:0 0 auto;width:44px;padding:0;font-size:20px;line-height:1}.fvsw-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;border-bottom:1px solid #292824;background:#10110F}.fvsw-filters{display:flex;flex-wrap:wrap;gap:8px}.fvsw-filter{padding:0 12px}.fvsw-filter[aria-pressed="true"]{background:#B8955E;border-color:#B8955E;color:#0C0D0D}.fvsw-stats{color:#908A80;font-size:11px;line-height:1.4;text-align:right}.fvsw-body{overflow:auto;padding:18px 22px 22px}.fvsw-legend{margin:0 0 14px;color:#908A80;font-size:11px;line-height:1.5}.fvsw-table-wrap{overflow:auto;border:1px solid #302E2A;background:#10110F}.fvsw-table{width:100%;min-width:760px;border-collapse:collapse;table-layout:fixed}.fvsw-table caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.fvsw-table th,.fvsw-table td{border-right:1px solid #302E2A;border-bottom:1px solid #302E2A;vertical-align:middle}.fvsw-table tr:last-child th,.fvsw-table tr:last-child td{border-bottom:0}.fvsw-table th:last-child,.fvsw-table td:last-child{border-right:0}.fvsw-colhead{padding:11px 9px;color:#D8D2C7;font:800 10px/1.35 system-ui,sans-serif;letter-spacing:.04em;text-align:center;background:#171714}.fvsw-source-head{width:240px;padding:11px 12px;text-align:left;background:#151613}.fvsw-source-jump{width:100%;min-height:0;padding:5px 6px;border:0;text-align:left;color:#F4EFE6;font-size:12px;line-height:1.35}.fvsw-source-jump:hover,.fvsw-source-jump:focus-visible{outline:2px solid #B8955E;outline-offset:1px}.fvsw-source-snippet{display:block;margin-top:4px;color:#878177;font-size:10px;font-weight:400;line-height:1.4}.fvsw-cell{height:62px;padding:6px;text-align:center;background:#0F100E}.fvsw-empty{color:#4F4C46;font-size:14px}.fvsw-link{width:100%;padding:6px 8px;border-color:#3C3933;color:#B8955E;font-size:11px;line-height:1.3}.fvsw-link strong{display:block;color:#F4EFE6;font-size:13px}.fvsw-link:hover,.fvsw-link:focus-visible{background:rgba(184,149,94,.08)}.fvsw-row[hidden]{display:none}.fvsw-mobile{display:none}.fvsw-mobile-section{margin:0 0 16px;border:1px solid #302E2A;background:#10110F}.fvsw-mobile-title{margin:0;padding:12px 13px;border-bottom:1px solid #302E2A;color:#F4EFE6;font:700 16px/1.3 Georgia,serif}.fvsw-mobile-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid #292824}.fvsw-mobile-item:last-child{border-bottom:0}.fvsw-mobile-source{min-width:0;color:#CFC8BD;font-size:12px;line-height:1.4}.fvsw-mobile-source span{display:block;color:#817B72;font-size:10px}.fvsw-mobile .fvsw-link{width:auto;min-width:76px}.fvsw-empty-state{padding:22px;border:1px solid #302E2A;color:#908A80;font-size:12px;text-align:center}.fvsw-jump-target{outline:2px solid #B8955E!important;outline-offset:4px}.fvsw-dialog:focus{outline:none}@media(max-width:720px){.fvsw-band{align-items:stretch;flex-direction:column}.fvsw-open{width:100%}.fvsw-dialog{width:calc(100vw - 18px);max-height:92vh}.fvsw-shell{max-height:92vh}.fvsw-head{padding:17px 14px}.fvsw-controls{align-items:flex-start;flex-direction:column;padding:11px 14px}.fvsw-stats{text-align:left}.fvsw-body{padding:14px}.fvsw-table-wrap{display:none}.fvsw-mobile{display:block}.fvsw-filter{flex:1 1 auto}.fvsw-filters{width:100%}}@media(max-width:360px){.fvsw-band{padding:14px 12px}.fvsw-summary{font-size:12px}.fvsw-note{font-size:10px}.fvsw-title{font-size:22px}.fvsw-head{gap:10px}.fvsw-controls,.fvsw-body{padding-left:10px;padding-right:10px}}@media(prefers-reduced-motion:reduce){.fvsw-jump-target{scroll-behavior:auto}}@media(forced-colors:active){.fvsw-band,.fvsw-dialog,.fvsw-table-wrap,.fvsw-table th,.fvsw-table td,.fvsw-mobile-section,.fvsw-mobile-item,.fvsw-open,.fvsw-close,.fvsw-filter,.fvsw-link{border-color:CanvasText}.fvsw-filter[aria-pressed="true"]{background:Highlight;color:HighlightText}.fvsw-jump-target{outline-color:Highlight!important}}@media print{.fvsw-band,.fvsw-dialog{display:none!important}}
+</style>
+<script id="fv-source-weave-v1-js">
+(()=>{
+  if(window.__fvSourceWeave)return;
+  window.__fvSourceWeave=true;
+
+  const init=()=>{
+    if(typeof HTMLDialogElement==='undefined')return;
+    const article=document.querySelector('article')||document.querySelector('.wp-block-post-content')||document.querySelector('main');
+    if(!article||article.querySelector('[data-fvsw-band]'))return;
+    const sourceRoot=article.querySelector('[data-fv-footnotes]');
+    const sourceHeading=article.querySelector('h2#sources.fv-source-heading,h2#sources,h2.fv-source-heading');
+    if(!sourceRoot||!sourceHeading||!article.contains(sourceRoot)||!article.contains(sourceHeading))return;
+    if(!(sourceHeading.compareDocumentPosition(sourceRoot)&Node.DOCUMENT_POSITION_FOLLOWING))return;
+
+    const storyH2=[...article.querySelectorAll('h2')].filter(h=>h!==sourceHeading&&(h.compareDocumentPosition(sourceHeading)&Node.DOCUMENT_POSITION_FOLLOWING));
+    if(storyH2.length<2||storyH2.length>8)return;
+    const firstStory=storyH2[0];
+    const refs=[...article.querySelectorAll('.fv-fn-ref[data-fv-fn]')].filter(ref=>!sourceRoot.contains(ref)&&(ref.compareDocumentPosition(sourceHeading)&Node.DOCUMENT_POSITION_FOLLOWING));
+    if(refs.length<6||refs.length>120)return;
+
+    const sourceItems=new Map();
+    [...sourceRoot.querySelectorAll(':scope > li[id^="fv-fn-"]')].forEach(li=>{
+      const match=li.id.match(/^fv-fn-(\d+)$/);
+      if(match)sourceItems.set(match[1],li);
+    });
+    if(sourceItems.size<4||sourceItems.size>40)return;
+
+    const sections=[];
+    const openingRefs=refs.filter(ref=>ref.compareDocumentPosition(firstStory)&Node.DOCUMENT_POSITION_FOLLOWING);
+    if(openingRefs.length)sections.push({key:'opening',label:'Opening',heading:null});
+    storyH2.forEach((heading,index)=>sections.push({key:`section-${index+1}`,label:(heading.textContent||`Section ${index+1}`).trim(),heading}));
+    if(sections.length>9)return;
+
+    const findSection=(ref)=>{
+      if(ref.compareDocumentPosition(firstStory)&Node.DOCUMENT_POSITION_FOLLOWING)return sections.find(s=>s.key==='opening')||null;
+      for(let i=storyH2.length-1;i>=0;i--){
+        const heading=storyH2[i];
+        if(heading===ref||heading.compareDocumentPosition(ref)&Node.DOCUMENT_POSITION_FOLLOWING){
+          return sections.find(s=>s.heading===heading)||null;
+        }
+      }
+      return null;
+    };
+
+    const map=new Map();
+    refs.forEach(ref=>{
+      const id=String(ref.dataset.fvFn||'').trim();
+      const source=sourceItems.get(id);
+      const section=findSection(ref);
+      if(!/^\d+$/.test(id)||!source||!section)return;
+      if(!map.has(id))map.set(id,new Map());
+      const bySection=map.get(id);
+      if(!bySection.has(section.key))bySection.set(section.key,[]);
+      bySection.get(section.key).push(ref);
+    });
+    const sourceIds=[...map.keys()].sort((a,b)=>Number(a)-Number(b));
+    const relationCount=sourceIds.reduce((sum,id)=>sum+map.get(id).size,0);
+    if(sourceIds.length<3||relationCount<5)return;
+
+    const sourceText=(id)=>{
+      const clone=sourceItems.get(id).cloneNode(true);
+      clone.querySelectorAll('.fv-fn-backlinks,.fv-inline-save,.fv-evidence-trace-tools,.fvsw-band,.fvsw-dialog').forEach(el=>el.remove());
+      const text=(clone.textContent||'').replace(/\s+/g,' ').trim();
+      return text.length>96?`${text.slice(0,93)}…`:text;
+    };
+    const reused=id=>map.get(id).size>1;
+    let mode='all';
+    let opener=null;
+
+    const band=document.createElement('section');
+    band.className='fvsw-band';
+    band.dataset.fvswBand='1';
+    band.setAttribute('aria-label','Source Weave');
+    const bandCopy=document.createElement('div');
+    bandCopy.className='fvsw-band-copy';
+    const kicker=document.createElement('p');kicker.className='fvsw-kicker';kicker.textContent='SOURCE WEAVE';
+    const summary=document.createElement('p');summary.className='fvsw-summary';summary.textContent=`${sourceIds.length} cited source notes · ${sections.length} story areas · ${relationCount} source-to-story connections`;
+    const boundary=document.createElement('span');boundary.className='fvsw-note';boundary.textContent='Connections reflect this page’s existing footnote links. They do not score evidence quality or confidence.';
+    summary.appendChild(boundary);bandCopy.append(kicker,summary);
+    const open=document.createElement('button');open.type='button';open.className='fvsw-open';open.textContent='Map the sources';
+    band.append(bandCopy,open);firstStory.insertAdjacentElement('beforebegin',band);
+
+    const dialog=document.createElement('dialog');dialog.className='fvsw-dialog';dialog.setAttribute('aria-labelledby','fvsw-title');
+    const shell=document.createElement('div');shell.className='fvsw-shell';
+    const head=document.createElement('header');head.className='fvsw-head';
+    const headCopy=document.createElement('div');headCopy.className='fvsw-head-copy';
+    const title=document.createElement('h2');title.className='fvsw-title';title.id='fvsw-title';title.textContent='Source Weave';
+    const deck=document.createElement('p');deck.className='fvsw-deck';deck.textContent='See where this investigation links its published source notes across the story. A number is the count of existing footnote links in that story area—not a strength, quality or confidence score.';
+    headCopy.append(title,deck);
+    const close=document.createElement('button');close.type='button';close.className='fvsw-close';close.setAttribute('aria-label','Close Source Weave');close.textContent='×';
+    head.append(headCopy,close);
+    const controls=document.createElement('div');controls.className='fvsw-controls';
+    const filters=document.createElement('div');filters.className='fvsw-filters';filters.setAttribute('aria-label','Source filters');
+    const all=document.createElement('button');all.type='button';all.className='fvsw-filter';all.dataset.mode='all';all.setAttribute('aria-pressed','true');all.textContent='All cited sources';
+    const repeat=document.createElement('button');repeat.type='button';repeat.className='fvsw-filter';repeat.dataset.mode='reused';repeat.setAttribute('aria-pressed','false');repeat.textContent='Reused across story areas';
+    filters.append(all,repeat);
+    const stats=document.createElement('div');stats.className='fvsw-stats';stats.setAttribute('aria-live','polite');
+    controls.append(filters,stats);
+    const body=document.createElement('div');body.className='fvsw-body';
+    const legend=document.createElement('p');legend.className='fvsw-legend';legend.textContent='Select a connection to return to its first citation in that story area. Select a source label to inspect the published source note.';
+    const tableWrap=document.createElement('div');tableWrap.className='fvsw-table-wrap';
+    const table=document.createElement('table');table.className='fvsw-table';
+    const caption=document.createElement('caption');caption.textContent='Published source notes by story area';table.appendChild(caption);
+    const thead=document.createElement('thead');const trh=document.createElement('tr');
+    const sourceCol=document.createElement('th');sourceCol.scope='col';sourceCol.className='fvsw-colhead fvsw-source-head';sourceCol.textContent='Published source note';trh.appendChild(sourceCol);
+    sections.forEach(section=>{const th=document.createElement('th');th.scope='col';th.className='fvsw-colhead';th.textContent=section.label;trh.appendChild(th)});thead.appendChild(trh);table.appendChild(thead);
+    const tbody=document.createElement('tbody');table.appendChild(tbody);tableWrap.appendChild(table);
+    const mobile=document.createElement('div');mobile.className='fvsw-mobile';mobile.setAttribute('aria-label','Published source notes by story area');
+    const empty=document.createElement('div');empty.className='fvsw-empty-state';empty.hidden=true;empty.textContent='No cited source notes match this view.';
+    body.append(legend,tableWrap,mobile,empty);shell.append(head,controls,body);dialog.appendChild(shell);document.body.appendChild(dialog);
+
+    const flashAndFocus=(target)=>{
+      target.classList.add('fvsw-jump-target');
+      const hadTab=target.hasAttribute('tabindex');const oldTab=target.getAttribute('tabindex');
+      if(!target.matches('a,button,input,select,textarea,[tabindex]'))target.setAttribute('tabindex','-1');
+      target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+      target.focus({preventScroll:true});
+      setTimeout(()=>{target.classList.remove('fvsw-jump-target');if(!hadTab)target.removeAttribute('tabindex');else if(oldTab!==null)target.setAttribute('tabindex',oldTab)},1600);
+    };
+    const closeDialog=(returnFocus=true)=>{if(dialog.open)dialog.close();if(returnFocus&&opener&&document.contains(opener))opener.focus()};
+    const jumpToRef=(ref)=>{closeDialog(false);flashAndFocus(ref)};
+    const jumpToSource=(id)=>{const target=sourceItems.get(id);if(!target)return;closeDialog(false);flashAndFocus(target)};
+
+    const makeLink=(id,section)=>{
+      const refsFor=map.get(id).get(section.key)||[];
+      if(!refsFor.length){const dash=document.createElement('span');dash.className='fvsw-empty';dash.setAttribute('aria-hidden','true');dash.textContent='—';return dash}
+      const button=document.createElement('button');button.type='button';button.className='fvsw-link';button.setAttribute('aria-label',`Source ${id} linked ${refsFor.length} time${refsFor.length===1?'':'s'} in ${section.label}; go to first citation`);
+      const number=document.createElement('strong');number.textContent=String(refsFor.length);const label=document.createElement('span');label.textContent=refsFor.length===1?'citation':'citations';button.append(number,label);button.addEventListener('click',()=>jumpToRef(refsFor[0]));return button;
+    };
+    const makeSourceButton=(id)=>{const b=document.createElement('button');b.type='button';b.className='fvsw-source-jump';b.setAttribute('aria-label',`View published source note ${id}`);b.textContent=`Source ${id}`;const snip=document.createElement('span');snip.className='fvsw-source-snippet';snip.textContent=sourceText(id);b.appendChild(snip);b.addEventListener('click',()=>jumpToSource(id));return b};
+
+    sourceIds.forEach(id=>{
+      const row=document.createElement('tr');row.className='fvsw-row';row.dataset.sourceId=id;row.dataset.reused=reused(id)?'1':'0';
+      const th=document.createElement('th');th.scope='row';th.className='fvsw-source-head';th.appendChild(makeSourceButton(id));row.appendChild(th);
+      sections.forEach(section=>{const td=document.createElement('td');td.className='fvsw-cell';td.appendChild(makeLink(id,section));row.appendChild(td)});tbody.appendChild(row);
+    });
+    sections.forEach(section=>{
+      const block=document.createElement('section');block.className='fvsw-mobile-section';block.dataset.sectionKey=section.key;
+      const h=document.createElement('h3');h.className='fvsw-mobile-title';h.textContent=section.label;block.appendChild(h);
+      sourceIds.forEach(id=>{
+        const refsFor=map.get(id).get(section.key)||[];if(!refsFor.length)return;
+        const item=document.createElement('div');item.className='fvsw-mobile-item';item.dataset.sourceId=id;item.dataset.reused=reused(id)?'1':'0';
+        const source=makeSourceButton(id);source.classList.add('fvsw-mobile-source');item.append(source,makeLink(id,section));block.appendChild(item);
+      });
+      if(block.children.length>1)mobile.appendChild(block);
+    });
+
+    const renderMode=()=>{
+      const isReused=mode==='reused';let visible=0;
+      [...tbody.querySelectorAll('.fvsw-row')].forEach(row=>{const show=!isReused||row.dataset.reused==='1';row.hidden=!show;if(show)visible++});
+      [...mobile.querySelectorAll('.fvsw-mobile-item')].forEach(item=>item.hidden=isReused&&item.dataset.reused!=='1');
+      [...mobile.querySelectorAll('.fvsw-mobile-section')].forEach(section=>{const any=[...section.querySelectorAll('.fvsw-mobile-item')].some(item=>!item.hidden);section.hidden=!any});
+      all.setAttribute('aria-pressed',isReused?'false':'true');repeat.setAttribute('aria-pressed',isReused?'true':'false');
+      stats.textContent=isReused?`${visible} source${visible===1?'':'s'} appear in more than one story area`:`${visible} cited source${visible===1?'':'s'} · ${relationCount} source-to-story connections`;
+      empty.hidden=visible!==0;
+    };
+    filters.addEventListener('click',event=>{const button=event.target.closest('.fvsw-filter');if(!button)return;mode=button.dataset.mode==='reused'?'reused':'all';renderMode()});
+    open.addEventListener('click',()=>{opener=open;renderMode();dialog.showModal();close.focus()});
+    close.addEventListener('click',()=>closeDialog(true));
+    dialog.addEventListener('cancel',event=>{event.preventDefault();closeDialog(true)});
+    dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog(true)});
+    renderMode();
+  };
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
+</script>
+<!-- /wp:html -->
