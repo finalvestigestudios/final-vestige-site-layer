@@ -44,8 +44,8 @@ The feature fails closed unless all of the following are true:
 4. The source-note list follows the canonical heading.
 5. The article has 2–10 pre-Sources story H2s and 10–140 substantive narrative paragraphs.
 6. The source list contains 3–40 uniquely numbered `li#fv-fn-N` records.
-7. There are 6–60 pre-Sources citation anchors with the exact `sup.fv-fn-mark > a.fv-fn-ref[data-fv-fn]` structure.
-8. Every participating citation has numeric `data-fv-fn`, exact `href="#fv-fn-N"`, and exactly one matching published source note.
+7. There are 6–60 pre-Sources citation anchors matching the governed live `.fv-fn-ref[data-fv-fn]` contract. No `.fv-fn-mark` wrapper is required; wrapped legacy markup remains compatible because the anchor itself is authoritative.
+8. Every participating citation is an anchor with numeric `data-fv-fn`, exact `href="#fv-fn-N"`, and exactly one matching published source note.
 9. At least three distinct published source notes are actually cited.
 
 The first two rules intentionally reject the mixed exact-plus-partial boundary condition identified by independent QD on FVF-18 and FVF-19. An exact canonical Sources heading may not coexist with an ID-only, class-only, duplicate, or otherwise competing Sources candidate.
@@ -77,16 +77,16 @@ The tool exposes structural facts only: citation order, source number, source re
 - Base at build: `a2a499455d714c0238241fde9b76188efd1d7b1d`
 - Branch: `feature/source-route-v1`
 - Payload: `payloads/source-route-wp-block-v1.txt`
-- Payload bytes: **13,722**
-- Payload SHA-256: **`56071cf735140176a3782f24d03a3bc8a8cbba738c2e75cf50410481b2e6177b`**
+- Payload bytes: **13,716**
+- Payload SHA-256: **`f18f31958530c25b7145357c6187cc79df46582ca66cd067a90a84447bb0c250`**
 - Deterministic verifier: `tests/verify_source_route.py`
 - Dedicated workflow: `.github/workflows/source-route-ci.yml`
 
-The verifier locks payload identity, JavaScript syntax, one-block packaging, the hardened mixed-boundary contract, exact citation-to-note mapping, bounded qualification, route modes, original-DOM focus return, accessibility/mobile controls, absence of network/persistence APIs, and headless-browser success/fail-closed fixtures.
+The verifier locks payload identity, JavaScript syntax, one-block packaging, the hardened mixed-boundary contract, wrapper-free live citation-anchor compatibility, legacy-wrapper compatibility, exact citation-to-note mapping, bounded qualification, route modes, original-DOM focus return, accessibility/mobile controls, absence of network/persistence APIs, and headless-browser success/fail-closed fixtures.
 
 ## Live-source compatibility target
 
-The published **Six Miles an Hour** investigation currently provides the expected model: one exact `h2#sources.fv-source-heading`, one subsequent `[data-fv-footnotes]` list, three major pre-Sources story sections, ten in-story citation links across four actually cited source notes, and seven numbered source records. No editorial rewrite is required.
+The published **Six Miles an Hour** investigation currently provides the expected model: one exact `h2#sources.fv-source-heading`, one subsequent `[data-fv-footnotes]` list, three major pre-Sources story sections, ten in-story `.fv-fn-ref[data-fv-fn]` citation links across four actually cited source notes, and seven numbered source records. No `.fv-fn-mark` wrapper is required and no editorial rewrite is required.
 
 ## Delivery boundary
 
