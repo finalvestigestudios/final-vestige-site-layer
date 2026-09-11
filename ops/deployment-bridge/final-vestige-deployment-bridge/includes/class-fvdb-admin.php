@@ -45,8 +45,8 @@ final class FVDB_Admin {
             <p>Add this value to the private GitHub repository as an Actions secret named <code>FV_WP_DEPLOY_SECRET</code>. Treat it like a password.</p>
             <p><input id="fvdb-secret" type="password" readonly value="<?php echo esc_attr($secret); ?>" style="width:min(760px,95%);font-family:monospace" />
             <button type="button" class="button" onclick="const i=document.getElementById('fvdb-secret');i.type=i.type==='password'?'text':'password'">Show / hide</button></p>
-            <p><strong>Status endpoint:</strong> <code><?php echo esc_html($status_url); ?></code></p>
-            <p><strong>Deploy endpoint:</strong> <code><?php echo esc_html($deploy_url); ?></code></p>
+            <p><strong>Status endpoint:</strong> <code><?php echo esc_html($status_url); ?></code> (HMAC-authenticated)</p>
+            <p><strong>Deploy endpoint:</strong> <code><?php echo esc_html($deploy_url); ?></code> (HMAC-authenticated)</p>
             <h2>Last deployment state</h2>
             <pre><?php echo esc_html(wp_json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)); ?></pre>
             <hr />
