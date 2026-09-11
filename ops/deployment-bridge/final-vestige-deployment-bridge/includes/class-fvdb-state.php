@@ -11,6 +11,7 @@ final class FVDB_State {
                 'last_status' => 'never_deployed',
                 'last_commit' => '',
                 'last_package_sha256' => '',
+                'last_idempotency_key' => '',
                 'last_deployed_at' => '',
                 'last_error' => '',
             ], false);
