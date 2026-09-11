@@ -13,15 +13,121 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    env:
+      CHECKOUT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
-      - name: Checkout
+      - name: Checkout candidate
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.CHECKOUT_REF }}
+          fetch-depth: 0
+
+      - name: Resolve exact release identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            RELEASE_COMMIT="$CHECKOUT_REF"
+            test "$(git rev-parse HEAD)" = "$RELEASE_COMMIT"
+          elif [ "$GITHUB_REF" = "refs/heads/production" ]; then
+            mapfile -t PARENTS < <(git show -s --format='%P' HEAD | tr ' ' '\n')
+            if [ "${#PARENTS[@]}" -ne 2 ]; then
+              echo "::error::Production deployment requires a two-parent PR merge commit."
+              exit 1
+            fi
+            RELEASE_COMMIT="${PARENTS[1]}"
+            if ! git diff --quiet "$RELEASE_COMMIT" HEAD -- .; then
+              echo "::error::Merge tree differs from the exact reviewed PR head; refusing deployment."
+              exit 1
+            fi
+          else
+            RELEASE_COMMIT="$GITHUB_SHA"
+            test "$(git rev-parse HEAD)" = "$RELEASE_COMMIT"
+          fi
+          echo "RELEASE_COMMIT=$RELEASE_COMMIT" >> "$GITHUB_ENV"
+          echo "Exact release commit: $RELEASE_COMMIT"
+
       - name: Runtime versions
         run: |
           php --version
           node --version
           python3 --version
+
       - name: PHP syntax
         run: php -l final-vestige-site-layer.php
+
       - name: Release integrity and JavaScript syntax
         run: python3 tests/verify_release.py
+
+      - name: Build deterministic bridge package twice
+        run: |
+          mkdir -p dist
+          python3 ops/build_site_layer.py "$RELEASE_COMMIT" dist/final-vestige-site-layer-a.zip
+          python3 ops/build_site_layer.py "$RELEASE_COMMIT" dist/final-vestige-site-layer-b.zip
+          cmp dist/final-vestige-site-layer-a.zip dist/final-vestige-site-layer-b.zip
+          cp dist/final-vestige-site-layer-a.zip dist/final-vestige-site-layer.zip
+          sha256sum dist/final-vestige-site-layer.zip
+
+      - name: Deployment-lane contract
+        run: python3 tests/verify_deploy_lane.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
+
+      - name: Upload exact candidate package
+        uses: actions/upload-artifact@v4
+        with:
+          name: fvsl-package-${{ env.RELEASE_COMMIT }}
+          path: dist/final-vestige-site-layer.zip
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/production'
+    needs: verify
+    runs-on: ubuntu-latest
+    concurrency:
+      group: fvsl-production-deploy
+      cancel-in-progress: false
+    env:
+      FV_WP_DEPLOY_SECRET: ${{ secrets.FV_WP_DEPLOY_SECRET }}
+    steps:
+      - name: Checkout production
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve exact reviewed PR head
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t PARENTS < <(git show -s --format='%P' HEAD | tr ' ' '\n')
+          if [ "${#PARENTS[@]}" -ne 2 ]; then
+            echo "::error::Production deployment requires a two-parent PR merge commit."
+            exit 1
+          fi
+          RELEASE_COMMIT="${PARENTS[1]}"
+          if ! git diff --quiet "$RELEASE_COMMIT" HEAD -- .; then
+            echo "::error::Merge tree differs from the exact reviewed PR head; refusing deployment."
+            exit 1
+          fi
+          echo "RELEASE_COMMIT=$RELEASE_COMMIT" >> "$GITHUB_ENV"
+          echo "Exact reviewed source commit: $RELEASE_COMMIT"
+
+      - name: Require configured deployment secret
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${FV_WP_DEPLOY_SECRET:-}" ]; then
+            echo "::error::FV_WP_DEPLOY_SECRET is not configured."
+            exit 1
+          fi
+
+      - name: Build and verify exact production package
+        run: |
+          mkdir -p dist
+          python3 ops/build_site_layer.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
+          python3 tests/verify_deploy_lane.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
+          sha256sum dist/final-vestige-site-layer.zip
+
+      - name: Send authenticated package to Deployment Bridge
+        env:
+          GITHUB_REF_NAME: production
+        run: python3 ops/deploy_bridge.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
