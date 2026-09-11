@@ -122,14 +122,46 @@ final class FVDB_Auth {
             return true;
         }
 
-        $existing = (int) get_option($key, 0);
-        if ($existing > 0 && $existing < time()) {
-            delete_option($key);
-            if (add_option($key, $expires, '', false)) {
-                return true;
+        // Expired nonce reclamation is compare-delete safe. Multiple stale readers may
+        // observe the same expired row, but only one can delete those exact stored bytes;
+        // no stale reader can delete a successor nonce claim.
+        $raw = self::read_raw_option($key);
+        if ($raw !== null) {
+            $existing = (int) maybe_unserialize($raw);
+            if ($existing > 0 && $existing < time() && self::compare_delete_option($key, $raw)) {
+                if (add_option($key, $expires, '', false)) {
+                    return true;
+                }
             }
         }
         return new WP_Error('replay_rejected', 'Deployment nonce has already been used.');
+    }
+
+    private static function read_raw_option(string $key): ?string {
+        global $wpdb;
+        $raw = $wpdb->get_var(
+            $wpdb->prepare(
+                "SELECT option_value FROM {$wpdb->options} WHERE option_name = %s LIMIT 1",
+                $key
+            )
+        );
+        return $raw === null ? null : (string) $raw;
+    }
+
+    private static function compare_delete_option(string $key, string $expected_raw): bool {
+        global $wpdb;
+        $deleted = $wpdb->query(
+            $wpdb->prepare(
+                "DELETE FROM {$wpdb->options} WHERE option_name = %s AND BINARY option_value = BINARY %s",
+                $key,
+                $expected_raw
+            )
+        );
+        if ($deleted === 1) {
+            wp_cache_delete($key, 'options');
+            return true;
+        }
+        return false;
     }
 
     private static function new_secret(): string {
