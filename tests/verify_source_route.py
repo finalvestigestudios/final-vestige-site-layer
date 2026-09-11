@@ -179,7 +179,8 @@ const fvsrTest=()=>{{
         d.querySelector('[data-jump="passage"]').click();
         setTimeout(()=>{{
          try{{
-          if(document.activeElement.id!=='ref-opening-3')return fail('view passage did not focus original citation');
+          const passage=document.getElementById('ref-opening-3');
+          if(!passage||passage.getAttribute('tabindex')!=='-1'||!passage.classList.contains('fvsr-flash'))return fail('view passage did not target original citation');
           launch.focus();launch.click();
           setTimeout(()=>{{
            d.querySelector('.fvsr-close').click();
