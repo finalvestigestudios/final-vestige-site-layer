@@ -1,0 +1,190 @@
+<!-- wp:html -->
+<style id="fv-evidence-desk-v1-css">
+:root{--fved-bg:#171614;--fved-panel:#211f1c;--fved-line:#4a453d;--fved-text:#f0ebe2;--fved-muted:#aaa297;--fved-accent:#b8955e;--fved-soft:rgba(184,149,94,.12)}
+[data-fv-evidence-desk-launcher]{margin:38px 0 46px;padding:20px 22px;border:1px solid var(--fved-line);border-radius:12px;background:linear-gradient(180deg,#1d1b18,#171614);color:var(--fved-text)}
+.fved-launch-row{display:flex;gap:20px;align-items:center;justify-content:space-between}
+.fved-kicker{margin:0 0 5px;color:var(--fved-accent);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.fved-title{margin:0;color:var(--fved-text);font-size:clamp(18px,2vw,23px);line-height:1.2}
+.fved-copy{margin:7px 0 0;max-width:64ch;color:var(--fved-muted);font-size:13px;line-height:1.55}
+.fved-open,.fved-close,.fved-clear,.fved-pin,.fved-card button,.fved-card a{min-height:44px;min-width:44px;border:1px solid var(--fved-line);border-radius:8px;background:#26231f;color:var(--fved-text);font:inherit;cursor:pointer}
+.fved-open{flex:0 0 auto;padding:0 15px;font-size:13px;font-weight:760}
+.fved-open:hover,.fved-close:hover,.fved-clear:hover,.fved-pin:hover,.fved-card button:hover,.fved-card a:hover{border-color:var(--fved-accent);background:#2c2823}
+.fved-open:focus-visible,.fved-close:focus-visible,.fved-clear:focus-visible,.fved-pin:focus-visible,.fved-card button:focus-visible,.fved-card a:focus-visible{outline:3px solid var(--fved-accent);outline-offset:3px;border-color:var(--fved-accent)}
+.fved-pin{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:10px 0 0;padding:0 11px;font-size:12px;font-weight:760}
+.fv-source-list[data-fv-footnotes] .fved-pin{margin-left:8px;vertical-align:middle}
+figure.wp-block-image>.fved-pin{margin-top:10px}
+.fved-pin[aria-pressed="true"]{border-color:var(--fved-accent);background:var(--fved-soft);color:var(--fved-accent)}
+.fved-pin:disabled{cursor:not-allowed;opacity:.45}
+[data-fv-evidence-desk]{position:fixed;z-index:70;border:1px solid var(--fved-line);border-radius:14px;background:rgba(23,22,20,.985);color:var(--fved-text);box-shadow:0 24px 70px rgba(0,0,0,.46);overflow:hidden}
+[data-fv-evidence-desk][hidden]{display:none!important}
+[data-fv-evidence-desk][data-layout="side"]{top:82px;right:18px;bottom:18px;width:360px}
+[data-fv-evidence-desk][data-layout="bottom"]{left:16px;right:16px;bottom:16px;max-height:min(42vh,340px)}
+.fved-head{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;padding:16px 16px 13px;border-bottom:1px solid var(--fved-line);background:#1b1917}
+.fved-head-main{min-width:0}
+.fved-head h2{margin:2px 0 0;color:var(--fved-text);font-size:18px;line-height:1.2}
+.fved-head p{margin:6px 0 0;color:var(--fved-muted);font-size:11px;line-height:1.45}
+.fved-head-actions{display:flex;gap:8px;flex:0 0 auto}
+.fved-close,.fved-clear{padding:0 10px;font-size:12px;font-weight:740}
+.fved-clear:disabled{cursor:not-allowed;opacity:.45}
+.fved-status{padding:9px 16px;border-bottom:1px solid rgba(74,69,61,.72);color:var(--fved-muted);font-size:11px}
+.fved-status strong{color:var(--fved-accent)}
+.fved-body{height:calc(100% - 112px);max-height:100%;overflow:auto;padding:12px}
+[data-fv-evidence-desk][data-layout="bottom"] .fved-body{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(250px,330px);gap:10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity}
+.fved-empty{margin:2px;padding:22px 16px;border:1px dashed var(--fved-line);border-radius:10px;color:var(--fved-muted);font-size:12px;line-height:1.55}
+[data-fv-evidence-desk][data-layout="bottom"] .fved-empty{width:min(340px,calc(100vw - 64px))}
+.fved-card{display:grid;gap:10px;margin:0 0 10px;padding:13px;border:1px solid var(--fved-line);border-radius:10px;background:var(--fved-panel);scroll-snap-align:start}
+[data-fv-evidence-desk][data-layout="bottom"] .fved-card{margin:0}
+.fved-card-type{margin:0;color:var(--fved-accent);font-size:10px;font-weight:820;letter-spacing:.12em;text-transform:uppercase}
+.fved-card-text{margin:0;display:-webkit-box;overflow:hidden;color:var(--fved-text);font-size:12px;line-height:1.5;-webkit-box-orient:vertical;-webkit-line-clamp:6}
+.fved-card-actions{display:flex;flex-wrap:wrap;gap:8px}
+.fved-card button,.fved-card a{display:inline-flex;align-items:center;justify-content:center;padding:0 10px;text-decoration:none;font-size:11px;font-weight:740}
+.fved-card a{color:var(--fved-accent)}
+.fved-story-target{scroll-margin-top:118px}
+.fved-story-target.fved-arrived{outline:3px solid var(--fved-accent);outline-offset:6px;border-radius:2px}
+[data-fv-evidence-desk-spacer]{height:0;pointer-events:none}
+@media(max-width:700px){[data-fv-evidence-desk-launcher]{margin:30px 0 38px;padding:17px 16px}.fved-launch-row{display:block}.fved-open{width:100%;margin-top:14px}[data-fv-evidence-desk]{left:8px!important;right:8px!important;bottom:8px!important;max-height:min(46vh,360px)!important;border-radius:12px}.fved-head{padding:13px 12px 11px}.fved-status{padding:8px 12px}.fved-body{padding:9px}.fved-head-actions{gap:5px}.fved-close,.fved-clear{padding:0 8px}}
+@media(max-width:360px){.fved-head{display:block}.fved-head-actions{margin-top:9px}.fved-close,.fved-clear{flex:1}.fved-card-text{-webkit-line-clamp:4}}
+@media(prefers-reduced-motion:reduce){[data-fv-evidence-desk][data-layout="bottom"] .fved-body{scroll-behavior:auto}.fved-story-target{scroll-behavior:auto}}
+@media(forced-colors:active){[data-fv-evidence-desk-launcher],[data-fv-evidence-desk],.fved-open,.fved-close,.fved-clear,.fved-pin,.fved-card,.fved-card button,.fved-card a,.fved-empty{border-color:CanvasText}.fved-open:focus-visible,.fved-close:focus-visible,.fved-clear:focus-visible,.fved-pin:focus-visible,.fved-card button:focus-visible,.fved-card a:focus-visible{outline-color:Highlight}.fved-pin[aria-pressed="true"]{outline:2px solid Highlight}}
+@media print{[data-fv-evidence-desk-launcher],[data-fv-evidence-desk],[data-fv-evidence-desk-spacer],.fved-pin{display:none!important}}
+</style>
+<script id="fv-evidence-desk-v1-js">
+(()=>{'use strict';
+if(window.__fvEvidenceDesk)return;window.__fvEvidenceDesk={version:'1.0.0'};
+const start=()=>{
+  if(!document.body.classList.contains('single-post'))return;
+  const article=document.querySelector('main article,article.single,article');if(!article)return;
+  const sourceHeading=article.querySelector('h2#sources.fv-source-heading,h2.fv-source-heading#sources');
+  const notesRoot=article.querySelector('.fv-source-list[data-fv-footnotes]');
+  if(!sourceHeading||!notesRoot)return;
+  if(!(sourceHeading.compareDocumentPosition(notesRoot)&Node.DOCUMENT_POSITION_FOLLOWING))return;
+  const root=sourceHeading.closest('.entry-content,.wp-block-post-content')||article;
+  if(!root.contains(sourceHeading)||!root.contains(notesRoot))return;
+  const before=(node,boundary)=>Boolean(node&&boundary&&(node.compareDocumentPosition(boundary)&Node.DOCUMENT_POSITION_FOLLOWING));
+  const paragraphs=[...root.querySelectorAll('p')].filter(p=>before(p,sourceHeading)&&!p.closest('[data-fv-feature-ui]')&&p.textContent.trim().length>30);
+  const storyChars=paragraphs.reduce((n,p)=>n+p.textContent.trim().length,0);
+  const notePattern=/^fv-fn-(\d+)$/;
+  const validNotes=[...notesRoot.querySelectorAll(':scope>li[id^="fv-fn-"]')].filter(li=>notePattern.test(li.id));
+  const figures=[...root.querySelectorAll('figure.wp-block-image')].filter(f=>before(f,sourceHeading)&&f.querySelector('img')&&!f.closest('[data-fv-feature-ui]'));
+  if(paragraphs.length<12||storyChars<2800||validNotes.length<4||figures.length<2)return;
+  const firstHeading=[...root.querySelectorAll('h2.wp-block-heading')].find(h=>h!==sourceHeading&&before(h,sourceHeading));
+  const anchor=firstHeading||figures[0];if(!anchor)return;
+
+  const cleanText=(node)=>{
+    const clone=node.cloneNode(true);
+    clone.querySelectorAll('.fv-fn-backlinks,.fved-pin,[data-fv-feature-ui]').forEach(n=>n.remove());
+    return clone.textContent.replace(/\s+/g,' ').trim();
+  };
+  const items=new Map();
+  validNotes.forEach(li=>{
+    const m=li.id.match(notePattern);if(!m)return;
+    const external=[...li.querySelectorAll('a[href]')].find(a=>/^https?:\/\//i.test(a.href||''));
+    items.set(`source-${m[1]}`,{key:`source-${m[1]}`,type:'source',label:`Source ${m[1]}`,target:li,text:cleanText(li),href:external?external.href:''});
+  });
+  figures.forEach((figure,i)=>{
+    const caption=figure.querySelector('figcaption');
+    const img=figure.querySelector('img');
+    const text=(caption&&cleanText(caption))||(img&&img.getAttribute('alt')||'').trim()||`Figure ${i+1}`;
+    items.set(`figure-${i+1}`,{key:`figure-${i+1}`,type:'figure',label:`Figure ${i+1}`,target:figure,text,href:''});
+  });
+  if(items.size<6)return;
+
+  const launcher=document.createElement('section');
+  launcher.dataset.fvFeatureUi='evidence-desk-launcher';
+  launcher.dataset.fvEvidenceDeskLauncher='';
+  launcher.setAttribute('aria-label','Evidence Desk');
+  launcher.innerHTML='<div class="fved-launch-row"><div><p class="fved-kicker">Evidence Desk</p><h2 class="fved-title">Keep the record in reach while you read.</h2><p class="fved-copy">Pin up to four published source notes or figure captions from this investigation. Session only—nothing is saved.</p></div><button class="fved-open" type="button" aria-expanded="false">Open Evidence Desk</button></div>';
+
+  const desk=document.createElement('aside');
+  desk.dataset.fvFeatureUi='evidence-desk';
+  desk.dataset.fvEvidenceDesk='';
+  desk.setAttribute('aria-label','Evidence Desk');
+  desk.hidden=true;
+  desk.innerHTML='<div class="fved-head"><div class="fved-head-main"><p class="fved-kicker">Evidence Desk</p><h2>Working set</h2><p>Only published material from this page. No notes are created, scored or saved.</p></div><div class="fved-head-actions"><button class="fved-clear" type="button" disabled>Clear</button><button class="fved-close" type="button">Close</button></div></div><div class="fved-status" role="status" aria-live="polite"><strong>0 of 4 pinned</strong></div><div class="fved-body"><p class="fved-empty">Open the source list or any figure and choose <strong>Pin to desk</strong>. Your working set disappears when this page reloads.</p></div>';
+  const spacer=document.createElement('div');spacer.dataset.fvFeatureUi='evidence-desk-spacer';spacer.dataset.fvEvidenceDeskSpacer='';spacer.setAttribute('aria-hidden','true');
+
+  anchor.before(launcher);root.appendChild(spacer);document.body.appendChild(desk);
+
+  const open=launcher.querySelector('.fved-open'),close=desk.querySelector('.fved-close'),clear=desk.querySelector('.fved-clear'),status=desk.querySelector('.fved-status strong'),body=desk.querySelector('.fved-body');
+  const pins=new Map(),pinButtons=new Map();
+  let isOpen=false,resizeFrame=0,flashTimer=0;
+
+  const motion=()=>window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+  const updateSpacer=()=>{
+    if(!isOpen||desk.hidden||desk.dataset.layout==='side'){spacer.style.height='0px';return}
+    const h=Math.ceil(desk.getBoundingClientRect().height)+26;spacer.style.height=`${h}px`;
+  };
+  const chooseLayout=()=>{
+    if(!isOpen)return;
+    const r=root.getBoundingClientRect();
+    const side=window.innerWidth>=1180&&r.right<=window.innerWidth-395;
+    desk.dataset.layout=side?'side':'bottom';
+    requestAnimationFrame(updateSpacer);
+  };
+  const scheduleLayout=()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(chooseLayout)};
+
+  const focusTarget=(target)=>{
+    const had=target.hasAttribute('tabindex'),old=target.getAttribute('tabindex');
+    target.classList.add('fved-story-target','fved-arrived');
+    if(!had)target.setAttribute('tabindex','-1');
+    target.scrollIntoView({behavior:motion(),block:'center'});
+    setTimeout(()=>{try{target.focus({preventScroll:true})}catch(_){target.focus()}},motion()==='auto'?0:220);
+    clearTimeout(flashTimer);flashTimer=setTimeout(()=>{
+      target.classList.remove('fved-arrived');
+      if(!had)target.removeAttribute('tabindex');else if(old!==null)target.setAttribute('tabindex',old);
+    },1400);
+  };
+
+  const render=()=>{
+    body.querySelectorAll('.fved-card').forEach(n=>n.remove());
+    let empty=body.querySelector('.fved-empty');
+    if(pins.size){if(empty)empty.hidden=true}else{if(empty)empty.hidden=false}
+    pins.forEach(item=>{
+      const card=document.createElement('article');card.className='fved-card';card.dataset.key=item.key;
+      const type=document.createElement('p');type.className='fved-card-type';type.textContent=item.label;
+      const text=document.createElement('p');text.className='fved-card-text';text.textContent=item.text;
+      const actions=document.createElement('div');actions.className='fved-card-actions';
+      const view=document.createElement('button');view.type='button';view.dataset.action='view';view.textContent='View in story';view.addEventListener('click',()=>focusTarget(item.target));
+      const remove=document.createElement('button');remove.type='button';remove.dataset.action='remove';remove.textContent='Remove';remove.addEventListener('click',()=>setPinned(item.key,false));
+      actions.append(view,remove);
+      if(item.href){const link=document.createElement('a');link.href=item.href;link.target='_blank';link.rel='noopener';link.textContent='Open source';actions.appendChild(link)}
+      card.append(type,text,actions);body.appendChild(card);
+    });
+    status.textContent=`${pins.size} of 4 pinned`;
+    clear.disabled=pins.size===0;
+    pinButtons.forEach((button,key)=>{
+      const active=pins.has(key);button.setAttribute('aria-pressed',active?'true':'false');button.textContent=active?'Pinned':'Pin to desk';
+      button.disabled=!active&&pins.size>=4;
+    });
+    requestAnimationFrame(updateSpacer);
+  };
+  const setPinned=(key,on)=>{
+    const item=items.get(key);if(!item)return;
+    if(on){if(!pins.has(key)&&pins.size>=4)return;pins.set(key,item)}else pins.delete(key);
+    render();
+  };
+  const addPinControls=()=>{
+    items.forEach(item=>{
+      if(pinButtons.has(item.key))return;
+      const button=document.createElement('button');button.type='button';button.className='fved-pin';button.dataset.fvFeatureUi='evidence-desk-pin';button.dataset.key=item.key;button.setAttribute('aria-pressed',pins.has(item.key)?'true':'false');button.textContent=pins.has(item.key)?'Pinned':'Pin to desk';
+      button.addEventListener('click',()=>setPinned(item.key,!pins.has(item.key)));
+      item.target.appendChild(button);pinButtons.set(item.key,button);
+    });
+    render();
+  };
+  const removePinControls=()=>{pinButtons.forEach(b=>b.remove());pinButtons.clear()};
+  const openDesk=()=>{
+    if(isOpen)return;isOpen=true;desk.hidden=false;open.setAttribute('aria-expanded','true');addPinControls();chooseLayout();close.focus();
+  };
+  const closeDesk=()=>{
+    if(!isOpen)return;isOpen=false;desk.hidden=true;open.setAttribute('aria-expanded','false');removePinControls();spacer.style.height='0px';open.focus();
+  };
+  open.addEventListener('click',openDesk);close.addEventListener('click',closeDesk);clear.addEventListener('click',()=>{pins.clear();render()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen){e.preventDefault();closeDesk()}});
+  window.addEventListener('resize',scheduleLayout,{passive:true});
+  if('ResizeObserver'in window){new ResizeObserver(()=>{if(isOpen)updateSpacer()}).observe(desk)}
+};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();
+</script>
+<!-- /wp:html -->
