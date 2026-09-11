@@ -22,6 +22,7 @@ BRANCH = "production"
 ZIP_ROOT = "final-vestige-site-layer"
 PACKAGE_FILES = {
     "final-vestige-site-layer.php",
+    "payloads/case-search-wp-block-v1.txt",
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
     "payloads/signal-finder-wp-block-v1.txt",
@@ -95,8 +96,6 @@ def main() -> int:
             if hashlib.sha256(data).hexdigest() != payload["sha256"]:
                 fail(f"source payload SHA mismatch: {rel}")
 
-    # Deterministically verify the sender's exact HMAC canonicalization without
-    # touching the network or requiring the real WordPress secret.
     known_secret = "11" * 32
     known_timestamp = 1_700_000_000
     known_nonce = "FixedNonce_1234567890"
@@ -155,6 +154,7 @@ def main() -> int:
         "APPROVED_PACKAGE_SHA",
         f"actions/checkout@{CHECKOUT_SHA}",
         f"actions/upload-artifact@{UPLOAD_ARTIFACT_SHA}",
+        "python3 tests/verify_case_search.py",
     ]
     for fragment in required_workflow_fragments:
         if fragment not in workflow:
