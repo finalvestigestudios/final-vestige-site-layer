@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "source-kit-wp-block-v1.txt"
-EXPECTED_BYTES = 11199
-EXPECTED_SHA256 = "6fa06fe80e6b2a17cca3b9453b02ab174d404367847909fee2ef98c6fac09659"
+EXPECTED_BYTES = 11198
+EXPECTED_SHA256 = "841ea1e40de12b43d1aaf616fe1277c13ce55e8ac4419e9cd2d65309f5b661e6"
 
 def require(condition: bool, message: str) -> None:
     if not condition:
@@ -19,7 +19,8 @@ def main() -> None:
     raw = PAYLOAD.read_bytes()
     text = raw.decode("utf-8")
     require(len(raw) == EXPECTED_BYTES, f"payload byte count drifted: {len(raw)}")
-    require(hashlib.sha256(raw).hexdigest() == EXPECTED_SHA256, "payload SHA-256 drifted")
+    actual_sha256 = hashlib.sha256(raw).hexdigest()
+    require(actual_sha256 == EXPECTED_SHA256, f"payload SHA-256 drifted: {actual_sha256}")
     require(text.count("<!-- wp:html -->") == 1, "payload must contain exactly one wp:html opener")
     require(text.count("<!-- /wp:html -->") == 1, "payload must contain exactly one wp:html closer")
     require('<style id="fv-source-kit-v1-css">' in text, "versioned stylesheet id missing")
