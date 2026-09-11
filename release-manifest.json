@@ -1,6 +1,6 @@
 {
-  "release_id": "FVSL-CASE-SEARCH-001",
-  "version": "0.2.0",
+  "release_id": "FVSL-E2E-CANARY-001",
+  "version": "0.2.1",
   "delivery": {
     "wordpress_hook": "wp_footer",
     "priority": 99,
