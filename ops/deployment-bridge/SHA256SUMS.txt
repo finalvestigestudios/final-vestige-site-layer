@@ -1,12 +1,12 @@
-d093381ed5c3e90738cdeb03a3142f724d91821e012cb6573bbe5f19d64e9f3b  final-vestige-deployment-bridge/final-vestige-deployment-bridge.php
+89705fe6fbd4f8b7ba0d3e0cfa8af408b29f1a513ff4fd02907ea953164f3ca8  final-vestige-deployment-bridge/final-vestige-deployment-bridge.php
 c0aa71d1d658b5ff6ad0baa1db2493e1edadbc29953dfa0799cf41c3f103152f  final-vestige-deployment-bridge/includes/class-fvdb-admin.php
-b65457859eb1725d8b2a4d9b15dae32d3c4392c86981fd96f0fab2ab919a4b56  final-vestige-deployment-bridge/includes/class-fvdb-auth.php
+1652bfd68a342eb483018546725fbd5d025324cd761b6c571a627f2b9fec2408  final-vestige-deployment-bridge/includes/class-fvdb-auth.php
 af1c432cf0945f7b86915507b3fef9d9d766788e4d973f7332911447ae6caded  final-vestige-deployment-bridge/includes/class-fvdb-core.php
-6accdae724036bef8ef9eb3a59763a227e238b62373fe0934c3188ee2c2da29e  final-vestige-deployment-bridge/includes/class-fvdb-lock.php
+cc4789a7c6cb3d715c6e072d7cb88925288c12c73b342ec959b7fe24bf6f545b  final-vestige-deployment-bridge/includes/class-fvdb-lock.php
 5557af2d08d3393b3d524cdce10ac8d343dc152313a3f056542d733690afcb3f  final-vestige-deployment-bridge/includes/class-fvdb-package.php
 18fa283f7f9928525361d38bed50cac5401847cab37f48bc1416357100ef45d9  final-vestige-deployment-bridge/includes/class-fvdb-state.php
-ff04444f7315e50ac5861cb4952fd7eb2341eb9bb845483847ff2ffaacd4ab46  final-vestige-deployment-bridge/readme.txt
+10d8c9d2951f21d72524d5d924c583fcf28ff69c6cdbe8aec0964d7c72785767  final-vestige-deployment-bridge/readme.txt
 
 Deterministic install ZIP (generated twice by build_bridge.py with byte-identical output):
-fe91633132a4280ae95338df1b0f5eecda34354d4331e9c60f63ed69f720e985  final-vestige-deployment-bridge-0.3.0.zip
-bytes=12365
+79bc37821cb67485097f1c2d45d519f12f4a8efd2c52d156fefa5c178bb0e222  final-vestige-deployment-bridge-0.3.1.zip
+bytes=13375
