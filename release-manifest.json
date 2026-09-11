@@ -1,0 +1,39 @@
+{
+  "release_id": "FVSL-BOOTSTRAP-001",
+  "version": "0.1.0",
+  "delivery": {
+    "wordpress_hook": "wp_footer",
+    "priority": 99,
+    "destination": "/wp-content/plugins/final-vestige-site-layer",
+    "production_branch": "production"
+  },
+  "payloads": [
+    {
+      "name": "Signal Finder",
+      "file": "payloads/signal-finder-wp-block-v1.txt",
+      "bytes": 10370,
+      "sha256": "4ce83f3ef803e33a1f90d9ca970894e72a18ece34ea86eb7f104bc8086792e27"
+    },
+    {
+      "name": "Evidence Map",
+      "file": "payloads/evidence-map-wp-block-v1.txt",
+      "bytes": 15319,
+      "sha256": "ec62da9272052b7f57bb243dd939eb726ee18779cb5575233b3582dfe6aad008"
+    },
+    {
+      "name": "Detail Lens",
+      "file": "payloads/detail-lens-wp-block-v1.txt",
+      "bytes": 15617,
+      "sha256": "a4c20692a2c51643af17a1502cd93aabcf5e0a6c2a64ffdd35096411129ce859"
+    }
+  ],
+  "failure_policy": "If any payload is missing, has a byte-count mismatch, or has a SHA-256 mismatch, emit none of the site-layer payloads.",
+  "separate_gates": [
+    "Whole-site Coming Soon removal/global indexing",
+    "Spending or billing",
+    "Account/permission changes",
+    "Private-user processing",
+    "Public Scout release",
+    "Real-money trading"
+  ]
+}

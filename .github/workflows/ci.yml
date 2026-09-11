@@ -1,0 +1,162 @@
+name: Final Vestige Site Layer CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - production
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      CHECKOUT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
+        with:
+          ref: ${{ env.CHECKOUT_REF }}
+          fetch-depth: 0
+
+      - name: Resolve exact release identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            RELEASE_COMMIT="$CHECKOUT_REF"
+            test "$(git rev-parse HEAD)" = "$RELEASE_COMMIT"
+          elif [ "$GITHUB_REF" = "refs/heads/production" ]; then
+            mapfile -t PARENTS < <(git show -s --format='%P' HEAD | tr ' ' '\n')
+            if [ "${#PARENTS[@]}" -ne 2 ]; then
+              echo "::error::Production deployment requires a two-parent PR merge commit."
+              exit 1
+            fi
+            RELEASE_COMMIT="${PARENTS[1]}"
+            if ! git diff --quiet "$RELEASE_COMMIT" HEAD -- .; then
+              echo "::error::Merge tree differs from the exact reviewed PR head; refusing deployment."
+              exit 1
+            fi
+          else
+            RELEASE_COMMIT="$GITHUB_SHA"
+            test "$(git rev-parse HEAD)" = "$RELEASE_COMMIT"
+          fi
+          echo "RELEASE_COMMIT=$RELEASE_COMMIT" >> "$GITHUB_ENV"
+          echo "Exact release commit: $RELEASE_COMMIT"
+
+      - name: Runtime versions
+        run: |
+          php --version
+          node --version
+          python3 --version
+
+      - name: PHP syntax
+        run: php -l final-vestige-site-layer.php
+
+      - name: Release integrity and JavaScript syntax
+        run: python3 tests/verify_release.py
+
+      - name: Build deterministic bridge package twice
+        run: |
+          mkdir -p dist
+          python3 ops/build_site_layer.py "$RELEASE_COMMIT" dist/final-vestige-site-layer-a.zip
+          python3 ops/build_site_layer.py "$RELEASE_COMMIT" dist/final-vestige-site-layer-b.zip
+          cmp dist/final-vestige-site-layer-a.zip dist/final-vestige-site-layer-b.zip
+          cp dist/final-vestige-site-layer-a.zip dist/final-vestige-site-layer.zip
+          sha256sum dist/final-vestige-site-layer.zip
+
+      - name: Deployment-lane contract
+        run: python3 tests/verify_deploy_lane.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
+
+      - name: Upload exact candidate package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 resolved SHA
+        with:
+          name: fvsl-package-${{ env.RELEASE_COMMIT }}
+          path: dist/final-vestige-site-layer.zip
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/production'
+    needs: verify
+    runs-on: ubuntu-latest
+    concurrency:
+      group: fvsl-production-deploy
+      cancel-in-progress: false
+    steps:
+      - name: Checkout production
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
+        with:
+          fetch-depth: 0
+
+      - name: Resolve exact QD-approved release identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t PARENTS < <(git show -s --format='%P' HEAD | tr ' ' '\n')
+          if [ "${#PARENTS[@]}" -ne 2 ]; then
+            echo "::error::Production deployment requires a two-parent PR merge commit."
+            exit 1
+          fi
+          RELEASE_COMMIT="${PARENTS[1]}"
+          if ! git diff --quiet "$RELEASE_COMMIT" HEAD -- .; then
+            echo "::error::Merge tree differs from the exact reviewed PR head; refusing deployment."
+            exit 1
+          fi
+
+          MESSAGE="$(git log -1 --pretty=%B HEAD)"
+          QD_PASS="$(printf '%s\n' "$MESSAGE" | sed -n 's/^FVSL-QD-PASS: \(YES\)$/\1/p' | tail -n 1)"
+          APPROVED_HEAD="$(printf '%s\n' "$MESSAGE" | sed -n 's/^FVSL-QD-HEAD: \([a-f0-9]\{40\}\)$/\1/p' | tail -n 1)"
+          APPROVED_PACKAGE_SHA="$(printf '%s\n' "$MESSAGE" | sed -n 's/^FVSL-PACKAGE-SHA256: \([a-f0-9]\{64\}\)$/\1/p' | tail -n 1)"
+
+          if [ "$QD_PASS" != "YES" ]; then
+            echo "::error::Merge commit lacks the exact QD PASS marker."
+            exit 1
+          fi
+          if [ "$APPROVED_HEAD" != "$RELEASE_COMMIT" ]; then
+            echo "::error::QD-approved head does not match the merged PR head."
+            exit 1
+          fi
+          if ! [[ "$APPROVED_PACKAGE_SHA" =~ ^[a-f0-9]{64}$ ]]; then
+            echo "::error::Merge commit lacks a valid QD-approved package SHA-256."
+            exit 1
+          fi
+
+          echo "RELEASE_COMMIT=$RELEASE_COMMIT" >> "$GITHUB_ENV"
+          echo "APPROVED_PACKAGE_SHA=$APPROVED_PACKAGE_SHA" >> "$GITHUB_ENV"
+          echo "Exact QD-approved source commit: $RELEASE_COMMIT"
+          echo "Exact QD-approved package SHA-256: $APPROVED_PACKAGE_SHA"
+
+      - name: Require configured deployment secret
+        shell: bash
+        env:
+          FV_WP_DEPLOY_SECRET: ${{ secrets.FV_WP_DEPLOY_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ -z "${FV_WP_DEPLOY_SECRET:-}" ]; then
+            echo "::error::FV_WP_DEPLOY_SECRET is not configured."
+            exit 1
+          fi
+
+      - name: Build and verify exact production package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          python3 ops/build_site_layer.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
+          python3 tests/verify_deploy_lane.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
+          ACTUAL_PACKAGE_SHA="$(sha256sum dist/final-vestige-site-layer.zip | awk '{print $1}')"
+          echo "$ACTUAL_PACKAGE_SHA  dist/final-vestige-site-layer.zip"
+          if [ "$ACTUAL_PACKAGE_SHA" != "$APPROVED_PACKAGE_SHA" ]; then
+            echo "::error::Rebuilt package bytes differ from the exact QD-approved artifact."
+            exit 1
+          fi
+
+      - name: Send authenticated package to Deployment Bridge
+        env:
+          FV_WP_DEPLOY_SECRET: ${{ secrets.FV_WP_DEPLOY_SECRET }}
+          GITHUB_REF_NAME: production
+        run: python3 ops/deploy_bridge.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
