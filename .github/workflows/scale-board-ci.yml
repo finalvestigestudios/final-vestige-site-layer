@@ -1,11 +1,12 @@
-name: Scale Board R1 CI
+name: Scale Board R2 CI
 
 on:
   pull_request:
     branches: [production]
     paths:
-      - 'payloads/scale-board-wp-block-r1.txt'
-      - 'tests/fixtures/scale-board-r1-*.html'
+      - 'payloads/scale-board-wp-block-r2.txt'
+      - 'tests/verify_scale_board_r2.py'
+      - 'tests/fixtures/scale-board-r2-*.html'
       - '.github/workflows/scale-board-ci.yml'
       - 'SCALE_BOARD.md'
   workflow_dispatch:
@@ -19,34 +20,11 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify exact R1 payload identity and static truth contract
-        run: |
-          test "$(wc -c < payloads/scale-board-wp-block-r1.txt)" -eq 17266
-          echo "64e30ec217524a7a124cf0939d74ef02d8cde234e3734078419a30814dbfead3  payloads/scale-board-wp-block-r1.txt" | sha256sum -c -
-          grep -Fq 'invalidNumberPrefix' payloads/scale-board-wp-block-r1.txt
-          grep -Fq 'selected.some(existing=>overlaps(candidate,existing))' payloads/scale-board-wp-block-r1.txt
-          grep -Fq 'candidates.sort((a,b)=>a.start-b.start||(b.end-b.start)-(a.end-a.start)||a.rank-b.rank' payloads/scale-board-wp-block-r1.txt
-          grep -Fq 'numericNumber=String.raw' payloads/scale-board-wp-block-r1.txt
-          grep -Fq '${tens}(?:(?:\s|-)+${ones})?' payloads/scale-board-wp-block-r1.txt
-          awk '/<script id="fv-scale-board-r1-js">/{flag=1;next}/<\/script>/{if(flag){exit}}flag' payloads/scale-board-wp-block-r1.txt > /tmp/scale-board-r1.js
-          node --check /tmp/scale-board-r1.js
-      - name: Confirm browser runtime
-        run: |
-          if command -v google-chrome >/dev/null 2>&1; then google-chrome --version;
-          elif command -v chromium >/dev/null 2>&1; then chromium --version;
-          elif command -v chromium-browser >/dev/null 2>&1; then chromium-browser --version;
-          else echo "No Chrome/Chromium runtime found" >&2; exit 1; fi
-      - name: Build exact-payload browser fixtures
-        run: |
-          cat tests/fixtures/scale-board-r1-truth-prefix.html payloads/scale-board-wp-block-r1.txt tests/fixtures/scale-board-r1-truth-suffix.html > /tmp/scale-board-r1-truth.html
-          cat tests/fixtures/scale-board-r1-ambiguous-prefix.html payloads/scale-board-wp-block-r1.txt tests/fixtures/scale-board-r1-fail-suffix.html > /tmp/scale-board-r1-ambiguous.html
-      - name: Browser regression — extraction truth and Sources fail-closed
-        run: |
-          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
-          "$browser" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --dump-dom file:///tmp/scale-board-r1-truth.html > /tmp/scale-board-r1-truth.dom
-          grep -q 'data-fv-test="pass"' /tmp/scale-board-r1-truth.dom || { grep -o 'data-fv-reason="[^"]*"' /tmp/scale-board-r1-truth.dom || true; exit 1; }
-          "$browser" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --dump-dom file:///tmp/scale-board-r1-ambiguous.html > /tmp/scale-board-r1-ambiguous.dom
-          grep -q 'data-fv-test="pass"' /tmp/scale-board-r1-ambiguous.dom || { grep -o 'data-fv-reason="[^"]*"' /tmp/scale-board-r1-ambiguous.dom || true; exit 1; }
+      - name: Verify exact Scale Board R2 artifact and browser behavior
+        run: python tests/verify_scale_board_r2.py
