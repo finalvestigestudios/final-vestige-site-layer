@@ -147,6 +147,10 @@ def main() -> int:
         "secrets.FV_WP_DEPLOY_SECRET",
         "python3 ops/deploy_bridge.py",
         "git diff --quiet \"$RELEASE_COMMIT\" HEAD",
+        "FVSL-QD-PASS:",
+        "FVSL-QD-HEAD:",
+        "FVSL-PACKAGE-SHA256:",
+        "APPROVED_PACKAGE_SHA",
     ]
     for fragment in required_workflow_fragments:
         if fragment not in workflow:

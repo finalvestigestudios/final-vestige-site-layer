@@ -64,14 +64,13 @@ def build_manifest(commit: str) -> bytes:
 
 def write_entry(zf: zipfile.ZipFile, name: str, data: bytes) -> None:
     info = zipfile.ZipInfo(name, FIXED_TIME)
-    info.compress_type = zipfile.ZIP_DEFLATED
+    info.compress_type = zipfile.ZIP_STORED
     info.external_attr = 0o100644 << 16
     info.create_system = 3
     zf.writestr(
         info,
         data,
-        compress_type=zipfile.ZIP_DEFLATED,
-        compresslevel=9,
+        compress_type=zipfile.ZIP_STORED,
     )
 
 
@@ -86,7 +85,7 @@ def build(commit: str, output: Path) -> tuple[str, int]:
     entries[f"{ZIP_ROOT}/release-manifest.json"] = manifest_bytes
 
     with zipfile.ZipFile(
-        output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+        output, "w", compression=zipfile.ZIP_STORED
     ) as zf:
         for name in sorted(entries):
             write_entry(zf, name, entries[name])
