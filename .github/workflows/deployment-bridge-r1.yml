@@ -1,0 +1,51 @@
+name: Deployment Bridge R1
+
+on:
+  push:
+    branches:
+      - ops/deployment-bridge-v0.2.0
+    paths:
+      - 'ops/deployment-bridge/**'
+      - '.github/workflows/deployment-bridge-r1.yml'
+  pull_request:
+    paths:
+      - 'ops/deployment-bridge/**'
+      - '.github/workflows/deployment-bridge-r1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bridge-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PHP syntax lint
+        shell: bash
+        run: |
+          set -euo pipefail
+          find ops/deployment-bridge/final-vestige-deployment-bridge -name '*.php' -print0 | xargs -0 -n1 php -l
+          php -l ops/deployment-bridge/tests/runtime_bridge.php
+
+      - name: Static security contract
+        run: python3 ops/deployment-bridge/tests/verify_bridge.py
+
+      - name: Adversarial runtime contract
+        run: python3 ops/deployment-bridge/tests/runtime_bridge.py
+
+      - name: Deterministic package and frozen identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 ops/deployment-bridge/build_bridge.py
+          cp final-vestige-deployment-bridge-0.3.0.zip /tmp/fvdb-first.zip
+          python3 ops/deployment-bridge/build_bridge.py
+          cmp /tmp/fvdb-first.zip final-vestige-deployment-bridge-0.3.0.zip
+          actual_sha="$(sha256sum final-vestige-deployment-bridge-0.3.0.zip | awk '{print $1}')"
+          actual_bytes="$(stat -c%s final-vestige-deployment-bridge-0.3.0.zip)"
+          test "$actual_sha" = "fe91633132a4280ae95338df1b0f5eecda34354d4331e9c60f63ed69f720e985"
+          test "$actual_bytes" = "12365"
+          grep -F "fe91633132a4280ae95338df1b0f5eecda34354d4331e9c60f63ed69f720e985  final-vestige-deployment-bridge-0.3.0.zip" ops/deployment-bridge/SHA256SUMS.txt
