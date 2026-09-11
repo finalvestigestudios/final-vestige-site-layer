@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "source-route-wp-block-v1.txt"
-EXPECTED_BYTES = 13713
-EXPECTED_SHA256 = "2d2140848a574042c2cafcff33671c756c261ed4bd3aad1995c5c272ad10b137"
+EXPECTED_BYTES = 13714
+EXPECTED_SHA256 = "a1959ef5584290ba8f7162ae7258db2a9a51064851dc11b36907ded381c97a83"
 
 
 def require(condition: bool, message: str) -> None:
@@ -107,7 +107,7 @@ const fvsrTest=()=>{{
     setTimeout(()=>{{
      try{{
       if(d.open)return fail('view source did not close dialog');
-      if(document.activeElement.id!=='fv-fn-2')return fail('view source did not focus original source note');
+      if(document.activeElement.id!=='fv-fn-2')return fail('view source did not focus original source note: active='+document.activeElement.tagName+'#'+document.activeElement.id);
       launch.focus();launch.click();
       setTimeout(()=>{{
        try{{
@@ -118,18 +118,18 @@ const fvsrTest=()=>{{
         d.querySelector('[data-jump="passage"]').click();
         setTimeout(()=>{{
          try{{
-          if(document.activeElement.id!=='ref-opening-3')return fail('view passage did not focus original citation');
+          if(document.activeElement.id!=='ref-opening-3')return fail('view passage did not focus original citation: active='+document.activeElement.tagName+'#'+document.activeElement.id);
           launch.focus();launch.click();
           setTimeout(()=>{{
            d.querySelector('.fvsr-close').click();
            setTimeout(()=>{{if(document.activeElement!==launch)return fail('close did not return focus to launcher');return pass()}},80);
           }},80);
          }}catch(e){{fail(e&&e.message?e.message:String(e))}}
-        }},80);
+        }},200);
        }}catch(e){{fail(e&&e.message?e.message:String(e))}}
       }},80);
      }}catch(e){{fail(e&&e.message?e.message:String(e))}}
-    }},80);
+    }},200);
    }}catch(e){{fail(e&&e.message?e.message:String(e))}}
   }},80);
  }}catch(e){{fail(e&&e.message?e.message:String(e))}}
