@@ -105,8 +105,8 @@ Before visitor invocation the feature creates only the compact launcher. The dia
 
 - Base: `production` at `a2a499455d714c0238241fde9b76188efd1d7b1d`
 - Payload: `payloads/visual-trail-wp-block-v1.txt`
-- Payload bytes: `12,466`
-- Payload SHA-256: `39c5ffd1bf74930076417b8909e4588eb198647252cdb2d8ec2c8e54f1e7aa87`
+- Payload bytes: `12,457`
+- Payload SHA-256: `f09986ddc6ff6a9f6fd9106f9af93c53d18450654dd91c2aee6253755cda68ce`
 - Verifier: `tests/verify_visual_trail.py`
 - Workflow: `.github/workflows/visual-trail-ci.yml`
 
