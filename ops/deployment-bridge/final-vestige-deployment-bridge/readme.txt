@@ -2,7 +2,7 @@
 Contributors: finalvestige
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 
 Private fail-closed deployment receiver for the Final Vestige Site Layer.
 
@@ -10,8 +10,11 @@ Security model:
 - HMAC-SHA256 authenticated deploy and status requests only.
 - Repository and production-branch allowlists are hard-coded.
 - Five-minute timestamp window and race-safe single-use nonce claims backed by atomic option insertion.
+- Expired nonce reclamation uses exact-value compare-and-delete semantics so stale readers cannot erase a successor claim.
 - Authentication failures produce no state/database write and return no detailed auth oracle.
 - One atomic deployment mutex serializes authenticated deployment attempts across PHP workers.
+- Expired deployment leases are reclaimed only when the exact observed stale option bytes still exist; stale readers cannot delete a newly acquired live lock.
+- Lock release is exact-value compare-and-delete safe against late release after lease replacement.
 - Exact commit + package SHA idempotency returns already_deployed only after installed bytes still verify against the manifest.
 - Compressed, expanded, entry-count and regular-file-count limits.
 - ZIP path traversal, duplicate entry and encrypted-entry rejection.
