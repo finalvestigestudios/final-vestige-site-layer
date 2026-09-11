@@ -17,5 +17,5 @@ This branch is intentionally based on the current `production` branch and does *
 ## Exact artifact identity
 
 - Path: `payloads/source-kit-wp-block-v1.txt`
-- Bytes: `11199`
-- SHA-256: `6fa06fe80e6b2a17cca3b9453b02ab174d404367847909fee2ef98c6fac09659`
+- Bytes: `11198`
+- SHA-256: `841ea1e40de12b43d1aaf616fe1277c13ce55e8ac4419e9cd2d65309f5b661e6`
