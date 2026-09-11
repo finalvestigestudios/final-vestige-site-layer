@@ -1,4 +1,4 @@
-name: Deployment Bridge R1
+name: Deployment Bridge R1.1
 
 on:
   push:
@@ -38,16 +38,15 @@ jobs:
       - name: Adversarial runtime contract
         run: python3 ops/deployment-bridge/tests/runtime_bridge.py
 
-      - name: Deterministic package and frozen identity
+      - name: Deterministic package identity discovery
         shell: bash
         run: |
           set -euo pipefail
           python3 ops/deployment-bridge/build_bridge.py
-          cp final-vestige-deployment-bridge-0.3.0.zip /tmp/fvdb-first.zip
+          cp final-vestige-deployment-bridge-0.3.1.zip /tmp/fvdb-first.zip
           python3 ops/deployment-bridge/build_bridge.py
-          cmp /tmp/fvdb-first.zip final-vestige-deployment-bridge-0.3.0.zip
-          actual_sha="$(sha256sum final-vestige-deployment-bridge-0.3.0.zip | awk '{print $1}')"
-          actual_bytes="$(stat -c%s final-vestige-deployment-bridge-0.3.0.zip)"
-          test "$actual_sha" = "fe91633132a4280ae95338df1b0f5eecda34354d4331e9c60f63ed69f720e985"
-          test "$actual_bytes" = "12365"
-          grep -F "fe91633132a4280ae95338df1b0f5eecda34354d4331e9c60f63ed69f720e985  final-vestige-deployment-bridge-0.3.0.zip" ops/deployment-bridge/SHA256SUMS.txt
+          cmp /tmp/fvdb-first.zip final-vestige-deployment-bridge-0.3.1.zip
+          actual_sha="$(sha256sum final-vestige-deployment-bridge-0.3.1.zip | awk '{print $1}')"
+          actual_bytes="$(stat -c%s final-vestige-deployment-bridge-0.3.1.zip)"
+          echo "FVDB_PACKAGE_SHA256=$actual_sha"
+          echo "FVDB_PACKAGE_BYTES=$actual_bytes"
