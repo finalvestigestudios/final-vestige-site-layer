@@ -45,6 +45,59 @@ final class FVDB_Package {
         return is_array($decoded) ? $decoded : [];
     }
 
+    public static function installed_matches(string $commit) {
+        $target = trailingslashit(WP_PLUGIN_DIR) . FVDB_TARGET_SLUG;
+        if (!is_dir($target)) {
+            return new WP_Error('installed_target_missing', 'Installed Site Layer directory is missing.');
+        }
+        $manifest = self::read_installed_manifest();
+        if (!$manifest) {
+            return new WP_Error('installed_manifest_missing', 'Installed release manifest is missing or invalid.');
+        }
+        if (($manifest['repository'] ?? '') !== FVDB_EXPECTED_REPOSITORY || ($manifest['branch'] ?? '') !== FVDB_EXPECTED_BRANCH) {
+            return new WP_Error('installed_manifest_identity_mismatch', 'Installed release manifest identity does not match the bridge allowlist.');
+        }
+        if (strtolower((string) ($manifest['commit'] ?? '')) !== strtolower($commit)) {
+            return new WP_Error('installed_manifest_commit_mismatch', 'Installed release manifest commit differs from the requested commit.');
+        }
+        $files = $manifest['files'] ?? null;
+        if (!is_array($files) || !$files) {
+            return new WP_Error('installed_manifest_files_missing', 'Installed release manifest has no file allowlist.');
+        }
+        $expected = [];
+        foreach ($files as $entry) {
+            if (!is_array($entry)) {
+                return new WP_Error('installed_manifest_entry_invalid', 'Installed release manifest contains an invalid file entry.');
+            }
+            $rel = (string) ($entry['path'] ?? '');
+            $sha = strtolower((string) ($entry['sha256'] ?? ''));
+            if (!self::safe_relative_path($rel) || !preg_match('/^[a-f0-9]{64}$/', $sha) || $rel === 'release-manifest.json' || isset($expected[$rel])) {
+                return new WP_Error('installed_manifest_entry_invalid', 'Installed release manifest contains an invalid or duplicate path.');
+            }
+            $full = trailingslashit($target) . $rel;
+            if (!is_file($full) || !hash_equals($sha, hash_file('sha256', $full))) {
+                return new WP_Error('installed_manifest_hash_mismatch', 'Installed Site Layer bytes do not match the release manifest.');
+            }
+            $expected[$rel] = $sha;
+        }
+        if (!isset($expected[FVDB_TARGET_MAIN])) {
+            return new WP_Error('installed_main_not_hashed', 'Installed main plugin file is not covered by the release manifest.');
+        }
+        $actual = self::regular_files_relative($target);
+        if (is_wp_error($actual)) {
+            return $actual;
+        }
+        unset($actual['release-manifest.json']);
+        $expected_paths = array_keys($expected);
+        $actual_paths = array_keys($actual);
+        sort($expected_paths, SORT_STRING);
+        sort($actual_paths, SORT_STRING);
+        if ($expected_paths !== $actual_paths) {
+            return new WP_Error('installed_file_set_mismatch', 'Installed Site Layer file set differs from the release manifest.');
+        }
+        return true;
+    }
+
     private static function install_package(string $zip_bytes, string $commit) {
         if (!class_exists('ZipArchive')) {
             return new WP_Error('zip_unavailable', 'ZipArchive is not available on this host.');
@@ -239,36 +292,49 @@ final class FVDB_Package {
             self::delete_tree($tmp_dir);
             return new WP_Error('backup_swap_failed', 'Could not move the existing Site Layer into the rollback slot.');
         }
-        if (!@rename($staged, $target)) {
-            if ($had_previous && is_dir($backup)) {
-                @rename($backup, $target);
-            }
+
+        $swap_ok = !self::test_failpoint('target_swap') && @rename($staged, $target);
+        if (!$swap_ok) {
+            $restored = !$had_previous || (is_dir($backup) && @rename($backup, $target));
             self::delete_tree($tmp_dir);
-            return new WP_Error('target_swap_failed', 'Could not move staged release into the plugin directory; prior version restore was attempted.');
+            if (!$restored) {
+                return new WP_Error('target_swap_rollback_failed', 'Target swap failed and the prior Site Layer could not be restored.');
+            }
+            return new WP_Error('target_swap_failed', 'Could not move staged release into the plugin directory; prior version was restored.');
         }
         self::delete_tree($tmp_dir);
+
+        if (self::test_failpoint('post_swap_verify')) {
+            if (!self::rollback_after_swap($target, $backup, $had_previous)) {
+                return new WP_Error('post_swap_rollback_failed', 'Post-swap verification failed and rollback could not restore the prior version.');
+            }
+            return new WP_Error('post_swap_verification_failed', 'Post-swap byte verification failed; prior version was restored.');
+        }
 
         foreach ($expected as $rel => $sha) {
             $full = trailingslashit($target) . $rel;
             if (!is_file($full) || !hash_equals($sha, hash_file('sha256', $full))) {
-                self::delete_tree($target);
-                if ($had_previous && is_dir($backup)) {
-                    @rename($backup, $target);
+                if (!self::rollback_after_swap($target, $backup, $had_previous)) {
+                    return new WP_Error('post_swap_rollback_failed', 'Post-swap byte verification failed and rollback could not restore the prior version.');
                 }
-                return new WP_Error('post_swap_verification_failed', 'Post-swap byte verification failed; rollback was attempted.');
+                return new WP_Error('post_swap_verification_failed', 'Post-swap byte verification failed; prior version was restored.');
             }
         }
         $post_actual = self::regular_files_relative($target);
         if (is_wp_error($post_actual)) {
-            self::rollback_after_swap($target, $backup, $had_previous);
+            if (!self::rollback_after_swap($target, $backup, $had_previous)) {
+                return new WP_Error('post_swap_rollback_failed', 'Post-swap file-set verification failed and rollback could not restore the prior version.');
+            }
             return $post_actual;
         }
         unset($post_actual['release-manifest.json']);
         $post_paths = array_keys($post_actual);
         sort($post_paths, SORT_STRING);
         if ($post_paths !== $expected_paths) {
-            self::rollback_after_swap($target, $backup, $had_previous);
-            return new WP_Error('post_swap_file_set_mismatch', 'Deployed file set changed after swap; rollback was attempted.');
+            if (!self::rollback_after_swap($target, $backup, $had_previous)) {
+                return new WP_Error('post_swap_rollback_failed', 'Post-swap file-set verification failed and rollback could not restore the prior version.');
+            }
+            return new WP_Error('post_swap_file_set_mismatch', 'Deployed file set changed after swap; prior version was restored.');
         }
         return true;
     }
@@ -309,11 +375,16 @@ final class FVDB_Package {
         return $result;
     }
 
-    private static function rollback_after_swap(string $target, string $backup, bool $had_previous): void {
+    private static function rollback_after_swap(string $target, string $backup, bool $had_previous): bool {
         self::delete_tree($target);
-        if ($had_previous && is_dir($backup)) {
-            @rename($backup, $target);
+        if (!$had_previous) {
+            return !file_exists($target);
         }
+        return is_dir($backup) && @rename($backup, $target);
+    }
+
+    private static function test_failpoint(string $name): bool {
+        return defined('FVDB_TEST_FAILPOINT') && FVDB_TEST_FAILPOINT === $name;
     }
 
     private static function zip_error(ZipArchive $zip, string $tmp_zip, string $code, string $message): WP_Error {
