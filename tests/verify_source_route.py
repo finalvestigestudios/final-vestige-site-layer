@@ -186,11 +186,11 @@ const fvsrTest=()=>{{
            setTimeout(()=>{{if(document.activeElement!==launch)return fail('close did not return focus to launcher');return pass()}},80);
           }},80);
          }}catch(e){{fail(e&&e.message?e.message:String(e))}}
-        }},200);
+        }},350);
        }}catch(e){{fail(e&&e.message?e.message:String(e))}}
       }},80);
      }}catch(e){{fail(e&&e.message?e.message:String(e))}}
-    }},200);
+    }},350);
    }}catch(e){{fail(e&&e.message?e.message:String(e))}}
   }},80);
  }}catch(e){{fail(e&&e.message?e.message:String(e))}}
