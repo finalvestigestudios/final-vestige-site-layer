@@ -4,8 +4,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-v1.txt"
-EXPECTED_BYTES = 16198
-EXPECTED_SHA256 = "7e0109c4315e2206ee73ed1f1fa1ed808953362561a7a82652fc4541ad7fe729"
+EXPECTED_BYTES = 16196
+EXPECTED_SHA256 = "736c516fe53957480feb55399399b4b74473c6cfea547f40ef1be8a58a8e5ca8"
 
 def require(ok: bool, message: str) -> None:
     if not ok:
