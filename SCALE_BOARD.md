@@ -33,8 +33,8 @@ Scale Board groups values only when they share the same normalized unit family. 
 ## Frozen artifact
 
 - payload: `payloads/scale-board-wp-block-v1.txt`
-- bytes: **16,198**
-- SHA-256: **`7e0109c4315e2206ee73ed1f1fa1ed808953362561a7a82652fc4541ad7fe729`**
+- bytes: **16,196**
+- SHA-256: **`736c516fe53957480feb55399399b4b74473c6cfea547f40ef1be8a58a8e5ca8`**
 - verifier: `tests/verify_scale_board.py`
 - workflow: `.github/workflows/scale-board-ci.yml`
 
