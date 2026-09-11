@@ -139,7 +139,7 @@ function buildDialog(){
     else if(e.key==='Home'){e.preventDefault();show(0)}
     else if(e.key==='End'){e.preventDefault();show(figures.length-1)}
   });
-  d.addEventListener('close',()=>{if(returnToOpener)requestAnimationFrame(()=>opener.focus());returnToOpener=true});
+  d.addEventListener('close',()=>{if(returnToOpener)setTimeout(()=>opener.focus(),0);returnToOpener=true});
   document.body.appendChild(d);return d;
 }
 function show(nextIndex){
