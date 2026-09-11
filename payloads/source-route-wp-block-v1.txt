@@ -49,7 +49,7 @@ onReady(()=>{
  const desc=document.createElement('p');desc.textContent=`${records.length} published citations · ${distinct.length} cited sources. Follow each existing link without losing the passage that used it.`;
  const launch=document.createElement('button');launch.type='button';launch.className='fvsr-button';launch.textContent='Follow source route';launch.setAttribute('aria-haspopup','dialog');
  copy.append(kicker,title,desc);band.append(copy,launch);firstStory.parentNode.insertBefore(band,firstStory);
- let dialog=null,mode='all',index=0,lastInvoker=launch,jumpTarget=null;
+ let dialog=null,mode='all',index=0,lastInvoker=launch,suppressReturn=false;
  const normalizedNote=(li)=>{const c=li.cloneNode(true);c.querySelectorAll('.fv-fn-backlinks,script,style').forEach(el=>el.remove());return c.textContent.replace(/\s+/g,' ').trim()};
  const sequences=()=>mode==='all'?records:records.filter((r,i,a)=>a.findIndex(x=>x.n===r.n)===i);
  const useMeta=(record)=>{const uses=records.filter(r=>r.n===record.n);return {which:uses.indexOf(record)+1,total:uses.length}};
@@ -63,10 +63,10 @@ onReady(()=>{
   d.querySelectorAll('.fvsr-mode').forEach(btn=>btn.addEventListener('click',()=>{mode=btn.dataset.mode;d.querySelectorAll('.fvsr-mode').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));index=0;render()}));
   d.querySelector('.fvsr-prev').addEventListener('click',()=>{if(index>0){index--;render()}});
   d.querySelector('.fvsr-next').addEventListener('click',()=>{const seq=sequences();if(index<seq.length-1){index++;render()}});
-  d.querySelector('[data-jump="passage"]').addEventListener('click',()=>{const r=sequences()[index];jumpTarget=r.ref;d.close()});
-  d.querySelector('[data-jump="source"]').addEventListener('click',()=>{const r=sequences()[index];jumpTarget=r.note;d.close()});
+  d.querySelector('[data-jump="passage"]').addEventListener('click',()=>{const r=sequences()[index];suppressReturn=true;d.close();focusTarget(r.ref)});
+  d.querySelector('[data-jump="source"]').addEventListener('click',()=>{const r=sequences()[index];suppressReturn=true;d.close();focusTarget(r.note)});
   d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();if(index>0){index--;render()}}else if(e.key==='ArrowRight'){e.preventDefault();const seq=sequences();if(index<seq.length-1){index++;render()}}else if(e.key==='Home'){e.preventDefault();index=0;render()}else if(e.key==='End'){e.preventDefault();index=sequences().length-1;render()}});
-  d.addEventListener('close',()=>{if(jumpTarget){const t=jumpTarget;jumpTarget=null;focusTarget(t)}else if(lastInvoker&&document.contains(lastInvoker))lastInvoker.focus()});
+  d.addEventListener('close',()=>{if(suppressReturn){suppressReturn=false;return}if(lastInvoker&&document.contains(lastInvoker))lastInvoker.focus()});
   return d;
  };
  const render=()=>{
