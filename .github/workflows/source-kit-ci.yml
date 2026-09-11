@@ -1,0 +1,32 @@
+name: Source Kit CI
+
+on:
+  pull_request:
+    paths:
+      - 'payloads/source-kit-wp-block-v1.txt'
+      - 'tests/verify_source_kit.py'
+      - '.github/workflows/source-kit-ci.yml'
+  push:
+    branches:
+      - 'feature/source-kit-v1'
+    paths:
+      - 'payloads/source-kit-wp-block-v1.txt'
+      - 'tests/verify_source_kit.py'
+      - '.github/workflows/source-kit-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact Source Kit artifact
+        run: python tests/verify_source_kit.py
