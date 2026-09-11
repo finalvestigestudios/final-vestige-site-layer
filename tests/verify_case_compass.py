@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "case-compass-wp-block-v1.txt"
-EXPECTED_BYTES = 15715
-EXPECTED_SHA256 = "d3ca15b270f3bb1ccfdd93d43563949614a007bbea6bdd5ed6a8b0017fa282a2"
+EXPECTED_BYTES = 15713
+EXPECTED_SHA256 = "6e4e0a8abb25676924d7a4f7bbfcbe024e7a3a19c1f267854ca16849dd7c37ee"
 
 
 def require(condition: bool, message: str) -> None:
