@@ -105,12 +105,12 @@ Before visitor invocation the feature creates only the compact launcher. The dia
 
 - Base: `production` at `a2a499455d714c0238241fde9b76188efd1d7b1d`
 - Payload: `payloads/visual-trail-wp-block-v1.txt`
-- Payload bytes: `12,457`
-- Payload SHA-256: `f09986ddc6ff6a9f6fd9106f9af93c53d18450654dd91c2aee6253755cda68ce`
+- Payload bytes: `12,448`
+- Payload SHA-256: `0258e7c18bdcdeb53273801f69cb1fdd3b420e73013917d624b15f2e44155bdc`
 - Verifier: `tests/verify_visual_trail.py`
 - Workflow: `.github/workflows/visual-trail-ci.yml`
 
-The verifier locks exact bytes/hash, JavaScript syntax, canonical-boundary gating, bounded figure qualification, media-context reuse, manual/keyboard navigation, story return/focus, accessibility media rules, prohibited persistence/API tokens, and headless-browser valid/adversarial fixtures.
+The verifier locks exact bytes/hash, JavaScript syntax, canonical-boundary gating, bounded figure qualification, media-context reuse, manual/keyboard navigation, story return/focus, accessibility media rules, prohibited persistence/API tokens, and headless-browser valid/adversarial fixtures. CI also prints the exact payload byte count and SHA-256 before verification so the frozen identity is visible in the run evidence.
 
 ## Delivery boundary
 
