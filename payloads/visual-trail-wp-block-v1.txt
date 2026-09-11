@@ -168,13 +168,13 @@ function viewInStory(){
   const hadTab=target.hasAttribute('tabindex'),oldTab=target.getAttribute('tabindex');
   if(!hadTab)target.setAttribute('tabindex','-1');
   target.classList.add('fvvt-story-focus');
-  requestAnimationFrame(()=>{
+  setTimeout(()=>{
     target.scrollIntoView({behavior:motionOK()?'smooth':'auto',block:'center'});
     target.focus({preventScroll:true});
     const cleanup=()=>{target.classList.remove('fvvt-story-focus');if(!hadTab)target.removeAttribute('tabindex');else if(oldTab!==null)target.setAttribute('tabindex',oldTab);target.removeEventListener('blur',cleanup)};
     target.addEventListener('blur',cleanup,{once:true});
     setTimeout(()=>target.classList.remove('fvvt-story-focus'),1600);
-  });
+  },0);
 }
 opener.addEventListener('click',openTrail);
 })();
