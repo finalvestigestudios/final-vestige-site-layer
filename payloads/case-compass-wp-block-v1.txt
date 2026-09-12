@@ -1,0 +1,213 @@
+<!-- wp:html -->
+<style id="fv-case-compass-r1-css">
+:root{--fvcc-bg:#171614;--fvcc-panel:#211f1c;--fvcc-line:#4a453d;--fvcc-text:#f0ebe2;--fvcc-muted:#aaa297;--fvcc-accent:#b8955e;--fvcc-soft:rgba(184,149,94,.12)}
+[data-fv-case-compass]{margin:42px 0 48px;border:1px solid var(--fvcc-line);border-radius:12px;background:linear-gradient(180deg,#1c1a18 0%,#171614 100%);color:var(--fvcc-text);box-shadow:0 14px 34px rgba(0,0,0,.14)}
+.fvcc-head{display:flex;gap:20px;align-items:flex-start;justify-content:space-between;padding:20px 22px 16px}
+.fvcc-kicker{margin:0 0 5px;color:var(--fvcc-accent);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.fvcc-title{margin:0;color:var(--fvcc-text);font-size:clamp(18px,2vw,23px);line-height:1.2}
+.fvcc-copy{margin:7px 0 0;max-width:62ch;color:var(--fvcc-muted);font-size:13px;line-height:1.55}
+.fvcc-open,.fvcc-mini button,.fvcc-card button,.fvcc-close{min-height:44px;min-width:44px;border:1px solid var(--fvcc-line);border-radius:8px;background:#26231f;color:var(--fvcc-text);font:inherit;cursor:pointer}
+.fvcc-open{flex:0 0 auto;padding:0 15px;font-size:13px;font-weight:750}
+.fvcc-open:hover,.fvcc-mini button:hover,.fvcc-card button:hover,.fvcc-close:hover{border-color:var(--fvcc-accent);background:#2c2823}
+.fvcc-open:focus-visible,.fvcc-mini button:focus-visible,.fvcc-card button:focus-visible,.fvcc-close:focus-visible{border-color:var(--fvcc-accent);outline:3px solid var(--fvcc-accent);outline-offset:-3px;background:#2c2823}
+.fvcc-mini{display:grid;grid-template-columns:repeat(var(--fvcc-count),minmax(0,1fr));gap:1px;margin:0;padding:1px;border-top:1px solid var(--fvcc-line);list-style:none;background:var(--fvcc-line)}
+.fvcc-mini li{min-width:0;background:var(--fvcc-bg)}
+.fvcc-mini button{width:100%;height:100%;min-height:64px;padding:10px 12px;border:0;border-radius:0;background:transparent;text-align:left}
+.fvcc-mini-num{display:block;margin-bottom:3px;color:var(--fvcc-muted);font-size:10px;font-weight:800;letter-spacing:.12em}
+.fvcc-mini-name{display:block;overflow:hidden;color:var(--fvcc-text);font-size:12px;line-height:1.25;text-overflow:ellipsis;white-space:nowrap}
+.fvcc-mini button[aria-current="location"]{box-shadow:inset 0 -3px 0 var(--fvcc-accent);background:var(--fvcc-soft)}
+.fvcc-mini button[aria-current="location"] .fvcc-mini-num{color:var(--fvcc-accent)}
+.fvcc-now{display:flex;gap:8px;align-items:center;padding:10px 22px 12px;border-top:1px solid rgba(74,69,61,.72);color:var(--fvcc-muted);font-size:12px}
+.fvcc-now strong{color:var(--fvcc-text);font-weight:700}
+.fvcc-pulse{width:7px;height:7px;border-radius:50%;background:var(--fvcc-accent);box-shadow:0 0 0 4px var(--fvcc-soft)}
+.fvcc-dialog{width:min(760px,calc(100vw - 28px));max-height:min(84vh,820px);padding:0;border:1px solid var(--fvcc-line);border-radius:14px;background:var(--fvcc-bg);color:var(--fvcc-text);box-shadow:0 28px 80px rgba(0,0,0,.55)}
+.fvcc-dialog::backdrop{background:rgba(7,7,6,.72);backdrop-filter:blur(2px)}
+.fvcc-dialog-head{position:sticky;top:0;z-index:2;display:flex;gap:18px;align-items:flex-start;justify-content:space-between;padding:20px 22px 17px;border-bottom:1px solid var(--fvcc-line);background:rgba(23,22,20,.96)}
+.fvcc-dialog h2{margin:2px 0 0;color:var(--fvcc-text);font-size:22px;line-height:1.2}
+.fvcc-dialog .fvcc-explain{margin:6px 0 0;color:var(--fvcc-muted);font-size:13px;line-height:1.5}
+.fvcc-close{flex:0 0 auto;padding:0 13px}
+.fvcc-list{display:grid;gap:10px;margin:0;padding:18px 22px 24px;list-style:none}
+.fvcc-card button{display:grid;grid-template-columns:46px minmax(0,1fr) auto;gap:12px;align-items:center;width:100%;padding:14px;text-align:left;background:var(--fvcc-panel)}
+.fvcc-card button[aria-current="location"]{border-color:var(--fvcc-accent);box-shadow:inset 3px 0 0 var(--fvcc-accent);background:#29251f}
+.fvcc-index{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--fvcc-line);border-radius:50%;color:var(--fvcc-accent);font-size:12px;font-weight:800}
+.fvcc-card-main{min-width:0}
+.fvcc-card-title{display:block;color:var(--fvcc-text);font-size:15px;font-weight:760;line-height:1.3}
+.fvcc-card-meta{display:block;margin-top:5px;color:var(--fvcc-muted);font-size:11px;line-height:1.4}
+.fvcc-go{color:var(--fvcc-accent);font-size:12px;font-weight:800;white-space:nowrap}
+.fvcc-arrived{outline:2px solid var(--fvcc-accent);outline-offset:8px;border-radius:2px}
+@media(max-width:700px){.fvcc-head{display:block;padding:18px 16px 14px}.fvcc-open{width:100%;margin-top:14px}.fvcc-mini{display:flex;overflow-x:auto;scroll-snap-type:x proximity}.fvcc-mini li{flex:0 0 min(72vw,250px);scroll-snap-align:start}.fvcc-now{padding:10px 16px 12px}.fvcc-dialog-head{padding:17px 16px 14px}.fvcc-list{padding:14px 14px 20px}.fvcc-card button{grid-template-columns:40px minmax(0,1fr);padding:12px}.fvcc-go{grid-column:2}.fvcc-index{width:34px;height:34px}}
+@media(max-width:360px){[data-fv-case-compass]{margin:30px 0 36px}.fvcc-title{font-size:18px}.fvcc-dialog{width:calc(100vw - 16px)}.fvcc-dialog h2{font-size:19px}.fvcc-close{padding:0 10px}.fvcc-card-meta{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.fvcc-mini{scroll-behavior:auto}.fvcc-pulse{box-shadow:none}}
+@media(forced-colors:active){[data-fv-case-compass],.fvcc-dialog,.fvcc-open,.fvcc-mini button,.fvcc-card button,.fvcc-close,.fvcc-index{border-color:CanvasText}.fvcc-open:focus-visible,.fvcc-mini button:focus-visible,.fvcc-card button:focus-visible,.fvcc-close:focus-visible{outline:3px solid Highlight;outline-offset:-3px}.fvcc-mini button[aria-current="location"],.fvcc-card button[aria-current="location"]{outline:2px solid Highlight;outline-offset:-3px}.fvcc-pulse{background:Highlight}}
+@media print{[data-fv-case-compass],.fvcc-dialog{display:none!important}}
+</style>
+<script id="fv-case-compass-r1-js">
+(()=>{'use strict';
+if(window.__fvCaseCompass)return;window.__fvCaseCompass={version:'1.1.0'};
+const start=()=>{
+  if(!document.body.classList.contains('single-post'))return;
+  if(typeof HTMLDialogElement==='undefined'||typeof HTMLDialogElement.prototype.showModal!=='function')return;
+  const article=document.querySelector('main article,article.single,article');
+  if(!article)return;
+  const sourceHeading=article.querySelector('h2#sources.fv-source-heading,h2.fv-source-heading#sources');
+  const notes=article.querySelector('.fv-source-list[data-fv-footnotes]');
+  if(!sourceHeading||!notes)return;
+  if(!(sourceHeading.compareDocumentPosition(notes)&Node.DOCUMENT_POSITION_FOLLOWING))return;
+  const root=sourceHeading.closest('.entry-content,.wp-block-post-content')||article;
+  if(!root.contains(notes)||!root.contains(sourceHeading))return;
+  const before=(node,boundary)=>Boolean(node&&boundary&&(node.compareDocumentPosition(boundary)&Node.DOCUMENT_POSITION_FOLLOWING));
+  const clean=(node)=>{const c=node.cloneNode(true);c.querySelectorAll('.fv-fn-mark,.fv-fn-ref[data-fv-fn],[data-fv-feature-ui]').forEach(n=>n.remove());return c.textContent.replace(/\s+/g,' ').trim()};
+  const h2s=[...root.querySelectorAll('h2.wp-block-heading')].filter(h=>h!==sourceHeading&&before(h,sourceHeading)&&!h.closest('[data-fv-feature-ui]'));
+  const paragraphs=[...root.querySelectorAll('p')].filter(p=>before(p,sourceHeading)&&!p.closest('[data-fv-feature-ui]')&&clean(p).length>30);
+  if(h2s.length<3||paragraphs.length<12)return;
+  const storyChars=paragraphs.reduce((n,p)=>n+clean(p).length,0);
+  if(storyChars<2800)return;
+  const firstHeading=h2s[0];
+  const openingTarget=paragraphs.find(p=>before(p,firstHeading));
+  if(!openingTarget)return;
+  const sequence=[...root.querySelectorAll('h2.wp-block-heading,p,figure.wp-block-image')].filter(n=>before(n,sourceHeading)&&!n.closest('[data-fv-feature-ui]'));
+  const metrics=(nodes)=>{
+    const passages=nodes.filter(n=>n.matches&&n.matches('p')&&clean(n).length>30).length;
+    const figures=nodes.filter(n=>n.matches&&n.matches('figure.wp-block-image')).length;
+    const linked=new Set();
+    nodes.forEach(n=>n.querySelectorAll&&n.querySelectorAll('.fv-fn-ref[data-fv-fn]').forEach(a=>{if(/^\d+$/.test(a.dataset.fvFn||''))linked.add(a.dataset.fvFn)}));
+    return{passages,figures,linked:linked.size};
+  };
+  const sections=[];
+  const firstIndex=sequence.indexOf(firstHeading);
+  if(firstIndex<1)return;
+  sections.push({title:'Opening',target:openingTarget,nodes:sequence.slice(0,firstIndex)});
+  h2s.forEach((heading,i)=>{
+    const from=sequence.indexOf(heading);
+    const next=i+1<h2s.length?sequence.indexOf(h2s[i+1]):sequence.indexOf(sourceHeading);
+    const to=next>from?next:sequence.length;
+    sections.push({title:clean(heading)||`Section ${i+1}`,target:heading,nodes:sequence.slice(from,to)});
+  });
+  if(sections.length<4)return;
+  sections.forEach(s=>Object.assign(s,metrics(s.nodes)));
+  const totalFigures=sections.reduce((n,s)=>n+s.figures,0);
+  const totalLinked=new Set();
+  sequence.forEach(n=>n.querySelectorAll&&n.querySelectorAll('.fv-fn-ref[data-fv-fn]').forEach(a=>{if(/^\d+$/.test(a.dataset.fvFn||''))totalLinked.add(a.dataset.fvFn)}));
+
+  const shell=document.createElement('section');
+  shell.dataset.fvFeatureUi='case-compass';
+  shell.dataset.fvCaseCompass='';
+  shell.setAttribute('aria-label','Case compass');
+  shell.innerHTML='<div class="fvcc-head"><div><p class="fvcc-kicker">Case Compass</p><h2 class="fvcc-title">See the investigation before you enter it.</h2><p class="fvcc-copy">A map of where the story changes direction. Structure only—not an evidence or confidence score.</p></div><button class="fvcc-open" type="button" aria-haspopup="dialog">Open full map</button></div><ol class="fvcc-mini" aria-label="Investigation sections"></ol><div class="fvcc-now" role="status" aria-live="polite"><span class="fvcc-pulse" aria-hidden="true"></span><span>You’re in: <strong>Opening</strong></span></div>';
+  shell.style.setProperty('--fvcc-count',String(sections.length));
+
+  const dialog=document.createElement('dialog');
+  dialog.className='fvcc-dialog';
+  dialog.dataset.fvFeatureUi='case-compass-dialog';
+  dialog.setAttribute('aria-labelledby','fvcc-dialog-title');
+  dialog.innerHTML='<div class="fvcc-dialog-head"><div><p class="fvcc-kicker">Case Compass</p><h2 id="fvcc-dialog-title">Investigation map</h2><p class="fvcc-explain"></p></div><button class="fvcc-close" type="button" aria-label="Close case compass">Close</button></div><nav aria-label="Investigation sections"><ol class="fvcc-list"></ol></nav>';
+  dialog.querySelector('.fvcc-explain').textContent=`${sections.length} story sections · ${totalFigures} figures · ${totalLinked.size} linked source notes. Counts describe page structure only.`;
+
+  const mini=shell.querySelector('.fvcc-mini');
+  const list=dialog.querySelector('.fvcc-list');
+  const miniButtons=[],cardButtons=[];
+  sections.forEach((s,i)=>{
+    const li=document.createElement('li');
+    const b=document.createElement('button');b.type='button';b.dataset.section=String(i);
+    const num=document.createElement('span');num.className='fvcc-mini-num';num.textContent=String(i+1).padStart(2,'0');
+    const name=document.createElement('span');name.className='fvcc-mini-name';name.textContent=s.title;
+    b.append(num,name);li.appendChild(b);mini.appendChild(li);miniButtons.push(b);
+
+    const card=document.createElement('li');card.className='fvcc-card';
+    const cb=document.createElement('button');cb.type='button';cb.dataset.section=String(i);
+    const index=document.createElement('span');index.className='fvcc-index';index.textContent=String(i+1).padStart(2,'0');
+    const main=document.createElement('span');main.className='fvcc-card-main';
+    const title=document.createElement('span');title.className='fvcc-card-title';title.textContent=s.title;
+    const meta=document.createElement('span');meta.className='fvcc-card-meta';
+    const parts=[`${s.passages} ${s.passages===1?'passage':'passages'}`];
+    if(s.figures)parts.push(`${s.figures} ${s.figures===1?'figure':'figures'}`);
+    if(s.linked)parts.push(`${s.linked} linked ${s.linked===1?'note':'notes'}`);
+    meta.textContent=parts.join(' · ');main.append(title,meta);
+    const go=document.createElement('span');go.className='fvcc-go';go.textContent='Go to section';
+    cb.append(index,main,go);card.appendChild(cb);list.appendChild(card);cardButtons.push(cb);
+  });
+
+  firstHeading.before(shell);
+  document.body.appendChild(dialog);
+  const open=shell.querySelector('.fvcc-open');
+  const close=dialog.querySelector('.fvcc-close');
+  const now=shell.querySelector('.fvcc-now strong');
+  let active=0,pendingTarget=null,flashTimer=0,flashCleanup=null;
+  const setActive=(index)=>{
+    if(index<0||index>=sections.length||index===active&&miniButtons[index].getAttribute('aria-current')==='location')return;
+    active=index;now.textContent=sections[index].title;
+    [...miniButtons,...cardButtons].forEach((b,j)=>{
+      const idx=j%sections.length;
+      if(idx===index)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');
+    });
+  };
+  const initial=()=>{
+    const line=Math.min(220,window.innerHeight*.28);let found=0;
+    sections.forEach((s,i)=>{if(s.target.getBoundingClientRect().top<=line)found=i});
+    setActive(found);
+  };
+  const normalizeClass=(target,hadClassAttr)=>{
+    if(!hadClassAttr&&target.hasAttribute('class')&&target.getAttribute('class')==='')target.removeAttribute('class');
+  };
+  const clearFlash=()=>{
+    if(flashTimer){clearTimeout(flashTimer);flashTimer=0}
+    if(flashCleanup){const cleanup=flashCleanup;flashCleanup=null;cleanup()}
+  };
+  const focusStory=(target,recovery)=>{
+    try{target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}
+    catch(_){try{if(recovery)recovery.focus()}catch(__){}return false}
+    const state={hadClassAttr:target.hasAttribute('class'),addedTab:!target.hasAttribute('tabindex'),addedArrived:!target.classList.contains('fvcc-arrived')};
+    if(state.addedTab)target.setAttribute('tabindex','-1');
+    if(state.addedArrived)target.classList.add('fvcc-arrived');
+    let focused=false;
+    try{target.focus({preventScroll:true});focused=document.activeElement===target}catch(_){}
+    if(state.addedTab)target.removeAttribute('tabindex');
+    if(!focused){
+      if(state.addedArrived)target.classList.remove('fvcc-arrived');
+      normalizeClass(target,state.hadClassAttr);
+      try{if(recovery)recovery.focus()}catch(_){}
+      return false;
+    }
+    if(state.addedArrived){
+      clearFlash();
+      flashCleanup=()=>{target.classList.remove('fvcc-arrived');normalizeClass(target,state.hadClassAttr)};
+      flashTimer=setTimeout(()=>{const cleanup=flashCleanup;flashCleanup=null;flashTimer=0;if(cleanup)cleanup()},1500);
+    }
+    return true;
+  };
+  const go=(index,fromDialog,launcher)=>{
+    const s=sections[index];if(!s)return;setActive(index);
+    if(fromDialog){pendingTarget={target:s.target,recovery:open};dialog.close()}else focusStory(s.target,launcher);
+  };
+  miniButtons.forEach((b,i)=>b.addEventListener('click',()=>go(i,false,b)));
+  cardButtons.forEach((b,i)=>b.addEventListener('click',()=>go(i,true,b)));
+  open.addEventListener('click',()=>{initial();dialog.showModal();requestAnimationFrame(()=>cardButtons[active].focus())});
+  close.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{
+    if(pendingTarget){const pending=pendingTarget;pendingTarget=null;focusStory(pending.target,pending.recovery)}else open.focus();
+  });
+  list.addEventListener('keydown',e=>{
+    const i=cardButtons.indexOf(document.activeElement);if(i<0)return;
+    let next=null;
+    if(e.key==='ArrowDown'||e.key==='ArrowRight')next=(i+1)%cardButtons.length;
+    if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=(i-1+cardButtons.length)%cardButtons.length;
+    if(e.key==='Home')next=0;if(e.key==='End')next=cardButtons.length-1;
+    if(next!==null){e.preventDefault();cardButtons[next].focus()}
+  });
+  setActive(0);initial();
+  if('IntersectionObserver'in window){
+    const observer=new IntersectionObserver(entries=>{
+      const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
+      if(!visible.length)return;
+      const idx=sections.findIndex(s=>s.target===visible[0].target);if(idx>=0)setActive(idx);
+    },{root:null,rootMargin:'-18% 0px -72% 0px',threshold:0});
+    sections.forEach(s=>observer.observe(s.target));
+  }else{
+    let ticking=false;
+    addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{initial();ticking=false})},{passive:true});
+  }
+};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();
+</script>
+<!-- /wp:html -->

@@ -1,0 +1,55 @@
+name: Case Compass R1 CI
+
+on:
+  pull_request:
+    branches: [production]
+    paths:
+      - 'payloads/case-compass-wp-block-v1.txt'
+      - 'tests/verify_case_compass.py'
+      - '.github/workflows/case-compass-ci.yml'
+      - 'CASE-COMPASS.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Case Compass R1 static contract
+        run: python tests/verify_case_compass.py
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+          - citation-focus
+          - state-absent-repeat
+          - state-owned
+          - scroll-fail
+          - focus-fail
+          - dialog-keyboard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Case Compass R1 browser contract
+        env:
+          FV_BROWSER_MODE: ${{ matrix.mode }}
+        run: python tests/verify_case_compass.py
