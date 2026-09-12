@@ -44,7 +44,10 @@
 
    ownedFlash.scrollIntoView=()=>{};d=open();findJump(d,'1,000 feet').click();
    if(document.activeElement!==ownedFlash)return fail('pre-owned flash target not focused');
-   if(!eq(snap(ownedFlash),ownedFlash0))return fail('pre-owned flash state damaged');
+   if(!ownedFlash.classList.contains('fvsb-flash')||!ownedFlash.classList.contains('published-copy'))return fail('pre-owned flash class state damaged');
+   if(ownedFlash.getAttribute('tabindex')!=='-1'||ownedFlash.hasAttribute('id'))return fail('pre-owned flash focus transaction drift');
+   launch.focus();
+   if(!eq(snap(ownedFlash),ownedFlash0))return fail('pre-owned flash state not restored after blur');
 
    absent.scrollIntoView=()=>{};d=open();findJump(d,'six miles an hour').click();
    if(document.activeElement!==absent||absent.getAttribute('tabindex')!=='-1')return fail('repeat success drifted focus transaction');
