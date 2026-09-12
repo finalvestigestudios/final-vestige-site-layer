@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-r7.txt"
-EXPECTED_BYTES = 18493
-EXPECTED_SHA256 = "9ffc92531f2ef765393ab0df9eed978ea6948dbdecd4d7f0a44d243524acd393"
+EXPECTED_BYTES = 18928
+EXPECTED_SHA256 = "f69551d609f6d2b6dc637c42c37421752080121eca8bbe977dfd0d9cb7c31562"
 
 
 def require(ok: bool, message: str) -> None:
@@ -66,10 +66,14 @@ def main() -> None:
     tab_i = text.index("p.setAttribute('tabindex','-1')")
     focus_i = text.index("p.focus({preventScroll:true})")
     require(scroll_i < close_i < tab_i < focus_i, "jump transaction ordering drifted")
-    require("suppressNextCloseFocus=true" in text, "jump close-focus suppression missing")
-    require("if(suppressNextCloseFocus){suppressNextCloseFocus=false;return}launch.focus()" in text, "close-event focus suppression contract missing")
+    require("let dialog=null,pendingSuppressedCloses=0" in text, "close-event accounting state missing")
+    require("pendingSuppressedCloses++" in text, "close-event suppression accounting missing")
+    require("pendingSuppressedCloses=Math.max(0,pendingSuppressedCloses-1)" in text, "failed-close counter rollback missing")
+    require("if(pendingSuppressedCloses>0){pendingSuppressedCloses--;return}launch.focus()" in text, "close-event focus suppression contract missing")
+    require("suppressNextCloseFocus" not in text, "boolean close suppression race remains")
     require("const recoverJump=(trigger)=>" in text and "if(dialog&&!dialog.open){try{dialog.showModal()}" in text, "dialog recovery helper missing")
-    require("const recovery=trigger?.isConnected?trigger:(dialog?.querySelector('.fvsb-close')||launch)" in text, "deterministic recovery target missing")
+    require("const primary=trigger?.isConnected&&dialog?.open&&dialog.contains(trigger)?trigger:null" in text, "deterministic recovery ownership check missing")
+    require("document.activeElement===recovery" in text and "document.activeElement===fallback" in text, "recovery active-element verification missing")
     require("j.addEventListener('click',()=>jump(item,j))" in text, "jump trigger ownership not passed into transaction")
 
     for token in ("localStorage", "sessionStorage", "indexedDB", "document.cookie", "fetch(", "XMLHttpRequest", "sendBeacon", "WebSocket", "posthog", "gtag(", "<script src="):
@@ -110,7 +114,7 @@ def main() -> None:
     browser_run("tests/fixtures/scale-board-r2-truth-prefix.html", "tests/fixtures/scale-board-r2-truth-suffix.html", "r2-truth")
     browser_run("tests/fixtures/scale-board-r1-truth-prefix.html", "tests/fixtures/scale-board-r1-truth-suffix.html", "r1-truth")
     browser_run("tests/fixtures/scale-board-r2-ambiguous-prefix.html", "tests/fixtures/scale-board-r2-fail-suffix.html", "ambiguous-sources")
-    print("PASS: Scale Board R7 exact identity, focus/dialog failure atomicity, publisher-state restoration, R1-R6 truth/state regressions, Sources integrity, accessibility and privacy contract")
+    print("PASS: Scale Board R7 exact identity, focus/dialog failure atomicity, publisher-state restoration, close-event accounting, R1-R6 truth/state regressions, Sources integrity, accessibility and privacy contract")
 
 
 if __name__ == "__main__":
