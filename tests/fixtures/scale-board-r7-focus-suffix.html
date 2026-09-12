@@ -53,7 +53,8 @@
    if(document.activeElement!==absent||absent.getAttribute('tabindex')!=='-1')return fail('repeat success drifted focus transaction');
    for(const timer of window.__fvScaleBoardTestTimers.splice(0))timer();
    launch.focus();
-   if(!eq(snap(absent),absent0)||!eq(snap(zero),zero0)||!eq(snap(negative),negative0)||!eq(snap(ownedId),ownedId0)||!eq(snap(ownedFlash),ownedFlash0))return fail('repeat/timer cleanup drifted publisher state');
+   const finalState={absent:snap(absent),zero:snap(zero),negative:snap(negative),ownedId:snap(ownedId),ownedFlash:snap(ownedFlash)},baseline={absent:absent0,zero:zero0,negative:negative0,ownedId:ownedId0,ownedFlash:ownedFlash0};
+   if(!eq(finalState,baseline))return fail('repeat/timer cleanup drifted publisher state '+JSON.stringify({finalState,baseline}));
    document.body.dataset.fvTest='pass'
  }catch(e){fail(e&&e.message?e.message:String(e))}
 })();
