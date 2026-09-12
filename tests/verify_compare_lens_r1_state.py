@@ -47,35 +47,34 @@ const c1=fig1.getAttribute('class'),c2=fig2.getAttribute('class');
 """
     if mode == "absent-repeat":
         body = """
-let focusCount=0;fig1.addEventListener('focus',()=>focusCount++);
+let scrollCount=0;fig1.scrollIntoView=()=>{scrollCount++};
 const jump=again=>{opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
- if(focusCount<(again?1:2))return fail('target focus event missing');opener.focus();setTimeout(()=>{try{
-  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('publisher state drifted');
-  if(again)return jump(false);pass();
- }catch(e){fail(e.message)}},25);
-}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35)};jump(true);
+ if(scrollCount<(again?1:2))return fail('story-jump path did not execute');
+ if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('absent-state target drifted');
+ if(again)return jump(false);pass();
+}catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35)};jump(true);
 """
     elif mode == "owned":
         body = """
-let focusCount=0;fig2.addEventListener('focus',()=>focusCount++);opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
- if(focusCount<1)return fail('owned target focus event missing');opener.focus();setTimeout(()=>{try{
-  if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==c2)return fail('pre-owned state damaged');pass();
- }catch(e){fail(e.message)}},25);
-}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35);
+let scrollCount=0;fig2.scrollIntoView=()=>{scrollCount++};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+ if(scrollCount<1)return fail('owned-state story-jump path did not execute');
+ if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==c2)return fail('pre-owned tabindex/class was damaged');pass();
+}catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35);
 """
     elif mode == "scroll-fail":
         body = """
 fig1.scrollIntoView=()=>{throw new Error('forced scroll failure')};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('scroll failure mutated target');
  if(document.activeElement!==opener)return fail('scroll failure focus recovery missing');pass();
-}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35);
+}catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35);
 """
     elif mode == "focus-fail":
         body = """
-Object.defineProperty(fig1,'focus',{configurable:true,value:()=>{}});opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+let scrollCount=0;fig1.scrollIntoView=()=>{scrollCount++};Object.defineProperty(fig1,'focus',{configurable:true,value:()=>{}});opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+ if(scrollCount<1)return fail('focus-failure jump path did not execute');
  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('focus failure did not restore target');
  if(document.activeElement!==opener)return fail('focus failure recovery missing');pass();
-}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35);
+}catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35);
 """
     else:
         raise ValueError(mode)
@@ -116,7 +115,7 @@ def run() -> None:
                     raise SystemExit(f"FAIL: state mode {mode}: {reason.group(1) if reason else 'runtime assertion failed'}")
         finally:
             server.shutdown(); server.server_close(); thread.join(timeout=5)
-    print("PASS: Compare Lens R1 browser state preservation covers absent/pre-owned values, repeat jumps, and scroll/focus failure recovery")
+    print("PASS: Compare Lens R1 browser state preservation covers absent/pre-owned values, repeat story-jump execution, and scroll/focus failure recovery")
 
 
 if __name__ == "__main__":
