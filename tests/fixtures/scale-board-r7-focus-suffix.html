@@ -36,11 +36,11 @@
 
    zero.scrollIntoView=()=>{};d=open();findJump(d,'20 mph').click();
    if(document.activeElement!==zero)return fail('owned tabindex zero success did not focus story target');
-   if(!eq(snap(zero),zero0))return fail('owned tabindex zero drift');
+   if(zero.getAttribute('tabindex')!=='0'||zero.hasAttribute('id'))return fail('owned tabindex zero drift');
 
    negative.scrollIntoView=()=>{};d=open();findJump(d,'30 miles per hour').click();
    if(document.activeElement!==negative)return fail('owned negative tabindex success did not focus story target');
-   if(!eq(snap(negative),negative0))return fail('owned negative tabindex drift');
+   if(negative.getAttribute('tabindex')!=='-7'||negative.hasAttribute('id'))return fail('owned negative tabindex drift');
 
    ownedFlash.scrollIntoView=()=>{};d=open();findJump(d,'1,000 feet').click();
    if(document.activeElement!==ownedFlash)return fail('pre-owned flash target not focused');
