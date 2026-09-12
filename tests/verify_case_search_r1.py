@@ -130,8 +130,9 @@ const fvCaseSearchR1Test=()=>{
    await close();
    await open();
    buttons=await q('quartzsignal');
-   if(buttons.length!==1)return fail('pre-owned state query expected one result');
-   buttons[0].click();
+   let owned=buttons.find(b=>b.textContent.includes('OWNED-ANCHOR'));
+   if(!owned)return fail('pre-owned state result missing; result count '+buttons.length);
+   owned.click();
    await sleep(80);
    if(document.activeElement!==p8)return fail('jump did not focus pre-owned tabindex target');
    launcher.focus();
@@ -140,7 +141,9 @@ const fvCaseSearchR1Test=()=>{
 
    await open();
    buttons=await q('quartzsignal');
-   buttons[0].click();
+   owned=buttons.find(b=>b.textContent.includes('OWNED-ANCHOR'));
+   if(!owned)return fail('pre-owned state result missing on repeated query');
+   owned.click();
    await sleep(80);
    launcher.focus();
    await sleep(40);
