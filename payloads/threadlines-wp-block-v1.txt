@@ -1,0 +1,108 @@
+<!-- wp:html -->
+<style id="fv-threadlines-v1-css">
+:root{--fvt-bg:#171614;--fvt-panel:#201e1b;--fvt-line:#4a453d;--fvt-text:#f0ebe2;--fvt-muted:#aaa297;--fvt-accent:#b8955e;--fvt-soft:rgba(184,149,94,.12)}
+[data-fv-threadlines]{margin:52px 0 24px;padding:24px;border:1px solid var(--fvt-line);border-radius:14px;background:linear-gradient(180deg,#1e1c19,#171614);color:var(--fvt-text)}
+.fvt-head{display:flex;gap:24px;align-items:flex-start;justify-content:space-between}
+.fvt-head-main{max-width:66ch}.fvt-kicker{margin:0 0 6px;color:var(--fvt-accent);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.fvt-title{margin:0;color:var(--fvt-text);font-size:clamp(21px,2.2vw,28px);line-height:1.16}.fvt-copy{margin:8px 0 0;color:var(--fvt-muted);font-size:13px;line-height:1.58}
+.fvt-load,.fvt-filter{min-height:44px;border:1px solid var(--fvt-line);border-radius:9px;background:#282520;color:var(--fvt-text);font:inherit;cursor:pointer}.fvt-load{flex:0 0 auto;padding:0 16px;font-size:13px;font-weight:760}
+.fvt-load:hover,.fvt-filter:hover{border-color:var(--fvt-accent);background:#2f2b25}.fvt-load:focus-visible,.fvt-filter:focus-visible,.fvt-card a:focus-visible{outline:3px solid var(--fvt-accent);outline-offset:3px}
+.fvt-load:disabled{cursor:wait;opacity:.66}.fvt-status{margin:16px 0 0;color:var(--fvt-muted);font-size:12px;line-height:1.5}.fvt-status[hidden]{display:none!important}
+.fvt-controls{display:flex;gap:8px;margin-top:18px;padding:2px 1px 5px;overflow-x:auto;scrollbar-width:thin}.fvt-controls[hidden]{display:none!important}.fvt-filter{flex:0 0 auto;padding:0 12px;font-size:12px;font-weight:720;white-space:nowrap}.fvt-filter[aria-pressed="true"]{border-color:var(--fvt-accent);background:var(--fvt-soft);color:var(--fvt-accent)}
+.fvt-results{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 0;padding:0}.fvt-results[hidden]{display:none!important}.fvt-card{min-width:0;border:1px solid var(--fvt-line);border-radius:11px;background:var(--fvt-panel)}.fvt-card a{display:block;height:100%;padding:15px 16px;color:var(--fvt-text);text-decoration:none;border-radius:10px}.fvt-card a:hover{border-color:var(--fvt-accent);background:#26231f}.fvt-card-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:0 0 8px;color:var(--fvt-muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.fvt-card-title{margin:0;font-size:17px;line-height:1.28}.fvt-reasons{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}.fvt-reason{display:inline-flex;align-items:center;min-height:26px;padding:2px 8px;border:1px solid rgba(184,149,94,.45);border-radius:999px;background:var(--fvt-soft);color:var(--fvt-accent);font-size:10px;font-weight:720}.fvt-method{margin:15px 0 0;color:var(--fvt-muted);font-size:11px;line-height:1.5}.fvt-method strong{color:var(--fvt-text)}
+@media(max-width:720px){[data-fv-threadlines]{margin-top:42px;padding:19px 16px}.fvt-head{display:block}.fvt-load{width:100%;margin-top:15px}.fvt-results{grid-template-columns:1fr}.fvt-card a{padding:14px}}
+@media(max-width:360px){[data-fv-threadlines]{padding:16px 13px}.fvt-title{font-size:20px}.fvt-filter{padding:0 10px}}
+@media(prefers-reduced-motion:reduce){.fvt-controls{scroll-behavior:auto}}
+@media(forced-colors:active){[data-fv-threadlines],.fvt-load,.fvt-filter,.fvt-card,.fvt-reason{border-color:CanvasText}.fvt-load:focus-visible,.fvt-filter:focus-visible,.fvt-card a:focus-visible{outline-color:Highlight}.fvt-filter[aria-pressed="true"]{outline:2px solid Highlight}}
+@media print{[data-fv-threadlines]{display:none!important}}
+</style>
+<script id="fv-threadlines-v1-js">
+(()=>{'use strict';
+if(window.__fvThreadlines)return;window.__fvThreadlines={version:'1.1.0'};
+const start=()=>{
+  if(!document.body.classList.contains('single-post'))return;
+  const article=document.querySelector('main article,article.single,article');if(!article)return;
+  const articleMatch=(article.id||'').match(/^post-(\d+)$/);const bodyMatch=document.body.className.match(/\bpostid-(\d+)\b/);const postId=Number((articleMatch||bodyMatch||[])[1]||0);if(!postId)return;
+  const root=article.querySelector('.entry-content,.wp-block-post-content')||article;if(!root)return;
+  const sourceHeading=root.querySelector('h2#sources.fv-source-heading,h2.fv-source-heading#sources');
+  const notesRoot=root.querySelector('.fv-source-list[data-fv-footnotes]');
+
+  const section=document.createElement('section');section.dataset.fvFeatureUi='threadlines';section.dataset.fvThreadlines='';section.setAttribute('aria-labelledby','fvt-title');
+  section.innerHTML='<div class="fvt-head"><div class="fvt-head-main"><p class="fvt-kicker">Threadlines</p><h2 class="fvt-title" id="fvt-title">Follow the thread this case leaves behind.</h2><p class="fvt-copy">Find other Final Vestige investigations connected by the same published topic labels. Every match shows the exact labels behind it. Ranking is deterministic: each shared tag adds 100 points; each shared category adds 10.</p></div><button class="fvt-load" type="button">Find related investigations</button></div><p class="fvt-status" role="status" aria-live="polite" hidden></p><div class="fvt-controls" aria-label="Filter related investigations" hidden></div><ul class="fvt-results" aria-label="Related investigations" hidden></ul><p class="fvt-method" hidden><strong>How it works:</strong> each shared editorial tag adds 100 points and each shared category adds 10; ties break by publication date, then title. Only published Final Vestige posts are considered. Nothing about you is stored or sent.</p>';
+  if(sourceHeading&&notesRoot&&(sourceHeading.compareDocumentPosition(notesRoot)&Node.DOCUMENT_POSITION_FOLLOWING))notesRoot.after(section);else root.appendChild(section);
+
+  const loadButton=section.querySelector('.fvt-load'),status=section.querySelector('.fvt-status'),controls=section.querySelector('.fvt-controls'),results=section.querySelector('.fvt-results'),method=section.querySelector('.fvt-method');
+  let candidates=[],termMap=new Map(),active='all',loaded=false;
+  const decode=(value)=>{const t=document.createElement('textarea');t.innerHTML=String(value||'');return t.value.trim()};
+  const siteUrl=(value)=>{try{const u=new URL(value,location.origin);return u.origin===location.origin?u:null}catch(_){return null}};
+  const apiUrl=(path)=>{const u=new URL(`/wp-json/wp/v2/${path}`,location.origin);if(u.origin!==location.origin)throw new Error('Cross-origin API blocked');return u};
+  const publicFetch=async(url,signal)=>{
+    const u=url instanceof URL?url:new URL(url,location.origin);if(u.origin!==location.origin||!u.pathname.startsWith('/wp-json/wp/v2/'))throw new Error('Non-public API blocked');
+    const response=await fetch(u.href,{credentials:'omit',headers:{Accept:'application/json'},signal,cache:'force-cache'});if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();
+  };
+  const ids=(value)=>Array.isArray(value)?value.map(Number).filter(Number.isFinite):[];
+  const intersect=(a,b)=>{const set=new Set(b);return a.filter(id=>set.has(id))};
+  const labels=(keys)=>keys.map(key=>termMap.get(key)).filter(Boolean);
+  const termKey=(type,id)=>`${type}:${id}`;
+  const taxonomyError=()=>{const error=new Error('Published taxonomy labels unavailable');error.name='FVTaxonomyLabelsUnavailable';return error};
+
+  const render=()=>{
+    results.textContent='';
+    const visible=candidates.filter(c=>active==='all'||c.keys.includes(active)).slice(0,4);
+    visible.forEach(candidate=>{
+      const li=document.createElement('li');li.className='fvt-card';
+      const link=document.createElement('a');link.href=candidate.url.href;
+      const meta=document.createElement('p');meta.className='fvt-card-meta';meta.textContent=`Investigation · ${candidate.year}`;
+      const title=document.createElement('h3');title.className='fvt-card-title';title.textContent=candidate.title;
+      const reasons=document.createElement('div');reasons.className='fvt-reasons';reasons.setAttribute('aria-label','Shared threads');
+      candidate.names.slice(0,3).forEach(name=>{const chip=document.createElement('span');chip.className='fvt-reason';chip.textContent=name;reasons.appendChild(chip)});
+      link.append(meta,title,reasons);li.appendChild(link);results.appendChild(li);
+    });
+    results.hidden=false;status.hidden=false;status.textContent=visible.length?`${visible.length} related investigation${visible.length===1?'':'s'} shown.`:'No published investigations match this thread yet.';
+    controls.querySelectorAll('.fvt-filter').forEach(b=>b.setAttribute('aria-pressed',b.dataset.key===active?'true':'false'));
+  };
+  const buildControls=()=>{
+    controls.textContent='';
+    const counts=new Map();candidates.forEach(c=>c.keys.forEach(key=>counts.set(key,(counts.get(key)||0)+1)));
+    const filterDefs=[['all','All threads'],...[...termMap.entries()].filter(([key])=>counts.get(key)).map(([key,name])=>[key,name])].slice(0,8);
+    filterDefs.forEach(([key,name])=>{const button=document.createElement('button');button.type='button';button.className='fvt-filter';button.dataset.key=key;button.textContent=key==='all'?name:`${name} · ${counts.get(key)||0}`;button.setAttribute('aria-pressed',key===active?'true':'false');button.addEventListener('click',()=>{active=key;render()});controls.appendChild(button)});
+    controls.hidden=filterDefs.length<=1;
+  };
+  const load=async()=>{
+    if(loaded){active='all';render();return}
+    loadButton.disabled=true;loadButton.textContent='Finding connections…';status.hidden=false;status.textContent='Reading published Final Vestige topic links…';section.setAttribute('aria-busy','true');
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);
+    try{
+      const currentUrl=apiUrl(`posts/${postId}?_embed=wp:term&_fields=id,categories,tags,_links,_embedded`);
+      const current=await publicFetch(currentUrl,controller.signal);
+      const currentTags=ids(current.tags),currentCats=ids(current.categories);
+      const embedded=current&&current._embedded&&Array.isArray(current._embedded['wp:term'])?current._embedded['wp:term'].flat():[];
+      embedded.forEach(term=>{const id=Number(term&&term.id);const taxonomy=term&&term.taxonomy;const name=decode(term&&term.name);if(!Number.isFinite(id)||!taxonomy||!name)return;const type=taxonomy==='post_tag'?'tag':taxonomy==='category'?'category':'';if(type)termMap.set(termKey(type,id),name)});
+      const requiredKeys=[...currentTags.map(id=>termKey('tag',id)),...currentCats.map(id=>termKey('category',id))];
+      if(requiredKeys.some(key=>!termMap.has(key)))throw taxonomyError();
+
+      const postsUrl=apiUrl(`posts?per_page=60&exclude=${postId}&status=publish&orderby=date&order=desc&_fields=id,title,link,categories,tags,date`);
+      const posts=await publicFetch(postsUrl,controller.signal);if(!Array.isArray(posts))throw new Error('Unexpected response');
+      candidates=posts.map(post=>{
+        const url=siteUrl(post&&post.link);if(!url)return null;
+        const sharedTags=intersect(ids(post.tags),currentTags),sharedCats=intersect(ids(post.categories),currentCats);
+        const keys=[...sharedTags.map(id=>termKey('tag',id)),...sharedCats.map(id=>termKey('category',id))];const score=sharedTags.length*100+sharedCats.length*10;if(!score)return null;
+        const names=labels(keys);if(names.length!==keys.length)return null;const date=new Date(post.date);const year=Number.isFinite(date.getTime())?date.getFullYear():'';
+        return{score,date:Number.isFinite(date.getTime())?date.getTime():0,title:decode(post.title&&post.title.rendered),url,keys,names,year};
+      }).filter(Boolean).sort((a,b)=>b.score-a.score||b.date-a.date||a.title.localeCompare(b.title)).slice(0,12);
+      loaded=true;buildControls();render();method.hidden=false;loadButton.hidden=true;
+    }catch(error){
+      status.hidden=false;
+      if(error&&error.name==='FVTaxonomyLabelsUnavailable'){
+        status.textContent='This investigation’s published topic labels are incomplete, so Threadlines won’t guess at a connection.';loadButton.hidden=true;
+      }else{
+        status.textContent=error&&error.name==='AbortError'?'Connections timed out. Try again.':'Connections are unavailable right now. Try again.';loadButton.disabled=false;loadButton.textContent='Try again';
+      }
+    }finally{clearTimeout(timer);section.removeAttribute('aria-busy');if(loaded)loadButton.disabled=false}
+  };
+  loadButton.addEventListener('click',load);
+};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();
+</script>
+<!-- /wp:html -->
