@@ -53,7 +53,7 @@ const jump=again=>{opener.click();setTimeout(()=>{try{const d=document.querySele
   if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('publisher state drifted');
   if(again)return jump(false);pass();
  }catch(e){fail(e.message)}},25);
-}catch(e){fail(e.message)}},50)}catch(e){fail(e.message)}},25)};jump(true);
+}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35)};jump(true);
 """
     elif mode == "owned":
         body = """
@@ -61,21 +61,21 @@ let focusCount=0;fig2.addEventListener('focus',()=>focusCount++);opener.click();
  if(focusCount<1)return fail('owned target focus event missing');opener.focus();setTimeout(()=>{try{
   if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==c2)return fail('pre-owned state damaged');pass();
  }catch(e){fail(e.message)}},25);
-}catch(e){fail(e.message)}},50)}catch(e){fail(e.message)}},25);
+}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35);
 """
     elif mode == "scroll-fail":
         body = """
 fig1.scrollIntoView=()=>{throw new Error('forced scroll failure')};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('scroll failure mutated target');
  if(document.activeElement!==opener)return fail('scroll failure focus recovery missing');pass();
-}catch(e){fail(e.message)}},50)}catch(e){fail(e.message)}},25);
+}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35);
 """
     elif mode == "focus-fail":
         body = """
 Object.defineProperty(fig1,'focus',{configurable:true,value:()=>{}});opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('focus failure did not restore target');
  if(document.activeElement!==opener)return fail('focus failure recovery missing');pass();
-}catch(e){fail(e.message)}},50)}catch(e){fail(e.message)}},25);
+}catch(e){fail(e.message)}},80)}catch(e){fail(e.message)}},35);
 """
     else:
         raise ValueError(mode)
@@ -83,9 +83,9 @@ Object.defineProperty(fig1,'focus',{configurable:true,value:()=>{}});opener.clic
 
 
 def fixture(payload: str, mode: str) -> str:
-    # Headless --dump-dom does not guarantee a compositor frame. Make rAF deterministic
-    # before the feature registers its close handler so View in story is browser-executed.
-    bootstrap = "<script>window.requestAnimationFrame=cb=>{cb(performance.now());return 1};</script>"
+    # Headless --dump-dom does not guarantee a compositor frame. Preserve the
+    # post-close async boundary while making rAF deterministic for the fixture.
+    bootstrap = "<script>window.requestAnimationFrame=cb=>setTimeout(()=>cb(performance.now()),0);</script>"
     return f"<!doctype html><html><head><meta charset='utf-8'>{bootstrap}</head><body class='single-post'>{article()}{payload}{runtime(mode)}</body></html>"
 
 
@@ -107,7 +107,7 @@ def run() -> None:
                 page = root / f"state-{mode}.html"
                 page.write_text(fixture(payload, mode), encoding="utf-8")
                 proc = subprocess.run(
-                    [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--virtual-time-budget=2000", "--dump-dom", f"{origin}/{page.name}"],
+                    [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--virtual-time-budget=2500", "--dump-dom", f"{origin}/{page.name}"],
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=25,
                 )
                 require(proc.returncode == 0, f"browser mode {mode} failed: {proc.stderr[-400:]}")
