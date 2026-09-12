@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-r7.txt"
-EXPECTED_BYTES = 18688
-EXPECTED_SHA256 = "d5e1f7e1380fc7a67c02f625a2082a328d29c80c87982f7c449375972031b3d0"
+EXPECTED_BYTES = 18797
+EXPECTED_SHA256 = "b84460166941060c2dc6150c205d8eb3050d388731354c172e4b725763312154"
 
 
 def require(ok: bool, message: str) -> None:
@@ -62,8 +62,10 @@ def main() -> None:
     require("if(dialog?.open)" in text and "focusSafely(launch)" in text, "deterministic failure recovery missing")
     require("if(document.activeElement!==p)throw new Error('Scale Board story focus did not move')" in text, "silent focus failure guard missing")
     require("if(p.getAttribute('tabindex')==='-1')p.removeAttribute('tabindex')" in text, "blur restoration must only remove feature-owned tabindex")
+    require("hadClass=p.hasAttribute('class')" in text, "pre-owned class-attribute state detection missing")
     require("hadFlash=p.classList.contains('fvsb-flash')" in text, "pre-owned flash-class detection missing")
-    require("if(!hadFlash){" in text and "p.classList.add('fvsb-flash')" in text and "p.classList.remove('fvsb-flash')" in text, "flash-class preservation missing")
+    require("removeOwnedFlash" in text and "if(!hadClass&&p.getAttribute('class')==='')p.removeAttribute('class')" in text, "absent class-attribute restoration missing")
+    require("if(!hadFlash){" in text and "p.classList.add('fvsb-flash')" in text and "removeOwnedFlash()" in text, "flash-class preservation missing")
     require("setAttribute('id'" not in text and ".id=`fvsb-" not in text, "story-point id mutation remains")
 
     for token in ("localStorage", "sessionStorage", "indexedDB", "document.cookie", "fetch(", "XMLHttpRequest", "sendBeacon", "WebSocket", "posthog", "gtag(", "<script src="):
@@ -99,7 +101,7 @@ def main() -> None:
     browser_run("tests/fixtures/scale-board-r2-truth-prefix.html", "tests/fixtures/scale-board-r2-truth-suffix.html", "r2-truth")
     browser_run("tests/fixtures/scale-board-r1-truth-prefix.html", "tests/fixtures/scale-board-r1-truth-suffix.html", "r1-truth")
     browser_run("tests/fixtures/scale-board-r2-ambiguous-prefix.html", "tests/fixtures/scale-board-r2-fail-suffix.html", "ambiguous-sources")
-    print("PASS: Scale Board R7 exact identity, failure-atomic focus/dialog recovery, nondestructive DOM state, R1-R6 truth/state contract, Sources integrity, accessibility and privacy contract")
+    print("PASS: Scale Board R7 exact identity, failure-atomic focus/dialog recovery, exact class/tabindex DOM ownership, R1-R6 truth/state contract, Sources integrity, accessibility and privacy contract")
 
 
 if __name__ == "__main__":
