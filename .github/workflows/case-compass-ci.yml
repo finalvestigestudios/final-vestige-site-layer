@@ -1,0 +1,29 @@
+name: Case Compass CI
+
+on:
+  pull_request:
+    branches: [production]
+    paths:
+      - 'payloads/case-compass-wp-block-v1.txt'
+      - 'tests/verify_case_compass.py'
+      - '.github/workflows/case-compass-ci.yml'
+      - 'CASE-COMPASS.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Case Compass artifact
+        run: python tests/verify_case_compass.py
