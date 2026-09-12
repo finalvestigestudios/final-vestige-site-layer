@@ -1,0 +1,53 @@
+<script>
+(async()=>{
+ const fail=m=>{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m};
+ const tick=()=>new Promise(r=>queueMicrotask(r));
+ try{
+   const launch=document.querySelector('[data-fvsb-band] .fvsb-button');if(!launch)return fail('launcher missing');
+   const open=()=>{launch.click();const d=document.querySelector('.fvsb-dialog');if(!d||!d.open)throw new Error('dialog missing');return d};
+   const clickMention=needle=>{const d=open(),card=[...d.querySelectorAll('.fvsb-mention')].find(x=>x.textContent.toLowerCase().includes(needle.toLowerCase()));if(!card)throw new Error('mention missing '+needle);const b=card.querySelector('.fvsb-jump');if(!b)throw new Error('jump missing '+needle);b.click()};
+   const absent=document.querySelector('[data-state="absent"]'),zero=document.querySelector('[data-state="tab-zero"]'),negative=document.querySelector('[data-state="tab-negative"]'),ownedId=document.querySelector('[data-state="owned-id"]'),ownedFlash=document.querySelector('[data-state="owned-flash"]');
+   const snap=n=>({tab:n.getAttribute('tabindex'),hasTab:n.hasAttribute('tabindex'),id:n.getAttribute('id'),hasId:n.hasAttribute('id'),cls:n.getAttribute('class')});
+   const eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+   const absent0=snap(absent),zero0=snap(zero),negative0=snap(negative),ownedId0=snap(ownedId),ownedFlash0=snap(ownedFlash);
+   if(absent0.hasTab||absent0.hasId)return fail('absent baseline polluted');
+   if(zero0.tab!=='0'||negative0.tab!=='-7'||ownedId0.id!=='publisher-owned-point'||!ownedFlash.classList.contains('fvsb-flash'))return fail('publisher baseline wrong');
+
+   const absentScroll=absent.scrollIntoView;absent.scrollIntoView=()=>{throw new Error('forced-scroll-failure-absent')};
+   clickMention('six miles an hour');await tick();absent.scrollIntoView=absentScroll;
+   if(!eq(snap(absent),absent0))return fail('scroll failure mutated absent target');
+
+   const zeroScroll=zero.scrollIntoView;zero.scrollIntoView=()=>{throw new Error('forced-scroll-failure-owned-tab')};
+   clickMention('20 mph');await tick();zero.scrollIntoView=zeroScroll;
+   if(!eq(snap(zero),zero0))return fail('scroll failure mutated pre-owned tabindex');
+
+   const flashScroll=ownedFlash.scrollIntoView;ownedFlash.scrollIntoView=()=>{throw new Error('forced-scroll-failure-owned-class')};
+   clickMention('1,000 feet');await tick();ownedFlash.scrollIntoView=flashScroll;
+   if(!eq(snap(ownedFlash),ownedFlash0))return fail('scroll failure mutated pre-owned class');
+
+   const ownedFocus=ownedId.focus,ownedScroll=ownedId.scrollIntoView;ownedId.scrollIntoView=()=>{};ownedId.focus=()=>{throw new Error('forced-focus-failure')};
+   clickMention('thirty-five miles per hour');await tick();ownedId.focus=ownedFocus;ownedId.scrollIntoView=ownedScroll;
+   if(!eq(snap(ownedId),ownedId0))return fail('focus failure failed exact restoration');
+
+   absent.scrollIntoView=()=>{};clickMention('six miles an hour');
+   if(absent.hasAttribute('tabindex')||absent.hasAttribute('id'))return fail('successful absent state not restored');
+   zero.scrollIntoView=()=>{};clickMention('20 mph');
+   if(zero.getAttribute('tabindex')!=='0')return fail('tabindex zero overwritten');
+   negative.scrollIntoView=()=>{};clickMention('30 miles per hour');
+   if(negative.getAttribute('tabindex')!=='-7')return fail('negative tabindex overwritten');
+   ownedId.scrollIntoView=()=>{};clickMention('thirty-five miles per hour');
+   if(ownedId.id!=='publisher-owned-point'||ownedId.hasAttribute('tabindex'))return fail('owned-id success drift');
+   ownedFlash.scrollIntoView=()=>{};clickMention('1,000 feet');
+   if(!ownedFlash.classList.contains('fvsb-flash')||!ownedFlash.classList.contains('published-copy'))return fail('pre-owned class state damaged');
+   clickMention('six miles an hour');
+   if(absent.hasAttribute('tabindex')||absent.hasAttribute('id'))return fail('repeat jump drifted absent state');
+   for(const timer of window.__fvScaleBoardTestTimers.splice(0))timer();
+   if(absent.hasAttribute('tabindex')||absent.hasAttribute('id')||absent.classList.contains('fvsb-flash'))return fail('timer cleanup drift');
+   if(zero.getAttribute('tabindex')!=='0'||negative.getAttribute('tabindex')!=='-7'||ownedId.id!=='publisher-owned-point')return fail('post-timer publisher state drift');
+   if(!ownedFlash.classList.contains('fvsb-flash')||!ownedFlash.classList.contains('published-copy'))return fail('pre-owned flash class removed');
+   if(!window.__fvSuppressedErrors.some(x=>x.includes('forced-scroll-failure-absent')))return fail('scroll failure was not exercised');
+   if(!window.__fvSuppressedErrors.some(x=>x.includes('forced-focus-failure')))return fail('focus failure was not exercised');
+   document.body.dataset.fvTest='pass'
+ }catch(e){fail(e&&e.message?e.message:String(e))}
+})();
+</script></body></html>
