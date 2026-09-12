@@ -1,0 +1,27 @@
+name: Passage Kit R1 CI
+
+on:
+  pull_request:
+    paths:
+      - 'payloads/passage-kit-wp-block-r1.txt'
+      - 'tests/verify_passage_kit_r1.py'
+      - '.github/workflows/passage-kit-r1-ci.yml'
+      - 'PASSAGE_KIT_R1.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Passage Kit R1 artifact
+        run: python tests/verify_passage_kit_r1.py
