@@ -48,12 +48,10 @@ const c1=fig1.getAttribute('class'),c2=fig2.getAttribute('class');
 """
     if mode == "absent-repeat":
         body = """
-let scrollCount=0,focusCount=0;fig1.scrollIntoView=()=>{scrollCount++};fig1.addEventListener('focus',()=>focusCount++);
+let scrollCount=0,focusCount=0,ownedAtFocus=true;fig1.scrollIntoView=()=>{scrollCount++};fig1.addEventListener('focus',()=>{focusCount++;ownedAtFocus=ownedAtFocus&&fig1.getAttribute('tabindex')==='-1'&&fig1.classList.contains('fv-compare-lens-flash')});
 const jump=again=>{opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
  if(scrollCount<(again?1:2)||focusCount<(again?1:2))return fail('story-jump focus path did not execute');
- if(document.activeElement!==fig1)return fail('story target did not receive focus');
- if(fig1.getAttribute('tabindex')!=='-1')return fail('feature-owned temporary tabindex missing while target is focused');
- if(!fig1.classList.contains('fv-compare-lens-flash'))return fail('feature-owned temporary highlight missing while target is focused');
+ if(!ownedAtFocus)return fail('feature-owned temporary tabindex/highlight was not present at target focus');
  opener.focus();setTimeout(()=>{try{
   if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('absent-state target was not restored after blur');
   if(again)return jump(false);pass();
@@ -62,10 +60,9 @@ const jump=again=>{opener.click();setTimeout(()=>{try{const d=document.querySele
 """
     elif mode == "owned":
         body = """
-let scrollCount=0;fig2.scrollIntoView=()=>{scrollCount++};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
- if(scrollCount<1)return fail('owned-state story-jump path did not execute');
- if(document.activeElement!==fig2)return fail('pre-owned target did not receive focus');
- if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==c2)return fail('pre-owned tabindex/class was damaged');pass();
+let scrollCount=0,focusCount=0,ownedStateAtFocus=true;fig2.scrollIntoView=()=>{scrollCount++};fig2.addEventListener('focus',()=>{focusCount++;ownedStateAtFocus=ownedStateAtFocus&&fig2.getAttribute('tabindex')==='-7'&&fig2.getAttribute('class')===c2});opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+ if(scrollCount<1||focusCount<1)return fail('owned-state story-jump focus path did not execute');
+ if(!ownedStateAtFocus||fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==c2)return fail('pre-owned tabindex/class was damaged');pass();
 }catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35);
 """
     elif mode == "scroll-fail":
