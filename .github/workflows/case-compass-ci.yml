@@ -1,4 +1,4 @@
-name: Case Compass CI
+name: Case Compass R1 CI
 
 on:
   pull_request:
@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 jobs:
-  verify:
+  static:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -25,5 +25,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify Case Compass artifact
+      - name: Verify Case Compass R1 static contract
+        run: python tests/verify_case_compass.py
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+          - citation-focus
+          - state-absent-repeat
+          - state-owned
+          - scroll-fail
+          - focus-fail
+          - dialog-keyboard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Case Compass R1 browser contract
+        env:
+          FV_BROWSER_MODE: ${{ matrix.mode }}
         run: python tests/verify_case_compass.py
