@@ -38,4 +38,12 @@ jobs:
           wc -c payloads/return-trail-wp-block-r1.txt
           sha256sum payloads/return-trail-wp-block-r1.txt
       - name: Verify Return Trail R1 artifact and browser behavior
-        run: python tests/verify_return_trail_r1.py
+        run: python tests/verify_return_trail_r1.py 2>&1 | tee return-trail-r1-verification.log
+      - name: Upload verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: return-trail-r1-verification-${{ github.sha }}
+          path: return-trail-r1-verification.log
+          if-no-files-found: error
+          retention-days: 3
