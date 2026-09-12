@@ -1,0 +1,84 @@
+<script>
+(async()=>{
+ const fail=m=>{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m};
+ const tick=()=>new Promise(r=>queueMicrotask(r));
+ try{
+   const launch=document.querySelector('[data-fvsb-band] .fvsb-button');if(!launch)return fail('launcher missing');
+   const getDialog=()=>document.querySelector('.fvsb-dialog');
+   const open=()=>{let d=getDialog();if(!d||!d.open){launch.click();d=getDialog()}if(!d||!d.open)throw new Error('dialog missing');return d};
+   const jumpFor=needle=>{const d=open(),card=[...d.querySelectorAll('.fvsb-mention')].find(x=>x.textContent.toLowerCase().includes(needle.toLowerCase()));if(!card)throw new Error('mention missing '+needle);const b=card.querySelector('.fvsb-jump');if(!b)throw new Error('jump missing '+needle);b.focus();if(document.activeElement!==b)throw new Error('jump pre-focus failed '+needle);return {d,b}};
+   const clickMention=needle=>{const x=jumpFor(needle);x.b.click();return x};
+   const absent=document.querySelector('[data-state="absent"]'),zero=document.querySelector('[data-state="tab-zero"]'),negative=document.querySelector('[data-state="tab-negative"]'),ownedId=document.querySelector('[data-state="owned-id"]'),ownedFlash=document.querySelector('[data-state="owned-flash"]');
+   const snap=n=>({tab:n.getAttribute('tabindex'),hasTab:n.hasAttribute('tabindex'),id:n.getAttribute('id'),hasId:n.hasAttribute('id'),cls:n.getAttribute('class')});
+   const eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+   const absent0=snap(absent),zero0=snap(zero),negative0=snap(negative),ownedId0=snap(ownedId),ownedFlash0=snap(ownedFlash);
+   if(absent0.hasTab||absent0.hasId)return fail('absent baseline polluted');
+   if(zero0.tab!=='0'||negative0.tab!=='-7'||ownedId0.id!=='publisher-owned-point'||!ownedFlash.classList.contains('fvsb-flash'))return fail('publisher baseline wrong');
+
+   const absentScroll=absent.scrollIntoView;absent.scrollIntoView=()=>{throw new Error('forced-scroll-failure-absent')};
+   let attempt=clickMention('six miles an hour');await tick();absent.scrollIntoView=absentScroll;
+   if(!eq(snap(absent),absent0))return fail('scroll failure mutated absent target');
+   if(!attempt.d.open)return fail('scroll failure closed dialog');
+   if(document.activeElement!==attempt.b)return fail('scroll failure did not recover jump focus');
+
+   const zeroScroll=zero.scrollIntoView;zero.scrollIntoView=()=>{throw new Error('forced-scroll-failure-owned-tab')};
+   attempt=clickMention('20 mph');await tick();zero.scrollIntoView=zeroScroll;
+   if(!eq(snap(zero),zero0))return fail('scroll failure mutated pre-owned tabindex');
+   if(!attempt.d.open||document.activeElement!==attempt.b)return fail('owned-tab scroll failure recovery wrong');
+
+   const flashScroll=ownedFlash.scrollIntoView;ownedFlash.scrollIntoView=()=>{throw new Error('forced-scroll-failure-owned-class')};
+   attempt=clickMention('1,000 feet');await tick();ownedFlash.scrollIntoView=flashScroll;
+   if(!eq(snap(ownedFlash),ownedFlash0))return fail('scroll failure mutated pre-owned class');
+   if(!attempt.d.open||document.activeElement!==attempt.b)return fail('owned-class scroll failure recovery wrong');
+
+   const ownedFocus=ownedId.focus,ownedScroll=ownedId.scrollIntoView;ownedId.scrollIntoView=()=>{};ownedId.focus=()=>{throw new Error('forced-focus-failure')};
+   attempt=clickMention('thirty-five miles per hour');await tick();ownedId.focus=ownedFocus;ownedId.scrollIntoView=ownedScroll;
+   if(!eq(snap(ownedId),ownedId0))return fail('focus failure failed exact restoration');
+   if(!attempt.d.open)return fail('focus failure did not reopen dialog');
+   if(document.activeElement!==attempt.b)return fail('focus failure did not recover jump focus');
+
+   absent.scrollIntoView=()=>{};window.__fvThrowScaleTimer=true;attempt=clickMention('six miles an hour');await tick();
+   if(!eq(snap(absent),absent0))return fail('timer failure drifted absent target');
+   if(!attempt.d.open||document.activeElement!==attempt.b)return fail('timer failure recovery wrong');
+   if(absent.classList.contains('fvsb-flash'))return fail('timer failure left feature flash class');
+
+   absent.scrollIntoView=()=>{};attempt=clickMention('six miles an hour');
+   if(attempt.d.open)return fail('successful jump left dialog open');
+   if(document.activeElement!==absent)return fail('successful absent jump did not focus story target');
+   if(absent.getAttribute('tabindex')!=='-1'||absent.hasAttribute('id'))return fail('successful absent focusability not temporary');
+
+   zero.scrollIntoView=()=>{};attempt=clickMention('20 mph');
+   if(absent.hasAttribute('tabindex'))return fail('temporary absent tabindex not restored on blur');
+   if(attempt.d.open||document.activeElement!==zero)return fail('tab-zero success focus/dialog wrong');
+   if(zero.getAttribute('tabindex')!=='0')return fail('tabindex zero overwritten');
+
+   negative.scrollIntoView=()=>{};attempt=clickMention('30 miles per hour');
+   if(attempt.d.open||document.activeElement!==negative)return fail('negative-tab success focus/dialog wrong');
+   if(negative.getAttribute('tabindex')!=='-7')return fail('negative tabindex overwritten');
+
+   ownedId.scrollIntoView=()=>{};attempt=clickMention('thirty-five miles per hour');
+   if(attempt.d.open||document.activeElement!==ownedId)return fail('owned-id success focus/dialog wrong');
+   if(ownedId.id!=='publisher-owned-point'||ownedId.getAttribute('tabindex')!=='-1')return fail('owned-id temporary focus state wrong');
+
+   ownedFlash.scrollIntoView=()=>{};attempt=clickMention('1,000 feet');
+   if(ownedId.hasAttribute('tabindex'))return fail('owned-id temporary tabindex not restored on blur');
+   if(attempt.d.open||document.activeElement!==ownedFlash)return fail('owned-flash success focus/dialog wrong');
+   if(ownedFlash.getAttribute('tabindex')!=='-1'||!ownedFlash.classList.contains('fvsb-flash')||!ownedFlash.classList.contains('published-copy'))return fail('pre-owned class or temporary focus state damaged');
+
+   absent.scrollIntoView=()=>{};attempt=clickMention('six miles an hour');
+   if(ownedFlash.hasAttribute('tabindex'))return fail('owned-flash temporary tabindex not restored on blur');
+   if(attempt.d.open||document.activeElement!==absent)return fail('repeat success focus/dialog drift');
+   if(absent.getAttribute('tabindex')!=='-1'||absent.hasAttribute('id'))return fail('repeat jump temporary focus state wrong');
+
+   const cleanupDialog=open();
+   if(absent.hasAttribute('tabindex'))return fail('repeat temporary tabindex not restored on blur');
+   cleanupDialog.close();await tick();
+   for(const timer of window.__fvScaleBoardTestTimers.splice(0))timer();
+   if(absent.hasAttribute('tabindex')||absent.hasAttribute('id')||absent.classList.contains('fvsb-flash'))return fail('timer cleanup drift');
+   if(zero.getAttribute('tabindex')!=='0'||negative.getAttribute('tabindex')!=='-7'||ownedId.id!=='publisher-owned-point'||ownedId.hasAttribute('tabindex'))return fail('post-timer publisher state drift');
+   if(ownedFlash.hasAttribute('tabindex')||!ownedFlash.classList.contains('fvsb-flash')||!ownedFlash.classList.contains('published-copy'))return fail('pre-owned flash class removed');
+   if(window.__fvUnexpectedErrors.length)return fail('feature leaked interaction error: '+window.__fvUnexpectedErrors.join('|'));
+   document.body.dataset.fvTest='pass'
+ }catch(e){fail(e&&e.message?e.message:String(e))}
+})();
+</script></body></html>
