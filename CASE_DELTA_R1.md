@@ -26,7 +26,8 @@ R1 also applies the current nondestructive-DOM-state rule to `View current`. Scr
 - Payload: `payloads/case-delta-wp-block-r1.txt`
 - Expected payload bytes: `21851`
 - Expected payload SHA-256: `3144b3675a331b15d0aac6611c93fde67050577e4de348c88107309993e6eb04`
-- Verifier: `tests/verify_case_delta_r1.py`
+- Static/exact-identity verifier: `tests/verify_case_delta_r1.py`
+- Browser/adversarial verifier: `tests/verify_case_delta_r1_browser.py`
 - CI: `.github/workflows/case-delta-r1-ci.yml`
 
 ## Browser/adversarial matrix
