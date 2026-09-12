@@ -1,0 +1,74 @@
+<!-- wp:html -->
+<style id="fv-listen-mode-v1-css">
+.fv-listen-mode{margin:34px 0;padding:18px 20px;background:#111212;border:1px solid #34322E;border-left:2px solid #B8955E;color:#D8D2C7}
+.fv-listen-mode__intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center}
+.fv-listen-mode__kicker{margin:0 0 5px;color:#B8955E;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.fv-listen-mode__title{margin:0;color:#F4EFE6;font-size:17px;font-weight:700;line-height:1.35}
+.fv-listen-mode__note{margin:5px 0 0;color:#908A80;font-size:12px;line-height:1.55}
+.fv-listen-mode__open,.fv-listen-mode__control,.fv-listen-mode__rate{min-height:44px;border:1px solid #4A4640;background:transparent;color:#D8D2C7;font:inherit;cursor:pointer}
+.fv-listen-mode__open{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:2px;font-size:11px;font-weight:800;letter-spacing:.05em}
+.fv-listen-mode__open:hover,.fv-listen-mode__open:focus-visible,.fv-listen-mode__control:hover,.fv-listen-mode__control:focus-visible,.fv-listen-mode__rate:hover,.fv-listen-mode__rate:focus-visible{border-color:#B8955E;color:#F4EFE6;outline:2px solid transparent}
+.fv-listen-mode__control:disabled{opacity:.45;cursor:not-allowed}
+.fv-listen-mode__player{position:sticky;top:12px;z-index:35;display:none;margin:18px -6px -6px;padding:14px;background:#0B0C0C;border:1px solid #3A3833;box-shadow:0 12px 30px rgba(0,0,0,.24)}
+.fv-listen-mode.is-active .fv-listen-mode__player{display:block}
+.fv-listen-mode.is-active .fv-listen-mode__open{display:none}
+.fv-listen-mode__now{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;margin:0 0 12px}
+.fv-listen-mode__status{margin:0;color:#F4EFE6;font-size:13px;font-weight:700;line-height:1.45}
+.fv-listen-mode__section{display:block;margin-top:2px;color:#908A80;font-size:11px;font-weight:500}
+.fv-listen-mode__position{color:#B8955E;font-size:10px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
+.fv-listen-mode__controls{display:grid;grid-template-columns:repeat(4,minmax(44px,auto)) minmax(0,1fr);gap:8px;align-items:center}
+.fv-listen-mode__control{padding:8px 11px;border-radius:2px;font-size:11px;font-weight:800;letter-spacing:.035em}
+.fv-listen-mode__rates{display:flex;justify-content:flex-end;gap:6px;min-width:0}
+.fv-listen-mode__rate{min-width:48px;padding:7px 9px;border-radius:999px;font-size:10px;font-weight:800}
+.fv-listen-mode__rate[aria-pressed="true"]{background:#B8955E;border-color:#B8955E;color:#0A0B0B}
+.fv-listen-mode__sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.fv-listen-mode-current{scroll-margin-top:150px;background:rgba(184,149,94,.08);box-shadow:inset 2px 0 0 #B8955E}
+@media(max-width:700px){.fv-listen-mode__intro{grid-template-columns:1fr}.fv-listen-mode__open{width:100%}.fv-listen-mode__player{position:static}.fv-listen-mode__controls{grid-template-columns:repeat(4,1fr)}.fv-listen-mode__rates{grid-column:1/-1;justify-content:flex-start;overflow-x:auto;padding-top:2px}.fv-listen-mode__control{padding-inline:7px}}
+@media(max-width:360px){.fv-listen-mode{margin:26px 0;padding:16px}.fv-listen-mode__title{font-size:16px}.fv-listen-mode__player{margin:16px -4px -4px;padding:11px}.fv-listen-mode__now{grid-template-columns:1fr}.fv-listen-mode__position{white-space:normal}.fv-listen-mode__controls{grid-template-columns:repeat(2,1fr)}.fv-listen-mode__rates{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){.fv-listen-mode *,.fv-listen-mode-current{scroll-behavior:auto!important;transition:none!important}}
+@media(forced-colors:active){.fv-listen-mode,.fv-listen-mode__player,.fv-listen-mode__open,.fv-listen-mode__control,.fv-listen-mode__rate{border-color:CanvasText}.fv-listen-mode__rate[aria-pressed="true"]{background:Highlight;color:HighlightText}.fv-listen-mode-current{outline:2px solid Highlight;outline-offset:2px;box-shadow:none}}
+@media print{.fv-listen-mode{display:none!important}.fv-listen-mode-current{background:transparent;box-shadow:none;outline:0}}
+</style>
+<script id="fv-listen-mode-v1-js">
+(()=>{if(window.__fvListenMode)return;window.__fvListenMode=true;
+const body=document.body;if(!body||(!body.classList.contains('single-post')&&!body.classList.contains('single')))return;
+if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return;
+const main=document.querySelector('main')||document;const article=main.querySelector('article')||main;
+const sourceRoot=article.querySelector('[data-fv-footnotes],.fv-source-list')||document.querySelector('[data-fv-footnotes],.fv-source-list');
+if(!article||!sourceRoot)return;
+const beforeSource=node=>Boolean(node.compareDocumentPosition(sourceRoot)&Node.DOCUMENT_POSITION_FOLLOWING);
+const featureUi=node=>Boolean(node.closest('.fv-listen-mode,.fv-case-search,.fv-passage-kit,.fv-passage-kit-action,.fv-return-trail,.fv-reading-focus,.fv-evidence-trace,.fv-source-kit,.fv-chronology-rail,.fv-evidence-map,.fv-detail-lens'));
+const clean=s=>String(s||'').replace(/\s+/g,' ').trim();
+const spokenText=node=>{const clone=node.cloneNode(true);clone.querySelectorAll('.fv-fn-mark,.fv-fn-backlinks,.fv-passage-kit-action,[aria-hidden="true"]').forEach(n=>n.remove());return clean(clone.textContent)};
+const prose=[...article.querySelectorAll('p')].filter(p=>beforeSource(p)&&!featureUi(p)&&!p.closest('figure,figcaption,header,footer,nav,form,.sharedaddy,.sd-sharing-enabled,.wp-block-buttons')&&spokenText(p).length>=60);
+const totalText=prose.reduce((n,p)=>n+spokenText(p).length,0);
+if(prose.length<12||totalText<3000)return;
+const headings=[...article.querySelectorAll('h2,h3')].filter(h=>beforeSource(h)&&!featureUi(h));
+const sectionFor=block=>{let label='Opening';for(const h of headings){if(h===block)break;if(h.compareDocumentPosition(block)&Node.DOCUMENT_POSITION_FOLLOWING)label=clean(h.textContent)}return label};
+const segments=[];
+const storyNodes=[...headings,...prose].sort((a,b)=>a===b?0:(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING?-1:1));
+storyNodes.forEach(node=>{const text=spokenText(node);if(text)segments.push({el:node,text,kind:node.matches('h2,h3')?'Section':'Passage',section:node.matches('h2,h3')?text:sectionFor(node)})});
+if(segments.length<12)return;
+const launcher=document.createElement('section');launcher.className='fv-listen-mode';launcher.setAttribute('role','region');launcher.setAttribute('aria-label','Listen Mode');
+launcher.innerHTML=`<div class="fv-listen-mode__intro"><div><p class="fv-listen-mode__kicker">LISTEN MODE</p><p class="fv-listen-mode__title">Listen to the investigation without losing your place.</p><p class="fv-listen-mode__note">Uses the speech engine provided by your browser or device. Final Vestige does not send article text to a speech service.</p></div><button class="fv-listen-mode__open" type="button">Listen to this investigation</button></div><div class="fv-listen-mode__player" aria-label="Investigation narration controls"><div class="fv-listen-mode__now"><p class="fv-listen-mode__status">Ready to listen<span class="fv-listen-mode__section">Narrative only · source notes stay on the page</span></p><span class="fv-listen-mode__position">1 of ${segments.length}</span></div><div class="fv-listen-mode__controls"><button class="fv-listen-mode__control" type="button" data-action="prev" aria-label="Previous passage">Previous</button><button class="fv-listen-mode__control" type="button" data-action="play">Play</button><button class="fv-listen-mode__control" type="button" data-action="next" aria-label="Next passage">Next</button><button class="fv-listen-mode__control" type="button" data-action="stop">Close</button><div class="fv-listen-mode__rates" aria-label="Narration speed"><button class="fv-listen-mode__rate" type="button" data-rate="0.8" aria-pressed="false">0.8×</button><button class="fv-listen-mode__rate" type="button" data-rate="1" aria-pressed="true">1×</button><button class="fv-listen-mode__rate" type="button" data-rate="1.25" aria-pressed="false">1.25×</button><button class="fv-listen-mode__rate" type="button" data-rate="1.5" aria-pressed="false">1.5×</button></div></div><p class="fv-listen-mode__sr" role="status" aria-live="polite"></p></div>`;
+const firstHeading=headings[0];if(firstHeading)firstHeading.before(launcher);else prose[Math.min(2,prose.length-1)].after(launcher);
+const open=launcher.querySelector('.fv-listen-mode__open');const player=launcher.querySelector('.fv-listen-mode__player');const play=launcher.querySelector('[data-action="play"]');const prev=launcher.querySelector('[data-action="prev"]');const next=launcher.querySelector('[data-action="next"]');const stop=launcher.querySelector('[data-action="stop"]');const status=launcher.querySelector('.fv-listen-mode__status');const position=launcher.querySelector('.fv-listen-mode__position');const live=launcher.querySelector('[role="status"]');const rateButtons=[...launcher.querySelectorAll('.fv-listen-mode__rate')];
+const synth=window.speechSynthesis;let current=0;let rate=1;let utterance=null;let token=0;let paused=false;let active=false;let completed=false;
+const announce=text=>{live.textContent='';requestAnimationFrame(()=>live.textContent=text)};
+const clearHighlight=()=>document.querySelectorAll('.fv-listen-mode-current').forEach(n=>n.classList.remove('fv-listen-mode-current'));
+const showCurrent=(scroll=false)=>{clearHighlight();const item=segments[current];item.el.classList.add('fv-listen-mode-current');status.firstChild.nodeValue=completed?'Finished':paused?'Paused':synth.speaking?'Playing':'Ready';status.querySelector('.fv-listen-mode__section').textContent=`${item.kind} · ${item.section}`;position.textContent=`${current+1} of ${segments.length}`;play.textContent=paused?'Resume':synth.speaking?'Pause':'Play';prev.disabled=current===0;next.disabled=current===segments.length-1;if(scroll){const r=item.el.getBoundingClientRect();if(r.top<120||r.bottom>innerHeight-80)item.el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'})}};
+const cancel=()=>{token++;utterance=null;paused=false;synth.cancel()};
+const speakCurrent=()=>{cancel();completed=false;active=true;launcher.classList.add('is-active');const id=token;const item=segments[current];utterance=new SpeechSynthesisUtterance(item.text);utterance.lang=document.documentElement.lang||'en-US';utterance.rate=rate;utterance.onstart=()=>{if(id!==token)return;paused=false;showCurrent(true);announce(`Playing ${item.kind.toLowerCase()} ${current+1} of ${segments.length}.`)};utterance.onend=()=>{if(id!==token)return;if(current<segments.length-1){current++;speakCurrent()}else{utterance=null;completed=true;paused=false;showCurrent(false);announce('Narration finished.')}};utterance.onerror=e=>{if(id!==token||e.error==='canceled'||e.error==='interrupted')return;utterance=null;paused=false;showCurrent(false);announce('Narration stopped because the browser speech engine reported an error.')};synth.speak(utterance);showCurrent(false)};
+const openPlayer=()=>{active=true;completed=false;launcher.classList.add('is-active');showCurrent(false);play.focus();announce('Listen Mode ready. Press Play to begin.')};
+const closePlayer=()=>{cancel();active=false;completed=false;launcher.classList.remove('is-active');clearHighlight();open.focus();announce('Listen Mode closed.')};
+open.addEventListener('click',openPlayer);
+play.addEventListener('click',()=>{if(paused){synth.resume();paused=false;showCurrent(false);announce('Narration resumed.');return}if(synth.speaking){synth.pause();paused=true;showCurrent(false);announce('Narration paused.');return}speakCurrent()});
+prev.addEventListener('click',()=>{if(current===0)return;const wasPlaying=synth.speaking&&!paused;current--;cancel();showCurrent(true);if(wasPlaying)speakCurrent();else announce(`Moved to ${segments[current].kind.toLowerCase()} ${current+1}.`)});
+next.addEventListener('click',()=>{if(current>=segments.length-1)return;const wasPlaying=synth.speaking&&!paused;current++;cancel();showCurrent(true);if(wasPlaying)speakCurrent();else announce(`Moved to ${segments[current].kind.toLowerCase()} ${current+1}.`)});
+stop.addEventListener('click',closePlayer);
+rateButtons.forEach(button=>button.addEventListener('click',()=>{rate=Number(button.dataset.rate)||1;rateButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));const wasPlaying=synth.speaking||paused;if(wasPlaying)speakCurrent();announce(`Narration speed ${button.textContent}.${wasPlaying?' Current passage restarted.':''}`)}));
+document.addEventListener('keydown',e=>{if(active&&e.key==='Escape'){e.preventDefault();closePlayer()}});
+window.addEventListener('pagehide',()=>{token++;synth.cancel()});
+})();
+</script>
+<!-- /wp:html -->
