@@ -28,6 +28,7 @@ Multi-term matching remains AND matching. Duplicate normalized tokens are collap
 `Jump to result` now follows the current Site Sprint DOM-state rule:
 
 - scrolling is attempted before existing-node mutation;
+- destination focus is established only after the native dialog close event, preventing native close-focus restoration from stealing the jump;
 - `tabindex="-1"` is added only when the publisher target had no tabindex;
 - the feature removes only its own temporary tabindex;
 - a pre-owned `fv-case-search-target` class is never removed;
@@ -50,8 +51,8 @@ Multi-term matching remains AND matching. Duplicate normalized tokens are collap
 ## Deterministic R1 identity
 
 - Payload: `payloads/case-search-wp-block-r1.txt`
-- Payload bytes: **19,227**
-- Payload SHA-256: **`1e6a14c6cf245154c88b9656a6e58ab1cd852abf9e156ab578fdc01b6ee7efca`**
+- Payload bytes: **19,312**
+- Payload SHA-256: **`53128560c03f2cc5dcdfbde948090ea39bf251ba934c41d87e783d3da44de725`**
 - Verifier: `tests/verify_case_search_r1.py`
 - Workflow: `.github/workflows/case-search-r1-ci.yml`
 
@@ -60,6 +61,7 @@ The browser verifier executes the exact payload and proves:
 - decomposed query → composed published text is centered and visibly marked;
 - composed query → decomposed published text is centered and visibly marked;
 - normalized multi-term AND matches visibly mark every required term;
+- selected-result focus lands on the published destination after native dialog close;
 - absent tabindex/class state is restored after a jump;
 - publisher-owned `tabindex="0"` and a pre-owned feature-token class survive;
 - repeated jumps do not drift publisher state.
