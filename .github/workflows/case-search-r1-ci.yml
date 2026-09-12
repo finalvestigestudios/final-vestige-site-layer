@@ -1,0 +1,27 @@
+name: Case Search R1 CI
+
+on:
+  pull_request:
+    paths:
+      - 'payloads/case-search-wp-block-r1.txt'
+      - 'tests/verify_case_search_r1.py'
+      - '.github/workflows/case-search-r1-ci.yml'
+      - 'CASE_SEARCH_R1.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Case Search R1 artifact
+        run: python tests/verify_case_search_r1.py
