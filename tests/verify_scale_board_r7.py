@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-r7.txt"
-EXPECTED_BYTES = 18458
-EXPECTED_SHA256 = "de765b59a8bef8c4e5c62e9a44897cf4e73f2216aef3b3da5d2834b7fbd344a8"
+EXPECTED_BYTES = 18688
+EXPECTED_SHA256 = "d5e1f7e1380fc7a67c02f625a2082a328d29c80c87982f7c449375972031b3d0"
 
 
 def require(ok: bool, message: str) -> None:
@@ -47,7 +47,8 @@ def main() -> None:
         "invalidNumericExpressionPrefix", "⁄", "∕", "selected.some(existing=>overlaps(candidate,existing))",
         "Bars compare magnitude, not importance, causation, confidence, or evidence quality.",
         "min-height:44px", "@media(max-width:360px)", "prefers-reduced-motion:reduce", "forced-colors:active",
-        "focusSafely", "recoverJumpFocus", "document.activeElement!==p",
+        "focusSafely", "recoverJumpFocus", "document.activeElement!==p", "restoreTabindex",
+        "addEventListener('blur',restoreTabindex,{once:true})",
     ):
         require(token in text, f"preserved/R7 contract missing: {token}")
 
@@ -60,6 +61,7 @@ def main() -> None:
     require(text.index("p.scrollIntoView") < text.index("p.setAttribute('tabindex','-1')"), "tabindex mutation must occur only after scroll succeeds")
     require("if(dialog?.open)" in text and "focusSafely(launch)" in text, "deterministic failure recovery missing")
     require("if(document.activeElement!==p)throw new Error('Scale Board story focus did not move')" in text, "silent focus failure guard missing")
+    require("if(p.getAttribute('tabindex')==='-1')p.removeAttribute('tabindex')" in text, "blur restoration must only remove feature-owned tabindex")
     require("hadFlash=p.classList.contains('fvsb-flash')" in text, "pre-owned flash-class detection missing")
     require("if(!hadFlash){" in text and "p.classList.add('fvsb-flash')" in text and "p.classList.remove('fvsb-flash')" in text, "flash-class preservation missing")
     require("setAttribute('id'" not in text and ".id=`fvsb-" not in text, "story-point id mutation remains")
@@ -82,7 +84,7 @@ def main() -> None:
         require(value in r4, f"missing prior adversarial fixture: {value!r}")
 
     r7fixture = (ROOT / "tests/fixtures/scale-board-r7-focus-prefix.html").read_text() + (ROOT / "tests/fixtures/scale-board-r7-focus-suffix.html").read_text()
-    for value in ("forced-scroll-failure-absent", "forced-focus-failure", "scroll failure did not recover focus to launcher", "focus failure did not recover focus to launcher", "success did not move focus to story target", 'tabindex="0"', 'tabindex="-7"', 'id="publisher-owned-point"', 'class="published-copy fvsb-flash"', "repeat success drifted focus or DOM"):
+    for value in ("forced-scroll-failure-absent", "forced-focus-failure", "scroll failure did not recover focus to launcher", "focus failure did not recover focus to launcher", "success did not move focus to story target", "temporary focusability missing while story target active", "blur cleanup failed to restore absent publisher state", 'tabindex="0"', 'tabindex="-7"', 'id="publisher-owned-point"', 'class="published-copy fvsb-flash"', "repeat success drifted focus transaction"):
         require(value in r7fixture, f"missing R7 focus/dialog regression: {value}")
 
     # R7 supersedes R6's expectation that injected jump failures escape as uncaught errors.
