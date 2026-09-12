@@ -1,0 +1,118 @@
+<!-- wp:html -->
+<style id="fv-source-route-v1-css">
+.fvsr-band{margin:34px 0 30px;padding:17px 18px;border:1px solid rgba(184,149,94,.38);border-radius:12px;background:linear-gradient(135deg,rgba(184,149,94,.09),rgba(255,255,255,.025));color:inherit;display:flex;align-items:center;justify-content:space-between;gap:18px}.fvsr-band-copy{min-width:0}.fvsr-kicker{margin:0 0 3px;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#B8955E}.fvsr-band h3{margin:0 0 4px;font-size:clamp(18px,2vw,23px);line-height:1.2}.fvsr-band p{margin:0;max-width:680px;font-size:13px;line-height:1.55;opacity:.78}.fvsr-button{appearance:none;border:1px solid rgba(184,149,94,.62);border-radius:9px;background:#B8955E;color:#151310;font:inherit;font-weight:800;min-height:44px;padding:10px 15px;cursor:pointer;white-space:nowrap}.fvsr-button:hover{filter:brightness(1.07)}.fvsr-button:focus-visible,.fvsr-mode:focus-visible,.fvsr-jump:focus-visible,.fvsr-close:focus-visible{outline:3px solid #B8955E;outline-offset:3px}.fvsr-dialog{width:min(780px,calc(100vw - 28px));max-height:min(86vh,860px);padding:0;border:1px solid #4b453b;border-radius:15px;background:#171614;color:#F2EDE4;box-shadow:0 24px 70px rgba(0,0,0,.5);overflow:hidden}.fvsr-dialog::backdrop{background:rgba(5,5,5,.72)}.fvsr-shell{display:flex;flex-direction:column;max-height:min(86vh,860px)}.fvsr-head{display:flex;justify-content:space-between;gap:18px;padding:20px 22px 16px;border-bottom:1px solid #37332d}.fvsr-head h2{margin:0;font-size:24px;line-height:1.15;color:#F7F2E9}.fvsr-head p{margin:6px 0 0;max-width:650px;color:#BEB6AA;font-size:13px;line-height:1.55}.fvsr-close{appearance:none;background:transparent;color:#E9E2D7;border:1px solid #514b43;border-radius:9px;min-width:44px;min-height:44px;font-size:22px;line-height:1;cursor:pointer}.fvsr-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 22px;border-bottom:1px solid #312e29;background:#131210}.fvsr-modes{display:flex;gap:7px;flex-wrap:wrap}.fvsr-mode{appearance:none;min-height:44px;padding:8px 12px;border:1px solid #4b453d;border-radius:999px;background:transparent;color:#D8D0C4;font:inherit;font-size:13px;cursor:pointer}.fvsr-mode[aria-pressed="true"]{border-color:#B8955E;background:rgba(184,149,94,.14);color:#FFF8ED}.fvsr-shortcuts{font-size:12px;color:#8F887E;white-space:nowrap}.fvsr-main{overflow:auto;padding:20px 22px 22px}.fvsr-status{margin:0 0 17px;color:#C7BDAF;font-size:12px;font-weight:700;letter-spacing:.04em}.fvsr-section{margin:0 0 9px;color:#B8955E;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.fvsr-context,.fvsr-source{margin:0 0 16px;padding:16px;border:1px solid #3c3832;border-radius:11px;background:#1d1b18}.fvsr-context-label,.fvsr-source-label{display:block;margin-bottom:7px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8F877A}.fvsr-context p,.fvsr-source p{margin:0;color:#EEE8DE;line-height:1.65;font-size:15px}.fvsr-source{border-left:3px solid #B8955E}.fvsr-source-meta{margin-top:9px!important;color:#AAA195!important;font-size:12px!important}.fvsr-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:7px}.fvsr-jump{appearance:none;min-height:44px;border:1px solid #504a41;border-radius:9px;background:#211f1b;color:#EFE8DD;font:inherit;font-weight:700;cursor:pointer;padding:9px 12px}.fvsr-jump:hover{border-color:#85765f}.fvsr-nav{display:flex;justify-content:space-between;gap:10px;padding:14px 22px;border-top:1px solid #37332d;background:#131210}.fvsr-nav .fvsr-button{flex:1;background:transparent;color:#F2EDE4}.fvsr-nav .fvsr-button[disabled]{opacity:.38;cursor:not-allowed}.fvsr-flash{outline:3px solid #B8955E!important;outline-offset:4px!important;scroll-margin-top:120px}.fvsr-sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:680px){.fvsr-band{align-items:stretch;flex-direction:column}.fvsr-button{width:100%}.fvsr-dialog{width:100vw;max-width:none;height:100dvh;max-height:none;border:0;border-radius:0}.fvsr-shell{height:100dvh;max-height:none}.fvsr-head,.fvsr-tools,.fvsr-main,.fvsr-nav{padding-left:16px;padding-right:16px}.fvsr-tools{align-items:flex-start;flex-direction:column}.fvsr-shortcuts{white-space:normal}.fvsr-actions{grid-template-columns:1fr}.fvsr-nav{padding-bottom:max(14px,env(safe-area-inset-bottom))}}
+@media(max-width:360px){.fvsr-head{padding-top:15px}.fvsr-head h2{font-size:21px}.fvsr-main{padding-top:16px}.fvsr-context,.fvsr-source{padding:13px}.fvsr-nav{gap:7px}.fvsr-nav .fvsr-button{padding-left:8px;padding-right:8px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.fvsr-band,.fvsr-dialog,.fvsr-button,.fvsr-mode,.fvsr-jump{scroll-behavior:auto!important;transition:none!important}}
+@media(forced-colors:active){.fvsr-band,.fvsr-dialog,.fvsr-context,.fvsr-source,.fvsr-button,.fvsr-mode,.fvsr-jump,.fvsr-close{border:1px solid ButtonText}.fvsr-mode[aria-pressed="true"],.fvsr-source{outline:2px solid Highlight}.fvsr-flash{outline:3px solid Highlight!important}}
+@media print{.fvsr-band,.fvsr-dialog{display:none!important}}
+</style>
+<script id="fv-source-route-v1-js">
+(()=>{
+'use strict';
+if(window.__fvSourceRouteV1)return;window.__fvSourceRouteV1=true;
+const onReady=(fn)=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn,{once:true}):fn();
+onReady(()=>{
+ const article=document.querySelector('main article,article');if(!article)return;
+ const boundaryCandidates=[...article.querySelectorAll('#sources,.fv-source-heading')];
+ if(boundaryCandidates.length!==1)return;
+ const sourceHeading=boundaryCandidates[0];
+ if(sourceHeading.tagName!=='H2'||sourceHeading.id!=='sources'||!sourceHeading.classList.contains('fv-source-heading'))return;
+ const noteRoots=[...article.querySelectorAll('[data-fv-footnotes]')];if(noteRoots.length!==1)return;
+ const notesRoot=noteRoots[0];if(!['UL','OL'].includes(notesRoot.tagName))return;
+ const follows=(a,b)=>Boolean(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING);
+ if(!follows(sourceHeading,notesRoot))return;
+ const storyHeadings=[...article.querySelectorAll('h2')].filter(h=>h!==sourceHeading&&follows(h,sourceHeading));
+ if(storyHeadings.length<2||storyHeadings.length>10)return;
+ const paragraphs=[...article.querySelectorAll('p')].filter(p=>follows(p,sourceHeading)&&p.textContent.trim().length>=55);
+ if(paragraphs.length<10||paragraphs.length>140)return;
+ const sourceItems=[...notesRoot.querySelectorAll(':scope>li[id^="fv-fn-"]')];if(sourceItems.length<3||sourceItems.length>40)return;
+ const noteMap=new Map();
+ for(const li of sourceItems){const m=li.id.match(/^fv-fn-(\d{1,3})$/);if(!m||noteMap.has(m[1]))return;noteMap.set(m[1],li)}
+ const rawRefs=[...article.querySelectorAll('.fv-fn-ref[data-fv-fn]')].filter(ref=>ref.tagName==='A'&&follows(ref,sourceHeading));
+ if(rawRefs.length<6||rawRefs.length>60)return;
+ const records=[];
+ for(const ref of rawRefs){
+  const n=(ref.dataset.fvFn||'').trim();if(!/^\d{1,3}$/.test(n)||ref.getAttribute('href')!==`#fv-fn-${n}`||!noteMap.has(n))return;
+  const host=ref.closest('p,li,blockquote');if(!host||!article.contains(host)||!follows(host,sourceHeading))return;
+  const clone=host.cloneNode(true);clone.querySelectorAll('.fv-fn-ref,.fv-fn-backlinks,script,style').forEach(el=>el.remove());
+  const context=clone.textContent.replace(/\s+/g,' ').trim();if(context.length<40)return;
+  let section='Opening';for(const h of storyHeadings){if(follows(h,ref))section=h.textContent.replace(/\s+/g,' ').trim();else break}
+  records.push({ref,n,note:noteMap.get(n),section,context});
+ }
+ const distinct=[...new Set(records.map(r=>r.n))];if(distinct.length<3)return;
+ const firstStory=storyHeadings[0];
+ const band=document.createElement('section');band.className='fvsr-band';band.dataset.fvsrBand='';
+ const copy=document.createElement('div');copy.className='fvsr-band-copy';
+ const kicker=document.createElement('p');kicker.className='fvsr-kicker';kicker.textContent='Source Route';
+ const title=document.createElement('h3');title.textContent='Walk the citations in story order';
+ const desc=document.createElement('p');desc.textContent=`${records.length} published citations · ${distinct.length} cited sources. Follow each existing link without losing the passage that used it.`;
+ const launch=document.createElement('button');launch.type='button';launch.className='fvsr-button';launch.textContent='Follow source route';launch.setAttribute('aria-haspopup','dialog');
+ copy.append(kicker,title,desc);band.append(copy,launch);firstStory.parentNode.insertBefore(band,firstStory);
+ let dialog=null,mode='all',index=0,lastInvoker=launch,suppressReturn=false,activeJumpCleanup=null;
+ const normalizedNote=(li)=>{const c=li.cloneNode(true);c.querySelectorAll('.fv-fn-backlinks,script,style').forEach(el=>el.remove());return c.textContent.replace(/\s+/g,' ').trim()};
+ const sequences=()=>mode==='all'?records:records.filter((r,i,a)=>a.findIndex(x=>x.n===r.n)===i);
+ const useMeta=(record)=>{const uses=records.filter(r=>r.n===record.n);return {which:uses.indexOf(record)+1,total:uses.length}};
+ const recoverFocus=()=>{try{if(document.contains(launch))launch.focus()}catch(_){}};
+ const focusTarget=(el)=>{
+  if(activeJumpCleanup){activeJumpCleanup();activeJumpCleanup=null}
+  try{el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'})}catch(_){recoverFocus();return false}
+  const hadTabindex=el.hasAttribute('tabindex'),priorTabindex=el.getAttribute('tabindex');
+  const hadClassAttr=el.hasAttribute('class'),hadFlash=el.classList.contains('fvsr-flash');
+  let ownsTabindex=false,ownsFlash=false,flashTimer=null,cleaned=false;
+  const clearFlash=()=>{
+   if(!ownsFlash)return;
+   el.classList.remove('fvsr-flash');ownsFlash=false;
+   if(!hadClassAttr&&!el.getAttribute('class'))el.removeAttribute('class');
+  };
+  const cleanup=()=>{
+   if(cleaned)return;cleaned=true;
+   if(flashTimer!==null){clearTimeout(flashTimer);flashTimer=null}
+   clearFlash();
+   if(ownsTabindex){
+    if(hadTabindex)el.setAttribute('tabindex',priorTabindex);
+    else el.removeAttribute('tabindex');
+    ownsTabindex=false;
+   }
+  };
+  try{
+   if(!hadTabindex){el.setAttribute('tabindex','-1');ownsTabindex=true}
+   el.focus({preventScroll:true});
+   if(document.activeElement!==el)throw new Error('Source Route target focus was not established');
+   if(!hadFlash){el.classList.add('fvsr-flash');ownsFlash=true}
+   flashTimer=setTimeout(()=>{flashTimer=null;clearFlash()},1300);
+   activeJumpCleanup=cleanup;
+   el.addEventListener('blur',()=>{cleanup();if(activeJumpCleanup===cleanup)activeJumpCleanup=null},{once:true});
+   return true;
+  }catch(_){
+   cleanup();if(activeJumpCleanup===cleanup)activeJumpCleanup=null;recoverFocus();return false;
+  }
+ };
+ const buildDialog=()=>{
+  const d=document.createElement('dialog');d.className='fvsr-dialog';d.setAttribute('aria-labelledby','fvsr-title');
+  d.innerHTML=`<div class="fvsr-shell"><header class="fvsr-head"><div><h2 id="fvsr-title" tabindex="-1">Source Route</h2><p>Walk the citations already published in this investigation. This follows existing source links; it does not rate evidence or claim a source proves the passage.</p></div><button class="fvsr-close" type="button" aria-label="Close Source Route">×</button></header><div class="fvsr-tools"><div class="fvsr-modes" aria-label="Route mode"><button class="fvsr-mode" type="button" data-mode="all" aria-pressed="true">All citations</button><button class="fvsr-mode" type="button" data-mode="first" aria-pressed="false">First use per source</button></div><div class="fvsr-shortcuts">←/→ citation · Home/End</div></div><div class="fvsr-main"><p class="fvsr-status" aria-live="polite"></p><p class="fvsr-section"></p><div class="fvsr-context"><span class="fvsr-context-label">Published passage</span><p></p></div><div class="fvsr-source"><span class="fvsr-source-label">Linked source note</span><p></p><p class="fvsr-source-meta"></p></div><div class="fvsr-actions"><button class="fvsr-jump" type="button" data-jump="passage">View passage</button><button class="fvsr-jump" type="button" data-jump="source">View source note</button></div></div><footer class="fvsr-nav"><button class="fvsr-button fvsr-prev" type="button">← Previous</button><button class="fvsr-button fvsr-next" type="button">Next →</button></footer></div>`;
+  document.body.appendChild(d);
+  d.querySelector('.fvsr-close').addEventListener('click',()=>d.close());
+  d.querySelectorAll('.fvsr-mode').forEach(btn=>btn.addEventListener('click',()=>{mode=btn.dataset.mode;d.querySelectorAll('.fvsr-mode').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));index=0;render()}));
+  d.querySelector('.fvsr-prev').addEventListener('click',()=>{if(index>0){index--;render()}});
+  d.querySelector('.fvsr-next').addEventListener('click',()=>{const seq=sequences();if(index<seq.length-1){index++;render()}});
+  d.querySelector('[data-jump="passage"]').addEventListener('click',()=>{const r=sequences()[index];suppressReturn=true;d.close();focusTarget(r.ref)});
+  d.querySelector('[data-jump="source"]').addEventListener('click',()=>{const r=sequences()[index];suppressReturn=true;d.close();focusTarget(r.note)});
+  d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();if(index>0){index--;render()}}else if(e.key==='ArrowRight'){e.preventDefault();const seq=sequences();if(index<seq.length-1){index++;render()}}else if(e.key==='Home'){e.preventDefault();index=0;render()}else if(e.key==='End'){e.preventDefault();index=sequences().length-1;render()}});
+  d.addEventListener('close',()=>{if(suppressReturn){suppressReturn=false;return}if(lastInvoker&&document.contains(lastInvoker))lastInvoker.focus()});
+  return d;
+ };
+ const render=()=>{
+  if(!dialog)return;const seq=sequences();if(!seq.length)return;if(index>=seq.length)index=seq.length-1;const r=seq[index],use=useMeta(r);
+  dialog.querySelector('.fvsr-status').textContent=`Citation ${index+1} of ${seq.length} · Source ${r.n} · use ${use.which} of ${use.total}`;
+  dialog.querySelector('.fvsr-section').textContent=r.section;
+  dialog.querySelector('.fvsr-context p').textContent=r.context;
+  dialog.querySelector('.fvsr-source p').textContent=normalizedNote(r.note);
+  dialog.querySelector('.fvsr-source-meta').textContent=`Source ${r.n} appears in ${use.total} citation${use.total===1?'':'s'} on this page.`;
+  dialog.querySelector('.fvsr-prev').disabled=index===0;dialog.querySelector('.fvsr-next').disabled=index===seq.length-1;
+ };
+ launch.addEventListener('click',()=>{lastInvoker=launch;if(!dialog)dialog=buildDialog();mode='all';index=0;dialog.querySelectorAll('.fvsr-mode').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode==='all')));render();dialog.showModal();requestAnimationFrame(()=>dialog.querySelector('#fvsr-title').focus())});
+});
+})();
+</script>
+<!-- /wp:html -->
