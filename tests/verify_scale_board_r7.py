@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-r7.txt"
-EXPECTED_BYTES = 18364
-EXPECTED_SHA256 = "b7493963826e224f84512c7888301197a6017e5eec0f2c38f0b1bfa356688cb4"
+EXPECTED_BYTES = 18493
+EXPECTED_SHA256 = "9ffc92531f2ef765393ab0df9eed978ea6948dbdecd4d7f0a44d243524acd393"
 
 
 def require(ok: bool, message: str) -> None:
@@ -52,12 +52,13 @@ def main() -> None:
 
     require("ensureId" not in text and "Math.random" not in text, "random story-point id mutation remains")
     require("hadTabindex=p.hasAttribute('tabindex')" in text, "pre-owned tabindex detection missing")
-    require("hadFlash=p.classList.contains('fvsb-flash')" in text, "pre-owned flash-class detection missing")
+    require("hadFlash=p.classList.contains('fvsb-flash'),hadClass=p.hasAttribute('class'),priorClass=p.getAttribute('class')" in text, "pre-owned flash/class-state detection missing")
     require("let addedTabindex=false,addedFlash=false" in text, "feature ownership flags missing")
     require("if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}" in text, "temporary focusability guard missing")
     require("finally{\n      if(addedTabindex)p.removeAttribute('tabindex')" in text, "focus failure restoration missing")
     require("if(!hadFlash){" in text and "p.classList.add('fvsb-flash');addedFlash=true" in text, "feature flash ownership missing")
-    require("if(addedFlash)p.classList.remove('fvsb-flash')" in text, "failed transaction flash rollback missing")
+    require("const restoreFlash=()=>{if(!addedFlash)return;if(hadClass)p.setAttribute('class',priorClass);else p.removeAttribute('class');addedFlash=false}" in text, "exact class-state flash restoration missing")
+    require("setTimeout(()=>restoreFlash(),1400)" in text and "restoreFlash();" in text, "timer/failure flash restoration wiring missing")
     require("setAttribute('id'" not in text and ".id=`fvsb-" not in text, "story-point id mutation remains")
 
     scroll_i = text.index("p.scrollIntoView")

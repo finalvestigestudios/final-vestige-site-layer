@@ -64,8 +64,9 @@ const recoverJump=(trigger)=>{
   try{recovery?.focus({preventScroll:true})}catch(error){try{launch.focus({preventScroll:true})}catch(fallbackError){}}
 };
 const jump=(item,trigger)=>{
-  const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadFlash=p.classList.contains('fvsb-flash');
+  const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadFlash=p.classList.contains('fvsb-flash'),hadClass=p.hasAttribute('class'),priorClass=p.getAttribute('class');
   let addedTabindex=false,addedFlash=false;
+  const restoreFlash=()=>{if(!addedFlash)return;if(hadClass)p.setAttribute('class',priorClass);else p.removeAttribute('class');addedFlash=false};
   try{
     p.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
     suppressNextCloseFocus=true;
@@ -79,14 +80,14 @@ const jump=(item,trigger)=>{
     if(!hadFlash){
       p.classList.add('fvsb-flash');addedFlash=true;
       try{
-        setTimeout(()=>p.classList.remove('fvsb-flash'),1400)
+        setTimeout(()=>restoreFlash(),1400)
       }catch(error){
-        p.classList.remove('fvsb-flash');addedFlash=false;
+        restoreFlash();
         throw error
       }
     }
   }catch(error){
-    if(addedFlash)p.classList.remove('fvsb-flash');
+    restoreFlash();
     recoverJump(trigger)
   }
 };
