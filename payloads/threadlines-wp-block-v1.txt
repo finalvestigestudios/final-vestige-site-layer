@@ -18,7 +18,7 @@
 </style>
 <script id="fv-threadlines-v1-js">
 (()=>{'use strict';
-if(window.__fvThreadlines)return;window.__fvThreadlines={version:'1.0.0'};
+if(window.__fvThreadlines)return;window.__fvThreadlines={version:'1.1.0'};
 const start=()=>{
   if(!document.body.classList.contains('single-post'))return;
   const article=document.querySelector('main article,article.single,article');if(!article)return;
@@ -28,7 +28,7 @@ const start=()=>{
   const notesRoot=root.querySelector('.fv-source-list[data-fv-footnotes]');
 
   const section=document.createElement('section');section.dataset.fvFeatureUi='threadlines';section.dataset.fvThreadlines='';section.setAttribute('aria-labelledby','fvt-title');
-  section.innerHTML='<div class="fvt-head"><div class="fvt-head-main"><p class="fvt-kicker">Threadlines</p><h2 class="fvt-title" id="fvt-title">Follow the thread this case leaves behind.</h2><p class="fvt-copy">Find other Final Vestige investigations connected by the same published topic labels. Every match shows why it is connected—no hidden recommendation score.</p></div><button class="fvt-load" type="button">Find related investigations</button></div><p class="fvt-status" role="status" aria-live="polite" hidden></p><div class="fvt-controls" aria-label="Filter related investigations" hidden></div><ul class="fvt-results" aria-label="Related investigations" hidden></ul><p class="fvt-method" hidden><strong>How it works:</strong> shared editorial tags are weighted above broad categories. Only published Final Vestige posts are considered. Nothing about you is stored or sent.</p>';
+  section.innerHTML='<div class="fvt-head"><div class="fvt-head-main"><p class="fvt-kicker">Threadlines</p><h2 class="fvt-title" id="fvt-title">Follow the thread this case leaves behind.</h2><p class="fvt-copy">Find other Final Vestige investigations connected by the same published topic labels. Every match shows the exact labels behind it. Ranking is deterministic: each shared tag adds 100 points; each shared category adds 10.</p></div><button class="fvt-load" type="button">Find related investigations</button></div><p class="fvt-status" role="status" aria-live="polite" hidden></p><div class="fvt-controls" aria-label="Filter related investigations" hidden></div><ul class="fvt-results" aria-label="Related investigations" hidden></ul><p class="fvt-method" hidden><strong>How it works:</strong> each shared editorial tag adds 100 points and each shared category adds 10; ties break by publication date, then title. Only published Final Vestige posts are considered. Nothing about you is stored or sent.</p>';
   if(sourceHeading&&notesRoot&&(sourceHeading.compareDocumentPosition(notesRoot)&Node.DOCUMENT_POSITION_FOLLOWING))notesRoot.after(section);else root.appendChild(section);
 
   const loadButton=section.querySelector('.fvt-load'),status=section.querySelector('.fvt-status'),controls=section.querySelector('.fvt-controls'),results=section.querySelector('.fvt-results'),method=section.querySelector('.fvt-method');
@@ -44,6 +44,7 @@ const start=()=>{
   const intersect=(a,b)=>{const set=new Set(b);return a.filter(id=>set.has(id))};
   const labels=(keys)=>keys.map(key=>termMap.get(key)).filter(Boolean);
   const termKey=(type,id)=>`${type}:${id}`;
+  const taxonomyError=()=>{const error=new Error('Published taxonomy labels unavailable');error.name='FVTaxonomyLabelsUnavailable';return error};
 
   const render=()=>{
     results.textContent='';
@@ -76,9 +77,9 @@ const start=()=>{
       const current=await publicFetch(currentUrl,controller.signal);
       const currentTags=ids(current.tags),currentCats=ids(current.categories);
       const embedded=current&&current._embedded&&Array.isArray(current._embedded['wp:term'])?current._embedded['wp:term'].flat():[];
-      embedded.forEach(term=>{const id=Number(term&&term.id);const taxonomy=term&&term.taxonomy;if(!Number.isFinite(id)||!taxonomy)return;const type=taxonomy==='post_tag'?'tag':taxonomy==='category'?'category':'';if(type)termMap.set(termKey(type,id),decode(term.name))});
-      currentTags.forEach(id=>{if(!termMap.has(termKey('tag',id)))termMap.set(termKey('tag',id),'Shared tag')});
-      currentCats.forEach(id=>{if(!termMap.has(termKey('category',id)))termMap.set(termKey('category',id),'Shared category')});
+      embedded.forEach(term=>{const id=Number(term&&term.id);const taxonomy=term&&term.taxonomy;const name=decode(term&&term.name);if(!Number.isFinite(id)||!taxonomy||!name)return;const type=taxonomy==='post_tag'?'tag':taxonomy==='category'?'category':'';if(type)termMap.set(termKey(type,id),name)});
+      const requiredKeys=[...currentTags.map(id=>termKey('tag',id)),...currentCats.map(id=>termKey('category',id))];
+      if(requiredKeys.some(key=>!termMap.has(key)))throw taxonomyError();
 
       const postsUrl=apiUrl(`posts?per_page=60&exclude=${postId}&status=publish&orderby=date&order=desc&_fields=id,title,link,categories,tags,date`);
       const posts=await publicFetch(postsUrl,controller.signal);if(!Array.isArray(posts))throw new Error('Unexpected response');
@@ -86,11 +87,18 @@ const start=()=>{
         const url=siteUrl(post&&post.link);if(!url)return null;
         const sharedTags=intersect(ids(post.tags),currentTags),sharedCats=intersect(ids(post.categories),currentCats);
         const keys=[...sharedTags.map(id=>termKey('tag',id)),...sharedCats.map(id=>termKey('category',id))];const score=sharedTags.length*100+sharedCats.length*10;if(!score)return null;
-        const names=labels(keys);const date=new Date(post.date);const year=Number.isFinite(date.getTime())?date.getFullYear():'';
+        const names=labels(keys);if(names.length!==keys.length)return null;const date=new Date(post.date);const year=Number.isFinite(date.getTime())?date.getFullYear():'';
         return{score,date:Number.isFinite(date.getTime())?date.getTime():0,title:decode(post.title&&post.title.rendered),url,keys,names,year};
       }).filter(Boolean).sort((a,b)=>b.score-a.score||b.date-a.date||a.title.localeCompare(b.title)).slice(0,12);
       loaded=true;buildControls();render();method.hidden=false;loadButton.hidden=true;
-    }catch(error){status.hidden=false;status.textContent=error&&error.name==='AbortError'?'Connections timed out. Try again.':'Connections are unavailable right now. Try again.';loadButton.disabled=false;loadButton.textContent='Try again'}finally{clearTimeout(timer);section.removeAttribute('aria-busy');if(loaded)loadButton.disabled=false}
+    }catch(error){
+      status.hidden=false;
+      if(error&&error.name==='FVTaxonomyLabelsUnavailable'){
+        status.textContent='This investigation’s published topic labels are incomplete, so Threadlines won’t guess at a connection.';loadButton.hidden=true;
+      }else{
+        status.textContent=error&&error.name==='AbortError'?'Connections timed out. Try again.':'Connections are unavailable right now. Try again.';loadButton.disabled=false;loadButton.textContent='Try again';
+      }
+    }finally{clearTimeout(timer);section.removeAttribute('aria-busy');if(loaded)loadButton.disabled=false}
   };
   loadButton.addEventListener('click',load);
 };
