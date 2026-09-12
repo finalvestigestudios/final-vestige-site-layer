@@ -42,8 +42,8 @@ function fvsl_release_manifest() {
         ),
         'scale-board' => array(
             'file'   => 'scale-board-wp-block-r7.txt',
-            'bytes'  => 18458,
-            'sha256' => 'de765b59a8bef8c4e5c62e9a44897cf4e73f2216aef3b3da5d2834b7fbd344a8',
+            'bytes'  => 18688,
+            'sha256' => 'd5e1f7e1380fc7a67c02f625a2082a328d29c80c87982f7c449375972031b3d0',
         ),
     );
 }
