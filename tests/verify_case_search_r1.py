@@ -12,8 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "case-search-wp-block-r1.txt"
-EXPECTED_BYTES = 19227
-EXPECTED_SHA256 = "1e6a14c6cf245154c88b9656a6e58ab1cd852abf9e156ab578fdc01b6ee7efca"
+EXPECTED_BYTES = 19312
+EXPECTED_SHA256 = "53128560c03f2cc5dcdfbde948090ea39bf251ba934c41d87e783d3da44de725"
 
 def require(condition: bool, message: str) -> None:
     if not condition:
