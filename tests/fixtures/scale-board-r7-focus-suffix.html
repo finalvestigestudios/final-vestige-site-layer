@@ -1,0 +1,54 @@
+<script>
+(()=>{
+ const fail=m=>{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m};
+ try{
+   const launch=document.querySelector('[data-fvsb-band] .fvsb-button');if(!launch)return fail('launcher missing');
+   const open=()=>{launch.click();const d=document.querySelector('.fvsb-dialog');if(!d||!d.open)throw new Error('dialog missing');return d};
+   const findJump=(d,needle)=>{const card=[...d.querySelectorAll('.fvsb-mention')].find(x=>x.textContent.toLowerCase().includes(needle.toLowerCase()));if(!card)throw new Error('mention missing '+needle);const b=card.querySelector('.fvsb-jump');if(!b)throw new Error('jump missing '+needle);return b};
+   const absent=document.querySelector('[data-state="absent"]'),zero=document.querySelector('[data-state="tab-zero"]'),negative=document.querySelector('[data-state="tab-negative"]'),ownedId=document.querySelector('[data-state="owned-id"]'),ownedFlash=document.querySelector('[data-state="owned-flash"]');
+   const snap=n=>({tab:n.getAttribute('tabindex'),hasTab:n.hasAttribute('tabindex'),id:n.getAttribute('id'),hasId:n.hasAttribute('id'),cls:n.getAttribute('class')});
+   const eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+   const absent0=snap(absent),zero0=snap(zero),negative0=snap(negative),ownedId0=snap(ownedId),ownedFlash0=snap(ownedFlash);
+   if(absent0.hasTab||absent0.hasId)return fail('absent baseline polluted');
+
+   let scrollFailures=0;
+   const absentScroll=absent.scrollIntoView;absent.scrollIntoView=()=>{scrollFailures++;throw new Error('forced-scroll-failure-absent')};
+   let d=open();findJump(d,'six miles an hour').click();absent.scrollIntoView=absentScroll;
+   if(scrollFailures!==1)return fail('scroll failure not exercised');
+   if(d.open)return fail('scroll failure left dialog open');
+   if(document.activeElement!==launch)return fail('scroll failure did not recover focus to launcher');
+   if(!eq(snap(absent),absent0))return fail('scroll failure mutated absent target');
+
+   let focusFailures=0;
+   const ownedFocus=ownedId.focus,ownedScroll=ownedId.scrollIntoView;ownedId.scrollIntoView=()=>{};ownedId.focus=()=>{focusFailures++;throw new Error('forced-focus-failure')};
+   d=open();findJump(d,'thirty-five miles per hour').click();ownedId.focus=ownedFocus;ownedId.scrollIntoView=ownedScroll;
+   if(focusFailures!==1)return fail('focus failure not exercised');
+   if(d.open)return fail('focus failure left dialog open');
+   if(document.activeElement!==launch)return fail('focus failure did not recover focus to launcher');
+   if(!eq(snap(ownedId),ownedId0))return fail('focus failure failed exact restoration');
+
+   absent.scrollIntoView=()=>{};d=open();findJump(d,'six miles an hour').click();
+   if(d.open)return fail('success did not close dialog');
+   if(document.activeElement!==absent)return fail('success did not move focus to story target');
+   if(!eq(snap(absent),absent0))return fail('success failed to restore absent publisher state');
+
+   zero.scrollIntoView=()=>{};d=open();findJump(d,'20 mph').click();
+   if(document.activeElement!==zero)return fail('owned tabindex zero success did not focus story target');
+   if(!eq(snap(zero),zero0))return fail('owned tabindex zero drift');
+
+   negative.scrollIntoView=()=>{};d=open();findJump(d,'30 miles per hour').click();
+   if(document.activeElement!==negative)return fail('owned negative tabindex success did not focus story target');
+   if(!eq(snap(negative),negative0))return fail('owned negative tabindex drift');
+
+   ownedFlash.scrollIntoView=()=>{};d=open();findJump(d,'1,000 feet').click();
+   if(document.activeElement!==ownedFlash)return fail('pre-owned flash target not focused');
+   if(!eq(snap(ownedFlash),ownedFlash0))return fail('pre-owned flash state damaged');
+
+   absent.scrollIntoView=()=>{};d=open();findJump(d,'six miles an hour').click();
+   if(document.activeElement!==absent||!eq(snap(absent),absent0))return fail('repeat success drifted focus or DOM');
+   for(const timer of window.__fvScaleBoardTestTimers.splice(0))timer();
+   if(!eq(snap(absent),absent0)||!eq(snap(zero),zero0)||!eq(snap(negative),negative0)||!eq(snap(ownedId),ownedId0)||!eq(snap(ownedFlash),ownedFlash0))return fail('timer cleanup drifted publisher state');
+   document.body.dataset.fvTest='pass'
+ }catch(e){fail(e&&e.message?e.message:String(e))}
+})();
+</script></body></html>
