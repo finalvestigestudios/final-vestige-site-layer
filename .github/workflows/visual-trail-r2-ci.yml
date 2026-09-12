@@ -1,0 +1,41 @@
+name: Visual Trail R2 CI
+
+on:
+  pull_request:
+    branches: [production]
+    paths:
+      - 'payloads/visual-trail-wp-block-r2.txt'
+      - 'tests/verify_visual_trail_r2.py'
+      - '.github/workflows/visual-trail-r2-ci.yml'
+      - 'VISUAL_TRAIL_R2.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      FV_BROWSER_RUNTIME: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm browser runtime
+        run: |
+          if command -v google-chrome >/dev/null 2>&1; then google-chrome --version
+          elif command -v chromium >/dev/null 2>&1; then chromium --version
+          elif command -v chromium-browser >/dev/null 2>&1; then chromium-browser --version
+          else echo "No Chrome/Chromium runtime found" >&2; exit 1
+          fi
+      - name: Print exact Visual Trail R2 payload identity
+        run: |
+          wc -c payloads/visual-trail-wp-block-r2.txt
+          sha256sum payloads/visual-trail-wp-block-r2.txt
+      - name: Verify Visual Trail R2 artifact and browser behavior
+        run: python tests/verify_visual_trail_r2.py
