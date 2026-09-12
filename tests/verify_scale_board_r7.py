@@ -85,8 +85,11 @@ def main() -> None:
     for value in ("forced-scroll-failure-absent", "forced-focus-failure", "scroll failure did not recover focus to launcher", "focus failure did not recover focus to launcher", "success did not move focus to story target", 'tabindex="0"', 'tabindex="-7"', 'id="publisher-owned-point"', 'class="published-copy fvsb-flash"', "repeat success drifted focus or DOM"):
         require(value in r7fixture, f"missing R7 focus/dialog regression: {value}")
 
+    # R7 supersedes R6's expectation that injected jump failures escape as uncaught errors.
+    # The R7 fixture carries the same publisher-state ownership cases while asserting the
+    # newly governed deterministic focus/dialog recovery. Older truth/state fixtures are
+    # still executed with the R7 payload below.
     browser_run("tests/fixtures/scale-board-r7-focus-prefix.html", "tests/fixtures/scale-board-r7-focus-suffix.html", "focus-recovery")
-    browser_run("tests/fixtures/scale-board-r6-failure-prefix.html", "tests/fixtures/scale-board-r6-failure-suffix.html", "r6-dom-state")
     browser_run("tests/fixtures/scale-board-r5-dom-state-prefix.html", "tests/fixtures/scale-board-r5-dom-state-suffix.html", "r5-dom-state")
     browser_run("tests/fixtures/scale-board-r4-truth-prefix.html", "tests/fixtures/scale-board-r4-truth-suffix.html", "r4-truth")
     browser_run("tests/fixtures/scale-board-r3-truth-prefix.html", "tests/fixtures/scale-board-r3-truth-suffix.html", "r3-truth")
