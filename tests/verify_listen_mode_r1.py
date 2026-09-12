@@ -55,14 +55,14 @@ def article() -> str:
 def fixture(payload: str) -> str:
     setup = r'''<script>
 window.__spoken=[];
-window.SpeechSynthesisUtterance=function(text){this.text=text;this.lang='';this.rate=1;this.onstart=null;this.onend=null;this.onerror=null;};
-window.speechSynthesis={
+Object.defineProperty(window,'SpeechSynthesisUtterance',{configurable:true,value:function(text){this.text=text;this.lang='';this.rate=1;this.onstart=null;this.onend=null;this.onerror=null;}});
+Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{
  speaking:false,paused:false,
  cancel(){this.speaking=false;this.paused=false;},
  speak(u){this.speaking=true;this.paused=false;window.__spoken.push(u.text);if(u.onstart)u.onstart();},
  pause(){this.paused=true;},
  resume(){this.paused=false;this.speaking=true;}
-};
+}});
 Element.prototype.scrollIntoView=function(){};
 </script>'''
     before = r'''<script>
