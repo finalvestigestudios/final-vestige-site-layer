@@ -33,3 +33,11 @@ jobs:
           node-version: '22'
       - name: Verify exact Scale Board R7 artifact and browser behavior
         run: python tests/verify_scale_board_r7.py
+      - name: Upload R7 browser failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scale-board-r7-diagnostics
+          path: scale-board-r7-*-failure.txt
+          if-no-files-found: ignore
+          retention-days: 1
