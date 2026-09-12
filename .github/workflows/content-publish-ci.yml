@@ -1,0 +1,47 @@
+name: FVD-6 Governed Content Publish R1 CI
+
+on:
+  pull_request:
+    paths:
+      - "ops/content_publish_control.py"
+      - "tests/test_content_publish_control.py"
+      - "CONTENT_PUBLISHING.md"
+      - ".github/workflows/content-publish-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CHECKOUT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
+        with:
+          ref: ${{ env.CHECKOUT_REF }}
+          persist-credentials: false
+
+      - name: Confirm exact head
+        run: test "$(git rev-parse HEAD)" = "$CHECKOUT_REF"
+
+      - name: Python syntax
+        run: python3 -m py_compile ops/content_publish_control.py tests/test_content_publish_control.py
+
+      - name: FVD-6 adversarial contract tests
+        run: python3 -m unittest discover -s tests -p 'test_content_publish_control.py' -v
+
+      - name: Prove reference control has no network client or WordPress endpoint
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          source = Path("ops/content_publish_control.py").read_text(encoding="utf-8")
+          forbidden = ("urllib", "requests", "http.client", "wp-json", "FV_WP_DEPLOY_SECRET")
+          found = [token for token in forbidden if token in source]
+          if found:
+              raise SystemExit(f"network/credential material is forbidden in FVD-6 R1: {found}")
+          print("FVD-6 R1 remains offline/non-activated")
+          PY
