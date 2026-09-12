@@ -16,11 +16,17 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      CHECKOUT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - name: Checkout exact candidate
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
         with:
+          ref: ${{ env.CHECKOUT_REF }}
           persist-credentials: false
+
+      - name: Confirm exact head
+        run: test "$(git rev-parse HEAD)" = "$CHECKOUT_REF"
 
       - name: Python syntax
         run: python3 -m py_compile ops/content_publish_control.py tests/test_content_publish_control.py
