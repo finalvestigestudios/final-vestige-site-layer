@@ -33,4 +33,16 @@ jobs:
         with:
           node-version: '22'
       - name: Verify exact Scale Board R7 artifact and browser behavior
-        run: python tests/verify_scale_board_r7.py
+        run: |
+          set +e
+          python tests/verify_scale_board_r7.py > scale-board-r7-result.txt 2>&1
+          code=$?
+          cat scale-board-r7-result.txt
+          exit $code
+      - name: Preserve R7 verifier evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scale-board-r7-verifier-evidence
+          path: scale-board-r7-result.txt
+          if-no-files-found: error
