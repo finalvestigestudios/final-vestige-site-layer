@@ -97,17 +97,25 @@ def run() -> None:
     require(browser is not None, "headless Chrome/Chromium not available")
     with tempfile.TemporaryDirectory() as temp:
         root = Path(temp); (root / "img").mkdir()
-        for name in ("1.jpg", "2.jpg"):(root / "img" / name).write_bytes(b"\xff\xd8\xff\xd9")
-        server = ThreadingHTTPServer(("127.0.0.1",0),partial(QuietHandler,directory=str(root)))
-        origin=f"http://127.0.0.1:{server.server_port}";thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+        for name in ("1.jpg", "2.jpg"):
+            (root / "img" / name).write_bytes(b"\xff\xd8\xff\xd9")
+        server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(root)))
+        origin = f"http://127.0.0.1:{server.server_port}"
+        thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
         try:
             for mode in MODES:
-                page=root/f"state-{mode}.html";page.write_text(fixture(payload,mode),encoding="utf-8")
-                proc=subprocess.run([browser,"--headless=new","--no-sandbox","--disable-gpu","--disable-dev-shm-usage","--virtual-time-budget=2000","--dump-dom",f"{origin}/{page.name}"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,timeout=25)
-                require(proc.returncode==0,f"browser mode {mode} failed: {proc.stderr[-400:]}")
+                page = root / f"state-{mode}.html"
+                page.write_text(fixture(payload, mode), encoding="utf-8")
+                proc = subprocess.run(
+                    [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--virtual-time-budget=2000", "--dump-dom", f"{origin}/{page.name}"],
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=25,
+                )
+                require(proc.returncode == 0, f"browser mode {mode} failed: {proc.stderr[-400:]}")
                 if 'data-fv-test="pass"' not in proc.stdout:
-                    reason=re.search(r'data-fv-reason="([^"]*)"',proc.stdout)
+                    reason = re.search(r'data-fv-reason="([^"]*)"', proc.stdout)
                     raise SystemExit(f"FAIL: state mode {mode}: {reason.group(1) if reason else 'runtime assertion failed'}")
+        finally:
+            server.shutdown(); server.server_close(); thread.join(timeout=5)
     print("PASS: Compare Lens R1 browser state preservation covers absent/pre-owned values, repeat jumps, and scroll/focus failure recovery")
 
 
