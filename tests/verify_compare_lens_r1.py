@@ -16,6 +16,10 @@ PAYLOAD = ROOT / "payloads" / "compare-lens-wp-block-r1.txt"
 EXPECTED_BYTES = 19152
 EXPECTED_SHA256 = "5275862a6a81f5f9e3a093a7a71780e15fa6bbb5e2d6599615ed88867fb5c5e3"
 
+INVALID_MODES = ("missing-boundary", "id-only", "class-only", "exact-plus-partial", "duplicate-exact", "reversed-notes")
+VALID_PHASES = ("network", "state-absent", "state-owned", "scroll-fail", "focus-fail")
+ALL_BROWSER_MODES = VALID_PHASES + INVALID_MODES
+
 
 def require(condition: bool, message: str) -> None:
     if not condition:
@@ -36,10 +40,11 @@ def notes() -> str:
 
 
 def figures() -> str:
-    return """
-<figure class="wp-block-image publisher-one" id="fig-1"><a href="/img/original-1.jpg"><img src="/img/1.jpg" srcset="https://evil.example/1-big.jpg 2200w, /img/1-large.jpg 1200w" alt="Figure one"><figcaption>Figure one caption</figcaption></a></figure>
-<figure class="wp-block-image publisher-two fv-compare-lens-flash" id="fig-2" tabindex="-7"><img src="/img/2.jpg" srcset="https://evil.example/2-big.jpg 2200w, /img/2-large.jpg 1200w" alt="Figure two"><figcaption>Figure two caption</figcaption></figure>
-<figure class="wp-block-image publisher-external" id="fig-3"><img src="https://evil.example/3.jpg" srcset="https://evil.example/3-big.jpg 2200w" alt="External only"><figcaption>External-only figure</figcaption></figure>
+    x = "__CROSS__"
+    return f"""
+<figure class="wp-block-image publisher-one" id="fig-1"><a href="/img/original-1.jpg"><img src="/img/1.jpg" srcset="{x}/img/evil-1.jpg 2200w, /img/1-large.jpg 1200w" alt="Figure one"><figcaption>Figure one caption</figcaption></a></figure>
+<figure class="wp-block-image publisher-two fv-compare-lens-flash" id="fig-2" tabindex="-7"><img src="/img/2.jpg" srcset="{x}/img/evil-2.jpg 2200w, /img/2-large.jpg 1200w" alt="Figure two"><figcaption>Figure two caption</figcaption></figure>
+<figure class="wp-block-image publisher-external" id="fig-3"><img src="{x}/img/evil-3.jpg" srcset="{x}/img/evil-3-large.jpg 2200w" alt="External only"><figcaption>External-only figure</figcaption></figure>
 """
 
 
@@ -47,7 +52,7 @@ def article(mode: str) -> str:
     story = f"""<main><article class="post type-post"><div class="entry-content">
 <h1>Case</h1><h2>Section One</h2><p>Opening context for the figures.</p>{figures()}
 """
-    if mode == "valid":
+    if mode in VALID_PHASES:
         return story + canonical() + notes() + "</div></article></main>"
     if mode == "missing-boundary":
         return story + notes() + "</div></article></main>"
@@ -64,129 +69,109 @@ def article(mode: str) -> str:
     raise ValueError(mode)
 
 
-def fixture(payload: str, mode: str) -> str:
-    runtime = f"""
+def runtime_script(mode: str) -> str:
+    if mode in INVALID_MODES:
+        return f"""
 <script>
-const fvclTest=()=>{{
- const mode={mode!r};
- const fail=m=>{{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m}};
- const pass=()=>document.body.dataset.fvTest='pass';
- try{{
-  const launch=document.querySelector('.fv-compare-lens-launch');
-  if(mode!=='valid'){{if(launch||document.querySelector('.fv-compare-lens-dialog'))return fail('invalid source boundary activated');return pass();}}
-  if(!launch)return fail('valid canonical boundary did not activate');
-  const opener=launch.querySelector('.fv-compare-lens-open');
-  opener.click();
-  setTimeout(()=>{{try{{
-   const dialog=document.querySelector('.fv-compare-lens-dialog');
-   if(!dialog||!dialog.open)return fail('dialog did not open');
-   const selects=[...dialog.querySelectorAll('.fv-compare-lens-select')];
-   if(selects.length!==2||selects[0].options.length!==2)return fail('unsafe external-only image was not excluded');
-   const modalImages=[...dialog.querySelectorAll('.fv-compare-lens-image')];
-   if(modalImages.some(img=>new URL(img.src).origin!==location.origin))return fail('modal image selected cross-origin URL');
-   if(!modalImages[0].src.endsWith('/img/original-1.jpg'))return fail('same-origin original link was not preferred');
-   if(!modalImages[1].src.endsWith('/img/2-large.jpg'))return fail('cross-origin srcset candidate was not ignored');
-   const fig1=document.getElementById('fig-1'),fig2=document.getElementById('fig-2');
-   const fig1Class=fig1.getAttribute('class'),fig2Class=fig2.getAttribute('class');
-   if(fig1.hasAttribute('tabindex'))return fail('fixture 1 should start without tabindex');
-   dialog.querySelector('[data-original="0"]').click();
-   setTimeout(()=>{{try{{
-    if(document.activeElement!==fig1)return fail('absent-tabindex figure did not receive focus');
-    opener.focus();
-    setTimeout(()=>{{try{{
-     if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('temporary state was not restored');
-     opener.click();
-     setTimeout(()=>{{try{{
-      const d2=document.querySelector('.fv-compare-lens-dialog');
-      d2.querySelector('[data-original="0"]').click();
-      setTimeout(()=>{{try{{
-       if(document.activeElement!==fig1)return fail('repeat jump did not focus target');
-       opener.focus();
-       setTimeout(()=>{{try{{
-        if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('repeat jump drifted publisher state');
-        opener.click();
-        setTimeout(()=>{{try{{
-         const d3=document.querySelector('.fv-compare-lens-dialog');
-         const firstSelect=d3.querySelector('[data-select="0"]');firstSelect.value='1';firstSelect.dispatchEvent(new Event('change',{{bubbles:true}}));
-         d3.querySelector('[data-original="0"]').click();
-         setTimeout(()=>{{try{{
-          if(document.activeElement!==fig2)return fail('pre-owned tabindex target did not focus');
-          opener.focus();
-          setTimeout(()=>{{try{{
-           if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==fig2Class)return fail('pre-owned tabindex/class was damaged');
-           const savedScroll=fig1.scrollIntoView;fig1.scrollIntoView=()=>{{throw new Error('forced scroll failure')}};
-           opener.click();
-           setTimeout(()=>{{try{{
-            const d4=document.querySelector('.fv-compare-lens-dialog');const s4=d4.querySelector('[data-select="0"]');s4.value='0';s4.dispatchEvent(new Event('change',{{bubbles:true}}));d4.querySelector('[data-original="0"]').click();
-            setTimeout(()=>{{try{{
-             if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('scroll failure mutated publisher state');
-             if(document.activeElement!==opener)return fail('scroll failure did not recover focus');
-             fig1.scrollIntoView=savedScroll;
-             const savedFocus=fig1.focus;fig1.focus=()=>{{}};
-             opener.click();
-             setTimeout(()=>{{try{{
-              const d5=document.querySelector('.fv-compare-lens-dialog');const s5=d5.querySelector('[data-select="0"]');s5.value='0';s5.dispatchEvent(new Event('change',{{bubbles:true}}));d5.querySelector('[data-original="0"]').click();
-              setTimeout(()=>{{try{{
-               if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('focus failure did not restore publisher state');
-               if(document.activeElement!==opener)return fail('focus failure did not recover focus');
-               fig1.focus=savedFocus;pass();
-              }}catch(e){{fail(e.message)}}}},100);
-             }}catch(e){{fail(e.message)}}}},80);
-            }}catch(e){{fail(e.message)}}}},100);
-           }}catch(e){{fail(e.message)}}}},80);
-          }}catch(e){{fail(e.message)}}}},40);
-         }}catch(e){{fail(e.message)}}}},100);
-        }}catch(e){{fail(e.message)}}}},80);
-       }}catch(e){{fail(e.message)}}}},40);
-      }}catch(e){{fail(e.message)}}}},100);
-     }}catch(e){{fail(e.message)}}}},80);
-    }}catch(e){{fail(e.message)}}}},40);
-   }}catch(e){{fail(e.message)}}}},100);
-  }}catch(e){{fail(e.message)}}}},100);
- }}catch(e){{fail(e.message)}}
-}};
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fvclTest,{{once:true}});else fvclTest();
-</script>
+const run=()=>{{const fail=m=>{{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m}};const pass=()=>document.body.dataset.fvTest='pass';
+try{{if(document.querySelector('.fv-compare-lens-launch')||document.querySelector('.fv-compare-lens-dialog'))return fail('invalid source boundary activated');pass()}}catch(e){{fail(e.message)}}}};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{{once:true}});else run();
+</script>"""
+    setup = """
+ const launch=document.querySelector('.fv-compare-lens-launch');if(!launch)return fail('valid canonical boundary did not activate');
+ const opener=launch.querySelector('.fv-compare-lens-open');const fig1=document.getElementById('fig-1'),fig2=document.getElementById('fig-2');
+ const fig1Class=fig1.getAttribute('class'),fig2Class=fig2.getAttribute('class');
 """
-    return f"<!doctype html><html><head><meta charset='utf-8'></head><body class='single-post'>{article(mode)}{payload}{runtime}</body></html>"
+    if mode == "network":
+        body = """
+ opener.click();setTimeout(()=>{try{
+  const dialog=document.querySelector('.fv-compare-lens-dialog');if(!dialog||!dialog.open)return fail('dialog did not open');
+  const selects=[...dialog.querySelectorAll('.fv-compare-lens-select')];if(selects.length!==2||selects[0].options.length!==2)return fail('unsafe external-only image was not excluded');
+  const imgs=[...dialog.querySelectorAll('.fv-compare-lens-image')];if(imgs.some(img=>new URL(img.src).origin!==location.origin))return fail('modal image selected cross-origin URL');
+  if(!imgs[0].src.endsWith('/img/original-1.jpg'))return fail('same-origin original link was not preferred');
+  if(!imgs[1].src.endsWith('/img/2-large.jpg'))return fail('cross-origin srcset candidate was not ignored');
+  pass();
+ }catch(e){fail(e.message)}},100);
+"""
+    elif mode == "state-absent":
+        body = """
+ const once=repeat=>{opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+  if(document.activeElement!==fig1)return fail('absent-tabindex figure did not receive focus');opener.focus();setTimeout(()=>{try{
+   if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('temporary state was not restored');
+   if(repeat)return once(false);pass();
+  }catch(e){fail(e.message)}},40);
+ }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80)};
+ once(true);
+"""
+    elif mode == "state-owned":
+        body = """
+ opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+  if(document.activeElement!==fig2)return fail('pre-owned target did not receive focus');opener.focus();setTimeout(()=>{try{
+   if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==fig2Class)return fail('pre-owned tabindex/class was damaged');pass();
+  }catch(e){fail(e.message)}},40);
+ }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80);
+"""
+    elif mode == "scroll-fail":
+        body = """
+ fig1.scrollIntoView=()=>{throw new Error('forced scroll failure')};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('scroll failure mutated publisher state');
+  if(document.activeElement!==opener)return fail('scroll failure did not recover focus');pass();
+ }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80);
+"""
+    elif mode == "focus-fail":
+        body = """
+ fig1.focus=()=>{};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('focus failure did not restore publisher state');
+  if(document.activeElement!==opener)return fail('focus failure did not recover focus');pass();
+ }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80);
+"""
+    else:
+        raise ValueError(mode)
+    return f"""
+<script>
+const run=()=>{{const fail=m=>{{document.body.dataset.fvTest='fail';document.body.dataset.fvReason=m}};const pass=()=>document.body.dataset.fvTest='pass';
+try{{{setup}{body}}}catch(e){{fail(e.message)}}}};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{{once:true}});else run();
+</script>"""
 
 
-def run_browser(payload: str) -> None:
+def fixture(payload: str, mode: str, cross_origin: str) -> str:
+    html = f"<!doctype html><html><head><meta charset='utf-8'></head><body class='single-post'>{article(mode)}{payload}{runtime_script(mode)}</body></html>"
+    return html.replace("__CROSS__", cross_origin)
+
+
+def run_browser_mode(payload: str, mode: str) -> None:
+    require(mode in ALL_BROWSER_MODES, f"unknown browser mode: {mode}")
     browser = next((shutil.which(n) for n in ("google-chrome", "chromium", "chromium-browser") if shutil.which(n)), None)
     require(browser is not None, "headless Chrome/Chromium not available")
-    modes = ("valid", "missing-boundary", "id-only", "class-only", "exact-plus-partial", "duplicate-exact", "reversed-notes")
     with tempfile.TemporaryDirectory() as temp:
-        root = Path(temp)
-        (root / "img").mkdir()
-        for name in ("1.jpg", "original-1.jpg", "1-large.jpg", "2.jpg", "2-large.jpg"):
+        root = Path(temp); (root / "img").mkdir()
+        for name in ("1.jpg", "original-1.jpg", "1-large.jpg", "2.jpg", "2-large.jpg", "evil-1.jpg", "evil-2.jpg", "evil-3.jpg", "evil-3-large.jpg"):
             (root / "img" / name).write_bytes(b"\xff\xd8\xff\xd9")
         handler = partial(QuietHandler, directory=str(root))
         server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
         origin = f"http://127.0.0.1:{server.server_port}"
+        cross = f"http://localhost:{server.server_port}"
         thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
         try:
-            for mode in modes:
-                page = root / f"compare-lens-r1-{mode}.html"
-                page.write_text(fixture(payload, mode), encoding="utf-8")
-                proc = subprocess.run(
-                    [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage",
-                     "--host-resolver-rules=MAP evil.example 127.0.0.1", "--virtual-time-budget=6000", "--dump-dom", f"{origin}/{page.name}"],
-                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=35,
-                )
-                require(proc.returncode == 0, f"browser fixture {mode} failed: {proc.stderr[-500:]}")
-                if 'data-fv-test="pass"' not in proc.stdout:
-                    reason = re.search(r'data-fv-reason="([^"]*)"', proc.stdout)
-                    raise SystemExit(f"FAIL: browser fixture {mode}: {reason.group(1) if reason else 'runtime assertions failed'}")
+            page = root / f"compare-lens-r1-{mode}.html"
+            page.write_text(fixture(payload, mode, cross), encoding="utf-8")
+            proc = subprocess.run(
+                [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage",
+                 "--virtual-time-budget=3000", "--dump-dom", f"{origin}/{page.name}"],
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30,
+            )
+            require(proc.returncode == 0, f"browser mode {mode} failed to execute: {proc.stderr[-500:]}")
+            if 'data-fv-test="pass"' not in proc.stdout:
+                reason = re.search(r'data-fv-reason="([^"]*)"', proc.stdout)
+                raise SystemExit(f"FAIL: browser mode {mode}: {reason.group(1) if reason else 'runtime assertions failed'}")
         finally:
             server.shutdown(); server.server_close(); thread.join(timeout=5)
 
 
 def main() -> None:
-    raw = PAYLOAD.read_bytes()
-    text = raw.decode("utf-8")
-    actual_hash = hashlib.sha256(raw).hexdigest()
-    print(f"COMPARE_LENS_R1_BYTES={len(raw)}")
-    print(f"COMPARE_LENS_R1_SHA256={actual_hash}")
+    raw = PAYLOAD.read_bytes(); text = raw.decode("utf-8"); actual_hash = hashlib.sha256(raw).hexdigest()
+    print(f"COMPARE_LENS_R1_BYTES={len(raw)}"); print(f"COMPARE_LENS_R1_SHA256={actual_hash}")
     require(len(raw) == EXPECTED_BYTES, f"payload byte count drifted: {len(raw)}")
     require(actual_hash == EXPECTED_SHA256, f"payload SHA-256 drifted: {actual_hash}")
     require(text.count("<!-- wp:html -->") == 1 and text.count("<!-- /wp:html -->") == 1, "single wp:html block required")
@@ -213,9 +198,10 @@ def main() -> None:
         subprocess.run(["node", "--check", str(js_path)], check=True)
     finally:
         js_path.unlink(missing_ok=True)
-    if os.environ.get("FV_BROWSER_RUNTIME") == "1":
-        run_browser(text)
-    print("PASS: Compare Lens R1 trusted Sources boundary, same-origin image selection, nondestructive repeated story focus, failure-atomic restoration, accessibility, and zero-persistence/network API contracts verified")
+    mode = os.environ.get("FV_BROWSER_MODE")
+    if mode:
+        run_browser_mode(text, mode)
+    print(f"PASS: Compare Lens R1 static contract{' + browser mode '+mode if mode else ''}")
 
 
 if __name__ == "__main__":
