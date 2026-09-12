@@ -1,0 +1,27 @@
+name: Return Trail CI
+
+on:
+  pull_request:
+    paths:
+      - 'payloads/return-trail-wp-block-v1.txt'
+      - 'tests/verify_return_trail.py'
+      - '.github/workflows/return-trail-ci.yml'
+      - 'RETURN-TRAIL.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Return Trail artifact
+        run: python tests/verify_return_trail.py
