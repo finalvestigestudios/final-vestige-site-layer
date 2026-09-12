@@ -78,27 +78,28 @@ const recoverJump=(trigger)=>{
 const jump=(item,trigger)=>{
   const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadFlash=p.classList.contains('fvsb-flash'),hadClass=p.hasAttribute('class'),priorClass=p.getAttribute('class');
   let addedTabindex=false,addedFlash=false;
+  const restoreTabindex=()=>{if(!addedTabindex)return;p.removeAttribute('tabindex');addedTabindex=false};
   const restoreFlash=()=>{if(!addedFlash)return;if(hadClass)p.setAttribute('class',priorClass);else p.removeAttribute('class');addedFlash=false};
   try{
     p.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
     pendingSuppressedCloses++;
     try{dialog?.close()}catch(error){pendingSuppressedCloses=Math.max(0,pendingSuppressedCloses-1);throw error}
-    try{
-      if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}
-      p.focus({preventScroll:true})
-    }finally{
-      if(addedTabindex)p.removeAttribute('tabindex')
-    }
+    if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}
+    try{p.focus({preventScroll:true})}catch(error){restoreTabindex();throw error}
+    if(document.activeElement!==p){restoreTabindex();throw new Error('story-focus-not-established')}
+    if(addedTabindex)p.addEventListener('blur',restoreTabindex,{once:true});
     if(!hadFlash){
       p.classList.add('fvsb-flash');addedFlash=true;
       try{
         setTimeout(()=>restoreFlash(),1400)
       }catch(error){
         restoreFlash();
+        restoreTabindex();
         throw error
       }
     }
   }catch(error){
+    restoreTabindex();
     restoreFlash();
     recoverJump(trigger)
   }
