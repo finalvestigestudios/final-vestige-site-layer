@@ -1,0 +1,63 @@
+<!-- wp:html -->
+<style id="fv-passage-kit-r1-css">
+.fv-passage-kit{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;margin:34px 0;padding:18px 20px;background:#111212;border:1px solid #34322E;border-left:2px solid #B8955E;color:#D8D2C7}
+.fv-passage-kit__kicker{margin:0 0 5px;color:#B8955E;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.fv-passage-kit__title{margin:0;color:#F4EFE6;font-size:17px;font-weight:700;line-height:1.35}
+.fv-passage-kit__note{margin:5px 0 0;color:#908A80;font-size:12px;line-height:1.55}
+.fv-passage-kit__toggle,.fv-passage-kit-action button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 12px;background:transparent;color:#D8D2C7;border:1px solid #4A4640;border-radius:2px;font:inherit;font-size:11px;font-weight:800;line-height:1.25;letter-spacing:.05em;cursor:pointer}
+.fv-passage-kit__toggle:hover,.fv-passage-kit__toggle:focus-visible,.fv-passage-kit-action button:hover,.fv-passage-kit-action button:focus-visible{border-color:#B8955E;color:#F4EFE6;outline:2px solid transparent}
+.fv-passage-kit__toggle[aria-pressed="true"]{background:#B8955E;color:#0A0B0B;border-color:#B8955E}
+.fv-passage-kit__status{grid-column:1/-1;min-height:1px;margin:0;color:#B8955E;font-size:11px;line-height:1.4}
+.fv-passage-kit-action{display:none;justify-content:flex-end;margin:-4px 0 18px}
+.fv-passage-kit-on .fv-passage-kit-action{display:flex}
+.fv-passage-kit-action button{min-width:148px;color:#AAA49A;border-color:#34322E}
+.fv-passage-kit-action button span{margin-left:7px;color:#B8955E;font-size:10px;letter-spacing:.04em}
+@media(max-width:620px){.fv-passage-kit{grid-template-columns:1fr;align-items:start}.fv-passage-kit__toggle{width:100%}.fv-passage-kit-action{justify-content:stretch}.fv-passage-kit-action button{width:100%}}
+@media(max-width:360px){.fv-passage-kit{margin:26px 0;padding:16px}.fv-passage-kit__title{font-size:16px}.fv-passage-kit-action button{min-height:46px}}
+@media(prefers-reduced-motion:reduce){.fv-passage-kit *{scroll-behavior:auto!important;transition:none!important}}
+@media(forced-colors:active){.fv-passage-kit,.fv-passage-kit__toggle,.fv-passage-kit-action button{border-color:CanvasText}.fv-passage-kit__toggle[aria-pressed="true"]{background:Highlight;color:HighlightText}}
+@media print{.fv-passage-kit,.fv-passage-kit-action{display:none!important}}
+</style>
+<script id="fv-passage-kit-r1-js">
+(()=>{if(window.__fvPassageKit)return;window.__fvPassageKit=true;
+const body=document.body;
+if(!body||( !body.classList.contains('single-post') && !body.classList.contains('single') ))return;
+const main=document.querySelector('main')||document;
+const article=main.querySelector('article')||main;
+const sourceRoot=document.querySelector('[data-fv-footnotes],.fv-source-list');
+if(!sourceRoot||!article)return;
+const beforeSource=node=>Boolean(node.compareDocumentPosition(sourceRoot)&Node.DOCUMENT_POSITION_FOLLOWING);
+const excluded=p=>Boolean(p.closest('[data-fv-footnotes],.fv-source-list,figure,figcaption,header,footer,nav,form,.sharedaddy,.sd-sharing-enabled,.wp-block-buttons,.fv-fn-popover,.fv-passage-kit,.fv-passage-kit-action'));
+const prose=[...article.querySelectorAll('p')].filter(p=>beforeSource(p)&&!excluded(p)&&p.textContent.trim().length>=80);
+const totalText=prose.reduce((n,p)=>n+p.textContent.trim().length,0);
+if(prose.length<12||totalText<3000)return;
+const sourceItems=[...sourceRoot.querySelectorAll('li[id^="fv-fn-"]')];
+if(sourceItems.length<2)return;
+const clean=s=>String(s||'').replace(/\s+/g,' ').trim();
+const articleTitle=clean(article.querySelector('h1')?.textContent||document.querySelector('h1')?.textContent||document.title);
+const pageUrl=location.origin+location.pathname;
+const headings=[...article.querySelectorAll('h2,h3')].filter(h=>beforeSource(h));
+const sectionFor=block=>{let label='';for(const h of headings){if(h.compareDocumentPosition(block)&Node.DOCUMENT_POSITION_FOLLOWING)label=clean(h.textContent)}return label};
+const sourceFor=num=>{const li=document.getElementById('fv-fn-'+num);if(!li||!sourceRoot.contains(li))return null;const clone=li.cloneNode(true);clone.querySelectorAll('.fv-fn-backlinks,.fv-fn-back').forEach(n=>n.remove());const external=[...clone.querySelectorAll('a[href]')].find(a=>!a.getAttribute('href').startsWith('#'));const url=external?.href||'';if(external)external.remove();const text=clean(clone.textContent).replace(/\s+[.,;:!?]$/,'').trim();if(!text)return null;return {num:String(num),text,url}};
+const refsFor=block=>[...new Set([...block.querySelectorAll('.fv-fn-ref[data-fv-fn]')].map(a=>a.dataset.fvFn).filter(Boolean))].map(sourceFor).filter(Boolean);
+const quoteFor=block=>{const clone=block.cloneNode(true);clone.querySelectorAll('.fv-fn-ref[data-fv-fn],.fv-fn-mark,.fv-passage-kit-action').forEach(n=>n.remove());return clean(clone.textContent)};
+const format=(block,sources)=>{const quote=quoteFor(block);const section=sectionFor(block);const lines=[`“${quote}”`,'',articleTitle];if(section)lines.push(`Section: ${section}`);lines.push(pageUrl);if(sources.length){lines.push('','Linked source '+(sources.length===1?'note:':'notes:'));sources.forEach(s=>{lines.push(`[${s.num}] ${s.text}`);if(s.url)lines.push(s.url)})}return lines.join('\n')};
+const bar=document.createElement('section');
+bar.className='fv-passage-kit';
+bar.setAttribute('role','region');
+bar.setAttribute('aria-label','Passage Kit');
+bar.innerHTML='<div><p class="fv-passage-kit__kicker">PASSAGE KIT</p><p class="fv-passage-kit__title">Carry a published passage with its linked source notes.</p><p class="fv-passage-kit__note">Copies published wording and linked source notes. It does not rate the evidence.</p></div><button class="fv-passage-kit__toggle" type="button" aria-pressed="false">Show copy controls</button><p class="fv-passage-kit__status" role="status" aria-live="polite"></p>';
+const firstHeading=headings[0];
+if(firstHeading)firstHeading.before(bar);else prose[Math.min(2,prose.length-1)].after(bar);
+const toggle=bar.querySelector('.fv-passage-kit__toggle');
+const status=bar.querySelector('.fv-passage-kit__status');
+let built=false;
+const announce=text=>{status.textContent='';requestAnimationFrame(()=>{status.textContent=text})};
+const copyText=async text=>{try{if(!navigator.clipboard?.writeText)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(text);return true}catch(e){window.prompt('Copy this passage and its source notes:',text);return false}};
+const build=()=>{if(built)return;built=true;prose.forEach((block,index)=>{const sources=refsFor(block);const action=document.createElement('div');action.className='fv-passage-kit-action';const button=document.createElement('button');button.type='button';button.dataset.fvPassage=String(index+1);button.setAttribute('aria-label',sources.length?`Copy passage ${index+1} with ${sources.length} linked source ${sources.length===1?'note':'notes'}`:`Copy passage ${index+1}`);button.innerHTML=sources.length?`Copy passage + sources <span>${sources.length}</span>`:'Copy passage';button.addEventListener('click',async()=>{const ok=await copyText(format(block,sources));announce(ok?(sources.length?`Passage copied with ${sources.length} linked source ${sources.length===1?'note':'notes'}.`:'Passage copied.'):'Copy text is ready in the fallback dialog.')});action.appendChild(button);block.after(action)})};
+const setActive=active=>{if(active)build();article.classList.toggle('fv-passage-kit-on',active);toggle.setAttribute('aria-pressed',active?'true':'false');toggle.textContent=active?'Hide copy controls':'Show copy controls';announce(active?'Passage copy controls shown.':'Passage copy controls hidden.')};
+toggle.addEventListener('click',()=>setActive(toggle.getAttribute('aria-pressed')!=='true'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-pressed')==='true'){setActive(false);toggle.focus()}});
+})();
+</script>
+<!-- /wp:html -->
