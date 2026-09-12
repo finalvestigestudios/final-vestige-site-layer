@@ -54,8 +54,18 @@ jobs:
         run: python tests/verify_compare_lens_r1.py
 
   state-safety:
-    name: state safety / browser
+    name: state safety / ${{ matrix.mode }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+          - absent-repeat
+          - owned
+          - scroll-fail
+          - focus-fail
+    env:
+      FV_STATE_MODE: ${{ matrix.mode }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
