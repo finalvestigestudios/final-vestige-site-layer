@@ -95,9 +95,9 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 """
     elif mode == "state-absent":
         body = """
- let targetFocus=0;const nativeTargetFocus=fig1.focus.bind(fig1);fig1.focus=opts=>{targetFocus++;nativeTargetFocus(opts)};
+ let targetFocus=0;fig1.addEventListener('focus',()=>targetFocus++);
  const once=repeat=>{opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
-  if(targetFocus<(repeat?1:2))return fail('absent-tabindex target focus transaction did not run');opener.focus();setTimeout(()=>{try{
+  if(targetFocus<(repeat?1:2))return fail('absent-tabindex target focus event did not occur');opener.focus();setTimeout(()=>{try{
    if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('temporary state was not restored');
    if(repeat)return once(false);pass();
   }catch(e){fail(e.message)}},40);
@@ -106,25 +106,25 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 """
     elif mode == "state-owned":
         body = """
- let targetFocus=0;const nativeTargetFocus=fig2.focus.bind(fig2);fig2.focus=opts=>{targetFocus++;nativeTargetFocus(opts)};
+ let targetFocus=0;fig2.addEventListener('focus',()=>targetFocus++);
  opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
-  if(targetFocus<1)return fail('pre-owned target focus transaction did not run');opener.focus();setTimeout(()=>{try{
+  if(targetFocus<1)return fail('pre-owned target focus event did not occur');opener.focus();setTimeout(()=>{try{
    if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==fig2Class)return fail('pre-owned tabindex/class was damaged');pass();
   }catch(e){fail(e.message)}},40);
  }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80);
 """
     elif mode == "scroll-fail":
         body = """
- let recovery=0;const nativeOpenFocus=opener.focus.bind(opener);opener.focus=()=>{recovery++;nativeOpenFocus()};fig1.scrollIntoView=()=>{throw new Error('forced scroll failure')};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+ fig1.scrollIntoView=()=>{throw new Error('forced scroll failure')};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
   if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('scroll failure mutated publisher state');
-  if(recovery<1)return fail('scroll failure did not invoke launcher focus recovery');pass();
+  if(document.activeElement!==opener)return fail('scroll failure did not recover focus');pass();
  }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80);
 """
     elif mode == "focus-fail":
         body = """
- let recovery=0;const nativeOpenFocus=opener.focus.bind(opener);opener.focus=()=>{recovery++;nativeOpenFocus()};fig1.focus=()=>{};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
+ Object.defineProperty(fig1,'focus',{configurable:true,value:()=>{}});opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
   if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('focus failure did not restore publisher state');
-  if(recovery<1)return fail('focus failure did not invoke launcher focus recovery');pass();
+  if(document.activeElement!==opener)return fail('focus failure did not recover focus');pass();
  }catch(e){fail(e.message)}},100)}catch(e){fail(e.message)}},80);
 """
     else:
