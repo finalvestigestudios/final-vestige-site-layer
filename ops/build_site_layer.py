@@ -22,6 +22,7 @@ PACKAGE_FILES = (
     "payloads/case-search-wp-block-v1.txt",
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
+    "payloads/scale-board-wp-block-r7.txt",
     "payloads/signal-finder-wp-block-v1.txt",
 )
 

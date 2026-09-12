@@ -1,0 +1,105 @@
+<!-- wp:html -->
+<style id="fv-scale-board-r7-css">
+.fvsb-band{margin:2.2rem 0 1.8rem;padding:1.1rem 1.2rem;border:1px solid color-mix(in srgb,currentColor 16%,transparent);border-radius:12px;background:color-mix(in srgb,currentColor 3%,transparent)}
+.fvsb-band-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}.fvsb-kicker{margin:0 0 .25rem;font-size:.72rem;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;opacity:.7}.fvsb-title{margin:0;font-size:1.05rem;line-height:1.3;font-weight:650}.fvsb-note{margin:.3rem 0 0;max-width:60ch;font-size:.86rem;line-height:1.5;opacity:.78}
+.fvsb-button,.fvsb-chip,.fvsb-close,.fvsb-jump{min-height:44px;border:1px solid color-mix(in srgb,currentColor 22%,transparent);border-radius:999px;background:transparent;color:inherit;font:inherit;cursor:pointer}.fvsb-button{padding:.7rem 1rem;font-weight:650}.fvsb-button:hover,.fvsb-chip:hover,.fvsb-close:hover,.fvsb-jump:hover{background:color-mix(in srgb,currentColor 7%,transparent)}.fvsb-button:focus-visible,.fvsb-chip:focus-visible,.fvsb-close:focus-visible,.fvsb-jump:focus-visible{outline:3px solid #B8955E;outline-offset:3px}
+.fvsb-dialog{width:min(920px,calc(100vw - 32px));max-height:min(86vh,860px);padding:0;border:1px solid color-mix(in srgb,currentColor 24%,transparent);border-radius:16px;background:Canvas;color:CanvasText;box-shadow:0 24px 80px rgba(0,0,0,.28)}.fvsb-dialog::backdrop{background:rgba(8,7,6,.72)}.fvsb-shell{display:flex;flex-direction:column;max-height:min(86vh,860px)}.fvsb-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.15rem 1.2rem .9rem;border-bottom:1px solid color-mix(in srgb,currentColor 14%,transparent)}.fvsb-head h2{margin:.15rem 0 .25rem;font-size:1.35rem;line-height:1.2}.fvsb-head p{margin:0;max-width:67ch;font-size:.86rem;line-height:1.5;opacity:.76}.fvsb-close{flex:0 0 auto;width:44px;padding:0;font-size:1.25rem;line-height:1}
+.fvsb-toolbar{display:flex;gap:.5rem;align-items:center;overflow:auto;padding:.8rem 1.2rem;border-bottom:1px solid color-mix(in srgb,currentColor 12%,transparent)}.fvsb-chip{flex:0 0 auto;padding:.55rem .85rem;font-size:.82rem}.fvsb-chip[aria-pressed="true"]{background:#B8955E;color:#17130f;border-color:#B8955E;font-weight:700}.fvsb-status{margin-left:auto;white-space:nowrap;font-size:.78rem;opacity:.7}.fvsb-body{overflow:auto;padding:1.15rem 1.2rem 1.3rem}.fvsb-group{margin:0 0 1.45rem}.fvsb-group:last-child{margin-bottom:0}.fvsb-group-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin:0 0 .7rem}.fvsb-group-head h3{margin:0;font-size:1rem}.fvsb-group-head span{font-size:.75rem;opacity:.66}.fvsb-bars{display:grid;gap:.55rem}.fvsb-row{display:grid;grid-template-columns:minmax(92px,145px) minmax(0,1fr) minmax(55px,80px);gap:.75rem;align-items:center}.fvsb-value{font-variant-numeric:tabular-nums;font-weight:700}.fvsb-track{height:14px;border-radius:999px;background:color-mix(in srgb,currentColor 9%,transparent);overflow:hidden}.fvsb-fill{display:block;height:100%;min-width:3px;border-radius:inherit;background:#B8955E}.fvsb-count{text-align:right;font-size:.76rem;opacity:.7}.fvsb-mentions{display:grid;gap:.55rem;margin-top:.8rem}.fvsb-mention{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem;align-items:start;padding:.75rem .8rem;border:1px solid color-mix(in srgb,currentColor 12%,transparent);border-radius:10px}.fvsb-mention p{margin:0;font-size:.84rem;line-height:1.5}.fvsb-mention mark{background:color-mix(in srgb,#B8955E 28%,transparent);color:inherit;padding:0 .08em;border-radius:2px}.fvsb-jump{padding:.45rem .75rem;font-size:.78rem;white-space:nowrap}.fvsb-flash{outline:3px solid #B8955E!important;outline-offset:4px}
+@media(max-width:640px){.fvsb-dialog{width:100vw;max-width:none;height:100dvh;max-height:none;border:0;border-radius:0}.fvsb-shell{height:100dvh;max-height:none}.fvsb-head,.fvsb-toolbar,.fvsb-body{padding-left:1rem;padding-right:1rem}.fvsb-row{grid-template-columns:92px minmax(0,1fr)}.fvsb-count{grid-column:1/-1;text-align:left;margin-top:-.25rem}.fvsb-mention{grid-template-columns:1fr}.fvsb-jump{justify-self:start}}@media(max-width:360px){.fvsb-band{padding:1rem}.fvsb-button{width:100%}.fvsb-status{display:none}}@media(prefers-reduced-motion:reduce){.fvsb-fill{transition:none!important}}@media(forced-colors:active){.fvsb-chip[aria-pressed="true"],.fvsb-fill{background:Highlight;color:HighlightText}.fvsb-flash{outline-color:Highlight!important}}@media print{.fvsb-band,.fvsb-dialog{display:none!important}}
+</style>
+<script id="fv-scale-board-r7-js">
+(()=>{if(window.__fvScaleBoardR7)return;window.__fvScaleBoardR7=true;
+const article=document.querySelector('article');if(!article)return;
+const boundaryCandidates=[...article.querySelectorAll('#sources,.fv-source-heading')];if(boundaryCandidates.length!==1)return;
+const sourceHeading=boundaryCandidates[0];if(sourceHeading.tagName!=='H2'||sourceHeading.id!=='sources'||!sourceHeading.classList.contains('fv-source-heading'))return;
+const noteRoots=[...article.querySelectorAll('[data-fv-footnotes]')];if(noteRoots.length!==1)return;const notesRoot=noteRoots[0];
+const before=(a,b)=>!!(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING);if(!before(sourceHeading,notesRoot))return;
+const storyH2s=[...article.querySelectorAll('h2')].filter(h=>h!==sourceHeading&&before(h,sourceHeading));const firstStoryH2=storyH2s[0];if(!firstStoryH2)return;
+const paragraphs=[...article.querySelectorAll('p')].filter(p=>before(p,sourceHeading)&&!p.closest('[data-fv-footnotes]'));if(paragraphs.length<12||paragraphs.length>120)return;
+
+const words={zero:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,eighteen:18,nineteen:19,twenty:20,thirty:30,forty:40,fifty:50,sixty:60,seventy:70,eighty:80,ninety:90};
+const ones='(?:one|two|three|four|five|six|seven|eight|nine)',teens='(?:ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)',tens='(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)';
+const writtenNumber=String.raw`(?:zero|${ones}|${teens}|${tens}(?:(?:\s|-)+${ones})?)`,numericNumber=String.raw`(?:\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)`,numberPattern=String.raw`(?:${numericNumber}|${writtenNumber})`;
+const prefixWord='(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand)';
+const invalidWrittenPrefix=new RegExp(String.raw`${prefixWord}(?:\s|-)+(?:and(?:\s|-)+)?$`,'i');
+const invalidNumericExpressionPrefix=/(?:\d(?:[\d,.]*\d)?\s*(?:[\/:÷×*^+\-−–—⁄∕]|[xX])\s*|\d+\s+(?:to|through|or)\s+)$/i;
+const invalidNumberPrefix=(text,start)=>{if(start<=0)return false;const left=text.slice(0,start);if(/[\d,.+\-−–—_'’\/:÷×*^⁄∕]$/.test(left))return true;if(/\d\s+$/.test(left))return true;if(invalidNumericExpressionPrefix.test(left))return true;return invalidWrittenPrefix.test(left)};
+const parseNumber=s=>{const t=s.toLowerCase().trim();if(/^\d/.test(t)){const clean=t.replace(/,/g,'');return /^\d+(?:\.\d+)?$/.test(clean)?Number(clean):NaN}const parts=t.split(/[\s-]+/);if(parts.length===1)return words[parts[0]]??NaN;if(parts.length===2){const a=words[parts[0]],b=words[parts[1]];if(a>=20&&a%10===0&&b>=1&&b<=9)return a+b}return NaN};
+const specs=[
+ {key:'mph',label:'Speed · miles per hour',unit:'mph',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+miles?(?:\s|-)+(?:per|an)(?:\s|-)+hour\b|\b(${numberPattern})\s*mph\b`,'gi')},
+ {key:'kmh',label:'Speed · kilometers per hour',unit:'km/h',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+kilomet(?:er|re)s?(?:\s|-)+(?:per|an)(?:\s|-)+hour\b|\b(${numberPattern})\s*km\/?h\b`,'gi')},
+ {key:'percent',label:'Percent',unit:'%',re:new RegExp(String.raw`\b(${numberPattern})\s*(?:percent|per\s*cent|%)`,'gi')},
+ {key:'feet',label:'Distance · feet',unit:'ft',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+(?:feet|foot)\b|\b(${numberPattern})\s*ft\.?\b`,'gi')},
+ {key:'miles',label:'Distance · miles',unit:'mi',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+miles?\b`,'gi')},
+ {key:'meters',label:'Distance · meters',unit:'m',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+met(?:er|re)s?\b`,'gi')},
+ {key:'volts',label:'Voltage',unit:'V',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+volts?\b|\b(${numberPattern})\s*V\b`,'gi')},
+ {key:'watts',label:'Power',unit:'W',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+watts?\b|\b(${numberPattern})\s*W\b`,'gi')},
+ {key:'psi',label:'Pressure',unit:'psi',re:new RegExp(String.raw`\b(${numberPattern})\s*psi\b`,'gi')},
+ {key:'knots',label:'Speed · knots',unit:'kn',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+knots?\b`,'gi')},
+ {key:'kilograms',label:'Mass · kilograms',unit:'kg',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+kilograms?\b|\b(${numberPattern})\s*kg\b`,'gi')},
+ {key:'pounds',label:'Mass · pounds',unit:'lb',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+pounds?\b|\b(${numberPattern})\s*lbs?\.?\b`,'gi')},
+ {key:'tons',label:'Mass · tons',unit:'tons',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+tons?\b`,'gi')},
+ {key:'seconds',label:'Duration · seconds',unit:'sec',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+seconds?\b`,'gi')},
+ {key:'minutes',label:'Duration · minutes',unit:'min',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+minutes?\b`,'gi')},
+ {key:'hours',label:'Duration · hours',unit:'hr',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+hours?\b`,'gi')},
+ {key:'days',label:'Duration · days',unit:'days',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+days?\b`,'gi')},
+ {key:'weeks',label:'Duration · weeks',unit:'weeks',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+weeks?\b`,'gi')},
+ {key:'years',label:'Duration · years',unit:'years',re:new RegExp(String.raw`\b(${numberPattern})(?:\s|-)+years?\b`,'gi')},
+ {key:'fahrenheit',label:'Temperature · Fahrenheit',unit:'°F',re:new RegExp(String.raw`\b(${numberPattern})\s*(?:°\s*)?F\b|\b(${numberPattern})(?:\s|-)+degrees?(?:\s|-)+Fahrenheit\b`,'gi')},
+ {key:'celsius',label:'Temperature · Celsius',unit:'°C',re:new RegExp(String.raw`\b(${numberPattern})\s*(?:°\s*)?C\b|\b(${numberPattern})(?:\s|-)+degrees?(?:\s|-)+Celsius\b`,'gi')}
+];
+const sentenceContext=(text,start,end)=>{const left=Math.max(text.lastIndexOf('.',start-1),text.lastIndexOf('!',start-1),text.lastIndexOf('?',start-1))+1,stops=[text.indexOf('.',end),text.indexOf('!',end),text.indexOf('?',end)].filter(x=>x>=0),right=stops.length?Math.min(...stops)+1:Math.min(text.length,end+140),s=text.slice(left,right).trim();return s.length>260?s.slice(0,257).trimEnd()+'…':s};
+const overlaps=(a,b)=>a.start<b.end&&a.end>b.start,items=[];
+paragraphs.forEach((p,pi)=>{const text=p.textContent.replace(/\s+/g,' ').trim();if(!text)return;const candidates=[];specs.forEach((spec,rank)=>{spec.re.lastIndex=0;let m;while((m=spec.re.exec(text))){const rawNum=m[1]||m[2];if(invalidNumberPrefix(text,m.index))continue;const value=parseNumber(rawNum);if(!Number.isFinite(value)||value<0)continue;candidates.push({spec,rank,value,display:m[0].replace(/\s+/g,' '),p,pi,start:m.index,end:m.index+m[0].length,context:sentenceContext(text,m.index,m.index+m[0].length)})}});candidates.sort((a,b)=>a.start-b.start||(b.end-b.start)-(a.end-a.start)||a.rank-b.rank||a.spec.key.localeCompare(b.spec.key));const selected=[];for(const candidate of candidates){if(selected.some(existing=>overlaps(candidate,existing)))continue;selected.push(candidate)}items.push(...selected)});
+if(items.length<4||items.length>80)return;
+const grouped=new Map();items.forEach(x=>{if(!grouped.has(x.spec.key))grouped.set(x.spec.key,[]);grouped.get(x.spec.key).push(x)});const comparable=[...grouped].filter(([,arr])=>new Set(arr.map(x=>x.value)).size>=2);if(!comparable.length)return;
+
+const title=(article.querySelector('h1')?.textContent||document.title||'This investigation').trim(),esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const band=document.createElement('section');band.className='fvsb-band';band.dataset.fvsbBand='';band.innerHTML=`<div class="fvsb-band-row"><div><p class="fvsb-kicker">Scale Board</p><p class="fvsb-title">See the quantities in proportion.</p><p class="fvsb-note">${comparable.length} comparable ${comparable.length===1?'measure':'measures'} found in the published story. Values are shown as written; bar length compares magnitude only.</p></div><button class="fvsb-button" type="button">Open Scale Board</button></div>`;firstStoryH2.before(band);
+const launch=band.querySelector('.fvsb-button');let dialog=null,returnToLaunch=true;const fmt=n=>Number.isInteger(n)?String(n):String(Number(n.toFixed(3)));
+const highlight=(text,needle)=>{const i=text.toLowerCase().indexOf(needle.toLowerCase());if(i<0)return document.createTextNode(text);const f=document.createDocumentFragment();f.append(document.createTextNode(text.slice(0,i)));const mark=document.createElement('mark');mark.textContent=text.slice(i,i+needle.length);f.append(mark,document.createTextNode(text.slice(i+needle.length)));return f};
+const focusSafely=node=>{if(!node)return false;try{node.focus({preventScroll:true})}catch(error){try{node.focus()}catch(fallbackError){return false}}return document.activeElement===node};
+const recoverJumpFocus=()=>{returnToLaunch=true;if(dialog?.open){const titleNode=dialog.querySelector('#fvsb-title');if(!focusSafely(titleNode))focusSafely(dialog.querySelector('.fvsb-close'));return}focusSafely(launch)};
+const jump=item=>{
+  returnToLaunch=false;
+  const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadClass=p.hasAttribute('class'),hadFlash=p.classList.contains('fvsb-flash');
+  let addedFlash=false;
+  const removeOwnedFlash=()=>{if(!addedFlash)return;p.classList.remove('fvsb-flash');addedFlash=false;if(!hadClass&&p.getAttribute('class')==='')p.removeAttribute('class')};
+  try{
+    dialog?.close();
+    p.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+    let addedTabindex=false;
+    try{
+      if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}
+      p.focus({preventScroll:true});
+      if(document.activeElement!==p)throw new Error('Scale Board story focus did not move');
+      if(addedTabindex){
+        const restoreTabindex=()=>{if(p.getAttribute('tabindex')==='-1')p.removeAttribute('tabindex')};
+        p.addEventListener('blur',restoreTabindex,{once:true});
+        addedTabindex=false
+      }
+    }finally{
+      if(addedTabindex)p.removeAttribute('tabindex')
+    }
+    if(!hadFlash){
+      p.classList.add('fvsb-flash');addedFlash=true;
+      try{
+        setTimeout(removeOwnedFlash,1400)
+      }catch(error){
+        removeOwnedFlash();
+        throw error
+      }
+    }
+  }catch(error){
+    removeOwnedFlash();
+    recoverJumpFocus()
+  }
+};
+function build(){dialog=document.createElement('dialog');dialog.className='fvsb-dialog';dialog.setAttribute('aria-labelledby','fvsb-title');dialog.innerHTML=`<div class="fvsb-shell"><header class="fvsb-head"><div><p class="fvsb-kicker">Scale Board</p><h2 id="fvsb-title" tabindex="-1">${esc(title)}</h2><p>Explicit quantities already printed in the story, grouped only when they share the same unit. Bars compare magnitude, not importance, causation, confidence, or evidence quality.</p></div><button class="fvsb-close" type="button" aria-label="Close Scale Board">×</button></header><div class="fvsb-toolbar" role="group" aria-label="Measure groups"></div><div class="fvsb-body"></div></div>`;document.body.append(dialog);const toolbar=dialog.querySelector('.fvsb-toolbar'),body=dialog.querySelector('.fvsb-body'),status=document.createElement('span');status.className='fvsb-status';status.setAttribute('aria-live','polite');toolbar.append(status);let active='all';const buttons=[];
+ const addChip=(key,label,count)=>{const b=document.createElement('button');b.type='button';b.className='fvsb-chip';b.dataset.key=key;b.setAttribute('aria-pressed',key===active?'true':'false');b.textContent=`${label} · ${count}`;b.addEventListener('click',()=>{active=key;buttons.forEach(x=>x.setAttribute('aria-pressed',x.dataset.key===active?'true':'false'));render()});buttons.push(b);toolbar.insertBefore(b,status)};addChip('all','All',comparable.length);comparable.forEach(([key,arr])=>addChip(key,arr[0].spec.label.replace(/^.* · /,''),new Set(arr.map(x=>x.value)).size));
+ function render(){body.replaceChildren();const shown=active==='all'?comparable:comparable.filter(([key])=>key===active);status.textContent=`Showing ${shown.length} ${shown.length===1?'group':'groups'}`;shown.forEach(([key,arr])=>{const byValue=new Map();arr.forEach(x=>{if(!byValue.has(x.value))byValue.set(x.value,[]);byValue.get(x.value).push(x)});const values=[...byValue.keys()].sort((a,b)=>a-b),max=Math.max(...values),section=document.createElement('section');section.className='fvsb-group';section.dataset.group=key;section.innerHTML=`<div class="fvsb-group-head"><h3>${arr[0].spec.label}</h3><span>${arr.length} story ${arr.length===1?'mention':'mentions'}</span></div><div class="fvsb-bars"></div><div class="fvsb-mentions"></div>`;const bars=section.querySelector('.fvsb-bars'),mentions=section.querySelector('.fvsb-mentions');values.forEach(value=>{const occurrences=byValue.get(value),row=document.createElement('div');row.className='fvsb-row';row.innerHTML=`<div class="fvsb-value">${fmt(value)} ${arr[0].spec.unit}</div><div class="fvsb-track" aria-hidden="true"><span class="fvsb-fill" style="width:${max===0?0:Math.max(1,(value/max)*100)}%"></span></div><div class="fvsb-count">${occurrences.length} ${occurrences.length===1?'mention':'mentions'}</div>`;bars.append(row)});arr.slice(0,12).forEach(item=>{const card=document.createElement('div');card.className='fvsb-mention';const copy=document.createElement('p');copy.append(highlight(item.context,item.display));const j=document.createElement('button');j.type='button';j.className='fvsb-jump';j.textContent='View in story';j.addEventListener('click',()=>jump(item));card.append(copy,j);mentions.append(card)});body.append(section)})}
+ render();dialog.querySelector('.fvsb-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(returnToLaunch)focusSafely(launch);returnToLaunch=true});dialog.addEventListener('cancel',()=>{returnToLaunch=true})}
+launch.addEventListener('click',()=>{if(!dialog)build();returnToLaunch=true;dialog.showModal();focusSafely(dialog.querySelector('#fvsb-title'))});
+})();
+</script>
+<!-- /wp:html -->
