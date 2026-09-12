@@ -47,17 +47,23 @@ const c1=fig1.getAttribute('class'),c2=fig2.getAttribute('class');
 """
     if mode == "absent-repeat":
         body = """
-let scrollCount=0;fig1.scrollIntoView=()=>{scrollCount++};
+let scrollCount=0,focusCount=0;fig1.scrollIntoView=()=>{scrollCount++};fig1.addEventListener('focus',()=>focusCount++);
 const jump=again=>{opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
- if(scrollCount<(again?1:2))return fail('story-jump path did not execute');
- if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('absent-state target drifted');
- if(again)return jump(false);pass();
+ if(scrollCount<(again?1:2)||focusCount<(again?1:2))return fail('story-jump focus path did not execute');
+ if(document.activeElement!==fig1)return fail('story target did not receive focus');
+ if(fig1.getAttribute('tabindex')!=='-1')return fail('feature-owned temporary tabindex missing while target is focused');
+ if(!fig1.classList.contains('fv-compare-lens-flash'))return fail('feature-owned temporary highlight missing while target is focused');
+ opener.focus();setTimeout(()=>{try{
+  if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==c1)return fail('absent-state target was not restored after blur');
+  if(again)return jump(false);pass();
+ }catch(e){fail(e.message)}},45);
 }catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35)};jump(true);
 """
     elif mode == "owned":
         body = """
 let scrollCount=0;fig2.scrollIntoView=()=>{scrollCount++};opener.click();setTimeout(()=>{try{const d=document.querySelector('.fv-compare-lens-dialog');const s=d.querySelector('[data-select="0"]');s.value='1';s.dispatchEvent(new Event('change',{bubbles:true}));d.querySelector('[data-original="0"]').click();setTimeout(()=>{try{
  if(scrollCount<1)return fail('owned-state story-jump path did not execute');
+ if(document.activeElement!==fig2)return fail('pre-owned target did not receive focus');
  if(fig2.getAttribute('tabindex')!=='-7'||fig2.getAttribute('class')!==c2)return fail('pre-owned tabindex/class was damaged');pass();
 }catch(e){fail(e.message)}},90)}catch(e){fail(e.message)}},35);
 """
@@ -115,7 +121,7 @@ def run() -> None:
                     raise SystemExit(f"FAIL: state mode {mode}: {reason.group(1) if reason else 'runtime assertion failed'}")
         finally:
             server.shutdown(); server.server_close(); thread.join(timeout=5)
-    print("PASS: Compare Lens R1 browser state preservation covers absent/pre-owned values, repeat story-jump execution, and scroll/focus failure recovery")
+    print("PASS: Compare Lens R1 browser state preservation covers temporary feature-owned focus state, absent/pre-owned restoration, repeat story jumps, and scroll/focus failure recovery")
 
 
 if __name__ == "__main__":
