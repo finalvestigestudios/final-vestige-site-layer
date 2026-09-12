@@ -24,10 +24,17 @@ def browser_run(prefix: str, suffix: str, label: str) -> None:
     with tempfile.TemporaryDirectory() as td:
         page = Path(td) / f"scale-board-r7-{label}.html"
         page.write_bytes((ROOT / prefix).read_bytes() + PAYLOAD.read_bytes() + (ROOT / suffix).read_bytes())
-        proc = subprocess.run(
-            [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--dump-dom", page.as_uri()],
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30,
-        )
+        try:
+            proc = subprocess.run(
+                [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--virtual-time-budget=3000", "--dump-dom", page.as_uri()],
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=15,
+            )
+        except subprocess.TimeoutExpired as exc:
+            diagnostic = ROOT / f"scale-board-r7-{label}-failure.txt"
+            stdout = exc.stdout.decode("utf-8", errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+            stderr = exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
+            diagnostic.write_text(f"reason=browser-timeout\n--- STDERR ---\n{stderr}\n--- DOM ---\n{stdout}", encoding="utf-8")
+            require(False, f"browser fixture {label} timed out")
         if proc.returncode != 0:
             diagnostic = ROOT / f"scale-board-r7-{label}-failure.txt"
             diagnostic.write_text(f"returncode={proc.returncode}\n--- STDERR ---\n{proc.stderr}\n--- DOM ---\n{proc.stdout}", encoding="utf-8")
