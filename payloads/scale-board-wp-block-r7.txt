@@ -71,7 +71,12 @@ const jump=item=>{
     try{
       if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}
       p.focus({preventScroll:true});
-      if(document.activeElement!==p)throw new Error('Scale Board story focus did not move')
+      if(document.activeElement!==p)throw new Error('Scale Board story focus did not move');
+      if(addedTabindex){
+        const restoreTabindex=()=>{if(p.getAttribute('tabindex')==='-1')p.removeAttribute('tabindex')};
+        p.addEventListener('blur',restoreTabindex,{once:true});
+        addedTabindex=false
+      }
     }finally{
       if(addedTabindex)p.removeAttribute('tabindex')
     }
