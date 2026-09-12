@@ -1,6 +1,6 @@
 {
-  "release_id": "FVSL-E2E-CANARY-001",
-  "version": "0.2.1",
+  "release_id": "FVSL-CASE-PACKET-001",
+  "version": "0.3.0",
   "delivery": {
     "wordpress_hook": "wp_footer",
     "priority": 99,
@@ -31,6 +31,12 @@
       "file": "payloads/case-search-wp-block-v1.txt",
       "bytes": 17534,
       "sha256": "e313db1e31ff1fce01b8bbd5d8dda03673b9a52aadcc7cbecafd2cec50dcc6a7"
+    },
+    {
+      "name": "Case Packet",
+      "file": "payloads/case-packet-wp-block-r1.txt",
+      "bytes": 20410,
+      "sha256": "2b661516a5932a0e4d50c183aba25eec306d8163b10017069104777d5ef8b90c"
     }
   ],
   "failure_policy": "If any payload is missing, has a byte-count mismatch, or has a SHA-256 mismatch, emit none of the site-layer payloads.",

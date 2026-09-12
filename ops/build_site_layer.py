@@ -19,6 +19,7 @@ FIXED_TIME = (1980, 1, 1, 0, 0, 0)
 
 PACKAGE_FILES = (
     "final-vestige-site-layer.php",
+    "payloads/case-packet-wp-block-r1.txt",
     "payloads/case-search-wp-block-v1.txt",
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
