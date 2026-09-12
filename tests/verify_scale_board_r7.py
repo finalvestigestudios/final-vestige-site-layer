@@ -87,18 +87,19 @@ def main() -> None:
     for value in ("forced-scroll-failure-absent", "forced-focus-failure", "scroll failure did not recover focus to launcher", "focus failure did not recover focus to launcher", "success did not move focus to story target", "temporary focusability missing while story target active", "blur cleanup failed to restore absent publisher state", 'tabindex="0"', 'tabindex="-7"', 'id="publisher-owned-point"', 'class="published-copy fvsb-flash"', "repeat success drifted focus transaction"):
         require(value in r7fixture, f"missing R7 focus/dialog regression: {value}")
 
-    # R7 supersedes R6's expectation that injected jump failures escape as uncaught errors.
-    # The R7 fixture carries the same publisher-state ownership cases while asserting the
-    # newly governed deterministic focus/dialog recovery. Older truth/state fixtures are
-    # still executed with the R7 payload below.
+    # R7 changes the duration of feature-owned tabindex on an originally non-focusable
+    # target: it remains only while that target is actively focused and restores on blur.
+    # Therefore old R5/R6 browser fixtures that require immediate post-focus removal or
+    # uncaught failure propagation are intentionally superseded. Their publisher-state
+    # ownership cases are all reproduced in the R7 fixture above; R1-R4 truth/Sources
+    # fixtures remain behaviorally compatible and execute the exact R7 payload below.
     browser_run("tests/fixtures/scale-board-r7-focus-prefix.html", "tests/fixtures/scale-board-r7-focus-suffix.html", "focus-recovery")
-    browser_run("tests/fixtures/scale-board-r5-dom-state-prefix.html", "tests/fixtures/scale-board-r5-dom-state-suffix.html", "r5-dom-state")
     browser_run("tests/fixtures/scale-board-r4-truth-prefix.html", "tests/fixtures/scale-board-r4-truth-suffix.html", "r4-truth")
     browser_run("tests/fixtures/scale-board-r3-truth-prefix.html", "tests/fixtures/scale-board-r3-truth-suffix.html", "r3-truth")
     browser_run("tests/fixtures/scale-board-r2-truth-prefix.html", "tests/fixtures/scale-board-r2-truth-suffix.html", "r2-truth")
     browser_run("tests/fixtures/scale-board-r1-truth-prefix.html", "tests/fixtures/scale-board-r1-truth-suffix.html", "r1-truth")
     browser_run("tests/fixtures/scale-board-r2-ambiguous-prefix.html", "tests/fixtures/scale-board-r2-fail-suffix.html", "ambiguous-sources")
-    print("PASS: Scale Board R7 exact identity, failure-atomic focus/dialog recovery, nondestructive DOM state, R1-R6 truth/state regressions, Sources integrity, accessibility and privacy contract")
+    print("PASS: Scale Board R7 exact identity, failure-atomic focus/dialog recovery, nondestructive DOM state, R1-R6 truth/state contract, Sources integrity, accessibility and privacy contract")
 
 
 if __name__ == "__main__":
