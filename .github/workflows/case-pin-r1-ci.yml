@@ -6,6 +6,7 @@ on:
     paths:
       - 'payloads/case-pin-wp-block-r1.txt'
       - 'tests/verify_case_pin_r1.py'
+      - 'tests/verify_case_pin_r1_runtime.py'
       - '.github/workflows/case-pin-r1-ci.yml'
       - 'CASE_PIN_R1.md'
   workflow_dispatch:
@@ -38,4 +39,4 @@ jobs:
           wc -c payloads/case-pin-wp-block-r1.txt
           sha256sum payloads/case-pin-wp-block-r1.txt
       - name: Verify Case Pin R1 artifact and browser behavior
-        run: python tests/verify_case_pin_r1.py
+        run: python tests/verify_case_pin_r1_runtime.py
