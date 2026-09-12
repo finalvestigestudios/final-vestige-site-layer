@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "scale-board-wp-block-r7.txt"
-EXPECTED_BYTES = 18928
-EXPECTED_SHA256 = "f69551d609f6d2b6dc637c42c37421752080121eca8bbe977dfd0d9cb7c31562"
+EXPECTED_BYTES = 19224
+EXPECTED_SHA256 = "1935cab812ffa875a41beeba6d5e744fff8b195e3ba06dec03a9f72fc73e72a6"
 
 
 def require(ok: bool, message: str) -> None:
@@ -61,7 +61,10 @@ def main() -> None:
     require("hadFlash=p.classList.contains('fvsb-flash'),hadClass=p.hasAttribute('class'),priorClass=p.getAttribute('class')" in text, "pre-owned flash/class-state detection missing")
     require("let addedTabindex=false,addedFlash=false" in text, "feature ownership flags missing")
     require("if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}" in text, "temporary focusability guard missing")
-    require("finally{\n      if(addedTabindex)p.removeAttribute('tabindex')" in text, "focus failure restoration missing")
+    require("const restoreTabindex=()=>{if(!addedTabindex)return;p.removeAttribute('tabindex');addedTabindex=false}" in text, "temporary tabindex restoration helper missing")
+    require("try{p.focus({preventScroll:true})}catch(error){restoreTabindex();throw error}" in text, "focus-throw tabindex restoration missing")
+    require("if(document.activeElement!==p){restoreTabindex();throw new Error('story-focus-not-established')}" in text, "focus establishment verification missing")
+    require("if(addedTabindex)p.addEventListener('blur',restoreTabindex,{once:true})" in text, "temporary focusability blur restoration missing")
     require("if(!hadFlash){" in text and "p.classList.add('fvsb-flash');addedFlash=true" in text, "feature flash ownership missing")
     require("const restoreFlash=()=>{if(!addedFlash)return;if(hadClass)p.setAttribute('class',priorClass);else p.removeAttribute('class');addedFlash=false}" in text, "exact class-state flash restoration missing")
     require("setTimeout(()=>restoreFlash(),1400)" in text and "restoreFlash();" in text, "timer/failure flash restoration wiring missing")
@@ -104,8 +107,9 @@ def main() -> None:
         "forced-scroll-failure-absent", "forced-scroll-failure-owned-tab", "forced-scroll-failure-owned-class",
         "forced-focus-failure", "forced-timer-failure", "scroll failure did not recover jump focus",
         "focus failure did not reopen dialog", "successful absent jump did not focus story target",
+        "temporary absent tabindex not restored on blur", "owned-id temporary tabindex not restored on blur",
         'tabindex="0"', 'tabindex="-7"', 'id="publisher-owned-point"', 'class="published-copy fvsb-flash"',
-        "repeat success focus/dialog drift", "feature leaked interaction error",
+        "repeat success focus/dialog drift", "repeat temporary tabindex not restored on blur", "feature leaked interaction error",
     ):
         require(value in r7, f"missing R7 focus/dialog regression: {value}")
 
@@ -120,7 +124,7 @@ def main() -> None:
     browser_run("tests/fixtures/scale-board-r2-truth-prefix.html", "tests/fixtures/scale-board-r2-truth-suffix.html", "r2-truth")
     browser_run("tests/fixtures/scale-board-r1-truth-prefix.html", "tests/fixtures/scale-board-r1-truth-suffix.html", "r1-truth")
     browser_run("tests/fixtures/scale-board-r2-ambiguous-prefix.html", "tests/fixtures/scale-board-r2-fail-suffix.html", "ambiguous-sources")
-    print("PASS: Scale Board R7 exact identity, focus/dialog failure atomicity, publisher-state restoration, close-event accounting, R1-R6 truth/state regressions, Sources integrity, accessibility and privacy contract")
+    print("PASS: Scale Board R7 exact identity, failure-atomic focus/dialog recovery, temporary focusability restoration, publisher-state restoration, close-event accounting, R1-R6 truth/state regressions, Sources integrity, accessibility and privacy contract")
 
 
 if __name__ == "__main__":
