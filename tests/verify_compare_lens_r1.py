@@ -117,7 +117,7 @@ const fvclTest=()=>{{
            const savedScroll=fig1.scrollIntoView;fig1.scrollIntoView=()=>{{throw new Error('forced scroll failure')}};
            opener.click();
            setTimeout(()=>{{try{{
-            const d4=document.querySelector('.fv-compare-lens-dialog');d4.querySelector('[data-original="0"]').click();
+            const d4=document.querySelector('.fv-compare-lens-dialog');const s4=d4.querySelector('[data-select="0"]');s4.value='0';s4.dispatchEvent(new Event('change',{{bubbles:true}}));d4.querySelector('[data-original="0"]').click();
             setTimeout(()=>{{try{{
              if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('scroll failure mutated publisher state');
              if(document.activeElement!==opener)return fail('scroll failure did not recover focus');
@@ -125,7 +125,7 @@ const fvclTest=()=>{{
              const savedFocus=fig1.focus;fig1.focus=()=>{{}};
              opener.click();
              setTimeout(()=>{{try{{
-              const d5=document.querySelector('.fv-compare-lens-dialog');d5.querySelector('[data-original="0"]').click();
+              const d5=document.querySelector('.fv-compare-lens-dialog');const s5=d5.querySelector('[data-select="0"]');s5.value='0';s5.dispatchEvent(new Event('change',{{bubbles:true}}));d5.querySelector('[data-original="0"]').click();
               setTimeout(()=>{{try{{
                if(fig1.hasAttribute('tabindex')||fig1.getAttribute('class')!==fig1Class)return fail('focus failure did not restore publisher state');
                if(document.activeElement!==opener)return fail('focus failure did not recover focus');
