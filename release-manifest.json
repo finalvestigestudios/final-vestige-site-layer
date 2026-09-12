@@ -34,9 +34,9 @@
     },
     {
       "name": "Scale Board",
-      "file": "payloads/scale-board-wp-block-r6.txt",
-      "bytes": 17761,
-      "sha256": "bfbf1b265d1e14401b3380500dd6ed8be8e05f2e257f4d66ecbfbde569d331b5"
+      "file": "payloads/scale-board-wp-block-r7.txt",
+      "bytes": 18458,
+      "sha256": "de765b59a8bef8c4e5c62e9a44897cf4e73f2216aef3b3da5d2834b7fbd344a8"
     }
   ],
   "failure_policy": "If any payload is missing, has a byte-count mismatch, or has a SHA-256 mismatch, emit none of the site-layer payloads.",
