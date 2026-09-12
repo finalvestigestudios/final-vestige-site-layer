@@ -6,6 +6,7 @@ on:
     paths:
       - 'payloads/case-delta-wp-block-r1.txt'
       - 'tests/verify_case_delta_r1.py'
+      - 'tests/verify_case_delta_r1_browser.py'
       - '.github/workflows/case-delta-r1-ci.yml'
       - 'CASE_DELTA_R1.md'
   workflow_dispatch:
@@ -16,8 +17,6 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    env:
-      FV_BROWSER_RUNTIME: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,5 +36,9 @@ jobs:
         run: |
           wc -c payloads/case-delta-wp-block-r1.txt
           sha256sum payloads/case-delta-wp-block-r1.txt
-      - name: Verify Case Delta R1 artifact and browser behavior
+      - name: Verify Case Delta R1 exact artifact contract
+        env:
+          FV_BROWSER_RUNTIME: '0'
         run: python tests/verify_case_delta_r1.py
+      - name: Verify Case Delta R1 browser/adversarial behavior
+        run: python tests/verify_case_delta_r1_browser.py
