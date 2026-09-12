@@ -28,10 +28,16 @@ def browser_run(prefix: str, suffix: str, label: str) -> None:
             [browser, "--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--dump-dom", page.as_uri()],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30,
         )
-        require(proc.returncode == 0, f"browser fixture {label} failed: {proc.stderr[-500:]}")
+        if proc.returncode != 0:
+            diagnostic = ROOT / f"scale-board-r7-{label}-failure.txt"
+            diagnostic.write_text(f"returncode={proc.returncode}\n--- STDERR ---\n{proc.stderr}\n--- DOM ---\n{proc.stdout}", encoding="utf-8")
+            require(False, f"browser fixture {label} failed: {proc.stderr[-500:]}")
         if 'data-fv-test="pass"' not in proc.stdout:
             reason = re.search(r'data-fv-reason="([^"]*)"', proc.stdout)
-            require(False, f"browser fixture {label} failed: {reason.group(1) if reason else 'no reason surfaced'}")
+            reason_text = reason.group(1) if reason else "no reason surfaced"
+            diagnostic = ROOT / f"scale-board-r7-{label}-failure.txt"
+            diagnostic.write_text(f"reason={reason_text}\n--- STDERR ---\n{proc.stderr}\n--- DOM ---\n{proc.stdout}", encoding="utf-8")
+            require(False, f"browser fixture {label} failed: {reason_text}")
 
 
 def main() -> None:
