@@ -15,9 +15,25 @@ permissions:
 
 jobs:
   verify:
+    name: verify / ${{ matrix.mode }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+          - network
+          - state-absent
+          - state-owned
+          - scroll-fail
+          - focus-fail
+          - missing-boundary
+          - id-only
+          - class-only
+          - exact-plus-partial
+          - duplicate-exact
+          - reversed-notes
     env:
-      FV_BROWSER_RUNTIME: '1'
+      FV_BROWSER_MODE: ${{ matrix.mode }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,5 +53,5 @@ jobs:
         run: |
           wc -c payloads/compare-lens-wp-block-r1.txt
           sha256sum payloads/compare-lens-wp-block-r1.txt
-      - name: Verify Compare Lens R1 artifact and browser behavior
+      - name: Verify exact artifact and browser mode
         run: python tests/verify_compare_lens_r1.py
