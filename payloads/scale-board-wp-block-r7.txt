@@ -56,12 +56,24 @@ const grouped=new Map();items.forEach(x=>{if(!grouped.has(x.spec.key))grouped.se
 
 const title=(article.querySelector('h1')?.textContent||document.title||'This investigation').trim(),esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const band=document.createElement('section');band.className='fvsb-band';band.dataset.fvsbBand='';band.innerHTML=`<div class="fvsb-band-row"><div><p class="fvsb-kicker">Scale Board</p><p class="fvsb-title">See the quantities in proportion.</p><p class="fvsb-note">${comparable.length} comparable ${comparable.length===1?'measure':'measures'} found in the published story. Values are shown as written; bar length compares magnitude only.</p></div><button class="fvsb-button" type="button">Open Scale Board</button></div>`;firstStoryH2.before(band);
-const launch=band.querySelector('.fvsb-button');let dialog=null,suppressNextCloseFocus=false;const fmt=n=>Number.isInteger(n)?String(n):String(Number(n.toFixed(3)));
+const launch=band.querySelector('.fvsb-button');let dialog=null,pendingSuppressedCloses=0;const fmt=n=>Number.isInteger(n)?String(n):String(Number(n.toFixed(3)));
 const highlight=(text,needle)=>{const i=text.toLowerCase().indexOf(needle.toLowerCase());if(i<0)return document.createTextNode(text);const f=document.createDocumentFragment();f.append(document.createTextNode(text.slice(0,i)));const mark=document.createElement('mark');mark.textContent=text.slice(i,i+needle.length);f.append(mark,document.createTextNode(text.slice(i+needle.length)));return f};
 const recoverJump=(trigger)=>{
   if(dialog&&!dialog.open){try{dialog.showModal()}catch(error){}}
-  const recovery=trigger?.isConnected?trigger:(dialog?.querySelector('.fvsb-close')||launch);
-  try{recovery?.focus({preventScroll:true})}catch(error){try{launch.focus({preventScroll:true})}catch(fallbackError){}}
+  const primary=trigger?.isConnected&&dialog?.open&&dialog.contains(trigger)?trigger:null;
+  const recovery=primary||(dialog?.open?dialog.querySelector('.fvsb-close'):null)||launch;
+  try{recovery?.focus({preventScroll:true})}catch(error){}
+  if(document.activeElement===recovery)return;
+  const fallback=dialog?.open?dialog.querySelector('.fvsb-close'):null;
+  if(fallback&&fallback!==recovery){
+    try{fallback.focus({preventScroll:true})}catch(error){}
+    if(document.activeElement===fallback)return
+  }
+  if(dialog?.open){
+    pendingSuppressedCloses++;
+    try{dialog.close()}catch(error){pendingSuppressedCloses=Math.max(0,pendingSuppressedCloses-1)}
+  }
+  try{launch.focus({preventScroll:true})}catch(error){}
 };
 const jump=(item,trigger)=>{
   const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadFlash=p.classList.contains('fvsb-flash'),hadClass=p.hasAttribute('class'),priorClass=p.getAttribute('class');
@@ -69,8 +81,8 @@ const jump=(item,trigger)=>{
   const restoreFlash=()=>{if(!addedFlash)return;if(hadClass)p.setAttribute('class',priorClass);else p.removeAttribute('class');addedFlash=false};
   try{
     p.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
-    suppressNextCloseFocus=true;
-    try{dialog?.close()}catch(error){suppressNextCloseFocus=false;throw error}
+    pendingSuppressedCloses++;
+    try{dialog?.close()}catch(error){pendingSuppressedCloses=Math.max(0,pendingSuppressedCloses-1);throw error}
     try{
       if(!hadTabindex){p.setAttribute('tabindex','-1');addedTabindex=true}
       p.focus({preventScroll:true})
@@ -94,8 +106,8 @@ const jump=(item,trigger)=>{
 function build(){dialog=document.createElement('dialog');dialog.className='fvsb-dialog';dialog.setAttribute('aria-labelledby','fvsb-title');dialog.innerHTML=`<div class="fvsb-shell"><header class="fvsb-head"><div><p class="fvsb-kicker">Scale Board</p><h2 id="fvsb-title" tabindex="-1">${esc(title)}</h2><p>Explicit quantities already printed in the story, grouped only when they share the same unit. Bars compare magnitude, not importance, causation, confidence, or evidence quality.</p></div><button class="fvsb-close" type="button" aria-label="Close Scale Board">×</button></header><div class="fvsb-toolbar" role="group" aria-label="Measure groups"></div><div class="fvsb-body"></div></div>`;document.body.append(dialog);const toolbar=dialog.querySelector('.fvsb-toolbar'),body=dialog.querySelector('.fvsb-body'),status=document.createElement('span');status.className='fvsb-status';status.setAttribute('aria-live','polite');toolbar.append(status);let active='all';const buttons=[];
  const addChip=(key,label,count)=>{const b=document.createElement('button');b.type='button';b.className='fvsb-chip';b.dataset.key=key;b.setAttribute('aria-pressed',key===active?'true':'false');b.textContent=`${label} · ${count}`;b.addEventListener('click',()=>{active=key;buttons.forEach(x=>x.setAttribute('aria-pressed',x.dataset.key===active?'true':'false'));render()});buttons.push(b);toolbar.insertBefore(b,status)};addChip('all','All',comparable.length);comparable.forEach(([key,arr])=>addChip(key,arr[0].spec.label.replace(/^.* · /,''),new Set(arr.map(x=>x.value)).size));
  function render(){body.replaceChildren();const shown=active==='all'?comparable:comparable.filter(([key])=>key===active);status.textContent=`Showing ${shown.length} ${shown.length===1?'group':'groups'}`;shown.forEach(([key,arr])=>{const byValue=new Map();arr.forEach(x=>{if(!byValue.has(x.value))byValue.set(x.value,[]);byValue.get(x.value).push(x)});const values=[...byValue.keys()].sort((a,b)=>a-b),max=Math.max(...values),section=document.createElement('section');section.className='fvsb-group';section.dataset.group=key;section.innerHTML=`<div class="fvsb-group-head"><h3>${arr[0].spec.label}</h3><span>${arr.length} story ${arr.length===1?'mention':'mentions'}</span></div><div class="fvsb-bars"></div><div class="fvsb-mentions"></div>`;const bars=section.querySelector('.fvsb-bars'),mentions=section.querySelector('.fvsb-mentions');values.forEach(value=>{const occurrences=byValue.get(value),row=document.createElement('div');row.className='fvsb-row';row.innerHTML=`<div class="fvsb-value">${fmt(value)} ${arr[0].spec.unit}</div><div class="fvsb-track" aria-hidden="true"><span class="fvsb-fill" style="width:${max===0?0:Math.max(1,(value/max)*100)}%"></span></div><div class="fvsb-count">${occurrences.length} ${occurrences.length===1?'mention':'mentions'}</div>`;bars.append(row)});arr.slice(0,12).forEach(item=>{const card=document.createElement('div');card.className='fvsb-mention';const copy=document.createElement('p');copy.append(highlight(item.context,item.display));const j=document.createElement('button');j.type='button';j.className='fvsb-jump';j.textContent='View in story';j.addEventListener('click',()=>jump(item,j));card.append(copy,j);mentions.append(card)});body.append(section)})}
- render();dialog.querySelector('.fvsb-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(suppressNextCloseFocus){suppressNextCloseFocus=false;return}launch.focus()});dialog.addEventListener('cancel',()=>{suppressNextCloseFocus=false})}
-launch.addEventListener('click',()=>{if(!dialog)build();suppressNextCloseFocus=false;dialog.showModal();dialog.querySelector('#fvsb-title').focus()});
+ render();dialog.querySelector('.fvsb-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(pendingSuppressedCloses>0){pendingSuppressedCloses--;return}launch.focus()})}
+launch.addEventListener('click',()=>{if(!dialog)build();dialog.showModal();dialog.querySelector('#fvsb-title').focus()});
 })();
 </script>
 <!-- /wp:html -->
