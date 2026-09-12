@@ -62,8 +62,9 @@ const focusSafely=node=>{if(!node)return false;try{node.focus({preventScroll:tru
 const recoverJumpFocus=()=>{returnToLaunch=true;if(dialog?.open){const titleNode=dialog.querySelector('#fvsb-title');if(!focusSafely(titleNode))focusSafely(dialog.querySelector('.fvsb-close'));return}focusSafely(launch)};
 const jump=item=>{
   returnToLaunch=false;
-  const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadFlash=p.classList.contains('fvsb-flash');
+  const p=item.p,hadTabindex=p.hasAttribute('tabindex'),hadClass=p.hasAttribute('class'),hadFlash=p.classList.contains('fvsb-flash');
   let addedFlash=false;
+  const removeOwnedFlash=()=>{if(!addedFlash)return;p.classList.remove('fvsb-flash');addedFlash=false;if(!hadClass&&p.getAttribute('class')==='')p.removeAttribute('class')};
   try{
     dialog?.close();
     p.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
@@ -83,14 +84,14 @@ const jump=item=>{
     if(!hadFlash){
       p.classList.add('fvsb-flash');addedFlash=true;
       try{
-        setTimeout(()=>{p.classList.remove('fvsb-flash');addedFlash=false},1400)
+        setTimeout(removeOwnedFlash,1400)
       }catch(error){
-        p.classList.remove('fvsb-flash');addedFlash=false;
+        removeOwnedFlash();
         throw error
       }
     }
   }catch(error){
-    if(addedFlash)p.classList.remove('fvsb-flash');
+    removeOwnedFlash();
     recoverJumpFocus()
   }
 };
