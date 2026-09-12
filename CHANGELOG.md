@@ -2,11 +2,12 @@
 
 ## 0.3.0 — FVSL-SCALE-BOARD-001
 
-- Integrates the bounded FVF-21 Scale Board R6 executable repair into the governed Site Layer runtime.
-- Replaces the QD-blocked R5 story-jump ordering with failure-atomic focus/highlight handling: scrolling occurs before publisher-node mutation; absent `tabindex` is temporary only around focus and restored even when focus throws; pre-owned/nondefault `tabindex`, publisher ids, and pre-owned flash classes remain exact.
-- Adds injected `scrollIntoView()` and focus-failure browser regressions while preserving repeated-jump/timer cleanup coverage.
-- Preserves the R1–R5 extraction-truth, Sources-boundary, accessibility, privacy, no-network and no-storage contracts with exact-payload browser regressions.
-- Extends deterministic release/package integrity checks to the exact R6 payload identity.
+- Integrates the bounded FVF-21 Scale Board R7 executable repair into the governed Site Layer runtime.
+- Preserves the R6 failure-atomic publisher-DOM restoration contract while adding deterministic interaction-state recovery: thrown scroll/focus operations cannot leave keyboard/screen-reader focus stranded after the Scale Board dialog closes.
+- On a failed story jump, focus recovers to a feature-owned launcher when the dialog is closed, or to a feature-owned dialog control if it remains open; silent story-focus misses are treated as recoverable failures.
+- Successful story jumps still focus the published paragraph without permanently rewriting publisher-owned `tabindex`, ids or classes; absent/pre-owned/nondefault tabindex values, repeated jumps and timer cleanup are regression-tested.
+- Preserves the R1–R6 extraction-truth, Sources-boundary, Unicode/numeric-expression, accessibility, privacy, no-network and no-storage contracts with exact-payload browser regressions.
+- Extends deterministic release/package integrity checks to the exact R7 payload identity.
 - Keeps merge, deployment, whole-site launch/indexing, and destination verification behind their existing governance gates.
 
 ## 0.1.0 — FVSL-BOOTSTRAP-001
