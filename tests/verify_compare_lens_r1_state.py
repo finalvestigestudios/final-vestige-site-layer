@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 import shutil
 import subprocess
@@ -98,6 +99,9 @@ def run() -> None:
     raw = PAYLOAD.read_bytes(); payload = raw.decode("utf-8")
     require(len(raw) == EXPECTED_BYTES, f"payload byte count drifted: {len(raw)}")
     require(hashlib.sha256(raw).hexdigest() == EXPECTED_SHA256, "payload SHA-256 drifted")
+    selected = os.environ.get("FV_STATE_MODE")
+    modes = (selected,) if selected else MODES
+    require(all(mode in MODES for mode in modes), f"unknown state mode: {selected}")
     browser = next((shutil.which(n) for n in ("google-chrome", "chromium", "chromium-browser") if shutil.which(n)), None)
     require(browser is not None, "headless Chrome/Chromium not available")
     with tempfile.TemporaryDirectory() as temp:
@@ -108,7 +112,7 @@ def run() -> None:
         origin = f"http://127.0.0.1:{server.server_port}"
         thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
         try:
-            for mode in MODES:
+            for mode in modes:
                 page = root / f"state-{mode}.html"
                 page.write_text(fixture(payload, mode), encoding="utf-8")
                 proc = subprocess.run(
@@ -121,7 +125,7 @@ def run() -> None:
                     raise SystemExit(f"FAIL: state mode {mode}: {reason.group(1) if reason else 'runtime assertion failed'}")
         finally:
             server.shutdown(); server.server_close(); thread.join(timeout=5)
-    print("PASS: Compare Lens R1 browser state preservation covers temporary feature-owned focus state, absent/pre-owned restoration, repeat story jumps, and scroll/focus failure recovery")
+    print(f"PASS: Compare Lens R1 browser state preservation mode(s): {', '.join(modes)}")
 
 
 if __name__ == "__main__":
