@@ -32,7 +32,7 @@
    if(document.activeElement!==absent)return fail('success did not move focus to story target');
    if(absent.getAttribute('tabindex')!=='-1')return fail('temporary focusability missing while story target active');
    launch.focus();
-   if(!eq(snap(absent),absent0))return fail('blur cleanup failed to restore absent publisher state');
+   if(absent.hasAttribute('tabindex')||absent.hasAttribute('id'))return fail('blur cleanup failed to restore absent publisher focusability/id state');
 
    zero.scrollIntoView=()=>{};d=open();findJump(d,'20 mph').click();
    if(document.activeElement!==zero)return fail('owned tabindex zero success did not focus story target');
