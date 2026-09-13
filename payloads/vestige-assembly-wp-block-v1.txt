@@ -1,0 +1,183 @@
+<!-- wp:html -->
+<style id="fv-vestige-assembly-v1-css">
+#fv-vestige-assembly{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:#0E0F0F;overflow:hidden;opacity:0;pointer-events:none;transition:opacity 900ms ease}
+#fv-vestige-assembly[data-fv-va-run="1"]{opacity:1}
+#fv-vestige-assembly[data-fv-va-fade="1"]{opacity:0}
+#fv-vestige-assembly[data-fv-va-fast="1"]{transition-duration:280ms}
+#fv-vestige-assembly .fv-va-noise{position:absolute;inset:0;opacity:.05;background-image:repeating-linear-gradient(0deg,#F4EFE6 0 1px,transparent 1px 3px)}
+#fv-vestige-assembly .fv-va-stage{position:relative;width:min(980px,92vw);display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:0 12px;transition:opacity 500ms ease}
+#fv-vestige-assembly .fv-va-frag{opacity:0;transform:translateY(14px) scale(.98);border:1px solid #34322E;border-radius:2px;background:#141513;padding:16px 14px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;transition:opacity 700ms ease,transform 700ms ease}
+#fv-vestige-assembly[data-fv-va-run="1"] .fv-va-frag{opacity:1;transform:translateY(0) scale(1)}
+#fv-vestige-assembly[data-fv-va-run="1"] .fv-va-frag[data-fv-va-i="0"]{transition-delay:200ms}
+#fv-vestige-assembly[data-fv-va-run="1"] .fv-va-frag[data-fv-va-i="1"]{transition-delay:1200ms}
+#fv-vestige-assembly[data-fv-va-run="1"] .fv-va-frag[data-fv-va-i="2"]{transition-delay:2200ms}
+#fv-vestige-assembly[data-fv-va-run="1"] .fv-va-frag[data-fv-va-i="3"]{transition-delay:3200ms}
+#fv-vestige-assembly .fv-va-art{height:56px;border-radius:1px;position:relative;overflow:hidden;background:#0E0F0F;border:1px solid #26251F}
+#fv-vestige-assembly .fv-va-art[data-fv-va-type="document"]{background-image:repeating-linear-gradient(#26251F 0 2px,transparent 2px 10px)}
+#fv-vestige-assembly .fv-va-art[data-fv-va-type="files"]{background-image:linear-gradient(135deg,#1B1C19 25%,transparent 25%),linear-gradient(315deg,#1B1C19 25%,transparent 25%)}
+#fv-vestige-assembly .fv-va-art[data-fv-va-type="map"]{background-image:linear-gradient(#26251F 1px,transparent 1px),linear-gradient(90deg,#26251F 1px,transparent 1px);background-size:12px 12px}
+#fv-vestige-assembly .fv-va-art[data-fv-va-type="photograph"]{background-image:radial-gradient(circle at 30% 30%,#26251F,#0E0F0F 70%)}
+#fv-vestige-assembly .fv-va-tag{font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#B8955E}
+#fv-vestige-assembly .fv-va-line{font:500 13px/1.4 system-ui,sans-serif;color:#D8D2C7}
+#fv-vestige-assembly .fv-va-rule{position:absolute;left:50%;bottom:30%;height:1px;width:0;background:#C7A66C;transform:translateX(-50%);transition:width 900ms ease}
+#fv-vestige-assembly[data-fv-va-connect="1"] .fv-va-rule{width:min(760px,72vw)}
+#fv-vestige-assembly[data-fv-va-assemble="1"] .fv-va-stage,#fv-vestige-assembly[data-fv-va-assemble="1"] .fv-va-rule{opacity:0}
+#fv-vestige-assembly .fv-va-mark{position:absolute;left:50%;top:50%;display:flex;flex-direction:column;align-items:center;gap:6px;transform:translate(-50%,-50%) scale(.6);opacity:0;transition:opacity 700ms ease,transform 700ms ease}
+#fv-vestige-assembly[data-fv-va-assemble="1"] .fv-va-mark{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#fv-vestige-assembly .fv-va-mark span{display:block;height:3px;background:#C7A66C;border-radius:1px}
+#fv-vestige-assembly .fv-va-mark span:nth-child(1){width:46px}
+#fv-vestige-assembly .fv-va-mark span:nth-child(2){width:32px}
+#fv-vestige-assembly .fv-va-mark span:nth-child(3){width:20px}
+@media(max-width:640px){#fv-vestige-assembly .fv-va-stage{grid-template-columns:1fr 1fr}#fv-vestige-assembly .fv-va-frag[data-fv-va-i="2"],#fv-vestige-assembly .fv-va-frag[data-fv-va-i="3"]{display:none}}
+@media print{#fv-vestige-assembly{display:none!important}}
+@media(forced-colors:active){#fv-vestige-assembly{display:none!important}}
+@media(prefers-reduced-motion:reduce){#fv-vestige-assembly{display:none!important}}
+</style>
+<script id="fv-vestige-assembly-v1-js">
+(()=>{
+if(window.__fvVestigeAssembly)return;
+window.__fvVestigeAssembly=true;
+try{
+// FV_VESTIGE_ASSEMBLY_GATE_START
+const fvVaShouldRun=(ctx)=>{
+  if(!ctx)return false;
+  if(ctx.reducedMotion||ctx.forcedColors)return false;
+  if(ctx.sessionSeen)return false;
+  const onHome=ctx.isHomeClass||ctx.pathname==='/';
+  return !!onHome;
+};
+const fvVaTimeline=()=>[
+  {stage:'run',delay:0},
+  {stage:'connect',delay:4400},
+  {stage:'assemble',delay:5600},
+  {stage:'fade',delay:7600},
+  {stage:'remove',delay:8600}
+];
+// FV_VESTIGE_ASSEMBLY_GATE_END
+
+if(typeof document==='undefined'||!document.body){window.__fvVestigeAssembly=false;return}
+
+const SEEN_KEY='fvVestigeAssemblySeenV1';
+let sessionSeen=false;
+try{sessionSeen=sessionStorage.getItem(SEEN_KEY)==='1'}catch(_){sessionSeen=true}
+
+let reducedMotion=false;
+try{reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(_){reducedMotion=false}
+
+let forcedColors=false;
+try{forcedColors=window.matchMedia('(forced-colors: active)').matches}catch(_){forcedColors=false}
+
+const ctx={
+  reducedMotion:reducedMotion,
+  forcedColors:forcedColors,
+  sessionSeen:sessionSeen,
+  isHomeClass:document.body.classList.contains('home'),
+  pathname:location.pathname
+};
+
+if(!fvVaShouldRun(ctx))return;
+
+try{sessionStorage.setItem(SEEN_KEY,'1')}catch(_){/* private mode: acceptable, may replay once more */}
+
+const FRAGMENTS=[
+  {type:'document',tag:'Document',line:'Buried in a footnote.'},
+  {type:'files',tag:'Record set',line:'Split across six files.'},
+  {type:'map',tag:'Map',line:'Marked on a map nobody thought to compare.'},
+  {type:'photograph',tag:'Photograph',line:'Left in a photograph taken eighty years ago.'}
+];
+
+const root=document.createElement('div');
+root.id='fv-vestige-assembly';
+root.setAttribute('aria-hidden','true');
+root.setAttribute('role','presentation');
+if('inert' in root)root.inert=true;
+
+const noise=document.createElement('div');
+noise.className='fv-va-noise';
+root.appendChild(noise);
+
+const stage=document.createElement('div');
+stage.className='fv-va-stage';
+FRAGMENTS.forEach((f,i)=>{
+  const card=document.createElement('div');
+  card.className='fv-va-frag';
+  card.setAttribute('data-fv-va-i',String(i));
+  const art=document.createElement('div');
+  art.className='fv-va-art';
+  art.setAttribute('data-fv-va-type',f.type);
+  const tag=document.createElement('div');
+  tag.className='fv-va-tag';
+  tag.textContent=f.tag;
+  const line=document.createElement('div');
+  line.className='fv-va-line';
+  line.textContent=f.line;
+  card.append(art,tag,line);
+  stage.appendChild(card);
+});
+root.appendChild(stage);
+
+const rule=document.createElement('div');
+rule.className='fv-va-rule';
+root.appendChild(rule);
+
+const mark=document.createElement('div');
+mark.className='fv-va-mark';
+mark.append(document.createElement('span'),document.createElement('span'),document.createElement('span'));
+root.appendChild(mark);
+
+document.body.appendChild(root);
+
+const timers=[];
+let done=false;
+
+const clearTimers=()=>{
+  timers.forEach((t)=>clearTimeout(t));
+  timers.length=0;
+};
+
+const finish=()=>{
+  if(done)return;
+  done=true;
+  clearTimers();
+  window.removeEventListener('scroll',dismiss);
+  window.removeEventListener('keydown',dismiss);
+  window.removeEventListener('pointerdown',dismiss);
+  if(root.parentNode)root.parentNode.removeChild(root);
+};
+
+const dismiss=()=>{
+  if(done)return;
+  clearTimers();
+  root.setAttribute('data-fv-va-fast','1');
+  root.setAttribute('data-fv-va-fade','1');
+  timers.push(setTimeout(finish,320));
+};
+
+window.addEventListener('scroll',dismiss,{passive:true});
+window.addEventListener('keydown',dismiss);
+window.addEventListener('pointerdown',dismiss,{passive:true});
+
+fvVaTimeline().forEach((step)=>{
+  if(step.stage==='run'){
+    timers.push(setTimeout(()=>requestAnimationFrame(()=>root.setAttribute('data-fv-va-run','1')),step.delay));
+  }else if(step.stage==='connect'){
+    timers.push(setTimeout(()=>root.setAttribute('data-fv-va-connect','1'),step.delay));
+  }else if(step.stage==='assemble'){
+    timers.push(setTimeout(()=>root.setAttribute('data-fv-va-assemble','1'),step.delay));
+  }else if(step.stage==='fade'){
+    timers.push(setTimeout(()=>root.setAttribute('data-fv-va-fade','1'),step.delay));
+  }else if(step.stage==='remove'){
+    timers.push(setTimeout(finish,step.delay));
+  }
+});
+
+timers.push(setTimeout(finish,12000));
+
+}catch(_){
+  window.__fvVestigeAssembly=false;
+  const stray=document.getElementById('fv-vestige-assembly');
+  if(stray&&stray.parentNode)stray.parentNode.removeChild(stray);
+}
+})();
+</script>
+<!-- /wp:html -->

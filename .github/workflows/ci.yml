@@ -62,6 +62,9 @@ jobs:
       - name: Case Search adversarial behavior
         run: python3 tests/verify_case_search.py
 
+      - name: Vestige Assembly adversarial behavior
+        run: python3 tests/verify_vestige_assembly.py
+
       - name: Build deterministic bridge package twice
         run: |
           mkdir -p dist

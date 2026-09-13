@@ -26,6 +26,7 @@ PACKAGE_FILES = {
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
     "payloads/signal-finder-wp-block-v1.txt",
+    "payloads/vestige-assembly-wp-block-v1.txt",
 }
 CHECKOUT_SHA = "11d5960a326750d5838078e36cf38b85af677262"
 UPLOAD_ARTIFACT_SHA = "ea165f8d65b6e75b540449e92b4886f43607fa02"
