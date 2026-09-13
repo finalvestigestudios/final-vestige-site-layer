@@ -39,14 +39,13 @@
   .fv-margin-strip__count{font:600 10px/1 var(--fv-mono);color:var(--fv-ink-faint);min-width:52px;text-align:center}
   /* JS-enhanced state: single-item reveal window with source metadata */
   .fv-margin-strip[data-fv-enhanced="1"] .fv-margin-strip__list{position:relative;min-height:46px}
-  .fv-margin-strip[data-fv-enhanced="1"] .fv-margin-strip__list li{position:absolute;inset:0;padding:0;opacity:0;transform:translateY(6px);transition:opacity 420ms ease,transform 420ms ease;pointer-events:none}
-  .fv-margin-strip[data-fv-enhanced="1"] .fv-margin-strip__list li[data-fv-active="1"]{opacity:1;transform:translateY(0);pointer-events:auto}
   .fv-margin-strip__meta{display:block;margin-top:3px;color:var(--fv-ink-faint);font:600 10px/1.4 var(--fv-mono);letter-spacing:.03em}
 
   /* ================= HERO: THE VESTIGE ASSEMBLY ================= */
   .fv-studios-hero{position:relative;overflow:hidden;background:var(--fv-bg-0);border-bottom:1px solid var(--fv-border);padding:clamp(56px,7vw,100px) clamp(18px,4vw,44px) clamp(58px,7vw,96px)}
   .fv-studios-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(184,149,94,.13),transparent 28%),radial-gradient(circle at 88% 92%,rgba(244,239,230,.045),transparent 26%);pointer-events:none}
   .fv-studios-hero__inner{position:relative;max-width:1200px;margin:0 auto}
+  @media(min-width:1680px){.fv-studios-hero__inner{max-width:1560px}}
   .fv-studios-hero__eyebrow{margin:0 0 18px;color:var(--fv-accent);font:800 10px/1.2 var(--fv-sans);letter-spacing:.2em;text-transform:uppercase}
   .fv-studios-hero h1{max-width:1000px;margin:0;color:var(--fv-ink);font-family:var(--fv-display);font-size:clamp(56px,9.4vw,132px);font-weight:400;line-height:.94;letter-spacing:-.015em;text-wrap:balance}
   .fv-studios-hero__dek{max-width:680px;margin:24px 0 0;color:var(--fv-ink-dim);font-size:clamp(17px,1.7vw,21px);line-height:1.55;text-wrap:balance}
@@ -61,11 +60,9 @@
   .fv-assembly{position:relative;margin-top:clamp(46px,6vw,78px);min-height:210px;padding:4px 4px 30px;overflow:hidden}
   .fv-assembly__stage{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative;z-index:1}
   .fv-assembly__frag{border:1px solid #4a473f;border-radius:2px;background:#1c1b17;padding:16px 16px 18px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;box-shadow:0 14px 34px rgba(0,0,0,.45)}
-  .fv-assembly__art{height:52px;border-radius:1px;background:var(--fv-bg-0);border:1px solid var(--fv-border-soft)}
-  .fv-assembly__art[data-type="document"]{background-image:repeating-linear-gradient(#26251f 0 2px,transparent 2px 10px)}
-  .fv-assembly__art[data-type="files"]{background-image:linear-gradient(135deg,#1b1c19 25%,transparent 25%),linear-gradient(315deg,#1b1c19 25%,transparent 25%)}
-  .fv-assembly__art[data-type="map"]{background-image:linear-gradient(#26251f 1px,transparent 1px),linear-gradient(90deg,#26251f 1px,transparent 1px);background-size:12px 12px}
-  .fv-assembly__art[data-type="photograph"]{background-image:radial-gradient(circle at 30% 30%,#26251f,var(--fv-bg-0) 70%)}
+  .fv-assembly__art{height:92px;border-radius:1px;overflow:hidden;background:var(--fv-bg-0);border:1px solid var(--fv-border-soft)}
+  .fv-assembly__art img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(.45) sepia(.1) contrast(1.08);opacity:.92}
+  .fv-assembly__cite{display:block;margin-top:2px;font:600 9px/1.3 var(--fv-mono);letter-spacing:.03em;color:#817c74}
   .fv-assembly__tag{font:700 10px/1.2 var(--fv-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fv-accent)}
   .fv-assembly__line{margin:0;font-size:13px;line-height:1.45;color:var(--fv-ink-muted);max-width:94%}
   /* JS choreography: fragments start scattered (off-grid rotation/offset/scale)
@@ -82,8 +79,23 @@
   .fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="1"]{transition-delay:460ms}
   .fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="2"]{transition-delay:800ms}
   .fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="3"]{transition-delay:1140ms}
-  .fv-assembly__rule{position:absolute;left:50%;bottom:6px;height:2px;width:0;background:var(--fv-accent-bright);box-shadow:0 0 10px rgba(199,166,108,.7);transform:translateX(-50%);transition:width 700ms ease}
-  .fv-assembly[data-fv-connect="1"] .fv-assembly__rule{width:min(640px,68%)}
+  .fv-assembly__rule{position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--fv-accent-bright);box-shadow:0 0 10px rgba(199,166,108,.7);transform:scaleX(0);transition:transform 700ms ease}
+  .fv-assembly[data-fv-connect="1"] .fv-assembly__rule{transform:scaleX(1)}
+
+  /* Wide layout: fragments sit BESIDE the headline (2x2 cluster), not in a
+     separate band beneath it — the evidence and the message occupy the
+     same frame instead of the hero having one empty half. */
+  @media(min-width:980px){
+    .fv-studios-hero__inner{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,3vw,56px);align-items:center}
+    .fv-assembly{margin-top:0;padding:16px;overflow:visible}
+    .fv-assembly__stage{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .fv-assembly__rule{display:none}
+    .fv-assembly__stage{border-radius:4px;transition:box-shadow 700ms ease}
+    .fv-assembly[data-fv-connect="1"] .fv-assembly__stage{box-shadow:0 0 0 1px rgba(199,166,108,.3),0 0 44px rgba(199,166,108,.16)}
+    .fv-studios-hero h1{font-size:clamp(46px,6.4vw,96px)}
+    .fv-studios-hero__dek{max-width:none}
+  }
+  @media(min-width:1680px){.fv-studios-hero h1{font-size:clamp(60px,5.6vw,108px)}}
   @media(max-width:760px){
     .fv-assembly__stage{grid-template-columns:1fr 1fr;row-gap:28px}
     .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="0"]{transform:translate(-3%,14px) rotate(-4deg) scale(.94)}
@@ -91,7 +103,15 @@
     .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="2"]{transform:translate(-3%,14px) rotate(3deg) scale(.94)}
     .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="3"]{transform:translate(3%,-14px) rotate(-3deg) scale(.92)}
   }
-  @media(max-width:520px){.fv-assembly__stage{grid-template-columns:1fr}}
+  @media(max-width:520px){
+    .fv-assembly__stage{grid-template-columns:1fr;row-gap:22px}
+    .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="0"]{transform:translate(-4%,10px) rotate(-3deg) scale(.97)}
+    .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="1"]{transform:translate(4%,-10px) rotate(2.5deg) scale(.96)}
+    .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="2"]{transform:translate(-4%,10px) rotate(2.5deg) scale(.97)}
+    .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="3"]{transform:translate(4%,-10px) rotate(-3deg) scale(.96)}
+    .fv-assembly[data-fv-in="1"] .fv-assembly__frag{transform:translate(0,0) rotate(-1.2deg) scale(1)}
+    .fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="1"],.fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="3"]{transform:translate(0,0) rotate(1.2deg) scale(1)}
+  }
 
   /* ================= WORLDS (differentiated, replaces the six identical cards) ================= */
   .fv-worlds{background:var(--fv-bg-1);border-bottom:1px solid var(--fv-border);padding:clamp(50px,6vw,84px) clamp(18px,4vw,44px)}
@@ -101,7 +121,7 @@
   .fv-worlds__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,auto);gap:14px}
   .fv-world{position:relative;border:1px solid var(--fv-border-strong);border-radius:2px;padding:22px 20px;text-decoration:none;color:var(--fv-ink);display:flex;flex-direction:column;justify-content:space-between;min-height:200px;transition:border-color .18s ease,transform .18s ease}
   .fv-world:hover,.fv-world:focus-visible{border-color:var(--fv-accent);transform:translateY(-2px);outline:none}
-  .fv-world__num{font:700 10px/1 var(--fv-mono);color:var(--fv-accent);letter-spacing:.12em}
+  .fv-world__num{font:700 10px/1 var(--fv-mono);color:var(--fv-accent);letter-spacing:.06em;opacity:.85}
   .fv-world__name{margin:14px 0 8px;font-size:20px;font-weight:520;letter-spacing:-.01em}
   .fv-world__line{margin:0;font-size:13px;line-height:1.5;color:var(--fv-ink-faint)}
   .fv-world__go{margin-top:16px;font:700 11px/1 var(--fv-sans);color:var(--fv-ink-dim)}
@@ -119,11 +139,28 @@
   @media(max-width:980px){.fv-worlds__grid{grid-template-columns:repeat(2,1fr)}.fv-world--investigations,.fv-world--record,.fv-world--labs,.fv-world--editions{grid-column:span 2}.fv-world--investigations{min-height:280px}}
   @media(max-width:560px){.fv-worlds__grid{grid-template-columns:1fr}.fv-world--investigations,.fv-world--record,.fv-world--labs,.fv-world--editions,.fv-world--films,.fv-world--exchange{grid-column:span 1}}
 
-  /* ================= MISSION (quiet editorial beat) ================= */
-  .fv-mission{background:var(--fv-bg-0);padding:clamp(70px,10vw,140px) clamp(18px,4vw,44px);border-bottom:1px solid var(--fv-border)}
-  .fv-mission__inner{max-width:600px;margin:0 auto;text-align:left}
-  .fv-mission h2{margin:0 0 26px;font-family:var(--fv-display);font-size:clamp(30px,4vw,46px);font-weight:420;line-height:1.16;letter-spacing:-.01em}
-  .fv-mission p{margin:0 0 16px;color:var(--fv-ink-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.7;max-width:520px}
+  /* ================= THE LIBRARY: Inspect the Evidence ================= */
+  .fv-library{background:#0e0f0f;border-bottom:1px solid var(--fv-border);padding:clamp(56px,7vw,96px) clamp(18px,4vw,44px)}
+  .fv-library__head{max-width:1200px;margin:0 auto clamp(28px,4vw,40px)}
+  .fv-library h2{margin:0;font-family:var(--fv-display);font-size:clamp(28px,3.6vw,42px);font-weight:420;letter-spacing:-.01em;color:var(--fv-ink)}
+  .fv-library__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:clamp(24px,4vw,48px);align-items:start}
+  .fv-library__frame{position:relative;border:1px solid var(--fv-border-strong);overflow:hidden;cursor:crosshair;background:#000}
+  .fv-library__frame img{display:block;width:100%;height:auto}
+  .fv-library__loupe{position:absolute;width:180px;height:180px;border-radius:50%;border:2px solid var(--fv-accent-bright);box-shadow:0 0 0 2px rgba(0,0,0,.6),0 10px 30px rgba(0,0,0,.5);background-repeat:no-repeat;pointer-events:none;transform:translate(-50%,-50%)}
+  .fv-library__hint{position:absolute;bottom:10px;right:12px;font:600 10px/1 var(--fv-mono);letter-spacing:.06em;text-transform:uppercase;color:#d8d2c7;background:rgba(10,10,10,.6);padding:6px 9px;border-radius:2px;pointer-events:none}
+  .fv-library__frame[data-fv-active="1"] .fv-library__hint{opacity:0}
+  .fv-library__meta dl{margin:0;display:grid;grid-template-columns:1fr;gap:14px}
+  .fv-library__meta dt{font:700 10px/1.3 var(--fv-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fv-accent);margin:0}
+  .fv-library__meta dd{margin:4px 0 0;font-size:14px;line-height:1.55;color:var(--fv-ink-muted)}
+  .fv-library__meta a{color:var(--fv-accent-bright)}
+  @media(max-width:900px){.fv-library__grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.fv-library__loupe{transition:none}}
+
+  /* ================= MISSION (monumental pivot — center, huge, quiet) ================= */
+  .fv-mission{background:var(--fv-bg-0);padding:clamp(90px,14vw,190px) clamp(18px,4vw,44px);border-bottom:1px solid var(--fv-border);text-align:center}
+  .fv-mission__inner{max-width:900px;margin:0 auto}
+  .fv-mission h2{margin:0 auto 30px;font-family:var(--fv-display);font-size:clamp(38px,6.4vw,78px);font-weight:400;line-height:1.08;letter-spacing:-.015em;max-width:820px}
+  .fv-mission p{margin:0 auto 16px;color:var(--fv-ink-dim);font-size:clamp(16px,1.6vw,20px);line-height:1.7;max-width:480px}
   .fv-mission p:last-child{margin-bottom:0}
 
   /* ================= LIVE INVESTIGATION WALKTHROUGH ================= */
@@ -137,7 +174,7 @@
   .fv-invest__stage[data-fv-active="1"]{color:var(--fv-ink)}
   .fv-invest__stage:not([data-fv-active="1"]){color:var(--fv-ink-faint)}
   .fv-invest__stage-num{font:700 10px/1 var(--fv-mono);color:var(--fv-accent);letter-spacing:.1em}
-  .fv-invest__stage-title{display:block;margin:8px 0 6px;font-size:19px;font-weight:520}
+  .fv-invest__stage-title{display:block;margin:8px 0 6px;font-family:var(--fv-display);font-size:23px;font-weight:460}
   .fv-invest__stage-body{margin:0;font-size:14px;line-height:1.6;color:var(--fv-ink-faint);max-width:440px}
   .fv-invest__evidence{position:sticky;top:88px;border:1px solid var(--fv-border-strong);background:#0e0f0f;overflow:hidden}
   .fv-invest__evidence img{width:100%;height:min(56vh,520px);object-fit:cover;object-position:center;background:#0a0b0b}
@@ -239,6 +276,7 @@
 <!-- ============================================================= -->
 <section class="fv-studios-hero" aria-labelledby="fv-studios-title">
   <div class="fv-studios-hero__inner">
+   <div class="fv-studios-hero__text">
     <p class="fv-studios-hero__eyebrow">FINAL VESTIGE STUDIOS</p>
     <h1 id="fv-studios-title">Find what others miss.</h1>
     <p class="fv-studios-hero__dek">The answer is often still there. Buried in a footnote. Split across databases. Marked on an old map. We follow the trace and show exactly where it led.</p>
@@ -246,28 +284,33 @@
       <a class="fv-cta fv-cta--primary" href="/blog/">See what we found →</a>
       <a class="fv-cta fv-cta--ghost" href="/accountability/">Search the Public Record →</a>
     </div>
+   </div>
 
     <div class="fv-assembly" data-fv-assembly aria-hidden="false">
       <div class="fv-assembly__stage">
         <div class="fv-assembly__frag" data-i="0">
-          <div class="fv-assembly__art" data-type="document"></div>
+          <div class="fv-assembly__art"><img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?resize=420,300&amp;ssl=1" alt="The Victory Point note from the Franklin expedition, with the 1847 message and the 1848 update written around its margins." loading="eager" width="420" height="300"></div>
           <div class="fv-assembly__tag">Document</div>
           <p class="fv-assembly__line">Buried in a footnote.</p>
+          <span class="fv-assembly__cite">Franklin Expedition · 1847–48</span>
         </div>
         <div class="fv-assembly__frag" data-i="1">
-          <div class="fv-assembly__art" data-type="files"></div>
+          <div class="fv-assembly__art"><img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/J006-V06R1-evidence-boundary.png?resize=420,300&amp;ssl=1" alt="An evidence-boundary diagram separating a court's conclusion from a later plausible hypothesis and the unresolved initiating sequence." loading="eager" width="420" height="300"></div>
           <div class="fv-assembly__tag">Record set</div>
           <p class="fv-assembly__line">Split across six files.</p>
+          <span class="fv-assembly__cite">Final Vestige · Evidence Boundary</span>
         </div>
         <div class="fv-assembly__frag" data-i="2">
-          <div class="fv-assembly__art" data-type="map"></div>
+          <div class="fv-assembly__art"><img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=420,300&amp;ssl=1" alt="A 1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network." loading="eager" width="420" height="300"></div>
           <div class="fv-assembly__tag">Map</div>
           <p class="fv-assembly__line">Marked on a map nobody thought to compare.</p>
+          <span class="fv-assembly__cite">NYPL Digital Collections · 1903</span>
         </div>
         <div class="fv-assembly__frag" data-i="3">
-          <div class="fv-assembly__art" data-type="photograph"></div>
+          <div class="fv-assembly__art"><img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/fv-uss-forrestal-1967-featured-1200x630-1.webp?resize=420,300&amp;ssl=1" alt="U.S. Navy crewmen handling fire hoses on USS Forrestal's damaged flight deck after the July 29, 1967 fire." loading="eager" width="420" height="300"></div>
           <div class="fv-assembly__tag">Photograph</div>
-          <p class="fv-assembly__line">Left in a photograph taken eighty years ago.</p>
+          <p class="fv-assembly__line">Left in a photograph taken decades ago.</p>
+          <span class="fv-assembly__cite">U.S. Navy · USN 1126668 · 1967</span>
         </div>
       </div>
       <div class="fv-assembly__rule"></div>
@@ -285,35 +328,62 @@
   </div>
   <div class="fv-worlds__grid">
     <a class="fv-world fv-world--investigations" href="/blog/">
-      <span class="fv-world__num">01</span>
+      <span class="fv-world__num">N&deg;01</span>
       <div><div class="fv-world__name">Investigations</div><p class="fv-world__line">Stories reconstructed from surviving evidence.</p></div>
-      <span class="fv-world__go">Journal, archives, History Lab, field research →</span>
+      <span class="fv-world__go">Journal, archives, History Lab, field research</span>
     </a>
     <a class="fv-world fv-world--record" href="/accountability/">
-      <span class="fv-world__num">02</span>
+      <span class="fv-world__num">N&deg;02</span>
       <div><div class="fv-world__name">The Public Record</div><p class="fv-world__line">Public information made easier to find, follow, and check.</p></div>
-      <span class="fv-world__go">Open the first release →</span>
+      <span class="fv-world__go">Open the first release</span>
     </a>
     <a class="fv-world fv-world--labs" href="/labs/">
-      <span class="fv-world__num">03</span>
+      <span class="fv-world__num">N&deg;03</span>
       <div><div class="fv-world__name">Labs</div><p class="fv-world__line">Software for fragmented records and hard-to-compare data.</p></div>
       <span class="fv-world__go">New products are in development.</span>
     </a>
     <a class="fv-world fv-world--editions" href="/collection/">
-      <span class="fv-world__num">04</span>
+      <span class="fv-world__num">N&deg;04</span>
       <div><div class="fv-world__name">Editions</div><p class="fv-world__line">Books, field manuals, and practical research resources.</p></div>
-      <span class="fv-world__go">Browse current work →</span>
+      <span class="fv-world__go">Browse current work</span>
     </a>
     <a class="fv-world fv-world--films" href="/watch/films/">
-      <span class="fv-world__num">05</span>
+      <span class="fv-world__num">N&deg;05</span>
       <div><div class="fv-world__name">Films &amp; Media</div><p class="fv-world__line">Visual investigations and documentary work.</p></div>
-      <span class="fv-world__go">Watch →</span>
+      <span class="fv-world__go">Watch</span>
     </a>
     <a class="fv-world fv-world--exchange" href="/community/">
-      <span class="fv-world__num">06</span>
+      <span class="fv-world__num">N&deg;06</span>
       <div><div class="fv-world__name">The Exchange</div><p class="fv-world__line">A community for evidence, questions, and useful knowledge.</p></div>
-      <span class="fv-world__go">Private beta →</span>
+      <span class="fv-world__go">Private beta</span>
     </a>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- NEW — The Library: Inspect the Evidence (real NYPL map)        -->
+<!-- ============================================================= -->
+<section class="fv-library" aria-labelledby="fv-library-title">
+  <div class="fv-library__head">
+    <p class="fv-eyebrow">The Library</p>
+    <h2 id="fv-library-title">Inspect the evidence.</h2>
+  </div>
+  <div class="fv-library__grid">
+    <div class="fv-library__frame" data-fv-library-frame tabindex="0" role="img" aria-label="1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network. Move a mouse or finger across the map to magnify it.">
+      <img data-fv-library-base src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=1100,743&amp;ssl=1" alt="1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network." loading="lazy" width="1100" height="743">
+      <div class="fv-library__loupe" data-fv-library-loupe hidden></div>
+      <span class="fv-library__hint" data-fv-library-hint>Move to magnify</span>
+    </div>
+    <div class="fv-library__meta">
+      <dl>
+        <dt>Title</dt><dd>Map of the borough of Brooklyn, N.Y., and vicinity showing the street railway system controlled by the Brooklyn Rapid Transit Co.</dd>
+        <dt>Date</dt><dd>1903</dd>
+        <dt>Collection</dt><dd>New York Public Library Digital Collections</dd>
+        <dt>Source</dt><dd><a href="https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0">digitalcollections.nypl.org ↗</a></dd>
+        <dt>Rights</dt><dd>Public domain (United States)</dd>
+        <dt>Why it matters</dt><dd>This map shows the Brighton line system fifteen years before a night in 1918, when a dispatcher took a new curve at five times its posted limit. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" →</a></dd>
+      </dl>
+    </div>
   </div>
 </section>
 
@@ -437,5 +507,6 @@
 <script src="assembly.js"></script>
 <script src="margins.js"></script>
 <script src="investigation.js"></script>
+<script src="library.js"></script>
 </body>
 </html>

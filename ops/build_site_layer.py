@@ -26,6 +26,7 @@ PACKAGE_FILES = (
     "payloads/hero-assembly-wp-block-v1.txt",
     "payloads/margins-wire-wp-block-v1.txt",
     "payloads/investigation-walkthrough-wp-block-v1.txt",
+    "payloads/library-inspector-wp-block-v1.txt",
 )
 
 

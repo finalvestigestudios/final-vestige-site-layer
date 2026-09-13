@@ -53,8 +53,13 @@ function fvsl_release_manifest() {
         ),
         'investigation-walkthrough' => array(
             'file'   => 'investigation-walkthrough-wp-block-v1.txt',
-            'bytes'  => 5027,
-            'sha256' => '2c263faa50c8a9334919f169056b8f98628531279ed54973262bdc044088752d',
+            'bytes'  => 5180,
+            'sha256' => '8d8efdfb50cb177c852ed87283f9ba0628bc033a7c0b51ca06ae627c391622bd',
+        ),
+        'library-inspector' => array(
+            'file'   => 'library-inspector-wp-block-v1.txt',
+            'bytes'  => 2646,
+            'sha256' => '0d736919a7defab459f041c41aea77b851ceb63463e718b84e367a6b68f1b2d3',
         ),
     );
 }

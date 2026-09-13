@@ -63,6 +63,8 @@
     },
   ];
 
+  let manualUntil = 0;
+
   const activate = (i) => {
     stages.forEach((s) => s.removeAttribute('data-fv-active'));
     stages[i].setAttribute('data-fv-active', '1');
@@ -79,15 +81,18 @@
     if (quoteEl) quoteEl.textContent = '“' + ev.quote + '”';
   };
 
+  const activateManually = (i) => { manualUntil = Date.now() + 800; activate(i); };
+
   stages.forEach((stage, i) => {
-    stage.addEventListener('click', () => activate(i));
+    stage.addEventListener('click', () => activateManually(i));
     stage.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(i); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateManually(i); }
     });
   });
 
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
+      if (Date.now() < manualUntil) return;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const i = stages.indexOf(entry.target);

@@ -23,11 +23,24 @@
   let playing = !reduced;
   let timer = null;
 
+  const paint = () => {
+    items.forEach((el, i) => {
+      if (i === index) {
+        el.style.setProperty('position', 'relative', 'important');
+        el.style.setProperty('opacity', '1', 'important');
+      } else {
+        el.style.setProperty('position', 'absolute', 'important');
+        el.style.setProperty('opacity', '0', 'important');
+      }
+    });
+    if (countEl) countEl.textContent = String(index + 1).padStart(2, '0') + ' / ' + items.length;
+  };
+
   const show = (i) => {
     items[index].removeAttribute('data-fv-active');
     index = (i + items.length) % items.length;
     items[index].setAttribute('data-fv-active', '1');
-    if (countEl) countEl.textContent = String(index + 1).padStart(2, '0') + ' / ' + items.length;
+    paint();
   };
 
   const stop = () => { if (timer) { clearInterval(timer); timer = null; } };

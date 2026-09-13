@@ -1,0 +1,71 @@
+(() => {
+  const frame = document.querySelector('[data-fv-library-frame]');
+  const img = frame && frame.querySelector('[data-fv-library-base]');
+  const loupe = frame && frame.querySelector('[data-fv-library-loupe]');
+  const hint = frame && frame.querySelector('[data-fv-library-hint]');
+  if (!frame || !img || !loupe) return;
+
+  // Real, already-published high-resolution source for magnification --
+  // the same NYPL map, just requested larger, loaded only on first use.
+  const HI_RES = 'https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=2800,1892&ssl=1';
+  const ZOOM = 2.6;
+  let hiResReady = false;
+  let hiResLoading = false;
+
+  const ensureHiRes = () => {
+    if (hiResReady || hiResLoading) return;
+    hiResLoading = true;
+    const preload = new Image();
+    preload.onload = () => { hiResReady = true; };
+    preload.src = HI_RES;
+  };
+
+  const point = (clientX, clientY) => {
+    const rect = frame.getBoundingClientRect();
+    const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
+    const y = Math.min(Math.max(clientY - rect.top, 0), rect.height);
+    const pctX = (x / rect.width) * 100;
+    const pctY = (y / rect.height) * 100;
+
+    loupe.style.left = x + 'px';
+    loupe.style.top = y + 'px';
+    loupe.style.backgroundImage = `url(${hiResReady ? HI_RES : img.src})`;
+    loupe.style.backgroundSize = `${rect.width * ZOOM}px ${rect.height * ZOOM}px`;
+    loupe.style.backgroundPosition = `${pctX}% ${pctY}%`;
+  };
+
+  const show = () => {
+    ensureHiRes();
+    loupe.hidden = false;
+    frame.setAttribute('data-fv-active', '1');
+    if (hint) hint.style.opacity = '0';
+  };
+  const hide = () => {
+    loupe.hidden = true;
+    frame.removeAttribute('data-fv-active');
+    if (hint) hint.style.opacity = '';
+  };
+
+  frame.addEventListener('mouseenter', show);
+  frame.addEventListener('mousemove', (e) => point(e.clientX, e.clientY));
+  frame.addEventListener('mouseleave', hide);
+
+  frame.addEventListener('touchstart', (e) => { show(); if (e.touches[0]) point(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  frame.addEventListener('touchmove', (e) => { if (e.touches[0]) point(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  frame.addEventListener('touchend', hide);
+
+  // Keyboard: Enter/Space toggles a centered magnified view for users who
+  // can't hover or drag.
+  frame.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (loupe.hidden) {
+        const rect = frame.getBoundingClientRect();
+        show();
+        point(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      } else {
+        hide();
+      }
+    }
+  });
+})();
