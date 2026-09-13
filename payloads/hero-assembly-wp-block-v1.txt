@@ -1,0 +1,42 @@
+<!-- wp:html -->
+<script id="fv-hero-assembly-v1-js">
+(()=>{
+if(window.__fvHeroAssembly)return;
+window.__fvHeroAssembly=true;
+try{
+// FV_HERO_ASSEMBLY_GATE_START
+const fvHaShouldRun=(ctx)=>{
+  if(!ctx)return false;
+  if(ctx.reducedMotion)return false;
+  return !!ctx.hasRoot;
+};
+const fvHaTimeline=()=>[
+  {stage:'run',delay:0},
+  {stage:'in',delay:80},
+  {stage:'connect',delay:1980}
+];
+// FV_HERO_ASSEMBLY_GATE_END
+
+const root=document.querySelector('[data-fv-assembly]');
+
+let reducedMotion=false;
+try{reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(_){reducedMotion=false}
+
+if(!fvHaShouldRun({reducedMotion:reducedMotion,hasRoot:!!root}))return;
+
+fvHaTimeline().forEach((step)=>{
+  if(step.stage==='run'){
+    setTimeout(()=>root.setAttribute('data-fv-run','1'),step.delay);
+  }else if(step.stage==='in'){
+    setTimeout(()=>requestAnimationFrame(()=>root.setAttribute('data-fv-in','1')),step.delay);
+  }else if(step.stage==='connect'){
+    setTimeout(()=>root.setAttribute('data-fv-connect','1'),step.delay);
+  }
+});
+
+}catch(_){
+  window.__fvHeroAssembly=false;
+}
+})();
+</script>
+<!-- /wp:html -->

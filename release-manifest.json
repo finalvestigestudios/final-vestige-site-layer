@@ -1,6 +1,6 @@
 {
-  "release_id": "FVSL-E2E-CANARY-001",
-  "version": "0.2.1",
+  "release_id": "FVSL-VESTIGE-ASSEMBLY-HOME-001",
+  "version": "0.3.0",
   "delivery": {
     "wordpress_hook": "wp_footer",
     "priority": 99,
@@ -31,6 +31,24 @@
       "file": "payloads/case-search-wp-block-v1.txt",
       "bytes": 17534,
       "sha256": "e313db1e31ff1fce01b8bbd5d8dda03673b9a52aadcc7cbecafd2cec50dcc6a7"
+    },
+    {
+      "name": "Hero Assembly",
+      "file": "payloads/hero-assembly-wp-block-v1.txt",
+      "bytes": 1137,
+      "sha256": "5535880f3db7805b17b2766bcb8e8f6381456c037f8c67c3944f30c8aa8f86d0"
+    },
+    {
+      "name": "Margins Wire",
+      "file": "payloads/margins-wire-wp-block-v1.txt",
+      "bytes": 4392,
+      "sha256": "004b6462e663155e5fede0620dd6f60fa13729984fbf69117aa1672a2e6102de"
+    },
+    {
+      "name": "Investigation Walkthrough",
+      "file": "payloads/investigation-walkthrough-wp-block-v1.txt",
+      "bytes": 5027,
+      "sha256": "2c263faa50c8a9334919f169056b8f98628531279ed54973262bdc044088752d"
     }
   ],
   "failure_policy": "If any payload is missing, has a byte-count mismatch, or has a SHA-256 mismatch, emit none of the site-layer payloads.",

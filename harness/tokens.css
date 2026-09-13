@@ -1,0 +1,23 @@
+/* Extracted from the live page-6 "Home" content (finalvestige.com), not invented.
+   Assembler theme body font is Inter; existing wp:html sections on this page
+   deliberately use system-ui for custom sections, which this preserves. */
+:root{
+  --fv-bg-0:#090a0a;      /* hero background */
+  --fv-bg-1:#0c0d0d;      /* lead shell background */
+  --fv-bg-2:#0b0c0b;      /* enter-record background */
+  --fv-bg-3:#0f100f;      /* margin strip background */
+  --fv-bg-4:#101111;      /* taxonomy shell background */
+  --fv-bg-5:#141514;      /* trails background */
+  --fv-ink:#f4efe6;
+  --fv-ink-muted:#d8d2c7;
+  --fv-ink-faint:#aaa49a;
+  --fv-ink-dim:#b8b1a6;
+  --fv-border:#2a2927;
+  --fv-border-strong:#34322e;
+  --fv-border-soft:#24231f;
+  --fv-accent:#b8955e;
+  --fv-accent-bright:#c7a66c;
+  --fv-sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fv-display:"Fraunces",ui-serif,Georgia,serif;
+  --fv-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}

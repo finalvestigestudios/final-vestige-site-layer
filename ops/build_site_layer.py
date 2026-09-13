@@ -23,6 +23,9 @@ PACKAGE_FILES = (
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
     "payloads/signal-finder-wp-block-v1.txt",
+    "payloads/hero-assembly-wp-block-v1.txt",
+    "payloads/margins-wire-wp-block-v1.txt",
+    "payloads/investigation-walkthrough-wp-block-v1.txt",
 )
 
 
