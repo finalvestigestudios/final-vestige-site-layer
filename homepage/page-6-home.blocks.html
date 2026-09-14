@@ -96,6 +96,7 @@
 <section class="fv-studios-hero" aria-labelledby="fv-studios-title">
   <div class="fv-studios-hero__inner">
    <div class="fv-studios-hero__text">
+    <span class="fv-act">Act I &mdash; The Find</span>
     <p class="fv-studios-hero__eyebrow">FINAL VESTIGE STUDIOS</p>
     <h1 id="fv-studios-title">Find what others miss.</h1>
     <p class="fv-studios-hero__dek">The answer is often still there. Buried in a footnote. Split across databases. Marked on an old map. We follow the trace and show exactly where it led.</p>
@@ -136,7 +137,7 @@
   </div>
 </section>
 <style>
-.fv-studios-hero{position:relative;overflow:hidden;background:#090a0a;color:#f4efe6;border-bottom:1px solid #2a2927;padding:clamp(56px,7vw,100px) clamp(18px,4vw,44px) clamp(58px,7vw,96px)}
+.fv-studios-hero{position:relative;overflow:hidden;background:#090a0a;color:#f4efe6;border-bottom:1px solid #2a2927;padding:clamp(56px,7vw,100px) clamp(18px,4vw,44px) clamp(40px,4.4vw,64px)}
 .fv-studios-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(184,149,94,.13),transparent 28%),radial-gradient(circle at 88% 92%,rgba(244,239,230,.045),transparent 26%);pointer-events:none}
 .fv-studios-hero__inner{position:relative;max-width:1200px;margin:0 auto}
 @media(min-width:1680px){.fv-studios-hero__inner{max-width:1560px}}
@@ -154,8 +155,8 @@
 .fv-assembly__frag{border:1px solid #4a473f;border-radius:2px;background:#1c1b17;padding:16px 16px 18px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;box-shadow:0 14px 34px rgba(0,0,0,.45)}
 .fv-assembly__art{height:92px;border-radius:1px;overflow:hidden;background:#090a0a;border:1px solid #24231f}
 .fv-assembly__art img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(.45) sepia(.1) contrast(1.08);opacity:.92}
-.fv-assembly__cite{display:block;margin-top:2px;font:600 9px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.03em;color:#817c74}
-.fv-assembly__tag{font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#b8955e}
+.fv-assembly__cite{display:block;margin-top:2px;font:600 9px/1.3 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.03em;color:#817c74}
+.fv-assembly__tag{font:700 10px/1.2 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#b8955e}
 .fv-assembly__line{margin:0;font-size:13px;line-height:1.45;color:#d8d2c7;max-width:94%}
 .fv-assembly[data-fv-run="1"] .fv-assembly__frag{opacity:0;transition:opacity 750ms ease,transform 750ms cubic-bezier(.2,.7,.2,1)}
 .fv-assembly[data-fv-run="1"] .fv-assembly__frag[data-i="0"]{transform:translate(-8%,22px) rotate(-7deg) scale(.9)}
@@ -190,68 +191,111 @@
 .fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="1"],.fv-assembly[data-fv-in="1"] .fv-assembly__frag[data-i="3"]{transform:translate(0,0) rotate(1.2deg) scale(1)}
 }
 @media(prefers-reduced-motion:reduce){.fv-studios-hero .fv-cta,.fv-assembly__frag{transition:none}}
+.fv-act{display:inline-block;margin:0 0 14px;font:800 9px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a8172;border:1px solid #34322e;padding:5px 9px;border-radius:1px}
+.fv-worlds__head .fv-act,.fv-invest__head .fv-act{margin-bottom:12px}
 </style>
 <!-- /wp:html --><!-- wp:html -->
 <section class="fv-worlds" aria-labelledby="fv-worlds-title">
   <div class="fv-worlds__head">
+    <span class="fv-act">Act II &mdash; The Map</span>
     <p class="fv-eyebrow">Final Vestige Studios</p>
     <h2 id="fv-worlds-title">Six ways in, built for different jobs.</h2>
   </div>
   <div class="fv-worlds__grid">
     <a class="fv-world fv-world--investigations" href="/blog/">
+      <div class="fv-world__folders" aria-hidden="true"><span></span><span></span><span></span></div>
       <span class="fv-world__num">N&deg;01</span>
       <div><div class="fv-world__name">Investigations</div><p class="fv-world__line">Stories reconstructed from surviving evidence.</p></div>
       <span class="fv-world__go">Journal, archives, History Lab, field research</span>
     </a>
     <a class="fv-world fv-world--record" href="/accountability/">
-      <span class="fv-world__num">N&deg;02</span>
-      <div><div class="fv-world__name">The Public Record</div><p class="fv-world__line">Public information made easier to find, follow, and check.</p></div>
+      <div class="fv-world__redactions" aria-hidden="true"><span style="width:72%"></span><span style="width:40%"></span><span style="width:58%"></span></div>
+      <span class="fv-world__stampnum">N&deg;02 &middot; ON FILE</span>
+      <div><div class="fv-world__name">The Public Record</div><p class="fv-world__line">Government filings and datasets, indexed so you can actually check them.</p></div>
       <span class="fv-world__go">Open the first release</span>
     </a>
     <a class="fv-world fv-world--labs" href="/labs/">
-      <span class="fv-world__num">N&deg;03</span>
+      <div class="fv-world__termbar" aria-hidden="true"><span></span><span></span><span></span><em>labs &mdash; 03</em></div>
       <div><div class="fv-world__name">Labs</div><p class="fv-world__line">Software for fragmented records and hard-to-compare data.</p></div>
-      <span class="fv-world__go">New products are in development.</span>
+      <span class="fv-world__go">&#9654;_ New products are in development.</span>
     </a>
     <a class="fv-world fv-world--editions" href="/collection/">
+      <div class="fv-world__spines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <span class="fv-world__num">N&deg;04</span>
       <div><div class="fv-world__name">Editions</div><p class="fv-world__line">Books, field manuals, and practical research resources.</p></div>
       <span class="fv-world__go">Browse current work</span>
     </a>
     <a class="fv-world fv-world--films" href="/watch/films/">
+      <div class="fv-world__reel" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <span class="fv-world__num">N&deg;05</span>
-      <div><div class="fv-world__name">Films &amp; Media</div><p class="fv-world__line">Visual investigations and documentary work.</p></div>
-      <span class="fv-world__go">Watch</span>
+      <div><div class="fv-world__name">Films<br>&amp; Media</div><p class="fv-world__line">Visual investigations and documentary work.</p></div>
+      <span class="fv-world__go">&#9658; Watch</span>
     </a>
     <a class="fv-world fv-world--exchange" href="/community/">
       <span class="fv-world__num">N&deg;06</span>
-      <div><div class="fv-world__name">The Exchange</div><p class="fv-world__line">A community for evidence, questions, and useful knowledge.</p></div>
+      <div>
+        <div class="fv-world__name">The Exchange</div>
+        <p class="fv-world__line">A community for evidence, questions, and useful knowledge.</p>
+        <ul class="fv-world__topics"><li>History</li><li>Engineering</li><li>Exploration</li><li>Archaeology</li><li>Maps</li><li>Primary records</li></ul>
+      </div>
       <span class="fv-world__go">Private beta</span>
     </a>
   </div>
 </section>
 <style>
-.fv-worlds{background:#0c0d0d;border-bottom:1px solid #2a2927;padding:clamp(50px,6vw,84px) clamp(18px,4vw,44px)}
+.fv-worlds{background:#0c0d0d;border-bottom:1px solid #2a2927;padding:clamp(36px,4.4vw,56px) clamp(18px,4vw,44px) clamp(50px,6vw,84px)}
 .fv-worlds__head{max-width:1200px;margin:0 auto clamp(28px,4vw,44px)}
 .fv-eyebrow{margin:0 0 12px;color:#b8955e;font:800 10px/1.2 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase}
 .fv-worlds h2{margin:0;font-family:"Fraunces",ui-serif,Georgia,serif;font-style:italic;font-size:clamp(22px,2.2vw,30px);font-weight:440;letter-spacing:0;line-height:1.3;max-width:520px;color:#d8d2c7}
 .fv-worlds__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,auto);gap:14px}
 .fv-world{position:relative;border:1px solid #34322e;border-radius:2px;padding:22px 20px;text-decoration:none;color:#f4efe6;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;transition:border-color .18s ease,transform .18s ease}
 .fv-world:hover,.fv-world:focus-visible{border-color:#b8955e;transform:translateY(-2px);outline:none}
-.fv-world__num{font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8955e;letter-spacing:.06em;opacity:.85}
+.fv-world__num{font:700 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8955e;letter-spacing:.06em;opacity:.85}
 .fv-world__name{margin:14px 0 8px;font-size:20px;font-weight:520;letter-spacing:-.01em}
 .fv-world__line{margin:0;font-size:13px;line-height:1.5;color:#aaa49a}
 .fv-world__go{margin-top:16px;font:700 11px/1 system-ui,sans-serif;color:#b8b1a6}
-.fv-world--investigations{grid-column:span 3;grid-row:span 2;min-height:420px;background:linear-gradient(160deg,#171512,#0c0d0c 70%)}
+.fv-world--investigations{grid-column:span 3;grid-row:span 2;min-height:420px;background:linear-gradient(160deg,#171512,#0c0d0c 70%);overflow:hidden}
 .fv-world--investigations .fv-world__name{font-size:30px}
-.fv-world--record{grid-column:span 3;background:#0e0f10;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.fv-world__folders{position:absolute;top:50%;right:52px;width:150px;height:110px;transform:translateY(-50%)}
+.fv-world__folders span{position:absolute;inset:0;border:1px solid rgba(184,149,94,.22);border-radius:2px;background:rgba(244,239,230,.015)}
+.fv-world__folders span:nth-child(1){transform:rotate(-7deg) translate(-10px,6px)}
+.fv-world__folders span:nth-child(2){transform:rotate(4deg) translate(8px,-4px);border-color:rgba(184,149,94,.16)}
+.fv-world__folders span:nth-child(3){transform:rotate(-2deg) translate(-2px,-14px);border-color:rgba(184,149,94,.32)}
+@media(max-width:980px){.fv-world__folders{display:none}}
+.fv-world--record{grid-column:span 3;position:relative;background:#0e0f10;font-family:"Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;padding-top:64px}
 .fv-world--record .fv-world__name{font-family:system-ui,sans-serif}
-.fv-world--labs{grid-column:span 2;background:repeating-linear-gradient(135deg,#101110,#101110 10px,#141513 10px,#141513 20px)}
-.fv-world--editions{grid-column:span 2;background:#121210;border-style:double;border-width:3px}
-.fv-world--films{grid-column:span 1;background:#0a0a0a}
-.fv-world--films .fv-world__name{font-size:16px}
-.fv-world--exchange{grid-column:span 1;background:#101110}
+.fv-world__stampnum{position:absolute;top:22px;right:20px;font:800 8px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:#aaa49a;border:1px solid #3a382f;padding:3px 7px;transform:rotate(-4deg)}
+.fv-world__redactions{position:absolute;top:22px;left:20px;right:110px;display:flex;flex-direction:column;gap:8px}
+.fv-world__redactions span{display:block;height:9px;background:#000;border-radius:1px;box-shadow:0 0 0 1px #2a2723}
+.fv-world--labs{grid-column:span 3;position:relative;background-color:#101110;background-image:linear-gradient(rgba(184,149,94,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(184,149,94,.08) 1px,transparent 1px);background-size:15px 15px;padding-top:44px}
+.fv-world__termbar{position:absolute;top:0;left:0;right:0;height:26px;background:#050505;border-bottom:1px solid #232221;display:flex;align-items:center;gap:6px;padding:0 12px}
+.fv-world__termbar span{width:7px;height:7px;border-radius:50%;background:#3a3733}
+.fv-world__termbar span:nth-child(1){background:#6b3d38}
+.fv-world__termbar span:nth-child(2){background:#6b5c38}
+.fv-world__termbar span:nth-child(3){background:#3d5c3a}
+.fv-world__termbar em{margin-left:6px;font:400 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;font-style:normal;color:#8a8378;letter-spacing:.02em}
+.fv-world--labs .fv-world__go{font-family:"Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace}
+.fv-world--editions{grid-column:span 2;position:relative;background:#121210;padding-left:40px;overflow:hidden}
+.fv-world__spines{position:absolute;top:0;bottom:0;left:0;width:22px;display:flex;gap:2px;padding:0}
+.fv-world__spines span{flex:1}
+.fv-world__spines span:nth-child(1){background:#6b5636}
+.fv-world__spines span:nth-child(2){background:#403a2e;margin-top:16px}
+.fv-world__spines span:nth-child(3){background:#8a7248;margin-bottom:20px}
+.fv-world__spines span:nth-child(4){background:#332e26}
+.fv-world__spines span:nth-child(5){background:#5c4d34;margin-top:10px}
+.fv-world--films{grid-column:span 2;position:relative;background:#050505;overflow:hidden;padding-top:32px;padding-bottom:32px;padding-left:28px}
+.fv-world--films:before,.fv-world--films:after{content:"";position:absolute;left:0;right:0;height:14px;background:#000;z-index:1}
+.fv-world--films:before{top:0}
+.fv-world--films:after{bottom:0}
+.fv-world__reel{position:absolute;top:14px;bottom:14px;left:0;width:9px;display:flex;flex-direction:column;justify-content:space-evenly;background:#0c0c0c;border-right:1px solid #232221}
+.fv-world__reel span{display:block;margin:0 auto;width:4px;height:4px;background:#050505;border-radius:1px}
+.fv-world--films .fv-world__name{font-family:"Fraunces",ui-serif,Georgia,serif;font-style:italic;font-size:19px;line-height:1.05;letter-spacing:-.01em}
+.fv-world--films .fv-world__go{font:700 11px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:#c7a66c}
+.fv-world--exchange{grid-column:span 2;background:#101110;background-image:repeating-linear-gradient(180deg,transparent,transparent 21px,#1a1a19 22px);position:relative}
+.fv-world--exchange:before{content:"OPEN INQUIRY";position:absolute;top:22px;right:20px;font:800 8px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;color:#aaa49a;border:1px solid #3a382f;padding:3px 6px;transform:rotate(6deg)}
 .fv-world--exchange .fv-world__name{font-size:16px}
+.fv-world__topics{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:5px}
+.fv-world__topics li{font:700 9px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;text-transform:uppercase;color:#aaa49a;border:1px solid #34322e;padding:4px 7px;border-radius:1px}
 @media(max-width:980px){.fv-worlds__grid{grid-template-columns:repeat(2,1fr)}.fv-world--investigations,.fv-world--record,.fv-world--labs,.fv-world--editions{grid-column:span 2}.fv-world--investigations{min-height:280px}}
 @media(max-width:560px){.fv-worlds__grid{grid-template-columns:1fr}.fv-world--investigations,.fv-world--record,.fv-world--labs,.fv-world--editions,.fv-world--films,.fv-world--exchange{grid-column:span 1}}
 @media(prefers-reduced-motion:reduce){.fv-world{transition:none}.fv-world:hover,.fv-world:focus-visible{transform:none}}
@@ -288,10 +332,10 @@
 .fv-library__frame{position:relative;border:1px solid #34322e;overflow:hidden;cursor:crosshair;background:#000}
 .fv-library__frame img{display:block;width:100%;height:auto}
 .fv-library__loupe{position:absolute;width:180px;height:180px;border-radius:50%;border:2px solid #c7a66c;box-shadow:0 0 0 2px rgba(0,0,0,.6),0 10px 30px rgba(0,0,0,.5);background-repeat:no-repeat;pointer-events:none;transform:translate(-50%,-50%)}
-.fv-library__hint{position:absolute;bottom:10px;right:12px;font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#d8d2c7;background:rgba(10,10,10,.6);padding:6px 9px;border-radius:2px;pointer-events:none}
+.fv-library__hint{position:absolute;bottom:10px;right:12px;font:600 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#d8d2c7;background:rgba(10,10,10,.6);padding:6px 9px;border-radius:2px;pointer-events:none}
 .fv-library__frame[data-fv-active="1"] .fv-library__hint{opacity:0}
 .fv-library__meta dl{margin:0;display:grid;grid-template-columns:1fr;gap:14px}
-.fv-library__meta dt{font:700 10px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#b8955e;margin:0}
+.fv-library__meta dt{font:700 10px/1.3 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#b8955e;margin:0}
 .fv-library__meta dd{margin:4px 0 0;font-size:14px;line-height:1.55;color:#d8d2c7}
 .fv-library__meta a{color:#c7a66c}
 @media(max-width:900px){.fv-library__grid{grid-template-columns:1fr}}
@@ -299,9 +343,9 @@
 <!-- /wp:html --><!-- wp:html -->
 <section class="fv-mission">
   <div class="fv-mission__inner">
-    <h2>Important things rarely disappear. They get buried.</h2>
-    <p>In old reports. Public filings. Photographs. Maps. Databases. Places nobody thought to compare.</p>
-    <p>Final Vestige follows the trace, and shows exactly where the conclusions came from.</p>
+    <h2>Every claim here links back to something you can check yourself.</h2>
+    <p>A record. A report. A photograph. A filing. If we can't point to it, we don't publish it.</p>
+    <p>Here's one investigation, worked that way from start to finish.</p>
   </div>
 </section>
 <style>
@@ -314,6 +358,7 @@
 <!-- /wp:html --><!-- wp:html -->
 <section class="fv-invest" aria-labelledby="fv-invest-title">
   <div class="fv-invest__head">
+    <span class="fv-act">Act III &mdash; The Reconstruction</span>
     <p class="fv-eyebrow">A Final Vestige Investigation</p>
     <h2 id="fv-invest-title">Here's what finding the trace actually looks like.</h2>
   </div>
@@ -373,14 +418,14 @@
 .fv-invest__stage{padding:18px 0;border-bottom:1px solid #34322e;cursor:pointer}
 .fv-invest__stage[data-fv-active="1"]{color:#f4efe6}
 .fv-invest__stage:not([data-fv-active="1"]){color:#aaa49a}
-.fv-invest__stage-num{font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8955e;letter-spacing:.1em}
+.fv-invest__stage-num{font:700 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8955e;letter-spacing:.1em}
 .fv-invest__stage-title{display:block;margin:8px 0 6px;font-family:"Fraunces",ui-serif,Georgia,serif;font-size:23px;font-weight:460;color:#f4efe6}
 .fv-invest__stage-body{margin:0;font-size:14px;line-height:1.6;color:#aaa49a;max-width:440px}
 .fv-invest__evidence{position:sticky;top:88px;border:1px solid #34322e;background:#0e0f0f;overflow:hidden}
 .fv-invest__evidence img{width:100%;height:min(56vh,520px);object-fit:cover;object-position:center;background:#0a0b0b}
 .fv-invest__caption{padding:18px 20px}
 .fv-invest__caption p{margin:0 0 6px;font-size:13px;line-height:1.55;color:#d8d2c7}
-.fv-invest__provenance{display:block;font:600 11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#aaa49a;letter-spacing:.02em}
+.fv-invest__provenance{display:block;font:600 11px/1.5 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;color:#aaa49a;letter-spacing:.02em}
 .fv-invest__provenance a{color:#c7a66c}
 .fv-invest__quote{margin:0;padding:20px;border-top:1px solid #34322e;font-family:"Fraunces",ui-serif,Georgia,serif;font-style:italic;font-size:17px;line-height:1.5;color:#f4efe6}
 .fv-invest__cta{display:inline-block;margin-top:26px;font:700 12px/1 system-ui,sans-serif;letter-spacing:.03em;color:#f4efe6;text-decoration:underline;text-decoration-color:#b8955e;text-underline-offset:4px}
@@ -388,7 +433,7 @@
 @media(prefers-reduced-motion:reduce){.fv-invest__stage{transition:none}}
 </style>
 <!-- /wp:html --><!-- wp:group {"align":"full","className":"fv-home-shell","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} --><div class="wp-block-group alignfull fv-home-shell" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0">
-<!-- wp:group {"align":"full","className":"fv-home-lead-shell","style":{"color":{"background":"#0C0D0D"},"border":{"bottom":{"color":"#2A2927","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|40","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} --><div class="wp-block-group alignfull fv-home-lead-shell has-background" style="border-bottom-color:#2A2927;border-bottom-width:1px;background-color:#0C0D0D;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"align":"wide","className":"fv-home-front","layout":{"type":"default"}} --><div class="wp-block-group alignwide fv-home-front"><!-- wp:paragraph {"className":"fv-eyebrow","style":{"spacing":{"margin":{"bottom":"6px"}}}} --><p class="fv-eyebrow" style="margin-bottom:6px">Current Signal</p><!-- /wp:paragraph --><!-- wp:query {"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"fv-home-lead-query","layout":{"type":"default"}} --><div class="wp-block-query fv-home-lead-query"><!-- wp:post-template {"layout":{"type":"default"}} --><!-- wp:group {"className":"fv-home-lead","layout":{"type":"default"}} --><div class="wp-block-group fv-home-lead"><!-- wp:group {"className":"fv-home-lead-copy","layout":{"type":"constrained"}} --><div class="wp-block-group fv-home-lead-copy"><!-- wp:paragraph {"className":"fv-home-kicker"} --><p class="fv-home-kicker">Latest investigation</p><!-- /wp:paragraph --><!-- wp:post-terms {"term":"category","className":"fv-stream-taxonomy"} /--><!-- wp:post-title {"isLink":true,"level":2,"className":"fv-home-lead-title"} /--><!-- wp:post-excerpt {"excerptLength":40,"className":"fv-home-lead-deck"} /--><!-- wp:group {"className":"fv-stream-meta","layout":{"type":"flex","flexWrap":"wrap"}} --><div class="wp-block-group fv-stream-meta"><!-- wp:post-date {"format":"F j, Y"} /--><!-- wp:paragraph --><p>·</p><!-- /wp:paragraph --><!-- wp:post-time-to-read /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- wp:group {"className":"fv-home-lead-visual","layout":{"type":"constrained"}} --><div class="wp-block-group fv-home-lead-visual"><!-- wp:post-featured-image {"isLink":true,"sizeSlug":"large","className":"fv-home-lead-image"} /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- /wp:post-template --></div><!-- /wp:query --><!-- wp:group {"className":"fv-home-recent-rail","layout":{"type":"default"}} --><div class="wp-block-group fv-home-recent-rail"><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Recently filed</h2><!-- /wp:heading --><!-- wp:query {"query":{"perPage":3,"pages":0,"offset":1,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"fv-home-rail-query","layout":{"type":"default"}} --><div class="wp-block-query fv-home-rail-query"><!-- wp:post-template {"className":"fv-home-rail-list","layout":{"type":"default"}} --><!-- wp:group {"className":"fv-home-rail-entry","layout":{"type":"default"}} --><div class="wp-block-group fv-home-rail-entry"><!-- wp:post-terms {"term":"category","className":"fv-stream-taxonomy"} /--><!-- wp:post-title {"isLink":true,"level":3} /--><!-- wp:group {"className":"fv-stream-meta","layout":{"type":"flex","flexWrap":"wrap"}} --><div class="wp-block-group fv-stream-meta"><!-- wp:post-date {"format":"F j, Y"} /--><!-- wp:paragraph --><p>·</p><!-- /wp:paragraph --><!-- wp:post-time-to-read /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- /wp:post-template --></div><!-- /wp:query --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group -->
+<!-- wp:group {"align":"full","className":"fv-home-lead-shell","style":{"color":{"background":"#0C0D0D"},"border":{"bottom":{"color":"#2A2927","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|40","bottom":"var:preset|spacing|70","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} --><div class="wp-block-group alignfull fv-home-lead-shell has-background" style="border-bottom-color:#2A2927;border-bottom-width:1px;background-color:#0C0D0D;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"align":"wide","className":"fv-home-front","layout":{"type":"default"}} --><div class="wp-block-group alignwide fv-home-front"><!-- wp:paragraph {"className":"fv-act"} --><p class="fv-act">Act IV — Stay on the Signal</p><!-- /wp:paragraph --><!-- wp:paragraph {"className":"fv-eyebrow","style":{"spacing":{"margin":{"bottom":"6px"}}}} --><p class="fv-eyebrow" style="margin-bottom:6px">Current Signal</p><!-- /wp:paragraph --><!-- wp:query {"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"fv-home-lead-query","layout":{"type":"default"}} --><div class="wp-block-query fv-home-lead-query"><!-- wp:post-template {"layout":{"type":"default"}} --><!-- wp:group {"className":"fv-home-lead","layout":{"type":"default"}} --><div class="wp-block-group fv-home-lead"><!-- wp:group {"className":"fv-home-lead-copy","layout":{"type":"constrained"}} --><div class="wp-block-group fv-home-lead-copy"><!-- wp:paragraph {"className":"fv-home-kicker"} --><p class="fv-home-kicker">Latest investigation</p><!-- /wp:paragraph --><!-- wp:post-terms {"term":"category","className":"fv-stream-taxonomy"} /--><!-- wp:post-title {"isLink":true,"level":2,"className":"fv-home-lead-title"} /--><!-- wp:post-excerpt {"excerptLength":40,"className":"fv-home-lead-deck"} /--><!-- wp:group {"className":"fv-stream-meta","layout":{"type":"flex","flexWrap":"wrap"}} --><div class="wp-block-group fv-stream-meta"><!-- wp:post-date {"format":"F j, Y"} /--><!-- wp:paragraph --><p>·</p><!-- /wp:paragraph --><!-- wp:post-time-to-read /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- wp:group {"className":"fv-home-lead-visual","layout":{"type":"constrained"}} --><div class="wp-block-group fv-home-lead-visual"><!-- wp:post-featured-image {"isLink":true,"sizeSlug":"large","className":"fv-home-lead-image"} /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- /wp:post-template --></div><!-- /wp:query --><!-- wp:group {"className":"fv-home-recent-rail","layout":{"type":"default"}} --><div class="wp-block-group fv-home-recent-rail"><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Recently filed</h2><!-- /wp:heading --><!-- wp:query {"query":{"perPage":3,"pages":0,"offset":1,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"fv-home-rail-query","layout":{"type":"default"}} --><div class="wp-block-query fv-home-rail-query"><!-- wp:post-template {"className":"fv-home-rail-list","layout":{"type":"default"}} --><!-- wp:group {"className":"fv-home-rail-entry","layout":{"type":"default"}} --><div class="wp-block-group fv-home-rail-entry"><!-- wp:post-terms {"term":"category","className":"fv-stream-taxonomy"} /--><!-- wp:post-title {"isLink":true,"level":3} /--><!-- wp:group {"className":"fv-stream-meta","layout":{"type":"flex","flexWrap":"wrap"}} --><div class="wp-block-group fv-stream-meta"><!-- wp:post-date {"format":"F j, Y"} /--><!-- wp:paragraph --><p>·</p><!-- /wp:paragraph --><!-- wp:post-time-to-read /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- /wp:post-template --></div><!-- /wp:query --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group -->
 <!-- wp:group {"align":"full","className":"fv-home-taxonomy-shell","style":{"color":{"background":"#101111"},"border":{"bottom":{"color":"#2A2927","width":"1px"}},"spacing":{"padding":{"top":"14px","bottom":"14px"}}},"layout":{"type":"constrained"}} --><div class="wp-block-group alignfull fv-home-taxonomy-shell has-background" style="border-bottom-color:#2A2927;border-bottom-width:1px;background-color:#101111;padding-top:14px;padding-bottom:14px"><!-- wp:terms-query {"termQuery":{"perPage":6,"taxonomy":"category","order":"desc","orderBy":"count","include":[1253,425,232815,257245,9369,42339],"hideEmpty":true,"showNested":false,"inherit":false},"align":"wide","className":"fv-home-taxonomy"} --><div class="wp-block-terms-query alignwide fv-home-taxonomy"><!-- wp:term-template {"className":"fv-home-taxonomy-grid","layout":{"type":"grid","columnCount":6}} --><!-- wp:group {"className":"fv-home-taxonomy-item","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} --><div class="wp-block-group fv-home-taxonomy-item"><!-- wp:term-name {"isLink":true,"level":0,"className":"fv-home-taxonomy-name"} /--><!-- wp:group {"className":"fv-home-taxonomy-meta","layout":{"type":"flex","flexWrap":"nowrap"}} --><div class="wp-block-group fv-home-taxonomy-meta"><!-- wp:term-count {"bracketType":"none","className":"fv-home-taxonomy-count"} /--><!-- wp:paragraph --><p>FILED</p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group --><!-- /wp:term-template --></div><!-- /wp:terms-query --></div><!-- /wp:group -->
 <!-- wp:group {"align":"wide","className":"fv-exchange-preview-strip","style":{"border":{"top":{"color":"#34322E","width":"1px"},"bottom":{"color":"#34322E","width":"1px"},"left":{"color":"#B8955E","width":"2px"}},"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"},"margin":{"top":"var:preset|spacing|50","bottom":"0"}}},"layout":{"type":"constrained"}} --><div class="wp-block-group alignwide fv-exchange-preview-strip" style="border-top-color:#34322E;border-top-width:1px;border-bottom-color:#34322E;border-bottom-width:1px;border-left-color:#B8955E;border-left-width:2px;margin-top:var(--wp--preset--spacing--50);margin-bottom:0;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px"><!-- wp:paragraph {"style":{"color":{"text":"#B8955E"},"typography":{"fontSize":"10px","fontWeight":"700","letterSpacing":"0.12em"}}} --><p class="has-text-color" style="color:#B8955E;font-size:10px;font-weight:700;letter-spacing:0.12em">THE EXCHANGE</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">The Exchange is in private beta.</h2><!-- /wp:heading --><!-- wp:paragraph {"style":{"color":{"text":"#AAA49A"}}} --><p class="has-text-color" style="color:#AAA49A">A discussion space for history, engineering, exploration, archaeology, maps, primary records, and questions that benefit from seeing the evidence. Access is limited to authorized beta members while public launch remains closed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p><a href="/community/">About The Exchange →</a></p><!-- /wp:paragraph --></div><!-- /wp:group -->
 <!-- wp:group {"align":"wide","className":"fv-home-latest","layout":{"type":"constrained"}} --><div class="wp-block-group alignwide fv-home-latest"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} --><div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">More investigations</h2><!-- /wp:heading --><!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontWeight":"650"}}} --><p style="font-size:13px;font-weight:650"><a href="/blog/">All investigations →</a></p><!-- /wp:paragraph --></div><!-- /wp:group --><!-- wp:query {"query":{"perPage":6,"pages":0,"offset":4,"postType":"post","order":"desc","orderBy":"date","inherit":false},"align":"wide","className":"fv-home-recent-query","layout":{"type":"default"}} --><div class="wp-block-query alignwide fv-home-recent-query"><!-- wp:post-template {"className":"fv-home-recent-grid","layout":{"type":"grid","columnCount":3}} --><!-- wp:group {"className":"fv-home-recent-card","layout":{"type":"constrained"}} --><div class="wp-block-group fv-home-recent-card"><!-- wp:post-featured-image {"isLink":true,"sizeSlug":"medium_large","className":"fv-home-recent-thumb"} /--><!-- wp:post-terms {"term":"category","className":"fv-stream-taxonomy"} /--><!-- wp:post-title {"isLink":true,"level":3} /--><!-- wp:post-excerpt {"excerptLength":32} /--><!-- wp:group {"className":"fv-stream-meta","layout":{"type":"flex","flexWrap":"wrap"}} --><div class="wp-block-group fv-stream-meta"><!-- wp:post-date {"format":"F j, Y"} /--><!-- wp:paragraph --><p>·</p><!-- /wp:paragraph --><!-- wp:post-time-to-read /--></div><!-- /wp:group --></div><!-- /wp:group --><!-- /wp:post-template --></div><!-- /wp:query --></div><!-- /wp:group -->
@@ -406,13 +451,13 @@
 .fv-home-method .fv-eyebrow{margin:0 0 12px}
 .fv-home-method h2{font-size:22px;font-weight:650;letter-spacing:-.005em}
 .fv-method__chain{display:flex;flex-wrap:wrap;gap:0;border:1px solid #34322e;border-radius:2px;overflow:hidden;margin:22px 0 28px}
-.fv-method__step{flex:1 1 140px;padding:16px 14px;border-right:1px solid #34322e;font:700 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#d8d2c7}
+.fv-method__step{flex:1 1 140px;padding:16px 14px;border-right:1px solid #34322e;font:700 11px/1.3 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#d8d2c7}
 .fv-method__step:last-child{border-right:0}
 .fv-method__step span{display:block;margin-top:6px;font:500 12px/1.4 system-ui,sans-serif;text-transform:none;letter-spacing:normal;color:#aaa49a}
 .fv-method__example{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px;align-items:center;border:1px solid #34322e;border-radius:2px;padding:14px;margin-bottom:28px;text-decoration:none;color:inherit}
 .fv-method__example:hover,.fv-method__example:focus-visible{border-color:#b8955e;outline:none}
 .fv-method__example img{display:block;width:100%;border-radius:1px;border:1px solid #24231f}
-.fv-method__example-label{color:#b8955e;font:700 10px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+.fv-method__example-label{color:#b8955e;font:700 10px/1.3 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
 .fv-method__example-title{font-size:15px;font-weight:600;margin:0 0 6px;color:#f4efe6}
 .fv-method__example-line{font-size:13px;line-height:1.5;color:#aaa49a;margin:0}
 @media(max-width:620px){.fv-method__example{grid-template-columns:1fr}}
@@ -479,7 +524,11 @@
   </div>
 </section>
 <style>
-.fv-enter-record{background:#0b0c0b;color:#f4efe6;border-top:1px solid #24231f;border-bottom:1px solid #24231f;padding:clamp(48px,6vw,78px) clamp(18px,4vw,44px);position:relative;overflow:hidden}.fv-enter-record:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(184,149,94,.10),transparent 24%),radial-gradient(circle at 92% 90%,rgba(184,149,94,.075),transparent 24%);pointer-events:none}.fv-enter-record__inner{position:relative;max-width:1180px;margin:0 auto}.fv-enter-record__lead{max-width:760px;margin:0 0 clamp(24px,3vw,34px)}.fv-enter-record__eyebrow{margin:0 0 12px;color:#b8955e;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.fv-enter-record h2{margin:0;color:#f4efe6;font-size:clamp(34px,4.4vw,58px);font-weight:420;line-height:1.02;letter-spacing:-.045em;text-wrap:balance}.fv-enter-record__lead>p:not(.fv-enter-record__eyebrow){max-width:690px;margin:16px 0 0;color:#aaa49a;font-size:clamp(15px,1.35vw,18px);line-height:1.6}.fv-enter-record__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #34322e;border-bottom:1px solid #34322e}.fv-enter-record__card{min-height:245px;padding:clamp(22px,2.8vw,30px);border-right:1px solid #34322e;color:#f4efe6;text-decoration:none;background:linear-gradient(180deg,rgba(244,239,230,.018),rgba(184,149,94,.018));transition:transform .22s ease,border-color .22s ease,background .22s ease}.fv-enter-record__card:last-child{border-right:0}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{background:linear-gradient(180deg,rgba(184,149,94,.085),rgba(244,239,230,.025));transform:translateY(-3px);outline:none}.fv-enter-record__card:focus-visible{box-shadow:0 0 0 1px #b8955e inset}.fv-enter-record__stamp{display:inline-block;color:#b8955e;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 16px}.fv-enter-record__card h3{margin:0 0 12px;color:#f4efe6;font-size:clamp(22px,2.1vw,30px);line-height:1.05;font-weight:430;letter-spacing:-.025em;text-wrap:balance}.fv-enter-record__card p{margin:0;color:#aaa49a;font-size:14px;line-height:1.62}.fv-enter-record__route{display:inline-block;margin-top:22px;color:#d8d2c7;font-size:12px;font-weight:700;letter-spacing:.02em}.fv-enter-record__card:hover .fv-enter-record__route,.fv-enter-record__card:focus-visible .fv-enter-record__route{color:#f4efe6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}@media(max-width:1040px){.fv-enter-record__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fv-enter-record__card:nth-child(2){border-right:0}.fv-enter-record__card:nth-child(-n+2){border-bottom:1px solid #34322e}}@media(max-width:620px){.fv-enter-record{padding-top:42px;padding-bottom:48px}.fv-enter-record__grid{grid-template-columns:1fr}.fv-enter-record__card{min-height:0;border-right:0;border-bottom:1px solid #34322e}.fv-enter-record__card:last-child{border-bottom:0}.fv-enter-record h2{font-size:clamp(34px,11vw,46px)}.fv-enter-record__lead>p:not(.fv-enter-record__eyebrow){font-size:15px}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{transform:none}}@media(prefers-reduced-motion:reduce){.fv-enter-record__card{transition:none!important}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{transform:none}}
+.fv-enter-record{background:#0b0c0b;color:#f4efe6;border-top:1px solid #24231f;border-bottom:1px solid #24231f;padding:clamp(48px,6vw,78px) clamp(18px,4vw,44px);position:relative;overflow:hidden}.fv-enter-record:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(184,149,94,.10),transparent 24%),radial-gradient(circle at 92% 90%,rgba(184,149,94,.075),transparent 24%);pointer-events:none}.fv-enter-record__inner{position:relative;max-width:1180px;margin:0 auto}.fv-enter-record__lead{max-width:760px;margin:0 0 clamp(24px,3vw,34px)}.fv-enter-record__eyebrow{margin:0 0 12px;color:#b8955e;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.fv-enter-record h2{margin:0;color:#f4efe6;font-size:clamp(34px,4.4vw,58px);font-weight:420;line-height:1.02;letter-spacing:-.045em;text-wrap:balance}.fv-enter-record__lead>p:not(.fv-enter-record__eyebrow){max-width:690px;margin:16px 0 0;color:#aaa49a;font-size:clamp(15px,1.35vw,18px);line-height:1.6}.fv-enter-record__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #34322e;border-bottom:1px solid #34322e}.fv-enter-record__card{min-height:245px;padding:clamp(22px,2.8vw,30px);border-right:1px solid #34322e;color:#f4efe6;text-decoration:none;background:linear-gradient(180deg,rgba(244,239,230,.018),rgba(184,149,94,.018));transition:transform .22s ease,border-color .22s ease,background .22s ease}.fv-enter-record__card:last-child{border-right:0}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{background:linear-gradient(180deg,rgba(184,149,94,.085),rgba(244,239,230,.025));transform:translateY(-3px);outline:none}.fv-enter-record__card:focus-visible{box-shadow:0 0 0 1px #b8955e inset}
+.fv-dispatch{position:relative;overflow:hidden;clip-path:polygon(0% 11px,4% 3px,8% 11px,12% 3px,16% 11px,20% 3px,24% 11px,28% 3px,32% 11px,36% 3px,40% 11px,44% 3px,48% 11px,52% 3px,56% 11px,60% 3px,64% 11px,68% 3px,72% 11px,76% 3px,80% 11px,84% 3px,88% 11px,92% 3px,96% 11px,100% 3px,100% 100%,0% 100%)}
+.fv-dispatch:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(12,13,13,.16)}
+.fv-dispatch:after{content:"";position:absolute;top:24px;right:clamp(18px,5vw,64px);width:60px;height:60px;border-radius:50%;border:1.5px dashed rgba(12,13,13,.26);background:linear-gradient(133deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%),linear-gradient(47deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%)}
+@media(max-width:760px){.fv-dispatch:after{display:none}}.fv-enter-record__stamp{display:inline-block;color:#b8955e;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 16px}.fv-enter-record__card h3{margin:0 0 12px;color:#f4efe6;font-size:clamp(22px,2.1vw,30px);line-height:1.05;font-weight:430;letter-spacing:-.025em;text-wrap:balance}.fv-enter-record__card p{margin:0;color:#aaa49a;font-size:14px;line-height:1.62}.fv-enter-record__route{display:inline-block;margin-top:22px;color:#d8d2c7;font-size:12px;font-weight:700;letter-spacing:.02em}.fv-enter-record__card:hover .fv-enter-record__route,.fv-enter-record__card:focus-visible .fv-enter-record__route{color:#f4efe6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}@media(max-width:1040px){.fv-enter-record__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fv-enter-record__card:nth-child(2){border-right:0}.fv-enter-record__card:nth-child(-n+2){border-bottom:1px solid #34322e}}@media(max-width:620px){.fv-enter-record{padding-top:42px;padding-bottom:48px}.fv-enter-record__grid{grid-template-columns:1fr}.fv-enter-record__card{min-height:0;border-right:0;border-bottom:1px solid #34322e}.fv-enter-record__card:last-child{border-bottom:0}.fv-enter-record h2{font-size:clamp(34px,11vw,46px)}.fv-enter-record__lead>p:not(.fv-enter-record__eyebrow){font-size:15px}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{transform:none}}@media(prefers-reduced-motion:reduce){.fv-enter-record__card{transition:none!important}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{transform:none}}
 </style>
 <!-- /wp:html --><!-- wp:html -->
 <script type="application/ld+json">

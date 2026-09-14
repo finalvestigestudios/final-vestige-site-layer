@@ -19,5 +19,5 @@
   --fv-accent-bright:#c7a66c;
   --fv-sans:system-ui,-apple-system,"Segoe UI",sans-serif;
   --fv-display:"Fraunces",ui-serif,Georgia,serif;
-  --fv-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  --fv-mono:"Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;
 }

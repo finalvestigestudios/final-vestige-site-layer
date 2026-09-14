@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="tokens.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340..600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--fv-bg-0);color:var(--fv-ink);font-family:var(--fv-sans)}
@@ -42,7 +42,7 @@
   .fv-margin-strip__meta{display:block;margin-top:3px;color:var(--fv-ink-faint);font:600 10px/1.4 var(--fv-mono);letter-spacing:.03em}
 
   /* ================= HERO: THE VESTIGE ASSEMBLY ================= */
-  .fv-studios-hero{position:relative;overflow:hidden;background:var(--fv-bg-0);border-bottom:1px solid var(--fv-border);padding:clamp(56px,7vw,100px) clamp(18px,4vw,44px) clamp(58px,7vw,96px)}
+  .fv-studios-hero{position:relative;overflow:hidden;background:var(--fv-bg-0);border-bottom:1px solid var(--fv-border);padding:clamp(56px,7vw,100px) clamp(18px,4vw,44px) clamp(40px,4.4vw,64px)}
   .fv-studios-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(184,149,94,.13),transparent 28%),radial-gradient(circle at 88% 92%,rgba(244,239,230,.045),transparent 26%);pointer-events:none}
   .fv-studios-hero__inner{position:relative;max-width:1200px;margin:0 auto}
   @media(min-width:1680px){.fv-studios-hero__inner{max-width:1560px}}
@@ -114,7 +114,7 @@
   }
 
   /* ================= WORLDS (differentiated, replaces the six identical cards) ================= */
-  .fv-worlds{background:var(--fv-bg-1);border-bottom:1px solid var(--fv-border);padding:clamp(50px,6vw,84px) clamp(18px,4vw,44px)}
+  .fv-worlds{background:var(--fv-bg-1);border-bottom:1px solid var(--fv-border);padding:clamp(36px,4.4vw,56px) clamp(18px,4vw,44px) clamp(50px,6vw,84px)}
   .fv-worlds__head{max-width:1200px;margin:0 auto clamp(28px,4vw,44px)}
   .fv-eyebrow{margin:0 0 12px;color:var(--fv-accent);font:800 10px/1.2 var(--fv-sans);letter-spacing:.18em;text-transform:uppercase}
   .fv-worlds h2{margin:0;font-family:var(--fv-display);font-style:italic;font-size:clamp(22px,2.2vw,30px);font-weight:440;letter-spacing:0;line-height:1.3;max-width:520px;color:var(--fv-ink-muted)}
@@ -126,16 +126,50 @@
   .fv-world__line{margin:0;font-size:13px;line-height:1.5;color:var(--fv-ink-faint)}
   .fv-world__go{margin-top:16px;font:700 11px/1 var(--fv-sans);color:var(--fv-ink-dim)}
   /* differentiated spans/treatments */
-  .fv-world--investigations{grid-column:span 3;grid-row:span 2;min-height:420px;background:linear-gradient(160deg,#171512,#0c0d0c 70%)}
+  .fv-world--investigations{grid-column:span 3;grid-row:span 2;min-height:420px;background:linear-gradient(160deg,#171512,#0c0d0c 70%);overflow:hidden}
+  .fv-world__folders{position:absolute;top:50%;right:52px;width:150px;height:110px;transform:translateY(-50%)}
+  .fv-world__folders span{position:absolute;inset:0;border:1px solid rgba(184,149,94,.22);border-radius:2px;background:rgba(244,239,230,.015)}
+  .fv-world__folders span:nth-child(1){transform:rotate(-7deg) translate(-10px,6px)}
+  .fv-world__folders span:nth-child(2){transform:rotate(4deg) translate(8px,-4px);border-color:rgba(184,149,94,.16)}
+  .fv-world__folders span:nth-child(3){transform:rotate(-2deg) translate(-2px,-14px);border-color:rgba(184,149,94,.32)}
+  @media(max-width:980px){.fv-world__folders{display:none}}
   .fv-world--investigations .fv-world__name{font-size:30px}
-  .fv-world--record{grid-column:span 3;background:#0e0f10;font-family:var(--fv-mono)}
+  .fv-world--record{grid-column:span 3;position:relative;background:#0e0f10;font-family:var(--fv-mono);padding-top:64px}
   .fv-world--record .fv-world__name{font-family:var(--fv-sans)}
-  .fv-world--labs{grid-column:span 2;background:repeating-linear-gradient(135deg,#101110,#101110 10px,#141513 10px,#141513 20px)}
-  .fv-world--editions{grid-column:span 2;background:#121210;border-style:double;border-width:3px}
-  .fv-world--films{grid-column:span 1;background:#0a0a0a}
-  .fv-world--films .fv-world__name{font-size:16px}
-  .fv-world--exchange{grid-column:span 1;background:#101110}
+  .fv-world__stampnum{position:absolute;top:22px;right:20px;font:800 8px/1 var(--fv-mono);letter-spacing:.1em;color:var(--fv-ink-faint);border:1px solid #3a382f;padding:3px 7px;transform:rotate(-4deg)}
+  .fv-world__redactions{position:absolute;top:22px;left:20px;right:110px;display:flex;flex-direction:column;gap:8px}
+  .fv-world__redactions span{display:block;height:9px;background:#000;border-radius:1px;box-shadow:0 0 0 1px #2a2723}
+  .fv-world--labs{grid-column:span 3;position:relative;background-color:#101110;background-image:linear-gradient(rgba(184,149,94,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(184,149,94,.08) 1px,transparent 1px);background-size:15px 15px;padding-top:44px}
+  .fv-world__termbar{position:absolute;top:0;left:0;right:0;height:26px;background:#050505;border-bottom:1px solid #232221;display:flex;align-items:center;gap:6px;padding:0 12px}
+  .fv-world__termbar span{width:7px;height:7px;border-radius:50%;background:#3a3733}
+  .fv-world__termbar span:nth-child(1){background:#6b3d38}
+  .fv-world__termbar span:nth-child(2){background:#6b5c38}
+  .fv-world__termbar span:nth-child(3){background:#3d5c3a}
+  .fv-world__termbar em{margin-left:6px;font:400 10px/1 var(--fv-mono);font-style:normal;color:#8a8378;letter-spacing:.02em}
+  .fv-world--labs .fv-world__go{font-family:var(--fv-mono)}
+  .fv-world--editions{grid-column:span 2;position:relative;background:#121210;padding-left:40px;overflow:hidden}
+  .fv-world__spines{position:absolute;top:0;bottom:0;left:0;width:22px;display:flex;gap:2px;padding:0}
+  .fv-world__spines span{flex:1}
+  .fv-world__spines span:nth-child(1){background:#6b5636}
+  .fv-world__spines span:nth-child(2){background:#403a2e;margin-top:16px}
+  .fv-world__spines span:nth-child(3){background:#8a7248;margin-bottom:20px}
+  .fv-world__spines span:nth-child(4){background:#332e26}
+  .fv-world__spines span:nth-child(5){background:#5c4d34;margin-top:10px}
+  .fv-world--films{grid-column:span 2;position:relative;background:#050505;overflow:hidden;padding-top:32px;padding-bottom:32px;padding-left:28px}
+  .fv-world--films:before,.fv-world--films:after{content:"";position:absolute;left:0;right:0;height:14px;background:#000;z-index:1}
+  .fv-world--films:before{top:0}
+  .fv-world--films:after{bottom:0}
+  .fv-world__reel{position:absolute;top:14px;bottom:14px;left:0;width:9px;display:flex;flex-direction:column;justify-content:space-evenly;background:#0c0c0c;border-right:1px solid #232221}
+  .fv-world__reel span{display:block;margin:0 auto;width:4px;height:4px;background:#050505;border-radius:1px}
+  .fv-world--films .fv-world__name{font-family:var(--fv-display);font-style:italic;font-size:19px;line-height:1.05;letter-spacing:-.01em}
+  .fv-world--films .fv-world__go{font:700 11px/1 var(--fv-mono);letter-spacing:.08em;color:var(--fv-accent-bright)}
+  .fv-world--exchange{grid-column:span 2;background:#101110;background-image:repeating-linear-gradient(180deg,transparent,transparent 21px,#1a1a19 22px);position:relative}
+  .fv-world--exchange:before{content:"OPEN INQUIRY";position:absolute;top:22px;right:20px;font:800 8px/1 var(--fv-mono);letter-spacing:.14em;color:var(--fv-ink-faint);border:1px solid #3a382f;padding:3px 6px;transform:rotate(6deg)}
   .fv-world--exchange .fv-world__name{font-size:16px}
+  .fv-world__topics{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:5px}
+  .fv-world__topics li{font:700 9px/1 var(--fv-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--fv-ink-faint);border:1px solid var(--fv-border);padding:4px 7px;border-radius:1px}
+  .fv-act{display:inline-block;margin:0 0 14px;font:800 9px/1 var(--fv-mono);letter-spacing:.16em;text-transform:uppercase;color:#8a8172;border:1px solid var(--fv-border);padding:5px 9px;border-radius:1px}
+  .fv-worlds__head .fv-act,.fv-invest__head .fv-act{margin-bottom:12px}
   @media(max-width:980px){.fv-worlds__grid{grid-template-columns:repeat(2,1fr)}.fv-world--investigations,.fv-world--record,.fv-world--labs,.fv-world--editions{grid-column:span 2}.fv-world--investigations{min-height:280px}}
   @media(max-width:560px){.fv-worlds__grid{grid-template-columns:1fr}.fv-world--investigations,.fv-world--record,.fv-world--labs,.fv-world--editions,.fv-world--films,.fv-world--exchange{grid-column:span 1}}
 
@@ -206,7 +240,10 @@
   .fv-last p{margin:0;font-size:16px;line-height:1.6;color:var(--fv-ink-muted)}
 
   /* ================= DISPATCH (light section, real rhythm break) ================= */
-  .fv-dispatch{background:var(--fv-ink);color:#0c0d0d;padding:clamp(50px,6vw,90px) clamp(18px,4vw,44px)}
+  .fv-dispatch{position:relative;overflow:hidden;background:var(--fv-ink);color:#0c0d0d;padding:clamp(50px,6vw,90px) clamp(18px,4vw,44px);clip-path:polygon(0% 11px,4% 3px,8% 11px,12% 3px,16% 11px,20% 3px,24% 11px,28% 3px,32% 11px,36% 3px,40% 11px,44% 3px,48% 11px,52% 3px,56% 11px,60% 3px,64% 11px,68% 3px,72% 11px,76% 3px,80% 11px,84% 3px,88% 11px,92% 3px,96% 11px,100% 3px,100% 100%,0% 100%)}
+  .fv-dispatch:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(12,13,13,.16)}
+  .fv-dispatch:after{content:"";position:absolute;top:24px;right:clamp(18px,5vw,64px);width:60px;height:60px;border-radius:50%;border:1.5px dashed rgba(12,13,13,.26);background:linear-gradient(133deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%),linear-gradient(47deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%)}
+  @media(max-width:760px){.fv-dispatch:after{display:none}}
   .fv-dispatch__inner{max-width:640px;margin:0 auto;text-align:center}
   .fv-dispatch__label{margin:0 0 14px;font:800 11px/1 var(--fv-sans);letter-spacing:.16em}
   .fv-dispatch h2{margin:0 0 14px;font-family:var(--fv-display);font-size:clamp(26px,3.4vw,40px);font-weight:440;letter-spacing:-.01em}
@@ -277,6 +314,7 @@
 <section class="fv-studios-hero" aria-labelledby="fv-studios-title">
   <div class="fv-studios-hero__inner">
    <div class="fv-studios-hero__text">
+    <span class="fv-act">Act I — The Find</span>
     <p class="fv-studios-hero__eyebrow">FINAL VESTIGE STUDIOS</p>
     <h1 id="fv-studios-title">Find what others miss.</h1>
     <p class="fv-studios-hero__dek">The answer is often still there. Buried in a footnote. Split across databases. Marked on an old map. We follow the trace and show exactly where it led.</p>
@@ -323,38 +361,47 @@
 <!-- ============================================================= -->
 <section class="fv-worlds" aria-labelledby="fv-worlds-title">
   <div class="fv-worlds__head">
+    <span class="fv-act">Act II — The Map</span>
     <p class="fv-eyebrow">Final Vestige Studios</p>
     <h2 id="fv-worlds-title">Six ways in, built for different jobs.</h2>
   </div>
   <div class="fv-worlds__grid">
     <a class="fv-world fv-world--investigations" href="/blog/">
+      <div class="fv-world__folders" aria-hidden="true"><span></span><span></span><span></span></div>
       <span class="fv-world__num">N&deg;01</span>
       <div><div class="fv-world__name">Investigations</div><p class="fv-world__line">Stories reconstructed from surviving evidence.</p></div>
       <span class="fv-world__go">Journal, archives, History Lab, field research</span>
     </a>
     <a class="fv-world fv-world--record" href="/accountability/">
-      <span class="fv-world__num">N&deg;02</span>
-      <div><div class="fv-world__name">The Public Record</div><p class="fv-world__line">Public information made easier to find, follow, and check.</p></div>
+      <div class="fv-world__redactions" aria-hidden="true"><span style="width:72%"></span><span style="width:40%"></span><span style="width:58%"></span></div>
+      <span class="fv-world__stampnum">N&deg;02 &middot; ON FILE</span>
+      <div><div class="fv-world__name">The Public Record</div><p class="fv-world__line">Government filings and datasets, indexed so you can actually check them.</p></div>
       <span class="fv-world__go">Open the first release</span>
     </a>
     <a class="fv-world fv-world--labs" href="/labs/">
-      <span class="fv-world__num">N&deg;03</span>
+      <div class="fv-world__termbar" aria-hidden="true"><span></span><span></span><span></span><em>labs &mdash; 03</em></div>
       <div><div class="fv-world__name">Labs</div><p class="fv-world__line">Software for fragmented records and hard-to-compare data.</p></div>
-      <span class="fv-world__go">New products are in development.</span>
+      <span class="fv-world__go">&#9654;_ New products are in development.</span>
     </a>
     <a class="fv-world fv-world--editions" href="/collection/">
+      <div class="fv-world__spines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <span class="fv-world__num">N&deg;04</span>
       <div><div class="fv-world__name">Editions</div><p class="fv-world__line">Books, field manuals, and practical research resources.</p></div>
       <span class="fv-world__go">Browse current work</span>
     </a>
     <a class="fv-world fv-world--films" href="/watch/films/">
+      <div class="fv-world__reel" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <span class="fv-world__num">N&deg;05</span>
-      <div><div class="fv-world__name">Films &amp; Media</div><p class="fv-world__line">Visual investigations and documentary work.</p></div>
-      <span class="fv-world__go">Watch</span>
+      <div><div class="fv-world__name">Films<br>&amp; Media</div><p class="fv-world__line">Visual investigations and documentary work.</p></div>
+      <span class="fv-world__go">&#9658; Watch</span>
     </a>
     <a class="fv-world fv-world--exchange" href="/community/">
       <span class="fv-world__num">N&deg;06</span>
-      <div><div class="fv-world__name">The Exchange</div><p class="fv-world__line">A community for evidence, questions, and useful knowledge.</p></div>
+      <div>
+        <div class="fv-world__name">The Exchange</div>
+        <p class="fv-world__line">A community for evidence, questions, and useful knowledge.</p>
+        <ul class="fv-world__topics"><li>History</li><li>Engineering</li><li>Exploration</li><li>Archaeology</li><li>Maps</li><li>Primary records</li></ul>
+      </div>
       <span class="fv-world__go">Private beta</span>
     </a>
   </div>
@@ -392,9 +439,9 @@
 <!-- ============================================================= -->
 <section class="fv-mission">
   <div class="fv-mission__inner">
-    <h2>Important things rarely disappear. They get buried.</h2>
-    <p>In old reports. Public filings. Photographs. Maps. Databases. Places nobody thought to compare.</p>
-    <p>Final Vestige follows the trace, and shows exactly where the conclusions came from.</p>
+    <h2>Every claim here links back to something you can check yourself.</h2>
+    <p>A record. A report. A photograph. A filing. If we can't point to it, we don't publish it.</p>
+    <p>Here's one investigation, worked that way from start to finish.</p>
   </div>
 </section>
 
@@ -403,6 +450,7 @@
 <!-- ============================================================= -->
 <section class="fv-invest" aria-labelledby="fv-invest-title">
   <div class="fv-invest__head">
+    <span class="fv-act">Act III — The Reconstruction</span>
     <p class="fv-eyebrow">A Final Vestige Investigation</p>
     <h2 id="fv-invest-title">Here's what finding the trace actually looks like.</h2>
   </div>
@@ -491,6 +539,7 @@
 <!-- ============================================================= -->
 <section class="fv-dispatch" id="dispatch">
   <div class="fv-dispatch__inner">
+    <span class="fv-act" style="border-color:rgba(12,13,13,.35);color:#524d42">Act IV — Stay on the Signal</span>
     <p class="fv-dispatch__label">THE DISPATCH</p>
     <h2>One email a week from Final Vestige.</h2>
     <p>A new investigation, an interesting source, a map worth keeping, or something useful we found while researching. That's about it.</p>
