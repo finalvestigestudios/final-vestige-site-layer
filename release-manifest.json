@@ -1,6 +1,6 @@
 {
-  "release_id": "FVSL-VESTIGE-ASSEMBLY-HOME-001",
-  "version": "0.3.0",
+  "release_id": "FVSL-VESTIGE-ASSEMBLY-HOME-002",
+  "version": "0.4.0",
   "delivery": {
     "wordpress_hook": "wp_footer",
     "priority": 99,
@@ -55,6 +55,12 @@
       "file": "payloads/library-inspector-wp-block-v1.txt",
       "bytes": 2646,
       "sha256": "0d736919a7defab459f041c41aea77b851ceb63463e718b84e367a6b68f1b2d3"
+    },
+    {
+      "name": "Signature Alignment",
+      "file": "payloads/signature-alignment-wp-block-v1.txt",
+      "bytes": 2327,
+      "sha256": "68ad5cd472f7885dd6aec3bedb6ea601eb0b6330a7ad9a3da657f2962ede4d65"
     }
   ],
   "failure_policy": "If any payload is missing, has a byte-count mismatch, or has a SHA-256 mismatch, emit none of the site-layer payloads.",

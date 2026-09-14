@@ -341,6 +341,54 @@
 @media(max-width:900px){.fv-library__grid{grid-template-columns:1fr}}
 </style>
 <!-- /wp:html --><!-- wp:html -->
+<section class="fv-align" aria-labelledby="fv-align-title">
+  <div class="fv-align__head">
+    <p class="fv-eyebrow">Two Documents, One Night</p>
+    <h2 id="fv-align-title">Drag until the record and the reconstruction agree.</h2>
+    <p class="fv-align__intro">A 1903 railway map and a modern chronology of the 1918 Malbone Street wreck were drawn fifteen years and one investigation apart. Slide the divider until their timelines meet.</p>
+  </div>
+  <div class="fv-align__stage" data-fv-align-stage tabindex="0" role="slider" aria-labelledby="fv-align-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="halfway between the two documents">
+    <div class="fv-align__panel fv-align__panel--map">
+      <img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=900,608&amp;ssl=1" alt="1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.">
+      <span class="fv-align__tag">1903 &middot; NYPL Digital Collections</span>
+    </div>
+    <div class="fv-align__panel fv-align__panel--diagram">
+      <img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v06r2-evidence-not-blame-responsive.png?resize=900,675&amp;ssl=1" alt="Chronology separating strike-day operating failures, the derailment and rescue from the later trials and acquittals.">
+      <span class="fv-align__tag">1918&ndash;1920 &middot; Final Vestige reconstruction</span>
+    </div>
+    <div class="fv-align__divider" data-fv-align-divider>
+      <div class="fv-align__handle" aria-hidden="true">&#8596;</div>
+    </div>
+    <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Aligned</span>
+  </div>
+  <p class="fv-align__fact">This map shows the Brighton line system fifteen years before a night in 1918, when a dispatcher took a new curve at five times its posted limit. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+</section>
+<style>
+.fv-align{background:#0c0d0d;border-bottom:1px solid #2a2927;padding:clamp(56px,7vw,96px) clamp(18px,4vw,44px)}
+.fv-align__head{max-width:800px;margin:0 auto clamp(28px,4vw,40px)}
+.fv-align h2{margin:10px 0 14px;font-family:"Fraunces",ui-serif,Georgia,serif;font-size:clamp(26px,3.4vw,40px);font-weight:420;letter-spacing:-.01em;color:#f4efe6}
+.fv-align__intro{margin:0;color:#aaa49a;font-size:15px;line-height:1.6}
+.fv-align__stage{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:16/8;overflow:hidden;border:1px solid #34322e;cursor:ew-resize;background:#000;touch-action:none}
+.fv-align__stage:focus-visible{outline:2px solid #b8955e;outline-offset:2px}
+.fv-align__panel{position:absolute;inset:0}
+.fv-align__panel img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.fv-align__panel--map{clip-path:inset(0 50% 0 0);z-index:1;transition:clip-path .05s linear}
+.fv-align__panel--diagram{z-index:0;background:#fff}
+.fv-align__tag{position:absolute;font:600 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:#d8d2c7;background:rgba(10,10,10,.65);padding:6px 9px;border-radius:2px;z-index:2;max-width:calc(50% - 20px)}
+.fv-align__panel--map .fv-align__tag{left:12px;top:10px}
+.fv-align__panel--diagram .fv-align__tag{right:12px;bottom:10px;color:#2a2723;background:rgba(244,239,230,.75)}
+.fv-align__divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#b8955e;z-index:3;transform:translateX(-1px);pointer-events:none}
+.fv-align__handle{position:absolute;top:50%;left:50%;width:44px;height:44px;border-radius:50%;background:#f4efe6;border:2px solid #b8955e;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:#0c0d0d;font-size:16px;pointer-events:auto;cursor:ew-resize}
+.fv-align--locked .fv-align__divider{background:#c7a66c}
+.fv-align--locked .fv-align__handle{border-color:#c7a66c}
+.fv-align__badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:4;font:800 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#0c0d0d;background:#c7a66c;padding:7px 12px;border-radius:2px;opacity:0;transition:opacity .3s ease}
+.fv-align__badge[data-revealed="1"]{opacity:1}
+.fv-align__fact{max-width:800px;margin:22px auto 0;color:#aaa49a;font-size:14px;line-height:1.6}
+.fv-align__fact a{color:#c7a66c}
+@media(max-width:760px){.fv-align__stage{aspect-ratio:4/5}}
+@media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge{transition:none}}
+</style>
+<!-- /wp:html --><!-- wp:html -->
 <section class="fv-mission">
   <div class="fv-mission__inner">
     <h2>Every claim here links back to something you can check yourself.</h2>
@@ -486,7 +534,7 @@
 .fv-last p:last-child{margin:0;font-size:16px;line-height:1.6;color:#d8d2c7}
 </style>
 <!-- /wp:html -->
-<!-- wp:group {"align":"full","anchor":"dispatch","className":"fv-dispatch","style":{"color":{"text":"#0C0D0D"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} --><div id="dispatch" class="wp-block-group alignfull fv-dispatch has-text-color" style="color:#0C0D0D;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"820px"}} --><div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"11px","letterSpacing":"0.16em","fontWeight":"800"}}} --><p class="has-text-align-center" style="font-size:11px;font-weight:800;letter-spacing:0.16em">THE DISPATCH</p><!-- /wp:paragraph --><!-- wp:heading {"textAlign":"center","level":2,"style":{"color":{"text":"#0C0D0D"}}} --><h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0C0D0D">One email a week from Final Vestige.</h2><!-- /wp:heading --><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"18px","lineHeight":"1.55"}}} --><p class="has-text-align-center" style="font-size:18px;line-height:1.55">A new investigation, an interesting source, a map worth keeping, or something useful we found while researching. That's about it.</p><!-- /wp:paragraph --><!-- wp:jetpack/subscriptions {"className":"is-style-split"} /--><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"10px","fontWeight":"750","letterSpacing":"0.1em"},"spacing":{"margin":{"top":"18px"}}}} --><p class="has-text-align-center" style="font-size:10px;font-weight:750;letter-spacing:0.1em;margin-top:18px">Unsubscribe anytime · <a href="/dispatch/">About The Dispatch</a></p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group -->
+<!-- wp:group {"align":"full","anchor":"dispatch","className":"fv-dispatch","style":{"color":{"text":"#0C0D0D"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} --><div id="dispatch" class="wp-block-group alignfull fv-dispatch has-text-color" style="color:#0C0D0D;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"820px"}} --><div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"11px","letterSpacing":"0.16em","fontWeight":"800"}}} --><p class="has-text-align-center" style="font-size:11px;font-weight:800;letter-spacing:0.16em">THE DISPATCH</p><!-- /wp:paragraph --><!-- wp:heading {"textAlign":"center","level":2,"style":{"color":{"text":"#0C0D0D"}}} --><h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0C0D0D;font-style:italic;font-weight:440">Some things are worth following.</h2><!-- /wp:heading --><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"15px","lineHeight":"1.65"}}} --><p class="has-text-align-center" style="font-size:15px;line-height:1.65;color:#4a453d">When there's a new investigation, an interesting source, a map worth keeping, or something useful we found while researching, it arrives here. Once a week, no more.</p><!-- /wp:paragraph --><!-- wp:jetpack/subscriptions {"className":"is-style-split"} /--><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"10px","fontWeight":"750","letterSpacing":"0.1em"},"spacing":{"margin":{"top":"18px"}}}} --><p class="has-text-align-center" style="font-size:10px;font-weight:750;letter-spacing:0.1em;margin-top:18px">Unsubscribe anytime · <a href="/dispatch/">About The Dispatch</a></p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group -->
 </div><!-- /wp:group --><!-- wp:html -->
 <section class="fv-enter-record" aria-labelledby="fv-enter-record-title">
   <div class="fv-enter-record__inner">
@@ -526,8 +574,8 @@
 <style>
 .fv-enter-record{background:#0b0c0b;color:#f4efe6;border-top:1px solid #24231f;border-bottom:1px solid #24231f;padding:clamp(48px,6vw,78px) clamp(18px,4vw,44px);position:relative;overflow:hidden}.fv-enter-record:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(184,149,94,.10),transparent 24%),radial-gradient(circle at 92% 90%,rgba(184,149,94,.075),transparent 24%);pointer-events:none}.fv-enter-record__inner{position:relative;max-width:1180px;margin:0 auto}.fv-enter-record__lead{max-width:760px;margin:0 0 clamp(24px,3vw,34px)}.fv-enter-record__eyebrow{margin:0 0 12px;color:#b8955e;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.fv-enter-record h2{margin:0;color:#f4efe6;font-size:clamp(34px,4.4vw,58px);font-weight:420;line-height:1.02;letter-spacing:-.045em;text-wrap:balance}.fv-enter-record__lead>p:not(.fv-enter-record__eyebrow){max-width:690px;margin:16px 0 0;color:#aaa49a;font-size:clamp(15px,1.35vw,18px);line-height:1.6}.fv-enter-record__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #34322e;border-bottom:1px solid #34322e}.fv-enter-record__card{min-height:245px;padding:clamp(22px,2.8vw,30px);border-right:1px solid #34322e;color:#f4efe6;text-decoration:none;background:linear-gradient(180deg,rgba(244,239,230,.018),rgba(184,149,94,.018));transition:transform .22s ease,border-color .22s ease,background .22s ease}.fv-enter-record__card:last-child{border-right:0}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{background:linear-gradient(180deg,rgba(184,149,94,.085),rgba(244,239,230,.025));transform:translateY(-3px);outline:none}.fv-enter-record__card:focus-visible{box-shadow:0 0 0 1px #b8955e inset}
 .fv-dispatch{position:relative;overflow:hidden;clip-path:polygon(0% 11px,4% 3px,8% 11px,12% 3px,16% 11px,20% 3px,24% 11px,28% 3px,32% 11px,36% 3px,40% 11px,44% 3px,48% 11px,52% 3px,56% 11px,60% 3px,64% 11px,68% 3px,72% 11px,76% 3px,80% 11px,84% 3px,88% 11px,92% 3px,96% 11px,100% 3px,100% 100%,0% 100%)}
-.fv-dispatch:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(12,13,13,.16)}
-.fv-dispatch:after{content:"";position:absolute;top:24px;right:clamp(18px,5vw,64px);width:60px;height:60px;border-radius:50%;border:1.5px dashed rgba(12,13,13,.26);background:linear-gradient(133deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%),linear-gradient(47deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%)}
+.fv-dispatch:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(12,13,13,.14)}
+.fv-dispatch:after{content:"";position:absolute;top:24px;right:clamp(18px,5vw,64px);width:44px;height:44px;border-radius:50%;border:1.5px dashed rgba(12,13,13,.16);background:linear-gradient(133deg,transparent 46%,rgba(12,13,13,.09) 47%,rgba(12,13,13,.09) 48%,transparent 49%),linear-gradient(47deg,transparent 46%,rgba(12,13,13,.09) 47%,rgba(12,13,13,.09) 48%,transparent 49%)}
 @media(max-width:760px){.fv-dispatch:after{display:none}}.fv-enter-record__stamp{display:inline-block;color:#b8955e;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 16px}.fv-enter-record__card h3{margin:0 0 12px;color:#f4efe6;font-size:clamp(22px,2.1vw,30px);line-height:1.05;font-weight:430;letter-spacing:-.025em;text-wrap:balance}.fv-enter-record__card p{margin:0;color:#aaa49a;font-size:14px;line-height:1.62}.fv-enter-record__route{display:inline-block;margin-top:22px;color:#d8d2c7;font-size:12px;font-weight:700;letter-spacing:.02em}.fv-enter-record__card:hover .fv-enter-record__route,.fv-enter-record__card:focus-visible .fv-enter-record__route{color:#f4efe6;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}@media(max-width:1040px){.fv-enter-record__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fv-enter-record__card:nth-child(2){border-right:0}.fv-enter-record__card:nth-child(-n+2){border-bottom:1px solid #34322e}}@media(max-width:620px){.fv-enter-record{padding-top:42px;padding-bottom:48px}.fv-enter-record__grid{grid-template-columns:1fr}.fv-enter-record__card{min-height:0;border-right:0;border-bottom:1px solid #34322e}.fv-enter-record__card:last-child{border-bottom:0}.fv-enter-record h2{font-size:clamp(34px,11vw,46px)}.fv-enter-record__lead>p:not(.fv-enter-record__eyebrow){font-size:15px}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{transform:none}}@media(prefers-reduced-motion:reduce){.fv-enter-record__card{transition:none!important}.fv-enter-record__card:hover,.fv-enter-record__card:focus-visible{transform:none}}
 </style>
 <!-- /wp:html --><!-- wp:html -->

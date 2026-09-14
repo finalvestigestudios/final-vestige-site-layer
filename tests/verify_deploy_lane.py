@@ -30,6 +30,7 @@ PACKAGE_FILES = {
     "payloads/margins-wire-wp-block-v1.txt",
     "payloads/investigation-walkthrough-wp-block-v1.txt",
     "payloads/library-inspector-wp-block-v1.txt",
+    "payloads/signature-alignment-wp-block-v1.txt",
 }
 CHECKOUT_SHA = "3d3c42e5aac5ba805825da76410c181273ba90b1"
 UPLOAD_ARTIFACT_SHA = "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"

@@ -27,6 +27,7 @@ PACKAGE_FILES = (
     "payloads/margins-wire-wp-block-v1.txt",
     "payloads/investigation-walkthrough-wp-block-v1.txt",
     "payloads/library-inspector-wp-block-v1.txt",
+    "payloads/signature-alignment-wp-block-v1.txt",
 )
 
 

@@ -179,7 +179,7 @@
   .fv-library h2{margin:0;font-family:var(--fv-display);font-size:clamp(28px,3.6vw,42px);font-weight:420;letter-spacing:-.01em;color:var(--fv-ink)}
   .fv-library__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:clamp(24px,4vw,48px);align-items:start}
   .fv-library__frame{position:relative;border:1px solid var(--fv-border-strong);overflow:hidden;cursor:crosshair;background:#000}
-  .fv-library__frame img{display:block;width:100%;height:auto}
+  .fv-library__frame img{display:block;width:100%;height:auto;background:linear-gradient(160deg,#1c1a15,#0a0908)}
   .fv-library__loupe{position:absolute;width:180px;height:180px;border-radius:50%;border:2px solid var(--fv-accent-bright);box-shadow:0 0 0 2px rgba(0,0,0,.6),0 10px 30px rgba(0,0,0,.5);background-repeat:no-repeat;pointer-events:none;transform:translate(-50%,-50%)}
   .fv-library__hint{position:absolute;bottom:10px;right:12px;font:600 10px/1 var(--fv-mono);letter-spacing:.06em;text-transform:uppercase;color:#d8d2c7;background:rgba(10,10,10,.6);padding:6px 9px;border-radius:2px;pointer-events:none}
   .fv-library__frame[data-fv-active="1"] .fv-library__hint{opacity:0}
@@ -189,6 +189,31 @@
   .fv-library__meta a{color:var(--fv-accent-bright)}
   @media(max-width:900px){.fv-library__grid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){.fv-library__loupe{transition:none}}
+
+  /* ================= THE ALIGNMENT: two real documents agree (signature interaction #2) ================= */
+  .fv-align{background:#0c0d0d;border-bottom:1px solid var(--fv-border);padding:clamp(56px,7vw,96px) clamp(18px,4vw,44px)}
+  .fv-align__head{max-width:800px;margin:0 auto clamp(28px,4vw,40px)}
+  .fv-align h2{margin:10px 0 14px;font-family:var(--fv-display);font-size:clamp(26px,3.4vw,40px);font-weight:420;letter-spacing:-.01em;color:var(--fv-ink)}
+  .fv-align__intro{margin:0;color:var(--fv-ink-faint);font-size:15px;line-height:1.6}
+  .fv-align__stage{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:16/8;overflow:hidden;border:1px solid var(--fv-border-strong);cursor:ew-resize;background:#000;touch-action:none}
+  .fv-align__stage:focus-visible{outline:2px solid var(--fv-accent);outline-offset:2px}
+  .fv-align__panel{position:absolute;inset:0}
+  .fv-align__panel img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;background:linear-gradient(160deg,#1c1a15,#0a0908)}
+  .fv-align__panel--map{clip-path:inset(0 50% 0 0);z-index:1;transition:clip-path .05s linear}
+  .fv-align__panel--diagram{z-index:0;background:#fff}
+  .fv-align__tag{position:absolute;font:600 10px/1 var(--fv-mono);letter-spacing:.06em;color:#d8d2c7;background:rgba(10,10,10,.65);padding:6px 9px;border-radius:2px;z-index:2;max-width:calc(50% - 20px)}
+  .fv-align__panel--map .fv-align__tag{left:12px;top:10px}
+  .fv-align__panel--diagram .fv-align__tag{right:12px;bottom:10px;color:#2a2723;background:rgba(244,239,230,.75)}
+  .fv-align__divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--fv-accent);z-index:3;transform:translateX(-1px);pointer-events:none}
+  .fv-align__handle{position:absolute;top:50%;left:50%;width:44px;height:44px;border-radius:50%;background:var(--fv-ink);border:2px solid var(--fv-accent);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:#0c0d0d;font-size:16px;pointer-events:auto;cursor:ew-resize}
+  .fv-align--locked .fv-align__divider{background:var(--fv-accent-bright)}
+  .fv-align--locked .fv-align__handle{border-color:var(--fv-accent-bright)}
+  .fv-align__badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:4;font:800 10px/1 var(--fv-mono);letter-spacing:.14em;text-transform:uppercase;color:#0c0d0d;background:var(--fv-accent-bright);padding:7px 12px;border-radius:2px;opacity:0;transition:opacity .3s ease}
+  .fv-align__badge[data-revealed="1"]{opacity:1}
+  .fv-align__fact{max-width:800px;margin:22px auto 0;color:var(--fv-ink-faint);font-size:14px;line-height:1.6}
+  .fv-align__fact a{color:var(--fv-accent-bright)}
+  @media(max-width:760px){.fv-align__stage{aspect-ratio:4/5}}
+  @media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge{transition:none}}
 
   /* ================= MISSION (monumental pivot — center, huge, quiet) ================= */
   .fv-mission{background:var(--fv-bg-0);padding:clamp(90px,14vw,190px) clamp(18px,4vw,44px);border-bottom:1px solid var(--fv-border);text-align:center}
@@ -239,19 +264,21 @@
   .fv-last__label{margin:0 0 10px;color:var(--fv-accent);font:800 10px/1.2 var(--fv-sans);letter-spacing:.18em;text-transform:uppercase}
   .fv-last p{margin:0;font-size:16px;line-height:1.6;color:var(--fv-ink-muted)}
 
-  /* ================= DISPATCH (light section, real rhythm break) ================= */
-  .fv-dispatch{position:relative;overflow:hidden;background:var(--fv-ink);color:#0c0d0d;padding:clamp(50px,6vw,90px) clamp(18px,4vw,44px);clip-path:polygon(0% 11px,4% 3px,8% 11px,12% 3px,16% 11px,20% 3px,24% 11px,28% 3px,32% 11px,36% 3px,40% 11px,44% 3px,48% 11px,52% 3px,56% 11px,60% 3px,64% 11px,68% 3px,72% 11px,76% 3px,80% 11px,84% 3px,88% 11px,92% 3px,96% 11px,100% 3px,100% 100%,0% 100%)}
-  .fv-dispatch:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(12,13,13,.16)}
-  .fv-dispatch:after{content:"";position:absolute;top:24px;right:clamp(18px,5vw,64px);width:60px;height:60px;border-radius:50%;border:1.5px dashed rgba(12,13,13,.26);background:linear-gradient(133deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%),linear-gradient(47deg,transparent 46%,rgba(12,13,13,.15) 47%,rgba(12,13,13,.15) 48%,transparent 49%)}
+  /* ================= DISPATCH — a quiet terminal moment, not a newsletter banner ================= */
+  .fv-dispatch{position:relative;overflow:hidden;background:var(--fv-ink);color:#0c0d0d;padding:clamp(64px,8vw,110px) clamp(18px,4vw,44px);clip-path:polygon(0% 11px,4% 3px,8% 11px,12% 3px,16% 11px,20% 3px,24% 11px,28% 3px,32% 11px,36% 3px,40% 11px,44% 3px,48% 11px,52% 3px,56% 11px,60% 3px,64% 11px,68% 3px,72% 11px,76% 3px,80% 11px,84% 3px,88% 11px,92% 3px,96% 11px,100% 3px,100% 100%,0% 100%)}
+  .fv-dispatch:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(12,13,13,.14)}
+  .fv-dispatch:after{content:"";position:absolute;top:24px;right:clamp(18px,5vw,64px);width:44px;height:44px;border-radius:50%;border:1.5px dashed rgba(12,13,13,.16);background:linear-gradient(133deg,transparent 46%,rgba(12,13,13,.09) 47%,rgba(12,13,13,.09) 48%,transparent 49%),linear-gradient(47deg,transparent 46%,rgba(12,13,13,.09) 47%,rgba(12,13,13,.09) 48%,transparent 49%)}
   @media(max-width:760px){.fv-dispatch:after{display:none}}
-  .fv-dispatch__inner{max-width:640px;margin:0 auto;text-align:center}
-  .fv-dispatch__label{margin:0 0 14px;font:800 11px/1 var(--fv-sans);letter-spacing:.16em}
-  .fv-dispatch h2{margin:0 0 14px;font-family:var(--fv-display);font-size:clamp(26px,3.4vw,40px);font-weight:440;letter-spacing:-.01em}
-  .fv-dispatch p{margin:0 0 26px;font-size:17px;line-height:1.55}
-  .fv-dispatch__form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .fv-dispatch__form input{padding:13px 16px;border:1px solid #0c0d0d;border-radius:2px;min-width:260px;font-size:14px}
-  .fv-dispatch__form button{padding:13px 22px;border:0;border-radius:2px;background:#0c0d0d;color:var(--fv-ink);font:700 12px/1 var(--fv-sans);cursor:pointer}
-  .fv-dispatch__fine{margin-top:16px;font:600 10px/1.4 var(--fv-mono);letter-spacing:.06em}
+  .fv-dispatch__inner{max-width:480px;margin:0 auto;text-align:center}
+  .fv-dispatch__label{margin:0 0 20px;font:700 10px/1 var(--fv-mono);letter-spacing:.18em;opacity:.6}
+  .fv-dispatch h2{margin:0 0 16px;font-family:var(--fv-display);font-style:italic;font-size:clamp(20px,2.4vw,26px);font-weight:440;letter-spacing:-.005em;color:#2a2723}
+  .fv-dispatch p{margin:0 0 30px;font-size:14px;line-height:1.65;color:#4a453d;max-width:400px;margin-left:auto;margin-right:auto}
+  .fv-dispatch__form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;opacity:.85}
+  .fv-dispatch__form input{padding:9px 12px;border:0;border-bottom:1px solid rgba(12,13,13,.3);background:transparent;border-radius:0;min-width:220px;font-size:13px;color:#2a2723}
+  .fv-dispatch__form input::placeholder{color:#8a8378}
+  .fv-dispatch__form button{padding:9px 16px;border:1px solid rgba(12,13,13,.3);border-radius:2px;background:transparent;color:#2a2723;font:600 11px/1 var(--fv-sans);cursor:pointer}
+  .fv-dispatch__form button:hover{background:rgba(12,13,13,.06)}
+  .fv-dispatch__fine{margin-top:18px;font:600 9px/1.4 var(--fv-mono);letter-spacing:.06em;opacity:.55}
 
   footer.fv-harness-foot{padding:40px;text-align:center;color:var(--fv-ink-faint);font-size:12px}
 </style>
@@ -435,6 +462,78 @@
 </section>
 
 <!-- ============================================================= -->
+<!-- NEW — signature interaction #2: two real documents align       -->
+<!-- ============================================================= -->
+<section class="fv-align" aria-labelledby="fv-align-title">
+  <div class="fv-align__head">
+    <p class="fv-eyebrow">Two Documents, One Night</p>
+    <h2 id="fv-align-title">Drag until the record and the reconstruction agree.</h2>
+    <p class="fv-align__intro">A 1903 railway map and a modern chronology of the 1918 Malbone Street wreck were drawn fifteen years and one investigation apart. Slide the divider until their timelines meet.</p>
+  </div>
+  <div class="fv-align__stage" data-fv-align-stage tabindex="0" role="slider" aria-labelledby="fv-align-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="halfway between the two documents">
+    <div class="fv-align__panel fv-align__panel--map">
+      <img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=900,608&amp;ssl=1" alt="1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.">
+      <span class="fv-align__tag">1903 &middot; NYPL Digital Collections</span>
+    </div>
+    <div class="fv-align__panel fv-align__panel--diagram">
+      <img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v06r2-evidence-not-blame-responsive.png?resize=900,675&amp;ssl=1" alt="Chronology separating strike-day operating failures, the derailment and rescue from the later trials and acquittals.">
+      <span class="fv-align__tag">1918&ndash;1920 &middot; Final Vestige reconstruction</span>
+    </div>
+    <div class="fv-align__divider" data-fv-align-divider>
+      <div class="fv-align__handle" aria-hidden="true">&#8596;</div>
+    </div>
+    <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Aligned</span>
+  </div>
+  <p class="fv-align__fact">This map shows the Brighton line system fifteen years before a night in 1918, when a dispatcher took a new curve at five times its posted limit. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+</section>
+<script>
+(function(){
+  var stage = document.querySelector('[data-fv-align-stage]');
+  if(!stage) return;
+  var divider = stage.querySelector('[data-fv-align-divider]');
+  var mapPanel = stage.querySelector('.fv-align__panel--map');
+  var badge = stage.querySelector('[data-fv-align-badge]');
+  var revealed = false;
+  function setPosition(pct){
+    pct = Math.max(4, Math.min(96, pct));
+    divider.style.left = pct + '%';
+    mapPanel.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+    stage.setAttribute('aria-valuenow', Math.round(pct));
+    var aligned = pct > 45 && pct < 55;
+    if(aligned && !revealed){
+      revealed = true;
+      badge.setAttribute('data-revealed','1');
+      stage.classList.add('fv-align--locked');
+    } else if(!aligned && revealed && (pct < 40 || pct > 60)){
+      revealed = false;
+      badge.setAttribute('data-revealed','0');
+      stage.classList.remove('fv-align--locked');
+    }
+  }
+  function pctFromClientX(clientX){
+    var rect = stage.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+  var dragging = false;
+  function onStart(e){ dragging = true; stage.focus(); setPosition(pctFromClientX(e.clientX)); if(e.cancelable) e.preventDefault(); }
+  function onMove(e){ if(dragging) setPosition(pctFromClientX(e.clientX)); }
+  function onEnd(){ dragging = false; }
+  stage.addEventListener('pointerdown', onStart);
+  stage.addEventListener('mousedown', onStart);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('pointerup', onEnd);
+  window.addEventListener('mouseup', onEnd);
+  stage.addEventListener('keydown', function(e){
+    var current = parseFloat(divider.style.left) || 50;
+    if(e.key === 'ArrowLeft'){ setPosition(current - 4); e.preventDefault(); }
+    if(e.key === 'ArrowRight'){ setPosition(current + 4); e.preventDefault(); }
+  });
+  setPosition(50);
+})();
+</script>
+
+<!-- ============================================================= -->
 <!-- NEW — Mission (quiet editorial beat)                           -->
 <!-- ============================================================= -->
 <section class="fv-mission">
@@ -541,8 +640,8 @@
   <div class="fv-dispatch__inner">
     <span class="fv-act" style="border-color:rgba(12,13,13,.35);color:#524d42">Act IV — Stay on the Signal</span>
     <p class="fv-dispatch__label">THE DISPATCH</p>
-    <h2>One email a week from Final Vestige.</h2>
-    <p>A new investigation, an interesting source, a map worth keeping, or something useful we found while researching. That's about it.</p>
+    <h2>Some things are worth following.</h2>
+    <p>When there's a new investigation, an interesting source, a map worth keeping, or something useful we found while researching, it arrives here. Once a week, no more.</p>
     <form class="fv-dispatch__form" onsubmit="return false">
       <input type="email" placeholder="you@example.com" aria-label="Email address">
       <button type="submit">Subscribe</button>

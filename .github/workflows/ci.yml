@@ -74,6 +74,9 @@ jobs:
       - name: Library Inspector adversarial behavior
         run: python3 tests/verify_library_inspector.py
 
+      - name: Signature Alignment adversarial behavior
+        run: python3 tests/verify_signature_alignment.py
+
       - name: Build deterministic bridge package twice
         run: |
           mkdir -p dist

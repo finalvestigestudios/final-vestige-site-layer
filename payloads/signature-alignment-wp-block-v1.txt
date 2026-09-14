@@ -1,0 +1,75 @@
+<!-- wp:html -->
+<script id="fv-signature-alignment-v1-js">
+(()=>{
+if(window.__fvSignatureAlignment)return;
+window.__fvSignatureAlignment=true;
+try{
+// FV_SIGNATURE_ALIGNMENT_GATE_START
+const fvSaShouldRun=(ctx)=>{
+  if(!ctx)return false;
+  return !!(ctx.hasStage&&ctx.hasDivider&&ctx.hasMapPanel&&ctx.hasBadge);
+};
+// FV_SIGNATURE_ALIGNMENT_GATE_END
+
+const stage=document.querySelector('[data-fv-align-stage]');
+const divider=stage&&stage.querySelector('[data-fv-align-divider]');
+const mapPanel=stage&&stage.querySelector('.fv-align__panel--map');
+const badge=stage&&stage.querySelector('[data-fv-align-badge]');
+
+if(!fvSaShouldRun({hasStage:!!stage,hasDivider:!!divider,hasMapPanel:!!mapPanel,hasBadge:!!badge}))return;
+
+let revealed=false;
+
+const setPosition=(pctRaw)=>{
+  const pct=Math.max(4,Math.min(96,pctRaw));
+  divider.style.left=pct+'%';
+  mapPanel.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
+  stage.setAttribute('aria-valuenow',String(Math.round(pct)));
+  const aligned=pct>45&&pct<55;
+  if(aligned&&!revealed){
+    revealed=true;
+    badge.setAttribute('data-revealed','1');
+    stage.classList.add('fv-align--locked');
+  }else if(!aligned&&revealed&&(pct<40||pct>60)){
+    revealed=false;
+    badge.setAttribute('data-revealed','0');
+    stage.classList.remove('fv-align--locked');
+  }
+};
+
+const pctFromClientX=(clientX)=>{
+  const rect=stage.getBoundingClientRect();
+  return ((clientX-rect.left)/rect.width)*100;
+};
+
+let dragging=false;
+const onStart=(e)=>{
+  dragging=true;
+  stage.focus();
+  setPosition(pctFromClientX(e.clientX));
+  if(e.cancelable)e.preventDefault();
+};
+const onMove=(e)=>{ if(dragging)setPosition(pctFromClientX(e.clientX)); };
+const onEnd=()=>{ dragging=false; };
+
+stage.addEventListener('pointerdown',onStart);
+stage.addEventListener('mousedown',onStart);
+window.addEventListener('pointermove',onMove);
+window.addEventListener('mousemove',onMove);
+window.addEventListener('pointerup',onEnd);
+window.addEventListener('mouseup',onEnd);
+
+stage.addEventListener('keydown',(e)=>{
+  const current=parseFloat(divider.style.left)||50;
+  if(e.key==='ArrowLeft'){ setPosition(current-4); e.preventDefault(); }
+  if(e.key==='ArrowRight'){ setPosition(current+4); e.preventDefault(); }
+});
+
+setPosition(50);
+
+}catch(_){
+  window.__fvSignatureAlignment=false;
+}
+})();
+</script>
+<!-- /wp:html -->

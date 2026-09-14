@@ -2,10 +2,11 @@
 
 This directory holds the **WordPress page content** half of the homepage redesign. The other
 half — the progressive-enhancement JavaScript/CSS that plays the choreography, rotates the
-margins wire, drives the investigation walkthrough, and powers the Library magnifier — ships
-through the governed Site Layer plugin as four new payloads: `hero-assembly-wp-block-v1.txt`,
-`margins-wire-wp-block-v1.txt`, `investigation-walkthrough-wp-block-v1.txt`, and
-`library-inspector-wp-block-v1.txt` (see `../payloads/`, wired into
+margins wire, drives the investigation walkthrough, powers the Library magnifier, and drives the
+evidence-alignment slider — ships through the governed Site Layer plugin as five payloads:
+`hero-assembly-wp-block-v1.txt`, `margins-wire-wp-block-v1.txt`,
+`investigation-walkthrough-wp-block-v1.txt`, `library-inspector-wp-block-v1.txt`, and
+`signature-alignment-wp-block-v1.txt` (see `../payloads/`, wired into
 `../final-vestige-site-layer.php` and `../release-manifest.json`).
 
 **Why two halves.** This plugin can only inject content at `wp_footer`; it cannot restructure
@@ -55,7 +56,16 @@ JSON-LD):
    rights, "why it matters") is drawn from that post's real figcaption and NYPL catalog record,
    not invented. The Library Inspector payload adds a cursor/touch-driven magnifying loupe over a
    higher-resolution version of the same real image.
-6. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
+6. **New:** `fv-align` — "Drag until the record and the reconstruction agree." A second signature
+   interaction (real evidence, not a hover effect): a divider slider lets the visitor drag between
+   the same real 1903 NYPL map used in the Library and Final Vestige's own real evidence-boundary
+   diagram from ["Six Miles an Hour"](https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/)
+   — dragging near the midpoint reveals the same real "why it matters" fact already used in the
+   Library panel. With JavaScript disabled, the two real documents render side by side, split down
+   the middle, each captioned — never a blank or broken state. The Signature Alignment payload
+   drives the drag/keyboard interaction; no new evidence or claims beyond what's already used
+   elsewhere on this page.
+7. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
    blocks (Latest investigation, Recently filed, category strip, Exchange preview, More
    investigations, Research Trails, Sources and research tools) are untouched — same queries,
    same attributes, same real data at render time. Additions inside it:
@@ -70,10 +80,12 @@ JSON-LD):
      Its one line is reused verbatim from margin-strip item 41 (the CIA robotic-catfish note) —
      real, already-vetted content, not a new claim.
    - The Dispatch block itself (`wp:jetpack/subscriptions`) is **completely untouched** — same
-     block, same attributes, same real subscription mechanism.
-7. `fv-enter-record` — **unchanged.** Same four real cards (Editorial Standards, The Failure
+     block, same attributes, same real subscription mechanism. Only the surrounding heading,
+     copy, and framing were revised (from a conventional "newsletter signup" pitch to "the next
+     lead arrives at your desk") — the actual sign-up mechanism was not touched.
+8. `fv-enter-record` — **unchanged.** Same four real cards (Editorial Standards, The Failure
    Chain, Research Sources, Journal), same copy, same URLs.
-8. JSON-LD organization schema — **untouched.**
+9. JSON-LD organization schema — **untouched.**
 
 ## Applying this
 
@@ -101,12 +113,12 @@ edit vs. a plugin-code PR), but they are designed to be **deployed together** as
 compatibility contract:
 
 - **Page-6 content version.** This file corresponds to Site Layer release
-  `FVSL-VESTIGE-ASSEMBLY-HOME-001` / plugin version `0.3.0` (see `../final-vestige-site-layer.php`
+  `FVSL-VESTIGE-ASSEMBLY-HOME-002` / plugin version `0.4.0` (see `../final-vestige-site-layer.php`
   and `../CHANGELOG.md`). If a future Site Layer release changes the selectors, data attributes,
-  or class names these four payloads depend on (`[data-fv-assembly]`, `.fv-margin-strip__item`,
-  `[data-fv-invest-stages]`/`[data-fv-invest-image]`/etc., `[data-fv-library-frame]`/etc.), that
-  release's own changelog entry must say so explicitly, and this file must be updated in the same
-  release.
+  or class names these five payloads depend on (`[data-fv-assembly]`, `.fv-margin-strip__item`,
+  `[data-fv-invest-stages]`/`[data-fv-invest-image]`/etc., `[data-fv-library-frame]`/etc.,
+  `[data-fv-align-stage]`/`[data-fv-align-divider]`/`[data-fv-align-badge]`), that release's own
+  changelog entry must say so explicitly, and this file must be updated in the same release.
 - **Fail-safe if only one half is live.** Every payload here is written to degrade to a static,
   fully-meaningful page if its half is missing or stale:
   - Old page content + new Site Layer payloads: each payload's `querySelector` calls simply find
@@ -115,16 +127,18 @@ compatibility contract:
     the old page, unanimated.
   - New page content + old Site Layer payloads (or the payloads disabled/corrupted and
     fail-closed by `fvsl_release_is_intact()`): the new markup is plain, real, readable HTML on
-    its own — headline, fragments, worlds, investigation stages, library metadata, all present as
+    its own — headline, fragments, worlds, investigation stages, library metadata, the two real
+    alignment-slider documents (rendered side by side, split down the middle), all present as
     static text and images. Nothing on the new page depends on JavaScript to convey its meaning.
   - **Net effect:** any mismatched combination of the two halves renders a correct, readable,
     accessible page — never a blank section, a broken layout, or a console error. Each payload's
-    gate function (`fvHaShouldRun`, `fvMwShouldRun`, `fvIwShouldRun`, `fvLiShouldRun`) is unit
-    tested to return `false` — and the payload to no-op rather than throw — when its expected
-    elements are absent (`tests/verify_hero_assembly.py`, `verify_margins_wire.py`,
-    `verify_investigation_walkthrough.py`, `verify_library_inspector.py`). This has not been
-    additionally verified by hand against a live mismatched deploy; do that as part of the
-    post-deploy checklist below if the two halves ever ship on different schedules.
+    gate function (`fvHaShouldRun`, `fvMwShouldRun`, `fvIwShouldRun`, `fvLiShouldRun`,
+    `fvSaShouldRun`) is unit tested to return `false` — and the payload to no-op rather than throw
+    — when its expected elements are absent (`tests/verify_hero_assembly.py`,
+    `verify_margins_wire.py`, `verify_investigation_walkthrough.py`, `verify_library_inspector.py`,
+    `verify_signature_alignment.py`). This has not been additionally verified by hand against a
+    live mismatched deploy; do that as part of the post-deploy checklist below if the two halves
+    ever ship on different schedules.
 - **Rollback.** Page content: WordPress's own revision history on page ID 6 is the rollback path
   — restore the prior revision. Site Layer: `git revert` the merge commit through the normal
   governed release process (`../DEPLOYMENT.md`); the plugin's own byte/hash integrity check means
@@ -141,16 +155,22 @@ compatibility contract:
         evidence panel's image/caption/citation/quote match the clicked stage.
   - [ ] Library map loads, the loupe follows the cursor (desktop) and touch drag (mobile), and
         keyboard Enter/Space toggles a centered magnified view.
+  - [ ] Alignment slider (the map/chronology drag) responds to mouse drag, touch drag, and
+        keyboard arrows, and the "Aligned" badge appears once the divider is dragged near center.
   - [ ] Dispatch subscription form still submits successfully (unchanged block, but verify after
         any theme/plugin update in case an unrelated change affects Jetpack blocks).
   - [ ] `wp-json/fv-deploy/v1/deploy` bridge logs show the expected package SHA-256 was applied.
 
 ## What this does **not** attempt (and why)
 
-- **A distinct visual treatment for Films & Media and The Exchange beyond the differentiated
-  Worlds card** — both get their own layout/background treatment in `fv-worlds` (see the section
-  markup), but a dedicated full section for either (mirroring the Library section's depth) was
-  not built, given the scope already covered and the real content available to build it from.
+- **A structural alternative to the six-card "Worlds" grid** — a fundamentally different
+  "environments, not offerings" concept (each pathway as its own full-width editorial beat) was
+  prototyped harness-only and tested against the current implementation with two independent
+  blind A/B comparisons; both chose the current six-card grid as stronger (denser, more
+  distinctive as an "evidence board," while the full-width-beat alternative read as a more
+  generic repeating template despite richer individual treatments). The current grid was kept
+  and the alternative was not ported. See the harness `experience-b.html` prototype and the
+  session's review notes for the comparison record.
 - **Header/footer/global navigation** — these belong to the live theme, not to page content or
   this plugin, and were not touched or reconstructed.
 - **A from-scratch information-architecture reorder of `fv-home-shell`'s internal sections** — its
@@ -173,4 +193,10 @@ compatibility contract:
   2026-09-13, confirming the real NYPL map and evidence-boundary diagram's actual editorial use
   and captions.
 - Design tokens (colors, borders) are the exact values already used in the live page's inline
-  CSS, not new choices. The one new token (the Fraunces display typeface) is documented above.
+  CSS, not new choices. Two new typographic tokens are loaded: the Fraunces display serif and
+  Courier Prime, a typewriter monospace used for the case-file/evidence labels throughout the
+  page (both loaded via the same release-integrity-gated `wp_head` hook).
+- The Alignment interaction's two documents (the 1903 NYPL map, the evidence-boundary diagram)
+  and its "why it matters" fact are the same real assets and real copy already verified above for
+  the Library section and "Six Miles an Hour" — no new evidence was introduced for this
+  interaction, only a new way of presenting the same two already-vetted real documents.

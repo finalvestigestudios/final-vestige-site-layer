@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Final Vestige Site Layer
  * Description: Versioned, fail-closed delivery layer for QD-reviewed Final Vestige front-end features.
- * Version: 0.3.0
+ * Version: 0.4.0
  * Author: Final Vestige Studios
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -10,8 +10,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FVSL_VERSION', '0.3.0' );
-define( 'FVSL_RELEASE_ID', 'FVSL-VESTIGE-ASSEMBLY-HOME-001' );
+define( 'FVSL_VERSION', '0.4.0' );
+define( 'FVSL_RELEASE_ID', 'FVSL-VESTIGE-ASSEMBLY-HOME-002' );
 define( 'FVSL_PIPELINE_CANARY', 'FVS-E2E-20260911-A' );
 
 /**
@@ -60,6 +60,11 @@ function fvsl_release_manifest() {
             'file'   => 'library-inspector-wp-block-v1.txt',
             'bytes'  => 2646,
             'sha256' => '0d736919a7defab459f041c41aea77b851ceb63463e718b84e367a6b68f1b2d3',
+        ),
+        'signature-alignment' => array(
+            'file'   => 'signature-alignment-wp-block-v1.txt',
+            'bytes'  => 2327,
+            'sha256' => '68ad5cd472f7885dd6aec3bedb6ea601eb0b6330a7ad9a3da657f2962ede4d65',
         ),
     );
 }
