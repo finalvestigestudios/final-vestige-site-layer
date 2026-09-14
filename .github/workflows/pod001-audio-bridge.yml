@@ -1,0 +1,42 @@
+name: POD-001 Private Audio Bridge Validation
+
+on:
+  push:
+    branches:
+      - automation/pod001-audio-bridge
+
+permissions:
+  contents: read
+
+env:
+  S01_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/YNtWuccQOnuFnA5fxEhp/cqSyRENXcy7Og3w91G1x/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T055217Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=6f592c644c5f31d4d9e564cde888b083b230b79244d4e6e290193e524ae12f0f0c408f27ae9c7714377932fc1f1d8e67dabad5988939e6f55e88fcb042bf2da20c1b273fca44b95922fa874c30f3d436f22297d0b38497adb1908ed412857adfaee71557e6dfb01bc8ef3d2fd2b8a5d6d3e16f19d75352949534ad2eb79c231443f1a7a1ee7ebad1b083a72ab7ff5a9a190a446d5582c797ab31921a19020d345d6d49e205044988e2e8c62ccb8600dc3d9354cb7ff64d04c75ad5fee3506960462dba892db106688cb302f4351c34d66d8d7c6708feed84f15cb819e0ac19e5ed43ec1f8fc9de93ce2116dd77e269549bd83b6bc0405936af8ddd7f037a7574"
+
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch exact selected S01 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p bridge_out
+          curl --fail --location --retry 3 --retry-delay 2 "$S01_URL" --output bridge_out/s01.mp3
+          test -s bridge_out/s01.mp3
+      - name: Record integrity receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo "source_generation=cqSyRENXcy7Og3w91G1x"
+            echo "voice_id=G39kes5C0SCb5IRyUk73"
+            echo "model_id=eleven_multilingual_v2"
+            sha256sum bridge_out/s01.mp3
+            ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 bridge_out/s01.mp3
+          } | tee bridge_out/receipt.txt
+      - name: Upload private bridge artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pod001-s01-bridge
+          path: bridge_out/
+          if-no-files-found: error
+          retention-days: 1
