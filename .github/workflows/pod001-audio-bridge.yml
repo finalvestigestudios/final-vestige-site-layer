@@ -1,4 +1,4 @@
-name: POD-001 Private Audio Bridge Validation
+name: POD-001 Private Audio Bridge
 
 on:
   push:
@@ -9,34 +9,44 @@ permissions:
   contents: read
 
 env:
-  S01_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/YNtWuccQOnuFnA5fxEhp/cqSyRENXcy7Og3w91G1x/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T055217Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=6f592c644c5f31d4d9e564cde888b083b230b79244d4e6e290193e524ae12f0f0c408f27ae9c7714377932fc1f1d8e67dabad5988939e6f55e88fcb042bf2da20c1b273fca44b95922fa874c30f3d436f22297d0b38497adb1908ed412857adfaee71557e6dfb01bc8ef3d2fd2b8a5d6d3e16f19d75352949534ad2eb79c231443f1a7a1ee7ebad1b083a72ab7ff5a9a190a446d5582c797ab31921a19020d345d6d49e205044988e2e8c62ccb8600dc3d9354cb7ff64d04c75ad5fee3506960462dba892db106688cb302f4351c34d66d8d7c6708feed84f15cb819e0ac19e5ed43ec1f8fc9de93ce2116dd77e269549bd83b6bc0405936af8ddd7f037a7574"
+  S02_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/JqosCsXXiwrHH12qzbZU/W9QuGtZw6XasSvvwQIBX/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T053516Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=6da69ba0c77f0e9201f239dadfa39ef50ce5c4a3c31d42b1c2197921f0749b9a66f1a75f415cba5acf296314cf897139df6f1efbe99d08de2bc1d149928e04ac0090699ad0841a15a95199b16be859b29c2da1b89371985e19da4db506ffc8ef00a6bbb28c92aeabaf4bea95efabbd7ca2185c34b849daa7cd132a5d9f2bb0aaa2383ce8e239064d844b391a3623402afa9c564033c901e4868340431efe1cdda807be217fd107a9440317a68ee49bf370a83ee2d2f8b854a61081c74c0ae571e8deb3d306b8423ebc7897c35d77afc430af23778684479fed6792578c8b325b3e5c526cd9d59c54f56102c9729b7224d9466b1f6152b90da5de12adf415b648"
+  S03_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/tP9kRJ436qB0PjOoKO4e/8GLfXuaxAYhzakSYNM9i/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T061014Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=ac229c05012a509005cb2a0121b5d7c71020c4241a582e52f1bc089cbf482abcf777cc794006eff4ead311b37a12775831c5513783c5795ab925e83983038ed191b3ce2aea9f98eae7f17b15b7be7280275eb23019784a5f1e70bc7d47176dcbfd318cf7bec28961dd11b8664d0f2baf0a1722dacda8195d5b1dfbde9570906642daf0c2f03c8d0055b35034aa3fc33e93dbfa6138ca9ddd2754fd1062da30aaeecb3c0fee0881d63dcce5a9aa30877c059f04c6b921ce0574157adbb293747d7493c586e6831c6d639bb8811857637d2326572eba2ff3a85b10f6c67c91a733200a4426bbe2602387993fb72ed108713b9afc5f52d8c2c64705250a884d9839"
+  S04_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/Ob9e8gyNBClivVawrcWr/3LTeJipjYziVCVfw4GnI/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T061014Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=25f349eb1bc9bf127ea0d01a153a4485022b941b01e233f25b05186d2355bd217d4dbc64d74f22f0bd1a91143c0365015a39b0762eed6a0e64e5f4de703f847d65854ca12666aefc477070c4bdfd120ae555b68bc33ba31a28c44167e95f955883907990b74109fbe58827d135517829765268e172212ef7c5f735b24ca30666c37ae93fd8fd2d257418dc47173f7fdc3722e4050abd43ccf3fefe5107284472466f7d0cb5959256a2512b849c31e96308b3a011c48a7a402ca01bf685f402b10ad880c7370249af49022ad1e913b920e562349740c847012fb57f78d1e02f6c03476ba6131d0d82bedc1abbfeb79be4a59f1a7db7c3041bbad2883eb9334ac6"
+  S05_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/SAUynjCfLsiW9eWX2Ht1/wrNdxeR4g6hVVvJbxugh/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T061014Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=c7910b30a0113d4355c01d460e36eef8fa9ed3654290b61d346dc5ce1114bdb84fa1b18c1cd7680287de3affce0acc7cb291f7c0596c69e930b3159a4c67b6a82e2e45966815a796cfe5ba0e37a838f96593eaf1df459f88b06cde2e132fef34d2ff1b8c4c3ca9d64d95a05f498cb035b7b531d7953491108545110f3b906fce6da2e305dcc02d3d332749cd413a4de61cf7d47339ac67ba45c9ed67e49b0c4dd28d8e7e490753809a861a643346963cf1e1f2ade293817906130016b8eb43a7152f32c9e98842860849799eaa2cc479b730819c0d17d66a4a5c84d6242fd2502c29c9aa986aad2f673fba41e7fd93c5cf807240e0905f0de271fe77d1ea083a"
+  S06_URL: "https://storage.googleapis.com/xi-backend/database/workspace/e90b8f8b00ee42cb82bbcaefa538df3b/content_generation/LuSfZq9Dkc2zIDnQPEnu/eQRRSQbyJmzAcvVuWZOH/content.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=xi-backend-prod%40xi-labs.iam.gserviceaccount.com%2F20260914%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260914T061014Z&X-Goog-Expires=7200&X-Goog-SignedHeaders=host&X-Goog-Signature=6b7cc8e0f3c2020868996cd2bb88f5a971aaaf510f56d8dda01fb6e347305e62352ec8030772ad8d20456f400ee75973fc6ba6e8bb2055176e7009207958886d1d79cbb3c84b3ad6667f0a741b93b6f81d9997eadf04392265c335ad9f583abf2a3db183b60e597228828e2a6af922b770ba675b8f82abb3ede60a29afffebe0f2c57c7338302c48c00df197c4011191ef449beecef1dd4bf66c97a09b9be0427e3dd48a5bc38e8a446fb4fec18c287b26f6dfa50a1fc25f734081926f88356ae86900a0b9d522c70886b5d9ee7cc7dfa34c7b67ff63fa8bfb9adaea9af40696fcbaa6c654f573de209649a305420f98909f2ecd69999e211c621b308c22d7b4"
 
 jobs:
   bridge:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch exact selected S01 source
+      - name: Fetch exact selected narration sources
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p bridge_out
-          curl --fail --location --retry 3 --retry-delay 2 "$S01_URL" --output bridge_out/s01.mp3
-          test -s bridge_out/s01.mp3
+          for stem in 02 03 04 05 06; do
+            var="S${stem}_URL"
+            url="${!var}"
+            curl --fail --location --retry 3 --retry-delay 2 "$url" --output "bridge_out/s${stem}.mp3"
+            test -s "bridge_out/s${stem}.mp3"
+          done
       - name: Record integrity receipt
         shell: bash
         run: |
           set -euo pipefail
           {
-            echo "source_generation=cqSyRENXcy7Og3w91G1x"
+            echo "episode=POD-001"
             echo "voice_id=G39kes5C0SCb5IRyUk73"
             echo "model_id=eleven_multilingual_v2"
-            echo "bytes=$(stat -c %s bridge_out/s01.mp3)"
-            sha256sum bridge_out/s01.mp3
+            for f in bridge_out/*.mp3; do
+              stat -c '%n %s bytes' "$f"
+              sha256sum "$f"
+            done
           } | tee bridge_out/receipt.txt
       - name: Upload private bridge artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pod001-s01-bridge
+          name: pod001-audio-bridge-s02-s06
           path: bridge_out/
           if-no-files-found: error
           retention-days: 1
