@@ -1,6 +1,8 @@
 {
   "schema_version": "fv-podcast-publish/v1",
+  "mode": "release",
   "package_id": "EXAMPLE-ONLY",
+  "release_payload_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
   "publication_authority": "FOUNDER_EXPLICIT_PUBLISH_YYYY-MM-DD",
   "qd": {
     "exact_master": "PASS",
@@ -29,7 +31,6 @@
     "explicit": false,
     "private": false,
     "episode_number": 1,
-    "season_number": 1,
     "tags": "example"
   }
 }
