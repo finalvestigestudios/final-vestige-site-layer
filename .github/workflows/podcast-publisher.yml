@@ -43,22 +43,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Resolve request file
+      - name: Resolve exactly one governed request file
         id: req
         shell: bash
         run: |
           set -euo pipefail
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             REQUEST='${{ inputs.request_file }}'
+            test -f "$REQUEST"
           else
-            REQUEST=$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^publisher/requests/.*\.json$' | head -n 1 || true)
+            mapfile -t REQUESTS < <(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^publisher/requests/.*\.json$' || true)
+            if [ "${#REQUESTS[@]}" -ne 1 ]; then
+              echo "Expected exactly one changed governed request; found ${#REQUESTS[@]}" >&2
+              exit 1
+            fi
+            REQUEST="${REQUESTS[0]}"
+            test -f "$REQUEST"
           fi
-          test -n "$REQUEST"
-          test -f "$REQUEST"
           echo "request=$REQUEST" >> "$GITHUB_OUTPUT"
-      - name: Publish exact QD-cleared episode
+      - name: Publish exact governed episode or private canary
         env:
           BUZZSPROUT_API_TOKEN: ${{ secrets.BUZZSPROUT_API_TOKEN }}
+          PODCAST_CANARY_ENABLED: ${{ secrets.PODCAST_CANARY_ENABLED }}
+          PODCAST_AUTH_PACKAGE_ID: ${{ secrets.PODCAST_AUTH_PACKAGE_ID }}
+          PODCAST_AUTH_MASTER_SHA256: ${{ secrets.PODCAST_AUTH_MASTER_SHA256 }}
+          PODCAST_AUTH_ARTWORK_SHA256: ${{ secrets.PODCAST_AUTH_ARTWORK_SHA256 }}
+          PODCAST_AUTH_RELEASE_SHA256: ${{ secrets.PODCAST_AUTH_RELEASE_SHA256 }}
           PUBLISH_REQUEST_FILE: ${{ steps.req.outputs.request }}
         run: node services/podcast-publisher/publisher.mjs
       - name: Archive publisher receipt
