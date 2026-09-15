@@ -1,0 +1,41 @@
+name: Podcast Egress Bridge CI
+
+on:
+  pull_request:
+    paths:
+      - 'tools/podcast-egress/**'
+      - '.github/workflows/podcast-egress-ci.yml'
+      - '.github/workflows/pod001-egress-run.yml'
+  push:
+    branches: ['feature/podcast-egress-bridge-v1']
+    paths:
+      - 'tools/podcast-egress/**'
+      - '.github/workflows/podcast-egress-ci.yml'
+      - '.github/workflows/pod001-egress-run.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax
+        run: python3 -m py_compile tools/podcast-egress/egress.py tools/podcast-egress/tests/test_egress.py
+      - name: Unit tests
+        run: python3 -m unittest discover -s tools/podcast-egress/tests -v
+      - name: Validate POD-001 manifest
+        run: |
+          python3 - <<'PY'
+          import importlib.util, json
+          from pathlib import Path
+          p = Path('tools/podcast-egress/egress.py')
+          spec = importlib.util.spec_from_file_location('egress', p)
+          mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+          manifest = json.loads(Path('tools/podcast-egress/manifests/pod001-selected.json').read_text())
+          mod.validate_manifest(manifest)
+          assert manifest['expected_count'] == 56
+          assert len(manifest['stems']) == 56
+          print('POD-001 manifest: 56 exact selected generations validated')
+          PY
