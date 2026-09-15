@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { validateRequest } from './publisher.mjs';
+import { validateRequest } from './publisher-v2.mjs';
 
 const base = {
   schema_version: 'fv-podcast-publish/v1',
