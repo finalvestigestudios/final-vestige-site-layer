@@ -43,6 +43,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Verify host-audio probe runtime
+        run: ffprobe -version >/dev/null
       - name: Resolve exactly one governed request file
         id: req
         shell: bash
@@ -70,7 +72,7 @@ jobs:
           PODCAST_AUTH_ARTWORK_SHA256: ${{ secrets.PODCAST_AUTH_ARTWORK_SHA256 }}
           PODCAST_AUTH_RELEASE_SHA256: ${{ secrets.PODCAST_AUTH_RELEASE_SHA256 }}
           PUBLISH_REQUEST_FILE: ${{ steps.req.outputs.request }}
-        run: node services/podcast-publisher/publisher-v2.mjs
+        run: node services/podcast-publisher/publisher-v3.mjs
       - name: Archive publisher receipt
         if: always()
         uses: actions/upload-artifact@v4
