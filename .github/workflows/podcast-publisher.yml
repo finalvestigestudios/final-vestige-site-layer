@@ -1,0 +1,71 @@
+name: Final Vestige Podcast Publisher
+
+on:
+  pull_request:
+    paths:
+      - 'services/podcast-publisher/**'
+      - '.github/workflows/podcast-publisher.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'publisher/requests/*.json'
+  workflow_dispatch:
+    inputs:
+      request_file:
+        description: 'Governed publish request path'
+        required: true
+        default: 'publisher/requests/POD-001.json'
+
+permissions:
+  contents: read
+
+env:
+  BUZZSPROUT_PODCAST_ID: '2650509'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Publisher contract tests
+        run: node services/podcast-publisher/test.mjs
+
+  publish:
+    if: github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    environment: podcast-production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Resolve request file
+        id: req
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            REQUEST='${{ inputs.request_file }}'
+          else
+            REQUEST=$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^publisher/requests/.*\.json$' | head -n 1 || true)
+          fi
+          test -n "$REQUEST"
+          test -f "$REQUEST"
+          echo "request=$REQUEST" >> "$GITHUB_OUTPUT"
+      - name: Publish exact QD-cleared episode
+        env:
+          BUZZSPROUT_API_TOKEN: ${{ secrets.BUZZSPROUT_API_TOKEN }}
+          PUBLISH_REQUEST_FILE: ${{ steps.req.outputs.request }}
+        run: node services/podcast-publisher/publisher.mjs
+      - name: Archive publisher receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-publisher-receipt-${{ github.run_id }}
+          path: publisher-receipt.json
+          if-no-files-found: ignore
+          retention-days: 90
