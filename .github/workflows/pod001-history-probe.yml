@@ -1,0 +1,28 @@
+name: POD-001 ElevenLabs History Probe
+
+on:
+  push:
+    branches: ['feature/podcast-egress-bridge-v1']
+    paths:
+      - 'tools/podcast-egress/probe/**'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify secret availability
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "ELEVENLABS_API_KEY repository secret is not configured." >&2
+            exit 2
+          fi
+      - name: Probe read-only History API
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 tools/podcast-egress/history_probe.py
