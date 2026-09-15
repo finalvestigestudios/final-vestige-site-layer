@@ -26,12 +26,12 @@ jobs:
             echo "ELEVENLABS_API_KEY repository secret is not configured." >&2
             exit 2
           fi
-      - name: Retrieve exact selected POD-001 narration
+      - name: Retrieve exact selected POD-001 narration from History
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: |
-          python3 tools/podcast-egress/egress.py \
-            --manifest tools/podcast-egress/manifests/pod001-selected.json \
+          python3 tools/podcast-egress/history_egress.py \
+            --manifest tools/podcast-egress/manifests/pod001-selected-history-v2.json \
             --out-dir build/pod001/stems \
             --zip build/POD001-selected-narration.zip \
             --receipt build/POD001-selected-narration-receipt.json
