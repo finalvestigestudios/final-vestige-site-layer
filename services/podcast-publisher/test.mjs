@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { validateRequest } from './publisher-v2.mjs';
+import { validateRequest } from './publisher-v3.mjs';
 
 const base = {
   schema_version: 'fv-podcast-publish/v1',
@@ -26,6 +26,8 @@ const base = {
 const validated = validateRequest(base);
 assert.equal(validated.metadata.episode_number, 1);
 assert.equal(validated.metadata.season_number, null, 'season must remain absent when canonical metadata has no season');
+assert.match(validated.guid, /^FV-[0-9a-f]{40}$/);
+assert.equal(validated.guid, validateRequest(structuredClone(base)).guid, 'package GUID must be deterministic');
 
 for (const gate of ['exact_master', 'artwork_rights', 'release_copy']) {
   const mutant = structuredClone(base); mutant.qd[gate] = 'PENDING';
@@ -62,6 +64,7 @@ for (const gate of ['exact_master', 'artwork_rights', 'release_copy']) {
   });
   assert.equal(canary.mode, 'canary');
   assert.equal(canary.metadata.private, true);
+  assert.match(canary.guid, /^FV-[0-9a-f]{40}$/);
 }
 {
   const canary = { schema_version: 'fv-podcast-publish/v1', mode: 'canary', package_id: 'CANARY-001', metadata: { title: 'FINAL VESTIGE PUBLISHER CANARY 001', private: false } };
