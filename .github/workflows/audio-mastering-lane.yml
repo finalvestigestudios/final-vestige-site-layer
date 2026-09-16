@@ -1,0 +1,27 @@
+name: Final Vestige Audio Mastering Lane CI
+
+on:
+  pull_request:
+    paths:
+      - 'tools/audio-mastering/**'
+      - '.github/workflows/audio-mastering-lane.yml'
+  push:
+    branches: ['feature/audio-mastering-lane-v1']
+    paths:
+      - 'tools/audio-mastering/**'
+      - '.github/workflows/audio-mastering-lane.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Run deterministic audio lane tests
+        working-directory: tools/audio-mastering
+        run: ./tests/test_pipeline.sh
+      - name: Show QC reports
+        if: always()
+        working-directory: tools/audio-mastering
+        run: find build -name '*_qc.json' -print -exec cat {} \;

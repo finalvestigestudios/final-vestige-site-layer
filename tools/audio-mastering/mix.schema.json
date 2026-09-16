@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://finalvestige.com/schemas/audio-mix-v1.json",
+  "title": "Final Vestige Audio Mix Manifest v1",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "profiles", "narration"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "episode_id": {"type": "string", "minLength": 1},
+    "sample_rate": {"type": "integer", "enum": [44100, 48000, 96000], "default": 48000},
+    "head_seconds": {"type": "number", "minimum": 0, "maximum": 5},
+    "tail_seconds": {"type": "number", "minimum": 0, "maximum": 10},
+    "require_pause_classes": {"type": "boolean"},
+    "max_internal_silence_seconds": {"type": "number", "minimum": 0.3, "maximum": 2.0},
+    "profiles": {
+      "type": "object",
+      "required": ["podcast", "youtube"],
+      "properties": {
+        "podcast": {"$ref": "#/$defs/profile"},
+        "youtube": {"$ref": "#/$defs/profile"}
+      }
+    },
+    "vocal_chain": {"type": "object"},
+    "ducking": {"type": "object"},
+    "narration": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/narrationBeat"}
+    },
+    "music": {"type": "array", "items": {"$ref": "#/$defs/musicCue"}},
+    "sfx": {"type": "array", "items": {"$ref": "#/$defs/sfxCue"}}
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "required": ["integrated_lufs", "true_peak_dbtp"],
+      "properties": {
+        "integrated_lufs": {"type": "number", "minimum": -24, "maximum": -10},
+        "true_peak_dbtp": {"type": "number", "minimum": -4, "maximum": -0.5},
+        "lra_lu": {"type": "number", "minimum": 1, "maximum": 20}
+      }
+    },
+    "narrationBeat": {
+      "type": "object",
+      "required": ["id", "file", "gap_after"],
+      "properties": {
+        "id": {"type": "string"},
+        "file": {"type": "string"},
+        "text": {"type": "string"},
+        "start": {"type": "number", "minimum": 0},
+        "gap_after": {"type": "number", "minimum": 0, "maximum": 3},
+        "pause_class": {"enum": ["none", "punch", "thought", "reveal", "chapter"]},
+        "allow_internal_silence": {"type": "boolean"}
+      }
+    },
+    "musicCue": {
+      "type": "object",
+      "required": ["id", "file"],
+      "properties": {
+        "id": {"type": "string"},
+        "file": {"type": "string"},
+        "gain_db": {"type": "number", "minimum": -24, "maximum": 12},
+        "target_lufs": {"type": "number", "minimum": -36, "maximum": -14},
+        "loop": {"type": "boolean"},
+        "fade_in": {"type": "number", "minimum": 0, "maximum": 10},
+        "fade_out": {"type": "number", "minimum": 0, "maximum": 10},
+        "required": {"type": "boolean"},
+        "provenance": {"enum": ["authentic-archival", "licensed", "generated-reconstruction", "original-final-vestige"]}
+      }
+    },
+    "sfxCue": {
+      "type": "object",
+      "required": ["id", "file", "start", "event_type", "provenance"],
+      "properties": {
+        "id": {"type": "string"},
+        "file": {"type": "string"},
+        "start": {"type": "number", "minimum": 0},
+        "gain_db": {"type": "number", "minimum": -30, "maximum": 12},
+        "target_lufs": {"type": "number", "minimum": -36, "maximum": -10},
+        "required": {"type": "boolean"},
+        "event_type": {"type": "string"},
+        "provenance": {"enum": ["authentic-archival", "licensed", "generated-reconstruction", "original-final-vestige"]},
+        "evidence_note": {"type": "string"}
+      }
+    }
+  }
+}
