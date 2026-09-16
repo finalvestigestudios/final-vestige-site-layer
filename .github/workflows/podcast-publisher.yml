@@ -43,6 +43,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Install host-audio probe dependency
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
       - name: Verify host-audio probe runtime
         run: ffprobe -version >/dev/null
       - name: Resolve exactly one governed request file
