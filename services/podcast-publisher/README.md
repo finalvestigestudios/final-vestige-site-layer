@@ -1,4 +1,4 @@
-# Final Vestige Podcast Publisher Bridge v1.1
+# Final Vestige Podcast Publisher Bridge v1.2
 
 Purpose: publish one exact, independently QD-cleared Final Vestige episode to Buzzsprout podcast `2650509` and verify the host/RSS destination without exposing credentials, trusting caller-asserted approval strings, or silently accepting host audio degradation.
 
@@ -32,22 +32,35 @@ Configure only in the protected Actions environment:
 
 `BUZZSPROUT_PODCAST_ID=2650509` is pinned in the workflow. Never commit, print, place in Notion, or paste the token into a request.
 
+## Buzzsprout host identity
+
+Buzzsprout owns the episode GUID. The publisher never invents or sends a client GUID. A deterministic internal `package_key` is retained for Final Vestige receipts, while host verification records the Buzzsprout-assigned episode ID and `Buzzsprout...` GUID returned by the API.
+
+Reconciliation uses exact governed metadata identity: title, episode number, optional season, description, artist and explicit flag. Multiple exact matches or a visible title/number/season collision with different governed metadata fail closed.
+
 ## Private canary
 
-Issue #46 requires a private host-write canary before the real release. Canary mode generates a deterministic one-second 48 kHz stereo WAV inside the runner, creates a namespaced **private** Buzzsprout episode, waits for processing, verifies the exact private destination, and stops. It never appears in RSS. Canary execution additionally requires runtime control `PODCAST_CANARY_ENABLED=1`.
+Issue #46 requires a private host-write canary before the real release. Canary mode generates a deterministic one-second 48 kHz stereo WAV inside the runner, creates or safely reconciles a namespaced **private** Buzzsprout episode, waits for processing, verifies the exact private destination, and stops. It never appears in RSS. Canary execution additionally requires runtime control `PODCAST_CANARY_ENABLED=1`.
 
 ## Real episode sequence
 
 1. Validate the request and runtime-owned authorization bindings.
 2. Download master/artwork and independently verify byte count + SHA-256 before host mutation.
-3. Reconcile by exact title/episode/optional-season identity; multiple matches fail closed.
-4. Create the real episode **private first**. On uncertain POST outcome, read/reconcile before any retry; the bridge never blindly retries create.
-5. Poll GET until audio processing yields an `audio_url`.
-6. Require Buzzsprout `hq=true` and reject `magic_mastering=true` for this already-mastered exact release.
-7. Optionally upload a governed transcript using Buzzsprout multipart `transcript_file` + `transcript_format`.
-8. PUT the verified private episode public; reconcile an uncertain update by readback.
-9. Verify public GET state and poll RSS until the exact title appears.
-10. Archive `publisher-receipt.json` with episode ID, host audio URL, HQ/Magic-Mastering state, exact input identities and verification timestamp.
+3. Reconcile by exact governed metadata identity; ambiguous or conflicting matches fail closed.
+4. Create the real episode **private first**, metadata/artwork only. On uncertain POST outcome, read/reconcile before any retry; the bridge never blindly retries create.
+5. Start a Buzzsprout media upload, PUT the exact bytes to the returned upload URL without the Buzzsprout Authorization header, then call the upload `complete` endpoint.
+6. Poll the private episode until media processing completes and an `audio_url` is present.
+7. Require Buzzsprout `hq=true`, reject `magic_mastering=true`, and independently probe the host derivative before publication.
+8. Optionally upload a governed transcript using Buzzsprout multipart `transcript_file` + `transcript_format`.
+9. PATCH the verified private episode public; reconcile an uncertain update by readback.
+10. Verify public GET state and poll RSS until the exact title appears.
+11. Archive `publisher-receipt.json` with package key, Buzzsprout episode ID/GUID, host audio URL, HQ/Magic-Mastering state, exact input identities and verification timestamp.
+
+## Resume safety
+
+Canary runs may safely reconcile an already-created private canary with exact governed metadata, which is required for failed verification retries such as POD-001 R4.
+
+For a real release, if a resumed run encounters an already-existing release episode that already has media, the bridge fails closed rather than assuming that media belongs to the currently authorized package. This deliberately favors exact-master safety over blind idempotent continuation.
 
 ## Metadata safeguards
 
@@ -55,6 +68,7 @@ Issue #46 requires a private host-write canary before the real release. Canary m
 - Description is rejected before mutation when it exceeds Buzzsprout's current 4,000-character ceiling.
 - A push must contain exactly one changed `publisher/requests/*.json` file or the workflow fails before mutation.
 - GET polling uses ETags when available.
+- Client-supplied Buzzsprout GUIDs are not used.
 
 ## Transport
 
