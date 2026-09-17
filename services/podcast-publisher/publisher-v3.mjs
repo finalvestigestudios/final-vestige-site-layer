@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/1.3 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/1.4 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -31,7 +31,7 @@ const sha = (v, label) => {
   return s;
 };
 const digest = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
-const guidFor = packageId => `FV-${digest(Buffer.from(packageId, 'utf8')).slice(0, 40)}`;
+const packageKeyFor = packageId => `FVPKG-${digest(Buffer.from(packageId, 'utf8')).slice(0, 40)}`;
 
 function runtimeEquals(actual, expected, label) {
   if (!actual || !expected) fail(`${label} runtime authorization is not configured`);
@@ -46,13 +46,14 @@ export function validateRequest(input) {
   const mode = input.mode === 'canary' ? 'canary' : 'release';
   const m = input.metadata || {};
   const packageId = str(input.package_id, 'package_id');
+  const packageKey = packageKeyFor(packageId);
 
   if (mode === 'canary') {
     const title = str(m.title, 'metadata.title');
     if (!title.startsWith('FINAL VESTIGE PUBLISHER CANARY')) fail('canary title is not namespaced');
     if (!bool(m.private, 'metadata.private')) fail('canary must remain private');
     return {
-      schema_version: 'fv-podcast-publish/v1', mode, package_id: packageId, guid: guidFor(packageId),
+      schema_version: 'fv-podcast-publish/v1', mode, package_id: packageId, package_key: packageKey,
       metadata: {
         title,
         description: typeof m.description === 'string' && m.description ? m.description : 'Private Final Vestige publisher canary.',
@@ -78,7 +79,7 @@ export function validateRequest(input) {
   if (transcript && !['TXT', 'SRT', 'VTT'].includes(transcript.format)) fail('unsupported transcript.format');
 
   const request = {
-    schema_version: 'fv-podcast-publish/v1', mode, package_id: packageId, guid: guidFor(packageId),
+    schema_version: 'fv-podcast-publish/v1', mode, package_id: packageId, package_key: packageKey,
     release_payload_sha256: sha(input.release_payload_sha256, 'release_payload_sha256'),
     publication_authority: str(input.publication_authority, 'publication_authority'),
     qd: {
@@ -137,6 +138,15 @@ async function downloadAndVerify(spec, label) {
   return bytes;
 }
 
+function apiErrorText(json, text) {
+  if (typeof json?.error === 'string') return json.error;
+  if (json?.error?.message) return json.error.message;
+  if (json && typeof json === 'object') {
+    const fields = Object.entries(json).map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : String(v)}`);
+    if (fields.length) return fields.join('; ');
+  }
+  return text?.trim() || '';
+}
 function authHeaders(extra = {}) {
   if (!API_TOKEN) fail('BUZZSPROUT_API_TOKEN is not configured');
   return { Authorization: `Token token=${API_TOKEN}`, 'User-Agent': USER_AGENT, Accept: 'application/json', ...extra };
@@ -150,7 +160,10 @@ async function apiJson(path, options = {}) {
   const res = await fetch(`https://www.buzzsprout.com/api/${PODCAST_ID}${path}`, { ...options, method, headers });
   if (res.status === 304 && prior) return prior.json;
   const text = await res.text(); let json = null; try { json = text ? JSON.parse(text) : null; } catch {}
-  if (!res.ok) fail(`Buzzsprout ${method} ${path} failed: HTTP ${res.status}${json?.error ? ` ${json.error}` : ''}`);
+  if (!res.ok) {
+    const detail = apiErrorText(json, text);
+    fail(`Buzzsprout ${method} ${path} failed: HTTP ${res.status}${detail ? ` ${detail}` : ''}`);
+  }
   if (method === 'GET') cache.set(path, { etag: res.headers.get('etag'), json }); else clear(path);
   return json;
 }
@@ -165,14 +178,20 @@ function sameVisibleIdentity(ep, r) {
   if (r.metadata.episode_number !== null && Number(ep.episode_number ?? ep.episodeNumber) !== r.metadata.episode_number) return false;
   return sameSeason(ep.season_number ?? ep.seasonNumber, r.metadata.season_number);
 }
-function samePackage(ep, r) { return sameVisibleIdentity(ep, r) && String(ep.guid || '') === r.guid; }
+function sameGovernedMetadata(ep, r) {
+  if (!sameVisibleIdentity(ep, r)) return false;
+  if (String(ep?.description ?? '') !== r.metadata.description) return false;
+  if (String(ep?.artist ?? '').trim() !== r.metadata.artist) return false;
+  if (Boolean(ep?.explicit) !== r.metadata.explicit) return false;
+  return true;
+}
 async function resolveExisting(r, fresh = false) {
-  if (fresh) clear('/episodes.json');
-  const all = episodes(await apiJson('/episodes.json'));
-  const exact = all.filter(ep => samePackage(ep, r));
-  if (exact.length > 1) fail('multiple episodes match the exact governed package GUID');
-  const collisions = all.filter(ep => sameVisibleIdentity(ep, r) && String(ep.guid || '') !== r.guid);
-  if (collisions.length) fail('title/episode identity collision exists with a different package GUID');
+  if (fresh) clear('/episodes');
+  const all = episodes(await apiJson('/episodes'));
+  const exact = all.filter(ep => sameGovernedMetadata(ep, r));
+  if (exact.length > 1) fail('multiple Buzzsprout episodes match the exact governed metadata identity');
+  const visible = all.filter(ep => sameVisibleIdentity(ep, r));
+  if (!exact.length && visible.length) fail('episode title/number/season identity collision exists with nonmatching governed metadata');
   return exact[0] || null;
 }
 
@@ -190,34 +209,80 @@ function canaryWav() {
   return out;
 }
 
-async function createPrivate(r, audioBytes, artworkBytes) {
-  const form = new FormData();
-  form.append('title', r.metadata.title); form.append('description', r.metadata.description);
-  if (r.metadata.summary) form.append('summary', r.metadata.summary);
-  form.append('artist', r.metadata.artist); form.append('explicit', String(r.metadata.explicit)); form.append('private', 'true');
-  form.append('guid', r.guid);
-  if (r.metadata.episode_number !== null) form.append('episode_number', String(r.metadata.episode_number));
-  if (r.metadata.season_number !== null) form.append('season_number', String(r.metadata.season_number));
-  if (r.metadata.tags) form.append('tags', r.metadata.tags);
-  const filename = r.mode === 'canary' ? 'fv-publisher-canary.wav' : r.master.filename;
-  const mime = r.mode === 'canary' ? 'audio/wav' : r.master.mime;
-  form.append('audio_file', new Blob([audioBytes], { type: mime }), filename);
-  if (r.artwork && artworkBytes) form.append('artwork_file', new Blob([artworkBytes], { type: r.artwork.mime }), r.artwork.filename);
-  const res = await fetch(`https://www.buzzsprout.com/api/${PODCAST_ID}/episodes.json`, { method: 'POST', headers: authHeaders(), body: form });
+function privateMetadata(r) {
+  const body = {
+    title: r.metadata.title,
+    description: r.metadata.description,
+    artist: r.metadata.artist,
+    explicit: r.metadata.explicit,
+    private: true,
+  };
+  if (r.metadata.episode_number !== null) body.episode_number = r.metadata.episode_number;
+  if (r.metadata.season_number !== null) body.season_number = r.metadata.season_number;
+  if (r.metadata.tags) body.tags = r.metadata.tags;
+  return body;
+}
+
+async function createPrivate(r, artworkBytes) {
+  const endpoint = `https://www.buzzsprout.com/api/${PODCAST_ID}/episodes`;
+  let res;
+  if (r.artwork && artworkBytes) {
+    const form = new FormData();
+    const metadata = privateMetadata(r);
+    for (const [key, value] of Object.entries(metadata)) form.append(key, String(value));
+    form.append('artwork_file', new Blob([artworkBytes], { type: r.artwork.mime }), r.artwork.filename);
+    res = await fetch(endpoint, { method: 'POST', headers: authHeaders(), body: form });
+  } else {
+    res = await fetch(endpoint, {
+      method: 'POST',
+      headers: authHeaders({ 'Content-Type': 'application/json; charset=utf-8' }),
+      body: JSON.stringify(privateMetadata(r)),
+    });
+  }
   const text = await res.text(); let json = null; try { json = text ? JSON.parse(text) : null; } catch {}
-  if (!res.ok) fail(`Buzzsprout POST /episodes.json failed: HTTP ${res.status}${json?.error ? ` ${json.error}` : ''}`);
-  clear('/episodes.json');
+  if (!res.ok) {
+    const detail = apiErrorText(json, text);
+    fail(`Buzzsprout POST /episodes failed: HTTP ${res.status}${detail ? ` ${detail}` : ''}`);
+  }
+  clear('/episodes');
   return json;
 }
 
+async function uploadMedia(id, bytes, filename, mime) {
+  const episodeId = encodeURIComponent(id);
+  const startPath = `/episodes/${episodeId}/uploads`;
+  const started = await apiJson(startPath, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ filename, type: mime, byte_size: bytes.length }),
+  });
+  const upload = started?.upload ?? started;
+  if (!upload?.id) fail('Buzzsprout upload start did not return an upload id');
+  if (upload.multipart === true) fail('unexpected multipart upload response for governed audio');
+  if (!upload.upload_url) fail('Buzzsprout upload start did not return an upload URL');
+
+  const put = await fetch(upload.upload_url, {
+    method: 'PUT',
+    headers: { 'Content-Length': String(bytes.length) },
+    body: bytes,
+  });
+  if (!put.ok) fail(`Buzzsprout media object PUT failed: HTTP ${put.status}`);
+
+  const uploadId = encodeURIComponent(upload.id);
+  await apiJson(`/episodes/${episodeId}/uploads/${uploadId}/complete`, { method: 'POST' });
+  clear(`/episodes/${episodeId}`);
+  clear('/episodes');
+}
+
 async function getEpisode(id, fresh = false) {
-  const path = `/episodes/${encodeURIComponent(id)}.json`;
+  const path = `/episodes/${encodeURIComponent(id)}`;
   if (fresh) clear(path);
   return apiJson(path);
 }
 function verifyCore(ep, r) {
   if (!ep || typeof ep !== 'object') fail('Buzzsprout episode readback missing');
-  if (!samePackage(ep, r)) fail('Buzzsprout episode package identity/GUID mismatch');
+  if (!sameGovernedMetadata(ep, r)) fail('Buzzsprout episode governed metadata identity mismatch');
+  if (!ep.guid || !String(ep.guid).startsWith('Buzzsprout')) fail('Buzzsprout host-assigned episode GUID is missing or unexpected');
 }
 
 async function probeHostAudio(audioUrl, episodeId) {
@@ -252,7 +317,7 @@ async function waitForProcessedPrivate(id, r) {
   for (let i = 0; i < 36; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
     if (Boolean(ep.private) !== true) fail('episode became public before private-stage verification completed');
-    if (ep.audio_url) {
+    if (ep.audio_url && Number(ep.duration) > 0) {
       verifyAudioFlags(ep, r);
       const host_probe = r.mode === 'release' ? await probeHostAudio(ep.audio_url, id) : null;
       return { ep, host_probe };
@@ -273,11 +338,11 @@ async function uploadTranscript(id, transcript) {
 }
 
 async function makePublic(id, r) {
-  const path = `/episodes/${encodeURIComponent(id)}.json`;
+  const path = `/episodes/${encodeURIComponent(id)}`;
   const body = { private: false };
   if (r.metadata.published_at) body.published_at = r.metadata.published_at;
   try {
-    await apiJson(path, { method: 'PUT', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) });
+    await apiJson(path, { method: 'PATCH', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) });
   } catch (error) {
     const observed = await getEpisode(id, true); verifyCore(observed, r);
     if (Boolean(observed.private) !== false) throw error;
@@ -314,9 +379,9 @@ async function main() {
 
   let ep = await resolveExisting(r, true), created = false;
   if (!ep) {
-    try { ep = await createPrivate(r, sourceAudio, sourceArt); created = true; }
+    try { ep = await createPrivate(r, sourceArt); created = true; }
     catch (error) {
-      console.warn('Create outcome uncertain/failed; reconciling by package GUID before any retry.');
+      console.warn('Create outcome uncertain/failed; reconciling by exact governed metadata before any retry.');
       ep = await resolveExisting(r, true); if (!ep) throw error;
     }
   }
@@ -324,24 +389,26 @@ async function main() {
   if (!id) fail('Buzzsprout response did not expose an episode id');
 
   ep = await getEpisode(id, true); verifyCore(ep, r);
-  if (r.mode === 'release' && Boolean(ep.private) === false) {
-    verifyAudioFlags(ep, r);
-    const host_probe = await probeHostAudio(ep.audio_url, id);
-    const rss = await verifyRss(r);
-    await writeReceipt({ mode:'release', package_id:r.package_id, package_guid:r.guid, buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), created:false, private:false, title:ep.title, published_at:ep.published_at ?? null, audio_sha256:r.master.sha256, audio_bytes:r.master.bytes, artwork_sha256:r.artwork?.sha256 ?? null, hq:true, magic_mastering:false, host_audio_probe:host_probe, audio_url:ep.audio_url, rss });
-    console.log(`PUBLISHED + HOST/RSS VERIFIED episode_id=${id}`); return;
+
+  if (r.mode === 'release' && !created && ep.audio_url) {
+    fail('existing release episode already has media; package ownership cannot be proven safely on a resumed run');
+  }
+  if (!ep.audio_url) {
+    const filename = r.mode === 'canary' ? 'fv-publisher-canary.wav' : r.master.filename;
+    const mime = r.mode === 'canary' ? 'audio/wav' : r.master.mime;
+    await uploadMedia(id, sourceAudio, filename, mime);
   }
 
   const { ep: privateEp, host_probe } = await waitForProcessedPrivate(id, r);
   if (r.mode === 'canary') {
-    await writeReceipt({ mode:'canary', package_id:r.package_id, package_guid:r.guid, buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), created, private:true, title:privateEp.title });
+    await writeReceipt({ mode:'canary', package_id:r.package_id, package_key:r.package_key, buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), buzzsprout_guid:String(privateEp.guid), created, private:true, title:privateEp.title });
     console.log(`PRIVATE CANARY VERIFIED episode_id=${id}`); return;
   }
 
   await uploadTranscript(id, r.transcript);
   const publicEp = await makePublic(id, r);
   const rss = await verifyRss(r);
-  await writeReceipt({ mode:'release', package_id:r.package_id, package_guid:r.guid, buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), created, private:false, title:publicEp.title, published_at:publicEp.published_at ?? null, audio_sha256:r.master.sha256, audio_bytes:r.master.bytes, artwork_sha256:r.artwork?.sha256 ?? null, hq:true, magic_mastering:false, host_audio_probe:host_probe, audio_url:publicEp.audio_url, rss });
+  await writeReceipt({ mode:'release', package_id:r.package_id, package_key:r.package_key, buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), buzzsprout_guid:String(publicEp.guid), created, private:false, title:publicEp.title, published_at:publicEp.published_at ?? null, audio_sha256:r.master.sha256, audio_bytes:r.master.bytes, artwork_sha256:r.artwork?.sha256 ?? null, hq:true, magic_mastering:false, host_audio_probe:host_probe, audio_url:publicEp.audio_url, rss });
   console.log(`PUBLISHED + HOST/RSS VERIFIED episode_id=${id}`);
 }
 
