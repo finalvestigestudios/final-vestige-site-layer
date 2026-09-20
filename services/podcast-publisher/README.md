@@ -1,4 +1,4 @@
-# Final Vestige Podcast Publisher Bridge v1.2
+# Final Vestige Podcast Publisher Bridge v1.3
 
 Purpose: publish one exact, independently QD-cleared Final Vestige episode to Buzzsprout podcast `2650509` and verify the host/RSS destination without exposing credentials, trusting caller-asserted approval strings, or silently accepting host audio degradation.
 
@@ -50,11 +50,12 @@ Issue #46 requires a private host-write canary before the real release. Canary m
 4. Create the real episode **private first**, metadata/artwork only. On uncertain POST outcome, read/reconcile before any retry; the bridge never blindly retries create.
 5. Start a Buzzsprout media upload, PUT the exact bytes to the returned upload URL without the Buzzsprout Authorization header, then call the upload `complete` endpoint.
 6. Poll the private episode until media processing completes and an `audio_url` is present.
-7. Require Buzzsprout `hq=true`, reject `magic_mastering=true`, and independently probe the host derivative before publication.
-8. Optionally upload a governed transcript using Buzzsprout multipart `transcript_file` + `transcript_format`.
-9. PATCH the verified private episode public; reconcile an uncertain update by readback.
-10. Verify public GET state and poll RSS until the exact title appears.
-11. Archive `publisher-receipt.json` with package key, Buzzsprout episode ID/GUID, host audio URL, HQ/Magic-Mastering state, exact input identities and verification timestamp.
+7. Independently probe the governed source and Buzzsprout derivative with ffprobe, then require the host to remain MP3, stereo, >=44.1 kHz and ~192 kbps. Decode both through ffmpeg and require an exact SHA-256 match of the decoded PCM before publication; metadata/container rewrites are allowed, audio-sample changes are not.
+8. Replace and read back the governed Buzzsprout chapter list when chapters are supplied.
+9. Optionally upload a governed custom public transcript. Buzzsprout's current custom-transcript API accepts SRT or JSON only.
+10. PATCH the verified private episode public; reconcile an uncertain update by readback.
+11. Verify public GET state and poll RSS until the exact title appears.
+12. Archive `publisher-receipt.json` with package key, Buzzsprout episode ID/GUID, source/host PCM fingerprints, host audio probe, chapter/transcript receipts, any provider flags that are actually returned, exact input identities and verification timestamp.
 
 ## Resume safety
 
@@ -69,6 +70,9 @@ For a real release, if a resumed run encounters an already-existing release epis
 - A push must contain exactly one changed `publisher/requests/*.json` file or the workflow fails before mutation.
 - GET polling uses ETags when available.
 - Client-supplied Buzzsprout GUIDs are not used.
+- Provider-specific `hq` or `magic_mastering` fields are not assumed to exist. If returned, they are recorded as observations only; release integrity is enforced against the actual hosted audio derivative.
+- Governed chapters must be strictly increasing and are destination-read-back before public publication.
+- Custom public transcripts, when supplied, must use Buzzsprout-supported SRT or JSON format.
 
 ## Transport
 

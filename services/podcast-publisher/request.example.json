@@ -23,6 +23,16 @@
     "filename": "episode-art.png",
     "mime": "image/png"
   },
+  "chapters": [
+    {
+      "title": "Intro",
+      "start_time": "00:00"
+    },
+    {
+      "title": "Main",
+      "start_time": "01:30"
+    }
+  ],
   "metadata": {
     "title": "Example",
     "description": "Example",
@@ -31,6 +41,8 @@
     "explicit": false,
     "private": false,
     "episode_number": 1,
+    "episode_type": "full",
+    "custom_url": "https://example.invalid/episode",
     "tags": "example"
   }
 }
