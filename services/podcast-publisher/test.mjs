@@ -106,4 +106,20 @@ for (const gate of ['exact_master', 'artwork_rights', 'release_copy']) {
   assert.throws(() => validateRequest(canary), /canary must remain private/);
 }
 
+
+if (process.env.GITHUB_HEAD_REF === 'release/pod-001-final-v1.3') {
+  const crypto = await import('node:crypto');
+  const fs = await import('node:fs/promises');
+  const release = JSON.parse(await fs.readFile('publisher/requests/POD-001.json', 'utf8'));
+  for (const [label, spec] of [['master', release.master], ['artwork', release.artwork]]) {
+    const res = await fetch(spec.url, { redirect: 'follow', headers: { 'User-Agent': 'FinalVestigeReleasePreflight/1.0' } });
+    assert.equal(res.ok, true, `${label} staging transport must be unauthenticated HTTP 2xx`);
+    const bytes = Buffer.from(await res.arrayBuffer());
+    assert.equal(bytes.length, spec.bytes, `${label} staging byte count must match governed release`);
+    const got = crypto.createHash('sha256').update(bytes).digest('hex');
+    assert.equal(got, spec.sha256, `${label} staging SHA-256 must match governed release`);
+    console.log(`POD-001 public staging preflight PASS: ${label} ${bytes.length} bytes ${got}`);
+  }
+}
+
 console.log('publisher request fail-closed tests: PASS');
