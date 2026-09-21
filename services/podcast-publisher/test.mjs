@@ -36,6 +36,7 @@ assert.equal(validated.metadata.episode_type, 'full');
 assert.equal(validated.metadata.custom_url, 'https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/');
 assert.equal(validated.chapters.length, 2);
 assert.equal(validated.chapters[1].start_seconds, 126);
+assert.equal(validated.replace_media, false);
 assert.match(validated.package_key, /^FVPKG-[0-9a-f]{40}$/);
 assert.equal(validated.package_key, validateRequest(structuredClone(base)).package_key, 'package key must be deterministic');
 assert.equal(validated.guid, undefined, 'client must not invent a Buzzsprout GUID');
@@ -90,6 +91,10 @@ for (const gate of ['exact_master', 'artwork_rights', 'release_copy']) {
 {
   const mutant = structuredClone(base); mutant.metadata.custom_url = 'http://example.com';
   assert.throws(() => validateRequest(mutant), /custom_url/);
+}
+{
+  const mutant = structuredClone(base); mutant.replace_media = true;
+  assert.equal(validateRequest(mutant).replace_media, true);
 }
 {
   const canary = validateRequest({
