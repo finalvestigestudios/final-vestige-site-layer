@@ -378,7 +378,7 @@ function verifyAudioReady(ep, r) {
   if (!ep.audio_url) fail('Buzzsprout audio_url is not ready');
 }
 async function waitForProcessedPrivate(id, r, sourceProbe = null) {
-  for (let i = 0; i < 36; i++) {
+  for (let i = 0; i < 90; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
     if (Boolean(ep.private) !== true) fail('episode became public before private-stage verification completed');
     if (ep.audio_url && Number(ep.duration) > 0) {
@@ -475,13 +475,19 @@ async function main() {
 
   ep = await getEpisode(id, true); verifyCore(ep, r);
 
-  if (r.mode === 'release' && !created && ep.audio_url) {
-    fail('existing release episode already has media; package ownership cannot be proven safely on a resumed run');
+  const observedDuration = Number(ep.duration);
+  const releaseResumeProcessing = r.mode === 'release' && !created && observedDuration === -1;
+  const releaseResumeProcessed = r.mode === 'release' && !created && Boolean(ep.audio_url) && observedDuration > 0;
+
+  if (r.mode === 'release' && !created && !releaseResumeProcessing && !releaseResumeProcessed) {
+    fail('existing release episode has no package-verifiable media state; refusing to attach or replace media');
   }
-  if (!ep.audio_url) {
+  if (!ep.audio_url && !releaseResumeProcessing) {
     const filename = r.mode === 'canary' ? 'fv-publisher-canary.wav' : r.master.filename;
     const mime = r.mode === 'canary' ? 'audio/wav' : r.master.mime;
     await uploadMedia(id, sourceAudio, filename, mime);
+  } else if (releaseResumeProcessing || releaseResumeProcessed) {
+    console.log(`Resuming exact private release episode_id=${id} without re-uploading media`);
   }
 
   const { ep: privateEp, host_probe } = await waitForProcessedPrivate(id, r, source_probe);
