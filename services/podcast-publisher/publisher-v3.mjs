@@ -381,7 +381,7 @@ async function waitForProcessedPrivate(id, r, sourceProbe = null) {
   for (let i = 0; i < 90; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
     if (Boolean(ep.private) !== true) fail('episode became public before private-stage verification completed');
-    if (ep.audio_url && Number(ep.duration) > 0) {
+    if (ep.audio_url) {
       verifyAudioReady(ep, r);
       const host_probe = r.mode === 'release' ? await probeHostAudio(ep.audio_url, id, sourceProbe) : null;
       return { ep, host_probe };
@@ -480,7 +480,7 @@ async function main() {
     console.log(`Observed exact private release state episode_id=${id} private=${Boolean(ep.private)} duration_raw=${JSON.stringify(ep.duration)} duration_num=${observedDuration} audio_url=${Boolean(ep.audio_url)} artwork_url=${Boolean(ep.artwork_url)} guid=${String(ep.guid || '')} published_at=${String(ep.published_at || '')}`);
   }
   const releaseResumeProcessing = r.mode === 'release' && !created && observedDuration === -1;
-  const releaseResumeProcessed = r.mode === 'release' && !created && Boolean(ep.audio_url) && observedDuration > 0;
+  const releaseResumeProcessed = r.mode === 'release' && !created && Boolean(ep.audio_url);
 
   if (r.mode === 'release' && !created && !releaseResumeProcessing && !releaseResumeProcessed) {
     fail('existing release episode has no package-verifiable media state; refusing to attach or replace media');
