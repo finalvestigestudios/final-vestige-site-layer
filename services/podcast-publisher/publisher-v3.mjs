@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/1.7 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/1.8 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -111,6 +111,7 @@ export function validateRequest(input) {
     transcript,
     chapters,
     replace_media: input.replace_media === true,
+    supersede_existing_private: input.supersede_existing_private === true,
     metadata: {
       title: str(m.title, 'metadata.title'), description,
       summary: typeof m.summary === 'string' ? m.summary : '',
@@ -323,6 +324,31 @@ async function replaceMediaLegacy(id, bytes, filename, mime) {
   clear(`/episodes/${episodeId}`);
   clear('/episodes');
   return json;
+}
+
+async function retirePrivateEpisode(id, r) {
+  const observed = await getEpisode(id, true);
+  verifyCore(observed, r);
+  if (Boolean(observed.private) !== true) fail('supersede_existing_private requires the exact existing episode to remain private');
+  const path = `/episodes/${encodeURIComponent(id)}`;
+  const retiredTitle = `FINAL VESTIGE RETIRED PRIVATE BUILD — ${r.package_id} — ${id}`;
+  await apiJson(path, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({
+      title: retiredTitle,
+      description: 'Retired private pre-HQ processing build. Not for publication.',
+      private: true,
+      custom_url: null,
+    }),
+  });
+  clear('/episodes');
+  const retired = await getEpisode(id, true);
+  if (String(retired?.title || '') !== retiredTitle || Boolean(retired?.private) !== true) {
+    fail('retired private episode readback mismatch');
+  }
+  console.log(`Retired prior private release build episode_id=${id}`);
+  return String(id);
 }
 
 async function getEpisode(id, fresh = false) {
@@ -544,7 +570,13 @@ async function main() {
   const source_probe = r.mode === 'release' ? await probeSourceAudio(sourceAudio, r.package_key) : null;
   if (r.mode === 'release') console.log('Exact master/artwork bytes + source PCM fingerprint verified before host mutation');
 
-  let ep = await resolveExisting(r, true), created = false;
+  let ep = await resolveExisting(r, true), created = false, retiredEpisodeId = null;
+  if (r.mode === 'release' && r.supersede_existing_private && ep) {
+    const existingId = ep?.id ?? ep?.episode_id;
+    if (!existingId) fail('existing Buzzsprout episode did not expose an episode id');
+    retiredEpisodeId = await retirePrivateEpisode(existingId, r);
+    ep = null;
+  }
   if (!ep) {
     try { ep = await createPrivate(r, sourceArt); created = true; }
     catch (error) {
@@ -604,6 +636,7 @@ async function main() {
     created, private:false, title:publicEp.title, published_at:publicEp.published_at ?? null,
     audio_sha256:r.master.sha256, audio_bytes:r.master.bytes, artwork_sha256:r.artwork?.sha256 ?? null,
     source_audio_probe:source_probe, host_audio_probe:host_probe, final_host_audio_probe:final_host_probe, provider_flags:providerFlags(publicEp),
+    retired_private_episode_id:retiredEpisodeId,
     chapters:chapter_receipt, transcript:transcript_receipt, audio_url:publicEp.audio_url, rss
   });
   console.log(`PUBLISHED + HOST/RSS VERIFIED episode_id=${id}`);
