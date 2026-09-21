@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/1.6 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/1.7 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -304,6 +304,27 @@ async function uploadMedia(id, bytes, filename, mime) {
   clear('/episodes');
 }
 
+async function replaceMediaLegacy(id, bytes, filename, mime) {
+  const episodeId = encodeURIComponent(id);
+  const form = new FormData();
+  form.append('audio_file', new Blob([bytes], { type: mime }), filename);
+  form.append('email_user_after_audio_processed', 'false');
+  const res = await fetch(`https://www.buzzsprout.com/api/${PODCAST_ID}/episodes/${episodeId}`, {
+    method: 'PATCH',
+    headers: authHeaders(),
+    body: form,
+  });
+  const text = await res.text(); let json = null; try { json = text ? JSON.parse(text) : null; } catch {}
+  if (!res.ok) {
+    const detail = apiErrorText(json, text);
+    fail(`Buzzsprout legacy media replacement failed: HTTP ${res.status}${detail ? ` ${detail}` : ''}`);
+  }
+  if (res.headers.get('deprecation')) console.log('Buzzsprout legacy audio_file replacement path acknowledged deprecation');
+  clear(`/episodes/${episodeId}`);
+  clear('/episodes');
+  return json;
+}
+
 async function getEpisode(id, fresh = false) {
   const path = `/episodes/${encodeURIComponent(id)}`;
   if (fresh) clear(path);
@@ -551,8 +572,8 @@ async function main() {
   if (r.mode === 'release' && r.replace_media) {
     if (created) fail('replace_media is valid only for an existing exact private release episode');
     if (Boolean(ep.private) !== true) fail('replace_media requires the exact existing episode to remain private');
-    console.log(`Replacing private release media with exact governed master episode_id=${id}`);
-    await uploadMedia(id, sourceAudio, r.master.filename, r.master.mime);
+    console.log(`Replacing private release media with exact governed master through dashboard-compatible audio_file path episode_id=${id}`);
+    await replaceMediaLegacy(id, sourceAudio, r.master.filename, r.master.mime);
     ep = await getEpisode(id, true); verifyCore(ep, r);
   } else if (!ep.audio_url && !releaseResumeProcessing) {
     const filename = r.mode === 'canary' ? 'fv-publisher-canary.wav' : r.master.filename;
