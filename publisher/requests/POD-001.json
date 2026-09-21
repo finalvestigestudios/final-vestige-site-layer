@@ -64,5 +64,6 @@
     "episode_type": "full",
     "custom_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
     "tags": "New London, Texas, 1937, school explosion, natural gas, engineering failure, public safety, odorization, David J. Price, archival investigation"
-  }
+  },
+  "retry_marker": "resume-after-buzzsprout-processing-timeout-2026-09-20"
 }
