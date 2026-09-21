@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/1.5 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/1.6 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -110,6 +110,7 @@ export function validateRequest(input) {
     } : null,
     transcript,
     chapters,
+    replace_media: input.replace_media === true,
     metadata: {
       title: str(m.title, 'metadata.title'), description,
       summary: typeof m.summary === 'string' ? m.summary : '',
@@ -345,11 +346,12 @@ async function probeSourceAudio(audioBytes, packageKey) {
   if (probe.bit_rate < 190000) fail(`governed source bitrate=${probe.bit_rate}, below ~192 kbps release floor`);
   return { ...probe, bytes: audioBytes.length };
 }
-async function probeHostAudio(audioUrl, episodeId, sourceProbe) {
+async function probeHostAudio(audioUrl, episodeId, sourceProbe, { allowNotReady = false } = {}) {
   let res = await fetch(audioUrl, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT } });
   if (res.status === 404) {
     res = await fetch(audioUrl, { redirect: 'follow', headers: authHeaders() });
   }
+  if (res.status === 404 && allowNotReady) return null;
   if (!res.ok) fail(`host audio download failed: HTTP ${res.status}`);
   const bytes = Buffer.from(await res.arrayBuffer());
   const path = `/tmp/fv-buzzsprout-${episodeId}.mp3`;
@@ -380,18 +382,75 @@ function verifyAudioReady(ep, r) {
   if (r.mode !== 'release') return;
   if (!ep.audio_url) fail('Buzzsprout audio_url is not ready');
 }
-async function waitForProcessedPrivate(id, r, sourceProbe = null) {
+async function waitForProcessedPrivate(id, r) {
   for (let i = 0; i < 90; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
     if (Boolean(ep.private) !== true) fail('episode became public before private-stage verification completed');
+    if (ep.audio_url) return { ep };
+    await sleep(10000);
+  }
+  fail('Buzzsprout audio did not expose a host locator within bounded verification window');
+}
+
+async function rssContainsTitle(r) {
+  const res = await fetch(r.rss_url, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache' } });
+  if (!res.ok) return false;
+  return (await res.text()).includes(r.metadata.title);
+}
+async function unpublishImmediately(id, r, reason) {
+  const path = `/episodes/${encodeURIComponent(id)}`;
+  try {
+    await apiJson(path, { method: 'PATCH', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify({ private: true }) });
+  } catch (error) {
+    console.error(`Emergency unpublish failed after ${reason}: ${error.message}`);
+  }
+}
+async function scheduleForPrivateVerification(id, r) {
+  const path = `/episodes/${encodeURIComponent(id)}`;
+  const verifyAt = new Date(Date.now() + 60 * 60 * 1000).toISOString();
+  await apiJson(path, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ private: false, published_at: verifyAt }),
+  });
+  const ep = await getEpisode(id, true); verifyCore(ep, r);
+  const scheduled = Date.parse(ep.published_at || '');
+  if (!Number.isFinite(scheduled) || scheduled < Date.now() + 30 * 60 * 1000) {
+    await unpublishImmediately(id, r, 'invalid verification schedule');
+    fail('Buzzsprout did not preserve the future verification schedule');
+  }
+  if (await rssContainsTitle(r)) {
+    await unpublishImmediately(id, r, 'premature RSS appearance');
+    fail('scheduled verification episode appeared in RSS before final publication');
+  }
+  console.log(`Future verification window armed episode_id=${id} published_at=${ep.published_at}`);
+  return ep;
+}
+async function verifyScheduledHostAudio(id, r, sourceProbe) {
+  for (let i = 0; i < 90; i++) {
+    const ep = await getEpisode(id, true); verifyCore(ep, r);
+    const scheduled = Date.parse(ep.published_at || '');
+    if (!Number.isFinite(scheduled) || scheduled <= Date.now() + 5 * 60 * 1000) {
+      await unpublishImmediately(id, r, 'verification window too close to publication');
+      fail('host verification window expired before audio verification completed');
+    }
+    if (await rssContainsTitle(r)) {
+      await unpublishImmediately(id, r, 'premature RSS appearance');
+      fail('scheduled verification episode appeared in RSS before final publication');
+    }
     if (ep.audio_url) {
-      verifyAudioReady(ep, r);
-      const host_probe = r.mode === 'release' ? await probeHostAudio(ep.audio_url, id, sourceProbe) : null;
-      return { ep, host_probe };
+      try {
+        const host_probe = await probeHostAudio(ep.audio_url, id, sourceProbe, { allowNotReady: true });
+        if (host_probe) return { ep, host_probe };
+      } catch (error) {
+        await unpublishImmediately(id, r, 'host derivative verification failure');
+        throw error;
+      }
     }
     await sleep(10000);
   }
-  fail('Buzzsprout audio did not finish processing within bounded verification window');
+  await unpublishImmediately(id, r, 'host derivative timeout');
+  fail('host derivative was not readable within the bounded verification window');
 }
 
 async function uploadTranscript(id, transcript) {
@@ -426,8 +485,7 @@ async function uploadAndVerifyChapters(id, chapters) {
 
 async function makePublic(id, r) {
   const path = `/episodes/${encodeURIComponent(id)}`;
-  const body = { private: false };
-  if (r.metadata.published_at) body.published_at = r.metadata.published_at;
+  const body = { private: false, published_at: r.metadata.published_at || new Date().toISOString() };
   try {
     await apiJson(path, { method: 'PATCH', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) });
   } catch (error) {
@@ -486,10 +544,17 @@ async function main() {
   const releaseResumeProcessing = r.mode === 'release' && !created && observedDuration === -1;
   const releaseResumeProcessed = r.mode === 'release' && !created && Boolean(ep.audio_url);
 
-  if (r.mode === 'release' && !created && !releaseResumeProcessing && !releaseResumeProcessed) {
+  if (r.mode === 'release' && !created && !releaseResumeProcessing && !releaseResumeProcessed && !r.replace_media) {
     fail('existing release episode has no package-verifiable media state; refusing to attach or replace media');
   }
-  if (!ep.audio_url && !releaseResumeProcessing) {
+
+  if (r.mode === 'release' && r.replace_media) {
+    if (created) fail('replace_media is valid only for an existing exact private release episode');
+    if (Boolean(ep.private) !== true) fail('replace_media requires the exact existing episode to remain private');
+    console.log(`Replacing private release media with exact governed master episode_id=${id}`);
+    await uploadMedia(id, sourceAudio, r.master.filename, r.master.mime);
+    ep = await getEpisode(id, true); verifyCore(ep, r);
+  } else if (!ep.audio_url && !releaseResumeProcessing) {
     const filename = r.mode === 'canary' ? 'fv-publisher-canary.wav' : r.master.filename;
     const mime = r.mode === 'canary' ? 'audio/wav' : r.master.mime;
     await uploadMedia(id, sourceAudio, filename, mime);
@@ -497,22 +562,27 @@ async function main() {
     console.log(`Resuming exact private release episode_id=${id} without re-uploading media`);
   }
 
-  const { ep: privateEp, host_probe } = await waitForProcessedPrivate(id, r, source_probe);
+  const { ep: privateEp } = await waitForProcessedPrivate(id, r);
   if (r.mode === 'canary') {
     await writeReceipt({ mode:'canary', package_id:r.package_id, package_key:r.package_key, buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), buzzsprout_guid:String(privateEp.guid), created, private:true, title:privateEp.title });
     console.log(`PRIVATE CANARY VERIFIED episode_id=${id}`); return;
   }
 
+  await scheduleForPrivateVerification(id, r);
+  const { host_probe } = await verifyScheduledHostAudio(id, r, source_probe);
+  console.log(`HOST AUDIO EXACT-PCM VERIFIED episode_id=${id}`);
+
   const chapter_receipt = await uploadAndVerifyChapters(id, r.chapters);
   const transcript_receipt = await uploadTranscript(id, r.transcript);
   const publicEp = await makePublic(id, r);
+  const final_host_probe = await probeHostAudio(publicEp.audio_url, id, source_probe);
   const rss = await verifyRss(r);
   await writeReceipt({
     mode:'release', package_id:r.package_id, package_key:r.package_key,
     buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), buzzsprout_guid:String(publicEp.guid),
     created, private:false, title:publicEp.title, published_at:publicEp.published_at ?? null,
     audio_sha256:r.master.sha256, audio_bytes:r.master.bytes, artwork_sha256:r.artwork?.sha256 ?? null,
-    source_audio_probe:source_probe, host_audio_probe:host_probe, provider_flags:providerFlags(publicEp),
+    source_audio_probe:source_probe, host_audio_probe:host_probe, final_host_audio_probe:final_host_probe, provider_flags:providerFlags(publicEp),
     chapters:chapter_receipt, transcript:transcript_receipt, audio_url:publicEp.audio_url, rss
   });
   console.log(`PUBLISHED + HOST/RSS VERIFIED episode_id=${id}`);
