@@ -480,7 +480,8 @@ async function main() {
 
   const observedDuration = Number(ep.duration);
   if (r.mode === 'release' && !created) {
-    console.log(`Observed exact private release state episode_id=${id} private=${Boolean(ep.private)} duration_raw=${JSON.stringify(ep.duration)} duration_num=${observedDuration} audio_url=${Boolean(ep.audio_url)} artwork_url=${Boolean(ep.artwork_url)} guid=${String(ep.guid || '')} published_at=${String(ep.published_at || '')}`);
+    const mediaLocator = ep.audio_url ? (() => { try { const u = new URL(ep.audio_url); return `${u.hostname}${u.pathname}`; } catch { return 'invalid-url'; } })() : '';
+    console.log(`Observed exact private release state episode_id=${id} private=${Boolean(ep.private)} duration_raw=${JSON.stringify(ep.duration)} duration_num=${observedDuration} audio_url=${Boolean(ep.audio_url)} media_locator=${mediaLocator} artwork_url=${Boolean(ep.artwork_url)} hq=${JSON.stringify(ep.hq)} magic_mastering=${JSON.stringify(ep.magic_mastering)} guid=${String(ep.guid || '')} published_at=${String(ep.published_at || '')}`);
   }
   const releaseResumeProcessing = r.mode === 'release' && !created && observedDuration === -1;
   const releaseResumeProcessed = r.mode === 'release' && !created && Boolean(ep.audio_url);
