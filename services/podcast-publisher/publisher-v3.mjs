@@ -346,7 +346,10 @@ async function probeSourceAudio(audioBytes, packageKey) {
   return { ...probe, bytes: audioBytes.length };
 }
 async function probeHostAudio(audioUrl, episodeId, sourceProbe) {
-  const res = await fetch(audioUrl, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT } });
+  let res = await fetch(audioUrl, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT } });
+  if (res.status === 404) {
+    res = await fetch(audioUrl, { redirect: 'follow', headers: authHeaders() });
+  }
   if (!res.ok) fail(`host audio download failed: HTTP ${res.status}`);
   const bytes = Buffer.from(await res.arrayBuffer());
   const path = `/tmp/fv-buzzsprout-${episodeId}.mp3`;
