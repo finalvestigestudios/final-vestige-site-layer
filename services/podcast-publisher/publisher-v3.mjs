@@ -476,6 +476,9 @@ async function main() {
   ep = await getEpisode(id, true); verifyCore(ep, r);
 
   const observedDuration = Number(ep.duration);
+  if (r.mode === 'release' && !created) {
+    console.log(`Observed exact private release state episode_id=${id} private=${Boolean(ep.private)} duration_raw=${JSON.stringify(ep.duration)} duration_num=${observedDuration} audio_url=${Boolean(ep.audio_url)} artwork_url=${Boolean(ep.artwork_url)} guid=${String(ep.guid || '')} published_at=${String(ep.published_at || '')}`);
+  }
   const releaseResumeProcessing = r.mode === 'release' && !created && observedDuration === -1;
   const releaseResumeProcessed = r.mode === 'release' && !created && Boolean(ep.audio_url) && observedDuration > 0;
 
