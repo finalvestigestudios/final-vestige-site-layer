@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/1.8 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/1.9 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -621,21 +621,32 @@ async function main() {
     console.log(`PRIVATE CANARY VERIFIED episode_id=${id}`); return;
   }
 
-  await scheduleForPrivateVerification(id, r);
-  const { host_probe } = await verifyScheduledHostAudio(id, r, source_probe);
-  console.log(`HOST AUDIO EXACT-PCM VERIFIED episode_id=${id}`);
+  const prePublic = await getEpisode(id, true); verifyCore(prePublic, r);
+  if (Boolean(prePublic.private) !== true) fail('release episode is not private immediately before final publication');
+  if (prePublic.hq === false) fail('Buzzsprout reports the fresh release episode is not HQ; refusing public publication');
+  if (prePublic.magic_mastering === true) fail('Buzzsprout reports Magic Mastering processing on the fresh release episode; refusing public publication');
 
   const chapter_receipt = await uploadAndVerifyChapters(id, r.chapters);
   const transcript_receipt = await uploadTranscript(id, r.transcript);
-  const publicEp = await makePublic(id, r);
-  const final_host_probe = await probeHostAudio(publicEp.audio_url, id, source_probe);
+
+  let publicEp;
+  let final_host_probe;
+  try {
+    publicEp = await makePublic(id, r);
+    final_host_probe = await probeHostAudio(publicEp.audio_url, id, source_probe);
+  } catch (error) {
+    await unpublishImmediately(id, r, 'post-publication host verification failure');
+    throw error;
+  }
+  console.log(`PUBLIC HOST AUDIO EXACT-PCM VERIFIED episode_id=${id}`);
+
   const rss = await verifyRss(r);
   await writeReceipt({
     mode:'release', package_id:r.package_id, package_key:r.package_key,
     buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), buzzsprout_guid:String(publicEp.guid),
     created, private:false, title:publicEp.title, published_at:publicEp.published_at ?? null,
     audio_sha256:r.master.sha256, audio_bytes:r.master.bytes, artwork_sha256:r.artwork?.sha256 ?? null,
-    source_audio_probe:source_probe, host_audio_probe:host_probe, final_host_audio_probe:final_host_probe, provider_flags:providerFlags(publicEp),
+    source_audio_probe:source_probe, final_host_audio_probe:final_host_probe, provider_flags:providerFlags(publicEp),
     retired_private_episode_id:retiredEpisodeId,
     chapters:chapter_receipt, transcript:transcript_receipt, audio_url:publicEp.audio_url, rss
   });
