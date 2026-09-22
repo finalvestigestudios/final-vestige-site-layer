@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/2.0 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/2.1 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -547,34 +547,58 @@ async function makePublic(id, r) {
   fail('Buzzsprout episode did not reach public state within bounded verification window');
 }
 
-async function verifyPublicHostAudioBeforeRss(id, r, sourceProbe) {
+function decodeXmlEntities(value) {
+  return String(value)
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+async function fetchRssEpisodeEntry(r) {
+  const res = await fetch(r.rss_url, {
+    redirect: 'follow',
+    headers: { 'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache' }
+  });
+  if (!res.ok) return null;
+  const xml = await res.text();
+  const items = xml.match(/<item\\b[\\s\\S]*?<\\/item>/gi) || [];
+  const item = items.find(candidate => candidate.includes(r.metadata.title));
+  if (!item) return null;
+  const match = item.match(/<enclosure\\b[^>]*\\burl=(["'])(.*?)\\1/i);
+  if (!match) fail('RSS episode item is missing an enclosure URL');
+  return {
+    url: res.url,
+    title_found: true,
+    enclosure_url: decodeXmlEntities(match[2]),
+    item_sha256: digest(Buffer.from(item, 'utf8')),
+  };
+}
+async function verifyRssEnclosureAndAudio(id, r, sourceProbe) {
   for (let i = 0; i < 60; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
-    if (Boolean(ep.private) !== false) fail('episode left public state during host-audio verification');
-    try {
-      const probe = await probeHostAudio(ep.audio_url, id, sourceProbe, { allowNotReady: true });
-      if (probe) return { ep, probe };
-    } catch (error) {
-      await unpublishImmediately(id, r, 'public host derivative verification failure');
-      throw error;
+    if (Boolean(ep.private) !== false) fail('episode left public state during RSS/audio verification');
+    const rss = await fetchRssEpisodeEntry(r);
+    if (!rss) {
+      await sleep(5000);
+      continue;
     }
-    if (await rssContainsTitle(r)) {
-      await unpublishImmediately(id, r, 'RSS exposure before hosted audio became verifiable');
-      fail('RSS exposed the episode before hosted audio became verifiable');
+    console.log(`RSS EPISODE LOCATED episode_id=${id}`);
+    for (let j = 0; j < 10; j++) {
+      try {
+        const probe = await probeHostAudio(rss.enclosure_url, id, sourceProbe, { allowNotReady: true });
+        if (probe) return { ep, probe, rss };
+      } catch (error) {
+        await unpublishImmediately(id, r, 'RSS enclosure audio verification failure');
+        throw error;
+      }
+      await sleep(3000);
     }
-    await sleep(5000);
+    await unpublishImmediately(id, r, 'RSS enclosure remained unreadable');
+    fail('RSS enclosure was published but its hosted audio remained unreadable');
   }
-  await unpublishImmediately(id, r, 'public host audio propagation timeout');
-  fail('public host audio did not become readable within the bounded propagation window');
-}
-
-async function verifyRss(r) {
-  for (let i = 0; i < 24; i++) {
-    const res = await fetch(r.rss_url, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache' } });
-    if (res.ok && (await res.text()).includes(r.metadata.title)) return { url: res.url, title_found: true };
-    await sleep(15000);
-  }
-  fail('RSS did not contain exact episode title within bounded propagation window');
+  await unpublishImmediately(id, r, 'RSS propagation timeout');
+  fail('RSS did not contain the exact episode within the bounded propagation window');
 }
 async function writeReceipt(data) {
   await fs.writeFile('publisher-receipt.json', JSON.stringify({ schema_version:'fv-podcast-publish-receipt/v1', ...data, verified_at:new Date().toISOString() }, null, 2));
@@ -652,18 +676,18 @@ async function main() {
 
   let publicEp;
   let final_host_probe;
+  let rss;
   try {
     publicEp = await makePublic(id, r);
-    const verifiedPublic = await verifyPublicHostAudioBeforeRss(id, r, source_probe);
-    publicEp = verifiedPublic.ep;
-    final_host_probe = verifiedPublic.probe;
+    const verified = await verifyRssEnclosureAndAudio(id, r, source_probe);
+    publicEp = verified.ep;
+    final_host_probe = verified.probe;
+    rss = verified.rss;
   } catch (error) {
-    await unpublishImmediately(id, r, 'post-publication host verification failure');
+    await unpublishImmediately(id, r, 'post-publication RSS/audio verification failure');
     throw error;
   }
-  console.log(`PUBLIC HOST AUDIO EXACT-PCM VERIFIED episode_id=${id}`);
-
-  const rss = await verifyRss(r);
+  console.log(`PUBLISHED + RSS ENCLOSURE EXACT-PCM VERIFIED episode_id=${id}`);
   await writeReceipt({
     mode:'release', package_id:r.package_id, package_key:r.package_key,
     buzzsprout_podcast_id:PODCAST_ID, buzzsprout_episode_id:String(id), buzzsprout_guid:String(publicEp.guid),
