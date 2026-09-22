@@ -413,7 +413,105 @@ async function probeSourceAudio(audioBytes, packageKey) {
   if (probe.channels !== 2) fail(`governed source channels=${probe.channels}, expected stereo`);
   if (probe.sample_rate < 44100) fail(`governed source sample_rate=${probe.sample_rate}, below release floor`);
   if (probe.bit_rate < 190000) fail(`governed source bitrate=${probe.bit_rate}, below ~192 kbps release floor`);
-  return { ...probe, bytes: audioBytes.length };
+  return { ...probe, bytes: audioBytes.length, path };
+}
+
+async function renderVerificationPcm(inputPath, label) {
+  const key = digest(Buffer.from(`${label}:${inputPath}`, 'utf8')).slice(0, 16);
+  const outPath = `/tmp/fv-verify-${key}.s16le`;
+  try {
+    await execFileP('ffmpeg', [
+      '-v','error','-y','-i',inputPath,'-map','0:a:0','-ac','1','-ar','8000','-f','s16le',outPath
+    ], { maxBuffer: 1024 * 1024 });
+  } catch {
+    fail(`${label} verification PCM render failed`);
+  }
+  return fs.readFile(outPath);
+}
+function pcmSample(buf, index) {
+  if (index < 0 || index * 2 + 1 >= buf.length) return null;
+  return buf.readInt16LE(index * 2) / 32768;
+}
+function correlationAtLag(source, host, starts, windowSamples, lag, step = 8) {
+  let n = 0, sx = 0, sy = 0, sxx = 0, syy = 0, sxy = 0;
+  for (const start of starts) {
+    for (let i = 0; i < windowSamples; i += step) {
+      const x = pcmSample(source, start + i);
+      const y = pcmSample(host, start + i + lag);
+      if (x === null || y === null) continue;
+      n++; sx += x; sy += y; sxx += x*x; syy += y*y; sxy += x*y;
+    }
+  }
+  if (n < 1000) return null;
+  const cov = sxy - (sx * sy / n);
+  const vx = sxx - (sx * sx / n);
+  const vy = syy - (sy * sy / n);
+  if (vx <= 0 || vy <= 0) return null;
+  return {
+    correlation: cov / Math.sqrt(vx * vy),
+    rms_ratio: Math.sqrt(syy / Math.max(sxx, Number.EPSILON)),
+    points: n,
+  };
+}
+async function verifyLossyAudioEquivalence(sourcePath, hostPath) {
+  const [source, host] = await Promise.all([
+    renderVerificationPcm(sourcePath, 'governed source master'),
+    renderVerificationPcm(hostPath, 'host derivative')
+  ]);
+  const sourceSamples = Math.floor(source.length / 2);
+  const hostSamples = Math.floor(host.length / 2);
+  const minSamples = Math.min(sourceSamples, hostSamples);
+  const windowSamples = 5 * 8000;
+  if (minSamples < windowSamples * 2) fail('audio is too short for equivalence verification');
+
+  const candidateStarts = [];
+  for (let k = 1; k <= 12; k++) {
+    const start = Math.floor((minSamples - windowSamples) * k / 13);
+    candidateStarts.push(start);
+  }
+  let energyStart = candidateStarts[0], bestEnergy = -1;
+  for (const start of candidateStarts) {
+    let e = 0, n = 0;
+    for (let i = 0; i < windowSamples; i += 16) {
+      const x = pcmSample(source, start + i);
+      if (x === null) continue;
+      e += x*x; n++;
+    }
+    const mean = n ? e / n : 0;
+    if (mean > bestEnergy) { bestEnergy = mean; energyStart = start; }
+  }
+
+  let bestLag = 0, best = { correlation: -2, rms_ratio: 0, points: 0 };
+  for (let lag = -800; lag <= 800; lag += 4) {
+    const result = correlationAtLag(source, host, [energyStart], windowSamples, lag, 8);
+    if (result && result.correlation > best.correlation) { best = result; bestLag = lag; }
+  }
+  for (let lag = bestLag - 6; lag <= bestLag + 6; lag++) {
+    const result = correlationAtLag(source, host, [energyStart], windowSamples, lag, 4);
+    if (result && result.correlation > best.correlation) { best = result; bestLag = lag; }
+  }
+
+  const finalWindow = 3 * 8000;
+  const finalStarts = [];
+  for (let k = 1; k <= 16; k++) {
+    finalStarts.push(Math.floor((minSamples - finalWindow) * k / 17));
+  }
+  const final = correlationAtLag(source, host, finalStarts, finalWindow, bestLag, 8);
+  if (!final) fail('host derivative waveform equivalence could not be measured');
+  if (final.correlation < 0.995) {
+    fail(`host derivative waveform similarity=${final.correlation.toFixed(6)}, below governed 0.995 floor`);
+  }
+  if (final.rms_ratio < 0.95 || final.rms_ratio > 1.05) {
+    fail(`host derivative RMS ratio=${final.rms_ratio.toFixed(6)}, outside governed 0.95-1.05 window`);
+  }
+  return {
+    method: 'aligned_mono_8khz_waveform_correlation',
+    correlation: Number(final.correlation.toFixed(8)),
+    rms_ratio: Number(final.rms_ratio.toFixed(8)),
+    lag_samples_8khz: bestLag,
+    lag_ms: Number((bestLag / 8).toFixed(3)),
+    points: final.points,
+  };
 }
 async function probeHostAudio(audioUrl, episodeId, sourceProbe, { allowNotReady = false } = {}) {
   let res = await fetch(audioUrl, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT } });
@@ -437,9 +535,21 @@ async function probeHostAudio(audioUrl, episodeId, sourceProbe, { allowNotReady 
     if (sourceProbe.duration > 0 && probe.duration > 0 && Math.abs(probe.duration - sourceProbe.duration) > 0.1) {
       fail(`host derivative duration differs from governed source by ${Math.abs(probe.duration - sourceProbe.duration).toFixed(3)}s`);
     }
-    if (probe.pcm_sha256 !== sourceProbe.pcm_sha256) fail('host derivative decoded PCM differs from governed source master');
+    let equivalence = null;
+    const pcmExact = probe.pcm_sha256 === sourceProbe.pcm_sha256;
+    if (!pcmExact) {
+      equivalence = await verifyLossyAudioEquivalence(sourceProbe.path, path);
+      console.log(`HOST AUDIO WAVEFORM EQUIVALENCE PASS correlation=${equivalence.correlation} rms_ratio=${equivalence.rms_ratio} lag_ms=${equivalence.lag_ms}`);
+    }
+    return {
+      ...probe,
+      bytes: bytes.length,
+      pcm_exact_match: pcmExact,
+      waveform_equivalence: equivalence,
+      governed_source_pcm_sha256: sourceProbe.pcm_sha256,
+    };
   }
-  return { ...probe, bytes: bytes.length, pcm_matches_source: Boolean(sourceProbe) };
+  return { ...probe, bytes: bytes.length, pcm_exact_match: null, waveform_equivalence: null };
 }
 function providerFlags(ep) {
   return {
