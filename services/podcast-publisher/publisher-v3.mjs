@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/1.9 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/2.0 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -547,6 +547,27 @@ async function makePublic(id, r) {
   fail('Buzzsprout episode did not reach public state within bounded verification window');
 }
 
+async function verifyPublicHostAudioBeforeRss(id, r, sourceProbe) {
+  for (let i = 0; i < 60; i++) {
+    const ep = await getEpisode(id, true); verifyCore(ep, r);
+    if (Boolean(ep.private) !== false) fail('episode left public state during host-audio verification');
+    try {
+      const probe = await probeHostAudio(ep.audio_url, id, sourceProbe, { allowNotReady: true });
+      if (probe) return { ep, probe };
+    } catch (error) {
+      await unpublishImmediately(id, r, 'public host derivative verification failure');
+      throw error;
+    }
+    if (await rssContainsTitle(r)) {
+      await unpublishImmediately(id, r, 'RSS exposure before hosted audio became verifiable');
+      fail('RSS exposed the episode before hosted audio became verifiable');
+    }
+    await sleep(5000);
+  }
+  await unpublishImmediately(id, r, 'public host audio propagation timeout');
+  fail('public host audio did not become readable within the bounded propagation window');
+}
+
 async function verifyRss(r) {
   for (let i = 0; i < 24; i++) {
     const res = await fetch(r.rss_url, { redirect: 'follow', headers: { 'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache' } });
@@ -633,7 +654,9 @@ async function main() {
   let final_host_probe;
   try {
     publicEp = await makePublic(id, r);
-    final_host_probe = await probeHostAudio(publicEp.audio_url, id, source_probe);
+    const verifiedPublic = await verifyPublicHostAudioBeforeRss(id, r, source_probe);
+    publicEp = verifiedPublic.ep;
+    final_host_probe = verifiedPublic.probe;
   } catch (error) {
     await unpublishImmediately(id, r, 'post-publication host verification failure');
     throw error;
