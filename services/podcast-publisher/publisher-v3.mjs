@@ -112,6 +112,7 @@ export function validateRequest(input) {
     chapters,
     replace_media: input.replace_media === true,
     supersede_existing_private: input.supersede_existing_private === true,
+    create_with_media_legacy: input.create_with_media_legacy === true,
     metadata: {
       title: str(m.title, 'metadata.title'), description,
       summary: typeof m.summary === 'string' ? m.summary : '',
@@ -279,6 +280,27 @@ async function createPrivate(r, artworkBytes) {
   return json;
 }
 
+async function createPrivateWithMediaLegacy(r, artworkBytes, audioBytes) {
+  const endpoint = `https://www.buzzsprout.com/api/${PODCAST_ID}/episodes`;
+  const form = new FormData();
+  const metadata = privateMetadata(r);
+  for (const [key, value] of Object.entries(metadata)) form.append(key, String(value));
+  if (r.artwork && artworkBytes) {
+    form.append('artwork_file', new Blob([artworkBytes], { type: r.artwork.mime }), r.artwork.filename);
+  }
+  form.append('audio_file', new Blob([audioBytes], { type: r.master.mime }), r.master.filename);
+  form.append('email_user_after_audio_processed', 'false');
+  const res = await fetch(endpoint, { method: 'POST', headers: authHeaders(), body: form });
+  const text = await res.text(); let json = null; try { json = text ? JSON.parse(text) : null; } catch {}
+  if (!res.ok) {
+    const detail = apiErrorText(json, text);
+    fail(`Buzzsprout legacy create-with-media failed: HTTP ${res.status}${detail ? ` ${detail}` : ''}`);
+  }
+  if (res.headers.get('deprecation')) console.log('Buzzsprout legacy create audio_file path acknowledged deprecation');
+  clear('/episodes');
+  return json;
+}
+
 async function uploadMedia(id, bytes, filename, mime) {
   const episodeId = encodeURIComponent(id);
   const startPath = `/episodes/${episodeId}/uploads`;
@@ -430,13 +452,22 @@ function verifyAudioReady(ep, r) {
   if (!ep.audio_url) fail('Buzzsprout audio_url is not ready');
 }
 async function waitForProcessedPrivate(id, r) {
-  for (let i = 0; i < 90; i++) {
+  for (let i = 0; i < 120; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
     if (Boolean(ep.private) !== true) fail('episode became public before private-stage verification completed');
-    if (ep.audio_url) return { ep };
+    const duration = Number(ep.duration);
+    if (r.mode === 'release' && r.create_with_media_legacy) {
+      if (ep.audio_url && Number.isFinite(duration) && duration > 0) {
+        console.log(`PRIVATE MEDIA PROCESSING COMPLETE episode_id=${id} duration=${duration} hq=${JSON.stringify(ep.hq)} magic_mastering=${JSON.stringify(ep.magic_mastering)}`);
+        return { ep };
+      }
+    } else if (ep.audio_url) {
+      return { ep };
+    }
+    if (i % 6 === 0) console.log(`PRIVATE MEDIA WAIT episode_id=${id} duration=${JSON.stringify(ep.duration)} audio_url=${Boolean(ep.audio_url)}`);
     await sleep(10000);
   }
-  fail('Buzzsprout audio did not expose a host locator within bounded verification window');
+  fail('Buzzsprout audio did not finish private processing within bounded verification window');
 }
 
 async function rssContainsTitle(r) {
@@ -670,8 +701,12 @@ async function main() {
     ep = null;
   }
   if (!ep) {
-    try { ep = await createPrivate(r, sourceArt); created = true; }
-    catch (error) {
+    try {
+      ep = r.mode === 'release' && r.create_with_media_legacy
+        ? await createPrivateWithMediaLegacy(r, sourceArt, sourceAudio)
+        : await createPrivate(r, sourceArt);
+      created = true;
+    } catch (error) {
       console.warn('Create outcome uncertain/failed; reconciling by exact governed metadata before any retry.');
       ep = await resolveExisting(r, true); if (!ep) throw error;
     }
@@ -699,6 +734,8 @@ async function main() {
     console.log(`Replacing private release media with exact governed master through dashboard-compatible audio_file path episode_id=${id}`);
     await replaceMediaLegacy(id, sourceAudio, r.master.filename, r.master.mime);
     ep = await getEpisode(id, true); verifyCore(ep, r);
+  } else if (r.mode === 'release' && r.create_with_media_legacy && created) {
+    console.log(`Fresh private release episode created with exact governed media episode_id=${id}`);
   } else if (!ep.audio_url && !releaseResumeProcessing) {
     const filename = r.mode === 'canary' ? 'fv-publisher-canary.wav' : r.master.filename;
     const mime = r.mode === 'canary' ? 'audio/wav' : r.master.mime;
