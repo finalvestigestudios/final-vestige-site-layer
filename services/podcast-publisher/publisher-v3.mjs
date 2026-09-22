@@ -562,10 +562,10 @@ async function fetchRssEpisodeEntry(r) {
   });
   if (!res.ok) return null;
   const xml = await res.text();
-  const items = xml.match(/<item\\b[\\s\\S]*?<\\/item>/gi) || [];
+  const items = xml.match(/<item\b[\s\S]*?<\/item>/gi) || [];
   const item = items.find(candidate => candidate.includes(r.metadata.title));
   if (!item) return null;
-  const match = item.match(/<enclosure\\b[^>]*\\burl=(["'])(.*?)\\1/i);
+  const match = item.match(/<enclosure\b[^>]*\burl=(["'])(.*?)\1/i);
   if (!match) fail('RSS episode item is missing an enclosure URL');
   return {
     url: res.url,
