@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/2.2 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/2.3 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -532,7 +532,8 @@ async function uploadAndVerifyChapters(id, chapters) {
 
 async function makePublic(id, r) {
   const path = `/episodes/${encodeURIComponent(id)}`;
-  const body = { private: false, published_at: r.metadata.published_at || new Date().toISOString() };
+  const body = { private: false };
+  if (r.metadata.published_at) body.published_at = r.metadata.published_at;
   try {
     await apiJson(path, { method: 'PATCH', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) });
   } catch (error) {
@@ -541,7 +542,13 @@ async function makePublic(id, r) {
   }
   for (let i = 0; i < 18; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
-    if (Boolean(ep.private) === false) { verifyAudioReady(ep, r); return ep; }
+    if (Boolean(ep.private) === false) {
+      verifyAudioReady(ep, r);
+      console.log(
+        `PUBLIC STATE VERIFIED episode_id=${id} private=${Boolean(ep.private)} published_at=${String(ep.published_at || '')} inactive_at=${String(ep.inactive_at || '')} duration=${String(ep.duration ?? '')} audio_url=${Boolean(ep.audio_url)} hq=${JSON.stringify(ep.hq)} magic_mastering=${JSON.stringify(ep.magic_mastering)}`
+      );
+      return ep;
+    }
     await sleep(10000);
   }
   fail('Buzzsprout episode did not reach public state within bounded verification window');
