@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/2.1 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/2.2 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -547,6 +547,24 @@ async function makePublic(id, r) {
   fail('Buzzsprout episode did not reach public state within bounded verification window');
 }
 
+async function bindCanonicalRssUrl(r) {
+  if (r.mode !== 'release') return r;
+  const res = await fetch(`https://www.buzzsprout.com/api/podcasts/${encodeURIComponent(PODCAST_ID)}`, {
+    headers: authHeaders()
+  });
+  const text = await res.text(); let json = null; try { json = text ? JSON.parse(text) : null; } catch {}
+  if (!res.ok) {
+    const detail = apiErrorText(json, text);
+    fail(`Buzzsprout podcast readback failed: HTTP ${res.status}${detail ? ` ${detail}` : ''}`);
+  }
+  const rss = str(json?.rss_url, 'Buzzsprout podcast.rss_url');
+  if (!rss.startsWith('https://')) fail('Buzzsprout canonical RSS URL is not HTTPS');
+  r.rss_url = rss;
+  const u = new URL(rss);
+  console.log(`CANONICAL RSS BOUND ${u.hostname}${u.pathname}`);
+  return r;
+}
+
 function decodeXmlEntities(value) {
   return String(value)
     .replace(/&amp;/g, '&')
@@ -555,36 +573,57 @@ function decodeXmlEntities(value) {
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>');
 }
-async function fetchRssEpisodeEntry(r) {
-  const res = await fetch(r.rss_url, {
+async function fetchRssEpisodeEntry(r, expectedGuid = null) {
+  const feedUrl = new URL(r.rss_url);
+  feedUrl.searchParams.set('_fv', String(Date.now()));
+  const res = await fetch(feedUrl, {
     redirect: 'follow',
-    headers: { 'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache' }
+    headers: {
+      'User-Agent': USER_AGENT,
+      'Cache-Control': 'no-cache, no-store, max-age=0',
+      Pragma: 'no-cache'
+    }
   });
-  if (!res.ok) return null;
+  if (!res.ok) return { found: false, status: res.status, item_count: 0 };
   const xml = await res.text();
   const items = xml.match(/<item\b[\s\S]*?<\/item>/gi) || [];
-  const item = items.find(candidate => candidate.includes(r.metadata.title));
-  if (!item) return null;
+  let item = null;
+  if (expectedGuid) {
+    item = items.find(candidate => {
+      const match = candidate.match(/<guid\b[^>]*>([\s\S]*?)<\/guid>/i);
+      return match && decodeXmlEntities(match[1].replace(/<!\[CDATA\[|\]\]>/g, '').trim()) === expectedGuid;
+    }) || null;
+  }
+  if (!item) {
+    item = items.find(candidate => decodeXmlEntities(candidate).includes(r.metadata.title)) || null;
+  }
+  if (!item) return { found: false, status: res.status, item_count: items.length };
   const match = item.match(/<enclosure\b[^>]*\burl=(["'])(.*?)\1/i);
   if (!match) fail('RSS episode item is missing an enclosure URL');
   return {
+    found: true,
     url: res.url,
     title_found: true,
     enclosure_url: decodeXmlEntities(match[2]),
     item_sha256: digest(Buffer.from(item, 'utf8')),
+    item_count: items.length,
   };
 }
 async function verifyRssEnclosureAndAudio(id, r, sourceProbe) {
-  for (let i = 0; i < 60; i++) {
+  let lastStatus = null, lastItemCount = null;
+  for (let i = 0; i < 180; i++) {
     const ep = await getEpisode(id, true); verifyCore(ep, r);
     if (Boolean(ep.private) !== false) fail('episode left public state during RSS/audio verification');
-    const rss = await fetchRssEpisodeEntry(r);
-    if (!rss) {
+    const rss = await fetchRssEpisodeEntry(r, String(ep.guid || ''));
+    lastStatus = rss?.status ?? 200;
+    lastItemCount = rss?.item_count ?? null;
+    if (!rss?.found) {
+      if (i % 12 === 0) console.log(`RSS WAIT episode_id=${id} status=${lastStatus} items=${lastItemCount}`);
       await sleep(5000);
       continue;
     }
-    console.log(`RSS EPISODE LOCATED episode_id=${id}`);
-    for (let j = 0; j < 10; j++) {
+    console.log(`RSS EPISODE LOCATED episode_id=${id} items=${rss.item_count}`);
+    for (let j = 0; j < 20; j++) {
       try {
         const probe = await probeHostAudio(rss.enclosure_url, id, sourceProbe, { allowNotReady: true });
         if (probe) return { ep, probe, rss };
@@ -598,7 +637,7 @@ async function verifyRssEnclosureAndAudio(id, r, sourceProbe) {
     fail('RSS enclosure was published but its hosted audio remained unreadable');
   }
   await unpublishImmediately(id, r, 'RSS propagation timeout');
-  fail('RSS did not contain the exact episode within the bounded propagation window');
+  fail(`RSS did not contain the exact episode within the bounded propagation window (status=${lastStatus}, items=${lastItemCount})`);
 }
 async function writeReceipt(data) {
   await fs.writeFile('publisher-receipt.json', JSON.stringify({ schema_version:'fv-podcast-publish-receipt/v1', ...data, verified_at:new Date().toISOString() }, null, 2));
@@ -608,6 +647,7 @@ async function main() {
   if (!REQUEST_FILE) fail('PUBLISH_REQUEST_FILE is not configured');
   const r = validateRequest(JSON.parse(await fs.readFile(REQUEST_FILE, 'utf8')));
   verifyRuntimeAuthority(r);
+  await bindCanonicalRssUrl(r);
   console.log(`Validated ${r.mode} request ${r.package_id}`);
 
   const sourceAudio = r.mode === 'canary' ? canaryWav() : await downloadAndVerify(r.master, 'master audio');
