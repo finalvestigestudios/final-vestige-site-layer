@@ -4,7 +4,7 @@ import { validateRequest } from './publisher-v3.mjs';
 const base = {
   schema_version: 'fv-podcast-publish/v1',
   mode: 'release',
-  package_id: 'POD-001-FINAL-V1.2',
+  package_id: 'FV-POD-TEST-0001',
   release_payload_sha256: 'c'.repeat(64),
   publication_authority: 'FOUNDER_EXPLICIT_PUBLISH_2026-09-15',
   qd: { exact_master: 'PASS', artwork_rights: 'PASS', release_copy: 'PASS' },
@@ -17,15 +17,15 @@ const base = {
     filename: 'art.png', mime: 'image/png'
   },
   chapters: [
-    { title: 'The textbook in the ruins', start_time: '00:00' },
-    { title: 'New London and the oil field', start_time: '02:06' }
+    { title: 'Cold open', start_time: '00:00' },
+    { title: 'Story proper', start_time: '02:06' }
   ],
   metadata: {
-    title: 'The Textbook Found Open in the Ruins | New London, 1937',
+    title: 'Example Final Vestige Episode',
     description: 'description', summary: 'summary', artist: 'Final Vestige Studios',
     explicit: false, private: false, episode_number: 1, episode_type: 'full',
-    custom_url: 'https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/',
-    tags: 'New London, Texas, 1937'
+    custom_url: 'https://finalvestige.com/podcast/example-episode/',
+    tags: 'example, history'
   }
 };
 
@@ -33,7 +33,7 @@ const validated = validateRequest(base);
 assert.equal(validated.metadata.episode_number, 1);
 assert.equal(validated.metadata.season_number, null, 'season must remain absent when canonical metadata has no season');
 assert.equal(validated.metadata.episode_type, 'full');
-assert.equal(validated.metadata.custom_url, 'https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/');
+assert.equal(validated.metadata.custom_url, 'https://finalvestige.com/podcast/example-episode/');
 assert.equal(validated.chapters.length, 2);
 assert.equal(validated.chapters[1].start_seconds, 126);
 assert.equal(validated.replace_media, false);
@@ -78,6 +78,10 @@ for (const gate of ['exact_master', 'artwork_rights', 'release_copy']) {
 {
   const mutant = structuredClone(base); mutant.transcript = { content: '1\n00:00:00,000 --> 00:00:01,000\nHello\n', format: 'SRT', filename: 'episode.srt' };
   assert.equal(validateRequest(mutant).transcript.format, 'SRT');
+}
+{
+  const mutant = structuredClone(base); mutant.transcript = { content: '1\n00:00:00,000 --> 00:00:01,000\nHello\n', format: 'SRT' };
+  assert.equal(validateRequest(mutant).transcript.filename, 'FV-POD-TEST-0001-transcript.srt');
 }
 {
   const mutant = structuredClone(base); mutant.chapters = [

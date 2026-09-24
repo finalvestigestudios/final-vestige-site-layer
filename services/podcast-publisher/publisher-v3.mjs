@@ -7,7 +7,7 @@ const execFileP = promisify(execFile);
 const API_TOKEN = process.env.BUZZSPROUT_API_TOKEN;
 const PODCAST_ID = process.env.BUZZSPROUT_PODCAST_ID || '2650509';
 const REQUEST_FILE = process.env.PUBLISH_REQUEST_FILE;
-const USER_AGENT = 'FinalVestigePodcastPublisher/2.3 (+https://finalvestige.com)';
+const USER_AGENT = 'FinalVestigePodcastPublisher/2.4 (+https://finalvestige.com)';
 const cache = new Map();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const fail = message => { throw new Error(message); };
@@ -74,7 +74,7 @@ export function validateRequest(input) {
   const transcript = input.transcript && typeof input.transcript === 'object' ? {
     content: str(input.transcript.content, 'transcript.content'),
     format: str(input.transcript.format || 'SRT', 'transcript.format').toUpperCase(),
-    filename: str(input.transcript.filename || 'POD-001-transcript.srt', 'transcript.filename'),
+    filename: str(input.transcript.filename || `${packageId}-transcript.srt`, 'transcript.filename'),
   } : null;
   if (transcript && !['SRT', 'JSON'].includes(transcript.format)) fail('unsupported transcript.format');
   const chapters = Array.isArray(input.chapters) ? input.chapters.map((chapter, index) => {
