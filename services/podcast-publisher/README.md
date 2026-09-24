@@ -1,4 +1,4 @@
-# Final Vestige Podcast Publisher Bridge v1.4
+# Final Vestige Podcast Publisher Bridge v2.4
 
 Purpose: publish one exact, independently QD-cleared Final Vestige episode to Buzzsprout podcast `2650509` and verify the host/RSS destination without exposing credentials, trusting caller-asserted approval strings, or silently accepting host audio degradation.
 
@@ -44,19 +44,19 @@ Issue #46 requires a private host-write canary before the real release. Canary m
 
 ## Real episode sequence
 
-1. Validate the request and runtime-owned authorization bindings.
-2. Download master/artwork and independently verify byte count + SHA-256 before host mutation.
-3. Reconcile by exact governed metadata identity; ambiguous or conflicting matches fail closed.
-4. Create the real episode **private first**, metadata/artwork only. On uncertain POST outcome, read/reconcile before any retry; the bridge never blindly retries create.
-5. Start a Buzzsprout media upload, PUT the exact bytes to the returned upload URL without the Buzzsprout Authorization header, then call the upload `complete` endpoint.
-6. Poll the private episode until media processing completes and an `audio_url` is present.
-7. If an exact private episode must be reprocessed after a host-setting correction, `replace_media=true` replaces only that exact private episode's media with the runtime-authorized frozen master; it never creates a second release episode.
-8. Arm a one-hour future publication window solely so Buzzsprout's hosted media becomes readable. Immediately verify the episode is absent from RSS; if RSS appears early or the verification window becomes unsafe, force the episode back to private.
-9. Independently probe the governed source and Buzzsprout derivative with ffprobe, then require the host to remain MP3, stereo, >=44.1 kHz and ~192 kbps. Decode both through ffmpeg and require an exact SHA-256 match of the decoded PCM before final publication; metadata/container rewrites are allowed, audio-sample changes are not.
-10. Replace and read back the governed Buzzsprout chapter list when chapters are supplied.
-11. Optionally upload a governed custom public transcript. Buzzsprout's current custom-transcript API accepts SRT or JSON only.
-12. PATCH the verified scheduled episode to publish immediately, probe the final public audio again, and poll RSS until the exact title appears.
-13. Archive `publisher-receipt.json` with package key, Buzzsprout episode ID/GUID, source/scheduled/final PCM fingerprints, chapter/transcript receipts, provider flags, exact input identities and verification timestamp.
+1. Validate the episode-neutral request and protected runtime authorization bindings.
+2. Resolve Buzzsprout's canonical RSS URL from the authenticated podcast record.
+3. Download the exact master/artwork and independently verify byte count + SHA-256 before any host mutation.
+4. Reconcile exact governed metadata identity. Ambiguous or conflicting matches fail closed.
+5. Create the episode private. The normal path uses Buzzsprout's upload resource; the governed compatibility path may attach the exact master on episode creation when host processing requires it.
+6. Wait for private media processing. Release readiness requires a real processed duration plus the expected host/provider state.
+7. Require HQ when Buzzsprout reports the flag and reject Magic Mastering when it is reported active.
+8. Upload and read back governed chapters; optionally upload a governed SRT/JSON transcript.
+9. Publish the exact verified episode.
+10. Locate the exact episode in the canonical RSS feed and extract its listener-facing enclosure.
+11. Verify the hosted enclosure remains MP3, stereo, >=44.1 kHz, ~192 kbps and duration-aligned with the frozen master. Exact decoded PCM is accepted when possible; otherwise the host's lossy re-encode must pass governed waveform-equivalence and gain checks.
+12. Fail closed and force-unpublish on destination/audio verification failure.
+13. Archive `publisher-receipt.json` containing exact input identities, Buzzsprout episode ID/GUID, provider flags, host-audio measurements, chapter/transcript receipts and RSS evidence.
 
 ## Resume safety
 
@@ -79,16 +79,8 @@ For a real release, if a resumed run encounters an already-existing release epis
 
 The production request must point to deliberately staged HTTPS copies of the exact release bytes. Transport is not authority: the bridge re-hashes every byte. Do not commit expiring signed download URLs or credentials to source, logs or Notion.
 
-## Current POD-001 gates
+## Per-episode release gates
 
-Before the real request may run:
-
-1. exact-master audible QD PASS on the frozen MP3;
-2. artwork/rights QD PASS;
-3. final-bound release-copy QD PASS;
-4. bridge exact-head CI + independent QD PASS and merge;
-5. private canary PASS;
-6. protected Actions environment contains Buzzsprout token + exact runtime release-authority bindings;
-7. exact master/artwork staging URLs are reachable by the runner without exposing credentials.
+Every episode gets its own package ID, frozen master, artwork identity, release-copy identity and protected runtime authorization values. Episode 1's hashes or package ID are never reused for a later episode. A new episode cannot publish until its exact master, artwork/rights and release copy have independent PASS dispositions and the protected environment is rebound to those exact identities.
 
 The bridge does not update WordPress. The Final Vestige companion page remains a separately confirmed and destination-verified release step.
