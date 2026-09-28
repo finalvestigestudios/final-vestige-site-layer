@@ -1,0 +1,3 @@
+POD-001 governed ElevenLabs egress trigger.
+Founder confirmed ELEVENLABS_API_KEY has been added to GitHub Actions secrets.
+Retrieve only the exact preselected 56 narration generations from the locked manifest; do not regenerate speech.

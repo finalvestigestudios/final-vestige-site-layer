@@ -1,0 +1,46 @@
+name: POD-001 ElevenLabs Egress
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['feature/podcast-egress-bridge-v1']
+    paths:
+      - 'tools/podcast-egress/run/**'
+
+permissions:
+  contents: read
+
+jobs:
+  egress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Verify secret availability
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "ELEVENLABS_API_KEY repository secret is not configured." >&2
+            exit 2
+          fi
+      - name: Retrieve exact selected POD-001 narration from History
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          python3 tools/podcast-egress/history_egress.py \
+            --manifest tools/podcast-egress/manifests/pod001-selected-history-v2.json \
+            --out-dir build/pod001/stems \
+            --zip build/POD001-selected-narration.zip \
+            --receipt build/POD001-selected-narration-receipt.json
+      - name: Upload governed narration artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: POD001-selected-narration
+          path: |
+            build/POD001-selected-narration.zip
+            build/POD001-selected-narration-receipt.json
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,2 @@
+Read-only History API capability probe after Flow-generation endpoint returned plan-gated HTTP 402.
+No synthesis, mutation, or media regeneration is authorized by this trigger.

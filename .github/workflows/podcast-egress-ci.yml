@@ -1,0 +1,44 @@
+name: Podcast Egress Bridge CI
+
+on:
+  pull_request:
+    paths:
+      - 'tools/podcast-egress/**'
+      - '.github/workflows/podcast-egress-ci.yml'
+      - '.github/workflows/pod001-egress-run.yml'
+  push:
+    branches: ['feature/podcast-egress-bridge-v1']
+    paths:
+      - 'tools/podcast-egress/**'
+      - '.github/workflows/podcast-egress-ci.yml'
+      - '.github/workflows/pod001-egress-run.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax
+        run: python3 -m py_compile tools/podcast-egress/egress.py tools/podcast-egress/history_egress.py tools/podcast-egress/history_probe.py tools/podcast-egress/tests/test_egress.py
+      - name: Unit tests
+        run: python3 -m unittest discover -s tools/podcast-egress/tests -v
+      - name: Validate locked POD-001 History manifest
+        run: |
+          python3 - <<'PY'
+          import importlib.util, json
+          from pathlib import Path
+          p = Path('tools/podcast-egress/history_egress.py')
+          spec = importlib.util.spec_from_file_location('history_egress', p)
+          mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+          manifest = json.loads(Path('tools/podcast-egress/manifests/pod001-selected-history-v2.json').read_text())
+          mod.validate_manifest(manifest)
+          assert manifest['expected_count'] == 56
+          assert len(manifest['stems']) == 56
+          assert [s['stem_id'] for s in manifest['stems']] == [f'S{i:02d}' for i in range(1,57)]
+          assert {s['stem_id'] for s in manifest['stems'] if s['retake']} == {'S12','S22','S50','S52','S56'}
+          assert manifest['stems'][20]['stem_id'] == 'S21' and not manifest['stems'][20]['retake']
+          print('POD-001 History manifest: 56 locked selections validated')
+          PY
