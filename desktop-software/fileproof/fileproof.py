@@ -1,0 +1,217 @@
+"""FileProof — offline SHA-256 folder manifest creator and verifier.
+
+No network access, no file modification. Requires Python 3.11+.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import sys
+from datetime import datetime, timezone
+from pathlib import Path, PurePosixPath
+
+VERSION = "0.1.0"
+SCHEMA = "finalvestige.fileproof.v1"
+CHUNK = 1024 * 1024
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(CHUNK), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def collect(root: Path, exclude: Path | None = None) -> dict:
+    root = root.resolve(strict=True)
+    if not root.is_dir():
+        raise ValueError("Select a folder, not a file.")
+    files = []
+    errors = []
+    for directory, dirs, names in os.walk(root, followlinks=False):
+        # Do not follow symlinked folders outside the selected tree.
+        dirs[:] = sorted(d for d in dirs if not (Path(directory) / d).is_symlink())
+        for name in sorted(names):
+            path = Path(directory) / name
+            if path.is_symlink() or (exclude is not None and path.resolve() == exclude.resolve()):
+                continue
+            relative = path.relative_to(root).as_posix()
+            try:
+                before = path.stat()
+                digest = sha256(path)
+                after = path.stat()
+                if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
+                    raise OSError("File changed while hashing")
+                files.append({"path": relative, "bytes": after.st_size, "sha256": digest})
+            except (OSError, PermissionError) as exc:
+                errors.append({"path": relative, "error": str(exc)})
+    return {
+        "schema": SCHEMA,
+        "version": VERSION,
+        "created_utc": datetime.now(timezone.utc).isoformat(),
+        "files": files,
+        "errors": errors,
+    }
+
+
+def create_manifest(root: Path, destination: Path) -> dict:
+    destination = destination.resolve()
+    if destination.exists():
+        raise FileExistsError("Refusing to overwrite an existing manifest.")
+    manifest = collect(root, exclude=destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    # Write atomically, never modify scanned files.
+    temp = destination.with_name(destination.name + ".tmp")
+    if temp.exists():
+        raise FileExistsError("Temporary output already exists.")
+    try:
+        with temp.open("x", encoding="utf-8", newline="\n") as stream:
+            json.dump(manifest, stream, indent=2, ensure_ascii=False)
+            stream.write("\n")
+        temp.replace(destination)
+    finally:
+        if temp.exists():
+            temp.unlink()
+    return manifest
+
+
+def safe_path(root: Path, relative: str) -> Path:
+    if not isinstance(relative, str) or not relative or "\\" in relative:
+        raise ValueError("Unsafe path in manifest.")
+    p = PurePosixPath(relative)
+    if p.is_absolute() or ".." in p.parts or "." in p.parts or ":" in p.parts[0]:
+        raise ValueError("Unsafe path in manifest.")
+    result = root.joinpath(*p.parts)
+    if not result.resolve().is_relative_to(root.resolve()):
+        raise ValueError("Manifest path escapes selected folder.")
+    return result
+
+
+def verify_manifest(root: Path, manifest_file: Path) -> dict:
+    root = root.resolve(strict=True)
+    with manifest_file.open("r", encoding="utf-8") as stream:
+        manifest = json.load(stream)
+    if not isinstance(manifest, dict) or manifest.get("schema") != SCHEMA:
+        raise ValueError("Not a supported FileProof manifest.")
+    expected = manifest.get("files")
+    if not isinstance(expected, list):
+        raise ValueError("Invalid manifest entries.")
+    results = []
+    seen = set()
+    for item in expected:
+        if not isinstance(item, dict) or not isinstance(item.get("sha256"), str):
+            raise ValueError("Invalid manifest entry.")
+        relative = item.get("path")
+        path = safe_path(root, relative)
+        if relative in seen:
+            raise ValueError("Duplicate path in manifest.")
+        seen.add(relative)
+        if not path.is_file() or path.is_symlink():
+            status = "MISSING"
+        else:
+            try:
+                status = "OK" if (path.stat().st_size == item.get("bytes") and sha256(path) == item["sha256"]) else "CHANGED"
+            except OSError:
+                status = "UNREADABLE"
+        results.append({"path": relative, "status": status})
+    return {"total": len(results), "ok": sum(x["status"] == "OK" for x in results), "results": results,
+            "scan_errors": manifest.get("errors", [])}
+
+
+def gui() -> None:
+    import tkinter as tk
+    from tkinter import filedialog, messagebox, ttk
+    app = tk.Tk()
+    app.title(f"FileProof {VERSION} · Final Vestige Studios")
+    app.geometry("760x520")
+    app.minsize(620, 420)
+    root_var = tk.StringVar()
+    status_var = tk.StringVar(value="Choose a folder to create or verify a file integrity manifest.")
+    frame = ttk.Frame(app, padding=22)
+    frame.pack(fill="both", expand=True)
+    ttk.Label(frame, text="FileProof", font=("Segoe UI", 24, "bold")).pack(anchor="w")
+    ttk.Label(frame, text="Verify what changed. Keep the files where they are.").pack(anchor="w", pady=(0, 20))
+    ttk.Label(frame, text="Folder").pack(anchor="w")
+    line = ttk.Frame(frame)
+    line.pack(fill="x", pady=(4, 18))
+    ttk.Entry(line, textvariable=root_var).pack(side="left", fill="x", expand=True)
+    ttk.Button(line, text="Browse…", command=lambda: root_var.set(filedialog.askdirectory() or root_var.get())).pack(side="left", padx=(8, 0))
+    output = tk.Text(frame, wrap="none", height=14, state="disabled")
+    output.pack(fill="both", expand=True, pady=(12, 8))
+    ttk.Label(frame, textvariable=status_var).pack(anchor="w")
+
+    def show(text: str) -> None:
+        output.config(state="normal")
+        output.delete("1.0", "end")
+        output.insert("1.0", text)
+        output.config(state="disabled")
+
+    def run_create() -> None:
+        if not root_var.get():
+            messagebox.showwarning("Select a folder", "Choose the folder to inspect.")
+            return
+        filename = filedialog.asksaveasfilename(title="Save manifest", defaultextension=".json",
+                                                 filetypes=[("FileProof manifest", "*.json")])
+        if not filename:
+            return
+        try:
+            result = create_manifest(Path(root_var.get()), Path(filename))
+            status_var.set(f"Manifest created: {len(result['files'])} files; {len(result['errors'])} unreadable.")
+            show(json.dumps({"saved_to": filename, "files": len(result["files"]), "errors": result["errors"]}, indent=2))
+        except Exception as exc:
+            messagebox.showerror("Could not create manifest", str(exc))
+
+    def run_verify() -> None:
+        if not root_var.get():
+            messagebox.showwarning("Select a folder", "Choose the folder to verify.")
+            return
+        filename = filedialog.askopenfilename(title="Open manifest", filetypes=[("FileProof manifest", "*.json")])
+        if not filename:
+            return
+        try:
+            result = verify_manifest(Path(root_var.get()), Path(filename))
+            status_var.set(f"Verified {result['ok']} of {result['total']} files unchanged.")
+            show("\n".join(f"{x['status']:10} {x['path']}" for x in result["results"]) or "No files in manifest.")
+        except Exception as exc:
+            messagebox.showerror("Could not verify manifest", str(exc))
+
+    buttons = ttk.Frame(frame)
+    buttons.pack(fill="x", before=output)
+    ttk.Button(buttons, text="Create manifest", command=run_create).pack(side="left")
+    ttk.Button(buttons, text="Verify manifest", command=run_verify).pack(side="left", padx=10)
+    app.mainloop()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Offline folder integrity manifests")
+    commands = parser.add_subparsers(dest="command")
+    create = commands.add_parser("create")
+    create.add_argument("folder")
+    create.add_argument("manifest")
+    verify = commands.add_parser("verify")
+    verify.add_argument("folder")
+    verify.add_argument("manifest")
+    args = parser.parse_args()
+    if args.command is None:
+        gui()
+        return 0
+    try:
+        if args.command == "create":
+            result = create_manifest(Path(args.folder), Path(args.manifest))
+            print(f"Recorded {len(result['files'])} files; errors: {len(result['errors'])}")
+            return 2 if result["errors"] else 0
+        result = verify_manifest(Path(args.folder), Path(args.manifest))
+        for entry in result["results"]:
+            print(f"{entry['status']:10} {entry['path']}")
+        print(f"{result['ok']}/{result['total']} unchanged")
+        return 0 if result["ok"] == result["total"] else 1
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
