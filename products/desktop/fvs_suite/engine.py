@@ -6,6 +6,8 @@ from datetime import datetime, date
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 
+from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
+
 ALIASES = {
  "id": ("transaction_id","id","reference","ref","document_id","claim_id"),
  "amount": ("amount","total","paid","claim_amount","invoice_amount"),
@@ -61,8 +63,12 @@ def table(path, required, optional=()):
         headers = dict(zip(normalized, reader.fieldnames))
         cols = {}
         for field in (*required,*optional):
-            cols[field] = next((headers[a] for a in ALIASES.get(field,(field,)) if a in headers),None)
-            if field in required and cols[field] is None: raise ValueError(f"{p.name}: missing '{field}' column")
+            matches = [alias for alias in ALIASES.get(field,(field,)) if alias in headers]
+            if len(matches) > 1:
+                raise ValueError(f"{p.name}: ambiguous '{field}' aliases: {', '.join(matches)}")
+            cols[field] = headers[matches[0]] if matches else None
+            if field in required and cols[field] is None:
+                raise ValueError(f"{p.name}: missing '{field}' column")
         out = []
         for i,r in enumerate(reader,2):
             if i > MAX_ROWS+1: raise ValueError("CSV exceeds 200,000 rows")
@@ -114,16 +120,14 @@ def ledger_diff(left,right,folder):
         a,b=groups[0][k],groups[1][k]
         x=sum((money(r["amount"]) for r in a),Decimal(0))
         y=sum((money(r["amount"]) for r in b),Decimal(0))
-        status=("missing_left" if not a else "missing_right" if not b else
-                "duplicate_id_review" if len(a)!=1 or len(b)!=1 else
-                ";".join(filter(None, [
-                    "normalized_id_review" if a[0]["id"].strip().casefold()!=b[0]["id"].strip().casefold() else "",
-                    "variance" if x!=y else ""
-                ])) or "matched")
+        status=reconciliation_status(
+            a,b,x,y,missing_left="missing_left",missing_right="missing_right")
         rows.append({"id":k,"status":status,"left_amount":dollars(x),"right_amount":dollars(y),
                      "difference":dollars(x-y),"left_rows":";".join(r["row"] for r in a),
-                     "right_rows":";".join(r["row"] for r in b)})
-    return [save(folder,"ledger-diff",("id","status","left_amount","right_amount","difference","left_rows","right_rows"),rows)]
+                     "right_rows":";".join(r["row"] for r in b),
+                     "left_ids":labels_for_report(a,"id"),
+                     "right_ids":labels_for_report(b,"id")})
+    return [save(folder,"ledger-diff",("id","status","left_amount","right_amount","difference","left_rows","right_rows","left_ids","right_ids"),rows)]
 
 def invoice_twins(source,folder):
     records=table(source,("vendor","invoice_number","amount","date"))
