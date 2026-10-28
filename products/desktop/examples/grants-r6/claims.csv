@@ -1,0 +1,5 @@
+claim_id,amount,program,ledger_reference,claim_type,related_claim
+CLM-001,60.00,PROGRAM-A,LEDGER-100,claim,
+CLM-002,40.00,PROGRAM-B,LEDGER-100,claim,
+CLM-003,10.00,PROGRAM-A,LEDGER-200,claim,
+CR-003,2.00,PROGRAM-A,LEDGER-200,credit,CLM-003

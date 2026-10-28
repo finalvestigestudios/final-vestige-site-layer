@@ -75,6 +75,29 @@ def run_smoke(app_id: str) -> list[Path]:
             assert len(outputs) == 3
             assert _rows(outputs[1])[0]["status"] == "over_budget_review"
             assert "SHA-256" in outputs[2].read_text(encoding="utf-8")
+            # Also smoke-test explicit multi-program allocation and linked credit.
+            linked_claims = _csv(root, "linked-claims.csv",
+                ("claim_id","amount","program","ledger_reference","claim_type","related_claim"), [
+                ("A1","60","G1","TX100","claim",""),
+                ("A2","40","G2","TX100","claim",""),
+                ("A3","10","G1","TX200","claim",""),
+                ("CR3","2","G1","TX200","credit","A3")])
+            linked_ledger = _csv(root, "linked-ledger.csv", ("id","amount","program"), [
+                ("TX100","100","Shared"), ("TX200","8","G1")])
+            linked_budget = _csv(root, "linked-budget.csv", ("program","budget"), [
+                ("G1","100"), ("G2","100")])
+            outputs = engine.grant_audit(linked_claims, linked_ledger,
+                                         linked_budget, str(root))
+            details = {row["id"]: row for row in _rows(outputs[0])}
+            assert len(outputs) == 3
+            assert "split_allocation_review" in details["TX100"]["status"]
+            assert details["TX100"]["claim_amount"] == "100.00"
+            assert details["TX200"]["net_claim_amount"] == "8.00"
+            assert "credit_memo_review" in details["TX200"]["status"]
+            summary = {row["program"]: row for row in _rows(outputs[1])}
+            assert summary["G1"]["claimed"] == "68.00"
+            assert summary["G2"]["claimed"] == "40.00"
+            assert "SHA-256" in outputs[2].read_text(encoding="utf-8")
         elif app_id == "procurement":
             po = _csv(root, "po.csv", ("po_number", "line", "quantity", "unit_price"), [
                 ("P1", "1", "4", "10")])

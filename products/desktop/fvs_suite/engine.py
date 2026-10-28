@@ -25,6 +25,9 @@ ALIASES = {
  "event_type": ("event_type","transaction_type","movement_type"),
  "document_id": ("document_id","invoice_number","invoice_id","receipt_number","credit_memo_id"),
  "related_document": ("related_document","applies_to","original_invoice","related_invoice"),
+ "ledger_reference": ("ledger_reference","ledger_ref","source_transaction_id"),
+ "claim_type": ("claim_type","allocation_type"),
+ "related_claim": ("related_claim","original_claim_id","reverses_claim_id"),
 }
 MAX_ROWS = 200_000
 CENT = Decimal("0.01")
@@ -214,7 +217,24 @@ def policy_delta(old,new,folder):
     return [p]
 
 def grant_audit(claims,ledger,budgets,folder):
-    claims_rows=table(claims,("id","amount","program"))
+    """Legacy one-to-one reconciliation or explicit linked allocations.
+
+    A claim_type/related_claim column without ledger_reference is an error:
+    otherwise old logic would silently count credits as positive claims.
+    """
+    claims_rows=table(claims,("id","amount","program"),
+                      ("ledger_reference","claim_type","related_claim"))
+    with Path(claims).open(encoding="utf-8-sig",newline="") as stream:
+        fields={str(h).strip().lower().replace(" ","_")
+                for h in next(csv.reader(stream),[])}
+    has_link=bool(fields & set(ALIASES["ledger_reference"]))
+    advanced=bool(fields & set((*ALIASES["claim_type"],*ALIASES["related_claim"])))
+    if advanced and not has_link:
+        raise ValueError("Grant claim_type/related_claim requires ledger_reference; "
+                         "legacy mode cannot safely interpret credits")
+    if has_link:
+        from .grant_allocations import reconcile_allocations
+        return reconcile_allocations(claims,ledger,budgets,folder,claim_rows=claims_rows)
     ledger_rows=table(ledger,("id","amount","program"))
     budget_rows=table(budgets,("program","budget"))
     program_sources=defaultdict(list)

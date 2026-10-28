@@ -68,6 +68,15 @@ CI launches **all six** EXEs as real processes after packaging, checks their exi
 - Optional local price policy JSON is accessible from the **ProcureGuard Studio Pro** desktop GUI. Values are bounded, schema-checked, Decimal-exact and fingerprinted in the report/evidence manifest. Looser tolerances always produce a visible review flag.
 - A complete synthetic pilot scenario, documentation, and source samples are in [PROCUREMENT_R5.md](docs/PROCUREMENT_R5.md). This is a **development prototype**, not an entitlement-protected commercial edition.
 
+
+## GrantAudit Studio Pro R6 — linked split allocations and credit memos
+
+- Optional claim-ledger source links enable **many claim lines across grant programs to reconcile to one ledger transaction**. This avoids incorrectly treating legitimate split reimbursements as missing records. Splits always remain flagged for human review.
+- Use claims CSV headers `claim_id,amount,program,ledger_reference`; optional `claim_type` and `related_claim` support explicit credits (positive amount with linked original claim). The original three-file output and legacy single-ID matching remain supported.
+- Claims are totaled per source ledger reference and program budgets per claim program, with gross/credit/net amounts, original row references, and source identities in the output. Ambiguous source links, repeated claim IDs, unlinked/cross-program/excessive credits, negative values and missing budgets are visibly reviewed or rejected.
+- A credit-related column without a source ledger_reference is a fail-closed import error, preventing silent positive-credit accounting in legacy mode.
+- Includes a synthetic two-program split + claim credit scenario in [R6 documentation](docs/GRANT_ALLOCATIONS_R6.md), 24 additional repository regressions, and a linked-mode packaged-executable smoke check. The R6 code has **not** passed full repository or Windows packaged-executable validation yet. Premium licensing remains unimplemented.
+
 ## Release gates
 
 1. Independent sample and edge-case test suite (money, CSV injection, encoding, duplicates, malformed input).
