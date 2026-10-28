@@ -77,7 +77,7 @@ premium access controls based on this implementation alone.
 - 15 direct Ed25519 tests using newly generated ephemeral keys in
   test_offline_entitlement_r11.py.
 - 4 headless premium UI tests in test_premium_access_r11.py.
-- Independent pure verifier tests were run on Python 3.11 (cryptography 46.0.4);
+- Independent pure verifier tests were run on Python 3.13.5 (cryptography 46.0.4);
   the complete checked-out repository and packaged Windows GUI tests remain
   outstanding pending a functioning runner or verified Windows workstation.
 
