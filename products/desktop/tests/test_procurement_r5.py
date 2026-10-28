@@ -164,6 +164,27 @@ class PremiumRuleTests(unittest.TestCase):
         self.assertIn("widened_price_policy_review", flags)
         self.assertNotIn("price_variance_above_policy", flags)
 
+    def test_return_requires_original_receipt_reference(self):
+        _, flags = audit([record(10, 5)], [record(9, 5)],
+                         [record(10, doc="RC-1"),
+                          record(1, kind="return", doc="RT1", relates="RC1")])
+        self.assertNotIn("unlinked_return_review", flags)
+        self.assertIn("normalized_return_link_review", flags)
+
+    def test_return_with_wrong_reference_is_flagged(self):
+        _, flags = audit([record(10, 5)], [record(9, 5)],
+                         [record(10, doc="RC1"),
+                          record(1, kind="return", doc="RT1", relates="OTHER")])
+        self.assertIn("unlinked_return_review", flags)
+
+    def test_credit_reference_normalization_is_visible(self):
+        _, flags = audit([record(10, 5)],
+                         [record(10, 5, doc="INV-1"),
+                          record(1, 5, kind="credit", doc="CM1", relates="INV1")],
+                         [record(10)])
+        self.assertIn("normalized_credit_link_review", flags)
+        self.assertNotIn("unlinked_credit_review", flags)
+
     def test_invalid_policy_rejected(self):
         variants = [
             ({"version": 1, "price_absolute": 0.5, "price_fraction": "0.02"}, "decimal string"),
@@ -176,11 +197,16 @@ class PremiumRuleTests(unittest.TestCase):
             with self.subTest(data=data):
                 with self.assertRaisesRegex(ValueError, pattern):
                     load_price_policy(self.config(data))
+        with self.assertRaisesRegex(ValueError, "exactly version=1"):
+            load_price_policy(self.config({"version": 1.0,
+                                           "price_absolute": "0.01",
+                                           "price_fraction": "0.02"}))
         with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
             load_price_policy(self.config({}, '{"version":1,"version":1,"price_absolute":"0.01","price_fraction":"0.02"}'))
 
     def test_empty_policy_is_default(self):
         self.assertEqual(load_price_policy(""), PricePolicy())
+        self.assertEqual(len(PricePolicy().source_sha256), 64)
 
 
 if __name__ == "__main__":
