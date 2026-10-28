@@ -7,6 +7,7 @@ from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 
 from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
+from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
 
 ALIASES = {
  "id": ("transaction_id","id","reference","ref","document_id","claim_id"),
@@ -143,29 +144,35 @@ def ledger_diff(left,right,folder):
     return [save(folder,"ledger-diff",("id","status","left_amount","right_amount","difference","left_rows","right_rows","left_ids","right_ids"),rows)]
 
 def invoice_twins(source,folder):
+    """Produce a bounded, provenance-rich review report without internet access.
+
+    Date-window scanning is chronological rather than all-history quadratic.
+    The output is never partial: excess candidate density raises ValueError
+    before creating a report. Findings are possible duplicates, not fraud.
+    """
     records=table(source,("vendor","invoice_number","amount","date"))
-    exact=defaultdict(list);by_amount=defaultdict(list);pairs={}
     for r in records:
-        r["v"]=key(r["vendor"]);r["inv"]=key(r["invoice_number"])
-        r["amt"]=money(r["amount"]);r["dt"]=parse_date(r["date"])
-        if not r["v"] or not r["inv"]: raise ValueError("Blank vendor/invoice at row "+r["row"])
-        exact[(r["v"],r["inv"])].append(r)
-        by_amount[(r["v"],r["amt"])].append(r)
-    for items in exact.values():
-        for i in range(1,len(items)):
-            a,b=items[0],items[i]
-            pairs[(a["row"],b["row"])]=(a,b,"exact_invoice_key","same normalized vendor and invoice number")
-    for items in by_amount.values():
-        if len(items)>200: raise ValueError("More than 200 same-vendor/same-amount rows; split input for safe review")
-        for i,a in enumerate(items):
-            for b in items[i+1:]:
-                if abs((a["dt"]-b["dt"]).days)<=7 and a["inv"]!=b["inv"]:
-                    pairs.setdefault((a["row"],b["row"]),(a,b,"review_possible_duplicate","same vendor and amount within seven days"))
-    rows=[{"row_a":a["row"],"row_b":b["row"],"status":status,"vendor":a["vendor"],
-           "invoice_a":a["invoice_number"],"invoice_b":b["invoice_number"],
-           "amount_a":dollars(a["amt"]),"amount_b":dollars(b["amt"]),"reason":reason}
-          for a,b,status,reason in pairs.values()]
-    return [save(folder,"invoice-twins",("row_a","row_b","status","vendor","invoice_a","invoice_b","amount_a","amount_b","reason"),rows)]
+        r["v"]=key(r["vendor"])
+        r["inv"]=key(r["invoice_number"])
+        r["amt"]=money(r["amount"])
+        r["dt"]=parse_date(r["date"])
+        if not r["v"] or not r["inv"]:
+            raise ValueError("Blank vendor/invoice at row "+r["row"])
+    rows=[]
+    for a,b,status,reason in candidate_pairs(records):
+        rows.append({
+            "row_a":a["row"],"row_b":b["row"],"status":status,
+            "vendor":a["vendor"],"invoice_a":a["invoice_number"],
+            "invoice_b":b["invoice_number"],
+            "amount_a":dollars(a["amt"]),"amount_b":dollars(b["amt"]),
+            "reason":reason,"vendor_b":b["vendor"],
+            "date_a":a["dt"].isoformat(),"date_b":b["dt"].isoformat(),
+            "review_flags":invoice_review_flags(a,b,status)
+        })
+    return [save(folder,"invoice-twins",(
+        "row_a","row_b","status","vendor","invoice_a","invoice_b",
+        "amount_a","amount_b","reason","vendor_b","date_a","date_b","review_flags"
+    ),rows)]
 
 def spend_map(source,folder):
     records=table(source,("vendor","amount","date"),("category",))
