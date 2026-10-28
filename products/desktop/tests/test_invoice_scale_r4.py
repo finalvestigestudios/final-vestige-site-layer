@@ -124,6 +124,23 @@ class InvoiceScaleR4Tests(unittest.TestCase):
                              ("ACME","C","11","2026-01-01")])
         self.assertEqual(self.rows(engine.invoice_twins(p,self.folder)[0]),[])
 
+    def test_many_same_invoice_keys_do_not_trigger_quadratic_window_scan(self):
+        base=date(2026,1,1)
+        records=[self.candidate(i+2,"RECURRING",base) for i in range(1500)]
+        pairs=candidate_pairs(records,max_candidates=2000)
+        self.assertEqual(len(pairs),1499)
+        self.assertTrue(all(status=="exact_invoice_key" for _,_,status,_ in pairs))
+
+    def test_one_distinct_invoice_against_recurring_group_is_reported(self):
+        base=date(2026,1,1)
+        records=[self.candidate(i+2,"RECURRING",base) for i in range(200)]
+        records.append(self.candidate(202,"DIFFERENT",base))
+        pairs=candidate_pairs(records,max_candidates=450)
+        exact=[p for p in pairs if p[2]=="exact_invoice_key"]
+        possible=[p for p in pairs if p[2]=="review_possible_duplicate"]
+        self.assertEqual(len(exact),199)
+        self.assertEqual(len(possible),200)
+
     def test_candidate_limit_validated(self):
         with self.assertRaisesRegex(ValueError,"positive integer"):
             candidate_pairs([],max_candidates=0)
