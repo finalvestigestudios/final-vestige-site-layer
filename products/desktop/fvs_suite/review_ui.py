@@ -78,7 +78,9 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         batch = batch_holder[0]
         if batch is None:
             return
-        tree.delete(*tree.get_children())
+        old_items = tree.get_children()
+        if old_items:
+            tree.delete(*old_items)
         states = latest_states(journal_holder[0], batch)
         for case in batch.cases:
             result = states.get(case.case_id)
