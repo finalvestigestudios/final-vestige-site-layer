@@ -47,12 +47,12 @@ class APInputGuardTests(unittest.TestCase):
     def test_source_fingerprint_and_change(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "pay.csv"
-            path.write_bytes(b"vendor,amount\\nA,10\\n")
+            path.write_bytes(b"vendor,amount\nA,10\n")
             first = source_fingerprint(path)
             self.assertEqual(first["bytes"], len(path.read_bytes()))
             self.assertEqual(len(first["sha256"]), 64)
             self.assertEqual(first, source_fingerprint(path))
-            path.write_bytes(b"vendor,amount\\nB,12\\n")
+            path.write_bytes(b"vendor,amount\nB,12\n")
             self.assertNotEqual(first["sha256"], source_fingerprint(path)["sha256"])
 
     def test_directory_rejected(self):
