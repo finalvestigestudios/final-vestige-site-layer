@@ -1,0 +1,49 @@
+name: FileProof Windows installer
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'desktop-software/fileproof/**'
+      - '.github/workflows/fileproof-windows.yml'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python -m unittest discover -s desktop-software/fileproof -p "test_*.py" -v
+      - name: Install PyInstaller
+        run: python -m pip install --disable-pip-version-check pyinstaller==6.16.0
+      - name: Build executable
+        run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name FileProof desktop-software/fileproof/fileproof.py
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\\Inno Setup 6\\ISCC.exe")) {
+            choco install innosetup --no-progress -y
+          }
+      - name: Build installer
+        shell: pwsh
+        run: |
+          & "${env:ProgramFiles(x86)}\\Inno Setup 6\\ISCC.exe" "desktop-software\\fileproof\\installer.iss"
+      - name: Generate SHA-256 checksums
+        shell: pwsh
+        run: |
+          Get-ChildItem dist/installers/*.exe | ForEach-Object {
+            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
+            "$hash  $($_.Name)" | Out-File -FilePath dist/installers/SHA256SUMS.txt -Append -Encoding utf8
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fileproof-windows-installer-unsigned
+          path: |
+            dist/installers/*.exe
+            dist/installers/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
