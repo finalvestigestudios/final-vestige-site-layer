@@ -59,7 +59,7 @@ class EvidenceVaultR8Tests(unittest.TestCase):
         self.assertNotIn(PASSWORD.encode(), blob)
         restored = vault.restore_evidence(destination, self.root, PASSWORD)
         self.assertEqual((restored / "exception-report.csv").read_bytes(), original_report)
-        self.assertEqual((restored / "review-journal.jsonl").read_bytes(), original_journal)
+        self.assertEqual((restored / "exception-report.review.jsonl").read_bytes(), original_journal)
         manifest = json.loads((restored / "sealed-evidence-manifest.json").read_text())
         self.assertEqual(manifest["review_event_count"], 1)
         self.assertEqual(manifest["product"], "grants")
@@ -71,7 +71,7 @@ class EvidenceVaultR8Tests(unittest.TestCase):
         destination = self.seal()
         restored = vault.restore_evidence(destination, self.root, PASSWORD)
         self.assertTrue((restored / "exception-report.csv").exists())
-        self.assertFalse((restored / "review-journal.jsonl").exists())
+        self.assertFalse((restored / "exception-report.review.jsonl").exists())
         self.assertFalse(self.journal.exists())
         self.assertEqual(json.loads((restored / "sealed-evidence-manifest.json").read_text())["review_event_count"], 0)
 
