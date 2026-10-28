@@ -144,3 +144,23 @@ Local isolated R12 tests: **23/23 passed** on Python 3.13.5 with the exact
 R11 verifier Git blob `587e30baa175aa399fe6e08093fbc93be66e66eb`;
 full repository/Windows binary integration still unverified.
 See [R12 issuer security runbook](docs/OPERATOR_ISSUER_R12.md).
+
+## R13 operator issuance registry — unique IDs and local audit evidence (pre-release)
+
+The offline premium license issuer CLI now requires a single persistent `--registry`
+SQLite file in a protected operator-owned directory **outside Git**. It reserves
+an opaque license ID before signing and prevents its reuse even following a
+failure or crash. Cross-product duplicate IDs, concurrent issuers, symlinked
+registry files, unsafe POSIX permissions and pre-existing output collisions are
+rejected. A completed issuance records a SHA-256 of the verified license; the
+registry stores a hash of the fulfillment path, not the plaintext path or holder.
+
+**Limits:** this is one-machine local bookkeeping, not authenticated tamper-proof
+logging, a customer database, payment processing, license revocation, a secure
+multi-machine service, or release approval. All operators must use the same
+protected registry and investigate uncertain `reserved` records manually.
+The four free products and fail-closed premium verification keys are unchanged.
+Twelve isolated SQLite tests passed locally on Linux Python 3.13.5 both normally
+and under `-OO`; two additional real cryptographic CLI integration tests were
+committed but have not yet run in the complete checkout. Windows CI and actual
+six-EXE validation remain blocked. See [R13 runbook](docs/ISSUANCE_REGISTRY_R13.md).

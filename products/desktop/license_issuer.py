@@ -19,6 +19,7 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
 from fvs_suite import offline_entitlement as verifier
+from license_registry import IssuanceRegistry, RegistryError
 
 MAX_KEY_BYTES = 16 * 1024
 KEY_HEADER = b"-----BEGIN ENCRYPTED PRIVATE KEY-----\n"
@@ -151,6 +152,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--expires-at", required=True, help="YYYY-MM-DDTHH:MM:SSZ")
     parser.add_argument("--not-before", help="Optional canonical future UTC timestamp")
     parser.add_argument("--output", required=True, help="New .fvslicense path; never overwritten")
+    parser.add_argument("--registry", required=True,
+                        help="Absolute .sqlite3 registry outside Git, in a protected folder")
     parser.add_argument("--confirm-issue", action="store_true", help="Acknowledge manual fulfillment authorization")
     args = parser.parse_args(argv)
     if not args.confirm_issue:
@@ -159,13 +162,20 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("An interactive terminal is required for the private-key passphrase")
     secret = getpass.getpass("Encrypted signing-key passphrase: ").encode("utf-8")
     try:
-        issue_entitlement(key_path=args.key, password=secret, kid=args.kid,
-                          product=args.product, license_id=args.license_id,
-                          holder=args.holder, expires_at=args.expires_at,
-                          not_before=args.not_before, output=args.output)
-    except (IssuanceError, verifier.EntitlementError, OSError, ValueError) as exc:
-        parser.exit(1, f"Issuance refused: {exc}\n")
-    print("Entitlement created and cryptographically verified. Distribution NOT authorized.")
+        registry = IssuanceRegistry(args.registry)
+        # Reserve before touching the private key. Failed or uncertain issuance
+        # remains reserved; an operator must investigate, never auto-reuse IDs.
+        registry.reserve(license_id=args.license_id, product=args.product,
+                         kid=args.kid, output=args.output)
+        issued = issue_entitlement(key_path=args.key, password=secret, kid=args.kid,
+                                   product=args.product, license_id=args.license_id,
+                                   holder=args.holder, expires_at=args.expires_at,
+                                   not_before=args.not_before, output=args.output)
+        digest = registry.finalize(license_id=args.license_id, product=args.product,
+                                   kid=args.kid, output=issued)
+    except (RegistryError, IssuanceError, verifier.EntitlementError, OSError, ValueError) as exc:
+        parser.exit(1, f"Issuance refused (reservation may require manual review): {exc}\n")
+    print(f"Entitlement verified and recorded (SHA-256 {digest}). Distribution NOT authorized.")
     return 0
 
 
