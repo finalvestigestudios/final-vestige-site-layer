@@ -1,4 +1,5 @@
 """R13: offline issuance registry regression tests; synthetic IDs/files only."""
+import hashlib
 import os
 import sqlite3
 import tempfile
@@ -24,7 +25,11 @@ class RegistryR13Tests(unittest.TestCase):
         self.registry.reserve(**{**self.data, **kw})
 
     def finalize(self, **kw):
-        return self.registry.finalize(**{**self.data, **kw})
+        # Existing synthetic registry tests have no signing authority; pass
+        # the exact synthetic fixture digest to exercise the R16 API contract.
+        target = Path(kw.get("output", self.output))
+        expected = hashlib.sha256(target.read_bytes()).hexdigest() if target.is_file() else "0" * 64
+        return self.registry.finalize(**{**self.data, **kw}, expected_sha256=expected)
 
     def status(self):
         with sqlite3.connect(self.database) as con:
