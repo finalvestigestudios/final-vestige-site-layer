@@ -249,22 +249,96 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
 
 
 def render_html(report: dict) -> str:
-    def row(items: list[dict], side: str) -> str:
-        return "".join("<tr><td>" + html.escape(side) + "</td><td>" + str(x["row"]) +
-                       "</td><td>" + html.escape(x["date"]) + "</td><td>" +
-                       html.escape(x["amount"] + " " + x["currency"]) + "</td><td>" +
-                       html.escape(x["reference"]) + "</td></tr>" for x in items)
-    return ("<!doctype html><html lang='en'><meta charset='utf-8'><title>Ledger Bridge</title>"
-            "<style>body{font:16px system-ui;max-width:1100px;margin:3rem auto;padding:1rem}"
-            "table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:.7rem;text-align:left}</style>"
-            "<h1>Ledger Bridge review</h1><p>" + html.escape(report["disclaimer"]) + "</p>"
-            "<pre>" + html.escape(json.dumps({"status": report["status"], "counts": report["counts"],
-                "totals_by_currency": report["totals_by_currency"]}, indent=2)) + "</pre>"
-            "<h2>Unmatched transactions</h2><table><thead><tr><th>Ledger</th><th>Row</th>"
-            "<th>Date</th><th>Amount</th><th>Reference</th></tr></thead><tbody>" +
-            row(report["unmatched_left"], "Left") + row(report["unmatched_right"], "Right") +
-            "</tbody></table></html>")
+    """Self-contained review report that never hides tentative matches.
 
+    Escape all data from imported ledgers, including references, row labels,
+    warning text, and failure descriptions. This file is safe to open offline.
+    """
+    def esc(value: object) -> str:
+        return html.escape(str(value), quote=True)
+
+    def table(headers: list[str], rows: list[list[object]]) -> str:
+        head = "".join("<th>" + esc(name) + "</th>" for name in headers)
+        body = "".join(
+            "<tr>" + "".join("<td>" + esc(value) + "</td>" for value in row) + "</tr>"
+            for row in rows
+        )
+        if not rows:
+            body = '<tr><td colspan="' + str(len(headers)) + '">None</td></tr>'
+        return "<table><thead><tr>" + head + "</tr></thead><tbody>" + body + "</tbody></table>"
+
+    unmatched_rows = []
+    for side in ("left", "right"):
+        for item in report.get("unmatched_" + side, []):
+            unmatched_rows.append([
+                side.title(), item.get("row", ""), item.get("date", ""),
+                str(item.get("amount", "")) + " " + str(item.get("currency", "")),
+                item.get("reference", ""),
+            ])
+
+    match_rows = [
+        [
+            item.get("left_row", ""), item.get("right_row", ""),
+            item.get("basis", ""), item.get("amount", ""),
+            item.get("currency", ""), item.get("date_difference_days", ""),
+            "REVIEW" if item.get("basis") == "UNIQUE_AMOUNT_AND_DATE" else
+            ("CHECK DATE" if item.get("date_difference_days", 0) >
+             report.get("settings", {}).get("date_tolerance_days", 3) else "EXACT REF"),
+        ]
+        for item in report.get("matches", [])
+    ]
+
+    ambiguous_rows = [
+        [
+            item.get("reference", ""), item.get("currency", ""),
+            item.get("amount", ""), ", ".join(map(str, item.get("left_rows", []))),
+            ", ".join(map(str, item.get("right_rows", []))),
+        ]
+        for item in report.get("ambiguous_reference_groups", [])
+    ]
+
+    warning_rows = [
+        [item.get("code", ""), item.get("count", ""), item.get("message", "")]
+        for item in report.get("warnings", [])
+    ]
+    error_rows = [
+        [side.title(), item.get("row", ""), item.get("message", "")]
+        for side in ("left", "right")
+        for item in report.get("input_errors", {}).get(side, [])
+    ]
+
+    summary = json.dumps({
+        "status": report.get("status"),
+        "counts": report.get("counts", {}),
+        "totals_by_currency": report.get("totals_by_currency", {}),
+        "settings": report.get("settings", {}),
+    }, indent=2, ensure_ascii=False)
+    return (
+        "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
+        "<meta name='viewport' content='width=device-width,initial-scale=1'>"
+        "<title>Ledger Bridge review</title>"
+        "<style>body{font:16px system-ui;max-width:1150px;margin:3rem auto;padding:1rem;"
+        "color:#202127;background:#fff}table{border-collapse:collapse;width:100%;"
+        "margin-bottom:2rem}th,td{border:1px solid #aaa;padding:.6rem;text-align:left;"
+        "vertical-align:top;overflow-wrap:anywhere}th{background:#eee}"
+        "pre{overflow:auto;background:#f5f5f5;padding:1rem}h2{margin-top:2rem}</style>"
+        "</head><body><h1>Ledger Bridge reconciliation review</h1>"
+        "<p><strong>Always inspect warnings and suggestions before approval.</strong> "
+        + esc(report.get("disclaimer", "")) + "</p><pre>" + esc(summary) + "</pre>"
+        + "<h2>Warnings requiring review</h2>"
+        + table(["Code", "Count", "Explanation"], warning_rows)
+        + "<h2>Matches and suggestions</h2>"
+        + table(["Left CSV row", "Right CSV row", "Basis", "Amount", "Currency",
+                 "Date difference (days)", "Decision"], match_rows)
+        + "<h2>Ambiguous duplicate identities — NOT matched</h2>"
+        + table(["Normalized reference", "Currency", "Amount",
+                 "Left CSV rows", "Right CSV rows"], ambiguous_rows)
+        + "<h2>Unmatched transactions</h2>"
+        + table(["Ledger", "CSV row", "Date", "Amount", "Reference"], unmatched_rows)
+        + "<h2>Excluded input rows</h2>"
+        + table(["Ledger", "CSV row", "Reason"], error_rows)
+        + "</body></html>"
+    )
 
 def gui() -> None:
     import tkinter as tk
