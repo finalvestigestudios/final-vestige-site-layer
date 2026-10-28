@@ -89,7 +89,8 @@ def verify_amd64_pe(path: str | Path) -> None:
         optional = _read_at(stream, optional_start, optional_bytes, length)
         if _u16(optional, 0) != 0x20B:
             raise PEFormatError("Expected PE32+, not PE32")
-        if _u32(optional, 16) == 0:
+        entry_rva = _u32(optional, 16)
+        if entry_rva == 0:
             raise PEFormatError("Executable has no entry point")
         section_align = _u32(optional, 32)
         file_align = _u32(optional, 36)
@@ -102,15 +103,41 @@ def verify_amd64_pe(path: str | Path) -> None:
             raise PEFormatError("Invalid PE image/header extent")
         if _u16(optional, 68) not in (2, 3):
             raise PEFormatError("Expected user-mode GUI or console subsystem")
+        if (headers_size % file_align or image_size % section_align
+                or entry_rva >= image_size):
+            raise PEFormatError("Misaligned image extents or entry point outside image")
         table = _read_at(stream, section_start, section_table_bytes, length)
-        executable_section = False
+        virtual_ranges: list[tuple[int, int]] = []
+        file_ranges: list[tuple[int, int]] = []
+        backed_entry = False
         for offset in range(0, len(table), 40):
+            virtual_bytes = _u32(table, offset + 8)
+            virtual_rva = _u32(table, offset + 12)
             raw_bytes = _u32(table, offset + 16)
             raw_offset = _u32(table, offset + 20)
             section_flags = _u32(table, offset + 36)
-            if raw_bytes and (raw_offset < headers_size or raw_offset + raw_bytes > length):
-                raise PEFormatError("PE section bytes extend outside image")
-            if raw_bytes and section_flags & 0x20000000:
-                executable_section = True
-        if not executable_section:
-            raise PEFormatError("Missing backed executable code section")
+            mapped_bytes = max(virtual_bytes, raw_bytes)
+            if (not mapped_bytes or virtual_rva < headers_size
+                    or virtual_rva % section_align
+                    or virtual_rva + mapped_bytes > image_size):
+                raise PEFormatError("Invalid mapped PE section extent")
+            virtual_ranges.append((virtual_rva, virtual_rva + mapped_bytes))
+            if raw_bytes:
+                if (raw_offset < headers_size or raw_offset % file_align
+                        or raw_bytes % file_align
+                        or raw_offset + raw_bytes > length):
+                    raise PEFormatError("PE section bytes unaligned or outside image")
+                file_ranges.append((raw_offset, raw_offset + raw_bytes))
+                # An entry in executable zero-fill or file padding is not
+                # backed by actual code. Never accept another section's flags.
+                code_end = virtual_rva + min(raw_bytes, virtual_bytes or raw_bytes)
+                if (section_flags & 0x20000000
+                        and virtual_rva <= entry_rva < code_end):
+                    backed_entry = True
+        for ranges in (virtual_ranges, file_ranges):
+            ranges.sort()
+            if any(prev[1] > current[0]
+                   for prev, current in zip(ranges, ranges[1:])):
+                raise PEFormatError("Overlapping PE section extents")
+        if not backed_entry:
+            raise PEFormatError("Entry point is not backed by executable section bytes")
