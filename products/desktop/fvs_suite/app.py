@@ -34,6 +34,7 @@ def run(app_id):
         ttk.Label(frame, text="PRE-RELEASE: not licensed for production use.",
                   foreground="#9c3d20").grid(row=2, column=0, columnspan=3, sticky="w")
     selected = [tk.StringVar() for _ in labels]
+    last_report = [None]
     base_row = 3
     for index, label in enumerate(labels):
         row = base_row + index
@@ -80,11 +81,20 @@ def run(app_id):
             status.set("Failed: " + str(exc))
             messagebox.showerror("Review input files", str(exc))
             return
+        last_report[0] = str(outputs[0]) if outputs else None
         names = ", ".join(p.name for p in outputs)
         status.set("Created: " + names)
         messagebox.showinfo("Review reports", "Saved in: " + output.get() + "\n\n" + names)
     ttk.Button(frame, text="Generate review report", command=execute).grid(
         row=folder_row+3, column=0, columnspan=3, sticky="w", pady=(8, 16))
+    if premium:
+        def open_exception_review():
+            from .review_ui import open_review_window
+            open_review_window(root, app_id, report_path=last_report[0])
+        ttk.Button(frame, text="Review exceptions (human only)…",
+                   command=open_exception_review).grid(
+                       row=folder_row+4, column=0, columnspan=3, sticky="w")
     ttk.Label(frame, text="No AI model is used in this preview. All flags follow deterministic rules.",
-              wraplength=690).grid(row=folder_row+4, column=0, columnspan=3, sticky="w")
+              wraplength=690).grid(row=folder_row+(5 if premium else 4), column=0,
+                                   columnspan=3, sticky="w")
     root.mainloop()
