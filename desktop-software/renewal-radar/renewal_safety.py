@@ -79,7 +79,10 @@ def import_csv_atomic(conn: sqlite3.Connection, source: Path) -> dict:
     seen: dict[tuple, int] = {}
     with source.open("r", encoding="utf-8-sig", newline="") as stream:
         reader = csv.DictReader(stream, strict=True)
-        columns = reader.fieldnames
+        try:
+            columns = reader.fieldnames
+        except csv.Error as exc:
+            raise ValueError(f"Malformed CSV header: {exc}") from exc
         if (not columns or len(columns) != len(set(columns))
                 or not {"title", "due"}.issubset(columns)
                 or any(col not in FIELDS for col in columns)):
