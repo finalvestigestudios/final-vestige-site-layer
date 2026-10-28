@@ -16,7 +16,7 @@ from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
-from ap_input_guard import MAX_PAYMENTS, normalize_search_key, resolve_headers, source_fingerprint
+from ap_input_guard import MAX_PAYMENTS, normalize_search_key, record_start_line, resolve_headers, source_fingerprint
 from ap_report_export import save_report
 
 VERSION = "0.1.0"
@@ -70,13 +70,11 @@ def load_payments(path: Path) -> tuple[list[dict], list[dict]]:
             raise ValueError("Empty CSV file.")
         canonical = resolve_headers(reader.fieldnames, ALIASES,
                                     {"vendor", "invoice", "amount", "date"})
-        last_line = reader.line_num
         for index, row in enumerate(reader, 1):
             if index > MAX_PAYMENTS:
                 raise ValueError("CSV exceeds the 200,000-payment review limit.")
-            # Track the physical starting line, including CSVs with quoted newlines.
-            csv_line = last_line + 1
-            last_line = reader.line_num
+            # Correct when CSV records contain quoted newlines or blank lines.
+            csv_line = record_start_line(reader.line_num, row)
             try:
                 if "__extra__" in row:
                     raise ValueError("Row has more columns than the header.")
