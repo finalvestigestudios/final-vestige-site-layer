@@ -32,17 +32,40 @@ ALIASES = {
 MAX_ROWS = 200_000
 CENT = Decimal("0.01")
 
+_AMOUNT_FORMAT = re.compile(
+    r"(?P<prefix>(?:[+-]?\$|\$[+-]?|[+-]?))"
+    r"(?P<number>(?:(?:\d{1,3}(?:,\d{3})+)|\d+)(?:\.\d*)?|\.\d+)\Z"
+)
+
+
 def _exact_amount(value):
-    """Parse accounting amounts exactly; never silently round unit costs."""
+    """Parse accounting amounts without silently deleting punctuation.
+
+    Accept conventional signed or parenthesized negatives, optional leading
+    currency symbol, and correctly grouped thousands. Reject mixed signs,
+    malformed grouping, scientific notation, and partial parentheses.
+    """
     raw = str(value).strip()
-    if not raw: raise ValueError("Missing amount")
-    negative = raw.startswith("(") and raw.endswith(")")
-    raw = raw.strip("()").replace("$","").replace(",","").strip()
-    try: number = Decimal(raw)
-    except InvalidOperation as exc: raise ValueError("Invalid amount: "+str(value)) from exc
-    if not number.is_finite() or abs(number) > Decimal("1000000000000"):
+    if not raw or len(raw) > 80:
+        raise ValueError("Invalid amount format")
+    parenthesized = raw.startswith("(") or raw.endswith(")")
+    if parenthesized:
+        if not (raw.startswith("(") and raw.endswith(")")):
+            raise ValueError("Invalid amount format: unmatched accounting parentheses")
+        raw = raw[1:-1].strip()
+    match = _AMOUNT_FORMAT.fullmatch(raw)
+    if match is None:
+        raise ValueError("Invalid amount format")
+    prefix = match.group("prefix")
+    if parenthesized and ("+" in prefix or "-" in prefix):
+        raise ValueError("Invalid amount format: conflicting signs")
+    try:
+        number = Decimal(match.group("number").replace(",", ""))
+    except InvalidOperation as exc:
+        raise ValueError("Invalid amount format") from exc
+    if not number.is_finite() or number > Decimal("1000000000000"):
         raise ValueError("Nonfinite or out-of-range amount")
-    return -number if negative else number
+    return -number if parenthesized or "-" in prefix else number
 
 
 def money(value):
