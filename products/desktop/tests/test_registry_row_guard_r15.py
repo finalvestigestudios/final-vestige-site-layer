@@ -1,4 +1,5 @@
 """R15 synthetic operator registry semantic guard regression tests."""
+import hashlib
 import sqlite3
 import unittest
 
@@ -138,7 +139,7 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         import hashlib
         self.registry.reserve(**self.params)
         self.output.write_bytes(b"synthetic signed entitlement bytes")
-        digest = self.registry.finalize(**self.params)
+        digest = self.registry.finalize(**self.params, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         self.assertEqual(digest, hashlib.sha256(self.output.read_bytes()).hexdigest())
         with sqlite3.connect(self.registry_file) as db:
             self.assertEqual(db.execute("SELECT state FROM issuance").fetchone(), ("issued",))
