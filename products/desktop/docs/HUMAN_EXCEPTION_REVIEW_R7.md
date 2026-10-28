@@ -42,7 +42,7 @@ For procurement, specify product="procurement". A reviewer may record a subseque
 
 ## Validation status
 
-- 18 independent, synthetic regression tests committed in products/desktop/tests/test_human_review_r7.py, including journal integrity, stale evidence, formula injection, concurrency lock, human rationale validation, and source preservation.
+- 20 independent, synthetic regression tests committed in products/desktop/tests/test_human_review_r7.py, including journal integrity, stale evidence, formula injection, concurrency lock, human rationale validation, and source preservation.
 - Both premium packaged-EXE smoke paths extended to exercise review recording and sanitized register export. The free apps' smoke paths remain unchanged.
 - **NOT YET VERIFIED:** complete repository tests, Windows packaged-executable CI, clean-machine GUI keyboard operation, AV/SmartScreen, premium licensing and gated download. Hosted GitHub Actions recently failed before executing any runner step; do not assume green checks until verified on the exact head SHA.
 - Existing QD review and protected production publishing requirements remain mandatory; no public releases or premium downloads authorized.
