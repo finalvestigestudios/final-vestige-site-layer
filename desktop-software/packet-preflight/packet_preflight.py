@@ -120,6 +120,8 @@ def render_html(report: dict) -> str:
                     "</li>" for err in report["scan_errors"])
     overlaps = "".join("<li>" + html.escape(item["file"] + ": " + ", ".join(item["rules"])) +
                        "</li>" for item in report.get("overlapping_files", []))
+    issues = "".join("<li>" + html.escape(code) + ": " + str(count) + "</li>"
+                     for code, count in sorted(report.get("issue_counts", {}).items()))
     return ("<!doctype html><html lang='en'><meta charset='utf-8'><title>Packet Preflight</title>"
             "<style>body{font:16px system-ui;max-width:1100px;margin:3rem auto;padding:1rem;color:#222}"
             "table{border-collapse:collapse;width:100%}td,th{padding:.8rem;border:1px solid #ccc;text-align:left}"
@@ -127,6 +129,10 @@ def render_html(report: dict) -> str:
             html.escape(str(report["checklist"])) + "</p><p>Status: <strong>" +
             html.escape(report["status"]) + "</strong> — " + str(report["issues_total"]) +
             " issue(s). File names and sizes only; no content or legal compliance validation.</p>"
+            "<p>Total scanned bytes: " + str(report.get("total_bytes", "unknown")) +
+            ". Snapshot fingerprint (metadata, not file contents): <code>" +
+            html.escape(report.get("source_snapshot_sha256", "unknown")) + "</code></p>"
+            "<h2>Issue breakdown</h2><ul>" + (issues or "<li>No findings</li>") + "</ul>"
             "<table><thead><tr><th>Requirement</th><th>Pattern</th><th>Found</th><th>Status</th>"
             "<th>Issues</th></tr></thead><tbody>" + "".join(rows) +
             "</tbody></table><h2>Unmatched files</h2><ul>" + (extras or "<li>None</li>") +
@@ -177,11 +183,14 @@ def gui() -> None:
             latest[0] = preflight(Path(folder_var.get()), Path(rules_var.get()))
             latest[1], latest[2] = Path(folder_var.get()), Path(rules_var.get())
             show(json.dumps({key: latest[0][key] for key in
-                             ("status", "checklist", "results", "unmatched_files", "scan_errors")},
+                             ("status", "checklist", "issue_counts", "results", "unmatched_files",
+                              "overlapping_files", "scan_errors", "total_bytes", "limitations")},
                             indent=2, ensure_ascii=False))
             note.set(f"{latest[0]['file_count']} files · {latest[0]['issues_total']} issue(s)")
         except (OSError, ValueError, json.JSONDecodeError) as exc:
             latest[:] = [None, None, None]
+            show("No current report. Analysis failed; check the selected inputs and try again.")
+            note.set("No valid report available")
             messagebox.showerror("Preflight failed", str(exc))
 
     def save_template() -> None:
