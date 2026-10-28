@@ -21,7 +21,7 @@ Headers are case-insensitive; spaces are accepted in place of underscores. The i
 - GrantAudit: claims (transaction_id, amount, program); ledger (transaction_id, amount, program); budgets (program, budget)
 - ProcureGuard: purchase orders (po_number, line, quantity, unit_price); invoices (same); receipts (po_number, line, quantity)
 
-Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, complex split allocations, fuzzy name matching, and OCR are **not** supported in v0.1. Financial flags require human review.
+Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, unconstrained allocation rules, fuzzy name matching, and OCR are **not** supported in v0.1. GrantAudit R6 supports explicitly linked split allocations under a limited documented CSV contract. Financial flags require human review.
 
 ## Local development
 
@@ -76,6 +76,14 @@ CI launches **all six** EXEs as real processes after packaging, checks their exi
 - Claims are totaled per source ledger reference and program budgets per claim program, with gross/credit/net amounts, original row references, and source identities in the output. Ambiguous source links, repeated claim IDs, unlinked/cross-program/excessive credits, negative values and missing budgets are visibly reviewed or rejected.
 - A credit-related column without a source ledger_reference is a fail-closed import error, preventing silent positive-credit accounting in legacy mode.
 - Includes a synthetic two-program split + claim credit scenario in [R6 documentation](docs/GRANT_ALLOCATIONS_R6.md), 24 additional repository regressions, and a linked-mode packaged-executable smoke check. The R6 code has **not** passed full repository or Windows packaged-executable validation yet. Premium licensing remains unimplemented.
+
+## R7 — Human exception review workbench (premium previews only)
+
+- **GrantAudit Studio Pro** and **ProcureGuard Studio Pro** now expose a keyboard-accessible **Review exceptions (human only)…** window. A generated CSV report or previously saved report can be opened for operator review.
+- Every exception receives an ID tied to the exact report SHA-256 and source-row position. An operator must explicitly record an identified reviewer, a substantive rationale and one of three choices: `needs_evidence`, `escalated`, or `reviewed`. None of these means compliant, approved or payable.
+- Review actions are appended to a local, hash-linked JSONL journal. A separate sanitized register export shows unresolved / reviewed states without altering original reports. Modified source reports or broken journal hashes fail closed.
+- The review journal is **plaintext, unsigned and unencrypted**. Its SHA-256 chain can detect many accidental changes, but is **not tamper-proof**, does not authenticate people and requires stronger protections before real sensitive data may be used. A stale lock file after a crash requires operator investigation.
+- Unit regressions and packaged-EXE smoke paths are committed but **not yet verified on hosted Windows runners**. See [R7 review specification](docs/HUMAN_EXCEPTION_REVIEW_R7.md).
 
 ## Release gates
 
