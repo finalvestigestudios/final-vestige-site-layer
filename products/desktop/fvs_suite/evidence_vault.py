@@ -211,7 +211,7 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
     try:
         report_file = restored / "exception-report.csv"
         files = [(report_file, data)]
-        journal_file = restored / "review-journal.jsonl"
+        journal_file = restored / "exception-report.review.jsonl"
         if included:
             files.append((journal_file, journal_data))
         metadata_file = restored / "sealed-evidence-manifest.json"
