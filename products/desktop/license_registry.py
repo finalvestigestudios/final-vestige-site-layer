@@ -17,6 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from registry_schema_guard import RegistrySchemaError, enforce_registry_schema
+from registry_row_guard import RegistryRowError, enforce_registry_rows
 
 PRODUCTS = frozenset({"grants", "procurement"})
 IDENTIFIER = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
@@ -126,13 +127,17 @@ class IssuanceRegistry:
                 db.execute("BEGIN IMMEDIATE")
                 try:
                     enforce_registry_schema(db)
-                except RegistrySchemaError as exc:
-                    raise RegistryError("Unsafe registry schema; investigate manually") from exc
+                    enforce_registry_rows(db)
+                except (RegistrySchemaError, RegistryRowError) as exc:
+                    raise RegistryError("Unsafe registry schema or issuance records; investigate manually") from exc
+                output_hash = _path_fingerprint(destination)
+                if db.execute("SELECT 1 FROM issuance WHERE output_path_sha256=? LIMIT 1",
+                              (output_hash,)).fetchone():
+                    raise RegistryError("Entitlement destination already reserved; investigate manually")
                 db.execute("""INSERT INTO issuance
                     (license_id, product, kid, output_path_sha256, state, reserved_at)
                     VALUES (?, ?, ?, ?, 'reserved', ?)""",
-                           (license_id, product, kid,
-                            _path_fingerprint(destination), _stamp()))
+                           (license_id, product, kid, output_hash, _stamp()))
                 db.execute("COMMIT")
             except sqlite3.IntegrityError as exc:
                 db.execute("ROLLBACK")
@@ -165,17 +170,20 @@ class IssuanceRegistry:
                 db.execute("BEGIN IMMEDIATE")
                 try:
                     enforce_registry_schema(db)
-                except RegistrySchemaError as exc:
-                    raise RegistryError("Unsafe registry schema; investigate manually") from exc
+                    enforce_registry_rows(db)
+                except (RegistrySchemaError, RegistryRowError) as exc:
+                    raise RegistryError("Unsafe registry schema or issuance records; investigate manually") from exc
+                finalized_at = _stamp()
                 cursor = db.execute("""UPDATE issuance SET state='issued',
                     license_sha256=?, issued_at=? WHERE license_id=?
                     AND product=? AND kid=? AND output_path_sha256=?
-                    AND state='reserved' AND license_sha256 IS NULL""",
-                    (digest, _stamp(), license_id, product, kid,
-                     _path_fingerprint(destination)))
+                    AND state='reserved' AND license_sha256 IS NULL
+                    AND reserved_at <= ?""",
+                    (digest, finalized_at, license_id, product, kid,
+                     _path_fingerprint(destination), finalized_at))
                 if cursor.rowcount != 1:
                     db.execute("ROLLBACK")
-                    raise RegistryError("No matching reserved issuance; investigate manually")
+                    raise RegistryError("No matching reserved issuance or unsafe clock; investigate manually")
                 db.execute("COMMIT")
             except sqlite3.Error as exc:
                 db.execute("ROLLBACK")
