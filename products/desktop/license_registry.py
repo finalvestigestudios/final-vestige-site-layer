@@ -16,6 +16,8 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
+from registry_schema_guard import RegistrySchemaError, enforce_registry_schema
+
 PRODUCTS = frozenset({"grants", "procurement"})
 IDENTIFIER = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
 MAX_LICENSE_BYTES = 8192
@@ -122,6 +124,10 @@ class IssuanceRegistry:
         with self._db() as db:
             try:
                 db.execute("BEGIN IMMEDIATE")
+                try:
+                    enforce_registry_schema(db)
+                except RegistrySchemaError as exc:
+                    raise RegistryError("Unsafe registry schema; investigate manually") from exc
                 db.execute("""INSERT INTO issuance
                     (license_id, product, kid, output_path_sha256, state, reserved_at)
                     VALUES (?, ?, ?, ?, 'reserved', ?)""",
@@ -157,6 +163,10 @@ class IssuanceRegistry:
         with self._db() as db:
             try:
                 db.execute("BEGIN IMMEDIATE")
+                try:
+                    enforce_registry_schema(db)
+                except RegistrySchemaError as exc:
+                    raise RegistryError("Unsafe registry schema; investigate manually") from exc
                 cursor = db.execute("""UPDATE issuance SET state='issued',
                     license_sha256=?, issued_at=? WHERE license_id=?
                     AND product=? AND kid=? AND output_path_sha256=?
