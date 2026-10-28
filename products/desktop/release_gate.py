@@ -11,12 +11,13 @@ import json
 import os
 import re
 import stat
-import struct
 import subprocess
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+from pe_image_guard import PEFormatError, verify_amd64_pe
 
 EXPECTED = (
     "LedgerDiffLite.exe", "InvoiceTwinScout.exe", "SpendMapLite.exe",
@@ -58,22 +59,11 @@ def _inventory(root: Path) -> dict[str, str]:
 
 
 def _pe64(path: Path) -> None:
-    """Reject renamed/32-bit/non-Windows payloads before a smoke execution."""
-    with path.open("rb") as stream:
-        header = stream.read(64)
-        if len(header) < 64 or header[:2] != b"MZ":
-            raise GateFailure(f"{path.name}: missing Windows MZ header")
-        offset = struct.unpack_from("<I", header, 0x3C)[0]
-        if not 64 <= offset <= 65536 or offset + 26 > path.stat().st_size:
-            raise GateFailure(f"{path.name}: invalid PE header offset")
-        stream.seek(offset)
-        pe = stream.read(26)
-    if len(pe) != 26 or pe[:4] != b"PE\x00\x00":
-        raise GateFailure(f"{path.name}: missing PE signature")
-    if struct.unpack_from("<H", pe, 4)[0] != 0x8664:
-        raise GateFailure(f"{path.name}: expected AMD64, not 32-bit or ARM")
-    if struct.unpack_from("<H", pe, 24)[0] != 0x20B:
-        raise GateFailure(f"{path.name}: expected PE32+ executable")
+    """Require a bounded, structurally plausible user-mode AMD64 PE32+ image."""
+    try:
+        verify_amd64_pe(path)
+    except PEFormatError as exc:
+        raise GateFailure(f"{path.name}: {exc}") from exc
 
 
 def _sha(path: Path) -> str:
