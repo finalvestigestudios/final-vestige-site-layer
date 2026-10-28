@@ -88,10 +88,10 @@ def attachment_inventory(folder: Path, claims: Path, support: Path) -> dict:
         for name in sorted(files):
             candidate = base / name
             rel = candidate.relative_to(folder).as_posix()
-            if candidate in excluded or candidate.resolve() in excluded:
-                continue
             if candidate.is_symlink():
                 errors.append({"path": rel, "error": "Symbolic-link file not inspected"})
+                continue
+            if candidate in excluded or candidate.resolve() in excluded:
                 continue
             file_count += 1
             if file_count > MAX_ATTACHMENT_FILES:
