@@ -56,7 +56,7 @@ def table(path, required, optional=()):
         if not reader.fieldnames: raise ValueError("Missing headers: "+p.name)
         # Duplicate normalized headings can hide conflicting financial columns.
         normalized = [str(h).strip().lower().replace(" ", "_") for h in reader.fieldnames if h]
-        if len(normalized) != len(reader.fieldnames) or len(normalized) != len(set(normalized)):
+        if "" in normalized or len(normalized) != len(reader.fieldnames) or len(normalized) != len(set(normalized)):
             raise ValueError(f"{p.name}: blank or duplicate normalized CSV header")
         headers = dict(zip(normalized, reader.fieldnames))
         cols = {}
