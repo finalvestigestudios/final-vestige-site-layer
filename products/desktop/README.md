@@ -127,3 +127,20 @@ See [R11 entitlement contract](docs/OFFLINE_ENTITLEMENTS_R11.md).
 6. Human approval through the Final Vestige site-layer QD/production process.
 
 See [issue #73](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/73).
+
+## R12 operator-only offline license issuance (NOT a customer release)
+
+The standalone `products/desktop/license_issuer.py` command can create
+product-specific Ed25519 entitlements for GrantAudit Studio Pro and
+ProcureGuard Studio Pro from an externally held **encrypted PKCS#8 private key**.
+It never bundles the private key into any of the six executables, refuses
+unprotected keys, requires a terminal passphrase and explicit issue
+acknowledgment, never overwrites a license file, and verifies the result with
+the R11 client verifier. **Nothing is activated:** `TRUSTED_PUBLIC_KEYS`
+intentionally remains empty until approved production key custody, operator
+registration, payment/download protection, security review and QD approval.
+
+Local isolated R12 tests: **23/23 passed** on Python 3.13.5 with the exact
+R11 verifier Git blob `587e30baa175aa399fe6e08093fbc93be66e66eb`;
+full repository/Windows binary integration still unverified.
+See [R12 issuer security runbook](docs/OPERATOR_ISSUER_R12.md).
