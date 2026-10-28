@@ -9,7 +9,6 @@ import argparse
 import csv
 import html
 import json
-import re
 import statistics
 import sys
 from collections import defaultdict
@@ -18,6 +17,7 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 from ap_input_guard import MAX_PAYMENTS, normalize_search_key, resolve_headers, source_fingerprint
+from ap_report_export import save_report
 
 VERSION = "0.1.0"
 ALIASES = {
@@ -208,34 +208,61 @@ def gui() -> None:
     output = tk.Text(frame, state="disabled", wrap="word")
     output.pack(fill="both", expand=True, pady=15)
     latest = [None]
+    reviewed_path = [None]
     status = tk.StringVar(value="Select an AP payment CSV to begin.")
     ttk.Label(frame, textvariable=status).pack(anchor="w")
 
     def do_review() -> None:
+        # Failed imports must not leave an earlier report eligible for export.
+        latest[0], reviewed_path[0] = None, None
+        output.config(state="normal")
+        output.delete("1.0", "end")
+        output.config(state="disabled")
+        status.set("Checking payment data...")
         try:
-            latest[0] = review(Path(path.get()))
+            source = Path(path.get()).resolve(strict=True)
+            result = review(source)
+            latest[0], reviewed_path[0] = result, source
             output.config(state="normal")
-            output.delete("1.0", "end")
-            output.insert("1.0", json.dumps(latest[0], indent=2, ensure_ascii=False))
+            output.insert("1.0", json.dumps(result, indent=2, ensure_ascii=False))
             output.config(state="disabled")
-            status.set(f"{latest[0]['records_reviewed']} payments reviewed · "
-                       f"{len(latest[0]['flags'])} flags · {latest[0]['status']}")
+            status.set(f"{result['records_reviewed']} payments reviewed · "
+                       f"{len(result['flags'])} flags · {result['status']}")
         except (OSError, ValueError, csv.Error, UnicodeError) as exc:
+            status.set("Review failed. No report available for export.")
             messagebox.showerror("Review failed", str(exc))
 
     def export() -> None:
-        if latest[0] is None:
+        if latest[0] is None or reviewed_path[0] is None:
             return
-        filename = filedialog.asksaveasfilename(defaultextension=".html",
-                                                filetypes=[("HTML review report", "*.html")])
+        try:
+            if Path(path.get()).resolve() != reviewed_path[0]:
+                raise ValueError("File selection changed; rerun the review before exporting.")
+            current = source_fingerprint(reviewed_path[0])
+            if (current["sha256"], current["bytes"]) != (
+                    latest[0]["source_sha256"], latest[0]["source_bytes"]):
+                raise ValueError("Source CSV changed since the review; rerun before exporting.")
+        except (OSError, ValueError) as exc:
+            latest[0], reviewed_path[0] = None, None
+            status.set("Source changed or unavailable. Rerun the review.")
+            messagebox.showerror("Export blocked", str(exc))
+            return
+        filename = filedialog.asksaveasfilename(
+            defaultextension=".html",
+            filetypes=[("HTML review report", "*.html"),
+                       ("CSV review spreadsheet", "*.csv"),
+                       ("JSON review data", "*.json")])
         if filename:
-            Path(filename).write_text(report_html(latest[0]), encoding="utf-8")
-            status.set("Report saved: " + filename)
+            try:
+                save_report(Path(filename), reviewed_path[0], latest[0], report_html)
+                status.set("Report saved: " + filename)
+            except (OSError, ValueError) as exc:
+                messagebox.showerror("Save failed", str(exc))
 
     controls = ttk.Frame(frame)
     controls.pack(fill="x", before=output)
     ttk.Button(controls, text="Run review", command=do_review).pack(side="left")
-    ttk.Button(controls, text="Save HTML review", command=export).pack(side="left", padx=10)
+    ttk.Button(controls, text="Save review report", command=export).pack(side="left", padx=10)
     app.mainloop()
 
 
@@ -250,10 +277,11 @@ def main() -> int:
     try:
         result = review(Path(args.csv))
         if args.report:
-            if args.report.suffix.lower() == ".html":
-                args.report.write_text(report_html(result), encoding="utf-8")
-            else:
-                args.report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+            now = source_fingerprint(Path(args.csv))
+            if (now["sha256"], now["bytes"]) != (
+                    result["source_sha256"], result["source_bytes"]):
+                raise ValueError("Source CSV changed since review; report not saved.")
+            save_report(args.report, Path(args.csv), result, report_html)
         print(json.dumps(result, indent=2))
         return 2 if result["status"] == "INCOMPLETE" else (1 if result["flags"] else 0)
     except (OSError, ValueError, csv.Error, UnicodeError) as exc:
