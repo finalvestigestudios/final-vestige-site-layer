@@ -220,3 +220,17 @@ tests; the prior 13 R17 cases still pass in isolated local Linux/Python
 testing (including Python `-OO`). Actual Windows binaries, clean-machine
 smokes, AV checks, signatures and QD approval remain outstanding. See
 [R18 entrypoint mapping and evidence](docs/PE_ENTRYPOINT_MAPPING_R18.md).
+
+## R19 CSV physical-line audit provenance and strict row widths (pre-release)
+
+Shared financial CSV parsing now returns each record's **physical starting line**, even
+when quoted text spans several source lines or blank source lines intervene.
+LedgerDiff/Invoice Twin Scout and premium grant/procurement exception exports thus
+reference the actual source-file location rather than a logical CSV row ordinal.
+Strict CSV parsing also rejects truncated/extra columns and malformed quoting
+before reports can be written; explicit empty trailing fields remain permitted.
+The change does not alter Decimal money math, authorizations, human review or
+QD publication. Twelve isolated parser regressions passed locally (also with
+Python `-OO`); twelve new committed cross-app tests and Windows builds remain
+unverified pending a working runner/checkout. See
+[R19 provenance semantics and verification](docs/CSV_PHYSICAL_PROVENANCE_R19.md).
