@@ -79,7 +79,7 @@ def _read_file(path: str | Path, limit: int, kind: str) -> bytes:
 
 
 def read_cases(report: str | Path, product: str) -> ReportBatch:
-    """Bind a review queue to one exact report snapshot, never to a filename."""
+    """Bind reviews to exact bytes and physical CSV source lines; reject malformed rows."""
     if product not in ("grants", "procurement"):
         raise ValueError("Only premium grant/procurement exception reports are supported")
     source = Path(report)
@@ -93,38 +93,56 @@ def read_cases(report: str | Path, product: str) -> ReportBatch:
         raise ValueError("Exception report must be UTF-8 CSV") from exc
     if "\x00" in decoded:
         raise ValueError("Exception report contains a NUL character")
-    reader = csv.DictReader(io.StringIO(decoded, newline=""))
-    if not reader.fieldnames:
+    reader = csv.reader(io.StringIO(decoded, newline=""), strict=True)
+    try:
+        fieldnames = next(reader, None)
+    except csv.Error as exc:
+        raise ValueError("Exception report contains a malformed CSV header") from exc
+    if not fieldnames:
         raise ValueError("Exception report has no CSV headers")
-    names = [str(h).strip().lower().replace(" ", "_") for h in reader.fieldnames]
+    names = [str(h).strip().lower().replace(" ", "_") for h in fieldnames]
     if any(not n for n in names) or len(names) != len(set(names)):
         raise ValueError("Exception report has blank or duplicate CSV headers")
     required = {"status", "id"} if product == "grants" else {"status", "po", "line"}
     if not required.issubset(set(names)):
         raise ValueError("Report is missing the expected premium exception columns")
-    col = dict(zip(names, reader.fieldnames))
+    col = dict(zip(names, fieldnames))
     cases = []
-    for index, row in enumerate(reader, 2):
-        if index > MAX_RECORDS + 1:
-            raise ValueError("Exception report exceeds the row limit")
-        if None in row:
-            raise ValueError(f"Malformed CSV record at logical row {index}")
-        status = str(row.get(col["status"]) or "").strip()
-        if not status:
-            raise ValueError(f"Missing status in report record {index}")
-        key = (str(row.get(col["id"]) or "").strip() if product == "grants"
-               else f"{str(row.get(col['po']) or '').strip()} / {str(row.get(col['line']) or '').strip()}")
-        if (product == "grants" and not str(row.get(col["id"]) or "").strip()) or (
-            product == "procurement" and (
-                not str(row.get(col["po"]) or "").strip()
-                or not str(row.get(col["line"]) or "").strip()
-            )
-        ):
-            raise ValueError(f"Missing identifier in report record {index}")
-        if status == "matched":
-            continue
-        case_id = _hex_hash(f"FVS-CASE-v1|{product}|{digest}|{index}".encode("ascii"))
-        cases.append(ExceptionCase(case_id, index, key, status))
+    records = 0
+    previous_end_line = reader.line_num
+    try:
+        for values in reader:
+            # CSV's physical line_num advances across quoted embedded newlines.
+            physical_line = previous_end_line + 1
+            previous_end_line = reader.line_num
+            if not values:  # Keep csv.DictReader's historical blank-line behavior.
+                continue
+            records += 1
+            if records > MAX_RECORDS:
+                raise ValueError("Exception report exceeds the row limit")
+            if len(values) != len(fieldnames):
+                raise ValueError(f"Malformed CSV record at physical line {physical_line}: "
+                                 f"expected {len(fieldnames)} columns, got {len(values)}")
+            row = dict(zip(fieldnames, values))
+            status = str(row.get(col["status"]) or "").strip()
+            if not status:
+                raise ValueError(f"Missing status in report record at physical line {physical_line}")
+            key = (str(row.get(col["id"]) or "").strip() if product == "grants"
+                   else f"{str(row.get(col['po']) or '').strip()} / {str(row.get(col['line']) or '').strip()}")
+            if (product == "grants" and not str(row.get(col["id"]) or "").strip()) or (
+                product == "procurement" and (
+                    not str(row.get(col["po"]) or "").strip()
+                    or not str(row.get(col["line"]) or "").strip()
+                )
+            ):
+                raise ValueError(f"Missing identifier in report record at physical line {physical_line}")
+            if status == "matched":
+                continue
+            # The journal is bound to a file hash and the *physical* record line.
+            case_id = _hex_hash(f"FVS-CASE-v1|{product}|{digest}|{physical_line}".encode("ascii"))
+            cases.append(ExceptionCase(case_id, physical_line, key, status))
+    except csv.Error as exc:
+        raise ValueError(f"Malformed CSV quoting near physical line {reader.line_num}") from exc
     return ReportBatch(product, digest, tuple(cases))
 
 
