@@ -44,7 +44,7 @@ jobs:
           $apps = @("LedgerDiffLite","InvoiceTwinScout","SpendMapLite","PolicyDeltaDesk","GrantAuditStudioPro","ProcureGuardStudioPro")
           $checksums = @(Get-Content "dist/SHA256SUMS.txt" | Where-Object { $_.Trim() })
           if ($checksums.Count -ne $apps.Count) {
-            throw "Expected exactly six signed-format checksum entries, got $($checksums.Count)"
+            throw "Expected exactly six checksum entries, got $($checksums.Count)"
           }
           foreach ($app in $apps) {
             $exe = Join-Path (Get-Location).Path "dist/$app.exe"
@@ -75,7 +75,7 @@ jobs:
             if ($null -eq $process.ExitCode -or $process.ExitCode -ne 0) {
               throw "Packaged smoke test failed for $app with exit code $($process.ExitCode)"
             }
-            Write-Host "$app: smoke-test PASS; SHA256 verified"
+            Write-Host "${app}: smoke-test PASS; SHA256 verified"
           }
       - name: Upload internal pre-release artifacts
         uses: actions/upload-artifact@v4
