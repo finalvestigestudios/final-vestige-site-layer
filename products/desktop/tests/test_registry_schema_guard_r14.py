@@ -1,4 +1,5 @@
 """R14 fail-closed schema guard regression tests (synthetic SQLite only)."""
+import hashlib
 import sqlite3
 import tempfile
 import unittest
@@ -126,7 +127,7 @@ class RegistryIntegrationR14Tests(unittest.TestCase):
         import hashlib
         self.registry.reserve(**self.kwargs)
         self.output.write_bytes(b'synthetic-license-content')
-        digest = self.registry.finalize(**self.kwargs)
+        digest = self.registry.finalize(**self.kwargs, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         self.assertEqual(digest, hashlib.sha256(b'synthetic-license-content').hexdigest())
         with sqlite3.connect(self.registry_path) as con:
             self.assertEqual(con.execute("SELECT state FROM issuance").fetchone(), ("issued",))
@@ -154,7 +155,7 @@ class RegistryIntegrationR14Tests(unittest.TestCase):
             con.execute("""CREATE TRIGGER rewriting AFTER UPDATE ON issuance
                 BEGIN UPDATE issuance SET state='reserved' WHERE license_id=NEW.license_id; END""")
         with self.assertRaisesRegex(RegistryError, "Unsafe registry schema"):
-            self.registry.finalize(**self.kwargs)
+            self.registry.finalize(**self.kwargs, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         with sqlite3.connect(self.registry_path) as con:
             self.assertEqual(con.execute("SELECT state FROM issuance").fetchone(), ("reserved",))
 

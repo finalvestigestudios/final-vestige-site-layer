@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import base64
 import getpass
+import hashlib
 import json
 import os
 import stat
@@ -86,7 +87,8 @@ def issue_entitlement(*, key_path: str | Path, password: bytes,
                       kid: str, product: str, license_id: str, holder: str,
                       expires_at: str, output: str | Path,
                       not_before: str | None = None,
-                      now: datetime | None = None) -> Path:
+                      now: datetime | None = None,
+                      return_digest: bool = False) -> Path | tuple[Path, str]:
     """Sign once, write with O_EXCL, then independently verify the disk bytes.
 
     password is an in-process argument for testability. CLI reads it only
@@ -139,6 +141,11 @@ def issue_entitlement(*, key_path: str | Path, password: bytes,
     public_key = key.public_key().public_bytes(
         encoding=serialization.Encoding.Raw, format=serialization.PublicFormat.Raw)
     verifier.verify_license(destination, product, trusted_keys={kid: public_key}, now=start_dt)
+    # The receipt comes from the exact serialized signed payload kept in
+    # memory. Hashing the file after verification would create a new TOCTOU
+    # window in which swapped bytes could become the expected registry hash.
+    if return_digest:
+        return destination, hashlib.sha256(serialized).hexdigest()
     return destination
 
 
@@ -167,12 +174,13 @@ def main(argv: list[str] | None = None) -> int:
         # remains reserved; an operator must investigate, never auto-reuse IDs.
         registry.reserve(license_id=args.license_id, product=args.product,
                          kid=args.kid, output=args.output)
-        issued = issue_entitlement(key_path=args.key, password=secret, kid=args.kid,
+        issued, signed_digest = issue_entitlement(key_path=args.key, password=secret, kid=args.kid,
                                    product=args.product, license_id=args.license_id,
                                    holder=args.holder, expires_at=args.expires_at,
-                                   not_before=args.not_before, output=args.output)
+                                   not_before=args.not_before, output=args.output,
+                                   return_digest=True)
         digest = registry.finalize(license_id=args.license_id, product=args.product,
-                                   kid=args.kid, output=issued)
+                                   kid=args.kid, output=issued, expected_sha256=signed_digest)
     except (RegistryError, IssuanceError, verifier.EntitlementError, OSError, ValueError) as exc:
         parser.exit(1, f"Issuance refused (reservation may require manual review): {exc}\n")
     print(f"Entitlement verified and recorded (SHA-256 {digest}). Distribution NOT authorized.")
