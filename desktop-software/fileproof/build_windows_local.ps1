@@ -18,6 +18,7 @@ if (-not (Test-Path $inno)) {
 }
 $smokeDir = Join-Path $env:TEMP ("FileProofSmoke-" + [Guid]::NewGuid().ToString("N"))
 $uninstaller = Join-Path $smokeDir "unins000.exe"
+$uninstalled = $false
 Push-Location $repoRoot
 try {
     Write-Host "[1/6] Running source unit tests..."
@@ -59,6 +60,7 @@ try {
         "/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART"
     ) -Wait -PassThru
     if ($uninstallResult.ExitCode -ne 0) { throw "Silent uninstaller failed." }
+    $uninstalled = $true
     if ((Test-Path $gui) -or (Test-Path $cli)) {
         throw "Installed EXE still present after uninstall."
     }
@@ -77,7 +79,7 @@ try {
 }
 finally {
     # Cleanup is best effort; remove test installation if the smoke aborted early.
-    if (Test-Path $uninstaller) {
+    if (-not $uninstalled -and (Test-Path $uninstaller)) {
         $cleanup = Start-Process -FilePath $uninstaller -ArgumentList @(
             "/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART"
         ) -Wait -PassThru
