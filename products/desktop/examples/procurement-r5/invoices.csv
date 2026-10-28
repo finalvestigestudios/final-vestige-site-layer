@@ -1,0 +1,3 @@
+po_number,line,quantity,unit_price,event_type,document_id,related_document
+PO-100,1,10,5.00,invoice,INV-100,
+PO-100,1,2,5.00,credit,CM-100,INV-100

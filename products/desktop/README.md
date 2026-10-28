@@ -59,6 +59,15 @@ CI launches **all six** EXEs as real processes after packaging, checks their exi
 - Duplicate IDs, ambiguous matches and all policy/audit flags require human judgment; the software does not authorize payments or certify compliance.
 
 
+## ProcureGuard Studio Pro R5 — credits, returns, partial deliveries and reviewed tolerances
+
+- Explicit positive `invoice` versus reversing `credit` and positive `receipt` versus reversing `return` events; negative numeric quantities are rejected. Untyped legacy inputs remain positive transactions.
+- Optional invoice/receipt `event_type`, `document_id`, and `related_document` columns provide document-level review. Unlinked credits/returns, amount deviations, repeated invoice IDs and normalized-reference collisions remain visible as exceptions.
+- Legitimate identical partial invoice amounts with **different, explicit invoice document IDs** are not automatically misclassified as duplicate entries. When document IDs are absent, conservative duplicate review stays enabled.
+- Gross and net quantities and invoice values are reported separately, preserving audit trails. All credit memos and returns remain explicitly flagged for a human reviewer, even if arithmetic balances.
+- Optional local price policy JSON is accessible from the **ProcureGuard Studio Pro** desktop GUI. Values are bounded, schema-checked, Decimal-exact and fingerprinted in the report/evidence manifest. Looser tolerances always produce a visible review flag.
+- A complete synthetic pilot scenario, documentation, and source samples are in [PROCUREMENT_R5.md](docs/PROCUREMENT_R5.md). This is a **development prototype**, not an entitlement-protected commercial edition.
+
 ## Release gates
 
 1. Independent sample and edge-case test suite (money, CSV injection, encoding, duplicates, malformed input).
