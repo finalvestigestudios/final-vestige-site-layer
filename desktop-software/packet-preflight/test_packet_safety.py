@@ -1,4 +1,5 @@
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -89,7 +90,9 @@ class PacketSafetyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'A.PDF').write_bytes(b'123')
-            (root / 'a.pdf').write_bytes(b'456')
+            # Case-distinct file names cannot coexist on standard Windows volumes.
+            if os.name != 'nt':
+                (root / 'a.pdf').write_bytes(b'456')
             (root / 'nested').mkdir()
             (root / 'nested' / 'ok.txt').write_bytes(b'')
             outside = root.parent / ('not-inside-' + root.name)
@@ -101,9 +104,10 @@ class PacketSafetyTests(unittest.TestCase):
                 except (OSError, NotImplementedError):
                     pass
                 files, errors = scan_files(root)
-                self.assertEqual(len(files), 3)
+                self.assertEqual(len(files), 2 if os.name == 'nt' else 3)
                 self.assertTrue(all('mtime_ns' in f for f in files))
-                self.assertTrue(any('collision' in e['message'] for e in errors))
+                if os.name != 'nt':
+                    self.assertTrue(any('collision' in e['message'] for e in errors))
                 if (root / 'alias').is_symlink():
                     self.assertTrue(any(e['file'] == 'alias' for e in errors))
                 if (root / 'linked_folder').is_symlink():
