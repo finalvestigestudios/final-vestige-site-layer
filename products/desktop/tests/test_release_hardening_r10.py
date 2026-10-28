@@ -20,14 +20,7 @@ gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
 
 
-def synthetic_pe64():
-    data = bytearray(256)
-    data[:2] = b"MZ"
-    data[0x3C:0x40] = (128).to_bytes(4, "little")
-    data[128:132] = b"PE\x00\x00"
-    data[132:134] = (0x8664).to_bytes(2, "little")
-    data[152:154] = (0x20B).to_bytes(2, "little")
-    return bytes(data)
+from pe_fixture_r17 import synthetic_pe64
 
 
 class ArtifactDriftRegression(unittest.TestCase):
