@@ -1,0 +1,4 @@
+invoice_id,amount,date,status
+INV-1001,120.00,2026-10-01,open
+INV-1001,NaN,2026-02-30,unknown
+INV-1003,"1,234.50",2026-10-03,paid

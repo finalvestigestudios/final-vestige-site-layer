@@ -1,265 +1,196 @@
-"""Data Import Doctor: offline CSV import-preflight engine and desktop UI.
+"""Data Import Doctor — offline CSV preflight GUI and CLI.
 
-Python 3.11+. Does not modify original data or access networks.
-Schema example:
-{"required_columns":["id","amount"],"keys":["id"],
- "types":{"amount":"decimal","date":"date","quantity":"integer"},
- "allowed_values":{"status":["open","closed"]}}
+Usage: python data_import_doctor.py [file.csv] [--schema rules.json] [--report report.json]
+Without a positional file, starts a local Tkinter GUI. No upload or telemetry.
 """
 from __future__ import annotations
 
 import argparse
-import csv
 import json
-import re
+import queue
 import sys
-from collections import Counter
-from datetime import date
-from decimal import Decimal, InvalidOperation
+import threading
 from pathlib import Path
 
-VERSION = "0.1.0"
-MAX_EXAMPLES = 250
-TYPES = {"integer", "decimal", "date", "boolean", "text"}
+from data_import_checks import VERSION, analyze, load_schema, valid_type, safe_export_report
 
 
-def load_schema(path: Path | None) -> dict:
-    if path is None:
-        return {}
-    with path.open(encoding="utf-8") as stream:
-        schema = json.load(stream)
-    if not isinstance(schema, dict):
-        raise ValueError("Schema must be a JSON object.")
-    for key in ("required_columns", "keys"):
-        values = schema.get(key, [])
-        if not isinstance(values, list) or any(not isinstance(v, str) or not v for v in values):
-            raise ValueError(f"{key} must be a list of column names.")
-    types = schema.get("types", {})
-    if not isinstance(types, dict) or any(
-        not isinstance(k, str) or v not in TYPES for k, v in types.items()
-    ):
-        raise ValueError("types must map column names to integer, decimal, date, boolean, or text.")
-    allowed = schema.get("allowed_values", {})
-    if not isinstance(allowed, dict) or any(
-        not isinstance(k, str) or not isinstance(v, list) or
-        any(not isinstance(item, str) for item in v) for k, v in allowed.items()
-    ):
-        raise ValueError("allowed_values must map column names to lists of strings.")
-    return schema
-
-
-def valid_type(value: str, kind: str) -> bool:
-    if kind == "text":
-        return True
-    if kind == "integer":
-        return re.fullmatch(r"[+-]?\d+", value) is not None
-    if kind == "boolean":
-        return value.casefold() in {"yes", "no", "true", "false", "0", "1"}
-    if kind == "date":
-        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) is None:
-            return False
-        try:
-            date.fromisoformat(value)
-            return True
-        except ValueError:
-            return False
-    if kind == "decimal":
-        try:
-            return Decimal(value.replace(",", "")).is_finite()
-        except InvalidOperation:
-            return False
-    return False
-
-
-def analyze(csv_path: Path, schema_path: Path | None = None) -> dict:
-    schema = load_schema(schema_path)
-    if not csv_path.is_file():
-        raise FileNotFoundError(csv_path)
-    counters: Counter = Counter()
-    examples: list[dict] = []
-    report = {
-        "tool": "Final Vestige Data Import Doctor",
-        "version": VERSION,
-        "source_file": csv_path.name,
-        "row_count": 0,
-        "columns": [],
-        "delimiter": None,
-        "issue_counts": {},
-        "examples": examples,
-        "examples_truncated": False,
-    }
-
-    def issue(code: str, row: int, message: str) -> None:
-        counters[code] += 1
-        if len(examples) < MAX_EXAMPLES:
-            examples.append({"code": code, "row": row, "message": message})
-
-    with csv_path.open("r", encoding="utf-8-sig", newline="") as stream:
-        sample = stream.read(8192)
-        stream.seek(0)
-        try:
-            dialect = csv.Sniffer().sniff(sample, delimiters=",;\t|")
-            delimiter = dialect.delimiter
-        except csv.Error:
-            delimiter = ","
-        report["delimiter"] = delimiter
-        reader = csv.reader(stream, delimiter=delimiter, strict=True)
-        try:
-            headers = next(reader)
-        except StopIteration:
-            issue("empty_file", 1, "CSV file is empty.")
-            headers = []
-        except csv.Error as exc:
-            issue("csv_parse_error", 1, f"Header parse failure: {exc}")
-            headers = []
-        clean = [h.strip() for h in headers]
-        report["columns"] = clean
-        normalized = [h.casefold() for h in clean]
-        duplicates = [h for h, n in Counter(normalized).items() if n > 1]
-        for name in duplicates:
-            issue("duplicate_header", 1, f"Duplicate column name: {name!r}")
-        for index, name in enumerate(clean):
-            if not name:
-                issue("blank_header", 1, f"Column {index + 1} has no name.")
-        index_of = {name: idx for idx, name in enumerate(clean)}
-        for required in schema.get("required_columns", []):
-            if required not in index_of:
-                issue("missing_required_column", 1, f"Required column {required!r} is absent.")
-        for key in schema.get("keys", []):
-            if key not in index_of:
-                issue("missing_key_column", 1, f"Key column {key!r} is absent.")
-        for column in (*schema.get("types", {}).keys(), *schema.get("allowed_values", {}).keys()):
-            if column not in index_of:
-                issue("missing_rule_column", 1, f"Rule references missing column {column!r}.")
-        seen_keys: dict[tuple[str, ...], int] = {}
-        if headers:
-            try:
-                for row_number, row in enumerate(reader, start=2):
-                    report["row_count"] += 1
-                    if len(row) != len(clean):
-                        issue("column_count_mismatch", row_number,
-                              f"Expected {len(clean)} fields, found {len(row)}.")
-                        continue
-                    values = {clean[i]: value.strip() for i, value in enumerate(row)}
-                    for required in schema.get("required_columns", []):
-                        if required in values and not values[required]:
-                            issue("blank_required_value", row_number, f"Required column {required!r} is blank.")
-                    keys = schema.get("keys", [])
-                    if keys and all(key in values for key in keys):
-                        key_tuple = tuple(values[key].casefold() for key in keys)
-                        if any(not part for part in key_tuple):
-                            issue("blank_key", row_number, "One or more key values are blank.")
-                        elif key_tuple in seen_keys:
-                            issue("duplicate_key", row_number,
-                                  f"Duplicate key found; first appearance at row {seen_keys[key_tuple]}.")
-                        else:
-                            seen_keys[key_tuple] = row_number
-                    for column, kind in schema.get("types", {}).items():
-                        value = values.get(column, "")
-                        if value and not valid_type(value, kind):
-                            issue("invalid_type", row_number,
-                                  f"Column {column!r} must contain {kind} values.")
-                    for column, choices in schema.get("allowed_values", {}).items():
-                        value = values.get(column, "")
-                        if value and value not in choices:
-                            issue("invalid_allowed_value", row_number,
-                                  f"Column {column!r} has an unrecognized value.")
-            except csv.Error as exc:
-                issue("csv_parse_error", max(2, report["row_count"] + 2), f"Malformed CSV: {exc}")
-    report["issue_counts"] = dict(sorted(counters.items()))
-    report["examples_truncated"] = sum(counters.values()) > len(examples)
-    report["issues_total"] = sum(counters.values())
-    report["status"] = "PASS" if not counters else "ISSUES"
-    return report
+def report_text(report: dict) -> str:
+    lines = [
+        f"RESULT: {report['status']}",
+        f"Source: {report['source_file']}",
+        f"Data records: {report['row_count']}",
+        f"Delimiter: {report['delimiter']!r}",
+        f"SHA-256: {report['source_sha256']}",
+        f"Complete scan: {'yes' if report['scan_complete'] else 'NO — DO NOT RELY ON THIS REVIEW'}",
+        f"Total issues: {report['issues_total']}",
+        "",
+        "ISSUE COUNTS",
+    ]
+    lines.extend(f"  {key}: {count}" for key, count in report['issue_counts'].items())
+    if not report['issue_counts']:
+        lines.append("  None detected under the configured rules.")
+    lines.append("\nEXAMPLES / LINE REFERENCES")
+    lines.extend(f"  line {item['row']}: [{item['code']}] {item['message']}" for item in report['examples'])
+    if report['examples_truncated']:
+        lines.append("  ...additional issues omitted from examples; counts include all detected issues.")
+    lines.append("\nImport compatibility depends on the destination system. A PASS is not a compliance guarantee.")
+    return "\n".join(lines)
 
 
 def gui() -> None:
     import tkinter as tk
     from tkinter import filedialog, messagebox, ttk
+
     app = tk.Tk()
     app.title(f"Data Import Doctor {VERSION} · Final Vestige Studios")
-    app.geometry("870x610")
-    frame = ttk.Frame(app, padding=18)
-    frame.pack(fill="both", expand=True)
-    csv_value = tk.StringVar()
-    schema_value = tk.StringVar()
-    status = tk.StringVar(value="Choose a CSV file. Optionally supply a reusable JSON import schema.")
-    latest = [None]
+    app.geometry("920x640")
+    app.minsize(700, 470)
+    pane = ttk.Frame(app, padding=20)
+    pane.pack(fill="both", expand=True)
+    source_value = tk.StringVar()
+    rules_value = tk.StringVar()
+    status_value = tk.StringVar(value="Choose a CSV file and optionally an import-rule JSON file.")
+    latest: dict | None = None
+    latest_source: Path | None = None
+    latest_rules: Path | None = None
+    busy = False
+    events: queue.Queue[tuple[str, object]] = queue.Queue()
+    controls: list[ttk.Widget] = []
 
-    ttk.Label(frame, text="Data Import Doctor", font=("Segoe UI", 22, "bold")).pack(anchor="w")
-    ttk.Label(frame, text="Diagnose import problems without changing your files.").pack(anchor="w", pady=(0, 18))
+    ttk.Label(pane, text="Data Import Doctor", font=("Segoe UI", 24, "bold")).pack(anchor="w")
+    ttk.Label(pane, text="Spot bad columns, duplicate keys and import failures before they cost you time.").pack(
+        anchor="w", pady=(0, 18)
+    )
 
-    def chooser(label: str, variable: tk.StringVar, types: list[tuple[str, str]]) -> None:
-        ttk.Label(frame, text=label).pack(anchor="w")
-        line = ttk.Frame(frame)
+    def invalidate(*_: object) -> None:
+        nonlocal latest, latest_source, latest_rules
+        latest = None
+        latest_source = None
+        latest_rules = None
+        export_button.state(["disabled"])
+
+    def picker(title: str, variable: tk.StringVar, file_types: list[tuple[str, str]]) -> None:
+        ttk.Label(pane, text=title).pack(anchor="w")
+        line = ttk.Frame(pane)
         line.pack(fill="x", pady=(3, 12))
-        ttk.Entry(line, textvariable=variable).pack(side="left", fill="x", expand=True)
-        ttk.Button(line, text="Browse…", command=lambda: variable.set(
-            filedialog.askopenfilename(filetypes=types) or variable.get())).pack(side="left", padx=(8, 0))
+        entry = ttk.Entry(line, textvariable=variable)
+        entry.pack(side="left", fill="x", expand=True)
+        choose = ttk.Button(line, text="Browse…", command=lambda: variable.set(
+            filedialog.askopenfilename(filetypes=file_types) or variable.get()))
+        choose.pack(side="left", padx=(8, 0))
+        controls.extend([entry, choose])
+        variable.trace_add("write", invalidate)
 
-    chooser("CSV data", csv_value, [("CSV files", "*.csv"), ("All files", "*.*")])
-    chooser("Import schema (optional)", schema_value, [("JSON schema", "*.json")])
-    display = tk.Text(frame, state="disabled", wrap="word", height=18)
-    display.pack(fill="both", expand=True, pady=10)
+    picker("Source CSV", source_value, [("CSV files", "*.csv"), ("All files", "*.*")])
+    picker("Import rules (optional JSON)", rules_value, [("JSON rules", "*.json")])
 
-    def show(message: str) -> None:
-        display.config(state="normal")
+    display = tk.Text(pane, state="disabled", wrap="word", font=("Consolas", 10), height=18)
+    display.pack(fill="both", expand=True, pady=12)
+
+    def show(text: str) -> None:
+        display.configure(state="normal")
         display.delete("1.0", "end")
-        display.insert("1.0", message)
-        display.config(state="disabled")
+        display.insert("1.0", text)
+        display.configure(state="disabled")
+
+    def set_busy(value: bool) -> None:
+        nonlocal busy
+        busy = value
+        for widget in controls:
+            widget.state(["disabled"] if value else ["!disabled"])
+        analyze_button.state(["disabled"] if value else ["!disabled"])
+        export_button.state(["disabled"] if value or latest is None else ["!disabled"])
+
+    def poll() -> None:
+        nonlocal latest, latest_source, latest_rules
+        try:
+            kind, payload = events.get_nowait()
+        except queue.Empty:
+            if busy:
+                app.after(80, poll)
+            return
+        set_busy(False)
+        if kind == "error":
+            invalidate()
+            status_value.set("Analysis failed; no report is available.")
+            show("Could not complete analysis. No previous results can be exported.")
+            messagebox.showerror("Analysis failed", str(payload))
+            return
+        assert isinstance(payload, tuple)
+        latest, latest_source, latest_rules = payload
+        export_button.state(["!disabled"])
+        status_value.set(f"{latest['status']} · {latest['row_count']} records · {latest['issues_total']} issues")
+        show(report_text(latest))
 
     def check() -> None:
-        if not csv_value.get():
-            messagebox.showwarning("Choose CSV", "Select a CSV file first.")
+        if busy:
             return
-        try:
-            result = analyze(Path(csv_value.get()), Path(schema_value.get()) if schema_value.get() else None)
-            latest[0] = result
-            show(json.dumps({
-                "status": result["status"], "rows": result["row_count"],
-                "columns": result["columns"], "issue_counts": result["issue_counts"],
-                "examples": result["examples"], "examples_truncated": result["examples_truncated"]
-            }, indent=2, ensure_ascii=False))
-            status.set(f"{result['row_count']} data rows · {result['issues_total']} issues")
-        except (OSError, ValueError, json.JSONDecodeError, UnicodeError) as exc:
-            messagebox.showerror("Analysis failed", str(exc))
+        path_text = source_value.get().strip()
+        if not path_text:
+            messagebox.showwarning("Choose CSV", "Please select a CSV file.")
+            return
+        invalidate()
+        source = Path(path_text)
+        rules = Path(rules_value.get().strip()) if rules_value.get().strip() else None
+        set_busy(True)
+        status_value.set("Analyzing locally… Your files are not uploaded or modified.")
+        show("Analyzing file and checking source integrity…")
+
+        def worker() -> None:
+            try:
+                result = analyze(source, rules)
+                events.put(("result", (result, source, rules)))
+            except (OSError, ValueError, json.JSONDecodeError, UnicodeError) as exc:
+                events.put(("error", str(exc)))
+            except Exception as exc:
+                events.put(("error", f"Unexpected analysis error ({type(exc).__name__})."))
+
+        threading.Thread(target=worker, daemon=True).start()
+        app.after(80, poll)
 
     def export() -> None:
-        if latest[0] is None:
-            messagebox.showinfo("No report", "Analyze a file first.")
+        if busy or latest is None or latest_source is None:
+            messagebox.showinfo("No report", "Analyze a CSV first.")
             return
         filename = filedialog.asksaveasfilename(defaultextension=".json", filetypes=[("JSON report", "*.json")])
-        if filename:
-            try:
-                Path(filename).write_text(json.dumps(latest[0], indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-                status.set("Report saved to " + filename)
-            except OSError as exc:
-                messagebox.showerror("Save failed", str(exc))
+        if not filename:
+            return
+        try:
+            safe_export_report(latest, Path(filename), latest_source, latest_rules)
+            status_value.set("Report saved without modifying source files: " + filename)
+        except (OSError, ValueError) as exc:
+            messagebox.showerror("Export blocked", str(exc))
 
-    row = ttk.Frame(frame)
-    row.pack(fill="x")
-    ttk.Button(row, text="Analyze CSV", command=check).pack(side="left")
-    ttk.Button(row, text="Export JSON report", command=export).pack(side="left", padx=10)
-    ttk.Label(frame, textvariable=status).pack(anchor="w", pady=(10, 0))
+    actions = ttk.Frame(pane)
+    actions.pack(fill="x")
+    analyze_button = ttk.Button(actions, text="Analyze CSV", command=check)
+    analyze_button.pack(side="left")
+    export_button = ttk.Button(actions, text="Save JSON report", command=export)
+    export_button.pack(side="left", padx=10)
+    export_button.state(["disabled"])
+    ttk.Label(pane, textvariable=status_value).pack(anchor="w", pady=(10, 0))
     app.mainloop()
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Offline CSV import preflight")
-    parser.add_argument("csv", nargs="?")
-    parser.add_argument("--schema", type=Path)
-    parser.add_argument("--report", type=Path)
-    args = parser.parse_args()
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Offline, non-destructive CSV import preflight")
+    parser.add_argument("csv", nargs="?", help="Source CSV; omit to open the graphical interface")
+    parser.add_argument("--schema", type=Path, help="Optional JSON rules file")
+    parser.add_argument("--report", type=Path, help="Save report to a new JSON file (never overwrite)")
+    args = parser.parse_args(argv)
     if not args.csv:
+        if args.schema or args.report:
+            parser.error("--schema/--report require a source CSV")
         gui()
         return 0
     try:
-        report = analyze(Path(args.csv), args.schema)
-        result = json.dumps(report, ensure_ascii=False, indent=2)
+        source = Path(args.csv)
+        result = analyze(source, args.schema)
         if args.report:
-            args.report.write_text(result + "\n", encoding="utf-8")
-        print(result)
-        return 1 if report["issues_total"] else 0
+            safe_export_report(result, args.report, source, args.schema)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 2 if result["status"] == "INCOMPLETE" else 1 if result["issues_total"] else 0
     except (OSError, ValueError, json.JSONDecodeError, UnicodeError) as exc:
         print("Analysis failed:", exc, file=sys.stderr)
         return 2

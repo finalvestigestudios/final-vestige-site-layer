@@ -1,0 +1,6 @@
+{
+  "required_columns": ["invoice_id", "amount", "date", "status"],
+  "keys": ["invoice_id"],
+  "types": {"amount": "decimal", "date": "date"},
+  "allowed_values": {"status": ["open", "closed", "paid", "void"]}
+}
