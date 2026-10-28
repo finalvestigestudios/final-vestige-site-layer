@@ -16,8 +16,9 @@ import uuid
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from ical_utils import render_ical_lines
+from renewal_safety import import_csv_atomic, write_new_file
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 CADENCES = {"none", "monthly", "yearly"}
 
 
@@ -162,27 +163,13 @@ def render_ical(rows: list[dict]) -> str:
 def export_ics(conn: sqlite3.Connection, destination: Path) -> int:
     all_rows = [dict(row) for row in conn.execute("SELECT * FROM renewal ORDER BY id")]
     data = render_ical(all_rows)
-    destination.write_bytes(data.encode("utf-8"))
+    write_new_file(destination, data.encode("utf-8"))
     return len(all_rows)
 
 
 def import_csv(conn: sqlite3.Connection, source: Path) -> dict:
-    """Explicit bulk import with required title/due and optional columns."""
-    inserted = 0
-    problems = []
-    with source.open("r", encoding="utf-8-sig", newline="") as stream:
-        reader = csv.DictReader(stream)
-        if not reader.fieldnames or not {"title", "due"}.issubset(set(reader.fieldnames)):
-            raise ValueError("CSV requires title,due columns.")
-        for line_no, row in enumerate(reader, 2):
-            try:
-                add_entry(conn, row.get("title") or "", row.get("due") or "",
-                          row.get("category") or "", row.get("cadence") or "none",
-                          int(row.get("remind_days") or 30), row.get("notes") or "")
-                inserted += 1
-            except (ValueError, TypeError) as exc:
-                problems.append({"row": line_no, "reason": str(exc)})
-    return {"inserted": inserted, "problems": problems}
+    """Validate an entire CSV before one transaction; never partially import."""
+    return import_csv_atomic(conn, source)
 
 
 def gui(db_path: Path) -> None:
@@ -213,11 +200,12 @@ def gui(db_path: Path) -> None:
             ttk.Combobox(block, textvariable=var, values=sorted(CADENCES), state="readonly", width=width).pack()
         else:
             ttk.Entry(block, textvariable=var, width=width).pack()
-    columns = ("id", "title", "category", "due", "cadence", "days_remaining")
+    columns = ("id", "title", "category", "due", "next_due", "cadence", "days_remaining")
     table = ttk.Treeview(frame, columns=columns, show="headings", selectmode="browse")
     for col, label, width in (
         ("id", "ID", 40), ("title", "Renewal", 220), ("category", "Category", 130),
-        ("due", "Original due", 115), ("cadence", "Repeat", 100), ("days_remaining", "Days until next", 115)):
+        ("due", "Original due", 115), ("next_due", "Next renewal", 120),
+        ("cadence", "Repeat", 100), ("days_remaining", "When", 120)):
         table.heading(col, text=label)
         table.column(col, width=width, stretch=col == "title")
     table.pack(fill="both", expand=True, pady=14)
@@ -225,10 +213,27 @@ def gui(db_path: Path) -> None:
 
     def refresh() -> None:
         table.delete(*table.get_children())
-        for item in entries(conn):
+        today = date.today()
+        all_rows = entries(conn, today)
+        # Expired one-time obligations are actionable; show them first.
+        expired = [r for r in all_rows if r["next_due"] is None and r["cadence"] == "none"]
+        upcoming = [r for r in all_rows if r["next_due"] is not None]
+        other = [r for r in all_rows if r["next_due"] is None and r["cadence"] != "none"]
+        expired.sort(key=lambda r: r["due"])
+        for item in expired + upcoming + other:
+            if item["next_due"] is None and item["cadence"] == "none":
+                days_late = (today - parse_due(item["due"])).days
+                when = f"{days_late}d overdue"
+                next_due_label = "OVERDUE"
+            elif item["next_due"] is None:
+                when, next_due_label = "No upcoming date", "—"
+            else:
+                days_left = item["days_remaining"]
+                when = "Due today" if days_left == 0 else f"{days_left} days"
+                next_due_label = item["next_due"]
             table.insert("", "end", iid=str(item["id"]), values=(
-                item["id"], item["title"], item["category"], item["due"], item["cadence"],
-                item["days_remaining"] if item["days_remaining"] is not None else "Past / no recurrence"))
+                item["id"], item["title"], item["category"], item["due"],
+                next_due_label, item["cadence"], when))
 
     def add() -> None:
         try:
@@ -260,10 +265,13 @@ def gui(db_path: Path) -> None:
             try:
                 result = import_csv(conn, Path(filename))
                 refresh()
-                note.set(f"Imported {result['inserted']} entries. {len(result['problems'])} rows skipped.")
                 if result["problems"]:
-                    messagebox.showwarning("Partial import", str(result["problems"][:10]))
-            except (OSError, ValueError, UnicodeError) as exc:
+                    note.set("CSV rejected. No entries added; correct the listed errors and retry.")
+                else:
+                    note.set(f"Imported {result['inserted']} renewal(s) successfully.")
+                if result["problems"]:
+                    messagebox.showwarning("Import blocked — database unchanged", str(result["problems"][:10]))
+            except (OSError, ValueError, UnicodeError, sqlite3.DatabaseError) as exc:
                 messagebox.showerror("Import failed", str(exc))
 
     controls = ttk.Frame(frame)
