@@ -164,3 +164,20 @@ Twelve isolated SQLite tests passed locally on Linux Python 3.13.5 both normally
 and under `-OO`; two additional real cryptographic CLI integration tests were
 committed but have not yet run in the complete checkout. Windows CI and actual
 six-EXE validation remain blocked. See [R13 runbook](docs/ISSUANCE_REGISTRY_R13.md).
+
+## R14 operator registry schema guard — fail closed on schema drift (pre-release)
+
+Premium license issuance now checks the **exact R13 SQLite registry schema**
+inside each `BEGIN IMMEDIATE` reservation/finalization transaction. Missing
+uniqueness or CHECK constraints, extra SQL tables/views/triggers/indexes and
+failed SQLite integrity checks **block issuance**. Existing valid R13 registry
+files require no migration; unsafe registries must be preserved for independent
+review, never silently repaired or reset. This detects schema drift and
+accidental manipulation, but cannot authenticate an administrator-controlled
+database or prevent rollback/alternate registries.
+
+Locally, **17/17 new R14 regressions passed** under normal Python and
+**17/17 under `-OO`**, with four synthetic integration tests using a byte-exact
+R13 source reconstruction. The full GitHub checkout and Windows builds remain
+unverified until runner execution or trusted workstation verification succeeds.
+See [R14 schema guard and recovery notes](docs/REGISTRY_SCHEMA_GUARD_R14.md).
