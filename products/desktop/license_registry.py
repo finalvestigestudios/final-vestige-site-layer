@@ -8,6 +8,7 @@ signing or write attempt. Investigate uncertain operations manually.
 from __future__ import annotations
 
 import hashlib
+import hmac
 import os
 import re
 import sqlite3
@@ -147,8 +148,16 @@ class IssuanceRegistry:
                 raise RegistryError("Could not durably reserve license ID") from exc
 
     def finalize(self, *, license_id: str, product: str, kid: str,
-                 output: str | Path) -> str:
-        """Record SHA-256 of a verified issuance. Never change an issued row."""
+                 output: str | Path, expected_sha256: str) -> str:
+        """Finalize only the exact signed bytes verified by the issuer.
+
+        expected_sha256 is computed from the in-memory signed payload, not
+        from another read of the destination path. Never reuse a reservation
+        after a mismatch; a human must investigate.
+        """
+        if (not isinstance(expected_sha256, str)
+                or not re.fullmatch(r"[0-9a-f]{64}", expected_sha256)):
+            raise RegistryError("Expected signed-payload SHA-256 must be canonical lowercase hex")
         destination = Path(output)
         if not destination.is_absolute() or destination.is_symlink():
             raise RegistryError("Issued file must be an absolute regular file")
@@ -165,6 +174,8 @@ class IssuanceRegistry:
         if len(content) > MAX_LICENSE_BYTES or not content:
             raise RegistryError("Issued file is empty or exceeds size limit")
         digest = hashlib.sha256(content).hexdigest()
+        if not hmac.compare_digest(digest, expected_sha256):
+            raise RegistryError("Issued file differs from verified signed payload; reservation retained")
         with self._db() as db:
             try:
                 db.execute("BEGIN IMMEDIATE")
