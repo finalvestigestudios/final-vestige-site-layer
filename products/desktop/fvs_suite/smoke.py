@@ -9,7 +9,7 @@ import csv
 import tempfile
 from pathlib import Path
 
-from . import engine
+from . import engine, exception_review
 
 
 def _csv(folder: Path, name: str, fields: tuple[str, ...], rows: list[tuple[str, ...]]) -> str:
@@ -98,6 +98,19 @@ def run_smoke(app_id: str) -> list[Path]:
             assert summary["G1"]["claimed"] == "68.00"
             assert summary["G2"]["claimed"] == "40.00"
             assert "SHA-256" in outputs[2].read_text(encoding="utf-8")
+            # Exercise packaged premium human-review code using synthetic data.
+            batch = exception_review.read_cases(outputs[0], "grants")
+            assert batch.cases
+            journal = root / "grant-review.jsonl"
+            event = exception_review.append_review(
+                outputs[0], "grants", journal,
+                case_id=batch.cases[0].case_id,
+                expected_report_sha256=batch.report_sha256,
+                reviewer="Smoke Reviewer", decision="needs_evidence",
+                rationale="Request independent supporting reimbursement evidence.")
+            assert event["decision"] == "needs_evidence"
+            register = exception_review.export_register(outputs[0], "grants", journal, root)
+            assert _rows(register)[0]["review_state"] == "needs_evidence"
         elif app_id == "procurement":
             po = _csv(root, "po.csv", ("po_number", "line", "quantity", "unit_price"), [
                 ("P1", "1", "4", "10")])
@@ -111,6 +124,19 @@ def run_smoke(app_id: str) -> list[Path]:
             assert "invoiced_above_order" in status
             assert "invoiced_above_received" in status
             assert len(outputs) == 2
+            batch = exception_review.read_cases(outputs[0], "procurement")
+            assert batch.cases
+            journal = root / "procurement-review.jsonl"
+            event = exception_review.append_review(
+                outputs[0], "procurement", journal,
+                case_id=batch.cases[0].case_id,
+                expected_report_sha256=batch.report_sha256,
+                reviewer="Smoke Reviewer", decision="escalated",
+                rationale="Escalate quantity mismatch for supporting evidence.")
+            assert event["decision"] == "escalated"
+            register = exception_review.export_register(
+                outputs[0], "procurement", journal, root)
+            assert _rows(register)[0]["review_state"] == "escalated"
         else:
             raise ValueError("Unsupported application for smoke test: " + app_id)
 
