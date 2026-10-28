@@ -52,6 +52,17 @@ def run(app_id):
         folder = filedialog.askdirectory(title="Choose output folder")
         if folder: output.set(folder)
     ttk.Button(frame, text="Browse…", command=choose_output).grid(row=folder_row, column=2, padx=(8, 0))
+    rules = tk.StringVar()
+    if app_id == "procurement":
+        ttk.Label(frame, text="Price review policy JSON (optional)").grid(
+            row=folder_row+1, column=0, sticky="w", padx=(0, 12), pady=7)
+        ttk.Entry(frame, textvariable=rules).grid(row=folder_row+1, column=1, sticky="ew", pady=7)
+        def choose_rules():
+            file = filedialog.askopenfilename(title="Optional price review policy",
+                                              filetypes=[("JSON policy", "*.json")])
+            if file: rules.set(file)
+        ttk.Button(frame, text="Browse…", command=choose_rules).grid(
+            row=folder_row+1, column=2, padx=(8, 0))
     status = tk.StringVar(value="Choose your input files. Originals will not be modified.")
     ttk.Label(frame, textvariable=status, wraplength=690).grid(
         row=folder_row+2, column=0, columnspan=3, sticky="w", pady=(18, 8))
@@ -60,7 +71,11 @@ def run(app_id):
             messagebox.showwarning("Missing input", "Select every required input file.")
             return
         try:
-            outputs = action(*(p.get().strip() for p in selected), output.get().strip())
+            args = [p.get().strip() for p in selected]
+            if app_id == "procurement":
+                outputs = action(*args, output.get().strip(), policy_path=rules.get().strip() or None)
+            else:
+                outputs = action(*args, output.get().strip())
         except (ValueError, OSError, UnicodeError, PermissionError) as exc:
             status.set("Failed: " + str(exc))
             messagebox.showerror("Review input files", str(exc))
