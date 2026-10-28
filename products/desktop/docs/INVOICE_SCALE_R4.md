@@ -20,7 +20,7 @@ R4 removes that arbitrary group ceiling. After parsing dates and money with the 
 
 - Preprocessing and grouping: O(n) records and storage.
 - Date sorting: O(sum(m_i log m_i)) for same-vendor+same-amount groups.
-- Windowed candidate scanning: O(n + w), where w is the number of pairs coexisting in the rolling window. In the worst case dense same-day inputs are inherently quadratic, and the tool fails rather than writes a truncated list.
+- Windowed candidate scanning: O(n + d + k), where d is the sum of active distinct-invoice buckets considered and k is the number of cross-invoice pairs reported. Same-key buckets are skipped entirely; thousands of identical invoices in one seven-day window are not compared against themselves. In the worst case dense different-invoice groups are inherently quadratic, and the tool fails rather than writes a truncated list.
 - Exact-key anchored results: O(n) in total.
 - Existing CSV input cap still applies (200,000 rows); the new result cap is distinct.
 
