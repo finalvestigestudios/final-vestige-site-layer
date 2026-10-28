@@ -1,0 +1,240 @@
+"""Passphrase-encrypted, authenticated *copies* of premium exception evidence.
+
+No cloud, logging, telemetry, key files or password persistence.  This does not
+replace the local plaintext source report/journal, authenticate a reviewer or
+assert accounting compliance.  The format is intentionally fixed and versioned.
+"""
+from __future__ import annotations
+
+import base64
+import hashlib
+import json
+import os
+import secrets
+from datetime import datetime, timezone
+from pathlib import Path
+
+from cryptography.exceptions import InvalidTag
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.kdf.scrypt import Scrypt
+
+from .exception_review import (
+    MAX_JOURNAL_BYTES, MAX_REPORT_BYTES, read_cases, read_journal,
+)
+
+MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
+SALT_SIZE = 16
+NONCE_SIZE = 12
+KDF_N = 2**15
+KDF_R = 8
+KDF_P = 1
+MAX_VAULT_BYTES = 120 * 1024 * 1024
+FIELDS = frozenset((
+    "schema", "product", "sealed_utc", "report_filename", "report_sha256",
+    "report_b64", "journal_filename", "journal_sha256", "journal_b64",
+    "journal_present", "review_event_count",
+))
+
+
+def _unique_pairs(pairs):
+    result = {}
+    for k, v in pairs:
+        if k in result:
+            raise ValueError("Duplicate encrypted evidence field")
+        result[k] = v
+    return result
+
+
+def _read_regular(path: Path, limit: int, label: str) -> bytes:
+    if path.is_symlink() or not path.is_file():
+        raise ValueError(f"{label} must be an existing regular file, not a symlink")
+    if path.stat().st_size > limit:
+        raise ValueError(f"{label} exceeds the size limit")
+    with path.open("rb") as stream:
+        result = stream.read(limit + 1)
+    if len(result) > limit:
+        raise ValueError(f"{label} exceeds the size limit")
+    return result
+
+
+def _password(password: str) -> bytes:
+    if not isinstance(password, str) or not (16 <= len(password) <= 1024):
+        raise ValueError("Vault passphrase must contain 16 to 1024 characters")
+    if any(ord(ch) < 32 or ord(ch) == 127 for ch in password):
+        raise ValueError("Vault passphrase cannot contain control characters")
+    return password.encode("utf-8")
+
+
+def _key(password: bytes, salt: bytes) -> bytes:
+    return Scrypt(salt=salt, length=32, n=KDF_N, r=KDF_R, p=KDF_P).derive(password)
+
+
+def _sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _name(value: str, extension: str) -> str:
+    # Use stable filenames on restore; source filename is informational only.
+    if not isinstance(value, str) or len(value) > 255 or not value.lower().endswith(extension):
+        raise ValueError("Invalid archived source filename")
+    if any(ord(ch) < 32 or ord(ch) == 127 for ch in value):
+        raise ValueError("Invalid archived source filename")
+    if Path(value).name != value or "/" in value or "\\" in value or ":" in value:
+        raise ValueError("Archived source filename contains a path")
+    if value in (".", ".."):
+        raise ValueError("Invalid archived source filename")
+    return value
+
+
+def seal_evidence(report: str | Path, product: str, journal: str | Path,
+                  folder: str | Path, passphrase: str) -> Path:
+    """Verify evidence, then write an exclusive AES-256-GCM encrypted backup.
+
+    Originals remain plaintext and unchanged.  The caller must protect them.
+    """
+    password = _password(passphrase)
+    source, journal_path, destination = Path(report), Path(journal), Path(folder)
+    if not destination.is_dir() or destination.is_symlink():
+        raise ValueError("Choose a regular, existing vault destination folder")
+    if source.resolve() == journal_path.resolve():
+        raise ValueError("Journal and report cannot be the same file")
+    batch = read_cases(source, product)
+    data = _read_regular(source, MAX_REPORT_BYTES, "Report")
+    if batch.report_sha256 != _sha(data):
+        raise ValueError("Report changed while preparing encrypted evidence")
+    included = journal_path.exists() or journal_path.is_symlink()
+    journal_data = _read_regular(journal_path, MAX_JOURNAL_BYTES, "Journal") if included else b""
+    events = read_journal(journal_path, batch)
+    if included and journal_data != _read_regular(journal_path, MAX_JOURNAL_BYTES, "Journal"):
+        raise ValueError("Review journal changed while preparing encrypted evidence")
+    if not included and (journal_path.exists() or journal_path.is_symlink()):
+        raise ValueError("Review journal appeared while preparing encrypted evidence")
+    if data != _read_regular(source, MAX_REPORT_BYTES, "Report"):
+        raise ValueError("Report changed while preparing encrypted evidence")
+    if not included and events:
+        raise ValueError("Unrecorded review events are not allowed")
+    payload = {
+        "schema": 1, "product": product,
+        "sealed_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "report_filename": _name(source.name, ".csv"), "report_sha256": _sha(data),
+        "report_b64": base64.b64encode(data).decode("ascii"),
+        "journal_filename": _name(journal_path.name, ".jsonl") if included else None,
+        "journal_sha256": _sha(journal_data) if included else None,
+        "journal_b64": base64.b64encode(journal_data).decode("ascii") if included else None,
+        "journal_present": included, "review_event_count": len(events),
+    }
+    plaintext = json.dumps(payload, sort_keys=True, separators=(",", ":"),
+                           ensure_ascii=False).encode("utf-8")
+    salt, nonce = secrets.token_bytes(SALT_SIZE), secrets.token_bytes(NONCE_SIZE)
+    prefix = MAGIC + salt + nonce
+    ciphertext = AESGCM(_key(password, salt)).encrypt(nonce, plaintext, prefix)
+    vault_bytes = prefix + ciphertext
+    if len(vault_bytes) > MAX_VAULT_BYTES:
+        raise ValueError("Sealed evidence would exceed maximum vault size")
+    filename = ("fvs-" + product + "-" + datetime.now(timezone.utc).strftime(
+        "%Y%m%d-%H%M%S") + "-" + secrets.token_hex(5) + ".fvault")
+    target = destination / filename
+    created = False
+    try:
+        with target.open("xb") as stream:
+            created = True
+            stream.write(vault_bytes)
+            stream.flush()
+            os.fsync(stream.fileno())
+    except Exception:
+        if created:
+            target.unlink(missing_ok=True)
+        raise
+    return target
+
+
+def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> Path:
+    """Authenticate and restore evidence to a new exclusive private subfolder.
+
+    Fails without writing plaintext on a bad password, altered ciphertext,
+    malformed schema, invalid hashes, oversized content, or an unsafe path.
+    """
+    password = _password(passphrase)
+    source, destination = Path(vault), Path(folder)
+    if source.suffix.lower() != ".fvault":
+        raise ValueError("Choose an .fvault encrypted evidence archive")
+    if not destination.is_dir() or destination.is_symlink():
+        raise ValueError("Choose a regular, existing restore destination folder")
+    blob = _read_regular(source, MAX_VAULT_BYTES, "Encrypted archive")
+    prefix_size = len(MAGIC) + SALT_SIZE + NONCE_SIZE
+    if len(blob) < prefix_size + 16 or not blob.startswith(MAGIC):
+        raise ValueError("Unsupported or incomplete evidence vault format")
+    salt = blob[len(MAGIC):len(MAGIC) + SALT_SIZE]
+    nonce = blob[len(MAGIC) + SALT_SIZE:prefix_size]
+    try:
+        clear = AESGCM(_key(password, salt)).decrypt(nonce, blob[prefix_size:], blob[:prefix_size])
+    except InvalidTag as exc:
+        raise ValueError("Wrong passphrase or encrypted archive was altered") from exc
+    try:
+        payload = json.loads(clear.decode("utf-8"), object_pairs_hook=_unique_pairs,
+                             parse_constant=lambda v: (_ for _ in ()).throw(ValueError("Invalid JSON constant")))
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Encrypted evidence has invalid JSON") from exc
+    if not isinstance(payload, dict) or set(payload) != FIELDS:
+        raise ValueError("Encrypted evidence has an unsupported schema")
+    if type(payload["schema"]) is not int or payload["schema"] != 1:
+        raise ValueError("Unsupported encrypted evidence format version")
+    if payload["product"] not in ("grants", "procurement"):
+        raise ValueError("Invalid premium evidence product")
+    if type(payload["journal_present"]) is not bool or type(payload["review_event_count"]) is not int:
+        raise ValueError("Invalid encrypted evidence metadata")
+    if not (0 <= payload["review_event_count"] <= 20_000):
+        raise ValueError("Invalid review event count")
+    _name(payload["report_filename"], ".csv")
+    included = payload["journal_present"]
+    if included:
+        _name(payload["journal_filename"], ".jsonl")
+    elif (payload["journal_filename"] is not None or payload["journal_b64"] is not None or
+          payload["journal_sha256"] is not None or payload["review_event_count"]):
+        raise ValueError("Inconsistent encrypted journal metadata")
+    try:
+        data = base64.b64decode(payload["report_b64"], validate=True)
+        journal_data = base64.b64decode(payload["journal_b64"], validate=True) if included else None
+    except (ValueError, TypeError) as exc:
+        raise ValueError("Malformed encrypted evidence bytes") from exc
+    if len(data) > MAX_REPORT_BYTES or (journal_data is not None and len(journal_data) > MAX_JOURNAL_BYTES):
+        raise ValueError("Encrypted evidence exceeds safe restore limits")
+    if not isinstance(payload["report_sha256"], str) or payload["report_sha256"] != _sha(data):
+        raise ValueError("Encrypted report digest mismatch")
+    if included and (not isinstance(payload["journal_sha256"], str) or
+                     payload["journal_sha256"] != _sha(journal_data)):
+        raise ValueError("Encrypted review journal digest mismatch")
+    restored = destination / ("fvs-evidence-restored-" + datetime.now(timezone.utc).strftime(
+        "%Y%m%d-%H%M%S") + "-" + secrets.token_hex(5))
+    restored.mkdir(mode=0o700)  # exclusive; no folder overwrite
+    created = []
+    try:
+        report_file = restored / "exception-report.csv"
+        files = [(report_file, data)]
+        journal_file = restored / "exception-report.review.jsonl"
+        if included:
+            files.append((journal_file, journal_data))
+        metadata_file = restored / "sealed-evidence-manifest.json"
+        manifest = {k: payload[k] for k in (
+            "schema", "product", "sealed_utc", "report_filename", "report_sha256",
+            "journal_filename", "journal_sha256", "journal_present", "review_event_count")}
+        files.append((metadata_file, (json.dumps(manifest, sort_keys=True, indent=2) + "\n").encode("utf-8")))
+        for file, contents in files:
+            with file.open("xb") as stream:
+                created.append(file)
+                stream.write(contents)
+                stream.flush()
+                os.fsync(stream.fileno())
+        batch = read_cases(report_file, payload["product"])
+        if batch.report_sha256 != payload["report_sha256"]:
+            raise ValueError("Restored exception report no longer matches its evidence digest")
+        restored_events = read_journal(journal_file, batch)
+        if len(restored_events) != payload["review_event_count"]:
+            raise ValueError("Review journal event count does not match sealed evidence")
+    except Exception:
+        # Only remove files we ourselves created. Never remove unrelated data.
+        for file in reversed(created):
+            file.unlink(missing_ok=True)
+        restored.rmdir()
+        raise
+    return restored

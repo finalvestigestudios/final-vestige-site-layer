@@ -9,7 +9,7 @@ import csv
 import tempfile
 from pathlib import Path
 
-from . import engine, exception_review
+from . import engine, evidence_vault, exception_review
 
 
 def _csv(folder: Path, name: str, fields: tuple[str, ...], rows: list[tuple[str, ...]]) -> str:
@@ -111,6 +111,17 @@ def run_smoke(app_id: str) -> list[Path]:
             assert event["decision"] == "needs_evidence"
             register = exception_review.export_register(outputs[0], "grants", journal, root)
             assert _rows(register)[0]["review_state"] == "needs_evidence"
+            # Validate AES-GCM encrypted evidence backup inside the packaged EXE.
+            passphrase = "Synthetic smoke-only passphrase 2026!"
+            sealed = evidence_vault.seal_evidence(
+                outputs[0], "grants", journal, root, passphrase)
+            restored = evidence_vault.restore_evidence(sealed, root, passphrase)
+            restored_report = restored / "exception-report.csv"
+            restored_journal = restored / "exception-report.review.jsonl"
+            restored_batch = exception_review.read_cases(restored_report, "grants")
+            assert restored_batch.report_sha256 == batch.report_sha256
+            assert exception_review.read_journal(
+                restored_journal, restored_batch)[0]["event_hash"] == event["event_hash"]
         elif app_id == "procurement":
             po = _csv(root, "po.csv", ("po_number", "line", "quantity", "unit_price"), [
                 ("P1", "1", "4", "10")])
@@ -137,6 +148,17 @@ def run_smoke(app_id: str) -> list[Path]:
             register = exception_review.export_register(
                 outputs[0], "procurement", journal, root)
             assert _rows(register)[0]["review_state"] == "escalated"
+            # A second premium product must include the same secure archive flow.
+            passphrase = "Synthetic smoke-only passphrase 2026!"
+            sealed = evidence_vault.seal_evidence(
+                outputs[0], "procurement", journal, root, passphrase)
+            restored = evidence_vault.restore_evidence(sealed, root, passphrase)
+            restored_report = restored / "exception-report.csv"
+            restored_journal = restored / "exception-report.review.jsonl"
+            restored_batch = exception_review.read_cases(restored_report, "procurement")
+            assert restored_batch.report_sha256 == batch.report_sha256
+            assert exception_review.read_journal(
+                restored_journal, restored_batch)[0]["event_hash"] == event["event_hash"]
         else:
             raise ValueError("Unsupported application for smoke test: " + app_id)
 

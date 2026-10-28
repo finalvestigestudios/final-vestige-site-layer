@@ -85,6 +85,15 @@ CI launches **all six** EXEs as real processes after packaging, checks their exi
 - The review journal is **plaintext, unsigned and unencrypted**. Its SHA-256 chain can detect many accidental changes, but is **not tamper-proof**, does not authenticate people and requires stronger protections before real sensitive data may be used. A stale lock file after a crash requires operator investigation.
 - Unit regressions and packaged-EXE smoke paths are committed but **not yet verified on hosted Windows runners**. See [R7 review specification](docs/HUMAN_EXCEPTION_REVIEW_R7.md).
 
+
+## R8 — Authenticated encrypted copies of premium review evidence
+
+- Both premium review windows can now **Seal encrypted copy…** and **Restore encrypted copy…** using a user-entered, confirmed passphrase. The archive contains an authenticated AES-256-GCM encrypted snapshot of the exception CSV and (if present) its R7 human-review JSONL journal.
+- The archive uses scrypt key derivation with a random salt, random AES-GCM nonce, versioned header/authentication, SHA-256 content fingerprints, exact product identity and original event count. The program does not upload or store passwords. Restores require successful decryption and R7 report/journal verification and are placed in exclusive new folders; existing evidence is never overwritten.
+- Source and restored report/journal files remain **plaintext**; only the explicit `.fvault` backup is encrypted. This is not active encrypted storage, reviewer authentication, secure erase, or certification. Lost passphrases cannot be recovered.
+- Install `cryptography==46.0.4` to develop from source; Windows CI installs this dependency before running the complete test suite and packaging. Packaged premium smoke checks now include encrypted backup/restore flows.
+- The R8 module passed **12 isolated synthetic crypto/restore tests using a compatibility harness**, while full repository integration and packaged Windows smoke tests remain unverified due to hosted Actions runner failures. See [R8 encryption contract](docs/ENCRYPTED_EVIDENCE_R8.md).
+
 ## Release gates
 
 1. Independent sample and edge-case test suite (money, CSV injection, encoding, duplicates, malformed input).
