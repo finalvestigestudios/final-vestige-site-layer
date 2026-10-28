@@ -123,7 +123,7 @@ class AmountLexicalIntegrityR22(unittest.TestCase):
                                 [("PO1", "1", "2")])
         with self.assertRaises(ValueError):
             engine.procure_guard(orders, invoices, receipts, str(self.root))
-        self.assert_no_reports("procure-guard-*.csv")
+        self.assert_no_reports("procurement-three-way-*.csv")
 
 
 if __name__ == "__main__":
