@@ -188,6 +188,26 @@ class HumanReviewR7Tests(unittest.TestCase):
         self.assertTrue(row["original_flags"].startswith("'@"))
         self.assertTrue(row["rationale"].startswith("'="))
 
+    def test_export_collision_preserves_preexisting_file(self):
+        import unittest.mock as mock
+        stamp = "20261028-010203-111111"
+        existing = self.folder / ("review-register-" + stamp + ".csv")
+        existing.write_bytes(b"UNRELATED USER FILE")
+        with mock.patch.object(review, "datetime") as mocked:
+            mocked.now.return_value.strftime.return_value = stamp
+            with self.assertRaises(FileExistsError):
+                review.export_register(self.report, "grants", self.journal, self.folder)
+        self.assertEqual(existing.read_bytes(), b"UNRELATED USER FILE")
+
+    def test_procurement_partial_key_rejected(self):
+        path = self.folder / "procurement-missing-po.csv"
+        with path.open("w", encoding="utf-8", newline="") as stream:
+            writer = csv.writer(stream)
+            writer.writerow(("po", "line", "status"))
+            writer.writerow(("", "7", "variance"))
+        with self.assertRaisesRegex(ValueError, "Missing identifier"):
+            review.read_cases(path, "procurement")
+
     def test_ambiguous_csv_headers_rejected(self):
         self.write_report(("id", "Status", "status"), [("A", "matched", "variance")])
         with self.assertRaisesRegex(ValueError, "duplicate"):
