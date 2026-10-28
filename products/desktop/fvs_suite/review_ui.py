@@ -3,11 +3,12 @@ from __future__ import annotations
 
 import tkinter as tk
 from pathlib import Path
-from tkinter import filedialog, messagebox, ttk
+from tkinter import filedialog, messagebox, simpledialog, ttk
 
 from .exception_review import (
     DECISIONS, append_review, export_register, latest_states, read_cases,
 )
+from .evidence_vault import restore_evidence, seal_evidence
 
 
 def open_review_window(parent: tk.Misc, product: str, report_path: str | None = None):
@@ -149,11 +150,79 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         status_text.set(f"Human review register exported: {path.name}")
         messagebox.showinfo("Register created", str(path), parent=window)
 
+    def seal_archive():
+        batch = batch_holder[0]
+        if batch is None:
+            messagebox.showwarning("Missing report", "Open a premium exception report first.", parent=window)
+            return
+        target = filedialog.askdirectory(parent=window, title="Choose encrypted backup destination")
+        if not target:
+            return
+        secret = simpledialog.askstring(
+            "Encrypt evidence backup", "Enter a unique passphrase (at least 16 characters).\n"
+            "This password is not stored or recoverable.", parent=window, show="*")
+        if secret is None:
+            return
+        confirm = simpledialog.askstring(
+            "Confirm passphrase", "Re-enter the passphrase to prevent backup lockout.",
+            parent=window, show="*")
+        if confirm is None:
+            return
+        if secret != confirm:
+            messagebox.showerror("Passphrases differ", "No archive was created.", parent=window)
+            return
+        try:
+            path = seal_evidence(report_text.get(), product, journal_holder[0], target, secret)
+        except (ValueError, OSError, UnicodeError) as exc:
+            messagebox.showerror("Encrypted backup failed", str(exc), parent=window)
+            return
+        finally:
+            secret = confirm = None
+        status_text.set("Authenticated encrypted evidence copy created. Original files remain plaintext.")
+        messagebox.showinfo(
+            "Encrypted backup created",
+            f"Saved: {path.name}\n\nThe original report and journal are still UNENCRYPTED. "
+            "Protect or securely dispose of the originals using your organization's procedures. "
+            "Losing the passphrase means this backup cannot be recovered.",
+            parent=window)
+
+    def restore_archive():
+        source = filedialog.askopenfilename(
+            parent=window, title="Choose encrypted evidence backup",
+            filetypes=[("Final Vestige Evidence Vault", "*.fvault")])
+        if not source:
+            return
+        target = filedialog.askdirectory(parent=window, title="Choose restore destination")
+        if not target:
+            return
+        secret = simpledialog.askstring(
+            "Restore encrypted evidence", "Enter the archive passphrase.",
+            parent=window, show="*")
+        if secret is None:
+            return
+        try:
+            folder = restore_evidence(source, target, secret)
+        except (ValueError, OSError, UnicodeError) as exc:
+            messagebox.showerror("Restore failed", str(exc), parent=window)
+            return
+        finally:
+            secret = None
+        status_text.set(f"Restored evidence to new folder: {folder.name}. This restored copy is plaintext.")
+        messagebox.showinfo(
+            "Evidence restored",
+            f"Restored to: {folder}\n\nRestored report and journal are PLAINTEXT. "
+            "Open the report in its corresponding premium review window.",
+            parent=window)
+
     ttk.Button(button_row, text="Record human review", command=log_review).pack(
         side="left", padx=(0, 8))
     ttk.Button(button_row, text="Export review register…", command=export).pack(side="left")
+    ttk.Button(button_row, text="Seal encrypted copy…", command=seal_archive).pack(side="left", padx=8)
+    ttk.Button(button_row, text="Restore encrypted copy…", command=restore_archive).pack(side="left")
     ttk.Button(button_row, text="Close", command=window.destroy).pack(side="left", padx=8)
     window.bind("<Control-Return>", lambda _event: log_review())
+    window.bind("<Control-Shift-s>", lambda _event: seal_archive())
+    window.bind("<Control-Shift-o>", lambda _event: restore_archive())
     window.bind("<Escape>", lambda _event: window.destroy())
     if report_path:
         load_report(report_path)
