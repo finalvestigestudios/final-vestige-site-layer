@@ -73,6 +73,10 @@ jobs:
           & $installer.FullName /VERYSILENT /SUPPRESSMSGBOXES /NORESTART "/DIR=$dest"
           if ($LASTEXITCODE -ne 0) { throw "Install failed" }
           if (-not (Test-Path (Join-Path $dest "${{ matrix.exe }}.exe"))) { throw "Installed binary missing" }
+          if ("${{ matrix.slug }}" -eq "reimbursement-auditor") {
+            python "desktop-software/reimbursement-auditor/smoke_installed.py" (Join-Path $dest "ReimbursementAuditor.exe")
+            if ($LASTEXITCODE -ne 0) { throw "Reimbursement installed executable functional smoke failed" }
+          }
           & (Join-Path $dest "unins000.exe") /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
           if ($LASTEXITCODE -ne 0) { throw "Uninstaller failed" }
       - name: Record installer SHA-256
