@@ -1,6 +1,7 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 from packet_integrity import (
     attachment_inventory, ensure_fresh, hash_file, input_fingerprints,
     packet_snapshot, write_report,
@@ -75,6 +76,11 @@ class PacketIntegrityTests(unittest.TestCase):
     def test_reject_same_csv_file(self):
         with self.assertRaisesRegex(ValueError, 'different files'):
             input_fingerprints(self.claims, self.claims)
+
+    def test_attachment_byte_limit_aborts(self):
+        with patch('packet_integrity.MAX_ATTACHMENT_BYTES', 3):
+            with self.assertRaisesRegex(ValueError, 'scan limit'):
+                attachment_inventory(self.attachments, self.claims, self.support)
 
     def test_symlink_is_scan_error(self):
         if not hasattr(Path, 'symlink_to'):
