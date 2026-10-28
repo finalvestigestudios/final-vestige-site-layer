@@ -71,11 +71,20 @@ def outpath(folder,stem,suffix=".csv"):
     if not p.is_dir(): raise ValueError("Choose an existing output folder")
     return p/(stem+"-"+datetime.now().strftime("%Y%m%d-%H%M%S-%f")+suffix)
 
+def safe_cell(value):
+    """Neutralize spreadsheet formulas in user-controlled text fields."""
+    s=str(value)
+    trimmed=s.lstrip()
+    if trimmed.startswith(("=","+","@","\t","\r","\n")) or (trimmed.startswith("-") and not re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?",trimmed)):
+        return "\x27"+s
+    return s
+
 def save(folder,stem,fields,rows):
     p=outpath(folder,stem)
     with p.open("x",encoding="utf-8-sig",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
-        writer.writeheader();writer.writerows(rows)
+        writer.writeheader()
+        writer.writerows([{k:safe_cell(v) for k,v in row.items()} for row in rows])
     return p
 
 def manifest(folder,inputs,outputs):
