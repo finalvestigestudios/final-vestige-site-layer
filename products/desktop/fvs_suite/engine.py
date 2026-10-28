@@ -54,7 +54,11 @@ def table(path, required, optional=()):
     with p.open(encoding="utf-8-sig",newline="") as f:
         reader = csv.DictReader(f)
         if not reader.fieldnames: raise ValueError("Missing headers: "+p.name)
-        headers = {str(h).strip().lower().replace(" ","_"):h for h in reader.fieldnames if h}
+        # Duplicate normalized headings can hide conflicting financial columns.
+        normalized = [str(h).strip().lower().replace(" ", "_") for h in reader.fieldnames if h]
+        if "" in normalized or len(normalized) != len(reader.fieldnames) or len(normalized) != len(set(normalized)):
+            raise ValueError(f"{p.name}: blank or duplicate normalized CSV header")
+        headers = dict(zip(normalized, reader.fieldnames))
         cols = {}
         for field in (*required,*optional):
             cols[field] = next((headers[a] for a in ALIASES.get(field,(field,)) if a in headers),None)
@@ -112,7 +116,10 @@ def ledger_diff(left,right,folder):
         y=sum((money(r["amount"]) for r in b),Decimal(0))
         status=("missing_left" if not a else "missing_right" if not b else
                 "duplicate_id_review" if len(a)!=1 or len(b)!=1 else
-                "variance" if x!=y else "matched")
+                ";".join(filter(None, [
+                    "normalized_id_review" if a[0]["id"].strip().casefold()!=b[0]["id"].strip().casefold() else "",
+                    "variance" if x!=y else ""
+                ])) or "matched")
         rows.append({"id":k,"status":status,"left_amount":dollars(x),"right_amount":dollars(y),
                      "difference":dollars(x-y),"left_rows":";".join(r["row"] for r in a),
                      "right_rows":";".join(r["row"] for r in b)})
@@ -197,7 +204,10 @@ def grant_audit(claims,ledger,budgets,folder):
         claimed[program]+=x
         status=("missing_claim" if not a else "missing_ledger" if not b else
                 "duplicate_id_review" if len(a)!=1 or len(b)!=1 else
-                "variance" if x!=y else "matched")
+                ";".join(filter(None, [
+                    "normalized_id_review" if a[0]["id"].strip().casefold()!=b[0]["id"].strip().casefold() else "",
+                    "variance" if x!=y else ""
+                ])) or "matched")
         checks.append({"program":program,"id":id_,"status":status,"claim_amount":dollars(x),
                        "ledger_amount":dollars(y),"difference":dollars(x-y),
                        "claim_rows":";".join(r["row"] for r in a),

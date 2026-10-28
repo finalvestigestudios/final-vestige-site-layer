@@ -1,4 +1,5 @@
-from fvs_suite.app import run
+"""GrantAuditStudioPro offline Windows desktop entry point."""
+from fvs_suite.launcher import launch
 
 if __name__ == "__main__":
-    run("grants")
+    launch("grants")
