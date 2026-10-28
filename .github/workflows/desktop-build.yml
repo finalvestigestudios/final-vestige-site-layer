@@ -10,6 +10,40 @@ permissions:
   contents: read
 
 jobs:
+  # Independent runner pool: even when Windows fails before step 1, we can
+  # obtain real source-suite regression and six-engine smoke evidence on Linux.
+  # This job NEVER validates or uploads Windows executables.
+  source-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: products/desktop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned local evidence crypto dependency
+        run: python -m pip install "cryptography==46.0.4"
+      - name: Run complete cross-platform desktop regression suite
+        run: python -m unittest discover -s products/desktop/tests -v
+      - name: Verify recent provenance/parser checks with optimized Python
+        run: |
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_physical_provenance_r19.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_premium_review_csv_r20.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_source_smoke_gate_r21.py' -v
+      - name: Execute six synthetic source engines and inventory their source hashes
+        run: |
+          mkdir -p "$RUNNER_TEMP/fvs-source"
+          python products/desktop/scripts/source_smoke_gate.py --report "$RUNNER_TEMP/fvs-source/source-smoke.json"
+      - name: Upload internal source-only evidence (never binaries)
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-vestige-desktop-source-only
+          path: ${{ runner.temp }}/fvs-source/source-smoke.json
+          if-no-files-found: error
+          retention-days: 7
+
   windows-build:
     runs-on: windows-latest
     timeout-minutes: 35
