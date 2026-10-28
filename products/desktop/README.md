@@ -40,6 +40,10 @@ The six GUI entrypoints live under products/desktop/launchers. Windows CI uses P
 - A dense input producing more than 100,000 candidate review pairs is explicitly rejected **before saving any report**. Narrow the input by vendor/date; reports are never silently truncated.
 - See [Invoice Scale R4 specification](docs/INVOICE_SCALE_R4.md) for complexity, test cases, scope and limitations.
 
+## R10 optimization-safe smoke checks and mutation detection
+
+All 30 packaged-engine smoke invariants now use explicit runtime failures rather than Python `assert`, which is discarded by optimized Python (`-O`). The candidate verifier re-hashes all six executables and its checksum inventory before and after every smoke invocation, rejecting persistent file changes even if a program exits zero. Smoke stdout and stderr are discarded rather than buffered without bounds. Added adversarial synthetic tests and a CI `python -O` test step. See [R10 security and verification notes](docs/SMOKE_INTEGRITY_R10.md). **This remains a development-only verification mechanism, not approval to distribute.**
+
 ## Packaged-executable smoke verification (internal CI)
 
 Each portable Windows executable accepts `--smoke-test`. It runs its actual core workflow against disposable **synthetic test fixtures** under the system's temporary directory, validates a known exception or diff, deletes temporary data, and exits with status 0 only if all checks pass. GUI is never initialized and no network connection is used.

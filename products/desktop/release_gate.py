@@ -94,6 +94,7 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
         raise GateFailure("Binary folder has missing or unexpected executables: " +
                           repr(sorted(actual ^ set(EXPECTED))))
     checksums = _inventory(root)
+    initial_inventory_sha = _sha(root / "SHA256SUMS.txt")
     records = []
     # Verify EVERY binary before executing ANY, so a bad checksum cannot leave
     # an earlier unchecked binary executed in the same verification attempt.
@@ -106,6 +107,19 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
             raise GateFailure(f"{name}: SHA256 does not match inventory")
         records.append({"name": name, "sha256": actual_hash, "pe_machine": "AMD64",
                         "smoke": "not_run"})
+    def recheck_artifacts(phase: str) -> None:
+        """Catch changed binaries/inventory before and after each smoke execution."""
+        inventory_file = root / "SHA256SUMS.txt"
+        if (_sha(inventory_file) != initial_inventory_sha
+                or _inventory(root) != checksums):
+            raise GateFailure("Checksum inventory changed during " + phase)
+        for record in records:
+            candidate = root / record["name"]
+            _regular(candidate)
+            if _sha(candidate) != record["sha256"]:
+                raise GateFailure(record["name"] + ": executable changed during " + phase)
+
+    recheck_artifacts("initial verification")
     if smoke:
         if (platform_name or os.name) != "nt":
             raise GateFailure("Packaged EXE smoke testing requires actual Windows x64")
@@ -113,21 +127,26 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
             raise GateFailure("Smoke timeout must be between 1 and 600 seconds")
         launch = runner or subprocess.run
         for record in records:
+            recheck_artifacts("pre-smoke")
             exe = root / record["name"]
             started = time.monotonic()
             try:
                 result = launch([str(exe.resolve()), "--smoke-test"],
                                 cwd=str(root.resolve()), timeout=timeout,
                                 check=False, stdin=subprocess.DEVNULL,
-                                capture_output=True)
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             except subprocess.TimeoutExpired as exc:
                 raise GateFailure(f"{record['name']}: smoke timed out") from exc
             except OSError as exc:
                 raise GateFailure(f"{record['name']}: could not execute packaged EXE") from exc
             if result.returncode != 0:
                 raise GateFailure(f"{record['name']}: smoke failed with exit code {result.returncode}")
+            # A passing exit code is insufficient if a process modifies its
+            # own image, another app's image, or the checksum inventory.
+            recheck_artifacts("post-smoke")
             record["smoke"] = "passed"
             record["seconds"] = round(time.monotonic() - started, 3)
+    recheck_artifacts("final verification")
     return {"schema": 1, "status": "windows_smoke_passed" if smoke else "integrity_only",
             "release_authorized": False, "premium_entitlement_verified": False,
             "codesigning_verified": False, "malware_scan_verified": False,
