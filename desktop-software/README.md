@@ -83,6 +83,12 @@ Run all suites from repository root (no third-party test library required):
 
 - FileProof compares recorded SHA-256 hashes and also flags added regular files, untracked links, and scan errors. A clean result requires all checks to pass. It is not a backup/recovery application, does not cover empty directory creation, and its unsigned manifests must be stored securely to prevent attackers from replacing them.
 - Data Import Doctor diagnoses CSV issues, not guaranteed import compatibility.
+  The isolated v0.2 hardening branch adds SHA-256 input/rule fingerprints,
+  safer schema validation, real CSV physical-line references, fail-closed
+  incomplete reviews, non-destructive exports, a nonblocking GUI, CLI exit
+  codes, and a fictional example. See data-import-doctor/README.md. Its
+  23 newly added unit/CLI tests passed in a local Python run, not in GitHub
+  Actions. No Windows installer or signed binary has passed acceptance.
 - Packet Preflight checks folder metadata against a user-provided checklist,
   not application or regulatory eligibility.
 - Renewal Radar is a local tracker. ICS exports fold long Unicode lines to the iCalendar standard and handle date boundaries. It does not run background notifications:
