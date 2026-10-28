@@ -25,7 +25,8 @@ ALIASES = {
 MAX_ROWS = 200_000
 CENT = Decimal("0.01")
 
-def money(value):
+def _exact_amount(value):
+    """Parse accounting amounts exactly; never silently round unit costs."""
     raw = str(value).strip()
     if not raw: raise ValueError("Missing amount")
     negative = raw.startswith("(") and raw.endswith(")")
@@ -34,7 +35,19 @@ def money(value):
     except InvalidOperation as exc: raise ValueError("Invalid amount: "+str(value)) from exc
     if not number.is_finite() or abs(number) > Decimal("1000000000000"):
         raise ValueError("Nonfinite or out-of-range amount")
-    return (-number if negative else number).quantize(CENT, rounding=ROUND_HALF_UP)
+    return -number if negative else number
+
+
+def money(value):
+    return _exact_amount(value).quantize(CENT, rounding=ROUND_HALF_UP)
+
+
+def unit_cost(value):
+    """Unit prices may carry sub-cent precision; totals round only on display."""
+    amount = _exact_amount(value)
+    if amount.normalize().as_tuple().exponent < -8:
+        raise ValueError("Unit price precision exceeds eight decimal places")
+    return amount
 
 def qty(value):
     try: n = Decimal(str(value).strip().replace(",",""))
@@ -231,7 +244,7 @@ def grant_audit(claims,ledger,budgets,folder):
         total=claimed[program];limit=limits.get(program)
         status="missing_budget" if limit is None else "over_budget_review" if total>limit else "within_budget"
         if normalized_collision(program_sources[program],"program"):
-            status+=";normalized_budget_program_review"
+            status="normalized_budget_program_review;"+status
         budget_checks.append({"program":program,"claimed":dollars(total),
                               "budget":"" if limit is None else dollars(limit),"status":status,
                               "source_programs":labels_for_report(program_sources[program],"program")})
@@ -260,10 +273,10 @@ def procure_guard(po,invoices,receipts,folder):
         if normalized_collision(source_records,"line"):
             flags.append("normalized_line_key_review")
         po_qty=qty(a[0]["quantity"]) if len(a)==1 else Decimal(0)
-        po_price=money(a[0]["unit_price"]) if len(a)==1 else Decimal(0)
+        po_price=unit_cost(a[0]["unit_price"]) if len(a)==1 else Decimal(0)
         inv_qty=sum((qty(r["quantity"]) for r in b),Decimal(0))
         rec_qty=sum((qty(r["quantity"]) for r in c),Decimal(0))
-        inv_prices=[(qty(r["quantity"]),money(r["unit_price"])) for r in b]
+        inv_prices=[(qty(r["quantity"]),unit_cost(r["unit_price"])) for r in b]
         inv_total=sum((amount*price for amount,price in inv_prices),Decimal(0))
         if len(b)>1 and len(set(inv_prices))<len(b):
             flags.append("possible_duplicate_invoice_line")
@@ -279,7 +292,7 @@ def procure_guard(po,invoices,receipts,folder):
                     any(price_exceeds_tolerance(price,po_price) for _amount,price in inv_prices)):
                 flags.append("price_variance_above_2pct")
         checks.append({"po":po_key,"line":line,"po_qty":str(po_qty),"invoiced_qty":str(inv_qty),
-                       "received_qty":str(rec_qty),"po_unit_price":dollars(po_price),
+                       "received_qty":str(rec_qty),"po_unit_price":format(po_price,"f"),
                        "invoice_total":dollars(inv_total),"status":";".join(flags) or "matched",
                        "po_rows":";".join(r["row"] for r in a),
                        "invoice_rows":";".join(r["row"] for r in b),
