@@ -1,6 +1,6 @@
 #define AppName "Reimbursement Auditor"
 #define AppExe "ReimbursementAuditor.exe"
-#define AppVersion "0.1.0"
+#define AppVersion "0.2.0"
 [Setup]
 AppId={{8239DA45-D392-4E10-A3C0-97AAE1645106}
 AppName={#AppName}

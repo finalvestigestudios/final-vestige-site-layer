@@ -13,8 +13,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 from inventory_diff import inventory_additions
+from manifest_auth import (authenticate_manifest, verify_authentication,
+                           load_manifest, save_new_manifest, read_passphrase_file)
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 SCHEMA = "finalvestige.fileproof.v1"
 CHUNK = 1024 * 1024
 
@@ -59,24 +61,16 @@ def collect(root: Path, exclude: Path | None = None) -> dict:
     }
 
 
-def create_manifest(root: Path, destination: Path) -> dict:
-    destination = destination.resolve()
-    if destination.exists():
+def create_manifest(root: Path, destination: Path,
+                    passphrase: str | None = None) -> dict:
+    # Do not follow existing symlinks at the output path.
+    destination = Path(os.path.abspath(destination))
+    if destination.exists() or destination.is_symlink():
         raise FileExistsError("Refusing to overwrite an existing manifest.")
     manifest = collect(root, exclude=destination)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    # Write atomically, never modify scanned files.
-    temp = destination.with_name(destination.name + ".tmp")
-    if temp.exists():
-        raise FileExistsError("Temporary output already exists.")
-    try:
-        with temp.open("x", encoding="utf-8", newline="\n") as stream:
-            json.dump(manifest, stream, indent=2, ensure_ascii=False)
-            stream.write("\n")
-        temp.replace(destination)
-    finally:
-        if temp.exists():
-            temp.unlink()
+    if passphrase is not None:
+        manifest = authenticate_manifest(manifest, passphrase)
+    save_new_manifest(destination, manifest)
     return manifest
 
 
@@ -92,13 +86,14 @@ def safe_path(root: Path, relative: str) -> Path:
     return result
 
 
-def verify_manifest(root: Path, manifest_file: Path) -> dict:
+def verify_manifest(root: Path, manifest_file: Path,
+                    passphrase: str | None = None) -> dict:
     root = root.resolve(strict=True)
     if not root.is_dir():
         raise ValueError("Select a folder to verify.")
     manifest_file = manifest_file.resolve(strict=True)
-    with manifest_file.open("r", encoding="utf-8") as stream:
-        manifest = json.load(stream)
+    manifest = load_manifest(manifest_file)
+    authenticated = verify_authentication(manifest, passphrase)
     if not isinstance(manifest, dict) or manifest.get("schema") != SCHEMA:
         raise ValueError("Not a supported FileProof manifest.")
     expected = manifest.get("files")
@@ -145,6 +140,7 @@ def verify_manifest(root: Path, manifest_file: Path) -> dict:
     additions, traversal_errors = inventory_additions(root, expected_paths, manifest_file)
     return {
         "total": len(results),
+        "authenticated": authenticated,
         "ok": sum(item["status"] == "OK" for item in results),
         "added": sum(item["status"] == "ADDED" for item in additions),
         "untracked_links": sum(item["status"] == "UNTRACKED_LINK" for item in additions),
@@ -155,7 +151,7 @@ def verify_manifest(root: Path, manifest_file: Path) -> dict:
 
 def gui() -> None:
     import tkinter as tk
-    from tkinter import filedialog, messagebox, ttk
+    from tkinter import filedialog, messagebox, simpledialog, ttk
     app = tk.Tk()
     app.title(f"FileProof {VERSION} · Final Vestige Studios")
     app.geometry("760x520")
@@ -189,10 +185,30 @@ def gui() -> None:
                                                  filetypes=[("FileProof manifest", "*.json")])
         if not filename:
             return
+        passphrase = None
+        if messagebox.askyesno("Authenticated manifest?",
+                               "Protect this manifest with a passphrase?\n"
+                               "Keep it safely: there is no recovery or reset."):
+            passphrase = simpledialog.askstring("Create passphrase",
+                                                "Unique passphrase (at least 12 characters):",
+                                                parent=app, show="*")
+            if passphrase is None:
+                return
+            repeat = simpledialog.askstring("Confirm passphrase", "Re-enter the passphrase:",
+                                            parent=app, show="*")
+            if repeat is None:
+                return
+            if passphrase != repeat or len(passphrase) < 12:
+                messagebox.showerror("Passphrase", "Passphrases must match and have at least 12 characters.")
+                return
         try:
-            result = create_manifest(Path(root_var.get()), Path(filename))
-            status_var.set(f"Manifest created: {len(result['files'])} files; {len(result['errors'])} unreadable.")
-            show(json.dumps({"saved_to": filename, "files": len(result["files"]), "errors": result["errors"]}, indent=2))
+            result = create_manifest(Path(root_var.get()), Path(filename), passphrase=passphrase)
+            status_var.set(f"Recorded {len(result['files'])} files; {len(result['errors'])} scan errors. "
+                           + ("AUTHENTICATED" if passphrase is not None else "UNAUTHENTICATED"))
+            show(json.dumps({"saved_to": filename, "files": len(result["files"]),
+                             "errors": result["errors"],
+                             "authentication": "passphrase protected" if passphrase is not None
+                             else "unsigned"}, indent=2))
         except Exception as exc:
             messagebox.showerror("Could not create manifest", str(exc))
 
@@ -204,9 +220,21 @@ def gui() -> None:
         if not filename:
             return
         try:
-            result = verify_manifest(Path(root_var.get()), Path(filename))
-            status_var.set(f"Verified {result['ok']} of {result['total']} recorded files; {result['added']} added; {result['untracked_links']} untracked links; {len(result['scan_errors'])} scan errors.")
-            show("\n".join(f"{x['status']:10} {x['path']}" for x in result["results"]) or "No files in manifest.")
+            parsed = load_manifest(Path(filename))
+            passphrase = None
+            if parsed.get("authentication") is not None:
+                passphrase = simpledialog.askstring("Verify authenticated manifest",
+                                                    "Enter the original manifest passphrase:",
+                                                    parent=app, show="*")
+                if passphrase is None:
+                    return
+            result = verify_manifest(Path(root_var.get()), Path(filename), passphrase=passphrase)
+            label = "AUTHENTICATED" if result["authenticated"] else "UNAUTHENTICATED (unsigned manifest)"
+            status_var.set(f"{label}. {result['ok']} of {result['total']} unchanged; "
+                           f"{result['added']} added; {result['untracked_links']} untracked links; "
+                           f"{len(result['scan_errors'])} scan errors.")
+            show(label + "\n" + ("\n".join(f"{x['status']:10} {x['path']}" for x in result["results"])
+                                 or "No files in manifest."))
         except Exception as exc:
             messagebox.showerror("Could not verify manifest", str(exc))
 
@@ -220,25 +248,34 @@ def gui() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Offline folder integrity manifests")
     commands = parser.add_subparsers(dest="command")
-    create = commands.add_parser("create")
+    create = commands.add_parser("create", help="Create a folder manifest")
     create.add_argument("folder")
     create.add_argument("manifest")
-    verify = commands.add_parser("verify")
+    create.add_argument("--passphrase-file", metavar="PATH",
+                        help="Read secret from local file; never put a passphrase on the command line.")
+    verify = commands.add_parser("verify", help="Verify a folder against a saved manifest")
     verify.add_argument("folder")
     verify.add_argument("manifest")
+    verify.add_argument("--passphrase-file", metavar="PATH",
+                        help="Require passphrase authentication and read the secret from a local file.")
     args = parser.parse_args()
     if args.command is None:
         gui()
         return 0
     try:
+        passphrase = read_passphrase_file(args.passphrase_file)
         if args.command == "create":
-            result = create_manifest(Path(args.folder), Path(args.manifest))
-            print(f"Recorded {len(result['files'])} files; errors: {len(result['errors'])}")
+            result = create_manifest(Path(args.folder), Path(args.manifest), passphrase=passphrase)
+            print(f"Recorded {len(result['files'])} files; errors: {len(result['errors'])}; "
+                  f"authenticated: {passphrase is not None}")
             return 2 if result["errors"] else 0
-        result = verify_manifest(Path(args.folder), Path(args.manifest))
+        result = verify_manifest(Path(args.folder), Path(args.manifest), passphrase=passphrase)
+        print("Manifest authentication: VERIFIED" if result["authenticated"]
+              else "Manifest authentication: NONE (unsigned).")
         for entry in result["results"]:
             print(f"{entry['status']:10} {entry['path']}")
-        print(f"{result['ok']}/{result['total']} unchanged; {result['added']} added; {result['untracked_links']} untracked links; {len(result['scan_errors'])} scan errors")
+        print(f"{result['ok']}/{result['total']} unchanged; {result['added']} added; "
+              f"{result['untracked_links']} untracked links; {len(result['scan_errors'])} scan errors")
         return 0 if (result["ok"] == result["total"] and result["added"] == 0
                      and result["untracked_links"] == 0 and not result["scan_errors"]) else 1
     except (OSError, ValueError, json.JSONDecodeError) as exc:

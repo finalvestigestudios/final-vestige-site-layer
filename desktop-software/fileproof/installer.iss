@@ -1,5 +1,5 @@
 #define AppName "FileProof"
-#define AppVersion "0.1.0"
+#define AppVersion "0.2.0"
 #define AppPublisher "Final Vestige Studios"
 [Setup]
 AppId={{F7D3B4A2-AB45-45A9-9B6C-F27A540D8720}
@@ -19,6 +19,7 @@ ArchitecturesInstallIn64BitMode=x64compatible
 UninstallDisplayIcon={app}\\FileProof.exe
 [Files]
 Source: "..\\..\\dist\\FileProof.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\\..\\dist\\FileProofCLI.exe"; DestDir: "{app}"; Flags: ignoreversion
 [Icons]
 Name: "{group}\\FileProof"; Filename: "{app}\\FileProof.exe"
 Name: "{autodesktop}\\FileProof"; Filename: "{app}\\FileProof.exe"; Tasks: desktopicon

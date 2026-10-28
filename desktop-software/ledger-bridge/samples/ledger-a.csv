@@ -1,0 +1,7 @@
+date,amount,reference,description,currency
+2026-10-01,125.00,INV-1048,Office supplies,USD
+2026-10-02,340.00,INV-1049,Maintenance,USD
+2026-10-02,17.00,,Service charge,USD
+2026-10-03,75.00,REF-X,Consulting installment 1,USD
+2026-10-04,75.00,REF-X,Consulting installment 2,USD
+2026-10-05,99.00,UNPAID-70,Open transaction,USD

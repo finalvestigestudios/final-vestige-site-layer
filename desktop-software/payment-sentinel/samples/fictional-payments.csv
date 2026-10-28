@@ -1,0 +1,7 @@
+Vendor,Invoice Number,Payment Amount,Payment Date,Bank Account
+Acme Media,INV-100,125.00,2026-10-01,ACCOUNT-A
+Acme Media,INV100,125.00,2026-10-02,ACCOUNT-A
+Acme Media,INV-200,125.00,2026-10-03,ACCOUNT-B
+Acme Media,INV-201,NaN,2026-10-04,ACCOUNT-B
+Zenith Facilities,ZN-001,450.00,2026-10-01,ACCOUNT-C
+Zenith Facilities,ZN-002,460.00,2026-10-07,ACCOUNT-C

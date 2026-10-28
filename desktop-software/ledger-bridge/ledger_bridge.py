@@ -9,10 +9,11 @@ from __future__ import annotations
 import argparse
 import csv
 import html
+import hashlib
 import json
 import re
 import sys
-from collections import defaultdict, deque
+from collections import defaultdict
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -29,12 +30,14 @@ FIELDS = {
 }
 
 
-def parse_money(raw: str) -> Decimal:
+def parse_money(raw: str, allow_blank: bool = False) -> Decimal:
     raw = (raw or "").strip()
     is_negative = raw.startswith("(") and raw.endswith(")")
     raw = raw.strip("()").replace(",", "").replace("$", "").strip()
     if not raw:
-        return Decimal("0")
+        if allow_blank:
+            return Decimal("0")
+        raise ValueError("Amount cannot be blank; use 0 explicitly.")
     try:
         result = Decimal(raw)
     except InvalidOperation as exc:
@@ -55,6 +58,15 @@ def parse_day(raw: str) -> date:
 
 def normalized_reference(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", (value or "").casefold())
+
+
+def sha256_file(path: Path) -> str:
+    """Fingerprint the exact input file without loading its contents into RAM."""
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def read_ledger(source: Path, flip_sign: bool = False) -> tuple[list[dict], list[dict]]:
@@ -87,7 +99,12 @@ def read_ledger(source: Path, flip_sign: bool = False) -> tuple[list[dict], list
                 if "amount" in index:
                     amount = parse_money(row.get(index["amount"], ""))
                 else:
-                    amount = parse_money(row.get(index["credit"], "")) - parse_money(row.get(index["debit"], ""))
+                    credit_raw = row.get(index["credit"], "") or ""
+                    debit_raw = row.get(index["debit"], "") or ""
+                    if not credit_raw.strip() and not debit_raw.strip():
+                        raise ValueError("Both debit and credit are blank.")
+                    amount = (parse_money(credit_raw, allow_blank=True) -
+                              parse_money(debit_raw, allow_blank=True))
                 amount = -amount if flip_sign else amount
                 ccy = (row.get(index.get("currency", ""), "USD") or "USD").strip().upper()
                 if not re.fullmatch(r"[A-Z]{3}", ccy):
@@ -108,8 +125,14 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
               flip_right_sign: bool = False) -> dict:
     if not isinstance(date_tolerance, int) or not 0 <= date_tolerance <= 31:
         raise ValueError("Date tolerance must be an integer from 0 to 31 days.")
+    if left.samefile(right):
+        raise ValueError("Choose two distinct ledger files; both inputs refer to the same file.")
+    input_sha256 = {"left": sha256_file(left), "right": sha256_file(right)}
     lhs, errors_left = read_ledger(left)
     rhs, errors_right = read_ledger(right, flip_sign=flip_right_sign)
+    if (sha256_file(left) != input_sha256["left"] or
+            sha256_file(right) != input_sha256["right"]):
+        raise ValueError("An input ledger changed during processing; retry using stable copies.")
     used_left: set[int] = set()
     used_right: set[int] = set()
     matches: list[dict] = []
@@ -123,20 +146,37 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
             "currency": a["currency"], "date_difference_days": abs((a["date"] - b["date"]).days),
         })
 
-    exact_right: dict[tuple[str, str, Decimal], deque[dict]] = defaultdict(deque)
+    # Multiplicity matters: FIFO-pairing duplicate reference/amount keys would
+    # invent a pairing without evidence. Quarantine those groups for review.
+    exact_left: dict[tuple[str, str, Decimal], list[dict]] = defaultdict(list)
+    exact_right: dict[tuple[str, str, Decimal], list[dict]] = defaultdict(list)
+    for a in lhs:
+        if a["normalized_reference"]:
+            exact_left[(a["currency"], a["normalized_reference"], a["amount"])].append(a)
     for b in rhs:
         if b["normalized_reference"]:
-            exact_right[b["currency"], b["normalized_reference"], b["amount"]].append(b)
-    for a in lhs:
-        if not a["normalized_reference"]:
+            exact_right[(b["currency"], b["normalized_reference"], b["amount"])].append(b)
+    blocked_left: set[int] = set()
+    blocked_right: set[int] = set()
+    ambiguous_reference_groups: list[dict] = []
+    for key, left_group in exact_left.items():
+        right_group = exact_right.get(key, [])
+        if not right_group:
             continue
-        key = (a["currency"], a["normalized_reference"], a["amount"])
-        queue = exact_right[key]
-        if queue:
-            match(a, queue.popleft(), "EXACT_REFERENCE_AND_AMOUNT")
+        if len(left_group) == len(right_group) == 1:
+            match(left_group[0], right_group[0], "EXACT_REFERENCE_AND_AMOUNT")
+        else:
+            blocked_left.update(x["row"] for x in left_group)
+            blocked_right.update(x["row"] for x in right_group)
+            ambiguous_reference_groups.append({
+                "currency": key[0], "reference": key[1], "amount": str(key[2]),
+                "left_rows": sorted(x["row"] for x in left_group),
+                "right_rows": sorted(x["row"] for x in right_group),
+                "reason": "Duplicate reference/amount identity; pairing requires human review.",
+            })
 
-    remaining_left = [a for a in lhs if a["row"] not in used_left]
-    remaining_right = [b for b in rhs if b["row"] not in used_right]
+    remaining_left = [a for a in lhs if a["row"] not in used_left and a["row"] not in blocked_left]
+    remaining_right = [b for b in rhs if b["row"] not in used_right and b["row"] not in blocked_right]
     candidates_left: dict[int, list[int]] = defaultdict(list)
     candidates_right: dict[int, list[int]] = defaultdict(list)
     indexed_right: dict[tuple[str, Decimal], list[dict]] = defaultdict(list)
@@ -153,8 +193,14 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
         if len(options) == 1 and len(candidates_right[options[0]]) == 1:
             match(a, by_right_row[options[0]], "UNIQUE_AMOUNT_AND_DATE")
 
-    ambiguous_left = sorted(row for row, options in candidates_left.items()
-                            if len(options) > 1 or (len(options) == 1 and len(candidates_right[options[0]]) > 1))
+    ambiguous_left = sorted(blocked_left | {
+        row for row, options in candidates_left.items()
+        if len(options) > 1 or (len(options) == 1 and len(candidates_right[options[0]]) > 1)
+    })
+    ambiguous_right = sorted(blocked_right | {
+        row for row, options in candidates_right.items()
+        if len(options) > 1 or (len(options) == 1 and len(candidates_left[options[0]]) > 1)
+    })
     unmatched_left = [
         {"row": a["row"], "date": a["date"].isoformat(), "amount": str(a["amount"]),
          "currency": a["currency"], "reference": a["reference"]}
@@ -171,41 +217,146 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
         for item in records:
             values[item["currency"]] += item["amount"]
         totals[side] = {key: str(value) for key, value in sorted(values.items())}
+    suggested = [m for m in matches if m["basis"] == "UNIQUE_AMOUNT_AND_DATE"]
+    distant_exact = [m for m in matches if (
+        m["basis"] == "EXACT_REFERENCE_AND_AMOUNT" and
+        m["date_difference_days"] > date_tolerance
+    )]
+    warnings = []
+    if suggested:
+        warnings.append({
+            "code": "AMOUNT_DATE_SUGGESTIONS", "count": len(suggested),
+            "message": "Amount/date matches are suggestions requiring verification.",
+        })
+    if distant_exact:
+        warnings.append({
+            "code": "EXACT_REFERENCE_DATE_GAP", "count": len(distant_exact),
+            "left_rows": sorted(m["left_row"] for m in distant_exact),
+            "message": "Exact-reference entries have dates beyond the tolerance window.",
+        })
+    if not lhs or not rhs:
+        warnings.append({
+            "code": "EMPTY_LEDGER", "message": "At least one input has no valid transactions.",
+        })
     report = {
         "tool": "Final Vestige Ledger Bridge", "version": VERSION,
         "inputs": {"left": left.name, "right": right.name},
+        "input_sha256": input_sha256,
         "settings": {"date_tolerance_days": date_tolerance, "flip_right_sign": flip_right_sign},
         "counts": {"left": len(lhs), "right": len(rhs), "matched": len(matches),
+                   "suggested_matches": len(suggested),
                    "unmatched_left": len(unmatched_left), "unmatched_right": len(unmatched_right),
                    "errors_left": len(errors_left), "errors_right": len(errors_right)},
         "totals_by_currency": totals,
         "matches": sorted(matches, key=lambda v: v["left_row"]),
         "unmatched_left": unmatched_left, "unmatched_right": unmatched_right,
         "ambiguous_left_rows": ambiguous_left,
+        "ambiguous_right_rows": ambiguous_right,
+        "ambiguous_reference_groups": ambiguous_reference_groups,
+        "warnings": warnings,
         "input_errors": {"left": errors_left, "right": errors_right},
-        "status": "RECONCILED" if not (unmatched_left or unmatched_right or errors_left or errors_right) else "REVIEW",
-        "disclaimer": "Unique amount/date matches are suggestions. Verify each match with original records.",
+        "status": "RECONCILED" if not (
+            unmatched_left or unmatched_right or errors_left or errors_right or
+            ambiguous_reference_groups or warnings
+        ) else "REVIEW",
+        "disclaimer": "Amount/date matches are suggestions, not confirmed reconciliation. "
+                      "Resolve warnings and inspect original statements before approving.",
     }
     return report
 
 
 def render_html(report: dict) -> str:
-    def row(items: list[dict], side: str) -> str:
-        return "".join("<tr><td>" + html.escape(side) + "</td><td>" + str(x["row"]) +
-                       "</td><td>" + html.escape(x["date"]) + "</td><td>" +
-                       html.escape(x["amount"] + " " + x["currency"]) + "</td><td>" +
-                       html.escape(x["reference"]) + "</td></tr>" for x in items)
-    return ("<!doctype html><html lang='en'><meta charset='utf-8'><title>Ledger Bridge</title>"
-            "<style>body{font:16px system-ui;max-width:1100px;margin:3rem auto;padding:1rem}"
-            "table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:.7rem;text-align:left}</style>"
-            "<h1>Ledger Bridge review</h1><p>" + html.escape(report["disclaimer"]) + "</p>"
-            "<pre>" + html.escape(json.dumps({"status": report["status"], "counts": report["counts"],
-                "totals_by_currency": report["totals_by_currency"]}, indent=2)) + "</pre>"
-            "<h2>Unmatched transactions</h2><table><thead><tr><th>Ledger</th><th>Row</th>"
-            "<th>Date</th><th>Amount</th><th>Reference</th></tr></thead><tbody>" +
-            row(report["unmatched_left"], "Left") + row(report["unmatched_right"], "Right") +
-            "</tbody></table></html>")
+    """Self-contained review report that never hides tentative matches.
 
+    Escape all data from imported ledgers, including references, row labels,
+    warning text, and failure descriptions. This file is safe to open offline.
+    """
+    def esc(value: object) -> str:
+        return html.escape(str(value), quote=True)
+
+    def table(headers: list[str], rows: list[list[object]]) -> str:
+        head = "".join("<th>" + esc(name) + "</th>" for name in headers)
+        body = "".join(
+            "<tr>" + "".join("<td>" + esc(value) + "</td>" for value in row) + "</tr>"
+            for row in rows
+        )
+        if not rows:
+            body = '<tr><td colspan="' + str(len(headers)) + '">None</td></tr>'
+        return "<table><thead><tr>" + head + "</tr></thead><tbody>" + body + "</tbody></table>"
+
+    unmatched_rows = []
+    for side in ("left", "right"):
+        for item in report.get("unmatched_" + side, []):
+            unmatched_rows.append([
+                side.title(), item.get("row", ""), item.get("date", ""),
+                str(item.get("amount", "")) + " " + str(item.get("currency", "")),
+                item.get("reference", ""),
+            ])
+
+    match_rows = [
+        [
+            item.get("left_row", ""), item.get("right_row", ""),
+            item.get("basis", ""), item.get("amount", ""),
+            item.get("currency", ""), item.get("date_difference_days", ""),
+            "REVIEW" if item.get("basis") == "UNIQUE_AMOUNT_AND_DATE" else
+            ("CHECK DATE" if item.get("date_difference_days", 0) >
+             report.get("settings", {}).get("date_tolerance_days", 3) else "EXACT REF"),
+        ]
+        for item in report.get("matches", [])
+    ]
+
+    ambiguous_rows = [
+        [
+            item.get("reference", ""), item.get("currency", ""),
+            item.get("amount", ""), ", ".join(map(str, item.get("left_rows", []))),
+            ", ".join(map(str, item.get("right_rows", []))),
+        ]
+        for item in report.get("ambiguous_reference_groups", [])
+    ]
+
+    warning_rows = [
+        [item.get("code", ""), item.get("count", ""), item.get("message", "")]
+        for item in report.get("warnings", [])
+    ]
+    error_rows = [
+        [side.title(), item.get("row", ""), item.get("message", "")]
+        for side in ("left", "right")
+        for item in report.get("input_errors", {}).get(side, [])
+    ]
+
+    summary = json.dumps({
+        "status": report.get("status"),
+        "counts": report.get("counts", {}),
+        "totals_by_currency": report.get("totals_by_currency", {}),
+        "input_sha256": report.get("input_sha256", {}),
+        "settings": report.get("settings", {}),
+    }, indent=2, ensure_ascii=False)
+    return (
+        "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
+        "<meta name='viewport' content='width=device-width,initial-scale=1'>"
+        "<title>Ledger Bridge review</title>"
+        "<style>body{font:16px system-ui;max-width:1150px;margin:3rem auto;padding:1rem;"
+        "color:#202127;background:#fff}table{border-collapse:collapse;width:100%;"
+        "margin-bottom:2rem}th,td{border:1px solid #aaa;padding:.6rem;text-align:left;"
+        "vertical-align:top;overflow-wrap:anywhere}th{background:#eee}"
+        "pre{overflow:auto;background:#f5f5f5;padding:1rem}h2{margin-top:2rem}</style>"
+        "</head><body><h1>Ledger Bridge reconciliation review</h1>"
+        "<p><strong>Always inspect warnings and suggestions before approval.</strong> "
+        + esc(report.get("disclaimer", "")) + "</p><pre>" + esc(summary) + "</pre>"
+        + "<h2>Warnings requiring review</h2>"
+        + table(["Code", "Count", "Explanation"], warning_rows)
+        + "<h2>Matches and suggestions</h2>"
+        + table(["Left CSV row", "Right CSV row", "Basis", "Amount", "Currency",
+                 "Date difference (days)", "Decision"], match_rows)
+        + "<h2>Ambiguous duplicate identities — NOT matched</h2>"
+        + table(["Normalized reference", "Currency", "Amount",
+                 "Left CSV rows", "Right CSV rows"], ambiguous_rows)
+        + "<h2>Unmatched transactions</h2>"
+        + table(["Ledger", "CSV row", "Date", "Amount", "Reference"], unmatched_rows)
+        + "<h2>Excluded input rows</h2>"
+        + table(["Ledger", "CSV row", "Reason"], error_rows)
+        + "</body></html>"
+    )
 
 def gui() -> None:
     import tkinter as tk

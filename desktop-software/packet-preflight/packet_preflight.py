@@ -6,13 +6,13 @@ Python 3.11+. Original files are never changed or uploaded.
 from __future__ import annotations
 
 import argparse
-import fnmatch
 import html
 import json
-import os
 import sys
 from collections import Counter
-from pathlib import Path, PurePosixPath
+from pathlib import Path
+from packet_safety import (load_checklist, match_relative_path, scan_files,
+                           snapshot_digest, validate_checklist, write_new_report)
 
 VERSION = "0.1.0"
 STARTER_RULES = {
@@ -26,75 +26,36 @@ STARTER_RULES = {
 
 
 def validate_rules(config: object) -> dict:
-    if not isinstance(config, dict) or not isinstance(config.get("rules"), list) or not config["rules"]:
-        raise ValueError('Rules JSON must contain a nonempty "rules" list.')
-    for i, item in enumerate(config["rules"], 1):
-        if not isinstance(item, dict):
-            raise ValueError(f"Rule {i} must be an object.")
-        pattern = item.get("pattern")
-        if not isinstance(pattern, str) or not pattern or "\\" in pattern:
-            raise ValueError(f"Rule {i}: invalid relative glob pattern.")
-        relative = PurePosixPath(pattern)
-        if relative.is_absolute() or ".." in relative.parts or ":" in relative.parts[0]:
-            raise ValueError(f"Rule {i}: pattern cannot escape the selected folder.")
-        if not isinstance(item.get("name"), str) or not item["name"].strip():
-            raise ValueError(f"Rule {i}: name is required.")
-        minimum = item.get("minimum", 1)
-        maximum = item.get("maximum")
-        if isinstance(minimum, bool) or not isinstance(minimum, int) or minimum < 0:
-            raise ValueError(f"Rule {i}: minimum must be a nonnegative integer.")
-        if maximum is not None and (isinstance(maximum, bool) or not isinstance(maximum, int) or maximum < minimum):
-            raise ValueError(f"Rule {i}: maximum must be at least minimum.")
-        max_mb = item.get("max_size_mb")
-        if max_mb is not None and (isinstance(max_mb, bool) or not isinstance(max_mb, (int, float)) or
-                                    max_mb <= 0 or max_mb != max_mb or max_mb == float("inf")):
-            raise ValueError(f"Rule {i}: max_size_mb must be a positive finite number.")
-        extensions = item.get("extensions", [])
-        if not isinstance(extensions, list) or any(
-            not isinstance(ext, str) or not ext.startswith(".") or "/" in ext for ext in extensions
-        ):
-            raise ValueError(f"Rule {i}: extensions must contain values such as '.pdf'.")
-    return config
+    """Public compatibility wrapper for existing checklists and tests."""
+    return validate_checklist(config)
 
 
 def match_path(relative: str, pattern: str) -> bool:
-    relative, pattern = relative.casefold(), pattern.casefold()
-    return fnmatch.fnmatchcase(relative, pattern) or (
-        pattern.startswith("**/") and fnmatch.fnmatchcase(relative, pattern[3:])
-    )
+    return match_relative_path(relative, pattern)
 
 
 def list_files(root: Path) -> tuple[list[dict], list[dict]]:
-    files: list[dict] = []
-    errors: list[dict] = []
-    for folder, folders, names in os.walk(root, followlinks=False):
-        folders[:] = sorted(d for d in folders if not (Path(folder) / d).is_symlink())
-        for name in sorted(names):
-            path = Path(folder) / name
-            relative = path.relative_to(root).as_posix()
-            if path.is_symlink():
-                errors.append({"file": relative, "message": "Symbolic link skipped."})
-                continue
-            try:
-                stat = path.stat()
-                files.append({"path": relative, "bytes": stat.st_size})
-            except OSError as exc:
-                errors.append({"file": relative, "message": str(exc)})
-    return files, errors
+    return scan_files(root)
 
 
 def preflight(folder: Path, rules_file: Path) -> dict:
     root = folder.resolve(strict=True)
     if not root.is_dir():
         raise ValueError("Select a folder.")
-    with rules_file.open(encoding="utf-8") as stream:
-        config = validate_rules(json.load(stream))
+    config, rules_digest = load_checklist(rules_file)
     files, scan_errors = list_files(root)
+    total_bytes = sum(f["bytes"] for f in files)
     counts: Counter = Counter()
     results = []
+    match_tally: Counter = Counter()
+    matching_rules: dict[str, list[str]] = {}
     matched_files: set[str] = set()
+
     for rule in config["rules"]:
         matches = [file for file in files if match_path(file["path"], rule["pattern"])]
+        for item in matches:
+            match_tally[item["path"]] += 1
+            matching_rules.setdefault(item["path"], []).append(rule["name"])
         matched_files.update(item["path"] for item in matches)
         problems: list[dict] = []
         minimum, maximum = rule.get("minimum", 1), rule.get("maximum")
@@ -109,7 +70,7 @@ def preflight(folder: Path, rules_file: Path) -> dict:
             if limit is not None and match["bytes"] > limit * 1024 * 1024:
                 problems.append({"code": "OVERSIZE", "file": match["path"], "detail": f"Exceeds {limit} MiB."})
             extensions = [ext.casefold() for ext in rule.get("extensions", [])]
-            if extensions and Path(match["path"]).suffix.casefold() not in extensions:
+            if extensions and not any(match["path"].casefold().endswith(ext) for ext in extensions):
                 problems.append({"code": "WRONG_EXTENSION", "file": match["path"],
                                  "detail": "Extension not in " + ", ".join(extensions)})
         for problem in problems:
@@ -120,15 +81,29 @@ def preflight(folder: Path, rules_file: Path) -> dict:
             "status": "PASS" if not problems else "CHECK",
             "problems": problems,
         })
+
+    unmatched = sorted(f["path"] for f in files if f["path"] not in matched_files)
+    overlapping = [{"file": filename, "rules": matching_rules[filename]}
+                   for filename, hits in sorted(match_tally.items()) if hits > 1]
+    if overlapping:
+        counts["OVERLAPPING_RULES"] += len(overlapping)
+    if config.get("forbid_unmatched", False):
+        counts["UNMATCHED_FILE"] += len(unmatched)
+    if config.get("max_total_size_mb") is not None and total_bytes > config["max_total_size_mb"] * 1024 * 1024:
+        counts["TOTAL_OVERSIZE"] += 1
     if scan_errors:
         counts["SCAN_ERROR"] += len(scan_errors)
     return {
         "tool": "Final Vestige Packet Preflight", "version": VERSION,
         "checklist": config.get("title", rules_file.stem),
-        "folder": str(root), "file_count": len(files),
-        "results": results, "unmatched_files": sorted(f["path"] for f in files if f["path"] not in matched_files),
-        "scan_errors": scan_errors, "issue_counts": dict(sorted(counts.items())),
+        "folder": str(root), "file_count": len(files), "total_bytes": total_bytes,
+        "results": results, "unmatched_files": unmatched,
+        "overlapping_files": overlapping, "scan_errors": scan_errors,
+        "rules_sha256": rules_digest,
+        "source_snapshot_sha256": snapshot_digest(files, scan_errors),
+        "issue_counts": dict(sorted(counts.items())),
         "issues_total": sum(counts.values()), "status": "PASS" if not counts else "CHECK",
+        "limitations": "Metadata-only validation. This is not a guarantee of content, eligibility or compliance.",
     }
 
 
@@ -143,6 +118,10 @@ def render_html(report: dict) -> str:
     extras = "".join("<li>" + html.escape(value) + "</li>" for value in report["unmatched_files"])
     scans = "".join("<li>" + html.escape(err["file"] + ": " + err["message"]) +
                     "</li>" for err in report["scan_errors"])
+    overlaps = "".join("<li>" + html.escape(item["file"] + ": " + ", ".join(item["rules"])) +
+                       "</li>" for item in report.get("overlapping_files", []))
+    issues = "".join("<li>" + html.escape(code) + ": " + str(count) + "</li>"
+                     for code, count in sorted(report.get("issue_counts", {}).items()))
     return ("<!doctype html><html lang='en'><meta charset='utf-8'><title>Packet Preflight</title>"
             "<style>body{font:16px system-ui;max-width:1100px;margin:3rem auto;padding:1rem;color:#222}"
             "table{border-collapse:collapse;width:100%}td,th{padding:.8rem;border:1px solid #ccc;text-align:left}"
@@ -150,9 +129,14 @@ def render_html(report: dict) -> str:
             html.escape(str(report["checklist"])) + "</p><p>Status: <strong>" +
             html.escape(report["status"]) + "</strong> — " + str(report["issues_total"]) +
             " issue(s). File names and sizes only; no content or legal compliance validation.</p>"
+            "<p>Total scanned bytes: " + str(report.get("total_bytes", "unknown")) +
+            ". Snapshot fingerprint (metadata, not file contents): <code>" +
+            html.escape(report.get("source_snapshot_sha256", "unknown")) + "</code></p>"
+            "<h2>Issue breakdown</h2><ul>" + (issues or "<li>No findings</li>") + "</ul>"
             "<table><thead><tr><th>Requirement</th><th>Pattern</th><th>Found</th><th>Status</th>"
             "<th>Issues</th></tr></thead><tbody>" + "".join(rows) +
             "</tbody></table><h2>Unmatched files</h2><ul>" + (extras or "<li>None</li>") +
+            "</ul><h2>Overlapping rule matches</h2><ul>" + (overlaps or "<li>None</li>") +
             "</ul><h2>Scan errors</h2><ul>" + (scans or "<li>None</li>") + "</ul></html>")
 
 
@@ -166,7 +150,7 @@ def gui() -> None:
     frame.pack(fill="both", expand=True)
     folder_var, rules_var = tk.StringVar(), tk.StringVar()
     note = tk.StringVar(value="Choose a folder and a checklist. The program never changes source files.")
-    latest = [None]
+    latest = [None, None, None]
     ttk.Label(frame, text="Packet Preflight", font=("Segoe UI", 22, "bold")).pack(anchor="w")
     ttk.Label(frame, text="Find missing, unexpected and oversized submission attachments.").pack(anchor="w", pady=(0, 16))
 
@@ -197,18 +181,27 @@ def gui() -> None:
             if not folder_var.get() or not rules_var.get():
                 raise ValueError("Select a folder and rules JSON.")
             latest[0] = preflight(Path(folder_var.get()), Path(rules_var.get()))
+            latest[1], latest[2] = Path(folder_var.get()), Path(rules_var.get())
             show(json.dumps({key: latest[0][key] for key in
-                             ("status", "checklist", "results", "unmatched_files", "scan_errors")},
+                             ("status", "checklist", "issue_counts", "results", "unmatched_files",
+                              "overlapping_files", "scan_errors", "total_bytes", "limitations")},
                             indent=2, ensure_ascii=False))
             note.set(f"{latest[0]['file_count']} files · {latest[0]['issues_total']} issue(s)")
         except (OSError, ValueError, json.JSONDecodeError) as exc:
+            latest[:] = [None, None, None]
+            show("No current report. Analysis failed; check the selected inputs and try again.")
+            note.set("No valid report available")
             messagebox.showerror("Preflight failed", str(exc))
 
     def save_template() -> None:
         filename = filedialog.asksaveasfilename(defaultextension=".json", filetypes=[("JSON checklist", "*.json")])
         if filename:
-            Path(filename).write_text(json.dumps(STARTER_RULES, indent=2) + "\n", encoding="utf-8")
-            rules_var.set(filename)
+            try:
+                write_new_report(Path(filename), json.dumps(STARTER_RULES, indent=2) + "\n",
+                                 packet_folder=Path(folder_var.get()) if folder_var.get() else None)
+                rules_var.set(filename)
+            except (OSError, ValueError) as exc:
+                messagebox.showerror("Save failed", str(exc))
 
     def save_report() -> None:
         if latest[0] is None:
@@ -217,9 +210,16 @@ def gui() -> None:
         filename = filedialog.asksaveasfilename(defaultextension=".html", filetypes=[("HTML report", "*.html")])
         if filename:
             try:
-                Path(filename).write_text(render_html(latest[0]), encoding="utf-8")
+                if (Path(folder_var.get()) != latest[1] or Path(rules_var.get()) != latest[2]):
+                    raise ValueError("Inputs changed. Run preflight again before saving.")
+                fresh = preflight(latest[1], latest[2])
+                if (fresh["source_snapshot_sha256"] != latest[0]["source_snapshot_sha256"] or
+                    fresh["rules_sha256"] != latest[0]["rules_sha256"]):
+                    raise ValueError("Submission or checklist changed. Run preflight again before saving.")
+                write_new_report(Path(filename), render_html(latest[0]), packet_folder=latest[1],
+                                 protected=(latest[2],))
                 note.set("Report saved: " + filename)
-            except OSError as exc:
+            except (OSError, ValueError, json.JSONDecodeError) as exc:
                 messagebox.showerror("Save failed", str(exc))
 
     buttons = ttk.Frame(frame)
@@ -240,7 +240,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.sample:
-            args.sample.write_text(json.dumps(STARTER_RULES, indent=2) + "\n", encoding="utf-8")
+            write_new_report(args.sample, json.dumps(STARTER_RULES, indent=2) + "\n")
             return 0
         if not args.folder:
             gui()
@@ -250,10 +250,13 @@ def main() -> int:
         result = preflight(Path(args.folder), args.rules)
         print(json.dumps(result, indent=2, ensure_ascii=False))
         if args.report:
-            if args.report.suffix.lower() == ".html":
-                args.report.write_text(render_html(result), encoding="utf-8")
-            else:
-                args.report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+            fresh = preflight(Path(args.folder), args.rules)
+            if (fresh["source_snapshot_sha256"] != result["source_snapshot_sha256"] or
+                fresh["rules_sha256"] != result["rules_sha256"]):
+                raise ValueError("Inputs changed during preflight. Rerun before exporting.")
+            output = (render_html(result) if args.report.suffix.lower() == ".html"
+                      else json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+            write_new_report(args.report, output, packet_folder=Path(args.folder), protected=(args.rules,))
         return 1 if result["issues_total"] else 0
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print("Preflight failed:", exc, file=sys.stderr)

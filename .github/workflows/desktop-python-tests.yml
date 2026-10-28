@@ -1,0 +1,53 @@
+name: Desktop Python regression tests (offline)
+
+on:
+  push:
+    paths:
+      - 'desktop-software/**'
+      - '.github/workflows/desktop-python-tests.yml'
+  pull_request:
+    paths:
+      - 'desktop-software/**'
+      - '.github/workflows/desktop-python-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all seven offline application modules
+        run: python -m compileall -q desktop-software
+      - name: Run all Python regression suites without third-party dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=0
+          for directory in desktop-software/*/; do
+            if compgen -G "${directory}test_*.py" > /dev/null; then
+              echo "::group::${directory}"
+              python -m unittest discover -s "${directory}" -p "test_*.py" -v
+              echo "::endgroup::"
+              count=$((count + 1))
+            fi
+          done
+          if [ "$count" -ne 7 ]; then
+            echo "::error::Expected exactly seven application regression suites; found ${count}"
+            exit 1
+          fi
+          echo "Validated ${count} application suites."
+
+# This source-level validation is NOT a replacement for Windows executable
+# build, silent installation, manual UX acceptance, code signing or security QA.
+# No artifacts are published and premium licensing is not bypassed.

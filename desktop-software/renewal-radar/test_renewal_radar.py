@@ -53,9 +53,25 @@ class RenewalRadarTests(unittest.TestCase):
             csv.write_text("title,due,cadence,remind_days\nLicense,2027-05-04,yearly,30\nBad,wrong,none,15\n",
                            encoding="utf-8")
             result = import_csv(conn, csv)
-            self.assertEqual(result["inserted"], 1)
+            self.assertEqual(result["inserted"], 0)
             self.assertEqual(len(result["problems"]), 1)
+            self.assertEqual(len(entries(conn)), 0)
+
+    def test_export_never_overwrites_existing_calendar(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            conn = open_store(root / "db.sqlite")
+            add_entry(conn, "License", "2027-01-01")
+            calendar = root / "existing.ics"
+            calendar.write_bytes(b"KEEP-MY-DATA")
+            with self.assertRaises(FileExistsError):
+                export_ics(conn, calendar)
+            self.assertEqual(calendar.read_bytes(), b"KEEP-MY-DATA")
+            # The database itself is also protected from accidental selection.
+            with self.assertRaises(FileExistsError):
+                export_ics(conn, root / "db.sqlite")
             self.assertEqual(len(entries(conn)), 1)
+            conn.close()
 
     def test_ical_escaping(self):
         row = {"id": 1, "title": "Test; comma, newline\n", "category": "", "notes": "",

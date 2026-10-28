@@ -48,6 +48,12 @@ Run all suites from repository root (no third-party test library required):
 ## Windows CI / artifact boundaries
 
 - FileProof Windows workflow: .github/workflows/fileproof-windows.yml
+- FileProof v0.2 workflow now builds the GUI and console companion; after silent
+  installation it runs fileproof/smoke_installed.py against the **installed**
+  console binary (valid/missing/wrong passphrase, tampering and changed files).
+  These checks have not yet passed CI and should not be described as verified.
+- FileProof 0.2 uses atomic no-clobber manifest publication, which requires
+  local filesystem hard-link support (normally NTFS on Windows).
 - Three free apps workflow: .github/workflows/free-utilities-windows.yml
 - Three premium prototypes workflow: .github/workflows/premium-prototypes-windows.yml
 - Python 3.12, PyInstaller 6.16.0, Inno Setup 6, SHA-256 installer hashes.
@@ -81,7 +87,7 @@ Run all suites from repository root (no third-party test library required):
 
 ## Honest feature boundaries
 
-- FileProof compares recorded SHA-256 hashes and also flags added regular files, untracked links, and scan errors. A clean result requires all checks to pass. It is not a backup/recovery application, does not cover empty directory creation, and its unsigned manifests must be stored securely to prevent attackers from replacing them.
+- FileProof v0.2 compares SHA-256 hashes and also flags added files, untracked links and scan errors. An optional PBKDF2-HMAC-SHA256 passphrase authenticates the manifest contents; unsigned manifests are labeled UNAUTHENTICATED. Authentication does not encrypt data, prevent deletion/replay, establish publisher identity or replace Windows code signing. The CLI companion is FileProofCLI.exe, separately packaged so CLI output works. See fileproof/USER_GUIDE.md for the threat model and passphrase handling.
 - Data Import Doctor diagnoses CSV issues, not guaranteed import compatibility.
 - Packet Preflight checks folder metadata against a user-provided checklist,
   not application or regulatory eligibility.
