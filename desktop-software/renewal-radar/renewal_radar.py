@@ -200,11 +200,12 @@ def gui(db_path: Path) -> None:
             ttk.Combobox(block, textvariable=var, values=sorted(CADENCES), state="readonly", width=width).pack()
         else:
             ttk.Entry(block, textvariable=var, width=width).pack()
-    columns = ("id", "title", "category", "due", "cadence", "days_remaining")
+    columns = ("id", "title", "category", "due", "next_due", "cadence", "days_remaining")
     table = ttk.Treeview(frame, columns=columns, show="headings", selectmode="browse")
     for col, label, width in (
         ("id", "ID", 40), ("title", "Renewal", 220), ("category", "Category", 130),
-        ("due", "Original due", 115), ("cadence", "Repeat", 100), ("days_remaining", "Days until next", 115)):
+        ("due", "Original due", 115), ("next_due", "Next renewal", 120),
+        ("cadence", "Repeat", 100), ("days_remaining", "When", 120)):
         table.heading(col, text=label)
         table.column(col, width=width, stretch=col == "title")
     table.pack(fill="both", expand=True, pady=14)
@@ -212,10 +213,27 @@ def gui(db_path: Path) -> None:
 
     def refresh() -> None:
         table.delete(*table.get_children())
-        for item in entries(conn):
+        today = date.today()
+        all_rows = entries(conn, today)
+        # Expired one-time obligations are actionable; show them first.
+        expired = [r for r in all_rows if r["next_due"] is None and r["cadence"] == "none"]
+        upcoming = [r for r in all_rows if r["next_due"] is not None]
+        other = [r for r in all_rows if r["next_due"] is None and r["cadence"] != "none"]
+        expired.sort(key=lambda r: r["due"])
+        for item in expired + upcoming + other:
+            if item["next_due"] is None and item["cadence"] == "none":
+                days_late = (today - parse_due(item["due"])).days
+                when = f"{days_late}d overdue"
+                next_due_label = "OVERDUE"
+            elif item["next_due"] is None:
+                when, next_due_label = "No upcoming date", "—"
+            else:
+                days_left = item["days_remaining"]
+                when = "Due today" if days_left == 0 else f"{days_left} days"
+                next_due_label = item["next_due"]
             table.insert("", "end", iid=str(item["id"]), values=(
-                item["id"], item["title"], item["category"], item["due"], item["cadence"],
-                item["days_remaining"] if item["days_remaining"] is not None else "Past / no recurrence"))
+                item["id"], item["title"], item["category"], item["due"],
+                next_due_label, item["cadence"], when))
 
     def add() -> None:
         try:
