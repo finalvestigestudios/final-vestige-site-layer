@@ -26,6 +26,12 @@ def _rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
+def _check(condition: bool, invariant: str) -> None:
+    """Use explicit failure: Python -O strips assertions and must not bypass checks."""
+    if not condition:
+        raise RuntimeError("Packaged executable smoke check failed: " + invariant)
+
+
 def run_smoke(app_id: str) -> list[Path]:
     """Exercise a packaged application's real engine and verify its outputs.
 
@@ -41,20 +47,20 @@ def run_smoke(app_id: str) -> list[Path]:
                 ("A", "10.00"), ("B", "7.00")])
             outputs = engine.ledger_diff(left, right, str(root))
             rows = _rows(outputs[0])
-            assert {r["id"]: r["status"] for r in rows} == {
-                "A": "matched", "B": "variance"}
+            _check({r["id"]: r["status"] for r in rows} == {
+                "A": "matched", "B": "variance"}, "smoke invariant 01")
         elif app_id == "invoices":
             source = _csv(root, "invoices.csv", ("vendor", "invoice_number", "amount", "date"), [
                 ("ACME", "INV-100", "200.00", "2026-01-01"),
                 ("Acme", "INV-100", "200", "2026-01-02")])
             outputs = engine.invoice_twins(source, str(root))
-            assert _rows(outputs[0])[0]["status"] == "exact_invoice_key"
+            _check(_rows(outputs[0])[0]["status"] == "exact_invoice_key", "smoke invariant 02")
         elif app_id == "spend":
             source = _csv(root, "spend.csv", ("vendor", "amount", "date"), [
                 ("ACME", "10", "2026-01-01"), ("ACME", "10", "2026-02-01"),
                 ("ACME", "10", "2026-03-01"), ("ACME", "30", "2026-04-01")])
             outputs = engine.spend_map(source, str(root))
-            assert _rows(outputs[0])[-1]["flag"] == "review_spike"
+            _check(_rows(outputs[0])[-1]["flag"] == "review_spike", "smoke invariant 03")
         elif app_id == "policy":
             before = root / "before.txt"
             after = root / "after.txt"
@@ -62,8 +68,8 @@ def run_smoke(app_id: str) -> list[Path]:
             after.write_text("Review within 15 days.\n", encoding="utf-8")
             outputs = engine.policy_delta(str(before), str(after), str(root))
             diff = outputs[0].read_text(encoding="utf-8")
-            assert "-Review within 30 days." in diff
-            assert "+Review within 15 days." in diff
+            _check("-Review within 30 days." in diff, "smoke invariant 04")
+            _check("+Review within 15 days." in diff, "smoke invariant 05")
         elif app_id == "grants":
             claims = _csv(root, "claims.csv", ("id", "amount", "program"), [
                 ("C1", "20", "G1")])
@@ -72,9 +78,9 @@ def run_smoke(app_id: str) -> list[Path]:
             budget = _csv(root, "budget.csv", ("program", "budget"), [
                 ("G1", "10")])
             outputs = engine.grant_audit(claims, ledger, budget, str(root))
-            assert len(outputs) == 3
-            assert _rows(outputs[1])[0]["status"] == "over_budget_review"
-            assert "SHA-256" in outputs[2].read_text(encoding="utf-8")
+            _check(len(outputs) == 3, "smoke invariant 06")
+            _check(_rows(outputs[1])[0]["status"] == "over_budget_review", "smoke invariant 07")
+            _check("SHA-256" in outputs[2].read_text(encoding="utf-8"), "smoke invariant 08")
             # Also smoke-test explicit multi-program allocation and linked credit.
             linked_claims = _csv(root, "linked-claims.csv",
                 ("claim_id","amount","program","ledger_reference","claim_type","related_claim"), [
@@ -89,18 +95,18 @@ def run_smoke(app_id: str) -> list[Path]:
             outputs = engine.grant_audit(linked_claims, linked_ledger,
                                          linked_budget, str(root))
             details = {row["id"]: row for row in _rows(outputs[0])}
-            assert len(outputs) == 3
-            assert "split_allocation_review" in details["TX100"]["status"]
-            assert details["TX100"]["claim_amount"] == "100.00"
-            assert details["TX200"]["net_claim_amount"] == "8.00"
-            assert "credit_memo_review" in details["TX200"]["status"]
+            _check(len(outputs) == 3, "smoke invariant 09")
+            _check("split_allocation_review" in details["TX100"]["status"], "smoke invariant 10")
+            _check(details["TX100"]["claim_amount"] == "100.00", "smoke invariant 11")
+            _check(details["TX200"]["net_claim_amount"] == "8.00", "smoke invariant 12")
+            _check("credit_memo_review" in details["TX200"]["status"], "smoke invariant 13")
             summary = {row["program"]: row for row in _rows(outputs[1])}
-            assert summary["G1"]["claimed"] == "68.00"
-            assert summary["G2"]["claimed"] == "40.00"
-            assert "SHA-256" in outputs[2].read_text(encoding="utf-8")
+            _check(summary["G1"]["claimed"] == "68.00", "smoke invariant 14")
+            _check(summary["G2"]["claimed"] == "40.00", "smoke invariant 15")
+            _check("SHA-256" in outputs[2].read_text(encoding="utf-8"), "smoke invariant 16")
             # Exercise packaged premium human-review code using synthetic data.
             batch = exception_review.read_cases(outputs[0], "grants")
-            assert batch.cases
+            _check(batch.cases, "smoke invariant 17")
             journal = root / "grant-review.jsonl"
             event = exception_review.append_review(
                 outputs[0], "grants", journal,
@@ -108,9 +114,9 @@ def run_smoke(app_id: str) -> list[Path]:
                 expected_report_sha256=batch.report_sha256,
                 reviewer="Smoke Reviewer", decision="needs_evidence",
                 rationale="Request independent supporting reimbursement evidence.")
-            assert event["decision"] == "needs_evidence"
+            _check(event["decision"] == "needs_evidence", "smoke invariant 18")
             register = exception_review.export_register(outputs[0], "grants", journal, root)
-            assert _rows(register)[0]["review_state"] == "needs_evidence"
+            _check(_rows(register)[0]["review_state"] == "needs_evidence", "smoke invariant 19")
             # Validate AES-GCM encrypted evidence backup inside the packaged EXE.
             passphrase = "Synthetic smoke-only passphrase 2026!"
             sealed = evidence_vault.seal_evidence(
@@ -119,9 +125,9 @@ def run_smoke(app_id: str) -> list[Path]:
             restored_report = restored / "exception-report.csv"
             restored_journal = restored / "exception-report.review.jsonl"
             restored_batch = exception_review.read_cases(restored_report, "grants")
-            assert restored_batch.report_sha256 == batch.report_sha256
-            assert exception_review.read_journal(
-                restored_journal, restored_batch)[0]["event_hash"] == event["event_hash"]
+            _check(restored_batch.report_sha256 == batch.report_sha256, "smoke invariant 20")
+            _check(exception_review.read_journal(
+                restored_journal, restored_batch)[0]["event_hash"] == event["event_hash"], "smoke invariant 21")
         elif app_id == "procurement":
             po = _csv(root, "po.csv", ("po_number", "line", "quantity", "unit_price"), [
                 ("P1", "1", "4", "10")])
@@ -132,11 +138,11 @@ def run_smoke(app_id: str) -> list[Path]:
                 ("P1", "1", "3")])
             outputs = engine.procure_guard(po, invoices, receipts, str(root))
             status = _rows(outputs[0])[0]["status"]
-            assert "invoiced_above_order" in status
-            assert "invoiced_above_received" in status
-            assert len(outputs) == 2
+            _check("invoiced_above_order" in status, "smoke invariant 22")
+            _check("invoiced_above_received" in status, "smoke invariant 23")
+            _check(len(outputs) == 2, "smoke invariant 24")
             batch = exception_review.read_cases(outputs[0], "procurement")
-            assert batch.cases
+            _check(batch.cases, "smoke invariant 25")
             journal = root / "procurement-review.jsonl"
             event = exception_review.append_review(
                 outputs[0], "procurement", journal,
@@ -144,10 +150,10 @@ def run_smoke(app_id: str) -> list[Path]:
                 expected_report_sha256=batch.report_sha256,
                 reviewer="Smoke Reviewer", decision="escalated",
                 rationale="Escalate quantity mismatch for supporting evidence.")
-            assert event["decision"] == "escalated"
+            _check(event["decision"] == "escalated", "smoke invariant 26")
             register = exception_review.export_register(
                 outputs[0], "procurement", journal, root)
-            assert _rows(register)[0]["review_state"] == "escalated"
+            _check(_rows(register)[0]["review_state"] == "escalated", "smoke invariant 27")
             # A second premium product must include the same secure archive flow.
             passphrase = "Synthetic smoke-only passphrase 2026!"
             sealed = evidence_vault.seal_evidence(
@@ -156,11 +162,11 @@ def run_smoke(app_id: str) -> list[Path]:
             restored_report = restored / "exception-report.csv"
             restored_journal = restored / "exception-report.review.jsonl"
             restored_batch = exception_review.read_cases(restored_report, "procurement")
-            assert restored_batch.report_sha256 == batch.report_sha256
-            assert exception_review.read_journal(
-                restored_journal, restored_batch)[0]["event_hash"] == event["event_hash"]
+            _check(restored_batch.report_sha256 == batch.report_sha256, "smoke invariant 28")
+            _check(exception_review.read_journal(
+                restored_journal, restored_batch)[0]["event_hash"] == event["event_hash"], "smoke invariant 29")
         else:
             raise ValueError("Unsupported application for smoke test: " + app_id)
 
-        assert outputs and all(path.is_file() and path.stat().st_size > 0 for path in outputs)
+        _check(outputs and all(path.is_file() and path.stat().st_size > 0 for path in outputs), "smoke invariant 30")
         return [Path(path.name) for path in outputs]
