@@ -234,3 +234,19 @@ QD publication. Twelve isolated parser regressions passed locally (also with
 Python `-OO`); twelve new committed cross-app tests and Windows builds remain
 unverified pending a working runner/checkout. See
 [R19 provenance semantics and verification](docs/CSV_PHYSICAL_PROVENANCE_R19.md).
+
+## R20 strict premium review CSV ingestion (internal, unreleased)
+
+The human-only exception review queues for GrantAudit Studio Pro and
+ProcureGuard Studio Pro now validate **every CSV record's exact field count**,
+reject invalid quotes, and cite the **physical line where each record begins**,
+including files with embedded newlines or blank lines. Badly formed `matched`
+records also fail validation before any review journal is created.
+
+**Migration caution:** existing journals for multiline/blank-line reports may
+contain incompatible case identifiers and are deliberately rejected for human
+inspection rather than silently rewritten. Single-line standard report case IDs
+are unchanged. Seventeen repository regression tests were added; 15 isolated
+CSV-intake checks passed locally under normal Python and `-OO`, but complete
+repository/Windows verification remains pending. See
+[R20 premium review intake contract](docs/PREMIUM_REVIEW_CSV_R20.md).
