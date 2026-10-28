@@ -253,26 +253,41 @@ def procure_guard(po,invoices,receipts,folder):
     for po_key,line in sorted(set().union(*(set(g) for g in grouped))):
         k=(po_key,line);a,b,c=(g[k] for g in grouped)
         flags=[]
+        source_records=[*a,*b,*c]
         if len(a)!=1:flags.append("missing_or_duplicate_po")
+        if normalized_collision(source_records,"po_number"):
+            flags.append("normalized_po_key_review")
+        if normalized_collision(source_records,"line"):
+            flags.append("normalized_line_key_review")
         po_qty=qty(a[0]["quantity"]) if len(a)==1 else Decimal(0)
         po_price=money(a[0]["unit_price"]) if len(a)==1 else Decimal(0)
         inv_qty=sum((qty(r["quantity"]) for r in b),Decimal(0))
         rec_qty=sum((qty(r["quantity"]) for r in c),Decimal(0))
-        inv_total=sum((qty(r["quantity"])*money(r["unit_price"]) for r in b),Decimal(0))
+        inv_prices=[(qty(r["quantity"]),money(r["unit_price"])) for r in b]
+        inv_total=sum((amount*price for amount,price in inv_prices),Decimal(0))
+        if len(b)>1 and len(set(inv_prices))<len(b):
+            flags.append("possible_duplicate_invoice_line")
         if not b:flags.append("missing_invoice")
         if not c:flags.append("missing_receipt")
         if len(a)==1 and inv_qty>po_qty:flags.append("invoiced_above_order")
         if inv_qty>rec_qty:flags.append("invoiced_above_received")
+        if po_price<0 or any(price<0 for _amount,price in inv_prices):
+            flags.append("negative_unit_price_review")
         if len(a)==1 and b:
             expected=inv_qty*po_price
-            if abs(inv_total-expected)>max(CENT,abs(expected)*Decimal("0.02")):
+            if (price_exceeds_tolerance(inv_total,expected) or
+                    any(price_exceeds_tolerance(price,po_price) for _amount,price in inv_prices)):
                 flags.append("price_variance_above_2pct")
         checks.append({"po":po_key,"line":line,"po_qty":str(po_qty),"invoiced_qty":str(inv_qty),
                        "received_qty":str(rec_qty),"po_unit_price":dollars(po_price),
                        "invoice_total":dollars(inv_total),"status":";".join(flags) or "matched",
                        "po_rows":";".join(r["row"] for r in a),
                        "invoice_rows":";".join(r["row"] for r in b),
-                       "receipt_rows":";".join(r["row"] for r in c)})
+                       "receipt_rows":";".join(r["row"] for r in c),
+                       "po_ids":labels_for_report(a,"po_number"),
+                       "invoice_po_ids":labels_for_report(b,"po_number"),
+                       "receipt_po_ids":labels_for_report(c,"po_number"),
+                       "line_labels":labels_for_report(source_records,"line")})
     paths=[save(folder,"procurement-three-way",("po","line","po_qty","invoiced_qty","received_qty",
-           "po_unit_price","invoice_total","status","po_rows","invoice_rows","receipt_rows"),checks)]
+           "po_unit_price","invoice_total","status","po_rows","invoice_rows","receipt_rows","po_ids","invoice_po_ids","receipt_po_ids","line_labels"),checks)]
     return paths+[manifest(folder,[po,invoices,receipts],paths)]
