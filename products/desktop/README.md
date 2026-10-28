@@ -203,3 +203,7 @@ the signed-content digest. This is not authenticated ledger storage and cannot
 prevent an attacker changing files *after* finalization or replacing the entire
 registry. See [R16 receipt binding and tests](docs/SIGNED_ISSUANCE_BINDING_R16.md).
 No production keys, premium release or QD approval accompany this change.
+
+## R17 Windows PE-image preflight (internal, pre-release)
+
+The release candidate gate now validates the structural PE32+ AMD64 shape of all six files instead of accepting only MZ, PE magic and the machine value. It rejects malformed section tables, DLL/system images, missing entry points, invalid alignments or extents, and missing executable sections **before** the smoke phase. R9/R10 inert fixtures were updated for this stricter contract, and 13 focused R17 tests passed locally under ordinary Python and `-OO`. The full repository suite and six actual Windows binaries remain unverified while Actions jobs fail before running. This is a format sanity check, not code signing, malware clearance or permission to distribute. See [R17 PE preflight and Windows verification runbook](docs/PE_IMAGE_PREFLIGHT_R17.md).

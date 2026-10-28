@@ -13,14 +13,11 @@ gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
 
 
+from pe_fixture_r17 import synthetic_pe64
+
+
 def fake_pe(machine=0x8664, signature=b"PE\x00\x00", opt=0x20B):
-    raw = bytearray(256)
-    raw[:2] = b"MZ"
-    raw[0x3C:0x40] = (128).to_bytes(4, "little")
-    raw[128:132] = signature
-    raw[132:134] = machine.to_bytes(2, "little")
-    raw[152:154] = opt.to_bytes(2, "little")
-    return bytes(raw)
+    return synthetic_pe64(machine=machine, signature=signature, opt=opt)
 
 
 class ReleaseGateR9Tests(unittest.TestCase):
