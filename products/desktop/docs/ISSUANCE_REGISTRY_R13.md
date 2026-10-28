@@ -90,9 +90,10 @@ PYTHONPATH=products/desktop python -OO -m unittest discover \
 both normally and under `-OO`: duplicate IDs across products, competing
 reservations, reserved-after-failure, hash finalization, output mismatch,
 symlink protection, path privacy, file permissions, no-clobber, and invalid
-inputs. These tests use synthetic data and do **not** prove Windows/NTFS
-behavior, full R12 CLI integration, actual packaged EXEs, hosted Actions, or
-distribution. The full suite remains mandatory before release.
+inputs. Two additional real signed-CLI integration tests are committed but **not yet
+verified as passing** against the GitHub checkout. These local tests use
+synthetic data and do **not** prove Windows/NTFS behavior, full R12 CLI
+integration, actual packaged EXEs, hosted Actions, or distribution. The full suite remains mandatory before release.
 
 **Next gate:** obtain a functional Windows runner or run the offline Windows
 candidate script on a trusted clean x64 workstation at the exact PR SHA,
