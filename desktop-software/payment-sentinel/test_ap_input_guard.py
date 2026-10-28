@@ -5,6 +5,7 @@ from pathlib import Path
 from ap_input_guard import (
     MAX_SOURCE_BYTES,
     normalize_search_key,
+    record_start_line,
     resolve_headers,
     source_fingerprint,
 )
@@ -54,6 +55,13 @@ class APInputGuardTests(unittest.TestCase):
             self.assertEqual(first, source_fingerprint(path))
             path.write_bytes(b"vendor,amount\nB,12\n")
             self.assertNotEqual(first["sha256"], source_fingerprint(path)["sha256"])
+
+    def test_physical_line_numbers_with_blank_lines_and_quoted_newlines(self):
+        self.assertEqual(record_start_line(4, {"Vendor": "A"}), 4)
+        self.assertEqual(record_start_line(6, {"Vendor": "A\nB"}), 5)
+        self.assertEqual(record_start_line(9, {"Vendor": "A\r\nB"}), 8)
+        self.assertEqual(record_start_line(9, {"Vendor": "A\rB"}), 8)
+        self.assertEqual(record_start_line(8, {"__extra__": ["one\ntwo"]}), 7)
 
     def test_directory_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
