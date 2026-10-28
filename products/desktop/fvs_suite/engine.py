@@ -194,6 +194,10 @@ def grant_audit(claims,ledger,budgets,folder):
     claims_rows=table(claims,("id","amount","program"))
     ledger_rows=table(ledger,("id","amount","program"))
     budget_rows=table(budgets,("program","budget"))
+    program_sources=defaultdict(list)
+    for source_rows in (claims_rows,ledger_rows,budget_rows):
+        for entry in source_rows:
+            program_sources[key(entry["program"])].append(entry)
     grouped=[defaultdict(list),defaultdict(list)]
     for rows,d in ((claims_rows,grouped[0]),(ledger_rows,grouped[1])):
         for r in rows:
@@ -206,16 +210,17 @@ def grant_audit(claims,ledger,budgets,folder):
         x=sum((money(r["amount"]) for r in a),Decimal(0))
         y=sum((money(r["amount"]) for r in b),Decimal(0))
         claimed[program]+=x
-        status=("missing_claim" if not a else "missing_ledger" if not b else
-                "duplicate_id_review" if len(a)!=1 or len(b)!=1 else
-                ";".join(filter(None, [
-                    "normalized_id_review" if a[0]["id"].strip().casefold()!=b[0]["id"].strip().casefold() else "",
-                    "variance" if x!=y else ""
-                ])) or "matched")
+        status=reconciliation_status(
+            a,b,x,y,missing_left="missing_claim",missing_right="missing_ledger",
+            fields=(("id","normalized_id_review"),("program","normalized_program_review")))
         checks.append({"program":program,"id":id_,"status":status,"claim_amount":dollars(x),
                        "ledger_amount":dollars(y),"difference":dollars(x-y),
                        "claim_rows":";".join(r["row"] for r in a),
-                       "ledger_rows":";".join(r["row"] for r in b)})
+                       "ledger_rows":";".join(r["row"] for r in b),
+                       "claim_ids":labels_for_report(a,"id"),
+                       "ledger_ids":labels_for_report(b,"id"),
+                       "claim_programs":labels_for_report(a,"program"),
+                       "ledger_programs":labels_for_report(b,"program")})
     limits={}
     for r in budget_rows:
         program=key(r["program"])
@@ -225,10 +230,13 @@ def grant_audit(claims,ledger,budgets,folder):
     for program in sorted(set(limits)|set(claimed)):
         total=claimed[program];limit=limits.get(program)
         status="missing_budget" if limit is None else "over_budget_review" if total>limit else "within_budget"
+        if normalized_collision(program_sources[program],"program"):
+            status+=";normalized_budget_program_review"
         budget_checks.append({"program":program,"claimed":dollars(total),
-                              "budget":"" if limit is None else dollars(limit),"status":status})
-    paths=[save(folder,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows"),checks),
-           save(folder,"grant-budget-check",("program","claimed","budget","status"),budget_checks)]
+                              "budget":"" if limit is None else dollars(limit),"status":status,
+                              "source_programs":labels_for_report(program_sources[program],"program")})
+    paths=[save(folder,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows","claim_ids","ledger_ids","claim_programs","ledger_programs"),checks),
+           save(folder,"grant-budget-check",("program","claimed","budget","status","source_programs"),budget_checks)]
     return paths+[manifest(folder,[claims,ledger,budgets],paths)]
 
 def procure_guard(po,invoices,receipts,folder):
