@@ -6,6 +6,8 @@ from datetime import datetime, date
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 
+from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
+
 ALIASES = {
  "id": ("transaction_id","id","reference","ref","document_id","claim_id"),
  "amount": ("amount","total","paid","claim_amount","invoice_amount"),
@@ -23,7 +25,8 @@ ALIASES = {
 MAX_ROWS = 200_000
 CENT = Decimal("0.01")
 
-def money(value):
+def _exact_amount(value):
+    """Parse accounting amounts exactly; never silently round unit costs."""
     raw = str(value).strip()
     if not raw: raise ValueError("Missing amount")
     negative = raw.startswith("(") and raw.endswith(")")
@@ -32,7 +35,19 @@ def money(value):
     except InvalidOperation as exc: raise ValueError("Invalid amount: "+str(value)) from exc
     if not number.is_finite() or abs(number) > Decimal("1000000000000"):
         raise ValueError("Nonfinite or out-of-range amount")
-    return (-number if negative else number).quantize(CENT, rounding=ROUND_HALF_UP)
+    return -number if negative else number
+
+
+def money(value):
+    return _exact_amount(value).quantize(CENT, rounding=ROUND_HALF_UP)
+
+
+def unit_cost(value):
+    """Unit prices may carry sub-cent precision; totals round only on display."""
+    amount = _exact_amount(value)
+    if amount.normalize().as_tuple().exponent < -8:
+        raise ValueError("Unit price precision exceeds eight decimal places")
+    return amount
 
 def qty(value):
     try: n = Decimal(str(value).strip().replace(",",""))
@@ -61,8 +76,12 @@ def table(path, required, optional=()):
         headers = dict(zip(normalized, reader.fieldnames))
         cols = {}
         for field in (*required,*optional):
-            cols[field] = next((headers[a] for a in ALIASES.get(field,(field,)) if a in headers),None)
-            if field in required and cols[field] is None: raise ValueError(f"{p.name}: missing '{field}' column")
+            matches = [alias for alias in ALIASES.get(field,(field,)) if alias in headers]
+            if len(matches) > 1:
+                raise ValueError(f"{p.name}: ambiguous '{field}' aliases: {', '.join(matches)}")
+            cols[field] = headers[matches[0]] if matches else None
+            if field in required and cols[field] is None:
+                raise ValueError(f"{p.name}: missing '{field}' column")
         out = []
         for i,r in enumerate(reader,2):
             if i > MAX_ROWS+1: raise ValueError("CSV exceeds 200,000 rows")
@@ -114,16 +133,14 @@ def ledger_diff(left,right,folder):
         a,b=groups[0][k],groups[1][k]
         x=sum((money(r["amount"]) for r in a),Decimal(0))
         y=sum((money(r["amount"]) for r in b),Decimal(0))
-        status=("missing_left" if not a else "missing_right" if not b else
-                "duplicate_id_review" if len(a)!=1 or len(b)!=1 else
-                ";".join(filter(None, [
-                    "normalized_id_review" if a[0]["id"].strip().casefold()!=b[0]["id"].strip().casefold() else "",
-                    "variance" if x!=y else ""
-                ])) or "matched")
+        status=reconciliation_status(
+            a,b,x,y,missing_left="missing_left",missing_right="missing_right")
         rows.append({"id":k,"status":status,"left_amount":dollars(x),"right_amount":dollars(y),
                      "difference":dollars(x-y),"left_rows":";".join(r["row"] for r in a),
-                     "right_rows":";".join(r["row"] for r in b)})
-    return [save(folder,"ledger-diff",("id","status","left_amount","right_amount","difference","left_rows","right_rows"),rows)]
+                     "right_rows":";".join(r["row"] for r in b),
+                     "left_ids":labels_for_report(a,"id"),
+                     "right_ids":labels_for_report(b,"id")})
+    return [save(folder,"ledger-diff",("id","status","left_amount","right_amount","difference","left_rows","right_rows","left_ids","right_ids"),rows)]
 
 def invoice_twins(source,folder):
     records=table(source,("vendor","invoice_number","amount","date"))
@@ -190,6 +207,10 @@ def grant_audit(claims,ledger,budgets,folder):
     claims_rows=table(claims,("id","amount","program"))
     ledger_rows=table(ledger,("id","amount","program"))
     budget_rows=table(budgets,("program","budget"))
+    program_sources=defaultdict(list)
+    for source_rows in (claims_rows,ledger_rows,budget_rows):
+        for entry in source_rows:
+            program_sources[key(entry["program"])].append(entry)
     grouped=[defaultdict(list),defaultdict(list)]
     for rows,d in ((claims_rows,grouped[0]),(ledger_rows,grouped[1])):
         for r in rows:
@@ -202,16 +223,17 @@ def grant_audit(claims,ledger,budgets,folder):
         x=sum((money(r["amount"]) for r in a),Decimal(0))
         y=sum((money(r["amount"]) for r in b),Decimal(0))
         claimed[program]+=x
-        status=("missing_claim" if not a else "missing_ledger" if not b else
-                "duplicate_id_review" if len(a)!=1 or len(b)!=1 else
-                ";".join(filter(None, [
-                    "normalized_id_review" if a[0]["id"].strip().casefold()!=b[0]["id"].strip().casefold() else "",
-                    "variance" if x!=y else ""
-                ])) or "matched")
+        status=reconciliation_status(
+            a,b,x,y,missing_left="missing_claim",missing_right="missing_ledger",
+            fields=(("id","normalized_id_review"),("program","normalized_program_review")))
         checks.append({"program":program,"id":id_,"status":status,"claim_amount":dollars(x),
                        "ledger_amount":dollars(y),"difference":dollars(x-y),
                        "claim_rows":";".join(r["row"] for r in a),
-                       "ledger_rows":";".join(r["row"] for r in b)})
+                       "ledger_rows":";".join(r["row"] for r in b),
+                       "claim_ids":labels_for_report(a,"id"),
+                       "ledger_ids":labels_for_report(b,"id"),
+                       "claim_programs":labels_for_report(a,"program"),
+                       "ledger_programs":labels_for_report(b,"program")})
     limits={}
     for r in budget_rows:
         program=key(r["program"])
@@ -221,10 +243,13 @@ def grant_audit(claims,ledger,budgets,folder):
     for program in sorted(set(limits)|set(claimed)):
         total=claimed[program];limit=limits.get(program)
         status="missing_budget" if limit is None else "over_budget_review" if total>limit else "within_budget"
+        if normalized_collision(program_sources[program],"program"):
+            status="normalized_budget_program_review;"+status
         budget_checks.append({"program":program,"claimed":dollars(total),
-                              "budget":"" if limit is None else dollars(limit),"status":status})
-    paths=[save(folder,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows"),checks),
-           save(folder,"grant-budget-check",("program","claimed","budget","status"),budget_checks)]
+                              "budget":"" if limit is None else dollars(limit),"status":status,
+                              "source_programs":labels_for_report(program_sources[program],"program")})
+    paths=[save(folder,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows","claim_ids","ledger_ids","claim_programs","ledger_programs"),checks),
+           save(folder,"grant-budget-check",("program","claimed","budget","status","source_programs"),budget_checks)]
     return paths+[manifest(folder,[claims,ledger,budgets],paths)]
 
 def procure_guard(po,invoices,receipts,folder):
@@ -241,26 +266,41 @@ def procure_guard(po,invoices,receipts,folder):
     for po_key,line in sorted(set().union(*(set(g) for g in grouped))):
         k=(po_key,line);a,b,c=(g[k] for g in grouped)
         flags=[]
+        source_records=[*a,*b,*c]
         if len(a)!=1:flags.append("missing_or_duplicate_po")
+        if normalized_collision(source_records,"po_number"):
+            flags.append("normalized_po_key_review")
+        if normalized_collision(source_records,"line"):
+            flags.append("normalized_line_key_review")
         po_qty=qty(a[0]["quantity"]) if len(a)==1 else Decimal(0)
-        po_price=money(a[0]["unit_price"]) if len(a)==1 else Decimal(0)
+        po_price=unit_cost(a[0]["unit_price"]) if len(a)==1 else Decimal(0)
         inv_qty=sum((qty(r["quantity"]) for r in b),Decimal(0))
         rec_qty=sum((qty(r["quantity"]) for r in c),Decimal(0))
-        inv_total=sum((qty(r["quantity"])*money(r["unit_price"]) for r in b),Decimal(0))
+        inv_prices=[(qty(r["quantity"]),unit_cost(r["unit_price"])) for r in b]
+        inv_total=sum((amount*price for amount,price in inv_prices),Decimal(0))
+        if len(b)>1 and len(set(inv_prices))<len(b):
+            flags.append("possible_duplicate_invoice_line")
         if not b:flags.append("missing_invoice")
         if not c:flags.append("missing_receipt")
         if len(a)==1 and inv_qty>po_qty:flags.append("invoiced_above_order")
         if inv_qty>rec_qty:flags.append("invoiced_above_received")
+        if po_price<0 or any(price<0 for _amount,price in inv_prices):
+            flags.append("negative_unit_price_review")
         if len(a)==1 and b:
             expected=inv_qty*po_price
-            if abs(inv_total-expected)>max(CENT,abs(expected)*Decimal("0.02")):
+            if (price_exceeds_tolerance(inv_total,expected) or
+                    any(price_exceeds_tolerance(price,po_price) for _amount,price in inv_prices)):
                 flags.append("price_variance_above_2pct")
         checks.append({"po":po_key,"line":line,"po_qty":str(po_qty),"invoiced_qty":str(inv_qty),
-                       "received_qty":str(rec_qty),"po_unit_price":dollars(po_price),
+                       "received_qty":str(rec_qty),"po_unit_price":format(po_price,"f"),
                        "invoice_total":dollars(inv_total),"status":";".join(flags) or "matched",
                        "po_rows":";".join(r["row"] for r in a),
                        "invoice_rows":";".join(r["row"] for r in b),
-                       "receipt_rows":";".join(r["row"] for r in c)})
+                       "receipt_rows":";".join(r["row"] for r in c),
+                       "po_ids":labels_for_report(a,"po_number"),
+                       "invoice_po_ids":labels_for_report(b,"po_number"),
+                       "receipt_po_ids":labels_for_report(c,"po_number"),
+                       "line_labels":labels_for_report(source_records,"line")})
     paths=[save(folder,"procurement-three-way",("po","line","po_qty","invoiced_qty","received_qty",
-           "po_unit_price","invoice_total","status","po_rows","invoice_rows","receipt_rows"),checks)]
+           "po_unit_price","invoice_total","status","po_rows","invoice_rows","receipt_rows","po_ids","invoice_po_ids","receipt_po_ids","line_labels"),checks)]
     return paths+[manifest(folder,[po,invoices,receipts],paths)]
