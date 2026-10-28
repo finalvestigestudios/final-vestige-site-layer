@@ -61,15 +61,25 @@ def candidate_pairs(records: Iterable[dict[str, Any]], *,
         # Source-order tiebreaker makes pair order reproducible across runs.
         ordered = sorted(items, key=lambda r: (r["dt"], int(r["row"])))
         active: deque[dict[str, Any]] = deque()
+        active_by_invoice: dict[str, deque[dict[str, Any]]] = {}
         for later in ordered:
             while active and (later["dt"] - active[0]["dt"]).days > window_days:
-                active.popleft()
-            for earlier in active:
-                # Same-key pairs are already represented by exact-key anchors.
-                if earlier["inv"] != later["inv"]:
+                expired = active.popleft()
+                bucket = active_by_invoice[expired["inv"]]
+                bucket.popleft()
+                if not bucket:
+                    del active_by_invoice[expired["inv"]]
+            # Grouping active rows by invoice key avoids comparing a large
+            # collection of identical recurring invoices against itself.
+            # Cross-key comparisons still emit every potential review pair.
+            for invoice_key, bucket in active_by_invoice.items():
+                if invoice_key == later["inv"]:
+                    continue
+                for earlier in bucket:
                     add(earlier, later, "review_possible_duplicate",
                         f"same normalized vendor and amount within {window_days} days")
             active.append(later)
+            active_by_invoice.setdefault(later["inv"], deque()).append(later)
     return results
 
 
