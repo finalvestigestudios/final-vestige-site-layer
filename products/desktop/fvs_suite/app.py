@@ -20,8 +20,8 @@ def run(app_id):
     title, labels, action, premium = APPS[app_id]
     root = tk.Tk()
     root.title("Final Vestige Labs — " + title)
-    root.geometry("780x470")
-    root.minsize(600, 390)
+    root.geometry("920x580" if premium else "780x470")
+    root.minsize(760, 520) if premium else root.minsize(600, 390)
     root.columnconfigure(0, weight=1)
     frame = ttk.Frame(root, padding=24)
     frame.grid(sticky="nsew")
