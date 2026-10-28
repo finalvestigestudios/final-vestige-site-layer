@@ -1,0 +1,52 @@
+name: Desktop suite build (internal)
+on:
+  pull_request:
+    paths:
+      - 'products/desktop/**'
+      - '.github/workflows/desktop-build.yml'
+  push:
+    branches:
+      - 'feature/labs-desktop-suite'
+    paths:
+      - 'products/desktop/**'
+      - '.github/workflows/desktop-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run deterministic engine tests
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -v
+      - name: Install packaging tool
+        run: python -m pip install "pyinstaller>=6.12,<7"
+      - name: Build six standalone Windows executables
+        shell: pwsh
+        run: |
+          $apps = @("LedgerDiffLite","InvoiceTwinScout","SpendMapLite","PolicyDeltaDesk","GrantAuditStudioPro","ProcureGuardStudioPro")
+          foreach ($app in $apps) {
+            python -m PyInstaller --noconfirm --clean --onefile --windowed --paths products/desktop --name $app --distpath dist --workpath "build/$app" --specpath build/specs "products/desktop/launchers/$app.py"
+            if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed for $app" }
+          }
+          Get-ChildItem dist -Filter *.exe | ForEach-Object {
+            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
+            "$hash  $($_.Name)" | Out-File -FilePath dist/SHA256SUMS.txt -Append -Encoding ascii
+          }
+      - name: Upload internal pre-release artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-vestige-desktop-windows-internal
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7
