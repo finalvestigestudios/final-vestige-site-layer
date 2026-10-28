@@ -155,5 +155,84 @@ class RegistryR13Tests(unittest.TestCase):
         self.assertEqual(self.status(), ("reserved", None))
 
 
+class RegistryCliIntegrationR13Tests(unittest.TestCase):
+    """Execute the actual R12 cryptographic CLI with a temporary test-only key."""
+
+    def setUp(self):
+        from datetime import datetime, timedelta, timezone
+        from cryptography.hazmat.primitives import serialization
+        from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.root = Path(tmp.name)
+        self.key = Ed25519PrivateKey.generate()
+        self.password = "synthetic-passphrase-only"
+        self.pem = self.root / "test-key.pem"
+        self.pem.write_bytes(self.key.private_bytes(
+            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8,
+            serialization.BestAvailableEncryption(self.password.encode("utf-8"))))
+        if os.name == "posix":
+            self.pem.chmod(0o600)
+        self.target = self.root / "test-license.fvslicense"
+        self.registry_path = self.root / "issuance.sqlite3"
+        expires = (datetime.now(timezone.utc) + timedelta(days=400)).replace(microsecond=0)
+        self.args = [
+            "--key", str(self.pem), "--registry", str(self.registry_path),
+            "--kid", "test-only-operator-01", "--product", "grants",
+            "--license-id", "test-only-license-001", "--holder", "Synthetic Org",
+            "--expires-at", expires.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "--output", str(self.target), "--confirm-issue",
+        ]
+
+    def run_cli(self, password=None):
+        import io
+        from contextlib import redirect_stdout, redirect_stderr
+        from unittest.mock import patch
+        import license_issuer
+        with patch.object(license_issuer.sys.stdin, "isatty", return_value=True), \
+             patch.object(license_issuer.getpass, "getpass",
+                          return_value=self.password if password is None else password), \
+             redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            return license_issuer.main(self.args)
+
+    def test_real_signed_cli_issues_only_once_and_registry_hash_matches(self):
+        from cryptography.hazmat.primitives import serialization
+        from fvs_suite import offline_entitlement as verifier
+        self.assertEqual(self.run_cli(), 0)
+        public = self.key.public_key().public_bytes(
+            serialization.Encoding.Raw, serialization.PublicFormat.Raw)
+        license_data = verifier.verify_license(
+            self.target, "grants", trusted_keys={"test-only-operator-01": public})
+        self.assertEqual(license_data.license_id, "test-only-license-001")
+        before = self.target.read_bytes()
+        with sqlite3.connect(self.registry_path) as con:
+            state, digest = con.execute(
+                "SELECT state,license_sha256 FROM issuance WHERE license_id=?",
+                ("test-only-license-001",)).fetchone()
+        import hashlib
+        self.assertEqual(state, "issued")
+        self.assertEqual(digest, hashlib.sha256(before).hexdigest())
+        with self.assertRaises(SystemExit) as error:
+            self.run_cli()
+        self.assertEqual(error.exception.code, 1)
+        self.assertEqual(self.target.read_bytes(), before)
+
+    def test_wrong_passphrase_reservation_cannot_be_reused(self):
+        with self.assertRaises(SystemExit) as error:
+            self.run_cli(password="invalid-passphrase")
+        self.assertEqual(error.exception.code, 1)
+        self.assertFalse(self.target.exists())
+        with sqlite3.connect(self.registry_path) as con:
+            self.assertEqual(con.execute(
+                "SELECT state FROM issuance WHERE license_id=?",
+                ("test-only-license-001",)).fetchone(), ("reserved",))
+        with self.assertRaises(SystemExit) as error:
+            self.run_cli()
+        self.assertEqual(error.exception.code, 1)
+        self.assertFalse(self.target.exists())
+
+
+
 if __name__ == "__main__":
     unittest.main()
