@@ -312,11 +312,16 @@ def main() -> int:
     parser.add_argument("folder", nargs="?")
     parser.add_argument("--report", type=Path)
     args = parser.parse_args()
-    if not any((args.claims, args.support, args.folder)):
+    if not any((args.claims, args.support, args.folder)) and not args.report:
         gui()
         return 0
     if not all((args.claims, args.support, args.folder)):
-        parser.error("Provide claims CSV, support index CSV and attachments folder.")
+        # A PyInstaller --windowed binary has no console streams. Still fail
+        # with a predictable exit code instead of calling parser.error().
+        if sys.stderr is not None:
+            print("Provide claims CSV, support index CSV and attachments folder.",
+                  file=sys.stderr)
+        return 2
     try:
         result = audit(Path(args.claims), Path(args.support), Path(args.folder))
         if args.report:
@@ -324,10 +329,12 @@ def main() -> int:
                     else json.dumps(result, indent=2) + "\n")
             write_report(args.report, body, Path(args.claims), Path(args.support),
                          Path(args.folder), result["snapshot"])
-        print(json.dumps(result, indent=2))
+        if sys.stdout is not None:
+            print(json.dumps(result, indent=2))
         return 1 if result["finding_count"] else 0
     except (OSError, ValueError, UnicodeError, csv.Error) as exc:
-        print("Audit failed:", exc, file=sys.stderr)
+        if sys.stderr is not None:
+            print("Audit failed:", exc, file=sys.stderr)
         return 2
 
 
