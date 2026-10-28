@@ -1,0 +1,303 @@
+"""Offline, human-only exception review for the two premium desktop prototypes.
+
+This module NEVER authorizes spending, determines eligibility, or silently clears
+an exception. The hash-linked journal detects accidental edits but is NOT a
+cryptographic signature, an access-control boundary, or encrypted-at-rest.
+"""
+from __future__ import annotations
+
+import csv
+import hashlib
+import hmac
+import io
+import json
+import os
+from contextlib import contextmanager
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+
+MAX_REPORT_BYTES = 64 * 1024 * 1024
+MAX_JOURNAL_BYTES = 16 * 1024 * 1024
+MAX_RECORDS = 200_000
+MAX_EVENTS = 20_000
+DECISIONS = ("needs_evidence", "escalated", "reviewed")
+ZERO_HASH = "0" * 64
+FIELDS = (
+    "schema", "product", "report_sha256", "case_id", "report_row",
+    "flags", "decision", "reviewer", "rationale", "created_utc", "previous_hash",
+)
+CSV_FIELDS = (
+    "case_id", "source_row", "source_key", "original_flags", "review_state",
+    "reviewer", "rationale", "reviewed_utc", "report_sha256",
+)
+
+
+@dataclass(frozen=True)
+class ExceptionCase:
+    case_id: str
+    report_row: int
+    source_key: str
+    flags: str
+
+
+@dataclass(frozen=True)
+class ReportBatch:
+    product: str
+    report_sha256: str
+    cases: tuple[ExceptionCase, ...]
+
+
+def _hex_hash(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _json(data: dict) -> bytes:
+    return json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+
+
+def _unique_keys(pairs):
+    value = {}
+    for key, item in pairs:
+        if key in value:
+            raise ValueError("Repeated JSON journal key")
+        value[key] = item
+    return value
+
+
+def _read_file(path: str | Path, limit: int, kind: str) -> bytes:
+    source = Path(path)
+    if source.is_symlink() or not source.is_file():
+        raise ValueError(f"{kind} must be an existing regular file, not a symlink")
+    if source.stat().st_size > limit:
+        raise ValueError(f"{kind} exceeds the allowed file-size limit")
+    with source.open("rb") as stream:
+        data = stream.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError(f"{kind} exceeds the allowed file-size limit")
+    return data
+
+
+def read_cases(report: str | Path, product: str) -> ReportBatch:
+    """Bind a review queue to one exact report snapshot, never to a filename."""
+    if product not in ("grants", "procurement"):
+        raise ValueError("Only premium grant/procurement exception reports are supported")
+    source = Path(report)
+    if source.suffix.lower() != ".csv":
+        raise ValueError("The exception report must be a CSV file")
+    data = _read_file(source, MAX_REPORT_BYTES, "Exception report")
+    digest = _hex_hash(data)
+    try:
+        decoded = data.decode("utf-8-sig")
+    except UnicodeError as exc:
+        raise ValueError("Exception report must be UTF-8 CSV") from exc
+    if "\x00" in decoded:
+        raise ValueError("Exception report contains a NUL character")
+    reader = csv.DictReader(io.StringIO(decoded, newline=""))
+    if not reader.fieldnames:
+        raise ValueError("Exception report has no CSV headers")
+    names = [str(h).strip().lower().replace(" ", "_") for h in reader.fieldnames]
+    if any(not n for n in names) or len(names) != len(set(names)):
+        raise ValueError("Exception report has blank or duplicate CSV headers")
+    required = {"status", "id"} if product == "grants" else {"status", "po", "line"}
+    if not required.issubset(set(names)):
+        raise ValueError("Report is missing the expected premium exception columns")
+    col = dict(zip(names, reader.fieldnames))
+    cases = []
+    for index, row in enumerate(reader, 2):
+        if index > MAX_RECORDS + 1:
+            raise ValueError("Exception report exceeds the row limit")
+        if None in row:
+            raise ValueError(f"Malformed CSV record at logical row {index}")
+        status = str(row.get(col["status"]) or "").strip()
+        if not status:
+            raise ValueError(f"Missing status in report record {index}")
+        key = (str(row.get(col["id"]) or "").strip() if product == "grants"
+               else f"{str(row.get(col['po']) or '').strip()} / {str(row.get(col['line']) or '').strip()}")
+        if not key.strip(" /"):
+            raise ValueError(f"Missing identifier in report record {index}")
+        if status == "matched":
+            continue
+        case_id = _hex_hash(f"FVS-CASE-v1|{product}|{digest}|{index}".encode("ascii"))
+        cases.append(ExceptionCase(case_id, index, key, status))
+    return ReportBatch(product, digest, tuple(cases))
+
+
+def _text(value: str, name: str, minimum: int, maximum: int) -> str:
+    if not isinstance(value, str):
+        raise ValueError(f"{name} must be text")
+    result = value.strip()
+    if len(result) < minimum or len(result) > maximum:
+        raise ValueError(f"{name} must be between {minimum} and {maximum} characters")
+    if any(ord(char) < 32 or ord(char) == 127 for char in result):
+        raise ValueError(f"{name} cannot contain control characters")
+    return result
+
+
+def _validate_event(event: dict, batch: ReportBatch, cases: dict, previous: str) -> str:
+    if not isinstance(event, dict) or set(event) != set(FIELDS) | {"event_hash"}:
+        raise ValueError("Unrecognized review journal event schema")
+    if type(event["schema"]) is not int or event["schema"] != 1:
+        raise ValueError("Unsupported review journal schema")
+    if event["product"] != batch.product or event["report_sha256"] != batch.report_sha256:
+        raise ValueError("Review journal belongs to a different report snapshot")
+    case = cases.get(event["case_id"])
+    if case is None or type(event["report_row"]) is not int or case.report_row != event["report_row"]:
+        raise ValueError("Review event references an unknown exception")
+    if case.flags != event["flags"]:
+        raise ValueError("Review event flags do not match the source report")
+    if event["decision"] not in DECISIONS:
+        raise ValueError("Unsupported review decision")
+    _text(event["reviewer"], "Reviewer", 2, 80)
+    _text(event["rationale"], "Rationale", 12, 2000)
+    try:
+        timestamp = datetime.fromisoformat(event["created_utc"])
+        if timestamp.tzinfo is None:
+            raise ValueError
+    except (ValueError, TypeError) as exc:
+        raise ValueError("Review journal has an invalid UTC timestamp") from exc
+    if event["previous_hash"] != previous:
+        raise ValueError("Review journal chain broken or reordered")
+    payload = {name: event[name] for name in FIELDS}
+    expected = _hex_hash(_json(payload))
+    value = event["event_hash"]
+    if not isinstance(value, str) or not hmac.compare_digest(expected, value):
+        raise ValueError("Review journal hash mismatch; refuse further writes")
+    return expected
+
+
+def read_journal(journal: str | Path, batch: ReportBatch) -> list[dict]:
+    """Verify all known events against the current report and preceding hashes."""
+    path = Path(journal)
+    if not path.exists() and not path.is_symlink():
+        return []
+    data = _read_file(path, MAX_JOURNAL_BYTES, "Review journal")
+    if data and not data.endswith(b"\n"):
+        raise ValueError("Review journal has an incomplete final record")
+    cases = {case.case_id: case for case in batch.cases}
+    result = []
+    previous = ZERO_HASH
+    for line_number, line in enumerate(data.splitlines(), 1):
+        if line_number > MAX_EVENTS:
+            raise ValueError("Review journal exceeds maximum recorded events")
+        if not line:
+            raise ValueError("Review journal contains an empty record")
+        try:
+            event = json.loads(line.decode("utf-8"), object_pairs_hook=_unique_keys,
+                               parse_constant=lambda raw: (_ for _ in ()).throw(
+                                   ValueError(f"Invalid JSON constant: {raw}")))
+        except (UnicodeError, json.JSONDecodeError) as exc:
+            raise ValueError(f"Malformed review journal record {line_number}") from exc
+        previous = _validate_event(event, batch, cases, previous)
+        result.append(event)
+    return result
+
+
+@contextmanager
+def _writer_lock(journal: Path):
+    """Exclusive nonblocking writer lock; stale locks require manual inspection."""
+    lock = Path(str(journal) + ".lock")
+    if lock.is_symlink():
+        raise ValueError("Review lock cannot be a symlink")
+    try:
+        with lock.open("x", encoding="ascii") as stream:
+            stream.write(f"pid={os.getpid()}\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+    except FileExistsError as exc:
+        raise ValueError("Review journal locked by another writer; inspect before retrying") from exc
+    try:
+        yield
+    finally:
+        lock.unlink(missing_ok=True)
+
+
+def append_review(report: str | Path, product: str, journal: str | Path, *,
+                  case_id: str, expected_report_sha256: str, reviewer: str,
+                  decision: str, rationale: str) -> dict:
+    """Append a reviewer action; no automatic status changes or authorization."""
+    if decision not in DECISIONS:
+        raise ValueError("Decision must be needs_evidence, escalated, or reviewed")
+    reviewer = _text(reviewer, "Reviewer", 2, 80)
+    rationale = _text(rationale, "Rationale", 12, 2000)
+    path = Path(journal)
+    source = Path(report)
+    if path.resolve() == source.resolve() or path.suffix.lower() != ".jsonl":
+        raise ValueError("Choose a separate .jsonl review journal, not the source report")
+    if not path.parent.is_dir():
+        raise ValueError("Review journal parent folder does not exist")
+    with _writer_lock(path):
+        batch = read_cases(report, product)
+        if batch.report_sha256 != expected_report_sha256:
+            raise ValueError("Source report changed since it was opened; reload before reviewing")
+        cases = {case.case_id: case for case in batch.cases}
+        if case_id not in cases:
+            raise ValueError("Unknown or already-matched exception; no review was recorded")
+        events = read_journal(path, batch)
+        if len(events) >= MAX_EVENTS:
+            raise ValueError("Review journal event limit reached; export and archive it")
+        case = cases[case_id]
+        payload = {
+            "schema": 1, "product": product, "report_sha256": batch.report_sha256,
+            "case_id": case_id, "report_row": case.report_row, "flags": case.flags,
+            "decision": decision, "reviewer": reviewer, "rationale": rationale,
+            "created_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "previous_hash": events[-1]["event_hash"] if events else ZERO_HASH,
+        }
+        event = {**payload, "event_hash": _hex_hash(_json(payload))}
+        encoded = _json(event) + b"\n"
+        if (path.stat().st_size if path.exists() else 0) + len(encoded) > MAX_JOURNAL_BYTES:
+            raise ValueError("Review journal file-size limit reached")
+        # Exclusive writer lock protects append order. A torn write fails closed
+        # on next read rather than silently being treated as an approved action.
+        with path.open("ab") as stream:
+            stream.write(encoded)
+            stream.flush()
+            os.fsync(stream.fileno())
+        return event
+
+
+def latest_states(journal: str | Path, batch: ReportBatch) -> dict[str, dict]:
+    state = {}
+    for event in read_journal(journal, batch):
+        state[event["case_id"]] = event
+    return state
+
+
+def _csv_cell(value: object) -> str:
+    data = str(value)
+    if data.lstrip().startswith(("=", "+", "-", "@", "\t", "\r", "\n")):
+        return "'" + data
+    return data
+
+
+def export_register(report: str | Path, product: str, journal: str | Path,
+                    folder: str | Path) -> Path:
+    """Write a new sanitized CSV of human decisions; originals remain untouched."""
+    batch = read_cases(report, product)
+    state = latest_states(journal, batch)
+    target = Path(folder)
+    if not target.is_dir():
+        raise ValueError("Choose an existing output folder")
+    path = target / ("review-register-" + datetime.now(timezone.utc).strftime(
+        "%Y%m%d-%H%M%S-%f") + ".csv")
+    try:
+        with path.open("x", encoding="utf-8-sig", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
+            writer.writeheader()
+            for case in batch.cases:
+                latest = state.get(case.case_id, {})
+                entry = {
+                    "case_id": case.case_id, "source_row": case.report_row,
+                    "source_key": case.source_key, "original_flags": case.flags,
+                    "review_state": latest.get("decision", "pending"),
+                    "reviewer": latest.get("reviewer", ""),
+                    "rationale": latest.get("rationale", ""),
+                    "reviewed_utc": latest.get("created_utc", ""),
+                    "report_sha256": batch.report_sha256,
+                }
+                writer.writerow({field: _csv_cell(value) for field, value in entry.items()})
+    except Exception:
+        path.unlink(missing_ok=True)
+        raise
+    return path
