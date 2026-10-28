@@ -56,7 +56,7 @@ class PacketSafetyTests(unittest.TestCase):
         rule = {'name': 'Invoice', 'pattern': '*.pdf'}
         with self.assertRaises(ValueError):
             validate_checklist({'rules': [rule, {**rule, 'name': 'INVOICE'}]})
-        for value in (-1, 0, '20', float('inf'), float('nan'), False):
+        for value in (-1, 0, '20', float('inf'), float('nan'), False, 10**400):
             with self.subTest(value=value):
                 with self.assertRaises(ValueError):
                     validate_checklist({'rules': [rule], 'max_total_size_mb': value})
