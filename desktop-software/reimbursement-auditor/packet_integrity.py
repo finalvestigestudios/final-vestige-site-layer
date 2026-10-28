@@ -98,9 +98,13 @@ def attachment_inventory(folder: Path, claims: Path, support: Path) -> dict:
                 raise ValueError("Attachment folder exceeds the 5000-file scan limit.")
             try:
                 stat_info = candidate.stat()
-                total_bytes += stat_info.st_size
-                if total_bytes > MAX_ATTACHMENT_BYTES:
-                    raise ValueError("Attachment folder exceeds the 2 GiB scan limit.")
+            except OSError as exc:
+                errors.append({"path": rel, "error": str(exc)})
+                continue
+            total_bytes += stat_info.st_size
+            if total_bytes > MAX_ATTACHMENT_BYTES:
+                raise ValueError("Attachment folder exceeds the 2 GiB scan limit.")
+            try:
                 item = hash_file(candidate)
                 entries.append({"path": rel, **item})
             except (OSError, ValueError) as exc:
