@@ -188,3 +188,18 @@ See [R14 schema guard and recovery notes](docs/REGISTRY_SCHEMA_GUARD_R14.md).
 The R14 SQLite schema guard now runs alongside R15's semantic inspection of **all existing issuance rows** before each new premium license reservation or finalization. R15 rejects malformed license/key identifiers, noncanonical path/license SHA-256 digests, invalid or reversed timestamps, inconsistent reserved/issued states, and repeated destination hashes (including cross-product reuse). Repeated reservation of the **same output destination** now fails even under a different license ID; finalization refuses a backwards clock rather than recording an invalid chronology. The existing R13 table schema is unchanged. These checks do **not** prevent a privileged actor from coherently rewriting or rolling back a registry.
 
 Seventeen focused tests passed locally under both normal Python and `-OO` with a reconstructed registry integration harness, including deliberate corruptions and no-write failure checks. The full branch test suite and packaged Windows executables have not run. See [R15 row-integrity guard and operator notes](docs/REGISTRY_ROW_INTEGRITY_R15.md). No premium distribution, production key activation, or QD publication authorization is implied.
+
+
+## R16 signed-content finalization binding (pre-release)
+
+The operator CLI now carries a SHA-256 receipt derived from its **original
+in-memory signed entitlement bytes** into the issuance registry, rather than
+allowing finalization to trust whatever file happens to be present after
+signature verification. `finalize(..., expected_sha256=...)` requires a
+canonical digest and compares the output bytes before recording `issued`.
+A mismatch leaves the license ID reserved for manual investigation. R12's
+Path-returning helper remains the default unless the CLI explicitly requests
+the signed-content digest. This is not authenticated ledger storage and cannot
+prevent an attacker changing files *after* finalization or replacing the entire
+registry. See [R16 receipt binding and tests](docs/SIGNED_ISSUANCE_BINDING_R16.md).
+No production keys, premium release or QD approval accompany this change.
