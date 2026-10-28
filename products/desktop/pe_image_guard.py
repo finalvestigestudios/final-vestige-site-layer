@@ -1,0 +1,116 @@
+"""Defensive structural inspection of a Windows AMD64 application image.
+
+This is a *format sanity check*, not malware scanning, Authenticode verification,
+or proof that the program will run. Real-machine smoke and independent release
+approval remain separate gates. No binary content is executed here.
+"""
+from __future__ import annotations
+
+import os
+import stat
+import struct
+from pathlib import Path
+
+
+class PEFormatError(ValueError):
+    """The candidate does not meet the desktop suite PE32+ shape contract."""
+
+
+def _u16(raw: bytes, at: int) -> int:
+    return struct.unpack_from("<H", raw, at)[0]
+
+
+def _u32(raw: bytes, at: int) -> int:
+    return struct.unpack_from("<I", raw, at)[0]
+
+
+def _read_at(stream, start: int, count: int, length: int) -> bytes:
+    if start < 0 or count < 0 or start + count > length:
+        raise PEFormatError("PE header or section extends beyond file")
+    stream.seek(start)
+    data = stream.read(count)
+    if len(data) != count:
+        raise PEFormatError("PE file changed or was truncated during inspection")
+    return data
+
+
+def _power_of_two(value: int) -> bool:
+    return value > 0 and value & (value - 1) == 0
+
+
+def verify_amd64_pe(path: str | Path) -> None:
+    """Reject truncated, non-AMD64, DLL/driver and malformed executable images.
+
+    Deliberately restrict the expected PyInstaller --windowed output to normal
+    GUI/console PE32+ files with a bounded section table and executable section.
+    Do not treat a structurally valid PE as safe or signed.
+    """
+    filename = Path(path)
+    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    try:
+        fd = os.open(filename, flags)
+    except OSError as exc:
+        raise PEFormatError("Cannot open candidate without following file symlinks") from exc
+    metadata = os.fstat(fd)
+    if not stat.S_ISREG(metadata.st_mode):
+        os.close(fd)
+        raise PEFormatError("Candidate is not a regular file")
+    with os.fdopen(fd, "rb") as stream:
+        length = metadata.st_size
+        if length < 512:
+            raise PEFormatError("Truncated Windows image")
+        dos = _read_at(stream, 0, 64, length)
+        if dos[:2] != b"MZ":
+            raise PEFormatError("Missing DOS MZ signature")
+        pe_offset = _u32(dos, 0x3C)
+        if not 64 <= pe_offset <= 65536:
+            raise PEFormatError("Unsafe PE header offset")
+        nt = _read_at(stream, pe_offset, 24, length)
+        if nt[:4] != b"PE\x00\x00":
+            raise PEFormatError("Missing NT PE signature")
+        machine = _u16(nt, 4)
+        section_count = _u16(nt, 6)
+        optional_bytes = _u16(nt, 20)
+        characteristics = _u16(nt, 22)
+        if machine != 0x8664:
+            raise PEFormatError("Expected Windows AMD64 executable")
+        if not 1 <= section_count <= 96:
+            raise PEFormatError("Invalid PE section count")
+        if not 112 <= optional_bytes <= 4096:
+            raise PEFormatError("Invalid PE32+ optional-header size")
+        if not characteristics & 0x0002 or characteristics & (0x2000 | 0x1000):
+            raise PEFormatError("PE is not a user-mode executable image")
+        optional_start = pe_offset + 24
+        section_start = optional_start + optional_bytes
+        section_table_bytes = section_count * 40
+        sections_end = section_start + section_table_bytes
+        if sections_end > length:
+            raise PEFormatError("PE section table is truncated")
+        optional = _read_at(stream, optional_start, optional_bytes, length)
+        if _u16(optional, 0) != 0x20B:
+            raise PEFormatError("Expected PE32+, not PE32")
+        if _u32(optional, 16) == 0:
+            raise PEFormatError("Executable has no entry point")
+        section_align = _u32(optional, 32)
+        file_align = _u32(optional, 36)
+        if (not _power_of_two(file_align) or not _power_of_two(section_align)
+                or section_align < file_align):
+            raise PEFormatError("Invalid PE image/file alignments")
+        image_size = _u32(optional, 56)
+        headers_size = _u32(optional, 60)
+        if not sections_end <= headers_size <= length or image_size < headers_size:
+            raise PEFormatError("Invalid PE image/header extent")
+        if _u16(optional, 68) not in (2, 3):
+            raise PEFormatError("Expected user-mode GUI or console subsystem")
+        table = _read_at(stream, section_start, section_table_bytes, length)
+        executable_section = False
+        for offset in range(0, len(table), 40):
+            raw_bytes = _u32(table, offset + 16)
+            raw_offset = _u32(table, offset + 20)
+            section_flags = _u32(table, offset + 36)
+            if raw_bytes and (raw_offset < headers_size or raw_offset + raw_bytes > length):
+                raise PEFormatError("PE section bytes extend outside image")
+            if raw_bytes and section_flags & 0x20000000:
+                executable_section = True
+        if not executable_section:
+            raise PEFormatError("Missing backed executable code section")
