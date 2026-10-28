@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import csv
 import html
+import hashlib
 import json
 import re
 import sys
@@ -57,6 +58,15 @@ def parse_day(raw: str) -> date:
 
 def normalized_reference(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", (value or "").casefold())
+
+
+def sha256_file(path: Path) -> str:
+    """Fingerprint the exact input file without loading its contents into RAM."""
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def read_ledger(source: Path, flip_sign: bool = False) -> tuple[list[dict], list[dict]]:
@@ -115,8 +125,14 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
               flip_right_sign: bool = False) -> dict:
     if not isinstance(date_tolerance, int) or not 0 <= date_tolerance <= 31:
         raise ValueError("Date tolerance must be an integer from 0 to 31 days.")
+    if left.samefile(right):
+        raise ValueError("Choose two distinct ledger files; both inputs refer to the same file.")
+    input_sha256 = {"left": sha256_file(left), "right": sha256_file(right)}
     lhs, errors_left = read_ledger(left)
     rhs, errors_right = read_ledger(right, flip_sign=flip_right_sign)
+    if (sha256_file(left) != input_sha256["left"] or
+            sha256_file(right) != input_sha256["right"]):
+        raise ValueError("An input ledger changed during processing; retry using stable copies.")
     used_left: set[int] = set()
     used_right: set[int] = set()
     matches: list[dict] = []
@@ -225,6 +241,7 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
     report = {
         "tool": "Final Vestige Ledger Bridge", "version": VERSION,
         "inputs": {"left": left.name, "right": right.name},
+        "input_sha256": input_sha256,
         "settings": {"date_tolerance_days": date_tolerance, "flip_right_sign": flip_right_sign},
         "counts": {"left": len(lhs), "right": len(rhs), "matched": len(matches),
                    "suggested_matches": len(suggested),
@@ -311,6 +328,7 @@ def render_html(report: dict) -> str:
         "status": report.get("status"),
         "counts": report.get("counts", {}),
         "totals_by_currency": report.get("totals_by_currency", {}),
+        "input_sha256": report.get("input_sha256", {}),
         "settings": report.get("settings", {}),
     }, indent=2, ensure_ascii=False)
     return (
