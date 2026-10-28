@@ -15,10 +15,63 @@ APPS = {
                     ["Purchase orders CSV", "Invoices CSV", "Receipts CSV"], engine.procure_guard, True),
 }
 
+def _select_premium_entitlement(root, product):
+    """No premium UI or customer files before an Ed25519 entitlement verifies."""
+    from . import offline_entitlement as license
+    if not license.TRUSTED_PUBLIC_KEYS:
+        messagebox.showerror(
+            "Premium preview locked",
+            "This development build has no production signing authority. "
+            "The premium tools remain unavailable for customer data.",
+            parent=root)
+        return None
+    installed = license.installed_license_path(product)
+    try:
+        license.verify_license(installed, product)
+        return installed
+    except (license.EntitlementError, OSError, UnicodeError):
+        chosen = filedialog.askopenfilename(
+            parent=root, title="Select signed Final Vestige premium entitlement",
+            filetypes=[("Signed entitlement", "*.fvslicense")])
+        if not chosen:
+            return None
+        try:
+            license.verify_license(chosen, product)
+            return Path(chosen)
+        except (license.EntitlementError, OSError, UnicodeError):
+            messagebox.showerror(
+                "Premium entitlement rejected",
+                "This entitlement is invalid, expired, or not issued for this product.",
+                parent=root)
+            return None
+
+
+def _require_current_premium_entitlement(root, product, source):
+    from . import offline_entitlement as license
+    try:
+        license.verify_license(source, product)
+        return True
+    except (license.EntitlementError, OSError, UnicodeError):
+        messagebox.showerror(
+            "Premium entitlement required",
+            "This product's entitlement can no longer be verified. "
+            "No report or review action was performed.",
+            parent=root)
+        return False
+
+
 def run(app_id):
     if app_id not in APPS: raise ValueError("Unknown application")
     title, labels, action, premium = APPS[app_id]
     root = tk.Tk()
+    entitlement_source = None
+    if premium:
+        root.withdraw()
+        entitlement_source = _select_premium_entitlement(root, app_id)
+        if entitlement_source is None:
+            root.destroy()
+            return
+        root.deiconify()
     root.title("Final Vestige Labs — " + title)
     root.geometry("920x580" if premium else "780x470")
     root.minsize(760, 520) if premium else root.minsize(600, 390)
@@ -68,6 +121,8 @@ def run(app_id):
     ttk.Label(frame, textvariable=status, wraplength=690).grid(
         row=folder_row+2, column=0, columnspan=3, sticky="w", pady=(18, 8))
     def execute():
+        if premium and not _require_current_premium_entitlement(root, app_id, entitlement_source):
+            return
         if any(not p.get().strip() for p in selected):
             messagebox.showwarning("Missing input", "Select every required input file.")
             return
@@ -89,8 +144,13 @@ def run(app_id):
         row=folder_row+3, column=0, columnspan=3, sticky="w", pady=(8, 16))
     if premium:
         def open_exception_review():
+            if not _require_current_premium_entitlement(root, app_id, entitlement_source):
+                return
             from .review_ui import open_review_window
-            open_review_window(root, app_id, report_path=last_report[0])
+            from .offline_entitlement import verify_license
+            open_review_window(
+                root, app_id, report_path=last_report[0],
+                authorize=lambda: verify_license(entitlement_source, app_id))
         ttk.Button(frame, text="Review exceptions (human only)…",
                    command=open_exception_review).grid(
                        row=folder_row+4, column=0, columnspan=3, sticky="w")
