@@ -85,7 +85,7 @@ Run all suites from repository root (no third-party test library required):
 - Data Import Doctor diagnoses CSV issues, not guaranteed import compatibility.
 - Packet Preflight checks folder metadata against a user-provided checklist,
   not application or regulatory eligibility.
-- Renewal Radar is a local tracker. It does not run background notifications:
+- Renewal Radar is a local tracker. ICS exports fold long Unicode lines to the iCalendar standard and handle date boundaries. It does not run background notifications:
   ICS exports must be imported into a calendar. Invalid recurrence dates are
   skipped by RFC5545, e.g. monthly events on day 31 skip short months.
 - Payment Sentinel flags patterns for human review, never proves fraud.

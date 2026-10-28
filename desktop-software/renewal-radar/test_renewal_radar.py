@@ -64,6 +64,30 @@ class RenewalRadarTests(unittest.TestCase):
         self.assertIn(r"SUMMARY:Test\; comma\, newline\n", output)
         self.assertIn("\r\n", output)
 
+    def test_calendar_folds_long_unicode_titles_and_notes(self):
+        row = {"id": 3, "title": "Résumé " + "🗓️" * 80, "category": "",
+               "notes": "Long notes " + "é" * 500, "due": "2027-04-15",
+               "cadence": "none", "remind_days": 14}
+        output = render_ical([row])
+        lines = [line for line in output.split("\r\n") if line]
+        self.assertTrue(all(len(line.encode("utf-8")) <= 75 for line in lines))
+        logical = []
+        for line in lines:
+            if line.startswith(" "):
+                logical[-1] += line[1:]
+            else:
+                logical.append(line)
+        self.assertIn("SUMMARY:Résumé " + "🗓️" * 80, logical)
+        self.assertIn("END:VCALENDAR", logical)
+
+    def test_latest_possible_date_does_not_overflow(self):
+        row = {"id": 10, "title": "Very distant", "category": "",
+               "notes": "", "due": "9999-12-31", "cadence": "none", "remind_days": 0}
+        result = render_ical([row])
+        self.assertIn("DTSTART;VALUE=DATE:99991231", result)
+        self.assertNotIn("DTEND;VALUE=DATE:", result)
+
+
 
 if __name__ == "__main__":
     unittest.main()

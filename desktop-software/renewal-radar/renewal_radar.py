@@ -15,6 +15,7 @@ import sys
 import uuid
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from ical_utils import render_ical_lines
 
 VERSION = "0.1.0"
 CADENCES = {"none", "monthly", "yearly"}
@@ -138,14 +139,15 @@ def render_ical(rows: list[dict]) -> str:
     ]
     for row in rows:
         due = parse_due(row["due"])
-        end = due + timedelta(days=1)
+        end = due + timedelta(days=1) if due < date.max else None
         uid = uuid.uuid5(uuid.NAMESPACE_URL, f"finalvestige:renewal-radar:{row['id']}").hex
         lines.extend([
             "BEGIN:VEVENT", f"UID:{uid}@finalvestige.local", f"DTSTAMP:{stamp}",
             f"SUMMARY:{ical_escape(row['title'])}", f"DTSTART;VALUE=DATE:{due:%Y%m%d}",
-            f"DTEND;VALUE=DATE:{end:%Y%m%d}",
             f"DESCRIPTION:{ical_escape(row['category'] + ' — ' + row['notes'])}",
         ])
+        if end is not None:
+            lines.append(f"DTEND;VALUE=DATE:{end:%Y%m%d}")
         if row["cadence"] != "none":
             lines.append("RRULE:FREQ=" + ("MONTHLY" if row["cadence"] == "monthly" else "YEARLY"))
         lines.extend([
@@ -154,8 +156,7 @@ def render_ical(rows: list[dict]) -> str:
             "END:VALARM", "END:VEVENT",
         ])
     lines.append("END:VCALENDAR")
-    # Use CRLF as mandated by iCalendar RFC.
-    return "\r\n".join(lines) + "\r\n"
+    return render_ical_lines(lines)
 
 
 def export_ics(conn: sqlite3.Connection, destination: Path) -> int:
