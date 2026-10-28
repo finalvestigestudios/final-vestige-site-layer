@@ -86,6 +86,16 @@ class SafetyTests(unittest.TestCase):
                 import_csv_atomic(conn, csv)
             self.assertEqual(conn.execute('SELECT count(*) FROM renewal').fetchone()[0], 0)
 
+    def test_malformed_quoted_csv_aborts_without_insertion(self):
+        with tempfile.TemporaryDirectory() as d:
+            csv = Path(d) / 'test.csv'
+            csv.write_text('title,due\\n"Unclosed,2027-05-04\\n', encoding='utf-8')
+            conn = db()
+            result = import_csv_atomic(conn, csv)
+            self.assertEqual(result['inserted'], 0)
+            self.assertIn('Malformed CSV', result['problems'][0]['reason'])
+            self.assertEqual(conn.execute('SELECT count(*) FROM renewal').fetchone()[0], 0)
+
     def test_existing_export_not_overwritten(self):
         with tempfile.TemporaryDirectory() as d:
             out = Path(d) / 'calendar.ics'
