@@ -101,6 +101,14 @@ generated EXE to a temporary directory and run:
 
     python desktop-software/fileproof/smoke_installed.py "C:\path\to\FileProofCLI.exe"
 
+If GitHub Actions cannot allocate a runner, run the Windows-only
+`build_windows_local.ps1` from a trusted local PowerShell session. It checks
+existing build prerequisites (without installing or purchasing anything), runs
+unit tests, builds both EXEs, compiles an unsigned installer, installs it into
+a temporary folder, invokes the installed binary smoke suite, uninstalls it,
+and writes SHA-256 checksums. The script itself has **not** been executed on
+Windows and its output is not release approval.
+
 The smoke suite creates a fictional test directory, authenticates a manifest,
 verifies it, tests incorrect/missing passphrases, detects a modified file,
 detects altered or stripped authentication data, and checks unsigned handling.
