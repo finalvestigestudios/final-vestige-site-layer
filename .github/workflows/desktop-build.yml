@@ -4,12 +4,6 @@ on:
     paths:
       - 'products/desktop/**'
       - '.github/workflows/desktop-build.yml'
-  push:
-    branches:
-      - 'feature/labs-desktop-suite'
-    paths:
-      - 'products/desktop/**'
-      - '.github/workflows/desktop-build.yml'
   workflow_dispatch:
 
 permissions:
