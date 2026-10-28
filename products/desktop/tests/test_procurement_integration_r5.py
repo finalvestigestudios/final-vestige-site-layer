@@ -105,7 +105,7 @@ class ProcurementIntegrationR5Tests(unittest.TestCase):
     def test_invalid_negative_quantity_does_not_write_report(self):
         paths = self.inputs([("P1","1","-1","5","credit","CM1","INV1")],
                             [("P1","1","10","receipt","RC1")])
-        with self.assertRaisesRegex(ValueError,"Quantity"):
+        with self.assertRaisesRegex(ValueError, "(?i)quantity"):
             engine.procure_guard(*paths, self.folder)
         self.assertFalse(list(self.folder.glob("procurement-three-way-*.csv")))
 
