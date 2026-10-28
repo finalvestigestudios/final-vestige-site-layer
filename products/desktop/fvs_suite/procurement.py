@@ -17,6 +17,9 @@ from typing import Callable, Mapping
 CENT = Decimal("0.01")
 DEFAULT_ABSOLUTE = CENT
 DEFAULT_FRACTION = Decimal("0.02")
+DEFAULT_POLICY_SHA256 = hashlib.sha256(
+    b'{"price_absolute":"0.01","price_fraction":"0.02","version":1}\n'
+).hexdigest()
 
 
 def _decimal_field(value: object, name: str, maximum: Decimal) -> Decimal:
@@ -48,7 +51,7 @@ class PricePolicy:
 
     absolute: Decimal = DEFAULT_ABSOLUTE
     fraction: Decimal = DEFAULT_FRACTION
-    source_sha256: str = "built-in"
+    source_sha256: str = DEFAULT_POLICY_SHA256
 
     def outside(self, actual: Decimal, expected: Decimal) -> bool:
         return abs(actual - expected) > max(self.absolute, abs(expected) * self.fraction)
@@ -78,7 +81,7 @@ def load_price_policy(path: str | Path | None = None) -> PricePolicy:
     if not isinstance(content, dict):
         raise ValueError("Price policy must be a JSON object")
     expected = {"version", "price_absolute", "price_fraction"}
-    if set(content) != expected or content["version"] != 1 or isinstance(content["version"], bool):
+    if set(content) != expected or content["version"] != 1 or type(content["version"]) is not int:
         raise ValueError("Price policy requires exactly version=1, price_absolute and price_fraction")
     return PricePolicy(
         absolute=_decimal_field(content["price_absolute"], "price_absolute", Decimal("100.00")),
@@ -168,6 +171,8 @@ def review_line(
     # as verified offsets to the source documents.
     invoice_docs = {identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
                     if k == "invoice" and identifier(r.get("document_id", ""))}
+    raw_invoice_docs = {str(r.get("document_id", "")).strip().casefold()
+                        for r, k, _, _ in invoice_entries if k == "invoice"}
     invoice_doc_counts = Counter(
         identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
         if k == "invoice" and identifier(r.get("document_id", ""))
@@ -181,11 +186,26 @@ def review_line(
         related = identifier(row.get("related_document", ""))
         if not document or not related or related not in invoice_docs:
             flags.append("unlinked_credit_review")
+        elif str(row.get("related_document", "")).strip().casefold() not in raw_invoice_docs:
+            flags.append("normalized_credit_link_review")
+        if document in invoice_docs:
+            flags.append("reused_invoice_document_id_review")
         if price < 0:
             flags.append("negative_credit_price_review")
+    receipt_docs = {identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
+                    if kind == "receipt" and identifier(r.get("document_id", ""))}
+    raw_receipt_docs = {str(r.get("document_id", "")).strip().casefold()
+                        for r, kind, _ in receipt_entries if kind == "receipt"}
     for row, kind, _ in receipt_entries:
-        if kind == "return" and not identifier(row.get("document_id", "")):
+        if kind != "return":
+            continue
+        if not identifier(row.get("document_id", "")):
             flags.append("unidentified_return_review")
+        related = identifier(row.get("related_document", ""))
+        if not related or related not in receipt_docs:
+            flags.append("unlinked_return_review")
+        elif str(row.get("related_document", "")).strip().casefold() not in raw_receipt_docs:
+            flags.append("normalized_return_link_review")
 
     # Distinct document references permit legitimate equal-quantity installments.
     # When references are missing, retain the older conservative duplicate flag.
@@ -233,6 +253,7 @@ def review_line(
         "price_policy_sha256": policy.source_sha256,
         "invoice_documents": "; ".join(sorted({r.get("document_id", "").strip() for r in invoices if r.get("document_id", "")})),
         "credit_references": "; ".join(sorted({r.get("related_document", "").strip() for r in invoices if r.get("related_document", "")})),
+        "return_references": "; ".join(sorted({r.get("related_document", "").strip() for r in receipts if r.get("related_document", "")})),
     }
     # Stable order while deduplicating flags.
     return output, list(dict.fromkeys(flags))
@@ -250,7 +271,7 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
         engine.table(invoices, ("po_number", "line", "quantity", "unit_price"),
                      ("event_type", "document_id", "related_document")),
         engine.table(receipts, ("po_number", "line", "quantity"),
-                     ("event_type", "document_id")),
+                     ("event_type", "document_id", "related_document")),
     ]
     groups = [defaultdict(list) for _ in range(3)]
     for rows, group in zip(sources, groups):
@@ -289,7 +310,7 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                         "receipt_po_ids", "line_labels")
     extra_columns = ("gross_invoice_qty", "credit_qty", "gross_invoice_total",
                      "credit_value", "gross_received_qty", "returned_qty",
-                     "invoice_documents", "credit_references",
+                     "invoice_documents", "credit_references", "return_references",
                      "price_policy_absolute", "price_policy_fraction",
                      "price_policy_sha256")
     outputs = [engine.save(folder, "procurement-three-way", original_columns + extra_columns, report)]
