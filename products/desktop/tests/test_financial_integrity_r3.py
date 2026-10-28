@@ -74,7 +74,7 @@ class FinancialIntegrityR3Tests(unittest.TestCase):
         self.assertEqual(report["status"],"normalized_program_review")
         self.assertEqual(report["claim_programs"],"G-1")
         self.assertEqual(report["ledger_programs"],"G1")
-        self.assertEqual(summary["status"],"within_budget;normalized_budget_program_review")
+        self.assertEqual(summary["status"],"normalized_budget_program_review;within_budget")
         self.assertIn("G-1",summary["source_programs"])
         self.assertIn("G1",summary["source_programs"])
 
@@ -140,6 +140,29 @@ class FinancialIntegrityR3Tests(unittest.TestCase):
                        (("p1","1","2","5"),),
                        (("P1","1","2"),))
         self.assertEqual(r["status"],"matched")
+
+    def test_subcent_prices_keep_exact_extended_amount(self):
+        r=self.procure((("P1","1","1000","0.005"),),
+                       (("P1","1","1000","0.005"),),
+                       (("P1","1","1000"),))
+        self.assertEqual(r["status"],"matched")
+        self.assertEqual(r["po_unit_price"],"0.005")
+        self.assertEqual(r["invoice_total"],"5.00")
+
+    def test_subcent_unit_prices_detect_true_total_variance(self):
+        r=self.procure((("P1","1","1000","0.001"),),
+                       (("P1","1","1000","0.009"),),
+                       (("P1","1","1000"),))
+        self.assertIn("price_variance_above_2pct",r["status"])
+        self.assertEqual(r["invoice_total"],"9.00")
+
+    def test_unit_price_precision_policy(self):
+        self.assertEqual(engine.unit_cost("0.00000001"),Decimal("0.00000001"))
+        with self.assertRaisesRegex(ValueError,"precision exceeds eight"):
+            engine.unit_cost("0.000000001")
+
+    def test_money_rounding_policy_preserved(self):
+        self.assertEqual(engine.money("0.005"),Decimal("0.01"))
 
     def test_shared_review_helpers(self):
         self.assertTrue(normalized_collision(({"id":"X-1"},{"id":"X1"}),"id"))
