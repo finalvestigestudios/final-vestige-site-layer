@@ -12,7 +12,7 @@ import html
 import json
 import re
 import sys
-from collections import defaultdict, deque
+from collections import defaultdict
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -29,12 +29,14 @@ FIELDS = {
 }
 
 
-def parse_money(raw: str) -> Decimal:
+def parse_money(raw: str, allow_blank: bool = False) -> Decimal:
     raw = (raw or "").strip()
     is_negative = raw.startswith("(") and raw.endswith(")")
     raw = raw.strip("()").replace(",", "").replace("$", "").strip()
     if not raw:
-        return Decimal("0")
+        if allow_blank:
+            return Decimal("0")
+        raise ValueError("Amount cannot be blank; use 0 explicitly.")
     try:
         result = Decimal(raw)
     except InvalidOperation as exc:
@@ -87,7 +89,12 @@ def read_ledger(source: Path, flip_sign: bool = False) -> tuple[list[dict], list
                 if "amount" in index:
                     amount = parse_money(row.get(index["amount"], ""))
                 else:
-                    amount = parse_money(row.get(index["credit"], "")) - parse_money(row.get(index["debit"], ""))
+                    credit_raw = row.get(index["credit"], "") or ""
+                    debit_raw = row.get(index["debit"], "") or ""
+                    if not credit_raw.strip() and not debit_raw.strip():
+                        raise ValueError("Both debit and credit are blank.")
+                    amount = (parse_money(credit_raw, allow_blank=True) -
+                              parse_money(debit_raw, allow_blank=True))
                 amount = -amount if flip_sign else amount
                 ccy = (row.get(index.get("currency", ""), "USD") or "USD").strip().upper()
                 if not re.fullmatch(r"[A-Z]{3}", ccy):
@@ -123,20 +130,37 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
             "currency": a["currency"], "date_difference_days": abs((a["date"] - b["date"]).days),
         })
 
-    exact_right: dict[tuple[str, str, Decimal], deque[dict]] = defaultdict(deque)
+    # Multiplicity matters: FIFO-pairing duplicate reference/amount keys would
+    # invent a pairing without evidence. Quarantine those groups for review.
+    exact_left: dict[tuple[str, str, Decimal], list[dict]] = defaultdict(list)
+    exact_right: dict[tuple[str, str, Decimal], list[dict]] = defaultdict(list)
+    for a in lhs:
+        if a["normalized_reference"]:
+            exact_left[(a["currency"], a["normalized_reference"], a["amount"])].append(a)
     for b in rhs:
         if b["normalized_reference"]:
-            exact_right[b["currency"], b["normalized_reference"], b["amount"]].append(b)
-    for a in lhs:
-        if not a["normalized_reference"]:
+            exact_right[(b["currency"], b["normalized_reference"], b["amount"])].append(b)
+    blocked_left: set[int] = set()
+    blocked_right: set[int] = set()
+    ambiguous_reference_groups: list[dict] = []
+    for key, left_group in exact_left.items():
+        right_group = exact_right.get(key, [])
+        if not right_group:
             continue
-        key = (a["currency"], a["normalized_reference"], a["amount"])
-        queue = exact_right[key]
-        if queue:
-            match(a, queue.popleft(), "EXACT_REFERENCE_AND_AMOUNT")
+        if len(left_group) == len(right_group) == 1:
+            match(left_group[0], right_group[0], "EXACT_REFERENCE_AND_AMOUNT")
+        else:
+            blocked_left.update(x["row"] for x in left_group)
+            blocked_right.update(x["row"] for x in right_group)
+            ambiguous_reference_groups.append({
+                "currency": key[0], "reference": key[1], "amount": str(key[2]),
+                "left_rows": sorted(x["row"] for x in left_group),
+                "right_rows": sorted(x["row"] for x in right_group),
+                "reason": "Duplicate reference/amount identity; pairing requires human review.",
+            })
 
-    remaining_left = [a for a in lhs if a["row"] not in used_left]
-    remaining_right = [b for b in rhs if b["row"] not in used_right]
+    remaining_left = [a for a in lhs if a["row"] not in used_left and a["row"] not in blocked_left]
+    remaining_right = [b for b in rhs if b["row"] not in used_right and b["row"] not in blocked_right]
     candidates_left: dict[int, list[int]] = defaultdict(list)
     candidates_right: dict[int, list[int]] = defaultdict(list)
     indexed_right: dict[tuple[str, Decimal], list[dict]] = defaultdict(list)
@@ -153,8 +177,14 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
         if len(options) == 1 and len(candidates_right[options[0]]) == 1:
             match(a, by_right_row[options[0]], "UNIQUE_AMOUNT_AND_DATE")
 
-    ambiguous_left = sorted(row for row, options in candidates_left.items()
-                            if len(options) > 1 or (len(options) == 1 and len(candidates_right[options[0]]) > 1))
+    ambiguous_left = sorted(blocked_left | {
+        row for row, options in candidates_left.items()
+        if len(options) > 1 or (len(options) == 1 and len(candidates_right[options[0]]) > 1)
+    })
+    ambiguous_right = sorted(blocked_right | {
+        row for row, options in candidates_right.items()
+        if len(options) > 1 or (len(options) == 1 and len(candidates_left[options[0]]) > 1)
+    })
     unmatched_left = [
         {"row": a["row"], "date": a["date"].isoformat(), "amount": str(a["amount"]),
          "currency": a["currency"], "reference": a["reference"]}
@@ -171,20 +201,49 @@ def reconcile(left: Path, right: Path, date_tolerance: int = 3,
         for item in records:
             values[item["currency"]] += item["amount"]
         totals[side] = {key: str(value) for key, value in sorted(values.items())}
+    suggested = [m for m in matches if m["basis"] == "UNIQUE_AMOUNT_AND_DATE"]
+    distant_exact = [m for m in matches if (
+        m["basis"] == "EXACT_REFERENCE_AND_AMOUNT" and
+        m["date_difference_days"] > date_tolerance
+    )]
+    warnings = []
+    if suggested:
+        warnings.append({
+            "code": "AMOUNT_DATE_SUGGESTIONS", "count": len(suggested),
+            "message": "Amount/date matches are suggestions requiring verification.",
+        })
+    if distant_exact:
+        warnings.append({
+            "code": "EXACT_REFERENCE_DATE_GAP", "count": len(distant_exact),
+            "left_rows": sorted(m["left_row"] for m in distant_exact),
+            "message": "Exact-reference entries have dates beyond the tolerance window.",
+        })
+    if not lhs or not rhs:
+        warnings.append({
+            "code": "EMPTY_LEDGER", "message": "At least one input has no valid transactions.",
+        })
     report = {
         "tool": "Final Vestige Ledger Bridge", "version": VERSION,
         "inputs": {"left": left.name, "right": right.name},
         "settings": {"date_tolerance_days": date_tolerance, "flip_right_sign": flip_right_sign},
         "counts": {"left": len(lhs), "right": len(rhs), "matched": len(matches),
+                   "suggested_matches": len(suggested),
                    "unmatched_left": len(unmatched_left), "unmatched_right": len(unmatched_right),
                    "errors_left": len(errors_left), "errors_right": len(errors_right)},
         "totals_by_currency": totals,
         "matches": sorted(matches, key=lambda v: v["left_row"]),
         "unmatched_left": unmatched_left, "unmatched_right": unmatched_right,
         "ambiguous_left_rows": ambiguous_left,
+        "ambiguous_right_rows": ambiguous_right,
+        "ambiguous_reference_groups": ambiguous_reference_groups,
+        "warnings": warnings,
         "input_errors": {"left": errors_left, "right": errors_right},
-        "status": "RECONCILED" if not (unmatched_left or unmatched_right or errors_left or errors_right) else "REVIEW",
-        "disclaimer": "Unique amount/date matches are suggestions. Verify each match with original records.",
+        "status": "RECONCILED" if not (
+            unmatched_left or unmatched_right or errors_left or errors_right or
+            ambiguous_reference_groups or warnings
+        ) else "REVIEW",
+        "disclaimer": "Amount/date matches are suggestions, not confirmed reconciliation. "
+                      "Resolve warnings and inspect original statements before approving.",
     }
     return report
 
