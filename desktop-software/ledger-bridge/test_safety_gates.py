@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from ledger_bridge import parse_money, read_ledger, reconcile
+from ledger_bridge import parse_money, read_ledger, reconcile, render_html
 
 
 class LedgerBridgeSafetyTests(unittest.TestCase):
@@ -82,6 +82,28 @@ class LedgerBridgeSafetyTests(unittest.TestCase):
         result = self.compare("", "")
         self.assertEqual(result["status"], "REVIEW")
         self.assertIn("EMPTY_LEDGER", {w["code"] for w in result["warnings"]})
+
+
+    def test_html_exports_show_ambiguous_duplicates_and_escape_csv(self):
+        report = self.compare(
+            "2026-01-01,50.00,<script>alert(1)</script>\n"
+            "2026-01-02,50.00,<script>alert(1)</script>\n",
+            "2026-01-01,50.00,<script>alert(1)</script>\n"
+            "2026-01-02,50.00,<script>alert(1)</script>\n",
+        )
+        rendered = render_html(report)
+        self.assertIn("Ambiguous duplicate identities", rendered)
+        self.assertIn("Left CSV rows", rendered)
+        self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", rendered)
+        self.assertNotIn("<script>", rendered)
+
+    def test_html_exports_surface_suggested_match_and_warning(self):
+        report = self.compare("2026-01-01,50.00,A\n", "2026-01-02,50.00,B\n")
+        rendered = render_html(report)
+        self.assertIn("AMOUNT_DATE_SUGGESTIONS", rendered)
+        self.assertIn("UNIQUE_AMOUNT_AND_DATE", rendered)
+        self.assertIn("REVIEW", rendered)
+        self.assertIn("Matches and suggestions", rendered)
 
 
 if __name__ == "__main__":
