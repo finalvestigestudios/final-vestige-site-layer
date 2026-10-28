@@ -288,8 +288,10 @@ def export_register(report: str | Path, product: str, journal: str | Path,
         raise ValueError("Choose an existing output folder")
     path = target / ("review-register-" + datetime.now(timezone.utc).strftime(
         "%Y%m%d-%H%M%S-%f") + ".csv")
+    created = False
     try:
         with path.open("x", encoding="utf-8-sig", newline="") as stream:
+            created = True
             writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
             writer.writeheader()
             for case in batch.cases:
@@ -305,6 +307,8 @@ def export_register(report: str | Path, product: str, journal: str | Path,
                 }
                 writer.writerow({field: _csv_cell(value) for field, value in entry.items()})
     except Exception:
-        path.unlink(missing_ok=True)
+        # Never delete a pre-existing file when exclusive creation failed.
+        if created:
+            path.unlink(missing_ok=True)
         raise
     return path
