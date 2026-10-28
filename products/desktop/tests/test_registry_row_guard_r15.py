@@ -171,7 +171,7 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         self.output.write_bytes(b"synthetic entitlement")
         with patch("license_registry._stamp", return_value="2000-01-01T00:00:00Z"):
             with self.assertRaisesRegex(RegistryError, "No matching reserved issuance"):
-                self.registry.finalize(**self.params)
+                self.registry.finalize(**self.params, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         with sqlite3.connect(self.registry_file) as db:
             self.assertEqual(db.execute("SELECT state,issued_at FROM issuance").fetchone(),
                              ("reserved", None))
@@ -180,7 +180,7 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         from license_registry import RegistryError
         self.registry.reserve(**self.params)
         self.output.write_bytes(b"synthetic entitlement")
-        self.registry.finalize(**self.params)
+        self.registry.finalize(**self.params, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         with sqlite3.connect(self.registry_file) as db:
             db.execute("UPDATE issuance SET license_sha256='tampered'")
         with self.assertRaisesRegex(RegistryError, "Unsafe registry"):
