@@ -11,9 +11,14 @@ from .exception_review import (
 from .evidence_vault import restore_evidence, seal_evidence
 
 
-def open_review_window(parent: tk.Misc, product: str, report_path: str | None = None):
+def open_review_window(parent: tk.Misc, product: str, report_path: str | None = None,
+                       *, authorize=None):
     if product not in ("grants", "procurement"):
         raise ValueError("Review window is only available for premium products")
+    if authorize is None:
+        raise ValueError("Premium review requires a verified entitlement callback")
+    # Before constructing any data-consuming controls, revalidate the license.
+    authorize()
 
     window = tk.Toplevel(parent)
     window.title("Final Vestige Labs — Human Exception Review")
@@ -75,6 +80,18 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     batch_holder = [None]
     journal_holder = [None]
 
+    def _authorized():
+        try:
+            authorize()
+            return True
+        except (ValueError, OSError, UnicodeError):
+            messagebox.showerror(
+                "Premium entitlement required",
+                "Your signed entitlement is no longer valid. "
+                "No review, export or evidence operation was performed.",
+                parent=window)
+            return False
+
     def display():
         batch = batch_holder[0]
         if batch is None:
@@ -92,6 +109,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
                         "Each review decision remains subject to organizational approval.")
 
     def load_report(path):
+        if not _authorized():
+            return
         try:
             batch = read_cases(path, product)
             journal = Path(path).with_suffix(".review.jsonl")
@@ -104,6 +123,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         display()
 
     def choose_report():
+        if not _authorized():
+            return
         name = filedialog.askopenfilename(
             parent=window, title="Select generated premium exception report",
             filetypes=[("CSV review reports", "*.csv")])
@@ -113,6 +134,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     ttk.Button(top, text="Browse…", command=choose_report).grid(row=0, column=2)
 
     def log_review():
+        if not _authorized():
+            return
         batch = batch_holder[0]
         if batch is None:
             messagebox.showwarning("Missing report", "Open an exception report first.", parent=window)
@@ -134,6 +157,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         rationale.delete("1.0", "end")
 
     def export():
+        if not _authorized():
+            return
         batch = batch_holder[0]
         if batch is None:
             messagebox.showwarning("Missing report", "Open a report first.", parent=window)
@@ -151,6 +176,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         messagebox.showinfo("Register created", str(path), parent=window)
 
     def seal_archive():
+        if not _authorized():
+            return
         batch = batch_holder[0]
         if batch is None:
             messagebox.showwarning("Missing report", "Open a premium exception report first.", parent=window)
@@ -187,6 +214,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             parent=window)
 
     def restore_archive():
+        if not _authorized():
+            return
         source = filedialog.askopenfilename(
             parent=window, title="Choose encrypted evidence backup",
             filetypes=[("Final Vestige Evidence Vault", "*.fvault")])

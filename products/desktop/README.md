@@ -98,6 +98,25 @@ CI launches **all six** EXEs as real processes after packaging, checks their exi
 - Install `cryptography==46.0.4` to develop from source; Windows CI installs this dependency before running the complete test suite and packaging. Packaged premium smoke checks now include encrypted backup/restore flows.
 - The R8 module passed **12 isolated synthetic crypto/restore tests using a compatibility harness**, while full repository integration and packaged Windows smoke tests remain unverified due to hosted Actions runner failures. See [R8 encryption contract](docs/ENCRYPTED_EVIDENCE_R8.md).
 
+## R11 offline premium entitlement verifier (development-only)
+
+GrantAudit Studio Pro and ProcureGuard Studio Pro now verify distributor-signed,
+product-specific Ed25519 entitlement files **before opening their GUI**,
+generating reports or using the exception-review controls. The entitlement is
+revalidated at each premium data action and rejects altered, expired,
+cross-product, duplicated-field, unsigned or unrecognized-key licenses.
+The four free tools remain free and do not require licenses.
+
+**Current policy is fail-closed:** the production public-key map is
+intentionally empty until a protected signing authority and key-rotation
+policy are approved. Consequently, the premium GUI previews refuse access
+in the current development build. Their explicit `--smoke-test` commands
+still exercise only fixed synthetic data and never import real customer files.
+This is *not* a finished checkout, activation, revocation or distribution system,
+and the local verifier can be bypassed by modifying binaries. Do not publish
+premium downloads without independently enforced server-side purchase access.
+See [R11 entitlement contract](docs/OFFLINE_ENTITLEMENTS_R11.md).
+
 ## Release gates
 
 1. Independent sample and edge-case test suite (money, CSV injection, encoding, duplicates, malformed input).
