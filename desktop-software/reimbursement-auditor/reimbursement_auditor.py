@@ -16,8 +16,9 @@ import sys
 from collections import defaultdict
 from decimal import Decimal, InvalidOperation
 from pathlib import Path, PurePosixPath
+from packet_integrity import input_fingerprints, packet_snapshot, write_report
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 ALIASES = {
     "vendor": {"vendor", "vendor name", "supplier", "payee"},
     "invoice": {"invoice", "invoice number", "invoice #", "invoice no"},
@@ -56,15 +57,27 @@ def csv_items(source: Path, require_file: bool) -> tuple[list[dict], list[dict]]
         if not reader.fieldnames:
             raise ValueError(f"{source.name} is empty.")
         columns = {}
+        seen_headers = set()
         for name in reader.fieldnames:
-            value = name.strip().casefold()
+            value = (name or "").strip().casefold()
+            if not value or value in seen_headers:
+                raise ValueError(f"{source.name} contains blank or repeated CSV headers.")
+            seen_headers.add(value)
             for field, aliases in ALIASES.items():
-                if field not in columns and value in aliases:
+                if value in aliases:
+                    if field in columns:
+                        raise ValueError(
+                            f"{source.name}: multiple columns map to {field}. "
+                            "Rename ambiguous headings before running the audit."
+                        )
                     columns[field] = name
         required = {"vendor", "invoice", "amount"} | ({"file"} if require_file else set())
         if required - columns.keys():
             raise ValueError(f"{source.name} is missing columns: " + ", ".join(sorted(required - columns.keys())))
-        for number, row in enumerate(reader, 2):
+        previous_line = reader.line_num
+        for row in reader:
+            number = previous_line + 1
+            previous_line = reader.line_num
             try:
                 if "__extra__" in row:
                     raise ValueError("Extra fields in CSV row.")
@@ -102,6 +115,7 @@ def audit(claims_csv: Path, support_csv: Path, attachment_folder: Path) -> dict:
     folder = attachment_folder.resolve(strict=True)
     if not folder.is_dir():
         raise ValueError("Attachments must be a folder.")
+    source_before = input_fingerprints(claims_csv, support_csv)
     claims, claim_errors = csv_items(claims_csv, False)
     supports, support_errors = csv_items(support_csv, True)
     by_claim: dict[tuple[str, str], list[dict]] = defaultdict(list)
@@ -115,6 +129,16 @@ def audit(claims_csv: Path, support_csv: Path, attachment_folder: Path) -> dict:
     def report(code: str, level: str, rows: list[int], detail: str) -> None:
         findings.append({"code": code, "priority": level, "claim_rows": sorted(rows), "reason": detail})
 
+    if not claims:
+        report("EMPTY_CLAIMS", "HIGH", [], "No valid claim records were available for review.")
+    if not supports:
+        report("EMPTY_SUPPORT_INDEX", "HIGH", [],
+               "No valid support-index records were available for review.")
+    for key, grouped in by_support.items():
+        if len(grouped) > 1:
+            report("DUPLICATE_SUPPORT_REFERENCE", "MEDIUM", [],
+                   "Multiple support-index rows share a vendor and invoice reference; "
+                   "review possible duplicate support and allocation.")
     for key, grouped in by_claim.items():
         if len(grouped) > 1:
             report("DUPLICATE_CLAIM_REFERENCE", "HIGH", [x["row"] for x in grouped],
@@ -160,6 +184,18 @@ def audit(claims_csv: Path, support_csv: Path, attachment_folder: Path) -> dict:
     for item in support_errors:
         report("INVALID_SUPPORT_ROW", "HIGH", [], "Support index row " + str(item["row"]) +
                " excluded: " + item["message"])
+
+    snapshot = packet_snapshot(claims_csv, support_csv, attachment_folder)
+    if snapshot["sources"] != source_before:
+        raise ValueError("Source CSV changed during the audit; rerun with stable files.")
+    for failure in snapshot["attachments"]["errors"]:
+        report("PACKET_SCAN_INCOMPLETE", "HIGH", [],
+               "Evidence scan incomplete at " + failure["path"] + ": " + failure["error"])
+    for entry in snapshot["attachments"]["files"]:
+        if entry["path"].casefold() not in referenced_files:
+            report("UNINDEXED_ATTACHMENT", "LOW", [],
+                   "Evidence file is present but absent from the support index: " +
+                   entry["path"])
     level = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
     findings.sort(key=lambda item: (level[item["priority"]], item["claim_rows"]))
     totals: dict[str, Decimal] = defaultdict(lambda: Decimal("0"))
@@ -172,7 +208,12 @@ def audit(claims_csv: Path, support_csv: Path, attachment_folder: Path) -> dict:
         "claim_rows_excluded": len(claim_errors), "support_rows_excluded": len(support_errors),
         "claim_totals_by_vendor": {k: str(v) for k, v in sorted(totals.items())},
         "findings": findings, "finding_count": len(findings),
-        "status": "REVIEW" if findings else "NO_FILE_OR_INDEX_EXCEPTIONS",
+        "status": ("INCOMPLETE" if any(x["code"] in {
+            "PACKET_SCAN_INCOMPLETE", "INVALID_CLAIM_ROW",
+            "INVALID_SUPPORT_ROW", "EMPTY_CLAIMS", "EMPTY_SUPPORT_INDEX",
+        } for x in findings) else
+                   "REVIEW" if findings else "NO_FILE_OR_INDEX_EXCEPTIONS"),
+        "snapshot": snapshot,
         "disclaimer": "This audits file presence and user-provided index amounts only. "
                       "It does not inspect PDFs, validate receipts, certify eligibility or establish compliance.",
     }
@@ -207,6 +248,7 @@ def gui() -> None:
     ttk.Label(frame, text="Compare claims, a user-created evidence index, and the actual files—entirely offline.").pack(anchor="w", pady=(0, 18))
     claims, support, folder = tk.StringVar(), tk.StringVar(), tk.StringVar()
     latest = [None]
+    latest_paths = [None]
 
     for label, variable, directory in (("Claims CSV", claims, False),
                                         ("Supporting evidence index CSV", support, False),
@@ -226,8 +268,13 @@ def gui() -> None:
     status = tk.StringVar(value="Use your own verified support index; the tool does not read PDF contents.")
 
     def run() -> None:
+        latest[0] = None
+        latest_paths[0] = None
         try:
-            latest[0] = audit(Path(claims.get()), Path(support.get()), Path(folder.get()))
+            selected = (Path(claims.get()), Path(support.get()), Path(folder.get()))
+            result = audit(*selected)
+            latest[0] = result
+            latest_paths[0] = selected
             output.config(state="normal")
             output.delete("1.0", "end")
             output.insert("1.0", json.dumps(latest[0], indent=2))
@@ -242,9 +289,12 @@ def gui() -> None:
         filename = filedialog.asksaveasfilename(defaultextension=".html", filetypes=[("HTML reports", "*.html")])
         if filename:
             try:
-                Path(filename).write_text(html_report(latest[0]), encoding="utf-8")
+                if (Path(claims.get()), Path(support.get()), Path(folder.get())) != latest_paths[0]:
+                    raise ValueError("Input selection changed; run the audit again.")
+                write_report(Path(filename), html_report(latest[0]), *latest_paths[0],
+                             latest[0]["snapshot"])
                 status.set("Review report saved: " + filename)
-            except OSError as exc:
+            except (OSError, ValueError) as exc:
                 messagebox.showerror("Save failed", str(exc))
 
     controls = ttk.Frame(frame)
@@ -270,10 +320,10 @@ def main() -> int:
     try:
         result = audit(Path(args.claims), Path(args.support), Path(args.folder))
         if args.report:
-            if args.report.suffix.lower() == ".html":
-                args.report.write_text(html_report(result), encoding="utf-8")
-            else:
-                args.report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+            body = (html_report(result) if args.report.suffix.lower() == ".html"
+                    else json.dumps(result, indent=2) + "\n")
+            write_report(args.report, body, Path(args.claims), Path(args.support),
+                         Path(args.folder), result["snapshot"])
         print(json.dumps(result, indent=2))
         return 1 if result["finding_count"] else 0
     except (OSError, ValueError, UnicodeError, csv.Error) as exc:
