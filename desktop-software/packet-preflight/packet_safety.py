@@ -68,7 +68,7 @@ def validate_checklist(config: object) -> dict:
 def _positive_limit(value: object, name: str) -> None:
     if value is not None and (
         isinstance(value, bool) or not isinstance(value, (int, float))
-        or not math.isfinite(value) or value <= 0
+        or (isinstance(value, float) and not math.isfinite(value)) or value <= 0 or value > 1_000_000_000
     ):
         raise ValueError(f"{name} must be a positive finite number.")
 
