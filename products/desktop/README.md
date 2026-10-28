@@ -207,3 +207,16 @@ No production keys, premium release or QD approval accompany this change.
 ## R17 Windows PE-image preflight (internal, pre-release)
 
 The release candidate gate now validates the structural PE32+ AMD64 shape of all six files instead of accepting only MZ, PE magic and the machine value. It rejects malformed section tables, DLL/system images, missing entry points, invalid alignments or extents, and missing executable sections **before** the smoke phase. R9/R10 inert fixtures were updated for this stricter contract, and 13 focused R17 tests passed locally under ordinary Python and `-OO`. The full repository suite and six actual Windows binaries remain unverified while Actions jobs fail before running. This is a format sanity check, not code signing, malware clearance or permission to distribute. See [R17 PE preflight and Windows verification runbook](docs/PE_IMAGE_PREFLIGHT_R17.md).
+
+
+## R18 PE entrypoint and section mapping preflight (internal, unreleased)
+
+The six-EXE integrity gate now verifies that each AMD64 entry point is backed by
+an actual executable section and that section file/virtual ranges do not
+overlap or extend outside the declared image. It also rejects malformed
+alignment and entrypoint locations while permitting one-file packager overlays.
+R18 added 13 adversarial mapping tests and three full-catalog release-gate
+tests; the prior 13 R17 cases still pass in isolated local Linux/Python
+testing (including Python `-OO`). Actual Windows binaries, clean-machine
+smokes, AV checks, signatures and QD approval remain outstanding. See
+[R18 entrypoint mapping and evidence](docs/PE_ENTRYPOINT_MAPPING_R18.md).
