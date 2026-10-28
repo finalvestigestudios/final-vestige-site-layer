@@ -32,6 +32,14 @@ Python 3.12+ with Tkinter. From repository root:
 
 The six GUI entrypoints live under products/desktop/launchers. Windows CI uses PyInstaller and uploads **internal build artifacts only**; do not distribute or publish until tests, malware scan, clean-machine acceptance, release versioning, SHA256 and (preferably) code signing are complete.
 
+## Invoice Twin Scout R4 candidate safety and scale
+
+- Invoice exports with more than 200 transactions for one normalized vendor and amount are now supported when report density is manageable. Near candidates use a chronological seven-day inclusive sliding window, rather than comparing all rows across all dates.
+- Exact normalized invoice-key occurrences are anchored to the first source row regardless of dates; same-vendor, same-amount near candidates use a seven-day window. No label implies a duplicate *payment* or fraud determination.
+- Original vendor names, invoice numbers, dates, and CSV source row references are all exported. Independent review flags indicate normalized-key collisions, exact-invoice amount mismatches, or distant dates; all need human confirmation.
+- A dense input producing more than 100,000 candidate review pairs is explicitly rejected **before saving any report**. Narrow the input by vendor/date; reports are never silently truncated.
+- See [Invoice Scale R4 specification](docs/INVOICE_SCALE_R4.md) for complexity, test cases, scope and limitations.
+
 ## Packaged-executable smoke verification (internal CI)
 
 Each portable Windows executable accepts `--smoke-test`. It runs its actual core workflow against disposable **synthetic test fixtures** under the system's temporary directory, validates a known exception or diff, deletes temporary data, and exits with status 0 only if all checks pass. GUI is never initialized and no network connection is used.
