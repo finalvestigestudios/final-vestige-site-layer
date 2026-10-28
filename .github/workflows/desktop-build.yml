@@ -37,6 +37,46 @@ jobs:
             $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
             "$hash  $($_.Name)" | Out-File -FilePath dist/SHA256SUMS.txt -Append -Encoding ascii
           }
+      - name: Smoke-test packaged EXEs and verify SHA256 inventory
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $apps = @("LedgerDiffLite","InvoiceTwinScout","SpendMapLite","PolicyDeltaDesk","GrantAuditStudioPro","ProcureGuardStudioPro")
+          $checksums = @(Get-Content "dist/SHA256SUMS.txt" | Where-Object { $_.Trim() })
+          if ($checksums.Count -ne $apps.Count) {
+            throw "Expected exactly six signed-format checksum entries, got $($checksums.Count)"
+          }
+          foreach ($app in $apps) {
+            $exe = Join-Path (Get-Location).Path "dist/$app.exe"
+            if (-not (Test-Path -LiteralPath $exe -PathType Leaf)) {
+              throw "Missing executable: $app"
+            }
+            $matchingLines = @($checksums | Where-Object { $_.EndsWith("  $app.exe") })
+            if ($matchingLines.Count -ne 1) {
+              throw "Expected exactly one checksum record for $app"
+            }
+            $expected = ($matchingLines[0] -split '\s+')[0].ToLowerInvariant()
+            if ($expected -notmatch '^[0-9a-f]{64}
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-vestige-desktop-windows-internal
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7
+) {
+              throw "Invalid SHA256 format for $app"
+            }
+            $actual = (Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant()
+            if ($actual -ne $expected) {
+              throw "SHA256 mismatch for $app"
+            }
+            # Start-Process -Wait ensures we wait for a --windowed executable.
+            $process = Start-Process -FilePath $exe -ArgumentList "--smoke-test" -Wait -PassThru
+            if ($null -eq $process.ExitCode -or $process.ExitCode -ne 0) {
+              throw "Packaged smoke test failed for $app with exit code $($process.ExitCode)"
+            }
+            Write-Host "$app: smoke-test PASS; SHA256 verified"
+          }
       - name: Upload internal pre-release artifacts
         uses: actions/upload-artifact@v4
         with:
