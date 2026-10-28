@@ -68,3 +68,25 @@ def source_fingerprint(path: Path) -> dict[str, str | int]:
     if identity(first) != identity(last) or identity(last) != identity(current):
         raise ValueError("CSV changed during integrity check; review stopped.")
     return {"sha256": digest.hexdigest(), "bytes": last.st_size}
+
+
+def record_start_line(end_line: int, row: dict) -> int:
+    """Locate the physical first line of a CSV record even after blank lines.
+
+    DictReader.line_num counts consumed physical lines, including quoted
+    newlines. Those are preserved in returned field values; subtract them.
+    """
+    if not isinstance(end_line, int) or end_line < 1:
+        raise ValueError("Invalid CSV source line number.")
+    values = []
+    for value in row.values():
+        if isinstance(value, str):
+            values.append(value)
+        elif isinstance(value, list):  # DictReader restkey for extra fields
+            values.extend(item for item in value if isinstance(item, str))
+    inside = sum(value.count("\n") + value.count("\r") - value.count("\r\n")
+                 for value in values)
+    start = end_line - inside
+    if start < 1:
+        raise ValueError("Invalid multiline CSV row boundary.")
+    return start
