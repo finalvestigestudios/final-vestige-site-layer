@@ -114,7 +114,12 @@ def read_cases(report: str | Path, product: str) -> ReportBatch:
             raise ValueError(f"Missing status in report record {index}")
         key = (str(row.get(col["id"]) or "").strip() if product == "grants"
                else f"{str(row.get(col['po']) or '').strip()} / {str(row.get(col['line']) or '').strip()}")
-        if not key.strip(" /"):
+        if (product == "grants" and not str(row.get(col["id"]) or "").strip()) or (
+            product == "procurement" and (
+                not str(row.get(col["po"]) or "").strip()
+                or not str(row.get(col["line"]) or "").strip()
+            )
+        ):
             raise ValueError(f"Missing identifier in report record {index}")
         if status == "matched":
             continue
@@ -141,6 +146,8 @@ def _validate_event(event: dict, batch: ReportBatch, cases: dict, previous: str)
         raise ValueError("Unsupported review journal schema")
     if event["product"] != batch.product or event["report_sha256"] != batch.report_sha256:
         raise ValueError("Review journal belongs to a different report snapshot")
+    if not isinstance(event["case_id"], str):
+        raise ValueError("Review event case identifier is not text")
     case = cases.get(event["case_id"])
     if case is None or type(event["report_row"]) is not int or case.report_row != event["report_row"]:
         raise ValueError("Review event references an unknown exception")
@@ -152,7 +159,7 @@ def _validate_event(event: dict, batch: ReportBatch, cases: dict, previous: str)
     _text(event["rationale"], "Rationale", 12, 2000)
     try:
         timestamp = datetime.fromisoformat(event["created_utc"])
-        if timestamp.tzinfo is None:
+        if timestamp.tzinfo is None or timestamp.utcoffset().total_seconds() != 0:
             raise ValueError
     except (ValueError, TypeError) as exc:
         raise ValueError("Review journal has an invalid UTC timestamp") from exc
