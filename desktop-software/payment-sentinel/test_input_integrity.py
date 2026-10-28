@@ -71,6 +71,17 @@ class PaymentImportSafetyTests(unittest.TestCase):
             self.assertEqual(result["status"], "REVIEW")
             self.assertIn("INVALID_INPUT", {f["rule"] for f in result["flags"]})
 
+    def test_blank_source_lines_do_not_shift_review_provenance(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = self.make(folder,
+                "Vendor,Invoice,Amount,Date\n\n"
+                "Acme,INV-1,10.00,2026-10-01\n\n"
+                "Acme,INV-1,10.00,2026-10-02\n")
+            result = review(path)
+            matches = [f for f in result["flags"] if f["rule"] == "REPEATED_INVOICE"]
+            self.assertEqual(len(matches), 1)
+            self.assertEqual(matches[0]["rows"], [3, 5])
+
     def test_multiline_csv_provenance_uses_physical_start_line(self):
         with tempfile.TemporaryDirectory() as folder:
             path = self.make(folder,
