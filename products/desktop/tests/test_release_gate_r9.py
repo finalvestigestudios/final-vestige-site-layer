@@ -16,7 +16,7 @@ spec.loader.exec_module(gate)
 from pe_fixture_r17 import synthetic_pe64
 
 
-def fake_pe(machine=0x8664, signature=b"PE\\x00\\x00", opt=0x20B):
+def fake_pe(machine=0x8664, signature=b"PE\x00\x00", opt=0x20B):
     return synthetic_pe64(machine=machine, signature=signature, opt=opt)
 
 
