@@ -13,8 +13,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 from inventory_diff import inventory_additions
+from manifest_auth import (authenticate_manifest, verify_authentication,
+                           load_manifest, save_new_manifest, read_passphrase_file)
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 SCHEMA = "finalvestige.fileproof.v1"
 CHUNK = 1024 * 1024
 
@@ -59,24 +61,16 @@ def collect(root: Path, exclude: Path | None = None) -> dict:
     }
 
 
-def create_manifest(root: Path, destination: Path) -> dict:
-    destination = destination.resolve()
-    if destination.exists():
+def create_manifest(root: Path, destination: Path,
+                    passphrase: str | None = None) -> dict:
+    # Do not follow existing symlinks at the output path.
+    destination = Path(os.path.abspath(destination))
+    if destination.exists() or destination.is_symlink():
         raise FileExistsError("Refusing to overwrite an existing manifest.")
     manifest = collect(root, exclude=destination)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    # Write atomically, never modify scanned files.
-    temp = destination.with_name(destination.name + ".tmp")
-    if temp.exists():
-        raise FileExistsError("Temporary output already exists.")
-    try:
-        with temp.open("x", encoding="utf-8", newline="\n") as stream:
-            json.dump(manifest, stream, indent=2, ensure_ascii=False)
-            stream.write("\n")
-        temp.replace(destination)
-    finally:
-        if temp.exists():
-            temp.unlink()
+    if passphrase is not None:
+        manifest = authenticate_manifest(manifest, passphrase)
+    save_new_manifest(destination, manifest)
     return manifest
 
 
@@ -92,13 +86,14 @@ def safe_path(root: Path, relative: str) -> Path:
     return result
 
 
-def verify_manifest(root: Path, manifest_file: Path) -> dict:
+def verify_manifest(root: Path, manifest_file: Path,
+                    passphrase: str | None = None) -> dict:
     root = root.resolve(strict=True)
     if not root.is_dir():
         raise ValueError("Select a folder to verify.")
     manifest_file = manifest_file.resolve(strict=True)
-    with manifest_file.open("r", encoding="utf-8") as stream:
-        manifest = json.load(stream)
+    manifest = load_manifest(manifest_file)
+    authenticated = verify_authentication(manifest, passphrase)
     if not isinstance(manifest, dict) or manifest.get("schema") != SCHEMA:
         raise ValueError("Not a supported FileProof manifest.")
     expected = manifest.get("files")
@@ -145,6 +140,7 @@ def verify_manifest(root: Path, manifest_file: Path) -> dict:
     additions, traversal_errors = inventory_additions(root, expected_paths, manifest_file)
     return {
         "total": len(results),
+        "authenticated": authenticated,
         "ok": sum(item["status"] == "OK" for item in results),
         "added": sum(item["status"] == "ADDED" for item in additions),
         "untracked_links": sum(item["status"] == "UNTRACKED_LINK" for item in additions),
