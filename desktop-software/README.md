@@ -89,7 +89,7 @@ Run all suites from repository root (no third-party test library required):
   ICS exports must be imported into a calendar. Invalid recurrence dates are
   skipped by RFC5545, e.g. monthly events on day 31 skip short months.
 - Payment Sentinel flags patterns for human review, never proves fraud.
-- Ledger Bridge rejects ambiguous matches; reconcile sign conventions manually.
+- Ledger Bridge quarantines duplicate exact reference/amount identities instead of arbitrarily pairing them. Date/amount-only matches remain review suggestions, dates outside tolerance trigger warnings, and blank standalone amounts are errors. Its HTML report includes all review warnings, candidate matches, ambiguous groups, excluded rows, and SHA-256 fingerprints of the original CSV inputs. See `ledger-bridge/samples/README.md` for fictional acceptance data. Manually verify sign conventions and all proposed matches.
 - Reimbursement Auditor crosschecks user-entered evidence index and
   attachment presence; it does not read PDF contents or certify eligibility.
 

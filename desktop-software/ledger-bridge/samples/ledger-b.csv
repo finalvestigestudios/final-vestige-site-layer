@@ -1,0 +1,7 @@
+date,amount,reference,description,currency
+2026-10-02,125.00,INV1048,Office supply cleared,USD
+2026-10-02,340.00,INV-1049,Maintenance cleared,USD
+2026-10-03,17.00,FEE-1,Bank fee,USD
+2026-10-04,75.00,REF-X,Consulting record B,USD
+2026-10-03,75.00,REF-X,Consulting record A,USD
+2026-10-05,24.00,OTHER-92,Unmatched bank item,USD
