@@ -81,7 +81,7 @@ Run all suites from repository root (no third-party test library required):
 
 ## Honest feature boundaries
 
-- FileProof verifies hashes; it is not a backup/recovery application.
+- FileProof compares recorded SHA-256 hashes and also flags added regular files, untracked links, and scan errors. A clean result requires all checks to pass. It is not a backup/recovery application, does not cover empty directory creation, and its unsigned manifests must be stored securely to prevent attackers from replacing them.
 - Data Import Doctor diagnoses CSV issues, not guaranteed import compatibility.
 - Packet Preflight checks folder metadata against a user-provided checklist,
   not application or regulatory eligibility.

@@ -8,9 +8,11 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
+from inventory_diff import inventory_additions
 
 VERSION = "0.1.0"
 SCHEMA = "finalvestige.fileproof.v1"
@@ -92,33 +94,63 @@ def safe_path(root: Path, relative: str) -> Path:
 
 def verify_manifest(root: Path, manifest_file: Path) -> dict:
     root = root.resolve(strict=True)
+    if not root.is_dir():
+        raise ValueError("Select a folder to verify.")
+    manifest_file = manifest_file.resolve(strict=True)
     with manifest_file.open("r", encoding="utf-8") as stream:
         manifest = json.load(stream)
     if not isinstance(manifest, dict) or manifest.get("schema") != SCHEMA:
         raise ValueError("Not a supported FileProof manifest.")
     expected = manifest.get("files")
-    if not isinstance(expected, list):
-        raise ValueError("Invalid manifest entries.")
+    original_errors = manifest.get("errors", [])
+    if not isinstance(expected, list) or not isinstance(original_errors, list):
+        raise ValueError("Invalid manifest entries or scan error records.")
     results = []
     seen = set()
+    expected_paths = set()
     for item in expected:
-        if not isinstance(item, dict) or not isinstance(item.get("sha256"), str):
+        if not isinstance(item, dict):
             raise ValueError("Invalid manifest entry.")
+        expected_hash = item.get("sha256")
+        expected_size = item.get("bytes")
+        if (not isinstance(expected_hash, str)
+                or not re.fullmatch(r"[0-9a-f]{64}", expected_hash)
+                or not isinstance(expected_size, int)
+                or isinstance(expected_size, bool)
+                or expected_size < 0):
+            raise ValueError("Invalid file size or checksum in manifest.")
         relative = item.get("path")
         path = safe_path(root, relative)
-        if relative in seen:
+        key = relative.casefold() if os.name == "nt" else relative
+        if key in seen:
             raise ValueError("Duplicate path in manifest.")
-        seen.add(relative)
-        if not path.is_file() or path.is_symlink():
+        seen.add(key)
+        expected_paths.add(relative)
+        if path.is_symlink():
+            status = "CHANGED"
+        elif not path.is_file():
             status = "MISSING"
         else:
             try:
-                status = "OK" if (path.stat().st_size == item.get("bytes") and sha256(path) == item["sha256"]) else "CHANGED"
+                before = path.stat()
+                digest = sha256(path)
+                after = path.stat()
+                if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
+                    status = "UNSTABLE"
+                else:
+                    status = "OK" if (after.st_size == expected_size and digest == expected_hash) else "CHANGED"
             except OSError:
                 status = "UNREADABLE"
         results.append({"path": relative, "status": status})
-    return {"total": len(results), "ok": sum(x["status"] == "OK" for x in results), "results": results,
-            "scan_errors": manifest.get("errors", [])}
+    additions, traversal_errors = inventory_additions(root, expected_paths, manifest_file)
+    return {
+        "total": len(results),
+        "ok": sum(item["status"] == "OK" for item in results),
+        "added": sum(item["status"] == "ADDED" for item in additions),
+        "untracked_links": sum(item["status"] == "UNTRACKED_LINK" for item in additions),
+        "results": results + additions,
+        "scan_errors": original_errors + traversal_errors,
+    }
 
 
 def gui() -> None:
@@ -173,7 +205,7 @@ def gui() -> None:
             return
         try:
             result = verify_manifest(Path(root_var.get()), Path(filename))
-            status_var.set(f"Verified {result['ok']} of {result['total']} files unchanged.")
+            status_var.set(f"Verified {result['ok']} of {result['total']} recorded files; {result['added']} added; {result['untracked_links']} untracked links; {len(result['scan_errors'])} scan errors.")
             show("\n".join(f"{x['status']:10} {x['path']}" for x in result["results"]) or "No files in manifest.")
         except Exception as exc:
             messagebox.showerror("Could not verify manifest", str(exc))
@@ -206,8 +238,9 @@ def main() -> int:
         result = verify_manifest(Path(args.folder), Path(args.manifest))
         for entry in result["results"]:
             print(f"{entry['status']:10} {entry['path']}")
-        print(f"{result['ok']}/{result['total']} unchanged")
-        return 0 if result["ok"] == result["total"] else 1
+        print(f"{result['ok']}/{result['total']} unchanged; {result['added']} added; {result['untracked_links']} untracked links; {len(result['scan_errors'])} scan errors")
+        return 0 if (result["ok"] == result["total"] and result["added"] == 0
+                     and result["untracked_links"] == 0 and not result["scan_errors"]) else 1
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 2
