@@ -106,5 +106,27 @@ class LedgerBridgeSafetyTests(unittest.TestCase):
         self.assertIn("Matches and suggestions", rendered)
 
 
+    def test_source_fingerprints_match_exact_original_file_bytes(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            left, right = root / "left.csv", root / "right.csv"
+            left.write_text("date,amount,reference\n2026-01-01,5.00,A\n", encoding="utf-8")
+            right.write_text("date,amount,reference\n2026-01-01,5.00,A\n", encoding="utf-8")
+            report = reconcile(left, right)
+            self.assertEqual(report["status"], "RECONCILED")
+            self.assertEqual(report["input_sha256"]["left"], hashlib.sha256(left.read_bytes()).hexdigest())
+            self.assertEqual(report["input_sha256"]["right"], hashlib.sha256(right.read_bytes()).hexdigest())
+            html_report = render_html(report)
+            self.assertIn(report["input_sha256"]["left"], html_report)
+
+    def test_same_input_file_cannot_be_reconciled_to_itself(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "single.csv"
+            source.write_text("date,amount,reference\n2026-01-01,5.00,A\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "distinct"):
+                reconcile(source, source)
+
+
 if __name__ == "__main__":
     unittest.main()
