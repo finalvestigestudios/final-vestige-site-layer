@@ -74,13 +74,19 @@ def table(path, required, optional=()):
     p = Path(path)
     if p.suffix.lower() != ".csv" or not p.is_file(): raise ValueError("Select an existing CSV: "+p.name)
     with p.open(encoding="utf-8-sig",newline="") as f:
-        reader = csv.DictReader(f)
-        if not reader.fieldnames: raise ValueError("Missing headers: "+p.name)
-        # Duplicate normalized headings can hide conflicting financial columns.
-        normalized = [str(h).strip().lower().replace(" ", "_") for h in reader.fieldnames if h]
-        if "" in normalized or len(normalized) != len(reader.fieldnames) or len(normalized) != len(set(normalized)):
+        # csv.reader exposes physical line counts after each complete record.
+        # DictReader's enumerate() only counts logical records, and gives
+        # incorrect audit citations after quoted newlines or blank lines.
+        reader = csv.reader(f, strict=True)
+        try:
+            fieldnames = next(reader, None)
+        except csv.Error as exc:
+            raise ValueError(f"{p.name}: invalid CSV header") from exc
+        if not fieldnames: raise ValueError("Missing headers: "+p.name)
+        normalized = [str(h).strip().lower().replace(" ", "_") for h in fieldnames if h]
+        if "" in normalized or len(normalized) != len(fieldnames) or len(normalized) != len(set(normalized)):
             raise ValueError(f"{p.name}: blank or duplicate normalized CSV header")
-        headers = dict(zip(normalized, reader.fieldnames))
+        headers = dict(zip(normalized, fieldnames))
         cols = {}
         for field in (*required,*optional):
             matches = [alias for alias in ALIASES.get(field,(field,)) if alias in headers]
@@ -90,10 +96,25 @@ def table(path, required, optional=()):
             if field in required and cols[field] is None:
                 raise ValueError(f"{p.name}: missing '{field}' column")
         out = []
-        for i,r in enumerate(reader,2):
-            if i > MAX_ROWS+1: raise ValueError("CSV exceeds 200,000 rows")
-            if None in r: raise ValueError(f"{p.name}: malformed row {i}")
-            out.append({"row":str(i),**{name:str(r.get(col) or "").strip() for name,col in cols.items() if col}})
+        previous_end_line = reader.line_num
+        row_count = 0
+        try:
+            for values in reader:
+                # Count physical start lines, not the ordinal of parsed records.
+                source_line = previous_end_line + 1
+                previous_end_line = reader.line_num
+                if not values:  # csv.DictReader historically skips blank lines.
+                    continue
+                row_count += 1
+                if row_count > MAX_ROWS: raise ValueError("CSV exceeds 200,000 rows")
+                if len(values) != len(fieldnames):
+                    raise ValueError(f"{p.name}: malformed CSV record at physical line {source_line} "
+                                     f"(expected {len(fieldnames)} columns, got {len(values)})")
+                row = dict(zip(fieldnames, values))
+                out.append({"row":str(source_line),**{name:str(row.get(col) or "").strip()
+                       for name,col in cols.items() if col}})
+        except csv.Error as exc:
+            raise ValueError(f"{p.name}: invalid CSV near physical line {reader.line_num}") from exc
         return out
 
 def outpath(folder,stem,suffix=".csv"):
