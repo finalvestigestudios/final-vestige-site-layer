@@ -35,6 +35,25 @@ jobs:
         shell: pwsh
         run: |
           & "${env:ProgramFiles(x86)}\\Inno Setup 6\\ISCC.exe" "desktop-software\\fileproof\\installer.iss"
+      - name: Smoke-test Windows silent installation and uninstall
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem "dist/installers/FileProof-Setup-*.exe" | Select-Object -First 1
+          if (-not $installer) { throw "FileProof installer not found" }
+          $destination = Join-Path $env:RUNNER_TEMP "FileProofSmoke"
+          $install = Start-Process -FilePath $installer.FullName -ArgumentList @(
+            "/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/DIR=$destination"
+          ) -Wait -PassThru
+          if ($install.ExitCode -ne 0) { throw "Installer failed with exit code $($install.ExitCode)" }
+          $binary = Join-Path $destination "FileProof.exe"
+          $uninstaller = Join-Path $destination "unins000.exe"
+          if (-not (Test-Path $binary)) { throw "Installed FileProof executable missing" }
+          if (-not (Test-Path $uninstaller)) { throw "Expected uninstaller missing" }
+          $uninstall = Start-Process -FilePath $uninstaller -ArgumentList @(
+            "/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART"
+          ) -Wait -PassThru
+          if ($uninstall.ExitCode -ne 0) { throw "Uninstaller failed with exit code $($uninstall.ExitCode)" }
+          if (Test-Path $binary) { throw "FileProof executable was not removed during uninstall" }
       - name: Generate SHA-256 checksums
         shell: pwsh
         run: |
