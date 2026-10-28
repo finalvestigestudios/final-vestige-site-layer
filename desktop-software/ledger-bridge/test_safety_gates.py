@@ -128,5 +128,22 @@ class LedgerBridgeSafetyTests(unittest.TestCase):
                 reconcile(source, source)
 
 
+    def test_fictional_acceptance_samples_require_review_without_mutations(self):
+        from ledger_bridge import sha256_file
+        root = Path(__file__).parent / "samples"
+        left, right = root / "ledger-a.csv", root / "ledger-b.csv"
+        before = (sha256_file(left), sha256_file(right))
+        report = reconcile(left, right)
+        self.assertEqual(report["counts"]["left"], 6)
+        self.assertEqual(report["counts"]["right"], 6)
+        self.assertEqual(report["counts"]["matched"], 3)
+        self.assertEqual(report["counts"]["suggested_matches"], 1)
+        self.assertEqual(report["counts"]["unmatched_left"], 3)
+        self.assertEqual(report["counts"]["unmatched_right"], 3)
+        self.assertEqual(len(report["ambiguous_reference_groups"]), 1)
+        self.assertEqual(report["status"], "REVIEW")
+        self.assertEqual(before, (sha256_file(left), sha256_file(right)))
+
+
 if __name__ == "__main__":
     unittest.main()
