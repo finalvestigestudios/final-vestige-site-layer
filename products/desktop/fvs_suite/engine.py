@@ -79,11 +79,31 @@ def unit_cost(value):
         raise ValueError("Unit price precision exceeds eight decimal places")
     return amount
 
+_QUANTITY_FORMAT = re.compile(
+    r"[+]?(?:(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.[0-9]*)?|\.[0-9]+)\Z"
+)
+
+
 def qty(value):
-    try: n = Decimal(str(value).strip().replace(",",""))
-    except InvalidOperation as exc: raise ValueError("Invalid quantity: "+str(value)) from exc
-    if not n.is_finite() or n < 0 or n > 1_000_000_000: raise ValueError("Invalid quantity range")
-    return n
+    """Parse exact, nonnegative quantities without deleting misplaced commas.
+
+    Reject exponent forms, mixed punctuation, excessive precision, and binary
+    floats; these change the interpretation of invoice/receipt movements.
+    """
+    if isinstance(value, (float, bool)):
+        raise ValueError("Invalid quantity format")
+    raw = str(value).strip()
+    if not raw or len(raw) > 80 or _QUANTITY_FORMAT.fullmatch(raw) is None:
+        raise ValueError("Invalid quantity format")
+    try:
+        number = Decimal(raw.replace(",", ""))
+    except InvalidOperation as exc:
+        raise ValueError("Invalid quantity format") from exc
+    if not number.is_finite() or number < 0 or number > Decimal("1000000000"):
+        raise ValueError("Invalid quantity range")
+    if number.normalize().as_tuple().exponent < -8:
+        raise ValueError("Quantity precision exceeds eight decimal places")
+    return number
 
 def key(value): return re.sub(r"[^A-Z0-9]+","",str(value).upper())
 def dollars(value): return format(value.quantize(CENT),".2f")

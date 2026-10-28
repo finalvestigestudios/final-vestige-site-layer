@@ -250,3 +250,22 @@ are unchanged. Seventeen repository regression tests were added; 15 isolated
 CSV-intake checks passed locally under normal Python and `-OO`, but complete
 repository/Windows verification remains pending. See
 [R20 premium review intake contract](docs/PREMIUM_REVIEW_CSV_R20.md).
+
+## R23 procurement quantity lexical integrity (internal, unreleased)
+
+ProcureGuard Studio Pro no longer discards all comma separators or accepts
+scientific-notation quantity strings when reconciling PO/invoice/receipt
+movements. Only explicit, correctly grouped, nonnegative, finite decimal
+quantities with at most eight meaningful fractional places are accepted.
+The parser uses exact `Decimal`, does not echo malformed source text in
+errors, and rejects invalid inputs **before** any reconciliation CSV or
+evidence manifest is created. Explicit credit and return movements still
+require human review and are never inferred from negative quantities.
+
+The R23 branch adds 12 repository regression methods covering all three
+import streams, source preservation, exact grouped quantities, no partial
+audit files, and typed credits/returns; the new module is also included in
+the Linux source CI optimized-Python test step. An isolated parser harness
+passed 15/15 checks under normal Python and `-OO`; the connected repository
+tests and real Windows x64 binaries remain **unverified** pending CI runner
+availability. See [R23 procurement quantity input contract](docs/PROCUREMENT_QUANTITY_INTEGRITY_R23.md).
