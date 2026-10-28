@@ -17,6 +17,8 @@ from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
+from ap_input_guard import MAX_PAYMENTS, normalize_search_key, resolve_headers, source_fingerprint
+
 VERSION = "0.1.0"
 ALIASES = {
     "vendor": {"vendor", "vendor name", "supplier", "supplier name", "payee"},
@@ -28,7 +30,7 @@ ALIASES = {
 
 
 def normalize(text: str) -> str:
-    return re.sub(r"[^a-z0-9]", "",text.casefold())
+    return normalize_search_key(text)
 
 
 def parse_amount(raw: str) -> Decimal:
@@ -66,16 +68,15 @@ def load_payments(path: Path) -> tuple[list[dict], list[dict]]:
         reader = csv.DictReader(stream, delimiter=delimiter, restkey="__extra__", restval="", strict=True)
         if reader.fieldnames is None:
             raise ValueError("Empty CSV file.")
-        canonical = {}
-        for header in reader.fieldnames:
-            lowered = header.strip().casefold()
-            for target, choices in ALIASES.items():
-                if lowered in choices and target not in canonical:
-                    canonical[target] = header
-        missing = {"vendor", "invoice", "amount", "date"} - canonical.keys()
-        if missing:
-            raise ValueError("Missing required columns: " + ", ".join(sorted(missing)))
-        for idx, row in enumerate(reader, 2):
+        canonical = resolve_headers(reader.fieldnames, ALIASES,
+                                    {"vendor", "invoice", "amount", "date"})
+        last_line = reader.line_num
+        for index, row in enumerate(reader, 1):
+            if index > MAX_PAYMENTS:
+                raise ValueError("CSV exceeds the 200,000-payment review limit.")
+            # Track the physical starting line, including CSVs with quoted newlines.
+            csv_line = last_line + 1
+            last_line = reader.line_num
             try:
                 if "__extra__" in row:
                     raise ValueError("Row has more columns than the header.")
@@ -83,22 +84,28 @@ def load_payments(path: Path) -> tuple[list[dict], list[dict]]:
                 invoice = (row[canonical["invoice"]] or "").strip()
                 if not vendor or not invoice:
                     raise ValueError("Vendor and invoice must be present.")
+                vendor_key, invoice_key = normalize(vendor), normalize(invoice)
+                if not vendor_key or not invoice_key:
+                    raise ValueError("Vendor and invoice need searchable letters or digits.")
                 value = parse_amount(row[canonical["amount"]] or "")
                 paid = parse_date(row[canonical["date"]] or "")
                 account = (row.get(canonical.get("account", ""), "") or "").strip()
                 records.append({
-                    "row": idx, "vendor": vendor, "vendor_key": normalize(vendor),
-                    "invoice": invoice, "invoice_key": normalize(invoice),
+                    "row": csv_line, "vendor": vendor, "vendor_key": vendor_key,
+                    "invoice": invoice, "invoice_key": invoice_key,
                     "amount": value, "date": paid,
                     "account_key": normalize(account),
                 })
             except (ValueError, TypeError, KeyError) as exc:
-                problems.append({"row": idx, "code": "INVALID_INPUT", "message": str(exc)})
+                problems.append({"row": csv_line, "code": "INVALID_INPUT", "message": str(exc)})
     return records, problems
 
 
 def review(path: Path) -> dict:
+    original = source_fingerprint(path)
     records, problems = load_payments(path)
+    if source_fingerprint(path) != original:
+        raise ValueError("CSV changed while processing; discard this review and retry.")
     flags = []
     seen_invoice: dict[tuple[str, str], dict] = {}
     by_vendor: dict[str, list[dict]] = defaultdict(list)
@@ -151,9 +158,11 @@ def review(path: Path) -> dict:
         summary[item["severity"]] += 1
     return {
         "tool": "Final Vestige Payment Sentinel", "version": VERSION,
-        "file": path.name, "records_reviewed": len(records),
+        "file": path.name, "source_sha256": original["sha256"],
+        "source_bytes": original["bytes"], "records_reviewed": len(records),
         "rows_excluded": len(problems), "flags_by_severity": summary,
-        "flags": flags, "status": "REVIEW" if flags else "NO_FLAGS",
+        "flags": flags,
+        "status": "INCOMPLETE" if not records else ("REVIEW" if flags else "NO_FLAGS"),
         "disclaimer": "Exceptions are leads for human review, not proof of error or fraud.",
     }
 
@@ -169,8 +178,12 @@ def report_html(report: dict) -> str:
             "<title>Payment Sentinel Review</title><style>body{font:16px system-ui;"
             "max-width:1000px;margin:3rem auto;padding:1rem}table{border-collapse:collapse;width:100%}"
             "th,td{border:1px solid #ccc;padding:.75rem;text-align:left}</style>"
-            "<h1>Payment Sentinel</h1><p>Rows reviewed: " + str(report["records_reviewed"]) +
-            "; skipped: " + str(report["rows_excluded"]) + "</p><p>" +
+            "<h1>Payment Sentinel</h1><p>Review state: " +
+            html.escape(report.get("status", "REVIEW")) +
+            "; rows reviewed: " + str(report["records_reviewed"]) +
+            "; skipped: " + str(report["rows_excluded"]) +
+            "</p><p>Input SHA-256: <code>" +
+            html.escape(report.get("source_sha256", "not recorded")) + "</code></p><p>" +
             html.escape(report["disclaimer"]) + "</p><table><thead><tr><th>Priority</th>"
             "<th>Check</th><th>CSV rows</th><th>Reason</th></tr></thead><tbody>" +
             "".join(rows) + "</tbody></table></html>")
@@ -206,7 +219,7 @@ def gui() -> None:
             output.insert("1.0", json.dumps(latest[0], indent=2, ensure_ascii=False))
             output.config(state="disabled")
             status.set(f"{latest[0]['records_reviewed']} payments reviewed · "
-                       f"{len(latest[0]['flags'])} review flags")
+                       f"{len(latest[0]['flags'])} flags · {latest[0]['status']}")
         except (OSError, ValueError, csv.Error, UnicodeError) as exc:
             messagebox.showerror("Review failed", str(exc))
 
@@ -242,7 +255,7 @@ def main() -> int:
             else:
                 args.report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result, indent=2))
-        return 1 if result["flags"] else 0
+        return 2 if result["status"] == "INCOMPLETE" else (1 if result["flags"] else 0)
     except (OSError, ValueError, csv.Error, UnicodeError) as exc:
         print("Review failed:", exc, file=sys.stderr)
         return 2
