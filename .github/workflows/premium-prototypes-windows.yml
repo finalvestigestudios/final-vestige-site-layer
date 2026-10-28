@@ -1,0 +1,96 @@
+name: Premium desktop prototypes - private Windows CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'desktop-software/payment-sentinel/**'
+      - 'desktop-software/ledger-bridge/**'
+      - 'desktop-software/reimbursement-auditor/**'
+      - '.github/workflows/premium-prototypes-windows.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - slug: payment-sentinel
+            source: payment_sentinel
+            exe: PaymentSentinel
+          - slug: ledger-bridge
+            source: ledger_bridge
+            exe: LedgerBridge
+          - slug: reimbursement-auditor
+            source: reimbursement_auditor
+            exe: ReimbursementAuditor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit regression tests
+        shell: pwsh
+        run: |
+          python -m unittest discover -s "desktop-software/${{ matrix.slug }}" -p "test_*.py" -v
+          if ($LASTEXITCODE -ne 0) { throw "Tests failed" }
+      - name: Install pinned PyInstaller
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check pyinstaller==6.16.0
+          if ($LASTEXITCODE -ne 0) { throw "Packager installation failed" }
+      - name: Build prototype executable
+        shell: pwsh
+        run: |
+          python -m PyInstaller --noconfirm --clean --onefile --windowed --name "${{ matrix.exe }}" "desktop-software/${{ matrix.slug }}/${{ matrix.source }}.py"
+          if ($LASTEXITCODE -ne 0) { throw "Executable build failed" }
+      - name: Ensure installer compiler
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { choco install innosetup --no-progress -y }
+          if (-not (Test-Path $iscc)) { throw "Installer compiler not installed" }
+      - name: Build prototype installer
+        shell: pwsh
+        run: |
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "desktop-software/${{ matrix.slug }}/installer.iss"
+          if ($LASTEXITCODE -ne 0) { throw "Installer build failed" }
+      - name: Smoke test installation and uninstall
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem "dist/installers/${{ matrix.exe }}-Setup-*.exe" | Select-Object -First 1
+          if (-not $installer) { throw "Setup executable missing" }
+          $dest = Join-Path $env:RUNNER_TEMP "fvs-premium-${{ matrix.exe }}"
+          & $installer.FullName /VERYSILENT /SUPPRESSMSGBOXES /NORESTART "/DIR=$dest"
+          if ($LASTEXITCODE -ne 0) { throw "Install failed" }
+          if (-not (Test-Path (Join-Path $dest "${{ matrix.exe }}.exe"))) { throw "Installed binary missing" }
+          & (Join-Path $dest "unins000.exe") /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+          if ($LASTEXITCODE -ne 0) { throw "Uninstaller failed" }
+      - name: Record installer SHA-256
+        shell: pwsh
+        run: |
+          Get-ChildItem "dist/installers/*.exe" | ForEach-Object {
+            $digest = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+            "$digest  $($_.Name)" | Out-File "dist/installers/SHA256SUMS.txt" -Append -Encoding ascii
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.exe }}-prototype-unsigned-private
+          path: |
+            dist/installers/*.exe
+            dist/installers/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 3
+
+# This workflow NEVER publishes a GitHub Release, pushes to WordPress, or
+# starts a checkout. Premium artifacts must remain in the private repository
+# until licensing, code signing, and commercial release QA are complete.
