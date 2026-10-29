@@ -204,12 +204,9 @@ def safe_cell(value):
     return s
 
 def save(folder,stem,fields,rows):
-    p=outpath(folder,stem)
-    with p.open("x",encoding="utf-8-sig",newline="") as f:
-        writer=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows([{k:safe_cell(v) for k,v in row.items()} for row in rows])
-    return p
+    """Stage and sync complete CSV bytes before exposing a final report path."""
+    from .atomic_reports import write_csv_report
+    return write_csv_report(outpath(folder,stem), fields, rows, safe_cell)
 
 def manifest(folder,inputs,outputs):
     p=outpath(folder,"evidence-manifest",".txt")
