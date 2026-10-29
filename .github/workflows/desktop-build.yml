@@ -51,6 +51,7 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_bundle_r32.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_package_r32.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_verify_r33.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_anchor_r34.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
