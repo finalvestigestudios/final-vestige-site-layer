@@ -373,3 +373,22 @@ and the exact manifest layout match; it returns 1 on inconsistent or invalid
 evidence. This is **not** a signature, historic authenticity proof, automated
 compliance approval, release-ready Windows EXE, or replacement for human review.
 See [R33 verifier threat model](docs/GRANT_BUNDLE_VERIFICATION_R33.md).
+
+
+### R34: independently anchored GrantAudit inventory check (development-only)
+
+The R33 offline verifier now optionally checks the published inventory against
+an **independently retained** 64-character lowercase SHA-256 checksum. Capture
+the inventory checksum at trusted publication time, then store it **outside**
+the bundle in a separately controlled audit record. Later retrieve that
+original pin; never calculate a purported "trusted" pin from a suspect copy.
+
+    PYTHONPATH=products/desktop python -m fvs_suite.grant_verify --expected-inventory-sha256 "$SAVED_PIN_FROM_TRUSTED_REGISTER" /evidence/grant-evidence-dir /source/claims.csv /source/ledger.csv /source/budgets.csv
+
+Success explicitly says **CONSISTENT (PINNED)** if the external checksum
+matches. Omitting the flag remains backward-compatible but explicitly says
+**CONSISTENT (UNPINNED)**: self-consistency is not authenticity. A mismatch or
+malformed pin returns exit code 1. All results require human review. See
+[R34 independent-inventory pinning](docs/GRANT_INDEPENDENT_PIN_R34.md).
+There is no packaged verifier, Windows release, website approval, license
+activation, or premium distribution change in this sprint.
