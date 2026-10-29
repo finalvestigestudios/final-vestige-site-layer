@@ -8,6 +8,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import stat
 import unicodedata
 from pathlib import Path
@@ -74,16 +75,33 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
     return digest.hexdigest(), _signature(opened)
 
 
-def inventory_text(inputs, outputs) -> str:
-    """Return deterministic UTF-8 inventory text; publication is separate.
+def inventory_text(inputs, outputs, *, expected_input_digests=None) -> str:
+    """Build a private inventory, optionally binding every CSV to parsed bytes.
 
-    Ambiguous basenames (even with different directories/case) are rejected;
-    absolute directory names are never included in the private manifest.
-    Files must be regular non-symlinks and remain unchanged through the final
-    recheck. This reduces common TOCTOU errors but cannot freeze other writers.
+    With expected_input_digests, the source digest *must* match the exact
+    snapshot that drove the report, even if a later source has the same size.
+    No supplied provenance means a descriptive inventory, as before; direct
+    callers must not present it as proof of report/source consistency.
     """
-    selected = [(Path(path), MAX_INPUT_BYTES) for path in inputs]
-    selected += [(Path(path), MAX_REPORT_BYTES) for path in outputs]
+    input_paths = [Path(path) for path in inputs]
+    output_paths = [Path(path) for path in outputs]
+    supplied = None
+    if expected_input_digests is not None:
+        try:
+            supplied = {os.fspath(path): digest for path, digest
+                        in expected_input_digests.items()}
+        except (AttributeError, TypeError, ValueError):
+            raise ValueError("Invalid source digest map") from None
+        selected_names = [os.fspath(path) for path in input_paths]
+        if (len(selected_names) != len(set(selected_names))
+                or set(supplied) != set(selected_names)):
+            raise ValueError("Source digest coverage mismatch")
+        if any(not isinstance(digest, str)
+               or re.fullmatch(r"[0-9a-f]{64}", digest) is None
+               for digest in supplied.values()):
+            raise ValueError("Invalid source digest")
+    selected = [(path, MAX_INPUT_BYTES) for path in input_paths]
+    selected += [(path, MAX_REPORT_BYTES) for path in output_paths]
     seen_names: set[str] = set()
     for path, _ in selected:
         label = unicodedata.normalize("NFKC", path.name).casefold()
@@ -93,8 +111,11 @@ def inventory_text(inputs, outputs) -> str:
     lines = [_HEADER]
     snapshots = []
     seen_files: set[tuple[int, int]] = set()
-    for path, maximum in selected:
+    for index, (path, maximum) in enumerate(selected):
         digest, signature = _hash_regular(path, maximum)
+        if (supplied is not None and index < len(input_paths)
+                and digest != supplied[os.fspath(path)]):
+            raise ValueError("Source bytes changed after reconciliation")
         identity = signature[:2]
         # Ignore absent/zero inode information on filesystems that lack it.
         if identity[1] and identity in seen_files:
