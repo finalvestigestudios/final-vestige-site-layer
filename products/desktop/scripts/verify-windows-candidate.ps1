@@ -51,7 +51,12 @@ try {
     if (-not (Test-Path -LiteralPath $dist -PathType Container)) {
         throw "No dist folder; use -Build or place six candidate EXEs plus SHA256SUMS.txt in dist."
     }
-    $output = Join-Path $dist ("offline-gate-" + (Get-Date -Format "yyyyMMdd-HHmmss-fffffff") + ".json")
+    # Evidence stays outside the exact seven-file dist candidate directory.
+    $evidenceDir = Join-Path $repo "build\\candidate-evidence"
+    if (-not (Test-Path -LiteralPath $evidenceDir)) {
+        New-Item -ItemType Directory -Path $evidenceDir -Force | Out-Null
+    }
+    $output = Join-Path $evidenceDir ("offline-gate-" + (Get-Date -Format "yyyyMMdd-HHmmss-fffffff") + ".json")
     & $PythonCommand products/desktop/release_gate.py $dist --smoke --report $output
     if ($LASTEXITCODE -ne 0) { throw "Offline Windows candidate gate FAILED" }
     Write-Host "Offline candidate evidence (NOT a release authorization): $output"
