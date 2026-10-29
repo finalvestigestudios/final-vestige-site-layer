@@ -341,3 +341,13 @@ tabs, newlines or bidi control characters. The existing policy source digests,
 review-only conclusions and Decimal-safe financial computation are unchanged.
 See [R28 design](docs/ATOMIC_TEXT_EVIDENCE_R28.md). Integration/Windows release
 verification, protected premium access and independent QD review are pending.
+
+## R29 — grant SHA-256 inventory provenance guard (development only)
+
+GrantAudit Studio Pro now rejects ambiguous duplicate basenames, symlinks,
+hard-linked aliases and modified/replaced evidence during SHA-256 inventory
+creation. Each source is hashed from a bounded descriptor (64 MiB source, 256
+MiB report cap) and every file is rechecked before the private, non-overwriting
+inventory is published. Plain ASCII inventory lines remain compatible with
+R28 for distinct filenames. This is not a snapshot, signature, authorization
+or multi-file transaction. See [R29 design](docs/GRANT_INVENTORY_PROVENANCE_R29.md).
