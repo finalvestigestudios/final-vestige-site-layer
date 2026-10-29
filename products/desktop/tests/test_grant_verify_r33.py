@@ -196,6 +196,35 @@ class GrantVerifyTests(unittest.TestCase):
         self.assertIn("INVALID", out.getvalue())
         self.assertNotIn(str(self.root), out.getvalue())
 
+    def published_r32_bundle(self):
+        from fvs_suite.grant_bundle import publish_grant_bundle
+        def build(staging):
+            names = (
+                "grant-audit-exceptions-20261029-092000-000001.csv",
+                "grant-budget-check-20261029-092000-000001.csv",
+                "evidence-manifest-20261029-092000-000001.txt",
+            )
+            files = [staging / name for name in names]
+            files[0].write_bytes(b"exception,status\nA,review\n")
+            files[1].write_bytes(b"program,amount\nG,10.00\n")
+            files[2].write_text(
+                inventory_text([self.claims, self.ledger, self.budgets], files[:2]),
+                encoding="utf-8", newline="",
+            )
+            return files
+        return publish_grant_bundle(self.root, build)
+
+    def test_real_r32_publisher_package_verifies(self):
+        published = self.published_r32_bundle()
+        self.assertTrue(verify_grant_bundle(
+            published[0].parent, self.claims, self.ledger, self.budgets))
+
+    def test_real_r32_publisher_modified_report_fails(self):
+        published = self.published_r32_bundle()
+        published[0].write_bytes(b"exception,status\nA,approved\n")
+        with self.assertRaisesRegex(ValueError, "does not match"):
+            verify_grant_bundle(published[0].parent, self.claims, self.ledger, self.budgets)
+
     @unittest.skipIf(os.name == "nt", "Hard links not uniformly available on Windows")
     def test_hard_link_source_alias_rejected(self):
         self.ledger.unlink()
