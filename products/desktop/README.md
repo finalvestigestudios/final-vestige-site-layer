@@ -330,3 +330,14 @@ overwriting another report. See [R27 design](docs/ATOMIC_FINANCIAL_CSV_REPORTS_R
 The new helper regression suite passed locally on Linux; integrated repository
 tests, native Windows filesystem behavior, six executable builds, QD review,
 and guarded premium distribution remain release blockers.
+
+## R28 — safe publication for policy diffs and grant hash manifests (development only)
+
+Policy Delta Desk text diffs and GrantAudit Studio Pro SHA-256 inventories now
+stage private UTF-8 text, flush/fsync, and publish with non-overwriting file
+operations. This prevents normal I/O failures from exposing incomplete final
+text evidence. Hash-manifest filenames are escaped to avoid forged lines from
+tabs, newlines or bidi control characters. The existing policy source digests,
+review-only conclusions and Decimal-safe financial computation are unchanged.
+See [R28 design](docs/ATOMIC_TEXT_EVIDENCE_R28.md). Integration/Windows release
+verification, protected premium access and independent QD review are pending.

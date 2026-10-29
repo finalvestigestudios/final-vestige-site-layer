@@ -209,15 +209,23 @@ def save(folder,stem,fields,rows):
     return write_csv_report(outpath(folder,stem), fields, rows, safe_cell)
 
 def manifest(folder,inputs,outputs):
-    p=outpath(folder,"evidence-manifest",".txt")
-    with p.open("x",encoding="utf-8") as f:
-        f.write("SHA-256 file inventory. Hashes do not certify accuracy or compliance.\n")
-        for source in [*map(Path,inputs),*outputs]:
-            h=hashlib.sha256()
-            with source.open("rb") as stream:
-                for chunk in iter(lambda:stream.read(1024*1024),b""):h.update(chunk)
-            f.write(f"{source.name}\t{h.hexdigest()}\n")
-    return p
+    """Hash complete input/report evidence before publishing a private manifest.
+
+    Filenames are JSON-escaped (without quotes) so embedded tabs, newlines,
+    backslashes or bidi controls cannot forge physical inventory records.
+    """
+    import json
+    from .atomic_text import publish_text
+
+    lines = ["SHA-256 file inventory. Hashes do not certify accuracy or compliance.\n"]
+    for source in [*map(Path,inputs),*map(Path,outputs)]:
+        h = hashlib.sha256()
+        with source.open("rb") as stream:
+            for chunk in iter(lambda:stream.read(1024*1024),b""):
+                h.update(chunk)
+        safe_name = json.dumps(source.name, ensure_ascii=True)[1:-1]
+        lines.append(f"{safe_name}\t{h.hexdigest()}\n")
+    return publish_text(outpath(folder,"evidence-manifest",".txt"), "".join(lines))
 
 def ledger_diff(left,right,folder):
     groups=[defaultdict(list),defaultdict(list)]

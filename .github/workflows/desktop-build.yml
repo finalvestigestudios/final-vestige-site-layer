@@ -40,6 +40,8 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_policy_engine_r26.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_reports_r27.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_engine_writer_r27.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_text_evidence_integration_r28.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
