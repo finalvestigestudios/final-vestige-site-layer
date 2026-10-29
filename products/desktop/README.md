@@ -274,3 +274,22 @@ availability. See [R23 procurement quantity input contract](docs/PROCUREMENT_QUA
 ## R24 — ASCII financial/date inputs and confidential errors
 
 All shared accounting amounts and invoice/spend dates now require ASCII digits, and direct binary-float amount inputs are refused rather than converted through text. Invalid date errors no longer display private input cells. This strengthens local financial accuracy for five apps while preserving explicit legacy two-digit date support (four-digit years recommended). See [R24 input contract](docs/ASCII_FINANCIAL_DATE_PRIVACY_R24.md). Four free and two premium applications remain **development prototypes**, not authorized downloads; Windows binary validation, premium fulfillment and independent QD approval are still required.
+
+## R25 — financial CSV input bounds (development-only)
+
+LedgerDiff Lite, Invoice Twin Scout, SpendMap Lite, GrantAudit Studio Pro and
+ProcureGuard Studio Pro now reject financial CSVs larger than **64 MiB each**,
+NUL characters anywhere in CSV headers/values (even ignored columns), and
+malformed UTF-8 with generic errors. Import size is checked on the opened file
+descriptor before and after parsing; these checks are not protection against
+an adversary changing the file while it is being read. BOM/multiline physical
+source citations, Decimal arithmetic, untouched originals and human review
+remain. Partition exports over 64 MiB into reviewed batches rather than
+silently truncating. Policy Delta Desk is text-only and unchanged.
+
+See [R25 import-boundary specification](docs/FINANCIAL_CSV_IMPORT_BOUNDS_R25.md)
+and the 15 source regression methods in
+`tests/test_csv_import_bounds_r25.py`. Until the **full repository tests**
+and **native six-app Windows x64 verification** run successfully, this is
+not a released or certified desktop build. Independent site/QD approval and
+premium access controls remain mandatory.
