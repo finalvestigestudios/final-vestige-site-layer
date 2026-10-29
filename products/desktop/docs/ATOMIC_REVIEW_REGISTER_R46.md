@@ -20,7 +20,7 @@ This does **not** provide a continuous filesystem lock or authenticated anti-rol
 
 - `fvs_suite/review_register.py`: focused snapshot-consistency and atomic publication helper.
 - `fvs_suite/exception_review.py`: both premium products' existing `export_register` delegate to the helper; `read_cases`, `read_journal`, `CSV_FIELDS`, and `_csv_cell` retain authority.
-- `tests/test_review_register_r46.py`: 19 synthetic regression cases for source/journal mutation, all-history comparison, collision/no-clobber, symlink handling, incomplete writes, UTF-8 BOM, Excel formula neutralization delegation, pending human states and POSIX permissions.
+- `tests/test_review_register_r46.py`: 20 synthetic regression cases for source/journal mutation, all-history comparison, collision/no-clobber, symlink handling, incomplete writes, UTF-8 BOM, Excel formula neutralization delegation, pending human states and POSIX permissions.
 - `.github/workflows/desktop-build.yml`: dedicated Python `-OO` regression invocation on Ubuntu and Windows. Complete desktop regression remains in the existing CI steps.
 
 ## Operator checks — trusted full checkout
