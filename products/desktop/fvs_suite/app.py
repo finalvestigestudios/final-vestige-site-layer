@@ -4,6 +4,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
 from .keyboard_access import install_shortcuts
+from .ui_errors import safe_error_message
 
 APPS = {
     "ledger": ("LedgerDiff Lite", ["Left ledger CSV", "Right ledger CSV"], engine.ledger_diff, False),
@@ -140,9 +141,10 @@ def run(app_id):
                 outputs = action(*args, output.get().strip(), policy_path=rules.get().strip() or None)
             else:
                 outputs = action(*args, output.get().strip())
-        except (ValueError, OSError, UnicodeError, PermissionError) as exc:
-            status.set("Failed: " + str(exc))
-            messagebox.showerror("Review input files", str(exc), parent=root)
+        except (ValueError, OSError, UnicodeError) as exc:
+            detail = safe_error_message(exc, operation="generate")
+            status.set("Failed: " + detail)
+            messagebox.showerror("Review input files", detail, parent=root)
             return
         last_report[0] = str(outputs[0]) if outputs else None
         names = ", ".join(p.name for p in outputs)
@@ -157,9 +159,14 @@ def run(app_id):
                 return
             from .review_ui import open_review_window
             from .offline_entitlement import verify_license
-            open_review_window(
-                root, app_id, report_path=last_report[0],
-                authorize=lambda: verify_license(entitlement_source, app_id))
+            try:
+                open_review_window(
+                    root, app_id, report_path=last_report[0],
+                    authorize=lambda: verify_license(entitlement_source, app_id))
+            except (ValueError, OSError, UnicodeError) as exc:
+                detail = safe_error_message(exc, operation="report")
+                status.set("Review unavailable: " + detail)
+                messagebox.showerror("Cannot open review", detail, parent=root)
         review_button = ttk.Button(frame, text="Review exceptions (human only)…",
                                    command=open_exception_review)
         review_button.grid(row=folder_row+4, column=0, columnspan=3, sticky="w")
