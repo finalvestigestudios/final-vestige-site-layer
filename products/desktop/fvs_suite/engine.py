@@ -296,19 +296,9 @@ def spend_map(source,folder):
     return [save(folder,"spend-map",("vendor_key","month","category","amount","flag"),rows)]
 
 def policy_delta(old,new,folder):
-    for path in (old,new):
-        p=Path(path)
-        if not p.is_file() or p.suffix.lower() not in (".txt",".md",".csv"):
-            raise ValueError("Policy comparison supports TXT, MD and CSV files")
-        if p.stat().st_size>10*1024*1024:raise ValueError("Policy file exceeds 10 MB")
-    a=Path(old).read_text(encoding="utf-8-sig").splitlines(keepends=True)
-    b=Path(new).read_text(encoding="utf-8-sig").splitlines(keepends=True)
-    diff="".join(difflib.unified_diff(a,b,fromfile=Path(old).name,tofile=Path(new).name))
-    p=outpath(folder,"policy-delta",".txt")
-    with p.open("x",encoding="utf-8") as f:
-        f.write("Text differences only. Not legal advice or a compliance determination.\n\n")
-        f.write(diff or "No textual differences found.\n")
-    return [p]
+    """Compare two bounded local policy files with source-byte provenance."""
+    from .policy_diff import compare_policy_files
+    return compare_policy_files(old, new, folder, outpath)
 
 def grant_audit(claims,ledger,budgets,folder):
     """Legacy one-to-one reconciliation or explicit linked allocations.

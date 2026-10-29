@@ -293,3 +293,17 @@ and the 15 source regression methods in
 and **native six-app Windows x64 verification** run successfully, this is
 not a released or certified desktop build. Independent site/QD approval and
 premium access controls remain mandatory.
+
+## Policy Delta Desk R26 — bounded text sources and digest-cited differences
+
+Policy Delta Desk now reads the exact bytes of each local TXT/MD/CSV source through
+a **10 MiB per-file guard** and rejects malformed UTF-8, NUL/control/bidi
+characters, and more than 50,000 physical lines per source. The report records
+**SHA-256 digests of the exact bytes read**, quoted/escaped source basenames,
+and unified-diff line hunks. Unterminated final lines are explicitly marked
+instead of concatenating conflicting evidence. Inputs are never rewritten;
+invalid inputs produce no comparison report. See
+[Policy Delta provenance R26](docs/POLICY_DIFF_PROVENANCE_R26.md).
+These hashes are *fingerprints, not signatures or proof of legal correctness*.
+The R26 helper regressions have run locally; full repository tests, true Windows
+x64 smoke tests, QD approval, and release verification remain outstanding.
