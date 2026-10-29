@@ -1,7 +1,7 @@
-"""Internal, cross-platform source smoke gate for the six Final Vestige Labs engines.
+"""Synthetic six-engine source verification; never a Windows binary release gate.
 
-This is NOT an executable/installer test or a release authorization. Only synthetic
-inputs are used by fvs_suite.smoke; the report contains source hashes, not data.
+The report proves only that the inventoried checkout stayed byte-stable during
+six synthetic source smokes. It is not signing, security scanning or QD approval.
 """
 from __future__ import annotations
 
@@ -9,7 +9,10 @@ import argparse
 import hashlib
 import json
 import os
+import stat
 from pathlib import Path
+
+from report_evidence import prepare_report_path, publish_report
 
 APPS = (
     ("LedgerDiffLite", "ledger"),
@@ -19,31 +22,78 @@ APPS = (
     ("GrantAuditStudioPro", "grants"),
     ("ProcureGuardStudioPro", "procurement"),
 )
+MAX_SOURCE_BYTES = 16 * 1024 * 1024
+MAX_SOURCE_FILES = 256
+_READ_SIZE = 64 * 1024
+
+
+def _identity(info: os.stat_result) -> tuple[int, ...]:
+    return (info.st_dev, info.st_ino, info.st_mode, info.st_nlink,
+            info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+
+
+def _fingerprint(path: Path, root: Path) -> str:
+    """Hash a single bounded regular checkout file without following symlinks.
+
+    Compare path and descriptor identities before and after reading so observed
+    replacements, in-flight writes and hardlink aliases cannot be certified.
+    """
+    fd = None
+    try:
+        before = path.lstat()
+        if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1
+                or before.st_size > MAX_SOURCE_BYTES
+                or not path.resolve(strict=True).is_relative_to(root)):
+            raise ValueError("unsafe or oversized desktop source file")
+        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_BINARY", 0)
+        fd = os.open(path, flags)
+        start = os.fstat(fd)
+        if _identity(start) != _identity(before):
+            raise ValueError("Desktop source changed before fingerprinting")
+        digest = hashlib.sha256()
+        consumed = 0
+        while True:
+            block = os.read(fd, _READ_SIZE)
+            if not block:
+                break
+            consumed += len(block)
+            if consumed > MAX_SOURCE_BYTES:
+                raise ValueError("Desktop source exceeds safety bound")
+            digest.update(block)
+        if (consumed != before.st_size or _identity(os.fstat(fd)) != _identity(before)
+                or _identity(path.lstat()) != _identity(before)):
+            raise ValueError("Desktop source changed while fingerprinting")
+        return digest.hexdigest()
+    except (OSError, RuntimeError):
+        raise ValueError("Unsafe or changing desktop source file") from None
+    finally:
+        if fd is not None:
+            os.close(fd)
 
 
 def source_inventory(repo_root: Path) -> list[dict[str, str]]:
-    """Hash the exact Python engine/launcher files used by the source smoke."""
-    root = Path(repo_root).resolve()
+    """Inventory exactly the current Python engines and six launchers."""
+    root = Path(repo_root).resolve(strict=True)
     package = root / "products" / "desktop" / "fvs_suite"
     launchers = root / "products" / "desktop" / "launchers"
-    files = sorted(package.glob("*.py")) if package.is_dir() else []
+    if (package.is_symlink() or launchers.is_symlink()
+            or not package.is_dir() or not launchers.is_dir()):
+        raise ValueError("Incomplete or unsafe desktop source tree")
+    files = sorted(package.glob("*.py"))
     required_launchers = [launchers / (name + ".py") for name, _ in APPS]
-    if not files or any(not f.is_file() or f.is_symlink() for f in [*files, *required_launchers]):
-        raise ValueError("Incomplete or unsafe desktop source tree; source smoke cannot pass")
+    selected = sorted(set([*files, *required_launchers]))
+    if (not files or len(selected) > MAX_SOURCE_FILES
+            or any(not p.is_file() or p.is_symlink() for p in selected)):
+        raise ValueError("Incomplete or unsafe desktop source tree")
     inventory = []
-    for path in sorted(set([*files, *required_launchers])):
-        # No symlinks permitted. Never follow source paths outside the checkout.
-        if path.is_symlink() or not path.resolve().is_relative_to(root):
-            raise ValueError("Source inventory contains a symlink or external path")
-        inventory.append({
-            "path": path.relative_to(root).as_posix(),
-            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-        })
+    for path in selected:
+        digest = _fingerprint(path, root)
+        inventory.append({"path": path.relative_to(root).as_posix(), "sha256": digest})
     return inventory
 
 
 def verify_smokes(run_smoke) -> list[dict[str, object]]:
-    """Execute every engine in its actual import context. Fail on first error."""
+    """Execute each actual engine's synthetic contract, never customer inputs."""
     results = []
     for name, app_id in APPS:
         outputs = run_smoke(app_id)
@@ -58,8 +108,11 @@ def verify_smokes(run_smoke) -> list[dict[str, object]]:
 
 
 def report_data(repo_root: Path, run_smoke, *, commit: str = "") -> dict:
+    """Fail closed when any inventoried source is edited during six app smokes."""
     inventory = source_inventory(repo_root)
     results = verify_smokes(run_smoke)
+    if source_inventory(repo_root) != inventory:
+        raise RuntimeError("Desktop sources changed during synthetic smoke; evidence withheld")
     return {
         "schema": "fvs-source-smoke-v1",
         "scope": "PYTHON_SOURCE_ONLY_NOT_WINDOWS_BINARY_VERIFICATION",
@@ -74,18 +127,15 @@ def report_data(repo_root: Path, run_smoke, *, commit: str = "") -> dict:
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--report", type=Path, help="Write internal JSON evidence (never download binaries)")
+    parser.add_argument("--report", type=Path,
+                        help="Atomically create a new external source-only evidence JSON")
     args = parser.parse_args(argv)
     root = Path(__file__).resolve().parents[3]
-    # Import at execution time so isolated tests can validate the gate itself.
+    destination = prepare_report_path(args.report, root) if args.report else None
     from fvs_suite.smoke import run_smoke
     data = report_data(root, run_smoke, commit=os.environ.get("GITHUB_SHA", ""))
-    payload = json.dumps(data, sort_keys=True, indent=2) + "\n"
-    if args.report:
-        if not args.report.parent.is_dir() or args.report.is_symlink():
-            raise ValueError("Report destination must be an existing safe folder")
-        with args.report.open("x", encoding="utf-8") as out:
-            out.write(payload)
+    if destination is not None:
+        publish_report(destination, data)
     print(f"PASS: {len(data['application_results'])}/6 synthetic source engine smokes; "
           "NOT Windows binary verification or release approval")
     return 0
