@@ -88,6 +88,7 @@ def _validate_ledger(rows: list[dict[str, str]], engine):
 def reconcile_allocations(
     claims: str, ledger: str, budgets: str, folder: str,
     *, claim_rows: list[dict[str, str]] | None = None,
+    claim_digest: str | None = None,
 ) -> list[Path]:
     """Join claim lines via explicit ledger_reference across distinct programs.
 
@@ -99,13 +100,18 @@ def reconcile_allocations(
     if not Path(folder).is_dir():
         raise ValueError("Choose an existing output folder")
     if claim_rows is None:
-        claim_rows = engine.table(
+        claim_rows, claim_digest = engine.table(
             claims, ("id", "amount", "program"),
-            ("ledger_reference", "claim_type", "related_claim"))
+            ("ledger_reference", "claim_type", "related_claim"), include_digest=True)
+    elif claim_digest is None:
+        # A caller must not inject unproven claim records into an evidence manifest.
+        raise ValueError("Linked claim rows require source-byte provenance")
     if any("ledger_reference" not in row for row in claim_rows):
         raise ValueError("Linked claim rows require a ledger_reference column")
-    ledger_rows = engine.table(ledger, ("id", "amount", "program"))
-    budget_rows = engine.table(budgets, ("program", "budget"))
+    ledger_rows, ledger_digest = engine.table(
+        ledger, ("id", "amount", "program"), include_digest=True)
+    budget_rows, budget_digest = engine.table(
+        budgets, ("program", "budget"), include_digest=True)
     by_ref, claim_id_counts, raw_claim_id_labels = _parse_claims(claim_rows, engine)
     ledgers = _validate_ledger(ledger_rows, engine)
 
@@ -265,4 +271,7 @@ def reconcile_allocations(
         engine.save(folder, "grant-audit-exceptions", REPORT_FIELDS, report),
         engine.save(folder, "grant-budget-check", BUDGET_FIELDS, summaries),
     ]
-    return files + [engine.manifest(folder, [claims, ledger, budgets], files)]
+    return files + [engine.manifest(
+        folder, [claims, ledger, budgets], files,
+        expected_inputs={claims: claim_digest, ledger: ledger_digest,
+                         budgets: budget_digest})]
