@@ -56,11 +56,12 @@ alone would not establish source/report consistency.
 
 ## Testing and outstanding release gates
 
-23 synthetic tests in tests/test_grant_verify_r33.py cover current content,
+25 synthetic tests in tests/test_grant_verify_r33.py cover current content,
 both report tampering modes, same-length source mutation, altered inventory,
 source ordering, preservation of original files, escaped control characters,
 missing/extra files, links, hard-link aliases, oversized inventory, simulated
-concurrent changes and CLI exit codes/privacy.
+concurrent changes, CLI exit codes/privacy, and integration with the actual
+R32 package publication helper.
 
     PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests -p 'test_grant_verify_r33.py' -v
 
