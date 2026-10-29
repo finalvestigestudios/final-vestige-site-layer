@@ -110,9 +110,9 @@ def qty(value):
 def key(value): return re.sub(r"[^A-Z0-9]+","",str(value).upper())
 def dollars(value): return format(value.quantize(CENT),".2f")
 _DATE_FORMATS = (
-    (re.compile(r"[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}\\Z"), "%Y-%m-%d"),
-    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}\\Z"), "%m/%d/%Y"),
-    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{2}\\Z"), "%m/%d/%y"),
+    (re.compile(r"[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}\Z"), "%Y-%m-%d"),
+    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}\Z"), "%m/%d/%Y"),
+    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{2}\Z"), "%m/%d/%y"),
 )
 
 def parse_date(value):
