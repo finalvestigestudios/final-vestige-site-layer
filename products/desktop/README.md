@@ -269,3 +269,8 @@ the Linux source CI optimized-Python test step. An isolated parser harness
 passed 15/15 checks under normal Python and `-OO`; the connected repository
 tests and real Windows x64 binaries remain **unverified** pending CI runner
 availability. See [R23 procurement quantity input contract](docs/PROCUREMENT_QUANTITY_INTEGRITY_R23.md).
+
+
+## R24 — ASCII financial/date inputs and confidential errors
+
+All shared accounting amounts and invoice/spend dates now require ASCII digits, and direct binary-float amount inputs are refused rather than converted through text. Invalid date errors no longer display private input cells. This strengthens local financial accuracy for five apps while preserving explicit legacy two-digit date support (four-digit years recommended). See [R24 input contract](docs/ASCII_FINANCIAL_DATE_PRIVACY_R24.md). Four free and two premium applications remain **development prototypes**, not authorized downloads; Windows binary validation, premium fulfillment and independent QD approval are still required.
