@@ -55,6 +55,8 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_bundle_r35.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_provenance_r35.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_verify_r36.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_candidate_guard_r37.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_candidate_gate_integration_r37.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -88,6 +90,14 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python -O -m unittest discover -s products/desktop/tests -p test_release_hardening_r10.py -v
           if ($LASTEXITCODE -ne 0) { throw "R10 optimization-safe smoke and integrity checks failed" }
+      - name: Validate R37 candidate custody with optimized Python
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -OO -m unittest discover -s products/desktop/tests -p test_candidate_guard_r37.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R37 candidate payload tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p test_candidate_gate_integration_r37.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R37 candidate gate integration failed" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables
@@ -105,13 +115,15 @@ jobs:
       - name: R9 offline Windows x64 release-candidate gate (internal only)
         shell: pwsh
         run: |
-          python products/desktop/release_gate.py dist --smoke --report dist/offline-candidate-evidence.json
+          python products/desktop/release_gate.py dist --smoke --report build/offline-candidate-evidence.json
           if ($LASTEXITCODE -ne 0) { throw "R9 binary integrity/smoke gate failed" }
           Write-Host "All six Windows x64 candidate binaries verified; NOT approved for release."
       - name: Upload internal pre-release artifacts
         uses: actions/upload-artifact@v4
         with:
           name: final-vestige-desktop-windows-internal
-          path: dist/*
+          path: |
+            dist/*
+            build/offline-candidate-evidence.json
           if-no-files-found: error
           retention-days: 7
