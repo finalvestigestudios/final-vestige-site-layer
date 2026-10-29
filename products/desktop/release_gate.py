@@ -18,6 +18,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from pe_image_guard import PEFormatError, verify_amd64_pe
+from candidate_guard import (
+    CandidateGuardError, MAX_CHECKSUM_BYTES,
+    check_candidate_directory, read_checksum_candidate, sha256_candidate,
+)
 
 EXPECTED = (
     "LedgerDiffLite.exe", "InvoiceTwinScout.exe", "SpendMapLite.exe",
@@ -38,12 +42,12 @@ def _regular(path: Path) -> None:
 def _inventory(root: Path) -> dict[str, str]:
     path = root / "SHA256SUMS.txt"
     _regular(path)
-    if path.stat().st_size > 4096:
-        raise GateFailure("Checksum inventory exceeds safe length")
     try:
-        lines = path.read_text(encoding="ascii").splitlines()
-    except UnicodeError as exc:
-        raise GateFailure("Checksum inventory must be ASCII") from exc
+        lines = read_checksum_candidate(path).decode("ascii").splitlines()
+    except CandidateGuardError as exc:
+        raise GateFailure(str(exc)) from None
+    except UnicodeError:
+        raise GateFailure("Checksum inventory must be ASCII") from None
     entries: dict[str, str] = {}
     for line in lines:
         match = re.fullmatch(r"([0-9a-f]{64})  ([A-Za-z0-9]+\.exe)", line)
@@ -67,11 +71,14 @@ def _pe64(path: Path) -> None:
 
 
 def _sha(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    # The checksum file is small; packaged binaries are capped at 512 MiB each.
+    # Descriptor checks detect source swaps, links and observed in-flight edits.
+    try:
+        if path.name == "SHA256SUMS.txt":
+            return sha256_candidate(path, maximum=MAX_CHECKSUM_BYTES)
+        return sha256_candidate(path)
+    except CandidateGuardError as exc:
+        raise GateFailure(str(exc)) from None
 
 
 def verify(folder: str | Path, *, smoke: bool = False, runner=None,
@@ -81,8 +88,14 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
         raise GateFailure("Choose a real directory of candidate executables")
     actual = {p.name for p in root.iterdir() if p.suffix.lower() == ".exe"}
     if actual != set(EXPECTED):
-        raise GateFailure("Binary folder has missing or unexpected executables: " +
-                          repr(sorted(actual ^ set(EXPECTED))))
+        raise GateFailure("Binary folder has missing or unexpected executables")
+    # Check expected file status first to preserve clear symlink diagnostics.
+    for name in EXPECTED:
+        _regular(root / name)
+    try:
+        check_candidate_directory(root, EXPECTED)
+    except CandidateGuardError as exc:
+        raise GateFailure(str(exc)) from None
     checksums = _inventory(root)
     initial_inventory_sha = _sha(root / "SHA256SUMS.txt")
     records = []
@@ -99,6 +112,10 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
                         "smoke": "not_run"})
     def recheck_artifacts(phase: str) -> None:
         """Catch changed binaries/inventory before and after each smoke execution."""
+        try:
+            check_candidate_directory(root, EXPECTED)
+        except CandidateGuardError as exc:
+            raise GateFailure(str(exc)) from None
         inventory_file = root / "SHA256SUMS.txt"
         if (_sha(inventory_file) != initial_inventory_sha
                 or _inventory(root) != checksums):
