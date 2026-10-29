@@ -130,7 +130,7 @@ def parse_date(value):
                 break
     raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
 
-def table(path, required, optional=(), *, include_headers=False):
+def table(path, required, optional=(), *, include_headers=False, include_digest=False):
     p = Path(path)
     if p.suffix.lower() != ".csv" or not p.is_file(): raise ValueError("Select an existing CSV: "+p.name)
     # Parse a verified single-descriptor snapshot: no source can change between
@@ -187,6 +187,11 @@ def table(path, required, optional=(), *, include_headers=False):
                        for name,col in cols.items() if col}})
         except (csv.Error, UnicodeError) as exc:
             raise ValueError(f"{p.name}: invalid CSV near physical line {reader.line_num}") from exc
+        # Hash precisely the bytes already parsed, not a later path read.
+        # The caller can bind this value to a later evidence inventory.
+        if include_digest:
+            digest = hashlib.sha256(source_bytes).hexdigest()
+            return (out, set(normalized), digest) if include_headers else (out, digest)
         return (out, set(normalized)) if include_headers else out
 
 def outpath(folder,stem,suffix=".csv"):
@@ -207,7 +212,7 @@ def save(folder,stem,fields,rows):
     from .atomic_reports import write_csv_report
     return write_csv_report(outpath(folder,stem), fields, rows, safe_cell)
 
-def manifest(folder,inputs,outputs):
+def manifest(folder,inputs,outputs, *, expected_inputs=None):
     """Publish private grant evidence inventory only after source verification.
 
     Reject duplicate basenames, links and files that change during hashing.
@@ -215,7 +220,7 @@ def manifest(folder,inputs,outputs):
     """
     from .atomic_text import publish_text
     from .manifest_guard import inventory_text
-    contents = inventory_text(inputs, outputs)
+    contents = inventory_text(inputs, outputs, expected_input_digests=expected_inputs)
     return publish_text(outpath(folder,"evidence-manifest",".txt"), contents)
 
 def ledger_diff(left,right,folder):
@@ -304,9 +309,9 @@ def grant_audit(claims,ledger,budgets,folder):
     """
     # Detect linked allocation columns from the *same validated snapshot*
     # as the claim rows; never reopen a potentially changed claim CSV header.
-    claims_rows, fields=table(claims,("id","amount","program"),
+    claims_rows, fields, claims_digest=table(claims,("id","amount","program"),
                               ("ledger_reference","claim_type","related_claim"),
-                              include_headers=True)
+                              include_headers=True, include_digest=True)
     has_link=bool(fields & set(ALIASES["ledger_reference"]))
     advanced=bool(fields & set((*ALIASES["claim_type"],*ALIASES["related_claim"])))
     if advanced and not has_link:
@@ -314,9 +319,9 @@ def grant_audit(claims,ledger,budgets,folder):
                          "legacy mode cannot safely interpret credits")
     if has_link:
         from .grant_allocations import reconcile_allocations
-        return reconcile_allocations(claims,ledger,budgets,folder,claim_rows=claims_rows)
-    ledger_rows=table(ledger,("id","amount","program"))
-    budget_rows=table(budgets,("program","budget"))
+        return reconcile_allocations(claims,ledger,budgets,folder,claim_rows=claims_rows, claim_digest=claims_digest)
+    ledger_rows, ledger_digest=table(ledger,("id","amount","program"), include_digest=True)
+    budget_rows, budget_digest=table(budgets,("program","budget"), include_digest=True)
     program_sources=defaultdict(list)
     for source_rows in (claims_rows,ledger_rows,budget_rows):
         for entry in source_rows:
@@ -360,7 +365,9 @@ def grant_audit(claims,ledger,budgets,folder):
                               "source_programs":labels_for_report(program_sources[program],"program")})
     paths=[save(folder,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows","claim_ids","ledger_ids","claim_programs","ledger_programs"),checks),
            save(folder,"grant-budget-check",("program","claimed","budget","status","source_programs"),budget_checks)]
-    return paths+[manifest(folder,[claims,ledger,budgets],paths)]
+    return paths+[manifest(folder,[claims,ledger,budgets],paths,
+                           expected_inputs={claims: claims_digest, ledger: ledger_digest,
+                                            budgets: budget_digest})]
 
 def procure_guard(po,invoices,receipts,folder,policy_path=None):
     """Run the conservative, typed, traceable offline three-way review.
