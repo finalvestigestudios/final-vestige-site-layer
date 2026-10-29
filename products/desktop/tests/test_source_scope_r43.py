@@ -67,6 +67,19 @@ class SourceScopeR43(unittest.TestCase):
         p.write_text("# private rule\n")
         self.assertIn("products/desktop/fvs_suite/vendor/rules.py", self.paths())
 
+    def test_nested_operator_script_is_included(self):
+        directory = self.scripts / "operators"
+        directory.mkdir()
+        (directory / "preflight.py").write_text("# preflight\n")
+        self.assertIn("products/desktop/scripts/operators/preflight.py", self.paths())
+
+    def test_nested_operator_script_modified_during_smoke_is_rejected(self):
+        directory = self.scripts / "operators"
+        directory.mkdir()
+        file = directory / "preflight.py"
+        file.write_text("# original\n")
+        self.assert_mid_smoke_change_blocked(file)
+
     def test_nested_module_changed_during_smoke_withholds_evidence(self):
         p = self.package / "helpers" / "rules.py"
         p.parent.mkdir()
