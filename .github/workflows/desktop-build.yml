@@ -35,6 +35,7 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_amount_lexical_integrity_r22.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_quantity_lexical_integrity_r23.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_ascii_data_privacy_r24.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_import_bounds_r25.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
