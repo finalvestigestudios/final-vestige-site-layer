@@ -363,11 +363,14 @@ def grant_audit(claims,ledger,budgets,folder):
         budget_checks.append({"program":program,"claimed":dollars(total),
                               "budget":"" if limit is None else dollars(limit),"status":status,
                               "source_programs":labels_for_report(program_sources[program],"program")})
-    paths=[save(folder,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows","claim_ids","ledger_ids","claim_programs","ledger_programs"),checks),
-           save(folder,"grant-budget-check",("program","claimed","budget","status","source_programs"),budget_checks)]
-    return paths+[manifest(folder,[claims,ledger,budgets],paths,
-                           expected_inputs={claims: claims_digest, ledger: ledger_digest,
-                                            budgets: budget_digest})]
+    from .grant_bundle import publish_grant_bundle
+    def build(staging):
+        paths=[save(staging,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows","claim_ids","ledger_ids","claim_programs","ledger_programs"),checks),
+               save(staging,"grant-budget-check",("program","claimed","budget","status","source_programs"),budget_checks)]
+        return paths+[manifest(staging,[claims,ledger,budgets],paths,
+                               expected_inputs={claims: claims_digest, ledger: ledger_digest,
+                                                budgets: budget_digest})]
+    return publish_grant_bundle(folder,build)
 
 def procure_guard(po,invoices,receipts,folder,policy_path=None):
     """Run the conservative, typed, traceable offline three-way review.

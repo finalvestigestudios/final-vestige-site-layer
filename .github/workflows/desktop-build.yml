@@ -48,6 +48,8 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_engine_snapshot_r30.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_snapshot_manifest_binding_r31.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_manifest_binding_r31.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_bundle_r32.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_package_r32.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
