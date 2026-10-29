@@ -89,6 +89,15 @@ class ArtifactPolicyTests(unittest.TestCase):
     def test_reject_unknown_upload_option(self):
         self.check_bad(GOOD.replace("          retention-days: 7", "          include-hidden-files: true\n          retention-days: 7"))
 
+    def test_reject_missing_upload_artifact_evidence(self):
+        self.check_bad(GOOD.replace("if-no-files-found: error", "if-no-files-found: warn"))
+
+    def test_reject_long_retention(self):
+        self.check_bad(GOOD.replace("retention-days: 7", "retention-days: 90"))
+
+    def test_reject_duplicate_security_option(self):
+        self.check_bad(GOOD.replace("          retention-days: 7", "          retention-days: 7\n          retention-days: 7"))
+
     def test_reject_commented_out_path(self):
         self.check_bad(GOOD.replace("            dist/SHA256SUMS.txt", "            # dist/SHA256SUMS.txt"))
 
