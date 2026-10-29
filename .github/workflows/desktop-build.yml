@@ -54,6 +54,7 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_anchor_r34.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_bundle_r35.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_provenance_r35.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_verify_r36.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
