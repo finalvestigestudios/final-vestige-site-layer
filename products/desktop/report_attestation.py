@@ -1,0 +1,201 @@
+"""Read-only re-verification of six-app Windows release-candidate evidence.
+
+A retained report is not code signing, proof that a historical smoke test ran,
+malware clearance, premium entitlement, a compliance decision, or QD approval.
+An independently retained report SHA-256 is needed for historical authenticity.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import os
+import re
+import stat
+import sys
+from datetime import datetime, timedelta
+from pathlib import Path
+
+import release_gate as gate
+
+MAX_REPORT_BYTES = 64 * 1024
+HEX = re.compile(r"^[0-9a-f]{64}$")
+UTC_SECONDS = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00$")
+REPORT_KEYS = frozenset({
+    "schema", "status", "release_authorized", "premium_entitlement_verified",
+    "codesigning_verified", "malware_scan_verified", "verified_utc",
+    "checksums_sha256", "artifacts",
+})
+
+
+class ReportAttestationError(ValueError):
+    """Verification is not trustworthy; do not distribute the candidate."""
+
+
+def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
+    return (info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+
+
+def _read_verified_report(path: str | Path, candidate_dir: str | Path) -> tuple[bytes, str]:
+    """Read a bounded, nonlinked report outside dist, with descriptor checks.
+
+    Path and file identity checks catch observed swaps, not every adversarial
+    race on filesystems without no-follow or secure directory descriptors.
+    """
+    try:
+        root = Path(candidate_dir).resolve(strict=True)
+        file = Path(path)
+        resolved = file.resolve(strict=True)
+        if resolved == root or root in resolved.parents:
+            raise ReportAttestationError("Report cannot be inside the candidate directory")
+        before = file.lstat()
+        if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1
+                or before.st_size < 1 or before.st_size > MAX_REPORT_BYTES):
+            raise ReportAttestationError("Report must be one bounded ordinary file")
+        flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+                 | getattr(os, "O_NONBLOCK", 0))
+        fd = os.open(file, flags)
+        with os.fdopen(fd, "rb") as stream:
+            opened = os.fstat(stream.fileno())
+            if (_signature(opened) != _signature(before) or not stat.S_ISREG(opened.st_mode)
+                    or opened.st_nlink != 1):
+                raise ReportAttestationError("Report changed during opening")
+            raw = stream.read(MAX_REPORT_BYTES + 1)
+            finished = os.fstat(stream.fileno())
+            if (len(raw) != opened.st_size or _signature(finished) != _signature(opened)
+                    or len(raw) > MAX_REPORT_BYTES):
+                raise ReportAttestationError("Report changed during reading")
+        after = file.lstat()
+        if _signature(after) != _signature(opened):
+            raise ReportAttestationError("Report changed during reading")
+        if file.resolve(strict=True) != resolved:
+            raise ReportAttestationError("Report path changed during reading")
+        return raw, hashlib.sha256(raw).hexdigest()
+    except ReportAttestationError:
+        raise
+    except (OSError, RuntimeError, ValueError):
+        raise ReportAttestationError("Report could not be read safely") from None
+
+
+def _unique_keys(pairs: list[tuple[str, object]]) -> dict:
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ReportAttestationError("Duplicate JSON key in evidence")
+        result[key] = value
+    return result
+
+
+def _bad_constant(_value: str):
+    raise ReportAttestationError("Nonfinite numeric evidence")
+
+
+def _validate_report(raw: bytes) -> dict:
+    try:
+        value = json.loads(raw.decode("utf-8"), object_pairs_hook=_unique_keys,
+                           parse_constant=_bad_constant)
+    except ReportAttestationError:
+        raise
+    except (UnicodeError, ValueError, TypeError, RecursionError):
+        raise ReportAttestationError("Malformed verification JSON") from None
+    if not isinstance(value, dict) or set(value) != REPORT_KEYS:
+        raise ReportAttestationError("Unexpected verification schema")
+    if type(value["schema"]) is not int or value["schema"] != 1:
+        raise ReportAttestationError("Unsupported verification schema")
+    if value["status"] not in ("integrity_only", "windows_smoke_passed"):
+        raise ReportAttestationError("Unknown verification status")
+    for key in ("release_authorized", "premium_entitlement_verified",
+                "codesigning_verified", "malware_scan_verified"):
+        if value[key] is not False:
+            raise ReportAttestationError("Evidence falsely declares a release gate passed")
+    timestamp = value["verified_utc"]
+    if not isinstance(timestamp, str) or not UTC_SECONDS.fullmatch(timestamp):
+        raise ReportAttestationError("Invalid verification timestamp")
+    try:
+        parsed = datetime.fromisoformat(timestamp)
+    except ValueError:
+        raise ReportAttestationError("Invalid verification timestamp") from None
+    if parsed.utcoffset() != timedelta(0):
+        raise ReportAttestationError("Invalid verification timestamp")
+    if not isinstance(value["checksums_sha256"], str) or not HEX.fullmatch(value["checksums_sha256"]):
+        raise ReportAttestationError("Invalid checksum inventory fingerprint")
+    artifacts = value["artifacts"]
+    if not isinstance(artifacts, list) or len(artifacts) != len(gate.EXPECTED):
+        raise ReportAttestationError("Evidence must cover exactly six approved programs")
+    smoked = value["status"] == "windows_smoke_passed"
+    for expected_name, artifact in zip(gate.EXPECTED, artifacts):
+        expected_keys = {"name", "sha256", "pe_machine", "smoke"}
+        if smoked:
+            expected_keys.add("seconds")
+        if not isinstance(artifact, dict) or set(artifact) != expected_keys:
+            raise ReportAttestationError("Unexpected executable evidence record")
+        if (artifact["name"] != expected_name or artifact["pe_machine"] != "AMD64"
+                or not isinstance(artifact["sha256"], str)
+                or not HEX.fullmatch(artifact["sha256"])):
+            raise ReportAttestationError("Invalid executable evidence record")
+        if artifact["smoke"] != ("passed" if smoked else "not_run"):
+            raise ReportAttestationError("Inconsistent smoke status")
+        if smoked:
+            seconds = artifact["seconds"]
+            if (type(seconds) not in (int, float) or not math.isfinite(seconds)
+                    or seconds < 0):
+                raise ReportAttestationError("Invalid smoke duration")
+    return value
+
+
+def verify_report(report: str | Path, candidate_dir: str | Path, *,
+                  expected_report_sha256: str | None = None) -> dict:
+    """Rehash all six candidate images and compare to a historical report.
+
+    Returns consistency and optional independent fingerprint status, never
+    asserts that prior smoke executions really occurred or grants release.
+    """
+    if expected_report_sha256 is not None and (
+            not isinstance(expected_report_sha256, str)
+            or not HEX.fullmatch(expected_report_sha256)):
+        raise ReportAttestationError("Expected report SHA-256 must be 64 lowercase hex digits")
+    raw, digest = _read_verified_report(report, candidate_dir)
+    recorded = _validate_report(raw)
+    if expected_report_sha256 is not None and digest != expected_report_sha256:
+        raise ReportAttestationError("Independent evidence fingerprint mismatch")
+    try:
+        current = gate.verify(candidate_dir, smoke=False)
+    except (gate.GateFailure, OSError, ValueError):
+        raise ReportAttestationError("Candidate executable verification failed") from None
+    if current["checksums_sha256"] != recorded["checksums_sha256"]:
+        raise ReportAttestationError("Checksum inventory changed since evidence capture")
+    if len(current["artifacts"]) != len(recorded["artifacts"]):
+        raise ReportAttestationError("Candidate artifact count changed")
+    for now, then in zip(current["artifacts"], recorded["artifacts"]):
+        if (now["name"] != then["name"] or now["sha256"] != then["sha256"]
+                or now["pe_machine"] != then["pe_machine"]):
+            raise ReportAttestationError("Candidate image changed since evidence capture")
+    return {
+        "candidate_consistency": "PASS",
+        "evidence_pin": "PINNED" if expected_report_sha256 is not None else "UNPINNED",
+        "historical_smoke_proven": False,
+        "release_authorized": False,
+        "premium_entitlement_verified": False,
+    }
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("report", help="Previously retained offline-gate JSON file")
+    parser.add_argument("dist", help="Candidate directory with exactly six EXEs and SHA256SUMS.txt")
+    parser.add_argument("--expected-report-sha256", help="SHA-256 saved independently at trusted capture time")
+    args = parser.parse_args(argv)
+    try:
+        result = verify_report(args.report, args.dist,
+                               expected_report_sha256=args.expected_report_sha256)
+    except ReportAttestationError as exc:
+        print("REJECTED: " + str(exc), file=sys.stderr)
+        return 1
+    print("CONSISTENT (" + result["evidence_pin"] + "); historical smoke NOT independently proven; "
+          "NOT release authorized")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

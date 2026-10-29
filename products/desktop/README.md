@@ -446,3 +446,8 @@ now kept outside `dist` in the internal Windows script and CI flow.
 This does not release software, prove malware safety/signatures, authorize
 payments or compliance decisions, verify premium entitlement, or waive QD
 approval. All six Windows executables remain unreleased.
+
+
+### R39 — independently pinned, read-only release-report recheck (unreleased)
+
+`report_attestation.py` rechecks a previously retained R38 release-gate JSON against all six **current** Windows candidate files and its checksum inventory without executing binaries. It rejects malformed, oversized or linked reports, unsafe release assertions, contradictory smoke metadata and changed candidate fingerprints. An independently protected SHA-256 fingerprint of the original report can detect coordinated later edits to that report; without it, `UNPINNED` only means current consistency. **Historical smoke success is never independently proven by this check**, and release authorization remains false. See [R39 operator guide](docs/RELEASE_REPORT_ATTESTATION_R39.md). Full repo/Windows tests, malware scan, premium access controls and QD approval remain required.

@@ -59,6 +59,9 @@ try {
     $output = Join-Path $evidenceDir ("offline-gate-" + (Get-Date -Format "yyyyMMdd-HHmmss-fffffff") + ".json")
     & $PythonCommand products/desktop/release_gate.py $dist --smoke --report $output
     if ($LASTEXITCODE -ne 0) { throw "Offline Windows candidate gate FAILED" }
+    & $PythonCommand products/desktop/report_attestation.py $output $dist
+    if ($LASTEXITCODE -ne 0) { throw "R39 offline report consistency FAILED" }
+    Write-Host "R39 report check is UNPINNED unless the original digest is kept in a separate trusted register."
     Write-Host "Offline candidate evidence (NOT a release authorization): $output"
 }
 finally {
