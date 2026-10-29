@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+from copy import deepcopy
 from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 import os
@@ -64,7 +65,7 @@ class ReviewRegisterR46(unittest.TestCase):
         self.assertEqual(batch, self.batch)
         self.journal_reads += 1
         self.on_journal_read(self.journal_reads)
-        return list(self.events)
+        return deepcopy(self.events)
 
     @staticmethod
     def sanitizing_cell(value):
@@ -148,6 +149,15 @@ class ReviewRegisterR46(unittest.TestCase):
         def mutate(n):
             if n == 2:
                 self.events[0] = {**original, "rationale": "Different immutable history"}
+        self.on_journal_read = mutate
+        with self.assertRaisesRegex(ValueError, "changed during"):
+            self.export()
+        self.assert_no_final()
+
+    def test_in_place_journal_event_change_is_rejected(self):
+        def mutate(n):
+            if n == 2:
+                self.events[0]["rationale"] = "Changed original review rationale"
         self.on_journal_read = mutate
         with self.assertRaisesRegex(ValueError, "changed during"):
             self.export()
