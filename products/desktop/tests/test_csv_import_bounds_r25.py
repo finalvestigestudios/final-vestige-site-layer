@@ -96,7 +96,9 @@ class CsvImportBoundsR25(unittest.TestCase):
     def test_invalid_utf8_in_row_reports_generic_error(self):
         path = self.root / "bad.csv"
         path.write_bytes(b"id,amount\nA,\xff\n")
-        with self.assertRaisesRegex(ValueError, "invalid CSV near physical line"):
+        # TextIOWrapper may decode the entire small file while fetching the
+        # header, so the safe error may be labeled header or record.
+        with self.assertRaisesRegex(ValueError, "invalid CSV"):
             engine.table(path, ("id", "amount"))
 
     def test_ledger_diff_rejects_oversized_second_file_without_export(self):
