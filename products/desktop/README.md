@@ -351,3 +351,7 @@ MiB report cap) and every file is rechecked before the private, non-overwriting
 inventory is published. Plain ASCII inventory lines remain compatible with
 R28 for distinct filenames. This is not a snapshot, signature, authorization
 or multi-file transaction. See [R29 design](docs/GRANT_INVENTORY_PROVENANCE_R29.md).
+
+## R30 — verified CSV snapshots and consistent grant-mode selection (development only)
+
+Five financial engines now parse a single bounded (64 MiB) local snapshot of each selected CSV after descriptor/path checks instead of streaming mutable source rows. This rejects common symlinks, concurrent edits, input growth and file swaps. GrantAudit derives its linked-claims header flags from those same validated claim bytes instead of reopening the file, preventing header/row version mismatch. The in-memory snapshot is not a filesystem lock or later source attestation; a changed source after parsing may still be inventoried in R29. The complete checkout, Windows x64 binaries and QD/premium distribution remain unverified and unreleased. See [R30 limitations and tests](docs/VERIFIED_CSV_SNAPSHOTS_R30.md).
