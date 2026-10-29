@@ -23,6 +23,17 @@ Headers are case-insensitive; spaces are accepted in place of underscores. The i
 
 Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, unconstrained allocation rules, fuzzy name matching, and OCR are **not** supported in v0.1. GrantAudit R6 supports explicitly linked split allocations under a limited documented CSV contract. Financial flags require human review.
 
+## R44 keyboard-first GUI controls
+
+All six Tk desktop applications now expose visible, local-only keyboard
+shortcuts: Alt+1..3 to focus existing input fields, Ctrl+1..3 for file
+pickers, Alt+O/Ctrl+O for output selection, and Alt+G/Ctrl+Enter to run the
+existing review action. Premium windows also support Alt+R for human
+exception review; the existing entitlement checks still run. Initial focus
+is set to the first input. File and report dialogs are owned by the app.
+These are source-level usability improvements, **not** Windows GUI or screen
+reader certification. See [R44 keyboard-access checklist](docs/KEYBOARD_ACCESS_R44.md).
+
 ## Local development
 
 Python 3.12+ with Tkinter. From repository root:
