@@ -136,9 +136,9 @@ def source_inventory(repo_root: Path) -> list[dict[str, str]]:
     if {p.name for p in launchers.iterdir() if p.suffix == ".py"} != {
             path.name for path in required_launchers}:
         raise ValueError("Incomplete or unsafe desktop source tree")
+    script_files = _package_python_sources(scripts) if scripts.is_dir() else []
     selected = sorted(set([*files, *desktop.glob("*.py"),
-                           *(scripts.glob("*.py") if scripts.is_dir() else ()),
-                           *required_launchers]))
+                           *script_files, *required_launchers]))
     if (not files or len(selected) > MAX_SOURCE_FILES
             or any(not p.is_file() or p.is_symlink() for p in selected)):
         raise ValueError("Incomplete or unsafe desktop source tree")
