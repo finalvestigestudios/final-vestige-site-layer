@@ -130,13 +130,15 @@ def parse_date(value):
                 break
     raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
 
-def table(path, required, optional=()):
+def table(path, required, optional=(), *, include_headers=False):
     p = Path(path)
     if p.suffix.lower() != ".csv" or not p.is_file(): raise ValueError("Select an existing CSV: "+p.name)
-    with p.open(encoding="utf-8-sig",newline="") as f:
-        # Inspect the opened descriptor, not a potentially substituted pathname.
-        if os.fstat(f.fileno()).st_size > MAX_IMPORT_BYTES:
-            raise ValueError("CSV input exceeds 64 MiB file-size limit")
+    # Parse a verified single-descriptor snapshot: no source can change between
+    # CSV header and row parsing, and symlinks/path swaps fail closed.
+    from io import BytesIO, TextIOWrapper
+    from .csv_snapshot import read_csv_snapshot
+    source_bytes = read_csv_snapshot(p, MAX_IMPORT_BYTES)
+    with TextIOWrapper(BytesIO(source_bytes), encoding="utf-8-sig", newline="") as f:
         # csv.reader exposes physical line counts after each complete record.
         # DictReader's enumerate() only counts logical records, and gives
         # incorrect audit citations after quoted newlines or blank lines.
@@ -185,10 +187,7 @@ def table(path, required, optional=()):
                        for name,col in cols.items() if col}})
         except (csv.Error, UnicodeError) as exc:
             raise ValueError(f"{p.name}: invalid CSV near physical line {reader.line_num}") from exc
-        # Fail closed if another local process expanded the file during import.
-        if os.fstat(f.fileno()).st_size > MAX_IMPORT_BYTES:
-            raise ValueError("CSV input exceeds 64 MiB file-size limit")
-        return out
+        return (out, set(normalized)) if include_headers else out
 
 def outpath(folder,stem,suffix=".csv"):
     p=Path(folder)
@@ -303,11 +302,11 @@ def grant_audit(claims,ledger,budgets,folder):
     A claim_type/related_claim column without ledger_reference is an error:
     otherwise old logic would silently count credits as positive claims.
     """
-    claims_rows=table(claims,("id","amount","program"),
-                      ("ledger_reference","claim_type","related_claim"))
-    with Path(claims).open(encoding="utf-8-sig",newline="") as stream:
-        fields={str(h).strip().lower().replace(" ","_")
-                for h in next(csv.reader(stream),[])}
+    # Detect linked allocation columns from the *same validated snapshot*
+    # as the claim rows; never reopen a potentially changed claim CSV header.
+    claims_rows, fields=table(claims,("id","amount","program"),
+                              ("ledger_reference","claim_type","related_claim"),
+                              include_headers=True)
     has_link=bool(fields & set(ALIASES["ledger_reference"]))
     advanced=bool(fields & set((*ALIASES["claim_type"],*ALIASES["related_claim"])))
     if advanced and not has_link:
