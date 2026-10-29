@@ -267,11 +267,14 @@ def reconcile_allocations(
             "claim_rows": ";".join(r["row"] for r in program_rows[program]),
         })
 
-    files = [
-        engine.save(folder, "grant-audit-exceptions", REPORT_FIELDS, report),
-        engine.save(folder, "grant-budget-check", BUDGET_FIELDS, summaries),
-    ]
-    return files + [engine.manifest(
-        folder, [claims, ledger, budgets], files,
-        expected_inputs={claims: claim_digest, ledger: ledger_digest,
-                         budgets: budget_digest})]
+    from .grant_bundle import publish_grant_bundle
+    def build(staging):
+        files = [
+            engine.save(staging, "grant-audit-exceptions", REPORT_FIELDS, report),
+            engine.save(staging, "grant-budget-check", BUDGET_FIELDS, summaries),
+        ]
+        return files + [engine.manifest(
+            staging, [claims, ledger, budgets], files,
+            expected_inputs={claims: claim_digest, ledger: ledger_digest,
+                             budgets: budget_digest})]
+    return publish_grant_bundle(folder,build)
