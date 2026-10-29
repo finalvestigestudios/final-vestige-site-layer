@@ -60,6 +60,7 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_release_report_r38.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_release_report_cli_r38.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_report_attestation_r39.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_build_inventory_r40.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -115,6 +116,12 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python -OO -m unittest discover -s products/desktop/tests -p test_report_attestation_r39.py -v
           if ($LASTEXITCODE -ne 0) { throw "R39 report attestation tests failed" }
+      - name: Validate R40 canonical inventory under optimized Python
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -OO -m unittest discover -s products/desktop/tests -p test_build_inventory_r40.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R40 inventory publisher tests failed" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables
@@ -125,10 +132,8 @@ jobs:
             python -m PyInstaller --noconfirm --clean --onefile --windowed --paths products/desktop --name $app --distpath dist --workpath "build/$app" --specpath build/specs "products/desktop/launchers/$app.py"
             if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed for $app" }
           }
-          Get-ChildItem dist -Filter *.exe | ForEach-Object {
-            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
-            "$hash  $($_.Name)" | Out-File -FilePath dist/SHA256SUMS.txt -Append -Encoding ascii
-          }
+          python products/desktop/build_inventory.py dist
+          if ($LASTEXITCODE -ne 0) { throw "R40 fail-closed candidate inventory build failed" }
       - name: R9 offline Windows x64 release-candidate gate (internal only)
         shell: pwsh
         run: |

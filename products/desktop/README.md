@@ -451,3 +451,8 @@ approval. All six Windows executables remain unreleased.
 ### R39 — independently pinned, read-only release-report recheck (unreleased)
 
 `report_attestation.py` rechecks a previously retained R38 release-gate JSON against all six **current** Windows candidate files and its checksum inventory without executing binaries. It rejects malformed, oversized or linked reports, unsafe release assertions, contradictory smoke metadata and changed candidate fingerprints. An independently protected SHA-256 fingerprint of the original report can detect coordinated later edits to that report; without it, `UNPINNED` only means current consistency. **Historical smoke success is never independently proven by this check**, and release authorization remains false. See [R39 operator guide](docs/RELEASE_REPORT_ATTESTATION_R39.md). Full repo/Windows tests, malware scan, premium access controls and QD approval remain required.
+
+
+## R40 — canonical no-clobber six-executable checksum inventory
+
+Both Windows CI packaging and the offline Windows operator build now invoke `products/desktop/build_inventory.py dist` rather than inventing separate checksum inventories. The script requires **exactly six distinct, bounded Windows candidate file names**, hashes them twice before atomic, exclusive inventory publication, and checks all seven output files and all six hashes again. An existing manifest, extra binary, licensing secret, link or detected change fails closed. It does not execute images, certify provenance or approve release. See [R40 canonical inventory notes](docs/CANONICAL_CANDIDATE_INVENTORY_R40.md). All six products remain unreleased.
