@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import json
 import os
 import re
 import stat
@@ -18,6 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from pe_image_guard import PEFormatError, verify_amd64_pe
+from report_evidence import ReportEvidenceError, prepare_report_path, publish_report
 from candidate_guard import (
     CandidateGuardError, MAX_CHECKSUM_BYTES,
     check_candidate_directory, read_checksum_candidate, sha256_candidate,
@@ -168,14 +168,14 @@ def main(argv=None) -> int:
     parser.add_argument("--report", type=Path, help="Write JSON evidence to NEW file; never overwrite")
     args = parser.parse_args(argv)
     try:
+        # Validate report location before smoke executes any candidate image.
+        destination = prepare_report_path(args.report, args.dist) if args.report else None
         result = verify(args.dist, smoke=args.smoke)
-        if args.report:
-            with args.report.open("x", encoding="utf-8") as stream:
-                json.dump(result, stream, sort_keys=True, indent=2)
-                stream.write("\n")
+        if destination is not None:
+            publish_report(destination, result)
         print(f"Candidate verified: {result['status']} (NOT release authorized)")
         return 0
-    except (GateFailure, OSError) as exc:
+    except (GateFailure, ReportEvidenceError, OSError) as exc:
         print("REJECTED: " + str(exc), file=sys.stderr)
         return 1
 
