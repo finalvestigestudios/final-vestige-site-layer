@@ -41,6 +41,14 @@ class ManifestGuardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Ambiguous evidence names"):
             guard.inventory_text([self.claim, upper], [])
 
+    def test_visually_equivalent_unicode_names_rejected(self):
+        composed = self.root / "caf\u00e9.csv"
+        decomposed = self.root / "cafe\u0301.csv"
+        composed.write_bytes(b"first evidence")
+        decomposed.write_bytes(b"second evidence")
+        with self.assertRaisesRegex(ValueError, "Ambiguous evidence names"):
+            guard.inventory_text([composed, decomposed], [])
+
     def test_same_input_twice_rejected(self):
         with self.assertRaisesRegex(ValueError, "Ambiguous evidence names"):
             guard.inventory_text([self.claim, self.claim], [])
