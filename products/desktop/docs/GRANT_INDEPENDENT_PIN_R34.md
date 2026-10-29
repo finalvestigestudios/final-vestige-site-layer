@@ -96,9 +96,23 @@ PYTHONWARNINGS=error PYTHONPATH=products/desktop python -m unittest discover -s 
 PYTHONWARNINGS=error PYTHONPATH=products/desktop python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_anchor_r34.py' -v
 ```
 
-The 17 targeted tests passed locally in both modes using the actual
-committed helper/verifier source and exact committed R33 dependencies
-reconstructed for the isolated local checkout. This does **not** replace
-a complete repository test run, Windows x64 build, GUI smoke, AV scan,
-checksum inspection, premium entitlement enforcement or site QD review.
-Keep all six EXEs unreleased until every release gate passes.
+On Linux Python **3.13.5**, the new **17/17 R34 tests** and all
+**25/25 preexisting R33 compatibility tests** passed together:
+**42/42 ordinary** and **42/42 under `python -OO`**, with
+`PYTHONWARNINGS=error`. `compileall` succeeded. These were actual
+file/CLI tests using the GitHub-committed R34 helper/verifier/tests and
+the exact Git blob bytes of R33's inventory, CSV snapshot, publisher and
+25 previous tests. Verified Git blob SHAs:
+- `grant_anchor.py`: `ff8383bd54b95036b96df6fa7054af2f7d0f7a36`
+- `grant_verify.py`: `680947c4af36835a15f4c07e8b877c4b7ef1aba9`
+- `test_grant_anchor_r34.py`: `775d9c4b069486254ebdb38a283d59462961119a`
+- R33 `csv_snapshot.py`: `fcdd2dad88e218e1947fe2618aee0b8f1963c070`
+- R33 `manifest_guard.py`: `1b65d67f680b34a3e9748f2704c49505c66f4cc6`
+- R32 `grant_bundle.py`: `30456db8907d847fcb8b16e3415516d5bd542963`
+- R33 `test_grant_verify_r33.py`: `50c4aa4880e7a6831108087fc5a65894fed99c4b`
+
+**Scope limitation:** this is a reconstructed, verified **seven-file
+subset**, **not** an executable complete repository checkout. The full
+repository suite, Windows x64 build, GUI smoke, AV scan, checksum inspection,
+premium entitlement enforcement and independent QD site approval are
+outstanding. Keep all six EXEs unreleased until every release gate passes.
