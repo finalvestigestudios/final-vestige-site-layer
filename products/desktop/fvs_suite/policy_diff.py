@@ -79,7 +79,6 @@ def compare_policy_files(old, new, folder, output_path):
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
         + (delta or "No textual differences found.\n")
     )
+    from .atomic_text import publish_text
     destination = output_path(folder, "policy-delta", ".txt")
-    with destination.open("x", encoding="utf-8", newline="") as stream:
-        stream.write(report)
-    return [destination]
+    return [publish_text(destination, report)]
