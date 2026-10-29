@@ -9,6 +9,7 @@ import hashlib
 import json
 import os
 import stat
+import unicodedata
 from pathlib import Path
 
 # Source CSV imports have a 64 MiB cap; finished reports can be larger.
@@ -85,7 +86,7 @@ def inventory_text(inputs, outputs) -> str:
     selected += [(Path(path), MAX_REPORT_BYTES) for path in outputs]
     seen_names: set[str] = set()
     for path, _ in selected:
-        label = path.name.casefold()
+        label = unicodedata.normalize("NFKC", path.name).casefold()
         if label in seen_names:
             raise ValueError("Ambiguous evidence names; rename duplicate basenames")
         seen_names.add(label)
