@@ -3,6 +3,7 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
+from .keyboard_access import install_shortcuts
 
 APPS = {
     "ledger": ("LedgerDiff Lite", ["Left ledger CSV", "Right ledger CSV"], engine.ledger_diff, False),
@@ -73,11 +74,12 @@ def run(app_id):
             return
         root.deiconify()
     root.title("Final Vestige Labs — " + title)
-    root.geometry("920x580" if premium else "780x470")
+    root.geometry("920x610" if premium else "780x500")
     root.minsize(760, 520) if premium else root.minsize(600, 390)
     root.columnconfigure(0, weight=1)
+    root.rowconfigure(0, weight=1)
     frame = ttk.Frame(root, padding=24)
-    frame.grid(sticky="nsew")
+    frame.grid(row=0, column=0, sticky="nsew")
     frame.columnconfigure(1, weight=1)
     ttk.Label(frame, text=title, font=("Segoe UI", 17, "bold")).grid(
         row=0, column=0, columnspan=3, sticky="w", pady=(0, 12))
@@ -87,32 +89,38 @@ def run(app_id):
         ttk.Label(frame, text="PRE-RELEASE: not licensed for production use.",
                   foreground="#9c3d20").grid(row=2, column=0, columnspan=3, sticky="w")
     selected = [tk.StringVar() for _ in labels]
+    input_controls = []
     last_report = [None]
     base_row = 3
     for index, label in enumerate(labels):
         row = base_row + index
         ttk.Label(frame, text=label).grid(row=row, column=0, sticky="w", pady=7, padx=(0, 12))
-        ttk.Entry(frame, textvariable=selected[index], width=65).grid(row=row, column=1, sticky="ew", pady=7)
+        entry = ttk.Entry(frame, textvariable=selected[index], width=65)
+        entry.grid(row=row, column=1, sticky="ew", pady=7)
         def choose_file(i=index):
             ext = [("Text and CSV", "*.txt *.md *.csv"), ("All files", "*.*")] if app_id=="policy" else [("CSV files", "*.csv")]
-            name = filedialog.askopenfilename(title=labels[i], filetypes=ext)
+            name = filedialog.askopenfilename(parent=root, title=labels[i], filetypes=ext)
             if name: selected[i].set(name)
-        ttk.Button(frame, text="Browse…", command=choose_file).grid(row=row, column=2, padx=(8, 0))
+        browse = ttk.Button(frame, text="Browse…", command=choose_file)
+        browse.grid(row=row, column=2, padx=(8, 0))
+        input_controls.append((entry, browse))
     output = tk.StringVar(value=str(Path.home() / "Documents"))
     folder_row = base_row + len(labels) + 1
     ttk.Label(frame, text="Output folder").grid(row=folder_row, column=0, sticky="w", padx=(0, 12))
-    ttk.Entry(frame, textvariable=output).grid(row=folder_row, column=1, sticky="ew")
+    output_entry = ttk.Entry(frame, textvariable=output)
+    output_entry.grid(row=folder_row, column=1, sticky="ew")
     def choose_output():
-        folder = filedialog.askdirectory(title="Choose output folder")
+        folder = filedialog.askdirectory(parent=root, title="Choose output folder")
         if folder: output.set(folder)
-    ttk.Button(frame, text="Browse…", command=choose_output).grid(row=folder_row, column=2, padx=(8, 0))
+    output_browse = ttk.Button(frame, text="Browse…", command=choose_output)
+    output_browse.grid(row=folder_row, column=2, padx=(8, 0))
     rules = tk.StringVar()
     if app_id == "procurement":
         ttk.Label(frame, text="Price review policy JSON (optional)").grid(
             row=folder_row+1, column=0, sticky="w", padx=(0, 12), pady=7)
         ttk.Entry(frame, textvariable=rules).grid(row=folder_row+1, column=1, sticky="ew", pady=7)
         def choose_rules():
-            file = filedialog.askopenfilename(title="Optional price review policy",
+            file = filedialog.askopenfilename(parent=root, title="Optional price review policy",
                                               filetypes=[("JSON policy", "*.json")])
             if file: rules.set(file)
         ttk.Button(frame, text="Browse…", command=choose_rules).grid(
@@ -124,7 +132,7 @@ def run(app_id):
         if premium and not _require_current_premium_entitlement(root, app_id, entitlement_source):
             return
         if any(not p.get().strip() for p in selected):
-            messagebox.showwarning("Missing input", "Select every required input file.")
+            messagebox.showwarning("Missing input", "Select every required input file.", parent=root)
             return
         try:
             args = [p.get().strip() for p in selected]
@@ -134,14 +142,15 @@ def run(app_id):
                 outputs = action(*args, output.get().strip())
         except (ValueError, OSError, UnicodeError, PermissionError) as exc:
             status.set("Failed: " + str(exc))
-            messagebox.showerror("Review input files", str(exc))
+            messagebox.showerror("Review input files", str(exc), parent=root)
             return
         last_report[0] = str(outputs[0]) if outputs else None
         names = ", ".join(p.name for p in outputs)
         status.set("Created: " + names)
-        messagebox.showinfo("Review reports", "Saved in: " + output.get() + "\n\n" + names)
-    ttk.Button(frame, text="Generate review report", command=execute).grid(
-        row=folder_row+3, column=0, columnspan=3, sticky="w", pady=(8, 16))
+        messagebox.showinfo("Review reports", "Saved in: " + output.get() + "\n\n" + names, parent=root)
+    generate_button = ttk.Button(frame, text="Generate review report", command=execute)
+    generate_button.grid(row=folder_row+3, column=0, columnspan=3, sticky="w", pady=(8, 16))
+    review_button = None
     if premium:
         def open_exception_review():
             if not _require_current_premium_entitlement(root, app_id, entitlement_source):
@@ -151,10 +160,20 @@ def run(app_id):
             open_review_window(
                 root, app_id, report_path=last_report[0],
                 authorize=lambda: verify_license(entitlement_source, app_id))
-        ttk.Button(frame, text="Review exceptions (human only)…",
-                   command=open_exception_review).grid(
-                       row=folder_row+4, column=0, columnspan=3, sticky="w")
+        review_button = ttk.Button(frame, text="Review exceptions (human only)…",
+                                   command=open_exception_review)
+        review_button.grid(row=folder_row+4, column=0, columnspan=3, sticky="w")
     ttk.Label(frame, text="No AI model is used in this preview. All flags follow deterministic rules.",
               wraplength=690).grid(row=folder_row+(5 if premium else 4), column=0,
                                    columnspan=3, sticky="w")
+    hint = (f"Keyboard: Alt+1..{len(labels)} focus an input; Ctrl+1..{len(labels)} browse; "
+            "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
+    if premium:
+        hint += "; Alt+R review exceptions"
+    ttk.Label(frame, text=hint, wraplength=700).grid(
+        row=folder_row+(6 if premium else 5), column=0, columnspan=3,
+        sticky="w", pady=(6, 0))
+    install_shortcuts(root, input_controls, (output_entry, output_browse),
+                      generate_button, review=review_button)
+    root.after_idle(input_controls[0][0].focus_set)
     root.mainloop()
