@@ -71,17 +71,74 @@ def _fingerprint(path: Path, root: Path) -> str:
             os.close(fd)
 
 
+def _checked_directory(path: Path, root: Path) -> None:
+    """Reject symlinked ancestors, not merely symlinks at the final directory."""
+    try:
+        current = root
+        for component in path.relative_to(root).parts:
+            current = current / component
+            if not stat.S_ISDIR(current.lstat().st_mode):
+                raise ValueError("Incomplete or unsafe desktop source tree")
+    except (OSError, RuntimeError, ValueError):
+        raise ValueError("Incomplete or unsafe desktop source tree") from None
+
+
+def _package_python_sources(package: Path) -> list[Path]:
+    """Traverse nested Python packages without following directory symlinks."""
+    discovered = []
+    pending = [package]
+    visited = 0
+    try:
+        while pending:
+            directory = pending.pop()
+            visited += 1
+            if visited > MAX_SOURCE_FILES:
+                raise ValueError("Incomplete or unsafe desktop source tree")
+            with os.scandir(directory) as iterator:
+                for entry in iterator:
+                    item = Path(entry.path)
+                    mode = item.lstat().st_mode
+                    if stat.S_ISLNK(mode):
+                        raise ValueError("Incomplete or unsafe desktop source tree")
+                    if stat.S_ISDIR(mode):
+                        pending.append(item)
+                    elif item.suffix == ".py":
+                        if not stat.S_ISREG(mode):
+                            raise ValueError("Incomplete or unsafe desktop source tree")
+                        discovered.append(item)
+                    if len(discovered) + len(pending) > MAX_SOURCE_FILES:
+                        raise ValueError("Incomplete or unsafe desktop source tree")
+    except (OSError, RuntimeError, ValueError):
+        raise ValueError("Incomplete or unsafe desktop source tree") from None
+    return discovered
+
+
 def source_inventory(repo_root: Path) -> list[dict[str, str]]:
-    """Inventory exactly the current Python engines and six launchers."""
+    """Inventory all desktop Python runtime sources and exactly six launchers.
+
+    Include nested engine modules, top-level imported helpers and operator
+    scripts, rather than certifying only the top level of fvs_suite. Test and
+    cache files remain out of scope. A second inventory is taken after smokes.
+    """
     root = Path(repo_root).resolve(strict=True)
-    package = root / "products" / "desktop" / "fvs_suite"
-    launchers = root / "products" / "desktop" / "launchers"
-    if (package.is_symlink() or launchers.is_symlink()
-            or not package.is_dir() or not launchers.is_dir()):
-        raise ValueError("Incomplete or unsafe desktop source tree")
-    files = sorted(package.glob("*.py"))
+    desktop = root / "products" / "desktop"
+    package = desktop / "fvs_suite"
+    launchers = desktop / "launchers"
+    scripts = desktop / "scripts"
+    for directory in (desktop, package, launchers):
+        _checked_directory(directory, root)
+    if os.path.lexists(scripts):
+        _checked_directory(scripts, root)
+
+    files = _package_python_sources(package)
     required_launchers = [launchers / (name + ".py") for name, _ in APPS]
-    selected = sorted(set([*files, *required_launchers]))
+    # An unapproved seventh launcher must not be silently omitted from evidence.
+    if {p.name for p in launchers.iterdir() if p.suffix == ".py"} != {
+            path.name for path in required_launchers}:
+        raise ValueError("Incomplete or unsafe desktop source tree")
+    selected = sorted(set([*files, *desktop.glob("*.py"),
+                           *(scripts.glob("*.py") if scripts.is_dir() else ()),
+                           *required_launchers]))
     if (not files or len(selected) > MAX_SOURCE_FILES
             or any(not p.is_file() or p.is_symlink() for p in selected)):
         raise ValueError("Incomplete or unsafe desktop source tree")
@@ -107,11 +164,23 @@ def verify_smokes(run_smoke) -> list[dict[str, object]]:
     return results
 
 
+def _source_metadata(repo_root: Path, inventory: list[dict[str, str]]) -> list[tuple[int, ...]]:
+    """Private stat snapshot, detecting same-byte rewrites and inode swaps."""
+    root = Path(repo_root).resolve(strict=True)
+    try:
+        return [_identity((root / item["path"]).lstat()) for item in inventory]
+    except (OSError, RuntimeError, ValueError):
+        raise ValueError("Desktop source metadata unavailable") from None
+
+
 def report_data(repo_root: Path, run_smoke, *, commit: str = "") -> dict:
-    """Fail closed when any inventoried source is edited during six app smokes."""
+    """Fail closed when inventoried source files change during six app smokes."""
     inventory = source_inventory(repo_root)
+    metadata = _source_metadata(repo_root, inventory)
     results = verify_smokes(run_smoke)
-    if source_inventory(repo_root) != inventory:
+    final_inventory = source_inventory(repo_root)
+    if (final_inventory != inventory
+            or _source_metadata(repo_root, final_inventory) != metadata):
         raise RuntimeError("Desktop sources changed during synthetic smoke; evidence withheld")
     return {
         "schema": "fvs-source-smoke-v1",
