@@ -97,7 +97,8 @@ class ReleaseGateR9Tests(unittest.TestCase):
             gate.verify(self.root, smoke=True, platform_name="nt", runner=slow)
 
     def test_no_clobber_report_and_cli_failure(self):
-        p = self.root / "proof.json"
+        p = self.root.parent / (self.root.name + "-proof.json")
+        self.addCleanup(lambda: p.unlink(missing_ok=True))
         self.assertEqual(gate.main([str(self.root), "--report", str(p)]), 0)
         self.assertTrue(p.exists())
         self.assertEqual(gate.main([str(self.root), "--report", str(p)]), 1)
