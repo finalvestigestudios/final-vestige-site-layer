@@ -40,7 +40,7 @@ def _unique_object(pairs):
     output = {}
     for name, value in pairs:
         if name in output:
-            raise ValueError(f"Duplicate JSON key: {name}")
+            raise ValueError("Duplicate JSON price policy key")
         output[name] = value
     return output
 
@@ -66,11 +66,15 @@ def load_price_policy(path: str | Path | None = None) -> PricePolicy:
     if path is None or str(path).strip() == "":
         return PricePolicy()
     file = Path(path)
-    if file.suffix.lower() != ".json" or not file.is_file():
+    if file.suffix.lower() != ".json":
         raise ValueError("A local JSON file is required for the optional price policy")
-    if file.stat().st_size > 8192:
-        raise ValueError("Price policy exceeds the 8 KiB safety limit")
-    data = file.read_bytes()
+    # The exact JSON bytes used for review must also be bound into the inventory.
+    # A descriptor-verified bounded read rejects symlink/path-swap input attacks.
+    from .csv_snapshot import read_csv_snapshot
+    try:
+        data = read_csv_snapshot(file, 8192)
+    except ValueError:
+        raise ValueError("Price policy requires a stable regular JSON file (8 KiB maximum)") from None
     digest = hashlib.sha256(data).hexdigest()
     try:
         content = json.loads(data.decode("utf-8-sig"), object_pairs_hook=_unique_object,
@@ -266,13 +270,17 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
     from .review import normalized_collision, labels_for_report
 
     policy = load_price_policy(policy_path)
-    sources = [
-        engine.table(po, ("po_number", "line", "quantity", "unit_price")),
+    # Retain SHA-256 of the *parsed* source snapshots, not a later file read.
+    source_paths = [po, invoices, receipts]
+    snapshots = [
+        engine.table(po, ("po_number", "line", "quantity", "unit_price"), include_digest=True),
         engine.table(invoices, ("po_number", "line", "quantity", "unit_price"),
-                     ("event_type", "document_id", "related_document")),
+                     ("event_type", "document_id", "related_document"), include_digest=True),
         engine.table(receipts, ("po_number", "line", "quantity"),
-                     ("event_type", "document_id", "related_document")),
+                     ("event_type", "document_id", "related_document"), include_digest=True),
     ]
+    sources = [rows for rows, _ in snapshots]
+    expected_digests = {str(path): digest for path, (_, digest) in zip(source_paths, snapshots)}
     groups = [defaultdict(list) for _ in range(3)]
     for rows, group in zip(sources, groups):
         for row in rows:
@@ -313,8 +321,19 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                      "invoice_documents", "credit_references", "return_references",
                      "price_policy_absolute", "price_policy_fraction",
                      "price_policy_sha256")
-    outputs = [engine.save(folder, "procurement-three-way", original_columns + extra_columns, report)]
-    inputs = [po, invoices, receipts]
+    inputs = list(source_paths)
     if policy_path is not None and str(policy_path).strip():
         inputs.append(policy_path)
-    return outputs + [engine.manifest(folder, inputs, outputs)]
+        expected_digests[str(policy_path)] = policy.source_sha256
+
+    from .procurement_bundle import publish_procurement_bundle
+
+    def build(staging):
+        outputs = [engine.save(staging, "procurement-three-way",
+                               original_columns + extra_columns, report)]
+        return outputs + [engine.manifest(staging, inputs, outputs,
+                                          expected_inputs=expected_digests)]
+
+    # Either the complete review CSV plus its verified inventory is visible,
+    # or neither is. A failed manifest check cannot strand a finished report.
+    return publish_procurement_bundle(folder, build)
