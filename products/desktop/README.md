@@ -392,3 +392,21 @@ malformed pin returns exit code 1. All results require human review. See
 [R34 independent-inventory pinning](docs/GRANT_INDEPENDENT_PIN_R34.md).
 There is no packaged verifier, Windows release, website approval, license
 activation, or premium distribution change in this sprint.
+
+
+### R35: source-bound ProcureGuard evidence bundles (development-only)
+
+ProcureGuard Studio Pro now produces one **private two-file evidence directory**
+instead of publishing an independent review CSV before its inventory. Every
+PO, invoice and receipt is bound to the exact imported CSV snapshot digest;
+an optional JSON threshold policy is read through a verified bounded descriptor
+and its exact SHA-256 is also recorded and rechecked. A source or policy change
+between parse and inventory publication aborts the entire package without
+leaving a publishable partial report. The return contract still contains the
+review CSV and its evidence-manifest `Path` objects. Existing exception review
+and human compliance decisions remain unchanged. See
+[R35 ProcureGuard source-bound evidence runbook](docs/PROCUREMENT_EVIDENCE_BUNDLE_R35.md).
+
+This does **not** provide independent signature authenticity, continuing source
+immutability, encrypted at-rest records, payment approval, a Windows x64 release,
+or premium download entitlement. Keep both files and source data private.
