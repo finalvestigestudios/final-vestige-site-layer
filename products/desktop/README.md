@@ -383,7 +383,7 @@ the inventory checksum at trusted publication time, then store it **outside**
 the bundle in a separately controlled audit record. Later retrieve that
 original pin; never calculate a purported "trusted" pin from a suspect copy.
 
-    PYTHONPATH=products/desktop python -m fvs_suite.grant_verify --expected-inventory-sha256 <saved-64-character-lowercase-hash> <grant-evidence-dir> <claims.csv> <ledger.csv> <budgets.csv>
+    PYTHONPATH=products/desktop python -m fvs_suite.grant_verify --expected-inventory-sha256 "$SAVED_PIN_FROM_TRUSTED_REGISTER" /evidence/grant-evidence-dir /source/claims.csv /source/ledger.csv /source/budgets.csv
 
 Success explicitly says **CONSISTENT (PINNED)** if the external checksum
 matches. Omitting the flag remains backward-compatible but explicitly says
