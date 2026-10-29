@@ -34,7 +34,7 @@ CENT = Decimal("0.01")
 
 _AMOUNT_FORMAT = re.compile(
     r"(?P<prefix>(?:[+-]?\$|\$[+-]?|[+-]?))"
-    r"(?P<number>(?:(?:\d{1,3}(?:,\d{3})+)|\d+)(?:\.\d*)?|\.\d+)\Z"
+    r"(?P<number>(?:(?:[0-9]{1,3}(?:,[0-9]{3})+)|[0-9]+)(?:\.[0-9]*)?|\.[0-9]+)\Z"
 )
 
 
@@ -45,6 +45,8 @@ def _exact_amount(value):
     currency symbol, and correctly grouped thousands. Reject mixed signs,
     malformed grouping, scientific notation, and partial parentheses.
     """
+    if isinstance(value, (float, bool)):
+        raise ValueError("Invalid amount format")
     raw = str(value).strip()
     if not raw or len(raw) > 80:
         raise ValueError("Invalid amount format")
@@ -107,11 +109,24 @@ def qty(value):
 
 def key(value): return re.sub(r"[^A-Z0-9]+","",str(value).upper())
 def dollars(value): return format(value.quantize(CENT),".2f")
+_DATE_FORMATS = (
+    (re.compile(r"[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}\\Z"), "%Y-%m-%d"),
+    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}\\Z"), "%m/%d/%Y"),
+    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{2}\\Z"), "%m/%d/%y"),
+)
+
 def parse_date(value):
-    for fmt in ("%Y-%m-%d","%m/%d/%Y","%m/%d/%y"):
-        try: return datetime.strptime(str(value).strip(),fmt).date()
-        except ValueError: pass
-    raise ValueError("Invalid date (use YYYY-MM-DD or MM/DD/YYYY): "+str(value))
+    """Validate exact ASCII calendar text; never echo private input on failure."""
+    raw = str(value).strip()
+    if not raw or len(raw) > 32:
+        raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
+    for pattern, fmt in _DATE_FORMATS:
+        if pattern.fullmatch(raw):
+            try:
+                return datetime.strptime(raw, fmt).date()
+            except ValueError:
+                break
+    raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
 
 def table(path, required, optional=()):
     p = Path(path)
