@@ -476,3 +476,19 @@ Before R41, the Windows workflow uploaded `dist/*`, which could include all six 
 ## R43 complete Python source scope (pre-release)
 
 Synthetic six-app source-smoke evidence now includes nested engine modules, top-level desktop Python helpers, scripts, and exactly six approved launchers. It detects observed same-byte source replacements through private file identity checks, and rejects unsafe source directory symlinks. This is **source-only** evidence, not native Windows EXE verification, entitlement validation, or release authorization. See [R43 source scope and limits](docs/COMPLETE_SOURCE_SCOPE_R43.md). All applications remain unreleased pending native smoke, malware/security and QD gates.
+
+## R45 — Private GUI diagnostics
+
+User-facing error dialogs never show raw Python exception text. Customer-controlled
+CSV cells, original filenames, file paths, entitlement data and encrypted-vault
+errors can appear in engine/OS exceptions. The six app launchers and premium
+exception review workbench now present only fixed, operation-specific guidance
+based on exception type; the renderer never stringifies the exception. A premium
+review launch failure also receives a safe dialog instead of an unhandled Tk
+callback traceback. This does **not** redact explicit input path fields or
+paths a user intentionally selects; it protects error/status content.
+
+Focused tests: `PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests -p test_ui_error_privacy_r45.py -v`.
+See [R45 privacy notes](docs/PRIVATE_GUI_DIAGNOSTICS_R45.md). This is still
+**pre-release**: Windows x64 native testing, malware scanning, premium access
+control and human QD approval are required before distribution.

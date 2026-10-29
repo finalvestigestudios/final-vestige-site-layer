@@ -9,6 +9,7 @@ from .exception_review import (
     DECISIONS, append_review, export_register, latest_states, read_cases,
 )
 from .evidence_vault import restore_evidence, seal_evidence
+from .ui_errors import safe_error_message
 
 
 def open_review_window(parent: tk.Misc, product: str, report_path: str | None = None,
@@ -116,7 +117,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             journal = Path(path).with_suffix(".review.jsonl")
             latest_states(journal, batch)  # Fail closed on corrupted or stale journals.
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Cannot open review queue", str(exc), parent=window)
+            messagebox.showerror("Cannot open review queue", safe_error_message(exc, operation="report"), parent=window)
             return
         batch_holder[0], journal_holder[0] = batch, journal
         report_text.set(str(path))
@@ -151,7 +152,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
                           rationale=rationale.get("1.0", "end-1c"))
             display()
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Review not recorded", str(exc), parent=window)
+            messagebox.showerror("Review not recorded", safe_error_message(exc, operation="review"), parent=window)
             return
         status_text.set("Human review action recorded locally. No payment or grant action authorized.")
         rationale.delete("1.0", "end")
@@ -170,7 +171,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         try:
             path = export_register(report_text.get(), product, journal_holder[0], target)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Export failed", str(exc), parent=window)
+            messagebox.showerror("Export failed", safe_error_message(exc, operation="export"), parent=window)
             return
         status_text.set(f"Human review register exported: {path.name}")
         messagebox.showinfo("Register created", str(path), parent=window)
@@ -201,7 +202,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         try:
             path = seal_evidence(report_text.get(), product, journal_holder[0], target, secret)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Encrypted backup failed", str(exc), parent=window)
+            messagebox.showerror("Encrypted backup failed", safe_error_message(exc, operation="backup"), parent=window)
             return
         finally:
             secret = confirm = None
@@ -232,7 +233,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         try:
             folder = restore_evidence(source, target, secret)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Restore failed", str(exc), parent=window)
+            messagebox.showerror("Restore failed", safe_error_message(exc, operation="restore"), parent=window)
             return
         finally:
             secret = None
