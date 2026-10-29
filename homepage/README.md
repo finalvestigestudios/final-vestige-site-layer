@@ -7,7 +7,8 @@ evidence-alignment slider — ships through the governed Site Layer plugin as fi
 `hero-assembly-wp-block-v1.txt`, `margins-wire-wp-block-v1.txt`,
 `investigation-walkthrough-wp-block-v1.txt`, `library-inspector-wp-block-v1.txt`, and
 `signature-alignment-wp-block-v1.txt` (see `../payloads/`, wired into
-`../final-vestige-site-layer.php` and `../release-manifest.json`).
+`../final-vestige-site-layer.php` and `../release-manifest.json`). The `fv-focus-cta` section
+described below is plain page content with no payload of its own — it is static markup only.
 
 **Why two halves.** This plugin can only inject content at `wp_footer`; it cannot restructure
 the real homepage template. So the split follows the brief's own architectural principle:
@@ -38,25 +39,31 @@ JSON-LD):
      photo ID as the credit line.
    The Hero Assembly payload animates these four cards scattering (rotated, offset) and then
    assembling into place, with an amber rule drawing across the full row as they connect.
-2. **New:** `fv-worlds` — the six real pathways (Investigations, The Public Record, Labs,
+2. **New:** `fv-focus-cta` — the "Seven Day Focus Fieldbook" lead-magnet section. This is not part
+   of the original redesign brief: the live homepage gained this section independently, after this
+   redesign's content was first captured, as a business-critical addition to the single Dispatch
+   subscription funnel. It was pulled verbatim (copy, links, image, and CSS) from the live page on
+   2026-10-29 and inserted here in its live position — directly after the hero — so this redesign
+   does not regress a working, already-tested lead-generation path. See "Content sources" below.
+3. **New:** `fv-worlds` — the six real pathways (Investigations, The Public Record, Labs,
    Editions, Films & Media, The Exchange — same real copy and URLs as the old hero cards), laid
    out as six differentiated treatments instead of one repeated card shape.
-3. **New:** `fv-mission` — a short, quiet, centered editorial statement (no dynamic content) —
+4. **New:** `fv-mission` — a short, quiet, centered editorial statement (no dynamic content) —
    the page's one deliberate monumental pause between the hero and the investigation.
-4. **New:** `fv-invest` — the Live Investigation walkthrough. Uses one real, already-published
+5. **New:** `fv-invest` — the Live Investigation walkthrough. Uses one real, already-published
    Final Vestige investigation, ["The Hatch Opened Inward"](https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/)
    (Apollo 1). All six stage headlines and body copy are drawn from that real article; all six
    evidence images, captions, and quotations are the real NASA photographs and footnoted
    quotations already used in that post (see the payload's `EVIDENCE` array for exact source
    URLs). Nothing here is invented.
-5. **New:** `fv-library` — "Inspect the evidence." Built around the real 1903 NYPL map of the
+6. **New:** `fv-library` — "Inspect the evidence." Built around the real 1903 NYPL map of the
    Brooklyn Rapid Transit system, which is itself real evidence already used in a real, published
    investigation, ["Six Miles an Hour"](https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/)
    (the 1918 Malbone Street subway wreck) — the metadata panel (title, date, collection, source,
    rights, "why it matters") is drawn from that post's real figcaption and NYPL catalog record,
    not invented. The Library Inspector payload adds a cursor/touch-driven magnifying loupe over a
    higher-resolution version of the same real image.
-6. **New:** `fv-align` — "Drag until the record and the reconstruction agree." A second signature
+7. **New:** `fv-align` — "Drag until the record and the reconstruction agree." A second signature
    interaction (real evidence, not a hover effect): a divider slider lets the visitor drag between
    the same real 1903 NYPL map used in the Library and Final Vestige's own real evidence-boundary
    diagram from ["Six Miles an Hour"](https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/)
@@ -64,8 +71,11 @@ JSON-LD):
    Library panel. With JavaScript disabled, the two real documents render side by side, split down
    the middle, each captioned — never a blank or broken state. The Signature Alignment payload
    drives the drag/keyboard interaction; no new evidence or claims beyond what's already used
-   elsewhere on this page.
-7. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
+   elsewhere on this page. The interaction starts away from the aligned position (20%, outside the
+   45–55% aligned band) so the "Aligned" badge only appears after a real drag or keyboard move, not
+   on load; `aria-valuetext` updates on every move to describe the current position in words, not
+   just a static "halfway" label.
+8. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
    blocks (Latest investigation, Recently filed, category strip, Exchange preview, More
    investigations, Research Trails, Sources and research tools) are untouched — same queries,
    same attributes, same real data at render time. Additions inside it:
@@ -83,9 +93,9 @@ JSON-LD):
      block, same attributes, same real subscription mechanism. Only the surrounding heading,
      copy, and framing were revised (from a conventional "newsletter signup" pitch to "the next
      lead arrives at your desk") — the actual sign-up mechanism was not touched.
-8. `fv-enter-record` — **unchanged.** Same four real cards (Editorial Standards, The Failure
+9. `fv-enter-record` — **unchanged.** Same four real cards (Editorial Standards, The Failure
    Chain, Research Sources, Journal), same copy, same URLs.
-9. JSON-LD organization schema — **untouched.**
+10. JSON-LD organization schema — **untouched.**
 
 ## Applying this
 
@@ -155,8 +165,11 @@ compatibility contract:
         evidence panel's image/caption/citation/quote match the clicked stage.
   - [ ] Library map loads, the loupe follows the cursor (desktop) and touch drag (mobile), and
         keyboard Enter/Space toggles a centered magnified view.
-  - [ ] Alignment slider (the map/chronology drag) responds to mouse drag, touch drag, and
-        keyboard arrows, and the "Aligned" badge appears once the divider is dragged near center.
+  - [ ] Alignment slider (the map/chronology drag) starts away from center with the "Aligned"
+        badge hidden, responds to mouse drag, touch drag, and keyboard arrows, and only reveals
+        "Aligned" once the divider is actually moved near center.
+  - [ ] Focus Fieldbook CTA (`fv-focus-cta`) renders on both mobile and desktop widths, its button
+        links to `/focus/`, and the section sits directly after the hero, matching the live page.
   - [ ] Dispatch subscription form still submits successfully (unchanged block, but verify after
         any theme/plugin update in case an unrelated change affects Jetpack blocks).
   - [ ] `wp-json/fv-deploy/v1/deploy` bridge logs show the expected package SHA-256 was applied.
@@ -200,3 +213,8 @@ compatibility contract:
   and its "why it matters" fact are the same real assets and real copy already verified above for
   the Library section and "Six Miles an Hour" — no new evidence was introduced for this
   interaction, only a new way of presenting the same two already-vetted real documents.
+- The `fv-focus-cta` section (copy, `/focus/` link, cover image, and CSS) was read directly off
+  the live, currently-published page via WordPress.com Content Authoring (`pages.get`, id 6) on
+  2026-10-29, confirmed to be a real section the business added to the live site after this
+  redesign's own content was first captured on 2026-09-13, and carried over verbatim rather than
+  reinterpreted or re-themed.

@@ -22,6 +22,21 @@
   unfilled cells. See `homepage/README.md` for the full, current section-by-section record.
 - Adds `tests/verify_signature_alignment.py` (exact payload identity, node-executed gate
   behavior, and adversarial safety checks) to CI.
+- **Independent QD review correction (same candidate, pre-merge):** an independent QD review of
+  this candidate found two issues, both fixed in place before requesting fresh QD:
+  - The homepage replacement had dropped the live `fv-focus-cta` section (the "Seven Day Focus
+    Fieldbook" lead magnet linking to `/focus/`), which was added to the live site independently
+    after this redesign's content was first captured. Re-verified directly against the live page
+    (fetched 2026-10-29) and restored verbatim, in its live position, into
+    `homepage/page-6-home.blocks.html` and both harness previews.
+  - The Signature Alignment payload initialized the divider at 50%, inside the 45–55% "aligned"
+    band, so the "Aligned" badge appeared on load before any user interaction, and
+    `aria-valuetext` never updated as the divider moved. Fixed: the interaction now starts at 20%
+    (outside the aligned band), `aria-valuetext` updates on every move to describe the current
+    position, and `tests/verify_signature_alignment.py` gained a regression test asserting the
+    initial state is not aligned and that alignment only follows real interaction. Payload bytes
+    and SHA-256 were recomputed and repropagated to `final-vestige-site-layer.php` and
+    `release-manifest.json`.
 
 ## 0.3.0 — FVSL-VESTIGE-ASSEMBLY-HOME-001
 

@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "signature-alignment-wp-block-v1.txt"
-EXPECTED_BYTES = 2327
-EXPECTED_SHA256 = "68ad5cd472f7885dd6aec3bedb6ea601eb0b6330a7ad9a3da657f2962ede4d65"
+EXPECTED_BYTES = 2740
+EXPECTED_SHA256 = "ddc23041c3f5e78d300e45f6b35d8e5b5cf7ce807631bd83a520254e343f008b"
 
 
 def require(condition: bool, message: str) -> None:
@@ -78,9 +78,82 @@ console.log('SIGNATURE ALIGNMENT BEHAVIOR: PASS');
     finally:
         behavior_path.unlink(missing_ok=True)
 
+    full_match = re.search(r'<script id="fv-signature-alignment-v1-js">\n(.*)\n</script>', text, flags=re.S)
+    require(full_match is not None, "unable to extract full JavaScript")
+    full_js = full_match.group(1)
+    harness = r"""
+const listeners = {};
+const makeEl = () => {
+  const el = {
+    _attrs: {},
+    _classes: new Set(),
+    style: {},
+    addEventListener(type, cb) { listeners[el._name + ':' + type] = cb; },
+    setAttribute(k, v) { this._attrs[k] = String(v); },
+    getAttribute(k) { return this._attrs[k]; },
+    classList: {
+      add: (c) => el._classes.add(c),
+      remove: (c) => el._classes.delete(c),
+      contains: (c) => el._classes.has(c),
+    },
+    focus() {},
+    getBoundingClientRect() { return { left: 0, width: 100 }; },
+  };
+  return el;
+};
+const stage = makeEl(); stage._name = 'stage';
+const divider = makeEl(); divider._name = 'divider';
+const mapPanel = makeEl(); mapPanel._name = 'mapPanel';
+const badge = makeEl(); badge._name = 'badge';
+badge.setAttribute('data-revealed', '0');
+stage.querySelector = (sel) => ({
+  '[data-fv-align-divider]': divider,
+  '.fv-align__panel--map': mapPanel,
+  '[data-fv-align-badge]': badge,
+}[sel] || null);
+global.window = { addEventListener(type, cb) { listeners['window:' + type] = cb; } };
+global.document = { querySelector: (sel) => (sel === '[data-fv-align-stage]' ? stage : null) };
+
+""" + full_js + r"""
+
+const assert=(condition,message)=>{if(!condition){throw new Error(message)}};
+
+assert(stage.getAttribute('aria-valuenow')==='20','initial aria-valuenow must reflect the real starting position, not a value inside the aligned band');
+assert(badge.getAttribute('data-revealed')==='0','badge must not be revealed before any user interaction');
+assert(!stage.classList.contains('fv-align--locked'),'stage must not start locked before any user interaction');
+assert(!/^aligned/.test(stage.getAttribute('aria-valuetext')),'initial aria-valuetext must not claim alignment before interaction');
+
+const keydown = listeners['stage:keydown'];
+assert(typeof keydown === 'function', 'keydown handler must be registered for keyboard alignment');
+for (let i = 0; i < 7; i++) { keydown({ key: 'ArrowRight', preventDefault(){} }); }
+assert(badge.getAttribute('data-revealed')==='1','badge must reveal once the user drags into the aligned band');
+assert(stage.classList.contains('fv-align--locked'),'stage must lock once aligned by real interaction');
+assert(/^aligned/.test(stage.getAttribute('aria-valuetext')),'aria-valuetext must update to report alignment once aligned');
+
+for (let i = 0; i < 4; i++) { keydown({ key: 'ArrowRight', preventDefault(){} }); }
+assert(badge.getAttribute('data-revealed')==='0','badge must clear once the user drags back out of the aligned band');
+assert(!stage.classList.contains('fv-align--locked'),'stage must unlock once dragged out of the aligned band');
+assert(!/^aligned/.test(stage.getAttribute('aria-valuetext')),'aria-valuetext must stop claiming alignment once out of the aligned band');
+
+console.log('SIGNATURE ALIGNMENT INITIAL-STATE REGRESSION: PASS');
+"""
+    with tempfile.NamedTemporaryFile("w", suffix=".js", encoding="utf-8", delete=False) as handle:
+        handle.write(harness)
+        harness_path = Path(handle.name)
+    try:
+        proc = subprocess.run(["node", str(harness_path)], capture_output=True, text=True)
+        require(proc.returncode == 0, f"regression test failed: {proc.stderr.strip() or proc.stdout.strip()}")
+        require(
+            "SIGNATURE ALIGNMENT INITIAL-STATE REGRESSION: PASS" in proc.stdout,
+            "regression test did not report PASS",
+        )
+    finally:
+        harness_path.unlink(missing_ok=True)
+
     print(
         "PASS: Signature Alignment exact payload identity, real-element gating, pointer/mouse/"
-        "keyboard drag interaction, no dependencies/network calls, and JavaScript syntax verified"
+        "keyboard drag interaction, no dependencies/network calls, JavaScript syntax, and "
+        "initial-non-aligned-state regression verified"
     )
 
 

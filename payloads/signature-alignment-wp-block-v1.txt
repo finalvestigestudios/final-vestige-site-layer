@@ -20,12 +20,19 @@ if(!fvSaShouldRun({hasStage:!!stage,hasDivider:!!divider,hasMapPanel:!!mapPanel,
 
 let revealed=false;
 
+const describePosition=(pct,aligned)=>{
+  if(aligned)return 'aligned — the 1903 map and the reconstruction agree, revealing the connecting fact';
+  if(pct<45)return 'showing mostly the 1918 to 1920 reconstruction, map '+Math.round(pct)+' percent visible';
+  return 'showing mostly the 1903 map, map '+Math.round(pct)+' percent visible';
+};
+
 const setPosition=(pctRaw)=>{
   const pct=Math.max(4,Math.min(96,pctRaw));
   divider.style.left=pct+'%';
   mapPanel.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
-  stage.setAttribute('aria-valuenow',String(Math.round(pct)));
   const aligned=pct>45&&pct<55;
+  stage.setAttribute('aria-valuenow',String(Math.round(pct)));
+  stage.setAttribute('aria-valuetext',describePosition(pct,aligned));
   if(aligned&&!revealed){
     revealed=true;
     badge.setAttribute('data-revealed','1');
@@ -65,7 +72,7 @@ stage.addEventListener('keydown',(e)=>{
   if(e.key==='ArrowRight'){ setPosition(current+4); e.preventDefault(); }
 });
 
-setPosition(50);
+setPosition(20);
 
 }catch(_){
   window.__fvSignatureAlignment=false;
