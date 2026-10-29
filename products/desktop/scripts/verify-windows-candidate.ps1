@@ -35,18 +35,9 @@ try {
             & $PythonCommand -m PyInstaller --noconfirm --clean --onefile --windowed --paths products/desktop --name $app --distpath $dist --workpath "build/$app" --specpath build/specs "products/desktop/launchers/$app.py"
             if ($LASTEXITCODE -ne 0) { throw "Packaging FAILED for $app" }
         }
-        # Generate inventory deterministically with exclusively known artifacts.
-        $inventory = @()
-        foreach ($app in $apps) {
-            $exe = Join-Path $dist ($app + ".exe")
-            if (-not (Test-Path -LiteralPath $exe -PathType Leaf)) {
-                throw "Missing packaged binary: $exe"
-            }
-            $sha = (Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant()
-            $inventory += "$sha  $app.exe"
-        }
-        $manifest = Join-Path $dist "SHA256SUMS.txt"
-        [System.IO.File]::WriteAllLines($manifest, $inventory, [System.Text.Encoding]::ASCII)
+        # R40 builds an exact six-file, no-clobber, atomically published inventory.
+        & $PythonCommand products/desktop/build_inventory.py $dist
+        if ($LASTEXITCODE -ne 0) { throw "R40 candidate inventory generation FAILED" }
     }
     if (-not (Test-Path -LiteralPath $dist -PathType Container)) {
         throw "No dist folder; use -Build or place six candidate EXEs plus SHA256SUMS.txt in dist."
