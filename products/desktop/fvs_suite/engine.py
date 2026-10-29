@@ -209,23 +209,15 @@ def save(folder,stem,fields,rows):
     return write_csv_report(outpath(folder,stem), fields, rows, safe_cell)
 
 def manifest(folder,inputs,outputs):
-    """Hash complete input/report evidence before publishing a private manifest.
+    """Publish private grant evidence inventory only after source verification.
 
-    Filenames are JSON-escaped (without quotes) so embedded tabs, newlines,
-    backslashes or bidi controls cannot forge physical inventory records.
+    Reject duplicate basenames, links and files that change during hashing.
+    Inventory bytes remain descriptive, not eligibility/approval evidence.
     """
-    import json
     from .atomic_text import publish_text
-
-    lines = ["SHA-256 file inventory. Hashes do not certify accuracy or compliance.\n"]
-    for source in [*map(Path,inputs),*map(Path,outputs)]:
-        h = hashlib.sha256()
-        with source.open("rb") as stream:
-            for chunk in iter(lambda:stream.read(1024*1024),b""):
-                h.update(chunk)
-        safe_name = json.dumps(source.name, ensure_ascii=True)[1:-1]
-        lines.append(f"{safe_name}\t{h.hexdigest()}\n")
-    return publish_text(outpath(folder,"evidence-manifest",".txt"), "".join(lines))
+    from .manifest_guard import inventory_text
+    contents = inventory_text(inputs, outputs)
+    return publish_text(outpath(folder,"evidence-manifest",".txt"), contents)
 
 def ledger_diff(left,right,folder):
     groups=[defaultdict(list),defaultdict(list)]
