@@ -1,0 +1,142 @@
+"""Deterministic, fail-closed SHA256SUMS builder for six private Windows candidates.
+
+Runs after packaging and before the independent release gate. Does not inspect
+PE safety, execute binaries, authenticate a build or authorize distribution.
+It never deletes a candidate executable or overwrites existing evidence.
+"""
+from __future__ import annotations
+
+import argparse
+import os
+import stat
+import sys
+import tempfile
+from pathlib import Path
+
+from candidate_guard import (
+    CandidateGuardError, MAX_CHECKSUM_BYTES, MAX_EXE_BYTES,
+    check_candidate_directory, read_checksum_candidate, sha256_candidate,
+)
+
+EXPECTED = (
+    "LedgerDiffLite.exe", "InvoiceTwinScout.exe", "SpendMapLite.exe",
+    "PolicyDeltaDesk.exe", "GrantAuditStudioPro.exe", "ProcureGuardStudioPro.exe",
+)
+MANIFEST = "SHA256SUMS.txt"
+
+
+class InventoryBuildError(ValueError):
+    """Unsafe or incomplete candidate: stop; do not distribute any executable."""
+
+
+def _membership(root: Path, expected: set[str]) -> None:
+    """Reject stale manifests, links, directories and any surplus private file."""
+    info = root.lstat()
+    if not stat.S_ISDIR(info.st_mode):
+        raise InventoryBuildError("Candidate root must be a real directory")
+    members = list(root.iterdir())
+    if len(members) != len(expected) or {p.name for p in members} != expected:
+        raise InventoryBuildError("Candidate folder has missing or unexpected files")
+    for path in members:
+        item = path.lstat()
+        if (not stat.S_ISREG(item.st_mode) or item.st_nlink != 1
+                or item.st_size < 1 or item.st_size > MAX_EXE_BYTES):
+            raise InventoryBuildError("Candidate binaries must be distinct bounded ordinary files")
+
+
+def _fingerprints(root: Path) -> tuple[str, ...]:
+    return tuple(sha256_candidate(root / name, maximum=MAX_EXE_BYTES)
+                 for name in EXPECTED)
+
+
+def build_inventory(candidate_dir: str | Path) -> str:
+    """Publish one canonical inventory only if all six source images stay stable.
+
+    The completed seven-file bundle STILL requires release_gate.verify() and real
+    Windows smoke tests. A failed post-publication check removes only our own
+    just-created inventory (best effort, inode-checked), never another file.
+    """
+    stage: Path | None = None
+    published = False
+    published_identity: tuple[int, int] | None = None
+    root = Path(candidate_dir)
+    target = root / MANIFEST
+    try:
+        _membership(root, set(EXPECTED))
+        original = _fingerprints(root)
+        inventory = "".join(f"{digest}  {name}\n"
+                            for name, digest in zip(EXPECTED, original)).encode("ascii")
+        if len(inventory) > MAX_CHECKSUM_BYTES:
+            raise InventoryBuildError("Checksum manifest exceeds safe bound")
+
+        # Stage privately on the same volume. Hardlink publication is exclusive
+        # and atomic: no empty/half-written manifest becomes available to others.
+        fd, path = tempfile.mkstemp(prefix=".fvs-inventory-", dir=root)
+        stage = Path(path)
+        with os.fdopen(fd, "wb") as stream:
+            stream.write(inventory)
+            stream.flush()
+            os.fsync(stream.fileno())
+        # Stage is expected here; independently reject any other new file.
+        _membership_with_stage(root, stage)
+        if _fingerprints(root) != original:
+            raise InventoryBuildError("Candidate binaries changed during inventory build")
+        os.link(stage, target)
+        published = True
+        published_info = target.lstat()
+        published_identity = (published_info.st_dev, published_info.st_ino)
+        stage.unlink()
+        stage = None
+        check_candidate_directory(root, EXPECTED)
+        if read_checksum_candidate(target) != inventory or _fingerprints(root) != original:
+            raise InventoryBuildError("Candidate changed after manifest publication")
+        return target.name
+    except InventoryBuildError:
+        raise
+    except (OSError, CandidateGuardError, UnicodeError):
+        raise InventoryBuildError("Candidate inventory could not be generated safely") from None
+    finally:
+        if stage is not None:
+            try:
+                stage.unlink(missing_ok=True)
+            except OSError:
+                pass
+        if published and sys.exc_info()[0] is not None and published_identity is not None:
+            try:
+                info = target.lstat()
+                if (info.st_dev, info.st_ino) == published_identity and stat.S_ISREG(info.st_mode):
+                    target.unlink()
+            except OSError:
+                pass
+
+
+def _membership_with_stage(root: Path, stage: Path) -> None:
+    _membership_staged = list(root.iterdir())
+    if (len(_membership_staged) != len(EXPECTED) + 1
+            or {p.name for p in _membership_staged} != set(EXPECTED) | {stage.name}):
+        raise InventoryBuildError("Candidate folder changed during inventory build")
+    info = stage.lstat()
+    if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
+        raise InventoryBuildError("Inventory staging file is not ordinary")
+    for name in EXPECTED:
+        item = (root / name).lstat()
+        if (not stat.S_ISREG(item.st_mode) or item.st_nlink != 1
+                or item.st_size < 1 or item.st_size > MAX_EXE_BYTES):
+            raise InventoryBuildError("Candidate changed during inventory build")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("dist", help="Directory containing ONLY the six approved EXEs")
+    args = parser.parse_args(argv)
+    try:
+        name = build_inventory(args.dist)
+    except InventoryBuildError as exc:
+        print("REJECTED: " + str(exc), file=sys.stderr)
+        return 1
+    print(f"Wrote {name} for six candidates. NOT release authorized; run independent gate.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
