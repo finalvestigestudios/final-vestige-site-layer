@@ -307,3 +307,26 @@ invalid inputs produce no comparison report. See
 These hashes are *fingerprints, not signatures or proof of legal correctness*.
 The R26 helper regressions have run locally; full repository tests, true Windows
 x64 smoke tests, QD approval, and release verification remain outstanding.
+
+## R27 — complete, private financial CSV publication (development-only)
+
+All five financial utilities now stage CSV output in a private, same-directory
+temporary file and flush/sync it before making the final report visible.
+On Windows an exclusive (non-replacing) rename publishes the file; on POSIX
+an exclusive hard link prevents overwriting preexisting files/symlinks.
+Conversion failures, filesystem errors, and duplicate report names leave no
+new final CSV or abandoned staging file during normal exception cleanup.
+The writer processes rows lazily and retains UTF-8 BOM and spreadsheet formula
+neutralization. POSIX output permissions are owner-only.
+
+**Scope:** shared `engine.save` CSV reports (LedgerDiff, Invoice Twin,
+SpendMap, GrantAudit and ProcureGuard). This does **not** make an entire
+multi-report grant package transactional, secure the separate premium review
+journal/register or Policy Delta text report, or guarantee cleanup after an
+abrupt OS/power termination. If the chosen filesystem does not support
+exclusive publication, the operation refuses to publish rather than
+overwriting another report. See [R27 design](docs/ATOMIC_FINANCIAL_CSV_REPORTS_R27.md).
+
+The new helper regression suite passed locally on Linux; integrated repository
+tests, native Windows filesystem behavior, six executable builds, QD review,
+and guarded premium distribution remain release blockers.
