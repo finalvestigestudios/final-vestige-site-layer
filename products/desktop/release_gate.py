@@ -23,10 +23,7 @@ from candidate_guard import (
     check_candidate_directory, read_checksum_candidate, sha256_candidate,
 )
 
-EXPECTED = (
-    "LedgerDiffLite.exe", "InvoiceTwinScout.exe", "SpendMapLite.exe",
-    "PolicyDeltaDesk.exe", "GrantAuditStudioPro.exe", "ProcureGuardStudioPro.exe",
-)
+from build_inventory import EXPECTED
 HEX = re.compile(r"^[0-9a-f]{64}$")
 
 
