@@ -19,7 +19,7 @@ changes could redirect reads outside the selected source set.
   same ASCII basename<TAB>sha256 rows for ordinary distinct filenames, in
   selected input/output order; it preserves R28 JSON escaping for potentially
   misleading control/bidi characters.
-- **Fail closed on ambiguous basenames**, including case-insensitive collisions
+- **Fail closed on ambiguous basenames**, including Unicode-normalized, case-insensitive collisions
   across input/output directories, instead of guessing which file an entry
   means. The user must supply distinctly named files before an inventory can
   be published. Existing package outputs are not rolled back.
@@ -40,7 +40,7 @@ changes could redirect reads outside the selected source set.
 
 ## Verification and caveats
 
-Fifteen real I/O helper regressions exercise exact byte hashes and order,
+Sixteen real I/O helper regressions exercise exact byte hashes and order,
 baseline compatibility, collisions, aliases, symlinks, directories, missing
 files, sparse oversized files, differentiated limits, Unicode escaping,
 metadata mutation simulation, final-sweep detection, and optimized Python.
