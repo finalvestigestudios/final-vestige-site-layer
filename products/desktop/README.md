@@ -30,7 +30,7 @@ Python 3.12+ with Tkinter. From repository root:
     PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests -v
     PYTHONPATH=products/desktop python -m fvs_suite.demo ledger
 
-The six GUI entrypoints live under products/desktop/launchers. Windows CI uses PyInstaller and uploads **internal build artifacts only**; do not distribute or publish until tests, malware scan, clean-machine acceptance, release versioning, SHA256 and (preferably) code signing are complete.
+The six GUI entrypoints live under products/desktop/launchers. Windows CI uses PyInstaller privately and uploads **evidence only, never executable artifacts**; do not distribute or publish until tests, malware scan, clean-machine acceptance, release versioning, SHA256 and (preferably) code signing are complete.
 
 ## Invoice Twin Scout R4 candidate safety and scale
 
@@ -461,3 +461,7 @@ Both Windows CI packaging and the offline Windows operator build now invoke `pro
 ### R41 — CI evidence-only artifact export
 
 Before R41, the Windows workflow uploaded `dist/*`, which could include all six release candidates (including premium binaries) as retrievable GitHub Actions artifacts. R41 restricts workflow artifacts to the source-only smoke report and the Windows SHA256 inventory/release-gate JSON, **never the EXEs**. A fail-closed, standard-library policy linter runs in both CI jobs, and 22 adversarial tests cover unintended upload expansion, duplicate/missing artifacts and unsafe retention. See [R41 artifact privacy runbook](docs/CI_ARTIFACT_PRIVACY_R41.md). This is artifact-scope hardening, not proof of a Windows native build, malware clearance, premium-fulfillment controls, or QD release approval.
+
+## R43 complete Python source scope (pre-release)
+
+Synthetic six-app source-smoke evidence now includes nested engine modules, top-level desktop Python helpers, scripts, and exactly six approved launchers. It detects observed same-byte source replacements through private file identity checks, and rejects unsafe source directory symlinks. This is **source-only** evidence, not native Windows EXE verification, entitlement validation, or release authorization. See [R43 source scope and limits](docs/COMPLETE_SOURCE_SCOPE_R43.md). All applications remain unreleased pending native smoke, malware/security and QD gates.
