@@ -359,3 +359,17 @@ Five financial engines now parse a single bounded (64 MiB) local snapshot of eac
 ## R32 — Complete GrantAudit evidence directories
 
 Legacy and linked GrantAudit outputs now appear together in one private, timestamped `grant-evidence-*` subfolder under the operator-selected directory. If the SHA-256 inventory cannot be produced, neither report is published; existing reports and original CSV files remain untouched. This is **not** audit approval, a digital signature, or a release. See [R32 atomic bundle design](docs/ATOMIC_GRANT_BUNDLE_R32.md).
+
+### R33: independent GrantAudit evidence consistency check (source-only)
+
+R32 GrantAudit packages can now be checked again after export, without writing
+or uploading the reports. With all three original inputs present and their
+basenames preserved, run:
+
+    PYTHONPATH=products/desktop python -m fvs_suite.grant_verify <grant-evidence-directory> <claims.csv> <ledger.csv> <budgets.csv>
+
+The command returns 0 only when all five current source/report SHA-256 values
+and the exact manifest layout match; it returns 1 on inconsistent or invalid
+evidence. This is **not** a signature, historic authenticity proof, automated
+compliance approval, release-ready Windows EXE, or replacement for human review.
+See [R33 verifier threat model](docs/GRANT_BUNDLE_VERIFICATION_R33.md).
