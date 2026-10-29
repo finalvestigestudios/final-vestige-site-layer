@@ -410,3 +410,22 @@ and human compliance decisions remain unchanged. See
 This does **not** provide independent signature authenticity, continuing source
 immutability, encrypted at-rest records, payment approval, a Windows x64 release,
 or premium download entitlement. Keep both files and source data private.
+
+
+### R36: independent offline verification of ProcureGuard evidence (development-only)
+
+The R35 two-file ProcureGuard package can now be checked **without modifying
+any financial records** by an independent, read-only CLI. It recomputes exact
+SHA-256 fingerprints for the original purchase order, invoice, receipt,
+optional custom price-policy JSON, and generated review CSV. Rejects malformed
+packages, replaced/missing files, oversize inventory/policy, filesystem links,
+and detected concurrent modifications. An optional SHA-256 digest saved
+**outside** the bundle before later edits can anchor the inventory; an
+unanchored inventory is merely self-consistent, not proof of authenticity.
+The CLI distinguishes PINNED and UNPINNED results; all procurement findings
+still require human review.
+
+See [R36 ProcureGuard independent verifier runbook](docs/PROCUREMENT_INDEPENDENT_VERIFIER_R36.md)
+for command syntax, pinned-value retention, risk limits and regression tests.
+No Windows binary, premium distribution change, or website download is
+approved by this development sprint.
