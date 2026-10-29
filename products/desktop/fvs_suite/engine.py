@@ -1,6 +1,6 @@
 """Local-first Final Vestige Labs desktop engines. All findings require human review."""
 from __future__ import annotations
-import csv, difflib, hashlib, re, statistics
+import csv, difflib, hashlib, os, re, statistics
 from collections import defaultdict
 from datetime import datetime, date
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
@@ -30,6 +30,8 @@ ALIASES = {
  "related_claim": ("related_claim","original_claim_id","reverses_claim_id"),
 }
 MAX_ROWS = 200_000
+# Bound user-provided exports before parsing (premium review reports use the same cap).
+MAX_IMPORT_BYTES = 64 * 1024 * 1024
 CENT = Decimal("0.01")
 
 _AMOUNT_FORMAT = re.compile(
@@ -132,15 +134,20 @@ def table(path, required, optional=()):
     p = Path(path)
     if p.suffix.lower() != ".csv" or not p.is_file(): raise ValueError("Select an existing CSV: "+p.name)
     with p.open(encoding="utf-8-sig",newline="") as f:
+        # Inspect the opened descriptor, not a potentially substituted pathname.
+        if os.fstat(f.fileno()).st_size > MAX_IMPORT_BYTES:
+            raise ValueError("CSV input exceeds 64 MiB file-size limit")
         # csv.reader exposes physical line counts after each complete record.
         # DictReader's enumerate() only counts logical records, and gives
         # incorrect audit citations after quoted newlines or blank lines.
         reader = csv.reader(f, strict=True)
         try:
             fieldnames = next(reader, None)
-        except csv.Error as exc:
+        except (csv.Error, UnicodeError) as exc:
             raise ValueError(f"{p.name}: invalid CSV header") from exc
         if not fieldnames: raise ValueError("Missing headers: "+p.name)
+        if any("\x00" in name for name in fieldnames):
+            raise ValueError(f"{p.name}: CSV header contains a NUL character")
         normalized = [str(h).strip().lower().replace(" ", "_") for h in fieldnames if h]
         if "" in normalized or len(normalized) != len(fieldnames) or len(normalized) != len(set(normalized)):
             raise ValueError(f"{p.name}: blank or duplicate normalized CSV header")
@@ -168,11 +175,19 @@ def table(path, required, optional=()):
                 if len(values) != len(fieldnames):
                     raise ValueError(f"{p.name}: malformed CSV record at physical line {source_line} "
                                      f"(expected {len(fieldnames)} columns, got {len(values)})")
+                # Even an ignored, extra data column must not smuggle NUL bytes
+                # into an evidence-bearing financial import.
+                if any("\x00" in cell for cell in values):
+                    raise ValueError(f"{p.name}: CSV record contains a NUL character "
+                                     f"at physical line {source_line}")
                 row = dict(zip(fieldnames, values))
                 out.append({"row":str(source_line),**{name:str(row.get(col) or "").strip()
                        for name,col in cols.items() if col}})
-        except csv.Error as exc:
+        except (csv.Error, UnicodeError) as exc:
             raise ValueError(f"{p.name}: invalid CSV near physical line {reader.line_num}") from exc
+        # Fail closed if another local process expanded the file during import.
+        if os.fstat(f.fileno()).st_size > MAX_IMPORT_BYTES:
+            raise ValueError("CSV input exceeds 64 MiB file-size limit")
         return out
 
 def outpath(folder,stem,suffix=".csv"):
