@@ -298,35 +298,14 @@ def _csv_cell(value: object) -> str:
 
 def export_register(report: str | Path, product: str, journal: str | Path,
                     folder: str | Path) -> Path:
-    """Write a new sanitized CSV of human decisions; originals remain untouched."""
-    batch = read_cases(report, product)
-    state = latest_states(journal, batch)
-    target = Path(folder)
-    if not target.is_dir():
-        raise ValueError("Choose an existing output folder")
-    path = target / ("review-register-" + datetime.now(timezone.utc).strftime(
-        "%Y%m%d-%H%M%S-%f") + ".csv")
-    created = False
-    try:
-        with path.open("x", encoding="utf-8-sig", newline="") as stream:
-            created = True
-            writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
-            writer.writeheader()
-            for case in batch.cases:
-                latest = state.get(case.case_id, {})
-                entry = {
-                    "case_id": case.case_id, "source_row": case.report_row,
-                    "source_key": case.source_key, "original_flags": case.flags,
-                    "review_state": latest.get("decision", "pending"),
-                    "reviewer": latest.get("reviewer", ""),
-                    "rationale": latest.get("rationale", ""),
-                    "reviewed_utc": latest.get("created_utc", ""),
-                    "report_sha256": batch.report_sha256,
-                }
-                writer.writerow({field: _csv_cell(value) for field, value in entry.items()})
-    except Exception:
-        # Never delete a pre-existing file when exclusive creation failed.
-        if created:
-            path.unlink(missing_ok=True)
-        raise
-    return path
+    """Atomically publish a register only if report and full journal stay stable.
+
+    Every review is a human record, never spending or eligibility approval.
+    Original report/journal remain untouched; an observed evidence change
+    prevents a stale or partially written CSV from being published.
+    """
+    from .review_register import publish_review_register
+    return publish_review_register(
+        report, product, journal, folder,
+        read_cases=read_cases, read_journal=read_journal,
+        columns=CSV_FIELDS, cell=_csv_cell)
