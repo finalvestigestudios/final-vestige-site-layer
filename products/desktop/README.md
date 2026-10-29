@@ -456,3 +456,8 @@ approval. All six Windows executables remain unreleased.
 ## R40 — canonical no-clobber six-executable checksum inventory
 
 Both Windows CI packaging and the offline Windows operator build now invoke `products/desktop/build_inventory.py dist` rather than inventing separate checksum inventories. The script requires **exactly six distinct, bounded Windows candidate file names**, hashes them twice before atomic, exclusive inventory publication, and checks all seven output files and all six hashes again. An existing manifest, extra binary, licensing secret, link or detected change fails closed. It does not execute images, certify provenance or approve release. See [R40 canonical inventory notes](docs/CANONICAL_CANDIDATE_INVENTORY_R40.md). All six products remain unreleased.
+
+
+### R41 — CI evidence-only artifact export
+
+Before R41, the Windows workflow uploaded `dist/*`, which could include all six release candidates (including premium binaries) as retrievable GitHub Actions artifacts. R41 restricts workflow artifacts to the source-only smoke report and the Windows SHA256 inventory/release-gate JSON, **never the EXEs**. A fail-closed, standard-library policy linter runs in both CI jobs, and 22 adversarial tests cover unintended upload expansion, duplicate/missing artifacts and unsafe retention. See [R41 artifact privacy runbook](docs/CI_ARTIFACT_PRIVACY_R41.md). This is artifact-scope hardening, not proof of a Windows native build, malware clearance, premium-fulfillment controls, or QD release approval.
