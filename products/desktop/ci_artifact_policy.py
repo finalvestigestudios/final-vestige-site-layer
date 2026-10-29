@@ -47,6 +47,7 @@ def _fields(step: list[str]) -> tuple[str, tuple[str, ...]]:
     with_indent = len(raw_with) - len(raw_with.lstrip())
     name = None
     paths = None
+    options: dict[str, str] = {}
     offset = start + 1
     while offset < len(step):
         raw = step[offset]
@@ -86,9 +87,15 @@ def _fields(step: list[str]) -> tuple[str, tuple[str, ...]]:
                 paths = (value,)
             else:
                 raise ArtifactPolicyError("Upload path must be a literal allowlist")
-        elif key not in {"if-no-files-found", "retention-days"}:
+        elif key in {"if-no-files-found", "retention-days"}:
+            if key in options:
+                raise ArtifactPolicyError("Duplicate artifact security option")
+            options[key] = value
+        else:
             raise ArtifactPolicyError("Unknown upload-artifact option")
         offset += 1
+    if options != {"if-no-files-found": "error", "retention-days": "7"}:
+        raise ArtifactPolicyError("Artifact failure/retention settings are not approved")
     if name is None or paths is None:
         raise ArtifactPolicyError("Upload name and paths are required")
     return name, paths
