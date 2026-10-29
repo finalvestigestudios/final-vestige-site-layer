@@ -429,3 +429,20 @@ See [R36 ProcureGuard independent verifier runbook](docs/PROCUREMENT_INDEPENDENT
 for command syntax, pinned-value retention, risk limits and regression tests.
 No Windows binary, premium distribution change, or website download is
 approved by this development sprint.
+
+
+### R37 — clean candidate distribution and safe checksum custody (development-only)
+
+The internal six-EXE release gate now requires an **exact seven-file staging
+directory**: the six named Windows x64 executables plus `SHA256SUMS.txt`.
+Extra DLLs/scripts, hidden files, nested folders, accidentally copied private
+license material, links/hardlink aliases, and size-unsafe candidates fail
+closed **before any binary is run**. The gate uses descriptor-verified
+SHA-256 reads and rechecks candidate membership across mocked/real smoke
+phases; changes observed during verification are rejected. Evidence JSON is
+now kept outside `dist` in the internal Windows script and CI flow.
+
+[Read the R37 operator runbook](docs/CANDIDATE_DISTRIBUTION_INTEGRITY_R37.md).
+This does not release software, prove malware safety/signatures, authorize
+payments or compliance decisions, verify premium entitlement, or waive QD
+approval. All six Windows executables remain unreleased.
