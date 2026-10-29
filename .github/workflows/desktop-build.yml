@@ -68,6 +68,7 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_source_scope_r43.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_keyboard_access_r44.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_ui_error_privacy_r45.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_register_r46.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -161,6 +162,12 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python -OO -m unittest discover -s products/desktop/tests -p test_ui_error_privacy_r45.py -v
           if ($LASTEXITCODE -ne 0) { throw "R45 GUI privacy tests failed" }
+      - name: Validate R46 atomic premium registers under optimized Python
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -OO -m unittest discover -s products/desktop/tests -p test_review_register_r46.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R46 review register consistency checks failed" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables

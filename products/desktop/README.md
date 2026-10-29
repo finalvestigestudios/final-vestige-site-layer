@@ -492,3 +492,20 @@ Focused tests: `PYTHONPATH=products/desktop python -m unittest discover -s produ
 See [R45 privacy notes](docs/PRIVATE_GUI_DIAGNOSTICS_R45.md). This is still
 **pre-release**: Windows x64 native testing, malware scanning, premium access
 control and human QD approval are required before distribution.
+
+## R46 — Atomic premium human-review register custody
+
+The GrantAudit Studio Pro and ProcureGuard Studio Pro human exception-review
+CSV exports now use the shared atomic report writer rather than directly writing
+the final filename. Before any final register is published, the exporter
+revalidates **both the complete source report and the complete hash-linked
+review-event history**. Observed mutations, interrupted serialization, disk
+sync failures, existing filenames and symlink destinations fail closed,
+without leaving a partial final report. The same source row citations, review
+decision states, CSV field order and spreadsheet-formula neutralization remain.
+These reports record human reviews only; no automated authorization occurs.
+
+[Read the R46 premium register guide](docs/ATOMIC_REVIEW_REGISTER_R46.md).
+The 20 focused synthetic tests do not establish complete GUI integration,
+native Windows release readiness, historical authenticity or QD signoff.
+All four free and two premium applications remain **unreleased**.
