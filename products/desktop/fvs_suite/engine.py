@@ -224,9 +224,13 @@ def manifest(folder,inputs,outputs, *, expected_inputs=None):
     return publish_text(outpath(folder,"evidence-manifest",".txt"), contents)
 
 def ledger_diff(left,right,folder):
+    from .ledger_provenance import attach_ledger_provenance
     groups=[defaultdict(list),defaultdict(list)]
+    digests=[]
     for source,d in ((left,groups[0]),(right,groups[1])):
-        for r in table(source,("id","amount")):
+        records, source_sha256=table(source,("id","amount"), include_digest=True)
+        digests.append(source_sha256)
+        for r in records:
             k=key(r["id"])
             if not k: raise ValueError(f"Blank transaction ID in {Path(source).name}, row {r['row']}")
             d[k].append(r)
@@ -242,7 +246,12 @@ def ledger_diff(left,right,folder):
                      "right_rows":";".join(r["row"] for r in b),
                      "left_ids":labels_for_report(a,"id"),
                      "right_ids":labels_for_report(b,"id")})
-    return [save(folder,"ledger-diff",("id","status","left_amount","right_amount","difference","left_rows","right_rows","left_ids","right_ids"),rows)]
+    rows=attach_ledger_provenance(
+        rows, left_sha256=digests[0], right_sha256=digests[1])
+    return [save(folder,"ledger-diff",(
+        "id","status","left_amount","right_amount","difference",
+        "left_rows","right_rows","left_ids","right_ids",
+        "left_source_sha256","right_source_sha256","input_identity_review"),rows)]
 
 def invoice_twins(source,folder):
     """Produce a bounded, provenance-rich review report without internet access.

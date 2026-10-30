@@ -654,3 +654,15 @@ preserved original with SHA-256. It does not certify authenticity, fraud, or
 compliance. Empty imports have no report row to carry the fingerprint.
 See [R61 source snapshot contract](docs/SPENDMAP_SOURCE_SNAPSHOT_R61.md).
 The release/CI/Windows QD gates remain unchanged; no binary is published.
+
+## R62 — LedgerDiff Lite dual-source SHA-256 and self-comparison review (pre-release)
+
+LedgerDiff now attaches the **exact left/right imported CSV source SHA-256** to
+every nonempty reconciliation row. The appended input_identity_review column
+flags byte-identical snapshots (including accidental self-comparison), even if
+the ordinary matching status is matched. The original nine CSV fields, Decimal
+totals, collision review and physical source row citations remain unchanged.
+Header-only inputs have no data row in which to carry fingerprints. See
+[R62 LedgerDiff provenance runbook](docs/LEDGERDIFF_SOURCE_IDENTITY_R62.md).
+No app is released, and premium-access, executable/QD and production gates
+remain mandatory.
