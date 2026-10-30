@@ -243,6 +243,9 @@
   .fv-align__reveal-btn:focus-visible{outline:2px solid var(--fv-ink);outline-offset:2px}
   .fv-align__fact{max-width:800px;margin:0;color:var(--fv-ink-faint);font-size:14px;line-height:1.6;filter:blur(0);transition:filter .3s ease}
   .fv-align__fact a{color:var(--fv-accent-bright)}
+  .fv-align__fact a:focus-visible{outline:2px solid var(--fv-ink);outline-offset:2px}
+  .fv-align__fact:focus{outline:2px solid var(--fv-accent);outline-offset:4px}
+  .fv-align__fact:focus:not(:focus-visible){outline:none}
   .fv-align__reveal--pending .fv-align__question{display:flex}
   .fv-align__reveal--pending .fv-align__fact{filter:blur(5px)}
   .fv-align__reveal--pending.fv-align--found .fv-align__fact{filter:blur(0)}
@@ -728,7 +731,7 @@
   </div>
   <div class="fv-align__reveal" data-fv-align-reveal>
     <p class="fv-align__question" data-fv-align-question>A system map from 1903 and a disaster fifteen years later &mdash; why put them side by side? <button type="button" class="fv-align__reveal-btn" data-fv-align-reveal-trigger>Show the connection</button></p>
-    <p class="fv-align__fact" data-fv-align-fact>This 1903 map shows the Brooklyn Rapid Transit system, including the Brighton line, fifteen years before a new tunnel was threaded through it. That tunnel's six-mile-an-hour curve under Malbone Street didn't open until September&nbsp;25, 1918 &mdash; five weeks before a dispatcher took it at five times the limit. This map isn't a record of the wreck. It's a record of how established the system already was when one new, tightly restricted curve was added to it. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+    <p class="fv-align__fact" data-fv-align-fact tabindex="-1">This 1903 map shows the Brooklyn Rapid Transit system, including the Brighton line, fifteen years before a new tunnel was threaded through it. That tunnel's six-mile-an-hour curve under Malbone Street didn't open until September&nbsp;25, 1918 &mdash; five weeks before a dispatcher took it at five times the limit. This map isn't a record of the wreck. It's a record of how established the system already was when one new, tightly restricted curve was added to it. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
   </div>
   <p class="fv-align__status" role="status" aria-live="polite" data-fv-align-status></p>
 </section>
@@ -745,22 +748,26 @@
   var status = document.querySelector('[data-fv-align-status]');
   if(!divider || !mapPanel || !badge || !reveal || !fact || !trigger || !status) return;
   var LOW = 15, HIGH = 85;
+  var supportsInert = 'inert' in document.createElement('div');
   var found = false, visitedLow = false, visitedHigh = false;
   reveal.classList.add('fv-align__reveal--pending');
+  if(supportsInert) fact.inert = true;
   function describePosition(pct){
     if(pct <= LOW) return 'showing mostly the 1918 to 1920 reconstruction, map ' + Math.round(pct) + ' percent visible';
     if(pct >= HIGH) return 'showing mostly the 1903 map, map ' + Math.round(pct) + ' percent visible';
     return 'comparing both records, map ' + Math.round(pct) + ' percent visible';
   }
-  function revealConnection(){
+  function revealConnection(focusTarget){
     if(found) return;
     found = true;
     badge.setAttribute('data-revealed','1');
     stage.classList.add('fv-align--locked');
     reveal.classList.add('fv-align--found');
+    if(supportsInert) fact.inert = false;
+    status.textContent = 'Connection found: the map predates the curve that failed. Read why below.';
+    if(focusTarget) focusTarget.focus();
     trigger.textContent = 'Connection found';
     trigger.disabled = true;
-    status.textContent = 'Connection found: the map predates the curve that failed. Read why below.';
   }
   function checkDiscovery(pct){
     if(pct <= LOW) visitedLow = true;
@@ -794,7 +801,7 @@
     if(e.key === 'ArrowLeft'){ setPosition(current - 4); e.preventDefault(); }
     if(e.key === 'ArrowRight'){ setPosition(current + 4); e.preventDefault(); }
   });
-  trigger.addEventListener('click', revealConnection);
+  trigger.addEventListener('click', function(){ revealConnection(fact); });
   setPosition(20);
 })();
 </script>

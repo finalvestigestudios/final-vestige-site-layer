@@ -24,12 +24,14 @@ if(!fvSaShouldRun({hasStage:!!stage,hasDivider:!!divider,hasMapPanel:!!mapPanel,
 
 const LOW=15;
 const HIGH=85;
+const supportsInert='inert' in document.createElement('div');
 
 let found=false;
 let visitedLow=false;
 let visitedHigh=false;
 
 reveal.classList.add('fv-align__reveal--pending');
+if(supportsInert)fact.inert=true;
 
 const describePosition=(pct)=>{
   if(pct<=LOW)return 'showing mostly the 1918 to 1920 reconstruction, map '+Math.round(pct)+' percent visible';
@@ -37,15 +39,17 @@ const describePosition=(pct)=>{
   return 'comparing both records, map '+Math.round(pct)+' percent visible';
 };
 
-const revealConnection=()=>{
+const revealConnection=(focusTarget)=>{
   if(found)return;
   found=true;
   badge.setAttribute('data-revealed','1');
   stage.classList.add('fv-align--locked');
   reveal.classList.add('fv-align--found');
+  if(supportsInert)fact.inert=false;
+  status.textContent='Connection found: the map predates the curve that failed. Read why below.';
+  if(focusTarget)focusTarget.focus();
   trigger.textContent='Connection found';
   trigger.disabled=true;
-  status.textContent='Connection found: the map predates the curve that failed. Read why below.';
 };
 
 const checkDiscovery=(pct)=>{
@@ -91,12 +95,18 @@ stage.addEventListener('keydown',(e)=>{
   if(e.key==='ArrowRight'){ setPosition(current+4); e.preventDefault(); }
 });
 
-trigger.addEventListener('click',revealConnection);
+trigger.addEventListener('click',()=>revealConnection(fact));
 
 setPosition(20);
 
 }catch(_){
   window.__fvSignatureAlignment=false;
+  try{
+    const fallbackFact=document.querySelector('[data-fv-align-fact]');
+    if(fallbackFact&&'inert' in fallbackFact)fallbackFact.inert=false;
+    const fallbackReveal=document.querySelector('[data-fv-align-reveal]');
+    if(fallbackReveal)fallbackReveal.classList.remove('fv-align__reveal--pending');
+  }catch(_){}
 }
 })();
 </script>

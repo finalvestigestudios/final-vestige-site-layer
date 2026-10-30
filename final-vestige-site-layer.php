@@ -63,8 +63,8 @@ function fvsl_release_manifest() {
         ),
         'signature-alignment' => array(
             'file'   => 'signature-alignment-wp-block-v1.txt',
-            'bytes'  => 3482,
-            'sha256' => 'dec2fca575c2b5b526fc753465c59c7905700ab1f86a8f613ab919002876558c',
+            'bytes'  => 3996,
+            'sha256' => 'c4af4785f50438b1aa2a2425342bd64293d6e54ec2e9d26d4647c43e8d375fd2',
         ),
     );
 }

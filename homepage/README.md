@@ -81,9 +81,32 @@ JSON-LD):
    question/button pairing never appears at all and the fact text is plain, unblurred, always-visible
    HTML — nothing is ever concealed except by a successful JS init, and concealment is the only
    state that payload ever adds. The two documents still render side by side, split down the middle,
-   each captioned. `tests/verify_signature_alignment.py` covers the initial state, pointer and
-   keyboard interaction, the button alternative, the fail-closed no-concealment path, and the
-   accessible status announcement.
+   each captioned.
+
+   Concealment is enforced with the standards-based `inert` attribute (feature-detected; silently
+   skipped on browsers that predate it, which just means the CSS blur becomes the only concealment —
+   never a broken or inaccessible state), applied only to the fact element itself — the question text
+   and "Show the connection" button stay fully focusable throughout. This keeps the concealed source
+   link out of keyboard Tab order and out of the accessibility tree entirely until discovery, instead
+   of the earlier approach (CSS `blur()` alone), which still left the link reachable via Tab while
+   visually illegible — a real keyboard-accessibility defect an independent review caught. Focus
+   management distinguishes how discovery happened: activating the button moves focus predictably to
+   the now-revealed fact (`tabindex="-1"` on the `<p>`, focused programmatically); discovering via
+   drag or keyboard movement deliberately leaves focus on the comparison stage and only announces the
+   finding through the live-status region, since moving a mid-drag user's focus away from the control
+   they're actively using would be more disorienting, not less. A failure partway through
+   initialization (after concealment has already been applied) is caught and reverses the
+   concealment, so a partial failure can never leave the real evidence permanently hidden.
+
+   `tests/verify_signature_alignment.py` covers the initial state, pointer and keyboard interaction,
+   the button alternative, the fail-closed no-concealment path (both "never initialized" and "failed
+   partway through"), inert state transitions, and the accessible status announcement — all via a
+   simulated DOM harness. `tests/verify_signature_alignment_keyboard_browser.py` is a separate,
+   real-browser (Playwright/Chromium) test that drives actual Tab/Enter/Arrow-key input against a
+   fixture built live from the real page markup and real payload, and records the actual focus
+   sequence before and after discovery; it is **not** part of the CI gate (this repository has no
+   Node/Playwright dependency CI could install) and is meant to be run manually wherever Playwright
+   is already available.
 8. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
    blocks (Latest investigation, Recently filed, category strip, Exchange preview, More
    investigations, Research Trails, Sources and research tools) are untouched — same queries,
@@ -176,10 +199,13 @@ compatibility contract:
   - [ ] Library map loads, the loupe follows the cursor (desktop) and touch drag (mobile), and
         keyboard Enter/Space toggles a centered magnified view.
   - [ ] Alignment stage (the map/chronology compare slider) starts with the fact text blurred and
-        the "Show the connection" button visible and focusable; responds to mouse drag, touch drag,
-        and keyboard arrows; reveals the real connecting fact (not just a badge) only after both
-        ends of the stage are explored or the button is used; the reveal is announced to screen
-        readers via the status region.
+        inert (confirm with a screen reader or by Tab-ing through: the concealed source link must
+        NOT receive focus) and the "Show the connection" button visible and focusable; responds to
+        mouse drag, touch drag, and keyboard arrows; reveals the real connecting fact (not just a
+        badge) only after both ends of the stage are explored or the button is used; activating the
+        button moves focus to the revealed fact predictably, while drag/keyboard discovery leaves
+        focus on the stage and announces the reveal via the status region; the source link becomes
+        Tab-reachable immediately after discovery.
   - [ ] Focus Fieldbook CTA (`fv-focus-cta`) renders on both mobile and desktop widths, its button
         links to `/focus/`, and the section sits directly after the hero, matching the live page.
   - [ ] Dispatch subscription form still submits successfully (unchanged block, but verify after

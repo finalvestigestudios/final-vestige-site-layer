@@ -2,6 +2,34 @@
 
 ## 0.4.0 — FVSL-VESTIGE-ASSEMBLY-HOME-002 (continued, same candidate, pre-merge)
 
+- **Signature Alignment: concealed-content keyboard accessibility fixed.** An independent QD
+  review of the just-redesigned discovery interaction found that CSS `blur()` alone was not
+  sufficient: the concealed fact's nested source link stayed in normal keyboard Tab order while
+  visually illegible, and activating "Show the connection" could strand focus (the button was
+  disabled without any explicit focus destination). Fixed:
+  - The concealed fact element is now also marked `inert` (feature-detected, with the existing
+    blur as an always-present visual fallback) after a successful JS init, so the link cannot
+    receive keyboard focus or be activated until discovery — removed the instant discovery fires.
+  - Button-triggered discovery moves focus predictably to the revealed fact (`tabindex="-1"` on
+    the `<p>`, focused programmatically); drag/keyboard-triggered discovery deliberately leaves
+    focus on the comparison stage and only announces the finding via the existing live-status
+    region, so a user mid-interaction with the slider isn't yanked elsewhere.
+  - A failure partway through initialization (after concealment was already applied) is now caught
+    and reverses the concealment, so a partial failure can never leave the real evidence
+    permanently hidden.
+  - Added `a:focus-visible` / `:focus` outline styles for the fact element and its link.
+  - `tests/verify_signature_alignment.py` gained inert-state assertions across every scenario, a
+    focus-call-count check for the button/slider focus-management split, and a new
+    midway-failure-leaves-no-residual-concealment regression.
+  - Added `tests/verify_signature_alignment_keyboard_browser.py`: a real-browser (Playwright/
+    Chromium) keyboard/focus test, run against a fixture built live from the current page markup
+    and payload (not a frozen copy). Not part of the CI gate (no Node/Playwright dependency exists
+    in this repo for CI to install) — run manually. Confirmed passing against this exact head: the
+    concealed link is skipped entirely in the pre-discovery Tab sequence; button-triggered reveal
+    moves focus to the fact and the link becomes Tab-reachable immediately after; keyboard/slider
+    discovery never moves focus off the stage; re-crossing both extremes after discovery produces
+    no duplicate status announcement; the no-JS fallback has no concealment at all.
+
 - **Signature Alignment redesigned as a genuine evidence-discovery interaction**, following a
   second independent QD finding that the prior fix (which only corrected the self-triggering
   badge) still left the interaction decorative: the real "why it matters" fact was printed

@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "signature-alignment-wp-block-v1.txt"
 PAGE = ROOT / "homepage" / "page-6-home.blocks.html"
-EXPECTED_BYTES = 3482
-EXPECTED_SHA256 = "dec2fca575c2b5b526fc753465c59c7905700ab1f86a8f613ab919002876558c"
+EXPECTED_BYTES = 3996
+EXPECTED_SHA256 = "c4af4785f50438b1aa2a2425342bd64293d6e54ec2e9d26d4647c43e8d375fd2"
 
 
 def require(condition: bool, message: str) -> None:
@@ -37,6 +37,8 @@ def main() -> None:
     require("pointerdown" in text and "mousedown" in text, "pointer and mouse drag support missing")
     require("keydown" in text and "ArrowLeft" in text and "ArrowRight" in text, "keyboard operation missing")
     require("'click'" in text or '"click"' in text, "reveal-trigger click handler missing")
+    require("'inert' in document.createElement" in text, "feature-detected inert concealment missing")
+    require("fact.inert" in text, "payload does not toggle inert on the concealed fact")
 
     banned_patterns = {
         r"\bfetch\s*\(": "network fetch",
@@ -101,7 +103,9 @@ const makeEl = (name) => {
     _classes: new Set(),
     style: {},
     disabled: false,
+    inert: false,
     textContent: '',
+    _focusCalls: 0,
     addEventListener(type, cb) { listeners[el._name + ':' + type] = cb; },
     setAttribute(k, v) { this._attrs[k] = String(v); },
     getAttribute(k) { return this._attrs[k]; },
@@ -110,7 +114,7 @@ const makeEl = (name) => {
       remove: (c) => el._classes.delete(c),
       contains: (c) => el._classes.has(c),
     },
-    focus() {},
+    focus() { el._focusCalls++; },
     getBoundingClientRect() { return { left: 0, width: 100 }; },
   };
   return el;
@@ -138,10 +142,13 @@ function buildDom(omit) {
   }[sel] || null));
   global.window = { addEventListener(type, cb) { listeners['window:' + type] = cb; }, __fvSignatureAlignment: false };
   global.document = {
+    createElement: () => ({ inert: false }),
     querySelector: (sel) => ({
       '[data-fv-align-stage]': stage,
       '[data-fv-align-reveal]': reveal,
       '[data-fv-align-status]': status,
+      '[data-fv-align-fact]': fact,
+      '[data-fv-align-reveal-trigger]': trigger,
     }[sel] || null),
   };
   return { stage, divider, mapPanel, badge, reveal, fact, trigger, status };
@@ -155,6 +162,7 @@ assert(dom.badge.getAttribute('data-revealed')==='0','badge must not be revealed
 assert(!dom.stage.classList.contains('fv-align--locked'),'stage must not be locked before any interaction');
 assert(dom.trigger.disabled===false,'reveal-trigger button must start enabled');
 assert(!dom.status.textContent,'status live region must be empty before any discovery');
+assert(dom.fact.inert===true,'the concealed fact (and its nested link) must be inert — unfocusable and non-interactive — before discovery');
 assert(dom.stage.getAttribute('aria-valuenow')==='20','initial position must be the real, documented starting point (20), not inside any special band');
 
 const keydown = listeners['stage:keydown'];
@@ -176,6 +184,8 @@ assert(dom.reveal.classList.contains('fv-align--found'),'reveal panel must carry
 assert(dom.trigger.disabled===true,'reveal-trigger button should reflect the found state once discovery already happened');
 assert(dom.status.textContent.length>0,'accessible status live region must announce the discovery to assistive technology');
 assert(/connection found/i.test(dom.status.textContent),'status announcement must describe the discovery, not just say a generic value changed');
+assert(dom.fact.inert===false,'the fact (and its link) must become focusable/interactive again immediately after discovery');
+assert(dom.fact._focusCalls===0,'keyboard/slider-driven discovery must NOT move focus away from the stage — the brief requires retaining slider focus and only announcing via the live region');
 console.log('SIGNATURE ALIGNMENT DISCOVERY (KEYBOARD) REGRESSION: PASS');
 """
     _run_node_scenario(scenario_full_init, "SIGNATURE ALIGNMENT DISCOVERY (KEYBOARD) REGRESSION: PASS")
@@ -187,10 +197,12 @@ const onMove = listeners['window:pointermove'] || listeners['window:mousemove'];
 const onUp = listeners['window:pointerup'] || listeners['window:mouseup'];
 assert(typeof onMove === 'function' && typeof onUp === 'function', 'pointer/mouse move and up handlers must be registered');
 
+assert(dom.fact.inert===true,'fact must be inert before any pointer interaction');
 onPointerDown({ clientX: 5, cancelable: true, preventDefault(){} });
 onMove({ clientX: 97 });
 onUp();
 assert(dom.badge.getAttribute('data-revealed')==='1','a real pointer drag that visits both extremes must trigger discovery exactly like keyboard does');
+assert(dom.fact.inert===false,'fact must become interactive again after pointer-driven discovery');
 console.log('SIGNATURE ALIGNMENT DISCOVERY (POINTER) REGRESSION: PASS');
 """
     _run_node_scenario(scenario_pointer, "SIGNATURE ALIGNMENT DISCOVERY (POINTER) REGRESSION: PASS")
@@ -199,13 +211,32 @@ console.log('SIGNATURE ALIGNMENT DISCOVERY (POINTER) REGRESSION: PASS');
 const onClick = listeners['trigger:click'];
 assert(typeof onClick === 'function', 'reveal-trigger button must have a click handler — the understandable, non-drag alternative required for accessibility');
 assert(dom.badge.getAttribute('data-revealed')==='0','must not be revealed before the button is used');
+assert(dom.fact.inert===true,'fact must be inert before the button is used');
 onClick();
 assert(dom.badge.getAttribute('data-revealed')==='1','clicking the reveal-trigger button must independently trigger the same discovery as dragging, with zero prior drag/keyboard interaction');
 assert(dom.reveal.classList.contains('fv-align--found'),'button-triggered discovery must also un-conceal the real fact text');
 assert(dom.status.textContent.length>0,'button-triggered discovery must also announce via the accessible status region');
+assert(dom.fact.inert===false,'fact must become interactive/focusable immediately after button-triggered discovery');
+assert(dom.fact._focusCalls===1,'activating the reveal-trigger button must move focus to the revealed fact exactly once — a predictable destination, not a stranded or lost focus');
+onClick();
+assert(dom.fact._focusCalls===1,'an already-completed discovery must not re-trigger (no duplicate focus moves or re-announcements) if the handler fires again');
 console.log('SIGNATURE ALIGNMENT DISCOVERY (BUTTON ALTERNATIVE) REGRESSION: PASS');
 """
     _run_node_scenario(scenario_button, "SIGNATURE ALIGNMENT DISCOVERY (BUTTON ALTERNATIVE) REGRESSION: PASS")
+
+    scenario_midway_failure = dom_harness + r"""
+const dom = buildDom();
+dom.stage.addEventListener = () => { throw new Error('simulated failure after concealment began'); };
+""" + full_js + r"""
+assert(window.__fvSignatureAlignment===false,'a midway failure must reset the duplicate-init guard so a later attempt is not permanently blocked');
+assert(dom.fact.inert===false,'a failure that happens AFTER concealment began must not leave the fact permanently inert — point 6 of the brief requires a readable, accessible fallback rather than leaving the evidence concealed');
+assert(!dom.reveal.classList.contains('fv-align__reveal--pending'),'a midway failure must also clear the pending/concealed visual class so sighted users are not left with a permanently blurred, unreadable fact either');
+console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (MIDWAY FAILURE LEAVES NO RESIDUAL CONCEALMENT) REGRESSION: PASS');
+"""
+    _run_node_scenario(
+        scenario_midway_failure,
+        "SIGNATURE ALIGNMENT FAIL-CLOSED (MIDWAY FAILURE LEAVES NO RESIDUAL CONCEALMENT) REGRESSION: PASS",
+    )
 
     scenario_missing = dom_harness + "const dom = buildDom({trigger:true});\n" + full_js + r"""
 assert(dom.reveal.classList.contains('fv-align__reveal--pending')===false,'when a required real element is missing (simulating a failed/partial init, the same condition a no-JS page is in), the payload must no-op and never conceal the real fact text — it must stay visible');
@@ -231,8 +262,14 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT)
     print(
         "PASS: Signature Alignment exact payload identity, real-element gating, pointer/mouse/"
         "keyboard/button interaction, genuine-discovery gating (both extremes or the explicit "
-        "alternative control, not a decorative badge), accessible status announcement, fail-closed "
-        "no-concealment-without-JS, no dependencies/network calls, and JavaScript syntax verified"
+        "alternative control, not a decorative badge), inert-based concealment of the unrevealed "
+        "fact/link (not focusable, not interactive, before discovery), predictable focus movement "
+        "on button-triggered discovery vs. retained stage focus on slider-triggered discovery, "
+        "accessible status announcement, fail-closed no-concealment-without-JS and "
+        "no-residual-concealment-on-midway-failure, no dependencies/network calls, and JavaScript "
+        "syntax verified. A separate real-browser keyboard/focus test lives in "
+        "tests/verify_signature_alignment_keyboard_browser.py (not part of the CI gate; run "
+        "manually wherever Playwright is available)."
     )
 
 
