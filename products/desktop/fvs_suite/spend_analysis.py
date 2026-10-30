@@ -13,6 +13,7 @@ from typing import Callable, Mapping
 
 from .review import labels_for_report, normalized_collision, raw_values
 from .spend_median import RunningDecimalMedian
+from .spend_input import validated_spend_rows
 
 
 def summarize_spend(
@@ -29,7 +30,7 @@ def summarize_spend(
     vendor spellings. A vendor-wide normalization collision is flagged in
     *every* affected bucket, even if variants appear in different months.
     Baselines use prior observed months, not interpolated calendar months.
-    The input reader, not this summarizer, enforces file/row size limits.
+    Both the CSV reader and this reusable summarizer enforce row safety.
     The source SHA-256 must fingerprint bytes from the SAME imported snapshot.
     It is evidence of source identity, not a digital signature or approval.
     """
@@ -42,13 +43,9 @@ def summarize_spend(
     monthly: dict[str, dict[str, Decimal]] = defaultdict(
         lambda: defaultdict(lambda: Decimal(0)))
 
-    for record in records:
-        vendor = normalize_vendor(record["vendor"])
-        if not vendor:
-            raise ValueError("Blank vendor at row " + record["row"])
-        month = parse_date(record["date"]).strftime("%Y-%m")
-        category = record.get("category", "") or "Uncategorized"
-        amount = parse_money(record["amount"])
+    for record, vendor, month, category, amount in validated_spend_rows(
+            records, normalize_vendor=normalize_vendor,
+            parse_date=parse_date, parse_money=parse_money):
         bucket = (vendor, month, category)
         totals[bucket] += amount
         monthly[vendor][month] += amount
