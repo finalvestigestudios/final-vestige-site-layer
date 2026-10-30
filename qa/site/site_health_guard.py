@@ -92,9 +92,10 @@ def check(snapshot: dict) -> dict:
 
     site = settings.get("site_info", {})
     reading = settings.get("reading", {})
+    privacy = settings.get("privacy", {})
     identity = settings.get("identity", {})
     general = settings.get("general", {})
-    if site.get("is_private") is True or reading.get("blog_public") == 0:
+    if site.get("is_private") is True or privacy.get("blog_public", reading.get("blog_public")) == 0:
         add("P0", "search-visibility-private")
     if identity.get("site_icon") == 0:
         add("REVIEW", "site-icon-unset")
