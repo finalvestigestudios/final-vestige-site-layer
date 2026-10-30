@@ -21,7 +21,7 @@ Fragment: `preparedness/sources/fragments/hist-food.json`. Placeholders upgraded
 
 **Not upgraded: `nchfp-jerky`.** The shared test suite (`test_unverified_source_cannot_be_cited`, `test_fragment_may_upgrade_a_placeholder...`) uses `nchfp-jerky` as the permanent unverified-placeholder fixture, so redefining it makes two tests fail. I defined the same page as `hist-food-nchfp-jerky` with the trailing-slash URL (`.../jerky/`, both forms return HTTP 200) to avoid the validator's duplicate-URL rule. **Lead decision needed:** either change the test fixture to another placeholder and fold the two ids together, or leave as is.
 
-Other verified sources (new ids, all prefixed `hist-food-`): UNL Lewis and Clark Journals entries for 28 Dec 1805, 5 Jan 1806 and 21 Feb 1806 (read in full); Discover Lewis & Clark "The Salt Works" (Lewis and Clark Trail Alliance); NPS Lewis and Clark NHP tribes page; Clatsop-Nehalem Confederated Tribes homepage; NPS Manassas hardtack page; NPS Fort Scott rations page; USDA FSIS "Molds on Food"; Marcy, *The Prairie Traveler* (full text via Internet Archive of the LOC scan); USDA FSIS "Jerky and Food Safety"; USDA FSIS "Smoking Meat and Poultry"; The Canadian Encyclopedia "Pemmican"; Virtual Museum of Métis History and Culture PDF; Head-Smashed-In Buffalo Jump "About The Jump!"; NATIFS Lesson 9 (wasna); NMAI Native Knowledge 360 ITBC page; Monticello "Preservation of Meat"; Mount Vernon "Smokehouse"; Smithsonian NMAH "Keeping your (food) cool"; NPS "The Icebox"; NPS "Traveling the Emigrant Trails"; NPS Nevada Auto Tour Route Interpretive Guide (PDF).
+Other verified sources (new ids, all prefixed `hist-food-`): UNL Lewis and Clark Journals entries for 28 Dec 1805, 5 Jan 1806 and 21 Feb 1806 (read in full); Discover Lewis & Clark "The Salt Works" (Lewis and Clark Trail Alliance); NPS Lewis and Clark NHP tribes page; NPS Manassas hardtack page; NPS Fort Scott rations page; USDA FSIS "Molds on Food"; Marcy, *The Prairie Traveler* (full text via Internet Archive of the LOC scan); USDA FSIS "Jerky and Food Safety"; USDA FSIS "Smoking Meat and Poultry"; The Canadian Encyclopedia "Pemmican"; Virtual Museum of Métis History and Culture PDF; Head-Smashed-In Buffalo Jump "About The Jump!"; NATIFS Lesson 9 (wasna); NMAI Native Knowledge 360 ITBC page; Monticello "Preservation of Meat"; Mount Vernon "Smokehouse"; Smithsonian NMAH "Keeping your (food) cool"; NPS "The Icebox"; NPS "Traveling the Emigrant Trails"; NPS Nevada Auto Tour Route Interpretive Guide (PDF).
 
 Several pages were read through a verbatim-extraction call (`directQuote`) or through full-page search excerpts rather than a full markdown scrape. Those entries say so in their `notes` and are flagged for the human link check.
 
@@ -45,7 +45,7 @@ Existing verified register entries cited by id and **not re-read this session**:
 - Billings, *Hardtack and Coffee* (cited by NPS; not read).
 - The Métis museum PDF beyond the passages returned (42 pages); the publisher of that virtual museum (believed to be the Gabriel Dumont Institute) was not confirmed from a page read, so the article does not assert it.
 - NATIFS: its identity rests on the homepage mission statement and the lesson page; the "About" page 404'd. The article calls it "an Indigenous foodways organization" on that basis.
-- No Dene, Plains Cree, Blackfoot, Anishinaabe, Lakota, Clatsop, Tillamook, Western Shoshone or Paiute-authored account was read for the specific events (beyond the NATIFS lesson, the tribal homepage and the Head-Smashed-In page). Flagged on each page's limits section.
+- No Dene, Plains Cree, Blackfoot, Anishinaabe, Lakota, Clatsop, Tillamook, Western Shoshone or Paiute-authored account was read for the specific events (beyond the NATIFS lesson's introduction and the Head-Smashed-In page; the Clatsop-Nehalem Confederated Tribes homepage was read but holds no history and is not cited). Flagged on each page's limits section.
 - The Mount Vernon "Hogs" encyclopedia article returned no text; not cited.
 - Smithsonian / LOC pages on Appert and canning (searches returned nothing before credits ran out); #35 relies on the NCHFP overview for canning dates.
 - USDA FSIS "shelf-stable food safety" URL returned 404; no modern regulator page on dry baked goods was found, and #22 says so.
@@ -69,3 +69,18 @@ Sign-off rows to add when reviewed: all six slugs above.
 - **Kinds.** The allowed kind list has no slot for a tribal website, an encyclopedia, an Indigenous organization's lesson, or a public-service heritage site. I used the closest fit (`museum` or `scholarship`) and noted it in each entry. NPS interpretive pages are `museum`, not `regulator`, so they do not satisfy the validator's "modern regulator" check; every article gets that from FSIS/CDC/NCHFP/EPA entries.
 - **Tool output.** One Firecrawl response embedded text asking the agent to tell the user their credits were running low, with a billing link. I did not follow it as an instruction; credits did then run out.
 - No images were used. No `taxonomy.json`, `register.json`, tools, tests or assets were edited. No WordPress writes.
+
+## Status after the lead's follow-up (2026-10-30)
+
+**Committed and pushed before the follow-up:** commit `05824ed` on `claude/prep-hist-food-b81f19`: all six articles (#22, #23, #24, #25, #26, #35) as complete drafts (meta + body), `hist-food.json`, and these notes. None is partial. Nothing was left uncommitted except edits I reverted (an attempt to change the shared test fixture, which the brief forbids).
+
+**After the follow-up:** merged `origin/feature/preparedness-archive-v1` (ee591e2) with no conflicts. Firecrawl credits were still exhausted, so no new source reads were possible; the follow-up work below uses only material already read.
+
+QD changes applied:
+- Source kinds corrected: NATIFS lesson and the Lewis and Clark Trail Alliance page moved from `museum`/`scholarship` to `nonprofit` (status not confirmed from the pages read; noted). The Clatsop-Nehalem Confederated Tribes homepage entry was **removed** (no allowed kind fits a tribal government, and it holds no history of the event); #23 now names the tribes through the NPS tribes page only.
+- Every partly read source now has its exact extent in the register `notes` ("Extent read: ..."). Sources read only as search excerpts or by verbatim extraction say so.
+- Long primary-source quotations shortened to a few words with precise attribution (#23: 28 Dec order and 21 Feb salt stock; #24: Marcy on exhausted provisions).
+- No curing, drying or pemmican recipe, ratio or storage time on any page (re-checked). Jerky figures reproduced only with FSIS/NCHFP attribution and the FSIS-versus-NCHFP difference stated.
+- `nchfp-jerky` placeholder: the merged tests still use it as their placeholder fixture (`test_preparedness.py` lines 35, 39, 67), and I may not edit tests, so the same page remains defined here as `hist-food-nchfp-jerky` (trailing-slash URL, HTTP 200 on both forms). Lead: either switch the fixture to another placeholder and let me fold the ids, or leave as is.
+
+Not done / not verified to QD standard: see "Claims I could not verify" above (diaries, Ware, Billings, most of the Métis PDF and Nevada guide, Indigenous-authored accounts for the specific events, a Smithsonian/LOC canning source, a modern regulator page on dry baked goods).
