@@ -70,6 +70,8 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_ui_error_privacy_r45.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_review_register_r46.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_journal_io_r47.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_lock_r48.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_lock_integration_r48.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -175,6 +177,14 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python -OO -m unittest discover -s products/desktop/tests -p test_journal_io_r47.py -v
           if ($LASTEXITCODE -ne 0) { throw "R47 premium review journal custody failed" }
+      - name: Verify R48 premium writer lock ownership and both review workbenches
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -OO -m unittest discover -s products/desktop/tests -p test_review_lock_r48.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R48 writer lock custody failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p test_review_lock_integration_r48.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R48 grant and procurement review integration failed" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables
