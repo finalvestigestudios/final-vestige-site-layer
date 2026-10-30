@@ -1,0 +1,884 @@
+{
+  "hostname": "finalvestige.com",
+  "captured_date": "2026-10-29",
+  "source": "WordPress.com authenticated read-only connector",
+  "expected_brand": "Final Vestige Studios",
+  "navigation_id": 5,
+  "navigation_markup": "<!-- wp:navigation-link {\"label\":\"Home\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/blog/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"The Public Record\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/accountability/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Labs\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/labs/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"The Library\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/free-resources/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-submenu {\"label\":\"Research\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/free-resources/research-sources/\",\"kind\":\"custom\"} -->\n<!-- wp:navigation-link {\"label\":\"The Library\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/free-resources/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Puységur Files\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Research Sources\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/free-resources/research-sources/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Archive Shelf\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/archive-shelf/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"The Failure Chain\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/the-failure-chain/\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation-submenu -->\n<!-- wp:navigation-submenu {\"label\":\"Archive\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/archive/\",\"kind\":\"custom\"} -->\n<!-- wp:navigation-link {\"label\":\"Archive\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/archive/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Across Time \\u0026 Place\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/archive/time-place/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Research Dossiers\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/archive/dossiers/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"The Vestige Registry\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/archive/vestige-registry/\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation-submenu -->\n<!-- wp:navigation-submenu {\"label\":\"Explore\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/explore/\",\"kind\":\"custom\"} -->\n<!-- wp:navigation-link {\"label\":\"Explore Final Vestige\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/explore/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Puységur’s Animal Magnetism Files\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation-submenu -->\n<!-- wp:navigation-submenu {\"label\":\"Watch \\u0026 Listen\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/watch/\",\"kind\":\"custom\"} -->\n<!-- wp:navigation-link {\"label\":\"Podcast\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/podcast/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Watch\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/watch/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Films\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/watch/films/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Primary Sources \\u0026 Archives\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/watch/primary-sources/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Engineering Failure \\u0026 Disaster\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/watch/failure-engineering/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Maps \\u0026 Place Research\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/watch/maps-places/\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation-submenu -->\n<!-- wp:navigation-link {\"label\":\"History Lab\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/history-lab/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"The Exchange\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/community/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-submenu {\"label\":\"The Collection\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/collection/\",\"kind\":\"custom\"} -->\n<!-- wp:navigation-link {\"label\":\"The Collection\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/collection/\",\"kind\":\"custom\"} /-->\n\n<!-- /wp:navigation-submenu -->\n<!-- wp:navigation-submenu {\"label\":\"About\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/about/\",\"kind\":\"custom\"} -->\n<!-- wp:navigation-link {\"label\":\"About\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/about/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Bryan Rhodes\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/about/bryan-rhodes/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Disclosures \\u0026 Policies\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/about/disclosures-policies/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Editorial Standards\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/editorial-standards/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Corrections \\u0026 Contact\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/contact/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Terms \\u0026 Disclaimer\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/terms-disclaimer/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Privacy Policy\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/privacy-policy/\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Affiliate Disclosure\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/affiliate-disclosure/\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation-submenu -->\n\n\n<!-- wp:navigation-link {\"label\":\"Free Focus Fieldbook\",\"type\":\"custom\",\"url\":\"https://finalvestige.com/focus/\",\"kind\":\"custom\"} /-->",
+  "content": [
+    {
+      "id": 1579,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": 1484,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/"
+    },
+    {
+      "id": 1480,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/podcast/"
+    },
+    {
+      "id": 1316,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/"
+    },
+    {
+      "id": 1315,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/"
+    },
+    {
+      "id": 1314,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/"
+    },
+    {
+      "id": 1313,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/"
+    },
+    {
+      "id": 1312,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/"
+    },
+    {
+      "id": 1310,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/ledger/"
+    },
+    {
+      "id": 1309,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/watch/"
+    },
+    {
+      "id": 1308,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/votes-decisions/"
+    },
+    {
+      "id": 1307,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/abuse-of-power/"
+    },
+    {
+      "id": 1306,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/public-money-private-power/"
+    },
+    {
+      "id": 1305,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/failures-to-protect/"
+    },
+    {
+      "id": 1433,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/labs/"
+    },
+    {
+      "id": 1377,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": 1304,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/"
+    },
+    {
+      "id": 1311,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/accountability/evidence/"
+    },
+    {
+      "id": 1342,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/about/disclosures-policies/"
+    },
+    {
+      "id": 1338,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/free-resources/research-sources/"
+    },
+    {
+      "id": 1148,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive-shelf/"
+    },
+    {
+      "id": 1127,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-enumerators-block/"
+    },
+    {
+      "id": 1125,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-builders-trace/"
+    },
+    {
+      "id": 1124,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-year-in-the-wood/"
+    },
+    {
+      "id": 1123,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-paper-witness/"
+    },
+    {
+      "id": 1122,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-missing-caption/"
+    },
+    {
+      "id": 1121,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-lost-itinerary/"
+    },
+    {
+      "id": 1120,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-working-order/"
+    },
+    {
+      "id": 1119,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-living-record/"
+    },
+    {
+      "id": 1060,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-open-account/"
+    },
+    {
+      "id": 1057,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-night-map/"
+    },
+    {
+      "id": 1054,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-old-line/"
+    },
+    {
+      "id": 1051,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-moving-noon/"
+    },
+    {
+      "id": 1048,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-weather-window/"
+    },
+    {
+      "id": 1044,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-findspot/"
+    },
+    {
+      "id": 1043,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-dark-interval/"
+    },
+    {
+      "id": 1037,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-breathing-room/"
+    },
+    {
+      "id": 1035,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-second-currency/"
+    },
+    {
+      "id": 1033,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-signal-chain/"
+    },
+    {
+      "id": 1031,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-last-fix/"
+    },
+    {
+      "id": 1029,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-failure-chain/"
+    },
+    {
+      "id": 1027,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-turning-screw/"
+    },
+    {
+      "id": 748,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/history-lab/"
+    },
+    {
+      "id": 747,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/community/"
+    },
+    {
+      "id": 547,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/time-place/"
+    },
+    {
+      "id": 543,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/vestige-registry/"
+    },
+    {
+      "id": 542,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/fire-safety/"
+    },
+    {
+      "id": 541,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/search-recovery/"
+    },
+    {
+      "id": 540,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/nuclear-safety/"
+    },
+    {
+      "id": 539,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/maritime-safety/"
+    },
+    {
+      "id": 538,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/us-navy/"
+    },
+    {
+      "id": 537,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/standards/"
+    },
+    {
+      "id": 536,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/dossiers/"
+    },
+    {
+      "id": 531,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/field-cabinet/"
+    },
+    {
+      "id": 529,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/films/"
+    },
+    {
+      "id": 525,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/explore/"
+    },
+    {
+      "id": 523,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/dispatch/"
+    },
+    {
+      "id": 502,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/courses-lectures/"
+    },
+    {
+      "id": 501,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/objects-archaeology/"
+    },
+    {
+      "id": 500,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/failure-engineering/"
+    },
+    {
+      "id": 499,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/maps-places/"
+    },
+    {
+      "id": 498,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/primary-sources/"
+    },
+    {
+      "id": 235,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/contact/"
+    },
+    {
+      "id": 234,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/about/bryan-rhodes/"
+    },
+    {
+      "id": 193,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-lost-landscape/"
+    },
+    {
+      "id": 191,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/what-survives/"
+    },
+    {
+      "id": 189,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/the-archive-trail/"
+    },
+    {
+      "id": 1,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/about/"
+    },
+    {
+      "id": 78,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/collection/"
+    },
+    {
+      "id": 77,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/free-resources/"
+    },
+    {
+      "id": 76,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/watch/"
+    },
+    {
+      "id": 17,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/editorial-standards/"
+    },
+    {
+      "id": 16,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/terms-disclaimer/"
+    },
+    {
+      "id": 15,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/privacy-policy/"
+    },
+    {
+      "id": 14,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/affiliate-disclosure/"
+    },
+    {
+      "id": 10,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/blog/"
+    },
+    {
+      "id": 8,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/field-notes/"
+    },
+    {
+      "id": 7,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/archive/"
+    },
+    {
+      "id": 6,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/"
+    },
+    {
+      "id": 621,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/"
+    },
+    {
+      "id": 434,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "id": 433,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/"
+    },
+    {
+      "id": 432,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/"
+    },
+    {
+      "id": 431,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/"
+    },
+    {
+      "id": 428,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/"
+    },
+    {
+      "id": 425,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/"
+    },
+    {
+      "id": 418,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/"
+    },
+    {
+      "id": 413,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/"
+    },
+    {
+      "id": 407,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/"
+    },
+    {
+      "id": 370,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/"
+    },
+    {
+      "id": 367,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/"
+    },
+    {
+      "id": 330,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/"
+    },
+    {
+      "id": 299,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/"
+    },
+    {
+      "id": 292,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/"
+    },
+    {
+      "id": 291,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/"
+    },
+    {
+      "id": 290,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/"
+    },
+    {
+      "id": 289,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/"
+    },
+    {
+      "id": 288,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/"
+    },
+    {
+      "id": 287,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/"
+    },
+    {
+      "id": 285,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/"
+    },
+    {
+      "id": 283,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/"
+    },
+    {
+      "id": 280,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/"
+    },
+    {
+      "id": 279,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/"
+    },
+    {
+      "id": 278,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/"
+    },
+    {
+      "id": 277,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/"
+    },
+    {
+      "id": 276,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/"
+    },
+    {
+      "id": 274,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/"
+    },
+    {
+      "id": 269,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/"
+    },
+    {
+      "id": 268,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/"
+    },
+    {
+      "id": 258,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/"
+    },
+    {
+      "id": 257,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/"
+    },
+    {
+      "id": 256,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/"
+    },
+    {
+      "id": 255,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/"
+    },
+    {
+      "id": 254,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/"
+    },
+    {
+      "id": 253,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/"
+    },
+    {
+      "id": 252,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/"
+    },
+    {
+      "id": 221,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/"
+    },
+    {
+      "id": 220,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/"
+    },
+    {
+      "id": 219,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/"
+    },
+    {
+      "id": 218,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/"
+    },
+    {
+      "id": 217,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/"
+    },
+    {
+      "id": 216,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/"
+    },
+    {
+      "id": 215,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/"
+    },
+    {
+      "id": 214,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/"
+    },
+    {
+      "id": 213,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/"
+    },
+    {
+      "id": 211,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/"
+    },
+    {
+      "id": 190,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/"
+    },
+    {
+      "id": 166,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/"
+    },
+    {
+      "id": 156,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/"
+    },
+    {
+      "id": 151,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/"
+    },
+    {
+      "id": 146,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/"
+    },
+    {
+      "id": 142,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/"
+    },
+    {
+      "id": 139,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/"
+    },
+    {
+      "id": 108,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/"
+    },
+    {
+      "id": 101,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/"
+    },
+    {
+      "id": 38,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/"
+    },
+    {
+      "id": 37,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/"
+    },
+    {
+      "id": 36,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/"
+    },
+    {
+      "id": 35,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/"
+    },
+    {
+      "id": 34,
+      "status": "publish",
+      "published_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/"
+    },
+    {
+      "id": 85,
+      "status": "draft",
+      "intended_url": "https://finalvestige.com/collection/water-resilience-field-manual/"
+    },
+    {
+      "id": 1868,
+      "status": "draft",
+      "intended_url": "https://finalvestige.com/preparedness/"
+    }
+  ],
+  "plugins": [
+    {
+      "name": "Akismet Anti-spam: Spam Protection",
+      "status": "active",
+      "version": "5.7.2",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige Community Layer",
+      "status": "active",
+      "version": "0.3.3",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige Deployment Bridge",
+      "status": "active",
+      "version": "0.3.1",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige History Lab",
+      "status": "active",
+      "version": "0.4.0-rc23",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige History Lab LIVEPASS One-Shot Controller",
+      "status": "active",
+      "version": "0.1.0-predeploy",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige History Lab Secret Bridge",
+      "status": "active",
+      "version": "0.1.0",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige History Lab Vector Activator",
+      "status": "active",
+      "version": "0.1.4",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige History Lab Vector Attach Probe",
+      "status": "active",
+      "version": "0.1.1",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige Media Transport Atomic Proof",
+      "status": "inactive",
+      "version": "0.1.0",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Final Vestige Site Layer",
+      "status": "active",
+      "version": "0.2.1",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "FluentCommunity",
+      "status": "active",
+      "version": "2.12.0",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Gravatar Enhanced",
+      "status": "active",
+      "version": "0.14.0",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Gutenberg",
+      "status": "active",
+      "version": "24.3.0",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Jetpack",
+      "status": "active",
+      "version": "16.4-a.7",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Page Optimize",
+      "status": "active",
+      "version": "0.6.4",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "Site Kit by Google",
+      "status": "active",
+      "version": "1.187.0",
+      "update_available": true,
+      "new_version": "1.190.0"
+    },
+    {
+      "name": "SLG Guest Favorites – Save for Later & Wishlist",
+      "status": "active",
+      "version": "0.1.13",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "WordPress Agent",
+      "status": "active",
+      "version": "7.9.23",
+      "update_available": false,
+      "new_version": ""
+    },
+    {
+      "name": "WPCode Lite",
+      "status": "active",
+      "version": "2.4.0",
+      "update_available": true,
+      "new_version": "2.4.1"
+    }
+  ],
+  "settings": {
+    "site_info": {
+      "is_private": false
+    },
+    "reading": {},
+    "general": {
+      "blogname": "FINAL VESTIGE"
+    },
+    "identity": {
+      "site_icon": 0,
+      "site_logo": 0
+    },
+    "privacy": {
+      "blog_public": 1
+    }
+  },
+  "critical_routes": [
+    "/",
+    "/focus",
+    "/dispatch",
+    "/free-resources"
+  ],
+  "dynamic_prefixes": [
+    "/portal"
+  ],
+  "review_plugin_names": [
+    "Final Vestige History Lab Secret Bridge",
+    "Final Vestige History Lab Vector Activator"
+  ]
+}
