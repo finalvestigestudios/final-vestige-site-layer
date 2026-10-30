@@ -3,3 +3,6 @@
 @media(max-width:700px){.ex2-response__pair{grid-template-columns:minmax(0,1fr)}.ex2-response__tools{flex-direction:column;align-items:stretch}.ex2-response__tools output{margin:0}.ex2-response__downloads a{width:100%}}
 @media(prefers-reduced-motion:reduce){.ex2-response,.ex2-response *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{.ex2-response{background:white;color:black}.ex2-response__pair section{background:#eee!important;color:#111}.ex2-response__pair p:not(.ex2-response__period){color:#111}.ex2-response__tools{display:none!important}}
+
+/* Author display:flex must never override the HTML hidden attribute. */
+.ex2-response__tools[hidden],.ex2-response__item[hidden]{display:none!important}
