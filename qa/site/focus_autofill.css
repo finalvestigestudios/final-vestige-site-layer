@@ -1,0 +1,17 @@
+/* Proposed CSS-only patch for WordPress page 1579 (/focus/).
+   Scope to the existing Jetpack email form. Does not change subscribe behavior.
+   Insert after the existing .fv-focus email input rules in #fv-focus-css. */
+.fv-focus .wp-block-jetpack-subscriptions input[type="email"] {
+  color-scheme: dark;
+  caret-color: #F4EFE6;
+}
+.fv-focus .wp-block-jetpack-subscriptions input[type="email"]:-webkit-autofill,
+.fv-focus .wp-block-jetpack-subscriptions input[type="email"]:-webkit-autofill:hover,
+.fv-focus .wp-block-jetpack-subscriptions input[type="email"]:-webkit-autofill:focus,
+.fv-focus .wp-block-jetpack-subscriptions input[type="email"]:autofill {
+  -webkit-box-shadow: 0 0 0 1000px #101111 inset !important;
+  box-shadow: 0 0 0 1000px #101111 inset !important;
+  -webkit-text-fill-color: #F4EFE6 !important;
+  color: #F4EFE6 !important;
+  caret-color: #F4EFE6 !important;
+}
