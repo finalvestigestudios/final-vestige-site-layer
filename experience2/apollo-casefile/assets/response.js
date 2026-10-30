@@ -1,0 +1,8 @@
+/* Progressive enhancement of six Board→NASA response cards. Complete evidence survives JS failure. */
+(()=>{'use strict';const d=document,tools=d.querySelector('[data-ex2-response-tools]'),select=d.querySelector('[data-ex2-response-filter]'),reset=d.querySelector('[data-ex2-response-reset]'),count=d.querySelector('[data-ex2-response-count]'),items=[...d.querySelectorAll('[data-ex2-response-item]')];if(!tools||!select||!reset||!count||items.length!==6)return;
+const reveal=()=>{items.forEach(x=>x.hidden=false);tools.hidden=true};
+try{const update=()=>{const v=select.value;if(!['all','hardware','procedures'].includes(v))throw Error('bad response class');const show=items.map(x=>v==='all'||x.dataset.ex2ResponseKind===v);items.forEach((x,i)=>{x.hidden=!show[i]});count.textContent=show.filter(Boolean).length+' of 6 historical response records'};
+const recover=()=>{try{update()}catch(_){reveal()}};
+const visit=()=>{const m=/^#response-(0[1-6])$/.exec(location.hash);if(!m)return;const target=d.getElementById('response-'+m[1]);if(!target)return;if(target.hidden){select.value='all';update()}target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'auto'})};
+select.addEventListener('change',recover);reset.addEventListener('click',()=>{select.value='all';recover();select.focus()});update();tools.hidden=false;
+addEventListener('hashchange',()=>{try{visit()}catch(_){reveal()}});if(location.hash)queueMicrotask(()=>{try{visit()}catch(_){reveal()}})}catch(_){reveal()}})();
