@@ -116,6 +116,8 @@ class ReviewQueueUnitTests(unittest.TestCase):
         self.assertEqual(a["summary"]["machine_verified_source_rows"], 2)
         self.assertEqual(a["summary"]["shared_scope_reviews_pending"], 1)
         self.assertEqual(a["summary"]["human_link_checks_pending"], 3)
+        self.assertEqual(a["summary"]["safety_review_states"], {"pending": 1})
+        self.assertEqual(a["summary"]["editorial_states"], {"drafted": 1})
         self.assertEqual(a["summary"]["article_source_citation_pairs"], 2)
         self.assertEqual(a["summary"]["structural_errors"], 0)
         self.assertEqual(a["release_state"], "HOLD")
