@@ -37,6 +37,8 @@ class CorpusSourceReviewQueueTests(unittest.TestCase):
         self.assertEqual(self.summary["unique_literal_urls"], 186)
         self.assertEqual(self.summary["shared_url_groups"], 30)
         self.assertEqual(self.summary["machine_verified_source_rows"], 209)
+        # Exact draft corpus: 367 article-to-source pairs across 35 guides + tool.
+        self.assertEqual(self.summary["article_source_citation_pairs"], 367)
 
     def test_pending_human_review_status_is_not_silently_resolved(self):
         self.assertEqual(self.summary["shared_scope_reviews_pending"], 30)
