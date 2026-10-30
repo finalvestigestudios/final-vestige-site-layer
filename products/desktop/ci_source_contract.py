@@ -11,6 +11,8 @@ from pathlib import Path
 import re
 import sys
 
+from ci_gate_step_contract import GateStepError, verify_gate_step
+
 MAX_WORKFLOW_BYTES = 128 * 1024
 SOURCE_CMD = 'python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"'
 WINDOWS_CMD = 'python products/desktop/scripts/offline_source_gate.py'
@@ -90,6 +92,10 @@ def verify_workflow(source: str) -> int:
             if len(provenance) != 1 or policy_steps[0] >= provenance[0]:
                 raise SourceContractError('Full Linux source evidence gate missing')
             evidence_step = steps[provenance[0]]
+            try:
+                verify_gate_step(evidence_step, 'linux')
+            except GateStepError as exc:
+                raise SourceContractError('Untrusted Linux source-gate commands') from exc
             if ('mkdir -p "$RUNNER_TEMP/fvs-source"' not in evidence_step or
                     'run: |' not in evidence_step):
                 raise SourceContractError('Private Linux evidence directory not established')
@@ -100,6 +106,10 @@ def verify_workflow(source: str) -> int:
             if len(provenance) != 1 or policy_steps[0] >= provenance[0]:
                 raise SourceContractError('Full Windows source evidence gate missing')
             command_step = steps[provenance[0]]
+            try:
+                verify_gate_step(command_step, 'windows')
+            except GateStepError as exc:
+                raise SourceContractError('Untrusted Windows source-gate commands') from exc
             if ('shell: pwsh' not in command_step or
                     'if ($LASTEXITCODE -ne 0) { throw ' not in command_step):
                 raise SourceContractError('Windows source gate may ignore failure')
