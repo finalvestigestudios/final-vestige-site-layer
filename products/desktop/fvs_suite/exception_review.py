@@ -19,6 +19,7 @@ from pathlib import Path
 from .journal_io import append_verified_event, read_regular_bytes
 from .review_commit import confirm_review_commit
 from .review_lock import exclusive_review_lock
+from .review_chronology import check_new_review_clock, check_record_order
 
 MAX_REPORT_BYTES = 64 * 1024 * 1024
 MAX_JOURNAL_BYTES = 16 * 1024 * 1024
@@ -200,6 +201,7 @@ def read_journal(journal: str | Path, batch: ReportBatch) -> list[dict]:
     cases = {case.case_id: case for case in batch.cases}
     result = []
     previous = ZERO_HASH
+    prior_timestamp = None
     for line_number, line in enumerate(data.splitlines(), 1):
         if line_number > MAX_EVENTS:
             raise ValueError("Review journal exceeds maximum recorded events")
@@ -212,6 +214,8 @@ def read_journal(journal: str | Path, batch: ReportBatch) -> list[dict]:
         except (UnicodeError, json.JSONDecodeError) as exc:
             raise ValueError(f"Malformed review journal record {line_number}") from exc
         previous = _validate_event(event, batch, cases, previous)
+        # A valid SHA chain alone must not normalize backdated review events.
+        prior_timestamp = check_record_order(prior_timestamp, event["created_utc"])
         result.append(event)
     return result
 
@@ -241,12 +245,16 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
         events = read_journal(path, batch)
         if len(events) >= MAX_EVENTS:
             raise ValueError("Review journal event limit reached; export and archive it")
+        # Human decisions cannot be recorded earlier than the prior action.
+        # A clock rollback requires inspection, never an automatic timestamp fix.
+        now = datetime.now(timezone.utc)
+        check_new_review_clock(events[-1]["created_utc"] if events else None, now)
         case = cases[case_id]
         payload = {
             "schema": 1, "product": product, "report_sha256": batch.report_sha256,
             "case_id": case_id, "report_row": case.report_row, "flags": case.flags,
             "decision": decision, "reviewer": reviewer, "rationale": rationale,
-            "created_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "created_utc": now.isoformat(timespec="seconds"),
             "previous_hash": events[-1]["event_hash"] if events else ZERO_HASH,
         }
         event = {**payload, "event_hash": _hex_hash(_json(payload))}
