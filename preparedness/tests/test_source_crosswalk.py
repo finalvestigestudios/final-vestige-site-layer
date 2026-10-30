@@ -151,6 +151,35 @@ class PreparednessCrosswalkTests(unittest.TestCase):
             self.assertTrue(lib.slate[slug]["gate"], slug)
             self.assertEqual(lib.articles[slug]["safety_review"]["state"], "pending")
 
+    def test_human_link_check_is_required_before_publication(self):
+        lib = build.Library()
+        meta = lib.articles["making-water-safer"]
+        meta["status"]["publish"] = "published"
+        meta["status"]["editorial"] = "reviewed"
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any("human source-link verification" in e for e in errors), errors)
+
+    def test_independent_release_signoff_is_required_even_after_editorial_review(self):
+        lib = build.Library()
+        meta = lib.articles["making-water-safer"]
+        meta["status"]["publish"] = "published"
+        meta["status"]["editorial"] = "reviewed"
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any("independent QD/release sign-off" in e for e in errors), errors)
+
+    def test_build_manifest_explicitly_reports_hold_and_no_human_links(self):
+        lib = build.Library()
+        # Build manifest is constructed at build.main; assert the source inputs
+        # that must drive its HOLD state without generating or writing outputs.
+        self.assertTrue(any(m["status"]["publish"] == "draft" for m in lib.articles.values()))
+        self.assertTrue(any(g["review_status"] != "resolved" for g in lib.crosswalk_groups.values()))
+        self.assertEqual(
+            sum(s.get("human_link_check") is True
+                for versions in lib.source_variants.values() for s in versions),
+            0,
+        )
+
+
 
 if __name__ == "__main__":
     unittest.main()

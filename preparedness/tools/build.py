@@ -480,7 +480,31 @@ def main(argv=None) -> int:
     out = ROOT / "build"
     (out / "wp").mkdir(parents=True, exist_ok=True)
     (out / "preview").mkdir(parents=True, exist_ok=True)
-    report = {"articles": [], "landing": None}
+    # These are files for drafts only, never an authorization to publish.
+    # Expose collision status explicitly so a generated HTML file cannot be
+    # mistaken for a source-checked/publication-ready finished guide.
+    source_rows = [s for versions in lib.source_variants.values() for s in versions]
+    unresolved_groups = sum(
+        g.get("review_status") != "resolved"
+        for g in lib.crosswalk_groups.values()
+    )
+    report = {
+        "articles": [], "landing": None,
+        "release_evidence": {
+            "state": "HOLD" if unresolved_groups or any(
+                m["status"]["publish"] != "published" for m in lib.articles.values()
+            ) else "REQUIRES_INDEPENDENT_QA",
+            "note": "A build artifact is not permission to publish or proof of medical/food/water safety.",
+            "article_drafts": sum(m["status"]["publish"] == "draft" for m in lib.articles.values()),
+            "article_published": sum(m["status"]["publish"] == "published" for m in lib.articles.values()),
+            "raw_source_rows": len(source_rows),
+            "human_link_checked_rows": sum(s.get("human_link_check") is True for s in source_rows),
+            "source_collision_groups": len(lib.crosswalk_groups),
+            "unresolved_collisions": unresolved_groups,
+            "independent_qa_verified": False,
+            "wordpress_publication_performed": False,
+        },
+    }
     for slug in lib.articles:
         built = build_article(lib, slug)
         meta = built["meta"]

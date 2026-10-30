@@ -278,6 +278,18 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
                 group = lib.crosswalk_groups.get(source["url"])
                 if group and group.get("review_status") != "resolved":
                     errors.append(f"{p}: CANNOT be published with unresolved shared-source scope '{sid}'")
+            for sid in order:
+                source = lib.source_for(meta, sid)
+                if source.get("human_link_check") is not True:
+                    errors.append(f"{p}: CANNOT be published before human source-link verification of '{sid}'")
+            release = meta.get("release_review") or {}
+            if not (
+                release.get("state") == "approved"
+                and release.get("reviewer")
+                and DATE_RE.fullmatch(release.get("date") or "")
+                and release.get("evidence_url", "").startswith("https://")
+            ):
+                errors.append(f"{p}: CANNOT be published without documented independent QD/release sign-off")
             # Editorial review and safety approval are separate gates; a pending safety review blocks publication whatever the taxonomy says.
             if sr["state"] == "pending":
                 errors.append(f"{p}: CANNOT be published while a safety review is pending")
