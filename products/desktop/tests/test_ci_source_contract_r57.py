@@ -117,6 +117,26 @@ class SourceContractR57Tests(unittest.TestCase):
                 self.assertEqual(guard.main([str(path)]), 0)
             self.assertIn('NOT Windows EXE/QD/release approval', stdout.getvalue())
 
+    def test_r58_linux_exit_before_required_verifier_rejected(self):
+        self.reject(GOOD.replace(
+            '          python products/desktop/scripts/offline_source_gate.py --report',
+            '          exit 0\n          python products/desktop/scripts/offline_source_gate.py --report', 1))
+
+    def test_r58_windows_exit_before_required_verifier_rejected(self):
+        self.reject(GOOD.replace(
+            '          python products/desktop/scripts/offline_source_gate.py\n',
+            '          exit 0\n          python products/desktop/scripts/offline_source_gate.py\n', 1))
+
+    def test_r58_windows_throw_does_not_permit_interpolation(self):
+        self.reject(GOOD.replace(
+            'Full source suite failed',
+            'Full source suite $([Environment]::Exit(0)) failed', 1))
+
+    def test_r58_linux_command_in_here_doc_rejected(self):
+        self.reject(GOOD.replace(
+            '          mkdir -p "$RUNNER_TEMP/fvs-source"',
+            "          cat <<'EOF'\n          mkdir -p \"$RUNNER_TEMP/fvs-source\"", 1))
+
     def test_real_workflow_when_checkout_available(self):
         workflow = Path(__file__).resolve().parents[3] / '.github/workflows/desktop-build.yml'
         if not workflow.is_file():
