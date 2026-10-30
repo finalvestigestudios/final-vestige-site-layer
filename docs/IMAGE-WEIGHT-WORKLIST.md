@@ -25,3 +25,7 @@ The State Archives catalog [N031889](https://floridamemory.com/items/show/141398
 ## Added P0 browser-weight evidence gates (2026-10-30)
 
 The [measurement protocol](MEDIA-WEIGHT-COMPARISON.md), a 43-slot six-post source URL queue and strict offline browser-transfer comparator now distinguish true visitor image encoded transfer bytes from WordPress originals. Queue: 43 slots, 36 offsite, seven first-party, 16 institutional catalog URLs, 20 offsite without specific catalog URL. **The reported 42 failed images and 76% saved bytes remain unverified**. Files: `qa/media-recovery/p0_recovery_queue_20261030.json`, `compare_wire_core.cjs`, `compare_wire_runs.cjs`, `test_compare_wire.cjs`. No live image manipulation, post changes or asset mirroring.
+
+
+## P0 institutional-source match addendum — 2026-10-30
+Six further **distinct** source-ID matches in `qa/media-recovery/primary_source_confirmations_20261030.json`: USGS **407:4 / 407:5 / 407:6** have exact Original links matching the stored image URLs and visibly rendered via an external web image viewer; NASA gallery **434:1 / 434:2 / 434:4** indexes exact IDs. The P0 36 offsite-image queue now has **22 linked official candidates**, **14 remaining without specific official record**. See [source/credit/chronology ledger](MEDIA-PRIMARY-SOURCE-REVIEWS-20261030.md). This does NOT establish 42 broken images, browser HTTP statuses, image weights, 76% reduction, or permission to upload/rewrite any content. Source-only coverage is not visitor-image availability.

@@ -1,0 +1,21 @@
+# Verified institutional source batch — 2026-10-30 (non-deployed)
+Machine-readable ledger: `qa/media-recovery/primary_source_confirmations_20261030.json`. All six IDs were cross-checked with the P0 stored Gutenberg URLs in media recovery PR #183. Separate Site QA PR #154 untouched.
+
+| Image slot | Archive record, exact original relationship | Attribution / date |
+| --- | --- | --- |
+| 407:4 | [USGS Golden Gate rockslide](https://www.usgs.gov/media/images/rockslide-damage-golden-gate-area-near-mammoth-hot-springs). Official **Original** link equals stored FV `https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg`; image shown in web image viewer. | USGS Yellowstone; 1959 approx. |
+| 407:5 | [USGS Sapphire Pool erupting](https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg). Original equals stored FV `https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg`; displayed in web image viewer. | USGS Yellowstone; 1959 approx. |
+| 407:6 | [USGS Seismic Geyser 1970](https://www.usgs.gov/media/images/seismic-geyser-eruption-1970). Original equals stored FV `https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg`; displayed in web image viewer. | **John Brandow / USGS**, **1970**, not 1959. |
+| 434:1 | [NASA Apollo 1 gallery](https://www.nasa.gov/gallery/apollo-1/) includes exact identifier **S67-15717**, matching stored NASA CDN URL. Gallery describes CSM 012 moving to be mated with lunar-module adapter. | NASA, 1967. |
+| 434:2 | Same NASA official gallery includes exact identifier **S66-58038**; describes crew about to enter spacecraft in altitude chamber. | NASA, **Oct 18, 1966**. |
+| 434:4 | Same NASA official gallery includes exact identifier **S67-21294**; describes interior of burned Apollo CM 012. | NASA, **Jan 28, 1967**, the day **after** the fire. |
+
+**Evidence strength:** Three USGS **Original** links are exact strings matching the already-present image URLs and displayed in an independent web viewer. This proves only that an independent remote viewer could retrieve those three originals. It does **not** prove logged-out FinalVestige.com browser success, numeric HTTP status, delivered image bytes, or the claimed 42 broken images. Three NASA matches are official **gallery catalog-ID** matches only, not direct image downloads or hash matches. Do not convert them to binary identity evidence.
+
+The 43-slot P0 queue previously had 16 linked individual official records and 20 offsite unmatched. These six **previously unmatched** slots raise documented official candidate coverage to **22 / 36** offsite slots, leaving **14** unmatched. This is not a performance/availability fix yet. The reported 76% image weight reduction remains unverified; the 13 >1.5 MiB media items are originals, not necessarily rendered transfer files.
+
+USGS catalog item pages explicitly mark each photo **Public Domain** but require accurate source/credit review. NASA images require per-file usage and third-party/personality/nonendorsement review. **All six records explicitly reject** WordPress uploads/post rewrites, assume no rights clearance, hold intrinsic dimensions unknown, and set a proposed **960px maximum without upscaling**. For any future approved copy: validate original bytes and SHA-256, photograph identity, credits, intrinsic pixel dimensions, rendered WebP/JPEG quality and aspect ratio, WordPress media ID/responsive variants, old/new mobile waterfall and visual parity before production.
+
+Native validation: `node --test qa/media-recovery/test_primary_source_confirmations.cjs`. The dedicated validator rejects swapped source images, mismatched NASA IDs, spoofed HTTP/working/broken states, invented 76% savings, unauthorized rights/WordPress changes and fabricated dimensions. Neither a GitHub commit nor an image-viewer display substitutes for live-browser accessibility.
+
+Next: network-enabled logged-out Chromium on the six P0 articles, with actual `currentSrc`, `naturalWidth`, status, cache flags, encoded transfer bytes, and screenshots, then exact authorized replacements for **verified** broken images only.
