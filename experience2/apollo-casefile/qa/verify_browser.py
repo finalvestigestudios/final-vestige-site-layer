@@ -25,9 +25,9 @@ with sync_playwright() as p:
         page.evaluate("""window.__fvPerf={lcp:null,cls:0};try{new PerformanceObserver(l=>{for(let x of l.getEntries()) window.__fvPerf.lcp=x.startTime}).observe({type:'largest-contentful-paint',buffered:true});new PerformanceObserver(l=>{for(let x of l.getEntries()) if(!x.hadRecentInput)window.__fvPerf.cls+=x.value}).observe({type:'layout-shift',buffered:true})}catch(e){window.__fvPerf.error=String(e)}""")
         page.set_content(HTML,wait_until='load')
         page.wait_for_timeout(150)
-        summary=page.evaluate("""()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,stages:document.querySelectorAll('[data-ex2-stage]').length,atlas:document.querySelectorAll('[data-ex2-atlas-item]').length,images:document.querySelectorAll('img').length,main:!!document.querySelector('main'),toolsHidden:document.querySelector('[data-ex2-atlas-tools]').hidden})""")
+        summary=page.evaluate("""()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,stages:document.querySelectorAll('[data-ex2-stage]').length,atlas:document.querySelectorAll('[data-ex2-atlas-item]').length,gallery:document.querySelectorAll('[data-ex2-gallery-item]').length,images:document.querySelectorAll('img').length,main:!!document.querySelector('main'),toolsHidden:document.querySelector('[data-ex2-atlas-tools]').hidden})""")
         require(summary['scroll']<=summary['width']+1,f'horizontal overflow {w}: {summary}')
-        require(summary['stages']==6 and summary['atlas']==6 and summary['images']==0,f'incomplete {w}: {summary}')
+        require(summary['stages']==6 and summary['atlas']==6 and summary['gallery']==6 and summary['images']==0,f'incomplete {w}: {summary}')
         require(not summary['toolsHidden'],f'filter not active {w}')
         path=OUT/f'apollo-atlas-{w}.png'
         page.screenshot(path=str(path),full_page=True,animations='disabled')
@@ -53,9 +53,13 @@ with sync_playwright() as p:
             page.locator('#atlas-filter').select_option('all')
             page.locator('#atlas-search').fill('')
             require(page.locator('[data-ex2-atlas-item]:visible').count()==6,'Clear filters should restore six')
-            page.locator('a[href="#stage-04"]').click()
+            page.locator('[data-ex2-rail-link][href="#stage-04"]').click()
             require(page.evaluate('location.hash')=='#stage-04','Chronology anchor failed')
-            results['interactions']={'native_source_keyboard_open_close':True,'filter_disasters':3,'search_franklin':1,'empty_state':True,'reset':6,'chronology_anchor':True}
+            page.locator('.ex2-gallery__item:first-child details summary').focus()
+            page.keyboard.press('Enter')
+            require(page.locator('.ex2-gallery__item:first-child details').evaluate('(el)=>el.open'),'Gallery provenance drawer keyboard failed')
+            require(page.locator('.ex2-gallery__item a[href=\"#stage-01\"]').count()==1,'Gallery evidence deep link missing')
+            results['interactions']={'gallery_provenance_keyboard':True,'gallery_deep_link':True,'native_source_keyboard_open_close':True,'filter_disasters':3,'search_franklin':1,'empty_state':True,'reset':6,'chronology_anchor':True}
             perf=page.evaluate('window.__fvPerf||{lcp:null,cls:null}')
             results['synthetic_perf']={'synthetic_headless_chromium_lcp_ms':perf.get('lcp'),'synthetic_headless_chromium_cls':perf.get('cls'),'not_field_metric':True,'notes':'set_content() no network/photos/remote fonts; these synthetic results do not estimate WordPress p75 LCP/INP/CLS.'}
         page.close()
