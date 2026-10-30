@@ -50,6 +50,16 @@ def run_smoke(app_id: str) -> list[Path]:
             rows = _rows(outputs[0])
             _check({r["id"]: r["status"] for r in rows} == {
                 "A": "matched", "B": "variance"}, "smoke invariant 01")
+            _check(all(r["left_source_sha256"] == hashlib.sha256(
+                    Path(left).read_bytes()).hexdigest()
+                    and r["right_source_sha256"] == hashlib.sha256(
+                    Path(right).read_bytes()).hexdigest()
+                    and r["input_identity_review"] == "" for r in rows),
+                   "smoke invariant 34")
+            same_report = _rows(engine.ledger_diff(left, left, str(root))[0])
+            _check(same_report and all(
+                   r["input_identity_review"] == "identical_source_bytes_review"
+                   for r in same_report), "smoke invariant 35")
         elif app_id == "invoices":
             source = _csv(root, "invoices.csv", ("vendor", "invoice_number", "amount", "date"), [
                 ("ACME", "INV-100", "200.00", "2026-01-01"),
