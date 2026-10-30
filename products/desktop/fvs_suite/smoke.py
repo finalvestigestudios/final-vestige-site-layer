@@ -60,7 +60,22 @@ def run_smoke(app_id: str) -> list[Path]:
                 ("ACME", "10", "2026-01-01"), ("ACME", "10", "2026-02-01"),
                 ("ACME", "10", "2026-03-01"), ("ACME", "30", "2026-04-01")])
             outputs = engine.spend_map(source, str(root))
-            _check(_rows(outputs[0])[-1]["flag"] == "review_spike", "smoke invariant 03")
+            checked = _rows(outputs[0])[-1]
+            _check(checked["flag"] == "review_spike", "smoke invariant 03")
+            _check(checked["baseline_median"] == "10.00"
+                   and checked["history_months"] == "3"
+                   and checked["source_rows"] == "5", "smoke invariant 31")
+            collision_input = _csv(root, "spend-collision.csv",
+                ("vendor", "amount", "date"), [
+                ("A-CME", "2", "2026-01-01"),
+                ("ACME", "3", "2026-02-01")])
+            collision_output = engine.spend_map(collision_input, str(root))
+            collision_rows = _rows(collision_output[0])
+            _check(len(collision_rows) == 2 and
+                   all("normalized_vendor_collision_review" in row["flag"]
+                       for row in collision_rows) and
+                   [row["source_rows"] for row in collision_rows] == ["2", "3"],
+                   "smoke invariant 32")
         elif app_id == "policy":
             before = root / "before.txt"
             after = root / "after.txt"
