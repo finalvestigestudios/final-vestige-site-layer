@@ -23,6 +23,10 @@ Headers are case-insensitive; spaces are accepted in place of underscores. The i
 
 Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, unconstrained allocation rules, fuzzy name matching, and OCR are **not** supported in v0.1. GrantAudit R6 supports explicitly linked split allocations under a limited documented CSV contract. Financial flags require human review.
 
+## R48 premium writer-lock custody (pre-release)
+
+GrantAudit Studio Pro and ProcureGuard Studio Pro now create a private exclusive writer lock with a held descriptor while recording a human exception decision. The lock's identity and metadata are checked throughout the full report/journal revalidation and append process. An observed lock swap, hardlink alias, modification, or disappearance fails closed; foreign and stale locks are **never automatically broken**. Audit data stays offline, original CSVs are not edited, and no review grants payment authorization. See [R48 review-lock runbook](docs/REVIEW_LOCK_CUSTODY_R48.md) for recovery rules and limitations. These changes are not evidence of native Windows executable acceptance or permission to release either premium product.
+
 ## R44 keyboard-first GUI controls
 
 All six Tk desktop applications now expose visible, local-only keyboard
