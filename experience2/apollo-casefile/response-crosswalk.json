@@ -1,0 +1,87 @@
+{
+  "dataset": "Apollo 204: 1967 Review Board versus contemporary NASA response",
+  "compiled": "2026-10-30",
+  "board_document": "Apollo 204 Review Board report Part VI (1967)",
+  "response_document": "Excerpt from 30 January 1968 Senate committee report, reproduced on NASA's website",
+  "policy": "No NASA photographs, no inferred modern compliance, no NASA endorsement; primary-source links only",
+  "records": [
+    {
+      "id": "01",
+      "kind": "procedures",
+      "title": "Oxygen tests reclassified",
+      "board_locator": "Part VI, Finding 9 and recommendations",
+      "board_summary": "The Board treated the pure-oxygen atmosphere as a severe fire hazard and called for full-scale testing and further study of diluent gas.",
+      "response_locator": "Procedures, item 1; One Hundred Percent Pure Oxygen Environment",
+      "response_summary": "The later NASA account says pure-oxygen tests were reclassified as hazardous and launch-pad command-module systems were changed, while atmosphere tradeoffs remained under evaluation.",
+      "status": "Contemporary measures reported; this does not certify every test condition or a final flight atmosphere.",
+      "related_stage": "02",
+      "primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "later": "https://www.nasa.gov/missions/apollo/apollo-1/nasa-response-to-findings/"
+    },
+    {
+      "id": "02",
+      "kind": "hardware",
+      "title": "Combustible material controls",
+      "board_locator": "Part VI, Finding 2 and recommendation",
+      "board_summary": "The Board demanded tighter control of the quantity and placement of combustible material in the command module.",
+      "response_locator": "Spacecraft and Facility Modifications, item 2",
+      "response_summary": "NASA subsequently reported significant restrictions on the selection and placement of combustible materials.",
+      "status": "The historical report describes a change as instituted; it does not inspect every later installation.",
+      "related_stage": "02",
+      "primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "later": "https://www.nasa.gov/missions/apollo/apollo-1/nasa-response-to-findings/"
+    },
+    {
+      "id": "03",
+      "kind": "hardware",
+      "title": "Crew escape and the hatch",
+      "board_locator": "Part VI, Finding 4 and recommendation",
+      "board_summary": "The Board found that cabin pressure prevented inner-hatch escape before rupture and recommended faster, simpler egress.",
+      "response_locator": "Spacecraft and Facility Modifications, items 3 and 6",
+      "response_summary": "The subsequent account described a quick-opening hatch as being developed for Block II spacecraft and launch-facility changes already made.",
+      "status": "A hatch being developed was not yet proof of installation or operational qualification.",
+      "related_stage": "04",
+      "primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "later": "https://www.nasa.gov/missions/apollo/apollo-1/nasa-response-to-findings/"
+    },
+    {
+      "id": "04",
+      "kind": "procedures",
+      "title": "Rescue equipment and practice",
+      "board_locator": "Part VI, Finding 5, recommendations 2–4",
+      "board_summary": "The Board urged regular emergency preparation, suitable rescue equipment and safer access routes.",
+      "response_locator": "Procedures, item 4; Spacecraft and Facility Modifications, item 6",
+      "response_summary": "NASA later described requirements for support-personnel emergency training and pad rescue equipment, and modified launch facilities.",
+      "status": "A requirement is not evidence that every future team successfully passed a readiness exercise.",
+      "related_stage": "01",
+      "primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "later": "https://www.nasa.gov/missions/apollo/apollo-1/nasa-response-to-findings/"
+    },
+    {
+      "id": "05",
+      "kind": "procedures",
+      "title": "Independent safety review",
+      "board_locator": "Part VI, Findings 5 and 11 and recommendations",
+      "board_summary": "The Board identified failures of hazardous-test recognition, oversight and responsibility coordination.",
+      "response_locator": "Procedures, items 2–3",
+      "response_summary": "The response said test-procedure responsibility had been redefined and an independent Office of Flight Safety established.",
+      "status": "The excerpt reports organization changes rather than measuring long-term safety outcomes.",
+      "related_stage": "01",
+      "primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "later": "https://www.nasa.gov/missions/apollo/apollo-1/nasa-response-to-findings/"
+    },
+    {
+      "id": "06",
+      "kind": "hardware",
+      "title": "Fire protection and emergency oxygen",
+      "board_locator": "Part VI, Finding 10, recommendation 7",
+      "board_summary": "The Board called for improved fire control, extinguishing capability and auxiliary oxygen to protect against smoke and toxic gases.",
+      "response_locator": "Spacecraft and Facility Modifications, items 4–5",
+      "response_summary": "The later NASA account described provision for a jellied-water fire-extinguishing capability and emergency crew oxygen.",
+      "status": "Provision in a historical response is not proof of final configuration or successful in-flight operation.",
+      "related_stage": "06",
+      "primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "later": "https://www.nasa.gov/missions/apollo/apollo-1/nasa-response-to-findings/"
+    }
+  ]
+}
