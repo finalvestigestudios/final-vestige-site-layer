@@ -1,0 +1,57 @@
+{
+  "status": "UNPUBLISHED_HOLD_NOT_RELEASE_APPROVAL",
+  "checked_at_utc": "2026-10-30T23:04:27.816742+00:00",
+  "exact_github_parent_head": "78a1002026de05688db2024ed9b3732f7bdc4367",
+  "frozen_pr49_head": "10495883299d53596992c26a8987f629b2904670",
+  "actual_github_head_static_checks": {
+    "passed": 19,
+    "total": 19,
+    "mode": "source fetched independently from GitHub connector at exact parent SHA, NOT browser-tested at that SHA",
+    "blob_sha": {
+      "index.html": "71e7e75c4cb7ae94545183af4e17f36f7ed075e5",
+      "flagship.css": "1ad6d82f57d1a8a6ca29865ffef82c15edbe1a9c",
+      "chronicle.css": "a779320ef6468b853a65a268502d15a19a9c1b64",
+      "chronicle-lens.css": "97fb86e6469c98461f422d4a0a9629e757522146",
+      "inquiry.css": "28c747679969374bf1bcda386899cde03197db60",
+      "observer-lab.css": "f01b336fe76470df88c8b748fd13321376f27aa2",
+      "flagship.js": "fb2353d00e83cb4f4c6b5e88cf0cf1739c087d50",
+      "observer-lab.js": "9b69d69dc61909d3e802365e47ab5287108efa4e",
+      "chronicle-lens.js": "f22b5e3a4f0dfabfc29e0a9829d56dab4e697df2"
+    }
+  },
+  "live_wordpress_read_only": {
+    "page_id": 6,
+    "last_modified": "2026-10-30T09:14:14",
+    "72_margin_indices_0_to_71": true,
+    "focus_fieldbook_present": true,
+    "jetpack_signup_present": true,
+    "modified": false
+  },
+  "qa_tool_validation": {
+    "source_contract_on_representative_fixture": "21/21 passed",
+    "integrated_chromium_on_representative_fixture": "179/179 passed",
+    "viewport_widths": [
+      320,
+      360,
+      390,
+      600,
+      768,
+      1024,
+      1440,
+      1920
+    ],
+    "no_javascript": [
+      390,
+      1440
+    ],
+    "200_percent_css_zoom_width": 390,
+    "isolated_python_and_php_unit_tests": "10/10 passed",
+    "word_press_preview_zip_built_on_representative_fixture": true,
+    "exact_github_source_browser_test": "NOT RUN - actual source files not materialized in browser filesystem"
+  },
+  "notes": [
+    "Representative fixture combines exact local chapter snippets with an intentionally synthetic hero/evidence shell, not the actual GitHub index.html. Screenshots are QA harness proof only.",
+    "WordPress staging plugin source and build script are committed as code, but not installed or activated.",
+    "GitHub-hosted CI, actual WP/Assembler staging, external image loading, media legal review, axe/screenreader and field CWV still outstanding."
+  ]
+}
