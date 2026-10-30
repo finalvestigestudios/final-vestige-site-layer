@@ -694,3 +694,11 @@ fail before a CSV is published. Header-only reports have no row-level hash.
 
 See [R63 Invoice source identity runbook](docs/INVOICE_SOURCE_IDENTITY_R63.md)
 for limits, independent source-byte verification and test/release gates.
+
+
+## R65 — ProcureGuard Studio Pro pricing-policy input and confidential errors
+
+- Optional local JSON price tolerances now require **ASCII fixed-point Decimal values** (up to eight fractional places). Scientific notation, non-ASCII digits, padded zeros and signs are rejected; maximum absolute tolerance remains 100.00 and fractional tolerance 0.10. Existing valid numeric JSON integers and standard fixed-point strings remain supported.
+- Invalid invoice/receipt event kinds are reported with the parser-generated physical CSV row number **without echoing the confidential cell value**. Legitimate invoice/credit and receipt/return movements retain their existing human-review semantics.
+- Twelve isolated input regressions passed on Python 3.13.5 Linux under normal and optimized (-OO) modes; six complete-engine integration tests are committed but unexecuted without a full checkout/working CI. See [R65 operator contract](docs/PROCUREMENT_INPUT_PRIVACY_R65.md).
+- **Unreleased:** No paid executable, public download, checkout enablement, QD bypass, or production change. Windows binary/accessibility/malware testing, premium distribution controls and independent review remain mandatory.
