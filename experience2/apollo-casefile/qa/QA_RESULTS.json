@@ -1,14 +1,5 @@
 {
   "assets": {
-    "1024": {
-      "requested_external_assets": 0
-    },
-    "1440": {
-      "requested_external_assets": 0
-    },
-    "1920": {
-      "requested_external_assets": 0
-    },
     "320": {
       "requested_external_assets": 0
     },
@@ -19,6 +10,15 @@
       "requested_external_assets": 0
     },
     "768": {
+      "requested_external_assets": 0
+    },
+    "1024": {
+      "requested_external_assets": 0
+    },
+    "1440": {
+      "requested_external_assets": 0
+    },
+    "1920": {
       "requested_external_assets": 0
     }
   },
@@ -36,70 +36,37 @@
     "filter_disasters": 3,
     "native_source_keyboard_open_close": true,
     "reset": 6,
-    "search_franklin": 1
+    "search_franklin": 1,
+    "gallery_provenance_keyboard": true,
+    "gallery_deep_link": true
   },
   "method": "headless local Chromium Playwright with set_content() (navigation blocked by sandbox); no external photos/fonts, not field CWV",
   "source_hashes": {
-    "assets/app.css": "9b1856f314356137472608ecf89092e0e004c3761848cf4b86e26424d4d21c2c",
+    "assets/app.css": "1384536e24ea4e70aa1fc1efb2cc729b8a222cedc19b4b723f45982dba6488a0",
     "assets/app.js": "5933c848306ab1d0331c6e2e4b0724a1df79bc4816e46634c3bd85b0808cebe4",
-    "index.html": "93e6f71838c3287c0fc78f69e102a892bacd3f953bc662b5a19027a2856710bb",
+    "index.html": "beb070b214104316b75863121b677f67ed3340330d5a30d8ef16cd6c2453ea3e",
     "records.json": "356b622b8c2721c6fb2d15daafe430110b0d2890788d045d998c0547c0ed8cf2",
-    "render.py": "b61524458226d710246fe7056e35cfac67b5673d8b03f38698bd7ff2ba7ae1ca"
+    "render.py": "604cee43a1d277c1f50017248f76cf10d392c0d30c5a91b66047d15dbd568e6c"
   },
   "synthetic_perf": {
     "not_field_metric": true,
     "notes": "set_content() no network/photos/remote fonts; these synthetic results do not estimate WordPress p75 LCP/INP/CLS.",
     "synthetic_headless_chromium_cls": 0,
-    "synthetic_headless_chromium_lcp_ms": 168
+    "synthetic_headless_chromium_lcp_ms": 180
   },
   "widths": {
-    "1024": {
-      "atlas": 6,
-      "images": 0,
-      "main": true,
-      "screenshot": "apollo-atlas-1024.png",
-      "scroll": 1024,
-      "sha256": "f5a9fd4432e61229454fca88786e4aa14137991bf8c3a06b7e6bcfbb165d4af1",
-      "size": 1524341,
-      "stages": 6,
-      "toolsHidden": false,
-      "width": 1024
-    },
-    "1440": {
-      "atlas": 6,
-      "images": 0,
-      "main": true,
-      "screenshot": "apollo-atlas-1440.png",
-      "scroll": 1440,
-      "sha256": "aec7f94d15f01c8b2baddd21a5503e809a73e82fcca6aabfe569108c473eabbb",
-      "size": 1895736,
-      "stages": 6,
-      "toolsHidden": false,
-      "width": 1440
-    },
-    "1920": {
-      "atlas": 6,
-      "images": 0,
-      "main": true,
-      "screenshot": "apollo-atlas-1920.png",
-      "scroll": 1920,
-      "sha256": "1f062b29dce378e75cf876f78d5810d7f268aa34f8bc752df611f56481432bc2",
-      "size": 2033568,
-      "stages": 6,
-      "toolsHidden": false,
-      "width": 1920
-    },
     "320": {
       "atlas": 6,
       "images": 0,
       "main": true,
       "screenshot": "apollo-atlas-320.png",
       "scroll": 320,
-      "sha256": "79a69385c11c482cb1e18146defb1a479c08e55a41be5fca3cd1a134db73d527",
-      "size": 1045814,
+      "sha256": "0ff20f21074cb3a0d177db2c90d9b6fa0a3d3f0af9e4b0ebb3fc24f5b762a06d",
+      "size": 1498003,
       "stages": 6,
       "toolsHidden": false,
-      "width": 320
+      "width": 320,
+      "gallery": 6
     },
     "360": {
       "atlas": 6,
@@ -107,11 +74,12 @@
       "main": true,
       "screenshot": "apollo-atlas-360.png",
       "scroll": 360,
-      "sha256": "03143614deba6e8b4c71df5396abef7b08e4893b5d73acae371b6ef0bad10b4f",
-      "size": 1071968,
+      "sha256": "5285d90b050cce36b80d058f4b4471e88f4f99134b5134a64ec4ff312ab56c82",
+      "size": 1537394,
       "stages": 6,
       "toolsHidden": false,
-      "width": 360
+      "width": 360,
+      "gallery": 6
     },
     "390": {
       "atlas": 6,
@@ -119,11 +87,12 @@
       "main": true,
       "screenshot": "apollo-atlas-390.png",
       "scroll": 390,
-      "sha256": "d07ee5b95a479ae2a3308de23d9cb8d863c9a006c2227c51b11f5ce6e8bab00b",
-      "size": 1066147,
+      "sha256": "7a2e3188096ce59956667681b075c6006ef67718143b3a66533d9a93cb96a01f",
+      "size": 1593068,
       "stages": 6,
       "toolsHidden": false,
-      "width": 390
+      "width": 390,
+      "gallery": 6
     },
     "768": {
       "atlas": 6,
@@ -131,11 +100,51 @@
       "main": true,
       "screenshot": "apollo-atlas-768.png",
       "scroll": 768,
-      "sha256": "70edd78150f827b0bc619f95ad35e272253c019ba56fffa0dcf45f1ae3e361e9",
-      "size": 1324727,
+      "sha256": "d7515d4833c19512a0bd1961980ad1e8b6abdd6cdaaca2468fd154193a8ddcfe",
+      "size": 1898903,
       "stages": 6,
       "toolsHidden": false,
-      "width": 768
+      "width": 768,
+      "gallery": 6
+    },
+    "1024": {
+      "atlas": 6,
+      "images": 0,
+      "main": true,
+      "screenshot": "apollo-atlas-1024.png",
+      "scroll": 1024,
+      "sha256": "428004b42a904f9cbc59b322331f207667ac7336830d67ffacde98057a5d152f",
+      "size": 2167385,
+      "stages": 6,
+      "toolsHidden": false,
+      "width": 1024,
+      "gallery": 6
+    },
+    "1440": {
+      "atlas": 6,
+      "images": 0,
+      "main": true,
+      "screenshot": "apollo-atlas-1440.png",
+      "scroll": 1440,
+      "sha256": "bdf9982415aaf1b1b4b8df8bd5ba74de386191fc6de8ac9e7adda13292ddbef0",
+      "size": 2558786,
+      "stages": 6,
+      "toolsHidden": false,
+      "width": 1440,
+      "gallery": 6
+    },
+    "1920": {
+      "atlas": 6,
+      "images": 0,
+      "main": true,
+      "screenshot": "apollo-atlas-1920.png",
+      "scroll": 1920,
+      "sha256": "b731b70ce919b0397fbe5330a9b3c4d44def3fc0db15a10385907d8f5d0ef81c",
+      "size": 2697229,
+      "stages": 6,
+      "toolsHidden": false,
+      "width": 1920,
+      "gallery": 6
     }
   }
 }

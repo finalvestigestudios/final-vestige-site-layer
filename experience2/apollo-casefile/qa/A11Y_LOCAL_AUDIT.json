@@ -1,0 +1,78 @@
+{
+  "renderer": "headless Chromium set_content (in-memory, no network)",
+  "engine": "Playwright",
+  "axe": "not present; real axe run is a separate gated test",
+  "widths": {
+    "320": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    },
+    "360": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    },
+    "390": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    },
+    "768": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    },
+    "1024": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    },
+    "1440": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    },
+    "1920": {
+      "visible_interactive_targets": 66,
+      "smaller_than_24px": 0,
+      "unlabeled_controls": 0,
+      "duplicate_ids": 0,
+      "broken_aria_labelledby": 0,
+      "unsafe_source_urls": 0
+    }
+  },
+  "semantics": {
+    "six_stages": true,
+    "six_gallery_items": true,
+    "six_atlas_items": true,
+    "source_links_https_or_anchors": true
+  },
+  "keyboard": {
+    "first_tab_skip_link": {
+      "tag": "A",
+      "href": "#main",
+      "top": 8,
+      "outline": "solid"
+    },
+    "gallery_native_details_enter": "pass"
+  }
+}
