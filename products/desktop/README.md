@@ -23,6 +23,19 @@ Headers are case-insensitive; spaces are accepted in place of underscores. The i
 
 Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, unconstrained allocation rules, fuzzy name matching, and OCR are **not** supported in v0.1. GrantAudit R6 supports explicitly linked split allocations under a limited documented CSV contract. Financial flags require human review.
 
+## R59 SpendMap Lite provenance and explainable spikes (pre-release)
+
+SpendMap Lite now retains the **source CSV physical line numbers**, original
+vendor labels per aggregate, vendor-month totals and the **exact Decimal median
+baseline** behind each spike review flag. Since vendor normalization removes
+punctuation, different spellings such as `A-CME` and `ACME` now trigger a
+visible `normalized_vendor_collision_review` across all affected months, rather
+than silently asserting that the businesses are identical. Existing report
+columns and baseline review thresholds remain intact; six provenance fields are
+appended. Every flag requires human judgment. See
+[R59 SpendMap provenance details](docs/SPENDMAP_PROVENANCE_R59.md).
+This is not an executable release or compliance certification.
+
 ## R57 verified complete CI source gate (pre-release)
 
 Both desktop CI jobs now run the full offline source verification suite in **normal Python and optimized `-OO`**, compare exact test/skip identities, and execute all six synthetic source smokes before packaging. Linux retains the private, evidence-only `offline-source-suite.json` (no customer files, EXEs or premium downloads). The R57 source contract rejects missing, reordered, conditional or fail-open verification. This replaces the stale hand-maintained optimized-test selection; see [R57 CI source contract and limitations](docs/COMPLETE_CI_SOURCE_GATE_R57.md). **Hosted Actions and actual Windows x64 release tests remain unverified. No product is released.**
