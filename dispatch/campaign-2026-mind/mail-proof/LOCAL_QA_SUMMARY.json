@@ -1,0 +1,27 @@
+{
+  "as_of_utc": "2026-10-30T23:40:00Z",
+  "test_origin": "LOCAL_SYNTHETIC_ONLY",
+  "suites": [
+    {
+      "scope": "previous delivery PR187 local fixture",
+      "passed": 14
+    },
+    {
+      "scope": "per-issue readiness PR201 locally authored verified bytes",
+      "passed": 25
+    },
+    {
+      "scope": "attribution PR208 locally authored verified bytes",
+      "passed": 27
+    },
+    {
+      "scope": "this sprint received_email_audit module synthetic MIME",
+      "passed": 34
+    }
+  ],
+  "total_passed_locally": 100,
+  "real_jetpack_test_received": false,
+  "hosted_ci_green": false,
+  "tests_not_equivalent_to_legal_compliance": true,
+  "release": "HOLD"
+}
