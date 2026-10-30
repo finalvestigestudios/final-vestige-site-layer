@@ -19,11 +19,11 @@ If you want to explore meditation, begin by testing the part you control. Choose
 
 This isn't a clinical intervention or a guarantee of a particular mental state. It's a modest, low-cost way to learn something about your own habits.
 
-**A tool we're examining: Zen12.** Inspire3 describes Zen12 as a meditation program designed around shorter sessions. That's the seller's positioning—not an independent finding that twelve minutes produces the same effects as an hour of meditation. We're preparing a guide that will spell out exactly what the program offers, what it costs at the time of review, and where evidence does or doesn't support its claims.
-
-**Read the Zen12 evaluation:** [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+**A tool we're examining: Zen12.** The official Zen12 product page describes a collection of 12-minute downloadable meditation audios, arranged in progressive levels. It offers guided, music, nature-sound and white-noise versions. That is a concrete feature you can compare with what you need. Its much bigger promise—that one session delivers the benefits of an hour of meditation—is a **seller claim, not a conclusion supported by an independent head-to-head study we have verified**. The [NIH's meditation evidence review](https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety) discusses benefits and research limitations of meditation generally; it does not validate the Zen12 time-equivalence claim. Our guide will separate program contents and current purchase terms from that stronger assertion.
 
 **Commercial disclosure:** If you choose to buy through a qualifying link in our evaluation guide, Final Vestige may earn a commission. This recommendation will be included only if we can independently assess the product and verify our affiliate authorization. No purchase is required to use the free [Seven Day Focus Fieldbook](https://finalvestige.com/focus/).
+**Compare what Zen12 actually includes:** [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+
 
 *Editorial and affiliate review pending. The offer link above is deliberately not active.*
 

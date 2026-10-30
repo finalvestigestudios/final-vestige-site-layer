@@ -3,9 +3,9 @@
 > **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**
 > This content awaits editorial and subscriber-list approval. All campaign emails require legal-footer QA; promotional issues require offer/affiliate review.
 
-**Subject:** Fourteen seconds. A much longer explanation.
+**Subject:** Seventeen seconds. A much longer explanation.
 
-**Preheader:** Apollo 1, the surviving record, and why a tidy cause can mislead.
+**Preheader:** NASA's Apollo 1 findings, and why a tidy explanation can mislead.
 
 **Content type:** editorial
 
@@ -13,15 +13,15 @@
 
 A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.
 
-The Apollo 1 fire is often compressed into a sentence about an electrical spark. The surviving official findings tell a harder story: an oxygen-rich ground-test environment, combustible material, vulnerable wiring, emergency escape constraints and choices in the design and test process.
+On January 27, 1967, the last Apollo 1 crew transmission ended approximately **17 seconds after the first indication of fire**. But the accident wasn't a 17-second problem. The [Apollo 204 Review Board's findings](https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html) described an oxygen-rich ground-test atmosphere, combustible material, damaged wiring, an inward-opening hatch and decisions about the test's risk.
 
-The investigators could identify dangerous conditions without conclusively identifying the exact first arc. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.
+The investigators could identify dangerous conditions without conclusively identifying the ignition source. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.
 
 Our investigation, **The Hatch Opened Inward**, follows that boundary through records and hardware. It also shows why the redesigned hatch became one of the event's clearest physical traces.
 
 **Read the investigation:** [The Hatch Opened Inward](https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).
 
-There is a connection to the mind here, too: we like stories with one obvious cause. The record often refuses to cooperate.
+There is a connection to the mind here, too: we like stories with one obvious cause. [NASA's safety account](https://sma.nasa.gov/sma-disciplines/accllp/apollo-1) describes what the investigators could—and couldn't—determine. The record often refuses to cooperate.
 
 This is what The Dispatch will continue to do—move between history, science and the strange edges of human experience, without asking you to trade curiosity for certainty.
 

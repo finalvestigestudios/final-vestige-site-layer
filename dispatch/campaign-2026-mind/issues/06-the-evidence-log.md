@@ -17,7 +17,7 @@ Neither impression is very useful without a record.
 
 A more practical question is what actually happened. Which days did you follow through? How long did you practice? When did you get interrupted? What made it easier to start the next day?
 
-Those observations aren't a medical result or proof that one technique is superior. They're simply better information for choosing what you'll keep doing.
+Those observations aren't a medical result or proof that one technique is superior. They're simply better information for choosing what you'll keep doing. Compare the entries without deciding in advance that a technique must have helped.
 
 Our **Seven Day Focus Fieldbook — Complete Edition** was built for this kind of deliberate practice: a short starting routine, seven guided days, an obstacle playbook and a thirty-day log. It's free, and you don't need to buy an audio program to use it.
 
@@ -26,6 +26,8 @@ Our **Seven Day Focus Fieldbook — Complete Edition** was built for this kind o
 As we expand the Mind & Perception Archive, we'll keep putting the underlying sources where readers can check them. You'll also continue receiving the historical investigations and unexpected discoveries you came to Final Vestige for.
 
 If a product ever appears here, we'll say when it's a commercial recommendation, what we're basing it on and what remains uncertain. The work comes first.
+
+**For context:** The [NIH review of meditation research](https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety) notes that studies vary in quality and method. A personal practice log can be useful for self-reflection, but it isn't equivalent to a controlled study.
 
 
 ---

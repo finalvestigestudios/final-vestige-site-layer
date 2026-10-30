@@ -1,0 +1,33 @@
+name: Dispatch Campaign QA (draft safety)
+
+on:
+  pull_request:
+    paths:
+      - "dispatch/campaign-2026-mind/**"
+      - ".github/workflows/dispatch-campaign-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-content-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact PR SHA
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run full offline campaign guard tests
+        run: python -I -m unittest discover -s dispatch/campaign-2026-mind/tests -v
+      - name: Verify preview JS syntax
+        run: node --check dispatch/campaign-2026-mind/tools/build_previews.cjs
+      - name: Verify snapshots were regenerated from the actual exact PR files
+        run: node dispatch/campaign-2026-mind/tools/build_previews.cjs --check
