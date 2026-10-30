@@ -17,6 +17,9 @@ import build  # noqa: E402
 
 REQUIRED_META = ["n", "slug", "title", "h1", "dek", "description", "section", "track", "updated", "last_checked", "status", "safety_review"]
 MIN_WORDS_CORNERSTONE = 1800
+ALLOWED_KINDS = {"regulator", "extension", "nonprofit", "professional-body", "museum", "museum-study", "museum-object",
+                 "archive", "primary-digitized", "scholarship", "journal"}
+NONPROFIT_MARKERS = ("Red Cross", "Red Crescent", "Salvation Army", "Foundation", "Association", "Society")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 BANNED = [
     (r"(?<!not )(?<!n't )(?<!never )\bguarantee[sd]?\b[^.]{0,40}\bsafe", "promises safety"),
@@ -69,6 +72,10 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             errors.append(f"register:{sid}: bad verified_on")
         if s.get("verified_on") and not s.get("supports"):
             errors.append(f"register:{sid}: verified source must say what it supports")
+        if s.get("kind") not in ALLOWED_KINDS:
+            errors.append(f"register:{sid}: unknown source kind '{s.get('kind')}' (allowed: {sorted(ALLOWED_KINDS)})")
+        if s.get("kind") == "regulator" and any(w in s.get("publisher", "") for w in NONPROFIT_MARKERS):
+            errors.append(f"register:{sid}: '{s.get('publisher')}' is not a regulator; use kind 'nonprofit' or 'professional-body'")
 
     # --- taxonomy ---
     slugs = [a["slug"] for a in lib.taxonomy["slate"]]
@@ -179,7 +186,15 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             errors.append(f"{p}: taxonomy marks this high-consequence; safety review cannot be 'not-required'")
         if sr["state"] == "approved" and not (sr.get("reviewer") and sr.get("date") and DATE_RE.match(sr["date"] or "")):
             errors.append(f"{p}: approved safety review needs reviewer name and date")
+        if not is_tool and meta["track"] == "modern":
+            if slate and not slate["gate"]:
+                errors.append(f"{p}: every modern-track guide gives actionable guidance and must be gated in taxonomy.json")
+            if sr["state"] == "not-required":
+                errors.append(f"{p}: a modern-track guide cannot be exempt from safety review")
         if meta["status"]["publish"] == "published":
+            # Editorial review and safety approval are separate gates; a pending safety review blocks publication whatever the taxonomy says.
+            if sr["state"] == "pending":
+                errors.append(f"{p}: CANNOT be published while a safety review is pending")
             if slate and slate["gate"] and sr["state"] != "approved":
                 errors.append(f"{p}: CANNOT be published without an approved human safety review")
             if meta["status"]["editorial"] != "reviewed":
