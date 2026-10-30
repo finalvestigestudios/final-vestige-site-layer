@@ -17,6 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .journal_io import append_verified_event, read_regular_bytes
+from .review_commit import confirm_review_commit
 from .review_lock import exclusive_review_lock
 
 MAX_REPORT_BYTES = 64 * 1024 * 1024
@@ -261,7 +262,15 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
 
         assert_lock_owned()
         append_verified_event(path, encoded, MAX_JOURNAL_BYTES, verify_source_and_history)
-        assert_lock_owned()
+        # fsync alone cannot certify the human's decision was retained.
+        # Re-parse the entire source-bound journal; if ambiguous, require
+        # inspection rather than returning a false success/auto-retrying.
+        confirm_review_commit(
+            report, product, path,
+            expected_batch=batch, previous_events=events, expected_event=event,
+            assert_lock_owned=assert_lock_owned,
+            read_cases=read_cases, read_journal=read_journal,
+        )
         return event
 
 
