@@ -702,3 +702,10 @@ for limits, independent source-byte verification and test/release gates.
 - Invalid invoice/receipt event kinds are reported with the parser-generated physical CSV row number **without echoing the confidential cell value**. Legitimate invoice/credit and receipt/return movements retain their existing human-review semantics.
 - Twelve isolated input regressions passed on Python 3.13.5 Linux under normal and optimized (-OO) modes; six complete-engine integration tests are committed but unexecuted without a full checkout/working CI. See [R65 operator contract](docs/PROCUREMENT_INPUT_PRIVACY_R65.md).
 - **Unreleased:** No paid executable, public download, checkout enablement, QD bypass, or production change. Windows binary/accessibility/malware testing, premium distribution controls and independent review remain mandatory.
+
+## R66 — GrantAudit Studio Pro confidential claim-type error gate (pre-release)
+
+- Unsupported linked-grant `claim_type` values can no longer be repeated in validation errors. The failure shows only a canonical physical CSV source row (or `?` for an untrusted row reference), with no private cell contents or control characters.
+- Existing `claim`/`credit` classifications, optional/default behavior, Decimal-safe split allocations, source digests, human review flags and offline handling remain unchanged.
+- Seventeen focused regressions passed in both normal and optimized (`-OO`) Python 3.13.5 Linux; five full-engine tests and the synthetic packaged smoke assertion remain **unexecuted** pending trusted complete-repository/Windows CI. See [R66 GrantAudit privacy runbook](docs/GRANT_CLAIM_TYPE_PRIVACY_R66.md).
+- **Unreleased:** No premium binary or public download, no site change or production merge. Independent QD approval and full Windows x64 release gates still apply.
