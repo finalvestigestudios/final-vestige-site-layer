@@ -192,6 +192,8 @@ def build_review_queue(lib, *, rows: list[dict] | None = None) -> dict:
         "summary": {
             "article_drafts_and_tool_drafts": draft_count,
             "safety_reviews_pending": safety_pending,
+            "safety_review_states": dict(sorted(Counter(m["safety_review"]["state"] for m in lib.articles.values()).items())),
+            "editorial_states": dict(sorted(Counter(m["status"]["editorial"] for m in lib.articles.values()).items())),
             "source_rows": len(raw),
             "machine_verified_source_rows": sum(bool(r["verified_on"]) for r in raw),
             "human_link_checks_pending": not_human_checked,
