@@ -1,0 +1,48 @@
+{
+  "n": 23,
+  "slug": "lewis-and-clark-salt-works",
+  "title": "Lewis and Clark's salt works",
+  "h1": "Lewis and Clark's salt works, winter 1805-1806: what the journals record",
+  "dek": "Five kettles, three salt makers and the Clatsop and Nehalem Tillamook families who lived beside them. What the journals and the park record say, where they disagree, and why this is not a way to make salt.",
+  "description": "How the Corps of Discovery made salt on the Oregon coast in 1805-1806, per the journals and park sources, with the Clatsop and Tillamook neighbours named accurately.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Lewis and Clark",
+    "Salt",
+    "Clatsop",
+    "Tillamook"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If any listed source changes, when the intervening journal entries (including Clark's January visit to the salt camp) are read directly, or when a Clatsop or Tillamook-authored account of the winter is found.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Taxonomy does not gate this item, but the page carries a safety-verdict panel (not-validated: seawater salt-making and home salting) and no process, quantity or time instructions. Requested for human read-through of the verdict panel and the editor's note on boiling and dissolved contaminants."
+  },
+  "related": [
+    "salt-beef-salt-pork-age-of-sail",
+    "history-of-food-preservation",
+    "making-water-safer"
+  ],
+  "source_use": {
+    "nps-lewis-clark-salt": "The five kettles, wood, rocks and kegs; almost a gallon a day; Lewis's 'tedious opperation'; Clatsop-Nehalem village; mid-February end.",
+    "nps-salt-works": "Why the party needed salt; the three named salt makers; kindness of the village; blubber sold; about twenty gallons by Lewis's count; the replica.",
+    "hist-food-lc-journal-1805-12-28": "Clark's order of 28 December; editors' notes on location, duration, three or four bushels and Clatsop winter villages.",
+    "hist-food-lc-journal-1806-01-05": "First salt delivered; 3 quarts to a gallon a day; site five days' search; no salt since 20 December; Lewis and Clark on the salt; Killamuck and Clat Sop families; blubber given versus bought; Ordway's 2 gallons.",
+    "hist-food-lc-journal-1806-02-21": "Camp evacuated; stock of about 20 gallons, 12 in two kegs.",
+    "hist-food-lc-salt-works-trail-alliance": "The 1950s reassembled cairn; the plaque and Jenny Michel's testimony; the plaque's dates and four bushels; the unsourced 28-gallon figure we decline to use.",
+    "hist-food-nps-lewi-tribes": "Where Clatsop and Nehalem Tillamook lived.",
+    "hist-food-clatsop-nehalem-site": "The tribes' own statement of homeland and traditional way.",
+    "epa-emergency-disinfection": "Boiling does not remove salts, heavy metals and most chemicals.",
+    "cdc-botulism-prevention": "Improperly preserved foods and botulism; toxin cannot be seen, smelled or tasted.",
+    "fsis-home-cure-qa": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+    "nchfp-cure-smoke": "Use tested methods for home curing and smoking."
+  }
+}
