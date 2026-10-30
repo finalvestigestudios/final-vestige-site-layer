@@ -83,30 +83,50 @@ JSON-LD):
    state that payload ever adds. The two documents still render side by side, split down the middle,
    each captioned.
 
-   Concealment is enforced with the standards-based `inert` attribute (feature-detected; silently
-   skipped on browsers that predate it, which just means the CSS blur becomes the only concealment —
-   never a broken or inaccessible state), applied only to the fact element itself — the question text
-   and "Show the connection" button stay fully focusable throughout. This keeps the concealed source
-   link out of keyboard Tab order and out of the accessibility tree entirely until discovery, instead
-   of the earlier approach (CSS `blur()` alone), which still left the link reachable via Tab while
-   visually illegible — a real keyboard-accessibility defect an independent review caught. Focus
-   management distinguishes how discovery happened: activating the button moves focus predictably to
-   the now-revealed fact (`tabindex="-1"` on the `<p>`, focused programmatically); discovering via
-   drag or keyboard movement deliberately leaves focus on the comparison stage and only announces the
-   finding through the live-status region, since moving a mid-drag user's focus away from the control
-   they're actively using would be more disorienting, not less. A failure partway through
-   initialization (after concealment has already been applied) is caught and reverses the
-   concealment, so a partial failure can never leave the real evidence permanently hidden.
+   Concealment is enforced with the standards-based `inert` attribute, applied only to the fact
+   element itself — the question text and "Show the connection" button stay fully focusable
+   throughout. This keeps the concealed source link out of keyboard Tab order and out of the
+   accessibility tree entirely until discovery, instead of CSS `blur()` alone, which left the link
+   reachable via Tab while visually illegible — a real keyboard-accessibility defect an independent
+   review caught. **`inert` support is feature-detected and required, not optional**: if a browser
+   doesn't support it, the enhancement does not run at all, falling back to the same fully readable,
+   non-interactive static presentation as no-JS — it never falls back to CSS-blur-only concealment,
+   which would silently reintroduce the exact keyboard defect the `inert` fix exists to prevent (an
+   earlier version of this fix made exactly that mistake; a second independent review caught it).
+   Focus management distinguishes how discovery happened: activating the button moves focus
+   predictably to the now-revealed fact (`tabindex="-1"` on the `<p>`, focused programmatically);
+   discovering via drag or keyboard movement deliberately leaves focus on the comparison stage and
+   only announces the finding through the live-status region, since moving a mid-drag user's focus
+   away from the control they're actively using would be more disorienting, not less. A failure
+   partway through initialization (after concealment has already been applied) is caught and
+   reverses the concealment, so a partial failure can never leave the real evidence permanently
+   hidden.
+
+   The comparison stage's `role="slider"`, `tabindex`, and `aria-value*` attributes are applied by
+   JS only, on successful init — never baked into the static markup. A nonfunctional comparison
+   stage (no JS, or JS that can't run the enhancement) must not claim to be an interactive slider or
+   sit in the keyboard Tab order with nothing behind it. Because a `role="slider"` widget is
+   expected to present as a single name/value control rather than expose arbitrary nested content to
+   assistive technology, the two comparison images are marked `aria-hidden` once the slider role is
+   active, and an always-present, visually-hidden `<p id="fv-align-desc">` (built from the same real
+   alt text already used for the images, not new copy) is wired in via `aria-describedby` so their
+   actual content still reaches screen reader users rather than being silently swallowed by the
+   opaque widget.
 
    `tests/verify_signature_alignment.py` covers the initial state, pointer and keyboard interaction,
    the button alternative, the fail-closed no-concealment path (both "never initialized" and "failed
-   partway through"), inert state transitions, and the accessible status announcement — all via a
-   simulated DOM harness. `tests/verify_signature_alignment_keyboard_browser.py` is a separate,
-   real-browser (Playwright/Chromium) test that drives actual Tab/Enter/Arrow-key input against a
-   fixture built live from the real page markup and real payload, and records the actual focus
-   sequence before and after discovery; it is **not** part of the CI gate (this repository has no
-   Node/Playwright dependency CI could install) and is meant to be run manually wherever Playwright
-   is already available.
+   partway through"), no-concealment-when-`inert`-is-unsupported, inert/role/tabindex/
+   aria-describedby state transitions, and the accessible status announcement — all via a simulated
+   DOM harness. `tests/verify_signature_alignment_keyboard_browser.py` is a separate, real-browser
+   (Playwright/Chromium) test that drives actual Tab/Enter/Arrow-key input against a fixture built
+   live from the real page markup and real payload, and records the actual focus sequence before and
+   after discovery, including confirming the no-JS fixture carries neither `role` nor `tabindex`.
+   Playwright is resolved to one absolute path up front and that exact path is threaded into the
+   generated runner, so the "is it available" check and the actual test run can never disagree about
+   where Playwright is coming from; a missing dependency exits distinctly (code 2, "SKIP... NOT a
+   pass") rather than something that could be mistaken for a passing exit code. It is **not** part of
+   the CI gate (this repository has no Node/Playwright dependency CI could install) and is meant to
+   be run manually wherever Playwright is already available.
 8. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
    blocks (Latest investigation, Recently filed, category strip, Exchange preview, More
    investigations, Research Trails, Sources and research tools) are untouched — same queries,
@@ -205,7 +225,8 @@ compatibility contract:
         badge) only after both ends of the stage are explored or the button is used; activating the
         button moves focus to the revealed fact predictably, while drag/keyboard discovery leaves
         focus on the stage and announces the reveal via the status region; the source link becomes
-        Tab-reachable immediately after discovery.
+        Tab-reachable immediately after discovery; without JavaScript, the stage carries no
+        `role`/`tabindex` at all and both documents' real descriptions remain directly readable.
   - [ ] Focus Fieldbook CTA (`fv-focus-cta`) renders on both mobile and desktop widths, its button
         links to `/focus/`, and the section sits directly after the hero, matching the live page.
   - [ ] Dispatch subscription form still submits successfully (unchanged block, but verify after

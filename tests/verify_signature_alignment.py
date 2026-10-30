@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "signature-alignment-wp-block-v1.txt"
 PAGE = ROOT / "homepage" / "page-6-home.blocks.html"
-EXPECTED_BYTES = 3996
-EXPECTED_SHA256 = "c4af4785f50438b1aa2a2425342bd64293d6e54ec2e9d26d4647c43e8d375fd2"
+EXPECTED_BYTES = 4782
+EXPECTED_SHA256 = "bffe859b660b49603271bdd8626de9c5c46b18e2f75bfa0d0497ac8943566be8"
 
 
 def require(condition: bool, message: str) -> None:
@@ -109,6 +109,7 @@ const makeEl = (name) => {
     addEventListener(type, cb) { listeners[el._name + ':' + type] = cb; },
     setAttribute(k, v) { this._attrs[k] = String(v); },
     getAttribute(k) { return this._attrs[k]; },
+    removeAttribute(k) { delete this._attrs[k]; },
     classList: {
       add: (c) => el._classes.add(c),
       remove: (c) => el._classes.delete(c),
@@ -124,6 +125,7 @@ function buildDom(omit) {
   const stage = makeEl('stage');
   const divider = omit.divider ? null : makeEl('divider');
   const mapPanel = omit.mapPanel ? null : makeEl('mapPanel');
+  const diagramPanel = omit.mapPanel ? null : makeEl('diagramPanel');
   const badge = omit.badge ? null : makeEl('badge');
   badge && badge.setAttribute('data-revealed', '0');
   const reveal = omit.reveal ? null : makeEl('reveal');
@@ -136,13 +138,14 @@ function buildDom(omit) {
     '.fv-align__panel--map': mapPanel,
     '[data-fv-align-badge]': badge,
   }[sel] || null);
+  stage.querySelectorAll = (sel) => (sel === '.fv-align__panel' ? [mapPanel, diagramPanel].filter(Boolean) : []);
   reveal && (reveal.querySelector = (sel) => ({
     '[data-fv-align-fact]': fact,
     '[data-fv-align-reveal-trigger]': trigger,
   }[sel] || null));
   global.window = { addEventListener(type, cb) { listeners['window:' + type] = cb; }, __fvSignatureAlignment: false };
   global.document = {
-    createElement: () => ({ inert: false }),
+    createElement: omit.noInertSupport ? () => ({}) : () => ({ inert: false }),
     querySelector: (sel) => ({
       '[data-fv-align-stage]': stage,
       '[data-fv-align-reveal]': reveal,
@@ -151,7 +154,7 @@ function buildDom(omit) {
       '[data-fv-align-reveal-trigger]': trigger,
     }[sel] || null),
   };
-  return { stage, divider, mapPanel, badge, reveal, fact, trigger, status };
+  return { stage, divider, mapPanel, diagramPanel, badge, reveal, fact, trigger, status };
 }
 const assert=(condition,message)=>{if(!condition){throw new Error(message)}};
 """
@@ -164,6 +167,10 @@ assert(dom.trigger.disabled===false,'reveal-trigger button must start enabled');
 assert(!dom.status.textContent,'status live region must be empty before any discovery');
 assert(dom.fact.inert===true,'the concealed fact (and its nested link) must be inert — unfocusable and non-interactive — before discovery');
 assert(dom.stage.getAttribute('aria-valuenow')==='20','initial position must be the real, documented starting point (20), not inside any special band');
+assert(dom.stage.getAttribute('role')==='slider','successful init must apply slider semantics via JS (never baked into static markup, see the no-JS checks below)');
+assert(dom.stage.getAttribute('tabindex')==='0','successful init must make the now-functional stage keyboard-focusable via JS');
+assert(dom.stage.getAttribute('aria-describedby')==='fv-align-desc','stage must reference the always-present description of both documents so their content reaches assistive technology despite being nested inside an opaque slider widget');
+assert(dom.mapPanel.getAttribute('aria-hidden')==='true' && dom.diagramPanel.getAttribute('aria-hidden')==='true','both nested image panels must be aria-hidden once the slider role is active — their content is conveyed via aria-describedby/aria-valuetext instead, per WAI-ARIA slider authoring practice');
 
 const keydown = listeners['stage:keydown'];
 assert(typeof keydown === 'function', 'keydown handler must be registered for keyboard operation');
@@ -224,6 +231,19 @@ console.log('SIGNATURE ALIGNMENT DISCOVERY (BUTTON ALTERNATIVE) REGRESSION: PASS
 """
     _run_node_scenario(scenario_button, "SIGNATURE ALIGNMENT DISCOVERY (BUTTON ALTERNATIVE) REGRESSION: PASS")
 
+    scenario_no_inert_support = dom_harness + "const dom = buildDom({noInertSupport:true});\n" + full_js + r"""
+assert(dom.reveal.classList.contains('fv-align__reveal--pending')===false,'when the browser does not support inert, the payload must not attempt CSS-only blur concealment either — that would re-introduce the exact defect (a visually illegible but still keyboard-focusable link) this fix exists to prevent');
+assert(dom.fact.inert===false || dom.fact.inert===undefined,'fact must never be left inert when inert support could not be confirmed');
+assert(dom.stage.getAttribute('role')===undefined,'without confirmed inert support, the payload must not claim slider semantics either — fall back fully to the plain, always-readable static presentation');
+assert(dom.stage.getAttribute('tabindex')===undefined,'stage must not be made keyboard-focusable as a slider when the enhancement is not actually safe to run');
+assert(listeners['stage:keydown']===undefined,'no interactive wiring at all should happen in the unsupported-inert fallback — it is equivalent to the no-JS case, not a degraded-but-active slider');
+console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT WHEN INERT IS UNSUPPORTED) REGRESSION: PASS');
+"""
+    _run_node_scenario(
+        scenario_no_inert_support,
+        "SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT WHEN INERT IS UNSUPPORTED) REGRESSION: PASS",
+    )
+
     scenario_midway_failure = dom_harness + r"""
 const dom = buildDom();
 dom.stage.addEventListener = () => { throw new Error('simulated failure after concealment began'); };
@@ -231,6 +251,10 @@ dom.stage.addEventListener = () => { throw new Error('simulated failure after co
 assert(window.__fvSignatureAlignment===false,'a midway failure must reset the duplicate-init guard so a later attempt is not permanently blocked');
 assert(dom.fact.inert===false,'a failure that happens AFTER concealment began must not leave the fact permanently inert — point 6 of the brief requires a readable, accessible fallback rather than leaving the evidence concealed');
 assert(!dom.reveal.classList.contains('fv-align__reveal--pending'),'a midway failure must also clear the pending/concealed visual class so sighted users are not left with a permanently blurred, unreadable fact either');
+assert(dom.stage.getAttribute('role')===undefined,'a midway failure must also strip the role=slider claim — a non-functional element (no listeners survived the crash) must not advertise interactive slider semantics');
+assert(dom.stage.getAttribute('tabindex')===undefined,'a midway failure must also strip tabindex so the now-nonfunctional stage is not a dead Tab stop');
+assert(dom.stage.getAttribute('aria-describedby')===undefined,'a midway failure must also remove aria-describedby, which only makes sense paired with the slider role');
+assert(dom.mapPanel.getAttribute('aria-hidden')===undefined && dom.diagramPanel.getAttribute('aria-hidden')===undefined,'a midway failure must also un-hide the image panels from assistive technology, since without a working slider their content is no longer redundant with anything');
 console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (MIDWAY FAILURE LEAVES NO RESIDUAL CONCEALMENT) REGRESSION: PASS');
 """
     _run_node_scenario(
@@ -240,6 +264,8 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (MIDWAY FAILURE LEAVES NO RESIDUAL 
 
     scenario_missing = dom_harness + "const dom = buildDom({trigger:true});\n" + full_js + r"""
 assert(dom.reveal.classList.contains('fv-align__reveal--pending')===false,'when a required real element is missing (simulating a failed/partial init, the same condition a no-JS page is in), the payload must no-op and never conceal the real fact text — it must stay visible');
+assert(dom.stage.getAttribute('role')===undefined,'a missing-element no-op must never advertise slider semantics on a non-functional element');
+assert(dom.stage.getAttribute('tabindex')===undefined,'a missing-element no-op must never add the stage to the keyboard Tab order');
 console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT) REGRESSION: PASS');
 """
     _run_node_scenario(
@@ -249,26 +275,58 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT)
     # No-JS / static-content checks against the real page markup (not the payload):
     # the fact text, the real dates/sources, and the aria-live status region's static
     # defaults must all be present as plain HTML so they work with JavaScript disabled.
+    # Slider role/tabindex/aria-value* and the panels' aria-hidden must NOT be baked into
+    # static markup at all — a nonfunctional comparison stage must not advertise interactive
+    # slider semantics or sit in the keyboard Tab order when JS hasn't (or can't) wire it up.
     page_text = PAGE.read_text(encoding="utf-8")
     require('data-fv-align-fact' in page_text, "page markup missing the real fact element")
     require("September" in page_text and "1918" in page_text, "page markup missing the real sourced dates in the fact text")
     require('role="status" aria-live="polite" data-fv-align-status' in page_text, "page markup missing the accessible live-status region")
-    require('aria-valuemin="0" aria-valuemax="100"' in page_text, "page markup missing slider range semantics")
     require(
         "isn't a record of the wreck" in page_text,
         "fact text must state plainly that the map is not evidence of the wreck itself (avoids implying a literal overlap)",
     )
+    stage_tag_match = re.search(r'<div class="fv-align__stage"[^>]*>', page_text)
+    require(stage_tag_match is not None, "could not locate the static stage div in page markup")
+    stage_tag = stage_tag_match.group(0)
+    require(
+        stage_tag == '<div class="fv-align__stage" data-fv-align-stage>',
+        f"the static stage div must carry no role/tabindex/aria-value* attributes at all — those "
+        f"must be added by JS only on successful init — but found: {stage_tag!r}",
+    )
+    require(
+        'id="fv-align-desc"' in page_text and "fv-align__desc" in page_text,
+        "page markup missing the always-present visually-hidden description of both documents "
+        "(aria-describedby target) that keeps their content reachable by assistive technology "
+        "despite being nested inside an opaque slider widget once JS applies the role",
+    )
+    require(
+        "NYPL Digital Collections" in page_text and "Final Vestige reconstruction" in page_text,
+        "the fv-align-desc description must draw on the real, already-used source captions, not invented text",
+    )
+
+    # The payload's JS-only ARIA/role application and the ARIA-slider-content fix must be present
+    # as real code, not just asserted in prose.
+    require("stage.setAttribute('role','slider')" in text, "payload does not apply role=slider via JS")
+    require("stage.setAttribute('tabindex','0')" in text, "payload does not apply tabindex via JS")
+    require("stage.setAttribute('aria-describedby','fv-align-desc')" in text, "payload does not wire aria-describedby to the real description element")
+    require("setAttribute('aria-hidden','true')" in text, "payload does not hide the nested image panels from assistive technology once the slider role is active")
+    require("if(!supportsInert)return;" in text, "payload does not fall back to the fully readable static presentation when inert support cannot be confirmed")
 
     print(
         "PASS: Signature Alignment exact payload identity, real-element gating, pointer/mouse/"
         "keyboard/button interaction, genuine-discovery gating (both extremes or the explicit "
         "alternative control, not a decorative badge), inert-based concealment of the unrevealed "
-        "fact/link (not focusable, not interactive, before discovery), predictable focus movement "
-        "on button-triggered discovery vs. retained stage focus on slider-triggered discovery, "
-        "accessible status announcement, fail-closed no-concealment-without-JS and "
-        "no-residual-concealment-on-midway-failure, no dependencies/network calls, and JavaScript "
-        "syntax verified. A separate real-browser keyboard/focus test lives in "
-        "tests/verify_signature_alignment_keyboard_browser.py (not part of the CI gate; run "
+        "fact/link (not focusable, not interactive, before discovery), slider role/tabindex/"
+        "aria-value* applied by JS only (never baked into static markup, so a nonfunctional "
+        "comparison stage never advertises interactive semantics), aria-describedby wiring both "
+        "nested images' real descriptions to an always-present element despite their panels being "
+        "aria-hidden inside the opaque slider widget, predictable focus movement on button-"
+        "triggered discovery vs. retained stage focus on slider-triggered discovery, accessible "
+        "status announcement, fail-closed no-concealment-without-JS, no-concealment-when-inert-"
+        "is-unsupported, and no-residual-concealment-on-midway-failure, no dependencies/network "
+        "calls, and JavaScript syntax verified. A separate real-browser keyboard/focus test lives "
+        "in tests/verify_signature_alignment_keyboard_browser.py (not part of the CI gate; run "
         "manually wherever Playwright is available)."
     )
 

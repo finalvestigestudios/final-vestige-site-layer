@@ -7,6 +7,11 @@ locally, wherever Node + the `playwright` package (with Chromium) are already av
 
     python3 tests/verify_signature_alignment_keyboard_browser.py
 
+Exit codes are deliberately distinct so a missing dependency can never be mistaken for a pass by
+anything that checks the exit code alone: 0 = genuinely verified and passed, 1 = ran and an
+assertion failed, 2 = skipped because Playwright/Node isn't available here. Only exit 0 means the
+checks below actually ran. The printed text also never contains the word "PASS" unless they did.
+
 It builds a throwaway HTML fixture directly from the CURRENT, real page markup
 (homepage/page-6-home.blocks.html's fv-align section) and the CURRENT, real governed JS payload
 (payloads/signature-alignment-wp-block-v1.txt) -- not a frozen copy -- so it stays accurate as
@@ -19,7 +24,18 @@ contract required for this interaction:
   previously-concealed link must become Tab-reachable immediately after.
 - Discovering via keyboard/slider movement must NOT move focus away from the stage.
 - Re-crossing both extremes after discovery must not re-announce or change state (no duplicates).
-- With no JavaScript at all, the fact and its link must be plainly reachable with no concealment.
+- With no JavaScript at all, the fact and its link must be plainly reachable with no concealment,
+  and the stage must carry no role/tabindex (it is not a functional slider without JS).
+- Slider role/tabindex/aria-describedby are applied by JS only, never present in the static markup.
+
+Playwright resolution: resolved to one absolute file path via a single Node subprocess call, and
+that exact path is then baked into the generated runner script's own require() call. The runner
+never does its own independent bare-specifier ("require('playwright')") resolution -- if it did,
+and Playwright happened to be installed locally inside this repository rather than globally, the
+prerequisite check (which resolves relative to this script's working directory) and the runner
+(a separate script file living in an unrelated temp directory, which Node would resolve relative
+to instead) could legitimately disagree, silently skipping real verification. Resolving once and
+threading the exact path through removes that possibility by construction.
 """
 
 from __future__ import annotations
@@ -34,6 +50,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = ROOT / "homepage" / "page-6-home.blocks.html"
 PAYLOAD = ROOT / "payloads" / "signature-alignment-wp-block-v1.txt"
+
+EXIT_PASS = 0
+EXIT_FAIL = 1
+EXIT_SKIP = 2
 
 
 def require(condition: bool, message: str) -> None:
@@ -56,6 +76,25 @@ def extract_payload_js() -> str:
     return m.group(1)
 
 
+def resolve_playwright_main() -> tuple[str | None, str | None]:
+    """Resolve Playwright's absolute entry-file path ONCE via Node's own resolver.
+
+    Returns (path, None) on success or (None, reason) on failure. This is the single source of
+    truth for "is Playwright available, and where" -- nothing downstream re-resolves it
+    independently (see the module docstring for why that matters).
+    """
+    try:
+        proc = subprocess.run(
+            ["node", "-e", "process.stdout.write(require.resolve('playwright'))"],
+            capture_output=True, text=True,
+        )
+    except FileNotFoundError:
+        return None, "node is not available in this environment"
+    if proc.returncode != 0 or not proc.stdout.strip():
+        return None, f"the 'playwright' package is not resolvable from Node here: {proc.stderr.strip()}"
+    return proc.stdout.strip(), None
+
+
 PAGE_TEMPLATE = """<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><title>Signature Alignment keyboard test fixture</title></head>
@@ -68,8 +107,8 @@ PAGE_TEMPLATE = """<!doctype html>
 </html>
 """
 
-RUNNER_JS = r"""
-const { chromium } = require('playwright');
+RUNNER_JS_TEMPLATE = r"""
+const { chromium } = require(__PLAYWRIGHT_MAIN_PATH__);
 const path = require('path');
 
 const describe = async (page) => page.evaluate(() => {
@@ -90,12 +129,16 @@ const factState = async (page) => page.evaluate(() => {
   const filterValue = getComputedStyle(fact).filter;
   const m = /blur\(([\d.]+)px\)/.exec(filterValue);
   const blurPx = filterValue === 'none' ? 0 : (m ? parseFloat(m[1]) : null);
+  const stage = document.querySelector('[data-fv-align-stage]');
   return {
     inert: fact.inert === true,
     hasInertAttr: fact.hasAttribute('inert'),
     blurred: blurPx === null ? null : blurPx > 0,
     dataRevealed: document.querySelector('[data-fv-align-badge]').getAttribute('data-revealed'),
     statusText: document.querySelector('[data-fv-align-status]').textContent,
+    stageRole: stage.getAttribute('role'),
+    stageTabindex: stage.getAttribute('tabindex'),
+    stageDescribedBy: stage.getAttribute('aria-describedby'),
   };
 });
 
@@ -111,6 +154,9 @@ const factState = async (page) => page.evaluate(() => {
   results.initial = await factState(page);
   require_eq(results.initial.inert, true, 'fact must be inert before discovery');
   require_eq(results.initial.hasInertAttr, true, 'inert attribute must be reflected in the DOM');
+  require_eq(results.initial.stageRole, 'slider', 'JS must apply role=slider on successful init');
+  require_eq(results.initial.stageTabindex, '0', 'JS must apply tabindex on successful init');
+  require_eq(results.initial.stageDescribedBy, 'fv-align-desc', 'JS must wire aria-describedby to the real description element on successful init');
 
   await page.keyboard.press('Tab');
   results.tab1 = await describe(page);
@@ -166,13 +212,17 @@ const factState = async (page) => page.evaluate(() => {
 
   await page.goto(url.replace('page.html', 'page-nojs.html'));
   await page.waitForTimeout(150);
-  results.nojs_inert_attr = await page.evaluate(() => document.querySelector('[data-fv-align-fact]').hasAttribute('inert'));
-  require_eq(results.nojs_inert_attr, false, 'fact must never be inert when JS is absent');
+  results.nojs_state = await factState(page);
+  require_eq(results.nojs_state.inert, false, 'fact must never be inert when JS is absent');
+  require_eq(results.nojs_state.hasInertAttr, false, 'fact must never carry the inert attribute when JS is absent');
+  require_eq(results.nojs_state.stageRole, null, 'without JS, the stage must NOT advertise role=slider -- it is not a functional slider, so it must not claim to be one');
+  require_eq(results.nojs_state.stageTabindex, null, 'without JS, the stage must NOT be in the keyboard Tab order -- a nonfunctional element should not be a dead Tab stop');
   await page.keyboard.press('Tab');
+  results.nojs_tab1 = await describe(page);
+  require_eq(results.nojs_tab1, '<a#before-marker href=#>', 'first Tab stop must still be the before-marker');
   await page.keyboard.press('Tab');
-  await page.keyboard.press('Tab');
-  results.nojs_tab3 = await describe(page);
-  require_includes(results.nojs_tab3, 'six-miles-an-hour-malbone-street-wreck', 'with JS absent, the source link must be directly Tab-reachable (no concealment is possible without JS)');
+  results.nojs_tab2 = await describe(page);
+  require_includes(results.nojs_tab2, 'six-miles-an-hour-malbone-street-wreck', 'with JS absent, the source link must be the very next Tab stop: the non-interactive stage has no tabindex (skipped), and the "Show the connection" question/button stay display:none since only JS ever shows them, so neither is a Tab stop either');
 
   console.log(JSON.stringify(results, null, 2));
   await browser.close();
@@ -188,22 +238,14 @@ function require_includes(actual, substr, message) {
 
 
 def main() -> int:
-    try:
-        resolved = subprocess.run(
-            ["node", "-e", "console.log(require.resolve('playwright'))"],
-            capture_output=True, text=True,
-        )
-    except FileNotFoundError:
-        print("SKIP: node is not available in this environment; cannot run the real-browser check.")
-        return 0
-    if resolved.returncode != 0:
+    playwright_main, skip_reason = resolve_playwright_main()
+    if playwright_main is None:
         print(
-            "SKIP: the 'playwright' package is not resolvable from Node in this environment "
-            "(this is expected outside a session that has it preinstalled, and is NOT part of "
-            "the CI gate). Run this manually wherever Playwright + Chromium are available.\n"
-            f"node stderr: {resolved.stderr.strip()}"
+            f"SKIP (exit {EXIT_SKIP}, NOT a pass): {skip_reason}. This is expected outside a "
+            "session that has Playwright preinstalled, and is NOT part of the CI gate. Run this "
+            "manually wherever Playwright + Chromium are available. No accessibility checks ran."
         )
-        return 0
+        return EXIT_SKIP
 
     block = extract_align_block()
     js = extract_payload_js()
@@ -216,30 +258,36 @@ def main() -> int:
         (tmp_path / "page.html").write_text(page_html, encoding="utf-8")
         nojs_html = PAGE_TEMPLATE.format(block=block, script_tag="<!-- no JS -->")
         (tmp_path / "page-nojs.html").write_text(nojs_html, encoding="utf-8")
-        (tmp_path / "run.js").write_text(RUNNER_JS, encoding="utf-8")
+        runner_js = RUNNER_JS_TEMPLATE.replace("__PLAYWRIGHT_MAIN_PATH__", json.dumps(playwright_main))
+        (tmp_path / "run.js").write_text(runner_js, encoding="utf-8")
 
         proc = subprocess.run(
             ["node", str(tmp_path / "run.js"), str(tmp_path)],
             capture_output=True, text=True,
         )
-        print(proc.stdout)
+        if proc.stdout.strip():
+            print(proc.stdout)
         if proc.returncode != 0:
             print(proc.stderr, file=sys.stderr)
-            raise SystemExit("FAIL: real-browser keyboard/focus test failed (see assertion above)")
+            print(f"FAIL (exit {EXIT_FAIL}): real-browser keyboard/focus test failed (see assertion above)")
+            return EXIT_FAIL
 
         try:
             results = json.loads(proc.stdout)
         except json.JSONDecodeError:
-            raise SystemExit("FAIL: could not parse the browser test's JSON report")
+            print(f"FAIL (exit {EXIT_FAIL}): could not parse the browser test's JSON report")
+            return EXIT_FAIL
 
     print(
-        "PASS: real-browser keyboard/focus test — concealed link unreachable before discovery, "
-        "button-triggered reveal moves focus to the fact predictably, slider-triggered discovery "
-        "keeps focus on the stage, re-crossing extremes post-discovery does not re-announce, and "
-        "the no-JS fallback is fully reachable with no concealment."
+        f"PASS (exit {EXIT_PASS}): real-browser keyboard/focus test actually ran against real "
+        "Chromium — concealed link unreachable before discovery, slider role/tabindex/"
+        "aria-describedby applied by JS only and absent without JS, button-triggered reveal moves "
+        "focus to the fact predictably, slider-triggered discovery keeps focus on the stage, "
+        "re-crossing extremes post-discovery does not re-announce, and the no-JS fallback is fully "
+        "reachable with no concealment and no false slider semantics."
     )
     print(json.dumps(results, indent=2))
-    return 0
+    return EXIT_PASS
 
 
 if __name__ == "__main__":

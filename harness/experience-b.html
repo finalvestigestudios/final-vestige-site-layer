@@ -251,6 +251,7 @@
   .fv-align__reveal--pending.fv-align--found .fv-align__fact{filter:blur(0)}
   .fv-align__reveal--pending.fv-align--found .fv-align__question{display:none}
   .fv-align__status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .fv-align__desc{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   @media(max-width:760px){.fv-align__stage{aspect-ratio:4/5}}
   @media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge,.fv-align__fact{transition:none}}
 
@@ -715,7 +716,7 @@
     <h2 id="fv-align-title">Compare the system as it was to the system that failed.</h2>
     <p class="fv-align__intro">A 1903 map of the Brooklyn Rapid Transit system and Final Vestige's own chronology of the 1918 Malbone Street wreck. Slide between them to compare &mdash; then see why we show them side by side.</p>
   </div>
-  <div class="fv-align__stage" data-fv-align-stage tabindex="0" role="slider" aria-labelledby="fv-align-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="halfway between the two documents">
+  <div class="fv-align__stage" data-fv-align-stage>
     <div class="fv-align__panel fv-align__panel--map">
       <img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=900,608&amp;ssl=1" alt="1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.">
       <span class="fv-align__tag">1903 &middot; NYPL Digital Collections</span>
@@ -729,6 +730,7 @@
     </div>
     <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Connection found</span>
   </div>
+  <p class="fv-align__desc" id="fv-align-desc">Left: 1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network (NYPL Digital Collections). Right: chronology separating strike-day operating failures, the derailment and rescue from the later trials and acquittals (Final Vestige reconstruction, 1918&ndash;1920).</p>
   <div class="fv-align__reveal" data-fv-align-reveal>
     <p class="fv-align__question" data-fv-align-question>A system map from 1903 and a disaster fifteen years later &mdash; why put them side by side? <button type="button" class="fv-align__reveal-btn" data-fv-align-reveal-trigger>Show the connection</button></p>
     <p class="fv-align__fact" data-fv-align-fact tabindex="-1">This 1903 map shows the Brooklyn Rapid Transit system, including the Brighton line, fifteen years before a new tunnel was threaded through it. That tunnel's six-mile-an-hour curve under Malbone Street didn't open until September&nbsp;25, 1918 &mdash; five weeks before a dispatcher took it at five times the limit. This map isn't a record of the wreck. It's a record of how established the system already was when one new, tightly restricted curve was added to it. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
@@ -747,11 +749,20 @@
   var trigger = reveal && reveal.querySelector('[data-fv-align-reveal-trigger]');
   var status = document.querySelector('[data-fv-align-status]');
   if(!divider || !mapPanel || !badge || !reveal || !fact || !trigger || !status) return;
-  var LOW = 15, HIGH = 85;
   var supportsInert = 'inert' in document.createElement('div');
+  if(!supportsInert) return;
+  var LOW = 15, HIGH = 85;
+  var panels = Array.prototype.slice.call(stage.querySelectorAll('.fv-align__panel'));
   var found = false, visitedLow = false, visitedHigh = false;
+  stage.setAttribute('role', 'slider');
+  stage.setAttribute('tabindex', '0');
+  stage.setAttribute('aria-labelledby', 'fv-align-title');
+  stage.setAttribute('aria-valuemin', '0');
+  stage.setAttribute('aria-valuemax', '100');
+  stage.setAttribute('aria-describedby', 'fv-align-desc');
+  panels.forEach(function(p){ p.setAttribute('aria-hidden', 'true'); });
   reveal.classList.add('fv-align__reveal--pending');
-  if(supportsInert) fact.inert = true;
+  fact.inert = true;
   function describePosition(pct){
     if(pct <= LOW) return 'showing mostly the 1918 to 1920 reconstruction, map ' + Math.round(pct) + ' percent visible';
     if(pct >= HIGH) return 'showing mostly the 1903 map, map ' + Math.round(pct) + ' percent visible';
@@ -763,7 +774,7 @@
     badge.setAttribute('data-revealed','1');
     stage.classList.add('fv-align--locked');
     reveal.classList.add('fv-align--found');
-    if(supportsInert) fact.inert = false;
+    fact.inert = false;
     status.textContent = 'Connection found: the map predates the curve that failed. Read why below.';
     if(focusTarget) focusTarget.focus();
     trigger.textContent = 'Connection found';

@@ -2,6 +2,59 @@
 
 ## 0.4.0 — FVSL-VESTIGE-ASSEMBLY-HOME-002 (continued, same candidate, pre-merge)
 
+- **Signature Alignment: three further accessibility findings from a conditional-hold QD review,
+  fixed without redesigning the interaction or its historical content.**
+  1. **Unsupported-`inert` fallback no longer blurs readable content.** The previous fix only
+     gated the `inert` assignment on feature support (`if(supportsInert)fact.inert=true`), but
+     still unconditionally added the CSS-blur-triggering `fv-align__reveal--pending` class — so a
+     browser without `inert` support got the exact defect the fix was meant to prevent: a
+     visually illegible but still keyboard-focusable link. Fixed: the whole enhancement now
+     returns early when `inert` support can't be confirmed, falling back fully to the same
+     always-readable, non-interactive static presentation as no-JS. New regression test
+     (`buildDom({noInertSupport:true})`) asserts no concealment, no role/tabindex, and no event
+     wiring happens in that case.
+  2. **No-JS fallback no longer advertises slider semantics it can't back up.** The static markup
+     baked in `role="slider"`, `tabindex="0"`, and `aria-value*` unconditionally, so a
+     non-functional comparison stage (no JS) still claimed to be an interactive, keyboard-operable
+     slider — a real WCAG 4.1.2 (Name, Role, Value) violation. Fixed: the static markup now carries
+     none of those attributes; `role`, `tabindex`, `aria-labelledby`, `aria-valuemin`,
+     `aria-valuemax`, and `aria-describedby` are applied by the payload's JS only, on successful
+     init, and stripped again by the existing midway-failure cleanup if init crashes after
+     applying them. Both historical documents and the full explanatory finding remain directly
+     readable without JavaScript regardless (verified: real-browser Tab order with JS absent now
+     lands on the source link two Tabs in, since neither the inert stage nor the JS-only button
+     are Tab stops).
+  3. **ARIA slider content model corrected.** Nesting two full `<img>` elements (with real alt
+     text) and their caption `<span>`s inside a `role="slider"` element risks that content never
+     reaching assistive technology at all: slider is a single name/value widget, not a generic
+     container, and many screen readers present it as opaque, exposing only its accessible
+     name/value rather than walking its DOM children. Fixed: once the slider role is active, both
+     `.fv-align__panel` elements get `aria-hidden="true"`, and a new always-present,
+     visually-hidden `<p id="fv-align-desc">` — built from the same real alt text and captions
+     already used for the images, not new copy — is wired to the stage via `aria-describedby` so
+     their actual content reaches screen reader users through a channel the opaque widget role
+     can't swallow.
+  4. **Real-browser test runner hardened.** `tests/verify_signature_alignment_keyboard_browser.py`
+     previously resolved Playwright via two independent bare `require('playwright')`/
+     `require.resolve('playwright')` calls — safe only by coincidence wherever both calls happen
+     to share a resolution base (e.g. a global NODE_PATH install), but capable of silently
+     diverging (prerequisite check succeeds via directory-walk resolution from the repo root,
+     while the actual runner script — generated into an unrelated temp directory — fails to
+     resolve the same bare specifier) for a locally-per-project-installed Playwright, the more
+     realistic "wherever Playwright is available" case. Fixed: Playwright's absolute entry path is
+     now resolved exactly once and that literal path is threaded into the generated runner's own
+     `require()` call, so the two can never disagree by construction. Exit codes are now also
+     distinct and documented (0 = genuinely passed, 1 = ran and failed, 2 = skipped — Playwright
+     unavailable), and no skip path ever prints anything containing the word "PASS", so a missing
+     dependency cannot be mistaken for successful verification by anything that only checks the
+     exit code or greps output.
+
+  `tests/verify_signature_alignment.py` gained scenario coverage for all of the above (the
+  unsupported-`inert` fallback, JS-only role/tabindex/aria-describedby application and its
+  removal on a midway failure, and the aria-hidden panels / aria-describedby wiring), and
+  `tests/verify_signature_alignment_keyboard_browser.py` re-confirmed the full accessibility
+  contract end-to-end in real Chromium, including the corrected no-JS Tab sequence.
+
 - **Signature Alignment: concealed-content keyboard accessibility fixed.** An independent QD
   review of the just-redesigned discovery interaction found that CSS `blur()` alone was not
   sufficient: the concealed fact's nested source link stayed in normal keyboard Tab order while
