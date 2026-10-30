@@ -1,0 +1,25 @@
+{
+  "article": {
+    "status": "draft",
+    "proposed_path": "/mind/subliminal-messages-evidence/"
+  },
+  "offer_guide": {
+    "status": "draft",
+    "proposed_path": "/mind/subliminal-guru-get-super-organized/",
+    "affiliate_url": null
+  },
+  "hub": {
+    "status": "draft",
+    "proposed_path": "/mind/",
+    "owner_pr": 172
+  },
+  "real_live_links": {
+    "focus": "https://finalvestige.com/focus/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "editorial": "https://finalvestige.com/editorial-standards/",
+    "disclosure": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "no_new_signup": true,
+  "no_active_commercial_links": true,
+  "analytics_status": "design-only"
+}
