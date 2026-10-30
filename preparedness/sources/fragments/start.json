@@ -288,7 +288,7 @@
       "id": "start-redcross-older-adults",
       "title": "Older Adults Emergency Preparedness",
       "publisher": "American Red Cross",
-      "kind": "regulator",
+      "kind": "nonprofit",
       "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/older-adults.html",
       "published": null,
       "updated": null,
@@ -296,7 +296,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Identify likely disasters and community plans; build a support network and meet with helpers; plan to stay home at least two weeks or evacuate; sign up for local registries if you need help evacuating; back-up plan for power-dependent medical devices and medicines that must stay cold; two ways out of every room; property or renter's insurance; keep at least 30 days of medications and extra assistive items; review, practice and refresh the plan, supplies and documents now and every six months.",
-      "notes": "Kind 'regulator' is the nearest available label. The Red Cross is a congressionally chartered nonprofit, not a regulator. The page shows no date."
+      "notes": "The American Red Cross is a congressionally chartered humanitarian nonprofit, not a government regulator. The page shows no date."
     },
     {
       "id": "start-acl-emergency",
