@@ -105,6 +105,13 @@ def run_smoke(app_id: str) -> list[Path]:
             diff = outputs[0].read_text(encoding="utf-8")
             _check("-Review within 30 days." in diff, "smoke invariant 04")
             _check("+Review within 15 days." in diff, "smoke invariant 05")
+            _check(hashlib.sha256(before.read_bytes()).hexdigest() in diff
+                   and hashlib.sha256(after.read_bytes()).hexdigest() in diff,
+                   "smoke invariant 38")
+            same_version = engine.policy_delta(str(before), str(before), str(root))[0]
+            _check("Both source files have identical bytes" in
+                   same_version.read_text(encoding="utf-8"),
+                   "smoke invariant 39")
         elif app_id == "grants":
             claims = _csv(root, "claims.csv", ("id", "amount", "program"), [
                 ("C1", "20", "G1")])
