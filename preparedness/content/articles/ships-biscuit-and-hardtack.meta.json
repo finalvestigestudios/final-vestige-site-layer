@@ -1,0 +1,44 @@
+{
+  "n": 22,
+  "slug": "ships-biscuit-and-hardtack",
+  "title": "Ship's biscuit and hardtack",
+  "h1": "Ship's biscuit and hardtack: the logic and limits of preserved starch",
+  "dek": "Navies and armies fed men for months on bread baked almost to stone. The records show why it lasted when dry, how it failed when wet, and why it is not a food-storage plan for your pantry.",
+  "description": "What navy records, museum objects and park pages show about ship's biscuit and Civil War hardtack, where dryness failed, and why it is not a modern storage method.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Age of sail",
+    "Civil War",
+    "Preserved starch",
+    "Mold and pests"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If any listed source changes, when the primary contracts cited in the Constitution Museum study are pulled and read directly, or when a modern regulator source on dry baked goods is added.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Taxonomy does not gate this item, but the page carries a food-safety verdict panel (not-validated; discard moldy bread per USDA FSIS) and no quantities, times or recipes. Requested for human read-through of the verdict panel and the decision not to link any home hardtack recipe."
+  },
+  "related": [
+    "salt-beef-salt-pork-age-of-sail",
+    "pioneer-travel-rations",
+    "history-of-food-preservation"
+  ],
+  "source_use": {
+    "usscm-brenckle-2019": "1813 bread and meat load-out; weekly ration table; bread contract and biscuit dimensions; 'hardtack' as an 1840s term; pests; 1838 recollection; calorie estimate; USS Congress chaplain.",
+    "rmg-life-at-sea": "Storage, ventilation and vermin as causes of spoilage; malnutrition and scurvy at sea.",
+    "rmg-biscuit-aab0766": "A surviving ship's biscuit (1846 recipe, broad arrow and letter C) as a physical record.",
+    "hist-food-nps-hardtack-mana": "Civil War hardtack: made of flour, water and salt; nicknames; wet and moldy in boxes; insects; cooking uses; Confederate reliance on corn.",
+    "hist-food-nps-fosc-rations": "1840s Army ration; hardtack issue of about a pound; common problems; the coffee-and-skimming remedy.",
+    "hist-food-fsis-molds": "Modern USDA guidance to discard moldy bread and baked goods; molds tolerate salt and sugar; mycotoxins; do not sniff moldy food.",
+    "hist-food-marcy-prairie-traveler-text": "Marcy's 150 lb of flour 'or its equivalent in hard bread'; recommendation of antiscorbutics.",
+    "loc-prairie-traveler": "Library of Congress digitization and edition date of Marcy's handbook."
+  }
+}

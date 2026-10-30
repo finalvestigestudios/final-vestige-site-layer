@@ -1,0 +1,46 @@
+{
+  "n": 11,
+  "slug": "safe-jerky-dehydration",
+  "title": "Safe jerky and dehydration at home",
+  "h1": "Safe jerky and dehydration: tested methods and contamination controls",
+  "dek": "Drying stops bacteria growing; it does not reliably kill them. What USDA, NCHFP and Kansas State Extension say about heating, drying and storing jerky, where they disagree, and why cure and smoke are not safety steps.",
+  "description": "Why a dehydrator alone does not make raw meat safe, the 160°F heating step USDA and NCHFP describe, where their methods and shelf-life figures differ.",
+  "section": "food",
+  "track": "modern",
+  "tags": [
+    "Jerky",
+    "Dehydration",
+    "Contamination controls"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "Immediately if FSIS, NCHFP or Kansas State revise the heating step, the dehydrator temperatures or the shelf-life figures; otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "pantry-rotation",
+    "pressure-canning-low-acid",
+    "salt-beef-salt-pork-age-of-sail",
+    "pemmican-and-dried-meats"
+  ],
+  "source_use": {
+    "food-fsis-jerky": "Why dehydrators do not kill pathogens; Salmonella and E. coli O157:H7; 160 F / 165 F then 130 to 140 F; the physics of heat resistance; sun drying; the two studies as FSIS summarizes them; wild game; storage times.",
+    "food-fsis-jerky-qa": "Current Hotline recommendation; steam or roast to 160 F / 165 F; dehydrator holds 130 to 140 F; test piece; 10 to 24 hours; handling steps.",
+    "nchfp-jerky": "Raw poultry; Trichinella freezing; handling; wild game; two heating routes to 160 F; slices no thicker than 1/4 inch; dry at 140 F; ground meat; packaging; 2 weeks at room temperature.",
+    "food-ksu-jerky": "March 2026 extension summary: same two heating methods; do not raise dehydrator temperature (case hardening); ground-meat oven step; 1 to 2 months; refrigerate or freeze.",
+    "food-fsis-shelf-stable": "Home-dried jerky shelf life and why it is shorter; sun drying and low-acid foods; storage chart.",
+    "food-fsis-emergencies": "USDA Meat and Poultry Hotline number and hours.",
+    "food-osu-survival-food": "Vacuum-sealing low-acid foods and botulism; jerky as a pantry protein.",
+    "fsis-home-cure-qa": "Botulism cases have followed home-canned, preserved, cured, smoked or fermented foods; points to NCHFP.",
+    "cdc-botulism-prevention": "Improperly preserved homemade foods; toxin cannot be seen, smelled or tasted; if in doubt throw it out.",
+    "nchfp-cure-smoke": "Curing as a balance of time, temperature and ingredients; where tested curing and smoking methods live.",
+    "food-cdc-risk-factors": "Who is at higher risk of severe food poisoning."
+  }
+}

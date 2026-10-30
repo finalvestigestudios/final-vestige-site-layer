@@ -1,0 +1,49 @@
+{
+  "n": 25,
+  "slug": "pemmican-and-dried-meats",
+  "title": "Pemmican and dried meats",
+  "h1": "Pemmican and dried meats: Indigenous origins, the fur trade, and what modern guidance says",
+  "dek": "A food of Cree, Lakota, Dakota, Anishinaabe, Blackfoot, Chipewyan and Métis peoples, named as the sources name them. No recipe, no ratios, and an honest statement of what modern safety guidance does and does not cover.",
+  "description": "Who made pemmican and wasna, how the fur trade and the Métis depended on it, and what USDA and NCHFP dried-meat guidance says. History only; no recipe.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Pemmican",
+    "Indigenous foodways",
+    "Fur trade",
+    "Dried meat",
+    "Botulism risk"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "When a Dene, Plains Cree, Blackfoot, Anishinaabe or Lakota-authored source is added, when Parks Canada or Library and Archives Canada sources are read, or if USDA or NCHFP revise their jerky guidance.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Gated (pemmican/curing). Items for the human reviewer: (1) the page gives no recipe, ratio, time or storage duration for pemmican; (2) it reproduces the 160 F / 165 F jerky heat-step figures with attribution, and states that USDA FSIS (heat before dehydrating; home jerky 1 to 2 months) and NCHFP (heat before or after drying; 2 weeks at room temperature) differ; (3) the verdict is not-validated for lack of any regulator source on pemmican. Also recommended: cultural read-through by someone with standing in the communities named, before publication."
+  },
+  "related": [
+    "smokehouses-salting-curing",
+    "pioneer-travel-rations",
+    "history-of-food-preservation",
+    "salt-beef-salt-pork-age-of-sail"
+  ],
+  "source_use": {
+    "hist-food-ce-pemmican": "Cree word and gloss; definition; Peter Pond 1779 and the Chipewyans; trade posts; 1814 Pemmican Proclamation; Royal Navy beef pemmican; storage and shipping in hide bags.",
+    "hist-food-metis-fur-trade": "Métis pemmican provisioning, Ross's hunt figures, economic weight and 1870s price rise.",
+    "hist-food-headsmashedin": "Blackfoot (Siksika, Kainai, Piikani) dry meat and pemmican as winter and emergency stores; 1881 and Treaty 7.",
+    "hist-food-natifs-wasna": "Attribution of wasna to Lakota and Dakota and pemmican to Anishinaabe peoples; continuing use.",
+    "hist-food-nk360-bison": "The reciprocal relationship between Northern Plains Native Nations and the bison.",
+    "hist-food-marcy-prairie-traveler-text": "Marcy on pemmican as the Fur Company men's diet; Dr Rae's 1854 allowance; 'keep fresh for a long time'.",
+    "loc-prairie-traveler": "Library of Congress digitization of Marcy's handbook.",
+    "hist-food-fsis-jerky": "USDA heat step before dehydrating; reasons; wild game; home-dried jerky stored 1 to 2 months.",
+    "hist-food-nchfp-jerky": "Extension jerky guidance; heat step timing; trichinella; two weeks at room temperature; fat trimming.",
+    "cdc-botulism-prevention": "Improperly preserved foods and botulism; toxin cannot be seen, smelled or tasted.",
+    "fsis-home-cure-qa": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods."
+  }
+}

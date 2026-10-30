@@ -1,0 +1,26 @@
+{
+  "n": 27,
+  "slug": "root-cellars-cool-storage",
+  "title": "Root cellars and the pre-electric household",
+  "h1": "Root cellars, ice houses and cool storage: what the records show, and what a cellar cannot do",
+  "dek": "A cellar set into the ground, an ice house that failed by September, and what University Extension says whole produce needs today. Why cool storage helps vegetables and fruit, and why it is not a refrigerator.",
+  "description": "Root cellars and ice houses before refrigeration, University Extension storage ranges for produce, and why a cellar is not a refrigerator.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": ["Root cellars", "Cool storage", "Ice houses", "Produce"],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If University of Missouri Extension or USDA FSIS revise the cited pages, or when a second Extension source is compared against the Missouri chart.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "not-required", "reviewer": null, "date": null, "scope": "Not gated in the taxonomy. Contains food-safety statements (produce storage ranges, the 40 F benchmark) that a human reviewer should still read before publication."},
+  "related": ["pickling-fermentation-old-recipes", "salt-beef-salt-pork-age-of-sail"],
+  "source_use": {
+    "hist-home-mu-root-cellars": "Crop-by-crop storage conditions; do not freeze; do not store fruit with vegetables; storage life depends on crop, conditions and condition at storage; ground storage; companion publications.",
+    "hist-home-nps-oxon-hill-root-cellar": "An 1830 partly underground root cellar that kept vegetables through winter before refrigeration.",
+    "hist-home-nps-ww2-canning": "Root vegetables stored in root cellars or in the ground over winter.",
+    "hist-home-monticello-ice-house": "Jefferson's ice house: purpose, labor, 62 wagon loads, losses to melting, ice failing in September 1810 and lasting to October 15, 1815.",
+    "hist-home-nps-fort-union-water": "Fort Union's subterranean ice houses and ice cutting from dammed creek ponds.",
+    "hist-home-fsis-refrigeration": "USDA benchmark: 40 F or below, appliance thermometer, danger zone, two-hour limit.",
+    "cdc-botulism-prevention": "If in doubt, throw it out."
+  }
+}

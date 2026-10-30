@@ -1,0 +1,33 @@
+{
+  "n": 30,
+  "slug": "water-purification-through-history",
+  "title": "Water purification through history",
+  "h1": "Boiling, sand, charcoal and chlorine: how people cleaned water, and what none of it could remove",
+  "dek": "From a Sanskrit classic to Jefferson's unbuilt sand well, from John Snow's counting to the first chlorinated tap water: what the record shows, why a bottle of sand is not a water plant, and what current guidance says instead.",
+  "description": "A documented history of boiling, distillation, sand filtration and chlorination, and why homemade sand or charcoal filters cannot make unknown water safe.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": ["Water", "Sand filtration", "John Snow", "Myths"],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If CDC, EPA or NPS revise their treatment or filter guidance, or when the primary records behind the scholarly accounts (Snow's full text, the Metropolis Water Act papers) are pulled and read directly.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["making-water-safer", "homemade-water-filters", "water-advisories-explained", "rain-barrels-and-cisterns"],
+  "source_use": {
+    "cdc-water-hiking": "Clear water can carry germs; absolute pore size and NSF 53/58 certification; portable filters do not remove viruses.",
+    "nps-purify-water": "Never drink untreated natural water even if clear; filtration alone does not purify.",
+    "cdc-water-safe": "Current boiling and disinfection guidance; fuel, toxic chemicals and radioactive material cannot be made safe by boiling or disinfecting; follow a filter with a disinfectant.",
+    "epa-emergency-disinfection": "Boiling or disinfection will not destroy heavy metals, salts and most chemicals.",
+    "ready-water": "Distillation described as removing microbes, heavy metals, salts and most other chemicals.",
+    "hist-home-ayu-water": "A Sushruta Samhita flower method as reported by modern authors, and their statement that no standard measure or scientific study exists.",
+    "hist-home-savours-phipps": "Irving's shipboard distilling apparatus on the 1773 Phipps expedition, as quoted in a scholarly account.",
+    "hist-home-monticello-cisterns": "Jefferson's own letter about an intended sand-filter well and the leaking cisterns.",
+    "hist-home-tulchinsky-snow": "Snow's Broad Street investigation, the declining epidemic, and the two-water-company comparison.",
+    "hist-home-snow-mode-of-communication": "Short quoted phrases from Snow's own account.",
+    "hist-home-wellcome-snow-map": "Archive record of a map and report on the 1854 Soho outbreak.",
+    "hist-home-aim25-chelsea": "Chelsea Waterworks Company history: polluted Thames intake, 1829 slow sand filtration, 1856 filter beds.",
+    "hist-home-oregon-slow-sand": "Utility-scale slow sand filtration history and conditional performance; the 1852 Metropolis Water Act.",
+    "hist-home-cdc-chlorine": "First US use of chlorine in tap water (1908), chloramine (1929), safe levels, byproducts."
+  }
+}

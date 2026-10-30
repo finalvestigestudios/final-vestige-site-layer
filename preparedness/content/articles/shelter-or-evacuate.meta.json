@@ -1,0 +1,47 @@
+{
+  "n": 14,
+  "slug": "shelter-or-evacuate",
+  "title": "Shelter in place or evacuate?",
+  "h1": "Shelter in place or evacuate: what the specific hazard changes",
+  "dek": "Tornadoes mean shelter, wildfires mean leave early, floods and chemical releases mean it depends. What Ready.gov and the National Weather Service say for each hazard, and how to be ready for either choice.",
+  "description": "Shelter in place or evacuate? What Ready.gov and NWS say for tornadoes, hurricanes, floods, wildfires and chemical incidents, plus evacuation and shelter checklists.",
+  "section": "shelter-power",
+  "track": "modern",
+  "tags": [
+    "Shelter in place",
+    "Evacuation",
+    "Warnings"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-29",
+  "recheck": "Immediately if Ready.gov revises any hazard page below, especially the 2023 hazardous-materials page; otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "outage-heat-cold-generators",
+    "home-fire-escape-plan",
+    "family-communication-plan"
+  ],
+  "source_use": {
+    "shelter-ready-hurricanes": "Mandatory evacuation zones; interior room or storm shelter for wind; highest level and no closed attic if flooded; six inches / one foot of moving water; surge as leading cause of deaths; not just coastal; FEMA app, EAS and WEA alerts.",
+    "shelter-ready-wildfires": "Evacuate immediately if told; shelter with friends or family; trapped: call 911, response may be delayed or impossible; smoke room, N95, recirculate; stay inside or go to lower-smoke building if not ordered out.",
+    "shelter-ready-tornadoes": "Warning actions; safe room, ICC 500 shelter or interior windowless room; head and neck; vehicle guidance; sirens; text after.",
+    "shelter-ready-hazmat": "Signs of a chemical release; instructions differ by threat; evacuate / stay-indoors / outside steps; do not leave shelter until authorities say; decontamination.",
+    "shelter-ready-shelter": "Three meanings of shelter; follow local authorities; mass care shelter points; pets and service animals; text SHELTER to 43362; shelter-in-place conditions and steps; sealing a room as a temporary measure.",
+    "shelter-nws-nwr": "NOAA Weather Radio All Hazards description, EAS link, chemical-release alerts, receiver need, transmitter outages.",
+    "shelter-ready-evacuation": "Evacuation checklist: destinations, routes, on foot, fuel, one car, go-bag, leaving, note, out-of-state contact, neighbors, returning, FEMA app shelters.",
+    "shelter-ready-floods": "Depending on the type of flooding; barricades; trapped in car or building; most common disaster; flood insurance timing.",
+    "shelter-ready-winter-weather": "Find shelter right away under a warning; stay off roads; stay in the car if trapped.",
+    "shelter-ready-power-outages": "Go to a community location with power if heat or cold is extreme.",
+    "shelter-ready-plan": "Household discussion questions; household-needs checklist.",
+    "shelter-ready-plan-locations": "Plan for school, daycare, work; ask about alerts, evacuation and shelter-in-place plans.",
+    "shelter-ready-disabilities": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters."
+  }
+}

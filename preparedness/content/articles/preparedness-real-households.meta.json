@@ -1,0 +1,52 @@
+{
+  "n": 20,
+  "slug": "preparedness-real-households",
+  "title": "Preparedness for the households that standard advice forgets",
+  "h1": "Preparedness for renters, apartments, tight budgets, elder care and disability access",
+  "dek": "Standard advice quietly assumes a house, a car, storage space, spare money and a body that can use the stairs. Here is what the official sources say for the households that do not fit, where they run out, and who to ask.",
+  "description": "Preparedness for renters, apartment residents, tight budgets, older adults, caregivers and people with disabilities, using FEMA, HUD, CDC, ACL and Red Cross sources.",
+  "section": "start-here",
+  "track": "modern",
+  "tags": [
+    "Renters",
+    "Low income",
+    "Older adults",
+    "Disability access"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If Ready.gov, FEMA, the CDC, ACL or HUD revise the pages cited, or at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "household-emergency-plan",
+    "three-day-kit",
+    "go-bags",
+    "two-week-water-storage"
+  ],
+  "source_use": {
+    "start-usfa-high-rise": "Know your exits, practice your route, keep stair doors closed, do not use elevators in a fire, shelter in place or wait on a clear landing if you cannot use the stairs, not all tall buildings meet modern standards.",
+    "start-hud-multifamily-template": "HUD's template is written for owners of multifamily housing; it covers resident protection, annual updates and an evacuation special assistance form; RAD conversions must have a property-wide disaster plan including evacuation.",
+    "start-ready-financial": "Renters insurance, flood coverage caveat, small cash, document storage, benefits by direct deposit, ID for FEMA assistance, scam cautions.",
+    "start-fema-housing": "Help after a declared disaster: rent, lodging reimbursement, serious needs; eligibility conditions; may qualify even with insurance; how to apply; not a reimbursement for lost power or food.",
+    "start-ready-low-cost": "Free and low-cost starting points.",
+    "ready-are-you-ready": "Insurance for an apartment, lease documents, emergency savings, cash, 72-hour framing.",
+    "start-ready-power": "Outage effects, medical devices, refrigeration times, generator and stove cautions.",
+    "start-ready-disability": "Support network, key, registries, dialysis, power priority list, assistive devices, heat risk, kit tips.",
+    "start-ready-older-adults": "Take Control in 1, 2, 3; support-network key; clinics' emergency plans; transport; insurance card copies.",
+    "start-redcross-older-adults": "Plan to stay two weeks or evacuate, 30 days of medication, two ways out of every room, registries, renter's insurance, review every six months.",
+    "start-acl-emergency": "Chronic conditions among older adults, support network, Medical Information Card, Eldercare Locator, DIAL, Disaster Distress Helpline, emPOWER, service-provider obligations.",
+    "start-cdc-disability-plan": "Contact list and check-ins, alerts, evacuation options, practice and annual review.",
+    "start-cdc-disability-evacuate": "Accessible transport may not be available; ADA shelters; service and emotional support animals.",
+    "start-cdc-pyh-prescriptions": "Emergency supply of medicines, medicine list, state refill laws.",
+    "start-ready-alerts": "Alert systems and the limits of each.",
+    "cdc-water-store": "Water baseline and the 2-week goal."
+  }
+}

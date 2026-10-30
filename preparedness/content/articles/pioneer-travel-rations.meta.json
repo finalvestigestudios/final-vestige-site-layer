@@ -1,0 +1,47 @@
+{
+  "n": 24,
+  "slug": "pioneer-travel-rations",
+  "title": "Pioneer travel rations",
+  "h1": "Pioneer travel rations in guidebooks and park records: what was recommended, and what happened",
+  "dek": "Guidebook lists of flour, bacon and coffee, set beside the records of parties that ran out. What the sources say, whose hunger is part of the story, and the lesson that does carry over.",
+  "description": "What 1840s-50s overland guidebooks recommended emigrants carry, how often food ran short, and how the Shoshone and Paiute experience of that hunger is recorded.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Overland trails",
+    "Rations",
+    "Guidebooks",
+    "Western Shoshone"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "When individual diaries in the Library of Congress collection are read directly, when Ware's 1849 guide is located, or when a Newe or Numa-authored account of the emigrant years is found.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Taxonomy does not gate this item, but the page carries a verdict panel referring to jerky heat-step guidance (160 F / 165 F) and a flagged NCHFP versus USDA difference on timing. Requested for human read-through of that panel and of the historical ration lists, which are labelled as not guidance."
+  },
+  "related": [
+    "ships-biscuit-and-hardtack",
+    "pemmican-and-dried-meats",
+    "history-of-food-preservation",
+    "salt-beef-salt-pork-age-of-sail"
+  ],
+  "source_use": {
+    "loc-pioneer-diaries": "Catalogue description of the Library of Congress collection of emigrant diaries and guides (collection level only).",
+    "loc-prairie-traveler": "Library of Congress digitization of Marcy's handbook and its edition date.",
+    "hist-food-marcy-prairie-traveler-text": "Marcy's provisions list for 110 days; desiccated vegetables; antiscorbutics; cold flour; jerking; his 1857-58 shortage; his remark on emigrants exhausting their provisions.",
+    "hist-food-nps-emigrant-trails": "Ware's 1849 supply list for three people; food on the trail; buffalo chips; outfit cost.",
+    "hist-food-nps-nht-nevada-guide": "Bidwell-Bartleson provisions; Humboldt shortages; Donner-Reed food; Hastings Cutoff provisioning; the Newe and Numa hunger passages and the 1855 agent's report.",
+    "hist-food-fsis-jerky": "Current USDA recommendation to heat meat to 160 F and poultry to 165 F before dehydrating.",
+    "hist-food-nchfp-jerky": "Extension jerky guidance (heat in marinade or after drying); source of the timing difference with USDA.",
+    "fsis-home-cure-qa": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+    "cdc-botulism-prevention": "Improperly preserved foods among common sources of botulism; toxin cannot be seen, smelled or tasted.",
+    "nchfp-cure-smoke": "Use tested methods for home curing and smoking."
+  }
+}

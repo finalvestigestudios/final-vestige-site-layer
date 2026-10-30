@@ -1,0 +1,47 @@
+{
+  "n": 19,
+  "slug": "warnings-radios-offline-maps",
+  "title": "Warnings, radios and offline maps",
+  "h1": "Warnings, weather radios, offline maps and communications failure",
+  "dek": "Phone alerts, weather radio, broadcast alerts and the FEMA app fail in different ways. What the official pages say each one does, where each can break, and how to reach each other when calls will not go through.",
+  "description": "How Wireless Emergency Alerts, NOAA Weather Radio and the Emergency Alert System work, where each can fail, and the FCC's tips for when phone calls will not connect.",
+  "section": "family-communication",
+  "track": "modern",
+  "tags": [
+    "Alerts",
+    "Weather radio",
+    "Communications",
+    "Maps"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "Quarterly: the NWS Weather Radio page lists live transmitter outages and FEMA/FCC alerting pages change often. Immediately if FEMA or the FCC changes WEA or EAS guidance.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "family-communication-plan",
+    "household-emergency-plan",
+    "go-bags",
+    "medication-and-devices",
+    "shelter-or-evacuate",
+    "navigation-before-gps"
+  ],
+  "source_use": {
+    "health-ready-alerts": "WEA features and troubleshooting; who may send WEAs; EAS description and the 10-minute presidential access; NWR and IPAWS summaries; FEMA App features; children and WEAs.",
+    "health-fema-ipaws": "IPAWS delivers one authenticated message through several pathways; WEA by location even if cellular networks are overloaded; sirens, digital signs and phone networks; more than 2,000 alerting authorities.",
+    "health-fcc-wea": "WEA is pushed from cell towers by participating carriers; participation is voluntary but regulated; WEA and EAS are the two main components; the 2023 FCC item on delivering alerts during cell tower outages (title only).",
+    "health-fcc-comms-tips": "Congestion explanation; limit and shorten calls; text first; try several services; wait 10 seconds before redialing; backup power; out-of-area contact; call forwarding; corded phone.",
+    "nws-nwr": "Three useful receiver features: tone alert, SAME for one county, and battery backup; NWR works with the Emergency Alert System.",
+    "health-nws-nwr-national": "NWR scope, non-weather hazards, over 1,000 transmitters, need for a special receiver, the seven VHF frequencies, station and county listings, live outage list and reasons, weekly-test notice.",
+    "health-ready-kit": "Battery-powered or hand-crank radio and NOAA Weather Radio with tone alert; local maps; phone chargers and a backup battery; yearly kit review.",
+    "health-ready-plan": "Alerts as the first planning question; evacuation route; family communication plan; meeting place; practice.",
+    "health-ready-disabilities": "Weather radio with text display and flashing alert; hearing-aid batteries; battery lantern; FEMA App alerts for up to five locations; Braille labels and communication devices."
+  }
+}

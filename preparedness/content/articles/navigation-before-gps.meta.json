@@ -1,0 +1,45 @@
+{
+  "n": 32,
+  "slug": "navigation-before-gps",
+  "title": "Finding your way before GPS",
+  "h1": "Finding your way before GPS: clocks, the Moon, the compass, and where each method runs out",
+  "dek": "How navigators solved direction and position before satellites, what the records say about accuracy, and why a map, a compass and a plan still matter.",
+  "description": "A source-checked history of longitude, sextants, the compass and Polaris, with plain limits on each method and current agency advice on declination and travel.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Navigation",
+    "Longitude",
+    "Compass and declination",
+    "Polaris"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If any listed source changes; when Marcy's chapters on route-finding and the Board of Longitude's papers are read directly; and if an official or museum source for sun and shadow direction-finding is found.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "not-required",
+    "reviewer": null,
+    "date": null,
+    "scope": "Not a gated slate item (taxonomy gate: false). No instructions, quantities or procedures are given. Editorial read-through still required."
+  },
+  "related": [
+    "pioneer-supply-chains-failed",
+    "fire-making-across-time"
+  ],
+  "source_use": {
+    "hist-field-rmg-why-longitude": "The 1707 Scilly disaster, the lobbying origin of the 1714 Act, the reward, earlier schemes, Galileo's Jupiter proposal and Newton's objection.",
+    "hist-field-rmg-harrison": "Harrison's timekeepers, the Lisbon and Barbados trials, the Board's 1765 finding, the dispute, cost and slow roll-out.",
+    "hist-field-rmg-lunar": "Lunar distances, Mayer and Bradley, the first marine sextant, Maskelyne's 1761 trial figures, the Nautical Almanac and its computers, and the persistence of dead reckoning.",
+    "hist-field-si-sextant": "Smithsonian record of a Ramsden sextant and the meaning of its 60-degree scale.",
+    "hist-field-usgs-declination": "Declination varies with place and time; map collar information; compass can point south at high latitudes.",
+    "hist-field-usgs-north-arrows": "The three north arrows on USGS topographic maps and that very old maps may lack them.",
+    "hist-field-noaa-declination": "Declination definition, sign convention, true bearing = magnetic + declination, and that a compass points along the local field.",
+    "hist-field-nasa-north-star": "Polaris as a reliable direction of north in the Northern Hemisphere; its limits; no south pole star.",
+    "hist-field-nws-winter-before": "Compass and road maps in a winter kit; do not depend on phones; tell someone your route.",
+    "loc-prairie-traveler": "Library of Congress digitized handbook; title page, preface and contents only."
+  }
+}

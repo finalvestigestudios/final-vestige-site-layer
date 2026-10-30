@@ -1,0 +1,43 @@
+{
+  "n": 31,
+  "slug": "fire-making-across-time",
+  "title": "Making fire across time, and fire safety now",
+  "h1": "Making fire across time: from flint and steel to the match, and the rules that keep fire safe now",
+  "dek": "Museum records show how people carried and made fire, what the friction match cost the people who built it, and why the rules for modern outdoor fire matter more than any old method.",
+  "description": "A source-checked history of flint and steel, friction methods and the friction match, ending in current U.S. guidance on outdoor fire, burn bans and carbon monoxide.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Fire-making",
+    "Matches",
+    "Burn bans",
+    "Carbon monoxide"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If any listed source changes; when the Science Museum Group object records and John Walker's day book are read directly; and when the NPS campfire page (last updated 2017) is revised.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Awaiting the founder's safety review. See docs/CLUSTER-hist-field.md for the claims to check."
+  },
+  "related": [],
+  "source_use": {
+    "hist-field-smg-fire-methods": "Museum overview of how fire-making works and its categories; the people named for friction methods; fire pistons and Dobereiner's lamp; Walker's match and its hazards; white phosphorus, phossy jaw and the 1888 Matchgirl Strikes; safety matches and the ferrocerium lighter; the provenance caveat.",
+    "hist-field-bbc-walker-light": "A museum-contributed record of an original friction match: 1826 discovery, first sale 12 April 1827, cardboard-to-splint-to-boxed development, no patent, Samuel Jones's Lucifers.",
+    "hist-field-tvm-walker": "Walker's background, first sale 7 April 1827 (disagrees with the other museum), Faraday's advice to patent, the 1977 statue.",
+    "hist-field-nps-flint-steel": "National Park Service description of flint, steel and char cloth, and who used them.",
+    "hist-field-nmah-tinder-box": "Smithsonian's iron tinder box record, as evidence of household fire-making equipment.",
+    "hist-field-usfa-outdoor-fire": "Leading cause of outdoor fires; campfire and fire pit distances; grills only outdoors; supervision, screens, matches out of children's reach.",
+    "hist-field-nps-campfires": "Park rules and bans; 15-foot distance; lighter fluid allowance; never leave a fire unattended.",
+    "hist-field-nfpa-outdoor-fire": "Ask the local fire department first; embers and wildfire risk; fire pit and NFPA 1 distances; never flammable liquids or plastics.",
+    "hist-field-cdc-co-basics": "Carbon monoxide: what it is, symptoms, never burn charcoal or use camp stoves indoors, CO detectors.",
+    "hist-field-nws-winter-before": "Winter-vehicle kit mentions matches; home supplies include smoke alarm and extinguisher.",
+    "hist-field-nws-winter-during": "Source for the stuck-vehicle and no-shelter fire statements, deliberately not reproduced."
+  }
+}
