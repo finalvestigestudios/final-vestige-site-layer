@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "integration_base_sha": "c8df99cc661e518e93e58e1cc1ea3d7256f58643",
+  "as_of": "2026-10-30",
+  "authority": "GIT_BLOB_INPUT_BASELINE_NOT_A_HUMAN_SOURCE_CHECK_OR_SAFETY_APPROVAL",
+  "longform_article_count": 35,
+  "local_tool_count": 1,
+  "records": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "origin": "health",
+      "body": {
+        "path": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+        "git_blob_sha": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+        "bytes": 24497
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/emergency-hygiene-sanitation.meta.json",
+        "git_blob_sha": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+        "bytes": 3096
+      }
+    },
+    {
+      "slug": "family-communication-plan",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/articles/family-communication-plan.body.html",
+        "git_blob_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+        "bytes": 23180
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/family-communication-plan.meta.json",
+        "git_blob_sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+        "bytes": 3524
+      }
+    },
+    {
+      "slug": "fire-making-across-time",
+      "origin": "hist-field",
+      "body": {
+        "path": "preparedness/content/articles/fire-making-across-time.body.html",
+        "git_blob_sha": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+        "bytes": 24662
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/fire-making-across-time.meta.json",
+        "git_blob_sha": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+        "bytes": 3134
+      }
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "origin": "food",
+      "body": {
+        "path": "preparedness/content/articles/food-safety-power-outage.body.html",
+        "git_blob_sha": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+        "bytes": 23027
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/food-safety-power-outage.meta.json",
+        "git_blob_sha": "3283071134ba24490d47f5a0635836b6ed4f8965",
+        "bytes": 2902
+      }
+    },
+    {
+      "slug": "go-bags",
+      "origin": "start",
+      "body": {
+        "path": "preparedness/content/articles/go-bags.body.html",
+        "git_blob_sha": "ee2f6252715bda05ae2b7b538e33708fd7585f07",
+        "bytes": 22573
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/go-bags.meta.json",
+        "git_blob_sha": "b33fca0a6e9c8897616c86796a6ef1213bf9080a",
+        "bytes": 3696
+      }
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "origin": "hist-food",
+      "body": {
+        "path": "preparedness/content/articles/history-of-food-preservation.body.html",
+        "git_blob_sha": "273b246a069e834d8476bfc2854308732f5137ab",
+        "bytes": 18005
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/history-of-food-preservation.meta.json",
+        "git_blob_sha": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+        "bytes": 3128
+      }
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+        "git_blob_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+        "bytes": 26250
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+        "git_blob_sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+        "bytes": 3127
+      }
+    },
+    {
+      "slug": "homemade-water-filters",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/articles/homemade-water-filters.body.html",
+        "git_blob_sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "bytes": 15230
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+        "git_blob_sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+        "bytes": 1973
+      }
+    },
+    {
+      "slug": "household-emergency-plan",
+      "origin": "start",
+      "body": {
+        "path": "preparedness/content/articles/household-emergency-plan.body.html",
+        "git_blob_sha": "6407a31a882211e62c00f4e07ec7dc4d5abf99c6",
+        "bytes": 23031
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/household-emergency-plan.meta.json",
+        "git_blob_sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+        "bytes": 3314
+      }
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "origin": "hist-food",
+      "body": {
+        "path": "preparedness/content/articles/lewis-and-clark-salt-works.body.html",
+        "git_blob_sha": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+        "bytes": 17785
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/lewis-and-clark-salt-works.meta.json",
+        "git_blob_sha": "3a350aedac67ea89c6995831032367634248c9e9",
+        "bytes": 3230
+      }
+    },
+    {
+      "slug": "making-water-safer",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/articles/making-water-safer.body.html",
+        "git_blob_sha": "f85d158fc8752200a227282e640f6df48277daf5",
+        "bytes": 21486
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/making-water-safer.meta.json",
+        "git_blob_sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+        "bytes": 2987
+      }
+    },
+    {
+      "slug": "medication-and-devices",
+      "origin": "health",
+      "body": {
+        "path": "preparedness/content/articles/medication-and-devices.body.html",
+        "git_blob_sha": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+        "bytes": 28770
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/medication-and-devices.meta.json",
+        "git_blob_sha": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+        "bytes": 3923
+      }
+    },
+    {
+      "slug": "navigation-before-gps",
+      "origin": "hist-field",
+      "body": {
+        "path": "preparedness/content/articles/navigation-before-gps.body.html",
+        "git_blob_sha": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+        "bytes": 21735
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/navigation-before-gps.meta.json",
+        "git_blob_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "bytes": 2856
+      }
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+        "git_blob_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+        "bytes": 31428
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+        "git_blob_sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+        "bytes": 4568
+      }
+    },
+    {
+      "slug": "pantry-rotation",
+      "origin": "food",
+      "body": {
+        "path": "preparedness/content/articles/pantry-rotation.body.html",
+        "git_blob_sha": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+        "bytes": 23078
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/pantry-rotation.meta.json",
+        "git_blob_sha": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+        "bytes": 2730
+      }
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "origin": "hist-food",
+      "body": {
+        "path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+        "git_blob_sha": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "bytes": 18672
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+        "git_blob_sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+        "bytes": 3385
+      }
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "origin": "hist-home",
+      "body": {
+        "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+        "git_blob_sha": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+        "bytes": 18560
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+        "git_blob_sha": "4b955811459017df83a28704aaf1e69ddb036c29",
+        "bytes": 2542
+      }
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "origin": "hist-field",
+      "body": {
+        "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+        "git_blob_sha": "1332df3540a903fdecdb3527fb22347d57968fb0",
+        "bytes": 22205
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+        "git_blob_sha": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+        "bytes": 2830
+      }
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "origin": "hist-food",
+      "body": {
+        "path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+        "git_blob_sha": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "bytes": 18100
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/pioneer-travel-rations.meta.json",
+        "git_blob_sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+        "bytes": 3020
+      }
+    },
+    {
+      "slug": "preparedness-real-households",
+      "origin": "start",
+      "body": {
+        "path": "preparedness/content/articles/preparedness-real-households.body.html",
+        "git_blob_sha": "3a504c50914112f890643ca316be4a9b5e9dc8ee",
+        "bytes": 22821
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/preparedness-real-households.meta.json",
+        "git_blob_sha": "f9e2e2b066159beb78a676c6ffae92bbd981785c",
+        "bytes": 3618
+      }
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "origin": "food",
+      "body": {
+        "path": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+        "git_blob_sha": "c60d824c2f679fb7362b8523aec18110f8248290",
+        "bytes": 25674
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/pressure-canning-low-acid.meta.json",
+        "git_blob_sha": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+        "bytes": 3828
+      }
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "origin": "hist-home",
+      "body": {
+        "path": "preparedness/content/articles/rain-barrels-and-cisterns.body.html",
+        "git_blob_sha": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+        "bytes": 19896
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/rain-barrels-and-cisterns.meta.json",
+        "git_blob_sha": "dc42694e842969624f24ab5edc9bff2497693e70",
+        "bytes": 2422
+      }
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "origin": "hist-home",
+      "body": {
+        "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+        "git_blob_sha": "e28548b4e5014f36ffd12becb9261ae696480efa",
+        "bytes": 18847
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+        "git_blob_sha": "705e1157f9394b615ecb74ffd25be8500453e18a",
+        "bytes": 2314
+      }
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "origin": "food",
+      "body": {
+        "path": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+        "git_blob_sha": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+        "bytes": 21780
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/safe-jerky-dehydration.meta.json",
+        "git_blob_sha": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+        "bytes": 2881
+      }
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.body.html",
+        "git_blob_sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "bytes": 21371
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
+        "git_blob_sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+        "bytes": 2897
+      }
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "origin": "hist-home",
+      "body": {
+        "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+        "git_blob_sha": "15852c158708270d72d5f9723d90e5cb6083a766",
+        "bytes": 21687
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+        "git_blob_sha": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+        "bytes": 2635
+      }
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+        "git_blob_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+        "bytes": 24382
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+        "git_blob_sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+        "bytes": 3398
+      }
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "origin": "hist-food",
+      "body": {
+        "path": "preparedness/content/articles/ships-biscuit-and-hardtack.body.html",
+        "git_blob_sha": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+        "bytes": 19898
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/ships-biscuit-and-hardtack.meta.json",
+        "git_blob_sha": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+        "bytes": 2741
+      }
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "origin": "hist-food",
+      "body": {
+        "path": "preparedness/content/articles/smokehouses-salting-curing.body.html",
+        "git_blob_sha": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+        "bytes": 16424
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/smokehouses-salting-curing.meta.json",
+        "git_blob_sha": "16223945e83f95b349acf09a2b684c09326550c0",
+        "bytes": 3280
+      }
+    },
+    {
+      "slug": "three-day-kit",
+      "origin": "start",
+      "body": {
+        "path": "preparedness/content/articles/three-day-kit.body.html",
+        "git_blob_sha": "f578cdbae602c1ad58a9237c8dea0fd74c99f7da",
+        "bytes": 21648
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/three-day-kit.meta.json",
+        "git_blob_sha": "920d87d7c40174c530e4ecb5c2b34cb77641928e",
+        "bytes": 3281
+      }
+    },
+    {
+      "slug": "two-week-water-storage",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/articles/two-week-water-storage.body.html",
+        "git_blob_sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "bytes": 13321
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/two-week-water-storage.meta.json",
+        "git_blob_sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+        "bytes": 1583
+      }
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "origin": "health",
+      "body": {
+        "path": "preparedness/content/articles/warnings-radios-offline-maps.body.html",
+        "git_blob_sha": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+        "bytes": 21257
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/warnings-radios-offline-maps.meta.json",
+        "git_blob_sha": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+        "bytes": 3132
+      }
+    },
+    {
+      "slug": "water-advisories-explained",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/articles/water-advisories-explained.body.html",
+        "git_blob_sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "bytes": 14465
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/water-advisories-explained.meta.json",
+        "git_blob_sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+        "bytes": 1740
+      }
+    },
+    {
+      "slug": "water-math",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/articles/water-math.body.html",
+        "git_blob_sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "bytes": 14140
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/water-math.meta.json",
+        "git_blob_sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+        "bytes": 1860
+      }
+    },
+    {
+      "slug": "water-planner",
+      "origin": "base",
+      "body": {
+        "path": "preparedness/content/tools/water-planner.body.html",
+        "git_blob_sha": "a738d1f7824437911064d425868ed3d709326027",
+        "bytes": 8246
+      },
+      "metadata": {
+        "path": "preparedness/content/tools/water-planner.meta.json",
+        "git_blob_sha": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+        "bytes": 1497
+      }
+    },
+    {
+      "slug": "water-purification-through-history",
+      "origin": "hist-home",
+      "body": {
+        "path": "preparedness/content/articles/water-purification-through-history.body.html",
+        "git_blob_sha": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+        "bytes": 24340
+      },
+      "metadata": {
+        "path": "preparedness/content/articles/water-purification-through-history.meta.json",
+        "git_blob_sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+        "bytes": 3142
+      }
+    }
+  ]
+}

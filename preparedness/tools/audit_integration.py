@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import build  # noqa: E402
 import validate  # noqa: E402
+import evidence_freeze  # noqa: E402
 
 
 def make_report(lib: build.Library | None = None) -> dict:
@@ -58,6 +59,7 @@ def make_report(lib: build.Library | None = None) -> dict:
             "human_verified_source_count": sum(s["human_link_checked"] for s in sources),
             "pending_shared_source_count": sum(s["shared_source_scope"] == "pending" for s in sources),
             "sources": sources,
+            "review_fingerprint_sha256": evidence_freeze.fingerprint(lib, meta),
         })
     source_rows = [v for rows in lib.source_variants.values() for v in rows]
     unresolved = sorted(url for url, group in lib.crosswalk_groups.items()
@@ -75,6 +77,8 @@ def make_report(lib: build.Library | None = None) -> dict:
         "release_ready_by_static_checks": release_ready,
         "external_human_qa_proven": False,
         "wordpress_published_by_this_tool": False,
+        "integrity": {"original_bytes_match_crosswalk_and_article_ledger": not evidence_freeze.verify(lib),
+                      "not_an_independent_safety_or_editorial_review": True},
         "slate": {
             "expected_articles": len(lib.slate),
             "actual_articles": sum(a["kind"] != "tool" for a in articles),
