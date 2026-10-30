@@ -260,7 +260,9 @@ def invoice_twins(source,folder):
     The output is never partial: excess candidate density raises ValueError
     before creating a report. Findings are possible duplicates, not fraud.
     """
-    records=table(source,("vendor","invoice_number","amount","date"))
+    from .invoice_provenance import attach_invoice_provenance
+    records, source_sha256=table(source,("vendor","invoice_number","amount","date"),
+                                 include_digest=True)
     for r in records:
         r["v"]=key(r["vendor"])
         r["inv"]=key(r["invoice_number"])
@@ -279,9 +281,11 @@ def invoice_twins(source,folder):
             "date_a":a["dt"].isoformat(),"date_b":b["dt"].isoformat(),
             "review_flags":invoice_review_flags(a,b,status)
         })
+    rows=attach_invoice_provenance(rows,source_sha256=source_sha256)
     return [save(folder,"invoice-twins",(
         "row_a","row_b","status","vendor","invoice_a","invoice_b",
-        "amount_a","amount_b","reason","vendor_b","date_a","date_b","review_flags"
+        "amount_a","amount_b","reason","vendor_b","date_a","date_b","review_flags",
+        "source_sha256","candidate_ref"
     ),rows)]
 
 def spend_map(source,folder):
