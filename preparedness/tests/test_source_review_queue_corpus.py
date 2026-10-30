@@ -48,7 +48,11 @@ class CorpusSourceReviewQueueTests(unittest.TestCase):
 
     def test_every_article_and_tool_stays_unpublished_and_review_pending(self):
         self.assertEqual(self.summary["article_drafts_and_tool_drafts"], 36)
-        self.assertEqual(self.summary["safety_reviews_pending"], 36)
+        # Safety states differ: 30 pending, two founder-recorded approved,
+        # four historical records marked not-required. None grants release.
+        self.assertEqual(self.summary["safety_reviews_pending"], 30)
+        self.assertEqual(sum(m["safety_review"]["state"] == "approved" for m in self.lib.articles.values()), 2)
+        self.assertEqual(sum(m["safety_review"]["state"] == "not-required" for m in self.lib.articles.values()), 4)
         self.assertTrue(all(meta["status"]["publish"] == "draft" for meta in self.lib.articles.values()))
 
     def test_every_citation_has_origin_specific_source_use(self):
