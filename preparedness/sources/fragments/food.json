@@ -138,7 +138,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Store at least a several-day supply of non-perishable food; choose foods your family will eat; special dietary needs; example items including a manual can opener; do not eat from swollen, dented or corroded cans; throw away food at room temperature two hours or more; refrigerator about four hours unopened; discard perishables above 40 F for two hours or more; dry ice 25 lb for a 10 cu ft freezer three to four days, gloves, no direct contact with food; heating canned food and a bleach-to-water disinfecting ratio.",
-      "notes": "Its dry-ice figure (25 lb, 10 cu ft, three to four days) and its 'two hours or more above 40 F' rule differ in framing from FSIS and FDA. Its can-disinfecting ratio (1 part bleach to 10 parts water) differs from FSIS, FDA and CDC."
+      "notes": "Its dry-ice figure (25 lb, 10 cu ft, three to four days) and its 'two hours or more above 40 F' rule differ in framing from FSIS and FDA. Its can-disinfecting ratio (1 part bleach to 10 parts water) differs from FSIS, FDA and CDC. Newer FEMA material (fact sheet V-1008, December 2023) states the discard rule as 'exposed to temperatures 40 degrees Fahrenheit or higher for more than 4 hours', not two hours; see food-fema-outage-sheet."
     },
     {
       "id": "food-fsis-shelf-stable",
@@ -152,7 +152,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "What shelf stable means; canned-food shelf-life limits (rust, dents, heat above 100 F; below 85 F best; check the pantry every few weeks and use older cans); discard heavily rusted, deeply dented, swollen, spurting cans; accidentally frozen cans; botulism in canned goods, spores, symptoms in 12 to 48 hours; precautions for home-canned foods (boil low-acid and tomato foods 10 minutes, plus 1 minute per 1,000 ft, not a guarantee); dating is not required and is about quality; can codes are not use-by dates; drying and jerky temperature; home-dried jerky shelf life 1 to 2 months; storage chart.",
-      "notes": "INTERNAL CONFLICT: its storage chart says home-canned foods keep 12 months and to boil 10 minutes (high-acid) or 20 minutes (low-acid) before using, while its own text says boil low-acid and tomato foods 10 minutes plus 1 minute per 1,000 ft and that properly home-canned fruits never needed the boil. CDC's page agrees with the text, not the chart."
+      "notes": "INTERNAL CONFLICT: its storage chart says home-canned foods keep 12 months and to boil 10 minutes (high-acid) or 20 minutes (low-acid) before using, while its own text says boil low-acid and tomato foods 10 minutes plus 1 minute per 1,000 ft and that properly home-canned fruits never needed the boil. CDC's page agrees with the text, not the chart. Read in full (main content) 2026-10-29."
     },
     {
       "id": "food-fsis-dating",
@@ -180,7 +180,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "The FoodKeeper is a searchable storage-guidance tool, also available as a mobile app, developed by USDA FSIS with Cornell University and the Food Marketing Institute, covering categories including shelf-stable foods.",
-      "notes": "The page is a search interface; we read the landing text and category list, not individual entries. No storage durations are taken from it."
+      "notes": "READ SCOPE: landing text and category list only, not individual entries. No storage durations are taken from it."
     },
     {
       "id": "food-illinois-room-temp",
@@ -236,7 +236,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Pathogenic bacteria are likely to survive dry heat and the 130 to 140 F of a food dehydrator; Salmonella and E. coli O157:H7 illnesses from homemade jerky; USDA Hotline recommendation to heat meat to 160 F and poultry to 165 F before dehydrating, then dry at a constant 130 to 140 F; why the order matters (evaporation keeps the meat cool, bacteria become more heat resistant); sun drying not recommended; summary of a 2004 Journal of Food Protection study (marination alone did not reduce the pathogen; E. coli survived up to 10 hours at up to 145 F in lab-inoculated venison) and a 1998 study on ground beef jerky with and without a nitrite curing mix; wild-game contamination; storage times (commercial 12 months, home-dried 1 to 2 months).",
-      "notes": "Studies are reported as FSIS summarizes them; we did not read the journal articles."
+      "notes": "Studies are reported as FSIS summarizes them; we did not read the journal articles. Currency check 2026-10-30 in a browser: the page still shows 'Last Updated: Nov 03, 2016' and the same 160 F / 165 F, 130 to 140 F and 1 to 2 months figures as the newer Ask USDA article (Feb 2025). Kansas State MF3173 cites an FSIS 'Jerky and Food Safety' fact sheet dated September 22, 2023 at a /meat/jerky path; we could not retrieve that version (automated fetch refused), so we cannot say whether it differs."
     },
     {
       "id": "food-fsis-jerky-qa",
@@ -382,7 +382,7 @@
       "id": "food-usda-canning-guide-1",
       "title": "Guide 1: Principles of Home Canning (USDA Complete Guide to Home Canning, rev. 2015)",
       "publisher": "USDA National Institute of Food and Agriculture, hosted by NCHFP",
-      "kind": "extension",
+      "kind": "regulator",
       "url": "https://nchfp.uga.edu/papers/guide/GUIDE01_HomeCan_rev0715.pdf",
       "published": "2015",
       "updated": null,
@@ -390,7 +390,35 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Storage of canned food (clean, cool, dark, dry; not above 95 F or near heat sources or in direct sunlight); accidental freezing does not by itself cause spoilage unless jars unseal; identifying spoilage (check seals, bubbles, odors, spurting liquid, mold); spoiled low-acid foods may show little evidence and should be treated as having produced botulinum toxin, with sealed suspects double-bagged for the trash and unsealed ones detoxified before disposal; contact with the toxin can be fatal whether ingested or through the skin.",
-      "notes": "A 40-page PDF; we read Guide 1 as extracted. The detoxification steps are not reproduced in the articles."
+      "notes": "A 40-page PDF. READ SCOPE: the extracted text was searched and read only in these sections: 'Ensuring safe canned foods' (incl. the 95 F figure), 'Equipment and methods not recommended', 'Reprocessing unsealed jars', 'Storing canned foods' and 'Identifying and handling spoiled canned food' (the cleanup paragraph was read only up to the start of the bleach-solution sentence). The rest was NOT read. Detoxification steps are not reproduced in the articles. Kind changed to regulator because the publisher is a USDA agency; it is hosted by a university."
+    },
+    {
+      "id": "food-fema-outage-sheet",
+      "title": "Be Prepared for a Power Outage (FEMA V-1008)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "published": "2023-12",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "Keep freezers and refrigerators closed; a refrigerator keeps food cold for about 4 hours and a full freezer stays at a safe temperature for about 48 hours; do not store food outside or in snow; keep a thermometer in the refrigerator and freezer; throw away refrigerated food exposed to 40 F or higher for more than 4 hours, and food with an unusual odor, color or texture; make a plan with your doctor for refrigerating medicines and powering medical devices; replace refrigerated medications if the power is out for a day or more unless the drug's label says otherwise, call your doctor or pharmacist if you depend on refrigerated medication that has been at room temperature, and use the medicine only until you have a new supply; use generators outdoors at least 20 feet from building openings.",
+      "notes": "READ SCOPE: the whole one-page sheet, read as text extracted with pdftotext from a local copy of the PDF fetched 2026-10-30 (Firecrawl and the web-fetch tool could not extract it; Firecrawl was out of credits). Document code and date read from the sheet itself: 'FEMA V-1008/December 2023'. This is newer than the Ready.gov Food page's 'two hours' framing, and it is the document used for the medication line. We did not read the older 2020 FEMA wording the lead mentioned."
+    },
+    {
+      "id": "food-cdc-risk-factors",
+      "title": "People at Increased Risk for Food Poisoning",
+      "publisher": "Centers for Disease Control and Prevention (NCEZID)",
+      "kind": "regulator",
+      "url": "https://www.cdc.gov/food-safety/risk-factors/index.html",
+      "published": null,
+      "updated": "2025-01-31",
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "Higher-risk groups for severe food poisoning: people 65 and older, children under 5, people with weakened immune systems (examples listed), and pregnant women; it is especially important for them to take steps to prevent food poisoning; it points to separate 'Safer Food Choices' pages for each group.",
+      "notes": "READ SCOPE: the whole page, read in a browser pane on 2026-10-30. One date shown (Jan. 31, 2025), not labelled published, updated or reviewed. The four 'Safer Food Choices' pages it links were NOT read, so no food-specific advice for these groups is taken from this source."
     }
   ]
 }

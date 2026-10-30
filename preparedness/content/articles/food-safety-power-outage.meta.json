@@ -13,7 +13,7 @@
     "Refrigerator and freezer"
   ],
   "updated": "2026-10-30",
-  "last_checked": "2026-10-29",
+  "last_checked": "2026-10-30",
   "recheck": "Immediately if USDA FSIS, CDC, FDA or FoodSafety.gov revises its outage time limits; otherwise at the next quarterly source sweep.",
   "status": {
     "editorial": "drafted",
@@ -36,6 +36,8 @@
     "food-foodsafety-outage-chart": "The 2-hour column; the keep-or-discard rows reproduced in the table; frozen-food chart notes; juice verdicts.",
     "food-fda-outage-flood": "Preparation steps; 45 F allowance; 2-hour / 1-hour room-temperature rule; cooking meat to a safe temperature; foodborne illness timing and symptoms; FDA bleach amounts.",
     "food-ready-food": "Refrigerator four hours; discard perishables above 40 F for two hours; dry ice example and gloves; ready-to-feed formula; Ready.gov bleach ratio.",
-    "food-osu-survival-food": "Eat refrigerator, then freezer, then pantry; refrigerator above 40 F then two more hours; egg note."
+    "food-osu-survival-food": "Eat refrigerator, then freezer, then pantry; refrigerator above 40 F then two more hours; egg note.",
+    "food-fema-outage-sheet": "December 2023 FEMA fact sheet: 4 hours above 40 F; medication wording (plan with your doctor, replace if out a day or more unless the label says otherwise, call doctor or pharmacist); generators outdoors 20 feet from openings.",
+    "food-cdc-risk-factors": "Who is at higher risk of severe food poisoning (65 and older, under 5, weakened immune system, pregnant)."
   }
 }

@@ -1,6 +1,6 @@
 # Cluster notes: `food` (Food and Preservation)
 
-Drafted 2026-10-30 by the `food` contributor session. Sources fetched and read 2026-10-29 (Firecrawl scrape, `maxAge: 0`, plus search for discovery). All four articles are **drafted, awaiting human review**. All four have `safety_review.state = "pending"` and `status.publish = "draft"`. Nothing is approved.
+Drafted 2026-10-30 by the `food` contributor session; QD self-audit 2026-10-30 (section 7). Sources fetched and read 2026-10-29 (two added 2026-10-30) (Firecrawl scrape, `maxAge: 0`, plus search for discovery). All four articles are **drafted, awaiting human review**. All four have `safety_review.state = "pending"` and `status.publish = "draft"`. Nothing is approved.
 
 | # | Slug | Gate | Words | Sources cited |
 |---|---|---|---|---|
@@ -9,13 +9,14 @@ Drafted 2026-10-30 by the `food` contributor session. Sources fetched and read 2
 | 10 | `pressure-canning-low-acid` | yes | ~3,500 | 17 |
 | 11 | `safe-jerky-dehydration` | yes | ~2,890 | 10 |
 
-## 1. For the lead: things outside my ownership that block "all tests pass"
+## 1. For the lead: test status after merging `origin/feature/preparedness-archive-v1` (ee591e2)
 
-I did not edit `tools/`, `tests/`, `taxonomy.json` or `register.json`. `validate.py` and `build.py` pass. `python -I -m unittest discover -s preparedness/tests` shows **3 failing tests**, none caused by an article defect:
+The merge was clean. The derived section test and the gating fixes resolved the landing-page failure. I did not edit `tools/`, `tests/`, `assets/` or `taxonomy.json`. Result of `python -I -m unittest discover -s preparedness/tests -v` on 2026-10-30: **Ran 36 tests, 34 passed, 1 failed, 1 errored, 0 skipped.** The two remaining problems have the same cause: the tests treat `nchfp-jerky` as a placeholder that will stay unverified, but the brief tells the jerky contributor to upgrade it (and I did).
 
-1. `test_landing_lists_only_built_articles_and_no_empty_sections` hard-codes `["water", "lost-ways", "field-tools"]`. Any contributor who adds a `food`, `shelter-power`, etc. article breaks it. Suggest computing the expected list from `lib.articles` and the taxonomy order.
-2. `test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source` writes its own fragment that upgrades `nchfp-jerky`. Once any real fragment (mine) upgrades `nchfp-jerky`, the test's fragment becomes a duplicate of a verified id and raises `ValueError`. The brief tells contributors to upgrade `nchfp-jerky`, so this will always fail after the first one does. Suggest the test use a placeholder nobody is assigned (for example `nws-nwr` is assigned too, so a synthetic fixture id is safer).
-3. `test_unverified_source_cannot_be_cited` appends `{{cite:nchfp-jerky}}` to expect the "unverified source" error. Same cause: `nchfp-jerky` is now verified. It needs a placeholder that will stay unverified or a fixture-injected unverified entry.
+1. `test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source` (ERROR): the test writes its own fragment that upgrades `nchfp-jerky`; with my real fragment already upgrading it, `build.Library()` raises `ValueError: duplicate source id 'nchfp-jerky' in food.json`.
+2. `test_unverified_source_cannot_be_cited` (FAIL): it appends `{{cite:nchfp-jerky}}` and expects an "unverified source" error; the source is now verified, so no error is produced.
+
+Suggested fix for the lead: use a synthetic fixture id (or a placeholder no contributor is assigned) in both tests. I cannot use a different id for the same page, because the validator rejects a second source with the placeholder's URL. `validate.py` and `build.py` both exit 0.
 
 ## 2. Sources verified (all in `sources/fragments/food.json`)
 
@@ -67,3 +68,24 @@ Already-verified register entries reused (never redefined): `cdc-botulism-preven
 * Quoted figures stay with their conditions. Where I summarize a number (for example the NCHFP boiling-water time range) the article says why it is quoted.
 * No images are used.
 * Related links to unbuilt articles (`outage-heat-cold-generators`, `pemmican-and-dried-meats`) degrade to plain text by design.
+
+## 7. QD self-audit (2026-10-30), against the lessons from the Start Here review
+
+Audit result: no article contained a blanket "discard medicine" instruction or a hazardous rehearsal. Targeted edits were made for the points below. All four articles stay `status.publish: draft` and `safety_review.state: pending`. **All sources in the fragment remain `human_link_check: false`.** I make no QD PASS claim.
+
+| Class | Finding | Action |
+|---|---|---|
+| (a) Medication / medical instructions | #9 only said to ask a pharmacist or prescriber, but did not use the newer FEMA document. #8 repeated a secondary (Illinois Extension) statement that over-the-counter drugs should never be used past expiration. | Added FEMA fact sheet V-1008 (December 2023), read in full, as `food-fema-outage-sheet`, and quoted its medication wording in #9 with the qualification "call your doctor or pharmacist; do not stop or skip a prescribed medicine on your own". Removed the OTC-drug expiration claim from #8 and replaced it with "ask your pharmacist". I did not read the older 2020 FEMA wording, so the difference between 2020 and 2023 is not described. |
+| (b) Hazardous rehearsals | None recommended. The only practical steps are freezing water jugs and using coolers. #10 says canning without standard equipment is outside the validated conditions. | None needed. |
+| (c) Source kinds | `food-usda-canning-guide-1` was `extension` though its publisher is USDA NIFA. | Changed to `regulator`. FDA, CDC, FSIS, FEMA and FoodSafety.gov are regulators; NCHFP and university pages are `extension`. No nonprofits are cited. |
+| (d) Secondary-summary claims | (1) Two jerky studies are known only through FSIS's summary. (2) NCHFP pages are adaptations of the USDA Complete Guide, not the Guide itself. (3) Kansas State cites an FSIS jerky fact sheet dated 22 September 2023 at a `/meat/jerky` path that I could not retrieve; the FSIS page I read still shows "Last Updated: Nov 03, 2016". (4) The FEMA discard rule differs between FEMA's Food page (2 hours above 40 F, updated March 2026) and its December 2023 fact sheet (more than 4 hours above 40 F). | (1) Already labelled "as FSIS summarizes". (2) Stated in the fragment notes. (3) Currency check done in a browser; the Ask USDA article (February 2025) gives the same figures; the possible 2023 FSIS version is recorded as unverified in the article's limits and the fragment. (4) Both FEMA statements are shown in #9's table, the newer one is identified, and the more cautious reading is stated. |
+| (e) Partly read documents | USDA Guide 1 (40-page PDF) was only partly read; FoodKeeper only as a landing page. | Exact read scope is now written in the register `notes`: Guide 1 sections read are listed and the remainder is marked NOT read; FoodKeeper is marked "landing text and category list only". FEMA V-1008 is marked as extracted with `pdftotext` and read in full (one page). |
+| (f) Food-safety figures and higher-risk groups | #9 and #11 said the sources do not break out higher-risk groups. I had not read the CDC page that does. | Added CDC "People at Increased Risk for Food Poisoning" (read in full, 2026-10-30; dated Jan. 31, 2025) as `food-cdc-risk-factors` and used it in #9 and #11, with an explicit statement that CDC's four "Safer Food Choices" pages were not read, so no food-specific rules for those groups are given. Older-vs-newer reconciliation: FSIS emergencies page (2013) vs FSIS Ask USDA (Dec 2024) vs CDC (Nov 2025) vs FEMA (Dec 2023) agree on 4 hours; the 2-hour and 45 F variants are stated as differences. NCHFP "Using Pressure Canners" (2014) and "Recommended Canners" (text revised 2009) differ on one minor timing (3 to 10 vs 3 to 5 minutes); both are stated and the manufacturer's manual is said to control. |
+
+Statements I could NOT verify to this standard (all stated in the articles' limits sections):
+* The two jerky journal studies (FSIS summary only); the possible newer FSIS jerky fact sheet.
+* The older 2020 FEMA outage wording; CDC's "Safer Food Choices" pages for higher-risk groups; individual FoodKeeper entries.
+* The unread parts of the USDA Complete Guide Guide 1 (and the rest of the Complete Guide).
+* Any ventilation rule for dry ice; any way to check a dehydrator's real temperature; any official evaluation of smoke as a pathogen control.
+
+Fetch notes for this round: Firecrawl ran out of credits, so the FEMA PDF was read with `pdftotext` from the locally saved file the web-fetch tool downloaded, and the CDC risk-factors and FSIS currency checks were read directly in the browser pane. The first CDC-risk-factors text I received came back through a subagent; I re-read the page myself before citing it.
