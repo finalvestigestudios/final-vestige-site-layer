@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from decimal import Decimal
+import re
 from typing import Callable, Mapping
 
 from .review import labels_for_report, normalized_collision, raw_values
@@ -20,6 +21,7 @@ def summarize_spend(
     parse_date: Callable[[str], object],
     parse_money: Callable[[str], Decimal],
     format_money: Callable[[Decimal], str],
+    source_sha256: str,
 ) -> list[dict[str, str]]:
     """Summarize already-validated CSV rows with reversible source references.
 
@@ -28,7 +30,12 @@ def summarize_spend(
     *every* affected bucket, even if variants appear in different months.
     Baselines use prior observed months, not interpolated calendar months.
     The input reader, not this summarizer, enforces file/row size limits.
+    The source SHA-256 must fingerprint bytes from the SAME imported snapshot.
+    It is evidence of source identity, not a digital signature or approval.
     """
+    if not isinstance(source_sha256, str) or re.fullmatch(r"[0-9a-f]{64}", source_sha256) is None:
+        raise ValueError("Source snapshot SHA-256 must be 64 lowercase hexadecimal characters")
+
     totals: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
     members: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     vendor_rows: dict[str, list[dict[str, str]]] = defaultdict(list)
@@ -88,5 +95,6 @@ def summarize_spend(
             "source_rows": ";".join(row["row"] for row in rows),
             "source_vendor_labels": labels_for_report(rows, "vendor"),
             "vendor_label_variants": str(variant_counts[vendor]),
+            "source_sha256": source_sha256,
         })
     return report
