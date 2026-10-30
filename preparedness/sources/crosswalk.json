@@ -6,7 +6,7 @@
   "base_commit": "ee591e2df5de08aea7603fc4cbf3c5249361e119",
   "source_head_commits": {
     "base": "ee591e2df5de08aea7603fc4cbf3c5249361e119",
-    "start": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b",
     "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
     "food": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
     "hist-food": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
@@ -24,8 +24,8 @@
     {
       "origin": "start",
       "path": "preparedness/sources/fragments/start.json",
-      "git_blob_sha": "d5a5087042381227d840675d9eb08ddc375d21e8",
-      "count": 26
+      "git_blob_sha": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+      "count": 27
     },
     {
       "origin": "shelter",
@@ -64,7 +64,7 @@
       "count": 26
     }
   ],
-  "raw_source_rows": 223,
+  "raw_source_rows": 224,
   "unique_source_urls": 186,
   "duplicate_url_groups": 30,
   "duplicate_id_groups": 15,
@@ -1571,7 +1571,8 @@
             "reviewed": null,
             "verified_on": "2026-10-29",
             "human_link_check": false,
-            "supports": "What an extended outage can disrupt; take an inventory of items that rely on electricity; talk to your medical provider about a power-outage plan for powered medical devices and refrigerated medicines; refrigerator keeps food cold about four hours, a full freezer about 48 hours; discard food at 40 F or above for two hours or more; discard refrigerated medicine if power is out more than a day unless the label says otherwise; generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; CO detectors with battery backup on every level; never heat a home with a gas stovetop or oven."
+            "supports": "What an extended outage can disrupt; take an inventory of items that rely on electricity; talk to your medical provider about a power-outage plan for powered medical devices and refrigerated medicines; refrigerator keeps food cold about four hours, a full freezer about 48 hours; discard food at 40 F or above for two hours or more; discard refrigerated medicine if power is out more than a day unless the label says otherwise; generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; CO detectors with battery backup on every level; never heat a home with a gas stovetop or oven.",
+            "notes": "Web page read in full on 2026-10-29. Its medicine line ('discard refrigerated medication if power is out more than a day unless the label says otherwise') repeats the 2020 FEMA guide and is stricter than FEMA's newer December 2023 fact sheet (start-fema-power-sheet), which adds 'call your doctor or pharmacist' and 'only use the medicine until you have a new supply'. Its fridge/food rule is two hours above 40 F; the 2023 sheet says more than 4 hours. Both discrepancies are stated on the three-day-kit page."
           }
         },
         {
@@ -1664,7 +1665,7 @@
             "verified_on": "2026-10-29",
             "human_link_check": false,
             "supports": "Fetched the full 36-page text; read the contents list and the sections cited here (introduction, protective actions, financial preparedness, Make a Plan, supplies, documents, practice schedule). The hazard-by-hazard sections were not read. Three-step frame (know your risks, make a plan, take action); first moves when something happens without warning (assess the situation, decide to stay or change location); family communication plan with an out-of-state contact reachable two ways and a wallet or digital copy for everyone; evacuation guidelines (meeting places in several directions, half-tank rule, one car per family, leave a note); basic kit contents and the 'at least 72 hours' framing; water of 1 gallon per person per day for 3, 7 or even 14 days depending on location; cash in small bills with the highest a twenty; N95 respirators; kit maintenance (first in, first out; discard swollen, dented or corroded cans; check needs every six months); critical-document storage; practice schedule and one-year timeline.",
-            "notes": "September 2020 edition, hosted under a 2021-11 upload path. Older than the Ready.gov web pages, so where they differ the web pages are newer. Upgraded from a placeholder in register.json."
+            "notes": "September 2020 edition, hosted under a 2021-11 upload path. Older than the Ready.gov web pages, so where they differ the web pages are newer. Upgraded from a placeholder in register.json. The power-outage section says 'If the power is out for more than a day, discard any medication that should be refrigerated, unless the drug's label says otherwise' and uses a two-hour 40 F food rule; FEMA's December 2023 power-outage fact sheet is newer and differs."
           }
         }
       ]
@@ -1690,6 +1691,11 @@
           "origin": "health",
           "id": "health-fema-power-outage-sheet",
           "row_index": 20
+        },
+        {
+          "origin": "start",
+          "id": "start-fema-power-sheet",
+          "row_index": 26
         }
       ],
       "variants": [
@@ -1749,6 +1755,25 @@
             "supports": "One-page FEMA fact sheet: make a plan for refrigerating medicines and powering medical devices; talk to your doctor about how you will use electrically powered devices and store medications; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'; generators outdoors at least 20 feet from building openings; learn the signs of carbon monoxide poisoning.",
             "notes": "READ IN FULL: one page; text extracted with pdftotext from the saved PDF bytes (the first fetch tool could not decode it). Printed edition 'FEMA V-1008/December 2023'; exact day not printed, so 2023-12-01 is a placeholder for the month. File metadata shows last modified 2023-12-29. Wording says 'Replace', whereas the Ready.gov power-outage web page (updated 2026-06-04, health-ready-power-outages) says 'discard'; both are shown in medication-and-devices."
           }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 26,
+          "source": {
+            "id": "start-fema-power-sheet",
+            "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+            "published": "2023-12",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "English two-page sheet (pages 1-2 of a 34-page file) read in full as extracted text: make a plan for refrigerating medicines and powering medical devices; talk to your doctor to plan for medical devices and medication storage; generators, camp stoves and charcoal grills outdoors at least 20 feet from building openings such as windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; CO and smoke alarms with battery backup; refrigerator keeps food cold about 4 hours, full freezer about 48 hours; throw away refrigerated food above 40 F for more than 4 hours; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'",
+            "notes": "Newer than the 2020 FEMA guide and the Ready.gov power-outages web page, which say to discard refrigerated medication after a day and use a two-hour food rule. Pages 3-34 of the file yielded no extractable text (likely translations as images) and were not read. Downloaded directly with curl and converted with pdftotext because Firecrawl had no credits."
+          }
         }
       ]
     },
@@ -1787,7 +1812,7 @@
             "verified_on": "2026-10-29",
             "human_link_check": false,
             "supports": "Know the exits and fire-safety features of your building; practice your exit route; do not prop stairway or corridor doors open; do not use elevators during a fire; close stair doors behind you; call 911; not all tall buildings meet modern standards; a person who cannot use the stairs should call 911 and be prepared to shelter in place, possibly in a room with the door closed and a wet towel sealing the cracks, or wait on a clear stair landing for help.",
-            "notes": "A blog post written for fire educators after a 2022 apartment fire; the safety messages are for residents. Not the same page as the 'usfa-fire-escape' placeholder in register.json."
+            "notes": "Whole page re-read on 2026-10-30 via direct download. A blog post written for fire educators; the exit and shelter-in-place messages are about FIRE in tall buildings and say nothing about other hazards. Not the same page as the 'usfa-fire-escape' placeholder in register.json."
           }
         },
         {
@@ -1980,5 +2005,39 @@
         }
       ]
     }
-  ]
+  ],
+  "reconciliation_20261030": {
+    "state": "UNREVIEWED_START_SAFETY_COPY_SOURCE_REBASE",
+    "old_start_qa_repair_sha": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+    "latest_start_contributor_head_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "full_integrity_snapshot_base": "a2618238ddcb3377a608b535577a5724a8cfd335",
+    "added_shared_url_source_variants": [
+      {
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+        "id": "start-fema-power-sheet",
+        "origin": "start"
+      }
+    ],
+    "modified_shared_url_source_variants": [
+      {
+        "url": "https://www.ready.gov/power-outages",
+        "id": "start-ready-power",
+        "origin": "start"
+      },
+      {
+        "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+        "id": "ready-are-you-ready",
+        "origin": "start"
+      },
+      {
+        "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+        "id": "start-usfa-high-rise",
+        "origin": "start"
+      }
+    ],
+    "human_link_review": false,
+    "clinical_and_safety_review": "PENDING",
+    "independent_qd_reapproval": "PENDING",
+    "note": "New Start FEMA power fact sheet shares the exact URL already present in shelter/food/health; preserve all FOUR contributor reading scopes and independent notes. A source machine-fetch is not QD approval."
+  }
 }
