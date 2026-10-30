@@ -1,0 +1,49 @@
+{
+  "n": 1,
+  "slug": "household-emergency-plan",
+  "title": "A household emergency plan that gets practiced",
+  "h1": "A household emergency plan that actually gets practiced",
+  "dek": "Five decisions, one page, and a rehearsal schedule small enough to survive a busy year. What FEMA, the CDC and the Red Cross say a plan needs, where they differ, and how to think about the first hour, the first 72 hours and the first two weeks.",
+  "description": "Build a household emergency plan from Ready.gov, FEMA and CDC guidance: five decisions, a contact plan, a needs checklist, practice ideas and the first 72 hours.",
+  "section": "start-here",
+  "track": "modern",
+  "tags": [
+    "Planning",
+    "Communication",
+    "Practice"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If Ready.gov or the CDC revise their planning pages, or at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "three-day-kit",
+    "go-bags",
+    "preparedness-real-households",
+    "water-math"
+  ],
+  "source_use": {
+    "start-ready-plan": "The four steps (meet, assess household needs, document, practice), the five starting questions and the list of household factors to consider.",
+    "ready-are-you-ready": "Assess the situation, then decide to stay or change location; communication plan with an out-of-state contact reachable two ways; wallet or digital copy for everyone; meeting places in several directions; practice like a fire drill; six-month refresh; one-year timeline; documents and cash guidance; school plans.",
+    "start-cdc-pyh-connected": "At least two meeting places; texts often go through when calls do not; plan for children, older adults and pets; microchip pets.",
+    "start-cdc-disability-plan": "Contact list of the people who support your health, with arrangements for them to check on you; use pictures; practice, review every year and share the plan.",
+    "start-redcross-older-adults": "Build and meet with a support network; plan to stay home at least two weeks or evacuate; review, practice and refresh every six months.",
+    "start-ready-alerts": "How Wireless Emergency Alerts, the Emergency Alert System, NOAA Weather Radio and the FEMA App differ, and the limits of each.",
+    "start-ready-financial": "Small bills of cash, insurance, document storage and benefits by direct deposit.",
+    "start-ready-evacuation": "Several possible destinations, and finding a pet-friendly place in advance because most public shelters allow only service animals.",
+    "start-ready-kit": "The NOAA Weather Radio item on the kit list, and the current page's 're-think your needs every year' interval.",
+    "cdc-water-store": "Water baseline of 1 gallon per person per day for 3 days with 2 weeks as the goal.",
+    "start-ready-disability": "A weather radio with a text display and flashing alert for people who are deaf or hard of hearing.",
+    "start-ready-low-cost": "The free and low-cost starting points (free communication plan, free resources, local alerts, evacuation plan).",
+    "start-cdc-disability-kit": "Check kits every six months.",
+    "start-cdc-family-kit": "Check kits every six months."
+  }
+}
