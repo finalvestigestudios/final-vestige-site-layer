@@ -1,0 +1,268 @@
+{
+  "scope": "mind/thatcher-illusion",
+  "reviewed_utc": "2026-10-30",
+  "review_types": [
+    "primary experiment",
+    "secondary interpretation",
+    "copyright status",
+    "seller-specific description",
+    "FTC endorsements",
+    "FTC health-claim substantiation",
+    "privacy/commercial safeguards"
+  ],
+  "claims_count": 28,
+  "affiliate_approved": false,
+  "affiliate_url": null,
+  "merchant_checkout_links_active": false,
+  "video_published": false,
+  "original_photograph_reproduced": false,
+  "notes": "Research summaries describe study findings and limitations; do not extrapolate to efficacy of any specific audio/meditation program.",
+  "sources": {
+    "T1980": "https://journals.sagepub.com/doi/10.1068/p090483",
+    "B1993": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+    "P1985": "https://pubmed.ncbi.nlm.nih.gov/3837876/",
+    "L1997": "https://journals.sagepub.com/doi/10.1068/p260225",
+    "L2001": "https://journals.sagepub.com/doi/10.1068/p3174",
+    "W2010": "https://journals.sagepub.com/doi/10.1068/p6659",
+    "P2014": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+    "FTC": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "INSPIRE": "https://inspire3.com/",
+    "ZEN": "https://zen12.com/about",
+    "HYPNOSIS": "https://hypnosislive.com/mental-skills/total-focus",
+    "SHOT": "https://brainwaveshots.com/focus-shot",
+    "SHOT_FAQ": "https://brainwaveshots.com/faq",
+    "FOCUS": "https://finalvestige.com/focus/",
+    "PUY": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "APOLLO": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "FRANKLIN": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+    "MALBONE": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+    "EDITORIAL": "https://finalvestige.com/editorial-standards/"
+  },
+  "claims": [
+    {
+      "id": "TH-01",
+      "claim": "Original effect first named by Peter Thompson in 1980",
+      "status": "verified historical bibliography",
+      "source_key": "T1980",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p090483",
+      "decision": "Use title/year, do not republish original photograph."
+    },
+    {
+      "id": "TH-02",
+      "claim": "Eye/mouth patches locally inverted inside globally inverted face",
+      "status": "supported manipulation description",
+      "source_key": "T1980",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p090483",
+      "decision": "Discuss what was changed; no guarantees of effect."
+    },
+    {
+      "id": "TH-03",
+      "claim": "Original Thatcher image is free for us to reproduce",
+      "status": "not established; block",
+      "source_key": "T1980",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p090483",
+      "decision": "Rights restricted; new vector art instead."
+    },
+    {
+      "id": "TH-04",
+      "claim": "All visitors will fail to notice alterations when inverted",
+      "status": "unsubstantiated universal",
+      "source_key": "B1993",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "decision": "Never use all/everyone/no exceptions language."
+    },
+    {
+      "id": "TH-05",
+      "claim": "1993 examined three manipulation classes",
+      "status": "supported research summary",
+      "source_key": "B1993",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "decision": "Locally inverted, displaced and grotesque-expression comparisons."
+    },
+    {
+      "id": "TH-06",
+      "claim": "Inversion uniformly reduces abnormality of all facial expressions",
+      "status": "contradicted by experimental distinctions",
+      "source_key": "B1993",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "decision": "Avoid flattening conditions; grotesque expression differed."
+    },
+    {
+      "id": "TH-07",
+      "claim": "Mouth interpretation can depend on other facial features",
+      "status": "supported research context",
+      "source_key": "P1985",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/3837876/",
+      "decision": "Scope to study's test conditions."
+    },
+    {
+      "id": "TH-08",
+      "claim": "Thatcher effect proves a face-only specialized module",
+      "status": "contested/contradicted",
+      "source_key": "W2010",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p6659",
+      "decision": "2010 non-face effects show uniqueness claim unsupported."
+    },
+    {
+      "id": "TH-09",
+      "claim": "Thatcher-like effects found with buildings/cars/bikes/letters in tested tasks",
+      "status": "supported research summary",
+      "source_key": "W2010",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p6659",
+      "decision": "Do not say faces and objects are identical."
+    },
+    {
+      "id": "TH-10",
+      "claim": "Configural processing switches off instantly at 180°",
+      "status": "unsupported simplification",
+      "source_key": "L2001",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p3174",
+      "decision": "Rotation experiments suggest gradual effect."
+    },
+    {
+      "id": "TH-11",
+      "claim": "Inverted faces slowed speeded local-feature judgments",
+      "status": "supported research summary",
+      "source_key": "L1997",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p260225",
+      "decision": "Response time is task-specific, not mind-reading."
+    },
+    {
+      "id": "TH-12",
+      "claim": "Negative photographic presentation hindered discrimination",
+      "status": "supported research summary",
+      "source_key": "L1997",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p260225",
+      "decision": "Experiment-specific; do not imply medical effect."
+    },
+    {
+      "id": "TH-13",
+      "claim": "Orientation effects were found for eyes or mouth displayed alone",
+      "status": "supported research summary",
+      "source_key": "P2014",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+      "decision": "Local-feature evidence complicates whole-only explanation."
+    },
+    {
+      "id": "TH-14",
+      "claim": "One original cartoon portrait accurately reproduces experiment with known effect size",
+      "status": "unsupported; block",
+      "source_key": "T1980",
+      "source_url": "https://journals.sagepub.com/doi/10.1068/p090483",
+      "decision": "Explicitly label illustration not validated."
+    },
+    {
+      "id": "TH-15",
+      "claim": "Observer's reaction measures intelligence, attention disorder or suggestibility",
+      "status": "unsupported; block",
+      "source_key": "P2014",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+      "decision": "No diagnoses, scores, guarantees or universal responses."
+    },
+    {
+      "id": "TH-16",
+      "claim": "Thatcher illusion establishes a particular historical eyewitness was mistaken",
+      "status": "invalid historical inference",
+      "source_key": "PUY",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "decision": "Methodological analogy only, no causal inference."
+    },
+    {
+      "id": "SELL-17",
+      "claim": "Zen12 seller describes 12-minute sessions and 12 program levels",
+      "status": "seller format description only",
+      "source_key": "ZEN",
+      "source_url": "https://zen12.com/about",
+      "decision": "Confirm exact product-specific page before promotion."
+    },
+    {
+      "id": "SELL-18",
+      "claim": "Zen12 12 minutes gives equal benefits to hour of regular meditation",
+      "status": "seller promise, NOT substantiated for product",
+      "source_key": "ZEN",
+      "source_url": "https://zen12.com/about",
+      "decision": "Do not claim equivalence or time-saving efficacy."
+    },
+    {
+      "id": "SELL-19",
+      "claim": "Hypnosis Live Total Focus listing includes 33-min MP3",
+      "status": "seller format description only",
+      "source_key": "HYPNOSIS",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "No personal-use testimonial or price."
+    },
+    {
+      "id": "SELL-20",
+      "claim": "Total Focus guarantees limitless powers of concentration",
+      "status": "seller promise, NOT substantiated",
+      "source_key": "HYPNOSIS",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "decision": "Exclude product effect from scientific article."
+    },
+    {
+      "id": "SELL-21",
+      "claim": "Brainwave Focus Shot includes 15- and 30-minute audios",
+      "status": "seller format description only",
+      "source_key": "SHOT",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "Do not claim audio improves visual perception."
+    },
+    {
+      "id": "SELL-22",
+      "claim": "Focus Shot reliably produces 4+ hours of perfect focus",
+      "status": "seller promise, NOT substantiated",
+      "source_key": "SHOT",
+      "source_url": "https://brainwaveshots.com/focus-shot",
+      "decision": "No efficacy transfer from perception research."
+    },
+    {
+      "id": "SELL-23",
+      "claim": "Brainwave Shots audio is universally without risks",
+      "status": "seller's FAQ contradicts absolute safety",
+      "source_key": "SHOT_FAQ",
+      "source_url": "https://brainwaveshots.com/faq",
+      "decision": "FAQ warns about epilepsy and needing to remain awake."
+    },
+    {
+      "id": "AFF-24",
+      "claim": "Public Inspire3 affiliates page proves Final Vestige accepted for all offers",
+      "status": "unverified; block",
+      "source_key": "INSPIRE",
+      "source_url": "https://inspire3.com/",
+      "decision": "Account-specific acceptance, approved links and channel terms required."
+    },
+    {
+      "id": "AFF-25",
+      "claim": "FTC allows sole disclosure buried on another page",
+      "status": "not sufficient for reader-facing earning link",
+      "source_key": "FTC",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "Near-link clear plain-language commission statement required."
+    },
+    {
+      "id": "AFF-26",
+      "claim": "Product claims may inherit general therapy research without product trials",
+      "status": "unsupported substantiation shortcut",
+      "source_key": "FTC_HEALTH",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "decision": "Require competent and reliable relevant product-specific evidence."
+    },
+    {
+      "id": "SEO-27",
+      "claim": "Proposed /mind/thatcher-illusion/ URL is currently live",
+      "status": "false, unpublished draft",
+      "source_key": "FOCUS",
+      "source_url": "https://finalvestige.com/focus/",
+      "decision": "Don't link unpublished URL in active email or site."
+    },
+    {
+      "id": "PRIV-28",
+      "claim": "Referrer URLs, identities and cross-site clicks are necessary for measurement",
+      "status": "rejected privacy design",
+      "source_key": "FTC",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "decision": "No raw referrer, fingerprints, persistent IDs; consent review first."
+    }
+  ]
+}

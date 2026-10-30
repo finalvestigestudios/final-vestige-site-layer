@@ -1,0 +1,16 @@
+{
+  "visual": "Two original inline SVG vector heads built from programmatically authored SVG shapes",
+  "original_margaret_thatcher_photo_used": false,
+  "third_party_photos_used": false,
+  "third_party_audio_used": false,
+  "third_party_scripts_used": false,
+  "third_party_cdn_used": false,
+  "image_usage": "Original art illustrative only; not replica or laboratory validity claim",
+  "journal_copyright_note": "1980 original publisher reproduction restricted. Link bibliographic source; don't embed journal figure.",
+  "check_required": [
+    "Art/copyright verification",
+    "Exact SVG content review by design QA",
+    "Screen reader and color contrast validation on real WordPress staging",
+    "Avoid implying that illustrated stimulus predicts personal cognitive ability"
+  ]
+}
