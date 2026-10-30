@@ -1,0 +1,433 @@
+{
+  "version": 1,
+  "product": "Brainwave Shots / Focus Shot",
+  "research_date": "2026-10-30",
+  "status": "DRAFT_NONCOMMERCIAL_NO_PARTNER_URL",
+  "merchant_page": "https://brainwaveshots.com/focus-shot",
+  "affiliate_url": null,
+  "partner_approval_verified": false,
+  "price_verified_at_checkout": false,
+  "price": null,
+  "purchase_tested": false,
+  "audio_file_tested": false,
+  "audio_technical_analysis": false,
+  "scope_note": "Reviews of binaural beats do not independently test Focus Shot, which the seller describes as an isochronic-tone product.",
+  "sources": [
+    {
+      "id": "vendor_focus",
+      "kind": "merchant",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "vendor_faq",
+      "kind": "merchant",
+      "url": "https://brainwaveshots.com/faq",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "vendor_inspire3",
+      "kind": "merchant",
+      "url": "https://inspire3.com/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "vendor_affiliate",
+      "kind": "merchant",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "study_door_1998",
+      "kind": "primary",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "study_flicker_1997",
+      "kind": "primary",
+      "url": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1997.tb00427.x/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "review_chew_2024",
+      "kind": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "review_eeg_2023",
+      "kind": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "meta_memory_2023",
+      "kind": "meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "ftc_endorsements",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "ftc_health",
+      "kind": "regulatory",
+      "url": "https://search.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "fv_puysegur",
+      "kind": "internal_live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "fv_focus",
+      "kind": "internal_live",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "fv_editorial",
+      "kind": "internal_live",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "checked": "2026-10-30"
+    }
+  ],
+  "claims": [
+    {
+      "id": "B01",
+      "claim": "Seller advertises downloadable 15 and 30-minute Focus Shot MP3s",
+      "type": "merchant_format",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_focus",
+        "vendor_faq"
+      ],
+      "public_copy": "The seller describes 15- and 30-minute Focus Shot MP3 sessions.",
+      "notes": ""
+    },
+    {
+      "id": "B02",
+      "claim": "Seller lists brainwave-only alternate mixes",
+      "type": "merchant_format",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": "The seller says extra versions without ambient background sounds are included.",
+      "notes": ""
+    },
+    {
+      "id": "B03",
+      "claim": "Seller includes quick-start video and lifetime support",
+      "type": "merchant_format",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_focus",
+        "vendor_faq"
+      ],
+      "public_copy": "The seller lists a quick-start video and lifetime support.",
+      "notes": ""
+    },
+    {
+      "id": "B04",
+      "claim": "Focus Shot protocol switches between 12Hz and 18Hz beta",
+      "type": "merchant_technical",
+      "disposition": "ATTRIBUTE_UNTESTED",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": "The seller describes a 12-to-18 hertz alternating pattern; we have not measured the file.",
+      "notes": ""
+    },
+    {
+      "id": "B05",
+      "claim": "Merchant mixes mountain ambience with brown noise",
+      "type": "merchant_format",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": "The seller describes mountain sounds and brown noise.",
+      "notes": ""
+    },
+    {
+      "id": "B06",
+      "claim": "The audio technology is isochronic tones",
+      "type": "merchant_technical",
+      "disposition": "ATTRIBUTE_UNTESTED",
+      "source_ids": [
+        "vendor_faq"
+      ],
+      "public_copy": "The seller's FAQ identifies the method as isochronic tones.",
+      "notes": "The claimed acoustic method is not independently measured."
+    },
+    {
+      "id": "B07",
+      "claim": "Headphones aren't required according to seller",
+      "type": "merchant_format",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_focus",
+        "vendor_faq"
+      ],
+      "public_copy": "The seller says headphones are not required.",
+      "notes": ""
+    },
+    {
+      "id": "B08",
+      "claim": "Brainwave entrainment guarantees concentration on any task",
+      "type": "merchant_outcome",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "vendor_focus",
+        "review_chew_2024"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B09",
+      "claim": "One listen produces effortless laser-sharp focus",
+      "type": "merchant_outcome",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B10",
+      "claim": "Cognitive improvements last four hours to rest of day",
+      "type": "merchant_outcome",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "vendor_focus",
+        "vendor_faq"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B11",
+      "claim": "Soundtrack creates whole-brain thinking",
+      "type": "merchant_outcome",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B12",
+      "claim": "Product is completely safe for all users",
+      "type": "merchant_safety",
+      "disposition": "REJECT_CONTRADICTED",
+      "source_ids": [
+        "vendor_focus",
+        "vendor_faq"
+      ],
+      "public_copy": null,
+      "notes": "Merchant FAQ has epilepsy/alertness restrictions."
+    },
+    {
+      "id": "B13",
+      "claim": "Merchant advertises a one-year guarantee",
+      "type": "merchant_terms",
+      "disposition": "ATTRIBUTE_WITH_LIMITS",
+      "source_ids": [
+        "vendor_focus",
+        "vendor_faq"
+      ],
+      "public_copy": "The seller advertises a one-year refund policy, subject to FAQ restrictions.",
+      "notes": ""
+    },
+    {
+      "id": "B14",
+      "claim": "Refunds limited to one per 6-month period",
+      "type": "merchant_terms",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_faq"
+      ],
+      "public_copy": "The FAQ limits refunds to one during any six-month period.",
+      "notes": ""
+    },
+    {
+      "id": "B15",
+      "claim": "Order of >10 has additional downloaded-count restriction",
+      "type": "merchant_terms",
+      "disposition": "ATTRIBUTE",
+      "source_ids": [
+        "vendor_faq"
+      ],
+      "public_copy": "The seller imposes further limits on certain larger orders.",
+      "notes": ""
+    },
+    {
+      "id": "B16",
+      "claim": "Current discounted dollar price is stable",
+      "type": "volatile_offer",
+      "disposition": "WITHHOLD_LIVE_CHECKOUT",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": null,
+      "notes": "Current visible price and indexed sales snapshots conflict; do not hardcode."
+    },
+    {
+      "id": "B17",
+      "claim": "One product session is scientifically proven to treat ADHD",
+      "type": "medical_outcome",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "vendor_focus",
+        "ftc_health"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B18",
+      "claim": "A 2024 review of 31 auditory-stimulation studies found mixed/insufficient evidence",
+      "type": "independent_review",
+      "disposition": "ALLOW_SCOPED",
+      "source_ids": [
+        "review_chew_2024"
+      ],
+      "public_copy": "A review of thirty-one studies found mixed or insufficient evidence about autonomic arousal and cognition.",
+      "notes": ""
+    },
+    {
+      "id": "B19",
+      "claim": "A 2023 binaural meta-analysis reported positive pooled attention/memory estimates with conflicting individual evidence",
+      "type": "independent_review",
+      "disposition": "ALLOW_CONTEXT_NOT_PRODUCT_PROOF",
+      "source_ids": [
+        "meta_memory_2023"
+      ],
+      "public_copy": "A meta-analysis found a positive pooled result in selected binaural studies with important mixed findings.",
+      "notes": ""
+    },
+    {
+      "id": "B20",
+      "claim": "A 2023 EEG review found reliable binaural entrainment",
+      "type": "research_overreach",
+      "disposition": "REJECT_OVERGENERALIZATION",
+      "source_ids": [
+        "review_eeg_2023"
+      ],
+      "public_copy": null,
+      "notes": "Five positive, eight contradictory and one mixed study."
+    },
+    {
+      "id": "B21",
+      "claim": "Binaural studies verify specific isochronic Focus Shot efficacy",
+      "type": "invalid_cross_method",
+      "disposition": "REJECT_DIFFERENT_STIMULUS",
+      "source_ids": [
+        "vendor_faq",
+        "review_eeg_2023",
+        "meta_memory_2023"
+      ],
+      "public_copy": null,
+      "notes": "Key scientific firewall: different stimulus mechanisms and no product RCT."
+    },
+    {
+      "id": "B22",
+      "claim": "1998 door study found some pedestrians missed a person replacement",
+      "type": "primary_experiment",
+      "disposition": "ALLOW_CITED",
+      "source_ids": [
+        "study_door_1998"
+      ],
+      "public_copy": "Some participants did not report a person's substitution after a carried-door interruption.",
+      "notes": ""
+    },
+    {
+      "id": "B23",
+      "claim": "1997 flicker study demonstrated misses across intermittent blanks",
+      "type": "primary_experiment",
+      "disposition": "ALLOW_CITED",
+      "source_ids": [
+        "study_flicker_1997"
+      ],
+      "public_copy": "Brief blanks can make changed visual details much harder to detect.",
+      "notes": ""
+    },
+    {
+      "id": "B24",
+      "claim": "Visual change-blindness experiments establish commercial audio benefit",
+      "type": "false_link",
+      "disposition": "REJECT_UNRELATED_METHOD",
+      "source_ids": [
+        "study_door_1998",
+        "vendor_focus"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B25",
+      "claim": "Affiliate marketers disclose earning relationships near links",
+      "type": "regulatory",
+      "disposition": "REQUIRE_DISCLOSURE",
+      "source_ids": [
+        "ftc_endorsements"
+      ],
+      "public_copy": "If you buy through this link, Final Vestige may earn a commission.",
+      "notes": ""
+    },
+    {
+      "id": "B26",
+      "claim": "Product health/safety claims need adequate substantiation",
+      "type": "regulatory",
+      "disposition": "REQUIRE_EVIDENCE",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "public_copy": "Health-related outcomes are not established by this product's sales copy.",
+      "notes": ""
+    },
+    {
+      "id": "B27",
+      "claim": "FV affiliate account is approved and tracking link issued",
+      "type": "partner_status",
+      "disposition": "NOT_VERIFIED_NO_LINK",
+      "source_ids": [
+        "vendor_affiliate"
+      ],
+      "public_copy": null,
+      "notes": "Public application and published payout claims don't establish FV approval."
+    },
+    {
+      "id": "B28",
+      "claim": "FV has purchased and tested Focus Shot audio",
+      "type": "evaluation_status",
+      "disposition": "NOT_TESTED_NO_FIRSTHAND_CLAIM",
+      "source_ids": [
+        "vendor_focus"
+      ],
+      "public_copy": null,
+      "notes": ""
+    },
+    {
+      "id": "B29",
+      "claim": "FV operates an existing free Focus Fieldbook page",
+      "type": "internal_live",
+      "disposition": "ALLOW_CITED",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "public_copy": "The existing Focus Fieldbook is free to read from the current site.",
+      "notes": ""
+    }
+  ]
+}
