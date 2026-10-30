@@ -69,7 +69,10 @@ def _unique_keys(pairs):
 
 def _read_file(path: str | Path, limit: int, kind: str) -> bytes:
     # Descriptor and pathname must still match after the bounded read.
-    return read_regular_bytes(path, limit, kind)
+    try:
+        return read_regular_bytes(path, limit, kind)
+    except FileNotFoundError as exc:
+        raise ValueError(f"{kind} must be an existing regular file, not a symlink") from exc
 
 
 def read_cases(report: str | Path, product: str) -> ReportBatch:
