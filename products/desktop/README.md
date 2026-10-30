@@ -23,6 +23,17 @@ Headers are case-insensitive; spaces are accepted in place of underscores. The i
 
 Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, unconstrained allocation rules, fuzzy name matching, and OCR are **not** supported in v0.1. GrantAudit R6 supports explicitly linked split allocations under a limited documented CSV contract. Financial flags require human review.
 
+## R60 SpendMap Lite scalable exact medians (pre-release)
+
+SpendMap Lite now calculates prior-month anomaly baselines with a two-heap
+**Decimal-only streaming median**, removing the repeated historical sorts that
+became expensive on long vendor histories. Report rows, columns, exact half-cent
+medians, vendor-collision review, and the human-only review policy are unchanged.
+13 new regressions and the existing 20 R59 provenance regressions passed under
+both normal and optimized Python locally; complete repository CI and native
+Windows executable acceptance remain outstanding. See
+[R60 streaming median engineering details](docs/SPENDMAP_STREAMING_MEDIAN_R60.md).
+
 ## R59 SpendMap Lite provenance and explainable spikes (pre-release)
 
 SpendMap Lite now retains the **source CSV physical line numbers**, original
