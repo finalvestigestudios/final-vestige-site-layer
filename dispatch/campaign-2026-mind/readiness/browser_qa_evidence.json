@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "artifact": "local_static_review_board_not_jetpack_email",
+  "views": [
+    {
+      "width": 320,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    },
+    {
+      "width": 360,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    },
+    {
+      "width": 390,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    },
+    {
+      "width": 768,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    },
+    {
+      "width": 1024,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    },
+    {
+      "width": 1440,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    },
+    {
+      "width": 1920,
+      "cards": 6,
+      "keyboard_details": "PASS",
+      "js": "OFF",
+      "horizontal_overflow": 0,
+      "page_errors": 0
+    }
+  ],
+  "zoom_390_200pct_reflow": "PASS",
+  "real_jetpack_render": "NOT_TESTED",
+  "mailing_list": "NOT_TOUCHED",
+  "tests_are_not_accessibility_certification": true
+}
