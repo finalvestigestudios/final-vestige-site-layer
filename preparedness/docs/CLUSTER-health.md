@@ -1,6 +1,6 @@
 # Cluster notes: health (sections `health-sanitation`, `family-communication`)
 
-Status: three articles **drafted, awaiting human review**. All `safety_review.state` are `pending`; none is published. Sources read live on 2026-10-29 (Firecrawl, `maxAge: 0`).
+Status: three articles **drafted, awaiting human review** (post-QD self-audit recorded at the end of this file). All `safety_review.state` are `pending`; none is published. Sources read live on 2026-10-29 (Firecrawl, `maxAge: 0`).
 
 | # | Slug | Gate | Words (build count) | Sources cited |
 |---|---|---|---|---|
@@ -44,3 +44,26 @@ CDC hygiene shows Updated before Published. CDC power outage shows Updated Jan 2
 - **Test failure outside my files.** `tests/test_preparedness.py::test_landing_lists_only_built_articles_and_no_empty_sections` hardcodes `populated_sections == ["water","lost-ways","field-tools"]`. It now fails because `health-sanitation` and `family-communication` are populated (the build also emitted new hubs for them, as intended). Validate and build pass; this one test needs updating by whoever owns `tests/`, and will fail for every contributor who adds a new section.
 - `build/` outputs are tracked in git; I did not commit regenerated files, to avoid merge conflicts across the parallel branches. Rebuild after merging.
 - `related` lists some slugs not yet built (`family-communication-plan`, `household-emergency-plan`, `go-bags`, `shelter-or-evacuate`, `navigation-before-gps`, `outage-heat-cold-generators`, `sanitation-before-germ-theory`); the validator only requires them to exist in the taxonomy. The article bodies link only to built guides, except plain-text mentions.
+
+## Self-audit against the QD lessons (2026-10-30)
+
+Scope: `medication-and-devices`, `emergency-hygiene-sanitation`, `warnings-radios-offline-maps` and `sources/fragments/health.json`. This is my own audit, not an independent review; it is not a QD pass and not an approval. `status.publish` is `draft` and `safety_review.state` is `pending` on all three.
+
+| Defect class | Finding | Action |
+|---|---|---|
+| (a) Blanket discard/stop/skip about medication | Article 17 reproduced "discard refrigerated medication" (CDC, Ready.gov page) without a clear "do not stop or discard on your own". The Ready.gov web page (updated 2026-06-04) says *discard*; FEMA's December 2023 fact sheet says *replace* and *call your doctor or pharmacist*. | Read the fact sheet in full (new source `health-fema-power-outage-sheet`). Action box now says not to stop, throw out or ration a prescribed medicine on your own and to arrange a replacement. Comparison table shows both FEMA wordings. New editor's notes explain that discard/replace means replacement, not going without. Insulin above 86 F is framed as the FDA's last-resort acknowledgment with a tell-your-clinician line. Floodwater discard is paired with the FDA exception and a call-first-for-a-replacement line. |
+| (b) Drills that interrupt life-safety or medical equipment | No drill switches off main power or medical equipment. Article 19 told readers to practice phone maps with the network off. | Added: use a spare or nonessential device, never disable a phone used for medical alerts, device apps or calling for help. |
+| (c) Misclassified source kinds | All 21 fragment entries are `regulator` (federal or state agency) or `extension` (OSU). No Red Cross, AHA or other nonprofit is cited. The CDC archive page is a regulator page but archived; that is stated. | None needed. |
+| (d) Legal duties, eligibility, regulatory claims inferred | None asserted. State refill laws, registries, utility priority speed and emPOWER enrolment are explicitly stated as unverified. WEA carrier participation and FCC rules are quoted from FCC and FEMA text only. | None needed. |
+| (e) Partly read PDFs or long pages recorded as fully read | The Dec 2023 FEMA sheet could not be decoded by the first fetch tool; it was read in full by extracting text from the saved PDF (one page). FCC WEA page: archive list scanned by titles only. Linked sub-pages and PDFs on several sources were not opened. | Register `notes` now state the exact read scope for every affected source. |
+| (f) Infant feeding, dosing, pregnancy, CO/fire | No infant-feeding, pregnancy or dosing statement is made. Insulin storage figures are the FDA's, with conditions and the product-label caveat; conversion tables not reproduced. CO rules quote FDA and CDC wording (never in an enclosed space, 20 ft from openings, detector, poison control). Oxygen/flame statement is the FDA's wording only. | Insulin wording strengthened as above. |
+
+### Statements I could not verify to this standard
+- Whether state emergency-refill laws, local registries and utility priority lists work as readers might hope: sources silent, stated on the page.
+- The Ready.gov page vs fact-sheet wording difference is shown but not resolved; I cannot say which FEMA text the agency regards as authoritative beyond their dates (page June 2026, sheet December 2023).
+- Offline map advice (editor's reasoning only, labeled).
+- WEA-during-tower-outage limitation is our inference, labeled; the FCC item it points to was not opened.
+- Red Cross/AHA first-aid guidance was not read and is only named as a pointer.
+
+### Link checks
+All sources in `health.json` remain `human_link_check: false`. No human has clicked these links.

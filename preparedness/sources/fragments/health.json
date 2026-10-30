@@ -40,7 +40,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "NWR is a nationwide network of radio stations broadcasting from the nearest NWS office; it also carries warnings for non-weather hazards (earthquakes, chemical releases, AMBER alerts, 911 telephone outages); more than 1,000 transmitters covering all 50 states, coastal waters, Puerto Rico, the U.S. Virgin Islands and U.S. Pacific territories; a special receiver or scanner is required; seven VHF frequencies (162.400 to 162.550 MHz); the page lists transmitters that are degraded or out of service and says to check county coverage listings for alternate transmitters.",
-      "notes": "Undated page. It displays a live list of transmitter outages, so its content changes continuously."
+      "notes": "Undated page. It displays a live list of transmitter outages, so its content changes continuously. Read scope: full page as returned, including the live outage list; the linked FAQ, alert-information and receiver pages were not opened."
     },
     {
       "id": "health-cdc-power-outage",
@@ -110,7 +110,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Label storage for insulin in a refrigerator at about 36 F to 46 F; manufacturer vials or cartridges, opened or unopened, can be left at 59 F to 86 F for up to 28 days; diluted or decanted insulin discarded within two weeks; extreme temperatures reduce effectiveness; do not use frozen insulin; keep insulin away from heat and sun; insulin in a pump's infusion set discarded after 48 hours unless the pump's instructions differ; call the manufacturer with questions; and the page's own instruction that insulin should be switched under a doctor's care with close blood-sugar monitoring.",
-      "notes": "The page also contains unit-conversion tables for switching between insulin products. This archive deliberately does NOT reproduce them. Date taken from page metadata (modified 09/28/2026). The page's manufacturer phone table is not reproduced either, because the page itself says the numbers change."
+      "notes": "The page also contains unit-conversion tables for switching between insulin products. This archive deliberately does NOT reproduce them. Date taken from page metadata (modified 09/28/2026). The page's manufacturer phone table is not reproduced either, because the page itself says the numbers change. Read scope: full page as returned, including the switching tables (not reproduced)."
     },
     {
       "id": "health-fda-devices",
@@ -152,7 +152,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "A power outage may prevent use of medical devices; have alternate plans for refrigerating medicines or powering medical devices; inventory the items that rely on electricity and plan for batteries, power banks and other alternatives; talk to your medical provider about an outage plan for powered devices and refrigerated medicines, ask how long a medication can be stored at higher temperatures, and get specific guidance for life-critical medications; if power is out for more than a day, discard refrigerated medication unless the label says otherwise and consult a doctor or pharmacist for a new supply; generator and carbon monoxide rules (outdoors, at least 20 feet from windows, doors and attached garages).",
-      "notes": null
+      "notes": "Read scope: full page as returned; linked PDFs not opened except the December 2023 fact sheet, which is registered separately (health-fema-power-outage-sheet)."
     },
     {
       "id": "health-ready-disabilities",
@@ -166,7 +166,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Support network; many city and county emergency management agencies keep voluntary registries for people with disabilities; know more than one dialysis or treatment facility; ask the power provider for priority power restoration; organize prescriptions; medical alert tags; list of device styles and serial numbers; backup oxygen; spare batteries and a manual backup for a power wheelchair; keep model information and where equipment came from; weather radio with text display and flashing alert for people who are deaf or hard of hearing; extra hearing-aid batteries; FEMA App alerts for up to five locations; several days' supply of prescription medicines.",
-      "notes": null
+      "notes": "Read scope: full page as returned; linked PDFs and videos were not opened."
     },
     {
       "id": "health-ready-kit",
@@ -180,7 +180,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Basic kit items include water (one gallon per person per day for several days, for drinking and sanitation), a battery-powered or hand-crank radio and a NOAA Weather Radio with tone alert, flashlight, extra batteries, whistle, moist towelettes, garbage bags and plastic ties for personal sanitation, local maps, and a cell phone with chargers and a backup battery; additional items include soap, hand sanitizer, prescription medications, feminine supplies, diapers and wipes, and personal hygiene items.",
-      "notes": null
+      "notes": "Read scope: full page as returned; the linked printable checklist PDF was not opened."
     },
     {
       "id": "health-ready-plan",
@@ -194,7 +194,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Plan around five questions, the first being how you will receive emergency alerts and warnings; know how you will contact one another and reconnect if separated; pick a familiar, easy-to-find family meeting place; account for medical needs including prescriptions and equipment, disabilities and access needs, languages, pets and service animals; document and practice the plan.",
-      "notes": null
+      "notes": "Read scope: full page as returned; the fillable plan form and linked PDFs were not opened."
     },
     {
       "id": "health-ready-alerts",
@@ -208,7 +208,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Wireless Emergency Alerts (short alerts to WEA-enabled phones in a locally targeted area; unique sound and vibration; not affected by network congestion; no charge, no subscription; older phones may not be capable and some phones require WEA to be enabled; some carriers call them Government Alerts or Emergency Alert Messages); the Emergency Alert System (broadcast TV and radio, satellite audio, cable); NOAA Weather Radio All Hazards; IPAWS (FEMA does not review, edit or approve alerts); the FEMA App (NWS alerts for up to five locations, shelter finder).",
-      "notes": null
+      "notes": "Read scope: full page as returned; linked PDFs (WEA fact sheet, guide for alerts and warnings) were not opened."
     },
     {
       "id": "health-fema-ipaws",
@@ -222,7 +222,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "IPAWS is FEMA's national system for local alerting; alerts are authenticated and delivered through multiple pathways at once (Emergency Alert System via AM, FM and satellite radio and broadcast, cable and satellite TV; Wireless Emergency Alerts to phones by location, 'even if cellular networks are overloaded'; NOAA Weather Radio; internet services; sirens and digital road signs); more than 2,000 federal, state, local, tribal and territorial alerting authorities use it; multiple pathways increase the likelihood a message reaches the public.",
-      "notes": null
+      "notes": "Read scope: full page as returned; linked fact sheets, myths-and-facts and FAQ pages were not opened."
     },
     {
       "id": "health-fcc-wea",
@@ -236,7 +236,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "WEA delivers warnings to wireless devices; wireless provider participation is voluntary but participating providers must meet FCC requirements; alerts are sent by authorized officials through IPAWS to providers and pushed from cell towers to devices in the affected area; WEA and the Emergency Alert System are the two main components of the national public warning system; the page lists a 2023 FCC item seeking partners to test delivering alerts during cell tower outages (the item itself was not read).",
-      "notes": "The FCC page's own robots metadata is 'noindex'; the content is nonetheless live on fcc.gov."
+      "notes": "The FCC page's own robots metadata is 'noindex'; the content is nonetheless live on fcc.gov. Read scope: the explanatory text and resources list; the long releases archive (2007-2026 rulemaking and waiver titles) was scanned for titles only, and no archive item was opened."
     },
     {
       "id": "health-fcc-comms-tips",
@@ -264,7 +264,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "When a toilet will not flush: use a working toilet elsewhere, or turn off the toilet's water valve, flush out the bowl, line it with a plastic kitchen garbage bag inside another, add an absorbent such as kitty litter, peat moss or lime, tie the inner bag when full, store used bags away from children, pets and wildlife, and wash hands with soap and running water (wipes and sanitizer if there is none); a five-gallon bucket with a seat works the same way; a 'cat hole' only if nothing else is possible and only for a day or two, on dry land at least 100 feet from wells, homes and open water, at least 6 inches deep and about 6 inches across, one use per hole; non-biodegradable items go in a bag in the garbage.",
-      "notes": "SOURCE DISAGREEMENT with health-osu-sanitation on disposal: this page says bagged waste can be put in the garbage can for disposal; the OSU Extension guide says human waste should not go in the normal garbage or landfill and should be stored until the public sanitary system is repaired. Our article tells readers to follow local authority instructions and flags the conflict."
+      "notes": "SOURCE DISAGREEMENT with health-osu-sanitation on disposal: this page says bagged waste can be put in the garbage can for disposal; the OSU Extension guide says human waste should not go in the normal garbage or landfill and should be stored until the public sanitary system is repaired. Our article tells readers to follow local authority instructions and flags the conflict. Read scope: full page as returned; linked county brochures not opened."
     },
     {
       "id": "health-osu-sanitation",
@@ -278,7 +278,21 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Twin-bucket (separate urine and feces) emergency toilet: two 5-gallon buckets, heavy-duty 13-gallon bags of 3 to 5 mil for the feces bucket, about a half cup of carbon material (sawdust, wood shavings, shredded paper, bark chips or peat moss) after each use, fill the feces bucket no more than half full, double-bag and store waste away from food, water, pets and pests; dilute and pour urine on ground, changing location, and do not bury waste within 100 feet of a water source; do not put human waste in the normal garbage; handwashing station of a potable-water jug with spigot, soap, towels and a catch bucket, two stations if possible; hand sanitizer limits; turn off household water and avoid using toilets even if your own pipes seem fine, because street pipes may be broken; diapers, menstrual products and mobility considerations; supplies list.",
-      "notes": "Peer reviewed (Gray level per OSU). Written for the Pacific Northwest earthquake scenario but framed for any loss of water and sewer. Page metadata gives published 2021-10-14 and modified 2025-09-24; the visible date is October 2021."
+      "notes": "Peer reviewed (Gray level per OSU). Written for the Pacific Northwest earthquake scenario but framed for any loss of water and sewer. Page metadata gives published 2021-10-14 and modified 2025-09-24; the visible date is October 2021. Read scope: full page as returned; the linked RDPO toilet guidebook, PHLUSH documents and the PDF edition were not opened."
+    },
+    {
+      "id": "health-fema-power-outage-sheet",
+      "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "published": "2023-12-01",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "One-page FEMA fact sheet: make a plan for refrigerating medicines and powering medical devices; talk to your doctor about how you will use electrically powered devices and store medications; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'; generators outdoors at least 20 feet from building openings; learn the signs of carbon monoxide poisoning.",
+      "notes": "READ IN FULL: one page; text extracted with pdftotext from the saved PDF bytes (the first fetch tool could not decode it). Printed edition 'FEMA V-1008/December 2023'; exact day not printed, so 2023-12-01 is a placeholder for the month. File metadata shows last modified 2023-12-29. Wording says 'Replace', whereas the Ready.gov power-outage web page (updated 2026-06-04, health-ready-power-outages) says 'discard'; both are shown in medication-and-devices."
     }
   ]
 }
