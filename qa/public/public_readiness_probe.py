@@ -75,7 +75,7 @@ def probe(name: str, path: str, kind: str, marker: bytes | None = None, opener=N
             if content_type != "text/html":
                 return {**result, "outcome": "FAIL", "reason": "not HTML content type"}
             if b"<html" not in data[:8192].lower():
-                return {**result, "outcome": "FTML document marker missing"}
+                return {**result, "outcome": "FAIL", "reason": "HTML document marker missing"}
             if marker and marker not in data.lower():
                 return {**result, "outcome": "FAIL", "reason": "expected content text missing from bounded response"}
             return {**result, "outcome": "PASS", "bytes_checked": len(data), "note": "HTTP and HTML source only; NOT browser or form verification"}
