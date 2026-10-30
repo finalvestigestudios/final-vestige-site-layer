@@ -85,6 +85,23 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             if s.get("human_link_check") not in (True, False, None):
                 errors.append(f"{tag}: human_link_check must be a Boolean")
 
+    # Compatibility with in-memory synthetic tests: manually supplied sources
+    # must still pass the same type/authority checks, without posing as actual
+    # raw source-fragment provenance or changing the signed crosswalk counts.
+    for sid, s in lib.register.items():
+        if sid in lib.source_variants:
+            continue
+        if s.get("kind") not in ALLOWED_KINDS:
+            errors.append(f"register:{sid}: unknown source kind '{s.get('kind')}'")
+        if s.get("kind") == "regulator" and any(
+            w in s.get("publisher", "") for w in NONPROFIT_MARKERS
+        ):
+            errors.append(f"register:{sid}: '{s.get('publisher')}' is not a regulator")
+        if not s.get("url", "").startswith("https://"):
+            errors.append(f"register:{sid}: url must be https")
+        if s.get("verified_on") and not s.get("supports"):
+            errors.append(f"register:{sid}: verified source must say what it supports")
+
     def scope_snapshot(s: dict) -> dict:
         # _origin is provenance metadata from the loader, NOT original data.
         return {"origin": s["_origin"], "source": {k: v for k, v in s.items() if k != "_origin"}}
