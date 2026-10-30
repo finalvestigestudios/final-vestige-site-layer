@@ -1,0 +1,41 @@
+{
+  "n": 9,
+  "slug": "food-safety-power-outage",
+  "title": "Food safety during a power outage",
+  "h1": "Food safety during a power outage: the clock, the thermometer and what to throw out",
+  "dek": "A closed refrigerator buys you about four hours. This guide explains the two different clocks the official pages use, where they disagree, and how to decide what to keep once the power comes back.",
+  "description": "What USDA, CDC, FDA and Ready.gov say about fridge and freezer time limits in an outage, where they differ, and a keep-or-discard guide for common foods.",
+  "section": "food",
+  "track": "modern",
+  "tags": [
+    "Power outage",
+    "Time and temperature",
+    "Refrigerator and freezer"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-29",
+  "recheck": "Immediately if USDA FSIS, CDC, FDA or FoodSafety.gov revises its outage time limits; otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "pantry-rotation",
+    "two-week-water-storage",
+    "outage-heat-cold-generators"
+  ],
+  "source_use": {
+    "fsis-power-failure": "Refrigerator about 4 hours unopened; full freezer about 48 hours, half full 24; freezer compartment of a refrigerator may not hold as long; group freezer packages.",
+    "food-fsis-emergencies": "Planning steps; 4-hour refrigerator and 48/24-hour freezer figures; dry ice example; snow warning; foods to discard and foods that are safe; flood and fire steps; the FSIS bleach amounts; USDA Meat and Poultry Hotline.",
+    "food-cdc-after-emergency": "4-hour, 48-hour and 24-hour figures; move food to a cooler at 4 hours; discard rule; never taste; refreeze if ice crystals or 40 F or below; CDC bleach amounts.",
+    "food-foodsafety-outage-chart": "The 2-hour column; the keep-or-discard rows reproduced in the table; frozen-food chart notes; juice verdicts.",
+    "food-fda-outage-flood": "Preparation steps; 45 F allowance; 2-hour / 1-hour room-temperature rule; cooking meat to a safe temperature; foodborne illness timing and symptoms; FDA bleach amounts.",
+    "food-ready-food": "Refrigerator four hours; discard perishables above 40 F for two hours; dry ice example and gloves; ready-to-feed formula; Ready.gov bleach ratio.",
+    "food-osu-survival-food": "Eat refrigerator, then freezer, then pantry; refrigerator above 40 F then two more hours; egg note."
+  }
+}

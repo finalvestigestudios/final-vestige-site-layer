@@ -1,0 +1,45 @@
+{
+  "n": 8,
+  "slug": "pantry-rotation",
+  "title": "Pantry rotation without waste",
+  "h1": "Pantry rotation without waste: build the supply you already eat from",
+  "dek": "An emergency food supply works best when you eat from it and refill it. What USDA and university Extension say to stock, how to read the dates, where to keep it, and how to turn it over.",
+  "description": "A pantry-first way to build and rotate emergency food: what FSIS and Ready.gov say to stock, what package dates mean, storage rules, and a simple routine.",
+  "section": "food",
+  "track": "modern",
+  "tags": [
+    "Pantry",
+    "Food storage",
+    "Date labels"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-29",
+  "recheck": "If FSIS, Ready.gov or the Extension publications below change their lists or storage guidance, or at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "food-safety-power-outage",
+    "two-week-water-storage",
+    "water-math",
+    "pressure-canning-low-acid",
+    "safe-jerky-dehydration"
+  ],
+  "source_use": {
+    "fsis-emergency-foods": "Example foods to keep; 3-day bottled water; small cans; infant formula, pet food and special-diet foods; manual can opener; use and refresh the supply.",
+    "food-ready-food": "Several-day supply of non-perishable food; choose foods your family will eat; example items; swollen, dented or corroded cans.",
+    "food-fsis-shelf-stable": "Storage conditions and the 85 F and 100 F figures; check pantry every few weeks; can rust, dents, freezing; botulism signs and symptoms; the storage chart rows; the home-canned-row conflict.",
+    "food-fsis-dating": "Dates are about quality; meaning of date labels; infant formula exception; can codes; 12 to 18 months and 2 to 5 years; donation.",
+    "food-foodkeeper": "Pointer to the FoodKeeper storage tool and who developed it.",
+    "food-illinois-room-temp": "Pantry tips, first in first out, cover opened food, package dates and expiration dates.",
+    "food-usu-canned-goods": "Label purchase date; store cool, dark, dry, off the floor; do not freeze; first in first out; budget resellers; commercial versus home canned; home-canned one-year shelf life.",
+    "food-osu-survival-food": "Cycle through food you eat; add a little each shop; three-day bags; storage locations in small homes; pests every six months; 2-week and 4-week Oregon targets; sodium; freeze-dried caution; 95 F.",
+    "food-cdc-home-canned": "Home-canned storage: a year's worth, not above 95 F, 50 to 70 F for quality; boil-before-eating advice that agrees with FSIS's text."
+  }
+}

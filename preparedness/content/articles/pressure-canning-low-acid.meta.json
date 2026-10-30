@@ -1,0 +1,52 @@
+{
+  "n": 10,
+  "slug": "pressure-canning-low-acid",
+  "title": "Pressure canning low-acid foods",
+  "h1": "Pressure canning low-acid foods: validated processes, not internet shortcuts",
+  "dek": "Why meat and vegetables need a pressure canner, what makes a home-canning process tested, and what the CDC, USDA and NCHFP say about the shortcuts that circulate online. A guide to the rules, not a recipe.",
+  "description": "Why low-acid foods need a pressure canner, what makes a canning process validated, and what CDC, USDA and NCHFP say about multi-cookers, dry canning and shortcuts.",
+  "section": "food",
+  "track": "modern",
+  "tags": [
+    "Pressure canning",
+    "Botulism",
+    "Validated processes"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-29",
+  "recheck": "Immediately if the CDC, NCHFP or the USDA Complete Guide to Home Canning revises guidance on canners, multi-cookers or the boil-before-eating rule; otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "pantry-rotation",
+    "safe-jerky-dehydration",
+    "food-safety-power-outage",
+    "salt-beef-salt-pork-age-of-sail"
+  ],
+  "source_use": {
+    "food-cdc-home-canned": "Pressure canning is the only recommended method for low-acid foods; no boiling water canner or electric multi-cooker; use USDA recipes only; canner and gauge advice; storage; boil-before-eating rule; signs of contamination; if in doubt throw it out.",
+    "cdc-botulism-prevention": "Toxin cannot be seen, smelled or tasted; if in doubt throw it out.",
+    "food-nchfp-ensuring-safe": "Botulism growth conditions; definition and examples of low-acid foods; 240 to 250 F in pressure canners; the 20 to 100 minute and 7 to 11 hour time ranges; elevation.",
+    "food-nchfp-recommended-canners": "Temperature versus pressure; trapped air and elevation as the two errors; gauge accuracy and Extension gauge testing; small pressure saucepans.",
+    "food-nchfp-using-pressure-canners": "Canner types and size; venting 10 minutes; gauge accuracy; restart timing if pressure drops; do not force-cool; burner limits; handling cautions; directory of local experts.",
+    "nchfp-pressure-ground-meat": "The example of a tested process: preparation, separate tables by jar size, gauge type and elevation band (not reprinted).",
+    "food-nchfp-multicooker": "Why NCHFP does not support USDA processes in electric multi-cookers.",
+    "food-nchfp-dry-canning": "Why canning raw vegetables without liquid is hazardous; processes must be used as written.",
+    "food-nchfp-not-recommended": "Oven, microwave, dishwasher, open-kettle and dry-oven canning not recommended; canning powders useless.",
+    "food-nchfp-steam-canning": "Atmospheric steam canning is endorsed for high-acid foods only.",
+    "food-usda-canning-guide-1": "Spoiled low-acid food may show little evidence; handling suspect jars; storage and freezing of canned food.",
+    "food-fsis-shelf-stable": "Botulism symptoms and timing; the boil-before-eating qualification; the conflicting storage chart row; double-bagging suspect cans.",
+    "food-osu-survival-food": "Do not can water, butter, dairy, grains, leftovers, cakes, quick breads or cured meats; vacuum-sealing low-acid foods; canning during a long outage.",
+    "food-usu-canned-goods": "Commercially canned is superior for storage; tasting and boiling advice that conflicts with CDC; do not let jars freeze.",
+    "food-fsis-emergencies": "Discard home-canned food that touched floodwater.",
+    "food-cdc-after-emergency": "Discard home-canned food that touched floodwater.",
+    "nchfp-home": "What the National Center for Home Food Preservation is and says it provides."
+  }
+}
