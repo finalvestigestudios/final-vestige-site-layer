@@ -1,0 +1,43 @@
+{
+  "status": "DRAFT_STAGING_HOLD",
+  "parent_pr": 195,
+  "parent_head": "b85abf035981e7792e5948bf6e6a29ee781a8481",
+  "records": 6,
+  "atlas_geometry_added": 0,
+  "image_bytes_added": 0,
+  "default_comparison": [
+    "02",
+    "05"
+  ],
+  "local_playwright_tested_widths": [
+    320,
+    360,
+    390,
+    768,
+    1024,
+    1440,
+    1920
+  ],
+  "local_chromium_ax_widths": [
+    320,
+    390,
+    768,
+    1440,
+    1920
+  ],
+  "nonaxe_controls_per_viewport": 135,
+  "local_synthetic_lcp_ms": {
+    "320": 256,
+    "390": 128,
+    "768": 164,
+    "1440": 200,
+    "1920": 148
+  },
+  "local_synthetic_cls": 0,
+  "previous_html_bytes": 80859,
+  "latest_html_bytes": 104009,
+  "axe": "NOT_RUN",
+  "WordPress": "NOT_INSTALLED",
+  "site_settings": "UNCHANGED",
+  "release": "UNAPPROVED"
+}
