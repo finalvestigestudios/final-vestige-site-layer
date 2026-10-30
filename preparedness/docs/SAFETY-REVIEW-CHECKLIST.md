@@ -1,6 +1,6 @@
 # Human safety-review checklist: sprint 1 articles
 
-Status: **no review has been done.** Both articles are drafts and the validator blocks publication until `safety_review.state` is `approved` with a named reviewer and date.
+Status: **both articles approved by the founder on 2026-10-29** (one-word reply in chat; no per-item notes supplied, so items A2, A6, A7, B4, B5 are approved as drafted but not individually annotated). Both remain drafts: editorial read-through, independent QA and a separate publish authorization are still required.
 
 How to review: open each cited page yourself (do not rely on our summary), compare the numbered claim below, and record any disagreement on Issue #136.
 
@@ -41,5 +41,5 @@ Not covered and said so on the page: 1% bleach table, wells and cisterns, radiat
 
 | Article | Reviewer | Date | Result | Notes |
 |---|---|---|---|---|
-| making-water-safer | | | | |
-| salt-beef-salt-pork-age-of-sail | | | | |
+| making-water-safer | Bryan Rhodes (founder) | 2026-10-29 | Approved as drafted | Reviewer's own spot-check scope unknown; claims A1-A14 not individually confirmed |
+| salt-beef-salt-pork-age-of-sail | Bryan Rhodes (founder) | 2026-10-29 | Approved as drafted | Primary records still unpulled (B5); verdict wording approved |

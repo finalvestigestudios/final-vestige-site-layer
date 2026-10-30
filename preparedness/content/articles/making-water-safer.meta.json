@@ -7,13 +7,27 @@
   "description": "How to make questionable water safer to drink using the CDC's current guidance: boiling, bleach, tablets, filters and light, plus the cases where none of them works.",
   "section": "water",
   "track": "modern",
-  "tags": ["Boil-water emergencies", "Bleach dosing", "Filters"],
+  "tags": [
+    "Boil-water emergencies",
+    "Bleach dosing",
+    "Filters"
+  ],
   "updated": "2026-10-29",
   "last_checked": "2026-10-29",
   "recheck": "Immediately if the CDC revises either source below; otherwise at the next quarterly source sweep.",
-  "status": {"editorial": "drafted", "publish": "draft"},
-  "safety_review": {"state": "pending", "reviewer": null, "date": null},
-  "related": ["salt-beef-salt-pork-age-of-sail"],
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "approved",
+    "reviewer": "Bryan Rhodes (founder)",
+    "date": "2026-10-29",
+    "scope": "Approved as drafted, no changes requested. Includes the CDC/EPA altitude reconciliation (3 min near or above ~5,000 ft) and the EPA-only chlorine-odor check. Approval recorded from the reviewer's one-word reply in chat; item-by-item checklist notes were not supplied."
+  },
+  "related": [
+    "salt-beef-salt-pork-age-of-sail"
+  ],
   "source_use": {
     "epa-emergency-disinfection": "Independent check of boiling and bleach dosing; the 5,000-foot elevation threshold; bleach selection and age; the statement that boiling does not remove salts, heavy metals and most chemicals; the EPA Safe Drinking Water Hotline.",
     "cdc-water-safe": "Boiling times, bleach table for 5-9% sodium hypochlorite, tablets and drops, filter pore sizes, UV and solar disinfection, and the statement that fuel, toxic chemicals and radioactive material cannot be removed by boiling or disinfecting.",

@@ -26,7 +26,7 @@ class LibraryTests(unittest.TestCase):
         built = set(self.lib.articles)
         for a in self.lib.taxonomy["slate"]:
             if a["slug"] in built:
-                self.assertEqual(a["status"], "drafted-pending-safety-review", a["slug"])
+                self.assertEqual(a["status"], "safety-approved-draft", a["slug"])
             else:
                 self.assertEqual(a["status"], "not-started", a["slug"])
 
