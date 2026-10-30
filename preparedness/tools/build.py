@@ -37,29 +37,86 @@ class Library:
     def __init__(self, root: Path = ROOT):
         self.root = root
         self.taxonomy = load_json(root / "taxonomy.json")
-        self.register = {s["id"]: s for s in load_json(root / "sources" / "register.json")["sources"]}
-        # Parallel contributors add sources through their own fragment file so the shared register never conflicts.
-        for frag in sorted((root / "sources" / "fragments").glob("*.json")):
-            for s in load_json(frag)["sources"]:
-                existing = self.register.get(s["id"])
-                # A fragment may upgrade an unverified placeholder from the register, never redefine a verified source.
-                if existing is not None and existing.get("verified_on"):
-                    raise ValueError(f"duplicate source id '{s['id']}' in {frag.name}")
-                self.register[s["id"]] = s
+        crosswalk_file = root / "sources" / "crosswalk.json"
+        self.crosswalk = load_json(crosswalk_file) if crosswalk_file.exists() else {}
+        self.crosswalk_groups = {g["url"]: g for g in self.crosswalk.get("groups", [])}
+        self.article_origins = self.crosswalk.get("article_origins", {})
+        self.source_variants: dict[str, list[dict]] = {}
+
+        def add_source(source: dict, origin: str) -> None:
+            # Preserve every original source record. One URL may have been read at
+            # different depths by independent contributors. Never merge its claims.
+            row = {**source, "_origin": origin}
+            self.source_variants.setdefault(source["id"], []).append(row)
+
+        for source in load_json(root / "sources" / "register.json")["sources"]:
+            add_source(source, "base")
+        for fragment in sorted((root / "sources" / "fragments").glob("*.json")):
+            for source in load_json(fragment)["sources"]:
+                add_source(source, fragment.stem)
+
+        self.register = {}
+        for sid, variants in self.source_variants.items():
+            urls = {v["url"] for v in variants}
+            if len(urls) != 1:
+                raise ValueError(f"duplicate source id '{sid}' has conflicting URLs")
+            url = next(iter(urls))
+            verified = [v for v in variants if v.get("verified_on")]
+            # A verified source must never be redefined without an explicit,
+            # exhaustively documented crosswalk. A placeholder may be upgraded
+            # once by a fragment with exactly the same URL.
+            if len(verified) > 1 or (verified and variants[0].get("verified_on") and len(variants) > 1):
+                group = self.crosswalk_groups.get(url)
+                declared = {(v["origin"], v["source"]["id"]) for v in group["variants"]} if group else set()
+                observed = {(v["_origin"], v["id"]) for v in variants}
+                if declared != observed:
+                    raise ValueError(f"duplicate source id '{sid}' is not documented in source crosswalk")
+            # This global index is retained for existing tests and known-id checks.
+            # Source claims shown to readers are ALWAYS selected by article origin.
+            self.register[sid] = verified[0] if verified else variants[0]
+
         self.css = (root / "assets" / "preparedness.css").read_text(encoding="utf-8")
         self.sections = {s["slug"]: s for s in self.taxonomy["sections"]}
         self.slate = {a["slug"]: a for a in self.taxonomy["slate"]}
         self.articles: dict[str, dict] = {}
         for meta_path in sorted((root / "content" / "articles").glob("*.meta.json")):
             meta = load_json(meta_path)
+            if meta["slug"] != meta_path.name.removesuffix(".meta.json"):
+                raise ValueError(f"article slug mismatch: {meta_path.name} vs {meta['slug']}")
+            if meta["slug"] in self.articles:
+                raise ValueError(f"duplicate article slug '{meta['slug']}'")
             body = meta_path.with_name(meta_path.name.replace(".meta.json", ".body.html")).read_text(encoding="utf-8")
             meta["_body"] = body
             self.articles[meta["slug"]] = meta
         for meta_path in sorted((root / "content" / "tools").glob("*.meta.json")):
             meta = load_json(meta_path)
+            if meta["slug"] in self.articles:
+                raise ValueError(f"duplicate article/tool slug '{meta['slug']}'")
             meta["kind"] = "tool"
             meta["_body"] = meta_path.with_name(meta_path.name.replace(".meta.json", ".body.html")).read_text(encoding="utf-8")
             self.articles[meta["slug"]] = meta
+
+    def source_for(self, meta: dict, sid: str) -> dict:
+        """Find the source AS READ for this particular article, not a global merger.
+
+        Reusing a source ID does not make the reading scope of another cluster
+        apply to this article. A verified source from an unrelated fragment is
+        never allowed to silently approve a base unverified placeholder.
+        """
+        if sid not in self.source_variants:
+            # Preserve compatibility with isolated synthetic in-memory fixtures.
+            if sid in self.register:
+                return self.register[sid]
+            raise KeyError(f"{meta['slug']}: unknown source id '{sid}'")
+        versions = self.source_variants[sid]
+        origin = self.article_origins.get(meta["slug"], "base")
+        own = next((v for v in versions if v["_origin"] == origin), None)
+        if own is not None:
+            return own
+        base = next((v for v in versions if v["_origin"] == "base"), None)
+        if base is not None:
+            return base
+        raise KeyError(f"{meta['slug']}: source '{sid}' was not checked by its own cluster or the base archive")
 
     def url_path(self, slug: str) -> str:
         a = self.articles.get(slug) or self.slate[slug]
@@ -107,7 +164,7 @@ def resolve_tokens(lib: Library, meta: dict) -> tuple[str, list[str]]:
         if sid not in order:
             order.append(sid)
         n = order.index(sid) + 1
-        return f'<sup class="pa-cite"><a href="#src-{n}" aria-label="Source {n}: {esc(lib.register[sid]["title"])}">[{n}]</a></sup>'
+        return f'<sup class="pa-cite"><a href="#src-{n}" aria-label="Source {n}: {esc(lib.source_for(meta, sid)["title"])}">[{n}]</a></sup>'
 
     def link(m: re.Match) -> str:
         slug, label = m.group(1), m.group(2)
@@ -115,7 +172,7 @@ def resolve_tokens(lib: Library, meta: dict) -> tuple[str, list[str]]:
             return f'<a href="{lib.url_path(slug)}">{label}</a>'
         return label  # target not built yet: plain text, never a dead link
 
-    inlined = re.sub(r"\{\{inline-js:([a-z_]+\.js)\}\}", lambda m: (ROOT / "tools" / m.group(1)).read_text(encoding="utf-8"), meta["_body"])
+    inlined = re.sub(r"\{\{inline-js:([a-z_]+\.js)\}\}", lambda m: (lib.root / "tools" / m.group(1)).read_text(encoding="utf-8"), meta["_body"])
     body = re.sub(r"\{\{cite:([a-z0-9\-]+)\}\}", cite, inlined)
     body = re.sub(r"\{\{link:([a-z0-9\-]+)\|([^}]+)\}\}", link, body)
     if "{{" in body:
@@ -152,7 +209,7 @@ def sources_block(lib: Library, order: list[str], meta: dict) -> str:
     use = meta.get("source_use", {})
     lis = []
     for n, sid in enumerate(order, 1):
-        s = lib.register[sid]
+        s = lib.source_for(meta, sid)
         bits = []
         if s.get("published"):
             bits.append(f"Published {fmt_date(s['published'])}")

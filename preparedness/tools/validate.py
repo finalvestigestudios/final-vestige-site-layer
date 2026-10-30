@@ -60,22 +60,84 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warns: list[str] = []
 
-    # --- register ---
-    seen_urls = set()
-    for sid, s in lib.register.items():
-        if not s["url"].startswith("https://"):
-            errors.append(f"register:{sid}: url must be https")
-        if s["url"] in seen_urls:
-            errors.append(f"register:{sid}: duplicate url")
-        seen_urls.add(s["url"])
-        if s.get("verified_on") and not DATE_RE.match(s["verified_on"]):
-            errors.append(f"register:{sid}: bad verified_on")
-        if s.get("verified_on") and not s.get("supports"):
-            errors.append(f"register:{sid}: verified source must say what it supports")
-        if s.get("kind") not in ALLOWED_KINDS:
-            errors.append(f"register:{sid}: unknown source kind '{s.get('kind')}' (allowed: {sorted(ALLOWED_KINDS)})")
-        if s.get("kind") == "regulator" and any(w in s.get("publisher", "") for w in NONPROFIT_MARKERS):
-            errors.append(f"register:{sid}: '{s.get('publisher')}' is not a regulator; use kind 'nonprofit' or 'professional-body'")
+    # --- full source provenance, repeated URL crosswalk and source safety ---
+    # Inspect ALL fragment variants, not merely a winning global dictionary
+    # entry. Different branches may have read only a catalogue or a PDF section.
+    url_variants: dict[str, list[dict]] = {}
+    raw_count = 0
+    for sid, variants in lib.source_variants.items():
+        for s in variants:
+            raw_count += 1
+            origin = s["_origin"]
+            url = s["url"]
+            url_variants.setdefault(url, []).append(s)
+            tag = f"register:{sid}@{origin}"
+            if not url.startswith("https://"):
+                errors.append(f"{tag}: url must be https")
+            if s.get("verified_on") and not DATE_RE.match(s["verified_on"]):
+                errors.append(f"{tag}: bad verified_on")
+            if s.get("verified_on") and not s.get("supports"):
+                errors.append(f"{tag}: verified source must say what it supports")
+            if s.get("kind") not in ALLOWED_KINDS:
+                errors.append(f"{tag}: unknown source kind '{s.get('kind')}' (allowed: {sorted(ALLOWED_KINDS)})")
+            if s.get("kind") == "regulator" and any(w in s.get("publisher", "") for w in NONPROFIT_MARKERS):
+                errors.append(f"{tag}: '{s.get('publisher')}' is not a regulator")
+            if s.get("human_link_check") not in (True, False, None):
+                errors.append(f"{tag}: human_link_check must be a Boolean")
+
+    def scope_snapshot(s: dict) -> dict:
+        # _origin is provenance metadata from the loader, NOT original data.
+        return {"origin": s["_origin"], "source": {k: v for k, v in s.items() if k != "_origin"}}
+
+    declared = lib.crosswalk_groups
+    observed_collisions = {url: rows for url, rows in url_variants.items() if len(rows) > 1}
+    unresolved = 0
+    for url, rows in observed_collisions.items():
+        item = declared.get(url)
+        if item is None:
+            # One unverified base placeholder may be upgraded once by one
+            # fragment of exactly the same id and URL (the original contract).
+            harmless_upgrade = (
+                len(rows) == 2 and len({s["id"] for s in rows}) == 1
+                and sum(bool(s.get("verified_on")) for s in rows) == 1
+                and any(s["_origin"] == "base" and not s.get("verified_on") for s in rows)
+            )
+            if not harmless_upgrade:
+                errors.append(f"register: duplicate url without source crosswalk: {url}")
+            continue
+        expected = sorted(
+            [{"origin": row["origin"], "source": row["source"]} for row in item["variants"]],
+            key=lambda obj: json.dumps(obj, sort_keys=True),
+        )
+        observed = sorted(
+            [scope_snapshot(s) for s in rows],
+            key=lambda obj: json.dumps(obj, sort_keys=True),
+        )
+        if expected != observed:
+            errors.append(f"register: source crosswalk mismatch for {url} (scope/metadata/verification changed)")
+        status = item.get("review_status")
+        if status == "pending-human-source-and-reading-scope-review":
+            unresolved += 1
+        elif status == "resolved":
+            record = item.get("resolution") or {}
+            if not (record.get("reviewer") and DATE_RE.fullmatch(record.get("date", "")) and record.get("scope_notes")):
+                errors.append(f"register: marked-resolved shared source lacks reviewer/date/scope notes: {url}")
+        else:
+            errors.append(f"register: unknown shared-source review status {status!r}: {url}")
+    for url in declared:
+        if url not in observed_collisions:
+            errors.append(f"register: stale source crosswalk URL not present in actual collisions: {url}")
+    if lib.crosswalk:
+        if lib.crosswalk.get("raw_source_rows") != raw_count:
+            errors.append(f"register: raw row count changed from crosswalk baseline ({raw_count})")
+        if lib.crosswalk.get("unique_source_urls") != len(url_variants):
+            errors.append("register: unique URL count changed from crosswalk baseline")
+        if set(lib.crosswalk.get("article_origins", {})) != set(lib.articles):
+            errors.append("taxonomy: source crosswalk article origin map must contain every article and tool")
+        if lib.crosswalk.get("duplicate_url_groups") != len(observed_collisions):
+            errors.append("register: collision count differs from crosswalk")
+    if unresolved:
+        warns.append(f"register: {unresolved} source URL collision groups have NOT received human source-scope review")
 
     # --- taxonomy ---
     slugs = [a["slug"] for a in lib.taxonomy["slate"]]
@@ -128,14 +190,14 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         except (KeyError, ValueError) as e:
             errors.append(f"{p}: {e}")
             continue
-        # sources
+        # sources are evaluated at the reading depth of this article's author.
         for sid in order:
-            if not lib.register[sid].get("verified_on"):
+            if not lib.source_for(meta, sid).get("verified_on"):
                 errors.append(f"{p}: cites unverified source '{sid}'")
         extra = set(meta.get("source_use", {})) - set(order)
         if extra:
             errors.append(f"{p}: source_use lists sources never cited in the body: {sorted(extra)}")
-        kinds = {lib.register[s]["kind"] for s in order}
+        kinds = {lib.source_for(meta, s)["kind"] for s in order}
         if len(order) < (2 if is_tool else 3):
             errors.append(f"{p}: needs {2 if is_tool else 3}+ checked sources (has {len(order)})")
         if meta["track"] == "lost-ways" and not (kinds & {"primary-digitized", "museum-study", "museum", "museum-object", "archive"}):
@@ -192,6 +254,13 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             if sr["state"] == "not-required":
                 errors.append(f"{p}: a modern-track guide cannot be exempt from safety review")
         if meta["status"]["publish"] == "published":
+            # A source collision remains a publication HOLD even if an author
+            # or editor marks the article reviewed. Scoped reading matters.
+            for sid in order:
+                source = lib.source_for(meta, sid)
+                group = lib.crosswalk_groups.get(source["url"])
+                if group and group.get("review_status") != "resolved":
+                    errors.append(f"{p}: CANNOT be published with unresolved shared-source scope '{sid}'")
             # Editorial review and safety approval are separate gates; a pending safety review blocks publication whatever the taxonomy says.
             if sr["state"] == "pending":
                 errors.append(f"{p}: CANNOT be published while a safety review is pending")
