@@ -1,0 +1,500 @@
+{
+  "schema_version": "fv-mind-claims/1.0",
+  "as_of": "2026-10-30",
+  "product": "Subliminal Guru — Get Super Organized",
+  "release_state": "DRAFT_HOLD",
+  "affiliate_approved": false,
+  "affiliate_url": null,
+  "product_audio_tested": false,
+  "full_scientific_papers_audited": false,
+  "merchant_prices_reproduced": false,
+  "source_scope": "Official merchant pages, publisher abstracts, FTC guidance, live FV CMS references. Not independent audio or user outcome testing.",
+  "sources": {
+    "APS91": {
+      "url": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1991.tb00112.x/",
+      "classification": "peer-reviewed-abstract"
+    },
+    "P94": {
+      "url": "https://doi.org/10.1207/s15324834basp1503_3",
+      "classification": "peer-reviewed-abstract"
+    },
+    "FIELD92": {
+      "url": "https://journals.sagepub.com/doi/10.1177/074391569201100203",
+      "classification": "peer-reviewed-abstract"
+    },
+    "WEIGHT92": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1429349/",
+      "classification": "peer-reviewed-abstract"
+    },
+    "FAR15": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25694442/",
+      "classification": "peer-reviewed-abstract"
+    },
+    "RED15": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26150795/",
+      "classification": "peer-reviewed-abstract"
+    },
+    "META16": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26689090/",
+      "classification": "peer-reviewed-abstract"
+    },
+    "INSPIRE": {
+      "url": "https://inspire3.com/",
+      "classification": "merchant"
+    },
+    "OFFER": {
+      "url": "https://subliminalguru.com/business-success/get-super-organized",
+      "classification": "merchant"
+    },
+    "FAQ": {
+      "url": "https://subliminalguru.com/faq",
+      "classification": "merchant"
+    },
+    "SCIENCE": {
+      "url": "https://subliminalguru.com/science",
+      "classification": "merchant"
+    },
+    "FTCENDORSE": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "classification": "government"
+    },
+    "FTCHEALTH": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "classification": "government"
+    },
+    "PUY": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "classification": "final-vestige"
+    },
+    "FOCUS": {
+      "url": "https://finalvestige.com/focus/",
+      "classification": "final-vestige"
+    },
+    "EDITORIAL": {
+      "url": "https://finalvestige.com/editorial-standards/",
+      "classification": "final-vestige"
+    },
+    "DISCLOSURE": {
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "classification": "final-vestige"
+    },
+    "AFFILIATE": {
+      "url": "https://affiliates.inspire3.com/",
+      "classification": "merchant"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Inspire3 lists Subliminal Guru as a product family",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "INSPIRE"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Store describes more than 350 subliminal albums",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Get Super Organized exists as a downloadable MP3 album",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "Album targets business planning and organizational themes",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "Six musical MP3 variants are described",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "A seventh spoken subliminal variant is listed",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Seven additional brainwave entrainment variants are listed",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Fourteen ten-minute MP3s are described in total",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Two hours twenty minutes is the aggregate length of alternate mixes",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Examples of task-planning and workspace affirmations are published",
+      "kind": "seller-format",
+      "decision": "describe-with-attribution",
+      "limit": "Merchant listing only, not audited audio",
+      "sources": [
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Thousands of hidden affirmations automatically change thinking",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "OFFER",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Listening will improve organization and business success",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Listening will directly increase earnings",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Reversed speech reliably rewires thinking",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "Brainwave layers guarantee stronger effects",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Seller claims its subliminal methods are fully proven",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "FAQ",
+        "SCIENCE"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "Seller claims lasting habit changes are established",
+      "kind": "seller-efficacy",
+      "decision": "do-not-adopt",
+      "limit": "No independent controlled trial of exact album",
+      "sources": [
+        "SCIENCE"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "1991 double-blind tape tests involved N=237 across three replications",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "APS91"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "1991 tests varied tape labels separately from actual content",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "APS91"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "1991 did not observe claimed memory or self-esteem effects",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "APS91"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "1991 more than one-third reported label-specific subjective change",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "APS91"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "1994 study followed 78 subjects across five weeks",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "P94"
+      ]
+    },
+    {
+      "id": "C23",
+      "claim": "1994 reported expectation-linked perceived improvement without claimed objective gains",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "P94"
+      ]
+    },
+    {
+      "id": "C24",
+      "claim": "1992 field work also failed to find claimed tape-content outcomes",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "FIELD92"
+      ]
+    },
+    {
+      "id": "C25",
+      "claim": "1992 weight study found similar average results across three arms",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "WEIGHT92"
+      ]
+    },
+    {
+      "id": "C26",
+      "claim": "2015 masked task-switching cues had context-specific response effects",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "FAR15"
+      ]
+    },
+    {
+      "id": "C27",
+      "claim": "2015 masked brand words had small condition-dependent preference effects",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "RED15"
+      ]
+    },
+    {
+      "id": "C28",
+      "claim": "2016 incidental-word meta-analysis reports small behavioral effects",
+      "kind": "peer-reviewed",
+      "decision": "use-with-limited-citation",
+      "limit": "Other products or constrained lab tasks; check full text for granular conclusions",
+      "sources": [
+        "META16"
+      ]
+    },
+    {
+      "id": "C29",
+      "claim": "Masked-word task results establish Get Super Organized effectiveness",
+      "kind": "unsupported-inference",
+      "decision": "block",
+      "limit": "Cannot infer efficacy for exact downloadable audio",
+      "sources": [
+        "FAR15",
+        "RED15",
+        "META16",
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C30",
+      "claim": "This MP3 cures ADHD, anxiety or related conditions",
+      "kind": "unsupported-inference",
+      "decision": "block",
+      "limit": "Cannot infer efficacy for exact downloadable audio",
+      "sources": [
+        "FTCHEALTH"
+      ]
+    },
+    {
+      "id": "C31",
+      "claim": "This MP3 guarantees substantial wealth or professional advancement",
+      "kind": "unsupported-inference",
+      "decision": "block",
+      "limit": "Cannot infer efficacy for exact downloadable audio",
+      "sources": [
+        "OFFER"
+      ]
+    },
+    {
+      "id": "C32",
+      "claim": "The public affiliate signup page proves Final Vestige was accepted",
+      "kind": "unsupported-inference",
+      "decision": "block",
+      "limit": "Cannot infer efficacy for exact downloadable audio",
+      "sources": [
+        "AFFILIATE"
+      ]
+    },
+    {
+      "id": "C33",
+      "claim": "Seller describes a 14-day refund request period",
+      "kind": "seller-terms",
+      "decision": "describe-with-date",
+      "limit": "Merchant terms may change and are not firsthand tested",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C34",
+      "claim": "Seller limits refunds to a maximum of five albums per year",
+      "kind": "seller-terms",
+      "decision": "describe-with-date",
+      "limit": "Merchant terms may change and are not firsthand tested",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C35",
+      "claim": "Seller excludes custom albums from refunds",
+      "kind": "seller-terms",
+      "decision": "describe-with-date",
+      "limit": "Merchant terms may change and are not firsthand tested",
+      "sources": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C36",
+      "claim": "Seller promotional price should not be hard-coded",
+      "kind": "seller-terms",
+      "decision": "describe-with-date",
+      "limit": "Merchant terms may change and are not firsthand tested",
+      "sources": [
+        "OFFER",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "C37",
+      "claim": "Disclose qualifying material connections near earning link",
+      "kind": "compliance",
+      "decision": "mandatory",
+      "limit": "Enforced independently of partner enthusiasm",
+      "sources": [
+        "FTCENDORSE",
+        "DISCLOSURE"
+      ]
+    },
+    {
+      "id": "C38",
+      "claim": "Health-related benefits need relevant competent reliable scientific evidence",
+      "kind": "compliance",
+      "decision": "mandatory",
+      "limit": "Enforced independently of partner enthusiasm",
+      "sources": [
+        "FTCHEALTH"
+      ]
+    },
+    {
+      "id": "C39",
+      "claim": "Existing Focus Fieldbook and Jetpack list must be preserved",
+      "kind": "compliance",
+      "decision": "mandatory",
+      "limit": "Enforced independently of partner enthusiasm",
+      "sources": [
+        "FOCUS"
+      ]
+    },
+    {
+      "id": "C40",
+      "claim": "Puységur archive distinguishes historical statements from demonstrated mechanisms",
+      "kind": "compliance",
+      "decision": "mandatory",
+      "limit": "Enforced independently of partner enthusiasm",
+      "sources": [
+        "PUY",
+        "EDITORIAL"
+      ]
+    }
+  ]
+}
