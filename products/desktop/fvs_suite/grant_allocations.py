@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Iterable, Mapping
 
 from .review import labels_for_report, normalized_collision
+from .grant_input import claim_kind as classify_grant_claim_kind
 
 
 REPORT_FIELDS = (
@@ -41,12 +42,8 @@ def _as_positive_money(raw: str, *, engine, row: str, field: str) -> Decimal:
 
 
 def _claim_kind(row: Mapping[str, str]) -> str:
-    value = str(row.get("claim_type", "claim") or "claim").strip().casefold()
-    if value not in {"claim", "credit"}:
-        raise ValueError(
-            f"Unsupported claim_type '{value}' at claim CSV row {row['row']}; "
-            "use claim or credit")
-    return value
+    # Preserve the internal helper entry point, but never echo private source cells.
+    return classify_grant_claim_kind(row)
 
 
 def _parse_claims(claim_rows: list[dict[str, str]], engine):
