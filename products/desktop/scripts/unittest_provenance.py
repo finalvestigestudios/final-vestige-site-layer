@@ -1,6 +1,6 @@
 """Privacy-safe, complete desktop unittest provenance for offline source evidence.
 
-Intentionally emits only bounded test counts and a digest of test identifiers;
+Intentionally emits only bounded test counts and digests of test identifiers;
 never writes traceback, synthetic fixture contents, or local filesystem paths.
 """
 from __future__ import annotations
@@ -13,7 +13,7 @@ from pathlib import Path
 import sys
 import unittest
 
-SCHEMA = "fvs-unittest-provenance-v1"
+SCHEMA = "fvs-unittest-provenance-v2"
 MAX_TEST_MODULES = 256
 MAX_TEST_CASES = 20000
 
@@ -26,8 +26,19 @@ def _cases(suite):
             yield item
 
 
+def _digest_ids(identifiers):
+    """Only hash sorted case IDs; never serialize skip reasons or test output."""
+    payload = ("\n".join(sorted(identifiers)) + ("\n" if identifiers else "")).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def _module_id(identifier: str) -> str:
+    """Extract Python test module from the conventional unittest case ID."""
+    return ".".join(identifier.split(".")[:-2])
+
+
 def run(root: Path) -> dict:
-    """Run every test_*.py module, rejecting skipped-all or partial discovery."""
+    """Execute all inventoried tests and reject coverage lost to skipped modules."""
     root = Path(root).resolve(strict=True)
     directory = root / "products" / "desktop" / "tests"
     if not directory.is_dir():
@@ -51,22 +62,29 @@ def run(root: Path) -> dict:
             identifiers = [case.id() for case in cases]
             if len(set(identifiers)) != len(identifiers):
                 raise ValueError("Duplicate desktop test identity")
-            loaded_modules = {".".join(identifier.split(".")[:-2]) for identifier in identifiers}
+            loaded_modules = {_module_id(identifier) for identifier in identifiers}
             if loaded_modules != modules:
                 raise ValueError("Desktop test discovery omitted a module")
             result = unittest.TestResult()
             suite.run(result)
 
-    if (not result.wasSuccessful() or result.testsRun != len(identifiers)
-            or len(result.skipped) >= len(identifiers)):
-        raise ValueError("Desktop regression suite failed or executed no active tests")
-    digest = hashlib.sha256(("\n".join(sorted(identifiers)) + "\n").encode("utf-8")).hexdigest()
+    if not result.wasSuccessful() or result.testsRun != len(identifiers):
+        raise ValueError("Desktop regression suite failed or did not execute every case")
+    skipped_ids = [case.id() for case, _reason in result.skipped]
+    skipped_set = set(skipped_ids)
+    if len(skipped_set) != len(skipped_ids) or not skipped_set.issubset(identifiers):
+        raise ValueError("Desktop regression skip provenance invalid")
+    active_ids = set(identifiers) - skipped_set
+    if not active_ids or {_module_id(identifier) for identifier in active_ids} != modules:
+        raise ValueError("Desktop regression module has no executed tests")
     return {
         "schema": SCHEMA,
         "test_count": result.testsRun,
         "module_count": len(modules),
-        "skipped_count": len(result.skipped),
-        "test_ids_sha256": digest,
+        "skipped_count": len(skipped_set),
+        "test_ids_sha256": _digest_ids(identifiers),
+        "active_ids_sha256": _digest_ids(active_ids),
+        "skipped_ids_sha256": _digest_ids(skipped_set),
     }
 
 

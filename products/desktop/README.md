@@ -587,3 +587,13 @@ check, **not** a trusted timestamp authority, signed audit trail, compliance
 decision, or release authorization. Backdated records require manual
 investigation; no automatic repair/replay occurs. See
 [the R51 review chronology runbook](docs/REVIEW_CHRONOLOGY_R51.md).
+
+
+## R54 exact active/skip test provenance (pre-release)
+
+The runner-independent source gate now fingerprints not just discovered regression
+IDs but the exact **executed** and **skipped** test IDs in normal and optimized
+Python. Equal test counts with a different skipped set reject evidence, as do
+entirely skipped test modules. No skip reasons, stack traces, customer inputs,
+Windows binaries, or release authorizations are included in evidence. See
+[skip-identity verification runbook](docs/TEST_SKIP_IDENTITY_R54.md).

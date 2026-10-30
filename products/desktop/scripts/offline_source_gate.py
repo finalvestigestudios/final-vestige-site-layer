@@ -58,20 +58,22 @@ def _require_unchanged(root: Path, before: tuple, gate=source_gate) -> None:
 
 def _validated_suite_summary(data) -> dict:
     """Require a bounded, exact child manifest; never trust a success exit alone."""
-    expected = {"schema", "test_count", "module_count", "skipped_count", "test_ids_sha256"}
+    expected = {"schema", "test_count", "module_count", "skipped_count",
+                "test_ids_sha256", "active_ids_sha256", "skipped_ids_sha256"}
     if type(data) is not dict or set(data) != expected:
         raise RuntimeError("Complete desktop regression provenance missing")
-    if data["schema"] != "fvs-unittest-provenance-v1":
+    if data["schema"] != "fvs-unittest-provenance-v2":
         raise RuntimeError("Complete desktop regression provenance schema invalid")
     count, modules, skipped = (data[key] for key in ("test_count", "module_count", "skipped_count"))
     if (type(count) is not int or type(modules) is not int or type(skipped) is not int
             or not 1 <= modules <= MAX_TEST_FILES or not modules <= count <= 20000
             or not 0 <= skipped < count):
         raise RuntimeError("Complete desktop regression provenance counts invalid")
-    digest = data["test_ids_sha256"]
-    if (type(digest) is not str or len(digest) != 64
-            or any(ch not in "0123456789abcdef" for ch in digest)):
-        raise RuntimeError("Complete desktop regression provenance digest invalid")
+    for key in ("test_ids_sha256", "active_ids_sha256", "skipped_ids_sha256"):
+        digest = data[key]
+        if (type(digest) is not str or len(digest) != 64
+                or any(ch not in "0123456789abcdef" for ch in digest)):
+            raise RuntimeError("Complete desktop regression provenance digest invalid")
     return data
 
 

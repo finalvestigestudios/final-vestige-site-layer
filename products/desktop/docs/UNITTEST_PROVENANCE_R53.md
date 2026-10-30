@@ -32,3 +32,9 @@ The evidence folder must already exist, reside outside the checkout and contain 
 R53's synthetic regressions exercise module omission, zero tests, all skipped, import failures, successful/failing private output, and an optimization-dependent skip. It does not by itself execute the complete repository suite or test real Windows x64 GUIs. Hosted GitHub Actions has repeatedly failed before executing steps; a workflow failure or absence of artifacts is not a pass. Windows candidate builds, real executable smoke tests, malware scans, checksums, premium gates and independent QD review remain mandatory. All six products remain unreleased.
 
 Tracks [issue #73](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/73).
+
+
+**R54 update:** `fvs-unittest-provenance-v2` now includes distinct SHA-256
+digests for executed and skipped case IDs, rejects entirely skipped modules,
+and detects equal-count skip-set swaps between normal and optimized Python.
+See [R54 runbook](TEST_SKIP_IDENTITY_R54.md) for the current contract.
