@@ -138,6 +138,13 @@ class BuildTests(unittest.TestCase):
             for tag in re.findall(r"<div[^>]*aria-label=[^>]*>", b["inner"]):
                 self.assertIn("role=", tag, f"{s}: {tag}")
 
+    def test_minified_css_is_balanced_and_smaller(self):
+        m = build.minify_css(self.lib.css)
+        self.assertEqual(m.count("{"), m.count("}"))
+        self.assertLess(len(m), len(self.lib.css) * 0.95)
+        self.assertNotIn("/*", m)
+        self.assertIn("@container (min-width: 900px){", m)  # at-rule preludes must keep their spaces
+
     def test_wp_wrapper(self):
         out = build.wp_wrap(self.lib, "<div>x</div>")
         self.assertTrue(out.startswith("<!-- wp:html -->"))

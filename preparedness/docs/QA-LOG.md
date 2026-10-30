@@ -24,3 +24,9 @@ Also checked: landing filter (search, topic) works and announces counts; print s
 * Screen-reader and keyboard walkthrough by a human (only the first Tab stop, the skip link, was checked). axe's incomplete `color-contrast` items on the paper-textured boxes.
 * Link click-through by a human; Lighthouse/CWV; real-device mobile.
 * Independent verification of any claim in the safety checklist.
+
+## WordPress draft probe (2026-10-29)
+
+* Created **draft** page ID 1868 "The Preparedness Archive" (slug `preparedness`, parent none, status draft) from `build/wp/landing.html`. No `_content_warnings` were returned, and `page-sections.list` shows one `core/html` block holding the `<style>`.
+* **Not verified:** how the live Assembler theme renders it (duplicate page-title H1, content-width clamp, whether `<script>` survives front-end output). That needs an authenticated preview of `https://finalvestige.com/?page_id=1868&preview=true`.
+* Not touched: navigation ID 5 (read only), homepage page 6, Focus page 1579, retired Water Resilience Field Manual draft (page 85), PR #49.

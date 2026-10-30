@@ -332,8 +332,15 @@ def build_landing(lib: Library, include_drafts: bool = True) -> dict:
     return {"slug": "landing", "inner": inner, "populated_sections": populated, "article_cards": sum(len(v) for v in cards_by_section.values())}
 
 
+def minify_css(css: str) -> str:
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s+", " ", css)
+    css = re.sub(r"\s*([{};,])\s*", r"\1", css)
+    return css.strip()
+
+
 def wp_wrap(lib: Library, inner: str) -> str:
-    return f"<!-- wp:html -->\n<style>{lib.css}</style>\n{inner}\n<!-- /wp:html -->\n"
+    return f"<!-- wp:html -->\n<style>{minify_css(lib.css)}</style>\n{inner}\n<!-- /wp:html -->\n"
 
 
 def preview_wrap(lib: Library, inner: str, title: str, description: str) -> str:
