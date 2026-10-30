@@ -52,8 +52,8 @@ class HomepageContract(unittest.TestCase):
     def test_no_js_every_evidence_remains(self):
         self.assertEqual(len([a for tag, a in self.dom.attrs if "data-fv-case" in a]), 3)
         self.assertEqual(self.dom.hidden_cases, [])
-        self.assertEqual(self.dom.tags.count("details"), 4)
-        self.assertEqual(self.dom.tags.count("summary"), 4)
+        self.assertEqual(self.dom.tags.count("details"), 7)
+        self.assertEqual(self.dom.tags.count("summary"), 7)
         self.assertIn('class="fv-hf__case-choice-group" data-fv-case-buttons hidden', self.html)
         self.assertIn('class="fv-hf__studio-controls" hidden', self.html)
 

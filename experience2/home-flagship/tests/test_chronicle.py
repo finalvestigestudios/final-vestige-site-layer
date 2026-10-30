@@ -17,10 +17,10 @@ class ChronicleContract(unittest.TestCase):
         for a in ('fv-hf-chronicle','fv-hf-title','fv-hf-evidence','fv-hf-method-title','fv-hf-mind-title'):
             self.assertEqual(len(re.findall(r'id="'+a+'"',self.markup)),1,a)
 
-    def test_native_skip_and_five_chapters(self):
+    def test_native_skip_and_six_chapters(self):
         self.assertIn('class="fv-hf__skip"',self.markup)
         self.assertEqual(self.markup.count('class="fv-hf__chapter-nav"'),1)
-        for target in ('#fv-hf-title','#fv-hf-chronicle','#fv-hf-evidence','#fv-hf-method-title','#fv-hf-mind-title'):
+        for target in ('#fv-hf-title','#fv-hf-chronicle','#fv-hf-evidence','#fv-hf-inquiry','#fv-hf-method-title','#fv-hf-mind-title'):
             self.assertIn('href="'+target+'"',self.markup)
 
     def test_two_messages_not_animated_fabrications(self):
