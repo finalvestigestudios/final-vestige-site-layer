@@ -7,6 +7,7 @@ No test stdout/stderr or customer file contents are retained in evidence.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -55,22 +56,42 @@ def _require_unchanged(root: Path, before: tuple, gate=source_gate) -> None:
         raise RuntimeError("Source or test files changed during offline verification; evidence withheld")
 
 
-def _child_suite(root: Path, optimized: bool, *, timeout: int) -> None:
-    """Execute real full unittest discovery; discard potentially private output."""
+def _validated_suite_summary(data) -> dict:
+    """Require a bounded, exact child manifest; never trust a success exit alone."""
+    expected = {"schema", "test_count", "module_count", "skipped_count", "test_ids_sha256"}
+    if type(data) is not dict or set(data) != expected:
+        raise RuntimeError("Complete desktop regression provenance missing")
+    if data["schema"] != "fvs-unittest-provenance-v1":
+        raise RuntimeError("Complete desktop regression provenance schema invalid")
+    count, modules, skipped = (data[key] for key in ("test_count", "module_count", "skipped_count"))
+    if (type(count) is not int or type(modules) is not int or type(skipped) is not int
+            or not 1 <= modules <= MAX_TEST_FILES or not modules <= count <= 20000
+            or not 0 <= skipped < count):
+        raise RuntimeError("Complete desktop regression provenance counts invalid")
+    digest = data["test_ids_sha256"]
+    if (type(digest) is not str or len(digest) != 64
+            or any(ch not in "0123456789abcdef" for ch in digest)):
+        raise RuntimeError("Complete desktop regression provenance digest invalid")
+    return data
+
+
+def _child_suite(root: Path, optimized: bool, *, timeout: int) -> dict:
+    """Execute all tests while obtaining only a bounded, privacy-safe manifest."""
     desktop = root / "products" / "desktop"
     env = os.environ.copy()
     env["PYTHONPATH"] = str(desktop)
     env["PYTHONDONTWRITEBYTECODE"] = "1"
+    env["PYTHONNOUSERSITE"] = "1"
     env["PYTHONHASHSEED"] = "0"
     command = [sys.executable]
     if optimized:
         command.append("-OO")
-    command.extend(["-m", "unittest", "discover", "-s", "products/desktop/tests", "-v"])
+    command.append(str(desktop / "scripts" / "unittest_provenance.py"))
     try:
         result = subprocess.run(
             command, cwd=root, env=env, timeout=timeout,
             check=False, stdin=subprocess.DEVNULL,
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
         )
     except subprocess.TimeoutExpired as exc:
         raise RuntimeError("Complete desktop regression suite timed out") from exc
@@ -79,6 +100,14 @@ def _child_suite(root: Path, optimized: bool, *, timeout: int) -> None:
     if result.returncode != 0:
         mode = "optimized" if optimized else "normal"
         raise RuntimeError(f"Complete desktop {mode} regression suite failed; rerun unittest locally")
+    payload = result.stdout
+    if type(payload) is not bytes or not 0 < len(payload) <= 1024:
+        raise RuntimeError("Complete desktop regression provenance missing or oversized")
+    try:
+        summary = json.loads(payload.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise RuntimeError("Complete desktop regression provenance malformed") from exc
+    return _validated_suite_summary(summary)
 
 
 def verify_source_suite(root: Path, run_tests, run_smoke, *, commit: str = "",
@@ -90,9 +119,12 @@ def verify_source_suite(root: Path, run_tests, run_smoke, *, commit: str = "",
     """
     root = Path(root).resolve(strict=True)
     initial = _snapshot(root, gate)
+    summaries = []
     for optimized in (False, True):
-        run_tests(optimized)
+        summaries.append(_validated_suite_summary(run_tests(optimized)))
         _require_unchanged(root, initial, gate)
+    if summaries[0] != summaries[1]:
+        raise RuntimeError("Normal and optimized desktop test coverage differs; evidence withheld")
     smoke = gate.report_data(root, run_smoke, commit=commit)
     _require_unchanged(root, initial, gate)
     if not smoke["all_six_passed"] or len(smoke["application_results"]) != 6:
@@ -104,6 +136,7 @@ def verify_source_suite(root: Path, run_tests, run_smoke, *, commit: str = "",
         "windows_executables_verified": False,
         "premium_download_authorized": False,
         "normal_unittest": "PASS", "optimized_unittest": "PASS",
+        "unittest_provenance": summaries[0],
         "test_inventory": initial[1],
         "source_smoke": smoke,
     }
