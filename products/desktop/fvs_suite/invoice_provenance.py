@@ -37,7 +37,7 @@ def attach_invoice_provenance(
                 or int(a) < 2 or not isinstance(b, str)
                 or not _PHYSICAL_LINE.fullmatch(b) or int(b) < 2 or a == b):
             raise ValueError("Invoice candidate requires two distinct physical CSV rows")
-        if status not in _CANDIDATE_KINDS:
+        if not isinstance(status, str) or status not in _CANDIDATE_KINDS:
             raise ValueError("Invoice candidate has an unsupported review classification")
         locator = json.dumps(
             {"row_a": a, "row_b": b, "status": status},
