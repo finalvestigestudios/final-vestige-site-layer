@@ -38,6 +38,12 @@ class Library:
         self.root = root
         self.taxonomy = load_json(root / "taxonomy.json")
         self.register = {s["id"]: s for s in load_json(root / "sources" / "register.json")["sources"]}
+        # Parallel contributors add sources through their own fragment file so the shared register never conflicts.
+        for frag in sorted((root / "sources" / "fragments").glob("*.json")):
+            for s in load_json(frag)["sources"]:
+                if s["id"] in self.register:
+                    raise ValueError(f"duplicate source id '{s['id']}' in {frag.name}")
+                self.register[s["id"]] = s
         self.css = (root / "assets" / "preparedness.css").read_text(encoding="utf-8")
         self.sections = {s["slug"]: s for s in self.taxonomy["sections"]}
         self.slate = {a["slug"]: a for a in self.taxonomy["slate"]}
@@ -59,6 +65,16 @@ class Library:
 
     def section_path(self, section: str) -> str:
         return f"{self.taxonomy['base_path']}{section}/"
+
+
+def slate_status(lib: "Library", slug: str) -> str:
+    """Derived from the article itself; the taxonomy 'status' field is not authoritative."""
+    meta = lib.articles.get(slug)
+    if not meta:
+        return "not-started"
+    if meta["status"]["publish"] == "published":
+        return "published"
+    return "safety-approved-draft" if meta["safety_review"]["state"] == "approved" else "drafted-pending-safety-review"
 
 
 def fmt_date(iso: str | None) -> str:
@@ -412,6 +428,8 @@ def main(argv=None) -> int:
         (out / "wp" / f"{slug}.html").write_text(wp_wrap(lib, built["inner"]), encoding="utf-8")
         (out / "preview" / f"{slug}.html").write_text(preview_wrap(lib, built["inner"], f'{meta["h1"]} | The Preparedness Archive', meta["description"]), encoding="utf-8")
         report["articles"].append({k: built[k] for k in ("slug", "words", "minutes", "sources", "canonical")})
+    from collections import Counter
+    report["slate_status"] = dict(Counter(slate_status(lib, a["slug"]) for a in lib.taxonomy["slate"]))
     report["hubs"] = []
     for sec in lib.taxonomy["sections"]:
         h = build_hub(lib, sec["slug"], include_drafts=not args.public)

@@ -23,15 +23,20 @@
     "state": "approved",
     "reviewer": "Bryan Rhodes (founder)",
     "date": "2026-10-29",
-    "scope": "Approved as drafted, no changes requested. Includes the CDC/EPA altitude reconciliation (3 min near or above ~5,000 ft) and the EPA-only chlorine-odor check. Approval recorded from the reviewer's one-word reply in chat; item-by-item checklist notes were not supplied."
+    "scope": "Approved as drafted, no changes requested. Includes the CDC/EPA altitude reconciliation (3 min near or above ~5,000 ft) and the EPA-only chlorine-odor check. Approval recorded from the reviewer's one-word reply in chat; item-by-item checklist notes were not supplied. Revision batch R1-R5 (Ready.gov product differences, NSF 53/58 and reverse osmosis, boil-even-if-filtered link, NPS cloudy-water note, Ready.gov chlorine-odor discard) approved by the reviewer in chat on 2026-10-29 and applied the same day."
   },
   "related": [
+    "water-advisories-explained",
     "salt-beef-salt-pork-age-of-sail"
   ],
   "source_use": {
     "epa-emergency-disinfection": "Independent check of boiling and bleach dosing; the 5,000-foot elevation threshold; bleach selection and age; the statement that boiling does not remove salts, heavy metals and most chemicals; the EPA Safe Drinking Water Hotline.",
     "cdc-water-safe": "Boiling times, bleach table for 5-9% sodium hypochlorite, tablets and drops, filter pore sizes, UV and solar disinfection, and the statement that fuel, toxic chemicals and radioactive material cannot be removed by boiling or disinfecting.",
     "cdc-water-store": "Bottled-water priority, how much to store, container cleaning and sanitizing steps, storage conditions, and replacement interval.",
-    "usscm-brenckle-2019": "Naval water allowances in the 1802 regulations, the 1813 Constitution water load, and Captain Porter's cask rules (history panel only)."
+    "usscm-brenckle-2019": "Naval water allowances in the 1802 regulations, the 1813 Constitution water load, and Captain Porter's cask rules (history panel only).",
+    "ready-water": "Ready.gov's narrower product guidance (5.25-6.0% bleach only; iodine and camping-store products not recommended); the chlorine-odor check and discard instruction.",
+    "cdc-water-hiking": "NSF 53/58 certification and reverse-osmosis filter statements.",
+    "cdc-water-advisories": "Boil tap water during an advisory even if it has been filtered.",
+    "nps-purify-water": "Boiling effective on cloudy water; follow product labels; NSF-approved products recommended."
   }
 }

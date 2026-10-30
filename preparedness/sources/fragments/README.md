@@ -1,0 +1,1 @@
+Each contributor session adds sources here as `<cluster>.json` with the same shape as `../register.json` (`{"sources": [...]}`). Ids must be unique across the whole register. Do not edit `../register.json`.

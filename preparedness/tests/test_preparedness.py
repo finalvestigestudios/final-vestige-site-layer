@@ -21,15 +21,23 @@ class LibraryTests(unittest.TestCase):
         errors, _ = validate.validate(self.lib)
         self.assertEqual(errors, [], "\n".join(errors))
 
-    def test_slate_has_35_items_and_tracks_status(self):
+    def test_slate_has_35_items_and_status_is_derived(self):
         self.assertEqual(len(self.lib.taxonomy["slate"]), 35)
-        built = set(self.lib.articles)
         for a in self.lib.taxonomy["slate"]:
-            if a["slug"] in built:
-                approved = self.lib.articles[a["slug"]]["safety_review"]["state"] == "approved"
-                self.assertEqual(a["status"], "safety-approved-draft" if approved else "drafted-pending-safety-review", a["slug"])
+            st = build.slate_status(self.lib, a["slug"])
+            if a["slug"] in self.lib.articles:
+                self.assertIn(st, ("safety-approved-draft", "drafted-pending-safety-review", "published"))
             else:
-                self.assertEqual(a["status"], "not-started", a["slug"])
+                self.assertEqual(st, "not-started")
+
+    def test_register_fragments_cannot_duplicate_ids(self):
+        frag = ROOT / "sources" / "fragments" / "_dup_test.json"
+        frag.write_text('{"sources": [{"id": "cdc-water-store", "title": "x", "url": "https://example.gov/x", "kind": "regulator", "publisher": "x", "verified_on": "2026-10-29", "supports": "x"}]}', encoding="utf-8")
+        try:
+            with self.assertRaises(ValueError):
+                build.Library()
+        finally:
+            frag.unlink()
 
     def test_no_article_is_published_without_review(self):
         for slug, meta in self.lib.articles.items():

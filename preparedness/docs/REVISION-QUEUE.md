@@ -1,5 +1,7 @@
 # Revision queue for already-approved articles
 
+**2026-10-29: R1-R5 approved as a batch by the reviewer (chat) and applied to `making-water-safer`.** Table kept as the record.
+
 Approved text is not changed silently. Anything below changes substance, so it needs a fresh review decision before it is edited.
 
 ## making-water-safer (approved 2026-10-29)

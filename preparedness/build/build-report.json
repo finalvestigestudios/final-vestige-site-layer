@@ -16,12 +16,16 @@
     },
     {
       "slug": "making-water-safer",
-      "words": 2657,
-      "minutes": 12,
+      "words": 2973,
+      "minutes": 14,
       "sources": [
         "cdc-water-store",
         "cdc-water-safe",
         "epa-emergency-disinfection",
+        "nps-purify-water",
+        "cdc-water-advisories",
+        "ready-water",
+        "cdc-water-hiking",
         "usscm-brenckle-2019"
       ],
       "canonical": "https://finalvestige.com/preparedness/water/making-water-safer/"
@@ -99,6 +103,11 @@
       "field-tools"
     ],
     "article_cards": 7
+  },
+  "slate_status": {
+    "not-started": 29,
+    "drafted-pending-safety-review": 4,
+    "safety-approved-draft": 2
   },
   "hubs": [
     {
