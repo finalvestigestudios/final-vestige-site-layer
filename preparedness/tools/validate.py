@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build  # noqa: E402
+import evidence_freeze  # noqa: E402
 
 REQUIRED_META = ["n", "slug", "title", "h1", "dek", "description", "section", "track", "updated", "last_checked", "status", "safety_review"]
 MIN_WORDS_CORNERSTONE = 1800
@@ -59,6 +60,9 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
     lib = lib or build.Library()
     errors: list[str] = []
     warns: list[str] = []
+
+    # Every source and 35+1 original article input is pinned to a Git blob.
+    errors.extend(evidence_freeze.verify(lib))
 
     # --- full source provenance, repeated URL crosswalk and source safety ---
     # Inspect ALL fragment variants, not merely a winning global dictionary
@@ -271,6 +275,14 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             if sr["state"] == "not-required":
                 errors.append(f"{p}: a modern-track guide cannot be exempt from safety review")
         if meta["status"]["publish"] == "published":
+            # A name/date alone cannot grandfather an old review over edited
+            # article copy, citations, source reading depth or link-check state.
+            current_fingerprint = evidence_freeze.fingerprint(lib, meta)
+            if sr["state"] == "approved" and sr.get("review_fingerprint") != current_fingerprint:
+                errors.append(f"{p}: CANNOT be published; human safety review is not bound to current article/source fingerprint")
+            rr = meta.get("release_review") or {}
+            if rr.get("state") == "approved" and rr.get("review_fingerprint") != current_fingerprint:
+                errors.append(f"{p}: CANNOT be published; release review is not bound to current article/source fingerprint")
             # A source collision remains a publication HOLD even if an author
             # or editor marks the article reviewed. Scoped reading matters.
             for sid in order:

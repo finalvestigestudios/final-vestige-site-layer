@@ -1,0 +1,7 @@
+# Ensure Git blob byte snapshots are identical on Windows and Linux checkouts.
+sources/*.json text eol=lf
+sources/fragments/*.json text eol=lf
+content/articles/*.meta.json text eol=lf
+content/articles/*.body.html text eol=lf
+content/tools/*.meta.json text eol=lf
+content/tools/*.body.html text eol=lf
