@@ -122,7 +122,7 @@ class InvoiceProvenanceR63(unittest.TestCase):
             self.attach(rows)
 
     def test_unknown_status_cannot_be_evidence(self):
-        for tag in ("approved", "fraud_detected", "matched", "", None, 1):
+        for tag in ("approved", "fraud_detected", "matched", "", None, 1, [], {}):
             rows = example_rows()
             rows[0]["status"] = tag
             with self.subTest(tag=tag), self.assertRaisesRegex(ValueError, "classification"):
