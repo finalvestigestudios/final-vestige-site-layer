@@ -17,7 +17,7 @@ The most robust, most trustworthy public library on household preparedness and h
 
 ## Files you own and create
 * `preparedness/content/articles/<slug>.meta.json` and `<slug>.body.html` for **your assigned slate items only** (slugs are fixed in `taxonomy.json`). Meta fields follow the existing articles (`n`, `slug`, `title`, `h1`, `dek`, `description` <=165 chars, `section`, `track`, `tags`, `updated`, `last_checked`, `recheck`, `status`, `safety_review`, `related`, `source_use`). Use `{{cite:id}}` and `{{link:slug|label}}`.
-* `preparedness/sources/fragments/<your-cluster>.json`: every source you verified, same shape as `register.json` entries (`id, title, publisher, kind, url, published, updated, reviewed, verified_on` (today, YYYY-MM-DD), `human_link_check: false`, `supports`, optional `notes`). Ids must be globally unique. `register.json` contains *placeholder* entries (`verified_on: null`) for sources the issue listed: you may NOT cite a placeholder as is. After reading the page, **redefine it in your fragment with the same id** (that upgrades it), or use a new id prefixed with your cluster name. Entries already verified in `register.json` may be cited by id and must never be redefined. Kinds: `regulator, extension, museum, museum-study, museum-object, archive, primary-digitized, scholarship`.
+* `preparedness/sources/fragments/<your-cluster>.json`: every source you verified, same shape as `register.json` entries (`id, title, publisher, kind, url, published, updated, reviewed, verified_on` (today, YYYY-MM-DD), `human_link_check: false`, `supports`, optional `notes`). Ids must be globally unique. `register.json` contains *placeholder* entries (`verified_on: null`) for sources the issue listed: you may NOT cite a placeholder as is. After reading the page, **redefine it in your fragment with the same id** (that upgrades it), or use a new id prefixed with your cluster name. Entries already verified in `register.json` may be cited by id and must never be redefined. Kinds (validated): `regulator, extension, nonprofit, professional-body, museum, museum-study, museum-object, archive, primary-digitized, scholarship, journal`. The American Red Cross, AHA and similar bodies are `nonprofit`/`professional-body`, never `regulator`.
 * `preparedness/docs/CLUSTER-<name>.md`: a short notes file: what you verified, source disagreements, claims you could NOT verify, items for the human safety reviewer (same table format as `SAFETY-REVIEW-CHECKLIST.md` section C).
 
 ## Quality bar (validator enforces much of it)
@@ -39,3 +39,10 @@ Work on your own branch (your worktree provides one). Commit your files only. Pu
 
 ## Report back
 End with: articles drafted (slug, words, sources), sources verified, source disagreements found, what you could not verify, items for the safety reviewer, and your branch name and head SHA. State plainly anything unfinished. Do not claim an article is "done" beyond "drafted, awaiting human review".
+
+## QD lessons (added 2026-10-30 after the first independent review)
+* A fetched page is not a fully read page. If a source is a long PDF or you read only part of it, say exactly how much you read in the register `notes`.
+* Where an older and a newer official document differ (for example the 2020 FEMA guide vs the Dec 2023 FEMA power-outage fact sheet), use the newer, and state the difference. Never tell readers to discard, stop or skip prescribed medication; defer to the prescriber or pharmacist.
+* Do not recommend rehearsals or tests that interrupt life-safety equipment (for example switching off a household's main power). Simulate with nonessential items.
+* Do not infer legal duties or eligibility rules from a template or a secondary summary; verify against the binding source or say it is unverified.
+* Do not commit `preparedness/build/` (git-ignored).
