@@ -47,3 +47,9 @@ python -I preparedness/tools/audit_integration.py --require-release-ready
 ```
 
 The last `--require-release-ready` command **should fail** while 30 shared-source scopes, human link checks, source conflicts and independent safety/editorial/release authorizations remain pending. Test counts in a PR describe defined tests, **not executed tests**, unless execution on its exact SHA is separately evidenced. No live publishing or WordPress changes are authorized here.
+
+## Full-corpus citation-use completeness pass
+
+A dedicated scan of all 35 full articles plus the water planner found exactly **two** body citations missing corresponding article-specific `source_use` notes: `homemade-water-filters` / `cdc-find-clean-water` and `preparedness-real-households` / `start-ready-plan`. The original source IDs, evidence rows and article claims were already present; only the missing narrow descriptions of what each existing citation supports were added. We did not change their body copy or assert a fresh source read. Both affected articles remain unapproved drafts.
+
+The validator now **fails closed** when an article cites a source without its own explicit reading-purpose note, as well as when it declares unused sources. Three additional unit tests cover the complete 36-item corpus and remove each note synthetically to confirm rejection. All 72 body/metadata inputs remain bound to their recorded Git blob SHAs (the two changed metadata SHAs have been re-pinned). This audit does not perform the outstanding human citation review.

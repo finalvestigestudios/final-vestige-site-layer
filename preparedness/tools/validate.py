@@ -215,6 +215,11 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         for sid in order:
             if not lib.source_for(meta, sid).get("verified_on"):
                 errors.append(f"{p}: cites unverified source '{sid}'")
+        # Each cited source must have an explicit, origin-scoped reading-purpose note.
+        # A known URL or another contributor's scope is not sufficient evidence.
+        missing_usage = set(order) - set(meta.get("source_use", {}))
+        if missing_usage:
+            errors.append(f"{p}: cited source lacks article-specific source_use reading-scope note: {sorted(missing_usage)}")
         extra = set(meta.get("source_use", {})) - set(order)
         if extra:
             errors.append(f"{p}: source_use lists sources never cited in the body: {sorted(extra)}")

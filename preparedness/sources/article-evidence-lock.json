@@ -114,8 +114,8 @@
       },
       "metadata": {
         "path": "preparedness/content/articles/homemade-water-filters.meta.json",
-        "git_blob_sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
-        "bytes": 1973
+        "git_blob_sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+        "bytes": 2367
       }
     },
     {
@@ -282,8 +282,8 @@
       },
       "metadata": {
         "path": "preparedness/content/articles/preparedness-real-households.meta.json",
-        "git_blob_sha": "a0c3a09143a825560b5a5ed79d857b7402bfa295",
-        "bytes": 3718
+        "git_blob_sha": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+        "bytes": 3948
       }
     },
     {
@@ -526,5 +526,14 @@
     "review_reapproval_required": true,
     "human_link_validation": false,
     "advice_not_assessed_safe": true
+  },
+  "source_use_completeness_20261030": {
+    "status": "ALL_CITED_SOURCES_REQUIRE_ARTICLE_LEVEL_SCOPE_NOTE",
+    "metadata_corrected_for": [
+      "homemade-water-filters:cdc-find-clean-water",
+      "preparedness-real-households:start-ready-plan"
+    ],
+    "human_source_link_review": false,
+    "clinically_reviewed": false
   }
 }

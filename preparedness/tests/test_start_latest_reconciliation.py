@@ -172,5 +172,31 @@ class StartRevisionEvidenceTests(unittest.TestCase):
         self.assertEqual(evidence_freeze.verify(self.lib), [])
 
 
+    def test_all_citations_in_every_article_and_tool_have_individual_scope_notes(self):
+        import re
+        for slug, meta in self.lib.articles.items():
+            cited = set(re.findall(r"\\{\\{cite:([a-z0-9-]+)\\}\\}", meta["_body"]))
+            with self.subTest(slug=slug):
+                self.assertEqual(cited, set(meta.get("source_use", {})))
+
+    def test_deleted_water_guide_reading_scope_note_fails_validation(self):
+        lib = build.Library()
+        del lib.articles["homemade-water-filters"]["source_use"]["cdc-find-clean-water"]
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any(
+            "homemade-water-filters" in e and "source_use reading-scope note" in e
+            for e in errors
+        ), errors)
+
+    def test_deleted_start_guide_reading_scope_note_fails_validation(self):
+        lib = build.Library()
+        del lib.articles["preparedness-real-households"]["source_use"]["start-ready-plan"]
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any(
+            "preparedness-real-households" in e and "source_use reading-scope note" in e
+            for e in errors
+        ), errors)
+
+
 if __name__ == "__main__":
     unittest.main()
