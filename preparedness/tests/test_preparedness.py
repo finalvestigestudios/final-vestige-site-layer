@@ -31,25 +31,60 @@ class LibraryTests(unittest.TestCase):
                 self.assertEqual(st, "not-started")
 
     def test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source(self):
-        frag = ROOT / "sources" / "fragments" / "_upgrade_test.json"
-        entry = '{"sources": [{"id": "nchfp-jerky", "title": "Jerky", "url": "https://nchfp.uga.edu/how/dry/recipes/jerky", "kind": "extension", "publisher": "NCHFP", "verified_on": "2026-10-29", "supports": "x"}]}'
-        frag.write_text(entry, encoding="utf-8")
-        try:
-            lib = build.Library()
-            self.assertEqual(lib.register["nchfp-jerky"]["verified_on"], "2026-10-29")
+        """Exercise both legal and forbidden source upgrades in an isolated copy.
+
+        Never create temporary source fragments in the actual working tree:
+        other tests and parallel agents may be reading those files.
+        """
+        import shutil
+        import tempfile
+
+        with tempfile.TemporaryDirectory(prefix="fvs-preparedness-test-") as td:
+            sandbox = Path(td) / "preparedness"
+            shutil.copytree(ROOT, sandbox, ignore=shutil.ignore_patterns(
+                "build", "__pycache__"))
+            register_path = sandbox / "sources" / "register.json"
+            register = json.loads(register_path.read_text(encoding="utf-8"))
+            existing = next(s for s in register["sources"] if s["id"] == "nchfp-jerky")
+            fixture = {**existing,
+                       "id": "test-fixture-jerky-placeholder",
+                       "url": "https://example.org/fvs-only-test-upgrade-placeholder",
+                       "verified_on": None}
+            register["sources"].append(fixture)
+            register_path.write_text(json.dumps(register), encoding="utf-8")
+            fragment = sandbox / "sources" / "fragments" / "_upgrade_test.json"
+            upgraded = {**fixture, "verified_on": "2026-10-29",
+                        "supports": "Synthetic fixture to prove controlled source upgrades."}
+            fragment.write_text(json.dumps({"sources": [upgraded]}), encoding="utf-8")
+
+            lib = build.Library(root=sandbox)
+            self.assertEqual(lib.register[fixture["id"]]["verified_on"], "2026-10-29")
             errors, _ = validate.validate(lib)
             self.assertFalse([e for e in errors if "duplicate url" in e], errors)
-        finally:
-            frag.unlink()
+
+            # A VERIFIED source cannot be silently replaced by another fragment.
+            fixture["verified_on"] = "2026-10-01"
+            register_path.write_text(json.dumps(register), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate source id"):
+                build.Library(root=sandbox)
 
     def test_register_fragments_cannot_duplicate_ids(self):
-        frag = ROOT / "sources" / "fragments" / "_dup_test.json"
-        frag.write_text('{"sources": [{"id": "cdc-water-store", "title": "x", "url": "https://example.gov/x", "kind": "regulator", "publisher": "x", "verified_on": "2026-10-29", "supports": "x"}]}', encoding="utf-8")
-        try:
-            with self.assertRaises(ValueError):
-                build.Library()
-        finally:
-            frag.unlink()
+        """No test may alter the real source-fragment directory."""
+        import shutil
+        import tempfile
+
+        with tempfile.TemporaryDirectory(prefix="fvs-preparedness-duplicate-fixture-") as td:
+            sandbox = Path(td) / "preparedness"
+            shutil.copytree(ROOT, sandbox, ignore=shutil.ignore_patterns("build", "__pycache__"))
+            fragment = sandbox / "sources" / "fragments" / "_dup_test.json"
+            fragment.write_text(json.dumps({"sources": [{
+                "id": "cdc-water-store", "title": "x",
+                "url": "https://example.gov/x", "kind": "regulator",
+                "publisher": "x", "verified_on": "2026-10-29",
+                "supports": "synthetic invalid duplicate",
+            }]}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate source id"):
+                build.Library(root=sandbox)
 
     def test_no_article_is_published_without_review(self):
         for slug, meta in self.lib.articles.items():
@@ -63,8 +98,17 @@ class LibraryTests(unittest.TestCase):
         self.assertTrue(any("CANNOT be published" in e for e in errors), errors)
 
     def test_unverified_source_cannot_be_cited(self):
+        # Synthetic, in-memory source: real references may become verified
+        # without silently changing the assertion or touching the source files.
         lib = build.Library()
-        lib.articles["making-water-safer"]["_body"] += " {{cite:nchfp-jerky}}"
+        fixture_id = "test-fixture-unverified-source"
+        lib.register[fixture_id] = {
+            **lib.register["nchfp-jerky"],
+            "id": fixture_id,
+            "url": "https://example.org/fvs-only-test-unverified-source",
+            "verified_on": None,
+        }
+        lib.articles["making-water-safer"]["_body"] += " {{cite:" + fixture_id + "}}"
         errors, _ = validate.validate(lib)
         self.assertTrue(any("unverified source" in e for e in errors), errors)
 

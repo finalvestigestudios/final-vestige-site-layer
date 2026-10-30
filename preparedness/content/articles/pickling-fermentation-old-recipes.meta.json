@@ -1,0 +1,28 @@
+{
+  "n": 28,
+  "slug": "pickling-fermentation-old-recipes",
+  "title": "Pickling, fermentation and old recipes",
+  "h1": "Pickling, fermentation and the limits of old recipes: why a recipe is not a food-safety procedure",
+  "dek": "From the first American cook book to the home-front canning drive, the printed record shows what people made. It does not show what was safe. What the NCHFP, USDA and CDC say about tested recipes and botulism, with no recipe on this page.",
+  "description": "A history of pickling and fermenting, and why an old recipe is not a tested procedure: what the NCHFP and CDC say about botulism and tested recipes.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": ["Pickling", "Fermentation", "Botulism risk", "Tested recipes"],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If the NCHFP, CDC or USDA revise their pickling, fermenting or botulism pages, or when the text of the 1796 cook book's preserving sections is read and compared.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["salt-beef-salt-pork-age-of-sail", "root-cellars-cool-storage"],
+  "source_use": {
+    "nchfp-home": "Where tested home-preservation methods are published; program purpose and book reference.",
+    "hist-home-nchfp-pickling": "Fermented versus fresh-pack pickles; acidity as important as taste; tested proportions; uniform acid; salt vital in ferments; flake salt density; boiling-water canner and spoilage.",
+    "hist-home-loc-simmons-1796": "Catalogue record of the 1796 Hartford cook book; first American-written cook book; rights statement. Catalogue only.",
+    "hist-home-nps-ww2-canning": "Wartime home-front preservation: extension resources, pickling among the methods, mixed vegetables discouraged, botulism risk, community canneries and trained staff.",
+    "hist-home-cdc-botulism-about": "Botulism overview: toxin, effects, improperly canned, preserved or fermented homemade foods, medical emergency.",
+    "hist-home-cdc-botulism-home-canned": "Signs to discard a home-canned container; never taste; boil-before-eating list (times not reproduced).",
+    "cdc-botulism-prevention": "Toxin cannot be seen, smelled or tasted; if in doubt throw it out.",
+    "fsis-home-cure-qa": "Many botulism cases followed home-canned, preserved, cured, smoked or fermented foods.",
+    "fsis-botulism": "Traditionally prepared salted or fermented fish linked to recent botulism illness."
+  }
+}

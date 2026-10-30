@@ -1,0 +1,48 @@
+{
+  "n": 26,
+  "slug": "smokehouses-salting-curing",
+  "title": "Smokehouses, salting and curing",
+  "h1": "Smokehouses, salting and curing: what the craft was, what science explained later, and why there is no formula here",
+  "dek": "Monticello and Mount Vernon record who salted and smoked the meat, and where it went. Later science explained part of why it kept. This page gives no formula and says why.",
+  "description": "What Monticello, Mount Vernon and Navy records show about salting and smoking meat, what science later explained, and why no historical method is a safe home guide.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Smokehouse",
+    "Salt curing",
+    "Botulism risk",
+    "Enslaved labor"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If any listed source changes, when the Mount Vernon encyclopedia and the farm records behind both museum pages are read directly, or if USDA or NCHFP revise their curing and smoking guidance.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Gated (curing/smoking, botulism). Items for the human reviewer: (1) the page contains no cure formula, ratio, brine strength, time or curing temperature; (2) it cites USDA's hot-smoking page only to say that it concerns cooking, not smoke-curing, and does not reproduce its temperature range; (3) the verdict is not-validated; (4) it rests on the register's verified FSIS and NCHFP entries as summarized there (not re-read this session) plus the NCHFP history overview, the FSIS smoking page and the FSIS mold guide (dated 2013)."
+  },
+  "related": [
+    "salt-beef-salt-pork-age-of-sail",
+    "pemmican-and-dried-meats",
+    "history-of-food-preservation",
+    "ships-biscuit-and-hardtack"
+  ],
+  "source_use": {
+    "hist-food-monticello-meat": "Ursula Granger and John; salting, smokehouse, rationing and unequal cuts.",
+    "hist-food-mv-smokehouse": "Smokehouse description; enslaved workers; ashes storage; locking against theft; 1795 theft; 300 hams a year; 1786 hams for Lafayette.",
+    "usscm-brenckle-2019": "1812 contract for 'a sufficient quantity of good Salt and Salt Petre'; historian's view on quality; no tally of condemned barrels.",
+    "hist-food-marcy-prairie-traveler-text": "Marcy on sun-jerking with no salt.",
+    "nchfp-historical-origins": "Curing as dehydration; nitrites and red colour in the 1800s; nitrite and C. botulinum recognized in the 1920s.",
+    "fsis-botulism": "Nitrite inhibits C. botulinum spores; USDA authorization from 1925; nitrosamine concern; salted or fermented fish linked to botulism.",
+    "nchfp-cure-smoke": "How curing works as NCHFP describes it; where to find tested methods.",
+    "fsis-home-cure-qa": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods.",
+    "cdc-botulism-prevention": "Improperly preserved foods and botulism; toxin cannot be seen, smelled or tasted.",
+    "hist-food-fsis-smoking": "USDA treats smoking as slow cooking in an approved smoker with thermometers.",
+    "hist-food-fsis-molds": "Molds tolerate salt and sugar; country hams' surface mold; discard guidance for other meats."
+  }
+}

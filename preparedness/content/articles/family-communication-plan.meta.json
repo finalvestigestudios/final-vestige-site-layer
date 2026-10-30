@@ -1,0 +1,49 @@
+{
+  "n": 15,
+  "slug": "family-communication-plan",
+  "title": "Family communication plan",
+  "h1": "Family communication: out-of-area contact, school pickup, reunification",
+  "dek": "How a household stays in touch and gets back together when phones jam and family members are in different places: the out-of-area contact, the plan card, meeting places, and what to ask your child's school.",
+  "description": "A family communication plan from Ready.gov, the FCC and the CDC: an out-of-area contact, a written plan, meeting places, texting, school pickup and reunification.",
+  "section": "family-communication",
+  "track": "modern",
+  "tags": [
+    "Communication",
+    "Reunification",
+    "Children and school"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-29",
+  "recheck": "If Ready.gov, the FCC or the CDC revise these pages; the FCC and Colorado pages are undated and should be re-checked first. Otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Not safety-gated in the taxonomy; recorded as pending because the page concerns children's reunification and relies on one state-specific school source and one undated FCC page."
+  },
+  "related": [
+    "outage-heat-cold-generators",
+    "home-fire-escape-plan",
+    "shelter-or-evacuate"
+  ],
+  "source_use": {
+    "shelter-fcc-comms": "Out-of-area central contact; network congestion; limit calls, brief calls, text, try other services, wait 10 seconds, vehicle stationary, call forwarding, backup power, corded phone, personal care attendant.",
+    "shelter-ready-plan-form": "Fields of Ready.gov's family emergency communication plan; information not saved or shared by any government agency; PDF can be emailed.",
+    "shelter-ready-plan": "Family may not be together; meeting place familiar and easy to find; household-needs checklist; network assistance; practice the plan; pets.",
+    "shelter-cdc-reunification": "Reunification defined; 69 million children in school or childcare; faster reunion better; multiple meeting places; contact cards; memorize numbers; school drills; social media to say 'I'm safe'; NCMEC hotline; FEMA and Red Cross program pointers.",
+    "shelter-ready-plan-locations": "Plan for school and daycare; ask about alerts, evacuation and shelter-in-place plans; backup plans for children; neighbors and apartments.",
+    "shelter-co-oss-reunification": "Colorado example: reunification is not a normal pick-up; stay home; notification system; photo ID and pen; limit calls and texts; release to authorized adults.",
+    "shelter-ready-evacuation": "Out-of-state contact in the family communications plan; update the meeting place with circumstance.",
+    "shelter-ready-tornadoes": "After a tornado save calls for emergencies; use text or social media.",
+    "shelter-ready-hurricanes": "After a hurricane save calls for emergencies; use text or social media.",
+    "shelter-ready-wildfires": "After a wildfire send text messages; phone systems are often busy.",
+    "shelter-ready-heat": "Summer-break family list: teach 911, emergency contact person, family password or phrase, meeting place.",
+    "shelter-ready-disabilities": "Communication cards; deaf and hard-of-hearing tools; support network contact list.",
+    "shelter-ready-shelter": "Many public shelters allow only service animals.",
+    "shelter-ready-home-fires": "Drill twice a year."
+  }
+}

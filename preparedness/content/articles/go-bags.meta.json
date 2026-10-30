@@ -1,0 +1,54 @@
+{
+  "n": 16,
+  "slug": "go-bags",
+  "title": "Go-bags for every member of the household",
+  "h1": "Go-bags for adults, children, babies, pets and mobility needs",
+  "dek": "A go-bag is the part of your kit you can carry out the door. What the official lists say to pack for adults, children, infants, pets and people with disabilities, what they leave out, and how to decide who carries what.",
+  "description": "Pack go-bags for adults, children, babies, pets and mobility needs using FEMA, CDC and Ready.gov lists, with what is official, what is editorial and what is missing.",
+  "section": "start-here",
+  "track": "modern",
+  "tags": [
+    "Evacuation",
+    "Children and babies",
+    "Pets",
+    "Mobility"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If Ready.gov, the CDC or FEMA revise their evacuation, infant, disability or pet pages, or at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "household-emergency-plan",
+    "three-day-kit",
+    "preparedness-real-households",
+    "water-math"
+  ],
+  "source_use": {
+    "start-ready-evacuation": "Build a go-bag for leaving on foot or by public transport, supplies for longer trips by car, who is responsible for the bag, what to do before and during an evacuation, and pet-friendly destinations.",
+    "start-ready-kit": "The item list a go-bag draws on, and kit locations.",
+    "ready-are-you-ready": "Evacuation guidelines, leaving a note, sturdy shoes and clothing, one car per family, never below half a tank, shelter pet limits.",
+    "start-ready-car": "Vehicle kit extras and keeping the tank full.",
+    "start-cdc-family-kit": "Items for infants and young children, ID tags and wristbands, memorized numbers, two-week medication, check every six months.",
+    "start-cdc-infant-checklist": "Feeding-method kit contents, diaper bag contents, items to skip if they cannot be cleaned, monthly check.",
+    "ready-pets": "Two kits for pets (shelter and lightweight evacuation), kit contents, buddy system, microchip, carrier, pets evacuate with you.",
+    "start-ready-disability": "Support network, accessible transport, spare batteries, manual chair backup, patch kit, cushions, device information, kit tips by disability, dementia tips.",
+    "start-cdc-disability-kit": "One week of medication, chargers and batteries for adaptive equipment, communication aids, contact list in a watertight container, check every six months.",
+    "start-cdc-disability-evacuate": "Accessible transport may not be available, tell shelter workers your needs, ADA shelter accessibility, service animals and emotional support animals in shelters.",
+    "start-ready-older-adults": "Medicare and insurance card copies, assistive devices come with you, support network member with a key, pets and service animals.",
+    "start-acl-emergency": "ACL's Medical Information Card and Communication Assistance Card.",
+    "start-hud-multifamily-template": "That HUD's multifamily template for owners includes resident evacuation handouts and a go-bag checklist; we read only the table of contents.",
+    "start-ready-financial": "Document and cash guidance; benefits by direct deposit.",
+    "start-cdc-pyh-connected": "Microchip pets and keep registration current.",
+    "start-ready-food": "Use ready-to-feed formula; bottled or boiled water as a last resort if mixing.",
+    "start-ready-low-cost": "Thrift-store gear and older clothing that still fits.",
+    "start-ready-supply-list": "One full kit at home and smaller portable kits elsewhere."
+  }
+}

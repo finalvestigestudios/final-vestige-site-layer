@@ -1,0 +1,51 @@
+{
+  "n": 35,
+  "slug": "history-of-food-preservation",
+  "title": "The history of food preservation",
+  "h1": "The history of food preservation: salt, sugar, drying, canning and cold, and what each cost",
+  "dek": "From sun-drying and salting to Appert's bottles, the pressure retort and the icebox. A dated, sourced map of how people kept food, and why practice so often ran ahead of understanding.",
+  "description": "A sourced overview of drying, salting, curing, canning and refrigeration, with dates, what each method cost, and why old methods are not a modern safety guide.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Food preservation",
+    "Canning",
+    "Refrigeration",
+    "Curing"
+  ],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If any listed source changes, when primary or museum sources on canning's origins and the early ice trade are added, or when dedicated sourced pieces on pickling, fermentation and root cellars exist.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null,
+    "scope": "Taxonomy does not gate this item, but the page discusses canning, curing and botulism and carries a context-dependent verdict panel; it contains no recipe, quantity, time or temperature. Requested for human read-through of the verdict panel and of the statement that low-acid foods need pressure canning (CDC, FSIS)."
+  },
+  "related": [
+    "salt-beef-salt-pork-age-of-sail",
+    "ships-biscuit-and-hardtack",
+    "lewis-and-clark-salt-works",
+    "pioneer-travel-rations",
+    "pemmican-and-dried-meats",
+    "smokehouses-salting-curing"
+  ],
+  "source_use": {
+    "nchfp-historical-origins": "Overview of drying, freezing, fermenting, pickling, curing, jam, canning; Appert, Durand, Pasteur, Chevalier-Appert; nitrites and C. botulinum in the 1920s.",
+    "hist-food-si-cold": "Underground cold stores and icehouses; natural ice harvest and Tudor; iceboxes; why cold won out; DOMELRE and the 1927 GE Monitor top.",
+    "hist-food-nps-icebox": "1847 ice shipments; ice factories; 1927 GE refrigerator; 85 percent of households by 1944.",
+    "usscm-brenckle-2019": "1812 contract for salt and saltpetre; bread baked dry.",
+    "hist-food-marcy-prairie-traveler-text": "Desiccated vegetables in the Crimean war and Utah; canned vegetables not as portable; sealed-tin butter.",
+    "hist-food-monticello-meat": "Enslaved workers salting and smoking pork at Monticello.",
+    "hist-food-headsmashedin": "Blackfoot preparation of dry meat and pemmican for winter.",
+    "rmg-life-at-sea": "Poor diet at sea causing malnutrition and scurvy.",
+    "fsis-botulism": "Nitrite and C. botulinum; USDA authorization from 1925; spores survive boiling.",
+    "cdc-botulism-prevention": "Pressure canning for low-acid foods; toxin cannot be seen, smelled or tasted; if in doubt, throw it out.",
+    "nchfp-cure-smoke": "Tested curing and smoking methods.",
+    "fsis-home-cure-qa": "Botulism cases following home-canned, preserved, cured, smoked or fermented foods."
+  }
+}

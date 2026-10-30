@@ -1,0 +1,46 @@
+{
+  "n": 17,
+  "slug": "medication-and-devices",
+  "title": "Medication, medical devices and backups",
+  "h1": "Managing medication, medical devices and backups responsibly",
+  "dek": "What the FDA, CDC, FEMA and HHS actually say about refrigerated medicine, wet or heated medicine, and equipment that needs power, and the questions only your clinician, pharmacist and device maker can answer.",
+  "description": "What the FDA, CDC and FEMA say about emergency medicine lists, refills, refrigerated drugs, insulin storage and power-dependent devices, deferring to clinicians.",
+  "section": "health-sanitation",
+  "track": "modern",
+  "tags": [
+    "Medication",
+    "Medical devices",
+    "Power outages",
+    "Insulin"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "Immediately if the FDA revises its insulin or safe-drug-use pages (both were updated in September 2026); otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "making-water-safer",
+    "emergency-hygiene-sanitation",
+    "warnings-radios-offline-maps",
+    "outage-heat-cold-generators",
+    "go-bags"
+  ],
+  "source_use": {
+    "health-fda-safe-drug-use": "Medicine list and prescription copy; knowing supply on hand; early refills and state emergency refill laws; watertight containers; cooler plan; discard after floodwater; heat from fire; narrow lifesaving exception; reconstitution only with purified or bottled water; refrigerated medicines: check label or ask pharmacist, provider or manufacturer.",
+    "health-fda-insulin": "Insulin storage figures (36-46 F fridge; 59-86 F up to 28 days for manufacturer vials or cartridges; diluted insulin two weeks; do not use frozen; pump infusion set 48 hours; above 98.6 F discard); the page's own warning that switching insulin belongs under a doctor's care (conversion tables deliberately not reproduced).",
+    "health-fda-devices": "Notify electric company and fire department; ask the maker about battery or generator use; devices reset when power is interrupted; wet cords; single-use and multi-use device rules; water for dialyzers and IV pumps; glucose meters and heat; generator carbon monoxide rule; seek emergency services if a device keeps you alive; oxygen and open flame.",
+    "health-cdc-power-outage": "CDC rule for refrigerated medication after a day or more without power, with the life-sustaining exception; generator distances and carbon monoxide detector; Poison Control number; air-conditioned shelter and fans.",
+    "health-fema-power-outage-sheet": "FEMA's December 2023 fact sheet wording: replace refrigerated medications after a day or more without power unless the label says otherwise; call a doctor or pharmacist; use the medicine only until a new supply; make a plan for refrigerating medicines and powering devices.",
+    "health-ready-power-outages":"Alternate plans for refrigerated medicines and devices; inventory of electric dependencies; ask provider how long medicine tolerates higher temperatures; discard-after-a-day rule with label exception; community locations with power.",
+    "health-ready-disabilities": "Medical alert tags; device style and serial lists; priority power restoration; local registries; more than one dialysis facility; backup oxygen and spare batteries; manual chair backup; support network; heat and medication caution; dementia caution; practical lists by disability.",
+    "health-empower-about": "What emPOWER is (Medicare claims data for public health partners), its scale, its warning about outages, and that the pages we read give households no enrolment instructions.",
+    "health-fcc-comms-tips": "Medical alert systems usually need a working phone line, so keep a backup; registering with local police for help needs."
+  }
+}
