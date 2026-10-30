@@ -555,3 +555,22 @@ committed real-module integration tests and the full repository/Windows
 binary gates remain unverified due to CI infrastructure failures.
 **No free or premium application is authorized for distribution without
 native x64 smoke/AV/checksum, premium-access verification and QD approval.**
+
+## R50 — Verified local premium license reads (pre-release)
+
+GrantAudit Studio Pro and ProcureGuard Studio Pro now read offline Ed25519
+entitlements through a bounded, verified file descriptor. This closes the
+ordinary pathname-check-then-open gap: detected symlinks, hardlink aliases,
+same-length file swaps, in-flight edits and oversized files are rejected before
+parsing the signed bytes. Existing strict JSON, product/expiry checks and
+signature verification remain in effect. Errors do not expose customer paths.
+The two premium tools still have **no production signing trust anchor** and
+remain locked by default. Free apps, financial calculations, human review and
+production distribution were not changed.
+
+See [R50 entitlement custody runbook](docs/ENTITLEMENT_CUSTODY_R50.md).
+The 16 new R50 tests plus 15 original R11 Ed25519 tests passed locally
+on Linux/Python 3.13.5 under normal and optimized `-OO` modes (**31/31 each**)
+using a reconstructed focused source subset. Windows and whole-repository
+integration, live entitlement issuance, six native EXEs and all release/QD gates
+remain **unverified**. **Do not distribute either premium binary.**
