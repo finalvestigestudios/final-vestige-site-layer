@@ -174,14 +174,23 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if not chosen:
             messagebox.showwarning("Missing selection", "Select an exception row first.", parent=window)
             return
+        recorded = False
         try:
             append_review(selection.report_path, product, selection.journal,
                           case_id=chosen[0], expected_report_sha256=batch.report_sha256,
                           reviewer=reviewer.get(), decision=decision.get(),
                           rationale=rationale.get("1.0", "end-1c"))
+            recorded = True
+            # This operator just appended a reviewed event. Bind the GUI to
+            # the newly verified history rather than leaving the old snapshot
+            # actionable; a concurrent journal edit must force a reload.
+            selection.load(selection.report_path, product, read_cases, latest_states)
             display()
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Review not recorded", safe_error_message(exc, operation="review"), parent=window)
+            _reset_report_view()
+            messagebox.showerror(
+                "Review state changed" if recorded else "Review not recorded",
+                safe_error_message(exc, operation="review"), parent=window)
             return
         status_text.set("Human review action recorded locally. No payment or grant action authorized.")
         rationale.delete("1.0", "end")
