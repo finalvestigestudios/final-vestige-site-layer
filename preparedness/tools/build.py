@@ -217,17 +217,35 @@ def sources_block(lib: Library, order: list[str], meta: dict) -> str:
             bits.append(f"Updated {fmt_date(s['updated'])}")
         if s.get("reviewed"):
             bits.append(f"Reviewed {fmt_date(s['reviewed'])}")
-        bits.append(f"Checked {fmt_date(s['verified_on'])}")
+        bits.append(f"Machine-checked {fmt_date(s['verified_on'])}")
         note = use.get(sid) or s.get("supports", "")
+        scope = s.get("notes") or ""
+        scope_html = (
+            f'<span class="pa-src-use">Reading scope / limitations: {esc(scope)}</span>'
+            if scope else ""
+        )
+        human_link = (
+            "Human source-link check complete"
+            if s.get("human_link_check") is True
+            else "Human source-link check pending"
+        )
+        shared = lib.crosswalk_groups.get(s["url"])
+        shared_html = (
+            '<span class="pa-src-use">Shared-source reading scope: independent review pending</span>'
+            if shared and shared.get("review_status") != "resolved"
+            else ""
+        )
         lis.append(
             f'<li id="src-{n}"><a href="{esc(s["url"])}" rel="noopener">{esc(s["title"])}</a>. {esc(s["publisher"])}.'
-            f'<span class="pa-src-meta">{esc(" · ".join(bits))}</span>'
-            f'<span class="pa-src-use">Used for: {esc(note)}</span></li>'
+            f'<span class="pa-src-meta">{esc(" · ".join(bits))} · {human_link}</span>'
+            f'<span class="pa-src-use">Used for: {esc(note)}</span>{scope_html}{shared_html}</li>'
         )
     return (
         '<section class="pa-sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources and verification</h2>'
-        "<p>Every numbered note above points to a page that was opened and read on the date shown. "
-        "A page's own published or updated date is the date the issuing organisation gives, not ours.</p>"
+        "<p>The date below records a researcher's machine-assisted source check. "
+        "Source reading may have covered a full page, a specific passage or only a catalogue record; "
+        "each available scope limitation is retained below. A machine check is not independent "
+        "human link verification. The source publisher's own published or updated date is distinct.</p>"
         f'<ol>{"".join(lis)}</ol></section>'
     )
 
@@ -477,6 +495,16 @@ def main(argv=None) -> int:
     ap.add_argument("--public", action="store_true", help="landing lists only published articles")
     args = ap.parse_args(argv)
     lib = Library()
+    # Prevent even a local 'public' artifact from containing an article whose
+    # editorial/safety/source release checks fail. Drafts may build with
+    # documented unresolved-source warnings; publishing remains blocked.
+    import validate as approval_gates  # noqa: WPS433 (runtime circular-import safe)
+    errors, _warnings = approval_gates.validate(lib)
+    if errors:
+        for error in errors:
+            print(f"ERROR {error}", file=sys.stderr)
+        print(f"PREPAREDNESS BUILD HOLD: {len(errors)} validation error(s); no output written.", file=sys.stderr)
+        return 2
     out = ROOT / "build"
     (out / "wp").mkdir(parents=True, exist_ok=True)
     (out / "preview").mkdir(parents=True, exist_ok=True)

@@ -180,6 +180,32 @@ class PreparednessCrosswalkTests(unittest.TestCase):
         )
 
 
+    def test_builder_rejects_unsafe_published_state_before_writing(self):
+        import contextlib
+        import io
+        from unittest import mock
+        lib = build.Library()
+        lib.articles["go-bags"]["status"]["publish"] = "published"
+        lib.articles["go-bags"]["status"]["editorial"] = "reviewed"
+        with mock.patch.object(build, "Library", return_value=lib), \
+             mock.patch.object(Path, "mkdir", side_effect=AssertionError("unsafe build must write nothing")), \
+             contextlib.redirect_stderr(io.StringIO()) as stderr:
+            result = build.main([])
+        self.assertEqual(result, 2)
+        self.assertIn("PREPAREDNESS BUILD HOLD", stderr.getvalue())
+
+    def test_source_notes_and_human_check_state_survive_rendering(self):
+        lib = build.Library()
+        for slug in ("pioneer-travel-rations", "pioneer-supply-chains-failed"):
+            meta = lib.articles[slug]
+            built = build.build_article(lib, slug)["inner"]
+            source = lib.source_for(meta, "loc-pioneer-diaries")
+            self.assertIn("Human source-link check pending", built)
+            self.assertIn("Shared-source reading scope: independent review pending", built)
+            self.assertIn(build.esc(source["notes"]), built,
+                          "A source's original reading-depth notes must remain visible on its own article")
+
+
 
 if __name__ == "__main__":
     unittest.main()
