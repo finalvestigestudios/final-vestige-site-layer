@@ -1,0 +1,1082 @@
+{
+  "snapshot_utc_date": "2026-10-30",
+  "method": "authenticated WordPress.com posts.get editor context; original stored Gutenberg HTML, not rendered browser",
+  "post_count": 61,
+  "inline_img_count": 355,
+  "origin_counts": {
+    "first_party": 60,
+    "external": 170,
+    "wikimedia_redirect": 118,
+    "jetpack_proxy": 7
+  },
+  "raw_external_ref_count": 288,
+  "stored_offsite_pct": 81.13,
+  "site_qa_prior_ref_count": 286,
+  "delta_from_site_qa": 2,
+  "site_qa_delta_note": "Recount differs by two from earlier PR #154; fresh CMS changes or source classification difference not resolved. Review changed post sources and Jetpack classification; neither is network failure evidence.",
+  "missing_explicit_width_or_height": 305,
+  "ranked_posts": [
+    {
+      "post_id": 268,
+      "title": "They Painted Over Archimedes",
+      "public_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "modified": "2026-10-30T01:10:13",
+      "stored_img_count": 10,
+      "stored_external_ref_count": 10,
+      "missing_explicit_dimensions": 10,
+      "priority_score": 45,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 367,
+      "title": "They Found the Bomb Twice",
+      "public_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "modified": "2026-10-29T17:34:27",
+      "stored_img_count": 9,
+      "stored_external_ref_count": 8,
+      "missing_explicit_dimensions": 8,
+      "priority_score": 37,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 425,
+      "title": "The Word Came Out of the Mine",
+      "public_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "modified": "2026-10-30T01:08:21",
+      "stored_img_count": 9,
+      "stored_external_ref_count": 8,
+      "missing_explicit_dimensions": 8,
+      "priority_score": 37,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 407,
+      "title": "The Lake Wasn’t There Yesterday",
+      "public_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "modified": "2026-10-29T18:30:30",
+      "stored_img_count": 8,
+      "stored_external_ref_count": 8,
+      "missing_explicit_dimensions": 5,
+      "priority_score": 34,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 220,
+      "title": "Too Deep for the Rescue Bell",
+      "public_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "modified": "2026-10-29T18:25:46",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 221,
+      "title": "The Rod Was Supposed to Move Four Inches",
+      "public_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "modified": "2026-08-25T14:15:25",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 253,
+      "title": "The Life Preservers Had Passed Inspection",
+      "public_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "modified": "2026-10-29T16:03:55",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 254,
+      "title": "The Lump Had Gears",
+      "public_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "modified": "2026-10-29T15:50:32",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 255,
+      "title": "The Load Doubled on Paper",
+      "public_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "modified": "2026-10-30T01:11:08",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 256,
+      "title": "The Torch Never Reopened",
+      "public_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "modified": "2026-10-29T15:51:59",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 257,
+      "title": "The Numbers Came Back",
+      "public_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "modified": "2026-10-29T20:59:35",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 274,
+      "title": "Twenty-Four Feet from Air",
+      "public_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "modified": "2026-10-29T16:02:05",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 278,
+      "title": "They Walked Beyond the Search",
+      "public_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "modified": "2026-08-21T00:32:59",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 283,
+      "title": "The Crowd Became the Lock",
+      "public_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "modified": "2026-08-21T00:33:14",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 432,
+      "title": "They Buried the Dead Apart",
+      "public_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "modified": "2026-08-28T03:07:30",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 33,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 213,
+      "title": "The Fire He Lit Himself",
+      "public_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "modified": "2026-10-29T20:59:21",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 7,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 32,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 166,
+      "title": "They Checked the Dam That Morning",
+      "public_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "modified": "2026-10-29T17:32:42",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 30,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 190,
+      "title": "The Hoses That Wouldn’t Fit",
+      "public_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "modified": "2026-10-29T14:46:47",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 214,
+      "title": "The Lifeboats Never Left the Deck",
+      "public_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "modified": "2026-10-29T16:30:42",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 215,
+      "title": "A Wall in the Dark",
+      "public_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "modified": "2026-10-29T15:59:59",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 216,
+      "title": "The Fire Department Was Already There",
+      "public_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "modified": "2026-10-30T01:13:09",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 217,
+      "title": "The Gas Had No Smell",
+      "public_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "modified": "2026-10-29T16:04:52",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 218,
+      "title": "The Rock Had to Be Real",
+      "public_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "modified": "2026-10-29T16:01:32",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 219,
+      "title": "The Airship Had No Life Jackets",
+      "public_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "modified": "2026-10-29T15:54:20",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 252,
+      "title": "They Thought the Books Were Charcoal",
+      "public_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+      "modified": "2026-10-30T01:12:06",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 258,
+      "title": "Inside the Joint",
+      "public_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "modified": "2026-10-29T14:43:40",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 277,
+      "title": "The Boat Went Over the Trees",
+      "public_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "modified": "2026-08-21T00:32:52",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 279,
+      "title": "The Geologists Found the Spy Satellite",
+      "public_url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+      "modified": "2026-09-08T10:06:54",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 280,
+      "title": "The Sledgehammers Broke First",
+      "public_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "modified": "2026-09-07T09:43:49",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 285,
+      "title": "The Light Said Closed",
+      "public_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "modified": "2026-09-08T10:06:47",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 288,
+      "title": "The Bearing Was Right",
+      "public_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "modified": "2026-08-19T14:37:40",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 289,
+      "title": "They Thought They Had Ten Minutes",
+      "public_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "modified": "2026-08-28T15:23:16",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 290,
+      "title": "The City Kept Moving",
+      "public_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "modified": "2026-08-31T03:32:37",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 291,
+      "title": "One Bulldozer Never Came Back",
+      "public_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "modified": "2026-08-28T15:14:59",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 292,
+      "title": "They Marked the Empty Boats",
+      "public_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "modified": "2026-08-27T11:24:49",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 418,
+      "title": "The Lighthouse Was Gone at Dawn",
+      "public_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "modified": "2026-08-28T03:11:08",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 29,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 287,
+      "title": "The Warning Was a Man Waving",
+      "public_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "modified": "2026-10-29T18:42:40",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 5,
+      "priority_score": 28,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 276,
+      "title": "Add No More Load",
+      "public_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "modified": "2026-10-29T18:28:26",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 4,
+      "priority_score": 27,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 431,
+      "title": "The Mountain Buried the Door",
+      "public_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "modified": "2026-10-29T18:42:26",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 5,
+      "missing_explicit_dimensions": 5,
+      "priority_score": 25,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 211,
+      "title": "The Men Who Wouldn’t Turn Left",
+      "public_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "modified": "2026-10-29T17:37:13",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 6,
+      "missing_explicit_dimensions": 1,
+      "priority_score": 24,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 433,
+      "title": "All Well Was Written First",
+      "public_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "modified": "2026-10-29T16:31:22",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 5,
+      "missing_explicit_dimensions": 3,
+      "priority_score": 23,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 428,
+      "title": "The Way Out Was Underground",
+      "public_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "modified": "2026-10-29T18:28:59",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 5,
+      "missing_explicit_dimensions": 2,
+      "priority_score": 22,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 370,
+      "title": "The Lines Were in the Fire",
+      "public_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "modified": "2026-10-29T15:27:15",
+      "stored_img_count": 8,
+      "stored_external_ref_count": 4,
+      "missing_explicit_dimensions": 8,
+      "priority_score": 20,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 434,
+      "title": "The Hatch Opened Inward",
+      "public_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "modified": "2026-09-08T02:51:21",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 5,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 20,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 101,
+      "title": "Six Inches of Water",
+      "public_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "modified": "2026-10-29T18:26:05",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 4,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 19,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 413,
+      "title": "The Cell Was Built to Hold a Man",
+      "public_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "modified": "2026-10-29T15:30:32",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 4,
+      "missing_explicit_dimensions": 5,
+      "priority_score": 17,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 269,
+      "title": "The Watch Lost Its Hands",
+      "public_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "modified": "2026-10-29T20:59:49",
+      "stored_img_count": 7,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 7,
+      "priority_score": 7,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 621,
+      "title": "Six Miles an Hour",
+      "public_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "modified": "2026-09-09T12:03:35",
+      "stored_img_count": 6,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 6,
+      "priority_score": 6,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 156,
+      "title": "They Lifted the City",
+      "public_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+      "modified": "2026-10-29T14:45:54",
+      "stored_img_count": 4,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 4,
+      "priority_score": 4,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 142,
+      "title": "Almost Home",
+      "public_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/",
+      "modified": "2026-09-08T10:07:17",
+      "stored_img_count": 3,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 3,
+      "priority_score": 3,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 146,
+      "title": "The Dam That Didn’t Fail",
+      "public_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+      "modified": "2026-08-25T18:49:09",
+      "stored_img_count": 3,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 3,
+      "priority_score": 3,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 151,
+      "title": "They Taught the Lake to Breathe",
+      "public_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/",
+      "modified": "2026-08-28T02:11:36",
+      "stored_img_count": 3,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 3,
+      "priority_score": 3,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 108,
+      "title": "The Richest Ship Couldn’t Buy Another Hour",
+      "public_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/",
+      "modified": "2026-08-25T18:54:29",
+      "stored_img_count": 2,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 2,
+      "priority_score": 2,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 139,
+      "title": "The Rescue Machine Nobody Had Ever Needed",
+      "public_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/",
+      "modified": "2026-09-08T02:51:01",
+      "stored_img_count": 2,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 2,
+      "priority_score": 2,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 34,
+      "title": "The Morning San Francisco Lost Its Water",
+      "public_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "modified": "2026-10-29T21:19:13",
+      "stored_img_count": 1,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 35,
+      "title": "The Boat That Refused to Die",
+      "public_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "modified": "2026-10-29T17:07:04",
+      "stored_img_count": 1,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 36,
+      "title": "The City That Went Underground",
+      "public_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "modified": "2026-10-29T17:07:30",
+      "stored_img_count": 1,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 37,
+      "title": "How Petra Made Water Flow Through Stone",
+      "public_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "modified": "2026-10-29T17:07:17",
+      "stored_img_count": 1,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 38,
+      "title": "The Cisterns Beneath San Francisco",
+      "public_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "modified": "2026-10-29T17:06:51",
+      "stored_img_count": 1,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 299,
+      "title": "Thirty Men Were Enough",
+      "public_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "modified": "2026-09-08T10:07:10",
+      "stored_img_count": 8,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    },
+    {
+      "post_id": 330,
+      "title": "The Filter Was at the Top",
+      "public_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "modified": "2026-08-30T01:56:40",
+      "stored_img_count": 8,
+      "stored_external_ref_count": 0,
+      "missing_explicit_dimensions": 0,
+      "priority_score": 0,
+      "actual_browser_broken_count": null,
+      "measured_page_transfer_bytes": null
+    }
+  ],
+  "origin_host_counts": [
+    {
+      "host": "commons.wikimedia.org",
+      "count": 118
+    },
+    {
+      "host": "finalvestige.com",
+      "count": 60
+    },
+    {
+      "host": "upload.wikimedia.org",
+      "count": 18
+    },
+    {
+      "host": "www.history.navy.mil",
+      "count": 15
+    },
+    {
+      "host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "count": 9
+    },
+    {
+      "host": "i0.wp.com",
+      "count": 9
+    },
+    {
+      "host": "www.floridamemory.com",
+      "count": 7
+    },
+    {
+      "host": "tile.loc.gov",
+      "count": 7
+    },
+    {
+      "host": "cdn.loc.gov",
+      "count": 7
+    },
+    {
+      "host": "www.nps.gov",
+      "count": 6
+    },
+    {
+      "host": "images-assets.nasa.gov",
+      "count": 5
+    },
+    {
+      "host": "media.defense.gov",
+      "count": 5
+    },
+    {
+      "host": "objects.lib.uidaho.edu",
+      "count": 4
+    },
+    {
+      "host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "count": 4
+    },
+    {
+      "host": "www.history.uscg.mil",
+      "count": 3
+    },
+    {
+      "host": "archimedespalimpsest.org",
+      "count": 3
+    },
+    {
+      "host": "www.fhwa.dot.gov",
+      "count": 3
+    },
+    {
+      "host": "research.fs.usda.gov",
+      "count": 3
+    },
+    {
+      "host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "count": 3
+    },
+    {
+      "host": "www.geoinstitute.org",
+      "count": 2
+    },
+    {
+      "host": "www.researchgate.net",
+      "count": 2
+    },
+    {
+      "host": "miro.medium.com",
+      "count": 2
+    },
+    {
+      "host": "cdn2.picryl.com",
+      "count": 2
+    },
+    {
+      "host": "historicbridges.org",
+      "count": 2
+    },
+    {
+      "host": "d3d0lqu00lnqvz.cloudfront.net",
+      "count": 1
+    },
+    {
+      "host": "static.ags.aer.ca",
+      "count": 1
+    },
+    {
+      "host": "www.hawaiimagazine.com",
+      "count": 1
+    },
+    {
+      "host": "navalunderseamuseum.org",
+      "count": 1
+    },
+    {
+      "host": "nationalcoastguardmuseum.org",
+      "count": 1
+    },
+    {
+      "host": "stadsarchief.rotterdam.nl",
+      "count": 1
+    },
+    {
+      "host": "images.pubble.cloud",
+      "count": 1
+    },
+    {
+      "host": "cgaviationhistory.org",
+      "count": 1
+    },
+    {
+      "host": "www.travelserver.net",
+      "count": 1
+    },
+    {
+      "host": "static.thisdayinaviation.com",
+      "count": 1
+    },
+    {
+      "host": "dmt55mxnkgbz2.cloudfront.net",
+      "count": 1
+    },
+    {
+      "host": "brightspotcdn.byui.edu",
+      "count": 1
+    },
+    {
+      "host": "www.rexburgonline.com",
+      "count": 1
+    },
+    {
+      "host": "www.popsci.com",
+      "count": 1
+    },
+    {
+      "host": "www.vol.at",
+      "count": 1
+    },
+    {
+      "host": "scitechdaily.com",
+      "count": 1
+    },
+    {
+      "host": "specials-images.forbesimg.com",
+      "count": 1
+    },
+    {
+      "host": "k.sinaimg.cn",
+      "count": 1
+    },
+    {
+      "host": "k-static.appmobile.cn",
+      "count": 1
+    },
+    {
+      "host": "d1ldvf68ux039x.cloudfront.net",
+      "count": 1
+    },
+    {
+      "host": "ahoy.tk-jk.net",
+      "count": 1
+    },
+    {
+      "host": "www.navsource.net",
+      "count": 1
+    },
+    {
+      "host": "www.ibiblio.org",
+      "count": 1
+    },
+    {
+      "host": "www.usni.org",
+      "count": 1
+    },
+    {
+      "host": "arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com",
+      "count": 1
+    },
+    {
+      "host": "skywaydisaster.com",
+      "count": 1
+    },
+    {
+      "host": "img.connatix.com",
+      "count": 1
+    },
+    {
+      "host": "www.flmd.uscourts.gov",
+      "count": 1
+    },
+    {
+      "host": "stpetecatalyst.com",
+      "count": 1
+    },
+    {
+      "host": "live.staticflickr.com",
+      "count": 1
+    },
+    {
+      "host": "blog.ucsusa.org",
+      "count": 1
+    },
+    {
+      "host": "i.insider.com",
+      "count": 1
+    },
+    {
+      "host": "images.pixels.com",
+      "count": 1
+    },
+    {
+      "host": "images.saymedia-content.com",
+      "count": 1
+    },
+    {
+      "host": "2.bp.blogspot.com",
+      "count": 1
+    },
+    {
+      "host": "chicagology.com",
+      "count": 1
+    },
+    {
+      "host": "bloximages.chicago2.vip.townnews.com",
+      "count": 1
+    },
+    {
+      "host": "www.wttw.com",
+      "count": 1
+    },
+    {
+      "host": "images2.minutemediacdn.com",
+      "count": 1
+    },
+    {
+      "host": "florencekelley.northwestern.edu",
+      "count": 1
+    },
+    {
+      "host": "cdn-sw.spidersweb.pl",
+      "count": 1
+    },
+    {
+      "host": "bkimg.cdn.bcebos.com",
+      "count": 1
+    },
+    {
+      "host": "www.spaceacademy.net.au",
+      "count": 1
+    },
+    {
+      "host": "media.licdn.com",
+      "count": 1
+    },
+    {
+      "host": "qmmuseum.army.mil",
+      "count": 1
+    },
+    {
+      "host": "www.ladybegood.net",
+      "count": 1
+    },
+    {
+      "host": "unwritten-record.blogs.archives.gov",
+      "count": 1
+    },
+    {
+      "host": "www.datosfreak.org",
+      "count": 1
+    },
+    {
+      "host": "indomgb.s3.amazonaws.com",
+      "count": 1
+    },
+    {
+      "host": "imagerenderer.com",
+      "count": 1
+    },
+    {
+      "host": "ids.si.edu",
+      "count": 1
+    },
+    {
+      "host": "quebecblogue.com",
+      "count": 1
+    },
+    {
+      "host": "warfarehistorynetwork.com",
+      "count": 1
+    },
+    {
+      "host": "www.warhistoryonline.com",
+      "count": 1
+    },
+    {
+      "host": "www.archimedespalimpsest.org",
+      "count": 1
+    },
+    {
+      "host": "www-d.ntsb.gov",
+      "count": 1
+    }
+  ],
+  "media_library_image_items": 110,
+  "media_library_original_total_bytes": 64900772,
+  "original_media_over_1_5MiB": 13,
+  "original_bytes_not_actual_page_weight": true,
+  "founder_reported_42_broken_images": "unverified browser status",
+  "reported_76_percent_weight_reduction": "not independently measured",
+  "browser_verified_broken_images": null,
+  "missing_worklist_on_main": "docs/IMAGE-WEIGHT-WORKLIST.md absent from main on 2026-10-30"
+}
