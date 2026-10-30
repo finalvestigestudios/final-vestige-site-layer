@@ -121,7 +121,25 @@ class BuildTests(unittest.TestCase):
     def test_landing_lists_only_built_articles_and_no_empty_sections(self):
         titles = re.findall(r'<h3><a href="([^"]+)">', self.landing["inner"])
         self.assertEqual(len(titles), len(self.lib.articles))
-        self.assertEqual(self.landing["populated_sections"], ["water", "lost-ways", "field-tools"])
+        expected_populated = [key for key in self.lib.sections if any(meta["section"] == key for meta in self.lib.articles.values())]
+        self.assertEqual(self.landing["populated_sections"], expected_populated)
+
+    def test_start_articles_require_human_safety_review_before_publishing(self):
+        """These four articles contain medical, fire, evacuation or infant guidance."""
+        import validate
+        for slug in ("household-emergency-plan", "three-day-kit", "go-bags", "preparedness-real-households"):
+            meta = self.lib.articles[slug]
+            self.assertTrue(self.lib.slate[slug]["gate"], slug)
+            original_status = meta["status"]
+            try:
+                meta["status"] = {"editorial": "reviewed", "publish": "published"}
+                errors, _ = validate.validate(self.lib)
+                self.assertTrue(
+                    any("CANNOT be published without an approved human safety review" in error and slug in error for error in errors),
+                    f"{slug}: missing publication block with pending safety review: {errors}",
+                )
+            finally:
+                meta["status"] = original_status
 
     def test_landing_never_names_unwritten_articles(self):
         for a in self.lib.taxonomy["slate"]:
