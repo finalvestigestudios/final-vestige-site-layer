@@ -58,7 +58,7 @@ if (require.main === module) {
     try {
       const report = auditResearchSources(fs.readFileSync(file, 'utf8'));
       process.stdout.write(JSON.stringify(report, null, 2) + '\n');
-      process.exitCode = report.status === 'PASS' ? 0 : report.status == 'MISMATCH_SOURCE' ? 1 : 2;
+      process.exitCode = report.status === 'PASS' ? 0 : report.status === 'MISMATCH_SOURCE' ? 1 : 2;
     } catch (error) {
       process.stderr.write(`${error.message}\n`);
       process.exitCode = 2;
