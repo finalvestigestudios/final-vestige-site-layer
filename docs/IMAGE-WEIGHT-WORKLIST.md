@@ -21,3 +21,7 @@ The State Archives catalog [N031889](https://floridamemory.com/items/show/141398
 **Reuse constraints:** [NASA Brand Center](https://www.nasa.gov/nasa-brand-center/) describes source-credit, third-party-rights, recognizable-person and nonendorsement caveats; [USCG photo archival page](https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002268810/) says generally public domain unless otherwise noted and requires appropriate credit. Florida Memory's public archive record and Rights indicator do **not** authorize blanket mirror/republication without item-level review.
 
 **Safety:** No production WordPress writes, licensing assumptions, asset downloads, speculative 42-image “fixes,” homepage design edits or expenses. PR is a source-only draft.
+
+## Added P0 browser-weight evidence gates (2026-10-30)
+
+The [measurement protocol](MEDIA-WEIGHT-COMPARISON.md), a 43-slot six-post source URL queue and strict offline browser-transfer comparator now distinguish true visitor image encoded transfer bytes from WordPress originals. Queue: 43 slots, 36 offsite, seven first-party, 16 institutional catalog URLs, 20 offsite without specific catalog URL. **The reported 42 failed images and 76% saved bytes remain unverified**. Files: `qa/media-recovery/p0_recovery_queue_20261030.json`, `compare_wire_core.cjs`, `compare_wire_runs.cjs`, `test_compare_wire.cjs`. No live image manipulation, post changes or asset mirroring.

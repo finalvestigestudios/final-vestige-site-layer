@@ -80,7 +80,8 @@ function monitor(cdp){
    if(p.redirectResponse){r.url_aliases.push(p.redirectResponse.url);r.redirect_status=p.redirectResponse.status}
    reqs.set(id,r);
   }else if(m.method==='Network.responseReceived'){
-   const r=reqs.get(id)||{};r.url=p.response.url;r.status=p.response.status;r.mime_type=p.response.mimeType||null;r.type=p.type||r.type||null;reqs.set(id,r);
+   const r=reqs.get(id)||{};r.url=p.response.url;r.status=p.response.status;r.mime_type=p.response.mimeType||null;r.type=p.type||r.type||null;r.from_disk_cache=!!p.response.fromDiskCache;r.from_service_worker=!!p.response.fromServiceWorker;reqs.set(id,r);
+  }else if(m.method==='Network.requestServedFromCache'){const r=reqs.get(id)||{};r.was_cached=true;reqs.set(id,r);
   }else if(m.method==='Network.loadingFinished'){
    const r=reqs.get(id)||{};r.encodedDataLength=Math.round(p.encodedDataLength||0);reqs.set(id,r);
   }else if(m.method==='Network.loadingFailed'){
@@ -126,7 +127,8 @@ async function inspect(cdp,page,outputDir){
    image_wire_bytes_total:verified?countTransfer(records.filter(x=>x.type==='Image')):null,
    network_images:records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
     url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
-    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null})),
+    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
+    from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true})),
    interpretation:verified?'Real logged-out Chromium request and image dimension observations; still check exact source provenance.':'Environment or page unverified: no claims of broken images are permitted.'};
  }catch(e){
   return{post_id:page.id,url:page.url,started,completed:now(),page_result:'probe_error',
@@ -142,7 +144,7 @@ async function main(){
   post_ids:pages.map(x=>x.id),image_sources:pages.reduce((n,p)=>n+p.stored.length,0),
   urls:pages.map(x=>x.url),browser_probe_executed:false},null,2));return}
  const dir=path.join(__dirname,'runs');fs.mkdirSync(dir,{recursive:true});
- const result={schema_version:1,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
+ const result={schema_version:1,probe_version:2,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
   probe:'logged-out Chrome CDP, no npm dependencies or WordPress writes',
   requested_pages:pages.length,status:'starting',pages:[]};
  let browser;
@@ -150,6 +152,11 @@ async function main(){
   browser=await launch();const c=browser.cdp;
   await c.send('Page.enable');await c.send('Network.enable');await c.send('Runtime.enable');
   await c.send('Network.setCacheDisabled',{cacheDisabled:true});
+  await c.send('Network.setBypassServiceWorker',{bypass:true});
+  const browserInfo=await c.send('Browser.getVersion',{},12000);
+  result.browser_product=browserInfo.product||null;
+  result.run_profile={cache_disabled:true,service_worker_bypassed:true,
+    scroll_step_px:720,scroll_wait_ms:220,settle_wait_ms:1000};
   await c.send('Emulation.setDeviceMetricsOverride',desktop?
    {width:1440,height:900,deviceScaleFactor:1,mobile:false}:
    {width:390,height:844,deviceScaleFactor:2,mobile:true});
