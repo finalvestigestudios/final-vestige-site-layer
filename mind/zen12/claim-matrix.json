@@ -1,0 +1,164 @@
+{
+  "product": "Zen12",
+  "review_date": "2026-10-30",
+  "reviewer": "Final Vestige Studios editorial (research only; recordings not personally tested)",
+  "source_basis": [
+    "https://inspire3.com/",
+    "https://zen12.com/",
+    "https://zen12.com/about",
+    "https://zen12.com/research",
+    "https://zen12.com/getstarted",
+    "https://zen12.com/welcome",
+    "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+  ],
+  "affiliate_approval_verified": false,
+  "affiliate_url": null,
+  "tracking_terms_verified": false,
+  "marketing_permissions_verified": false,
+  "personally_tested": false,
+  "product_efficacy_independently_verified": false,
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Zen12 is an Inspire3 meditation program",
+      "status": "verified_vendor_identity_only",
+      "evidence_type": "official_corporate_catalog",
+      "source": "https://inspire3.com/",
+      "fv_copy": "Zen12 is an audio-based meditation program offered by Inspire3.",
+      "recheck": "before_release"
+    },
+    {
+      "id": "Z02",
+      "claim": "Each Zen12 session is 12 minutes",
+      "status": "seller_specification_not_independently_audited",
+      "evidence_type": "official_product_about",
+      "source": "https://zen12.com/about",
+      "fv_copy": "The seller describes twelve-minute audio sessions.",
+      "recheck": "before_release"
+    },
+    {
+      "id": "Z03",
+      "claim": "The full course includes 12 levels and four styles at each level (48 MP3s)",
+      "status": "seller_specification_not_independently_audited",
+      "evidence_type": "official_checkout",
+      "source": "https://zen12.com/getstarted",
+      "fv_copy": "The seller describes 12 levels and 48 MP3s in its full bundle; confirm selected tier.",
+      "recheck": "before_checkout_reference"
+    },
+    {
+      "id": "Z04",
+      "claim": "Four styles: music, guided, white noise, nature sounds",
+      "status": "seller_specification_not_independently_audited",
+      "evidence_type": "official_product_about",
+      "source": "https://zen12.com/about",
+      "fv_copy": "The seller lists guided, music, white-noise and nature-sound styles.",
+      "recheck": "before_release"
+    },
+    {
+      "id": "Z05",
+      "claim": "Twelve minutes provides same benefit as an hour of advanced meditation",
+      "status": "unsubstantiated_product_specific",
+      "evidence_type": "seller_claim_and_independent_review_not_specific_to_zen12",
+      "source": "https://zen12.com/",
+      "corroboration": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+      "fv_copy": null,
+      "rule": "Never state as fact; no adequate Zen12-specific independent evidence located."
+    },
+    {
+      "id": "Z06",
+      "claim": "Brainwave audio automatically entrains the listener's brain and does the meditating",
+      "status": "unsubstantiated_product_specific",
+      "evidence_type": "vendor_technical_claim_vs_mixed_systematic_review",
+      "source": "https://zen12.com/research",
+      "corroboration": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "fv_copy": null,
+      "rule": "2023 review of 14 binaural-beat EEG studies: 5 positive, 8 contradictory, 1 mixed; studies heterogeneous; does not test Zen12."
+    },
+    {
+      "id": "Z07",
+      "claim": "Guaranteed immediate elimination of anxiety/stress and boosted cognition",
+      "status": "unsubstantiated_health_claim",
+      "evidence_type": "seller_claim",
+      "source": "https://zen12.com/about",
+      "corroboration": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "fv_copy": null,
+      "rule": "No guarantee, clinical benefit or health-treatment implication in FV copy."
+    },
+    {
+      "id": "Z08",
+      "claim": "Meditation programs may help some stress-related outcomes",
+      "status": "supported_at_general_intervention_level",
+      "evidence_type": "systematic_review_not_product_specific",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+      "fv_copy": "A 2014 synthesis found modest benefits on some stress-related outcomes in studied meditation programs; this does not establish Zen12-specific efficacy.",
+      "rule": "Do not transpose other-intervention findings to Zen12."
+    },
+    {
+      "id": "Z09",
+      "claim": "Binaural-beat EEG entrainment has been proven conclusively",
+      "status": "contradicted_by_research_uncertainty",
+      "evidence_type": "2023_systematic_review",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "fv_copy": null,
+      "rule": "Mixed results, heterogeneous methods; avoid deterministic brainwave claim."
+    },
+    {
+      "id": "Z10",
+      "claim": "Zen12 has a one-year money-back guarantee",
+      "status": "seller_term_subject_to_change",
+      "evidence_type": "official_checkout",
+      "source": "https://zen12.com/getstarted",
+      "fv_copy": "The seller currently advertises a one-year money-back guarantee; verify actual contractual terms and exclusions.",
+      "rule": "Avoid 'risk-free' or unconditional claim before policy verified."
+    },
+    {
+      "id": "Z11",
+      "claim": "Zen12 purchase price",
+      "status": "volatile_not_for_published_copy",
+      "evidence_type": "official_checkout_snapshot",
+      "source": "https://zen12.com/getstarted",
+      "snapshot_on": "2026-10-30",
+      "observed_display": "checkout showed $87.99 for full course after a stated promotional discount; homepage offered multiple tiers; do not assume same price via affiliate",
+      "fv_copy": null,
+      "rule": "Do not put merchant price in FV published copy until tracking destination verified live."
+    },
+    {
+      "id": "Z12",
+      "claim": "Free Zen12 sample requires opt-in to merchant newsletter",
+      "status": "seller_form_explicit",
+      "evidence_type": "official_optin_page",
+      "source": "https://zen12.com/welcome",
+      "fv_copy": "The merchant's free-audio signup states subscribers also receive its newsletter.",
+      "rule": "Do not promise no email signup; never confuse merchant opt-in with FV Jetpack list."
+    },
+    {
+      "id": "Z13",
+      "claim": "Zen12's checkout may request phone number",
+      "status": "seller_checkout_field_explicit",
+      "evidence_type": "official_checkout",
+      "source": "https://zen12.com/getstarted",
+      "fv_copy": "Merchant checkout requests personal contact details including a phone number; verify privacy terms before referral.",
+      "rule": "Never collect or proxy merchant PII within FV."
+    },
+    {
+      "id": "Z14",
+      "claim": "Affiliate marketing program provides automatic access to tracking links",
+      "status": "NOT_verified_for_fv",
+      "evidence_type": "public_affiliate_recruitment_page",
+      "source": "https://affiliates.inspire3.com/",
+      "fv_copy": null,
+      "rule": "Approval, permissions, campaign deep links, payout/attribution still unverified; no affiliate CTAs."
+    },
+    {
+      "id": "Z15",
+      "claim": "A near-link disclosure is required for material financial connection",
+      "status": "FTC_guidance",
+      "evidence_type": "regulatory_staff_guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "fv_copy": "If you purchase through this link, Final Vestige may receive a commission.",
+      "rule": "One readable disclosure next to each CTA; not only in footer."
+    }
+  ]
+}

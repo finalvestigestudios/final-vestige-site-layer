@@ -1,0 +1,155 @@
+<!-- wp:html -->
+<style>
+.fvz12{--bg:#090a0a;--panel:#111312;--panel2:#181810;--line:#34322e;--paper:#f4efe6;--body:#d8d2c7;--mute:#aaa49a;--gold:#c7a66c;background:var(--bg);color:var(--body);font-family:var(--wp--preset--font-family--inter,Inter,system-ui,sans-serif);font-size:17px;line-height:1.7;overflow-wrap:break-word}
+.fvz12 *, .fvz12 *::before, .fvz12 *::after{box-sizing:border-box}
+.fvz12 :is(h1,h2,h3,p,figure,ul){margin-top:0}
+.fvz12 h1,.fvz12 h2,.fvz12 h3{color:var(--paper)}
+.fvz12 a{color:var(--gold);text-underline-offset:4px}
+.fvz12 a:focus-visible,.fvz12 summary:focus-visible{outline:3px solid #f1d6a7;outline-offset:5px}
+.fvz12__wrap{width:min(100% - 38px,1140px);margin-inline:auto}
+.fvz12__kicker{text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:750;color:var(--gold);line-height:1.4}
+.fvz12__hero{padding:clamp(65px,9vw,118px) 0 clamp(54px,9vw,110px);background:radial-gradient(ellipse at 83% 10%,#2d2819 0%,transparent 40%),radial-gradient(ellipse at 10% 100%,#122522 0%,transparent 40%)}
+.fvz12__hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(245px,.65fr);gap:clamp(38px,6vw,96px);align-items:center}
+.fvz12 h1{font:400 clamp(44px,6.6vw,89px)/1.02 Georgia,serif;letter-spacing:-.045em;max-width:780px;margin:22px 0 25px;text-wrap:balance}
+.fvz12 h1 em{color:var(--gold);font-style:normal}
+.fvz12__lede{font-size:clamp(18px,2vw,23px);max-width:690px;line-height:1.6;color:#e0d9cd}
+.fvz12__hero-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:25px}
+.fvz12__button{display:inline-flex;min-height:48px;justify-content:center;align-items:center;padding:11px 19px;color:#17130d!important;background:var(--gold);font-size:14px;font-weight:800;text-decoration:none;border:1px solid var(--gold);border-radius:2px}
+.fvz12__button:hover{background:#e6cb9c}
+.fvz12__button--outline{background:transparent;color:var(--paper)!important}
+.fvz12__quote{position:relative;padding:33px 30px;border:1px solid #635336;background:linear-gradient(155deg,#262314,#101110);box-shadow:0 30px 70px rgba(0,0,0,.2)}
+.fvz12__quote strong{color:var(--gold);font:750 10px/1.4 monospace;letter-spacing:.13em}
+.fvz12__quote blockquote{font:400 clamp(26px,2.8vw,38px)/1.18 Georgia,serif;color:var(--paper);margin:26px 0}
+.fvz12__quote small{display:block;border-top:1px solid #544732;padding-top:16px;color:var(--mute);font-size:13px}
+.fvz12__section{padding-block:clamp(52px,7vw,96px);border-top:1px solid var(--line)}
+.fvz12 h2{font:400 clamp(32px,4.5vw,59px)/1.08 Georgia,serif;letter-spacing:-.025em;max-width:800px;margin-bottom:24px;text-wrap:balance}
+.fvz12 h3{font:400 clamp(21px,2.5vw,30px)/1.22 Georgia,serif}
+.fvz12__narrow{max-width:770px}
+.fvz12__text p,.fvz12__text li{color:var(--body);font-size:17px;line-height:1.82}
+.fvz12__text p{margin-bottom:20px}
+.fvz12__split{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1fr);gap:clamp(27px,6vw,84px);align-items:start}
+.fvz12__eyeline{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:750}
+.fvz12__check{padding:30px;background:#171710;border:1px solid #585038}
+.fvz12__check ol{margin:0;padding-left:23px}
+.fvz12__check li{padding:4px 0}
+.fvz12__check p{font-size:13px;color:var(--mute);margin:18px 0 0}
+.fvz12__columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:35px}
+.fvz12__col{padding:clamp(23px,2.9vw,32px);background:var(--panel)}
+.fvz12__col span{font:750 11px/1.4 monospace;letter-spacing:.13em;color:var(--gold)}
+.fvz12__col h3{margin:18px 0 12px}
+.fvz12__col p{font-size:15px;color:var(--mute);line-height:1.75}
+.fvz12__review{background:linear-gradient(140deg,#1f1c13,#101312);border-top:1px solid #53482f;border-bottom:1px solid #53482f}
+.fvz12__review-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.8fr);gap:clamp(30px,6vw,80px)}
+.fvz12__fact{padding:26px 0;border-top:1px solid #555044}
+.fvz12__fact strong{display:block;color:var(--paper);margin-bottom:8px}
+.fvz12__fact p{color:#c8c1b6;margin:0;font-size:15px}
+.fvz12__commercial{border:1px solid #7a6544;padding:clamp(23px,3.5vw,34px);background:#201d16;align-self:start}
+.fvz12__commercial h3{font-size:31px;margin-bottom:13px}
+.fvz12__commercial p{font-size:15px;color:#e0d7c9;line-height:1.65}
+.fvz12__locked{display:block;padding:15px 19px;border:1px dashed #a58c60;color:#ddd0b5;font-size:14px;font-weight:700;cursor:not-allowed;margin:18px 0}
+.fvz12__disclosure{border-left:3px solid var(--gold);padding-left:13px!important;font-size:13px!important;color:var(--paper)!important}
+.fvz12__comparisons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:30px}
+.fvz12__comparison{padding:25px;border:1px solid var(--line);background:#111312}
+.fvz12__comparison h3{margin-bottom:15px}
+.fvz12__comparison ul{padding-left:18px;margin:0}
+.fvz12__comparison li{margin:8px 0;font-size:15px}
+.fvz12__film{border:1px solid #5a4b32;padding:28px;background:radial-gradient(ellipse at 80% 0,#25271b,#101111 70%);margin-top:28px}
+.fvz12__film summary{cursor:pointer;font-weight:800;color:var(--paper);padding:10px 0}
+.fvz12__film small,.fvz12__film p{color:var(--mute)}
+.fvz12__film .fvz12__film-note{display:block;font-size:13px;margin-top:8px}
+.fvz12__film ol{padding-left:22px}
+.fvz12__sources{max-width:830px}
+.fvz12__sources li{margin:15px 0;overflow-wrap:anywhere}
+.fvz12__small{color:var(--mute);font-size:13px;line-height:1.65}
+.fvz12__footer{padding:40px 0 80px;border-top:1px solid var(--line)}
+.fvz12__footer a{margin-right:18px}
+@media(max-width:900px){.fvz12__hero-grid,.fvz12__split,.fvz12__review-grid{grid-template-columns:1fr}.fvz12__quote{max-width:600px}}
+@media(max-width:650px){.fvz12__wrap{width:min(100% - 34px,1140px)}.fvz12__columns,.fvz12__comparisons{grid-template-columns:1fr}.fvz12__hero{padding:60px 0}.fvz12__hero-actions{flex-direction:column;align-items:stretch}.fvz12__hero-actions a{width:100%}.fvz12__section{padding-block:52px}.fvz12__commercial{padding:23px}}
+@media(prefers-reduced-motion:reduce){.fvz12 *, .fvz12 *::before,.fvz12 *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<main class="fvz12" id="fvz12-content">
+ <section class="fvz12__hero" aria-labelledby="fvz12-title"><div class="fvz12__wrap fvz12__hero-grid">
+  <div><p class="fvz12__kicker">Final Vestige / Mind &amp; Perception / Tools Under Review</p>
+   <h1 id="fvz12-title">Your attention wanders. <em>Start there.</em></h1>
+   <p class="fvz12__lede">If meditation has always sounded worthwhile but impossible to keep up, the obstacle might not be willpower. It might be the size of the promise. A twelve-minute audio program sounds easier. Is it worth considering?</p>
+   <div class="fvz12__hero-actions">
+    <a class="fvz12__button" href="#fvz12-what">See what Zen12 actually includes</a>
+    <a class="fvz12__button fvz12__button--outline" href="#fvz12-test">Try a free 60-second attention exercise</a>
+   </div>
+   <p class="fvz12__small">Independent research-led product evaluation. This page does not claim that a product has been personally tested.</p>
+  </div>
+  <aside class="fvz12__quote" aria-label="Editorial lens"><strong>FIELD NOTE / 012</strong><blockquote>Attention is not the prize you reach at the end. Returning to it is the practice.</blockquote><small>A useful routine has to survive an ordinary Tuesday—not just the excitement of a first listen.</small></aside>
+ </div></section>
+ <section class="fvz12__section" aria-labelledby="fvz12-question"><div class="fvz12__wrap fvz12__split">
+  <div><p class="fvz12__eyeline">01 / The real friction</p><h2 id="fvz12-question">You don't need another impossible promise.</h2></div>
+  <div class="fvz12__text"><p>There's a familiar scene: you find an approach to meditation, decide this time will be different, and imagine the calmer version of yourself that will exist when you've mastered it. Then a workday runs long. Your phone lights up. You miss a session. The grand plan starts to feel like one more thing you're behind on.</p>
+   <p>A gentler question is more useful: <strong>what is small enough that you could actually repeat it?</strong> That doesn't mean short meditation is equivalent to long meditation. It means a routine that fits your life is easier to evaluate than a routine you never attempt.</p>
+   <p>Researchers have documented genuine limits to how we allocate attention. In a classic rapid-stream experiment, people who identified one target were temporarily worse at detecting a second target arriving shortly afterward. That finding, known as the <em>attentional blink</em>, says something about perception under specific conditions; it does <strong>not</strong> prove the effectiveness of any meditation audio. <a href="https://pubmed.ncbi.nlm.nih.gov/1500880/" rel="noopener noreferrer">Read Raymond and colleagues' 1992 study</a>.</p>
+  </div>
+ </div></section>
+ <section class="fvz12__section" id="fvz12-test" aria-labelledby="fvz12-test-title"><div class="fvz12__wrap fvz12__split">
+  <div><p class="fvz12__eyeline">02 / Try before you choose</p><h2 id="fvz12-test-title">One minute, no equipment.</h2>
+    <p>This tiny observation is not a diagnostic test or a Zen12 demonstration. It is simply a way to notice what happens when you try to give something your attention.</p></div>
+  <div class="fvz12__check"><h3>A short field exercise</h3><ol>
+    <li>Set a timer for sixty seconds on your own device.</li>
+    <li>Sit comfortably and notice one ordinary sound around you.</li>
+    <li>When your attention moves elsewhere, silently note that it moved.</li>
+    <li>Return to listening. There is nothing to score and nothing to win.</li>
+   </ol><p>If stillness feels uncomfortable or aggravates symptoms, stop. This is not healthcare or treatment advice. The observation is useful even if your attention wanders repeatedly.</p>
+  </div>
+ </div></section>
+ <section class="fvz12__section" id="fvz12-what" aria-labelledby="fvz12-product"><div class="fvz12__wrap">
+  <p class="fvz12__eyeline">03 / The actual offer, not the hype</p><h2 id="fvz12-product">What Zen12 sells.</h2>
+  <div class="fvz12__narrow fvz12__text"><p>Zen12 is an audio-based meditation program offered by Inspire3. Its central convenience claim is straightforward and verifiable from the product format: sessions are intended to last twelve minutes. The seller describes a progression of levels, each with several listening styles. That format may appeal to someone who wants a guided or sound-based starting point rather than a long, silent sitting practice.</p>
+  <p>Crucially, the seller also makes much larger claims about brainwaves and the results of its recordings. Those are <strong>not established here</strong>. An independent 2023 systematic review found inconsistent EEG evidence for binaural-beat entrainment, and published meditation research in general is not a trial of Zen12. The advertised equation of twelve minutes to an hour of advanced meditation has not been independently verified by Final Vestige.</p></div>
+  <div class="fvz12__columns">
+   <div class="fvz12__col"><span>FORMAT / 01</span><h3>Twelve-minute sessions</h3><p>The session length is a concrete feature. Shorter scheduling demands are a reason to consider a program—not proof of stronger results.</p></div>
+   <div class="fvz12__col"><span>FORMAT / 02</span><h3>Four audio styles</h3><p>The seller lists guided meditation, relaxation music, white noise and nature sounds across its program levels. The exact bundle contents must be confirmed before purchase.</p></div>
+   <div class="fvz12__col"><span>FORMAT / 03</span><h3>Beginner to advanced</h3><p>Zen12 advertises different course tiers and a twelve-level full program. The specific tier, support, refund conditions and current total require checkout verification.</p></div>
+  </div>
+ </div></section>
+ <section class="fvz12__section fvz12__review" aria-labelledby="fvz12-review"><div class="fvz12__wrap fvz12__review-grid">
+  <div>
+    <p class="fvz12__eyeline">04 / What the record supports</p><h2 id="fvz12-review">The science has a boundary.</h2>
+    <div class="fvz12__fact"><strong>Meditation research is real, but broad.</strong><p>A 2014 JAMA Internal Medicine meta-analysis of 47 trials found modest benefits for some stress-related outcomes in studied meditation programs. Its findings cannot be transplanted to this particular commercial recording.</p></div>
+    <div class="fvz12__fact"><strong>Brainwave entrainment is an active research question.</strong><p>A 2023 PLOS ONE systematic review of fourteen binaural-beat EEG studies reported mixed and contradictory results; the review did not validate Zen12's specific marketing promise.</p></div>
+    <div class="fvz12__fact"><strong>The product has not been independently tested by us.</strong><p>We have reviewed the seller's description, not the underlying Zen12 recordings, the purchase experience or any controlled product-specific outcomes.</p></div>
+    <p class="fvz12__small">The seller's specific audio technology has not been independently established in our review; do not assume every form of recorded sound has the same evidence base.</p>
+  </div>
+  <aside class="fvz12__commercial" aria-labelledby="fvz12-offer">
+    <p class="fvz12__kicker">Independent product evaluation / affiliate-readiness gate</p>
+    <h3 id="fvz12-offer">A structured option, if audio suits you.</h3>
+    <p>For someone drawn to short, optional listening sessions and multiple sound styles, Zen12 may be worth evaluating alongside free meditation resources. Confirm the exact level, access terms, total price and current refund policy on the merchant's own checkout before buying.</p>
+    <p class="fvz12__disclosure"><strong>Commercial disclosure:</strong> If you purchase through a future qualifying Zen12 link here, Final Vestige may receive a commission. That relationship does not alter our evaluation.</p>
+    <span class="fvz12__locked" role="status" data-fv-offer-state="unverified" data-fv-offer-slot="zen12-primary">Official partner link not yet verified — no purchasing link active</span>
+    <p class="fvz12__small">This page is a pre-publication draft. The purchasing CTA is deliberately inactive until partner authorization, destination and claims are reviewed.</p>
+    <p>Want to start without buying anything? <a href="/focus/">Use the free Seven Day Focus Fieldbook</a>.</p>
+  </aside>
+ </div></section>
+ <section class="fvz12__section" aria-labelledby="fvz12-compare"><div class="fvz12__wrap">
+  <p class="fvz12__eyeline">05 / Decide for yourself</p><h2 id="fvz12-compare">Who this might—and might not—fit.</h2>
+  <div class="fvz12__comparisons">
+   <div class="fvz12__comparison"><h3>Reasons to look closer</h3><ul><li>You want a short audio-led structure rather than an unguided practice.</li><li>You prefer choosing between guided voice, music, nature sounds or noise.</li><li>You would evaluate the product based on convenience and enjoyment, not a guaranteed medical or neurological transformation.</li></ul></div>
+   <div class="fvz12__comparison"><h3>Reasons to pass</h3><ul><li>You need a clinically validated treatment for a health condition.</li><li>You want product-specific evidence that its brainwave audio equals a much longer meditation session.</li><li>You prefer a free timer, written exercise or the Focus Fieldbook to paid audio.</li></ul></div>
+  </div>
+  <details class="fvz12__film"><summary>View the 40-second editorial video transcript and production plan</summary>
+   <p class="fvz12__small">Video production is pending. The complete script is provided here rather than showing an empty or nonfunctional video player. The future film must be user-initiated, captioned, correctly disclosed and hosted only after media and rights review.</p>
+   <ol><li>“Ever promised yourself you'd meditate for an hour—then couldn't find ten minutes?”</li><li>“A practice that fits an ordinary day may be more useful than a perfect routine you never begin.”</li><li>“Try sixty seconds: listen, notice your attention wander, and return. No score.”</li><li>“Zen12 offers twelve-minute audio sessions in several styles. Its dramatic brainwave claims need more evidence than a sales page.”</li><li>“Final Vestige examines the sources, the limits and the alternatives. Our future qualifying product links may earn us a commission.”</li></ol>
+   <span class="fvz12__film-note">Full shot list, narration, captions, poster specification and release gates are in the source-controlled video production document.</span>
+  </details>
+ </div></section>
+ <section class="fvz12__section" aria-labelledby="fvz12-method"><div class="fvz12__wrap fvz12__narrow fvz12__text">
+   <p class="fvz12__eyeline">06 / What we checked</p><h2 id="fvz12-method">Sources and methods.</h2>
+   <p>We treat a product seller's account as evidence of what is being marketed, not as evidence that its outcomes are independently demonstrated. A review of meditation research may help place a claim in context, but it cannot validate a named commercial recording unless the study actually tested it.</p>
+   <ol class="fvz12__sources">
+    <li><a href="https://zen12.com/about" rel="noopener noreferrer">Zen12 — About</a> and <a href="https://zen12.com/getstarted" rel="noopener noreferrer">official checkout description</a>. Seller-provided formats, levels, support and return-policy statements; terms can change.</li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/1500880/" rel="noopener noreferrer">Raymond, Shapiro &amp; Arnell (1992)</a>, original attentional-blink experiment. Context only; not a meditation study.</li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/24395196/" rel="noopener noreferrer">Goyal et al. (2014)</a>, systematic review of meditation programs and stress-related outcomes; not Zen12-specific.</li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/37205669/" rel="noopener noreferrer">Ingendoh, Posny &amp; Heine (2023)</a>, systematic review of binaural-beat entrainment EEG results.</li>
+    <li><a href="https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety" rel="noopener noreferrer">NIH NCCIH</a>, evidence and safety overview.</li>
+   </ol>
+   <p>For an earlier account of the mind as an unreliable witness, see <a href="/free-resources/puysegurs-animal-magnetism-files/">the Puységur Animal Magnetism Files</a>. For a free practice, continue to the <a href="/focus/">Focus Fieldbook</a>. Our <a href="/editorial-standards/">Editorial Standards</a> and <a href="/affiliate-disclosure/">Affiliate Disclosure</a> govern this work.</p>
+ </div></section>
+ <footer class="fvz12__footer"><div class="fvz12__wrap"><p class="fvz12__small">Final Vestige Studios / Mind &amp; Perception. No medical advice. Unpublished review; full release checks pending.</p><a href="/focus/">Free Focus Fieldbook</a><a href="/editorial-standards/">How we research</a></div></footer>
+</main>
+<!-- /wp:html -->
