@@ -56,3 +56,9 @@ Screenshot artifacts from this isolated run are stored under local `qa/screensho
 4. Automated axe-core audits in a network-enabled/packaged CI environment, manual screen-reader (NVDA/VoiceOver) and Safari/iOS touch checks, actual touch target measurements.
 5. Actual staging/field p75 LCP, CLS and INP with full production CSS/theme/fonts/pictures, not synthetic preview metrics.
 6. Independent QD and green hosted CI on exact head, then separate founder-approved deployment. Hosted GitHub Actions currently reports a runner-dispatch problem; do not use it as a pretext to bypass release controls.
+
+## Source trail and downloadable evidence custody, 2026-10-30
+
+The subsequent isolated source-trail sprint adds a six-row Review Board versus NASA photograph provenance export in CSV and JSON, built from exactly the same source manifests as the HTML. The Research Desk component presents optional evidence exports with limitations and explicit media rights holds. Source deep links now open the right native disclosure with keyboard focus; claims hidden by the optional category filter are restored on deep-link navigation. All research remains readable without JavaScript.
+
+Reproduce with python render.py, python qa/source_trail_gate.py and python qa/source_trail_playwright.py. Full evidence, synthetic-vs-field performance distinction and outstanding gates are in qa/SOURCE_TRAIL_SPRINT_AUDIT.md. Relative CSV and JSON hrefs require proper WordPress media delivery before any production integration. The separate Research Desk shortcode PR #158 was not modified.
