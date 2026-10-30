@@ -121,7 +121,13 @@ class BuildTests(unittest.TestCase):
     def test_landing_lists_only_built_articles_and_no_empty_sections(self):
         titles = re.findall(r'<h3><a href="([^"]+)">', self.landing["inner"])
         self.assertEqual(len(titles), len(self.lib.articles))
-        self.assertEqual(self.landing["populated_sections"], ["water", "lost-ways", "field-tools"])
+        # Derived from the articles actually present, in taxonomy order, so adding a cluster cannot make this test stale.
+        has_articles = {m["section"] for m in self.lib.articles.values()}
+        expected = [s["slug"] for s in self.lib.taxonomy["sections"] if s["slug"] in has_articles]
+        self.assertEqual(self.landing["populated_sections"], expected)
+        for sec in self.lib.taxonomy["sections"]:
+            if sec["slug"] not in has_articles:
+                self.assertNotIn(f'id="h-{sec["slug"]}"', self.landing["inner"], f"empty section {sec['slug']} must not render")
 
     def test_landing_never_names_unwritten_articles(self):
         for a in self.lib.taxonomy["slate"]:
@@ -232,6 +238,77 @@ class HubAndToolTests(unittest.TestCase):
             self.skipTest("node not installed")
         r = subprocess.run([node, str(ROOT / "tests" / "test_water_planner.js")], capture_output=True, text=True, timeout=60)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+
+class GovernanceRegressionTests(unittest.TestCase):
+    """Negative tests: nothing can be published while a safety review is pending, whatever the taxonomy flag says."""
+
+    def setUp(self):
+        self.lib = build.Library()
+
+    def _publish(self, slug):
+        meta = self.lib.articles[slug]
+        meta["status"]["publish"] = "published"
+        meta["status"]["editorial"] = "reviewed"
+        meta["published"] = "2026-11-01"
+        return validate.validate(self.lib)[0]
+
+    def test_every_pending_article_is_blocked_from_publication(self):
+        pending = [s for s, m in self.lib.articles.items() if m["safety_review"]["state"] == "pending"]
+        self.assertTrue(pending, "expected at least one pending article")
+        for slug in pending:
+            lib = build.Library()
+            m = lib.articles[slug]
+            m["status"]["publish"] = "published"; m["status"]["editorial"] = "reviewed"; m["published"] = "2026-11-01"
+            errors = validate.validate(lib)[0]
+            self.assertTrue(any(slug in e and "pending" in e for e in errors), f"{slug} could be published while pending: {errors}")
+
+    def test_ungated_taxonomy_flag_cannot_bypass_a_pending_review(self):
+        self.lib.slate["making-water-safer"]["gate"] = False
+        self.lib.articles["making-water-safer"]["safety_review"] = {"state": "pending", "reviewer": None, "date": None}
+        errors = self._publish("making-water-safer")
+        self.assertTrue(any("CANNOT be published while a safety review is pending" in e for e in errors), errors)
+
+    def test_every_modern_slate_item_is_gated(self):
+        for a in self.lib.taxonomy["slate"]:
+            if a["track"] == "modern":
+                self.assertTrue(a["gate"], f"#{a['n']} {a['slug']} gives actionable guidance and must be gated")
+
+    def test_modern_guide_cannot_be_exempt_or_ungated(self):
+        self.lib.slate["water-math"]["gate"] = False
+        errors, _ = validate.validate(self.lib)
+        self.assertTrue(any("must be gated" in e for e in errors), errors)
+        lib = build.Library()
+        lib.articles["water-math"]["safety_review"] = {"state": "not-required", "reviewer": None, "date": None}
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any("cannot be exempt" in e for e in errors), errors)
+
+    def test_published_still_needs_editorial_review(self):
+        lib = build.Library()
+        m = lib.articles["making-water-safer"]
+        m["status"]["publish"] = "published"; m["status"]["editorial"] = "drafted"
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any("before editorial review" in e for e in errors), errors)
+
+
+class SourceKindTests(unittest.TestCase):
+    def test_red_cross_cannot_be_called_a_regulator(self):
+        lib = build.Library()
+        lib.register["x-redcross"] = {"id": "x-redcross", "title": "t", "publisher": "American Red Cross", "kind": "regulator",
+                                      "url": "https://www.redcross.org/x", "verified_on": "2026-10-30", "supports": "x"}
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any("not a regulator" in e for e in errors), errors)
+
+    def test_nonprofit_kind_is_accepted_and_unknown_kinds_are_rejected(self):
+        lib = build.Library()
+        lib.register["x-ok"] = {"id": "x-ok", "title": "t", "publisher": "American Red Cross", "kind": "nonprofit",
+                                "url": "https://www.redcross.org/ok", "verified_on": "2026-10-30", "supports": "x"}
+        errors, _ = validate.validate(lib)
+        self.assertFalse([e for e in errors if "x-ok" in e], errors)
+        lib.register["x-bad"] = {"id": "x-bad", "title": "t", "publisher": "Someone", "kind": "blog",
+                                 "url": "https://example.org/bad", "verified_on": "2026-10-30", "supports": "x"}
+        errors, _ = validate.validate(lib)
+        self.assertTrue(any("unknown source kind" in e for e in errors), errors)
 
 
 if __name__ == "__main__":
