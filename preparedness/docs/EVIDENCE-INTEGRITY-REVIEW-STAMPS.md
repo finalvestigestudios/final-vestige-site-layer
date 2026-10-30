@@ -21,6 +21,8 @@ Reviewer warning: Never calculate a fingerprint and mechanically paste it into a
     python -I -m unittest discover -s preparedness/tests -v
     python -I preparedness/tools/audit_integration.py --require-release-ready
 
-The final command is expected nonzero: 30/30 shared-source groups remain unreviewed, 0/223 original link checks completed by a human, independent clinical/food/CO/water editorial review unresolved. Native Python suite and preview rendering must still be executed on the exact PR head; review-only data are NEVER launch permission.
+The final command is expected nonzero: 30/30 shared-source groups remain unreviewed, 0/224 original link checks completed by a human, independent clinical/food/CO/water editorial review unresolved. Native Python suite and preview rendering must still be executed on the exact PR head; review-only data are NEVER launch permission.
 
 Review companions remain independent: safety QD PR #157 and synthetic-fixture PR #169. Their SHA baselines are recorded in the source crosswalk. Draft PR #176 remains an integration candidate, not a verified release.
+
+> **2026-10-30 Start rebase update:** The subsequently revised Start contributor added a *fourth independently read scope* for the already-shared FEMA V-1008 source URL; the source row total increased from 223 to 224, machine-marked source rows from 208 to 209, while literal unique URLs **remained 186** and unresolved exact duplicate-URL groups **remained 30**. All human link checks remain false. Earlier conclusions about the initial integration baseline apply only to their original Git SHAs. Refer to `START-LATEST-SAFETY-RECONCILIATION.md` and the latest evidence lock. **No QD or medical safety approval is claimed.**

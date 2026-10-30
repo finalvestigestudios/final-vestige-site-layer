@@ -32,7 +32,7 @@ class IntegrationReportTests(unittest.TestCase):
 
     def test_source_depth_and_review_status_visible(self):
         src = self.report["sources"]
-        self.assertEqual(src["raw_rows"], 223)
+        self.assertEqual(src["raw_rows"], 224)
         self.assertEqual(src["verified_by_machine"], 208)
         self.assertEqual(src["human_link_checked_rows"], 0)
         self.assertEqual(src["shared_url_groups"], 30)

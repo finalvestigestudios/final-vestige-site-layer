@@ -37,7 +37,7 @@ class PreparednessCrosswalkTests(unittest.TestCase):
     def test_raw_source_rows_not_discarded(self):
         raw = sum(len(versions) for versions in self.lib.source_variants.values())
         self.assertEqual(raw, self.lib.crosswalk["raw_source_rows"])
-        self.assertEqual(raw, 223, "Snapshot must not silently lose contributor rows")
+        self.assertEqual(raw, 224, "Snapshot must not silently lose contributor rows")
         self.assertEqual(len(self.lib.crosswalk["source_files"]), 8)
 
     def test_crosswalk_exhaustively_records_all_shared_urls(self):

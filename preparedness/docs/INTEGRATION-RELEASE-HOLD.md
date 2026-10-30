@@ -5,14 +5,14 @@
 ## Actual assembled state
 
 - 35/35 complete editorial draft articles from the seven contributor clusters plus six original base drafts, all with `status.publish=draft`; one separate local-only water planner remains draft.
-- Full source provenance preserved: 223 input source rows, 208 marked machine-verified, 15 unverified placeholder rows, 186 distinct literal HTTPS URLs, 30 documented duplicate URL groups and 15 repeated source-ID groups. All original fragments retained, 67 full raw rows included in the collision ledger; each shared URL's `review_status` remains pending.
+- Full source provenance preserved: 224 input source rows, 209 marked machine-verified, 15 unverified placeholder rows, 186 distinct literal HTTPS URLs, 30 documented duplicate URL groups and 15 repeated source-ID groups. All original fragments retained, 67 full raw rows included in the collision ledger; each shared URL's `review_status` remains pending.
 - Read-scope resolution is per article-origin rather than globally inheriting the most conveniently verified source record.
 - Independent safety PR #157 wording corrections brought into Start Here; food isolated fixture approach from #169 retained; their original PRs remain untouched.
 - Source, editorial, human link, and independent QD release gates now block premature status changes. The builder's report must state HOLD; generated WordPress-compatible markup is **draft-only**.
 
 ## What has and has not been checked
 
-**Executed via GitHub connector (static):** Verified exact file-path union from immutable 7 source SHAs; checked 35 readable source bodies against the 1,800-word minimum, each with at least 3 distinct in-body citations that resolve to a verified record in its own origin or the base; all article metadata checked for draft status and unique filename/slug; 223 source rows checked for HTTPS, source kind, verified date syntax and claim supports. Crosswalk generated from actual file bytes, not model memory.
+**Executed via GitHub connector (static):** Verified exact file-path union from immutable 7 source SHAs; checked 35 readable source bodies against the 1,800-word minimum, each with at least 3 distinct in-body citations that resolve to a verified record in its own origin or the base; all article metadata checked for draft status and unique filename/slug; 224 source rows checked for HTTPS, source kind, verified date syntax and claim supports. Crosswalk generated from actual file bytes, not model memory.
 
 **NOT executed:** native Python `validate.py`, `build.py`, full `unittest` suite, JavaScript water planner tests, CI, browser screenshots, axe, Lighthouse, human PDF full-page checks, human source URL click-through or editorial/safety review. This runtime has **no working git network** to fetch the private repo into a Python executor, and Actions dispatch has been reported unavailable. The addition of 54 tests does not mean those tests have run or passed.
 
@@ -31,3 +31,5 @@ For source validation concerns, see `docs/INTEGRATION-SOURCE-CROSSWALK.md` and t
 - Medicine refrigeration in power outages: avoid suggesting unilaterally stopping/discarding essential medicine; pharmacist/prescriber instructions govern.
 - Formula preparation and infant dosing; CO generator placement; fire escape and building-specific shelter instructions; pressure-canning and jerky; water advisory and boiling/disinfection limits.
 - NCHFP index pages are not tested procedures. LOC collection records do not prove an individual diary's contents. Historic methods do not establish current safety.
+
+> **2026-10-30 Start rebase update:** The subsequently revised Start contributor added a *fourth independently read scope* for the already-shared FEMA V-1008 source URL; the source row total increased from 223 to 224, machine-marked source rows from 208 to 209, while literal unique URLs **remained 186** and unresolved exact duplicate-URL groups **remained 30**. All human link checks remain false. Earlier conclusions about the initial integration baseline apply only to their original Git SHAs. Refer to `START-LATEST-SAFETY-RECONCILIATION.md` and the latest evidence lock. **No QD or medical safety approval is claimed.**

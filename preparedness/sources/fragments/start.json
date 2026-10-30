@@ -12,7 +12,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Fetched the full 36-page text; read the contents list and the sections cited here (introduction, protective actions, financial preparedness, Make a Plan, supplies, documents, practice schedule). The hazard-by-hazard sections were not read. Three-step frame (know your risks, make a plan, take action); first moves when something happens without warning (assess the situation, decide to stay or change location); family communication plan with an out-of-state contact reachable two ways and a wallet or digital copy for everyone; evacuation guidelines (meeting places in several directions, half-tank rule, one car per family, leave a note); basic kit contents and the 'at least 72 hours' framing; water of 1 gallon per person per day for 3, 7 or even 14 days depending on location; cash in small bills with the highest a twenty; N95 respirators; kit maintenance (first in, first out; discard swollen, dented or corroded cans; check needs every six months); critical-document storage; practice schedule and one-year timeline.",
-      "notes": "September 2020 edition, hosted under a 2021-11 upload path. Older than the Ready.gov web pages, so where they differ the web pages are newer. Upgraded from a placeholder in register.json."
+      "notes": "September 2020 edition, hosted under a 2021-11 upload path. Older than the Ready.gov web pages, so where they differ the web pages are newer. Upgraded from a placeholder in register.json. The power-outage section says 'If the power is out for more than a day, discard any medication that should be refrigerated, unless the drug's label says otherwise' and uses a two-hour 40 F food rule; FEMA's December 2023 power-outage fact sheet is newer and differs."
     },
     {
       "id": "start-ready-plan",
@@ -105,7 +105,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "What an extended outage can disrupt; take an inventory of items that rely on electricity; talk to your medical provider about a power-outage plan for powered medical devices and refrigerated medicines; refrigerator keeps food cold about four hours, a full freezer about 48 hours; discard food at 40 F or above for two hours or more; discard refrigerated medicine if power is out more than a day unless the label says otherwise; generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; CO detectors with battery backup on every level; never heat a home with a gas stovetop or oven."
+      "supports": "What an extended outage can disrupt; take an inventory of items that rely on electricity; talk to your medical provider about a power-outage plan for powered medical devices and refrigerated medicines; refrigerator keeps food cold about four hours, a full freezer about 48 hours; discard food at 40 F or above for two hours or more; discard refrigerated medicine if power is out more than a day unless the label says otherwise; generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; CO detectors with battery backup on every level; never heat a home with a gas stovetop or oven.",
+      "notes": "Web page read in full on 2026-10-29. Its medicine line ('discard refrigerated medication if power is out more than a day unless the label says otherwise') repeats the 2020 FEMA guide and is stricter than FEMA's newer December 2023 fact sheet (start-fema-power-sheet), which adds 'call your doctor or pharmacist' and 'only use the medicine until you have a new supply'. Its fridge/food rule is two hours above 40 F; the 2023 sheet says more than 4 hours. Both discrepancies are stated on the three-day-kit page."
     },
     {
       "id": "start-ready-alerts",
@@ -281,8 +282,8 @@
       "reviewed": "2024-02-15",
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Kit contents by feeding method (breast milk, pump, formula); ready-to-feed formula is the safest formula option in an emergency; check the kit monthly so formula matches the baby's current needs; diaper bag contents; items marked with an asterisk are unsafe if they cannot be cleaned with safe water and soap; consider a camp stove and pot for boiling water.",
-      "notes": "The page's 'reviewed' date (2024-02-15) is earlier than its 'published' date (2024-05-15) on the page itself. Reproduced as shown."
+      "supports": "Kit contents by feeding method (breast milk, pump, formula); ready-to-feed formula is the safest formula option in an emergency; check the kit monthly so formula matches the baby's current needs; diaper bag contents; items marked with an asterisk are unsafe if they cannot be cleaned with safe water and soap; consider a camp stove and pot for boiling water. Lists 'Infant pain reliever with acetaminophen' with no dosing, age or weight guidance anywhere on the page. Starred items: breast milk storage bags or containers, breast pump and parts, manual pump, powdered formula and preparation materials, pacifiers, bulb syringe.",
+      "notes": "Whole page re-read on 2026-10-30 (about 16,500 characters, no truncation). The 'reviewed' date (2024-02-15) is earlier than the 'published' date (2024-05-15) on the page itself; reproduced as shown. The two-page PDF version of the checklist was not read."
     },
     {
       "id": "start-redcross-older-adults",
@@ -296,7 +297,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Identify likely disasters and community plans; build a support network and meet with helpers; plan to stay home at least two weeks or evacuate; sign up for local registries if you need help evacuating; back-up plan for power-dependent medical devices and medicines that must stay cold; two ways out of every room; property or renter's insurance; keep at least 30 days of medications and extra assistive items; review, practice and refresh the plan, supplies and documents now and every six months.",
-      "notes": "The American Red Cross is a congressionally chartered humanitarian nonprofit, not a government regulator. The page shows no date."
+      "notes": "The American Red Cross is a congressionally chartered nonprofit, not a regulator or government agency. The page shows no date. Fetched and read in full (main content) on 2026-10-29."
     },
     {
       "id": "start-acl-emergency",
@@ -323,8 +324,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Read the introduction, table of contents and first 12 of 79 pages. A template for owners of multifamily properties; covers resident protection and safety, building protection and business continuity; the table of contents lists resident handouts, an evacuation special assistance form and a go-bag checklist; plans should be updated annually; Rental Assistance Demonstration (RAD) conversions are required to create a property-wide disaster plan that includes an evacuation plan.",
-      "notes": "Pages 13-79 were not read. The disclaimer says the work is based on Ready.gov and does not necessarily reflect HUD's official position."
+      "supports": "Read the introduction, disclaimer, table of contents and first 12 of 79 pages. An optional planning template for owners of multifamily properties; covers resident protection and safety, building protection and business continuity; the table of contents lists resident handouts, an evacuation special assistance form and a go-bag checklist. Supports only the statement that such a template exists. Does not establish any legal duty of any landlord or any HUD requirement.",
+      "notes": "Pages 13-79 were NOT read. The template's own disclaimer says it is a model for owners to adapt, that not all recommendations apply to every building, and that opinions in it do not necessarily reflect HUD's official position. Do not use it as evidence of what any owner is legally required to do. The RAD requirement it mentions was not checked against current HUD rules."
     },
     {
       "id": "start-fema-housing",
@@ -337,7 +338,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "FEMA help applies to presidentially declared disasters and primary residences; rent and lodging expense reimbursement for displaced households; Serious Needs payments for essentials such as food, water, baby formula and medication; accessibility repairs; you may qualify even if you have insurance, after filing a claim; eligibility conditions include citizenship or qualified-alien status and identity verification; apply at disasterassistance.gov, by phone at 1-800-621-3362 or at a Disaster Recovery Center."
+      "supports": "FEMA help applies to presidentially declared disasters and primary residences; rent and lodging expense reimbursement for displaced households; Serious Needs payments for essentials such as food, water, baby formula and medication; accessibility repairs; you may qualify even if you have insurance, after filing a claim; eligibility conditions include citizenship or qualified-alien status and identity verification; apply at disasterassistance.gov, by phone at 1-800-621-3362 or at a Disaster Recovery Center.",
+      "notes": "Main page content read in full on 2026-10-30 (about 6,250 characters). The page calls its eligibility list 'general conditions'; it does not say whether conditions vary by declaration or change over time. We did not read the Individual Assistance Program and Policy Guide it links to."
     },
     {
       "id": "start-usfa-high-rise",
@@ -351,7 +353,21 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Know the exits and fire-safety features of your building; practice your exit route; do not prop stairway or corridor doors open; do not use elevators during a fire; close stair doors behind you; call 911; not all tall buildings meet modern standards; a person who cannot use the stairs should call 911 and be prepared to shelter in place, possibly in a room with the door closed and a wet towel sealing the cracks, or wait on a clear stair landing for help.",
-      "notes": "A blog post written for fire educators after a 2022 apartment fire; the safety messages are for residents. Not the same page as the 'usfa-fire-escape' placeholder in register.json."
+      "notes": "Whole page re-read on 2026-10-30 via direct download. A blog post written for fire educators; the exit and shelter-in-place messages are about FIRE in tall buildings and say nothing about other hazards. Not the same page as the 'usfa-fire-escape' placeholder in register.json."
+    },
+    {
+      "id": "start-fema-power-sheet",
+      "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "published": "2023-12",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "English two-page sheet (pages 1-2 of a 34-page file) read in full as extracted text: make a plan for refrigerating medicines and powering medical devices; talk to your doctor to plan for medical devices and medication storage; generators, camp stoves and charcoal grills outdoors at least 20 feet from building openings such as windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; CO and smoke alarms with battery backup; refrigerator keeps food cold about 4 hours, full freezer about 48 hours; throw away refrigerated food above 40 F for more than 4 hours; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'",
+      "notes": "Newer than the 2020 FEMA guide and the Ready.gov power-outages web page, which say to discard refrigerated medication after a day and use a two-hour food rule. Pages 3-34 of the file yielded no extractable text (likely translations as images) and were not read. Downloaded directly with curl and converted with pdftotext because Firecrawl had no credits."
     }
   ]
 }

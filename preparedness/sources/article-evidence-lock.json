@@ -67,13 +67,13 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/go-bags.body.html",
-        "git_blob_sha": "ee2f6252715bda05ae2b7b538e33708fd7585f07",
-        "bytes": 22573
+        "git_blob_sha": "5135639786bbafa4e03939a74659cd0f31df3564",
+        "bytes": 24931
       },
       "metadata": {
         "path": "preparedness/content/articles/go-bags.meta.json",
-        "git_blob_sha": "b33fca0a6e9c8897616c86796a6ef1213bf9080a",
-        "bytes": 3696
+        "git_blob_sha": "16cc5e91204a77486912444c6e516f5d5b48f567",
+        "bytes": 3881
       }
     },
     {
@@ -114,8 +114,8 @@
       },
       "metadata": {
         "path": "preparedness/content/articles/homemade-water-filters.meta.json",
-        "git_blob_sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
-        "bytes": 1973
+        "git_blob_sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+        "bytes": 2367
       }
     },
     {
@@ -123,8 +123,8 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/household-emergency-plan.body.html",
-        "git_blob_sha": "6407a31a882211e62c00f4e07ec7dc4d5abf99c6",
-        "bytes": 23031
+        "git_blob_sha": "8ca5c261dba56eeaf79c445332381a74867233de",
+        "bytes": 23176
       },
       "metadata": {
         "path": "preparedness/content/articles/household-emergency-plan.meta.json",
@@ -277,13 +277,13 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/preparedness-real-households.body.html",
-        "git_blob_sha": "3a504c50914112f890643ca316be4a9b5e9dc8ee",
-        "bytes": 22821
+        "git_blob_sha": "70d03c366e10db623929f118501becfa26c48bab",
+        "bytes": 24269
       },
       "metadata": {
         "path": "preparedness/content/articles/preparedness-real-households.meta.json",
-        "git_blob_sha": "f9e2e2b066159beb78a676c6ffae92bbd981785c",
-        "bytes": 3618
+        "git_blob_sha": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+        "bytes": 3948
       }
     },
     {
@@ -417,13 +417,13 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/three-day-kit.body.html",
-        "git_blob_sha": "f578cdbae602c1ad58a9237c8dea0fd74c99f7da",
-        "bytes": 21648
+        "git_blob_sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+        "bytes": 24783
       },
       "metadata": {
         "path": "preparedness/content/articles/three-day-kit.meta.json",
-        "git_blob_sha": "920d87d7c40174c530e4ecb5c2b34cb77641928e",
-        "bytes": 3281
+        "git_blob_sha": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+        "bytes": 3865
       }
     },
     {
@@ -510,5 +510,30 @@
         "bytes": 3142
       }
     }
-  ]
+  ],
+  "reconciliation_20261030": {
+    "state": "GIT_INPUT_IDENTITY_ONLY_EXPERT_SOURCE_AND_SAFETY_QA_PENDING",
+    "original_integrated_head_sha": "c8df99cc661e518e93e58e1cc1ea3d7256f58643",
+    "original_input_freeze_parent_sha": "a2618238ddcb3377a608b535577a5724a8cfd335",
+    "latest_start_contributor_head_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "revision_origin": "start",
+    "article_slugs": [
+      "go-bags",
+      "household-emergency-plan",
+      "preparedness-real-households",
+      "three-day-kit"
+    ],
+    "review_reapproval_required": true,
+    "human_link_validation": false,
+    "advice_not_assessed_safe": true
+  },
+  "source_use_completeness_20261030": {
+    "status": "ALL_CITED_SOURCES_REQUIRE_ARTICLE_LEVEL_SCOPE_NOTE",
+    "metadata_corrected_for": [
+      "homemade-water-filters:cdc-find-clean-water",
+      "preparedness-real-households:start-ready-plan"
+    ],
+    "human_source_link_review": false,
+    "clinically_reviewed": false
+  }
 }
