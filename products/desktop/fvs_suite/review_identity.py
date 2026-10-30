@@ -6,7 +6,12 @@ from modifications that occur after a final consistency check.
 """
 from __future__ import annotations
 
+import hashlib
 import hmac
+import os
+from pathlib import Path
+
+from .journal_io import read_regular_bytes
 
 _HEX = frozenset("0123456789abcdef")
 
@@ -32,3 +37,23 @@ def require_snapshot_match(expected_report_sha256: str | None,
         raise ValueError("Current report fingerprint is invalid; reopen the report")
     if not hmac.compare_digest(expected_report_sha256, observed_report_sha256):
         raise ValueError("Source report changed since it was opened; reopen before exporting or sealing")
+
+
+def journal_snapshot_identity(journal: str | Path) -> str:
+    """Fingerprint descriptor-verified journal bytes, or its genuine absence.
+
+    The identity distinguishes an absent journal from an empty existing file.
+    This detects observed concurrent changes, not malicious re-hashing or
+    reviewer authenticity; no customer content or path appears in errors.
+    """
+    from .exception_review import MAX_JOURNAL_BYTES
+
+    path = Path(journal)
+    try:
+        os.lstat(path)
+    except FileNotFoundError:
+        return "absent"
+    # Once present, disappearance during the bounded descriptor read is an
+    # error, NOT another acceptable absent snapshot.
+    data = read_regular_bytes(path, MAX_JOURNAL_BYTES, "Review journal")
+    return "sha256:" + hashlib.sha256(data).hexdigest()
