@@ -1,0 +1,17 @@
+{
+  "site_origin": "https://finalvestige.com",
+  "retrieved_at": "2026-10-30T09:00:00Z",
+  "evidence_source": "Authenticated WordPress.com connector: posts.list/posts.get; pages.list; settings.get",
+  "permalink_structure": "/%year%/%monthnum%/%day%/%postname%/",
+  "posts": [
+    {"id": 34, "slug": "the-morning-san-francisco-lost-its-water", "status": "publish", "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/"},
+    {"id": 38, "slug": "the-cisterns-beneath-san-francisco", "status": "publish", "url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/"}
+  ],
+  "published_page_paths": ["/focus/", "/dispatch/", "/blog/", "/archive/"],
+  "published_page_slug_collision_check": "pages.list returned 79 published pages; neither article's bare slug appears as a published page",
+  "articles": [
+    {"id": 34, "title": "The Morning San Francisco Lost Its Water", "links": ["/the-cisterns-beneath-san-francisco/"]},
+    {"id": 38, "title": "The Cisterns Beneath San Francisco", "links": ["/the-morning-san-francisco-lost-its-water/"]}
+  ],
+  "collection_note": "61/61 published posts inspected for source links targeting a known published post by bare slug rather than its dated canonical permalink. Exactly these two matched. No browser HTTP response obtained. Other categories of links were not exhaustively validated."
+}
