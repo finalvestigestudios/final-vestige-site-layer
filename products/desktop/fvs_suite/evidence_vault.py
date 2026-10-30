@@ -21,6 +21,7 @@ from cryptography.hazmat.primitives.kdf.scrypt import Scrypt
 from .exception_review import (
     MAX_JOURNAL_BYTES, MAX_REPORT_BYTES, read_cases, read_journal,
 )
+from .review_identity import require_snapshot_match
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -87,7 +88,8 @@ def _name(value: str, extension: str) -> str:
 
 
 def seal_evidence(report: str | Path, product: str, journal: str | Path,
-                  folder: str | Path, passphrase: str) -> Path:
+                  folder: str | Path, passphrase: str, *,
+                  expected_report_sha256: str | None = None) -> Path:
     """Verify evidence, then write an exclusive AES-256-GCM encrypted backup.
 
     Originals remain plaintext and unchanged.  The caller must protect them.
@@ -99,6 +101,7 @@ def seal_evidence(report: str | Path, product: str, journal: str | Path,
     if source.resolve() == journal_path.resolve():
         raise ValueError("Journal and report cannot be the same file")
     batch = read_cases(source, product)
+    require_snapshot_match(expected_report_sha256, batch.report_sha256)
     data = _read_regular(source, MAX_REPORT_BYTES, "Report")
     if batch.report_sha256 != _sha(data):
         raise ValueError("Report changed while preparing encrypted evidence")
@@ -113,6 +116,7 @@ def seal_evidence(report: str | Path, product: str, journal: str | Path,
         raise ValueError("Report changed while preparing encrypted evidence")
     if not included and events:
         raise ValueError("Unrecorded review events are not allowed")
+    require_snapshot_match(expected_report_sha256, _sha(data))
     payload = {
         "schema": 1, "product": product,
         "sealed_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),

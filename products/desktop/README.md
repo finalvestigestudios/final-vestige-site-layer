@@ -716,3 +716,7 @@ for limits, independent source-byte verification and test/release gates.
 - Boolean/float window or quota controls are rejected, and at most 200,000 imported records may be considered. Matching classifications, seven-day window, deterministic reviewer IDs, the 100,000-candidate default quota, and all existing valid CSV output fields remain unchanged.
 - **20 isolated synthetic regressions passed in Python 3.13.5 Linux**, in both normal and optimized (`-OO`) interpreter modes, with warnings-as-errors; source and test blobs matched the tested local files. Full repository integration and native Windows x64 smoke/AV/accessibility gates remain **unexecuted**. See [R67 Invoice boundary runbook](docs/INVOICE_DIRECT_INPUT_BOUNDARY_R67.md).
 - **Unreleased:** No executables, new download links, premium access changes, production edits, or QD bypass. Human review of all duplicate candidates is mandatory.
+
+## R70 source-bound premium review exports (pre-release)
+
+The premium review window now rechecks its selected report and journal before human review, register export, and encrypted backup actions. Both output APIs accept the opened report's expected SHA-256; a different valid report at the same path is rejected before publishing evidence. See [R70 review snapshot identity contract](docs/PREMIUM_REPORT_SNAPSHOT_R70.md). The 22 focused local tests do **not** establish complete-repository integration, Windows x64 acceptance, entitlement security, or release approval.

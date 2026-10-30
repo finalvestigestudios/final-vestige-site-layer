@@ -51,3 +51,29 @@ class ReviewQueue:
         self.batch = batch
         self.journal = journal
         self.report_path = selected_path
+
+    def verify_current(
+        self,
+        product: str,
+        read_cases: Callable[[Path, str], Any],
+        latest_states: Callable[[Path, Any], object],
+    ) -> Any:
+        """Revalidate the displayed source and journal before a human action.
+
+        Clear *all* actionable references if the source or journal changed,
+        vanished, or failed validation. This complements operation-specific
+        checks that must run again immediately before output publication.
+        """
+        if self.batch is None or self.journal is None or self.report_path is None:
+            raise ValueError("No verified premium report is selected")
+        try:
+            if product not in ("grants", "procurement"):
+                raise ValueError("Review queue requires a premium product")
+            current = read_cases(self.report_path, product)
+            if current is None or current != self.batch:
+                raise ValueError("Loaded source report changed; reopen before acting")
+            latest_states(self.journal, current)
+            return current
+        except (ValueError, OSError, UnicodeError):
+            self.clear()
+            raise

@@ -299,7 +299,8 @@ def _csv_cell(value: object) -> str:
 
 
 def export_register(report: str | Path, product: str, journal: str | Path,
-                    folder: str | Path) -> Path:
+                    folder: str | Path, *,
+                    expected_report_sha256: str | None = None) -> Path:
     """Atomically publish a register only if report and full journal stay stable.
 
     Every review is a human record, never spending or eligibility approval.
@@ -310,4 +311,5 @@ def export_register(report: str | Path, product: str, journal: str | Path,
     return publish_review_register(
         report, product, journal, folder,
         read_cases=read_cases, read_journal=read_journal,
-        columns=CSV_FIELDS, cell=_csv_cell)
+        columns=CSV_FIELDS, cell=_csv_cell,
+        expected_report_sha256=expected_report_sha256)

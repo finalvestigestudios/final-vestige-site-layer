@@ -119,6 +119,18 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             tree.delete(*previous)
         status_text.set("No verified report is loaded. Select a valid premium exception report.")
 
+
+    def _verify_selected_evidence() -> bool:
+        try:
+            selection.verify_current(product, read_cases, latest_states)
+        except (ValueError, OSError, UnicodeError) as exc:
+            _reset_report_view()
+            messagebox.showerror(
+                "Review evidence changed", safe_error_message(exc, operation="report"),
+                parent=window)
+            return False
+        return True
+
     def load_report(path):
         _reset_report_view()
         if not _authorized():
@@ -131,7 +143,12 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
                 parent=window)
             return
         report_text.set(str(selection.report_path))
-        display()
+        try:
+            display()
+        except (ValueError, OSError, UnicodeError) as exc:
+            _reset_report_view()
+            messagebox.showerror("Review evidence changed",
+                                 safe_error_message(exc, operation="report"), parent=window)
 
     def choose_report():
         if not _authorized():
@@ -151,12 +168,14 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if batch is None:
             messagebox.showwarning("Missing report", "Open an exception report first.", parent=window)
             return
+        if not _verify_selected_evidence():
+            return
         chosen = tree.selection()
         if not chosen:
             messagebox.showwarning("Missing selection", "Select an exception row first.", parent=window)
             return
         try:
-            append_review(report_text.get(), product, selection.journal,
+            append_review(selection.report_path, product, selection.journal,
                           case_id=chosen[0], expected_report_sha256=batch.report_sha256,
                           reviewer=reviewer.get(), decision=decision.get(),
                           rationale=rationale.get("1.0", "end-1c"))
@@ -178,8 +197,11 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             parent=window, title="Choose output folder for sanitized review register")
         if not target:
             return
+        if not _verify_selected_evidence():
+            return
         try:
-            path = export_register(report_text.get(), product, selection.journal, target)
+            path = export_register(selection.report_path, product, selection.journal, target,
+                                   expected_report_sha256=batch.report_sha256)
         except (ValueError, OSError, UnicodeError) as exc:
             messagebox.showerror("Export failed", safe_error_message(exc, operation="export"), parent=window)
             return
@@ -210,7 +232,10 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             messagebox.showerror("Passphrases differ", "No archive was created.", parent=window)
             return
         try:
-            path = seal_evidence(report_text.get(), product, selection.journal, target, secret)
+            if not _verify_selected_evidence():
+                return
+            path = seal_evidence(selection.report_path, product, selection.journal, target,
+                                 secret, expected_report_sha256=batch.report_sha256)
         except (ValueError, OSError, UnicodeError) as exc:
             messagebox.showerror("Encrypted backup failed", safe_error_message(exc, operation="backup"), parent=window)
             return
