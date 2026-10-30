@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-30T07:36:00Z",
+  "source": "Authenticated WordPress pages.get/edit; public HTTP and mobile DOM not verified",
+  "landing": {
+    "id": 1304,
+    "status": "publish",
+    "noindex": false,
+    "seo_title": "",
+    "seo_description": "",
+    "markup": "<a href='/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/'>Historical research preview</a><a href='/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/'>Decision-record research preview</a><a href='/accountability/public-money-private-power/maximus-public-money-private-infrastructure/'>Contractor research preview</a><a href='/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/'>Failures-to-Protect research preview</a><a href='/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/'>Established criminal accountability</a>"
+  },
+  "documents": [
+    {"id":1313,"url":"https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/","status":"publish","noindex":true,"editorial_label":"Research Draft"},
+    {"id":1314,"url":"https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/","status":"publish","noindex":true,"editorial_label":"Research Draft"},
+    {"id":1315,"url":"https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/","status":"publish","noindex":true,"editorial_label":"Research Draft"},
+    {"id":1312,"url":"https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/","status":"publish","noindex":true,"editorial_label":"Research Draft"},
+    {"id":1316,"url":"https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/","status":"publish","noindex":false,"editorial_label":"Established Criminal Accountability"}
+  ]
+}
