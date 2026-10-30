@@ -26,9 +26,14 @@ PACKAGE_FILES = {
     "payloads/detail-lens-wp-block-v1.txt",
     "payloads/evidence-map-wp-block-v1.txt",
     "payloads/signal-finder-wp-block-v1.txt",
+    "payloads/hero-assembly-wp-block-v1.txt",
+    "payloads/margins-wire-wp-block-v1.txt",
+    "payloads/investigation-walkthrough-wp-block-v1.txt",
+    "payloads/library-inspector-wp-block-v1.txt",
+    "payloads/signature-alignment-wp-block-v1.txt",
 }
-CHECKOUT_SHA = "11d5960a326750d5838078e36cf38b85af677262"
-UPLOAD_ARTIFACT_SHA = "ea165f8d65b6e75b540449e92b4886f43607fa02"
+CHECKOUT_SHA = "3d3c42e5aac5ba805825da76410c181273ba90b1"
+UPLOAD_ARTIFACT_SHA = "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
 
 
 def fail(message: str) -> None:

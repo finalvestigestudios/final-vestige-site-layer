@@ -1,0 +1,131 @@
+<!-- wp:html -->
+<script id="fv-signature-alignment-v1-js">
+(()=>{
+if(window.__fvSignatureAlignment)return;
+window.__fvSignatureAlignment=true;
+try{
+// FV_SIGNATURE_ALIGNMENT_GATE_START
+const fvSaShouldRun=(ctx)=>{
+  if(!ctx)return false;
+  return !!(ctx.hasStage&&ctx.hasDivider&&ctx.hasMapPanel&&ctx.hasBadge&&ctx.hasReveal&&ctx.hasFact&&ctx.hasTrigger&&ctx.hasStatus);
+};
+// FV_SIGNATURE_ALIGNMENT_GATE_END
+
+const stage=document.querySelector('[data-fv-align-stage]');
+const divider=stage&&stage.querySelector('[data-fv-align-divider]');
+const mapPanel=stage&&stage.querySelector('.fv-align__panel--map');
+const badge=stage&&stage.querySelector('[data-fv-align-badge]');
+const reveal=document.querySelector('[data-fv-align-reveal]');
+const fact=reveal&&reveal.querySelector('[data-fv-align-fact]');
+const trigger=reveal&&reveal.querySelector('[data-fv-align-reveal-trigger]');
+const status=document.querySelector('[data-fv-align-status]');
+
+if(!fvSaShouldRun({hasStage:!!stage,hasDivider:!!divider,hasMapPanel:!!mapPanel,hasBadge:!!badge,hasReveal:!!reveal,hasFact:!!fact,hasTrigger:!!trigger,hasStatus:!!status}))return;
+
+const supportsInert='inert' in document.createElement('div');
+if(!supportsInert)return;
+
+const LOW=15;
+const HIGH=85;
+const panels=Array.from(stage.querySelectorAll('.fv-align__panel'));
+
+let found=false;
+let visitedLow=false;
+let visitedHigh=false;
+
+stage.setAttribute('role','slider');
+stage.setAttribute('tabindex','0');
+stage.setAttribute('aria-labelledby','fv-align-title');
+stage.setAttribute('aria-valuemin','4');
+stage.setAttribute('aria-valuemax','96');
+stage.setAttribute('aria-describedby','fv-align-desc');
+stage.classList.add('fv-align--enhanced');
+panels.forEach((p)=>p.setAttribute('aria-hidden','true'));
+
+reveal.classList.add('fv-align__reveal--pending');
+fact.inert=true;
+
+const describePosition=(pct)=>{
+  if(pct<=LOW)return 'showing mostly the 1918 to 1920 reconstruction, map '+Math.round(pct)+' percent visible';
+  if(pct>=HIGH)return 'showing mostly the 1903 map, map '+Math.round(pct)+' percent visible';
+  return 'comparing both records, map '+Math.round(pct)+' percent visible';
+};
+
+const revealConnection=(focusTarget)=>{
+  if(found)return;
+  found=true;
+  badge.setAttribute('data-revealed','1');
+  stage.classList.add('fv-align--locked');
+  reveal.classList.add('fv-align--found');
+  fact.inert=false;
+  status.textContent='Connection found: the map predates the curve that failed. Read why below.';
+  if(focusTarget)focusTarget.focus();
+  trigger.textContent='Connection found';
+  trigger.disabled=true;
+};
+
+const checkDiscovery=(pct)=>{
+  if(pct<=LOW)visitedLow=true;
+  if(pct>=HIGH)visitedHigh=true;
+  if(visitedLow&&visitedHigh)revealConnection();
+};
+
+const setPosition=(pctRaw)=>{
+  const pct=Math.max(4,Math.min(96,pctRaw));
+  divider.style.left=pct+'%';
+  mapPanel.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
+  stage.setAttribute('aria-valuenow',String(Math.round(pct)));
+  stage.setAttribute('aria-valuetext',describePosition(pct));
+  checkDiscovery(pct);
+};
+
+const pctFromClientX=(clientX)=>{
+  const rect=stage.getBoundingClientRect();
+  return ((clientX-rect.left)/rect.width)*100;
+};
+
+let dragging=false;
+const onStart=(e)=>{
+  dragging=true;
+  stage.focus();
+  setPosition(pctFromClientX(e.clientX));
+  if(e.cancelable)e.preventDefault();
+};
+const onMove=(e)=>{ if(dragging)setPosition(pctFromClientX(e.clientX)); };
+const onEnd=()=>{ dragging=false; };
+
+stage.addEventListener('pointerdown',onStart);
+stage.addEventListener('mousedown',onStart);
+window.addEventListener('pointermove',onMove);
+window.addEventListener('mousemove',onMove);
+window.addEventListener('pointerup',onEnd);
+window.addEventListener('mouseup',onEnd);
+
+stage.addEventListener('keydown',(e)=>{
+  const current=parseFloat(divider.style.left)||50;
+  if(e.key==='ArrowLeft'){ setPosition(current-4); e.preventDefault(); }
+  if(e.key==='ArrowRight'){ setPosition(current+4); e.preventDefault(); }
+});
+
+trigger.addEventListener('click',()=>revealConnection(fact));
+
+setPosition(20);
+
+}catch(_){
+  window.__fvSignatureAlignment=false;
+  try{
+    const fallbackFact=document.querySelector('[data-fv-align-fact]');
+    if(fallbackFact&&'inert' in fallbackFact)fallbackFact.inert=false;
+    const fallbackReveal=document.querySelector('[data-fv-align-reveal]');
+    if(fallbackReveal)fallbackReveal.classList.remove('fv-align__reveal--pending');
+    const fallbackStage=document.querySelector('[data-fv-align-stage]');
+    if(fallbackStage){
+      ['role','tabindex','aria-labelledby','aria-valuemin','aria-valuemax','aria-valuenow','aria-valuetext','aria-describedby'].forEach((a)=>fallbackStage.removeAttribute(a));
+      fallbackStage.classList.remove('fv-align--enhanced');
+      Array.from(fallbackStage.querySelectorAll('.fv-align__panel')).forEach((p)=>p.removeAttribute('aria-hidden'));
+    }
+  }catch(_){}
+}
+})();
+</script>
+<!-- /wp:html -->

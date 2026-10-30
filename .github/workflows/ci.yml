@@ -17,7 +17,7 @@ jobs:
       CHECKOUT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - name: Checkout candidate
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7 resolved SHA
         with:
           ref: ${{ env.CHECKOUT_REF }}
           fetch-depth: 0
@@ -62,6 +62,21 @@ jobs:
       - name: Case Search adversarial behavior
         run: python3 tests/verify_case_search.py
 
+      - name: Hero Assembly adversarial behavior
+        run: python3 tests/verify_hero_assembly.py
+
+      - name: Margins Wire adversarial behavior
+        run: python3 tests/verify_margins_wire.py
+
+      - name: Investigation Walkthrough adversarial behavior
+        run: python3 tests/verify_investigation_walkthrough.py
+
+      - name: Library Inspector adversarial behavior
+        run: python3 tests/verify_library_inspector.py
+
+      - name: Signature Alignment adversarial behavior
+        run: python3 tests/verify_signature_alignment.py
+
       - name: Build deterministic bridge package twice
         run: |
           mkdir -p dist
@@ -75,7 +90,7 @@ jobs:
         run: python3 tests/verify_deploy_lane.py "$RELEASE_COMMIT" dist/final-vestige-site-layer.zip
 
       - name: Upload exact candidate package
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 resolved SHA
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7 resolved SHA
         with:
           name: fvsl-package-${{ env.RELEASE_COMMIT }}
           path: dist/final-vestige-site-layer.zip
@@ -91,7 +106,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Checkout production
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 resolved SHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7 resolved SHA
         with:
           fetch-depth: 0
 

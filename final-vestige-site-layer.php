@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Final Vestige Site Layer
  * Description: Versioned, fail-closed delivery layer for QD-reviewed Final Vestige front-end features.
- * Version: 0.2.1
+ * Version: 0.4.0
  * Author: Final Vestige Studios
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -10,8 +10,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FVSL_VERSION', '0.2.1' );
-define( 'FVSL_RELEASE_ID', 'FVSL-E2E-CANARY-001' );
+define( 'FVSL_VERSION', '0.4.0' );
+define( 'FVSL_RELEASE_ID', 'FVSL-VESTIGE-ASSEMBLY-HOME-002' );
 define( 'FVSL_PIPELINE_CANARY', 'FVS-E2E-20260911-A' );
 
 /**
@@ -40,6 +40,31 @@ function fvsl_release_manifest() {
             'file'   => 'case-search-wp-block-v1.txt',
             'bytes'  => 17534,
             'sha256' => 'e313db1e31ff1fce01b8bbd5d8dda03673b9a52aadcc7cbecafd2cec50dcc6a7',
+        ),
+        'hero-assembly' => array(
+            'file'   => 'hero-assembly-wp-block-v1.txt',
+            'bytes'  => 1137,
+            'sha256' => '5535880f3db7805b17b2766bcb8e8f6381456c037f8c67c3944f30c8aa8f86d0',
+        ),
+        'margins-wire' => array(
+            'file'   => 'margins-wire-wp-block-v1.txt',
+            'bytes'  => 4392,
+            'sha256' => '004b6462e663155e5fede0620dd6f60fa13729984fbf69117aa1672a2e6102de',
+        ),
+        'investigation-walkthrough' => array(
+            'file'   => 'investigation-walkthrough-wp-block-v1.txt',
+            'bytes'  => 5180,
+            'sha256' => '8d8efdfb50cb177c852ed87283f9ba0628bc033a7c0b51ca06ae627c391622bd',
+        ),
+        'library-inspector' => array(
+            'file'   => 'library-inspector-wp-block-v1.txt',
+            'bytes'  => 2646,
+            'sha256' => '0d736919a7defab459f041c41aea77b851ceb63463e718b84e367a6b68f1b2d3',
+        ),
+        'signature-alignment' => array(
+            'file'   => 'signature-alignment-wp-block-v1.txt',
+            'bytes'  => 4884,
+            'sha256' => '37c3ba4e9b6c78bbcca09f30c80ad49f8b0a1e5b5dbf49e1b270c1fc994825cd',
         ),
     );
 }
@@ -80,6 +105,25 @@ function fvsl_release_is_intact() {
     $verified = true;
     return true;
 }
+
+/**
+ * Preload the one editorial display face the homepage redesign's headlines
+ * use (Fraunces). Every fv-* style already lists ui-serif/Georgia fallbacks,
+ * so a missing or blocked font never breaks layout -- this only sharpens it.
+ * Gated by the same release-integrity check as the footer payloads.
+ *
+ * @return void
+ */
+function fvsl_enqueue_display_font() {
+    if ( is_admin() || ! fvsl_release_is_intact() ) {
+        return;
+    }
+
+    echo "\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n";
+    echo "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
+    echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">' . "\n";
+}
+add_action( 'wp_head', 'fvsl_enqueue_display_font' );
 
 /**
  * Emit the exact reviewed payloads at the standard front-end footer hook.
