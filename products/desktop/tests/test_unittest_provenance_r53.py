@@ -103,6 +103,8 @@ class UnittestProvenanceR53Tests(unittest.TestCase):
         optimized = json.loads(self.invoke(optimized=True).stdout)
         self.assertEqual(regular["test_ids_sha256"], optimized["test_ids_sha256"])
         self.assertNotEqual(regular["skipped_count"], optimized["skipped_count"])
+        self.assertNotEqual(regular["active_ids_sha256"], optimized["active_ids_sha256"])
+        self.assertNotEqual(regular["skipped_ids_sha256"], optimized["skipped_ids_sha256"])
 
 
 if __name__ == "__main__":

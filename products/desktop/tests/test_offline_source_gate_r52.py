@@ -40,9 +40,11 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         self.smoke_calls = []
 
     def sample_summary(self):
-        return {"schema": "fvs-unittest-provenance-v1", "test_count": 12,
+        return {"schema": "fvs-unittest-provenance-v2", "test_count": 12,
                 "module_count": 2, "skipped_count": 1,
-                "test_ids_sha256": "a" * 64}
+                "test_ids_sha256": "a" * 64,
+                "active_ids_sha256": "b" * 64,
+                "skipped_ids_sha256": "c" * 64}
 
     def pass_tests(self, optimized):
         self.test_passes.append(optimized)
@@ -236,6 +238,30 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
             proc.side_effect = subprocess.TimeoutExpired(["python"], timeout=61)
             with self.assertRaisesRegex(RuntimeError, "timed out"):
                 gate._child_suite(self.root, True, timeout=61)
+
+
+    def test_equal_skip_counts_but_different_skipped_ids_withholds_smokes(self):
+        def swapped(optimized):
+            value = self.sample_summary()
+            if optimized:
+                value["skipped_ids_sha256"] = "d" * 64
+                value["active_ids_sha256"] = "e" * 64
+            return value
+        with self.assertRaisesRegex(RuntimeError, "coverage differs"):
+            self.verify(tests=swapped)
+        self.assertFalse(self.smoke_calls)
+
+    def test_invalid_skip_or_active_digest_fails_closed(self):
+        for field in ("active_ids_sha256", "skipped_ids_sha256"):
+            for bad in ("", "g" * 64, True, "F" * 64):
+                summary = {**self.sample_summary(), field: bad}
+                with self.assertRaises(RuntimeError):
+                    gate._validated_suite_summary(summary)
+
+    def test_legacy_v1_manifest_fails_closed(self):
+        summary = {**self.sample_summary(), "schema": "fvs-unittest-provenance-v1"}
+        with self.assertRaises(RuntimeError):
+            gate._validated_suite_summary(summary)
 
 
 if __name__ == "__main__":
