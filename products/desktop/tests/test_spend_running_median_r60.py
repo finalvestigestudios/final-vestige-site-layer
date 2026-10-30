@@ -26,7 +26,8 @@ def _format(total: Decimal) -> str:
 def _summary(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     return summarize_spend(rows, normalize_vendor=_normalize,
                            parse_date=date.fromisoformat,
-                           parse_money=_money, format_money=_format)
+                           parse_money=_money, format_money=_format,
+                           source_sha256="0" * 64)
 
 
 class SpendRunningMedianR60(unittest.TestCase):
