@@ -57,3 +57,37 @@ Same format as `SAFETY-REVIEW-CHECKLIST.md` section C. All three gated articles 
 * NPS and Monticello interpretive pages are classed `museum`; NPS history articles are not a listed kind. If the lead prefers a separate kind for heritage-site interpretation, five register entries would change.
 * `hist-home-oregon-slow-sand` is an operator-training slide deck (state regulator). If the lead judges it too weak for a gated article, the single paragraph that cites it can be rewritten using only the AIM25 archive record.
 * No build outputs are committed (hubs, landing and the build report are shared files); the lead's rebuild after merging will pick up these five.
+
+## Self-audit after the first QD review (2026-10-30)
+
+Merged `origin/feature/preparedness-archive-v1` (head ee591e2, merge commit bca18a8; no conflicts). Re-read the brief's "QD lessons". Audited the five articles against the defect classes (a) to (e). Targeted edits only; `status.publish` stays `draft`; `safety_review.state` stays `pending` on #28, #29, #30 and `not-required` on #27, #33. **No article is claimed as QD PASS or approved.**
+
+Commands run from the repo root, with actual results:
+
+| Command | Result |
+|---|---|
+| `python -I preparedness/tools/validate.py` | 0 errors, 0 warnings |
+| `python -I preparedness/tools/build.py` | exit code 0 (build outputs are now git-ignored and not committed) |
+| `python -I -m unittest discover -s preparedness/tests -v` | Ran 36 tests, OK; 0 failures, 0 errors, 0 skipped |
+
+**Found and fixed:**
+* (e) `water-purification-through-history`: said disinfection came "a few decades" after nineteenth-century filtering; the sources give 1829 (Chelsea filter beds) and 1908 (first US chlorination), roughly eight decades. Reworded. Also softened "the foundation under every modern water rule" (not supported by what we read), "sand filtration did work, and the proof is..." (the sources show modern utility-scale performance, not historical effect), and an unsourced remark that distillation "was valuable in 1773" (now an editor's note saying the sources do not discuss it).
+* (c) `water-purification-through-history`: the Phipps distilling quotation was attributed to "the report"; the text we read does not say whose account Savours quotes, so it now says so. The claim that Doctor Irving was "the surgeon Charles Irving" came from a search snippet, not a page we read; reduced to "Doctor Irving". The 1852 Metropolis Water Act requirement (filtering within five miles of St Paul's) rests on one state training deck only; now tagged uncertain with a note that we did not read the Act.
+* (c) `water-purification-through-history` and `sanitation-before-germ-theory`: the Wellcome record describes pages 97-120 of the *Cholera Inquiry Committee's* 1855 report to the St James vestry, attributing the map to Snow. We had written "Snow's report" and attributed the report's whole scope to him. Corrected in both.
+* (e) `sanitation-before-germ-theory`: "Snow demonstrated, by counting, that water mattered more than air" and "numbers that would undo" miasma were stronger than our sources; reworded to what the cited scholarship says (contaminated water as the key source of the epidemics he studied) and "challenged". The ledger row now says Snow's data linked those cases to contaminated water.
+* (b) Source kinds: the four journal articles (`hist-home-ayu-water`, `hist-home-savours-phipps`, `hist-home-smith-naval-hygiene`, `hist-home-chadwick-cureus`) are now `journal` (were `scholarship`). The Tulchinsky book chapter stays `scholarship`. NPS and Monticello interpretive pages remain `museum` (public agency and a house museum, neither a regulator); Monticello is run by a nonprofit foundation, so the lead may prefer `nonprofit` for those three entries, which would not change any article's validation (history pieces still have the Wellcome archive record and RMG museum source in #33; #27 and #30 keep other museum/archive entries) but would need a check on #27 and #29, which rely on Monticello and NPS for their museum-kind source.
+* (d) Every fragment entry's `notes` now ends with an exact "Reading depth:" line: FULL (page read whole as markdown) or PARTIAL (read through a targeted extraction; what was and was not seen). Examples: the Snow digitized text was only fragments of the first part; the Smith 2018 article was read to roughly the first 9,000 characters of a 58,000-character extraction; the Oregon deck was 77 slides read through an extraction.
+
+**Checked, no change needed:** (a) no article gives a filter design, layers, dimensions, dose, brine, ratio, acidity value, curing figure or time; the one set of numbers reproduced is the University of Missouri Extension storage chart for produce, labelled as published. #30 states that homemade sand/charcoal filters are not a way to make unknown water safe and links to the built guides; #29 states that rainwater needs testing and treatment before drinking and reproduces no CDC dose table; #28 reproduces no CDC boil times.
+
+**Statements we could not verify to the QD standard (all stated on the pages as unverified, uncertain or not examined):**
+* Anything in Simmons's 1796 book about pickling (catalogue record only).
+* That Jefferson's sand-filter well was ever built (the Foundation's quoted letter says he had not done it "as yet").
+* What period Savours' "thirty four to forty gallons" refers to (figure not used).
+* The 1852 Act's five-mile filtering rule, which rests on one state training deck.
+* The Chadwick review's claim that sanitary reform reduced cholera and typhoid (one narrative review; tagged uncertain).
+* Whether Fort Union's cisterns held drinking water (the page is silent).
+* The truth of the 1898 belief that San Juan's cistern water had been poisoned (the release reports only the belief).
+* The Wellcome Collection records for Chadwick's report and Blane's *Observations* (HTTP 429; not cited) and the NCBI Bookshelf historical note (blocked; not cited).
+
+**All 27 sources in `hist-home.json` remain `human_link_check: false`.** No page has had a human click-through.
