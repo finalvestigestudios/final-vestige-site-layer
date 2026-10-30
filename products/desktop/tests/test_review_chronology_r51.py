@@ -100,6 +100,15 @@ class JournalChronologyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "UTC"):
             check_new_review_clock(None, clock)
 
+    def test_persisted_second_precision_prevents_fractional_backdating(self):
+        clock = datetime(2026, 10, 30, 3, 5, 1, 999999, tzinfo=timezone.utc)
+        previous = "2026-10-30T03:05:01.500000Z"
+        # Prior raw wall clock is later, but the exact serialized second
+        # would go backwards; the append caller must pass its rounded instant.
+        self.assertIsNone(check_new_review_clock(previous, clock))
+        with self.assertRaisesRegex(ValueError, "predates"):
+            check_new_review_clock(previous, clock.replace(microsecond=0))
+
     def test_new_review_naive_clock_rejected(self):
         with self.assertRaises(ValueError):
             check_new_review_clock(None, datetime(2026, 10, 30, 3, 5))
