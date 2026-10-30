@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "method": "Exact committed 61-post image snapshot cross-checked against 2026-10-30 authenticated posts.get and unchanged PR154 classifier",
+  "post_modified": {
+    "285": "2026-09-08T10:06:47",
+    "291": "2026-08-28T15:14:59"
+  },
+  "images": [
+    {
+      "key": "291:0",
+      "url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "291:1",
+      "url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+      "alt": "Aerial view of Teton Dam and reservoir around the time of the 1976 failure.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "291:2",
+      "url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "291:3",
+      "url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "alt": "Aerial view of the flooding downstream after the Teton Dam collapse.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "291:4",
+      "url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+      "alt": "The surviving remains of Teton Dam in Idaho, with the river passing through the unreconstructed breach.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "291:5",
+      "url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "285:0",
+      "url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "285:1",
+      "url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "285:2",
+      "url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "285:3",
+      "url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "285:4",
+      "url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "285:5",
+      "url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "origin": "external",
+      "http_status": null,
+      "natural_width": null,
+      "wire_bytes": null,
+      "broken_in_browser": null,
+      "rights_cleared": false,
+      "wp_edit_approved": false,
+      "max_width": 960,
+      "no_upscale": true
+    }
+  ],
+  "source_reconciliation": {
+    "old_pr154_csv": {
+      "285": 5,
+      "291": 5
+    },
+    "current_original_classifier": {
+      "285": 6,
+      "291": 6
+    },
+    "current_offsite_288_vs_old_286": "now reproduced, historic raw source input absent; do not assert code defect",
+    "proxy_origin_cases": [
+      "291:0",
+      "285:1"
+    ]
+  },
+  "duplicate_photo": {
+    "slots": [
+      "291:2",
+      "291:5"
+    ],
+    "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+    "wrong_breach_alt": "Growing breach in Teton Dam during the final hour before collapse.",
+    "aftermath_alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+    "publisher_article": "https://www.deseret.com/the-west/2024/06/05/deseret-news-archives-devastation-after-teton-dam-collapse-could-have-been-much-worse/",
+    "publisher_image_description": "Rexburg street debris/cleanup after the Teton Dam failure",
+    "issue": "Same exact cleanup JPG falsely presented as pre-collapse dam-face breach in image slot 291:2"
+  },
+  "alternative": {
+    "target_slot": "291:2",
+    "institution": "National Archives",
+    "naid": "28894684",
+    "record_url": "https://catalog.archives.gov/id/28894684",
+    "article_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+    "description": "Hole in dam embankment grows larger",
+    "author_context": "Jerry Dursteller, employee of Gibbons and Reed private contractor",
+    "license": "HOLD_PER_IMAGE",
+    "original_binary_sha256": null,
+    "intrinsic_dimensions": null,
+    "max_width": 960,
+    "no_upscale": true,
+    "wp_media_id": null,
+    "approved": false
+  },
+  "claims": {
+    "image_failures_42_verified": false,
+    "weight_savings_76pct_verified": false,
+    "no_wordpress_changes": true,
+    "no_assets_downloaded": true
+  }
+}

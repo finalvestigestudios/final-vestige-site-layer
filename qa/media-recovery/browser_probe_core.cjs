@@ -48,7 +48,16 @@ function renderSrcMatch(s,r){return [r.src,r.currentSrc,r.dataSrc].some(u=>sameS
 function matchStoredImages(stored,rendered){
  const rows=stored.map(s=>({s,urls:rendered.filter(r=>renderSrcMatch(s,r))}));
  return rows.map(({s,urls})=>{
-  if(urls.length>1)return{key:s.key,match:'ambiguous_url',rendered:null};
+  if(urls.length>1){
+   // ALT disambiguates DOM positions ONLY after each URL independently matches.
+   const alt=normalizedAlt(s.alt);
+   const candidates=alt?urls.filter(r=>normalizedAlt(r.alt)===alt):[];
+   if(candidates.length===1){
+    const owners=rows.filter(x=>x.urls.includes(candidates[0])&&normalizedAlt(x.s.alt)===alt);
+    if(owners.length===1)return{key:s.key,match:'exact_url_unique_alt',rendered:candidates[0]};
+   }
+   return{key:s.key,match:'ambiguous_url',rendered:null};
+  }
   if(urls.length===1){
    // Distinct stored slots may not reuse one DOM element as two verified image loads.
    const colliders=rows.filter(x=>x.urls.includes(urls[0]));
@@ -65,7 +74,7 @@ function classifyImages(stored,rendered,network,pageVerified){
   const r=j.rendered,s=stored.find(x=>x.key===j.key);
   const req=r&&network.findLast(n=>[n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc||r.src)||sameSource(u,r.src)));
   const responseStatus=req&&Number.isInteger(req.status)?req.status:null,reqError=req?.failed_error||null;
-  const identityVerified=j.match==='exact_url_or_jetpack_origin';
+  const identityVerified=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
   const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&(reqError||(responseStatus!==null&&responseStatus>=400)));
   const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth>0);
   let state='unverified';

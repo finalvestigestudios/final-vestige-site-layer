@@ -32,3 +32,8 @@ Six further **distinct** source-ID matches in `qa/media-recovery/primary_source_
 
 ## 14-slot source identity addendum — October 30, 2026
 A new [14-image source review](MEDIA-ARCHIVAL-IDENTITY-BATCH-20261030.md) records **13** additional source identity candidates from six exact canonical Commons file pages, four Archimedes Project exact inline image URLs, two NASA photo IDs via Commons mirrors, and one USGS original filename/derivative relation. P0 official/publisher/file candidate coverage is now **35/36**, but only candidates (not proven-working assets); **418:4** remains a secondary NOAA provenance lead. Commons **268:0** original is only **665px wide** (no upscale to 960px); five Commons scans show CC BY 2.0 licenses with a conflicting CC BY 3.0 description. NASA tribute images are from **2017**, not 1967. No visitor-browser HTTP failures, 76% improvement, or legal release established. Native test source: `qa/media-recovery/test_authority_14.cjs`.
+
+
+## Source-level visual integrity addendum — 2026-10-30
+
+**Teton Dam post 291 reused the exact same post-collapse Deseret cleanup JPG in slots 291:2 and 291:5 under incompatible historical ALT descriptions; 291:2 incorrectly calls it a dam-face breach.** See [archival source verification, NARA NAID 28894684 alternative (rights HELD), and conservative 960px plan](MEDIA-TETON-VISUAL-INTEGRITY-20261030.md). Fresh current Gutenberg HTML classified by unchanged Site QA PR #154 code gives 6/6 external for both posts 291 and 285 vs earlier 5/6; root cause of old input/CSV difference remains unproven. Browser probe now handles duplicate source URLs using distinct URL+ALT proof, never alt alone. No WordPress edits or verified 42/76% claims.
