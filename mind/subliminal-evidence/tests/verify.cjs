@@ -16,7 +16,7 @@ ck("exactly one guide H1",()=> (P.match(/<h1\b/g)||[]).length===1);
 ck("no nested main landmarks",()=>!/<main\b/.test(P));
 ck("disabled merchant CTA",()=>/<button[^>]*disabled[^>]*>/.test(P));
 ck("affiliate disclosure before CTA",()=>P.indexOf('id="fvsg-disclosure"')>=0&&P.indexOf('id="fvsg-disclosure"')<P.indexOf('<button type="button" class="fvsg-no-offer"'));
-ck("merchant links not active in guide",()=>!/<a[^>]*href="https:\/\/(?:www\.)?(?:subliminalguru|inspire3)\.com/i.test(P));
+ck("merchant links not active in guide or investigation",()=>![H,P].some(x=>/<a[^>]*href="https:\/\/(?:www\.)?(?:subliminalguru|inspire3)\.com/i.test(x)));
 ck("no tracking code",()=>!/[<]script|googletagmanager|facebook\.net|dataLayer\.push/i.test(P));
 ck("responsive for phones",()=>H.includes("@media(max-width:640px)")&&P.includes("@media(max-width:520px)"));
 ck("reduced motion respected",()=>H.includes("prefers-reduced-motion:reduce")&&P.includes("prefers-reduced-motion:reduce"));
