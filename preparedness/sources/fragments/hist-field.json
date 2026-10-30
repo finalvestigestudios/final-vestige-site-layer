@@ -12,7 +12,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
-      "notes": "Upgraded from the register placeholder. The drafting agent read the LOC record, title page, preface and table of contents (OCR text), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
+      "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, contents and the opening of chapter I), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
     },
     {
       "id": "loc-pioneer-diaries",
@@ -110,21 +110,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Unintentional actions are the leading cause of outside fires; use propane, charcoal and wood-pellet grills only outside (indoor use can cause fire or carbon monoxide poisoning); build campfires at least 25 feet from tents, shrubs and anything that can burn; fire pits, chimneys and outdoor fireplaces at least 10 feet from the home or anything that can burn; watch children at fire pits; use a metal screen over wood-burning fires; put fires out before leaving; store matches and lighters out of children's sight and reach.",
-      "notes": "DISCREPANCY: campfire distance is 25 ft here, 15 ft at NPS and Smokey Bear, and 10 ft for fire pits at NFPA (NFPA 1 fire code: 50 ft for open fires where adopted). The article reports the range and defers to the local fire authority."
-    },
-    {
-      "id": "hist-field-smokey-campfire",
-      "title": "How to Put Out a Campfire (Campfire Safety)",
-      "publisher": "Smokey Bear wildfire-prevention campaign (NPS's Campfires page describes this site as information from the U.S. Forest Service and Smokey Bear)",
-      "kind": "regulator",
-      "url": "https://smokeybear.com/campfire-safety",
-      "published": null,
-      "updated": null,
-      "reviewed": null,
-      "verified_on": "2026-10-29",
-      "human_link_check": false,
-      "supports": "Check fire restrictions before you go and do not build a campfire where rules prohibit it; do not build one in hazardous, dry or windy conditions; keep water, a bucket, a shovel and a metal fire ring on hand; keep at least 15 feet from tents, vegetation and low branches; light with a match or lighter and never use flammable liquids; never burn trash, aerosols, pressurized containers, batteries, glass or aluminum; extinguish by drowning with water, stirring, and feeling that embers are cool, not just with dirt or sand; call 911 if a fire escapes.",
-      "notes": "The page text we read does not itself name a publishing agency; NPS's Campfires page points readers to it as U.S. Forest Service / Smokey Bear material. Flagged for the reviewer. The page contains building and pit-digging steps that this archive deliberately does not reproduce."
+      "notes": "Read in full (short page). DISCREPANCY: campfire distance is 25 ft here, 15 ft at NPS, and 10 ft for fire pits at NFPA (NFPA 1 fire code: 50 ft for open fires where adopted, per NFPA's summary). The article reports the range and defers to the local fire authority."
     },
     {
       "id": "hist-field-nps-campfires",
@@ -138,13 +124,13 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Know the local rules and fire conditions (windy and dry weather may mean campfires are banned) and ask the park before you go; keep tents and flammables at least 15 feet away and upwind; use matches or a lighter on a firestarter; use only lighter fluid as an accelerant and never gasoline; never leave a campfire unattended and keep water nearby; burning anything but wood, especially plastics, can produce toxic gases; douse with plenty of water, and in a pinch stir sand or dirt into spread-out coals; if a fire gets out of control, note your location and call 911.",
-      "notes": "Page last updated 2017-04-17, the oldest of the fire-safety sources. It permits lighter fluid where the park allows; the USFA and Smokey Bear pages say never to use flammable liquids. The article follows the stricter statement and names the difference."
+      "notes": "Read in full. Page last updated 2017-04-17, the oldest of the fire-safety sources. It permits lighter fluid where the park allows; the NFPA article says never to use gasoline or other flammable or combustible liquids. The article follows the stricter statement and names the difference."
     },
     {
       "id": "hist-field-nfpa-outdoor-fire",
       "title": "Wildfire Prevention Tips for Fire Pits and Outdoor Fires (Michele Steinberg, NFPA)",
-      "publisher": "National Fire Protection Association (a fire-code and standards body; not a government regulator)",
-      "kind": "regulator",
+      "publisher": "National Fire Protection Association (nonprofit fire-code and standards developer)",
+      "kind": "nonprofit",
       "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2025/09/10/wildfire-prevention-tips-for-fire-pits-and-outdoor-fires",
       "published": "2025-09-10",
       "updated": null,
@@ -152,7 +138,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Contact the local fire department about requirements and restrictions before any outdoor fire; some places never allow outdoor fire, others restrict it by season or conditions; avoid burning anything outdoors on windy, dry days because embers can ignite structures or cause a wildfire; supervise outdoor fires; never burn plastics, treated lumber, tires, paint or aerosol containers; never use gasoline or other flammable liquids; fire pits at least 10 feet from anything that can burn; NFPA 1 (where adopted) requires permits and 50 feet from structures for outdoor fires, and an attendant with extinguishing equipment.",
-      "notes": "An NFPA staff blog post that summarizes NFPA educational messages and the NFPA 1 fire code; the post says its opinions are the author's. NFPA is a nonprofit standards developer whose codes are adopted by jurisdictions. The register's kind list has no better fit than 'regulator'. Flagged for the reviewer."
+      "notes": "NFPA staff article summarizing NFPA educational messages and the NFPA 1 fire code; the article says its opinions are the author's. The drafting agent read the whole article, NOT the NFPA 1 code itself, so the 50-foot and permit statements are reported as NFPA's summary of the code. Kind corrected to 'nonprofit' after the lead's validator change."
     },
     {
       "id": "hist-field-cdc-co-basics",
@@ -320,7 +306,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Lansford W. Hastings claimed a timesaving route (the Hastings Cutoff) through the Great Salt Lake Desert; late starters found it enticing; the Donner-Reed party of 87 people left Illinois on April 12 and passed Independence, Missouri on May 12 with 2,500 miles to go, joining Hastings' group of 80 wagons to save 150-500 miles (Hastings 'a little vague'); the route took more time than the popular routes, depleting supplies and livestock; they reached the Humboldt River on September 26 and Truckee Lake in October, exhausted and low on provisions, and were trapped by snow for four months; once the animals were killed by mid-December they ate rawhide; some left on a self-rescue mission and resorted to cannibalism; 40 of the 87 died of starvation-related causes; survivors were not rescued until spring 1847. Quotes Sarah Winnemucca that her Paiute people 'would have helped' but were afraid.",
-      "notes": "DISCREPANCIES with other sources: NPS counts 87 people and 40 deaths; McCurdy (1994) counts 90 people and 42 deaths; Britannica says Donners and Reeds left Springfield April 14 and gives 42 deaths and 47 survivors; the Utah state history essay says 47 of 87 reached Sutter's Fort. The NPS page also gives the departure from Illinois as April 12. The saving Hastings claimed is stated as 150-500 miles by NPS and 'more than 300 miles' by Britannica."
+      "notes": "DISCREPANCIES with other sources: NPS counts 87 people and 40 deaths; McCurdy (1994) counts 90 people and 42 deaths; Britannica says Donners and Reeds left Springfield April 14 and gives 42 deaths and 47 survivors; the Utah state history essay says 47 of 87 reached Sutter's Fort. The NPS page also gives the departure from Illinois as April 12. The saving Hastings claimed is stated as 150-500 miles by NPS and 'more than 300 miles' by Britannica. Read in full (short page). Kind 'museum' is the closest fit for an NPS interpretive history page; flagged."
     },
     {
       "id": "hist-field-utah-hastings",
@@ -340,7 +326,7 @@
       "id": "hist-field-mccurdy-1994",
       "title": "Epidemiology of disaster. The Donner Party (1846-1847) (S A McCurdy), Western Journal of Medicine 160(4):338-342",
       "publisher": "Western Journal of Medicine, via PubMed Central (author at UC Davis School of Medicine)",
-      "kind": "scholarship",
+      "kind": "journal",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1022425/",
       "published": "1994-04",
       "updated": null,
@@ -376,7 +362,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Tertiary reference summary: Hastings Cutoff was proposed by an unreliable guide and was in reality 125 miles longer than the established trail; Reed was warned at Fort Laramie by a friend who had just come east through the cutoff; the party spent about two weeks breaking a trail through the Wasatch; a note from Hastings said the Great Salt Lake Desert could be crossed in two days but it took five; dozens of cattle were lost and several wagons abandoned; Paiute warriors killed several remaining oxen; they cached nearly all personal possessions except food, clothing and essentials; snow blocked the pass on October 31; many oxen wandered off and were lost in the snow; deaths totaled 42 with 47 survivors; Breen's diary is the only contemporary written record of the ordeal; in 2010 researchers reported no physical evidence of cannibalism at Alder Creek while noting absence of evidence does not rule it out.",
-      "notes": "Tertiary source. Used for specific figures that NPS and the Utah essay do not give (the desert crossing, the 125-mile figure), each attributed by name in the text. Its figure of 42 deaths with 47 survivors does not add up to the 87-person party it names. Britannica also attributes the oxen losses to Paiute warriors, whereas NPS quotes Sarah Winnemucca that her people were afraid and would have helped; the article reports the disagreement."
+      "notes": "Tertiary encyclopedia article; the register's kind list has no 'reference' kind, so 'scholarship' is the closest available and is imperfect (flagged for the lead). Read in full. Used for specific figures that NPS and the Utah essay do not give (the desert crossing, the 125-mile figure, relief-party dates), each attributed by name in the text. Its figure of 42 deaths with 47 survivors does not add up to the 87-person party it names. Britannica attributes oxen losses to Paiute warriors, whereas NPS quotes Sarah Winnemucca that her people were afraid and would have helped; the article reports the disagreement."
     }
   ]
 }
