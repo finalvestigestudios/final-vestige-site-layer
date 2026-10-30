@@ -1,0 +1,47 @@
+{
+  "run_scope": "local Chromium in-memory full-page fixture, no actual WP staging or network assets",
+  "axe": "NOT RUN \u2014 no verified local axe-core bundle",
+  "metrics_class": "synthetic browser, NOT field p75 Core Web Vitals",
+  "results": [
+    {
+      "width": 320,
+      "named_interactives": 127,
+      "unnamed_controls": 0,
+      "lcp_ms": 312,
+      "cls": 0,
+      "select_height": 48
+    },
+    {
+      "width": 390,
+      "named_interactives": 127,
+      "unnamed_controls": 0,
+      "lcp_ms": 148,
+      "cls": 0,
+      "select_height": 48
+    },
+    {
+      "width": 768,
+      "named_interactives": 127,
+      "unnamed_controls": 0,
+      "lcp_ms": 172,
+      "cls": 0,
+      "select_height": 48
+    },
+    {
+      "width": 1440,
+      "named_interactives": 127,
+      "unnamed_controls": 0,
+      "lcp_ms": 224,
+      "cls": 0,
+      "select_height": 48
+    },
+    {
+      "width": 1920,
+      "named_interactives": 127,
+      "unnamed_controls": 0,
+      "lcp_ms": 176,
+      "cls": 0,
+      "select_height": 48
+    }
+  ]
+}
