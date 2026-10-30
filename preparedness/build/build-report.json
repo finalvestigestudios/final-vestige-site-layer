@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "slug": "homemade-water-filters",
+      "words": 1996,
+      "minutes": 9,
+      "sources": [
+        "cdc-water-safe",
+        "ready-water",
+        "cdc-water-hiking",
+        "nps-purify-water",
+        "epa-emergency-disinfection",
+        "cdc-find-clean-water"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/water/homemade-water-filters/"
+    },
+    {
       "slug": "making-water-safer",
       "words": 2657,
       "minutes": 12,
@@ -29,13 +43,75 @@
         "fsis-home-cure-qa"
       ],
       "canonical": "https://finalvestige.com/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/"
+    },
+    {
+      "slug": "two-week-water-storage",
+      "words": 1928,
+      "minutes": 9,
+      "sources": [
+        "cdc-water-store",
+        "ready-water",
+        "usscm-brenckle-2019"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/water/two-week-water-storage/"
+    },
+    {
+      "slug": "water-advisories-explained",
+      "words": 1932,
+      "minutes": 9,
+      "sources": [
+        "cdc-water-advisories",
+        "epa-emergency-disinfection",
+        "cdc-water-safe",
+        "cdc-find-clean-water"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/water/water-advisories-explained/"
+    },
+    {
+      "slug": "water-math",
+      "words": 2043,
+      "minutes": 9,
+      "sources": [
+        "cdc-water-store",
+        "ready-water",
+        "ready-pets",
+        "cdc-find-clean-water",
+        "usscm-brenckle-2019"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/water/water-math/"
+    },
+    {
+      "slug": "water-planner",
+      "words": 543,
+      "minutes": 2,
+      "sources": [
+        "cdc-water-store",
+        "ready-water",
+        "ready-pets"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/field-tools/water-planner/"
     }
   ],
   "landing": {
     "populated_sections": [
       "water",
-      "lost-ways"
+      "lost-ways",
+      "field-tools"
     ],
-    "article_cards": 2
-  }
+    "article_cards": 7
+  },
+  "hubs": [
+    {
+      "section": "water",
+      "guides": 5
+    },
+    {
+      "section": "lost-ways",
+      "guides": 1
+    },
+    {
+      "section": "field-tools",
+      "guides": 1
+    }
+  ]
 }

@@ -1,0 +1,24 @@
+{
+  "n": 7,
+  "slug": "homemade-water-filters",
+  "title": "Why homemade water filters can be dangerous",
+  "h1": "Clear water, sand and charcoal: why homemade filters can be dangerous",
+  "dek": "A bottle of gravel, sand and charcoal makes water look clean. What the CDC, the National Park Service and the EPA say a filter has to do, what a homemade one can't prove, and what to do instead.",
+  "description": "Why clear water isn't safe water and why homemade sand or charcoal filters can't be relied on, using CDC, National Park Service, EPA and FEMA guidance.",
+  "section": "water",
+  "track": "modern",
+  "tags": ["Filters", "Myths", "Improvised methods"],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If CDC, NPS or EPA revise their filter guidance, or at the next quarterly source sweep.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["making-water-safer", "water-advisories-explained", "two-week-water-storage"],
+  "source_use": {
+    "cdc-water-hiking": "Clear water can be unsafe; boiling is best, then filter-and-disinfect; the rated pore sizes and NSF 53/58 certification; viruses are not removed by portable filters; reverse osmosis; UV needs clear water.",
+    "nps-purify-water": "Never drink untreated natural water even if it looks clean; filtration alone does not purify; filters are screens; filter cloudy water before boiling; filter care.",
+    "cdc-water-safe": "Clearing cloudy water with a cloth, paper towel or coffee filter, or by settling; pore sizes; follow filtering with a disinfectant; fuel, chemicals and radioactive material.",
+    "ready-water": "Settle or strain before treating; boiling and chlorination do not remove heavy metals, salts and most chemicals; distillation does.",
+    "epa-emergency-disinfection": "Boiling or disinfection will not destroy heavy metals, salts and most other chemicals."
+  }
+}

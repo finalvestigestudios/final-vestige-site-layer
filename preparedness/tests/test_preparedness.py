@@ -26,7 +26,8 @@ class LibraryTests(unittest.TestCase):
         built = set(self.lib.articles)
         for a in self.lib.taxonomy["slate"]:
             if a["slug"] in built:
-                self.assertEqual(a["status"], "safety-approved-draft", a["slug"])
+                approved = self.lib.articles[a["slug"]]["safety_review"]["state"] == "approved"
+                self.assertEqual(a["status"], "safety-approved-draft" if approved else "drafted-pending-safety-review", a["slug"])
             else:
                 self.assertEqual(a["status"], "not-started", a["slug"])
 
@@ -100,7 +101,7 @@ class BuildTests(unittest.TestCase):
     def test_landing_lists_only_built_articles_and_no_empty_sections(self):
         titles = re.findall(r'<h3><a href="([^"]+)">', self.landing["inner"])
         self.assertEqual(len(titles), len(self.lib.articles))
-        self.assertEqual(self.landing["populated_sections"], ["water", "lost-ways"])
+        self.assertEqual(self.landing["populated_sections"], ["water", "lost-ways", "field-tools"])
 
     def test_landing_never_names_unwritten_articles(self):
         for a in self.lib.taxonomy["slate"]:
@@ -163,6 +164,54 @@ class BuildTests(unittest.TestCase):
         for s, b in self.built.items():
             self.assertNotRegex(b["inner"], r"<script[^>]+src=", s)
         self.assertNotRegex(self.landing["inner"], r"<script[^>]+src=")
+
+
+class HubAndToolTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.lib = build.Library()
+
+    def test_hubs_exist_only_for_populated_sections(self):
+        populated = {m["section"] for m in self.lib.articles.values()}
+        for sec in self.lib.taxonomy["sections"]:
+            hub = build.build_hub(self.lib, sec["slug"])
+            self.assertEqual(hub is not None, sec["slug"] in populated, sec["slug"])
+
+    def test_hub_lists_every_guide_in_its_section_and_nothing_else(self):
+        hub = build.build_hub(self.lib, "water")
+        hrefs = re.findall(r'<h3><a href="([^"]+)">', hub["inner"])
+        expected = sorted(self.lib.url_path(s) for s, m in self.lib.articles.items() if m["section"] == "water")
+        self.assertEqual(sorted(hrefs), expected)
+        self.assertIn('aria-label="Breadcrumb"', hub["inner"])
+        self.assertEqual(hub["inner"].count("<h1"), 1)
+
+    def test_water_planner_is_private_and_offline(self):
+        built = build.build_article(self.lib, "water-planner")["inner"]
+        script = "\n".join(re.findall(r"<script>(.*?)</script>", built, flags=re.S))
+        self.assertIn("computeWaterPlan", script)
+        for banned in ("localStorage", "sessionStorage", "indexedDB", "document.cookie", "fetch(", "XMLHttpRequest", "sendBeacon", "WebSocket", "navigator.", "import("):
+            self.assertNotIn(banned, script, f"planner must not use {banned}")
+        self.assertNotRegex(built, r"<form[^>]+(action|method)=")
+        self.assertIn("onsubmit=\"return false\"", built)
+
+    def test_planner_has_no_invented_pet_or_medical_defaults(self):
+        built = build.build_article(self.lib, "water-planner")["inner"]
+        for fid in ("wp-pets", "wp-petgal", "wp-extra"):
+            self.assertRegex(built, rf'id="{fid}"[^>]*value=""')
+
+    def test_every_planner_input_has_a_label(self):
+        built = build.build_article(self.lib, "water-planner")["inner"]
+        for fid in re.findall(r'<input id="([a-z\-]+)"', built):
+            labelled = f'for="{fid}"' in built or f'<label class="pa-tool-check"><input id="{fid}"' in built
+            self.assertTrue(labelled, f"input {fid} has no label")
+
+    def test_javascript_unit_tests(self):
+        import shutil, subprocess
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node not installed")
+        r = subprocess.run([node, str(ROOT / "tests" / "test_water_planner.js")], capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
 
 if __name__ == "__main__":

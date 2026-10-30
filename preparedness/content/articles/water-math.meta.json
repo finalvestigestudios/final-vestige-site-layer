@@ -1,0 +1,24 @@
+{
+  "n": 3,
+  "slug": "water-math",
+  "title": "Water math for your household",
+  "h1": "Water math: how much to store for one person, a family and the pets",
+  "dek": "The official baseline is one gallon per person per day. Here is what that number covers, what pushes it up, where it quietly runs out, and the one figure no official source gives you.",
+  "description": "How much emergency water to store: the CDC and FEMA baseline of one gallon per person per day, what raises it, worked examples, and what is not known for pets.",
+  "section": "water",
+  "track": "modern",
+  "tags": ["Planning", "Storage amounts", "Households"],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If CDC or Ready.gov revises the baseline or the adjustments, or at the next quarterly source sweep.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["making-water-safer", "salt-beef-salt-pork-age-of-sail"],
+  "source_use": {
+    "cdc-water-store": "One gallon per person per day for three days; try for two weeks; store more for pregnancy, illness, pets and heat; what the gallon is meant to cover.",
+    "ready-water": "About three-quarters of a gallon of fluid for a normally active person; individual needs vary; more for children, nursing mothers, sick people, medical emergencies; very hot weather can double needs; do not ration; do not substitute caffeinated or carbonated drinks.",
+    "ready-pets": "Pets need their own water bowl and several days' supply of water in the pet kit; no quantity is stated.",
+    "cdc-find-clean-water": "Other water found inside the home, and the cautions on each.",
+    "usscm-brenckle-2019": "The 1802 naval regulation and the documented 1813 daily allotment aboard USS Constitution (history panel only)."
+  }
+}

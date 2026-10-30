@@ -1,0 +1,380 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Clear water, sand and charcoal: why homemade filters can be dangerous | The Preparedness Archive</title><meta name="description" content="Why clear water isn&#x27;t safe water and why homemade sand or charcoal filters can&#x27;t be relied on, using CDC, National Park Service, EPA and FEMA guidance."><meta name="robots" content="noindex,nofollow"><style>html{background:#0C0D0D}body{margin:0}/* Preparedness Archive — scoped styles. Everything lives under .pa so it cannot leak into the live theme.
+   Tokens follow the Final Vestige palette read from finalvestige.com on 2026-10-29
+   (bg #0C0D0D, text #F4EFE6, gold #C5A46A/#B8955E, secondary #D8D2C7, square corners, Inter).
+   Layout uses container queries so it behaves inside the theme's narrow content column or full width. */
+
+.pa {
+  --pa-bg: #0C0D0D;
+  --pa-surface: #141615;
+  --pa-surface-2: #1B1D1B;
+  --pa-line: #34362F;
+  --pa-text: #F4EFE6;
+  --pa-muted: #CFC8BB;
+  --pa-gold: #C5A46A;
+  --pa-gold-dim: #B8955E;
+  --pa-paper: #E9E1D0;
+  --pa-ink: #1B1A16;
+  --pa-ink-soft: #4A4437;
+  --pa-ok: #8FC4A0;
+  --pa-warn: #E6BB70;
+  --pa-bad: #EE9A8C;
+  --pa-info: #A9C0D6;
+  --pa-ok-ink: #1F5133;
+  --pa-warn-ink: #6B4A0C;
+  --pa-bad-ink: #7A2418;
+  --pa-info-ink: #24456A;
+  --pa-measure: 68ch;
+
+  container-type: inline-size;
+  box-sizing: border-box;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px 56px;
+  background: var(--pa-bg);
+  color: var(--pa-text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.68;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+.pa *, .pa *::before, .pa *::after { box-sizing: border-box; }
+.pa a { color: var(--pa-gold); text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.pa a:hover { color: #E3C48C; }
+.pa a:focus-visible, .pa button:focus-visible, .pa input:focus-visible, .pa select:focus-visible, .pa summary:focus-visible {
+  outline: 3px solid var(--pa-gold); outline-offset: 3px; border-radius: 0;
+}
+.pa p { margin: 0 0 1.05em; }
+.pa strong { color: #FFFFFF; font-weight: 650; }
+.pa em { font-style: italic; }
+.pa .pa-skip { position: absolute; left: -9999px; }
+.pa .pa-skip:focus { left: 16px; top: 8px; background: var(--pa-gold); color: #101111; padding: 8px 12px; z-index: 10; }
+
+/* ---------- Breadcrumb and header ---------- */
+.pa-crumbs { padding: 22px 0 6px; font-size: 14px; color: var(--pa-muted); }
+.pa-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.pa-crumbs li + li::before { content: "/"; color: var(--pa-gold-dim); margin-right: 10px; }
+.pa-crumbs a { color: var(--pa-muted); }
+.pa-crumbs [aria-current="page"] { color: var(--pa-text); }
+
+.pa-head { padding: 28px 0 30px; border-bottom: 1px solid var(--pa-line); position: relative; }
+.pa-head::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 88px; height: 2px; background: var(--pa-gold); }
+.pa-kicker { margin: 0 0 14px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa h1 { margin: 0 0 18px; font-size: clamp(30px, 6.2cqw, 56px); line-height: 1.08; letter-spacing: -.02em; font-weight: 650; color: var(--pa-text); max-width: 20ch; text-wrap: balance; }
+.pa-dek { margin: 0 0 22px; font-size: clamp(18px, 2.4cqw, 22px); line-height: 1.5; color: var(--pa-muted); max-width: 52ch; }
+.pa-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; font-size: 14px; color: var(--pa-muted); }
+.pa-meta li { display: flex; gap: 6px; }
+.pa-meta b { color: var(--pa-text); font-weight: 600; }
+.pa-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.pa-chip { display: inline-block; padding: 4px 10px; font-size: 12.5px; letter-spacing: .04em; border: 1px solid var(--pa-line); background: var(--pa-surface); color: var(--pa-muted); }
+.pa-chip--gold { border-color: var(--pa-gold-dim); color: var(--pa-gold); }
+.pa-chip--warn { border-color: var(--pa-warn); color: var(--pa-warn); }
+
+/* ---------- Two-column article shell ---------- */
+.pa-shell { display: block; padding-top: 28px; }
+.pa-toc { margin: 0 0 28px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); font-size: 15px; }
+.pa-toc h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa-toc ol { margin: 0; padding-left: 1.2em; }
+.pa-toc li { margin: 4px 0; }
+.pa-toc a { color: var(--pa-muted); text-decoration: none; }
+.pa-toc a:hover { color: var(--pa-gold); text-decoration: underline; }
+@container (min-width: 900px) {
+  .pa-shell { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 56px; align-items: start; }
+  .pa-shell > .pa-toc { grid-column: 2; grid-row: 1; position: sticky; top: 24px; margin: 0; }
+  .pa-shell > .pa-body { grid-column: 1; grid-row: 1; }
+}
+
+/* ---------- Body typography ---------- */
+.pa-body { max-width: var(--pa-measure); min-width: 0; }
+.pa-body h2 { margin: 2.1em 0 .55em; font-size: clamp(24px, 3.6cqw, 32px); line-height: 1.2; letter-spacing: -.01em; font-weight: 650; color: var(--pa-text); scroll-margin-top: 20px; text-wrap: balance; }
+.pa-body h2::before { content: ""; display: block; width: 36px; height: 2px; background: var(--pa-gold-dim); margin-bottom: 14px; }
+.pa-body h3 { margin: 1.7em 0 .4em; font-size: 20px; line-height: 1.3; font-weight: 650; color: var(--pa-text); }
+.pa-body ul, .pa-body ol { margin: 0 0 1.1em; padding-left: 1.3em; }
+.pa-body li { margin: .35em 0; }
+.pa-body li::marker { color: var(--pa-gold-dim); }
+.pa-body blockquote { margin: 1.4em 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--pa-gold-dim); color: var(--pa-muted); font-style: italic; }
+.pa-body blockquote cite { display: block; margin-top: 8px; font-size: 14px; font-style: normal; color: var(--pa-gold); }
+.pa-body sup.pa-cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left: 1px; }
+.pa-body sup.pa-cite a { text-decoration: none; padding: 0 2px; }
+.pa-body sup.pa-cite a:hover { text-decoration: underline; }
+
+/* ---------- Components ---------- */
+.pa-act { margin: 0 0 36px; padding: 22px 24px 8px; background: var(--pa-paper); color: var(--pa-ink); border-top: 4px solid var(--pa-gold);
+  background-image: radial-gradient(rgba(27,26,22,.045) 1px, transparent 1.2px); background-size: 5px 5px; }
+.pa-act h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-ink); font-weight: 700; }
+.pa-act h2::before { display: none; }
+.pa-act p, .pa-act li { color: var(--pa-ink); }
+.pa-act strong { color: #000; }
+.pa-act ol { padding-left: 1.4em; margin-bottom: 1em; }
+.pa-act li::marker { color: var(--pa-ink); font-weight: 700; }
+.pa-act a { color: #4B3410; }
+.pa-act .pa-act-note { font-size: 15px; color: var(--pa-ink-soft); border-top: 1px solid rgba(27,26,22,.25); padding-top: 12px; }
+
+.pa-alert { margin: 1.6em 0; padding: 16px 20px; border: 1px solid var(--pa-warn); border-left-width: 5px; background: var(--pa-surface); }
+.pa-alert > :last-child { margin-bottom: 0; }
+.pa-alert-title { margin: 0 0 6px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--pa-warn); }
+.pa-alert--stop { border-color: var(--pa-bad); }
+.pa-alert--stop .pa-alert-title { color: var(--pa-bad); }
+.pa-alert--note { border-color: var(--pa-info); }
+.pa-alert--note .pa-alert-title { color: var(--pa-info); }
+
+.pa-verdict { margin: 2.2em 0; border: 1px solid var(--pa-line); background: var(--pa-surface-2); }
+.pa-verdict-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 14px 20px; border-bottom: 1px solid var(--pa-line); }
+.pa-verdict-head h2 { margin: 0; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 700; }
+.pa-verdict-head h2::before { display: none; }
+.pa-verdict-badge { font-size: 14px; font-weight: 700; padding: 3px 10px; border: 1px solid currentColor; }
+.pa-verdict-badge[data-verdict="validated"] { color: var(--pa-ok); }
+.pa-verdict-badge[data-verdict="context-dependent"] { color: var(--pa-warn); }
+.pa-verdict-badge[data-verdict="not-validated"] { color: var(--pa-warn); }
+.pa-verdict-badge[data-verdict="unsafe"] { color: var(--pa-bad); }
+.pa-verdict-body { padding: 16px 20px 6px; }
+.pa-verdict-body > :last-child { margin-bottom: 10px; }
+
+.pa-thennow { display: grid; gap: 0; margin: 2em 0; border: 1px solid var(--pa-line); }
+.pa-thennow > div { padding: 18px 20px 6px; }
+.pa-thennow h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-thennow .pa-then { background: var(--pa-surface-2); }
+.pa-thennow .pa-now { background: var(--pa-surface); border-top: 1px solid var(--pa-line); }
+@container (min-width: 700px) {
+  .pa-thennow { grid-template-columns: 1fr 1fr; }
+  .pa-thennow .pa-now { border-top: 0; border-left: 1px solid var(--pa-line); }
+}
+
+.pa-tablewrap { overflow-x: auto; margin: 1.4em 0; border: 1px solid var(--pa-line); -webkit-overflow-scrolling: touch; }
+.pa-tablewrap:focus-visible { outline: 3px solid var(--pa-gold); }
+.pa table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+.pa caption { text-align: left; padding: 12px 14px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; caption-side: top; }
+.pa th, .pa td { padding: 10px 14px; text-align: left; vertical-align: top; border-top: 1px solid var(--pa-line); }
+.pa thead th { background: var(--pa-surface-2); color: var(--pa-text); font-weight: 650; }
+.pa tbody th { font-weight: 600; color: var(--pa-text); }
+
+.pa-tag { display: inline-block; padding: 1px 8px; margin-right: 6px; font-size: 12px; font-weight: 650; letter-spacing: .05em; border: 1px solid currentColor; vertical-align: 1px; white-space: nowrap; }
+.pa-tag--fact { color: var(--pa-ok); }
+.pa-tag--doc { color: var(--pa-info); }
+.pa-tag--unc { color: var(--pa-warn); }
+.pa-tag--ed { color: var(--pa-muted); }
+
+.pa-key { margin: 0 0 2em; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--pa-muted); }
+.pa-key li { margin: 0; }
+
+.pa-facts { display: grid; gap: 1px; margin: 1.6em 0; background: var(--pa-line); border: 1px solid var(--pa-line); }
+.pa-facts > div { background: var(--pa-surface); padding: 14px 18px; }
+.pa-facts dt { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 4px; }
+.pa-facts dd { margin: 0; color: var(--pa-text); }
+@container (min-width: 620px) { .pa-facts { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Sources and review ---------- */
+.pa-sources { margin-top: 3em; padding-top: 8px; border-top: 1px solid var(--pa-line); max-width: var(--pa-measure); }
+.pa-sources h2 { margin: 1em 0 .4em; font-size: 24px; }
+.pa-sources h2::before { display: none; }
+.pa-sources ol { padding-left: 1.6em; }
+.pa-sources li { margin: 0 0 1em; font-size: 15.5px; line-height: 1.55; }
+.pa-sources .pa-src-meta { display: block; color: var(--pa-muted); font-size: 14px; }
+.pa-sources .pa-src-use { display: block; color: var(--pa-muted); font-size: 14px; }
+.pa-review { margin: 2.2em 0 0; padding: 18px 20px; border: 1px dashed var(--pa-gold-dim); background: var(--pa-surface); font-size: 15px; max-width: var(--pa-measure); }
+.pa-review h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-review h2::before { display: none; }
+.pa-review dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; }
+.pa-review dt { color: var(--pa-muted); }
+.pa-review dd { margin: 0; color: var(--pa-text); }
+.pa-related { margin-top: 2.4em; max-width: var(--pa-measure); }
+.pa-related h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-related h2::before { display: none; }
+.pa-related ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.pa-printbar { margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.pa-btn { display: inline-block; padding: 10px 18px; background: var(--pa-gold); color: #101111; border: 1px solid var(--pa-gold); font: inherit; font-size: 15px; font-weight: 650; text-decoration: none; cursor: pointer; border-radius: 0; }
+.pa-btn:hover { background: #D6B87E; color: #101111; }
+.pa-btn--ghost { background: transparent; color: var(--pa-gold); }
+.pa-btn--ghost:hover { background: var(--pa-surface-2); color: #E3C48C; }
+
+/* ---------- Landing ---------- */
+.pa-hero { padding: 54px 0 46px; border-bottom: 1px solid var(--pa-line); position: relative; }
+.pa-hero::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 120px; height: 2px; background: var(--pa-gold); }
+.pa-hero h1 { max-width: 14ch; font-size: clamp(36px, 8cqw, 76px); }
+.pa-hero .pa-dek { max-width: 46ch; }
+.pa-promise { margin: 28px 0 0; display: grid; gap: 14px; padding: 0; list-style: none; }
+.pa-promise li { padding-left: 16px; border-left: 2px solid var(--pa-gold-dim); color: var(--pa-muted); font-size: 16px; }
+.pa-promise b { color: var(--pa-text); }
+@container (min-width: 760px) { .pa-promise { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+
+.pa-now-strip { margin: 34px 0 0; padding: 18px 22px; background: var(--pa-paper); color: var(--pa-ink); border-top: 4px solid var(--pa-gold); }
+.pa-now-strip h2 { margin: 0 0 6px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-ink); font-weight: 700; }
+.pa-now-strip p { margin: 0; color: var(--pa-ink); }
+.pa-now-strip a { color: #4B3410; }
+
+.pa-section { padding: 46px 0 6px; }
+.pa-section > h2 { margin: 0 0 8px; font-size: clamp(26px, 4cqw, 36px); letter-spacing: -.01em; font-weight: 650; }
+.pa-section > p.pa-lede { margin: 0 0 22px; color: var(--pa-muted); max-width: 60ch; }
+
+.pa-filter { display: grid; gap: 12px; margin: 22px 0 8px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); }
+.pa-filter label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 4px; font-weight: 600; }
+.pa-filter input, .pa-filter select { width: 100%; min-height: 44px; padding: 8px 12px; font: inherit; font-size: 16px; color: var(--pa-text); background: var(--pa-bg); border: 1px solid #5B5C54; border-radius: 0; }
+.pa-filter output { font-size: 14px; color: var(--pa-muted); }
+@container (min-width: 720px) { .pa-filter { grid-template-columns: 2fr 1fr 1fr; align-items: end; } .pa-filter output { grid-column: 1 / -1; } }
+
+.pa-cards { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+@container (min-width: 700px) { .pa-cards { grid-template-columns: repeat(2, 1fr); } }
+.pa-card { position: relative; padding: 22px 22px 20px; background: var(--pa-surface); border: 1px solid var(--pa-line); border-top: 2px solid var(--pa-gold-dim); }
+.pa-card[hidden] { display: none; }
+.pa-card h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.28; font-weight: 650; }
+.pa-card h3 a { color: var(--pa-text); text-decoration: none; }
+.pa-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.pa-card:hover { border-color: var(--pa-gold-dim); background: var(--pa-surface-2); }
+.pa-card p { margin: 0 0 12px; font-size: 15.5px; color: var(--pa-muted); line-height: 1.55; }
+.pa-card .pa-card-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--pa-muted); margin: 0; }
+.pa-card .pa-card-track { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 10px; font-weight: 600; }
+
+.pa-two { display: grid; gap: 18px; margin: 22px 0 0; }
+@container (min-width: 760px) { .pa-two { grid-template-columns: 1fr 1fr; } }
+.pa-track { padding: 24px 24px 10px; border: 1px solid var(--pa-line); background: var(--pa-surface); }
+.pa-track h3 { margin: 0 0 8px; font-size: 22px; }
+.pa-track--modern { border-top: 3px solid var(--pa-paper); }
+.pa-track--lost { border-top: 3px solid var(--pa-gold); }
+.pa-standards { display: grid; gap: 14px; margin: 18px 0 0; padding: 0; list-style: none; }
+@container (min-width: 760px) { .pa-standards { grid-template-columns: repeat(2, 1fr); gap: 18px 36px; } }
+.pa-standards li { padding-left: 16px; border-left: 2px solid var(--pa-gold-dim); font-size: 16px; color: var(--pa-muted); }
+.pa-standards b { color: var(--pa-text); }
+.pa-empty { padding: 18px 20px; border: 1px dashed var(--pa-line); color: var(--pa-muted); font-size: 15px; }
+.pa-empty[hidden] { display: none; }
+
+
+/* ---------- Tools ---------- */
+.pa-tool { margin: 0 0 24px; padding: 20px; background: var(--pa-surface); border: 1px solid var(--pa-line); }
+.pa-tool-grid { display: grid; gap: 14px; margin: 0 0 14px; }
+@container (min-width: 620px) { .pa-tool-grid { grid-template-columns: repeat(2, 1fr); } }
+.pa-tool label { display: block; font-size: 14px; color: var(--pa-text); margin: 0 0 4px; font-weight: 600; }
+.pa-tool input[type="number"], .pa-tool input[type="date"] { width: 100%; min-height: 44px; padding: 8px 12px; font: inherit; font-size: 16px; color: var(--pa-text); background: var(--pa-bg); border: 1px solid #5B5C54; border-radius: 0; color-scheme: dark; }
+.pa-tool-set { margin: 0 0 16px; padding: 14px 16px; border: 1px solid var(--pa-line); }
+.pa-tool-set legend { padding: 0 6px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa-tool .pa-tool-check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.pa-tool .pa-tool-check input { width: 22px; height: 22px; margin-top: 2px; flex: none; accent-color: var(--pa-gold); }
+.pa-tool-note { display: block; font-size: 14px; color: var(--pa-muted); margin: 4px 0 0; }
+.pa-tool-out { margin: 0 0 8px; }
+.pa-tool-out h2 { margin: 1.2em 0 .5em; font-size: 24px; }
+
+/* ---------- Motion, forced colors, print ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .pa-card, .pa a, .pa-btn { transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+}
+@media (forced-colors: active) {
+  .pa-act, .pa-now-strip { border: 2px solid CanvasText; }
+  .pa-chip, .pa-tag, .pa-verdict-badge { border: 1px solid CanvasText; }
+}
+@media (max-width: 420px) {
+  .pa { font-size: 16.5px; padding-inline: 16px; }
+  .pa-act { padding: 18px 16px 6px; }
+  .pa-review dl { grid-template-columns: 1fr; gap: 0; }
+  .pa-review dd { margin-bottom: 8px; }
+}
+@media print {
+  .pa { background: #fff !important; color: #000 !important; font-size: 11.5pt; line-height: 1.5; max-width: none; padding: 0; container-type: normal; }
+  .pa *, .pa a { color: #000 !important; background: transparent !important; box-shadow: none !important; }
+  .pa a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
+  .pa-tool, .pa-toc, .pa-filter, .pa-printbar, .pa-skip, .pa-card h3 a::after { display: none !important; }
+  .pa-shell { display: block !important; }
+  .pa-act, .pa-alert, .pa-verdict, .pa-thennow, .pa-review { border: 1.5pt solid #000 !important; break-inside: avoid; }
+  .pa-body h2, .pa-body h3 { break-after: avoid; }
+  .pa-tablewrap { overflow: visible !important; border: 0; }
+  .pa table { min-width: 0 !important; }
+  .pa th, .pa td { border: 0.5pt solid #000 !important; }
+  .pa-sources li { break-inside: avoid; }
+}
+</style></head><body><main><div class="pa pa-article" data-slug="homemade-water-filters" data-track="modern" data-section="water"><a class="pa-skip" href="#pa-main">Skip to the guide</a><nav class="pa-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Final Vestige</a></li><li><a href="/preparedness/">The Preparedness Archive</a></li><li><a href="/preparedness/water/">Water</a></li><li><span aria-current="page">Why homemade water filters can be dangerous</span></li></ol></nav><header class="pa-head"><p class="pa-kicker">Water · Act now</p><h1>Clear water, sand and charcoal: why homemade filters can be dangerous</h1><p class="pa-dek">A bottle of gravel, sand and charcoal makes water look clean. What the CDC, the National Park Service and the EPA say a filter has to do, what a homemade one can&#x27;t prove, and what to do instead.</p><ul class="pa-meta"><li><b>9 min read</b></li><li>Updated <b>October 29, 2026</b></li><li>Sources last checked <b>October 29, 2026</b></li></ul><ul class="pa-chips" aria-label="Article status and topics"><li class="pa-chip pa-chip--gold">Act now</li><li class="pa-chip">Water</li><li class="pa-chip pa-chip--warn">Draft: not public</li><li class="pa-chip pa-chip--warn">Safety review pending</li><li class="pa-chip">Filters</li><li class="pa-chip">Myths</li><li class="pa-chip">Improvised methods</li></ul><div class="pa-printbar"><button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button></div></header><div class="pa-shell"><nav class="pa-toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#clear">Clear is not the same as safe</a></li><li><a href="#what-filter">What a filter is, and what officials ask of one</a></li><li><a href="#claims">Claims you will see, and what the sources allow us to say</a></li><li><a href="#what-prefilter-does">What improvised straining is good for</a></li><li><a href="#what-instead">What to do instead, in order</a></li><li><a href="#buying">If you buy a filter: a checklist</a></li><li><a href="#scenario">A worked scenario</a></li><li><a href="#limits">What this guide has and has not done</a></li></ol></nav><div class="pa-body" id="pa-main"><section class="pa-act" aria-labelledby="act-h">
+<h2 id="act-h">What to do now</h2>
+<ol>
+<li><strong>Do not rely on a homemade filter to make unknown water safe to drink.</strong> No official source we read describes one that does, and nothing at home can show you that yours worked.</li>
+<li><strong>If the water is cloudy, clear it first.</strong> Pour it through a clean cloth, paper towel or coffee filter, or let it settle and draw off the clear water on top. That step is endorsed. It only prepares the water.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup><sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>Then treat it.</strong> Boiling is the best method. After it, a rolling boil for 1 minute, or 3 minutes above 6,500 feet, is the CDC's instruction.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></li>
+<li><strong>If you use a commercial filter,</strong> read its rating (see below) and follow it with a disinfectant, because filters do not remove viruses.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></li>
+<li><strong>If fuel, chemicals or radioactive material may be in the water,</strong> stop. No filter or boiling fixes that. Use bottled water or another source.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></li>
+</ol>
+<p class="pa-act-note">The rest of this guide explains why, so you can resist the persuasive video that says otherwise.</p>
+</section>
+
+<ul class="pa-key" aria-label="How to read the labels in this guide">
+<li><span class="pa-tag pa-tag--fact">Official guidance</span> An instruction or fact taken from the source cited beside it.</li>
+<li><span class="pa-tag pa-tag--ed">Editor's note</span> Our reasoning. It is not a statement from a source, and we say where a source is silent.</li>
+</ul>
+
+<h2 id="clear">Clear is not the same as safe</h2>
+<p>The most appealing thing about a homemade filter is the demonstration: murky water goes in the top, clear water drips out the bottom. The trouble is that clearness is not the property that matters.</p>
+<p>The CDC puts it directly. Water containing germs that can make you sick, including bacteria, viruses and parasites, sometimes looks clean, and drinking water straight from a clear mountain stream is generally not safe.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup> The National Park Service says never to drink water from a natural source that you haven't purified, even if it looks clean, because water in a stream, river or lake can still be full of bacteria, viruses and parasites.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> This is why homemade filters are not just useless but risky. They produce a convincing signal (clear water) that has no reliable connection to the safety of the water. A person who would hesitate to drink cloudy water may drink the clear water from a bottle of sand and charcoal without a second thought.</p>
+
+<h2 id="what-filter">What a filter is, and what officials ask of one</h2>
+<p>The National Park Service describes most water filters as a screen with many tiny holes in it. Such filters can remove protozoa and some bacteria, but they cannot filter out viruses because viruses are too small.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup> They also remove bigger contaminants such as leaves, silt, dirt and sand. And the NPS says plainly: filtration by itself does not purify water. It must be followed by boiling or disinfection.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></p>
+<p>The CDC and the NPS specify what a filter has to be, in terms a buyer can check:<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup><sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></p>
+<ul>
+<li>An <strong>absolute pore size of 1 micron or smaller</strong>, or certification to NSF standard 53 or 58 for cyst reduction or removal, will remove parasites, but not viruses or all bacteria.</li>
+<li>An <strong>absolute pore size of 0.3 micron or smaller</strong> will remove bacteria and parasites, but not viruses.</li>
+<li><strong>Reverse osmosis</strong> filters remove parasites, bacteria and viruses, and they also remove salt from water.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></li>
+</ul>
+<p>The NPS adds that you should use and care for any filter according to the manufacturer's instructions, since filters do not work as well if they are not taken care of.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></p>
+<p>Notice the language. The standards are about an <em>absolute</em> rating, meaning a guaranteed maximum hole size, and about independent certification. A layer of sand and charcoal has neither. Its hole sizes are unknown and uneven, and no one has certified it.</p>
+
+<h2 id="claims">Claims you will see, and what the sources allow us to say</h2>
+<div class="pa-tablewrap" role="region" aria-label="Common homemade-filter claims against the sources" tabindex="0">
+<table>
+<caption>Common claims checked against the official sources</caption>
+<thead><tr><th scope="col">Claim</th><th scope="col">What the sources say</th><th scope="col">Standing</th></tr></thead>
+<tbody>
+<tr><th scope="row">"If it's clear, it's safe."</th><td>Clear water can carry germs, and clear mountain stream water is generally not safe to drink.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup><sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></td><td><span class="pa-tag pa-tag--fact">Contradicted</span></td></tr>
+<tr><th scope="row">"Filtering purifies water."</th><td>Filtration by itself does not purify water. It must be followed by boiling or disinfection.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></td><td><span class="pa-tag pa-tag--fact">Contradicted</span></td></tr>
+<tr><th scope="row">"A good filter removes everything, viruses included."</th><td>Portable filters will not remove viruses, whatever their pore size.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup><sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></td><td><span class="pa-tag pa-tag--fact">Contradicted</span></td></tr>
+<tr><th scope="row">"Layers of sand and charcoal make water drinkable."</th><td>No source we read describes this. Official sources define a filter by absolute pore size or independent certification.</td><td><span class="pa-tag pa-tag--unc">Not supported</span></td></tr>
+<tr><th scope="row">"Boiling or filtering removes chemicals and salt."</th><td>Boiling and disinfection do not remove heavy metals, salts and most chemicals.<sup class="pa-cite"><a href="#src-5" aria-label="Source 5: Emergency Disinfection of Drinking Water">[5]</a></sup><sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup> Fuel, toxic chemicals and radioactive materials cannot be made safe by boiling or disinfecting.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></td><td><span class="pa-tag pa-tag--fact">Contradicted</span></td></tr>
+<tr><th scope="row">"A cloth, paper towel or coffee filter helps."</th><td>Yes, as a way to clear cloudy water before treatment.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup><sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup><sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></td><td><span class="pa-tag pa-tag--fact">Supported, as preparation only</span></td></tr>
+</tbody></table></div>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> The honest reading of "not supported" is narrower than "proved harmless" or "proved useless." We did not find a source that tested homemade filters and we are not claiming to have tested one. What we can say is that nothing we verified lets you treat the output as safe, and the official guidance asks for properties (a rated pore size, certification, a following disinfection step) that a homemade filter cannot show.</p>
+
+<h2 id="what-prefilter-does">What improvised straining is good for</h2>
+<p>There is a legitimate version of the homemade filter, and it is the humble one. Cloudy water is harder to treat, and several of the treatment methods depend on it being clear. The CDC says UV light does not work well in cloudy water because small particles can block germs from the light, and that water should be filtered before UV.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup> Ready.gov advises letting suspended particles settle or straining them through coffee filters or layers of clean cloth before treating.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup> The NPS says if the water is cloudy or has floating material you should filter it even if you plan to boil or disinfect it.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></p>
+<p>The sources differ a little on whether that step is necessary for boiling. The NPS says boiling will also effectively treat water that is still cloudy or murky.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup> The CDC's emergency pages, by contrast, tell you to start the boiling steps with clear water.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup> <span class="pa-tag pa-tag--ed">Editor's note</span> A household in an emergency can sidestep the difference by clearing the water first (which costs little) and then boiling.</p>
+
+<h2 id="what-instead">What to do instead, in order</h2>
+<ol>
+<li><strong>Use sealed bottled or stored water first.</strong> That is where <a href="/preparedness/water/water-math/">water math</a> and <a href="/preparedness/water/two-week-water-storage/">water storage</a> earn their keep.</li>
+<li><strong>Look for other clean water in the house</strong> before looking outside: the water heater tank, melted ice cubes and similar sources.<sup class="pa-cite"><a href="#src-6" aria-label="Source 6: How to Find Clean Water in an Emergency">[6]</a></sup></li>
+<li><strong>Boil.</strong> It is the method every source ranks first.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup><sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup> See <a href="/preparedness/water/making-water-safer/">making water safer</a> for the steps and the bleach alternative.</li>
+<li><strong>If you cannot boil, filter with a rated product and then disinfect,</strong> which the CDC calls the next best option.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></li>
+<li><strong>For chemical concerns,</strong> use another source. FEMA's Ready.gov describes distillation as the method that removes microbes, heavy metals, salts and most other chemicals, collecting only the condensed vapor from boiled water, and gives a stovetop method on its water page.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup> Note that Ready.gov says "most" other chemicals, not all. <span class="pa-tag pa-tag--ed">Editor's note</span> Distillation also involves boiling water, which carries a burn risk, and we have not verified any source that supports it for water known to be contaminated with fuel. In that case, use another source.</li>
+</ol>
+<div class="pa-alert pa-alert--stop"><p class="pa-alert-title">A caution on pool tablets and shortcuts</p>
+<p>The National Park Service warns not to use pool-cleaning tablets to disinfect drinking water, because they are not intended to be consumed.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup> The same logic applies to any product not made for drinking water: if it is not labeled for it, do not use it.</p></div>
+
+<div class="pa-verdict" role="group" aria-labelledby="verdict-h">
+<div class="pa-verdict-head"><h2 id="verdict-h">Current safety verdict</h2><span class="pa-verdict-badge" data-verdict="not-validated">Homemade sand or charcoal filters: not validated</span></div>
+<div class="pa-verdict-body">
+<p><strong>Do not use a homemade filter as the only step before drinking.</strong> The official sources require that water be treated by boiling or disinfection after filtering, and they define a filter by a rated pore size or certification that an improvised one cannot show.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup><sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></p>
+<ul>
+<li>Clearing cloudy water with cloth, paper towels or coffee filters is endorsed, as preparation.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></li>
+<li>Boiling remains the best method, and no filter replaces it.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></li>
+<li>Nothing here makes water contaminated with fuel, toxic chemicals or radioactive material safe.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></li>
+</ul>
+</div></div>
+
+<h2 id="buying">If you buy a filter: a checklist</h2>
+<p>A commercial filter is a different proposition from a homemade one, because it comes with a rating you can check. Before relying on one, work through what the official sources ask for.</p>
+<ol>
+<li><strong>Find the absolute pore size or the certification on the label.</strong> One micron or smaller, or NSF 53 or 58 certified for cyst reduction or removal, for parasites; 0.3 micron or smaller for bacteria as well.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup> A label that does not state a rating is a label that cannot be checked.</li>
+<li><strong>Assume viruses are not removed.</strong> Plan a disinfection step after filtering, such as chlorine dioxide, chlorine or iodine.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup><sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></li>
+<li><strong>For the disinfectant, follow its label.</strong> The NPS recommends NSF-approved products and notes that contact time varies by product, for example from 30 minutes to 4 hours. Pre-filter cloudy water so the disinfectant works better.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></li>
+<li><strong>Check the iodine cautions.</strong> If anyone is pregnant, has thyroid problems or is hypersensitive to iodine, avoid iodine-disinfected water, and no one should drink it for more than a few weeks at a time.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: About Water Treatment Options When Hiking, Camping, or Traveling">[3]</a></sup></li>
+<li><strong>Maintain it as directed.</strong> The NPS says filters do not work as well if they are not taken care of.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></li>
+<li><strong>If you use UV,</strong> use it on small quantities of clear water, check the battery, and allow the manufacturer's contact time.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></li>
+</ol>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> None of this requires knowing anything about how the filter works inside. It requires reading the label, and treating the absence of a rating as an answer.</p>
+
+<h2 id="scenario">A worked scenario</h2>
+<p>A storm has taken out the water supply. Your stored water is gone. A nearby creek is running, brown with silt. A neighbor shows you a bottle filled with gravel, sand and charcoal and says it works. How should the household think about it?</p>
+<ol>
+<li><strong>Stop and ask what might be upstream.</strong> If there is any chance that fuel, chemicals or waste are in the creek, the answer is another source, not a better method.<sup class="pa-cite"><a href="#src-6" aria-label="Source 6: How to Find Clean Water in an Emergency">[6]</a></sup></li>
+<li><strong>Collect carefully.</strong> The NPS suggests a clean container, clean hands, and collecting from moving water rather than stagnant water, dipping just under the surface.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Two Ways to Purify Water">[4]</a></sup></li>
+<li><strong>Clear it.</strong> Let the silt settle, or strain through a clean cloth or coffee filter, and draw off the clear water.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup> The neighbor's bottle can be used as part of this straining, if you want, as long as you do not treat the result as safe.</li>
+<li><strong>Boil it.</strong> A rolling boil for 1 minute, or 3 minutes above 6,500 feet, then let it cool and store it in a clean container.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Make Water Safe in an Emergency">[1]</a></sup></li>
+</ol>
+<p>The creek water, boiled, is considerably safer than the creek water that has been through a bottle of sand. That is the whole argument, and the only extra tool it needs is a pot.</p>
+
+<h2 id="limits">What this guide has and has not done</h2>
+<p>Every claim attributed to an agency here comes from a page we read in full on the date shown: two CDC pages, the National Park Service's water-purification article, the EPA's emergency disinfection page, and FEMA's water page. We have not tested any filter. We could not find an official source that evaluates homemade sand-and-charcoal filters, so our position on them is an inference from what the sources require of filters, and we say so. We did not verify claims about commercial activated-carbon products, which may carry their own certifications; read the rating on the label and ask the manufacturer. Differences between sources (for example the 5,000-foot and 6,500-foot boiling thresholds) are covered in the guide on making water safer. A human safety review is required before this guide is public, and the box at the bottom of the page shows where that stands.</p>
+</div></div><section class="pa-sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources and verification</h2><p>Every numbered note above points to a page that was opened and read on the date shown. A page's own published or updated date is the date the issuing organisation gives, not ours.</p><ol><li id="src-1"><a href="https://www.cdc.gov/water-emergency/about/" rel="noopener">How to Make Water Safe in an Emergency</a>. Centers for Disease Control and Prevention (National Center for Environmental Health).<span class="pa-src-meta">Published September 16, 2024 · Updated September 19, 2024 · Reviewed September 19, 2024 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Clearing cloudy water with a cloth, paper towel or coffee filter, or by settling; pore sizes; follow filtering with a disinfectant; fuel, chemicals and radioactive material.</span></li><li id="src-2"><a href="https://www.ready.gov/water" rel="noopener">Water</a>. FEMA / Ready.gov.<span class="pa-src-meta">Updated February 22, 2021 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Settle or strain before treating; boiling and chlorination do not remove heavy metals, salts and most chemicals; distillation does.</span></li><li id="src-3"><a href="https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html" rel="noopener">About Water Treatment Options When Hiking, Camping, or Traveling</a>. Centers for Disease Control and Prevention (NCEZID).<span class="pa-src-meta">Published September 16, 2024 · Updated March 25, 2024 · Reviewed January 30, 2025 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Clear water can be unsafe; boiling is best, then filter-and-disinfect; the rated pore sizes and NSF 53/58 certification; viruses are not removed by portable filters; reverse osmosis; UV needs clear water.</span></li><li id="src-4"><a href="https://www.nps.gov/articles/2wayspurifywater.htm" rel="noopener">Two Ways to Purify Water</a>. U.S. National Park Service.<span class="pa-src-meta">Updated August 24, 2022 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Never drink untreated natural water even if it looks clean; filtration alone does not purify; filters are screens; filter cloudy water before boiling; filter care.</span></li><li id="src-5"><a href="https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water" rel="noopener">Emergency Disinfection of Drinking Water</a>. U.S. Environmental Protection Agency (Office of Water).<span class="pa-src-meta">Published November 18, 2015 · Updated February 24, 2026 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Boiling or disinfection will not destroy heavy metals, salts and most other chemicals.</span></li><li id="src-6"><a href="https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html" rel="noopener">How to Find Clean Water in an Emergency</a>. Centers for Disease Control and Prevention (National Center for Environmental Health).<span class="pa-src-meta">Published September 16, 2024 · Updated June 25, 2025 · Reviewed June 25, 2025 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Other water inside the home (tap water heater tank, melted ice cubes, clear untreated toilet tank water, liquid from canned fruit and vegetables, pool/spa water for hygiene only); outdoor sources (rainwater, streams, ponds, springs) must be treated; contaminated-by-fuel-or-chemicals water cannot be made safe; may need to shut the main water valve.</span></li></ol></section><section class="pa-review" aria-labelledby="review-h"><h2 id="review-h">Review record</h2><dl><dt>Editorial status</dt><dd>Drafted; editor read-through pending</dd><dt>Safety review</dt><dd>Pending. A human safety review is required before this page can be published.</dd><dt>Last source check</dt><dd>October 29, 2026</dd><dt>Recheck when</dt><dd>If CDC, NPS or EPA revise their filter guidance, or at the next quarterly source sweep.</dd></dl></section><aside class="pa-related" aria-labelledby="rel-h"><h2 id="rel-h">Keep reading</h2><ul><li><a href="/preparedness/water/making-water-safer/">Making water safer in an emergency</a></li><li><a href="/preparedness/water/water-advisories-explained/">Boil-water, do-not-drink and do-not-use advisories</a></li><li><a href="/preparedness/water/two-week-water-storage/">Two-week water storage</a></li></ul></aside><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://finalvestige.com/preparedness/water/homemade-water-filters/#article", "headline": "Clear water, sand and charcoal: why homemade filters can be dangerous", "description": "Why clear water isn't safe water and why homemade sand or charcoal filters can't be relied on, using CDC, National Park Service, EPA and FEMA guidance.", "mainEntityOfPage": "https://finalvestige.com/preparedness/water/homemade-water-filters/", "dateModified": "2026-10-29", "inLanguage": "en-US", "author": {"@type": "Organization", "name": "Final Vestige Studios"}, "publisher": {"@type": "Organization", "name": "Final Vestige Studios", "url": "https://finalvestige.com/"}, "isAccessibleForFree": true}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Final Vestige", "item": "https://finalvestige.com/"}, {"@type": "ListItem", "position": 2, "name": "The Preparedness Archive", "item": "https://finalvestige.com/preparedness/"}, {"@type": "ListItem", "position": 3, "name": "Water", "item": "https://finalvestige.com/preparedness/water/"}, {"@type": "ListItem", "position": 4, "name": "Why homemade water filters can be dangerous"}]}]}</script></div></main></body></html>

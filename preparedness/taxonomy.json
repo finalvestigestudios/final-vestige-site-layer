@@ -25,11 +25,11 @@
   "slate": [
     {"n": 1,  "title": "A household emergency plan that actually gets practiced", "track": "modern", "section": "start-here", "slug": "household-emergency-plan", "gate": false, "status": "not-started"},
     {"n": 2,  "title": "Build a reliable three-day kit without unnecessary purchases", "track": "modern", "section": "start-here", "slug": "three-day-kit", "gate": false, "status": "not-started"},
-    {"n": 3,  "title": "Water math for one person, family and pets", "track": "modern", "section": "water", "slug": "water-math", "gate": false, "status": "not-started"},
-    {"n": 4,  "title": "Two-week water storage: containers, sanitation and rotation", "track": "modern", "section": "water", "slug": "two-week-water-storage", "gate": false, "status": "not-started"},
-    {"n": 5,  "title": "What boil-water, do-not-drink and do-not-use advisories actually mean", "track": "modern", "section": "water", "slug": "water-advisories-explained", "gate": true, "status": "not-started"},
+    {"n": 3,  "title": "Water math for one person, family and pets", "track": "modern", "section": "water", "slug": "water-math", "gate": false, "status": "drafted-pending-safety-review"},
+    {"n": 4,  "title": "Two-week water storage: containers, sanitation and rotation", "track": "modern", "section": "water", "slug": "two-week-water-storage", "gate": false, "status": "drafted-pending-safety-review"},
+    {"n": 5,  "title": "What boil-water, do-not-drink and do-not-use advisories actually mean", "track": "modern", "section": "water", "slug": "water-advisories-explained", "gate": true, "status": "drafted-pending-safety-review"},
     {"n": 6,  "title": "Making water safer: boiling, filtration, treatment and when none is adequate", "track": "modern", "section": "water", "slug": "making-water-safer", "gate": true, "status": "safety-approved-draft"},
-    {"n": 7,  "title": "Why clear water, charcoal, sand and homemade filters can be dangerous", "track": "modern", "section": "water", "slug": "homemade-water-filters", "gate": true, "status": "not-started"},
+    {"n": 7,  "title": "Why clear water, charcoal, sand and homemade filters can be dangerous", "track": "modern", "section": "water", "slug": "homemade-water-filters", "gate": true, "status": "drafted-pending-safety-review"},
     {"n": 8,  "title": "Food supply rotation without waste: a pantry-first approach", "track": "modern", "section": "food", "slug": "pantry-rotation", "gate": false, "status": "not-started"},
     {"n": 9,  "title": "Food safety during outages: fridge, freezer, time and temperature", "track": "modern", "section": "food", "slug": "food-safety-power-outage", "gate": true, "status": "not-started"},
     {"n": 10, "title": "Pressure canning low-acid foods: validated processes, not internet shortcuts", "track": "modern", "section": "food", "slug": "pressure-canning-low-acid", "gate": true, "status": "not-started"},
@@ -60,7 +60,7 @@
     {"n": 35, "title": "The history of food preservation: salt, sugar, dehydration, canning, refrigeration", "track": "lost-ways", "section": "lost-ways", "slug": "history-of-food-preservation", "gate": false, "status": "not-started"}
   ],
   "tools": [
-    {"slug": "water-planner", "title": "Household emergency-water planner", "status": "not-started"},
+    {"slug": "water-planner", "title": "Household emergency-water planner", "gate": true, "status": "drafted-pending-safety-review"},
     {"slug": "pantry-worksheet", "title": "Emergency pantry inventory and rotation worksheet", "status": "not-started"},
     {"slug": "reunification-plan", "title": "Family communication and reunification plan generator", "status": "not-started"},
     {"slug": "kit-builder", "title": "Emergency-kit builder by household requirements", "status": "not-started"},

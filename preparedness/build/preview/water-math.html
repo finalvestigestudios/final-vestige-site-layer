@@ -1,0 +1,382 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Water math: how much to store for one person, a family and the pets | The Preparedness Archive</title><meta name="description" content="How much emergency water to store: the CDC and FEMA baseline of one gallon per person per day, what raises it, worked examples, and what is not known for pets."><meta name="robots" content="noindex,nofollow"><style>html{background:#0C0D0D}body{margin:0}/* Preparedness Archive — scoped styles. Everything lives under .pa so it cannot leak into the live theme.
+   Tokens follow the Final Vestige palette read from finalvestige.com on 2026-10-29
+   (bg #0C0D0D, text #F4EFE6, gold #C5A46A/#B8955E, secondary #D8D2C7, square corners, Inter).
+   Layout uses container queries so it behaves inside the theme's narrow content column or full width. */
+
+.pa {
+  --pa-bg: #0C0D0D;
+  --pa-surface: #141615;
+  --pa-surface-2: #1B1D1B;
+  --pa-line: #34362F;
+  --pa-text: #F4EFE6;
+  --pa-muted: #CFC8BB;
+  --pa-gold: #C5A46A;
+  --pa-gold-dim: #B8955E;
+  --pa-paper: #E9E1D0;
+  --pa-ink: #1B1A16;
+  --pa-ink-soft: #4A4437;
+  --pa-ok: #8FC4A0;
+  --pa-warn: #E6BB70;
+  --pa-bad: #EE9A8C;
+  --pa-info: #A9C0D6;
+  --pa-ok-ink: #1F5133;
+  --pa-warn-ink: #6B4A0C;
+  --pa-bad-ink: #7A2418;
+  --pa-info-ink: #24456A;
+  --pa-measure: 68ch;
+
+  container-type: inline-size;
+  box-sizing: border-box;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px 56px;
+  background: var(--pa-bg);
+  color: var(--pa-text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.68;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+.pa *, .pa *::before, .pa *::after { box-sizing: border-box; }
+.pa a { color: var(--pa-gold); text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.pa a:hover { color: #E3C48C; }
+.pa a:focus-visible, .pa button:focus-visible, .pa input:focus-visible, .pa select:focus-visible, .pa summary:focus-visible {
+  outline: 3px solid var(--pa-gold); outline-offset: 3px; border-radius: 0;
+}
+.pa p { margin: 0 0 1.05em; }
+.pa strong { color: #FFFFFF; font-weight: 650; }
+.pa em { font-style: italic; }
+.pa .pa-skip { position: absolute; left: -9999px; }
+.pa .pa-skip:focus { left: 16px; top: 8px; background: var(--pa-gold); color: #101111; padding: 8px 12px; z-index: 10; }
+
+/* ---------- Breadcrumb and header ---------- */
+.pa-crumbs { padding: 22px 0 6px; font-size: 14px; color: var(--pa-muted); }
+.pa-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.pa-crumbs li + li::before { content: "/"; color: var(--pa-gold-dim); margin-right: 10px; }
+.pa-crumbs a { color: var(--pa-muted); }
+.pa-crumbs [aria-current="page"] { color: var(--pa-text); }
+
+.pa-head { padding: 28px 0 30px; border-bottom: 1px solid var(--pa-line); position: relative; }
+.pa-head::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 88px; height: 2px; background: var(--pa-gold); }
+.pa-kicker { margin: 0 0 14px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa h1 { margin: 0 0 18px; font-size: clamp(30px, 6.2cqw, 56px); line-height: 1.08; letter-spacing: -.02em; font-weight: 650; color: var(--pa-text); max-width: 20ch; text-wrap: balance; }
+.pa-dek { margin: 0 0 22px; font-size: clamp(18px, 2.4cqw, 22px); line-height: 1.5; color: var(--pa-muted); max-width: 52ch; }
+.pa-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; font-size: 14px; color: var(--pa-muted); }
+.pa-meta li { display: flex; gap: 6px; }
+.pa-meta b { color: var(--pa-text); font-weight: 600; }
+.pa-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.pa-chip { display: inline-block; padding: 4px 10px; font-size: 12.5px; letter-spacing: .04em; border: 1px solid var(--pa-line); background: var(--pa-surface); color: var(--pa-muted); }
+.pa-chip--gold { border-color: var(--pa-gold-dim); color: var(--pa-gold); }
+.pa-chip--warn { border-color: var(--pa-warn); color: var(--pa-warn); }
+
+/* ---------- Two-column article shell ---------- */
+.pa-shell { display: block; padding-top: 28px; }
+.pa-toc { margin: 0 0 28px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); font-size: 15px; }
+.pa-toc h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa-toc ol { margin: 0; padding-left: 1.2em; }
+.pa-toc li { margin: 4px 0; }
+.pa-toc a { color: var(--pa-muted); text-decoration: none; }
+.pa-toc a:hover { color: var(--pa-gold); text-decoration: underline; }
+@container (min-width: 900px) {
+  .pa-shell { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 56px; align-items: start; }
+  .pa-shell > .pa-toc { grid-column: 2; grid-row: 1; position: sticky; top: 24px; margin: 0; }
+  .pa-shell > .pa-body { grid-column: 1; grid-row: 1; }
+}
+
+/* ---------- Body typography ---------- */
+.pa-body { max-width: var(--pa-measure); min-width: 0; }
+.pa-body h2 { margin: 2.1em 0 .55em; font-size: clamp(24px, 3.6cqw, 32px); line-height: 1.2; letter-spacing: -.01em; font-weight: 650; color: var(--pa-text); scroll-margin-top: 20px; text-wrap: balance; }
+.pa-body h2::before { content: ""; display: block; width: 36px; height: 2px; background: var(--pa-gold-dim); margin-bottom: 14px; }
+.pa-body h3 { margin: 1.7em 0 .4em; font-size: 20px; line-height: 1.3; font-weight: 650; color: var(--pa-text); }
+.pa-body ul, .pa-body ol { margin: 0 0 1.1em; padding-left: 1.3em; }
+.pa-body li { margin: .35em 0; }
+.pa-body li::marker { color: var(--pa-gold-dim); }
+.pa-body blockquote { margin: 1.4em 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--pa-gold-dim); color: var(--pa-muted); font-style: italic; }
+.pa-body blockquote cite { display: block; margin-top: 8px; font-size: 14px; font-style: normal; color: var(--pa-gold); }
+.pa-body sup.pa-cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left: 1px; }
+.pa-body sup.pa-cite a { text-decoration: none; padding: 0 2px; }
+.pa-body sup.pa-cite a:hover { text-decoration: underline; }
+
+/* ---------- Components ---------- */
+.pa-act { margin: 0 0 36px; padding: 22px 24px 8px; background: var(--pa-paper); color: var(--pa-ink); border-top: 4px solid var(--pa-gold);
+  background-image: radial-gradient(rgba(27,26,22,.045) 1px, transparent 1.2px); background-size: 5px 5px; }
+.pa-act h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-ink); font-weight: 700; }
+.pa-act h2::before { display: none; }
+.pa-act p, .pa-act li { color: var(--pa-ink); }
+.pa-act strong { color: #000; }
+.pa-act ol { padding-left: 1.4em; margin-bottom: 1em; }
+.pa-act li::marker { color: var(--pa-ink); font-weight: 700; }
+.pa-act a { color: #4B3410; }
+.pa-act .pa-act-note { font-size: 15px; color: var(--pa-ink-soft); border-top: 1px solid rgba(27,26,22,.25); padding-top: 12px; }
+
+.pa-alert { margin: 1.6em 0; padding: 16px 20px; border: 1px solid var(--pa-warn); border-left-width: 5px; background: var(--pa-surface); }
+.pa-alert > :last-child { margin-bottom: 0; }
+.pa-alert-title { margin: 0 0 6px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--pa-warn); }
+.pa-alert--stop { border-color: var(--pa-bad); }
+.pa-alert--stop .pa-alert-title { color: var(--pa-bad); }
+.pa-alert--note { border-color: var(--pa-info); }
+.pa-alert--note .pa-alert-title { color: var(--pa-info); }
+
+.pa-verdict { margin: 2.2em 0; border: 1px solid var(--pa-line); background: var(--pa-surface-2); }
+.pa-verdict-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 14px 20px; border-bottom: 1px solid var(--pa-line); }
+.pa-verdict-head h2 { margin: 0; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 700; }
+.pa-verdict-head h2::before { display: none; }
+.pa-verdict-badge { font-size: 14px; font-weight: 700; padding: 3px 10px; border: 1px solid currentColor; }
+.pa-verdict-badge[data-verdict="validated"] { color: var(--pa-ok); }
+.pa-verdict-badge[data-verdict="context-dependent"] { color: var(--pa-warn); }
+.pa-verdict-badge[data-verdict="not-validated"] { color: var(--pa-warn); }
+.pa-verdict-badge[data-verdict="unsafe"] { color: var(--pa-bad); }
+.pa-verdict-body { padding: 16px 20px 6px; }
+.pa-verdict-body > :last-child { margin-bottom: 10px; }
+
+.pa-thennow { display: grid; gap: 0; margin: 2em 0; border: 1px solid var(--pa-line); }
+.pa-thennow > div { padding: 18px 20px 6px; }
+.pa-thennow h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-thennow .pa-then { background: var(--pa-surface-2); }
+.pa-thennow .pa-now { background: var(--pa-surface); border-top: 1px solid var(--pa-line); }
+@container (min-width: 700px) {
+  .pa-thennow { grid-template-columns: 1fr 1fr; }
+  .pa-thennow .pa-now { border-top: 0; border-left: 1px solid var(--pa-line); }
+}
+
+.pa-tablewrap { overflow-x: auto; margin: 1.4em 0; border: 1px solid var(--pa-line); -webkit-overflow-scrolling: touch; }
+.pa-tablewrap:focus-visible { outline: 3px solid var(--pa-gold); }
+.pa table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+.pa caption { text-align: left; padding: 12px 14px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; caption-side: top; }
+.pa th, .pa td { padding: 10px 14px; text-align: left; vertical-align: top; border-top: 1px solid var(--pa-line); }
+.pa thead th { background: var(--pa-surface-2); color: var(--pa-text); font-weight: 650; }
+.pa tbody th { font-weight: 600; color: var(--pa-text); }
+
+.pa-tag { display: inline-block; padding: 1px 8px; margin-right: 6px; font-size: 12px; font-weight: 650; letter-spacing: .05em; border: 1px solid currentColor; vertical-align: 1px; white-space: nowrap; }
+.pa-tag--fact { color: var(--pa-ok); }
+.pa-tag--doc { color: var(--pa-info); }
+.pa-tag--unc { color: var(--pa-warn); }
+.pa-tag--ed { color: var(--pa-muted); }
+
+.pa-key { margin: 0 0 2em; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--pa-muted); }
+.pa-key li { margin: 0; }
+
+.pa-facts { display: grid; gap: 1px; margin: 1.6em 0; background: var(--pa-line); border: 1px solid var(--pa-line); }
+.pa-facts > div { background: var(--pa-surface); padding: 14px 18px; }
+.pa-facts dt { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 4px; }
+.pa-facts dd { margin: 0; color: var(--pa-text); }
+@container (min-width: 620px) { .pa-facts { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Sources and review ---------- */
+.pa-sources { margin-top: 3em; padding-top: 8px; border-top: 1px solid var(--pa-line); max-width: var(--pa-measure); }
+.pa-sources h2 { margin: 1em 0 .4em; font-size: 24px; }
+.pa-sources h2::before { display: none; }
+.pa-sources ol { padding-left: 1.6em; }
+.pa-sources li { margin: 0 0 1em; font-size: 15.5px; line-height: 1.55; }
+.pa-sources .pa-src-meta { display: block; color: var(--pa-muted); font-size: 14px; }
+.pa-sources .pa-src-use { display: block; color: var(--pa-muted); font-size: 14px; }
+.pa-review { margin: 2.2em 0 0; padding: 18px 20px; border: 1px dashed var(--pa-gold-dim); background: var(--pa-surface); font-size: 15px; max-width: var(--pa-measure); }
+.pa-review h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-review h2::before { display: none; }
+.pa-review dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; }
+.pa-review dt { color: var(--pa-muted); }
+.pa-review dd { margin: 0; color: var(--pa-text); }
+.pa-related { margin-top: 2.4em; max-width: var(--pa-measure); }
+.pa-related h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-related h2::before { display: none; }
+.pa-related ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.pa-printbar { margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.pa-btn { display: inline-block; padding: 10px 18px; background: var(--pa-gold); color: #101111; border: 1px solid var(--pa-gold); font: inherit; font-size: 15px; font-weight: 650; text-decoration: none; cursor: pointer; border-radius: 0; }
+.pa-btn:hover { background: #D6B87E; color: #101111; }
+.pa-btn--ghost { background: transparent; color: var(--pa-gold); }
+.pa-btn--ghost:hover { background: var(--pa-surface-2); color: #E3C48C; }
+
+/* ---------- Landing ---------- */
+.pa-hero { padding: 54px 0 46px; border-bottom: 1px solid var(--pa-line); position: relative; }
+.pa-hero::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 120px; height: 2px; background: var(--pa-gold); }
+.pa-hero h1 { max-width: 14ch; font-size: clamp(36px, 8cqw, 76px); }
+.pa-hero .pa-dek { max-width: 46ch; }
+.pa-promise { margin: 28px 0 0; display: grid; gap: 14px; padding: 0; list-style: none; }
+.pa-promise li { padding-left: 16px; border-left: 2px solid var(--pa-gold-dim); color: var(--pa-muted); font-size: 16px; }
+.pa-promise b { color: var(--pa-text); }
+@container (min-width: 760px) { .pa-promise { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+
+.pa-now-strip { margin: 34px 0 0; padding: 18px 22px; background: var(--pa-paper); color: var(--pa-ink); border-top: 4px solid var(--pa-gold); }
+.pa-now-strip h2 { margin: 0 0 6px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-ink); font-weight: 700; }
+.pa-now-strip p { margin: 0; color: var(--pa-ink); }
+.pa-now-strip a { color: #4B3410; }
+
+.pa-section { padding: 46px 0 6px; }
+.pa-section > h2 { margin: 0 0 8px; font-size: clamp(26px, 4cqw, 36px); letter-spacing: -.01em; font-weight: 650; }
+.pa-section > p.pa-lede { margin: 0 0 22px; color: var(--pa-muted); max-width: 60ch; }
+
+.pa-filter { display: grid; gap: 12px; margin: 22px 0 8px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); }
+.pa-filter label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 4px; font-weight: 600; }
+.pa-filter input, .pa-filter select { width: 100%; min-height: 44px; padding: 8px 12px; font: inherit; font-size: 16px; color: var(--pa-text); background: var(--pa-bg); border: 1px solid #5B5C54; border-radius: 0; }
+.pa-filter output { font-size: 14px; color: var(--pa-muted); }
+@container (min-width: 720px) { .pa-filter { grid-template-columns: 2fr 1fr 1fr; align-items: end; } .pa-filter output { grid-column: 1 / -1; } }
+
+.pa-cards { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+@container (min-width: 700px) { .pa-cards { grid-template-columns: repeat(2, 1fr); } }
+.pa-card { position: relative; padding: 22px 22px 20px; background: var(--pa-surface); border: 1px solid var(--pa-line); border-top: 2px solid var(--pa-gold-dim); }
+.pa-card[hidden] { display: none; }
+.pa-card h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.28; font-weight: 650; }
+.pa-card h3 a { color: var(--pa-text); text-decoration: none; }
+.pa-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.pa-card:hover { border-color: var(--pa-gold-dim); background: var(--pa-surface-2); }
+.pa-card p { margin: 0 0 12px; font-size: 15.5px; color: var(--pa-muted); line-height: 1.55; }
+.pa-card .pa-card-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--pa-muted); margin: 0; }
+.pa-card .pa-card-track { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 10px; font-weight: 600; }
+
+.pa-two { display: grid; gap: 18px; margin: 22px 0 0; }
+@container (min-width: 760px) { .pa-two { grid-template-columns: 1fr 1fr; } }
+.pa-track { padding: 24px 24px 10px; border: 1px solid var(--pa-line); background: var(--pa-surface); }
+.pa-track h3 { margin: 0 0 8px; font-size: 22px; }
+.pa-track--modern { border-top: 3px solid var(--pa-paper); }
+.pa-track--lost { border-top: 3px solid var(--pa-gold); }
+.pa-standards { display: grid; gap: 14px; margin: 18px 0 0; padding: 0; list-style: none; }
+@container (min-width: 760px) { .pa-standards { grid-template-columns: repeat(2, 1fr); gap: 18px 36px; } }
+.pa-standards li { padding-left: 16px; border-left: 2px solid var(--pa-gold-dim); font-size: 16px; color: var(--pa-muted); }
+.pa-standards b { color: var(--pa-text); }
+.pa-empty { padding: 18px 20px; border: 1px dashed var(--pa-line); color: var(--pa-muted); font-size: 15px; }
+.pa-empty[hidden] { display: none; }
+
+
+/* ---------- Tools ---------- */
+.pa-tool { margin: 0 0 24px; padding: 20px; background: var(--pa-surface); border: 1px solid var(--pa-line); }
+.pa-tool-grid { display: grid; gap: 14px; margin: 0 0 14px; }
+@container (min-width: 620px) { .pa-tool-grid { grid-template-columns: repeat(2, 1fr); } }
+.pa-tool label { display: block; font-size: 14px; color: var(--pa-text); margin: 0 0 4px; font-weight: 600; }
+.pa-tool input[type="number"], .pa-tool input[type="date"] { width: 100%; min-height: 44px; padding: 8px 12px; font: inherit; font-size: 16px; color: var(--pa-text); background: var(--pa-bg); border: 1px solid #5B5C54; border-radius: 0; color-scheme: dark; }
+.pa-tool-set { margin: 0 0 16px; padding: 14px 16px; border: 1px solid var(--pa-line); }
+.pa-tool-set legend { padding: 0 6px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa-tool .pa-tool-check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.pa-tool .pa-tool-check input { width: 22px; height: 22px; margin-top: 2px; flex: none; accent-color: var(--pa-gold); }
+.pa-tool-note { display: block; font-size: 14px; color: var(--pa-muted); margin: 4px 0 0; }
+.pa-tool-out { margin: 0 0 8px; }
+.pa-tool-out h2 { margin: 1.2em 0 .5em; font-size: 24px; }
+
+/* ---------- Motion, forced colors, print ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .pa-card, .pa a, .pa-btn { transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+}
+@media (forced-colors: active) {
+  .pa-act, .pa-now-strip { border: 2px solid CanvasText; }
+  .pa-chip, .pa-tag, .pa-verdict-badge { border: 1px solid CanvasText; }
+}
+@media (max-width: 420px) {
+  .pa { font-size: 16.5px; padding-inline: 16px; }
+  .pa-act { padding: 18px 16px 6px; }
+  .pa-review dl { grid-template-columns: 1fr; gap: 0; }
+  .pa-review dd { margin-bottom: 8px; }
+}
+@media print {
+  .pa { background: #fff !important; color: #000 !important; font-size: 11.5pt; line-height: 1.5; max-width: none; padding: 0; container-type: normal; }
+  .pa *, .pa a { color: #000 !important; background: transparent !important; box-shadow: none !important; }
+  .pa a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
+  .pa-tool, .pa-toc, .pa-filter, .pa-printbar, .pa-skip, .pa-card h3 a::after { display: none !important; }
+  .pa-shell { display: block !important; }
+  .pa-act, .pa-alert, .pa-verdict, .pa-thennow, .pa-review { border: 1.5pt solid #000 !important; break-inside: avoid; }
+  .pa-body h2, .pa-body h3 { break-after: avoid; }
+  .pa-tablewrap { overflow: visible !important; border: 0; }
+  .pa table { min-width: 0 !important; }
+  .pa th, .pa td { border: 0.5pt solid #000 !important; }
+  .pa-sources li { break-inside: avoid; }
+}
+</style></head><body><main><div class="pa pa-article" data-slug="water-math" data-track="modern" data-section="water"><a class="pa-skip" href="#pa-main">Skip to the guide</a><nav class="pa-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Final Vestige</a></li><li><a href="/preparedness/">The Preparedness Archive</a></li><li><a href="/preparedness/water/">Water</a></li><li><span aria-current="page">Water math for your household</span></li></ol></nav><header class="pa-head"><p class="pa-kicker">Water · Act now</p><h1>Water math: how much to store for one person, a family and the pets</h1><p class="pa-dek">The official baseline is one gallon per person per day. Here is what that number covers, what pushes it up, where it quietly runs out, and the one figure no official source gives you.</p><ul class="pa-meta"><li><b>9 min read</b></li><li>Updated <b>October 29, 2026</b></li><li>Sources last checked <b>October 29, 2026</b></li></ul><ul class="pa-chips" aria-label="Article status and topics"><li class="pa-chip pa-chip--gold">Act now</li><li class="pa-chip">Water</li><li class="pa-chip pa-chip--warn">Draft: not public</li><li class="pa-chip pa-chip--warn">Safety review pending</li><li class="pa-chip">Planning</li><li class="pa-chip">Storage amounts</li><li class="pa-chip">Households</li></ul><div class="pa-printbar"><button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button></div></header><div class="pa-shell"><nav class="pa-toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#baseline">The number, and where it comes from</a></li><li><a href="#why-3-14">Why three days, and why two weeks</a></li><li><a href="#table">The arithmetic, done for you</a></li><li><a href="#adjust">What pushes the number up</a></li><li><a href="#pets">Pets: the figure that isn&#x27;t there</a></li><li><a href="#rationing">Don&#x27;t plan to ration</a></li><li><a href="#other-sources">Water you may already have in the house</a></li><li><a href="#worked">A worked example</a></li><li><a href="#limits">What this guide has and has not done</a></li></ol></nav><div class="pa-body" id="pa-main"><section class="pa-act" aria-labelledby="act-h">
+<h2 id="act-h">What to do now</h2>
+<ol>
+<li><strong>Count your people.</strong> Everyone who sleeps in your home most nights, including children and anyone who lives with you part of the week.</li>
+<li><strong>Multiply by 1 gallon a day.</strong> The CDC's baseline is at least 1 gallon of water per person per day, for at least 3 days. It suggests aiming for 2 weeks if you can.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup> FEMA's Ready.gov uses the same figure.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>Add on top, don't average down.</strong> Store more if anyone is pregnant, sick, nursing, a young child, or if you live somewhere hot.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup><sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>Give pets their own line.</strong> Include a bowl and several days of water for each, and ask your veterinarian for the quantity. We could not find an official per-animal figure, so we will not invent one.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Prepare Your Pets for Disasters">[3]</a></sup></li>
+</ol>
+<p class="pa-act-note">Example: a household of four needs 12 gallons for 3 days and 56 gallons for 14 days, before any additions for heat, illness or animals. How to store it safely is covered in the companion guide on <a href="/preparedness/water/two-week-water-storage/">two-week water storage</a>.</p>
+</section>
+
+<ul class="pa-key" aria-label="How to read the labels in this guide">
+<li><span class="pa-tag pa-tag--fact">Official guidance</span> A figure or instruction taken from the source cited beside it.</li>
+<li><span class="pa-tag pa-tag--doc">Documented history</span> Recorded in a regulation or ship's record, as reported by the museum study cited.</li>
+<li><span class="pa-tag pa-tag--ed">Editor's note</span> Our arithmetic or reasoning, not a statement from a source.</li>
+</ul>
+
+<h2 id="baseline">The number, and where it comes from</h2>
+<p>Two federal sources give the same starting point. The CDC says to store at least 1 gallon of water per person, per day, for 3 days, and to try for a 2-week supply if possible.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup> Ready.gov puts it as at least one gallon per person per day "for several days, for drinking and sanitation."<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></p>
+<p>Notice the difference in what the gallon is for. The CDC says the water can be used for drinking, cooking, brushing teeth and other uses.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup> Ready.gov says drinking and sanitation.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup> Neither says a gallon is generous. Ready.gov notes that a normally active person needs about three quarters of a gallon of fluid a day from water and other beverages, which leaves about a quarter of a gallon for everything else.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> That quarter gallon does not stretch to a daily wash, a flush, or dishes. The baseline is a survival floor for drinking and the barest hygiene, and the practical consequence is that the first things to go are comfort and cleanliness, not thirst. A household that wants to keep washing hands properly and cooking from dry food should treat the baseline as a minimum, and extra water as the cheapest upgrade it can make.</p>
+
+<h2 id="why-3-14">Why three days, and why two weeks</h2>
+<p>The CDC states the three-day figure as the amount to create and store, and the two-week figure as what to try for.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup> It does not say why, and we will not guess at its reasoning. What the numbers allow you to do is plan for two different failures. Three days covers the typical short interruption while services are restored or you are directed elsewhere. Two weeks covers the longer outage where help is slower to arrive. If the plan has to choose, a full three-day supply is better than a half-built two-week one, because it is something a household can actually finish.</p>
+
+<h2 id="table">The arithmetic, done for you</h2>
+<div class="pa-tablewrap" role="region" aria-label="Gallons needed at one gallon per person per day" tabindex="0">
+<table>
+<caption>Baseline gallons at 1 gallon per person per day (before any additions)</caption>
+<thead><tr><th scope="col">People</th><th scope="col">3 days</th><th scope="col">14 days</th></tr></thead>
+<tbody>
+<tr><th scope="row">1</th><td>3 gallons</td><td>14 gallons</td></tr>
+<tr><th scope="row">2</th><td>6 gallons</td><td>28 gallons</td></tr>
+<tr><th scope="row">3</th><td>9 gallons</td><td>42 gallons</td></tr>
+<tr><th scope="row">4</th><td>12 gallons</td><td>56 gallons</td></tr>
+<tr><th scope="row">5</th><td>15 gallons</td><td>70 gallons</td></tr>
+<tr><th scope="row">6</th><td>18 gallons</td><td>84 gallons</td></tr>
+</tbody></table></div>
+<p>These are only people times days. They come from the CDC and Ready.gov baseline and are not themselves a published table.</p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> A gallon of water weighs a little over 8 pounds, so a two-week supply for four people is roughly 450 pounds. That is a floor-loading and stair-climbing question as much as a purchasing one. Decide where it will live before you buy it, and see the storage guide for what makes a container safe.</p>
+
+<h2 id="adjust">What pushes the number up</h2>
+<p>Both sources say the baseline is a starting point. Ready.gov is explicit that individual needs vary with age, health, physical condition, activity, diet and climate.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup> It names several groups and conditions:</p>
+<ul>
+<li><strong>Children, nursing mothers and sick people</strong> may need more water.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>A medical emergency</strong> might require additional water.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>Warm climates.</strong> "In very hot temperatures," Ready.gov says, water needs can double.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>Pregnancy and illness.</strong> The CDC separately lists pregnant women and people who are sick among those who should store more.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup></li>
+</ul>
+<p>Neither source gives a multiplier other than the heat case, and we have no authority to supply one. If you live in a hot place, doubling the baseline is the only quantified adjustment in these two sources, and it is one the household can act on directly: four people in very hot weather for three days is 24 gallons, not 12. For pregnancy, illness, small children, or medical devices that use water, ask the clinician who looks after that person what they need. That answer belongs to a person, not a table.</p>
+
+<h2 id="pets">Pets: the figure that isn't there</h2>
+<p>The CDC says to consider storing more water for pets.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup> Ready.gov's pet guidance says to keep a water bowl and several days' supply of water in each pet kit, and to keep a lighter evacuation kit separate from the larger shelter-in-place one.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Prepare Your Pets for Disasters">[3]</a></sup> Neither gives a quantity per animal.</p>
+<p>That gap is real. Needs differ enormously between a cat, a large dog and a horse, and between a hot day and a cool one. The honest advice is to ask your veterinarian for a daily figure for each animal you own, write it down, and add it to the household total. We have deliberately not published a general pet number, and the planner tool on this site leaves that field for you to fill in.</p>
+
+<h2 id="rationing">Don't plan to ration</h2>
+<p>Ready.gov's advice is to never ration drinking water unless authorities tell you to. Drink the amount you need today and try to find more for tomorrow, reduce activity and stay cool to minimize how much water your body needs, and do not substitute caffeinated or carbonated drinks, because caffeine and alcohol dehydrate the body and raise the need for water.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup> Ready.gov also advises drinking water you know is not contaminated first, and treating suspicious water as a later step instead of waiting to become dehydrated.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> This is the argument for storing a number you can actually drink. A supply sized on the assumption that you will cut back is a supply that fails the first time someone is unwell or the weather turns hot.</p>
+
+<h2 id="other-sources">Water you may already have in the house</h2>
+<p>The CDC lists other sources of clean water inside a home if you have no bottled, boiled or treated water:<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: How to Find Clean Water in an Emergency">[4]</a></sup></p>
+<ul>
+<li>Water from your home's tap water heater tank. The CDC is careful to say this is the tank connected to your faucets and showerheads, not the tank that supplies a home heating system in older houses.</li>
+<li>Melted ice cubes, if the water they were made from was not contaminated.</li>
+<li>Water from the toilet <em>tank</em> (never the bowl), if it is clear and has not been treated with toilet cleaners such as those that color the water.</li>
+<li>Liquid from canned fruit and vegetables.</li>
+</ul>
+<p>Pool and spa water can be used for hygiene and cleaning, but not for drinking.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: How to Find Clean Water in an Emergency">[4]</a></sup> The CDC also says that local officials may advise you to shut off the main water valve to your home so contaminants do not enter the pipes, so listen for their instructions before you use any of these.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: How to Find Clean Water in an Emergency">[4]</a></sup></p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> Treat this list as a reserve, not a plan. A water heater tank is typically a few dozen gallons, it is shared among everyone in the home, and some of these sources depend on the nature of the emergency. If the water that filled them was unsafe, they may be unsafe too, which is why the next guide, <a href="/preparedness/water/making-water-safer/">making water safer in an emergency</a>, matters.</p>
+
+<div class="pa-thennow" role="group" aria-label="Then and now: water allowances">
+<div class="pa-then"><h3>Then: a frigate's allotment</h3>
+<p><span class="pa-tag pa-tag--doc">Documented history</span> U.S. Navy regulations of 1802 allowed at least half a gallon a day per man for drinking on foreign voyages. Testimony at the 1814 inquiry into USS <em>Constitution</em>'s 1813 cruise records the crew's allotment as 250 gallons a day, 280 on pea and rice days, rising to 310 and 340 once grog water was allowed.<sup class="pa-cite"><a href="#src-5" aria-label="Source 5: Food and Drink in the U.S. Navy, 1794 to 1820">[5]</a></sup></p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> Spread over a crew of roughly 450, that is between about half a gallon and three-quarters of a gallon a head. The crew size is the museum's earlier figure and the division is ours, so read it as an order of magnitude.</p></div>
+<div class="pa-now"><h3>Now: a household's baseline</h3>
+<p><span class="pa-tag pa-tag--fact">Official guidance</span> At least 1 gallon per person per day, for drinking, cooking and brushing teeth, for three days and ideally two weeks.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup></p>
+<p>Sailors were short of water by design, because every gallon took up hold space. A household is short of it by neglect. The modern baseline is above the old allotment, and Ready.gov's warning against rationing reflects the cost of living near the margin.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></p></div>
+</div>
+
+<h2 id="worked">A worked example</h2>
+<p>Take a household of four in a hot part of the country: two adults, two children, and a dog. Here is how the guidance above turns into a shopping number, step by step.</p>
+<ol>
+<li><strong>Baseline.</strong> Four people at 1 gallon a day for 3 days is 12 gallons. For 14 days it is 56 gallons.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup></li>
+<li><strong>Heat.</strong> The household lives where summer temperatures are very high. Ready.gov says needs can double in very hot temperatures, so the summer figure is 24 gallons for 3 days and 112 gallons for 14 days.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>The dog.</strong> The sources give no figure, so the household asks its veterinarian. Suppose the answer is a figure per day; it is multiplied by the days and added on top, and a bowl goes in the kit.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Prepare Your Pets for Disasters">[3]</a></sup></li>
+<li><strong>Anyone unwell?</strong> If one adult is pregnant or someone takes a medication that needs water, the household asks the clinician for the extra amount and adds it.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup></li>
+<li><strong>Reserve.</strong> The water heater, the toilet tank (clear and untreated) and the ice in the freezer count as a reserve, not part of the plan.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: How to Find Clean Water in an Emergency">[4]</a></sup></li>
+</ol>
+<p>The result is a number the household can defend, built from sourced steps, with the two unsourced inputs (the pet and any medical need) supplied by the people best placed to know them. For summer, this household would aim for at least 24 gallons of bottled water to cover the first three days, then add storage toward the larger figure as space and budget allow.</p>
+<h3>Mistakes that make the number wrong</h3>
+<ul>
+<li><strong>Counting only drinking.</strong> The baseline already assumes drinking, cooking and brushing teeth share the gallon.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: How to Create an Emergency Water Supply">[1]</a></sup> Planning only for thirst leaves nothing for the rest.</li>
+<li><strong>Forgetting who is in the house.</strong> Visitors, a relative who is staying, or a child home from college change the count. Plan for the most people you could have on a bad week.</li>
+<li><strong>Using the figure as a target to ration toward.</strong> Ready.gov's advice against rationing is the reason the baseline should be met in full.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Water">[2]</a></sup></li>
+<li><strong>Storing it all in one place.</strong> If the water is in one location and that location is flooded, blocked or left behind, it does not help. Splitting a supply across two places is a sensible hedge.</li>
+</ul>
+
+<h2 id="limits">What this guide has and has not done</h2>
+<p>Every figure and adjustment here comes from the CDC, Ready.gov (both its water and pets pages), and the museum study, each read in full on the date shown. The Ready.gov water page is older than the CDC's, last updated in 2021, and the two agree on the baseline. The arithmetic table is ours. We did not verify any official infant-formula, medication or dialysis water requirement, and we say nothing about them. For those, ask the clinician who manages the condition.</p>
+<p>This guide gives amounts only. Which containers are safe, how to clean them, and how long stored water lasts are in the storage guide, and what to do when the stored water runs out is in the guide on making water safer.</p>
+</div></div><section class="pa-sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources and verification</h2><p>Every numbered note above points to a page that was opened and read on the date shown. A page's own published or updated date is the date the issuing organisation gives, not ours.</p><ol><li id="src-1"><a href="https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html" rel="noopener">How to Create an Emergency Water Supply</a>. Centers for Disease Control and Prevention (National Center for Environmental Health).<span class="pa-src-meta">Published September 16, 2024 · Updated June 27, 2025 · Reviewed June 27, 2025 · Checked October 29, 2026</span><span class="pa-src-use">Used for: One gallon per person per day for three days; try for two weeks; store more for pregnancy, illness, pets and heat; what the gallon is meant to cover.</span></li><li id="src-2"><a href="https://www.ready.gov/water" rel="noopener">Water</a>. FEMA / Ready.gov.<span class="pa-src-meta">Updated February 22, 2021 · Checked October 29, 2026</span><span class="pa-src-use">Used for: About three-quarters of a gallon of fluid for a normally active person; individual needs vary; more for children, nursing mothers, sick people, medical emergencies; very hot weather can double needs; do not ration; do not substitute caffeinated or carbonated drinks.</span></li><li id="src-3"><a href="https://www.ready.gov/pets" rel="noopener">Prepare Your Pets for Disasters</a>. FEMA / Ready.gov.<span class="pa-src-meta">Updated March 20, 2026 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Pets need their own water bowl and several days&#x27; supply of water in the pet kit; no quantity is stated.</span></li><li id="src-4"><a href="https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html" rel="noopener">How to Find Clean Water in an Emergency</a>. Centers for Disease Control and Prevention (National Center for Environmental Health).<span class="pa-src-meta">Published September 16, 2024 · Updated June 25, 2025 · Reviewed June 25, 2025 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Other water found inside the home, and the cautions on each.</span></li><li id="src-5"><a href="https://ussconstitutionmuseum.org/wp-content/uploads/dlm_uploads/2019/05/Food-and-Drink-in-the-US-Navy.pdf" rel="noopener">Food and Drink in the U.S. Navy, 1794 to 1820</a>. USS Constitution Museum, Boston (Matthew Brenckle).<span class="pa-src-meta">Published 2019 · Checked October 29, 2026</span><span class="pa-src-use">Used for: The 1802 naval regulation and the documented 1813 daily allotment aboard USS Constitution (history panel only).</span></li></ol></section><section class="pa-review" aria-labelledby="review-h"><h2 id="review-h">Review record</h2><dl><dt>Editorial status</dt><dd>Drafted; editor read-through pending</dd><dt>Safety review</dt><dd>Pending. A human safety review is required before this page can be published.</dd><dt>Last source check</dt><dd>October 29, 2026</dd><dt>Recheck when</dt><dd>If CDC or Ready.gov revises the baseline or the adjustments, or at the next quarterly source sweep.</dd></dl></section><aside class="pa-related" aria-labelledby="rel-h"><h2 id="rel-h">Keep reading</h2><ul><li><a href="/preparedness/water/making-water-safer/">Making water safer in an emergency</a></li><li><a href="/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/">Salt beef and salt pork at sea</a></li></ul></aside><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://finalvestige.com/preparedness/water/water-math/#article", "headline": "Water math: how much to store for one person, a family and the pets", "description": "How much emergency water to store: the CDC and FEMA baseline of one gallon per person per day, what raises it, worked examples, and what is not known for pets.", "mainEntityOfPage": "https://finalvestige.com/preparedness/water/water-math/", "dateModified": "2026-10-29", "inLanguage": "en-US", "author": {"@type": "Organization", "name": "Final Vestige Studios"}, "publisher": {"@type": "Organization", "name": "Final Vestige Studios", "url": "https://finalvestige.com/"}, "isAccessibleForFree": true}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Final Vestige", "item": "https://finalvestige.com/"}, {"@type": "ListItem", "position": 2, "name": "The Preparedness Archive", "item": "https://finalvestige.com/preparedness/"}, {"@type": "ListItem", "position": 3, "name": "Water", "item": "https://finalvestige.com/preparedness/water/"}, {"@type": "ListItem", "position": 4, "name": "Water math for your household"}]}]}</script></div></main></body></html>

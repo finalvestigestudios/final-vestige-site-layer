@@ -1,0 +1,97 @@
+<section class="pa-act" aria-labelledby="act-h">
+<h2 id="act-h">What this does</h2>
+<ol>
+<li><strong>Enter your household.</strong> People, days, and whether you live somewhere very hot.</li>
+<li><strong>Add anything the official sources do not quantify.</strong> A pet allowance and any medical need are left for you, or your veterinarian or clinician, to supply.</li>
+<li><strong>Read the total, and the shortfall against what you already have.</strong> Print the result if you want to keep it.</li>
+</ol>
+<p class="pa-act-note"><strong>Private by design.</strong> Everything you type stays on this page. It is not sent anywhere, and it is not saved in cookies or browser storage. Closing the tab clears it. Printing is the only way to keep a copy.</p>
+</section>
+
+<h2 id="planner">Plan your water</h2>
+<form class="pa-tool" id="wp-form" onsubmit="return false" aria-describedby="wp-help">
+<p id="wp-help">Numbers update as you type. Fields marked optional can be left blank.</p>
+<div class="pa-tool-grid">
+<div><label for="wp-people">People in the household</label><input id="wp-people" type="number" inputmode="numeric" min="0" max="100" step="1" value="4"></div>
+<div><label for="wp-days">Days to cover</label><input id="wp-days" type="number" inputmode="numeric" min="0" max="365" step="1" value="3" aria-describedby="wp-days-note"><span id="wp-days-note" class="pa-tool-note">The CDC says at least 3 days; try for 14.</span></div>
+<div><label for="wp-stored">Gallons you already have stored (optional)</label><input id="wp-stored" type="number" inputmode="decimal" min="0" step="0.5" value=""></div>
+<div><label for="wp-filled">Date you filled your own containers (optional)</label><input id="wp-filled" type="date"></div>
+</div>
+<fieldset class="pa-tool-set"><legend>Heat</legend>
+<label class="pa-tool-check"><input id="wp-hot" type="checkbox"> We live where it gets very hot. Ready.gov says needs can double in very hot temperatures.</label>
+</fieldset>
+<fieldset class="pa-tool-set"><legend>Allowances you supply (optional)</legend>
+<p class="pa-tool-note">No official source gives these figures, so this tool does not guess. Ask your veterinarian for each animal's daily need, and a clinician for any medical need.</p>
+<div class="pa-tool-grid">
+<div><label for="wp-pets">Number of pets</label><input id="wp-pets" type="number" inputmode="numeric" min="0" max="100" step="1" value=""></div>
+<div><label for="wp-petgal">Gallons per pet per day</label><input id="wp-petgal" type="number" inputmode="decimal" min="0" step="0.05" value=""></div>
+<div><label for="wp-extra">Extra gallons per day for the household (medical, nursing, other)</label><input id="wp-extra" type="number" inputmode="decimal" min="0" step="0.1" value=""></div>
+</div>
+</fieldset>
+<div class="pa-printbar"><button type="button" class="pa-btn" id="wp-print">Print this plan</button><button type="button" class="pa-btn pa-btn--ghost" id="wp-reset">Clear everything</button></div>
+</form>
+
+<div id="wp-out" class="pa-tool-out" role="status" aria-live="polite" aria-label="Your water plan"></div>
+
+<h2 id="how">How the numbers are built</h2>
+<p>The tool does four sums and nothing else:</p>
+<ol>
+<li><strong>Baseline</strong> = people &times; days &times; 1 gallon. The CDC's baseline is at least 1 gallon per person per day, for at least 3 days, with 2 weeks as the goal.{{cite:cdc-water-store}} Ready.gov uses the same figure.{{cite:ready-water}}</li>
+<li><strong>Heat.</strong> If you tick the heat box, the baseline for people is doubled. Ready.gov says that in very hot temperatures water needs can double.{{cite:ready-water}} The adjustment is applied to people only, not to the allowances you enter.</li>
+<li><strong>Your allowances.</strong> Pets &times; gallons per pet per day &times; days, plus extra gallons per day &times; days, using the numbers you give. Ready.gov says pets need a bowl and several days' supply of water but gives no quantity.{{cite:ready-pets}}</li>
+<li><strong>Shortfall</strong> = total &minus; what you already store, never below zero.</li>
+</ol>
+<p>The weight shown is a rough figure of 8.34 pounds per gallon. The replacement date is six calendar months after the fill date you enter, which is the interval the CDC and Ready.gov give for water you stored yourself.{{cite:cdc-water-store}}{{cite:ready-water}}</p>
+
+<h2 id="not">What the planner does not do</h2>
+<ul>
+<li><strong>It does not tell you the right amount for any person.</strong> Needs vary with age, health, activity, diet and climate, and the sources say so.{{cite:ready-water}} The planner gives you an official floor and lets you add to it.</li>
+<li><strong>It does not cover infant formula, dialysis, medication or any other medical use of water.</strong> Ask the clinician who looks after the person.</li>
+<li><strong>It does not say whether water is safe to drink.</strong> That is covered in {{link:making-water-safer|making water safer}}, and how to keep stored water clean is covered in {{link:two-week-water-storage|two-week water storage}}.</li>
+<li><strong>It is not a historical or survival simulator.</strong> It uses current federal guidance only.</li>
+</ul>
+<p>For the reasoning behind the baseline and the adjustments, read {{link:water-math|water math}}. A human safety review is required before this tool is public, and the box at the bottom of the page shows where that stands.</p>
+
+<script>
+{{inline-js:water_planner.js}}
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var root = $('wp-form'); if (!root) return;
+  var out = $('wp-out');
+  var fmt = function (n) { return (Math.round(n * 10) / 10).toLocaleString('en-US'); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); };
+  function val(id) { var v = $(id).value; return v === '' ? 0 : v; }
+  function render() {
+    var r = computeWaterPlan({
+      people: val('wp-people'), days: val('wp-days'), veryHot: $('wp-hot').checked,
+      petCount: val('wp-pets'), petGalPerDay: val('wp-petgal'), extraGalPerDay: val('wp-extra'), storedGallons: val('wp-stored')
+    });
+    var next = nextReplacementDate($('wp-filled').value);
+    var rows = [
+      ['People baseline (' + r.people + ' people &times; ' + r.days + ' days &times; 1 gallon)', fmt(r.baselineGallons)],
+      ['After the heat adjustment', fmt(r.peopleGallons)],
+      ['Pet allowance you entered', fmt(r.petGallons)],
+      ['Extra allowance you entered', fmt(r.extraGallons)],
+      ['Total to plan for', '<strong>' + fmt(r.totalGallons) + '</strong>'],
+      ['Already stored', fmt(r.storedGallons)],
+      ['Still to store', '<strong>' + fmt(r.shortfallGallons) + '</strong>']
+    ];
+    var html = '<h2 id="wp-out-h">Your plan</h2><div class="pa-tablewrap" role="region" aria-label="Plan table" tabindex="0"><table><caption>Gallons of drinking water</caption><thead><tr><th scope="col">Step</th><th scope="col">Gallons</th></tr></thead><tbody>';
+    rows.forEach(function (x) { html += '<tr><th scope="row">' + x[0] + '</th><td>' + x[1] + '</td></tr>'; });
+    html += '</tbody></table></div>';
+    html += '<p>To cover the shortfall: about ' + r.oneGallonJugs + ' one-gallon bottles, or ' + r.fiveGallonContainers + ' five-gallon containers. The full total weighs roughly ' + r.approxWeightLb.toLocaleString('en-US') + ' pounds, so decide where it will live before you buy it.</p>';
+    if (next) html += '<p>Replace water you stored yourself by <strong>' + esc(next) + '</strong>.</p>';
+    if (r.days < 3 && r.days > 0) html += '<p class="pa-tool-note">The CDC says to store at least 3 days.</p>';
+    out.innerHTML = html;
+  }
+  ['wp-people', 'wp-days', 'wp-stored', 'wp-filled', 'wp-hot', 'wp-pets', 'wp-petgal', 'wp-extra'].forEach(function (id) {
+    $(id).addEventListener('input', render); $(id).addEventListener('change', render);
+  });
+  $('wp-print').addEventListener('click', function () { window.print(); });
+  $('wp-reset').addEventListener('click', function () {
+    ['wp-people', 'wp-days', 'wp-stored', 'wp-filled', 'wp-pets', 'wp-petgal', 'wp-extra'].forEach(function (id) { $(id).value = ''; });
+    $('wp-hot').checked = false; render();
+  });
+  render();
+})();
+</script>

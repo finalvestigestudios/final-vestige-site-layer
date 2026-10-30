@@ -1,0 +1,23 @@
+{
+  "n": 5,
+  "slug": "water-advisories-explained",
+  "title": "Boil-water, do-not-drink and do-not-use advisories",
+  "h1": "What boil-water, do-not-drink and do-not-use advisories actually mean",
+  "dek": "Three notices, three different dangers, and three different sets of rules. A room-by-room reading of the CDC's guidance, so you know what is still safe to do with tap water and what is not.",
+  "description": "What the three types of drinking water advisory mean and what to do under each, from the CDC: drinking, cooking, brushing teeth, baby formula, dishes, bathing, pets.",
+  "section": "water",
+  "track": "modern",
+  "tags": ["Advisories", "Boil water", "Households"],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If CDC revises the advisory page, or at the next quarterly source sweep. Always defer to the advisory your own utility issues.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["making-water-safer", "water-math", "two-week-water-storage"],
+  "source_use": {
+    "cdc-water-advisories": "The three advisory types; what each asks of a household; fridge water and ice; boil even if filtered; infant feeding; hygiene, dishes, laundry, pets and gardens; boiling does not fix chemicals.",
+    "cdc-find-clean-water": "That officials may advise shutting off the main water valve, and that fuel- or chemical-contaminated water cannot be made safe.",
+    "cdc-water-safe": "Boiling steps and the list of activities to avoid with unsafe water.",
+    "epa-emergency-disinfection": "That local authorities may recommend bottled, boiled or disinfected water until regular service is restored."
+  }
+}

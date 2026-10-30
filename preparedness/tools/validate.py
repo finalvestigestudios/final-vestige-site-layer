@@ -88,14 +88,22 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
                 errors.append(f"{p}: missing meta '{k}'")
         if errors and any(e.startswith(p) and "missing meta" in e for e in errors):
             continue
-        slate = lib.slate.get(slug)
-        if not slate:
-            errors.append(f"{p}: slug not in taxonomy slate (add it first)")
+        is_tool = meta.get("kind") == "tool"
+        if is_tool:
+            slate = next((x for x in lib.taxonomy["tools"] if x["slug"] == slug), None)
+            if not slate:
+                errors.append(f"{p}: tool slug not in taxonomy tools (add it first)")
+            elif meta["section"] != "field-tools":
+                errors.append(f"{p}: tools live in the field-tools section")
         else:
-            if slate["section"] != meta["section"] or slate["track"] != meta["track"]:
-                errors.append(f"{p}: section/track disagree with taxonomy")
-            if slate["n"] != meta["n"]:
-                errors.append(f"{p}: n disagrees with taxonomy")
+            slate = lib.slate.get(slug)
+            if not slate:
+                errors.append(f"{p}: slug not in taxonomy slate (add it first)")
+            else:
+                if slate["section"] != meta["section"] or slate["track"] != meta["track"]:
+                    errors.append(f"{p}: section/track disagree with taxonomy")
+                if slate["n"] != meta["n"]:
+                    errors.append(f"{p}: n disagrees with taxonomy")
         if meta["section"] not in lib.sections:
             errors.append(f"{p}: unknown section")
         if meta["track"] not in lib.taxonomy["tracks"]:
@@ -121,8 +129,8 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         if extra:
             errors.append(f"{p}: source_use lists sources never cited in the body: {sorted(extra)}")
         kinds = {lib.register[s]["kind"] for s in order}
-        if len(order) < 3:
-            errors.append(f"{p}: needs 3+ independently checked sources (has {len(order)})")
+        if len(order) < (2 if is_tool else 3):
+            errors.append(f"{p}: needs {2 if is_tool else 3}+ checked sources (has {len(order)})")
         if meta["track"] == "lost-ways" and not (kinds & {"primary-digitized", "museum-study", "museum", "museum-object", "archive"}):
             errors.append(f"{p}: history piece needs a primary or museum/archive source")
         if meta["track"] == "lost-ways" and not (kinds & {"regulator", "extension"}):
@@ -156,8 +164,9 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         if meta["track"] == "lost-ways" and "pa-thennow" not in body:
             warns.append(f"{p}: history piece has no Then/Now panel")
         words = build.word_count(body)
-        if words < MIN_WORDS_CORNERSTONE:
-            errors.append(f"{p}: {words} words is under the cornerstone minimum of {MIN_WORDS_CORNERSTONE}")
+        floor = 450 if is_tool else MIN_WORDS_CORNERSTONE
+        if words < floor:
+            errors.append(f"{p}: {words} words is under the minimum of {floor}")
         plain = re.sub(r"<[^>]+>", " ", body)
         for pat, why in BANNED:
             if re.search(pat, plain, flags=re.I):
@@ -178,7 +187,7 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         elif meta["status"]["publish"] != "draft":
             errors.append(f"{p}: status.publish must be 'draft' or 'published'")
         for rel in meta.get("related", []):
-            if rel not in lib.slate:
+            if rel not in lib.slate and rel not in lib.articles:
                 errors.append(f"{p}: related slug '{rel}' not in taxonomy")
 
     # --- design tokens: WCAG AA ---

@@ -30,3 +30,9 @@ Also checked: landing filter (search, topic) works and announces counts; print s
 * Created **draft** page ID 1868 "The Preparedness Archive" (slug `preparedness`, parent none, status draft) from `build/wp/landing.html`. No `_content_warnings` were returned, and `page-sections.list` shows one `core/html` block holding the `<style>`.
 * **Not verified:** how the live Assembler theme renders it (duplicate page-title H1, content-width clamp, whether `<script>` survives front-end output). That needs an authenticated preview of `https://finalvestige.com/?page_id=1868&preview=true`.
 * Not touched: navigation ID 5 (read only), homepage page 6, Focus page 1579, retired Water Resilience Field Manual draft (page 85), PR #49.
+
+## Sprint 2 render QA (2026-10-29)
+
+11 built pages (landing, 3 hubs, 6 guides, planner) x 4 widths (360/390/768/1440) in Edge via Playwright: **0 horizontal overflow, 0 console errors, exactly one h1 each**. axe-core 4.9.1 (wcag2a/aa, 21a/aa, 22aa, best-practice) at 390 and 1440: **0 violations on all 11 pages**. Planner driven with real input: 4 people x 14 days = 56, heat 112, 1 pet at 0.5 gal x 14 days = 7, total 119, minus 10 stored = 109 still to store; replacement date 2027-04-29; `localStorage`, `sessionStorage` and cookies empty afterward. 27 Python tests + JS assertions pass.
+
+Still NOT verified: live-theme rendering, human screen-reader and keyboard walkthrough, human link click-through, Lighthouse/CWV, real devices, and the contrast-in-context of the paper-textured boxes (axe "incomplete").

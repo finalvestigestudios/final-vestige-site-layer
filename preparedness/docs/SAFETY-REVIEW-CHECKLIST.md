@@ -43,3 +43,15 @@ Not covered and said so on the page: 1% bleach table, wells and cisterns, radiat
 |---|---|---|---|---|
 | making-water-safer | Bryan Rhodes (founder) | 2026-10-29 | Approved as drafted | Reviewer's own spot-check scope unknown; claims A1-A14 not individually confirmed |
 | salt-beef-salt-pork-age-of-sail | Bryan Rhodes (founder) | 2026-10-29 | Approved as drafted | Primary records still unpulled (B5); verdict wording approved |
+
+## C. Sprint 2 drafts awaiting review (all still `pending`)
+
+| Article / tool | What the reviewer must check | Against |
+|---|---|---|
+| `water-math` | Baseline 1 gal/person/day, 3 days minimum / 2 weeks goal; heat doubling stated as Ready.gov's "can double"; **no pet figure given on purpose**; the table is our arithmetic; the water-heater / toilet-tank / canned-liquid reserve list; the Navy per-head figure is our division (editor's note) | CDC water store, Ready.gov water and pets, CDC find clean water, Brenckle |
+| `two-week-water-storage` | CDC sanitizing steps (1 tsp unscented 5-9% bleach per quart, shake, 30 s, dry); 50-70 F; six-month rotation; "not glass"; never reuse chemical containers; our editor's suggestions (clock-change anchor, closet placement, small-space tips) are labelled | CDC water store, Ready.gov water |
+| `water-advisories-explained` | Three advisory types and the per-activity table (cells the CDC does not address say "Not stated"); fridge dispenser rule; 150 F dishwasher / 1 tsp per gallon dish soak; infant guidance deferring to the pediatrician | CDC advisories page |
+| `homemade-water-filters` | That we call homemade sand/charcoal filters "not supported / not validated" as an **inference**, not as an agency statement (no official source evaluates them); the claims table; distillation mention (Ready.gov) with our burn/fuel caution | CDC hiking, NPS, CDC, EPA, Ready.gov |
+| `water-planner` (tool) | The four sums; heat doubling applied to people only; pet and medical fields intentionally blank with no defaults; 8.34 lb/gal; six-month date; privacy (no storage, no network) is test-enforced | Source pages above; `tests/test_water_planner.js` |
+
+Sign-off table rows to add when reviewed: water-math, two-week-water-storage, water-advisories-explained, homemade-water-filters, water-planner.

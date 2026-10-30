@@ -1,0 +1,23 @@
+{
+  "kind": "tool",
+  "n": 101,
+  "slug": "water-planner",
+  "title": "Household emergency-water planner",
+  "h1": "Household emergency-water planner",
+  "dek": "Work out how many gallons your household should store, how much you are short, and when to swap the water. It runs in your browser, keeps nothing, and uses only the figures the CDC and FEMA publish.",
+  "description": "A free, private calculator for emergency water: gallons for your household using the CDC and FEMA baseline, heat adjustment, your own pet and medical allowances.",
+  "section": "field-tools",
+  "track": "modern",
+  "tags": ["Calculator", "Printable", "Runs locally"],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If CDC or Ready.gov revises the baseline or the heat adjustment, or at the next quarterly source sweep.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["water-math", "two-week-water-storage"],
+  "source_use": {
+    "cdc-water-store": "The baseline of 1 gallon per person per day; 3 days minimum and 2 weeks as a goal; replace self-stored water every six months.",
+    "ready-water": "The baseline; the statement that needs can double in very hot temperatures; the six-month replacement of non-commercial water.",
+    "ready-pets": "That pets need several days' supply of water, with no quantity given, which is why pet and medical allowances are left for you to enter."
+  }
+}

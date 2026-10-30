@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "slug": "two-week-water-storage",
+  "title": "Two-week water storage",
+  "h1": "Two-week water storage: containers, cleaning and rotation",
+  "dek": "Which containers are safe, how to sanitize them, where to keep them, and how to keep the stock fresh without it becoming a forgotten chore. All from the CDC and FEMA, with our reasoning kept separate.",
+  "description": "How to store emergency water safely: bottled vs self-filled, food-grade containers, CDC sanitizing steps, storage conditions, labeling and six-month rotation.",
+  "section": "water",
+  "track": "modern",
+  "tags": ["Storage", "Containers", "Rotation"],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If CDC or Ready.gov revises the storage guidance, or at the next quarterly source sweep.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["water-math", "making-water-safer"],
+  "source_use": {
+    "cdc-water-store": "Bottled water first; container choice and what to avoid; wash, sanitize, shake, wait, dry, fill; labeling; six-month replacement; temperature range; light and toxin separation; clean scoop; bleach to keep on hand.",
+    "ready-water": "Store commercially bottled water sealed in its original container in a cool, dark place; food-grade containers; sanitizing solution; non-commercial water replaced every six months.",
+    "usscm-brenckle-2019": "Captain Porter's 1812-13 account of cask cleaning and seasoning for ship's water (history panel only)."
+  }
+}

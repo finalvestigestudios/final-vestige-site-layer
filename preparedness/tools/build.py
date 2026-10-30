@@ -47,6 +47,11 @@ class Library:
             body = meta_path.with_name(meta_path.name.replace(".meta.json", ".body.html")).read_text(encoding="utf-8")
             meta["_body"] = body
             self.articles[meta["slug"]] = meta
+        for meta_path in sorted((root / "content" / "tools").glob("*.meta.json")):
+            meta = load_json(meta_path)
+            meta["kind"] = "tool"
+            meta["_body"] = meta_path.with_name(meta_path.name.replace(".meta.json", ".body.html")).read_text(encoding="utf-8")
+            self.articles[meta["slug"]] = meta
 
     def url_path(self, slug: str) -> str:
         a = self.articles.get(slug) or self.slate[slug]
@@ -92,7 +97,8 @@ def resolve_tokens(lib: Library, meta: dict) -> tuple[str, list[str]]:
             return f'<a href="{lib.url_path(slug)}">{label}</a>'
         return label  # target not built yet: plain text, never a dead link
 
-    body = re.sub(r"\{\{cite:([a-z0-9\-]+)\}\}", cite, meta["_body"])
+    inlined = re.sub(r"\{\{inline-js:([a-z_]+\.js)\}\}", lambda m: (ROOT / "tools" / m.group(1)).read_text(encoding="utf-8"), meta["_body"])
+    body = re.sub(r"\{\{cite:([a-z0-9\-]+)\}\}", cite, inlined)
     body = re.sub(r"\{\{link:([a-z0-9\-]+)\|([^}]+)\}\}", link, body)
     if "{{" in body:
         raise ValueError(f"{meta['slug']}: unresolved token near {body[body.index('{{'):][:60]!r}")
@@ -238,25 +244,26 @@ def build_article(lib: Library, slug: str) -> dict:
     return {"slug": slug, "inner": inner, "words": words, "minutes": minutes, "sources": order, "canonical": canonical, "meta": meta}
 
 
+def render_card(lib: Library, meta: dict) -> str:
+    track = lib.taxonomy["tracks"][meta["track"]]
+    draft = ' · <span>Draft</span>' if meta["status"]["publish"] != "published" else ""
+    mins = meta.get("read_minutes") or max(1, round(word_count(meta["_body"]) / WORDS_PER_MINUTE))
+    hay = " ".join([meta["title"], meta["dek"], " ".join(meta.get("tags", []))]).lower()
+    verify = "reviewed" if meta.get("safety_review", {}).get("state") in ("approved", "not-required") and meta["status"]["editorial"] == "reviewed" else "pending"
+    return (
+        f'<li class="pa-card" data-section="{meta["section"]}" data-track="{meta["track"]}" data-verify="{verify}" data-text="{esc(hay)}">'
+        f'<p class="pa-card-track">{esc(track["label"])}</p><h3><a href="{lib.url_path(meta["slug"])}">{esc(meta["title"])}</a></h3>'
+        f'<p>{esc(meta["dek"])}</p><p class="pa-card-meta"><span>{mins} min read</span>'
+        f'<span>Checked {fmt_date(meta["last_checked"])}</span>{draft}</p></li>'
+    )
+
+
 def build_landing(lib: Library, include_drafts: bool = True) -> dict:
     base = lib.taxonomy["base_path"]
     cards_by_section: dict[str, list[dict]] = {}
     for slug, meta in lib.articles.items():
         if meta["status"]["publish"] == "published" or include_drafts:
             cards_by_section.setdefault(meta["section"], []).append(meta)
-
-    def card(meta: dict) -> str:
-        track = lib.taxonomy["tracks"][meta["track"]]
-        draft = ' · <span>Draft</span>' if meta["status"]["publish"] != "published" else ""
-        mins = meta.get("read_minutes") or max(1, round(word_count(meta["_body"]) / WORDS_PER_MINUTE))
-        hay = " ".join([meta["title"], meta["dek"], " ".join(meta.get("tags", []))]).lower()
-        verify = "reviewed" if meta.get("safety_review", {}).get("state") in ("approved", "not-required") and meta["status"]["editorial"] == "reviewed" else "pending"
-        return (
-            f'<li class="pa-card" data-section="{meta["section"]}" data-track="{meta["track"]}" data-verify="{verify}" data-text="{esc(hay)}">'
-            f'<p class="pa-card-track">{esc(track["label"])}</p><h3><a href="{lib.url_path(meta["slug"])}">{esc(meta["title"])}</a></h3>'
-            f'<p>{esc(meta["dek"])}</p><p class="pa-card-meta"><span>{mins} min read</span>'
-            f'<span>Checked {fmt_date(meta["last_checked"])}</span>{draft}</p></li>'
-        )
 
     sections_html = []
     populated = []
@@ -267,7 +274,7 @@ def build_landing(lib: Library, include_drafts: bool = True) -> dict:
         populated.append(sec["slug"])
         sections_html.append(
             f'<section class="pa-section" id="{sec["slug"]}" aria-labelledby="h-{sec["slug"]}"><h2 id="h-{sec["slug"]}">{esc(sec["label"])}</h2>'
-            f'<p class="pa-lede">{esc(sec["blurb"])}</p><ul class="pa-cards">{"".join(card(m) for m in arts)}</ul></section>'
+            f'<p class="pa-lede">{esc(sec["blurb"])}</p><ul class="pa-cards">{"".join(render_card(lib, m) for m in arts)}</ul><p><a href="{lib.section_path(sec["slug"])}">All {esc(sec["label"])} guides</a></p></section>'
         )
 
     opts = "".join(f'<option value="{s}">{esc(lib.sections[s]["label"])}</option>' for s in populated)
@@ -339,6 +346,43 @@ def minify_css(css: str) -> str:
     return css.strip()
 
 
+def build_hub(lib: Library, section: str, include_drafts: bool = True) -> dict | None:
+    sec = lib.sections[section]
+    arts = [m for m in lib.articles.values() if m["section"] == section and (include_drafts or m["status"]["publish"] == "published")]
+    if not arts:
+        return None  # an empty section is not a place; no hub page exists for it
+    arts.sort(key=lambda m: m["n"])
+    base = lib.taxonomy["base_path"]
+    canonical = SITE + lib.section_path(section)
+    crumbs = (
+        '<nav class="pa-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Final Vestige</a></li>'
+        f'<li><a href="{base}">The Preparedness Archive</a></li><li><span aria-current="page">{esc(sec["label"])}</span></li></ol></nav>'
+    )
+    tracks_present = sorted({m["track"] for m in arts})
+    chips = "".join(f'<li class="pa-chip pa-chip--gold">{esc(lib.taxonomy["tracks"][k]["label"])}</li>' for k in tracks_present)
+    ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "CollectionPage", "@id": canonical + "#page", "name": f'{sec["label"]} | The Preparedness Archive',
+             "description": sec["blurb"], "url": canonical, "isAccessibleForFree": True,
+             "publisher": {"@type": "Organization", "name": "Final Vestige Studios", "url": SITE + "/"}},
+            {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Final Vestige", "item": SITE + "/"},
+                {"@type": "ListItem", "position": 2, "name": "The Preparedness Archive", "item": SITE + base},
+                {"@type": "ListItem", "position": 3, "name": sec["label"]}]},
+        ],
+    }
+    inner = (
+        f'<div class="pa pa-hub" data-section="{section}"><a class="pa-skip" href="#pa-guides">Skip to the guides</a>{crumbs}'
+        f'<header class="pa-head"><p class="pa-kicker">The Preparedness Archive</p><h1>{esc(sec["label"])}</h1>'
+        f'<p class="pa-dek">{esc(sec["blurb"])}</p><ul class="pa-chips" aria-label="Tracks in this section">{chips}</ul></header>'
+        f'<section class="pa-section" id="pa-guides" aria-labelledby="h-guides"><h2 id="h-guides">{len(arts)} {"guide" if len(arts) == 1 else "guides"}</h2>'
+        f'<ul class="pa-cards">{"".join(render_card(lib, m) for m in arts)}</ul></section>'
+        f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></div>'
+    )
+    return {"slug": f"hub-{section}", "inner": inner, "count": len(arts), "title": f'{sec["label"]} | The Preparedness Archive', "description": sec["blurb"]}
+
+
 def wp_wrap(lib: Library, inner: str) -> str:
     return f"<!-- wp:html -->\n<style>{minify_css(lib.css)}</style>\n{inner}\n<!-- /wp:html -->\n"
 
@@ -368,6 +412,13 @@ def main(argv=None) -> int:
         (out / "wp" / f"{slug}.html").write_text(wp_wrap(lib, built["inner"]), encoding="utf-8")
         (out / "preview" / f"{slug}.html").write_text(preview_wrap(lib, built["inner"], f'{meta["h1"]} | The Preparedness Archive', meta["description"]), encoding="utf-8")
         report["articles"].append({k: built[k] for k in ("slug", "words", "minutes", "sources", "canonical")})
+    report["hubs"] = []
+    for sec in lib.taxonomy["sections"]:
+        h = build_hub(lib, sec["slug"], include_drafts=not args.public)
+        if h:
+            (out / "wp" / f"{h['slug']}.html").write_text(wp_wrap(lib, h["inner"]), encoding="utf-8")
+            (out / "preview" / f"{h['slug']}.html").write_text(preview_wrap(lib, h["inner"], h["title"], h["description"]), encoding="utf-8")
+            report["hubs"].append({"section": sec["slug"], "guides": h["count"]})
     land = build_landing(lib, include_drafts=not args.public)
     desc = "Evidence-based household preparedness and a historical record of how earlier generations managed without modern infrastructure."
     (out / "wp" / "landing.html").write_text(wp_wrap(lib, land["inner"]), encoding="utf-8")
