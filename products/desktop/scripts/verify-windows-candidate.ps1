@@ -31,6 +31,12 @@ try {
     $custody = Join-Path $custodyDir ("inputs-" + [guid]::NewGuid().ToString("N") + ".json")
     & $PythonCommand products/desktop/scripts/build_input_guard.py capture $custody
     if ($LASTEXITCODE -ne 0) { throw "R55 source-custody capture FAILED; no candidate may be accepted" }
+    $toolchain = $null
+    if ($Build) {
+        $toolchain = Join-Path $custodyDir ("toolchain-" + [guid]::NewGuid().ToString("N") + ".json")
+        & $PythonCommand products/desktop/scripts/toolchain_guard.py capture $toolchain
+        if ($LASTEXITCODE -ne 0) { throw "R56 packaging interpreter/dependency capture FAILED" }
+    }
     $dist = Join-Path $repo "dist"
     if ($Build) {
         # Only remove generated files from previous builds in the explicit dist
@@ -46,16 +52,22 @@ try {
         foreach ($app in $apps) {
             & $PythonCommand products/desktop/scripts/build_input_guard.py check $custody
             if ($LASTEXITCODE -ne 0) { throw "R55 packaging input changed before $app" }
-            & $PythonCommand -m PyInstaller --noconfirm --clean --onefile --windowed --paths products/desktop --name $app --distpath $dist --workpath "build/$app" --specpath build/specs "products/desktop/launchers/$app.py"
+            & $PythonCommand products/desktop/scripts/toolchain_guard.py check $toolchain
+            if ($LASTEXITCODE -ne 0) { throw "R56 packaging toolchain changed before $app" }
+            & $PythonCommand -I -m PyInstaller --noconfirm --clean --onefile --windowed --paths products/desktop --name $app --distpath $dist --workpath "build/$app" --specpath build/specs "products/desktop/launchers/$app.py"
             if ($LASTEXITCODE -ne 0) { throw "Packaging FAILED for $app" }
             & $PythonCommand products/desktop/scripts/build_input_guard.py check $custody
             if ($LASTEXITCODE -ne 0) { throw "R55 packaging input changed during $app" }
+            & $PythonCommand products/desktop/scripts/toolchain_guard.py check $toolchain
+            if ($LASTEXITCODE -ne 0) { throw "R56 packaging toolchain changed during $app" }
         }
         # R40 builds an exact six-file, no-clobber, atomically published inventory.
         & $PythonCommand products/desktop/build_inventory.py $dist
         if ($LASTEXITCODE -ne 0) { throw "R40 candidate inventory generation FAILED" }
         & $PythonCommand products/desktop/scripts/build_input_guard.py check $custody
         if ($LASTEXITCODE -ne 0) { throw "R55 packaging input changed during inventory generation" }
+        & $PythonCommand products/desktop/scripts/toolchain_guard.py check $toolchain
+        if ($LASTEXITCODE -ne 0) { throw "R56 packaging toolchain changed during inventory generation" }
     }
     if (-not (Test-Path -LiteralPath $dist -PathType Container)) {
         throw "No dist folder; use -Build or place six candidate EXEs plus SHA256SUMS.txt in dist."
@@ -68,12 +80,21 @@ try {
     $output = Join-Path $evidenceDir ("offline-gate-" + (Get-Date -Format "yyyyMMdd-HHmmss-fffffff") + ".json")
     & $PythonCommand products/desktop/scripts/build_input_guard.py check $custody
     if ($LASTEXITCODE -ne 0) { throw "R55 source custody FAILED before binary gate" }
+    if ($Build) {
+        & $PythonCommand products/desktop/scripts/toolchain_guard.py check $toolchain
+        if ($LASTEXITCODE -ne 0) { throw "R56 toolchain changed before binary gate" }
+    }
     & $PythonCommand products/desktop/release_gate.py $dist --smoke --report $output
     if ($LASTEXITCODE -ne 0) { throw "Offline Windows candidate gate FAILED" }
     & $PythonCommand products/desktop/report_attestation.py $output $dist
     if ($LASTEXITCODE -ne 0) { throw "R39 offline report consistency FAILED" }
     & $PythonCommand products/desktop/scripts/build_input_guard.py check $custody
     if ($LASTEXITCODE -ne 0) { throw "R55 source custody FAILED after binary gate" }
+    if ($Build) {
+        & $PythonCommand products/desktop/scripts/toolchain_guard.py check $toolchain
+        if ($LASTEXITCODE -ne 0) { throw "R56 toolchain changed after binary gate" }
+        Write-Host "R56 private toolchain inventory (NOT signed or release approval): $toolchain"
+    }
     Write-Host "R39 report check is UNPINNED unless the original digest is kept in a separate trusted register."
     Write-Host "Offline candidate evidence (NOT a release authorization): $output"
     Write-Host "R55 source custody snapshot (NOT signed or release approval): $custody"
