@@ -7,10 +7,48 @@ from __future__ import annotations
 
 from collections import defaultdict, deque
 from datetime import date
+from decimal import Decimal
+import re
 from typing import Any, Iterable
 
 WINDOW_DAYS = 7
 MAX_CANDIDATES = 100_000
+MAX_RECORDS = 200_000  # Matches the bounded CSV importer.
+_PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
+_NORMALIZED_KEY = re.compile(r"[A-Z0-9]+\Z", re.ASCII)
+
+
+def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, Any]]:
+    """Check audit identity and exact money before building candidate groups.
+
+    This public engine is also called without CSV import. Reject direct-call
+    floats, nonfinite Decimals, unparseable physical line citations, and
+    ambiguous duplicate source positions; never interpolate private values.
+    """
+    seen_rows: set[str] = set()
+    for record in records:
+        if len(seen_rows) >= MAX_RECORDS:
+            raise ValueError("Too many invoice source records; no report was saved")
+        if not isinstance(record, dict):
+            raise ValueError("Invoice source record must be a mapping")
+        source_row = record.get("row")
+        if (not isinstance(source_row, str)
+                or _PHYSICAL_ROW.fullmatch(source_row) is None
+                or int(source_row) < 2):
+            raise ValueError("Invoice source requires a canonical physical CSV row")
+        if source_row in seen_rows:
+            raise ValueError("Duplicate invoice physical CSV row; no report was saved")
+        seen_rows.add(source_row)
+        if type(record.get("dt")) is not date:
+            raise ValueError("Candidate date must be a parsed calendar date")
+        amount = record.get("amt")
+        if not isinstance(amount, Decimal) or not amount.is_finite():
+            raise ValueError("Invoice amount must be a finite exact Decimal")
+        for field in ("v", "inv"):
+            key = record.get(field)
+            if not isinstance(key, str) or _NORMALIZED_KEY.fullmatch(key) is None:
+                raise ValueError("Invoice vendor and invoice keys must be normalized ASCII")
+        yield record
 
 
 def candidate_pairs(records: Iterable[dict[str, Any]], *,
@@ -19,25 +57,23 @@ def candidate_pairs(records: Iterable[dict[str, Any]], *,
                     ) -> list[tuple[dict[str, Any], dict[str, Any], str, str]]:
     """Find exact and near invoice candidates without quadratic all-history scans.
 
-    Callers provide normalized v and inv identifiers, amt as Decimal,
-    dt as date, and original CSV row. Exact normalized invoice groups
-    use the first source row as a stable anchor. Near matches compare
+    Callers provide normalized v and inv identifiers, amt as finite Decimal,
+    dt as date, and unique original physical CSV rows. Exact normalized invoice
+    groups use the first source row as a stable anchor. Near matches compare
     same-vendor/same-amount invoices only within window_days.
 
     In dense duplicate clusters the result itself can be quadratic.
     Fail closed with an explicit error once the report limit is reached;
     do not emit a partial report or claim completeness.
     """
-    if not isinstance(window_days, int) or not 0 <= window_days <= 365:
+    if type(window_days) is not int or not 0 <= window_days <= 365:
         raise ValueError("Duplicate window must be an integer between 0 and 365 days")
-    if not isinstance(max_candidates, int) or max_candidates < 1:
+    if type(max_candidates) is not int or max_candidates < 1:
         raise ValueError("Candidate limit must be a positive integer")
 
     exact: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
     by_amount: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
-    for record in records:
-        if not isinstance(record["dt"], date):
-            raise ValueError("Candidate date must be a parsed calendar date")
+    for record in _validated_records(records):
         exact[(record["v"], record["inv"])].append(record)
         by_amount[(record["v"], record["amt"])].append(record)
 
