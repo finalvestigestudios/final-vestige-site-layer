@@ -532,3 +532,26 @@ against privileged filesystem races. See
 Focused R47 tests: `PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests -p test_journal_io_r47.py -v`.
 Complete Windows/full-checkout integration, premium distribution entitlement,
 malware scanning and separate QD approval remain required. **Nothing is released.**
+
+
+## R49 — Post-write premium review commit confirmation (pre-release)
+
+Both premium human exception-review workbenches now **re-read the original source CSV
+and the complete SHA-256-linked review journal after the journal append has been
+fsynced**, while retaining the descriptor-owned R48 writer lock. A review is
+acknowledged only when the source batch remains identical and the journal
+contains exactly the prior verified history followed by precisely the expected
+new human event. Changes to a report, missing/altered/duplicate events, broken
+journal parsing or lost lock ownership fail closed; the verifier never silently
+repairs, retries or approves a financial/compliance decision.
+
+**Important:** If this post-append check fails, the event may *already have
+been written*. Do not blindly resubmit. Preserve the source/journal evidence
+and have a human inspect the full history before any recovery. The local
+readback is not a digital signature, encryption, or a guarantee against later
+changes. See [R49 confirmation and incident runbook](docs/REVIEW_COMMIT_READBACK_R49.md).
+The 16 synthetic helper tests passed locally (normal and `-OO`); four
+committed real-module integration tests and the full repository/Windows
+binary gates remain unverified due to CI infrastructure failures.
+**No free or premium application is authorized for distribution without
+native x64 smoke/AV/checksum, premium-access verification and QD approval.**
