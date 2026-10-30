@@ -30,6 +30,10 @@ The connector's read of these eight unmodified JSON files on 2026-10-30 found **
 
 All **35 original article bodies**, companion metadata, the local water planner, source rows, shared-URL status, owner-map and input-provenance records are left unchanged by this draft PR. The only modifications to existing files are one machine-verified count assertion corrected from 208 to 209 after Start's additional source row, and a stricter **blank/non-text source-use note** rejection; neither approves content.
 
+**Independent connector-level cross-check on the exact draft head:** all 36 body/metadata pairs were read, yielding **367 distinct article–source citation pairs**, **367 matching nonblank article-specific source-use entries, zero missing or extra source-use keys**, and all 35 long-form articles above the 1,800-word minimum (the planner is a shorter separate tool). These are mechanical copy/inventory checks, not an independent source read or a proof of safety.
+
+**Safety-state nuance that must remain visible:** 30 articles/tools are marked `safety_review: pending`, two base articles are marked `approved` by a prior founder response (making-water-safer and salt-beef-salt-pork-age-of-sail), and four non-actionable historical articles are labelled `not-required`. All **36 remain unpublished drafts**. The two earlier founder approvals did not provide item-by-item expert review and are not independent medical/food safety/QD approvals; those articles still have incomplete human link checks and must pass the exact-copy release gates.
+
 ## Review workflow
 
 1. Check out **the exact PR head** locally with actual repository access. Do not run on a different branch and report it as this head.
