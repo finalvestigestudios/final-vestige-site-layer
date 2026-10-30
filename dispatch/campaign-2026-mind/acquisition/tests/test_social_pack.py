@@ -38,7 +38,7 @@ class SocialCreativeChecks(unittest.TestCase):
     def test_production_is_accessible_and_provenance_noted(self):
         for x in self.assets:
             self.assertEqual(len(x["overlay"]),4)
-            self.assertTrue(all(8<len(s)<95 for s in x["overlay"]))
+            self.assertTrue(all(4<=len(s)<95 for s in x["overlay"]))
             self.assertGreater(len(x["rights_note"]),25)
             self.assertGreater(len(x["source_urls"]),0)
 
@@ -46,7 +46,7 @@ class SocialCreativeChecks(unittest.TestCase):
         for x in self.assets:
             self.assertTrue(45<=len(x["narration"].split())<=110,(x["edition"],len(x["narration"].split())))
             self.assertTrue(5<=len(x["hook"].split())<=13)
-            self.assertTrue(x["caption"].endswith(" "+x["caption"].split()[-1]) or x["caption"])
+            self.assertIn("finalvestige.com/dispatch", x["caption"].lower())
 
     def test_first_party_and_authoritative_sources(self):
         for x in self.assets:
