@@ -1,0 +1,44 @@
+{
+  "n": 18,
+  "slug": "emergency-hygiene-sanitation",
+  "title": "Emergency hygiene, toilets and waste",
+  "h1": "Emergency hygiene, handwashing, toilets and waste when services fail",
+  "dek": "Handwashing without a tap, a toilet when the sewer is down, and what to do with the waste. The CDC, a state health department and a university extension describe it plainly, and disagree on one point we flag.",
+  "description": "How to wash hands, set up a bag or twin-bucket toilet and handle waste when water and sewer service fail, from the CDC, Washington DOH and OSU Extension.",
+  "section": "health-sanitation",
+  "track": "modern",
+  "tags": [
+    "Handwashing",
+    "Emergency toilet",
+    "Waste",
+    "Sanitation"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If CDC revises its hygiene or septic pages (the septic page was revised in August 2026), or when local waste-disposal guidance is checked; otherwise at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "water-advisories-explained",
+    "water-math",
+    "two-week-water-storage",
+    "medication-and-devices",
+    "sanitation-before-germ-theory"
+  ],
+  "source_use": {
+    "cdc-hygiene-emergency": "Handwashing for at least 20 seconds; when boiled or disinfected water is recommended; temporary jug station; sanitizer with at least 60% alcohol and its limits; bathing, teeth, wound care and Vibrio; diaper fact sheets pointer.",
+    "health-cdc-septic": "Limit flushing and water use in an emergency; flush as little as possible or use a temporary toilet; do not pump a flooded septic tank more than halfway; signs of failure; avoid sewage-contaminated floodwater; do not drink well water until known safe; pre-flood steps for septic households.",
+    "health-cdc-sanitation-archive": "Archived emergency-response comparison of toilet options and their constraints; handwashing at every sanitation facility; containing waste reduces disease spread (cited as general principle only).",
+    "health-wadoh-toilet": "Three toilet options; the bag-lined bowl steps; the bucket option; cat-hole conditions; wipes and sanitizer if no running water; bagging non-biodegradable items; suggested disposal in the garbage (the point on which it disagrees with OSU).",
+    "health-osu-sanitation": "Toilet blindness; fecal-oral disease risk; twin-bucket set-up, use and emptying; avoid toilets even if home pipes seem fine; turn off household water; handwashing station design; CDC key handwashing times as listed; sanitizer caveats; diapers, menstrual products and mobility; supply list; do not put human waste in normal garbage.",
+    "health-cdc-power-outage": "Safe water for drinking, cooking and personal hygiene is bottled, boiled or treated.",
+    "health-ready-kit": "One gallon per person per day counts for drinking and sanitation; moist towelettes, garbage bags and ties; soap, sanitizer, diapers, feminine and hygiene supplies."
+  }
+}
