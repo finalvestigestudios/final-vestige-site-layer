@@ -15,7 +15,7 @@ results=[]
 for i in range(2):
     subprocess.run([sys.executable,str(ROOT/'render.py')],cwd=ROOT,check=True,capture_output=True,text=True)
     output=(ROOT/'index.html').read_bytes()
-    assert output.count(b'data-ex2-stage')==6, 'Wrong chronology record count'
+    assert output.count(b' data-ex2-stage ')==6, 'Wrong chronology record count'
     assert output.count(b'data-ex2-gallery-item')==6, 'Wrong image record count'
     assert b'<img ' not in output, 'No embedded NASA image bytes authorized'
     results.append(hashlib.sha256(output).hexdigest())
