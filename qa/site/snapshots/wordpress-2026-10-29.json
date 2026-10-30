@@ -863,6 +863,9 @@
     "identity": {
       "site_icon": 0,
       "site_logo": 0
+    },
+    "privacy": {
+      "blog_public": 1
     }
   },
   "critical_routes": [
