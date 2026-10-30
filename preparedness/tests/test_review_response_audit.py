@@ -1,4 +1,4 @@
-"""56 synthetic, offline, read-only adversarial tests for human review intake.
+"""76 synthetic, offline, read-only adversarial tests for human review intake.
 
 All sample URLs are reserved .test domains. Reports never grant publishing authority.
 """
