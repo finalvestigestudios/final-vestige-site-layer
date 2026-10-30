@@ -17,8 +17,10 @@ Push-Location $repo
 $oldPath = $env:PYTHONPATH
 try {
     $env:PYTHONPATH = Join-Path $repo "products\desktop"
-    & $PythonCommand -m unittest discover -s products/desktop/tests -v
-    if ($LASTEXITCODE -ne 0) { throw "Desktop regression tests FAILED" }
+    # R52 validates both full unittest modes and all six source smokes
+    # before any Windows candidate packaging or EXE invocation.
+    & $PythonCommand products/desktop/scripts/offline_source_gate.py
+    if ($LASTEXITCODE -ne 0) { throw "R52 offline source verification FAILED; no Windows candidate may be built or accepted" }
     $dist = Join-Path $repo "dist"
     if ($Build) {
         # Only remove generated files from previous builds in the explicit dist
