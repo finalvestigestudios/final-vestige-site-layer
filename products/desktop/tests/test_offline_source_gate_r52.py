@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -38,8 +39,14 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         self.test_passes = []
         self.smoke_calls = []
 
+    def sample_summary(self):
+        return {"schema": "fvs-unittest-provenance-v1", "test_count": 12,
+                "module_count": 2, "skipped_count": 1,
+                "test_ids_sha256": "a" * 64}
+
     def pass_tests(self, optimized):
         self.test_passes.append(optimized)
+        return self.sample_summary()
 
     def smoke(self, app):
         self.smoke_calls.append(app)
@@ -56,6 +63,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         self.assertEqual(self.smoke_calls, [app for _, app in gate.source_gate.APPS])
         self.assertEqual(report["normal_unittest"], "PASS")
         self.assertEqual(report["optimized_unittest"], "PASS")
+        self.assertEqual(report["unittest_provenance"], self.sample_summary())
         self.assertTrue(report["source_smoke"]["all_six_passed"])
         self.assertEqual(len(report["test_inventory"]), 1)
         self.assertEqual(set(report["test_inventory"][0]), {"path", "sha256"})
@@ -78,6 +86,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
             self.test_passes.append(optimized)
             if optimized:
                 raise RuntimeError("optimized suite failure")
+            return self.sample_summary()
         with self.assertRaisesRegex(RuntimeError, "optimized suite failure"):
             self.verify(tests=fail_second)
         self.assertEqual(self.test_passes, [False, True])
@@ -166,18 +175,52 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.verify()
 
-    def test_child_tests_run_isolated_and_without_output_capture(self):
+    def test_child_tests_run_isolated_and_only_capture_bounded_provenance(self):
         with patch.object(gate.subprocess, "run") as proc:
             proc.return_value.returncode = 0
-            gate._child_suite(self.root, False, timeout=61)
+            proc.return_value.stdout = json.dumps(self.sample_summary()).encode()
+            normal_result = gate._child_suite(self.root, False, timeout=61)
             normal = proc.call_args
-            self.assertEqual(normal.args[0][1:3], ["-m", "unittest"])
+            self.assertEqual(normal_result, self.sample_summary())
+            script = str(self.desktop / "scripts" / "unittest_provenance.py")
+            self.assertEqual(normal.args[0][1:], [script])
             self.assertEqual(normal.kwargs["cwd"], self.root)
             self.assertEqual(normal.kwargs["stderr"], subprocess.DEVNULL)
-            self.assertEqual(normal.kwargs["stdout"], subprocess.DEVNULL)
+            self.assertEqual(normal.kwargs["stdout"], subprocess.PIPE)
             self.assertEqual(normal.kwargs["env"]["PYTHONPATH"], str(self.desktop))
+            self.assertEqual(normal.kwargs["env"]["PYTHONNOUSERSITE"], "1")
             gate._child_suite(self.root, True, timeout=61)
-            self.assertEqual(proc.call_args.args[0][1:4], ["-OO", "-m", "unittest"])
+            self.assertEqual(proc.call_args.args[0][1:], ["-OO", script])
+
+    def test_child_rejects_zero_invalid_or_oversized_provenance(self):
+        with patch.object(gate.subprocess, "run") as proc:
+            proc.return_value.returncode = 0
+            for payload in (b"", b"{}",
+                            json.dumps({**self.sample_summary(), "test_count": 0}).encode(),
+                            json.dumps({**self.sample_summary(), "skipped_count": 12}).encode(),
+                            b"x" * 1025):
+                proc.return_value.stdout = payload
+                with self.assertRaises(RuntimeError):
+                    gate._child_suite(self.root, False, timeout=61)
+
+    def test_optimized_test_coverage_drift_withholds_smoke(self):
+        def different(optimized):
+            self.test_passes.append(optimized)
+            summary = self.sample_summary()
+            if optimized:
+                summary["test_count"] = 13
+            return summary
+        with self.assertRaisesRegex(RuntimeError, "coverage differs"):
+            self.verify(tests=different)
+        self.assertEqual(self.test_passes, [False, True])
+        self.assertFalse(self.smoke_calls)
+
+    def test_invalid_module_and_digest_evidence_fails_closed(self):
+        for override in ({"module_count": 0}, {"module_count": True},
+                         {"test_ids_sha256": "not-a-digest"}, {"extra": "x"}):
+            summary = {**self.sample_summary(), **override}
+            with self.assertRaises(RuntimeError):
+                gate._validated_suite_summary(summary)
 
     def test_child_nonzero_and_timeout_fail_closed(self):
         with patch.object(gate.subprocess, "run") as proc:
