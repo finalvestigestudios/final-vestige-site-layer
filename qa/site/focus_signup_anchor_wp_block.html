@@ -1,0 +1,32 @@
+<!-- wp:html -->
+<script id="fvf-signup-anchor-v1">
+(() => {
+  if (window.__fvfSignupAnchorV1) return;
+  window.__fvfSignupAnchorV1 = true;
+
+  function install() {
+    const page = document.querySelector('.fv-focus');
+    if (!page || document.getElementById('subscribe-blog')) return;
+    const widget = page.querySelector('.wp-block-jetpack-subscriptions');
+    if (!widget || !widget.parentNode) return;
+
+    const anchor = document.createElement('span');
+    anchor.id = 'subscribe-blog';
+    anchor.setAttribute('data-fvf-signup-anchor', '1');
+    anchor.style.display = 'block';
+    anchor.style.scrollMarginTop = '80px';
+    widget.parentNode.insertBefore(anchor, widget);
+
+    if (window.location && window.location.hash === '#subscribe-blog') {
+      anchor.scrollIntoView({ block: 'start' });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', install, { once: true });
+  } else {
+    install();
+  }
+})();
+</script>
+<!-- /wp:html -->
