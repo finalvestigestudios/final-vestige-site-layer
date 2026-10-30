@@ -709,3 +709,10 @@ for limits, independent source-byte verification and test/release gates.
 - Existing `claim`/`credit` classifications, optional/default behavior, Decimal-safe split allocations, source digests, human review flags and offline handling remain unchanged.
 - Seventeen focused regressions passed in both normal and optimized (`-OO`) Python 3.13.5 Linux; five full-engine tests and the synthetic packaged smoke assertion remain **unexecuted** pending trusted complete-repository/Windows CI. See [R66 GrantAudit privacy runbook](docs/GRANT_CLAIM_TYPE_PRIVACY_R66.md).
 - **Unreleased:** No premium binary or public download, no site change or production merge. Independent QD approval and full Windows x64 release gates still apply.
+
+## R67 — Invoice Twin Scout direct-engine financial and audit input boundary (pre-release)
+
+- Direct callers of the invoice candidate engine now must provide finite exact `Decimal` amounts, canonical unique physical CSV row references, real calendar dates, and normalized ASCII vendor/invoice keys. Invalid identifiers, duplicate rows, malformed values and data-bearing control text fail with fixed private-data-free errors before candidate report production.
+- Boolean/float window or quota controls are rejected, and at most 200,000 imported records may be considered. Matching classifications, seven-day window, deterministic reviewer IDs, the 100,000-candidate default quota, and all existing valid CSV output fields remain unchanged.
+- **20 isolated synthetic regressions passed in Python 3.13.5 Linux**, in both normal and optimized (`-OO`) interpreter modes, with warnings-as-errors; source and test blobs matched the tested local files. Full repository integration and native Windows x64 smoke/AV/accessibility gates remain **unexecuted**. See [R67 Invoice boundary runbook](docs/INVOICE_DIRECT_INPUT_BOUNDARY_R67.md).
+- **Unreleased:** No executables, new download links, premium access changes, production edits, or QD bypass. Human review of all duplicate candidates is mandatory.
