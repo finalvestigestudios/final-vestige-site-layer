@@ -64,7 +64,7 @@ class PublicProbeTests(unittest.TestCase):
         self.assertEqual(r["outcome"], "FAIL")
     def test_pdf_wrong_signature(self):
         url = "https://finalvestige.com" + PDF
-        r = probe("pdf", PDF, "pdf", opener=FakeResponse(b"not a PDF", "application/pdf", url))))
+        r = probe("pdf", PDF, "pdf", opener=FakeOpener(FakeResponse(b"not a PDF", "application/pdf", url)))
         self.assertEqual(r["outcome"], "FAIL")
     def test_pdf_truncated(self):
         url = "https://finalvestige.com" + PDF
@@ -74,7 +74,7 @@ class PublicProbeTests(unittest.TestCase):
         r = probe("focus", "/focus/", "html", opener=FakeOpener(fake_html("https://external.test/")))
         self.assertEqual(r["outcome"], "INCONCLUSIVE")
     def test_dns_error_is_not_site_fail(self):
-        r = probe("focus", "/focus/", "html", b"focus fieldbook", FakeOpener(error=URLError("DNS unavailable")))
+        r = probe("focus", "/focus/", "html", opener=FakeOpener(error=URLError("DNS unavailable")))
         self.assertEqual(r["outcome"], "INCONCLUSIVE")
     def test_redirect_guard_rejects_external(self):
         handler = FirstPartyRedirects()
@@ -89,6 +89,10 @@ class PublicProbeTests(unittest.TestCase):
         self.assertEqual(r["redirect_location"], "https://finalvestige.com/research-sources/")
     def test_legacy_gone_classification(self):
         url = "https://finalvestige.com/72-hours-without-the-tap/"
-        r = inspect_legacy("legacy", "/72-hours-without-the-tap/", FakeOpener(error=HTTPError(url, 410, "gone", {}, None))
+        r = inspect_legacy("legacy", "/72-hours-without-the-tap/", FakeOpener(error=HTTPError(url, 410, "gone", {}, None)))
         self.assertEqual(r["outcome"], "OBSERVED")
-        self.assertEqual(r["status"], 410(ÑÍÑ}½É}É½ÕÑÍ}áÑ±å}½ÕÈ¡Í±¤èÍ±¹ÍÍÉÑÅÕ°¡±¸¡I=UQL¤°Ð¤(()¥}}¹µ}|ôô}}µ¥¹}|èÕ¹¥ÑÑÍÐ¹µ¥¸ ¤
+        self.assertEqual(r["status"], 410)
+    def test_core_routes_exactly_four(self): self.assertEqual(len(ROUTES), 4)
+
+
+if __name__ == "__main__": unittest.main()
