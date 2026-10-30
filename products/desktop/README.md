@@ -574,3 +574,16 @@ on Linux/Python 3.13.5 under normal and optimized `-OO` modes (**31/31 each**)
 using a reconstructed focused source subset. Windows and whole-repository
 integration, live entitlement issuance, six native EXEs and all release/QD gates
 remain **unverified**. **Do not distribute either premium binary.**
+
+
+### R51 — chronology-safe human audit journals (pre-release)
+
+GrantAudit Studio Pro and ProcureGuard Studio Pro now refuse out-of-order
+UTC timestamps across their complete local reviewer-journal histories, even
+when the SHA-256 chain is internally consistent. Before recording another
+human review, both applications reject a local clock that predates the latest
+recorded decision. Equal-second events remain permitted. This is a consistency
+check, **not** a trusted timestamp authority, signed audit trail, compliance
+decision, or release authorization. Backdated records require manual
+investigation; no automatic repair/replay occurs. See
+[the R51 review chronology runbook](docs/REVIEW_CHRONOLOGY_R51.md).

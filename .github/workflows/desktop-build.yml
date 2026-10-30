@@ -75,6 +75,8 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_review_commit_r49.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_review_commit_integration_r49.py' -v
           python -OO -m unittest discover -s products/desktop/tests -p 'test_entitlement_custody_r50.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_chronology_r51.py' -v
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_chronology_integration_r51.py' -v
       - name: Execute six synthetic source engines and inventory their source hashes
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -202,6 +204,14 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python -OO -m unittest discover -s products/desktop/tests -p test_entitlement_custody_r50.py -v
           if ($LASTEXITCODE -ne 0) { throw "R50 offline entitlement custody failed" }
+      - name: Verify R51 premium review chronology (both workbenches)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -OO -m unittest discover -s products/desktop/tests -p test_review_chronology_r51.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R51 journal UTC chronology regressions failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p test_review_chronology_integration_r51.py -v
+          if ($LASTEXITCODE -ne 0) { throw "R51 premium workflow chronology integration failed" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables
