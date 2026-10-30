@@ -2,6 +2,7 @@
 """Deterministic, static-first Experience 2.0 staging build; no third-party modules."""
 from html import escape
 from response_lab import section as response_section, validate as validate_response, export_assets as export_response_assets
+from trail import section as trail_section
 from io import StringIO
 from urllib.parse import urlparse
 import csv
@@ -197,8 +198,9 @@ def render(manifest, custody):
     response=json.loads((ROOT/'response-crosswalk.json').read_text(encoding='utf-8'))
     validate_response(response)
     response_html=response_section(response)
-    css=(ROOT/'assets/app.css').read_text(encoding='utf-8')+'\n'+(ROOT/'assets/response.css').read_text(encoding='utf-8')
-    js=(ROOT/'assets/app.js').read_text(encoding='utf-8')+'\n'+(ROOT/'assets/response.js').read_text(encoding='utf-8')
+    trails_html=trail_section(response,custody)
+    css=(ROOT/'assets/app.css').read_text(encoding='utf-8')+'\n'+(ROOT/'assets/response.css').read_text(encoding='utf-8')+'\n'+(ROOT/'assets/trail.css').read_text(encoding='utf-8')
+    js=(ROOT/'assets/app.js').read_text(encoding='utf-8')+'\n'+(ROOT/'assets/response.js').read_text(encoding='utf-8')+'\n'+(ROOT/'assets/trail.js').read_text(encoding='utf-8')
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Apollo 1 | The Evidence Unfolds — Final Vestige Experience 2.0 (staging)</title>
@@ -231,9 +233,10 @@ def render(manifest, custody):
 <ol class="ex2-ledger__grid" data-ex2-claim-list>{ledger}</ol><p class="ex2-ledger__empty" data-ex2-claim-empty hidden>No claims in this class. Show all evidence to restore the full source crosswalk.</p><p class="ex2-ledger__foot">Catalog details and Board text checked 30 October 2026. Audit of individual image licenses, publicity rights and WordPress usage remains open; no NASA image bytes are reproduced in this prototype. All six claims stay accessible without JavaScript. NASA does not endorse this independent publication.</p></section>
 {compare}
 {response_html}
-<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">VI / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
+{trails_html}
+<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">VII / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
 <ol class="ex2-gallery__grid">{gallery}</ol><p class="ex2-gallery__notice">Source-only gallery · no image bytes loaded · NASA credits preserved in linked records · this independent exhibition is not affiliated with or endorsed by NASA.</p></section>
-<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">VII / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
+<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">VIII / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
 <div class="ex2-atlas__tools" data-ex2-atlas-tools hidden><label for="atlas-filter">Filter archive</label><select id="atlas-filter" data-ex2-atlas-filter><option value="all">All themes</option><option value="engineering">Engineering</option><option value="disasters">Disasters</option><option value="expeditions">Expeditions</option></select><label for="atlas-search">Search titles & topics</label><input type="search" id="atlas-search" data-ex2-atlas-search placeholder="Find an investigation" autocomplete="off"><output data-ex2-atlas-status aria-live="polite" role="status"></output></div>
 <div class="ex2-atlas__grid" data-ex2-atlas-grid>{atlas}</div><p class="ex2-atlas__empty" data-ex2-atlas-empty hidden>No matching investigations. Try another search.</p></section>
 <footer class="ex2-footer"><span>FINAL VESTIGE STUDIOS · INDEPENDENT STAGING STUDY · NOT DEPLOYED</span><span><a href="https://finalvestige.com/">Return to live Final Vestige</a> · <a href="#main">Back to top ↑</a></span></footer>

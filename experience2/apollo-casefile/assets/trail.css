@@ -1,0 +1,41 @@
+/* Isolated documentary trail; no remote assets, motion dependence or false map. */
+.ex2-trail{color:#f2ede4;background:radial-gradient(ellipse at 20% 0%,#26312d 0%,#171d1b 55%,#151918 100%)}
+.ex2-trail .ex2-section__intro{max-width:1050px}
+.ex2-trail__reader{max-width:1480px;margin:32px auto 0}
+.ex2-trail__prompt{border-left:3px solid #c4a775;background:#232825;padding:20px 24px;max-width:900px}
+.ex2-trail__prompt>b{letter-spacing:.16em;font-size:12px;color:#e7c591}
+.ex2-trail__prompt p{line-height:1.65;margin:8px 0 0;color:#d0d3cb}
+.ex2-trail__controls{display:flex;align-items:end;flex-wrap:wrap;gap:12px;padding:26px 0}
+.ex2-trail__controls label{display:block;width:100%;font-size:13px;letter-spacing:.08em;color:#d9c5a7}
+.ex2-trail__controls select,.ex2-trail__controls button{border:1px solid #b5a184;background:#1c2320;color:#fff;min-height:48px;padding:10px 15px;font:inherit;max-width:100%;border-radius:0}
+.ex2-trail__controls select{min-width:min(100%,360px)}
+.ex2-trail__controls output{font-size:13px;color:#d9c5a7;padding:12px 0}
+.ex2-trail__grid{padding:0;list-style:none;display:grid;gap:26px;grid-template-columns:repeat(2,minmax(0,1fr));margin:32px 0}
+.ex2-trail__card{min-width:0;padding:clamp(20px,3vw,34px);border:1px solid #8b7960;background:#242c28;scroll-margin-top:22px}
+.ex2-trail__card:target{outline:3px solid #e6bf78;outline-offset:3px}
+.ex2-trail__card-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#d6be96;font-size:12px;letter-spacing:.1em}
+.ex2-trail__card-head p{margin:0}
+.ex2-trail__card h3{font-family:Georgia,serif;font-size:clamp(24px,2.3vw,34px);line-height:1.17;color:#fff5e6;margin:14px 0 24px}
+.ex2-trail__steps{list-style:none;margin:0;padding:0 0 0 17px;border-left:1px solid #877052}
+.ex2-trail__steps li{position:relative;margin:0 0 20px;padding:0 0 20px 23px;border-bottom:1px solid #4c514a}
+.ex2-trail__steps li:last-child{margin:0;border:0;padding-bottom:0}
+.ex2-trail__steps li:before{position:absolute;left:-23px;top:5px;content:"";width:11px;height:11px;background:#d7ba87;border-radius:50%}
+.ex2-trail__steps li>div{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.ex2-trail__step{font:700 14px ui-monospace,monospace;color:#f5d39c}
+.ex2-trail__steps li>div p{font-size:11px;letter-spacing:.06em;font-weight:700;color:#e8d1aa;margin:0}
+.ex2-trail__steps h4{font:700 17px/1.4 Georgia,serif;color:#f0eadf;margin:10px 0}
+.ex2-trail__steps li>p{line-height:1.65;color:#d0d3cb;margin:0 0 12px;font-size:14px}
+.ex2-trail__steps small{color:#e7c591;font:12px/1.65 ui-monospace,monospace}
+.ex2-trail__steps .ex2-trail__limit{background:#373025;border-left:2px solid #d0a967;padding:12px 16px;margin-left:-10px}
+.ex2-trail__method{margin:24px 0 0;border-top:1px solid #747466}
+.ex2-trail__method summary{min-height:48px;padding:12px 4px;cursor:pointer;color:#edcd99;font-weight:700}
+.ex2-trail__method p{line-height:1.65;color:#d8d8cb;font-size:14px}
+.ex2-trail__actions{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}
+.ex2-trail__actions a{display:inline-flex;align-items:center;min-height:44px;padding:8px 10px;border:1px solid #987f5b;color:#fff0d4;font-size:13px;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+.ex2-trail__closing{font-size:13px;line-height:1.6;color:#bdbdb0;max-width:900px}
+.ex2-trail__controls[hidden],.ex2-trail__card[hidden]{display:none!important}
+.ex2-trail :focus-visible{outline:3px solid #efc77e;outline-offset:3px}
+@media(max-width:860px){.ex2-trail__grid{grid-template-columns:minmax(0,1fr)}.ex2-trail__card{padding:23px}}
+@media(max-width:460px){.ex2-trail__controls{display:flex;flex-direction:column;align-items:stretch}.ex2-trail__controls select,.ex2-trail__controls button{width:100%;min-width:0}.ex2-trail__steps{padding-left:15px}.ex2-trail__steps li{padding-left:16px}.ex2-trail__steps li:before{left:-21px}}
+@media(prefers-reduced-motion:reduce){.ex2-trail,.ex2-trail *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.ex2-trail{background:white!important;color:black!important}.ex2-trail__card{break-inside:avoid;background:white!important;color:black!important}.ex2-trail__controls{display:none!important}.ex2-trail__card[hidden]{display:block!important}.ex2-trail__steps li>p,.ex2-trail__method p{color:black!important}}

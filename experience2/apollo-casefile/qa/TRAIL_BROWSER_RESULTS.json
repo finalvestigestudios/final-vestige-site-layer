@@ -1,0 +1,68 @@
+{
+  "source_head": "local_fixture_staging",
+  "html_sha256": "ac0204dc6619b8702803a7e1e9a6a84d0e1dee00c231014077439e420656af0e",
+  "tested_widths": [
+    {
+      "width": 320,
+      "doc_width": 320,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    },
+    {
+      "width": 360,
+      "doc_width": 360,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    },
+    {
+      "width": 390,
+      "doc_width": 390,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    },
+    {
+      "width": 768,
+      "doc_width": 768,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    },
+    {
+      "width": 1024,
+      "doc_width": 1024,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    },
+    {
+      "width": 1440,
+      "doc_width": 1440,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    },
+    {
+      "width": 1920,
+      "doc_width": 1920,
+      "six_routes": true,
+      "filter_reset": true,
+      "deeplink_focus": true,
+      "no_js_error": true
+    }
+  ],
+  "errors": [],
+  "axe": "NOT_RUN \u2014 verified axe-core bundle unavailable; CDP and DOM smoke do not replace axe or WCAG certification",
+  "metrics": "synthetic in-memory local Chromium only; not Core Web Vitals field p75",
+  "no_js": true,
+  "reduced_motion": true,
+  "fail_open": true
+}
