@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from collections import defaultdict
 from decimal import Decimal
-from statistics import median
 from typing import Callable, Mapping
 
 from .review import labels_for_report, normalized_collision, raw_values
+from .spend_median import RunningDecimalMedian
 
 
 def summarize_spend(
@@ -56,12 +56,14 @@ def summarize_spend(
     }
     history: dict[tuple[str, str], tuple[int, Decimal | None, bool]] = {}
     for vendor, months in monthly.items():
-        prior: list[Decimal] = []
+        prior = RunningDecimalMedian()
         for month, total in sorted(months.items()):
-            baseline = median(prior) if len(prior) >= 3 else None
+            # Compare against previous observed months only; the current
+            # month must not influence its own review threshold.
+            baseline = prior.median() if len(prior) >= 3 else None
             spike = baseline is not None and baseline > 0 and total >= 2 * baseline
             history[(vendor, month)] = (len(prior), baseline, spike)
-            prior.append(total)
+            prior.add(total)
 
     report = []
     for bucket in sorted(totals):
