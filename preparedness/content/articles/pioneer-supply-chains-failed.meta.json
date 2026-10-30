@@ -1,0 +1,44 @@
+{
+  "n": 34,
+  "slug": "pioneer-supply-chains-failed",
+  "title": "How a pioneer supply chain failed",
+  "h1": "How a pioneer supply chain failed: the Donner-Reed party, 1846-47, from the records",
+  "dek": "A restrained, source-based account of how bad route information consumed time, animals and food on one overland journey, where the records disagree, and what current official guidance asks of a traveler.",
+  "description": "A source-based case study of the Donner-Reed party's 1846-47 journey: route advice, lost time and animals, disputed counts, and current winter-travel guidance.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": [
+    "Overland trails",
+    "Donner Party",
+    "Provisions",
+    "Winter travel"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If any listed source changes; when Breen's diary, Reed's letter, Hastings's guide and the full McCurdy paper are read directly; and if a source for the Paiute or Washoe perspective is found.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "not-required",
+    "reviewer": null,
+    "date": null,
+    "scope": "Not a gated slate item (taxonomy gate: false). History with a short safety verdict citing NWS guidance; no procedures or quantities. Editorial read-through, especially of the death counts and the cannibalism paragraph, is still required."
+  },
+  "related": [
+    "navigation-before-gps",
+    "fire-making-across-time"
+  ],
+  "source_use": {
+    "hist-field-nps-donner": "National Park Service account: late start, Hastings Cutoff, depleted supplies, entrapment, 40 deaths of 87, Winnemucca quote.",
+    "hist-field-utah-hastings": "Utah state history of the cutoff: Hastings's guide and uncertain intent, supporters and critics, the Henefer note, the route taken, 47 of 87 reaching Sutter's Fort.",
+    "hist-field-britannica-donner": "Tertiary details: 125 miles longer, two weeks in the Wasatch, desert crossing in five days against two, lost cattle and wagons, snow on October 31, relief parties, 42 deaths, 2010 excavation, Breen's diary.",
+    "hist-field-mccurdy-1994": "Epidemiology of the party's mortality by age, sex and family; 90 persons, 42 deaths (abstract read only).",
+    "hist-field-ca-parks-donner": "The memorial, the park's elevation and its exhibits.",
+    "loc-prairie-traveler": "Library of Congress Army handbook; title page, preface and contents only.",
+    "loc-pioneer-diaries": "Library of Congress catalogue record for 49 emigrant diaries and seven guides; pointer only.",
+    "hist-field-nws-winter-before": "Winter travel planning: tell someone your route, check conditions, vehicle kit.",
+    "hist-field-nws-winter-during": "Stay with a stuck vehicle; leaving means becoming disoriented."
+  }
+}
