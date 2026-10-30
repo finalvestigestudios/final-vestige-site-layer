@@ -23,6 +23,20 @@ Headers are case-insensitive; spaces are accepted in place of underscores. The i
 
 Dates: YYYY-MM-DD or MM/DD/YYYY. Amounts: decimal strings; currency symbols, comma thousands separators and accounting parentheses accepted. Currency conversion, multi-currency, unconstrained allocation rules, fuzzy name matching, and OCR are **not** supported in v0.1. GrantAudit R6 supports explicitly linked split allocations under a limited documented CSV contract. Financial flags require human review.
 
+## R64 Policy Delta Desk source-custody hardening (pre-release)
+
+Policy Delta Desk now processes TXT/MD/CSV policy inputs through the same
+descriptor-verified, bounded raw-byte snapshot guard already used for the
+financial CSV imports. Observed symlink/path swaps, in-place edits during the
+read, and non-regular inputs fail closed *before report publication*. Policy
+diffs also flag accidental identical-byte inputs and visually identical text
+with different byte fingerprints (such as BOM-only changes) for human review.
+Existing exact source SHA-256, line citations, size/line caps, and local-only
+report behavior remain intact. See
+[R64 Policy Delta source custody](docs/POLICY_SNAPSHOT_CUSTODY_R64.md).
+Focused Linux helper verification does not establish successful complete
+repository/Windows EXE verification or legal compliance certification.
+
 ## R60 SpendMap Lite scalable exact medians (pre-release)
 
 SpendMap Lite now calculates prior-month anomaly baselines with a two-heap

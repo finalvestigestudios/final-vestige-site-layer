@@ -7,7 +7,6 @@ from __future__ import annotations
 import difflib
 import hashlib
 import json
-import os
 import re
 from pathlib import Path
 
@@ -22,16 +21,15 @@ def _read_policy(path):
     source = Path(path)
     if source.suffix.lower() not in _ALLOWED_EXTENSIONS or not source.is_file():
         raise ValueError("Policy comparison supports existing TXT, MD and CSV files")
+    # Reuse the suite's descriptor-owned, bounded and identity-checked snapshot
+    # guard rather than trusting a pathname that can be swapped during reading.
+    from .csv_snapshot import read_csv_snapshot
     try:
-        # Read from one opened descriptor, not an earlier stat of the pathname.
-        with source.open("rb") as stream:
-            if os.fstat(stream.fileno()).st_size > MAX_POLICY_BYTES:
-                raise ValueError("Policy file exceeds 10 MiB input limit")
-            raw = stream.read(MAX_POLICY_BYTES + 1)
-    except OSError as exc:
-        raise ValueError("Unable to read policy input") from exc
-    if len(raw) > MAX_POLICY_BYTES:
-        raise ValueError("Policy file exceeds 10 MiB input limit")
+        raw = read_csv_snapshot(source, MAX_POLICY_BYTES)
+    except ValueError as exc:
+        if "exceeds" in str(exc):
+            raise ValueError("Policy file exceeds 10 MiB input limit") from None
+        raise ValueError("Policy input is not a stable regular file (links or concurrent changes are not accepted)") from None
     if b"\x00" in raw:
         raise ValueError("Policy input contains a NUL byte")
     try:
@@ -72,9 +70,16 @@ def compare_policy_files(old, new, folder, output_path):
     before, before_hash, before_name = _read_policy(old)
     after, after_hash, after_name = _read_policy(new)
     delta = _unified_diff(before, after, before_name, after_name)
+    identity_note = (
+        "REVIEW: Both source files have identical bytes; confirm that two intended versions were selected.\n"
+        if before_hash == after_hash else
+        "REVIEW: Source bytes differ but decoded text is identical; verify encoding/BOM or line-ending changes.\n"
+        if not delta else ""
+    )
     report = (
         "Text differences only. Not legal advice or a compliance determination.\n"
         "SHA-256 fingerprints cover the exact source bytes read (including any BOM).\n"
+        + identity_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
         + (delta or "No textual differences found.\n")
