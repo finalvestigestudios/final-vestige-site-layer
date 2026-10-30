@@ -18,7 +18,7 @@ from pathlib import Path
 MAX_WORKFLOW_BYTES = 128 * 1024
 ALLOWED = {
     "final-vestige-desktop-source-only": (
-        "${{ runner.temp }}/fvs-source/source-smoke.json",
+        "${{ runner.temp }}/fvs-source/offline-source-suite.json",
     ),
     "final-vestige-desktop-windows-internal": (
         "dist/SHA256SUMS.txt", "build/offline-candidate-evidence.json",
