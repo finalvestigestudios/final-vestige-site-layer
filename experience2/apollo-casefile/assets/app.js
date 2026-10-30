@@ -41,6 +41,31 @@
      choose();claimTools.hidden=false;
    }catch(_){claimItems.forEach(item=>{item.hidden=false});claimEmpty.hidden=true;claimTools.hidden=true;}
  }
+ /* Deep links must lead to an actually OPEN, keyboard-readable native source drawer.
+    With scripts disabled the native details summary remains visible and operable. */
+ const visitEvidenceHash=()=>{
+   try{
+     const hash=decodeURIComponent(window.location.hash.slice(1));
+     if(!/^(source|custody)-(0[1-6])$/.test(hash))return;
+     const target=root.getElementById(hash);
+     if(!target)return;
+     if(hash.startsWith('source-') && target.tagName==='DETAILS'){
+       target.open=true;
+       const summary=target.querySelector('summary');
+       if(summary)summary.focus({preventScroll:true});
+     }else if(hash.startsWith('custody-')){
+       /* A deep-linked card may be hidden by the optional claim filter. Reveal it. */
+       if(target.hidden && claimFilter){claimFilter.value='all';claimFilter.dispatchEvent(new Event('change',{bubbles:true}))}
+       target.hidden=false;
+       target.focus({preventScroll:true});
+     }
+     target.scrollIntoView({block:'start',behavior:'auto'});
+   }catch(_){/* Linking must never erase or disable evidence. */}
+ };
+ try{
+   window.addEventListener('hashchange',visitEvidenceHash);
+   if(window.location.hash)queueMicrotask(visitEvidenceHash);
+ }catch(_){/* Native anchors and details remain available. */}
  /* A missing/throwing IntersectionObserver must not hide or change any evidence. */
  const sections=[...root.querySelectorAll('[data-ex2-stage]')];
  const links=[...root.querySelectorAll('[data-ex2-rail-link]')];

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Deterministic, static-first Experience 2.0 staging build; no third-party modules."""
 from html import escape
-from pathlib import Path
+from io import StringIO
 from urllib.parse import urlparse
+import csv
+import hashlib
+from pathlib import Path
 import json
 import re
 
@@ -13,7 +16,7 @@ def e(value):
     return escape(str(value), quote=True)
 
 def source_link(url, caption):
-    return f'<a href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(caption)} <span aria-hidden="true">↗</span></a>'
+    return f'<a href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(caption)} <span aria-hidden="true">↗</span><span class="ex2-sr-only"> (opens in new tab)</span></a>'
 
 def validate(manifest):
     assert manifest["primary_report"] == REPORT
@@ -51,7 +54,8 @@ def stage(row):
        <div class="ex2-source__body"><p class="ex2-source__scope"><b>What this source supports.</b> {e(row['finding'])}</p>
        <p><b>What the photograph actually depicts.</b> {e(row['image_description'])}</p>
        <p><b>Source and date.</b> {e(row['source_id'])}; {e(row['source_date'])}. Image credit: {e(row['image_credit'])}.</p>
-       <p class="ex2-source__links">{source_link(row['image_url'], 'Inspect NASA photograph metadata')} {source_link(REPORT,'Read the NASA Review Board report')}</p>
+       <p class="ex2-source__links">{source_link(row['image_url'], 'Inspect NASA photograph metadata')} {source_link(REPORT,'Read the NASA Review Board report')} {source_link('https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html','Read Board findings in NASA history archive')}</p>
+       <p><a class="ex2-source__crosslink" href="#custody-{id}">View the paired Board claim and image-custody crosswalk</a></p>
        <p class="ex2-source__caution">An image's subject and the Review Board's finding are different evidence types. NASA does not endorse this independent presentation.</p></div></details>
      </div>{plate(row)}
    </article>'''
@@ -64,13 +68,13 @@ def gallery_card(row):
       <div class="ex2-gallery__metadata"><p class="ex2-gallery__date">{e(row['source_date'])} · NASA IMAGE CATALOG</p>
       <h3>{e(row['source_id'])}</h3><p><b>What it depicts:</b> {e(row['image_description'])}</p>
       <details><summary>What it cannot establish</summary><p>{e(row['limit'])}</p></details>
-      <p class="ex2-gallery__links">{source_link(row['image_url'], 'Inspect the original NASA record')} · <a href="#source-{rid}">Read our evidence limitation</a></p>
+      <p class="ex2-gallery__links">{source_link(row['image_url'], 'Inspect the original NASA record')} · <a href="#source-{rid}" data-ex2-source-deeplink>Open our evidence limitation</a></p>
       </div></li>'''
 
 def custody_card(item, source):
     """Keep original Board evidence separate from later photographic illustration."""
     rid = e(item["stage_id"])
-    return f'''<li class="ex2-ledger__card" id="custody-{rid}" data-ex2-claim-item data-ex2-claim-category="{e(item['category'])}">
+    return f'''<li class="ex2-ledger__card" id="custody-{rid}" tabindex="-1" data-ex2-claim-item data-ex2-claim-category="{e(item['category'])}">
       <article aria-labelledby="custody-{rid}-title">
        <div class="ex2-ledger__top"><span>CLAIM {rid} / 06</span><span>{e(item['certainty'])}</span></div>
        <h3 id="custody-{rid}-title">{e(item['heading'])}</h3>
@@ -79,10 +83,11 @@ def custody_card(item, source):
        <details><summary>Inspect the two source types for claim {rid}</summary>
          <div class="ex2-ledger__notes"><p><strong>Primary historical record — investigative analysis.</strong> {e(item['board_basis'])}</p>
          <p><strong>Photograph — catalog description, not proof of this causal claim.</strong> {e(item['image_basis'])}</p>
+         <p><strong>Original Board locator.</strong> {e(item['board_locator'])}</p>
          <p><strong>Custody and reuse status.</strong> {e(item['research_status'])}</p>
-         <p>{source_link(REPORT,'Open the NASA Review Board report')} · {source_link(source['image_url'],'Open the NASA photographic catalog entry')}</p></div>
+         <p>{source_link(REPORT,'Open the NASA Review Board report')} · {source_link('https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html','Read Board findings in NASA history archive')} · {source_link(source['image_url'],'Open the NASA photographic catalog entry')}</p></div>
        </details>
-       <div class="ex2-ledger__actions"><a href="#stage-{rid}">Read stage {rid}</a><a href="#source-{rid}">View source drawer</a></div>
+       <div class="ex2-ledger__actions"><a href="#stage-{rid}">Read stage {rid}</a><a href="#source-{rid}" data-ex2-source-deeplink>Open stage {rid} source drawer</a><a href="#custody-{rid}" aria-label="Permalink to evidence claim {rid}">Link to this claim</a></div>
       </article>
      </li>'''
 
@@ -90,6 +95,51 @@ def atlas_card(row):
     key = e(row["wp_id"])
     searchable = " ".join((row["title"], row["theme"], row["summary"]))
     return f'''<article class="ex2-atlas__item" data-ex2-atlas-item data-ex2-theme="{e(row['theme'].lower())}" data-ex2-search="{e(searchable.lower())}"><div><span class="ex2-atlas__tag">{e(row['theme'])}</span><span class="ex2-atlas__id">WP {key}</span></div><h3>{e(row['title'])}</h3><p>{e(row['summary'])}</p><p class="ex2-atlas__geonote">No mapped location: archival precision unreviewed.</p>{source_link(row['url'], 'Read published investigation')}</article>'''
+
+SOURCE_FIELDS = [
+    "claim_id", "claim_category", "certainty", "claim", "evidence_boundary",
+    "board_locator", "board_basis", "board_report_url", "board_findings_url",
+    "image_catalog_id", "image_date", "image_description", "image_credit",
+    "image_record_url", "image_evidence_limit", "media_status", "rights_policy_url",
+    "later_response_url", "geometry"
+]
+
+def export_rows(manifest, custody):
+    """Derive the public custody dataset directly from the SAME research source as the HTML."""
+    assert len(manifest["records"]) == len(custody["claims"]) == 6
+    rows = []
+    for record, claim in zip(manifest["records"], custody["claims"]):
+        assert record["id"] == claim["stage_id"]
+        assert record["rights"].startswith("link_only_")
+        assert claim["board_locator"]
+        rows.append(dict(
+            claim_id=record["id"], claim_category=claim["category"],
+            certainty=claim["certainty"], claim=claim["claim"],
+            evidence_boundary=claim["boundary"], board_locator=claim["board_locator"],
+            board_basis=claim["board_basis"], board_report_url=custody["board_report"],
+            board_findings_url=custody["board_findings"],
+            image_catalog_id=record["source_id"], image_date=record["source_date"],
+            image_description=record["image_description"], image_credit=record["image_credit"],
+            image_record_url=record["image_url"], image_evidence_limit=record["limit"],
+            media_status=record["rights"], rights_policy_url=custody["usage_policy"],
+            later_response_url=custody["later_response"] if record["id"] == "06" else "",
+            geometry="not_assigned"
+        ))
+    assert all(set(row) == set(SOURCE_FIELDS) for row in rows)
+    return rows
+
+def export_assets(manifest, custody):
+    rows = export_rows(manifest, custody)
+    out = StringIO(newline="")
+    writer = csv.DictWriter(out, fieldnames=SOURCE_FIELDS, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    (ROOT / "evidence-export.csv").write_text(out.getvalue(), encoding="utf-8", newline="\n")
+    (ROOT / "evidence-export.json").write_text(
+        json.dumps({"status": "STAGING_SOURCE_ONLY", "verified_at": "2026-10-30",
+                    "no_reproduced_images": True, "no_geographic_coordinates": True,
+                    "not_a_rights_clearance": True, "records": rows},
+                   indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 def render(manifest, custody):
     records=manifest["records"]
@@ -121,7 +171,14 @@ def render(manifest, custody):
 <section class="ex2-section ex2-case" id="chronology" aria-labelledby="chron-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">I / SIX RECORDS · A LIMITED CHRONOLOGY</p><h2 id="chron-title">Follow what <em>the record</em> can bear.</h2><p>This is a sequence of documented conditions, events and later decisions—not a continuous sensor replay. Time markers have different meanings and are explicitly labeled.</p></div>
 <div class="ex2-case__layout"><nav class="ex2-rail" aria-label="Six evidence stages"><span>CHRONOLOGY RAIL</span><ol>{rail}</ol><p>Choose a stage to jump to its evidence. Without JavaScript, all six remain in the document.</p></nav>
 <div class="ex2-stages">{article}</div></div></section>
-<section id="research-desk" class="ex2-section ex2-custody" aria-labelledby="custody-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">II / THE RESEARCH DESK</p><h2 id="custody-title">The source is <em>not</em> the interpretation.</h2><p>Six NASA photograph records have been matched to their actual published descriptions. Some were previously associated with a historical claim they cannot visually establish. Those distinctions are now explicit in every drawer above.</p></div><div class="ex2-custody__grid"><div class="ex2-custody__claim"><h3>Primary finding</h3><p>The Apollo 204 Review Board is the primary source for pressure, timing, cause investigation and egress limitations. It reports that no single ignition source was conclusively identified.</p>{source_link(REPORT,'Read the full Board report')}</div><div class="ex2-custody__claim"><h3>Image custody</h3><p>NASA's six linked photographs depict crew training, spacecraft preparation, post-fire damage or a 2017 memorial exhibit. They do <strong>not</strong> depict a real-time pressure graph, fire ignition or 1967 hatch operation.</p><p>Image reproduction is disabled in this prototype while actual asset transport, third-party credits and promotional-use constraints are audited.</p></div><div class="ex2-custody__claim"><h3>Media policy</h3><p>NASA generally permits informational reproduction of its released imagery subject to restrictions: retain source credit, do not use insignia as branding, do not imply NASA endorsement, and review third-party and identifiable-person rights.</p>{source_link(manifest['rights_policy'],'Read NASA brand and media guidelines')}</div></div><p class="ex2-custody__status">RESEARCH STATUS · 6 NASA description pages verified · image bytes not included · 0 speculative map points</p></section>
+<section id="research-desk" class="ex2-section ex2-custody" aria-labelledby="custody-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">II / THE RESEARCH DESK</p><h2 id="custody-title">The source is <em>not</em> the interpretation.</h2><p>Six NASA photograph records have been matched to their actual published descriptions. Some were previously associated with a historical claim they cannot visually establish. Those distinctions are now explicit in every drawer above.</p></div><div class="ex2-custody__grid"><div class="ex2-custody__claim"><h3>Primary finding</h3><p>The Apollo 204 Review Board is the primary source for pressure, timing, cause investigation and egress limitations. It reports that no single ignition source was conclusively identified.</p>{source_link(REPORT,'Read the full Board report')}</div><div class="ex2-custody__claim"><h3>Image custody</h3><p>NASA's six linked photographs depict crew training, spacecraft preparation, post-fire damage or a 2017 memorial exhibit. They do <strong>not</strong> depict a real-time pressure graph, fire ignition or 1967 hatch operation.</p><p>Image reproduction is disabled in this prototype while actual asset transport, third-party credits and promotional-use constraints are audited.</p></div><div class="ex2-custody__claim"><h3>Media policy</h3><p>NASA generally permits informational reproduction of its released imagery subject to restrictions: retain source credit, do not use insignia as branding, do not imply NASA endorsement, and review third-party and identifiable-person rights.</p>{source_link(manifest['rights_policy'],'Read NASA brand and media guidelines')}</div></div><div class="ex2-custody__exports" aria-labelledby="research-exports-title">
+  <div><p class="ex2-index">PUBLIC SOURCE CUSTODY REGISTER / STAGING EXPORT</p>
+   <h3 id="research-exports-title">Trace the claim back to the document.</h3>
+   <p>Download the six-row crosswalk used to build this exhibition. It separates the Review Board's historical findings from later NASA photographic catalog entries, with each uncertainty and image-reuse hold visible. Neither file reproduces NASA photographs or contains invented map coordinates.</p></div>
+  <div class="ex2-custody__downloads"><a href="evidence-export.csv" download="apollo-1-source-custody.csv" type="text/csv">Download citation ledger · CSV</a><a href="evidence-export.json" download="apollo-1-source-custody.json" type="application/json">Download source records · JSON</a></div>
+  <details><summary>How to interpret this export</summary><p>The Board report is evidence for investigative findings. A cataloged photograph supports only its depicted subject, date and credit. \"Link only\" means image redistribution and individual publicity rights have not been cleared. A source link does not mean NASA endorses this presentation. CSV/JSON downloads are staging fixtures: website integration must provide stable final asset URLs.</p></details>
+  <p class="ex2-custody__downloads-note">Source crosswalk checked 30 October 2026 against NASA's Board report, findings and media policy. Later redesign reference is supported by NASA's published response, rather than misattributed to a 1967 photograph. </p>
+</div><p class="ex2-custody__status">RESEARCH STATUS · 6 NASA description pages verified · image bytes not included · 0 speculative map points</p></section>
 <section id="claim-ledger" class="ex2-section ex2-ledger" aria-labelledby="ledger-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">III / THE CLAIM-TO-SOURCE LEDGER</p><h2 id="ledger-title">A source does not <em>prove everything.</em></h2><p>Each of the six narrative claims has two distinct custody trails: the contemporary Review Board's investigation and a dated catalog photograph. This crosswalk tells you which source actually supports the claim, and where inference begins.</p></div>
 <p class="ex2-ledger__method"><strong>Interpretation key:</strong> A <b>Board finding</b> describes what the investigators concluded from records and tests; a <b>communication timestamp</b> marks a reported event, not necessarily its cause; a <b>later photograph</b> documents what it depicts, not the historical moment illustrated by its placement. The 1967 Board's recommendation and the subsequent redesign are not the same date.</p>
 <div class="ex2-ledger__tools" data-ex2-claim-tools hidden><label for="claim-filter">Inspect claim class</label><select id="claim-filter" data-ex2-claim-filter><option value="all">All six claims</option><option value="finding">Documented conditions</option><option value="timing">Recorded / reconstructed timing</option><option value="uncertain">Qualified ignition inference</option><option value="response">Redesign response</option></select><button type="button" data-ex2-claim-reset>Show all evidence</button><output data-ex2-claim-count role="status" aria-live="polite"></output></div>
@@ -138,6 +195,7 @@ if __name__ == '__main__':
     manifest=json.loads((ROOT/'records.json').read_text(encoding='utf-8'))
     validate(manifest)
     custody=json.loads((ROOT/"custody.json").read_text(encoding="utf-8"))
+    export_assets(manifest,custody)
     rendered=render(manifest,custody)
     dest=ROOT/'index.html'
     dest.write_text(rendered,encoding='utf-8',newline='\n')
