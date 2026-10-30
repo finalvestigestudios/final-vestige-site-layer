@@ -10,7 +10,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal
 from pathlib import Path
 from typing import Callable, Mapping
 
@@ -23,17 +23,9 @@ DEFAULT_POLICY_SHA256 = hashlib.sha256(
 
 
 def _decimal_field(value: object, name: str, maximum: Decimal) -> Decimal:
-    # Reject float/bool inputs: JSON float conversion is not exact financial input.
-    if isinstance(value, bool) or isinstance(value, float) or not isinstance(value, (str, int)):
-        raise ValueError(f"{name} must be a decimal string or integer")
-    raw = str(value).strip()
-    try:
-        result = Decimal(raw)
-    except InvalidOperation as exc:
-        raise ValueError(f"{name} is not a valid decimal") from exc
-    if not result.is_finite() or result < 0 or result > maximum:
-        raise ValueError(f"{name} must be finite and between zero and {maximum}")
-    return result
+    # Preserve the existing call contract for load_price_policy and tests.
+    from .procurement_input import exact_policy_limit
+    return exact_policy_limit(value, name, maximum)
 
 
 def _unique_object(pairs):
@@ -95,12 +87,9 @@ def load_price_policy(path: str | Path | None = None) -> PricePolicy:
 
 
 def event_kind(row: Mapping[str, str], *, source: str) -> str:
-    """Omitted event_type retains legacy positive invoice/receipt behavior."""
-    allowed = {"invoice": {"invoice", "credit"}, "receipt": {"receipt", "return"}}
-    value = str(row.get("event_type", "") or source).strip().casefold()
-    if value not in allowed[source]:
-        raise ValueError(f"Unsupported {source} event_type '{value}' at input row {row.get('row','?')}")
-    return value
+    # Never echo a private CSV event_type (or spoofed row citation) in errors.
+    from .procurement_input import event_kind as safe_event_kind
+    return safe_event_kind(row, source=source)
 
 
 def review_line(
