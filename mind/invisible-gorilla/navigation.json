@@ -1,0 +1,17 @@
+{
+  "proposed_article": "/mind/invisible-gorilla/",
+  "article_live": false,
+  "proposed_hub": "/mind/",
+  "hub_live": false,
+  "proposed_zen12_guide": "/mind/zen12-guide/",
+  "guide_live": false,
+  "active_affiliate_links": [],
+  "tracking_installed": false,
+  "live_links": [
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/"
+  ],
+  "attribution_proposal": "aggregate first-party clicks only; never raw referrer URLs, emails, IPs, fingerprints or inferred purchases; merchant-confirmed sales only"
+}

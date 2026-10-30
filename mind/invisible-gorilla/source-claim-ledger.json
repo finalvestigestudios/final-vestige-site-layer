@@ -1,0 +1,379 @@
+{
+  "title": "Invisible Gorilla Evidence",
+  "sources": [
+    {
+      "id": "s99",
+      "name": "Simons & Chabris 1999",
+      "url": "https://doi.org/10.1068/p281059",
+      "category": "study",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "s05",
+      "name": "Most et al. 2005",
+      "url": "https://doi.org/10.1037/0033-295X.112.1.217",
+      "category": "study",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "s10",
+      "name": "Simons 2010",
+      "url": "https://doi.org/10.1068/i0386",
+      "category": "study",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "s13",
+      "name": "Drew et al. 2013",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "category": "study",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "focus",
+      "name": "Published Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "category": "site",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "puy",
+      "name": "Published Puységur Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "category": "site",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "apollo",
+      "name": "Published Apollo investigation",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "category": "site",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "frank",
+      "name": "Published Franklin investigation",
+      "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "category": "site",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "inspire",
+      "name": "Official Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "category": "vendor",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "zen",
+      "name": "Official Zen12 About offer",
+      "url": "https://zen12.com/about",
+      "category": "vendor",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "ftc",
+      "name": "FTC endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "category": "regulator",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "health",
+      "name": "FTC health claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "category": "regulator",
+      "checked": "2026-10-30"
+    }
+  ],
+  "claims": [
+    {
+      "id": "G01",
+      "claim": "99 basketball task",
+      "source": "s99",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G02",
+      "claim": "99 gorilla event",
+      "source": "s99",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G03",
+      "claim": "99 umbrella event",
+      "source": "s99",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G04",
+      "claim": "99 team-color task differences",
+      "source": "s99",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G05",
+      "claim": "99 task difficulty differences",
+      "source": "s99",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G06",
+      "claim": "50 percent every human always misses",
+      "source": "s99",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G07",
+      "claim": "visible can be unreported",
+      "source": "s99",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G08",
+      "claim": "no neural registration of missed events",
+      "source": "s99",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G09",
+      "claim": "original footage cleared for reuse",
+      "source": "s99",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G10",
+      "claim": "05 attentional feature similarity effect",
+      "source": "s05",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G11",
+      "claim": "05 attention setting influence",
+      "source": "s05",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G12",
+      "claim": "all vivid surprises necessarily noticed",
+      "source": "s05",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G13",
+      "claim": "10 familiarity aids spotting gorilla",
+      "source": "s10",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G14",
+      "claim": "10 curtain color change",
+      "source": "s10",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G15",
+      "claim": "10 departing player",
+      "source": "s10",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G16",
+      "claim": "10 immunity to other unexpected events",
+      "source": "s10",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G17",
+      "claim": "10 other changes slightly less noticed by informed",
+      "source": "s10",
+      "decision": "qualified",
+      "limit": "Context and methodological limits required"
+    },
+    {
+      "id": "G18",
+      "claim": "13 twenty-four radiologists",
+      "source": "s13",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G19",
+      "claim": "13 20/24 gorilla not reported",
+      "source": "s13",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G20",
+      "claim": "13 target 48-times nodule size",
+      "source": "s13",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G21",
+      "claim": "13 eye tracking indicates region fixation",
+      "source": "s13",
+      "decision": "qualified",
+      "limit": "Context and methodological limits required"
+    },
+    {
+      "id": "G22",
+      "claim": "fixation equals conscious report",
+      "source": "s13",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G23",
+      "claim": "83% real lung cancers missed",
+      "source": "s13",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G24",
+      "claim": "general clinical outcome proven",
+      "source": "s13",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G25",
+      "claim": "published free 52-page Focus Fieldbook",
+      "source": "focus",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G26",
+      "claim": "Focus can cure cognitive condition",
+      "source": "focus",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G27",
+      "claim": "Puységur source archive has witness cases",
+      "source": "puy",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G28",
+      "claim": "animal magnetism modern efficacy established",
+      "source": "puy",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G29",
+      "claim": "Apollo research link active",
+      "source": "apollo",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G30",
+      "claim": "Franklin research link active",
+      "source": "frank",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G31",
+      "claim": "Inspire3 merchant lists meditation products",
+      "source": "inspire",
+      "decision": "seller-only",
+      "limit": "Attribution only; not independent efficacy"
+    },
+    {
+      "id": "G32",
+      "claim": "specific affiliate approval for FV confirmed",
+      "source": "inspire",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G33",
+      "claim": "Zen12 vendor describes 12-minute format",
+      "source": "zen",
+      "decision": "seller-only",
+      "limit": "Attribution only; not independent efficacy"
+    },
+    {
+      "id": "G34",
+      "claim": "Zen12 vendor describes 12 levels",
+      "source": "zen",
+      "decision": "seller-only",
+      "limit": "Attribution only; not independent efficacy"
+    },
+    {
+      "id": "G35",
+      "claim": "Zen12 vendor describes four styles per level",
+      "source": "zen",
+      "decision": "seller-only",
+      "limit": "Attribution only; not independent efficacy"
+    },
+    {
+      "id": "G36",
+      "claim": "one hour equivalent to 12 minutes proven",
+      "source": "zen",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G37",
+      "claim": "Zen12 makes gorilla visible",
+      "source": "zen",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G38",
+      "claim": "FTC near-link material connection disclosure",
+      "source": "ftc",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    },
+    {
+      "id": "G39",
+      "claim": "FTC generic distant link suffices",
+      "source": "ftc",
+      "decision": "exclude",
+      "limit": "Do not publish as fact"
+    },
+    {
+      "id": "G40",
+      "claim": "FTC claims need relevant product-specific evidence",
+      "source": "health",
+      "decision": "supported",
+      "limit": "Study- or first-party-specific; never overgeneralize"
+    }
+  ],
+  "affiliate": {
+    "approved": false,
+    "tracking_link": null,
+    "payout": null,
+    "price": null,
+    "product_tested": false
+  },
+  "publication_approved": false
+}
