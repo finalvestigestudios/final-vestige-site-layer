@@ -175,7 +175,7 @@ class StartRevisionEvidenceTests(unittest.TestCase):
     def test_all_citations_in_every_article_and_tool_have_individual_scope_notes(self):
         import re
         for slug, meta in self.lib.articles.items():
-            cited = set(re.findall(r"\\{\\{cite:([a-z0-9-]+)\\}\\}", meta["_body"]))
+            cited = set(re.findall(r"\{\{cite:([a-z0-9-]+)\}\}", meta["_body"]))
             with self.subTest(slug=slug):
                 self.assertEqual(cited, set(meta.get("source_use", {})))
 
