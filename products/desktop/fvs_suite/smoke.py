@@ -146,6 +146,22 @@ def run_smoke(app_id: str) -> list[Path]:
             _check(summary["G1"]["claimed"] == "68.00", "smoke invariant 14")
             _check(summary["G2"]["claimed"] == "40.00", "smoke invariant 15")
             _check("SHA-256" in outputs[2].read_text(encoding="utf-8"), "smoke invariant 16")
+            # R66: a confidential unsupported claim type must fail before export.
+            private_claims = _csv(root, "private-claims.csv",
+                ("claim_id","amount","program","ledger_reference","claim_type","related_claim"), [
+                ("Q1","100.00","G1","TX100","private-reimbursement-991","")])
+            private_destination = root / "grant-private-output"
+            private_destination.mkdir()
+            try:
+                engine.grant_audit(private_claims, linked_ledger, linked_budget,
+                                   str(private_destination))
+            except ValueError as error:
+                _check("Unsupported claim_type at claim CSV physical row 2" in str(error),
+                       "smoke invariant 40")
+                _check("private-reimbursement-991" not in str(error), "smoke invariant 41")
+            else:
+                raise ValueError("smoke invariant 40")
+            _check(not any(private_destination.iterdir()), "smoke invariant 42")
             # Exercise packaged premium human-review code using synthetic data.
             batch = exception_review.read_cases(outputs[0], "grants")
             _check(batch.cases, "smoke invariant 17")
