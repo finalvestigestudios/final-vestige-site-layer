@@ -597,3 +597,18 @@ Python. Equal test counts with a different skipped set reject evidence, as do
 entirely skipped test modules. No skip reasons, stack traces, customer inputs,
 Windows binaries, or release authorizations are included in evidence. See
 [skip-identity verification runbook](docs/TEST_SKIP_IDENTITY_R54.md).
+
+
+## R55 pinned Windows build inputs (pre-release)
+
+The runner-independent Windows candidate script and internal Windows CI now pin the
+bounded SHA-256/metadata inventory of **all six apps' Python packaging inputs**,
+the PowerShell build driver, and the CI workflow. They re-check this private
+manifest before/after every PyInstaller operation and before/after the binary
+candidate gate; observed source changes, injected modules, altered build
+commands, same-byte file swaps or missing sources fail closed. This narrows
+the risk of accidentally packaging six binaries from different source trees.
+The manifest is stored outside the checkout and contains no customer records.
+See [R55 build-input custody runbook](docs/BUILD_INPUT_CUSTODY_R55.md).
+It is not an executable signature, clean-machine certification, premium
+distribution permission or QD release authorization.
