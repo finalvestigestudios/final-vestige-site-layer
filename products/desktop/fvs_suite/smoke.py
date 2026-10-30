@@ -65,7 +65,14 @@ def run_smoke(app_id: str) -> list[Path]:
                 ("ACME", "INV-100", "200.00", "2026-01-01"),
                 ("Acme", "INV-100", "200", "2026-01-02")])
             outputs = engine.invoice_twins(source, str(root))
-            _check(_rows(outputs[0])[0]["status"] == "exact_invoice_key", "smoke invariant 02")
+            invoice_rows = _rows(outputs[0])
+            _check(invoice_rows[0]["status"] == "exact_invoice_key", "smoke invariant 02")
+            _check(invoice_rows[0]["source_sha256"] == hashlib.sha256(
+                   Path(source).read_bytes()).hexdigest(), "smoke invariant 36")
+            candidate_ref = invoice_rows[0]["candidate_ref"]
+            _check(len(candidate_ref) == 64 and
+                   all(char in "0123456789abcdef" for char in candidate_ref),
+                   "smoke invariant 37")
         elif app_id == "spend":
             source = _csv(root, "spend.csv", ("vendor", "amount", "date"), [
                 ("ACME", "10", "2026-01-01"), ("ACME", "10", "2026-02-01"),
