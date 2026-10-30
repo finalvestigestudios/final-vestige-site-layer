@@ -37,7 +37,7 @@
       "id": "malbone",
       "wordpress_post_id": 621,
       "title": "Six Miles an Hour",
-      "image_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "image_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
       "source_url": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
       "article_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
       "image_credit": "1903 Brooklyn Rapid Transit map, NYPL Digital Collections, item 5003296",
@@ -45,7 +45,23 @@
       "claim": "Provides historical network context, not exact wreck geometry",
       "limitation": "Do not spatially or chronologically align this map with 1918 crash curve",
       "media_rights_status": "Rights and full-resolution catalog metadata pending external record access; page returned HTTP 403 to text fetch; existing Final Vestige hosted image only",
-      "policy_source": "https://www.nypl.org/research/rights-and-permissions"
+      "policy_source": "https://www.nypl.org/research/rights-and-permissions",
+      "original_wordpress_image_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_wordpress_width": 5667,
+      "original_wordpress_height": 3831,
+      "original_wordpress_filesize_bytes": 5553669,
+      "image_delivery": {
+        "strategy": "WordPress-authorized Jetpack CDN responsive sizes",
+        "source": "WordPress media.get ID 1258",
+        "srcset_widths": [
+          768,
+          1024,
+          1536
+        ],
+        "default_width": 1024,
+        "optimized_payload_bytes": "NOT_MEASURED",
+        "rights_review": "STILL_PENDING"
+      }
     }
   ],
   "commercial_boundaries": {

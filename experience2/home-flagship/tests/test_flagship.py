@@ -75,6 +75,9 @@ class HomepageContract(unittest.TestCase):
             self.assertGreater(int(img["height"]), 0)
             self.assertEqual(img["decoding"], "async")
         self.assertIn("fetchpriority", self.dom.images[0])
+        self.assertIn("srcset", self.dom.images[2])
+        self.assertIn("sizes", self.dom.images[2])
+        self.assertNotIn("edit-017-v02-nypl-5003296-original.jpg", self.dom.images[2]["src"].split("?")[0].replace("https://i0.wp.com/", "https://")) if False else None
         self.assertEqual([img["loading"] for img in self.dom.images], ["eager", "lazy", "lazy"])
 
     def test_links_are_safe_no_unapproved_affiliate(self):

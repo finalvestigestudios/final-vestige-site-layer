@@ -32,6 +32,9 @@ Source metadata independently crosschecked against the published WordPress posts
 
 **NYPL:** 1903 BRT map https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0 is cited by the published Malbone investigation, but the catalog page returned 403 to our external reader this sprint. Rights metadata and live image loading remain unverified. The 1903 network map MUST NOT be presented as the plan of the 1918 temporary curve or as a literal spatial/chronological overlap with the wreck evidence.
 
+
+**Image performance correction (2026-10-30):** WordPress media ID 1258 exposes the NYPL original at 5667×3831, **5,553,669 bytes**. The prototype no longer requests that full-resolution image by default: it uses WordPress-listed Jetpack 768/1024/1536 responsive variants with a sizes hint, and shows the full map by object-fit:contain rather than cropping evidence. This does NOT prove that the CDN variant bytes or load status are good; capture and record real network values before release. NASA media ID 473 original is 1041×810/78,346 bytes; Franklin ID 474 original is 960×1526/466,043 bytes. Original source links remain exposed in the evidence drawer.
+
 ## Integration path and non-regressions
 
 The demo includes its own standalone header, studio controls and footer. It must NOT be pasted over live WordPress page 6. If a direction is approved, adapt only the selected hero and curated evidence module, preserving live WordPress Assembler navigation and canonical paths, the full 72-item Hidden in the Margins collection and enhancement, current source-driven editorial routes, 52-page Focus Fieldbook and Jetpack one-list signup, six Worlds, Apollo narrative, existing Library inspector, Public Record, and actual footer.
