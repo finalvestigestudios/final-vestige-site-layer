@@ -644,3 +644,13 @@ distribution permission or QD release authorization.
 ### R56 Windows packaging toolchain custody (draft / unreleased)
 
 In addition to R55 source custody, [R56 operating procedure](docs/WINDOWS_TOOLCHAIN_CUSTODY_R56.md) pins the packaging Python interpreter, installed PyInstaller/hooks and relevant crypto/dependency files across all six Windows builds. Both the offline Windows driver and CI use isolated `python -I -m PyInstaller` to prevent checkout-root package shadowing. Source/toolchain validation never grants executable release, premium distribution or QD approval.
+
+## R61 — SpendMap Lite source snapshot fingerprint (pre-release)
+
+Each nonempty SpendMap CSV row now includes `source_sha256`, computed from the
+**same verified source bytes** as the imported records. This binds physical
+source-row citations to a precise input version; reviewers can verify the
+preserved original with SHA-256. It does not certify authenticity, fraud, or
+compliance. Empty imports have no report row to carry the fingerprint.
+See [R61 source snapshot contract](docs/SPENDMAP_SOURCE_SNAPSHOT_R61.md).
+The release/CI/Windows QD gates remain unchanged; no binary is published.
