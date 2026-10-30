@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: final-vestige-desktop-source-only
-          path: ${{ runner.temp }}/fvs-source/source-smoke.json
+          path: ${{ runner.temp }}/fvs-source/offline-source-suite.json
           if-no-files-found: error
           retention-days: 7
   windows-build:

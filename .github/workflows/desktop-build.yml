@@ -25,77 +25,25 @@ jobs:
           python-version: '3.12'
       - name: Fail closed on CI artifact paths (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
+      - name: Verify mandatory two-mode CI source gate (R57)
+        run: python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
-      - name: Run complete cross-platform desktop regression suite
-        run: python -m unittest discover -s products/desktop/tests -v
-      - name: Verify recent provenance/parser checks with optimized Python
-        run: |
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_physical_provenance_r19.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_premium_review_csv_r20.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_source_smoke_gate_r21.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_amount_lexical_integrity_r22.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_quantity_lexical_integrity_r23.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_ascii_data_privacy_r24.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_import_bounds_r25.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_policy_diff_r26.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_policy_engine_r26.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_reports_r27.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_engine_writer_r27.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_text_evidence_integration_r28.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_manifest_guard_r29.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_manifest_integration_r29.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_snapshot_r30.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_csv_engine_snapshot_r30.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_snapshot_manifest_binding_r31.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_manifest_binding_r31.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_bundle_r32.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_package_r32.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_verify_r33.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_grant_anchor_r34.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_bundle_r35.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_provenance_r35.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_procurement_verify_r36.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_candidate_guard_r37.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_candidate_gate_integration_r37.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_release_report_r38.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_release_report_cli_r38.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_report_attestation_r39.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_build_inventory_r40.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_ci_artifact_policy_r41.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_source_smoke_integrity_r42.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_source_scope_r43.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_keyboard_access_r44.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_ui_error_privacy_r45.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_register_r46.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_journal_io_r47.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_lock_r48.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_lock_integration_r48.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_commit_r49.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_commit_integration_r49.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_entitlement_custody_r50.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_chronology_r51.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_review_chronology_integration_r51.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_offline_source_gate_r52.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_unittest_provenance_r53.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_unittest_skipped_provenance_r54.py' -v
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_build_input_guard_r55.py' -v
-      - name: Execute six synthetic source engines and inventory their source hashes
+      - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
-          python products/desktop/scripts/source_smoke_gate.py --report "$RUNNER_TEMP/fvs-source/source-smoke.json"
+          python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"
       - name: Upload internal source-only evidence (never binaries)
         uses: actions/upload-artifact@v4
         with:
           name: final-vestige-desktop-source-only
-          path: ${{ runner.temp }}/fvs-source/source-smoke.json
+          path: ${{ runner.temp }}/fvs-source/offline-source-suite.json
           if-no-files-found: error
           retention-days: 7
 
   windows-build:
     runs-on: windows-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -103,155 +51,16 @@ jobs:
           python-version: '3.12'
       - name: Fail closed on CI artifact paths before packaging (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
+      - name: Verify mandatory two-mode CI source gate (R57)
+        run: python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
-      - name: Run deterministic engine tests
+      - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -v
-      - name: Validate optimization-safe release checks (R10)
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -O -m unittest discover -s products/desktop/tests -p test_release_hardening_r10.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R10 optimization-safe smoke and integrity checks failed" }
-      - name: Validate R37 candidate custody with optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_candidate_guard_r37.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R37 candidate payload tests failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_candidate_gate_integration_r37.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R37 candidate gate integration failed" }
-      - name: Validate R38 atomic evidence under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_release_report_r38.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R38 atomic evidence tests failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_release_report_cli_r38.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R38 evidence CLI tests failed" }
-      - name: Validate R39 independent evidence checks under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_report_attestation_r39.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R39 report attestation tests failed" }
-      - name: Validate R40 canonical inventory under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_build_inventory_r40.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R40 inventory publisher tests failed" }
-      - name: Validate R41 evidence-only upload policy with optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_ci_artifact_policy_r41.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R41 CI artifact policy tests failed" }
-      - name: Validate R42 six-app source smoke provenance with optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_source_smoke_integrity_r42.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R42 source evidence integrity tests failed" }
-      - name: Validate R43 complete source scope under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_source_scope_r43.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R43 desktop source-scope verification failed" }
-      - name: Verify R44 GUI keyboard actions with optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_keyboard_access_r44.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R44 keyboard usability tests failed" }
-      - name: Validate R45 GUI error privacy under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_ui_error_privacy_r45.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R45 GUI privacy tests failed" }
-      - name: Validate R46 atomic premium registers under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_register_r46.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R46 review register consistency checks failed" }
-      - name: Validate R47 premium descriptor-bound journal custody with optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_journal_io_r47.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R47 premium review journal custody failed" }
-      - name: Verify R48 premium writer lock ownership and both review workbenches
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_lock_r48.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R48 writer lock custody failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_lock_integration_r48.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R48 grant and procurement review integration failed" }
-      - name: Confirm R49 post-fsync premium review commits under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_commit_r49.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R49 premium commit readback regressions failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_commit_integration_r49.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R49 grant/procurement journal commit integration failed" }
-      - name: Verify R50 descriptor-checked premium entitlements under optimized Python
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_entitlement_custody_r50.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R50 offline entitlement custody failed" }
-      - name: Verify R51 premium review chronology (both workbenches)
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_chronology_r51.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R51 journal UTC chronology regressions failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_review_chronology_integration_r51.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R51 premium workflow chronology integration failed" }
-      - name: Verify R52 offline source provenance and failure paths
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_offline_source_gate_r52.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R52 offline source gate regression tests failed" }
-      - name: Verify R53 complete desktop unittest coverage and privacy
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -OO -m unittest discover -s products/desktop/tests -p test_unittest_provenance_r53.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R53 source regression provenance verification failed" }
-      - name: Verify R54 exact active/skipped case identities in both Python modes
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -p test_unittest_skipped_provenance_r54.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R54 normal skip-provenance regression failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_unittest_skipped_provenance_r54.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R54 optimized skip-provenance regression failed" }
-      - name: Validate R55 six-app build-input custody in both Python modes
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -p test_build_input_guard_r55.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R55 normal build-input custody regressions failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_build_input_guard_r55.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R55 optimized build-input custody regressions failed" }
-      - name: Validate R56 isolated packager and toolchain guard in both Python modes
-        shell: pwsh
-        run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -p test_toolchain_guard_r56.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R56 toolchain custody tests failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p test_toolchain_guard_r56.py -v
-          if ($LASTEXITCODE -ne 0) { throw "R56 optimized toolchain custody tests failed" }
+          python products/desktop/scripts/offline_source_gate.py
+          if ($LASTEXITCODE -ne 0) { throw "R57 complete source and engine smoke verification FAILED" }
       - name: Install packaging tool
         run: python -m pip install "pyinstaller>=6.12,<7"
       - name: Build six standalone Windows executables
