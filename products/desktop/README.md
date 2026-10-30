@@ -666,3 +666,17 @@ Header-only inputs have no data row in which to carry fingerprints. See
 [R62 LedgerDiff provenance runbook](docs/LEDGERDIFF_SOURCE_IDENTITY_R62.md).
 No app is released, and premium-access, executable/QD and production gates
 remain mandatory.
+
+## R63 Invoice Twin Scout source custody (pre-release)
+
+Invoice Twin Scout now hashes the **exact descriptor-verified input CSV snapshot**
+used for candidate discovery. Existing report columns are preserved; two new
+columns, `source_sha256` and `candidate_ref`, bind each duplicate-review
+candidate to the imported bytes, physical source rows, and review status. A
+deterministic, domain-separated candidate reference is a reviewer locator,
+**not proof of fraud, authorship, or compliance**. Invalid source hashes,
+physical row references, unsupported statuses, and duplicated candidate IDs
+fail before a CSV is published. Header-only reports have no row-level hash.
+
+See [R63 Invoice source identity runbook](docs/INVOICE_SOURCE_IDENTITY_R63.md)
+for limits, independent source-byte verification and test/release gates.
