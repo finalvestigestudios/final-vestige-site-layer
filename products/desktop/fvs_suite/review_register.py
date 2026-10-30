@@ -12,11 +12,13 @@ from pathlib import Path
 from typing import Callable
 
 from .atomic_reports import write_csv_report
+from .review_identity import require_snapshot_match
 
 
 def publish_review_register(report, product, journal, folder, *, read_cases: Callable,
                             read_journal: Callable, columns: tuple[str, ...],
-                            cell: Callable[[object], str]) -> Path:
+                            cell: Callable[[object], str],
+                            expected_report_sha256: str | None = None) -> Path:
     """Stage a CSV and revalidate complete input snapshots before publication.
 
     ``read_cases`` / ``read_journal`` are the premium review validators, passed
@@ -25,6 +27,7 @@ def publish_review_register(report, product, journal, folder, *, read_cases: Cal
     change fails without creating a final CSV or replacing an older export.
     """
     batch = read_cases(report, product)
+    require_snapshot_match(expected_report_sha256, batch.report_sha256)
     events = read_journal(journal, batch)
     states = {event["case_id"]: event for event in events}
     target = Path(folder)
@@ -50,6 +53,7 @@ def publish_review_register(report, product, journal, folder, *, read_cases: Cal
         # Must run after the final row has been consumed, BEFORE atomic rename.
         # Compare the entire journal history, not just the latest per-case state.
         closing = read_cases(report, product)
+        require_snapshot_match(expected_report_sha256, closing.report_sha256)
         if closing != batch or read_journal(journal, closing) != events:
             raise ValueError("Review evidence changed during register export; retry from fresh evidence")
 
