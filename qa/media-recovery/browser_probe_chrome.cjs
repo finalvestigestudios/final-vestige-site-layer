@@ -1,0 +1,171 @@
+'use strict';
+/** Browser proof harness, read-only. Node >=22; installed Chromium; no npm packages. */
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const {spawn}=require('node:child_process');
+const {loadSnapshot}=require('./validate_inventory.cjs');
+const {classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
+const P0=[268,432,418,407,434,621],nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
+function plan(snapshot,all){
+ const posts=snapshot.parts.flatMap(x=>x.posts),images=snapshot.parts.flatMap(x=>x.images);
+ return (all?posts.map(p=>p.id):P0).map(id=>{
+  const p=posts.find(v=>v.id===id);if(!p)throw Error('Missing post '+id);
+  if(new URL(p.url).hostname!=='finalvestige.com')throw Error('Offsite page refused '+p.url);
+  return {id,url:p.url,title:p.title,stored:images.filter(v=>v.post_id===id)};
+ });
+}
+class CDP{
+ constructor(ws){
+  this.ws=ws;this.next=1;this.pending=new Map();this.handlers=new Set();
+  ws.addEventListener('message',event=>{
+   let msg;try{msg=JSON.parse(event.data)}catch{return}
+   if(msg.id){const r=this.pending.get(msg.id);if(r){this.pending.delete(msg.id);msg.error?r.reject(Error(msg.error.message)):r.resolve(msg.result||{})}return}
+   for(const fn of this.handlers)fn(msg);
+  });
+ }
+ on(fn){this.handlers.add(fn);return()=>this.handlers.delete(fn)}
+ send(method,params={},timeout=12000){
+  return new Promise((resolve,reject)=>{
+   const id=this.next++,timer=setTimeout(()=>{this.pending.delete(id);reject(Error('CDP timeout '+method))},timeout);
+   this.pending.set(id,{resolve:v=>{clearTimeout(timer);resolve(v)},reject:e=>{clearTimeout(timer);reject(e)}});
+   this.ws.send(JSON.stringify({id,method,params}));
+  });
+ }
+ close(){for(const [,p]of this.pending)p.reject(Error('CDP closed'));this.pending.clear();this.ws.close()}
+}
+async function launch(){
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'fv-media-'));
+ const child=spawn(process.env.CHROMIUM_BIN||'/usr/bin/chromium',
+  ['--headless=new','--no-sandbox','--disable-dev-shm-usage','--disable-extensions',
+   '--no-first-run','--no-default-browser-check','--disable-background-networking',
+   '--remote-debugging-port=0','--user-data-dir='+dir,'about:blank'],{stdio:'ignore'});
+ try{
+  let port=0;
+  for(let i=0;i<80;i++){
+   if(child.exitCode!==null)throw Error('Chromium exited before debugging started');
+   try{port=Number(fs.readFileSync(path.join(dir,'DevToolsActivePort'),'utf8').split('\n')[0]);if(port>0)break}catch{}
+   await nap(100);
+  }
+  if(!port)throw Error('Chromium debug port unavailable');
+  const pages=await (await fetch('http://127.0.0.1:'+port+'/json/list')).json();
+  const page=pages.find(e=>e.type==='page'&&e.webSocketDebuggerUrl);
+  if(!page)throw Error('No Chrome page target');
+  const ws=new WebSocket(page.webSocketDebuggerUrl);
+  await Promise.race([new Promise((resolve,reject)=>{ws.addEventListener('open',resolve,{once:true});ws.addEventListener('error',reject,{once:true})}),nap(5000).then(()=>{throw Error('CDP websocket timeout')})]);
+  return{cdp:new CDP(ws),child,dir};
+ }catch(e){child.kill('SIGTERM');fs.rmSync(dir,{recursive:true,force:true});throw e}
+}
+const domScript='('+function(){
+ const root=document.querySelector('article')||document.querySelector('main');
+ const imgs=[...(root?root.querySelectorAll('img'):document.querySelectorAll('img'))];
+ return{url:location.href,title:document.title,hasArticle:!!document.querySelector('article'),
+  images:imgs.map((el,i)=>({index:i,alt:el.alt||'',src:el.getAttribute('src')||'',
+   currentSrc:el.currentSrc||'',dataSrc:el.getAttribute('data-src')||'',complete:el.complete,
+   naturalWidth:el.naturalWidth,naturalHeight:el.naturalHeight,loading:el.loading||'',
+   rectWidth:Math.round(el.getBoundingClientRect().width),rectHeight:Math.round(el.getBoundingClientRect().height)})),
+  pageHeight:Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)};
+}.toString()+')()';
+async function evaluate(cdp,expr){
+ const r=await cdp.send('Runtime.evaluate',{expression:expr,returnByValue:true,awaitPromise:true},15000);
+ if(r.exceptionDetails)throw Error('Browser evaluate exception');
+ return r.result?.value;
+}
+function monitor(cdp){
+ const reqs=new Map(),docFailures=[];
+ const off=cdp.on(m=>{
+  const p=m.params||{},id=p.requestId;
+  if(m.method==='Network.requestWillBeSent'){
+   const old=reqs.get(id)||{url_aliases:[],encodedDataLength:null};
+   if(old.url&&old.url!==p.request.url)old.url_aliases.push(old.url);
+   const r={...old,url:p.request.url,type:p.type||old.type||null};
+   if(p.redirectResponse){r.url_aliases.push(p.redirectResponse.url);r.redirect_status=p.redirectResponse.status}
+   reqs.set(id,r);
+  }else if(m.method==='Network.responseReceived'){
+   const r=reqs.get(id)||{};r.url=p.response.url;r.status=p.response.status;r.mime_type=p.response.mimeType||null;r.type=p.type||r.type||null;reqs.set(id,r);
+  }else if(m.method==='Network.loadingFinished'){
+   const r=reqs.get(id)||{};r.encodedDataLength=Math.round(p.encodedDataLength||0);reqs.set(id,r);
+  }else if(m.method==='Network.loadingFailed'){
+   const r=reqs.get(id)||{};r.failed_error=p.errorText||'network_load_failed';reqs.set(id,r);
+   if(p.type==='Document')docFailures.push({url:r.url||null,error:r.failed_error});
+  }
+ });
+ return{records:()=>[...reqs.values()].map(x=>({...x,url_aliases:[...new Set(x.url_aliases||[])]})),docFailures:()=>docFailures,close:off};
+}
+async function inspect(cdp,page,outputDir){
+ const started=now(),net=monitor(cdp);
+ try{
+  await cdp.send('Page.navigate',{url:page.url},12000);await nap(1800);
+  let doc=await evaluate(cdp,domScript),steps=0;
+  if(doc?.hasArticle){
+   const max=Math.min(doc.pageHeight||0,80000);
+   for(let y=0;y<max&&steps<36;y+=720){await evaluate(cdp,'window.scrollTo(0,'+y+')');steps++;await nap(220)}
+   await nap(1000);doc=await evaluate(cdp,domScript);
+  }
+  const records=net.records(),fail=net.docFailures();
+  const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
+  const images=classifyImages(page.stored,doc?.images||[],records,verified);
+  const broken=images.filter(x=>x.verified_broken_in_browser===true),screenshots=[];
+  if(verified){
+   for(const bad of broken.slice(0,3)){
+    const idx=(doc.images||[]).findIndex(x=>x.currentSrc===bad.current_src||x.src===bad.rendered_src);
+    if(idx<0)continue;
+    try{
+     await evaluate(cdp,"(document.querySelector('article')||document.querySelector('main')).querySelectorAll('img')["+idx+"].scrollIntoView({block:'center'})");
+     await nap(150);
+     const ss=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},12000);
+     const basename='broken-'+page.id+'-'+bad.image_key.replace(':','-')+'.png';
+     fs.writeFileSync(path.join(outputDir,basename),Buffer.from(ss.data,'base64'));screenshots.push(basename);
+    }catch(e){screenshots.push('screenshot_error: '+String(e.message||e))}
+   }
+  }
+  return{post_id:page.id,url:page.url,title:page.title,started,completed:now(),
+   page_result:verified?'inspected_browser':'blocked_or_unverified_page',
+   document_url:doc?.url||null,document_title:doc?.title||null,document_network_failures:fail,
+   rendered_image_count:doc?.images?.length||0,stored_image_count:page.stored.length,scrolled_steps:steps,
+   stored_images:images,screenshots,confirmed_broken_count:verified?broken.length:null,
+   browser_wire_bytes_total:verified?countTransfer(records):null,
+   image_wire_bytes_total:verified?countTransfer(records.filter(x=>x.type==='Image')):null,
+   network_images:records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
+    url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
+    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null})),
+   interpretation:verified?'Real logged-out Chromium request and image dimension observations; still check exact source provenance.':'Environment or page unverified: no claims of broken images are permitted.'};
+ }catch(e){
+  return{post_id:page.id,url:page.url,started,completed:now(),page_result:'probe_error',
+   error:String(e.message||e),stored_image_count:page.stored.length,stored_images:[],
+   confirmed_broken_count:null,browser_wire_bytes_total:null,image_wire_bytes_total:null};
+ }finally{net.close()}
+}
+async function main(){
+ const args=process.argv.slice(2),all=args.includes('--all'),dry=args.includes('--plan'),desktop=args.includes('--desktop');
+ if(args.some(x=>!['--all','--plan','--desktop'].includes(x)))throw Error('Allowed options: --plan, --all, --desktop');
+ const pages=plan(loadSnapshot(),all);
+ if(dry){console.log(JSON.stringify({mode:all?'all':'priority',page_count:pages.length,
+  post_ids:pages.map(x=>x.id),image_sources:pages.reduce((n,p)=>n+p.stored.length,0),
+  urls:pages.map(x=>x.url),browser_probe_executed:false},null,2));return}
+ const dir=path.join(__dirname,'runs');fs.mkdirSync(dir,{recursive:true});
+ const result={schema_version:1,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
+  probe:'logged-out Chrome CDP, no npm dependencies or WordPress writes',
+  requested_pages:pages.length,status:'starting',pages:[]};
+ let browser;
+ try{
+  browser=await launch();const c=browser.cdp;
+  await c.send('Page.enable');await c.send('Network.enable');await c.send('Runtime.enable');
+  await c.send('Network.setCacheDisabled',{cacheDisabled:true});
+  await c.send('Emulation.setDeviceMetricsOverride',desktop?
+   {width:1440,height:900,deviceScaleFactor:1,mobile:false}:
+   {width:390,height:844,deviceScaleFactor:2,mobile:true});
+  for(const p of pages){
+   const r=await inspect(c,p,dir);result.pages.push(r);
+   console.error('media '+r.post_id+': '+r.page_result+' / broken='+r.confirmed_broken_count);
+  }
+  result.status=result.pages.some(x=>x.page_result==='inspected_browser')?'partial_or_complete_browser_evidence':'all_pages_unverified';
+ }catch(e){result.status='environment_or_browser_blocked';result.error=String(e.message||e)}
+ finally{if(browser){try{browser.cdp.close()}catch{};browser.child.kill('SIGTERM');await nap(150);fs.rmSync(browser.dir,{recursive:true,force:true})}}
+ result.finished=now();result.verified_pages=result.pages.filter(x=>x.page_result==='inspected_browser').length;
+ result.confirmed_broken_count=result.verified_pages?result.pages.reduce((n,p)=>n+(p.confirmed_broken_count||0),0):null;
+ const filename=path.join(dir,'browser-audit-'+result.created.replace(/\D/g,'').slice(0,14)+'-'+(all?'all':'p0')+'-'+(desktop?'desktop':'mobile')+'.json');
+ fs.writeFileSync(filename,JSON.stringify(result,null,2)+'\n');
+ console.log(JSON.stringify({output:filename,status:result.status,verified_pages:result.verified_pages,confirmed_broken_count:result.confirmed_broken_count}));
+ if(result.verified_pages!==pages.length)process.exitCode=2;
+}
+if(require.main===module)main().catch(e=>{console.error('MEDIA_PROBE_FATAL '+e.stack);process.exitCode=2});
+module.exports={plan,inspect,monitor};
