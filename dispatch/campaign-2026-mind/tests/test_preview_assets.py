@@ -34,8 +34,8 @@ class DispatchPreviewTests(unittest.TestCase):
     def test_all_html_offline_and_not_live_merchant_affiliate(self):
         for file in PREVIEWS.glob("*.html"):
             data = file.read_text(encoding="utf-8")
-            self.assertNotRegex(data, r"(?i)<script\\b")
-            self.assertNotRegex(data, r"(?i)<img\\b")
+            self.assertNotRegex(data, r"(?i)<script\b")
+            self.assertNotRegex(data, r"(?i)<img\b")
             self.assertNotIn('href="[[APPROVED_', data)
             self.assertNotIn("utm_campaign=", data)
             self.assertNotIn("clickid=", data)
@@ -52,6 +52,7 @@ class DispatchPreviewTests(unittest.TestCase):
             if entry["kind"] == "commercial-review-pending":
                 self.assertIn("Commercial disclosure:", txt_doc)
                 self.assertIn("[[APPROVED_", txt_doc)
+                self.assertLess(txt_doc.index("Commercial disclosure:"), txt_doc.index("[[APPROVED_"))
 
     def test_corrected_historical_facts(self):
         second = (ISSUES / "02-before-hypnosis-had-a-name.md").read_text(encoding="utf-8")
