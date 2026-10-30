@@ -1,0 +1,41 @@
+{
+  "articles": [
+    {
+      "slug": "making-water-safer",
+      "words": 2664,
+      "minutes": 12,
+      "sources": [
+        "cdc-water-store",
+        "cdc-water-safe",
+        "epa-emergency-disinfection",
+        "usscm-brenckle-2019"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/water/making-water-safer/"
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "words": 2908,
+      "minutes": 13,
+      "sources": [
+        "cdc-botulism-prevention",
+        "nchfp-cure-smoke",
+        "usscm-brenckle-2019",
+        "rmg-biscuit-aab0766",
+        "rmg-life-at-sea",
+        "jll-trohler-2003",
+        "si-lind-1753",
+        "si-nmah-life-aboard",
+        "fsis-botulism",
+        "fsis-home-cure-qa"
+      ],
+      "canonical": "https://finalvestige.com/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/"
+    }
+  ],
+  "landing": {
+    "populated_sections": [
+      "water",
+      "lost-ways"
+    ],
+    "article_cards": 2
+  }
+}

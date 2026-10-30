@@ -1,0 +1,29 @@
+{
+  "n": 21,
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "title": "Salt beef and salt pork at sea",
+  "h1": "Salt beef and salt pork at sea: what the records show, and what salt never promised",
+  "dek": "Contracts, ration tables and sailors' journals show how navies fed crews on barrelled meat for months. They also show what salt could not do, and why none of it is a recipe for your kitchen.",
+  "description": "What contracts and journals show about salt beef and pork on sailing warships, where the method failed, and why it is not a modern food-safety model.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": ["Age of sail", "Salt curing", "Scurvy", "Botulism risk"],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "If any listed source changes, or when the primary contracts and journals cited in the museum study are pulled and read directly (see the Limits section).",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["making-water-safer"],
+  "source_use": {
+    "usscm-brenckle-2019": "1813 load-out and weekly ration table; the 1812 Binney beef and pork specification; steeping practice; Melville and other journal accounts; bread contract and biscuit dimensions; pests; scurvy theory about 'slush'; 1802 water rules.",
+    "rmg-life-at-sea": "Overview of the main shipboard rations, the way storage and vermin degraded food, and the cause of scurvy.",
+    "rmg-biscuit-aab0766": "A surviving ship's biscuit in a museum collection, as a physical record of the bread half of the ration.",
+    "si-nmah-life-aboard": "A fishing schooner's 1879 provisions list, as a contrast with naval scale.",
+    "si-lind-1753": "The digitized 1753 Treatise of the Scurvy, as the primary source for the scurvy discussion.",
+    "jll-trohler-2003": "Scholarly account of Lind's trial and the Navy's slow response.",
+    "fsis-botulism": "Botulism, the role of nitrite in cured meat, and the link to traditionally prepared salted foods.",
+    "cdc-botulism-prevention": "Current botulism prevention advice: pressure canning for low-acid foods, toxin cannot be seen, smelled or tasted.",
+    "fsis-home-cure-qa": "USDA's statement that botulism cases have followed home-cured, smoked, preserved and fermented foods.",
+    "nchfp-cure-smoke": "Where to find tested home curing and smoking methods, and how the NCHFP describes what curing does."
+  }
+}

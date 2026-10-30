@@ -1,0 +1,70 @@
+{
+  "_comment": "Content map for the Preparedness Archive (Issue #136). 'status' is internal tracking only and must never be rendered publicly for unpublished items.",
+  "base_path": "/preparedness/",
+  "sections": [
+    {"slug": "start-here", "label": "Start Here", "blurb": "A calm progression: the first hour, the first 72 hours, the first two weeks."},
+    {"slug": "water", "label": "Water", "alias_label": "Water and Sanitation (water half)", "blurb": "How much to store, how to keep it clean, and how to make questionable water safer, with the limits stated plainly."},
+    {"slug": "food", "label": "Food and Preservation", "blurb": "Pantry-first planning and food safety that follows tested USDA and extension methods."},
+    {"slug": "shelter-power", "label": "Shelter, Heat and Power", "blurb": "Staying put or leaving, staying warm or cool, and running equipment without carbon monoxide."},
+    {"slug": "health-sanitation", "label": "Health and Sanitation", "alias_label": "Water and Sanitation (sanitation half)", "blurb": "Medication, devices, hygiene, and waste when services fail."},
+    {"slug": "family-communication", "label": "Family and Personal Safety", "blurb": "Plans a household actually rehearses: fire escape, reunification, warnings, communication."},
+    {"slug": "lost-ways", "label": "The Lost Ways", "blurb": "How earlier generations managed without modern infrastructure, with a modern safety verdict on every method."},
+    {"slug": "field-tools", "label": "Field Tools and Printables", "blurb": "Free worksheets and checklists that run in your browser and keep your information on your device."}
+  ],
+  "section_label_reconciliation": "Issue #136 lists 8 URL slugs; the founder brief names 6 labelled sections. Slugs follow the issue (master spec). 'water' + 'health-sanitation' together cover 'Water and Sanitation'; 'family-communication' carries the label 'Family and Personal Safety'. Founder to confirm.",
+  "tracks": {
+    "modern": {"label": "Act now", "blurb": "Current, source-dated guidance a household can use today."},
+    "lost-ways": {"label": "The Lost Ways", "blurb": "Documented historical practice. Historical accuracy is not modern safety approval."}
+  },
+  "verdicts": {
+    "validated": "Consistent with current official guidance",
+    "context-dependent": "Safe only under stated conditions",
+    "not-validated": "Not validated for modern household use",
+    "unsafe": "Unsafe by modern standards"
+  },
+  "slate": [
+    {"n": 1,  "title": "A household emergency plan that actually gets practiced", "track": "modern", "section": "start-here", "slug": "household-emergency-plan", "gate": false, "status": "not-started"},
+    {"n": 2,  "title": "Build a reliable three-day kit without unnecessary purchases", "track": "modern", "section": "start-here", "slug": "three-day-kit", "gate": false, "status": "not-started"},
+    {"n": 3,  "title": "Water math for one person, family and pets", "track": "modern", "section": "water", "slug": "water-math", "gate": false, "status": "not-started"},
+    {"n": 4,  "title": "Two-week water storage: containers, sanitation and rotation", "track": "modern", "section": "water", "slug": "two-week-water-storage", "gate": false, "status": "not-started"},
+    {"n": 5,  "title": "What boil-water, do-not-drink and do-not-use advisories actually mean", "track": "modern", "section": "water", "slug": "water-advisories-explained", "gate": true, "status": "not-started"},
+    {"n": 6,  "title": "Making water safer: boiling, filtration, treatment and when none is adequate", "track": "modern", "section": "water", "slug": "making-water-safer", "gate": true, "status": "drafted-pending-safety-review"},
+    {"n": 7,  "title": "Why clear water, charcoal, sand and homemade filters can be dangerous", "track": "modern", "section": "water", "slug": "homemade-water-filters", "gate": true, "status": "not-started"},
+    {"n": 8,  "title": "Food supply rotation without waste: a pantry-first approach", "track": "modern", "section": "food", "slug": "pantry-rotation", "gate": false, "status": "not-started"},
+    {"n": 9,  "title": "Food safety during outages: fridge, freezer, time and temperature", "track": "modern", "section": "food", "slug": "food-safety-power-outage", "gate": true, "status": "not-started"},
+    {"n": 10, "title": "Pressure canning low-acid foods: validated processes, not internet shortcuts", "track": "modern", "section": "food", "slug": "pressure-canning-low-acid", "gate": true, "status": "not-started"},
+    {"n": 11, "title": "Safe modern jerky and dehydration: tested methods and contamination controls", "track": "modern", "section": "food", "slug": "safe-jerky-dehydration", "gate": true, "status": "not-started"},
+    {"n": 12, "title": "Heat, cold and generator safety in power outages", "track": "modern", "section": "shelter-power", "slug": "outage-heat-cold-generators", "gate": true, "status": "not-started"},
+    {"n": 13, "title": "Two ways out: home fire planning and rehearsal", "track": "modern", "section": "family-communication", "slug": "home-fire-escape-plan", "gate": true, "status": "not-started"},
+    {"n": 14, "title": "Shelter-in-place versus evacuation: what the specific hazard changes", "track": "modern", "section": "shelter-power", "slug": "shelter-or-evacuate", "gate": true, "status": "not-started"},
+    {"n": 15, "title": "Family communication: out-of-area contact, school pickup, reunification", "track": "modern", "section": "family-communication", "slug": "family-communication-plan", "gate": false, "status": "not-started"},
+    {"n": 16, "title": "Go-bags for adults, children, babies, pets and mobility requirements", "track": "modern", "section": "start-here", "slug": "go-bags", "gate": false, "status": "not-started"},
+    {"n": 17, "title": "Managing medication, medical devices and backups responsibly", "track": "modern", "section": "health-sanitation", "slug": "medication-and-devices", "gate": true, "status": "not-started"},
+    {"n": 18, "title": "Emergency hygiene, handwashing, toilets and waste", "track": "modern", "section": "health-sanitation", "slug": "emergency-hygiene-sanitation", "gate": true, "status": "not-started"},
+    {"n": 19, "title": "Warnings, radios, offline maps and communications failure", "track": "modern", "section": "family-communication", "slug": "warnings-radios-offline-maps", "gate": false, "status": "not-started"},
+    {"n": 20, "title": "Preparedness for renters, apartments, low income, elder care and disability access", "track": "modern", "section": "start-here", "slug": "preparedness-real-households", "gate": false, "status": "not-started"},
+    {"n": 21, "title": "Salt beef and salt pork aboard ships in the age of sail", "track": "lost-ways", "section": "lost-ways", "slug": "salt-beef-salt-pork-age-of-sail", "gate": true, "status": "drafted-pending-safety-review"},
+    {"n": 22, "title": "Ship's biscuit and hardtack: the logic and limits of preserved starch", "track": "lost-ways", "section": "lost-ways", "slug": "ships-biscuit-and-hardtack", "gate": false, "status": "not-started"},
+    {"n": 23, "title": "Lewis and Clark's salt works, winter 1805-1806", "track": "lost-ways", "section": "lost-ways", "slug": "lewis-and-clark-salt-works", "gate": false, "status": "not-started"},
+    {"n": 24, "title": "Pioneer travel rations in contemporary diaries and guidebooks", "track": "lost-ways", "section": "lost-ways", "slug": "pioneer-travel-rations", "gate": false, "status": "not-started"},
+    {"n": 25, "title": "Pemmican and dried meats: Indigenous origins, accurate attribution and modern safety", "track": "lost-ways", "section": "lost-ways", "slug": "pemmican-and-dried-meats", "gate": true, "status": "not-started"},
+    {"n": 26, "title": "Smokehouses, salting and curing: science versus historical craft", "track": "lost-ways", "section": "lost-ways", "slug": "smokehouses-salting-curing", "gate": true, "status": "not-started"},
+    {"n": 27, "title": "Root cellars, cool storage and the pre-electric household", "track": "lost-ways", "section": "lost-ways", "slug": "root-cellars-cool-storage", "gate": false, "status": "not-started"},
+    {"n": 28, "title": "Pickling, fermentation and the limits of old recipes", "track": "lost-ways", "section": "lost-ways", "slug": "pickling-fermentation-old-recipes", "gate": true, "status": "not-started"},
+    {"n": 29, "title": "Rain barrels, cisterns and historical water collection", "track": "lost-ways", "section": "lost-ways", "slug": "rain-barrels-and-cisterns", "gate": true, "status": "not-started"},
+    {"n": 30, "title": "Water boiling, distillation, sand and charcoal through history, and what they cannot remove", "track": "lost-ways", "section": "lost-ways", "slug": "water-purification-through-history", "gate": true, "status": "not-started"},
+    {"n": 31, "title": "Fire-making, tinder and matches across time: safe modern practice", "track": "lost-ways", "section": "lost-ways", "slug": "fire-making-across-time", "gate": true, "status": "not-started"},
+    {"n": 32, "title": "Field navigation before GPS: maps, bearings, stars and their limits", "track": "lost-ways", "section": "lost-ways", "slug": "navigation-before-gps", "gate": false, "status": "not-started"},
+    {"n": 33, "title": "Home and shipboard sanitation before germ theory", "track": "lost-ways", "section": "lost-ways", "slug": "sanitation-before-germ-theory", "gate": false, "status": "not-started"},
+    {"n": 34, "title": "How pioneer supply chains failed: a source-based case study", "track": "lost-ways", "section": "lost-ways", "slug": "pioneer-supply-chains-failed", "gate": false, "status": "not-started"},
+    {"n": 35, "title": "The history of food preservation: salt, sugar, dehydration, canning, refrigeration", "track": "lost-ways", "section": "lost-ways", "slug": "history-of-food-preservation", "gate": false, "status": "not-started"}
+  ],
+  "tools": [
+    {"slug": "water-planner", "title": "Household emergency-water planner", "status": "not-started"},
+    {"slug": "pantry-worksheet", "title": "Emergency pantry inventory and rotation worksheet", "status": "not-started"},
+    {"slug": "reunification-plan", "title": "Family communication and reunification plan generator", "status": "not-started"},
+    {"slug": "kit-builder", "title": "Emergency-kit builder by household requirements", "status": "not-started"},
+    {"slug": "checklists", "title": "Printable 72-hour and two-week readiness checklists", "status": "not-started"},
+    {"slug": "offline-reference", "title": "Offline emergency-reference download", "status": "not-started"}
+  ]
+}

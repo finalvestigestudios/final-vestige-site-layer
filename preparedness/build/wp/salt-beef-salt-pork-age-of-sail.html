@@ -1,0 +1,389 @@
+<!-- wp:html -->
+<style>/* Preparedness Archive — scoped styles. Everything lives under .pa so it cannot leak into the live theme.
+   Tokens follow the Final Vestige palette read from finalvestige.com on 2026-10-29
+   (bg #0C0D0D, text #F4EFE6, gold #C5A46A/#B8955E, secondary #D8D2C7, square corners, Inter).
+   Layout uses container queries so it behaves inside the theme's narrow content column or full width. */
+
+.pa {
+  --pa-bg: #0C0D0D;
+  --pa-surface: #141615;
+  --pa-surface-2: #1B1D1B;
+  --pa-line: #34362F;
+  --pa-text: #F4EFE6;
+  --pa-muted: #CFC8BB;
+  --pa-gold: #C5A46A;
+  --pa-gold-dim: #B8955E;
+  --pa-paper: #E9E1D0;
+  --pa-ink: #1B1A16;
+  --pa-ink-soft: #4A4437;
+  --pa-ok: #8FC4A0;
+  --pa-warn: #E6BB70;
+  --pa-bad: #EE9A8C;
+  --pa-info: #A9C0D6;
+  --pa-ok-ink: #1F5133;
+  --pa-warn-ink: #6B4A0C;
+  --pa-bad-ink: #7A2418;
+  --pa-info-ink: #24456A;
+  --pa-measure: 68ch;
+
+  container-type: inline-size;
+  box-sizing: border-box;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px 56px;
+  background: var(--pa-bg);
+  color: var(--pa-text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.68;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+.pa *, .pa *::before, .pa *::after { box-sizing: border-box; }
+.pa a { color: var(--pa-gold); text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.pa a:hover { color: #E3C48C; }
+.pa a:focus-visible, .pa button:focus-visible, .pa input:focus-visible, .pa select:focus-visible, .pa summary:focus-visible {
+  outline: 3px solid var(--pa-gold); outline-offset: 3px; border-radius: 0;
+}
+.pa p { margin: 0 0 1.05em; }
+.pa strong { color: #FFFFFF; font-weight: 650; }
+.pa em { font-style: italic; }
+.pa .pa-skip { position: absolute; left: -9999px; }
+.pa .pa-skip:focus { left: 16px; top: 8px; background: var(--pa-gold); color: #101111; padding: 8px 12px; z-index: 10; }
+
+/* ---------- Breadcrumb and header ---------- */
+.pa-crumbs { padding: 22px 0 6px; font-size: 14px; color: var(--pa-muted); }
+.pa-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.pa-crumbs li + li::before { content: "/"; color: var(--pa-gold-dim); margin-right: 10px; }
+.pa-crumbs a { color: var(--pa-muted); }
+.pa-crumbs [aria-current="page"] { color: var(--pa-text); }
+
+.pa-head { padding: 28px 0 30px; border-bottom: 1px solid var(--pa-line); position: relative; }
+.pa-head::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 88px; height: 2px; background: var(--pa-gold); }
+.pa-kicker { margin: 0 0 14px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa h1 { margin: 0 0 18px; font-size: clamp(30px, 6.2cqw, 56px); line-height: 1.08; letter-spacing: -.02em; font-weight: 650; color: var(--pa-text); max-width: 20ch; text-wrap: balance; }
+.pa-dek { margin: 0 0 22px; font-size: clamp(18px, 2.4cqw, 22px); line-height: 1.5; color: var(--pa-muted); max-width: 52ch; }
+.pa-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; font-size: 14px; color: var(--pa-muted); }
+.pa-meta li { display: flex; gap: 6px; }
+.pa-meta b { color: var(--pa-text); font-weight: 600; }
+.pa-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.pa-chip { display: inline-block; padding: 4px 10px; font-size: 12.5px; letter-spacing: .04em; border: 1px solid var(--pa-line); background: var(--pa-surface); color: var(--pa-muted); }
+.pa-chip--gold { border-color: var(--pa-gold-dim); color: var(--pa-gold); }
+.pa-chip--warn { border-color: var(--pa-warn); color: var(--pa-warn); }
+
+/* ---------- Two-column article shell ---------- */
+.pa-shell { display: block; padding-top: 28px; }
+.pa-toc { margin: 0 0 28px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); font-size: 15px; }
+.pa-toc h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa-toc ol { margin: 0; padding-left: 1.2em; }
+.pa-toc li { margin: 4px 0; }
+.pa-toc a { color: var(--pa-muted); text-decoration: none; }
+.pa-toc a:hover { color: var(--pa-gold); text-decoration: underline; }
+@container (min-width: 900px) {
+  .pa-shell { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 56px; align-items: start; }
+  .pa-shell > .pa-toc { grid-column: 2; grid-row: 1; position: sticky; top: 24px; margin: 0; }
+  .pa-shell > .pa-body { grid-column: 1; grid-row: 1; }
+}
+
+/* ---------- Body typography ---------- */
+.pa-body { max-width: var(--pa-measure); min-width: 0; }
+.pa-body h2 { margin: 2.1em 0 .55em; font-size: clamp(24px, 3.6cqw, 32px); line-height: 1.2; letter-spacing: -.01em; font-weight: 650; color: var(--pa-text); scroll-margin-top: 20px; text-wrap: balance; }
+.pa-body h2::before { content: ""; display: block; width: 36px; height: 2px; background: var(--pa-gold-dim); margin-bottom: 14px; }
+.pa-body h3 { margin: 1.7em 0 .4em; font-size: 20px; line-height: 1.3; font-weight: 650; color: var(--pa-text); }
+.pa-body ul, .pa-body ol { margin: 0 0 1.1em; padding-left: 1.3em; }
+.pa-body li { margin: .35em 0; }
+.pa-body li::marker { color: var(--pa-gold-dim); }
+.pa-body blockquote { margin: 1.4em 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--pa-gold-dim); color: var(--pa-muted); font-style: italic; }
+.pa-body blockquote cite { display: block; margin-top: 8px; font-size: 14px; font-style: normal; color: var(--pa-gold); }
+.pa-body sup.pa-cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left: 1px; }
+.pa-body sup.pa-cite a { text-decoration: none; padding: 0 2px; }
+.pa-body sup.pa-cite a:hover { text-decoration: underline; }
+
+/* ---------- Components ---------- */
+.pa-act { margin: 0 0 36px; padding: 22px 24px 8px; background: var(--pa-paper); color: var(--pa-ink); border-top: 4px solid var(--pa-gold);
+  background-image: radial-gradient(rgba(27,26,22,.045) 1px, transparent 1.2px); background-size: 5px 5px; }
+.pa-act h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-ink); font-weight: 700; }
+.pa-act h2::before { display: none; }
+.pa-act p, .pa-act li { color: var(--pa-ink); }
+.pa-act strong { color: #000; }
+.pa-act ol { padding-left: 1.4em; margin-bottom: 1em; }
+.pa-act li::marker { color: var(--pa-ink); font-weight: 700; }
+.pa-act a { color: #4B3410; }
+.pa-act .pa-act-note { font-size: 15px; color: var(--pa-ink-soft); border-top: 1px solid rgba(27,26,22,.25); padding-top: 12px; }
+
+.pa-alert { margin: 1.6em 0; padding: 16px 20px; border: 1px solid var(--pa-warn); border-left-width: 5px; background: var(--pa-surface); }
+.pa-alert > :last-child { margin-bottom: 0; }
+.pa-alert-title { margin: 0 0 6px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--pa-warn); }
+.pa-alert--stop { border-color: var(--pa-bad); }
+.pa-alert--stop .pa-alert-title { color: var(--pa-bad); }
+.pa-alert--note { border-color: var(--pa-info); }
+.pa-alert--note .pa-alert-title { color: var(--pa-info); }
+
+.pa-verdict { margin: 2.2em 0; border: 1px solid var(--pa-line); background: var(--pa-surface-2); }
+.pa-verdict-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 14px 20px; border-bottom: 1px solid var(--pa-line); }
+.pa-verdict-head h2 { margin: 0; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 700; }
+.pa-verdict-head h2::before { display: none; }
+.pa-verdict-badge { font-size: 14px; font-weight: 700; padding: 3px 10px; border: 1px solid currentColor; }
+.pa-verdict-badge[data-verdict="validated"] { color: var(--pa-ok); }
+.pa-verdict-badge[data-verdict="context-dependent"] { color: var(--pa-warn); }
+.pa-verdict-badge[data-verdict="not-validated"] { color: var(--pa-warn); }
+.pa-verdict-badge[data-verdict="unsafe"] { color: var(--pa-bad); }
+.pa-verdict-body { padding: 16px 20px 6px; }
+.pa-verdict-body > :last-child { margin-bottom: 10px; }
+
+.pa-thennow { display: grid; gap: 0; margin: 2em 0; border: 1px solid var(--pa-line); }
+.pa-thennow > div { padding: 18px 20px 6px; }
+.pa-thennow h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-thennow .pa-then { background: var(--pa-surface-2); }
+.pa-thennow .pa-now { background: var(--pa-surface); border-top: 1px solid var(--pa-line); }
+@container (min-width: 700px) {
+  .pa-thennow { grid-template-columns: 1fr 1fr; }
+  .pa-thennow .pa-now { border-top: 0; border-left: 1px solid var(--pa-line); }
+}
+
+.pa-tablewrap { overflow-x: auto; margin: 1.4em 0; border: 1px solid var(--pa-line); -webkit-overflow-scrolling: touch; }
+.pa-tablewrap:focus-visible { outline: 3px solid var(--pa-gold); }
+.pa table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+.pa caption { text-align: left; padding: 12px 14px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; caption-side: top; }
+.pa th, .pa td { padding: 10px 14px; text-align: left; vertical-align: top; border-top: 1px solid var(--pa-line); }
+.pa thead th { background: var(--pa-surface-2); color: var(--pa-text); font-weight: 650; }
+.pa tbody th { font-weight: 600; color: var(--pa-text); }
+
+.pa-tag { display: inline-block; padding: 1px 8px; margin-right: 6px; font-size: 12px; font-weight: 650; letter-spacing: .05em; border: 1px solid currentColor; vertical-align: 1px; white-space: nowrap; }
+.pa-tag--fact { color: var(--pa-ok); }
+.pa-tag--doc { color: var(--pa-info); }
+.pa-tag--unc { color: var(--pa-warn); }
+.pa-tag--ed { color: var(--pa-muted); }
+
+.pa-key { margin: 0 0 2em; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--pa-muted); }
+.pa-key li { margin: 0; }
+
+.pa-facts { display: grid; gap: 1px; margin: 1.6em 0; background: var(--pa-line); border: 1px solid var(--pa-line); }
+.pa-facts > div { background: var(--pa-surface); padding: 14px 18px; }
+.pa-facts dt { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 4px; }
+.pa-facts dd { margin: 0; color: var(--pa-text); }
+@container (min-width: 620px) { .pa-facts { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Sources and review ---------- */
+.pa-sources { margin-top: 3em; padding-top: 8px; border-top: 1px solid var(--pa-line); max-width: var(--pa-measure); }
+.pa-sources h2 { margin: 1em 0 .4em; font-size: 24px; }
+.pa-sources h2::before { display: none; }
+.pa-sources ol { padding-left: 1.6em; }
+.pa-sources li { margin: 0 0 1em; font-size: 15.5px; line-height: 1.55; }
+.pa-sources .pa-src-meta { display: block; color: var(--pa-muted); font-size: 14px; }
+.pa-sources .pa-src-use { display: block; color: var(--pa-muted); font-size: 14px; }
+.pa-review { margin: 2.2em 0 0; padding: 18px 20px; border: 1px dashed var(--pa-gold-dim); background: var(--pa-surface); font-size: 15px; max-width: var(--pa-measure); }
+.pa-review h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-review h2::before { display: none; }
+.pa-review dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; }
+.pa-review dt { color: var(--pa-muted); }
+.pa-review dd { margin: 0; color: var(--pa-text); }
+.pa-related { margin-top: 2.4em; max-width: var(--pa-measure); }
+.pa-related h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); }
+.pa-related h2::before { display: none; }
+.pa-related ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.pa-printbar { margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.pa-btn { display: inline-block; padding: 10px 18px; background: var(--pa-gold); color: #101111; border: 1px solid var(--pa-gold); font: inherit; font-size: 15px; font-weight: 650; text-decoration: none; cursor: pointer; border-radius: 0; }
+.pa-btn:hover { background: #D6B87E; color: #101111; }
+.pa-btn--ghost { background: transparent; color: var(--pa-gold); }
+.pa-btn--ghost:hover { background: var(--pa-surface-2); color: #E3C48C; }
+
+/* ---------- Landing ---------- */
+.pa-hero { padding: 54px 0 46px; border-bottom: 1px solid var(--pa-line); position: relative; }
+.pa-hero::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 120px; height: 2px; background: var(--pa-gold); }
+.pa-hero h1 { max-width: 14ch; font-size: clamp(36px, 8cqw, 76px); }
+.pa-hero .pa-dek { max-width: 46ch; }
+.pa-promise { margin: 28px 0 0; display: grid; gap: 14px; padding: 0; list-style: none; }
+.pa-promise li { padding-left: 16px; border-left: 2px solid var(--pa-gold-dim); color: var(--pa-muted); font-size: 16px; }
+.pa-promise b { color: var(--pa-text); }
+@container (min-width: 760px) { .pa-promise { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+
+.pa-now-strip { margin: 34px 0 0; padding: 18px 22px; background: var(--pa-paper); color: var(--pa-ink); border-top: 4px solid var(--pa-gold); }
+.pa-now-strip h2 { margin: 0 0 6px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-ink); font-weight: 700; }
+.pa-now-strip p { margin: 0; color: var(--pa-ink); }
+.pa-now-strip a { color: #4B3410; }
+
+.pa-section { padding: 46px 0 6px; }
+.pa-section > h2 { margin: 0 0 8px; font-size: clamp(26px, 4cqw, 36px); letter-spacing: -.01em; font-weight: 650; }
+.pa-section > p.pa-lede { margin: 0 0 22px; color: var(--pa-muted); max-width: 60ch; }
+
+.pa-filter { display: grid; gap: 12px; margin: 22px 0 8px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); }
+.pa-filter label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 4px; font-weight: 600; }
+.pa-filter input, .pa-filter select { width: 100%; min-height: 44px; padding: 8px 12px; font: inherit; font-size: 16px; color: var(--pa-text); background: var(--pa-bg); border: 1px solid #5B5C54; border-radius: 0; }
+.pa-filter output { font-size: 14px; color: var(--pa-muted); }
+@container (min-width: 720px) { .pa-filter { grid-template-columns: 2fr 1fr 1fr; align-items: end; } .pa-filter output { grid-column: 1 / -1; } }
+
+.pa-cards { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+@container (min-width: 700px) { .pa-cards { grid-template-columns: repeat(2, 1fr); } }
+.pa-card { position: relative; padding: 22px 22px 20px; background: var(--pa-surface); border: 1px solid var(--pa-line); border-top: 2px solid var(--pa-gold-dim); }
+.pa-card[hidden] { display: none; }
+.pa-card h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.28; font-weight: 650; }
+.pa-card h3 a { color: var(--pa-text); text-decoration: none; }
+.pa-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.pa-card:hover { border-color: var(--pa-gold-dim); background: var(--pa-surface-2); }
+.pa-card p { margin: 0 0 12px; font-size: 15.5px; color: var(--pa-muted); line-height: 1.55; }
+.pa-card .pa-card-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--pa-muted); margin: 0; }
+.pa-card .pa-card-track { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pa-gold); margin: 0 0 10px; font-weight: 600; }
+
+.pa-two { display: grid; gap: 18px; margin: 22px 0 0; }
+@container (min-width: 760px) { .pa-two { grid-template-columns: 1fr 1fr; } }
+.pa-track { padding: 24px 24px 10px; border: 1px solid var(--pa-line); background: var(--pa-surface); }
+.pa-track h3 { margin: 0 0 8px; font-size: 22px; }
+.pa-track--modern { border-top: 3px solid var(--pa-paper); }
+.pa-track--lost { border-top: 3px solid var(--pa-gold); }
+.pa-standards { display: grid; gap: 14px; margin: 18px 0 0; padding: 0; list-style: none; }
+@container (min-width: 760px) { .pa-standards { grid-template-columns: repeat(2, 1fr); gap: 18px 36px; } }
+.pa-standards li { padding-left: 16px; border-left: 2px solid var(--pa-gold-dim); font-size: 16px; color: var(--pa-muted); }
+.pa-standards b { color: var(--pa-text); }
+.pa-empty { padding: 18px 20px; border: 1px dashed var(--pa-line); color: var(--pa-muted); font-size: 15px; }
+.pa-empty[hidden] { display: none; }
+
+/* ---------- Motion, forced colors, print ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .pa-card, .pa a, .pa-btn { transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+}
+@media (forced-colors: active) {
+  .pa-act, .pa-now-strip { border: 2px solid CanvasText; }
+  .pa-chip, .pa-tag, .pa-verdict-badge { border: 1px solid CanvasText; }
+}
+@media (max-width: 420px) {
+  .pa { font-size: 16.5px; padding-inline: 16px; }
+  .pa-act { padding: 18px 16px 6px; }
+  .pa-review dl { grid-template-columns: 1fr; gap: 0; }
+  .pa-review dd { margin-bottom: 8px; }
+}
+@media print {
+  .pa { background: #fff !important; color: #000 !important; font-size: 11.5pt; line-height: 1.5; max-width: none; padding: 0; container-type: normal; }
+  .pa *, .pa a { color: #000 !important; background: transparent !important; box-shadow: none !important; }
+  .pa a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
+  .pa-toc, .pa-filter, .pa-printbar, .pa-skip, .pa-card h3 a::after { display: none !important; }
+  .pa-shell { display: block !important; }
+  .pa-act, .pa-alert, .pa-verdict, .pa-thennow, .pa-review { border: 1.5pt solid #000 !important; break-inside: avoid; }
+  .pa-body h2, .pa-body h3 { break-after: avoid; }
+  .pa-tablewrap { overflow: visible !important; border: 0; }
+  .pa table { min-width: 0 !important; }
+  .pa th, .pa td { border: 0.5pt solid #000 !important; }
+  .pa-sources li { break-inside: avoid; }
+}
+</style>
+<div class="pa pa-article" data-slug="salt-beef-salt-pork-age-of-sail" data-track="lost-ways" data-section="lost-ways"><a class="pa-skip" href="#pa-main">Skip to the guide</a><nav class="pa-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Final Vestige</a></li><li><a href="/preparedness/">The Preparedness Archive</a></li><li><a href="/preparedness/lost-ways/">The Lost Ways</a></li><li><span aria-current="page">Salt beef and salt pork at sea</span></li></ol></nav><header class="pa-head"><p class="pa-kicker">The Lost Ways · The Lost Ways</p><h1>Salt beef and salt pork at sea: what the records show, and what salt never promised</h1><p class="pa-dek">Contracts, ration tables and sailors&#x27; journals show how navies fed crews on barrelled meat for months. They also show what salt could not do, and why none of it is a recipe for your kitchen.</p><ul class="pa-meta"><li><b>13 min read</b></li><li>Updated <b>October 29, 2026</b></li><li>Sources last checked <b>October 29, 2026</b></li></ul><ul class="pa-chips" aria-label="Article status and topics"><li class="pa-chip pa-chip--gold">The Lost Ways</li><li class="pa-chip">The Lost Ways</li><li class="pa-chip pa-chip--warn">Draft: not public</li><li class="pa-chip pa-chip--warn">Safety review pending</li><li class="pa-chip">Age of sail</li><li class="pa-chip">Salt curing</li><li class="pa-chip">Scurvy</li><li class="pa-chip">Botulism risk</li></ul><div class="pa-printbar"><button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button></div></header><div class="pa-shell"><nav class="pa-toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#hold">A ship&#x27;s hold, counted</a></li><li><a href="#ration">What a sailor was issued</a></li><li><a href="#contract">The contract: how barrelled meat was specified</a></li><li><a href="#reputation">The reputation problem</a></li><li><a href="#cooking">Steeping, boiling, and the salt that stayed</a></li><li><a href="#bread">The other half: ship&#x27;s bread</a></li><li><a href="#scurvy">What salt did not do</a></li><li><a href="#schooner">A contrast: the salt on a fishing schooner</a></li><li><a href="#ledger">What the evidence supports, claim by claim</a></li><li><a href="#why-it-worked">Why salt works, and why that is not enough</a></li><li><a href="#limits">What we have not done</a></li></ol></nav><div class="pa-body" id="pa-main"><section class="pa-act" aria-labelledby="act-h">
+<h2 id="act-h">Read this first</h2>
+<p><strong>This is a history, not a method.</strong> Nothing on this page is a recipe, a ratio, or a storage instruction, and it should not be used as one.</p>
+<ul>
+<li>Home-cured, smoked, salted and fermented foods have caused botulism. You cannot see, smell or taste the toxin.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: Botulism Prevention">[1]</a></sup></li>
+<li>If you want to preserve meat at home, use a procedure published and tested by the USDA or the National Center for Home Food Preservation, and follow it exactly.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Curing &amp; Smoking">[2]</a></sup></li>
+<li>If you do not know whether a food was safely preserved, the CDC's advice is short: if in doubt, throw it out.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: Botulism Prevention">[1]</a></sup></li>
+</ul>
+<p class="pa-act-note">For emergency food that is safe to store, see the Food section of this archive as it grows. Symptoms of botulism can include blurred vision, difficulty swallowing or speaking, and weakness. It is a medical emergency; call your emergency number.</p>
+</section>
+
+<ul class="pa-key" aria-label="How to read the labels in this guide">
+<li><span class="pa-tag pa-tag--doc">Documented history</span> Recorded in a contract, journal, regulation or museum object, as reported by the source cited.</li>
+<li><span class="pa-tag pa-tag--fact">Official guidance</span> A current statement from a government health or food-safety body.</li>
+<li><span class="pa-tag pa-tag--unc">Uncertain</span> A scholar's interpretation, or a question the surviving evidence cannot settle.</li>
+<li><span class="pa-tag pa-tag--ed">Editor's note</span> Our reasoning. It is not a statement from the source.</li>
+</ul>
+
+<h2 id="hold">A ship's hold, counted</h2>
+<p>When USS <em>Constitution</em> was provisioned for a projected six-month cruise in 1813, the numbers recorded in the court of inquiry that later examined her captain run like this: 84,456 pounds of bread, 57,700 pounds of beef, and 50,600 pounds of pork, with about 47,000 gallons of water, for a crew of roughly 450.<span class="pa-tag pa-tag--doc" style="margin-left:6px">Documented history</span><sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>The beef and pork were not fresh and could not be. They were cut, salted, and packed into barrels on shore, loaded, stowed, and left to last. That arrangement is what most people mean by "salt junk," one of the scornful nicknames sailors gave it, along with "salt horse."<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>What follows is an attempt to say what the records show, without the sea-chantey version, and then to be exact about why that record cannot be turned into advice.</p>
+
+<h2 id="ration">What a sailor was issued</h2>
+<p>The 1813 weekly ration for an American sailor, as tabulated in the Constitution Museum's study, was built around bread and barrelled meat. Per man, it came to roughly 3½ pounds of beef and 3 pounds of pork a week, plus 98 ounces of bread (14 ounces a day), a pound of flour with half a pound of suet, and smaller amounts of cheese, butter, peas, rice, molasses and vinegar, along with a daily spirit ration. Meat came on six days out of seven. Friday had none.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>Two cautions from the same study. First, that table represents <em>the ideal diet</em>, and the author notes it "did not always reflect actual practice": ships on long cruises resupplied from whatever they could buy or capture. Second, the same author estimates, drawing on earlier work, that the menu delivered something like 4,240 calories a day, nearly all of it burned by shipboard labor.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> The figure is an estimate built on a historian's earlier estimate, and we treat it as the right order of magnitude rather than a measurement.</p>
+
+<div class="pa-tablewrap" role="region" aria-label="Weekly ration table, 1813" tabindex="0">
+<table>
+<caption>U.S. Navy weekly ration per man, 1813 (as tabulated by the USS Constitution Museum)</caption>
+<thead><tr><th scope="col">Item</th><th scope="col">Weekly total</th></tr></thead>
+<tbody>
+<tr><th scope="row">Beef</th><td>3½ lb</td></tr>
+<tr><th scope="row">Pork</th><td>3 lb</td></tr>
+<tr><th scope="row">Bread (biscuit)</th><td>98 oz (14 oz a day)</td></tr>
+<tr><th scope="row">Flour / suet</th><td>1 lb / ½ lb</td></tr>
+<tr><th scope="row">Cheese / butter</th><td>6 oz / 2 oz</td></tr>
+<tr><th scope="row">Peas / rice</th><td>1 pint / 1 pint</td></tr>
+<tr><th scope="row">Molasses / vinegar</th><td>½ pint / ½ pint</td></tr>
+<tr><th scope="row">Spirits</th><td>3½ pints</td></tr>
+</tbody></table></div>
+
+<h2 id="contract">The contract: how barrelled meat was specified</h2>
+<p>The most useful single document in the story is not a sailor's complaint but a purchasing order. In December 1812 the Navy's Boston agent, Amos Binney, put out a circular seeking 700 barrels of mess beef and 500 of mess pork. The beef was to come from well-fatted oxen of at least 600 pounds, with the neck, shins, shoulder blades and leg rounds excluded, cut into ten-pound pieces, twenty to a white-oak barrel. The pork was to come from hogs of at least 180 pounds, heads and legs excluded, cut into eight-pound pieces, twenty-five to a barrel.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>The document goes on to demand "a sufficient quantity of good Salt and Salt Petre," and that the barrels be branded to the standard set by Massachusetts law.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>The piece sizes look arbitrary until you read the mess table. Crews ate in messes of eight to twelve men. A pound of pork a day per man meant an eight-pound piece fed an eight-man mess for a day with no cutting needed. That is the museum historian's reading of why the weights look the way they do; the contract itself does not explain them.<span class="pa-tag pa-tag--unc" style="margin-left:6px">Uncertain</span><sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<div class="pa-alert pa-alert--note"><p class="pa-alert-title">What the contract does not say</p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> "Sufficient" is the only quantity the circular gives for salt and saltpetre. There is no ratio, no curing time, no brine strength, no storage temperature. That is not an omission we are leaving out for caution; it is what the source says, as quoted in the museum study. Whatever the contractors knew about quantities, it lived in their workshops and not on the page. We do not try to reconstruct it.</p></div>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> "Salt Petre" is potassium nitrate. Whether those contractors or the Navy understood <em>why</em> it was in the barrel is not something the sources we read address. The modern explanation, discussed below, came later.</p>
+
+<h2 id="reputation">The reputation problem</h2>
+<p>Salt meat has a terrible name, and much of that comes from sailors who wrote memoirs. Herman Melville, who served in a U.S. frigate in the 1840s, described junks of lean pork "boiled in their own bristles," and the men tearing the hide off as if it were something worse.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> It is vivid prose, and it is a literary artefact as much as a record.</p>
+<p>The Constitution Museum's historian takes a different view. He argues that the evidence suggests salted meat bought for the Navy was of high quality, pointing to the Navy's careful contract terms and to an 1799 letter in which the Secretary of the Navy warned an agent that sailors "used to the best Beef will not eat the common kind." He suggests memoirists may be remembering only the occasional bad or excessively old cask.<span class="pa-tag pa-tag--unc" style="margin-left:6px">Uncertain</span><sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>That is an interpretation, and a reasonable one, but it cannot be tested: no source we have read tallies how many barrels were condemned. The honest position is that the quality of naval salt meat varied, probably more than either the horror stories or the defenders allow, and that nobody has produced the numbers to say by how much.</p>
+
+<h2 id="cooking">Steeping, boiling, and the salt that stayed</h2>
+<p>Salt meat could not be eaten as it came out of the barrel. It was soaked in fresh water, in a steep tub, then boiled in the galley copper. One set of ship's regulations from 1799, quoted in the museum study, required the salt meats to be issued each evening to the cook and soaked in changing water every four hours.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>Did it work? The museum's historian doubts it: even soaked overnight, he thinks it unlikely that much of the salt was removed, and notes that some writers recommended towing the meat astern in a net to wash out the brine. Cooking would leach more, but the quantity of salt a sailor swallowed each day "must have been shockingly high."<span class="pa-tag pa-tag--unc" style="margin-left:6px">Uncertain</span><sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>A contemporary doctor, quoted in the same study, noted the side effect: sailors, "in consequence of their salt diet, drink a great quantity of water, unless on an allowance."<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> The meat and the water supply were one system. The salt that kept the food also raised demand for the one thing a ship at sea could least spare. The companion guide on <a href="/preparedness/water/making-water-safer/">making water safer</a> sets out the modern side of that ledger.</p>
+
+<h2 id="bread">The other half: ship's bread</h2>
+<p>Ship's bread was an unleavened biscuit of flour and water baked until thoroughly dry. Kept in a dry, ventilated bread room, it could last for years.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> The word "hardtack," which most readers will reach for here, is not the period term. The museum's study dates it to the 1840s and says it spread during the American Civil War.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>A post-war contract for Navy bread, quoted by the study, required wheat flour only (no rye) and that the bread be thoroughly kiln dried before shipment. Surviving British biscuits are about half an inch thick, 4¾ to 5¾ inches wide and weigh about four ounces, which puts a 14-ounce daily ration at three to four pieces.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> A surviving example is in the National Maritime Museum's collection: a biscuit made to an 1846 recipe, marked with a broad arrow and the letter C, measuring 15 by 135 millimetres.<sup class="pa-cite"><a href="#src-4" aria-label="Source 4: Ship&#x27;s Biscuit (AAB0766)">[4]</a></sup></p>
+<p>The infestation stories are partly true. The museum study identifies real pests that could ruin a bag of biscuit (the cadelle beetle, the bread beetle, and weevils), and rats are recorded getting into the bread room of USS <em>Essex</em> on her passage to the Pacific. It also argues that the lurid versions of biscuit "crawling with weevils" are mostly concocted by civilian writers.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> The Royal Museums Greenwich overview lists storage problems, poor ventilation and vermin among the reasons ship's food deteriorated.<sup class="pa-cite"><a href="#src-5" aria-label="Source 5: Life at sea in the age of sail">[5]</a></sup> A sailor on a round-the-world expedition in 1838 recalled mouldy biscuit full of grubs, but the study cautions that his ship had been at sea for many months with probably infested stores.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+
+<h2 id="scurvy">What salt did not do</h2>
+<p>Salt kept meat from rotting. It did not keep sailors from dying of what the diet lacked. The Royal Museums Greenwich is direct: poor diet caused malnutrition and specific diseases such as scurvy, which is caused by a lack of vitamin C.<span class="pa-tag pa-tag--fact">Established fact</span><sup class="pa-cite"><a href="#src-5" aria-label="Source 5: Life at sea in the age of sail">[5]</a></sup> A chaplain aboard USS <em>Congress</em> described the sailor's meals as bread the hammer could scarcely break and meat "as juiceless and dry as the bones" with all the garden's fresh produce left behind.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p>
+<p>No one at the time knew the cause. In 1747, aboard HMS <em>Salisbury</em>, the naval surgeon James Lind watched 80 of 350 men fall to scurvy during a ten-week cruise and ran what is now regarded as an early comparative trial: six treatments across twelve patients. His 1753 <em>Treatise of the Scurvy</em> argued the evidence at length; Smithsonian Libraries holds a digitized copy.<sup class="pa-cite"><a href="#src-6" aria-label="Source 6: James Lind and scurvy: 1747 to 1795">[6]</a></sup><sup class="pa-cite"><a href="#src-7" aria-label="Source 7: A treatise of the scurvy, in three parts (James Lind, 1753)">[7]</a></sup> The scale of the problem is stark in the same scholarship: an account of Anson's circumnavigation, published in 1748, is what first drew Lind to the subject, and at least 380 of a crew of 510 on one of Anson's ships had died of the disease.<sup class="pa-cite"><a href="#src-6" aria-label="Source 6: James Lind and scurvy: 1747 to 1795">[6]</a></sup></p>
+<p>The Navy's response was slow. The year after the Treatise appeared, the Sick and Hurt Board rejected a proposal to supply sailors with fruit juice. Lind himself recommended a concentrated "rob" made by heating juice for hours, and the scholarship notes that heat destroys much of the ascorbic acid, so it is unsurprising later observers saw no benefit. The Admiralty did not sanction lemon juice on a generous scale until 1795; the author counts a 42-year lag between Lind's clearly described result and its adoption.<sup class="pa-cite"><a href="#src-6" aria-label="Source 6: James Lind and scurvy: 1747 to 1795">[6]</a></sup></p>
+<p>Even the wrong explanations are recorded. In 1813 Captain David Porter ordered his cook not to let the crew use "slush" skimmed from the cask for frying their bread, because he feared that habit caused scurvy.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup> He was acting on the best belief of his day. It was not the cause.</p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> This is the part of the story that matters most for a modern reader. A preservation method can succeed at the thing it is designed to do (keep protein edible for months) and fail the people eating it in a way nobody has yet identified. "It worked for sailors" never meant "it was adequate for sailors."</p>
+
+<h2 id="schooner">A contrast: the salt on a fishing schooner</h2>
+<p>The Smithsonian's National Museum of American History preserves the provisions list in the journal of George W. Scott, cook aboard the Gloucester schooner <em>Ocean King</em> on a four-month Grand Banks voyage in 1879. It includes 210 hogsheads of salt <em>for salting the cod</em>, five barrels of beef, one of pork, one of hams, ten of flour, 330 pounds of sugar and 200 pounds of butter.<sup class="pa-cite"><a href="#src-8" aria-label="Source 8: Life Aboard (On the Water: Fishing for a Living)">[8]</a></sup> By volume, the salt aboard was not for the crew; it was for the catch, and the crew's own barrelled meat is a footnote beside it. The Smithsonian adds that in the dory-fishing era the cook prepared four or five meals a day.<sup class="pa-cite"><a href="#src-8" aria-label="Source 8: Life Aboard (On the Water: Fishing for a Living)">[8]</a></sup> Salt was the voyage's business; the crew's food was ordinary provisions.</p>
+
+<h2 id="ledger">What the evidence supports, claim by claim</h2>
+<div class="pa-tablewrap" role="region" aria-label="Evidence ledger" tabindex="0">
+<table>
+<caption>Evidence ledger</caption>
+<thead><tr><th scope="col">Claim</th><th scope="col">Standing</th><th scope="col">Basis</th></tr></thead>
+<tbody>
+<tr><th scope="row">Warships carried tens of thousands of pounds of barrelled beef and pork for months-long cruises</th><td><span class="pa-tag pa-tag--doc">Documented</span></td><td>1813 court-of-inquiry load-out, as reported by the museum study.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></td></tr>
+<tr><th scope="row">Navy contracts specified cuts, container, salt and saltpetre but gave no ratios</th><td><span class="pa-tag pa-tag--doc">Documented</span></td><td>1812 Binney circular, quoted by the museum study.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></td></tr>
+<tr><th scope="row">The meat was generally of good quality; the bad reputation comes from the odd old cask</th><td><span class="pa-tag pa-tag--unc">Uncertain</span></td><td>One historian's interpretation; no condemnation tallies were found.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></td></tr>
+<tr><th scope="row">Soaking removed most of the salt</th><td><span class="pa-tag pa-tag--unc">Doubtful</span></td><td>The museum historian thinks it unlikely.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></td></tr>
+<tr><th scope="row">Biscuit was routinely swarming with maggots and weevils</th><td><span class="pa-tag pa-tag--unc">Overstated</span></td><td>Real pests documented; lurid versions attributed to civilian writers.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></td></tr>
+<tr><th scope="row">Scurvy is caused by a lack of vitamin C</th><td><span class="pa-tag pa-tag--fact">Established</span></td><td>Royal Museums Greenwich; James Lind Library.<sup class="pa-cite"><a href="#src-5" aria-label="Source 5: Life at sea in the age of sail">[5]</a></sup><sup class="pa-cite"><a href="#src-6" aria-label="Source 6: James Lind and scurvy: 1747 to 1795">[6]</a></sup></td></tr>
+<tr><th scope="row">Nitrite in cured meat inhibits <em>C. botulinum</em> spores</th><td><span class="pa-tag pa-tag--fact">Official guidance</span></td><td>USDA FSIS.<sup class="pa-cite"><a href="#src-9" aria-label="Source 9: Clostridium botulinum &amp; Botulism">[9]</a></sup></td></tr>
+</tbody></table></div>
+
+<h2 id="why-it-worked">Why salt works, and why that is not enough</h2>
+<p>The National Center for Home Food Preservation describes curing as using salt, and sometimes sugar and seasonings, to draw moisture out of meat, which creates an environment that is hostile to harmful microorganisms.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Curing &amp; Smoking">[2]</a></sup> That is the mechanism sailors depended on without naming it.</p>
+<p>The USDA adds the other half. Nitrites in cured meat inhibit the growth of <em>C. botulinum</em> spores, and the USDA began authorizing nitrite in meat and poultry products in 1925. Concern was raised in the early 1970s about nitrite forming carcinogenic nitrosamines, and processors may use ascorbic acid or related compounds to counter it.<sup class="pa-cite"><a href="#src-9" aria-label="Source 9: Clostridium botulinum &amp; Botulism">[9]</a></sup> All of that explanation is modern. The sailors' saltpetre arrived long before the reason for it did.</p>
+<p><span class="pa-tag pa-tag--ed">Editor's note</span> That history cuts both ways. It helps explain why a barrel of properly salted and nitrate-cured meat could last. It also shows why you cannot copy the method from a history: the protective part depends on quantities, times and temperatures that the contract never states, and that the sources we read do not supply.</p>
+
+<div class="pa-verdict" role="group" aria-labelledby="verdict-h">
+<div class="pa-verdict-head"><h2 id="verdict-h">Current safety verdict</h2><span class="pa-verdict-badge" data-verdict="not-validated">Not validated for modern household use</span></div>
+<div class="pa-verdict-body">
+<p><strong>Do not reproduce this method at home.</strong> Salt alone does not guarantee that meat is safe from botulism, and nothing on this page gives a cure formula, time, or temperature, by design.</p>
+<ul>
+<li>The CDC lists improperly preserved foods among the most common sources of botulism, says you cannot see, smell or taste the toxin, and says to throw out food you cannot vouch for.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: Botulism Prevention">[1]</a></sup></li>
+<li>USDA's food-safety service records many botulism cases following home-canned, preserved, cured, smoked or fermented foods contaminated with toxin, and points consumers to the National Center for Home Food Preservation.<sup class="pa-cite"><a href="#src-10" aria-label="Source 10: How do I safely cure meats at home to avoid botulism?">[10]</a></sup></li>
+<li>FSIS lists traditionally prepared salted or fermented fish among foods linked to recent botulism illness.<sup class="pa-cite"><a href="#src-9" aria-label="Source 9: Clostridium botulinum &amp; Botulism">[9]</a></sup></li>
+<li>For low-acid foods, including meat, the CDC says pressure canning is the only recommended home canning method.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: Botulism Prevention">[1]</a></sup></li>
+</ul>
+<p>We found no account of botulism aboard ship in the sources we read. That is not evidence it didn't happen, or that the method was safe: these records were written to account for rations and morale, not to count illnesses.</p>
+</div></div>
+
+<div class="pa-thennow" role="group" aria-label="Then and now: preserving meat">
+<div class="pa-then"><h3>Then: the barrel</h3>
+<p><span class="pa-tag pa-tag--doc">Documented history</span> Cut, salted with salt and saltpetre, packed in oak, branded, stored in the hold. Soaked, boiled, eaten with bread. Fresh meat came in port and from prizes. The diet lacked fresh produce and the crews paid for it.<sup class="pa-cite"><a href="#src-3" aria-label="Source 3: Food and Drink in the U.S. Navy, 1794 to 1820">[3]</a></sup></p></div>
+<div class="pa-now"><h3>Now: the inspected supply</h3>
+<p><span class="pa-tag pa-tag--fact">Official guidance</span> Commercial cured meats use nitrite that USDA has authorized since 1925.<sup class="pa-cite"><a href="#src-9" aria-label="Source 9: Clostridium botulinum &amp; Botulism">[9]</a></sup> Households who want to preserve meat should use a method published and tested by the NCHFP or a Cooperative Extension service.<sup class="pa-cite"><a href="#src-2" aria-label="Source 2: Curing &amp; Smoking">[2]</a></sup> If you do not know that a food was safely made, discard it.<sup class="pa-cite"><a href="#src-1" aria-label="Source 1: Botulism Prevention">[1]</a></sup></p></div>
+</div>
+
+<h2 id="limits">What we have not done</h2>
+<p>This piece leans on one long secondary study, the USS Constitution Museum's, because it brings together contracts, regulations and journals that sit in archives we have not yet visited. Its footnotes point to the National Archives (RG 45 contracts, the Fourth Auditor's accounts), to naval regulations, and to published journals. We have not pulled those records individually, and until we do, every claim attributed to them is reported <em>as the museum study reports it</em>.</p>
+<p>The study covers the U.S. Navy from 1794 to 1820. The Royal Navy's victualling system had its own scales and its own bakeries, and earlier centuries differ again. The Royal Museums Greenwich page we cite gives no quantities. The 1753 <em>Treatise</em> is cited as a primary source through its digitized record; we read the library's catalogue entry, not its 456 pages. We have no image of a barrel, a ration tub or a biscuit that we have the rights to publish, so this page has none.</p>
+<p>It also needs a human reviewer. Any history piece that comes near food preservation carries a safety verdict, and that verdict has to be checked by a person before it is public. The review record at the bottom of the page shows where that stands.</p>
+</div></div><section class="pa-sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources and verification</h2><p>Every numbered note above points to a page that was opened and read on the date shown. A page's own published or updated date is the date the issuing organisation gives, not ours.</p><ol><li id="src-1"><a href="https://www.cdc.gov/botulism/prevention/index.html" rel="noopener">Botulism Prevention</a>. Centers for Disease Control and Prevention (NCEZID).<span class="pa-src-meta">Published May 15, 2024 · Updated February 26, 2026 · Reviewed May 6, 2024 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Current botulism prevention advice: pressure canning for low-acid foods, toxin cannot be seen, smelled or tasted.</span></li><li id="src-2"><a href="https://nchfp.uga.edu/how/cure-smoke" rel="noopener">Curing &amp; Smoking</a>. National Center for Home Food Preservation (University of Georgia, USDA-supported).<span class="pa-src-meta">Checked October 29, 2026</span><span class="pa-src-use">Used for: Where to find tested home curing and smoking methods, and how the NCHFP describes what curing does.</span></li><li id="src-3"><a href="https://ussconstitutionmuseum.org/wp-content/uploads/dlm_uploads/2019/05/Food-and-Drink-in-the-US-Navy.pdf" rel="noopener">Food and Drink in the U.S. Navy, 1794 to 1820</a>. USS Constitution Museum, Boston (Matthew Brenckle).<span class="pa-src-meta">Published 2019 · Checked October 29, 2026</span><span class="pa-src-use">Used for: 1813 load-out and weekly ration table; the 1812 Binney beef and pork specification; steeping practice; Melville and other journal accounts; bread contract and biscuit dimensions; pests; scurvy theory about &#x27;slush&#x27;; 1802 water rules.</span></li><li id="src-4"><a href="https://www.rmg.co.uk/collections/objects/rmgc-object-6813" rel="noopener">Ship&#x27;s Biscuit (AAB0766)</a>. Royal Museums Greenwich, National Maritime Museum.<span class="pa-src-meta">Checked October 29, 2026</span><span class="pa-src-use">Used for: A surviving ship&#x27;s biscuit in a museum collection, as a physical record of the bread half of the ration.</span></li><li id="src-5"><a href="https://www.rmg.co.uk/stories/maritime-history/life-sea-age-sail" rel="noopener">Life at sea in the age of sail</a>. Royal Museums Greenwich.<span class="pa-src-meta">Checked October 29, 2026</span><span class="pa-src-use">Used for: Overview of the main shipboard rations, the way storage and vermin degraded food, and the cause of scurvy.</span></li><li id="src-6"><a href="https://www.jameslindlibrary.org/articles/james-lind-and-scurvy-1747-to-1795/" rel="noopener">James Lind and scurvy: 1747 to 1795</a>. The James Lind Library (Ulrich Troehler, 2003; republished J R Soc Med 2005;98:519-522).<span class="pa-src-meta">Published 2003 · Updated October 26, 2022 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Scholarly account of Lind&#x27;s trial and the Navy&#x27;s slow response.</span></li><li id="src-7"><a href="https://library.si.edu/digital-library/book/treatisescurvyt00lind" rel="noopener">A treatise of the scurvy, in three parts (James Lind, 1753)</a>. Smithsonian Libraries and Archives (digitized, no known copyright).<span class="pa-src-meta">Published 1753 · Checked October 29, 2026</span><span class="pa-src-use">Used for: The digitized 1753 Treatise of the Scurvy, as the primary source for the scurvy discussion.</span></li><li id="src-8"><a href="https://americanhistory.si.edu/explore/exhibitions/on-the-water/online/fishing-living/commercial-fishers/atlantic-cod/life-aboard" rel="noopener">Life Aboard (On the Water: Fishing for a Living)</a>. Smithsonian National Museum of American History.<span class="pa-src-meta">Updated December 16, 2025 · Checked October 29, 2026</span><span class="pa-src-use">Used for: A fishing schooner&#x27;s 1879 provisions list, as a contrast with naval scale.</span></li><li id="src-9"><a href="https://www.fsis.usda.gov/food-safety/foodborne-illness-and-disease/illnesses-and-pathogens/botulism" rel="noopener">Clostridium botulinum &amp; Botulism</a>. USDA Food Safety and Inspection Service.<span class="pa-src-meta">Updated December 6, 2024 · Checked October 29, 2026</span><span class="pa-src-use">Used for: Botulism, the role of nitrite in cured meat, and the link to traditionally prepared salted foods.</span></li><li id="src-10"><a href="https://ask.fsis.usda.gov/article/How-do-I-safely-cure-meats-at-home-to-avoid-botulism" rel="noopener">How do I safely cure meats at home to avoid botulism?</a>. USDA Food Safety and Inspection Service (Ask USDA).<span class="pa-src-meta">Updated May 10, 2024 · Checked October 29, 2026</span><span class="pa-src-use">Used for: USDA&#x27;s statement that botulism cases have followed home-cured, smoked, preserved and fermented foods.</span></li></ol></section><section class="pa-review" aria-labelledby="review-h"><h2 id="review-h">Review record</h2><dl><dt>Editorial status</dt><dd>Drafted; editor read-through pending</dd><dt>Safety review</dt><dd>Pending. A human safety review is required before this page can be published.</dd><dt>Last source check</dt><dd>October 29, 2026</dd><dt>Recheck when</dt><dd>If any listed source changes, or when the primary contracts and journals cited in the museum study are pulled and read directly (see the Limits section).</dd></dl></section><aside class="pa-related" aria-labelledby="rel-h"><h2 id="rel-h">Keep reading</h2><ul><li><a href="/preparedness/water/making-water-safer/">Making water safer in an emergency</a></li></ul></aside><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://finalvestige.com/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/#article", "headline": "Salt beef and salt pork at sea: what the records show, and what salt never promised", "description": "What contracts and journals show about salt beef and pork on sailing warships, where the method failed, and why it is not a modern food-safety model.", "mainEntityOfPage": "https://finalvestige.com/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/", "dateModified": "2026-10-29", "inLanguage": "en-US", "author": {"@type": "Organization", "name": "Final Vestige Studios"}, "publisher": {"@type": "Organization", "name": "Final Vestige Studios", "url": "https://finalvestige.com/"}, "isAccessibleForFree": true}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Final Vestige", "item": "https://finalvestige.com/"}, {"@type": "ListItem", "position": 2, "name": "The Preparedness Archive", "item": "https://finalvestige.com/preparedness/"}, {"@type": "ListItem", "position": 3, "name": "The Lost Ways", "item": "https://finalvestige.com/preparedness/lost-ways/"}, {"@type": "ListItem", "position": 4, "name": "Salt beef and salt pork at sea"}]}]}</script></div>
+<!-- /wp:html -->

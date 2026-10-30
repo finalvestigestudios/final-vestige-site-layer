@@ -1,0 +1,210 @@
+#!/usr/bin/env python3
+"""Editorial, safety-governance and accessibility gates for the Preparedness Archive.
+
+Exit code 0 only when there are no errors. Warnings are printed but do not fail.
+These checks cannot prove an article is *correct*. They enforce that it is traceable, labelled,
+gated and structurally sound. Correctness still needs the human safety review recorded in each article's meta.
+"""
+from __future__ import annotations
+
+import json
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import build  # noqa: E402
+
+REQUIRED_META = ["n", "slug", "title", "h1", "dek", "description", "section", "track", "updated", "last_checked", "status", "safety_review"]
+MIN_WORDS_CORNERSTONE = 1800
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+BANNED = [
+    (r"(?<!not )(?<!n't )(?<!never )\bguarantee[sd]?\b[^.]{0,40}\bsafe", "promises safety"),
+    (r"\b100\s?%\s*safe\b", "claims 100% safe"),
+    (r"\bancient secret", "'ancient secret' framing"),
+    (r"\bdoomsday\b|\bcollapse is coming\b|\bSHTF\b", "fear-selling language"),
+    (r"\bbuy now\b|\bact now\b!", "sales language"),
+]
+# Contrast pairs (foreground token, background token) that must reach WCAG AA for normal text (4.5:1)
+CONTRAST_PAIRS = [
+    ("--pa-text", "--pa-bg"), ("--pa-muted", "--pa-bg"), ("--pa-gold", "--pa-bg"), ("--pa-gold", "--pa-surface"),
+    ("--pa-muted", "--pa-surface"), ("--pa-text", "--pa-surface-2"), ("--pa-muted", "--pa-surface-2"),
+    ("--pa-ink", "--pa-paper"), ("--pa-ink-soft", "--pa-paper"),
+    ("--pa-ok", "--pa-surface"), ("--pa-warn", "--pa-surface"), ("--pa-bad", "--pa-surface"), ("--pa-info", "--pa-surface"),
+    ("--pa-warn", "--pa-surface-2"), ("--pa-info", "--pa-surface-2"), ("--pa-ok", "--pa-bg"),
+]
+
+
+def luminance(hex_color: str) -> float:
+    h = hex_color.lstrip("#")
+    r, g, b = (int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
+    lin = lambda c: c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)
+
+
+def contrast(fg: str, bg: str) -> float:
+    a, b = luminance(fg), luminance(bg)
+    hi, lo = max(a, b), min(a, b)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def css_tokens(css: str) -> dict[str, str]:
+    return dict(re.findall(r"(--pa-[a-z0-9\-]+):\s*(#[0-9A-Fa-f]{6})\s*;", css))
+
+
+def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
+    lib = lib or build.Library()
+    errors: list[str] = []
+    warns: list[str] = []
+
+    # --- register ---
+    seen_urls = set()
+    for sid, s in lib.register.items():
+        if not s["url"].startswith("https://"):
+            errors.append(f"register:{sid}: url must be https")
+        if s["url"] in seen_urls:
+            errors.append(f"register:{sid}: duplicate url")
+        seen_urls.add(s["url"])
+        if s.get("verified_on") and not DATE_RE.match(s["verified_on"]):
+            errors.append(f"register:{sid}: bad verified_on")
+        if s.get("verified_on") and not s.get("supports"):
+            errors.append(f"register:{sid}: verified source must say what it supports")
+
+    # --- taxonomy ---
+    slugs = [a["slug"] for a in lib.taxonomy["slate"]]
+    if len(slugs) != len(set(slugs)):
+        errors.append("taxonomy: duplicate slate slug")
+    if [a["n"] for a in lib.taxonomy["slate"]] != list(range(1, 36)):
+        errors.append("taxonomy: slate must be numbered 1..35")
+    for a in lib.taxonomy["slate"]:
+        if a["section"] not in lib.sections:
+            errors.append(f"taxonomy:{a['slug']}: unknown section")
+
+    # --- articles ---
+    for slug, meta in lib.articles.items():
+        p = f"article:{slug}"
+        for k in REQUIRED_META:
+            if k not in meta:
+                errors.append(f"{p}: missing meta '{k}'")
+        if errors and any(e.startswith(p) and "missing meta" in e for e in errors):
+            continue
+        slate = lib.slate.get(slug)
+        if not slate:
+            errors.append(f"{p}: slug not in taxonomy slate (add it first)")
+        else:
+            if slate["section"] != meta["section"] or slate["track"] != meta["track"]:
+                errors.append(f"{p}: section/track disagree with taxonomy")
+            if slate["n"] != meta["n"]:
+                errors.append(f"{p}: n disagrees with taxonomy")
+        if meta["section"] not in lib.sections:
+            errors.append(f"{p}: unknown section")
+        if meta["track"] not in lib.taxonomy["tracks"]:
+            errors.append(f"{p}: unknown track")
+        for k in ("updated", "last_checked"):
+            if not DATE_RE.match(meta[k]):
+                errors.append(f"{p}: {k} must be YYYY-MM-DD")
+        if len(meta["description"]) > 165:
+            errors.append(f"{p}: description over 165 chars ({len(meta['description'])})")
+        if len(meta["title"]) > 60:
+            warns.append(f"{p}: title over 60 chars")
+
+        try:
+            body, order = build.resolve_tokens(lib, meta)
+        except (KeyError, ValueError) as e:
+            errors.append(f"{p}: {e}")
+            continue
+        # sources
+        for sid in order:
+            if not lib.register[sid].get("verified_on"):
+                errors.append(f"{p}: cites unverified source '{sid}'")
+        extra = set(meta.get("source_use", {})) - set(order)
+        if extra:
+            errors.append(f"{p}: source_use lists sources never cited in the body: {sorted(extra)}")
+        kinds = {lib.register[s]["kind"] for s in order}
+        if len(order) < 3:
+            errors.append(f"{p}: needs 3+ independently checked sources (has {len(order)})")
+        if meta["track"] == "lost-ways" and not (kinds & {"primary-digitized", "museum-study", "museum", "museum-object", "archive"}):
+            errors.append(f"{p}: history piece needs a primary or museum/archive source")
+        if meta["track"] == "lost-ways" and not (kinds & {"regulator", "extension"}):
+            errors.append(f"{p}: history piece needs a modern regulator/extension source for its safety verdict")
+        if meta["track"] == "modern" and not (kinds & {"regulator", "extension"}):
+            errors.append(f"{p}: modern piece needs a regulator/extension source")
+        # stray external links (everything must be via the register)
+        reg_urls = {s["url"] for s in lib.register.values()}
+        for href in re.findall(r'href="(https?://[^"]+)"', body):
+            if href not in reg_urls:
+                errors.append(f"{p}: external link not in source register: {href}")
+        # structure
+        if re.search(r"<h1[\s>]", body):
+            errors.append(f"{p}: body must not contain an h1 (template provides it)")
+        ids = re.findall(r'<h2 id="([^"]+)"', body)
+        if len(ids) != len(set(ids)):
+            errors.append(f"{p}: duplicate h2 ids")
+        for img in re.findall(r"<img\b[^>]*>", body):
+            if not re.search(r'\balt="[^"]+"', img):
+                errors.append(f"{p}: <img> without alt text")
+        for tbl in re.findall(r"<table\b[\s\S]*?</table>", body):
+            if "<caption" not in tbl or 'scope="col"' not in tbl:
+                errors.append(f"{p}: table needs <caption> and scope=col headers")
+        for wrap in re.findall(r'<div class="pa-tablewrap"[^>]*>', body):
+            if 'tabindex="0"' not in wrap or "aria-label" not in wrap:
+                errors.append(f"{p}: scrollable table wrapper needs tabindex=0 and aria-label")
+        if "pa-act" not in body:
+            errors.append(f"{p}: missing the top action/read-first box")
+        if meta["track"] == "lost-ways" and "pa-verdict" not in body:
+            errors.append(f"{p}: history piece needs a safety-verdict panel")
+        if meta["track"] == "lost-ways" and "pa-thennow" not in body:
+            warns.append(f"{p}: history piece has no Then/Now panel")
+        words = build.word_count(body)
+        if words < MIN_WORDS_CORNERSTONE:
+            errors.append(f"{p}: {words} words is under the cornerstone minimum of {MIN_WORDS_CORNERSTONE}")
+        plain = re.sub(r"<[^>]+>", " ", body)
+        for pat, why in BANNED:
+            if re.search(pat, plain, flags=re.I):
+                errors.append(f"{p}: banned language ({why})")
+        # governance
+        sr = meta["safety_review"]
+        if sr["state"] not in ("pending", "approved", "not-required"):
+            errors.append(f"{p}: safety_review.state invalid")
+        if slate and slate["gate"] and sr["state"] == "not-required":
+            errors.append(f"{p}: taxonomy marks this high-consequence; safety review cannot be 'not-required'")
+        if sr["state"] == "approved" and not (sr.get("reviewer") and sr.get("date") and DATE_RE.match(sr["date"] or "")):
+            errors.append(f"{p}: approved safety review needs reviewer name and date")
+        if meta["status"]["publish"] == "published":
+            if slate and slate["gate"] and sr["state"] != "approved":
+                errors.append(f"{p}: CANNOT be published without an approved human safety review")
+            if meta["status"]["editorial"] != "reviewed":
+                errors.append(f"{p}: CANNOT be published before editorial review")
+        elif meta["status"]["publish"] != "draft":
+            errors.append(f"{p}: status.publish must be 'draft' or 'published'")
+        for rel in meta.get("related", []):
+            if rel not in lib.slate:
+                errors.append(f"{p}: related slug '{rel}' not in taxonomy")
+
+    # --- design tokens: WCAG AA ---
+    tokens = css_tokens(lib.css)
+    for fg, bg in CONTRAST_PAIRS:
+        if fg not in tokens or bg not in tokens:
+            errors.append(f"css: missing token for contrast pair {fg}/{bg}")
+            continue
+        ratio = contrast(tokens[fg], tokens[bg])
+        if ratio < 4.5:
+            errors.append(f"css: contrast {fg} on {bg} is {ratio:.2f}:1 (<4.5)")
+    for needed in ("prefers-reduced-motion", "@media print", "focus-visible", "forced-colors"):
+        if needed not in lib.css:
+            errors.append(f"css: missing '{needed}' support")
+    return errors, warns
+
+
+def main() -> int:
+    errors, warns = validate()
+    for w in warns:
+        print("WARN ", w)
+    for e in errors:
+        print("ERROR", e)
+    print(f"\n{len(errors)} error(s), {len(warns)} warning(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
