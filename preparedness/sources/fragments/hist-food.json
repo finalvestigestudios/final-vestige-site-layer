@@ -211,18 +211,18 @@
       "notes": "A 2002 overview that gives some claims without citation (for example 12,000 B.C. drying, ketchup origins). We use only the dated canning, curing and refrigeration statements, and flag the rest as undocumented."
     },
     {
-      "id": "nchfp-jerky",
+      "id": "hist-food-nchfp-jerky",
       "title": "Jerky",
       "publisher": "National Center for Home Food Preservation, University of Georgia (from So Easy to Preserve, 6th ed., Bulletin 989)",
       "kind": "extension",
-      "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+      "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
       "published": "2014",
       "updated": null,
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Jerky raw-meat hazards; wild game and pork trichinella treatment; heating meat strips to 160 F either in marinade before drying or in an oven after drying; fecal contamination of game; properly dried jerky keeps at room temperature two weeks in a sealed container.",
-      "notes": "Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky."
+      "notes": "Same page as the register placeholder 'nchfp-jerky' (read at the URL without the trailing slash; both return HTTP 200). Defined under a new id because the shared test suite uses 'nchfp-jerky' as its permanent unverified-placeholder fixture. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky."
     },
     {
       "id": "hist-food-fsis-jerky",
@@ -367,7 +367,7 @@
     {
       "id": "hist-food-nps-icebox",
       "title": "The Icebox, the Predecessor of Modern Refrigeration",
-      "publisher": "National Park Service (John F. Kennedy National Historic Site)",
+      "publisher": "National Park Service",
       "kind": "museum",
       "url": "https://www.nps.gov/articles/000/the-icebox-the-predecessor-of-modern-refrigeration.htm",
       "published": null,
@@ -377,6 +377,34 @@
       "human_link_check": false,
       "supports": "How an icebox worked; ice cut from ponds in winter and stored in insulated ice houses; Frederic Tudor shipped ice widely; in 1847 nearly 52,000 tons of ice moved by ship or train to 28 US cities; ice-making factories replaced harvesting; the first widely popular electric refrigerator was General Electric's in 1927; 85% of American households had a refrigerator by 1944.",
       "notes": "Read through a search result that reproduced the full page text; flagged for a human link check."
+    },
+    {
+      "id": "hist-food-nps-emigrant-trails",
+      "title": "Traveling the Emigrant Trails",
+      "publisher": "National Park Service (National Historic Trails)",
+      "kind": "museum",
+      "url": "https://www.nps.gov/articles/000/traveling-emigrant-trails.htm",
+      "published": null,
+      "updated": "2025-04-29",
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "Cost of an 1850 outfit; the supply list from Joseph Ware's 1849 Emigrant's Guide for three people on the Oregon Trail (flour 1,080 lb, bacon 600 lb, coffee 100 lb, sugar 150 lb, and so on, plus hard-tack, dried beef, molasses, vinegar, beans); food emigrants carried and the game they hunted; buffalo chips as fuel; snakes or prairie dogs 'in desperate times'.",
+      "notes": "Read in query mode (verbatim extraction). Does not say how the guide's quantities relate to Marcy's per-person figures; see cluster notes."
+    },
+    {
+      "id": "hist-food-nps-nht-nevada-guide",
+      "title": "National Historic Trails Auto Tour Route Interpretive Guide: Nevada",
+      "publisher": "National Park Service (National Trails Intermountain Region; April 2012, fourth printing June 2021)",
+      "kind": "museum",
+      "url": "https://www.nps.gov/orgs/1453/upload/National-Historic-Trails-Auto-Tour-Route-Interpretive-Guide-Across-Nevada.pdf",
+      "published": "2012-04",
+      "updated": "2021-06",
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "The Bidwell-Bartleson party's provisions gone by autumn 1841 and the butchering of oxen; Dawson's remark about packing provisions; on the Humboldt in the main emigration years nobody discarded bacon, flour or beans and many parties were dangerously low; the 1846 Donner-Reed party realizing they lacked food; Hastings Cutoff passing Salt Lake City where travelers could buy provisions after 1847; the NPS account of Western Shoshone (Newe) and Paiute (Numa) hunger, loss of pine nut groves and seed grasses, and livestock raids; quoted emigrant and observer statements (Bidwell, Greeley, Shaw, Langworthy).",
+      "notes": "A 104-page PDF; our extraction returned the passages above in full and we rely only on them. The Shoshone account of the emigrants is the guide's retelling of an oral tradition and is attributed that way."
     }
   ]
 }
