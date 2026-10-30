@@ -106,6 +106,11 @@ class SiteHealthGuardTests(unittest.TestCase):
         s["settings"]["reading"]["blog_public"] = 0
         self.assertIn("search-visibility-private", [x["code"] for x in check(s)["findings"]])
 
+    def test_privacy_setting_disables_indexing(self):
+        s = fixture()
+        s["settings"]["privacy"] = {"blog_public": 0}
+        self.assertIn("search-visibility-private", [x["code"] for x in check(s)["findings"]])
+
     def test_branding_warnings_not_release_failure(self):
         s = fixture()
         s["settings"]["identity"] = {"site_logo": 0, "site_icon": 0}
