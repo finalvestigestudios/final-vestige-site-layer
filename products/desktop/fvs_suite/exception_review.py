@@ -247,7 +247,9 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
             raise ValueError("Review journal event limit reached; export and archive it")
         # Human decisions cannot be recorded earlier than the prior action.
         # A clock rollback requires inspection, never an automatic timestamp fix.
-        now = datetime.now(timezone.utc)
+        # Match the exact second precision persisted in the journal, so a
+        # preceding fractional-second record cannot slip past the clock gate.
+        now = datetime.now(timezone.utc).replace(microsecond=0)
         check_new_review_clock(events[-1]["created_utc"] if events else None, now)
         case = cases[case_id]
         payload = {
