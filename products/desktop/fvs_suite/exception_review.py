@@ -17,6 +17,8 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .journal_io import append_verified_event, read_regular_bytes
+
 MAX_REPORT_BYTES = 64 * 1024 * 1024
 MAX_JOURNAL_BYTES = 16 * 1024 * 1024
 MAX_RECORDS = 200_000
@@ -66,16 +68,11 @@ def _unique_keys(pairs):
 
 
 def _read_file(path: str | Path, limit: int, kind: str) -> bytes:
-    source = Path(path)
-    if source.is_symlink() or not source.is_file():
-        raise ValueError(f"{kind} must be an existing regular file, not a symlink")
-    if source.stat().st_size > limit:
-        raise ValueError(f"{kind} exceeds the allowed file-size limit")
-    with source.open("rb") as stream:
-        data = stream.read(limit + 1)
-    if len(data) > limit:
-        raise ValueError(f"{kind} exceeds the allowed file-size limit")
-    return data
+    # Descriptor and pathname must still match after the bounded read.
+    try:
+        return read_regular_bytes(path, limit, kind)
+    except FileNotFoundError as exc:
+        raise ValueError(f"{kind} must be an existing regular file, not a symlink") from exc
 
 
 def read_cases(report: str | Path, product: str) -> ReportBatch:
@@ -271,14 +268,14 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
         }
         event = {**payload, "event_hash": _hex_hash(_json(payload))}
         encoded = _json(event) + b"\n"
-        if (path.stat().st_size if path.exists() else 0) + len(encoded) > MAX_JOURNAL_BYTES:
-            raise ValueError("Review journal file-size limit reached")
-        # Exclusive writer lock protects append order. A torn write fails closed
-        # on next read rather than silently being treated as an approved action.
-        with path.open("ab") as stream:
-            stream.write(encoded)
-            stream.flush()
-            os.fsync(stream.fileno())
+        # Recheck the whole source and hash-linked journal while holding the
+        # destination descriptor; never append to a substituted pathname.
+        def verify_source_and_history():
+            closing = read_cases(report, product)
+            if closing != batch or read_journal(path, closing) != events:
+                raise ValueError("Review evidence changed before append; reload source and journal")
+
+        append_verified_event(path, encoded, MAX_JOURNAL_BYTES, verify_source_and_history)
         return event
 
 

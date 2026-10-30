@@ -509,3 +509,22 @@ These reports record human reviews only; no automated authorization occurs.
 The 20 focused synthetic tests do not establish complete GUI integration,
 native Windows release readiness, historical authenticity or QD signoff.
 All four free and two premium applications remain **unreleased**.
+
+## R47 — Descriptor-bound premium human journal custody (pre-release)
+
+Both GrantAudit Studio Pro and ProcureGuard Studio Pro now read local review
+source CSV/JSONL evidence through a **bounded, descriptor-verified** reader
+instead of trusting pathname stat checks followed by a separate open. The
+human-only JSONL append checks the destination descriptor, source/report digest,
+full prior journal chain and observed file identity before writing; it rejects
+symlinks, hardlink aliases, swapped files and detected concurrent changes.
+New journals are created with private POSIX mode 0600, without replacing other
+files. An interrupted append can still leave a torn journal: subsequent
+hash-chain validation fails closed, requiring manual incident review. This is
+not an encrypted database, independent cryptographic attestation, or guarantee
+against privileged filesystem races. See
+[the R47 local review journal runbook](docs/DESCRIPTOR_REVIEW_JOURNAL_R47.md).
+
+Focused R47 tests: `PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests -p test_journal_io_r47.py -v`.
+Complete Windows/full-checkout integration, premium distribution entitlement,
+malware scanning and separate QD approval remain required. **Nothing is released.**
