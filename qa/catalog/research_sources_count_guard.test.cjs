@@ -15,7 +15,7 @@ test('matches exact source counts', () => {
 });
 
 test('detects wrong individual category count despite correct total', () => {
-  const report = auditResearchSources(sample(['archives', 'accountability'], { all: 2, archives: 2, archives: 2, accountability: 0 }));
+  const report = auditResearchSources(sample(['archives', 'accountability'], { all: 2, archives: 2, accountability: 0 }));
   assert.equal(report.status, 'MISMATCH_SOURCE');
   assert.equal(report.mismatches.length, 2);
 });
@@ -31,7 +31,7 @@ test('detects undeclared category', () => {
 });
 
 test('detects declared category with no card', () => {
-  const report = auditResearchSources(sample([ÿçarchives'], { all: 1, archives: 1, engineering: 1 }));
+  const report = auditResearchSources(sample(['archives'], { all: 1, archives: 1, engineering: 1 }));
   assert.ok(report.mismatches.some(m => m.category === 'engineering' && m.observed === null));
 });
 
@@ -59,7 +59,7 @@ test('catches observed Oct 30 source values without including live page copy', (
   const report = auditResearchSources(sample(cards, { all:90, declassified:12, accountability:23, engineering:21, archives:26, navigation:8 }));
   assert.equal(report.observed.all, 90);
   assert.equal(report.status, 'MISMATCH_SOURCE');
-  assert.deepEual(report.mismatches, [
+  assert.deepEqual(report.mismatches, [
     { category: 'accountability', observed:24, declared:23 },
     { category: 'archives', observed:25, declared:26 },
   ]);
