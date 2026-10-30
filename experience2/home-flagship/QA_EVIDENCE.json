@@ -2,19 +2,19 @@
   "schema_version": 1,
   "recorded_on": "2026-10-30",
   "status": "SOURCE_AND_MOCK_QA_ONLY—NOT_RENDERED_BROWSER_QA",
-  "tested_code_sha": "2d7b79fae1d8fafd83ce67177a3617234bfc0f8d",
+  "tested_code_sha": "b74ac0690c9fe0cb1afee0c1e5af4ed90cb3884d",
   "executed_checks": {
     "source_contract_and_mock_interaction": {
-      "count": 28,
-      "passed": 28,
+      "count": 34,
+      "passed": 34,
       "failed": 0,
-      "details": "Connected GitHub exact files parsed and verified using JavaScript V8; mocked DOM interaction exercised initial state, click to Franklin, ArrowRight to Malbone with button focus, aria-live, preview switching and image onerror fallback."
+      "details": "34/34 direct source, manifest, optimized image delivery markup, accessibility and V8 mocked DOM interaction checks passed on exact code SHA b74ac0690c9fe0cb1afee0c1e5af4ed90cb3884d. Includes click/keyboard focus and live announcement, three visual directions, responsive srcset and static no-JS source content. These are not real browser screenshots."
     },
     "fault_injection": {
       "count": 2,
       "passed": 2,
       "failed": 0,
-      "details": "Simulated missing Element.closest and one-time aria-pressed update exception; in both tests all three evidence articles remained visible and interactive controls stayed hidden."
+      "details": "2/2 V8 adversarial tests passed on unchanged flagship.js: missing Element.closest support and one-time aria-pressed write exception preserved all three source panels in static readable state. JS implementation unchanged since these tests."
     },
     "python_unit_suite": {
       "authored": 8,
@@ -70,5 +70,36 @@
     "margins72_unchanged": true,
     "no_new_paid_SaaS": true,
     "no_inspire3_links": true
+  },
+  "optimization": {
+    "wordpress_media_id": 1258,
+    "original_image_dimensions": [
+      5667,
+      3831
+    ],
+    "original_image_bytes": 5553669,
+    "delivery": "WordPress-listed Jetpack responsive 768/1024/1536 width derivatives; default 1024x692; full map object-fit:contain",
+    "measured_variant_payload_bytes": false,
+    "cdn_load_verified": false
+  },
+  "wordpress_media_audit": {
+    "nasa": {
+      "id": 473,
+      "width": 1041,
+      "height": 810,
+      "bytes": 78346
+    },
+    "franklin": {
+      "id": 474,
+      "width": 960,
+      "height": 1526,
+      "bytes": 466043
+    },
+    "nypl": {
+      "id": 1258,
+      "width": 5667,
+      "height": 3831,
+      "bytes": 5553669
+    }
   }
 }
