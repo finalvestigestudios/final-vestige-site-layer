@@ -19,6 +19,7 @@ from typing import Mapping
 
 from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
+from .journal_io import read_regular_bytes
 
 DOMAIN = b"FinalVestigeLabs.entitlement.v1\x00"
 SCHEMA = "fvs.entitlement.v1"
@@ -78,6 +79,24 @@ def installed_license_path(product: str) -> Path:
     return folder / "FinalVestige" / "licenses" / f"{product}.fvslicense"
 
 
+def _read_signed_entitlement(source: str | Path) -> bytes:
+    """Pin the local license descriptor while bounding and checking its bytes.
+
+    Reject observed replacements, aliases, links, and in-flight edits rather
+    than trusting a separate is_file/stat/open sequence. Return only verified
+    bytes to the signature validator; never echo private paths in GUI errors.
+    """
+    try:
+        return read_regular_bytes(source, MAX_BYTES, "Entitlement file")
+    except ValueError as exc:
+        # The shared descriptor reader uses fixed, private-data-safe diagnostics.
+        if "exceeds" in str(exc):
+            raise EntitlementError("Entitlement file exceeds the size limit") from None
+        raise EntitlementError("Entitlement must be a stable, distinct regular file") from None
+    except OSError:
+        raise EntitlementError("Entitlement file is inaccessible or changed during verification") from None
+
+
 def verify_license(path: str | Path, product: str, *,
                    trusted_keys: Mapping[str, bytes] | None = None,
                    now: datetime | None = None) -> Entitlement:
@@ -92,15 +111,7 @@ def verify_license(path: str | Path, product: str, *,
     keys = TRUSTED_PUBLIC_KEYS if trusted_keys is None else trusted_keys
     if not keys:
         raise EntitlementError("Premium entitlements are not activated in this pre-release build")
-    source = Path(path)
-    if source.is_symlink() or not source.is_file():
-        raise EntitlementError("Select an existing regular entitlement file")
-    if source.stat().st_size > MAX_BYTES:
-        raise EntitlementError("Entitlement file exceeds the size limit")
-    with source.open("rb") as handle:
-        data = handle.read(MAX_BYTES + 1)
-    if len(data) > MAX_BYTES:
-        raise EntitlementError("Entitlement file exceeds the size limit")
+    data = _read_signed_entitlement(path)
     try:
         item = json.loads(data.decode("utf-8"), object_pairs_hook=_unique_fields,
                           parse_constant=lambda _: (_ for _ in ()).throw(
