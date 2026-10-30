@@ -97,6 +97,19 @@ class BuildInputCustodyR55Tests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.capture()
 
+    def test_symlinked_build_control_parent_fails(self):
+        alternate = self.root / 'other_workflows'
+        alternate.mkdir()
+        (alternate / 'desktop-build.yml').write_text('# safe-looking alternate\n')
+        self.workflow.unlink()
+        (self.root / '.github' / 'workflows').rmdir()
+        try:
+            (self.root / '.github' / 'workflows').symlink_to(alternate, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest('filesystem disallows symlinks')
+        with self.assertRaises(ValueError):
+            self.capture()
+
     def test_manifest_cannot_be_overwritten(self):
         self.capture()
         original = self.manifest.read_bytes()
