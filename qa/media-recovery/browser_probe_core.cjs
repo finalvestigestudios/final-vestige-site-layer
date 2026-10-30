@@ -1,28 +1,60 @@
 'use strict';
-/** Conservative classification: a viewer 403 or an absent stored image is NOT a broken browser image. */
-function clean(u){try{return new URL(String(u)).href}catch{return null}}
+/** Conservative, offline browser identity classification. URL equivalence is NOT a rights or binary-hash check. */
+function clean(u){try{const v=new URL(String(u));return v.protocol==='https:'||v.protocol==='http:'?v.href:null}catch{return null}}
+function wikiName(s){try{return decodeURIComponent(s).replaceAll(' ','_')}catch{return null}}
+function commonsFile(p){
+ const host=p.hostname.toLowerCase(),path=p.pathname;
+ if(host==='commons.wikimedia.org'){
+  let m=path.match(/^\/wiki\/(?:Special:Redirect\/file\/|File:)(.+)$/);
+  if(!m)return null;
+  return wikiName(m[1]);
+ }
+ if(host==='upload.wikimedia.org'){
+  // Explicit Commons hash-path only: reject unrelated Wikimedia project or a lookalike host.
+  const m=path.match(/^\/wikipedia\/commons\/(thumb\/)?[0-9a-f]\/([0-9a-f]{2})\/([^/]+)(?:\/([^/]+))?$/i);
+  if(!m)return null;
+  const thumb=!!m[1],original=m[3],variant=m[4];
+  if(thumb){
+   if(!variant||!/^\d+px-/.test(variant))return null;
+   const bare=variant.replace(/^\d+px-/,'');
+   // Extension transforms (e.g. SVG->PNG) require their own review.
+   if(bare!==original)return null;
+  }else if(variant)return null;
+  return wikiName(original);
+ }
+ return null;
+}
 function imageIdentity(url){
  const u=clean(url);if(!u)return null;
- try{const p=new URL(u);const host=p.hostname.toLowerCase();
+ try{
+  const p=new URL(u),host=p.hostname.toLowerCase();
   if(/^i\d?\.wp\.com$/.test(host)){
-   const segments=p.pathname.replace(/^\//,'').split('/');
-   if(segments.length>1&&segments[0].includes('.'))return clean('https://'+segments.join('/'));
+   const seg=p.pathname.replace(/^\//,'').split('/');
+   if(seg.length>1&&seg[0].includes('.'))return imageIdentity('https://'+seg.join('/'));
   }
+  const filename=commonsFile(p);
+  if(filename)return 'commons-file:'+filename;
   return p.origin+p.pathname;
  }catch{return null}
 }
-function normalizedAlt(t){return String(t||'').toLowerCase().replace(/\s+/g,' ').trim()}
 function sameSource(a,b){
  const x=imageIdentity(a),y=imageIdentity(b);if(!x||!y)return false;
  if(x===y)return true;
  try{const xa=new URL(x),ya=new URL(y);return xa.hostname===ya.hostname&&decodeURIComponent(xa.pathname)===decodeURIComponent(ya.pathname)}
  catch{return false}
 }
+function normalizedAlt(t){return String(t||'').toLowerCase().replace(/\s+/g,' ').trim()}
+function renderSrcMatch(s,r){return [r.src,r.currentSrc,r.dataSrc].some(u=>sameSource(s.source_url,u))}
 function matchStoredImages(stored,rendered){
- return stored.map(s=>{
-  const byUrl=rendered.filter(r=>[r.src,r.currentSrc,r.dataSrc].some(u=>sameSource(s.source_url,u)));
-  if(byUrl.length===1)return{key:s.key,match:'exact_url_or_jetpack_origin',rendered:byUrl[0]};
-  if(byUrl.length>1)return{key:s.key,match:'ambiguous_url',rendered:null};
+ const rows=stored.map(s=>({s,urls:rendered.filter(r=>renderSrcMatch(s,r))}));
+ return rows.map(({s,urls})=>{
+  if(urls.length>1)return{key:s.key,match:'ambiguous_url',rendered:null};
+  if(urls.length===1){
+   // Distinct stored slots may not reuse one DOM element as two verified image loads.
+   const colliders=rows.filter(x=>x.urls.includes(urls[0]));
+   if(colliders.length!==1)return{key:s.key,match:'ambiguous_shared_url',rendered:null};
+   return{key:s.key,match:'exact_url_or_jetpack_origin',rendered:urls[0]};
+  }
   const a=normalizedAlt(s.alt),byAlt=a?rendered.filter(r=>normalizedAlt(r.alt)===a):[];
   if(byAlt.length===1)return{key:s.key,match:'alt_only_unverified',rendered:byAlt[0]};
   return{key:s.key,match:byAlt.length>1?'ambiguous_alt':'unmatched',rendered:null};
@@ -33,11 +65,13 @@ function classifyImages(stored,rendered,network,pageVerified){
   const r=j.rendered,s=stored.find(x=>x.key===j.key);
   const req=r&&network.findLast(n=>[n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc||r.src)||sameSource(u,r.src)));
   const responseStatus=req&&Number.isInteger(req.status)?req.status:null,reqError=req?.failed_error||null;
-  const visiblyBroken=!!(pageVerified&&r&&j.match!=='alt_only_unverified'&&r.complete===true&&r.naturalWidth===0&&(reqError||(responseStatus!==null&&responseStatus>=400)));
-  const verifiedLoaded=!!(pageVerified&&r&&r.complete===true&&r.naturalWidth>0);
+  const identityVerified=j.match==='exact_url_or_jetpack_origin';
+  const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&(reqError||(responseStatus!==null&&responseStatus>=400)));
+  const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth>0);
   let state='unverified';
   if(!pageVerified)state='page_not_verified';
   else if(!r)state='not_mapped';
+  else if(j.match==='alt_only_unverified')state='alt_only_identity_unverified';
   else if(visiblyBroken)state='confirmed_broken_in_probe_browser';
   else if(verifiedLoaded)state='loaded_in_probe_browser';
   else if(r.complete===true&&r.naturalWidth===0)state='zero_intrinsic_width_needs_review';
