@@ -2,7 +2,7 @@
 
 **Snapshot:** 2026-10-30. **Integration:** draft PR #176, base `feature/preparedness-archive-v1` at `ee591e2df5de08aea7603fc4cbf3c5249361e119`.
 
-This registry enumerates **all 223 original source rows** in the base + seven source fragments. It records 186 exact unique URLs, **30 duplicate URL groups** and **15 repeated source-ID groups**. The JSON contains every original source row for each collided URL, including the exact title, kind, date, `supports`, `notes` (reading depth), and human-link-check flag, plus the Git blob SHA for each source file. All original source fragments remain in Git, unaltered. No rows are deleted or silently upgraded.
+This registry enumerates **all 224 original source rows** in the base + seven source fragments. It records 186 exact unique URLs, **30 duplicate URL groups** and **15 repeated source-ID groups**. The JSON contains every original source row for each collided URL, including the exact title, kind, date, `supports`, `notes` (reading depth), and human-link-check flag, plus the Git blob SHA for each source file. All original source fragments remain in Git, unaltered. No rows are deleted or silently upgraded.
 
 ## Rules
 1. A repeated URL does **not** make the underlying *claim scopes* identical. For example, multiple articles cite the same LOC collection landing page with different depths of reading; a catalogue record cannot automatically substantiate a quotation from an underlying diary.
@@ -26,3 +26,5 @@ This registry enumerates **all 223 original source rows** in the base + seven so
 All **35 article slugs** and the local-only water-planner are represented by an explicit origin map. Every article stays **draft**; front-end appearance has not been verified. The raw fragments remain independent, and the integration branch targets the unpublished base branch. Do not merge the pending independent #157/#169 review work in place. Never modify WordPress, homepage, Focus Fieldbook or navigation from this lane.
 
 To verify from an exact checkout when available: `python -I preparedness/tools/validate.py`, `python -I preparedness/tools/build.py`, `python -I -m unittest discover -s preparedness/tests -v`. Those commands have NOT been executed in this connector-only sprint; local GitHub access in this runtime is blocked, and CI runners have previously not dispatched.
+
+> **2026-10-30 Start rebase update:** The subsequently revised Start contributor added a *fourth independently read scope* for the already-shared FEMA V-1008 source URL; the source row total increased from 223 to 224, machine-marked source rows from 208 to 209, while literal unique URLs **remained 186** and unresolved exact duplicate-URL groups **remained 30**. All human link checks remain false. Earlier conclusions about the initial integration baseline apply only to their original Git SHAs. Refer to `START-LATEST-SAFETY-RECONCILIATION.md` and the latest evidence lock. **No QD or medical safety approval is claimed.**
