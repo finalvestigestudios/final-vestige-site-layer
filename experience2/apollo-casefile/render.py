@@ -56,6 +56,17 @@ def stage(row):
      </div>{plate(row)}
    </article>'''
 
+def gallery_card(row):
+    """A factual record index, not a reproduced NASA photograph or an image of the fire."""
+    rid=e(row["id"])
+    return f'''<li class="ex2-gallery__item" data-ex2-gallery-item>
+      <a class="ex2-gallery__stamp" href="#stage-{rid}" aria-label="Go to evidence stage {rid}, {e(row['source_id'])}"><span>NASA IMAGE RECORD</span><strong aria-hidden="true">{rid}</strong><small>OPEN DOCUMENTARY STAGE ↗</small></a>
+      <div class="ex2-gallery__metadata"><p class="ex2-gallery__date">{e(row['source_date'])} · NASA IMAGE CATALOG</p>
+      <h3>{e(row['source_id'])}</h3><p><b>What it depicts:</b> {e(row['image_description'])}</p>
+      <details><summary>What it cannot establish</summary><p>{e(row['limit'])}</p></details>
+      <p class="ex2-gallery__links">{source_link(row['image_url'], 'Inspect the original NASA record')} · <a href="#source-{rid}">Read our evidence limitation</a></p>
+      </div></li>'''
+
 def atlas_card(row):
     key = e(row["wp_id"])
     searchable = " ".join((row["title"], row["theme"], row["summary"]))
@@ -65,6 +76,7 @@ def render(manifest):
     records=manifest["records"]
     rail="\n".join(f'<li><a href="#stage-{e(row["id"])}" data-ex2-rail-link><span>{e(row["id"])}</span><span>{e(row["time"])}</span></a></li>' for row in records)
     article="\n".join(stage(row) for row in records)
+    gallery="\n".join(gallery_card(row) for row in records)
     atlas="\n".join(atlas_card(row) for row in manifest["atlas"])
     css=(ROOT/'assets/app.css').read_text(encoding='utf-8')
     js=(ROOT/'assets/app.js').read_text(encoding='utf-8')
@@ -80,14 +92,16 @@ def render(manifest):
 <p class="ex2-hero__overline">ARCHIVE / 27 JANUARY 1967 / SIX DOCUMENTED RECORDS</p>
 <h1 id="case-title">The evidence <em>unfolds.</em></h1>
 <p class="ex2-hero__lede">The fire aboard Apollo 1 did not begin with a single proven spark. What survived instead is a documentary trail: test conditions, a crew's last transmissions, instrument readings, a hatch that could not open—and an investigation that refused to claim certainty it did not possess.</p>
-<div class="ex2-hero__actions"><a class="ex2-button" href="#chronology">Follow the chronology <span aria-hidden="true">↓</span></a><a class="ex2-textlink" href="#research-desk">Inspect the source custody</a></div>
+<div class="ex2-hero__actions"><a class="ex2-button" href="#chronology">Follow the chronology <span aria-hidden="true">↓</span></a><a class="ex2-textlink" href="#research-desk">Inspect the source custody</a><a class="ex2-textlink" href="#source-gallery">Browse NASA source records</a></div>
 <div class="ex2-hero__annotation"><strong>OUR METHOD</strong><p>Every plate distinguishes what a NASA photograph actually depicts from what the Apollo 204 Review Board concluded. No recreated accident photographs, simulated pressure curve, or invented location pins.</p></div>
 </div><div class="ex2-hero__folio" aria-hidden="true">APOLLO<br><span>01</span></div></section>
 <section class="ex2-section ex2-case" id="chronology" aria-labelledby="chron-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">I / SIX RECORDS · A LIMITED CHRONOLOGY</p><h2 id="chron-title">Follow what <em>the record</em> can bear.</h2><p>This is a sequence of documented conditions, events and later decisions—not a continuous sensor replay. Time markers have different meanings and are explicitly labeled.</p></div>
 <div class="ex2-case__layout"><nav class="ex2-rail" aria-label="Six evidence stages"><span>CHRONOLOGY RAIL</span><ol>{rail}</ol><p>Choose a stage to jump to its evidence. Without JavaScript, all six remain in the document.</p></nav>
 <div class="ex2-stages">{article}</div></div></section>
 <section id="research-desk" class="ex2-section ex2-custody" aria-labelledby="custody-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">II / THE RESEARCH DESK</p><h2 id="custody-title">The source is <em>not</em> the interpretation.</h2><p>Six NASA photograph records have been matched to their actual published descriptions. Some were previously associated with a historical claim they cannot visually establish. Those distinctions are now explicit in every drawer above.</p></div><div class="ex2-custody__grid"><div class="ex2-custody__claim"><h3>Primary finding</h3><p>The Apollo 204 Review Board is the primary source for pressure, timing, cause investigation and egress limitations. It reports that no single ignition source was conclusively identified.</p>{source_link(REPORT,'Read the full Board report')}</div><div class="ex2-custody__claim"><h3>Image custody</h3><p>NASA's six linked photographs depict crew training, spacecraft preparation, post-fire damage or a 2017 memorial exhibit. They do <strong>not</strong> depict a real-time pressure graph, fire ignition or 1967 hatch operation.</p><p>Image reproduction is disabled in this prototype while actual asset transport, third-party credits and promotional-use constraints are audited.</p></div><div class="ex2-custody__claim"><h3>Media policy</h3><p>NASA generally permits informational reproduction of its released imagery subject to restrictions: retain source credit, do not use insignia as branding, do not imply NASA endorsement, and review third-party and identifiable-person rights.</p>{source_link(manifest['rights_policy'],'Read NASA brand and media guidelines')}</div></div><p class="ex2-custody__status">RESEARCH STATUS · 6 NASA description pages verified · image bytes not included · 0 speculative map points</p></section>
-<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">III / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
+<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">III / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
+<ol class="ex2-gallery__grid">{gallery}</ol><p class="ex2-gallery__notice">Source-only gallery · no image bytes loaded · NASA credits preserved in linked records · this independent exhibition is not affiliated with or endorsed by NASA.</p></section>
+<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">IV / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
 <div class="ex2-atlas__tools" data-ex2-atlas-tools hidden><label for="atlas-filter">Filter archive</label><select id="atlas-filter" data-ex2-atlas-filter><option value="all">All themes</option><option value="engineering">Engineering</option><option value="disasters">Disasters</option><option value="expeditions">Expeditions</option></select><label for="atlas-search">Search titles & topics</label><input type="search" id="atlas-search" data-ex2-atlas-search placeholder="Find an investigation" autocomplete="off"><output data-ex2-atlas-status aria-live="polite" role="status"></output></div>
 <div class="ex2-atlas__grid" data-ex2-atlas-grid>{atlas}</div><p class="ex2-atlas__empty" data-ex2-atlas-empty hidden>No matching investigations. Try another search.</p></section>
 <footer class="ex2-footer"><span>FINAL VESTIGE STUDIOS · INDEPENDENT STAGING STUDY · NOT DEPLOYED</span><span><a href="https://finalvestige.com/">Return to live Final Vestige</a> · <a href="#main">Back to top ↑</a></span></footer>
