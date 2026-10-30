@@ -206,6 +206,24 @@ class PreparednessCrosswalkTests(unittest.TestCase):
                           "A source's original reading-depth notes must remain visible on its own article")
 
 
+    def test_specific_start_here_publication_requires_human_safety(self):
+        """Retain PR #157's four repaired Start Here negative safety gates."""
+        for slug in ("household-emergency-plan", "three-day-kit", "go-bags",
+                     "preparedness-real-households"):
+            lib = build.Library()
+            meta = lib.articles[slug]
+            self.assertTrue(lib.slate[slug]["gate"], slug)
+            self.assertEqual(meta["safety_review"]["state"], "pending", slug)
+            meta["status"]["publish"] = "published"
+            meta["status"]["editorial"] = "reviewed"
+            errors, _ = validate.validate(lib)
+            self.assertTrue(
+                any(slug in error and "CANNOT be published while a safety review is pending" in error
+                    for error in errors),
+                f"unsafe Start Here publication should be rejected: {slug}",
+            )
+
+
 
 if __name__ == "__main__":
     unittest.main()
