@@ -10,6 +10,7 @@ from .exception_review import (
 )
 from .evidence_vault import restore_evidence, seal_evidence
 from .ui_errors import safe_error_message
+from .review_queue_load import ReviewQueue
 
 
 def open_review_window(parent: tk.Misc, product: str, report_path: str | None = None,
@@ -78,8 +79,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         row=6, column=0, sticky="w", pady=(6, 0))
     button_row = ttk.Frame(frame)
     button_row.grid(row=5, column=0, sticky="w", pady=(10, 2))
-    batch_holder = [None]
-    journal_holder = [None]
+    selection = ReviewQueue()
 
     def _authorized():
         try:
@@ -94,13 +94,13 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             return False
 
     def display():
-        batch = batch_holder[0]
+        batch = selection.batch
         if batch is None:
             return
         old_items = tree.get_children()
         if old_items:
             tree.delete(*old_items)
-        states = latest_states(journal_holder[0], batch)
+        states = latest_states(selection.journal, batch)
         for case in batch.cases:
             result = states.get(case.case_id)
             tree.insert("", "end", iid=case.case_id, values=(
@@ -109,18 +109,28 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         status_text.set(f"{len(batch.cases)} exceptions; {len(states)} have recorded human decisions. "
                         "Each review decision remains subject to organizational approval.")
 
+    def _reset_report_view():
+        # Switching sources invalidates the old actionable review queue, even
+        # if the new CSV, journal, or entitlement fails validation.
+        selection.clear()
+        report_text.set("")
+        previous = tree.get_children()
+        if previous:
+            tree.delete(*previous)
+        status_text.set("No verified report is loaded. Select a valid premium exception report.")
+
     def load_report(path):
+        _reset_report_view()
         if not _authorized():
             return
         try:
-            batch = read_cases(path, product)
-            journal = Path(path).with_suffix(".review.jsonl")
-            latest_states(journal, batch)  # Fail closed on corrupted or stale journals.
+            selection.load(path, product, read_cases, latest_states)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Cannot open review queue", safe_error_message(exc, operation="report"), parent=window)
+            messagebox.showerror(
+                "Cannot open review queue", safe_error_message(exc, operation="report"),
+                parent=window)
             return
-        batch_holder[0], journal_holder[0] = batch, journal
-        report_text.set(str(path))
+        report_text.set(str(selection.report_path))
         display()
 
     def choose_report():
@@ -137,7 +147,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     def log_review():
         if not _authorized():
             return
-        batch = batch_holder[0]
+        batch = selection.batch
         if batch is None:
             messagebox.showwarning("Missing report", "Open an exception report first.", parent=window)
             return
@@ -146,7 +156,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             messagebox.showwarning("Missing selection", "Select an exception row first.", parent=window)
             return
         try:
-            append_review(report_text.get(), product, journal_holder[0],
+            append_review(report_text.get(), product, selection.journal,
                           case_id=chosen[0], expected_report_sha256=batch.report_sha256,
                           reviewer=reviewer.get(), decision=decision.get(),
                           rationale=rationale.get("1.0", "end-1c"))
@@ -160,7 +170,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     def export():
         if not _authorized():
             return
-        batch = batch_holder[0]
+        batch = selection.batch
         if batch is None:
             messagebox.showwarning("Missing report", "Open a report first.", parent=window)
             return
@@ -169,7 +179,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if not target:
             return
         try:
-            path = export_register(report_text.get(), product, journal_holder[0], target)
+            path = export_register(report_text.get(), product, selection.journal, target)
         except (ValueError, OSError, UnicodeError) as exc:
             messagebox.showerror("Export failed", safe_error_message(exc, operation="export"), parent=window)
             return
@@ -179,7 +189,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     def seal_archive():
         if not _authorized():
             return
-        batch = batch_holder[0]
+        batch = selection.batch
         if batch is None:
             messagebox.showwarning("Missing report", "Open a premium exception report first.", parent=window)
             return
@@ -200,7 +210,7 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             messagebox.showerror("Passphrases differ", "No archive was created.", parent=window)
             return
         try:
-            path = seal_evidence(report_text.get(), product, journal_holder[0], target, secret)
+            path = seal_evidence(report_text.get(), product, selection.journal, target, secret)
         except (ValueError, OSError, UnicodeError) as exc:
             messagebox.showerror("Encrypted backup failed", safe_error_message(exc, operation="backup"), parent=window)
             return
