@@ -1,0 +1,26 @@
+{
+  "n": 29,
+  "slug": "rain-barrels-and-cisterns",
+  "title": "Rain barrels, cisterns and old water collection",
+  "h1": "Rain barrels and cisterns: what the old records show, and why rainwater is not drinking water",
+  "dek": "Jefferson's leaking cisterns, a fort that kept rain for fire, and a fortress cistern the Army feared. What the record shows about catching rain, and what the CDC and EPA say you need before anyone drinks it.",
+  "description": "Historical rainwater collection at Monticello, Fort Union and San Juan, and the CDC and EPA position: rainwater is not safe to drink without testing and treatment.",
+  "section": "lost-ways",
+  "track": "lost-ways",
+  "tags": ["Rainwater", "Cisterns", "Water safety", "Historic sites"],
+  "updated": "2026-10-30",
+  "last_checked": "2026-10-30",
+  "recheck": "If the CDC or EPA revise their rainwater or cistern pages, or when the primary records behind the site accounts (Jefferson's papers, Fort Union quartermaster records) are read directly.",
+  "status": {"editorial": "drafted", "publish": "draft"},
+  "safety_review": {"state": "pending", "reviewer": null, "date": null},
+  "related": ["making-water-safer", "homemade-water-filters", "water-purification-through-history", "two-week-water-storage", "water-math"],
+  "source_use": {
+    "hist-home-cdc-rainwater": "Rainwater not necessarily safe to drink; sources of germs and chemicals; limit swallowing; test and treat; keep separate from piped water; first-flush diverters; mosquito cautions; local rules.",
+    "hist-home-cdc-cisterns": "Untreated catchment cisterns after a disaster; disinfecting storm debris or floodwater does not work well; fuel and chemicals cannot be treated away; flush-only use.",
+    "hist-home-epa-rain-barrels": "Rain barrels and cisterns defined; roof runoff can carry bacteria and chemicals; consider before using on edible plants.",
+    "cdc-find-clean-water": "Rainwater and other outdoor sources must be treated.",
+    "hist-home-monticello-cisterns": "Jefferson's four brick cisterns, his arithmetic, the leaks, and his unrealized sand-well plan for potable water.",
+    "hist-home-nps-fort-union-water": "Fort Union's roof-fed cisterns kept for fire; wells and privies; the page is silent on drinking cistern water.",
+    "hist-home-nps-san-juan-cisterns": "Spanish cisterns at San Juan, the 1898 closure on fear of poisoning, and restoration for non-potable use."
+  }
+}
