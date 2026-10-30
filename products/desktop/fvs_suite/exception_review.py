@@ -12,12 +12,12 @@ import hmac
 import io
 import json
 import os
-from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
 from .journal_io import append_verified_event, read_regular_bytes
+from .review_lock import exclusive_review_lock
 
 MAX_REPORT_BYTES = 64 * 1024 * 1024
 MAX_JOURNAL_BYTES = 16 * 1024 * 1024
@@ -215,24 +215,6 @@ def read_journal(journal: str | Path, batch: ReportBatch) -> list[dict]:
     return result
 
 
-@contextmanager
-def _writer_lock(journal: Path):
-    """Exclusive nonblocking writer lock; stale locks require manual inspection."""
-    lock = Path(str(journal) + ".lock")
-    if lock.is_symlink():
-        raise ValueError("Review lock cannot be a symlink")
-    try:
-        with lock.open("x", encoding="ascii") as stream:
-            stream.write(f"pid={os.getpid()}\n")
-            stream.flush()
-            os.fsync(stream.fileno())
-    except FileExistsError as exc:
-        raise ValueError("Review journal locked by another writer; inspect before retrying") from exc
-    try:
-        yield
-    finally:
-        lock.unlink(missing_ok=True)
-
 
 def append_review(report: str | Path, product: str, journal: str | Path, *,
                   case_id: str, expected_report_sha256: str, reviewer: str,
@@ -248,7 +230,7 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
         raise ValueError("Choose a separate .jsonl review journal, not the source report")
     if not path.parent.is_dir():
         raise ValueError("Review journal parent folder does not exist")
-    with _writer_lock(path):
+    with exclusive_review_lock(path) as assert_lock_owned:
         batch = read_cases(report, product)
         if batch.report_sha256 != expected_report_sha256:
             raise ValueError("Source report changed since it was opened; reload before reviewing")
@@ -271,11 +253,15 @@ def append_review(report: str | Path, product: str, journal: str | Path, *,
         # Recheck the whole source and hash-linked journal while holding the
         # destination descriptor; never append to a substituted pathname.
         def verify_source_and_history():
+            assert_lock_owned()
             closing = read_cases(report, product)
             if closing != batch or read_journal(path, closing) != events:
                 raise ValueError("Review evidence changed before append; reload source and journal")
+            assert_lock_owned()
 
+        assert_lock_owned()
         append_verified_event(path, encoded, MAX_JOURNAL_BYTES, verify_source_and_history)
+        assert_lock_owned()
         return event
 
 
