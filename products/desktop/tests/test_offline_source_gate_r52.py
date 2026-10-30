@@ -95,6 +95,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
     def test_source_rewrite_during_tests_withholds_evidence(self):
         def modify(optimized):
             self.engine.write_text("# tampered source\n")
+            return self.sample_summary()
         with self.assertRaisesRegex(RuntimeError, "changed"):
             self.verify(tests=modify)
         self.assertFalse(self.smoke_calls)
@@ -102,6 +103,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
     def test_test_file_rewrite_during_tests_withholds_evidence(self):
         def modify(optimized):
             self.test_source.write_text("# tampered test\n")
+            return self.sample_summary()
         with self.assertRaisesRegex(RuntimeError, "changed"):
             self.verify(tests=modify)
         self.assertFalse(self.smoke_calls)
@@ -110,6 +112,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         def inject(optimized):
             if not optimized:
                 (self.tests / "test_injected.py").write_text("# new test\n")
+            return self.sample_summary()
         with self.assertRaisesRegex(RuntimeError, "changed"):
             self.verify(tests=inject)
 
@@ -117,6 +120,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         def delete(optimized):
             if optimized:
                 self.test_source.unlink()
+            return self.sample_summary()
         with self.assertRaises((RuntimeError, ValueError)):
             self.verify(tests=delete)
         self.assertFalse(self.smoke_calls)
@@ -127,6 +131,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
                 payload = self.test_source.read_bytes()
                 self.test_source.unlink()
                 self.test_source.write_bytes(payload)
+            return self.sample_summary()
         with self.assertRaisesRegex(RuntimeError, "changed"):
             self.verify(tests=swap)
 
@@ -134,6 +139,7 @@ class OfflineSourceGateR52Tests(unittest.TestCase):
         def touch(optimized):
             info = self.test_source.stat()
             os.utime(self.test_source, ns=(info.st_atime_ns, info.st_mtime_ns + 10_000_000))
+            return self.sample_summary()
         with self.assertRaisesRegex(RuntimeError, "changed"):
             self.verify(tests=touch)
 
