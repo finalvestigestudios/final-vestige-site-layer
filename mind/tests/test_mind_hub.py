@@ -14,7 +14,7 @@ class MindHubSourceTests(unittest.TestCase):
         cls.catalog = json.loads((ROOT / "affiliate-offers.json").read_text(encoding="utf-8"))
 
     def test_single_accessible_primary_heading(self):
-        self.assertEqual(len(re.findall(r"<h1\\b", self.html)), 1)
+        self.assertEqual(len(re.findall(r"<h1\b", self.html)), 1)
         self.assertIn('id="fv-mind-title"', self.html)
         self.assertIn('aria-labelledby="fv-mind-title"', self.html)
 
