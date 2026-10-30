@@ -23,7 +23,7 @@ function auditResearchSources(raw) {
     if (!(attribute(tag, 'class') || '').split(/\s+/).includes('fv-rs-card')) continue;
     observed.all += 1;
     const category = attribute(tag, 'data-cat') || '(missing data-cat)';
-    observed_category] = (observed[category] || 0) + 1;
+    observed[category] = (observed[category] || 0) + 1;
   }
   const match = [...raw.matchAll(/\bconst\s+totals\s*=\s*\{([^{}]+)\}/g)].at(-1);
   const declared = {};
