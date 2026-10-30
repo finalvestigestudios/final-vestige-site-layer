@@ -11,6 +11,14 @@
 - **Source gallery:** six responsive, independently navigable typographic gallery cards, each with an exact NASA catalog identifier, verified original description/date, native keyboard-operable limitations drawer, NASA source metadata link and chapter deep link. **These are NOT NASA photographs or reproductions.**
 - **Image gallery strategy:** typographic record plates and linked NASA image records. **No NASA photographs have been downloaded or embedded.** This is a deliberate safety and performance gate until exact image files, third-party/image subject restrictions, responsive image sizing, and media distribution are reviewed. The current visual preview is an **archive index/gallery of six verified NASA records**, not a cleared photograph gallery.
 
+## October 30 — Claim-to-source custody crosswalk (stacked PR #189)
+
+The source-custody section has been expanded into a **six-row claim-to-NASA-evidence crosswalk** generated from the versioned `custody.json`. For each historical assertion, it distinguishes the Board's contemporary findings or reconstructions from the different subject and date of the associated NASA photographic record, and explicitly states what remains unproven. Each row has its own accessible native disclosure, source links and chronological stage deep-link. A category filter is activated only after JavaScript setup succeeds; failure or JS-disabled browsing shows the complete record.
+
+**Responsive correctness fix:** the previous `@media(max-width:760px)` rule closed too early after the source-gallery selector. As a result mobile-only single-column Atlas/Research Desk and stacked chronology styles affected desktop widths as well. PR #189 corrects the CSS scope and verifies the desktop grids again at 1440/1920 as well as narrow mobile layouts.
+
+Reproduce with `python render.py`, `python qa/verify_claim_custody.py`, and (if Python Playwright and Chromium are installed) `python qa/verify_custody_browser.py`, plus the pre-existing browser and accessibility smoke scripts. The independent local audit results and release blockers are recorded in [qa/CLAIM_CUSTODY_SPRINT_AUDIT.md](qa/CLAIM_CUSTODY_SPRINT_AUDIT.md). No NASA imagery is embedded and image rights remain a release gate. This casefile crosswalk is not a deployment or modification of the separate Research Desk plugin PR #158.
+
 ## Critical source-custody correction
 
 Older prototype labels paired historical claims with photos that **do not portray the specific claimed measurement/event**. Their photo pages were checked on the NASA site October 30, 2026:
@@ -32,7 +40,7 @@ All **historical conclusions** in the six plates are linked to NASA's [1967 Apol
 
 ## Build and tests
 
-Python stdlib only: `python render.py` produces `index.html` byte-for-byte from `records.json`, `assets/app.css` and `assets/app.js`. Repeating the command should not change output/hash. HTML uses inline CSS and JS **only to make a self-contained offline preview**; a WordPress staging adapter and external optimized assets are separate future tasks.
+Python stdlib only: `python render.py` produces `index.html` byte-for-byte from `records.json`, `custody.json`, `assets/app.css` and `assets/app.js`. Repeating the command should not change output/hash. HTML uses inline CSS and JS **only to make a self-contained offline preview**; a WordPress staging adapter and external optimized assets are separate future tasks.
 
 Run `python qa/verify_browser.py` with Python Playwright and locally installed Chromium at `/usr/bin/chromium`; the script uses `page.set_content()` because browser network/navigation is blocked in this sandbox. It still executes in **real Chromium**. It records seven full-page screenshots, SHA-256 hashes, 320–1920 viewport overflow checks, filter/search/reset/empty state, keyboard source drawer, no-JS, missing/throwing observer, 200% zoom, reduced motion, and synthetic PerformanceObserver metrics in `qa/QA_RESULTS.json`. The test intentionally does not need NASA network image requests.
 

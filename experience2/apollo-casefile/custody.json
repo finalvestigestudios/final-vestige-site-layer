@@ -1,0 +1,74 @@
+{
+  "audit_date": "2026-10-30",
+  "board_report": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+  "usage_policy": "https://www.nasa.gov/nasa-brand-center/",
+  "copy_policy": "Independent editorial analysis; no reproduced NASA images, no NASA endorsement or permission claim.",
+  "claims": [
+    {
+      "stage_id": "01",
+      "category": "finding",
+      "certainty": "Documented test context",
+      "heading": "A rehearsal still carried a fatal cabin hazard",
+      "claim": "The plugs-out ground test exposed the crew to hazards inside the command module even though the Saturn IB was not fueled.",
+      "board_basis": "Apollo 204 Review Board, account of the ground test and Board findings on test conditions and emergency egress.",
+      "image_basis": "The January 1967 portrait establishes the crew and period only.",
+      "boundary": "It does not show the cabin atmosphere, electrical condition, hatch status or test decisions.",
+      "research_status": "Board text checked; catalog caption matched; image reproduction not cleared."
+    },
+    {
+      "stage_id": "02",
+      "category": "finding",
+      "certainty": "Express Board finding",
+      "heading": "The pressure and oxygen mixture were hazardous",
+      "claim": "The Board recorded a 16.7 psia, 100-percent oxygen atmosphere during the test and classified the conditions as extremely hazardous.",
+      "board_basis": "Apollo 204 Review Board, Part VI, Board Findings, Determinations and Recommendations, Finding 2.",
+      "image_basis": "NASA S67-15717 shows preparations on 3 January 1967, not atmospheric instrumentation.",
+      "boundary": "Oxygen supported the rapid fire; neither oxygen nor this photograph identifies the ignition source.",
+      "research_status": "Board finding and dated NASA catalog metadata checked; image reproduction not cleared."
+    },
+    {
+      "stage_id": "03",
+      "category": "timing",
+      "certainty": "Correlated communication timestamp",
+      "heading": "The first radio report is not the ignition timestamp",
+      "claim": "The first crew transmission reporting the emergency began at approximately 23:31:04.7 GMT.",
+      "board_basis": "Apollo 204 Review Board, reconstruction of events from 23:20 GMT through the first fire report, and voice transmission analysis.",
+      "image_basis": "NASA S66-58038 is dated 18 October 1966 and documents an altitude-chamber training exercise.",
+      "boundary": "The report does not prove ignition started at 23:31:04.7; the training photograph is not telemetry or footage of the fire.",
+      "research_status": "Timestamp and 1966 image date checked independently; image reproduction not cleared."
+    },
+    {
+      "stage_id": "04",
+      "category": "timing",
+      "certainty": "Reconstructed estimate",
+      "heading": "The hatch was not an instant escape route",
+      "claim": "The pressure vessel ruptured at about 23:31:19 GMT, at an estimated pressure of at least 29 psia; emergency egress could not be completed before rupture.",
+      "board_basis": "Apollo 204 Review Board, cabin-pressure reconstruction and emergency hatch chronology.",
+      "image_basis": "NASA KSC-20170124-PH_KLS01_0164 depicts a tribute-era spacecraft mockup; its NASA caption also describes hatch exhibits.",
+      "boundary": "The museum-era photograph does not depict a 1967 rupture, a pressure trace or the accident hatch being operated during the test.",
+      "research_status": "Estimate and 2017 NASA caption checked; photograph bytes not reproduced."
+    },
+    {
+      "stage_id": "05",
+      "category": "uncertain",
+      "certainty": "Qualified investigative inference",
+      "heading": "The precise initiator remained unidentified",
+      "claim": "The Board judged an electrical arc the most probable initiating source but identified no single conclusive ignition point.",
+      "board_basis": "Apollo 204 Review Board, Part VI, Finding 1 and associated fire-origin analysis.",
+      "image_basis": "NASA S67-21294 depicts fire damage inside Command Module 012 on 28 January 1967.",
+      "boundary": "Damage is evidence of the fire and its effects, not a photograph of the original arc, its location or its exact start time.",
+      "research_status": "Qualified Board conclusion and 28 January catalog caption checked; image not embedded."
+    },
+    {
+      "stage_id": "06",
+      "category": "response",
+      "certainty": "Documented redesign response",
+      "heading": "The redesign extended beyond the hatch",
+      "claim": "The response included an outward-opening hatch and broader changes to materials, wiring, testing and safety practices.",
+      "board_basis": "Apollo 204 Review Board safety recommendations and subsequent NASA redesign history; the Board report itself is not evidence that all later redesigns were completed in 1967.",
+      "image_basis": "NASA KSC-20170124-PH_KLS01_0090 depicts the redesigned hatch in a January 2017 tribute exhibit.",
+      "boundary": "A 2017 exhibit documents a later display; it is not a photograph from the accident or proof that the hatch was the only corrective action.",
+      "research_status": "Board recommendations and dated memorial image caption checked; media reuse pending review."
+    }
+  ]
+}

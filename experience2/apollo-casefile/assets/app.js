@@ -19,6 +19,28 @@
      update();tools.hidden=false;
    }catch(_){items.forEach(item=>item.hidden=false);empty.hidden=true;tools.hidden=true;}
  }
+ /* The claims are evidence, not a JS-only feature. Filtering is optional and fail-open. */
+ const claimTools=root.querySelector('[data-ex2-claim-tools]');
+ const claimFilter=root.querySelector('[data-ex2-claim-filter]');
+ const claimReset=root.querySelector('[data-ex2-claim-reset]');
+ const claimItems=[...root.querySelectorAll('[data-ex2-claim-item]')];
+ const claimCount=root.querySelector('[data-ex2-claim-count]');
+ const claimEmpty=root.querySelector('[data-ex2-claim-empty]');
+ if(claimTools&&claimFilter&&claimReset&&claimCount&&claimEmpty&&claimItems.length===6){
+   try{
+     const choose=()=>{
+       const v=claimFilter.value;
+       const visibility=claimItems.map(item=>v==='all'||item.dataset.ex2ClaimCategory===v);
+       claimItems.forEach((item,i)=>{item.hidden=!visibility[i]});
+       const shown=visibility.filter(Boolean).length;
+       claimCount.textContent=shown+' of '+claimItems.length+' claims';
+       claimEmpty.hidden=shown!==0;
+     };
+     claimFilter.addEventListener('change',choose);
+     claimReset.addEventListener('click',()=>{claimFilter.value='all';choose();claimFilter.focus()});
+     choose();claimTools.hidden=false;
+   }catch(_){claimItems.forEach(item=>{item.hidden=false});claimEmpty.hidden=true;claimTools.hidden=true;}
+ }
  /* A missing/throwing IntersectionObserver must not hide or change any evidence. */
  const sections=[...root.querySelectorAll('[data-ex2-stage]')];
  const links=[...root.querySelectorAll('[data-ex2-rail-link]')];

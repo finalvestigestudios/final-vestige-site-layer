@@ -67,16 +67,39 @@ def gallery_card(row):
       <p class="ex2-gallery__links">{source_link(row['image_url'], 'Inspect the original NASA record')} · <a href="#source-{rid}">Read our evidence limitation</a></p>
       </div></li>'''
 
+def custody_card(item, source):
+    """Keep original Board evidence separate from later photographic illustration."""
+    rid = e(item["stage_id"])
+    return f'''<li class="ex2-ledger__card" id="custody-{rid}" data-ex2-claim-item data-ex2-claim-category="{e(item['category'])}">
+      <article aria-labelledby="custody-{rid}-title">
+       <div class="ex2-ledger__top"><span>CLAIM {rid} / 06</span><span>{e(item['certainty'])}</span></div>
+       <h3 id="custody-{rid}-title">{e(item['heading'])}</h3>
+       <p class="ex2-ledger__claim">{e(item['claim'])}</p>
+       <p class="ex2-ledger__limit"><strong>Evidence boundary:</strong> {e(item['boundary'])}</p>
+       <details><summary>Inspect the two source types for claim {rid}</summary>
+         <div class="ex2-ledger__notes"><p><strong>Primary historical record — investigative analysis.</strong> {e(item['board_basis'])}</p>
+         <p><strong>Photograph — catalog description, not proof of this causal claim.</strong> {e(item['image_basis'])}</p>
+         <p><strong>Custody and reuse status.</strong> {e(item['research_status'])}</p>
+         <p>{source_link(REPORT,'Open the NASA Review Board report')} · {source_link(source['image_url'],'Open the NASA photographic catalog entry')}</p></div>
+       </details>
+       <div class="ex2-ledger__actions"><a href="#stage-{rid}">Read stage {rid}</a><a href="#source-{rid}">View source drawer</a></div>
+      </article>
+     </li>'''
+
 def atlas_card(row):
     key = e(row["wp_id"])
     searchable = " ".join((row["title"], row["theme"], row["summary"]))
     return f'''<article class="ex2-atlas__item" data-ex2-atlas-item data-ex2-theme="{e(row['theme'].lower())}" data-ex2-search="{e(searchable.lower())}"><div><span class="ex2-atlas__tag">{e(row['theme'])}</span><span class="ex2-atlas__id">WP {key}</span></div><h3>{e(row['title'])}</h3><p>{e(row['summary'])}</p><p class="ex2-atlas__geonote">No mapped location: archival precision unreviewed.</p>{source_link(row['url'], 'Read published investigation')}</article>'''
 
-def render(manifest):
+def render(manifest, custody):
     records=manifest["records"]
+    assert custody["board_report"] == REPORT and custody["usage_policy"] == manifest["rights_policy"]
+    assert [x["stage_id"] for x in custody["claims"]] == [x["id"] for x in records]
+    assert {x["category"] for x in custody["claims"]} == {"finding", "timing", "uncertain", "response"}
     rail="\n".join(f'<li><a href="#stage-{e(row["id"])}" data-ex2-rail-link><span>{e(row["id"])}</span><span>{e(row["time"])}</span></a></li>' for row in records)
     article="\n".join(stage(row) for row in records)
     gallery="\n".join(gallery_card(row) for row in records)
+    ledger="\n".join(custody_card(item, row) for item, row in zip(custody["claims"],records))
     atlas="\n".join(atlas_card(row) for row in manifest["atlas"])
     css=(ROOT/'assets/app.css').read_text(encoding='utf-8')
     js=(ROOT/'assets/app.js').read_text(encoding='utf-8')
@@ -92,16 +115,20 @@ def render(manifest):
 <p class="ex2-hero__overline">ARCHIVE / 27 JANUARY 1967 / SIX DOCUMENTED RECORDS</p>
 <h1 id="case-title">The evidence <em>unfolds.</em></h1>
 <p class="ex2-hero__lede">The fire aboard Apollo 1 did not begin with a single proven spark. What survived instead is a documentary trail: test conditions, a crew's last transmissions, instrument readings, a hatch that could not open—and an investigation that refused to claim certainty it did not possess.</p>
-<div class="ex2-hero__actions"><a class="ex2-button" href="#chronology">Follow the chronology <span aria-hidden="true">↓</span></a><a class="ex2-textlink" href="#research-desk">Inspect the source custody</a><a class="ex2-textlink" href="#source-gallery">Browse NASA source records</a></div>
+<div class="ex2-hero__actions"><a class="ex2-button" href="#chronology">Follow the chronology <span aria-hidden="true">↓</span></a><a class="ex2-textlink" href="#research-desk">Inspect the source custody</a><a class="ex2-textlink" href="#claim-ledger">Audit the claims</a><a class="ex2-textlink" href="#source-gallery">Browse NASA source records</a></div>
 <div class="ex2-hero__annotation"><strong>OUR METHOD</strong><p>Every plate distinguishes what a NASA photograph actually depicts from what the Apollo 204 Review Board concluded. No recreated accident photographs, simulated pressure curve, or invented location pins.</p></div>
 </div><div class="ex2-hero__folio" aria-hidden="true">APOLLO<br><span>01</span></div></section>
 <section class="ex2-section ex2-case" id="chronology" aria-labelledby="chron-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">I / SIX RECORDS · A LIMITED CHRONOLOGY</p><h2 id="chron-title">Follow what <em>the record</em> can bear.</h2><p>This is a sequence of documented conditions, events and later decisions—not a continuous sensor replay. Time markers have different meanings and are explicitly labeled.</p></div>
 <div class="ex2-case__layout"><nav class="ex2-rail" aria-label="Six evidence stages"><span>CHRONOLOGY RAIL</span><ol>{rail}</ol><p>Choose a stage to jump to its evidence. Without JavaScript, all six remain in the document.</p></nav>
 <div class="ex2-stages">{article}</div></div></section>
 <section id="research-desk" class="ex2-section ex2-custody" aria-labelledby="custody-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">II / THE RESEARCH DESK</p><h2 id="custody-title">The source is <em>not</em> the interpretation.</h2><p>Six NASA photograph records have been matched to their actual published descriptions. Some were previously associated with a historical claim they cannot visually establish. Those distinctions are now explicit in every drawer above.</p></div><div class="ex2-custody__grid"><div class="ex2-custody__claim"><h3>Primary finding</h3><p>The Apollo 204 Review Board is the primary source for pressure, timing, cause investigation and egress limitations. It reports that no single ignition source was conclusively identified.</p>{source_link(REPORT,'Read the full Board report')}</div><div class="ex2-custody__claim"><h3>Image custody</h3><p>NASA's six linked photographs depict crew training, spacecraft preparation, post-fire damage or a 2017 memorial exhibit. They do <strong>not</strong> depict a real-time pressure graph, fire ignition or 1967 hatch operation.</p><p>Image reproduction is disabled in this prototype while actual asset transport, third-party credits and promotional-use constraints are audited.</p></div><div class="ex2-custody__claim"><h3>Media policy</h3><p>NASA generally permits informational reproduction of its released imagery subject to restrictions: retain source credit, do not use insignia as branding, do not imply NASA endorsement, and review third-party and identifiable-person rights.</p>{source_link(manifest['rights_policy'],'Read NASA brand and media guidelines')}</div></div><p class="ex2-custody__status">RESEARCH STATUS · 6 NASA description pages verified · image bytes not included · 0 speculative map points</p></section>
-<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">III / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
+<section id="claim-ledger" class="ex2-section ex2-ledger" aria-labelledby="ledger-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">III / THE CLAIM-TO-SOURCE LEDGER</p><h2 id="ledger-title">A source does not <em>prove everything.</em></h2><p>Each of the six narrative claims has two distinct custody trails: the contemporary Review Board's investigation and a dated catalog photograph. This crosswalk tells you which source actually supports the claim, and where inference begins.</p></div>
+<p class="ex2-ledger__method"><strong>Interpretation key:</strong> A <b>Board finding</b> describes what the investigators concluded from records and tests; a <b>communication timestamp</b> marks a reported event, not necessarily its cause; a <b>later photograph</b> documents what it depicts, not the historical moment illustrated by its placement. The 1967 Board's recommendation and the subsequent redesign are not the same date.</p>
+<div class="ex2-ledger__tools" data-ex2-claim-tools hidden><label for="claim-filter">Inspect claim class</label><select id="claim-filter" data-ex2-claim-filter><option value="all">All six claims</option><option value="finding">Documented conditions</option><option value="timing">Recorded / reconstructed timing</option><option value="uncertain">Qualified ignition inference</option><option value="response">Redesign response</option></select><button type="button" data-ex2-claim-reset>Show all evidence</button><output data-ex2-claim-count role="status" aria-live="polite"></output></div>
+<ol class="ex2-ledger__grid" data-ex2-claim-list>{ledger}</ol><p class="ex2-ledger__empty" data-ex2-claim-empty hidden>No claims in this class. Show all evidence to restore the full source crosswalk.</p><p class="ex2-ledger__foot">Catalog details and Board text checked 30 October 2026. Audit of individual image licenses, publicity rights and WordPress usage remains open; no NASA image bytes are reproduced in this prototype. All six claims stay accessible without JavaScript. NASA does not endorse this independent publication.</p></section>
+<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">IV / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
 <ol class="ex2-gallery__grid">{gallery}</ol><p class="ex2-gallery__notice">Source-only gallery · no image bytes loaded · NASA credits preserved in linked records · this independent exhibition is not affiliated with or endorsed by NASA.</p></section>
-<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">IV / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
+<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">V / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
 <div class="ex2-atlas__tools" data-ex2-atlas-tools hidden><label for="atlas-filter">Filter archive</label><select id="atlas-filter" data-ex2-atlas-filter><option value="all">All themes</option><option value="engineering">Engineering</option><option value="disasters">Disasters</option><option value="expeditions">Expeditions</option></select><label for="atlas-search">Search titles & topics</label><input type="search" id="atlas-search" data-ex2-atlas-search placeholder="Find an investigation" autocomplete="off"><output data-ex2-atlas-status aria-live="polite" role="status"></output></div>
 <div class="ex2-atlas__grid" data-ex2-atlas-grid>{atlas}</div><p class="ex2-atlas__empty" data-ex2-atlas-empty hidden>No matching investigations. Try another search.</p></section>
 <footer class="ex2-footer"><span>FINAL VESTIGE STUDIOS · INDEPENDENT STAGING STUDY · NOT DEPLOYED</span><span><a href="https://finalvestige.com/">Return to live Final Vestige</a> · <a href="#main">Back to top ↑</a></span></footer>
@@ -110,7 +137,8 @@ def render(manifest):
 if __name__ == '__main__':
     manifest=json.loads((ROOT/'records.json').read_text(encoding='utf-8'))
     validate(manifest)
-    rendered=render(manifest)
+    custody=json.loads((ROOT/"custody.json").read_text(encoding="utf-8"))
+    rendered=render(manifest,custody)
     dest=ROOT/'index.html'
     dest.write_text(rendered,encoding='utf-8',newline='\n')
     print(f'Generated {dest.name}: {len(rendered.encode("utf-8"))} bytes')
