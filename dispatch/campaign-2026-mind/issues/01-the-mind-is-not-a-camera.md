@@ -11,7 +11,7 @@
 
 ---
 
-Before we investigate an old photograph, we ask a simple question: what does the photograph actually show?
+A photograph can record a fraction of a second. It doesn't record what the photographer expected, what the witness missed, or what anyone believed happened just outside the frame. That's why the first question in an investigation is often the simplest: **what does the evidence actually show?**
 
 It's a useful question for the mind, too.
 
@@ -19,13 +19,15 @@ We tend to trust the feeling of having seen something. But the impression in our
 
 At Final Vestige, we usually begin with a physical trace: a map, a letter, an official report. This new series follows the same method into a less tangible archive—the history of perception and suggestion.
 
-Our first stop is the eighteenth-century files surrounding the Marquis de Puységur. They capture descriptions of unusual states, confident claims and witnesses attempting to understand what they saw. The extraordinary part isn't that every claim must be true; it's that the documentary record lets us follow how people reached their conclusions.
+Our first stop is the eighteenth-century files surrounding the Marquis de Puységur, whose account of magnetic somnambulism appeared in 1784. They capture descriptions of unusual states, confident claims and witnesses attempting to understand what they saw. The extraordinary part isn't that every claim must be true; it's that the documentary record lets us follow how people reached their conclusions.
 
 **A question to carry with you this week:** When you describe something surprising, can you separate the event you observed from the explanation you attached to it?
 
 **Open the primary-source trail:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
 
 We'll keep the findings, the doubts and the useful tools in plain sight. That's the point of The Dispatch.
+
+**The record behind this edition:** [Crabtree's peer-reviewed history of Puységur's 1784 work](https://pubmed.ncbi.nlm.nih.gov/31273811/). The original accounts document witnesses' claims; they do not establish the existence of Mesmer's hypothetical magnetic fluid.
 
 
 ---

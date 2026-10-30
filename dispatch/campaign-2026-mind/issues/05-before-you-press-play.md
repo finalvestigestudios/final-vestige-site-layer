@@ -21,11 +21,11 @@ Before buying any self-hypnosis audio, I'd ask three questions.
 
 **What is the claim?** General relaxation, a pleasant guided experience and a guaranteed change in behavior are different promises. They require different kinds of support.
 
-**What happens if it isn't for you?** Check current price, format, access terms and refund conditions on the seller's actual page, not in an old promotion.
+**What happens if it isn't for you?** Check current price, format, access terms and refund conditions on the seller's actual page, not in an old promotion. For example, the merchant's FAQ presently says refund requests must be made within 14 days and limits refunds to five sessions per year. Confirm those terms yourself at checkout.
 
-**A program under review: Hypnosis Live.** Inspire3 currently presents Hypnosis Live as a collection of self-hypnosis recordings. We're examining the specific offer and its claims before recommending anything. An extensive catalog is not, by itself, evidence of effectiveness.
+**A program under review: Hypnosis Live.** The [official catalog](https://hypnosislive.com/) currently offers more than 200 downloadable self-hypnosis MP3 titles, including tracks marketed around focus, organization and habits. Its [FAQ](https://hypnosislive.com/faq) says most individual sessions are about 40 minutes and available immediately after purchase, with no recurring charge for the individual recording. This is useful format information, **not proof that a particular recording changes behavior**. The [NIH's hypnosis review](https://www.nccih.nih.gov/health/hypnosis) describes promising evidence for certain uses but mixed or limited evidence elsewhere; that evidence cannot automatically be generalized to these specific commercial recordings.
 
-**See the forthcoming independent guide:** [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
+**Compare the Hypnosis Live formats and claims:** [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
 
 **Commercial disclosure:** If you purchase through a qualifying link within our guide, Final Vestige may receive a commission. We won't publish this recommendation until the merchant link, terms and claim review are verified. Our [Puységur source archive](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) remains free to explore.
 

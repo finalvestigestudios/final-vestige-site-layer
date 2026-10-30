@@ -11,7 +11,7 @@
 
 ---
 
-In 1785, a reader encountering Puységur's accounts would have found something that still feels startling: observers trying to describe behavior for which they didn't have a comfortable explanation.
+**In 1784**, Puységur published accounts of what he called magnetic somnambulism. His descriptions still ask an uncomfortable question: how do you decide what a remarkable experience proves when the people describing it have a theory they badly want to believe?
 
 It is tempting to pick a side immediately. Either the witnesses discovered a remarkable force—or they were fooled. But that shortcut skips the most interesting part: what survived on paper, who said it, how close they were to the events and where the record leaves us unable to decide.
 
@@ -25,7 +25,7 @@ The document doesn't authorize that leap. It gives us something better: the oppo
 - What was directly observed, rather than inferred?
 - What result would change our interpretation?
 
-We assembled a detailed resource with historical references, source rows and cases, including the limitations of the evidence. It isn't a recommendation to use historical treatments. It is a way to read extraordinary accounts carefully.
+We assembled a detailed resource with historical references, source rows and cases, including the limitations of the evidence. A [peer-reviewed historical study](https://pubmed.ncbi.nlm.nih.gov/31273811/) places the initial publication in 1784; a [modern scholarly edition of the source text](https://www.routledge.com/The-Marquis-de-Puysgur-Artificial-Somnambulism-and-the-Discovery-of/Crabtree-Osei-Bonsu/p/book/9781032292472) helps identify what was written then. It isn't a recommendation to use historical treatments. It is a way to read extraordinary accounts carefully.
 
 **Read the file:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
 
