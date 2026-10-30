@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-30",
+  "status": "SOURCE_AND_MOCK_QA_ONLY—NOT_RENDERED_BROWSER_QA",
+  "tested_code_sha": "2d7b79fae1d8fafd83ce67177a3617234bfc0f8d",
+  "executed_checks": {
+    "source_contract_and_mock_interaction": {
+      "count": 28,
+      "passed": 28,
+      "failed": 0,
+      "details": "Connected GitHub exact files parsed and verified using JavaScript V8; mocked DOM interaction exercised initial state, click to Franklin, ArrowRight to Malbone with button focus, aria-live, preview switching and image onerror fallback."
+    },
+    "fault_injection": {
+      "count": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": "Simulated missing Element.closest and one-time aria-pressed update exception; in both tests all three evidence articles remained visible and interactive controls stayed hidden."
+    },
+    "python_unit_suite": {
+      "authored": 8,
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "node_check": {
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "real_chromium": {
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "axe": {
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "real_images": {
+      "verified": false
+    },
+    "lighthouse_cwv": {
+      "measured": false
+    }
+  },
+  "external_source_review": {
+    "wordpress_post_ids_verified": [
+      434,
+      433,
+      621
+    ],
+    "nasa_original": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+    "nasa_policy": "https://www.nasa.gov/nasa-brand-center/",
+    "franklin_original": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+    "franklin_license_marking": "Public Domain Mark 1.0 on Wikimedia Commons original file page",
+    "nypl_original": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+    "nypl_external_text_read": "HTTP 403",
+    "nypl_rights_status": "OPEN"
+  },
+  "release_gates": {
+    "founder_visual_direction_selected": false,
+    "wordpress_staging_tested": false,
+    "media_rights_complete": false,
+    "independent_QD_exact_SHA": false,
+    "hosted_CI_green": false,
+    "production_deployed": false
+  },
+  "constraints": {
+    "frozen_pr49_unchanged": true,
+    "apollo_pr158_unchanged": true,
+    "live_wordpress_page6_unchanged": true,
+    "focus_fieldbook_list_unchanged": true,
+    "margins72_unchanged": true,
+    "no_new_paid_SaaS": true,
+    "no_inspire3_links": true
+  }
+}
