@@ -27,6 +27,14 @@ contract required for this interaction:
 - With no JavaScript at all, the fact and its link must be plainly reachable with no concealment,
   and the stage must carry no role/tabindex (it is not a functional slider without JS).
 - Slider role/tabindex/aria-describedby are applied by JS only, never present in the static markup.
+- touch-action and cursor are gated behind a JS-added "enhanced" class: native touch scrolling and
+  the default cursor are preserved in the no-JS, unsupported-inert, and simulated-failed-init
+  states (the last via a shim that throws on the first addEventListener call, after the JS has
+  already started applying enhancement, to prove the catch block actually strips it back out), and
+  the drag handle stays hidden in all of those states too.
+- The declared aria-valuemin/aria-valuemax (4/96) are checked against real keyboard-endpoint
+  clamping, announced aria-valuetext at both extremes, a real mouse drag past both edges, and a
+  synthetic touch-pointer drag past both edges -- all must clamp at 4/96, never 0/100.
 
 Playwright resolution: resolved to one absolute file path via a single Node subprocess call, and
 that exact path is then baked into the generated runner script's own require() call. The runner
@@ -102,10 +110,35 @@ PAGE_TEMPLATE = """<!doctype html>
 <a href="#" id="before-marker">BEFORE MARKER</a>
 {block}
 <a href="#" id="after-marker">AFTER MARKER</a>
+{shim_script}
 {script_tag}
 </body>
 </html>
 """
+
+# Shims simulate "unsupported inert" and "failed partway through init" purely with static JS,
+# so both get real fixture pages exercised the same way as the enhanced/no-JS ones -- no reliance
+# on Playwright's addInitScript, just document order (these run before align.js loads).
+NO_INERT_SHIM = """<script>
+(function(){
+  var orig = document.createElement.bind(document);
+  document.createElement = function(tag){
+    if (tag === 'div') return {};
+    return orig(tag);
+  };
+})();
+</script>"""
+
+FAILED_INIT_SHIM = """<script>
+(function(){
+  var thrown = false;
+  var orig = Element.prototype.addEventListener;
+  Element.prototype.addEventListener = function(){
+    if (!thrown) { thrown = true; throw new Error('simulated failure after concealment began'); }
+    return orig.apply(this, arguments);
+  };
+})();
+</script>"""
 
 RUNNER_JS_TEMPLATE = r"""
 const { chromium } = require(__PLAYWRIGHT_MAIN_PATH__);
@@ -130,6 +163,7 @@ const factState = async (page) => page.evaluate(() => {
   const m = /blur\(([\d.]+)px\)/.exec(filterValue);
   const blurPx = filterValue === 'none' ? 0 : (m ? parseFloat(m[1]) : null);
   const stage = document.querySelector('[data-fv-align-stage]');
+  const handle = stage.querySelector('.fv-align__handle');
   return {
     inert: fact.inert === true,
     hasInertAttr: fact.hasAttribute('inert'),
@@ -139,8 +173,33 @@ const factState = async (page) => page.evaluate(() => {
     stageRole: stage.getAttribute('role'),
     stageTabindex: stage.getAttribute('tabindex'),
     stageDescribedBy: stage.getAttribute('aria-describedby'),
+    stageValueMin: stage.getAttribute('aria-valuemin'),
+    stageValueMax: stage.getAttribute('aria-valuemax'),
+    stageValueNow: stage.getAttribute('aria-valuenow'),
+    stageValueText: stage.getAttribute('aria-valuetext'),
+    stageEnhanced: stage.classList.contains('fv-align--enhanced'),
+    stageTouchAction: getComputedStyle(stage).touchAction,
+    stageCursor: getComputedStyle(stage).cursor,
+    handleDisplay: handle ? getComputedStyle(handle).display : null,
   };
 });
+
+const dragViaMouse = async (page, fromX, toX, y) => {
+  await page.mouse.move(fromX, y);
+  await page.mouse.down();
+  await page.mouse.move(toX, y, { steps: 5 });
+  await page.mouse.up();
+};
+
+const dragViaTouchPointer = async (page, fromX, toX, y) => page.evaluate(({ fromX, toX, y }) => {
+  const stage = document.querySelector('[data-fv-align-stage]');
+  const fire = (target, type, clientX) => target.dispatchEvent(new PointerEvent(type, {
+    bubbles: true, cancelable: true, pointerType: 'touch', clientX, clientY: y,
+  }));
+  fire(stage, 'pointerdown', fromX);
+  fire(window, 'pointermove', toX);
+  fire(window, 'pointerup', toX);
+}, { fromX, toX, y });
 
 (async () => {
   const browser = await chromium.launch();
@@ -157,7 +216,55 @@ const factState = async (page) => page.evaluate(() => {
   require_eq(results.initial.stageRole, 'slider', 'JS must apply role=slider on successful init');
   require_eq(results.initial.stageTabindex, '0', 'JS must apply tabindex on successful init');
   require_eq(results.initial.stageDescribedBy, 'fv-align-desc', 'JS must wire aria-describedby to the real description element on successful init');
+  require_eq(results.initial.stageEnhanced, true, 'the enhanced class must be present once init succeeds');
+  require_eq(results.initial.stageValueMin, '4', 'declared aria-valuemin must match the real reachable minimum');
+  require_eq(results.initial.stageValueMax, '96', 'declared aria-valuemax must match the real reachable maximum');
+  require_eq(results.initial.stageValueNow, '20', 'initial position must be reflected in aria-valuenow');
+  require_eq(results.initial.stageTouchAction, 'none', 'once enhanced, touch-action must be none so dragging works on touch devices');
+  require_eq(results.initial.stageCursor, 'ew-resize', 'once enhanced, the drag cursor must be shown');
+  require_eq(results.initial.handleDisplay, 'flex', 'once enhanced, the drag handle must be visible');
 
+  const box1 = await page.locator('[data-fv-align-stage]').boundingBox();
+  const midY = box1.y + box1.height / 2;
+  const midX = box1.x + box1.width / 2;
+  // The drag must START inside the stage (mousedown/pointerdown only arm dragging there);
+  // once armed, window-level mousemove listeners track the pointer anywhere, including past
+  // the stage's own edges, which is exactly what exercises the clamp.
+  await dragViaMouse(page, midX, box1.x + box1.width + 400, midY);
+  let afterMouseRight = await page.evaluate(() => document.querySelector('[data-fv-align-stage]').getAttribute('aria-valuenow'));
+  require_eq(afterMouseRight, '96', 'dragging the mouse past the right edge must clamp aria-valuenow at 96, not 100');
+  await dragViaMouse(page, midX, box1.x - 400, midY);
+  let afterMouseLeft = await page.evaluate(() => document.querySelector('[data-fv-align-stage]').getAttribute('aria-valuenow'));
+  require_eq(afterMouseLeft, '4', 'dragging the mouse past the left edge must clamp aria-valuenow at 4, not 0');
+
+  await dragViaTouchPointer(page, midX, box1.x + box1.width + 400, midY);
+  let afterTouchRight = await page.evaluate(() => document.querySelector('[data-fv-align-stage]').getAttribute('aria-valuenow'));
+  require_eq(afterTouchRight, '96', 'a touch pointer dragged past the right edge must clamp aria-valuenow at 96, not 100');
+  await dragViaTouchPointer(page, midX, box1.x - 400, midY);
+  let afterTouchLeft = await page.evaluate(() => document.querySelector('[data-fv-align-stage]').getAttribute('aria-valuenow'));
+  require_eq(afterTouchLeft, '4', 'a touch pointer dragged past the left edge must clamp aria-valuenow at 4, not 0');
+
+  await page.reload();
+  await page.waitForTimeout(150);
+  await page.keyboard.press('Tab');
+  await page.keyboard.press('Tab');
+  for (let i = 0; i < 50; i++) await page.keyboard.press('ArrowRight');
+  let kbRightEnd = await page.evaluate(() => {
+    const s = document.querySelector('[data-fv-align-stage]');
+    return { now: s.getAttribute('aria-valuenow'), text: s.getAttribute('aria-valuetext') };
+  });
+  require_eq(kbRightEnd.now, '96', 'repeated ArrowRight must clamp the announced value at 96, matching the declared aria-valuemax');
+  require_includes(kbRightEnd.text, '1903 map', 'the announced value text at the high end must describe the 1903 map');
+  for (let i = 0; i < 60; i++) await page.keyboard.press('ArrowLeft');
+  let kbLeftEnd = await page.evaluate(() => {
+    const s = document.querySelector('[data-fv-align-stage]');
+    return { now: s.getAttribute('aria-valuenow'), text: s.getAttribute('aria-valuetext') };
+  });
+  require_eq(kbLeftEnd.now, '4', 'repeated ArrowLeft must clamp the announced value at 4, matching the declared aria-valuemin');
+  require_includes(kbLeftEnd.text, '1918 to 1920 reconstruction', 'the announced value text at the low end must describe the 1918-1920 reconstruction');
+
+  await page.reload();
+  await page.waitForTimeout(150);
   await page.keyboard.press('Tab');
   results.tab1 = await describe(page);
   await page.keyboard.press('Tab');
@@ -217,6 +324,10 @@ const factState = async (page) => page.evaluate(() => {
   require_eq(results.nojs_state.hasInertAttr, false, 'fact must never carry the inert attribute when JS is absent');
   require_eq(results.nojs_state.stageRole, null, 'without JS, the stage must NOT advertise role=slider -- it is not a functional slider, so it must not claim to be one');
   require_eq(results.nojs_state.stageTabindex, null, 'without JS, the stage must NOT be in the keyboard Tab order -- a nonfunctional element should not be a dead Tab stop');
+  require_eq(results.nojs_state.stageEnhanced, false, 'without JS, the enhanced class must never be applied');
+  require_true(results.nojs_state.stageTouchAction !== 'none', 'without JS, native touch scrolling must be preserved (touch-action must not be none)');
+  require_true(results.nojs_state.stageCursor !== 'ew-resize', 'without JS, the drag cursor must not be shown on a nonfunctional element');
+  require_eq(results.nojs_state.handleDisplay, 'none', 'without JS, the drag handle must stay hidden so static mode never implies dragging works');
   await page.keyboard.press('Tab');
   results.nojs_tab1 = await describe(page);
   require_eq(results.nojs_tab1, '<a#before-marker href=#>', 'first Tab stop must still be the before-marker');
@@ -224,12 +335,36 @@ const factState = async (page) => page.evaluate(() => {
   results.nojs_tab2 = await describe(page);
   require_includes(results.nojs_tab2, 'six-miles-an-hour-malbone-street-wreck', 'with JS absent, the source link must be the very next Tab stop: the non-interactive stage has no tabindex (skipped), and the "Show the connection" question/button stay display:none since only JS ever shows them, so neither is a Tab stop either');
 
+  await page.goto(url.replace('page.html', 'page-no-inert.html'));
+  await page.waitForTimeout(150);
+  results.no_inert_state = await factState(page);
+  require_eq(results.no_inert_state.stageRole, null, 'without inert support, the feature-detect must bail before applying any slider semantics');
+  require_eq(results.no_inert_state.stageEnhanced, false, 'without inert support, the enhanced class must never be applied');
+  require_true(results.no_inert_state.stageTouchAction !== 'none', 'without inert support, native touch scrolling must be preserved');
+  require_true(results.no_inert_state.stageCursor !== 'ew-resize', 'without inert support, the drag cursor must not be shown');
+  require_eq(results.no_inert_state.handleDisplay, 'none', 'without inert support, the drag handle must stay hidden');
+  require_eq(results.no_inert_state.inert, false, 'without inert support, the fact must remain plainly readable, never concealed');
+
+  await page.goto(url.replace('page.html', 'page-failed-init.html'));
+  await page.waitForTimeout(150);
+  results.failed_init_state = await factState(page);
+  require_eq(results.failed_init_state.stageRole, null, 'after a simulated mid-init failure, the catch block must remove the role it had already applied');
+  require_eq(results.failed_init_state.stageTabindex, null, 'after a simulated mid-init failure, the catch block must remove the tabindex it had already applied');
+  require_eq(results.failed_init_state.stageEnhanced, false, 'after a simulated mid-init failure, the catch block must remove the enhanced class it had already applied');
+  require_true(results.failed_init_state.stageTouchAction !== 'none', 'after a simulated mid-init failure, native touch scrolling must be restored, not left blocked');
+  require_true(results.failed_init_state.stageCursor !== 'ew-resize', 'after a simulated mid-init failure, the drag cursor must be removed');
+  require_eq(results.failed_init_state.handleDisplay, 'none', 'after a simulated mid-init failure, the drag handle must be hidden again');
+  require_eq(results.failed_init_state.inert, false, 'after a simulated mid-init failure, the fact must be un-concealed by the catch block, not left inert');
+
   console.log(JSON.stringify(results, null, 2));
   await browser.close();
 })().catch((err) => { console.error('BROWSER_TEST_FAILED: ' + err.message); process.exit(1); });
 
 function require_eq(actual, expected, message) {
   if (actual !== expected) { console.error('ASSERTION FAILED: ' + message + ' (expected ' + JSON.stringify(expected) + ', got ' + JSON.stringify(actual) + ')'); process.exit(1); }
+}
+function require_true(condition, message) {
+  if (!condition) { console.error('ASSERTION FAILED: ' + message); process.exit(1); }
 }
 function require_includes(actual, substr, message) {
   if (typeof actual !== 'string' || !actual.includes(substr)) { console.error('ASSERTION FAILED: ' + message + ' (got ' + JSON.stringify(actual) + ')'); process.exit(1); }
@@ -254,10 +389,20 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         (tmp_path / "align.js").write_text(js, encoding="utf-8")
-        page_html = PAGE_TEMPLATE.format(block=block, script_tag='<script src="align.js"></script>')
+        page_html = PAGE_TEMPLATE.format(
+            block=block, shim_script="", script_tag='<script src="align.js"></script>'
+        )
         (tmp_path / "page.html").write_text(page_html, encoding="utf-8")
-        nojs_html = PAGE_TEMPLATE.format(block=block, script_tag="<!-- no JS -->")
+        nojs_html = PAGE_TEMPLATE.format(block=block, shim_script="", script_tag="<!-- no JS -->")
         (tmp_path / "page-nojs.html").write_text(nojs_html, encoding="utf-8")
+        no_inert_html = PAGE_TEMPLATE.format(
+            block=block, shim_script=NO_INERT_SHIM, script_tag='<script src="align.js"></script>'
+        )
+        (tmp_path / "page-no-inert.html").write_text(no_inert_html, encoding="utf-8")
+        failed_init_html = PAGE_TEMPLATE.format(
+            block=block, shim_script=FAILED_INIT_SHIM, script_tag='<script src="align.js"></script>'
+        )
+        (tmp_path / "page-failed-init.html").write_text(failed_init_html, encoding="utf-8")
         runner_js = RUNNER_JS_TEMPLATE.replace("__PLAYWRIGHT_MAIN_PATH__", json.dumps(playwright_main))
         (tmp_path / "run.js").write_text(runner_js, encoding="utf-8")
 
@@ -284,7 +429,13 @@ def main() -> int:
         "aria-describedby applied by JS only and absent without JS, button-triggered reveal moves "
         "focus to the fact predictably, slider-triggered discovery keeps focus on the stage, "
         "re-crossing extremes post-discovery does not re-announce, and the no-JS fallback is fully "
-        "reachable with no concealment and no false slider semantics."
+        "reachable with no concealment and no false slider semantics. Also verified: the declared "
+        "aria-valuemin/valuemax (4/96) match real keyboard-endpoint clamping and announced "
+        "aria-valuetext at both extremes, real mouse-drag and synthetic touch-pointer drags clamp "
+        "identically, touch-action/cursor/drag-handle are gated behind the enhanced class (native "
+        "scrolling and default cursor confirmed in the enhanced, no-JS, unsupported-inert, and "
+        "simulated-failed-init states, with the catch block confirmed to actually strip the "
+        "enhancement back out after a mid-init failure)."
     )
     print(json.dumps(results, indent=2))
     return EXIT_PASS

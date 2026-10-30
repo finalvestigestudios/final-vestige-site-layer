@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD = ROOT / "payloads" / "signature-alignment-wp-block-v1.txt"
 PAGE = ROOT / "homepage" / "page-6-home.blocks.html"
-EXPECTED_BYTES = 4782
-EXPECTED_SHA256 = "bffe859b660b49603271bdd8626de9c5c46b18e2f75bfa0d0497ac8943566be8"
+EXPECTED_BYTES = 4884
+EXPECTED_SHA256 = "37c3ba4e9b6c78bbcca09f30c80ad49f8b0a1e5b5dbf49e1b270c1fc994825cd"
 
 
 def require(condition: bool, message: str) -> None:
@@ -171,6 +171,8 @@ assert(dom.stage.getAttribute('role')==='slider','successful init must apply sli
 assert(dom.stage.getAttribute('tabindex')==='0','successful init must make the now-functional stage keyboard-focusable via JS');
 assert(dom.stage.getAttribute('aria-describedby')==='fv-align-desc','stage must reference the always-present description of both documents so their content reaches assistive technology despite being nested inside an opaque slider widget');
 assert(dom.mapPanel.getAttribute('aria-hidden')==='true' && dom.diagramPanel.getAttribute('aria-hidden')==='true','both nested image panels must be aria-hidden once the slider role is active — their content is conveyed via aria-describedby/aria-valuetext instead, per WAI-ARIA slider authoring practice');
+assert(dom.stage.classList.contains('fv-align--enhanced'),'successful init must mark the stage enhanced, so CSS only enables drag-specific touch-action:none/cursor:ew-resize once a real, functional slider exists — never on the static, non-interactive default');
+assert(dom.stage.getAttribute('aria-valuemin')==='4' && dom.stage.getAttribute('aria-valuemax')==='96','declared ARIA range must match the real reachable range enforced by setPosition (4-96), not a mismatched 0-100');
 
 const keydown = listeners['stage:keydown'];
 assert(typeof keydown === 'function', 'keydown handler must be registered for keyboard operation');
@@ -186,6 +188,12 @@ assert(dom.badge.getAttribute('data-revealed')==='0','visiting only the low extr
 for (let i = 0; i < 30; i++) { keydown({ key: 'ArrowRight', preventDefault(){} }); }
 assert(Number(dom.stage.getAttribute('aria-valuenow'))>=85,'must be able to reach the high extreme via keyboard');
 assert(dom.badge.getAttribute('data-revealed')==='1','visiting BOTH extremes (genuine exploration of both documents) must trigger discovery');
+
+for (let i = 0; i < 50; i++) { keydown({ key: 'ArrowRight', preventDefault(){} }); }
+assert(dom.stage.getAttribute('aria-valuenow')==='96','pressing ArrowRight far past the high end must clamp at exactly the declared aria-valuemax (96), never exceed it');
+for (let i = 0; i < 100; i++) { keydown({ key: 'ArrowLeft', preventDefault(){} }); }
+assert(dom.stage.getAttribute('aria-valuenow')==='4','pressing ArrowLeft far past the low end must clamp at exactly the declared aria-valuemin (4), never go below it');
+for (let i = 0; i < 20; i++) { keydown({ key: 'ArrowRight', preventDefault(){} }); }
 assert(dom.stage.classList.contains('fv-align--locked'),'stage must lock once the connection is found');
 assert(dom.reveal.classList.contains('fv-align--found'),'reveal panel must carry the found state so CSS can un-conceal the real fact text — this is what makes the SUBSTANTIVE FINDING visible, not merely the badge');
 assert(dom.trigger.disabled===true,'reveal-trigger button should reflect the found state once discovery already happened');
@@ -237,6 +245,7 @@ assert(dom.fact.inert===false || dom.fact.inert===undefined,'fact must never be 
 assert(dom.stage.getAttribute('role')===undefined,'without confirmed inert support, the payload must not claim slider semantics either — fall back fully to the plain, always-readable static presentation');
 assert(dom.stage.getAttribute('tabindex')===undefined,'stage must not be made keyboard-focusable as a slider when the enhancement is not actually safe to run');
 assert(listeners['stage:keydown']===undefined,'no interactive wiring at all should happen in the unsupported-inert fallback — it is equivalent to the no-JS case, not a degraded-but-active slider');
+assert(dom.stage.classList.contains('fv-align--enhanced')===false,'without confirmed inert support, the stage must never be marked enhanced — that class is what enables touch-action:none/cursor:ew-resize, which must stay off on a nonfunctional stage so mobile visitors keep native scrolling');
 console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT WHEN INERT IS UNSUPPORTED) REGRESSION: PASS');
 """
     _run_node_scenario(
@@ -255,6 +264,7 @@ assert(dom.stage.getAttribute('role')===undefined,'a midway failure must also st
 assert(dom.stage.getAttribute('tabindex')===undefined,'a midway failure must also strip tabindex so the now-nonfunctional stage is not a dead Tab stop');
 assert(dom.stage.getAttribute('aria-describedby')===undefined,'a midway failure must also remove aria-describedby, which only makes sense paired with the slider role');
 assert(dom.mapPanel.getAttribute('aria-hidden')===undefined && dom.diagramPanel.getAttribute('aria-hidden')===undefined,'a midway failure must also un-hide the image panels from assistive technology, since without a working slider their content is no longer redundant with anything');
+assert(dom.stage.classList.contains('fv-align--enhanced')===false,'a midway failure must also remove the enhanced class so touch-action/cursor revert to the native-scrolling, non-drag-cursor default on the now-nonfunctional stage');
 console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (MIDWAY FAILURE LEAVES NO RESIDUAL CONCEALMENT) REGRESSION: PASS');
 """
     _run_node_scenario(
@@ -266,6 +276,7 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (MIDWAY FAILURE LEAVES NO RESIDUAL 
 assert(dom.reveal.classList.contains('fv-align__reveal--pending')===false,'when a required real element is missing (simulating a failed/partial init, the same condition a no-JS page is in), the payload must no-op and never conceal the real fact text — it must stay visible');
 assert(dom.stage.getAttribute('role')===undefined,'a missing-element no-op must never advertise slider semantics on a non-functional element');
 assert(dom.stage.getAttribute('tabindex')===undefined,'a missing-element no-op must never add the stage to the keyboard Tab order');
+assert(dom.stage.classList.contains('fv-align--enhanced')===false,'a missing-element no-op must never mark the stage enhanced');
 console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT) REGRESSION: PASS');
 """
     _run_node_scenario(
@@ -304,6 +315,49 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT)
         "NYPL Digital Collections" in page_text and "Final Vestige reconstruction" in page_text,
         "the fv-align-desc description must draw on the real, already-used source captions, not invented text",
     )
+    require(
+        "Slide between them" not in page_text,
+        "the static intro copy must not instruct visitors to slide/drag when the interaction may not be available "
+        "(no-JS, unsupported-inert, or failed init all show the same static copy)",
+    )
+    require(
+        "shown side by side" in page_text,
+        "the static intro copy must describe the default state accurately regardless of JS availability",
+    )
+
+    # Touch-scroll / cursor-affordance checks against the real page's <style> block: the base
+    # .fv-align__stage rule must NOT suppress native touch scrolling or claim a drag cursor: those
+    # are only correct once the stage is a real, functional slider (the JS-added .fv-align--enhanced
+    # class). Likewise the drag handle must default to hidden and only appear once enhanced, so a
+    # non-functional stage never visually implies that dragging is possible.
+    style_match = re.search(r'<section class="fv-align".*?</section>\n<style>\n(.*?)\n</style>', page_text, flags=re.S)
+    require(style_match is not None, "could not locate the fv-align section's own <style> block in page markup")
+    style_text = style_match.group(1)
+    base_stage_rule_match = re.search(r"^\.fv-align__stage\{([^}]*)\}", style_text, flags=re.M)
+    require(base_stage_rule_match is not None, "could not find the base .fv-align__stage CSS rule")
+    base_stage_rule = base_stage_rule_match.group(1)
+    require(
+        "touch-action" not in base_stage_rule and "cursor" not in base_stage_rule,
+        f"the base (non-enhanced) .fv-align__stage rule must not set touch-action or cursor — found: {base_stage_rule!r}",
+    )
+    require(
+        re.search(r"\.fv-align__stage\.fv-align--enhanced\{[^}]*touch-action:none[^}]*\}", style_text) is not None,
+        "the enhanced-only rule must restore touch-action:none once a real slider exists",
+    )
+    require(
+        re.search(r"\.fv-align__stage\.fv-align--enhanced\{[^}]*cursor:ew-resize[^}]*\}", style_text) is not None,
+        "the enhanced-only rule must restore cursor:ew-resize once a real slider exists",
+    )
+    handle_rule_match = re.search(r"^\.fv-align__handle\{([^}]*)\}", style_text, flags=re.M)
+    require(handle_rule_match is not None, "could not find the .fv-align__handle CSS rule")
+    require(
+        "display:none" in handle_rule_match.group(1),
+        f"the drag handle must default to hidden so static mode never visually implies dragging is possible — found: {handle_rule_match.group(1)!r}",
+    )
+    require(
+        re.search(r"\.fv-align__stage\.fv-align--enhanced \.fv-align__handle\{[^}]*display:flex[^}]*\}", style_text) is not None,
+        "the handle must only be shown once the stage is actually enhanced",
+    )
 
     # The payload's JS-only ARIA/role application and the ARIA-slider-content fix must be present
     # as real code, not just asserted in prose.
@@ -312,6 +366,11 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT)
     require("stage.setAttribute('aria-describedby','fv-align-desc')" in text, "payload does not wire aria-describedby to the real description element")
     require("setAttribute('aria-hidden','true')" in text, "payload does not hide the nested image panels from assistive technology once the slider role is active")
     require("if(!supportsInert)return;" in text, "payload does not fall back to the fully readable static presentation when inert support cannot be confirmed")
+    require("stage.classList.add('fv-align--enhanced')" in text, "payload does not mark the stage enhanced, which gates the touch-action/cursor CSS")
+    require(
+        "stage.setAttribute('aria-valuemin','4')" in text and "stage.setAttribute('aria-valuemax','96')" in text,
+        "payload's declared ARIA range must match the real reachable range (4-96), not a mismatched 0-100",
+    )
 
     print(
         "PASS: Signature Alignment exact payload identity, real-element gating, pointer/mouse/"
@@ -324,10 +383,14 @@ console.log('SIGNATURE ALIGNMENT FAIL-CLOSED (NO CONCEALMENT ON MISSING ELEMENT)
         "aria-hidden inside the opaque slider widget, predictable focus movement on button-"
         "triggered discovery vs. retained stage focus on slider-triggered discovery, accessible "
         "status announcement, fail-closed no-concealment-without-JS, no-concealment-when-inert-"
-        "is-unsupported, and no-residual-concealment-on-midway-failure, no dependencies/network "
-        "calls, and JavaScript syntax verified. A separate real-browser keyboard/focus test lives "
-        "in tests/verify_signature_alignment_keyboard_browser.py (not part of the CI gate; run "
-        "manually wherever Playwright is available)."
+        "is-unsupported, and no-residual-concealment-on-midway-failure, the enhanced-only class "
+        "gating touch-action/cursor (native scrolling and the default cursor preserved until a "
+        "real slider exists; the drag handle hidden until then too), the declared ARIA range "
+        "(4-96) matching the real reachable range with keyboard endpoints clamping exactly there, "
+        "non-instructional static copy that doesn't claim dragging works when it might not, no "
+        "dependencies/network calls, and JavaScript syntax verified. A separate real-browser "
+        "keyboard/focus test lives in tests/verify_signature_alignment_keyboard_browser.py (not "
+        "part of the CI gate; run manually wherever Playwright is available)."
     )
 
 

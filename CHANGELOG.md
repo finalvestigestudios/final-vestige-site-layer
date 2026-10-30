@@ -2,6 +2,45 @@
 
 ## 0.4.0 — FVSL-VESTIGE-ASSEMBLY-HOME-002 (continued, same candidate, pre-merge)
 
+- **Signature Alignment: two further P2 findings from an independent QD review (#5708105650),
+  fixed without redesigning the interaction or its historical content.**
+  1. **Mobile touch scrolling was blocked in non-enhanced mode.** The static CSS applied
+     `touch-action:none` and `cursor:ew-resize` to `.fv-align__stage` unconditionally, so a
+     visitor on mobile without JavaScript, or without `inert` support, could land on a large
+     region of the page where normal touch scrolling was suppressed even though the slider was
+     completely nonfunctional there. Fixed: both properties now live only in a new
+     `.fv-align__stage.fv-align--enhanced{...}` rule, and the `fv-align--enhanced` class is added
+     by the payload's JS at the same point it applies `role="slider"` — and removed again by the
+     existing midway-failure cleanup path if init crashes partway through, alongside the
+     role/tabindex/aria-describedby it already removed. Native touch scrolling and the default
+     cursor are therefore the default everywhere until a real slider actually exists. The drag
+     handle (the circular grab affordance on the divider) is now `display:none` by default and
+     only shown via `.fv-align__stage.fv-align--enhanced .fv-align__handle{display:flex}`, so a
+     nonfunctional stage never visually implies dragging is possible. The intro copy no longer
+     tells visitors to "slide between" the two documents (true only once enhanced); it now reads
+     "...shown side by side — then see why we show them together," accurate in every state.
+     `tests/verify_signature_alignment.py` gained CSS-structural assertions for the rule split and
+     the handle's default-hidden/enhanced-visible behavior, plus copy assertions against the old
+     and new intro text. `tests/verify_signature_alignment_keyboard_browser.py` gained real-browser
+     checks of computed `touch-action`/`cursor`/handle-`display` across all four required states:
+     enhanced, no-JS, unsupported-`inert` (simulated by shimming `document.createElement` before
+     the payload loads), and a simulated mid-init failure (simulated by shimming
+     `Element.prototype.addEventListener` to throw once, after the JS has already started
+     applying enhancement, to prove the catch block actually strips it back out rather than just
+     happening to never have applied it).
+  2. **ARIA slider min/max didn't match the real reachable range.** The slider declared
+     `aria-valuemin="0"`/`aria-valuemax="100"`, but `setPosition()` has always clamped real
+     movement to 4–96 (keeping a visible sliver of both images at either extreme), so the
+     accessibility contract promised a range assistive technology could never actually reach.
+     Fixed: the declared range now matches reality (`aria-valuemin="4"`, `aria-valuemax="96"`);
+     the existing 15/85 discovery thresholds are unchanged. `tests/verify_signature_alignment.py`
+     gained keyboard-endpoint-clamping assertions (50× `ArrowRight` → `aria-valuenow` is exactly
+     `"96"`; 100× `ArrowLeft` → exactly `"4"`) and the declared-range check.
+     `tests/verify_signature_alignment_keyboard_browser.py` gained real-Chromium coverage of the
+     same keyboard endpoints and announced `aria-valuetext`, plus a real `page.mouse` drag and a
+     synthetic touch-type `PointerEvent` drag, both dragged well past either edge of the stage and
+     both confirmed to clamp at 4/96, never 0/100.
+
 - **Signature Alignment: three further accessibility findings from a conditional-hold QD review,
   fixed without redesigning the interaction or its historical content.**
   1. **Unsupported-`inert` fallback no longer blurs readable content.** The previous fix only

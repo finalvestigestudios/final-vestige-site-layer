@@ -36,9 +36,10 @@ let visitedHigh=false;
 stage.setAttribute('role','slider');
 stage.setAttribute('tabindex','0');
 stage.setAttribute('aria-labelledby','fv-align-title');
-stage.setAttribute('aria-valuemin','0');
-stage.setAttribute('aria-valuemax','100');
+stage.setAttribute('aria-valuemin','4');
+stage.setAttribute('aria-valuemax','96');
 stage.setAttribute('aria-describedby','fv-align-desc');
+stage.classList.add('fv-align--enhanced');
 panels.forEach((p)=>p.setAttribute('aria-hidden','true'));
 
 reveal.classList.add('fv-align__reveal--pending');
@@ -120,6 +121,7 @@ setPosition(20);
     const fallbackStage=document.querySelector('[data-fv-align-stage]');
     if(fallbackStage){
       ['role','tabindex','aria-labelledby','aria-valuemin','aria-valuemax','aria-valuenow','aria-valuetext','aria-describedby'].forEach((a)=>fallbackStage.removeAttribute(a));
+      fallbackStage.classList.remove('fv-align--enhanced');
       Array.from(fallbackStage.querySelectorAll('.fv-align__panel')).forEach((p)=>p.removeAttribute('aria-hidden'));
     }
   }catch(_){}

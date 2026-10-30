@@ -113,20 +113,37 @@ JSON-LD):
    actual content still reaches screen reader users rather than being silently swallowed by the
    opaque widget.
 
+   Touch scrolling and the drag cursor are also gated to a successful init: `touch-action:none` and
+   `cursor:ew-resize` live only in a `.fv-align__stage.fv-align--enhanced{...}` rule, with the
+   `fv-align--enhanced` class added alongside the slider role/tabindex and stripped again by the
+   same midway-failure cleanup — so a visitor on mobile without JS, without `inert` support, or who
+   hits a failed init never loses native page scrolling over a nonfunctional comparison stage. The
+   drag handle (the circular grab affordance on the divider) stays `display:none` until enhanced,
+   so static mode never visually implies dragging is possible, and the intro copy no longer tells
+   visitors to "slide between" the documents — it describes them as already "shown side by side,"
+   true in every state. The declared `aria-valuemin`/`aria-valuemax` (`4`/`96`) match the real
+   range `setPosition()` has always clamped movement to (a visible sliver of both images stays at
+   either extreme); the existing 15/85 discovery thresholds are unchanged.
+
    `tests/verify_signature_alignment.py` covers the initial state, pointer and keyboard interaction,
    the button alternative, the fail-closed no-concealment path (both "never initialized" and "failed
    partway through"), no-concealment-when-`inert`-is-unsupported, inert/role/tabindex/
-   aria-describedby state transitions, and the accessible status announcement — all via a simulated
-   DOM harness. `tests/verify_signature_alignment_keyboard_browser.py` is a separate, real-browser
-   (Playwright/Chromium) test that drives actual Tab/Enter/Arrow-key input against a fixture built
-   live from the real page markup and real payload, and records the actual focus sequence before and
-   after discovery, including confirming the no-JS fixture carries neither `role` nor `tabindex`.
-   Playwright is resolved to one absolute path up front and that exact path is threaded into the
-   generated runner, so the "is it available" check and the actual test run can never disagree about
-   where Playwright is coming from; a missing dependency exits distinctly (code 2, "SKIP... NOT a
-   pass") rather than something that could be mistaken for a passing exit code. It is **not** part of
-   the CI gate (this repository has no Node/Playwright dependency CI could install) and is meant to
-   be run manually wherever Playwright is already available.
+   aria-describedby state transitions, the accessible status announcement, the touch-action/cursor/
+   handle enhanced-only CSS split, and keyboard-endpoint clamping at the declared 4/96 range — all
+   via a simulated DOM harness. `tests/verify_signature_alignment_keyboard_browser.py` is a separate,
+   real-browser (Playwright/Chromium) test that drives actual Tab/Enter/Arrow-key input, a real mouse
+   drag, and a synthetic touch-type `PointerEvent` drag against a fixture built live from the real
+   page markup and real payload, and records the actual focus sequence before and after discovery,
+   including confirming the no-JS fixture carries neither `role` nor `tabindex`, and confirming
+   computed `touch-action`/`cursor`/handle-`display` stay native/hidden across the no-JS,
+   unsupported-`inert` (shimmed `document.createElement`), and simulated-failed-init (shimmed
+   `Element.prototype.addEventListener` that throws once, after enhancement has already started)
+   states. Playwright is resolved to one absolute path up front and that exact path is threaded into
+   the generated runner, so the "is it available" check and the actual test run can never disagree
+   about where Playwright is coming from; a missing dependency exits distinctly (code 2, "SKIP... NOT
+   a pass") rather than something that could be mistaken for a passing exit code. It is **not** part
+   of the CI gate (this repository has no Node/Playwright dependency CI could install) and is meant
+   to be run manually wherever Playwright is already available.
 8. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
    blocks (Latest investigation, Recently filed, category strip, Exchange preview, More
    investigations, Research Trails, Sources and research tools) are untouched — same queries,

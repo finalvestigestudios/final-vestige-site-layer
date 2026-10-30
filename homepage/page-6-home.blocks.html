@@ -374,7 +374,7 @@
   <div class="fv-align__head">
     <p class="fv-eyebrow">Two Documents, Fifteen Years</p>
     <h2 id="fv-align-title">Compare the system as it was to the system that failed.</h2>
-    <p class="fv-align__intro">A 1903 map of the Brooklyn Rapid Transit system and Final Vestige's own chronology of the 1918 Malbone Street wreck. Slide between them to compare &mdash; then see why we show them side by side.</p>
+    <p class="fv-align__intro">A 1903 map of the Brooklyn Rapid Transit system and Final Vestige's own chronology of the 1918 Malbone Street wreck, shown side by side &mdash; then see why we show them together.</p>
   </div>
   <div class="fv-align__stage" data-fv-align-stage>
     <div class="fv-align__panel fv-align__panel--map">
@@ -402,7 +402,8 @@
 .fv-align__head{max-width:800px;margin:0 auto clamp(28px,4vw,40px)}
 .fv-align h2{margin:10px 0 14px;font-family:"Fraunces",ui-serif,Georgia,serif;font-size:clamp(26px,3.4vw,40px);font-weight:420;letter-spacing:-.01em;color:#f4efe6}
 .fv-align__intro{margin:0;color:#aaa49a;font-size:15px;line-height:1.6}
-.fv-align__stage{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:16/8;overflow:hidden;border:1px solid #34322e;cursor:ew-resize;background:#000;touch-action:none}
+.fv-align__stage{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:16/8;overflow:hidden;border:1px solid #34322e;background:#000}
+.fv-align__stage.fv-align--enhanced{cursor:ew-resize;touch-action:none}
 .fv-align__stage:focus-visible{outline:2px solid #b8955e;outline-offset:2px}
 .fv-align__panel{position:absolute;inset:0}
 .fv-align__panel img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
@@ -412,7 +413,8 @@
 .fv-align__panel--map .fv-align__tag{left:12px;top:10px}
 .fv-align__panel--diagram .fv-align__tag{right:12px;bottom:10px;color:#2a2723;background:rgba(244,239,230,.75)}
 .fv-align__divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#b8955e;z-index:3;transform:translateX(-1px);pointer-events:none}
-.fv-align__handle{position:absolute;top:50%;left:50%;width:44px;height:44px;border-radius:50%;background:#f4efe6;border:2px solid #b8955e;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:#0c0d0d;font-size:16px;pointer-events:auto;cursor:ew-resize}
+.fv-align__handle{display:none;position:absolute;top:50%;left:50%;width:44px;height:44px;border-radius:50%;background:#f4efe6;border:2px solid #b8955e;transform:translate(-50%,-50%);align-items:center;justify-content:center;color:#0c0d0d;font-size:16px;pointer-events:auto;cursor:ew-resize}
+.fv-align__stage.fv-align--enhanced .fv-align__handle{display:flex}
 .fv-align--locked .fv-align__divider{background:#c7a66c}
 .fv-align--locked .fv-align__handle{border-color:#c7a66c}
 .fv-align__badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:4;font:800 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#0c0d0d;background:#c7a66c;padding:7px 12px;border-radius:2px;opacity:0;transition:opacity .3s ease}
