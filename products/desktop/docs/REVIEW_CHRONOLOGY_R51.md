@@ -28,7 +28,7 @@ than the previous decision.
 
 ## Evidence and test boundary
 
-- `test_review_chronology_r51.py`: 22 focused unit tests, including malformed
+- `test_review_chronology_r51.py`: 23 focused unit tests, including malformed
   inputs, time zones, UTC offsets, equal timestamps, microsecond rollback,
   explicit clock rollback, and privacy-safe errors.
 - `test_review_chronology_integration_r51.py`: four real-workflow tests for both
