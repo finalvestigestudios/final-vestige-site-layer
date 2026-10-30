@@ -276,25 +276,17 @@ def invoice_twins(source,folder):
     ),rows)]
 
 def spend_map(source,folder):
+    """Expose source rows, vendor collisions and the exact spike baseline."""
+    from .spend_analysis import summarize_spend
     records=table(source,("vendor","amount","date"),("category",))
-    grouped=defaultdict(lambda:Decimal(0))
-    for r in records:
-        vendor=key(r["vendor"])
-        if not vendor: raise ValueError("Blank vendor at row "+r["row"])
-        month=parse_date(r["date"]).strftime("%Y-%m")
-        grouped[(vendor,month,r.get("category","Uncategorized") or "Uncategorized")]+=money(r["amount"])
-    totals=defaultdict(lambda:defaultdict(lambda:Decimal(0)))
-    for (vendor,month,category),amount in grouped.items():totals[vendor][month]+=amount
-    flags={}
-    for vendor,months in totals.items():
-        history=[]
-        for month,amount in sorted(months.items()):
-            baseline=Decimal(str(statistics.median(history))) if len(history)>=3 else None
-            flags[(vendor,month)]="review_spike" if baseline and baseline>0 and amount>=2*baseline else ""
-            history.append(amount)
-    rows=[{"vendor_key":v,"month":m,"category":c,"amount":dollars(a),"flag":flags[(v,m)]}
-          for (v,m,c),a in sorted(grouped.items())]
-    return [save(folder,"spend-map",("vendor_key","month","category","amount","flag"),rows)]
+    rows=summarize_spend(
+        records, normalize_vendor=key, parse_date=parse_date,
+        parse_money=money, format_money=dollars)
+    return [save(folder,"spend-map",(
+        "vendor_key","month","category","amount","flag",
+        "vendor_month_total","baseline_median","history_months",
+        "source_rows","source_vendor_labels","vendor_label_variants"
+    ),rows)]
 
 def policy_delta(old,new,folder):
     """Compare two bounded local policy files with source-byte provenance."""
