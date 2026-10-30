@@ -1,0 +1,202 @@
+[
+  {
+    "image_key": "432:0",
+    "source_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_redirect_blocked",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "432:1",
+    "source_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_image_rendered",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "432:2",
+    "source_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_redirect_blocked",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "432:3",
+    "source_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_redirect_blocked",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "432:4",
+    "source_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_image_rendered",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "432:5",
+    "source_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_redirect_blocked",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "432:6",
+    "source_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_image_rendered",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "418:0",
+    "source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "418:1",
+    "source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_403",
+    "viewer_error_code": 403,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "418:2",
+    "source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_403",
+    "viewer_error_code": 403,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "418:3",
+    "source_url": "https://www.history.uscg.mil/Portals/6/6_%20Scotch%20Cap%20remains.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "434:1",
+    "source_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_image_rendered",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "434:2",
+    "source_url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "434:3",
+    "source_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "434:4",
+    "source_url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "434:5",
+    "source_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "407:0",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_image_rendered",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "407:1",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_400_unsupported_octet_stream",
+    "viewer_error_code": 400,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "407:2",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_image_rendered",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  },
+  {
+    "image_key": "268:0",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+    "observation_date": "2026-10-30",
+    "method": "web image/text viewer, not logged-out browser HTTP",
+    "viewer_result": "viewer_unsupported",
+    "viewer_error_code": null,
+    "browser_http_status": null,
+    "verified_broken_in_browser": null
+  }
+]
