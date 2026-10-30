@@ -612,3 +612,7 @@ The manifest is stored outside the checkout and contains no customer records.
 See [R55 build-input custody runbook](docs/BUILD_INPUT_CUSTODY_R55.md).
 It is not an executable signature, clean-machine certification, premium
 distribution permission or QD release authorization.
+
+### R56 Windows packaging toolchain custody (draft / unreleased)
+
+In addition to R55 source custody, [R56 operating procedure](docs/WINDOWS_TOOLCHAIN_CUSTODY_R56.md) pins the packaging Python interpreter, installed PyInstaller/hooks and relevant crypto/dependency files across all six Windows builds. Both the offline Windows driver and CI use isolated `python -I -m PyInstaller` to prevent checkout-root package shadowing. Source/toolchain validation never grants executable release, premium distribution or QD approval.
