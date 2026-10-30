@@ -121,7 +121,8 @@
       root.addEventListener('keydown', handleKeydown);
 
       // URL parameter selects only a visual design study; never executes any external script.
-      const requested = new URLSearchParams(window.location.search).get('direction');
+      const requested = typeof URLSearchParams === 'function' ?
+        new URLSearchParams(window.location.search).get('direction') : null;
       if (DIRECTIONS.includes(requested)) selectDirection(requested);
       else selectDirection(root.dataset.fvDirection);
 
