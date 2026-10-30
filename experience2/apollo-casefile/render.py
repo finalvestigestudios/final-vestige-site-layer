@@ -91,6 +91,47 @@ def custody_card(item, source):
       </article>
      </li>'''
 
+def comparison_card(claim, record):
+    """Board finding versus catalog photograph—never present the photo as proof."""
+    rid = e(claim["stage_id"])
+    return f'''<article class="ex2-compare__card" data-ex2-compare-card data-ex2-compare-id="{rid}" aria-label="Evidence claim {rid}">
+      <div class="ex2-compare__cardtop"><span>CASE NOTE {rid} / 06</span><span>{e(claim['category']).upper()}</span></div>
+      <h3>{e(claim['heading'])}</h3>
+      <p class="ex2-compare__claim">{e(claim['claim'])}</p>
+      <dl><div><dt>Review Board support</dt><dd>{e(claim['board_basis'])}</dd></div>
+      <div><dt>Original report locator</dt><dd>{e(claim['board_locator'])}</dd></div>
+      <div><dt>Photographic context</dt><dd>{e(claim['image_basis'])}</dd></div>
+      <div class="ex2-compare__boundary"><dt>What this evidence cannot prove</dt><dd>{e(claim['boundary'])}</dd></div>
+      <div><dt>Image reuse</dt><dd>Source-page link only. Individual image/subject and promotional rights unreviewed.</dd></div></dl>
+      <div class="ex2-compare__links"><a href="#source-{rid}" data-ex2-source-deeplink>Open source drawer {rid}</a> · <a href="#custody-{rid}">Open its custody card</a> · {source_link(record['image_url'], 'NASA image record')}</div>
+    </article>'''
+
+def comparison_lab(records, claims):
+    """Static genuine default pair; optional selects clone trusted pre-rendered templates."""
+    assert len(records) == len(claims) == 6
+    assert [a['id'] for a in records] == [b['stage_id'] for b in claims]
+    options = ''.join(f'<option value="{e(c["stage_id"])}">{e(c["stage_id"])} — {e(c["heading"])}</option>' for c in claims)
+    selection_a = options.replace('<option value="02">', '<option value="02" selected>')
+    selection_b = options.replace('<option value="05">', '<option value="05" selected>')
+    templates = '\n'.join(f'<template data-ex2-compare-template="{e(c["stage_id"])}">{comparison_card(c, r)}</template>' for c, r in zip(claims, records))
+    first = comparison_card(claims[1], records[1])
+    second = comparison_card(claims[4], records[4])
+    return f'''<section id="comparison-lab" class="ex2-section ex2-compare" aria-labelledby="compare-title">
+      <div class="ex2-section__intro"><p class="ex2-eyebrow">IV / THE EVIDENCE COMPARISON LAB</p>
+      <h2 id="compare-title">Two claims. <em>Different kinds of proof.</em></h2>
+      <p>Compare an established finding with a qualified investigative inference. The left and right panels display each claim, the exact Board locator, the photograph's actual context and what that evidence cannot establish. Nothing here is a reconstructed photograph, a pressure chart or a new historical conclusion.</p></div>
+      <div class="ex2-compare__method"><strong>WHY THIS PAIR MATTERS</strong><p>The 100-percent oxygen atmosphere at 16.7 psia was a recorded condition. The exact ignition source was not conclusively identified. The Board's distinctions should survive even when we tell the story visually.</p></div>
+      <div class="ex2-compare__tools" data-ex2-compare-tools hidden>
+        <div><label for="ex2-compare-a">Compare record A</label><select id="ex2-compare-a" data-ex2-compare-a>{selection_a}</select></div>
+        <button type="button" data-ex2-compare-swap aria-label="Swap comparison sides">Swap sides <span aria-hidden="true">⇄</span></button>
+        <div><label for="ex2-compare-b">Compare record B</label><select id="ex2-compare-b" data-ex2-compare-b>{selection_b}</select></div>
+        <output data-ex2-compare-status role="status" aria-live="polite" aria-atomic="true">Comparing 02 with 05</output>
+      </div>
+      <div class="ex2-compare__grid"><div data-ex2-compare-pane="a" aria-label="Evidence record A">{first}</div><div data-ex2-compare-pane="b" aria-label="Evidence record B">{second}</div></div>
+      <p class="ex2-compare__help">This page begins with records 02 and 05 even if scripts are disabled. All six claim records remain available in the ledger above. Changing comparison controls never alters historical source data.</p>
+      {templates}
+    </section>'''
+
 def atlas_card(row):
     key = e(row["wp_id"])
     searchable = " ".join((row["title"], row["theme"], row["summary"]))
@@ -149,6 +190,7 @@ def render(manifest, custody):
     rail="\n".join(f'<li><a href="#stage-{e(row["id"])}" data-ex2-rail-link><span>{e(row["id"])}</span><span>{e(row["time"])}</span></a></li>' for row in records)
     article="\n".join(stage(row) for row in records)
     gallery="\n".join(gallery_card(row) for row in records)
+    compare=comparison_lab(records,custody["claims"])
     ledger="\n".join(custody_card(item, row) for item, row in zip(custody["claims"],records))
     atlas="\n".join(atlas_card(row) for row in manifest["atlas"])
     css=(ROOT/'assets/app.css').read_text(encoding='utf-8')
@@ -183,9 +225,10 @@ def render(manifest, custody):
 <p class="ex2-ledger__method"><strong>Interpretation key:</strong> A <b>Board finding</b> describes what the investigators concluded from records and tests; a <b>communication timestamp</b> marks a reported event, not necessarily its cause; a <b>later photograph</b> documents what it depicts, not the historical moment illustrated by its placement. The 1967 Board's recommendation and the subsequent redesign are not the same date.</p>
 <div class="ex2-ledger__tools" data-ex2-claim-tools hidden><label for="claim-filter">Inspect claim class</label><select id="claim-filter" data-ex2-claim-filter><option value="all">All six claims</option><option value="finding">Documented conditions</option><option value="timing">Recorded / reconstructed timing</option><option value="uncertain">Qualified ignition inference</option><option value="response">Redesign response</option></select><button type="button" data-ex2-claim-reset>Show all evidence</button><output data-ex2-claim-count role="status" aria-live="polite"></output></div>
 <ol class="ex2-ledger__grid" data-ex2-claim-list>{ledger}</ol><p class="ex2-ledger__empty" data-ex2-claim-empty hidden>No claims in this class. Show all evidence to restore the full source crosswalk.</p><p class="ex2-ledger__foot">Catalog details and Board text checked 30 October 2026. Audit of individual image licenses, publicity rights and WordPress usage remains open; no NASA image bytes are reproduced in this prototype. All six claims stay accessible without JavaScript. NASA does not endorse this independent publication.</p></section>
-<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">IV / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
+{compare}
+<section id="source-gallery" class="ex2-section ex2-gallery" aria-labelledby="gallery-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">V / THE SOURCE GALLERY</p><h2 id="gallery-title">Six records. <em>Six different meanings.</em></h2><p>A dated index of the six NASA photograph records used in this research. The archive plates below are typographic representations—not reproduced accident photographs. Read what each real image depicts, what it cannot prove, and where NASA holds the source metadata.</p></div>
 <ol class="ex2-gallery__grid">{gallery}</ol><p class="ex2-gallery__notice">Source-only gallery · no image bytes loaded · NASA credits preserved in linked records · this independent exhibition is not affiliated with or endorsed by NASA.</p></section>
-<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">V / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
+<section id="atlas" class="ex2-section ex2-atlas" aria-labelledby="atlas-title"><div class="ex2-section__intro"><p class="ex2-eyebrow">VI / EVIDENCE ATLAS</p><h2 id="atlas-title">A map begins with <em>a verifiable place.</em></h2><p>Browse six published Final Vestige investigations. We have verified the published entries, not precise coordinates. Until primary evidence and location precision are reviewed, this atlas is an accessible catalog—with no false pins, lines or map edges.</p></div>
 <div class="ex2-atlas__tools" data-ex2-atlas-tools hidden><label for="atlas-filter">Filter archive</label><select id="atlas-filter" data-ex2-atlas-filter><option value="all">All themes</option><option value="engineering">Engineering</option><option value="disasters">Disasters</option><option value="expeditions">Expeditions</option></select><label for="atlas-search">Search titles & topics</label><input type="search" id="atlas-search" data-ex2-atlas-search placeholder="Find an investigation" autocomplete="off"><output data-ex2-atlas-status aria-live="polite" role="status"></output></div>
 <div class="ex2-atlas__grid" data-ex2-atlas-grid>{atlas}</div><p class="ex2-atlas__empty" data-ex2-atlas-empty hidden>No matching investigations. Try another search.</p></section>
 <footer class="ex2-footer"><span>FINAL VESTIGE STUDIOS · INDEPENDENT STAGING STUDY · NOT DEPLOYED</span><span><a href="https://finalvestige.com/">Return to live Final Vestige</a> · <a href="#main">Back to top ↑</a></span></footer>

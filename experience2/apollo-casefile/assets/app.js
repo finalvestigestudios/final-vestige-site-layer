@@ -41,6 +41,40 @@
      choose();claimTools.hidden=false;
    }catch(_){claimItems.forEach(item=>{item.hidden=false});claimEmpty.hidden=true;claimTools.hidden=true;}
  }
+ /* Evidence comparison uses only trusted server-rendered templates. Script failure
+    leaves an accurate pre-rendered pair and every original ledger record readable. */
+ const compareTools=root.querySelector('[data-ex2-compare-tools]');
+ const compareA=root.querySelector('[data-ex2-compare-a]');
+ const compareB=root.querySelector('[data-ex2-compare-b]');
+ const compareSwap=root.querySelector('[data-ex2-compare-swap]');
+ const compareStatus=root.querySelector('[data-ex2-compare-status]');
+ const paneA=root.querySelector('[data-ex2-compare-pane="a"]');
+ const paneB=root.querySelector('[data-ex2-compare-pane="b"]');
+ if(compareTools&&compareA&&compareB&&compareSwap&&compareStatus&&paneA&&paneB){
+   try{
+     const templates=new Map([...root.querySelectorAll('[data-ex2-compare-template]')]
+       .map(t=>[t.dataset.ex2CompareTemplate,t]));
+     if(templates.size!==6||!templates.has('02')||!templates.has('05'))throw Error('Incomplete source index');
+     const defaultA=paneA.innerHTML,defaultB=paneB.innerHTML;
+     const update=()=>{
+       const a=templates.get(compareA.value),b=templates.get(compareB.value);
+       if(!a||!b||!a.content.firstElementChild||!b.content.firstElementChild)throw Error('Source template unavailable');
+       const prevA=paneA.innerHTML,prevB=paneB.innerHTML;
+       try{
+         paneA.replaceChildren(a.content.firstElementChild.cloneNode(true));
+         paneB.replaceChildren(b.content.firstElementChild.cloneNode(true));
+         compareStatus.textContent='Comparing claim '+compareA.value+' with claim '+compareB.value+'. Use the source links to inspect the original records.';
+       }catch(err){paneA.innerHTML=prevA;paneB.innerHTML=prevB;throw err}
+     };
+     compareA.addEventListener('change',()=>{try{update()}catch(_){paneA.innerHTML=defaultA;paneB.innerHTML=defaultB;compareTools.hidden=true}});
+     compareB.addEventListener('change',()=>{try{update()}catch(_){paneA.innerHTML=defaultA;paneB.innerHTML=defaultB;compareTools.hidden=true}});
+     compareSwap.addEventListener('click',()=>{try{
+       const a=compareA.value;compareA.value=compareB.value;compareB.value=a;
+       update();
+     }catch(_){paneA.innerHTML=defaultA;paneB.innerHTML=defaultB;compareTools.hidden=true}});
+     update();compareTools.hidden=false;
+   }catch(_){compareTools.hidden=true;/* prerendered, source-linked default panels remain */}
+ }
  /* Deep links must lead to an actually OPEN, keyboard-readable native source drawer.
     With scripts disabled the native details summary remains visible and operable. */
  const visitEvidenceHash=()=>{

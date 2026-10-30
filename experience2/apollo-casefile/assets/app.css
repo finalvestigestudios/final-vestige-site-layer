@@ -35,3 +35,53 @@
 .ex2-ledger__card:target,.ex2-source:target{outline:2px solid #d9b579;outline-offset:4px;scroll-margin-top:22px}
 @media(max-width:760px){.ex2-custody__exports{grid-template-columns:1fr}.ex2-custody__downloads{max-width:100%;width:100%}}
 @media(prefers-reduced-motion:reduce){.ex2-custody__downloads a{transition:none!important}}
+
+/* Comparison Lab: two reviewable evidence records, no data fetching or source forgery. */
+.ex2-compare{background:#111614;border-block:1px solid #564c36}
+.ex2-compare__method{max-width:1480px;margin:0 auto 28px;padding:20px 26px;background:#28251d;border-left:3px solid var(--gold);color:#e5dac6}
+.ex2-compare__method strong{font:700 11px/1.6 ui-monospace,monospace;letter-spacing:.1em;color:#f3c982}
+.ex2-compare__method p{max-width:87ch;font-size:14px;line-height:1.65;margin:9px 0 0}
+.ex2-compare__tools{max-width:1480px;margin:0 auto 20px;padding:18px;border:1px solid #73613f;background:#24271f;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:end}
+.ex2-compare__tools[hidden]{display:none}
+.ex2-compare__tools>div{min-width:0}
+.ex2-compare__tools label{display:block;color:#e7dfcd;font:700 12px/1.5 ui-monospace,monospace;margin:0 0 8px}
+.ex2-compare__tools select{display:block;width:100%;min-height:48px;background:#111716;border:1px solid #a48c64;color:#f4e9d6;padding:10px;font:600 13px/1.4 system-ui,sans-serif}
+.ex2-compare__tools button{min-height:48px;cursor:pointer;background:#423727;color:#ffecce;border:1px solid #ab8d62;font:700 13px/1.5 system-ui,sans-serif;padding:10px 18px}
+.ex2-compare__tools button:hover{background:#57472f}
+.ex2-compare__tools output{grid-column:1/-1;color:#e6c799;font:700 12px/1.6 ui-monospace,monospace}
+.ex2-compare__grid{max-width:1480px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ex2-compare__grid>div{min-width:0}
+.ex2-compare__card{height:100%;padding:clamp(22px,3vw,42px);border:1px solid #766448;border-top:4px solid #b3955f;background:linear-gradient(156deg,#262724,#171c1a);box-sizing:border-box;min-width:0}
+.ex2-compare__cardtop{display:flex;justify-content:space-between;gap:15px;color:#e9c487;font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.08em}
+.ex2-compare__card h3{margin:22px 0 15px;color:#ffefda;font:400 clamp(27px,3vw,41px)/1.12 Georgia,serif}
+.ex2-compare__claim{color:#e5d9c7;font-size:16px;line-height:1.7;border-bottom:1px solid #534d40;padding-bottom:19px}
+.ex2-compare__card dl{margin:18px 0 22px}.ex2-compare__card dl>div{padding:14px 0;border-bottom:1px solid #44483d}
+.ex2-compare__card dt{font:700 11px/1.5 ui-monospace,monospace;color:#deb985;text-transform:uppercase;letter-spacing:.065em}
+.ex2-compare__card dd{margin:7px 0 0;color:#ddd4c6;font-size:13px;line-height:1.65}
+.ex2-compare__card .ex2-compare__boundary{padding:16px;background:#352d21;border-left:3px solid #deb985}
+.ex2-compare__links{font-size:13px;line-height:2.6;display:flex;flex-wrap:wrap;gap:4px 15px}
+.ex2-compare__links a{display:inline-flex;align-items:center;min-height:44px;color:#efcd95;font-weight:700}
+.ex2-compare__help{max-width:1480px;margin:22px auto 0;color:#bab3a6;font-size:13px;line-height:1.7}
+@media(max-width:800px){.ex2-compare__grid{grid-template-columns:1fr}.ex2-compare__card{height:auto}.ex2-compare__tools{grid-template-columns:1fr 1fr}.ex2-compare__tools>div:first-child{grid-column:1/-1}.ex2-compare__tools>div:nth-child(3){grid-column:1/-1}.ex2-compare__tools button{grid-column:1/-1}.ex2-compare__tools output{grid-column:1/-1}}
+@media(max-width:420px){.ex2-compare__card{padding:20px}.ex2-compare__method{padding:18px}.ex2-compare__card h3{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.ex2-compare__card,.ex2-compare__tools button{transition:none!important}}
+/* A 200%-zoom/390px regression exposed Atlas search's prior 180px minimum.
+   Form controls may never force the document wider than the visual viewport. */
+@media(max-width:760px){
+  .ex2-atlas__tools{flex-direction:column;align-items:stretch}
+  .ex2-atlas__tools input,.ex2-atlas__tools select{min-width:0;width:100%;box-sizing:border-box}
+  .ex2-atlas__tools label,.ex2-atlas__tools output{min-width:0;max-width:100%;overflow-wrap:anywhere;margin-left:0}
+}
+/* WCAG reflow: allow the two preserved site-context links to wrap at 200% zoom. */
+@media(max-width:760px){
+  .ex2-top{flex-wrap:wrap;justify-content:center}
+  .ex2-top>a{min-width:0;overflow-wrap:anywhere}
+  .ex2-top>a:last-child{max-width:100%;text-align:center}
+}
+/* Extreme effective widths, including 390px at 200% page zoom: the paired
+   chronology rail must reflow instead of pushing its GMT labels offscreen. */
+@media(max-width:300px){
+  .ex2-rail ol{grid-template-columns:1fr}
+  .ex2-rail a{grid-template-columns:26px minmax(0,1fr);gap:10px;overflow-wrap:anywhere}
+}
+@media(max-width:420px){.ex2-rail ol{grid-template-columns:1fr}.ex2-rail a{grid-template-columns:30px minmax(0,1fr);gap:10px;overflow-wrap:anywhere}}
