@@ -278,14 +278,17 @@ def invoice_twins(source,folder):
 def spend_map(source,folder):
     """Expose source rows, vendor collisions and the exact spike baseline."""
     from .spend_analysis import summarize_spend
-    records=table(source,("vendor","amount","date"),("category",))
+    records, source_sha256=table(source,("vendor","amount","date"),("category",),
+                                include_digest=True)
     rows=summarize_spend(
         records, normalize_vendor=key, parse_date=parse_date,
-        parse_money=money, format_money=dollars)
+        parse_money=money, format_money=dollars,
+        source_sha256=source_sha256)
     return [save(folder,"spend-map",(
         "vendor_key","month","category","amount","flag",
         "vendor_month_total","baseline_median","history_months",
-        "source_rows","source_vendor_labels","vendor_label_variants"
+        "source_rows","source_vendor_labels","vendor_label_variants",
+        "source_sha256"
     ),rows)]
 
 def policy_delta(old,new,folder):
