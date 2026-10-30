@@ -41,7 +41,9 @@ class Library:
         # Parallel contributors add sources through their own fragment file so the shared register never conflicts.
         for frag in sorted((root / "sources" / "fragments").glob("*.json")):
             for s in load_json(frag)["sources"]:
-                if s["id"] in self.register:
+                existing = self.register.get(s["id"])
+                # A fragment may upgrade an unverified placeholder from the register, never redefine a verified source.
+                if existing is not None and existing.get("verified_on"):
                     raise ValueError(f"duplicate source id '{s['id']}' in {frag.name}")
                 self.register[s["id"]] = s
         self.css = (root / "assets" / "preparedness.css").read_text(encoding="utf-8")

@@ -30,6 +30,18 @@ class LibraryTests(unittest.TestCase):
             else:
                 self.assertEqual(st, "not-started")
 
+    def test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source(self):
+        frag = ROOT / "sources" / "fragments" / "_upgrade_test.json"
+        entry = '{"sources": [{"id": "nchfp-jerky", "title": "Jerky", "url": "https://nchfp.uga.edu/how/dry/recipes/jerky", "kind": "extension", "publisher": "NCHFP", "verified_on": "2026-10-29", "supports": "x"}]}'
+        frag.write_text(entry, encoding="utf-8")
+        try:
+            lib = build.Library()
+            self.assertEqual(lib.register["nchfp-jerky"]["verified_on"], "2026-10-29")
+            errors, _ = validate.validate(lib)
+            self.assertFalse([e for e in errors if "duplicate url" in e], errors)
+        finally:
+            frag.unlink()
+
     def test_register_fragments_cannot_duplicate_ids(self):
         frag = ROOT / "sources" / "fragments" / "_dup_test.json"
         frag.write_text('{"sources": [{"id": "cdc-water-store", "title": "x", "url": "https://example.gov/x", "kind": "regulator", "publisher": "x", "verified_on": "2026-10-29", "supports": "x"}]}', encoding="utf-8")
