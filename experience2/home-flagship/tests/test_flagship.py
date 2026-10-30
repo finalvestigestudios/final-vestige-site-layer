@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {
     "finalvestige.com", "www.nasa.gov", "commons.wikimedia.org",
-    "digitalcollections.nypl.org"
+    "digitalcollections.nypl.org", "www.rmg.co.uk", "www.historymuseum.ca"
 }
 
 class Audit(HTMLParser):
@@ -52,8 +52,8 @@ class HomepageContract(unittest.TestCase):
     def test_no_js_every_evidence_remains(self):
         self.assertEqual(len([a for tag, a in self.dom.attrs if "data-fv-case" in a]), 3)
         self.assertEqual(self.dom.hidden_cases, [])
-        self.assertEqual(self.dom.tags.count("details"), 3)
-        self.assertEqual(self.dom.tags.count("summary"), 3)
+        self.assertEqual(self.dom.tags.count("details"), 4)
+        self.assertEqual(self.dom.tags.count("summary"), 4)
         self.assertIn('class="fv-hf__case-choice-group" data-fv-case-buttons hidden', self.html)
         self.assertIn('class="fv-hf__studio-controls" hidden', self.html)
 
