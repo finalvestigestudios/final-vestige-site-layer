@@ -220,6 +220,15 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         missing_usage = set(order) - set(meta.get("source_use", {}))
         if missing_usage:
             errors.append(f"{p}: cited source lacks article-specific source_use reading-scope note: {sorted(missing_usage)}")
+        # A present but empty/non-string statement is not a reading-scope
+        # explanation. Prevent blank notes from being treated as source QA.
+        blank_usage = [
+            sid for sid in order if sid in meta.get("source_use", {})
+            and (not isinstance(meta["source_use"][sid], str)
+                 or not meta["source_use"][sid].strip())
+        ]
+        if blank_usage:
+            errors.append(f"{p}: cited source has blank or invalid article-specific source_use note: {sorted(blank_usage)}")
         extra = set(meta.get("source_use", {})) - set(order)
         if extra:
             errors.append(f"{p}: source_use lists sources never cited in the body: {sorted(extra)}")
