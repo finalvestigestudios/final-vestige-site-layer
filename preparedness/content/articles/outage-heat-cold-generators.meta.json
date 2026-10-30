@@ -13,7 +13,7 @@
     "Extreme heat and cold"
   ],
   "updated": "2026-10-30",
-  "last_checked": "2026-10-29",
+  "last_checked": "2026-10-30",
   "recheck": "Immediately if the CDC, CPSC or Ready.gov revise any page below; otherwise at the next quarterly source sweep, and before each winter and summer season.",
   "status": {
     "editorial": "drafted",
@@ -46,6 +46,7 @@
     "shelter-ready-evacuation": "Never connect a generator to the home's electrical system; generators outside during evacuation and return.",
     "shelter-ready-hurricanes": "Downed power lines can electrically charge floodwater.",
     "shelter-ready-disabilities": "Priority power restoration; medical-equipment backups; extreme-heat risks for people with disabilities; support networks.",
-    "shelter-ready-shelter": "Many shelters accept only service animals."
+    "shelter-ready-shelter": "Many shelters accept only service animals.",
+    "shelter-fema-power-outage-sheet": "FEMA December 2023 sheet: 20 ft from any building openings; no gas stovetop, oven, grill or dryer for heat; vehicle never running in a garage; CO alarms on every level and near sleeping areas; medication wording (replace, call doctor or pharmacist, use only until new supply)."
   }
 }

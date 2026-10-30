@@ -12,7 +12,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Residents could have less than 2 minutes to escape once the smoke alarm sounds; draw a map with all doors and windows; two ways out of every room; keep doors and windows unblocked; outside meeting place in front of the home; practice with everyone; use the test button to start the drill; high-rise and condominium steps (leave and close the door, pull the alarm, use stairs not elevator unless directed, stay at the meeting place, tell the fire department if someone is trapped).",
-      "notes": "Upgraded from the register placeholder. Page shows no published or updated date. Handouts and pictographs on the page were not opened."
+      "notes": "Upgraded from the register placeholder. Page shows no published or updated date. Handouts and pictographs on the page were not opened. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "cdc-co-generators",
@@ -26,7 +26,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "During a power outage never use generators, grills or other gasoline-, propane- or charcoal-burning devices inside the home, garage or carport or near doors, windows or vents; CO is odorless and colorless; 'kills more than 500 Americans each year'; do not heat the home with a gas oven; keep generators at least 20 ft from doors, windows and vents; 800-CDC-INFO.",
-      "notes": "Upgraded from the register placeholder. The visible 'Updated' date (Nov 1, 2023) precedes the 'Published' date (May 15, 2024); both recorded as shown. The '500 a year' figure differs from the same agency's CO basics page ('more than 400', non-fire); see shelter-cdc-co-basics."
+      "notes": "Upgraded from the register placeholder. The visible 'Updated' date (Nov 1, 2023) precedes the 'Published' date (May 15, 2024); both recorded as shown. The '500 a year' figure differs from the same agency's CO basics page ('more than 400', non-fire); see shelter-cdc-co-basics. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cdc-power-outage",
@@ -39,7 +39,8 @@
       "reviewed": "2026-08-26",
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "CO rules for generators (20 ft, longer extension cord, battery CO detector, never in basement, garage or enclosed structure even with doors open unless professionally installed and vented), never charcoal grills, camp stoves or lanterns indoors, never run a vehicle in a garage; never heat with a gas range or oven; CO symptoms and 911 / Poison Control 1-800-222-1222; food (4 h fridge, 48 h full freezer) and refrigerated-medication guidance; heat stroke; no air conditioning options; hypothermia below 95 F; heat sources; flashlights over candles; do not siphon gasoline."
+      "supports": "CO rules for generators (20 ft, longer extension cord, battery CO detector, never in basement, garage or enclosed structure even with doors open unless professionally installed and vented), never charcoal grills, camp stoves or lanterns indoors, never run a vehicle in a garage; never heat with a gas range or oven; CO symptoms and 911 / Poison Control 1-800-222-1222; food (4 h fridge, 48 h full freezer) and refrigerated-medication guidance; heat stroke; no air conditioning options; hypothermia below 95 F; heat sources; flashlights over candles; do not siphon gasoline.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cdc-co-basics",
@@ -53,7 +54,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "CO is odorless and colorless; symptoms are flu-like; people who are sleeping or intoxicated can die before symptoms; infants, older adults and people with chronic heart disease, anemia or breathing problems more likely to get sick; more than 400 non-fire CO deaths a year; detectors near every sleeping area, check batteries when clocks change, replace per manufacturer or every 5 years; annual servicing of fuel-burning appliances and chimney; never burn charcoal or use a camp stove or flameless chemical heater indoors; generator rules; vehicle in garage.",
-      "notes": "Detector-placement wording differs from CPSC and Ready.gov; see the cluster notes."
+      "notes": "Detector-placement wording differs from CPSC and Ready.gov; see the cluster notes. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cpsc-co",
@@ -67,7 +68,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "More than 200 US deaths a year from non-fire CO linked to consumer products, more than 100 of them from portable generators; one portable generator can produce as much CO as hundreds of cars; never use portable generators inside homes or garages even with doors and windows open; outside only, at least 20 ft from homes with exhaust facing away; CO alarms on every level and outside sleeping areas, interconnected best; symptoms; if suspected get outside to fresh air, then call 911.",
-      "notes": "No page date shown. Page is marked noindex in its metadata and carries current recall notices in its sidebar; those were not used."
+      "notes": "No page date shown. Page is marked noindex in its metadata and carries current recall notices in its sidebar; those were not used. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cpsc-heaters",
@@ -81,7 +82,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "People die each year from CO from portable heaters, lanterns and stoves used in tents, campers and vehicles; never use fuel-burning portable heaters or lanterns while sleeping in enclosed areas; risk is higher at altitude; CO poisoning is easily mistaken for cold or flu; kerosene heaters take only water-clear 1-K grade kerosene, never gasoline.",
-      "notes": "No page date shown. The linked CPSC safety-alert PDFs were not opened."
+      "notes": "No page date shown. The linked CPSC safety-alert PDFs were not opened. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cdc-winter-storm",
@@ -94,7 +95,8 @@
       "reviewed": "2026-08-25",
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Space heater rules (automatic shut-off, 3 ft clearance, never cover, no extension cords); combustion heaters only if vented outside; proper ventilation if a kerosene heater must be used; use only the fuel the heater is designed for; generator placement and cords; conserving heat; babies under one never sleep in a cold room, soft-bedding warning; older adults make less body heat; frozen pipes; hypothermia and frostbite signs; stranded-in-car steps; alcohol and caffeine."
+      "supports": "Space heater rules (automatic shut-off, 3 ft clearance, never cover, no extension cords); combustion heaters only if vented outside; proper ventilation if a kerosene heater must be used; use only the fuel the heater is designed for; generator placement and cords; conserving heat; babies under one never sleep in a cold room, soft-bedding warning; older adults make less body heat; frozen pipes; hypothermia and frostbite signs; stranded-in-car steps; alcohol and caffeine.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cdc-heat",
@@ -108,7 +110,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Fans only when indoor temperature is under 90 F; find air conditioning via 2-1-1, cooling-center listings, health department or emergency management; hydration; symptoms of overheating; check on neighbors and pets; medicines and power outages; higher-risk groups (children, older adults, pregnancy, heart disease, asthma).",
-      "notes": "Fetched from https://www.cdc.gov/extreme-heat/prevention/index.html, which redirects to this URL."
+      "notes": "Fetched from https://www.cdc.gov/extreme-heat/prevention/index.html, which redirects to this URL. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-power-outages",
@@ -121,7 +123,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Generator and fuel outdoors at least 20 ft from windows, doors and attached garages; CO detectors with battery backup on every level; keep generator dry; heavy-duty cords; let it cool before refueling; no gas stove or oven for heat; plan for medicines and power-dependent medical devices; check local officials for heating and cooling locations; go to a community location with power if heat or cold is extreme; fridge about 4 h and full freezer about 48 h; inventory electric-dependent items."
+      "supports": "Generator and fuel outdoors at least 20 ft from windows, doors and attached garages; CO detectors with battery backup on every level; keep generator dry; heavy-duty cords; let it cool before refueling; no gas stove or oven for heat; plan for medicines and power-dependent medical devices; check local officials for heating and cooling locations; go to a community location with power if heat or cold is extreme; fridge about 4 h and full freezer about 48 h; inventory electric-dependent items.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-heat",
@@ -135,7 +138,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Extreme heat definition (above 90 F for two to three days); do not rely on a fan as the primary cooling device; cooling centers; cool showers; check on older adults and neighbors; heat stroke signs and response (call 911, cool the person, wet cloths or ice pack on head, neck, armpits and groin); heat exhaustion response; LIHEAP; summer-break family planning.",
-      "notes": "Ready.gov gives 'above 103 F' as a heat-stroke sign; CDC's power-outage page says body temperature can rise to 106 F or higher within 10 to 15 minutes. Different statements, not a contradiction, but flagged."
+      "notes": "Ready.gov gives 'above 103 F' as a heat-stroke sign; CDC's power-outage page says body temperature can rise to 106 F or higher within 10 to 15 minutes. Different statements, not a contradiction, but flagged. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-winter-weather",
@@ -148,7 +151,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Winter storm warning, watch and advisory definitions and typical lead times; storms can cut heat, power and communications; CO detectors with battery backup; generators and grills outdoors only; never heat with a gas stovetop or oven; stay off roads; frostbite and hypothermia signs and first actions (no massage or heating pad for frostbite); LIHEAP."
+      "supports": "Winter storm warning, watch and advisory definitions and typical lead times; storms can cut heat, power and communications; CO detectors with battery backup; generators and grills outdoors only; never heat with a gas stovetop or oven; stay off roads; frostbite and hypothermia signs and first actions (no massage or heating pad for frostbite); LIHEAP.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-home-fires",
@@ -161,13 +165,14 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "A fire can become life-threatening in two minutes; smoke alarm maintenance; two ways out of each room; windows, screens and security bars; practice in the dark; teach children not to hide from firefighters; wheelchair and walker doorways; sleep with bedroom doors closed; feel doors before opening; crawl low; what to do if you cannot get out; stop, drop and roll; portable-heater and kerosene-heater tips; never use a range or oven to heat; generators never indoors."
+      "supports": "A fire can become life-threatening in two minutes; smoke alarm maintenance; two ways out of each room; windows, screens and security bars; practice in the dark; teach children not to hide from firefighters; wheelchair and walker doorways; sleep with bedroom doors closed; feel doors before opening; crawl low; what to do if you cannot get out; stop, drop and roll; portable-heater and kerosene-heater tips; never use a range or oven to heat; generators never indoors.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-nfpa-escape",
       "title": "Home Fire Escape Planning",
       "publisher": "National Fire Protection Association",
-      "kind": "regulator",
+      "kind": "nonprofit",
       "url": "https://www.nfpa.org/education-and-research/home-fire-safety/escape-planning",
       "published": null,
       "updated": null,
@@ -175,13 +180,13 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "One or two minutes to escape; alarms in every sleeping room, outside each sleeping area and on every level; floor plan with two ways out of each room; outside meeting place a safe distance in front; assign helpers for infants, older adults and people with mobility limits, with a backup; security-bar release devices; practice twice a year; check whether children wake to the alarm; escape ladders; sealing yourself in; high-rise residents may be safer defending in place; once out, stay out.",
-      "notes": "NFPA is a nonprofit standards and education body, not a government agency. 'regulator' is the closest allowed kind value; the lead may want a separate kind. Page shows no date."
+      "notes": "NFPA is a nonprofit standards and education body, not a government agency. Page shows no date. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-nfpa-smoke-alarms",
       "title": "Smoke Alarm Information",
       "publisher": "National Fire Protection Association",
-      "kind": "regulator",
+      "kind": "nonprofit",
       "url": "https://www.nfpa.org/education-and-research/home-fire-safety/smoke-alarms",
       "published": null,
       "updated": null,
@@ -189,7 +194,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Placement (every sleeping room, outside sleeping areas, every level, 10 ft from the stove); interconnected alarms; monthly testing; replace the whole unit 10 years after manufacture; meaning of three beeps, single chirp and continued chirping; alarms for people who are deaf or hard of hearing (strobes, bed shakers).",
-      "notes": "Nonprofit standards body, not a government agency (see shelter-nfpa-escape). The page states that working alarms cut the risk of dying in a home fire both 'by 60 percent' and 'in half'; this guide quotes neither figure."
+      "notes": "Nonprofit standards body, not a government agency (see shelter-nfpa-escape). The page states that working alarms cut the risk of dying in a home fire both 'by 60 percent' and 'in half'; this guide quotes neither figure. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-shelter",
@@ -202,7 +207,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Three meanings of 'shelter' (stay at home, mass care shelter, shelter in place); follow local authorities; mass care shelter points (bring your kit, confined space, service animals accepted, many shelters and hotels do not allow pets, text SHELTER and ZIP to 43362); sheltering in place steps and 'sealing a room' as a temporary measure needing pre-planning."
+      "supports": "Three meanings of 'shelter' (stay at home, mass care shelter, shelter in place); follow local authorities; mass care shelter points (bring your kit, confined space, service animals accepted, many shelters and hotels do not allow pets, text SHELTER and ZIP to 43362); sheltering in place steps and 'sealing a room' as a temporary measure needing pre-planning.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-evacuation",
@@ -215,7 +221,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Know your risks, destinations, zones and routes; go-bag; several destinations in different directions; pets; route may be on foot; fuel (full tank when evacuation likely, half tank at all times); one car per family; leave early; tell the out-of-state contact where you are going; leave a note; check on neighbors needing a ride; no shortcuts; after an evacuation check with officials before returning; generators outdoors only and never connected to the home's electrical system."
+      "supports": "Know your risks, destinations, zones and routes; go-bag; several destinations in different directions; pets; route may be on foot; fuel (full tank when evacuation likely, half tank at all times); one car per family; leave early; tell the out-of-state contact where you are going; leave a note; check on neighbors needing a ride; no shortcuts; after an evacuation check with officials before returning; generators outdoors only and never connected to the home's electrical system.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-tornadoes",
@@ -228,7 +235,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Warning actions; FEMA safe room or ICC 500 storm shelter, otherwise a small interior windowless room or basement on the lowest level of a sturdy building; cover head and neck; vehicle guidance ('no safe option'); text rather than call afterward."
+      "supports": "Warning actions; FEMA safe room or ICC 500 storm shelter, otherwise a small interior windowless room or basement on the lowest level of a sturdy building; cover head and neck; vehicle guidance ('no safe option'); text rather than call afterward.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-hurricanes",
@@ -241,7 +249,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Storm surge historically the leading cause of hurricane deaths; know your evacuation zone and leave immediately if told to in a mandatory zone; interior room or storm shelter for wind; highest level if trapped by flooding, never a closed attic; six inches and one foot of moving water; hurricanes are not just a coastal problem."
+      "supports": "Storm surge historically the leading cause of hurricane deaths; know your evacuation zone and leave immediately if told to in a mandatory zone; interior room or storm shelter for wind; highest level if trapped by flooding, never a closed attic; six inches and one foot of moving water; hurricanes are not just a coastal problem.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-floods",
@@ -254,7 +263,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Floods are the most common US disaster; flash floods can come without warning; 'depending on the type of flooding' evacuate, move to higher ground or a higher floor, or stay where you are; Turn Around, Don't Drown; never drive around barricades; stay in a car trapped in moving water and climb out only if water rises inside; highest level, not a closed attic; homeowner's policies do not cover flooding and NFIP policies typically take up to 30 days."
+      "supports": "Floods are the most common US disaster; flash floods can come without warning; 'depending on the type of flooding' evacuate, move to higher ground or a higher floor, or stay where you are; Turn Around, Don't Drown; never drive around barricades; stay in a car trapped in moving water and climb out only if water rises inside; highest level, not a closed attic; homeowner's policies do not cover flooding and NFIP policies typically take up to 30 days.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-wildfires",
@@ -267,7 +277,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Know evacuation zone and evacuate immediately when told to; plan for office, school and daycare; designate a closed-off room with a portable air cleaner for smoke; if trapped call 911 but response may be delayed or impossible; if not ordered out but smoky stay in a safe location or go to a lower-smoke community building; return only when authorities say it is safe."
+      "supports": "Know evacuation zone and evacuate immediately when told to; plan for office, school and daycare; designate a closed-off room with a portable air cleaner for smoke; if trapped call 911 but response may be delayed or impossible; if not ordered out but smoky stay in a safe location or go to a lower-smoke community building; return only when authorities say it is safe.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-hazmat",
@@ -281,7 +292,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Signs of a chemical release; some toxic chemicals are odorless; instructions differ by threat and 'sometimes it may be safer to shelter inside your home, other times it may be safer to evacuate'; evacuation, stay-indoors and outside-when-it-happens steps; do not leave shelter, even to help others, until authorities say it is safe; self-decontamination when medical help is not available.",
-      "notes": "Older page (last updated April 2023)."
+      "notes": "Older page (last updated April 2023). Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-plan",
@@ -295,7 +306,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Family may not be together; know how you'll contact one another and reconnect; familiar, easy-to-find meeting place; five discussion questions (alerts, shelter plan, evacuation route, communication plan, kit); household-needs checklist (ages, medical, disabilities and access and functional needs, languages, pets, school-aged children); document and practice the plan.",
-      "notes": "Fetched from https://www.ready.gov/make-a-plan, which redirects to this URL."
+      "notes": "Fetched from https://www.ready.gov/make-a-plan, which redirects to this URL. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-plan-locations",
@@ -308,7 +319,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Plan for the places the household goes regularly (school and daycare among them); get the organization's alerts, evacuation and shelter-in-place plans; neighbors, condominiums and apartments (who checks on elderly or disabled neighbors; backup plans for children if you cannot get home); high-rise and vehicle guidance."
+      "supports": "Plan for the places the household goes regularly (school and daycare among them); get the organization's alerts, evacuation and shelter-in-place plans; neighbors, condominiums and apartments (who checks on elderly or disabled neighbors; backup plans for children if you cannot get home); high-rise and vehicle guidance.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-ready-plan-form",
@@ -322,7 +334,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Fields of Ready.gov's family emergency communication plan: household, family members (mobile, other number or social media, email, medical information), schools, childcare, caregivers and workplaces with hotline and pick-up plan, emergency contacts, meeting places, medical information including assistive devices; stated that information entered is not saved, stored or shared by any government agency.",
-      "notes": "Fetched from the old PDF address https://www.ready.gov/sites/default/files/2021-04/family-emergency-communication-plan.pdf, which now redirects to this web form; the PDF itself was not read. The page's displayed 'Last Updated' date (10/30/2026) is later than the day it was read and is probably dynamic; recorded as shown. The register placeholder ready-are-you-ready was NOT upgraded."
+      "notes": "Fetched from the old PDF address https://www.ready.gov/sites/default/files/2021-04/family-emergency-communication-plan.pdf, which now redirects to this web form; the PDF itself was not read. The page's displayed 'Last Updated' date (10/30/2026) is later than the day it was read and is probably dynamic; recorded as shown. The register placeholder ready-are-you-ready was NOT upgraded. Read: the web form's text (field labels) only. human_link_check remains false."
     },
     {
       "id": "shelter-ready-disabilities",
@@ -335,7 +347,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Support network and accessible evacuation transportation; voluntary registries kept by some city and county emergency management agencies; priority power restoration lists; assistive-technology and mobility-equipment backups; guidance for people who are deaf or hard of hearing, blind or low vision, with speech or intellectual or developmental disabilities, or with Alzheimer's and dementia; extreme-heat risks for people with spinal cord injuries, certain medications, cognitive disabilities."
+      "supports": "Support network and accessible evacuation transportation; voluntary registries kept by some city and county emergency management agencies; priority power restoration lists; assistive-technology and mobility-equipment backups; guidance for people who are deaf or hard of hearing, blind or low vision, with speech or intellectual or developmental disabilities, or with Alzheimer's and dementia; extreme-heat risks for people with spinal cord injuries, certain medications, cognitive disabilities.",
+      "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-fcc-comms",
@@ -349,7 +362,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Congestion on phone networks in emergencies; limit non-emergency calls; try text messaging, which often goes through when calls do not; try multiple services; wait 10 seconds before redialing; backup power; designate an out-of-area person as central contact and make sure everyone knows who to contact; keep a corded phone that does not depend on electricity.",
-      "notes": "No date on the page and its disability section uses dated technology (pagers, PDAs). Used only for the general network-congestion points."
+      "notes": "No date on the page and its disability section uses dated technology (pagers, PDAs). Used only for the general network-congestion points. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-cdc-reunification",
@@ -363,7 +376,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Reunification defined; faster reunion gives better outcomes for children; about 69 million children are in school or childcare on a weekday; a family plan has phone numbers, emergency contacts and multiple meeting places; schools and childcare have their own plans; contact cards for school bags; help older children memorize names and numbers; learn school drill procedures from the principal; NCMEC hotline 1-800-THE-LOST; Hurricane Katrina and Rita figures.",
-      "notes": "The page's 'Reviewed' date (Jan 6, 2021) is earlier than its 'Published' date (Nov 15, 2024); recorded as shown."
+      "notes": "The page's 'Reviewed' date (Jan 6, 2021) is earlier than its 'Published' date (Nov 15, 2024); recorded as shown. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-co-oss-reunification",
@@ -377,7 +390,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Reunification is a slow, careful process and not a normal pick-up; one state's guidance to parents: stay home and do not rush the school, wait for the school's notification of time and place, bring photo ID and a pen, limit calls and texts to keep networks open.",
-      "notes": "State-specific (Colorado). Publisher taken from the site, which names itself 'The Office of School Safety'; the parent department was not confirmed. Other states and districts differ. No page date shown."
+      "notes": "State-specific (Colorado). Publisher taken from the site, which names itself 'The Office of School Safety'; the parent department was not confirmed. Other states and districts differ. No page date shown. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
     },
     {
       "id": "shelter-nws-nwr",
@@ -391,7 +404,35 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "NWR broadcasts official NWS warnings, watches and forecasts 24 hours a day; works with the Emergency Alert System; also carries non-weather hazard information including chemical releases; needs a special receiver; some transmitters are out of service and the county coverage listing should be checked.",
-      "notes": "Page shows live outage notices; no page date."
+      "notes": "Page shows live outage notices; no page date. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+    },
+    {
+      "id": "shelter-fema-power-outage-sheet",
+      "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "published": null,
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "Two-page FEMA fact sheet: generators, camp stoves and charcoal grills outdoors at least 20 ft from any building openings like windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; do not use gas stoves or candles to heat; do not leave a vehicle running in a garage even with the door open and run a vehicle used for power or warmth in a well-ventilated place outside; smoke and CO alarms with battery backup (if hardwired) on every level and near sleeping areas; talk to your doctor about medical devices and storing medications; replace refrigerated medications if the power is out for a day or more unless the label says otherwise, call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature, and use the medicine only until you have a new supply; refrigerator about 4 hours and full freezer about 48 hours; communications plan with a paper copy; go to an alternate location for heat or cooling if safe.",
+      "notes": "Document shows 'FEMA V-1008/December 2023'; PDF metadata title 'BE PREPARED FOR A POWER OUTAGE', author FEMA ICPD, created 2023-12-29. No publication field on the page, so published/updated/reviewed are null. Read: both pages, in full. The PDF was downloaded by a web-fetch subagent after Firecrawl credits ran out, and the text was extracted locally with PyMuPDF; the subagent's own extraction could not read it. Supersedes older Ready.gov wording on refrigerated medication ('discard'). human_link_check remains false."
+    },
+    {
+      "id": "shelter-usfa-high-rise",
+      "title": "Protecting People Who Live or Work in High-Rises",
+      "publisher": "U.S. Fire Administration",
+      "kind": "regulator",
+      "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+      "published": "2022-01-12",
+      "updated": null,
+      "reviewed": "2026-05-01",
+      "verified_on": "2026-10-30",
+      "human_link_check": false,
+      "supports": "Default is to evacuate by the nearest stairs: pull the alarm or shout fire, call 911, tell building staff, close doors behind you, no elevators; keep stair and corridor doors closed and never propped open (pressurized stairwells work best with doors closed); shelter in place is for people who cannot self-evacuate (call 911, stay in a room with the door closed and seal cracks with a wet towel, or wait on the stair landing if clear or nearly clear of smoke); not all tall buildings meet modern standards; learn exits and practice the route.",
+      "notes": "Page shows 'Posted: Jan. 12, 2022' and 'Page last reviewed: May 1, 2026'. Read: the whole page text, but through a web-fetch subagent's extraction (about 19,000 characters, no sign of truncation), not in Firecrawl or a browser, because Firecrawl credits ran out; quotes were returned verbatim by the tool but not independently checked against the live HTML. The handout PDF, social cards and pictographs were not opened. human_link_check remains false."
     }
   ]
 }

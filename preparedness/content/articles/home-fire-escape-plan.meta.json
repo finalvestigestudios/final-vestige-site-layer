@@ -13,7 +13,7 @@
     "Rehearsal"
   ],
   "updated": "2026-10-30",
-  "last_checked": "2026-10-29",
+  "last_checked": "2026-10-30",
   "recheck": "Immediately if USFA, NFPA or Ready.gov revise their escape-planning guidance; otherwise at the next quarterly source sweep.",
   "status": {
     "editorial": "drafted",
@@ -38,6 +38,7 @@
     "shelter-ready-disabilities": "Neighbors who can assist with building evacuation; backup mobility devices.",
     "shelter-ready-plan-locations": "Ask for building alarm, evacuation and shelter-in-place plans; high-rise exits, elevators, stairwells.",
     "shelter-cdc-power-outage": "Flashlights over candles; candles away from flammables and never unattended.",
-    "shelter-ready-plan": "Household plan questions including shelter, evacuation and communication; practice with the household."
+    "shelter-ready-plan": "Household plan questions including shelter, evacuation and communication; practice with the household.",
+    "shelter-usfa-high-rise": "USFA high-rise page: evacuate by stairs by default; shelter in place only for those who cannot self-evacuate; keep stair doors closed; no elevators."
   }
 }
