@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-30",
+  "status": "SOURCE_AND_MOCK_QA_ONLY—NOT_RENDERED_BROWSER_QA",
+  "tested_code_sha": "b74ac0690c9fe0cb1afee0c1e5af4ed90cb3884d",
+  "executed_checks": {
+    "source_contract_and_mock_interaction": {
+      "count": 34,
+      "passed": 34,
+      "failed": 0,
+      "details": "34/34 direct source, manifest, optimized image delivery markup, accessibility and V8 mocked DOM interaction checks passed on exact code SHA b74ac0690c9fe0cb1afee0c1e5af4ed90cb3884d. Includes click/keyboard focus and live announcement, three visual directions, responsive srcset and static no-JS source content. These are not real browser screenshots."
+    },
+    "fault_injection": {
+      "count": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": "2/2 V8 adversarial tests passed on unchanged flagship.js: missing Element.closest support and one-time aria-pressed write exception preserved all three source panels in static readable state. JS implementation unchanged since these tests."
+    },
+    "python_unit_suite": {
+      "authored": 8,
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "node_check": {
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "real_chromium": {
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "axe": {
+      "executed": false,
+      "result": "NOT_RUN"
+    },
+    "real_images": {
+      "verified": false
+    },
+    "lighthouse_cwv": {
+      "measured": false
+    }
+  },
+  "external_source_review": {
+    "wordpress_post_ids_verified": [
+      434,
+      433,
+      621
+    ],
+    "nasa_original": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+    "nasa_policy": "https://www.nasa.gov/nasa-brand-center/",
+    "franklin_original": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+    "franklin_license_marking": "Public Domain Mark 1.0 on Wikimedia Commons original file page",
+    "nypl_original": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+    "nypl_external_text_read": "HTTP 403",
+    "nypl_rights_status": "OPEN"
+  },
+  "release_gates": {
+    "founder_visual_direction_selected": false,
+    "wordpress_staging_tested": false,
+    "media_rights_complete": false,
+    "independent_QD_exact_SHA": false,
+    "hosted_CI_green": false,
+    "production_deployed": false
+  },
+  "constraints": {
+    "frozen_pr49_unchanged": true,
+    "apollo_pr158_unchanged": true,
+    "live_wordpress_page6_unchanged": true,
+    "focus_fieldbook_list_unchanged": true,
+    "margins72_unchanged": true,
+    "no_new_paid_SaaS": true,
+    "no_inspire3_links": true
+  },
+  "optimization": {
+    "wordpress_media_id": 1258,
+    "original_image_dimensions": [
+      5667,
+      3831
+    ],
+    "original_image_bytes": 5553669,
+    "delivery": "WordPress-listed Jetpack responsive 768/1024/1536 width derivatives; default 1024x692; full map object-fit:contain",
+    "measured_variant_payload_bytes": false,
+    "cdn_load_verified": false
+  },
+  "wordpress_media_audit": {
+    "nasa": {
+      "id": 473,
+      "width": 1041,
+      "height": 810,
+      "bytes": 78346
+    },
+    "franklin": {
+      "id": 474,
+      "width": 960,
+      "height": 1526,
+      "bytes": 466043
+    },
+    "nypl": {
+      "id": 1258,
+      "width": 5667,
+      "height": 3831,
+      "bytes": 5553669
+    }
+  }
+}
