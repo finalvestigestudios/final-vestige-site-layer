@@ -1,0 +1,51 @@
+{
+  "n": 12,
+  "slug": "outage-heat-cold-generators",
+  "title": "Heat, cold and generator safety in an outage",
+  "h1": "Heat, cold and generator safety in a power outage",
+  "dek": "Carbon monoxide is the hazard that kills quietly. What the CDC, the CPSC and FEMA say about generators, heaters, alarms, staying warm and staying cool, where the pages disagree, and where they say nothing at all.",
+  "description": "Outage safety from the CDC, CPSC and Ready.gov: generators outdoors and 20 feet away, CO alarms, no indoor grills or gas-oven heat, plus cold and heat illness signs.",
+  "section": "shelter-power",
+  "track": "modern",
+  "tags": [
+    "Carbon monoxide",
+    "Generators",
+    "Extreme heat and cold"
+  ],
+  "updated": "2026-10-29",
+  "last_checked": "2026-10-29",
+  "recheck": "Immediately if the CDC, CPSC or Ready.gov revise any page below; otherwise at the next quarterly source sweep, and before each winter and summer season.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "shelter-or-evacuate",
+    "home-fire-escape-plan",
+    "family-communication-plan",
+    "making-water-safer",
+    "two-week-water-storage"
+  ],
+  "source_use": {
+    "cdc-co-generators": "Never use generators, grills or other fuel-burning devices inside the home, garage or carport or near doors, windows or vents; CO figure ('more than 500 Americans each year'); stay elsewhere if the home is damaged.",
+    "shelter-cdc-power-outage": "Generator, pressure washer and engine rules (20 ft, long extension cord, never in basement or garage even with doors open unless professionally installed and vented); never charcoal grills, camp stoves or lanterns indoors; no gas range or oven for heat; CO symptoms, 911 and Poison Control; heat stroke and air-conditioning options; hypothermia; backup heat sources; flashlights over candles; do not siphon gasoline; food and refrigerated-medication guidance.",
+    "shelter-cdc-co-basics": "What CO is and who is most at risk; non-fire death and emergency-visit figures; alarm placement and upkeep; annual servicing of heating and chimneys; charcoal and camp-stove warnings; generator and vehicle rules.",
+    "shelter-cpsc-co": "CPSC death figures; one generator can produce as much CO as hundreds of cars; outdoors at least 20 ft with exhaust facing away; alarm placement; get outside to fresh air then call 911.",
+    "shelter-cpsc-heaters": "CO poisoning mistaken for cold or flu; no fuel-burning portable heaters or lanterns while sleeping in enclosed areas; kerosene only water-clear 1-K grade, never gasoline.",
+    "shelter-cdc-winter-storm": "Space-heater and combustion-heater rules; kerosene heater ventilation wording; generator placement and cords; heat conservation; babies and older adults; hypothermia and frostbite signs; frozen pipes; stranded-in-car steps.",
+    "shelter-cdc-heat": "Fan guidance by indoor temperature; finding air conditioning; hydration; symptoms of overheating; medicines.",
+    "shelter-ready-power-outages": "Generator and fuel at least 20 ft from windows, doors and attached garages; CO detectors on every level; keep dry; heavy-duty cords; cool before refueling; no gas oven for heat; medical-device and medicine planning; community location with power; food timings.",
+    "shelter-ready-heat": "Definition of extreme heat; fans; cooling centers; heat stroke and heat exhaustion signs and responses; clothing and activity advice; LIHEAP; pets.",
+    "shelter-ready-winter-weather": "Frostbite and hypothermia first actions; LIHEAP.",
+    "shelter-ready-home-fires": "Portable-heater and kerosene-heater tips; refuel generators outdoors; no stove or oven for heat.",
+    "shelter-ready-evacuation": "Never connect a generator to the home's electrical system; generators outside during evacuation and return.",
+    "shelter-ready-hurricanes": "Downed power lines can electrically charge floodwater.",
+    "shelter-ready-disabilities": "Priority power restoration; medical-equipment backups; extreme-heat risks for people with disabilities; support networks.",
+    "shelter-ready-shelter": "Many shelters accept only service animals."
+  }
+}
