@@ -6,6 +6,7 @@ telemetry, external data, GUI, credentials, or production side effects.
 from __future__ import annotations
 
 import csv
+import hashlib
 import tempfile
 from pathlib import Path
 
@@ -65,6 +66,8 @@ def run_smoke(app_id: str) -> list[Path]:
             _check(checked["baseline_median"] == "10.00"
                    and checked["history_months"] == "3"
                    and checked["source_rows"] == "5", "smoke invariant 31")
+            _check(checked["source_sha256"] == hashlib.sha256(
+                   Path(source).read_bytes()).hexdigest(), "smoke invariant 33")
             collision_input = _csv(root, "spend-collision.csv",
                 ("vendor", "amount", "date"), [
                 ("A-CME", "2", "2026-01-01"),

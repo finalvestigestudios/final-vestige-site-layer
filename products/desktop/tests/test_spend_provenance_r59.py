@@ -33,7 +33,8 @@ def _row(n, vendor="ACME", amount="10.00", month="2026-01-01", category="Parts")
 def _summarize(rows):
     return summarize_spend(rows, normalize_vendor=_normalize,
                            parse_date=date.fromisoformat,
-                           parse_money=_money, format_money=_dollars)
+                           parse_money=_money, format_money=_dollars,
+                           source_sha256="0" * 64)
 
 
 class SpendProvenanceR59(unittest.TestCase):

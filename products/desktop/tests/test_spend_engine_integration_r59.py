@@ -99,6 +99,7 @@ class SpendEngineIntegrationR59(unittest.TestCase):
             "vendor_key", "month", "category", "amount", "flag",
             "vendor_month_total", "baseline_median", "history_months",
             "source_rows", "source_vendor_labels", "vendor_label_variants",
+            "source_sha256",
         ])
 
 
