@@ -25,7 +25,7 @@ class Zen12DraftGuards(unittest.TestCase):
         self.assertIsNone(self.m["affiliate_url"])
         self.assertFalse(self.m["affiliate_approval_verified"])
         self.assertNotIn("href=\"https://affiliates.inspire3.com", self.page)
-        self.assertNotIn("href=\"https://zen12.com/getstarted\" class=\"fvz12__button", self.page)
+        self.assertNotIn('href="https://zen12.com/getstarted"', self.page)
         self.assertIn('data-fv-offer-state="unverified"', self.page)
 
     def test_near_link_disclosure_content(self):
