@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.4.0 — FVSL-VESTIGE-ASSEMBLY-HOME-002 (continued, same candidate, pre-merge)
+
+- **Signature Alignment redesigned as a genuine evidence-discovery interaction**, following a
+  second independent QD finding that the prior fix (which only corrected the self-triggering
+  badge) still left the interaction decorative: the real "why it matters" fact was printed
+  statically below the stage regardless of interaction, so "aligning" the divider changed nothing
+  but a badge and a border. Re-verified against the "Six Miles an Hour" post's own text (re-fetched
+  2026-10-29) that the 1903 map and the 1918 wreck do not share any literal geographic or
+  chronological overlap — the Malbone Street curve did not exist when the map was drawn — so the
+  interaction's copy and mechanic were redesigned around that honest relationship instead of a
+  false "alignment" framing:
+  - The fact panel now stays genuinely concealed (blurred via CSS, never removed from the DOM) until
+    the visitor has explored both ends of the comparison stage, or used the new, always
+    keyboard-reachable "Show the connection" button — the required non-drag alternative. Concealment
+    is added only after a successful JS init, so a no-JS page or a failed init never conceals
+    anything.
+  - The revealed state unblurs the real finding, locks the stage's amber border, and announces the
+    discovery through a new `aria-live="polite"` status region, so assistive technology learns the
+    actual finding, not just a badge state change.
+  - Headline, intro, and fact copy were rewritten to state plainly that the map "isn't a record of
+    the wreck" rather than implying any overlap.
+  - `tests/verify_signature_alignment.py` gained scenario coverage for the initial state, real
+    pointer interaction, keyboard interaction, the button alternative, insufficient/partial
+    exploration correctly NOT triggering discovery, the fail-closed no-concealment path when a
+    required element is missing, and the accessible status announcement.
+- **Harness fidelity fix**: `harness/index.html` and `harness/experience-b.html` previously
+  reproduced "Hidden in the Margins" with only 16 placeholder items under entirely different,
+  non-matching class names (`fv-margin-strip__list`/`__viewport`/`__btn`) and inert, hidden control
+  markup with no JS wired to it — a real preview-fidelity gap flagged by independent QD. Both
+  harness files now use the exact real markup (same classes, all 72 real items, byte-identical to
+  `homepage/page-6-home.blocks.html`) plus a faithful duplicate of the governed Margins Wire
+  payload's own behavior (dynamically created prev/pause/next controls and position readout),
+  instead of a hand-authored approximation.
+- Restated the Alignment interaction's selector contract in `homepage/README.md` to include the
+  four new real hooks (`[data-fv-align-reveal]`, `[data-fv-align-fact]`,
+  `[data-fv-align-reveal-trigger]`, `[data-fv-align-status]`).
+
 ## 0.4.0 — FVSL-VESTIGE-ASSEMBLY-HOME-002
 
 - Adds one new progressive-enhancement payload:

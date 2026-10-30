@@ -372,9 +372,9 @@
 <!-- /wp:html --><!-- wp:html -->
 <section class="fv-align" aria-labelledby="fv-align-title">
   <div class="fv-align__head">
-    <p class="fv-eyebrow">Two Documents, One Night</p>
-    <h2 id="fv-align-title">Drag until the record and the reconstruction agree.</h2>
-    <p class="fv-align__intro">A 1903 railway map and a modern chronology of the 1918 Malbone Street wreck were drawn fifteen years and one investigation apart. Slide the divider until their timelines meet.</p>
+    <p class="fv-eyebrow">Two Documents, Fifteen Years</p>
+    <h2 id="fv-align-title">Compare the system as it was to the system that failed.</h2>
+    <p class="fv-align__intro">A 1903 map of the Brooklyn Rapid Transit system and Final Vestige's own chronology of the 1918 Malbone Street wreck. Slide between them to compare &mdash; then see why we show them side by side.</p>
   </div>
   <div class="fv-align__stage" data-fv-align-stage tabindex="0" role="slider" aria-labelledby="fv-align-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="halfway between the two documents">
     <div class="fv-align__panel fv-align__panel--map">
@@ -388,9 +388,13 @@
     <div class="fv-align__divider" data-fv-align-divider>
       <div class="fv-align__handle" aria-hidden="true">&#8596;</div>
     </div>
-    <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Aligned</span>
+    <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Connection found</span>
   </div>
-  <p class="fv-align__fact">This map shows the Brighton line system fifteen years before a night in 1918, when a dispatcher took a new curve at five times its posted limit. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+  <div class="fv-align__reveal" data-fv-align-reveal>
+    <p class="fv-align__question" data-fv-align-question>A system map from 1903 and a disaster fifteen years later &mdash; why put them side by side? <button type="button" class="fv-align__reveal-btn" data-fv-align-reveal-trigger>Show the connection</button></p>
+    <p class="fv-align__fact" data-fv-align-fact>This 1903 map shows the Brooklyn Rapid Transit system, including the Brighton line, fifteen years before a new tunnel was threaded through it. That tunnel's six-mile-an-hour curve under Malbone Street didn't open until September&nbsp;25, 1918 &mdash; five weeks before a dispatcher took it at five times the limit. This map isn't a record of the wreck. It's a record of how established the system already was when one new, tightly restricted curve was added to it. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+  </div>
+  <p class="fv-align__status" role="status" aria-live="polite" data-fv-align-status></p>
 </section>
 <style>
 .fv-align{background:#0c0d0d;border-bottom:1px solid #2a2927;padding:clamp(56px,7vw,96px) clamp(18px,4vw,44px)}
@@ -412,10 +416,20 @@
 .fv-align--locked .fv-align__handle{border-color:#c7a66c}
 .fv-align__badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:4;font:800 10px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#0c0d0d;background:#c7a66c;padding:7px 12px;border-radius:2px;opacity:0;transition:opacity .3s ease}
 .fv-align__badge[data-revealed="1"]{opacity:1}
-.fv-align__fact{max-width:800px;margin:22px auto 0;color:#aaa49a;font-size:14px;line-height:1.6}
+.fv-align__reveal{max-width:800px;margin:22px auto 0}
+.fv-align__question{display:none;margin:0 0 8px;color:#d8d2c7;font-size:14px;line-height:1.6;flex-wrap:wrap;align-items:center;gap:10px}
+.fv-align__reveal-btn{font:700 11px/1 "Courier Prime",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#0c0d0d;background:#c7a66c;border:1px solid #c7a66c;border-radius:2px;padding:7px 11px;cursor:pointer}
+.fv-align__reveal-btn:hover{background:#e7d3ad}
+.fv-align__reveal-btn:focus-visible{outline:2px solid #f4efe6;outline-offset:2px}
+.fv-align__fact{max-width:800px;margin:0;color:#aaa49a;font-size:14px;line-height:1.6;filter:blur(0);transition:filter .3s ease}
 .fv-align__fact a{color:#c7a66c}
+.fv-align__reveal--pending .fv-align__question{display:flex}
+.fv-align__reveal--pending .fv-align__fact{filter:blur(5px)}
+.fv-align__reveal--pending.fv-align--found .fv-align__fact{filter:blur(0)}
+.fv-align__reveal--pending.fv-align--found .fv-align__question{display:none}
+.fv-align__status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.fv-align__stage{aspect-ratio:4/5}}
-@media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge{transition:none}}
+@media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge,.fv-align__fact{transition:none}}
 </style>
 <!-- /wp:html --><!-- wp:html -->
 <section class="fv-mission">

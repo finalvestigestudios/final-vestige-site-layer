@@ -25,21 +25,28 @@
   @media(max-width:900px){.fv-chrome-nav{display:none}}
 
   /* ================= 0. HIDDEN IN THE MARGINS ================= */
-  .fv-margin-strip{background:var(--fv-bg-3);border-top:1px solid var(--fv-border);border-bottom:1px solid var(--fv-border);color:var(--fv-ink-muted)}
-  .fv-margin-strip__inner{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;max-width:1440px;margin:0 auto;padding:10px clamp(18px,4vw,44px)}
-  .fv-margin-strip__label{white-space:nowrap;color:var(--fv-accent);font:800 10px/1.2 var(--fv-sans);letter-spacing:.16em;text-transform:uppercase}
-  .fv-margin-strip__viewport{position:relative;min-height:46px;overflow:hidden;padding-left:18px;border-left:1px solid var(--fv-border-strong)}
-  .fv-margin-strip__viewport:before{content:"";position:absolute;left:8px;top:50%;width:4px;height:4px;border-radius:999px;background:var(--fv-accent);transform:translateY(-50%);opacity:.9}
-  .fv-margin-strip__list{list-style:none;margin:0;padding:0}
-  .fv-margin-strip__list li{margin:0;padding:8px 0;font-size:13px;line-height:1.4}
-  .fv-margin-strip__list a{color:inherit;text-decoration:underline;text-decoration-color:var(--fv-accent);text-underline-offset:3px}
-  .fv-margin-strip__controls{display:flex;align-items:center;gap:6px}
-  .fv-margin-strip__btn{width:30px;height:30px;border:1px solid var(--fv-border-strong);background:transparent;color:var(--fv-ink-muted);border-radius:2px;cursor:pointer;font-size:13px;line-height:1}
-  .fv-margin-strip__btn:hover,.fv-margin-strip__btn:focus-visible{border-color:var(--fv-accent);color:var(--fv-ink)}
-  .fv-margin-strip__count{font:600 10px/1 var(--fv-mono);color:var(--fv-ink-faint);min-width:52px;text-align:center}
-  /* JS-enhanced state: single-item reveal window with source metadata */
-  .fv-margin-strip[data-fv-enhanced="1"] .fv-margin-strip__list{position:relative;min-height:46px}
-  .fv-margin-strip__meta{display:block;margin-top:3px;color:var(--fv-ink-faint);font:600 10px/1.4 var(--fv-mono);letter-spacing:.03em}
+  /* Base (no-JS) styling matches the real page exactly: a slow CSS-animation */
+  /* rotator over the real, unmodified fv-margin-strip markup (all 72 items). */
+  .fv-margin-strip{background:var(--fv-bg-3);border-top:1px solid var(--fv-border);border-bottom:1px solid var(--fv-border);color:var(--fv-ink-muted);overflow:hidden}
+  .fv-margin-strip__inner{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:18px;max-width:1440px;margin:0 auto;padding:10px clamp(18px,4vw,44px)}
+  .fv-margin-strip__label{white-space:nowrap;color:var(--fv-accent);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+  .fv-margin-strip__window{position:relative;min-height:46px;overflow:hidden;padding-left:18px;border-left:1px solid var(--fv-border-strong)}
+  .fv-margin-strip__window:before{content:"";position:absolute;left:8px;top:50%;width:4px;height:4px;border-radius:999px;background:var(--fv-accent);transform:translateY(-50%);opacity:.9}
+  .fv-margin-strip__item{position:absolute;left:18px;right:0;top:50%;transform:translateY(-38%);opacity:0;color:var(--fv-ink-muted);font-size:13px;line-height:1.35;letter-spacing:.01em;white-space:normal;filter:blur(7px);will-change:opacity,transform,filter;animation:fvMarginReveal 360s linear infinite;animation-delay:calc(var(--i) * 5s)}
+  .fv-margin-strip__window:hover .fv-margin-strip__item,.fv-margin-strip__window:focus .fv-margin-strip__item,.fv-margin-strip__window:focus-within .fv-margin-strip__item{animation-play-state:paused}
+  .fv-margin-strip__window:focus-visible{outline:1px solid var(--fv-accent);outline-offset:3px}
+  @keyframes fvMarginReveal{0%{opacity:0;filter:blur(8px);transform:translateY(-22%) scale(.99)}.22%{opacity:.46;filter:blur(5px);transform:translateY(-42%) scale(.995)}.42%{opacity:1;filter:blur(0);transform:translateY(-50%) scale(1)}1.08%{opacity:1;filter:blur(0);transform:translateY(-50%) scale(1)}1.25%{opacity:.42;filter:blur(4px);transform:translateY(-61%) scale(.998)}1.39%{opacity:0;filter:blur(8px);transform:translateY(-75%) scale(.995)}100%{opacity:0;filter:blur(8px);transform:translateY(-75%) scale(.995)}}
+  @media(max-width:900px){.fv-margin-strip__inner{grid-template-columns:1fr;gap:7px;padding-top:12px;padding-bottom:12px}.fv-margin-strip__label{font-size:9px}.fv-margin-strip__window{min-height:58px;padding-left:16px}.fv-margin-strip__item{left:16px;font-size:12px}}
+  @media(max-width:520px){.fv-margin-strip__window{min-height:76px}.fv-margin-strip__item{line-height:1.4}}
+  @media(prefers-reduced-motion:reduce){.fv-margin-strip__window{height:auto;min-height:0;overflow:visible}.fv-margin-strip__window:before{top:14px}.fv-margin-strip__item{position:relative;display:none;left:auto;right:auto;top:auto;transform:none;opacity:1;filter:none;animation:none;padding:2px 0 6px 16px}.fv-margin-strip__item:nth-child(1){display:block}}
+  /* Margins Wire payload (enhanced) state — the controls below are created by */
+  /* the payload's own JS (document.createElement), never static page markup. */
+  .fv-margin-strip__controls{display:flex;align-items:center;gap:6px;justify-self:end}
+  .fv-margin-strip__ctrl-btn{width:26px;height:26px;border:1px solid var(--fv-border-strong);background:transparent;color:var(--fv-ink-muted);border-radius:2px;cursor:pointer;font-size:12px;line-height:1;padding:0}
+  .fv-margin-strip__ctrl-btn:hover,.fv-margin-strip__ctrl-btn:focus-visible{border-color:var(--fv-accent);color:var(--fv-ink);outline:none}
+  .fv-margin-strip__ctrl-count{font:600 10px/1 var(--fv-mono);color:var(--fv-ink-faint);min-width:52px;text-align:center}
+  .fv-margin-strip--wired .fv-margin-strip__inner{grid-template-columns:auto minmax(0,1fr) auto}
+  @media(max-width:900px){.fv-margin-strip--wired .fv-margin-strip__inner{grid-template-columns:1fr;row-gap:6px}.fv-margin-strip__controls{justify-self:start}}
 
   /* ================= HERO: THE VESTIGE ASSEMBLY ================= */
   .fv-studios-hero{position:relative;overflow:hidden;background:var(--fv-bg-0);border-bottom:1px solid var(--fv-border);padding:clamp(56px,7vw,100px) clamp(18px,4vw,44px) clamp(40px,4.4vw,64px)}
@@ -210,10 +217,20 @@
   .fv-align--locked .fv-align__handle{border-color:var(--fv-accent-bright)}
   .fv-align__badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:4;font:800 10px/1 var(--fv-mono);letter-spacing:.14em;text-transform:uppercase;color:#0c0d0d;background:var(--fv-accent-bright);padding:7px 12px;border-radius:2px;opacity:0;transition:opacity .3s ease}
   .fv-align__badge[data-revealed="1"]{opacity:1}
-  .fv-align__fact{max-width:800px;margin:22px auto 0;color:var(--fv-ink-faint);font-size:14px;line-height:1.6}
+  .fv-align__reveal{max-width:800px;margin:22px auto 0}
+  .fv-align__question{display:none;margin:0 0 8px;color:var(--fv-ink-faint);font-size:14px;line-height:1.6;flex-wrap:wrap;align-items:center;gap:10px}
+  .fv-align__reveal-btn{font:700 11px/1 var(--fv-mono);letter-spacing:.08em;text-transform:uppercase;color:#0c0d0d;background:var(--fv-accent-bright);border:1px solid var(--fv-accent-bright);border-radius:2px;padding:7px 11px;cursor:pointer}
+  .fv-align__reveal-btn:hover{background:var(--fv-accent)}
+  .fv-align__reveal-btn:focus-visible{outline:2px solid var(--fv-ink);outline-offset:2px}
+  .fv-align__fact{max-width:800px;margin:0;color:var(--fv-ink-faint);font-size:14px;line-height:1.6;filter:blur(0);transition:filter .3s ease}
   .fv-align__fact a{color:var(--fv-accent-bright)}
+  .fv-align__reveal--pending .fv-align__question{display:flex}
+  .fv-align__reveal--pending .fv-align__fact{filter:blur(5px)}
+  .fv-align__reveal--pending.fv-align--found .fv-align__fact{filter:blur(0)}
+  .fv-align__reveal--pending.fv-align--found .fv-align__question{display:none}
+  .fv-align__status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   @media(max-width:760px){.fv-align__stage{aspect-ratio:4/5}}
-  @media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge{transition:none}}
+  @media(prefers-reduced-motion:reduce){.fv-align__panel--map,.fv-align__badge,.fv-align__fact{transition:none}}
 
   /* ================= MISSION (monumental pivot — center, huge, quiet) ================= */
   .fv-mission{background:var(--fv-bg-0);padding:clamp(90px,14vw,190px) clamp(18px,4vw,44px);border-bottom:1px solid var(--fv-border);text-align:center}
@@ -302,38 +319,160 @@
 <!-- ============================================================= -->
 <!-- BLOCK 0 — fv-margin-strip : Hidden in the Margins            -->
 <!-- ============================================================= -->
-<div class="fv-margin-strip" role="region" aria-label="Hidden in the Margins record fragments">
+<div class="fv-margin-strip fv-margin-strip--rotator" role="region" aria-label="Hidden in the Margins record fragments">
   <div class="fv-margin-strip__inner">
     <div class="fv-margin-strip__label">Hidden in the Margins</div>
-    <div class="fv-margin-strip__viewport" data-fv-margin-viewport>
-      <ol class="fv-margin-strip__list" data-fv-margin-list>
-        <li data-fv-active="1">Nearly 4,000 years ago, Nanni filed a clay complaint that Ea-nasir sent the wrong grade of copper after a gulf voyage.</li>
-        <li>A Roman birthday invitation from Vindolanda preserves one of the earliest known examples of a woman's Latin handwriting.</li>
-        <li>The Antikythera Mechanism was a geared Greek device for predicting astronomical cycles, recovered from a shipwreck.</li>
-        <li>Domesday Book asked who held land before 1066, who held it after, and what it was worth in 1086.</li>
-        <li>The Voynich Manuscript has plants, stars, bathing figures, and an unidentified script nobody has convincingly read.</li>
-        <li>A 1784 royal commission tested animal magnetism with blindfolds, staged treatments, and controlled deception.</li>
-        <li>The H. L. Hunley sank an enemy ship in 1864, then vanished with its own crew.</li>
-        <li>The Franklin expedition ships were found in Arctic waters more than 160 years after they disappeared. <a href="/2026/08/20/all-well-was-written-first-franklin-expedition/">Read the investigation →</a></li>
-        <li>John Snow's cholera map was not just a map; it was an argument against a poisoned water supply.</li>
-        <li>The Triangle Shirtwaist record turned locked doors, burned bodies, and factory exits into labor-law evidence.</li>
-        <li>Operation Mincemeat planted fake invasion papers on a corpse to mislead Nazi intelligence.</li>
-        <li>The CIA once wired a cat with a microphone and transmitter. The gear worked better than the cat.</li>
-        <li>MKULTRA was not one dark rumor. It left subprojects, invoices, approvals, and paper trails.</li>
-        <li>CAIB found that foam from Columbia's external tank struck the left wing 81.9 seconds after launch and breached its thermal protection; superheated air entered during re-entry and progressively destroyed the wing.</li>
-        <li>NIST concluded that fire-heated floor beams expanded, a Floor 13 girder lost its connection to Column 79, cascading floor failures left the column unsupported, and its buckling initiated WTC 7's global collapse.</li>
-        <li>JFK assassination records were still being released by the National Archives in 2025 and 2026.</li>
-      </ol>
-      <!-- Full real list (72 items) ships in the deliverable; this harness shows a representative subset for preview weight. -->
-    </div>
-    <div class="fv-margin-strip__controls" data-fv-margin-controls hidden>
-      <button class="fv-margin-strip__btn" type="button" data-fv-margin-prev aria-label="Previous fragment">‹</button>
-      <button class="fv-margin-strip__btn" type="button" data-fv-margin-play aria-label="Pause rotation">⏸</button>
-      <button class="fv-margin-strip__btn" type="button" data-fv-margin-next aria-label="Next fragment">›</button>
-      <span class="fv-margin-strip__count" data-fv-margin-count>01 / 72</span>
+    <div class="fv-margin-strip__window" tabindex="0" aria-live="off" aria-label="Rotating source and accountability notes">
+      <span class="fv-margin-strip__item" style="--i:0">Nearly 4,000 years ago, Nanni filed a clay complaint that Ea-nasir sent the wrong grade of copper after a gulf voyage.</span>
+      <span class="fv-margin-strip__item" style="--i:1">A Roman birthday invitation from Vindolanda preserves one of the earliest known examples of a woman's Latin handwriting.</span>
+      <span class="fv-margin-strip__item" style="--i:2">Vindolanda's ink tablets preserve Roman fort life in scraps: duty notes, supply problems, gossip, and a birthday invite.</span>
+      <span class="fv-margin-strip__item" style="--i:3">At Bath, 130 Roman curse tablets were thrown into a sacred spring asking Sulis Minerva for justice or revenge.</span>
+      <span class="fv-margin-strip__item" style="--i:4">A Roman hoard at Bath preserved 17,660 coins fused inside eight separate money bags.</span>
+      <span class="fv-margin-strip__item" style="--i:5">The Antikythera Mechanism was a geared Greek device for predicting astronomical cycles, recovered from a shipwreck.</span>
+      <span class="fv-margin-strip__item" style="--i:6">Pompeii's walls preserved campaign notices, jokes, insults, and advertisements because ash sealed ordinary writing in place.</span>
+      <span class="fv-margin-strip__item" style="--i:7">Herculaneum's library survived Vesuvius as carbonized scrolls too fragile to simply unroll.</span>
+      <span class="fv-margin-strip__item" style="--i:8">Domesday Book asked who held land before 1066, who held it after, and what it was worth in 1086.</span>
+      <span class="fv-margin-strip__item" style="--i:9">Domesday counted mills, fisheries, meadows, livestock, and unfree people as evidence of power and taxation.</span>
+      <span class="fv-margin-strip__item" style="--i:10">The Voynich Manuscript has plants, stars, bathing figures, and an unidentified script nobody has convincingly read.</span>
+      <span class="fv-margin-strip__item" style="--i:11">Guy Fawkes first gave officials the false name John Johnson after he was found near hidden gunpowder.</span>
+      <span class="fv-margin-strip__item" style="--i:12">One Gunpowder Plot examination says the plan included blowing up Parliament when the king was there.</span>
+      <span class="fv-margin-strip__item" style="--i:13">A 1605 confession signed Guido Fawkes appears in state papers, not just in bonfire-night folklore.</span>
+      <span class="fv-margin-strip__item" style="--i:14">During the Great Plague, watchmen locked and guarded infected houses while parish officials carried food inside.</span>
+      <span class="fv-margin-strip__item" style="--i:15">A 1666 plague order told towns to restrict gatherings, watch travelers, burn fumes, and keep animals from wandering streets.</span>
+      <span class="fv-margin-strip__item" style="--i:16">A 1784 royal commission tested animal magnetism with blindfolds, staged treatments, and controlled deception.</span>
+      <span class="fv-margin-strip__item" style="--i:17">Captain Bligh's Bounty story did not end with mutiny; his open-boat voyage left a navigation record across the Pacific.</span>
+      <span class="fv-margin-strip__item" style="--i:18">Civil War balloons sent reconnaissance reports from the sky before airplanes existed.</span>
+      <span class="fv-margin-strip__item" style="--i:19">The H. L. Hunley sank an enemy ship in 1864, then vanished with its own crew.</span>
+      <span class="fv-margin-strip__item" style="--i:20">The Franklin expedition ships were found in Arctic waters more than 160 years after they disappeared.</span>
+      <span class="fv-margin-strip__item" style="--i:21">The Sultana disaster killed more than a thousand people, yet its paper trail hid in steamboat and military records.</span>
+      <span class="fv-margin-strip__item" style="--i:22">The Mary Celeste inquiry tried to explain why a seaworthy ship was found drifting with no crew aboard.</span>
+      <span class="fv-margin-strip__item" style="--i:23">The USS Maine explosion became a national argument because the blast left wreckage, witnesses, and competing official theories.</span>
+      <span class="fv-margin-strip__item" style="--i:24">John Snow's cholera map was not just a map; it was an argument against a poisoned water supply.</span>
+      <span class="fv-margin-strip__item" style="--i:25">Early lighthouse logs can preserve storms, wrecks, rescues, and failures in the handwriting of the person on watch.</span>
+      <span class="fv-margin-strip__item" style="--i:26">Titanic transmitted an iceberg warning for another ship, then entered the same North Atlantic danger field.</span>
+      <span class="fv-margin-strip__item" style="--i:27">Titanic hearings questioned binoculars, lifeboats, wireless messages, steerage passengers, and ignored ice warnings.</span>
+      <span class="fv-margin-strip__item" style="--i:28">The Carpathia manifest records the names of the Titanic survivors pulled from lifeboats before dawn.</span>
+      <span class="fv-margin-strip__item" style="--i:29">The Triangle Shirtwaist record turned locked doors, burned bodies, and factory exits into labor-law evidence.</span>
+      <span class="fv-margin-strip__item" style="--i:30">In 1919, a wave of molasses tore through Boston streets after a storage tank failed.</span>
+      <span class="fv-margin-strip__item" style="--i:31">The 1918 flu record includes public-health orders closing schools, churches, theaters, and saloons.</span>
+      <span class="fv-margin-strip__item" style="--i:32">Operation Mincemeat planted fake invasion papers on a corpse to mislead Nazi intelligence.</span>
+      <span class="fv-margin-strip__item" style="--i:33">The Ghost Army used inflatable tanks, fake radio traffic, and sound trucks to impersonate entire units.</span>
+      <span class="fv-margin-strip__item" style="--i:34">Japanese balloon bombs crossed the Pacific; one killed six civilians in Oregon.</span>
+      <span class="fv-margin-strip__item" style="--i:35">National Archives code-talker files include World War II records that still are not all digitized.</span>
+      <span class="fv-margin-strip__item" style="--i:36">Japanese American incarceration records preserve names, camps, transfers, and case files behind a national policy.</span>
+      <span class="fv-margin-strip__item" style="--i:37">Project Paperclip records include personnel files for German scientists brought into U.S. postwar programs.</span>
+      <span class="fv-margin-strip__item" style="--i:38">A 1962 Joint Chiefs memo proposed staged incidents around Cuba as possible pretexts for war.</span>
+      <span class="fv-margin-strip__item" style="--i:39">The fake-civilian-airliner idea in Operation Northwoods was real enough to be written down.</span>
+      <span class="fv-margin-strip__item" style="--i:40">The CIA once wired a cat with a microphone and transmitter. The gear worked better than the cat.</span>
+      <span class="fv-margin-strip__item" style="--i:41">CIA engineers built robotic catfish named Charlie and Charlene to collect water samples without being noticed.</span>
+      <span class="fv-margin-strip__item" style="--i:42">Project AZORIAN hid a Soviet-submarine recovery mission behind a deep-sea mining cover story.</span>
+      <span class="fv-margin-strip__item" style="--i:43">The phrase 'neither confirm nor deny' has a Cold War shipwreck underneath it.</span>
+      <span class="fv-margin-strip__item" style="--i:44">The Hughes Glomar Explorer was sold as ocean mining while built for a far stranger job.</span>
+      <span class="fv-margin-strip__item" style="--i:45">CIA training once borrowed techniques from stage magic and deception manuals.</span>
+      <span class="fv-margin-strip__item" style="--i:46">A CIA spycraft story says even a dead rat could be used as a concealment device.</span>
+      <span class="fv-margin-strip__item" style="--i:47">VENONA began in secret in 1943 and did not reach the public until 1995.</span>
+      <span class="fv-margin-strip__item" style="--i:48">Some VENONA files read like spy fiction because real people appear under cover names.</span>
+      <span class="fv-margin-strip__item" style="--i:49">MKULTRA was not one dark rumor. It left subprojects, invoices, approvals, and paper trails.</span>
+      <span class="fv-margin-strip__item" style="--i:50">A Senate intelligence report says Castro assassination ideas included poison cigars and an exploding seashell.</span>
+      <span class="fv-margin-strip__item" style="--i:51">The CIA's Family Jewels files recorded domestic surveillance, mail opening, assassination plotting, and other abuses.</span>
+      <span class="fv-margin-strip__item" style="--i:52">Operation CHAOS collected information on Americans during the Vietnam-era antiwar period.</span>
+      <span class="fv-margin-strip__item" style="--i:53">Project SHAMROCK involved copies of international telegram traffic reaching U.S. intelligence agencies.</span>
+      <span class="fv-margin-strip__item" style="--i:54">Project MINARET placed U.S. citizens, including civil-rights and antiwar figures, on NSA watch lists.</span>
+      <span class="fv-margin-strip__item" style="--i:55">Government remote-viewing files do not prove psychic powers. They prove officials filed classified session reports about them.</span>
+      <span class="fv-margin-strip__item" style="--i:56">Project Blue Book does not prove UFO claims. It proves the Air Force cataloged thousands of reports.</span>
+      <span class="fv-margin-strip__item" style="--i:57">The Robertson Panel worried less about aliens than panic, overloaded reporting channels, and Soviet exploitation.</span>
+      <span class="fv-margin-strip__item" style="--i:58">The Tuskegee syphilis study ran for forty years without informed consent or proper treatment.</span>
+      <span class="fv-margin-strip__item" style="--i:59">A presidential advisory committee later reviewed government-sponsored human radiation experiments.</span>
+      <span class="fv-margin-strip__item" style="--i:60">CAIB found that foam from Columbia's external tank struck the left wing 81.9 seconds after launch and breached its thermal protection; superheated air entered during re-entry and progressively destroyed the wing.</span>
+      <span class="fv-margin-strip__item" style="--i:61">NTSB found that inadequately designed U10 gusset plates failed under added bridge weight, traffic, and concentrated construction loads, causing the 2007 I-35W bridge collapse in Minneapolis.</span>
+      <span class="fv-margin-strip__item" style="--i:62">NIST concluded that fire-heated floor beams expanded, a Floor 13 girder lost its connection to Column 79, cascading floor failures left the column unsupported, and its buckling initiated WTC 7's global collapse.</span>
+      <span class="fv-margin-strip__item" style="--i:63">CSB found that effective compression buckled Deepwater Horizon's drill pipe off-center inside the blowout preventer, moving it beyond the blind shear ram's cutting region and preventing the well from being sealed.</span>
+      <span class="fv-margin-strip__item" style="--i:64">The El Faro investigation recovered data from a recorder resting roughly 15,000 feet below the Atlantic.</span>
+      <span class="fv-margin-strip__item" style="--i:65">NTSB found that the Big Dig tunnel ceiling used epoxy anchor adhesive with poor creep resistance; under sustained load, the epoxy deformed and fractured until ceiling anchors pulled free.</span>
+      <span class="fv-margin-strip__item" style="--i:66">Federal Register rulemaking can hide major consequences in definitions, thresholds, exemptions, and effective dates.</span>
+      <span class="fv-margin-strip__item" style="--i:67">GAO's High Risk List is a public map of federal problems that can stay open for decades.</span>
+      <span class="fv-margin-strip__item" style="--i:68">The 2011 official Pentagon Papers release opened thousands of pages not available in the common editions.</span>
+      <span class="fv-margin-strip__item" style="--i:69">Watergate's Road Map contained 53 numbered factual statements and 97 supporting documents.</span>
+      <span class="fv-margin-strip__item" style="--i:70">JFK assassination records were still being released by the National Archives in 2025 and 2026.</span>
+      <span class="fv-margin-strip__item" style="--i:71">The 2025 JFK release even created a privacy problem: some unredacted files included living people's information.</span>
     </div>
   </div>
 </div>
+<script>
+(function(){
+  if(window.__fvMarginsWire)return;
+  window.__fvMarginsWire=true;
+  try{
+    var root=document.querySelector('.fv-margin-strip');
+    if(!root)return;
+    var inner=root.querySelector('.fv-margin-strip__inner');
+    var win=root.querySelector('.fv-margin-strip__window');
+    var items=win?Array.prototype.slice.call(win.querySelectorAll('.fv-margin-strip__item')):[];
+    if(!(items.length>1)){window.__fvMarginsWire=false;return}
+    var reducedMotion=false;
+    try{reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(_){reducedMotion=false}
+    root.classList.add('fv-margin-strip--wired');
+    var controls=document.createElement('div');
+    controls.className='fv-margin-strip__controls';
+    var prevBtn=document.createElement('button');
+    prevBtn.type='button';prevBtn.className='fv-margin-strip__ctrl-btn';prevBtn.setAttribute('aria-label','Previous fragment');prevBtn.textContent='‹';
+    var playBtn=document.createElement('button');
+    playBtn.type='button';playBtn.className='fv-margin-strip__ctrl-btn';playBtn.setAttribute('aria-label','Pause rotation');playBtn.textContent='⏸';
+    var nextBtn=document.createElement('button');
+    nextBtn.type='button';nextBtn.className='fv-margin-strip__ctrl-btn';nextBtn.setAttribute('aria-label','Next fragment');nextBtn.textContent='›';
+    var count=document.createElement('span');
+    count.className='fv-margin-strip__ctrl-count';
+    controls.appendChild(prevBtn);controls.appendChild(playBtn);controls.appendChild(nextBtn);controls.appendChild(count);
+    inner.appendChild(controls);
+    var index=0, playing=!reducedMotion, timer=null;
+    function paint(){
+      items.forEach(function(el,i){
+        el.style.setProperty('animation','none','important');
+        el.style.setProperty('filter','none','important');
+        el.style.setProperty('display','block','important');
+        if(i===index){
+          el.style.setProperty('position','relative','important');
+          el.style.setProperty('opacity','1','important');
+          el.style.setProperty('transform','none','important');
+          el.setAttribute('aria-hidden','false');
+        }else{
+          el.style.setProperty('position','absolute','important');
+          el.style.setProperty('opacity','0','important');
+          el.setAttribute('aria-hidden','true');
+        }
+      });
+      count.textContent=String(index+1).padStart(2,'0')+' / '+items.length;
+    }
+    function show(i){index=(i+items.length)%items.length;paint()}
+    function stop(){if(timer){clearInterval(timer);timer=null}}
+    function start(){stop();if(!playing)return;timer=setInterval(function(){show(index+1)},5200)}
+    paint();start();
+    function pauseForInteraction(){
+      if(!playing)return;
+      playing=false;stop();
+      playBtn.textContent='▶';
+      playBtn.setAttribute('aria-label','Resume rotation');
+    }
+    win.addEventListener('mouseenter',pauseForInteraction);
+    win.addEventListener('focusin',pauseForInteraction);
+    win.setAttribute('tabindex','-1');
+    win.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){pauseForInteraction();show(index+1)}
+      else if(e.key==='ArrowLeft'){pauseForInteraction();show(index-1)}
+    });
+    prevBtn.addEventListener('click',function(){pauseForInteraction();show(index-1)});
+    nextBtn.addEventListener('click',function(){pauseForInteraction();show(index+1)});
+    playBtn.addEventListener('click',function(){
+      playing=!playing;
+      playBtn.textContent=playing?'⏸':'▶';
+      playBtn.setAttribute('aria-label',playing?'Pause rotation':'Resume rotation');
+      if(playing)start();else stop();
+    });
+  }catch(_){
+    window.__fvMarginsWire=false;
+  }
+})();
+</script>
 
 <!-- ============================================================= -->
 <!-- BLOCK 1 — fv-studios-hero : THE VESTIGE ASSEMBLY               -->
@@ -499,9 +638,9 @@
 <!-- ============================================================= -->
 <section class="fv-align" aria-labelledby="fv-align-title">
   <div class="fv-align__head">
-    <p class="fv-eyebrow">Two Documents, One Night</p>
-    <h2 id="fv-align-title">Drag until the record and the reconstruction agree.</h2>
-    <p class="fv-align__intro">A 1903 railway map and a modern chronology of the 1918 Malbone Street wreck were drawn fifteen years and one investigation apart. Slide the divider until their timelines meet.</p>
+    <p class="fv-eyebrow">Two Documents, Fifteen Years</p>
+    <h2 id="fv-align-title">Compare the system as it was to the system that failed.</h2>
+    <p class="fv-align__intro">A 1903 map of the Brooklyn Rapid Transit system and Final Vestige's own chronology of the 1918 Malbone Street wreck. Slide between them to compare &mdash; then see why we show them side by side.</p>
   </div>
   <div class="fv-align__stage" data-fv-align-stage tabindex="0" role="slider" aria-labelledby="fv-align-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="halfway between the two documents">
     <div class="fv-align__panel fv-align__panel--map">
@@ -515,9 +654,13 @@
     <div class="fv-align__divider" data-fv-align-divider>
       <div class="fv-align__handle" aria-hidden="true">&#8596;</div>
     </div>
-    <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Aligned</span>
+    <span class="fv-align__badge" data-fv-align-badge data-revealed="0">Connection found</span>
   </div>
-  <p class="fv-align__fact">This map shows the Brighton line system fifteen years before a night in 1918, when a dispatcher took a new curve at five times its posted limit. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+  <div class="fv-align__reveal" data-fv-align-reveal>
+    <p class="fv-align__question" data-fv-align-question>A system map from 1903 and a disaster fifteen years later &mdash; why put them side by side? <button type="button" class="fv-align__reveal-btn" data-fv-align-reveal-trigger>Show the connection</button></p>
+    <p class="fv-align__fact" data-fv-align-fact>This 1903 map shows the Brooklyn Rapid Transit system, including the Brighton line, fifteen years before a new tunnel was threaded through it. That tunnel's six-mile-an-hour curve under Malbone Street didn't open until September&nbsp;25, 1918 &mdash; five weeks before a dispatcher took it at five times the limit. This map isn't a record of the wreck. It's a record of how established the system already was when one new, tightly restricted curve was added to it. <a href="https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/">Read "Six Miles an Hour" &rarr;</a></p>
+  </div>
+  <p class="fv-align__status" role="status" aria-live="polite" data-fv-align-status></p>
 </section>
 <script>
 (function(){
@@ -526,28 +669,41 @@
   var divider = stage.querySelector('[data-fv-align-divider]');
   var mapPanel = stage.querySelector('.fv-align__panel--map');
   var badge = stage.querySelector('[data-fv-align-badge]');
-  var revealed = false;
-  function describePosition(pct, aligned){
-    if(aligned) return 'aligned — the 1903 map and the reconstruction agree, revealing the connecting fact';
-    if(pct < 45) return 'showing mostly the 1918 to 1920 reconstruction, map ' + Math.round(pct) + ' percent visible';
-    return 'showing mostly the 1903 map, map ' + Math.round(pct) + ' percent visible';
+  var reveal = document.querySelector('[data-fv-align-reveal]');
+  var fact = reveal && reveal.querySelector('[data-fv-align-fact]');
+  var trigger = reveal && reveal.querySelector('[data-fv-align-reveal-trigger]');
+  var status = document.querySelector('[data-fv-align-status]');
+  if(!divider || !mapPanel || !badge || !reveal || !fact || !trigger || !status) return;
+  var LOW = 15, HIGH = 85;
+  var found = false, visitedLow = false, visitedHigh = false;
+  reveal.classList.add('fv-align__reveal--pending');
+  function describePosition(pct){
+    if(pct <= LOW) return 'showing mostly the 1918 to 1920 reconstruction, map ' + Math.round(pct) + ' percent visible';
+    if(pct >= HIGH) return 'showing mostly the 1903 map, map ' + Math.round(pct) + ' percent visible';
+    return 'comparing both records, map ' + Math.round(pct) + ' percent visible';
+  }
+  function revealConnection(){
+    if(found) return;
+    found = true;
+    badge.setAttribute('data-revealed','1');
+    stage.classList.add('fv-align--locked');
+    reveal.classList.add('fv-align--found');
+    trigger.textContent = 'Connection found';
+    trigger.disabled = true;
+    status.textContent = 'Connection found: the map predates the curve that failed. Read why below.';
+  }
+  function checkDiscovery(pct){
+    if(pct <= LOW) visitedLow = true;
+    if(pct >= HIGH) visitedHigh = true;
+    if(visitedLow && visitedHigh) revealConnection();
   }
   function setPosition(pct){
     pct = Math.max(4, Math.min(96, pct));
     divider.style.left = pct + '%';
     mapPanel.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-    var aligned = pct > 45 && pct < 55;
     stage.setAttribute('aria-valuenow', Math.round(pct));
-    stage.setAttribute('aria-valuetext', describePosition(pct, aligned));
-    if(aligned && !revealed){
-      revealed = true;
-      badge.setAttribute('data-revealed','1');
-      stage.classList.add('fv-align--locked');
-    } else if(!aligned && revealed && (pct < 40 || pct > 60)){
-      revealed = false;
-      badge.setAttribute('data-revealed','0');
-      stage.classList.remove('fv-align--locked');
-    }
+    stage.setAttribute('aria-valuetext', describePosition(pct));
+    checkDiscovery(pct);
   }
   function pctFromClientX(clientX){
     var rect = stage.getBoundingClientRect();
@@ -568,6 +724,7 @@
     if(e.key === 'ArrowLeft'){ setPosition(current - 4); e.preventDefault(); }
     if(e.key === 'ArrowRight'){ setPosition(current + 4); e.preventDefault(); }
   });
+  trigger.addEventListener('click', revealConnection);
   setPosition(20);
 })();
 </script>

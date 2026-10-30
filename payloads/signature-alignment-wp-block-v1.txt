@@ -7,7 +7,7 @@ try{
 // FV_SIGNATURE_ALIGNMENT_GATE_START
 const fvSaShouldRun=(ctx)=>{
   if(!ctx)return false;
-  return !!(ctx.hasStage&&ctx.hasDivider&&ctx.hasMapPanel&&ctx.hasBadge);
+  return !!(ctx.hasStage&&ctx.hasDivider&&ctx.hasMapPanel&&ctx.hasBadge&&ctx.hasReveal&&ctx.hasFact&&ctx.hasTrigger&&ctx.hasStatus);
 };
 // FV_SIGNATURE_ALIGNMENT_GATE_END
 
@@ -15,33 +15,52 @@ const stage=document.querySelector('[data-fv-align-stage]');
 const divider=stage&&stage.querySelector('[data-fv-align-divider]');
 const mapPanel=stage&&stage.querySelector('.fv-align__panel--map');
 const badge=stage&&stage.querySelector('[data-fv-align-badge]');
+const reveal=document.querySelector('[data-fv-align-reveal]');
+const fact=reveal&&reveal.querySelector('[data-fv-align-fact]');
+const trigger=reveal&&reveal.querySelector('[data-fv-align-reveal-trigger]');
+const status=document.querySelector('[data-fv-align-status]');
 
-if(!fvSaShouldRun({hasStage:!!stage,hasDivider:!!divider,hasMapPanel:!!mapPanel,hasBadge:!!badge}))return;
+if(!fvSaShouldRun({hasStage:!!stage,hasDivider:!!divider,hasMapPanel:!!mapPanel,hasBadge:!!badge,hasReveal:!!reveal,hasFact:!!fact,hasTrigger:!!trigger,hasStatus:!!status}))return;
 
-let revealed=false;
+const LOW=15;
+const HIGH=85;
 
-const describePosition=(pct,aligned)=>{
-  if(aligned)return 'aligned — the 1903 map and the reconstruction agree, revealing the connecting fact';
-  if(pct<45)return 'showing mostly the 1918 to 1920 reconstruction, map '+Math.round(pct)+' percent visible';
-  return 'showing mostly the 1903 map, map '+Math.round(pct)+' percent visible';
+let found=false;
+let visitedLow=false;
+let visitedHigh=false;
+
+reveal.classList.add('fv-align__reveal--pending');
+
+const describePosition=(pct)=>{
+  if(pct<=LOW)return 'showing mostly the 1918 to 1920 reconstruction, map '+Math.round(pct)+' percent visible';
+  if(pct>=HIGH)return 'showing mostly the 1903 map, map '+Math.round(pct)+' percent visible';
+  return 'comparing both records, map '+Math.round(pct)+' percent visible';
+};
+
+const revealConnection=()=>{
+  if(found)return;
+  found=true;
+  badge.setAttribute('data-revealed','1');
+  stage.classList.add('fv-align--locked');
+  reveal.classList.add('fv-align--found');
+  trigger.textContent='Connection found';
+  trigger.disabled=true;
+  status.textContent='Connection found: the map predates the curve that failed. Read why below.';
+};
+
+const checkDiscovery=(pct)=>{
+  if(pct<=LOW)visitedLow=true;
+  if(pct>=HIGH)visitedHigh=true;
+  if(visitedLow&&visitedHigh)revealConnection();
 };
 
 const setPosition=(pctRaw)=>{
   const pct=Math.max(4,Math.min(96,pctRaw));
   divider.style.left=pct+'%';
   mapPanel.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
-  const aligned=pct>45&&pct<55;
   stage.setAttribute('aria-valuenow',String(Math.round(pct)));
-  stage.setAttribute('aria-valuetext',describePosition(pct,aligned));
-  if(aligned&&!revealed){
-    revealed=true;
-    badge.setAttribute('data-revealed','1');
-    stage.classList.add('fv-align--locked');
-  }else if(!aligned&&revealed&&(pct<40||pct>60)){
-    revealed=false;
-    badge.setAttribute('data-revealed','0');
-    stage.classList.remove('fv-align--locked');
-  }
+  stage.setAttribute('aria-valuetext',describePosition(pct));
+  checkDiscovery(pct);
 };
 
 const pctFromClientX=(clientX)=>{
@@ -71,6 +90,8 @@ stage.addEventListener('keydown',(e)=>{
   if(e.key==='ArrowLeft'){ setPosition(current-4); e.preventDefault(); }
   if(e.key==='ArrowRight'){ setPosition(current+4); e.preventDefault(); }
 });
+
+trigger.addEventListener('click',revealConnection);
 
 setPosition(20);
 

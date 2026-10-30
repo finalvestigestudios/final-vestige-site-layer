@@ -63,18 +63,27 @@ JSON-LD):
    rights, "why it matters") is drawn from that post's real figcaption and NYPL catalog record,
    not invented. The Library Inspector payload adds a cursor/touch-driven magnifying loupe over a
    higher-resolution version of the same real image.
-7. **New:** `fv-align` — "Drag until the record and the reconstruction agree." A second signature
-   interaction (real evidence, not a hover effect): a divider slider lets the visitor drag between
-   the same real 1903 NYPL map used in the Library and Final Vestige's own real evidence-boundary
-   diagram from ["Six Miles an Hour"](https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/)
-   — dragging near the midpoint reveals the same real "why it matters" fact already used in the
-   Library panel. With JavaScript disabled, the two real documents render side by side, split down
-   the middle, each captioned — never a blank or broken state. The Signature Alignment payload
-   drives the drag/keyboard interaction; no new evidence or claims beyond what's already used
-   elsewhere on this page. The interaction starts away from the aligned position (20%, outside the
-   45–55% aligned band) so the "Aligned" badge only appears after a real drag or keyboard move, not
-   on load; `aria-valuetext` updates on every move to describe the current position in words, not
-   just a static "halfway" label.
+7. **New:** `fv-align` — "Compare the system as it was to the system that failed." A second
+   signature interaction built as a genuine evidence-discovery exercise, not a decorative puzzle: a
+   divider slider lets the visitor compare the real 1903 NYPL map of the Brooklyn Rapid Transit
+   system against Final Vestige's own real evidence-boundary diagram from
+   ["Six Miles an Hour"](https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/).
+   The copy makes no claim that the two documents literally overlap geographically or
+   chronologically — the curve that failed in 1918 didn't exist when the 1903 map was drawn, and the
+   fact panel says so plainly. The substantive finding (the system was fifteen years old when one
+   new, tightly restricted curve was added to it) stays genuinely concealed — blurred, not removed
+   from the DOM — until the visitor has actually explored both documents (dragged or keyed to both
+   ends of the stage) or used the always-present, always-keyboard-reachable "Show the connection"
+   button, which is the required non-drag alternative. Reaching that point un-blurs the real fact
+   text, locks an amber border, and announces the discovery through a visually-hidden
+   `aria-live="polite"` status region — so the *finding* becomes visible to assistive technology,
+   not just a badge. With JavaScript disabled, or if the enhancement fails to initialize, the
+   question/button pairing never appears at all and the fact text is plain, unblurred, always-visible
+   HTML — nothing is ever concealed except by a successful JS init, and concealment is the only
+   state that payload ever adds. The two documents still render side by side, split down the middle,
+   each captioned. `tests/verify_signature_alignment.py` covers the initial state, pointer and
+   keyboard interaction, the button alternative, the fail-closed no-concealment path, and the
+   accessible status announcement.
 8. `fv-home-shell` — **unchanged block logic.** The existing dynamic `wp:query` / `wp:terms-query`
    blocks (Latest investigation, Recently filed, category strip, Exchange preview, More
    investigations, Research Trails, Sources and research tools) are untouched — same queries,
@@ -127,7 +136,8 @@ compatibility contract:
   and `../CHANGELOG.md`). If a future Site Layer release changes the selectors, data attributes,
   or class names these five payloads depend on (`[data-fv-assembly]`, `.fv-margin-strip__item`,
   `[data-fv-invest-stages]`/`[data-fv-invest-image]`/etc., `[data-fv-library-frame]`/etc.,
-  `[data-fv-align-stage]`/`[data-fv-align-divider]`/`[data-fv-align-badge]`), that release's own
+  `[data-fv-align-stage]`/`[data-fv-align-divider]`/`[data-fv-align-badge]`/`[data-fv-align-reveal]`/
+  `[data-fv-align-fact]`/`[data-fv-align-reveal-trigger]`/`[data-fv-align-status]`), that release's own
   changelog entry must say so explicitly, and this file must be updated in the same release.
 - **Fail-safe if only one half is live.** Every payload here is written to degrade to a static,
   fully-meaningful page if its half is missing or stale:
@@ -165,9 +175,11 @@ compatibility contract:
         evidence panel's image/caption/citation/quote match the clicked stage.
   - [ ] Library map loads, the loupe follows the cursor (desktop) and touch drag (mobile), and
         keyboard Enter/Space toggles a centered magnified view.
-  - [ ] Alignment slider (the map/chronology drag) starts away from center with the "Aligned"
-        badge hidden, responds to mouse drag, touch drag, and keyboard arrows, and only reveals
-        "Aligned" once the divider is actually moved near center.
+  - [ ] Alignment stage (the map/chronology compare slider) starts with the fact text blurred and
+        the "Show the connection" button visible and focusable; responds to mouse drag, touch drag,
+        and keyboard arrows; reveals the real connecting fact (not just a badge) only after both
+        ends of the stage are explored or the button is used; the reveal is announced to screen
+        readers via the status region.
   - [ ] Focus Fieldbook CTA (`fv-focus-cta`) renders on both mobile and desktop widths, its button
         links to `/focus/`, and the section sits directly after the hero, matching the live page.
   - [ ] Dispatch subscription form still submits successfully (unchanged block, but verify after
@@ -209,10 +221,13 @@ compatibility contract:
   CSS, not new choices. Two new typographic tokens are loaded: the Fraunces display serif and
   Courier Prime, a typewriter monospace used for the case-file/evidence labels throughout the
   page (both loaded via the same release-integrity-gated `wp_head` hook).
-- The Alignment interaction's two documents (the 1903 NYPL map, the evidence-boundary diagram)
-  and its "why it matters" fact are the same real assets and real copy already verified above for
-  the Library section and "Six Miles an Hour" — no new evidence was introduced for this
-  interaction, only a new way of presenting the same two already-vetted real documents.
+- The Alignment interaction's two documents (the 1903 NYPL map, the evidence-boundary diagram) are
+  the same real assets already verified above for the Library section. Its revealed finding — that
+  the Malbone Street tunnel's six-mile-an-hour curve opened September&nbsp;25, 1918, fifteen years
+  after the 1903 map was drawn, five weeks before the wreck — is re-verified directly against the
+  "Six Miles an Hour" post's own text (re-fetched 2026-10-29), not inferred or carried over from
+  the map's caption. No claim of geographic or chronological overlap between the two documents is
+  made anywhere in this interaction's copy.
 - The `fv-focus-cta` section (copy, `/focus/` link, cover image, and CSS) was read directly off
   the live, currently-published page via WordPress.com Content Authoring (`pages.get`, id 6) on
   2026-10-29, confirmed to be a real section the business added to the live site after this
