@@ -1,0 +1,249 @@
+{
+  "product": "Hypnosis Live / Total Focus",
+  "review_date": "2026-10-30",
+  "review_type": "official_merchant_and_literature_no_audio_test",
+  "claim_count": 22,
+  "affiliate_approval_verified": false,
+  "affiliate_url": null,
+  "merchant_email_permission_verified": false,
+  "tracking_terms_verified": false,
+  "commercial_tracking_active": false,
+  "product_audio_personally_tested": false,
+  "product_specific_efficacy_verified": false,
+  "price_verified_at_link_destination": false,
+  "source_urls": {
+    "seller": "https://hypnosislive.com/",
+    "inspire": "https://inspire3.com/",
+    "faq": "https://hypnosislive.com/faq",
+    "focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "aff": "https://affiliates.inspire3.com/",
+    "nih": "https://www.nccih.nih.gov/health/hypnosis",
+    "sleep": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+    "mindful": "https://pubmed.ncbi.nlm.nih.gov/41595048/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftchealth": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puys": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  },
+  "claims": [
+    {
+      "id": "H01",
+      "claim": "Hypnosis Live is an Inspire3 brand",
+      "status": "seller_identity",
+      "source": "https://inspire3.com/",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": "Inspire3 lists Hypnosis Live in its catalog.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H02",
+      "claim": "Hypnosis Live has more than 200 individual MP3 downloads",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": "The seller describes a catalog of more than two hundred self-hypnosis MP3s.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H03",
+      "claim": "MP3 available for download immediately after purchase",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The FAQ says purchases are delivered as MP3 downloads.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H04",
+      "claim": "Most recordings last about 40 minutes",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The seller describes most sessions as about forty minutes long.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H05",
+      "claim": "Total Focus track runs 33 minutes",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The seller lists Total Focus as a 33-minute recording.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H06",
+      "claim": "Total Focus download size is 47 MB",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The Total Focus page lists a 47 MB MP3.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H07",
+      "claim": "Total Focus is attributed to J. A. Amos",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The seller credits J. A. Amos with the recording.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H08",
+      "claim": "Sessions are recorded by Julie-Ann Amos with qualifications seller names",
+      "status": "seller_credential_unverified",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The FAQ identifies Julie-Ann Amos as the creator; Final Vestige has not independently authenticated her credentials.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H09",
+      "claim": "Individual purchase has no continuing payment for that purchased session",
+      "status": "vendor_terms_recheck",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The seller FAQ describes individual session purchases without further payments for the same track.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H10",
+      "claim": "Refund request within 14 days; no more than five sessions refunded yearly",
+      "status": "vendor_terms_recheck",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The FAQ describes fourteen days and a five-refunded-session-per-year cap; confirm checkout/legal terms.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H11",
+      "claim": "Product site supplies an audio sample",
+      "status": "vendor_specification",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "The FAQ says a listening sample is available on individual session pages.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H12",
+      "claim": "The Total Focus checkout has a fixed price or reliable 93% discount",
+      "status": "volatile_price_do_not_publish",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H13",
+      "claim": "Total Focus gives guaranteed perfect concentration",
+      "status": "unsubstantiated_product_specific",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H14",
+      "claim": "Hypnosis MP3 reprograms the customer's brain for reliable productivity",
+      "status": "unsubstantiated_product_specific",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H15",
+      "claim": "Hypnosis Live products can solve almost any life problem",
+      "status": "unsubstantiated_health_or_behavior_claim",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H16",
+      "claim": "NLP is independently proven to amplify this product's impact",
+      "status": "unsubstantiated_product_specific",
+      "source": "https://hypnosislive.com/faq",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H17",
+      "claim": "NIH outlines condition-specific hypnosis research with differing certainty",
+      "status": "general_evidence_not_product_trial",
+      "source": "https://www.nccih.nih.gov/health/hypnosis",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": "NIH summarizes research in defined settings; its findings do not evaluate Total Focus.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H18",
+      "claim": "2023 review of 44 sleep studies had positive, mixed and no-impact results",
+      "status": "general_evidence_not_product_trial",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": "A 2023 systematic review of sleep-focused hypnotherapy found heterogeneous study outcomes; it did not test this MP3.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H19",
+      "claim": "2026 mindful hypnotherapy meta-analysis includes five RCT publications",
+      "status": "general_evidence_not_product_trial",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/41595048/",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": "The 2026 review covers five randomized-trial publications, not this retail product.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H20",
+      "claim": "FV is approved for partner program, particular offer and email marketing",
+      "status": "not_verified_account_specific",
+      "source": "https://affiliates.inspire3.com/",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H21",
+      "claim": "The original Puységur historical source provides evidence that Total Focus works",
+      "status": "invalid_historical_inference",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence_type": "source_as_indicated",
+      "fv_copy": null,
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    },
+    {
+      "id": "H22",
+      "claim": "Affiliate earning links require clear disclosure near recommendations",
+      "status": "verified_compliance_rule",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence_type": "official_source_or_regulator",
+      "fv_copy": "An activated earning link must be accompanied by a clear near-link commission disclosure.",
+      "review_date": "2026-10-30",
+      "recheck": "before_release"
+    }
+  ]
+}
