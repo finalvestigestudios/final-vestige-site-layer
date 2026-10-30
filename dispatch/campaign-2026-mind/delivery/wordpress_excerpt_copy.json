@@ -1,0 +1,44 @@
+{
+  "status": "DRAFT_FOR_WORDPRESS_EDITOR_REVIEW_ONLY",
+  "operational_assumption": "Production newsletter setting email_content_format=excerpt at 2026-10-30T19:29:40Z; test actual rendered outgoing email before any subscriber send.",
+  "delivery_mode": "custom WordPress post excerpts linking to full on-site stories, NOT direct affiliate offers",
+  "disclosure_policy": "For commercial editions, the email excerpt signals the affiliate relationship, and the full site story / guide repeats disclosure beside any earning link.",
+  "entries": [
+    {
+      "number": 1,
+      "subject": "The mind is not a camera",
+      "excerpt": "A photograph records what entered the frame, not everything a witness believed was happening around it. Memory has a similar blind spot. This week we follow an eighteenth-century paper trail to ask a surprisingly current question: when we say we saw something, how much of the story did we actually observe? Open the investigation to see what survives in the record.",
+      "word_budget_note": "Curiosity-led editorial. WordPress should append its own read-more link to the full post."
+    },
+    {
+      "number": 2,
+      "subject": "Before hypnosis had a name",
+      "excerpt": "In 1784, Puységur described states that seemed extraordinary to his contemporaries. Nearly two and a half centuries later, his account is still a lesson in the difference between testimony and proof. We set aside the sensational explanation and examine the witnesses, the source and what remains uncertain. Read the file and decide which questions it really answers.",
+      "word_budget_note": "Source-led history. Do not imply the historical reports establish a magnetic fluid."
+    },
+    {
+      "number": 3,
+      "subject": "The twelve-minute meditation question",
+      "excerpt": "A twelve-minute audio session sounds easier to fit into a busy day than an hour of meditation. But convenience isn't evidence that both produce the same result. We look at what Zen12 actually includes, what its seller claims and how you can try a simple practice without buying anything. This edition includes an affiliate evaluation: if you later purchase through a qualifying link in our guide, Final Vestige may earn a commission.",
+      "word_budget_note": "Commercial nature explicitly disclosed in delivered excerpt. HOLD until product guide is live, partner email promotion is authorized, and actual WordPress email is reviewed."
+    },
+    {
+      "number": 4,
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "excerpt": "Seventeen seconds separated the first indication of the Apollo 1 fire from the end of the crew's transmissions. The conditions that made the fire catastrophic developed long before that interval. NASA's official findings reveal how much gets lost when a complex disaster is reduced to one obvious cause. Open the records behind our Apollo 1 investigation.",
+      "word_budget_note": "Check NASA's original timeline at production. No invented certainty about ignition source."
+    },
+    {
+      "number": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "excerpt": "Before you pay for a self-hypnosis recording, ask three questions: what will you receive, what outcome is actually supported, and what happens if you want a refund? We examine the formats and claims behind Hypnosis Live without pretending its promotional promises are proof. This edition includes an affiliate evaluation: if you purchase through a qualifying link in our guide, Final Vestige may receive a commission.",
+      "word_budget_note": "Commercial nature disclosed before the WordPress read-more link. HOLD until licensed SKU, partner permission, independent guide, and actual email footer verified."
+    },
+    {
+      "number": 6,
+      "subject": "What did seven days of attention reveal?",
+      "excerpt": "An experiment can feel like a success on Monday and a failure by Friday. A simple record tells a better story. Which days did you start? What interrupted you? What made the next session easier? This edition shares a way to make sense of the notes in your free Seven Day Focus Fieldbook—without confusing a personal log with clinical evidence. Read the closing dispatch.",
+      "word_budget_note": "Free Focus Fieldbook is the primary next step. No product pitch."
+    }
+  ]
+}
