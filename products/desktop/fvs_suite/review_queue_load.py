@@ -10,18 +10,22 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
 
+from .review_identity import journal_snapshot_identity
+
 
 @dataclass(slots=True)
 class ReviewQueue:
     batch: Any = None
     journal: Path | None = None
     report_path: Path | None = None
+    journal_identity: str | None = None
 
     def clear(self) -> None:
         """Discard every actionable reference before switching reports."""
         self.batch = None
         self.journal = None
         self.report_path = None
+        self.journal_identity = None
 
     def load(
         self,
@@ -46,11 +50,16 @@ class ReviewQueue:
         if batch is None:
             raise ValueError("Premium report validation returned no review batch")
         journal = selected_path.with_suffix(".review.jsonl")
+        before = journal_snapshot_identity(journal)
         latest_states(journal, batch)
+        after = journal_snapshot_identity(journal)
+        if before != after:
+            raise ValueError("Review journal changed while opening; reopen the report")
         # No state is published until both validations have completed.
         self.batch = batch
         self.journal = journal
         self.report_path = selected_path
+        self.journal_identity = after
 
     def verify_current(
         self,
@@ -64,7 +73,8 @@ class ReviewQueue:
         vanished, or failed validation. This complements operation-specific
         checks that must run again immediately before output publication.
         """
-        if self.batch is None or self.journal is None or self.report_path is None:
+        if (self.batch is None or self.journal is None or self.report_path is None
+                or self.journal_identity is None):
             raise ValueError("No verified premium report is selected")
         try:
             if product not in ("grants", "procurement"):
@@ -72,7 +82,13 @@ class ReviewQueue:
             current = read_cases(self.report_path, product)
             if current is None or current != self.batch:
                 raise ValueError("Loaded source report changed; reopen before acting")
+            before = journal_snapshot_identity(self.journal)
+            if before != self.journal_identity:
+                raise ValueError("Review journal changed since opening; reopen before acting")
             latest_states(self.journal, current)
+            after = journal_snapshot_identity(self.journal)
+            if after != before:
+                raise ValueError("Review journal changed during validation; reopen before acting")
             return current
         except (ValueError, OSError, UnicodeError):
             self.clear()
