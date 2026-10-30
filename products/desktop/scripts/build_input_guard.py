@@ -54,6 +54,7 @@ def snapshot(root: Path) -> dict:
     ]
     for relative in EXTRA_BUILD_FILES:
         path = root / relative
+        source_gate._checked_directory(path.parent, root)
         before = _stat_identity(path)
         digest = source_gate._fingerprint(path, root)
         if _stat_identity(path) != before:
