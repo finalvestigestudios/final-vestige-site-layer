@@ -85,8 +85,15 @@ function fv_ex2_apollo_sealed_page() {
     $concordance = fv_ex2_apollo_sealed_asset('source-concordance.html');
     $concordance_css = fv_ex2_apollo_sealed_asset('source-concordance.css');
     $context_index = fv_ex2_apollo_sealed_asset('source-context.json');
+    $atlas_panel = fv_ex2_apollo_sealed_asset('atlas-custody.html');
+    $atlas_style = fv_ex2_apollo_sealed_asset('atlas-custody.css');
+    $atlas_index = fv_ex2_apollo_sealed_asset('atlas-custody.json');
     if (!is_string($fragment) || !is_string($css) || !is_string($js)
         || !is_string($concordance) || !is_string($concordance_css) || !is_string($context_index)
+        || !is_string($atlas_panel) || !is_string($atlas_style) || !is_string($atlas_index)
+        || substr_count($atlas_panel, 'data-atlas-custody-id=') !== 6
+        || substr_count($atlas_panel, '{{FV_EX2_ATLAS_EXPORT}}') !== 1
+        || substr_count($fragment, "</section>\n<footer class=\"ex2-footer\"") !== 1
         || substr_count($concordance, 'data-concordance-record=') !== 6
         || substr_count($concordance, '{{FV_EX2_CONTEXT_EXPORT}}') !== 1
         || substr_count($concordance, 'type="radio"') !== 4
@@ -117,6 +124,12 @@ function fv_ex2_apollo_sealed_page() {
     $context_url = add_query_arg(array('action' => 'fv_ex2_apollo_sealed_download',
         'file' => 'source-context.json', '_wpnonce' => $nonce), $base);
     $concordance = str_replace('{{FV_EX2_CONTEXT_EXPORT}}', esc_url($context_url), $concordance);
+    $atlas_url = add_query_arg(array('action' => 'fv_ex2_apollo_sealed_download',
+        'file' => 'atlas-custody.json', '_wpnonce' => $nonce), $base);
+    $atlas_panel = str_replace('{{FV_EX2_ATLAS_EXPORT}}', esc_url($atlas_url), $atlas_panel);
+    if (strpos($atlas_panel, '{{FV_EX2_') !== false
+        || strpos($atlas_panel, '<img') !== false || strpos($atlas_panel, '<script') !== false
+        || strpos($atlas_panel, '<iframe') !== false) { status_header(503); exit; }
     if (strpos($concordance, '{{FV_EX2_') !== false) { status_header(503); exit; }
     // Inject after validating the canonical fragment; keep its original provenance header.
     $chronology_start = '<section class="ex2-section ex2-case" id="chronology"';
@@ -126,6 +139,9 @@ function fv_ex2_apollo_sealed_page() {
         status_header(503); exit;
     }
     $fragment = str_replace($chronology_start, $concordance . $chronology_start, $fragment);
+    // Source-verified Atlas panel lives INSIDE the original Atlas, not at the top.
+    $fragment = str_replace("</section>\n<footer class=\"ex2-footer\"",
+        $atlas_panel . "</section>\n<footer class=\"ex2-footer\"", $fragment);
     $csp_nonce = base64_encode(random_bytes(18));
     nocache_headers();
     header('X-FV-EX2-Apollo-Source-Head: ' . FV_EX2_APOLLO_SOURCE_HEAD);
@@ -134,6 +150,8 @@ function fv_ex2_apollo_sealed_page() {
     header('X-FV-EX2-Apollo-JS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.js']);
     header('X-FV-EX2-Apollo-Concordance-SHA256: ' . FV_EX2_APOLLO_SHA256['source-concordance.html']);
     header('X-FV-EX2-Apollo-Context-SHA256: ' . FV_EX2_APOLLO_SHA256['source-context.json']);
+    header('X-FV-EX2-Apollo-Atlas-SHA256: ' . FV_EX2_APOLLO_SHA256['atlas-custody.json']);
+    header('X-FV-EX2-Apollo-Atlas-Panel-SHA256: ' . FV_EX2_APOLLO_SHA256['atlas-custody.html']);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
     header('X-Content-Type-Options: nosniff');
@@ -142,7 +160,7 @@ function fv_ex2_apollo_sealed_page() {
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         . '<title>Private Apollo 1 Evidence Review — Final Vestige</title>'
         . '<meta name="robots" content="noindex,nofollow"><style nonce="' . $csp_nonce . '">'
-        . $css . $concordance_css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
+        . $css . $concordance_css . $atlas_style . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
         . '</style></head><body>'
         . '<a class="fv-ex2-apollo__skip" href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>'
         . '<main id="fv-ex2-apollo-document" class="fv-ex2-apollo" tabindex="-1" aria-label="Apollo 1 evidence investigation">'
@@ -161,6 +179,7 @@ function fv_ex2_apollo_sealed_download() {
         'response-export.csv' => 'text/csv; charset=UTF-8',
         'response-export.json' => 'application/json; charset=UTF-8',
         'source-context.json' => 'application/json; charset=UTF-8',
+        'atlas-custody.json' => 'application/json; charset=UTF-8',
     );
     $file = isset($_GET['file']) && is_string($_GET['file']) ? $_GET['file'] : '';
     if (!array_key_exists($file, $files)) { status_header(404); exit; }

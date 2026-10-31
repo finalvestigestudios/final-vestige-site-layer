@@ -20,6 +20,7 @@ import zlib
 from qa.custody_integrity import check_directory
 from qa.nasa_editorial_gate import audit_files
 from qa.source_concordance import build_concordance, build_context_index
+from qa.atlas_custody import build_atlas
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -57,6 +58,7 @@ def build(out: Path) -> dict:
     nasa_receipt = audit_files(UPSTREAM, BRIDGE / 'generated')
     concordance_html, concordance_css, concordance_receipt = build_concordance(UPSTREAM, BRIDGE / 'generated')
     context_index = build_context_index(UPSTREAM, BRIDGE / 'generated')
+    atlas_html, atlas_css, atlas_index, atlas_receipt = build_atlas(BRIDGE / 'generated')
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
     payload = {}
@@ -72,7 +74,9 @@ def build(out: Path) -> dict:
         hashes[name] = sha
         payload[name] = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
     for name, text in (('source-concordance.html', concordance_html), ('source-concordance.css', concordance_css),
-                       ('source-context.json', context_index)):
+                       ('source-context.json', context_index),
+                       ('atlas-custody.html', atlas_html), ('atlas-custody.css', atlas_css),
+                       ('atlas-custody.json', atlas_index)):
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
         hashes[name] = hashlib.sha256(raw).hexdigest()
@@ -95,6 +99,7 @@ def build(out: Path) -> dict:
         'source_match_all_12_blob_pins': True,
         'nasa_catalog_witness': nasa_receipt,
         'source_concordance': concordance_receipt,
+        'atlas_publication_custody': atlas_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',
@@ -111,6 +116,7 @@ def build(out: Path) -> dict:
                                'Exact WordPress staging HTTP/cookies and real-user CWV needed',
                                'NASA media rights per item and independent QD',
                                'PR158 catalog identifier-label mismatch for crew portrait must be independently reviewed',
+                               'Atlas publication links are not a geolocation clearance; no map pins or relationship edges',
                                'No main or homepage merges without separate approval'],
     }
     members = {
