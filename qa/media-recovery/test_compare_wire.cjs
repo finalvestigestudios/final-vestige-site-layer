@@ -11,7 +11,7 @@ function fixture(t='2026-10-30T18:00:00.000Z',numbers=[5000,5000]){
  document_network_failures:[],stored_image_count:2,rendered_image_count:2,
  stored_images:numbers.map((n,i)=>({image_key:'123:'+i,result:'loaded_in_probe_browser',
  verified_broken_in_browser:false,current_src_identity_verified:true,
- current_src:'https://example.edu/img'+i+'.jpg',natural_width:960,request_url:'https://example.edu/img'+i+'.jpg',http_status:200,transfer_bytes:n})),
+ stored_url:'https://example.edu/img'+i+'.jpg',current_src:'https://example.edu/img'+i+'.jpg',natural_width:960,request_url:'https://example.edu/img'+i+'.jpg',http_status:200,transfer_bytes:n})),
  network_images:numbers.map((n,i)=>({url:'https://example.edu/img'+i+'.jpg',status:200,mime_type:'image/jpeg',
  encoded_data_length:n,error:null,from_disk_cache:false,from_service_worker:false,was_cached:false})),
  image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0)}]};
@@ -68,7 +68,7 @@ test('redirect alias can demonstrate the same network request',()=>{
 });
 test('multiple visible uses of one URL can share one actual network request without double-counting bytes',()=>{
  const r=a(),p=r.pages[0],url='https://example.edu/shared.jpg';
- p.stored_images.forEach(v=>{v.current_src=url;v.request_url=url;v.transfer_bytes=5000;});
+ p.stored_images.forEach(v=>{v.stored_url=url;v.current_src=url;v.request_url=url;v.transfer_bytes=5000;});
  p.network_images=[{url,status:200,mime_type:'image/jpeg',encoded_data_length:5000,
   error:null,from_disk_cache:false,from_service_worker:false,was_cached:false}];
  p.image_wire_bytes_total=5000;
