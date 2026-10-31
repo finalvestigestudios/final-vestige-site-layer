@@ -68,7 +68,6 @@ def verified_mount_tree(stage: Path) -> None:
 
 
 
-
 MAX_THEME_UNPACKED_BYTES = 80 * 1024 * 1024
 MAX_THEME_FILES = 4000
 PLUGIN_NAME = 'fv-ex2-private-preview'
