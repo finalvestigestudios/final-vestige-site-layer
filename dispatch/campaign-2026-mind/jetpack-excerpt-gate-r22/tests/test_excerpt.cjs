@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('assert'),fs=require('fs'),path=require('path');
 const a=require('./audit_excerpt.cjs');
-const root=path.resolve(__dirname,'..');
+const root=path.resolve(__dirname,'../..');
 const m=JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
 const files=name=>fs.readFileSync(path.join(root,'issues',name),'utf8');
 const records=a.scan(m,files); let passed=0;
