@@ -11,6 +11,7 @@ from email import policy
 from email.parser import BytesParser
 from email.utils import parseaddr
 from html.parser import HTMLParser
+from html import unescape
 import json
 import os
 from pathlib import Path
@@ -24,15 +25,53 @@ DISCLOSURES = ("may earn a commission", "may receive a commission")
 PROMOTIONAL_HOSTS = ("inspire3.com", "zen12.com", "hypnosislive.com", "brainwaveshots.com")
 
 
+class RenderingUncertain(ValueError):
+    """Unsupported CSS makes visible-text assertions unsafe, not MIME corrupt."""
+
+
 def norm(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip().casefold()
+
+
+def css_hiding_rules(markup: str) -> tuple[set[str], set[str], bool]:
+    """Recognize simple hidden class/id rules; conservatively flag complex rules.
+
+    This does NOT implement CSS layout, media queries, specificity, or email-client
+    rendering. Unknown hiding rules must never become evidence of visibility.
+    """
+    classes: set[str] = set()
+    ids: set[str] = set()
+    uncertain = False
+    style_blocks = re.findall(r"<style\b[^>]*>(.*?)</style\s*>", markup, re.I | re.S)
+    for block in style_blocks:
+        # Handles common .preheader {display:none} / #x {visibility:hidden},
+        # including comma-separated selectors. Complex selectors are unknown.
+        for selector, decl in re.findall(r"([^{}]+)\{([^{}]*)\}", block, re.S):
+            if not re.search(r"(?:^|;)\s*(?:display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)|opacity\s*:\s*0(?:\.0+)?)(?:\s*!important)?\s*(?:;|$)", decl, re.I):
+                continue
+            for part in selector.split(','):
+                sel=part.strip()
+                if re.fullmatch(r"\.[A-Za-z_][A-Za-z0-9_-]*", sel):
+                    classes.add(sel[1:])
+                elif re.fullmatch(r"#[A-Za-z_][A-Za-z0-9_-]*", sel):
+                    ids.add(sel[1:])
+                else:
+                    uncertain=True
+        # @media / @supports and keyframes can change visible state at
+        # client/viewport/runtime even when class/id matches were extracted.
+        if re.search(r"@(?:media|supports|container)\b", block, re.I) and re.search(r"(?:display\s*:\s*none|visibility\s*:\s*hidden|opacity\s*:\s*0)", block, re.I):
+            uncertain=True
+    return classes, ids, uncertain
 
 
 class VisibleHTML(HTMLParser):
     """Extract text and anchor destinations without executing HTML or fetching assets."""
 
-    def __init__(self):
+    def __init__(self, css_hidden_classes: set[str] | None = None,
+                 css_hidden_ids: set[str] | None = None):
         super().__init__(convert_charrefs=True)
+        self.css_hidden_classes = css_hidden_classes or set()
+        self.css_hidden_ids = css_hidden_ids or set()
         self.visible: list[str] = []
         self.links: list[tuple[str, str]] = []
         self.all_links: list[tuple[str, str]] = []
@@ -40,18 +79,27 @@ class VisibleHTML(HTMLParser):
         self._elements: list[tuple[str, bool]] = []
         self._anchor_stack: list[dict] = []
 
-    @staticmethod
-    def _explicitly_hidden(tag: str, attrs: dict[str, str | None]) -> bool:
+    def _explicitly_hidden(self, tag: str, attrs: dict[str, str | None]) -> bool:
         # This is a conservative DOM-markup check, not computed CSS or a
         # screen-reader/browser certification. Hidden links remain in all_links
         # so a merchant destination can never disappear from a security scan.
         style = re.sub(r"\s+", "", (attrs.get("style") or "").lower())
+        classes = (attrs.get('class') or '').split()
         return (tag in ("script", "style", "head", "template", "noscript", "svg")
-                or "hidden" in attrs or attrs.get("aria-hidden", "").lower() == "true"
-                or bool(re.search(r"(?:^|;)(?:display:none|visibility:hidden|opacity:0|font-size:0(?:px|pt|em|rem|%|;|$)|color:transparent)(?:;|$)", style)))
+                or "hidden" in attrs or (attrs.get("aria-hidden") or "").lower() == "true"
+                or any(c in self.css_hidden_classes for c in classes)
+                or bool(attrs.get('id') and attrs['id'] in self.css_hidden_ids)
+                or bool(re.search(r"(?:^|;)(?:display:none|visibility:(?:hidden|collapse)|opacity:0(?:\.0+)?|font-size:0(?:px|pt|em|rem|%)?|color:transparent)(?:!important)?(?:;|$)", style)))
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]):
         attributes = dict(attrs)
+        # Read-only URL inventory includes non-anchor resource fetches, including
+        # potential merchant-hosted image pixels and form actions. These MUST
+        # not escape our direct-merchant gate simply because they lack <a>.
+        for key, val in attrs:
+            if key in ('href','src','action','formaction','poster','data','background','xlink:href','srcset') and val:
+                for uri in re.findall(r"https?://[^\s,\"'<>]+", val, re.I):
+                    self.all_links.append(('', uri))
         hidden = (any(flag for _, flag in self._elements)
                   or self._explicitly_hidden(tag, attributes))
         if tag == "a":
@@ -91,7 +139,14 @@ def parse_mime(raw: bytes) -> tuple[object, str, str, list[tuple[str, str]], lis
     if len(raw) > MAX_MIME_BYTES:
         raise ValueError("MIME exceeds two-megabyte local audit limit")
     message = BytesParser(policy=policy.default).parsebytes(raw)
+    # Reject structurally ambiguous/malformed messages rather than combining
+    # mutually exclusive renderings to manufacture a compliance PASS.
+    if any(part.defects for part in message.walk()) or any(len(message.get_all(name, [])) != 1 for name in ('From','To','Subject')):
+        raise ValueError('Ambiguous or malformed MIME message headers')
+    if any(part.get_content_type() == 'message/rfc822' for part in message.walk()):
+        raise ValueError('Embedded forwarded MIME message cannot be used as delivery proof')
     plain, html_text, links, all_links, before_links = [], [], [], [], []
+    html_count = plain_count = 0
     for part in message.walk():
         if part.get_content_maintype() != "text" or part.get_content_disposition() == "attachment":
             continue
@@ -102,15 +157,27 @@ def parse_mime(raw: bytes) -> tuple[object, str, str, list[tuple[str, str]], lis
         if isinstance(content, bytes):
             raise ValueError("Nontext MIME content in text part")
         if part.get_content_type() == "text/plain":
+            plain_count += 1
             plain.append(content)
         elif part.get_content_type() == "text/html":
-            parser = VisibleHTML()
+            html_count += 1
+            classes, ids, uncertain = css_hiding_rules(content)
+            parser = VisibleHTML(classes, ids)
             parser.feed(content)
             parser.close()
             html_text.append(" ".join(parser.visible))
             links += parser.links
             all_links += parser.all_links
+            # Visible URL text may be auto-linked by mail clients. Also inventory
+            # raw HTML URLs in CSS, comments, attributes, and non-anchor content;
+            # conservative no-merchant enforcement applies to all references.
+            all_links += [('', unescape(v.rstrip('.,;!>'))) for v in
+                          re.findall(r"https?://[^\s\"'<>()[\]]+", content, re.I)]
             before_links += parser.link_prior_visible
+            if uncertain:
+                raise RenderingUncertain('CSS visibility must be verified by an email-client renderer')
+    if plain_count > 1 or html_count > 1:
+        raise ValueError('Multiple plain or HTML renditions would invent a combined email')
     return message, "\n".join(plain), "\n".join(html_text), links, all_links, before_links
 
 
@@ -144,11 +211,17 @@ def audit_received(raw: bytes | None, *, issue: int, expected_subject: str,
                 "manual_gates": manual_gates(issue)}
     try:
         message, plain, html_text, links, all_links, before_links = parse_mime(raw)
-    except (TypeError, ValueError) as error:
+    except RenderingUncertain:
+        return {"edition": issue, "status": "HOLD_RENDERING_UNVERIFIED",
+                "checks": {"css_visibility": "UNKNOWN_REQUIRES_REAL_EMAIL_CLIENT"},
+                "problem_codes": ["CSS_RENDER_VISIBILITY_UNVERIFIED"],
+                "manual_gates": manual_gates(issue)}
+    except (TypeError, ValueError):
         return {"edition": issue, "status": "HOLD_INVALID_MIME",
                 "checks": {"mime_decode": "FAIL"},
                 "problem_codes": ["MIME_UNREADABLE"], "manual_gates": manual_gates(issue)}
     checks["mime_decode"] = "PASS"
+    checks["computed_email_client_visibility"] = "UNKNOWN_REQUIRES_ACTUAL_CLIENT_RENDER"
     visible = norm("\n".join([plain, html_text]))
     displayed = norm(html_text or plain)
     name, email_addr = parseaddr(str(message.get("From", "")))
