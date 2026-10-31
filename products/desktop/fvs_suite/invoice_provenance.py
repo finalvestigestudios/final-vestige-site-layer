@@ -10,8 +10,10 @@ import hashlib
 import json
 import re
 
+from .invoice_match import MAX_CANDIDATES
+
 _SHA256 = re.compile(r"[0-9a-f]{64}\Z", re.ASCII)
-_PHYSICAL_LINE = re.compile(r"[1-9][0-9]*\Z", re.ASCII)
+_PHYSICAL_LINE = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
 _CANDIDATE_KINDS = frozenset(("exact_invoice_key", "review_possible_duplicate"))
 _DOMAIN = b"final-vestige-invoice-candidate-v1\0"
 
@@ -27,8 +29,13 @@ def attach_invoice_provenance(
     """
     if not isinstance(source_sha256, str) or not _SHA256.fullmatch(source_sha256):
         raise ValueError("Invoice source SHA-256 must be canonical lowercase hex")
+    if not isinstance(report_rows, list):
+        raise ValueError("Invoice candidate report must be a list")
+    if len(report_rows) > MAX_CANDIDATES:
+        raise ValueError("Too many invoice review candidates; no report was saved")
     result = []
     seen: set[str] = set()
+    seen_pairs: set[tuple[str, frozenset[str]]] = set()
     for row in report_rows:
         if not isinstance(row, dict):
             raise ValueError("Invoice candidate must be a report record")
@@ -39,6 +46,10 @@ def attach_invoice_provenance(
             raise ValueError("Invoice candidate requires two distinct physical CSV rows")
         if not isinstance(status, str) or status not in _CANDIDATE_KINDS:
             raise ValueError("Invoice candidate has an unsupported review classification")
+        unordered = (status, frozenset((a, b)))
+        if unordered in seen_pairs:
+            raise ValueError("Duplicate invoice candidate pair; no report was saved")
+        seen_pairs.add(unordered)
         locator = json.dumps(
             {"row_a": a, "row_b": b, "status": status},
             sort_keys=True, separators=(",", ":"), ensure_ascii=True,
