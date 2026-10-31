@@ -1,0 +1,51 @@
+{
+  "enabled": false,
+  "affiliate_approval": false,
+  "version": "r12-prepublication",
+  "source": "first-party aggregate-only concept",
+  "allowed_events": [
+    "mind_guide_view",
+    "mind_video_play_optin",
+    "mind_focus_link_click",
+    "mind_merchant_outbound_after_approval"
+  ],
+  "dimensions": {
+    "week": "YYYY-WW",
+    "source_category": [
+      "direct",
+      "organic",
+      "social",
+      "internal",
+      "other"
+    ],
+    "variant": [
+      "text",
+      "optional_video"
+    ]
+  },
+  "disallowed_fields": [
+    "ip",
+    "email",
+    "full_referrer",
+    "raw_url",
+    "raw_utm",
+    "user_id",
+    "cookie",
+    "session_id",
+    "device_fingerprint",
+    "gps",
+    "precise_timestamp"
+  ],
+  "privacy_controls": [
+    "DNT",
+    "GPC"
+  ],
+  "retention_days": 30,
+  "releases": [
+    "partner written acceptance",
+    "exact link authorization",
+    "privacy approval",
+    "founder publication approval"
+  ],
+  "statement": "No collection, cookies, beacons, or experiments implemented."
+}
