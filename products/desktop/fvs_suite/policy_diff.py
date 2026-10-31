@@ -46,18 +46,25 @@ def _read_policy(path):
 
 def _unified_diff(before, after, old_label, new_label):
     chunks = []
-    for fragment in difflib.unified_diff(
+    for index, fragment in enumerate(difflib.unified_diff(
         before, after, fromfile="before " + old_label,
         tofile="after " + new_label, lineterm="\n",
-    ):
+    )):
+        # The first two records are diff headers; @@ records are hunk metadata.
+        # Escape only source lines (prefix +, - or space) so CR cannot silently
+        # overwrite visible report text and literal \r remains distinguishable.
+        display = fragment
+        if index >= 2 and not fragment.startswith("@@ "):
+            display = (fragment[0] + fragment[1:].replace("\\", "\\\\")
+                       .replace("\t", "\\t").replace("\r", "\\r"))
         if fragment.endswith("\n"):
-            chunks.append(fragment)
+            chunks.append(display)
         elif fragment.endswith("\r"):
             # A CR-only source line still has an ending; delimit the report line.
-            chunks.append(fragment + "\n")
+            chunks.append(display + "\n")
         else:
             # difflib otherwise concatenates changed final unterminated lines.
-            chunks.append(fragment + "\n\\ No newline at end of file\n")
+            chunks.append(display + "\n\\ No newline at end of file\n")
     return "".join(chunks)
 
 
@@ -79,6 +86,7 @@ def compare_policy_files(old, new, folder, output_path):
     report = (
         "Text differences only. Not legal advice or a compliance determination.\n"
         "SHA-256 fingerprints cover the exact source bytes read (including any BOM).\n"
+        "Diff display escapes source backslash as \\\\, tab as \\t and CR as \\r.\n"
         + identity_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
