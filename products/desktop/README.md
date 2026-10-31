@@ -37,6 +37,21 @@ report behavior remain intact. See
 Focused Linux helper verification does not establish successful complete
 repository/Windows EXE verification or legal compliance certification.
 
+## R77 Policy Delta Desk invisible Unicode review display (pre-release)
+
+Policy change reports now visibly encode accepted zero-width Unicode format
+characters, combining grapheme joiners and Unicode variation selectors as
+ASCII \uXXXX or \UXXXXXXXX sequences. Literal source backslashes are doubled
+so a source text containing a typed escape cannot masquerade as a hidden
+character. Exact source SHA-256 fingerprints, original bytes, hunk references,
+R76 CR/tab escaping and the human-only interpretation rule remain intact.
+This mitigation does **not** detect every Unicode confusable. The report is
+not a machine-applicable patch or a compliance determination. Twenty-seven
+focused synthetic source-to-atomic-report regressions passed under normal and
+optimized Python in an isolated Linux environment; full CI, all six Windows
+executables, independent QD and founder review are outstanding. See
+[R77 Unicode visibility engineering notes](docs/POLICY_INVISIBLE_UNICODE_R77.md).
+
 ## R76 Policy Delta Desk safe human-readable diff display (pre-release)
 
 Policy text containing Windows CRLF or CR-only line endings could previously
