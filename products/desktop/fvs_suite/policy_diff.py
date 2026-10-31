@@ -11,6 +11,8 @@ import re
 import unicodedata
 from pathlib import Path
 
+from .unicode_hazards import is_visually_blank_filler
+
 MAX_POLICY_BYTES = 10 * 1024 * 1024
 MAX_POLICY_LINES = 50_000
 _ALLOWED_EXTENSIONS = frozenset((".txt", ".md", ".csv"))
@@ -64,6 +66,7 @@ def _visible_source_char(character: str) -> str:
             # Non-ASCII Unicode spacing separators can be visually identical
             # to an ordinary source space while changing the audited bytes.
             or (category == "Zs" and character != " ")
+            or is_visually_blank_filler(character)  # Non-control blank glyphs
             or codepoint == 0x034F  # Combining Grapheme Joiner
             or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors
             or 0xFE00 <= codepoint <= 0xFE0F
@@ -120,6 +123,7 @@ def compare_policy_files(old, new, folder, output_path):
         "Diff display escapes source backslash as \\\\, tab as \\t and CR as \\r.\n"
         "Invisible Unicode format and variation characters display as \\uXXXX or \\UXXXXXXXX.\n"
         "Non-ASCII Unicode spacing separators display as \\uXXXX (ordinary spaces remain unchanged).\n"
+        "Unicode blank filler glyphs display as \\uXXXX; raw files remain authoritative.\n"
         + identity_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"

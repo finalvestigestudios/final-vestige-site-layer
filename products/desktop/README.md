@@ -11,6 +11,18 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R91 Policy Delta Desk invisible blank-filler display (pre-release)
+
+Policy Delta Desk now visibly escapes seven non-control Unicode blank/filler
+characters in added, removed and context lines of local policy diffs, using
+the existing shared Unicode hazard predicate. Original policy bytes, exact
+SHA-256 fingerprints and line positions remain authoritative, and literal
+backslash-u sequences remain distinguishable from hidden source characters.
+Twenty-two actual policy-module tests passed in a focused, exact-blob Linux
+source workspace in both normal and optimized Python. Full-repository tests,
+native Windows executables, distribution checks and QD/founder signoff are
+still pending. [R91 specification and verification](docs/POLICY_BLANK_FILLER_CUSTODY_R91.md).
+
 ## R90 ProcureGuard receiving-document provenance (pre-release)
 
 Even perfectly matched quantities can hide repeated receiving references. R90
