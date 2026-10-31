@@ -37,6 +37,22 @@ report behavior remain intact. See
 Focused Linux helper verification does not establish successful complete
 repository/Windows EXE verification or legal compliance certification.
 
+## R76 Policy Delta Desk safe human-readable diff display (pre-release)
+
+Policy text containing Windows CRLF or CR-only line endings could previously
+emit raw carriage-return bytes into a change report, allowing some viewers
+to obscure the visible starts of changed lines. Human-readable source lines
+now show **literal backslashes as doubled backslashes**, horizontal tabs as
+a visible backslash-t sequence, and carriage returns as a visible
+backslash-r sequence. This also distinguishes an actual CR from a source
+containing a literal backslash and the letter r. Original TXT/MD/CSV bytes,
+source SHA-256 fingerprints, unified-diff hunk ranges, and human review
+requirements are preserved. **The displayed diff is not a patch to apply
+automatically.** Twenty-four local source/report regressions passed in normal
+and optimized Python; full checkout, packaged Windows checks, and QD approval
+remain pending. See
+[R76 Policy Delta display safety](docs/POLICY_DIFF_VISIBLE_CONTROLS_R76.md).
+
 ## R60 SpendMap Lite scalable exact medians (pre-release)
 
 SpendMap Lite now calculates prior-month anomaly baselines with a two-heap
