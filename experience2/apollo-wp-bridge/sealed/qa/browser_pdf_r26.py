@@ -7,6 +7,7 @@ Chromium PDFs are per-run evidence, NOT expected byte-identical across runs
 because Chromium injects metadata; deterministic source builds are separate.
 """
 from __future__ import annotations
+from collections import Counter
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -18,7 +19,7 @@ from playwright.sync_api import sync_playwright
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE))
 from browser_exact import get_fixture
-from print_source_transcript_r25 import CASEFILE, GENERATED, CASEFILE_PIN
+from print_source_transcript_r25 import CASEFILE, GENERATED, CASEFILE_PIN, NASA_POLICY, REPORT as NASA_REPORT
 WIDTHS=(320,360,390,768,1024,1440,1920)
 OUT=HERE/'r26-pdf-evidence'
 REPORT=HERE/'R26_REAL_PDF_RESULTS.json'
@@ -26,11 +27,53 @@ REPORT=HERE/'R26_REAL_PDF_RESULTS.json'
 def cmd(*args):
     return subprocess.run(args,stdout=subprocess.PIPE,stderr=subprocess.PIPE,check=True,timeout=30).stdout.decode('utf-8',errors='replace')
 
+def verify_pdf_semantics(info: str, urls: str, expected_nasa: list[str]) -> dict:
+    """Fail closed unless the *actual PDF* is tagged and links only to pinned NASA URLs.
+
+    pdfinfo -url exposes PDF annotations, not merely printed URL strings. This
+    checks offline reader navigation; it is NOT an axe, PDF/UA or screen-reader pass.
+    """
+    fields = dict((m.group(1), m.group(2).strip()) for m in
+                  re.finditer(r'^([A-Za-z ]+):\s*(.*?)\s*$', info, re.M))
+    if fields.get('Tagged', '').lower() != 'yes':
+        raise AssertionError('Offline evidence PDF is not structurally tagged')
+    if ('Apollo 1' not in fields.get('Title', '') or
+            'Final Vestige' not in fields.get('Title', '')):
+        raise AssertionError('Offline PDF missing recognizable document title')
+    if fields.get('JavaScript', '').lower() != 'no':
+        raise AssertionError('Offline PDF must contain no embedded JavaScript')
+    if len(expected_nasa) != 6 or len(set(expected_nasa)) != 6:
+        raise AssertionError('Exactly six distinct canonical NASA sources required')
+    lines = [x for x in urls.splitlines() if x.strip()]
+    if not lines or lines[0].strip() != 'Page  Type          URL':
+        raise AssertionError('pdfinfo annotation inventory missing')
+    seen = []
+    for line in lines[1:]:
+        match = re.fullmatch(r'\s*\d+\s+Annotation\s+(https://\S+)\s*', line)
+        if match is None:
+            raise AssertionError('Unrecognized, untrusted or non-HTTPS PDF annotation')
+        seen.append(match.group(1))
+    counts = Counter(seen)
+    allowed = set(expected_nasa) | {NASA_REPORT, NASA_POLICY}
+    if set(counts) != allowed:
+        raise AssertionError('Missing canonical NASA link or unauthorized PDF link destination')
+    if any(counts[url] != 1 for url in expected_nasa):
+        raise AssertionError('Each NASA photograph must have one clickable PDF source link')
+    if not (1 <= counts[NASA_REPORT] <= 2 and 1 <= counts[NASA_POLICY] <= 2):
+        raise AssertionError('NASA report/policy links missing or duplicated unexpectedly')
+    return {'tagged': True, 'title_present': True,
+            'clickable_nasa_records': 6, 'clickable_nasa_rights_and_report': 2,
+            'annotation_count': len(seen), 'unapproved_destinations': 0,
+            'embedded_javascript': False}
+
+
 def audit_pdf(path:Path,width:int,case_sha:str,export_sha:str)->dict:
     metadata=cmd('pdfinfo',str(path))
     m=re.search(r'^Pages:\s*(\d+)',metadata,re.M)
     assert m,(width,'pdfinfo could not determine page count')
     pages=int(m.group(1));assert 1<=pages<=6,(width,'unbounded paper size',pages)
+    expected_urls=[r['image_url'] for r in json.loads((CASEFILE/'records.json').read_text(encoding='utf-8'))['records']]
+    semantics=verify_pdf_semantics(metadata,cmd('pdfinfo','-url',str(path)),expected_urls)
     per_page=[cmd('pdftotext','-f',str(n),'-l',str(n),'-layout',str(path),'-') for n in range(1,pages+1)]
     text='\n'.join(per_page)
     dense=re.sub(r'\s+','',text)
@@ -54,7 +97,7 @@ def audit_pdf(path:Path,width:int,case_sha:str,export_sha:str)->dict:
     return {'width':width,'pages':pages,'record_count':6,'rights_hold_count':6,
             'nasa_photo_source_urls':6,'embedded_images':0,'casefile_sha256':case_sha,
             'evidence_export_sha256':export_sha,'pdf_sha256':sha256(path.read_bytes()).hexdigest(),
-            'pdf_bytes':path.stat().st_size,'status':'PASS'}
+            'pdf_bytes':path.stat().st_size, 'pdf_semantics':semantics,'status':'PASS'}
 
 def run():
     OUT.mkdir(exist_ok=True,parents=True)
@@ -72,7 +115,7 @@ def run():
             assert page.locator('#fv-ex2-print-transcript').count()==1
             assert not page.locator('#fv-ex2-print-transcript').is_visible()
             pdf_path=OUT/f'apollo-r26-custody-{width}.pdf'
-            page.pdf(path=str(pdf_path),format='A4',print_background=True,prefer_css_page_size=True)
+            page.pdf(path=str(pdf_path),format='A4',print_background=True,prefer_css_page_size=True,tagged=True,outline=True)
             assert not errors,(width,errors)
             results.append(audit_pdf(pdf_path,width,case_sha,export_sha))
             if width in (390,1440):
@@ -87,14 +130,15 @@ def run():
     report={'source':'R25 sealed PHP renderer + R26 ledger custody revision',
         'source_plugin_sha256':plugin_sha,'casefile_pin':CASEFILE_PIN,
         'browser':'Chromium Playwright print_to_pdf, javascript disabled',
-        'pdf_engine':'Chromium / A4; pdftotext/pdfinfo/pdfimages/pdftoppm verified',
+        'pdf_engine':'Chromium / A4 tagged+outline; pdftotext/pdfinfo/pdfimages/pdftoppm verified',
         'source_build_determinism':'separate build twice required',
         'pdf_bytes_determinism':'not asserted; metadata may vary',
         'axe_core':'NOT TESTED (no independently verified axe-core bundle)',
+        'screen_reader_pdf_ua':'NOT TESTED; tagged PDF is not proof of PDF/UA compliance',
         'actual_wordpress':'NOT TESTED','http_csp':'NOT TESTED',
         'core_web_vitals_p75':'NOT MEASURED','results':results,'screenshots':screens}
     REPORT.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n',encoding='utf-8')
-    print('R26 actual Chromium PDF: 7/7 widths PASS, 6 NASA links + six reuse holds, zero embedded images; no JS')
+    print('R27 tagged Chromium PDF: 7/7 widths PASS, 6 clickable NASA links, zero other origins, no JS')
     return report
 
 if __name__=='__main__':run()
