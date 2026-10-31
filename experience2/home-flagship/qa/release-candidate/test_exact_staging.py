@@ -50,6 +50,11 @@ class GateTests(unittest.TestCase):
             d=repo/gate.HOME;d.mkdir(parents=True)
             for name in ('index.html',)+gate.STYLES+gate.SCRIPTS:
                 (d/name).write_text('original '+name)
+            # The current exact-stage gate also attests its OWN QA source files.
+            q=d/'qa'/'release-candidate';q.mkdir(parents=True)
+            for name in ('verify_exact_staging.py','media_transfer_admission.py',
+                         'test_media_transfer_admission.py','test_exact_staging.py'):
+                (q/name).write_text('committed QA fixture '+name)
             run('add','.');run('commit','-qm','fixture')
             head=run('rev-parse','HEAD')
             _,assets=gate.checkout(repo,head)
@@ -58,6 +63,10 @@ class GateTests(unittest.TestCase):
                 gate.checkout(repo,'0'*40)
             (d/'flagship.css').write_text('uncommitted')
             with self.assertRaisesRegex(ValueError,'uncommitted'):
+                gate.checkout(repo,head)
+            (d/'flagship.css').write_text('original flagship.css')
+            (q/'media_transfer_admission.py').write_text('modified verifier')
+            with self.assertRaisesRegex(ValueError,'modified staging QA code'):
                 gate.checkout(repo,head)
     def test_no_staging_means_fail_closed_receipt(self):
         with self.assertRaises(ValueError):
