@@ -21,3 +21,5 @@ test('stretched aspect ratio fails',()=>{let v=copy();v.images[3].candidate_targ
 test('invents museum dimensions fails',()=>{let v=copy();v.images[4].source_original_width_px=300;assert.equal(validate(v,snap).ok,false)});
 test('1971 Brashear photo not falsely dated 1966',()=>{let v=copy();v.images[5].source_chronology='1966 portrait';assert.equal(validate(v,snap).ok,false)});
 test('altered historical alt fails',()=>{let v=copy();v.images[0].stored_alt='Different event';assert.equal(validate(v,snap).ok,false)});
+test('publisher original image displayed in independent viewer, not a browser network status',()=>{const a=m.source_viewer_observations[0];assert.equal(a.result,'viewer_decoded_image');assert.equal(a.http_status,null);assert.equal(a.browser_failure_conclusion,null)});
+test('reject invented 200 on external image viewer',()=>{const v=copy();v.source_viewer_observations[0].http_status=200;assert.equal(validate(v,snap).ok,false)});
