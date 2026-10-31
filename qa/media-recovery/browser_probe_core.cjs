@@ -114,7 +114,9 @@ function classifyImages(stored,rendered,network,pageVerified){
   else if(verifiedLoaded)state='loaded_in_probe_browser';
   else if(r.complete===true&&r.naturalWidth===0)state='zero_intrinsic_width_needs_review';
   else state='pending_lazy_or_incomplete';
-  return{image_key:j.key,match:j.match,stored_url:s.source_url,rendered_src:r?.src||null,
+  return{image_key:j.key,match:j.match,stored_url:s.source_url,
+   rendered_index:Number.isSafeInteger(r?.index)&&r.index>=0?r.index:null,
+   rendered_alt:r?.alt??null,rendered_src:r?.src||null,
    current_src:r?.currentSrc||null,current_src_identity_verified:identityVerified,complete:r?.complete??null,natural_width:r?.naturalWidth??null,
    request_url:req?.url||null,http_status:responseStatus,response_mime_type:responseMime,
    network_failure:reqError,visual_failure_kind:failureKind,
