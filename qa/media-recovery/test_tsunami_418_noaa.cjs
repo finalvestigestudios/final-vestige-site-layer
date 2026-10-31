@@ -5,7 +5,7 @@ const fs=require('node:fs'),path=require('node:path');
 const {validate}=require('./validate_tsunami_418_noaa.cjs');
 const baseline=JSON.parse(fs.readFileSync(path.join(__dirname,'tsunami_418_noaa_catalog_20261031.json'),'utf8'));
 function mutation(name,fn){
- test('reject '+name,()=>{const copy=structuredClone(baseline);fn(copy);assert.equal(validate(copy).ok,false)});
+ test('reject '+name,()=>{const copy=JSON.parse(JSON.stringify(baseline));fn(copy);assert.equal(validate(copy).ok,false)});
 }
 test('original documentary-only candidate passes',()=>{assert.equal(validate(baseline).ok,true)});
 mutation('wrong target historical image',x=>x.image_key='418:5');
