@@ -5,6 +5,7 @@ const {spawn}=require('node:child_process');
 const {loadSnapshot}=require('./validate_inventory.cjs');
 const {classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
+const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
 const P0=[268,432,418,407,434,621],nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
 function plan(snapshot,all){
  const posts=snapshot.parts.flatMap(x=>x.posts),images=snapshot.parts.flatMap(x=>x.images);
@@ -118,6 +119,8 @@ async function inspect(cdp,page,outputDir){
   const records=net.records(),fail=net.docFailures();
   const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
   const images=classifyImages(page.stored,doc?.images||[],records,verified);
+  const pageResult=verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page';
+  const evidence=assessPage({page_result:pageResult,scroll_coverage:coverage,stored_image_count:page.stored.length,stored_images:images});
   const broken=images.filter(x=>x.verified_broken_in_browser===true),screenshots=[];
   if(verified){
    for(const bad of broken.slice(0,3)){
@@ -133,10 +136,11 @@ async function inspect(cdp,page,outputDir){
    }
   }
   return{post_id:page.id,url:page.url,title:page.title,started,completed:now(),
-   page_result:verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page',
+   page_result:pageResult,
    document_url:doc?.url||null,document_title:doc?.title||null,document_network_failures:fail,
    rendered_image_count:doc?.images?.length||0,stored_image_count:page.stored.length,scrolled_steps:steps,scroll_coverage:coverage,
-   stored_images:images,screenshots,confirmed_broken_count:verified&&coverage.complete?broken.length:null,
+   stored_images:images,screenshots,image_census:evidence,known_broken_count:evidence.known_broken_count,
+   confirmed_broken_count:evidence.confirmed_broken_count,
    browser_wire_bytes_total:verified&&coverage.complete?countTransfer(records):null,
    image_wire_bytes_total:verified&&coverage.complete?countTransfer(records.filter(x=>x.type==='Image')):null,
    network_images:records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
@@ -182,11 +186,15 @@ async function main(){
  }catch(e){result.status='environment_or_browser_blocked';result.error=String(e.message||e)}
  finally{if(browser){try{browser.cdp.close()}catch{};browser.child.kill('SIGTERM');await nap(150);fs.rmSync(browser.dir,{recursive:true,force:true})}}
  result.finished=now();result.verified_pages=result.pages.filter(x=>x.page_result==='inspected_browser').length;
- result.confirmed_broken_count=result.verified_pages===pages.length?result.pages.reduce((n,p)=>n+(p.confirmed_broken_count||0),0):null;
+ result.image_census_coverage=assessRun(result.pages,result.requested_pages);
+ result.confirmed_broken_count=result.image_census_coverage.confirmed_broken_count;
+ if(result.image_census_coverage.complete)result.status='complete_browser_image_census';
  const filename=path.join(dir,'browser-audit-'+result.created.replace(/\D/g,'').slice(0,14)+'-'+(all?'all':'p0')+'-'+(desktop?'desktop':'mobile')+'.json');
  fs.writeFileSync(filename,JSON.stringify(result,null,2)+'\n');
- console.log(JSON.stringify({output:filename,status:result.status,verified_pages:result.verified_pages,confirmed_broken_count:result.confirmed_broken_count}));
- if(result.verified_pages!==pages.length)process.exitCode=2;
+ console.log(JSON.stringify({output:filename,status:result.status,verified_pages:result.verified_pages,
+  known_broken_count:result.image_census_coverage.known_broken_count,unresolved_slots:result.image_census_coverage.unresolved_slot_count,
+  confirmed_broken_count:result.confirmed_broken_count}));
+ if(!result.image_census_coverage.complete)process.exitCode=2;
 }
 if(require.main===module)main().catch(e=>{console.error('MEDIA_PROBE_FATAL '+e.stack);process.exitCode=2});
 module.exports={plan,inspect,monitor};
