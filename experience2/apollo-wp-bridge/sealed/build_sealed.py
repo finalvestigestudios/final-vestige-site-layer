@@ -20,6 +20,7 @@ import zlib
 from qa.custody_integrity import check_directory
 from qa.nasa_editorial_gate import audit_files
 from qa.source_concordance import build_concordance, build_context_index
+from qa.atlas_admission import build_atlas_admission
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -57,6 +58,7 @@ def build(out: Path) -> dict:
     nasa_receipt = audit_files(UPSTREAM, BRIDGE / 'generated')
     concordance_html, concordance_css, concordance_receipt = build_concordance(UPSTREAM, BRIDGE / 'generated')
     context_index = build_context_index(UPSTREAM, BRIDGE / 'generated')
+    atlas_html, atlas_css, atlas_index, atlas_receipt = build_atlas_admission(generated=BRIDGE / 'generated')
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
     payload = {}
@@ -72,7 +74,10 @@ def build(out: Path) -> dict:
         hashes[name] = sha
         payload[name] = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
     for name, text in (('source-concordance.html', concordance_html), ('source-concordance.css', concordance_css),
-                       ('source-context.json', context_index)):
+                       ('source-context.json', context_index),
+                       ('atlas-admission.html', atlas_html), ('atlas-admission.css', atlas_css),
+                       ('atlas-admission.json', atlas_index)):
+
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
         hashes[name] = hashlib.sha256(raw).hexdigest()
@@ -95,6 +100,7 @@ def build(out: Path) -> dict:
         'source_match_all_12_blob_pins': True,
         'nasa_catalog_witness': nasa_receipt,
         'source_concordance': concordance_receipt,
+        'atlas_admission': atlas_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',
@@ -103,7 +109,7 @@ def build(out: Path) -> dict:
         'outputs_bytes': sizes,
         'plugin_sha256': hashlib.sha256(php.encode('utf-8')).hexdigest(),
         'routes': ['authorized staging editor shortcode', 'authorized nonce-checked Ajax HTML',
-                   'authorized nonce-checked CSV/JSON downloads including source context index'],
+                   'authorized nonce-checked CSV/JSON downloads including source context and Atlas admission indexes'],
         'generated_public_static_assets': [],
         'non_waivable_holds': ['No WordPress installation or activation performed',
                                'Requires WP_ENVIRONMENT_TYPE=staging and FV_EX2_APOLLO_STAGING_ALLOW=true',
@@ -111,6 +117,7 @@ def build(out: Path) -> dict:
                                'Exact WordPress staging HTTP/cookies and real-user CWV needed',
                                'NASA media rights per item and independent QD',
                                'PR158 catalog identifier-label mismatch for crew portrait must be independently reviewed',
+                               'Atlas published links are not point geocodes or admitted spatial relationships',
                                'No main or homepage merges without separate approval'],
     }
     members = {
