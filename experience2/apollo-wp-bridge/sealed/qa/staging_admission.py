@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 from html.parser import HTMLParser
+from html import unescape
 import json
 from pathlib import Path
 import re
@@ -21,6 +22,7 @@ from urllib.error import HTTPError
 from source_concordance import build_concordance, build_context_index
 from atlas_admission import build_atlas_admission
 from media_rights_ledger import build_media_rights
+from custody_receipts import build_receipts, EXPORT_NAMES
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
@@ -171,6 +173,43 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         html.count(b'id="fv-ex2-media-rights"') != 1 or
         b'{{FV_EX2_RIGHTS_EXPORT}}' in html):
         raise AdmissionError('Media rights source-custody/HOLD contract incomplete')
+    # R21: the seven hashes shown to an editor must equal the seven bytes
+    # independently validated on this origin below; they are not signatures.
+    raw_exports = {name: ((expected_dir/name).read_bytes()
+                          if name not in ('source-context.json','atlas-admission.json','media-rights.json')
+                          else expected_context if name == 'source-context.json'
+                          else atlas_index.encode('utf-8') if name == 'atlas-admission.json'
+                          else media_index.encode('utf-8')) for name in EXPORT_NAMES}
+    receipts_html, receipts_css, receipts_receipt = build_receipts(raw_exports)
+    if (headers.get('x-fv-ex2-apollo-custody-receipts-sha256') != receipts_receipt['html_sha256']
+        or html.count(b'id="fv-ex2-custody-receipts"') != 1
+        or html.count(b'data-custody-receipt=') != 7
+        or b'{{FV_EX2_CUSTODY_EXPORT:' in html
+        or any(digest.encode() not in html for digest in receipts_receipt['exports_sha256'].values())):
+        raise AdmissionError('Private custody receipts integrity/hash/links incomplete')
+    # Parse identity+hash+destination together rather than searching for digests
+    # anywhere in HTML. A swapped digest, filename, URL or nonce fails closed.
+    row_pattern = rb'<li class="fv-ex2-receipts__item" data-custody-receipt="([^"]+)">(.*?)</li>'
+    rows = re.findall(row_pattern, html, re.DOTALL)
+    if len(rows) != 7:
+        raise AdmissionError('Private custody receipts: exactly seven custody records required')
+    expected_nonce = parse_qs(urlparse(src).query)['_wpnonce'][0]
+    for (name, raw), expected_name in zip(rows, EXPORT_NAMES, strict=True):
+        if name.decode('utf-8', 'replace') != expected_name:
+            raise AdmissionError('Private custody receipts: changed export identity/order')
+        matching_sha = re.search(rb'<code aria-label="SHA-256 of [^"]+">([0-9a-f]{64})</code>', raw)
+        matching_link = re.search(rb'<a href="([^"]+)" download="apollo-([^"]+)">',raw)
+        if not matching_sha or matching_sha.group(1).decode() != receipts_receipt['exports_sha256'][expected_name]:
+            raise AdmissionError('Private custody receipts: digest mismatch')
+        if not matching_link or matching_link.group(2).decode() != expected_name:
+            raise AdmissionError('Private custody receipts: download filename changed')
+        dest = urlparse(unescape(matching_link.group(1).decode()))
+        q = parse_qs(dest.query, keep_blank_values=True)
+        if ((dest.scheme, dest.netloc) != (urlparse(origin).scheme,urlparse(origin).netloc)
+            or dest.path != '/wp-admin/admin-ajax.php' or dest.fragment
+            or q != {'action':['fv_ex2_apollo_sealed_download'],
+                     'file':[expected_name], '_wpnonce':[expected_nonce]}):
+            raise AdmissionError('Private custody receipts: untrusted download URL/nonce')
     if b'id="source-concordance"' not in html or html.count(b'data-concordance-record=') != 6:
         raise AdmissionError('Served six-source concordance incomplete')
     if html.count(b'type="radio"') != 4 or html.count(b' data-concordance-era=') != 6:
@@ -218,6 +257,8 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
             'fragment_sha256':expected_fragment,'concordance_sha256':expected_concordance_sha,'context_index_sha256':expected_context_sha,
             'atlas_admission_html_sha256':atlas_hash,'atlas_admission_json_sha256':atlas_index_sha,
             'media_rights_html_sha256':media_html_sha,'media_rights_index_sha256':media_index_sha,
+            'custody_receipts_html_sha256':receipts_receipt['html_sha256'],
+            'custody_receipts_export_count':7,
             'photos_admitted_for_reuse':0,'media_rights_review_holds':6,
             'geographic_pins_admitted':0,'geographic_edges_admitted':0,
             'exports_sha256':download_hashes,

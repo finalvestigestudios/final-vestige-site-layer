@@ -30,6 +30,43 @@ class TestStagingAdmission(unittest.TestCase):
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
 
+    def test_r21_receipts_match_served_seven_exports(self):
+        r=admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor', allow_stub=True)
+        self.assertEqual(r['custody_receipts_export_count'],7)
+        self.assertEqual(len(r['custody_receipts_html_sha256']),64)
+
+    def test_r21_receipt_header_mutation_refused(self):
+        def downgrade(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-custody-receipts-sha256' in h:
+                h['x-fv-ex2-apollo-custody-receipts-sha256']='0'*64
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'custody receipts'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=downgrade)
+
+    def test_r21_custody_export_identity_tampering_denied(self):
+        def swap_record(url,cookie=''):
+            status,h,data=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-custody-receipts-sha256' in h:
+                data=data.replace(b'data-custody-receipt="evidence-export.csv"',
+                                  b'data-custody-receipt="fake-evidence.csv"')
+            return status,h,data
+        with self.assertRaisesRegex(AdmissionError,'changed export identity'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=swap_record)
+
+    def test_r21_custody_export_download_link_tampering_denied(self):
+        def swap_dest(url,cookie=''):
+            status,h,data=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-custody-receipts-sha256' in h:
+                data=data.replace(b'download="apollo-evidence-export.csv"',
+                                  b'download="apollo-evidence-export.json"')
+            return status,h,data
+        with self.assertRaisesRegex(AdmissionError,'download filename changed'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=swap_dest)
+
     def test_no_production_or_public_host_or_cleartext_remote(self):
         for u in ('https://finalvestige.com', 'https://www.finalvestige.com',
                   'https://staging.finalvestige.com', 'http://preview.example.org',

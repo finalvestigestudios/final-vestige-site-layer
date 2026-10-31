@@ -22,6 +22,7 @@ from qa.nasa_editorial_gate import audit_files
 from qa.source_concordance import build_concordance, build_context_index
 from qa.atlas_admission import build_atlas_admission
 from qa.media_rights_ledger import build_media_rights
+from qa.custody_receipts import build_receipts, EXPORT_NAMES
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -61,6 +62,11 @@ def build(out: Path) -> dict:
     context_index = build_context_index(UPSTREAM, BRIDGE / 'generated')
     atlas_html, atlas_css, atlas_index, atlas_receipt = build_atlas_admission(generated=BRIDGE / 'generated')
     media_html, media_css, media_index, media_receipt = build_media_rights(generated=BRIDGE / 'generated')
+    export_bytes = {name: ((BRIDGE/'generated'/name).read_bytes() if name in FILES
+                           else context_index.encode('utf-8') if name == 'source-context.json'
+                           else atlas_index.encode('utf-8') if name == 'atlas-admission.json'
+                           else media_index.encode('utf-8')) for name in EXPORT_NAMES}
+    custody_html, custody_css, receipts_receipt = build_receipts(export_bytes)
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
     payload = {}
@@ -81,7 +87,9 @@ def build(out: Path) -> dict:
                        ('atlas-admission.html', atlas_html), ('atlas-admission.css', atlas_css),
                        ('atlas-admission.json', atlas_index),
                        ('media-rights.html', media_html), ('media-rights.css', media_css),
-                       ('media-rights.json', media_index)):
+                       ('media-rights.json', media_index),
+                       ('custody-receipts.html', custody_html),
+                       ('custody-receipts.css', custody_css)):
 
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
@@ -107,6 +115,7 @@ def build(out: Path) -> dict:
         'source_concordance': concordance_receipt,
         'atlas_admission': atlas_receipt,
         'nasa_media_rights_hold': media_receipt,
+        'private_custody_receipts': receipts_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',

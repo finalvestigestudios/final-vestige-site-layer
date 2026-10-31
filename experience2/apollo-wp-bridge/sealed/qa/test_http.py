@@ -119,7 +119,7 @@ class ApolloSealedHTTP(unittest.TestCase):
         self.assertEqual(h.get('x-fv-ex2-apollo-concordance-sha256'),self.manifest['outputs_sha256']['source-concordance.html'])
         self.assertIn(b'id="documentary-trails"',body)
         self.assertNotIn(b'{{FV_EX2_ASSET_BASE}}',body)
-        self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),7)
+        self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),14)
         self.assertEqual(body.count(b'data-admission-record='),6)
         self.assertEqual(body.count(b'data-media-review='),6)
         self.assertEqual(body.count(b'data-media-hold="true"'),6)
