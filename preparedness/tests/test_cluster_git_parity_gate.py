@@ -168,6 +168,23 @@ class GitObjectTests(unittest.TestCase):
         result = gate.git_blob(self.root, self.sha, 'preparedness/docs/CLUSTER-health.md')
         self.assertEqual(40, len(result))
 
+    def test_checkout_head_must_match_claimed_sha(self):
+        self.assertEqual(self.sha, gate.check_checkout(self.root, self.sha))
+        with self.assertRaisesRegex(gate.ParityFailure, 'HEAD does not match'):
+            gate.check_checkout(self.root, digest('not-the-head'))
+
+    def test_checkout_refuses_uncommitted_source_edit(self):
+        (self.root / 'preparedness/docs/CLUSTER-health.md').write_text('unreviewed change\n')
+        with self.assertRaisesRegex(gate.ParityFailure, 'uncommitted'):
+            gate.check_checkout(self.root, self.sha)
+
+    def test_checkout_refuses_untracked_source_fragment(self):
+        dest = self.root / 'preparedness/sources/fragments'
+        dest.mkdir(parents=True)
+        (dest / 'extra.json').write_text('{}')
+        with self.assertRaisesRegex(gate.ParityFailure, 'uncommitted'):
+            gate.check_checkout(self.root, self.sha)
+
     def test_rejects_missing_git_path(self):
         with self.assertRaises(gate.ParityFailure):
             gate.git_blob(self.root, self.sha, 'preparedness/docs/CLUSTER-food.md')
