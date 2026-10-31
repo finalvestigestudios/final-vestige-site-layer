@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Callable, Mapping
 
 from .procurement_reference import has_original_spelling, source_document_spellings
+from .review import price_outside_tolerance
 
 CENT = Decimal("0.01")
 DEFAULT_ABSOLUTE = CENT
@@ -77,7 +78,8 @@ class PricePolicy:
     source_sha256: str = DEFAULT_POLICY_SHA256
 
     def outside(self, actual: Decimal, expected: Decimal) -> bool:
-        return abs(actual - expected) > max(self.absolute, abs(expected) * self.fraction)
+        # This public method may be called without review_line's wrapper.
+        return price_outside_tolerance(actual, expected, self.absolute, self.fraction)
 
     @property
     def widened(self) -> bool:
