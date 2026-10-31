@@ -1,0 +1,3 @@
+# Offline Apollo QA dependency. Only needed for this local/CI audit; not WordPress.
+pypdf==5.9.0
+# Also requires system Poppler pdfdetach, checked at runtime and fails closed if missing.
