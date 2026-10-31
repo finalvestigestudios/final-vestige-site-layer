@@ -14,6 +14,8 @@ from urllib.parse import urlsplit
 WITNESS = Path(__file__).with_name('pr158_research_desk_witness.json')
 IDENTITY_WITNESS = Path(__file__).with_name('nasa_identity_witness_r23.json')
 IDENTITY_WITNESS_SHA256 = '75ef8e509b447bd61dcc3ae63400f49c260b80bf420de57082d34c41f5dac158'
+SECONDARY_WITNESS = Path(__file__).with_name('nasa_secondary_witness_r29.json')
+SECONDARY_WITNESS_SHA256 = '5deae6099d8e100bccb70ae125bce040d061a529176d286ddf11e873a716f0a1'
 
 EXACT_COMMIT = '250d7f05a4de037e73826dcf0cfaef0ec4c29383'
 EXACT_BLOB = '403d128c57b9bc82dac7c619651689070edef86c'
@@ -116,9 +118,50 @@ def verify_nasa_identity(rows: list[dict], source: Path = IDENTITY_WITNESS) -> d
     return data
 
 
+
+def verify_secondary_catalog(source: Path = SECONDARY_WITNESS) -> dict:
+    """Pinned secondary discovery; NEVER elevate an aggregator to NASA authority."""
+    raw = source.read_bytes()
+    if sha256(raw).hexdigest() != SECONDARY_WITNESS_SHA256:
+        raise CrosswalkHold('R29 secondary source witness mutated; review HOLD')
+    doc = json.loads(raw)
+    item = doc.get('secondary_listing', {})
+    expected = {
+        'schema':'fv-ex2-r29-secondary-photo-catalog-witness-v1',
+        'reviewed_on':'2026-10-31',
+        'identity_status':'UNRESOLVED_NOT_FIRST_PARTY_CONFIRMED',
+        'research_desk_claim':'NASA S67-19766',
+        'primary_casefile_photo_url':'https://www.nasa.gov/image-detail/apollo-1-crew-honored/',
+        'distinct_nasa_photo_url':'https://www.nasa.gov/image-article/apollo-1-prime-crew-portrait/',
+        'distinct_nasa_photo_identifier':'S66-30236',
+        'research_action':'FIND_FIRST_PARTY_CATALOG_RECORD_AND_COMPARE_IMAGE_BYTES_BEFORE_CORRECTING_LABEL',
+        'photo_reuse_status':'LINK_ONLY_UNCLEARED',
+        'atlas_geographic_pins':0,
+        'source_witness_type':'DATED_EDITORIAL_WEB_REVIEW_NOT_MACHINE_VERIFIED_ARCHIVE_METADATA',
+    }
+    required_listing = {
+        'url':'https://timelessmoon.getarchive.net/amp/media/astro-grissom-chaffee-white-in-va-in-mission-simulator-and-on-complex-34-a5cc67',
+        'displayed_nasa_identifier':'S67-19766',
+        'headline':'ASTRO GRISSOM, CHAFFEE, WHITE IN VA, IN MISSION SIMULATOR AND ON COMPLEX 34',
+        'claimed_source':'Defense Visual Information Distribution Service',
+        'date_range_as_displayed':'1968 - 1972',
+        'first_party_nasa_catalog_record':False,
+        'establishes_same_image_as_casefile_link':False,
+        'date_correlates_with_casefile_january_1967':False,
+        'promotes_geolocation_or_rights':False,
+    }
+    if (set(doc) != set(expected) | {'secondary_listing'} or
+        any(doc.get(k) != v for k,v in expected.items()) or
+        not isinstance(item,dict) or item != required_listing):
+        raise CrosswalkHold('Secondary identifier evidence is not independently established')
+    return doc
+
+
+
 def build_crosswalk(records: list[dict], witness: Path = WITNESS) -> tuple[str,dict]:
     rows=verify_witness(records, witness)
     identity=verify_nasa_identity(rows)
+    secondary=verify_secondary_catalog()
     source_url=f'https://github.com/{EXACT_REPO}/blob/{EXACT_COMMIT}/{LEDGER_PATH}'
     cards=[]
     for row in rows:
@@ -142,7 +185,9 @@ Apollo casefile label: <code>{escape(row['canonical_catalog_label'])}</code></p>
 <ol class="fv-ex2-crosswalk__identity-sources">
 <li><strong>Original linked NASA record.</strong> Crew training outside near Launch Complex 34, January 1967. The page is evidence for subject/context, not a verified S67-19766 accession. <a href="{escape(identity['source_page']['url'],quote=True)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Inspect the exact NASA page (opens in a new tab)</a>.</li>
 <li><strong>Different NASA studio portrait.</strong> A separate 1966 NASA image article identifies <code>S66-30236</code>, dated March 31, 1966. It is not the original linked image and its identifier must <em>never</em> be substituted for this casefile photo. <a href="{escape(identity['comparison_page']['url'],quote=True)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Inspect the separate NASA portrait (opens in a new tab)</a>.</li>
+<li data-secondary-catalog-review="hold"><strong>Secondary archive listing; NOT NASA confirmation.</strong> A third-party catalog page displays <code>{escape(secondary['secondary_listing']['displayed_nasa_identifier'])}</code> under a broad simulator / Launch Complex 34 title and attributes the source to DVIDS. Its date range reads <code>1968–1972</code>, which does not corroborate the January 1967 casefile date. <strong>Neither the image identity nor NASA accession equivalence is established.</strong> <a href="{escape(secondary['secondary_listing']['url'],quote=True)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Inspect the third-party catalog clue (new tab)</a>.</li>
 </ol>
+<p class="fv-ex2-crosswalk__secondary-caution" data-secondary-source-status="not-first-party">The catalog number appears in a secondary listing; it is not linked by a first-party NASA identifier to this particular photograph. Preserve both labels and the release hold. No image bytes, rights decision, coordinate or relationship has been imported.</p>
 <p><strong>Clearance condition:</strong> obtain a first-party NASA media/caption or archive record that expressly ties the specific linked photo to a catalog identifier; compare photo identity and archival metadata. Until then, retain descriptive label, preserve PR #158 disagreement and do not assert an assigned accession number, reuse permission or a geographic pin.</p>
 <p><a href="#source-01">Inspect SourceDrawer 01</a> · <a href="#stage-01">Read ChronologyRail 01</a></p>
 <p class="fv-ex2-crosswalk__identity-note">Curator witness checked 2026-10-31. This offline snapshot is not a live NASA change monitor, image-rights authorization, or NASA endorsement.</p>
@@ -163,7 +208,12 @@ Apollo casefile label: <code>{escape(row['canonical_catalog_label'])}</code></p>
                   'nasa_identity_witness_sha256':IDENTITY_WITNESS_SHA256,
                   'identity_adjudication':'HOLD_UNRESOLVED_PR158_S67_19766',
                   'comparison_portrait_not_a_substitute':True,
-                  'source_identifier_verified':False}
+                  'source_identifier_verified':False,
+                  'secondary_nasa_accession_listing':'S67-19766',
+                  'secondary_witness_sha256':SECONDARY_WITNESS_SHA256,
+                  'secondary_first_party_corroboration':False,
+                  'secondary_image_equivalence':False,
+                  'secondary_catalog_date_warning':True}
 
 CSS = '''/* Link-only, no-JS crosswalk; source-label disagreement remains visible. */
 .fv-ex2-crosswalk{border:1px solid #aa8e5c;background:#1a1b17;margin:0 0 24px;padding:12px clamp(12px,2vw,22px);color:#f4efe6}
@@ -194,6 +244,9 @@ CSS += '''/* R23 source-identity decision is not an assertion of NASA photo ID. 
 .fv-ex2-crosswalk__identity-sources li{background:#121711;border:1px solid #836d4e;padding:14px 16px;min-width:0}
 .fv-ex2-crosswalk__identity summary{border:1px solid #ac8d61;padding:11px 14px;min-height:48px}
 .fv-ex2-crosswalk__identity-note{font-size:.84rem;border-left:3px solid #efce91;padding-left:12px}
+.fv-ex2-crosswalk__secondary-caution{border:2px solid #f1c779;padding:12px 16px;background:#151715;font-weight:600;color:#fff5dc!important}
+.fv-ex2-crosswalk__identity-sources [data-secondary-catalog-review=hold]{border:2px solid #f1c779}
+.fv-ex2-crosswalk__identity-sources a:focus-visible{outline:3px solid #ffe4aa;outline-offset:3px}
 @container(max-width:700px){.fv-ex2-crosswalk__identity-sources{grid-template-columns:1fr}}
 @media(max-width:750px){.fv-ex2-crosswalk__identity-sources{grid-template-columns:1fr}}
 '''
