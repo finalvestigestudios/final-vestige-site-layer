@@ -11,6 +11,21 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R84 ProcureGuard high-precision audit arithmetic (pre-release)
+
+The previous 28-digit ambient Python Decimal context could silently truncate
+otherwise valid extended procurement totals with eight-place quantity and
+unit-price fractions—even the R83 `*_exact` report fields. ProcureGuard now
+uses a **scoped 64-digit minimum** for full three-way calculations and
+cent displays, without mutating the process-wide Decimal context. For example,
+quantity `999999999.99999999` × price `999999999999.99999999`
+is now preserved exactly as
+`999999999999999989990.0000000000000001` in the audit report.
+Human decision flags and original report provenance remain intact.
+See [R84 precision evidence and release caveats](docs/PROCUREMENT_DECIMAL_CONTEXT_R84.md).
+These are draft code changes, not full-repository or native Windows proof;
+the six executables remain unavailable pending QD/founder approvals.
+
 ## R83 ProcureGuard exact subcent financial display (pre-release)
 
 ProcureGuard Studio Pro now explicitly uses `ROUND_HALF_UP` for its
