@@ -112,6 +112,14 @@ def run(*, require_axe=False):
             assert page.locator('#source-concordance details > summary').count() == 6
             page.locator('#source-concordance details > summary').first.click()
             assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
+            # Interactive source routes meet a 44px touch-height budget everywhere.
+            sizes = page.locator('#source-concordance a, #source-concordance summary').evaluate_all(
+                '(nodes)=>nodes.map(n=>({height:n.getBoundingClientRect().height,width:n.getBoundingClientRect().width}))')
+            assert len(sizes) == 18 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
+            page.locator('#source-concordance summary').first.focus()
+            page.keyboard.press('Enter')
+            assert not page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
+            page.locator('#source-concordance summary').first.click()
             assert page.locator('[data-ex2-trail-card]').count() == 6
             assert page.locator('[data-ex2-response-item]').count() == 6
             assert page.locator('[data-ex2-atlas-item]').count() == 6
