@@ -21,6 +21,7 @@ GATE_NAMES = (
     'uncited_action_triage', 'outbound_link_custody', 'source_crosswalk_truth',
     'current_safety_copy_custody', 'seven_cluster_git_parity',
     'frozen_81_file_archive_custody',
+    'citation_fallback_human_review_queue',
 )
 HEX40 = re.compile(r'[0-9a-f]{40}\Z')
 HEX64 = re.compile(r'[0-9a-f]{64}\Z')

@@ -79,8 +79,8 @@ class Fixture(unittest.TestCase):
             self.assertIn(match, str(caught.exception))
 
     def test_01_exact_twelve_steps(self):
-        self.assertEqual(len(p.STEPS), 12)
-        self.assertEqual(len(set(x[0] for x in p.STEPS)), 12)
+        self.assertEqual(len(p.STEPS), 13)
+        self.assertEqual(len(set(x[0] for x in p.STEPS)), 13)
 
     def test_02_success_is_still_release_hold(self):
         r = self.execute()
