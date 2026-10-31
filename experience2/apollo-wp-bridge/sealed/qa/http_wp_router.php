@@ -13,15 +13,27 @@ function wp_get_environment_type() { return $GLOBALS['FV_TEST_MODE'] === 'produc
 function is_user_logged_in() { return in_array($GLOBALS['FV_TEST_MODE'], array('editor','reader','production'), true); }
 function current_user_can($cap) { return $GLOBALS['FV_TEST_MODE'] !== 'reader' && $cap === 'edit_pages'; }
 function wp_create_nonce($action) { return $action === 'fv_ex2_apollo_sealed' ? 'http-stub-fixed-nonce' : ''; }
-function check_ajax_referer($action) {
-    if ($action !== 'fv_ex2_apollo_sealed' || ($_GET['_wpnonce'] ?? '') !== wp_create_nonce($action)) { http_response_code(403); exit; }
+function check_ajax_referer($action, $query_arg = false, $stop = true) {
+    // Emulate WordPress core: default stop=true emits -1 on an invalid nonce.
+    $field = $query_arg ? $query_arg : (isset($_REQUEST['_ajax_nonce']) ? '_ajax_nonce' : '_wpnonce');
+    $token = $_REQUEST[$field] ?? null;
+    $result = ($action === 'fv_ex2_apollo_sealed' && is_string($token)
+        && $token === wp_create_nonce($action)) ? 1 : false;
+    if ($action === 'fv_ex2_apollo_sealed' && is_string($token)
+        && $token === 'http-stub-old-nonce') { $result = 2; }
+    if ($stop && $result === false) {
+        status_header(403);
+        echo '-1';
+        exit;
+    }
+    return $result;
 }
 function add_shortcode($name, $handler) { $GLOBALS['shortcodes'][$name] = $handler; }
 function add_action($name, $handler) { $GLOBALS['actions'][$name] = $handler; }
 function admin_url($path) { return 'http://127.0.0.1:' . $_SERVER['SERVER_PORT'] . '/wp-admin/' . $path; }
 function add_query_arg($args, $url) { return $url . '?' . http_build_query($args, '', '&', PHP_QUERY_RFC3986); }
 function esc_url($url) { return htmlspecialchars($url, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
-function nocache_headers() { header('Cache-Control: no-cache, must-revalidate, max-age=0'); header('Expires: Wed, 11 Jan 1984 05:00:00 GMT'); }
+function nocache_headers() { header('Cache-Control: no-store, private, no-cache, must-revalidate, max-age=0'); header('Expires: Wed, 11 Jan 1984 05:00:00 GMT'); }
 function status_header($status) { http_response_code($status); }
 require FV_TEST_APOLLO_PLUGIN;
 if ($route === '/review') {
