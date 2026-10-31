@@ -1,0 +1,466 @@
+{
+  "title": "Ideomotor, authorship and merchant-claims decision ledger",
+  "reviewed_date": "2026-10-30",
+  "affiliate_approved": false,
+  "affiliate_url": null,
+  "checkout_enabled": false,
+  "sources": {
+    "S01": {
+      "title": "Chevreul 1833, letter to Ampère",
+      "url": "https://fr.wikisource.org/wiki/Lettre_%C3%A0_M._Amp%C3%A8re_sur_une_certaine_classe_de_mouvemens_musculaires",
+      "note": "primary transcription; 1812 experiments related in 1833"
+    },
+    "S02": {
+      "title": "Carpenter 1852 pamphlet, Wellcome Collection",
+      "url": "https://wellcomecollection.org/works/k532hmn2",
+      "note": "institutional catalogue and public-domain scan"
+    },
+    "S03": {
+      "title": "Faraday 1853 experimental investigation of table moving",
+      "url": "https://en.wikisource.org/wiki/Experimental_Researches_in_Chemistry_and_Physics/Table-turning",
+      "note": "primary transcription and instrument method"
+    },
+    "S04": {
+      "title": "Faraday 28 June 1853 letter, Faraday Collection",
+      "url": "https://epsilon.ac.uk/view/faraday/letters/Faraday2691",
+      "note": "corroborating dated letter"
+    },
+    "S05": {
+      "title": "Cantergi/Awasthi/Friedman 2021 motion capture",
+      "url": "https://weizmann.elsevierpure.com/en/publications/moving-objects-by-imagination-amount-of-finger-movement-and-pendu/",
+      "note": "abstract for 40 vs 80 cm length and finger movement"
+    },
+    "S06": {
+      "title": "Gauchou/Rensink/Fels 2012 ideomotor responses",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "note": "PubMed, 65 vs 50 on specifically guessed questions"
+    },
+    "S07": {
+      "title": "Moga/Dienes 2022 pendulum adaptation",
+      "url": "https://doi.org/10.1080/00029157.2021.2010641",
+      "note": "peer-reviewed abstract reports null advantage"
+    },
+    "S08": {
+      "title": "Andersen et al. 2018/2019 Ouija field eye tracking",
+      "url": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+      "note": "open-access pair-level prediction and agency"
+    },
+    "S09": {
+      "title": "ASHA 2018 facilitated communication position",
+      "url": "https://www.asha.org/policy/ps2018-00352/",
+      "note": "professional ethical/authorship guidance"
+    },
+    "S10": {
+      "title": "NCCIH on hypnosis evidence",
+      "url": "https://www.nccih.nih.gov/health/hypnosis",
+      "note": "official government evidence summary, not commercial-product proof"
+    },
+    "S11": {
+      "title": "FTC Endorsement Guides questions",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "material relationship disclosure"
+    },
+    "S12": {
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "product-specific substantiation"
+    },
+    "S13": {
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "note": "seller description only"
+    },
+    "S14": {
+      "title": "Hypnosis Live Total Focus seller page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "actual SKU 33-minute/47MB; claims and prices seller-only"
+    },
+    "S15": {
+      "title": "Zen12 official About",
+      "url": "https://zen12.com/about",
+      "note": "12 levels, four styles, 12-minute sessions seller-only"
+    },
+    "S16": {
+      "title": "FV Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "live site 153 sources/16 dossiers, 1785/1813 distinction"
+    },
+    "S17": {
+      "title": "FV free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "note": "live free 52-page workbook"
+    },
+    "S18": {
+      "title": "FV Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "note": "publication principles"
+    },
+    "S19": {
+      "title": "FV Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "general disclosure, not replacement for adjacent link disclosure"
+    }
+  },
+  "claims": [
+    {
+      "id": "IM-01",
+      "claim": "1812 observation vs 1833 publication",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_primary",
+      "note": "Do not conflate dates"
+    },
+    {
+      "id": "IM-02",
+      "claim": "Chevreul's iron ring and hemp cord",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_primary",
+      "note": "Period instrument"
+    },
+    {
+      "id": "IM-03",
+      "claim": "Chevreul initially noticed glass/resin interruption",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_primary",
+      "note": "Subjective observation only"
+    },
+    {
+      "id": "IM-04",
+      "claim": "Near-finger arm support diminished pendulum motion",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_primary",
+      "note": "Historical test"
+    },
+    {
+      "id": "IM-05",
+      "claim": "Covering the eyes changed the pendulum pattern",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_primary",
+      "note": "Reported blindfold test"
+    },
+    {
+      "id": "IM-06",
+      "claim": "All pendulum movements are exactly identical mechanisms",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "reject_overgeneralization",
+      "note": "Primary case is not universal proof"
+    },
+    {
+      "id": "IM-07",
+      "claim": "Carpenter's 1852 work survives in Wellcome Collection",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "supported_primary",
+      "note": "Date and provenance"
+    },
+    {
+      "id": "IM-08",
+      "claim": "Carpenter established commercial hypnosis efficacy",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "reject_product_transfer",
+      "note": "No SKU trial"
+    },
+    {
+      "id": "IM-09",
+      "claim": "Faraday wrote his Times letter June 28 1853",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "supported_primary",
+      "note": "Dated contemporaneous letter"
+    },
+    {
+      "id": "IM-10",
+      "claim": "Faraday published slipping card force direction apparatus",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "supported_primary",
+      "note": "Primary experiment"
+    },
+    {
+      "id": "IM-11",
+      "claim": "Hands moved ahead of table in Faraday's tested cases",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "supported_primary",
+      "note": "Specific scope"
+    },
+    {
+      "id": "IM-12",
+      "claim": "Faraday's pointer recorded pressure direction",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "supported_primary",
+      "note": "Instrument"
+    },
+    {
+      "id": "IM-13",
+      "claim": "Faraday proved every attendee was a liar",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "reject_overgeneralization",
+      "note": "No motive measurement"
+    },
+    {
+      "id": "IM-14",
+      "claim": "2021 study used motion capture",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "supported_peer_review",
+      "note": "Reported abstract"
+    },
+    {
+      "id": "IM-15",
+      "claim": "Small finger movements can amplify pendulum near resonance",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "supported_peer_review",
+      "note": "Instrument matters"
+    },
+    {
+      "id": "IM-16",
+      "claim": "40 cm more effective than 80 cm in studied setup",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "supported_peer_review",
+      "note": "Not universal length rule"
+    },
+    {
+      "id": "IM-17",
+      "claim": "2012 Ouija experiment 65 vs 50 for guesses",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "supported_bounded_study",
+      "note": "Narrow task, not hidden oracle"
+    },
+    {
+      "id": "IM-18",
+      "claim": "Ouija answers always reveal hidden facts",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "reject_overgeneralization",
+      "note": "Not supported"
+    },
+    {
+      "id": "IM-19",
+      "claim": "2022 pendulum study found no ideomotor accuracy advantage",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "supported_bounded_study",
+      "note": "Different methodology"
+    },
+    {
+      "id": "IM-20",
+      "claim": "2012 and 2022 experiments identical",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "reject_mismatch",
+      "note": "Different device and protocol"
+    },
+    {
+      "id": "IM-21",
+      "claim": "2018 online/2019 volume Ouija gaze field study",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "supported_bounded_study",
+      "note": "Publication distinction"
+    },
+    {
+      "id": "IM-22",
+      "claim": "Individual gaze was less predictive in Ouija than deliberate spelling",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "supported_bounded_study",
+      "note": "Agency research, not spirits"
+    },
+    {
+      "id": "IM-23",
+      "claim": "2018 Ouija study proved spiritual agency",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "reject_supernatural",
+      "note": "No validation"
+    },
+    {
+      "id": "IM-24",
+      "claim": "ASHA 2018 statement rejects facilitated communication",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "supported_professional_policy",
+      "note": "Authorship harm warning"
+    },
+    {
+      "id": "IM-25",
+      "claim": "Facilitated communication identical to Ouija boards",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "reject_analogy",
+      "note": "Different contexts and populations"
+    },
+    {
+      "id": "IM-26",
+      "claim": "Pendulums valid for medical diagnosis",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "reject_high_stakes",
+      "note": "Not clinically validated"
+    },
+    {
+      "id": "IM-27",
+      "claim": "NCCIH hypnosis evidence varies by indication",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "supported_government_summary",
+      "note": "No merchant SKU inference"
+    },
+    {
+      "id": "IM-28",
+      "claim": "Inspire3 catalog owns Hypnosis Live and Zen12 brands",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "seller_attributed",
+      "note": "Relationship from merchant page"
+    },
+    {
+      "id": "IM-29",
+      "claim": "Total Focus specific SKU 33 minutes and 47MB",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "seller_attributed_format",
+      "note": "Reconfirm terms before release"
+    },
+    {
+      "id": "IM-30",
+      "claim": "Total Focus provides guaranteed 100% focus",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "seller_only_unsubstantiated",
+      "note": "Exclude"
+    },
+    {
+      "id": "IM-31",
+      "claim": "Total Focus merchant displayed price fixed globally",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "reject_volatile",
+      "note": "Prices can differ and change"
+    },
+    {
+      "id": "IM-32",
+      "claim": "Zen12 12 levels four styles short audios",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "seller_attributed_format",
+      "note": "Reconfirm before release"
+    },
+    {
+      "id": "IM-33",
+      "claim": "Zen12 12 minutes equal hour meditation",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "seller_only_unsubstantiated",
+      "note": "No product trial verified"
+    },
+    {
+      "id": "IM-34",
+      "claim": "Affiliate approval and tracking granted",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "HOLD_no_authorization",
+      "note": "No account verification"
+    },
+    {
+      "id": "IM-35",
+      "claim": "FTC requires near-link material connection disclosure",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "required_compliance",
+      "note": "General disclaimer insufficient"
+    },
+    {
+      "id": "IM-36",
+      "claim": "Medical claims must use product-specific robust evidence",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "required_compliance",
+      "note": "Do not transfer science by analogy"
+    },
+    {
+      "id": "IM-37",
+      "claim": "Puységur page 153 rows 16 dossiers",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "verified_live",
+      "note": "Read WordPress on 2026-10-30"
+    },
+    {
+      "id": "IM-38",
+      "claim": "Focus Fieldbook free and only Jetpack funnel",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "verified_live",
+      "note": "No duplicated signup"
+    },
+    {
+      "id": "IM-39",
+      "claim": "Editorial standards require evidence/commerce independence",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "verified_live_policy",
+      "note": "Respect release holds"
+    },
+    {
+      "id": "IM-40",
+      "claim": "General FV affiliate disclosure replaces specific disclosure",
+      "source_ids": [
+        "S19"
+      ],
+      "decision": "reject_compliance",
+      "note": "Near-link still needed"
+    }
+  ]
+}

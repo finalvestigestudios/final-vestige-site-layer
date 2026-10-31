@@ -1,0 +1,51 @@
+"use strict";
+function audit(x){
+ const r=[];const t=(label,ok)=>r.push({label,pass:!!ok});
+ const c=x.claims,src=c.sources,w=x.article.trim().split(/\s+/).length;
+ t(">=2500 words",w>=2500);
+ t("exactly one source article H1",(x.article.match(/^# /gm)||[]).length===1);
+ t("ten numbered chapters",(x.article.match(/^## \d\d\s*\//gm)||[]).length===10);
+ t("Chevreul 1812 and 1833 separated",x.article.includes("1812")&&x.article.includes("1833"));
+ t("Carpenter 1852 source",x.article.includes("Carpenter")&&x.article.includes("1852"));
+ t("Faraday 1853 source",x.article.includes("Faraday")&&x.article.includes("1853"));
+ t("2021 pendulum length research",x.article.includes("40-centimeter")&&x.article.includes("80-centimeter"));
+ t("2012 & 2022 contrary knowledge findings",x.article.includes("65%")&&x.article.includes("50%")&&x.article.includes("no advantage"));
+ t("ASHA authorship warning",x.article.includes("not the same method")&&x.article.includes("abuse allegations"));
+ t("Pendulum not for health decisions",x.article.includes("Do not use a pendulum to make health or safety decisions"));
+ t("at least 19 source records",Object.keys(src).length>=19);
+ t("all sources actual https",Object.values(src).every(s=>s.url.startsWith("https://")));
+ t("40 individually decisioned claims",c.claims.length>=40);
+ t("no duplicate claim IDs",new Set(c.claims.map(q=>q.id)).size===c.claims.length);
+ t("all claim sources exist",c.claims.every(q=>q.source_ids.every(id=>src[id])));
+ t("at least 8 rejected/seller-only claims",c.claims.filter(q=>/reject|seller_only/.test(q.decision)).length>=8);
+ t("no partner account or link",c.affiliate_approved===false&&c.affiliate_url===null&&c.checkout_enabled===false);
+ t("WordPress HTML block markers",x.html.includes("<!-- wp:html -->")&&x.html.includes("<!-- /wp:html -->"));
+ t("one HTML H1",(x.html.match(/<h1\b/g)||[]).length===1);
+ t("full article not teaser",x.html.includes("The table moved. The hand moved first."));
+ t("three native source disclosures",(x.html.match(/<details\b/g)||[]).length===3&&(x.html.match(/<summary\b/g)||[]).length===3);
+ t("no required JS or iframe",!/<script\b|<iframe\b/i.test(x.html));
+ t("scoped style and container",x.html.includes(".fvimo")&&x.html.includes('class="fvimo"'));
+ t("narrow layout and reduced motion",x.html.includes("@media(max-width:450px)")&&x.html.includes("prefers-reduced-motion:reduce"));
+ t("forced color adaptation",x.html.includes("forced-colors:active"));
+ t("keyboard focus adaptation",x.html.includes(":focus-visible"));
+ t("affiliate near-CTA notice",x.html.includes("Affiliate transparency:")&&x.html.includes("Final Vestige may earn a commission"));
+ t("purchase not enabled",x.html.includes("disabled aria-disabled="));
+ t("no merchant checkout anchors",!/<a\b[^>]*href=["']https:\/\/(?:www\.)?(?:hypnosislive|zen12|inspire3)\.com/i.test(x.html));
+ t("no media pixels/signup",!/<iframe\b|<script\b|<img\b|<form\b|gtag\(|fbq\(/i.test(x.html));
+ t("canonical free Focus link",x.html.includes("https://finalvestige.com/focus/"));
+ t("canonical Puységur source",x.html.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"));
+ t("no prices in visitor copy",!/\$\d+/.test(x.html+x.article));
+ t("original video identified as script",x.video.includes("SCRIPT ONLY")&&x.video.includes("42-second"));
+ t("unpublished routes held",x.strategy.includes("UNPUBLISHED / DO NOT LINK"));
+ t("privacy attribution allowlist",x.strategy.includes("referrer_bucket")&&x.strategy.includes("cta_placement"));
+ t("existing Jetpack retained",x.strategy.includes("no new form")&&x.strategy.includes("existing one-list Jetpack"));
+ t("release constraints present",x.readme.includes("RELEASE HOLD")&&x.strategy.includes("hosted CI"));
+ return {article_words:w,source_count:Object.keys(src).length,claim_count:c.claims.length,passed:r.filter(q=>q.pass).length,total:r.length,failed:r.filter(q=>!q.pass).map(q=>q.label),checks:r};
+}
+if(typeof module!=="undefined")module.exports={audit};
+if(typeof require==="function"&&require.main===module){
+ const fs=require("fs"),p=require("path"),root=p.resolve(__dirname,"..");
+ const rd=f=>fs.readFileSync(p.join(root,f),"utf8");
+ const data={article:rd("article.md"),html:rd("page-ideomotor.blocks.html"),claims:JSON.parse(rd("claims.json")),video:rd("video-42s-script.md"),strategy:rd("distribution-and-offer-fit.md"),readme:rd("README.md")};
+ const r=audit(data);process.stdout.write(JSON.stringify(r,null,2)+"\n");if(r.failed.length)process.exitCode=1;
+}
