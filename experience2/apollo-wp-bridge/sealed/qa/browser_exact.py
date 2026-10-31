@@ -110,12 +110,16 @@ def run(*, require_axe=False):
             assert page.locator('section#atlas').count() == 1
             assert page.locator('#source-concordance [data-concordance-record]').count() == 6
             assert page.locator('#source-concordance details > summary').count() == 6
+            assert page.locator('#source-concordance .fv-ex2-concordance__witness').count() == 12
+            assert page.locator('#source-concordance a[href^="#source-"]').count() == 6
+            assert page.locator('#source-concordance a[href^="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]').count() == 6
+            assert page.locator('#source-concordance .fv-ex2-concordance__witness--photo').count() == 6
             page.locator('#source-concordance details > summary').first.click()
             assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
             # Interactive source routes meet a 44px touch-height budget everywhere.
             sizes = page.locator('#source-concordance a, #source-concordance summary').evaluate_all(
                 '(nodes)=>nodes.map(n=>({height:n.getBoundingClientRect().height,width:n.getBoundingClientRect().width}))')
-            assert len(sizes) == 19 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
+            assert len(sizes) == 31 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
             page.locator('#source-concordance summary').first.focus()
             page.keyboard.press('Enter')
             assert not page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
@@ -151,6 +155,9 @@ def run(*, require_axe=False):
                 report['screenshots'].append({'name':dest.name,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
                 lens.locator('#fv-ex2-lens-all').check()
             assert page.locator('[data-ex2-stage]').count() == 6
+            # A source drawer route must remain discoverable when JS is absent;
+            # the URL fragment targets the native details wrapper, not hidden copy.
+            assert page.locator('#source-concordance a[href="#source-03"]').count() == 1
             assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 5
             assert page.locator('[data-ex2-trail-controls]').is_visible(), (width,'JS blocked by CSP')
             assert page.locator('[data-ex2-response-tools]').is_visible(), (width,'response JS blocked')
@@ -216,6 +223,7 @@ def run(*, require_axe=False):
         assert page.locator('[data-ex2-response-item]:visible').count() == 6
         assert page.locator('[data-ex2-atlas-item]:visible').count() == 6
         assert page.locator('#source-concordance [data-concordance-record]').count() == 6
+        assert page.locator('#source-concordance .fv-ex2-concordance__witness').count() == 12
         page.keyboard.press('Tab')
         assert page.evaluate('document.activeElement.textContent.trim()') == 'Skip to Apollo evidence'
         page.keyboard.press('Enter')
