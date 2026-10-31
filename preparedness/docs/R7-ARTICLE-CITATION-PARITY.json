@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-30",
+  "source_commit_sha": "903e2ce817659bf3d4e5cf7fa44cdda2682a17aa",
+  "authority": "ACTUAL_72_GITHUB_SOURCE_FILES_READ_AND_CROSS_CHECKED_MACHINE_ONLY_NOT_EXTERNAL_HUMAN_SAFETY_OR_FACT_REVIEW",
+  "release_state": "HOLD",
+  "may_publish": false,
+  "method": [
+    "Read exact article-evidence-lock.json from R6 head",
+    "Fetch every one of the 36 HTML body and 36 JSON metadata files through authenticated GitHub connector, in five bounded batches",
+    "Verify each fetched Git blob SHA against frozen evidence-lock entry",
+    "Extract every unique {{cite:source-id}} token per article, compare exactly to all source_use keys, require each use note is nonblank",
+    "Require draft publish state, 1800 approximate words for each article, 450 for water planner, action panel, no duplicate H2 ids/h1 and historical verdict block where applicable",
+    "Preserve exact prior reviewer status; do NOT interpret metadata approval as independently qualified safety review"
+  ],
+  "summary": {
+    "frozen_draft_pairs": 36,
+    "article_drafts": 35,
+    "tool_drafts": 1,
+    "exact_token_to_source_use_relationships": 367,
+    "article_min_approx_words": 1960,
+    "tool_approx_words": 556,
+    "per_article_source_use_parity_errors": 0,
+    "blank_article_source_use_notes": 0,
+    "non_draft_statuses": 0,
+    "safety_states": {
+      "pending": 30,
+      "approved": 2,
+      "not-required": 4
+    }
+  },
+  "rows": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "approximate_words": 3416,
+      "citation_source_pairs": 7,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "family-communication-plan",
+      "approximate_words": 3184,
+      "citation_source_pairs": 14,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "fire-making-across-time",
+      "approximate_words": 3276,
+      "citation_source_pairs": 11,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "approximate_words": 3242,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "go-bags",
+      "approximate_words": 3577,
+      "citation_source_pairs": 18,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "approximate_words": 2332,
+      "citation_source_pairs": 12,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "approximate_words": 3922,
+      "citation_source_pairs": 10,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "homemade-water-filters",
+      "approximate_words": 2053,
+      "citation_source_pairs": 6,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "household-emergency-plan",
+      "approximate_words": 3344,
+      "citation_source_pairs": 14,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "approximate_words": 2425,
+      "citation_source_pairs": 11,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "making-water-safer",
+      "approximate_words": 3029,
+      "citation_source_pairs": 8,
+      "existing_safety_state": "approved",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "medication-and-devices",
+      "approximate_words": 4089,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "navigation-before-gps",
+      "approximate_words": 2993,
+      "citation_source_pairs": 10,
+      "existing_safety_state": "not-required",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "approximate_words": 4469,
+      "citation_source_pairs": 16,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "pantry-rotation",
+      "approximate_words": 3239,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "approximate_words": 2528,
+      "citation_source_pairs": 11,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "approximate_words": 2471,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "approximate_words": 2894,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "not-required",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "approximate_words": 2442,
+      "citation_source_pairs": 10,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "preparedness-real-households",
+      "approximate_words": 3341,
+      "citation_source_pairs": 17,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "approximate_words": 3613,
+      "citation_source_pairs": 17,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "approximate_words": 2728,
+      "citation_source_pairs": 7,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "approximate_words": 2505,
+      "citation_source_pairs": 7,
+      "existing_safety_state": "not-required",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "approximate_words": 3043,
+      "citation_source_pairs": 11,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "approximate_words": 2953,
+      "citation_source_pairs": 10,
+      "existing_safety_state": "approved",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "approximate_words": 2742,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "not-required",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "approximate_words": 3573,
+      "citation_source_pairs": 13,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "approximate_words": 2752,
+      "citation_source_pairs": 8,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "approximate_words": 2226,
+      "citation_source_pairs": 11,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "three-day-kit",
+      "approximate_words": 3525,
+      "citation_source_pairs": 16,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "two-week-water-storage",
+      "approximate_words": 1960,
+      "citation_source_pairs": 3,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "approximate_words": 3034,
+      "citation_source_pairs": 9,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "water-advisories-explained",
+      "approximate_words": 1970,
+      "citation_source_pairs": 4,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "water-math",
+      "approximate_words": 2080,
+      "citation_source_pairs": 5,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "water-planner",
+      "approximate_words": 556,
+      "citation_source_pairs": 3,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    },
+    {
+      "slug": "water-purification-through-history",
+      "approximate_words": 3122,
+      "citation_source_pairs": 14,
+      "existing_safety_state": "pending",
+      "publish_state": "draft",
+      "citation_parity": "PASS",
+      "source_use_notes_nonblank": true,
+      "blob_sha_matches_evidence_lock": true
+    }
+  ],
+  "limitations": [
+    "The JS text tokenizer approximates rather than runs Python build.word_count; no exact full Python validation or build was run",
+    "Source citation existence and nonblank usage notes do NOT confirm that external materials contain or support article claims",
+    "The report cannot verify the reviewer identities or the qualifications of earlier approvals",
+    "No source URL was independently opened for human verification",
+    "No full rendered WordPress preview, independent QD, CI pass or founder publication approval"
+  ]
+}
