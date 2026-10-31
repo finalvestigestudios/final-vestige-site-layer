@@ -1,0 +1,77 @@
+'use strict';
+/* Reproducible zero-network source controls: node mind/door-study-zen12-r28/qa.cjs */
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const d=__dirname,R=n=>fs.readFileSync(path.join(d,n),'utf8');
+const article=R('investigation.md'),articleWp=R('investigation.wp.html');
+const a=R('zen12-guide-a.wp.html'),b=R('zen12-guide-b.wp.html');
+const hub=R('mind-hub-alternative.wp.html'),poster=R('zen12-40s-poster.svg');
+const vtt=R('zen12-40s-captions-draft.vtt'),film=R('film-protocol.md');
+const matrix=R('claim-evidence-permissions.csv'),nav=R('navigation-experiment-gates.md');
+const privacy=require('./privacy-off.cjs');
+let pass=0;function ok(v,label){assert.ok(v,label);pass++}
+function no(s,re,label){ok(!re.test(s),label)}
+const filmSlot='<!-- OPTIONAL FILM SLOT -->';
+const filmBlock=/<section class="concept-film" aria-labelledby="film-optional-heading">[\s\S]*?<\/section>/;
+ok(a.includes(filmSlot),'A explicit slot');
+ok(!filmBlock.test(a),'A no video candidate');
+ok(filmBlock.test(b),'B film candidate');
+ok(b.replace(filmBlock,'')===a.replace(filmSlot,''),'A and B editorial+CTA parity exactly');
+for(const [n,x] of [['A',a],['B',b]]){
+ ok(x.includes('>Beginner</th><td>First six levels</td><td>24 MP3s</td>'),n+' beginner tier');
+ ok(x.includes('>Premium</th><td>All twelve levels</td><td>48 MP3s</td>'),n+' premium tier');
+ ok(x.includes('>Advanced</th><td>Final six levels</td><td>24 MP3s</td>'),n+' advanced tier');
+ ok(x.includes('guided meditation, relaxation music, sounds of nature and white noise'),n+' formats');
+ ok(x.includes('seller claims'),n+' evidence limitation');
+ ok(x.includes('not independently established'),n+' scientific limit');
+ ok(x.includes('52-page Seven Day Focus Fieldbook'),n+' Focus route');
+ ok(x.includes('Commission disclosure:')&&x.indexOf('Commission disclosure:')<x.indexOf('<button'),n+' disclosure precedes disabled CTA');
+ ok(x.includes('disabled aria-disabled="true"'),n+' inert button');
+ ok(x.includes('role="group" aria-label="Prospective commercial relationship"'),n+' commercial semantics');
+ ok(x.includes('<caption>')&&x.includes('scope="col"')&&x.includes('scope="row"'),n+' table headers');
+ ok(x.includes(':focus-visible')&&x.includes('prefers-reduced-motion:reduce'),n+' keyboard and motion');
+ ok(x.includes('<h1>')&&x.includes('<h2'),n+' headings');
+ no(x,/<(?:script|iframe|video|form|input)\b/i,n+' no active media/tracking/signup');
+ no(x,/<a[^>]+href=["'][^"']*(?:zen12\.com|getstarted\.zen12\.com|affiliates\.inspire3\.com)[^"']*["'][^>]*>/i,n+' no clickthrough merchant offer');
+ no(x,/(?:onclick=|onload=|gtag\(|dataLayer\.push|fbclid=|gclid=)/i,n+' no activation or ad tags');
+ no(x,/<(?!button\b)[a-z][^>]+(?:aff_id=|affiliate_id=|subid=|referral_id=)/i,n+' no affiliate parameters');
+}
+ok(b.includes('The film itself <strong>has not been rendered or hosted</strong>'),'film status honest');
+ok(b.includes('<details open>')&&b.includes('00–07s')&&b.includes('31–40s'),'B transcript always readable');
+ok(article.trim().split(/\s+/).length>2100,'investigation substantive');
+ok(article.includes('not a universal rate')&&article.includes('not a validated replication'),'study and exercise caveats');
+ok(article.includes('BF03208840')&&article.includes('BF03214339'),'original 1998 and 1997 sources');
+ok(article.includes('15639436')&&article.includes('tb00427.x'),'review and flicker sources');
+ok(article.includes('puysegurs-animal-magnetism-files'),'published historical bridge');
+no(article,/(?:buy now|affiliate purchase link|my discount code)/i,'investigation stays independent');
+ok(articleWp.includes('<article class="fvm28-investigation"'),'WP semantic article');
+ok(articleWp.includes('id="fvm28-title"'),'WP h1 id accessible');
+no(articleWp,/<(?:script|iframe|form)\b/i,'WP article no tracking or form');
+ok(hub.includes('PR #172'),'Mind hub ownership protected');
+ok(hub.includes('puysegurs-animal-magnetism-files')&&hub.includes('finalvestige.com/focus/'),'hub live links');
+no(hub,/<(?:form|input|script|iframe)\b/i,'hub no new funnel or script');
+ok(poster.startsWith('<svg')&&poster.includes('<title')&&poster.includes('<desc'),'poster has accessible context');
+no(poster,/(?:<script|onload=|<image\b|xlink:href=)/i,'poster self-contained');
+ok(vtt.startsWith('WEBVTT')&&vtt.includes('00:00:40.000'),'40-second draft captions');
+ok(film.includes('NOT synchronized'),'media synchronization not falsely certified');
+ok(matrix.split('\n').filter(Boolean).length===71,'70 claims plus header');
+for(const term of ['UNSUBSTANTIATED_PRODUCT_CLAIM','BLOCKED_UNVERIFIED','SELLER_DESCRIPTION','INDEPENDENT_PUBLISHED'])ok(matrix.includes(term),'source classification '+term);
+ok(privacy.ENABLED===false,'analytics not live');
+ok(privacy.selfTest()>=35,'privacy synthetic assertions');
+ok(nav.includes('HOLD_MERCHANT')&&nav.includes('HOLD_UNSENT'),'Dispatch gate');
+ok(nav.includes('No-JS')&&nav.includes('WCAG 2.2 AA'),'a11y gates');
+let mutation=0;
+function reject(txt,fn){assert.ok(!fn(txt));mutation++}
+reject(a.replace('disabled aria-disabled="true"',''),s=>s.includes('disabled aria-disabled="true"'));
+reject(a.replace('Commission disclosure:','Quiet commercial:'),s=>s.includes('Commission disclosure:'));
+reject(a.replace('24 MP3s','18 MP3s'),s=>s.includes('>Beginner</th><td>First six levels</td><td>24 MP3s</td>'));
+reject(a.replace('48 MP3s','99 MP3s'),s=>s.includes('>Premium</th><td>All twelve levels</td><td>48 MP3s</td>'));
+reject(a.replace('Final six levels','First six levels'),s=>s.includes('>Advanced</th><td>Final six levels</td><td>24 MP3s</td>'));
+reject(a+'<script src="https://tracker.invalid/x"></script>',s=>!/<script\b/i.test(s));
+reject(a+'<iframe src="https://video.invalid/x"></iframe>',s=>!/<iframe\b/i.test(s));
+reject(a+'<form><input type="email"></form>',s=>!/<form\b/i.test(s));
+reject(a+'<a href="https://zen12.com/?affiliate_id=guessed">Purchase</a>',s=>!/<a[^>]+href="https:\/\/zen12\.com/i.test(s));
+reject(hub+'<form action="/subscribe"></form>',s=>!/<form\b/i.test(s));
+reject(vtt.replace('00:00:40.000','00:00:32.000'),s=>s.includes('00:00:40.000'));
+reject(article.replace('not a universal rate','a universal rate'),s=>s.includes('not a universal rate'));
+ok(mutation===12,'12 deliberately harmful mutations rejected');
+console.log('R28 source integrity: '+pass+' PASS checks, including 12/12 adverse mutations; privacy separate '+privacy.selfTest()+' synthetic checks. NOT WordPress/CI/browser/film proof.');
