@@ -157,7 +157,6 @@ def verify_secondary_catalog(source: Path = SECONDARY_WITNESS) -> dict:
     return doc
 
 
-
 def build_crosswalk(records: list[dict], witness: Path = WITNESS) -> tuple[str,dict]:
     rows=verify_witness(records, witness)
     identity=verify_nasa_identity(rows)
