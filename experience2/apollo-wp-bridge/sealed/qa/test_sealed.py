@@ -79,8 +79,9 @@ class SealedApollo(unittest.TestCase):
     def test_04_nonce_rejection(self):
         for action in ('page', 'download'):
             p = php(self.plugin, 'badnonce', action, 'response-export.json')
-            self.assertEqual(p.returncode, 62)
-            self.assertIn(b'BAD_NONCE', p.stderr)
+            self.assertEqual(p.returncode, 0)
+            self.assertIn(b'STATUS:403', p.stderr)
+            self.assertNotIn(b'BAD_NONCE', p.stderr)
             self.assertEqual(p.stdout, b'')
 
     def test_05_authorized_shortcode_and_routes(self):

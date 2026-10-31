@@ -14,10 +14,19 @@ function wp_get_environment_type() { return $GLOBALS['ENV']; }
 function is_user_logged_in() { return $GLOBALS['LOGIN']; }
 function current_user_can($cap) { return $GLOBALS['CAP'] && $cap === 'edit_pages'; }
 function wp_create_nonce($what) { return 'fixed-cli-test-nonce'; }
-function check_ajax_referer($action) {
-    if ($action !== 'fv_ex2_apollo_sealed' || ($_GET['_wpnonce'] ?? '') !== 'fixed-cli-test-nonce') {
-        fwrite(STDERR, 'BAD_NONCE'); exit(62);
+function check_ajax_referer($action, $query_arg = false, $stop = true) {
+    $field = $query_arg ? $query_arg : (isset($_REQUEST['_ajax_nonce']) ? '_ajax_nonce' : '_wpnonce');
+    $token = $_REQUEST[$field] ?? null;
+    $result = ($action === 'fv_ex2_apollo_sealed' && is_string($token)
+        && $token === wp_create_nonce($action)) ? 1 : false;
+    if ($action === 'fv_ex2_apollo_sealed' && is_string($token)
+        && $token === 'fixed-cli-old-nonce') { $result = 2; }
+    if ($stop && $result === false) {
+        status_header(403);
+        echo '-1';
+        exit;
     }
+    return $result;
 }
 function add_shortcode($shortcode, $handler) { $GLOBALS['shortcodes'][$shortcode] = $handler; }
 function add_action($action, $handler) { $GLOBALS['actions'][$action] = $handler; }
@@ -27,6 +36,7 @@ function esc_url($url) { return htmlspecialchars($url, ENT_QUOTES | ENT_SUBSTITU
 function nocache_headers() {}
 function status_header($code) { fwrite(STDERR, 'STATUS:' . $code); }
 $_GET = array('_wpnonce' => $mode === 'badnonce' ? 'wrong' : 'fixed-cli-test-nonce');
+$_REQUEST = $_GET;
 if ($action === 'download') { $_GET['file'] = $argv[4] ?? ''; }
 require $plugin;
 if ($action === 'shortcode') { echo fv_ex2_apollo_sealed_shortcode(); }

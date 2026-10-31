@@ -61,8 +61,18 @@ function fv_ex2_apollo_sealed_shortcode($attrs = array()) {
 add_shortcode('fv_ex2_apollo_sealed_preview', 'fv_ex2_apollo_sealed_shortcode');
 
 function fv_ex2_apollo_sealed_validate_request() {
+    // Real WP check_ajax_referer() with its default $stop=true emits "-1" on failure.
+    // This editor-only evidence endpoint instead guarantees an empty, uncached 403.
+    // Explicit _wpnonce avoids precedence from an unrelated _ajax_nonce parameter.
+    nocache_headers();
     if (!fv_ex2_apollo_sealed_allowed()) { status_header(403); exit; }
-    check_ajax_referer('fv_ex2_apollo_sealed');
+    $nonce = $_REQUEST['_wpnonce'] ?? null;
+    if (!is_string($nonce) || strlen($nonce) < 1 || strlen($nonce) > 128) {
+        status_header(403); exit;
+    }
+    $verified = check_ajax_referer('fv_ex2_apollo_sealed', '_wpnonce', false);
+    // A 12–24h old WordPress nonce returns 2: still valid per WordPress core.
+    if ($verified !== 1 && $verified !== 2) { status_header(403); exit; }
 }
 
 /** No privileged action is registered under wp_ajax_nopriv_*. */
