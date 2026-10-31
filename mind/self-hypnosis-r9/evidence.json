@@ -1,0 +1,366 @@
+{
+  "title": "Mind R9 self-hypnosis / Total Focus / Zen12 claim and official-source ledger",
+  "reviewed_utc": "2026-10-31T02:46:00Z",
+  "publication": "HOLD",
+  "notes": [
+    "The 2019 review source was the institutional abstract, not full-text research access.",
+    "Merchant claims are seller assertions, not substantiated effectiveness.",
+    "No Final Vestige affiliate approval, payout, tracking URL or campaign permission verified.",
+    "Seller refund/price/checkout terms may change; reconfirm at launch."
+  ],
+  "affiliate_approved": false,
+  "affiliate_url": null,
+  "sources": [
+    {
+      "id": "S1",
+      "type": "published historical source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S2",
+      "type": "Wellcome Collection primary bibliography",
+      "url": "https://content.www.wellcomecollection.org/works/demkv24m"
+    },
+    {
+      "id": "S3",
+      "type": "APA 2024 research overview",
+      "url": "https://www.apa.org/topics/psychotherapy/hypnosis"
+    },
+    {
+      "id": "S4",
+      "type": "Bournemouth University 2019 RCT systematic review abstract",
+      "url": "https://staffprofiles.bournemouth.ac.uk/display/journal-article/307888"
+    },
+    {
+      "id": "S5",
+      "type": "NCCIH hypnosis clinical research overview",
+      "url": "https://www.nccih.nih.gov/health/hypnosis"
+    },
+    {
+      "id": "S6",
+      "type": "PubMed 2023 systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37399315/"
+    },
+    {
+      "id": "S7",
+      "type": "Inspire3 seller catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S8",
+      "type": "Hypnosis Live Total Focus exact seller offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "S9",
+      "type": "Hypnosis Live merchant FAQ",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "S10",
+      "type": "Zen12 official seller program description",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "S11",
+      "type": "Zen12 official free-audio newsletter offer",
+      "url": "https://zen12.com/welcome"
+    },
+    {
+      "id": "S12",
+      "type": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S13",
+      "type": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R01",
+      "claim": "Puységur archive contains testimony and failures",
+      "decision": "historical qualified",
+      "sources": [
+        "S1"
+      ],
+      "qualification": "Historical attribution; no proof of cures."
+    },
+    {
+      "id": "R02",
+      "claim": "James Braid's Neurypnology appeared in 1843",
+      "decision": "allow verified",
+      "sources": [
+        "S2"
+      ],
+      "qualification": "Wellcome publication catalog."
+    },
+    {
+      "id": "R03",
+      "claim": "The 1843 book validates hypnosis treatment efficacy",
+      "decision": "reject",
+      "sources": [
+        "S2"
+      ],
+      "qualification": "Book title does not establish efficacy."
+    },
+    {
+      "id": "R04",
+      "claim": "Hypnosis commonly defined via attention and responsiveness to suggestion",
+      "decision": "qualified professional",
+      "sources": [
+        "S3"
+      ],
+      "qualification": "Description not mechanism consensus."
+    },
+    {
+      "id": "R05",
+      "claim": "Mechanism and state interpretations remain debated",
+      "decision": "allow qualified",
+      "sources": [
+        "S3"
+      ],
+      "qualification": "APA overview."
+    },
+    {
+      "id": "R06",
+      "claim": "Self-hypnosis meta-analysis retrieved 576 studies",
+      "decision": "allow summary",
+      "sources": [
+        "S4"
+      ],
+      "qualification": "Institutional abstract; complete methods not inspected."
+    },
+    {
+      "id": "R07",
+      "claim": "Self-hypnosis review included 22 RCTs",
+      "decision": "allow summary",
+      "sources": [
+        "S4"
+      ],
+      "qualification": "RCT not same as consumer sales test."
+    },
+    {
+      "id": "R08",
+      "claim": "Review reported medium to large pooled clinical effects",
+      "decision": "qualified clinical",
+      "sources": [
+        "S4"
+      ],
+      "qualification": "Heterogeneous clinical indications."
+    },
+    {
+      "id": "R09",
+      "claim": "Repeated skill training seems more useful than passive recordings in reviewed trials",
+      "decision": "qualified inference",
+      "sources": [
+        "S4"
+      ],
+      "qualification": "Pattern, not categorical rule."
+    },
+    {
+      "id": "R10",
+      "claim": "Every guided MP3 must be ineffective",
+      "decision": "reject",
+      "sources": [
+        "S4"
+      ],
+      "qualification": "Not supported by review."
+    },
+    {
+      "id": "R11",
+      "claim": "Every guided MP3 is clinically validated",
+      "decision": "reject",
+      "sources": [
+        "S4",
+        "S13"
+      ],
+      "qualification": "Product-specific trials required."
+    },
+    {
+      "id": "R12",
+      "claim": "Hypnosis research suggests some benefit for certain specific clinical conditions",
+      "decision": "qualified",
+      "sources": [
+        "S5"
+      ],
+      "qualification": "No generalized guarantee."
+    },
+    {
+      "id": "R13",
+      "claim": "Hypnosis cures anxiety in every person",
+      "decision": "reject",
+      "sources": [
+        "S5",
+        "S13"
+      ],
+      "qualification": "Not supported."
+    },
+    {
+      "id": "R14",
+      "claim": "2023 sleep review included 44 studies",
+      "decision": "allow",
+      "sources": [
+        "S6"
+      ],
+      "qualification": "Different clinical outcome from concentration."
+    },
+    {
+      "id": "R15",
+      "claim": "Sleep review 47.7 percent positive, 22.7 mixed, 29.5 no impact",
+      "decision": "allow contextual",
+      "sources": [
+        "S6"
+      ],
+      "qualification": "Study proportions not buyer probabilities."
+    },
+    {
+      "id": "R16",
+      "claim": "Inspire3 markets both Hypnosis Live and Zen12",
+      "decision": "seller verified",
+      "sources": [
+        "S7"
+      ],
+      "qualification": "Corporate catalog."
+    },
+    {
+      "id": "R17",
+      "claim": "Total Focus described as 33-minute 47MB MP3 by J. A. Amos",
+      "decision": "seller described",
+      "sources": [
+        "S8"
+      ],
+      "qualification": "Exact SKU, not proven effectiveness."
+    },
+    {
+      "id": "R18",
+      "claim": "Total Focus has playback preview",
+      "decision": "seller described",
+      "sources": [
+        "S8"
+      ],
+      "qualification": "Preview available on product page."
+    },
+    {
+      "id": "R19",
+      "claim": "Total Focus guarantees extreme on-demand focus",
+      "decision": "reject",
+      "sources": [
+        "S8",
+        "S13"
+      ],
+      "qualification": "Seller claim lacks product-specific corroboration."
+    },
+    {
+      "id": "R20",
+      "claim": "Total Focus reprograms the brain with NLP",
+      "decision": "reject",
+      "sources": [
+        "S8",
+        "S13"
+      ],
+      "qualification": "No product-specific support supplied."
+    },
+    {
+      "id": "R21",
+      "claim": "Hypnosis Live FAQ says 14-day refund and five sessions max per year",
+      "decision": "seller conditional",
+      "sources": [
+        "S9"
+      ],
+      "qualification": "Mutable current merchant terms; checkout must be verified."
+    },
+    {
+      "id": "R22",
+      "claim": "Zen12 is 12 levels with four styles per level",
+      "decision": "seller described",
+      "sources": [
+        "S10"
+      ],
+      "qualification": "Product format only."
+    },
+    {
+      "id": "R23",
+      "claim": "Zen12 sessions are 12 minutes long",
+      "decision": "seller described",
+      "sources": [
+        "S10"
+      ],
+      "qualification": "Product format only."
+    },
+    {
+      "id": "R24",
+      "claim": "12-minute Zen12 yields one hour meditation's benefit",
+      "decision": "reject",
+      "sources": [
+        "S10",
+        "S13"
+      ],
+      "qualification": "Seller time-equivalence unsubstantiated."
+    },
+    {
+      "id": "R25",
+      "claim": "Zen12 free audio enrolls applicant in newsletter",
+      "decision": "seller described",
+      "sources": [
+        "S11"
+      ],
+      "qualification": "Commercial consent detail."
+    },
+    {
+      "id": "R26",
+      "claim": "A short attention exercise can prove self-hypnosis treatment effectiveness",
+      "decision": "reject",
+      "sources": [
+        "S4"
+      ],
+      "qualification": "Free exercise is nonclinical observation."
+    },
+    {
+      "id": "R27",
+      "claim": "Commission disclosure should be close and clear",
+      "decision": "allow compliance",
+      "sources": [
+        "S12"
+      ],
+      "qualification": "Include near each future earning link."
+    },
+    {
+      "id": "R28",
+      "claim": "Health efficacy claims need competent relevant product-specific evidence",
+      "decision": "allow compliance",
+      "sources": [
+        "S13"
+      ],
+      "qualification": "Cannot borrow generalized interventions."
+    },
+    {
+      "id": "R29",
+      "claim": "Final Vestige has approved Inspire3 tracked links",
+      "decision": "blocked unknown",
+      "sources": [
+        "S7"
+      ],
+      "qualification": "Public merchant program does not prove account acceptance."
+    },
+    {
+      "id": "R30",
+      "claim": "Two guide variants already show a higher video conversion rate",
+      "decision": "reject no data",
+      "sources": [
+        "S12"
+      ],
+      "qualification": "A/B not launched and no results."
+    },
+    {
+      "id": "R31",
+      "claim": "Affiliate outbound click is a completed confirmed sale",
+      "decision": "reject measurement",
+      "sources": [
+        "S12"
+      ],
+      "qualification": "Merchant conversion evidence required."
+    }
+  ]
+}
