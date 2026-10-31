@@ -64,6 +64,16 @@ class TestStagingAdmission(unittest.TestCase):
         with self.assertRaisesRegex(AdmissionError, 'CSP term'):
             admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor', allow_stub=True, fetch=bad_csp)
 
+    def test_concordance_provenance_header_mutation_denied(self):
+        def bad_concordance(url, cookie=''):
+            status, h, data = no_redirect_fetch(url, cookie)
+            if 'x-fv-ex2-apollo-concordance-sha256' in h:
+                h['x-fv-ex2-apollo-concordance-sha256'] = '0'*64
+            return status, h, data
+        with self.assertRaisesRegex(AdmissionError, 'concordance provenance hash'):
+            admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
+                  allow_stub=True, fetch=bad_concordance)
+
     def test_export_tampering_not_accepted(self):
         def bad_export(url, cookie=''):
             status, h, data = no_redirect_fetch(url, cookie)

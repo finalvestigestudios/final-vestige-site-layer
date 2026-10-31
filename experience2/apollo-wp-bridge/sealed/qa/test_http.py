@@ -114,6 +114,9 @@ class ApolloSealedHTTP(unittest.TestCase):
         self.assertIn("connect-src 'none'",h.get('content-security-policy',''))
         self.assertNotIn("'unsafe-inline'",h.get('content-security-policy',''))
         self.assertIn(b'id="atlas"',body)
+        self.assertIn(b'id="source-concordance"',body)
+        self.assertEqual(body.count(b'data-concordance-record='), 6)
+        self.assertEqual(h.get('x-fv-ex2-apollo-concordance-sha256'),self.manifest['outputs_sha256']['source-concordance.html'])
         self.assertIn(b'id="documentary-trails"',body)
         self.assertNotIn(b'{{FV_EX2_ASSET_BASE}}',body)
         self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),4)
@@ -143,6 +146,9 @@ class ApolloSealedHTTP(unittest.TestCase):
     def test_08_no_public_ajax_route(self):
         code,h,body=fetch(self.base,'/wp-admin/admin-ajax.php?action=wp_ajax_nopriv_fv_ex2_apollo_sealed_page','editor')
         self.assertEqual((code,body),(404,b''))
+
+# Compatibility alias: staging-admission reuses this fixture directly.
+ApolloHttp = ApolloSealedHTTP
 
 if __name__=='__main__':
     unittest.main()

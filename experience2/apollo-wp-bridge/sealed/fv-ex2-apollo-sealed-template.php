@@ -72,7 +72,11 @@ function fv_ex2_apollo_sealed_page() {
     $fragment = fv_ex2_apollo_sealed_asset('fragment.html');
     $css = fv_ex2_apollo_sealed_asset('apollo.css');
     $js = fv_ex2_apollo_sealed_asset('apollo.js');
+    $concordance = fv_ex2_apollo_sealed_asset('source-concordance.html');
+    $concordance_css = fv_ex2_apollo_sealed_asset('source-concordance.css');
     if (!is_string($fragment) || !is_string($css) || !is_string($js)
+        || !is_string($concordance) || !is_string($concordance_css)
+        || substr_count($concordance, 'data-concordance-record=') !== 6
         || strpos($fragment, 'id="documentary-trails"') === false
         || strpos($fragment, 'id="atlas"') === false
         || substr_count($fragment, '{{FV_EX2_ASSET_BASE}}') !== 4) {
@@ -93,12 +97,21 @@ function fv_ex2_apollo_sealed_page() {
         || preg_match('~<\s*(?:script|style|img|iframe|main|html|body)\b~i', $fragment)) {
         status_header(503); exit;
     }
+    // Inject after validating the canonical fragment; keep its original provenance header.
+    $chronology_start = '<section class="ex2-section ex2-case" id="chronology"';
+    if (substr_count($fragment, $chronology_start) !== 1
+        || strpos($fragment, 'id="source-concordance"') !== false
+        || strpos($concordance, '<img') !== false || strpos($concordance, '<script') !== false) {
+        status_header(503); exit;
+    }
+    $fragment = str_replace($chronology_start, $concordance . $chronology_start, $fragment);
     $csp_nonce = base64_encode(random_bytes(18));
     nocache_headers();
     header('X-FV-EX2-Apollo-Source-Head: ' . FV_EX2_APOLLO_SOURCE_HEAD);
     header('X-FV-EX2-Apollo-Fragment-SHA256: ' . FV_EX2_APOLLO_SHA256['fragment.html']);
     header('X-FV-EX2-Apollo-CSS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.css']);
     header('X-FV-EX2-Apollo-JS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.js']);
+    header('X-FV-EX2-Apollo-Concordance-SHA256: ' . FV_EX2_APOLLO_SHA256['source-concordance.html']);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
     header('X-Content-Type-Options: nosniff');
@@ -107,7 +120,7 @@ function fv_ex2_apollo_sealed_page() {
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         . '<title>Private Apollo 1 Evidence Review — Final Vestige</title>'
         . '<meta name="robots" content="noindex,nofollow"><style nonce="' . $csp_nonce . '">'
-        . $css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
+        . $css . $concordance_css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
         . '</style></head><body>'
         . '<a class="fv-ex2-apollo__skip" href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>'
         . '<main id="fv-ex2-apollo-document" class="fv-ex2-apollo" tabindex="-1" aria-label="Apollo 1 evidence investigation">'
