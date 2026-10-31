@@ -18,6 +18,10 @@
       ids.join('|') !== CHAPTER_IDS.join('|') || targets.some((t) => !t) ||
       new Set(targets).size !== CHAPTER_IDS.length) return;
 
+  // Reading progress must include the whole final chapter, not just its h2.
+  // The seven anchor targets remain unchanged for native fragment navigation.
+  const lastHeading = targets[targets.length - 1];
+  const finalChapter = (typeof lastHeading.closest === 'function' && lastHeading.closest('section')) || lastHeading;
   let running = true;
   let queued = false;
   const originalTabindex = new Map();
@@ -45,8 +49,7 @@
     try {
       const scroll = window.scrollY || window.pageYOffset || 0;
       const top = targets[0].getBoundingClientRect().top + scroll;
-      const last = targets[targets.length - 1];
-      const end = last.getBoundingClientRect().bottom + scroll;
+      const end = finalChapter.getBoundingClientRect().bottom + scroll;
       const viewport = Math.max(1, window.innerHeight);
       const available = Math.max(1, end - top - viewport);
       const progress = Math.max(0, Math.min(1, (scroll - top) / available));
