@@ -1,4 +1,4 @@
-"""Stable, privacy-preserving diagnostics for six offline financial CSV imports.
+"""Stable, privacy-preserving diagnostics for shared financial CSV imports.
 
 Error strings intentionally never interpolate source paths, filenames, CSV cells,
 column *values*, or exception messages. Only allowlisted schema names and
