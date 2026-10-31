@@ -1,7 +1,7 @@
 "use strict";
 const test=require("node:test");
 const assert=require("node:assert/strict");
-const {inspectSignupMarkup,auditCommercialDrafts,assessReadiness}=require("./r13_probe.cjs");
+const {inspectSignupMarkup,inspectSavedSubscribeBlock,auditCommercialDrafts,assessReadiness}=require("./r13_probe.cjs");
 const fallback=`<div class="wp-block-jetpack-subscriptions"><a href="https://finalvestige.com/?post_type=page&#038;p=523">Subscribe</a></div>`;
 const cleanForm=`<form action="/subscribe"><label>Email<input type="email"></label><button>Join</button></form>`;
 const issue03="Zen12. Commercial disclosure: commission possible. [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]";
@@ -40,3 +40,10 @@ test("Even synthetic all-green claims cannot create send permission",()=>{const 
 test("No subscriber email addresses emitted in report",()=>assert.equal(assessReadiness(snapshot(),r(),c()).real_subscriber_addresses_in_report,false));
 test("Reports never imply affiliate link authorization",()=>assert.equal(assessReadiness(snapshot(),r(),c()).affiliate_links_authorized,false));
 test("Source-only status is explicit",()=>assert.equal(assessReadiness(snapshot(),r(),c()).source_only,true));
+
+test("Saved WordPress Jetpack Subscribe block recognized",()=>assert.equal(inspectSavedSubscribeBlock('<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true} /-->').block_present,true));
+test("Saved buttonOnNewLine does not establish button-only popup style",()=>assert.equal(inspectSavedSubscribeBlock('<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true} /-->').explicit_button_only_style,false));
+test("Saved block configured email placeholder distinguished from rendered input",()=>{const v=inspectSavedSubscribeBlock('<!-- wp:jetpack/subscriptions {"subscribePlaceholder":"Your email address"} /-->');assert.equal(v.email_placeholder_configured,true);assert.equal(v.browser_opt_in_verified,false);});
+test("Explicit saved button-only style can be detected without proving signup",()=>{const v=inspectSavedSubscribeBlock('<!-- wp:jetpack/subscriptions {"className":"is-style-button-only"} /-->');assert.equal(v.explicit_button_only_style,true);assert.equal(v.browser_opt_in_verified,false);});
+test("Missing saved block does not fabricate a form",()=>assert.equal(inspectSavedSubscribeBlock("<p>Just a button</p>").block_present,false));
+test("Malformed saved block fails closed",()=>{const v=inspectSavedSubscribeBlock('<!-- wp:jetpack/subscriptions {"className":"bad", } /-->');assert.equal(v.attributes_parsed,false);assert.equal(v.explicit_button_only_style,false);});
