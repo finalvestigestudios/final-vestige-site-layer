@@ -136,10 +136,22 @@ def verify_physical_source_custody(rows: list[dict], expected_count: int = 224,
     if not isinstance(rows, list) or len(rows) != expected_count:
         raise ValueError('source: expected physical row inventory changed')
     seen_keys, urls = set(), Counter()
+    unread_base_placeholders = 0
     for r in rows:
         if not isinstance(r, dict) or any(not isinstance(r.get(k), str) or not r[k].strip()
-                                            for k in ('row_key','origin','source_id','url','supports')):
+                                            for k in ('row_key','origin','source_id','url')):
             raise ValueError('source: malformed physical reading record')
+        support = r.get('supports')
+        if not isinstance(support, str) or not support.strip():
+            # The original base register deliberately retains 15 *unread* source
+            # placeholders. They are not contributor evidence and cannot be cited
+            # as verified. Do not reject them merely because their supports are
+            # empty, but never permit a dated or mislabelled placeholder through.
+            if (r['origin'] != 'base' or r.get('verified_on') or r.get('human_link_check')
+                    or 'not yet read' not in str(r.get('reading_limits') or '').lower()
+                    or support not in (None, '')):
+                raise ValueError('source: unverified placeholder lacks explicit base custody or has approval markers')
+            unread_base_placeholders += 1
         if r['row_key'] in seen_keys or not r['row_key'].startswith(r['origin'] + ':'):
             raise ValueError('source: duplicate or misattributed physical source row')
         if not isinstance(r['url'], str) or any(ord(ch) <= 32 for ch in r['url']) or '\\' in r['url']:
@@ -157,8 +169,11 @@ def verify_physical_source_custody(rows: list[dict], expected_count: int = 224,
         raise ValueError('source: shared URL groups changed without review')
     if len(urls) != expected_distinct_urls:
         raise ValueError('source: distinct literal URL inventory changed without review')
+    if expected_count == 224 and unread_base_placeholders != 15:
+        raise ValueError('source: 15 original unread base placeholders must remain explicit and unverified')
     return {'physical_source_records': len(rows), 'literal_urls': len(urls),
-            'repeated_url_groups_UNRESOLVED': collisions}
+            'repeated_url_groups_UNRESOLVED': collisions,
+            'unread_base_placeholders_NOT_VERIFIED': unread_base_placeholders}
 
 
 def audit_corpus(lib, rows, fingerprint, *, supplied_report=None, response_bundle=None,
