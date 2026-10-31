@@ -147,7 +147,7 @@ class StageTests(unittest.TestCase):
         for fname in STAGE_FILES:
             path=repo/STAGE_SOURCE/fname
             path.parent.mkdir(parents=True,exist_ok=True)
-            path.write_text('test source '+fname+'\\n')
+            path.write_text('test source '+fname+'\n')
         subprocess.run(['git','-C',str(repo),'add','.'],check=True)
         subprocess.run(['git','-C',str(repo),'-c','user.name=FV Local QA',
                         '-c','user.email=local@example.invalid','commit','-qm','stage source fixture'],check=True)
