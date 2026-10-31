@@ -6,7 +6,8 @@ review-only exception engine; a claimed reimbursement is not necessarily eligibl
 from __future__ import annotations
 
 from collections import Counter, defaultdict
-from decimal import Decimal
+from decimal import Context, Decimal, localcontext
+from functools import wraps
 from pathlib import Path
 from typing import Iterable, Mapping
 
@@ -82,6 +83,18 @@ def _validate_ledger(rows: list[dict[str, str]], engine):
     return grouped
 
 
+def _exact_linked_grant_context(operation):
+    """Keep direct linked-grant API calls independent of ambient Decimal state."""
+    @wraps(operation)
+    def guarded(*args, **kwargs):
+        # 200k bounded source rows at <= 1 trillion each fit exactly in
+        # 64 significant digits, including cents and gross/credit totals.
+        with localcontext(Context(prec=64)):
+            return operation(*args, **kwargs)
+    return guarded
+
+
+@_exact_linked_grant_context
 def reconcile_allocations(
     claims: str, ledger: str, budgets: str, folder: str,
     *, claim_rows: list[dict[str, str]] | None = None,
