@@ -4,6 +4,7 @@ const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {spawn}=require('node:child_process');
 const {loadSnapshot}=require('./validate_inventory.cjs');
 const {classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
+const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
 const P0=[268,432,418,407,434,621],nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
@@ -122,24 +123,36 @@ async function inspect(cdp,page,outputDir){
   const pageResult=verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page';
   const evidence=assessPage({page_result:pageResult,scroll_coverage:coverage,stored_image_count:page.stored.length,stored_images:images});
   const broken=images.filter(x=>x.verified_broken_in_browser===true),screenshots=[];
+  // Distinct image slots may share an identical URL. Always use exact DOM index + ALT.
+  // Screenshot coverage is independent of the verified browser/network failure count.
+  const MAX_SCREENSHOTS_PER_POST=24;
   if(verified){
-   for(const bad of broken.slice(0,3)){
-    const idx=(doc.images||[]).findIndex(x=>x.currentSrc===bad.current_src||x.src===bad.rendered_src);
-    if(idx<0)continue;
+   for(const bad of broken.slice(0,MAX_SCREENSHOTS_PER_POST)){
+    const target=selectScreenshotTarget(bad,doc?.images||[]);
+    if(!target.ok){screenshots.push({image_key:bad.image_key,result:'skipped',reason:target.reason});continue}
     try{
-     await evaluate(cdp,"(document.querySelector('article')||document.querySelector('main')).querySelectorAll('img')["+idx+"].scrollIntoView({block:'center'})");
+     const scrolled=await evaluate(cdp,"(function(){const r=document.querySelector('article')||document.querySelector('main');const e=r?.querySelectorAll('img')["+target.index+"];if(!e)return false;e.scrollIntoView({block:'center'});return true})()");
+     if(scrolled!==true){screenshots.push({image_key:bad.image_key,result:'skipped',reason:'dom_target_missing_at_scroll'});continue}
      await nap(150);
-     const ss=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},12000);
+     const fresh=await evaluate(cdp,domScript);
+     const recheck=selectScreenshotTarget(bad,fresh?.images||[]);
+     if(!recheck.ok){screenshots.push({image_key:bad.image_key,result:'skipped',reason:'dom_changed_after_scroll:'+recheck.reason});continue}
+     const shot=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},12000);
      const basename='broken-'+page.id+'-'+bad.image_key.replace(':','-')+'.png';
-     fs.writeFileSync(path.join(outputDir,basename),Buffer.from(ss.data,'base64'));screenshots.push(basename);
-    }catch(e){screenshots.push('screenshot_error: '+String(e.message||e))}
+     fs.writeFileSync(path.join(outputDir,basename),Buffer.from(shot.data,'base64'));
+     screenshots.push({image_key:bad.image_key,result:'captured',filename:basename,rendered_index:target.index,current_src:bad.current_src});
+    }catch(e){screenshots.push({image_key:bad.image_key,result:'error',reason:String(e.message||e)})}
    }
   }
   return{post_id:page.id,url:page.url,title:page.title,started,completed:now(),
    page_result:pageResult,
    document_url:doc?.url||null,document_title:doc?.title||null,document_network_failures:fail,
    rendered_image_count:doc?.images?.length||0,stored_image_count:page.stored.length,scrolled_steps:steps,scroll_coverage:coverage,
-   stored_images:images,screenshots,image_census:evidence,known_broken_count:evidence.known_broken_count,
+   stored_images:images,screenshots,screenshot_target_count:broken.length,
+   screenshot_captured_count:screenshots.filter(x=>x.result==='captured').length,
+   screenshot_unattempted_count:Math.max(0,broken.length-MAX_SCREENSHOTS_PER_POST),
+   screenshot_limit_per_post:MAX_SCREENSHOTS_PER_POST,
+   image_census:evidence,known_broken_count:evidence.known_broken_count,
    confirmed_broken_count:evidence.confirmed_broken_count,
    browser_wire_bytes_total:verified&&coverage.complete?countTransfer(records):null,
    image_wire_bytes_total:verified&&coverage.complete?countTransfer(records.filter(x=>x.type==='Image')):null,
