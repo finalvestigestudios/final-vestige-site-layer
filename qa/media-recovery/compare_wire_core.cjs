@@ -1,6 +1,6 @@
 'use strict';
 /** Offline strict wire-byte comparison. No server contact, no claims from originals. */
-const {sameSource}=require('./browser_probe_core.cjs');
+const {sameSource,scopeArticleImageWire}=require('./browser_probe_core.cjs');
 const good=n=>Number.isSafeInteger(n)&&n>0;
 const https=u=>typeof u==='string'&&/^https:\/\/[a-z0-9.-]+\//i.test(u);
 const page=u=>typeof u==='string'&&/^https:\/\/finalvestige\.com\//.test(u);
@@ -49,8 +49,13 @@ function inspectRun(r){
    if(!proof)e.push('slot_network_evidence_missing:'+id+':'+v.image_key);
   }
   if(!good(x.image_wire_bytes_total)||total!==x.image_wire_bytes_total)e.push('wire_total_mismatch:'+id);
+  // Do not turn decorative image changes into claimed article-photo compression.
+  const articleScope=scopeArticleImageWire(slots,net);
+  if(!good(articleScope.article_bytes)||x.article_image_wire_bytes_total!==articleScope.article_bytes)
+   e.push('article_wire_scope_mismatch:'+id);
   posts.set(id,{url:x.url,keys:keys.sort().join('|'),stored:x.stored_image_count,
-    rendered:x.rendered_image_count,bytes:x.image_wire_bytes_total,
+    rendered:x.rendered_image_count,bytes:articleScope.article_bytes,
+    all_image_bytes:x.image_wire_bytes_total,unattributed_bytes:articleScope.unattributed_bytes,
     // Stored historical media and visible descriptions must remain consistent across runs.
     // A changed CDN currentSrc is permitted, but swapping historical media is not.
     assets:new Map(slots.map(v=>[v.image_key,{source_url:v.stored_url,alt:v.rendered_alt??null}]))});
@@ -83,14 +88,16 @@ function compareWireRuns(before,after){
   }
   sumBefore+=x.bytes;sumAfter+=y.bytes;
   perPost.push({post_id:id,url:x.url,before_bytes:x.bytes,after_bytes:y.bytes,
-   change_bytes:x.bytes-y.bytes,reduction_percent:Math.round(10000*(x.bytes-y.bytes)/x.bytes)/100});
+   change_bytes:x.bytes-y.bytes,reduction_percent:Math.round(10000*(x.bytes-y.bytes)/x.bytes)/100,
+   before_all_page_image_bytes:x.all_image_bytes,after_all_page_image_bytes:y.all_image_bytes,
+   before_unattributed_image_bytes:x.unattributed_bytes,after_unattributed_image_bytes:y.unattributed_bytes});
  }
  if(!sumBefore)errors.push('zero_baseline');
  if(errors.length)return{comparable:false,status:'NOT_COMPARABLE',reasons:errors};
  const pct=100*(sumBefore-sumAfter)/sumBefore;
  return{comparable:true,status:'PAIR_ELIGIBLE_FOR_INDEPENDENT_REVIEW',viewport:before.viewport,
   browser:before.browser_product,scope:before.mode,post_count:perPost.length,
-  metric:'actual browser encoded image response bytes, NOT stored WordPress originals',
+  metric:'actual browser encoded network bytes matched to stored article image slots; NOT all page chrome images or WordPress originals',
   before_image_wire_bytes:sumBefore,after_image_wire_bytes:sumAfter,
   delta_bytes:sumBefore-sumAfter,reduction_percent:Math.round(pct*100)/100,
   reaches_76pct_in_pair:pct>=76,per_post:perPost,
