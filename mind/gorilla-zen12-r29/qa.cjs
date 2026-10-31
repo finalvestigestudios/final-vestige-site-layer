@@ -45,7 +45,7 @@ for(const t of ['Beginner','Premium','Advanced','24 MP3','48 MP3','first six','l
 assert(a.includes('mobile phone'),'privacy checkpoint');
 assert(a.includes('field does <em>not</em> establish whether that field is mandatory'),'no assumption about required phone');
 assert(a.includes('one-year money-back'),'guarantee attributed');
-assert(a.includes('haven't listened')||a.includes('has not listened'),'no invented trial');
+assert(a.includes("haven\'t listened")||a.includes('has not listened'),'no invented trial');
 assert(a.includes('a free twelve-minute')||a.includes('twelve-minute timer'),'free useful exercise');
 assert(a.includes('NIH'),'independent context');
 assert(a.includes('does not justify'),'conclusion caveat');
