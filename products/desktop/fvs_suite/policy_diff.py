@@ -46,7 +46,7 @@ def _read_policy(path):
 
 
 def _visible_source_char(character: str) -> str:
-    """Display invisible format/variation code points without changing sources.
+    """Display invisible formats, variations and non-ASCII spaces faithfully.
 
     Unlike JSON-encoding whole lines, this keeps readable Unicode readable
     while making default-hidden typography explicit. Existing backslash-first
@@ -59,7 +59,11 @@ def _visible_source_char(character: str) -> str:
     if character == "\r":
         return "\\r"
     codepoint = ord(character)
-    if (unicodedata.category(character) == "Cf"
+    category = unicodedata.category(character)
+    if (category == "Cf"
+            # Non-ASCII Unicode spacing separators can be visually identical
+            # to an ordinary source space while changing the audited bytes.
+            or (category == "Zs" and character != " ")
             or codepoint == 0x034F  # Combining Grapheme Joiner
             or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors
             or 0xFE00 <= codepoint <= 0xFE0F
@@ -115,6 +119,7 @@ def compare_policy_files(old, new, folder, output_path):
         "SHA-256 fingerprints cover the exact source bytes read (including any BOM).\n"
         "Diff display escapes source backslash as \\\\, tab as \\t and CR as \\r.\n"
         "Invisible Unicode format and variation characters display as \\uXXXX or \\UXXXXXXXX.\n"
+        "Non-ASCII Unicode spacing separators display as \\uXXXX (ordinary spaces remain unchanged).\n"
         + identity_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
