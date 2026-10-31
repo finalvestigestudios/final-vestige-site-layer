@@ -720,3 +720,7 @@ for limits, independent source-byte verification and test/release gates.
 ## R70 source-bound premium review exports (pre-release)
 
 The premium review window now rechecks its selected report and journal before human review, register export, and encrypted backup actions. Both output APIs accept the opened report's expected SHA-256; a different valid report at the same path is rejected before publishing evidence. See [R70 review snapshot identity contract](docs/PREMIUM_REPORT_SNAPSHOT_R70.md). The 22 focused local tests do **not** establish complete-repository integration, Windows x64 acceptance, entitlement security, or release approval.
+
+## R71 premium journal snapshot custody (pre-release)
+
+The two premium exception-review windows now bind the selected **review journal's exact verified bytes** alongside the already source-bound report. Another local reviewer adding a valid event, file substitutions, disappearance or observed in-flight changes invalidate the selection and require an explicit reopen. The GUI refreshes its pinned journal only after its own successfully committed human review, without automatically approving grants, spending or procurement. See [R71 premium journal snapshot runbook](docs/PREMIUM_JOURNAL_SNAPSHOT_R71.md). **19 focused isolated synthetic tests passed in normal and optimized Python locally; full private-repository and Windows x64 tests remain outstanding.** No executable distribution or QD approval is implied.
