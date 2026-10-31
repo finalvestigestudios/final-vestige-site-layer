@@ -10,7 +10,8 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal, ROUND_HALF_UP, localcontext
+from functools import wraps
 from pathlib import Path
 from typing import Callable, Mapping
 
@@ -19,6 +20,24 @@ from .procurement_reference import has_original_spelling, source_document_spelli
 CENT = Decimal("0.01")
 DEFAULT_ABSOLUTE = CENT
 DEFAULT_FRACTION = Decimal("0.02")
+# 200,000 validated CSV rows × (up to 9 integer + 8 fractional qty digits)
+# × (up to 12 integer + 8 fractional unit-price digits) need fewer than
+# 50 significant digits for exact multiplication and gross/credit sums.
+# The default Decimal context (28 digits) silently loses subcent evidence.
+PROCUREMENT_PRECISION = 64
+
+
+def _audit_decimal_precision(operation):
+    """Preserve exact bound-checked fixed-point arithmetic without global changes."""
+    @wraps(operation)
+    def guarded(*args, **kwargs):
+        with localcontext() as ctx:
+            ctx.prec = max(ctx.prec, PROCUREMENT_PRECISION)
+            return operation(*args, **kwargs)
+    return guarded
+
+
+@_audit_decimal_precision
 def _display_money(value: Decimal) -> str:
     """Round exact computed totals to display cents, consistently half away from zero.
 
@@ -104,6 +123,7 @@ def event_kind(row: Mapping[str, str], *, source: str) -> str:
     return safe_event_kind(row, source=source)
 
 
+@_audit_decimal_precision
 def review_line(
     ordered: list[dict[str, str]],
     invoices: list[dict[str, str]],
