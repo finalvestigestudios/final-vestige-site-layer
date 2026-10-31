@@ -1,0 +1,1150 @@
+{
+  "schema_version": 1,
+  "issue": 136,
+  "authority": "AUTHENTICATED_GITHUB_API_GIT_OBJECT_CUSTODY_ONLY",
+  "date_utc": "2026-10-31",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "observed_current_review_head": "39a87feb8dea92661c30b591012d3879198d69e0",
+  "reference_integrated_commit": "f7b73e0235f95c3b6a86dd4660a21c9d8f184bf0",
+  "frozen_manifest_git_blob": "83263d772fe19fb04d21387a8d051797cc6493c0",
+  "contributors": [
+    {
+      "cluster": "start",
+      "branch": "claude/prep-start-bbfeb8",
+      "observed_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "frozen_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "article_count": 4
+    },
+    {
+      "cluster": "shelter",
+      "branch": "claude/prep-shelter-5e1e0e",
+      "observed_sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "frozen_sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "article_count": 4
+    },
+    {
+      "cluster": "food",
+      "branch": "claude/prep-food-ccdc55",
+      "observed_sha": "4b009361277ea1d4617b368f5d45104c7318b284",
+      "frozen_sha": "4b009361277ea1d4617b368f5d45104c7318b284",
+      "article_count": 4
+    },
+    {
+      "cluster": "health",
+      "branch": "claude/prep-health-837444",
+      "observed_sha": "d2212d0ca0750817d3929865d3069835980faf20",
+      "frozen_sha": "d2212d0ca0750817d3929865d3069835980faf20",
+      "article_count": 3
+    },
+    {
+      "cluster": "hist-food",
+      "branch": "claude/prep-hist-food-b81f19",
+      "observed_sha": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+      "frozen_sha": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+      "article_count": 6
+    },
+    {
+      "cluster": "hist-home",
+      "branch": "claude/prep-hist-home-0e0e38",
+      "observed_sha": "f654e600f89c321a480dd8f055be4d13d0673490",
+      "frozen_sha": "f654e600f89c321a480dd8f055be4d13d0673490",
+      "article_count": 5
+    },
+    {
+      "cluster": "hist-field",
+      "branch": "claude/prep-hist-field-9db767",
+      "observed_sha": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+      "frozen_sha": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+      "article_count": 3
+    }
+  ],
+  "author_file_triplets": [
+    {
+      "cluster": "health",
+      "path": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+      "author_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "baseline_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "current_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/content/articles/emergency-hygiene-sanitation.meta.json",
+      "author_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "baseline_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "current_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "author_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "baseline_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "current_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "author_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "baseline_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "current_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/content/articles/fire-making-across-time.body.html",
+      "author_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "baseline_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "current_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/content/articles/fire-making-across-time.meta.json",
+      "author_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "baseline_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "current_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/food-safety-power-outage.body.html",
+      "author_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "baseline_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "current_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/food-safety-power-outage.meta.json",
+      "author_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "baseline_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "current_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/go-bags.body.html",
+      "author_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "baseline_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "current_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/go-bags.meta.json",
+      "author_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "baseline_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "current_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/history-of-food-preservation.body.html",
+      "author_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+      "baseline_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+      "current_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/history-of-food-preservation.meta.json",
+      "author_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "baseline_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "current_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "author_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "baseline_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "current_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "author_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "baseline_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "current_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "author_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "baseline_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "current_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/household-emergency-plan.meta.json",
+      "author_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "baseline_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "current_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/lewis-and-clark-salt-works.body.html",
+      "author_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "baseline_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "current_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/lewis-and-clark-salt-works.meta.json",
+      "author_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+      "baseline_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+      "current_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/content/articles/medication-and-devices.body.html",
+      "author_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "baseline_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "current_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/content/articles/medication-and-devices.meta.json",
+      "author_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "baseline_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "current_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/content/articles/navigation-before-gps.body.html",
+      "author_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "baseline_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "current_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/content/articles/navigation-before-gps.meta.json",
+      "author_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "baseline_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "current_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "author_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "baseline_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "current_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "author_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "baseline_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "current_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/pantry-rotation.body.html",
+      "author_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "baseline_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "current_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/pantry-rotation.meta.json",
+      "author_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "baseline_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "current_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+      "author_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "baseline_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "current_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+      "author_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "baseline_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "current_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+      "author_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "baseline_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "current_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+      "author_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "baseline_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "current_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+      "author_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "baseline_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "current_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+      "author_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "baseline_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "current_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+      "author_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "baseline_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "current_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/pioneer-travel-rations.meta.json",
+      "author_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "baseline_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "current_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/preparedness-real-households.body.html",
+      "author_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "baseline_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "current_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/preparedness-real-households.meta.json",
+      "author_blob": "a0c3a09143a825560b5a5ed79d857b7402bfa295",
+      "baseline_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "current_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "identical": false,
+      "review_state": "NEEDS_HUMAN_DIFF_REVIEW"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+      "author_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "baseline_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "current_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/pressure-canning-low-acid.meta.json",
+      "author_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "baseline_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "current_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/rain-barrels-and-cisterns.body.html",
+      "author_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "baseline_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "current_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/rain-barrels-and-cisterns.meta.json",
+      "author_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "baseline_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "current_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+      "author_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "baseline_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "current_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+      "author_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "baseline_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "current_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+      "author_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "baseline_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "current_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/content/articles/safe-jerky-dehydration.meta.json",
+      "author_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "baseline_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "current_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+      "author_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "baseline_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "current_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+      "author_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "baseline_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "current_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "author_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "baseline_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "current_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "author_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "baseline_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "current_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/ships-biscuit-and-hardtack.body.html",
+      "author_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "baseline_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "current_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/ships-biscuit-and-hardtack.meta.json",
+      "author_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "baseline_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "current_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/smokehouses-salting-curing.body.html",
+      "author_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "baseline_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "current_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/content/articles/smokehouses-salting-curing.meta.json",
+      "author_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "baseline_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "current_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/three-day-kit.body.html",
+      "author_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "baseline_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "current_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/three-day-kit.meta.json",
+      "author_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+      "baseline_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+      "current_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/content/articles/warnings-radios-offline-maps.body.html",
+      "author_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "baseline_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "current_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/content/articles/warnings-radios-offline-maps.meta.json",
+      "author_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "baseline_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "current_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/water-purification-through-history.body.html",
+      "author_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "baseline_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "current_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/content/articles/water-purification-through-history.meta.json",
+      "author_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "baseline_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "current_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/docs/CLUSTER-food.md",
+      "author_blob": "a3dcf931439d94bb45377ab08d113132707cace6",
+      "baseline_blob": "a3dcf931439d94bb45377ab08d113132707cace6",
+      "current_blob": "a3dcf931439d94bb45377ab08d113132707cace6",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/docs/CLUSTER-health.md",
+      "author_blob": "f32d3b460cf6a196aad3c6bee25d689ff6f3d1a6",
+      "baseline_blob": "f32d3b460cf6a196aad3c6bee25d689ff6f3d1a6",
+      "current_blob": "f32d3b460cf6a196aad3c6bee25d689ff6f3d1a6",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/docs/CLUSTER-hist-field.md",
+      "author_blob": "975ffff24f2f500f1da883dbead8bfef22dc9115",
+      "baseline_blob": "975ffff24f2f500f1da883dbead8bfef22dc9115",
+      "current_blob": "975ffff24f2f500f1da883dbead8bfef22dc9115",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/docs/CLUSTER-hist-food.md",
+      "author_blob": "96f2089977253b7ba2cc96b77673f197025c4492",
+      "baseline_blob": "96f2089977253b7ba2cc96b77673f197025c4492",
+      "current_blob": "96f2089977253b7ba2cc96b77673f197025c4492",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/docs/CLUSTER-hist-home.md",
+      "author_blob": "8fe3bd7cb3c58910abab650bffc145505704261d",
+      "baseline_blob": "8fe3bd7cb3c58910abab650bffc145505704261d",
+      "current_blob": "8fe3bd7cb3c58910abab650bffc145505704261d",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/docs/CLUSTER-shelter.md",
+      "author_blob": "8a2365772bc9cd8bb8492b8bd553115f25230634",
+      "baseline_blob": "8a2365772bc9cd8bb8492b8bd553115f25230634",
+      "current_blob": "8a2365772bc9cd8bb8492b8bd553115f25230634",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/docs/CLUSTER-start.md",
+      "author_blob": "758001b1e7f5f58b609e052fedf2d49c65a73292",
+      "baseline_blob": "758001b1e7f5f58b609e052fedf2d49c65a73292",
+      "current_blob": "758001b1e7f5f58b609e052fedf2d49c65a73292",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "food",
+      "path": "preparedness/sources/fragments/food.json",
+      "author_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "baseline_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "current_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "health",
+      "path": "preparedness/sources/fragments/health.json",
+      "author_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "baseline_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "current_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-field",
+      "path": "preparedness/sources/fragments/hist-field.json",
+      "author_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+      "baseline_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+      "current_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-food",
+      "path": "preparedness/sources/fragments/hist-food.json",
+      "author_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "baseline_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "current_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "hist-home",
+      "path": "preparedness/sources/fragments/hist-home.json",
+      "author_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+      "baseline_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+      "current_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "shelter",
+      "path": "preparedness/sources/fragments/shelter.json",
+      "author_blob": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+      "baseline_blob": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+      "current_blob": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    },
+    {
+      "cluster": "start",
+      "path": "preparedness/sources/fragments/start.json",
+      "author_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+      "baseline_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+      "current_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+      "identical": true,
+      "review_state": "UNCHANGED"
+    }
+  ],
+  "baseline_corpus_source_blob_pairs": [
+    {
+      "path": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+      "baseline_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "current_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a"
+    },
+    {
+      "path": "preparedness/content/articles/emergency-hygiene-sanitation.meta.json",
+      "baseline_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "current_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6"
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "baseline_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "current_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9"
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "baseline_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "current_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee"
+    },
+    {
+      "path": "preparedness/content/articles/fire-making-across-time.body.html",
+      "baseline_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "current_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f"
+    },
+    {
+      "path": "preparedness/content/articles/fire-making-across-time.meta.json",
+      "baseline_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "current_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884"
+    },
+    {
+      "path": "preparedness/content/articles/food-safety-power-outage.body.html",
+      "baseline_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "current_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e"
+    },
+    {
+      "path": "preparedness/content/articles/food-safety-power-outage.meta.json",
+      "baseline_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "current_blob": "3283071134ba24490d47f5a0635836b6ed4f8965"
+    },
+    {
+      "path": "preparedness/content/articles/go-bags.body.html",
+      "baseline_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "current_blob": "5135639786bbafa4e03939a74659cd0f31df3564"
+    },
+    {
+      "path": "preparedness/content/articles/go-bags.meta.json",
+      "baseline_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "current_blob": "16cc5e91204a77486912444c6e516f5d5b48f567"
+    },
+    {
+      "path": "preparedness/content/articles/history-of-food-preservation.body.html",
+      "baseline_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+      "current_blob": "273b246a069e834d8476bfc2854308732f5137ab"
+    },
+    {
+      "path": "preparedness/content/articles/history-of-food-preservation.meta.json",
+      "baseline_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "current_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "baseline_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "current_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "baseline_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "current_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368"
+    },
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.body.html",
+      "baseline_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+      "current_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15"
+    },
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "baseline_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "current_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29"
+    },
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "baseline_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "current_blob": "8ca5c261dba56eeaf79c445332381a74867233de"
+    },
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.meta.json",
+      "baseline_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "current_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787"
+    },
+    {
+      "path": "preparedness/content/articles/lewis-and-clark-salt-works.body.html",
+      "baseline_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "current_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533"
+    },
+    {
+      "path": "preparedness/content/articles/lewis-and-clark-salt-works.meta.json",
+      "baseline_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+      "current_blob": "3a350aedac67ea89c6995831032367634248c9e9"
+    },
+    {
+      "path": "preparedness/content/articles/making-water-safer.body.html",
+      "baseline_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+      "current_blob": "f85d158fc8752200a227282e640f6df48277daf5"
+    },
+    {
+      "path": "preparedness/content/articles/making-water-safer.meta.json",
+      "baseline_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+      "current_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+    },
+    {
+      "path": "preparedness/content/articles/medication-and-devices.body.html",
+      "baseline_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "current_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e"
+    },
+    {
+      "path": "preparedness/content/articles/medication-and-devices.meta.json",
+      "baseline_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "current_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c"
+    },
+    {
+      "path": "preparedness/content/articles/navigation-before-gps.body.html",
+      "baseline_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "current_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750"
+    },
+    {
+      "path": "preparedness/content/articles/navigation-before-gps.meta.json",
+      "baseline_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "current_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "baseline_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "current_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "baseline_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "current_blob": "77dd194b096bb60ea99728a5b0042adf016b905e"
+    },
+    {
+      "path": "preparedness/content/articles/pantry-rotation.body.html",
+      "baseline_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "current_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450"
+    },
+    {
+      "path": "preparedness/content/articles/pantry-rotation.meta.json",
+      "baseline_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "current_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c"
+    },
+    {
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+      "baseline_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "current_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5"
+    },
+    {
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+      "baseline_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "current_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435"
+    },
+    {
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+      "baseline_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "current_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4"
+    },
+    {
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+      "baseline_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "current_blob": "4b955811459017df83a28704aaf1e69ddb036c29"
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+      "baseline_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "current_blob": "1332df3540a903fdecdb3527fb22347d57968fb0"
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+      "baseline_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "current_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec"
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+      "baseline_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "current_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7"
+    },
+    {
+      "path": "preparedness/content/articles/pioneer-travel-rations.meta.json",
+      "baseline_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "current_blob": "7191acba55d63dc405ad9c2003d66193276da89f"
+    },
+    {
+      "path": "preparedness/content/articles/preparedness-real-households.body.html",
+      "baseline_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "current_blob": "70d03c366e10db623929f118501becfa26c48bab"
+    },
+    {
+      "path": "preparedness/content/articles/preparedness-real-households.meta.json",
+      "baseline_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "current_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2"
+    },
+    {
+      "path": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+      "baseline_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "current_blob": "c60d824c2f679fb7362b8523aec18110f8248290"
+    },
+    {
+      "path": "preparedness/content/articles/pressure-canning-low-acid.meta.json",
+      "baseline_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "current_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341"
+    },
+    {
+      "path": "preparedness/content/articles/rain-barrels-and-cisterns.body.html",
+      "baseline_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "current_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4"
+    },
+    {
+      "path": "preparedness/content/articles/rain-barrels-and-cisterns.meta.json",
+      "baseline_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "current_blob": "dc42694e842969624f24ab5edc9bff2497693e70"
+    },
+    {
+      "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+      "baseline_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "current_blob": "e28548b4e5014f36ffd12becb9261ae696480efa"
+    },
+    {
+      "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+      "baseline_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "current_blob": "705e1157f9394b615ecb74ffd25be8500453e18a"
+    },
+    {
+      "path": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+      "baseline_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "current_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd"
+    },
+    {
+      "path": "preparedness/content/articles/safe-jerky-dehydration.meta.json",
+      "baseline_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "current_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5"
+    },
+    {
+      "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.body.html",
+      "baseline_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "current_blob": "6539aafeca9bca67c96247c81a7412b117201b88"
+    },
+    {
+      "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
+      "baseline_blob": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+      "current_blob": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+    },
+    {
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+      "baseline_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "current_blob": "15852c158708270d72d5f9723d90e5cb6083a766"
+    },
+    {
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+      "baseline_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "current_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "baseline_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "current_blob": "b8acf07e533eea43795aa242f39fd926b080130f"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "baseline_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "current_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186"
+    },
+    {
+      "path": "preparedness/content/articles/ships-biscuit-and-hardtack.body.html",
+      "baseline_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "current_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4"
+    },
+    {
+      "path": "preparedness/content/articles/ships-biscuit-and-hardtack.meta.json",
+      "baseline_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "current_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1"
+    },
+    {
+      "path": "preparedness/content/articles/smokehouses-salting-curing.body.html",
+      "baseline_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "current_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2"
+    },
+    {
+      "path": "preparedness/content/articles/smokehouses-salting-curing.meta.json",
+      "baseline_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "current_blob": "16223945e83f95b349acf09a2b684c09326550c0"
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.body.html",
+      "baseline_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "current_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23"
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.meta.json",
+      "baseline_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+      "current_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2"
+    },
+    {
+      "path": "preparedness/content/articles/two-week-water-storage.body.html",
+      "baseline_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "current_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768"
+    },
+    {
+      "path": "preparedness/content/articles/two-week-water-storage.meta.json",
+      "baseline_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "current_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+    },
+    {
+      "path": "preparedness/content/articles/warnings-radios-offline-maps.body.html",
+      "baseline_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "current_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7"
+    },
+    {
+      "path": "preparedness/content/articles/warnings-radios-offline-maps.meta.json",
+      "baseline_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "current_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7"
+    },
+    {
+      "path": "preparedness/content/articles/water-advisories-explained.body.html",
+      "baseline_blob": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "current_blob": "e96486d74731606fdd5a616030f146f66c59e2b0"
+    },
+    {
+      "path": "preparedness/content/articles/water-advisories-explained.meta.json",
+      "baseline_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "current_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+    },
+    {
+      "path": "preparedness/content/articles/water-math.body.html",
+      "baseline_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "current_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4"
+    },
+    {
+      "path": "preparedness/content/articles/water-math.meta.json",
+      "baseline_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "current_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+    },
+    {
+      "path": "preparedness/content/articles/water-purification-through-history.body.html",
+      "baseline_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "current_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86"
+    },
+    {
+      "path": "preparedness/content/articles/water-purification-through-history.meta.json",
+      "baseline_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "current_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e"
+    },
+    {
+      "path": "preparedness/content/tools/water-planner.body.html",
+      "baseline_blob": "a738d1f7824437911064d425868ed3d709326027",
+      "current_blob": "a738d1f7824437911064d425868ed3d709326027"
+    },
+    {
+      "path": "preparedness/content/tools/water-planner.meta.json",
+      "baseline_blob": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+      "current_blob": "7ea188a06b614940a226328c0166c2a2b20ff84e"
+    },
+    {
+      "path": "preparedness/sources/crosswalk.json",
+      "baseline_blob": "1d907264dd580ffc95279f6ffb6bc50e8033c555",
+      "current_blob": "1d907264dd580ffc95279f6ffb6bc50e8033c555"
+    },
+    {
+      "path": "preparedness/sources/fragments/food.json",
+      "baseline_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "current_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30"
+    },
+    {
+      "path": "preparedness/sources/fragments/health.json",
+      "baseline_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "current_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8"
+    },
+    {
+      "path": "preparedness/sources/fragments/hist-field.json",
+      "baseline_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+      "current_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85"
+    },
+    {
+      "path": "preparedness/sources/fragments/hist-food.json",
+      "baseline_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "current_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e"
+    },
+    {
+      "path": "preparedness/sources/fragments/hist-home.json",
+      "baseline_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+      "current_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0"
+    },
+    {
+      "path": "preparedness/sources/fragments/shelter.json",
+      "baseline_blob": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+      "current_blob": "d9eeb4546e58f083031e0767aaea7cf112099e09"
+    },
+    {
+      "path": "preparedness/sources/fragments/start.json",
+      "baseline_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+      "current_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4"
+    },
+    {
+      "path": "preparedness/sources/register.json",
+      "baseline_blob": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77",
+      "current_blob": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77"
+    }
+  ],
+  "counts": {
+    "claude_clusters": 7,
+    "author_articles": 29,
+    "author_paths": 72,
+    "git_object_comparisons": 216,
+    "matched_author_paths": 71,
+    "unresolved_author_metadata_exceptions": 1,
+    "article_bodies": 35,
+    "article_metadata": 35,
+    "water_tool_bodies": 1,
+    "water_tool_metadata": 1,
+    "source_register_crosswalk_fragments": 9,
+    "baseline_preserved_corpus_source_paths": 81,
+    "observed_drift": 0
+  },
+  "exceptions": [
+    {
+      "cluster": "start",
+      "path": "preparedness/content/articles/preparedness-real-households.meta.json",
+      "state": "NEEDS_HUMAN_DIFF_REVIEW",
+      "is_human_approved": false
+    }
+  ],
+  "release_state": "HOLD",
+  "may_publish": false,
+  "independent_QD_approval": false,
+  "qualified_emergency_or_medical_safety_review": false,
+  "human_source_reviews_completed": false,
+  "link_and_claim_accuracy_independently_verified": false,
+  "native_python_validation_build_or_html_parity_executed": false,
+  "github_actions_runner_dispatched": false,
+  "scope_limitation": "Read-only Git object SHA and live ref checks: source/body preservation only, not URL accessibility, duplicate-source resolution, reading depth, medical or emergency-safety validation or publication permission."
+}
