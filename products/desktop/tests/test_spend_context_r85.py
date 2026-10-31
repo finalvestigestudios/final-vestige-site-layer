@@ -158,6 +158,16 @@ class SpendContextR85(unittest.TestCase):
             median.add(Decimal("123456789012.02"))
             self.assertEqual(median.median(), Decimal("123456789012.015"))
 
+    def test_nonstandard_caller_exponent_limit_does_not_overflow(self):
+        data = [row(2, 1, "999999999999.99"), row(3, 1, "999999999999.99")]
+        with localcontext() as ctx:
+            ctx.prec = 6
+            ctx.Emax = 6
+            report = spend(data)
+            self.assertEqual(ctx.Emax, 6)
+            self.assertEqual(ctx.prec, 6)
+        self.assertEqual(report[0]["amount"], "1999999999999.98")
+
     def test_original_input_rows_not_mutated(self):
         data = [row(2, 1, "0.10"), row(3, 1, "0.20")]
         snapshot = [dict(item) for item in data]
