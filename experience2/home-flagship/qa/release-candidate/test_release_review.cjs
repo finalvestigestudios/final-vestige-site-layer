@@ -6,7 +6,7 @@ const os = require('node:os');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const {
-  render, makeBundle, blobSha, SOURCE_GIT_BLOB, CHAPTERS, CASES, ASSETS
+  render, makeBundle, blobSha, SOURCE_GIT_BLOB, CHAPTERS, CASES, ASSETS, ASSET_GIT_BLOBS
 } = require('./build_release_review.cjs');
 
 const home = path.resolve(__dirname, '..', '..');
@@ -79,10 +79,12 @@ test('reject Focus path loss', () => {
 });
 
 test('real local bundle copies only referenced first-party JS/CSS with SHA-256 checksums', () => {
-  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fv-ex2-local-review-'));
+  const parentDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fv-ex2-local-review-'));
+  const outDir = path.join(parentDir, 'private-bundle');
   try {
     const manifest = makeBundle(home, outDir);
     assert.equal(manifest.sourceGitBlob, SOURCE_GIT_BLOB);
+    assert.deepEqual(manifest.assetGitBlobs, ASSET_GIT_BLOBS);
     assert.equal(Object.keys(manifest.files).length, ASSETS.length + 2);
     assert.equal(manifest.wordpressFragmentHasMain, false);
     assert.equal(manifest.standaloneHasMain, true);
@@ -96,10 +98,33 @@ test('real local bundle copies only referenced first-party JS/CSS with SHA-256 c
       manifest
     );
   } finally {
-    fs.rmSync(outDir, {recursive: true, force: true});
+    fs.rmSync(parentDir, {recursive: true, force: true});
   }
 });
 
 test('refuse writing a review bundle into the source directory', () => {
   assert.throws(() => makeBundle(home, home), /RELEASE REVIEW CLOSED/);
+});
+
+test('corrupted first-party JS blocks release without leaving partial output', () => {
+  const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'fv-ex2-bad-asset-'));
+  const output = path.join(scratch, 'output');
+  try {
+    fs.copyFileSync(path.join(home, 'index.html'), path.join(scratch, 'index.html'));
+    for (const asset of ASSETS) fs.copyFileSync(path.join(home, asset), path.join(scratch, asset));
+    fs.appendFileSync(path.join(scratch, 'flagship.js'), '\n// unreviewed mutation\n');
+    assert.throws(() => makeBundle(scratch, output), /asset Git blob drift: flagship.js/);
+    assert.equal(fs.existsSync(output), false, 'half-written release output not allowed');
+  } finally {
+    fs.rmSync(scratch, {recursive: true, force: true});
+  }
+});
+
+test('refuse overwriting an existing preview tree', () => {
+  const existing = fs.mkdtempSync(path.join(os.tmpdir(), 'fv-ex2-existing-'));
+  try {
+    assert.throws(() => makeBundle(home, existing), /already exists/);
+  } finally {
+    fs.rmSync(existing, {recursive:true, force:true});
+  }
 });
