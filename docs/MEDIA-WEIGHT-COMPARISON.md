@@ -23,3 +23,12 @@ node qa/media-recovery/compare_wire_runs.cjs before.json after.json
 ```
 
 Formula: `100 * (sum_before_image_encoded_bytes - sum_after_image_encoded_bytes) / sum_before_image_encoded_bytes`; show each post's delta. A synthetic fixture of 10,000 → 2,400 bytes equals 76%, **but is not a FinalVestige.com measurement**. Compare screenshot/HAR and image quality before publishing a number. All licensing/reuse, source credit, historical identity, WordPress upload and post-edit gates remain closed. NASA's official [media guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) highlight attribution, third-party rights, nonendorsement and recognizable individuals. No WordPress writes were made.
+
+
+## October 31 — same-image continuity is mandatory (non-deployed comparator fix)
+
+A new adversarial fixture proved a **false performance-win path** in the previous offline comparator: two perfectly valid Chrome network reports could have the same post ID, slot keys, page URL, status=200, decoded currentSrc identity *within each report*, and a synthetic **76%** byte delta, while one report silently substituted a **different historical photograph** in the same image slot. The old comparator checked slot keys, but did not compare the stored image URLs or visible ALT descriptions **between** reports.
+
+`qa/media-recovery/compare_wire_core.cjs` now fails closed with `stored_asset_changed:POST:KEY` or `historical_alt_changed:POST:KEY`, returning `NOT_COMPARABLE` and **no reduction percentage**. The raw stored URL is intentionally exact-match across runs; CDN-decoded `currentSrc` may vary as previously allowed. This conservative same-content comparison can assess optimization with unchanged source references, but **cannot** claim a compression improvement from an intentional image replacement, changed caption, or WordPress media migration without a separate, rights- and identity-reviewed baseline methodology. That restriction is deliberate.
+
+Three new adversarial and positive regression cases were added to `test_compare_wire.cjs`; **30/30 exact-source isolated V8 test replays passed**, with URL/URLSearchParams compatibility shims and source readback. These are not native Node, hosted CI, actual Chromium, or historical-photo fingerprint tests. SHA-256 binary checks and human side-by-side historical identity review remain required for any image replacement. **42 broken**, **76% saved**, image HTTP statuses and visitor transfer bytes remain **unknown**, with **zero live fixes and zero CMS writes**.
