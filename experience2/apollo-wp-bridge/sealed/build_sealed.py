@@ -25,6 +25,7 @@ from qa.media_rights_ledger import build_media_rights
 from qa.custody_receipts import build_receipts, EXPORT_NAMES
 from qa.wayfinder_r22 import build_wayfinder
 from qa.touch_targets_r24 import build_touch_targets
+from qa.print_source_transcript_r25 import build_print_transcript
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -74,6 +75,7 @@ def build(out: Path) -> dict:
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
     touch_css, touch_receipt = build_touch_targets((BRIDGE / 'generated/fragment.html').read_text(encoding='utf-8'))
+    print_html, print_css, print_receipt = build_print_transcript(UPSTREAM, BRIDGE / 'generated')
     payload = {}
     hashes = {}
     sizes = {}
@@ -96,7 +98,9 @@ def build(out: Path) -> dict:
                        ('custody-receipts.html', custody_html),
                        ('custody-receipts.css', custody_css),
                        ('wayfinder.html', wayfinder_html), ('wayfinder.css', wayfinder_css),
-                       ('touch-targets.css', touch_css)):
+                       ('touch-targets.css', touch_css),
+                       ('print-source-transcript.html', print_html),
+                       ('print-source-transcript.css', print_css)):
 
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
@@ -125,6 +129,7 @@ def build(out: Path) -> dict:
         'private_custody_receipts': receipts_receipt,
         'editorial_wayfinder': wayfinder_receipt,
         'staging_touch_target_repair_r24': touch_receipt,
+        'r25_nasa_print_custody_ledger': print_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',
@@ -138,6 +143,7 @@ def build(out: Path) -> dict:
         'non_waivable_holds': ['No WordPress installation or activation performed',
                                'Requires WP_ENVIRONMENT_TYPE=staging and FV_EX2_APOLLO_STAGING_ALLOW=true',
                                'axe-core and screen-reader testing not yet certified',
+                               'Printable six-source transcript is editor-only, not approved for public use',
                                'Exact WordPress staging HTTP/cookies and real-user CWV needed',
                                'NASA media rights per item and independent QD',
                                'R20 NASA policy is guidance, not item-level image reuse clearance',

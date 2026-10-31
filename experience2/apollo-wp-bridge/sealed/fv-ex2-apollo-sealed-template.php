@@ -96,12 +96,22 @@ function fv_ex2_apollo_sealed_page() {
     $wayfinder = fv_ex2_apollo_sealed_asset('wayfinder.html');
     $wayfinder_css = fv_ex2_apollo_sealed_asset('wayfinder.css');
     $touch_css = fv_ex2_apollo_sealed_asset('touch-targets.css');
+    $print_html = fv_ex2_apollo_sealed_asset('print-source-transcript.html');
+    $print_css = fv_ex2_apollo_sealed_asset('print-source-transcript.css');
     if (!is_string($fragment) || !is_string($css) || !is_string($js)
         || !is_string($concordance) || !is_string($concordance_css) || !is_string($context_index)
         || !is_string($atlas_admission) || !is_string($atlas_css) || !is_string($atlas_index)
         || !is_string($media_rights) || !is_string($media_rights_css) || !is_string($media_rights_index)
         || !is_string($custody_receipts) || !is_string($custody_css)
         || !is_string($wayfinder) || !is_string($wayfinder_css) || !is_string($touch_css)
+        || !is_string($print_html) || !is_string($print_css)
+        || substr_count($print_html, 'data-r25-print-record=') !== 6
+        || substr_count($print_html, 'LINK ONLY — IMAGE REUSE NOT CLEARED') !== 6
+        || substr_count($print_html, 'id="fv-ex2-print-transcript"') !== 1
+        || strpos($print_html, '_wpnonce') !== false
+        || strpos($print_html, '<img') !== false
+        || strpos($print_html, '<script') !== false
+        || strpos($print_html, '<iframe') !== false
         || substr_count($wayfinder, 'id="fv-ex2-wayfinder"') !== 1
         || substr_count($wayfinder, '<a href="#') !== 7
         || substr_count($custody_receipts, 'data-custody-receipt=') !== 7
@@ -215,6 +225,8 @@ function fv_ex2_apollo_sealed_page() {
     header('X-FV-EX2-Apollo-Custody-Receipts-SHA256: ' . FV_EX2_APOLLO_SHA256['custody-receipts.html']);
     header('X-FV-EX2-Apollo-Wayfinder-SHA256: ' . FV_EX2_APOLLO_SHA256['wayfinder.html']);
     header('X-FV-EX2-Apollo-Touch-Targets-SHA256: ' . FV_EX2_APOLLO_SHA256['touch-targets.css']);
+    header('X-FV-EX2-Apollo-Print-Ledger-SHA256: ' . FV_EX2_APOLLO_SHA256['print-source-transcript.html']);
+    header('X-FV-EX2-Apollo-Print-CSS-SHA256: ' . FV_EX2_APOLLO_SHA256['print-source-transcript.css']);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
     header('X-Content-Type-Options: nosniff');
@@ -223,12 +235,12 @@ function fv_ex2_apollo_sealed_page() {
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         . '<title>Private Apollo 1 Evidence Review — Final Vestige</title>'
         . '<meta name="robots" content="noindex,nofollow"><style nonce="' . $csp_nonce . '">'
-        . $css . $concordance_css . $atlas_css . $media_rights_css . $custody_css . $wayfinder_css . $touch_css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
+        . $css . $concordance_css . $atlas_css . $media_rights_css . $custody_css . $wayfinder_css . $touch_css . $print_css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
         . '</style></head><body>'
         . '<a class="fv-ex2-apollo__skip" href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>'
         . '<main id="fv-ex2-apollo-document" class="fv-ex2-apollo" tabindex="-1" aria-label="Apollo 1 evidence investigation">'
         . '<h1 class="fv-ex2-apollo__review-h1">Apollo 1: Research Desk and primary-source casefile</h1>'
-        . $wayfinder . $fragment . '</main><script nonce="' . $csp_nonce . '">'
+        . $wayfinder . $print_html . $fragment . '</main><script nonce="' . $csp_nonce . '">'
         . str_replace('</script', '<\\/script', $js) . '</script></body></html>';
     exit;
 }
