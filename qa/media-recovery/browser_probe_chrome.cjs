@@ -4,6 +4,7 @@ const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {spawn}=require('node:child_process');
 const {loadSnapshot}=require('./validate_inventory.cjs');
 const {classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
+const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const P0=[268,432,418,407,434,621],nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
 function plan(snapshot,all){
  const posts=snapshot.parts.flatMap(x=>x.posts),images=snapshot.parts.flatMap(x=>x.images);
@@ -64,6 +65,7 @@ const domScript='('+function(){
    rectWidth:Math.round(el.getBoundingClientRect().width),rectHeight:Math.round(el.getBoundingClientRect().height)})),
   pageHeight:Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)};
 }.toString()+')()';
+const scrollMetricsScript='({pageHeight:Math.max(document.body.scrollHeight,document.documentElement.scrollHeight),viewportHeight:window.innerHeight,scrollY:window.scrollY})';
 async function evaluate(cdp,expr){
  const r=await cdp.send('Runtime.evaluate',{expression:expr,returnByValue:true,awaitPromise:true},15000);
  if(r.exceptionDetails)throw Error('Browser evaluate exception');
@@ -96,10 +98,22 @@ async function inspect(cdp,page,outputDir){
  try{
   await cdp.send('Page.navigate',{url:page.url},12000);await nap(1800);
   let doc=await evaluate(cdp,domScript),steps=0;
+  let coverage={complete:false,state:'no_article',reason:'article_element_missing'};
   if(doc?.hasArticle){
-   const max=Math.min(doc.pageHeight||0,80000);
-   for(let y=0;y<max&&steps<36;y+=720){await evaluate(cdp,'window.scrollTo(0,'+y+')');steps++;await nap(220)}
+   let scanError=null;
+   try{
+    // Re-evaluate height after each step: lazy content can lengthen the page.
+    while(steps<MAX_STEPS){
+     const metrics=await evaluate(cdp,scrollMetricsScript);
+     const next=nextScrollTarget({...metrics,steps});
+     if(next===null)break;
+     await evaluate(cdp,'window.scrollTo({top:'+next+',behavior:"instant"})');
+     steps++;await nap(220);
+    }
+   }catch(e){scanError=String(e.message||e)}
    await nap(1000);doc=await evaluate(cdp,domScript);
+   const endMetrics=await evaluate(cdp,scrollMetricsScript);
+   coverage=evaluateCoverage({...endMetrics,steps,scanError});
   }
   const records=net.records(),fail=net.docFailures();
   const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
@@ -119,17 +133,17 @@ async function inspect(cdp,page,outputDir){
    }
   }
   return{post_id:page.id,url:page.url,title:page.title,started,completed:now(),
-   page_result:verified?'inspected_browser':'blocked_or_unverified_page',
+   page_result:verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page',
    document_url:doc?.url||null,document_title:doc?.title||null,document_network_failures:fail,
-   rendered_image_count:doc?.images?.length||0,stored_image_count:page.stored.length,scrolled_steps:steps,
-   stored_images:images,screenshots,confirmed_broken_count:verified?broken.length:null,
-   browser_wire_bytes_total:verified?countTransfer(records):null,
-   image_wire_bytes_total:verified?countTransfer(records.filter(x=>x.type==='Image')):null,
+   rendered_image_count:doc?.images?.length||0,stored_image_count:page.stored.length,scrolled_steps:steps,scroll_coverage:coverage,
+   stored_images:images,screenshots,confirmed_broken_count:verified&&coverage.complete?broken.length:null,
+   browser_wire_bytes_total:verified&&coverage.complete?countTransfer(records):null,
+   image_wire_bytes_total:verified&&coverage.complete?countTransfer(records.filter(x=>x.type==='Image')):null,
    network_images:records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
     url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
     mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
     from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true})),
-   interpretation:verified?'Real logged-out Chromium request and image dimension observations; still check exact source provenance.':'Environment or page unverified: no claims of broken images are permitted.'};
+   interpretation:verified&&coverage.complete?'Logged-out Chromium reached page bottom, with currentSrc and network evidence; source rights still require review.':verified?'Partial browser scan; do not infer a complete broken-image census or weight baseline.':'Environment or page unverified: no claims of broken images are permitted.'};
  }catch(e){
   return{post_id:page.id,url:page.url,started,completed:now(),page_result:'probe_error',
    error:String(e.message||e),stored_image_count:page.stored.length,stored_images:[],
@@ -168,7 +182,7 @@ async function main(){
  }catch(e){result.status='environment_or_browser_blocked';result.error=String(e.message||e)}
  finally{if(browser){try{browser.cdp.close()}catch{};browser.child.kill('SIGTERM');await nap(150);fs.rmSync(browser.dir,{recursive:true,force:true})}}
  result.finished=now();result.verified_pages=result.pages.filter(x=>x.page_result==='inspected_browser').length;
- result.confirmed_broken_count=result.verified_pages?result.pages.reduce((n,p)=>n+(p.confirmed_broken_count||0),0):null;
+ result.confirmed_broken_count=result.verified_pages===pages.length?result.pages.reduce((n,p)=>n+(p.confirmed_broken_count||0),0):null;
  const filename=path.join(dir,'browser-audit-'+result.created.replace(/\D/g,'').slice(0,14)+'-'+(all?'all':'p0')+'-'+(desktop?'desktop':'mobile')+'.json');
  fs.writeFileSync(filename,JSON.stringify(result,null,2)+'\n');
  console.log(JSON.stringify({output:filename,status:result.status,verified_pages:result.verified_pages,confirmed_broken_count:result.confirmed_broken_count}));
