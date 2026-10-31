@@ -111,7 +111,7 @@ def qty(value):
     return number
 
 def key(value): return re.sub(r"[^A-Z0-9]+","",str(value).upper())
-def dollars(value): return format(value.quantize(CENT),".2f")
+def dollars(value): return format(value.quantize(CENT, rounding=ROUND_HALF_UP),".2f")
 _DATE_FORMATS = (
     (re.compile(r"[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}\Z"), "%Y-%m-%d"),
     (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}\Z"), "%m/%d/%Y"),

@@ -10,7 +10,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from decimal import Decimal
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Callable, Mapping
 
@@ -19,6 +19,16 @@ from .procurement_reference import has_original_spelling, source_document_spelli
 CENT = Decimal("0.01")
 DEFAULT_ABSOLUTE = CENT
 DEFAULT_FRACTION = Decimal("0.02")
+def _display_money(value: Decimal) -> str:
+    """Round exact computed totals to display cents, consistently half away from zero.
+
+    Calculations and *_exact export fields retain the unrounded Decimal values.
+    The displayed gross, credit and net columns are rounded independently;
+    subtracting rounded columns can differ by a cent from the rounded net.
+    """
+    return format(value.quantize(CENT, rounding=ROUND_HALF_UP), ".2f")
+
+
 DEFAULT_POLICY_SHA256 = hashlib.sha256(
     b'{"price_absolute":"0.01","price_fraction":"0.02","version":1}\n'
 ).hexdigest()
@@ -236,11 +246,14 @@ def review_line(
         "invoiced_qty": str(net_inv_qty),
         "received_qty": str(net_rec_qty),
         "po_unit_price": format(order_price, "f"),
-        "invoice_total": format(net_invoice_total.quantize(CENT), ".2f"),
+        "invoice_total": _display_money(net_invoice_total),
+        "invoice_total_exact": format(net_invoice_total, "f"),
         "gross_invoice_qty": str(positive_qty),
         "credit_qty": str(negative_qty),
-        "gross_invoice_total": format(gross_value.quantize(CENT), ".2f"),
-        "credit_value": format(credit_value.quantize(CENT), ".2f"),
+        "gross_invoice_total": _display_money(gross_value),
+        "gross_invoice_total_exact": format(gross_value, "f"),
+        "credit_value": _display_money(credit_value),
+        "credit_value_exact": format(credit_value, "f"),
         "gross_received_qty": str(received_qty),
         "returned_qty": str(returned_qty),
         "price_policy_absolute": format(policy.absolute, "f"),
@@ -309,6 +322,7 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                         "receipt_po_ids", "line_labels")
     extra_columns = ("gross_invoice_qty", "credit_qty", "gross_invoice_total",
                      "credit_value", "gross_received_qty", "returned_qty",
+                     "invoice_total_exact", "gross_invoice_total_exact", "credit_value_exact",
                      "invoice_documents", "credit_references", "return_references",
                      "price_policy_absolute", "price_policy_fraction",
                      "price_policy_sha256")
