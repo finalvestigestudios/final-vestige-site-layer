@@ -46,7 +46,7 @@ The first CLI only audits Git provenance and records a local HOLD receipt. The l
 
 ## Verification and release blockers
 
-**Locally executed:** 88 R15 tests, and 545 R10–R15 tests, all passed. The R15 test suite exercises a temporary real Git repository, symlink rejection and 68 independently mutated synthetic graph records. Local source/test Git blobs were compared to uploaded GitHub blobs.
+**Locally executed:** 91 R15 tests, and 548 R10–R15 tests, all passed. The R15 test suite exercises a temporary real Git repository, symlink rejection and 68 independently mutated synthetic graph records. Local source/test Git blobs were compared to uploaded GitHub blobs.
 
 **Not executed:** complete native validation/build, live 72-object Git CLI, real 35-article citation safety suite and hosted CI. This container cannot resolve github.com or api.github.com to obtain the private full repository checkout. Six integration-owned articles and the separate water planner remain outside this cluster-specific graph; native corpus R10–R14 gates still cover them.
 
