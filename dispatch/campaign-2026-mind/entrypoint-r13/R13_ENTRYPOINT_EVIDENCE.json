@@ -40,7 +40,13 @@
       "rest_form_elements": 0,
       "rest_email_inputs": 0,
       "rest_self_link_page_id": 523,
-      "actual_browser_conversion_proven": false
+      "actual_browser_conversion_proven": false,
+      "saved_gutenberg_subscribe_block": {
+        "block": "jetpack/subscriptions",
+        "buttonOnNewLine": true,
+        "button_label": "Subscribe",
+        "explicit_button_only_style_seen": false
+      }
     },
     "focus": {
       "id": 1579,
@@ -49,7 +55,14 @@
       "rest_form_elements": 0,
       "rest_email_inputs": 0,
       "rest_self_link_page_id": 1579,
-      "actual_browser_conversion_proven": false
+      "actual_browser_conversion_proven": false,
+      "saved_gutenberg_subscribe_block": {
+        "block": "jetpack/subscriptions",
+        "buttonOnNewLine": true,
+        "button_label": "Send me the fieldbook",
+        "placeholder_configured": true,
+        "explicit_button_only_style_seen": false
+      }
     },
     "editorial_standards": {
       "id": 17,
@@ -89,7 +102,10 @@
     "issue05_original_contains_mutable_refund_numbers": true,
     "issue05_original_lacks_total_focus_exact_sku": true,
     "recommended_change_to_original_issue05": "PROPOSED_ONLY_PENDING_FOUNDER_EDITORIAL_APPROVAL",
-    "received_jetpack_email": false
+    "received_jetpack_email": false,
+    "editor_context_read_only_observed": true,
+    "wordPress_official_reference": "https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/",
+    "reference_interpretation": "WordPress documents both standard email-field forms and button-only popup styles. Saved blocks inspected in editor context did not explicitly indicate the button-only style. REST output alone cannot settle public flow."
   },
   "official_sources": [
     "https://zen12.com/about",
@@ -97,7 +113,8 @@
     "https://affiliates.inspire3.com/",
     "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
     "https://finalvestige.com/editorial-standards/",
-    "https://finalvestige.com/affiliate-disclosure/"
+    "https://finalvestige.com/affiliate-disclosure/",
+    "https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/"
   ],
   "note": "Never use this source-only evidence to claim that subscriptions work, that newsletter delivery occurred, or that commercial messages are lawful or authorized."
 }
