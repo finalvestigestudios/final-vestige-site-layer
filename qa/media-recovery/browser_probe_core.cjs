@@ -44,6 +44,12 @@ function sameSource(a,b){
  catch{return false}
 }
 function normalizedAlt(t){return String(t||'').toLowerCase().replace(/\s+/g,' ').trim()}
+function activeImageIdentity(s,r){
+ // DOM src/data-src may retain the original while srcset/lazy-loading displays another asset.
+ // Only the actual currentSrc can prove the stored image's decoded identity.
+ return !!(r&&typeof r.currentSrc==='string'&&r.currentSrc.trim()&&
+   sameSource(s.source_url,r.currentSrc));
+}
 function renderSrcMatch(s,r){return [r.src,r.currentSrc,r.dataSrc].some(u=>sameSource(s.source_url,u))}
 function matchStoredImages(stored,rendered){
  const rows=stored.map(s=>({s,urls:rendered.filter(r=>renderSrcMatch(s,r))}));
@@ -72,21 +78,24 @@ function matchStoredImages(stored,rendered){
 function classifyImages(stored,rendered,network,pageVerified){
  return matchStoredImages(stored,rendered).map(j=>{
   const r=j.rendered,s=stored.find(x=>x.key===j.key);
-  const req=r&&network.findLast(n=>[n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc||r.src)||sameSource(u,r.src)));
+  // Never attribute a stale src/data-src request to the decoded currentSrc.
+  const req=r&&r.currentSrc&&network.findLast(n=>[n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc)));
   const responseStatus=req&&Number.isInteger(req.status)?req.status:null,reqError=req?.failed_error||null;
-  const identityVerified=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
+  const domMapped=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
+  const identityVerified=domMapped&&activeImageIdentity(s,r);
   const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&(reqError||(responseStatus!==null&&responseStatus>=400)));
   const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth>0);
   let state='unverified';
   if(!pageVerified)state='page_not_verified';
   else if(!r)state='not_mapped';
   else if(j.match==='alt_only_unverified')state='alt_only_identity_unverified';
+  else if(domMapped&&!identityVerified)state='current_src_identity_unverified';
   else if(visiblyBroken)state='confirmed_broken_in_probe_browser';
   else if(verifiedLoaded)state='loaded_in_probe_browser';
   else if(r.complete===true&&r.naturalWidth===0)state='zero_intrinsic_width_needs_review';
   else state='pending_lazy_or_incomplete';
   return{image_key:j.key,match:j.match,stored_url:s.source_url,rendered_src:r?.src||null,
-   current_src:r?.currentSrc||null,complete:r?.complete??null,natural_width:r?.naturalWidth??null,
+   current_src:r?.currentSrc||null,current_src_identity_verified:identityVerified,complete:r?.complete??null,natural_width:r?.naturalWidth??null,
    request_url:req?.url||null,http_status:responseStatus,network_failure:reqError,
    transfer_bytes:Number.isInteger(req?.encodedDataLength)?req.encodedDataLength:null,
    result:state,verified_broken_in_browser:visiblyBroken?true:verifiedLoaded?false:null};
