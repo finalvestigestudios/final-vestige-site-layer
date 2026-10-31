@@ -60,6 +60,22 @@ def run_smoke(app_id: str) -> list[Path]:
             _check(same_report and all(
                    r["input_identity_review"] == "identical_source_bytes_review"
                    for r in same_report), "smoke invariant 35")
+            # R72: verify the packaged ledger importer does not disclose
+            # private filenames when a real source row is rejected.
+            private_name = "CLIENT_462_PRIVATE_PAYROLL_DO_NOT_LOG.csv"
+            private_source = _csv(root, private_name, ("id", "amount"), [("---", "1")])
+            reports_before = set(root.glob("ledger-diff-*.csv"))
+            try:
+                engine.ledger_diff(private_source, right, str(root))
+            except ValueError as error:
+                _check("CLIENT_462_PRIVATE_PAYROLL_DO_NOT_LOG" not in str(error),
+                       "smoke invariant 43")
+                _check("Blank transaction ID at physical CSV row 2" in str(error),
+                       "smoke invariant 44")
+            else:
+                raise RuntimeError("Packaged executable smoke check failed: smoke invariant 43")
+            _check(set(root.glob("ledger-diff-*.csv")) == reports_before,
+                   "smoke invariant 45")
         elif app_id == "invoices":
             source = _csv(root, "invoices.csv", ("vendor", "invoice_number", "amount", "date"), [
                 ("ACME", "INV-100", "200.00", "2026-01-01"),
