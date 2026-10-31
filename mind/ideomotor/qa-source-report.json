@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-30",
+  "status": "draft_hold",
+  "tested_source_commit": "4b79107283ba7a11e59e9392d65ab03c1e2d8631",
+  "exact_source_git_blob": "85133507b9ca8367284e35d3cab96e642a617ba4",
+  "article_words": 2770,
+  "claim_decisions": 40,
+  "source_records": 19,
+  "static_checks_38_of_38": "PASS, executed V8 against re-fetched GitHub source at exact commit",
+  "contrast": [
+    {
+      "name": "body on page",
+      "foreground": "#dce0d8",
+      "background": "#0b100e",
+      "ratio": 14.34,
+      "passes_4_5": true
+    },
+    {
+      "name": "heading on page",
+      "foreground": "#f2eee5",
+      "background": "#0b100e",
+      "ratio": 16.57,
+      "passes_4_5": true
+    },
+    {
+      "name": "muted on page",
+      "foreground": "#b0bbb0",
+      "background": "#0b100e",
+      "ratio": 9.67,
+      "passes_4_5": true
+    },
+    {
+      "name": "gold links on page",
+      "foreground": "#e5bd7c",
+      "background": "#0b100e",
+      "ratio": 10.87,
+      "passes_4_5": true
+    },
+    {
+      "name": "body on offer",
+      "foreground": "#dce0d8",
+      "background": "#15221b",
+      "ratio": 12.3,
+      "passes_4_5": true
+    },
+    {
+      "name": "heading on offer",
+      "foreground": "#f2eee5",
+      "background": "#15221b",
+      "ratio": 14.21,
+      "passes_4_5": true
+    },
+    {
+      "name": "gold label on offer",
+      "foreground": "#e5bd7c",
+      "background": "#15221b",
+      "ratio": 9.32,
+      "passes_4_5": true
+    },
+    {
+      "name": "disabled button text",
+      "foreground": "#e7e9e2",
+      "background": "#37483c",
+      "ratio": 7.96,
+      "passes_4_5": true
+    },
+    {
+      "name": "summary text on case",
+      "foreground": "#f2eee5",
+      "background": "#0f1812",
+      "ratio": 15.64,
+      "passes_4_5": true
+    },
+    {
+      "name": "gold case label",
+      "foreground": "#e5bd7c",
+      "background": "#0f1812",
+      "ratio": 10.26,
+      "passes_4_5": true
+    }
+  ],
+  "pairs_below_4_5": [],
+  "html_ids": 13,
+  "duplicate_ids": [],
+  "anchors": 33,
+  "non_https_anchors": [],
+  "merchant_purchase_anchors": [],
+  "source_panels": 3,
+  "real_browser_test": "NOT RUN",
+  "actual_wordpress_test": "NOT RUN",
+  "axe_or_manual_screenreader": "NOT RUN",
+  "actual_cwv": "NOT MEASURED",
+  "affiliate_approved": false,
+  "merchant_link_active": false,
+  "release_authorized": false,
+  "disclaimer": "Numerical CSS color contrast and exact-source structural V8 tests do not prove WCAG compliance or working WordPress UX. Full release gates still open."
+}
