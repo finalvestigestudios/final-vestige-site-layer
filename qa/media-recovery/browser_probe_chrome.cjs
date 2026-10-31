@@ -4,6 +4,7 @@ const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {spawn}=require('node:child_process');
 const {loadSnapshot}=require('./validate_inventory.cjs');
 const {classifyImages,pageHostVerified,countTransfer,scopeArticleImageWire}=require('./browser_probe_core.cjs');
+const {selectCdpImageRequests}=require('./cdp_image_request_scope.cjs');
 const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
@@ -89,7 +90,7 @@ function monitor(cdp){
   }else if(m.method==='Network.loadingFinished'){
    const r=reqs.get(id)||{};r.encodedDataLength=Math.round(p.encodedDataLength||0);reqs.set(id,r);
   }else if(m.method==='Network.loadingFailed'){
-   const r=reqs.get(id)||{};r.failed_error=p.errorText||'network_load_failed';reqs.set(id,r);
+   const r=reqs.get(id)||{};r.type=p.type||r.type||null;r.failed_error=p.errorText||'network_load_failed';reqs.set(id,r);
    if(p.type==='Document')docFailures.push({url:r.url||null,error:r.failed_error});
   }
  });
@@ -119,8 +120,11 @@ async function inspect(cdp,page,outputDir){
   }
   const records=net.records(),fail=net.docFailures();
   const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
-  const images=classifyImages(page.stored,doc?.images||[],records,verified);
-  const networkImages=records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
+  // Only CDP Image resources may certify historical-photo load or failure.
+  // XHR/Fetch/Document requests for the same URL must not mask a broken <img>.
+  const imageRecords=selectCdpImageRequests(records);
+  const images=classifyImages(page.stored,doc?.images||[],imageRecords,verified);
+  const networkImages=imageRecords.map(x=>({
    url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
    from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true}));
@@ -160,7 +164,7 @@ async function inspect(cdp,page,outputDir){
    image_census:evidence,known_broken_count:evidence.known_broken_count,
    confirmed_broken_count:evidence.confirmed_broken_count,
    browser_wire_bytes_total:verified&&coverage.complete?countTransfer(records):null,
-   image_wire_bytes_total:verified&&coverage.complete?countTransfer(records.filter(x=>x.type==='Image')):null,
+   image_wire_bytes_total:verified&&coverage.complete?countTransfer(imageRecords):null,
    // Distinguish measured article-photo traffic from unrelated page UI image traffic.
    article_image_wire_bytes_total:verified&&coverage.complete?articleWire.article_bytes:null,
    unattributed_image_wire_bytes_total:verified&&coverage.complete?articleWire.unattributed_bytes:null,
