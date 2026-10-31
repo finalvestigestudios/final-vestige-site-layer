@@ -8,6 +8,7 @@ import difflib
 import hashlib
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 MAX_POLICY_BYTES = 10 * 1024 * 1024
@@ -44,6 +45,31 @@ def _read_policy(path):
     return lines, hashlib.sha256(raw).hexdigest(), json.dumps(source.name, ensure_ascii=True)
 
 
+def _visible_source_char(character: str) -> str:
+    """Display invisible format/variation code points without changing sources.
+
+    Unlike JSON-encoding whole lines, this keeps readable Unicode readable
+    while making default-hidden typography explicit. Existing backslash-first
+    escaping prevents literal \\uXXXX text from imitating an escaped character.
+    """
+    if character == "\\":
+        return "\\\\"
+    if character == "\t":
+        return "\\t"
+    if character == "\r":
+        return "\\r"
+    codepoint = ord(character)
+    if (unicodedata.category(character) == "Cf"
+            or codepoint == 0x034F  # Combining Grapheme Joiner
+            or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors
+            or 0xFE00 <= codepoint <= 0xFE0F
+            or 0xE0100 <= codepoint <= 0xE01EF):
+        if codepoint <= 0xFFFF:
+            return f"\\u{codepoint:04x}"
+        return f"\\U{codepoint:08x}"
+    return character
+
+
 def _unified_diff(before, after, old_label, new_label):
     chunks = []
     for index, fragment in enumerate(difflib.unified_diff(
@@ -51,12 +77,13 @@ def _unified_diff(before, after, old_label, new_label):
         tofile="after " + new_label, lineterm="\n",
     )):
         # The first two records are diff headers; @@ records are hunk metadata.
-        # Escape only source lines (prefix +, - or space) so CR cannot silently
-        # overwrite visible report text and literal \r remains distinguishable.
+        # Escape only source lines (prefix +, - or space). Preserve original
+        # line breaks and diff metadata; untrusted typography cannot masquerade
+        # as unchanged source when viewed in a text editor or audit register.
         display = fragment
         if index >= 2 and not fragment.startswith("@@ "):
-            display = (fragment[0] + fragment[1:].replace("\\", "\\\\")
-                       .replace("\t", "\\t").replace("\r", "\\r"))
+            display = fragment[0] + "".join(
+                _visible_source_char(character) for character in fragment[1:])
         if fragment.endswith("\n"):
             chunks.append(display)
         elif fragment.endswith("\r"):
@@ -87,6 +114,7 @@ def compare_policy_files(old, new, folder, output_path):
         "Text differences only. Not legal advice or a compliance determination.\n"
         "SHA-256 fingerprints cover the exact source bytes read (including any BOM).\n"
         "Diff display escapes source backslash as \\\\, tab as \\t and CR as \\r.\n"
+        "Invisible Unicode format and variation characters display as \\uXXXX or \\UXXXXXXXX.\n"
         + identity_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
