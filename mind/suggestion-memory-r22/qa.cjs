@@ -51,7 +51,7 @@ function audit(d){
  check("Matrix records FTC guidance",matrix.includes("FTC Q&A")&&matrix.includes("FTC health guidance"));
  check("Matrix does not assert universal EEG proof",matrix.includes("Binaural entrainment EEG evidence mixed"));
  check("Video VTT bounded to 40s",vtt.startsWith("WEBVTT")&&vtt.includes("00:00:40.000")&&vtt.includes("DRAFT"));
- check("Video readiness explicitly no hosted player",readiness.includes("not an activated video")&&readiness.includes("separate approvals"));
+ check("Video readiness explicitly no hosted player",readiness.includes("not an activated video")&&readiness.includes("separate founder signoff"));
  let m={};try{m=JSON.parse(measurement);}catch{}
  check("Analytics default OFF",m.enabled===false&&m.deploy===false);
  check("Analytics no user identifiers",Array.isArray(m.forbidden_fields)&&m.forbidden_fields.includes("user_id")&&m.forbidden_fields.includes("IP"));
