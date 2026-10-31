@@ -19,10 +19,11 @@ from urllib.parse import parse_qs, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, build_opener, HTTPRedirectHandler, ProxyHandler
 from urllib.error import HTTPError
 from source_concordance import build_concordance, build_context_index
+from atlas_custody import build_atlas
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
-EXPORTS = ('evidence-export.csv','evidence-export.json','response-export.csv','response-export.json','source-context.json')
+EXPORTS = ('evidence-export.csv','evidence-export.json','response-export.csv','response-export.json','source-context.json','atlas-custody.json')
 EXPECTED_SOURCE_HEAD = '74375657f2cdaac0710f94c6de6c24534ee06858'
 
 
@@ -151,6 +152,14 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
     expected_context_sha = hashlib.sha256(expected_context).hexdigest()
     if headers.get('x-fv-ex2-apollo-context-sha256') != expected_context_sha:
         raise AdmissionError('Actually served source context index hash mismatch')
+    atlas_panel, _, atlas_data, atlas_receipt = build_atlas(expected_dir)
+    if headers.get('x-fv-ex2-apollo-atlas-sha256') != atlas_receipt['atlas_index_sha256']:
+        raise AdmissionError('Actually served Atlas provenance index hash mismatch')
+    if headers.get('x-fv-ex2-apollo-atlas-panel-sha256') != atlas_receipt['atlas_html_sha256']:
+        raise AdmissionError('Actually served Atlas panel hash mismatch')
+    if (html.count(b'data-atlas-custody-id=') != 6 or html.count(b'id="fv-ex2-atlas-custody"') != 1
+        or b'{{FV_EX2_ATLAS_EXPORT}}' in html or b'No mapped location: archival precision unreviewed.' not in html):
+        raise AdmissionError('Served Atlas six-record geography hold missing')
     if b'id="source-concordance"' not in html or html.count(b'data-concordance-record=') != 6:
         raise AdmissionError('Served six-source concordance incomplete')
     if html.count(b'type="radio"') != 4 or html.count(b' data-concordance-era=') != 6:
@@ -185,7 +194,9 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         if anonymous_status != 403 or anonymous_data:
             raise AdmissionError('Anonymous private export did not return empty HTTP 403: '+name)
         status,h,data = fetch(url,cookie)
-        expected = expected_context if name == 'source-context.json' else (expected_dir/name).read_bytes()
+        expected = (expected_context if name == 'source-context.json' else
+                    atlas_data.encode('utf-8') if name == 'atlas-custody.json' else
+                    (expected_dir/name).read_bytes())
         digest = hashlib.sha256(expected).hexdigest()
         if (status != 200 or data != expected or h.get('x-fv-ex2-apollo-asset-sha256') != digest
             or 'attachment;' not in h.get('content-disposition','') or 'noindex' not in h.get('x-robots-tag','')):
@@ -194,6 +205,9 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
     return {'status':'PASS_HTTP_INTEGRITY_ONLY', 'source_head':EXPECTED_SOURCE_HEAD,
             'fragment_sha256':expected_fragment,'concordance_sha256':expected_concordance_sha,'context_index_sha256':expected_context_sha,
             'exports_sha256':download_hashes,
+            'atlas_index_sha256':atlas_receipt['atlas_index_sha256'],
+            'atlas_panel_sha256':atlas_receipt['atlas_html_sha256'],
+            'atlas_publication_references':6,'atlas_geo_pins':0,'atlas_edges':0,
             'anonymous_private_page':403,'anonymous_private_exports':len(EXPORTS),
             'tampered_nonce_page':403,'review_http':200,'source_http':200,
             'read_only':True,'no_wordpress_writes':True,

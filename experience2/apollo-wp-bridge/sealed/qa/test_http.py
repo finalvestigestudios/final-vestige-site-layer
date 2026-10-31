@@ -119,7 +119,7 @@ class ApolloSealedHTTP(unittest.TestCase):
         self.assertEqual(h.get('x-fv-ex2-apollo-concordance-sha256'),self.manifest['outputs_sha256']['source-concordance.html'])
         self.assertIn(b'id="documentary-trails"',body)
         self.assertNotIn(b'{{FV_EX2_ASSET_BASE}}',body)
-        self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),5)
+        self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),6)
         self.assertEqual(h.get('x-fv-ex2-apollo-context-sha256'),self.manifest['outputs_sha256']['source-context.json'])
         import re
         nonces=re.findall(rb'<(?:script|style) nonce="([^"]+)"',body)

@@ -18,11 +18,11 @@ class TestStagingAdmission(unittest.TestCase):
     def tearDownClass(cls):
         test_http.ApolloHttp.tearDownClass()
 
-    def test_provenance_and_exact_five_exports_over_real_php_http(self):
+    def test_provenance_and_exact_six_exports_over_real_php_http(self):
         r = admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor', allow_stub=True)
         self.assertEqual(r['status'], 'PASS_HTTP_INTEGRITY_ONLY')
         self.assertEqual(r['anonymous_private_page'], 403)
-        self.assertEqual(len(r['exports_sha256']), 5)
+        self.assertEqual(len(r['exports_sha256']), 6)
         self.assertFalse(r['wordpress_integrated'])
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
