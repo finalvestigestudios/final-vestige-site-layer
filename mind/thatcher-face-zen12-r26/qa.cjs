@@ -55,7 +55,7 @@ ok(rows.length>=45,'evidence matrix at least 44 classified entries');
 ok(rows.some(l=>l.includes('HARD_HOLD')),'permission holds encoded');
 ok(rows.some(l=>l.includes('10.1167/14.12.9')),'original research source in matrix');
 ok(rows.some(l=>l.includes('FTC-01')),'affiliate disclosure recorded');
-ok(/no WordPress CMS/i.test(data['README.md']),'release HOLD instruction recorded');
+ok(/not a WordPress post or approved affiliate campaign/i.test(data['README.md']),'release HOLD instruction recorded');
 ok(data['privacy-off.cjs'].includes('const ENABLED = false'),'privacy prototype disabled');
 ok(data['privacy-off.cjs'].includes('return { accepted:false'),'all live events blocked');
 // Negative mutation scenarios: verify core protections would detect bad HTML.
