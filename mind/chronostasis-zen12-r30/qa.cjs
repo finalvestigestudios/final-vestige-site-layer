@@ -59,7 +59,7 @@ function adversarial(files){
  ["new-list",{"mind-archive.wp.html":files["mind-archive.wp.html"]+"<form></form>"}],
  ["privacy-on",{"privacy-off.cjs":files["privacy-off.cjs"].replace("const ENABLED=false","const ENABLED=true")}],
  ["video-autoplay",{"zen12-video.wp.html":files["zen12-video.wp.html"]+"<video autoplay></video>"}],
- ["copy-drift",{"zen12-video.wp.html":files["zen12-video.wp.html"].replace("TWELVE IS","THIRTEEN IS")}],
+ ["copy-drift",{"zen12-video.wp.html":files["zen12-video.wp.html"].replace("You have twelve minutes.","You have eleven minutes.")}],
  ["broken-link",{"zen12-text.wp.html":files["zen12-text.wp.html"]+'<a href="#">oops</a>'}],
  ["short-investigation",{"investigation.md":"hello world"}],
  ["unchecked-claims",{"CLAIMS_MATRIX.csv":"claim,source\nnone,none"}],
