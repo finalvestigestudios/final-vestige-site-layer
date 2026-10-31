@@ -56,7 +56,7 @@ function audit(files,matrix){
  check('buyer guide exact actual offer', G.includes('https://zen12.com/about')&&G.includes('https://zen12.com/getstarted'));
  check('buyer guide checks checkout privacy', G.includes('mobile phone number')&&G.includes('countdown'));
  check('buyer guide refrains from price amounts', G.includes('No particular sale price'));
- check('buyer guide mindfulness study is not SKU proof', G.includes('They do not establish that a particular commercial twelve-minute audio track'));
+ check('buyer guide mindfulness study is not SKU proof', G.includes('Zen12\'s marketed recordings were not thereby evaluated'));
  check('buyer guide declared no firsthand use', G.includes('not purchased or listened to'));
  check('buyer guide preserves focus', G.includes('https://finalvestige.com/focus/'));
  check('plan fair A/B disclosure equality', P.includes('Exactly identical')&&P.includes('plain-language near-button'));
@@ -66,7 +66,7 @@ function audit(files,matrix){
  check('plan requires accessibility review', P.includes('NVDA/VoiceOver'));
  check('plan no actual sales from click', P.includes('not actual purchases'));
  check('plan does not activate hosted media', P.includes('REVIEW_ONLY_'));
- check('plan confirms other agents protected', P.includes('homepage flagship PR #49')&&P.includes('Dispatch #174'));
+ check('plan confirms other agents protected', P.includes('Homepage flagship PR #49')&&P.includes('Dispatch #174'));
  check('plan maintains one Jetpack signup', P.includes('Jetpack signup'));
  check('source matrix at least 50 claims', Array.isArray(Z.claims)&&Z.claims.length>=50);
  check('source matrix at least 15 sources', Z.source_urls&&Object.keys(Z.source_urls).length>=15);
