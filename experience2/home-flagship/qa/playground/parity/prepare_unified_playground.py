@@ -10,6 +10,9 @@ import hashlib
 import json
 import re
 import shutil
+import stat
+import zipfile
+from pathlib import PurePosixPath
 import subprocess
 import sys
 from pathlib import Path
@@ -63,6 +66,120 @@ def verified_mount_tree(stage: Path) -> None:
             raise ValueError('STAGE HOLD: unsafe theme/plugin entry point')
 
 
+
+
+
+MAX_THEME_UNPACKED_BYTES = 80 * 1024 * 1024
+MAX_THEME_FILES = 4000
+PLUGIN_NAME = 'fv-ex2-private-preview'
+EXPECTED_PLUGIN = {'fv-ex2-private-preview.php', 'fv-ex2-private-payload.php',
+                   'STAGING_MANIFEST.json', 'INSTALLATION_HOLD.txt'}
+
+
+def archive_file_map(raw: bytes, *, root: str, limit: int = MAX_THEME_UNPACKED_BYTES) -> dict[str, bytes]:
+    """Strict ZIP contents: no zip-slip, symlinks, collisions or unbounded reads."""
+    from io import BytesIO
+    result: dict[str, bytes] = {}
+    seen: set[str] = set()
+    total = 0
+    with zipfile.ZipFile(BytesIO(raw)) as archive:
+        members = archive.infolist()
+        if not members or len(members) > MAX_THEME_FILES:
+            raise ValueError('MOUNT HOLD: archive member count')
+        for member in members:
+            if member.is_dir():
+                continue
+            name = member.filename
+            parts = PurePosixPath(name).parts
+            if (name.startswith('/') or '\\' in name or len(parts) < 2 or
+                parts[0] != root or any(x in ('', '.', '..') for x in parts) or
+                stat.S_ISLNK(member.external_attr >> 16) or
+                not stat.S_ISREG(member.external_attr >> 16) and member.create_system == 3 and (member.external_attr >> 16) != 0):
+                raise ValueError('MOUNT HOLD: unsafe archive entry')
+            key = PurePosixPath(*parts[1:]).as_posix()
+            if key.casefold() in seen:
+                raise ValueError('MOUNT HOLD: duplicate/case-colliding entry')
+            seen.add(key.casefold())
+            total += member.file_size
+            if member.file_size > limit or total > limit:
+                raise ValueError('MOUNT HOLD: archive exceeds extracted byte limit')
+            payload = archive.read(member)
+            if len(payload) != member.file_size:
+                raise ValueError('MOUNT HOLD: truncated archive entry')
+            result[key] = payload
+    if not result:
+        raise ValueError('MOUNT HOLD: empty archive')
+    return result
+
+
+def compare_mount(directory: Path, expected: dict[str, bytes], label: str) -> dict[str, str]:
+    """All extracted bytes and file paths must equal the verified archive, not just style.css."""
+    if directory.is_symlink() or not directory.is_dir():
+        raise ValueError('MOUNT HOLD: missing or symlinked ' + label)
+    actual: dict[str, str] = {}
+    for p in directory.rglob('*'):
+        if p.is_symlink() or not p.resolve().is_relative_to(directory):
+            raise ValueError('MOUNT HOLD: symlink or path escape in ' + label)
+        if p.is_dir():
+            continue
+        if not p.is_file():
+            raise ValueError('MOUNT HOLD: unexpected special file in ' + label)
+        rel = p.relative_to(directory).as_posix()
+        if rel not in expected or p.read_bytes() != expected[rel]:
+            raise ValueError('MOUNT HOLD: modified or unexpected ' + label + '/' + rel)
+        actual[rel] = sha(expected[rel])
+    if set(actual) != set(expected):
+        raise ValueError('MOUNT HOLD: missing ' + label + ' extracted files')
+    return actual
+
+
+def verify_mount_contents(repo: Path, head: str, stage: Path, receipt: dict,
+                          theme_zip: Path, theme_sha256: str) -> dict[str, object]:
+    """Theme ZIP SHA must be provided independently, not taken from editable stage receipt."""
+    if not re.fullmatch(r'[0-9a-f]{64}', theme_sha256):
+        raise ValueError('MOUNT HOLD: independent 64-character Assembler SHA-256 required')
+    if theme_zip.is_symlink() or not theme_zip.is_file() or stage in theme_zip.resolve().parents:
+        raise ValueError('MOUNT HOLD: theme archive must be an external regular file')
+    theme_raw = theme_zip.read_bytes()
+    if sha(theme_raw) != theme_sha256 or receipt.get('assembler_zip_sha256') != theme_sha256:
+        raise ValueError('MOUNT HOLD: independently pinned Assembler ZIP mismatch')
+    theme_expected = archive_file_map(theme_raw, root='assembler')
+    if (b'Theme Name: Assembler' not in theme_expected.get('style.css', b'') or
+        b'Version: 0.0.126' not in theme_expected.get('style.css', b'') or
+        'templates/index.html' not in theme_expected):
+        raise ValueError('MOUNT HOLD: invalid Assembler 0.0.126 archive')
+    theme_hashes = compare_mount(stage/'mounts'/'assembler', theme_expected, 'assembler')
+    archive_path = stage/'private-preview-release-HOLD.zip'
+    if archive_path.is_symlink() or not archive_path.is_file():
+        raise ValueError('MOUNT HOLD: missing private-preview source archive')
+    plugin_raw = archive_path.read_bytes()
+    if receipt.get('plugin_sha256') != sha(plugin_raw):
+        raise ValueError('MOUNT HOLD: private plugin ZIP changed after preparation')
+    plugin_expected = archive_file_map(plugin_raw, root=PLUGIN_NAME, limit=12*1024*1024)
+    if set(plugin_expected) != EXPECTED_PLUGIN:
+        raise ValueError('MOUNT HOLD: unexpected private-plugin archive files')
+    manifest = json.loads(plugin_expected['STAGING_MANIFEST.json'])
+    if (manifest.get('release_status') != 'HOLD_UNPUBLISHED_STAGING_ONLY' or
+        manifest.get('expected_git_head_given_by_caller') != head or
+        manifest.get('payload_sha256') != sha(plugin_expected['fv-ex2-private-payload.php'])):
+        raise ValueError('MOUNT HOLD: private-plugin source manifest mismatch')
+    # Independently check the shipping PHP code against the exact tracked commit.
+    php_path = 'experience2/home-flagship/qa/integration/private-preview/fv-ex2-private-preview.php'
+    if git_bytes(repo, 'show', head + ':' + php_path) != plugin_expected['fv-ex2-private-preview.php']:
+        raise ValueError('MOUNT HOLD: staged PHP differs from exact Git HEAD')
+    asset_paths = ['index.html','flagship.css','chronicle.css','chronicle-lens.css',
+                   'inquiry.css','observer-lab.css','reading-trail.css','flagship.js',
+                   'observer-lab.js','chronicle-lens.js','reading-trail.js']
+    source_hashes = manifest.get('source_hashes')
+    if not isinstance(source_hashes, dict) or set(source_hashes) != set(asset_paths):
+        raise ValueError('MOUNT HOLD: missing canonical source asset hashes')
+    for rel in asset_paths:
+        full = 'experience2/home-flagship/' + rel
+        if sha(git_bytes(repo, 'show', head + ':' + full)) != source_hashes[rel]:
+            raise ValueError('MOUNT HOLD: plugin manifest differs from canonical asset ' + rel)
+    plugin_hashes = compare_mount(stage/'mounts'/PLUGIN_NAME, plugin_expected, 'private-preview')
+    return {'theme_files_matched':len(theme_hashes), 'plugin_files_matched':len(plugin_hashes),
+            'theme_sha256':theme_sha256, 'private_plugin_sha256':sha(plugin_raw)}
 
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -174,7 +291,7 @@ def verify_stage(stage: Path, head: str) -> tuple[dict, dict, list[str]]:
     return receipt, blueprint, argv
 
 
-def bind(repo: Path, head: str, stage: Path) -> dict:
+def bind(repo: Path, head: str, stage: Path, theme_zip: Path, theme_sha256: str) -> dict:
     repo = repo.resolve(strict=True)
     if stage.is_symlink():
         raise ValueError('STAGE HOLD: stage root cannot be a symlink')
@@ -184,6 +301,7 @@ def bind(repo: Path, head: str, stage: Path) -> dict:
     sources = verify_sources(repo, head)
     parity = verify_parity(repo)
     receipt, blueprint, argv = verify_stage(stage, head)
+    mount_custody = verify_mount_contents(repo, head, stage, receipt, theme_zip, theme_sha256)
     import_step = json.loads((repo / PARITY / 'blueprint.local.json').read_text())['steps'][-1]
     if import_step.get('step') != 'runPHP' or "require '/wordpress/wp-content/uploads/fv-ex2-parity/apply_local_parity.php';" not in import_step.get('code', ''):
         raise ValueError('PARITY HOLD: unexpected importer step')
@@ -203,6 +321,7 @@ def bind(repo: Path, head: str, stage: Path) -> dict:
     (stage / 'playground-cli-arguments.json').write_text(json.dumps(argv, indent=2)+'\n')
     receipt.update({
         'assembler_parity': 'MOUNTED_NOT_IMPORTED',
+        'upstream_mount_custody': mount_custody,
         'parity_source_sha256': sources,
         'parity_manifest_sha256': sha((mount / 'assembler-public-safe.json').read_bytes()),
         'parity_importer_sha256': sha((mount / 'apply_local_parity.php').read_bytes()),
@@ -220,9 +339,11 @@ def main() -> int:
     ap.add_argument('--repo', required=True, type=Path)
     ap.add_argument('--expected-head', required=True)
     ap.add_argument('--prepared-stage', required=True, type=Path)
+    ap.add_argument('--assembler-zip', required=True, type=Path, help='Independently obtained official theme archive')
+    ap.add_argument('--assembler-sha256', required=True, help='Out-of-band pinned SHA-256 of official theme archive')
     a = ap.parse_args()
     try:
-        print(json.dumps(bind(a.repo, a.expected_head, a.prepared_stage), indent=2))
+        print(json.dumps(bind(a.repo, a.expected_head, a.prepared_stage, a.assembler_zip, a.assembler_sha256), indent=2))
         return 0
     except Exception as exc:
         print('UNIFIED LOCAL STAGING FAILED CLOSED: ' + str(exc), file=sys.stderr)
