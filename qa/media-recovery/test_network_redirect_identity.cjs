@@ -2,7 +2,7 @@
 /** Synthetic CDP redirect-chain regressions. No image downloads or CMS writes. */
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {classifyImages}=require('./browser_probe_core.cjs');
-const {assessPage}=require('./image_census_coverage_core.cjs');
+const {assessPage,proofKind}=require('./image_census_coverage_core.cjs');
 const original='https://archive.example.gov/photos/photo-A.jpg';
 const source=(u=original)=>[{key:'268:0',source_url:u,alt:'Photo A'}];
 const dom=(u=original,width=960)=>[{index:0,src:u,currentSrc:u,alt:'Photo A',complete:true,naturalWidth:width}];
@@ -73,4 +73,20 @@ test('an unrelated decoded currentSrc is never verified by a stale source URL al
   response(substitute,[original]),true)[0];
  assert.equal(s.result,'current_src_identity_unverified');
  assert.equal(s.verified_broken_in_browser,null);
+});
+test('independent census rejects forged loaded status after mismatched final HTTP URL',()=>{
+ const s=classify(original,'https://cdn.example.gov/other-photo.jpg',[original]);
+ s.result='loaded_in_probe_browser';s.verified_broken_in_browser=false;
+ assert.equal(proofKind(s),'unresolved');
+});
+test('independent census rejects a fabricated original even if identity flag is true',()=>{
+ const s=classify(original,original);s.stored_url='https://other.example.gov/fake-original.jpg';
+ s.current_src_identity_verified=true;
+ assert.equal(proofKind(s),'unresolved');
+});
+test('independent census rejects a changed final URL even without the new guard field',()=>{
+ const s=classify(original,original);
+ s.request_url='https://cdn.example.gov/unrelated.jpg';
+ delete s.network_final_identity_verified;delete s.redirected_image_identity_unverified;
+ assert.equal(proofKind(s),'unresolved');
 });
