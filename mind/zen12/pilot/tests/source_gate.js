@@ -49,6 +49,6 @@ function audit(f){
 }
 if(typeof module!=="undefined"&&require.main===module){
  const fs=require("fs"),path=require("path"),root=path.resolve(__dirname,"../../../..");
- let f={};for(const name of ["mind/zen12/page-zen12-guide.blocks.html","mind/zen12/pilot/evidence-buyers-guide.md","mind/zen12/pilot/claims.json","mind/zen12/pilot/video/captions.vtt","mind/zen12/pilot/video/transcript.md","mind/zen12/pilot/video/manifest.json","mind/zen12/pilot/video/build_video.py","mind/zen12/pilot/render_variants.py","mind/zen12/pilot/video/poster.svg","mind/zen12/pilot/measurement.md"]){f[name]=fs.readFileSync(path.resolve(root,name),"utf8");}
+ let f={};for(const name of ["mind/zen12/page-zen12-guide.blocks.html","mind/zen12/pilot/evidence-buyers-guide.md","mind/zen12/pilot/claims.json","mind/zen12/pilot/video/captions.vtt","mind/zen12/pilot/video/transcript.md","mind/zen12/pilot/video/manifest.json","mind/zen12/pilot/video/build_video.py","mind/zen12/pilot/render_variants.py","mind/zen12/pilot/video/poster.svg","mind/zen12/pilot/measurement.md","mind/zen12/pilot/video/build_vertical.py"]){f[name]=fs.readFileSync(path.resolve(root,name),"utf8");}
  const o=audit(f);console.log(JSON.stringify(o,null,2));if(o.failed.length)process.exit(1);
 }

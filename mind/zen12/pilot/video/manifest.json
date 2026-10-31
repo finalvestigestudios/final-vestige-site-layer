@@ -19,5 +19,20 @@
   "media_binaries_in_git": false,
   "source_code_in_git": "video/build_video.py is source for regeneration; MP4/PNG themselves are separate review artifacts",
   "verification": "local ffprobe and sha256sum of original media 2026-10-30",
-  "copyright_note": "All graphics drawn programmatically from original text; font files not redistributed"
+  "copyright_note": "All graphics drawn programmatically from original text; font files not redistributed",
+  "mobile_companion": {
+    "title": "Original 9:16 large-type mobile cut (alternative review asset)",
+    "file": "final-vestige-zen12-evidence-40s-portrait.mp4",
+    "format": "H264 yuv420p 540x960 15fps silent",
+    "duration_seconds": 40,
+    "mp4_bytes": 155763,
+    "mp4_sha256": "c4cb33fef60dfa773e65a46b9167c0581e58cf07f09c42b744f90c60af48ebbc",
+    "poster_png_bytes": 40622,
+    "poster_png_sha256": "cce9065e7f4f53a34baefa628ad82af509a31f696b6e55f120d8645a6565b6e3",
+    "caption_and_transcript": "Use the same five-scene caption/transcript concept; recheck exact timed text per new cut before release",
+    "source_file": "video/build_vertical.py",
+    "preview_only": true,
+    "hosted": false,
+    "independent_mobile_accessibility_pass": false
+  }
 }
