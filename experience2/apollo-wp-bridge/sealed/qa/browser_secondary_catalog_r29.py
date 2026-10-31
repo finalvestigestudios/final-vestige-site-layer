@@ -73,6 +73,7 @@ def run():
                 'same_image_not_asserted':True,'geopins':0,'external_asset_requests':requests,
                 'horizontal_overflow':False,'page_errors':errors})
             context.close()
+        # Native details disclosure, both open without client JavaScript.
         context=browser.new_context(viewport={'width':390,'height':850},java_script_enabled=False)
         page=context.new_page();page.set_content(html,wait_until='load')
         page.locator('#fv-ex2-research-desk-crosswalk>summary').click()
