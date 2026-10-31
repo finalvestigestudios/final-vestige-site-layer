@@ -7,7 +7,7 @@ The source-controlled program `prepare_isolated_stage.py` builds a *localhost-on
 ## Inputs (must be provided locally)
 
 1. A complete Git checkout whose `HEAD` is the exact reviewed 40-character SHA, including the nested Experience 2.0 homepage changes and the new QA directory. Never use a branch name as a substitute for the exact SHA.
-2. The official **Assembler theme ZIP** from [WordPress.com's free Assembler page](https://wordpress.com/theme/assembler) (download button), unmodified. The program requires `assembler/style.css` identifying the Assembler theme and `assembler/templates/index.html`. Do **not** silently replace it with Twenty Twenty-Five or a different theme.
+2. The official **Assembler theme ZIP** from [WordPress.com's free Assembler page](https://wordpress.com/theme/assembler) (download button), unmodified. The program requires `assembler/style.css` identifying the Assembler theme and `assembler/templates/index.html`. **Important:** the Theme Name header is spoofable; the builder now additionally requires an independently recorded SHA-256 of the exact Assembler ZIP. Never treat hashing an untrusted ZIP and passing that hash as proof of official origin. Do **not** silently replace it with Twenty Twenty-Five or a different theme.
 3. A fresh output directory **outside** the Git checkout, e.g. `/tmp/fv-ex2-local-stage`.
 4. For actual WordPress execution, Node 20.18+, free official `@wp-playground/cli`, and local Chromium/Playwright. Dependency installation can require internet and has **not** succeeded in the current automation environment; no CLI launch is claimed.
 
@@ -20,12 +20,13 @@ python experience2/home-flagship/qa/playground/prepare_isolated_stage.py \
   --repo . \
   --expected-head "$(git rev-parse HEAD)" \
   --assembler-zip "$HOME/Downloads/assembler.zip" \
+  --expected-theme-sha256 "<64-character checksum from separately reviewed trusted record>" \
   --out /tmp/fv-ex2-local-stage
 ```
 
-The entry point invokes the existing `attest_private_preview.py` rather than trusting the command-line commit string. That attester compares required files with committed Git blobs, runs the canonical 19-check Node source gate, and builds the PHP-only ZIP twice for byte equality before the Playground builder accepts it. An untracked/modified/incorrect checkout, a malformed or substituted theme ZIP, plugin source disclosure, or a failed gate is a hard failure.
+The entry point first verifies the **Playground stage builder itself**, its tests and this runbook against `git show <exact SHA>:<path>` and rejects dirty/untracked/symlinked files, then invokes the existing `attest_private_preview.py` rather than trusting the command-line commit string. That attester compares required files with committed Git blobs, runs the canonical 19-check Node source gate, and builds the PHP-only ZIP twice for byte equality before the Playground builder accepts it. An untracked/modified/incorrect staging builder, a malformed theme ZIP, a theme ZIP whose SHA-256 differs from the independently supplied pin, plugin source disclosure, or a failed gate is a hard failure. A matching operator-supplied hash **does not independently prove that Automattic published the ZIP**; retain the official download receipt and conduct a separate provenance review before release. The generator marks this status as unresolved.
 
-The generated output contains `mounts/assembler` (from the supplied theme ZIP), `mounts/fv-ex2-private-preview` (PHP-only), `playground-blueprint.json`, `playground-cli-arguments.json`, the exact-source ZIP and `STAGING_PREP_RECEIPT.json`. The manifest explicitly says release HOLD and records hashes. **No private WordPress.com database, users, subscribers, tokens, Jetpack settings, analytics secrets, or WXR export are imported.** The generator makes no WordPress or network calls and does not install/activate anything anywhere.
+The generated output contains `mounts/assembler` (from the supplied theme ZIP), `mounts/fv-ex2-private-preview` (PHP-only), `playground-blueprint.json`, `playground-cli-arguments.json`, the exact-source ZIP and `STAGING_PREP_RECEIPT.json`. The manifest explicitly says release HOLD, records hashes for all three version-pinned staging source files and the theme, and records `official_assembler_origin_independently_confirmed: false`. **No private WordPress.com database, users, subscribers, tokens, Jetpack settings, analytics secrets, or WXR export are imported.** The generator makes no WordPress or network calls and does not install/activate anything anywhere.
 
 ## Optional separate local developer launch — not authorized production deployment
 
@@ -51,6 +52,6 @@ This is **WordPress-native PHP and Assembler in a local Playground**, NOT WordPr
 
 ## Actual evidence and release requirements
 
-This PR includes **12 local offline synthetic-fixture regression tests** for archive/path attacks, substituted themes, source leak detection, source receipt mismatch, output isolation, local-only/private WordPress seeding, and HOLD state. The seeding PHP also passes `php -l` locally. This is NOT a claim that WordPress Playground was started, that actual image bytes transferred, that 7-width live Chromium, axe, Safari, or Lighthouse ran, or that WCAG 2.2 AA or GitHub CI/QD passed.
+The original PR included 12 local offline synthetic-fixture regression tests; this follow-up adds real Git-repository dirty/symlink/SHA cases and independent theme-digest mismatch/missing-pin cases (16 total). for archive/path attacks, substituted themes, source leak detection, source receipt mismatch, output isolation, local-only/private WordPress seeding, and HOLD state. The seeding PHP also passes `php -l` locally. This is NOT a claim that WordPress Playground was started, that actual image bytes transferred, that 7-width live Chromium, axe, Safari, or Lighthouse ran, or that WCAG 2.2 AA or GitHub CI/QD passed.
 
 Before ANY public release: founder visual review of three art directions and selected first-screen design, actual isolated WordPress+Assembler browser QA, verified archival image rights, actual Lighthouse lab measurements and separate field CWV baselines, hosted CI, exact-SHA independent QD, and explicit release approval. Frozen PR #49 must remain untouched, all 72 Margins records and the published 52-page Focus Fieldbook/Jetpack signup must be preserved. No staging-to-production database sync under any circumstances.
