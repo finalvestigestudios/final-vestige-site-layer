@@ -44,8 +44,8 @@ test('200 octet-stream body is not automatically called a broken image',()=>{
 });
 test('a 200 HTML-labelled image which did decode is not counted broken',()=>{
  const r=probe({width:640});
- assert.equal(r.result,'loaded_in_probe_browser');
- assert.equal(r.verified_broken_in_browser,false);
+ assert.equal(r.result,'decoded_without_verified_response');
+ assert.equal(r.verified_broken_in_browser,null);
  assert.equal(r.visual_failure_kind,null);
 });
 test('pending lazy image cannot be called broken',()=>{
