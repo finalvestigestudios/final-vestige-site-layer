@@ -1,13 +1,15 @@
 """Offline regression suite: only synthetic theme/plugin ZIPs, no WordPress writes."""
 import io
+import subprocess
 import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 from prepare_isolated_stage import (safe_zip_contents, validate_theme, validate_plugin,
-                                    create_blueprint, build_stage, digest)
+                                    create_blueprint, build_stage, digest, verify_theme_pin, verify_stage_checkout, STAGE_FILES, STAGE_SOURCE)
 
 HEAD = 'a'*40
 
@@ -99,21 +101,23 @@ class StageTests(unittest.TestCase):
             return {'git_head':head,'canonical_source_gate':'PASS','production_release':'HOLD',
                     'status':'ATTESTED_SOURCE_ONLY_RELEASE_HOLD'}
         out=self.base/'output'
-        record=build_stage(self.base/'repo',HEAD,self.themezip,out,attester=attest)
+        with patch('prepare_isolated_stage.verify_stage_checkout',return_value={'verified':'synthetic-test-only'}):
+            record=build_stage(self.base/'repo',HEAD,self.themezip,out,expected_theme_sha256=digest(self.themezip.read_bytes()),attester=attest)
         self.assertEqual(record['release'],'HOLD')
         self.assertEqual(record['wordpress_instance'],'NOT_STARTED')
         self.assertFalse((out/'mounts'/'fv-ex2-private-preview'/'index.html').exists())
         self.assertTrue((out/'mounts'/'assembler'/'templates'/'index.html').exists())
         self.assertIn('--port=9400',json.loads((out/'playground-cli-arguments.json').read_text()))
         with self.assertRaisesRegex(ValueError,'empty'):
-            build_stage(self.base/'repo',HEAD,self.themezip,out,attester=attest)
+            build_stage(self.base/'repo',HEAD,self.themezip,out,expected_theme_sha256=digest(self.themezip.read_bytes()),attester=attest)
 
     def test_mismatched_receipt_refused(self):
         def attest(repo,head,out):
             out.write_bytes(fixture_plugin())
             return {'git_head':'b'*40,'canonical_source_gate':'PASS','production_release':'HOLD','status':'INVALID'}
-        with self.assertRaisesRegex(ValueError,'Attestation'):
-            build_stage(self.base/'repo',HEAD,self.themezip,self.base/'output',attester=attest)
+        with patch('prepare_isolated_stage.verify_stage_checkout',return_value={'verified':'synthetic-test-only'}):
+            with self.assertRaisesRegex(ValueError,'Attestation'):
+                build_stage(self.base/'repo',HEAD,self.themezip,self.base/'output',expected_theme_sha256=digest(self.themezip.read_bytes()),attester=attest)
 
     def test_output_inside_repo_refused(self):
         with self.assertRaisesRegex(ValueError,'outside'):
@@ -122,6 +126,51 @@ class StageTests(unittest.TestCase):
     def test_missing_exact_git_sha_refused(self):
         with self.assertRaisesRegex(ValueError,'full exact'):
             build_stage(self.base/'repo','main',self.themezip,self.base/'out')
+
+    def test_theme_digest_not_optional_or_derived_from_input(self):
+        raw = self.themezip.read_bytes()
+        with self.assertRaisesRegex(ValueError,'independently recorded'):
+            verify_theme_pin(raw, None)
+        with self.assertRaisesRegex(ValueError,'SHA-256 mismatch'):
+            verify_theme_pin(raw, 'f'*64)
+        self.assertEqual(verify_theme_pin(raw,digest(raw)),digest(raw))
+
+    def test_unpinned_stage_refused_even_with_synthetic_attester(self):
+        with patch('prepare_isolated_stage.verify_stage_checkout',return_value={'verified':'test'}):
+            with self.assertRaisesRegex(ValueError,'THEME PROVENANCE HOLD'):
+                build_stage(self.base/'repo',HEAD,self.themezip,self.base/'out',attester=lambda *_: {})
+
+    def make_git_checkout(self):
+        repo=self.base/'real-git'
+        repo.mkdir()
+        subprocess.run(['git','init','-q',str(repo)],check=True)
+        for fname in STAGE_FILES:
+            path=repo/STAGE_SOURCE/fname
+            path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_text('test source '+fname+'\\n')
+        subprocess.run(['git','-C',str(repo),'add','.'],check=True)
+        subprocess.run(['git','-C',str(repo),'-c','user.name=FV Local QA',
+                        '-c','user.email=local@example.invalid','commit','-qm','stage source fixture'],check=True)
+        head=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip()
+        return repo,head
+
+    def test_real_git_stage_sources_exact_clean_and_dirty_rejected(self):
+        repo,head=self.make_git_checkout()
+        receipt=verify_stage_checkout(repo,head)
+        self.assertEqual(len(receipt),len(STAGE_FILES))
+        with self.assertRaisesRegex(ValueError,'checkout HEAD'):
+            verify_stage_checkout(repo,'a'*40)
+        (repo/STAGE_SOURCE/STAGE_FILES[0]).write_text('unexpected change')
+        with self.assertRaisesRegex(ValueError,'uncommitted/modified'):
+            verify_stage_checkout(repo,head)
+
+    def test_stage_symlink_refused(self):
+        repo,head=self.make_git_checkout()
+        target=repo/STAGE_SOURCE/STAGE_FILES[1]
+        target.unlink()
+        target.symlink_to(repo/STAGE_SOURCE/STAGE_FILES[0])
+        with self.assertRaisesRegex(ValueError,'missing/unsafe'):
+            verify_stage_checkout(repo,head)
 
 
 if __name__=='__main__':unittest.main()
