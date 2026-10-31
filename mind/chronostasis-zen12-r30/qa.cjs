@@ -9,7 +9,7 @@ function audit(files){
  const Bcore=b.replace(filmModule,"").replace('data-fv-mind-variant="B"','data-fv-mind-variant="A"');
  guard("AB-identical-offer-copy",Bcore===a);
  guard("B contains static optional film",filmModule.test(b)&&/40-second/.test(b));
- guard("unhosted-control-hidden",!b.includes("<video")&&!b.includes("autoplay")===false); // handled additionally by strict checks below
+ guard("unhosted-control-hidden",!/<video\\b/i.test(b) && b.includes("No playback controls")); // handled additionally by strict checks below
  guard("no player anywhere",![a,b,hub].some(x=>/<video\b|<iframe\b|<script\b/i.test(x)));
  guard("no live earning link",![a,b,hub].some(x=>/href=["']https?:\/\/(?:zen12\.com|affiliates\.inspire3\.com)/i.test(x)));
  guard("no forms",![a,b,hub].some(x=>/<form\b/i.test(x)));
