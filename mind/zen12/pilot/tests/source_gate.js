@@ -26,6 +26,11 @@ function audit(f){
  c("no approved affiliate",!claims.affiliate_account_approved&&claims.affiliate_url===null);
  c("no product test invented",claims.paid_product_tested===false);
  c("MP4 exactly 40 seconds",man.duration_seconds===40);
+ c("mobile 9:16 duration",man.mobile_companion.duration_seconds===40&&man.mobile_companion.format.includes("540x960"));
+ c("mobile exact video and poster hashes",/^[0-9a-f]{64}$/.test(man.mobile_companion.mp4_sha256)&&/^[0-9a-f]{64}$/.test(man.mobile_companion.poster_png_sha256));
+ c("mobile media not hosted",man.mobile_companion.hosted===false&&man.mobile_companion.preview_only===true);
+ c("mobile generator 540x960",f["mind/zen12/pilot/video/build_vertical.py"].includes("W,H,FPS,DURATION=540,960,15,40"));
+ c("mobile film intentionally silent",f["mind/zen12/pilot/video/build_vertical.py"].includes("'-an'"));
  c("MP4 under 200kb",man.mp4_bytes<200000);
  c("MP4 sha in manifest",/^[0-9a-f]{64}$/.test(man.mp4_sha256));
  c("poster sha in manifest",/^[0-9a-f]{64}$/.test(man.poster_png_sha256));
