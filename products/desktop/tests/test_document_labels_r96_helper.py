@@ -81,7 +81,7 @@ class DocumentLabelListR96(unittest.TestCase):
         result = visible_source_label_list(reversed(values))
         self.assertEqual(len(result.split("; ")), 200_000)
         self.assertTrue(result.startswith("REC-000000; REC-000001; "))
-        self.assertTrue(result.endswith("; REC-199999")
+        self.assertTrue(result.endswith("; REC-199999"))
 
 
 if __name__ == "__main__":
