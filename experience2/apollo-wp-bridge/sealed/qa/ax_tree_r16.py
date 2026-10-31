@@ -89,7 +89,7 @@ def run():
             disclosure=audit_ax(cdp)
             # R18 native cross-lane custody disclosure exposes six NASA links, six casefile
             # links and one pinned source link only when expanded.
-            assert disclosure['actionables']==baseline['actionables']+13,(width,disclosure,baseline)
+            assert disclosure['actionables']==baseline['actionables']+14,(width,disclosure,baseline)  # +1 R23 nested identity disclosure
             card.locator('details summary').first.focus();page.keyboard.press('Enter')
             assert not card.locator('details').first.evaluate('(n)=>n.open')
             assert audit_ax(cdp)['actionables']==baseline['actionables'],(width,'disclosure focus restoration')

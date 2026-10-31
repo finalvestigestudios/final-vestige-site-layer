@@ -32,13 +32,13 @@ def run():
             assert cross.locator('[data-crosswalk-id]').count()==6
             assert cross.locator('[data-crosswalk-review="hold"]').count()==1
             assert not cross.evaluate('(el)=>el.open')
-            cross.locator('summary').focus();page.keyboard.press('Enter')
+            cross.locator(':scope > summary').focus();page.keyboard.press('Enter')
             assert cross.evaluate('(el)=>el.open'),(width,'keyboard disclosure failed')
             labels=cross.locator('[data-crosswalk-id="01"]').inner_text()
             assert 'NASA S67-19766' in labels and 'Apollo 1 crew training portrait' in labels
             assert 'CATALOG IDENTIFIER REVIEW NEEDED' in labels
-            assert cross.locator('a[href^="https://www.nasa.gov/image-detail/"]').count()==6
-            assert cross.locator('a[href^="#source-"]').count()==6
+            assert cross.locator('a[href^="https://www.nasa.gov/image-detail/"]').count()==7  # R23 first-party identity witness
+            assert cross.locator('a[href^="#source-"]').count()==7  # R23 identity back-reference
             assert cross.locator('a[href*="/blob/250d7f05a4de037e73826dcf0cfaef0ec4c29383/"]').count()==1
             assert cross.locator('img,script,iframe').count()==0
             assert page.locator('img').count()==0
@@ -48,15 +48,15 @@ def run():
                 shot=OUT/f'r18-pr158-source-custody-{width}.png'
                 cross.screenshot(path=str(shot),animations='disabled')
                 result['screenshots'].append({'name':shot.name,'sha256':sha256(shot.read_bytes()).hexdigest()})
-            assert cross.locator('summary').evaluate('e=>e.getBoundingClientRect().height')>=44
-            cross.locator('summary').click();assert not cross.evaluate('(el)=>el.open')
+            assert cross.locator(':scope > summary').evaluate('e=>e.getBoundingClientRect().height')>=44
+            cross.locator(':scope > summary').click();assert not cross.evaluate('(el)=>el.open')
             result['responsive'].append({'viewport':width,'document_width':docw,
               'matched_source_urls':6,'identifier_holds':1,'native_keyboard_disclosure':True})
             ctx.close()
         ctx=browser.new_context(viewport={'width':390,'height':844},java_script_enabled=False)
         pg=ctx.new_page();pg.set_content(fixture,wait_until='load')
         c=pg.locator('#fv-ex2-research-desk-crosswalk')
-        c.locator('summary').click()
+        c.locator(':scope > summary').click()
         assert c.evaluate('el=>el.open')
         assert c.locator('[data-crosswalk-id]:visible').count()==6
         assert c.locator('[data-crosswalk-review="hold"]:visible').count()==1
@@ -66,7 +66,7 @@ def run():
         pg=ctx.new_page();pg.set_content(fixture,wait_until='load')
         parent=pg.locator('#source-concordance')
         parent.evaluate('el=>{el.style.width="420px";el.style.maxWidth="420px"}')
-        c=pg.locator('#fv-ex2-research-desk-crosswalk');c.locator('summary').click()
+        c=pg.locator('#fv-ex2-research-desk-crosswalk');c.locator(':scope > summary').click()
         columns=c.locator('.fv-ex2-crosswalk__list').evaluate('el=>getComputedStyle(el).gridTemplateColumns.split(" ").length')
         assert columns==1,('narrow CMS container must reflow',columns)
         result['narrow_420px_wordpress_column_no_js']={'columns':columns,'status':'PASS'}
