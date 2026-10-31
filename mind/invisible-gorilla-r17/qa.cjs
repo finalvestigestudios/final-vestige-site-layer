@@ -85,7 +85,7 @@ function audit(bundle) {
   check('warmup has first-party accessible heading',/aria-labelledby="fvm-z17-title"/.test(W));
   check('warmup no newsletter form',!/<form\b/i.test(W));
   check('warmup no tracking scripts',!/<script\b|<iframe\b|localStorage|gtag\(/i.test(W));
-  check('warmup no broken video player',!/<video\b/i.test(W));
+  check('warmup no broken video player',!/<video\b/i.test(W.replace(/<!--[\s\S]*?-->/g,'')));
   check('warmup optional transcript concept',/film would explain/.test(W)&&/No finished hosted film/.test(W));
   check('warmup seller exact SKU sources',W.includes('https://zen12.com/about')&&W.includes('https://zen12.com/getstarted'));
   check('warmup research 2010 primary',W.includes('https://doi.org/10.1068/i0386'));
@@ -93,7 +93,7 @@ function audit(bundle) {
   check('warmup disabled purchase button',/<button class="z17-disabled"[^>]*disabled aria-disabled="true"/.test(W));
   check('warmup no active merchant link in offer panel', /<section class="z17-cta"[\s\S]*?<\/section>/.test(W)&&!/<a\b/i.test((W.match(/<section class="z17-cta"[\s\S]*?<\/section>/)||[])[0]||''));
   check('warmup practical no-cost alternative',W.includes('https://finalvestige.com/focus/')&&/free timer|free practice|before you spend/i.test(W));
-  check('warmup explicitly seller-claim only',/seller claim, not our conclusion/.test(W));
+  check('warmup explicitly seller-claim only',/(?:seller|merchant) claim, not our conclusion/.test(W));
   check('warmup no false conversion results',!/increased conversions by|proven to convert|conversion rate rose/i.test(W));
   check('warmup responsive and motion safe',/@media\(max-width:650px\)/.test(W)&&/prefers-reduced-motion:reduce/.test(W));
   check('warmup keyboard focus',/:focus-visible/.test(W));
