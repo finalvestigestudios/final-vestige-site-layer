@@ -33,4 +33,12 @@ function assessReadiness(snapshot,markupAudit,copyAudit){
  if(copyAudit.flags.length)anomalies.push("COMMERCIAL_DRAFT_COPY_REDLINE_REVIEW_REQUIRED");
  return {anomalies,source_only:true,release:"HOLD_UNSENT",send_authorized:false,affiliate_links_authorized:false,real_subscriber_addresses_in_report:false};
 }
-module.exports={inspectSignupMarkup,auditCommercialDrafts,assessReadiness};
+function inspectSavedSubscribeBlock(raw){
+ const text=String(raw??"");
+ const matched=text.match(/<!--\s*wp:jetpack\/subscriptions(?:\s+(\{[^\n]*?\}))?\s*\/-->/i);
+ if(!matched)return {block_present:false,attributes_parsed:false,button_on_new_line:null,explicit_button_only_style:false,browser_opt_in_verified:false};
+ let attributes={};try{attributes=matched[1]?JSON.parse(matched[1]):{}}catch{return {block_present:true,attributes_parsed:false,button_on_new_line:null,explicit_button_only_style:false,browser_opt_in_verified:false}};
+ const classes=String(attributes.className??"").split(/\s+/);
+ return {block_present:true,attributes_parsed:true,button_on_new_line:attributes.buttonOnNewLine===true,explicit_button_only_style:classes.includes("is-style-button-only"),saved_button_label:attributes.submitButtonText??null,email_placeholder_configured:typeof attributes.subscribePlaceholder==="string",browser_opt_in_verified:false};
+}
+module.exports={inspectSignupMarkup,inspectSavedSubscribeBlock,auditCommercialDrafts,assessReadiness};
