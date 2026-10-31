@@ -7,6 +7,14 @@ function validate(m,snapshot){
  if(!m||m.schema_version!==1||m.post_id!==367||m.image_count!==9||m.offsite_image_count!==8||m.source_or_catalog_records_mapped!==9)fail('scope_incorrect');
  if(m?.rights_cleared_count!==0||m?.live_broken_count_verified!==null||m?.reported_42_broken_verified!==false||m?.claimed_76_percent_reduction_verified!==false)fail('invented_success_claim');
  if(m?.cms_live_readback?.exact_nine_src_and_alt_match_snapshot!==true)fail('live_readback_missing');
+ const obs=m?.source_viewer_observations;
+ if(!Array.isArray(obs)||obs.length!==1||obs[0]?.image_key!=='367:4'||
+    obs[0]?.exact_url!==m?.images?.[4]?.exact_stored_url||
+    obs[0]?.result!=='viewer_decoded_image'||obs[0]?.http_status!==null||
+    obs[0]?.natural_width_px!==null||obs[0]?.natural_height_px!==null||
+    obs[0]?.content_type!==null||obs[0]?.transfer_bytes!==null||
+    obs[0]?.browser_failure_conclusion!==null||obs[0]?.rights_cleared!==false)
+    fail('viewer_observation_cannot_claim_browser_failure_or_rights');
  const a=m?.images||[],known=Array.isArray(snapshot)?snapshot:[];
  if(a.length!==9||known.length!==9)fail('nine_images_required');
  const seen=new Set();
