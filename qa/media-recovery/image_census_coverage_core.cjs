@@ -10,7 +10,7 @@ function proofKind(v){
     !goodUrl(v.stored_url)||!goodUrl(v.current_src)||v.complete!==true)return 'unresolved';
  if(v.result==='loaded_in_probe_browser'&&v.verified_broken_in_browser===false&&
     Number.isSafeInteger(v.natural_width)&&v.natural_width>0&&
-    (v.http_status===null||v.http_status===200))return 'loaded';
+    v.http_status===200&&goodUrl(v.request_url))return 'loaded';
  if(v.result==='confirmed_broken_in_probe_browser'&&v.verified_broken_in_browser===true&&
     v.natural_width===0&&goodUrl(v.request_url)){
   if(typeof v.network_failure==='string'&&v.network_failure.trim()&&v.visual_failure_kind==='network_error')return 'broken';
