@@ -89,9 +89,9 @@ class MandatoryStage(unittest.TestCase):
             self.assertNotIn('wordpress', stage[1].lower())
             self.assertNotIn('publish', stage[1].lower())
 
-    def test_good_12_stage_receipt_is_machine_hold(self):
+    def test_good_13_stage_receipt_is_machine_hold(self):
         result = contract.verify_receipt(receipt(), 'd' * 40)
-        self.assertEqual(result['verified_machine_step_count'], 12)
+        self.assertEqual(result['verified_machine_step_count'], 13)
         self.assertIs(result['may_publish'], False)
         self.assertIs(result['qualified_safety_clearance'], False)
 
