@@ -1,0 +1,424 @@
+{
+  "title": "Meditation, attentional blink and Zen12 claim ledger | R10",
+  "dated": "2026-10-30",
+  "publication": "HOLD",
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "peer_reviewed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S2",
+      "kind": "peer_reviewed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S3",
+      "kind": "primary_full_text",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S4",
+      "kind": "peer_reviewed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18823234/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S5",
+      "kind": "peer_reviewed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24322326/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S6",
+      "kind": "review_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34425456/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S7",
+      "kind": "review_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S8",
+      "kind": "seller",
+      "url": "https://zen12.com/about",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S9",
+      "kind": "seller_mutable_checkout",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S10",
+      "kind": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S11",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S12",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S13",
+      "kind": "published_editorial",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S14",
+      "kind": "published_free_resource",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-10-30"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "The blink is impaired T2 detection/report within a rapid stream",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "c02",
+      "claim": "Blink is literally eyelid closure",
+      "category": "empirical",
+      "disposition": "reject",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "c03",
+      "claim": "1992 paper vulnerable interval approx 180–450ms under conditions",
+      "category": "empirical",
+      "disposition": "supported_context_specific",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "c04",
+      "claim": "All attention lapses share one brain mechanism",
+      "category": "empirical",
+      "disposition": "reject",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "c05",
+      "claim": "2007 experiment followed 17 retreat participants",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c06",
+      "claim": "2007 control comparison comprised 23 novices",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c07",
+      "claim": "Retreat described as three months at 10–12h daily",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c08",
+      "claim": "Comparison learned meditation in one-hour class and practiced 20m/day for 1 week prior to sessions",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c09",
+      "claim": "Short T1–T2 gap in 2007 experiment was 336ms",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c10",
+      "claim": "Long gap was 672ms",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c11",
+      "claim": "17/17 practitioners vs 16/23 novices improved short-gap T2 detection",
+      "category": "empirical",
+      "disposition": "supported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c12",
+      "claim": "2007 experiment randomly assigned participants to commercial audio",
+      "category": "empirical",
+      "disposition": "reject",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c13",
+      "claim": "P3b response was measured as attention-related EEG index",
+      "category": "empirical",
+      "disposition": "supported_cautious_interpretation",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c14",
+      "claim": "EEG proves a meditation recording rewires customers' brains",
+      "category": "product_efficacy",
+      "disposition": "reject",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "c15",
+      "claim": "2009 theta follow-up is a Zen12 product trial",
+      "category": "product_efficacy",
+      "disposition": "reject",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "id": "c16",
+      "claim": "2021 mindfulness meta-analysis evaluated 29 studies",
+      "category": "review",
+      "disposition": "supported",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "id": "c17",
+      "claim": "2021 review concluded overall executive-function effect not robust",
+      "category": "review",
+      "disposition": "supported",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "id": "c18",
+      "claim": "2024 mindfulness meta-analysis examined 111 RCTs and 9538 subjects",
+      "category": "review",
+      "disposition": "supported",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "id": "c19",
+      "claim": "2024 meta-analysis found all cognitive outcomes improved",
+      "category": "review",
+      "disposition": "reject",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "id": "c20",
+      "claim": "2024 mindfulness interventions had some modest measured benefits",
+      "category": "review",
+      "disposition": "supported_with_comparator_limits",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "id": "c21",
+      "claim": "Zen12 describes 12 levels with four audio versions each",
+      "category": "seller_feature",
+      "disposition": "seller_described_only",
+      "source_ids": [
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "c22",
+      "claim": "Zen12 describes typical session as 12 minutes",
+      "category": "seller_feature",
+      "disposition": "seller_described_only",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "id": "c23",
+      "claim": "Zen12 checkout describes 48 MP3 bundle",
+      "category": "seller_feature",
+      "disposition": "seller_described_mutable",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "id": "c24",
+      "claim": "Zen12 provides equivalent 60-minute meditation benefit in 12 minutes",
+      "category": "product_efficacy",
+      "disposition": "reject_no_product_specific_substantiation",
+      "source_ids": [
+        "S8",
+        "S12"
+      ]
+    },
+    {
+      "id": "c25",
+      "claim": "Zen12 auditory technology automatically induces verified deep brain states",
+      "category": "product_efficacy",
+      "disposition": "reject_no_product_specific_substantiation",
+      "source_ids": [
+        "S8",
+        "S12"
+      ]
+    },
+    {
+      "id": "c26",
+      "claim": "2007 retreat result independently supports Zen12 efficacy",
+      "category": "product_efficacy",
+      "disposition": "reject_category_error",
+      "source_ids": [
+        "S3",
+        "S8"
+      ]
+    },
+    {
+      "id": "c27",
+      "claim": "Zen12 price and discount can be presented as fixed and verified",
+      "category": "merchant_terms",
+      "disposition": "hold_mutable_checkout",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "id": "c28",
+      "claim": "Affiliate commission rates or direct approved earning links are known",
+      "category": "affiliate_terms",
+      "disposition": "hold_unverified",
+      "source_ids": [
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "c29",
+      "claim": "Disclosure beside a future earning link is needed",
+      "category": "compliance",
+      "disposition": "supported",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "c30",
+      "claim": "A disclosure only on separate policy page always suffices",
+      "category": "compliance",
+      "disposition": "reject",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "c31",
+      "claim": "Health-related efficacy claims require adequate product-specific substantiation",
+      "category": "compliance",
+      "disposition": "supported",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "c32",
+      "claim": "Puységur project is a live historical archive",
+      "category": "first_party",
+      "disposition": "supported",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "c33",
+      "claim": "Focus is the established existing free resource",
+      "category": "first_party",
+      "disposition": "supported",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "c34",
+      "claim": "Attention reflection constitutes a clinical validated assessment",
+      "category": "editorial",
+      "disposition": "reject",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "id": "c35",
+      "claim": "Any outbound affiliate click is a confirmed sale",
+      "category": "analytics",
+      "disposition": "reject",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "affiliate": {
+    "partner_approval": "unverified",
+    "account_specific_terms": "unverified",
+    "approved_tracking_url": null,
+    "approved_email_channel": null,
+    "pricing": "withheld",
+    "direct_purchase_cta": false
+  }
+}
