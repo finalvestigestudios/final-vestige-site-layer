@@ -76,7 +76,7 @@ function mutations(f){
  ["insert iframe",g=>g["zen12-guide-A.wp.html"]+='<iframe src="https://zen12.com/"></iframe>'],
  ["insert real player",g=>g["zen12-guide-A.wp.html"]+='<video controls src="x.mp4"></video>'],
  ["delete visible transcript",g=>g["zen12-guide-B.wp.html"]=g["zen12-guide-B.wp.html"].replace("Full accessible transcript","Full missing transcript")],
- ["alter shared core editorial",g=>g["zen12-guide-B.wp.html"]=g["zen12-guide-B.wp.html"].replace("An hour in twelve","Two hours in twelve")],
+ ["alter shared core editorial",g=>g["zen12-guide-B.wp.html"]=g["zen12-guide-B.wp.html"].replace("An Hour in Twelve","Two Hours in Twelve")],
  ["activate measurement",g=>g["measurement-OFF.json"]=g["measurement-OFF.json"].replace('"enabled": false','"enabled": true')],
  ["remove matrix row",g=>g["claims-and-permissions.csv"]=g["claims-and-permissions.csv"].split("\n").slice(0,-2).join("\n")+"\n"],
  ["add dubious affiliate URL",g=>g["zen12-guide-A.wp.html"]+='<a href="https://zen12.com/getstarted?aff_id=guessed">buy</a>'],
