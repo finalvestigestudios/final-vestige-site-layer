@@ -36,7 +36,7 @@ for(const [n,x] of [['A',a],['B',b]]){
  no(x,/<(?!button\b)[a-z][^>]+(?:aff_id=|affiliate_id=|subid=|referral_id=)/i,n+' no affiliate parameters');
 }
 ok(b.includes('The film itself <strong>has not been rendered or hosted</strong>'),'film status honest');
-ok(b.includes('<details open>')&&b.includes('00–40s'),'B transcript always readable');
+ok(b.includes('<details open>')&&b.includes('00–07s')&&b.includes('31–40s'),'B transcript always readable');
 ok(article.trim().split(/\s+/).length>2100,'investigation substantive');
 ok(article.includes('not a universal rate')&&article.includes('not a validated replication'),'study and exercise caveats');
 ok(article.includes('BF03208840')&&article.includes('BF03214339'),'original 1998 and 1997 sources');
