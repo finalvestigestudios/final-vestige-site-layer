@@ -1,0 +1,11 @@
+{
+  "schema_version": "fv-podcast-publish/v1",
+  "mode": "canary",
+  "package_id": "POD-001-PUBLISHER-CANARY-2026-09-15-R2",
+  "metadata": {
+    "title": "FINAL VESTIGE PUBLISHER CANARY — POD-001 R2",
+    "description": "Private Final Vestige publisher canary for the POD-001 release path after runner repair.",
+    "private": true,
+    "explicit": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "fv-podcast-publish/v1",
+  "mode": "release",
+  "package_id": "EXAMPLE-ONLY",
+  "release_payload_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "publication_authority": "FOUNDER_EXPLICIT_PUBLISH_YYYY-MM-DD",
+  "qd": {
+    "exact_master": "PASS",
+    "artwork_rights": "PASS",
+    "release_copy": "PASS"
+  },
+  "master": {
+    "url": "https://example.invalid/exact-master.mp3",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "bytes": 1,
+    "filename": "episode.mp3",
+    "mime": "audio/mpeg"
+  },
+  "artwork": {
+    "url": "https://example.invalid/artwork.png",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "bytes": 1,
+    "filename": "episode-art.png",
+    "mime": "image/png"
+  },
+  "chapters": [
+    {
+      "title": "Intro",
+      "start_time": "00:00"
+    },
+    {
+      "title": "Main",
+      "start_time": "01:30"
+    }
+  ],
+  "metadata": {
+    "title": "Example",
+    "description": "Example",
+    "summary": "Example",
+    "artist": "Final Vestige Studios",
+    "explicit": false,
+    "private": false,
+    "episode_number": 1,
+    "episode_type": "full",
+    "custom_url": "https://example.invalid/episode",
+    "tags": "example"
+  }
+}
