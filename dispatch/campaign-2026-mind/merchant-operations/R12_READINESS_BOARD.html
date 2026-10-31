@@ -10,7 +10,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.62 system-ui,-apple-system,Segoe UI,sans-serif}
 main{width:min(1160px,calc(100% - 36px));margin:auto;padding:28px 0 72px}
-a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid white;outline-offset:4px}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}.skip{position:absolute;left:-9999px;top:8px;padding:8px;background:#171a19}.skip:focus{left:12px}a:focus-visible{outline:3px solid white;outline-offset:4px}
 h1,h2,h3{font-family:Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.2}
 h1{font-size:clamp(2rem,5vw,3.4rem);margin:.2em 0}.eyebrow{color:var(--accent);font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
 .lead{font-size:1.14rem;max-width:72ch}.alert{padding:18px 20px;border:2px solid #e4ad90;background:#35221e;color:#fff0e7;border-radius:6px;margin:20px 0}
@@ -28,7 +28,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;color:v
 </style>
 </head>
 <body>
-<a href="#main" style="position:absolute;left:-9999px" onfocus="this.style.left='12px'" onblur="this.style.left='-9999px'">Skip to campaign audit</a>
+<a class="skip" href="#main">Skip to campaign audit</a>
 <main id="main">
 <p class="eyebrow">Final Vestige Studios · Internal editorial review · October 30, 2026</p>
 <h1>The Dispatch: permission first, promotion second.</h1>
@@ -39,7 +39,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;color:v
 <section class="card"><p class="eyebrow">Existing Jetpack channel</p><h2>Newsletter enabled. Autopublish email OFF.</h2>
 <p>Authenticated WordPress.com status captured 2026-10-31 05:32 UTC: email format <strong>excerpt</strong>, sender label Final Vestige, no-reply, zero recent sends. Welcome message contains the 52-page Fieldbook URL, but actual receipt is unproven.</p><p><span class="pill">NO REAL MIME PROOF</span></p></section>
 <section class="card"><p class="eyebrow">Subscriber arithmetic</p><h2>2 total ≠ 4 confirmed and unconfirmed.</h2>
-<p>WordPress reports total 2, confirmed 2, unconfirmed 2. These incompatible aggregates are **not** four distinct people. Privately reconcile the actual eligible audience; do not expose address lists or use guessed counts as a campaign denominator.</p><p><span class="pill">PERMISSIONED REACH UNKNOWN</span></p></section>
+<p>WordPress reports total 2, confirmed 2, unconfirmed 2. These incompatible aggregates are <strong>not</strong> four distinct people. Privately reconcile the actual eligible audience; do not expose address lists or use guessed counts as a campaign denominator.</p><p><span class="pill">PERMISSIONED REACH UNKNOWN</span></p></section>
 </div>
 
 <h2>Six-edition allocation</h2>
