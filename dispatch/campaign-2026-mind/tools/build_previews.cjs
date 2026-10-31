@@ -16,7 +16,7 @@ function inline(md) {
   });
   h=h.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
   h=h.replace(/\*([^*]+)\*/g,"<em>$1</em>");
-  h=h.replace(/\[\[([A-Z0-9_]+)\]\]/g, '<strong style="color:#FFD5AB;">[UNVERIFIED: $1]</strong>');
+  h=h.replace(/\[\[([A-Z0-9_]+)\]\]/g, '<strong style="color:#FFD5AB;overflow-wrap:anywhere;word-break:break-all;">[UNVERIFIED: $1]</strong>');
   return h;
 }
 function bodyHtml(markdown) {
