@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Callable, Mapping
 
 from .procurement_reference import has_original_spelling, source_document_spellings
+from .audit_display import visible_source_text
 from .review import price_outside_tolerance
 
 CENT = Decimal("0.01")
@@ -308,14 +309,16 @@ def review_line(
         "invoice_documents": "; ".join(sorted({r.get("document_id", "").strip() for r in invoices if r.get("document_id", "")})),
         "credit_references": "; ".join(sorted({r.get("related_document", "").strip() for r in invoices if r.get("related_document", "")})),
         "return_references": "; ".join(sorted({r.get("related_document", "").strip() for r in receipts if r.get("related_document", "")})),
-        "receipt_documents": "; ".join(sorted({
+        # Render *new display columns* with the same visibility control as the
+        # premium review UI. Originals remain in verified source CSV snapshots.
+        "receipt_documents": "; ".join(map(visible_source_text, sorted({
             row.get("document_id", "").strip() for row, kind, _ in receipt_entries
             if kind == "receipt" and row.get("document_id", "").strip()
-        })),
-        "return_documents": "; ".join(sorted({
+        }))),
+        "return_documents": "; ".join(map(visible_source_text, sorted({
             row.get("document_id", "").strip() for row, kind, _ in receipt_entries
             if kind == "return" and row.get("document_id", "").strip()
-        })),
+        }))),
     }
     # Stable order while deduplicating flags.
     return output, list(dict.fromkeys(flags))
