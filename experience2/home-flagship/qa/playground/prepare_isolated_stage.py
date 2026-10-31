@@ -13,6 +13,7 @@ import importlib.util
 import json
 from pathlib import Path, PurePosixPath
 import re
+import subprocess
 import stat
 import sys
 import zipfile
@@ -24,6 +25,8 @@ LOCAL_HOSTS = {'localhost', '127.0.0.1'}
 MAX_THEME_BYTES = 80 * 1024 * 1024
 MAX_THEME_FILES = 4000
 PREVIEW_SLUG = 'fv-ex2-playground-review'
+STAGE_SOURCE = HOME / 'qa/playground'
+STAGE_FILES = ('prepare_isolated_stage.py','test_prepare_isolated_stage.py','README.md')
 
 
 def digest(raw: bytes) -> str:
@@ -95,6 +98,50 @@ def validate_plugin(files: dict[str, bytes]):
     return manifest
 
 
+
+def verify_stage_checkout(repo: Path, expected_sha: str) -> dict[str, str]:
+    """Verify the STAGING BUILDER against Git; the existing attester checks homepage files.
+
+    Without this check an attacker can alter the builder after checkout and still obtain
+    a valid attested homepage ZIP. Read-only; never executes checkout shell scripts.
+    """
+    if not re.fullmatch(r'[0-9a-f]{40}', expected_sha):
+        raise ValueError('Require full exact Git SHA')
+    def git(*args: str) -> bytes:
+        run = subprocess.run(['git','-C',str(repo),*args], capture_output=True)
+        if run.returncode:
+            raise ValueError('STAGING SOURCE HOLD: Git failed for '+ ' '.join(args))
+        return run.stdout
+    if git('rev-parse','HEAD').decode().strip() != expected_sha:
+        raise ValueError('STAGING SOURCE HOLD: checkout HEAD does not match requested commit')
+    verified = {}
+    for name in STAGE_FILES:
+        rel = STAGE_SOURCE/name
+        path = repo/rel
+        if path.is_symlink() or not path.is_file() or not path.resolve().is_relative_to(repo):
+            raise ValueError('STAGING SOURCE HOLD: missing/unsafe '+rel.as_posix())
+        git('ls-files','--error-unmatch','--',rel.as_posix())
+        blob = git('show',expected_sha+':'+rel.as_posix())
+        on_disk = path.read_bytes()
+        if blob != on_disk:
+            raise ValueError('STAGING SOURCE HOLD: uncommitted/modified '+rel.as_posix())
+        verified[rel.as_posix()] = digest(on_disk)
+    return verified
+
+
+def verify_theme_pin(raw: bytes, expected_sha: str | None) -> str:
+    """Require a separate operator-reviewed, pinned archive digest.
+
+    The ZIP's spoofable Theme Name header alone cannot authenticate theme provenance.
+    The operator MUST acquire the checksum from a trusted, separate download/record.
+    """
+    if expected_sha is None or not re.fullmatch(r'[0-9a-f]{64}', expected_sha):
+        raise ValueError('THEME PROVENANCE HOLD: require independently recorded 64-digit SHA-256')
+    observed = digest(raw)
+    if observed != expected_sha:
+        raise ValueError('THEME PROVENANCE HOLD: Assembler archive SHA-256 mismatch')
+    return observed
+
 def create_blueprint() -> dict:
     # These WordPress mutations execute ONLY inside the isolated Playground, not here.
     php = '''<?php
@@ -130,7 +177,7 @@ if (!$existing) {
     }
 
 
-def build_stage(repo: Path, head: str, theme_zip: Path, out: Path, *, attester=None) -> dict:
+def build_stage(repo: Path, head: str, theme_zip: Path, out: Path, *, expected_theme_sha256: str | None = None, attester=None) -> dict:
     repo = repo.resolve(strict=True)
     out = out.resolve()
     if out == repo or repo in out.parents:
@@ -139,7 +186,10 @@ def build_stage(repo: Path, head: str, theme_zip: Path, out: Path, *, attester=N
         raise ValueError('Require full exact Git SHA')
     if out.exists() and any(out.iterdir()):
         raise ValueError('Output directory must be empty; refusing to overwrite staging artifacts')
+    # Source custody includes the staging builder itself, not only the 11 homepage assets.
+    stage_source_hashes = verify_stage_checkout(repo, head)
     theme_bytes = theme_zip.read_bytes()
+    verified_theme_sha = verify_theme_pin(theme_bytes, expected_theme_sha256)
     theme = safe_zip_contents(theme_zip, strip_root=True)
     validate_theme(theme)
     if attester is None:
@@ -178,7 +228,10 @@ def build_stage(repo: Path, head: str, theme_zip: Path, out: Path, *, attester=N
     ],indent=2)+'\n',encoding='utf-8')
     receipt = {'status':'LOCAL_PLAYGROUND_PREPARED_NOT_EXECUTED',
         'exact_git_head':head, 'source_attestation':report['status'],
-        'plugin_sha256':digest(artifact.read_bytes()), 'assembler_zip_sha256':digest(theme_bytes),
+        'plugin_sha256':digest(artifact.read_bytes()), 'assembler_zip_sha256':verified_theme_sha,
+        'assembler_sha256_out_of_band_pin_verified':True,
+        'official_assembler_origin_independently_confirmed':False,
+        'staging_source_files_verified':stage_source_hashes,
         'assembler_file_count':len(theme),'blueprint_sha256':digest((out/'playground-blueprint.json').read_bytes()),
         'wordpress_instance':'NOT_STARTED','host':'localhost_ONLY','preview_slug':PREVIEW_SLUG,
         'production_database_export':'NOT_USED','production_tokens_or_users':'NOT_COPIED',
@@ -196,9 +249,11 @@ def main() -> int:
     p.add_argument('--assembler-zip',type=Path,required=True,
                    help='Official Assembler theme zip, acquired separately; no downloading performed')
     p.add_argument('--out',type=Path,required=True,help='New empty LOCAL staging directory outside repo')
+    p.add_argument('--expected-theme-sha256',required=True,
+                   help='SHA-256 of independently acquired official Assembler ZIP; never derive from the same untrusted ZIP during this run')
     a=p.parse_args()
     try:
-        receipt=build_stage(a.repo,a.expected_head,a.assembler_zip,a.out)
+        receipt=build_stage(a.repo,a.expected_head,a.assembler_zip,a.out,expected_theme_sha256=a.expected_theme_sha256)
         print(json.dumps(receipt,indent=2));return 0
     except Exception as e:
         print('LOCAL STAGING PREPARATION FAILED CLOSED: '+str(e),file=sys.stderr)
