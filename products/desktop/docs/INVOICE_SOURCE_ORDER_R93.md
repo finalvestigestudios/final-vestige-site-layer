@@ -18,14 +18,14 @@ Canonical source iteration was already the normal file-import order, so this pre
 
 ## Reproducible regression evidence
 
-Added `tests/test_invoice_source_order_r93.py` with **15** unit tests: reversed source positions, numeric vs lexical line ordering, interleaved groups, **30 seeded input permutations**, date-ordered near matches, quoted-newline physical line gaps, equal Decimal representations, hostile Decimal context with traps, generator parity, immutable inputs, duplicate-line protection, candidate cap, record cap, and **25,000 reversed independent source rows**.
+Added `tests/test_invoice_source_order_r93.py` with **16** unit tests: reversed source positions, numeric vs lexical line ordering, interleaved groups, **30 seeded input permutations**, stable SHA-256-bound candidate identifiers using the actual provenance module, date-ordered near matches, quoted-newline physical line gaps, equal Decimal representations, hostile Decimal context with traps, generator parity, immutable inputs, duplicate-line protection, candidate cap, record cap, and **25,000 reversed independent source rows**.
 
 Local Linux x86_64 / Python **3.13.5**, an isolated exact-source workspace:
 
-- **RED:** the same 15 tests against the R92 module yielded **7 failures**, demonstrating the defect.
-- **GREEN:** **15/15 passed** against R93 in normal Python, **15/15 under `python -OO`**; `compileall` succeeded.
-- Changed source Git blob **`d1befc13cdc248585a802dfb9ad8b0462220d1d2`** and test blob **`b17e9d4c0f01b1591da6ada58bc2a5d32e69e4c5`** were byte-matched with the actual tested local files after publishing to the branch.
-- The isolated workspace uses a minimal `review.ascii_case_identity` stub; the modified `candidate_pairs` path does not invoke it. This is **not** whole-repository execution or native Windows GUI/EXE validation.
+- **RED:** the initial 15 tests against the R92 module yielded **7 failures** (the added provenance case was verified against R93), demonstrating the defect.
+- **GREEN:** **16/16 passed** against R93 in normal Python, **16/16 under `python -OO`**; `compileall` succeeded.
+- Changed source Git blob **`d1befc13cdc248585a802dfb9ad8b0462220d1d2`** and test blob **`3e2b65d0dbbf73e0152a172b527523a8a464e242`** were byte-matched with the actual tested local files after publishing to the branch.
+- The isolated workspace uses the unmodified, verified R92 `invoice_provenance.py` blob `922dc316923c3fde5f999a6067c79aa29f68a813` and a minimal `review.ascii_case_identity` stub; the modified `candidate_pairs` path does not invoke it. This is **not** whole-repository execution or native Windows GUI/EXE validation.
 
 ## Release and review boundaries
 
