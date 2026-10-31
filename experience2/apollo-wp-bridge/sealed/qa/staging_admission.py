@@ -23,6 +23,7 @@ from source_concordance import build_concordance, build_context_index
 from atlas_admission import build_atlas_admission
 from media_rights_ledger import build_media_rights
 from custody_receipts import build_receipts, EXPORT_NAMES
+from wayfinder_r22 import build_wayfinder, SECTIONS
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
@@ -187,6 +188,26 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         or b'{{FV_EX2_CUSTODY_EXPORT:' in html
         or any(digest.encode() not in html for digest in receipts_receipt['exports_sha256'].values())):
         raise AdmissionError('Private custody receipts integrity/hash/links incomplete')
+    # R22: verify the actual private response contains the same, source-derived
+    # seven anchor links and unresolved editorial holds as the packaged review.
+    wayfinder_html, wayfinder_css, wayfinder_receipt = build_wayfinder(
+        build_concordance(generated=expected_dir)[2], media_receipt, atlas_receipt,
+        receipt_export_count=len(EXPORT_NAMES))
+    if (headers.get('x-fv-ex2-apollo-wayfinder-sha256') != wayfinder_receipt['html_sha256']
+        or html.count(b'id="fv-ex2-wayfinder"') != 1
+        or html.count(b'class="fv-ex2-wayfinder__list"') != 1):
+        raise AdmissionError('Editorial wayfinder source custody header/body invalid')
+    nav_sections = re.findall(rb'<nav id="fv-ex2-wayfinder".*?</nav>',html,re.DOTALL)
+    if len(nav_sections) != 1:
+        raise AdmissionError('Editorial wayfinder navigation missing or duplicated')
+    for target,_,_,_ in SECTIONS:
+        if (nav_sections[0].count(('href="#'+target+'"').encode()) != 1
+            or html.count(('id="'+target+'"').encode()) != 1):
+            raise AdmissionError('Editorial wayfinder anchor destination missing: '+target)
+    if (b'six image-reuse reviews remain open' not in html or
+        b'zero admitted point coordinates' not in html or
+        b'one source catalog label is unresolved' not in html):
+        raise AdmissionError('Editorial wayfinder concealed unresolved review holds')
     # Parse identity+hash+destination together rather than searching for digests
     # anywhere in HTML. A swapped digest, filename, URL or nonce fails closed.
     row_pattern = rb'<li class="fv-ex2-receipts__item" data-custody-receipt="([^"]+)">(.*?)</li>'
@@ -259,6 +280,8 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
             'media_rights_html_sha256':media_html_sha,'media_rights_index_sha256':media_index_sha,
             'custody_receipts_html_sha256':receipts_receipt['html_sha256'],
             'custody_receipts_export_count':7,
+            'wayfinder_html_sha256':wayfinder_receipt['html_sha256'],
+            'wayfinder_destinations_verified':len(SECTIONS),
             'photos_admitted_for_reuse':0,'media_rights_review_holds':6,
             'geographic_pins_admitted':0,'geographic_edges_admitted':0,
             'exports_sha256':download_hashes,

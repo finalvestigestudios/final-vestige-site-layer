@@ -23,6 +23,7 @@ from qa.source_concordance import build_concordance, build_context_index
 from qa.atlas_admission import build_atlas_admission
 from qa.media_rights_ledger import build_media_rights
 from qa.custody_receipts import build_receipts, EXPORT_NAMES
+from qa.wayfinder_r22 import build_wayfinder
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -67,6 +68,8 @@ def build(out: Path) -> dict:
                            else atlas_index.encode('utf-8') if name == 'atlas-admission.json'
                            else media_index.encode('utf-8')) for name in EXPORT_NAMES}
     custody_html, custody_css, receipts_receipt = build_receipts(export_bytes)
+    wayfinder_html, wayfinder_css, wayfinder_receipt = build_wayfinder(
+        concordance_receipt, media_receipt, atlas_receipt, receipt_export_count=len(EXPORT_NAMES))
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
     payload = {}
@@ -89,7 +92,8 @@ def build(out: Path) -> dict:
                        ('media-rights.html', media_html), ('media-rights.css', media_css),
                        ('media-rights.json', media_index),
                        ('custody-receipts.html', custody_html),
-                       ('custody-receipts.css', custody_css)):
+                       ('custody-receipts.css', custody_css),
+                       ('wayfinder.html', wayfinder_html), ('wayfinder.css', wayfinder_css)):
 
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
@@ -116,6 +120,7 @@ def build(out: Path) -> dict:
         'atlas_admission': atlas_receipt,
         'nasa_media_rights_hold': media_receipt,
         'private_custody_receipts': receipts_receipt,
+        'editorial_wayfinder': wayfinder_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',

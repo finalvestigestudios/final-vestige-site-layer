@@ -30,6 +30,29 @@ class TestStagingAdmission(unittest.TestCase):
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
 
+    def test_r22_wayfinder_sha_and_all_destinations(self):
+        r=admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
+        self.assertEqual(r['wayfinder_destinations_verified'],7)
+        self.assertEqual(len(r['wayfinder_html_sha256']),64)
+
+    def test_r22_wayfinder_header_mutation_denied(self):
+        def tamper(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-wayfinder-sha256' in h:
+                h['x-fv-ex2-apollo-wayfinder-sha256']='0'*64
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'wayfinder source custody'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True,fetch=tamper)
+
+    def test_r22_wayfinder_anchor_hijack_denied(self):
+        def tamper(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-wayfinder-sha256' in h:
+                body=body.replace(b'href="#source-gallery"',b'href="#unverified-location"',1)
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'wayfinder anchor destination'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True,fetch=tamper)
+
     def test_r21_receipts_match_served_seven_exports(self):
         r=admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor', allow_stub=True)
         self.assertEqual(r['custody_receipts_export_count'],7)
