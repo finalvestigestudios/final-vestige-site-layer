@@ -380,5 +380,23 @@
         "byte_savings_verified": false
       }
     }
+  ],
+  "source_viewer_observations": [
+    {
+      "image_key": "367:4",
+      "exact_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "method": "independent web image viewer open of exact external URL (not a Final Vestige visitor browser)",
+      "attempted_date": "2026-10-31",
+      "result": "viewer_decoded_image",
+      "method_source_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "http_status": null,
+      "content_type": null,
+      "natural_width_px": null,
+      "natural_height_px": null,
+      "transfer_bytes": null,
+      "browser_failure_conclusion": null,
+      "rights_cleared": false,
+      "note": "Viewer displayed a black-and-white image showing CURV on a ship deck; do not infer guest-browser success, intrinsic dimensions, copyright permission or same binary as gallery master."
+    }
   ]
 }
