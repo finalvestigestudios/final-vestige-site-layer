@@ -88,6 +88,11 @@ def build()->dict:
     for item in SOURCE_FILES:
         if not (ROOT/item).is_file():raise ValueError('Missing upstream file: '+item)
     pin=json.loads((BRIDGE/'upstream-pr215-blobs.json').read_text(encoding='utf-8'))
+    expected=pin.get('expected_blob_sha1', {})
+    if pin.get('pinned_head')!='74375657f2cdaac0710f94c6de6c24534ee06858' or set(expected)!=set(SOURCE_FILES):
+        raise RuntimeError('MALFORMED_SOURCE_PINSET: wrong canonical head or incomplete source-file list')
+    if any(not isinstance(v,str) or not re.fullmatch(r'[a-f0-9]{40}',v) for v in expected.values()):
+        raise RuntimeError('MALFORMED_SOURCE_PINSET: all Git blob SHA-1 pins must be exactly 40 lowercase hex characters')
     hashes={item:hashlib.sha1(b'blob '+str((ROOT/item).stat().st_size).encode()+b'\0'+(ROOT/item).read_bytes()).hexdigest() for item in SOURCE_FILES}
     mismatches={name:{'expected':wanted,'actual':hashes.get(name)} for name,wanted in pin['expected_blob_sha1'].items() if hashes.get(name)!=wanted}
     if mismatches and os.environ.get('FV_EX2_ALLOW_UNPINNED_FIXTURE')!='1':
