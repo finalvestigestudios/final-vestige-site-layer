@@ -11,6 +11,8 @@ from decimal import Decimal
 import re
 from typing import Any, Iterable
 
+from .review import ascii_case_identity
+
 WINDOW_DAYS = 7
 MAX_CANDIDATES = 100_000
 MAX_RECORDS = 200_000  # Matches the bounded CSV importer.
@@ -123,9 +125,10 @@ def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
                  *, window_days: int = WINDOW_DAYS) -> str:
     """Surface sources of ambiguity without claiming fraudulent activity."""
     flags: list[str] = []
-    if a["vendor"].casefold() != b["vendor"].casefold():
+    if ascii_case_identity(a["vendor"]) != ascii_case_identity(b["vendor"]):
         flags.append("normalized_vendor_key_review")
-    if a["invoice_number"].casefold() != b["invoice_number"].casefold() and status == "exact_invoice_key":
+    if (ascii_case_identity(a["invoice_number"]) != ascii_case_identity(b["invoice_number"])
+            and status == "exact_invoice_key"):
         flags.append("normalized_invoice_key_review")
     if status == "exact_invoice_key":
         if a["amt"] != b["amt"]:
