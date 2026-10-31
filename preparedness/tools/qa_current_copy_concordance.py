@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """R16: prove why draft QA PR #157 must NOT be blindly transplanted.
 
-Integrated articles already have expanded electrical-drill and refrigerated-
-medication warnings. Freeze that exact content and evidence; a match is source
-custody only, NEVER factual or medical safety clearance. No CMS writes.
+The integrated articles already contain distinct, expanded electrical-drill and
+refrigerated-medication cautionary text. This gate freezes that exact content,
+its 35-article inventory and contributor-specific source/taxonomy evidence.
+Passing means content custody only, NEVER emergency or medical safety clearance.
+No CMS, publishing, network, or source-tree writes.
 """
 from __future__ import annotations
 
@@ -99,13 +101,13 @@ def verify(root: Path) -> dict:
         path = 'preparedness/content/articles/' + slug + '.body.html'
         data = read(root,path)
         require(blob(data) == digest, 'QA repair would overwrite a newer article revision: '+slug)
-        txt = data.decode('utf-8',errors='strict')
+        text = data.decode('utf-8',errors='strict')
         for phrase in KEY[slug]:
-            require(txt.count(phrase) >= 1, 'integrated caution/source token absent: '+slug+' '+phrase)
+            require(text.count(phrase) >= 1, 'integrated caution/source token absent: '+slug+' '+phrase)
         for s, obsolete in UNSAFE_OLD + QA_NEW:
             if s == slug:
-                require(obsolete not in txt, 'stale unsafe or QA text was merged: '+slug)
-        citation_rows[slug] = Counter(CITE.findall(txt))
+                require(obsolete not in text, 'stale unsafe or QA text was merged: '+slug)
+        citation_rows[slug] = Counter(CITE.findall(text))
         require(sum(citation_rows[slug].values()) > 0, 'missing article citations')
     return {
         'schema_version':1,'issue':136,'frozen_integration_commit':BASE,
