@@ -21,10 +21,23 @@ const ASSETS = [
   'chronicle-lens.js', 'reading-trail.js'
 ];
 
+const ASSET_GIT_BLOBS = Object.freeze({
+  "flagship.css": "1cc3b36f331025dbe596e48aea5092a074efd8f9",
+  "chronicle.css": "a779320ef6468b853a65a268502d15a19a9c1b64",
+  "chronicle-lens.css": "97fb86e6469c98461f422d4a0a9629e757522146",
+  "inquiry.css": "28c747679969374bf1bcda386899cde03197db60",
+  "observer-lab.css": "f01b336fe76470df88c8b748fd13321376f27aa2",
+  "reading-trail.css": "b86f944f25987c5324fdcf01d86b702d54e0de41",
+  "flagship.js": "1888dbb5f77c348c43ddf2dbd276626459f19290",
+  "observer-lab.js": "f70567529114aa07ae5fb01a8a5b146dadb78804",
+  "chronicle-lens.js": "f22b5e3a4f0dfabfc29e0a9829d56dab4e697df2",
+  "reading-trail.js": "5f5cfea5f1a5e8dbd8f67081c5dc6544b94f861c"
+});
+
 function count(text, needle) { return text.split(needle).length - 1; }
 function check(condition, message) { if (!condition) throw new Error('RELEASE REVIEW CLOSED: ' + message); }
 function blobSha(text) {
-  const bytes = Buffer.from(text, 'utf8');
+  const bytes = Buffer.isBuffer(text) ? text : Buffer.from(text, 'utf8');
   return crypto.createHash('sha1').update('blob ' + bytes.length + '\0').update(bytes).digest('hex');
 }
 function sha256(data) { return crypto.createHash('sha256').update(data).digest('hex'); }
@@ -92,29 +105,45 @@ function makeBundle(home, outDir) {
     referenced.every((name, i) => name === ASSETS[i]), 'source references changed or extra local assets added');
 
   check(path.resolve(outDir) !== path.resolve(home), 'output directory must be isolated from source');
-  fs.mkdirSync(outDir, {recursive: true});
-  const files = Object.create(null);
-  function add(name, data) {
-    const bytes = Buffer.isBuffer(data) ? data : Buffer.from(data, 'utf8');
-    fs.writeFileSync(path.join(outDir, name), bytes);
-    files[name] = {bytes: bytes.length, sha256: sha256(bytes)};
+  check(!fs.existsSync(outDir), 'review output directory already exists (refuse overwrite)');
+  const assetData = Object.create(null);
+  for (const name of ASSETS) {
+    const bytes = fs.readFileSync(path.join(home, name));
+    check(blobSha(bytes) === ASSET_GIT_BLOBS[name], 'asset Git blob drift: ' + name);
+    assetData[name] = bytes;
   }
-  add('index.release-review.html', documentHtml);
-  add('wordpress-page-fragment.review-only.html', wordpressFragment);
-  for (const name of ASSETS) add(name, fs.readFileSync(path.join(home, name)));
-  const manifest = {
-    kind: 'FV Experience 2.0 OFFLINE REVIEW — NOT PRODUCTION',
-    sourceGitBlob: SOURCE_GIT_BLOB,
-    sourceSha256: sha256(Buffer.from(html, 'utf8')),
-    chapters: CHAPTERS, cases: CASES, standaloneHasMain: true,
-    wordpressFragmentHasMain: false,
-    environment: 'isolated static-browser artifact; WordPress/Jetpack/Assembler not certified',
-    files
-  };
-  fs.writeFileSync(path.join(outDir, 'SOURCE_MANIFEST.json'), JSON.stringify(manifest, null, 2) + '\n');
-  return manifest;
+  const parentDir = path.dirname(path.resolve(outDir));
+  fs.mkdirSync(parentDir, {recursive:true});
+  const tempDir = fs.mkdtempSync(path.join(parentDir, '.fv-private-review-'));
+  try {
+    const files = Object.create(null);
+    function add(name, data) {
+      const bytes = Buffer.isBuffer(data) ? data : Buffer.from(data, 'utf8');
+      fs.writeFileSync(path.join(tempDir, name), bytes);
+      files[name] = {bytes: bytes.length, sha256: sha256(bytes)};
+    }
+    add('index.release-review.html', documentHtml);
+    add('wordpress-page-fragment.review-only.html', wordpressFragment);
+    for (const name of ASSETS) add(name, assetData[name]);
+    const manifest = {
+      kind: 'FV Experience 2.0 OFFLINE REVIEW — NOT PRODUCTION',
+      sourceGitBlob: SOURCE_GIT_BLOB,
+      sourceSha256: sha256(Buffer.from(html, 'utf8')),
+      assetGitBlobs: ASSET_GIT_BLOBS,
+      chapters: CHAPTERS, cases: CASES, standaloneHasMain: true,
+      wordpressFragmentHasMain: false,
+      environment: 'isolated static-browser artifact; WordPress/Jetpack/Assembler not certified',
+      files
+    };
+    fs.writeFileSync(path.join(tempDir, 'SOURCE_MANIFEST.json'), JSON.stringify(manifest, null, 2) + '\n');
+    check(!fs.existsSync(outDir), 'review output appeared before atomic move');
+    fs.renameSync(tempDir, outDir);
+    return manifest;
+  } finally {
+    if (fs.existsSync(tempDir)) fs.rmSync(tempDir, {recursive: true, force: true});
+  }
 }
-module.exports = {render, makeBundle, SOURCE_GIT_BLOB, CHAPTERS, CASES, ASSETS, blobSha};
+module.exports = {render, makeBundle, SOURCE_GIT_BLOB, CHAPTERS, CASES, ASSETS, ASSET_GIT_BLOBS, blobSha};
 
 if (require.main === module) {
   const outFlag = process.argv.indexOf('--out-dir');
