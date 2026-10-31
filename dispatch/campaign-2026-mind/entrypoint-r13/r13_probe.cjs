@@ -24,7 +24,8 @@ function assessReadiness(snapshot,markupAudit,copyAudit){
  if(Number.isFinite(counts.total)&&Number.isFinite(counts.confirmed)&&Number.isFinite(counts.unconfirmed)&&counts.confirmed+counts.unconfirmed>counts.total)anomalies.push("SUBSCRIBER_AGGREGATE_CONFLICT");
  if(!p.dispatch?.published||!p.focus?.published)anomalies.push("FIRST_PARTY_SIGNUP_OR_FIELDBOOK_NOT_PUBLISHED");
  if(!p.zen12_guide?.published||!p.total_focus_guide?.published)anomalies.push("BOTH_OFFER_GUIDES_NOT_LIVE");
- if(markupAudit.disposition!=="FORM_SKELETON_IN_REST_UNVERIFIED")anomalies.push("SIGNUP_RENDERING_BROWSER_PROOF_MISSING");
+ // A form skeleton in REST is still not a completed browser, consent or delivery proof.
+ anomalies.push("SIGNUP_RENDERING_BROWSER_PROOF_MISSING");
  if(!w.native_received_email_proven)anomalies.push("RECEIVED_JETPACK_MIME_MISSING");
  if(!w.fv_postal_verified||!w.unsubscribe_rendered_verified)anomalies.push("VALID_POSTAL_AND_UNSUBSCRIBE_PROOF_MISSING");
  if(!w.unique_permissioned_deliverable_verified)anomalies.push("PERMISSIONED_AUDIENCE_UNKNOWN");
