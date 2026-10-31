@@ -11,6 +11,21 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R96 ProcureGuard human-readable document-list integrity (pre-release)
+
+ProcureGuard Studio Pro now uses the same safe, **human-display-only** rendering
+for five export columns: invoice documents, credit references, return references,
+receipt documents and return documents. The new list renderer visibly escapes
+bidirectional and invisible Unicode, source backslashes and literal semicolons
+(which otherwise masquerade as separate list entries). It removes only ordinary
+outer ASCII spaces; ambiguous Unicode spacing is retained as explicit evidence.
+Original CSV snapshots, exact source SHA-256, line citations, matching keys,
+Decimal arithmetic, human review flags and journal custody are unchanged.
+See [R96 document-list threat model and verification](docs/PROCUREMENT_DOCUMENT_LIST_DISPLAY_R96.md).
+Local isolated helper tests are not complete repository or native Windows proof.
+All six products remain **unreleased**, with independent QD/founder approval
+and premium access controls mandatory.
+
 ## R91 Policy Delta Desk invisible blank-filler display (pre-release)
 
 Policy Delta Desk now visibly escapes seven non-control Unicode blank/filler
