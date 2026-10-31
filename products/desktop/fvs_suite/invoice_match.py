@@ -18,14 +18,46 @@ MAX_CANDIDATES = 100_000
 MAX_RECORDS = 200_000  # Matches the bounded CSV importer.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
 _NORMALIZED_KEY = re.compile(r"[A-Z0-9]+\Z", re.ASCII)
+# Shared CSV amount parser permits absolute values up to one trillion and
+# 80-character lexical inputs. Retain R67 direct-engine half-cent evidence,
+# but cap direct Decimal fractional scale at eight significant places.
+_MAX_AMOUNT = Decimal("1000000000000")
+_MAX_AMOUNT_DIGITS = 80
+_MAX_AMOUNT_PLACES = 8
+_MIN_AMOUNT_EXPONENT = -80
+_MAX_AMOUNT_EXPONENT = 12
+
+
+def _validate_amount_envelope(amount: Decimal) -> None:
+    """Reject out-of-contract exact money without rounding or caller context.
+
+    Direct API callers bypass the bounded CSV importer. A finite Decimal may
+    otherwise contain arbitrary coefficients or exponents, which can create
+    candidate matches for amounts the source importer would never accept.
+    Keep the existing R67 eight-place/half-cent direct-analysis behavior;
+    never coerce or round the amount to fit this envelope.
+    """
+    parts = amount.as_tuple()
+    if (len(parts.digits) > _MAX_AMOUNT_DIGITS
+            or not _MIN_AMOUNT_EXPONENT <= parts.exponent <= _MAX_AMOUNT_EXPONENT
+            or amount.copy_abs() > _MAX_AMOUNT):
+        raise ValueError("Invoice amount exceeds permitted range; no report was saved")
+    if parts.exponent < 0 and any(parts.digits):
+        trailing = 0
+        for digit in reversed(parts.digits):
+            if digit != 0:
+                break
+            trailing += 1
+        if -parts.exponent - trailing > _MAX_AMOUNT_PLACES:
+            raise ValueError("Invoice amount exceeds permitted precision; no report was saved")
 
 
 def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, Any]]:
     """Check audit identity and exact money before building candidate groups.
 
     This public engine is also called without CSV import. Reject direct-call
-    floats, nonfinite Decimals, unparseable physical line citations, and
-    ambiguous duplicate source positions; never interpolate private values.
+    floats, nonfinite or out-of-domain Decimals, unparseable physical line
+    citations, and duplicate source positions; never echo private values.
     """
     seen_rows: set[str] = set()
     for record in records:
@@ -46,6 +78,7 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
         amount = record.get("amt")
         if not isinstance(amount, Decimal) or not amount.is_finite():
             raise ValueError("Invoice amount must be a finite exact Decimal")
+        _validate_amount_envelope(amount)
         for field in ("v", "inv"):
             key = record.get(field)
             if not isinstance(key, str) or _NORMALIZED_KEY.fullmatch(key) is None:
