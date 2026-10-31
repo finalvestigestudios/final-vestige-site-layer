@@ -11,6 +11,18 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R90 ProcureGuard receiving-document provenance (pre-release)
+
+Even perfectly matched quantities can hide repeated receiving references. R90
+flags duplicate normalized receipt IDs, duplicate return IDs, and return IDs
+reused as receipt IDs for explicit **human review**. Two appended report display
+columns expose original receiving/return labels with visible Unicode escapes;
+the original source CSV and SHA-256 manifest remain authoritative. These are
+not determinations of fraud or payment eligibility. [R90 review and test
+evidence](docs/PROCUREMENT_RECEIPT_IDENTITY_R90.md) documents 19 committed
+full-repository tests **pending CI**, plus 16 passing isolated source-equivalent
+tests in each of normal and optimized Python. All binaries remain unreleased.
+
 ## R85 SpendMap Lite exact money and historical median (pre-release)
 
 SpendMap's running median previously used Decimal unary minus, which can
