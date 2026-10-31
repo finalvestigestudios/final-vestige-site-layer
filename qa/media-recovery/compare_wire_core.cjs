@@ -50,7 +50,10 @@ function inspectRun(r){
   }
   if(!good(x.image_wire_bytes_total)||total!==x.image_wire_bytes_total)e.push('wire_total_mismatch:'+id);
   posts.set(id,{url:x.url,keys:keys.sort().join('|'),stored:x.stored_image_count,
-    rendered:x.rendered_image_count,bytes:x.image_wire_bytes_total});
+    rendered:x.rendered_image_count,bytes:x.image_wire_bytes_total,
+    // Stored historical media and visible descriptions must remain consistent across runs.
+    // A changed CDN currentSrc is permitted, but swapping historical media is not.
+    assets:new Map(slots.map(v=>[v.image_key,{source_url:v.stored_url,alt:v.rendered_alt??null}]))});
  }
  return{ok:!e.length,errors:e,posts};
 }
@@ -70,6 +73,14 @@ function compareWireRuns(before,after){
   if(!y){errors.push('missing_post:'+id);continue}
   if(x.url!==y.url||x.keys!==y.keys||x.stored!==y.stored||x.rendered!==y.rendered)
    errors.push('image_or_article_identity_changed:'+id);
+  // A swapped photo or revised historical caption cannot be counted as image compression.
+  // Approved content replacement requires a separate provenance/rights-aware comparison.
+  for(const [key,original] of x.assets){
+   const later=y.assets.get(key);
+   if(!later)continue; // Changed-slot gate above already rejects this pair.
+   if(original.source_url!==later.source_url)errors.push('stored_asset_changed:'+id+':'+key);
+   if(original.alt!==later.alt)errors.push('historical_alt_changed:'+id+':'+key);
+  }
   sumBefore+=x.bytes;sumAfter+=y.bytes;
   perPost.push({post_id:id,url:x.url,before_bytes:x.bytes,after_bytes:y.bytes,
    change_bytes:x.bytes-y.bytes,reduction_percent:Math.round(10000*(x.bytes-y.bytes)/x.bytes)/100});
