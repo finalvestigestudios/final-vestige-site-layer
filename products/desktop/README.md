@@ -11,6 +11,23 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R83 ProcureGuard exact subcent financial display (pre-release)
+
+ProcureGuard Studio Pro now explicitly uses `ROUND_HALF_UP` for its
+gross, credit and net display-cent totals, in agreement with the suite's
+existing financial input rounding. Previously, a quantity of 1 × unit
+price 0.005 could show 0.00 under Python's default half-even display.
+The report **appends** `invoice_total_exact`,
+`gross_invoice_total_exact` and `credit_value_exact` containing
+unrounded Decimal strings for human reconciliation and source verification.
+Rounded gross minus rounded credits can differ by one cent from the
+independently rounded net; the `*_exact` fields are authoritative for
+that arithmetic. Original CSV inputs, policy fingerprints, provenance
+and human-only exception flags are preserved. See
+[R83 precision/runbook](docs/PROCUREMENT_EXACT_SUBCENT_R83.md).
+These source changes are NOT evidence of successful packaged Windows
+testing or authorization to release; QD and founder approval remain required.
+
 ## R81 premium source-reference display integrity (pre-release)
 
 GrantAudit Studio Pro and ProcureGuard Studio Pro now visibly render
