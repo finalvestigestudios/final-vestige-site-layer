@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-30",
+  "scope": "Seven stored external Commons redirects on published SL-1 investigation; archival identity and 960px no-upscale candidates, not repair evidence.",
+  "wordpress_read_only_snapshot": {
+    "post_id": 221,
+    "status": "publish",
+    "modified": "2026-08-25T14:15:25",
+    "article_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+    "matching_stored_image_count": 7
+  },
+  "site_wide_context": {
+    "published_posts": 61,
+    "source_img_refs": 355,
+    "stored_offsite_refs": 288,
+    "claimed_broken_image_count_unverified": 42,
+    "claimed_reduction_percent_unverified": 76,
+    "media_originals_over_1_5_MiB": 13
+  },
+  "verification_scope": {
+    "site_cms_html_read_back": true,
+    "commons_file_records_rendered_via_web_viewer": true,
+    "archival_book_chapter_15_viewed": true,
+    "original_binary_downloaded": false,
+    "visitor_browser_requests_measured": false,
+    "exact_http_status_known": false
+  },
+  "rows": [
+    {
+      "image_key": "221:0",
+      "post_id": 221,
+      "slot": 0,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL1nuclearpowerplant.JPG",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:SL1nuclearpowerplant.JPG",
+      "original_filename": "SL1nuclearpowerplant.JPG",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 704,
+        "height": 346
+      },
+      "candidate_dimensions_px": {
+        "width": 704,
+        "height": 346
+      },
+      "source_credit_claim": "U.S. Army",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "Army photo identified by Commons; independent Army item ID unavailable.",
+      "editorial_date_caution": "Date of original photograph not recorded; do not infer it from Commons upload.",
+      "proposed_action": "No upscale: archive candidate is 704px wide.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    },
+    {
+      "image_key": "221:1",
+      "post_id": 221,
+      "slot": 1,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Cutaway_of_reactor_and_control_building.png",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:SL-1_-_Cutaway_of_reactor_and_control_building.png",
+      "original_filename": "SL-1_-_Cutaway_of_reactor_and_control_building.png",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 729,
+        "height": 589
+      },
+      "candidate_dimensions_px": {
+        "width": 729,
+        "height": 589
+      },
+      "source_credit_claim": "U.S. Department of Energy / INEEL",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "INL Proving the Principle, Chapter 15 p.138, figure INEEL 60-3227.",
+      "editorial_date_caution": "Commons date 2011 is a file upload/recatalog date, not evidence the diagram was made in 2011.",
+      "proposed_action": "No upscale; preserve legible figure labels.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    },
+    {
+      "image_key": "221:2",
+      "post_id": 221,
+      "slot": 2,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Reactor_schematic.png",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:SL-1_-_Reactor_schematic.png",
+      "original_filename": "SL-1_-_Reactor_schematic.png",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 1454,
+        "height": 1753
+      },
+      "candidate_dimensions_px": {
+        "width": 960,
+        "height": 1157
+      },
+      "source_credit_claim": "U.S. Department of Energy / INEEL",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "INL Proving the Principle, Chapter 15, reactor and control-rod technical illustrations.",
+      "editorial_date_caution": "Commons lists 2011, but historical drawing creation date not established.",
+      "proposed_action": "Preserve line fidelity and readability; PNG vs lossless WebP only after visual QA.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    },
+    {
+      "image_key": "221:3",
+      "post_id": 221,
+      "slot": 3,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/US_AEC_SL-1.JPG",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:US_AEC_SL-1.JPG",
+      "original_filename": "US_AEC_SL-1.JPG",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 346,
+        "height": 253
+      },
+      "candidate_dimensions_px": {
+        "width": 346,
+        "height": 253
+      },
+      "source_credit_claim": "U.S. Atomic Energy Commission",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "Commons credits AEC, but its listed upload came from English Wikipedia; original government negative/catalog accession not located.",
+      "editorial_date_caution": "Catalog describes damaged reactor core removal in January 1961, with no precise exposure date.",
+      "proposed_action": "Do not upscale 346px; prefer original higher-resolution government negative if located.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    },
+    {
+      "image_key": "221:4",
+      "post_id": 221,
+      "slot": 4,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sl-1-ineel81-3966.jpg",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:Sl-1-ineel81-3966.jpg",
+      "original_filename": "Sl-1-ineel81-3966.jpg",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 1406,
+        "height": 1881
+      },
+      "candidate_dimensions_px": {
+        "width": 960,
+        "height": 1284
+      },
+      "source_credit_claim": "Idaho National Engineering and Environmental Laboratory",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "INEEL 81-3966, reproduced in DOE Proving the Principle Chapter 16.",
+      "editorial_date_caution": "Commons calls this a 1981 retrospective look at the damage; DO NOT imply photograph taken on January 3, 1961.",
+      "proposed_action": "Ensure viewer understands it depicts post-accident evidence, not the accident in progress.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    },
+    {
+      "image_key": "221:5",
+      "post_id": 221,
+      "slot": 5,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sl-1-ineel61-9.jpg",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:Sl-1-ineel61-9.jpg",
+      "original_filename": "Sl-1-ineel61-9.jpg",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 1436,
+        "height": 1113
+      },
+      "candidate_dimensions_px": {
+        "width": 960,
+        "height": 744
+      },
+      "source_credit_claim": "Idaho National Engineering and Environmental Laboratory",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "INEEL 61-9, reproduced in INL Proving the Principle Chapter 15.",
+      "editorial_date_caution": "Photograph dated January 4, 1961 (morning after accident).",
+      "proposed_action": "Accurately caption contamination checks on U.S. Highway 20.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    },
+    {
+      "image_key": "221:6",
+      "post_id": 221,
+      "slot": 6,
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SL-1_-_Dismantling_of_the_foundation_piers.jpg",
+      "commons_file_record_url": "https://commons.wikimedia.org/wiki/File:SL-1_-_Dismantling_of_the_foundation_piers.jpg",
+      "original_filename": "SL-1_-_Dismantling_of_the_foundation_piers.jpg",
+      "source_identity_basis": "Exact filename/Commons canonical file-page match; no original binary hashing or visitor request verification.",
+      "recorded_original_dimensions_px": {
+        "width": 1402,
+        "height": 1050
+      },
+      "candidate_dimensions_px": {
+        "width": 960,
+        "height": 719
+      },
+      "source_credit_claim": "Idaho National Engineering and Environmental Laboratory",
+      "primary_archive_context_url": "https://inl.gov/content/uploads/2024/05/Chapter-15_Low-1.pdf",
+      "primary_archive_context_but_not_binary_proof": "Commons caption calls photograph INEEL 67-2587, yet page credits INEEL 81-3966 and says taken 1981; conflicting identifiers.",
+      "editorial_date_caution": "Do not publish a precise photography date or definite original negative ID without archival reconciliation.",
+      "proposed_action": "Caption as subsequent cleanup; avoid silently assigning date 1967 or 1981.",
+      "rights_claim_on_commons": "PD-USGov / public domain claim on file page; item-specific provenance/contractor verification before republishing.",
+      "rights_review_complete": false,
+      "original_binary_sha256": null,
+      "original_asset_http_status": null,
+      "visitor_browser_http_status": null,
+      "visitor_natural_width_px": null,
+      "visitor_transfer_bytes": null,
+      "confirmed_browser_broken": null,
+      "measured_reduction_percent": null,
+      "wp_cached_media_id": null,
+      "wp_upload_authorized": false,
+      "wp_post_rewrite_authorized": false
+    }
+  ]
+}
