@@ -87,7 +87,12 @@ def run():
             page.keyboard.press('Enter')
             assert card.locator('details').first.evaluate('(n)=>n.open')
             disclosure=audit_ax(cdp)
-            assert disclosure['actionables']==baseline['actionables'],(width,disclosure,baseline)
+            # R18 native cross-lane custody disclosure exposes six NASA links, six casefile
+            # links and one pinned source link only when expanded.
+            assert disclosure['actionables']==baseline['actionables']+13,(width,disclosure,baseline)
+            card.locator('details summary').first.focus();page.keyboard.press('Enter')
+            assert not card.locator('details').first.evaluate('(n)=>n.open')
+            assert audit_ax(cdp)['actionables']==baseline['actionables'],(width,'disclosure focus restoration')
             if width in (390,1440):
                 card.get_by_role('radio',name='1966 rehearsal — 1').check()
                 target=OUT/f'r16-ax-year-1966-{width}.png'

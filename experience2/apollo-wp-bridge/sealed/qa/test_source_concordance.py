@@ -14,7 +14,7 @@ class SourceConcordance(unittest.TestCase):
         self.assertEqual(html.count('data-concordance-record='),6)
         self.assertEqual(html.count('<details><summary>'),6)
         self.assertEqual(html.count('<a href="#stage-'),6)
-        self.assertEqual(html.count('<a href="https://www.nasa.gov/image-detail/'),6)
+        self.assertEqual(html.count('<a href="https://www.nasa.gov/image-detail/'),12)  # six source cards + six PR158 URL crosswalk links
         self.assertNotIn('<img',html)
         self.assertNotIn('<iframe',html)
         self.assertNotIn('<script',html)

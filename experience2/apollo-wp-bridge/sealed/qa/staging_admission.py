@@ -155,6 +155,10 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         raise AdmissionError('Served six-source concordance incomplete')
     if html.count(b'type="radio"') != 4 or html.count(b' data-concordance-era=') != 6:
         raise AdmissionError('Source year lens incomplete')
+    if (html.count(b'data-crosswalk-id=') != 6 or
+        html.count(b'data-crosswalk-review="hold">') != 1 or
+        html.count(b'id="fv-ex2-research-desk-crosswalk"') != 1):
+        raise AdmissionError('Independent Research Desk crosswalk or identifier review hold missing')
     if b'{{FV_EX2_CONTEXT_EXPORT}}' in html or html.count(b'source-context.json') < 1:
         raise AdmissionError('Served six-source concordance incomplete')
     csp = headers.get('content-security-policy','')

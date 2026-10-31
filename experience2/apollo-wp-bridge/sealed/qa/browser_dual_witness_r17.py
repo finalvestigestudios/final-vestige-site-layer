@@ -31,7 +31,7 @@ def run():
             cards=page.locator('#source-concordance [data-concordance-record]')
             assert cards.count()==6
             assert page.locator('#source-concordance .fv-ex2-concordance__witness').count()==12
-            assert page.locator('#source-concordance a[href^="#source-"]').count()==6
+            assert page.locator('#source-concordance .fv-ex2-concordance__card a[href^="#source-"]').count()==6
             assert page.locator('#source-concordance a[href^="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]').count()==6
             for card in cards.all():
                 text=card.inner_text()

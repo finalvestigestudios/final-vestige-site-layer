@@ -90,6 +90,9 @@ function fv_ex2_apollo_sealed_page() {
         || substr_count($concordance, 'data-concordance-record=') !== 6
         || substr_count($concordance, '{{FV_EX2_CONTEXT_EXPORT}}') !== 1
         || substr_count($concordance, 'type="radio"') !== 4
+        || substr_count($concordance, 'data-crosswalk-id=') !== 6
+        || substr_count($concordance, 'data-crosswalk-review="hold"') !== 1
+        || substr_count($concordance, 'id="fv-ex2-research-desk-crosswalk"') !== 1
         || strpos($fragment, 'id="documentary-trails"') === false
         || strpos($fragment, 'id="atlas"') === false
         || substr_count($fragment, '{{FV_EX2_ASSET_BASE}}') !== 4) {
