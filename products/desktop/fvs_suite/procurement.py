@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Callable, Mapping
 
 from .procurement_reference import has_original_spelling, source_document_spellings
+from .audit_display import visible_source_text
 from .review import price_outside_tolerance
 
 CENT = Decimal("0.01")
@@ -224,13 +225,34 @@ def review_line(
             flags.append("negative_credit_price_review")
     receipt_docs = {identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
                     if kind == "receipt" and identifier(r.get("document_id", ""))}
+    # An apparent quantity match is not evidence of distinct receiving events.
+    # Detect repeated IDs within each physical event type, even when the lossy
+    # matching key collapses different source spellings. Empty optional IDs
+    # are not treated as the same document.
+    receipt_doc_counts = Counter(
+        identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
+        if kind == "receipt" and identifier(r.get("document_id", ""))
+    )
+    return_doc_counts = Counter(
+        identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
+        if kind == "return" and identifier(r.get("document_id", ""))
+    )
+    if any(count > 1 for count in receipt_doc_counts.values()):
+        flags.append("repeated_receipt_document_id_review")
+    if any(count > 1 for count in return_doc_counts.values()):
+        flags.append("repeated_return_document_id_review")
     raw_receipt_docs = source_document_spellings(
         str(r.get("document_id", "")) for r, kind, _ in receipt_entries if kind == "receipt")
     for row, kind, _ in receipt_entries:
         if kind != "return":
             continue
-        if not identifier(row.get("document_id", "")):
+        return_document = identifier(row.get("document_id", ""))
+        if not return_document:
             flags.append("unidentified_return_review")
+        elif return_document in receipt_docs:
+            # A return and its source receipt must not silently share a
+            # physical document identity, even when the amounts reconcile.
+            flags.append("reused_receipt_document_id_review")
         related = identifier(row.get("related_document", ""))
         if not related or related not in receipt_docs:
             flags.append("unlinked_return_review")
@@ -287,6 +309,16 @@ def review_line(
         "invoice_documents": "; ".join(sorted({r.get("document_id", "").strip() for r in invoices if r.get("document_id", "")})),
         "credit_references": "; ".join(sorted({r.get("related_document", "").strip() for r in invoices if r.get("related_document", "")})),
         "return_references": "; ".join(sorted({r.get("related_document", "").strip() for r in receipts if r.get("related_document", "")})),
+        # Render *new display columns* with the same visibility control as the
+        # premium review UI. Originals remain in verified source CSV snapshots.
+        "receipt_documents": "; ".join(map(visible_source_text, sorted({
+            row.get("document_id", "").strip() for row, kind, _ in receipt_entries
+            if kind == "receipt" and row.get("document_id", "").strip()
+        }))),
+        "return_documents": "; ".join(map(visible_source_text, sorted({
+            row.get("document_id", "").strip() for row, kind, _ in receipt_entries
+            if kind == "return" and row.get("document_id", "").strip()
+        }))),
     }
     # Stable order while deduplicating flags.
     return output, list(dict.fromkeys(flags))
@@ -350,7 +382,7 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                      "invoice_total_exact", "gross_invoice_total_exact", "credit_value_exact",
                      "invoice_documents", "credit_references", "return_references",
                      "price_policy_absolute", "price_policy_fraction",
-                     "price_policy_sha256")
+                     "price_policy_sha256", "receipt_documents", "return_documents")
     inputs = list(source_paths)
     if policy_path is not None and str(policy_path).strip():
         inputs.append(policy_path)
