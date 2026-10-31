@@ -6,6 +6,7 @@ production data. Refuses a dirty/wrong checkout, nonlocal kit, or unsafe parity.
 """
 from __future__ import annotations
 import argparse
+import base64
 import hashlib
 import json
 import re
@@ -73,6 +74,18 @@ MAX_THEME_FILES = 4000
 PLUGIN_NAME = 'fv-ex2-private-preview'
 EXPECTED_PLUGIN = {'fv-ex2-private-preview.php', 'fv-ex2-private-payload.php',
                    'STAGING_MANIFEST.json', 'INSTALLATION_HOLD.txt'}
+
+
+def expected_php_payload(assets: dict[str, bytes]) -> bytes:
+    """Reconstruct the exact deterministic private PHP payload from canonical Git blobs."""
+    hashes = {k: sha(v) for k, v in assets.items()}
+    sha_rows = ",\n".join(f"    '{k}' => '{v}'" for k, v in hashes.items())
+    data_rows = ",\n".join(
+        f"    '{k}' => '{base64.b64encode(v).decode('ascii')}'" for k, v in assets.items()
+    )
+    return ("<?php\nif (!defined('ABSPATH')) { http_response_code(403); exit; }\n"
+            "return [\n 'sha256' => [\n" + sha_rows + "\n ],\n 'data' => [\n"
+            + data_rows + "\n ],\n];\n").encode('ascii')
 
 
 def archive_file_map(raw: bytes, *, root: str, limit: int = MAX_THEME_UNPACKED_BYTES) -> dict[str, bytes]:
@@ -172,10 +185,14 @@ def verify_mount_contents(repo: Path, head: str, stage: Path, receipt: dict,
     source_hashes = manifest.get('source_hashes')
     if not isinstance(source_hashes, dict) or set(source_hashes) != set(asset_paths):
         raise ValueError('MOUNT HOLD: missing canonical source asset hashes')
+    source_bytes: dict[str, bytes] = {}
     for rel in asset_paths:
         full = 'experience2/home-flagship/' + rel
-        if sha(git_bytes(repo, 'show', head + ':' + full)) != source_hashes[rel]:
+        source_bytes[rel] = git_bytes(repo, 'show', head + ':' + full)
+        if sha(source_bytes[rel]) != source_hashes[rel]:
             raise ValueError('MOUNT HOLD: plugin manifest differs from canonical asset ' + rel)
+    if plugin_expected['fv-ex2-private-payload.php'] != expected_php_payload(source_bytes):
+        raise ValueError('MOUNT HOLD: payload bytes differ from exact committed 11-asset source')
     plugin_hashes = compare_mount(stage/'mounts'/PLUGIN_NAME, plugin_expected, 'private-preview')
     return {'theme_files_matched':len(theme_hashes), 'plugin_files_matched':len(plugin_hashes),
             'theme_sha256':theme_sha256, 'private_plugin_sha256':sha(plugin_raw)}
