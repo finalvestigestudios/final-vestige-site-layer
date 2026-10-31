@@ -1,0 +1,50 @@
+id,topic,claim_or_requirement,source_url,evidence_type,decision,limits
+ZEN-01,product-format,Zen12 is an Inspire3 product,https://inspire3.com/,seller-description,ATTRIBUTED,Seller catalog lists Zen12; not endorsement
+ZEN-02,format,Each marketed session lasts 12 minutes,https://zen12.com/about,seller-description,ATTRIBUTED,Not a claim about outcomes
+ZEN-03,format,Full program has 12 progressive levels,https://zen12.com/about,seller-description,ATTRIBUTED,Not proof of progressive benefit
+ZEN-04,tier,Beginner: first six levels,https://zen12.com/,seller-description,ATTRIBUTED,Main offer only
+ZEN-05,tier,Beginner: 24 MP3s,https://zen12.com/,seller-description,ATTRIBUTED,Do not use 48 for Beginner
+ZEN-06,tier,Premium: all twelve levels,https://zen12.com/,seller-description,ATTRIBUTED,Tier-specific
+ZEN-07,tier,Premium: 48 MP3s,https://zen12.com/,seller-description,ATTRIBUTED,Full package only
+ZEN-08,tier,Advanced: final six levels,https://zen12.com/,seller-description,ATTRIBUTED,Seller says for more experienced listeners
+ZEN-09,tier,Advanced: 24 MP3s,https://zen12.com/,seller-description,ATTRIBUTED,Do not conflate with Premium
+ZEN-10,checkout,General /getstarted offers the full 12-level course,https://zen12.com/getstarted,seller-description,ATTRIBUTED,Does not verify Beginner or Advanced checkout routing
+ZEN-11,format,Four listening styles are advertised,https://zen12.com/about,seller-description,ATTRIBUTED,Guided music nature white noise
+ZEN-12,format,Ordinary device download/play is advertised,https://zen12.com/about,seller-description,ATTRIBUTED,Accessibility and actual experience untested
+ZEN-13,efficacy,12 minutes yields benefits equivalent to an hour of meditation,https://zen12.com/,seller-assertion,EXCLUDE,No independently substantiated product-specific comparison
+ZEN-14,efficacy,Audio automatically induces deep meditation,https://zen12.com/,seller-assertion,EXCLUDE,No accepted product-specific evidence
+ZEN-15,mechanism,Brain copies frequencies with automatic brainwave entrainment,https://zen12.com/,seller-assertion,EXCLUDE,Mechanism and product impact unverified
+ZEN-16,health,Audio guarantees anxiety relief,https://zen12.com/about,seller-assertion,EXCLUDE,Do not assert product-specific medical outcome
+ZEN-17,performance,Audio reliably increases creativity,https://zen12.com/,seller-assertion,EXCLUDE,No product-specific RCT verified
+ZEN-18,performance,Audio reliably increases focus,https://zen12.com/,seller-assertion,EXCLUDE,Do not import general meditation findings
+ZEN-19,research,General meditation evidence includes mixed or limited quality studies,https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety,independent,INCLUDE_CONTEXT,No specific claim for Zen12
+ZEN-20,safety,Meditation may have negative experiences for some people,https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety,independent,INCLUDE_CONTEXT,Do not infer Zen12 safety rate
+ZEN-21,buyer,Seller offers free sample in exchange for newsletter enrollment,https://zen12.com/welcome,seller-description,QUALIFY,Consent/privacy should be checked
+ZEN-22,checkout,Checkout asks personal/contact/payment data,https://zen12.com/getstarted,seller-description,INCLUDE_CONTEXT,Do not collect in Final Vestige pages
+ZEN-23,checkout,Checkout contains countdown timer,https://zen12.com/getstarted,observation,INCLUDE_CONTEXT,Do not reproduce urgency
+ZEN-24,checkout,Seller checkout displays a guarantee,https://zen12.com/getstarted,seller-description,QUALIFY,Do not promise refund details without contract review
+ZEN-25,pricing,Any specific merchant price is stable,https://zen12.com/,unverified,EXCLUDE,Dynamic prices/discounts might change
+ZEN-26,commissions,Final Vestige earns a fixed rate,https://affiliates.inspire3.com/,unverified,EXCLUDE,No account-specific proof
+ZEN-27,permission,Final Vestige is accepted as affiliate,https://affiliates.inspire3.com/,unverified,HARD_HOLD,Generic signup does not equal acceptance
+ZEN-28,permission,Email/social marketing permissions are approved,https://affiliates.inspire3.com/,unverified,HARD_HOLD,Need actual partner terms
+ZEN-29,permission,All tiers share an eligible tracking URL,https://zen12.com/,unverified,HARD_HOLD,Require approved per-tier URL
+ZEN-30,permission,Merchant creative may be reproduced,https://affiliates.inspire3.com/,unverified,HARD_HOLD,Original assets only pending rights
+FTC-01,disclosure,Material affiliate relationship should be conspicuously disclosed,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,regulatory-guidance,REQUIRE,Near each active link
+FTC-02,claims,Health-related benefits require adequate substantiation,https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance,regulatory-guidance,REQUIRE,Evidence must support particular advertised outcome
+FTC-03,claims,Implied claims count as well as express claims,https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance,regulatory-guidance,REQUIRE,Avoid imagery that implies cure
+FTC-04,endorsement,Do not invent personal use/testimonials,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,regulatory-guidance,REQUIRE,No firsthand use has been claimed
+HIS-01,history,Thompson published Thatcher illusion 1980,https://doi.org/10.1068/p090483,primary-science,VERIFIED_SOURCE,Paper is two pages
+HIS-02,interpretation,Inversion impairs judgment of altered face,https://doi.org/10.1068/p090483,primary-science,VERIFIED_SOURCE,Group-level effect not universal
+HIS-03,nuance,Local facial feature orientation contributes to effect,https://doi.org/10.1167/14.12.9,independent-science,VERIFIED_SOURCE,Avoid purely holistic explanation
+HIS-04,nuance,fMRI STS response showed upright orientation sensitivity,https://doi.org/10.1177/0956797613501521,independent-science,VERIFIED_SOURCE,Does not prove single neural center
+HIS-05,nuance,Body orientation can alter effect at particular tilts,https://doi.org/10.1068/p5508,independent-science,VERIFIED_SOURCE,Retinal coordinates primary
+HIS-06,boundary,Thatcher illusion does not test meditation audio,https://doi.org/10.1068/p090483,inference,BOUNDARY,No commercial transfer
+FV-01,internal-link,Published Puységur archive exists,https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/,first-party-live,VERIFIED_VIA_WP,Full page checked read-only
+FV-02,internal-link,Existing 52-page Focus Fieldbook and Jetpack funnel,https://finalvestige.com/focus/,first-party-live,VERIFIED_VIA_WP,No duplicate signup
+FV-03,policy,Public editorial standards separate commercial influence,https://finalvestige.com/editorial-standards/,first-party-live,VERIFIED_VIA_WP,No research ads
+FV-04,policy,General affiliate policy does not replace contextual disclosure,https://finalvestige.com/affiliate-disclosure/,first-party-live,VERIFIED_VIA_WP,Near-link disclosure required
+QA-01,accessibility,A/B optional film requires captions and text transcript,https://www.w3.org/WAI/media/av/,accessibility-standard,REQUIRE,No auto playback
+QA-02,security,No third-party player or analytics tag required,https://www.w3.org/WAI/media/av/,design-constraint,REQUIRE,Same-origin video only after review
+QA-03,privacy,Outbound tracking may not collect URL/referrer/person,https://finalvestige.com/privacy-policy/,design-constraint,REQUIRE,Synthetic model OFF; no visitor event collection
+QA-04,rights,Original schematic not the copyrighted original photograph,https://doi.org/10.1068/p090483,rights-review,REQUIRE,Publisher permission needed to reuse original figure
+QA-05,release,No WordPress CMS edit publication activation,https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171,founder-directive,HARD_HOLD,Separate founder approval
