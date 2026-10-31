@@ -12,6 +12,12 @@ defined('ABSPATH') || exit;
  * Native Jetpack block must render a working form or JS keeps /focus/ fallback visible.
  */
 add_shortcode('fv_focus_popup', static function () {
+    // Repeated blocks would duplicate IDs and dialog controls; fail to a normal link.
+    static $rendered_once = false;
+    if ($rendered_once) {
+        return '<p><a href="/focus/">Explore the Seven Day Focus Fieldbook</a></p>';
+    }
+    $rendered_once = true;
     $html_path = plugin_dir_path(__FILE__) . 'focus-popup.html';
     if (!is_readable($html_path)) {
         return '<p><a href="/focus/">Explore the Seven Day Focus Fieldbook</a></p>';
