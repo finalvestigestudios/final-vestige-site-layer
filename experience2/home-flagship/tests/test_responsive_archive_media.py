@@ -72,9 +72,10 @@ class ResponsiveArchiveMedia(unittest.TestCase):
                 parsed = urlsplit(html.unescape(url))
                 self.assertEqual(parsed.scheme, "https")
                 self.assertEqual(parsed.netloc, "i0.wp.com")
-                self.assertEqual(parsed.path, "/"+urlsplit(src).path.lstrip("/")
-                    if urlsplit(src).netloc == "finalvestige.com"
-                    else urlsplit(src).path)
+                expected_path = ("/finalvestige.com" + urlsplit(src).path
+                                 if urlsplit(src).netloc == "finalvestige.com"
+                                 else urlsplit(src).path)
+                self.assertEqual(parsed.path, expected_path)
                 query = parse_qs(parsed.query)
                 self.assertEqual(query.get("ssl"), ["1"])
                 self.assertEqual(query.get("fit"), ["%d,%d" % expected[width]])
