@@ -19,6 +19,7 @@ import zlib
 
 from qa.custody_integrity import check_directory
 from qa.nasa_editorial_gate import audit_files
+from qa.source_concordance import build_concordance
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -54,6 +55,7 @@ def build(out: Path) -> dict:
     # are mandatory, not optional QA invoked after packaging.
     custody_receipt = check_directory(BRIDGE / 'generated')
     nasa_receipt = audit_files(UPSTREAM, BRIDGE / 'generated')
+    concordance_html, concordance_css, concordance_receipt = build_concordance(UPSTREAM, BRIDGE / 'generated')
     payload = {}
     hashes = {}
     sizes = {}
@@ -65,6 +67,11 @@ def build(out: Path) -> dict:
             raise ValueError('Output artifact mutated: ' + name)
         sizes[name] = len(raw)
         hashes[name] = sha
+        payload[name] = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
+    for name, text in (('source-concordance.html', concordance_html), ('source-concordance.css', concordance_css)):
+        raw = text.encode('utf-8')
+        sizes[name] = len(raw)
+        hashes[name] = hashlib.sha256(raw).hexdigest()
         payload[name] = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
     template = (HERE / 'fv-ex2-apollo-sealed-template.php').read_text(encoding='utf-8')
     if template.count(MARKER) != 1:
@@ -83,6 +90,7 @@ def build(out: Path) -> dict:
         'source_pr215_head': PIN,
         'source_match_all_12_blob_pins': True,
         'nasa_catalog_witness': nasa_receipt,
+        'source_concordance': concordance_receipt,
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',
                          'evidence_records','response_records','csv_json_parity')},
