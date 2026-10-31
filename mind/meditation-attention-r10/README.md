@@ -9,13 +9,15 @@ This is an isolated addition under GitHub Issue #171. The historical homepage fl
 - page-meditation-attention.blocks.html: full WordPress Custom HTML candidate, scoped midnight/bronze design, complete article, no-JS native details, responsive navigation, first-party free Fieldbook CTA, separate inactive Zen12 recommendation and near-CTA disclosure. Direct clickable Zen12/Inspire3 destinations have been removed from the public page candidate, including source links; internal claim ledger retains exact seller URLs for reviewers.
 - claim-evidence-ledger.json: 35 source-specific dispositions against 14 directly verified source references. Affiliate URL remains null and authorization unverified.
 - conversion-and-qa.md: exact-offer audience and objection map, first-party navigation, original 40-second short script (script only), optional use of PR #229 original film, measurable privacy-safe text versus film pre-registration and release gates.
-- qa.cjs: dependency-free verification and regression guard using Node 18 or later.
+- qa.cjs: dependency-free article/commerce verification and regression guard using Node 18 or later.
+- attribution-contract.cjs: disabled-by-default, **non-deployed** privacy-preserving aggregate attribution reducer. Enforces five nonidentifying fields, GPC/DNT opt-out, approved-event vocabulary and no affiliate-outbound recording until explicit affiliate activation; contains 20 runnable positive/adversarial tests.
 
 ## Execute the exact source gate
 
 From the repository root on the exact commit, run:
 
     node mind/meditation-attention-r10/qa.cjs
+    node mind/meditation-attention-r10/attribution-contract.cjs
 
 The test loader uses its own directory and exits nonzero if any check fails. The source audit checks article substance and citations, 35 claims/14 sources, duplicate IDs, anchors, disclosure proximity, inactive offer, no new email forms, no third-party media/tracking, no active merchant links, mobile CSS/reduced motion, numerical WCAG contrast pairs and approved live first-party links. This is SOURCE QA, NOT a replacement for WordPress integration, rendered accessibility, actual mobile film legibility or Core Web Vitals.
 
