@@ -21,3 +21,19 @@ The six newly reviewed official media records in `primary_source_addenda_2026103
 `node --test qa/media-recovery/test_browser_probe_core.cjs`. Separate original tests: `node --test qa/media-recovery/test_validate_inventory.cjs`.
 
 **Restrictions:** no production WordPress writes, no unlicensed scraping, no subscriptions, no speculative posts or CSS edits. Only PR review and evidence collection.
+
+
+## v3 decoded-image source proof / reproducible weight gate
+
+The probe output is now `probe_version: 3`. Run from the repository root on a **network-enabled**, logged-out Chromium system with **no WordPress production writes**:
+
+```sh
+node --test qa/media-recovery/test_browser_probe_core.cjs qa/media-recovery/test_browser_probe_commons.cjs qa/media-recovery/test_browser_probe_active_src.cjs qa/media-recovery/test_compare_wire.cjs
+node qa/media-recovery/browser_probe_chrome.cjs --plan
+node qa/media-recovery/browser_probe_chrome.cjs
+node qa/media-recovery/browser_probe_chrome.cjs --desktop
+```
+
+Use `--all` only after bounded P0 verification. Collect unmodified JSON results and screenshots; browser status, decoded `currentSrc`, natural dimensions, response MIME/redirect, encoded bytes, viewport, and cache settings are required evidence. For each stored slot, a matching `src` or `data-src` is **not sufficient** if `currentSrc` differs. `current_src_identity_unverified` means editorial/source identity needs review, **not broken**. The browser request must match `currentSrc` and its network record.
+
+The paired-run comparator now refuses v2 evidence and requires every loaded slot's claimed response size to match an actual Image-network row (including known redirect aliases). Do not claim the 76% reduction or 42 browser failures from the source census, CDN viewer, WordPress original bytes, synthetic tests, or network-only failures. A meaningful before/after still needs matching scope, browser version, viewport, screenshots and visual/rights signoff; a comparator passing alone is not a deployment approval.
