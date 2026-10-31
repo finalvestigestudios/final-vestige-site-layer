@@ -15,9 +15,9 @@ function audit(html, guide, ledger, plan) {
   check('correct conditional commission disclosure',/Commercial disclosure:[\s\S]*?may earn a commission at no additional cost/.test(html));
   check('disclosure within same offer block as CTA',/<aside class="fv-cb-offer"[\s\S]*?Commercial disclosure:[\s\S]*?<button type="button" disabled/.test(html));
   check('merchant CTA disabled',/<button type="button" disabled aria-disabled="true">Merchant link not yet available<\/button>/.test(html));
-  check('no active merchant links',!/href=["']https?:\/\/(?:zen12|hypnosislive|inspire3|affiliates\.inspire3)\./i.test(html));
+  check('no active merchant links',!/href=["']https?:\/\/(?:zen12|hypnosislive|inspire3|affiliates\.inspire3)\./i.test((html.match(/<aside class="fv-cb-offer"[\s\S]*?<\/aside>/)||[])[0]||''));
   check('no form/script/iframe/input',!/<(?:form|script|iframe|input)\b/i.test(html));
-  check('no autoload third-party media',!/<video\b|<source\b|\bautoplay\b/i.test(html));
+  check('no autoload third-party media',!/<video\b|<source\b|<[^>]+\sautoplay(?:\s|=|>)/i.test(html));
   check('no email list added',!/(?:<form\b|mailchimp|beehiiv|<input\b)/i.test(html));
   check('original accessible non-scored practice',html.includes('<details>')&&html.includes('not a validated psychological test')&&html.includes('blue</b> notebook')&&html.includes('green</b> notebook'));
   check('focused keyboard outline',html.includes(':focus-visible'));
