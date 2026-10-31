@@ -37,6 +37,8 @@ STEPS = (
     ("source_crosswalk_truth", "source_crosswalk_truth_gate.py", "hold"),
     ("current_safety_copy_custody", "qa_current_copy_concordance.py", "hold"),
     ("seven_cluster_git_parity", "cluster_git_parity_gate.py", "hold"),
+    # R24: R23 source+81-file author custody MUST run inside the hosted preflight.
+    ("frozen_81_file_archive_custody", "source_group_review_gate.py", "hold"),
 )
 
 
@@ -130,11 +132,20 @@ def verify_hold_json(output: bytes) -> dict:
     require(type(obj) is dict and obj.get("release_state") == "HOLD" and
             obj.get("may_publish") is False,
             "gate returned non-HOLD state or asserted permission to publish")
+    # Optional fields are not an opportunity to smuggle an approval claim.
+    # If a hold-only producer emits any authority marker it MUST be literally false.
     for flag in ("qualified_safety_clearance", "human_source_reviews_complete",
-                 "human_source_review_complete", "external_human_qa_proven",
-                 "article_claim_accuracy_verified", "independent_human_source_checks_verified",
-                 "source_links_independently_verified"):
-        require(obj.get(flag) is not True, "gate falsely asserted review approval: " + flag)
+                 "human_source_review_complete", "human_source_reviews_completed",
+                 "external_human_qa_proven", "article_claim_accuracy_verified",
+                 "independent_human_source_checks_verified",
+                 "source_links_independently_verified", "source_claim_accuracy_verified",
+                 "link_and_claim_accuracy_independently_verified",
+                 "medical_safety_approved", "qualified_emergency_or_medical_safety_review",
+                 "qualified_medical_or_emergency_safety_review",
+                 "independent_qd_pass", "independent_QD_approval",
+                 "wordpress_publishing_performed", "may_publish"):
+        require(flag not in obj or obj[flag] is False,
+                "gate falsely asserted review approval: " + flag)
     return obj
 
 
