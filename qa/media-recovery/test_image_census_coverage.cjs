@@ -3,7 +3,9 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const {proofKind,assessPage,assessRun}=require('./image_census_coverage_core.cjs');
 function slot(i,kind='loaded'){
  const s={image_key:'268:'+i,stored_url:'https://example.org/'+i+'.jpg',current_src:'https://example.org/'+i+'.jpg',
-  current_src_identity_verified:true,complete:true,request_url:'https://example.org/'+i+'.jpg',
+  current_src_identity_verified:true,network_final_identity_verified:true,
+  loaded_network_proof_verified:true,transfer_bytes:800,
+  complete:true,request_url:'https://example.org/'+i+'.jpg',
   result:'loaded_in_probe_browser',verified_broken_in_browser:false,natural_width:960,http_status:200,
   network_failure:null,visual_failure_kind:null,response_mime_type:'image/jpeg'};
  if(kind==='broken'){s.result='confirmed_broken_in_probe_browser';s.verified_broken_in_browser=true;
