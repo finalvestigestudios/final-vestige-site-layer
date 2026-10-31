@@ -1,0 +1,60 @@
+"""Unambiguous local display of untrusted financial source references.
+
+Rendered values are for human review cells only, not replacements for raw
+source bytes, source SHA-256, physical row references or journal evidence.
+No normalization, matching, network I/O or compliance decisions occur here.
+"""
+from __future__ import annotations
+
+import unicodedata
+
+
+_HIDDEN_CATEGORIES = frozenset(("Cc", "Cf", "Cs", "Co", "Cn", "Zl", "Zp"))
+
+
+def _escape_source_character(character: str) -> bool:
+    codepoint = ord(character)
+    category = unicodedata.category(character)
+    return (
+        category in _HIDDEN_CATEGORIES
+        or (category == "Zs" and character != " ")
+        or codepoint == 0x034F  # Invisible combining grapheme joiner.
+        or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors.
+        or 0xFE00 <= codepoint <= 0xFE0F  # Standard variation selectors.
+        or 0xE0100 <= codepoint <= 0xE01EF  # Supplementary selectors.
+    )
+
+
+def visible_source_text(value: str) -> str:
+    """Escape ambiguous source Unicode and literal backslashes for display.
+
+    Every input codepoint maps deterministically to itself, a doubled
+    backslash, a 4-digit Unicode escape or an 8-digit Unicode escape.
+    A literal source escape stays distinguishable from an actual control.
+    Never call on previously rendered text; escape is not idempotent.
+    """
+    if not isinstance(value, str):
+        raise TypeError("Audit source display requires text")
+    parts: list[str] = []
+    for character in value:
+        codepoint = ord(character)
+        if character == "\\":
+            parts.append("\\\\")
+        elif _escape_source_character(character):
+            parts.append(f"\\u{codepoint:04X}" if codepoint <= 0xFFFF
+                         else f"\\U{codepoint:08X}")
+        else:
+            parts.append(character)
+    return "".join(parts)
+
+
+def visible_review_row(case: object, decision: str) -> tuple[int, str, str, str]:
+    """Treeview values only: do not mutate the raw exception case.
+
+    Case identity remains in the Treeview item ID outside display cells,
+    and the raw case is bound to the original report SHA-256.
+    """
+    return (
+        case.report_row, visible_source_text(case.source_key),
+        visible_source_text(case.flags), decision,
+    )

@@ -9,6 +9,7 @@ from .exception_review import (
     DECISIONS, append_review, export_register, latest_states, read_cases,
 )
 from .evidence_vault import restore_evidence, seal_evidence
+from .audit_display import visible_review_row
 from .ui_errors import safe_error_message
 from .review_queue_load import ReviewQueue
 
@@ -37,7 +38,9 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
               font=("Segoe UI", 16, "bold")).grid(row=0, column=0, sticky="w")
     ttk.Label(frame, text=("Review completion is NOT an audit opinion, "
               "eligibility finding, payment authorization or fraud determination. "
-              "Journal files are local and NOT encrypted."),
+              "Journal files are local and NOT encrypted. "
+              "Source references may show Unicode escape sequences for invisible "
+              "characters; refer to the original hashed report for exact text."),
               wraplength=1000).grid(row=1, column=0, sticky="w", pady=(6, 14))
     top = ttk.Frame(frame)
     top.grid(row=2, column=0, sticky="ew")
@@ -103,9 +106,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         states = latest_states(selection.journal, batch)
         for case in batch.cases:
             result = states.get(case.case_id)
-            tree.insert("", "end", iid=case.case_id, values=(
-                case.report_row, case.source_key, case.flags,
-                result["decision"] if result else "pending"))
+            tree.insert("", "end", iid=case.case_id, values=visible_review_row(
+                case, result["decision"] if result else "pending"))
         status_text.set(f"{len(batch.cases)} exceptions; {len(states)} have recorded human decisions. "
                         "Each review decision remains subject to organizational approval.")
 

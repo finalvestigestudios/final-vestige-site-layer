@@ -13,6 +13,7 @@ from typing import Callable
 
 from .atomic_reports import write_csv_report
 from .review_identity import require_snapshot_match
+from .audit_display import visible_source_text
 
 
 def publish_review_register(report, product, journal, folder, *, read_cases: Callable,
@@ -42,8 +43,10 @@ def publish_review_register(report, product, journal, folder, *, read_cases: Cal
             yield {
                 "case_id": case.case_id,
                 "source_row": case.report_row,
-                "source_key": case.source_key,
-                "original_flags": case.flags,
+                # Human-display-only values; exact raw strings remain bound
+                # to the original report SHA-256 and journal evidence.
+                "source_key": visible_source_text(case.source_key),
+                "original_flags": visible_source_text(case.flags),
                 "review_state": latest.get("decision", "pending"),
                 "reviewer": latest.get("reviewer", ""),
                 "rationale": latest.get("rationale", ""),
