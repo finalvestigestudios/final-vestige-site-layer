@@ -14,6 +14,8 @@ from decimal import Decimal
 from pathlib import Path
 from typing import Callable, Mapping
 
+from .procurement_reference import has_original_spelling, source_document_spellings
+
 CENT = Decimal("0.01")
 DEFAULT_ABSOLUTE = CENT
 DEFAULT_FRACTION = Decimal("0.02")
@@ -164,8 +166,8 @@ def review_line(
     # as verified offsets to the source documents.
     invoice_docs = {identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
                     if k == "invoice" and identifier(r.get("document_id", ""))}
-    raw_invoice_docs = {str(r.get("document_id", "")).strip().casefold()
-                        for r, k, _, _ in invoice_entries if k == "invoice"}
+    raw_invoice_docs = source_document_spellings(
+        str(r.get("document_id", "")) for r, k, _, _ in invoice_entries if k == "invoice")
     invoice_doc_counts = Counter(
         identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
         if k == "invoice" and identifier(r.get("document_id", ""))
@@ -179,7 +181,7 @@ def review_line(
         related = identifier(row.get("related_document", ""))
         if not document or not related or related not in invoice_docs:
             flags.append("unlinked_credit_review")
-        elif str(row.get("related_document", "")).strip().casefold() not in raw_invoice_docs:
+        elif not has_original_spelling(row.get("related_document", ""), raw_invoice_docs):
             flags.append("normalized_credit_link_review")
         if document in invoice_docs:
             flags.append("reused_invoice_document_id_review")
@@ -187,8 +189,8 @@ def review_line(
             flags.append("negative_credit_price_review")
     receipt_docs = {identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
                     if kind == "receipt" and identifier(r.get("document_id", ""))}
-    raw_receipt_docs = {str(r.get("document_id", "")).strip().casefold()
-                        for r, kind, _ in receipt_entries if kind == "receipt"}
+    raw_receipt_docs = source_document_spellings(
+        str(r.get("document_id", "")) for r, kind, _ in receipt_entries if kind == "receipt")
     for row, kind, _ in receipt_entries:
         if kind != "return":
             continue
@@ -197,7 +199,7 @@ def review_line(
         related = identifier(row.get("related_document", ""))
         if not related or related not in receipt_docs:
             flags.append("unlinked_return_review")
-        elif str(row.get("related_document", "")).strip().casefold() not in raw_receipt_docs:
+        elif not has_original_spelling(row.get("related_document", ""), raw_receipt_docs):
             flags.append("normalized_return_link_review")
 
     # Distinct document references permit legitimate equal-quantity installments.
