@@ -7,7 +7,7 @@ const rendered=(overrides={})=>[{
  src:stored[0].source_url,currentSrc:stored[0].source_url,dataSrc:'',
  alt:'Historic original',complete:true,naturalWidth:640,...overrides
 }];
-const net=(url,status=200,bytes=1000)=>[{url,status,encodedDataLength:bytes}];
+const net=(url,status=200,bytes=1000)=>[{url,status,mime_type:'image/jpeg',encodedDataLength:bytes}];
 test('real decoded currentSrc is verified, with matching response',()=>{
  const d=classifyImages(stored,rendered(),net(stored[0].source_url),true)[0];
  assert.equal(d.result,'loaded_in_probe_browser');
