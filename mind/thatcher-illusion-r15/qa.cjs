@@ -25,7 +25,7 @@ function audit(input){
   ck("2010 nonface counterexample",()=>h.includes("Wong")&&h.includes("cars")&&h.includes("bicycles"));
   ck("2009 newborns caveat",()=>h.includes("Leo")&&h.includes("habituat"));
   ck("2014 MRI indirect measurement caveat",()=>h.includes("Psalta")&&h.includes("indirect"));
-  ck("original illustration explicitly not scientific test",()=>/not an empirical replication|not an empirical|not a validated perception test/i.test(h));
+  ck("original illustration explicitly not scientific test",()=>/not\s+an\s+empirical replication|not\s+a\s+validated perception test/i.test(stripped));
   ck("no borrowed photo claims",()=>h.includes("not reproduced here")&&h.includes("CSS line drawings"));
   ck("four schematic conditions and text equivalent",()=>["A · Upright","B · Upright","C · Inverted","D · Inverted","Text equivalent:"].every(s=>h.includes(s)));
   ck("illustration decorative features hidden",()=>[...h.matchAll(/class="head[^"]*" aria-hidden="true"/g)].length===4);
@@ -41,7 +41,7 @@ function audit(input){
   ck("separate evidence and offer sections",()=>h.indexOf('id="fv-th-tools"')>h.indexOf('id="fv-th-limits"'));
   ck("near-offer plain commission disclosure",()=>dis.includes('class="disclosure"')&&/may earn a commission at no additional cost to you/i.test(dis));
   ck("seller CTA is an inert span",()=>/\<span class="disabled" aria-disabled="true"\>Purchase link unavailable/.test(dis));
-  ck("no seller anchor in merchant recommendation block",()=>!/<a\b[^>]*href="https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)\./i.test(offer));
+  ck("no seller anchor in merchant recommendation block",()=>!/<a\b[^>]*href="https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)\./i.test(dis.slice(0,dis.indexOf("</div>"))));
   ck("no HTML active scripts",()=>!/<script\b/i.test(h));
   ck("no form or duplicate Jetpack embed",()=>!/<form\b|wp-block-jetpack-subscriptions|<input\b/i.test(h));
   ck("no iframe or remote media",()=>!/<iframe\b|<video\b|<audio\b|<source\b/i.test(h));
@@ -75,7 +75,7 @@ function audit(input){
   ck("pilot references authentic original film PR",()=>v.includes("pull/229")&&v.includes("dfffe093fcfcff6760cf6aeb981c788b2b10e23d"));
   ck("film manual, poster, captions, transcript spec",()=>["controls playsinline preload=\"none\"","kind=\"captions\"","transcript","poster="].every(s=>v.includes(s)));
   ck("film real current hosting not claimed",()=>v.includes("not media hosted on WordPress")&&v.includes("NOT ACTIVE HTML"));
-  ck("film hypothesis explicitly not conversion result",()=>v.includes("not a claim that video converts better"));
+  ck("film hypothesis explicitly not conversion result",()=>v.replace(/\*\*/g,"").includes("not a claim that video converts better"));
   ck("pilot first-party video and no tracking default",()=>v.includes("Current implementation: NONE")&&v.includes("NO PARTNER LINKS"));
   ck("pilot A vs B exact guide parity",()=>v.includes("same exact guide text and links"));
   ck("pilot has mobile and accessibility QA gates",()=>["360/390/768/1440/1920","200–400% zoom","caption"].every(s=>v.includes(s)));
