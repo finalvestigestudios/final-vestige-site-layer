@@ -8,7 +8,7 @@ if (wp_get_environment_type() !== 'local' || !in_array($host, ['127.0.0.1', 'loc
 if (wp_get_theme()->get_stylesheet() !== 'assembler' || wp_get_theme()->get('Version') !== '0.0.126') {
     throw new RuntimeException('REFUSED: independently verified Assembler 0.0.126 required');
 }
-$path = '/wordpress/wp-content/uploads/fv-ex2-parity/site-parity.safe.json';
+$path = '/wordpress/wp-content/uploads/fv-ex2-parity/assembler-public-safe.json';
 if (!is_file($path) || filesize($path) < 200 || filesize($path) > 350000) {
     throw new RuntimeException('Missing or oversized sanitized parity manifest');
 }
