@@ -33,6 +33,7 @@ function audit(bundle) {
   check('no forced redirect',!/<meta[^>]*refresh|window\.location|location\.href/i.test(H));
   check('no tracking beacon',!/google-analytics|gtag\(|facebook\.com\/tr|dataLayer|localStorage|sessionStorage/i.test(H));
   check('no arbitrary remote script loading',!/<script[^>]+src=/i.test(H));
+  check('article exposes no clickable merchant links',!/<a\b[^>]*href="https:\/\/(?:zen12\.com|inspire3\.com)/i.test(H));
   check('no checkout action link in article',!/<a[^>]+href="https:\/\/zen12\.com\/getstarted"[^>]*>(?:Buy|Purchase|Start|Get|Review the offer)/i.test(H));
   check('merchant CTA disabled',/<button class="fvg-disabled"[^>]*disabled\s+aria-disabled="true"/.test(H));
   check('no active offer link within commerce panel', /<section class="fvg-commerce"[\s\S]*?<\/section>/.test(H) && !/<a\b/i.test((H.match(/<section class="fvg-commerce"[\s\S]*?<\/section>/)||[])[0]||''));
@@ -87,7 +88,8 @@ function audit(bundle) {
   check('warmup no tracking scripts',!/<script\b|<iframe\b|localStorage|gtag\(/i.test(W));
   check('warmup no broken video player',!/<video\b/i.test(W.replace(/<!--[\s\S]*?-->/g,'')));
   check('warmup optional transcript concept',/film would explain/.test(W)&&/No finished hosted film/.test(W));
-  check('warmup seller exact SKU sources',W.includes('https://zen12.com/about')&&W.includes('https://zen12.com/getstarted'));
+  check('warmup seller exact SKU sources are in reviewer ledger',W.includes('Zen12 product description')&&(M.sources||[]).some(s=>s.url==='https://zen12.com/about')&&(M.sources||[]).some(s=>s.url==='https://zen12.com/getstarted'));
+  check('warmup exposes no clickable merchant links',!/<a\b[^>]*href="https:\/\/(?:zen12\.com|inspire3\.com)/i.test(W));
   check('warmup research 2010 primary',W.includes('https://doi.org/10.1068/i0386'));
   check('warmup near-CTA affiliate disclosure',/Affiliate disclosure:[\s\S]{0,300}Final Vestige may earn a commission/.test(W));
   check('warmup disabled purchase button',/<button class="z17-disabled"[^>]*disabled aria-disabled="true"/.test(W));
