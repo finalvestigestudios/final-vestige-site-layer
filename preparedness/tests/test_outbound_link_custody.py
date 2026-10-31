@@ -6,7 +6,7 @@ import sys
 import unittest
 from unittest.mock import patch
 
-FILE = Path(__file__).with_name('outbound_link_custody.py')
+FILE = Path(__file__).resolve().parents[1] / 'tools' / 'outbound_link_custody.py'
 spec = importlib.util.spec_from_file_location('outbound_link_custody', FILE)
 gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
