@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Dispatch R16 — Subscriber Proof Board (internal, UNSENT)</title>
+<style>
+:root{color-scheme:dark;--bg:#090a0a;--panel:#151717;--text:#f4efe6;--muted:#d8d2c7;--gold:#c7a66c;--line:#4a463f}
+*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:var(--bg);color:var(--text);font:18px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--gold);overflow-wrap:anywhere}a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.skip{position:absolute;left:-10000px;top:auto}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem;z-index:10}
+header,main,footer{max-width:1040px;margin:auto;padding:clamp(20px,5vw,50px)}
+header{padding-top:60px}small,.eyebrow{color:var(--gold);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.12}h1{font-size:clamp(2.4rem,7vw,5rem);margin:.6rem 0}h2{font-size:clamp(1.8rem,4vw,2.65rem);margin-top:1.3rem}
+p{max-width:74ch;color:var(--muted)}.lede{font-size:clamp(1.1rem,2vw,1.4rem)}
+.banner{border:2px solid var(--gold);padding:18px 23px;margin-top:24px}.banner strong{color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);padding:22px}.card .num{display:block;font:2.6rem Georgia,serif;color:var(--gold)}
+.card h3{font-size:1.4rem;margin:.3em 0}.card p{margin:.3em 0;font-size:.95rem}
+table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);text-align:left;padding:14px 10px;vertical-align:top}th{color:var(--gold)}td{overflow-wrap:anywhere}
+@media(max-width:620px){table,thead,tbody,tr,th,td{display:block}thead{position:absolute;clip:rect(0 0 0 0);height:1px;overflow:hidden}td{padding:8px 12px}td:before{content:attr(data-label) ": ";font-weight:700;color:var(--gold)}tr{padding-block:14px;border-bottom:1px solid var(--line)}}
+details{border:1px solid var(--line);margin:20px 0;padding:18px}summary{cursor:pointer;font-weight:700;min-height:44px}
+footer{border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head><body>
+<a class="skip" href="#main">Skip to the evidence</a>
+<header><span class="eyebrow">Final Vestige Studios · Internal evidence · 31 October 2026</span>
+<h1>Count the readers.<br>Not the shadows.</h1>
+<p class="lede">R16 corrects a mistaken arithmetic interpretation of WordPress subscriber buckets without inventing email recipients, clicks, permission, or delivery proof.</p>
+<div class="banner" role="status"><strong>HOLD — NO SEND AUTHORIZATION.</strong> This review board is a static, private draft. No live subscriber links or email controls exist here.</div></header>
+<main id="main">
+<section aria-labelledby="counts"><h2 id="counts">What WordPress actually reported</h2>
+<div class="cards">
+<div class="card"><span class="num">2</span><h3>Total reported</h3><p>WordPress subscriber count. Not a delivery guarantee.</p></div>
+<div class="card"><span class="num">2</span><h3>Confirmed</h3><p>Aggregate confirmation bucket, not proven email-reachable recipients.</p></div>
+<div class="card"><span class="num">2</span><h3>Unconfirmed</h3><p>WordPress documentation explicitly excludes these pending records from overall total.</p></div>
+<div class="card"><span class="num">?</span><h3>Email-eligible</h3><p>Unknown until privately filtered and reconciled.</p></div>
+</div>
+<p>Evidence collected via authenticated read-only WordPress connector at 09:32 UTC, October 31. The WordPress <a href="https://wordpress.com/support/subscribers/">subscriber guide</a> (reviewed Oct 26) says not-confirmed subscribers are excluded from the main total. <strong>2/2/2 may therefore be normal, not contradictory.</strong> It also does not prove that two people consented to a specific proposed campaign.</p></section>
+<section aria-labelledby="gates"><h2 id="gates">Release gates: all still closed</h2>
+<table><thead><tr><th>Requirement</th><th>Evidence</th><th>Status</th></tr></thead><tbody>
+<tr><td data-label="Requirement">Campaign content</td><td data-label="Evidence">Original 6 editions; 4 editorial + 2 proposed commercial</td><td data-label="Status">DRAFT</td></tr>
+<tr><td data-label="Requirement">Email opt-in and deliverability</td><td data-label="Evidence">Aggregate counters only; no identities exported</td><td data-label="Status">UNKNOWN</td></tr>
+<tr><td data-label="Requirement">Email renderer / unsubscribe</td><td data-label="Evidence">Excerpt-only; no authorized received full MIME</td><td data-label="Status">NOT VERIFIED</td></tr>
+<tr><td data-label="Requirement">Final Vestige postal address</td><td data-label="Evidence">Automattic address in earlier confirmation is not the business address</td><td data-label="Status">NOT VERIFIED</td></tr>
+<tr><td data-label="Requirement">Inspire3 email promotion rights</td><td data-label="Evidence">No individual written approval / offer tracking / published product guides</td><td data-label="Status">NOT VERIFIED</td></tr>
+<tr><td data-label="Requirement">Founder final approval</td><td data-label="Evidence">Only drafting approved</td><td data-label="Status">NOT AUTHORIZED</td></tr>
+<tr><td data-label="Requirement">Hosted GitHub checks</td><td data-label="Evidence">R13/R14/R15 local-content-safety FAILED; detailed logs unavailable</td><td data-label="Status">RED</td></tr>
+</tbody></table></section>
+<section aria-labelledby="proof"><h2 id="proof">Source and honesty ledger</h2>
+<details><summary>What the 19 offline regression tests prove</summary><p>The fail-closed auditor rejects malformed and inconsistent fields, avoids exposing names or email addresses, refuses supplied fake approvals and never converts aggregate totals into send permission. These checks do not test Jetpack SMTP delivery or merchant eligibility.</p></details>
+<details><summary>WordPress delivery still means excerpt</summary><p>Auto-new-post email is OFF. A WordPress custom excerpt may not carry the entire newsletter. The manuscript HTML preview is not the same thing as an actually received native email. Both published <a href="https://finalvestige.com/dispatch/">Dispatch</a> and <a href="https://finalvestige.com/focus/">Focus</a> contain native Jetpack Subscribe Gutenberg blocks, but live logged-out signup interaction has not been verified.</p></details>
+<details><summary>Merchant claim boundaries</summary><p>Official <a href="https://zen12.com/about">Zen12</a> and <a href="https://hypnosislive.com/mental-skills/total-focus">Total Focus</a> pages describe package formats; they do not establish independent product-specific efficacy or Final Vestige's affiliate email-promotion rights. Issues 03 and 05 have no active product-guide destinations.</p></details>
+</section>
+</main><footer>R16 internal reviewer snapshot · issue #174 / companion #171 · source controlled, unpublished, no subscriber information.</footer>
+</body></html>
