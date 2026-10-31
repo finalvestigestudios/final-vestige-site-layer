@@ -1,0 +1,19 @@
+# Native-email proof protocol — NO SEND / no CMS write
+
+**Live read-only evidence (2026-10-31 15:33 UTC):** Jetpack newsletter is enabled, automatic new-post emails OFF, delivery format excerpt, zero sends. The original welcome contains the 52-page Focus Fieldbook but no received welcome proof exists. The published /dispatch/ (523) and /focus/ (1579) source each retain a Jetpack Subscribe block; live logged-out interaction remains unverified. Editorial Standards (17) requires historical provenance, visible uncertainty, appropriate affiliate disclosure.
+
+**Future actions require their own founder approval, not this PR:**
+
+1. Obtain *specific draft-only WordPress post* creation/preview approval. Do not publish or schedule under any circumstance. **Important native UI constraint:** WordPress's current [Email appearance documentation](https://wordpress.com/support/newsletter/email-appearance/) says its **Preview email** button is exposed only while the *per-post* "Send this post to subscribers" toggle is **ON**. Do not confuse this with changing the global automatic-new-post default, which must stay OFF. Toggling the per-post switch ON in an unsent draft could make an accidental publish send an email, so do not enable it without a specifically authorized, controlled no-publish preview procedure. There is no approval for such a CMS action in this sprint.
+2. In the strictly authorized unsent draft editor (if the above condition is approved and can be done safely), inspect **Preview email** (no send), compare mobile and desktop. **Do not press Publish, Schedule, Send test email, or confirm pre-publish checks.** Note exact body vs proposed full text, WordPress-generated links, references, CTA, near-offer disclosure and footer. Capture privacy-safe screenshots. Do NOT click Send test email.
+3. Test whether the proposed manuscript preheader can be set at all. WordPress documentation establishes post-title→subject but does not establish an independent preheader setting for this account. Mark UNVERIFIED until native proof.
+4. Obtain **separate** founder authorization before choosing (A) global full-text email setting or (B) explicitly authored digest excerpts; option B is a materially different editorial product. Neither is approved.
+5. Before commercial content, verify Final Vestige's own valid business physical mailing address, visible unsubscribe and actual working opt-out in a controlled authorized received email. Automattic's postal address in a confirmation message is not Final Vestige's address. A syntactically present unsubscribe URL is not proof of honoring it.
+6. Obtain separate specific consent for an actual received test email, recipient and sending step. Only *after receipt*, R21's offline RFC822 MIME checker can assess visible content; it cannot prove a linked opt-out actually works.
+7. Confirm the actual permissioned, reachable unique audience privately. Dashboard total=2 confirmed=2 unconfirmed=2 can have legitimate counter semantics but cannot independently prove cohort eligibility.
+8. For Issues 03/05 require written account-specific Inspire3 acceptance, email-channel promotion and creative rights, exact permitted link format, live vetted landing guides and honest offer-specific claims. Do not enable checkout or affiliate links in email.
+9. Require founder **final campaign approval** of exact creative, audience and schedule separately; do not mistake technical site_can_send=true for authority to send.
+
+**Release decision:** 6 HOLD_UNSENT and commercial #03/#05 additional HOLD_MERCHANT. No current permission to test-send, draft in WordPress, alter settings, publish, schedule or contact subscribers.
+
+Sources: https://wordpress.com/support/newsletter-settings/ ; https://wordpress.com/support/newsletter/send-newsletter-emails/ ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
