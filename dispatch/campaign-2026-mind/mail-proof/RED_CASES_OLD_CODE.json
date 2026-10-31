@@ -1,0 +1,18 @@
+{
+  "not_displayed_disclosure": {
+    "incorrect_original_result": "PASS",
+    "expected_safe": "FAIL"
+  },
+  "not_displayed_postal": {
+    "incorrect_original_result": "PASS",
+    "expected_safe": "FAIL"
+  },
+  "not_displayed_unsubscribe": {
+    "incorrect_original_result": "PASS",
+    "expected_safe": "FAIL"
+  },
+  "logo_instead_of_guide": {
+    "incorrect_original_result": "PASS",
+    "expected_safe": "FAIL"
+  }
+}

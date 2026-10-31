@@ -1,0 +1,46 @@
+{
+  "checked_local_date": "2026-10-30",
+  "status": "SELLER_PAGES_ONLY_NOT_PUBLISHER_PERMISSION",
+  "zen12": {
+    "seller_page": "https://zen12.com/about",
+    "seller_described": [
+      "12-minute MP3",
+      "12 levels",
+      "4 audio types"
+    ],
+    "not_accepted": [
+      "12 minutes equals 1 hour",
+      "guaranteed relaxation"
+    ],
+    "approved_guide": null,
+    "email_affiliate_permission": null,
+    "earning_link": null,
+    "release": "HOLD"
+  },
+  "total_focus": {
+    "seller_page": "https://hypnosislive.com/mental-skills/total-focus",
+    "seller_described": [
+      "33 minutes",
+      "47 MB",
+      "sample preview"
+    ],
+    "volatile_checkout_terms_not_for_email": [
+      "$2 promotion vs $29.95",
+      "14-day refund claim"
+    ],
+    "approved_guide": null,
+    "email_affiliate_permission": null,
+    "earning_link": null,
+    "release": "HOLD"
+  },
+  "public_affiliate_page": "https://affiliates.inspire3.com/",
+  "public_signup_does_not_establish_account_acceptance": true,
+  "subscriber_counts": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "unique_confirmed_reconciled": null
+  },
+  "real_email_received_verified": false,
+  "founder_send_approval": false
+}
