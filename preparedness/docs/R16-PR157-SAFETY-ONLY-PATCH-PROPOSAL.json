@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "issue": 136,
+  "base_commit": "2492be67054ca1228752df64368ad75dec8dc586",
+  "qa_pr": 157,
+  "qa_head": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+  "food_fixture_pr": 169,
+  "food_fixture_head": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+  "release_state": "HOLD",
+  "may_publish": false,
+  "review_state": "PENDING_INDEPENDENT_SAFETY_AND_SOURCE_REVIEW",
+  "human_claim_checks": 0,
+  "qualified_safety_clearance": false,
+  "source_changes_allowed": false,
+  "protected_blobs": {
+    "preparedness/taxonomy.json": "eea601e53e16e36cd4fc890876bc249b39632370",
+    "preparedness/sources/fragments/start.json": "29574c328cbab0548e6e5d4a026694857d56b6b4"
+  },
+  "edits": [
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "integrated_blob_sha": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "qa_blob_sha": "6407a31a882211e62c00f4e07ec7dc4d5abf99c6",
+      "old_line": "<li><strong>The lights-out evening.</strong> Switch off the main power for an evening and live on the kit's flashlights and radio. You will learn what is missing faster than any checklist can tell you. (Do not do this if anyone depends on powered medical equipment.)</li>",
+      "new_line": "<li><strong>The lights-out evening.</strong> Keep the household electricity on. For an evening, switch off only nonessential lights and put away nonessential electronics, then try using the kit's flashlight, radio and paper contact list. Do not switch off the main breaker: refrigeration, alarms, medical equipment and other safety-critical systems must remain powered.</li>",
+      "reason": "Rehearsal instruction must not require cutting power to essential household devices.",
+      "review_status": "UNREVIEWED_QA_CANDIDATE"
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.body.html",
+      "integrated_blob_sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "qa_blob_sha": "f578cdbae602c1ad58a9237c8dea0fd74c99f7da",
+      "old_line": "<p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> A practical approach is to ask your pharmacist two questions: how large an emergency supply can I get, and how should I rotate it? Then keep a written list of every medicine with diagnosis, dose, frequency and allergies, which is the CDC's recommendation.{{cite:start-cdc-pyh-prescriptions}} Never stop or change a medicine to stretch a supply without your clinician's advice. For refrigerated medicine, Ready.gov says to talk to your medical provider about a power-outage plan and find out how long a medicine can be stored at higher temperatures; it also says that if the power is out more than a day you should discard refrigerated medication unless the label says otherwise, and consult your doctor or pharmacist for a new supply.{{cite:start-ready-power}} Those two statements pull in different directions, which is the reason to ask in advance.</p>",
+      "new_line": "<p><span class=\"pa-tag pa-tag--ed\">Editor's note</span> A practical approach is to ask your pharmacist two questions: how large an emergency supply can I get, and how should I rotate it? Then keep a written list of every medicine with diagnosis, dose, frequency and allergies, which is the CDC's recommendation.{{cite:start-cdc-pyh-prescriptions}} Never stop or change a medicine to stretch a supply without your clinician's advice. For refrigerated medicine, Ready.gov says to talk to your medical provider about a power-outage plan and find out how long a medicine can be stored at higher temperatures; its general power-outage page says to discard refrigerated medicines after an outage longer than a day unless the label says otherwise.{{cite:start-ready-power}} That general rule cannot tell you whether a particular prescription is safe to continue, requires replacement, or can be used temporarily until a replacement arrives. <strong>Do not stop essential treatment or discard a limited medicine supply solely on the basis of this general webpage: promptly consult a pharmacist or prescriber for product-specific storage, continued-use and replacement instructions.</strong> Plan those steps before the next outage.</p>",
+      "reason": "Refrigerated medication advice must remain product-specific and clinically reviewed.",
+      "review_status": "UNREVIEWED_QA_CANDIDATE"
+    }
+  ]
+}
