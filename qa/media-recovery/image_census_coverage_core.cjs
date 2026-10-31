@@ -2,15 +2,20 @@
 /** Fail-closed completeness gate for historical inline-image browser census.
  * Synthetic/offline policy only: this module never fetches media or authorizes publication.
  */
+const {sameSource}=require('./browser_probe_core.cjs');
 const goodCount=n=>Number.isSafeInteger(n)&&n>=0;
 const goodUrl=u=>typeof u==='string'&&/^https:\/\/[^\s/]+\//.test(u);
 const key=v=>typeof v==='string'&&/^\d+:\d+$/.test(v);
 function proofKind(v){
  if(!v||typeof v!=='object'||!key(v.image_key)||!v.current_src_identity_verified||
-    !goodUrl(v.stored_url)||!goodUrl(v.current_src)||v.complete!==true)return 'unresolved';
+    !goodUrl(v.stored_url)||!goodUrl(v.current_src)||
+    !sameSource(v.stored_url,v.current_src)||v.complete!==true)return 'unresolved';
  if(v.result==='loaded_in_probe_browser'&&v.verified_broken_in_browser===false&&
     Number.isSafeInteger(v.natural_width)&&v.natural_width>0&&
-    v.http_status===200&&goodUrl(v.request_url))return 'loaded';
+    v.http_status===200&&goodUrl(v.request_url)&&
+    sameSource(v.current_src,v.request_url)&&
+    v.network_final_identity_verified!==false&&
+    v.redirected_image_identity_unverified!==true)return 'loaded';
  if(v.result==='confirmed_broken_in_probe_browser'&&v.verified_broken_in_browser===true&&
     v.natural_width===0&&goodUrl(v.request_url)){
   if(typeof v.network_failure==='string'&&v.network_failure.trim()&&v.visual_failure_kind==='network_error')return 'broken';
