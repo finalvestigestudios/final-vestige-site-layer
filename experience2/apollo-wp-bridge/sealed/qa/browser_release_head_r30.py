@@ -9,8 +9,10 @@ from __future__ import annotations
 import argparse
 from hashlib import sha256
 import json
+import sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from qa.browser_exact import get_fixture, INIT
 
 WIDTHS=(320,360,390,768,1024,1440,1920)
