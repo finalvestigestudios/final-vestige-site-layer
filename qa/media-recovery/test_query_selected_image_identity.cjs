@@ -32,6 +32,12 @@ test('unknown selectors and signed tokens remain material',()=>{
  assert.equal(imageIdentity('https://historical.example.gov/image?key=abc&width=960'),
   'https://historical.example.gov/image?key=abc');
 });
+test('dynamic image endpoints preserve all query selectors including width',()=>{
+ assert.equal(sameSource('https://historical.example.gov/render?width=one',
+  'https://historical.example.gov/render?width=two'),false);
+ assert.equal(sameSource('https://historical.example.gov/render?key=a&width=100',
+  'https://historical.example.gov/render?key=a&width=200'),false);
+});
 test('canonical Commons filename and thumbnail match, different filenames do not',()=>{
  assert.equal(sameSource('https://commons.wikimedia.org/wiki/Special:Redirect/file/Photo_A.jpg?width=960',
   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Photo_A.jpg/960px-Photo_A.jpg'),true);
