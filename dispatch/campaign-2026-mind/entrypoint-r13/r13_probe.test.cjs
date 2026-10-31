@@ -23,6 +23,7 @@ test("A text input is not an email capture",()=>assert.equal(r(cleanForm.replace
 test("A form without a button is not accepted",()=>assert.equal(r(cleanForm.replace("<button>Join</button>","")).form_skeleton_present,false));
 test("Empty content is never marked as functional",()=>assert.equal(r("").form_skeleton_present,false));
 test("A simulated REST signup skeleton does not permit send",()=>assert.equal(r(cleanForm).send_authorized,false));
+test("A REST form skeleton cannot erase missing genuine-browser proof",()=>assert.ok(assessReadiness(snapshot(),r(cleanForm),c()).anomalies.includes("SIGNUP_RENDERING_BROWSER_PROOF_MISSING")));
 test("Original issue 05 mutable refund values flagged",()=>assert.ok(c(issue03,issue05+" Refunds within 14 days.").flags.includes("ISSUE05_VOLATILE_REFUND_NUMBERS_IN_DRAFT")));
 test("Original issue 05 catalog mismatch flagged",()=>assert.ok(c(issue03,issue05+" More than 200 programs.").flags.includes("ISSUE05_CATALOG_VS_TOTAL_FOCUS_SKU_MISMATCH")));
 test("Missing exact Total Focus comparison flagged",()=>assert.ok(c(issue03,"Hypnosis Live. Commercial disclosure: [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]").flags.includes("ISSUE05_NO_TOTAL_FOCUS_SKU_SPECIFIC_COMPARISON")));
