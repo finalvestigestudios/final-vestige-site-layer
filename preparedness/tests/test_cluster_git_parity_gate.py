@@ -16,7 +16,9 @@ import sys
 import tempfile
 import unittest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+HERE = Path(__file__).resolve().parent
+TOOLS = HERE.parent / 'tools' if (HERE.parent / 'tools' / 'cluster_git_parity_gate.py').is_file() else HERE
+sys.path.insert(0, str(TOOLS))
 import cluster_git_parity_gate as gate
 
 
