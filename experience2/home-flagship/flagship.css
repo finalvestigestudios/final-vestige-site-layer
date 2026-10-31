@@ -113,7 +113,7 @@
 .fv-hf__folio-original{position:relative;z-index:1;display:flex;flex-direction:column;gap:5px;margin:8px 0 0;padding-left:4px}
 .fv-hf__folio-original time{font:700 11px/1.4 var(--hf-mono);color:#70563a;letter-spacing:.1em}
 .fv-hf__folio-original strong{font:400 clamp(36px,3.2vw,53px)/1.03 var(--hf-serif);letter-spacing:-.035em;color:#29231a}
-.fv-hf__folio-original>span{font:700 9px/1.4 var(--hf-mono);letter-spacing:.09em;color:#827253}
+.fv-hf__folio-original>span{font:700 9px/1.4 var(--hf-mono);letter-spacing:.09em;color:#635032}
 .fv-hf__folio-margin{position:relative;z-index:1;margin-top:7px;border-top:1px solid rgba(108,80,45,.5);border-left:3px solid #986c39;padding:12px 0 0 14px;max-width:90%}
 .fv-hf__folio-margin span{display:block;font:800 9px/1.3 var(--hf-mono);letter-spacing:.05em;color:#6c4d2f}
 .fv-hf__folio-margin p{margin:5px 0 0;font:italic 400 clamp(17px,1.65vw,24px)/1.25 var(--hf-serif);color:#322516}

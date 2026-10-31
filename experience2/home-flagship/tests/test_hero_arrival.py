@@ -14,6 +14,17 @@ class ArrivalTests(unittest.TestCase):
     def test_source_grounded_not_facsimile(self):
         for s in ("THE VICTORY POINT NOTE","28 MAY 1847","APRIL 1848","EDITORIAL TYPESETTING","NOT A FACSIMILE","rmg.co.uk/collections/objects/rmgc-object-504898"):
             self.assertIn(s,self.html)
+    def test_paper_caption_color_meets_wcag_aa(self):
+        # Small 9px archival labels must meet 4.5:1, not merely large-text AA.
+        def luminance(hexcode):
+            values = [int(hexcode[i:i+2],16)/255 for i in (1,3,5)]
+            linear = [v/12.92 if v<=.04045 else ((v+0.055)/1.055)**2.4 for v in values]
+            return sum(v*w for v,w in zip(linear, (0.2126,0.7152,0.0722)))
+        light=luminance("#e3d7bc")
+        muted=luminance("#635032")
+        self.assertGreaterEqual((light+0.05)/(muted+0.05),4.5)
+        self.assertIn("color:#635032",self.css)
+
     def test_hero_has_no_new_third_party_media(self):
         self.assertEqual(len(re.findall(r"<img\b",self.html)),3)
         self.assertEqual(len(re.findall(r"<script\b[^>]*\bsrc=",self.html)),4)
