@@ -75,3 +75,55 @@ test('rejects false claim of received WordPress MIME',()=>withFixture(d=>{
  withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[1].actual_received_mime='PASS');
  assert.equal(run(d).status,1);
 }));
+
+
+// R11 review-board provenance mutations: no review row can silently drift
+// away from the six original manuscript/excerpt sources.
+test('rejects parity subject changed without changing actual email subject',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[0].subject='An unrelated headline');
+ assert.equal(run(d).status,1);
+}));
+test('rejects a fabricated native preheader',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[1].actual_native_preheader='CONFIRMED');
+ assert.equal(run(d).status,1);
+}));
+test('rejects parity preheader drift',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[2].preheader_plan='Not the manuscript plan');
+ assert.equal(run(d).status,1);
+}));
+test('rejects altered review excerpt not matching the proposed copy',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[2].proposed_custom_excerpt_NOT_APPLIED='A shortened and misleading promotional claim');
+ assert.equal(run(d).status,1);
+}));
+test('rejects review row allocating a third commercial email',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[3].kind='commercial-review-pending');
+ assert.equal(run(d).status,1);
+}));
+test('rejects a false published warm-up destination displayed in review board',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[4].original_editorial_cta='https://finalvestige.com/mind/live-zen12/');
+ assert.equal(run(d).status,1);
+}));
+test('rejects duplicate parity issue numbers masking a missing issue',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[5].number=5);
+ assert.equal(run(d).status,1);
+}));
+test('rejects a false read-more proof',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[0].actual_read_more='VERIFIED');
+ assert.equal(run(d).status,1);
+}));
+test('rejects a false physical-address footer verification',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[4].actual_postal_footer='VERIFIED');
+ assert.equal(run(d).status,1);
+}));
+test('rejects false receipt proof for welcome message',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.site.welcome_delivered='VERIFIED');
+ assert.equal(run(d).status,1);
+}));
+test('rejects unearned founder and affiliate permissions',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>{x.all_issues_send_approval=true;x.commercial_offer_permissions='APPROVED';});
+ assert.equal(run(d).status,1);
+}));
+test('rejects unsubscribe verification claim with no native MIME evidence',()=>withFixture(d=>{
+ withJSON(d,'native-email-contract/NATIVE_DELIVERY_PARITY.json',x=>x.rows[3].actual_unsubscribe='VERIFIED');
+ assert.equal(run(d).status,1);
+}));
