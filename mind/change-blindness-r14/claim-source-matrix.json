@@ -1,0 +1,479 @@
+{
+  "checked_date": "2026-10-31",
+  "status": "UNPUBLISHED_DRAFT_HOLD",
+  "account_authorization": {
+    "approved": false,
+    "authorized_affiliate_url": null,
+    "sku": null,
+    "commission": null,
+    "email_channel_permission": null,
+    "creative_rights": null,
+    "checkout_terms_verified_for_promotion": false
+  },
+  "sources": [
+    {
+      "id": "R97",
+      "title": "Rensink et al. 1997 flicker changes",
+      "url": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1997.tb00427.x/",
+      "type": "peer review"
+    },
+    {
+      "id": "L97",
+      "title": "Levin Simons 1997 film continuity",
+      "url": "https://experts.illinois.edu/en/publications/failure-to-detect-changes-to-attended-objects-in-motion-pictures/",
+      "type": "peer review"
+    },
+    {
+      "id": "SL98",
+      "title": "Simons Levin 1998 door study",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "type": "peer review"
+    },
+    {
+      "id": "SR05",
+      "title": "Simons Rensink 2005 cautions",
+      "url": "https://www2.psych.ubc.ca/~rensink/flicker/abs.05.0a.html",
+      "type": "review"
+    },
+    {
+      "id": "SA05",
+      "title": "Simons Ambinder 2005 review",
+      "url": "https://www.psychologicalscience.org/journals/current-directions/j.0963-7214.2005.00332.x/",
+      "type": "review"
+    },
+    {
+      "id": "Z24",
+      "title": "Zainal Newman 2024 mindfulness meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+      "type": "systematic review"
+    },
+    {
+      "id": "NIH",
+      "title": "NCCIH meditation evidence and safety",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "type": "government"
+    },
+    {
+      "id": "I3",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "type": "merchant"
+    },
+    {
+      "id": "ZA",
+      "title": "Zen12 about exact product",
+      "url": "https://zen12.com/about",
+      "type": "merchant"
+    },
+    {
+      "id": "ZC",
+      "title": "Zen12 checkout exact product",
+      "url": "https://zen12.com/getstarted",
+      "type": "merchant"
+    },
+    {
+      "id": "AFF",
+      "title": "Inspire3 public recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "merchant public"
+    },
+    {
+      "id": "FE",
+      "title": "FTC endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator"
+    },
+    {
+      "id": "FH",
+      "title": "FTC health-product substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator"
+    },
+    {
+      "id": "FOCUS",
+      "title": "Published Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first-party live"
+    },
+    {
+      "id": "PUY",
+      "title": "Published Puységur Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first-party live"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R14-01",
+      "claim": "Door study substituted conversation partner behind obstruction",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "SL98"
+      ],
+      "rationale": "Do not invent dialogue or universal rate"
+    },
+    {
+      "id": "R14-02",
+      "claim": "Some people failed to report the replacement",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "SL98"
+      ],
+      "rationale": "Field context"
+    },
+    {
+      "id": "R14-03",
+      "claim": "Everyone always misses changes to people",
+      "status": "REJECTED",
+      "source_ids": [
+        "SL98"
+      ],
+      "rationale": "Universal claim unsupported"
+    },
+    {
+      "id": "R14-04",
+      "claim": "Door study invalidates all eyewitness testimony",
+      "status": "REJECTED",
+      "source_ids": [
+        "SL98",
+        "SR05"
+      ],
+      "rationale": "No such external validity"
+    },
+    {
+      "id": "R14-05",
+      "claim": "The 1997 flicker paper used blank intervals between scene versions",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "R97"
+      ],
+      "rationale": "Primary method"
+    },
+    {
+      "id": "R14-06",
+      "claim": "Large picture changes could be difficult to identify",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "R97"
+      ],
+      "rationale": "Specific conditions"
+    },
+    {
+      "id": "R14-07",
+      "claim": "Verbal cue improved detection speed",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "R97"
+      ],
+      "rationale": "Original study"
+    },
+    {
+      "id": "R14-08",
+      "claim": "Important objects were detected more readily",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "R97"
+      ],
+      "rationale": "Original study"
+    },
+    {
+      "id": "R14-09",
+      "claim": "Change blindness proves absolutely no scene representation is stored",
+      "status": "REJECTED",
+      "source_ids": [
+        "SR05",
+        "SA05"
+      ],
+      "rationale": "Extreme interpretation"
+    },
+    {
+      "id": "R14-10",
+      "claim": "Film cuts can hide changes to attended objects",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "L97"
+      ],
+      "rationale": "Original film experiment"
+    },
+    {
+      "id": "R14-11",
+      "claim": "All movie mistakes are invisible",
+      "status": "REJECTED",
+      "source_ids": [
+        "L97"
+      ],
+      "rationale": "Unjustified"
+    },
+    {
+      "id": "R14-12",
+      "claim": "Encoding retention and comparison processes may contribute",
+      "status": "QUALIFIED",
+      "source_ids": [
+        "SA05"
+      ],
+      "rationale": "Alternative mechanisms"
+    },
+    {
+      "id": "R14-13",
+      "claim": "Our static text exercise is a validated psychological diagnosis",
+      "status": "REJECTED",
+      "source_ids": [
+        "R97"
+      ],
+      "rationale": "Uncontrolled editorial example"
+    },
+    {
+      "id": "R14-14",
+      "claim": "Change-blindness tests in this article validate therapy",
+      "status": "REJECTED",
+      "source_ids": [
+        "SL98"
+      ],
+      "rationale": "Never tested therapy"
+    },
+    {
+      "id": "R14-15",
+      "claim": "Simons Rensink 2005 warned against exaggerated inferences",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "SR05"
+      ],
+      "rationale": "Review"
+    },
+    {
+      "id": "R14-16",
+      "claim": "2024 mindfulness meta-analysis covered 111 RCTs and 9538 people",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "Z24"
+      ],
+      "rationale": "Abstract"
+    },
+    {
+      "id": "R14-17",
+      "claim": "Mindfulness interventions may produce some small-to-moderate cognitive effects",
+      "status": "QUALIFIED",
+      "source_ids": [
+        "Z24"
+      ],
+      "rationale": "Not all domains; heterogeneity"
+    },
+    {
+      "id": "R14-18",
+      "claim": "Mindfulness interventions improve all cognitive domains",
+      "status": "REJECTED",
+      "source_ids": [
+        "Z24"
+      ],
+      "rationale": "Some null findings"
+    },
+    {
+      "id": "R14-19",
+      "claim": "Mindfulness results prove product-specific Zen12 outcomes",
+      "status": "REJECTED",
+      "source_ids": [
+        "Z24",
+        "ZA"
+      ],
+      "rationale": "No exact product comparison"
+    },
+    {
+      "id": "R14-20",
+      "claim": "NCCIH defines multiple different meditation practices",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "NIH"
+      ],
+      "rationale": "Federal overview"
+    },
+    {
+      "id": "R14-21",
+      "claim": "Meditation is risk-free for all participants",
+      "status": "REJECTED",
+      "source_ids": [
+        "NIH"
+      ],
+      "rationale": "Safety evidence incomplete"
+    },
+    {
+      "id": "R14-22",
+      "claim": "Inspire3 officially lists Zen12",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "I3"
+      ],
+      "rationale": "Merchant catalog"
+    },
+    {
+      "id": "R14-23",
+      "claim": "Seller offers twelve levels",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "ZA"
+      ],
+      "rationale": "Seller-stated format"
+    },
+    {
+      "id": "R14-24",
+      "claim": "Seller offers twelve-minute sessions",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "ZA"
+      ],
+      "rationale": "Seller-stated format"
+    },
+    {
+      "id": "R14-25",
+      "claim": "Seller lists music guided white-noise and nature styles",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "ZA"
+      ],
+      "rationale": "Seller-stated format"
+    },
+    {
+      "id": "R14-26",
+      "claim": "Checkout advertises 48 MP3s in package",
+      "status": "QUALIFIED",
+      "source_ids": [
+        "ZC"
+      ],
+      "rationale": "Current and subject to change"
+    },
+    {
+      "id": "R14-27",
+      "claim": "Twelve minutes produces one-hour equivalent measurable benefit",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "ZA"
+      ],
+      "rationale": "Seller claim unsubstantiated"
+    },
+    {
+      "id": "R14-28",
+      "claim": "Specific recording automatically produces beneficial brainwave changes",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "ZA"
+      ],
+      "rationale": "Seller claim unsubstantiated"
+    },
+    {
+      "id": "R14-29",
+      "claim": "Zen12 guarantees erasure of anxiety",
+      "status": "REJECTED",
+      "source_ids": [
+        "ZA",
+        "FH"
+      ],
+      "rationale": "No appropriate independent product evidence"
+    },
+    {
+      "id": "R14-30",
+      "claim": "Final Vestige has listened to and reviewed the paid files",
+      "status": "REJECTED",
+      "source_ids": [],
+      "rationale": "Not tested"
+    },
+    {
+      "id": "R14-31",
+      "claim": "Current price discount and countdown are stable for evergreen copy",
+      "status": "REJECTED",
+      "source_ids": [
+        "ZC"
+      ],
+      "rationale": "Mutable checkout"
+    },
+    {
+      "id": "R14-32",
+      "claim": "A refund guarantee has been independently tested by Final Vestige",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "ZC"
+      ],
+      "rationale": "No testing"
+    },
+    {
+      "id": "R14-33",
+      "claim": "All session transcripts and accessibility features have been verified",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "ZA",
+        "ZC"
+      ],
+      "rationale": "Not established"
+    },
+    {
+      "id": "R14-34",
+      "claim": "Inspire3 public affiliate recruitment exists",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "AFF"
+      ],
+      "rationale": "Recruitment only"
+    },
+    {
+      "id": "R14-35",
+      "claim": "Recruitment proves our account approved for Zen12",
+      "status": "REJECTED",
+      "source_ids": [
+        "AFF"
+      ],
+      "rationale": "Need written acceptance"
+    },
+    {
+      "id": "R14-36",
+      "claim": "Email channel/creative-use permission is confirmed",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "AFF"
+      ],
+      "rationale": "Private channel terms missing"
+    },
+    {
+      "id": "R14-37",
+      "claim": "FTC expects clear conspicuous near-link commission disclosure",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "FE"
+      ],
+      "rationale": "Proximity"
+    },
+    {
+      "id": "R14-38",
+      "claim": "Generic disclosure page always sufficient alone",
+      "status": "REJECTED",
+      "source_ids": [
+        "FE"
+      ],
+      "rationale": "FTC rejects distant-only assumptions"
+    },
+    {
+      "id": "R14-39",
+      "claim": "Health-related efficacy claims require appropriate substantiation",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "FH"
+      ],
+      "rationale": "Product specific"
+    },
+    {
+      "id": "R14-40",
+      "claim": "Published Focus is existing single Jetpack lead path",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "rationale": "Read-only WP page 1579"
+    },
+    {
+      "id": "R14-41",
+      "claim": "Puységur research page is live historic source bridge",
+      "status": "SUPPORTED",
+      "source_ids": [
+        "PUY"
+      ],
+      "rationale": "Read-only WP page 1377"
+    }
+  ]
+}
