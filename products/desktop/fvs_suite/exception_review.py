@@ -12,6 +12,7 @@ import hmac
 import io
 import json
 import os
+import unicodedata
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -145,14 +146,31 @@ def read_cases(report: str | Path, product: str) -> ReportBatch:
     return ReportBatch(product, digest, tuple(cases))
 
 
+def _unsafe_review_character(character: str) -> bool:
+    """Reject invisible text that could spoof a human's audit identity or note.
+
+    Keep readable multilingual letters and combining accents. Reject Unicode
+    controls, directional formatting, surrogate halves, hidden grapheme
+    joiners, and variation selectors without normalizing accepted text.
+    """
+    codepoint = ord(character)
+    return (
+        unicodedata.category(character) in ("Cc", "Cf", "Cs", "Zl", "Zp")
+        or codepoint == 0x034F  # Combining Grapheme Joiner (invisible Mn).
+        or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors.
+        or 0xFE00 <= codepoint <= 0xFE0F
+        or 0xE0100 <= codepoint <= 0xE01EF
+    )
+
+
 def _text(value: str, name: str, minimum: int, maximum: int) -> str:
     if not isinstance(value, str):
         raise ValueError(f"{name} must be text")
     result = value.strip()
     if len(result) < minimum or len(result) > maximum:
         raise ValueError(f"{name} must be between {minimum} and {maximum} characters")
-    if any(ord(char) < 32 or ord(char) == 127 for char in result):
-        raise ValueError(f"{name} cannot contain control characters")
+    if any(_unsafe_review_character(character) for character in result):
+        raise ValueError(f"{name} cannot contain hidden or control Unicode characters")
     return result
 
 
