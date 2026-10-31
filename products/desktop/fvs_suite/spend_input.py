@@ -15,6 +15,12 @@ MAX_SPEND_ROWS = 200_000  # Mirrors the bounded shared financial CSV reader.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
 _VENDOR_KEY = re.compile(r"[A-Z0-9]+\Z", re.ASCII)
 _MAX_SPEND_AMOUNT = Decimal("1000000000000")
+# Match the lexical envelope of the shared financial CSV reader. Extreme
+# Decimal zero exponents can bypass a value-only range/cent check, then turn
+# into huge fixed-point review strings (or produce attacker-sized coefficients).
+_MAX_SPEND_DIGITS = 80
+_MIN_SPEND_EXPONENT = -80
+_MAX_SPEND_EXPONENT = 12
 _CENT = Decimal("0.01")
 
 
@@ -82,6 +88,23 @@ def validated_spend_rows(
         # custom parser cannot bypass the 64-digit aggregation safety bound.
         if amount.copy_abs() > _MAX_SPEND_AMOUNT:
             raise ValueError(f"Spend amount exceeds permitted range at physical row {physical_row}")
+        # A Decimal may be numerically zero while carrying an extreme exponent
+        # or a very large trailing-zero coefficient. Check its representation
+        # *before* quantization; no strings, unbounded formatting or rounding.
+        parts = amount.as_tuple()
+        if (len(parts.digits) > _MAX_SPEND_DIGITS
+                or not _MIN_SPEND_EXPONENT <= parts.exponent <= _MAX_SPEND_EXPONENT):
+            raise ValueError(
+                f"Spend amount has unsupported numeric representation at physical row {physical_row}")
+        if parts.exponent < 0 and any(parts.digits):
+            trailing = 0
+            for digit in reversed(parts.digits):
+                if digit:
+                    break
+                trailing += 1
+            if -parts.exponent - trailing > 2:
+                raise ValueError(
+                    f"Spend amount must have cent precision at physical row {physical_row}")
         try:
             # Direct helper callers may have a low/trapping Decimal context;
             # check cent equivalence under a private fixed-point context.
