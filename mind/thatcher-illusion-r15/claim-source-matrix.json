@@ -1,0 +1,726 @@
+{
+  "project": "Final Vestige Studios / Mind & Perception R15",
+  "reviewed_at": "2026-10-31",
+  "publication_state": "UNPUBLISHED_SOURCE_ONLY",
+  "scope": "Thatcher illusion original research + exact Zen12 guide; seller statements not independently validated",
+  "merchant_approval": {
+    "account_accepted_verified": false,
+    "exact_sku_eligible_verified": false,
+    "approved_tracking_url": null,
+    "approved_email_rights": null,
+    "approved_creative_rights": null,
+    "prices_published": false,
+    "conversion_tracking_enabled": false
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "type": "research",
+      "title": "Thompson 1980, Margaret Thatcher: A New Illusion",
+      "url": "https://doi.org/10.1068/p090483",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S02",
+      "type": "archive",
+      "title": "University of York Thompson record",
+      "url": "https://eprints.whiterose.ac.uk/id/eprint/115530/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S03",
+      "type": "research",
+      "title": "Yin 1969, Looking at upside-down faces",
+      "url": "https://doi.org/10.1037/h0027474",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S04",
+      "type": "research",
+      "title": "Valentine & Bruce 1985, Thatcher revisited",
+      "url": "https://doi.org/10.1068/p140515",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S05",
+      "type": "research",
+      "title": "Lewis & Johnston 1997, configural disruption",
+      "url": "https://doi.org/10.1068/p260225",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S06",
+      "type": "research",
+      "title": "Wong et al. 2010, faces and non-face objects",
+      "url": "https://doi.org/10.1068/p6659",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S07",
+      "type": "research",
+      "title": "Cornes et al. 2011, perceptual and decisional",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21639673/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S08",
+      "type": "research",
+      "title": "Leo & Simion 2009, newborn discrimination",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19371374/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S09",
+      "type": "research",
+      "title": "Bruyer 2011, configural face meta-analysis",
+      "url": "https://doi.org/10.1068/p6928",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S10",
+      "type": "research",
+      "title": "Psalta et al. 2014, facial-expression fMRI",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S11",
+      "type": "research",
+      "title": "Garcia-Argibay et al. 2019, beats meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S12",
+      "type": "research",
+      "title": "Ingendoh et al. 2023, EEG entrainment review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S13",
+      "type": "official_merchant",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S14",
+      "type": "official_merchant",
+      "title": "Zen12 official About",
+      "url": "https://zen12.com/about",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S15",
+      "type": "official_merchant",
+      "title": "Zen12 exact checkout / package",
+      "url": "https://zen12.com/getstarted",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S16",
+      "type": "public_recruitment",
+      "title": "Inspire3 public affiliate network",
+      "url": "https://affiliates.inspire3.com/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S17",
+      "type": "regulator",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S18",
+      "type": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S19",
+      "type": "independent_health_info",
+      "title": "NCCIH meditation and mindfulness",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S20",
+      "type": "first_party_live",
+      "title": "Existing Focus Fieldbook / single Jetpack route",
+      "url": "https://finalvestige.com/focus/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S21",
+      "type": "first_party_live",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S22",
+      "type": "first_party_live",
+      "title": "Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    },
+    {
+      "id": "S23",
+      "type": "first_party_live",
+      "title": "Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "verification": "web/WordPress read-only 2026-10-31; check live terms again before release"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C001",
+      "claim": "Thompson's original article appeared in 1980",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S01",
+        "S02"
+      ],
+      "editorial_limit": "Precisely the original bibliographic date"
+    },
+    {
+      "id": "C002",
+      "claim": "Thompson's original photo was Margaret Thatcher",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S01"
+      ],
+      "editorial_limit": "Do not reproduce copyrighted primary image"
+    },
+    {
+      "id": "C003",
+      "claim": "Thatcher manipulation flips eyes and mouth locally",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S01",
+        "S05"
+      ],
+      "editorial_limit": "Illustrative CSS is not copyrighted original"
+    },
+    {
+      "id": "C004",
+      "claim": "Inverting whole face reduces salience of some local inversions",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S01",
+        "S05"
+      ],
+      "editorial_limit": "Depends on stimuli and task"
+    },
+    {
+      "id": "C005",
+      "claim": "Original illusion is a clinical test",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S01",
+        "S07"
+      ],
+      "editorial_limit": "Never state"
+    },
+    {
+      "id": "C006",
+      "claim": "An inversion effect proves suppression of perception",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S01",
+        "S07"
+      ],
+      "editorial_limit": "Never state"
+    },
+    {
+      "id": "C007",
+      "claim": "Yin compared face recognition to other oriented objects",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S03"
+      ],
+      "editorial_limit": "Distinct memory paradigm"
+    },
+    {
+      "id": "C008",
+      "claim": "Face inversion disproportionately affected recognition in Yin's tasks",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S03"
+      ],
+      "editorial_limit": "No universal claim"
+    },
+    {
+      "id": "C009",
+      "claim": "Valentine and Bruce revisited Thatcher illusion in 1985",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S04"
+      ],
+      "editorial_limit": "Bibliographic claim"
+    },
+    {
+      "id": "C010",
+      "claim": "1997 Lewis and Johnston used speeded local-feature judgments",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S05"
+      ],
+      "editorial_limit": "Abstract-level support"
+    },
+    {
+      "id": "C011",
+      "claim": "Photographic negatives slowed response in 1997 experiment",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S05"
+      ],
+      "editorial_limit": "Contextual qualifier"
+    },
+    {
+      "id": "C012",
+      "claim": "2010 Wong et al studied faces and non-face objects",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S06"
+      ],
+      "editorial_limit": "Cars buildings bikes letters"
+    },
+    {
+      "id": "C013",
+      "claim": "2010 non-face categories showed Thatcher-like effects",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S06"
+      ],
+      "editorial_limit": "Does not settle all face specificity"
+    },
+    {
+      "id": "C014",
+      "claim": "Only faces can exhibit Thatcher effect",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S06"
+      ],
+      "editorial_limit": "Contradicted by tested non-face categories"
+    },
+    {
+      "id": "C015",
+      "claim": "2011 Cornes compared perceptual and decisional factors",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S07"
+      ],
+      "editorial_limit": "Do not invent magnitude or condition results"
+    },
+    {
+      "id": "C016",
+      "claim": "2009 newborns discriminated altered faces upright in habituation task",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S08"
+      ],
+      "editorial_limit": "Researchers' behavioral inference"
+    },
+    {
+      "id": "C017",
+      "claim": "2009 newborns failed discrimination when stimuli inverted",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S08"
+      ],
+      "editorial_limit": "Do not equate with complete absence of processing"
+    },
+    {
+      "id": "C018",
+      "claim": "Newborns consciously see grotesque faces like adults",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S08"
+      ],
+      "editorial_limit": "Cannot infer subjective experience"
+    },
+    {
+      "id": "C019",
+      "claim": "2011 meta-analysis supported broader configural processing literature",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S09"
+      ],
+      "editorial_limit": "Not exclusive neural module"
+    },
+    {
+      "id": "C020",
+      "claim": "2014 fMRI reported orientation-related STS adaptation difference",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S10"
+      ],
+      "editorial_limit": "BOLD proxy not private thoughts"
+    },
+    {
+      "id": "C021",
+      "claim": "Thatcher effect measures psychological manipulation susceptibility",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S01",
+        "S07"
+      ],
+      "editorial_limit": "Not a diagnostic"
+    },
+    {
+      "id": "C022",
+      "claim": "Original CSS exhibit faithfully reproduces psychophysical effect",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S01"
+      ],
+      "editorial_limit": "Explicitly schematic not tested"
+    },
+    {
+      "id": "C023",
+      "claim": "CSS exercise includes no scoring or diagnostics",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S01"
+      ],
+      "editorial_limit": "Inspect static markup"
+    },
+    {
+      "id": "C024",
+      "claim": "Inspire3 owns Zen12 offering according to official catalog",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S13"
+      ],
+      "editorial_limit": "Seller identity/catalog"
+    },
+    {
+      "id": "C025",
+      "claim": "Zen12 offers twelve levels",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "Verify exact offer before release"
+    },
+    {
+      "id": "C026",
+      "claim": "Zen12 sessions are twelve minutes",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "Seller format not independently tested"
+    },
+    {
+      "id": "C027",
+      "claim": "Zen12 offers relaxation music style",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "No acoustic audit"
+    },
+    {
+      "id": "C028",
+      "claim": "Zen12 offers guided meditation style",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "No acoustic audit"
+    },
+    {
+      "id": "C029",
+      "claim": "Zen12 offers white noise style",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "No acoustic audit"
+    },
+    {
+      "id": "C030",
+      "claim": "Zen12 offers nature-sounds style",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "No acoustic audit"
+    },
+    {
+      "id": "C031",
+      "claim": "Zen12 order page describes forty-eight MP3s",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S15"
+      ],
+      "editorial_limit": "Bundle contents claimed seller only"
+    },
+    {
+      "id": "C032",
+      "claim": "Zen12 merchant says buyers do not need headphones",
+      "disposition": "merchant_described",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "No independent verification of synthesis"
+    },
+    {
+      "id": "C033",
+      "claim": "Zen12 equals an hour of meditation in twelve minutes",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S14",
+        "S11",
+        "S12",
+        "S19"
+      ],
+      "editorial_limit": "Seller claim not product-specific proven"
+    },
+    {
+      "id": "C034",
+      "claim": "Zen12 automatically erases all anxiety immediately",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S14",
+        "S19"
+      ],
+      "editorial_limit": "Do not market as true"
+    },
+    {
+      "id": "C035",
+      "claim": "Zen12 entrains brains reliably to advertised states",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S14",
+        "S12"
+      ],
+      "editorial_limit": "No product-specific EEG trials found in cited sources"
+    },
+    {
+      "id": "C036",
+      "claim": "Zen12 guaranteed mental health improvement",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S14",
+        "S19",
+        "S18"
+      ],
+      "editorial_limit": "Prohibited promotional wording"
+    },
+    {
+      "id": "C037",
+      "claim": "Twenty-two-study meta-analysis pooled binaural beats outcomes",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S11"
+      ],
+      "editorial_limit": "Not tests of Zen12"
+    },
+    {
+      "id": "C038",
+      "claim": "2019 meta-analysis reported overall g about 0.45",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S11"
+      ],
+      "editorial_limit": "Mixed outcomes and heterogeneous protocols"
+    },
+    {
+      "id": "C039",
+      "claim": "2019 meta-analysis validates Zen12's twelve-minute promise",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S11",
+        "S14"
+      ],
+      "editorial_limit": "Absolutely no product trial here"
+    },
+    {
+      "id": "C040",
+      "claim": "2023 EEG review included fourteen studies",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S12"
+      ],
+      "editorial_limit": "Five consistent eight contradictory one mixed"
+    },
+    {
+      "id": "C041",
+      "claim": "2023 EEG evidence is methodologically inconsistent",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S12"
+      ],
+      "editorial_limit": "Do not say proved impossible"
+    },
+    {
+      "id": "C042",
+      "claim": "Any binaural beat always entrains the brain",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S12"
+      ],
+      "editorial_limit": "Contradicts heterogeneous study findings"
+    },
+    {
+      "id": "C043",
+      "claim": "NCCIH mindfulness overview covers diverse interventions",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S19"
+      ],
+      "editorial_limit": "No direct product validation"
+    },
+    {
+      "id": "C044",
+      "claim": "Testimonials on Zen12 checkout independently verified",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S15"
+      ],
+      "editorial_limit": "Do not pass on as independent proof"
+    },
+    {
+      "id": "C045",
+      "claim": "Current Zen12 refund policy is independently audited",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S15"
+      ],
+      "editorial_limit": "Check exact current policy; no fixed numeric quote"
+    },
+    {
+      "id": "C046",
+      "claim": "Our affiliate account is accepted and earning link authorized",
+      "disposition": "requires_permission",
+      "supporting_sources": [
+        "S16"
+      ],
+      "editorial_limit": "Not verified; set false"
+    },
+    {
+      "id": "C047",
+      "claim": "Inspire3 recruitment public page proves private approval",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S16"
+      ],
+      "editorial_limit": "Never infer"
+    },
+    {
+      "id": "C048",
+      "claim": "Affiliate earning links require conspicuous near-link disclosure",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S17"
+      ],
+      "editorial_limit": "Plain commission disclosure next to CTA"
+    },
+    {
+      "id": "C049",
+      "claim": "Medical or psychological benefit claims require adequate substantiation",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S18"
+      ],
+      "editorial_limit": "FTC guidance applies to advertising"
+    },
+    {
+      "id": "C050",
+      "claim": "Commission or price figures may be inferred from recruiting page",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S16"
+      ],
+      "editorial_limit": "Never report as contract terms"
+    },
+    {
+      "id": "C051",
+      "claim": "Existing Focus Fieldbook is published at /focus/",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S20"
+      ],
+      "editorial_limit": "Authenticated WP read only"
+    },
+    {
+      "id": "C052",
+      "claim": "Existing Puységur archive is published",
+      "disposition": "independently_supported",
+      "supporting_sources": [
+        "S21"
+      ],
+      "editorial_limit": "Authenticated WP read only"
+    },
+    {
+      "id": "C053",
+      "claim": "New Jetpack signup needed for Mind visitors",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S20"
+      ],
+      "editorial_limit": "Keep existing single funnel"
+    },
+    {
+      "id": "C054",
+      "claim": "New Thatcher article has a live published URL",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S20"
+      ],
+      "editorial_limit": "Source-only; unpublished"
+    },
+    {
+      "id": "C055",
+      "claim": "Zen12 pilot video's conversion uplift is established",
+      "disposition": "not_substantiated",
+      "supporting_sources": [
+        "S14"
+      ],
+      "editorial_limit": "Hypothesis only, no experiment"
+    },
+    {
+      "id": "C056",
+      "claim": "Video branch can autoplay or upload remote media without approval",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S17"
+      ],
+      "editorial_limit": "Prohibited by brief/a11y/perf gate"
+    },
+    {
+      "id": "C057",
+      "claim": "First-party visitor event tracking may run by default",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S17"
+      ],
+      "editorial_limit": "OFF pending privacy and approval gates"
+    },
+    {
+      "id": "C058",
+      "claim": "Consent-safe analytics can record order/customer IDs",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S17"
+      ],
+      "editorial_limit": "Prohibited PII/PII-like identifiers"
+    },
+    {
+      "id": "C059",
+      "claim": "Brand editorial conclusions are affected by commissions",
+      "disposition": "editorial_policy",
+      "supporting_sources": [
+        "S22",
+        "S23"
+      ],
+      "editorial_limit": "Keep independence and disclosures"
+    }
+  ]
+}
