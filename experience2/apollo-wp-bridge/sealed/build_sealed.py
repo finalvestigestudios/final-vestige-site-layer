@@ -95,6 +95,7 @@ def build(out: Path) -> dict:
         'source_match_all_12_blob_pins': True,
         'nasa_catalog_witness': nasa_receipt,
         'source_concordance': concordance_receipt,
+        'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',
                          'evidence_records','response_records','csv_json_parity')},
@@ -109,6 +110,7 @@ def build(out: Path) -> dict:
                                'axe-core and screen-reader testing not yet certified',
                                'Exact WordPress staging HTTP/cookies and real-user CWV needed',
                                'NASA media rights per item and independent QD',
+                               'PR158 catalog identifier-label mismatch for crew portrait must be independently reviewed',
                                'No main or homepage merges without separate approval'],
     }
     members = {

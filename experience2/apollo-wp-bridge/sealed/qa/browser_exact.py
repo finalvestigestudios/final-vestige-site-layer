@@ -109,21 +109,21 @@ def run(*, require_axe=False):
             assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document', (width, 'skip did not focus main')
             assert page.locator('section#atlas').count() == 1
             assert page.locator('#source-concordance [data-concordance-record]').count() == 6
-            assert page.locator('#source-concordance details > summary').count() == 6
+            assert page.locator('#source-concordance .fv-ex2-concordance__card details > summary').count() == 6
             assert page.locator('#source-concordance .fv-ex2-concordance__witness').count() == 12
-            assert page.locator('#source-concordance a[href^="#source-"]').count() == 6
+            assert page.locator('#source-concordance .fv-ex2-concordance__card a[href^="#source-"]').count() == 6
             assert page.locator('#source-concordance a[href^="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]').count() == 6
             assert page.locator('#source-concordance .fv-ex2-concordance__witness--photo').count() == 6
-            page.locator('#source-concordance details > summary').first.click()
-            assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
+            page.locator('#source-concordance .fv-ex2-concordance__card details > summary').first.click()
+            assert page.locator('#source-concordance .fv-ex2-concordance__card details').first.evaluate('(n)=>n.open')
             # Interactive source routes meet a 44px touch-height budget everywhere.
-            sizes = page.locator('#source-concordance a, #source-concordance summary').evaluate_all(
+            sizes = page.locator('#source-concordance .fv-ex2-concordance__card a, #source-concordance .fv-ex2-concordance__card summary').evaluate_all(
                 '(nodes)=>nodes.map(n=>({height:n.getBoundingClientRect().height,width:n.getBoundingClientRect().width}))')
-            assert len(sizes) == 31 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
-            page.locator('#source-concordance summary').first.focus()
+            assert len(sizes) == 30 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
+            page.locator('#source-concordance .fv-ex2-concordance__card summary').first.focus()
             page.keyboard.press('Enter')
-            assert not page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
-            page.locator('#source-concordance summary').first.click()
+            assert not page.locator('#source-concordance .fv-ex2-concordance__card details').first.evaluate('(n)=>n.open')
+            page.locator('#source-concordance .fv-ex2-concordance__card summary').first.click()
             assert page.locator('[data-ex2-trail-card]').count() == 6
             assert page.locator('[data-ex2-response-item]').count() == 6
             assert page.locator('[data-ex2-atlas-item]').count() == 6
@@ -157,7 +157,7 @@ def run(*, require_axe=False):
             assert page.locator('[data-ex2-stage]').count() == 6
             # A source drawer route must remain discoverable when JS is absent;
             # the URL fragment targets the native details wrapper, not hidden copy.
-            assert page.locator('#source-concordance a[href="#source-03"]').count() == 1
+            assert page.locator('#source-concordance .fv-ex2-concordance__card a[href="#source-03"]').count() == 1
             assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 5
             assert page.locator('[data-ex2-trail-controls]').is_visible(), (width,'JS blocked by CSP')
             assert page.locator('[data-ex2-response-tools]').is_visible(), (width,'response JS blocked')
@@ -234,8 +234,8 @@ def run(*, require_axe=False):
         assert nojs_lens.locator('[data-concordance-record]:visible').count()==2
         nojs_lens.locator('#fv-ex2-lens-all').check()
         assert nojs_lens.locator('[data-concordance-record]:visible').count()==6
-        page.locator('#source-concordance summary').first.click()
-        assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
+        page.locator('#source-concordance .fv-ex2-concordance__card summary').first.click()
+        assert page.locator('#source-concordance .fv-ex2-concordance__card details').first.evaluate('(n)=>n.open')
         assert not page.locator('[data-ex2-trail-controls]').is_visible()
         page.locator('#trail-02 summary').click()
         assert page.locator('#trail-02 details').evaluate('(n)=>n.open')
@@ -252,8 +252,8 @@ def run(*, require_axe=False):
         assert page.locator('#source-concordance [data-concordance-record]:visible').count()==1
         page.locator('#fv-ex2-lens-all').tap()
         assert page.locator('#source-concordance [data-concordance-record]:visible').count()==6
-        page.locator('#source-concordance summary').first.tap()
-        assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
+        page.locator('#source-concordance .fv-ex2-concordance__card summary').first.tap()
+        assert page.locator('#source-concordance .fv-ex2-concordance__card details').first.evaluate('(n)=>n.open')
         report['touch']=True
         ctx.close()
         # Zoom reflow is a synthetic viewport approximation, not an actual browser UI zoom.

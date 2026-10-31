@@ -11,6 +11,7 @@ from html import escape
 import json
 from pathlib import Path
 from urllib.parse import urlsplit
+from qa.research_desk_crosswalk import build_crosswalk, CrosswalkHold, CSS as CROSSWALK_CSS
 
 CASEFILE = Path(__file__).resolve().parents[3] / 'apollo-casefile'
 GENERATED = Path(__file__).resolve().parents[2] / 'generated'
@@ -90,6 +91,12 @@ def checked(condition: bool, message: str) -> None:
     if not condition:
         raise ConcordanceHold(message)
 
+def vetted_crosswalk(rows):
+    try:
+        return build_crosswalk(rows)
+    except CrosswalkHold as exc:
+        raise ConcordanceHold(str(exc)) from exc
+
 
 def build_context_index(casefile: Path = CASEFILE, generated: Path = GENERATED) -> str:
     """Return a deterministic, non-geolocated JSON research/custody index.
@@ -103,6 +110,7 @@ def build_context_index(casefile: Path = CASEFILE, generated: Path = GENERATED) 
     checked(len(rows) == 6 and [r['id'] for r in rows] == list(ERA),
             'Context index requires the six original records')
     result = []
+    crosswalk_rows=vetted_crosswalk(rows)[1]["records"]
     for row in rows:
         rid = row['id']
         era, role = ERA[rid]
@@ -129,6 +137,7 @@ def build_context_index(casefile: Path = CASEFILE, generated: Path = GENERATED) 
             'board_report_url':BOARD_REPORT,
             'evidentiary_relationship':'photo_does_not_independently_prove_board_finding',
             'geometry':'not_assigned',
+            'pr158_research_desk':crosswalk_rows[int(rid)-1],
         })
     checked({era:sum(r['source_era']==era for r in result) for era in ('1966','1967','2017')}
             == {'1966':1,'1967':3,'2017':2}, 'NASA temporal group counts drifted')
@@ -146,6 +155,7 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
     source = data['records']
     fragment = (generated/'fragment.html').read_text(encoding='utf-8')
     checked(len(source)==6 and [r['id'] for r in source]==list(ERA), 'Expected precisely six canonical NASA records')
+    crosswalk_html,crosswalk_receipt=vetted_crosswalk(source)
     cards=[]
     for row in source:
         rid=row['id']; date=row['source_date']; url=row['image_url']
@@ -185,6 +195,7 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
 <div class="fv-ex2-concordance__inner"><p class="fv-ex2-concordance__eyebrow">THE EVIDENCE / DOCUMENTARY SOURCE CONCORDANCE</p>
 <h2 id="fv-ex2-concordance-title">The photograph has a date. The claim has a different burden of proof.</h2>
 <p class="fv-ex2-concordance__intro">These six NASA catalog records help orient the investigation; they do not independently prove every accompanying historical claim. A 1966 rehearsal is not the 1967 fire, and two 2017 tribute exhibits are not accident footage. Compare the interpretation grounded in the Apollo 204 Review Board with the separate NASA photograph caption, then inspect the recorded limitations. These are source summaries, not Board quotations. All images remain links to NASA, not reproduced here.</p>
+{crosswalk_html}
 <fieldset class="fv-ex2-concordance__filters"><legend>View records by source year</legend>{filters}</fieldset>
 <p class="fv-ex2-concordance__availability">Choose a year to narrow the catalog records without changing the historical conclusions. Select “All six source records” to restore the complete index.</p>
 <ol class="fv-ex2-concordance__cards">{''.join(cards)}</ol>
@@ -205,5 +216,6 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
              'links_to_original_source_drawer':len(source),
              'links_to_board_report':len(source), 'separated_photo_board_witnesses':len(source),
              'photos_embedded':0,'geographic_pins':0,'no_js_native_details':True,
-             'rights':'HOLD_PER_ITEM_REVIEW'}
-    return html,CSS,receipt
+             'rights':'HOLD_PER_ITEM_REVIEW',
+             'research_desk_crosswalk':{k:v for k,v in crosswalk_receipt.items() if k!='records'}}
+    return html,CSS+CROSSWALK_CSS,receipt

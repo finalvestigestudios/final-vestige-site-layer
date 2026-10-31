@@ -1,0 +1,17 @@
+{
+  "witness_type": "READ_ONLY_PR158_LEDGER_SNAPSHOT_METADATA",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "pull_request": 158,
+  "reviewed_commit": "250d7f05a4de037e73826dcf0cfaef0ec4c29383",
+  "ledger_path": "experience2/research-desk/templates/ledger.html",
+  "ledger_git_blob_sha1": "403d128c57b9bc82dac7c619651689070edef86c",
+  "ledger_not_merged_or_integrated": true,
+  "rows": [
+    {"casefile_id":"01","ledger_record_id":"fv-ex2-ledger-apollo1-record-01","ledger_catalog_label":"NASA S67-19766","ledger_title":"Three men. One ground test.","source_url":"https://www.nasa.gov/image-detail/apollo-1-crew-honored/"},
+    {"casefile_id":"02","ledger_record_id":"fv-ex2-ledger-apollo1-record-02","ledger_catalog_label":"NASA S67-15717","ledger_title":"An atmosphere built for a different risk.","source_url":"https://www.nasa.gov/image-detail/amf-s67-15717/"},
+    {"casefile_id":"03","ledger_record_id":"fv-ex2-ledger-apollo1-record-03","ledger_catalog_label":"NASA S66-58038","ledger_title":"Fourteen seconds changed the system.","source_url":"https://www.nasa.gov/image-detail/amf-s66-58038/"},
+    {"casefile_id":"04","ledger_record_id":"fv-ex2-ledger-apollo1-record-04","ledger_catalog_label":"NASA KSC-20170124-PH_KLS01_0164","ledger_title":"The hatch opened inward.","source_url":"https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/"},
+    {"casefile_id":"05","ledger_record_id":"fv-ex2-ledger-apollo1-record-05","ledger_catalog_label":"NASA S67-21294","ledger_title":"The spark was never conclusively identified.","source_url":"https://www.nasa.gov/image-detail/amf-s67-21294/"},
+    {"casefile_id":"06","ledger_record_id":"fv-ex2-ledger-apollo1-record-06","ledger_catalog_label":"NASA KSC-20170124-PH_KLS01_0090","ledger_title":"Inward became outward.","source_url":"https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/"}
+  ]
+}
