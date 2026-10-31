@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="960" viewBox="0 0 540 960" role="img" aria-labelledby="title desc">
+<title id="title">A half second can change a report</title>
+<desc id="desc">Original typographic poster for a proposed forty-second evidence film. Charcoal field, an amber threshold band, scattered symbolic letters, and a restrained title.</desc>
+<defs><radialGradient id="g"><stop stop-color="#3b3428"/><stop offset=".75" stop-color="#101211"/><stop offset="1" stop-color="#080909"/></radialGradient><linearGradient id="h" x1="0" x2="1"><stop stop-color="#6c4d27" stop-opacity=".25"/><stop offset=".5" stop-color="#e7b96e" stop-opacity=".9"/><stop offset="1" stop-color="#6c4d27" stop-opacity=".25"/></linearGradient></defs>
+<rect width="540" height="960" fill="url(#g)"/>
+<g fill="#e3d4be" opacity=".17" font-family="Georgia,serif" font-size="42" text-anchor="middle"><text x="85" y="205">F</text><text x="180" y="155">8</text><text x="278" y="232">A</text><text x="388" y="162">7</text><text x="470" y="250">Q</text><text x="85" y="340">T</text><text x="185" y="310">C</text><text x="350" y="352">5</text><text x="455" y="325">L</text></g>
+<rect x="40" y="411" width="460" height="2" fill="url(#h)"/><rect x="242" y="391" width="56" height="40" rx="2" fill="#b8955e"/><text x="270" y="418" text-anchor="middle" fill="#080909" font-family="Arial,sans-serif" font-weight="bold" font-size="17">T2</text>
+<text x="42" y="70" fill="#c7a66c" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">FINAL VESTIGE STUDIOS</text>
+<text x="42" y="506" fill="#b8955e" font-family="Arial,sans-serif" font-size="16" letter-spacing="3">THE MIND ARCHIVE</text>
+<text x="42" y="585" fill="#f4efe6" font-family="Georgia,serif" font-size="52">A half second</text><text x="42" y="647" fill="#f4efe6" font-family="Georgia,serif" font-size="52">can change</text><text x="42" y="709" fill="#f4efe6" font-family="Georgia,serif" font-size="52">a report.</text>
+<text x="42" y="787" fill="#cdc1ae" font-family="Arial,sans-serif" font-size="20">An evidence-first look at attention</text><text x="42" y="817" fill="#cdc1ae" font-family="Arial,sans-serif" font-size="20">and short meditation audio.</text>
+<path d="M42 868 H498" stroke="#6e5e44"/><text x="42" y="909" fill="#b1aa9e" font-family="Arial,sans-serif" font-size="14">FILM CONCEPT / DRAFT / NO OFFER LINK</text>
+</svg>
