@@ -1,9 +1,9 @@
 "use strict";
 /* Source-only contract auditor. WordPress rendering/browser/AT and claim verification require separate human QA. */
 function audit(input){
-  const h=input["wordpress-draft.html"],g=input["zen12-evidence-guide.md"],m=input["claim-source-matrix.json"],v=input["VIDEO_PILOT_AND_NAV.md"];
+  const h=input["wordpress-draft.html"],g=input["zen12-evidence-guide.md"],m=input["claim-source-matrix.json"],v=input["VIDEO_PILOT_AND_NAV.md"],w=input["zen12-warmup-wordpress-draft.html"];
   const checks=[];const ck=(name,fn)=>{try{checks.push({name,pass:!!fn()});}catch(e){checks.push({name,pass:false,error:String(e)});}};
-  ck("all four audited inputs present",()=>[h,g,m,v].every(s=>typeof s==="string"&&s.length>1000));
+  ck("all five audited inputs present",()=>[h,g,m,v,w].every(s=>typeof s==="string"&&s.length>1000));
   if(checks[0].pass===false)return checks;
   let ledger;try{ledger=JSON.parse(m)}catch(e){ledger={sources:[],claims:[],merchant_approval:{}}}
   const stripped=h.replace(/<style>[\s\S]*?<\/style>/g,"").replace(/<[^>]+>/g," ").replace(/&[a-z]+;/gi," ");
@@ -82,12 +82,36 @@ function audit(input){
   ck("pilot restricts dispatch updates and homepage work",()=>v.includes("Dispatch #174")&&v.includes("PR #49")&&v.includes("Issue #150"));
   const ratio=(a,b)=>{function lum(h){const rgb=h.match(/.{2}/g).map(v=>parseInt(v,16)/255).map(x=>x<=.04045?x/12.92:Math.pow((x+.055)/1.055,2.4));return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]};const x=lum(a.replace("#","")),y=lum(b.replace("#",""));return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
   [["#F4EFE6","#090A0A"],["#D8D2C7","#090A0A"],["#B8955E","#090A0A"],["#B9B0A3","#090A0A"],["#E7CAA0","#090A0A"],["#D8D2C7","#101111"]].forEach(([a,b])=>ck("numeric contrast "+a+" on "+b+" AA",()=>ratio(a,b)>=4.5));
+  const warmids=[...w.matchAll(/\\bid="([^"]+)"/g)].map(x=>x[1]);
+  const warmlinks=[...w.matchAll(/\\bhref="([^"]+)"/g)].map(x=>x[1]);
+  const warmoffer=w.slice(w.indexOf('class="offer"'),w.indexOf('</div></section>',w.indexOf('class="offer"')));
+  const warmwordcount=(w.replace(/<style>[\\s\\S]*?<\\/style>/,"").replace(/<[^>]*>/g," ").match(/\\b[\\w’-]+\\b/g)||[]).length;
+  ck("warm-up WordPress draft is substantive >1600 words",()=>warmwordcount>1600);
+  ck("warm-up has semantic labelled heading",()=>w.includes('aria-labelledby="fv-z12-h1"')&&w.includes('id="fv-z12-h1"'));
+  ck("warm-up single H1",()=>[...w.matchAll(/<h1\\b/g)].length===1);
+  ck("warm-up section IDs unique",()=>new Set(warmids).size===warmids.length);
+  ck("warm-up internal anchor links resolve",()=>warmlinks.filter(x=>x.startsWith("#")).every(x=>warmids.includes(x.slice(1))));
+  ck("warm-up exact merchant descriptive and checkout source URLs",()=>warmlinks.includes("https://zen12.com/about")&&warmlinks.includes("https://zen12.com/getstarted"));
+  ck("warm-up 2019 and 2023 research links",()=>w.includes("https://pubmed.ncbi.nlm.nih.gov/30073406/")&&w.includes("https://pubmed.ncbi.nlm.nih.gov/37205669/"));
+  ck("warm-up claim-status comparison table",()=>w.includes('role="table"')&&w.includes("unsubstantiated for this product"));
+  ck("warm-up includes free exercise and Focus",()=>w.includes("fv-z12-demo")&&warmlinks.includes("https://finalvestige.com/focus/"));
+  ck("warm-up no active product CTA",()=>warmoffer.includes('aria-disabled="true"')&&!/<a\\b[^>]*href="https?:\\/\\/(?:zen12|inspire3|affiliates\\.inspire3)\\./i.test(warmoffer));
+  ck("warm-up adjacent commercial disclosure",()=>/may earn a commission at no additional cost to you/i.test(warmoffer));
+  ck("warm-up original film labelled unhosted",()=>w.includes("unhosted")&&w.includes("poster concept"));
+  ck("warm-up full accessible five-part transcript",()=>["00:00–00:08","00:08–00:16","00:16–00:24","00:24–00:32","00:32–00:40"].every(s=>w.includes(s)));
+  ck("warm-up no scripts trackers newsletter forms",()=>!/<script\\b|<form\\b|<input\\b|wp-block-jetpack-subscriptions/i.test(w));
+  ck("warm-up no remote player or auto playback",()=>!/<video\\b|<iframe\\b|<audio\\b|\\bon(?:click|play|error)\\s*=/i.test(w));
+  ck("warm-up no live proposed mind URLs",()=>!warmlinks.some(s=>/finalvestige\\.com\\/mind\\//.test(s)));
+  ck("warm-up no fixed invented dollar pricing",()=>!/\\$[0-9]/.test(w));
+  ck("warm-up accessible focus and reduced-motion rules",()=>w.includes(":focus-visible")&&w.includes("prefers-reduced-motion:reduce")&&w.includes("forced-colors:active"));
+  ck("warm-up responsive 760 and 420 breakpoints",()=>w.includes("max-width:760px")&&w.includes("max-width:420px"));
+  ck("warm-up footer no clinical guarantees",()=>w.includes("No clinical, financial, wealth or cognitive outcome is guaranteed"));
   return checks;
 }
 module.exports={audit};
 if(typeof require==="function" && typeof module!=="undefined" && require.main===module){
   const fs=require("node:fs"),path=require("node:path");
-  const root=__dirname,paths=["wordpress-draft.html","zen12-evidence-guide.md","claim-source-matrix.json","VIDEO_PILOT_AND_NAV.md"],data={};
+  const root=__dirname,paths=["wordpress-draft.html","zen12-evidence-guide.md","claim-source-matrix.json","VIDEO_PILOT_AND_NAV.md","zen12-warmup-wordpress-draft.html"],data={};
   for(const f of paths)data[f]=fs.readFileSync(path.join(root,f),"utf8");
   const results=audit(data);
   results.forEach(x=>console.log((x.pass?"PASS":"FAIL")+" "+x.name+(x.error?" "+x.error:"")));
