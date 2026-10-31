@@ -1,0 +1,468 @@
+{
+  "updated_utc": "2026-10-31T04:42:38Z",
+  "branch": "feature/mind-franklin-blindfold-evidence-20261030-r11",
+  "visibility": "UNPUBLISHED / COMMERCE HOLD",
+  "topic": "Franklin and Lavoisier 1784 blinded animal-magnetism tests; ethical product-adjacent evidence",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "1784 Royal Commission French edition, Wellcome Collection bibliographic record",
+      "url": "https://content.www.wellcomecollection.org/works/atk3unce",
+      "kind": "primary catalog",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S02",
+      "title": "Franklin and fellow commissioners, 1785 English translation of the 1784 report",
+      "url": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "kind": "primary translated text",
+      "checked": "2026-10-30",
+      "note": "Translator/introduction not conflated with original French report."
+    },
+    {
+      "id": "S03",
+      "title": "Donaldson, The James Lind Library, Lavoisier and blinded trials",
+      "url": "https://www.jameslindlibrary.org/articles/antoine-de-lavoisiers-role-in-designing-a-single-blind-trial-to-assess-whether-animal-magnetism-exists/",
+      "kind": "historical research",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S04",
+      "title": "Ogden, Credulity: A Cultural History of US Mesmerism, Chicago/Oxford academic chapter abstract",
+      "url": "https://academic.oup.com/chicago-scholarship-online/book/30703/chapter-abstract/261146102",
+      "kind": "historical interpretation abstract only",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S05",
+      "title": "NCCIH, Hypnosis",
+      "url": "https://www.nccih.nih.gov/health/hypnosis",
+      "kind": "government evidence overview",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S06",
+      "title": "APA, Hypnosis today, research and memory cautions",
+      "url": "https://www.apa.org/monitor/2011/01/hypnosis.html",
+      "kind": "professional article",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S07",
+      "title": "JAMA, 1985 AMA Council report on hypnotic recollection",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/397702",
+      "kind": "peer-reviewed abstract",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S08",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory guidance",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S09",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory guidance",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S10",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "kind": "seller catalog",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S11",
+      "title": "Hypnosis Live Total Focus product page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "seller offer",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S12",
+      "title": "Hypnosis Live FAQ for MP3 format, sample and refund limitations",
+      "url": "https://hypnosislive.com/faq",
+      "kind": "seller terms",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S13",
+      "title": "Zen12 official About description",
+      "url": "https://zen12.com/about",
+      "kind": "seller offer",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S14",
+      "title": "Published Final Vestige Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "first-party live archive",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S15",
+      "title": "Published Final Vestige Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "first-party live resource",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S16",
+      "title": "Donaldson 2017 Journal of Royal Society of Medicine published article",
+      "url": "https://journals.sagepub.com/doi/10.1177/0141076817699740",
+      "kind": "scholarly article",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S17",
+      "title": "S.J. Lynn et al., Myths and misconceptions about hypnosis and suggestion, 2020",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/acp.3730",
+      "kind": "peer-reviewed review abstract",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "S18",
+      "title": "1984 animal magnetism commission case in BMJ Quality & Safety (2003) PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12792017/",
+      "kind": "historical journal bibliographic record",
+      "checked": "2026-10-30"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1784 French commission report exists",
+      "disposition": "verified bibliographic fact",
+      "source_ids": [
+        "S01"
+      ],
+      "note": "Wellcome reports original French 1784 printing"
+    },
+    {
+      "id": "C02",
+      "claim": "1785 English translation exists",
+      "disposition": "verified historical primary edition",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Not silently treated as 1784 French edition"
+    },
+    {
+      "id": "C03",
+      "claim": "Panel investigated Deslon's methods",
+      "disposition": "verified historical",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "note": "Not a direct test of Puységur's sessions"
+    },
+    {
+      "id": "C04",
+      "claim": "Nine final commissioners included Franklin and Lavoisier",
+      "disposition": "verified historical",
+      "source_ids": [
+        "S03"
+      ],
+      "note": "Avoid Franklin sole-inventor framing"
+    },
+    {
+      "id": "C05",
+      "claim": "Mesmer resisted tests of fluid's existence but considered treatment comparison",
+      "disposition": "supported qualified",
+      "source_ids": [
+        "S03"
+      ],
+      "note": "Donaldson historical analysis"
+    },
+    {
+      "id": "C06",
+      "claim": "Lavoisier likely had major design role",
+      "disposition": "supported but attribution uncertain",
+      "source_ids": [
+        "S03",
+        "S16"
+      ],
+      "note": "Official report does not name individual authors for each test"
+    },
+    {
+      "id": "C07",
+      "claim": "Blindfold sometimes concealed presence of magnetization",
+      "disposition": "verified in historical account",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "note": "Period test, not randomized modern clinical trial"
+    },
+    {
+      "id": "C08",
+      "claim": "M. B reported heat without procedure",
+      "disposition": "reported observation, not verified temperature",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Subject anonymized and sensory report only"
+    },
+    {
+      "id": "C09",
+      "claim": "Some subjects reported no response during attempted procedure",
+      "disposition": "reported observation",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Not proof no effects ever possible"
+    },
+    {
+      "id": "C10",
+      "claim": "Leading questions and expectations accompanied sensations",
+      "disposition": "historical report interpretation",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Avoid conflating all mental mechanisms with imagination"
+    },
+    {
+      "id": "C11",
+      "claim": "Tree tests at Passy occurred June 19, 1784",
+      "disposition": "historically documented",
+      "source_ids": [
+        "S03"
+      ],
+      "note": "Do not claim all details verified beyond documents"
+    },
+    {
+      "id": "C12",
+      "claim": "June 17 correspondence complicates Franklin sole-design credit",
+      "disposition": "supported historical reconstruction",
+      "source_ids": [
+        "S03"
+      ],
+      "note": "Donald's inference, not author identification proved"
+    },
+    {
+      "id": "C13",
+      "claim": "Commission found no need for magnetic fluid in its observations",
+      "disposition": "qualified synthesis",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "note": "Not disproof of all hypnosis or suggestion"
+    },
+    {
+      "id": "C14",
+      "claim": "Puységur's magnetic somnambulism claims arise same year",
+      "disposition": "supported distinct-case context",
+      "source_ids": [
+        "S14"
+      ],
+      "note": "Commission did not directly test this archive's patients"
+    },
+    {
+      "id": "C15",
+      "claim": "Puységur archive retains verified edition distinctions and failures",
+      "disposition": "supported first-party page read",
+      "source_ids": [
+        "S14"
+      ],
+      "note": "Source archive is not validation of cures"
+    },
+    {
+      "id": "C16",
+      "claim": "Modern hypnosis has some indication-specific evidence",
+      "disposition": "supported qualified",
+      "source_ids": [
+        "S05"
+      ],
+      "note": "Evidence quality and indications differ"
+    },
+    {
+      "id": "C17",
+      "claim": "Specific commercial hypnosis MP3 results proven by clinical hypnosis literature",
+      "disposition": "reject unsupported inference",
+      "source_ids": [
+        "S05",
+        "S11"
+      ],
+      "note": "No product-specific RCT supplied"
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnotic memory recall is necessarily more accurate",
+      "disposition": "reject",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "note": "Potential false recollection"
+    },
+    {
+      "id": "C19",
+      "claim": "Total Focus is seller-described 33-minute 47-MB digital audio",
+      "disposition": "seller format, fact at date",
+      "source_ids": [
+        "S11"
+      ],
+      "note": "Could change"
+    },
+    {
+      "id": "C20",
+      "claim": "Total Focus seller identifies J.A. Amos creator",
+      "disposition": "seller description",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "note": "No independent test or experience inferred"
+    },
+    {
+      "id": "C21",
+      "claim": "Total Focus automatically reprograms brain",
+      "disposition": "reject efficacy claim",
+      "source_ids": [
+        "S11",
+        "S09"
+      ],
+      "note": "No adequate product-specific substantiation reviewed"
+    },
+    {
+      "id": "C22",
+      "claim": "Total Focus guarantees extreme concentration",
+      "disposition": "reject efficacy claim",
+      "source_ids": [
+        "S11",
+        "S09"
+      ],
+      "note": "Ad language not independent evidence"
+    },
+    {
+      "id": "C23",
+      "claim": "Hypnosis Live FAQ describes 14-day refund request and max five refunds per year",
+      "disposition": "seller mutable terms only",
+      "source_ids": [
+        "S12"
+      ],
+      "note": "Exclude prices or definitive refund assurances from public candidate"
+    },
+    {
+      "id": "C24",
+      "claim": "Zen12 offers twelve levels of 12-minute sessions and four styles",
+      "disposition": "seller format",
+      "source_ids": [
+        "S13"
+      ],
+      "note": "Guide/music/white noise/nature per seller"
+    },
+    {
+      "id": "C25",
+      "claim": "Zen12 twelve minutes equals an hour of meditation",
+      "disposition": "reject seller efficacy",
+      "source_ids": [
+        "S13",
+        "S09"
+      ],
+      "note": "No product-specific controlled substantiation"
+    },
+    {
+      "id": "C26",
+      "claim": "Near-link clear affiliate disclosures required",
+      "disposition": "verified guidance",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "Consent/relationship visibility essential"
+    },
+    {
+      "id": "C27",
+      "claim": "Health/psychological product claims need reliable evidence",
+      "disposition": "verified guidance",
+      "source_ids": [
+        "S09"
+      ],
+      "note": "No convenient product-only extrapolation"
+    },
+    {
+      "id": "C28",
+      "claim": "Affiliate account accepted and authorized for links/emails",
+      "disposition": "NOT VERIFIED",
+      "source_ids": [
+        "S10"
+      ],
+      "note": "Public recruitment not approval"
+    },
+    {
+      "id": "C29",
+      "claim": "Affiliate URL, commission, price and payout verified",
+      "disposition": "NOT VERIFIED",
+      "source_ids": [
+        "S10"
+      ],
+      "note": "No links / rates / prices activated"
+    },
+    {
+      "id": "C30",
+      "claim": "Existing /focus/ is live and has a Jetpack signup",
+      "disposition": "first-party live read",
+      "source_ids": [
+        "S15"
+      ],
+      "note": "Preserve single newsletter funnel"
+    },
+    {
+      "id": "C31",
+      "claim": "Optional story-driven 40-second video converts better than source guide alone",
+      "disposition": "hypothesis only",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "Requires actual ethically measured random experiment with adequate sample"
+    },
+    {
+      "id": "C32",
+      "claim": "First-party aggregate event counters deployed and collecting",
+      "disposition": "not true",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "R10 module off by default; no live collection"
+    },
+    {
+      "id": "C33",
+      "claim": "A personal two-minute notebook demonstrates a clinical benefit",
+      "disposition": "reject inference",
+      "source_ids": [
+        "S05"
+      ],
+      "note": "Illustrative self-observation only"
+    },
+    {
+      "id": "C34",
+      "claim": "Source documents justify impersonating actual listener/tester",
+      "disposition": "reject",
+      "source_ids": [
+        "S11"
+      ],
+      "note": "Never claim to have tried product"
+    }
+  ],
+  "partner": {
+    "account_approved": false,
+    "account_approval_evidence": null,
+    "tracking_terms_approved": false,
+    "email_channel_permission": false,
+    "affiliate_url": null,
+    "product_price_approved": null,
+    "commission_rate": null,
+    "active_merchant_cta": false
+  },
+  "risk_notes": [
+    "Source text translated 1785 from French 1784; no cross-edition conflation.",
+    "No clinical efficacy promise or newly collected subscriber data.",
+    "Unpublished WP HTML contains no active merchant URL or tracking script."
+  ]
+}
