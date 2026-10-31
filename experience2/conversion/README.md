@@ -23,3 +23,9 @@ Base: the existing unified homepage review (PR #342). No production deployment, 
 - Corrected **Simons & Rensink (2005)** DOI to `10.1016/j.tics.2004.11.006`, grounded in PubMed PMID 15639436. Replaced nested `<main>` with an `<article>` to avoid duplicate main landmarks inside WordPress page templates.
 - Real isolated Chromium with the **exact GitHub popup HTML/CSS/JS blob IDs** passed 7-width keyboard modal, Escape, focus return, overlay fit and three fallback cases; separate simulated 200%-CSS-zoom reflow passed. Browser form is a synthetic stand-in; it does **not** validate WordPress Gutenberg block rendering, Jetpack subscription confirmation, actual PDF delivery, Safari, axe or CWV.
 - Coordinated with separate independent QA PR #355 and Mind/Perception editorial Issue #171; do not merge this stacked PR standalone. Release HOLD.
+
+## WordPress.com 2026 plan compatibility and CSS timing
+
+Official WordPress.com documentation (last reviewed October 22, 2026) states Personal supports plugin ZIP uploads, while hosted staging remains a Business-plan feature: `https://wordpress.com/support/plugins/install-a-plugin/`. **This does not approve production installation.** The shortcode plugin can be packaged for later approval without a new subscription.
+
+WordPress Core runs `wp_enqueue_scripts` in `wp_head` before page content: `https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/`. Previous shortcode-only CSS could enqueue after the head and render unstyled; revision 0.1.1 adds a shortcode-aware early enqueue when `[fv_focus_popup]` appears in the queried singular post, with a fallback enqueue on shortcode render. **Do not put this shortcode only in a template part**, because early CSS detection isn't assured there. PHP lint and isolated WordPress API-double hook tests pass, not genuine host rendering.
