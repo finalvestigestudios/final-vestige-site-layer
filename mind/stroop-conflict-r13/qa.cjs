@@ -18,7 +18,7 @@ function audit(files) {
   check('article reports nonsignificant reading effect',a.includes('2.3 seconds')&&a.includes('not regard that increase as reliable'));
   check('article discusses ambiguity between processes',a.includes('phonological')&&a.includes('response'));
   check('article has two meditation literature appraisals',a.includes('2021')&&a.includes('2024')&&a.includes('111'));
-  check('article does not imply Zen12 trial',a.includes('not evidence that listening produces')&&a.includes('do not independently validate'));
+  check('article does not imply Zen12 trial',a.includes('not evidence that listening produces')&&a.includes('nor general meditation meta-analyses independently validate'));
   check('article provides free practice',a.includes('five minutes')&&a.includes('without buying'));
   check('article respects accessible alternative',a.includes('screen reader')&&a.includes('conceptual explanation'));
   check('article separates history from hypothesis',a.includes('Puységur')&&a.includes('not present it as a descendant'));
@@ -72,7 +72,7 @@ function audit(files) {
   check('plan refuses PII/traffic identifiers',p.includes('Do not accept IP, email, exact referrer URL'));
   check('plan honors privacy signals',p.includes('Global Privacy Control')&&p.includes('Do Not Track'));
   check('plan no sales inferred from clicks',p.includes('never inferred from an outbound click'));
-  check('plan keeps current Focus/Dispatch',p.includes('single Jetpack Dispatch')&&p.includes('no new'));
+  check('plan keeps current Focus/Dispatch',p.includes('single Jetpack Dispatch')&&p.toLowerCase().includes('do not create a new'));
   check('plan does not promote unpublished URLs as live',p.includes('must NOT be called live URLs'));
   check('film storyboard honestly not rendered',v.includes('PRODUCTION CONCEPT ONLY')&&v.includes('NOT an exported video'));
   check('film 42sec source note',v.includes('36–42')&&v.includes('10.1037/h0054651'));
