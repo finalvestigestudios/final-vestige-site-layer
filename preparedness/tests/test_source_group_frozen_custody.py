@@ -180,4 +180,18 @@ for name,fn in {
 }.items():
     attach('taxonomy_'+name,lambda s,fn=fn:s.rewrite_taxonomy(fn,repin=True))
 
+class NativeExactCheckout(unittest.TestCase):
+    def test_complete_checked_out_source_blobs_remain_frozen(self):
+        # R18's native unittest stage automatically runs this once a trusted
+        # full checkout is available. Partial reconstructions cannot claim a
+        # real-source result; they explicitly skip rather than fabricate one.
+        root=TESTS.parents[1]
+        if not (root/'.git').exists():
+            self.skipTest('not a complete Git checkout; R22 real-corpus check not executed')
+        receipt=gate.audit_frozen(root)
+        self.assertEqual(receipt['release_state'],'HOLD')
+        self.assertIs(receipt['may_publish'],False)
+        self.assertEqual(receipt['shared_source_groups_pending_human_review'],30)
+
+
 if __name__=='__main__':unittest.main()
