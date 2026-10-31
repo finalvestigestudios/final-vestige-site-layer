@@ -1,0 +1,87 @@
+/* Final Vestige — progressive chapter wayfinding for the seven-chapter archive.
+ * Enhances navigation only; source evidence and anchor links remain usable without JS.
+ * No timers, persistent storage, tracking, focus traps, or synthetic history. */
+(() => {
+  'use strict';
+  const CHAPTER_IDS = [
+    'fv-hf-title', 'fv-hf-chronicle', 'fv-hf-evidence', 'fv-hf-inquiry',
+    'fv-hf-method-title', 'fv-hf-observer', 'fv-hf-mind-title'
+  ];
+  const root = document.querySelector('[data-fv-home-flagship]');
+  if (!root) return;
+  const nav = root.querySelector('.fv-hf__chapter-nav');
+  if (!nav) return;
+  const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  const ids = links.map((link) => link.getAttribute('href').slice(1));
+  const targets = CHAPTER_IDS.map((id) => root.querySelector(`[id="${id}"]`));
+  if (links.length !== CHAPTER_IDS.length ||
+      ids.join('|') !== CHAPTER_IDS.join('|') || targets.some((t) => !t) ||
+      new Set(targets).size !== CHAPTER_IDS.length) return;
+
+  let running = true;
+  let queued = false;
+  const originalTabindex = new Map();
+  // Make source chapters programmatically focusable, but not part of normal Tab order.
+  targets.forEach((target) => {
+    originalTabindex.set(target, target.getAttribute('tabindex'));
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+  });
+  const restore = () => {
+    running = false;
+    nav.removeAttribute('data-fv-trail-enhanced');
+    nav.style.removeProperty('--fv-trail-progress');
+    links.forEach((link) => link.removeAttribute('aria-current'));
+    originalTabindex.forEach((value, target) => {
+      if (value === null) target.removeAttribute('tabindex');
+      else target.setAttribute('tabindex', value);
+    });
+    window.removeEventListener('scroll', enqueue);
+    window.removeEventListener('resize', enqueue);
+    window.removeEventListener('hashchange', enqueue);
+  };
+  const render = () => {
+    queued = false;
+    if (!running) return;
+    try {
+      const scroll = window.scrollY || window.pageYOffset || 0;
+      const top = targets[0].getBoundingClientRect().top + scroll;
+      const last = targets[targets.length - 1];
+      const end = last.getBoundingClientRect().bottom + scroll;
+      const viewport = Math.max(1, window.innerHeight);
+      const available = Math.max(1, end - top - viewport);
+      const progress = Math.max(0, Math.min(1, (scroll - top) / available));
+      nav.style.setProperty('--fv-trail-progress', progress.toFixed(4));
+      const readingLine = scroll + nav.getBoundingClientRect().height + viewport * 0.28;
+      let active = 0;
+      targets.forEach((target, index) => {
+        if (target.getBoundingClientRect().top + scroll <= readingLine) active = index;
+      });
+      links.forEach((link, index) => {
+        if (index === active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    } catch (_) { restore(); }
+  };
+  function enqueue() {
+    if (!running || queued) return;
+    queued = true;
+    window.requestAnimationFrame(render);
+  }
+  try {
+    // Native fragment navigation, browser history and no-JS behavior are retained.
+    links.forEach((link, index) => link.addEventListener('click', (event) => {
+      if (!running || event.detail !== 0) return; // Keyboard activation only.
+      const target = targets[index];
+      // Wait for native anchor navigation, then move keyboard focus to the destination.
+      window.setTimeout(() => {
+        if (!running) return;
+        try { target.focus({ preventScroll: true }); } catch (_) { /* anchor remains usable */ }
+      }, 0);
+    }));
+    nav.setAttribute('data-fv-trail-enhanced', '');
+    window.addEventListener('scroll', enqueue, { passive: true });
+    window.addEventListener('resize', enqueue, { passive: true });
+    window.addEventListener('hashchange', enqueue);
+    enqueue();
+  } catch (_) { restore(); }
+})();
