@@ -7,6 +7,7 @@ full original supports/notes and article-specific source_use. No URL de-duping.
 """
 from __future__ import annotations
 from collections import Counter
+from datetime import date
 import argparse
 import hashlib
 import html
@@ -98,17 +99,40 @@ def audit(lib, expected=EXPECTED):
             need(len(own) <= 1 and len(base) <= 1, 'ambiguous same-origin source variant')
             need(bool(own or base), 'source never read in own cluster or base')
             selected = own[0] if own else base[0]
-            # Independent parity with the renderer's source-selection rule.
-            need(lib.source_for(meta, sid)['_origin'] == selected['_origin'],
-                 'rendered source provenance differs from audit')
-            need(type(selected.get('verified_on')) is str and
-                 bool(re.fullmatch(r'\d{4}-\d{2}-\d{2}', selected['verified_on'])),
+            need(selected.get('id') == sid, 'source variant ID differs from cited identity')
+            # R26: comparing only _origin was insufficient. A renderer could
+            # substitute a different URL, source-use scope, publisher, title or
+            # verification date from the SAME contributor and the prior test
+            # would still pass. Compare the ENTIRE JSON identity, with types.
+            rendered = lib.source_for(meta, sid)
+            need(type(rendered) is dict and canonical(rendered) == canonical(selected),
+                 'rendered source identity or reading scope differs from custody source')
+            verified = selected.get('verified_on')
+            need(type(verified) is str and
+                 bool(re.fullmatch(r'\d{4}-\d{2}-\d{2}', verified)),
                  'source has no machine verification date')
+            try:
+                date.fromisoformat(verified)
+            except ValueError as exc:
+                raise ReviewHold('source has impossible machine verification date') from exc
             need(type(selected.get('supports')) is str and bool(selected['supports'].strip()),
                  'original reading-depth evidence missing')
             is_fallback = selected['_origin'] != origin
             fallback_count += int(is_fallback)
+            # Retain full unabridged original source metadata, not only a
+            # URL and a clipped supports/notes excerpt. Fingerprints and
+            # zero-based Unicode offsets let reviewers re-find each of the
+            # 1,959 tokens in the unchanged article bodies. These are NOT
+            # human fact checks or endorsement of clinical/emergency advice.
+            source_bytes = canonical(selected)
+            row_offsets = [m.start() for m in found if m.group(1) == sid]
+            need(len(row_offsets) == len(contexts), 'citation position parity failure')
             queue.append({'slug': slug, 'article_origin': origin,
+                          'frozen_article_html_sha256': hashlib.sha256(body.encode('utf-8')).hexdigest(),
+                          'frozen_source_use_sha256': hashlib.sha256(uses[sid].encode('utf-8')).hexdigest(),
+                          'original_source_record_as_selected': json.loads(source_bytes),
+                          'original_source_record_sha256': hashlib.sha256(source_bytes).hexdigest(),
+                          'citation_token_codepoint_offsets': row_offsets,
                           'source_id': sid, 'source_origin': selected['_origin'],
                           'source_url': selected['url'], 'machine_verified_on': selected['verified_on'],
                           'base_fallback_requires_human_scope_review': is_fallback,
