@@ -57,7 +57,7 @@ INIT = r"""(() => {
 })();"""
 
 
-def run():
+def run(*, require_axe=False):
     fixture, artifact_sha = get_fixture()
     axe_file = os.environ.get('FV_VERIFIED_AXE_BUNDLE', '')
     axe_hash = os.environ.get('FV_VERIFIED_AXE_SHA256', '')
@@ -66,6 +66,8 @@ def run():
         p = Path(axe_file)
         if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == axe_hash:
             actual_axe = p.read_text(encoding='utf-8')
+    if require_axe and actual_axe is None:
+        raise RuntimeError('RELEASE HOLD: supply FV_VERIFIED_AXE_BUNDLE and exact FV_VERIFIED_AXE_SHA256; axe did not run')
     report = {
         'exact_source_head': PIN,
         'source_blob_pins': 12,
@@ -93,6 +95,18 @@ def run():
             page.evaluate(INIT)  # register buffered paint/layout-shift observers in this same in-memory document
             assert page.locator('.fv-ex2-apollo').count() == 1
             assert page.locator('h1').count() == 1
+            assert page.locator('main#fv-ex2-apollo-document').count() == 1
+            page.keyboard.press('Tab')
+            assert page.evaluate('document.activeElement.getAttribute("href")') == '#fv-ex2-apollo-document', (width, 'skip not first tabstop')
+            skip = page.locator('.fv-ex2-apollo__skip').evaluate(
+                '(n)=>({transform:getComputedStyle(n).transform,y:n.getBoundingClientRect().top})')
+            assert skip['transform'] == 'none' and skip['y'] >= 0, (width, 'skip link not actually visible', skip)
+            if width in (390, 1440):
+                dest = OUT / f'exact-skip-focused-{width}.png'
+                page.screenshot(path=str(dest), animations='disabled', timeout=15000)
+                report['screenshots'].append({'name':dest.name,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
+            page.keyboard.press('Enter')
+            assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document', (width, 'skip did not focus main')
             assert page.locator('section#atlas').count() == 1
             assert page.locator('[data-ex2-trail-card]').count() == 6
             assert page.locator('[data-ex2-response-item]').count() == 6
@@ -138,6 +152,8 @@ def run():
                 a=page.evaluate("""async()=>{let r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});return {violations:r.violations.map(v=>({id:v.id,impact:v.impact, nodes:v.nodes.length})),passes:r.passes.length,incomplete:r.incomplete.length}}""")
                 report.setdefault('axe_by_width',{})[str(width)] = a
                 report['axe_violations'] = (report['axe_violations'] or 0)+sum(x['nodes'] for x in a['violations'])
+                if require_axe and a['violations']:
+                    raise AssertionError(('axe-core WCAG A/AA violations',width,a['violations']))
             cdp=ctx.new_cdp_session(page);cdp.send('Performance.enable')
             perf=cdp.send('Performance.getMetrics')['metrics']
             simple={x['name']:x['value'] for x in perf}
@@ -159,6 +175,10 @@ def run():
         assert page.locator('[data-ex2-trail-card]:visible').count() == 6
         assert page.locator('[data-ex2-response-item]:visible').count() == 6
         assert page.locator('[data-ex2-atlas-item]:visible').count() == 6
+        page.keyboard.press('Tab')
+        assert page.evaluate('document.activeElement.textContent.trim()') == 'Skip to Apollo evidence'
+        page.keyboard.press('Enter')
+        assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document'
         assert not page.locator('[data-ex2-trail-controls]').is_visible()
         page.locator('#trail-02 summary').click()
         assert page.locator('#trail-02 details').evaluate('(n)=>n.open')
@@ -187,4 +207,8 @@ def run():
     print('BROWSER_EXACT_PASS',len(report['measurements']),'widths; source pins=12; no JS; touch; zoom; AXE=',report['axe_status'])
     return report
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description='Apollo exact-source browser + optional strict axe-core gate')
+    parser.add_argument('--require-axe', action='store_true', help='FAIL CLOSED when verified axe bundle missing or WCAG violations observed')
+    run(require_axe=parser.parse_args().require_axe)

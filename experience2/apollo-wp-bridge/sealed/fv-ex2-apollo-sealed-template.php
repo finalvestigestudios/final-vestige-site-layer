@@ -103,11 +103,12 @@ function fv_ex2_apollo_sealed_page() {
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         . '<title>Private Apollo 1 Evidence Review — Final Vestige</title>'
         . '<meta name="robots" content="noindex,nofollow"><style nonce="' . $csp_nonce . '">'
-        . $css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}"
+        . $css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
         . '</style></head><body>'
-        . '<section class="fv-ex2-apollo" aria-label="Apollo 1 evidence investigation">'
+        . '<a class="fv-ex2-apollo__skip" href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>'
+        . '<main id="fv-ex2-apollo-document" class="fv-ex2-apollo" tabindex="-1" aria-label="Apollo 1 evidence investigation">'
         . '<h1 class="fv-ex2-apollo__review-h1">Apollo 1: Research Desk and primary-source casefile</h1>'
-        . $fragment . '</section><script nonce="' . $csp_nonce . '">'
+        . $fragment . '</main><script nonce="' . $csp_nonce . '">'
         . str_replace('</script', '<\\/script', $js) . '</script></body></html>';
     exit;
 }
