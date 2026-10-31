@@ -63,10 +63,11 @@ test('reject currentSrc that differs from matched network source',()=>{
  const r=a();r.pages[0].stored_images[0].current_src='https://other.example.org/other.jpg';
  assert.equal(inspectRun(r).ok,false);
 });
-test('redirect alias can demonstrate the same network request',()=>{
+test('redirect alias alone cannot prove historical identity when final URL differs',()=>{
  const r=a(),n=r.pages[0].network_images[0],old=n.url;
  n.url='https://cdn.example.edu/optimized.jpg';n.url_aliases=[old];
- assert.equal(inspectRun(r).ok,true);
+ assert.equal(inspectRun(r).ok,false);
+ assert.ok(inspectRun(r).errors.includes('article_wire_scope_mismatch:123'));
 });
 test('multiple visible uses of one URL can share one actual network request without double-counting bytes',()=>{
  const r=a(),p=r.pages[0],url='https://example.edu/shared.jpg';
