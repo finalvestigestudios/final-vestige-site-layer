@@ -9,7 +9,7 @@ function contrast(fg,bg){
   const a=lum(fg),b=lum(bg);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
 }
 function getCsvRows(s){return s.trim().split(/\r?\n/).slice(1).filter(Boolean);}
-function removeVideo(s){return s.replace(/<section class="video-concept"[\s\S]*?<\/section>/,"\n");}
+function removeVideo(s){return s.replace(/<section class="video-concept"[\s\S]*?<\/section>/,"");}
 function audit(d){
  const out=[]; const check=(name,ok)=>out.push({name,pass:!!ok});
  const A=d.A||"",B=d.B||"",article=d.article||"",hub=d.hub||"",matrix=d.matrix||"",vtt=d.vtt||"",measurement=d.measurement||"",readiness=d.readiness||"",totalFocus=d.totalFocus||"";
