@@ -74,7 +74,7 @@ def run(out,chromium,axe_path=None,axe_sha256=None):
                 raise RuntimeError('disputed NASA identity warning not visible')
             axe_receipt=None
             if axe:
-                nonce=page.locator('style[nonce]').first.get_attribute('nonce')
+                nonce=page.locator('style[nonce]').first.evaluate('(e)=>e.nonce')
                 if not nonce:raise RuntimeError('no CSP nonce for pinned axe injection')
                 page.evaluate('''({js,nonce})=>{let s=document.createElement('script');s.setAttribute('nonce',nonce);
                     s.textContent=js;document.head.append(s)}''',{'js':axe.decode('utf8'),'nonce':nonce})
@@ -106,7 +106,7 @@ def run(out,chromium,axe_path=None,axe_sha256=None):
         ctx.close();browser.close()
     report={'status':'LOCAL_BROWSER_PASS_RELEASE_HOLD','source_php_sha256':plugin_sha,
         'scope':'source-pinned PHP CLI + Playwright set_content, not actual WordPress or HTTP CSP',
-        'axe_status':'VERIFIED_EXECUTION' if axe else 'BLOCKED_NO_PINNED_LOCAL_AXE',
+        'axe_status':'USER_SUPPLIED_SHA_MATCH_RUN_NOT_AUTHENTICATED' if axe else 'BLOCKED_NO_PINNED_LOCAL_AXE',
         'field_cwv':'NOT_MEASURED','independent_qd':'OUTSTANDING','widths':WIDTHS,
         'checks':receipts,'screenshots':screens,'no_js':'PASS','touch':'PASS'}
     (out/'R30_REPO_BROWSER_RECEIPT.json').write_text(json.dumps(report,sort_keys=True,indent=2)+'\n')
