@@ -35,6 +35,7 @@
     check("Every source exact HTTPS URL", srcs.every(s=> /^https:\/\//.test(s.url)));
     check("Source roles populated", srcs.every(s=>s.title && s.type && s.checked_on==="2026-10-31"));
     check("No empty disposition entries", claims.every(c=>typeof c.disposition==="string" && c.disposition.length>2));
+    check("All live external editorial anchors in source ledger", (()=>{const allowed=new Set(srcs.map(x=>x.url));return [...H.matchAll(/<a\b[^>]*href=["'](https:\/\/[^"']+)["']/g)].every(m=>allowed.has(m[1]));})());
     check("Claim references resolve or legitimately empty", claims.every(c=>Array.isArray(c.source_ids) && c.source_ids.every(id=>srcs.some(s=>s.id===id))));
     check("Every claim has publisher safe-copy boundary", claims.every(c=>typeof c.copy_limit==="string" && c.copy_limit.length>3));
     check("Exact Focus Shot not conflated with general catalog",offer.exact_sku === "Focus Shot" && offer.actual_seller_page === "https://brainwaveshots.com/focus-shot");
@@ -62,8 +63,9 @@
     check("No third-party ad pixel image", !/<img\b/i.test(H));
     check("No video element before approved media assets", !/<video\b/i.test(H));
     check("No tracking data in article", !/(?:\bgtag\s*\(|\bfbq\s*\(|google-analytics|pixel\.facebook|dataLayer\.push|navigator\.sendBeacon|localStorage\.)/i.test(H));
-    check("Inactivated commerce control visible", /<button[^>]*disabled[^>]*>Product link unavailable/i.test(H));
-    check("Disclosure immediately precedes CTA", /<p class="disclosure">[\s\S]{30,450}?<\/p>\s*<button[^>]*disabled/i.test(H));
+    check("Inactivated commerce control visible", /<button\b[^>]*\sdisabled(?:\s|>)[^>]*>Product link unavailable/i.test(H));
+    const near = H.match(/<p class="disclosure">([\s\S]{30,450}?)<\/p>\s*<button\b([^>]*)>/i);
+    check("Disclosure immediately precedes CTA", !!near && /Final Vestige may earn a commission at no additional cost to you/.test(near[1]) && /(?:^|\s)disabled(?:\s|$)/.test(near[2]));
     check("Article scope properly titled", /<section class="fvm16" aria-labelledby="fvm16-title">/.test(H) && /<h1 id="fvm16-title">/.test(H));
     check("No duplicate heading IDs", /<h1 id="fvm16-title">/.test(H) && (H.match(/<h1\b/g)||[]).length===1);
     check("Internal fragment destinations all exist", [...H.matchAll(/href="#(fvm16-[\w-]+)"/g)].every(m=>H.indexOf('id="'+m[1]+'"')>=0));
