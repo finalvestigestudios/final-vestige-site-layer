@@ -16,7 +16,7 @@ import re
 import stat
 import sys
 from urllib.parse import parse_qs, urlencode, urljoin, urlparse, urlunparse
-from urllib.request import Request, build_opener, HTTPRedirectHandler
+from urllib.request import Request, build_opener, HTTPRedirectHandler, ProxyHandler
 from urllib.error import HTTPError
 
 HERE = Path(__file__).resolve().parent
@@ -66,7 +66,8 @@ def no_redirect_fetch(url: str, cookie: str = '') -> tuple[int, dict, bytes]:
                'Accept': 'text/html, application/json, text/csv'}
     if cookie:
         headers['Cookie'] = cookie
-    opener = build_opener(NoRedirect)
+    # Never forward an editor cookie through proxy environment variables.
+    opener = build_opener(NoRedirect, ProxyHandler({}))
     try:
         with opener.open(Request(url, headers=headers, method='GET'), timeout=12) as r:
             return r.status, {k.lower():v for k,v in r.headers.items()}, r.read(1_000_001)
