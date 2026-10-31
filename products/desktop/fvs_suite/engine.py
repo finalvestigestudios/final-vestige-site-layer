@@ -3,7 +3,8 @@ from __future__ import annotations
 import csv, difflib, hashlib, os, re, statistics
 from collections import defaultdict
 from datetime import datetime, date
-from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from decimal import Context, Decimal, InvalidOperation, ROUND_HALF_UP, localcontext
+from functools import wraps
 from pathlib import Path
 
 from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
@@ -70,17 +71,52 @@ def _exact_amount(value):
         raise ValueError("Invalid amount format") from exc
     if not number.is_finite() or number > Decimal("1000000000000"):
         raise ValueError("Nonfinite or out-of-range amount")
-    return -number if parenthesized or "-" in prefix else number
+    return number.copy_negate() if parenthesized or "-" in prefix else number
+
+
+def _fractional_places(value: Decimal) -> int:
+    """Exact significant fractional scale, ignoring permitted trailing zeroes.
+
+    Decimal.normalize() rounds using the ambient context; a hostile low
+    precision could erase the ninth fractional digit before validation.
+    """
+    digits = value.as_tuple().digits
+    exponent = value.as_tuple().exponent
+    if exponent >= 0 or not any(digits):
+        return 0
+    trailing_zeroes = 0
+    for digit in reversed(digits):
+        if digit != 0:
+            break
+        trailing_zeroes += 1
+    return max(0, -exponent - trailing_zeroes)
+
+
+def _cent_value(value: Decimal) -> Decimal:
+    """Round bounded suite money with a fresh independent Decimal context."""
+    # A 200,000-row import at up to 1 trillion per row has <= 20
+    # integer digits. 64 digits retains cents, and avoids caller traps.
+    with localcontext(Context(prec=64)):
+        return value.quantize(CENT, rounding=ROUND_HALF_UP)
+
+
+def _exact_reconciliation_context(operation):
+    """Protect ledger/grant aggregation against caller precision and traps."""
+    @wraps(operation)
+    def guarded(*args, **kwargs):
+        with localcontext(Context(prec=64)):
+            return operation(*args, **kwargs)
+    return guarded
 
 
 def money(value):
-    return _exact_amount(value).quantize(CENT, rounding=ROUND_HALF_UP)
+    return _cent_value(_exact_amount(value))
 
 
 def unit_cost(value):
     """Unit prices may carry sub-cent precision; totals round only on display."""
     amount = _exact_amount(value)
-    if amount.normalize().as_tuple().exponent < -8:
+    if _fractional_places(amount) > 8:
         raise ValueError("Unit price precision exceeds eight decimal places")
     return amount
 
@@ -106,12 +142,12 @@ def qty(value):
         raise ValueError("Invalid quantity format") from exc
     if not number.is_finite() or number < 0 or number > Decimal("1000000000"):
         raise ValueError("Invalid quantity range")
-    if number.normalize().as_tuple().exponent < -8:
+    if _fractional_places(number) > 8:
         raise ValueError("Quantity precision exceeds eight decimal places")
     return number
 
 def key(value): return re.sub(r"[^A-Z0-9]+","",str(value).upper())
-def dollars(value): return format(value.quantize(CENT, rounding=ROUND_HALF_UP),".2f")
+def dollars(value): return format(_cent_value(value), ".2f")
 _DATE_FORMATS = (
     (re.compile(r"[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}\Z"), "%Y-%m-%d"),
     (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}\Z"), "%m/%d/%Y"),
@@ -223,6 +259,7 @@ def manifest(folder,inputs,outputs, *, expected_inputs=None):
     contents = inventory_text(inputs, outputs, expected_input_digests=expected_inputs)
     return publish_text(outpath(folder,"evidence-manifest",".txt"), contents)
 
+@_exact_reconciliation_context
 def ledger_diff(left,right,folder):
     from .ledger_provenance import attach_ledger_provenance
     groups=[defaultdict(list),defaultdict(list)]
@@ -309,6 +346,7 @@ def policy_delta(old,new,folder):
     from .policy_diff import compare_policy_files
     return compare_policy_files(old, new, folder, outpath)
 
+@_exact_reconciliation_context
 def grant_audit(claims,ledger,budgets,folder):
     """Legacy one-to-one reconciliation or explicit linked allocations.
 
