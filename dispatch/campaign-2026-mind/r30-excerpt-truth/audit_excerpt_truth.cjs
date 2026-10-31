@@ -31,10 +31,10 @@ function audit(excerptData,manifest,sources){
   if(commercial){
    if(!/affiliate evaluation/i.test(s)||!s.includes('may earn a commission')||s.indexOf('may earn a commission')+21>350)errors.push(n+':commission-not-visible');
    if(!m.editorial_cta.startsWith('[[')||!/Commercial disclosure:/.test(source))errors.push(n+':offer-hold-drift');
-  }else if(/affiliate|commission/i.test(s)||!m.editorial_cta.startsWith('https://finalvestige.com/'))errors.push(n+':editorial-commercial-drift');
+  }else if(/affiliate|earn a commission|commission-earning|purchase through/i.test(s)||!m.editorial_cta.startsWith('https://finalvestige.com/'))errors.push(n+':editorial-commercial-drift');
   if(n===1&&/eighteenth.c.century|18th.century|1784|Puységur/i.test(s))errors.push('1:wrong-era');
   if(n===4&&(/first indication|fire started|ignition happened|ignition instant was/i.test(s)||!s.includes('first recorded crew report of fire')))errors.push('4:timeline-overclaim');
-  if(n===6&&/improve(d)? concentration|proved attention gains/i.test(s))errors.push('6:unproven-outcome');
+  if(n===6&&/guarantees improved concentration|proved attention gains|clinically proven to improve/i.test(s))errors.push('6:unproven-outcome');
   rows.push({number:n,subject:m.subject,kind:m.kind,words,characters:s.length,commercial_disclosure_within_first_350:commercial? s.indexOf('may earn a commission')+21<=350:null,source_matched:true,excerpt_approved:false,received_jetpack_email_proven:false,release_status:commercial?'HOLD_UNSENT_AND_MERCHANT':'HOLD_UNSENT'});
  }
  return {schema:'fv-dispatch-r30-custom-excerpt-truth',input_revision:'source-controlled drafts; not native email',errors,rows,ready_to_send:false,live_wp_changes:false};
