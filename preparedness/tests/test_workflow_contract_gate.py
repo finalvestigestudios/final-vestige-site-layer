@@ -102,7 +102,7 @@ class ReceiptContractTests(unittest.TestCase):
     def test_good_receipt_is_hold(self):
         result = gate.verify_receipt(good_receipt(), SHA)
         self.assertIs(result['may_publish'], False)
-        self.assertEqual(result['verified_machine_step_count'], 12)
+        self.assertEqual(result['verified_machine_step_count'], 13)
         self.assertEqual(result['native_test_count'], 715)
 
     def test_reject_wrong_expected_head(self):
