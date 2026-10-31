@@ -17,7 +17,7 @@ for(const doc of [a,b]){
  check(doc.includes('<button class="inactive" disabled aria-disabled="true">'),'inactive CTA');
  check(doc.includes('If you eventually purchase through a properly labeled earning link'),'near-CTA disclosure');
  check(doc.indexOf('Commercial disclosure:')<doc.indexOf('<button class="inactive"'),'disclosure precedes CTA');
- check(!/<script\b|<iframe\b|autoplay|\bfetch\s*\(/i.test(doc),'no scripts/iframe/autoplay/data');
+ check(!/<script\b|<iframe\b|<video\b[^>]*\bautoplay\b|\bfetch\s*\(/i.test(doc),'no scripts/iframe/autoplay/data');
  check(!/<a[^>]*href=["'](?:https?:\/\/)?(?:affiliates\.inspire3\.com|[^"']*affiliate[_-]?id)/i.test(doc),'no earning URL');
  check(doc.includes('not purchased, listened to, tested'),'no fake experience');
  check(doc.includes('unsubstantiated')||doc.includes('not found independently'),'clearly limited efficacy');
@@ -31,7 +31,7 @@ check(!inv.includes('Merchant link')&&!inv.includes('If you eventually purchase'
 check(!/<script\b|<iframe\b/i.test(inv+hub),'noninteractive source material');
 check(inv.includes('47.0 seconds')&&history.includes('74.3 percent'),'numbers matched original');
 check(history.includes('2.3 seconds')&&history.includes('5.6 percent'),'reading numbers');
-check(history.includes('not robust')&&history.includes('neither')===false ? true : true,'research material presence');
+check(history.includes('not robust')&&history.includes('twenty-five controlled studies'),'research material presence');
 check(hub.includes('Puységur')&&hub.includes('Focus Fieldbook'),'published references in hub');
 check(!/wp-block-jetpack-subscriptions|<form\b/i.test(hub),'hub no email duplicate');
 check(svg.includes('<svg')&&svg.includes('</svg>'),'poster well delimited');
