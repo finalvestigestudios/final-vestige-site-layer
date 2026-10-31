@@ -17,7 +17,7 @@ assert(article.includes('https://doi.org/10.1068/p281059'),'1999 DOI');
 assert(article.includes('https://doi.org/10.1068/i0386'),'2010 DOI');
 assert(article.includes('https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/'),'2013 primary');
 assert(article.includes('Puységur'),'historical bridge');
-assert(article.includes('not a validated'),'exercise caveat');
+assert(article.includes('not** a validated'),'exercise caveat');
 assert(article.includes('not a universal probability'),'conditional result');
 assert(article.includes('not a clinical'),'not therapy');
 assert(!/buy now|limited offer|act fast/i.test(article),'no commerce in investigation');
