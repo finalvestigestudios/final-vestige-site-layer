@@ -18,11 +18,13 @@ class TestStagingAdmission(unittest.TestCase):
     def tearDownClass(cls):
         test_http.ApolloHttp.tearDownClass()
 
-    def test_provenance_and_exact_five_exports_over_real_php_http(self):
+    def test_provenance_and_exact_six_exports_over_real_php_http(self):
         r = admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor', allow_stub=True)
         self.assertEqual(r['status'], 'PASS_HTTP_INTEGRITY_ONLY')
         self.assertEqual(r['anonymous_private_page'], 403)
-        self.assertEqual(len(r['exports_sha256']), 5)
+        self.assertEqual(len(r['exports_sha256']), 6)
+        self.assertEqual(r['geographic_pins_admitted'], 0)
+        self.assertEqual(r['geographic_edges_admitted'], 0)
         self.assertFalse(r['wordpress_integrated'])
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
@@ -73,6 +75,26 @@ class TestStagingAdmission(unittest.TestCase):
         with self.assertRaisesRegex(AdmissionError, 'concordance provenance hash'):
             admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
                   allow_stub=True, fetch=bad_concordance)
+
+    def test_atlas_admission_header_mutation_denied(self):
+        def bad_atlas_header(url, cookie=''):
+            status, h, data = no_redirect_fetch(url, cookie)
+            if 'x-fv-ex2-apollo-atlas-sha256' in h:
+                h['x-fv-ex2-apollo-atlas-sha256'] = '0'*64
+            return status, h, data
+        with self.assertRaisesRegex(AdmissionError, 'Atlas admission/custody'):
+            admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
+                  allow_stub=True, fetch=bad_atlas_header)
+
+    def test_atlas_admission_export_tampering_denied(self):
+        def bad_atlas_export(url, cookie=''):
+            status, h, data = no_redirect_fetch(url, cookie)
+            if cookie and 'file=atlas-admission.json' in url:
+                return status, h, data+b'ALTERED'
+            return status,h,data
+        with self.assertRaisesRegex(AdmissionError, 'Export integrity'):
+            admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
+                  allow_stub=True, fetch=bad_atlas_export)
 
     def test_context_index_header_mutation_denied(self):
         def bad_context_header(url, cookie=''):

@@ -119,7 +119,10 @@ class ApolloSealedHTTP(unittest.TestCase):
         self.assertEqual(h.get('x-fv-ex2-apollo-concordance-sha256'),self.manifest['outputs_sha256']['source-concordance.html'])
         self.assertIn(b'id="documentary-trails"',body)
         self.assertNotIn(b'{{FV_EX2_ASSET_BASE}}',body)
-        self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),5)
+        self.assertEqual(body.count(b'fv_ex2_apollo_sealed_download'),6)
+        self.assertEqual(body.count(b'data-admission-record='),6)
+        self.assertEqual(h.get('x-fv-ex2-apollo-atlas-sha256'),self.manifest['outputs_sha256']['atlas-admission.html'])
+        self.assertEqual(h.get('x-fv-ex2-apollo-atlas-index-sha256'),self.manifest['outputs_sha256']['atlas-admission.json'])
         self.assertEqual(h.get('x-fv-ex2-apollo-context-sha256'),self.manifest['outputs_sha256']['source-context.json'])
         import re
         nonces=re.findall(rb'<(?:script|style) nonce="([^"]+)"',body)
@@ -128,12 +131,12 @@ class ApolloSealedHTTP(unittest.TestCase):
         self.assertIn(b"'nonce-"+nonces[0]+b"'",h['content-security-policy'].encode())
 
     def test_06_exact_exports_and_path_allowlist(self):
-        for name in ('evidence-export.csv','evidence-export.json','response-export.csv','response-export.json','source-context.json'):
+        for name in ('evidence-export.csv','evidence-export.json','response-export.csv','response-export.json','source-context.json','atlas-admission.json'):
             with self.subTest(name=name):
                 code,h,body=ajax(self.base,'fv_ex2_apollo_sealed_download',file=name)
                 self.assertEqual(code,200)
-                self.assertEqual(body,(SEALED.parent/'generated'/name).read_bytes() if name != 'source-context.json'
-                                 else __import__('source_concordance').build_context_index().encode('utf-8'))
+                self.assertEqual(body,(SEALED.parent/'generated'/name).read_bytes() if name not in ('source-context.json','atlas-admission.json')
+                                 else (__import__('source_concordance').build_context_index().encode('utf-8') if name == 'source-context.json' else __import__('atlas_admission').build_atlas_admission()[2].encode('utf-8')))
                 self.assertEqual(len(body),int(h['Content-Length']))
                 self.assertIn('attachment;',h['Content-Disposition'])
         for bad in ('../fragment.html','apollo.js','response-export.json/..',''):
