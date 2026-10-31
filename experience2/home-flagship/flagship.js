@@ -26,7 +26,7 @@
     const directionButtons = Array.from(root.querySelectorAll('[data-fv-direction-choice]'));
 
     // Fail open on any missing or duplicate case; every case remains readable.
-    if (!group || !status || !directionGroup ||
+    if (!group || !status ||
         caseButtons.length !== CASES.length || casePanels.length !== CASES.length ||
         new Set(caseButtons.map((button) => button.dataset.fvCaseButton)).size !== CASES.length ||
         new Set(casePanels.map((panel) => panel.dataset.fvCase)).size !== CASES.length ||
@@ -42,7 +42,7 @@
       casePanels.forEach((panel) => { panel.hidden = false; });
       caseButtons.forEach((button) => { button.setAttribute('aria-pressed', 'false'); });
       group.hidden = true;
-      directionGroup.hidden = true;
+      if (directionGroup) directionGroup.hidden = true;
       root.classList.remove('fv-hf--enhanced');
       status.textContent = '';
       // No inert, role="tab", focus manipulation or touch-action side effects.
@@ -82,7 +82,7 @@
         return;
       }
       const choice = event.target.closest && event.target.closest('[data-fv-direction-choice]');
-      if (choice && directionGroup.contains(choice)) {
+      if (choice && directionGroup && directionGroup.contains(choice)) {
         selectDirection(choice.dataset.fvDirectionChoice);
       }
     };
@@ -107,7 +107,7 @@
       if (!('hidden' in document.createElement('div')) || typeof Element.prototype.closest !== 'function') {
         return;
       }
-      if (!DIRECTIONS.every((id) => directionButtons.some((b) => b.dataset.fvDirectionChoice === id))) {
+      if (directionGroup && !DIRECTIONS.every((id) => directionButtons.some((b) => b.dataset.fvDirectionChoice === id))) {
         return;
       }
       // Stage all operations before advertising any enhanced behavior.
@@ -115,16 +115,18 @@
       caseButtons.forEach((button) => { button.setAttribute('aria-pressed', String(button.dataset.fvCaseButton === active)); });
       enhanced = true;
       group.hidden = false;
-      directionGroup.hidden = false;
+      if (directionGroup) directionGroup.hidden = false;
       root.classList.add('fv-hf--enhanced');
       root.addEventListener('click', handleClick);
       root.addEventListener('keydown', handleKeydown);
 
       // URL parameter selects only a visual design study; never executes any external script.
-      const requested = typeof URLSearchParams === 'function' ?
-        new URLSearchParams(window.location.search).get('direction') : null;
-      if (DIRECTIONS.includes(requested)) selectDirection(requested);
-      else selectDirection(root.dataset.fvDirection);
+      if (directionGroup) {
+        const requested = typeof URLSearchParams === 'function' ?
+          new URLSearchParams(window.location.search).get('direction') : null;
+        if (DIRECTIONS.includes(requested)) selectDirection(requested);
+        else selectDirection(root.dataset.fvDirection);
+      }
 
     } catch (err) {
       resetStatic();
