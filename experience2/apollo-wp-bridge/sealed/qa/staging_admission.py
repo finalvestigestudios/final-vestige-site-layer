@@ -121,6 +121,13 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
     anonymous, _, anonymous_body = fetch(src, '')
     if anonymous != 403 or anonymous_body:
         raise AdmissionError('Anonymous private-page request did not return empty HTTP 403')
+    u = urlparse(src)
+    bad_nonce = urlencode({'action':'fv_ex2_apollo_sealed_page',
+                           '_wpnonce':parse_qs(u.query)['_wpnonce'][0]+'-corrupt'})
+    bad_url = urlunparse((u.scheme,u.netloc,u.path,'',bad_nonce,''))
+    rejected, _, rejected_body = fetch(bad_url,cookie)
+    if rejected != 403 or rejected_body:
+        raise AdmissionError('Tampered preview nonce did not return empty HTTP 403')
     status, headers, html = fetch(src, cookie)
     if status != 200 or len(html) < 100000:
         raise AdmissionError(f'Private source rendering failed or truncated: HTTP {status}')
@@ -129,6 +136,10 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
     expected_fragment = hashlib.sha256((expected_dir/'fragment.html').read_bytes()).hexdigest()
     if headers.get('x-fv-ex2-apollo-fragment-sha256') != expected_fragment:
         raise AdmissionError('Actually served fragment provenance hash mismatch')
+    for kind, file in (('css','apollo.css'),('js','apollo.js')):
+        digest = hashlib.sha256((expected_dir/file).read_bytes()).hexdigest()
+        if headers.get('x-fv-ex2-apollo-'+kind+'-sha256') != digest:
+            raise AdmissionError('Actually served '+kind.upper()+' provenance hash mismatch')
     csp = headers.get('content-security-policy','')
     for term in ("default-src 'none'", "frame-ancestors 'self'", "img-src 'none'",
                  "script-src 'nonce-", "style-src 'nonce-", "connect-src 'none'"):
@@ -149,6 +160,9 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         query = urlencode({'action':'fv_ex2_apollo_sealed_download',
                            'file':name, '_wpnonce':parse_qs(u.query)['_wpnonce'][0]})
         url = urlunparse((u.scheme,u.netloc,u.path,'',query,''))
+        anonymous_status, _, anonymous_data = fetch(url,'')
+        if anonymous_status != 403 or anonymous_data:
+            raise AdmissionError('Anonymous private export did not return empty HTTP 403: '+name)
         status,h,data = fetch(url,cookie)
         expected = (expected_dir/name).read_bytes()
         digest = hashlib.sha256(expected).hexdigest()
@@ -158,7 +172,8 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         download_hashes[name] = digest
     return {'status':'PASS_HTTP_INTEGRITY_ONLY', 'source_head':EXPECTED_SOURCE_HEAD,
             'fragment_sha256':expected_fragment,'exports_sha256':download_hashes,
-            'anonymous_private_page':403,'review_http':200,'source_http':200,
+            'anonymous_private_page':403,'anonymous_private_exports':4,
+            'tampered_nonce_page':403,'review_http':200,'source_http':200,
             'read_only':True,'no_wordpress_writes':True,
             'browser_csp_enforcement':'NOT_TESTED', 'axe':'NOT_TESTED',
             'wordpress_integrated':False, 'target':'PHP_STUB' if allow_stub else 'EXTERNAL_HTTP_UNVERIFIED_WP',
