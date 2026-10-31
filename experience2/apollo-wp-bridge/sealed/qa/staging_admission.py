@@ -18,6 +18,7 @@ import sys
 from urllib.parse import parse_qs, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, build_opener, HTTPRedirectHandler, ProxyHandler
 from urllib.error import HTTPError
+from source_concordance import build_concordance
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
@@ -140,6 +141,14 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         digest = hashlib.sha256((expected_dir/file).read_bytes()).hexdigest()
         if headers.get('x-fv-ex2-apollo-'+kind+'-sha256') != digest:
             raise AdmissionError('Actually served '+kind.upper()+' provenance hash mismatch')
+    # The generated source-concordance must also match the local pinned data.
+    # A valid original fragment hash alone is insufficient for staged HTML
+    # assembled from a second authenticated asset.
+    expected_concordance_sha = build_concordance(generated=expected_dir)[2]['concordance_html_sha256']
+    if headers.get('x-fv-ex2-apollo-concordance-sha256') != expected_concordance_sha:
+        raise AdmissionError('Actually served concordance provenance hash mismatch')
+    if b'id="source-concordance"' not in html or html.count(b'data-concordance-record=') != 6:
+        raise AdmissionError('Served six-source concordance incomplete')
     csp = headers.get('content-security-policy','')
     for term in ("default-src 'none'", "frame-ancestors 'self'", "img-src 'none'",
                  "script-src 'nonce-", "style-src 'nonce-", "connect-src 'none'"):
@@ -171,7 +180,8 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
             raise AdmissionError('Export integrity/status/headers failed: '+name)
         download_hashes[name] = digest
     return {'status':'PASS_HTTP_INTEGRITY_ONLY', 'source_head':EXPECTED_SOURCE_HEAD,
-            'fragment_sha256':expected_fragment,'exports_sha256':download_hashes,
+            'fragment_sha256':expected_fragment,'concordance_sha256':expected_concordance_sha,
+            'exports_sha256':download_hashes,
             'anonymous_private_page':403,'anonymous_private_exports':4,
             'tampered_nonce_page':403,'review_http':200,'source_http':200,
             'read_only':True,'no_wordpress_writes':True,
