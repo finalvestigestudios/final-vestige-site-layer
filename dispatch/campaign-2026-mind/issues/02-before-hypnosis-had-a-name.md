@@ -5,31 +5,35 @@
 
 **Subject:** Before hypnosis had a name
 
-**Preheader:** The eighteenth-century witnesses who left behind a problem of proof.
+**Preheader:** In 1784, a young man slept and spoke. His witness drew a startling conclusion.
 
 **Content type:** editorial
 
 ---
 
-**In 1784**, Puységur published accounts of what he called magnetic somnambulism. His descriptions still ask an uncomfortable question: how do you decide what a remarkable experience proves when the people describing it have a theory they badly want to believe?
+On **May 4, 1784**, a French aristocrat experimenting with *animal magnetism* reported something he hadn't expected. At his estate in Buzancy, near Soissons, the Marquis de Puységur tried the technique on a young farmworker, Victor Race, who was ill. According to the account Puységur later published, Victor fell into a calm, sleep-like state. He could speak and respond. Afterward, he reportedly remembered nothing of the session.
 
-It is tempting to pick a side immediately. Either the witnesses discovered a remarkable force—or they were fooled. But that shortcut skips the most interesting part: what survived on paper, who said it, how close they were to the events and where the record leaves us unable to decide.
+It is a remarkable scene. But notice how much of it arrives through one person's pen.
 
-Those questions matter now. Hypnosis and suggestion are discussed in entirely different vocabulary today, yet marketing still sometimes leaps from a person's report of an experience to sweeping claims about what a technique can accomplish.
+Puységur believed he was observing *magnetic somnambulism*. His teacher, Franz Anton Mesmer, had proposed an invisible healing fluid. The reported behavior gave Puységur a new question to study; it did **not** demonstrate that such a fluid existed, that a treatment had worked, or that the patient's recollection was independently tested.
 
-The document doesn't authorize that leap. It gives us something better: the opportunity to examine it.
+The timing makes the evidence especially interesting. **In the same year, royal commissioners in France investigated Mesmer's animal-magnetism claims** and concluded that the effects they observed could be explained without the proposed magnetic fluid. But their investigations were **not a direct test of Puységur's particular May encounter**. Putting two 1784 documents side by side is useful; treating them as one experiment is not.
 
-**Three questions for any astonishing claim:**
+Three different records help us keep our footing. A [Wellcome Collection catalogue entry](https://wellcomecollection.org/works/es4ayp6q) establishes that Puységur's *Détail des cures* was printed in Soissons in 1784; its listed copy is not presently available for online examination. Historian [Adam Crabtree's 2019 study](https://pubmed.ncbi.nlm.nih.gov/31273811/) traces the unusual early circulation of Puységur's *Mémoires* and its place in psychological history. A [historical account of Franklin's commission](https://pubmed.ncbi.nlm.nih.gov/8209564/) explains why the contemporary inquiry into Mesmer mattered. None of these sources is permission to treat an eighteenth-century cure claim as medical evidence.
 
-- What is the strongest firsthand source?
-- What was directly observed, rather than inferred?
-- What result would change our interpretation?
+**Try the three-column test** the next time a story seems too extraordinary to question:
 
-We assembled a detailed resource with historical references, source rows and cases, including the limitations of the evidence. A [peer-reviewed historical study](https://pubmed.ncbi.nlm.nih.gov/31273811/) places the initial publication in 1784; a [modern scholarly edition of the source text](https://www.routledge.com/The-Marquis-de-Puysgur-Artificial-Somnambulism-and-the-Discovery-of/Crabtree-Osei-Bonsu/p/book/9781032292472) helps identify what was written then. It isn't a recommendation to use historical treatments. It is a way to read extraordinary accounts carefully.
+- **Recorded:** What did the surviving document actually say, and who wrote it?
+- **Inferred:** Which explanation did the writer attach to the event?
+- **Unsettled:** What independent observation would help distinguish that explanation from an alternative?
+
+Here, the reported sleep, speech and amnesia belong in the first column **as testimony**, not established measurements. The magnetic fluid belongs in the second. The third column remains open. That's a more useful reading than either dismissing the witness outright or believing every conclusion he drew.
+
+We traced the period's accounts, the later interpretation and the limits of the surviving record in our public research dossier.
 
 **Read the file:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).
 
-Next, we'll turn from historical testimony to a very practical question: can a short, deliberate routine help you make space for attention?
+Next week: a twelve-minute attention practice you can try for free, and a careful look at what a commercial audio program does—and doesn't—establish.
 
 
 ---
