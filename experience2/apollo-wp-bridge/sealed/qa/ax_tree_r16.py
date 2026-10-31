@@ -75,10 +75,10 @@ def run():
             assert card.get_by_role('radio',name='1966 rehearsal — 1').is_checked()
             year=audit_ax(cdp)
             # When filtering to 1966, the other five cards are CSS-hidden and
-            # their inner source links MUST be absent from the focus order.
+            # their four distinct source links per record MUST be absent from the focus order.
             hidden=card.locator('[data-concordance-record]:not(:visible) a').count()
-            assert hidden==10,(width,hidden)
-            assert year['actionables']<=baseline['actionables']-10,(width,year,baseline)
+            assert hidden==20,(width,hidden)
+            assert year['actionables']<=baseline['actionables']-20,(width,year,baseline)
             card.get_by_role('radio',name='All six source records').check()
             assert card.locator('[data-concordance-record]:visible').count()==6
             restored=audit_ax(cdp)
