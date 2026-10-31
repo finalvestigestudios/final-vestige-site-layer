@@ -60,7 +60,7 @@ function audit(files,matrix){
  check('buyer guide declared no firsthand use', G.includes('not purchased or listened to'));
  check('buyer guide preserves focus', G.includes('https://finalvestige.com/focus/'));
  check('plan fair A/B disclosure equality', P.includes('Exactly identical')&&P.includes('plain-language near-button'));
- check('plan privacy OFF', P.includes('No pixel')&&P.includes('No server log changes')&&P.includes('No collection enabled here')===false);
+ check('plan privacy OFF', P.includes('No pixel')&&P.includes('No server log changes')&&P.includes('Privacy-safe future outbound attribution (currently DISABLED)'));
  check('plan preserves no-JS and site QA', P.includes('no JS')&&P.includes('Site QA #126'));
  check('plan requires real browser device widths', P.includes('360, 390, 768, 1440 and 1920'));
  check('plan requires accessibility review', P.includes('NVDA/VoiceOver'));
