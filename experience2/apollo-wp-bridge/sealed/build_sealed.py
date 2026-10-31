@@ -19,7 +19,7 @@ import zlib
 
 from qa.custody_integrity import check_directory
 from qa.nasa_editorial_gate import audit_files
-from qa.source_concordance import build_concordance
+from qa.source_concordance import build_concordance, build_context_index
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -56,6 +56,9 @@ def build(out: Path) -> dict:
     custody_receipt = check_directory(BRIDGE / 'generated')
     nasa_receipt = audit_files(UPSTREAM, BRIDGE / 'generated')
     concordance_html, concordance_css, concordance_receipt = build_concordance(UPSTREAM, BRIDGE / 'generated')
+    context_index = build_context_index(UPSTREAM, BRIDGE / 'generated')
+    if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
+        raise ValueError('Derived context-index and concordance receipt mismatch')
     payload = {}
     hashes = {}
     sizes = {}
@@ -68,7 +71,8 @@ def build(out: Path) -> dict:
         sizes[name] = len(raw)
         hashes[name] = sha
         payload[name] = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
-    for name, text in (('source-concordance.html', concordance_html), ('source-concordance.css', concordance_css)):
+    for name, text in (('source-concordance.html', concordance_html), ('source-concordance.css', concordance_css),
+                       ('source-context.json', context_index)):
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
         hashes[name] = hashlib.sha256(raw).hexdigest()
@@ -98,7 +102,7 @@ def build(out: Path) -> dict:
         'outputs_bytes': sizes,
         'plugin_sha256': hashlib.sha256(php.encode('utf-8')).hexdigest(),
         'routes': ['authorized staging editor shortcode', 'authorized nonce-checked Ajax HTML',
-                   'authorized nonce-checked CSV/JSON downloads'],
+                   'authorized nonce-checked CSV/JSON downloads including source context index'],
         'generated_public_static_assets': [],
         'non_waivable_holds': ['No WordPress installation or activation performed',
                                'Requires WP_ENVIRONMENT_TYPE=staging and FV_EX2_APOLLO_STAGING_ALLOW=true',

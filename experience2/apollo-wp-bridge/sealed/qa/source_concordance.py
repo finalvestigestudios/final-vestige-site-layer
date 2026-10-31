@@ -26,6 +26,14 @@ ERA = {
     '06': ('2017', 'Retrospective hatch exhibit'),
 }
 
+# Only source dates established by NASA catalog witnesses. These are **source
+# contexts**, not a reconstruction of an event or a geospatial relationship.
+ERA_FILTERS = (('all', 'All six source records', 6),
+               ('1966', '1966 rehearsal — 1', 1),
+               ('1967', '1967 photographs — 3', 3),
+               ('2017', '2017 commemorations — 2', 2))
+CONTEXT_EXPORT = '{{FV_EX2_CONTEXT_EXPORT}}'
+
 CSS = """/* Source-concordance is embedded only in authenticated Apollo staging review. */
 .fv-ex2-concordance{background:#10110f;color:#f4efe6;border-block:1px solid #514738;padding:clamp(30px,5vw,72px) clamp(16px,5vw,72px);font-family:Inter,system-ui,sans-serif;line-height:1.6;}
 .fv-ex2-concordance *{box-sizing:border-box;}
@@ -44,6 +52,23 @@ CSS = """/* Source-concordance is embedded only in authenticated Apollo staging 
 .fv-ex2-concordance summary{cursor:pointer;color:#f2d69b;min-height:44px;display:list-item;padding:10px 5px;font-weight:650}
 .fv-ex2-concordance details{margin-top:12px;border-top:1px solid #665944;}
 .fv-ex2-concordance details p{margin:0 0 12px;color:#e7dfd2}
+
+/* The temporal lens works without JS. Older browsers that lack :has() see
+   ALL records and NO misleading filter controls (progressive fail-open). */
+.fv-ex2-concordance__filters{display:none;min-width:0;border:1px solid #77654c;padding:14px;margin:0 0 20px;gap:10px 16px;flex-wrap:wrap}
+.fv-ex2-concordance__filters legend{font-weight:700;color:#f4efe6;padding:0 6px}
+.fv-ex2-concordance__filters label{display:inline-flex;gap:9px;align-items:center;min-height:44px;cursor:pointer;color:#f4efe6;border:1px solid #665944;padding:8px 12px;max-width:100%;overflow-wrap:anywhere}
+.fv-ex2-concordance__filters input{margin:0;width:20px;height:20px;accent-color:#dbbb7e;flex:none}
+.fv-ex2-concordance__filters label:has(input:checked){background:#4c3a23;outline:1px solid #d9bd85}
+.fv-ex2-concordance__filters label:focus-within{outline:3px solid #ffe4aa;outline-offset:3px}
+.fv-ex2-concordance__availability{font-size:.88rem;color:#d8d0c5;max-width:75ch;margin:0 0 18px}
+.fv-ex2-concordance__export{display:inline-flex;margin:8px 0 24px}
+@supports selector(:has(*)) {
+  .fv-ex2-concordance__filters{display:flex}
+  #source-concordance:has(#fv-ex2-lens-1966:checked) [data-concordance-era]:not([data-concordance-era="1966"]),
+  #source-concordance:has(#fv-ex2-lens-1967:checked) [data-concordance-era]:not([data-concordance-era="1967"]),
+  #source-concordance:has(#fv-ex2-lens-2017:checked) [data-concordance-era]:not([data-concordance-era="2017"]){display:none}
+}
 .fv-ex2-concordance :focus-visible{outline:3px solid #ffe4aa;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){.fv-ex2-concordance *, .fv-ex2-concordance *::before,.fv-ex2-concordance *::after{scroll-behavior:auto!important;transition:none!important}}
 """
@@ -54,6 +79,51 @@ class ConcordanceHold(ValueError):
 def checked(condition: bool, message: str) -> None:
     if not condition:
         raise ConcordanceHold(message)
+
+
+def build_context_index(casefile: Path = CASEFILE, generated: Path = GENERATED) -> str:
+    """Return a deterministic, non-geolocated JSON research/custody index.
+
+    This export is a *derived editorial index* of pinned NASA catalog records;
+    it is not a newly sourced claim, rights clearance, or incident geolocation.
+    """
+    data = json.loads((casefile/'records.json').read_text(encoding='utf-8'))
+    rows = data['records']
+    fragment = (generated/'fragment.html').read_text(encoding='utf-8')
+    checked(len(rows) == 6 and [r['id'] for r in rows] == list(ERA),
+            'Context index requires the six original records')
+    result = []
+    for row in rows:
+        rid = row['id']
+        era, role = ERA[rid]
+        url = urlsplit(row['image_url'])
+        checked(era in row['source_date'], f'Context index date drift {rid}')
+        checked(url.scheme=='https' and url.netloc=='www.nasa.gov' and
+                url.path.startswith('/image-detail/') and not url.query and not url.fragment,
+                f'Context index lost NASA catalog host {rid}')
+        checked(row['rights'].startswith('link_only_'),f'Context export rights escalation {rid}')
+        checked(f'id="stage-{rid}"' in fragment and f'id="source-{rid}"' in fragment,
+                f'Context export broken claim/source custody {rid}')
+        for key in ('title','source_id','source_date','image_credit','limit','image_url'):
+            checked(isinstance(row.get(key),str) and row[key].strip(),
+                    f'Context export missing {key} {rid}')
+        result.append({
+            'claim_id':rid, 'catalog_id':row['source_id'],
+            'catalog_date':row['source_date'], 'source_era':era,
+            'source_role':role, 'source_url':row['image_url'],
+            'source_credit':row['image_credit'], 'title':row['title'],
+            'cannot_establish':row['limit'], 'media_status':row['rights'],
+            'chronology_anchor':f'#stage-{rid}', 'source_drawer_anchor':f'#source-{rid}',
+            'geometry':'not_assigned',
+        })
+    checked({era:sum(r['source_era']==era for r in result) for era in ('1966','1967','2017')}
+            == {'1966':1,'1967':3,'2017':2}, 'NASA temporal group counts drifted')
+    obj={'schema':'fv-ex2-apollo-source-context-v1',
+         'canonical_source_commit':'74375657f2cdaac0710f94c6de6c24534ee06858',
+         'media_rights':'HOLD_PER_ITEM_REVIEW', 'not_a_rights_clearance':True,
+         'not_an_incident_reconstruction':True, 'geographic_coordinates_assigned':0,
+         'record_count':len(result), 'records':result}
+    return json.dumps(obj, sort_keys=True, ensure_ascii=False, indent=2) + '\n'
 
 
 def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) -> tuple[str,str,dict]:
@@ -77,7 +147,7 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
         for field in ('title','source_id','image_credit','limit','finding'):
             checked(isinstance(row.get(field),str) and row[field].strip(), f'Missing {field} at {rid}')
         e=lambda key:escape(row[key],quote=True)
-        cards.append(f'''<li class="fv-ex2-concordance__card" data-concordance-record="{rid}">
+        cards.append(f'''<li class="fv-ex2-concordance__card" data-concordance-record="{rid}" data-concordance-era="{era}">
 <p class="fv-ex2-concordance__type">{rid} / {escape(kind)} / {escape(date)}</p>
 <h3>{e('title')}</h3>
 <p class="fv-ex2-concordance__metadata">NASA catalog: {e('source_id')}. Credit: {e('image_credit')}.</p>
@@ -85,20 +155,32 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
 <a href="{escape(url,quote=True)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Inspect NASA catalog <span class="ex2-sr-only">(opens in a new tab)</span></a></div>
 <details><summary>What this photograph cannot establish</summary><p>{e('limit')}</p></details>
 </li>''')
+    filters=''.join(
+        '<label for="fv-ex2-lens-'+era+'"><input type="radio" id="fv-ex2-lens-'+era+'" '
+        'name="fv-ex2-source-era" value="'+era+'"'+(' checked' if era=='all' else '')+'>'
+        +escape(label)+'</label>'
+        for era,label,count in ERA_FILTERS
+    )
     html=f'''<section id="source-concordance" class="fv-ex2-concordance" aria-labelledby="fv-ex2-concordance-title">
 <div class="fv-ex2-concordance__inner"><p class="fv-ex2-concordance__eyebrow">THE EVIDENCE / DOCUMENTARY SOURCE CONCORDANCE</p>
 <h2 id="fv-ex2-concordance-title">The photograph has a date. The claim has a different burden of proof.</h2>
 <p class="fv-ex2-concordance__intro">These six NASA catalog records help orient the investigation; they do not independently prove every accompanying historical claim. A 1966 rehearsal is not the 1967 fire, and two 2017 tribute exhibits are not accident footage. Open each record to see its limits. All images remain links to NASA, not reproduced here.</p>
+<fieldset class="fv-ex2-concordance__filters"><legend>View records by source year</legend>{filters}</fieldset>
+<p class="fv-ex2-concordance__availability">Choose a year to narrow the catalog records without changing the historical conclusions. Select “All six source records” to restore the complete index.</p>
 <ol class="fv-ex2-concordance__cards">{''.join(cards)}</ol>
+<a class="fv-ex2-concordance__export" href="{CONTEXT_EXPORT}" download="apollo-source-context.json">Download the six-record source context index (JSON)</a>
 <p class="fv-ex2-concordance__intro">Media reproduction and promotional rights remain under item-level review; NASA does not endorse this independent investigation.</p>
 </div></section>'''
     checked('<img' not in html and '<script' not in html and '<iframe' not in html,
             'Concordance must remain static and link-only')
     checked('latitude' not in html.lower() and 'longitude' not in html.lower(), 'No geospatial claims permitted')
     digest=lambda s: sha256(s.encode('utf-8')).hexdigest()
-    receipt={'status':'PASS_SOURCE_PINNED_LINK_ONLY', 'record_count':len(source),
+    context_json=build_context_index(casefile,generated)
+    receipt={'status':'PASS_SOURCE_PINN_LINK_ONLY', 'record_count':len(source),
              'source_records_sha256':sha256(source_bytes).hexdigest(),
              'concordance_html_sha256':digest(html),'concordance_css_sha256':digest(CSS),
+             'context_index_sha256':digest(context_json),'context_index_records':6,
+             'filter_counts':{'all':6,'1966':1,'1967':3,'2017':2}, 'css_only_era_filter':True,
              'links_to_original_nasa':len(source),'links_to_existing_chronology':len(source),
              'photos_embedded':0,'geographic_pins':0,'no_js_native_details':True,
              'rights':'HOLD_PER_ITEM_REVIEW'}
