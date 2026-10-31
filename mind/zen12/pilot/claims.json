@@ -1,0 +1,232 @@
+{
+  "review_date": "2026-10-30",
+  "status": "UNPUBLISHED_DRAFT",
+  "affiliate_url": null,
+  "affiliate_account_approved": false,
+  "paid_product_tested": false,
+  "sources": {
+    "S1": "https://zen12.com/about",
+    "S2": "https://zen12.com/getstarted",
+    "S3": "https://zen12.com/research",
+    "S4": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+    "S5": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "S6": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "S7": "https://zen12.com/welcome",
+    "S8": "https://inspire3.com/",
+    "S9": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S10": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S11": "https://affiliates.inspire3.com/"
+  },
+  "claims": [
+    {
+      "id": "01",
+      "claim": "Twelve levels listed",
+      "source": "S1",
+      "disposition": "seller_feature",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "02",
+      "claim": "Four versions at each level",
+      "source": "S1",
+      "disposition": "seller_feature",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "03",
+      "claim": "Twelve minutes per session",
+      "source": "S1",
+      "disposition": "seller_feature",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "04",
+      "claim": "48 MP3 bundle listed",
+      "source": "S2",
+      "disposition": "seller_feature",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "05",
+      "claim": "Additional supporting files described",
+      "source": "S2",
+      "disposition": "seller_feature",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "06",
+      "claim": "Headphones not essential per merchant",
+      "source": "S1",
+      "disposition": "seller_instruction",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "07",
+      "claim": "Do not use while driving",
+      "source": "S1",
+      "disposition": "seller_safety_instruction",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "08",
+      "claim": "Recording equivalent to hour of meditation",
+      "source": "S1",
+      "disposition": "exclude_unsubstantiated_efficiency",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "09",
+      "claim": "Audio automatically meditates for buyer",
+      "source": "S1",
+      "disposition": "exclude_unsubstantiated_product_efficacy",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "10",
+      "claim": "Brainwave audio erases anxiety",
+      "source": "S1",
+      "disposition": "exclude_unsubstantiated_health_claim",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "11",
+      "claim": "Meditation trials found some positive outcomes",
+      "source": "S4",
+      "disposition": "independent_limited_context",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "12",
+      "claim": "Goyal tested Zen12 directly",
+      "source": "S4",
+      "disposition": "exclude_invalid_study_transfer",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "13",
+      "claim": "Binaural beat EEG evidence mixed",
+      "source": "S5",
+      "disposition": "independent_limited_context",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "14",
+      "claim": "Ingendoh verified Zen12",
+      "source": "S5",
+      "disposition": "exclude_invalid_study_transfer",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "15",
+      "claim": "Isochronic tones and binaural beats identical",
+      "source": "S3",
+      "disposition": "exclude_unsupported_technology_equivalence",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "16",
+      "claim": "Specific purchased MP3 waveforms measured",
+      "source": "S3",
+      "disposition": "exclude_unperformed_product_test",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "17",
+      "claim": "NCCIH describes varied meditation evidence",
+      "source": "S6",
+      "disposition": "independent_guidance",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "18",
+      "claim": "Seller free sample enrolls newsletter",
+      "source": "S7",
+      "disposition": "seller_signup_notice",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "19",
+      "claim": "Seller list is Final Vestige Jetpack list",
+      "source": "S7",
+      "disposition": "exclude_false_funnel",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "20",
+      "claim": "Full refund certain in every jurisdiction",
+      "source": "S2",
+      "disposition": "exclude_volatile_unverified_term",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "21",
+      "claim": "Evergreen checkout price certain",
+      "source": "S2",
+      "disposition": "exclude_volatile_unverified_term",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "22",
+      "claim": "Final Vestige used all paid tracks",
+      "source": "S2",
+      "disposition": "exclude_fabricated_personal_experience",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "23",
+      "claim": "FV may earn commission from approved qualifying link",
+      "source": "S9",
+      "disposition": "disclosure_required_if_active",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "24",
+      "claim": "FTC requires substantiated objective claims",
+      "source": "S10",
+      "disposition": "regulatory_guidance",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "25",
+      "claim": "Public signup page proves FV accepted",
+      "source": "S11",
+      "disposition": "exclude_false_authorization",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "26",
+      "claim": "Film illustrates measured EEG effect",
+      "source": "S3",
+      "disposition": "exclude_fabricated_visual_evidence",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "27",
+      "claim": "Film improves purchase conversion",
+      "source": "S11",
+      "disposition": "exclude_unmeasured_conclusion",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "28",
+      "claim": "Outbound click proves a purchase",
+      "source": "S11",
+      "disposition": "exclude_false_attribution",
+      "note": "Never represent as substantiated or firsthand"
+    },
+    {
+      "id": "29",
+      "claim": "Short format may be appealing to some",
+      "source": "S1",
+      "disposition": "conditional_preference_not_efficacy",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    },
+    {
+      "id": "30",
+      "claim": "Zen12 belongs to Inspire3 brand family",
+      "source": "S8",
+      "disposition": "seller_catalog",
+      "note": "Attribute seller statements; preserve scope of cited independent evidence"
+    }
+  ]
+}
