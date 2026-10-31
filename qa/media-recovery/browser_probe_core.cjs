@@ -94,9 +94,16 @@ function classifyImages(stored,rendered,network,pageVerified){
   // Never attribute a stale src/data-src request to the decoded currentSrc.
   const req=r&&r.currentSrc&&network.findLast(n=>[n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc)));
   const responseStatus=req&&Number.isInteger(req.status)?req.status:null,reqError=req?.failed_error||null;
+  const responseMime=typeof req?.mime_type==='string'?req.mime_type.split(';')[0].trim().toLowerCase():null;
+  // Successful HTTP does not imply a valid image: some publishers return 200 HTML/XML/JSON error bodies.
+  // Require a completed, zero-width decode and a matching real CDP network response.
+  const incompatibleResponse=!!(responseStatus>=200&&responseStatus<300&&responseMime&&
+   ['text/html','application/json','application/xml','text/xml'].includes(responseMime));
   const domMapped=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
   const identityVerified=domMapped&&activeImageIdentity(s,r);
-  const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&(reqError||(responseStatus!==null&&responseStatus>=400)));
+  const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&
+   (reqError||(responseStatus!==null&&responseStatus>=400)||incompatibleResponse));
+  const failureKind=visiblyBroken?(reqError?'network_error':responseStatus>=400?'http_error':'non_image_error_payload'):null;
   const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth>0);
   let state='unverified';
   if(!pageVerified)state='page_not_verified';
@@ -109,7 +116,8 @@ function classifyImages(stored,rendered,network,pageVerified){
   else state='pending_lazy_or_incomplete';
   return{image_key:j.key,match:j.match,stored_url:s.source_url,rendered_src:r?.src||null,
    current_src:r?.currentSrc||null,current_src_identity_verified:identityVerified,complete:r?.complete??null,natural_width:r?.naturalWidth??null,
-   request_url:req?.url||null,http_status:responseStatus,network_failure:reqError,
+   request_url:req?.url||null,http_status:responseStatus,response_mime_type:responseMime,
+   network_failure:reqError,visual_failure_kind:failureKind,
    transfer_bytes:Number.isInteger(req?.encodedDataLength)?req.encodedDataLength:null,
    result:state,verified_broken_in_browser:visiblyBroken?true:verifiedLoaded?false:null};
  });
