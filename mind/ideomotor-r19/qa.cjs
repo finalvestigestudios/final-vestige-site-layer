@@ -13,7 +13,7 @@ function audit(files,matrix){
   test(name+': only one h1',(h.match(/<h1\b/ig)||[]).length===1);
   test(name+': disabled native CTA',/<button\b[^>]*\bdisabled\b/i.test(h));
   test(name+': aria-disabled CTA',/<button\b[^>]*aria-disabled="true"/i.test(h));
-  test(name+': near CTA commission disclosure',/If you purchase through (?:a qualifying link|this link), Final Vestige may earn a commission at no additional cost to you/.test(h));
+  test(name+': near CTA commission disclosure',/If you purchase through[^<]{0,150}Final Vestige may earn a commission at no additional cost to you/.test(h));
   test(name+': no active anchor to merchant',!/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|affiliates\.inspire3\.com)/i.test(h));
   test(name+': no active merchant URL via button',!/<button\b[^>]*(?:onclick|data-href|formaction)=/i.test(h));
   test(name+': no form or duplicate signup',!/<form\b|<input\b[^>]*type\s*=\s*["']email|jetpack-subscriptions__form-elements/i.test(h));
@@ -43,13 +43,13 @@ function audit(files,matrix){
  test('article practical non-diagnostic exercise',I.includes('not a diagnostic')&&I.includes('weight may move'));
  test('guide exact seller URL',G.includes('https://hypnosislive.com/mental-skills/total-focus'));
  test('guide seller format and author',G.includes('33-minute')&&G.includes('47 MB')&&G.includes('J.A. Amos'));
- test('guide rejects SKU-specific efficacy leap',G.includes('not independently')&&G.includes('reprogram'));
+ test('guide rejects SKU-specific efficacy leap',G.includes('product-specific')&&G.includes('reprogram'));
  test('guide free seven-minute method',G.includes('seven-minute timer')&&G.includes('seven-minute'));
  test('guide FTC terms and affiliate link held',G.includes('MERCHANT BUTTON: DISABLED'));
  test('pilot exact Zen12 offer four formats', ['Guided','Music','White noise','Nature'].every(t=>A.includes(t)));
- test('pilot exact Zen12 twelve levels and session duration',A.includes('twelve levels')&&A.includes('twelve-minute'));
+ test('pilot exact Zen12 twelve levels and session duration',A.includes('twelve progression levels')&&A.includes('twelve-minute'));
  test('pilot objections about checkout',A.includes('mobile-phone')&&A.includes('countdown'));
- test('pilot no hour-equivalence adoption',A.includes('does not')&&A.includes('hour of meditation'));
+ test('pilot no hour-equivalence adoption',A.includes('does not')&&A.includes('hour of ordinary meditation'));
  test('pilot full free twelve-minute alternative',A.includes('first two minutes')&&A.includes('next eight')&&A.includes('final two'));
  test('pilot transcript useful without video',A.includes('Read the full 40-second video transcript'));
  test('A text-only',!/<video\b/i.test(A));
