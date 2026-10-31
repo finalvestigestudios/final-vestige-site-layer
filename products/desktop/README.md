@@ -11,6 +11,21 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R81 premium source-reference display integrity (pre-release)
+
+GrantAudit Studio Pro and ProcureGuard Studio Pro now visibly render
+report-origin identifiers and flags in their human review queue and CSV
+register. Invisible/bidirectional Unicode, non-ASCII spacing, variation
+selectors and literal backslashes use deterministic ASCII escapes. Literal
+Unicode escape text and actual hidden characters are distinguishable.
+The register's source_key and original_flags columns are now human-display
+representations, not byte-for-byte source data. Refer to the original report
+and SHA-256 for exact evidence. Source cases, journal hashes, physical lines,
+money arithmetic and review decisions remain unchanged. See
+[R81 display-integrity notes](docs/PREMIUM_SOURCE_DISPLAY_R81.md).
+This is pre-release source-only work, not native Windows verification.
+Independent QD and founder approvals are still required.
+
 ## R80 premium raw-review boundary (pre-release)
 
 The shared GrantAudit Studio Pro / ProcureGuard Studio Pro human-review validator
