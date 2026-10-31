@@ -6,7 +6,7 @@ Financial values must remain finite Decimal instances; never use floats.
 """
 from __future__ import annotations
 
-from decimal import Decimal, localcontext
+from decimal import Context, Decimal, localcontext
 from heapq import heappop, heappush
 
 
@@ -19,8 +19,7 @@ def _exact_midpoint(left: Decimal, right: Decimal) -> Decimal:
     """
     decimals = max(0, -left.as_tuple().exponent, -right.as_tuple().exponent)
     integers = max(1, left.adjusted() + 1, right.adjusted() + 1)
-    with localcontext() as context:
-        context.prec = max(context.prec, integers + decimals + 3)
+    with localcontext(Context(prec=max(28, integers + decimals + 3))):
         return (left + right) / Decimal(2)
 
 
