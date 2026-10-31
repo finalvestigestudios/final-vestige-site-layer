@@ -5,7 +5,7 @@ visible in the exported report, even when monetary totals happen to agree.
 """
 from __future__ import annotations
 
-from decimal import Decimal
+from decimal import Context, Decimal, localcontext
 from typing import Iterable, Mapping
 
 
@@ -62,6 +62,33 @@ def reconciliation_status(left: list[dict[str, str]], right: list[dict[str, str]
     return ";".join(findings) or "matched"
 
 
+# Up to 200,000 invoiced units/lines can produce totals far above 1e12.
+# Keep the exact documented procurement aggregation envelope (<= 2e26).
+_PRICE_LIMIT = Decimal("1000000000000000000000000000")
+
+
+def price_outside_tolerance(actual: Decimal, expected: Decimal,
+                            absolute: Decimal, fraction: Decimal) -> bool:
+    """Evaluate review thresholds exactly, including when called directly.
+
+    All four operands must be bounded, finite Decimal values. A private
+    context makes the comparison independent of caller rounding, traps and
+    exponent limits. This is a review flag, never authorization for payment.
+    """
+    values = (actual, expected, absolute, fraction)
+    if any(type(value) is not Decimal or not value.is_finite() for value in values):
+        raise ValueError("Price tolerance requires finite exact Decimal values")
+    if (actual.copy_abs() > _PRICE_LIMIT or expected.copy_abs() > _PRICE_LIMIT
+            or absolute < 0 or absolute > _PRICE_LIMIT
+            or fraction < 0 or fraction > 1):
+        raise ValueError("Price tolerance operands exceed suite review bounds")
+    with localcontext(Context(prec=64)):
+        deviation = (actual - expected).copy_abs()
+        threshold = max(absolute, expected.copy_abs() * fraction)
+        return deviation > threshold
+
+
 def price_exceeds_tolerance(actual: Decimal, expected: Decimal) -> bool:
-    """Maximum of one cent or 2% of expected value, with exact decimal math."""
-    return abs(actual - expected) > max(Decimal("0.01"), abs(expected) * Decimal("0.02"))
+    """Legacy one-cent-or-2% review flag; never financial authorization."""
+    return price_outside_tolerance(
+        actual, expected, Decimal("0.01"), Decimal("0.02"))
