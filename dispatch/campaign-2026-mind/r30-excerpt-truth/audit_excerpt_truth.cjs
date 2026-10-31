@@ -6,7 +6,7 @@ const anchors=[
  {excerpt:['1784','Puységur','royal commission'],source:['May 4, 1784','Puységur','commission']},
  {excerpt:['Zen12','Beginner','Premium','Advanced'],source:['Zen12','Beginner','Premium','Advanced']},
  {excerpt:['Apollo','17.1','fire','hatch'],source:['17.1','fire','hatch']},
- {excerpt:['Total Focus','33-minute','seller claims'],source:['Total Focus','33','seller claims']},
+ {excerpt:['Total Focus','33-minute','seller assertions'],source:['Total Focus','33','seller claims']},
  {excerpt:['2002','diaries','Fieldbook'],source:['2002','diaries','Fieldbook']}
 ];
 function audit(excerptData,manifest,sources){
