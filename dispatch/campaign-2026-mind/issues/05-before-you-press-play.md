@@ -21,12 +21,12 @@ Before buying any self-hypnosis audio, I'd ask three questions.
 
 **What is the claim?** General relaxation, a pleasant guided experience and a guaranteed change in behavior are different promises. They require different kinds of support.
 
-**What happens if it isn't for you?** Check current price, format, access terms and refund conditions on the seller's actual page, not in an old promotion. For example, the merchant's FAQ presently says refund requests must be made within 14 days and limits refunds to five sessions per year. Confirm those terms yourself at checkout.
+**What happens if it isn't for you?** Check the current price, file format, access method and refund policy on the seller's checkout page. Those details can change. We won't reproduce a temporary price, discount or refund limit in an email someone may read months later.
 
-**A program under review: Hypnosis Live.** The official Hypnosis Live catalog currently offers more than 200 downloadable self-hypnosis MP3 titles, including tracks marketed around focus, organization and habits. Its FAQ says most individual sessions are about 40 minutes and available immediately after purchase, with no recurring charge for the individual recording. This is useful format information, **not proof that a particular recording changes behavior**. The [NIH's hypnosis review](https://www.nccih.nih.gov/health/hypnosis) describes promising evidence for certain uses but mixed or limited evidence elsewhere; that evidence cannot automatically be generalized to these specific commercial recordings.
+**The recording we're evaluating: Total Focus.** The seller's current Total Focus listing describes a downloadable hypnosis audio recording lasting **33 minutes** and sized **47 MB**, with an audio preview. Those are seller-listed product specifications, not evidence of a measurable improvement in concentration. The page also promises unusually powerful focus and brain 'reprogramming'; **we have not independently verified those outcomes for this recording**. The [NIH's overview of hypnosis research](https://www.nccih.nih.gov/health/hypnosis) discusses evidence for particular uses of hypnosis, but it does not establish that *Total Focus* improves attention. Our evaluation will distinguish the exact product from the wider Hypnosis Live catalog.
 
-**Commercial disclosure:** If you purchase through a qualifying link within our guide, Final Vestige may receive a commission. We won't publish this recommendation until the merchant link, terms and claim review are verified. Our [Puységur source archive](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) remains free to explore.
-**Compare the Hypnosis Live formats and claims:** [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
+**Commercial disclosure:** If you buy through a qualifying link on our independent Total Focus evaluation guide, Final Vestige may earn a commission. We will not activate that recommendation without the merchant's verified email-marketing permission and a live, reviewed guide. No purchase is needed to use the free [Seven Day Focus Fieldbook](https://finalvestige.com/focus/).
+**Review the Total Focus evidence and purchase questions:** [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
 
 
 *Editorial and affiliate review pending. The offer link above is deliberately not active.*
