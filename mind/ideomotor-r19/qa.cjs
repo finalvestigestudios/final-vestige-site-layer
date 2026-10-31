@@ -57,7 +57,7 @@ function audit(files,matrix){
  test('B video controls',/<video\b[^>]*controls\b[^>]*playsinline\b[^>]*preload="none"/i.test(B));
  test('B hidden unhosted video',/<video\b[^>]*hidden\b[^>]*data-media-approved="false"/i.test(B));
  test('B VTT caption track',/<track\b[^>]*kind="captions"/i.test(B)&&B.includes('ZEN12_R19_CAPTIONS_DRAFT.vtt'));
- test('B local poster',B.includes('ZEN12_R19_POSTER.svg'));
+ test('B poster references both intact',B.includes('<img src="ZEN12_R19_POSTER.svg"')&&B.includes('poster="ZEN12_R19_POSTER.svg"'));
  test('B no external video source',!/<source\b[^>]*src="https?:\/\//i.test(B));
  test('B placeholder explicitly unhosted',B.includes('REVIEW_ONLY_UNHOSTED_40_SECOND_FILM.mp4'));
  test('B acknowledges no playable media',B.includes('No playable media is available'));
