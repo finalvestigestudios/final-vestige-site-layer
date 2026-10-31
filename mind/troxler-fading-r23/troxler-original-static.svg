@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+<title id="title">A stationary blue ring around a central dark cross</title>
+<desc id="desc">Original static Troxler-fading demonstration. A low-contrast, blurred blue circular band is set on a pale cool-gray background with a dark fixation cross at the center. Some viewers may perceive the ring weakening as they look at the cross; the file itself never changes.</desc>
+<defs><radialGradient id="halo"><stop offset="0%" stop-color="#e6eceb" stop-opacity="0"/><stop offset="49%" stop-color="#e6eceb" stop-opacity="0"/><stop offset="62%" stop-color="#8baeba" stop-opacity=".43"/><stop offset="71%" stop-color="#85a9b3" stop-opacity=".43"/><stop offset="85%" stop-color="#e6eceb" stop-opacity="0"/><stop offset="100%" stop-color="#e6eceb" stop-opacity="0"/></radialGradient><filter id="soft" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="13"/></filter></defs>
+<rect width="960" height="600" fill="#e6eceb"/>
+<circle cx="480" cy="300" r="240" fill="url(#halo)" filter="url(#soft)"/>
+<path d="M480 281v38 M461 300h38" fill="none" stroke="#2a3437" stroke-width="5" stroke-linecap="round"/>
+</svg>
