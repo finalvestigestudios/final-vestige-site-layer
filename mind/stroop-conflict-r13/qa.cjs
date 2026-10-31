@@ -36,9 +36,9 @@ function audit(files) {
   check('no active merchant links',!/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i.test(h));
   check('no javascript or data URLs',!/(?:href|src)\s*=\s*["']\s*(?:javascript|data):/i.test(h));
   check('no autoplay',!/<video[^>]*\bautoplay\b/i.test(h));
-  check('clear near-CTA disclosure',h.includes('class="fv-str__affiliate"')&&h.includes('may earn a commission')&&h.includes('currently no approved affiliate link'));
+  check('clear near-CTA disclosure',h.includes('class="fv-str__affiliate"')&&h.includes('Commercial disclosure:')&&h.includes('may earn a commission')&&h.includes('currently no approved affiliate link'));
   check('inactive product CTA',h.includes('Purchase link unavailable')&&!h.includes('See Zen12&#'));
-  check('free Focus link works in markup',h.includes('href="https://finalvestige.com/focus/"'));
+  check('free Focus link works in markup',h.includes('<a class="fv-str__focus" href="https://finalvestige.com/focus/"'));
   check('published Puységur link works in markup',h.includes('href="https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"'));
   check('original no-JS visual example',h.includes('fv-str__demoGrid')&&h.includes('NO TIMER OR SCORE'));
   check('accessible description/reveal',h.includes('<details class="fv-str__reveal">')&&h.includes('Screen-reader users'));
