@@ -147,5 +147,8 @@ class ApolloSealedHTTP(unittest.TestCase):
         code,h,body=fetch(self.base,'/wp-admin/admin-ajax.php?action=wp_ajax_nopriv_fv_ex2_apollo_sealed_page','editor')
         self.assertEqual((code,body),(404,b''))
 
+# Compatibility alias: staging-admission reuses this fixture directly.
+ApolloHttp = ApolloSealedHTTP
+
 if __name__=='__main__':
     unittest.main()
