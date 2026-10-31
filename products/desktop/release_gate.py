@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import os
+import platform
 import re
 import stat
 import subprocess
@@ -24,6 +25,7 @@ from candidate_guard import (
 )
 
 from build_inventory import EXPECTED
+from smoke_provenance import SmokeProvenanceError, classify_smoke
 HEX = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -80,6 +82,15 @@ def _sha(path: Path) -> str:
 
 def verify(folder: str | Path, *, smoke: bool = False, runner=None,
            platform_name: str | None = None, timeout: int = 120) -> dict:
+    # A test-injected runner or OS override can exercise failure branches but
+    # must never create a report that claims native Windows x64 execution.
+    try:
+        smoke_status = classify_smoke(
+            enabled=smoke, native_os=os.name, native_arch=platform.machine(),
+            runner_injected=runner is not None, platform_override=platform_name,
+        )
+    except SmokeProvenanceError as exc:
+        raise GateFailure(str(exc)) from None
     root = Path(folder)
     if root.is_symlink() or not root.is_dir():
         raise GateFailure("Choose a real directory of candidate executables")
@@ -125,8 +136,6 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
 
     recheck_artifacts("initial verification")
     if smoke:
-        if (platform_name or os.name) != "nt":
-            raise GateFailure("Packaged EXE smoke testing requires actual Windows x64")
         if timeout < 1 or timeout > 600:
             raise GateFailure("Smoke timeout must be between 1 and 600 seconds")
         launch = runner or subprocess.run
@@ -148,10 +157,13 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
             # A passing exit code is insufficient if a process modifies its
             # own image, another app's image, or the checksum inventory.
             recheck_artifacts("post-smoke")
-            record["smoke"] = "passed"
+            record["smoke"] = ("simulated" if smoke_status == "synthetic_smoke_only"
+                               else "passed")
             record["seconds"] = round(time.monotonic() - started, 3)
     recheck_artifacts("final verification")
-    return {"schema": 1, "status": "windows_smoke_passed" if smoke else "integrity_only",
+    return {"schema": 1, "status": smoke_status,
+            "windows_executables_verified": smoke_status == "windows_smoke_passed",
+            "smoke_simulated": smoke_status == "synthetic_smoke_only",
             "release_authorized": False, "premium_entitlement_verified": False,
             "codesigning_verified": False, "malware_scan_verified": False,
             "verified_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
