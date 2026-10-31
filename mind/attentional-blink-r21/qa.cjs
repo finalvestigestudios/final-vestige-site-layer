@@ -29,7 +29,7 @@ function audit(f){
   ok("02 unique title",I.includes("# The Second Number Vanished"));
   ok("03 1992 primary citation",I.includes("pubmed.ncbi.nlm.nih.gov/1500880"));
   ok("04 2009 theory review",I.includes("pubmed.ncbi.nlm.nih.gov/19933555"));
-  ok("05 lag-one sparing nuance",I.includes("lag-one sparing")&&I.includes("not universal"));
+  ok("05 lag-one sparing nuance",/lag-one sparing/i.test(I)&&/not universal|nor is lag-one sparing universal/i.test(I));
   ok("06 2007 intensive training caveat",I.includes("three months")||I.includes("Three months"));
   ok("07 no claim that original study trialed Zen12",/not a trial of Zen12/i.test(I));
   ok("08 original field exercise properly not a clinical test",I.includes("not an attentional-blink test"));
@@ -60,7 +60,7 @@ function audit(f){
     ok(label+" inactive purchase control",s.includes('class="disabled-cta" role="note"')&&s.includes("Purchase link withheld"));
     ok(label+" disclosure next to control",/<p class="disclosure">[\s\S]{0,500}<span class="disabled-cta"/.test(s));
     ok(label+" no merchant anchor",!/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i.test(s));
-    ok(label+" no active purchase button",!/<button\b/i.test(s));
+    ok(label+" no active purchase button",!/<button\b|<span\b[^>]*href=/i.test(s));
     ok(label+" no autofocus/autoplay",!/(?:autoplay|autofocus)(?:\s|=|>)/i.test(s));
     ok(label+" free practice",s.includes("Minutes 0–2")&&s.includes("Minutes 10–12"));
     ok(label+" source research links",s.includes("pubmed.ncbi.nlm.nih.gov/17488185"));
@@ -86,7 +86,8 @@ function audit(f){
   ok("hub uses published archive and Focus links",H.includes("puysegurs-animal-magnetism-files/")&&H.includes("finalvestige.com/focus/"));
   ok("hub no form/JS/tracking",!/<form\b|<script\b|<iframe\b/i.test(H));
   ok("hub noindex and layout adaptation",H.includes('noindex,nofollow')&&H.includes("@media(max-width:720px)"));
-  for(const [name,fg,bg] of [["article ivory","#f4efe6","#090a0a"],["bronze label","#c7a66c","#090a0a"],["muted body","#aaa49a","#090a0a"],["CTA text","#d5c5aa","#25231e"]])ok("contrast >=4.5:1 "+name,contrast(fg,bg)>=4.5);
+  const cssColor=(s,key)=>{const m=s.match(new RegExp("--"+key+":(#[0-9a-fA-F]{6})"));return m?m[1]:"#000000";};
+  for(const [name,fg,bg] of [["article ivory",cssColor(A,"ink"),cssColor(A,"bg")],["bronze label",cssColor(A,"bronze"),cssColor(A,"bg")],["muted body",cssColor(A,"muted"),cssColor(A,"bg")],["CTA text","#d5c5aa","#25231e"],["B headline",cssColor(B,"ink"),cssColor(B,"bg")],["hub headline",cssColor(H,"ink"),cssColor(H,"bg")]])ok("contrast >=4.5:1 "+name,contrast(fg,bg)>=4.5);
   return t;
 }
 function readFiles(root){return Object.fromEntries(NAMES.map(name=>[name,fs.readFileSync(path.join(root,name),"utf8")]));}
