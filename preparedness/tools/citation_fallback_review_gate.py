@@ -27,6 +27,22 @@ def need(ok, reason):
     if not ok:
         raise ReviewHold(reason)
 
+def _load_placement_validator():
+    # `python -I` intentionally removes the script directory from sys.path.
+    # Load this fixed, scoped sibling by exact path (never from a package search).
+    location = Path(__file__).with_name('citation_token_visibility_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked citation placement gate')
+    spec = importlib.util.spec_from_file_location('preparedness_citation_placement', location)
+    need(spec is not None and spec.loader is not None, 'citation placement gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.verified_citations
+
+
+verified_citations = _load_placement_validator()
+
+
 def canonical(value):
     return json.dumps(value, sort_keys=True, ensure_ascii=False,
                       separators=(',', ':'), allow_nan=False).encode('utf-8')
@@ -82,7 +98,9 @@ def audit(lib, expected=EXPECTED):
         body, uses = meta.get('_body'), meta.get('source_use')
         need(type(body) is str and type(uses) is dict,
              'article body or article-specific source-use missing')
-        found = list(CITE.finditer(body))
+        # R27: exact tokens alone did not exclude malformed, invisible or
+        # attribute-only tokens; keep all original article HTML unchanged.
+        found = verified_citations(body)
         ids = {m.group(1) for m in found}
         need(ids == set(uses), 'citation/source_use map missing, extra or mismatched')
         need(all(type(s) is str and bool(s.strip()) for s in uses.values()),
