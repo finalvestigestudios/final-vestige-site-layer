@@ -20,10 +20,11 @@ from urllib.request import Request, build_opener, HTTPRedirectHandler, ProxyHand
 from urllib.error import HTTPError
 from source_concordance import build_concordance, build_context_index
 from atlas_admission import build_atlas_admission
+from media_rights_ledger import build_media_rights
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
-EXPORTS = ('evidence-export.csv','evidence-export.json','response-export.csv','response-export.json','source-context.json','atlas-admission.json')
+EXPORTS = ('evidence-export.csv','evidence-export.json','response-export.csv','response-export.json','source-context.json','atlas-admission.json','media-rights.json')
 EXPECTED_SOURCE_HEAD = '74375657f2cdaac0710f94c6de6c24534ee06858'
 
 
@@ -161,6 +162,15 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         html.count(b'id="fv-ex2-atlas-admission"') != 1 or
         b'{{FV_EX2_ATLAS_EXPORT}}' in html):
         raise AdmissionError('Private Atlas admission/custody contract incomplete')
+    media_html, media_css, media_index, media_receipt = build_media_rights(generated=expected_dir)
+    media_html_sha = hashlib.sha256(media_html.encode('utf-8')).hexdigest()
+    media_index_sha = hashlib.sha256(media_index.encode('utf-8')).hexdigest()
+    if (headers.get('x-fv-ex2-apollo-media-rights-sha256') != media_html_sha or
+        headers.get('x-fv-ex2-apollo-media-rights-index-sha256') != media_index_sha or
+        html.count(b'data-media-review=') != 6 or html.count(b'data-media-hold="true"') != 6 or
+        html.count(b'id="fv-ex2-media-rights"') != 1 or
+        b'{{FV_EX2_RIGHTS_EXPORT}}' in html):
+        raise AdmissionError('Media rights source-custody/HOLD contract incomplete')
     if b'id="source-concordance"' not in html or html.count(b'data-concordance-record=') != 6:
         raise AdmissionError('Served six-source concordance incomplete')
     if html.count(b'type="radio"') != 4 or html.count(b' data-concordance-era=') != 6:
@@ -197,6 +207,7 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         status,h,data = fetch(url,cookie)
         expected = (expected_context if name == 'source-context.json' else
                     atlas_index.encode('utf-8') if name == 'atlas-admission.json' else
+                    media_index.encode('utf-8') if name == 'media-rights.json' else
                     (expected_dir/name).read_bytes())
         digest = hashlib.sha256(expected).hexdigest()
         if (status != 200 or data != expected or h.get('x-fv-ex2-apollo-asset-sha256') != digest
@@ -206,6 +217,8 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
     return {'status':'PASS_HTTP_INTEGRITY_ONLY', 'source_head':EXPECTED_SOURCE_HEAD,
             'fragment_sha256':expected_fragment,'concordance_sha256':expected_concordance_sha,'context_index_sha256':expected_context_sha,
             'atlas_admission_html_sha256':atlas_hash,'atlas_admission_json_sha256':atlas_index_sha,
+            'media_rights_html_sha256':media_html_sha,'media_rights_index_sha256':media_index_sha,
+            'photos_admitted_for_reuse':0,'media_rights_review_holds':6,
             'geographic_pins_admitted':0,'geographic_edges_admitted':0,
             'exports_sha256':download_hashes,
             'anonymous_private_page':403,'anonymous_private_exports':len(EXPORTS),

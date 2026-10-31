@@ -158,7 +158,7 @@ def run(*, require_axe=False):
             # A source drawer route must remain discoverable when JS is absent;
             # the URL fragment targets the native details wrapper, not hidden copy.
             assert page.locator('#source-concordance .fv-ex2-concordance__card a[href="#source-03"]').count() == 1
-            assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 6
+            assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 7  # Includes R20 media-rights custody JSON
             assert page.locator('[data-ex2-trail-controls]').is_visible(), (width,'JS blocked by CSP')
             assert page.locator('[data-ex2-response-tools]').is_visible(), (width,'response JS blocked')
             assert page.locator('a[href^="https://www.nasa.gov"]').count() >= 12
