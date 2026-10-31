@@ -65,6 +65,36 @@ def reconciliation_status(left: list[dict[str, str]], right: list[dict[str, str]
 # Up to 200,000 invoiced units/lines can produce totals far above 1e12.
 # Keep the exact documented procurement aggregation envelope (<= 2e26).
 _PRICE_LIMIT = Decimal("1000000000000000000000000000")
+# Source prices and quantities have at most eight decimal places each;
+# their exact extended totals therefore need at most sixteen. Price-policy
+# fractions have at most eight. The direct API must enforce the same finite
+# fixed-point domain, rather than trusting a 64-digit context to preserve
+# arbitrarily long Decimal coefficients supplied by outside callers.
+_PRICE_OPERAND_MAX_PLACES = 16
+_POLICY_FRACTION_MAX_PLACES = 8
+_PRICE_OPERAND_MAX_DIGITS = 64
+
+
+def _price_operand_scale_valid(value: Decimal, max_places: int) -> bool:
+    """Validate a Decimal coefficient without rounding or caller context.
+
+    Trailing zeroes do not add significant fractional precision. A digit cap
+    also prevents a direct caller from supplying unbounded coefficients that
+    could exhaust resources or escape the 64-digit exact-arithmetic envelope.
+    """
+    digits = value.as_tuple().digits
+    exponent = value.as_tuple().exponent
+    if (len(digits) > _PRICE_OPERAND_MAX_DIGITS
+            or exponent < -_PRICE_OPERAND_MAX_DIGITS or exponent > 27):
+        return False
+    if exponent >= 0 or not any(digits):
+        return True
+    trailing = 0
+    for digit in reversed(digits):
+        if digit != 0:
+            break
+        trailing += 1
+    return -exponent - trailing <= max_places
 
 
 def price_outside_tolerance(actual: Decimal, expected: Decimal,
@@ -80,7 +110,10 @@ def price_outside_tolerance(actual: Decimal, expected: Decimal,
         raise ValueError("Price tolerance requires finite exact Decimal values")
     if (actual.copy_abs() > _PRICE_LIMIT or expected.copy_abs() > _PRICE_LIMIT
             or absolute < 0 or absolute > _PRICE_LIMIT
-            or fraction < 0 or fraction > 1):
+            or fraction < 0 or fraction > 1
+            or any(not _price_operand_scale_valid(value, _PRICE_OPERAND_MAX_PLACES)
+                   for value in (actual, expected, absolute))
+            or not _price_operand_scale_valid(fraction, _POLICY_FRACTION_MAX_PLACES)):
         raise ValueError("Price tolerance operands exceed suite review bounds")
     with localcontext(Context(prec=64)):
         deviation = (actual - expected).copy_abs()
