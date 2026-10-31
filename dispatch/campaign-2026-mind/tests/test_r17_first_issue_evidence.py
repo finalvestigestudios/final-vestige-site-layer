@@ -72,6 +72,7 @@ class FirstIssueProof(unittest.TestCase):
         self.assertIn('unverified',live['subscriber_semantics'])
 
     def test_preview_regenerated_exactly(self):
+        # Compare source paragraphs with generated HTML and text, not actual Jetpack email.
         html=(ROOT/'previews/01-the-mind-is-not-a-camera.html').read_text()
         txt=(ROOT/'previews/01-the-mind-is-not-a-camera.txt').read_text()
         for token in ['The Missing Caption','Simons and Levin','studied conditions']:
