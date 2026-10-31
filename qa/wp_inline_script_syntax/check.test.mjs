@@ -23,7 +23,7 @@ test('WordPress-rendered amp entity also fails compile', () => {
 });
 
 test('realistic Focus subscriber class conditional is caught', () => {
-  const raw = 'function check(){if(c&&/\bis-subscriber\b/.test(c.className)){show();}}';
+  const raw = 'function check(){if(c&&/\\bis-subscriber\\b/.test(c.className)){show();}}';
   const rendered = raw.replaceAll('&', '&#038;');
   assert.equal(inspectRenderedHtml(wrap(raw)).errors, 0);
   assert.equal(inspectRenderedHtml(wrap(rendered)).errors, 1);
