@@ -101,6 +101,19 @@ def git_ref(root: Path, branch: str, *, remote='origin') -> str:
     return digest
 
 
+def check_checkout(root: Path, claimed_sha: str) -> str:
+    """Reject a stale CLI --current-integrated-sha or modified source tree."""
+    require(is_sha1(claimed_sha), 'invalid claimed checkout SHA')
+    head = _git(root, 'rev-parse', '--verify', 'HEAD^{commit}').decode('ascii').strip()
+    require(head == claimed_sha, 'actual checkout HEAD does not match --current-integrated-sha')
+    source_paths = ['preparedness/content/articles', 'preparedness/sources/fragments',
+                    'preparedness/docs/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json']
+    source_paths.extend(f'preparedness/docs/CLUSTER-{name}.md' for name in EXPECTED)
+    dirty = _git(root, 'status', '--porcelain', '--untracked-files=all', '--', *source_paths)
+    require(not dirty.strip(), 'uncommitted or untracked contributor evidence content; audit cancelled')
+    return head
+
+
 def _approved_path(path):
     if not isinstance(path, str) or '\\' in path or '..' in path or '//' in path:
         return False
@@ -231,7 +244,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo-root', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, required=True)
-    parser.add_argument('--current-integrated-sha', default=R14_SHA)
+    parser.add_argument('--current-integrated-sha', required=True)
     parser.add_argument('--remote', default='origin')
     parser.add_argument('--receipt', type=Path,
                         help='Optional LOCAL report file; never CMS/public')
@@ -240,6 +253,7 @@ def main(argv=None):
         require(args.manifest.is_file() and not args.manifest.is_symlink(),
                 'manifest must be an ordinary file')
         require(args.manifest.stat().st_size <= MAX_BYTES, 'manifest too large')
+        check_checkout(args.repo_root, args.current_integrated_sha)
         manifest = json.loads(args.manifest.read_text(encoding='utf-8'))
         # Recheck frozen objects and the branch's current content, irrespective
         # of working-tree status; the native build and QD are separate gates.
