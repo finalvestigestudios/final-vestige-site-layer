@@ -122,7 +122,7 @@ if (require.main === module) {
     process.stderr.write('Usage: node build_release_review.cjs --out-dir /private/isolated/output\n');
     process.exitCode = 2;
   } else {
-    const home = path.resolve(__dirname, '..');
+    const home = path.resolve(__dirname, '..', '..');
     try {
       const manifest = makeBundle(home, path.resolve(process.argv[outFlag + 1]));
       process.stdout.write(JSON.stringify({status:'REVIEW_ONLY', source:manifest.sourceGitBlob, files:Object.keys(manifest.files).length}) + '\n');
