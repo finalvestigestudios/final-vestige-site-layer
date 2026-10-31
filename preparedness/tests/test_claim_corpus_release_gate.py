@@ -349,4 +349,29 @@ class R10PrivateInputTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'unavailable'):gate.read_private_json(p,Path(tmp))
 
 
+class R10OriginalPlaceholderTests(unittest.TestCase):
+    def test_preserves_original_unread_base_record_without_claimed_support(self):
+        src = rows()+[{'row_key':'base:4:unread','origin':'base','source_id':'unread',
+                       'url':'https://example.org/not-yet-read', 'supports':None,
+                       'verified_on':None,'human_link_check':False,
+                       'reading_limits':'Listed in issue; not yet read for a specific claim.'}]
+        report = gate.verify_physical_source_custody(src,expected_count=4,
+                          expected_repeated_url_groups=1,expected_distinct_urls=3)
+        self.assertEqual(report['unread_base_placeholders_NOT_VERIFIED'],1)
+    def test_never_accepts_verified_placeholder_without_support(self):
+        src=rows();src[0]['supports']=None;src[0]['origin']='base';src[0]['row_key']='base:0:alpha'
+        src[0]['reading_limits']='not yet read';src[0]['verified_on']='2026-10-29'
+        with self.assertRaisesRegex(ValueError,'placeholder'):
+            gate.verify_physical_source_custody(src,3,1,2)
+    def test_never_accepts_fragment_placeholder_without_support(self):
+        src=rows();src[0]['supports']=None;src[0]['reading_limits']='not yet read'
+        with self.assertRaisesRegex(ValueError,'placeholder'):
+            gate.verify_physical_source_custody(src,3,1,2)
+    def test_never_accepts_phantom_human_check_on_unread_placeholder(self):
+        src=rows();src[0]['supports']=None;src[0]['origin']='base';src[0]['row_key']='base:0:alpha'
+        src[0]['reading_limits']='not yet read';src[0]['human_link_check']=True
+        with self.assertRaisesRegex(ValueError,'placeholder'):
+            gate.verify_physical_source_custody(src,3,1,2)
+
+
 if __name__ == '__main__':unittest.main()
