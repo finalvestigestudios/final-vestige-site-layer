@@ -1,0 +1,35 @@
+{
+  "schema": "FV-MIND-22-DISABLED",
+  "enabled": false,
+  "privacy": "aggregate-only",
+  "deploy": false,
+  "experimental_question": "For eligible consenting visitors after release gates, does optional original video improve verified outbound product-link interest relative to identical text-only source guide?",
+  "arms": {
+    "A": "zen12-guide-A.wp.html",
+    "B": "zen12-guide-B.wp.html"
+  },
+  "randomization": "not_implemented",
+  "unit": "page-render count, NOT unique visitors",
+  "method": "Only after approval use first-party non-identifying counters, no cookies, fingerprinting, localStorage, user IDs or raw IP/referrer logging; randomized session assignment would require separate reviewed privacy architecture.",
+  "dimensions": [
+    "variant A/B",
+    "source bucket direct/search/social/internal/other",
+    "coarse page topic"
+  ],
+  "allowed_events": [
+    "eligible_page_impression",
+    "approved_outbound_link_click"
+  ],
+  "forbidden_fields": [
+    "IP",
+    "full_referrer",
+    "user_id",
+    "email",
+    "URL_parameters",
+    "user_agent",
+    "session_id",
+    "purchase_inference"
+  ],
+  "estimand": "approved affiliate outbound clicks / eligible page presentations (not purchases); compare uncertainty intervals with small samples; no statistical claims until adequate sample/analysis design.",
+  "safety": "No consent bypass, no external scripts, no conversion pixels, no production endpoint configured. Existing Focus/Jetpack analytics remain unchanged."
+}
