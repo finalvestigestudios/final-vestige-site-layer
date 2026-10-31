@@ -144,7 +144,7 @@ async function main(){
   post_ids:pages.map(x=>x.id),image_sources:pages.reduce((n,p)=>n+p.stored.length,0),
   urls:pages.map(x=>x.url),browser_probe_executed:false},null,2));return}
  const dir=path.join(__dirname,'runs');fs.mkdirSync(dir,{recursive:true});
- const result={schema_version:1,probe_version:2,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
+ const result={schema_version:1,probe_version:3,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
   probe:'logged-out Chrome CDP, no npm dependencies or WordPress writes',
   requested_pages:pages.length,status:'starting',pages:[]};
  let browser;
