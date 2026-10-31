@@ -1,0 +1,48 @@
+name: Preparedness private machine integrity (HOLD; no publishing)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'preparedness/**'
+      - '.github/workflows/preparedness-private-preflight.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preparedness-machine-hold:
+    name: Machine integrity only - publication HOLD
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout full history without retained credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - name: Select pinned Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Execute only draft custody and safety gates
+        shell: bash
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python -I -B preparedness/tools/workflow_contract_gate.py --repo-root .
+          python -I -B preparedness/tools/private_release_preflight.py \
+            --repo-root . --expected-head "$GITHUB_SHA" \
+            > "$RUNNER_TEMP/preparedness-private-hold.json"
+          python -I -B preparedness/tools/workflow_contract_gate.py \
+            --repo-root . --expected-head "$GITHUB_SHA" \
+            --receipt "$RUNNER_TEMP/preparedness-private-hold.json"
+          printf '%s\n' 'MACHINE INTEGRITY ONLY: HOLD. No human source review, safety approval, CMS publishing or QD PASS.'
