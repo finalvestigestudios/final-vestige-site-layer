@@ -28,7 +28,9 @@ function contentQuery(p){
  // Preserve query values which may select different archival photos at the same path.
  // Only established image resizing/format knobs are excluded from file identity.
  const transforms=new Set(['width','height','w','h','fit','resize','crop','quality','q','ssl','auto','format','fm']);
- const selectors=[...p.searchParams].filter(([k])=>!transforms.has(k.toLowerCase()));
+ const staticImage=/\.(?:jpe?g|png|webp|gif|svg|avif|bmp|tiff?)$/i.test(p.pathname);
+ // A dynamic /render endpoint may use ANY query parameter (even width) as a record selector.
+ const selectors=[...p.searchParams].filter(([k])=>!staticImage||!transforms.has(k.toLowerCase()));
  return selectors.length?'?'+new URLSearchParams(selectors).toString():'';
 }
 function imageIdentity(url){
