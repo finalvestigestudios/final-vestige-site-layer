@@ -39,6 +39,9 @@ STEPS = (
     ("seven_cluster_git_parity", "cluster_git_parity_gate.py", "hold"),
     # R24: R23 source+81-file author custody MUST run inside the hosted preflight.
     ("frozen_81_file_archive_custody", "source_group_review_gate.py", "hold"),
+    # R25: 1,959 claim occurrences / 367 article-source relationships and all
+    # 43 base fallbacks become a mandatory source-review packet, still HOLD.
+    ("citation_fallback_human_review_queue", "citation_fallback_review_gate.py", "hold"),
 )
 
 
