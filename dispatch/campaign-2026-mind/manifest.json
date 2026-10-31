@@ -7,8 +7,8 @@
     "can_send": true,
     "email_new_posts_by_default": false,
     "recent_sends": 0,
-    "count_discrepancy": "total=2, confirmed=2, unconfirmed=2; needs reconciliation",
-    "welcome": "52-page Focus Fieldbook already set"
+    "welcome": "52-page Focus Fieldbook already set",
+    "subscriber_semantics": "WordPress total=2, confirmed=2, unconfirmed=2; unconfirmed excluded from total; actual opted-in email-eligible audience remains unverified"
   },
   "cadence_proposal": "one issue each week, dates not set and NO sends authorized",
   "publisher": "Final Vestige Studios",
@@ -33,9 +33,9 @@
       "number": 1,
       "slug": "the-mind-is-not-a-camera",
       "subject": "The mind is not a camera",
-      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "preheader": "A stranger changed mid-conversation. The evidence lesson starts in the archives.",
       "kind": "editorial",
-      "editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "editorial_cta": "https://finalvestige.com/the-missing-caption/",
       "publish_state": "hold",
       "merchant_affiliate_url": null
     },
