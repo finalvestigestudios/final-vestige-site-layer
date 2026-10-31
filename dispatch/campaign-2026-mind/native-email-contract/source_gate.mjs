@@ -36,6 +36,36 @@ for (let n=1;n<=6;n++){
     if(item.kind!=='editorial' || !item.editorial_cta.startsWith('https://finalvestige.com/')) errs.push('editorial CTA invalid '+n);
   }
 }
+// R11 PARITY PROVENANCE. The review board is not authoritative unless every
+// row matches the exact canonical manifest and unsent proposed excerpt.
+// A green source check still NEVER authorizes sending or implies rendered email.
+if (new Set(issues.map(x=>x.number)).size !== 6) errs.push('duplicate manifest issue numbers');
+if (new Set(proposed.entries.map(x=>x.number)).size !== 6) errs.push('duplicate proposed excerpt numbers');
+if (new Set((contract.rows ?? []).map(x=>x.number)).size !== 6) errs.push('duplicate parity review row numbers');
+for (let n=1;n<=6;n++){
+  const item=issues.find(x=>x.number===n);
+  const ex=proposed.entries.find(x=>x.number===n);
+  const row=(contract.rows ?? []).find(x=>x.number===n);
+  if (!item || !ex || !row){errs.push('parity row or source missing '+n);continue;}
+  if (row.subject!==item.subject) errs.push('parity subject drift '+n);
+  if (row.preheader_plan!==item.preheader) errs.push('parity preheader drift '+n);
+  if (row.kind!==item.kind) errs.push('parity allocation drift '+n);
+  if (row.proposed_custom_excerpt_NOT_APPLIED!==ex.excerpt) errs.push('parity excerpt drift '+n);
+  const expectedCta=[3,5].includes(n)?'[[NONLIVE_FIRST_PARTY_GUIDE]]':item.editorial_cta;
+  if (row.original_editorial_cta!==expectedCta) errs.push('parity CTA drift '+n);
+  if (row.actual_native_preheader!=='UNVERIFIED' ||
+      row.actual_received_mime!=='NOT_RECEIVED' ||
+      row.actual_read_more!=='NOT_VERIFIED' ||
+      row.actual_postal_footer!=='NOT_VERIFIED' ||
+      row.actual_unsubscribe!=='NOT_VERIFIED' ||
+      row.release!=='HOLD_UNSENT')
+    errs.push('unearned native rendering claim '+n);
+}
+if (contract.all_issues_send_approval!==false ||
+    contract.all_issues_received_email_verified!==false ||
+    contract.site?.welcome_delivered!=='UNVERIFIED' ||
+    contract.commercial_offer_permissions!=='UNKNOWN')
+  errs.push('unearned site, commercial, or founder authorization');
 const site=contract.site ?? {};
 if (site.email_content_format !== 'excerpt' || site.email_new_posts_by_default !== false) errs.push('source snapshot no longer reflects audited newsletter settings');
 const counts=contract.subscribers ?? {};
