@@ -16,6 +16,31 @@ SOURCE_FILES = {'base': 'preparedness/sources/register.json', **{
 AUTHOR_FOOD = '4b009361277ea1d4617b368f5d45104c7318b284'
 FIXTURE_FOOD = 'e9cd7766dac59d47ab467d8945269b9146c2aef5'
 HOLD = 'HOLD'
+# R22 trust anchors: the R21 audit alone permits a coordinated replacement of
+# crosswalk + inventories; the native CLI must never trust hashes supplied by
+# the mutable crosswalk. These are original, independently inspected Git blobs.
+FROZEN_BLOBS = {
+    'preparedness/sources/crosswalk.json': '1d907264dd580ffc95279f6ffb6bc50e8033c555',
+    'preparedness/taxonomy.json': 'eea601e53e16e36cd4fc890876bc249b39632370',
+    'preparedness/sources/register.json': 'b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77',
+    'preparedness/sources/fragments/start.json': '29574c328cbab0548e6e5d4a026694857d56b6b4',
+    'preparedness/sources/fragments/shelter.json': 'd9eeb4546e58f083031e0767aaea7cf112099e09',
+    'preparedness/sources/fragments/food.json': 'a1f73c8170932d6b3192e9cd506686d516d23d30',
+    'preparedness/sources/fragments/health.json': 'cc29c439372b9d49debf78e63020ffe4d62baeb8',
+    'preparedness/sources/fragments/hist-food.json': 'd10628342fea5f177a8d1be00dd906d0c9c7850e',
+    'preparedness/sources/fragments/hist-home.json': '6460d4b0734991675c889f28be2f73a19e3c42c0',
+    'preparedness/sources/fragments/hist-field.json': '4f369122cc0e230ee39654c215f18ffc79b5cc85',
+}
+FROZEN_HEADS = {
+    'base': 'ee591e2df5de08aea7603fc4cbf3c5249361e119',
+    'start': '2122d856fce9f64887c16df3d52e64be9f59a55b',
+    'shelter': '5daeaf2dd5ab71806a6b73c91edfb1d8df5da976',
+    'food': AUTHOR_FOOD,
+    'health': 'd2212d0ca0750817d3929865d3069835980faf20',
+    'hist-food': '2acf65ca3efa9b4b5db7976f379b9ea693be43a4',
+    'hist-home': 'f654e600f89c321a480dd8f055be4d13d0673490',
+    'hist-field': 'a5ce8a62f168db05c95232e3eb385dccd0d19e7f',
+}
 
 
 class SourceGateHold(ValueError):
@@ -140,17 +165,70 @@ def audit(crosswalk, taxonomy, source_bytes):
     return result
 
 
+
+def audit_frozen(root):
+    """R22 real-checkout trust boundary; never read network or change CMS.
+
+    Source blobs and the taxonomy are checked against *external* reviewed
+    identities before accepting the R21 structural audit. Includes the entire
+    36-origin mapping and all original article gate states within pinned blobs.
+    """
+    root = Path(root)
+    check(root.is_dir() and not root.is_symlink(), 'trusted root missing or linked')
+    root = root.resolve(strict=True)
+    raw = {}
+    for name, expected in FROZEN_BLOBS.items():
+        path = root / name
+        check(path.is_file() and not path.is_symlink() and
+              path.resolve(strict=True).is_relative_to(root),
+              'missing or linked frozen source: ' + name)
+        check(0 < path.stat().st_size <= 500_000, 'oversized frozen source: ' + name)
+        data = path.read_bytes()
+        check(git_blob(data) == expected, 'unreviewed frozen source change: ' + name)
+        raw[name] = data
+    def strict_json(data):
+        def no_duplicates(pairs):
+            obj = {}
+            for key, val in pairs:
+                check(key not in obj, 'duplicate JSON key: ' + key)
+                obj[key] = val
+            return obj
+        def no_nonfinite(value):
+            raise SourceGateHold('nonfinite JSON constant: ' + value)
+        obj = json.loads(data.decode('utf-8', 'strict'), object_pairs_hook=no_duplicates,
+                         parse_constant=no_nonfinite)
+        check(type(obj) is dict, 'frozen JSON root must be object')
+        return obj
+    crosswalk = strict_json(raw['preparedness/sources/crosswalk.json'])
+    taxonomy = strict_json(raw['preparedness/taxonomy.json'])
+    heads = crosswalk.get('source_head_commits')
+    check(type(heads) is dict and set(heads) == set(FROZEN_HEADS),
+          'source contributor heads removed or inserted')
+    for group, author in FROZEN_HEADS.items():
+        check(heads[group] == author or (group == 'food' and heads[group] == FIXTURE_FOOD),
+              'wrong frozen source contributor SHA: ' + group)
+    result = audit(crosswalk, taxonomy, {name: raw[name] for name in SOURCE_FILES.values()})
+    check(result.get('release_state') == HOLD and result.get('may_publish') is False,
+          'crosswalk gate declared unsupported approval')
+    return {'schema_version': 1, 'issue': 136, 'release_state': HOLD,
+            'may_publish': False, 'independent_qd_pass': False,
+            'medical_safety_approved': False, 'human_source_review_complete': False,
+            'source_inputs_pinned': 10, 'article_slugs': 35,
+            'shared_source_groups_pending_human_review': 30,
+            'food_author_head': AUTHOR_FOOD,
+            'food_crosswalk_head': heads['food'],
+            'food_provenance_alias_unresolved': heads['food'] == FIXTURE_FOOD,
+            'source_review_queue_sha256': result['sha256'],
+            'machine_authority': 'FROZEN_GIT_BLOB_AND_CROSSWALK_PARITY_ONLY'}
+
+
 def main():
     import argparse
     p = argparse.ArgumentParser()
     p.add_argument('--root', type=Path, default=Path('preparedness'))
     a = p.parse_args()
     try:
-        root = a.root
-        crosswalk = json.loads((root/'sources/crosswalk.json').read_bytes())
-        taxonomy = json.loads((root/'taxonomy.json').read_bytes())
-        files = {path: (root.parent/path).read_bytes() for path in SOURCE_FILES.values()}
-        print(json.dumps(audit(crosswalk, taxonomy, files), sort_keys=True))
+        print(json.dumps(audit_frozen(a.root.parent), sort_keys=True))
         return 0
     except (SourceGateHold, OSError, ValueError, TypeError, KeyError) as exc:
         print(json.dumps({'release_state': HOLD, 'may_publish': False,
