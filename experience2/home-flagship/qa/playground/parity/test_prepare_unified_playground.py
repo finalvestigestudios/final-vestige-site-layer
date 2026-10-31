@@ -8,7 +8,7 @@ import tempfile
 import unittest
 import zipfile
 from pathlib import Path
-from prepare_unified_playground import bind, verify_sources, verify_parity, verify_stage, sha, PARITY, CANONICAL_LOCAL_SEED
+from prepare_unified_playground import bind, verify_sources, verify_parity, verify_stage, sha, PARITY, CANONICAL_LOCAL_SEED, expected_php_payload
 
 HERE = Path(__file__).parent
 SOURCE_ASSETS = ('index.html','flagship.css','chronicle.css','chronicle-lens.css',
@@ -61,7 +61,7 @@ def fixture():
     (stage/'mounts'/'fv-ex2-private-preview').mkdir(parents=True)
     private_mount=stage/'mounts'/'fv-ex2-private-preview'
     private_mount.joinpath('fv-ex2-private-preview.php').write_bytes(source_php.read_bytes())
-    private_mount.joinpath('fv-ex2-private-payload.php').write_text('<?php // synthetic private payload')
+    private_mount.joinpath('fv-ex2-private-payload.php').write_bytes(expected_php_payload({name:(upstream/name).read_bytes() for name in SOURCE_ASSETS}))
     manifest={'release_status':'HOLD_UNPUBLISHED_STAGING_ONLY','expected_git_head_given_by_caller':head,
               'payload_sha256':sha(private_mount.joinpath('fv-ex2-private-payload.php').read_bytes()),
               'source_hashes':{name:sha((upstream/name).read_bytes()) for name in SOURCE_ASSETS}}
@@ -337,6 +337,26 @@ class UnifiedStageTests(unittest.TestCase):
             rec=json.loads(receipt_file.read_text());rec['plugin_sha256']=sha(plugin.read_bytes())
             receipt_file.write_text(json.dumps(rec))
             with self.assertRaisesRegex(ValueError, 'plugin manifest differs from canonical asset index.html'):
+                bind(repo,head,stage,theme_zip,theme_sha)
+
+    def test_repacked_php_payload_with_rehashed_manifest_and_receipt_still_fails_exact_source(self):
+        temp,repo,head,stage,theme_zip,theme_sha=fixture()
+        with temp:
+            plugin=stage/'private-preview-release-HOLD.zip'
+            source=stage/'mounts'/'fv-ex2-private-preview'
+            payload_file=source/'fv-ex2-private-payload.php'
+            payload_file.write_bytes(payload_file.read_bytes()+b'\n<?php // injected')
+            manifest_file=source/'STAGING_MANIFEST.json'
+            manifest=json.loads(manifest_file.read_text())
+            manifest['payload_sha256']=sha(payload_file.read_bytes())
+            manifest_file.write_text(json.dumps(manifest))
+            with zipfile.ZipFile(plugin,'w') as z:
+                for f in sorted(source.rglob('*')):
+                    if f.is_file():z.write(f,'fv-ex2-private-preview/'+f.relative_to(source).as_posix())
+            receipt_file=stage/'STAGING_PREP_RECEIPT.json'
+            rec=json.loads(receipt_file.read_text());rec['plugin_sha256']=sha(plugin.read_bytes())
+            receipt_file.write_text(json.dumps(rec))
+            with self.assertRaisesRegex(ValueError, 'payload bytes differ from exact committed'):
                 bind(repo,head,stage,theme_zip,theme_sha)
 
     def test_private_archive_absent_is_rejected(self):
