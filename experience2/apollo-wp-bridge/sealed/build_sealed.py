@@ -21,6 +21,7 @@ from qa.custody_integrity import check_directory
 from qa.nasa_editorial_gate import audit_files
 from qa.source_concordance import build_concordance, build_context_index
 from qa.atlas_admission import build_atlas_admission
+from qa.media_rights_ledger import build_media_rights
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -59,6 +60,7 @@ def build(out: Path) -> dict:
     concordance_html, concordance_css, concordance_receipt = build_concordance(UPSTREAM, BRIDGE / 'generated')
     context_index = build_context_index(UPSTREAM, BRIDGE / 'generated')
     atlas_html, atlas_css, atlas_index, atlas_receipt = build_atlas_admission(generated=BRIDGE / 'generated')
+    media_html, media_css, media_index, media_receipt = build_media_rights(generated=BRIDGE / 'generated')
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
     payload = {}
@@ -66,7 +68,8 @@ def build(out: Path) -> dict:
     sizes = {}
     for name in FILES:
         raw = (BRIDGE / 'generated' / name).read_bytes()
-        assert len(raw) > 0 and len(raw) <= 500_000
+        if not (0 < len(raw) <= 500_000):
+            raise ValueError('Generated source outside bounded asset size: ' + name)
         sha = hashlib.sha256(raw).hexdigest()
         if sha != src['outputs_sha256'][name]:
             raise ValueError('Output artifact mutated: ' + name)
@@ -76,7 +79,9 @@ def build(out: Path) -> dict:
     for name, text in (('source-concordance.html', concordance_html), ('source-concordance.css', concordance_css),
                        ('source-context.json', context_index),
                        ('atlas-admission.html', atlas_html), ('atlas-admission.css', atlas_css),
-                       ('atlas-admission.json', atlas_index)):
+                       ('atlas-admission.json', atlas_index),
+                       ('media-rights.html', media_html), ('media-rights.css', media_css),
+                       ('media-rights.json', media_index)):
 
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
@@ -101,6 +106,7 @@ def build(out: Path) -> dict:
         'nasa_catalog_witness': nasa_receipt,
         'source_concordance': concordance_receipt,
         'atlas_admission': atlas_receipt,
+        'nasa_media_rights_hold': media_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',
@@ -109,13 +115,14 @@ def build(out: Path) -> dict:
         'outputs_bytes': sizes,
         'plugin_sha256': hashlib.sha256(php.encode('utf-8')).hexdigest(),
         'routes': ['authorized staging editor shortcode', 'authorized nonce-checked Ajax HTML',
-                   'authorized nonce-checked CSV/JSON downloads including source context and Atlas admission indexes'],
+                   'authorized nonce-checked CSV/JSON downloads including source context, Atlas and media-rights hold indexes'],
         'generated_public_static_assets': [],
         'non_waivable_holds': ['No WordPress installation or activation performed',
                                'Requires WP_ENVIRONMENT_TYPE=staging and FV_EX2_APOLLO_STAGING_ALLOW=true',
                                'axe-core and screen-reader testing not yet certified',
                                'Exact WordPress staging HTTP/cookies and real-user CWV needed',
                                'NASA media rights per item and independent QD',
+                               'R20 NASA policy is guidance, not item-level image reuse clearance',
                                'PR158 catalog identifier-label mismatch for crew portrait must be independently reviewed',
                                'Atlas published links are not point geocodes or admitted spatial relationships',
                                'No main or homepage merges without separate approval'],
