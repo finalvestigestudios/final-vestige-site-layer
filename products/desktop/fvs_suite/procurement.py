@@ -10,7 +10,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from decimal import Decimal, ROUND_HALF_UP, localcontext
+from decimal import Context, Decimal, ROUND_HALF_UP, localcontext
 from functools import wraps
 from pathlib import Path
 from typing import Callable, Mapping
@@ -29,11 +29,14 @@ PROCUREMENT_PRECISION = 64
 
 
 def _audit_decimal_precision(operation):
-    """Preserve exact bound-checked fixed-point arithmetic without global changes."""
+    """Use a fresh bounded context, not caller exponent limits or traps.
+
+    Exact totals may exceed the caller's Emax even when source values satisfy
+    every procurement input bound. The 64-digit context also keeps subcents.
+    """
     @wraps(operation)
     def guarded(*args, **kwargs):
-        with localcontext() as ctx:
-            ctx.prec = max(ctx.prec, PROCUREMENT_PRECISION)
+        with localcontext(Context(prec=PROCUREMENT_PRECISION)):
             return operation(*args, **kwargs)
     return guarded
 
