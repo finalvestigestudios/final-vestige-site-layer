@@ -1,0 +1,563 @@
+{
+  "reviewed_at": "2026-10-31",
+  "status": "HOLD_UNPUBLISHED",
+  "partner_approval_verified": false,
+  "affiliate_earning_url": null,
+  "affiliate_tracking_enabled": false,
+  "original_products_tested": false,
+  "social_promotion_allowed": null,
+  "email_promotion_allowed": null,
+  "collection_enabled": false,
+  "source_urls": {
+    "FARADAY_1853": "https://en.wikisource.org/wiki/Experimental_Researches_in_Chemistry_and_Physics/Table-turning",
+    "SHENEFELT_2011": "https://doi.org/10.1080/00029157.2011.10401754",
+    "EASTON_SHOR_1976": "https://doi.org/10.1080/00221309.1976.9710871",
+    "MOGA_DIENES_2022": "https://doi.org/10.1080/00029157.2021.2010641",
+    "ANDERSEN_2018": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+    "LANDRY_2017": "https://pubmed.ncbi.nlm.nih.gov/28238944/",
+    "INSPIRE3": "https://inspire3.com/",
+    "TOTAL_FOCUS": "https://hypnosislive.com/mental-skills/total-focus",
+    "ZEN12_ABOUT": "https://zen12.com/about",
+    "ZEN12_CHECKOUT": "https://zen12.com/getstarted",
+    "NCCIH": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "EEG_REVIEW": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "FTC_END": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "FOCUS": "https://finalvestige.com/focus/",
+    "PUYSEGUR": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  },
+  "claims": [
+    {
+      "id": "R19-C01",
+      "claim": "Faraday dated the table-turning letter June 28 1853",
+      "disposition": "documented_primary",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "Date appears in source; historical not an audio efficacy test."
+    },
+    {
+      "id": "R19-C02",
+      "claim": "Faraday's volunteers reported tables moved their hands",
+      "disposition": "documented_primary",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "Report of their testimony, not endorsed causation."
+    },
+    {
+      "id": "R19-C03",
+      "claim": "Faraday used layered cardboard displacement marks",
+      "disposition": "documented_primary",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "The experiment recorded relative motion."
+    },
+    {
+      "id": "R19-C04",
+      "claim": "Faraday added a direction-indicating lever",
+      "disposition": "documented_primary",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "Distinguishes whether hand or table moved first."
+    },
+    {
+      "id": "R19-C05",
+      "claim": "Faraday saw lateral hand pressure precede table motion",
+      "disposition": "documented_primary",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "Scoped to his historical experiments."
+    },
+    {
+      "id": "R19-C06",
+      "claim": "Faraday described movement stopping when index exposed",
+      "disposition": "documented_primary",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "Qualify as his observation, not universal law."
+    },
+    {
+      "id": "R19-C07",
+      "claim": "Faraday scientifically tested all supernatural hypotheses",
+      "disposition": "reject_overreach",
+      "source_ids": [
+        "FARADAY_1853"
+      ],
+      "qualification": "Not a test of every possible claim."
+    },
+    {
+      "id": "R19-C08",
+      "claim": "Chevreul contributed to early ideomotor investigation",
+      "disposition": "historical_review",
+      "source_ids": [
+        "SHENEFELT_2011"
+      ],
+      "qualification": "Secondary historical review; dates qualified."
+    },
+    {
+      "id": "R19-C09",
+      "claim": "Pendulum amplifies small unconscious muscular motions",
+      "disposition": "historical_review",
+      "source_ids": [
+        "SHENEFELT_2011"
+      ],
+      "qualification": "Mechanism; no paranormal information claim."
+    },
+    {
+      "id": "R19-C10",
+      "claim": "Easton and Shor experiment involved 60 college students",
+      "disposition": "documented_study",
+      "source_ids": [
+        "EASTON_SHOR_1976"
+      ],
+      "qualification": "Sample from abstract, not population-level estimate."
+    },
+    {
+      "id": "R19-C11",
+      "claim": "Pendulum motion sensitive to attention and stimulation",
+      "disposition": "documented_study",
+      "source_ids": [
+        "EASTON_SHOR_1976"
+      ],
+      "qualification": "Conditions specific to study."
+    },
+    {
+      "id": "R19-C12",
+      "claim": "Pendulum experiments establish access to hidden knowledge",
+      "disposition": "reject_overreach",
+      "source_ids": [
+        "MOGA_DIENES_2022"
+      ],
+      "qualification": "2022 test failed earlier claimed advantage."
+    },
+    {
+      "id": "R19-C13",
+      "claim": "Moga and Dienes pendulum report published online 2022",
+      "disposition": "documented_study",
+      "source_ids": [
+        "MOGA_DIENES_2022"
+      ],
+      "qualification": "Article's online date Feb 2022."
+    },
+    {
+      "id": "R19-C14",
+      "claim": "2022 pendulum responses for guessed questions approximately chance",
+      "disposition": "documented_study",
+      "source_ids": [
+        "MOGA_DIENES_2022"
+      ],
+      "qualification": "Their tested context only."
+    },
+    {
+      "id": "R19-C15",
+      "claim": "2022 study replicated earlier Ouija knowledge advantage",
+      "disposition": "false_refuted",
+      "source_ids": [
+        "MOGA_DIENES_2022"
+      ],
+      "qualification": "Study explicitly reports non-replication."
+    },
+    {
+      "id": "R19-C16",
+      "claim": "Ouija field eye-tracking study published online July 2018",
+      "disposition": "documented_study",
+      "source_ids": [
+        "ANDERSEN_2018"
+      ],
+      "qualification": "Journal issue later 2019."
+    },
+    {
+      "id": "R19-C17",
+      "claim": "Ouija group less likely to anticipate letters than deliberate spelling",
+      "disposition": "documented_study",
+      "source_ids": [
+        "ANDERSEN_2018"
+      ],
+      "qualification": "Specific comparison."
+    },
+    {
+      "id": "R19-C18",
+      "claim": "Ouija pair interactions relevant to apparent meaning",
+      "disposition": "documented_interpretation",
+      "source_ids": [
+        "ANDERSEN_2018"
+      ],
+      "qualification": "Study interpretation, not fact about all sessions."
+    },
+    {
+      "id": "R19-C19",
+      "claim": "Historical Puységur archive exists at published link",
+      "disposition": "published_site_resource",
+      "source_ids": [
+        "PUYSEGUR"
+      ],
+      "qualification": "Read-only WP page ID 1377 verified."
+    },
+    {
+      "id": "R19-C20",
+      "claim": "Existing Focus Fieldbook exists at published link",
+      "disposition": "published_site_resource",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "qualification": "Read-only WP page ID 1579 verified."
+    },
+    {
+      "id": "R19-C21",
+      "claim": "Existing Focus signup/welcome should remain intact",
+      "disposition": "release_gate",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "qualification": "Explicit founder restriction; no CMS writes."
+    },
+    {
+      "id": "R19-C22",
+      "claim": "Hypnosis Live is an Inspire3 brand",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "qualification": "Brand relationship, not quality claim."
+    },
+    {
+      "id": "R19-C23",
+      "claim": "Total Focus listed in Mental Skills catalog",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Exact SKU page checked Oct 31 2026."
+    },
+    {
+      "id": "R19-C24",
+      "claim": "Total Focus seller lists 33-minute audio",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Duration not independently timed."
+    },
+    {
+      "id": "R19-C25",
+      "claim": "Total Focus seller lists 47 MB MP3",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Bytes not independently downloaded."
+    },
+    {
+      "id": "R19-C26",
+      "claim": "Total Focus seller names J.A. Amos",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Named creator not independently interviewed."
+    },
+    {
+      "id": "R19-C27",
+      "claim": "Total Focus seller offers a preview control",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Preview not played."
+    },
+    {
+      "id": "R19-C28",
+      "claim": "Total Focus seller promotes focus and productivity",
+      "disposition": "seller_marketing_only",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Marketing propositions, not independent outcomes."
+    },
+    {
+      "id": "R19-C29",
+      "claim": "Total Focus rewires the brain",
+      "disposition": "unsubstantiated_product_claim",
+      "source_ids": [
+        "TOTAL_FOCUS",
+        "FTC_HEALTH"
+      ],
+      "qualification": "No adequate product-specific support identified."
+    },
+    {
+      "id": "R19-C30",
+      "claim": "Total Focus guarantees razor-sharp concentration",
+      "disposition": "unsubstantiated_product_claim",
+      "source_ids": [
+        "TOTAL_FOCUS",
+        "FTC_HEALTH"
+      ],
+      "qualification": "Do not repeat as editorial promise."
+    },
+    {
+      "id": "R19-C31",
+      "claim": "Total Focus will improve work income/career prospects",
+      "disposition": "unsubstantiated_product_claim",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "No evidence of product-specific economic outcome."
+    },
+    {
+      "id": "R19-C32",
+      "claim": "Total Focus will treat ADHD, trauma or anxiety",
+      "disposition": "excluded_medical_claim",
+      "source_ids": [
+        "FTC_HEALTH",
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Not established, do not imply."
+    },
+    {
+      "id": "R19-C33",
+      "claim": "Total Focus seller mentions 14-day refund",
+      "disposition": "seller_term_subject_to_change",
+      "source_ids": [
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "Refer reader to full current terms; no guarantee conveyed."
+    },
+    {
+      "id": "R19-C34",
+      "claim": "Hypnosis neuroimaging review proves Total Focus effects",
+      "disposition": "reject_evidence_transfer",
+      "source_ids": [
+        "LANDRY_2017",
+        "TOTAL_FOCUS"
+      ],
+      "qualification": "General review never studied this SKU."
+    },
+    {
+      "id": "R19-C35",
+      "claim": "2017 meta-analysis found few consistent neuroimaging patterns",
+      "disposition": "documented_review",
+      "source_ids": [
+        "LANDRY_2017"
+      ],
+      "qualification": "Do not overgeneralize to all hypnosis."
+    },
+    {
+      "id": "R19-C36",
+      "claim": "Zen12 advertised twelve levels",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "Product format."
+    },
+    {
+      "id": "R19-C37",
+      "claim": "Zen12 advertises twelve-minute listening sessions",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "Reported duration, not timed independently."
+    },
+    {
+      "id": "R19-C38",
+      "claim": "Zen12 advertises guided/music/white-noise/nature variants",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "Four versions per level."
+    },
+    {
+      "id": "R19-C39",
+      "claim": "Zen12 checkout lists forty-eight MP3 files",
+      "disposition": "seller_description_only",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "qualification": "Files not independently downloaded."
+    },
+    {
+      "id": "R19-C40",
+      "claim": "Zen12 checkout asks for mobile phone information",
+      "disposition": "seller_checkout_observation",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "qualification": "Buyer should verify current privacy policy."
+    },
+    {
+      "id": "R19-C41",
+      "claim": "Zen12 checkout shows countdown-like urgency element",
+      "disposition": "seller_checkout_observation",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "qualification": "Do not infer actual scarcity."
+    },
+    {
+      "id": "R19-C42",
+      "claim": "Zen12 twelve minutes equals one hour of meditation",
+      "disposition": "unsubstantiated_product_claim",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "NCCIH"
+      ],
+      "qualification": "No product-specific comparator supports ratio."
+    },
+    {
+      "id": "R19-C43",
+      "claim": "Zen12 automatically entrains brainwaves",
+      "disposition": "unsubstantiated_product_claim",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "EEG_REVIEW"
+      ],
+      "qualification": "No SKU-specific evidence; review is heterogeneous."
+    },
+    {
+      "id": "R19-C44",
+      "claim": "Binaural beats studies establish Zen12 audio benefits",
+      "disposition": "reject_evidence_transfer",
+      "source_ids": [
+        "EEG_REVIEW",
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "Review does not test product."
+    },
+    {
+      "id": "R19-C45",
+      "claim": "Meditation evidence may transfer to all recordings",
+      "disposition": "reject_evidence_transfer",
+      "source_ids": [
+        "NCCIH",
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "Methods/outcomes heterogeneous."
+    },
+    {
+      "id": "R19-C46",
+      "claim": "Vendor endorsement testimonials are personal Final Vestige evidence",
+      "disposition": "prohibited_representation",
+      "source_ids": [
+        "FTC_END",
+        "ZEN12_CHECKOUT"
+      ],
+      "qualification": "We have not purchased/used the product."
+    },
+    {
+      "id": "R19-C47",
+      "claim": "FTC guidance calls for transparent material-connection disclosure",
+      "disposition": "regulatory_guidance",
+      "source_ids": [
+        "FTC_END"
+      ],
+      "qualification": "Plain visible near particular earning link."
+    },
+    {
+      "id": "R19-C48",
+      "claim": "General site disclosure alone sufficient for affiliate CTA",
+      "disposition": "reject_disclosure",
+      "source_ids": [
+        "FTC_END"
+      ],
+      "qualification": "Near-link disclosure must not be displaced."
+    },
+    {
+      "id": "R19-C49",
+      "claim": "Health-related efficacy advertising requires scientific support",
+      "disposition": "regulatory_guidance",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "qualification": "Not automatic approval for any claim."
+    },
+    {
+      "id": "R19-C50",
+      "claim": "Affiliate account authorized to earn from Zen12",
+      "disposition": "unverified_release_gate",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "qualification": "Written account-specific evidence missing."
+    },
+    {
+      "id": "R19-C51",
+      "claim": "Affiliate account authorized to earn from Total Focus",
+      "disposition": "unverified_release_gate",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "qualification": "Written account-specific evidence missing."
+    },
+    {
+      "id": "R19-C52",
+      "claim": "Social/TikTok/email creatives rights verified",
+      "disposition": "unverified_release_gate",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "qualification": "Do not activate without exact program terms."
+    },
+    {
+      "id": "R19-C53",
+      "claim": "Affiliate payout or click conversion rate currently known",
+      "disposition": "unverified_release_gate",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "qualification": "No live performance reporting."
+    },
+    {
+      "id": "R19-C54",
+      "claim": "Video candidate represents proven conversion uplift",
+      "disposition": "reject_hypothesis_as_result",
+      "source_ids": [
+        "FTC_END"
+      ],
+      "qualification": "Unlaunched A/B hypothesis only."
+    },
+    {
+      "id": "R19-C55",
+      "claim": "Consent or identifiers currently collected by this draft",
+      "disposition": "disabled",
+      "source_ids": [
+        "FTC_END"
+      ],
+      "qualification": "No scripts, requests, cookies, or IDs."
+    },
+    {
+      "id": "R19-C56",
+      "claim": "Current media proposal is a finished caption-synced hosted movie",
+      "disposition": "not_yet",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "Only proposed 40-second transcript/VTT/poster here."
+    },
+    {
+      "id": "R19-C57",
+      "claim": "Purchased product personally tested by Final Vestige",
+      "disposition": "not_yet",
+      "source_ids": [
+        "TOTAL_FOCUS",
+        "ZEN12_ABOUT"
+      ],
+      "qualification": "No purchase/listen/test has occurred."
+    },
+    {
+      "id": "R19-C58",
+      "claim": "Release may proceed without site QA and founder approval",
+      "disposition": "prohibited",
+      "source_ids": [
+        "FTC_END"
+      ],
+      "qualification": "Publication requires independent QA and explicit founder approval."
+    }
+  ]
+}
