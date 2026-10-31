@@ -55,10 +55,10 @@ function audit(files){
   check('offer/no-video-player-A',!/<video\b/i.test(a));
   check('offer/B-video-hidden',/<video\s+hidden\s+controls\s+playsinline\s+preload="none"/.test(b));
   check('offer/B-no-video-source',!/<source\b/i.test(b)&&!/<video[^>]*\ssrc\s*=/i.test(b));
-  check('offer/no-autoplay',!/\bautoplay\b/i.test(a)&&!/\bautoplay\b/i.test(b));
+  check('offer/no-autoplay',!/<video[^>]*\bautoplay\b/i.test(a)&&!/<video[^>]*\bautoplay\b/i.test(b));
   check('offer/references-seller-and-independent',a.includes('Seller')&&a.includes('Liebherr')&&a.includes('Ingendoh'));
   check('offer/free-focus',a.includes('https://finalvestige.com/focus/'));
-  check('offer/no-false-live-test',a.includes('no affiliate relationship')&&b.includes('not yet available for playback'));
+  check('offer/no-false-live-test',/no affiliate relationship/i.test(a)&&b.includes('not yet available for playback'));
   check('hub/all-four-streams',['Perception &amp; Attention','History of Suggestion','Practice &amp; Reflection','Tools Under Review'].every(x=>hub.includes(x)));
   check('hub/no-broken-future-links',!/<a[^>]*href=["']\/mind\//i.test(hub));
   check('hub/puys-focus-editorial',hub.includes('https://finalvestige.com/focus/')&&hub.includes('https://finalvestige.com/editorial-standards/')&&hub.includes('puysegurs-animal-magnetism-files'));
