@@ -1,0 +1,615 @@
+{
+  "title": "The Word That Would Not Stay Quiet — claim and product-proof register",
+  "reviewed_local_date": "2026-10-30",
+  "permission_status": {
+    "inspire3_partner_approved": false,
+    "approved_affiliate_url": null,
+    "email_promotion_rights": null,
+    "creative_rights": null,
+    "commission_terms": null
+  },
+  "source_registry": {
+    "S1": {
+      "url": "https://doi.org/10.1037/h0054651",
+      "type": "primary",
+      "scope": "Stroop 1935 original published experiment abstract and reported means"
+    },
+    "S2": {
+      "url": "https://www.mpi.nl/publications/item2389918/studies-interference-serial-verbal-reactions",
+      "type": "bibliography",
+      "scope": "original publication attribution"
+    },
+    "S3": {
+      "url": "https://www.mpi.nl/publications/item2355497/half-century-research-stroop-effect-integrative-review",
+      "type": "secondary-review",
+      "scope": "MacLeod 1991 review"
+    },
+    "S4": {
+      "url": "https://link.springer.com/article/10.1007/s00426-021-01554-x",
+      "type": "peer-reviewed-review",
+      "scope": "2022 methodological review of locus of interference"
+    },
+    "S5": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34425456/",
+      "type": "systematic-review",
+      "scope": "2021 29-study adult group mindfulness review"
+    },
+    "S6": {
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "type": "meta-analysis",
+      "scope": "2024 111 RCT n=9538 cognition review"
+    },
+    "S7": {
+      "url": "https://zen12.com/about",
+      "type": "merchant",
+      "scope": "Zen12 overview features and sales efficacy assertions"
+    },
+    "S8": {
+      "url": "https://zen12.com/getstarted",
+      "type": "merchant-checkout",
+      "scope": "current exact offer inclusions and terms; no public product link"
+    },
+    "S9": {
+      "url": "https://inspire3.com/",
+      "type": "merchant-catalog",
+      "scope": "brand affiliation; company marketing not independent efficacy"
+    },
+    "S10": {
+      "url": "https://zen12.com/welcome",
+      "type": "merchant-email",
+      "scope": "free teaser requires separate seller newsletter"
+    },
+    "S11": {
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "type": "US-agency",
+      "scope": "meditation overview and safety"
+    },
+    "S12": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first-party-published",
+      "scope": "live Puységur archive; verified authenticated WordPress page 1377"
+    },
+    "S13": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "first-party-published",
+      "scope": "live Focus Fieldbook; verified authenticated WordPress page 1579"
+    },
+    "S14": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator-guidance",
+      "scope": "affiliate disclosure proximity and material relationships"
+    },
+    "S15": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator-guidance",
+      "scope": "evidence standard for express and implied claims"
+    }
+  },
+  "claims": [
+    {
+      "id": "H01",
+      "domain": "historic",
+      "claim": "Stroop published the study in 1935",
+      "disposition": "verified",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "public_copy_rule": "A 1935 study examined color-word interference."
+    },
+    {
+      "id": "H02",
+      "domain": "historic",
+      "claim": "Original journal volume 18 number 6 pages 643–662",
+      "disposition": "verified",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "public_copy_rule": "Source trail bibliographic citation."
+    },
+    {
+      "id": "H03",
+      "domain": "historic",
+      "claim": "Two properties can conflict: printed word and ink hue",
+      "disposition": "verified",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Color-name words can carry conflicting task cues."
+    },
+    {
+      "id": "H04",
+      "domain": "historic",
+      "claim": "Original comparison was timing reading 100 conflicting words",
+      "disposition": "verified-contextual",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Do not call it one universal individual test."
+    },
+    {
+      "id": "H05",
+      "domain": "historic",
+      "claim": "Word-reading comparison 2.3 seconds slower",
+      "disposition": "verified-contextual",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Only for original reported comparison."
+    },
+    {
+      "id": "H06",
+      "domain": "historic",
+      "claim": "Word-reading comparison 5.6 percent increase",
+      "disposition": "verified-contextual",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Only for original reported comparison."
+    },
+    {
+      "id": "H07",
+      "domain": "historic",
+      "claim": "Word-reading increase was not reliable",
+      "disposition": "verified",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Cannot claim a universal word-reading deficit."
+    },
+    {
+      "id": "H08",
+      "domain": "historic",
+      "claim": "Ink naming incongruent words increased 47 seconds for 100 items",
+      "disposition": "verified-contextual",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Relative to particular original controls."
+    },
+    {
+      "id": "H09",
+      "domain": "historic",
+      "claim": "Ink naming was 74.3 percent slower in original comparison",
+      "disposition": "verified-contextual",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Do not generalize as per-person score."
+    },
+    {
+      "id": "H10",
+      "domain": "historic",
+      "claim": "Experiment recruited several hundred college students",
+      "disposition": "verified-contextual",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Different phases may have different sample sizes."
+    },
+    {
+      "id": "H11",
+      "domain": "historic",
+      "claim": "Stroop assessed learning and persistence of conflict effects",
+      "disposition": "verified",
+      "sources": [
+        "S1"
+      ],
+      "public_copy_rule": "Described as tested, not a universal training effect."
+    },
+    {
+      "id": "H12",
+      "domain": "review",
+      "claim": "MacLeod published an integrative review in 1991",
+      "disposition": "verified",
+      "sources": [
+        "S3"
+      ],
+      "public_copy_rule": "Review historical literature, not proprietary audio."
+    },
+    {
+      "id": "H13",
+      "domain": "review",
+      "claim": "2022 review highlights unresolved processing locus",
+      "disposition": "verified",
+      "sources": [
+        "S4"
+      ],
+      "public_copy_rule": "Reject single-cause certainty."
+    },
+    {
+      "id": "H14",
+      "domain": "review",
+      "claim": "Color-word interference exists in multiple research paradigms",
+      "disposition": "verified-qualified",
+      "sources": [
+        "S3",
+        "S4"
+      ],
+      "public_copy_rule": "Effects depend on protocol and comparison conditions."
+    },
+    {
+      "id": "H15",
+      "domain": "scope",
+      "claim": "Our visual card is a validated laboratory assessment",
+      "disposition": "rejected",
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "public_copy_rule": "Explicitly label as illustrative only."
+    },
+    {
+      "id": "H16",
+      "domain": "scope",
+      "claim": "Home Stroop scores diagnose ADHD or cognitive disorders",
+      "disposition": "rejected",
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "public_copy_rule": "No diagnosis, no score, no inference."
+    },
+    {
+      "id": "H17",
+      "domain": "scope",
+      "claim": "Color-vision differences and language can alter reader task access",
+      "disposition": "methodological-guard",
+      "sources": [
+        "S4"
+      ],
+      "public_copy_rule": "Provide an equivalent conceptual explanation."
+    },
+    {
+      "id": "M01",
+      "domain": "mindfulness",
+      "claim": "2021 group mindfulness review included 29 studies",
+      "disposition": "verified",
+      "sources": [
+        "S5"
+      ],
+      "public_copy_rule": "Adult systematic review, not Zen12 evaluation."
+    },
+    {
+      "id": "M02",
+      "domain": "mindfulness",
+      "claim": "2021 review found effects across all executive domains robust",
+      "disposition": "rejected",
+      "sources": [
+        "S5"
+      ],
+      "public_copy_rule": "Review reports inconsistent findings and nonrobust overall effect."
+    },
+    {
+      "id": "M03",
+      "domain": "mindfulness",
+      "claim": "2024 meta-analysis pooled 111 randomized trials",
+      "disposition": "verified",
+      "sources": [
+        "S6"
+      ],
+      "public_copy_rule": "For meditation-naive participants, multiple intervention models."
+    },
+    {
+      "id": "M04",
+      "domain": "mindfulness",
+      "claim": "2024 meta-analysis participants numbered 9538",
+      "disposition": "verified",
+      "sources": [
+        "S6"
+      ],
+      "public_copy_rule": "Sample from review, not Zen12 users."
+    },
+    {
+      "id": "M05",
+      "domain": "mindfulness",
+      "claim": "2024 synthesis found small-to-moderate effects on some accuracy outcomes",
+      "disposition": "verified-qualified",
+      "sources": [
+        "S6"
+      ],
+      "public_copy_rule": "Not all cognition domains improved."
+    },
+    {
+      "id": "M06",
+      "domain": "mindfulness",
+      "claim": "2024 synthesis found general response-speed improvement",
+      "disposition": "rejected",
+      "sources": [
+        "S6"
+      ],
+      "public_copy_rule": "No effect on executive-function latency indices or processing speed."
+    },
+    {
+      "id": "M07",
+      "domain": "mindfulness",
+      "claim": "Mindfulness evidence proves Zen12 improves Stroop reaction time",
+      "disposition": "rejected",
+      "sources": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "public_copy_rule": "No product-specific transfer established."
+    },
+    {
+      "id": "M08",
+      "domain": "mindfulness",
+      "claim": "NCCIH considers meditation evidence and possible adverse experiences",
+      "disposition": "verified",
+      "sources": [
+        "S11"
+      ],
+      "public_copy_rule": "Nonclinical practice must permit stopping; no guarantee."
+    },
+    {
+      "id": "Z01",
+      "domain": "seller-feature",
+      "claim": "Zen12 merchant describes 12 levels",
+      "disposition": "merchant-only",
+      "sources": [
+        "S7",
+        "S8"
+      ],
+      "public_copy_rule": "Seller describes the program as twelve levels."
+    },
+    {
+      "id": "Z02",
+      "domain": "seller-feature",
+      "claim": "Zen12 merchant describes 12-minute sessions",
+      "disposition": "merchant-only",
+      "sources": [
+        "S7"
+      ],
+      "public_copy_rule": "Seller describes each session as twelve minutes."
+    },
+    {
+      "id": "Z03",
+      "domain": "seller-feature",
+      "claim": "Zen12 merchant describes four listening styles per level",
+      "disposition": "merchant-only",
+      "sources": [
+        "S7"
+      ],
+      "public_copy_rule": "A choice of audio format, not efficacy proof."
+    },
+    {
+      "id": "Z04",
+      "domain": "seller-feature",
+      "claim": "Zen12 current checkout lists 48 MP3 files",
+      "disposition": "merchant-only",
+      "sources": [
+        "S8"
+      ],
+      "public_copy_rule": "Recheck before publication; omit current price."
+    },
+    {
+      "id": "Z05",
+      "domain": "seller-feature",
+      "claim": "Zen12 current checkout describes guides and support",
+      "disposition": "merchant-only",
+      "sources": [
+        "S8"
+      ],
+      "public_copy_rule": "Claims about inclusions, not results."
+    },
+    {
+      "id": "Z06",
+      "domain": "seller-claim",
+      "claim": "12 Zen12 minutes are equivalent to one hour meditation",
+      "disposition": "unsupported",
+      "sources": [
+        "S7"
+      ],
+      "public_copy_rule": "Never repeat as a demonstrated fact."
+    },
+    {
+      "id": "Z07",
+      "domain": "seller-claim",
+      "claim": "Proprietary brainwave sounds automatically cause deeper meditation",
+      "disposition": "unsupported",
+      "sources": [
+        "S7"
+      ],
+      "public_copy_rule": "Do not imply independent efficacy demonstrated."
+    },
+    {
+      "id": "Z08",
+      "domain": "seller-claim",
+      "claim": "Zen12 clinically treats attention disorders",
+      "disposition": "unsupported",
+      "sources": [
+        "S7",
+        "S15"
+      ],
+      "public_copy_rule": "Do not make health or diagnosis claims."
+    },
+    {
+      "id": "Z09",
+      "domain": "seller-claim",
+      "claim": "Zen12 will guarantee better focus and productivity",
+      "disposition": "unsupported",
+      "sources": [
+        "S7",
+        "S15"
+      ],
+      "public_copy_rule": "No guaranteed cognitive outcome."
+    },
+    {
+      "id": "Z10",
+      "domain": "seller-claim",
+      "claim": "Zen12 advertises a return policy / guarantee",
+      "disposition": "merchant-volatile",
+      "sources": [
+        "S8"
+      ],
+      "public_copy_rule": "Do not quote time/terms without same-day check."
+    },
+    {
+      "id": "Z11",
+      "domain": "merchant-safety",
+      "claim": "Zen12 says not to listen while driving or operating machinery",
+      "disposition": "merchant-only",
+      "sources": [
+        "S7"
+      ],
+      "public_copy_rule": "Include in precise product guide."
+    },
+    {
+      "id": "Z12",
+      "domain": "merchant-funnel",
+      "claim": "Zen12 free audio promotion entails seller newsletter",
+      "disposition": "merchant-only",
+      "sources": [
+        "S10"
+      ],
+      "public_copy_rule": "Never conflate with existing Jetpack."
+    },
+    {
+      "id": "Z13",
+      "domain": "auth",
+      "claim": "Final Vestige has approved Inspire3 affiliate agreement",
+      "disposition": "not-verified",
+      "sources": [
+        "S9"
+      ],
+      "public_copy_rule": "Withhold affiliate activation pending authenticated agreement."
+    },
+    {
+      "id": "Z14",
+      "domain": "auth",
+      "claim": "Final Vestige possesses approved tracked link for Zen12",
+      "disposition": "not-verified",
+      "sources": [
+        "S9"
+      ],
+      "public_copy_rule": "No merchant checkout CTA in public HTML."
+    },
+    {
+      "id": "Z15",
+      "domain": "auth",
+      "claim": "Approved swipe creative and usage rights have been verified",
+      "disposition": "not-verified",
+      "sources": [
+        "S9"
+      ],
+      "public_copy_rule": "Never reproduce merchant images/claims."
+    },
+    {
+      "id": "Z16",
+      "domain": "auth",
+      "claim": "Publisher has tested or used Zen12",
+      "disposition": "not-verified",
+      "sources": [
+        "S7"
+      ],
+      "public_copy_rule": "No personal testimonial."
+    },
+    {
+      "id": "C01",
+      "domain": "FTC",
+      "claim": "Material commission connection needs clear near-link disclosure",
+      "disposition": "verified-guidance",
+      "sources": [
+        "S14"
+      ],
+      "public_copy_rule": "Use plain words about commission in same CTA block."
+    },
+    {
+      "id": "C02",
+      "domain": "FTC",
+      "claim": "Affiliate link label alone is adequate disclosure",
+      "disposition": "rejected",
+      "sources": [
+        "S14"
+      ],
+      "public_copy_rule": "Explicit commission disclosure instead."
+    },
+    {
+      "id": "C03",
+      "domain": "FTC",
+      "claim": "Objective health claims need adequate substantiation",
+      "disposition": "verified-guidance",
+      "sources": [
+        "S15"
+      ],
+      "public_copy_rule": "Product-specific scientific support required."
+    },
+    {
+      "id": "C04",
+      "domain": "FTC",
+      "claim": "Seller testimonials validate advertised expected results",
+      "disposition": "rejected",
+      "sources": [
+        "S14",
+        "S15"
+      ],
+      "public_copy_rule": "No adoption of third-party endorsements."
+    },
+    {
+      "id": "C05",
+      "domain": "site",
+      "claim": "Existing Focus page is published, page ID 1579",
+      "disposition": "verified-first-party",
+      "sources": [
+        "S13"
+      ],
+      "public_copy_rule": "Link directly, do not duplicate subscriber form."
+    },
+    {
+      "id": "C06",
+      "domain": "site",
+      "claim": "Puységur archive is published, page ID 1377",
+      "disposition": "verified-first-party",
+      "sources": [
+        "S12"
+      ],
+      "public_copy_rule": "History bridge, not a product test."
+    },
+    {
+      "id": "C07",
+      "domain": "privacy",
+      "claim": "Privacy-safe experiment can infer sales from outbound clicks",
+      "disposition": "rejected",
+      "sources": [
+        "S14"
+      ],
+      "public_copy_rule": "Outbound is not purchase; vendor reporting separate."
+    },
+    {
+      "id": "C08",
+      "domain": "scope",
+      "claim": "A Stroop task proves self-hypnosis can reprogram the brain",
+      "disposition": "rejected",
+      "sources": [
+        "S1",
+        "S4",
+        "S15"
+      ],
+      "public_copy_rule": "No claim transferring unrelated evidence."
+    },
+    {
+      "id": "C09",
+      "domain": "scope",
+      "claim": "Merchant price/commission can be quoted confidently without account checkout",
+      "disposition": "rejected",
+      "sources": [
+        "S8",
+        "S9"
+      ],
+      "public_copy_rule": "Explicitly exclude rates, payout and prices."
+    },
+    {
+      "id": "C10",
+      "domain": "scope",
+      "claim": "Activation of seller link may precede partner approval",
+      "disposition": "rejected",
+      "sources": [
+        "S9",
+        "S14"
+      ],
+      "public_copy_rule": "Fail closed until written approval and checked link."
+    }
+  ]
+}
