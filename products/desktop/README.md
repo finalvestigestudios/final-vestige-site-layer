@@ -11,6 +11,20 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R80 premium raw-review boundary (pre-release)
+
+The shared GrantAudit Studio Pro / ProcureGuard Studio Pro human-review validator
+now checks original reviewer/rationale characters **before** trimming outer
+whitespace. This prevents leading or trailing tab, CR/LF, C1 next-line and
+Unicode line/paragraph separators from being silently discarded by Python's
+`str.strip()`. The boundary applies both to new human-review actions and
+revalidation of previously recorded journal events. Ordinary outer spaces
+still trim, multilingual text remains supported, and neither source evidence
+nor journal history is automatically rewritten. See
+[R80 raw-review control custody](docs/PREMIUM_REVIEW_TRIM_BOUNDARY_R80.md).
+Local extracted-function tests are **not** full app or Windows executable
+acceptance; all six binaries remain unreleased and QD approval mandatory.
+
 ## R79 premium human-review Unicode custody (pre-release)
 
 GrantAudit Studio Pro and ProcureGuard Studio Pro now reject hidden Unicode controls,
