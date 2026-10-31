@@ -12,8 +12,8 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-STYLES = ["flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css", "observer-lab.css"]
-SCRIPTS = ["flagship.js", "observer-lab.js", "chronicle-lens.js"]
+STYLES = ["flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css", "observer-lab.css", "reading-trail.css"]
+SCRIPTS = ["flagship.js", "observer-lab.js", "chronicle-lens.js", "reading-trail.js"]
 ASSETS = ["index.html", *STYLES, *SCRIPTS]
 CASES = {"apollo", "franklin", "malbone"}
 DIRECTIONS = {"dossier", "museum", "observatory"}
