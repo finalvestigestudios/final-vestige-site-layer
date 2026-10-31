@@ -21,6 +21,7 @@ from .journal_io import append_verified_event, read_regular_bytes
 from .review_commit import confirm_review_commit
 from .review_lock import exclusive_review_lock
 from .review_chronology import check_new_review_clock, check_record_order
+from .unicode_hazards import is_visually_blank_filler
 
 MAX_REPORT_BYTES = 64 * 1024 * 1024
 MAX_JOURNAL_BYTES = 16 * 1024 * 1024
@@ -160,6 +161,7 @@ def _unsafe_review_character(character: str) -> bool:
         or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors.
         or 0xFE00 <= codepoint <= 0xFE0F
         or 0xE0100 <= codepoint <= 0xE01EF
+        or is_visually_blank_filler(character)
     )
 
 
