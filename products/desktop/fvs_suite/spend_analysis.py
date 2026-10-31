@@ -11,7 +11,7 @@ from decimal import Decimal
 import re
 from typing import Callable, Mapping
 
-from .review import labels_for_report, normalized_collision, raw_values
+from .review import ascii_case_identity, labels_for_report, normalized_collision, raw_values
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 
@@ -55,7 +55,7 @@ def summarize_spend(
     collision = {vendor: normalized_collision(rows, "vendor")
                  for vendor, rows in vendor_rows.items()}
     variant_counts = {
-        vendor: len({name.casefold() for name in raw_values(rows, "vendor")})
+        vendor: len({ascii_case_identity(name) for name in raw_values(rows, "vendor")})
         for vendor, rows in vendor_rows.items()
     }
     history: dict[tuple[str, str], tuple[int, Decimal | None, bool]] = {}
