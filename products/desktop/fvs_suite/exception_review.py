@@ -166,11 +166,14 @@ def _unsafe_review_character(character: str) -> bool:
 def _text(value: str, name: str, minimum: int, maximum: int) -> str:
     if not isinstance(value, str):
         raise ValueError(f"{name} must be text")
+    # Inspect the caller's original text before trimming. str.strip() removes
+    # C0/C1 controls and Unicode line separators at either edge, which would
+    # otherwise bypass the audit-journal prohibition on hidden formatting.
+    if any(_unsafe_review_character(character) for character in value):
+        raise ValueError(f"{name} cannot contain hidden or control Unicode characters")
     result = value.strip()
     if len(result) < minimum or len(result) > maximum:
         raise ValueError(f"{name} must be between {minimum} and {maximum} characters")
-    if any(_unsafe_review_character(character) for character in result):
-        raise ValueError(f"{name} cannot contain hidden or control Unicode characters")
     return result
 
 
