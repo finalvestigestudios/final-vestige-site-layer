@@ -85,3 +85,34 @@ test('reject missing scan-coverage evidence',()=>{
  const r=a();delete r.pages[0].scroll_coverage;
  assert.equal(compareWireRuns(r,b()).comparable,false);
 });
+
+
+test('reject source swap masquerading as a 76% compression saving',()=>{
+ const r=b(),p=r.pages[0],v=p.stored_images[0];
+ const wrong='https://example.edu/completely-different-historical-event.jpg';
+ v.stored_url=wrong;v.current_src=wrong;v.request_url=wrong;
+ p.network_images[0].url=wrong;
+ assert.equal(inspectRun(r).ok,true,'both individual runs have internally valid network evidence');
+ const pair=compareWireRuns(a(),r);
+ assert.equal(pair.comparable,false);
+ assert.equal(pair.status,'NOT_COMPARABLE');
+ assert.ok(pair.reasons.some(x=>x==='stored_asset_changed:123:123:0'));
+ assert.equal(Object.hasOwn(pair,'reduction_percent'),false);
+});
+test('reject visible historical-description drift between before and after runs',()=>{
+ const earlier=a(),later=b();
+ earlier.pages[0].stored_images[0].rendered_alt='The original historical subject';
+ later.pages[0].stored_images[0].rendered_alt='A different historical subject';
+ assert.equal(inspectRun(earlier).ok,true);
+ assert.equal(inspectRun(later).ok,true);
+ const pair=compareWireRuns(earlier,later);
+ assert.equal(pair.comparable,false);
+ assert.ok(pair.reasons.includes('historical_alt_changed:123:123:0'));
+});
+test('accept identical stored sources and descriptions with different encoded bytes',()=>{
+ const earlier=a(),later=b();
+ for(const r of [earlier,later])r.pages[0].stored_images.forEach((v,i)=>v.rendered_alt='Historical photograph '+i);
+ const pair=compareWireRuns(earlier,later);
+ assert.equal(pair.comparable,true);
+ assert.equal(pair.reduction_percent,76);
+});
