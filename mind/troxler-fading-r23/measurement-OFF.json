@@ -1,0 +1,46 @@
+{
+  "schema": "fv-mind-aggregate-proposal-v1",
+  "enabled": false,
+  "network_requests": 0,
+  "persistent_identifiers": false,
+  "cookies": false,
+  "local_storage": false,
+  "third_party_services": false,
+  "affiliate_links_active": false,
+  "collector_url": null,
+  "sampling": null,
+  "variant_assignment": "UNDECIDED — founder/privacy review required",
+  "event_whitelist": [
+    "presentation",
+    "approved_outbound_click"
+  ],
+  "variant_whitelist": [
+    "A",
+    "B"
+  ],
+  "source_category_whitelist": [
+    "direct",
+    "internal",
+    "organic",
+    "social",
+    "other"
+  ],
+  "time_resolution": "aggregate_weekly_only",
+  "suppression_threshold": ">=20 per released cell suggested, needs privacy review",
+  "forbidden_fields": [
+    "user_id",
+    "ip",
+    "email",
+    "full_referrer",
+    "url",
+    "query_string",
+    "device_fingerprint",
+    "user_agent",
+    "click_id",
+    "individual_timestamp",
+    "geolocation"
+  ],
+  "outbound_clicks_are_sales": false,
+  "authorisation": "NONE",
+  "notes": "Specification only. No code collection deployed or imported into candidate pages; do not interpret clicks as sales."
+}
