@@ -26,7 +26,7 @@ function verifyForrestal(doc,source){
   if(r.item_rights_cleared!==false||r.candidate_downloaded!==false||r.word_press_media_uploaded!==false||r.word_press_post_edited!==false)bad('unapproved asset mutation '+r.image_key);
   if(!isSafeRecord(r.candidate?.url)||r.candidate?.url!==r.release_plan?.clickable_primary_record)bad('invalid catalog source '+r.image_key);
   const c=r.candidate||{},l=r.release_plan||{};
-  if(!/^([A-Z]|File:)/.test(c.catalog_id||''))bad('catalog identifier needed '+r.image_key);
+  if(!/^(?:[A-Z]|File:|\d{6}-N-)/.test(c.catalog_id||''))bad('catalog identifier needed '+r.image_key);
   if(!Number.isInteger(c.photo_year)||c.photo_year<1900||c.photo_year>2026)bad('invalid historical date '+r.image_key);
   if(!Array.isArray(c.reported_dimensions)||c.reported_dimensions.length!==2||c.reported_dimensions.some(n=>!Number.isInteger(n)||n<=0))bad('unverified source dimensions '+r.image_key);
   if(l.max_width_px!==960||l.no_upscale!==true||l.preserve_aspect_ratio!==true||l.target_dimensions_px!==null||l.wordpress_media_id!==null||l.verify_real_visitor_breakage_first!==true||l.require_logged_out_before_after_wire_bytes!==true)bad('unsafe image optimization plan '+r.image_key);
