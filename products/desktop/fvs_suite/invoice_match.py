@@ -72,6 +72,8 @@ def candidate_pairs(records: Iterable[dict[str, Any]], *,
         raise ValueError("Duplicate window must be an integer between 0 and 365 days")
     if type(max_candidates) is not int or max_candidates < 1:
         raise ValueError("Candidate limit must be a positive integer")
+    if max_candidates > MAX_CANDIDATES:
+        raise ValueError(f"Candidate limit exceeds safety maximum of {MAX_CANDIDATES:,}")
 
     exact: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
     by_amount: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
