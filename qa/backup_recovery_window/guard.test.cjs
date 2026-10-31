@@ -1,0 +1,25 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {assess,parseUtc}=require('./guard.cjs');
+const now='2026-10-31T02:49:44Z';
+const base={backup:{backups:{last_backup_when:'2026-10-30 02:26:30',last_attempt_failed:false,last_attempt_status:'finished'}},activities:[]};
+const run=(x=base,options={})=>assess(x,{asOf:now,...options});
+const has=(r,c)=>r.findings.some(f=>f.code===c);
+test('accepts WordPress UTC timestamp',()=>assert.equal(parseUtc('2026-10-30 02:26:30'),Date.parse('2026-10-30T02:26:30Z')));
+test('rejects timezone-ambiguous date',()=>assert.equal(parseUtc('2026-10-30T02:26:30'),null));
+test('observed point is 24.39 hours old',()=>{const r=run();assert.equal(r.age_hours,24.39);assert.ok(has(r,'OLD_RECOVERY_POINT'));});
+test('fresh successful point is clear',()=>assert.equal(run({backups:{last_backup_when:'2026-10-31T02:30:00Z',last_attempt_failed:false}}).status,'NO_ALERTS_IN_SNAPSHOT'));
+test('failed latest attempt is P0 independent of stale recovery',()=>assert.ok(has(run({backups:{last_backup_when:'2026-10-30 02:26:30',last_attempt_failed:true,last_attempt_status:'error-will-retry'}}),'FAILED_ATTEMPT')));
+test('in-progress attempt not mistaken for success',()=>assert.ok(has(run({backups:{last_backup_when:'2026-10-31T02:30:00Z',last_attempt_failed:false,backup_in_progress:true}}),'IN_PROGRESS')));
+test('missing successful point cannot pass',()=>assert.ok(has(run({backups:{last_attempt_failed:false}}),'SUCCESS_TIMESTAMP_MISSING')));
+test('missing attempt status cannot pass',()=>assert.ok(has(run({backups:{last_backup_when:'2026-10-31T02:30:00Z'}}),'ATTEMPT_UNKNOWN')));
+test('future timestamps cannot pass',()=>assert.ok(has(run({backups:{last_backup_when:'2026-11-01T02:30:00Z',last_attempt_failed:false}}),'CLOCK_CONFLICT')));
+test('actual approved edit timestamps trigger recovery review',()=>{
+ const s={...base,activities:[{name:'post__updated',date:'2026-10-30T16:13:31Z'},{name:'plugin__updated',date:'2026-10-30T22:46:46Z'}]};
+ assert.ok(has(run(s),'WRITES_SINCE_RECOVERY_POINT'));
+});
+test('update-available notices are not writes',()=>assert.ok(!has(run({...base,activities:[{name:'theme__update_available',date:'2026-10-30T22:46:46Z'}]}),'WRITES_SINCE_RECOVERY_POINT')));
+test('older or future events are ignored',()=>assert.ok(!has(run({...base,activities:[{name:'post__updated',date:'2026-10-29T22:46:46Z'},{name:'plugin__updated',date:'2026-11-01T02:46:46Z'}]}),'WRITES_SINCE_RECOVERY_POINT')));
+test('rejects invalid threshold',()=>assert.throws(()=>run(base,{maxHours:-1}),/Invalid maxHours/));
+test('rejects naive asOf',()=>assert.throws(()=>assess(base,{asOf:'2026-10-31T02:49:44'}),/timezone/));
+test('rejects non-object snapshot',()=>assert.throws(()=>assess(null,{asOf:now}),/JSON object/));
