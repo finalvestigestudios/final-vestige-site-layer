@@ -14,7 +14,10 @@ function proofKind(v){
     Number.isSafeInteger(v.natural_width)&&v.natural_width>0&&
     v.http_status===200&&goodUrl(v.request_url)&&
     sameSource(v.current_src,v.request_url)&&
-    v.network_final_identity_verified!==false&&
+    v.loaded_network_proof_verified===true&&
+    v.network_final_identity_verified===true&&
+    /^image\//.test(String(v.response_mime_type||''))&&
+    Number.isSafeInteger(v.transfer_bytes)&&v.transfer_bytes>0&&
     v.redirected_image_identity_unverified!==true)return 'loaded';
  if(v.result==='confirmed_broken_in_probe_browser'&&v.verified_broken_in_browser===true&&
     v.natural_width===0&&goodUrl(v.request_url)){
