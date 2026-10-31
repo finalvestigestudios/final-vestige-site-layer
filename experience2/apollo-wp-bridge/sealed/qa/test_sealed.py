@@ -49,7 +49,7 @@ class SealedApollo(unittest.TestCase):
     def test_01_source_pin_custody_and_no_public_files(self):
         self.assertTrue(self.m['source_match_all_12_blob_pins'])
         self.assertEqual(self.m['source_pr215_head'], PIN)
-        self.assertEqual(len(self.m['outputs_sha256']), 16)
+        self.assertEqual(len(self.m['outputs_sha256']), 18)
         self.assertEqual(self.m['atlas_admission']['map_coordinates'], 0)
         self.assertEqual(self.m['atlas_admission']['pending_primary_source_location_review'], 6)
         self.assertEqual(self.m['source_concordance']['record_count'], 6)
@@ -122,7 +122,7 @@ class SealedApollo(unittest.TestCase):
         self.assertIn('id="fv-ex2-apollo-document"', s)
         self.assertIn('href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>', s)
         self.assertIn('.fv-ex2-apollo__skip:focus-visible{transform:none', s)
-        self.assertEqual(s.count('fv_ex2_apollo_sealed_download'), 7)
+        self.assertEqual(s.count('fv_ex2_apollo_sealed_download'), 14)
         self.assertEqual(s.count('data-media-review='),6)
         self.assertEqual(s.count('data-admission-record='), 6)
         self.assertIn('id="fv-ex2-atlas-admission"', s)

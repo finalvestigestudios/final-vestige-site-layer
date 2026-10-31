@@ -108,6 +108,7 @@ def run(*, require_axe=False):
             page.keyboard.press('Enter')
             assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document', (width, 'skip did not focus main')
             assert page.locator('section#atlas').count() == 1
+            assert page.locator('#fv-ex2-custody-receipts [data-custody-receipt]').count() == 7
             assert page.locator('#source-concordance [data-concordance-record]').count() == 6
             assert page.locator('#source-concordance .fv-ex2-concordance__card details > summary').count() == 6
             assert page.locator('#source-concordance .fv-ex2-concordance__witness').count() == 12
@@ -158,7 +159,7 @@ def run(*, require_axe=False):
             # A source drawer route must remain discoverable when JS is absent;
             # the URL fragment targets the native details wrapper, not hidden copy.
             assert page.locator('#source-concordance .fv-ex2-concordance__card a[href="#source-03"]').count() == 1
-            assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 7  # Includes R20 media-rights custody JSON
+            assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 14  # Original 7 + 7 R21 custody verification links
             assert page.locator('[data-ex2-trail-controls]').is_visible(), (width,'JS blocked by CSP')
             assert page.locator('[data-ex2-response-tools]').is_visible(), (width,'response JS blocked')
             assert page.locator('a[href^="https://www.nasa.gov"]').count() >= 12
