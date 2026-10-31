@@ -143,4 +143,28 @@ function pageHostVerified(url,title,documentUrl,hasArticle,requestFailed){
 function countTransfer(network){
  return network.filter(n=>Number.isInteger(n.encodedDataLength)&&n.encodedDataLength>=0).reduce((n,r)=>n+r.encodedDataLength,0);
 }
-module.exports={imageIdentity,sameSource,matchStoredImages,classifyImages,pageHostVerified,countTransfer};
+
+// Network Image responses include logos, UI icons and unrelated page chrome.
+// A claim about ARTICLE image transfer size must count only requests attributable
+// to a browser-visible, identity-verified stored article image, once per request.
+// Multiple DOM slots can share a single request; separate real requests still count.
+function scopeArticleImageWire(slots,networkImages){
+ if(!Array.isArray(slots)||!Array.isArray(networkImages))
+  return{article_bytes:null,unattributed_bytes:null,matched_request_count:0,unmeasured_article_requests:0};
+ let article=0,unattributed=0,matched=0,unmeasured=0;
+ for(const n of networkImages){
+  const aliases=Array.isArray(n?.url_aliases)?n.url_aliases:[];
+  const urls=[n?.url,...aliases];
+  const attributed=slots.some(v=>v?.current_src&&v?.request_url&&
+   sameSource(v.current_src,n?.url)&&urls.some(u=>sameSource(v.request_url,u)));
+  const bytes=n?.encoded_data_length;
+  if(attributed){
+   matched++;
+   if(!Number.isSafeInteger(bytes)||bytes<0)unmeasured++;
+   else article+=bytes;
+  }else if(Number.isSafeInteger(bytes)&&bytes>=0)unattributed+=bytes;
+ }
+ return{article_bytes:unmeasured?null:article,unattributed_bytes:unattributed,
+  matched_request_count:matched,unmeasured_article_requests:unmeasured};
+}
+module.exports={imageIdentity,sameSource,matchStoredImages,classifyImages,pageHostVerified,countTransfer,scopeArticleImageWire};
