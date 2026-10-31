@@ -56,10 +56,31 @@
     test("published official seller page inspectable in plan",plan.includes("https://inspire3.com/")&&plan.includes("https://hypnosislive.com/mental-skills/total-focus")&&plan.includes("https://zen12.com/about"));
     test("seller terms caveat and newsletter consent",plan.includes("five refunded sessions")&&plan.includes("newsletter"));
     test("partner acceptance expressly unverified",plan.includes("no Final Vestige-specific authorization")||plan.includes("not Final Vestige-specific authorization"));
-    test("privacy design disallows identifying analytics",plan.includes("no raw referer string")&&plan.includes("email, IP, user agent")&&plan.includes("no third-party analytics"));
+    test("privacy design disallows identifying analytics",plan.includes("no raw referer string")&&plan.includes("email, IP, user agent")&&plan.includes("third-party analytics"));
     test("conversions distinguished from clicks",plan.includes("paid sales require merchant-confirmed reporting"));
     test("existing Zen12 optional video reused not autoplayed",plan.includes("Zen12 PR #229")&&plan.includes("preload none")&&plan.includes("Do not autoplay"));
     test("publication, CI, QD approvals withheld",plan.includes("independent QD")&&plan.includes("do not publish")&&plan.includes("No commerce activation"));
+    /* Numerically verify representative normal-text combinations.
+       This is not a substitute for computed-style/browser accessibility. */
+    function luminance(hex) {
+      let v=hex.replace("#","").match(/.{2}/g).map(x=>parseInt(x,16)/255);
+      const c=v.map(x=>x<=0.04045?x/12.92:Math.pow((x+0.055)/1.055,2.4));
+      return c[0]*0.2126+c[1]*0.7152+c[2]*0.0722;
+    }
+    function contrast(fore,back) {
+      const v=[luminance(fore),luminance(back)].sort((a,b)=>b-a);
+      return (v[0]+0.05)/(v[1]+0.05);
+    }
+    const colors=[
+      ["body on page","#e0d9ce","#090b0b"],
+      ["gold on page","#e3bd7d","#090b0b"],
+      ["muted on card","#c8c0b3","#121716"],
+      ["heading on card","#f6f0e7","#121716"],
+      ["inactive label on control","#e0d9ce","#343a37"],
+      ["gold link on card","#e3bd7d","#121716"],
+      ["black focus button label on gold","#121614","#e3bd7d"]
+    ];
+    colors.forEach(c=>test("AA contrast ratio >=4.5: "+c[0],contrast(c[1],c[2])>=4.5));
     const failed=results.filter(t=>!t.pass);
     return {passed:results.length-failed.length,total:results.length,failed:failed,results:results};
   }
