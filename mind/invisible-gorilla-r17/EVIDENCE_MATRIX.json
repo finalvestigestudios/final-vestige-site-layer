@@ -1,0 +1,538 @@
+{
+  "title": "FV Mind R17: Invisible Gorilla and exact Zen12 claim disposition",
+  "checked_date": "2026-10-31",
+  "status": "UNPUBLISHED_HOLD",
+  "source_quality_rule": "Seller material proves merchant positioning and described format only; independent product outcome claims require product-specific substantiation.",
+  "product": "Zen12 (inspire3 catalog / zen12.com)",
+  "affiliate": {
+    "account_approval_verified": false,
+    "authorized_earning_url": null,
+    "terms_verified": false,
+    "sku_eligibility_verified": false,
+    "approved_creatives_verified": false,
+    "newsletter_promotion_rights_verified": false,
+    "social_promotion_rights_verified": false,
+    "tracking_enabled": false,
+    "conversion_test_live": false
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "role": "research",
+      "title": "Simons & Chabris 1999",
+      "url": "https://doi.org/10.1068/p281059",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S2",
+      "role": "research",
+      "title": "Simons 2010, i-Perception",
+      "url": "https://doi.org/10.1068/i0386",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S3",
+      "role": "research",
+      "title": "Drew Vo Wolfe 2013",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S4",
+      "role": "research",
+      "title": "Neisser & Becklen 1975",
+      "url": "https://doi.org/10.1016/0010-0285(75)90019-5",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S5",
+      "role": "seller",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S6",
+      "role": "seller",
+      "title": "Zen12 exact about",
+      "url": "https://zen12.com/about",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S7",
+      "role": "seller",
+      "title": "Zen12 exact checkout",
+      "url": "https://zen12.com/getstarted",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S8",
+      "role": "independent-health",
+      "title": "NCCIH meditation evidence and safety",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S9",
+      "role": "research",
+      "title": "2023 binaural beat EEG review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S10",
+      "role": "research",
+      "title": "2019 binaural meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S11",
+      "role": "regulatory",
+      "title": "FTC endorsements Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S12",
+      "role": "regulatory",
+      "title": "FTC health product claim substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S13",
+      "role": "first-party-published",
+      "title": "Final Vestige Focus",
+      "url": "https://finalvestige.com/focus/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S14",
+      "role": "first-party-published",
+      "title": "Final Vestige Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_on": "2026-10-31"
+    }
+  ],
+  "claims": [
+    {
+      "id": "G01",
+      "claim": "The 1999 experiment involved counting passes with an unexpected gorilla-like event.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S1"
+      ],
+      "editorial_handling": "In a set of controlled moving-scene monitoring tasks, not every real-world task."
+    },
+    {
+      "id": "G02",
+      "claim": "Overall unnoticed rates are a universal 46% for everyone.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S1"
+      ],
+      "editorial_handling": "Rates vary by conditions; no fixed human prevalence."
+    },
+    {
+      "id": "G03",
+      "claim": "Similarity of unexpected event to attended team and task difficulty affected noticing.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S1"
+      ],
+      "editorial_handling": "Report condition-dependence; no general deterministic prediction."
+    },
+    {
+      "id": "G04",
+      "claim": "The 1999 paper was published in September 1999.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S1"
+      ],
+      "editorial_handling": "Publisher bibliographic record."
+    },
+    {
+      "id": "G05",
+      "claim": "The original paper can diagnose an individual attentional deficit.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S1"
+      ],
+      "editorial_handling": "Experimental paradigm, not clinical diagnostic tool."
+    },
+    {
+      "id": "G06",
+      "claim": "The 2010 follow-up included a changing curtain and a departing player.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S2"
+      ],
+      "editorial_handling": "Known-gorilla experiment."
+    },
+    {
+      "id": "G07",
+      "claim": "Prior gorilla familiarity enhanced noticing of other changes.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S2"
+      ],
+      "editorial_handling": "Not established; familiarity did not improve other-event detection."
+    },
+    {
+      "id": "G08",
+      "claim": "2010 lower noticing in familiar group proves familiarity harms perception.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S2"
+      ],
+      "editorial_handling": "Difference not statistically significant; cannot imply causal decrement."
+    },
+    {
+      "id": "G09",
+      "claim": "The 2013 study tested 24 radiologists with inserted gorilla in a CT case.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S3"
+      ],
+      "editorial_handling": "Constrained expert visual search test."
+    },
+    {
+      "id": "G10",
+      "claim": "Eighty-three percent of the radiologists did not report seeing the gorilla.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S3"
+      ],
+      "editorial_handling": "Sample specific n=24; not diagnostic error rate."
+    },
+    {
+      "id": "G11",
+      "claim": "The gorilla was 48 times the size of an average nodule.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S3"
+      ],
+      "editorial_handling": "Authors describe size relative to task target."
+    },
+    {
+      "id": "G12",
+      "claim": "Eye tracking showed most who missed looked at gorilla location.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S3"
+      ],
+      "editorial_handling": "Location fixations do not imply perceptual recognition."
+    },
+    {
+      "id": "G13",
+      "claim": "83% of clinical radiologists routinely overlook medical abnormalities.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S3"
+      ],
+      "editorial_handling": "A nonmedical inserted image does not quantify routine diagnostic errors."
+    },
+    {
+      "id": "G14",
+      "claim": "Selective-looking work predates 1999.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S4",
+        "S1"
+      ],
+      "editorial_handling": "Neisser and Becklen studied attention in 1975."
+    },
+    {
+      "id": "G15",
+      "claim": "The publisher has tested Puységur cases with the gorilla experiment.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S14",
+        "S1"
+      ],
+      "editorial_handling": "Only a methodological analogy; historical sources are different."
+    },
+    {
+      "id": "G16",
+      "claim": "Final Vestige has a published Puységur archive and Focus landing page.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "editorial_handling": "Read-only WordPress verification 2026-10-31."
+    },
+    {
+      "id": "G17",
+      "claim": "The live site contains 61 published investigation posts.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S13"
+      ],
+      "editorial_handling": "WordPress authenticated list returned 61 published post objects; website categories not altered."
+    },
+    {
+      "id": "G18",
+      "claim": "Inspire3 catalog carries Zen12.",
+      "status": "SELLER_FORMAT_ONLY",
+      "source_ids": [
+        "S5"
+      ],
+      "editorial_handling": "Seller official catalog identity."
+    },
+    {
+      "id": "G19",
+      "claim": "Zen12 advertises twelve progressive levels.",
+      "status": "SELLER_FORMAT_ONLY",
+      "source_ids": [
+        "S6"
+      ],
+      "editorial_handling": "Feature as described by merchant, bundle not independently inspected."
+    },
+    {
+      "id": "G20",
+      "claim": "Zen12 advertises twelve-minute sessions.",
+      "status": "SELLER_FORMAT_ONLY",
+      "source_ids": [
+        "S6"
+      ],
+      "editorial_handling": "Seller-described duration only."
+    },
+    {
+      "id": "G21",
+      "claim": "Zen12 offers four formats per level.",
+      "status": "SELLER_FORMAT_ONLY",
+      "source_ids": [
+        "S6"
+      ],
+      "editorial_handling": "Music, guided, noise, nature, seller-described."
+    },
+    {
+      "id": "G22",
+      "claim": "Zen12 checkout describes 48 MP3 files in the bundle.",
+      "status": "SELLER_FORMAT_ONLY",
+      "source_ids": [
+        "S7"
+      ],
+      "editorial_handling": "Seller-described format, not personally inspected."
+    },
+    {
+      "id": "G23",
+      "claim": "Zen12 automatically changes the brainwaves of all listeners.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S6",
+        "S9"
+      ],
+      "editorial_handling": "Seller psychological mechanism; no SKU-specific independent confirmation."
+    },
+    {
+      "id": "G24",
+      "claim": "Twelve minutes of Zen12 equals one hour of meditation benefits.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "editorial_handling": "Do not state as established; no direct independent equivalence trial."
+    },
+    {
+      "id": "G25",
+      "claim": "Zen12 always erases anxiety and stress.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S6",
+        "S8",
+        "S12"
+      ],
+      "editorial_handling": "Unsubstantiated clinical/generalized guarantee."
+    },
+    {
+      "id": "G26",
+      "claim": "Zen12 will help viewers notice invisible gorillas.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "editorial_handling": "None of experiments evaluated Zen12."
+    },
+    {
+      "id": "G27",
+      "claim": "Meditation is always harmless.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S8"
+      ],
+      "editorial_handling": "NCCIH reports incomplete harm data and potential negative experiences."
+    },
+    {
+      "id": "G28",
+      "claim": "A 2023 auditory entrainment review directly validates Zen12.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S9",
+        "S6"
+      ],
+      "editorial_handling": "Research concerns binaural beats/EEG studies, not the Zen12 recordings."
+    },
+    {
+      "id": "G29",
+      "claim": "Binaural beat review results were inconsistent.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S9"
+      ],
+      "editorial_handling": "The review counted 5 positive, 8 negative, 1 mixed among 14 studies."
+    },
+    {
+      "id": "G30",
+      "claim": "A 2019 binaural beats meta-analysis measured Zen12 outcomes.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S10",
+        "S6"
+      ],
+      "editorial_handling": "Category review cannot be promoted as product-specific trial."
+    },
+    {
+      "id": "G31",
+      "claim": "An affiliate disclosure should be conspicuous and near an earning link.",
+      "status": "DISCLOSURE_REQUIRED",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_handling": "Precede and visually associate with the recommendation."
+    },
+    {
+      "id": "G32",
+      "claim": "General sitewide disclosures suffice alone even when distant from the link.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_handling": "FTC recommends near-link clear relationship."
+    },
+    {
+      "id": "G33",
+      "claim": "Health and cognitive benefit claims need adequate product-specific proof.",
+      "status": "DISCLOSURE_REQUIRED",
+      "source_ids": [
+        "S12"
+      ],
+      "editorial_handling": "If absent suppress product efficacy claims."
+    },
+    {
+      "id": "G34",
+      "claim": "Final Vestige is verified as an active authorized Zen12 affiliate.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "editorial_handling": "No account-level written acceptance/URL/terms."
+    },
+    {
+      "id": "G35",
+      "claim": "Specific affiliate commissions or payout percentage are verified.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S5"
+      ],
+      "editorial_handling": "No evidence; do not publish."
+    },
+    {
+      "id": "G36",
+      "claim": "A current Zen12 price, discount or countdown can be frozen into evergreen copy.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S7"
+      ],
+      "editorial_handling": "Dynamic checkout. No price/urgency published in guide."
+    },
+    {
+      "id": "G37",
+      "claim": "The official seller offers currently approved creatives usable by FV.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S5"
+      ],
+      "editorial_handling": "Approval and asset-use rights not accessible."
+    },
+    {
+      "id": "G38",
+      "claim": "A text guide with optional 40-second film will convert better than text alone.",
+      "status": "LIMITED_HYPOTHESIS",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_handling": "Experiment hypothesis; no conversions observed or guaranteed."
+    },
+    {
+      "id": "G39",
+      "claim": "Film playback alone proves any merchant purchase or conversion.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_handling": "Only partner validated downstream data could establish completed sale."
+    },
+    {
+      "id": "G40",
+      "claim": "A 12-minute timer is a free alternative to a paid audio recording.",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S13"
+      ],
+      "editorial_handling": "Descriptive option, not outcome claim."
+    },
+    {
+      "id": "G41",
+      "claim": "Marketing an unpublished /mind/ draft as a live page is acceptable.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S13"
+      ],
+      "editorial_handling": "Must publish only after founder and QA approval."
+    },
+    {
+      "id": "G42",
+      "claim": "The existing single Jetpack Focus subscription must remain unchanged.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S13"
+      ],
+      "editorial_handling": "No duplicate forms or welcome rewrite."
+    },
+    {
+      "id": "G43",
+      "claim": "The proposed static diagram accurately quantifies inattentional blindness.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S1"
+      ],
+      "editorial_handling": "It is a reflection graphic only, not a research implementation."
+    },
+    {
+      "id": "G44",
+      "claim": "Video alternative B must have a poster, captions or transcript and user controls.",
+      "status": "RELEASE_HOLD",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_handling": "Accessibility requirement; production verification not complete."
+    },
+    {
+      "id": "G45",
+      "claim": "The merchant seller description is sufficient evidence of personal experience.",
+      "status": "UNSUPPORTED_SUPPRESS",
+      "source_ids": [
+        "S6"
+      ],
+      "editorial_handling": "No editor tested or purchased Zen12."
+    }
+  ]
+}
