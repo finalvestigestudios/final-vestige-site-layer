@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Callable, Mapping
 
 from .procurement_reference import has_original_spelling, source_document_spellings
-from .audit_display import visible_source_text
+from .audit_display import visible_source_label_list
 from .review import price_outside_tolerance
 
 CENT = Decimal("0.01")
@@ -306,19 +306,21 @@ def review_line(
         "price_policy_absolute": format(policy.absolute, "f"),
         "price_policy_fraction": format(policy.fraction, "f"),
         "price_policy_sha256": policy.source_sha256,
-        "invoice_documents": "; ".join(sorted({r.get("document_id", "").strip() for r in invoices if r.get("document_id", "")})),
-        "credit_references": "; ".join(sorted({r.get("related_document", "").strip() for r in invoices if r.get("related_document", "")})),
-        "return_references": "; ".join(sorted({r.get("related_document", "").strip() for r in receipts if r.get("related_document", "")})),
-        # Render *new display columns* with the same visibility control as the
-        # premium review UI. Originals remain in verified source CSV snapshots.
-        "receipt_documents": "; ".join(map(visible_source_text, sorted({
-            row.get("document_id", "").strip() for row, kind, _ in receipt_entries
-            if kind == "receipt" and row.get("document_id", "").strip()
-        }))),
-        "return_documents": "; ".join(map(visible_source_text, sorted({
-            row.get("document_id", "").strip() for row, kind, _ in receipt_entries
-            if kind == "return" and row.get("document_id", "").strip()
-        }))),
+        # These are human DISPLAY fields, not matching keys or source custody.
+        # Escape hidden Unicode, literal backslashes and embedded list delimiters
+        # consistently for invoice, credit, receipt and return references.
+        "invoice_documents": visible_source_label_list(
+            row.get("document_id", "") for row in invoices),
+        "credit_references": visible_source_label_list(
+            row.get("related_document", "") for row in invoices),
+        "return_references": visible_source_label_list(
+            row.get("related_document", "") for row in receipts),
+        "receipt_documents": visible_source_label_list(
+            row.get("document_id", "") for row, kind, _ in receipt_entries
+            if kind == "receipt"),
+        "return_documents": visible_source_label_list(
+            row.get("document_id", "") for row, kind, _ in receipt_entries
+            if kind == "return"),
     }
     # Stable order while deduplicating flags.
     return output, list(dict.fromkeys(flags))
