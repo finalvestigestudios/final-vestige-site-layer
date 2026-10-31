@@ -8,44 +8,63 @@
   const addition = section.querySelector('.fv-hf__chronicle-entry--second');
   const note = section.querySelector('[data-fv-chronicle-lens-status]');
   const buttons = tools ? [...tools.querySelectorAll('[data-fv-chronicle-view]')] : [];
-  if (!tools || !original || !addition || !note || buttons.length !== 3) return;
+  const VIEWS = ['original', 'addition', 'both'];
+
+  // Do not expose a switcher with duplicate, missing or reordered choices.
+  // The underlying dated entries remain readable when this enhancement is absent.
+  if (!tools || !original || !addition || original === addition || !note ||
+      buttons.length !== VIEWS.length ||
+      buttons.map((button) => button.dataset.fvChronicleView).join(',') !== VIEWS.join(',')) return;
+
   const labels = {
     original: 'Showing only the original 1847 entry. The April 1848 addition is temporarily hidden. Select Addition or Compare both to read it.',
     addition: 'Showing only the April 1848 marginal addition. The 1847 original is temporarily hidden. Select Original or Compare both to read it.',
     both: 'Both entries are visible. The original and later addition share one surviving sheet.'
   };
+  let running = true;
   const restore = () => {
-    section.removeAttribute('data-fv-chronicle-mode');
-    tools.hidden = true;
-    // The default DOM always contains both entries. Never force a selection or change the source text.
-    original.hidden = false;
-    addition.hidden = false;
+    running = false;
+    // Remove the CSS selection first: never strand an invisible historical entry.
+    try { section.removeAttribute('data-fv-chronicle-mode'); } catch (_) { /* best effort */ }
+    try { original.hidden = false; addition.hidden = false; } catch (_) { /* best effort */ }
+    try { tools.hidden = true; } catch (_) { /* best effort */ }
+    buttons.forEach((button) => {
+      try { button.setAttribute('aria-pressed', 'false'); } catch (_) { /* best effort */ }
+    });
   };
   const setView = (view) => {
-    if (!Object.prototype.hasOwnProperty.call(labels, view)) return;
-    section.setAttribute('data-fv-chronicle-mode', view);
-    for (const b of buttons) b.setAttribute('aria-pressed', String(b.dataset.fvChronicleView === view));
-    note.textContent = labels[view];
+    if (!running || !Object.prototype.hasOwnProperty.call(labels, view)) return false;
+    try {
+      // Complete announcements and button state before hiding either source entry.
+      buttons.forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.fvChronicleView === view));
+      });
+      note.textContent = labels[view];
+      section.setAttribute('data-fv-chronicle-mode', view);
+      return true;
+    } catch (_) {
+      restore();
+      return false;
+    }
   };
   try {
-    // Register all listeners before exposing any enhancement. If initialization fails,
-    // restore() removes mode and leaves all historical content visible.
-    for (const button of buttons) {
-      button.addEventListener('click', () => setView(button.dataset.fvChronicleView));
+    // Register all handlers before exposing the optional switcher.
+    buttons.forEach((button, position) => {
+      button.addEventListener('click', () => { setView(button.dataset.fvChronicleView); });
       button.addEventListener('keydown', (event) => {
-        const position = buttons.indexOf(button);
-        const target = event.key === 'ArrowRight' ? (position + 1) % 3
-          : event.key === 'ArrowLeft' ? (position + 2) % 3
-          : event.key === 'Home' ? 0 : event.key === 'End' ? 2 : -1;
-        if (target < 0) return;
+        if (!running) return;
+        const target = event.key === 'ArrowRight' ? (position + 1) % VIEWS.length
+          : event.key === 'ArrowLeft' ? (position + VIEWS.length - 1) % VIEWS.length
+          : event.key === 'Home' ? 0 : event.key === 'End' ? VIEWS.length - 1 : -1;
+        if (target === -1) return;
         event.preventDefault();
-        buttons[target].focus();
-        setView(buttons[target].dataset.fvChronicleView);
+        if (!setView(VIEWS[target])) return;
+        try { buttons[target].focus(); } catch (_) { restore(); }
       });
-    }
-    setView('both');
+    });
+    if (!setView('both')) return;
     tools.hidden = false;
-  } catch (error) {
+  } catch (_) {
     restore();
   }
 })();
