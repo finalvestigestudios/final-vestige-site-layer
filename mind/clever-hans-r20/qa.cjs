@@ -109,7 +109,7 @@ function mutationChecks(files){
   poster_remote_image:f=>f['video-poster.svg']=f['video-poster.svg'].replace('</svg>','<image href="https://third-party.test/a.png"/></svg>'),
   remove_hub_stream:f=>f['mind-archive-draft.blocks.html']=f['mind-archive-draft.blocks.html'].replace('Tools Under Review','Alternative Tools'),
   fake_unique_visitor_analytics:f=>f['ATTRIBUTION_EXPERIMENT.md']=f['ATTRIBUTION_EXPERIMENT.md'].replace('do not claim unique visitors','claim unique visitors'),
-  no_footnote:f=>f['investigation.blocks.html']=f['investigation.blocks.html'].replace('https://finalvestige.com/focus/','https://example.test/focus/')
+  no_footnote:f=>f['investigation.blocks.html']=f['investigation.blocks.html'].replaceAll('https://finalvestige.com/focus/','https://example.test/focus/')
  };
  return Object.entries(mutations).map(([name,mutate])=>{const changed={...files};mutate(changed);const result=audit(changed);return {mutation:name,caught:result.failed>0,failures:result.failures.slice(0,3)}});
 }
