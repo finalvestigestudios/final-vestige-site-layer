@@ -116,6 +116,7 @@ class ApolloSealedHTTP(unittest.TestCase):
         self.assertEqual(body.count(b'id="fv-ex2-wayfinder"'),1)
         self.assertEqual(body.count(b'class="fv-ex2-wayfinder__list"'),1)
         self.assertEqual(h.get('x-fv-ex2-apollo-wayfinder-sha256'),self.manifest['outputs_sha256']['wayfinder.html'])
+        self.assertEqual(h.get('x-fv-ex2-apollo-touch-targets-sha256'),self.manifest['outputs_sha256']['touch-targets.css'])
         self.assertIn(b'id="atlas"',body)
         self.assertIn(b'id="source-concordance"',body)
         self.assertEqual(body.count(b'data-concordance-record='), 6)

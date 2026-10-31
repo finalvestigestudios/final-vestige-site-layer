@@ -49,7 +49,7 @@ class SealedApollo(unittest.TestCase):
     def test_01_source_pin_custody_and_no_public_files(self):
         self.assertTrue(self.m['source_match_all_12_blob_pins'])
         self.assertEqual(self.m['source_pr215_head'], PIN)
-        self.assertEqual(len(self.m['outputs_sha256']), 20)
+        self.assertEqual(len(self.m['outputs_sha256']), 21)
         self.assertEqual(self.m['atlas_admission']['map_coordinates'], 0)
         self.assertEqual(self.m['atlas_admission']['pending_primary_source_location_review'], 6)
         self.assertEqual(self.m['source_concordance']['record_count'], 6)

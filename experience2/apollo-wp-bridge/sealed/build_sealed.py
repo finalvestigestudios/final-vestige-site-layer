@@ -24,6 +24,7 @@ from qa.atlas_admission import build_atlas_admission
 from qa.media_rights_ledger import build_media_rights
 from qa.custody_receipts import build_receipts, EXPORT_NAMES
 from qa.wayfinder_r22 import build_wayfinder
+from qa.touch_targets_r24 import build_touch_targets
 
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
@@ -72,6 +73,7 @@ def build(out: Path) -> dict:
         concordance_receipt, media_receipt, atlas_receipt, receipt_export_count=len(EXPORT_NAMES))
     if hashlib.sha256(context_index.encode('utf-8')).hexdigest() != concordance_receipt['context_index_sha256']:
         raise ValueError('Derived context-index and concordance receipt mismatch')
+    touch_css, touch_receipt = build_touch_targets((BRIDGE / 'generated/fragment.html').read_text(encoding='utf-8'))
     payload = {}
     hashes = {}
     sizes = {}
@@ -93,7 +95,8 @@ def build(out: Path) -> dict:
                        ('media-rights.json', media_index),
                        ('custody-receipts.html', custody_html),
                        ('custody-receipts.css', custody_css),
-                       ('wayfinder.html', wayfinder_html), ('wayfinder.css', wayfinder_css)):
+                       ('wayfinder.html', wayfinder_html), ('wayfinder.css', wayfinder_css),
+                       ('touch-targets.css', touch_css)):
 
         raw = text.encode('utf-8')
         sizes[name] = len(raw)
@@ -121,6 +124,7 @@ def build(out: Path) -> dict:
         'nasa_media_rights_hold': media_receipt,
         'private_custody_receipts': receipts_receipt,
         'editorial_wayfinder': wayfinder_receipt,
+        'staging_touch_target_repair_r24': touch_receipt,
         'research_desk_pr158_readonly_witness': concordance_receipt['research_desk_crosswalk'],
         'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
                          'source_drawers','anchors','external_source_links',

@@ -95,12 +95,13 @@ function fv_ex2_apollo_sealed_page() {
     $custody_css = fv_ex2_apollo_sealed_asset('custody-receipts.css');
     $wayfinder = fv_ex2_apollo_sealed_asset('wayfinder.html');
     $wayfinder_css = fv_ex2_apollo_sealed_asset('wayfinder.css');
+    $touch_css = fv_ex2_apollo_sealed_asset('touch-targets.css');
     if (!is_string($fragment) || !is_string($css) || !is_string($js)
         || !is_string($concordance) || !is_string($concordance_css) || !is_string($context_index)
         || !is_string($atlas_admission) || !is_string($atlas_css) || !is_string($atlas_index)
         || !is_string($media_rights) || !is_string($media_rights_css) || !is_string($media_rights_index)
         || !is_string($custody_receipts) || !is_string($custody_css)
-        || !is_string($wayfinder) || !is_string($wayfinder_css)
+        || !is_string($wayfinder) || !is_string($wayfinder_css) || !is_string($touch_css)
         || substr_count($wayfinder, 'id="fv-ex2-wayfinder"') !== 1
         || substr_count($wayfinder, '<a href="#') !== 7
         || substr_count($custody_receipts, 'data-custody-receipt=') !== 7
@@ -213,6 +214,7 @@ function fv_ex2_apollo_sealed_page() {
     header('X-FV-EX2-Apollo-Media-Rights-Index-SHA256: ' . FV_EX2_APOLLO_SHA256['media-rights.json']);
     header('X-FV-EX2-Apollo-Custody-Receipts-SHA256: ' . FV_EX2_APOLLO_SHA256['custody-receipts.html']);
     header('X-FV-EX2-Apollo-Wayfinder-SHA256: ' . FV_EX2_APOLLO_SHA256['wayfinder.html']);
+    header('X-FV-EX2-Apollo-Touch-Targets-SHA256: ' . FV_EX2_APOLLO_SHA256['touch-targets.css']);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
     header('X-Content-Type-Options: nosniff');
@@ -221,7 +223,7 @@ function fv_ex2_apollo_sealed_page() {
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         . '<title>Private Apollo 1 Evidence Review — Final Vestige</title>'
         . '<meta name="robots" content="noindex,nofollow"><style nonce="' . $csp_nonce . '">'
-        . $css . $concordance_css . $atlas_css . $media_rights_css . $custody_css . $wayfinder_css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
+        . $css . $concordance_css . $atlas_css . $media_rights_css . $custody_css . $wayfinder_css . $touch_css . "\n.fv-ex2-apollo__review-h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}\n.fv-ex2-apollo__skip{position:absolute;z-index:10000;top:8px;left:8px;padding:12px 18px;background:#0c1010;color:#f2d69b;border:2px solid #f2d69b;transform:translateY(-160%)}\n.fv-ex2-apollo__skip:focus-visible{transform:none;outline:3px solid #f2d69b;outline-offset:3px}"
         . '</style></head><body>'
         . '<a class="fv-ex2-apollo__skip" href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>'
         . '<main id="fv-ex2-apollo-document" class="fv-ex2-apollo" tabindex="-1" aria-label="Apollo 1 evidence investigation">'
