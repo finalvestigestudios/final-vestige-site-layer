@@ -14,3 +14,12 @@ Base: the existing unified homepage review (PR #342). No production deployment, 
 - Run axe WCAG 2.2 AA and Lighthouse; don't call unmeasured results passed.
 - Preserve 72 Margins entries, published /focus/ page and existing Jetpack signup; historical archive remains primary.
 - No merge, deployment, production CMS settings or subscription service additions without release authorization.
+
+## Oct 31 exact-source QA refinement
+
+- Confirmed published `/focus/` (WordPress page 1579) has the **existing** `wp:jetpack/subscriptions` form, a direct 52-page PDF download path, newsletter consent and a welcome-email confirmation message. No subscriber account was used, no email delivery was verified.
+- Added consent adjacent to popup form: joining The Dispatch, confirmation requirement, unsubscribe and privacy link. Preserved `/focus/` if native Jetpack rendering or JavaScript is unavailable.
+- Prevent duplicate shortcode invocations from producing duplicate dialog IDs. Checked PHP lint and a local API-double contract (not real WordPress).
+- Corrected **Simons & Rensink (2005)** DOI to `10.1016/j.tics.2004.11.006`, grounded in PubMed PMID 15639436. Replaced nested `<main>` with an `<article>` to avoid duplicate main landmarks inside WordPress page templates.
+- Real isolated Chromium with the **exact GitHub popup HTML/CSS/JS blob IDs** passed 7-width keyboard modal, Escape, focus return, overlay fit and three fallback cases; separate simulated 200%-CSS-zoom reflow passed. Browser form is a synthetic stand-in; it does **not** validate WordPress Gutenberg block rendering, Jetpack subscription confirmation, actual PDF delivery, Safari, axe or CWV.
+- Coordinated with separate independent QA PR #355 and Mind/Perception editorial Issue #171; do not merge this stacked PR standalone. Release HOLD.
