@@ -101,7 +101,7 @@ function mutants(f){
  ["fake video src","ZEN12_B_OPTIONAL_FILM.html",s=>s.replace("controls preload","controls src='https://cdn.example.invalid/ad.mp4' preload")],
  ["erase B transcript","ZEN12_B_OPTIONAL_FILM.html",s=>s.replace('class="transcript"','class="missing"')],
  ["erase B poster alternative","ZEN12_B_OPTIONAL_FILM.html",s=>s.replace('role="img" aria-label=','role="presentation" data-label=')],
- ["change B editorial content","ZEN12_B_OPTIONAL_FILM.html",s=>s.replace("forty-eight","forty-seven")],
+ ["change B editorial content","ZEN12_B_OPTIONAL_FILM.html",s=>s.replace("48 MP3 files","47 MP3 files")],
  ["reveal affiliate URL","CLAIM_PROOF_MATRIX.json",s=>s.replace('"approved_affiliate_url": null','"approved_affiliate_url": "fake"')],
  ["set partner authorization true","CLAIM_PROOF_MATRIX.json",s=>s.replace('"activation_enabled": false','"activation_enabled": true')],
  ["weaken unsupported claim gate","CLAIM_PROOF_MATRIX.json",s=>s.replace('"id": "C27",','"id": "C27a",')],
@@ -109,7 +109,7 @@ function mutants(f){
  ["remove original research citation","INVESTIGATION.md",s=>s.replace("pubmed.ncbi.nlm.nih.gov/1500880","source-not-found")],
  ["erase VTT signature","ZEN12_FILM_CAPTIONS_DRAFT.vtt",s=>s.replace("WEBVTT","CAPTIONS")],
  ["remove SVG alt description","ZEN12_FILM_POSTER.svg",s=>s.replace("<desc","<x-desc")],
- ["break hub intro link","MIND_HUB_CANDIDATE.html",s=>s.replace("finalvestige.com/focus/","invalid.invalid/focus/")],
+ ["break hub intro link","MIND_HUB_CANDIDATE.html",s=>s.replaceAll("finalvestige.com/focus/","invalid.invalid/focus/")],
  ["break contrast","ZEN12_A_TEXT_GUIDE.html",s=>s.replace("--ink:#f4efe6","--ink:#303030")]
  ];
  return changes.map(([name,file,change])=>{
