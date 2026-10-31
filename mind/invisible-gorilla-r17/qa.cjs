@@ -2,7 +2,7 @@
 /* R17 source-only contract QA; run: node mind/invisible-gorilla-r17/qa.cjs --mutation
    Does NOT prove WordPress, WCAG compliance, film hosting, Playwright, or live CI. */
 function audit(bundle) {
-  const H=bundle.html||'', G=bundle.guide||'', M=bundle.matrix||{}, P=bundle.pilot||'';
+  const H=bundle.html||'', G=bundle.guide||'', M=bundle.matrix||{}, P=bundle.pilot||'', W=bundle.warmup||'';
   const results=[];
   function check(name,condition){results.push({name,pass:!!condition});}
   const cleanText=H.replace(/<style>[\s\S]*?<\/style>/g,' ').replace(/<[^>]*>/g,' ').replace(/&(?:amp|lt|gt|nbsp|mdash|rsquo);/g,' ');
@@ -80,6 +80,23 @@ function audit(bundle) {
   check('Dispatch #174 coordination-only in plan',P.includes('Issue #174'));
   check('existing Jetpack funnel kept',P.includes('single')&&P.includes('Jetpack'));
   check('FTC close disclosure wording',/If you purchase through this link, Final Vestige may earn a commission/.test(P));
+  const warmText=W.replace(/<style>[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]*>/g,' ');
+  check('standalone text-only Zen12 warmup >1000 words',words(warmText)>1000);
+  check('warmup has first-party accessible heading',/aria-labelledby="fvm-z17-title"/.test(W));
+  check('warmup no newsletter form',!/<form\\b/i.test(W));
+  check('warmup no tracking scripts',!/<script\\b|<iframe\\b|localStorage|gtag\\(/i.test(W));
+  check('warmup no broken video player',!/<video\\b/i.test(W));
+  check('warmup optional transcript concept',/film would explain/.test(W)&&/No finished hosted film/.test(W));
+  check('warmup seller exact SKU sources',W.includes('https://zen12.com/about')&&W.includes('https://zen12.com/getstarted'));
+  check('warmup research 2010 primary',W.includes('https://doi.org/10.1068/i0386'));
+  check('warmup near-CTA affiliate disclosure',/Affiliate disclosure:[\\s\\S]{0,300}Final Vestige may earn a commission/.test(W));
+  check('warmup disabled purchase button',/<button class="z17-disabled"[^>]*disabled aria-disabled="true"/.test(W));
+  check('warmup no active merchant link in offer panel', /<section class="z17-cta"[\\s\\S]*?<\\/section>/.test(W)&&!/<a\\b/i.test((W.match(/<section class="z17-cta"[\\s\\S]*?<\\/section>/)||[])[0]||''));
+  check('warmup practical no-cost alternative',W.includes('https://finalvestige.com/focus/')&&/free timer|free practice|before you spend/i.test(W));
+  check('warmup explicitly seller-claim only',/seller claim, not our conclusion/.test(W));
+  check('warmup no false conversion results',!/increased conversions by|proven to convert|conversion rate rose/i.test(W));
+  check('warmup responsive and motion safe',/@media\\(max-width:650px\\)/.test(W)&&/prefers-reduced-motion:reduce/.test(W));
+  check('warmup keyboard focus',/:focus-visible/.test(W));
   const ratio=(a,b)=>{const ch=(s)=>{let rgb=s.match(/[a-f0-9]{2}/gi).map(v=>parseInt(v,16)/255);let lin=rgb.map(x=>x<=.04045?x/12.92:Math.pow((x+.055)/1.055,2.4));return lin[0]*.2126+lin[1]*.7152+lin[2]*.0722};let q=[ch(a),ch(b)].sort((x,y)=>y-x);return(q[0]+.05)/(q[1]+.05)};
   const contrast=[['body_on_bg','d8d2c7','090a0a',4.5],['ink_on_bg','f4efe6','090a0a',4.5],['muted_on_bg','aaa49a','090a0a',4.5],['gold_on_bg','c7a66c','090a0a',4.5],['panel_disclose','f4efe6','242016',4.5],['disabled_button','f4efe6','393730',4.5],['link_on_bg','ead1a8','090a0a',4.5]];
   contrast.forEach(([name,fg,bg,min])=>check('contrast '+name,ratio(fg,bg)>=min));
@@ -104,12 +121,16 @@ function mutations(bundle){
  ['absent original film placeholder',b=>{b.pilot=b.pilot.replace('[VERIFIED_SITE_MP4_URL]','https://not-reviewed.example/video.mp4');}],
  ['removed review research context',b=>{b.guide=b.guide.replace('https://inspire3.com/','https://unknown.example/');}],
  ['removed free alternative',b=>{b.guide=b.guide.replace('A phone timer and a quiet room cost nothing.','Pay for all meditation sessions.');}],
- ['removed video source constraints',b=>{b.pilot=b.pilot.replace('exactly the same core visible text','different copy to influence readers');}]
+ ['removed video source constraints',b=>{b.pilot=b.pilot.replace('exactly the same core visible text','different copy to influence readers');}],
+ ['removed warmup disclosure',b=>{b.warmup=b.warmup.replace('Final Vestige may earn a commission','No commission disclosure');}],
+ ['activated warmup purchase button',b=>{b.warmup=b.warmup.replace('disabled aria-disabled="true"','aria-disabled="false"');}],
+ ['injected warmup form',b=>{b.warmup+='<form><input></form>';}],
+ ['inserted warmup commercial outbound link',b=>{b.warmup=b.warmup.replace('<button class="z17-disabled"','<a href="https://zen12.com/getstarted">Buy now</a><button class="z17-disabled"');}]
  ];return tests.map(([name,apply])=>{const b=deep(bundle);apply(b);const res=audit(b);return {name,caught:res.total>res.passed,failures:res.failures}})}
 module.exports={audit,mutations};
 if(typeof require!=='undefined' && require.main===module){
  const fs=require('fs'),path=require('path'),dir=__dirname;
- const bundle={html:fs.readFileSync(path.join(dir,'INVESTIGATION_WP_DRAFT.html'),'utf8'),guide:fs.readFileSync(path.join(dir,'ZEN12_EXACT_OFFER_GUIDE.md'),'utf8'),matrix:JSON.parse(fs.readFileSync(path.join(dir,'EVIDENCE_MATRIX.json'),'utf8')),pilot:fs.readFileSync(path.join(dir,'ZEN12_FILM_PILOT_AND_PRIVACY_SPEC.md'),'utf8')};
+ const bundle={html:fs.readFileSync(path.join(dir,'INVESTIGATION_WP_DRAFT.html'),'utf8'),guide:fs.readFileSync(path.join(dir,'ZEN12_EXACT_OFFER_GUIDE.md'),'utf8'),matrix:JSON.parse(fs.readFileSync(path.join(dir,'EVIDENCE_MATRIX.json'),'utf8')),pilot:fs.readFileSync(path.join(dir,'ZEN12_FILM_PILOT_AND_PRIVACY_SPEC.md'),'utf8'),warmup:fs.readFileSync(path.join(dir,'ZEN12_WARMUP_PILOT_A_WP_DRAFT.html'),'utf8')};
  const base=audit(bundle),m=process.argv.includes('--mutation')?mutations(bundle):[];
  console.log(JSON.stringify({summary:{passed:base.passed,total:base.total,failed:base.failures,mutationsCaught:m.filter(x=>x.caught).length,mutationsTotal:m.length},mutations:m},null,2));
  process.exitCode=(base.passed===base.total && m.every(x=>x.caught))?0:1;
