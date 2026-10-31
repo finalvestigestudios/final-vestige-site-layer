@@ -49,7 +49,8 @@ class SealedApollo(unittest.TestCase):
     def test_01_source_pin_custody_and_no_public_files(self):
         self.assertTrue(self.m['source_match_all_12_blob_pins'])
         self.assertEqual(self.m['source_pr215_head'], PIN)
-        self.assertEqual(len(self.m['outputs_sha256']), 7)
+        self.assertEqual(len(self.m['outputs_sha256']), 9)
+        self.assertEqual(self.m['source_concordance']['record_count'], 6)
         self.assertEqual(len(self.members), 3)
         self.assertTrue(all(not any(name.endswith('/' + file) for file in FILES) for name in self.members))
         self.assertEqual(len(self.m['generated_public_static_assets']), 0)
@@ -108,6 +109,8 @@ class SealedApollo(unittest.TestCase):
         self.assertEqual(x.returncode, 0, x.stderr)
         s = x.stdout.decode()
         self.assertIn('id="atlas"', s)
+        self.assertIn('id="source-concordance"', s)
+        self.assertEqual(s.count('data-concordance-record='), 6)
         self.assertIn('id="documentary-trails"', s)
         self.assertIn('Apollo 1: Research Desk and primary-source casefile', s)
         self.assertEqual(s.count('<h1 '), 1)
