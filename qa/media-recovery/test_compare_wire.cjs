@@ -9,6 +9,7 @@ function fixture(t='2026-10-30T18:00:00.000Z',numbers=[5000,5000]){
  run_profile:{cache_disabled:true,service_worker_bypassed:true,scroll_step_px:720,scroll_wait_ms:220,settle_wait_ms:1000},
  requested_pages:1,verified_pages:1,pages:[{post_id:123,url,document_url:url,page_result:'inspected_browser',
  document_network_failures:[],stored_image_count:2,rendered_image_count:2,
+ scroll_coverage:{complete:true,state:'full_height_scanned',reason:null},
  stored_images:numbers.map((n,i)=>({image_key:'123:'+i,result:'loaded_in_probe_browser',
  verified_broken_in_browser:false,current_src_identity_verified:true,
  stored_url:'https://example.edu/img'+i+'.jpg',current_src:'https://example.edu/img'+i+'.jpg',natural_width:960,request_url:'https://example.edu/img'+i+'.jpg',http_status:200,transfer_bytes:n})),
@@ -73,4 +74,14 @@ test('multiple visible uses of one URL can share one actual network request with
   error:null,from_disk_cache:false,from_service_worker:false,was_cached:false}];
  p.image_wire_bytes_total=5000;
  assert.equal(inspectRun(r).ok,true);
+});
+
+test('reject truncated document scan before calculating claimed savings',()=>{
+ const r=a();r.pages[0].scroll_coverage={complete:false,state:'incomplete_scan',reason:'bottom_not_reached'};
+ assert.equal(inspectRun(r).ok,false);
+ assert.ok(inspectRun(r).errors.includes('incomplete_viewport_scroll_coverage:123'));
+});
+test('reject missing scan-coverage evidence',()=>{
+ const r=a();delete r.pages[0].scroll_coverage;
+ assert.equal(compareWireRuns(r,b()).comparable,false);
 });
