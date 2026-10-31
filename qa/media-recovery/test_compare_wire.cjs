@@ -15,7 +15,8 @@ function fixture(t='2026-10-30T18:00:00.000Z',numbers=[5000,5000]){
  stored_url:'https://example.edu/img'+i+'.jpg',current_src:'https://example.edu/img'+i+'.jpg',natural_width:960,request_url:'https://example.edu/img'+i+'.jpg',http_status:200,transfer_bytes:n})),
  network_images:numbers.map((n,i)=>({url:'https://example.edu/img'+i+'.jpg',status:200,mime_type:'image/jpeg',
  encoded_data_length:n,error:null,from_disk_cache:false,from_service_worker:false,was_cached:false})),
- image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0)}]};
+ image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0),
+ article_image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0)}]};
 }
 const a=()=>fixture(),b=()=>fixture('2026-10-30T19:00:00.000Z',[1200,1200]);
 test('SYNTHETIC 10000 to 2400 bytes is 76%, not a live observation',()=>{const r=compareWireRuns(a(),b());assert.equal(r.reduction_percent,76);assert.equal(r.comparable,true)});
@@ -72,7 +73,7 @@ test('multiple visible uses of one URL can share one actual network request with
  p.stored_images.forEach(v=>{v.stored_url=url;v.current_src=url;v.request_url=url;v.transfer_bytes=5000;});
  p.network_images=[{url,status:200,mime_type:'image/jpeg',encoded_data_length:5000,
   error:null,from_disk_cache:false,from_service_worker:false,was_cached:false}];
- p.image_wire_bytes_total=5000;
+ p.image_wire_bytes_total=5000;p.article_image_wire_bytes_total=5000;
  assert.equal(inspectRun(r).ok,true);
 });
 
@@ -115,4 +116,31 @@ test('accept identical stored sources and descriptions with different encoded by
  const pair=compareWireRuns(earlier,later);
  assert.equal(pair.comparable,true);
  assert.equal(pair.reduction_percent,76);
+});
+
+test('unrelated page-chrome image cannot masquerade as article-image savings',()=>{
+ const before=a(),after=fixture('2026-10-30T19:00:00.000Z',[5000,5000]);
+ const extra={url:'https://finalvestige.com/logo-huge.png',status:200,mime_type:'image/png',
+  encoded_data_length:50000,error:null,from_disk_cache:false,from_service_worker:false,was_cached:false};
+ before.pages[0].network_images.push(extra);
+ before.pages[0].image_wire_bytes_total=60000;
+ assert.equal(inspectRun(before).ok,true);
+ assert.equal(inspectRun(after).ok,true);
+ const paired=compareWireRuns(before,after);
+ assert.equal(paired.comparable,true);
+ assert.equal(paired.reduction_percent,0);
+ assert.equal(paired.before_image_wire_bytes,10000);
+ assert.equal(paired.per_post[0].before_unattributed_image_bytes,50000);
+});
+test('reject a fabricated article-only total even when all-image total is correct',()=>{
+ const r=a();r.pages[0].article_image_wire_bytes_total=7600;
+ assert.equal(inspectRun(r).ok,false);
+ assert.ok(inspectRun(r).errors.includes('article_wire_scope_mismatch:123'));
+});
+test('reject purported article bytes from a redirect to unrelated final media',()=>{
+ const r=a(),n=r.pages[0].network_images[0],old=n.url;
+ n.url='https://other.example.org/different-historical-subject.jpg';n.url_aliases=[old];
+ // Deliberately retains old request URL, as a raw alias alone is not image identity.
+ assert.equal(inspectRun(r).ok,false);
+ assert.ok(inspectRun(r).errors.includes('article_wire_scope_mismatch:123'));
 });
