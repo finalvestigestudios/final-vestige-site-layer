@@ -1,0 +1,701 @@
+{
+  "schema_version": "1.0.0",
+  "owner_issue": 171,
+  "workstream": "Mind & Perception / ethical Inspire3 commerce",
+  "date_checked": "2026-10-31",
+  "release_state": "UNPUBLISHED_HOLD",
+  "current_offer": {
+    "merchant": "Inspire3 / Brainwave Shots",
+    "exact_sku": "Focus Shot",
+    "catalog_url": "https://inspire3.com/",
+    "actual_seller_page": "https://brainwaveshots.com/focus-shot",
+    "seller_faq": "https://brainwaveshots.com/faq",
+    "affiliate_network_url": "https://affiliates.inspire3.com/",
+    "affiliate_account_accepted": false,
+    "sku_eligibility_verified": false,
+    "affiliate_earning_url": null,
+    "tracking_terms_verified": false,
+    "authorized_creative_verified": false,
+    "authorized_social_promotion": false,
+    "authorized_opted_in_email_promotion": false,
+    "firsthand_product_tested": false,
+    "product_signal_analyzed": false,
+    "price_quoted": false,
+    "refund_promise_made": false,
+    "outbound_tracking_enabled": false
+  },
+  "existing_site": {
+    "published_investigations_read": 61,
+    "puysegur_page_id": 1377,
+    "focus_page_id": 1579,
+    "published_mind_hub": false,
+    "duplicate_jetpack_form_added": false
+  },
+  "status_semantics": {
+    "supported": "Direct scholarly result within study limits",
+    "qualified": "Result requires narrow context",
+    "rejected": "Unsupported inference omitted",
+    "seller_documented": "Merchant-page description only",
+    "unsubstantiated_product_outcome": "Merchant assertion lacking independent product-specific substantiation",
+    "not_verified": "Approval/proof absent; no activation"
+  },
+  "sources": [
+    {
+      "id": "M01",
+      "type": "primary",
+      "title": "McGurk & MacDonald (1976), Nature",
+      "url": "https://doi.org/10.1038/264746a0",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "M02",
+      "type": "study",
+      "title": "Nath & Beauchamp (2012), Neuroimage",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21787869/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "M03",
+      "type": "study",
+      "title": "Basu Mallick et al. (2015), Psychonomic Bulletin & Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25802068/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "M04",
+      "type": "study",
+      "title": "Strand et al. (2014), JSLHR",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25296272/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "M05",
+      "type": "study",
+      "title": "Brown et al. (2018), PLOS ONE",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30418995/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "M06",
+      "type": "study",
+      "title": "Buchan & Munhall (2011), Perception",
+      "url": "https://doi.org/10.1068/p6939",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "A01",
+      "type": "meta-analysis",
+      "title": "Garcia-Argibay et al. (2019), Psychol Res",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "A02",
+      "type": "systematic-review",
+      "title": "Ingendoh et al. (2023), PLOS ONE",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "A03",
+      "type": "experiment-series",
+      "title": "Robison et al. (2021), Psychol Res",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33978805/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "A04",
+      "type": "systematic-review",
+      "title": "Chee et al. (2024), Int J Psychophysiol",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "A05",
+      "type": "experiment",
+      "title": "Kim et al. (2024), Cerebral Cortex",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38044462/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S01",
+      "type": "seller-catalog",
+      "title": "Inspire3 official product catalog",
+      "url": "https://inspire3.com/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S02",
+      "type": "seller-exact-sku",
+      "title": "Brainwave Shots Focus Shot official page",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S03",
+      "type": "seller-faq",
+      "title": "Brainwave Shots official FAQ",
+      "url": "https://brainwaveshots.com/faq",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "S04",
+      "type": "seller-other-product",
+      "title": "Zen12 official description",
+      "url": "https://zen12.com/about",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "C01",
+      "type": "regulatory",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "C02",
+      "type": "regulatory",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "N01",
+      "type": "public-health",
+      "title": "NIH NCCIH meditation guidance",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "F01",
+      "type": "first-party-published",
+      "title": "Final Vestige Puységur evidence archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_on": "2026-10-31"
+    },
+    {
+      "id": "F02",
+      "type": "first-party-published",
+      "title": "Final Vestige Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked_on": "2026-10-31"
+    }
+  ],
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "1976 paper by McGurk and MacDonald published in Nature",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M01"
+      ],
+      "copy_limit": "Journal and authors only, not reprinted content"
+    },
+    {
+      "id": "M02",
+      "claim": "Audio /ba/ with lip movements /ga/ induced reports of /da/ in original conditions",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M01"
+      ],
+      "copy_limit": "Some listeners under conditions, never everyone"
+    },
+    {
+      "id": "M03",
+      "claim": "Illusion's conflicting channels reveal audiovisual integration",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M01",
+        "M02"
+      ],
+      "copy_limit": "No general psychometric or mind-control interpretation"
+    },
+    {
+      "id": "M04",
+      "claim": "Reverse dubbing may produce other combination reports",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M01"
+      ],
+      "copy_limit": "No fixed universal result"
+    },
+    {
+      "id": "M05",
+      "claim": "McGurk susceptibility varies substantially across listeners",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "copy_limit": "No label of intelligence or attention deficit"
+    },
+    {
+      "id": "M06",
+      "claim": "Left STS BOLD response correlated with susceptibility in 2012 imaging study",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M02"
+      ],
+      "copy_limit": "Association, not a single-neuron mechanism"
+    },
+    {
+      "id": "M07",
+      "claim": "Some participant susceptibility responses exhibit test-retest repeatability",
+      "role": "science",
+      "disposition": "qualified",
+      "source_ids": [
+        "M04"
+      ],
+      "copy_limit": "Task and stimuli specific"
+    },
+    {
+      "id": "M08",
+      "claim": "2014 Strand study enrolled 73 participants, 58 returned around two months later",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M04"
+      ],
+      "copy_limit": "Do not generalize to population"
+    },
+    {
+      "id": "M09",
+      "claim": "2018 study tied susceptibility to fine-grained lipreading ability",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M05"
+      ],
+      "copy_limit": "Study association only"
+    },
+    {
+      "id": "M10",
+      "claim": "2018 study did not find susceptibility association with tested attentional control measures",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M05"
+      ],
+      "copy_limit": "Not proof no attention association ever exists"
+    },
+    {
+      "id": "M11",
+      "claim": "Changing timing or clarity affects audiovisual integration designs",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "M06"
+      ],
+      "copy_limit": "Not consumer video quality benchmark"
+    },
+    {
+      "id": "M12",
+      "claim": "Anyone not hearing McGurk illusion has defective concentration",
+      "role": "science",
+      "disposition": "rejected",
+      "source_ids": [
+        "M03",
+        "M05"
+      ],
+      "copy_limit": "Never assert"
+    },
+    {
+      "id": "M13",
+      "claim": "McGurk phenomenon establishes commercial audio entrainment efficacy",
+      "role": "science-to-product",
+      "disposition": "rejected",
+      "source_ids": [
+        "M01",
+        "A02",
+        "S02"
+      ],
+      "copy_limit": "No transfer across mechanisms"
+    },
+    {
+      "id": "A01",
+      "claim": "Binaural beats involve separately presented frequency-different tones",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A01"
+      ],
+      "copy_limit": "Not equivalent to isochronic pulse"
+    },
+    {
+      "id": "A02",
+      "claim": "Isochronic modulation and binaural beats are different auditory techniques",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "S03",
+        "A01"
+      ],
+      "copy_limit": "Explain mechanisms carefully, exact product audio not examined"
+    },
+    {
+      "id": "A03",
+      "claim": "2019 binaural meta-analysis included 22 studies",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A01"
+      ],
+      "copy_limit": "Only binaural, not Focus Shot"
+    },
+    {
+      "id": "A04",
+      "claim": "2019 meta-analysis reported pooled g=0.45 across outcomes",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A01"
+      ],
+      "copy_limit": "No product-specific predicted effect"
+    },
+    {
+      "id": "A05",
+      "claim": "2023 EEG entrainment review selected 14 studies",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A02"
+      ],
+      "copy_limit": "Binaural-only evidence"
+    },
+    {
+      "id": "A06",
+      "claim": "2023 EEG review five support, eight oppose, one mixed",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A02"
+      ],
+      "copy_limit": "Do not treat as votes on exact SKU"
+    },
+    {
+      "id": "A07",
+      "claim": "2021 16-Hz binaural sustained-attention experiments found no consistent benefits",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A03"
+      ],
+      "copy_limit": "Not proof every auditory intervention fails"
+    },
+    {
+      "id": "A08",
+      "claim": "2024 auditory and autonomic arousal review reports mixed/inadequate evidence",
+      "role": "science",
+      "disposition": "supported",
+      "source_ids": [
+        "A04"
+      ],
+      "copy_limit": "Different sound types included"
+    },
+    {
+      "id": "A09",
+      "claim": "2024 60-adult EEG binaural study reported narrower 18-Hz language task benefit",
+      "role": "science",
+      "disposition": "qualified",
+      "source_ids": [
+        "A05"
+      ],
+      "copy_limit": "No generalized focus or isochronic proof"
+    },
+    {
+      "id": "A10",
+      "claim": "Audio at a brainwave-associated frequency always raises corresponding cognition",
+      "role": "science-to-product",
+      "disposition": "rejected",
+      "source_ids": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "copy_limit": "Requires direct tested causal evidence"
+    },
+    {
+      "id": "A11",
+      "claim": "Merely measuring an EEG response proves long-lasting practical focus",
+      "role": "science-to-product",
+      "disposition": "rejected",
+      "source_ids": [
+        "A02",
+        "A04"
+      ],
+      "copy_limit": "EEG and behavior outcomes distinct"
+    },
+    {
+      "id": "S01",
+      "claim": "Inspire3 currently lists Brainwave Shots among brands",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S01"
+      ],
+      "copy_limit": "Catalog inclusion not partner approval"
+    },
+    {
+      "id": "S02",
+      "claim": "Exact named offer is Brainwave Shots Focus Shot",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S02"
+      ],
+      "copy_limit": "Not full catalog or Zen12"
+    },
+    {
+      "id": "S03",
+      "claim": "Seller advertises 15-minute and 30-minute Focus Shot sessions",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "copy_limit": "Do not imply independently verified file lengths"
+    },
+    {
+      "id": "S04",
+      "claim": "Seller offers bonus brainwave-only mixes",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S02"
+      ],
+      "copy_limit": "Not listened or analyzed"
+    },
+    {
+      "id": "S05",
+      "claim": "Seller lists quick-start video and lifetime support",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S02"
+      ],
+      "copy_limit": "No claim about quality"
+    },
+    {
+      "id": "S06",
+      "claim": "Seller technical page mentions alternating 12 and 18 Hz beta and brown noise/mountain ambience",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S02"
+      ],
+      "copy_limit": "Untested physical audio properties"
+    },
+    {
+      "id": "S07",
+      "claim": "Seller FAQ describes use of isochronic tones",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S03"
+      ],
+      "copy_limit": "Critical: not binaural product"
+    },
+    {
+      "id": "S08",
+      "claim": "Seller says headphones unnecessary",
+      "role": "seller",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "copy_limit": "Convenience claim, effectiveness unverified"
+    },
+    {
+      "id": "S09",
+      "claim": "Seller says effect lasts 4 hours to end of day",
+      "role": "seller",
+      "disposition": "unsubstantiated-product-outcome",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "copy_limit": "Do not claim as outcome"
+    },
+    {
+      "id": "S10",
+      "claim": "Seller guarantees instant or effortless concentration",
+      "role": "seller",
+      "disposition": "unsubstantiated-product-outcome",
+      "source_ids": [
+        "S02"
+      ],
+      "copy_limit": "Do not claim as outcome"
+    },
+    {
+      "id": "S11",
+      "claim": "Seller makes blanket safe claims but FAQ notes epilepsy/alertness precautions",
+      "role": "seller",
+      "disposition": "seller-with-warning",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "copy_limit": "No health safety endorsement; refer instructions"
+    },
+    {
+      "id": "S12",
+      "claim": "Seller displays discount, price and return/guarantee terms",
+      "role": "seller",
+      "disposition": "mutable-withheld",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "copy_limit": "Exclude amounts, time limits and fixed policies"
+    },
+    {
+      "id": "S13",
+      "claim": "Zen12 instead sells twelve levels of 12-minute meditations in four styles",
+      "role": "seller-other",
+      "disposition": "seller-documented",
+      "source_ids": [
+        "S04"
+      ],
+      "copy_limit": "Distinct offer; no cross-SKU conflation"
+    },
+    {
+      "id": "S14",
+      "claim": "Focus Shot is proven more effective than Zen12",
+      "role": "product-comparison",
+      "disposition": "rejected",
+      "source_ids": [
+        "S02",
+        "S04",
+        "A02"
+      ],
+      "copy_limit": "No head-to-head"
+    },
+    {
+      "id": "S15",
+      "claim": "Independent analysis of purchased Focus Shot signal is complete",
+      "role": "audit",
+      "disposition": "not-done",
+      "source_ids": [],
+      "copy_limit": "Never assert"
+    },
+    {
+      "id": "C01",
+      "claim": "Affiliate commercial relationship must be disclosed clearly near recommendations",
+      "role": "compliance",
+      "disposition": "required",
+      "source_ids": [
+        "C01"
+      ],
+      "copy_limit": "Plain English contextual disclosure"
+    },
+    {
+      "id": "C02",
+      "claim": "Affiliate link phrase alone may be unclear to audiences",
+      "role": "compliance",
+      "disposition": "supported",
+      "source_ids": [
+        "C01"
+      ],
+      "copy_limit": "Explain commission in text"
+    },
+    {
+      "id": "C03",
+      "claim": "Health and physiological outcome claims require adequate scientific substantiation",
+      "role": "compliance",
+      "disposition": "required",
+      "source_ids": [
+        "C02"
+      ],
+      "copy_limit": "Product-specific proof or omit"
+    },
+    {
+      "id": "C04",
+      "claim": "Affiliate partner acceptance and authorized tracking URL verified",
+      "role": "release",
+      "disposition": "not-verified",
+      "source_ids": [],
+      "copy_limit": "Keep url null and CTA disabled"
+    },
+    {
+      "id": "C05",
+      "claim": "Seller approved marketing creatives and email rights verified",
+      "role": "release",
+      "disposition": "not-verified",
+      "source_ids": [],
+      "copy_limit": "No promotional activation"
+    },
+    {
+      "id": "C06",
+      "claim": "No additional site subscription form is required",
+      "role": "architecture",
+      "disposition": "required",
+      "source_ids": [
+        "F02"
+      ],
+      "copy_limit": "Preserve original Jetpack Focus funnel"
+    },
+    {
+      "id": "C07",
+      "claim": "Historical Puységur page is live and editorially distinct from modern product claims",
+      "role": "architecture",
+      "disposition": "supported",
+      "source_ids": [
+        "F01"
+      ],
+      "copy_limit": "Link contextual history without implying product proof"
+    },
+    {
+      "id": "C08",
+      "claim": "Audio/mindfulness claims may be generalized from NCCIH guidance to SKU",
+      "role": "compliance",
+      "disposition": "rejected",
+      "source_ids": [
+        "N01",
+        "S02"
+      ],
+      "copy_limit": "Do not launder general health research into product guarantee"
+    },
+    {
+      "id": "C09",
+      "claim": "Unapproved merchant URL or outbound tracking enabled on draft page",
+      "role": "release",
+      "disposition": "prohibited",
+      "source_ids": [],
+      "copy_limit": "Strict block"
+    },
+    {
+      "id": "C10",
+      "claim": "40s Zen12 portrait review film is a separate unhosted asset",
+      "role": "release",
+      "disposition": "reported-existing-artifact",
+      "source_ids": [],
+      "copy_limit": "Do not invent hosted src; needs media QA and rights"
+    }
+  ],
+  "commerce_block": {
+    "near_CTA_disclosure": "If you eventually purchase through an approved link on this page, Final Vestige may earn a commission at no additional cost to you. There is no active affiliate purchasing link here.",
+    "cta_disabled": true,
+    "cta_href": null,
+    "merchant_recommendation_active": false
+  },
+  "needed_before_activation": [
+    "Account-specific Inspire3 acceptance proof",
+    "Exact SKU eligible under agreement",
+    "Authorized earning URL and tracking parameters",
+    "Approved media/swipe and promotional placements",
+    "Social and distinct opted-in newsletter marketing rights",
+    "Review live checkout and exclusions immediately pre-launch",
+    "Independent audio/product/claims review",
+    "Site QA browser WCAG/contrast/mobile/no-JS/CWV checks",
+    "Founder publication/activation approval"
+  ]
+}
