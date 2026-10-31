@@ -33,19 +33,29 @@ ERA_FILTERS = (('all', 'All six source records', 6),
                ('1967', '1967 photographs — 3', 3),
                ('2017', '2017 commemorations — 2', 2))
 CONTEXT_EXPORT = '{{FV_EX2_CONTEXT_EXPORT}}'
+BOARD_REPORT = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/'
 
 CSS = """/* Source-concordance is embedded only in authenticated Apollo staging review. */
-.fv-ex2-concordance{background:#10110f;color:#f4efe6;border-block:1px solid #514738;padding:clamp(30px,5vw,72px) clamp(16px,5vw,72px);font-family:Inter,system-ui,sans-serif;line-height:1.6;}
+.fv-ex2-concordance{background:#10110f;color:#f4efe6;border-block:1px solid #514738;padding:clamp(30px,5vw,72px) clamp(16px,5vw,72px);font-family:Inter,system-ui,sans-serif;line-height:1.6;container-type:inline-size;}
 .fv-ex2-concordance *{box-sizing:border-box;}
 .fv-ex2-concordance__inner{max-width:1350px;margin-inline:auto}
 .fv-ex2-concordance__eyebrow{color:#d5b980;font:700 .75rem/1.5 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
 .fv-ex2-concordance h2{font:normal clamp(1.75rem,3vw,3rem)/1.17 Georgia,serif;max-width:28ch;color:#f4efe6;margin:1rem 0;letter-spacing:-.02em}
 .fv-ex2-concordance__intro{max-width:75ch;color:#d2cabc;font-size:1rem;margin-bottom:2rem}
-.fv-ex2-concordance__cards{margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;list-style:none}
-.fv-ex2-concordance__card{padding:clamp(18px,2.5vw,28px);border:1px solid #78684d;background:#1e1d19;min-width:0;overflow-wrap:anywhere;}
+.fv-ex2-concordance__cards{margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;list-style:none}
+.fv-ex2-concordance__card{padding:clamp(18px,2.5vw,28px);border:1px solid #78684d;background:#1e1d19;min-width:0;overflow-wrap:anywhere;container-type:inline-size;}
 .fv-ex2-concordance__type{font:700 .76rem/1.5 ui-monospace,monospace;color:#e4c791;letter-spacing:.03em}
 .fv-ex2-concordance__card h3{font:normal clamp(1.2rem,2vw,1.6rem)/1.24 Georgia,serif;margin:.8rem 0;color:#fff9ef}
 .fv-ex2-concordance__metadata{font-size:.94rem;color:#e5ddd0}
+.fv-ex2-concordance__proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 10px}
+.fv-ex2-concordance__witness{border:1px solid #65563f;padding:12px 14px;background:#151713;min-width:0}
+.fv-ex2-concordance__witness b{display:block;color:#f2d69b;font:700 .78rem/1.5 ui-monospace,monospace;letter-spacing:.02em}
+.fv-ex2-concordance__witness p{font-size:.91rem;line-height:1.65;color:#e5ddd0;margin:8px 0 0;overflow-wrap:anywhere}
+.fv-ex2-concordance__witness--photo{border-style:dashed}
+@container(max-width:860px){.fv-ex2-concordance__cards{grid-template-columns:1fr}}
+@media(max-width:860px){.fv-ex2-concordance__cards{grid-template-columns:1fr}}
+@container(max-width:520px){.fv-ex2-concordance__proof{grid-template-columns:1fr}}
+@media(max-width:680px){.fv-ex2-concordance__proof{grid-template-columns:1fr}}
 .fv-ex2-concordance__links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:18px}
 .fv-ex2-concordance a{color:#f2d69b;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
 .fv-ex2-concordance a:hover{text-decoration-thickness:2px}
@@ -104,7 +114,7 @@ def build_context_index(casefile: Path = CASEFILE, generated: Path = GENERATED) 
         checked(row['rights'].startswith('link_only_'),f'Context export rights escalation {rid}')
         checked(f'id="stage-{rid}"' in fragment and f'id="source-{rid}"' in fragment,
                 f'Context export broken claim/source custody {rid}')
-        for key in ('title','source_id','source_date','image_credit','limit','image_url'):
+        for key in ('title','source_id','source_date','image_credit','limit','image_url','finding','image_description'):
             checked(isinstance(row.get(key),str) and row[key].strip(),
                     f'Context export missing {key} {rid}')
         result.append({
@@ -114,6 +124,10 @@ def build_context_index(casefile: Path = CASEFILE, generated: Path = GENERATED) 
             'source_credit':row['image_credit'], 'title':row['title'],
             'cannot_establish':row['limit'], 'media_status':row['rights'],
             'chronology_anchor':f'#stage-{rid}', 'source_drawer_anchor':f'#source-{rid}',
+            'editorial_finding':row['finding'],
+            'photograph_depicts':row['image_description'],
+            'board_report_url':BOARD_REPORT,
+            'evidentiary_relationship':'photo_does_not_independently_prove_board_finding',
             'geometry':'not_assigned',
         })
     checked({era:sum(r['source_era']==era for r in result) for era in ('1966','1967','2017')}
@@ -144,16 +158,22 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
                 f'Unresolved claim/source route {rid}')
         checked(fragment.count(url)>=4, f'NASA catalog citation missing from existing content {rid}')
         checked(row['rights'].startswith('link_only_'), f'Embedded media/rights escalation {rid}')
-        for field in ('title','source_id','image_credit','limit','finding'):
+        for field in ('title','source_id','image_credit','limit','finding','image_description'):
             checked(isinstance(row.get(field),str) and row[field].strip(), f'Missing {field} at {rid}')
         e=lambda key:escape(row[key],quote=True)
         cards.append(f'''<li class="fv-ex2-concordance__card" data-concordance-record="{rid}" data-concordance-era="{era}">
 <p class="fv-ex2-concordance__type">{rid} / {escape(kind)} / {escape(date)}</p>
 <h3>{e('title')}</h3>
 <p class="fv-ex2-concordance__metadata">NASA catalog: {e('source_id')}. Credit: {e('image_credit')}.</p>
-<div class="fv-ex2-concordance__links"><a href="#stage-{rid}">Read the associated claim</a>
-<a href="{escape(url,quote=True)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Inspect NASA catalog <span class="ex2-sr-only">(opens in a new tab)</span></a></div>
-<details><summary>What this photograph cannot establish</summary><p>{e('limit')}</p></details>
+<div class="fv-ex2-concordance__proof" aria-label="Separate documentary and photographic evidence">
+<div class="fv-ex2-concordance__witness"><b>INTERPRETATION / BOARD RECORD</b><p>{e('finding')}</p></div>
+<div class="fv-ex2-concordance__witness fv-ex2-concordance__witness--photo"><b>WHAT THE NASA PHOTOGRAPH DEPICTS</b><p>{e('image_description')}</p></div>
+</div>
+<div class="fv-ex2-concordance__links"><a href="#stage-{rid}">Read chronology claim {rid}</a>
+<a href="#source-{rid}">Open original source drawer {rid}</a>
+<a href="{escape(url,quote=True)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">NASA photo catalog {escape(row['source_id'])} <span class="ex2-sr-only">(opens in a new tab)</span></a>
+<a href="{BOARD_REPORT}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Review Board source for claim {rid} <span class="ex2-sr-only">(opens in a new tab)</span></a></div>
+<details><summary>What photograph {rid} cannot establish</summary><p>{e('limit')}</p></details>
 </li>''')
     filters=''.join(
         '<label for="fv-ex2-lens-'+era+'"><input type="radio" id="fv-ex2-lens-'+era+'" '
@@ -164,7 +184,7 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
     html=f'''<section id="source-concordance" class="fv-ex2-concordance" aria-labelledby="fv-ex2-concordance-title">
 <div class="fv-ex2-concordance__inner"><p class="fv-ex2-concordance__eyebrow">THE EVIDENCE / DOCUMENTARY SOURCE CONCORDANCE</p>
 <h2 id="fv-ex2-concordance-title">The photograph has a date. The claim has a different burden of proof.</h2>
-<p class="fv-ex2-concordance__intro">These six NASA catalog records help orient the investigation; they do not independently prove every accompanying historical claim. A 1966 rehearsal is not the 1967 fire, and two 2017 tribute exhibits are not accident footage. Open each record to see its limits. All images remain links to NASA, not reproduced here.</p>
+<p class="fv-ex2-concordance__intro">These six NASA catalog records help orient the investigation; they do not independently prove every accompanying historical claim. A 1966 rehearsal is not the 1967 fire, and two 2017 tribute exhibits are not accident footage. Compare the interpretation grounded in the Apollo 204 Review Board with the separate NASA photograph caption, then inspect the recorded limitations. These are source summaries, not Board quotations. All images remain links to NASA, not reproduced here.</p>
 <fieldset class="fv-ex2-concordance__filters"><legend>View records by source year</legend>{filters}</fieldset>
 <p class="fv-ex2-concordance__availability">Choose a year to narrow the catalog records without changing the historical conclusions. Select “All six source records” to restore the complete index.</p>
 <ol class="fv-ex2-concordance__cards">{''.join(cards)}</ol>
@@ -182,6 +202,8 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
              'context_index_sha256':digest(context_json),'context_index_records':6,
              'filter_counts':{'all':6,'1966':1,'1967':3,'2017':2}, 'css_only_era_filter':True,
              'links_to_original_nasa':len(source),'links_to_existing_chronology':len(source),
+             'links_to_original_source_drawer':len(source),
+             'links_to_board_report':len(source), 'separated_photo_board_witnesses':len(source),
              'photos_embedded':0,'geographic_pins':0,'no_js_native_details':True,
              'rights':'HOLD_PER_ITEM_REVIEW'}
     return html,CSS,receipt
