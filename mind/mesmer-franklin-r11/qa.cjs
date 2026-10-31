@@ -24,7 +24,7 @@ function audit(files){
  check('no scripts',!/<script\b/i.test(html));
  check('no forms or Jetpack duplication',!/<form\b|wp-block-jetpack-subscriptions/i.test(html));
  check('no merchant outbound href',!/<a\b[^>]+href="https?:\/\/(?:www\.)?(?:inspire3|hypnosislive|zen12|brainwaveshots|affiliates\.inspire3)\.com/i.test(html));
- check('affiliate disclosure adjacent to inert action',/fv-earn[\s\S]{0,550}fv-disabled/.test(html));
+ check('affiliate disclosure adjacent to inert action',/fv-earn[\s\S]{0,550}fv-disabled/.test(html)&&/If you purchase through a future approved affiliate link, Final Vestige may earn a commission at no additional cost to you/.test(html));
  check('no active buy link',!/<a\b[^>]*>(?:Buy|Purchase|Shop|Get Total Focus|Get Zen12)/i.test(html));
  check('no autoplay / embedded video / third-party',!/<video|<iframe|autoplay/i.test(html));
  check('commercial products in separate box',/fv-commercial/.test(html)&&/TOOLS UNDER REVIEW/.test(html));
