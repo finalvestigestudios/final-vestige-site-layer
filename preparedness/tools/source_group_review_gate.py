@@ -222,13 +222,144 @@ def audit_frozen(root):
             'machine_authority': 'FROZEN_GIT_BLOB_AND_CROSSWALK_PARITY_ONLY'}
 
 
+import re
+
+# R23: independently frozen 81-file author corpus and source snapshot.
+# A mutable manifest cannot authorize changes to itself: this Git blob is
+# pinned outside the R20 evidence document. Passing means custody, not safety.
+R23_MANIFEST = 'preparedness/docs/R20-REMOTE-GIT-OBJECT-CUSTODY-HOLD.json'
+R23_MANIFEST_BLOB = '121d8f918c46ab55c666b540f74992bc9ff6e95d'
+
+
+def audit_archive_corpus(root, *, manifest_pin=R23_MANIFEST_BLOB):
+    """Verify all 35 original articles, water planner and nine source files.
+
+    Read only, no Git fetch, no network, no CMS writes. The supplied override
+    exists solely to exercise synthetic manifests under adversarial tests;
+    the normal CLI always uses R23_MANIFEST_BLOB.
+    """
+    root = Path(root)
+    check(root.is_dir() and not root.is_symlink(), 'R23 trusted root missing or linked')
+    root = root.resolve(strict=True)
+
+    def read_checked(name, cap):
+        check(type(name) is str and name.startswith('preparedness/') and
+              '..' not in name.split('/') and '\\' not in name and '//' not in name,
+              'R23 untrusted path')
+        target = root
+        for part in name.split('/'):
+            target = target / part
+            check(not target.is_symlink(), 'R23 linked path: ' + name)
+        check(target.is_file() and target.resolve(strict=True).is_relative_to(root),
+              'R23 missing or escaped file: ' + name)
+        size = target.stat().st_size
+        check(0 < size <= cap, 'R23 missing/oversized input: ' + name)
+        data = target.read_bytes()
+        check(0 < len(data) <= cap, 'R23 oversized read: ' + name)
+        return data
+
+    def parse(data):
+        def no_duplicate(pairs):
+            obj = {}
+            for key, value in pairs:
+                check(key not in obj, 'R23 duplicate JSON key: ' + key)
+                obj[key] = value
+            return obj
+        def no_nonfinite(value):
+            raise SourceGateHold('R23 nonfinite JSON: ' + value)
+        return json.loads(data.decode('utf-8', 'strict'),
+                          object_pairs_hook=no_duplicate, parse_constant=no_nonfinite)
+
+    raw = read_checked(R23_MANIFEST, 200_000)
+    check(git_blob(raw) == manifest_pin, 'R23 independent manifest Git pin changed')
+    taxonomy_raw = read_checked('preparedness/taxonomy.json', 100_000)
+    check(git_blob(taxonomy_raw) == FROZEN_BLOBS['preparedness/taxonomy.json'],
+          'R23 original taxonomy/safety status changed')
+    manifest, taxonomy = parse(raw), parse(taxonomy_raw)
+    check(type(manifest) is dict and manifest.get('schema_version') == 1 and
+          manifest.get('repository') == 'finalvestigestudios/final-vestige-site-layer' and
+          manifest.get('issue') == 136 and manifest.get('release_state') == HOLD and
+          manifest.get('may_publish') is False and
+          manifest.get('human_source_reviews_completed') is False and
+          manifest.get('independent_QD_approval') is False and
+          manifest.get('qualified_emergency_or_medical_safety_review') is False and
+          manifest.get('link_and_claim_accuracy_independently_verified') is False and
+          manifest.get('native_python_validation_build_or_html_parity_executed') is False,
+          'R23 manifest authority/hold state changed')
+    exceptions = manifest.get('exceptions')
+    check(type(exceptions) is list and len(exceptions) == 1 and
+          exceptions[0].get('path') ==
+              'preparedness/content/articles/preparedness-real-households.meta.json' and
+          exceptions[0].get('state') == 'NEEDS_HUMAN_DIFF_REVIEW' and
+          exceptions[0].get('is_human_approved') is False,
+          'R23 contributor metadata exception may not be cleared by machine')
+    slate = taxonomy.get('slate')
+    check(type(slate) is list and len(slate) == 35 and
+          all(type(x) is dict and type(x.get('slug')) is str and
+              re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', x['slug']) and
+              type(x.get('gate')) is bool for x in slate),
+          'R23 missing/invalid article URL or safety gate')
+    slugs = [x['slug'] for x in slate]
+    check(len(set(slugs)) == 35, 'R23 duplicate article URL')
+    tools = taxonomy.get('tools')
+    check(type(tools) is list and len(tools) == 6 and
+          any(type(x) is dict and x.get('slug') == 'water-planner' and
+              x.get('gate') is True for x in tools),
+          'R23 original six-tool slate/water planner gate lost')
+    expected = set(SOURCE_FILES.values()) | {'preparedness/sources/crosswalk.json'}
+    for slug in slugs:
+        expected.update({f'preparedness/content/articles/{slug}.body.html',
+                         f'preparedness/content/articles/{slug}.meta.json'})
+    expected.update({'preparedness/content/tools/water-planner.body.html',
+                     'preparedness/content/tools/water-planner.meta.json'})
+    check(len(expected) == 81, 'R23 81 original paths not resolved')
+    rows = manifest.get('baseline_corpus_source_blob_pairs')
+    check(type(rows) is list and len(rows) == 81, 'R23 81 original blob pairs required')
+    actual = {}
+    for row in rows:
+        check(type(row) is dict and set(row) == {'path', 'baseline_blob', 'current_blob'},
+              'R23 invalid Git-blob row')
+        path, digest = row['path'], row['baseline_blob']
+        check(type(path) is str and path in expected and path not in actual and
+              type(digest) is str and re.fullmatch(r'[0-9a-f]{40}', digest) and
+              row['current_blob'] == digest, 'R23 missing/duplicate/edited blob assertion')
+        actual[path] = digest
+    check(set(actual) == expected, 'R23 original input path lost')
+    for section, patterns in (
+        ('preparedness/content/articles', ('*.body.html', '*.meta.json')),
+        ('preparedness/content/tools', ('*.body.html', '*.meta.json')),
+        ('preparedness/sources/fragments', ('*.json',)),
+    ):
+        directory = root / section
+        check(directory.is_dir() and not directory.is_symlink(),
+              'R23 missing/linked corpus directory: ' + section)
+        for pattern in patterns:
+            for item in directory.glob(pattern):
+                check(item.relative_to(root).as_posix() in expected and
+                      item.is_file() and not item.is_symlink(),
+                      'R23 unexpected/unreviewed corpus item: ' + str(item))
+    for path, digest in sorted(actual.items()):
+        check(git_blob(read_checked(path, 2_000_000)) == digest,
+              'R23 original article/source bytes changed: ' + path)
+    return {'release_state': HOLD, 'may_publish': False,
+            'independent_qd_pass': False, 'medical_safety_approved': False,
+            'human_source_review_complete': False,
+            'original_articles': 35, 'original_water_tools': 1,
+            'original_corpus_source_files_pinned': 81,
+            'outstanding_metadata_review': 'NEEDS_HUMAN_DIFF_REVIEW',
+            'corpus_path_blob_sha256': hashlib.sha256(
+                canonical(sorted(actual.items()))).hexdigest()}
+
+
 def main():
     import argparse
     p = argparse.ArgumentParser()
     p.add_argument('--root', type=Path, default=Path('preparedness'))
     a = p.parse_args()
     try:
-        print(json.dumps(audit_frozen(a.root.parent), sort_keys=True))
+        proof = audit_frozen(a.root.parent)
+        proof.update(audit_archive_corpus(a.root.parent))
+        print(json.dumps(proof, sort_keys=True))
         return 0
     except (SourceGateHold, OSError, ValueError, TypeError, KeyError) as exc:
         print(json.dumps({'release_state': HOLD, 'may_publish': False,
