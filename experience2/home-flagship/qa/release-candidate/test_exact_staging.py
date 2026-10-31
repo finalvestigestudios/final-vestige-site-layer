@@ -27,6 +27,19 @@ class GateTests(unittest.TestCase):
         self.assertEqual(gate.check_url('https://private.wpcomstaging.com/preview/','private.wpcomstaging.com'),
                          'private.wpcomstaging.com')
         self.assertEqual(gate.check_url('http://127.0.0.1:8044/preview/','127.0.0.1'), '127.0.0.1')
+    def test_local_wordpress_query_permalink_is_allowed_only_for_review_page(self):
+        for host in ('127.0.0.1','localhost'):
+            url='http://'+host+':9400/?pagename=fv-ex2-playground-review'
+            self.assertEqual(gate.check_url(url,host),host)
+        for url,allow in (
+            ('https://staging.example/?pagename=fv-ex2-playground-review','staging.example'),
+            ('http://127.0.0.1:9400/?pagename=home','127.0.0.1'),
+            ('http://127.0.0.1:9400/?pagename=fv-ex2-playground-review&_wpnonce=evil','127.0.0.1'),
+            ('http://127.0.0.1:9400/?pagename=fv-ex2-playground-review#token','127.0.0.1'),
+            ('http://127.0.0.1:9400/other?pagename=fv-ex2-playground-review','127.0.0.1'),
+        ):
+            with self.subTest(url=url),self.assertRaises(ValueError):
+                gate.check_url(url,allow)
     def test_margins_preservation_positive(self):
         src=''.join(f'<span class="fv-margin-strip__item" style="--i:{i}">note</span>' for i in range(72))
         src += '<a href="/focus/">Seven Day Focus Fieldbook</a><!-- wp:jetpack/subscriptions /-->'

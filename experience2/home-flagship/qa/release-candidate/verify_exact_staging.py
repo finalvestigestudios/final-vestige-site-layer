@@ -39,8 +39,15 @@ def check_url(url: str, allowed_host: str) -> str:
     allow = allowed_host.lower().rstrip('.')
     if host in PRODUCTION or not host or host != allow or not allow:
         raise ValueError('RELEASE HOLD: target must be an explicitly allowed, separate staging hostname, never production')
-    if p.username or p.password or p.fragment or p.query:
-        raise ValueError('RELEASE HOLD: preview URL must not contain embedded credentials, tokens, nonces or fragments')
+    # WordPress Playground defaults to query-parameter page resolution when
+    # rewrite permalinks have not been configured. Permit ONLY this constant,
+    # token-free local preview selector on loopback; remote URLs, arbitrary
+    # query parameters and credentials remain prohibited.
+    local_page_selector = (host in {'localhost', '127.0.0.1'}
+                           and p.path in {'', '/'}
+                           and p.query == 'pagename=fv-ex2-playground-review')
+    if p.username or p.password or p.fragment or (p.query and not local_page_selector):
+        raise ValueError('RELEASE HOLD: preview URL must not contain credentials, tokens, nonces or unauthorized query parameters')
     if p.scheme != 'https' and not (p.scheme == 'http' and host in {'localhost','127.0.0.1'}):
         raise ValueError('RELEASE HOLD: require HTTPS on nonlocal staging')
     return host
