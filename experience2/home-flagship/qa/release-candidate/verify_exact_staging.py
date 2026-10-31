@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import urlsplit
+from media_transfer_admission import audit_image_payloads
 
 HOME = Path('experience2/home-flagship')
 CHAPTERS = ('fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry',
@@ -63,6 +64,15 @@ def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
         if committed.returncode or committed.stdout != raw:
             raise ValueError('RELEASE HOLD: uncommitted staging source: '+str(path))
         files[name] = raw
+    # Attest the executed QA code as well as the original eleven homepage assets.
+    for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py'):
+        rel = HOME/'qa/release-candidate'/name
+        p = repo/rel
+        if p.is_symlink() or not p.is_file() or not p.resolve().is_relative_to(repo):
+            raise ValueError('RELEASE HOLD: missing/unsafe staging QA file: '+str(rel))
+        committed = subprocess.run(['git','-C',str(repo),'show',expected_sha+':'+rel.as_posix()],capture_output=True)
+        if committed.returncode or committed.stdout != p.read_bytes():
+            raise ValueError('RELEASE HOLD: modified staging QA code: '+str(rel))
     return repo, files
 
 
@@ -78,7 +88,7 @@ def sha(content: bytes) -> str:
     return hashlib.sha256(content).hexdigest()
 
 
-def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, width: int, out: Path, axe_source: str | None = None) -> dict:
+def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, width: int, out: Path, axe_source: str | None = None, media_responses: list | None = None) -> dict:
     """Inspect browser-rendered bytes and behavior; all failures are explicit."""
     checks = {}
     def check(name,condition): checks[name] = bool(condition)
@@ -117,6 +127,10 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
         }""")
         imagedata.append(image)
     check('real_images_loaded',len(imagedata)==3 and all(i['complete'] and i['width']>0 for i in imagedata))
+    # naturalWidth/metadata is insufficient: prove that Chromium received each
+    # chosen currentSrc as a real HTTP 200 image response with a nonempty body.
+    network_receipt = audit_image_payloads(imagedata, media_responses or [])
+    check('actual_image_http_payloads', network_receipt['status']=='PASS')
     # Validate actual enhancement, rather than inferring from script tags.
     check('direction_visible',frame.locator('[data-fv-direction-choice="museum"]').is_visible())
     if width in (390,1440):
@@ -132,7 +146,7 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
         except Exception as exc:
             axe = {'status':'ERROR','reason':type(exc).__name__}
             check('axe_no_aa_violations',False)
-    return {'width':width,'checks':checks,'images':imagedata,'asset_sha256':delivered,
+    return {'width':width,'checks':checks,'images':imagedata,'image_http_delivery':network_receipt,'asset_sha256':delivered,
             'lab_observations_not_field_CWV':perf,'axe':axe}
 
 
@@ -151,7 +165,9 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
             for width in WIDTHS:
                 context=browser.new_context(storage_state=str(storage_state),viewport={'width':width,'height':900},reduced_motion='reduce',service_workers='block')
                 context.add_init_script(PERF_INIT)
-                page=context.new_page();errors=[];ajax=[]
+                page=context.new_page();errors=[];ajax=[];image_responses=[]
+                page.on('response', lambda response:image_responses.append(response)
+                        if response.request.resource_type=='image' else None)
                 page.on('pageerror',lambda err:errors.append(str(err)[:250]))
                 page.on('response',lambda response:ajax.append(response) if 'action=fv_ex2_private_render' in response.url else None)
                 record={'width':width,'checks':{},'errors':[]}
@@ -165,7 +181,7 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     if not ajax: raise RuntimeError('Private AJAX response not captured')
                     headers={k.lower():v for k,v in ajax[-1].headers.items()}
                     if ajax[-1].status!=200: raise RuntimeError('Authenticated staging AJAX returned '+str(ajax[-1].status))
-                    record=inspect_frame(frame,files,sha(files['index.html']),headers,width,output,axe_code)
+                    record=inspect_frame(frame,files,sha(files['index.html']),headers,width,output,axe_code,image_responses)
                     record['checks']['no_page_errors']=not errors
                     record['errors']=errors
                 except Exception as exc:
