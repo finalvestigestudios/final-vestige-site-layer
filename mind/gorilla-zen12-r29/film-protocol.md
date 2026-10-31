@@ -1,0 +1,15 @@
+# Optional original Zen12 warm-up film — R29 production brief (40 seconds)
+
+**Status: concept and timed caption DRAFT, not a master video, not synchronized, not cleared to host or publish.** Entirely original text/geometry; do not use merchant logo, staff likenesses, soundtrack, testimonials, supplied sales footage, or copyrighted gorilla/basketball study video. Record original footage or produce simple first-party motion vectors with no sourced imagery. Poster lives in `zen12-40s-poster.svg`; cue script in `zen12-captions-draft.vtt`.
+
+| Time | Proposed original visual | Narration / disclosure risk |
+|---|---|---|
+| 00–08 | Three plain desk tabs become one; abstract geometric rhythm | "A familiar scene: you open one more tab before you have begun. A task seems simple until it demands your attention." No claim of diagnosis. |
+| 08–17 | Moving circles representing selection; do not recreate study assets or claim this is the test | "In a famous experiment, an unexpected visitor crossed a basketball game. Some viewers concentrating on passes didn't report it." Credit Simons & Chabris visibly. |
+| 17–26 | Quiet original bronze aperture, 12 dots individually appearing | "A scheduled twelve-minute pause will not make anyone immune to that blind spot. But the routine itself can be worth trying." |
+| 26–35 | Abstract four sound waves + three neutral package rows; no merchant product artwork | "Zen12 is one commercial audio option. Its seller lists different course levels and sound versions. Its stronger promises have not been independently established for this product." |
+| 35–40 | Quiet frame: "FREE EXERCISE FIRST · EVIDENCE BEFORE OFFERS" | "Read the independent guide, test a free routine first, then decide whether a paid recording suits you." |
+
+**A/B protocol:** A and B share exactly the same substantive copy, source footnotes, disclosures, tier descriptions and disabled CTA. B alone adds an optional 40-second component. Do not count SVG poster views as video plays. Film variant must not auto-play; video loaded with `preload=none`, first-party compressed MP4/WebM only after controls are real and captions synchronized; accurate caption and transcript, accessible pause, keyboard controls, no surprise motion, recheck reduced motion and no-JS fallback. Until an actual master exists, show the poster and readable transcript as a concept only; do not label it a playable video. Hypothesis: B may help comprehension or increase qualified outbound interest, but could instead distract or slow pages. The experiment must be randomized independently of PII and tested on staged copies; no partner purchase attribution without explicit permission. Baseline A wins by default unless B shows a meaningful reader-value improvement without degraded performance/a11y.
+
+**Commerce disclosure in film:** If a future hosted film contains a commercial recommendation or earning link, spoken/on-screen disclosure inside film and near the link must be considered; current concept contains no affiliate URL and no commerce link.
