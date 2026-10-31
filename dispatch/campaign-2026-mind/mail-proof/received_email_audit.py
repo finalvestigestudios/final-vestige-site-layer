@@ -35,36 +35,63 @@ class VisibleHTML(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.visible: list[str] = []
         self.links: list[tuple[str, str]] = []
-        self._skip = 0
+        self.all_links: list[tuple[str, str]] = []
+        self.link_prior_visible: list[str] = []
+        self._elements: list[tuple[str, bool]] = []
         self._anchor_stack: list[dict] = []
 
+    @staticmethod
+    def _explicitly_hidden(tag: str, attrs: dict[str, str | None]) -> bool:
+        # This is a conservative DOM-markup check, not computed CSS or a
+        # screen-reader/browser certification. Hidden links remain in all_links
+        # so a merchant destination can never disappear from a security scan.
+        style = re.sub(r"\s+", "", (attrs.get("style") or "").lower())
+        return (tag in ("script", "style", "head", "template", "noscript", "svg")
+                or "hidden" in attrs or attrs.get("aria-hidden", "").lower() == "true"
+                or bool(re.search(r"(?:^|;)(?:display:none|visibility:hidden|opacity:0|font-size:0(?:px|pt|em|rem|%|;|$)|color:transparent)(?:;|$)", style)))
+
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]):
-        if tag in ("script", "style", "head"):
-            self._skip += 1
+        attributes = dict(attrs)
+        hidden = (any(flag for _, flag in self._elements)
+                  or self._explicitly_hidden(tag, attributes))
         if tag == "a":
-            attributes = dict(attrs)
-            self._anchor_stack.append({"href": attributes.get("href") or "", "text": []})
+            self._anchor_stack.append({"href": attributes.get("href") or "", "text": [],
+                                       "hidden": hidden,
+                                       "preceding": " ".join(self.visible) if not hidden else ""})
+        # HTML void elements must not trap subsequent content in a hidden parent.
+        if tag not in ("area", "base", "br", "col", "embed", "hr", "img", "input",
+                       "link", "meta", "param", "source", "track", "wbr"):
+            self._elements.append((tag, hidden))
 
     def handle_endtag(self, tag: str):
         if tag == "a" and self._anchor_stack:
             anchor = self._anchor_stack.pop()
-            self.links.append((" ".join(anchor["text"]), anchor["href"]))
-        if tag in ("script", "style", "head"):
-            self._skip = max(0, self._skip - 1)
+            pair = (" ".join(anchor["text"]), anchor["href"])
+            self.all_links.append(pair)
+            if not anchor["hidden"]:
+                self.links.append(pair)
+                self.link_prior_visible.append(anchor["preceding"])
+        # Remove through the matching element. Conservatively retain an unmatched
+        # hidden ancestor instead of allowing following text to be misread as visible.
+        match = next((i for i in range(len(self._elements)-1, -1, -1)
+                      if self._elements[i][0] == tag), None)
+        if match is not None:
+            del self._elements[match:]
 
     def handle_data(self, data: str):
-        if self._skip:
+        if any(flag for _, flag in self._elements):
             return
         self.visible.append(data)
         for anchor in self._anchor_stack:
-            anchor["text"].append(data)
+            if not anchor["hidden"]:
+                anchor["text"].append(data)
 
 
-def parse_mime(raw: bytes) -> tuple[object, str, str, list[tuple[str, str]]]:
+def parse_mime(raw: bytes) -> tuple[object, str, str, list[tuple[str, str]], list[tuple[str, str]], list[str]]:
     if len(raw) > MAX_MIME_BYTES:
         raise ValueError("MIME exceeds two-megabyte local audit limit")
     message = BytesParser(policy=policy.default).parsebytes(raw)
-    plain, html_text, links = [], [], []
+    plain, html_text, links, all_links, before_links = [], [], [], [], []
     for part in message.walk():
         if part.get_content_maintype() != "text" or part.get_content_disposition() == "attachment":
             continue
@@ -82,7 +109,9 @@ def parse_mime(raw: bytes) -> tuple[object, str, str, list[tuple[str, str]]]:
             parser.close()
             html_text.append(" ".join(parser.visible))
             links += parser.links
-    return message, "\n".join(plain), "\n".join(html_text), links
+            all_links += parser.all_links
+            before_links += parser.link_prior_visible
+    return message, "\n".join(plain), "\n".join(html_text), links, all_links, before_links
 
 
 def is_usable_optout(uri: str) -> bool:
@@ -101,7 +130,8 @@ def is_merchant_url(uri: str) -> bool:
 
 def audit_received(raw: bytes | None, *, issue: int, expected_subject: str,
                    expected_excerpt: str, expected_postal: str | None = None,
-                   email_mode: str = "excerpt", full_body_marker: str = "") -> dict:
+                   email_mode: str = "excerpt", full_body_marker: str = "",
+                   expected_cta: str | None = None) -> dict:
     """Only safe states: HOLD/UNKNOWN/FAIL/PASS (individual checks), never 'send'."""
     if issue not in ISSUE_IDS:
         raise ValueError("edition must be 1–6")
@@ -113,7 +143,7 @@ def audit_received(raw: bytes | None, *, issue: int, expected_subject: str,
                 "checks": {"authorized_received_test": "UNKNOWN"},
                 "manual_gates": manual_gates(issue)}
     try:
-        message, plain, html_text, links = parse_mime(raw)
+        message, plain, html_text, links, all_links, before_links = parse_mime(raw)
     except (TypeError, ValueError) as error:
         return {"edition": issue, "status": "HOLD_INVALID_MIME",
                 "checks": {"mime_decode": "FAIL"},
@@ -144,6 +174,30 @@ def audit_received(raw: bytes | None, *, issue: int, expected_subject: str,
         (urlparse(uri).hostname or "").lower() in ("finalvestige.com", "www.finalvestige.com")
         for _, uri in links) if html_text else
         bool(re.search(r"https?://(?:www\.)?finalvestige\.com/", plain, re.I))) else "FAIL"
+    # A footer/logo/privacy link is NOT the approved edition's CTA.
+    # Unpublished product guides intentionally remain UNKNOWN, never PASS.
+    if not expected_cta or "[[" in expected_cta or "]]" in expected_cta:
+        checks["exact_edition_cta_visible"] = "UNKNOWN_UNAPPROVED_CTA"
+        matching_ctas: list[int] = []
+    else:
+        target = urlparse(expected_cta)
+        if (target.scheme != "https" or target.hostname not in
+                ("finalvestige.com", "www.finalvestige.com") or not target.path.startswith("/")):
+            checks["exact_edition_cta_visible"] = "FAIL"
+            matching_ctas = []
+        else:
+            def same_cta(uri: str) -> bool:
+                found = urlparse(uri)
+                return (found.scheme == "https" and found.hostname == target.hostname
+                        and found.path.rstrip("/") == target.path.rstrip("/")
+                        and found.query == target.query and not found.fragment)
+            matching_ctas = [i for i, (_, uri) in enumerate(links) if same_cta(uri)]
+            if html_text:
+                checks["exact_edition_cta_visible"] = "PASS" if matching_ctas else "FAIL"
+            else:
+                urls = re.findall(r"https?://[^\s<>]+", plain, re.I)
+                checks["exact_edition_cta_visible"] = "PASS" if any(
+                    same_cta(u.rstrip(".,;!>")) for u in urls) else "FAIL"
     # Both text and HTML representations must be inspected if both exist. A
     # postal address cannot be deduced from an email vendor's own footer.
     if not expected_postal or len(norm(expected_postal)) < 12:
@@ -162,18 +216,32 @@ def audit_received(raw: bytes | None, *, issue: int, expected_subject: str,
     if issue in COMMERCIAL:
         found = [displayed.find(term) for term in DISCLOSURES if term in displayed]
         checks["commercial_disclosure_visible"] = "PASS" if found else "FAIL"
+        # The mere presence of a disclosure elsewhere in the message is not
+        # evidence it appears BEFORE the intended commercial recommendation.
+        # Without a real, approved onsite guide we CANNOT verify adjacency.
+        if checks["exact_edition_cta_visible"] != "PASS":
+            checks["commercial_disclosure_before_cta"] = "UNKNOWN_UNAPPROVED_CTA"
+        elif html_text:
+            checks["commercial_disclosure_before_cta"] = "PASS" if any(
+                any(term in norm(before_links[i]) for term in DISCLOSURES)
+                for i in matching_ctas) else "FAIL"
+        else:
+            first_cta = displayed.find(norm(expected_cta or ""))
+            checks["commercial_disclosure_before_cta"] = "PASS" if (
+                first_cta >= 0 and any(0 <= displayed.find(term) < first_cta for term in DISCLOSURES)
+            ) else "FAIL"
         if email_mode == "excerpt":
             checks["disclosure_in_excerpt"] = ("PASS" if any(term in norm(expected_excerpt) for term in DISCLOSURES) and found
                                                else "FAIL")
         else:
             checks["disclosure_in_excerpt"] = "NOT_APPLICABLE"
-        checks["no_direct_merchant_link"] = "FAIL" if (any(is_merchant_url(uri) for _, uri in links) or
+        checks["no_direct_merchant_link"] = "FAIL" if (any(is_merchant_url(uri) for _, uri in all_links) or
                              any(is_merchant_url(uri.rstrip(".,;>")) for uri in
                                  re.findall(r"https?://[^\s<>()]+", plain, re.I))) else "PASS"
     else:
         checks["commercial_disclosure_visible"] = "NOT_APPLICABLE"
         checks["disclosure_in_excerpt"] = "NOT_APPLICABLE"
-        checks["no_direct_merchant_link"] = "FAIL" if (any(is_merchant_url(uri) for _, uri in links) or
+        checks["no_direct_merchant_link"] = "FAIL" if (any(is_merchant_url(uri) for _, uri in all_links) or
                              any(is_merchant_url(uri.rstrip(".,;>")) for uri in
                                  re.findall(r"https?://[^\s<>()]+", plain, re.I))) else "PASS"
     # There is intentionally no READY / APPROVED status, and absolutely no
@@ -232,7 +300,8 @@ def main() -> None:
     result = audit_received(raw, issue=args.edition, expected_subject=entry["subject"],
                             expected_excerpt=excerpt["excerpt"],
                             expected_postal=os.environ.get("FV_COMMERCIAL_POSTAL_EXPECTED"),
-                            email_mode=args.mode, full_body_marker=args.full_marker)
+                            email_mode=args.mode, full_body_marker=args.full_marker,
+                            expected_cta=entry["editorial_cta"])
     print(json.dumps(result, indent=2, sort_keys=True))
 
 
