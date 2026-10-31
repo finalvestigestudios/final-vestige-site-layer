@@ -30,6 +30,28 @@ class TestStagingAdmission(unittest.TestCase):
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
 
+    def test_r24_served_touch_css_custody_and_downgrade(self):
+        r = admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
+        self.assertEqual(len(r['r24_touch_target_css_sha256']),64)
+        def bad_header(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-touch-targets-sha256' in h:
+                h['x-fv-ex2-apollo-touch-targets-sha256']='0'*64
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'touch target CSS hash'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=bad_header)
+
+    def test_r24_served_css_bytes_mutation_denied(self):
+        def bad_css(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-touch-targets-sha256' in h:
+                body=body.replace(b'min-height:44px;\n    max-width:100%;',b'min-height:28px;\n    max-width:100%;',1)
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'touch target CSS hash'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=bad_css)
+
     def test_r23_catalog_identity_hold_visible_in_actual_served_html(self):
         r = admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
         self.assertEqual(r['geographic_edges_admitted'], 0)

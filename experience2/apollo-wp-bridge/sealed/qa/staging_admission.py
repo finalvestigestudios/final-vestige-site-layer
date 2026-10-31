@@ -24,6 +24,7 @@ from atlas_admission import build_atlas_admission
 from media_rights_ledger import build_media_rights
 from custody_receipts import build_receipts, EXPORT_NAMES
 from wayfinder_r22 import build_wayfinder, SECTIONS
+from touch_targets_r24 import build_touch_targets
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
@@ -188,6 +189,14 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         or b'{{FV_EX2_CUSTODY_EXPORT:' in html
         or any(digest.encode() not in html for digest in receipts_receipt['exports_sha256'].values())):
         raise AdmissionError('Private custody receipts integrity/hash/links incomplete')
+    # R24: CSS repair must be hash-verified in the served private PHP response.
+    # The canonical PR #215 HTML/CSS remain unchanged; missing accessibility
+    # overrides must not be described as passing staging admission.
+    touch_css, touch_receipt = build_touch_targets(
+        (expected_dir / 'fragment.html').read_text(encoding='utf-8'))
+    if (headers.get('x-fv-ex2-apollo-touch-targets-sha256') != touch_receipt['css_sha256']
+            or html.count(touch_css.encode('utf-8')) != 1):
+        raise AdmissionError('R24 touch target CSS hash/served bytes mismatch')
     # R22: verify the actual private response contains the same, source-derived
     # seven anchor links and unresolved editorial holds as the packaged review.
     wayfinder_html, wayfinder_css, wayfinder_receipt = build_wayfinder(
@@ -295,6 +304,7 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
             'custody_receipts_html_sha256':receipts_receipt['html_sha256'],
             'custody_receipts_export_count':7,
             'wayfinder_html_sha256':wayfinder_receipt['html_sha256'],
+            'r24_touch_target_css_sha256':touch_receipt['css_sha256'],
             'wayfinder_destinations_verified':len(SECTIONS),
             'photos_admitted_for_reuse':0,'media_rights_review_holds':6,
             'geographic_pins_admitted':0,'geographic_edges_admitted':0,
