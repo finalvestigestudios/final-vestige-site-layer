@@ -7,6 +7,7 @@ from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 
 from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
+from .csv_diagnostics import csv_input_error
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
 
 ALIASES = {
@@ -132,7 +133,7 @@ def parse_date(value):
 
 def table(path, required, optional=(), *, include_headers=False, include_digest=False):
     p = Path(path)
-    if p.suffix.lower() != ".csv" or not p.is_file(): raise ValueError("Select an existing CSV: "+p.name)
+    if p.suffix.lower() != ".csv" or not p.is_file(): raise csv_input_error("select_file")
     # Parse a verified single-descriptor snapshot: no source can change between
     # CSV header and row parsing, and symlinks/path swaps fail closed.
     from io import BytesIO, TextIOWrapper
@@ -146,22 +147,22 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         try:
             fieldnames = next(reader, None)
         except (csv.Error, UnicodeError) as exc:
-            raise ValueError(f"{p.name}: invalid CSV header") from exc
-        if not fieldnames: raise ValueError("Missing headers: "+p.name)
+            raise csv_input_error("bad_header") from None
+        if not fieldnames: raise csv_input_error("missing_headers")
         if any("\x00" in name for name in fieldnames):
-            raise ValueError(f"{p.name}: CSV header contains a NUL character")
+            raise csv_input_error("nul_header")
         normalized = [str(h).strip().lower().replace(" ", "_") for h in fieldnames if h]
         if "" in normalized or len(normalized) != len(fieldnames) or len(normalized) != len(set(normalized)):
-            raise ValueError(f"{p.name}: blank or duplicate normalized CSV header")
+            raise csv_input_error("duplicate_header")
         headers = dict(zip(normalized, fieldnames))
         cols = {}
         for field in (*required,*optional):
             matches = [alias for alias in ALIASES.get(field,(field,)) if alias in headers]
             if len(matches) > 1:
-                raise ValueError(f"{p.name}: ambiguous '{field}' aliases: {', '.join(matches)}")
+                raise csv_input_error("alias_ambiguous", field=field)
             cols[field] = headers[matches[0]] if matches else None
             if field in required and cols[field] is None:
-                raise ValueError(f"{p.name}: missing '{field}' column")
+                raise csv_input_error("column_missing", field=field)
         out = []
         previous_end_line = reader.line_num
         row_count = 0
@@ -175,18 +176,17 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
                 row_count += 1
                 if row_count > MAX_ROWS: raise ValueError("CSV exceeds 200,000 rows")
                 if len(values) != len(fieldnames):
-                    raise ValueError(f"{p.name}: malformed CSV record at physical line {source_line} "
-                                     f"(expected {len(fieldnames)} columns, got {len(values)})")
+                    raise csv_input_error("bad_row_shape", line=source_line,
+                                          expected=len(fieldnames), actual=len(values))
                 # Even an ignored, extra data column must not smuggle NUL bytes
                 # into an evidence-bearing financial import.
                 if any("\x00" in cell for cell in values):
-                    raise ValueError(f"{p.name}: CSV record contains a NUL character "
-                                     f"at physical line {source_line}")
+                    raise csv_input_error("nul_record", line=source_line)
                 row = dict(zip(fieldnames, values))
                 out.append({"row":str(source_line),**{name:str(row.get(col) or "").strip()
                        for name,col in cols.items() if col}})
         except (csv.Error, UnicodeError) as exc:
-            raise ValueError(f"{p.name}: invalid CSV near physical line {reader.line_num}") from exc
+            raise csv_input_error("bad_record", line=reader.line_num) from None
         # Hash precisely the bytes already parsed, not a later path read.
         # The caller can bind this value to a later evidence inventory.
         if include_digest:
@@ -232,7 +232,7 @@ def ledger_diff(left,right,folder):
         digests.append(source_sha256)
         for r in records:
             k=key(r["id"])
-            if not k: raise ValueError(f"Blank transaction ID in {Path(source).name}, row {r['row']}")
+            if not k: raise csv_input_error("blank_ledger_id", line=int(r["row"]))
             d[k].append(r)
     rows=[]
     for k in sorted(set(groups[0])|set(groups[1])):
