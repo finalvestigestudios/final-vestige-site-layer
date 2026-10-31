@@ -89,11 +89,17 @@ def checked_json(raw: bytes, label: str) -> dict:
 
 
 def safe_url(url: str) -> None:
-    need(type(url) is str and len(url) < 2048 and not any(ord(x) < 32 for x in url),
+    need(type(url) is str and len(url) < 2048 and
+         not any(ord(x) <= 32 for x in url) and '\\' not in url,
          'invalid source URL bytes')
-    parts = urlsplit(url)
+    try:
+        parts = urlsplit(url)
+        port = parts.port
+    except ValueError as exc:
+        raise CustodyError('invalid source URL authority') from exc
     need(parts.scheme == 'https' and bool(parts.hostname) and
          parts.username is None and parts.password is None and
+         port in (None, 443) and '@' not in parts.netloc and
          not parts.fragment and not url.startswith('https:////'),
          'invalid source URL destination')
 
