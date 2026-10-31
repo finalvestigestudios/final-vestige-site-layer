@@ -65,7 +65,7 @@ def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
             raise ValueError('RELEASE HOLD: uncommitted staging source: '+str(path))
         files[name] = raw
     # Attest the executed QA code as well as the original eleven homepage assets.
-    for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py'):
+    for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py'):
         rel = HOME/'qa/release-candidate'/name
         p = repo/rel
         if p.is_symlink() or not p.is_file() or not p.resolve().is_relative_to(repo):
