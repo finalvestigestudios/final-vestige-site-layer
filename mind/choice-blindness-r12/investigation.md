@@ -1,0 +1,85 @@
+# The Choice You Never Made
+*An investigation into choice blindness, the explanations we invent, and how to keep a record from quietly changing.*
+
+The woman at a supermarket tasting station has been asked a perfectly ordinary question: which of these two jams tastes better? She samples one, then the other, selects her favorite, and waits for a second spoonful. The researcher hands it back and asks for her reasons. There is something she has not been told. The contents have been exchanged. The spoon now carries the jam she rejected, and the explanation she gives may fit the wrong flavor. This opening is an illustrative reconstruction of the published study's procedure, **not** an eyewitness account or invented interview transcript. [1]
+
+In 2010, researchers Lars Hall, Petter Johansson, Betty Tärning, Sverker Sikström and Thérèse Deutgen published a supermarket study of choice blindness in *Cognition*. Shoppers compared jams and teas. The researchers manipulated the apparent outcome after a selection and watched whether participants caught the substitution. No more than a third of manipulated trials were detected overall; even striking differences sometimes went unnoticed. The scientifically interesting finding is not that shoppers were foolish. It is that some people supplied an explanation for a decision they had not made, under a deliberately engineered mismatch. [1]
+
+The distinction matters to a publication built around documentary evidence. A reason can be sincere and incomplete. A witness can describe exactly what seemed to happen without possessing a reliable chain of cause and effect. An official record can be authentic while its explanatory caption is wrong. The question behind this investigation is smaller, more useful, and more unsettling than “Can we control minds?” It is: **When someone explains a decision, what independent evidence connects that explanation to the decision itself?**
+
+## I. The photograph in the wrong hand
+The story began not with jam but with faces. In a 2005 *Science* paper, Petter Johansson and colleagues presented participants with pairs of photographs and asked them to select the face they found more attractive. In selected trials, an experimenter used sleight of hand to present the **nonchosen** photograph as though it were the selected one. Participants were then asked to give reasons for that apparent choice. Some noticed and challenged the switch. Others did not, and could still offer plausible reasons for the photograph they were shown. [2]
+
+There are three different objects in this experiment: the photograph originally selected, the photograph returned by the investigator, and the verbal explanation given after the return. They are not interchangeable. The substitution is an intervention on the **feedback** about the outcome. A failure to identify the mismatch is an observation. The explanation is another observation. Nothing in this procedure proves that a soundtrack implanted a preference, that an unconscious force compelled the choice, or that every decision is retrospectively manufactured. [2]
+
+A person moving through the task has competing demands: examine two faces, choose, keep track of the social exchange, and produce a reason when asked. Researchers named the phenomenon *choice blindness*. The term does not settle whether attention, memory, inference, conversational pressure, or other processes contribute in a given case. Naming a result is the beginning of explanation, not the end.
+
+Popular retellings often remove the most important fact: this outcome depended on a controlled swap. Without knowing whether a particular participant noticed the exchange or whether the object was actually switched, a confident speech afterward says very little about what happened internally. The proper laboratory protocol preserves both the initial selection and the manipulated outcome.
+
+## II. From a face to a flavor
+Five years later, the supermarket trial tested whether something similar could happen outside a photograph judgment. Two jars of jam or varieties of tea created a preference task in a public place. After a participant chose, the researchers presented a switched alternative for re-tasting or re-smelling and requested an explanation. Some participants continued the conversation without recognizing that they were evaluating their rejected item. [1]
+
+Moving the paradigm to taste and smell was a substantive development. A photograph can be forgotten in the bustle of a brief decision; a strong flavor seems to many of us more immediate. Yet the result was not uniform. The *Cognition* abstract makes clear that even strongly differentiated samples, such as markedly different fruit flavors, could go undetected on some trials while being detected on others. An honest summary preserves the variation rather than claiming that everyone is blind to substitutions. [1]
+
+The study did not show that retailers can make consumers love anything by deceiving them. It did not demonstrate persistent changes to preference, predict purchasing behavior after a week, or measure performance of meditation, hypnosis, or self-help audio. Its controlled substitution made a narrow but revealing point: at least sometimes, the apparent object of a decision is used to explain that decision after the decision is over.
+
+A useful analogy is a misfiled archival photograph. Imagine a genuine photograph of a bridge labeled as a different bridge. A historian might write an entirely coherent account of the mislabeled location. The prose could be excellent; the chain of custody would still be broken. Choice-blindness experiments deliberately break that chain and watch what people do next. That is why their methods, rather than merely their punchlines, deserve the reader's attention.
+
+## III. A clipboard that reversed an opinion
+In 2012, Hall, Johansson and Thomas Strandberg constructed a more disquieting experiment using paper rather than photographs or food. The researchers recruited **160 volunteers** encountered in a park. Participants rated statements about moral principles and current controversies using nine-point scales. The survey was designed with a concealed paper slip; turning the page allowed the visible wording of selected earlier statements to be replaced by its opposite. When the participants revisited the form, their original ratings appeared attached to reversed sentences. [3]
+
+A participant who first agreed with a proposition might now appear, according to the manipulated sheet, to have agreed with its negation. The investigator asked participants to read and explain some answers. The paper describes correction and acceptance, followed by debriefing in which the physical trick was explained. The authors reported that **69%** of participants accepted at least one of two altered statement-rating relationships. Separately, **53%** gave a clearly opposite argument in at least one manipulated trial. These numbers refer to different measures, and neither is a percentage of a national population converted to another ideology. [3]
+
+That statistical precision is essential. The trial was not a political campaign. It did not test long-term persuasion, durable conversion, or what the same people would say a month later. The sample was a particular set of Swedish volunteers under an intentionally surprising research procedure. Some manipulation trials were noticed or retrospectively corrected. Even an eye-catching demonstration should not be stretched into a law about everyone's convictions.
+
+The researchers' full report discusses variation in detection, the strength of ratings, and alternative interpretations of expressed attitudes. The paper invites serious questions about how self-description, feedback, and situational cues interact. It cannot establish that free will is an illusion, that every moral attitude is arbitrary, or that an advertising message can instantly reverse someone's beliefs. [3]
+
+## IV. Why the explanation still matters
+A damaging response to these results is to conclude that reported reasons have no evidentiary value. That would go well beyond the data. An explanation is a record of what someone can articulate, perhaps shaped by the question, the apparent outcome, memory, and present belief. Sometimes that record is accurate. Sometimes it omits intermediate steps. In a choice-blindness manipulation, its relation to the **original** outcome is precisely what is in dispute.
+
+Johansson and colleagues returned to the material in a 2006 paper examining introspective language generated by participants in this experimental paradigm. That follow-up underscores a richer question: not whether participants are automatically lying, but what one can infer about mental processes from a polished retrospective report. [4] Social science can study that report without pretending it is a direct recording of the mind.
+
+Choice blindness is not synonymous with *change blindness*. Visual change-blindness experiments commonly ask whether an observer notices alterations to a scene. In these studies the surprising mismatch concerns the **outcome of an expressed choice** and the explanation afterward. The two literatures are related but use different procedures and should not be collapsed for an attractive headline.
+
+Nor is choice blindness proof of hypnosis. The papers above used swaps, survey materials, and ordinary questioning. They did not present a product-specific trial of hypnosis recordings, isochronic sound, binaural beats, or meditation programs. Treating the result as proof that a mind-training audio can reprogram a consumer adds a mechanism and an efficacy conclusion not tested by the researchers. That move would be precisely the kind of evidence substitution this archive ought to resist.
+
+## V. A better practice than trying to catch yourself
+The transparent companion activity is deliberately free of tricks. Choose a minor, reversible preference: paper notes or digital notes, morning or afternoon walk, music or silence during a routine chore. Write the choice, one plain reason, and the date. Put the note aside. On another day, record your present preference before re-reading the original note, then compare what you actually wrote with your later explanation.
+
+Nothing is transmitted to Final Vestige; there is no quiz score, memory diagnosis, or probability of being fooled. Matching explanations prove nothing about perfect introspection. Divergent explanations do not establish choice blindness because the circumstances may truly have changed. This is an ordinary field log, not a replication of a controlled study. Its value is simply the preservation of an earlier record.
+
+Historians do something similar with dated notebooks, drafts, and photographs. A participant's first account may be incomplete, yet a dated first account is harder to quietly rewrite after a later narrative becomes persuasive. The archive's historical Puységur files raise a parallel distinction: a subject's reported experience is part of the source record, while a claim about a magnetic force causing that experience needs separate proof. A modern lab experiment and an eighteenth-century casebook are not the same form of evidence. But both invite scrutiny of where the description ends and causal inference begins.
+
+An investigator's task is not to treat consciousness as unreliable by default. It is to ask whether the sequence can be reconstructed from records that were preserved **before** the explanation hardened. That discipline is valuable for historical scholarship, news, consumer decisions, and personal reflection alike.
+
+## VI. What a meditation product can and cannot inherit
+A reader interested in attention or self-observation may explore guided meditation products. That interest creates an opportunity to publish a useful buyer's guide, not a license to attach commercial promises to unrelated experiments. The official Inspire3 catalog lists **Zen12** among its mind-oriented offerings. The exact Zen12 “About” page describes a twelve-level program, marketed as twelve-minute listening sessions, with four sound formats for each level: relaxation music, guided meditation, white noise and nature sounds. The current “Get Started” page describes **48 MP3 files** and additional support materials. These are documented **seller descriptions of product structure**. [5][6][10]
+
+Zen12's own promotional copy says twelve minutes can provide the benefit of an hour of ordinary meditation and that special brainwave sounds shift users automatically into relaxation. The independently reviewed sources do not establish those benefits for this specific commercial program. We therefore do not present the equivalence or automatic neural mechanism as fact. A product may be conveniently packaged without its claimed psychological transformation being demonstrated. [5][7]
+
+The U.S. National Center for Complementary and Integrative Health discusses meditation and mindfulness evidence across specific conditions and notes uncertainty, methodological limitations and possible adverse experiences. That research cannot be transplanted wholesale onto an individual 48-track bundle. We have not tested Zen12 and cannot promise a reduction in anxiety, changes in memory, improved decision-making, or any other mental or medical result. [7]
+
+A sensible buyer's checklist asks what is included, whether the formats are comfortable and accessible, whether current checkout and refunds are clearly documented, and whether a free habit would work just as well. It also asks whether a seller's evidence tests the actual product, an analogous general practice, or merely a proposed physiological mechanism. Those are different propositions. This guide does not quote a live price, imply discounts or limited supply, repeat testimonials as proof, or supply an affiliate destination whose authorization has not been verified.
+
+## VII. The editorial firewall
+The scientific conclusion sits on one side of a line: **in certain controlled circumstances, participants sometimes accept a mismatch between an intended choice and an apparent outcome and can explain the substituted result**. The commercial note sits on the other: a person who wants a structured short audio routine may choose to investigate Zen12's format, while treating its stronger efficacy statements as unverified seller claims.
+
+FTC endorsement guidance requires clear disclosure of material connections. Its health-products guidance also explains the need to substantiate objective benefit and safety claims before advertising them. Merely repeating a merchant's impressive wording or citing research on a related method does not make a product-specific promise reliable. [8][9]
+
+Final Vestige's established **Seven Day Focus Fieldbook** remains a free route for an interested reader. The site's **Puységur's Animal Magnetism Files** remains the historical counterpart. Neither requires purchasing a commercial recording. If partner approval and destination terms are later verified, a commercial button may be evaluated under a visible, adjacent disclosure and reviewed by site QA. It is **not active in this unpublished candidate**.
+
+The most important question from the jam counter is not whether one can distrust a person's reasons. It is whether the jar being explained is the jar that person chose. The photograph, the clipboard, the dated notebook, and the preserved source all play the same modest role: they put something durable next to a convincing story. A story that has to answer to a record is more useful than one that can quietly replace it.
+
+## Sources and editorial record
+[1] Hall et al. (2010), *Cognition*, “Magic at the marketplace: Choice blindness for the taste of jam and the smell of tea,” https://pubmed.ncbi.nlm.nih.gov/20637455/.
+[2] Johansson et al. (2005), *Science* 310(5745), 116–119, https://pubmed.ncbi.nlm.nih.gov/16210542/ ; DOI 10.1126/science.1111709.
+[3] Hall, Johansson & Strandberg (2012), *PLOS ONE* 7(9), e45457, full text https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457.
+[4] Johansson et al. (2006), *Consciousness and Cognition*, https://pubmed.ncbi.nlm.nih.gov/17049881/.
+[5] Zen12 official About: https://zen12.com/about (seller source, checked October 30, 2026).
+[6] Zen12 Get Started: https://zen12.com/getstarted (seller offer, checked October 30, 2026; volatile checkout excluded).
+[7] NIH/NCCIH Meditation and Mindfulness: https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety.
+[8] FTC Endorsements guidance: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking.
+[9] FTC Health Products guidance: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance.
+[10] Inspire3 official catalog https://inspire3.com/ (seller source, checked October 30, 2026).
+[11] Published historic archive https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/.
+[12] Published free Focus Fieldbook https://finalvestige.com/focus/.

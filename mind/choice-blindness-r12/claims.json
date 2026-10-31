@@ -1,0 +1,392 @@
+{
+  "version": "R12",
+  "checked": "2026-10-30",
+  "editorial_status": "HOLD",
+  "partner_approved": false,
+  "affiliate_url": null,
+  "price_confirmed": false,
+  "sources": {
+    "p2005": {
+      "name": "Johansson et al 2005 Science",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "kind": "primary"
+    },
+    "p2010": {
+      "name": "Hall et al 2010 Cognition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "kind": "primary"
+    },
+    "p2012": {
+      "name": "Hall et al 2012 PLOS ONE",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "kind": "primary"
+    },
+    "p2006": {
+      "name": "Johansson et al 2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "kind": "primary"
+    },
+    "zenAbout": {
+      "name": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "kind": "merchant"
+    },
+    "zenCheckout": {
+      "name": "Zen12 Get Started",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant"
+    },
+    "parent": {
+      "name": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant"
+    },
+    "nccih": {
+      "name": "NCCIH",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government"
+    },
+    "ftcEnd": {
+      "name": "FTC Endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator"
+    },
+    "ftcHealth": {
+      "name": "FTC Health Products",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator"
+    },
+    "focus": {
+      "name": "Published Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "first-party"
+    },
+    "puy": {
+      "name": "Published Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "first-party"
+    }
+  },
+  "claims": [
+    {
+      "id": "CB01",
+      "claim": "Face-pair study published in 2005",
+      "disposition": "supported",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB02",
+      "claim": "2005 used manipulated apparent face outcomes",
+      "disposition": "supported",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB03",
+      "claim": "Some participants missed the swap",
+      "disposition": "supported",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB04",
+      "claim": "Some explained the shown face",
+      "disposition": "supported",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB05",
+      "claim": "All participants missed all swaps",
+      "disposition": "reject",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB06",
+      "claim": "Choice blindness proves free will is absent",
+      "disposition": "reject",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB07",
+      "claim": "Choice blindness proves hypnosis is controlling people",
+      "disposition": "reject",
+      "source": "p2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB08",
+      "claim": "2010 study involved jam and tea",
+      "disposition": "supported",
+      "source": "p2010",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB09",
+      "claim": "2010 study used supermarket setting",
+      "disposition": "supported",
+      "source": "p2010",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB10",
+      "claim": "No more than one third of manipulated trials detected overall",
+      "disposition": "supported-context",
+      "source": "p2010",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB11",
+      "claim": "Every flavor swap went undetected",
+      "disposition": "reject",
+      "source": "p2010",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB12",
+      "claim": "Long-term brand preference proved changeable",
+      "disposition": "not-established",
+      "source": "p2010",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB13",
+      "claim": "2012 study had 160 volunteers",
+      "disposition": "supported",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB14",
+      "claim": "2012 used a paper-slip reversal",
+      "disposition": "supported",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB15",
+      "claim": "2012 focused on moral issue statements",
+      "disposition": "supported",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB16",
+      "claim": "69 percent accepted at least one changed relationship",
+      "disposition": "supported-context",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB17",
+      "claim": "53 percent argued opposite at least once",
+      "disposition": "supported-context",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB18",
+      "claim": "69 percent were permanently persuaded",
+      "disposition": "reject",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB19",
+      "claim": "The authors reported a debriefing",
+      "disposition": "supported",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB20",
+      "claim": "2012 sample represents all countries",
+      "disposition": "reject",
+      "source": "p2012",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB21",
+      "claim": "Choice introspection examined in follow-up analysis",
+      "disposition": "supported",
+      "source": "p2006",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB22",
+      "claim": "Zen12 listed in official parent catalog",
+      "disposition": "seller",
+      "source": "parent",
+      "source_url": "https://inspire3.com/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB23",
+      "claim": "Zen12 describes twelve levels",
+      "disposition": "seller",
+      "source": "zenAbout",
+      "source_url": "https://zen12.com/about",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB24",
+      "claim": "Zen12 describes four styles per level",
+      "disposition": "seller",
+      "source": "zenAbout",
+      "source_url": "https://zen12.com/about",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB25",
+      "claim": "Zen12 describes 12-minute sessions",
+      "disposition": "seller",
+      "source": "zenAbout",
+      "source_url": "https://zen12.com/about",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB26",
+      "claim": "Checkout describes 48 MP3s",
+      "disposition": "seller",
+      "source": "zenCheckout",
+      "source_url": "https://zen12.com/getstarted",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB27",
+      "claim": "12 minutes equals one hour of meditation benefit",
+      "disposition": "unsupported-seller-claim",
+      "source": "zenAbout",
+      "source_url": "https://zen12.com/about",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB28",
+      "claim": "Brainwave sounds automatically induce total relaxation",
+      "disposition": "unsupported-seller-claim",
+      "source": "zenAbout",
+      "source_url": "https://zen12.com/about",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB29",
+      "claim": "Zen12 efficacy independently established in cited trials",
+      "disposition": "not-established",
+      "source": "nccih",
+      "source_url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB30",
+      "claim": "Meditation research automatically validates Zen12",
+      "disposition": "reject",
+      "source": "nccih",
+      "source_url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB31",
+      "claim": "Zen12 alleviates clinical anxiety in users",
+      "disposition": "reject",
+      "source": "nccih",
+      "source_url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB32",
+      "claim": "Current checkout price stable",
+      "disposition": "unverified-omit",
+      "source": "zenCheckout",
+      "source_url": "https://zen12.com/getstarted",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB33",
+      "claim": "Commission percentage established",
+      "disposition": "unverified-omit",
+      "source": "parent",
+      "source_url": "https://inspire3.com/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB34",
+      "claim": "Affiliate partner accepted",
+      "disposition": "unverified-omit",
+      "source": "parent",
+      "source_url": "https://inspire3.com/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB35",
+      "claim": "Approved link available",
+      "disposition": "unverified-omit",
+      "source": "parent",
+      "source_url": "https://inspire3.com/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    },
+    {
+      "id": "CB36",
+      "claim": "FTC expects clear material connection disclosure",
+      "disposition": "regulatory",
+      "source": "ftcEnd",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB37",
+      "claim": "FTC objective health claims need substantiation",
+      "disposition": "regulatory",
+      "source": "ftcHealth",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB38",
+      "claim": "Original Fieldbook already has published /focus/ route",
+      "disposition": "first-party",
+      "source": "focus",
+      "source_url": "https://finalvestige.com/focus/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB39",
+      "claim": "Puységur archive already published",
+      "disposition": "first-party",
+      "source": "puy",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "publication_rule": "Attribute to primary study, authority or seller as marked"
+    },
+    {
+      "id": "CB40",
+      "claim": "New /mind/ product link is live",
+      "disposition": "unverified-omit",
+      "source": "focus",
+      "source_url": "https://finalvestige.com/focus/",
+      "publication_rule": "Omit as fact; editorial qualification only"
+    }
+  ]
+}
