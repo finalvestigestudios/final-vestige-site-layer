@@ -19,7 +19,7 @@
     "historical_scene": "Tsunami breaking over Pier No. 1 in Hilo Harbor on 1946-04-01",
     "mapping_strength": "high_confidence_same_historical_scene_catalog_candidate_not_binary_verified",
     "original_binary_sha256": null,
-    "same_binary_as_stored_url": false,
+    "same_binary_as_stored_url": null,
     "exact_binary_match_tested": false,
     "original_intrinsic_width_px": null,
     "original_intrinsic_height_px": null
