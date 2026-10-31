@@ -21,6 +21,7 @@ function inspectRun(r){
   if(!good(id)||posts.has(id)){e.push('invalid_or_duplicate_post:'+id);continue}
   if(!page(x.url)||x.document_url!==x.url||x.page_result!=='inspected_browser')e.push('unverified_page:'+id);
   if(!Array.isArray(x.document_network_failures)||x.document_network_failures.length)e.push('page_request_failed:'+id);
+  if(x.scroll_coverage?.complete!==true||x.scroll_coverage?.state!=='full_height_scanned')e.push('incomplete_viewport_scroll_coverage:'+id);
   const slots=Array.isArray(x.stored_images)?x.stored_images:[],net=Array.isArray(x.network_images)?x.network_images:[];
   if(slots.length!==x.stored_image_count||!good(x.stored_image_count)||x.rendered_image_count<x.stored_image_count)e.push('incomplete_image_slots:'+id);
   const keys=slots.map(v=>v.image_key);
