@@ -1,0 +1,24 @@
+{
+  "atlas_geographic_pins": 0,
+  "distinct_nasa_photo_identifier": "S66-30236",
+  "distinct_nasa_photo_url": "https://www.nasa.gov/image-article/apollo-1-prime-crew-portrait/",
+  "identity_status": "UNRESOLVED_NOT_FIRST_PARTY_CONFIRMED",
+  "photo_reuse_status": "LINK_ONLY_UNCLEARED",
+  "primary_casefile_photo_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+  "research_action": "FIND_FIRST_PARTY_CATALOG_RECORD_AND_COMPARE_IMAGE_BYTES_BEFORE_CORRECTING_LABEL",
+  "research_desk_claim": "NASA S67-19766",
+  "reviewed_on": "2026-10-31",
+  "schema": "fv-ex2-r29-secondary-photo-catalog-witness-v1",
+  "secondary_listing": {
+    "claimed_source": "Defense Visual Information Distribution Service",
+    "date_correlates_with_casefile_january_1967": false,
+    "date_range_as_displayed": "1968 - 1972",
+    "displayed_nasa_identifier": "S67-19766",
+    "establishes_same_image_as_casefile_link": false,
+    "first_party_nasa_catalog_record": false,
+    "headline": "ASTRO GRISSOM, CHAFFEE, WHITE IN VA, IN MISSION SIMULATOR AND ON COMPLEX 34",
+    "promotes_geolocation_or_rights": false,
+    "url": "https://timelessmoon.getarchive.net/amp/media/astro-grissom-chaffee-white-in-va-in-mission-simulator-and-on-complex-34-a5cc67"
+  },
+  "source_witness_type": "DATED_EDITORIAL_WEB_REVIEW_NOT_MACHINE_VERIFIED_ARCHIVE_METADATA"
+}
