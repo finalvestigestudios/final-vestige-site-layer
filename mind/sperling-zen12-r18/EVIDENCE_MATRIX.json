@@ -1,0 +1,556 @@
+{
+  "review_date": "2026-10-31",
+  "status": "UNPUBLISHED_RELEASE_HOLD",
+  "sources_are_not_equivalent_to_independent_product_tests": true,
+  "partner_approval_verified": false,
+  "affiliate_earning_url": null,
+  "affiliate_tracking_enabled": false,
+  "email_promotion_allowed": null,
+  "social_promotion_allowed": null,
+  "approved_creatives_verified": false,
+  "original_product_tested": false,
+  "product_price_quoted": false,
+  "source_urls": {
+    "SPERLING_1960": "https://sites.socsci.uci.edu/~whipl/staff/sperling/PDFs/Sperling_PsychMonogr_1960.pdf",
+    "SPERLING_1963": "https://doi.org/10.1177/001872086300500103",
+    "ICONIC_2016": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5019336/",
+    "VISUAL_2025": "https://link.springer.com/article/10.3758/s13414-025-03214-3",
+    "INSPIRE3": "https://inspire3.com/",
+    "ZEN12_ABOUT": "https://zen12.com/about",
+    "ZEN12_CHECKOUT": "https://zen12.com/getstarted",
+    "ZEN12_SAMPLE": "https://zen12.com/welcome",
+    "MEDITATION_2024": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+    "BINAURAL_2023": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "NCCIH": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "FTC_ENDORSEMENT": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "PUYSEGUR": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FOCUS": "https://finalvestige.com/focus/"
+  },
+  "claims": [
+    {
+      "id": "R18-01",
+      "claim": "George Sperling published the partial-report investigation in 1960",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Historical attribution."
+    },
+    {
+      "id": "R18-02",
+      "claim": "Original study used controlled brief visual displays",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Not this webpage's static diagram."
+    },
+    {
+      "id": "R18-03",
+      "claim": "One original display duration was 50 milliseconds",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Not universal for every later replication."
+    },
+    {
+      "id": "R18-04",
+      "claim": "Original stimuli included more than one array configuration",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Avoid conflating schematic and actual stimuli."
+    },
+    {
+      "id": "R18-05",
+      "claim": "Original observers were a small trained group, not population sample",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Limit extrapolation."
+    },
+    {
+      "id": "R18-06",
+      "claim": "Whole-report accuracy averaged a little more than four symbols",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Measured report, not complete perceptual capacity."
+    },
+    {
+      "id": "R18-07",
+      "claim": "Postdisplay partial-report cue targeted unpredictable subset",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Core experimental design."
+    },
+    {
+      "id": "R18-08",
+      "claim": "Partial report outperformed whole report near immediate cueing",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Evidence for momentary availability."
+    },
+    {
+      "id": "R18-09",
+      "claim": "Partial report verifies lasting photographic memory",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Contrary to fragile nature of effect."
+    },
+    {
+      "id": "R18-10",
+      "claim": "Partial-report advantage declines with increased cue delay",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1960",
+        "ICONIC_2016"
+      ],
+      "editorial_rule": "Exact rates vary by task."
+    },
+    {
+      "id": "R18-11",
+      "claim": "All human memory fades within 0.3 seconds",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "SPERLING_1960",
+        "ICONIC_2016"
+      ],
+      "editorial_rule": "Cannot generalize iconic trace to memory overall."
+    },
+    {
+      "id": "R18-12",
+      "claim": "Sperling's 1963 model separates stages of visual storage and coding",
+      "disposition": "independent_primary",
+      "source_ids": [
+        "SPERLING_1963"
+      ],
+      "editorial_rule": "Historical research model."
+    },
+    {
+      "id": "R18-13",
+      "claim": "2016 adaptive partial-report method refined estimation",
+      "disposition": "independent_context",
+      "source_ids": [
+        "ICONIC_2016"
+      ],
+      "editorial_rule": "Not clinical product evidence."
+    },
+    {
+      "id": "R18-14",
+      "claim": "2025 review situates iconic memory in broader visual-memory research",
+      "disposition": "independent_context",
+      "source_ids": [
+        "VISUAL_2025"
+      ],
+      "editorial_rule": "General context."
+    },
+    {
+      "id": "R18-15",
+      "claim": "A static three-row grid on the article reproduces the 1960 experiment",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "No randomized cue or controlled exposure."
+    },
+    {
+      "id": "R18-16",
+      "claim": "A webpage grid can diagnose IQ, ADHD or attention impairment",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "SPERLING_1960"
+      ],
+      "editorial_rule": "Unsupported psychological diagnosis."
+    },
+    {
+      "id": "R18-17",
+      "claim": "Final Vestige has a published Puységur source archive",
+      "disposition": "site_verified",
+      "source_ids": [
+        "PUYSEGUR"
+      ],
+      "editorial_rule": "Historical bridge only."
+    },
+    {
+      "id": "R18-18",
+      "claim": "Puységur's historical reports demonstrate a magnetism medical mechanism",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "PUYSEGUR"
+      ],
+      "editorial_rule": "Reports do not prove a mechanism."
+    },
+    {
+      "id": "R18-19",
+      "claim": "The Focus Fieldbook is already published on the existing site",
+      "disposition": "site_verified",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "editorial_rule": "No new signup funnel."
+    },
+    {
+      "id": "R18-20",
+      "claim": "The published Focus funnel uses existing Jetpack subscription",
+      "disposition": "site_verified",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "editorial_rule": "Preserve, do not replace welcome."
+    },
+    {
+      "id": "R18-21",
+      "claim": "Inspire3 officially lists Zen12 among its products",
+      "disposition": "seller_catalog",
+      "source_ids": [
+        "INSPIRE3"
+      ],
+      "editorial_rule": "Catalog record, not efficacy evidence."
+    },
+    {
+      "id": "R18-22",
+      "claim": "Zen12 seller advertises twelve levels",
+      "disposition": "seller_feature",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Use as seller-described format."
+    },
+    {
+      "id": "R18-23",
+      "claim": "Zen12 seller advertises roughly twelve-minute sessions",
+      "disposition": "seller_feature",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Length not effect."
+    },
+    {
+      "id": "R18-24",
+      "claim": "Zen12 seller advertises a guided meditation variant",
+      "disposition": "seller_feature",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Do not imply experienced the guide."
+    },
+    {
+      "id": "R18-25",
+      "claim": "Zen12 seller advertises relaxation music variant",
+      "disposition": "seller_feature",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Seller description."
+    },
+    {
+      "id": "R18-26",
+      "claim": "Zen12 seller advertises white noise variant",
+      "disposition": "seller_feature",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Seller description."
+    },
+    {
+      "id": "R18-27",
+      "claim": "Zen12 seller advertises nature sounds variant",
+      "disposition": "seller_feature",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Seller description."
+    },
+    {
+      "id": "R18-28",
+      "claim": "Zen12 official checkout advertises 48 MP3 files",
+      "disposition": "seller_checkout_snapshot",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_rule": "Re-verify terms before activation."
+    },
+    {
+      "id": "R18-29",
+      "claim": "Zen12 checkout advertises quick-start guide",
+      "disposition": "seller_checkout_snapshot",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_rule": "Fulfillment untested."
+    },
+    {
+      "id": "R18-30",
+      "claim": "Zen12 checkout advertises support call and bonuses",
+      "disposition": "seller_checkout_snapshot",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_rule": "Availability and eligibility unverified."
+    },
+    {
+      "id": "R18-31",
+      "claim": "Zen12 headphones optional under seller instructions",
+      "disposition": "seller_instruction",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Attribute merchant."
+    },
+    {
+      "id": "R18-32",
+      "claim": "Zen12 warns against listening while driving",
+      "disposition": "seller_safety_instruction",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Attribute merchant guidance."
+    },
+    {
+      "id": "R18-33",
+      "claim": "Zen12 twelve minutes proven equivalent to hour of meditation",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "MEDITATION_2024"
+      ],
+      "editorial_rule": "No exact-product trial showing equivalence."
+    },
+    {
+      "id": "R18-34",
+      "claim": "Zen12 automatically shifts purchaser brainwaves",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "BINAURAL_2023"
+      ],
+      "editorial_rule": "No SKU-specific validation."
+    },
+    {
+      "id": "R18-35",
+      "claim": "Zen12 eliminates anxiety or cures mental distress",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "FTC_HEALTH"
+      ],
+      "editorial_rule": "Medical/health claim not established."
+    },
+    {
+      "id": "R18-36",
+      "claim": "Zen12 professionally validated to improve memory",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "SPERLING_1960",
+        "ZEN12_ABOUT"
+      ],
+      "editorial_rule": "Sensory experiment unrelated to this product."
+    },
+    {
+      "id": "R18-37",
+      "claim": "2024 cognitive meta-analysis includes 111 mindfulness randomized trials",
+      "disposition": "independent_context",
+      "source_ids": [
+        "MEDITATION_2024"
+      ],
+      "editorial_rule": "Not product-specific."
+    },
+    {
+      "id": "R18-38",
+      "claim": "2024 mindfulness research was performed on Zen12",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "MEDITATION_2024"
+      ],
+      "editorial_rule": "Intervention transfer invalid."
+    },
+    {
+      "id": "R18-39",
+      "claim": "2023 EEG review found mixed/inconsistent entrainment evidence",
+      "disposition": "independent_context",
+      "source_ids": [
+        "BINAURAL_2023"
+      ],
+      "editorial_rule": "Not proof for Zen12."
+    },
+    {
+      "id": "R18-40",
+      "claim": "2023 binaural EEG review directly tested Zen12 MP3 files",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "BINAURAL_2023"
+      ],
+      "editorial_rule": "No substantiated product-specific testing."
+    },
+    {
+      "id": "R18-41",
+      "claim": "NCCIH publishes evidence and safety guidance on meditation",
+      "disposition": "independent_guidance",
+      "source_ids": [
+        "NCCIH"
+      ],
+      "editorial_rule": "Not merchant endorsement."
+    },
+    {
+      "id": "R18-42",
+      "claim": "Zen12 checkout displayed a timer and discount presentation Oct 31",
+      "disposition": "volatile_checkout_observation",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_rule": "No copied price, urgency or true scarcity inference."
+    },
+    {
+      "id": "R18-43",
+      "claim": "Zen12 checkout asked for mobile number and contact/payment information",
+      "disposition": "volatile_checkout_observation",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_rule": "Privacy objection; no PII collection by Final Vestige."
+    },
+    {
+      "id": "R18-44",
+      "claim": "Zen12 advertised refund promises guarantee unrestricted refunds",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_rule": "Terms and operation unverified."
+    },
+    {
+      "id": "R18-45",
+      "claim": "Zen12 official sample signup mentions newsletter",
+      "disposition": "seller_signup_notice",
+      "source_ids": [
+        "ZEN12_SAMPLE"
+      ],
+      "editorial_rule": "Separate vendor marketing relationship."
+    },
+    {
+      "id": "R18-46",
+      "claim": "FTC requires transparent material affiliate relationship near earning link",
+      "disposition": "regulatory_requirement",
+      "source_ids": [
+        "FTC_ENDORSEMENT"
+      ],
+      "editorial_rule": "Plain language next to CTA."
+    },
+    {
+      "id": "R18-47",
+      "claim": "Word 'affiliate' alone always suffices as clear consumer disclosure",
+      "disposition": "unsupported_suppress",
+      "source_ids": [
+        "FTC_ENDORSEMENT"
+      ],
+      "editorial_rule": "Explain commission plainly."
+    },
+    {
+      "id": "R18-48",
+      "claim": "FTC expects competent reliable science for objective health claims",
+      "disposition": "regulatory_requirement",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "editorial_rule": "Claims must be adequately substantiated."
+    },
+    {
+      "id": "R18-49",
+      "claim": "Affiliate account approval for exact Zen12 offer is verified",
+      "disposition": "partner_unverified_hold",
+      "source_ids": [],
+      "editorial_rule": "No written account-specific approval seen."
+    },
+    {
+      "id": "R18-50",
+      "claim": "Current authorized affiliate earning URL is verified",
+      "disposition": "partner_unverified_hold",
+      "source_ids": [],
+      "editorial_rule": "URL must stay null."
+    },
+    {
+      "id": "R18-51",
+      "claim": "Inspire3 affiliate-approved swipe/creative is verified",
+      "disposition": "partner_unverified_hold",
+      "source_ids": [],
+      "editorial_rule": "Requires authenticated access and license."
+    },
+    {
+      "id": "R18-52",
+      "claim": "Permission for affiliate promotion on TikTok/social is verified",
+      "disposition": "partner_unverified_hold",
+      "source_ids": [],
+      "editorial_rule": "Terms absent."
+    },
+    {
+      "id": "R18-53",
+      "claim": "Permission for affiliate promotion via Dispatch email is verified",
+      "disposition": "partner_unverified_hold",
+      "source_ids": [],
+      "editorial_rule": "No email campaign activation."
+    },
+    {
+      "id": "R18-54",
+      "claim": "Personal use or purchased MP3 testing is complete",
+      "disposition": "partner_unverified_hold",
+      "source_ids": [],
+      "editorial_rule": "Do not invent product experiences."
+    },
+    {
+      "id": "R18-55",
+      "claim": "Original Zen12 40s portrait film exists as prior separate review asset",
+      "disposition": "prior_asset_separate",
+      "source_ids": [],
+      "editorial_rule": "Reported in PR #229, currently unhosted."
+    },
+    {
+      "id": "R18-56",
+      "claim": "Original film has proven better conversion",
+      "disposition": "unsupported_suppress",
+      "source_ids": [],
+      "editorial_rule": "No live A/B performed."
+    },
+    {
+      "id": "R18-57",
+      "claim": "Purchase links or user tracking are enabled",
+      "disposition": "release_hold",
+      "source_ids": [],
+      "editorial_rule": "Explicitly OFF pending approvals."
+    },
+    {
+      "id": "R18-58",
+      "claim": "A referral click verifies an affiliate sale",
+      "disposition": "unsupported_suppress",
+      "source_ids": [],
+      "editorial_rule": "Only authorized partner sale reports might substantiate."
+    },
+    {
+      "id": "R18-59",
+      "claim": "Existing Jetpack welcome series can be replaced by a new affiliate list",
+      "disposition": "release_hold",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "editorial_rule": "Prohibited by directive."
+    },
+    {
+      "id": "R18-60",
+      "claim": "Staged page and film have passed production accessibility QA",
+      "disposition": "release_hold",
+      "source_ids": [],
+      "editorial_rule": "No WordPress/live browser evidence in this sprint."
+    }
+  ]
+}
