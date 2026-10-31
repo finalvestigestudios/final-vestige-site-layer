@@ -130,3 +130,15 @@
 @media(max-width:600px){.fv-hf__opening-inner,.fv-hf[data-fv-direction="museum"] .fv-hf__opening-inner{gap:30px;padding:52px 18px 48px}.fv-hf__opening h1{font-size:clamp(56px,13.2vw,81px)}.fv-hf .fv-hf__folio-arrival{min-height:405px;padding:17px}.fv-hf[data-fv-direction="observatory"] .fv-hf__folio-arrival{min-height:405px}.fv-hf__folio-stage{min-height:325px}.fv-hf__folio-note{width:87%;min-height:285px;padding:19px}.fv-hf__folio-original strong{font-size:37px}.fv-hf__folio-margin p{font-size:18px}.fv-hf__folio-note-number{font-size:85px}.fv-hf__folio-topline,.fv-hf__folio-bottomline{font-size:8px}.fv-hf__folio-index{font-size:7px}}
 @media(max-width:360px){.fv-hf__folio-bottomline{flex-direction:column;align-items:flex-start}.fv-hf__folio-topline-right{max-width:110px}}
 @media(prefers-reduced-motion:reduce){.fv-hf .fv-hf__folio-note,.fv-hf .fv-hf__folio-back{transition:none!important;animation:none!important}}
+
+
+/* Staging controls belong to the margin, not the main visual entrance. */
+.fv-hf .fv-hf__studio{background:#0c1211;border-bottom:1px solid #473d2f;color:#c3b69c;min-height:52px;gap:10px 20px;padding:9px clamp(18px,4.5vw,72px)}
+.fv-hf__studio-note{display:inline-flex;align-items:center;gap:10px;font:800 9px/1.4 var(--hf-mono);letter-spacing:.15em}
+.fv-hf__studio-note::before{content:"";display:block;width:7px;height:7px;background:#c7a66c;transform:rotate(45deg)}
+.fv-hf .fv-hf__studio-controls{gap:7px}
+.fv-hf .fv-hf__studio-controls button{min-height:35px;border:1px solid #514633;color:#d0c4ae;background:transparent;padding:8px 13px;letter-spacing:.02em}
+.fv-hf .fv-hf__studio-controls button[aria-pressed="true"]{border-color:#c7a66c;background:#c7a66c;color:#10120e}
+.fv-hf .fv-hf__studio-controls button:hover:not([aria-pressed="true"]){border-color:#9d855e;color:#fff3d7;background:#1c211b}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.fv-hf__folio-note{transition:transform .42s cubic-bezier(.2,.7,.2,1),box-shadow .42s ease}.fv-hf__folio-arrival:hover .fv-hf__folio-note{transform:rotate(-2deg) translateY(-4px);box-shadow:7px 25px 57px rgba(0,0,0,.55)}}
+@media(max-width:600px){.fv-hf .fv-hf__studio{padding:10px 18px;align-items:flex-start}.fv-hf .fv-hf__studio-controls button{flex:1 1 auto;min-height:37px;padding:9px 10px}}
