@@ -68,7 +68,7 @@ function negativeMutants(){
  const reject=(x,condition)=>{assert.ok(!condition(x));n++};
  reject(a.replace('disabled aria-disabled="true"',''),s=>/disabled aria-disabled="true"/.test(s));
  reject(a.replace('Commission disclosure:','Hidden commission:'),s=>s.indexOf('Commission disclosure:')>0);
- reject(a.replace('24 MP3s','18 MP3s'),s=>/Beginner[\s\S]*?24 MP3s/.test(s));
+ reject(a.replace('24 MP3s','18 MP3s'),s=>/<tr><th scope="row">Beginner<\/th><td>First six levels<\/td><td>24 MP3s<\/td>/.test(s));
  reject(a.replace('48 MP3s','96 MP3s'),s=>/Premium[\s\S]*?48 MP3s/.test(s));
  reject(a+'<script src="https://tracker.invalid/"></script>',s=>!/<script\b/i.test(s));
  reject(a+'<a href="https://zen12.com/?aff=unverified">Buy</a>',s=>!/<a[^>]+href="https?:\/\/zen12\.com/i.test(s));
