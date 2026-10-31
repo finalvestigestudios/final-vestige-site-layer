@@ -29,8 +29,8 @@ test('size and WordPress Jetpack transform knobs retain same-file identity',()=>
 });
 test('unknown selectors and signed tokens remain material',()=>{
  assert.equal(sameSource('https://historical.example.gov/image?token=abc','https://historical.example.gov/image?token=def'),false);
- assert.equal(imageIdentity('https://historical.example.gov/image?key=abc&width=960'),
-  'https://historical.example.gov/image?key=abc');
+ assert.equal(imageIdentity('https://historical.example.gov/image.jpg?key=abc&width=960'),
+  'https://historical.example.gov/image.jpg?key=abc');
 });
 test('dynamic image endpoints preserve all query selectors including width',()=>{
  assert.equal(sameSource('https://historical.example.gov/render?width=one',
