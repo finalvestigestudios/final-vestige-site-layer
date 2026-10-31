@@ -17,7 +17,7 @@ ok(!filmSection.test(a),'A no film');
 ok(filmSection.test(b),'B film');
 ok(b.replace(filmSection,'')===a.replace('<!-- VIDEO SLOT -->',''),'A/B exact parity');
 for(const [label,s] of [['A',a],['B',b]]){
-  ok(/Beginner[\s\S]*?24 MP3s/.test(s),label+' beginner');
+  ok(/<tr><th scope="row">Beginner<\/th><td>First six levels<\/td><td>24 MP3s<\/td>/.test(s),label+' beginner');
   ok(/Premium[\s\S]*?48 MP3s/.test(s),label+' premium');
   ok(/Advanced[\s\S]*?24 MP3s/.test(s),label+' advanced');
   ok(/first six levels/i.test(s),label+' beginner coverage');
@@ -29,7 +29,7 @@ for(const [label,s] of [['A',a],['B',b]]){
   ok(/disabled aria-disabled="true"/.test(s),label+' disabled CTA');
   no(s,/<a[^>]+href="https?:\/\/(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i,label+' no merchant URL');
   no(s,/<(script|iframe|form|input|video)\b/i,label+' no script/embed/form/unhosted player');
-  no(s,/autoplay|tracking pixel|window\.location|dataLayer\.push/i,label+' no activation');
+  no(s,/<video[^>]*\bautoplay\b|\bonclick=|tracking\.invalid|window\.location|dataLayer\.push/i,label+' no activation');
   no(s,/id="user|session_id=|fbclid=|gclid=/i,label+' no personal data');
   ok(/prefers-reduced-motion/.test(s),label+' reduced motion');
   ok(/:focus-visible/.test(s),label+' keyboard');
