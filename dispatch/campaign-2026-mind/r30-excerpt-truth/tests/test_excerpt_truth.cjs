@@ -32,5 +32,5 @@ for(const [name,attack] of attacks){const d=copy(data);attack(d);const bad=audit
 {const d=copy(manifest);d.issues[2].merchant_affiliate_url='https://merchant.example';verify(audit(data,d,sources).errors.length>0,'reject merchant activation');mutations++}
 {const d=copy(manifest);d.issues[4].editorial_cta='https://hypnosislive.com';verify(audit(data,d,sources).errors.length>0,'reject unapproved guide');mutations++}
 {const d=copy(manifest);d.mix.editorial=5;verify(audit(data,d,sources).errors.length>0,'reject 5-1 ratio');mutations++}
-{const d=[...sources];d[0]=d[0].replace('Simons','Unknown');verify(audit(data,manifest,d).errors.length>0,'reject missing proof');mutations++}
+{const d=[...sources];d[0]=d[0].replaceAll('Simons','Unknown');verify(audit(data,manifest,d).errors.length>0,'reject missing proof');mutations++}
 console.log(JSON.stringify({status:'PASS',assertions,adversarial_mutations_rejected:mutations,real_email_test:false,wordpress_write:false}));
