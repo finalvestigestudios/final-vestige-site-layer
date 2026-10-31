@@ -6,13 +6,14 @@ not a browser rendering engine or a human claim/safety review. External CSS can
 hide content; this guard alone never permits publication.
 """
 from __future__ import annotations
+
 from html.parser import HTMLParser
 import re
 
 TOKEN = re.compile(r'\{\{cite:([A-Za-z0-9_.-]+)\}\}')
 CANDIDATE = re.compile(r'\{\{\s*cite\b', re.IGNORECASE)
-# Tags with non-visible/inert/non-editorial text that cannot count as supporting
-# an article claim. Other markup is treated as visible text by the parser.
+# Text in these elements is not source-bearing editorial prose. Citations in
+# attributes, comments and the doctype are separately rejected by parity.
 INERT = frozenset({'script', 'style', 'template', 'textarea', 'noscript',
                    'svg', 'math', 'iframe', 'object', 'pre', 'code',
                    'head', 'title', 'select', 'option', 'optgroup',
@@ -27,15 +28,15 @@ class CitationPlacementHold(ValueError):
 
 
 def _hidden_attributes(attrs: list[tuple[str, str | None]]) -> bool:
-    """Reject common semantic or inline-style-hidden citation positions.
+    """Recognize HTML hidden/inert, ARIA hiding and inline CSS concealment.
 
-    Class-dependent visibility requires trusted browser computed styles; this
-    is intentionally NOT sufficient to establish visible or safe public copy.
+    We deliberately do NOT equate CSS classes to styles: that requires actual
+    computed-style evaluation and a trusted browser. That gap remains HOLD.
     """
     for key, value in attrs:
         key = key.lower()
         if key in ('hidden', 'inert'):
-            return True  # HTML boolean attr: hidden="false" is still hidden
+            return True  # boolean attributes: hidden="false" is STILL hidden
         if key == 'aria-hidden' and (value or '').strip().lower() == 'true':
             return True
         if key == 'style' and value:
@@ -60,6 +61,9 @@ class _TextPositions(HTMLParser):
         self.body = body
         self.line_starts = [0] + [m.end() for m in re.finditer(r'\n', body)]
         self.positions: list[int] = []
+        # Each entry tracks the element's own invisibility; all ancestors are
+        # checked in handle_data. An aria-hidden=false child cannot make a
+        # parent's hidden material visible.
         self.stack: list[tuple[str, bool]] = []
 
     def handle_starttag(self, tag, attrs):
@@ -72,8 +76,8 @@ class _TextPositions(HTMLParser):
     def handle_endtag(self, tag):
         tags = [item[0] for item in self.stack]
         if tag in tags:
-            # Close named ancestor and all nested scopes. Never discard an
-            # invisible outer ancestor before its own matching end tag.
+            # HTML may omit optional end tags; conservatively close the named
+            # ancestor and nested scopes, never discarding an outer hidden one.
             del self.stack[len(tags)-1-tags[::-1].index(tag):]
 
     def handle_data(self, data):
@@ -83,8 +87,6 @@ class _TextPositions(HTMLParser):
         if not (1 <= line <= len(self.line_starts)):
             raise CitationPlacementHold('parser location outside frozen HTML')
         start = self.line_starts[line-1] + col
-        # HTMLParser's data chunks must be exact raw slices. This also
-        # safeguards Unicode codepoint offsets, newlines and entity boundaries.
         if self.body[start:start+len(data)] != data:
             raise CitationPlacementHold('HTML parser/raw-source position mismatch')
         for match in TOKEN.finditer(data):
@@ -92,11 +94,10 @@ class _TextPositions(HTMLParser):
 
 
 def verified_citations(body: str) -> list[re.Match]:
-    """Return original regex matches iff each token is valid, visible HTML text.
+    """Return ordered original matches only when all tokens are editorial text.
 
-    Handles every full token occurrence, never deduplicating shared sources.
-    Raises on partial/misspelled citation starts even when the recognized-token
-    count is otherwise unchanged. Does not mutate body or sources.
+    All offsets refer to Unicode code points in the *unchanged* HTML. Neither
+    synthetic counts nor this gate's success imply factual/safety clearance.
     """
     if type(body) is not str:
         raise CitationPlacementHold('article HTML must be an original string')
@@ -105,8 +106,6 @@ def verified_citations(body: str) -> list[re.Match]:
     candidates = [m.start() for m in CANDIDATE.finditer(body)]
     if candidates != starts:
         raise CitationPlacementHold('unrecognized or malformed citation token start')
-    # For exact offsets in HTMLParser data, these positions are Unicode
-    # codepoints (not encoded UTF-8 byte offsets), matching R26 packet claims.
     parser = _TextPositions(body)
     try:
         parser.feed(body)
