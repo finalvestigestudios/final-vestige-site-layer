@@ -13,7 +13,7 @@ function audit(files){
  check('sources present with links',/gutenberg.org/.test(art)&&/wellcomecollection.org/.test(art)&&/jameslindlibrary.org/.test(art));
  check('full HTML includes article sections',html.match(/class="fv-section"/g)?.length>=10);
  check('single H1',html.match(/<h1\b/g)?.length===1);
- check('WordPress compatible: no nested main landmark',!/<main\\b/i.test(html)&&/<article\\b/.test(html));
+ check('WordPress compatible: no nested main landmark',!/<main\b/i.test(html)&&/<article\b/.test(html));
  check('H1 meaningful',/<h1>The Blindfold Was the Evidence<\/h1>/.test(html));
  check('nav has accessible name',/aria-label="On this investigation"/.test(html));
  check('HTML document unique IDs',((a)=>a.length===new Set(a).size)([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1])));
