@@ -29,8 +29,12 @@ function contentQuery(p){
  // Only established image resizing/format knobs are excluded from file identity.
  const transforms=new Set(['width','height','w','h','fit','resize','crop','quality','q','ssl','auto','format','fm']);
  const staticImage=/\.(?:jpe?g|png|webp|gif|svg|avif|bmp|tiff?)$/i.test(p.pathname);
- // A dynamic /render endpoint may use ANY query parameter (even width) as a record selector.
- const selectors=[...p.searchParams].filter(([k])=>!staticImage||!transforms.has(k.toLowerCase()));
+ // Dynamic endpoints may use ANY parameter as a photo selector, even 'width'.
+ // Navy's documented imageDownload endpoint specifically uses image= for archival identity,
+ // while rendition= selects the same photograph's delivery size/format.
+ const navyRendition=p.hostname==='www.history.navy.mil'&&p.pathname==='/bin/imageDownload';
+ const selectors=[...p.searchParams].filter(([k])=>
+  !(staticImage&&transforms.has(k.toLowerCase()))&&!(navyRendition&&k.toLowerCase()==='rendition'));
  return selectors.length?'?'+new URLSearchParams(selectors).toString():'';
 }
 function imageIdentity(url){
