@@ -45,9 +45,11 @@ class ArtifactDriftRegression(unittest.TestCase):
             return SimpleNamespace(returncode=0)
         evidence = gate.verify(self.root, smoke=True, platform_name="nt", runner=runner)
         self.assertEqual(seen, list(gate.EXPECTED))
-        self.assertEqual(evidence["status"], "windows_smoke_passed")
+        self.assertEqual(evidence["status"], "synthetic_smoke_only")
+        self.assertFalse(evidence["windows_executables_verified"])
+        self.assertTrue(evidence["smoke_simulated"])
         self.assertFalse(evidence["release_authorized"])
-        self.assertTrue(all(r["smoke"] == "passed" for r in evidence["artifacts"]))
+        self.assertTrue(all(r["smoke"] == "simulated" for r in evidence["artifacts"]))
 
     def test_self_modifying_binary_rejected_after_zero_exit(self):
         def runner(args, **kwargs):

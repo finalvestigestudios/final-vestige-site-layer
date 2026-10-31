@@ -50,7 +50,9 @@ class ReleaseGateR9Tests(unittest.TestCase):
             return SimpleNamespace(returncode=0)
         result = gate.verify(self.root, smoke=True, platform_name="nt", runner=runner)
         self.assertEqual(seen, list(gate.EXPECTED))
-        self.assertEqual(result["status"], "windows_smoke_passed")
+        self.assertEqual(result["status"], "synthetic_smoke_only")
+        self.assertFalse(result["windows_executables_verified"])
+        self.assertTrue(result["smoke_simulated"])
         self.assertFalse(result["release_authorized"])
 
     def test_integrity_failures_refuse_to_execute_any_binary(self):

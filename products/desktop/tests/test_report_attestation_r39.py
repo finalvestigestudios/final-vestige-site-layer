@@ -36,7 +36,8 @@ class ReleaseReportAttestationR39Tests(unittest.TestCase):
         self.data = {
             "schema": 1, "status": "integrity_only", "release_authorized": False,
             "premium_entitlement_verified": False, "codesigning_verified": False,
-            "malware_scan_verified": False, "verified_utc": "2026-10-29T15:01:02+00:00",
+            "malware_scan_verified": False, "windows_executables_verified": False,
+            "smoke_simulated": False, "verified_utc": "2026-10-29T15:01:02+00:00",
             "checksums_sha256": self.current["checksums_sha256"],
             "artifacts": copy.deepcopy(self.current["artifacts"]),
         }
@@ -78,6 +79,7 @@ class ReleaseReportAttestationR39Tests(unittest.TestCase):
 
     def test_historical_smoke_fields_are_never_independently_attested(self):
         self.data["status"] = "windows_smoke_passed"
+        self.data["windows_executables_verified"] = True
         for item in self.data["artifacts"]:
             item["smoke"] = "passed"
             item["seconds"] = 0.125
@@ -170,6 +172,7 @@ class ReleaseReportAttestationR39Tests(unittest.TestCase):
 
     def test_rejects_nonfinite_negative_and_bool_smoke_durations(self):
         self.data["status"] = "windows_smoke_passed"
+        self.data["windows_executables_verified"] = True
         for item in self.data["artifacts"]:
             item["smoke"] = "passed"
             item["seconds"] = 0.01
@@ -177,6 +180,56 @@ class ReleaseReportAttestationR39Tests(unittest.TestCase):
             self.data["artifacts"][0]["seconds"] = seconds
             self.write()
             with self.subTest(seconds=seconds), self.assertRaises(att.ReportAttestationError):
+                self.check()
+
+    def test_rejects_synthetic_runner_report_as_native_evidence(self):
+        self.data["status"] = "synthetic_smoke_only"
+        self.data["smoke_simulated"] = True
+        for item in self.data["artifacts"]:
+            item["smoke"] = "simulated"
+            item["seconds"] = 0.01
+        self.write()
+        with self.assertRaisesRegex(att.ReportAttestationError, "synthetic"):
+            self.check()
+
+    def test_rejects_forged_native_verified_flag_on_integrity_report(self):
+        self.data["windows_executables_verified"] = True
+        self.write()
+        with self.assertRaisesRegex(att.ReportAttestationError, "provenance"):
+            self.check()
+
+    def test_rejects_missing_native_verified_flag_on_windows_smoke(self):
+        self.data["status"] = "windows_smoke_passed"
+        for item in self.data["artifacts"]:
+            item["smoke"] = "passed"
+            item["seconds"] = 0.01
+        self.write()
+        with self.assertRaisesRegex(att.ReportAttestationError, "provenance"):
+            self.check()
+
+    def test_rejects_spurious_simulated_flag_on_integrity_report(self):
+        self.data["smoke_simulated"] = True
+        self.write()
+        with self.assertRaisesRegex(att.ReportAttestationError, "provenance"):
+            self.check()
+
+    def test_rejects_nonstrict_provenance_flag_types(self):
+        for key in ("smoke_simulated", "windows_executables_verified"):
+            for invalid in ("false", 0, None):
+                with self.subTest(key=key, invalid=invalid):
+                    candidate = copy.deepcopy(self.data)
+                    candidate[key] = invalid
+                    self.write(candidate)
+                    with self.assertRaises(att.ReportAttestationError):
+                        self.check()
+
+    def test_rejects_missing_provenance_field(self):
+        for key in ("smoke_simulated", "windows_executables_verified"):
+            candidate = copy.deepcopy(self.data)
+            candidate.pop(key)
+            self.write(candidate)
+            with self.subTest(key=key), self.assertRaisesRegex(
+                    att.ReportAttestationError, "schema"):
                 self.check()
 
     def test_inventory_mismatch_fails(self):

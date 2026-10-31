@@ -81,7 +81,9 @@ class CandidateGateIntegrationR37Tests(unittest.TestCase):
             return SimpleNamespace(returncode=0)
         result = verify(self.root, smoke=True, platform_name="nt", runner=runner)
         self.assertEqual(seen, list(EXPECTED))
-        self.assertEqual(result["status"], "windows_smoke_passed")
+        self.assertEqual(result["status"], "synthetic_smoke_only")
+        self.assertFalse(result["windows_executables_verified"])
+        self.assertTrue(result["smoke_simulated"])
         self.assertFalse(result["release_authorized"])
         self.assertFalse(result["premium_entitlement_verified"])
 
