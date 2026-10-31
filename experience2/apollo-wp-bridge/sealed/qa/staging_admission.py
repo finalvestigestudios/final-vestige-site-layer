@@ -25,6 +25,7 @@ from media_rights_ledger import build_media_rights
 from custody_receipts import build_receipts, EXPORT_NAMES
 from wayfinder_r22 import build_wayfinder, SECTIONS
 from touch_targets_r24 import build_touch_targets
+from print_source_transcript_r25 import build_print_transcript
 
 HERE = Path(__file__).resolve().parent
 GENERATED = HERE.parent.parent / 'generated'
@@ -175,6 +176,15 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         html.count(b'id="fv-ex2-media-rights"') != 1 or
         b'{{FV_EX2_RIGHTS_EXPORT}}' in html):
         raise AdmissionError('Media rights source-custody/HOLD contract incomplete')
+    # R25: check the actual served and sealed print transcript, not just its file hash.
+    print_html, print_css, print_receipt = build_print_transcript(generated=expected_dir)
+    if (headers.get('x-fv-ex2-apollo-print-ledger-sha256') != print_receipt['html_sha256']
+        or headers.get('x-fv-ex2-apollo-print-css-sha256') != print_receipt['css_sha256']
+        or html.count(b'id="fv-ex2-print-transcript"') != 1
+        or html.count(b'data-r25-print-record=') != 6
+        or html.count(b'LINK ONLY \xe2\x80\x94 IMAGE REUSE NOT CLEARED') != 6
+        or print_html.encode('utf-8') not in html):
+        raise AdmissionError('R25 printed six-source ledger incomplete or source-tampered')
     # R21: the seven hashes shown to an editor must equal the seven bytes
     # independently validated on this origin below; they are not signatures.
     raw_exports = {name: ((expected_dir/name).read_bytes()
@@ -305,6 +315,9 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
             'custody_receipts_export_count':7,
             'wayfinder_html_sha256':wayfinder_receipt['html_sha256'],
             'r24_touch_target_css_sha256':touch_receipt['css_sha256'],
+            'r25_print_ledger_sha256':print_receipt['html_sha256'],
+            'r25_print_css_sha256':print_receipt['css_sha256'],
+            'r25_no_nonce_in_print':True,
             'wayfinder_destinations_verified':len(SECTIONS),
             'photos_admitted_for_reuse':0,'media_rights_review_holds':6,
             'geographic_pins_admitted':0,'geographic_edges_admitted':0,

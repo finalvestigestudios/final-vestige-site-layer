@@ -30,6 +30,30 @@ class TestStagingAdmission(unittest.TestCase):
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
 
+    def test_r25_served_print_custody_is_verified(self):
+        r = admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
+        self.assertEqual(len(r['r25_print_ledger_sha256']),64)
+        self.assertEqual(len(r['r25_print_css_sha256']),64)
+        self.assertTrue(r['r25_no_nonce_in_print'])
+
+    def test_r25_print_header_downgrade_denied(self):
+        def tamper(url,cookie=''):
+            code,headers,body = no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-print-ledger-sha256' in headers:
+                headers['x-fv-ex2-apollo-print-ledger-sha256']='0'*64
+            return code,headers,body
+        with self.assertRaisesRegex(AdmissionError,'printed six-source ledger'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True,fetch=tamper)
+
+    def test_r25_print_rights_decision_tamper_denied(self):
+        def tamper(url,cookie=''):
+            code,headers,body = no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-print-ledger-sha256' in headers:
+                body=body.replace(b'LINK ONLY \xe2\x80\x94 IMAGE REUSE NOT CLEARED',b'FULL IMAGE REUSE CLEARED',1)
+            return code,headers,body
+        with self.assertRaisesRegex(AdmissionError,'printed six-source ledger'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True,fetch=tamper)
+
     def test_r24_served_touch_css_custody_and_downgrade(self):
         r = admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
         self.assertEqual(len(r['r24_touch_target_css_sha256']),64)

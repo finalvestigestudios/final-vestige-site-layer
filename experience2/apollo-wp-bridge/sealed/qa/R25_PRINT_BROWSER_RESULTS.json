@@ -1,0 +1,163 @@
+{
+  "axe_core": "NOT_EXECUTED_NO_PINNED_VENDOR_BUNDLE",
+  "browser": "system /usr/bin/chromium",
+  "canonical_apollo_pin": "74375657f2cdaac0710f94c6de6c24534ee06858",
+  "environment": "real Chromium Playwright page.set_content; PHP WordPress shim; not genuine WP/HTTP/CSP",
+  "hosted_core_web_vitals": "NOT_MEASURED",
+  "measures": [
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 460,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 320,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 320
+    },
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 176,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 360,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 360
+    },
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 160,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 390,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 390
+    },
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 176,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 768,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 768
+    },
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 180,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 1024,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 1024
+    },
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 220,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 1440,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 1440
+    },
+    {
+      "lab_cls": 0,
+      "lab_lcp_ms": 180,
+      "nasa_source_urls": 6,
+      "no_download_nonce": true,
+      "page_errors": [],
+      "print_opaque_image_count": 0,
+      "print_records": 6,
+      "print_root_width": 1920,
+      "screen_records": 6,
+      "status": "PASS",
+      "styles": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "display": "block",
+        "font": "Georgia, serif"
+      },
+      "width": 1920
+    }
+  ],
+  "no_javascript_print": "PASS",
+  "private_plugin_sha256": "ff564e07d4e132bd2860492773e2636901128ca3021f0009f7ca5b2572f7e464",
+  "screenshots": [
+    {
+      "filename": "r25-print-ledger-390.png",
+      "sha256": "ff7ca017a4007218b453a2498afae6cf4ee0a9613549fddc6b07fbb194435ddd"
+    },
+    {
+      "filename": "r25-print-ledger-1440.png",
+      "sha256": "6a0fc0d45514e8c2f1b35997fd2393536b39c43b223b2252adf86b29869ccae9"
+    }
+  ],
+  "widths": [
+    320,
+    360,
+    390,
+    768,
+    1024,
+    1440,
+    1920
+  ]
+}
