@@ -5,8 +5,8 @@ The marker email/domain/address values are deliberately synthetic.
 """
 import importlib.util
 import json
-from email.message import EmailMessage
 import re
+from email.message import EmailMessage
 from pathlib import Path
 import unittest
 
