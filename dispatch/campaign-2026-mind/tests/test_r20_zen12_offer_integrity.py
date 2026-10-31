@@ -38,7 +38,7 @@ class Zen12R20Guards(unittest.TestCase):
             self.assertIn(term, self.source)
 
     def test_04_inventory_attributed_to_seller(self):
-        self.assertIn('According to its current official About and checkout pages', self.source)
+        self.assertIn('Its official [sales page](https://zen12.com/) and [About page](https://zen12.com/about)', self.source)
         self.assertIn('checkable descriptions', self.source)
 
     def test_05_time_equivalence_separated_from_product_proof(self):
