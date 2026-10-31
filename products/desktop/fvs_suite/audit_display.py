@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import unicodedata
 
+from .unicode_hazards import is_visually_blank_filler
+
 
 _HIDDEN_CATEGORIES = frozenset(("Cc", "Cf", "Cs", "Co", "Cn", "Zl", "Zp"))
 
@@ -22,6 +24,7 @@ def _escape_source_character(character: str) -> bool:
         or 0x180B <= codepoint <= 0x180F  # Mongolian variation selectors.
         or 0xFE00 <= codepoint <= 0xFE0F  # Standard variation selectors.
         or 0xE0100 <= codepoint <= 0xE01EF  # Supplementary selectors.
+        or is_visually_blank_filler(character)  # Non-control blank glyphs.
     )
 
 
