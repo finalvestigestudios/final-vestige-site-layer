@@ -111,8 +111,14 @@ function classifyImages(stored,rendered,network,pageVerified){
   const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&
    (reqError||(responseStatus!==null&&responseStatus>=400)||incompatibleResponse));
   const failureKind=visiblyBroken?(reqError?'network_error':responseStatus>=400?'http_error':'non_image_error_payload'):null;
-  const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth>0&&
-   (!req||finalNetworkIdentityVerified));
+  // Decoded pixels without independent successful CDP image network evidence are
+  // NOT proof that the historical source loaded (even if naturalWidth > 0).
+  const loadedNetworkProof=!!(req&&finalNetworkIdentityVerified&&responseStatus===200&&
+   responseMime&&responseMime.startsWith('image/')&&!reqError&&
+   Number.isSafeInteger(req.encodedDataLength)&&req.encodedDataLength>0&&
+   req.was_cached!==true&&req.from_disk_cache!==true&&req.from_service_worker!==true);
+  const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&
+   r.naturalWidth>0&&loadedNetworkProof);
   let state='unverified';
   if(!pageVerified)state='page_not_verified';
   else if(!r)state='not_mapped';
@@ -121,12 +127,15 @@ function classifyImages(stored,rendered,network,pageVerified){
   else if(visiblyBroken)state='confirmed_broken_in_probe_browser';
   else if(finalRedirectIdentityUnverified)state='redirected_image_identity_unverified';
   else if(verifiedLoaded)state='loaded_in_probe_browser';
+  else if(r.complete===true&&r.naturalWidth>0)state='decoded_without_verified_response';
   else if(r.complete===true&&r.naturalWidth===0)state='zero_intrinsic_width_needs_review';
   else state='pending_lazy_or_incomplete';
   return{image_key:j.key,match:j.match,stored_url:s.source_url,
    rendered_index:Number.isSafeInteger(r?.index)&&r.index>=0?r.index:null,
    rendered_alt:r?.alt??null,rendered_src:r?.src||null,
-   current_src:r?.currentSrc||null,current_src_identity_verified:identityVerified,complete:r?.complete??null,natural_width:r?.naturalWidth??null,
+   current_src:r?.currentSrc||null,current_src_identity_verified:identityVerified,
+   loaded_network_proof_verified:loadedNetworkProof,
+   complete:r?.complete??null,natural_width:r?.naturalWidth??null,
    request_url:req?.url||null,network_final_identity_verified:req?finalNetworkIdentityVerified:null,
    redirected_image_identity_unverified:finalRedirectIdentityUnverified,
    http_status:responseStatus,response_mime_type:responseMime,
