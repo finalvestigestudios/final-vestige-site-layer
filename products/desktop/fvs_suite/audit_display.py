@@ -52,7 +52,6 @@ def visible_source_text(value: str) -> str:
     return "".join(parts)
 
 
-
 def visible_source_label_list(values: Iterable[str]) -> str:
     """Deterministic, readable source-document list for human audit reports.
 
