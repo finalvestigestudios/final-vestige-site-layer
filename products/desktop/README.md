@@ -11,6 +11,21 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R79 premium human-review Unicode custody (pre-release)
+
+GrantAudit Studio Pro and ProcureGuard Studio Pro now reject hidden Unicode controls,
+bidirectional display overrides/isolates, line/paragraph separators, malformed
+surrogates and variation selectors in reviewer names or rationales before a
+human review journal is appended. The same boundary checks existing journal
+records, including events with recomputed SHA-256 chains, rather than allowing
+misleading display text to be exported. Readable multilingual letters and
+combining accents remain supported; no automated payment, grant eligibility,
+or compliance decision is introduced. Older journals containing these characters
+must be inspected manually, not silently rewritten. See
+[R79 premium review text custody](docs/PREMIUM_REVIEW_TEXT_CUSTODY_R79.md).
+Only the extracted text-validator boundary has passed isolated normal/-OO
+Linux tests; full repository integration tests and Windows binaries are pending.
+
 ## CSV headers
 
 Headers are case-insensitive; spaces are accepted in place of underscores. The importer also recognizes common synonyms listed in fvs_suite/engine.py.
