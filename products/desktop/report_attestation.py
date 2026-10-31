@@ -25,7 +25,8 @@ UTC_SECONDS = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00$")
 REPORT_KEYS = frozenset({
     "schema", "status", "release_authorized", "premium_entitlement_verified",
     "codesigning_verified", "malware_scan_verified", "verified_utc",
-    "checksums_sha256", "artifacts",
+    "checksums_sha256", "artifacts", "windows_executables_verified",
+    "smoke_simulated",
 })
 
 
@@ -104,7 +105,15 @@ def _validate_report(raw: bytes) -> dict:
     if type(value["schema"]) is not int or value["schema"] != 1:
         raise ReportAttestationError("Unsupported verification schema")
     if value["status"] not in ("integrity_only", "windows_smoke_passed"):
-        raise ReportAttestationError("Unknown verification status")
+        # Synthetic runner results are useful in regression tests but are
+        # never valid retained Windows release-candidate evidence.
+        raise ReportAttestationError("Unknown or synthetic verification status")
+    if (type(value["windows_executables_verified"]) is not bool
+            or type(value["smoke_simulated"]) is not bool
+            or value["smoke_simulated"] is not False
+            or value["windows_executables_verified"] is not
+               (value["status"] == "windows_smoke_passed")):
+        raise ReportAttestationError("Untrusted native Windows smoke provenance")
     for key in ("release_authorized", "premium_entitlement_verified",
                 "codesigning_verified", "malware_scan_verified"):
         if value[key] is not False:
