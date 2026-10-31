@@ -108,6 +108,10 @@ def run(*, require_axe=False):
             page.keyboard.press('Enter')
             assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document', (width, 'skip did not focus main')
             assert page.locator('section#atlas').count() == 1
+            assert page.locator('#source-concordance [data-concordance-record]').count() == 6
+            assert page.locator('#source-concordance details > summary').count() == 6
+            page.locator('#source-concordance details > summary').first.click()
+            assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
             assert page.locator('[data-ex2-trail-card]').count() == 6
             assert page.locator('[data-ex2-response-item]').count() == 6
             assert page.locator('[data-ex2-atlas-item]').count() == 6
@@ -143,7 +147,8 @@ def run(*, require_axe=False):
                 for title,selector in [('hero','.fv-ex2-apollo .ex2-hero'),
                                        ('trails','.fv-ex2-apollo #documentary-trails'),
                                        ('research','.fv-ex2-apollo #research-desk'),
-                                       ('atlas','.fv-ex2-apollo #atlas')]:
+                                       ('atlas','.fv-ex2-apollo #atlas'),
+                                       ('concordance','.fv-ex2-apollo #source-concordance')]:
                     dest=OUT / f'exact-{title}-{width}.png'
                     page.locator(selector).screenshot(path=str(dest),animations='disabled', timeout=15000)
                     report['screenshots'].append({'name':dest.name,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
@@ -175,10 +180,13 @@ def run(*, require_axe=False):
         assert page.locator('[data-ex2-trail-card]:visible').count() == 6
         assert page.locator('[data-ex2-response-item]:visible').count() == 6
         assert page.locator('[data-ex2-atlas-item]:visible').count() == 6
+        assert page.locator('#source-concordance [data-concordance-record]').count() == 6
         page.keyboard.press('Tab')
         assert page.evaluate('document.activeElement.textContent.trim()') == 'Skip to Apollo evidence'
         page.keyboard.press('Enter')
         assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document'
+        page.locator('#source-concordance summary').first.click()
+        assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
         assert not page.locator('[data-ex2-trail-controls]').is_visible()
         page.locator('#trail-02 summary').click()
         assert page.locator('#trail-02 details').evaluate('(n)=>n.open')
@@ -191,6 +199,8 @@ def run(*, require_axe=False):
         assert page.locator('[data-ex2-trail-card]:visible').count() == 1
         page.locator('#trail-04 summary').tap()
         assert page.locator('#trail-04 details').evaluate('(n)=>n.open')
+        page.locator('#source-concordance summary').first.tap()
+        assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
         report['touch']=True
         ctx.close()
         # Zoom reflow is a synthetic viewport approximation, not an actual browser UI zoom.
