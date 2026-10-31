@@ -22,7 +22,9 @@ class PriceReviewContextR87(unittest.TestCase):
         self.assertTrue(price_exceeds_tolerance(
             Decimal("102.02"), Decimal("100.01")))
         self.assertFalse(price_exceeds_tolerance(
-            Decimal("102.0002"), Decimal("100.01")))
+            Decimal("102.0102"), Decimal("100.01")))
+        self.assertTrue(price_exceeds_tolerance(
+            Decimal("102.01020001"), Decimal("100.01")))
         self.assertFalse(price_exceeds_tolerance(
             Decimal("0.01"), Decimal("0.00")))
 
@@ -34,7 +36,7 @@ class PriceReviewContextR87(unittest.TestCase):
                 self.assertTrue(price_exceeds_tolerance(
                     Decimal("102.02"), Decimal("100.01")))
                 self.assertFalse(price_exceeds_tolerance(
-                    Decimal("102.0002"), Decimal("100.01")))
+                    Decimal("102.0102"), Decimal("100.01")))
                 self.assertEqual(ctx.prec, precision)
                 self.assertEqual(ctx.rounding, ROUND_DOWN)
 
@@ -46,7 +48,7 @@ class PriceReviewContextR87(unittest.TestCase):
                 self.assertTrue(policy.outside(
                     Decimal("102.02"), Decimal("100.01")))
                 self.assertFalse(policy.outside(
-                    Decimal("102.0002"), Decimal("100.01")))
+                    Decimal("102.0102"), Decimal("100.01")))
 
     def test_custom_policy_remains_review_only(self):
         strict = procurement.PricePolicy(
