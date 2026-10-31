@@ -97,6 +97,8 @@ function fv_ex2_apollo_sealed_page() {
     nocache_headers();
     header('X-FV-EX2-Apollo-Source-Head: ' . FV_EX2_APOLLO_SOURCE_HEAD);
     header('X-FV-EX2-Apollo-Fragment-SHA256: ' . FV_EX2_APOLLO_SHA256['fragment.html']);
+    header('X-FV-EX2-Apollo-CSS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.css']);
+    header('X-FV-EX2-Apollo-JS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.js']);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
     header('X-Content-Type-Options: nosniff');
