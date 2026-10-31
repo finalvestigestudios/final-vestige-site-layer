@@ -11,7 +11,7 @@ PILOT=Path(__file__).resolve().parent
 START='<details class="fvz12__film">'
 END='</details>'
 VIDEO_SHA='eb4a3f7e7d95ce5a6ff1ba08c83e66a4f7cc94cb1e3784bd51a330650c41ab00'
-POSTER_SHA='5b271178d83735c46df8c802d526ffcdeb01643b0b1672d32d335fb1059faa'
+POSTER_SHA='5b271178d83735c46df8c802d526ffcdeb01643b0b0b1672d32d335fb1059faa'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def html_page(fragment):
     fragment=fragment.replace('<!-- wp:html -->','').replace('<!-- /wp:html -->','')
