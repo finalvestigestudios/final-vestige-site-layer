@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "source_commit_sha": "903e2ce817659bf3d4e5cf7fa44cdda2682a17aa",
+  "as_of": "2026-10-30",
+  "authority": "EXACT_GITHUB_BLOB_AND_SOURCE_SCOPE_CUSTODY_NOT_HUMAN_FACT_OR_SAFETY_REVIEW",
+  "release_state": "HOLD",
+  "may_publish": false,
+  "methods": [
+    "Fetch exact recursive Git tree",
+    "Verify 36 content body/metadata pairs against article-evidence-lock SHA AND bytes",
+    "Check source fragment SHA against source-file manifest",
+    "Fetch and compare all 224 physical source records against exact 30 shared-URL crosswalk group variants",
+    "Confirm 35 unique article slug taxonomy and no new untracked article input files"
+  ],
+  "counts": {
+    "articles": 35,
+    "tools": 1,
+    "frozen_records": 36,
+    "metadata_paths": 36,
+    "body_paths": 36,
+    "physical_sources": 224,
+    "distinct_source_urls": 186,
+    "duplicate_url_groups": 30,
+    "human_url_verification_rows_seen": 0,
+    "source_row_counts": {
+      "base": 34,
+      "start": 27,
+      "shelter": 31,
+      "food": 30,
+      "hist-food": 28,
+      "health": 21,
+      "hist-home": 27,
+      "hist-field": 26
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "corpus_files": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "origin": "health",
+      "body_sha": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "meta_sha": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "bytes": 27593
+    },
+    {
+      "slug": "family-communication-plan",
+      "origin": "shelter",
+      "body_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "meta_sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "bytes": 26704
+    },
+    {
+      "slug": "fire-making-across-time",
+      "origin": "hist-field",
+      "body_sha": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "meta_sha": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "bytes": 27796
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "origin": "food",
+      "body_sha": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "meta_sha": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "bytes": 25929
+    },
+    {
+      "slug": "go-bags",
+      "origin": "start",
+      "body_sha": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "meta_sha": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "bytes": 28812
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "origin": "hist-food",
+      "body_sha": "273b246a069e834d8476bfc2854308732f5137ab",
+      "meta_sha": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "bytes": 21133
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "origin": "shelter",
+      "body_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "meta_sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "bytes": 29377
+    },
+    {
+      "slug": "homemade-water-filters",
+      "origin": "base",
+      "body_sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+      "meta_sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "bytes": 17597
+    },
+    {
+      "slug": "household-emergency-plan",
+      "origin": "start",
+      "body_sha": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "meta_sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "bytes": 26490
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "origin": "hist-food",
+      "body_sha": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "meta_sha": "3a350aedac67ea89c6995831032367634248c9e9",
+      "bytes": 21015
+    },
+    {
+      "slug": "making-water-safer",
+      "origin": "base",
+      "body_sha": "f85d158fc8752200a227282e640f6df48277daf5",
+      "meta_sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+      "bytes": 24473
+    },
+    {
+      "slug": "medication-and-devices",
+      "origin": "health",
+      "body_sha": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "meta_sha": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "bytes": 32693
+    },
+    {
+      "slug": "navigation-before-gps",
+      "origin": "hist-field",
+      "body_sha": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "meta_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "bytes": 24591
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "origin": "shelter",
+      "body_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "meta_sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "bytes": 35996
+    },
+    {
+      "slug": "pantry-rotation",
+      "origin": "food",
+      "body_sha": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "meta_sha": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "bytes": 25808
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "origin": "hist-food",
+      "body_sha": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "meta_sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "bytes": 22057
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "origin": "hist-home",
+      "body_sha": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "meta_sha": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "bytes": 21102
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "origin": "hist-field",
+      "body_sha": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "meta_sha": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "bytes": 25035
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "origin": "hist-food",
+      "body_sha": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "meta_sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "bytes": 21120
+    },
+    {
+      "slug": "preparedness-real-households",
+      "origin": "start",
+      "body_sha": "70d03c366e10db623929f118501becfa26c48bab",
+      "meta_sha": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "bytes": 28217
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "origin": "food",
+      "body_sha": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "meta_sha": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "bytes": 29502
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "origin": "hist-home",
+      "body_sha": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "meta_sha": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "bytes": 22318
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "origin": "hist-home",
+      "body_sha": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "meta_sha": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "bytes": 21161
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "origin": "food",
+      "body_sha": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "meta_sha": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "bytes": 24661
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "origin": "base",
+      "body_sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "meta_sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+      "bytes": 24268
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "origin": "hist-home",
+      "body_sha": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "meta_sha": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "bytes": 24322
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "origin": "shelter",
+      "body_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "meta_sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "bytes": 27780
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "origin": "hist-food",
+      "body_sha": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "meta_sha": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "bytes": 22639
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "origin": "hist-food",
+      "body_sha": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "meta_sha": "16223945e83f95b349acf09a2b684c09326550c0",
+      "bytes": 19704
+    },
+    {
+      "slug": "three-day-kit",
+      "origin": "start",
+      "body_sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "meta_sha": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+      "bytes": 28648
+    },
+    {
+      "slug": "two-week-water-storage",
+      "origin": "base",
+      "body_sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "meta_sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "bytes": 14904
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "origin": "health",
+      "body_sha": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "meta_sha": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "bytes": 24389
+    },
+    {
+      "slug": "water-advisories-explained",
+      "origin": "base",
+      "body_sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "meta_sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "bytes": 16205
+    },
+    {
+      "slug": "water-math",
+      "origin": "base",
+      "body_sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "meta_sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "bytes": 16000
+    },
+    {
+      "slug": "water-planner",
+      "origin": "base",
+      "body_sha": "a738d1f7824437911064d425868ed3d709326027",
+      "meta_sha": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+      "bytes": 9743
+    },
+    {
+      "slug": "water-purification-through-history",
+      "origin": "hist-home",
+      "body_sha": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "meta_sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "bytes": 27482
+    }
+  ],
+  "unresolved_source_group_urls": [
+    "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+    "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+    "https://nchfp.uga.edu/",
+    "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+    "https://nchfp.uga.edu/how/dry/recipes/jerky",
+    "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+    "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+    "https://www.cdc.gov/carbon-monoxide/about/index.html",
+    "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+    "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+    "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+    "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+    "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+    "https://www.loc.gov/item/2002564479/",
+    "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+    "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+    "https://www.nps.gov/places/salt-works-oregon.htm",
+    "https://www.ready.gov/alerts",
+    "https://www.ready.gov/evacuation",
+    "https://www.ready.gov/food",
+    "https://www.ready.gov/kit",
+    "https://www.ready.gov/people-disabilities",
+    "https://www.ready.gov/plan",
+    "https://www.ready.gov/power-outages",
+    "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+    "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+    "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+    "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+    "https://www.weather.gov/cys/nwr",
+    "https://www.weather.gov/nwr/"
+  ],
+  "release_gates": {
+    "full_python_validation": false,
+    "full_python_build": false,
+    "full_integrated_python_tests": false,
+    "hosted_ci_green": false,
+    "external_page_review": false,
+    "qualified_safety_approval": false,
+    "independent_qd_approval": false,
+    "founder_publish_permission": false
+  }
+}
