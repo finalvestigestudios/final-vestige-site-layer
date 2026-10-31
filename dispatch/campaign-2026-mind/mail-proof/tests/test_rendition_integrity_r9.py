@@ -6,8 +6,8 @@ The marker email/domain/address values are deliberately synthetic.
 import importlib.util
 import json
 from email.message import EmailMessage
-from pathlib import Path
 import re
+from pathlib import Path
 import unittest
 
 SOURCE = Path(__file__).resolve().parents[1] / 'received_email_audit.py'
