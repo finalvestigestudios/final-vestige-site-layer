@@ -13,6 +13,7 @@ import random
 import unittest
 
 from fvs_suite.invoice_match import MAX_CANDIDATES, candidate_pairs
+from fvs_suite.invoice_provenance import attach_invoice_provenance
 
 
 def record(row: int, *, inv: str = "A", vendor: str = "ACME", amount: str = "1.00",
@@ -69,6 +70,26 @@ class InvoiceSourceOrderR93(unittest.TestCase):
             observed = [(a["row"], b["row"], status, reason)
                         for a, b, status, reason in candidate_pairs(shuffled)]
             self.assertEqual(observed, canonical, msg=f"shuffle seed {seed}")
+
+    def test_provenance_hashes_and_order_are_stable_across_permutations(self):
+        rows = [record(2, inv="A", amount="7"),
+                record(4, inv="A", amount="8"),
+                record(6, inv="B", amount="7"),
+                record(8, inv="C", amount="7")]
+        source_digest = hashlib.sha256(b"fixed synthetic local CSV snapshot").hexdigest()
+
+        def evidence(records):
+            candidates = [{"row_a": a["row"], "row_b": b["row"], "status": status}
+                          for a, b, status, _ in candidate_pairs(records)]
+            return attach_invoice_provenance(candidates, source_sha256=source_digest)
+
+        expected = evidence(rows)
+        self.assertEqual(len(expected), 4)
+        self.assertEqual(len({entry["candidate_ref"] for entry in expected}), 4)
+        for seed in range(30):
+            shuffled = rows.copy()
+            random.Random(seed).shuffle(shuffled)
+            self.assertEqual(evidence(shuffled), expected)
 
     def test_generator_and_list_yield_identical_review_stream(self):
         rows = [record(8), record(2), record(4)]
