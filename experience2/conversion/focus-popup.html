@@ -1,0 +1,21 @@
+<!-- DRAFT BLOCK PATTERN ONLY. Insert into controlled WordPress page/template AFTER native Jetpack block renders. Never publish without approval. -->
+<section class="fv-focus-invite" aria-labelledby="fv-focus-invite-title">
+  <p class="fv-focus-invite__eyebrow">A field guide from Final Vestige Studios</p>
+  <h2 id="fv-focus-invite-title">A quieter way to notice more.</h2>
+  <p>Explore the 52-page <em>Seven Day Focus Fieldbook</em>, a practical companion to our investigations into attention and perception.</p>
+  <p><button class="fv-focus-invite__open" type="button" aria-haspopup="dialog" aria-controls="fv-focus-dialog" hidden>Get the free Fieldbook</button> <a class="fv-focus-invite__fallback" href="/focus/">Explore the free Fieldbook</a></p>
+</section>
+<dialog id="fv-focus-dialog" class="fv-focus-dialog" aria-labelledby="fv-focus-dialog-title" aria-describedby="fv-focus-dialog-desc">
+  <div class="fv-focus-dialog__inner">
+    <button class="fv-focus-dialog__close" type="button" aria-label="Close book signup">×</button>
+    <p class="fv-focus-dialog__eyebrow">The Final Vestige Library · Free edition</p>
+    <h2 id="fv-focus-dialog-title">The Seven Day Focus Fieldbook</h2>
+    <p id="fv-focus-dialog-desc">52 pages of observation exercises and reflection prompts. Enter your email using the existing Final Vestige subscription form below; delivery details are explained on the Fieldbook page.</p>
+    <div class="fv-focus-dialog__signup">
+      <!-- WordPress Gutenberg block is processed by WordPress, NOT a new email service. Confirm block type on production read-only before release. -->
+      <!-- wp:jetpack/subscriptions {"submitButtonText":"Join & get the Fieldbook"} /-->
+    </div>
+    <p class="fv-focus-dialog__fine">We use the existing Final Vestige email subscription system. <a href="/focus/">See the Fieldbook and delivery details</a>. Your subscription is optional; the archive remains freely accessible.</p>
+  </div>
+</dialog>
+<noscript><p class="fv-focus-nojs"><a href="/focus/">Get the Fieldbook and email signup information</a>.</p></noscript>
