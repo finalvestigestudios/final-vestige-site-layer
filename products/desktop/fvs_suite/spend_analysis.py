@@ -7,7 +7,8 @@ flag, not a finding of fraud, incorrect spending, or noncompliance.
 from __future__ import annotations
 
 from collections import defaultdict
-from decimal import Decimal
+from decimal import Context, Decimal, localcontext
+from functools import wraps
 import re
 from typing import Callable, Mapping
 
@@ -16,6 +17,18 @@ from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 
 
+def _exact_spend_context(operation):
+    """Make capped 200k-row fixed-point aggregation independent of caller context."""
+    @wraps(operation)
+    def guarded(*args, **kwargs):
+        # A fresh private context also isolates caller-specific traps and Emax.
+        # Per amount <= 1e12, cents; 200k rows, < 22 significant aggregate digits.
+        with localcontext(Context(prec=64)):
+            return operation(*args, **kwargs)
+    return guarded
+
+
+@_exact_spend_context
 def summarize_spend(
     records: list[dict[str, str]], *,
     normalize_vendor: Callable[[str], str],

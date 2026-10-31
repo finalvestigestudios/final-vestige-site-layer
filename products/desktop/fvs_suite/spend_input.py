@@ -7,13 +7,15 @@ vendor keys deterministic without reflecting confidential input in errors.
 from __future__ import annotations
 
 from datetime import date
-from decimal import Decimal
+from decimal import Context, Decimal, localcontext
 import re
 from typing import Callable, Iterator, Mapping
 
 MAX_SPEND_ROWS = 200_000  # Mirrors the bounded shared financial CSV reader.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
 _VENDOR_KEY = re.compile(r"[A-Z0-9]+\Z", re.ASCII)
+_MAX_SPEND_AMOUNT = Decimal("1000000000000")
+_CENT = Decimal("0.01")
 
 
 def validated_spend_rows(
@@ -75,6 +77,20 @@ def validated_spend_rows(
             raise ValueError(f"Invalid spend amount at physical row {physical_row}") from None
         if not isinstance(amount, Decimal) or not amount.is_finite():
             raise ValueError(f"Spend amount must be a finite exact Decimal at physical row {physical_row}")
+        # The CSV path uses engine.money (<= 1 trillion, rounded to cents).
+        # Enforce the same finite fixed-point domain for direct callers so a
+        # custom parser cannot bypass the 64-digit aggregation safety bound.
+        if amount.copy_abs() > _MAX_SPEND_AMOUNT:
+            raise ValueError(f"Spend amount exceeds permitted range at physical row {physical_row}")
+        try:
+            # Direct helper callers may have a low/trapping Decimal context;
+            # check cent equivalence under a private fixed-point context.
+            with localcontext(Context(prec=64)):
+                has_subcent = amount != amount.quantize(_CENT)
+        except Exception:
+            raise ValueError(f"Invalid cent precision at physical row {physical_row}") from None
+        if has_subcent:
+            raise ValueError(f"Spend amount must have cent precision at physical row {physical_row}")
 
         yield (record, vendor, calendar_day.strftime("%Y-%m"),
                category or "Uncategorized", amount)

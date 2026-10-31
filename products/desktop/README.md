@@ -11,6 +11,19 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R85 SpendMap Lite exact money and historical median (pre-release)
+
+SpendMap's running median previously used Decimal unary minus, which can
+silently round heap values under a caller's Decimal context. Monthly
+aggregation inherited the same precision and exponent limits. R85 uses
+context-independent heap negation, private-context midpoint averaging,
+and a 64-digit isolated context for totals and spike comparisons.
+Custom direct parsers now enforce the 1-trillion-per-row cent domain.
+Focused source and maximum-cap synthetic stress tests passed locally;
+full repository and Windows x64 testing remain pending. See
+[R85 precision and release disclosure](docs/SPEND_DECIMAL_CONTEXT_R85.md).
+**No downloads or releases are authorized.**
+
 ## R84 ProcureGuard high-precision audit arithmetic (pre-release)
 
 The previous 28-digit ambient Python Decimal context could silently truncate
