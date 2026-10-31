@@ -62,7 +62,9 @@ def reconciliation_status(left: list[dict[str, str]], right: list[dict[str, str]
     return ";".join(findings) or "matched"
 
 
-_PRICE_LIMIT = Decimal("1000000000000")
+# Up to 200,000 invoiced units/lines can produce totals far above 1e12.
+# Keep the exact documented procurement aggregation envelope (<= 2e26).
+_PRICE_LIMIT = Decimal("1000000000000000000000000000")
 
 
 def price_outside_tolerance(actual: Decimal, expected: Decimal,
