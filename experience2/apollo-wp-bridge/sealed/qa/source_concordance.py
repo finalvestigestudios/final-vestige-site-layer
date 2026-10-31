@@ -89,7 +89,7 @@ def build_concordance(casefile: Path = CASEFILE, generated: Path = GENERATED) ->
 <div class="fv-ex2-concordance__inner"><p class="fv-ex2-concordance__eyebrow">THE EVIDENCE / DOCUMENTARY SOURCE CONCORDANCE</p>
 <h2 id="fv-ex2-concordance-title">The photograph has a date. The claim has a different burden of proof.</h2>
 <p class="fv-ex2-concordance__intro">These six NASA catalog records help orient the investigation; they do not independently prove every accompanying historical claim. A 1966 rehearsal is not the 1967 fire, and two 2017 tribute exhibits are not accident footage. Open each record to see its limits. All images remain links to NASA, not reproduced here.</p>
-<ol class="fv-ex2-concordance__cards"></ol>
+<ol class="fv-ex2-concordance__cards">{''.join(cards)}</ol>
 <p class="fv-ex2-concordance__intro">Media reproduction and promotional rights remain under item-level review; NASA does not endorse this independent investigation.</p>
 </div></section>'''
     checked('<img' not in html and '<script' not in html and '<iframe' not in html,
