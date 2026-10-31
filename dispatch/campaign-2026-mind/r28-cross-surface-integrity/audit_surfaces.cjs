@@ -100,7 +100,7 @@ function auditCampaign(data) {
         /may (earn|receive) a commission/i.test(body)&&
         /Commercial disclosure:/.test(plain)&&/Commercial disclosure:/.test(html)&&/Commercial disclosure:/.test(blocks),
         'Relevant commission disclosure must survive conversion.');
-      ok(tag+'-claim-boundaries',/seller claims?|seller.*advertis|vendor claims?/i.test(body)&&
+      ok(tag+'-claim-boundaries',/seller claims?|seller.*advertis|vendor claims?|zen12 also claims|hypnosis live.*claims?/i.test(body)&&
         /not independently|not verified|not establish/i.test(body),
         'Seller product assertions must not become independent effectiveness claims.');
     } else {
