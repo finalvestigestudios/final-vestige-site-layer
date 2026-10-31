@@ -128,6 +128,22 @@ def run_smoke(app_id: str) -> list[Path]:
             _check("Both source files have identical bytes" in
                    same_version.read_text(encoding="utf-8"),
                    "smoke invariant 39")
+            # R76: ensure the real packaged Policy Delta workflow visibly
+            # distinguishes CRLF, literal backslashes and tab characters.
+            cr_before = root / "before-controls.txt"
+            cr_after = root / "after-controls.txt"
+            cr_before.write_bytes(b"Review\twithin 30 days.\r\n")
+            cr_after.write_bytes(b"Review\\twithin 15 days.\n")
+            cr_report = engine.policy_delta(str(cr_before), str(cr_after),
+                                            str(root))[0].read_bytes()
+            _check(b"\r" not in cr_report and b"\t" not in cr_report,
+                   "smoke invariant 46")
+            _check(b"-Review\\twithin 30 days.\\r\n" in cr_report
+                   and b"+Review\\\\twithin 15 days.\n" in cr_report,
+                   "smoke invariant 47")
+            _check(hashlib.sha256(cr_before.read_bytes()).hexdigest().encode() in cr_report
+                   and hashlib.sha256(cr_after.read_bytes()).hexdigest().encode() in cr_report,
+                   "smoke invariant 48")
         elif app_id == "grants":
             claims = _csv(root, "claims.csv", ("id", "amount", "program"), [
                 ("C1", "20", "G1")])
