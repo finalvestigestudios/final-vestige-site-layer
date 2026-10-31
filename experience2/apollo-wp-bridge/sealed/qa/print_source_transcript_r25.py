@@ -17,6 +17,7 @@ CASEFILE = Path(__file__).resolve().parents[3] / 'apollo-casefile'
 GENERATED = Path(__file__).resolve().parents[2] / 'generated'
 NASA_POLICY = 'https://www.nasa.gov/nasa-brand-center/images-and-media/'
 REPORT = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/'
+CASEFILE_PIN = '74375657f2cdaac0710f94c6de6c24534ee06858'  # PR #215 pinned staged casefile commit
 
 CSS = '''/* Apollo private R25 paper-readable record ledger: no javascript. */
 #fv-ex2-print-transcript{display:none!important}
@@ -49,8 +50,12 @@ class PrintCustodyHold(ValueError):
 
 
 def build_print_transcript(casefile: Path = CASEFILE, generated: Path = GENERATED) -> tuple[str, str, dict]:
-    catalogue = json.loads((casefile/'records.json').read_text(encoding='utf-8'))
-    export = json.loads((generated/'evidence-export.json').read_text(encoding='utf-8'))
+    casefile_bytes = (casefile/'records.json').read_bytes()
+    evidence_bytes = (generated/'evidence-export.json').read_bytes()
+    catalogue = json.loads(casefile_bytes)
+    export = json.loads(evidence_bytes)
+    casefile_sha256 = hashlib.sha256(casefile_bytes).hexdigest()
+    evidence_sha256 = hashlib.sha256(evidence_bytes).hexdigest()
     fragment = (generated/'fragment.html').read_text(encoding='utf-8')
     audit(catalogue, export, fragment)
     records = catalogue['records']
@@ -90,7 +95,12 @@ def build_print_transcript(casefile: Path = CASEFILE, generated: Path = GENERATE
 <p>Print-only source and limitations register, not the full investigation or image-reuse license. Documentary findings derive from the Apollo 204 Review Board; source-photograph dates are not the underlying event dates.</p>
 <p><strong>Release status:</strong> HOLD: six image-reuse reviews open, one catalog identifier unresolved, zero geographic pins/edges admitted.</p></header>
 {''.join(rows)}
-<footer><p>Historical primary source: <a href="{REPORT}">NASA Apollo 204 Review Board</a>.</p>
+<footer class="fv-ex2-print__footer"><h3>Offline source-custody fingerprints</h3>
+<p>Staged casefile revision: <code>{CASEFILE_PIN}</code>.</p>
+<p>Casefile <code>records.json</code> SHA-256: <code>{casefile_sha256}</code>.</p>
+<p>Generated <code>evidence-export.json</code> SHA-256: <code>{evidence_sha256}</code>.</p>
+<p>These values identify the staged files used to prepare this register; they do not independently authenticate NASA records or grant photo-reuse rights.</p>
+<p>Historical primary source: <a href="{REPORT}">NASA Apollo 204 Review Board</a>.</p>
 <p>Media guidance (not individual clearance): <a href="{NASA_POLICY}">NASA Images and Media Usage Guidelines</a>.</p>
 <p>This transcript includes no photographs, third-party resources, scripts, authenticated download links or WordPress nonces. No NASA endorsement is implied.</p></footer></section>'''
     lowered=html.lower()
@@ -98,9 +108,14 @@ def build_print_transcript(casefile: Path = CASEFILE, generated: Path = GENERATE
         raise PrintCustodyHold('Forbidden media, tokens or speculative geo in print')
     if html.count('data-r25-print-record=')!=6 or html.count('LINK ONLY — IMAGE REUSE NOT CLEARED')!=6:
         raise PrintCustodyHold('Print record/rights count drift')
+    if (html.count(CASEFILE_PIN) != 1 or html.count(casefile_sha256) != 1
+            or html.count(evidence_sha256) != 1):
+        raise PrintCustodyHold('Offline custody fingerprint count drift')
     receipt={'records':6,'source_urls':6,'images_embedded':0,'image_reuse_approved':0,
              'catalog_label_holds':1,'atlas_pins':0,'atlas_edges':0,'requires_javascript':False,
-             'print_contains_nonce':False,
+             'print_contains_nonce':False, 'casefile_head':CASEFILE_PIN,
+             'casefile_records_sha256':casefile_sha256,
+             'evidence_export_sha256':evidence_sha256,
              'html_sha256':hashlib.sha256(html.encode()).hexdigest(),
              'css_sha256':hashlib.sha256(CSS.encode()).hexdigest()}
     return html,CSS,receipt
