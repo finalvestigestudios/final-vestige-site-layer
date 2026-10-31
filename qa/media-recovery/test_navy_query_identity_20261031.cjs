@@ -42,6 +42,12 @@ test('historically distinct Navy image selectors can never be classified as same
   assert.equal(sameSource(a[i],a[j]),false);
  assert.equal(new Set(a).size,6);
 });
+test('Navy download rendition can change without losing image= archival identity',()=>{
+ const src=ledger.rows[0].stored_url;
+ const small=src.replace('rendition=cq5dam.web.1280.1280.jpeg','rendition=cq5dam.web.960.960.jpeg');
+ assert.equal(sameSource(src,small),true);
+ assert.equal(sameSource(small,ledger.rows[1].stored_url),false);
+});
 test('Navy catalog ID on each primary record is a literal component of the image selector',()=>{
  for(const r of ledger.rows){
   assert.ok(r.official_primary_record_url.startsWith('https://www.history.navy.mil/'));
