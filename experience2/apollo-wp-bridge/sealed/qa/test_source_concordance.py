@@ -12,9 +12,10 @@ class SourceConcordance(unittest.TestCase):
         html,css,receipt=build_concordance()
         self.assertEqual(receipt['record_count'],6)
         self.assertEqual(html.count('data-concordance-record='),6)
-        self.assertEqual(html.count('<details><summary>'),6)
-        self.assertEqual(html.count('<a href="#stage-'),6)
-        self.assertEqual(html.count('<a href="https://www.nasa.gov/image-detail/'),12)  # six source cards + six PR158 URL crosswalk links
+        self.assertEqual(html.count('<details><summary>What photograph'),6)
+        self.assertEqual(html.count('<details><summary>Compare NASA references'),1)
+        self.assertEqual(html.count('<a href="#stage-'),7)  # six cards + R23 identity review
+        self.assertEqual(html.count('<a href="https://www.nasa.gov/image-detail/'),13)  # six cards + six PR158 + R23 first-party identity witness
         self.assertNotIn('<img',html)
         self.assertNotIn('<iframe',html)
         self.assertNotIn('<script',html)

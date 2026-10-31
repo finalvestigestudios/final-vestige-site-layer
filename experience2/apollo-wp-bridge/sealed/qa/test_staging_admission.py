@@ -30,6 +30,32 @@ class TestStagingAdmission(unittest.TestCase):
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
 
+    def test_r23_catalog_identity_hold_visible_in_actual_served_html(self):
+        r = admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
+        self.assertEqual(r['geographic_edges_admitted'], 0)
+
+    def test_r23_catalog_identity_ui_downgrade_denied(self):
+        def tamper(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-concordance-sha256' in h:
+                body=body.replace(b'data-catalog-review="hold"',
+                                  b'data-catalog-review="cleared"',1)
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'NASA catalog identity'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=tamper)
+
+    def test_r23_catalog_identity_source_swap_denied(self):
+        def tamper(url,cookie=''):
+            status,h,body=no_redirect_fetch(url,cookie)
+            if 'x-fv-ex2-apollo-concordance-sha256' in h:
+                body=body.replace(b'https://www.nasa.gov/image-article/apollo-1-prime-crew-portrait/',
+                                  b'https://www.nasa.gov/image-article/unverified/',1)
+            return status,h,body
+        with self.assertRaisesRegex(AdmissionError,'NASA catalog identity'):
+            admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',
+                  allow_stub=True,fetch=tamper)
+
     def test_r22_wayfinder_sha_and_all_destinations(self):
         r=admit(test_http.ApolloHttp.base,'/review','fv_test_mode=editor',allow_stub=True)
         self.assertEqual(r['wayfinder_destinations_verified'],7)

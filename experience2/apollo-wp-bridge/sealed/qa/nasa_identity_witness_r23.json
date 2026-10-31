@@ -1,0 +1,29 @@
+{
+  "comparison_page": {
+    "description": "Separate formal Apollo 1 prime crew portrait",
+    "is_same_photo_as_casefile_claim_01": false,
+    "nasa_identifier": "S66-30236",
+    "nasa_image_date": "March 31, 1966",
+    "not_a_substitute_identifier": true,
+    "url": "https://www.nasa.gov/image-article/apollo-1-prime-crew-portrait/"
+  },
+  "decision": "HOLD_UNTIL_FIRST_PARTY_IDENTIFIER_EQUIVALENCE_CONFIRMED",
+  "geo_pins": 0,
+  "media_rights": "NOT_CLEARED",
+  "not_an_endorsement_or_live_page_monitor": true,
+  "research_desk_label": "NASA S67-19766",
+  "research_desk_label_source": "PR #158 ledger at pinned commit 250d7f05a4de037e73826dcf0cfaef0ec4c29383",
+  "schema": "fv-ex2-nasa-identity-witness-r23-v1",
+  "source_page": {
+    "catalog_identifier_visible_in_page_text": null,
+    "id_equivalence_verified": false,
+    "not_a_media_license": true,
+    "photo_context": "January 1967 training",
+    "subject": "Apollo 1 astronauts Grissom, White and Chaffee standing at Launch Complex 34",
+    "url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/"
+  },
+  "subject_claim_id": "01",
+  "unresolved_identifiers": 1,
+  "verification_method": "HUMAN_READ_WEB_PAGES_NOT_API_OR_MEDIA_BYTE_VERIFICATION",
+  "verified_manually_on": "2026-10-31"
+}

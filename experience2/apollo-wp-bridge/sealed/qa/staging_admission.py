@@ -239,6 +239,20 @@ def admit(origin: str, review_path: str, cookie: str, *, allow_stub=False,
         html.count(b'data-crosswalk-review="hold">') != 1 or
         html.count(b'id="fv-ex2-research-desk-crosswalk"') != 1):
         raise AdmissionError('Independent Research Desk crosswalk or identifier review hold missing')
+    # R23: evidence identity is an editorial HOLD, not an automatically
+    # reconciled catalog ID. The local concordance SHA guards expected bytes,
+    # but served HTML must also surface the two *different* NASA witnesses.
+    from research_desk_crosswalk import verify_nasa_identity, verify_witness
+    from source_concordance import CASEFILE
+    catalog_records = json.loads((CASEFILE/'records.json').read_text(encoding='utf-8'))['records']
+    identity = verify_nasa_identity(verify_witness(catalog_records))
+    if (identity['decision'] != 'HOLD_UNTIL_FIRST_PARTY_IDENTIFIER_EQUIVALENCE_CONFIRMED'
+        or html.count(b'id="fv-ex2-catalog-identity"') != 1
+        or html.count(b'data-catalog-review="hold"') != 1
+        or b'S67-19766' not in html or b'S66-30236' not in html
+        or b'https://www.nasa.gov/image-detail/apollo-1-crew-honored/' not in html
+        or b'https://www.nasa.gov/image-article/apollo-1-prime-crew-portrait/' not in html):
+        raise AdmissionError('NASA catalog identity distinction or editorial HOLD missing')
     if b'{{FV_EX2_CONTEXT_EXPORT}}' in html or html.count(b'source-context.json') < 1:
         raise AdmissionError('Served six-source concordance incomplete')
     csp = headers.get('content-security-policy','')
