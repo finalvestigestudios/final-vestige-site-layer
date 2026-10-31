@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-30",
+  "source_commit": "78efa0eb06854707eb78607bb11306803a86958d",
+  "scope": "ALL_72_ARTICLE_AND_TOOL_SOURCE_FILES_AUTHENTICATED_GITHUB_READBACK_IN_FOUR_BOUNDED_BATCHES",
+  "authority": "AUTOMATED_LITERAL_CITATION_AND_META_PARITY_CENSUS_NOT_A_HUMAN_SOURCE_CLAIM_REVIEW",
+  "release_state": "HOLD",
+  "may_publish": false,
+  "documented_human_external_source_checks": 0,
+  "verified_claim_occurrences": 0,
+  "counts": {
+    "articles": 35,
+    "tools": 1,
+    "draft_items": 36,
+    "inline_citation_occurrences": 1959,
+    "article_source_pairs": 367,
+    "source_files_read": 72,
+    "metadata_and_body_sha_mismatches": 0,
+    "article_source_use_parity_mismatches": 0,
+    "source_row_inventory_from_frozen_R7": 224,
+    "shared_url_group_inventory_from_frozen_R7": 30
+  },
+  "rows": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "source_body_path": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+      "body_git_blob_sha": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "meta_git_blob_sha": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "visible_inline_citation_occurrences": 62,
+      "distinct_article_source_pairs": 7,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "family-communication-plan",
+      "source_body_path": "preparedness/content/articles/family-communication-plan.body.html",
+      "body_git_blob_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "meta_git_blob_sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+      "visible_inline_citation_occurrences": 62,
+      "distinct_article_source_pairs": 14,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "fire-making-across-time",
+      "source_body_path": "preparedness/content/articles/fire-making-across-time.body.html",
+      "body_git_blob_sha": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "meta_git_blob_sha": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "visible_inline_citation_occurrences": 67,
+      "distinct_article_source_pairs": 11,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "source_body_path": "preparedness/content/articles/food-safety-power-outage.body.html",
+      "body_git_blob_sha": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "meta_git_blob_sha": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "visible_inline_citation_occurrences": 69,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "go-bags",
+      "source_body_path": "preparedness/content/articles/go-bags.body.html",
+      "body_git_blob_sha": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "meta_git_blob_sha": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "visible_inline_citation_occurrences": 72,
+      "distinct_article_source_pairs": 18,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "source_body_path": "preparedness/content/articles/history-of-food-preservation.body.html",
+      "body_git_blob_sha": "273b246a069e834d8476bfc2854308732f5137ab",
+      "meta_git_blob_sha": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "visible_inline_citation_occurrences": 47,
+      "distinct_article_source_pairs": 12,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "source_body_path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "body_git_blob_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "meta_git_blob_sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+      "visible_inline_citation_occurrences": 70,
+      "distinct_article_source_pairs": 10,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "homemade-water-filters",
+      "source_body_path": "preparedness/content/articles/homemade-water-filters.body.html",
+      "body_git_blob_sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+      "meta_git_blob_sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "visible_inline_citation_occurrences": 51,
+      "distinct_article_source_pairs": 6,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "household-emergency-plan",
+      "source_body_path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "body_git_blob_sha": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "meta_git_blob_sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "visible_inline_citation_occurrences": 57,
+      "distinct_article_source_pairs": 14,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "source_body_path": "preparedness/content/articles/lewis-and-clark-salt-works.body.html",
+      "body_git_blob_sha": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "meta_git_blob_sha": "3a350aedac67ea89c6995831032367634248c9e9",
+      "visible_inline_citation_occurrences": 49,
+      "distinct_article_source_pairs": 11,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "making-water-safer",
+      "source_body_path": "preparedness/content/articles/making-water-safer.body.html",
+      "body_git_blob_sha": "f85d158fc8752200a227282e640f6df48277daf5",
+      "meta_git_blob_sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+      "visible_inline_citation_occurrences": 52,
+      "distinct_article_source_pairs": 8,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "medication-and-devices",
+      "source_body_path": "preparedness/content/articles/medication-and-devices.body.html",
+      "body_git_blob_sha": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "meta_git_blob_sha": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "visible_inline_citation_occurrences": 68,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "navigation-before-gps",
+      "source_body_path": "preparedness/content/articles/navigation-before-gps.body.html",
+      "body_git_blob_sha": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "meta_git_blob_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "visible_inline_citation_occurrences": 47,
+      "distinct_article_source_pairs": 10,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "source_body_path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "body_git_blob_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "meta_git_blob_sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
+      "visible_inline_citation_occurrences": 116,
+      "distinct_article_source_pairs": 16,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "pantry-rotation",
+      "source_body_path": "preparedness/content/articles/pantry-rotation.body.html",
+      "body_git_blob_sha": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "meta_git_blob_sha": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "visible_inline_citation_occurrences": 68,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "source_body_path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+      "body_git_blob_sha": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "meta_git_blob_sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "visible_inline_citation_occurrences": 46,
+      "distinct_article_source_pairs": 11,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "source_body_path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+      "body_git_blob_sha": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "meta_git_blob_sha": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "visible_inline_citation_occurrences": 42,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "source_body_path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+      "body_git_blob_sha": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "meta_git_blob_sha": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "visible_inline_citation_occurrences": 57,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "source_body_path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+      "body_git_blob_sha": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "meta_git_blob_sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "visible_inline_citation_occurrences": 39,
+      "distinct_article_source_pairs": 10,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "preparedness-real-households",
+      "source_body_path": "preparedness/content/articles/preparedness-real-households.body.html",
+      "body_git_blob_sha": "70d03c366e10db623929f118501becfa26c48bab",
+      "meta_git_blob_sha": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "visible_inline_citation_occurrences": 64,
+      "distinct_article_source_pairs": 17,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "source_body_path": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+      "body_git_blob_sha": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "meta_git_blob_sha": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "visible_inline_citation_occurrences": 74,
+      "distinct_article_source_pairs": 17,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "source_body_path": "preparedness/content/articles/rain-barrels-and-cisterns.body.html",
+      "body_git_blob_sha": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "meta_git_blob_sha": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "visible_inline_citation_occurrences": 44,
+      "distinct_article_source_pairs": 7,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "source_body_path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+      "body_git_blob_sha": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "meta_git_blob_sha": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "visible_inline_citation_occurrences": 37,
+      "distinct_article_source_pairs": 7,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "source_body_path": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+      "body_git_blob_sha": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "meta_git_blob_sha": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "visible_inline_citation_occurrences": 71,
+      "distinct_article_source_pairs": 11,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "source_body_path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.body.html",
+      "body_git_blob_sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "meta_git_blob_sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+      "visible_inline_citation_occurrences": 49,
+      "distinct_article_source_pairs": 10,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "source_body_path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+      "body_git_blob_sha": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "meta_git_blob_sha": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "visible_inline_citation_occurrences": 47,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "source_body_path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "body_git_blob_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "meta_git_blob_sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+      "visible_inline_citation_occurrences": 50,
+      "distinct_article_source_pairs": 13,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "source_body_path": "preparedness/content/articles/ships-biscuit-and-hardtack.body.html",
+      "body_git_blob_sha": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "meta_git_blob_sha": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "visible_inline_citation_occurrences": 42,
+      "distinct_article_source_pairs": 8,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "source_body_path": "preparedness/content/articles/smokehouses-salting-curing.body.html",
+      "body_git_blob_sha": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "meta_git_blob_sha": "16223945e83f95b349acf09a2b684c09326550c0",
+      "visible_inline_citation_occurrences": 36,
+      "distinct_article_source_pairs": 11,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "three-day-kit",
+      "source_body_path": "preparedness/content/articles/three-day-kit.body.html",
+      "body_git_blob_sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "meta_git_blob_sha": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+      "visible_inline_citation_occurrences": 75,
+      "distinct_article_source_pairs": 16,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "two-week-water-storage",
+      "source_body_path": "preparedness/content/articles/two-week-water-storage.body.html",
+      "body_git_blob_sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "meta_git_blob_sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "visible_inline_citation_occurrences": 28,
+      "distinct_article_source_pairs": 3,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "source_body_path": "preparedness/content/articles/warnings-radios-offline-maps.body.html",
+      "body_git_blob_sha": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "meta_git_blob_sha": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "visible_inline_citation_occurrences": 55,
+      "distinct_article_source_pairs": 9,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "water-advisories-explained",
+      "source_body_path": "preparedness/content/articles/water-advisories-explained.body.html",
+      "body_git_blob_sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "meta_git_blob_sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "visible_inline_citation_occurrences": 30,
+      "distinct_article_source_pairs": 4,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "water-math",
+      "source_body_path": "preparedness/content/articles/water-math.body.html",
+      "body_git_blob_sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "meta_git_blob_sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "visible_inline_citation_occurrences": 33,
+      "distinct_article_source_pairs": 5,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "water-purification-through-history",
+      "source_body_path": "preparedness/content/articles/water-purification-through-history.body.html",
+      "body_git_blob_sha": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "meta_git_blob_sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "visible_inline_citation_occurrences": 76,
+      "distinct_article_source_pairs": 14,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    },
+    {
+      "slug": "water-planner",
+      "source_body_path": "preparedness/content/tools/water-planner.body.html",
+      "body_git_blob_sha": "a738d1f7824437911064d425868ed3d709326027",
+      "meta_git_blob_sha": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+      "visible_inline_citation_occurrences": 7,
+      "distinct_article_source_pairs": 3,
+      "source_use_parity": "NO_MISMATCHES_IN_INDEPENDENT_EXACT_SHA_READBACK",
+      "publication_state": "draft"
+    }
+  ]
+}
