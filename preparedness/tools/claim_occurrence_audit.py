@@ -26,7 +26,7 @@ BLOCKS = frozenset({"p", "li", "td", "th", "blockquote", "dd", "dt", "figcaption
 NONVISIBLE = frozenset({"script", "style", "template", "noscript", "svg"})
 ACCEPTED_STATES = frozenset({"pending", "approved", "not-required"})
 BASELINE = {"draft_items": 36, "article_source_pairs": 367, "physical_source_rows": 224,
-            "shared_url_groups": 30}
+            "shared_url_groups": 30, "citation_occurrences": 1959}
 MAX_FIELD = 6000
 
 

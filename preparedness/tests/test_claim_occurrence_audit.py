@@ -236,6 +236,11 @@ class ReportChecks(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'baseline drift'):
             audit.make_report(self.FakeLib(meta,source),rows=rows,
                 fingerprint=lambda lib,meta:'a'*64,expect={'draft_items':35})
+    def test_inline_occurrence_baseline_drift_fails(self):
+        meta,source,rows=fixture()
+        with self.assertRaisesRegex(ValueError,'baseline drift citation_occurrences'):
+            audit.make_report(self.FakeLib(meta,source),rows=rows,
+                fingerprint=lambda lib,meta:'a'*64,expect={'citation_occurrences':3})
     def test_duplicate_route_fails(self):
         meta,source,rows=fixture()
         alt=copy.deepcopy(meta);alt['slug']='other'
