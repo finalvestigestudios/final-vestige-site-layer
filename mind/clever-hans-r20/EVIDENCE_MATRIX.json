@@ -1,0 +1,644 @@
+{
+  "review_date": "2026-10-31",
+  "repository_lane": "Mind & Perception R20",
+  "release_state": "HOLD_UNPUBLISHED",
+  "merchant_account_approval_verified": false,
+  "earning_link": null,
+  "purchase_tracking_enabled": false,
+  "commercial_video_hosted": false,
+  "registered_conversion_experiment": false,
+  "pricing_quoted": false,
+  "source_count": 17,
+  "claim_count": 60,
+  "sources": {
+    "HANS_PRIMARY": {
+      "type": "historical_primary",
+      "url": "https://www.gutenberg.org/cache/epub/33936/pg33936-images.html",
+      "date": "1911 English translation; 1907 German original"
+    },
+    "HANS_EDITION": {
+      "type": "institutional_catalog",
+      "url": "https://www.biodiversitylibrary.org/item/116908"
+    },
+    "DOGS_2012": {
+      "type": "peer_reviewed_original",
+      "url": "https://doi.org/10.3389/fpsyg.2012.00558",
+      "date": "2012-12-26"
+    },
+    "DIGITAL_2024": {
+      "type": "peer_reviewed_review",
+      "url": "https://doi.org/10.1111/nyas.15095",
+      "date": "2024-01-10"
+    },
+    "MINDFUL_2024": {
+      "type": "peer_reviewed_meta_analysis",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "date": "2024-06-01"
+    },
+    "BINAURAL_2023": {
+      "type": "peer_reviewed_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "date": "2023-05-19"
+    },
+    "INSPIRE_CATALOG": {
+      "type": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "checked": "2026-10-31"
+    },
+    "ZEN12_ABOUT": {
+      "type": "seller_product_page",
+      "url": "https://zen12.com/about",
+      "checked": "2026-10-31"
+    },
+    "ZEN12_CHECKOUT": {
+      "type": "seller_offer_page",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-10-31",
+      "volatile": true
+    },
+    "ZEN12_RESEARCH": {
+      "type": "seller_marketing_research_page",
+      "url": "https://zen12.com/research",
+      "checked": "2026-10-31"
+    },
+    "AFFILIATES_PUBLIC": {
+      "type": "public_signup_not_account_acceptance",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-10-31"
+    },
+    "FTC_ENDORSE": {
+      "type": "regulator_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    "FTC_HEALTH": {
+      "type": "regulator_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    "FV_PUY": {
+      "type": "live_site_read",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-10-31"
+    },
+    "FV_FOCUS": {
+      "type": "live_site_read",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-10-31"
+    },
+    "FV_EDITORIAL": {
+      "type": "published_policy",
+      "url": "https://finalvestige.com/editorial-standards/"
+    },
+    "FV_DISCLOSURE": {
+      "type": "published_policy",
+      "url": "https://finalvestige.com/affiliate-disclosure/"
+    }
+  },
+  "claims": [
+    {
+      "id": "R20-001",
+      "claim": "In 1904 an examination committee reported no deliberate tricks",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "scope intentional tricks only"
+    },
+    {
+      "id": "R20-002",
+      "claim": "Commission further treated then-familiar unintended signs as excluded",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "report statement, not final proof"
+    },
+    {
+      "id": "R20-003",
+      "claim": "Pfungst's German work appeared in 1907; English edition in 1911",
+      "classification": "bibliography",
+      "source_ids": [
+        "HANS_PRIMARY",
+        "HANS_EDITION"
+      ],
+      "editorial_action": "edition distinguish"
+    },
+    {
+      "id": "R20-004",
+      "claim": "Hans answered by hoof tapping",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "avoid invented direct dialogue"
+    },
+    {
+      "id": "R20-005",
+      "claim": "Arithmetic test with known result 29 correct of 31",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "within reported series"
+    },
+    {
+      "id": "R20-006",
+      "claim": "Arithmetic test with unknown result 3 correct of 31",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "within reported series"
+    },
+    {
+      "id": "R20-007",
+      "claim": "Two whispered addends supplied to Hans by different questioners",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "both humans lacked sum"
+    },
+    {
+      "id": "R20-008",
+      "claim": "Counting task eight correct with knowledge and eight wrong without",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "different task not pooled"
+    },
+    {
+      "id": "R20-009",
+      "claim": "Subtle posture/head movement proposed as mechanism",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "not all occasions proven"
+    },
+    {
+      "id": "R20-010",
+      "claim": "Pfungst performed separate human body-movement investigations",
+      "classification": "historical_primary",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "context-specific"
+    },
+    {
+      "id": "R20-011",
+      "claim": "Clever Hans evidence establishes no mental-training product outcome",
+      "classification": "unsupported_transfer",
+      "source_ids": [
+        "HANS_PRIMARY"
+      ],
+      "editorial_action": "historical horse experiment cannot test consumer audio"
+    },
+    {
+      "id": "R20-012",
+      "claim": "2012 dogs study assessed owner knowledge/pointing",
+      "classification": "peer_reviewed_original",
+      "source_ids": [
+        "DOGS_2012"
+      ],
+      "editorial_action": "distinct task and species"
+    },
+    {
+      "id": "R20-013",
+      "claim": "2012 study found no measurable passive owner-knowledge effect",
+      "classification": "peer_reviewed_original",
+      "source_ids": [
+        "DOGS_2012"
+      ],
+      "editorial_action": "within reported task"
+    },
+    {
+      "id": "R20-014",
+      "claim": "2012 study found active owner direction could influence dogs",
+      "classification": "peer_reviewed_original",
+      "source_ids": [
+        "DOGS_2012"
+      ],
+      "editorial_action": "do not generalize without controls"
+    },
+    {
+      "id": "R20-015",
+      "claim": "Puységur archive contains 153 source rows",
+      "classification": "site_verified",
+      "source_ids": [
+        "FV_PUY"
+      ],
+      "editorial_action": "live read"
+    },
+    {
+      "id": "R20-016",
+      "claim": "Puységur archive contains 16 dossiers",
+      "classification": "site_verified",
+      "source_ids": [
+        "FV_PUY"
+      ],
+      "editorial_action": "live read"
+    },
+    {
+      "id": "R20-017",
+      "claim": "Focus Fieldbook published route is /focus/",
+      "classification": "site_verified",
+      "source_ids": [
+        "FV_FOCUS"
+      ],
+      "editorial_action": "one existing Jetpack funnel"
+    },
+    {
+      "id": "R20-018",
+      "claim": "Digital mindfulness 2024 review included 19 studies",
+      "classification": "peer_reviewed_review",
+      "source_ids": [
+        "DIGITAL_2024"
+      ],
+      "editorial_action": "not Zen12 trials"
+    },
+    {
+      "id": "R20-019",
+      "claim": "Digital mindfulness 2024 review included 1654 participants",
+      "classification": "peer_reviewed_review",
+      "source_ids": [
+        "DIGITAL_2024"
+      ],
+      "editorial_action": "not Zen12 trials"
+    },
+    {
+      "id": "R20-020",
+      "claim": "Digital mindfulness review discussed mixed null versus positive outcomes",
+      "classification": "peer_reviewed_review",
+      "source_ids": [
+        "DIGITAL_2024"
+      ],
+      "editorial_action": "authors stress heterogeneity"
+    },
+    {
+      "id": "R20-021",
+      "claim": "2024 MBI meta analysis included 111 randomized trials",
+      "classification": "peer_reviewed_meta",
+      "source_ids": [
+        "MINDFUL_2024"
+      ],
+      "editorial_action": "general intervention not product"
+    },
+    {
+      "id": "R20-022",
+      "claim": "2024 MBI meta analysis included 9538 participants",
+      "classification": "peer_reviewed_meta",
+      "source_ids": [
+        "MINDFUL_2024"
+      ],
+      "editorial_action": "general intervention not product"
+    },
+    {
+      "id": "R20-023",
+      "claim": "Binaural EEG 2023 review included 14 studies",
+      "classification": "peer_reviewed_review",
+      "source_ids": [
+        "BINAURAL_2023"
+      ],
+      "editorial_action": "mechanism not SKU"
+    },
+    {
+      "id": "R20-024",
+      "claim": "Binaural EEG 2023 review 5 support 8 contradict 1 mixed",
+      "classification": "peer_reviewed_review",
+      "source_ids": [
+        "BINAURAL_2023"
+      ],
+      "editorial_action": "not statement about Zen12 audio technology"
+    },
+    {
+      "id": "R20-025",
+      "claim": "Inspire3 parent catalog includes Zen12",
+      "classification": "seller_described",
+      "source_ids": [
+        "INSPIRE_CATALOG"
+      ],
+      "editorial_action": "brand context only"
+    },
+    {
+      "id": "R20-026",
+      "claim": "Zen12 seller markets short twelve-minute sessions",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "format statement"
+    },
+    {
+      "id": "R20-027",
+      "claim": "Zen12 seller presents twelve levels",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "seller description only"
+    },
+    {
+      "id": "R20-028",
+      "claim": "Zen12 seller advises progression roughly monthly or when ready",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "not optimal dose proof"
+    },
+    {
+      "id": "R20-029",
+      "claim": "Zen12 seller lists guided meditation version",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "not tested"
+    },
+    {
+      "id": "R20-030",
+      "claim": "Zen12 seller lists relaxation music version",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "not tested"
+    },
+    {
+      "id": "R20-031",
+      "claim": "Zen12 seller lists white-noise version",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "not tested"
+    },
+    {
+      "id": "R20-032",
+      "claim": "Zen12 seller lists nature-sound version",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "not tested"
+    },
+    {
+      "id": "R20-033",
+      "claim": "Seller checkout lists 48 MP3s",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "not individually inventoried"
+    },
+    {
+      "id": "R20-034",
+      "claim": "Seller checkout lists manuals and additional audio guides",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "verify at purchase"
+    },
+    {
+      "id": "R20-035",
+      "claim": "Seller checkout lists support call and ongoing support",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "delivery untested"
+    },
+    {
+      "id": "R20-036",
+      "claim": "Seller page says headphones not required",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "compatibility untested"
+    },
+    {
+      "id": "R20-037",
+      "claim": "Checkout visibly asks for mobile-phone number",
+      "classification": "seller_described_volatile",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "not collected by FV"
+    },
+    {
+      "id": "R20-038",
+      "claim": "Checkout shows countdown and discount-style order summary",
+      "classification": "seller_described_volatile",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "not proof of genuine time limit"
+    },
+    {
+      "id": "R20-039",
+      "claim": "Checkout advertises one-year refund promise",
+      "classification": "seller_described_volatile",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "terms and fulfillment not tested"
+    },
+    {
+      "id": "R20-040",
+      "claim": "Checkout displays testimonials",
+      "classification": "seller_described",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "not independently authenticated"
+    },
+    {
+      "id": "R20-041",
+      "claim": "Seller claims one hour meditation benefit in twelve minutes",
+      "classification": "unsubstantiated_seller_efficacy",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "INSPIRE_CATALOG"
+      ],
+      "editorial_action": "exclude from FV factual promises"
+    },
+    {
+      "id": "R20-042",
+      "claim": "Seller claims automatic brainwave shift",
+      "classification": "unsubstantiated_seller_efficacy",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "ZEN12_RESEARCH"
+      ],
+      "editorial_action": "exclude from FV promises"
+    },
+    {
+      "id": "R20-043",
+      "claim": "Seller claims immediate anxiety relief",
+      "classification": "unsubstantiated_seller_health",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "exclude from FV claims"
+    },
+    {
+      "id": "R20-044",
+      "claim": "Seller claims automatic deep meditation with no effort",
+      "classification": "unsubstantiated_seller_efficacy",
+      "source_ids": [
+        "ZEN12_ABOUT"
+      ],
+      "editorial_action": "exclude from FV claims"
+    },
+    {
+      "id": "R20-045",
+      "claim": "Zen12 independent randomized product trial establishing hour equivalence",
+      "classification": "not_verified",
+      "source_ids": [
+        "ZEN12_ABOUT",
+        "ZEN12_RESEARCH"
+      ],
+      "editorial_action": "none identified; do not claim exhaustive absence worldwide"
+    },
+    {
+      "id": "R20-046",
+      "claim": "Zen12 independently proven to reprogram brainwaves on demand",
+      "classification": "not_verified",
+      "source_ids": [
+        "BINAURAL_2023",
+        "ZEN12_RESEARCH"
+      ],
+      "editorial_action": "no SKU-specific validation"
+    },
+    {
+      "id": "R20-047",
+      "claim": "Inspire3 public affiliate sign-up proves FV approval",
+      "classification": "false_inference",
+      "source_ids": [
+        "AFFILIATES_PUBLIC"
+      ],
+      "editorial_action": "cannot infer account authorization"
+    },
+    {
+      "id": "R20-048",
+      "claim": "Commission percentage for FV or current payout",
+      "classification": "permission_unknown",
+      "source_ids": [
+        "AFFILIATES_PUBLIC"
+      ],
+      "editorial_action": "no account-specific contract verified; do not quote"
+    },
+    {
+      "id": "R20-049",
+      "claim": "Current checkout price stable across visitors",
+      "classification": "not_verified_volatile",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "omit price/discount"
+    },
+    {
+      "id": "R20-050",
+      "claim": "Affiliate link / SKU eligibility / creatives permission",
+      "classification": "permission_unknown",
+      "source_ids": [
+        "AFFILIATES_PUBLIC"
+      ],
+      "editorial_action": "require written account-specific evidence"
+    },
+    {
+      "id": "R20-051",
+      "claim": "Email/TikTok affiliate promotion permitted",
+      "classification": "permission_unknown",
+      "source_ids": [
+        "AFFILIATES_PUBLIC"
+      ],
+      "editorial_action": "must review binding program terms"
+    },
+    {
+      "id": "R20-052",
+      "claim": "FTC financial relationship must be conspicuously disclosed",
+      "classification": "regulator",
+      "source_ids": [
+        "FTC_ENDORSE"
+      ],
+      "editorial_action": "near recommendation and active earning link"
+    },
+    {
+      "id": "R20-053",
+      "claim": "FTC health benefit claims need competent reliable science",
+      "classification": "regulator",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "editorial_action": "adequate product-specific substantiation"
+    },
+    {
+      "id": "R20-054",
+      "claim": "Specific seller testimonial attributable to FV's own experience",
+      "classification": "prohibited_fabrication",
+      "source_ids": [
+        "ZEN12_CHECKOUT"
+      ],
+      "editorial_action": "never claim firsthand use"
+    },
+    {
+      "id": "R20-055",
+      "claim": "Page contains live affiliate purchase URL",
+      "classification": "release_hold",
+      "source_ids": [
+        "AFFILIATES_PUBLIC"
+      ],
+      "editorial_action": "must be null until authorized"
+    },
+    {
+      "id": "R20-056",
+      "claim": "A/B optional film proves higher conversion",
+      "classification": "not_tested",
+      "source_ids": [
+        "FTC_ENDORSE"
+      ],
+      "editorial_action": "hypothesis only, experiment not launched"
+    },
+    {
+      "id": "R20-057",
+      "claim": "Unique visitor counts available from fully anonymous events without any identifiers",
+      "classification": "not_supported",
+      "source_ids": [
+        "FTC_ENDORSE"
+      ],
+      "editorial_action": "only event counts absent identifiers; no visitor deduplication"
+    },
+    {
+      "id": "R20-058",
+      "claim": "A 42-second original caption script equals fully synchronized hosted film",
+      "classification": "not_verified",
+      "source_ids": [
+        "FV_EDITORIAL"
+      ],
+      "editorial_action": "actual film/AT must be tested"
+    },
+    {
+      "id": "R20-059",
+      "claim": "Public article publication approved by founder",
+      "classification": "permission_unknown",
+      "source_ids": [
+        "FV_EDITORIAL"
+      ],
+      "editorial_action": "explicit separate release approval needed"
+    },
+    {
+      "id": "R20-060",
+      "claim": "No duplicate newsletter opt-in needed on product page",
+      "classification": "design_constraint",
+      "source_ids": [
+        "FV_FOCUS"
+      ],
+      "editorial_action": "use existing Jetpack flow only"
+    }
+  ]
+}
