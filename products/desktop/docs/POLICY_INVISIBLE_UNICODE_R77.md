@@ -18,13 +18,13 @@ visually identical to the reviewer even though the diff and SHA-256 differ.
 Source lines (added, removed and context) render the following characters as
 ASCII escapes: Unicode category `Cf`, U+034F (combining grapheme joiner),
 U+180B–U+180F (Mongolian variation selectors), U+FE00–U+FE0F and
-U+E0100–U+E01EF (variation selectors). BMP characters display as `\\uXXXX`;
-supplementary ones as `\\UXXXXXXXX`, with lowercase hexadecimal digits.
+U+E0100–U+E01EF (variation selectors). BMP characters display as `\uXXXX`;
+supplementary ones as `\UXXXXXXXX`, with lowercase hexadecimal digits.
 Literal source backslashes are doubled before displayed escapes so a source
-containing the six literal characters `\\u200b` cannot impersonate U+200B.
+containing the six literal characters `\u200b` cannot impersonate U+200B.
 
 All other allowed Unicode text stays readable. Source tabs and CR keep R76's
-`\\t` and `\\r` notation. Original raw source bytes, SHA-256 fingerprints,
+`\t` and `\r` notation. Original raw source bytes, SHA-256 fingerprints,
 source order, diff hunk coordinates, line endings and no-final-newline markers
 are preserved. The displayed report is **not** a machine-applicable patch.
 Previously rejected ANSI/terminal controls and bidi override characters remain
