@@ -6,6 +6,7 @@
  */
 const fs = require('node:fs');
 const {sameSource} = require('./browser_probe_core.cjs');
+const {scopeHarToArticle} = require('./har_page_scope_core.cjs');
 
 const MAX_HAR_BYTES = 25 * 1024 * 1024;
 function safeUrl(v) {
@@ -125,6 +126,29 @@ function reconcileHar(har, queue, postId) {
     excluded_same_source_nonimage_requests: ignoredWrongResourceType,
     findings};
 }
+/**
+ * CLI-safe entry: never allow unrelated HAR pages/tabs to inject a photograph's
+ * response status into the current article. Consistency of untrusted HAR metadata
+ * is not independent proof of a logged-out browser load or DOM image decoding.
+ */
+function reconcilePageScopedHar(har, queue, postId) {
+  const rows = queue?.rows?.filter(x => x.post_id === postId) || [];
+  if (!rows.length || new Set(rows.map(x => x.article_url)).size !== 1)
+    throw Error('Post ID must have a single article URL in frozen queue');
+  const scoped = scopeHarToArticle(har, rows[0].article_url);
+  const report = reconcileHar({log:{entries:scoped.scoped_entries}}, queue, postId);
+  return {...report,
+    input_har_entries: scoped.input_entry_count,
+    scoped_har_entries: scoped.scoped_entries.length,
+    excluded_unscoped_har_entries: scoped.excluded_unscoped_entries,
+    har_declared_article_scope_consistent: scoped.ok,
+    har_scope_status: scoped.reason,
+    har_page_identity_verified: false,
+    note: scoped.ok ?
+      report.note + ' Matching page/document/pageref metadata is internally consistent but remains user-supplied, not independently attested.' :
+      'HAR page/document attribution unverified. Image statuses deliberately withheld. Export a single-tab Chrome HAR with page and pageref metadata, or run the logged-out CDP probe.'
+  };
+}
 function main(argv) {
   const args = Object.fromEntries(argv.slice(2).filter(x => x.includes('=')).map(x => x.split(/=(.*)/s).slice(0,2)));
   if (!args['--har'] || !args['--post-id'] || !args['--out']) throw Error('Usage: node har_image_triage.cjs --har=logged-out.har --post-id=268 --out=triage.json');
@@ -135,9 +159,9 @@ function main(argv) {
   const parts = Array.from({length: 8}, (_, i) => JSON.parse(fs.readFileSync(path.join(__dirname, 'parts', String(i+1).padStart(2,'0')+'.json'), 'utf8')));
   const p0 = JSON.parse(fs.readFileSync(path.join(__dirname, 'p0_recovery_queue_20261030.json'), 'utf8'));
   const queue = buildSiteQueue(parts, p0);
-  const report = reconcileHar(har, queue, Number(args['--post-id']));
+  const report = reconcilePageScopedHar(har, queue, Number(args['--post-id']));
   fs.writeFileSync(args['--out'], JSON.stringify(report, null, 2) + '\n', {flag: 'wx', mode: 0o600});
   process.stdout.write(JSON.stringify({output: args['--out'], post_id: report.post_id, matching_image_requests: report.matching_image_requests, image_slots: report.findings.length})+'\n');
 }
 if (require.main === module) { try { main(process.argv); } catch (e) { process.stderr.write(String(e.message)+'\n'); process.exitCode = 1; } }
-module.exports = {safeUrl, safeSize, safeStatus, safeMime, scrubQuerySecrets, classifyObservation, buildSiteQueue, reconcileHar};
+module.exports = {safeUrl, safeSize, safeStatus, safeMime, scrubQuerySecrets, classifyObservation, buildSiteQueue, reconcileHar, reconcilePageScopedHar};
