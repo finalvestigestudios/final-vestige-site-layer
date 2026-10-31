@@ -67,7 +67,7 @@ class TestStagingAdmission(unittest.TestCase):
     def test_export_tampering_not_accepted(self):
         def bad_export(url, cookie=''):
             status, h, data = no_redirect_fetch(url, cookie)
-            if 'file=evidence-export.csv' in url:
+            if cookie and 'file=evidence-export.csv' in url:
                 data = data + b'FAKE'
             return status, h, data
         with self.assertRaisesRegex(AdmissionError, 'Export integrity'):
