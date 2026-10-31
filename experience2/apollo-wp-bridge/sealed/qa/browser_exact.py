@@ -115,7 +115,7 @@ def run(*, require_axe=False):
             # Interactive source routes meet a 44px touch-height budget everywhere.
             sizes = page.locator('#source-concordance a, #source-concordance summary').evaluate_all(
                 '(nodes)=>nodes.map(n=>({height:n.getBoundingClientRect().height,width:n.getBoundingClientRect().width}))')
-            assert len(sizes) == 18 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
+            assert len(sizes) == 19 and all(x['height'] >= 43.9 and x['width'] >= 24 for x in sizes), (width,sizes)
             page.locator('#source-concordance summary').first.focus()
             page.keyboard.press('Enter')
             assert not page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
@@ -123,8 +123,35 @@ def run(*, require_axe=False):
             assert page.locator('[data-ex2-trail-card]').count() == 6
             assert page.locator('[data-ex2-response-item]').count() == 6
             assert page.locator('[data-ex2-atlas-item]').count() == 6
+            # CSS-only temporal lens is a real, meaningful no-JavaScript interaction.
+            # Each filter narrows to NASA-dated source context, not inferred event time.
+            lens = page.locator('#source-concordance')
+            assert lens.locator('input[type="radio"]').count() == 4
+            assert lens.locator('[data-concordance-record]:visible').count() == 6
+            for era, expected in [('1966',1),('1967',3),('2017',2)]:
+                lens.locator(f'#fv-ex2-lens-{era}').check()
+                assert lens.locator('[data-concordance-record]:visible').count() == expected, (width,era)
+                assert lens.locator(f'#fv-ex2-lens-{era}').is_checked()
+            lens.locator('#fv-ex2-lens-all').check()
+            assert lens.locator('[data-concordance-record]:visible').count() == 6
+            assert lens.locator('a[download="apollo-source-context.json"]').count() == 1
+            # True native keyboard radio-group behavior, not merely Playwright .check().
+            lens.locator('#fv-ex2-lens-all').focus()
+            page.keyboard.press('ArrowRight')
+            assert lens.locator('#fv-ex2-lens-1966').is_checked(),(width,'native keyboard filter failed')
+            assert lens.locator('[data-concordance-record]:visible').count()==1
+            page.keyboard.press('ArrowRight')
+            assert lens.locator('#fv-ex2-lens-1967').is_checked()
+            assert lens.locator('[data-concordance-record]:visible').count()==3
+            lens.locator('#fv-ex2-lens-all').check()
+            if width in (390, 1440):
+                lens.locator('#fv-ex2-lens-1967').check()
+                dest = OUT / f'exact-era-lens-1967-{width}.png'
+                lens.screenshot(path=str(dest), animations='disabled', timeout=15000)
+                report['screenshots'].append({'name':dest.name,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
+                lens.locator('#fv-ex2-lens-all').check()
             assert page.locator('[data-ex2-stage]').count() == 6
-            assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 4
+            assert page.locator('a[href*="fv_ex2_apollo_sealed_download"]').count() == 5
             assert page.locator('[data-ex2-trail-controls]').is_visible(), (width,'JS blocked by CSP')
             assert page.locator('[data-ex2-response-tools]').is_visible(), (width,'response JS blocked')
             assert page.locator('a[href^="https://www.nasa.gov"]').count() >= 12
@@ -193,6 +220,12 @@ def run(*, require_axe=False):
         assert page.evaluate('document.activeElement.textContent.trim()') == 'Skip to Apollo evidence'
         page.keyboard.press('Enter')
         assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document'
+        # Source-year filter must operate under a genuinely disabled JS context.
+        nojs_lens=page.locator('#source-concordance')
+        nojs_lens.locator('#fv-ex2-lens-2017').check()
+        assert nojs_lens.locator('[data-concordance-record]:visible').count()==2
+        nojs_lens.locator('#fv-ex2-lens-all').check()
+        assert nojs_lens.locator('[data-concordance-record]:visible').count()==6
         page.locator('#source-concordance summary').first.click()
         assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
         assert not page.locator('[data-ex2-trail-controls]').is_visible()
@@ -207,6 +240,10 @@ def run(*, require_axe=False):
         assert page.locator('[data-ex2-trail-card]:visible').count() == 1
         page.locator('#trail-04 summary').tap()
         assert page.locator('#trail-04 details').evaluate('(n)=>n.open')
+        page.locator('#fv-ex2-lens-1966').tap()
+        assert page.locator('#source-concordance [data-concordance-record]:visible').count()==1
+        page.locator('#fv-ex2-lens-all').tap()
+        assert page.locator('#source-concordance [data-concordance-record]:visible').count()==6
         page.locator('#source-concordance summary').first.tap()
         assert page.locator('#source-concordance details').first.evaluate('(n)=>n.open')
         report['touch']=True

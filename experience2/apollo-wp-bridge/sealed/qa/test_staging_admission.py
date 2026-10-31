@@ -18,11 +18,11 @@ class TestStagingAdmission(unittest.TestCase):
     def tearDownClass(cls):
         test_http.ApolloHttp.tearDownClass()
 
-    def test_provenance_and_exact_four_exports_over_real_php_http(self):
+    def test_provenance_and_exact_five_exports_over_real_php_http(self):
         r = admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor', allow_stub=True)
         self.assertEqual(r['status'], 'PASS_HTTP_INTEGRITY_ONLY')
         self.assertEqual(r['anonymous_private_page'], 403)
-        self.assertEqual(len(r['exports_sha256']), 4)
+        self.assertEqual(len(r['exports_sha256']), 5)
         self.assertFalse(r['wordpress_integrated'])
         self.assertEqual(r['axe'], 'NOT_TESTED')
         self.assertEqual(len(r['fragment_sha256']), 64)
@@ -73,6 +73,28 @@ class TestStagingAdmission(unittest.TestCase):
         with self.assertRaisesRegex(AdmissionError, 'concordance provenance hash'):
             admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
                   allow_stub=True, fetch=bad_concordance)
+
+    def test_context_index_header_mutation_denied(self):
+        def bad_context_header(url, cookie=''):
+            status, h, data = no_redirect_fetch(url, cookie)
+            if 'x-fv-ex2-apollo-context-sha256' in h:
+                h['x-fv-ex2-apollo-context-sha256'] = '0'*64
+            return status, h, data
+        with self.assertRaisesRegex(AdmissionError, 'source context index hash mismatch'):
+            admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
+                  allow_stub=True, fetch=bad_context_header)
+
+    def test_context_index_response_tampering_denied(self):
+        def bad_context_export(url, cookie=''):
+            status, h, data = no_redirect_fetch(url, cookie)
+            if cookie and 'file=source-context.json' in url:
+                data = data.replace(b'"geographic_coordinates_assigned": 0',
+                                    b'"geographic_coordinates_assigned": 1')
+                self.assertNotEqual(data, no_redirect_fetch(url, cookie)[2])
+            return status, h, data
+        with self.assertRaisesRegex(AdmissionError, 'Export integrity'):
+            admit(test_http.ApolloHttp.base, '/review', 'fv_test_mode=editor',
+                  allow_stub=True, fetch=bad_context_export)
 
     def test_export_tampering_not_accepted(self):
         def bad_export(url, cookie=''):

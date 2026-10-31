@@ -49,7 +49,7 @@ class SealedApollo(unittest.TestCase):
     def test_01_source_pin_custody_and_no_public_files(self):
         self.assertTrue(self.m['source_match_all_12_blob_pins'])
         self.assertEqual(self.m['source_pr215_head'], PIN)
-        self.assertEqual(len(self.m['outputs_sha256']), 9)
+        self.assertEqual(len(self.m['outputs_sha256']), 10)
         self.assertEqual(self.m['source_concordance']['record_count'], 6)
         self.assertEqual(len(self.members), 3)
         self.assertTrue(all(not any(name.endswith('/' + file) for file in FILES) for name in self.members))
@@ -119,7 +119,9 @@ class SealedApollo(unittest.TestCase):
         self.assertIn('id="fv-ex2-apollo-document"', s)
         self.assertIn('href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>', s)
         self.assertIn('.fv-ex2-apollo__skip:focus-visible{transform:none', s)
-        self.assertEqual(s.count('fv_ex2_apollo_sealed_download'), 4)
+        self.assertEqual(s.count('fv_ex2_apollo_sealed_download'), 5)
+        self.assertEqual(s.count(' data-concordance-era='), 6)
+        self.assertEqual(s.count('type="radio"'), 4)
         self.assertNotIn('{{FV_EX2_ASSET_BASE}}', s)
         self.assertIn('nonce="', s)
         self.assertNotIn('<link rel="stylesheet" href=', s)
@@ -129,11 +131,12 @@ class SealedApollo(unittest.TestCase):
 
     def test_07_exact_downloads_allowlist(self):
         generated = BRIDGE / 'generated'
-        for file in FILES[3:]:
+        for file in FILES[3:] + ('source-context.json',):
             with self.subTest(file=file):
                 response = php(self.plugin, 'staging', 'download', file)
                 self.assertEqual(response.returncode, 0, response.stderr)
-                self.assertEqual(response.stdout, (generated / file).read_bytes())
+                self.assertEqual(response.stdout, (generated / file).read_bytes() if file != 'source-context.json'
+                                 else __import__('qa.source_concordance',fromlist=['build_context_index']).build_context_index().encode('utf-8'))
         blocked = php(self.plugin, 'staging', 'download', '../fragment.html')
         self.assertEqual(blocked.stdout, b'')
         self.assertIn(b'STATUS:404', blocked.stderr)

@@ -74,9 +74,12 @@ function fv_ex2_apollo_sealed_page() {
     $js = fv_ex2_apollo_sealed_asset('apollo.js');
     $concordance = fv_ex2_apollo_sealed_asset('source-concordance.html');
     $concordance_css = fv_ex2_apollo_sealed_asset('source-concordance.css');
+    $context_index = fv_ex2_apollo_sealed_asset('source-context.json');
     if (!is_string($fragment) || !is_string($css) || !is_string($js)
-        || !is_string($concordance) || !is_string($concordance_css)
+        || !is_string($concordance) || !is_string($concordance_css) || !is_string($context_index)
         || substr_count($concordance, 'data-concordance-record=') !== 6
+        || substr_count($concordance, '{{FV_EX2_CONTEXT_EXPORT}}') !== 1
+        || substr_count($concordance, 'type="radio"') !== 4
         || strpos($fragment, 'id="documentary-trails"') === false
         || strpos($fragment, 'id="atlas"') === false
         || substr_count($fragment, '{{FV_EX2_ASSET_BASE}}') !== 4) {
@@ -97,6 +100,11 @@ function fv_ex2_apollo_sealed_page() {
         || preg_match('~<\s*(?:script|style|img|iframe|main|html|body)\b~i', $fragment)) {
         status_header(503); exit;
     }
+    // Derived JSON index uses the same editor/nonce-guarded route as the canonical exports.
+    $context_url = add_query_arg(array('action' => 'fv_ex2_apollo_sealed_download',
+        'file' => 'source-context.json', '_wpnonce' => $nonce), $base);
+    $concordance = str_replace('{{FV_EX2_CONTEXT_EXPORT}}', esc_url($context_url), $concordance);
+    if (strpos($concordance, '{{FV_EX2_') !== false) { status_header(503); exit; }
     // Inject after validating the canonical fragment; keep its original provenance header.
     $chronology_start = '<section class="ex2-section ex2-case" id="chronology"';
     if (substr_count($fragment, $chronology_start) !== 1
@@ -112,6 +120,7 @@ function fv_ex2_apollo_sealed_page() {
     header('X-FV-EX2-Apollo-CSS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.css']);
     header('X-FV-EX2-Apollo-JS-SHA256: ' . FV_EX2_APOLLO_SHA256['apollo.js']);
     header('X-FV-EX2-Apollo-Concordance-SHA256: ' . FV_EX2_APOLLO_SHA256['source-concordance.html']);
+    header('X-FV-EX2-Apollo-Context-SHA256: ' . FV_EX2_APOLLO_SHA256['source-context.json']);
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
     header('X-Content-Type-Options: nosniff');
@@ -138,6 +147,7 @@ function fv_ex2_apollo_sealed_download() {
         'evidence-export.json' => 'application/json; charset=UTF-8',
         'response-export.csv' => 'text/csv; charset=UTF-8',
         'response-export.json' => 'application/json; charset=UTF-8',
+        'source-context.json' => 'application/json; charset=UTF-8',
     );
     $file = isset($_GET['file']) && is_string($_GET['file']) ? $_GET['file'] : '';
     if (!array_key_exists($file, $files)) { status_header(404); exit; }
