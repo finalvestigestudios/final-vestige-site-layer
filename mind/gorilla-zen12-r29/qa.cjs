@@ -19,7 +19,7 @@ assert(article.includes('https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/'),'20
 assert(article.includes('Puységur'),'historical bridge');
 assert(article.includes('not** a validated'),'exercise caveat');
 assert(article.includes('not a universal probability'),'conditional result');
-assert(article.includes('not a clinical'),'not therapy');
+assert(article.includes('not a diagnostic test'),'not therapy');
 assert(!/buy now|limited offer|act fast/i.test(article),'no commerce in investigation');
 assert(wp.includes('id="mind-gorilla-title"'),'article heading');
 assert(!wp.includes('href="<a'),'article links not nested');
