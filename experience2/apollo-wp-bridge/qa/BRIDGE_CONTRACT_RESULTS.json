@@ -1,0 +1,17 @@
+{
+  "builder": true,
+  "determinism": true,
+  "outputs": {
+    "apollo.css": "8a25a267a4a68e16f1946d26350b0f62d99312261c121f3203eb0c56ca26f673",
+    "apollo.js": "3be1dc2a61da3a15a758e91b0da93311536edc62cfc0e98ab5a89a0e7254a360",
+    "evidence-export.csv": "8fe343e80e560af6ec021144e38ae8edbad558fba531bf1ff45ccf06c90c1ed0",
+    "evidence-export.json": "60941d48649f68add5ab5d5ca47be68ab7eb7a56a859de2e33de937caaf92c85",
+    "fragment.html": "99d457f4be8f2f7fb5dff8d4aa86f6af7a1afaf6fc8189743cfcf47b895e7b1a",
+    "manifest.json": "09bebd46c4536d917e8734b6dd1a25de73c2a56cdf06e1868a13552c342fc452",
+    "response-export.csv": "7e9d25bb34edf41f4c961e71a0fc7f5e4d6fab274290e5c3fc363ca2c9bd5b43",
+    "response-export.json": "dec196c2e930ddb1d8ba6dea09bd582657ccd2841ec0a17964e88e8e913830b6"
+  },
+  "php_mock": true,
+  "source_head": "offline_fixture_with_four_earlier_response_files",
+  "tamper_fail_closed": true
+}

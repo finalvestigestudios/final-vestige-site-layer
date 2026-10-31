@@ -1,0 +1,18 @@
+{
+  "pinned_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/215",
+  "pinned_head": "74375657f2cdaac0710f94c6de6c24534ee06858",
+  "expected_blob_sha1": {
+    "render.py": "9893867d5f19d6c454f6ea0af7e36581f4b0832c",
+    "trail.py": "a4fa9e98144111c87056997b7b195c9bdbf30f67",
+    "response_lab.py": "82f4f42e05227207a38a707aa209edf14c75bd5",
+    "assets/app.css": "2d0cc44773bb2a5e52e615f10e4c8a1ef65adf22",
+    "assets/response.css": "a871bef13269b3f964d1ce93cb1a9848011df779",
+    "assets/trail.css": "a2c023db1020ab17a599d260eabbfcea395c22d8",
+    "assets/app.js": "310d7aa1774a04400d72eea9faf8f0f0c8cb66e9",
+    "assets/response.js": "5ed86f0927171d726569166681149be3cbdaf85c",
+    "assets/trail.js": "895675d8705e2c2c1af09d6f4c9d5047c5da495b",
+    "records.json": "aca6df88e40676539c97e8042fda7c5fe9f9601c",
+    "custody.json": "59006a3f2a2156f578f6bffcf80d3b268bb93abb",
+    "response-crosswalk.json": "c6418cd12a064377195cf79b266c9a99f341c34e"
+  }
+}
