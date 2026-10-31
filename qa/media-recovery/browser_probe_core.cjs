@@ -24,6 +24,13 @@ function commonsFile(p){
  }
  return null;
 }
+function contentQuery(p){
+ // Preserve query values which may select different archival photos at the same path.
+ // Only established image resizing/format knobs are excluded from file identity.
+ const transforms=new Set(['width','height','w','h','fit','resize','crop','quality','q','ssl','auto','format','fm']);
+ const selectors=[...p.searchParams].filter(([k])=>!transforms.has(k.toLowerCase()));
+ return selectors.length?'?'+new URLSearchParams(selectors).toString():'';
+}
 function imageIdentity(url){
  const u=clean(url);if(!u)return null;
  try{
@@ -34,13 +41,13 @@ function imageIdentity(url){
   }
   const filename=commonsFile(p);
   if(filename)return 'commons-file:'+filename;
-  return p.origin+p.pathname;
+  return p.origin+p.pathname+contentQuery(p);
  }catch{return null}
 }
 function sameSource(a,b){
  const x=imageIdentity(a),y=imageIdentity(b);if(!x||!y)return false;
  if(x===y)return true;
- try{const xa=new URL(x),ya=new URL(y);return xa.hostname===ya.hostname&&decodeURIComponent(xa.pathname)===decodeURIComponent(ya.pathname)}
+ try{const xa=new URL(x),ya=new URL(y);return xa.origin===ya.origin&&decodeURIComponent(xa.pathname)===decodeURIComponent(ya.pathname)&&xa.search===ya.search}
  catch{return false}
 }
 function normalizedAlt(t){return String(t||'').toLowerCase().replace(/\s+/g,' ').trim()}
