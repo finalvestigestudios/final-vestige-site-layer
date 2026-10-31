@@ -42,4 +42,4 @@ We'll continue to bring you archival mysteries, documented history, and investig
 
 ---
 **Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**
-Sender: Final Vestige Studios. Physical mailing address: \`[[VALID_POSTAL_ADDRESS_REQUIRED]]\`. Unsubscribe: \`[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]\`. These placeholders intentionally prevent sending.
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
