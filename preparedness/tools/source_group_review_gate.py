@@ -222,7 +222,6 @@ def audit_frozen(root):
             'machine_authority': 'FROZEN_GIT_BLOB_AND_CROSSWALK_PARITY_ONLY'}
 
 
-
 def main():
     import argparse
     p = argparse.ArgumentParser()
