@@ -9,7 +9,7 @@ import { Script } from 'node:vm';
 import { pathToFileURL } from 'node:url';
 
 function getAttribute(attrs, name) {
-  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\'\$&'');
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const match = attrs.match(new RegExp(`(?:^|\\s)${escaped}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`, 'i'));
   return match?.[1] ?? match?.[2] ?? match?.[3] ?? null;
 }
