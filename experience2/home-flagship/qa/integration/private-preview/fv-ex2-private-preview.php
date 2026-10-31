@@ -79,7 +79,7 @@ function fv_ex2_private_compose(): ?array {
     $html = str_replace('</body>', $scriptsAtEnd . '</body>', $html);
     // No passive execution or outbound executable assets. Fail closed on unexpected refs.
     if (preg_match('~<script[^>]+\bsrc\s*=|<link[^>]+rel=["\']stylesheet["\']~i', $html)) { return null; }
-    return ['html' => $html, 'nonce' => $nonce];
+    return ['html' => $html, 'nonce' => $nonce, 'index_sha256' => hash('sha256', $raw['index.html'])];
 }
 
 function fv_ex2_private_render(): void {
@@ -89,6 +89,7 @@ function fv_ex2_private_render(): void {
     if ($page === null) { status_header(503); exit; }
     nocache_headers();
     header('Content-Type: text/html; charset=UTF-8');
+    header('X-FV-EX2-Index-SHA256: ' . $page['index_sha256']);
     header('X-Content-Type-Options: nosniff');
     header('Referrer-Policy: no-referrer');
     header('X-Robots-Tag: noindex, nofollow, noarchive');
