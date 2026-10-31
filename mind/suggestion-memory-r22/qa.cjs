@@ -9,7 +9,7 @@ function contrast(fg,bg){
   const a=lum(fg),b=lum(bg);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
 }
 function getCsvRows(s){return s.trim().split(/\r?\n/).slice(1).filter(Boolean);}
-function removeVideo(s){return s.replace(/<section class="video-concept"[\\s\\S]*?<\\/section>/,"\\n");}
+function removeVideo(s){return s.replace(/<section class="video-concept"[\s\S]*?<\/section>/,"\n");}
 function audit(d){
  const out=[]; const check=(name,ok)=>out.push({name,pass:!!ok});
  const A=d.A||"",B=d.B||"",article=d.article||"",hub=d.hub||"",matrix=d.matrix||"",vtt=d.vtt||"",measurement=d.measurement||"",readiness=d.readiness||"",totalFocus=d.totalFocus||"";
@@ -40,7 +40,7 @@ function audit(d){
  check("No invented unique results/commissions",[A,B].every(s=>!/(my experience using Zen12|we tested the MP3|guaranteed results)/i.test(s)));
  check("Investigation is substantial",article.split(/\s+/).length>1800);
  check("Investigation cites experiments + 1843 primary",article.includes("Loftus")&&article.includes("Braid")&&article.includes("Wellcome")&&article.includes("Scoboria"));
- check("Investigation no commercial product CTA",!/<a[^>]+href="https:\\/\\/(zen12\\.com|hypnosislive\\.com)/i.test(article));
+ check("Investigation no commercial product CTA",!/<a[^>]+href="https:\/\/(zen12\.com|hypnosislive\.com)/i.test(article));
  check("Hub no live false guide links",!hub.includes('href="/mind/the-memory')&&!hub.includes('href="/mind/tools/'));
  check("Hub preserves published Puy route",hub.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"));
  check("Total Focus independent long guide",totalFocus.split(/\s+/).length>1100&&totalFocus.includes("33-minute")&&totalFocus.includes("47-MB"));
