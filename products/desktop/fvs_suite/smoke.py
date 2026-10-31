@@ -144,6 +144,23 @@ def run_smoke(app_id: str) -> list[Path]:
             _check(hashlib.sha256(cr_before.read_bytes()).hexdigest().encode() in cr_report
                    and hashlib.sha256(cr_after.read_bytes()).hexdigest().encode() in cr_report,
                    "smoke invariant 48")
+            # R77: permitted invisible Unicode formatting must be explicit
+            # in the ACTUAL packaged policy engine's human-review report.
+            invisible_before = root / "before-invisible.txt"
+            invisible_after = root / "after-invisible.txt"
+            invisible_before.write_bytes("Approve\u200b now.\n".encode("utf-8"))
+            invisible_after.write_bytes("Approve\ufe0f now.\n".encode("utf-8"))
+            invisible_report = engine.policy_delta(
+                str(invisible_before), str(invisible_after), str(root)
+            )[0].read_text(encoding="utf-8")
+            _check("-Approve\\u200b now.\n+Approve\\ufe0f now.\n" in
+                   invisible_report, "smoke invariant 49")
+            _check("\u200b" not in invisible_report and
+                   "\ufe0f" not in invisible_report, "smoke invariant 50")
+            _check(hashlib.sha256(invisible_before.read_bytes()).hexdigest() in
+                   invisible_report and
+                   hashlib.sha256(invisible_after.read_bytes()).hexdigest() in
+                   invisible_report, "smoke invariant 51")
         elif app_id == "grants":
             claims = _csv(root, "claims.csv", ("id", "amount", "program"), [
                 ("C1", "20", "G1")])
