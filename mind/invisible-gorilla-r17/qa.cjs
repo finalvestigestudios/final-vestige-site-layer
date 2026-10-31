@@ -93,7 +93,7 @@ function mutations(bundle){
  ['injected form',b=>{b.html+='<form><input></form>';}],
  ['injected script',b=>{b.html+='<script>alert(1)<\/script>';}],
  ['injected iframe',b=>{b.html+='<iframe src="https://example.org"></iframe>';}],
- ['deleted original research',b=>{b.html=b.html.replace('https://doi.org/10.1068/i0386','https://no-research.invalid');}],
+ ['deleted original research',b=>{b.html=b.html.replaceAll('https://doi.org/10.1068/i0386','https://no-research.invalid');}],
  ['broken Focus route',b=>{b.html=b.html.replaceAll('https://finalvestige.com/focus/','https://not-real.invalid/');}],
  ['missing reduced-motion',b=>{b.html=b.html.replace('prefers-reduced-motion:reduce','prefers-motion:reduce');}],
  ['duplicate source claim ID',b=>{b.matrix.claims[0].id=b.matrix.claims[1].id;}],
