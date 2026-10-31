@@ -29,6 +29,12 @@ successful run gets `smoke="passed"` per executable,
 The CLI cannot inject a runner or platform override and therefore cannot
 produce synthetic success through those test-only API arguments.
 
+The independent `report_attestation.py` schema accepts the new two boolean
+fields only when they agree with the status. It deliberately **rejects**
+`synthetic_smoke_only` evidence even if the six inert fixtures returned zero,
+and rejects forged/missing/loosely typed provenance flags. R39 evidence
+regressions now include six new methods for this boundary.
+
 ## Regression verification
 
 ```bash
@@ -38,10 +44,11 @@ PYTHONPATH=. python -OO -W error -m unittest discover -s tests -p test_smoke_pro
 python -m compileall -q smoke_provenance.py tests/test_smoke_provenance_r73.py
 ```
 
-17 new pure-function tests cover genuine/mock/no-smoke classification, Linux
+17 locally executed pure-function tests cover genuine/mock/no-smoke classification, Linux
 override attempts, ARM64/x86 rejection and malformed flags. R9, R10 and R37
 existing mock-runner expectations have been updated to the explicit synthetic
-status and flags. The complete repository integration suite and true Windows
+status and flags. The six additional attestation tests are committed but require
+full-repository execution before they can be counted as passed. The complete repository integration suite and true Windows
 packaged execution remain separate required tests, not asserted by the local
 pure-module results.
 
