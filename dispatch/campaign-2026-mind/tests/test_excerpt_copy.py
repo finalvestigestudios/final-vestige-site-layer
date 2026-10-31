@@ -29,7 +29,8 @@ class ExcerptTests(unittest.TestCase):
                 self.assertIn('commission', e['excerpt'].lower())
                 self.assertIn('affiliate', e['excerpt'].lower())
             else:
-                self.assertNotIn('commission', e['excerpt'].lower())
+                self.assertNotIn('may earn a commission', e['excerpt'].lower())
+                self.assertNotIn('affiliate', e['excerpt'].lower())
 
     def test_hold_only(self):
         self.assertEqual(self.excerpts['status'], 'DRAFT_FOR_WORDPRESS_EDITOR_REVIEW_ONLY')
