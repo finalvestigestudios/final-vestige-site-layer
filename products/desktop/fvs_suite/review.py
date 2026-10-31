@@ -9,6 +9,21 @@ from decimal import Decimal
 from typing import Iterable, Mapping
 
 
+_ASCII_CASE_TABLE = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
+
+
+def ascii_case_identity(value: str) -> str:
+    """Ignore ASCII letter case without folding distinct Unicode source labels.
+
+    Unicode ``casefold``/``upper`` may expand visually different identifiers
+    (e.g. LONG S -> s, SHARP S -> ss). Those labels must trigger human review
+    when a lossy matching key groups them; do not declare them identical.
+    """
+    if type(value) is not str:
+        raise ValueError("Source identity label must be text")
+    return value.translate(_ASCII_CASE_TABLE)
+
+
 def raw_values(rows: Iterable[Mapping[str, str]], field: str) -> tuple[str, ...]:
     """Return distinct, nonblank source labels, preserving exact spelling."""
     return tuple(sorted({str(row.get(field, "")).strip() for row in rows
@@ -21,8 +36,8 @@ def labels_for_report(rows: Iterable[Mapping[str, str]], field: str) -> str:
 
 
 def normalized_collision(rows: Iterable[Mapping[str, str]], field: str) -> bool:
-    """Case-only differences are okay; punctuation or spacing needs review."""
-    return len({value.casefold() for value in raw_values(rows, field)}) > 1
+    """Ignore ASCII case only; any other normalized identity change needs review."""
+    return len({ascii_case_identity(value) for value in raw_values(rows, field)}) > 1
 
 
 def reconciliation_status(left: list[dict[str, str]], right: list[dict[str, str]],
