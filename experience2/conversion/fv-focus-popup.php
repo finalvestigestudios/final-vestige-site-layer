@@ -2,7 +2,7 @@
 /**
  * Plugin Name: FV Focus Popup (Review Candidate)
  * Description: Opt-in Fieldbook dialog using existing Jetpack subscriptions. DRAFT: no production authorization.
- * Version: 0.1.0
+ * Version: 0.1.1
  */
 defined('ABSPATH') || exit;
 
@@ -11,6 +11,39 @@ defined('ABSPATH') || exit;
  * Does NOT subscribe anyone, process PII, modify lists or send the book.
  * Native Jetpack block must render a working form or JS keeps /focus/ fallback visible.
  */
+/**
+ * Enqueue styles from wp_head, before the content shortcode renders.
+ * Shortcodes rendered only in template parts are NOT guaranteed early CSS;
+ * production placement must be a page content block, verified in staging.
+ */
+function fv_focus_popup_enqueue_assets() {
+    wp_enqueue_style(
+        'fv-focus-popup',
+        plugins_url('focus-popup.css', __FILE__),
+        array(),
+        '0.1.1'
+    );
+    wp_enqueue_script(
+        'fv-focus-popup',
+        plugins_url('focus-popup.js', __FILE__),
+        array(),
+        '0.1.1',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', static function () {
+    if (!is_singular()) {
+        return;
+    }
+    $post = get_post();
+    if (!is_object($post) || !isset($post->post_content)) {
+        return;
+    }
+    if (has_shortcode((string) $post->post_content, 'fv_focus_popup')) {
+        fv_focus_popup_enqueue_assets();
+    }
+});
+
 add_shortcode('fv_focus_popup', static function () {
     // Repeated blocks would duplicate IDs and dialog controls; fail to a normal link.
     static $rendered_once = false;
@@ -30,18 +63,6 @@ add_shortcode('fv_focus_popup', static function () {
     // Let WordPress render the real Jetpack subscriptions block. Never fabricate a form.
     $rendered = do_blocks($html);
 
-    wp_enqueue_style(
-        'fv-focus-popup',
-        plugins_url('focus-popup.css', __FILE__),
-        array(),
-        '0.1.0'
-    );
-    wp_enqueue_script(
-        'fv-focus-popup',
-        plugins_url('focus-popup.js', __FILE__),
-        array(),
-        '0.1.0',
-        true
-    );
+    fv_focus_popup_enqueue_assets(); // fallback for alternate render paths; WP deduplicates handles
     return $rendered;
 });
