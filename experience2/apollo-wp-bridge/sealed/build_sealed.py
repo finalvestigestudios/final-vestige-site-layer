@@ -17,6 +17,8 @@ import sys
 import zipfile
 import zlib
 
+from qa.custody_integrity import check_directory
+
 HERE = Path(__file__).resolve().parent
 BRIDGE = HERE.parent
 UPSTREAM = BRIDGE.parent / 'apollo-casefile'
@@ -47,6 +49,9 @@ def build(out: Path) -> dict:
             or src.get('source_pin_mismatches') != []
             or sorted(src.get('outputs_sha256', [])) != sorted(FILES)):
         raise ValueError('Source custody and generated output manifest disagree')
+    # Historical claim/source parity, active HTML injection and data export integrity
+    # are mandatory, not optional QA invoked after packaging.
+    custody_receipt = check_directory(BRIDGE / 'generated')
     payload = {}
     hashes = {}
     sizes = {}
@@ -75,6 +80,9 @@ def build(out: Path) -> dict:
         'purpose': 'PRIVATE_APOLLO_CASEFILE_STAGING_PREVIEW_ONLY',
         'source_pr215_head': PIN,
         'source_match_all_12_blob_pins': True,
+        'custody_lint': {k: custody_receipt[k] for k in ('status','pinned_head','dom_ids',
+                         'source_drawers','anchors','external_source_links',
+                         'evidence_records','response_records','csv_json_parity')},
         'outputs_sha256': hashes,
         'outputs_bytes': sizes,
         'plugin_sha256': hashlib.sha256(php.encode('utf-8')).hexdigest(),
