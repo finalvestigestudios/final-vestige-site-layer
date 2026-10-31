@@ -1,0 +1,508 @@
+{
+  "title": "Attentional Blink + Zen12 Offer Integrity: Claim/Proof/Activation Matrix",
+  "as_of": "2026-10-31",
+  "publication_state": "DRAFT_UNPUBLISHED",
+  "partner": {
+    "accepted": false,
+    "acceptance_verified": false,
+    "eligible_skus_verified": false,
+    "approved_affiliate_url": null,
+    "tracking_terms_verified": false,
+    "website_rights_verified": false,
+    "email_rights_verified": false,
+    "social_rights_verified": false,
+    "creative_permissions_verified": false,
+    "activation_enabled": false
+  },
+  "method": "Source identifiers are bibliographic links, not independent endorsement. No unsupported product outcome may be promoted. Source recency/access checked Oct 31; merchant content can change.",
+  "sources": {
+    "R92": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "kind": "primary study",
+      "accessed": "2026-10-31"
+    },
+    "R09": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19933555/",
+      "kind": "peer-reviewed review",
+      "accessed": "2026-10-31"
+    },
+    "V09": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18696107/",
+      "kind": "primary study",
+      "accessed": "2026-10-31"
+    },
+    "S07": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "kind": "primary study",
+      "accessed": "2026-10-31"
+    },
+    "I3": {
+      "url": "https://inspire3.com/",
+      "kind": "seller corporate catalog",
+      "accessed": "2026-10-31"
+    },
+    "ZABOUT": {
+      "url": "https://zen12.com/about",
+      "kind": "seller description",
+      "accessed": "2026-10-31"
+    },
+    "ZCHECK": {
+      "url": "https://zen12.com/getstarted",
+      "kind": "seller checkout",
+      "accessed": "2026-10-31"
+    },
+    "ZRESEARCH": {
+      "url": "https://zen12.com/research",
+      "kind": "seller-authored research narrative",
+      "accessed": "2026-10-31"
+    },
+    "FTCEND": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory guidance",
+      "accessed": "2026-10-31"
+    },
+    "FTCHEALTH": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory guidance",
+      "accessed": "2026-10-31"
+    },
+    "P": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "existing live source-archive page",
+      "accessed": "2026-10-31 via authenticated WordPress read"
+    },
+    "F": {
+      "url": "https://finalvestige.com/focus/",
+      "kind": "existing live free funnel",
+      "accessed": "2026-10-31 via authenticated WordPress read"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "The 1992 Raymond et al. experiment used rapid serial visual presentation with two targets.",
+      "status": "supported primary finding",
+      "source_ids": [
+        "R92"
+      ],
+      "decision": "allow in investigation; specify exact task"
+    },
+    {
+      "id": "C02",
+      "statement": "Second-probe detection dropped in an interval lasting 270 ms beginning 180 ms after T1.",
+      "status": "supported primary finding",
+      "source_ids": [
+        "R92"
+      ],
+      "decision": "allow with exact experimental qualification"
+    },
+    {
+      "id": "C03",
+      "statement": "Blank after T1 or no need to identify T1 eliminated the reported temporary deficit.",
+      "status": "supported primary finding",
+      "source_ids": [
+        "R92"
+      ],
+      "decision": "allow as specific experiment finding"
+    },
+    {
+      "id": "C04",
+      "statement": "The effect is a physical blink of the eyelids.",
+      "status": "false inference",
+      "source_ids": [
+        "R92"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C05",
+      "statement": "Most participants routinely miss any second event in ordinary life.",
+      "status": "unsupported generalization",
+      "source_ids": [
+        "R92",
+        "R09"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C06",
+      "statement": "Attentional blink is generally measured as reduced T2 report around 200–500ms after T1.",
+      "status": "supported generalization",
+      "source_ids": [
+        "R09"
+      ],
+      "decision": "allow as paradigm-specific"
+    },
+    {
+      "id": "C07",
+      "statement": "T2 results are often conditioned on correct T1 identification.",
+      "status": "supported methodology",
+      "source_ids": [
+        "R09"
+      ],
+      "decision": "allow"
+    },
+    {
+      "id": "C08",
+      "statement": "Lag-one sparing is universal.",
+      "status": "false generalization",
+      "source_ids": [
+        "V09"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C09",
+      "statement": "Lag-one sparing depends in part on experimental stimulus properties.",
+      "status": "supported research context",
+      "source_ids": [
+        "V09"
+      ],
+      "decision": "allow as qualified"
+    },
+    {
+      "id": "C10",
+      "statement": "A single settled neural mechanism explains attentional blink.",
+      "status": "unsupported",
+      "source_ids": [
+        "R09"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C11",
+      "statement": "The literature discusses selection, working memory and response factors.",
+      "status": "supported research context",
+      "source_ids": [
+        "R09"
+      ],
+      "decision": "allow"
+    },
+    {
+      "id": "C12",
+      "statement": "Attentional-blink failure diagnoses ADHD, dementia or attention impairment.",
+      "status": "unsupported clinical claim",
+      "source_ids": [
+        "R92",
+        "R09",
+        "FTCHEALTH"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C13",
+      "statement": "A browser animation can reproduce original lab measurement regardless of device timing.",
+      "status": "unsupported technical claim",
+      "source_ids": [
+        "R92"
+      ],
+      "decision": "exclude; no flashing test"
+    },
+    {
+      "id": "C14",
+      "statement": "Slagter et al. 2007 studied three months of intensive mental training.",
+      "status": "supported primary finding",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "allow with context"
+    },
+    {
+      "id": "C15",
+      "statement": "In that study practitioners showed a greater reduction in attentional blink than novices.",
+      "status": "supported primary finding",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "allow; neither guarantee nor product effect"
+    },
+    {
+      "id": "C16",
+      "statement": "The 2007 study tested Zen12 recordings.",
+      "status": "false",
+      "source_ids": [
+        "S07",
+        "ZABOUT"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C17",
+      "statement": "A twelve-minute MP3 reproduces three months of intensive meditation.",
+      "status": "unsupported cross-intervention claim",
+      "source_ids": [
+        "S07",
+        "ZABOUT"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C18",
+      "statement": "A positive mental-training study proves every form of meditation improves T2 reporting.",
+      "status": "unsupported extrapolation",
+      "source_ids": [
+        "S07",
+        "R09"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C19",
+      "statement": "Zen12 is offered by Inspire3.",
+      "status": "seller corporate identification",
+      "source_ids": [
+        "I3",
+        "ZABOUT"
+      ],
+      "decision": "allow with seller attribution"
+    },
+    {
+      "id": "C20",
+      "statement": "Zen12 describes twelve progressive levels.",
+      "status": "seller-described feature",
+      "source_ids": [
+        "ZABOUT"
+      ],
+      "decision": "allow as seller description"
+    },
+    {
+      "id": "C21",
+      "statement": "Zen12 describes twelve-minute sessions.",
+      "status": "seller-described feature",
+      "source_ids": [
+        "ZABOUT"
+      ],
+      "decision": "allow as seller description"
+    },
+    {
+      "id": "C22",
+      "statement": "Zen12 describes music, guided meditation, white noise and nature-sound versions.",
+      "status": "seller-described feature",
+      "source_ids": [
+        "ZABOUT"
+      ],
+      "decision": "allow with exact four names"
+    },
+    {
+      "id": "C23",
+      "statement": "Zen12 checkout describes 48 MP3 files.",
+      "status": "seller-described checkout content",
+      "source_ids": [
+        "ZCHECK"
+      ],
+      "decision": "allow as offer description, reverify before launch"
+    },
+    {
+      "id": "C24",
+      "statement": "Zen12 checkout advertises a quick-start guide and user manual.",
+      "status": "seller-described checkout content",
+      "source_ids": [
+        "ZCHECK"
+      ],
+      "decision": "allow as offer description, reverify"
+    },
+    {
+      "id": "C25",
+      "statement": "The seller advertises a one-hour support call and lifetime support.",
+      "status": "seller-described checkout content",
+      "source_ids": [
+        "ZCHECK"
+      ],
+      "decision": "may describe as seller advertising; no guarantee"
+    },
+    {
+      "id": "C26",
+      "statement": "The seller's page describes an hour's meditation benefits in twelve minutes.",
+      "status": "seller efficacy claim",
+      "source_ids": [
+        "ZABOUT"
+      ],
+      "decision": "do not endorse; explain unverified"
+    },
+    {
+      "id": "C27",
+      "statement": "Zen12 causes an hour's meditation benefit in twelve minutes.",
+      "status": "unsupported product-specific efficacy",
+      "source_ids": [
+        "ZABOUT",
+        "S07",
+        "FTCHEALTH"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C28",
+      "statement": "Zen12 automatically entrains brainwaves for all listeners.",
+      "status": "unsupported product-specific physiological efficacy",
+      "source_ids": [
+        "ZABOUT",
+        "ZRESEARCH"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C29",
+      "statement": "Zen12 erases all worry and stress after each session.",
+      "status": "unsupported health efficacy",
+      "source_ids": [
+        "ZABOUT",
+        "FTCHEALTH"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C30",
+      "statement": "Zen12 improves cognition as measured by attentional-blink performance.",
+      "status": "unsupported product-specific efficacy",
+      "source_ids": [
+        "S07",
+        "ZABOUT"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C31",
+      "statement": "Short recordings may be more convenient for readers who prefer structured audio.",
+      "status": "editorial consumer framing",
+      "source_ids": [
+        "ZABOUT"
+      ],
+      "decision": "allow as potential fit, not proof of outcomes"
+    },
+    {
+      "id": "C32",
+      "statement": "Zen12 makes meditation effortless for everyone.",
+      "status": "unsubstantiated seller positioning",
+      "source_ids": [
+        "ZABOUT"
+      ],
+      "decision": "exclude"
+    },
+    {
+      "id": "C33",
+      "statement": "The official checkout currently displays price and discount elements and timer.",
+      "status": "time-variable merchant UI",
+      "source_ids": [
+        "ZCHECK"
+      ],
+      "decision": "do not quote price/discount; verify checkout near publication; timer not true scarcity proof"
+    },
+    {
+      "id": "C34",
+      "statement": "The refund terms are fully verified for this account and territory.",
+      "status": "unverified merchant terms",
+      "source_ids": [
+        "ZCHECK"
+      ],
+      "decision": "exclude; reverify enforceable terms"
+    },
+    {
+      "id": "C35",
+      "statement": "Affiliate approval for Final Vestige is confirmed.",
+      "status": "unknown account-specific authorization",
+      "source_ids": [],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C36",
+      "statement": "A Final Vestige eligible Zen12 tracking link exists.",
+      "status": "unknown account-specific link",
+      "source_ids": [],
+      "decision": "HOLD; no link"
+    },
+    {
+      "id": "C37",
+      "statement": "Affiliate email/TikTok/social/website promotion rights are confirmed.",
+      "status": "unknown contract permissions",
+      "source_ids": [],
+      "decision": "HOLD"
+    },
+    {
+      "id": "C38",
+      "statement": "An Inspire3 affiliate creative/swipe pack was approved for reuse.",
+      "status": "unverified creative access",
+      "source_ids": [],
+      "decision": "do not reuse"
+    },
+    {
+      "id": "C39",
+      "statement": "If Future affiliate links are used, material commission relationships must be disclosed close to recommendation.",
+      "status": "regulatory requirement",
+      "source_ids": [
+        "FTCEND"
+      ],
+      "decision": "include near disabled control now, retest once activated"
+    },
+    {
+      "id": "C40",
+      "statement": "Medical or psychological product outcomes require adequate substantiation, not unrelated studies.",
+      "status": "regulatory principle",
+      "source_ids": [
+        "FTCHEALTH"
+      ],
+      "decision": "enforce"
+    },
+    {
+      "id": "C41",
+      "statement": "The live Puységur archive is published and source-oriented.",
+      "status": "verified site inventory",
+      "source_ids": [
+        "P"
+      ],
+      "decision": "link to live archive"
+    },
+    {
+      "id": "C42",
+      "statement": "The live Focus Fieldbook route already exists and preserves the Jetpack funnel.",
+      "status": "verified site inventory",
+      "source_ids": [
+        "F"
+      ],
+      "decision": "link only, do not create new form"
+    },
+    {
+      "id": "C43",
+      "statement": "There are 61 published investigations on live WordPress as of Oct 31.",
+      "status": "verified site inventory",
+      "source_ids": [],
+      "decision": "authenticated WordPress posts.list publish 61; no new live posts"
+    },
+    {
+      "id": "C44",
+      "statement": "Optional 40-second Zen12 film is hosted on Final Vestige today.",
+      "status": "not verified; prior offline asset exists",
+      "source_ids": [],
+      "decision": "do not claim; keep video inactive"
+    },
+    {
+      "id": "C45",
+      "statement": "The 42s film storyboard has synchronized production captions.",
+      "status": "not established",
+      "source_ids": [],
+      "decision": "draft VTT only, not sync-tested"
+    },
+    {
+      "id": "C46",
+      "statement": "An A/B prototype establishes a conversion lift.",
+      "status": "not measured",
+      "source_ids": [],
+      "decision": "no experiment live; hypothesis only"
+    },
+    {
+      "id": "C47",
+      "statement": "First-party outbound clicks equal affiliate sales.",
+      "status": "false measurement inference",
+      "source_ids": [],
+      "decision": "never equate"
+    },
+    {
+      "id": "C48",
+      "statement": "A locally made observation exercise is a validated attentional-blink test.",
+      "status": "false",
+      "source_ids": [
+        "R92"
+      ],
+      "decision": "explicitly disclaim"
+    }
+  ]
+}
