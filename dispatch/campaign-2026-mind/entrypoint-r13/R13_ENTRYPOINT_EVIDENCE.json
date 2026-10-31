@@ -1,0 +1,120 @@
+{
+  "schema": "fv.dispatch.r13.entrypoint.v1",
+  "snapshot_utc": "2026-10-31T06:31:34Z",
+  "source": "Authenticated WordPress.com site/read-only newsletter.status, newsletter.get_settings, pages.get and posts.list; exact merchant official pages reviewed via web 2026-10-30 PT",
+  "master_issue": 174,
+  "companion_issue": 171,
+  "master_pr": 175,
+  "stacked_base_pr": 253,
+  "release": "HOLD_UNSENT",
+  "send_authorized": false,
+  "public_page_changed": false,
+  "wordpress": {
+    "blog_id": 256784396,
+    "subscriptions": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "welcome_fieldbook_pdf_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "recent_sends": 0,
+    "subscriber_aggregates": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "imported_last_24h": 0
+    },
+    "unique_permissioned_deliverable_verified": false,
+    "subscriber_PII_collected": false,
+    "native_received_email_proven": false,
+    "fv_postal_verified": false,
+    "unsubscribe_rendered_verified": false
+  },
+  "pages": {
+    "dispatch": {
+      "id": 523,
+      "url": "https://finalvestige.com/dispatch/",
+      "published": true,
+      "rest_form_elements": 0,
+      "rest_email_inputs": 0,
+      "rest_self_link_page_id": 523,
+      "actual_browser_conversion_proven": false,
+      "saved_gutenberg_subscribe_block": {
+        "block": "jetpack/subscriptions",
+        "buttonOnNewLine": true,
+        "button_label": "Subscribe",
+        "explicit_button_only_style_seen": false
+      }
+    },
+    "focus": {
+      "id": 1579,
+      "url": "https://finalvestige.com/focus/",
+      "published": true,
+      "rest_form_elements": 0,
+      "rest_email_inputs": 0,
+      "rest_self_link_page_id": 1579,
+      "actual_browser_conversion_proven": false,
+      "saved_gutenberg_subscribe_block": {
+        "block": "jetpack/subscriptions",
+        "buttonOnNewLine": true,
+        "button_label": "Send me the fieldbook",
+        "placeholder_configured": true,
+        "explicit_button_only_style_seen": false
+      }
+    },
+    "editorial_standards": {
+      "id": 17,
+      "published": true
+    },
+    "affiliate_disclosure": {
+      "id": 14,
+      "published": true
+    },
+    "puysegur_page": {
+      "id": 1377,
+      "published": true,
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    "apollo_1_post": {
+      "id": 434,
+      "published": true,
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    "zen12_guide": {
+      "published": false,
+      "url": null
+    },
+    "total_focus_guide": {
+      "published": false,
+      "url": null
+    }
+  },
+  "rights": {
+    "zen12_email_allowed": false,
+    "total_focus_email_allowed": false,
+    "account_specific_written_approval_verified": false
+  },
+  "audit": {
+    "subscription_block_rest_status": "SELF_LINK_FALLBACK_IN_REST_REQUIRES_BROWSER_PROOF",
+    "interpretation": "The authenticated REST-rendered page body contains a self-link but no HTML email input or form. This is not proof of a live browser defect; JavaScript or Jetpack hosted flow may function.",
+    "issue05_original_contains_mutable_refund_numbers": true,
+    "issue05_original_lacks_total_focus_exact_sku": true,
+    "recommended_change_to_original_issue05": "PROPOSED_ONLY_PENDING_FOUNDER_EDITORIAL_APPROVAL",
+    "received_jetpack_email": false,
+    "editor_context_read_only_observed": true,
+    "wordPress_official_reference": "https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/",
+    "reference_interpretation": "WordPress documents both standard email-field forms and button-only popup styles. Saved blocks inspected in editor context did not explicitly indicate the button-only style. REST output alone cannot settle public flow."
+  },
+  "official_sources": [
+    "https://zen12.com/about",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://finalvestige.com/editorial-standards/",
+    "https://finalvestige.com/affiliate-disclosure/",
+    "https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/"
+  ],
+  "note": "Never use this source-only evidence to claim that subscriptions work, that newsletter delivery occurred, or that commercial messages are lawful or authorized."
+}
