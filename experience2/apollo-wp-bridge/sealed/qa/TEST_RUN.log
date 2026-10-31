@@ -1,0 +1,14 @@
+test_01_source_pin_custody_and_no_public_files (test_sealed.SealedApollo.test_01_source_pin_custody_and_no_public_files) ... ok
+test_02_deterministic_zip_and_php_lint (test_sealed.SealedApollo.test_02_deterministic_zip_and_php_lint) ... ok
+test_03_all_denials_shortcode_and_ajax (test_sealed.SealedApollo.test_03_all_denials_shortcode_and_ajax) ... ok
+test_04_nonce_rejection (test_sealed.SealedApollo.test_04_nonce_rejection) ... ok
+test_05_authorized_shortcode_and_routes (test_sealed.SealedApollo.test_05_authorized_shortcode_and_routes) ... ok
+test_06_authorized_page_exact_sources (test_sealed.SealedApollo.test_06_authorized_page_exact_sources) ... ok
+test_07_exact_downloads_allowlist (test_sealed.SealedApollo.test_07_exact_downloads_allowlist) ... ok
+test_08_tamper_integrity_failure (test_sealed.SealedApollo.test_08_tamper_integrity_failure) ... ok
+test_09_no_prod_writes_and_csp_contract (test_sealed.SealedApollo.test_09_no_prod_writes_and_csp_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.905s
+
+OK

@@ -1,0 +1,16 @@
+{
+  "authorized_downloads_identical_to_generated": 4,
+  "axe_run": false,
+  "canonical_source_sha": "74375657f2cdaac0710f94c6de6c24534ee06858",
+  "deterministic_package_byte_equal": true,
+  "exact_pr215_source_pins_checked": 12,
+  "full_wordpress_http_test": false,
+  "generated_manifest_sha256": "d92cae8f84ceec1b90c67c7cb4929c2aacd6ec4f13c0655154a89e36d8223c4f",
+  "local_run_date": "2026-10-30",
+  "original_pin_defect": "response_lab.py pin previously 39 hex chars; repaired to 40",
+  "php_lint_pass": true,
+  "production_auth_guest_reader_nonce_tamper_denials_pass": true,
+  "unit_passed": 9,
+  "unit_tests": 9,
+  "wordpress_staging_installed": false
+}

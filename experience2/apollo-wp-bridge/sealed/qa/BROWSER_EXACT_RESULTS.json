@@ -1,0 +1,179 @@
+{
+  "axe_status": "NOT_RUN_NO_PINNED_AXE_BUNDLE",
+  "axe_violations": null,
+  "exact_source_head": "74375657f2cdaac0710f94c6de6c24534ee06858",
+  "generated_php_sha256": "ead57d739f9a56c24aa2e939d46f075fb0ddcaf77b110640e2ebce615cf47ff4",
+  "measurements": [
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 2985896,
+      "csp_meta_no_external_resources": true,
+      "document_width": 320,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 280,
+      "lab_lcp_ms": 280,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 47705,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 320
+    },
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 2895788,
+      "csp_meta_no_external_resources": true,
+      "document_width": 360,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 132,
+      "lab_lcp_ms": 132,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 44507,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 360
+    },
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 3383396,
+      "csp_meta_no_external_resources": true,
+      "document_width": 390,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 140,
+      "lab_lcp_ms": 140,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 42306,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 390
+    },
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 2992224,
+      "csp_meta_no_external_resources": true,
+      "document_width": 768,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 136,
+      "lab_lcp_ms": 136,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 29214,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 768
+    },
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 2937768,
+      "csp_meta_no_external_resources": true,
+      "document_width": 1024,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 152,
+      "lab_lcp_ms": 152,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 24916,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 1024
+    },
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 3352280,
+      "csp_meta_no_external_resources": true,
+      "document_width": 1440,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 236,
+      "lab_lcp_ms": 236,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 24134,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 1440
+    },
+    {
+      "axe_checked": false,
+      "chromium_js_heap_bytes": 2886424,
+      "csp_meta_no_external_resources": true,
+      "document_width": 1920,
+      "evidence_atlas_count": 6,
+      "keyboard_focus_after_hash": true,
+      "lab_cls": 0,
+      "lab_fcp_ms": 152,
+      "lab_lcp_ms": 152,
+      "network_requests": [],
+      "page_errors": [],
+      "page_height": 23874,
+      "response_filter": true,
+      "source_stage_count": 6,
+      "trail_filter_and_anchor": true,
+      "width": 1920
+    }
+  ],
+  "meta_csp_approximation": true,
+  "no_js": true,
+  "scope_warning": "NOT actual HTTP WordPress, cookie behavior, Safari, screen-reader, or field Core Web Vitals",
+  "screenshots": [
+    {
+      "name": "exact-hero-390.png",
+      "sha256": "6c9df1c98441f1a938af63708c3bfda61aa101a2bb0b8a7ad45606da55bc2cbb"
+    },
+    {
+      "name": "exact-trails-390.png",
+      "sha256": "f4947ec9ec530172ae85da7be1f8ec6c827b8746bbe0dcde861116f3ed89ef4a"
+    },
+    {
+      "name": "exact-research-390.png",
+      "sha256": "0a2b589981870fde437ba7f66eb64cec879636f4a7fd3ff8c104c20843cb4326"
+    },
+    {
+      "name": "exact-atlas-390.png",
+      "sha256": "942830f96ac8b13bf0ecf7d4f2bb664740e1c90df6915df362cb2bcd22e37f68"
+    },
+    {
+      "name": "exact-hero-1440.png",
+      "sha256": "bd0c4de0d1a4c2009c4f15d3f7acb09dc83b30f932f5811417f350c3cbec2abb"
+    },
+    {
+      "name": "exact-trails-1440.png",
+      "sha256": "f0f1f72bae7d6db24185fdbdc12e08bf85eaf61b4ff3f3d08ab0777debd1be69"
+    },
+    {
+      "name": "exact-research-1440.png",
+      "sha256": "922b53753656ce596f511ef80114d27d612c599164c7a64ddfa7943678d22c9d"
+    },
+    {
+      "name": "exact-atlas-1440.png",
+      "sha256": "eb5400135dd08a1e26a494db4957f2a2e7a13bb1496a90a01a7c22d5d03219b6"
+    }
+  ],
+  "source_blob_pins": 12,
+  "test_environment": "system Chromium Playwright; PHP CLI WordPress authorization stub; in-memory page.set_content",
+  "touch": true,
+  "zoom_200_percent": {
+    "document_width": 640,
+    "no_root_overflow": true,
+    "physical_css_viewport": 640
+  }
+}
