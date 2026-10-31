@@ -24,6 +24,45 @@ TARGET = '/wordpress/wp-content/uploads/' + MOUNT
 HEX40 = re.compile(r'^[0-9a-f]{40}$')
 REJECT = re.compile(r'<\s*(script|iframe|object|embed|form|link|meta)\b|\bon[a-z]{3,}\s*=|javascript\s*:|posthog|googletagmanager|gtag\s*\(|phc_[A-Za-z0-9_]+', re.I)
 
+# The upstream isolated-stage builder creates precisely this local-only private seed.
+# A matching JSON digest alone is not an authorization boundary: the receipt is
+# stored alongside the Blueprint and can be edited with it.
+CANONICAL_LOCAL_SEED = '''<?php
+require_once '/wordpress/wp-load.php';
+$host = strtolower((string) parse_url(home_url('/'), PHP_URL_HOST));
+if (wp_get_environment_type() !== 'local' || !in_array($host, ['127.0.0.1','localhost'], true)) {
+    throw new RuntimeException('Refusing to seed a nonlocal WordPress host');
+}
+$slug = 'fv-ex2-playground-review';
+$existing = get_page_by_path($slug, OBJECT, 'page');
+if ($existing && $existing->post_content !== '[fv_ex2_homepage_preview_private]') {
+    throw new RuntimeException('Refusing to overwrite a non-FV page');
+}
+if (!$existing) {
+    $id = wp_insert_post(['post_type' => 'page', 'post_status' => 'private',
+        'post_name' => $slug, 'post_title' => 'Experience 2.0 — local editor review only',
+        'post_content' => '[fv_ex2_homepage_preview_private]',
+        'comment_status' => 'closed', 'ping_status' => 'closed'], true);
+    if (is_wp_error($id) || !$id) { throw new RuntimeException('Local preview page creation failed'); }
+}
+?>'''
+
+
+def verified_mount_tree(stage: Path) -> None:
+    """No mount ancestor/entry may redirect writes or read outside this local kit."""
+    mounts = stage / 'mounts'
+    if mounts.is_symlink() or not mounts.is_dir() or mounts.resolve() != mounts:
+        raise ValueError('STAGE HOLD: unsafe mounts root/symlink')
+    for name in ('assembler', 'fv-ex2-private-preview'):
+        directory = mounts / name
+        if directory.is_symlink() or not directory.is_dir() or directory.resolve() != directory:
+            raise ValueError('STAGE HOLD: unsafe existing theme/plugin mount')
+    for name in ('assembler/style.css', 'fv-ex2-private-preview/fv-ex2-private-preview.php'):
+        f = mounts / name
+        if f.is_symlink() or not f.is_file() or not f.resolve().is_relative_to(mounts):
+            raise ValueError('STAGE HOLD: unsafe theme/plugin entry point')
+
+
 
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -100,12 +139,23 @@ def verify_stage(stage: Path, head: str) -> tuple[dict, dict, list[str]]:
     steps = blueprint.get('steps')
     if not isinstance(steps, list) or [s.get('step') for s in steps] != ['defineWpConfigConsts', 'activateTheme', 'activatePlugin', 'runPHP']:
         raise ValueError('STAGE HOLD: unexpected Blueprint execution path')
-    if steps[0].get('consts', {}).get('WP_ENVIRONMENT_TYPE') != 'local' or steps[0]['consts'].get('FV_EX2_ALLOW_PREVIEW') is not True:
+    if (set(blueprint) != {'$schema', 'landingPage', 'login', 'steps'}
+        or blueprint['$schema'] != 'https://playground.wordpress.net/blueprint-schema.json'
+        or blueprint['landingPage'] != '/?pagename=fv-ex2-playground-review'
+        or blueprint['login'] is not True):
+        raise ValueError('STAGE HOLD: unexpected Blueprint top-level action or URL')
+    if steps[0] != {'step':'defineWpConfigConsts', 'consts':{
+        'WP_ENVIRONMENT_TYPE':'local', 'FV_EX2_ALLOW_PREVIEW':True,
+        'WP_DEBUG':True, 'WP_DEBUG_DISPLAY':False}}:
         raise ValueError('STAGE HOLD: not a local-only private preview')
-    if steps[1].get('themeFolderName') != 'assembler' or 'fv-ex2-private-preview' not in steps[2].get('pluginPath', ''):
-        raise ValueError('STAGE HOLD: unexpected theme or preview plugin')
-    if 'fv-ex2-playground-review' not in steps[3].get('code', '') or not stage.joinpath('mounts', 'assembler', 'style.css').is_file() or not stage.joinpath('mounts', 'fv-ex2-private-preview', 'fv-ex2-private-preview.php').is_file():
-        raise ValueError('STAGE HOLD: theme/plugin/preview missing')
+    if steps[1] != {'step':'activateTheme','themeFolderName':'assembler'}:
+        raise ValueError('STAGE HOLD: unexpected theme action')
+    if steps[2] != {'step':'activatePlugin','pluginPath':
+                   '/wordpress/wp-content/plugins/fv-ex2-private-preview/fv-ex2-private-preview.php'}:
+        raise ValueError('STAGE HOLD: unexpected private preview plugin action')
+    if steps[3] != {'step':'runPHP', 'code':CANONICAL_LOCAL_SEED}:
+        raise ValueError('STAGE HOLD: changed local-only preview seed PHP')
+    verified_mount_tree(stage)
     if not isinstance(argv, list) or argv[:3] != ['npx', '@wp-playground/cli@latest', 'server'] or '--port=9400' not in argv:
         raise ValueError('STAGE HOLD: unexpected Playground CLI')
     mounts = [v for v in argv if isinstance(v, str) and v.startswith('--mount=')]
@@ -113,8 +163,12 @@ def verify_stage(stage: Path, head: str) -> tuple[dict, dict, list[str]]:
         '--mount=' + str(stage / 'mounts' / 'assembler') + ':/wordpress/wp-content/themes/assembler',
         '--mount=' + str(stage / 'mounts' / 'fv-ex2-private-preview') + ':/wordpress/wp-content/plugins/fv-ex2-private-preview',
     }
-    if set(mounts) != expected or len(mounts) != 2 or '--blueprint=' + str(stage/'playground-blueprint.json') not in argv:
-        raise ValueError('STAGE HOLD: paths point outside this isolated kit')
+    # The CLI argument vector itself is executable configuration; forbid *all*
+    # extra flags (remote site-url, insecure listener, auto-mount, DB mounts, etc.).
+    other_flags = {'--blueprint=' + str(stage/'playground-blueprint.json'), '--port=9400'}
+    if (set(mounts) != expected or len(mounts) != 2
+        or len(argv) != 7 or set(argv[3:]) != expected | other_flags):
+        raise ValueError('STAGE HOLD: unexpected CLI flag, mount or Blueprint path')
     if stage.joinpath('mounts', MOUNT).exists() or receipt.get('assembler_parity'):
         raise ValueError('STAGE HOLD: refuses to overwrite a prior parity import')
     return receipt, blueprint, argv
@@ -122,6 +176,8 @@ def verify_stage(stage: Path, head: str) -> tuple[dict, dict, list[str]]:
 
 def bind(repo: Path, head: str, stage: Path) -> dict:
     repo = repo.resolve(strict=True)
+    if stage.is_symlink():
+        raise ValueError('STAGE HOLD: stage root cannot be a symlink')
     stage = stage.resolve(strict=True)
     if stage == repo or repo in stage.parents:
         raise ValueError('STAGE HOLD: no writes within the exact Git checkout')
