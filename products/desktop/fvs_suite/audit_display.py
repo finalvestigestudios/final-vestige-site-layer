@@ -6,6 +6,7 @@ No normalization, matching, network I/O or compliance decisions occur here.
 """
 from __future__ import annotations
 
+from typing import Iterable
 import unicodedata
 
 from .unicode_hazards import is_visually_blank_filler
@@ -49,6 +50,25 @@ def visible_source_text(value: str) -> str:
         else:
             parts.append(character)
     return "".join(parts)
+
+
+
+def visible_source_label_list(values: Iterable[str]) -> str:
+    """Deterministic, readable source-document list for human audit reports.
+
+    Preserve raw labels in source snapshots, never normalize matching keys.
+    Trim only ordinary ASCII outside spaces, not hidden Unicode evidence.
+    Escape a literal semicolon so it cannot masquerade as the list separator.
+    """
+    labels: set[str] = set()
+    for value in values:
+        if type(value) is not str:
+            raise TypeError("Audit source document labels require text")
+        trimmed = value.strip(" ")
+        if trimmed:
+            labels.add(trimmed)
+    return "; ".join(visible_source_text(value).replace(";", r"\u003B")
+                     for value in sorted(labels))
 
 
 def visible_review_row(case: object, decision: str) -> tuple[int, str, str, str]:
