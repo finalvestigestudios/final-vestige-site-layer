@@ -75,9 +75,15 @@ def candidate_pairs(records: Iterable[dict[str, Any]], *,
     if max_candidates > MAX_CANDIDATES:
         raise ValueError(f"Candidate limit exceeds safety maximum of {MAX_CANDIDATES:,}")
 
+    # Canonicalize direct-API iterables by verified physical source position.
+    # Otherwise an input permutation changes exact-match anchors, candidate
+    # orientation and review order even for the same source-row evidence.
+    # Validation and the 200k-row bound finish before any candidate is made;
+    # sorting reads only already-validated ASCII row citations (not money).
+    source_rows = sorted(_validated_records(records), key=lambda r: int(r["row"]))
     exact: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
     by_amount: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
-    for record in _validated_records(records):
+    for record in source_rows:
         exact[(record["v"], record["inv"])].append(record)
         by_amount[(record["v"], record["amt"])].append(record)
 
