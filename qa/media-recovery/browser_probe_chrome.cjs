@@ -3,7 +3,7 @@
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {spawn}=require('node:child_process');
 const {loadSnapshot}=require('./validate_inventory.cjs');
-const {classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
+const {classifyImages,pageHostVerified,countTransfer,scopeArticleImageWire}=require('./browser_probe_core.cjs');
 const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
@@ -120,6 +120,11 @@ async function inspect(cdp,page,outputDir){
   const records=net.records(),fail=net.docFailures();
   const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
   const images=classifyImages(page.stored,doc?.images||[],records,verified);
+  const networkImages=records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
+   url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
+   mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
+   from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true}));
+  const articleWire=scopeArticleImageWire(images,networkImages);
   const pageResult=verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page';
   const evidence=assessPage({page_result:pageResult,scroll_coverage:coverage,stored_image_count:page.stored.length,stored_images:images});
   const broken=images.filter(x=>x.verified_broken_in_browser===true),screenshots=[];
@@ -156,10 +161,12 @@ async function inspect(cdp,page,outputDir){
    confirmed_broken_count:evidence.confirmed_broken_count,
    browser_wire_bytes_total:verified&&coverage.complete?countTransfer(records):null,
    image_wire_bytes_total:verified&&coverage.complete?countTransfer(records.filter(x=>x.type==='Image')):null,
-   network_images:records.filter(x=>x.type==='Image'&&/^https?:\/\//.test(x.url||'')).map(x=>({
-    url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
-    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
-    from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true})),
+   // Distinguish measured article-photo traffic from unrelated page UI image traffic.
+   article_image_wire_bytes_total:verified&&coverage.complete?articleWire.article_bytes:null,
+   unattributed_image_wire_bytes_total:verified&&coverage.complete?articleWire.unattributed_bytes:null,
+   matched_article_network_requests:verified&&coverage.complete?articleWire.matched_request_count:null,
+   unmeasured_article_network_requests:verified&&coverage.complete?articleWire.unmeasured_article_requests:null,
+   network_images:networkImages,
    interpretation:verified&&coverage.complete?'Logged-out Chromium reached page bottom, with currentSrc and network evidence; source rights still require review.':verified?'Partial browser scan; do not infer a complete broken-image census or weight baseline.':'Environment or page unverified: no claims of broken images are permitted.'};
  }catch(e){
   return{post_id:page.id,url:page.url,started,completed:now(),page_result:'probe_error',
