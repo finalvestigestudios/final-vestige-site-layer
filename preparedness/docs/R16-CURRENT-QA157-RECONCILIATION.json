@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "issue": 136,
+  "release_state": "HOLD",
+  "may_publish": false,
+  "baseline_sha": "2492be67054ca1228752df64368ad75dec8dc586",
+  "qa_157_sha": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+  "qa_169_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+  "source": "authenticated-GitHub-file-contents-and-pull-request-157-patches",
+  "observed_utc_date": "2026-10-31",
+  "qa_157_pr_status": "DRAFT_UNMERGED",
+  "qa_169_pr_status": "DRAFT_UNMERGED",
+  "body_audits": [
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "integrated_git_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "qa157_git_blob": "6407a31a882211e62c00f4e07ec7dc4d5abf99c6",
+      "source_length_chars": 23176,
+      "old_qa_hunk_occurrences": 0,
+      "new_qa_hunk_occurrences": 0,
+      "required_current_caution_checks": [
+        {
+          "required_excerpt": "The simulated-outage evening.",
+          "present": true
+        },
+        {
+          "required_excerpt": "Do not switch off the main breaker as a drill.",
+          "present": true
+        },
+        {
+          "required_excerpt": "Leave on everything that keeps people safe",
+          "present": true
+        },
+        {
+          "required_excerpt": "smoke and carbon monoxide alarms",
+          "present": true
+        },
+        {
+          "required_excerpt": "medical or safety-critical equipment",
+          "present": true
+        }
+      ],
+      "source_citation_occurrences": 57,
+      "conclusion": "QA_157_HUNK_STALE_CURRENT_ARTICLE_HAS_EXPANDED_CAUTION_NOT_REVIEWED"
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.body.html",
+      "integrated_git_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "qa157_git_blob": "f578cdbae602c1ad58a9237c8dea0fd74c99f7da",
+      "source_length_chars": 24781,
+      "old_qa_hunk_occurrences": 0,
+      "new_qa_hunk_occurrences": 0,
+      "required_current_caution_checks": [
+        {
+          "required_excerpt": "Medicines that need refrigeration: ask your prescriber or pharmacist first",
+          "present": true
+        },
+        {
+          "required_excerpt": "Do not stop, throw away or ration a medicine you depend on",
+          "present": true
+        },
+        {
+          "required_excerpt": "Only use the medicine until you have a new supply.",
+          "present": true
+        },
+        {
+          "required_excerpt": "The older \"discard\" line, read alone, could lead someone to go without a medicine they need",
+          "present": true
+        },
+        {
+          "required_excerpt": "{{cite:start-fema-power-sheet}}",
+          "present": true
+        },
+        {
+          "required_excerpt": "{{cite:start-ready-power}}",
+          "present": true
+        },
+        {
+          "required_excerpt": "{{cite:ready-are-you-ready}}",
+          "present": true
+        }
+      ],
+      "source_citation_occurrences": 75,
+      "conclusion": "QA_157_HUNK_STALE_CURRENT_ARTICLE_HAS_EXPANDED_CAUTION_NOT_REVIEWED"
+    }
+  ],
+  "source_taxonomy_preservation": {
+    "integrated_taxonomy_blob": "eea601e53e16e36cd4fc890876bc249b39632370",
+    "qa_taxonomy_blob": "d20ff18bc6f243e08796c0505981979a10fca2d9",
+    "article_slate_count": 35,
+    "gate_regression_if_qa_taxonomy_replaced": [
+      {
+        "slug": "water-math",
+        "integrated_gate": true,
+        "qa157_gate": false
+      },
+      {
+        "slug": "two-week-water-storage",
+        "integrated_gate": true,
+        "qa157_gate": false
+      },
+      {
+        "slug": "pantry-rotation",
+        "integrated_gate": true,
+        "qa157_gate": false
+      },
+      {
+        "slug": "family-communication-plan",
+        "integrated_gate": true,
+        "qa157_gate": false
+      },
+      {
+        "slug": "warnings-radios-offline-maps",
+        "integrated_gate": true,
+        "qa157_gate": false
+      }
+    ],
+    "integrated_source_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+    "qa_source_blob": "d5a5087042381227d840675d9eb08ddc375d21e8",
+    "contributor_source_differences": [
+      {
+        "id": "ready-are-you-ready",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "notes"
+        ]
+      },
+      {
+        "id": "start-ready-power",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "notes"
+        ]
+      },
+      {
+        "id": "start-cdc-infant-checklist",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "supports",
+          "notes"
+        ]
+      },
+      {
+        "id": "start-redcross-older-adults",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "notes"
+        ]
+      },
+      {
+        "id": "start-hud-multifamily-template",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "supports",
+          "notes"
+        ]
+      },
+      {
+        "id": "start-fema-housing",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "notes"
+        ]
+      },
+      {
+        "id": "start-usfa-high-rise",
+        "scope": "review_depth_or_source_metadata_diff",
+        "fields": [
+          "notes"
+        ]
+      },
+      {
+        "id": "start-fema-power-sheet",
+        "scope": "not_present_in_qa",
+        "fields": []
+      }
+    ]
+  },
+  "decision": "REJECT_RAW_QA157_CHERRY_PICK_CURRENT_INTEGRATION_HAS_DISTINCT_MORE_CAUTIOUS_TEXT",
+  "human_fact_verification_count": 0,
+  "qualified_medical_or_emergency_safety_review": false,
+  "qd_pass": false,
+  "next_action": "Independent source and qualified safety review of current integrated paragraphs; preserve all expanded source notes; QA169 synthetic-fixture test may be evaluated independently in a trusted native checkout."
+}
