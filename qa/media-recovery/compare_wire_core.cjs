@@ -1,12 +1,13 @@
 'use strict';
 /** Offline strict wire-byte comparison. No server contact, no claims from originals. */
+const {sameSource}=require('./browser_probe_core.cjs');
 const good=n=>Number.isSafeInteger(n)&&n>0;
 const https=u=>typeof u==='string'&&/^https:\/\/[a-z0-9.-]+\//i.test(u);
 const page=u=>typeof u==='string'&&/^https:\/\/finalvestige\.com\//.test(u);
 function inspectRun(r){
  const e=[],posts=new Map();
  if(!r||typeof r!=='object'||Array.isArray(r))return{ok:false,errors:['invalid_run'],posts};
- if(r.schema_version!==1||r.probe_version!==2)e.push('probe_v2_required');
+ if(r.schema_version!==1||r.probe_version!==3)e.push('probe_v3_current_src_proof_required');
  if(r.probe!=='logged-out Chrome CDP, no npm dependencies or WordPress writes')e.push('unrecognized_probe');
  if(!['390x844','1440x900'].includes(r.viewport))e.push('unrecognized_viewport');
  if(typeof r.browser_product!=='string'||!/^Chrome\/\d+\./.test(r.browser_product))e.push('unknown_browser_version');
@@ -25,15 +26,25 @@ function inspectRun(r){
   const keys=slots.map(v=>v.image_key);
   if(new Set(keys).size!==keys.length)e.push('duplicate_image_slot:'+id);
   for(const v of slots)if(v.result!=='loaded_in_probe_browser'||v.verified_broken_in_browser!==false||
-   !good(v.natural_width)||!https(v.request_url)||v.http_status!==200||!good(v.transfer_bytes))
+   !good(v.natural_width)||v.current_src_identity_verified!==true||!https(v.current_src)||
+   !https(v.request_url)||v.http_status!==200||!good(v.transfer_bytes))
    e.push('unsettled_or_unmeasured:'+id+':'+v.image_key);
   if(!net.length)e.push('no_image_network_log:'+id);
-  let total=0;
+  let total=0,validNetwork=[];
   for(const n of net){
    if(!https(n.url)||n.status!==200||!/^image\//.test(n.mime_type||'')||
       n.error||n.was_cached===true||n.from_disk_cache===true||n.from_service_worker===true||
       !good(n.encoded_data_length)){e.push('invalid_image_response:'+id);continue}
    total+=n.encoded_data_length;
+   validNetwork.push(n);
+  }
+  // Each classified slot must have actual image-network proof of its byte count.
+  // Shared network requests may legitimately serve multiple DOM slots.
+  for(const v of slots){
+   const proof=validNetwork.some(n=>[n.url,...(Array.isArray(n.url_aliases)?n.url_aliases:[])]
+    .some(u=>sameSource(u,v.request_url))&&n.status===v.http_status&&
+    n.encoded_data_length===v.transfer_bytes&&sameSource(v.current_src,v.request_url));
+   if(!proof)e.push('slot_network_evidence_missing:'+id+':'+v.image_key);
   }
   if(!good(x.image_wire_bytes_total)||total!==x.image_wire_bytes_total)e.push('wire_total_mismatch:'+id);
   posts.set(id,{url:x.url,keys:keys.sort().join('|'),stored:x.stored_image_count,
