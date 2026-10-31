@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-30",
+  "title": "Zen12 evidence before the promise",
+  "status": "UNPUBLISHED_LOCAL_ASSET",
+  "file": "final-vestige-zen12-evidence-40s.mp4",
+  "format": "H264, yuv420p, 960x540, 15fps, video only (silent)",
+  "duration_seconds": 40,
+  "mp4_bytes": 149680,
+  "mp4_sha256": "eb4a3f7e7d95ce5a6ff1ba08c83e66a4f7cc94cb1e3784bd51a330650c41ab00",
+  "poster_png_bytes": 31723,
+  "poster_png_sha256": "5b271178d83735c46df8c802d526ffcdeb01643b0b1672d32d335fb1059faa",
+  "captions": "captions.vtt",
+  "transcript": "transcript.md",
+  "no_borrowed_assets": true,
+  "no_soundtrack": true,
+  "no_autoplay": true,
+  "affiliate_approved": false,
+  "media_uploaded_to_wordpress": false,
+  "media_binaries_in_git": false,
+  "source_code_in_git": "video/build_video.py is source for regeneration; MP4/PNG themselves are separate review artifacts",
+  "verification": "local ffprobe and sha256sum of original media 2026-10-30",
+  "copyright_note": "All graphics drawn programmatically from original text; font files not redistributed"
+}

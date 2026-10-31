@@ -1,0 +1,13 @@
+# Zen12 original film and evidence-first buyer pilot
+
+This source-controlled companion is stacked on Mind Zen12 PR #180, and affects only the mind/zen12/pilot directory. The live Mind hub PR #172, homepage PR #49 and Issue #150, and Dispatch Issue #174 remain under their separate owners.
+
+This sprint produced a complete independent buyer's guide, 30 dispositioned product/science/FTC claims, original film timeline, accessible time-aligned VTT captions, full text/visual transcript and a media manifest. A real original 40-second H264 silent editorial movie and PNG poster were generated offline with Python/Pillow/FFmpeg, verified by ffprobe and sha256sum, and visually reviewed as a five-scene contact sheet. Media binaries are separately available as review artifacts, not present in this repository or WordPress. The code source generator and local A/B builder are companion files. No vendor recordings, ads, stock footage, personal testimonials, fake EEG or third-party media are used.
+
+The exact MP4 is 960 x 540, 15 fps, 40.000 seconds and 149,680 bytes. Its SHA256 is eb4a3f7e7d95ce5a6ff1ba08c83e66a4f7cc94cb1e3784bd51a330650c41ab00. Poster PNG is 31,723 bytes with SHA256 5b271178d83735c46df8c802d526ffcdeb01643b0b1672d32d335fb1059faa. Silent film captions and transcript are included; no hosting or live player is claimed.
+
+Local reproducibility: run the video source under Python 3 with Pillow, FFmpeg and OS-installed DejaVu fonts (never redistribute font files), inspect ffprobe output, compare SHA256, and run tests. The film-vs-text renderer accepts only exact checked-media hashes and outputs local noindex previews; it writes no WordPress state. Different media tooling builds can result in changed hashes, which must be independently reviewed rather than silently accepted.
+
+Sources: official Inspire3 https://inspire3.com/ and Zen12 https://zen12.com/about , https://zen12.com/getstarted , https://zen12.com/research , https://zen12.com/welcome ; meditation review https://pubmed.ncbi.nlm.nih.gov/24395196/ ; auditory review https://pubmed.ncbi.nlm.nih.gov/37205669/ ; NCCIH https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety ; FTC https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
+
+Release HOLD: product-specific partner approval, email marketing rights, verified link, checkouts, WP staging, actual full-browser/accessibility performance, hosted CI and independent QD/founder review. No affiliate purchase link, newsletter signup or new tracker is active.
