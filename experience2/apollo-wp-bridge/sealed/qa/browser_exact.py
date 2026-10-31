@@ -98,6 +98,13 @@ def run(*, require_axe=False):
             assert page.locator('main#fv-ex2-apollo-document').count() == 1
             page.keyboard.press('Tab')
             assert page.evaluate('document.activeElement.getAttribute("href")') == '#fv-ex2-apollo-document', (width, 'skip not first tabstop')
+            skip = page.locator('.fv-ex2-apollo__skip').evaluate(
+                '(n)=>({transform:getComputedStyle(n).transform,y:n.getBoundingClientRect().top})')
+            assert skip['transform'] == 'none' and skip['y'] >= 0, (width, 'skip link not actually visible', skip)
+            if width in (390, 1440):
+                dest = OUT / f'exact-skip-focused-{width}.png'
+                page.screenshot(path=str(dest), animations='disabled', timeout=15000)
+                report['screenshots'].append({'name':dest.name,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()})
             page.keyboard.press('Enter')
             assert page.evaluate('document.activeElement.id') == 'fv-ex2-apollo-document', (width, 'skip did not focus main')
             assert page.locator('section#atlas').count() == 1
