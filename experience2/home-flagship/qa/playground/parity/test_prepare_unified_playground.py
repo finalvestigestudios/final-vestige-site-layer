@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
-from prepare_unified_playground import bind, verify_sources, verify_parity, verify_stage, sha, PARITY
+from prepare_unified_playground import bind, verify_sources, verify_parity, verify_stage, sha, PARITY, CANONICAL_LOCAL_SEED
 
 HERE = Path(__file__).parent
 BASE_PARTS = ('prepare_unified_playground.py', 'test_prepare_unified_playground.py',
@@ -47,10 +47,11 @@ def fixture():
     (stage/'mounts'/'fv-ex2-private-preview').mkdir(parents=True)
     (stage/'mounts'/'fv-ex2-private-preview'/'fv-ex2-private-preview.php').write_text('<?php // fixture guarded preview ?>')
     blueprint={'$schema':'https://playground.wordpress.net/blueprint-schema.json',
-               'steps':[{'step':'defineWpConfigConsts','consts':{'WP_ENVIRONMENT_TYPE':'local','FV_EX2_ALLOW_PREVIEW':True}},
+               'landingPage':'/?pagename=fv-ex2-playground-review', 'login':True,
+               'steps':[{'step':'defineWpConfigConsts','consts':{'WP_ENVIRONMENT_TYPE':'local','FV_EX2_ALLOW_PREVIEW':True,'WP_DEBUG':True,'WP_DEBUG_DISPLAY':False}},
                         {'step':'activateTheme','themeFolderName':'assembler'},
                         {'step':'activatePlugin','pluginPath':'/wordpress/wp-content/plugins/fv-ex2-private-preview/fv-ex2-private-preview.php'},
-                        {'step':'runPHP','code':"<?php $slug='fv-ex2-playground-review';"}]}
+                        {'step':'runPHP','code':CANONICAL_LOCAL_SEED}]}
     bytes_bp=(json.dumps(blueprint,indent=2)+'\n').encode()
     (stage/'playground-blueprint.json').write_bytes(bytes_bp)
     cli=['npx','@wp-playground/cli@latest','server',
@@ -151,13 +152,85 @@ class UnifiedStageTests(unittest.TestCase):
         with temp:
             cli=stage/'playground-cli-arguments.json';data=json.loads(cli.read_text())
             data.append('--mount=/private/secrets:/wordpress/wp-content');cli.write_text(json.dumps(data))
-            with self.assertRaisesRegex(ValueError,'paths point outside'):bind(repo,head,stage)
+            with self.assertRaisesRegex(ValueError,'unexpected CLI flag'):bind(repo,head,stage)
 
     def test_reject_missing_theme_binary(self):
         temp,repo,head,stage=fixture()
         with temp:
             (stage/'mounts'/'assembler'/'style.css').unlink()
-            with self.assertRaisesRegex(ValueError,'theme/plugin/preview'):bind(repo,head,stage)
+            with self.assertRaisesRegex(ValueError,'unsafe theme/plugin entry point'):bind(repo,head,stage)
+
+
+    def test_reject_cli_public_bind_even_with_existing_original_flags(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'playground-cli-arguments.json'
+            argv=json.loads(p.read_text());argv.append('--host=0.0.0.0');p.write_text(json.dumps(argv))
+            with self.assertRaisesRegex(ValueError,'unexpected CLI flag'): bind(repo,head,stage)
+
+    def test_reject_cli_external_wordpress_url(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'playground-cli-arguments.json'
+            argv=json.loads(p.read_text());argv.append('--site-url=https://finalvestige.com');p.write_text(json.dumps(argv))
+            with self.assertRaisesRegex(ValueError,'unexpected CLI flag'): bind(repo,head,stage)
+
+    def test_reject_cli_duplicate_blueprint_override(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'playground-cli-arguments.json'
+            argv=json.loads(p.read_text());argv.append('--blueprint=/private/other.json');p.write_text(json.dumps(argv))
+            with self.assertRaisesRegex(ValueError,'unexpected CLI flag'): bind(repo,head,stage)
+
+    def test_reject_blueprint_extra_php_action_even_if_receipt_hash_matches(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'playground-blueprint.json'
+            bp=json.loads(p.read_text());bp['steps'][3]['code']+='file_get_contents("https://example.invalid/");'
+            raw=(json.dumps(bp)+'\n').encode();p.write_bytes(raw)
+            r=stage/'STAGING_PREP_RECEIPT.json';receipt=json.loads(r.read_text());receipt['blueprint_sha256']=sha(raw);r.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(ValueError,'changed local-only preview seed'):bind(repo,head,stage)
+
+    def test_reject_blueprint_extra_import_action_even_with_matching_hash(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'playground-blueprint.json'
+            bp=json.loads(p.read_text());bp['steps'][2]['dangerous']='unexpected'
+            raw=(json.dumps(bp)+'\n').encode();p.write_bytes(raw)
+            r=stage/'STAGING_PREP_RECEIPT.json';receipt=json.loads(r.read_text());receipt['blueprint_sha256']=sha(raw);r.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(ValueError,'private preview plugin action'):bind(repo,head,stage)
+
+    def test_reject_external_mount_root_symlink_and_prevent_external_writes(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            external=stage.parent/'other-folder'
+            (stage/'mounts').rename(external)
+            (stage/'mounts').symlink_to(external, target_is_directory=True)
+            with self.assertRaisesRegex(ValueError,'unsafe mounts root'):bind(repo,head,stage)
+            self.assertFalse((external/'fv-ex2-parity').exists())
+
+    def test_reject_theme_entry_point_symlink(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'mounts'/'assembler'/'style.css';raw=p.read_text();p.unlink()
+            outside=stage.parent/'style.css';outside.write_text(raw)
+            p.symlink_to(outside)
+            with self.assertRaisesRegex(ValueError,'unsafe theme/plugin entry point'):bind(repo,head,stage)
+
+    def test_reject_stage_root_symlink(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            alias=stage.parent/'stage_alias';alias.symlink_to(stage, target_is_directory=True)
+            with self.assertRaisesRegex(ValueError,'stage root cannot be a symlink'):bind(repo,head,alias)
+
+    def test_reject_blueprint_remote_landing_page(self):
+        temp,repo,head,stage=fixture()
+        with temp:
+            p=stage/'playground-blueprint.json'
+            bp=json.loads(p.read_text());bp['landingPage']='https://finalvestige.com/'
+            raw=(json.dumps(bp)+'\n').encode();p.write_bytes(raw)
+            r=stage/'STAGING_PREP_RECEIPT.json';receipt=json.loads(r.read_text());receipt['blueprint_sha256']=sha(raw);r.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(ValueError,'Blueprint top-level action or URL'):bind(repo,head,stage)
 
     def test_php_importer_syntax_is_valid(self):
         p=subprocess.run(['php','-l',str(HERE/'apply_local_parity.php')],capture_output=True,text=True)
