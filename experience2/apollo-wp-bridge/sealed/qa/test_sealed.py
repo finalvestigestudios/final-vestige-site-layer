@@ -111,6 +111,11 @@ class SealedApollo(unittest.TestCase):
         self.assertIn('id="documentary-trails"', s)
         self.assertIn('Apollo 1: Research Desk and primary-source casefile', s)
         self.assertEqual(s.count('<h1 '), 1)
+        self.assertEqual(s.count('<main '), 1)
+        self.assertEqual(s.count('</main>'), 1)
+        self.assertIn('id="fv-ex2-apollo-document"', s)
+        self.assertIn('href="#fv-ex2-apollo-document">Skip to Apollo evidence</a>', s)
+        self.assertIn('.fv-ex2-apollo__skip:focus-visible{transform:none', s)
         self.assertEqual(s.count('fv_ex2_apollo_sealed_download'), 4)
         self.assertNotIn('{{FV_EX2_ASSET_BASE}}', s)
         self.assertIn('nonce="', s)
@@ -142,6 +147,20 @@ class SealedApollo(unittest.TestCase):
         test = php(tamper, 'staging', 'page')
         self.assertEqual(test.stdout, b'')
         self.assertIn(b'STATUS:503', test.stderr)
+
+    def test_10_axe_release_gate_fails_closed_without_verified_bundle(self):
+        # The developer smoke run may proceed without axe, but no release gate may
+        # silently report green when the audited engine was never executed.
+        import os
+        env = dict(os.environ)
+        env.pop('FV_VERIFIED_AXE_BUNDLE', None)
+        env.pop('FV_VERIFIED_AXE_SHA256', None)
+        proc = subprocess.run(
+            [sys.executable, str(HERE / 'browser_exact.py'), '--require-axe'],
+            cwd=BRIDGE.parent.parent, env=env, text=True, capture_output=True, timeout=35,
+        )
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn('RELEASE HOLD: supply FV_VERIFIED_AXE_BUNDLE', proc.stderr)
 
     def test_09_no_prod_writes_and_csp_contract(self):
         source = (SEALED / 'fv-ex2-apollo-sealed-template.php').read_text(encoding='utf-8')
