@@ -498,7 +498,18 @@ def main(argv=None) -> int:
     # Prevent even a local 'public' artifact from containing an article whose
     # editorial/safety/source release checks fail. Drafts may build with
     # documented unresolved-source warnings; publishing remains blocked.
-    import validate as approval_gates  # noqa: WPS433 (runtime circular-import safe)
+    # The R18 private preflight invokes this script with Python -I, which
+    # intentionally omits the script's directory from sys.path. Pin imports
+    # to this checked-out Preparedness tools directory, never cwd/site paths.
+    tools_directory = Path(__file__).resolve(strict=True).parent
+    validator_file = tools_directory / "validate.py"
+    if not validator_file.is_file() or validator_file.is_symlink():
+        print("PREPAREDNESS BUILD HOLD: trusted validator file missing or linked.",
+              file=sys.stderr)
+        return 2
+    if str(tools_directory) not in sys.path:
+        sys.path.insert(0, str(tools_directory))
+    import validate as approval_gates  # noqa: WPS433 (local checkout only)
     errors, _warnings = approval_gates.validate(lib)
     if errors:
         for error in errors:
