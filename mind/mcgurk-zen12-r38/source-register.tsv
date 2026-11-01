@@ -1,0 +1,18 @@
+id	source	url	type	usable_claim	status	limit
+MC01	1976 primary McGurk-MacDonald	https://doi.org/10.1038/264746a0	speech/primary	audio-ba visual-ga often reported da; reverse differs	verified abstract	original study not population prevalence
+MC02	2017 coauthor historical account	https://doi.org/10.1163/22134808-00002548	speech/historical	origin and later methods of demonstration	verified full abstract	retrospective may be selective
+MC03	2015 variability	https://pubmed.ncbi.nlm.nih.gov/25802068/	speech/replication	variable participants stimuli response choice	verified abstract	clips and designs matter
+MC04	2018 individual differences	https://doi.org/10.1371/journal.pone.0207160	speech/replication	association with fine-grained lipreading not tested attention or memory	verified abstract	correlation not causal
+MC05	2019 twin study	https://doi.org/10.3389/fnins.2019.01029	speech/replication	324 twin participants variability and limited shared variance	verified abstract	no genetic determinism
+MC06	2021 critical paper	https://doi.org/10.3758/s13414-021-02265-6	speech/critical	response frequencies sensitive to task	verified abstract	mechanism disputed
+MC07	2023 competing mechanism	https://pmc.ncbi.nlm.nih.gov/articles/PMC10046462/	speech/critical	auditory default alternative	verified conclusion	one competing model
+PR01	Puységur Final Vestige archive	https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/	published first-party	153 rows 16 dossiers and failed cases preserved	authenticated WP 2026-11-01	not modern clinical evidence
+FO01	Seven Day Focus Fieldbook	https://finalvestige.com/focus/	published first-party	52-page Focus download and existing Jetpack path	authenticated WP 2026-11-01	do not duplicate subscription
+S01	Inspire3 catalog	https://inspire3.com/	seller primary	Zen12 and related product positioning	verified 2026-11-01	seller statements only
+S02	Zen12 exact offer	https://zen12.com/hnp	seller primary	tiers 6/24 12/48 6/24; four styles; seller success promises	verified 2026-11-01	merchant may change content
+S03	Zen12 About	https://zen12.com/about	seller primary	four listening styles 12min audio format and seller claims	verified 2026-11-01	no independent efficacy
+S04	Zen12 public checkout	https://zen12.com/getstarted	seller primary	Premium public checkout lists fields terms and current seller total	verified 2026-11-01	not purchase/test; don't assert required phone or price
+S05	Inspire3 affiliates public	https://affiliates.inspire3.com/	seller marketing	public signup only	verified 2026-11-01	NOT account approval or license
+E01	2023 binaural systematic review	https://doi.org/10.1371/journal.pone.0286023	independent systematic review	14 heterogeneous EEG studies 5 supporting 8 conflicting 1 mixed	verified abstract	no Zen12-specific evaluation
+F01	FTC Endorsement Guides	https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking	regulator	clear material-connection near links	verified 2026-11-01	requires real context review
+F02	FTC Health Products Compliance Guidance	https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance	regulator	adequate product-specific support for efficacy claims	verified 2026-11-01	not legal counsel
