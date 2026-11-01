@@ -1,6 +1,6 @@
 # Article readiness matrix (generated 2026-11-01 from repo state; HOLD, no article is publication-eligible)
 
-Columns come from the repository (taxonomy, article metas, merged source register) and the R48 figure triage. Nothing here is a human judgment. `rendered_qa_this_pass` and `independent_QD` are **no** for every row.
+Columns come from the repository (taxonomy, article metas, merged source register) and the R48 figure triage. Nothing here is a human judgment. `independent_QD` is **no** for every row. Rendered QA for every row is **automated only** (local preview in Edge at 360-1920 px; see `RENDERED-QA-REPORT-2026-11-01.md`); there was no live-theme check and no human screen-reader or full visual review.
 
 | # | slug | section | words | srcs | safety gate | safety review | figures confirmed / quantified | blocked-source claims |
 |---|---|---|---|---|---|---|---|---|
