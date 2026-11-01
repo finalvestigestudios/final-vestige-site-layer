@@ -17,7 +17,7 @@ function run(F){
  for(const field of ['Beginn','Premium','Advanced'])check('guide tier '+field,guide.includes(field));
  for(const fact of ['first six levels','All twelve levels','Last six levels','24 MP3','48 MP3','twelve-minute','four audio'])check('product format '+fact,guide.toLowerCase().includes(fact.toLowerCase()));
  for(const phrase of ['2007','three months','not Zen12','NCCIH'])check('scientific limitations '+phrase,guide.toLowerCase().includes(phrase.toLowerCase()));
- for(const phrase of ['1992','2020','2021','180 milliseconds','lag-1','Puységur','not a diagnosis'])check('investigation nuance '+phrase,invest.toLowerCase().includes(phrase.toLowerCase()));
+ for(const phrase of ['1992','2020','2021','180 milliseconds','lag-1','Puységur','not a diagnostic test'])check('investigation nuance '+phrase,invest.toLowerCase().includes(phrase.toLowerCase()));
  for(const href of ['https://pubmed.ncbi.nlm.nih.gov/1500880/','https://link.springer.com/article/10.3758/s13428-020-01457-6'])check('primary science '+href,invest.includes(href)&&investHtml.includes(href));
  check('historical investigation no commerce',!invest.toLowerCase().includes('affiliate relationship')&&!invest.toLowerCase().includes('commission'));
  check('article no monetization form',!/<form[\s>]/i.test(investHtml)&&!/<button/i.test(investHtml));
@@ -71,10 +71,10 @@ function mutated(F){
  ['autoplay',{'ZEN12-WP-VARIANT-B.html':F['ZEN12-WP-VARIANT-B.html'].replace('</aside>','<video autoplay></video></aside>')}],
  ['PII form',{'HUB-WP-DRAFT.html':F['HUB-WP-DRAFT.html'].replace('</footer>','<form><input type="email"></form></footer>')}],
  ['privacy on',{'privacy-off.cjs':F['privacy-off.cjs'].replace('const ENABLED=false','const ENABLED=true')}],
- ['price promise',{'ZEN12-INDEPENDENT-GUIDE.md':F['ZEN12-INDEPENDENT-GUIDE.md'].replace('Advancement','Advancement always guaranteed')}],
+ ['seller tier misrepresentation',{'ZEN12-INDEPENDENT-GUIDE.md':F['ZEN12-INDEPENDENT-GUIDE.md'].replaceAll('24 MP3','25 MP3')}],
  ['affiliate claim in investigation',{'INVESTIGATION.md':F['INVESTIGATION.md'].replace('Independent research; no product affiliate link','Independent research; affiliate relationship with Zen12')}],
  ['bad film cue',{'FILM.vtt':F['FILM.vtt'].replace('00:00:40.000','00:00:38.000')}],
- ['missing new partner permissions',{'EVIDENCE-MATRIX.csv':F['EVIDENCE-MATRIX.csv'].replace('UNKNOWN_PERMISSION','APPROVED')}],
+ ['missing new partner permissions',{'EVIDENCE-MATRIX.csv':F['EVIDENCE-MATRIX.csv'].replaceAll('UNKNOWN_PERMISSION','APPROVED')}],
  ['CSS removes reduced motion',{'HUB-WP-DRAFT.html':F['HUB-WP-DRAFT.html'].replace('@media(prefers-reduced-motion:reduce)','@media(screen)')}]
  ];
  return attempts.map(([name,change])=>({name,detected:run({...F,...change}).failed.length>0}));
