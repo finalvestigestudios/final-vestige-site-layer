@@ -82,8 +82,16 @@ class StaticMethodDiagnosticsR100(unittest.TestCase):
             _payload(methods=["test_safe.test_forget_security"]),
             allowed_methods=child._source_method_inventory(self.tests)))
 
-    def test_child_methods_are_not_accepted_without_parent_inventory(self):
-        self.assertIsNone(gate._safe_child_diagnostic(_payload()))
+    def test_child_methods_are_hidden_without_parent_inventory(self):
+        # R98 callers without an AST allowlist get ONLY legacy modules. This
+        # preserves compatibility without ever replaying untrusted methods.
+        note = gate._safe_child_diagnostic(
+            _payload(methods=["test_safe.PRIVATE_CUSTOMER"],
+                     omitted_method_count=313))
+        self.assertIsNotNone(note)
+        self.assertIn('"modules":["test_safe"]', note)
+        self.assertNotIn("PRIVATE", note)
+        self.assertNotIn('"methods"', note)
 
     def test_unknown_customer_values_cannot_escape_via_method_field(self):
         for methods in (["test_safe.PRIVATE"], ["test_safe.test_known/PRIVATE"],
