@@ -9,7 +9,7 @@ The following are **editorial research destinations, not visitor-facing affiliat
 | S03 | https://pubmed.ncbi.nlm.nih.gov/7876773/ | Wood & Cowan 1995 | N=34; 34.6% recalling name; shadowing interruption, not universal |
 | S04 | https://pubmed.ncbi.nlm.nih.gov/11495122/ | Conway et al. 2001 | Measured working memory relationship; not diagnostic |
 | S05 | https://pmc.ncbi.nlm.nih.gov/articles/PMC8908911/ | Röer & Cowan 2021 | Preregistered; 29% noticed; unexpected words rarely detected |
-| S06 | https://doi.org/10.1080/25742442.2025.2562771 | 2025 follow-up | Relevant follow-up; do not stereotype based on group |
+| S06 | https://doi.org/10.1080/25742442.2025.2562771 | 2025 follow-up | 2025 preregistered study: 13/48 (27%) autistic, 18/50 (36%) non-autistic comparison; no meaningful group difference on this specific task; samples restrict generalization |
 | S07 | https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ | FV published archive | Source provenance, case notes, ethics; no modern efficacy inference |
 | S08 | https://finalvestige.com/focus/ | FV existing funnel | One published Focus/Jetpack path; no new forms |
 | S09 | https://inspire3.com/ | Official merchant catalog | Vendor inventory and positioning only |
