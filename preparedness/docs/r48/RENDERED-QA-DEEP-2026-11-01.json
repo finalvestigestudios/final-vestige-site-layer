@@ -1,0 +1,1931 @@
+{
+ "internal_links": {
+  "distinct": 48,
+  "archive_unresolved": {
+   "/": [
+    "emergency-hygiene-sanitation",
+    "family-communication-plan",
+    "fire-making-across-time",
+    "food-safety-power-outage",
+    "go-bags",
+    "history-of-food-preservation",
+    "home-fire-escape-plan",
+    "homemade-water-filters",
+    "household-emergency-plan",
+    "hub-family-communication",
+    "hub-field-tools",
+    "hub-food",
+    "hub-health-sanitation",
+    "hub-lost-ways",
+    "hub-shelter-power",
+    "hub-start-here",
+    "hub-water",
+    "landing",
+    "lewis-and-clark-salt-works",
+    "making-water-safer",
+    "medication-and-devices",
+    "navigation-before-gps",
+    "outage-heat-cold-generators",
+    "pantry-rotation",
+    "pemmican-and-dried-meats",
+    "pickling-fermentation-old-recipes",
+    "pioneer-supply-chains-failed",
+    "pioneer-travel-rations",
+    "preparedness-real-households",
+    "pressure-canning-low-acid",
+    "rain-barrels-and-cisterns",
+    "root-cellars-cool-storage",
+    "safe-jerky-dehydration",
+    "salt-beef-salt-pork-age-of-sail",
+    "sanitation-before-germ-theory",
+    "shelter-or-evacuate",
+    "ships-biscuit-and-hardtack",
+    "smokehouses-salting-curing",
+    "three-day-kit",
+    "two-week-water-storage",
+    "warnings-radios-offline-maps",
+    "water-advisories-explained",
+    "water-math",
+    "water-planner",
+    "water-purification-through-history"
+   ],
+   "/editorial-standards/": [
+    "landing"
+   ],
+   "/contact/": [
+    "landing"
+   ]
+  }
+ },
+ "keyboard": {
+  "emergency-hygiene-sanitation": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "family-communication-plan": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "fire-making-across-time": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "food-safety-power-outage": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "go-bags": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "history-of-food-preservation": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "home-fire-escape-plan": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "homemade-water-filters": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "household-emergency-plan": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "hub-family-communication": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 1,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-field-tools": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 2,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-food": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 1,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-health-sanitation": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 1,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-lost-ways": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-shelter-power": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 1,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-start-here": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 1,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-water": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guides",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 1,
+   "skip_hash": "#pa-guides"
+  },
+  "landing": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the library",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-library"
+  },
+  "lewis-and-clark-salt-works": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "making-water-safer": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "medication-and-devices": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "navigation-before-gps": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "outage-heat-cold-generators": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pantry-rotation": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pemmican-and-dried-meats": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pickling-fermentation-old-recipes": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pioneer-supply-chains-failed": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pioneer-travel-rations": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "preparedness-real-households": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pressure-canning-low-acid": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "rain-barrels-and-cisterns": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "root-cellars-cool-storage": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "safe-jerky-dehydration": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "sanitation-before-germ-theory": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "shelter-or-evacuate": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "ships-biscuit-and-hardtack": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "smokehouses-salting-curing": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "three-day-kit": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "two-week-water-storage": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "warnings-radios-offline-maps": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-advisories-explained": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-math": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-planner": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-purification-through-history": {
+   "first": {
+    "tag": "A",
+    "text": "Skip to the guide",
+    "outline": true,
+    "shadow": false,
+    "visible": true
+   },
+   "stops_with_no_visible_focus": [],
+   "nulls": 0,
+   "skip_hash": "#pa-main"
+  }
+ },
+ "no_js": {
+  "emergency-hygiene-sanitation": {
+   "js_len": 26371,
+   "nojs_len": 26371,
+   "same_content": true
+  },
+  "family-communication-plan": {
+   "js_len": 28187,
+   "nojs_len": 28187,
+   "same_content": true
+  },
+  "fire-making-across-time": {
+   "js_len": 27289,
+   "nojs_len": 27289,
+   "same_content": true
+  },
+  "food-safety-power-outage": {
+   "js_len": 25744,
+   "nojs_len": 25744,
+   "same_content": true
+  },
+  "go-bags": {
+   "js_len": 29864,
+   "nojs_len": 29864,
+   "same_content": true
+  },
+  "history-of-food-preservation": {
+   "js_len": 21078,
+   "nojs_len": 21078,
+   "same_content": true
+  },
+  "home-fire-escape-plan": {
+   "js_len": 29840,
+   "nojs_len": 29840,
+   "same_content": true
+  },
+  "homemade-water-filters": {
+   "js_len": 16177,
+   "nojs_len": 16177,
+   "same_content": true
+  },
+  "household-emergency-plan": {
+   "js_len": 26610,
+   "nojs_len": 26610,
+   "same_content": true
+  },
+  "hub-family-communication": {
+   "js_len": 1141,
+   "nojs_len": 1141,
+   "same_content": true
+  },
+  "hub-field-tools": {
+   "js_len": 543,
+   "nojs_len": 543,
+   "same_content": true
+  },
+  "hub-food": {
+   "js_len": 1400,
+   "nojs_len": 1400,
+   "same_content": true
+  },
+  "hub-health-sanitation": {
+   "js_len": 816,
+   "nojs_len": 816,
+   "same_content": true
+  },
+  "hub-lost-ways": {
+   "js_len": 4697,
+   "nojs_len": 4697,
+   "same_content": true
+  },
+  "hub-shelter-power": {
+   "js_len": 852,
+   "nojs_len": 852,
+   "same_content": true
+  },
+  "hub-start-here": {
+   "js_len": 1514,
+   "nojs_len": 1514,
+   "same_content": true
+  },
+  "hub-water": {
+   "js_len": 1645,
+   "nojs_len": 1645,
+   "same_content": true
+  },
+  "landing": {
+   "js_len": 14002,
+   "nojs_len": 13986,
+   "same_content": true,
+   "cards_visible_nojs": 36,
+   "cards_total": 36
+  },
+  "lewis-and-clark-salt-works": {
+   "js_len": 21449,
+   "nojs_len": 21449,
+   "same_content": true
+  },
+  "making-water-safer": {
+   "js_len": 22688,
+   "nojs_len": 22688,
+   "same_content": true
+  },
+  "medication-and-devices": {
+   "js_len": 32165,
+   "nojs_len": 32165,
+   "same_content": true
+  },
+  "navigation-before-gps": {
+   "js_len": 23625,
+   "nojs_len": 23625,
+   "same_content": true
+  },
+  "outage-heat-cold-generators": {
+   "js_len": 37316,
+   "nojs_len": 37316,
+   "same_content": true
+  },
+  "pantry-rotation": {
+   "js_len": 25095,
+   "nojs_len": 25095,
+   "same_content": true
+  },
+  "pemmican-and-dried-meats": {
+   "js_len": 24080,
+   "nojs_len": 24080,
+   "same_content": true
+  },
+  "pickling-fermentation-old-recipes": {
+   "js_len": 20936,
+   "nojs_len": 20936,
+   "same_content": true
+  },
+  "pioneer-supply-chains-failed": {
+   "js_len": 24840,
+   "nojs_len": 24840,
+   "same_content": true
+  },
+  "pioneer-travel-rations": {
+   "js_len": 22262,
+   "nojs_len": 22262,
+   "same_content": true
+  },
+  "preparedness-real-households": {
+   "js_len": 29660,
+   "nojs_len": 29660,
+   "same_content": true
+  },
+  "pressure-canning-low-acid": {
+   "js_len": 31641,
+   "nojs_len": 31641,
+   "same_content": true
+  },
+  "rain-barrels-and-cisterns": {
+   "js_len": 21612,
+   "nojs_len": 21612,
+   "same_content": true
+  },
+  "root-cellars-cool-storage": {
+   "js_len": 19164,
+   "nojs_len": 19164,
+   "same_content": true
+  },
+  "safe-jerky-dehydration": {
+   "js_len": 24944,
+   "nojs_len": 24944,
+   "same_content": true
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "js_len": 22172,
+   "nojs_len": 22172,
+   "same_content": true
+  },
+  "sanitation-before-germ-theory": {
+   "js_len": 23499,
+   "nojs_len": 23499,
+   "same_content": true
+  },
+  "shelter-or-evacuate": {
+   "js_len": 28969,
+   "nojs_len": 28969,
+   "same_content": true
+  },
+  "ships-biscuit-and-hardtack": {
+   "js_len": 21758,
+   "nojs_len": 21758,
+   "same_content": true
+  },
+  "smokehouses-salting-curing": {
+   "js_len": 20290,
+   "nojs_len": 20290,
+   "same_content": true
+  },
+  "three-day-kit": {
+   "js_len": 29715,
+   "nojs_len": 29715,
+   "same_content": true
+  },
+  "two-week-water-storage": {
+   "js_len": 14272,
+   "nojs_len": 14272,
+   "same_content": true
+  },
+  "warnings-radios-offline-maps": {
+   "js_len": 24358,
+   "nojs_len": 24358,
+   "same_content": true
+  },
+  "water-advisories-explained": {
+   "js_len": 15054,
+   "nojs_len": 15054,
+   "same_content": true
+  },
+  "water-math": {
+   "js_len": 15216,
+   "nojs_len": 15216,
+   "same_content": true
+  },
+  "water-planner": {
+   "js_len": 6294,
+   "nojs_len": 5878,
+   "same_content": false,
+   "results_text_nojs": 0,
+   "noscript": false
+  },
+  "water-purification-through-history": {
+   "js_len": 27892,
+   "nojs_len": 27892,
+   "same_content": true
+  }
+ },
+ "print": {
+  "emergency-hygiene-sanitation": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "family-communication-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 14,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "fire-making-across-time": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 14,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "food-safety-power-outage": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "go-bags": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 15,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "history-of-food-preservation": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "home-fire-escape-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 15,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "homemade-water-filters": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 9,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "household-emergency-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "hub-family-communication": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 2,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-field-tools": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 1,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-food": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 2,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-health-sanitation": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 1,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-lost-ways": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 4,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-shelter-power": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 1,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-start-here": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 2,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "hub-water": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": null,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 2,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "landing": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": null,
+   "filterHidden": true,
+   "barHidden": null,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": null,
+   "shows_draft": true
+  },
+  "lewis-and-clark-salt-works": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "making-water-safer": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 12,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "medication-and-devices": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 15,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "navigation-before-gps": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "outage-heat-cold-generators": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 18,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "pantry-rotation": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "pemmican-and-dried-meats": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 12,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "pickling-fermentation-old-recipes": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "pioneer-supply-chains-failed": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "pioneer-travel-rations": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 12,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "preparedness-real-households": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 15,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "pressure-canning-low-acid": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 16,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "rain-barrels-and-cisterns": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "root-cellars-cool-storage": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "safe-jerky-dehydration": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 12,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "sanitation-before-germ-theory": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "shelter-or-evacuate": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 14,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "ships-biscuit-and-hardtack": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 12,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "smokehouses-salting-curing": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 11,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "three-day-kit": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 15,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "two-week-water-storage": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 8,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "warnings-radios-offline-maps": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 13,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "water-advisories-explained": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 9,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "water-math": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 8,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "water-planner": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": true,
+   "pdf_pages": 4,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  },
+  "water-purification-through-history": {
+   "bg": "rgb(255, 255, 255)",
+   "tocHidden": true,
+   "filterHidden": null,
+   "barHidden": true,
+   "toolHidden": null,
+   "pdf_pages": 14,
+   "pdf_has_text": true,
+   "shows_sources": true,
+   "shows_draft": true
+  }
+ },
+ "reduced_motion": {
+  "card": "0s",
+  "link": "0s"
+ },
+ "normal_motion": {
+  "card": "0.18s, 0.18s, 0.18s"
+ },
+ "axe": {
+  "emergency-hygiene-sanitation@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "emergency-hygiene-sanitation@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "family-communication-plan@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "family-communication-plan@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "fire-making-across-time@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "fire-making-across-time@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "food-safety-power-outage@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "food-safety-power-outage@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "go-bags@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "go-bags@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "history-of-food-preservation@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "history-of-food-preservation@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-plan@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-plan@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "homemade-water-filters@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "homemade-water-filters@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "household-emergency-plan@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "household-emergency-plan@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "hub-family-communication@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-family-communication@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-field-tools@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-field-tools@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-food@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-food@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-health-sanitation@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-health-sanitation@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-lost-ways@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-lost-ways@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-shelter-power@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-shelter-power@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-start-here@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-start-here@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-water@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "hub-water@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "landing@390": {
+   "violations": [],
+   "incomplete": []
+  },
+  "landing@1440": {
+   "violations": [],
+   "incomplete": []
+  },
+  "lewis-and-clark-salt-works@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "lewis-and-clark-salt-works@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "making-water-safer@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "making-water-safer@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "medication-and-devices@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "medication-and-devices@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "navigation-before-gps@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "navigation-before-gps@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "outage-heat-cold-generators@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "outage-heat-cold-generators@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pantry-rotation@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pantry-rotation@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pemmican-and-dried-meats@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pemmican-and-dried-meats@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pickling-fermentation-old-recipes@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pickling-fermentation-old-recipes@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-supply-chains-failed@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-supply-chains-failed@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-travel-rations@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-travel-rations@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "preparedness-real-households@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "preparedness-real-households@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pressure-canning-low-acid@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "pressure-canning-low-acid@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "rain-barrels-and-cisterns@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "rain-barrels-and-cisterns@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "root-cellars-cool-storage@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "root-cellars-cool-storage@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "safe-jerky-dehydration@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "safe-jerky-dehydration@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "salt-beef-salt-pork-age-of-sail@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "salt-beef-salt-pork-age-of-sail@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "sanitation-before-germ-theory@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "sanitation-before-germ-theory@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "shelter-or-evacuate@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "shelter-or-evacuate@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "ships-biscuit-and-hardtack@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "ships-biscuit-and-hardtack@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "smokehouses-salting-curing@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "smokehouses-salting-curing@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "three-day-kit@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "three-day-kit@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "two-week-water-storage@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "two-week-water-storage@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "warnings-radios-offline-maps@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "warnings-radios-offline-maps@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-advisories-explained@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-advisories-explained@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-math@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-math@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-planner@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-planner@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-purification-through-history@390": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "water-purification-through-history@1440": {
+   "violations": [],
+   "incomplete": [
+    "color-contrast"
+   ]
+  }
+ },
+ "planner": {
+  "cases": [
+   {
+    "case": "empty",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t0",
+    "still": "Still to store\t0"
+   },
+   {
+    "case": "zero people",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t0",
+    "still": "Still to store\t0"
+   },
+   {
+    "case": "negative",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t0",
+    "still": "Still to store\t0"
+   },
+   {
+    "case": "huge",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t36,500",
+    "still": "Still to store\t36,500"
+   },
+   {
+    "case": "decimals",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t9",
+    "still": "Still to store\t9"
+   },
+   {
+    "case": "1 person 1 day",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t1",
+    "still": "Still to store\t1"
+   },
+   {
+    "case": "stored exceeds need",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t6",
+    "still": "Still to store\t0"
+   },
+   {
+    "case": "hot + pet + extra",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t140",
+    "still": "Still to store\t140"
+   },
+   {
+    "case": "input rejected by browser",
+    "field": "wp-filled",
+    "value": "2026-02-30",
+    "err": "Page.fill: Error: Malformed value\nCall log:\n  - waiting for "
+   },
+   {
+    "case": "bad date",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t3",
+    "still": "Still to store\t3"
+   },
+   {
+    "case": "pet without amount",
+    "has_NaN": false,
+    "has_negative": false,
+    "total_line": "Total to plan for\t6",
+    "still": "Still to store\t6"
+   }
+  ],
+  "js_errors": [],
+  "region_role": "status",
+  "aria_live": "polite"
+ },
+ "site_links_live_status": {
+  "/": 200,
+  "/contact/": 200,
+  "/editorial-standards/": 200
+ }
+}
