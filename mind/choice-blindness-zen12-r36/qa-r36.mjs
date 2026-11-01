@@ -29,9 +29,9 @@ for(const [name,s] of [['A',a],['B',b]]){
  ok(s.includes(':focus-visible'),name+' visible keyboard focus');
  ok(s.includes('prefers-reduced-motion:reduce'),name+' reduced motion');
 }
-ok(b.includes('40-second thought experiment')&&b.includes('Read the full proposed film transcript'),'B has optional educational transcript');
+ok(b.includes('40-second original offline film')&&b.includes('Read the full proposed film transcript'),'B has optional educational transcript');
 ok(!a.includes('Read the full proposed film transcript'),'A has no film');
-ok(b.includes('No autoplay')&&b.includes('not been produced or hosted'),'B not misleading');
+ok(b.includes('No autoplay')&&b.includes('has been rendered offline')&&b.includes('no approved first-party video'),'B not misleading');
 ok(/WEBVTT/.test(vtt)&&/00:00:40\.000/.test(vtt),'VTT spec 40 seconds');
 ok(/role="img"/.test(b)&&/<title id="fvz-poster-title">/.test(b),'poster inline accessible title');
 ok(!/commission|Zen12|purchase link/i.test(inv),'investigation commercially independent');
