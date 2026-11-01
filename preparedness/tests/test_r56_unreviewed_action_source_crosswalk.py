@@ -299,7 +299,8 @@ def mutated_result_test(field):
         old = x[field]
         x[field] = (not old if isinstance(old, bool) else
                     old + "_FORGED" if isinstance(old, str) else
-                    {} if isinstance(old, dict) else [])
+                    {} if isinstance(old, dict) else
+                    old + [{"_forged": True}] if isinstance(old, list) else 0)
         with self.assertRaises(gate.CrosswalkHold):
             gate.verify_crosswalk(r, x, expected=EXPECTED)
     return test
