@@ -22,14 +22,26 @@
   jumps.push(...backLinks);
   const copyButtons=[...root.querySelectorAll('[data-fva-copy]')];
   const copyStatus=root.querySelector('[data-fva-copy-status]');
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus)return;
+  const compare=root.querySelector('[data-fva-compare]');
+  const compareStatus=root.querySelector('[data-fva-compare-status]');
+  const compareClear=root.querySelector('[data-fva-compare-clear]');
+  const compareSlots=[...root.querySelectorAll('[data-fva-compare-slot]')];
+  const compareButtons=[...root.querySelectorAll('[data-fva-select]')];
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6)return;
   let year='all';
   let active=false;
+  const selected=[];
   const restore=()=>{
     cards.forEach(card=>{card.hidden=false;});
     controls.hidden=true;
     empty.hidden=true;
     copyButtons.forEach(b=>{b.hidden=true;});
+    compareButtons.forEach(b=>{b.hidden=true;b.setAttribute('aria-pressed','false');});
+    selected.length=0;
+    compareSlots.forEach(slot=>slot.replaceChildren());
+    compareClear.hidden=true;
+    compare.hidden=true;
+    compareStatus.textContent='';
     copyStatus.textContent='';
     status.textContent='';
     root.dataset.fvaReady='';
@@ -39,6 +51,9 @@
       reset.removeEventListener('click',onReset);
       jumps.forEach(link=>link.removeEventListener('click',onJump));
       copyButtons.forEach(b=>b.removeEventListener('click',onCopy));
+      compareButtons.forEach(b=>b.removeEventListener('click',onSelect));
+      compareClear.removeEventListener('click',onClearSelection);
+      compare.removeEventListener('click',onCompareJump);
       window.removeEventListener('hashchange',onHash);}
     active=false;
   };
@@ -56,7 +71,9 @@
        citeJumps[i].getAttribute('href')===`#${li.id}` &&
        backLinks[i].closest('[data-fva-cite-id]')===li &&
        backLinks[i].getAttribute('href')===`#${cards[i].id}` &&
-       copyButtons[i].closest('[data-fva-cite-id]')===li))return false;
+       copyButtons[i].closest('[data-fva-cite-id]')===li &&
+       compareButtons[i].closest('[data-fva-record]')===cards[i] &&
+       compareButtons[i].dataset.fvaSelect===expected[i]))return false;
     const seen=new Set();
     return timeJumps.every(link=>{
       const id=link.dataset.fvaTimeId;
@@ -84,6 +101,59 @@
       empty.hidden=count!==0;
       return true;
     }catch(_){restore();return false;}
+  };
+  // R46: source-pair inspection is an optional derived VIEW of already printed
+  // NASA metadata. Text-only DOM APIs prevent accidental unsourced HTML injection.
+  // No metadata is loaded from a network, and the two photos are not asserted
+  // to depict the same place, event, cause, or moment.
+  const updateComparison=()=>{
+    compareSlots.forEach((slot,i)=>{
+      slot.replaceChildren();
+      const id=selected[i];
+      if(!id)return;
+      const card=cards[expected.indexOf(id)];
+      const catalog=card.querySelector('.fva-card__plate span')?.textContent?.trim();
+      const date=card.querySelector('.fva-card__date span')?.textContent?.trim();
+      const role=card.querySelector('h2')?.textContent?.trim();
+      if(!catalog||!date||!role)throw new Error('Source content missing');
+      const heading=document.createElement('h3');
+      heading.textContent='NASA record '+id+' · '+catalog;
+      const dateLine=document.createElement('p');
+      dateLine.textContent='Photograph date: '+date;
+      const scope=document.createElement('p');
+      scope.textContent='Documentary scope: '+role;
+      const rights=document.createElement('p');
+      rights.textContent='Photograph reuse: individual review required.';
+      const link=document.createElement('a');
+      link.href='#'+card.id;
+      link.textContent='Read full source custody for record '+id;
+      slot.append(heading,dateLine,scope,rights,link);
+    });
+    compareButtons.forEach(b=>b.setAttribute('aria-pressed',String(selected.includes(b.dataset.fvaSelect))));
+    compareClear.hidden=selected.length===0;
+    compareStatus.textContent=selected.length===0?'No records selected.':
+      selected.length===1?'One source selected. Choose another NASA record to compare documented metadata.':
+      'Two NASA records selected. Comparison is metadata-only, not evidence of a historical connection.';
+  };
+  const onSelect=event=>{
+    try{
+      if(!valid())throw new Error('Source index altered');
+      const id=event.currentTarget.dataset.fvaSelect;
+      const existing=selected.indexOf(id);
+      if(existing!==-1)selected.splice(existing,1);
+      else{if(selected.length===2)selected.shift();selected.push(id);}
+      updateComparison();
+    }catch(_){restore();}
+  };
+  const onClearSelection=()=>{
+    selected.length=0;
+    try{updateComparison();}catch(_){restore();}
+  };
+  const onCompareJump=event=>{
+    const link=event.target.closest('a[href^="#fva-record-"]');
+    if(!link||!compare.contains(link))return;
+    const target=cards.find(card=>'#'+card.id===link.getAttribute('href'));
+    if(target)revealTarget(target);
   };
   const onCopy=async event=>{
     const button=event.currentTarget;
@@ -123,6 +193,9 @@
     reset.addEventListener('click',onReset);
     jumps.forEach(link=>link.addEventListener('click',onJump));
     copyButtons.forEach(b=>b.addEventListener('click',onCopy));
+    compareButtons.forEach(b=>b.addEventListener('click',onSelect));
+    compareClear.addEventListener('click',onClearSelection);
+    compare.addEventListener('click',onCompareJump);
     window.addEventListener('hashchange',onHash);
     active=true;
     root.dataset.fvaReady='yes';
@@ -130,6 +203,9 @@
     // Do not expose controls after that rollback (previously a stale live UI).
     if(apply() && active){
       controls.hidden=false;
+      compare.hidden=false;
+      compareButtons.forEach(b=>{b.hidden=false;});
+      updateComparison();
       // Native citation text is always accessible. Copy is optional and only
       // exposed when the browser actually supports a clipboard API.
       if(typeof navigator.clipboard?.writeText==='function'){

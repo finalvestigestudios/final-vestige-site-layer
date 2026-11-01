@@ -118,3 +118,20 @@
 .fva-citations [data-fva-cite-id]:target{outline:3px solid var(--gold);outline-offset:4px}
 .fva-citations [data-fva-back-record]{display:inline-flex;align-items:center;min-height:44px;margin-right:12px;font-size:13px}
 @media print{.fva-card__cite-link,.fva-citations [data-fva-back-record]{display:none!important}}
+
+/* R46: optional source-pair inspector; never implies historical linkage. */
+.fva-card__compare{border:1px solid #95784b;color:var(--paper);background:#232319;min-height:44px;padding:10px 13px;text-align:left;align-self:stretch;margin-top:4px}
+.fva-card__compare:hover,.fva-card__compare:focus-visible{border-color:var(--gold)}
+.fva-card__compare[aria-pressed="true"]{background:var(--gold);color:#15130b;font-weight:700}
+.fva-compare{border:1px solid #776546;background:#171913;padding:clamp(18px,3vw,38px);margin:18px 0 48px}
+.fva-compare__eyebrow{font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.15em;color:var(--gold)}
+.fva-compare h2{font:400 clamp(28px,3.5vw,43px)/1.2 Georgia,serif;margin:10px 0}
+.fva-compare>p:not(.fva-compare__eyebrow){max-width:920px;color:var(--muted)}
+.fva-compare [data-fva-compare-clear]{border:1px solid #95784b;color:var(--paper);background:#24251f;padding:10px 17px;min-height:44px}
+.fva-compare__pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+.fva-compare__pair>div:not(:empty){min-width:0;border-left:3px solid var(--gold);padding:17px 21px;background:#10120f}
+.fva-compare__pair h3{font:400 clamp(20px,2.2vw,29px)/1.3 Georgia,serif;color:var(--paper);margin:0 0 14px}
+.fva-compare__pair p{font-size:14px;color:var(--muted);margin:12px 0}
+.fva-compare__pair a{display:inline-flex;align-items:center;min-height:44px;font-size:14px}
+@media(max-width:700px){.fva-compare__pair{grid-template-columns:minmax(0,1fr)}}
+@media print{.fva-compare,.fva-card__compare{display:none!important}}
