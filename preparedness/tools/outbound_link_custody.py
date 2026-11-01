@@ -266,13 +266,19 @@ def main(argv=None):
     errors, _ = validate.validate(lib)
     if errors:
         raise LinkCustodyFailure('native validator: ' + '; '.join(errors[:4]))
-    canonical = r10.audit_corpus(lib, source_review_queue.source_rows(root), evidence_freeze.fingerprint)
+    physical_rows = source_review_queue.source_rows(root)
+    canonical = r10.audit_corpus(lib, physical_rows, evidence_freeze.fingerprint)
     r11.audit_export(lib, root / 'build', build, canonical_receipt=canonical)
     rendered = r12.audit_corpus(lib, build, claim_parser=r8.parse_visible_claims)
     if (rendered.get('release_state') != 'HOLD' or rendered.get('may_publish') is not False or
             rendered.get('rendered_citation_occurrences') != 1959 or rendered.get('article_source_pairs') != 367):
         raise LinkCustodyFailure('R12 citation parity not established')
-    triage = r13.build_triage(lib, canonical=canonical)
+    # R10 is a compact SHA-256 custody receipt, NOT the full R8 ledger.
+    # Re-derive and digest-bind all 1,959 claims before handing them to R13.
+    full_claims = r13.bind_full_R8_claim_evidence(
+        lib, physical_rows, evidence_freeze.fingerprint, canonical,
+        make_report=r8.make_report, baseline=r8.BASELINE)
+    triage = r13.build_triage(lib, canonical=full_claims)
     if triage.get('release_state') != 'HOLD' or triage.get('may_publish') is not False:
         raise LinkCustodyFailure('R13 action triage not in HOLD state')
     result = audit_corpus(lib, build)
