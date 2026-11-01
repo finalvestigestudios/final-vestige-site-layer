@@ -171,9 +171,22 @@ class PrivateWitnessR122(unittest.TestCase):
         alt = self.root / "real-witness"
         alt.mkdir()
         link = self.root / "linked-witness"
-        try: link.symlink_to(alt, target_is_directory=True)
-        except (OSError, NotImplementedError): self.skipTest("symlinks unavailable")
-        with self.assertRaises(qa.ReviewHold): self.one(witnesses=link)
+        try:
+            link.symlink_to(alt, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            # GitHub-hosted Windows runners may not have symlink privilege;
+            # still exercise the fail-closed symlink guard with a synthetic
+            # platform response, rather than silently SKIP the mandatory gate.
+            link.mkdir()
+            original = Path.is_symlink
+            def pretend_link(value):
+                return value == link or original(value)
+            with patch.object(Path, "is_symlink", pretend_link):
+                with self.assertRaises(qa.ReviewHold):
+                    self.one(witnesses=link)
+        else:
+            with self.assertRaises(qa.ReviewHold):
+                self.one(witnesses=link)
 
     def test_witness_directory_inside_executables_rejected(self):
         inside = self.dist / "private"
