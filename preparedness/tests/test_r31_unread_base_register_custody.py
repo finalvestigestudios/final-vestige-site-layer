@@ -109,5 +109,21 @@ class NativeInventory(unittest.TestCase):
         self.assertEqual(result['literal_urls'],186)
         self.assertEqual(result['repeated_url_groups_UNRESOLVED'],30)
 
+class BooleanSourceClearanceSentinel(unittest.TestCase):
+    def test_false_is_literal_boolean_not_numeric_zero(self):
+        import json
+        from private_release_preflight import verify_hold_json
+        receipt={'release_state':'HOLD','may_publish':False,
+                 'independent_human_source_checks_verified':False}
+        verified=verify_hold_json(json.dumps(receipt).encode('utf-8'))
+        self.assertIs(verified['independent_human_source_checks_verified'],False)
+    def test_numeric_zero_cannot_impersonate_boolean_false(self):
+        import json
+        from private_release_preflight import PreflightHold, verify_hold_json
+        receipt={'release_state':'HOLD','may_publish':False,
+                 'independent_human_source_checks_verified':0}
+        with self.assertRaisesRegex(PreflightHold,'falsely asserted review approval'):
+            verify_hold_json(json.dumps(receipt).encode('utf-8'))
+
 if __name__ == '__main__':
     unittest.main()
