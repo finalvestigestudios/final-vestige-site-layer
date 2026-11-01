@@ -117,9 +117,13 @@ test('real local bundle copies only referenced first-party JS/CSS with SHA-256 c
       assert.equal(entry.bytes, bytes.length, name);
       assert.equal(entry.sha256, crypto.createHash('sha256').update(bytes).digest('hex'), name);
     }
+    // `makeBundle()` deliberately uses a null-prototype dictionary for untrusted
+    // asset names. JSON has no prototype semantics, so compare serialized data
+    // instead of making a false deepStrictEqual claim across object prototypes.
+    assert.equal(Object.getPrototypeOf(manifest.files), null);
     assert.deepEqual(
       JSON.parse(fs.readFileSync(path.join(outDir, 'SOURCE_MANIFEST.json'), 'utf8')),
-      manifest
+      JSON.parse(JSON.stringify(manifest))
     );
   } finally {
     fs.rmSync(parentDir, {recursive: true, force: true});
