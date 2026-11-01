@@ -10,8 +10,10 @@
   const status=root.querySelector('[data-fva-status]');
   const empty=root.querySelector('[data-fva-empty]');
   const expected=['01','02','03','04','05','06'];
-  const jumps=[...root.querySelectorAll('[data-fva-jump]')];
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||jumps.length!==6)return;
+  const indexJumps=[...root.querySelectorAll('[data-fva-jump]')];
+  const timeJumps=[...root.querySelectorAll('[data-fva-timejump]')];
+  const jumps=[...indexJumps,...timeJumps];
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6)return;
   let year='all';
   let active=false;
   const restore=()=>{
@@ -24,13 +26,28 @@
       input.removeEventListener('input',apply);
       input.removeEventListener('keydown',onKey);
       reset.removeEventListener('click',onReset);
-      jumps.forEach(link=>link.removeEventListener('click',onJump));}
+      jumps.forEach(link=>link.removeEventListener('click',onJump));
+      window.removeEventListener('hashchange',onHash);}
     active=false;
   };
-  const valid=()=>cards.every((card,i)=>card.dataset.fvaId===expected[i]&&
-       ['1966','1967','2017'].includes(card.dataset.fvaYear)&&
-       card.id===`fva-record-${expected[i]}`&&
-       jumps[i].getAttribute('href')===`#${card.id}`);
+  const valid=()=>{
+    if(!cards.every((card,i)=>card.dataset.fvaId===expected[i]&&
+        ['1966','1967','2017'].includes(card.dataset.fvaYear)&&
+        card.id===`fva-record-${expected[i]}`&&
+        indexJumps[i].getAttribute('href')===`#${card.id}`))return false;
+    // The chronology must contain exactly one native permalink to every
+    // custody record, grouped by the photograph's verified year (not geography).
+    const seen=new Set();
+    return timeJumps.every(link=>{
+      const id=link.dataset.fvaTimeId;
+      if(!expected.includes(id)||seen.has(id))return false;
+      seen.add(id);
+      const card=cards[expected.indexOf(id)];
+      const era=link.closest('[data-fva-era]');
+      return era && era.dataset.fvaEra===card.dataset.fvaYear&&
+         link.getAttribute('href')===`#${card.id}`;
+    })&&seen.size===6;
+  };
   const apply=()=>{
     try{
       if(!valid())throw new Error('Source record altered');
@@ -52,13 +69,19 @@
   const onReset=()=>{year='all';input.value='';apply();if(active)input.focus();};
   const onKey=event=>{if(event.key==='Escape'&&(input.value||year!=='all')){
     event.preventDefault();onReset();}};
+  const revealTarget=target=>{
+    // Native anchors are the no-JS fallback. Enhanced browsing must also
+    // restore a record concealed by a user-selected filter before focusing it.
+    if(target.hidden){year='all';input.value='';if(!apply())return;}
+    requestAnimationFrame(()=>{if(active)target.focus({preventScroll:true});});
+  };
   const onJump=event=>{
     const target=cards.find(card=>'#'+card.id===event.currentTarget.getAttribute('href'));
-    if(!target)return;
-    // A source jump must not land on a record hidden by an unrelated prior filter.
-    if(target.hidden){year='all';input.value='';if(!apply())return;}
-    // Preserve native anchor URL and scroll behavior, then set keyboard focus.
-    requestAnimationFrame(()=>{if(active)target.focus({preventScroll:true});});
+    if(target)revealTarget(target);
+  };
+  const onHash=()=>{
+    const target=cards.find(card=>'#'+card.id===window.location.hash);
+    if(target)revealTarget(target); // Covers back/forward navigation after filtering.
   };
   try{
     if(!valid())throw new Error('Source records missing');
@@ -67,10 +90,11 @@
     input.addEventListener('keydown',onKey);
     reset.addEventListener('click',onReset);
     jumps.forEach(link=>link.addEventListener('click',onJump));
+    window.addEventListener('hashchange',onHash);
     active=true;
     root.dataset.fvaReady='yes';
     // apply() can itself detect altered custody and roll back listeners.
     // Do not expose controls after that rollback (previously a stale live UI).
-    if(apply() && active)controls.hidden=false;
+    if(apply() && active){controls.hidden=false;if(location.hash)onHash();}
   }catch(_){restore();}
 })();
