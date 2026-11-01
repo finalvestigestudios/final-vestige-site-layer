@@ -11,7 +11,7 @@ import hashlib
 import tempfile
 import unittest
 
-from fvs_suite import csv_snapshot, manifest_guard, review_lock
+from fvs_suite import csv_snapshot, manifest_guard, review_lock, journal_io
 from scripts import build_input_guard
 import candidate_guard
 
@@ -279,6 +279,34 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "lock changed"):
                     review_lock._owned(self.root / "synthetic.lock", descriptor,
                                        baseline_path)
+
+
+    def test_real_journal_descriptor_read_snapshot(self):
+        journal = self.root / "audit.jsonl"
+        contents = b'{"decision":"needs_evidence"}\\n'
+        journal.write_bytes(contents)
+        self.assertEqual(journal_io.read_regular_bytes(
+            journal, 4096, "Review journal"), contents)
+
+    def test_real_journal_descriptor_append_preserves_prior_bytes(self):
+        journal = self.root / "audit.jsonl"
+        first = b'{"review":"one"}\\n'
+        next_event = b'{"review":"two"}\\n'
+        journal.write_bytes(first)
+        calls = []
+        def verify():
+            calls.append(journal.read_bytes())
+        journal_io.append_verified_event(journal, next_event, 4096, verify)
+        self.assertEqual(calls, [first])
+        self.assertEqual(journal.read_bytes(), first + next_event)
+
+    def test_new_journal_validation_failure_cannot_publish_event(self):
+        journal = self.root / "audit.jsonl"
+        event = b'{"review":"one"}\\n'
+        with self.assertRaisesRegex(ValueError, "reject"):
+            journal_io.append_verified_event(journal, event, 4096,
+                lambda: (_ for _ in ()).throw(ValueError("reject")))
+        self.assertFalse(journal.exists())
 
 
 if __name__ == "__main__":
