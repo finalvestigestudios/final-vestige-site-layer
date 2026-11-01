@@ -9,16 +9,18 @@ import tempfile
 import unittest
 from replay_wordpress_stage_browser import Capture, browser_review, passing
 from unittest.mock import patch
-from test_replay_wordpress_stage_browser import ProbeServer, TEST_JS, mock_html
+from test_replay_wordpress_stage_browser import ProbeServer, TEST_JS, TEST_CSS, mock_html
 
 
 class RealInteractionTruthTests(unittest.TestCase):
-    def check_stage(self, *, html=None, js=None, expected=True, check_key=None, seven_widths=False):
+    def check_stage(self, *, html=None, js=None, css=None, expected=True, check_key=None, seven_widths=False):
         with ProbeServer() as server, tempfile.TemporaryDirectory() as d:
             if html is not None:
                 server.data['/'] = (html.encode('utf-8'), 'text/html')
             if js is not None:
                 server.data['/assets/flagship.js'] = (js.encode('utf-8'), 'text/javascript')
+            if css is not None:
+                server.data['/assets/style.css'] = (css.encode('utf-8'), 'text/css')
             page, custody = Capture(server.url, server.manifest).assemble()
             self.assertEqual(custody['archival_images_verified'], 3)
             with patch('replay_wordpress_stage_browser.WIDTHS', (320,360,390,768,1024,1440,1920) if seven_widths else (390,)):
@@ -79,6 +81,28 @@ class RealInteractionTruthTests(unittest.TestCase):
         checks = self.check_stage(html=bad, expected=False)
         self.assertFalse(checks['no_js']['enhancement_controls_hidden'])
 
+
+    def test_direction_dom_changes_but_artifact_has_no_painted_difference(self):
+        # Deliberately remove only direction-specific paint; JS still updates
+        # the data attribute.  The prior verifier falsely passed this fixture.
+        css = TEST_CSS.replace('.fv-hf[data-fv-direction="museum"] .fv-hf__opening{background:#75432e}', '').replace(
+            '.fv-hf[data-fv-direction="museum"] .fv-hf__folio-arrival{background:#c4a77f}', '')
+        self.assertNotEqual(css, TEST_CSS)
+        self.check_stage(css=css, expected=False, check_key='direction_changes_and_restores')
+
+    def test_chronicle_dom_changes_but_both_entries_remain_painted(self):
+        # Switching the mode attribute without applying the hiding CSS must
+        # fail even if all JS event handlers and ARIA changes still work.
+        css = TEST_CSS.replace('.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-entry--first{display:none}', '').replace(
+            '.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-entry--second{display:none}', '')
+        self.assertNotEqual(css, TEST_CSS)
+        self.check_stage(css=css, expected=False, check_key='chronicle_switch_and_restores')
+
+    def test_missing_artifact_and_historical_entries_do_not_pass(self):
+        html = mock_html().replace('class="fv-hf__folio-arrival"', 'class="not-an-artifact"')
+        self.check_stage(html=html, expected=False, check_key='direction_changes_and_restores')
+        html = mock_html().replace('fv-hf__chronicle-entry--first', 'not-a-first-entry')
+        self.check_stage(html=html, expected=False, check_key='chronicle_switch_and_restores')
 
 if __name__ == '__main__':
     unittest.main()
