@@ -120,7 +120,7 @@ class Capture:
             require(kind in ('application/javascript', 'text/javascript', 'text/plain',
                              'application/octet-stream'), 'script MIME mismatch')
             code = payload.decode('utf-8')
-            require '</script' not in code.lower(), 'JS cannot be safely inlined')
+            require('</script' not in code.lower(), 'JS cannot be safely inlined')
             del script['src']
             for attr in ('defer', 'async', 'integrity', 'crossorigin'):
                 script.attrs.pop(attr, None)
