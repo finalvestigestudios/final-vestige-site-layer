@@ -10,6 +10,7 @@ import argparse
 import contextlib
 import os
 from pathlib import Path
+import shutil
 import struct
 import sys
 import tempfile
@@ -103,6 +104,48 @@ def _expect_rejection(bundle: Path, key: Path, pin: str, destination: Path):
         raise MatrixHold("Failed authentication published reviewer plaintext")
 
 
+def _snapshot(paths):
+    """Pin all eight private source/intake byte streams, with size and file identity."""
+    observed = {}
+    for name, cap in zip(handoff.ENTRIES, handoff.CAPS):
+        path = paths[name]
+        before = handoff._regular(path, cap)
+        observed[name] = (before.st_size, handoff._hash(path))
+        handoff._same_file(path, before)
+    return observed
+
+
+def _positive_control(bundle, key, pin, stage, label, source_snapshot):
+    """A valid unchanged archive MUST decrypt before and after negative checks.
+
+    Without this, all 16 'rejections' could pass because the decryptor was
+    broken, the key was wrong, or a preflight always denied every request.
+    Plaintext is briefly staged under the existing private temporary root
+    and erased before continuing. This remains an internal, not a release,
+    assertion.
+    """
+    destination = stage / ("control-" + label)
+    if destination.exists() or destination.is_symlink():
+        raise MatrixHold("Positive-control intake destination already exists")
+    try:
+        response = handoff.unseal(bundle, key, pin, destination)
+        if response != {"status": "PRIVATE_REVIEWER_INTAKE_UNCERTIFIED",
+                        "six_exes": 6, "release_authorized": False}:
+            raise MatrixHold("Positive control returned a non-canonical result")
+        allowed = set(handoff.ENTRIES) | {"exes", "evidence"}
+        observed = {entry.relative_to(destination).as_posix()
+                    for entry in destination.rglob("*")}
+        if observed != allowed:
+            raise MatrixHold("Positive control has missing or unexpected intake entries")
+        actual = _snapshot(handoff._paths(
+            destination / "exes", destination / "evidence" / "r9-report.json"))
+        if actual != source_snapshot:
+            raise MatrixHold("Positive-control bytes differ from six native candidates")
+    finally:
+        if destination.exists() and not destination.is_symlink():
+            shutil.rmtree(destination)
+
+
 def verify_all_entry_tamper_rejection(dist, r9_report, private_root):
     """Exercise eight genuine sealed records and both byte/tag corruption paths.
 
@@ -123,6 +166,7 @@ def verify_all_entry_tamper_rejection(dist, r9_report, private_root):
 
     pin = handoff._hash(r9_report)
     handoff._custody(dist, r9_report, pin)
+    source_snapshot = _snapshot(handoff._paths(dist, r9_report))
     with tempfile.TemporaryDirectory(prefix="fvs-r119-", dir=private_root) as dirname:
         private_stage = Path(dirname)
         handoff._private_directory(private_stage)
@@ -136,6 +180,9 @@ def verify_all_entry_tamper_rejection(dist, r9_report, private_root):
         offsets = _layout(sealed, pin)
         if len(offsets) != len(handoff.ENTRIES):
             raise MatrixHold("Must test all eight authenticated records")
+        _positive_control(sealed, key, pin, private_stage, "before", source_snapshot)
+        if handoff._hash(sealed) != original_hash:
+            raise MatrixHold("Unmodified control altered sealed candidate archive")
 
         case_count = 0
         for index, (cipher_at, tag_at) in enumerate(offsets):
@@ -146,6 +193,11 @@ def verify_all_entry_tamper_rejection(dist, r9_report, private_root):
                 if handoff._hash(sealed) != original_hash:
                     raise MatrixHold("Tamper test did not restore sealed bytes")
                 case_count += 1
+        _positive_control(sealed, key, pin, private_stage, "after", source_snapshot)
+        if handoff._hash(sealed) != original_hash:
+            raise MatrixHold("Final positive control changed the sealed archive")
+        if _snapshot(handoff._paths(dist, r9_report)) != source_snapshot:
+            raise MatrixHold("Six source candidates changed during private matrix")
         handoff._custody(dist, r9_report, pin)
 
     if list(private_root.glob("fvs-r119-*")):
@@ -154,6 +206,7 @@ def verify_all_entry_tamper_rejection(dist, r9_report, private_root):
         raise MatrixHold("Incomplete real-record tamper coverage")
     return {"status": "CI_EPHEMERAL_ALL_ENTRY_TAMPER_REJECTION_ONLY",
             "private_records_checked": 8, "tamper_cases_rejected": case_count,
+            "positive_controls_verified": 2,
             "six_exes": 6, "independent_r9_pin": False,
             "physical_windows11_acceptance": False,
             "premium_distribution_authorized": False,
@@ -173,11 +226,13 @@ def main(argv=None):
         print("R119 HOLD: private candidate authentication matrix failed; "
               "no release permission", file=sys.stderr)
         return 1
-    if result["tamper_cases_rejected"] != 16 or result["release_authorized"] is not False:
+    if (result["tamper_cases_rejected"] != 16 or
+            result.get("positive_controls_verified") != 2 or
+            result["release_authorized"] is not False):
         return 1
-    print("R119 PASS: eight private records, 16 ciphertext/tag mutations "
-          "rejected with no published intake; ephemeral keys/bundle removed. "
-          "NO release or physical Windows 11 clearance.")
+    print("R120 PASS: eight private records, 16 ciphertext/tag mutations "
+          "rejected; 2 valid before/after native decrypt controls byte-matched "
+          "and removed. NO release or physical Windows 11 clearance.")
     return 0
 
 
