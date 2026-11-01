@@ -37,7 +37,7 @@ class WindowsToolchainCtimeR103Tests(unittest.TestCase):
     def windows_parity(self):
         original = gate._same_path_descriptor_identity
         return patch.object(gate, "_same_path_descriptor_identity",
-                            side_effect=lambda a, b: original(a, b, windows=True))
+                            side_effect=lambda a, b, **kwargs: original(a, b, windows=True, **kwargs))
 
     def shifted_fstat(self, *, change_second=False):
         actual = os.fstat
@@ -74,7 +74,7 @@ class WindowsToolchainCtimeR103Tests(unittest.TestCase):
     def test_linux_file_record_still_rejects_cross_view_ctime_drift(self):
         original = gate._same_path_descriptor_identity
         with patch.object(gate, "_same_path_descriptor_identity",
-                          side_effect=lambda a,b: original(a,b,windows=False)), self.shifted_fstat():
+                          side_effect=lambda a,b,**kwargs: original(a,b,windows=False,**kwargs)), self.shifted_fstat():
             with self.assertRaises(ValueError):
                 gate._file_record(self.target)
 
