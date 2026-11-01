@@ -82,10 +82,26 @@ def _load_source_reading_batches_validator():
     return module.make_batch_index
 
 
+
+def _load_human_review_intake_validator():
+    # R35: mandatory independent, evidence-bound review work-item census.
+    # It creates blank intake forms ONLY. No human/QD/safety authorization.
+    location = Path(__file__).with_name('citation_review_handoff_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked human review handoff validator')
+    spec = importlib.util.spec_from_file_location('preparedness_r35_review_intake', location)
+    need(spec is not None and spec.loader is not None,
+         'human review handoff validator cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.make_handoff
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
 build_source_reading_batches = _load_source_reading_batches_validator()
+build_human_review_intake = _load_human_review_intake_validator()
 
 
 def canonical(value):
@@ -231,7 +247,10 @@ def audit(lib, expected=EXPECTED):
     # Assert full original contributor evidence survives reviewer batching.
     # One card per original source-use relationship, one item per claim occurrence.
     # No automated approval is granted even when this structural gate succeeds.
-    build_source_reading_batches(payload, priority_queue, expected=expected)
+    reviewer_batches = build_source_reading_batches(payload, priority_queue, expected=expected)
+    # R35: every source scope, citation and fallback must have a blank,
+    # traceable human-review intake form; successful grouping stays HOLD.
+    build_human_review_intake(reviewer_batches, expected=expected)
     return payload
 
 def audit_checkout(root):
