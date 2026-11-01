@@ -23,12 +23,12 @@ R98's existing `test_real_synthetic_import_failure_reports_discovery` should add
 Local Python proof reproduced why a `print` inside redirected stdout disappears while a post-context print is visible. **That proof is NOT equivalent to running the committed files.** The actual committed tests must be executed in the exact GitHub Actions checkout before claiming full pass:
 
 ```sh
-PYTHONPATH=products/desktop python -m unittest -v \
-  test_private_suite_diagnostics_r98 test_discovery_marker_r99
-PYTHONPATH=products/desktop python -OO -m unittest -v \
-  test_private_suite_diagnostics_r98 test_discovery_marker_r99
+PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests \
+  -p 'test_discovery_marker_r99.py' -v
+PYTHONPATH=products/desktop python -OO -m unittest discover -s products/desktop/tests \
+  -p 'test_discovery_marker_r99.py' -v
 ```
 
-Run from `products/desktop/tests`, or use the repository-wide discovery gate from root as CI does. If source CI remains red, identify and fix the remaining six legacy failure modules (see R98 issue #73 comment) using a trusted full checkout and synthetic fixtures. Do not weaken, skip, or bypass source gates to manufacture Windows executables.
+Run these focused commands from the repository root; repeat with `-p 'test_private_suite_diagnostics_r98.py'`, then run the mandatory repository-wide discovery gate. If source CI remains red, identify and fix the remaining six legacy failure modules (see R98 issue #73 comment) using a trusted full checkout and synthetic fixtures. Do not weaken, skip, or bypass source gates to manufacture Windows executables.
 
 No WordPress changes, no release URLs, no premium license/access changes, no untested Windows EXEs. Four free and two premium apps remain **UNRELEASED**. Requires complete normal/`-OO` source green, Windows 11 x64 GUI and binary smokes, AV/checksums/accessibility, premium entitlement control, independent QD and founder approval before any merge or publication.
