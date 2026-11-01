@@ -310,6 +310,25 @@ for group, rows in (("triage", TRIAGE_MUTATIONS),
 
 
 class RealCorpus(unittest.TestCase):
+    def test_isolated_cli_emits_hold_only_private_summary(self):
+        import subprocess
+        import sys
+        cmd = [sys.executable, "-I",
+               str(HERE / "tools" / "r53_qualitative_source_scope_gate.py"),
+               "--summary"]
+        result = subprocess.run(cmd, cwd=HERE.parent, capture_output=True,
+                                text=True, timeout=45, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr[-800:])
+        obj = json.loads(result.stdout)
+        self.assertEqual(obj["release_state"], "HOLD")
+        self.assertFalse(obj["may_publish"])
+        self.assertFalse(obj["qualified_safety_clearance"])
+        self.assertFalse(obj["independent_QD_approval"])
+        self.assertNotIn("work_orders", obj)
+        self.assertEqual(obj["article_count"], 36)
+        self.assertEqual(obj["counts"]["cited_action_blocks"], 542)
+        self.assertEqual(obj["counts"]["uncited_action_blocks"], 237)
+
     def test_original_35_articles_water_planner_and_15_open_incidents(self):
         build = gate.module("r53_real_build", "build.py")
         r50 = gate.module("r53_real_safety", "safety_exception_custody_gate.py")
