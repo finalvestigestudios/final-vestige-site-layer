@@ -6,7 +6,7 @@ A real **offline rendered** original, silent, no-audio MP4 prototype now exists.
 Python 3 + Pillow + system ffmpeg + local DejaVu fonts:
 python render_film.py --out zen12-evidence-40s.mp4 --width 540 --fps 12
 
-Produced local film: 540 x 960, H.264, yuv420p, 12 fps, exactly 40.000 seconds, 167,658 bytes; MP4 SHA-256 fd20815ec07b38a9fda3db63de11d0f86e64c9385187bd4acf66fcee3f728702 (Oct 31 2026). Renderer source SHA-256 in local run: 62bdf82103374b6176f9885481c6a764d099262f5485c04f170ac03e9fe6b317. A frame at 20s was visually inspected for text clarity and unclipped layout. The binary is an offline artifact, not an active site asset or repository upload.
+Produced local film: 540 x 960, H.264, yuv420p, 12 fps, exactly 40.000 seconds, 166,697 bytes; MP4 SHA-256 7a1cc8e4a0e0047bd2ea090b79785f9555a6a9e996d63345a54b918ff3a231ae (Oct 31 2026). Renderer source SHA-256 in local run: 62e827f1a2d1a19d030fe6f420d612c547e79168f970cad0f88ea7e7ede32417. Frames at 20s and the final scene were visually inspected; the final card was corrected to remove clipped text and re-rendered. The binary is an offline artifact, not an active site asset or repository upload.
 
 ### Five original sequences
 0-8 sec: The second hand hesitates / perception vs clock; moving original vector-style dial.
