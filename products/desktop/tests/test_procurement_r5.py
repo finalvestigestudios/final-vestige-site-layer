@@ -189,8 +189,8 @@ class PremiumRuleTests(unittest.TestCase):
         variants = [
             ({"version": 1, "price_absolute": 0.5, "price_fraction": "0.02"}, "decimal string"),
             ({"version": 1, "price_absolute": "0.01", "price_fraction": "0.11"}, "between zero"),
-            ({"version": 1, "price_absolute": "-0.01", "price_fraction": "0.02"}, "between zero"),
-            ({"version": 1, "price_absolute": "NaN", "price_fraction": "0.02"}, "finite"),
+            ({"version": 1, "price_absolute": "-0.01", "price_fraction": "0.02"}, "ASCII fixed-point"),
+            ({"version": 1, "price_absolute": "NaN", "price_fraction": "0.02"}, "ASCII fixed-point"),
             ({"version": 1, "price_absolute": "0.01", "price_fraction": "0.02", "unexpected": 7}, "exactly"),
         ]
         for data, pattern in variants:
@@ -201,7 +201,7 @@ class PremiumRuleTests(unittest.TestCase):
             load_price_policy(self.config({"version": 1.0,
                                            "price_absolute": "0.01",
                                            "price_fraction": "0.02"}))
-        with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
+        with self.assertRaisesRegex(ValueError, "Duplicate JSON price policy key"):
             load_price_policy(self.config({}, '{"version":1,"version":1,"price_absolute":"0.01","price_fraction":"0.02"}'))
 
     def test_empty_policy_is_default(self):

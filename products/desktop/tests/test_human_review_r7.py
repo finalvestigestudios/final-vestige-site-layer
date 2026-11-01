@@ -155,7 +155,7 @@ class HumanReviewR7Tests(unittest.TestCase):
 
     def test_lock_file_blocks_parallel_writer(self):
         self.journal.with_suffix(".jsonl.lock").write_text("active", encoding="ascii")
-        with self.assertRaisesRegex(ValueError, "locked by another writer"):
+        with self.assertRaisesRegex(ValueError, "Review journal locked"):
             self.log()
         self.assertFalse(self.journal.exists())
 
@@ -193,7 +193,7 @@ class HumanReviewR7Tests(unittest.TestCase):
         stamp = "20261028-010203-111111"
         existing = self.folder / ("review-register-" + stamp + ".csv")
         existing.write_bytes(b"UNRELATED USER FILE")
-        with mock.patch.object(review, "datetime") as mocked:
+        with mock.patch("fvs_suite.review_register.datetime") as mocked:
             mocked.now.return_value.strftime.return_value = stamp
             with self.assertRaises(FileExistsError):
                 review.export_register(self.report, "grants", self.journal, self.folder)

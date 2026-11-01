@@ -21,6 +21,7 @@ for directory in (DESKTOP, SCRIPTS):
         sys.path.insert(0, str(directory))
 
 import source_smoke_gate as source_gate
+import unittest_provenance as source_test_inventory
 from report_evidence import prepare_report_path, publish_report
 
 MAX_TEST_FILES = 256
@@ -29,6 +30,9 @@ DIAG_PREFIX = "FVS_TEST_DIAG:"
 DIAG_SCHEMA = "fvs-offline-failure-modules-v1"
 MAX_DIAG_MODULES = 12
 _DIAG_MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\Z")
+_DIAG_METHOD_RE = re.compile(r"test_[a-z0-9_]{1,90}\.test_[a-z0-9_]{1,90}\Z")
+_MAX_DIAG_METHODS = 10
+_MAX_DIAG_METHOD_LABEL = 104
 
 
 class SourceSuiteFailure(RuntimeError):
@@ -39,15 +43,24 @@ class SourceSuiteFailure(RuntimeError):
         self.diagnostic = diagnostic
 
 
-def _safe_child_diagnostic(payload):
-    """Never replay untrusted child output, exceptions, paths or financial data."""
+def _safe_child_diagnostic(payload, *, allowed_methods=None):
+    """Validate every displayed source-owned test method against an AST allowlist.
+
+    Legacy module-only R98/R99 diagnostic shapes remain supported.
+    Never display a child-supplied method name without an independent
+    source-tree allowlist; ignore raw exception messages and subtest data.
+    """
     if type(payload) is not bytes or not 0 < len(payload) <= 2048:
         return None
     try:
         line = payload.decode("ascii")
     except UnicodeDecodeError:
         return None
-    if line.endswith("\n"):
+    # Python writes one CRLF line on Windows and one LF line on Linux.
+    # Strip exactly one terminal delimiter; internal CR/LF still fails closed.
+    if line.endswith("\r\n"):
+        line = line[:-2]
+    elif line.endswith("\n"):
         line = line[:-1]
     if "\n" in line or "\r" in line or not line.startswith(DIAG_PREFIX):
         return None
@@ -55,9 +68,11 @@ def _safe_child_diagnostic(payload):
         data = json.loads(line[len(DIAG_PREFIX):])
     except (ValueError, TypeError):
         return None
-    if type(data) is not dict or set(data) != {
-            "schema", "phase", "failures", "errors", "modules", "omitted_module_count"}:
+    basic = {"schema", "phase", "failures", "errors", "modules", "omitted_module_count"}
+    extended = basic | {"methods", "omitted_method_count"}
+    if type(data) is not dict or set(data) not in (basic, extended):
         return None
+    has_methods = set(data) == extended
     if data["schema"] != DIAG_SCHEMA or data["phase"] not in ("discovery", "execution"):
         return None
     for name in ("failures", "errors", "omitted_module_count"):
@@ -77,6 +92,25 @@ def _safe_child_diagnostic(payload):
     if (data["phase"] == "execution" and
             len(names) + data["omitted_module_count"] > data["failures"] + data["errors"]):
         return None
+    if has_methods and allowed_methods is None:
+        # Existing R98 callers have no source AST allowlist. Preserve their
+        # module-only behavior by discarding the entire untrusted extension;
+        # never echo a method string that the parent has not inventoried.
+        data = {key: data[key] for key in basic}
+        has_methods = False
+    if has_methods:
+        methods = data["methods"]
+        omitted = data["omitted_method_count"]
+        if (data["phase"] != "execution" or type(allowed_methods) is not set
+                or type(methods) is not list or len(methods) > _MAX_DIAG_METHODS
+                or type(omitted) is not int or not 0 <= omitted <= 20000
+                or any(type(name) is not str or len(name) > _MAX_DIAG_METHOD_LABEL
+                       or not _DIAG_METHOD_RE.fullmatch(name)
+                       or name not in allowed_methods for name in methods)
+                or methods != sorted(set(methods))
+                or (omitted and len(methods) != _MAX_DIAG_METHODS)
+                or len(methods) + omitted > data["failures"] + data["errors"]):
+            return None
     return DIAG_PREFIX + json.dumps(data, sort_keys=True, separators=(",", ":"))
 
 
@@ -157,9 +191,16 @@ def _child_suite(root: Path, optimized: bool, *, timeout: int) -> dict:
         raise RuntimeError("Could not execute complete desktop regression suite") from exc
     if result.returncode != 0:
         mode = "optimized" if optimized else "normal"
+        # Parse known Git-owned test definitions, never runtime subtest IDs.
+        # A broken/unreadable source tree must not admit method-level output.
+        try:
+            allowed_methods = source_test_inventory._source_method_inventory(
+                desktop / "tests")
+        except (OSError, UnicodeError, SyntaxError, ValueError):
+            allowed_methods = set()
         raise SourceSuiteFailure(
             f"Complete desktop {mode} regression suite failed; rerun unittest locally",
-            _safe_child_diagnostic(result.stdout),
+            _safe_child_diagnostic(result.stdout, allowed_methods=allowed_methods),
         )
     payload = result.stdout
     if type(payload) is not bytes or not 0 < len(payload) <= 1024:

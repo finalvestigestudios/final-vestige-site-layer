@@ -155,7 +155,10 @@ class InvoiceScaleR4Tests(unittest.TestCase):
 
     def test_nonfinite_invoice_amount_is_rejected_before_any_report(self):
         p=self.invoice_file([("ACME","X","NaN","2026-01-01")])
-        with self.assertRaisesRegex(ValueError,"Nonfinite"):
+        # R24/R94 fail-closed lexical validation rejects NaN *before*
+        # Decimal conversion, hence the safe generic format error rather
+        # than a later arithmetic-layer Nonfinite error.
+        with self.assertRaisesRegex(ValueError,"Invalid amount format"):
             engine.invoice_twins(p,self.folder)
         self.assertEqual(list(self.folder.glob("invoice-twins-*.csv")),[])
 

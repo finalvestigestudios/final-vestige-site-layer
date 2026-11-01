@@ -77,9 +77,16 @@ class ArtifactDriftRegression(unittest.TestCase):
             gate.verify(self.root, smoke=True, platform_name="nt", runner=runner)
 
     def test_binary_replaced_with_symlink_during_smoke_rejected(self):
-        target = self.root / "ordinary.bin"
+        # The candidate directory must contain exactly six EXEs and the
+        # checksum inventory. An extra fixture inside it is itself rejected
+        # before smoke, so keep the symlink target in an independent folder.
+        outside = tempfile.TemporaryDirectory(prefix="fvs-r10-external-")
+        self.addCleanup(outside.cleanup)
+        target = Path(outside.name) / "ordinary.bin"
         target.write_bytes(self.data)
+        ran = []
         def runner(args, **kwargs):
+            ran.append(Path(args[0]).name)
             exe = Path(args[0])
             exe.unlink()
             try:
@@ -89,6 +96,7 @@ class ArtifactDriftRegression(unittest.TestCase):
             return SimpleNamespace(returncode=0)
         with self.assertRaisesRegex(gate.GateFailure, "ordinary file"):
             gate.verify(self.root, smoke=True, platform_name="nt", runner=runner)
+        self.assertEqual(ran, [gate.EXPECTED[0]])
 
     def test_non_smoke_verification_never_implies_release(self):
         evidence = gate.verify(self.root)

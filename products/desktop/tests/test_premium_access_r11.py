@@ -34,8 +34,16 @@ class PremiumAccessR11Tests(unittest.TestCase):
                      "export", "seal_archive", "restore_archive"):
             with self.subTest(action=name):
                 body = nested[name].body
-                self.assertIsInstance(body[0], ast.If)
-                self.assertIn("_authorized", ast.unparse(body[0].test))
+                if name == "load_report":
+                    # Clearing stale private UI on expired entitlement is
+                    # allowed before revalidation; loading evidence is not.
+                    self.assertIsInstance(body[0], ast.Expr)
+                    self.assertEqual(ast.unparse(body[0]), "_reset_report_view()")
+                    guard = body[1]
+                else:
+                    guard = body[0]
+                self.assertIsInstance(guard, ast.If)
+                self.assertIn("_authorized", ast.unparse(guard.test))
 
     def test_license_selection_failure_cannot_start_premium(self):
         with patch.object(app.tk, "Tk") as tk, \
