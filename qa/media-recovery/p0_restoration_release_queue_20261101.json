@@ -1,0 +1,702 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-11-01",
+  "audit_method": "read_only_wordpress_posts_get_2026_11_01_plus_git_frozen_census_plus_independent_web_retriever",
+  "quality_note": "These are prioritized external hotlink investigations, not proven broken guest-browser images.",
+  "wordpress_live_readback": {
+    "posts": [
+      {
+        "id": 268,
+        "modified": "2026-10-30T01:10:13",
+        "link": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+        "image_count": 10,
+        "matched_frozen_exact_source_and_alt": true
+      },
+      {
+        "id": 285,
+        "modified": "2026-09-08T10:06:47",
+        "link": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+        "image_count": 6,
+        "matched_frozen_exact_source_and_alt": true
+      },
+      {
+        "id": 407,
+        "modified": "2026-10-29T18:30:30",
+        "link": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+        "image_count": 8,
+        "matched_frozen_exact_source_and_alt": true
+      },
+      {
+        "id": 418,
+        "modified": "2026-08-28T03:11:08",
+        "link": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+        "image_count": 6,
+        "matched_frozen_exact_source_and_alt": true
+      }
+    ],
+    "selected_posts": 4,
+    "all_image_slots_checked": 30,
+    "selected_high_risk_slots": 10
+  },
+  "frozen_census": {
+    "published_posts": 61,
+    "stored_img_src_references": 355,
+    "offsite_source_references": 288,
+    "external_distinct_urls": 286,
+    "source_parts_blob_shas": [
+      "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "21095161e633aba093b74c0ead9936c9f6186d00",
+      "5659ec243c188928be3f89c0f96354b660608ca2"
+    ]
+  },
+  "oversized_media": {
+    "originals_exceeding_1_5_mib": 13,
+    "original_storage_bytes_of_13": 43522829,
+    "real_visitor_transfer_bytes": null
+  },
+  "claims": {
+    "reported_broken_42_browser_verified": false,
+    "confirmed_site_wide_broken_count": null,
+    "claimed_76pct_transfer_reduction_measured": false,
+    "measured_transfer_reduction_percent": null,
+    "production_images_repaired": 0
+  },
+  "site_qa_coordination": "Independent Site QA PR #154 owns guest Chrome/browser verification; do not duplicate or modify it.",
+  "rows": [
+    {
+      "priority_rank": 1,
+      "image_key": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "post_slot": 5,
+      "current_published_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "current_published_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "wp_last_modified": "2026-09-08T10:06:47",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_FETCH_404",
+        "retriever_wrapper_error_code": 404,
+        "rechecked_this_sprint": true,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "Wikimedia Commons original-creator catalog linked by publisher attribution",
+        "archive_record_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "identifier": "Three mile island 062010.jpg",
+        "source_relationship": "publisher_credit_exact_scene_candidate_unconfirmed_pixel_match",
+        "candidate_asset_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "Creator-dedicated public-domain claim on Commons must be reconciled with exact published crop/asset.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": 819,
+        "catalog_original_height_px": 614,
+        "conditional_960px_width": 819,
+        "conditional_960px_height": 614,
+        "basis": "commons_catalog_metadata_not_downloaded_binary",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Browser-check visible failure; compare screenshot/crop to creator original before any publication."
+    },
+    {
+      "priority_rank": 2,
+      "image_key": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "post_slot": 1,
+      "current_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "current_published_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "wp_last_modified": "2026-10-29T18:30:30",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_UNSUPPORTED_OCTET_STREAM",
+        "retriever_wrapper_error_code": 400,
+        "rechecked_this_sprint": true,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "USGS",
+        "archive_record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "identifier": "J. R. Stacy 1959 Hebgen fault-scarp USGS record",
+        "source_relationship": "same_record_alternative_original_path_binary_unverified",
+        "candidate_asset_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "Official USGS record marks public domain; named photographer and the specific master require individual rights review.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "unknown_actual_master_dimensions",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Log visitor MIME/currentSrc/decoded width for existing octet-stream source; separately hash/visually match official alternative."
+    },
+    {
+      "priority_rank": 3,
+      "image_key": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "post_slot": 1,
+      "current_published_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "current_published_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "wp_last_modified": "2026-08-28T03:11:08",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_FETCH_403",
+        "retriever_wrapper_error_code": 403,
+        "rechecked_this_sprint": true,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "United States Coast Guard",
+        "archive_record_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "identifier": "210330-G-DE713-0002.JPG",
+        "source_relationship": "official_virin_filename_match_no_master_hash",
+        "candidate_asset_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "Official USCG record lists public release and credit requirements; verify specific image rights and no endorsement.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "unknown_original_dimensions_url_transform_not_master",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Confirm browser 403 and portrait render; retain exact VIRIN, credit, and Pettit/Petit spelling ambiguity."
+    },
+    {
+      "priority_rank": 4,
+      "image_key": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "post_slot": 2,
+      "current_published_source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "current_published_alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "wp_last_modified": "2026-08-28T03:11:08",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_FETCH_403",
+        "retriever_wrapper_error_code": 403,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "US Coast Guard History",
+        "archive_record_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "identifier": "5_ Scotch_Cap_debris2_1946.jpg (individual accession unknown)",
+        "source_relationship": "publisher_article_original_filename_catalog_unmatched",
+        "candidate_asset_url": null,
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "Federal-hosted Coast Guard photograph; exact creator/item rights remain to be verified.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "unknown_original_dimensions",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Browser-check debris photograph and request exact archival accession; retain published description until match."
+    },
+    {
+      "priority_rank": 5,
+      "image_key": "285:0",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "post_slot": 0,
+      "current_published_source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "current_published_alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "wp_last_modified": "2026-09-08T10:06:47",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_FETCH_403",
+        "retriever_wrapper_error_code": 403,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "US Nuclear Regulatory Commission official Flickr",
+        "archive_record_url": "https://www.flickr.com/photos/nrcgov/7447166686",
+        "identifier": "Flickr 7447166686",
+        "source_relationship": "same_photo_id_external_rendition_binary_unverified",
+        "candidate_asset_url": "https://www.flickr.com/photos/nrcgov/7447166686",
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "NRC photographs may include third-party material; verify specific image copyright and photographer.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "unknown_original_dimensions",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Verify actual guest Flickr render first; review item-level copyright and original photographer."
+    },
+    {
+      "priority_rank": 6,
+      "image_key": "407:3",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "post_slot": 3,
+      "current_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "current_published_alt": "Dragline excavating the Earthquake Lake spillway on October 18, 1959, with one of the nighttime lighting plants visible on the hillside.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "wp_last_modified": "2026-10-29T18:30:30",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_error_code": null,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "US Geological Survey",
+        "archive_record_url": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+        "identifier": "EarthquakeLake3.jpg / Mrs. Steven W. Nile",
+        "source_relationship": "official_subject_filename_match_item_rights_unknown",
+        "candidate_asset_url": null,
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "USGS credits Mrs. Steven W. Nile / Montana School of Mines; government-hosted image may carry third-party rights.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": 960,
+        "conditional_960px_height": 684,
+        "basis": "stored_html_1024x730_unverified_binary",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Capture browser image load failure and origin MIME; verify original photographer rights and master dimensions."
+    },
+    {
+      "priority_rank": 7,
+      "image_key": "268:8",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "post_slot": 8,
+      "current_published_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "current_published_alt": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "wp_last_modified": "2026-10-30T01:10:13",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_error_code": null,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "Archimedes Palimpsest Project",
+        "archive_record_url": "https://archimedespalimpsest.org/0_ReadMe.html",
+        "identifier": "imaging_x9.jpg publisher asset",
+        "source_relationship": "publisher_asset_no_individual_catalog",
+        "candidate_asset_url": null,
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "Project dataset CC BY 3.0 does not automatically license separate presentation JPEGs. Individual permission required.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "unknown_original_dimensions",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Confirm guest browser display; seek explicit presentation-photograph rights rather than copying dataset license."
+    },
+    {
+      "priority_rank": 8,
+      "image_key": "268:4",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "post_slot": 4,
+      "current_published_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "current_published_alt": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "wp_last_modified": "2026-10-30T01:10:13",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "retriever_wrapper_error_code": null,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "Archimedes Palimpsest Project",
+        "archive_record_url": "https://archimedespalimpsest.org/0_ReadMe.html",
+        "identifier": "imagecapture-capture2b.jpg publisher asset",
+        "source_relationship": "publisher_asset_no_individual_catalog",
+        "candidate_asset_url": null,
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "Publisher hosting and digital-text dataset CC BY do not prove photo reuse permission.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "unknown_original_dimensions",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Verify www-to-apex redirect in guest browser and capture the actual final image response."
+    },
+    {
+      "priority_rank": 9,
+      "image_key": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "post_slot": 2,
+      "current_published_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "current_published_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "wp_last_modified": "2026-09-08T10:06:47",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE",
+        "retriever_wrapper_error_code": 500,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "National Archives / President's Commission",
+        "archive_record_url": "https://commons.wikimedia.org/wiki/File:Control_room_Number_2._Nuclear_Regulatory_Commission_inspector_looking_at_meters._-_NARA_-_540034.tif",
+        "identifier": "NARA 540034",
+        "source_relationship": "different_photo_same_topic_not_a_drop_in_replacement",
+        "candidate_asset_url": null,
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "The NARA photo is a different control-room photograph; verify source rights and revise captions only through separate editorial approval.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": 3000,
+        "catalog_original_height_px": 2023,
+        "conditional_960px_width": 960,
+        "conditional_960px_height": 647,
+        "basis": "candidate_catalog_dimensions_not_existing_published_image",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Browser-check current UCS image redirect; do not replace it with a different NARA photograph by default."
+    },
+    {
+      "priority_rank": 10,
+      "image_key": "418:0",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "post_slot": 0,
+      "current_published_source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "current_published_alt": "The old and new Scotch Cap lighthouses on Unimak Island before the concrete lighthouse was destroyed by the April 1, 1946 tsunami.",
+      "current_cms_source_and_alt_verified": true,
+      "source_census_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "wp_last_modified": "2026-08-28T03:11:08",
+      "source_kind": "external",
+      "source_viewer": {
+        "method": "independent_web_retriever_NOT_logged_out_visitor_browser",
+        "observed_on": "2026-11-01",
+        "result": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+        "retriever_wrapper_error_code": null,
+        "rechecked_this_sprint": false,
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "actual_transferred_bytes": null
+      },
+      "candidate": {
+        "authority": "US Coast Guard History",
+        "archive_record_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "identifier": "2_ new and old lighthouses 19849609_web1_1_ (individual accession unknown)",
+        "source_relationship": "publisher_article_original_filename_catalog_unmatched",
+        "candidate_asset_url": null,
+        "binary_identity_verified": false,
+        "original_master_sha256": null,
+        "reproduction_rights_review": "HOLD",
+        "rights_basis_note": "USCG webpage is a source clue, not universal authorization to republish an uncatalogued historic image.",
+        "credit_and_caption_review_required": true
+      },
+      "geometry": {
+        "catalog_original_width_px": null,
+        "catalog_original_height_px": null,
+        "conditional_960px_width": null,
+        "conditional_960px_height": null,
+        "basis": "filename_1200x984_unverified_binary",
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "master_binary_dimensions_verified": false
+      },
+      "guest_browser": {
+        "current_src": null,
+        "final_image_url": null,
+        "http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "approval": {
+        "replacement_ready": false,
+        "media_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "wordpress_post_edit_authorized": false,
+        "homepage_design_changed": false
+      },
+      "next_verified_action": "Check guest browser rendering, discover original master dimensions and Coast Guard catalog item."
+    }
+  ]
+}
