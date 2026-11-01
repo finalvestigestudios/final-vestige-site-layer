@@ -47,7 +47,7 @@ class R53ReviewerTests(unittest.TestCase):
     def test_05_no_merchant_clickable_destination(self):
         self.assertFalse(any("zen12.com" in x or "hypnosislive.com" in x or "inspire3.com" in x for x in self.ui.links))
 
-    def test_06_no_live affiliate tracking(self):
+    def test_06_no_live_affiliate_tracking(self):
         self.assertNotRegex(HTML,r"(?i)(hop\.clickbank|affiliate_id=|utm_source=|pixel\.)")
 
     def test_07_all_six_canonical_subjects(self):
