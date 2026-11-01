@@ -34,4 +34,4 @@ The existing six sources appear to use LOC's small-view `v.jpg` images for five 
 
 **Observed this run:** official LOC search/catalog record text and current WordPress source URL/ALT; binary image retriever could not inspect six requested JPGs. **Zero visitor-browser HTTP statuses, zero confirmed broken images, zero actual browser image weights, zero assets downloaded, zero WordPress production edits or expenses.**
 
-**Artifacts:** `qa/media-recovery/baltimore_190_loc_20261101.json`; `validate_baltimore_190.cjs`; `test_baltimore_190.cjs`. Tests enforce exact source/census/catalog IDs, item-level rights holds, unknown live browser status, and ≤960px/no upscaling. Native Node CI and actual Chrome acceptance still required.
+**Artifacts:** `qa/media-recovery/baltimore_190_loc_20261101.json`; `validate_baltimore_190.cjs`; `test_baltimore_190.cjs`. Tests enforce exact source/census/catalog IDs, item-level rights holds, unknown live browser status, and ≤960px/no upscaling. **Verification:** 41/41 exact committed-source isolated V8 tests pass, including malformed-URL defensive handling. Native Node CI and actual Chrome acceptance still required.
