@@ -48,6 +48,7 @@ class AllEntryTamperR119Tests(unittest.TestCase):
         self.assertEqual(response["private_records_checked"], 8)
         self.assertEqual(response["six_exes"], 6)
         self.assertEqual(response["tamper_cases_rejected"], 16)
+        self.assertEqual(response["positive_controls_verified"], 2)
         self.assertEqual(response["status"], "CI_EPHEMERAL_ALL_ENTRY_TAMPER_REJECTION_ONLY")
         self.assertFalse(response["release_authorized"])
         self.assertFalse(response["premium_distribution_authorized"])
@@ -96,10 +97,20 @@ class AllEntryTamperR119Tests(unittest.TestCase):
         self.assert_clean()
 
     def test_unsealer_that_accepts_modified_ciphertext_fails(self):
-        with mock.patch.object(handoff, "unseal", return_value={
-                "status": "FAKE", "six_exes": 6, "release_authorized": False}):
+        original = handoff.unseal
+        calls = 0
+
+        def dishonest(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 1:  # First valid native-decrypt control must really work.
+                return original(*args)
+            return {"status": "FAKE", "six_exes": 6, "release_authorized": False}
+
+        with mock.patch.object(handoff, "unseal", side_effect=dishonest):
             with self.assertRaises(matrix.MatrixHold):
                 self.run_matrix()
+        self.assertEqual(calls, 2)
         self.assert_clean()
 
     def test_dishonest_acceptance_on_last_tag_is_detected(self):
@@ -109,36 +120,47 @@ class AllEntryTamperR119Tests(unittest.TestCase):
         def dishonest(*args):
             nonlocal calls
             calls += 1
-            if calls == 16:
+            if calls == 17:  # Control + 16th tamper (last record's tag).
                 return {"status": "FAKE", "release_authorized": False}
             return unseal(*args)
 
         with mock.patch.object(handoff, "unseal", side_effect=dishonest):
             with self.assertRaises(matrix.MatrixHold):
                 self.run_matrix()
-        self.assertEqual(calls, 16)
+        self.assertEqual(calls, 17)
         self.assert_clean()
 
     def test_all_mutations_are_reverted_when_decryptor_fails_unexpectedly(self):
         # A non-HandoffHold error is NOT considered authentication rejection.
         seen_hashes = []
         unseal = handoff.unseal
+        calls = 0
 
         def failed(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                return unseal(*args)  # Valid positive control, then test mutation.
             seen_hashes.append(handoff._hash(args[0]))
             raise OSError("synthetic private failure")
 
         with mock.patch.object(handoff, "unseal", side_effect=failed):
             with self.assertRaises(OSError):
                 self.run_matrix()
+        self.assertEqual(calls, 2)
         self.assertEqual(len(seen_hashes), 1)
         self.assert_clean()
         self.assertNotEqual(seen_hashes[0], "")
 
     def test_unseal_cannot_leave_a_published_intake_when_it_rejects(self):
         unseal = handoff.unseal
+        calls = 0
 
         def dishonest(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                return unseal(*args)
             destination = Path(args[3])
             destination.mkdir()
             raise handoff.HandoffHold("synthetic rejected after bad publication")
@@ -146,6 +168,7 @@ class AllEntryTamperR119Tests(unittest.TestCase):
         with mock.patch.object(handoff, "unseal", side_effect=dishonest):
             with self.assertRaises(matrix.MatrixHold):
                 self.run_matrix()
+        self.assertEqual(calls, 2)
         # Temporary private staging must still be cleaned even after failure.
         self.assert_clean()
 
@@ -194,6 +217,102 @@ class AllEntryTamperR119Tests(unittest.TestCase):
                 self.assertNotEqual(old, self.r9.read_bytes())
                 raise RuntimeError("synthetic failure")
         self.assertEqual(old, self.r9.read_bytes())
+
+    def test_r120_positive_controls_bracket_all_sixteen_tamper_checks(self):
+        original = handoff.unseal
+        sequence = []
+
+        def observe(*args):
+            sequence.append(Path(args[3]).name)
+            return original(*args)
+
+        with mock.patch.object(handoff, "unseal", side_effect=observe):
+            result = self.run_matrix()
+        self.assertEqual(len(sequence), 18)
+        self.assertEqual(sequence[0], "control-before")
+        self.assertEqual(sequence[-1], "control-after")
+        self.assertTrue(all(name.startswith("rejected-") for name in sequence[1:-1]))
+        self.assertEqual(result["positive_controls_verified"], 2)
+        self.assert_clean()
+
+    def test_r120_broken_decryptor_cannot_fake_sixteen_rejections(self):
+        # R119 would have returned PASS if every unseal call failed on an
+        # unmodified archive; R120 insists on a successful positive control.
+        with mock.patch.object(handoff, "unseal",
+                               side_effect=handoff.HandoffHold("always rejects")):
+            with self.assertRaises(handoff.HandoffHold):
+                self.run_matrix()
+        self.assert_clean()
+
+    def test_r120_final_positive_control_failure_holds_even_after_all_tampers(self):
+        original = handoff.unseal
+        calls = 0
+
+        def fail_final(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 18:
+                raise handoff.HandoffHold("cannot decrypt unchanged final bundle")
+            return original(*args)
+
+        with mock.patch.object(handoff, "unseal", side_effect=fail_final):
+            with self.assertRaises(handoff.HandoffHold):
+                self.run_matrix()
+        self.assertEqual(calls, 18)
+        self.assert_clean()
+
+    def test_r120_forged_success_without_unsealed_bytes_is_refused(self):
+        with mock.patch.object(handoff, "unseal", return_value={
+                "status": "PRIVATE_REVIEWER_INTAKE_UNCERTIFIED",
+                "six_exes": 6, "release_authorized": False}):
+            with self.assertRaises(matrix.MatrixHold):
+                self.run_matrix()
+        self.assert_clean()
+
+    def test_r120_positive_control_detects_modified_decrypted_exe(self):
+        original = handoff.unseal
+
+        def change_output(*args):
+            result = original(*args)
+            if Path(args[3]).name == "control-before":
+                path = Path(args[3]) / "exes" / handoff.NAMES[0]
+                path.write_bytes(b"MZ edited but falsely claimed as unchanged")
+            return result
+
+        with mock.patch.object(handoff, "unseal", side_effect=change_output):
+            with self.assertRaises(matrix.MatrixHold):
+                self.run_matrix()
+        self.assert_clean()
+
+    def test_r120_positive_control_refuses_extra_staging_entry(self):
+        original = handoff.unseal
+
+        def add_extraneous(*args):
+            result = original(*args)
+            if Path(args[3]).name == "control-before":
+                (Path(args[3]) / "exes" / "unexpected.exe").write_bytes(b"MZ")
+            return result
+
+        with mock.patch.object(handoff, "unseal", side_effect=add_extraneous):
+            with self.assertRaises(matrix.MatrixHold):
+                self.run_matrix()
+        self.assert_clean()
+
+    def test_r120_source_candidate_drift_during_matrix_fails_closed(self):
+        original = matrix._expect_rejection
+        calls = 0
+
+        def drift_once(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                (self.dist / handoff.NAMES[0]).write_bytes(b"MZ changed after seal")
+            return original(*args)
+
+        with mock.patch.object(matrix, "_expect_rejection", side_effect=drift_once):
+            with self.assertRaises(matrix.MatrixHold):
+                self.run_matrix()
+        self.assert_clean()
 
     def test_cli_private_path_does_not_escape_on_failure(self):
         private_path = self.root / "private-customer-ledger-folder"

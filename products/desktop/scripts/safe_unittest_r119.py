@@ -1,6 +1,6 @@
 """Privacy-safe exact-module diagnostics: never print exception text or paths.
 
-Run the R119 synthetic 19-method suite in one interpreter. Only source-known
+Run the R119/R120 synthetic 26-method suite in one interpreter. Only source-known
 method names and aggregate results reach CI logs; test output is discarded.
 """
 from __future__ import annotations
@@ -12,7 +12,7 @@ from pathlib import Path
 import unittest
 
 
-EXPECTED_METHODS = 19
+EXPECTED_METHODS = 26
 MODULE = "test_sealed_tamper_matrix_r119"
 
 
@@ -24,7 +24,7 @@ def main():
         suite = unittest.defaultTestLoader.loadTestsFromName(
             MODULE + ".AllEntryTamperR119Tests")
         if suite.countTestCases() != EXPECTED_METHODS:
-            print("R119 HOLD: focused test inventory changed")
+            print("R120 HOLD: focused test inventory changed")
             return 1
         capture_stdout, capture_stderr = io.StringIO(), io.StringIO()
         with contextlib.redirect_stdout(capture_stdout), contextlib.redirect_stderr(capture_stderr):
@@ -45,13 +45,13 @@ def main():
             if result.testsRun != EXPECTED_METHODS:
                 failed.add("inventory_incomplete")
         if failed:
-            print("R119 HOLD: failed source-owned methods: " + ", ".join(sorted(failed)))
+            print("R120 HOLD: failed source-owned methods: " + ", ".join(sorted(failed)))
             return 1
-        print("R119 PASS: " + str(result.testsRun) + " synthetic methods; " +
+        print("R120 PASS: " + str(result.testsRun) + " synthetic methods; " +
               str(len(result.skipped)) + " platform skips; no private tracebacks")
         return 0
     except (Exception, SystemExit):
-        print("R119 HOLD: focused test invocation unavailable; details redacted")
+        print("R120 HOLD: focused test invocation unavailable; details redacted")
         return 1
 
 
