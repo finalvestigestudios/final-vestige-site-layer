@@ -62,11 +62,34 @@ jobs:
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         shell: pwsh
         run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -p 'test_static_method_diagnostics_r100.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R100 normal privacy regression FAILED" }
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_static_method_diagnostics_r100.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R100 optimized privacy regression FAILED" }
+          $env:PYTHONPATH = "products/desktop;products/desktop/tests"
+          $methods = @(
+            "test_only_top_level_static_test_methods_admitted",
+            "test_static_method_diagnostic_round_trips_through_strict_parent",
+            "test_child_rejects_synthetic_subtest_parameter_for_method_identity",
+            "test_untrusted_child_cannot_supply_uninventoried_method",
+            "test_child_methods_are_hidden_without_parent_inventory",
+            "test_unknown_customer_values_cannot_escape_via_method_field",
+            "test_parent_rejects_duplicated_unsorted_and_bogus_counts",
+            "test_module_only_legacy_diagnostic_remains_accepted",
+            "test_many_failures_are_sorted_and_limited_to_ten",
+            "test_real_subprocess_keeps_private_exception_data_hidden_both_modes"
+          )
+          $failed = 0
+          foreach ($method in $methods) {
+            foreach ($mode in @("normal", "optimized")) {
+              if ($mode -eq "normal") {
+                python -m unittest "test_static_method_diagnostics_r100.StaticMethodDiagnosticsR100.$method" *> $null
+              } else {
+                python -OO -m unittest "test_static_method_diagnostics_r100.StaticMethodDiagnosticsR100.$method" *> $null
+              }
+              if ($LASTEXITCODE -ne 0) {
+                Write-Host "R100 source-owned method FAILED: $method ($mode)"
+                $failed++
+              }
+            }
+          }
+          if ($failed -ne 0) { throw "R100 static-source privacy regression gate FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
