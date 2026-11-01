@@ -16,10 +16,10 @@ EXPECTED={
 }
 
 def git_blob(data):
-    return hashlib.sha1(b"blob "+str(len(data)).encode()+b"\\0"+data).hexdigest()
+    return hashlib.sha1(b"blob "+str(len(data)).encode()+b"\0"+data).hexdigest()
 
 def records(html):
-    return re.findall(r'<article\\b[^>]*data-fvx-record\\b[^>]*>[\\s\\S]*?</article>', html)
+    return re.findall(r'<article\b[^>]*data-fvx-record\b[^>]*>[\s\S]*?</article>', html)
 
 class ProvenanceSearch(unittest.TestCase):
     @classmethod
@@ -56,8 +56,8 @@ class ProvenanceSearch(unittest.TestCase):
         for token in (".fv-ex2-ledger__clear","min-height:44px","[hidden]{display:none!important}"):
             self.assertIn(token,self.css)
     def test_no_geo_media_or_external_injection(self):
-        self.assertNotRegex(self.html,r'data-(?:lat|lng|fvx-geo)\\b|mapbox|leaflet')
-        self.assertNotRegex(self.html,r'<(?:img|iframe|script|canvas)\\b')
+        self.assertNotRegex(self.html,r'data-(?:lat|lng|fvx-geo)\b|mapbox|leaflet')
+        self.assertNotRegex(self.html,r'<(?:img|iframe|script|canvas)\b')
         self.assertNotIn("innerHTML=",self.js)
         self.assertNotIn("fetch(",self.js)
     def test_negative_mutations_rejected(self):
