@@ -3,7 +3,7 @@
 Isolated optional editorial improvement for Issue #174, canonical six-issue PR #175, readiness PR #201; stacked on PR #448. Existing six newsletters, marketing allocation (4:2), WordPress pages and homepage PR #49 are not changed.
 
 ## Why this edition
-The original Issue 04 is short and uses a compressed “Fourteen seconds” subject. The published investigation's primary-source trail distinguishes **the ~14-second interval from the fire report to cabin rupture** from the unknown ignition moment and the full fire sequence. This optional candidate avoids the misleading impression that the whole fire lasted only fourteen seconds. It also makes the distinction between an unproven initiating wire and **six verified hazardous conditions** the actual story.
+PR #175's first-mile manuscript used a “Fourteen seconds” subject, but the CURRENT stacked canonical Issue 04 at our parent PR #448 has already been source-refined to **“Seventeen seconds. A much longer explanation.”** That 17.1-second interval is the first recorded fire transmission (23:31:04.7) through the final transmission's end (23:31:21.8), *not* the complete fire. R42 offers an independently written different narrative emphasizing the **~14-second interval from first report to cabin rupture**, the unproven initiating wire, and **six documented hazardous conditions**. This is an optional alternative to the existing stronger canonical treatment, not a repair of an uncorrected draft.
 
 ## Reviewed sources (November 1, 2026)
 - Official NASA Apollo 204 Review Board report: https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
