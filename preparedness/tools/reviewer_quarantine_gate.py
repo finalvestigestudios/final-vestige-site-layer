@@ -18,7 +18,7 @@ import re
 import importlib.util
 from pathlib import Path
 
-# The mandatory pipeline uses \`python -I\`: do not trust sys.path to resolve
+# The mandatory pipeline uses `python -I`: do not trust sys.path to resolve
 # a like-named external package. Load the exact, non-linked R37 sibling.
 _r37_path = Path(__file__).with_name('reviewer_csv_export_gate.py')
 if not _r37_path.is_file() or _r37_path.is_symlink():
@@ -126,7 +126,7 @@ def check_note(value, field):
 def quarantine_reviewer_csv(bundle, edited_csv_tables):
     """Return frozen, evidence-bound *quarantine* annotations, never approvals.
 
-    \`bundle\` is the original R37 export. The 4 edited CSVs may be reordered by
+    `bundle` is the original R37 export. The 4 edited CSVs may be reordered by
     spreadsheet software but must contain exactly the same rows and every
     original evidence cell byte-for-byte. Only review_state and human_* cells
     may differ. States are deliberately nonterminal; purported approvals are
