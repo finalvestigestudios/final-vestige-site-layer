@@ -14,6 +14,7 @@ import unittest
 from fvs_suite import csv_snapshot, manifest_guard, review_lock, journal_io
 from scripts import build_input_guard
 import candidate_guard
+import report_attestation
 
 
 MODULES = (csv_snapshot, candidate_guard, manifest_guard)
@@ -307,6 +308,31 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
             journal_io.append_verified_event(journal, event, 4096,
                 lambda: (_ for _ in ()).throw(ValueError("reject")))
         self.assertFalse(journal.exists())
+
+
+    def test_report_attestation_windows_creation_time_mismatch_allowed(self):
+        self.assertTrue(report_attestation._same_path_descriptor_signature(
+            fake_stat(st_ctime_ns=11), fake_stat(st_ctime_ns=22),
+            windows=True))
+
+    def test_report_attestation_linux_creation_time_mismatch_rejected(self):
+        self.assertFalse(report_attestation._same_path_descriptor_signature(
+            fake_stat(st_ctime_ns=11), fake_stat(st_ctime_ns=22),
+            windows=False))
+
+    def test_report_attestation_windows_inode_change_rejected(self):
+        self.assertFalse(report_attestation._same_path_descriptor_signature(
+            fake_stat(), fake_stat(st_ino=102), windows=True))
+
+    def test_real_report_attestation_private_descriptor_read(self):
+        dist = self.root / "dist"
+        dist.mkdir()
+        evidence = self.root / "windows-smoke-evidence.json"
+        contents = b'{"scope":"synthetic","released":false}'
+        evidence.write_bytes(contents)
+        raw, digest = report_attestation._read_verified_report(evidence, dist)
+        self.assertEqual(raw, contents)
+        self.assertEqual(digest, hashlib.sha256(contents).hexdigest())
 
 
 if __name__ == "__main__":
