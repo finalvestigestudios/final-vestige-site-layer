@@ -50,3 +50,18 @@
 @media(max-width:420px){.fva-filter button{flex:1 1 100%}.fva{padding:18px}.fva-mark span{display:block;margin-top:5px}.fva-header{padding:22px 0 28px}}
 @media(prefers-reduced-motion:reduce){.fva *, .fva *::before,.fva *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{.fva{background:#fff;color:#000}.fva *{color:#000!important}.fva-card,.fva-guide,.fva-card__plate,.fva-caution{background:#fff;border-color:#777}.fva [data-fva-record]{break-inside:avoid}.fva [data-fva-controls]{display:none!important}}
+
+/* R41 evidence-custody print contract: the user's temporary UI filter must never
+   silently remove original sources from a printed research record. */
+@media print {
+  /* Decorative placeholder plates carry no archival content; omit on paper. */
+  .fva-card__plate { display:none!important; }
+  .fva-card h2 { min-height:0!important; }
+  .fva-grid { padding-bottom:10px!important; }
+  .fva-footer { padding:10px 0 8px!important; }
+  .fva [data-fva-record][hidden] { display:flex!important; }
+  .fva [data-fva-drawer] > dl { display:block!important; }
+  .fva [data-fva-drawer]::details-content { content-visibility:visible!important; }
+  .fva .fva-card__external::after { content: "  [" attr(href) "]"; display:block; font-size:10pt; word-break:break-all; }
+  .fva [data-fva-empty] { display:none!important; }
+}
