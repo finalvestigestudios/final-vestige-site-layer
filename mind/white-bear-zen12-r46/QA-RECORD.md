@@ -1,0 +1,9 @@
+# R46 verification/release record — 1 November 2026
+- New independent white-bear/ironic thought suppression investigation with direct 1987 peer-reviewed abstract, 1994 theory, 2020 k=31 meta-analysis and cautious Puységur connection. No product pitch in research.
+- One seller-matched Zen12 buyer guide; two identical substantive A/B guide variants; B adds **optional offline-video still/transcript proposal**. No fake player, no autoplay, no active CTA, no clickable merchant source links.
+- Alternative Mind hub is explicitly NONCANONICAL; existing PR #172 remains canonical.
+- 43 evidence/affiliate permissions gates. Merchant URLs editor-only. Near-control prospective FTC material-connection disclosure. Hard-off privacy attribution, three categorical fields and n>=20 suppression.
+- Original schematic poster source, 40-second film plan/VTT/transcript. MP4 generation and hosting are separate from static WordPress markup; do not claim a playable web film before video embed verification.
+- WordPress authenticated read-only: 61 published posts; Puységur page ID 1377; Focus ID 1579; site theme Assembler / Inter. No CMS settings, subscribers, campaigns or nav touched.
+- Local and committed-source test outcome recorded in Issue #171 AFTER execution. Hosted CI/browser/staging/performance not automatically implied by source tests.
+- HOLD: written FV-specific Inspire3 affiliate acceptance and specific earning URL, permitted website/TikTok/email usage, legal creative license, actual checkout terms, named-product efficacy evidence (or exclude claims), independent browser/contrast/a11y/security/performance review, original first-party film hosting + caption synchronization if activated, explicit founder publish/merge approval.
