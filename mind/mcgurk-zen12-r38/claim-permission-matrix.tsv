@@ -1,0 +1,44 @@
+claim_id	claim_text	classification	source_id	verdict	copy_rule	gate
+Z01	Zen12 is sold by Inspire3	merchant identity	S01	supported seller identity	name product	none
+Z02	Zen12 sessions advertised as twelve minutes	product format	S02	seller-stated	attribute to merchant; no guarantee	verify exact current offer
+Z03	Beginner contains first six levels 24 MP3	package	S02	seller-stated	attribute to seller	current version recheck
+Z04	Premium includes all twelve levels 48 MP3	package	S02;S04	seller-stated	attribute to seller	current version recheck
+Z05	Advanced contains final six levels 24 MP3	package	S02	seller-stated	attribute to seller	current version recheck
+Z06	Four styles music guided nature white noise	product format	S02;S03	seller-stated	avoid audio testing claims	seller version verify
+Z07	Downloadable MP3 delivery	format	S02;S03	seller-stated	say advertised MP3 files	checkout verify
+Z08	One hour of meditation in twelve minutes	efficacy	S02	unsupported independently	NEVER adopt	independent product-specific trial
+Z09	Audio automatically controls EEG rhythms	mechanism	S02	unsupported for Zen12	NEVER adopt	product-specific reproducible EEG research
+Z10	Brainwave entrainment proven for 100 years	mechanism	S02;E01	inconsistent / broad claim	DO NOT repeat unqualified	independent replication
+Z11	Reduce anxiety immediately	mental health	S02	not substantiated for Zen12	omit	competent reliable clinical evidence
+Z12	Treat depression or insomnia	clinical	none	not supported	never claim	clinical substantiation/regulatory review
+Z13	Improve focus reliably	mental performance	S02	not substantiated for Zen12	omit outcome promises	controlled product trials
+Z14	Increase creativity guaranteed	mental performance	S02	not substantiated for Zen12	omit	controlled product trials
+Z15	Increase wealth or income	financial efficacy	none	not supported	never claim	independent valid support
+Z16	Meditation generally studied for well-being	general background	E01	E01 is not meditation outcomes	do not transfer	meditation-specific research
+Z17	Binaural EEG systematic review mixed results	independent evidence	E01	supported	accurately summarize 5/8/1	verify study methods
+Z18	Systematic review tested Zen12	false inference	E01	FALSE	explicitly say did not	no
+Z19	Publisher advertises year refund	merchant policy	S02;S04	seller-stated only	do not guarantee enforceability	policy terms verify
+Z20	Current listed checkout total	price	S04	visible but volatile	OMIT price in evergreen presell	verify same day + taxes
+Z21	Cell phone is mandatory	privacy/checkout	S04	unverified requirement	state field appears; requirement unknown	live form testing authorized
+Z22	Customer data handled privately	privacy	S04	unverified	don't promise	read current data policy
+Z23	Testimonials prove typical results	endorsement	S04;F02	not adequate	omit	representative outcome support
+Z24	Specific affiliate payout for Final Vestige	commission	S05	unverified	OMIT	written account terms
+Z25	Final Vestige accepted into Inspire3	permissions	S05	not verified	keep CTA hard-off	account acceptance
+Z26	Affiliate link is authorized for Zen12 tiers	permissions	S05	not verified	NO direct outbound CTA	approved exact tracking URL
+Z27	Email/Social allowed promotional channels	permissions	S05	not verified	no outreach or send	written approved channel rules
+Z28	Official creatives licensed for republishing	creative rights	S05	not verified	original-only	per-offer authorized licenses
+Z29	Near-action commission disclosure	FTC	F01	required when active	show just before link	human + QA review
+Z30	A non-affiliate public seller citation may be linked	editorial transparency	S02;F01	allowed with prominent source context	label opens merchant and can reach checkout	safety review
+Z31	Existing Fieldbook is one existing Jetpack route	first-party	FO01	verified WP	link only existing /focus/	no extra form
+Z32	Puységur archive has 153 source rows 16 dossiers	first-party	PR01	verified WP	do not rebrand as proof of hypnosis	historical framing
+Z33	McGurk experiment validates Zen12	false inference	MC01;E01	FALSE	explicitly reject	no
+Z34	Video page converts better than text-only	A/B hypothesis	none	untested	call hypothesis only	randomized sufficient sample
+Z35	Privacy safe live outbound analytics	measurement	none	not running	disabled by default	privacy/consent/partner review
+Z36	Video is original not merchant endorsed	creative	none	draft-only	mark editorial explainer not sales claim	caption QA
+Z37	Web auto-play is acceptable	accessibility	none	prohibited by directive	no autoplay	manual controls only
+Z38	Live CMS content can be modified	release	none	not authorized	no CMS writes	explicit founder release approval
+Z39	Homepage flagship PR may be edited	ownership	none	PROHIBITED	no PR49 branch changes	art owner
+Z40	Dispatch email copies may be edited	ownership	none	PROHIBITED	handoff Issue174	Dispatch consent
+Z41	Audio-only promo might be enough	accessibility	none	not established	captions and transcript	WCAG QA
+Z42	Price/checkout countdown demonstrates urgency	marketing	S04	merchant interface not independent scarcity	no urgency copy	none
+Z43	Product can be purchased through an inert draft CTA	commerce	none	FALSE	button disabled not link	partner + founder release
