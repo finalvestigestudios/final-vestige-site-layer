@@ -167,8 +167,14 @@ def audit(root: Path, *, expected: dict | None = None,
     # fragments. It does not contain source rows and must never be counted as
     # an eighth fragment. Allow no other extras, including hidden/temp files.
     allowed_with_documentation = expected_json | {Path(FRAGMENT_README).name}
-    need(observed_files in (expected_json, allowed_with_documentation),
-         'unregistered fragment file present or source fragment missing')
+    if expected == EXPECTED:
+        # Frozen full 224-row archive must retain its original instructions.
+        need(observed_files == allowed_with_documentation,
+             'original source fragment README missing or unexpected inventory entry')
+    else:
+        # Smaller synthetic fixtures intentionally contain JSON fragments only.
+        need(observed_files in (expected_json, allowed_with_documentation),
+             'unregistered fragment file present or source fragment missing')
     if Path(FRAGMENT_README).name in observed_files:
         need(git_blob(file_at(root, FRAGMENT_README)) == FRAGMENT_README_GIT_BLOB,
              'original source fragment instructions drift')
@@ -280,6 +286,8 @@ def audit(root: Path, *, expected: dict | None = None,
         'unread_source_placeholders': sum(r.get('verified_on') is None for _, r in rows),
         'duplicate_source_id_groups': sum(n > 1 for n in ids.values()),
         'crosswalk_git_blob_sha': git_blob(file_at(root, CROSSWALK)),
+        'fragment_readme_git_blob_sha': (
+            FRAGMENT_README_GIT_BLOB if Path(FRAGMENT_README).name in observed_files else None),
         'non_author_source_head_aliases': aliases,
         'source_group_review_queue': queue,
     }
