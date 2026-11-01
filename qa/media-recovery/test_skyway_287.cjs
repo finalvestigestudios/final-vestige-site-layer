@@ -17,7 +17,7 @@ test("baseline exact six-source CMS, web-retriever, source identity and HOLD gat
 for(let i=0;i<6;i++){
  reject("reject modified actual published URL "+i,x=>x.rows[i].current_published_source_url+="?fake=1","original source URL");
  reject("reject changed historical ALT "+i,x=>x.rows[i].current_published_alt+=" forged","original alt");
- reject("reject wrong post key "+i,x=>x.rows[i].key="287:0","key");
+ reject("reject wrong post key "+i,x=>x.rows[i].key="tampered-key","key");
 }
 reject("never reinterpret retriever 404 as visitor 404",x=>x.rows[5].guest_browser.http_status=404,"unobserved browser");
 reject("no fabricated decoded currentSrc",x=>x.rows[5].guest_browser.current_src=x.rows[5].current_published_source_url,"unobserved browser");
