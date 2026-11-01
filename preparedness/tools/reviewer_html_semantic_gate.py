@@ -47,6 +47,47 @@ TAGS = frozenset(('html', 'head', 'meta', 'title', 'style', 'body', 'h1',
                   'pre', 'article', 'ol', 'li'))
 VOID = frozenset(('meta',))
 
+# R46: exact R43 HTML scaffold. HTMLParser is not a browser: merely counting
+# allowed tags lets a syntactically balanced but browser-repaired document put
+# the HOLD warning inside <head> or move the original local index link into
+# the evidence text. Neither is an acceptable visible, navigable review desk.
+PARENTS = {
+    'html': {()},
+    'head': {('html',)},
+    'meta': {('html', 'head')},
+    'title': {('html', 'head')},
+    'style': {('html', 'head')},
+    'body': {('html',)},
+    'h1': {('html', 'body')},
+    'p': {('html', 'body'), ('html', 'body', 'main', 'section')},
+    'main': {('html', 'body')},
+    'section': {('html', 'body', 'main')},
+    'h2': {('html', 'body', 'main', 'section')},
+    'article': {('html', 'body', 'main', 'section')},
+    'dl': {('html', 'body', 'main', 'section'),
+           ('html', 'body', 'main', 'section', 'article')},
+    'dt': {('html', 'body', 'main', 'section', 'dl'),
+           ('html', 'body', 'main', 'section', 'article', 'dl')},
+    'dd': {('html', 'body', 'main', 'section', 'dl'),
+           ('html', 'body', 'main', 'section', 'article', 'dl')},
+    'pre': {('html', 'body', 'main', 'section', 'dl', 'dd'),
+            ('html', 'body', 'main', 'section', 'article', 'dl', 'dd')},
+    'ol': {('html', 'body', 'main', 'section')},
+    'li': {('html', 'body', 'main', 'section', 'ol')},
+    'a': {('html', 'body', 'p'),
+          ('html', 'body', 'main', 'section', 'p'),
+          ('html', 'body', 'main', 'section', 'ol', 'li')},
+}
+
+# Inert literal evidence may contain old source text, but non-rendering format
+# controls could invert or conceal what a human actually reads. Reject rather
+# than strip, sanitize, truncate or silently rewrite the contributor record.
+VISUAL_CONTROL_CODEPOINTS = frozenset(
+    [0x00ad, 0x061c, 0x200b, 0x200e, 0x200f, 0x2060, 0xfeff]
+    + list(range(0x202a, 0x202f)) + list(range(0x2066, 0x206a))
+)
+
+
 class SemanticHold(ValueError):
     """An offline review ZIP is not safe to display or approve."""
 
@@ -75,6 +116,9 @@ class _Page(HTMLParser):
         self.hold_chunks = []
         self.hold_depth = None
         self.hold_count = 0
+        self.head_items = []
+        self.body_items = []
+        self.link_positions = []
 
     def handle_decl(self, decl):
         need(decl.lower() == 'doctype html' and self.doctypes == 0
@@ -100,6 +144,9 @@ class _Page(HTMLParser):
         need(len(keys) == len(set(keys)) and None not in keys,
              'duplicated or malformed HTML attribute')
         params = dict(attrs)
+        parent = tuple(self.stack)
+        need(parent in PARENTS[tag],
+             'browser-repaired or obscured private HTML structural nesting')
         if tag == 'html':
             need(params == {'lang': 'en'} and not self.stack,
                  'unsafe page root')
@@ -124,6 +171,16 @@ class _Page(HTMLParser):
                 self.hold_count += 1
         else:
             need(not params, 'active, inline-style or unexpected HTML attribute')
+        if tag in ('meta', 'title', 'style'):
+            self.head_items.append(
+                ('meta.charset' if 'charset' in params else 'meta.csp')
+                if tag == 'meta' else tag)
+        if parent == ('html', 'body'):
+            self.body_items.append(
+                'p.hold' if tag == 'p' and params.get('class') == 'hold'
+                else tag)
+        if tag == 'a':
+            self.link_positions.append(parent)
         self.tags[tag] += 1
         if tag not in VOID:
             self.stack.append(tag)
@@ -136,6 +193,13 @@ class _Page(HTMLParser):
         self.stack.pop()
 
     def handle_data(self, data):
+        need(not any((ord(ch) < 32 and ch not in '\\t\\n\\r') or
+                     0x7f <= ord(ch) <= 0x9f or
+                     ord(ch) in VISUAL_CONTROL_CODEPOINTS
+                     for ch in data),
+             'nonvisual, directional or spoofed source-review text control')
+        need(self.stack or not data.strip(),
+             'text outside the actual browser document')
         if self.stack and self.stack[-1] == 'style':
             self.style_chunks.append(data)
         if self.hold_depth is not None:
@@ -153,6 +217,12 @@ class _Page(HTMLParser):
              {'charset': 'utf-8'} in self.meta and
              {'http-equiv': 'Content-Security-Policy', 'content': CSP} in self.meta,
              'missing exact offline content-security policy')
+        need(self.head_items ==
+             ['meta.charset', 'meta.csp', 'title', 'style'] and
+             self.body_items in (
+                 ['h1', 'p.hold', 'main'],
+                 ['h1', 'p.hold', 'p', 'main']),
+             'reordered head, invisible HOLD warning or misplaced main body')
         need(''.join(self.style_chunks) == CSS,
              'offline CSS differs from inert frozen R43 stylesheet')
         need('PRIVATE / UNVERIFIED / HOLD.' in ''.join(self.hold_chunks),
@@ -175,14 +245,25 @@ def inspect_page(name, html):
     page.assert_safe()
     links = tuple(page.links)
     if name == 'index.html':
+        need(all(
+                 location == (
+                     ('html', 'body', 'main', 'section', 'p')
+                     if link == 'global-source-variants.html'
+                     else ('html', 'body', 'main', 'section', 'ol', 'li'))
+                 for link, location in zip(links, page.link_positions)),
+             'index link moved into noncanonical or obscured evidence context')
         need(all(link == 'global-source-variants.html' or
                  (link.startswith('articles/') and r44.allowed(link))
                  for link in links),
              'index contains an external or unsafe navigation target')
     elif name == 'global-source-variants.html':
-        need(links == ('index.html',), 'shared-source page has unsafe navigation')
+        need(links == ('index.html',) and
+             page.link_positions == [('html', 'body', 'p')],
+             'shared-source page has unsafe or displaced back navigation')
     else:
-        need(links == ('../index.html',), 'article page has unsafe navigation')
+        need(links == ('../index.html',) and
+             page.link_positions == [('html', 'body', 'p')],
+             'article page has unsafe or displaced back navigation')
     return links
 
 
