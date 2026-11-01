@@ -32,7 +32,7 @@ The full source content and receipt stay **private**; export only the public pag
 
 ## Execution evidence
 
-**14/14 Node tests passed** using the actual PR #382 seven-chapter WordPress release fragment from the exact-source offline package alongside a controlled synthetic legacy-page fixture. Controls exercise record alteration/deletion/substitution, Jetpack mutation/duplication, Focus loss, H1 collisions, chapter anchor and evidence inventory corruption, developer controls, remote JS, and baseline digest drift. This is not a genuine WordPress import or browser accessibility acceptance.
+**15/15 Node tests passed** using the actual PR #382 seven-chapter WordPress release fragment from the exact-source offline package alongside a controlled synthetic legacy-page fixture. Controls exercise record alteration/deletion/substitution, Jetpack mutation/duplication, Focus loss/deduplication, H1 collisions, chapter anchor and evidence inventory corruption, developer controls, remote JS, and baseline digest drift. This is not a genuine WordPress import or browser accessibility acceptance.
 
 ## Next release decision
 
