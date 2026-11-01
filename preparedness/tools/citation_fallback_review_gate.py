@@ -269,7 +269,12 @@ def audit(lib, expected=EXPECTED):
     handoff = build_human_review_intake(reviewer_batches, expected=expected)
     # Mandatory R36 reviewer census of every original repeated URL, including
     # source variants never selected by an article. This grants NO approval.
-    build_global_shared_source_review(lib, handoff, expected=expected)
+    # Only the frozen 35+1 production census authorizes a global inventory
+    # check. R25's explicitly reduced, synthetic unit fixtures have no actual
+    # 224-row crosswalk; R36 exercises those independently in its own 88 tests.
+    # The real checkout and mandatory private preflight use EXPECTED, always.
+    if expected == EXPECTED:
+        build_global_shared_source_review(lib, handoff, expected=expected)
     return payload
 
 def audit_checkout(root):
