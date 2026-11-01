@@ -275,10 +275,23 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(report, sort_keys=True))
         return 0  # Machine tests complete; release continues HOLD.
     except (PreflightHold, ValueError, OSError) as exc:
+        # GitHub Actions redirects stdout to a private runner-only JSON
+        # receipt. Emit just the known failing gate and a reason digest to
+        # stderr so CI diagnoses failures without leaking internal source
+        # details, filesystem paths, review notes, or private contents.
+        detail = str(exc)
+        known_gate = next((name for name, _, _ in STEPS
+                           if detail.startswith(name + ":")), None)
+        print(json.dumps({"gate": "R18_PRIVATE_PREFLIGHT_FAILURE",
+                          "release_state": "HOLD", "may_publish": False,
+                          "machine_integrity_result": "INCOMPLETE_OR_FAILED",
+                          "failed_step": known_gate or "setup_or_checkout",
+                          "reason_sha256": sha256(detail.encode("utf-8"))},
+                         sort_keys=True), file=sys.stderr)
         print(json.dumps({"schema_version": 1, "release_state": "HOLD",
                           "may_publish": False,
                           "machine_integrity_result": "INCOMPLETE_OR_FAILED",
-                          "error": str(exc)}, sort_keys=True))
+                          "error": detail}, sort_keys=True))
         return 2
 
 
