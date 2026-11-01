@@ -17,10 +17,9 @@ class BrowserResponse:
             'url':self.url,'resource_type':'document' if page.bad_type else 'image',
             'redirected_from':object() if page.redirect else None})()
         self.raw=b'Z' if page.browser_corrupt else name[:1].encode()
-        self.finished_called=False
-    def finished(self):self.finished_called=True
+        self.body_called=False
     def body(self):
-        assert self.finished_called
+        self.body_called=True
         return self.raw
 class BrowserPage(Page):
     def __init__(self):
@@ -49,7 +48,7 @@ class Tests(unittest.TestCase):
         self.assertEqual(len(self.go()),3)
         self.assertEqual(self.page.active,'apollo')
         self.assertEqual(self.page.loaded,set(SOURCE))
-        self.assertTrue(all(r.finished_called for r in self.page.events))
+        self.assertTrue(all(r.body_called for r in self.page.events))
     def test_browser_bytes_changed_but_independent_get_could_match(self):
         self.page.browser_corrupt=True
         with self.assertRaises(AssertionError):self.go()
