@@ -1,0 +1,139 @@
+<!-- UNPUBLISHED WORDPRESS SOURCE DRAFT / R51 / variant B; release HARD HOLD -->
+<section class="fv51-pilot" data-variant="B"><style>
+/* FV Mind R51: all styles scoped; WordPress-ready if inlined by build.mjs. No outside font/network dependencies. */
+.fv51-pilot{--bg:#090a0a;--surface:#131413;--paper:#1b1a17;--line:#484035;--gold:#d1ae6e;--gold2:#ead19b;--text:#f4efe6;--body:#d6d0c5;--dim:#b6ada0;--focus:#fff7de;color:var(--body);background:var(--bg);font:400 1.0625rem/1.68 system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;overflow-wrap:break-word;max-width:1200px;margin-inline:auto;padding:0 clamp(18px,4.5vw,70px) 75px;}
+.fv51-pilot *,.fv51-pilot *:before,.fv51-pilot *:after{box-sizing:border-box;}
+.fv51-pilot a{color:var(--gold2);text-decoration:underline;text-underline-offset:.22em;overflow-wrap:anywhere;}
+.fv51-pilot a:hover{color:#fff;}
+.fv51-pilot a:focus-visible,.fv51-pilot button:focus-visible,.fv51-pilot summary:focus-visible{outline:3px solid var(--focus);outline-offset:4px;}
+.fv51-pilot .fv51-skip{display:inline-block;margin:12px 0;padding:7px 9px;font-size:.86rem;}
+.fv51-pilot .fv51-nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;border-bottom:1px solid var(--line);padding:18px 0;}
+.fv51-pilot .fv51-nav strong{color:var(--text);font-size:.81rem;font-weight:750;letter-spacing:.14em;}
+.fv51-pilot .fv51-nav a{min-height:44px;display:inline-flex;align-items:center;font-size:.87rem;}
+.fv51-pilot .fv51-hero{padding:clamp(48px,8vw,108px) 0 28px;border-bottom:1px solid var(--line);}
+.fv51-pilot .fv51-tag,.fv51-pilot .fv51-kicker,.fv51-pilot .fv51-eyebrow{display:block;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-size:.75rem;font-weight:700;line-height:1.6;}
+.fv51-pilot h1,.fv51-pilot h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--text);text-wrap:balance;}
+.fv51-pilot h1{font-size:clamp(2.5rem,7.1vw,5.5rem);line-height:1.04;letter-spacing:-.035em;max-width:13.7ch;margin:14px 0 24px;}
+.fv51-pilot h2{font-size:clamp(1.7rem,3.7vw,2.9rem);line-height:1.17;letter-spacing:-.017em;margin:2.3em 0 .5em;max-width:24ch;}
+.fv51-pilot h3{color:var(--text);font-size:1.27rem;line-height:1.33;margin:1.5em 0 .5em;}
+.fv51-pilot p,.fv51-pilot li,.fv51-pilot dd{max-width:78ch;}
+.fv51-pilot p{margin:0 0 1.32rem;}
+.fv51-pilot .fv51-lead{font-size:clamp(1.17rem,2.1vw,1.47rem);line-height:1.52;color:var(--text);max-width:64ch;}
+.fv51-pilot .fv51-dek{max-width:62ch;font-size:1.06rem;color:var(--dim);}
+.fv51-pilot .fv51-meta{display:flex;flex-wrap:wrap;gap:10px 20px;color:var(--dim);font-size:.85rem;margin:30px 0;}
+.fv51-pilot .fv51-guide{padding:clamp(18px,3.5vw,36px) 0;}
+.fv51-pilot .fv51-guide h1{font-size:clamp(2rem,5vw,4.4rem);max-width:17ch;}
+.fv51-pilot .fv51-guide section{border-top:1px solid var(--line);padding-top:10px;}
+.fv51-pilot .fv51-guide section:first-of-type{margin-top:40px;}
+.fv51-pilot .fv51-status,.fv51-pilot .fv51-callout{background:var(--surface);padding:clamp(16px,3vw,28px);border:1px solid var(--line);border-left:4px solid var(--gold);margin:22px 0;}
+.fv51-pilot strong{color:var(--text);}
+.fv51-pilot .fv51-table-wrap{overflow-x:auto;max-width:100%;border:1px solid var(--line);background:var(--surface);margin:30px 0;}
+.fv51-pilot table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem;line-height:1.45;}
+.fv51-pilot caption{text-align:left;padding:12px 15px;font-size:.86rem;color:var(--dim);}
+.fv51-pilot th,.fv51-pilot td{padding:14px 15px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;}
+.fv51-pilot thead th{background:#272219;color:var(--text);}
+.fv51-pilot .fv51-exercise{padding-left:1.4em;}
+.fv51-pilot .fv51-exercise li{margin-bottom:1em;padding-left:.5em;}
+.fv51-pilot .fv51-qa{border-top:1px solid var(--line);}
+.fv51-pilot .fv51-qa dt{font-weight:700;color:var(--text);margin-top:22px;}
+.fv51-pilot .fv51-qa dd{margin:6px 0 22px;padding:0 0 22px;border-bottom:1px solid var(--line);}
+.fv51-pilot .fv51-offer{background:linear-gradient(130deg,#272115,#121412);padding:clamp(18px,3vw,36px);border:1px solid #a48654;margin:3rem 0;}
+.fv51-pilot .fv51-offer h3{margin-top:0;}
+.fv51-pilot .fv51-disclosure{border-left:3px solid var(--gold);padding:10px 16px;background:#2e2618;color:var(--text);}
+.fv51-pilot .fv51-offer button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;max-width:100%;padding:12px 18px;color:#d6cec1;background:#4b4943;border:1px solid #8c8270;border-radius:2px;font:700 1rem/1.35 system-ui;cursor:not-allowed;opacity:1;text-align:center;}
+.fv51-pilot .fv51-note{color:var(--dim);font-size:.88rem;margin-top:13px;}
+.fv51-pilot .fv51-references{font-size:.93rem;line-height:1.6;}
+.fv51-pilot .fv51-film{padding:clamp(18px,3vw,34px);background:#171918;border:1px solid var(--line);margin:22px auto 42px;max-width:850px;}
+.fv51-pilot .fv51-film h2{margin-top:0;}
+.fv51-pilot .fv51-film img{display:block;width:min(100%,390px);height:auto;margin:auto;border:1px solid #5b503b;}
+.fv51-pilot .fv51-film video{display:block;width:min(100%,390px);height:auto;margin-inline:auto;border:1px solid var(--line);background:#000;}
+.fv51-pilot .fv51-film figcaption,.fv51-pilot .fv51-film p{font-size:.94rem;color:var(--dim);}
+.fv51-pilot .fv51-film details{margin-top:18px;border-top:1px solid var(--line);padding-top:12px;}
+.fv51-pilot .fv51-film summary{display:list-item;color:var(--gold2);cursor:pointer;min-height:44px;padding-block:6px;font-weight:700;}
+.fv51-pilot .fv51-transcript{font-size:.93rem;padding:14px 0;color:var(--body);}
+.fv51-pilot .fv51-bottom{border-top:1px solid var(--line);padding-top:24px;color:var(--dim);font-size:.87rem;}
+@media(max-width:480px){.fv51-pilot h1{max-width:100%}.fv51-pilot{font-size:1rem}.fv51-pilot .fv51-nav{align-items:start}.fv51-pilot .fv51-offer button{width:100%}}
+@media(prefers-reduced-motion:reduce){.fv51-pilot *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.fv51-pilot .fv51-frame{aspect-ratio:9/12;max-width:400px;margin:14px auto;padding:25px;background:radial-gradient(ellipse at 50% 30%,#323027,#0b0c0d 65%);border:1px solid #8a7049;display:flex;flex-direction:column;align-items:center;justify-content:space-around;text-align:center;color:#e7d4ae;}.fv51-pilot .fv51-frame span{font-size:.72rem;letter-spacing:.18em}.fv51-pilot .fv51-frame strong{font:400 clamp(4rem,15vw,7rem)/1 Georgia,serif}.fv51-pilot .fv51-frame i{font-size:.45em;color:#a99e8a;font-style:normal}
+</style><a class="fv51-skip" href="#fv51-guide-title">Skip to the guide</a><nav class="fv51-nav" aria-label="Context and source navigation"><strong>FINAL VESTIGE / MIND</strong><a href="https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/">Historical evidence archive</a><a href="https://finalvestige.com/focus/">Free Focus Fieldbook</a></nav><main id="fv51-main"><!-- EDITORIAL GUIDE CORE: single source for A/B rendering; no live earning URL, no checkout link, no inline scripts. -->
+<section class="fv51-guide" aria-labelledby="fv51-guide-title" data-merchant-review="not-an-endorsement">
+<p class="fv51-kicker">TOOLS UNDER REVIEW · ZEN12 · INDEPENDENT BUYER'S FILE</p>
+<h1 id="fv51-guide-title">Twelve Minutes Is a Schedule. Not a Scientific Shortcut.</h1>
+<p class="fv51-lead">If meditation feels like a second job, a twelve-minute recording sounds mercifully simple. Zen12 sells that simplicity in a packaged MP3 course. Here is what the seller actually supplies, what remains unproven, and how to decide whether the format solves a problem you really have.</p>
+<p class="fv51-status"><strong>Editorial disclosure:</strong> This is an independent, source-led product evaluation, not a product test or a statement of personal experience. Final Vestige has not established authorized earning links for Zen12. The offer visit control below is inactive pending written approval and release review.</p>
+<figure class="fv51-film" data-variant-element="optional-film" aria-labelledby="fv51-film-title"><h2 id="fv51-film-title">Watch the distinction between a finding and a promise</h2><div class="fv51-frame" role="img" aria-label="Original poster: a bright 7 followed by a muted 4 within a stream of letters; schematic illustration of attentional blink, not a true vision test"><span>THE SECOND NUMBER</span><strong>7 <i>→</i> 4</strong><span>40 SECONDS · AN ORIGINAL EVIDENCE NOTE</span></div><figcaption>Optional 40-second original film is available in the offline reviewer package. First-party hosting and captions are not yet approved for the live site, so this unpublished WordPress draft deliberately has no play button.</figcaption><details><summary>Read the complete film transcript</summary><div class="fv51-transcript"><ol><li>Two numbers. One fast stream of letters.</li><li>You report the first. The second arrives soon after.</li><li>The report can fail—even while the stimulus was presented.</li><li>And immediately consecutive targets can sometimes escape the gap.</li><li>Three months of intensive meditation training is not a consumer audio trial.</li><li>What was measured? What was inferred? Follow the evidence.</li></ol><p>This is an original conceptual educational film, not an actual attentional-blink experiment or a Zen12 efficacy demonstration.</p></div></details></figure><section aria-labelledby="fv51-problem">
+<h2 id="fv51-problem">The small, stubborn problem with starting</h2>
+<p>Picture an ordinary evening. You finally have a little silence; your phone is face down, and a timer says twelve minutes. Thirty seconds later you remember the task you forgot at work. You replay a conversation. You wonder whether you are doing the exercise badly. The difficulty is not that the clock has run out. It is that an instruction as modest as “sit and notice” immediately meets a mind full of unfinished business.</p>
+<p>Most commercial meditation copy answers that moment with a promise: turn on the correct audio and effort will disappear. A better question is narrower. Would a predictable twelve-minute listening format make it easier for you to <em>begin</em> and return to a practice, compared with silence or a free recording? That is a practical preference worth examining. It is not a clinical or neurological outcome we can infer from an advertisement.</p>
+<p>The difference matters particularly on a site devoted to evidence. A controlled study of attention can make an experience legible; it cannot establish that a particular consumer recording automatically reproduces the conditions of the study.</p>
+</section>
+<section aria-labelledby="fv51-what">
+<h2 id="fv51-what">What Zen12 says you receive</h2>
+<p>We reviewed Inspire3's catalog and the product's actual Zen12 sales, About, Research, and public order pages on November 1, 2026. Zen12 is offered as a <strong>downloadable MP3 meditation-audio program</strong>, with the seller describing twelve progressive levels and twelve-minute sessions. That duration and downloadable format are product descriptions. They are not evidence that each session delivers a particular psychological benefit.</p>
+<p>At each level, Inspire3 advertises four variations: guided meditation, relaxation music, sounds of nature, and white noise. The choice is important: some listeners want words, some find them distracting; some enjoy music, others prefer neutral sound. These options are seller-described components, not separately quality-tested by Final Vestige.</p>
+<div class="fv51-table-wrap"><table><caption>Packages displayed on the official Zen12 sales page at editorial review</caption><thead><tr><th scope="col">Package</th><th scope="col">Seller-described levels</th><th scope="col">Seller-described MP3 files</th><th scope="col">Question to ask</th></tr></thead><tbody>
+<tr><th scope="row">Beginner</th><td>First 6</td><td>24</td><td>Will I actually use an entry-level library?</td></tr>
+<tr><th scope="row">Premium</th><td>All 12</td><td>48</td><td>Do I need future levels now?</td></tr>
+<tr><th scope="row">Advanced</th><td>Final 6</td><td>24</td><td>Do I already prefer a consistent meditation practice?</td></tr>
+</tbody></table></div>
+<p>The official sales page also describes a quick-start guide, manual, support, and certain bonuses; the Premium version additionally advertises level-specific audio guides and a training call. Those are representations about an offer that can change. Whether bonuses are accessible in your region, whether support remains available, and what a particular purchase actually delivers require confirmation from the current seller checkout and written terms. We have not purchased, downloaded or audited the files themselves.</p>
+<p>Do not read a package label such as “Advanced” as a medical designation or a measure of your experience. It is the vendor's product organization. A larger library may offer more variety, but having more files does not establish larger benefits.</p>
+</section>
+<section aria-labelledby="fv51-trial">
+<h2 id="fv51-trial">First, make one useful decision for free</h2>
+<p>Before buying a structured program, try this twelve-minute format-choice exercise. It tests your preferences, not brainwaves. It requires no email address, account, special equipment or measurement device.</p>
+<ol class="fv51-exercise">
+<li><strong>Minutes 0–3:</strong> Sit comfortably in a safe place. Use silence. Notice when attention drifts and return without scoring yourself.</li>
+<li><strong>Minutes 3–6:</strong> Use a familiar low-volume, nonverbal piece of music you already own or can legally access. Ask whether the sound supports attention or becomes another object to manage.</li>
+<li><strong>Minutes 6–9:</strong> Choose ordinary nature sounds from a source you already have, or simply listen to the room. Notice whether their variation helps or distracts.</li>
+<li><strong>Minutes 9–12:</strong> Try a short, free spoken mindfulness instruction from a source you trust, or silently narrate “notice, return” to yourself. Decide whether guidance feels helpful or intrusive.</li>
+</ol>
+<p>Afterward write three honest lines: “What helped me start?”, “What made returning easier?”, and “What would I want to repeat?” Do not compare yourself with someone else's claim of an instant breakthrough. The trial cannot demonstrate that one type of audio changes your brainwaves; it helps you avoid buying a whole library before learning which listening experience you prefer.</p>
+<p>If you are uncomfortable with any sound, stop. Do not use relaxation recordings while driving, using equipment, or during activities requiring attention. People seeking help with significant distress or a medical concern should not treat an audio purchase as a substitute for professional evaluation.</p>
+</section>
+<section aria-labelledby="fv51-proof">
+<h2 id="fv51-proof">The claim worth separating from the product</h2>
+<p>Inspire3's Zen12 sales and About pages make stronger statements than “these recordings last twelve minutes.” They promote a comparison in which twelve minutes delivers the benefits of an hour of meditation, and suggest that specialized sound can automatically bring the listener into particular brain states. The vendor also advertises stress, health, focus and creativity results. <strong>Final Vestige does not adopt those efficacy claims.</strong> They are seller representations for which we have not found adequate independent Zen12-specific substantiation.</p>
+<p>There is real research on meditation. There is also research on auditory stimulation, including binaural beats, and on the attentional blink. Those are not interchangeable bodies of evidence. A 2023 systematic review assessed studies about whether binaural-beat stimulation alters measurable brain oscillatory activity. Its findings were mixed and methodologically heterogeneous; it did <em>not</em> test the Zen12 files or verify that twelve minutes equals sixty minutes of practice. <a href="https://pubmed.ncbi.nlm.nih.gov/37205669/">Read the review's PubMed record.</a></p>
+<p>The National Center for Complementary and Integrative Health describes evidence, limitations and safety considerations for meditation and mindfulness more broadly. It does not certify Zen12 as an effective substitute for a longer training practice. <a href="https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety">Read NCCIH's meditation overview.</a></p>
+<p>One especially revealing study involves a different intervention: Slagter and colleagues investigated <em>three months of intensive Vipassana training</em> and found changes in attentional-blink performance and a related EEG measure. It is legitimate to study how training affects attention; it is illegitimate to transform that intervention into proof that any branded audio recording delivers the same outcome. <a href="https://pubmed.ncbi.nlm.nih.gov/17488185/">Read the original experiment.</a></p>
+<div class="fv51-callout"><h3>Three different propositions</h3><p><strong>Seller specification:</strong> a twelve-minute MP3 is offered. <strong>Research finding:</strong> certain attention and meditation interventions produce measurable effects under studied conditions. <strong>Unestablished leap:</strong> this exact MP3 reliably produces those effects, or compresses an hour of meditation into twelve minutes. The third proposition requires evidence about the product itself.</p></div>
+<p>FTC guidance for health-related advertising emphasizes that express and implied benefits need appropriate substantiation, not merely a reference to adjacent science or an enthusiastic testimonial. Good disclosure cannot repair an unsupported effectiveness claim. <a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance">Read the FTC guidance.</a></p>
+</section>
+<section aria-labelledby="fv51-fit">
+<h2 id="fv51-fit">Who might reasonably consider the format?</h2>
+<p>The clearest reason to consider Zen12 is modest: you want a prearranged library of short, downloadable listening sessions, and you like having four sound formats organized into levels. You may value keeping recordings available offline rather than searching for a new session each day. Those are ordinary usability preferences. We have not verified the actual app experience, file metadata, audio quality, accessibility of any spoken instructions, or compatibility with assistive technology.</p>
+<p>The program is a weaker fit if you want scientifically demonstrated, product-specific neurological change; if you are buying it as treatment for anxiety, insomnia, depression, trauma or another health condition; if you expect guaranteed productivity or wealth; or if you dislike structured audio. The seller's confidence is not the same as a product-specific clinical trial.</p>
+<p>It is also reasonable not to buy anything. You can use silence, a timer, a paper log, recordings from established nonprofit and public-health sources, or the existing <a href="https://finalvestige.com/focus/">free Seven Day Focus Fieldbook</a>. The Fieldbook is a separate Final Vestige resource for a practical routine; accessing the buyer's guide should never require joining a list. The existing Fieldbook uses Final Vestige's single Jetpack signup journey, which this guide does not duplicate.</p>
+</section>
+<section aria-labelledby="fv51-objections">
+<h2 id="fv51-objections">The questions we would ask before checkout</h2>
+<dl class="fv51-qa">
+<dt>Do the recording styles change the evidence?</dt><dd>No. Multiple listening options may make the format more flexible, but do not establish efficacy. Ask which files are actually included in the package you choose and whether you can preview a representative sample without joining an unwanted list.</dd>
+<dt>Is “brainwave entrainment” an independently established guarantee?</dt><dd>No. Research into auditory stimulation is heterogeneous. Physiological entrainment, subjective relaxation, sustained attention and clinical outcomes are distinct endpoints, none automatically demonstrated for these exact recordings.</dd>
+<dt>Are thirteen or more months of practice required?</dt><dd>The seller presents twelve levels roughly as a year-long program and suggests progressing monthly or when ready. That is an advertised structure, not an independently validated therapeutic dosage or a compulsory schedule.</dd>
+<dt>Is the one-year refund guarantee verified?</dt><dd>The sales page currently advertises a one-year money-back policy, but terms and checkout details can change and may differ by route or country. We have not tested a refund. Read the current written conditions and preserve copies before purchasing; don't rely on this draft as a promise that reimbursement will be approved.</dd>
+<dt>Why ask for a mobile number and postal code?</dt><dd>The public Premium checkout displayed fields for a phone number and ZIP/postal code during our review. We have not submitted payment details or confirmed how the seller processes that information. Read its privacy and billing terms, check whether each field is required, and do not assume that Final Vestige collects or receives your checkout data.</dd>
+<dt>What is the price?</dt><dd>We deliberately do not state a price here. Seller landing pages can show promotional prices and codes that depend on the entry path, location and timing. The correct number is the final order total shown for your own transaction, including taxes and terms. We have not verified a purchase.</dd>
+<dt>Can I assume a link from Final Vestige is authorized?</dt><dd>No. Final Vestige has not verified written affiliate acceptance for this particular product and promotional channel, so no earning link is enabled. A public affiliate signup page or creative for a different product is not authorization.</dd>
+</dl>
+</section>
+<section aria-labelledby="fv51-decision">
+<h2 id="fv51-decision">Our decision framework</h2>
+<p>If you completed the free preference exercise and discovered that you actively enjoy guided, scheduled listening, a structured library may be convenient. If you preferred silence, you already have what you need to start. If your principal reason to buy is the claim that a twelve-minute file will automatically deliver an hour's results, the evidence reviewed here does not justify that expectation.</p>
+<p>We will not invent usage experience, rank an untested product as the “best,” imply an automatic outcome or carry over promises from the merchant's advertisements. The next responsible steps are independent review of the exact files where possible, current checkout and refund verification, partner-specific commercial permission, and an explicit release decision.</p>
+<div class="fv51-offer" aria-labelledby="fv51-offer-head">
+<h3 id="fv51-offer-head">Optional next step · currently unavailable</h3>
+<p class="fv51-disclosure" id="fv51-commission-disclosure"><strong>Affiliate disclosure:</strong> If you purchase through a future approved link on this guide, Final Vestige may earn a commission at no additional cost to you. No purchasing link is active yet.</p>
+<button type="button" disabled aria-describedby="fv51-commission-disclosure fv51-offer-state">Visit the official Zen12 offer — pending review</button>
+<p id="fv51-offer-state" class="fv51-note">Unavailable while partner authorization, exact tracking URL, permitted channels, current checkout/refund terms, and publication approval remain unverified.</p>
+<p><a href="https://finalvestige.com/affiliate-disclosure/">Read the site-wide Affiliate Disclosure</a> and <a href="https://finalvestige.com/editorial-standards/">Editorial Standards</a>.</p>
+</div>
+</section>
+<section aria-labelledby="fv51-refs" class="fv51-references">
+<h2 id="fv51-refs">Independent evidence and review basis</h2>
+<p>Scientific sources: <a href="https://pubmed.ncbi.nlm.nih.gov/37205669/">2023 binaural-beat systematic review</a>; <a href="https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety">NCCIH meditation evidence and safety</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/17488185/">Slagter et al., 2007 meditation and attention experiment</a>; <a href="https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking">FTC endorsement disclosures</a>; <a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance">FTC health product claims guidance</a>.</p>
+<p>The precise merchant sales, product description, Research, checkout and public affiliate pages audited appear in the <strong>editor-only</strong> source register rather than as merchant links within this unpublished purchasing guide. Editorial review date: November 1, 2026. Product features may change. This review is not a product use test.</p>
+</section>
+</section></main><footer class="fv51-bottom"><p>UNPUBLISHED DESIGN CANDIDATE · editorial evidence and offer permissions still under review. No endorsement, live affiliate link, visitor telemetry, purchase processing or extra newsletter form.</p></footer></section>
