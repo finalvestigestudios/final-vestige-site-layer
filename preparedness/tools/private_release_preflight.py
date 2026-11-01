@@ -214,10 +214,10 @@ def execute(root: Path, expected_sha: str, *, run: Callable = subprocess.run,
                 exception = re.search(r"(?m)^(KeyError|ValueError|NameError|TypeError|"
                                       r"AttributeError|FileNotFoundError|OSError|"
                                       r"IndexError|AssertionError|RuntimeError|"
-                                      r"PermissionError|UnboundLocalError):", decoded)
+                                      r"PermissionError|UnboundLocalError|TriageFailure):", decoded)
                 locations = re.findall(
                     r'File "[^"\r\n]*[/\\]preparedness[/\\]tools[/\\]'
-                    r'(?:build|validate|claim_corpus_release_gate)\.py", line ([0-9]{1,5})', decoded)
+                    r'(?:build|validate|claim_corpus_release_gate|high_consequence_claim_triage)\.py", line ([0-9]{1,5})', decoded)
                 if exception:
                     diagnostic = "; exception " + exception.group(1)
                 if locations:
