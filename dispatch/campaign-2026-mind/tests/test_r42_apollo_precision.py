@@ -109,12 +109,12 @@ class ApolloProof(unittest.TestCase):
         self.assertEqual(m["status"], "DRAFT_UNSENT_NO_SCHEDULING")
         self.assertEqual([x["kind"] for x in m["issues"]].count("editorial"), 4)
         self.assertEqual([x["kind"] for x in m["issues"]].count("commercial-review-pending"), 2)
-        self.assertEqual(m["issues"][3]["subject"], "Fourteen seconds. A much longer explanation.")
+        self.assertEqual(m["issues"][3]["subject"], "Seventeen seconds. A much longer explanation.")
         self.assertEqual(m["issues"][3]["editorial_cta"], ARTICLE)
 
     def test_canonical_fourth_issue_not_rewritten(self):
         canonical = (ROOT / "issues" / "04-the-hatch-and-the-spark.md").read_text(encoding="utf-8")
-        self.assertIn("Fourteen seconds. A much longer explanation.", canonical)
+        self.assertIn("Seventeen seconds. A much longer explanation.", canonical)
         self.assertIn("UNSENT DRAFT", canonical)
         self.assertNotIn(SUBJECT, canonical)
 
