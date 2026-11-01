@@ -5,9 +5,13 @@ from __future__ import annotations
 
 from pathlib import Path
 import json
+import sys
 import tempfile
 import unittest
 
+TESTS = Path(__file__).resolve().parent
+sys.path.insert(0, str(TESTS))
+sys.path.insert(0, str(TESTS.parent / 'tools'))
 import source_crosswalk_truth_gate as gate
 import test_source_crosswalk_truth_gate as fixtures
 
