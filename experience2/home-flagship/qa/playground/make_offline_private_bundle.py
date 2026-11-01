@@ -35,6 +35,12 @@ def private_read(path: Path, label: str) -> bytes:
 
 
 def validate_theme(raw: bytes, expected_sha: str) -> dict:
+    """Admit an unambiguous, fully readable Assembler archive before stage install.
+
+    An independently reviewed whole-ZIP SHA is necessary but not sufficient:
+    duplicate, platform-ambiguous, or corrupt members leave uncertainty about
+    which bytes a ZIP consumer will actually extract. Fail closed on ambiguity.
+    """
     require(len(expected_sha) == 64 and all(x in '0123456789abcdef' for x in expected_sha),
             'independently approved theme ZIP SHA-256 required')
     require(digest(raw) == expected_sha, 'Assembler theme ZIP SHA-256 mismatch')
@@ -42,18 +48,36 @@ def validate_theme(raw: bytes, expected_sha: str) -> dict:
         info = archive.infolist()
         require(1 <= len(info) <= 2500 and sum(x.file_size for x in info) < 100_000_000,
                 'theme ZIP entry count/uncompressed size exceeds review budget')
+        seen = set()
         for entry in info:
-            path = PurePosixPath(entry.filename)
-            require(not path.is_absolute() and '..' not in path.parts and
-                    path.parts[0] == 'assembler', 'theme ZIP path outside assembler/')
+            name = entry.filename
+            require(name and not any(c in name for c in ('\\', '\x00', ':')),
+                    'theme ZIP platform-ambiguous or invalid member name')
+            require(not name.startswith('/') and not name.startswith('//') and
+                    all(part not in ('', '.', '..') for part in name.rstrip('/').split('/')),
+                    'theme ZIP noncanonical path or traversal')
+            require(name == str(PurePosixPath(name)) + ('/' if entry.is_dir() else ''),
+                    'theme ZIP noncanonical member spelling')
+            parts = PurePosixPath(name).parts
+            require(parts and parts[0] == 'assembler', 'theme ZIP path outside assembler/')
             require(not stat.S_ISLNK(entry.external_attr >> 16),
                     'theme ZIP symbolic link forbidden')
+            require(not (entry.flag_bits & 1), 'theme ZIP encrypted member forbidden')
+            require(entry.compress_type in (zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED),
+                    'theme ZIP unsupported member compression')
+            key = name.rstrip('/').casefold()
+            require(key not in seen, 'theme ZIP duplicate or case-colliding member')
+            seen.add(key)
+            if entry.is_dir():
+                require(entry.file_size == 0, 'theme ZIP directory contains bytes')
         names = {x.filename for x in info}
         require({'assembler/style.css', 'assembler/theme.json', 'assembler/templates/index.html'} <= names,
                 'theme ZIP does not contain required Assembler block-theme files')
+        require(archive.testzip() is None, 'theme ZIP member CRC/decompression failure')
         require('Theme Name: Assembler' in archive.read('assembler/style.css').decode('utf-8'),
                 'theme style.css does not identify Assembler')
     return {'sha256': digest(raw), 'bytes': len(raw), 'archive_entries': len(info),
+            'all_member_crcs_verified': True, 'names_unique_casefold': True,
             'reviewed_origin': THEME_URL}
 
 
