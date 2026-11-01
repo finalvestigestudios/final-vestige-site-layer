@@ -34,11 +34,15 @@ def mock_html(external_css=False, omit_margin=False, srcset=False, missing_contr
     if missing_control:
         controls = controls.replace('data-fv-direction-choice="museum"', 'data-fv-unapproved="museum"')
     return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{css}"></head><body>'
-            + f'<main data-fv-home-flagship data-fv-direction="dossier"><div class="fv-margin-strip">{spans}</div>'
+            + f'<main class="fv-hf" data-fv-home-flagship data-fv-direction="dossier"><div class="fv-margin-strip">{spans}</div>'
+            + '<section class="fv-hf__opening"><div class="fv-hf__folio-arrival">Test folio</div></section>'
             + f'<nav class="fv-hf__chapter-nav">{chapters}</nav>{sections}'
             + '<div data-fv-subscriptions-local-only="true">NO EMAIL COLLECTION</div>'
             + '<a href="/focus/">Focus</a><a href="/focus/">Book</a>'
-            + controls + '<section class="fv-hf__chronicle" data-fv-chronicle-mode="record">Chronicle</section>'
+            + controls + '<section class="fv-hf__chronicle" data-fv-chronicle-mode="record"><div class="fv-hf__chronicle-paper">'
+            + '<article class="fv-hf__chronicle-entry fv-hf__chronicle-entry--first">Original test entry</article>'
+            + '<article class="fv-hf__chronicle-entry fv-hf__chronicle-entry--second">Later test addition</article>'
+            + '</div></section>'
             + '<div data-fv-observer-frame="a">Observer A</div><div data-fv-observer-frame="b">Observer B</div>'
             + cases + '</main><script src="/assets/flagship.js"></script></body></html>')
 
@@ -64,10 +68,24 @@ for(const b of document.querySelectorAll('[data-fv-observer-switch]'))b.addEvent
 """
 
 
+# Styling is deliberately synthetic but must make the two feature transitions
+# visibly real: a DOM state change alone must no longer earn a test PASS.
+TEST_CSS = r"""body{margin:0}main{max-width:100%;overflow-wrap:anywhere}
+.fv-hf__opening{background:#182826;padding:32px}
+.fv-hf__folio-arrival{background:#40332b;border:4px solid #cfb27e;padding:38px}
+.fv-hf[data-fv-direction="museum"] .fv-hf__opening{background:#75432e}
+.fv-hf[data-fv-direction="museum"] .fv-hf__folio-arrival{background:#c4a77f}
+.fv-hf__chronicle-paper{display:grid;grid-template-columns:1fr 1fr}
+.fv-hf__chronicle-entry{padding:22px;border:2px solid #342b20}
+.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-entry--first{display:none}
+.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-entry--second{display:none}
+"""
+
+
 class ProbeServer:
     def __init__(self):
         self.data = {'/': (mock_html().encode(), 'text/html'),
-                     '/assets/style.css': (b'body{margin:0}main{max-width:100%;overflow-wrap:anywhere}', 'text/css'),
+                     '/assets/style.css': (TEST_CSS.encode(), 'text/css'),
                      '/assets/flagship.js': (TEST_JS.encode(), 'text/javascript'),
                      **{f'/media/c{i}.gif': (GIF,'image/gif') for i in range(3)}}
         root = self
