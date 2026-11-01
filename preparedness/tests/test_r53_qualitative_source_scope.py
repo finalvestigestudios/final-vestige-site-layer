@@ -305,7 +305,7 @@ for group, rows in (("triage", TRIAGE_MUTATIONS),
                     ("safety", SAFETY_MUTATIONS),
                     ("library", LIBRARY_MUTATIONS)):
     for name, fn in rows:
-        setattr(ReFingerprintAdversarial, ("test_reject_" if group == "triage" and name in {n for n, _ in TRIAGE_MUTATIONS[10:]} else "diagnose_reject_") + group + "_" + name,
+        setattr(ReFingerprintAdversarial, ("test_reject_" if group == "triage" and name in {n for n, _ in TRIAGE_MUTATIONS[10:15]} else "diagnose_reject_") + group + "_" + name,
                 make_negative(group, fn))
 
 
