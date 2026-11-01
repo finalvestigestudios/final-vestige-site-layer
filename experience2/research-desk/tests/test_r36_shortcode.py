@@ -47,11 +47,13 @@ class Tests(unittest.TestCase):
             other=Elements();other.feed(body)
             self.assertEqual(first.urls,other.urls)
             self.assertNotIn('must-not-render',body)
-    def test_real_template_upstream_sha_is_unchanged(self):
+    def test_r37_reviewed_template_sha_and_six_source_drawers(self):
         p=BASE/'templates/ledger.html'
         raw=p.read_bytes()
         git_blob=hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
-        self.assertEqual(git_blob,'403d128c57b9bc82dac7c619651689070edef86c')
+        self.assertEqual(git_blob,'8b14587187b375e93cfbd4436b99bfb6cd3d2f32')
+        self.assertEqual(raw.count(b'data-fvx-photo-record='),6)
+        self.assertEqual(raw.count(b'data-fvx-chrono-link'),6)
     def test_php_and_js_parse(self):
         for path in (PLUGIN,PROBE):
             p=subprocess.run(['php','-l',str(path)],capture_output=True,text=True)
