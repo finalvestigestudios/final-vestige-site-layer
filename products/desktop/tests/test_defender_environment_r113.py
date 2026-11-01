@@ -19,6 +19,14 @@ def fake(out: object = "FVS_DEFENDER_COUNTS|0|0|0\n", code: object = 0):
 
 
 class EnvironmentR113(unittest.TestCase):
+    def setUp(self):
+        # Existing runner fakes model Defender, never the Windows shell lookup.
+        # R114's native locator has its own adversarial tests.
+        patcher = patch.object(review.trust, "require_system_powershell",
+                               return_value=Path("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
     def call(self, out="FVS_DEFENDER_COUNTS|0|0|0\n", code=0):
         with patch.object(review.os, "name", "nt"):
             return review.require_zero_observations(runner=lambda *a, **k: fake(out, code))
@@ -48,6 +56,16 @@ class EnvironmentR113(unittest.TestCase):
     def test_all_counters_positive_fail(self):
         with self.assertRaises(review.EnvironmentHold):
             self.call("FVS_DEFENDER_COUNTS|9|8|7\n")
+
+    def test_untrusted_system_powershell_prevents_history_query(self):
+        calls = []
+        with patch.object(review.trust, "require_system_powershell",
+                          side_effect=review.trust.PowerShellHold("PRIVATE")):
+            with patch.object(review.os, "name", "nt"):
+                with self.assertRaises(review.EnvironmentHold) as caught:
+                    review.require_zero_observations(runner=lambda *a, **kw: calls.append(a))
+        self.assertEqual(calls, [])
+        self.assertNotIn("PRIVATE", str(caught.exception))
 
     def test_nonzero_provider_exit_fails(self):
         with self.assertRaises(review.EnvironmentHold):
@@ -122,7 +140,7 @@ class EnvironmentR113(unittest.TestCase):
             review.require_zero_observations(runner=recorder)
         self.assertEqual(len(invoked), 1)
         args, kwargs = invoked[0]
-        self.assertEqual(args[0], "powershell.exe")
+        self.assertEqual(args[0], str(Path("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe")))
         self.assertFalse(kwargs["shell"])
         self.assertEqual(kwargs["stderr"], subprocess.DEVNULL)
         self.assertEqual(kwargs["stdin"], subprocess.DEVNULL)
