@@ -97,11 +97,27 @@ def _load_human_review_intake_validator():
     return module.make_handoff
 
 
+def _load_global_shared_source_validator():
+    # R36 closes the cited-only blind spot: all 30 original duplicate-URL
+    # groups, including uncited contributors, get lossless NOT_STARTED tasks.
+    # Keep the frozen source and 81-file custody preflights authoritative.
+    location = Path(__file__).with_name('global_shared_source_review_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked global shared-source review gate')
+    spec = importlib.util.spec_from_file_location('preparedness_r36_global_sources', location)
+    need(spec is not None and spec.loader is not None,
+         'global shared-source gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.build_global_source_review
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
 build_source_reading_batches = _load_source_reading_batches_validator()
 build_human_review_intake = _load_human_review_intake_validator()
+build_global_shared_source_review = _load_global_shared_source_validator()
 
 
 def canonical(value):
@@ -250,7 +266,15 @@ def audit(lib, expected=EXPECTED):
     reviewer_batches = build_source_reading_batches(payload, priority_queue, expected=expected)
     # R35: every source scope, citation and fallback must have a blank,
     # traceable human-review intake form; successful grouping stays HOLD.
-    build_human_review_intake(reviewer_batches, expected=expected)
+    handoff = build_human_review_intake(reviewer_batches, expected=expected)
+    # Mandatory R36 reviewer census of every original repeated URL, including
+    # source variants never selected by an article. This grants NO approval.
+    # Only the frozen 35+1 production census authorizes a global inventory
+    # check. R25's explicitly reduced, synthetic unit fixtures have no actual
+    # 224-row crosswalk; R36 exercises those independently in its own 88 tests.
+    # The real checkout and mandatory private preflight use EXPECTED, always.
+    if expected == EXPECTED:
+        build_global_shared_source_review(lib, handoff, expected=expected)
     return payload
 
 def audit_checkout(root):
