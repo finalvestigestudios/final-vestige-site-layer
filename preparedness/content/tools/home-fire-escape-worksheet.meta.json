@@ -1,0 +1,42 @@
+{
+  "kind": "tool",
+  "section": "field-tools",
+  "track": "modern",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "n": 102,
+  "slug": "home-fire-escape-worksheet",
+  "title": "Home fire escape plan worksheet",
+  "h1": "Home fire escape plan worksheet",
+  "dek": "A free, printable worksheet for two ways out of every room, a meeting place, who helps whom, alarm dates and practice. It runs in your browser, keeps nothing, and works without JavaScript.",
+  "description": "A free printable home fire escape worksheet based on USFA and NFPA: two exits per room, meeting place, helpers, alarm and practice dates. Private; nothing is saved.",
+  "tags": [
+    "Worksheet",
+    "Printable",
+    "Runs locally"
+  ],
+  "recheck": "If USFA or NFPA revise their escape-planning pages, or at the next quarterly source sweep.",
+  "related": [
+    "home-fire-escape-plan",
+    "shelter-or-evacuate",
+    "family-communication-plan"
+  ],
+  "source_use": {
+    "usfa-fire-escape": "Two ways out of every room; map with all doors and windows; outside meeting place in front; practice with everyone.",
+    "shelter-nfpa-escape": "Helper and backup assignments; practice twice a year; escape-planning rules reflected in the worksheet's checks.",
+    "shelter-nfpa-smoke-alarms": "Monthly alarm test; replace the unit 10 years after manufacture.",
+    "shelter-usfa-escape-grid": "Fields of USFA's printable escape grid that the worksheet follows.",
+    "shelter-ready-home-fires": "Practice in the dark; wake-up checks; simulation guidance context.",
+    "shelter-nfpa-high-rise": "High-rise default: stairs; sealing in only when you cannot get out.",
+    "shelter-usfa-high-rise-handout": "High-rise default: leave by the stairs; cannot-get-out steps."
+  }
+}

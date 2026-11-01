@@ -29,7 +29,8 @@
     "home-fire-escape-plan",
     "family-communication-plan",
     "making-water-safer",
-    "two-week-water-storage"
+    "two-week-water-storage",
+    "power-outage-planner"
   ],
   "source_use": {
     "cdc-co-generators": "Never use generators, grills or other fuel-burning devices inside the home, garage or carport or near doors, windows or vents; CO figure ('more than 500 Americans each year'); stay elsewhere if the home is damaged.",

@@ -62,7 +62,9 @@
   "tools": [
     {"slug": "water-planner", "title": "Household emergency-water planner", "gate": true, "status": "drafted-pending-safety-review"},
     {"slug": "pantry-worksheet", "title": "Emergency pantry inventory and rotation worksheet", "status": "not-started"},
-    {"slug": "reunification-plan", "title": "Family communication and reunification plan generator", "status": "not-started"},
+    {"slug": "home-fire-escape-worksheet", "title": "Home fire escape plan worksheet", "gate": true, "status": "drafted-pending-safety-review"},
+    {"slug": "power-outage-planner", "title": "Power-outage readiness planner", "gate": true, "status": "drafted-pending-safety-review"},
+    {"slug": "reunification-plan", "title": "Family communication and reunification card", "gate": true, "status": "drafted-pending-safety-review"},
     {"slug": "kit-builder", "title": "Emergency-kit builder by household requirements", "status": "not-started"},
     {"slug": "checklists", "title": "Printable 72-hour and two-week readiness checklists", "status": "not-started"},
     {"slug": "offline-reference", "title": "Offline emergency-reference download", "status": "not-started"}
