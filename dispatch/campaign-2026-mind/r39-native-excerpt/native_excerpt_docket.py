@@ -32,6 +32,9 @@ EXPECTED_KIND = {1: "editorial", 2: "editorial", 3: "commercial-review-pending",
 
 def text_after_editorial_header(source: str) -> str:
     """Use only the story body, dropping the STOP banner / metadata / legal tail."""
+    header, separator, _rest = source.partition("\n---\n")
+    if not separator or header.count("\n") > 15 or "**Subject:**" not in header:
+        raise ValueError("The first draft metadata-to-story separator is missing or misplaced")
     sections = re.split(r"(?m)^---\s*$", source, maxsplit=2)
     if len(sections) < 2:
         raise ValueError("Draft is missing the editorial-body boundary")
