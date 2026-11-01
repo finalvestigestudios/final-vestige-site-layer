@@ -254,5 +254,30 @@ class StrictCustodyR117(unittest.TestCase):
                 h._custody(Path("synthetic-dist"), Path("synthetic-report"), "a" * 64)
 
 
+class AtomicPublicationR117(unittest.TestCase):
+    def test_no_replace_directory_preserves_existing_destination(self):
+        with tempfile.TemporaryDirectory() as root:
+            staged = Path(root) / "staged"
+            target = Path(root) / "target"
+            staged.mkdir()
+            target.mkdir()
+            (target / "original").write_bytes(b"DO-NOT-OVERWRITE")
+            with self.assertRaises((OSError, h.HandoffHold)):
+                h._promote_no_replace(staged, target)
+            self.assertEqual((target / "original").read_bytes(), b"DO-NOT-OVERWRITE")
+            self.assertTrue(staged.exists())
+
+    def test_no_replace_directory_promotes_without_partial_copy(self):
+        with tempfile.TemporaryDirectory() as root:
+            staged = Path(root) / "staged"
+            target = Path(root) / "target"
+            staged.mkdir()
+            (staged / "proof").write_bytes(b"COMPLETE-AND-PRIVATE")
+            h._promote_no_replace(staged, target)
+            self.assertFalse(staged.exists())
+            self.assertEqual((target / "proof").read_bytes(), b"COMPLETE-AND-PRIVATE")
+
+
+
 if __name__ == "__main__":
     unittest.main()
