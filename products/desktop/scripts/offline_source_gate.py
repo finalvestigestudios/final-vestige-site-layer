@@ -88,6 +88,12 @@ def _safe_child_diagnostic(payload, *, allowed_methods=None):
     if (data["phase"] == "execution" and
             len(names) + data["omitted_module_count"] > data["failures"] + data["errors"]):
         return None
+    if has_methods and allowed_methods is None:
+        # Existing R98 callers have no source AST allowlist. Preserve their
+        # module-only behavior by discarding the entire untrusted extension;
+        # never echo a method string that the parent has not inventoried.
+        data = {key: data[key] for key in basic}
+        has_methods = False
     if has_methods:
         methods = data["methods"]
         omitted = data["omitted_method_count"]
