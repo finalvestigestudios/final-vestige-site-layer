@@ -3,10 +3,14 @@
 Run only against a separately launched local/Playground URL with explicit axe-core JS.
 No URL is assumed and unavailable axe, HTTP, image transfers or browser tests are failures.
 """
-import argparse, hashlib, json, shutil
+import argparse, json, shutil
 from pathlib import Path
 from urllib.parse import urlsplit
 from playwright.sync_api import sync_playwright
+from integrated_admission_checks import (
+    validate_stage_url, read_trusted_media_manifest,
+    verify_integrated_dom, verify_media_payload)
+
 
 WIDTHS=(320,360,390,768,1024,1440,1920)
 MEDIA={'apollo.webp':(78346,1041,810),'franklin.jpg':(466043,960,1526),'nypl.jpg':(5553669,5667,3831)}
@@ -20,12 +24,21 @@ def metrics(page):
       main:document.querySelectorAll('main').length,
       links:[...document.querySelectorAll('.fv-hf__chapter-nav a')].length,
       panels:[...document.querySelectorAll('[data-fv-case]')].length,
-      theme:[...document.body.classList].filter(c=>c.includes('assembler'))
+      theme:[...document.body.classList].filter(c=>c.includes('assembler')),
+      body_classes:[...document.body.classList],
+      flagship_roots:document.querySelectorAll('[data-fv-home-flagship]').length,
+      legacy_hero:document.querySelectorAll('.fv-studios-hero').length,
+      dev_controls:document.querySelectorAll('.fv-hf__studio-controls').length,
+      margins:document.querySelectorAll('.fv-margin-strip__item').length,
+      focus_links:[...document.querySelectorAll('a[href]')].filter(e=>{
+        try { return new URL(e.href,location.href).pathname.replace(/\/$/,'')==='/focus'; }
+        catch { return false; }
+      }).length
     })""")
-def stage_check(url,outdir,axe_file):
-    host=urlsplit(url).hostname or ''
-    require(urlsplit(url).scheme in ('http','https') and host and host!='finalvestige.com'
-            and not host.endswith('.finalvestige.com'),'refuse production or its subdomains')
+def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
+    host=validate_stage_url(url,approved_stage_host)
+    expected_origin=urlsplit(url)
+    trusted_media=read_trusted_media_manifest(media_manifest)
     require(axe_file.is_file() and axe_file.stat().st_size>10000,'axe-core JS file missing')
     outdir.mkdir(parents=True,exist_ok=True)
     receipt={'url_host':host,'status':'FAILED_CLOSED','widths':[],'media':{},
@@ -41,11 +54,13 @@ def stage_check(url,outdir,axe_file):
                 errors=[];page.on('pageerror',lambda err: errors.append(str(err)))
                 response=page.goto(url,wait_until='load',timeout=30000)
                 require(response and response.status==200,str(w)+': WordPress HTTP status not 200')
+                observed_origin=urlsplit(page.url)
+                require((observed_origin.scheme,observed_origin.netloc)==
+                        (expected_origin.scheme,expected_origin.netloc),
+                        str(w)+': off-stage redirect or scheme/port change denied')
                 page.wait_for_timeout(200)
                 m=metrics(page)
-                require(m['links']==7 and m['panels']==3, str(w)+': seven chapters / three evidence cases not rendered')
-                require(m['sw']<=m['cw']+1,str(w)+': horizontal overflow '+str(m))
-                require(m['main']==1 and m['h1']==1,str(w)+': duplicate/missing WordPress theme landmarks '+str(m))
+                verify_integrated_dom(m)  # never accept a seven-chapter-only mock without the protected WP content
                 require(not errors,str(w)+': JavaScript exception '+str(errors))
                 require(page.locator('[data-fv-case-buttons]').is_visible(),str(w)+': enhancement not loaded')
                 require(page.locator('[data-fv-chronicle-lens]').is_visible(),str(w)+': lens missing')
@@ -77,12 +92,18 @@ def stage_check(url,outdir,axe_file):
                         obj=page.request.get(source,timeout=30000)
                         raw=obj.body()
                         length,iw,ih=MEDIA[name]
+                        media_origin=urlsplit(obj.url)
+                        require((media_origin.scheme,media_origin.netloc)==
+                                (expected_origin.scheme,expected_origin.netloc),
+                                name+': first-party URL redirected outside the isolated stage')
                         require(obj.status==200 and len(raw)==length, name+' HTTP byte transfer mismatch')
                         require(el.evaluate('(e)=>e.complete && e.naturalWidth>0 && e.naturalHeight>0'),
                             name+' image not decoded')
                         observed=el.evaluate('(e)=>[e.naturalWidth,e.naturalHeight]')
                         require(observed==[iw,ih],name+' image dimensions mismatch '+str(observed))
-                        receipt['media'][name]={'bytes':len(raw),'dimensions':observed,'sha256':hashlib.sha256(raw).hexdigest(),'origin':urlsplit(source).netloc}
+                        verified=verify_media_payload(name,raw,observed,trusted_media[name])
+                        receipt['media'][name]={**verified,'origin':urlsplit(source).netloc,
+                                                'trusted_identity':'INDEPENDENT_MANIFEST_MATCH'}
                     page.locator('[data-fv-case-button="franklin"]').click()
                     require(page.locator('[data-fv-case="franklin"]').is_visible(),'case chooser Franklin')
                     receipt['interactions']['case']='PASS'
@@ -103,9 +124,14 @@ def stage_check(url,outdir,axe_file):
                 context.close()
             noctx=browser.new_context(viewport={'width':390,'height':900},java_script_enabled=False)
             nopage=noctx.new_page();nopage.goto(url,wait_until='load',timeout=30000)
+            no_origin=urlsplit(nopage.url)
+            require((no_origin.scheme,no_origin.netloc)==
+                    (expected_origin.scheme,expected_origin.netloc),
+                    'no-JS page redirected away from isolated stage')
             require(all(nopage.locator(f'[data-fv-case="{x}"]').is_visible() for x in ('apollo','franklin','malbone')),
                     'no-JS original evidence not visible')
             require(nopage.locator('.fv-hf__chapter-nav a').count()==7,'no-JS chapter nav not present')
+            verify_integrated_dom(metrics(nopage))
             receipt['no_js']='PASS';noctx.close()
             receipt['status']='STAGING_BROWSER_PASSED_AWAITING_HOSTED_QD'
         finally: browser.close()
@@ -116,7 +142,21 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--url',required=True,help='isolated Playground/localhost preview only')
     ap.add_argument('--axe-js',type=Path,required=True,help='verified, local axe-core distributable JS')
+    ap.add_argument('--trusted-media-manifest',type=Path,required=True,
+                    help='independent three-original SHA-256 manifest created before this browser run')
+    ap.add_argument('--approved-stage-host',default=None,
+                    help='explicit exact HTTPS hostname for a separately authorized isolated host')
     ap.add_argument('--output-dir',type=Path,required=True)
     args=ap.parse_args()
-    stage_check(args.url,args.output_dir,args.axe_js)
+    try:
+        stage_check(args.url,args.output_dir,args.axe_js,
+                    args.trusted_media_manifest,args.approved_stage_host)
+    except Exception as exc:
+        args.output_dir.mkdir(parents=True,exist_ok=True)
+        (args.output_dir/'PLAYGROUND_ADMISSION_FAILURE.json').write_text(json.dumps({
+          'status':'FAILED_CLOSED','stage_host':urlsplit(args.url).hostname,
+          'error_type':type(exc).__name__,'reason':str(exc)[:400],
+          'wordPressRendered':False,'axeVerified':False,'lighthouseVerified':False
+        },indent=2))
+        raise
 if __name__=='__main__': main()
