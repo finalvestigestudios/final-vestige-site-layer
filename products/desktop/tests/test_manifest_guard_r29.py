@@ -95,14 +95,14 @@ class ManifestGuardTests(unittest.TestCase):
     def test_control_characters_escaped_without_leaking_parent(self):
         # Real Windows filenames cannot contain tab or LF. Preserve the
         # stronger original POSIX case and exercise escaped bidi on Windows.
-        name = ("claim\\u202eforged.csv" if os.name == "nt"
-                else "claim\\tforged\\n\\u202e.csv")
+        name = ("claim\u202eforged.csv" if os.name == "nt"
+                else "claim\tforged\n\u202e.csv")
         injected = self.root / name
         injected.write_bytes(b"synthetic")
         body = guard.inventory_text([injected], [])
         self.assertEqual(len(body.splitlines()), 2)
-        self.assertIn((r"claim\\u202eforged.csv" if os.name == "nt"
-                       else r"claim\\tforged\\n\\u202e.csv"), body)
+        self.assertIn((r"claim\u202eforged.csv" if os.name == "nt"
+                       else r"claim\tforged\n\u202e.csv"), body)
         self.assertNotIn(str(self.root), body)
 
     def test_empty_report_is_hashable(self):
