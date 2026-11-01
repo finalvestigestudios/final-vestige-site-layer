@@ -147,8 +147,14 @@ class PrivateWitnessR122(unittest.TestCase):
         self.assertFalse(self.path().exists())
 
     def test_windows11_required_before_source_custody(self):
+        # Do not use self.one(): it intentionally mocks the machine as Win11.
         with patch.object(qa, "native_win11_build", side_effect=qa.ReviewHold("not Win11")):
-            with self.assertRaises(qa.ReviewHold): self.one()
+            with patch.object(qa, "load_custody", side_effect=AssertionError("must not load")):
+                with self.assertRaises(qa.ReviewHold):
+                    writer.record_one(
+                        dist=self.dist, r9_report=self.r9, expected_pin=self.pin,
+                        review=self.review, witnesses=self.witnesses, app=self.app,
+                        check=self.check, state="PASS", observation_file=self.observation)
         self.assertFalse(self.path().exists())
 
     def test_reported_build_must_match_native_build(self):
