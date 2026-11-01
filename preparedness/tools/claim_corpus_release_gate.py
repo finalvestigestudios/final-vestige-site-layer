@@ -130,6 +130,29 @@ def verify_editorial_corpus(lib, *, article_floor=MIN_ARTICLE_WORDS, tool_floor=
             'planner_words': depths[next(iter(sorted(expected_tools)))]}
 
 
+# The fourteen original Issue #136 register references below were listed for
+# research, NOT read by the base-register contributor. The literal notes say
+# "Listed in Issue #136", not "not yet read". Preserve that provenance verbatim
+# rather than rewriting the original 81-file frozen evidence to satisfy a gate.
+# No entry here gains verified status, source-use authority or human clearance.
+ORIGINAL_UNREAD_ISSUE136_REFERENCES = {
+    "nchfp-jerky": "Listed in Issue #136; for article 11.",
+    "nchfp-pressure-ground-meat": "Listed in Issue #136; for article 10.",
+    "fsis-power-failure": "Listed in Issue #136; for article 9.",
+    "fsis-emergency-foods": "Listed in Issue #136; for article 8.",
+    "usfa-fire-escape": "Listed in Issue #136; for article 13.",
+    "cdc-co-generators": "Listed in Issue #136; for article 12.",
+    "cdc-hygiene-emergency": "Listed in Issue #136; for article 18.",
+    "nws-nwr": "Listed in Issue #136; for article 19.",
+    "ready-are-you-ready": "Listed in Issue #136; for articles 1 and 15.",
+    "nps-lewis-clark-salt": "Listed in Issue #136; for article 23.",
+    "nps-salt-works": "Listed in Issue #136; for article 23.",
+    "loc-pioneer-diaries": "Listed in Issue #136; for articles 24 and 34.",
+    "loc-prairie-traveler": "Listed in Issue #136; for articles 24 and 34.",
+    "nchfp-historical-origins": "Listed in Issue #136; for article 35.",
+}
+
+
 def verify_physical_source_custody(rows: list[dict], expected_count: int = 224,
                                    expected_repeated_url_groups: int = 30, expected_distinct_urls: int = 186) -> dict:
     """Source origin/row keys are physical evidence; same URLs do NOT imply same reading."""
@@ -147,9 +170,14 @@ def verify_physical_source_custody(rows: list[dict], expected_count: int = 224,
             # placeholders. They are not contributor evidence and cannot be cited
             # as verified. Do not reject them merely because their supports are
             # empty, but never permit a dated or mislabelled placeholder through.
+            notes = r.get('reading_limits')
+            original_listing = ORIGINAL_UNREAD_ISSUE136_REFERENCES.get(r['source_id'])
+            explicitly_unread = (
+                isinstance(notes, str) and (
+                    'not yet read' in notes.lower()
+                    or (original_listing is not None and notes == original_listing)))
             if (r['origin'] != 'base' or r.get('verified_on') or r.get('human_link_check')
-                    or 'not yet read' not in str(r.get('reading_limits') or '').lower()
-                    or support not in (None, '')):
+                    or not explicitly_unread or support not in (None, '')):
                 raise ValueError('source: unverified placeholder lacks explicit base custody or has approval markers')
             unread_base_placeholders += 1
         if r['row_key'] in seen_keys or not r['row_key'].startswith(r['origin'] + ':'):
