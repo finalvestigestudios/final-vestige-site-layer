@@ -1,23 +1,23 @@
 # Private offline WordPress Playground bundle — Experience 2.0 (2026-11-01)
 
-**Review-only companion to PR #451 (exact parent SHA \`0a8af90a31d6acd80875d341fb9a7742117ed97d\`). NOT a WordPress or WCAG release pass.** Frozen #49 and production page ID 6 are untouched.
+**Review-only companion to PR #451 (exact parent SHA `0a8af90a31d6acd80875d341fb9a7742117ed97d`). NOT a WordPress or WCAG release pass.** Frozen #49 and production page ID 6 are untouched.
 
 ## Why this is necessary
-The existing 19-step private Playground Blueprint downloads the Assembler theme and Apollo/Franklin/NYPL files at *execution time*. In restricted or offline developer environments, this fails even when WordPress/Playground is available. Official WordPress Playground supports ZIP **Blueprint bundles** with \`{"resource":"bundled","path":"/..."}\`, eliminating all four live theme/media requests during Blueprint execution. Reference: https://developer.wordpress.org/playground/blueprints/bundles/ and https://wordpress.github.io/wordpress-playground/tl/blueprints/steps/resources/.
+The existing 19-step private Playground Blueprint downloads the Assembler theme and Apollo/Franklin/NYPL files at *execution time*. In restricted or offline developer environments, this fails even when WordPress/Playground is available. Official WordPress Playground supports ZIP **Blueprint bundles** with `{"resource":"bundled","path":"/..."}`, eliminating all four live theme/media requests during Blueprint execution. Reference: https://developer.wordpress.org/playground/blueprints/bundles/ and https://wordpress.github.io/wordpress-playground/tl/blueprints/steps/resources/.
 
 ## What this adds
-\`make_offline_private_bundle.py\` reads the exact source-pinned **integrated** Gutenberg Blueprint accepted by PR #451's existing \`check_blueprint\`; it also invokes the original PR #451 \`check_manifest\`. It requires an independently reviewed SHA-256 for the official Assembler ZIP and the three original public archival image files, checks ZIP paths/structure and image signatures, then produces a private deterministic ZIP containing ONLY \`blueprint.json\`, \`assembler.zip\` and \`media/{apollo.webp,franklin.jpg,nypl.jpg}\`. It replaces precisely four remote resources with bundled references; the protected 19-step content and local-only environment guard are unchanged. No WordPress content, user/subscriber records, credentials, production database, or other media are fetched or copied.
+`make_offline_private_bundle.py` reads the exact source-pinned **integrated** Gutenberg Blueprint accepted by PR #451's existing `check_blueprint`; it also invokes the original PR #451 `check_manifest`. It requires an independently reviewed SHA-256 for the official Assembler ZIP and the three original public archival image files, checks ZIP paths/structure and image signatures, then produces a private deterministic ZIP containing ONLY `blueprint.json`, `assembler.zip` and `media/{apollo.webp,franklin.jpg,nypl.jpg}`. It replaces precisely four remote resources with bundled references; the protected 19-step content and local-only environment guard are unchanged. No WordPress content, user/subscriber records, credentials, production database, or other media are fetched or copied.
 
 ## Command — only after independent source/rights review
 Keep files under a private local folder (permissions 700 for folder, 600 for each input) including:
-- \`integrated-blueprint.json\` — exact private PR #414-generated 19-step integrated candidate; **not** the earlier seven-chapter-only PR #388 Blueprint.
-- \`source-media-manifest.json\` — independently reviewed original URL / bytes / SHA-256 records, as required by PR #451.
-- \`assembler.zip\` — official downloaded Assembler theme ZIP, separately reviewed SHA-256.
-- \`media/apollo.webp\`, \`media/franklin.jpg\`, \`media/nypl.jpg\` — *actual* independently verified original downloads; never commit uncertain-rights images to GitHub.
+- `integrated-blueprint.json` — exact private PR #414-generated 19-step integrated candidate; **not** the earlier seven-chapter-only PR #388 Blueprint.
+- `source-media-manifest.json` — independently reviewed original URL / bytes / SHA-256 records, as required by PR #451.
+- `assembler.zip` — official downloaded Assembler theme ZIP, separately reviewed SHA-256.
+- `media/apollo.webp`, `media/franklin.jpg`, `media/nypl.jpg` — *actual* independently verified original downloads; never commit uncertain-rights images to GitHub.
 
-Run from \`experience2/home-flagship/qa/playground\`:
+Run from `experience2/home-flagship/qa/playground`:
 
-\`\`\`bash
+```bash
 python make_offline_private_bundle.py \
   --blueprint /private/fv/integrated-blueprint.json \
   --blueprint-sha256 <independently-approved-64-hex-digest> \
@@ -26,15 +26,15 @@ python make_offline_private_bundle.py \
   --assembler-zip /private/fv/assembler.zip \
   --assembler-sha256 <independently-approved-64-hex-digest> \
   --out /private/fv/complete-private-playground.zip
-\`\`\`
+```
 
 The resulting ZIP can be supplied to a separately installed local Playground CLI without fetching the theme or archival images again:
 
-\`\`\`bash
+```bash
 npx @wp-playground/cli server --blueprint=/private/fv/complete-private-playground.zip --port=19400
-\`\`\`
+```
 
-Only run in a local isolated developer environment. After launch, the existing \`verify_playground_browser.py\` can test \`http://127.0.0.1:19400/\` with independently pinned axe-core and the trusted original-image manifest; Lighthouse must be **actually executed** separately. PR #451's one-command launcher currently expects a source JSON Blueprint and **does not yet accept this new ZIP**; do not present the ZIP pathway as a successful #451 launcher run. Never use production tokens or public URL storage for the ZIP; never sync a development database into production.
+Only run in a local isolated developer environment. After launch, the existing `verify_playground_browser.py` can test `http://127.0.0.1:19400/` with independently pinned axe-core and the trusted original-image manifest; Lighthouse must be **actually executed** separately. PR #451's one-command launcher currently expects a source JSON Blueprint and **does not yet accept this new ZIP**; do not present the ZIP pathway as a successful #451 launcher run. Never use production tokens or public URL storage for the ZIP; never sync a development database into production.
 
 ## Verification conducted
 - New synthetic-only regression suite **11/11 PASS**, including deterministic repeat build; wrong media SHA, wrong media type, wrong media URL, wrong theme hash, ZIP traversal, symlink, nonprivate output, existing output and wrong original resource rejected.
