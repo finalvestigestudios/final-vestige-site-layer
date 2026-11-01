@@ -5,6 +5,98 @@
  * independent logged-out Chrome verifies them. No filesystem or network calls.
  */
 const expectedKeys=['285:5','407:1','418:1','418:2','285:0','407:3','268:8','268:4','285:2','418:0'];
+const pinnedEvidence=Object.freeze({
+  "285:5": {
+    "frozen_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "viewer_result": "RETRIEVER_FETCH_404",
+    "viewer_code": 404,
+    "record": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+    "identifier": "Three mile island 062010.jpg",
+    "relationship": "publisher_credit_exact_scene_candidate_unconfirmed_pixel_match",
+    "candidate_asset": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg"
+  },
+  "407:1": {
+    "frozen_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "viewer_result": "RETRIEVER_UNSUPPORTED_OCTET_STREAM",
+    "viewer_code": 400,
+    "record": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+    "identifier": "J. R. Stacy 1959 Hebgen fault-scarp USGS record",
+    "relationship": "same_record_alternative_original_path_binary_unverified",
+    "candidate_asset": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg"
+  },
+  "418:1": {
+    "frozen_blob": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "viewer_result": "RETRIEVER_FETCH_403",
+    "viewer_code": 403,
+    "record": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+    "identifier": "210330-G-DE713-0002.JPG",
+    "relationship": "official_virin_filename_match_no_master_hash",
+    "candidate_asset": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG"
+  },
+  "418:2": {
+    "frozen_blob": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "viewer_result": "RETRIEVER_FETCH_403",
+    "viewer_code": 403,
+    "record": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+    "identifier": "5_ Scotch_Cap_debris2_1946.jpg (individual accession unknown)",
+    "relationship": "publisher_article_original_filename_catalog_unmatched",
+    "candidate_asset": null
+  },
+  "285:0": {
+    "frozen_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "viewer_result": "RETRIEVER_FETCH_403",
+    "viewer_code": 403,
+    "record": "https://www.flickr.com/photos/nrcgov/7447166686",
+    "identifier": "Flickr 7447166686",
+    "relationship": "same_photo_id_external_rendition_binary_unverified",
+    "candidate_asset": "https://www.flickr.com/photos/nrcgov/7447166686"
+  },
+  "407:3": {
+    "frozen_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "viewer_result": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+    "viewer_code": null,
+    "record": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+    "identifier": "EarthquakeLake3.jpg / Mrs. Steven W. Nile",
+    "relationship": "official_subject_filename_match_item_rights_unknown",
+    "candidate_asset": null
+  },
+  "268:8": {
+    "frozen_blob": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "viewer_result": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+    "viewer_code": null,
+    "record": "https://archimedespalimpsest.org/0_ReadMe.html",
+    "identifier": "imaging_x9.jpg publisher asset",
+    "relationship": "publisher_asset_no_individual_catalog",
+    "candidate_asset": null
+  },
+  "268:4": {
+    "frozen_blob": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "viewer_result": "RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE",
+    "viewer_code": null,
+    "record": "https://archimedespalimpsest.org/0_ReadMe.html",
+    "identifier": "imagecapture-capture2b.jpg publisher asset",
+    "relationship": "publisher_asset_no_individual_catalog",
+    "candidate_asset": null
+  },
+  "285:2": {
+    "frozen_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "viewer_result": "RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE",
+    "viewer_code": 500,
+    "record": "https://commons.wikimedia.org/wiki/File:Control_room_Number_2._Nuclear_Regulatory_Commission_inspector_looking_at_meters._-_NARA_-_540034.tif",
+    "identifier": "NARA 540034",
+    "relationship": "different_photo_same_topic_not_a_drop_in_replacement",
+    "candidate_asset": null
+  },
+  "418:0": {
+    "frozen_blob": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "viewer_result": "RETRIEVER_INACCESSIBLE_NO_HTTP",
+    "viewer_code": null,
+    "record": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+    "identifier": "2_ new and old lighthouses 19849609_web1_1_ (individual accession unknown)",
+    "relationship": "publisher_article_original_filename_catalog_unmatched",
+    "candidate_asset": null
+  }
+});
 const isHttps=u=>typeof u==='string'&&/^https:\/\/[a-z0-9.-]+\//i.test(u);
 const int=n=>Number.isSafeInteger(n)&&n>0;
 function validateP0(board,parts){
@@ -71,6 +163,9 @@ function validateP0(board,parts){
   if(typeof r.source_census_blob_sha!=='string'||
      !census.source_parts_blob_shas.includes(r.source_census_blob_sha))
    fail('unrecognized_frozen_blob:'+key);
+  const pinned=pinnedEvidence[r.image_key];
+  if(!pinned||r.source_census_blob_sha!==pinned.frozen_blob)
+    fail('unpinned_frozen_source_record:'+key);
   const v=r.source_viewer||{};
   const methods=['RETRIEVER_FETCH_404','RETRIEVER_FETCH_403',
    'RETRIEVER_UNSUPPORTED_OCTET_STREAM','RETRIEVER_INACCESSIBLE_NO_HTTP',
@@ -81,6 +176,9 @@ function validateP0(board,parts){
    RETRIEVER_INACCESSIBLE_NO_HTTP:[null],
    RETRIEVER_REDIRECT_DESTINATION_UNAVAILABLE:[null,500]
   };
+  if(!pinned||v.result!==pinned.viewer_result||
+     v.retriever_wrapper_error_code!==pinned.viewer_code)
+    fail('viewer_evidence_changed_from_observation:'+key);
   if(v.method!=='independent_web_retriever_NOT_logged_out_visitor_browser'||
      v.observed_on!=='2026-11-01'||!methods.includes(v.result)||
      !(validCodes[v.result]||[]).includes(v.retriever_wrapper_error_code)||
@@ -93,6 +191,10 @@ function validateP0(board,parts){
    'natural_width_px','natural_height_px','encoded_transfer_bytes','visibly_broken'])
    if(b[field]!==null)fail('invented_visitor_measurement:'+key+':'+field);
   const c=r.candidate||{};
+  if(!pinned||c.archive_record_url!==pinned.record||
+     c.identifier!==pinned.identifier||c.source_relationship!==pinned.relationship||
+     c.candidate_asset_url!==pinned.candidate_asset)
+    fail('archival_record_substituted:'+key);
   if(!isHttps(c.archive_record_url)||!c.identifier||!c.authority||
     typeof c.source_relationship!=='string'||!c.source_relationship||
     (c.candidate_asset_url!==null&&!isHttps(c.candidate_asset_url))||
