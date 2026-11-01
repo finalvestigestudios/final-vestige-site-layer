@@ -43,8 +43,8 @@ def main() -> int:
         with open(os.devnull, "w", encoding="utf-8") as sink:
             with contextlib.redirect_stdout(sink), contextlib.redirect_stderr(sink):
                 suite.run(result)
-        failed = sorted({x._testMethodName for x, _ in
-                         (result.failures + result.errors + result.unexpectedSuccesses)})
+        failed = sorted({x._testMethodName for x, _ in (result.failures + result.errors)}
+                        | {x._testMethodName for x in result.unexpectedSuccesses})
         skipped = sorted({x._testMethodName for x, _ in result.skipped})
         if not set(failed + skipped).issubset(set(admitted)):
             raise ValueError("Unrecognized test result")
@@ -56,7 +56,7 @@ def main() -> int:
             print("Static failing/skipped method IDs: " +
                   ", ".join(failed + skipped))
         return 0 if status == "PASS" else 1
-    except (ValueError, OSError, ImportError, RuntimeError):
+    except Exception:  # fail closed without disclosing exception contents
         print("R110 synthetic suite HOLD: static test inventory or execution unavailable")
         return 2
 
