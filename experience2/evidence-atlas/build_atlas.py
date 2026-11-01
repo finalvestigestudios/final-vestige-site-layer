@@ -85,6 +85,33 @@ def make_html(custody: dict, css: str, js: str) -> str:
         f'<li><a data-fva-jump href="#fva-record-{q(r["id"])}"><span class="fva-index__num">{q(r["id"])}</span>'
         f'<span class="fva-index__name">{q(r["catalog"])} <small>{q(r["date_label"])}</small></span></a></li>'
         for r in custody['records'])
+    # ChronologyRail is a chronology of source photographs, never of the fire itself.
+    # Year buckets deliberately preserve custody order. S67-19766 has a known month
+    # but no confirmed exact day; sorting it among known January days would imply
+    # evidence that does not exist.
+    eras = (
+        ('1966', 'Preparations before the fire',
+         'Contextual rehearsal record from 1966. Not a depiction of the fire.'),
+        ('1967', 'Contemporary source context',
+         'January records are not arranged as an accident sequence. One photographic day is unresolved.'),
+        ('2017', 'Retrospective memorial exhibits',
+         'These photographs document later displays, not the 1967 spacecraft.'),
+    )
+    chronology_items = []
+    for year, era_title, note in eras:
+        records = [r for r in custody['records'] if r['date'].startswith(year)]
+        links = '\n'.join(
+            f'<li><a data-fva-timejump data-fva-time-id="{q(r["id"])}" href="#fva-record-{q(r["id"])}">'
+            f'<time datetime="{q(r["date"])}">{q(r["date_label"])}</time>'
+            f'<strong>{q(r["catalog"])}</strong><span>{q(r["photo_role"])}</span>'
+            f'</a></li>' for r in records
+        )
+        chronology_items.append(
+            f'<li data-fva-era="{year}"><div class="fva-chronology__year">'
+            f'<span class="fva-chronology__date">{year}</span><h3>{q(era_title)}</h3>'
+            f'<p>{q(note)}</p></div><ol>{links}</ol></li>'
+        )
+    chronology = '\n'.join(chronology_items)
     filters = '\n'.join(f'<button type="button" data-fva-filter="{v}" aria-pressed="{str(v=="all").lower()}">{label}</button>'
                         for v, label in [('all', 'All 6 sources'), ('1966', '1966 · 1 source'),
                                          ('1967', '1967 · 3 sources'), ('2017', '2017 · 2 exhibits')])
@@ -106,6 +133,13 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <div><h2 id="fva-index-title">Source index</h2><p>Navigate by NASA reference label. The index lists records, not geographic sites or links between events.</p></div>
     <ol>{index_items}</ol>
   </nav>
+  <section class="fva-chronology" aria-labelledby="fva-chronology-title" data-fva-chronology>
+    <div class="fva-chronology__intro"><p class="fva-chronology__eyebrow">CHRONOLOGY RAIL / SOURCE DATES</p>
+      <h2 id="fva-chronology-title">Three eras. Six selected NASA references.</h2>
+      <p>Follow when the <em>photographic sources</em> were made, not a reconstruction of the Apollo 1 fire. Entries within each era retain ledger order; January 1967 is not presented as a minute-by-minute sequence.</p>
+    </div>
+    <ol class="fva-chronology__eras">{chronology}</ol>
+  </section>
   <div class="fva-controls" data-fva-controls hidden>
     <div class="fva-filter" role="group" aria-label="Filter photographic-source records by year">{filters}</div>
     <div class="fva-search"><label for="fva-search">Search source descriptions</label><input type="search" id="fva-search" data-fva-search aria-controls="fva-records" autocomplete="off" placeholder="Hatch, rehearsal, Shiflett…" />
