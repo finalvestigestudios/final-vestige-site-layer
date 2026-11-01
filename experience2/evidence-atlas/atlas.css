@@ -135,3 +135,11 @@
 .fva-compare__pair a{display:inline-flex;align-items:center;min-height:44px;font-size:14px}
 @media(max-width:700px){.fva-compare__pair{grid-template-columns:minmax(0,1fr)}}
 @media print{.fva-compare,.fva-card__compare{display:none!important}}
+
+/* R47: progressive, text-only custody export; full citations remain in the DOM. */
+.fva-export{margin:22px 0 0;padding:16px 20px;border-left:3px solid var(--gold);background:#10120f}
+.fva-export p{margin:0 0 12px;color:var(--muted);font-size:14px;max-width:800px}
+.fva-export button{min-height:44px;padding:10px 17px;border:1px solid #95784b;background:#24251f;color:var(--paper);text-align:left}
+.fva-export button:hover,.fva-export button:focus-visible{border-color:var(--gold)}
+.fva-export .fva-export__status{margin:9px 0 0;color:var(--gold)}
+@media print{.fva-export{display:none!important}}

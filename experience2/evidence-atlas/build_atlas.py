@@ -176,6 +176,10 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <p class="fva-citations__eyebrow">RESEARCH ACCESS / CITATION REGISTER</p>
     <h2 id="fva-citations-title">Trace every reference.</h2>
     <p>These are source references, not licenses to reproduce photographs. Exact dates are not inferred where NASA's record gives only a month. The register remains complete when filters are applied or JavaScript is unavailable.</p>
+    <div class="fva-export"><p>The full six-record register is always available below. With JavaScript enabled you may save the same references as a plain-text research sheet; it contains no photographs or inferred historical relationships.</p>
+      <button type="button" data-fva-export hidden>Save all six source citations (.txt)</button>
+      <p class="fva-export__status" role="status" aria-live="polite" aria-atomic="true" data-fva-export-status></p>
+    </div>
     <ol>{citations}</ol>
     <p class="fva-citations__status" role="status" aria-live="polite" aria-atomic="true" data-fva-copy-status></p>
   </section>
@@ -193,7 +197,7 @@ def build(output: Path) -> dict:
     page_path = output / 'apollo-evidence-atlas.html'
     page_path.write_text(document, encoding='utf-8', newline='\n')
     receipt = {
-       'schema': 'fv.ex2.apollo.atlas.r46.v1', 'release': 'STAGING_HOLD',
+       'schema': 'fv.ex2.apollo.atlas.r47.v1', 'release': 'STAGING_HOLD',
        'crosswalk_git_blob': EXPECTED_BLOB, 'records': list(IDS),
        'source_year_counts': {'1966': 1, '1967': 3, '2017': 2},
        'image_rights': '6 INDIVIDUAL_REVIEW_REQUIRED', 'image_binaries': 0,
