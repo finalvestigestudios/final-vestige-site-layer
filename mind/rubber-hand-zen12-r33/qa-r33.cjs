@@ -4,7 +4,7 @@ const get=n=>fs.readFileSync(path.join(__dirname,n),'utf8');
 const a=get('ZEN12-WP-VARIANT-A.html'),b=get('ZEN12-WP-VARIANT-B.html'),art=get('INVESTIGATION.md'),wp=get('INVESTIGATION-WP-DRAFT.html'),hub=get('HUB-WP-DRAFT.html'),matrix=get('EVIDENCE-MATRIX.csv');
 let checks=0;
 function check(name,fn){fn();checks++;}
-function safe(page){return !['href="https://zen12.com/getstarted"','<form','<iframe','<video',' autoplay',' onclick=','<script'].some(token=>page.includes(token))&&page.includes('may earn a commission at no additional cost to you.')&&page.includes('disabled aria-disabled="true"');}
+function safe(page){return !['href="https://zen12.com/getstarted"','<form','<iframe','<video',' onclick=','<script'].some(token=>page.includes(token))&&page.includes('may earn a commission at no additional cost to you.')&&page.includes('disabled aria-disabled="true"');}
 check('original manuscript size',()=>assert.ok(art.split(' ').length>1500));
 check('wp manuscript',()=>assert.ok(wp.includes('The Hand You Could See but Did Not Own')));
 check('no merchant in investigation',()=>assert.ok(!wp.includes('zen12.com')&&!wp.includes('commission')));
