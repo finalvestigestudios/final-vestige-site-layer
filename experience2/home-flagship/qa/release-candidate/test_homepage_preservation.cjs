@@ -1,0 +1,41 @@
+'use strict';
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const os=require('node:os');
+const {attest,SHA}=require('./verify_homepage_migration.cjs');
+let fragmentPath=process.env.FV_RELEASE_FRAGMENT;
+if(!fragmentPath){
+ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fv-preservation-test-'));
+ const {makeBundle}=require('./build_release_review.cjs');
+ makeBundle(path.resolve(__dirname,'../..'),tmp);
+ fragmentPath=path.join(tmp,'wordpress-page-fragment.review-only.html');
+ process.on('exit',()=>fs.rmSync(tmp,{recursive:true,force:true}));
+}
+const actualFragment=fs.readFileSync(fragmentPath,'utf8');
+const margins=Array.from({length:72},(_,i)=>'<span class="fv-margin-strip__item" style="--i:'+i+'">Evidence record '+i+'</span>').join('\n');
+const subscription='<!-- wp:jetpack/subscriptions {"className":"is-style-split"} /-->';
+const focus='<a href="/focus/">Focus Fieldbook</a> <a href="/focus/">Download Focus</a>';
+const legacy='<!-- wp:html -->'+margins+'<!-- /wp:html -->'+focus+subscription;
+const candidate=actualFragment+'\n'+legacy;
+const verify=(v=candidate,o={})=>attest(legacy,v,{expectedLegacySha:SHA(legacy),...o});
+test('exact seven-chapter candidate + all 72 records and native Jetpack block',()=>{
+ const r=verify();
+ assert.equal(r.margins,72);assert.equal(r.chapter_anchors,7);
+ assert.equal(r.evidence_cases,3);assert.equal(r.jetpack_original_blocks,1);
+ assert.equal(r.h1,1);
+});
+test('detect source drift',()=>assert.throws(()=>verify(candidate,{expectedLegacySha:'0'.repeat(64)}),/source digest changed/));
+test('detect altered Margins item',()=>assert.throws(()=>verify(candidate.replace('Evidence record 34</span>','</span>')),/record 34/));
+test('detect missing Margins item',()=>assert.throws(()=>verify(candidate.replace('<span class="fv-margin-strip__item" style="--i:40">Evidence record 40</span>','')),/number\/index/));
+test('detect duplicate-item substitution',()=>assert.throws(()=>verify(candidate.replace('Evidence record 21</span>','Evidence record 20</span>')),/record 21/));
+test('reject changed Jetpack native block',()=>assert.throws(()=>verify(candidate.replace('is-style-split','is-style-default')),/Jetpack/));
+test('reject duplicated Jetpack native block',()=>assert.throws(()=>verify(candidate+subscription),/Jetpack/));
+test('reject removed Focus links',()=>assert.throws(()=>verify(candidate.replaceAll('href="/focus/"','href="/focus-removed/"')),/Focus/));
+test('reject duplicate H1 from naive legacy concatenation',()=>assert.throws(()=>verify(candidate+'<h1>Legacy Hero</h1>'),/2 H1/));
+test('reject duplicate chapter anchors',()=>assert.throws(()=>verify(candidate+'<span id="fv-hf-inquiry"></span>'),/chapter anchor/));
+test('reject missing evidence case',()=>assert.throws(()=>verify(candidate.replace('data-fv-case="apollo"','data-fv-case="missing"')),/evidence case apollo/));
+test('reject developer toolbar leakage',()=>assert.throws(()=>verify(candidate+'<div class="fv-hf__studio-controls"></div>'),/development control/));
+test('reject remote executable JS',()=>assert.throws(()=>verify(candidate+'<script src="https://test.example/js.js"></script>'),/remote executable/));
+test('reject missing verified production source digest',()=>assert.throws(()=>attest(legacy,candidate,{requireSourceDigest:true}),/missing independently checked/));
