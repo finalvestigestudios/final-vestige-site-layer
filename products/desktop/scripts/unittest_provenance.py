@@ -22,8 +22,8 @@ MAX_TEST_CASES = 20000
 DIAG_PREFIX = "FVS_TEST_DIAG:"
 DIAG_SCHEMA = "fvs-offline-failure-modules-v1"
 MAX_DIAG_MODULES = 12
-MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\\Z")
-METHOD_RE = re.compile(r"test_[a-z0-9_]{1,90}\\.test_[a-z0-9_]{1,90}\\Z")
+MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\Z")
+METHOD_RE = re.compile(r"test_[a-z0-9_]{1,90}\.test_[a-z0-9_]{1,90}\Z")
 MAX_DIAG_METHODS = 10
 MAX_METHOD_LABEL = 104
 
