@@ -34,10 +34,14 @@ PREFLIGHT = (
     "if($null -eq $sig -or $sig.Status -ne 'Valid' -or "
     "$null -eq $sig.SignerCertificate -or "
     "$sig.SignerCertificate.Subject -notmatch '(^|,\\s*)CN=Microsoft Corporation(\\s*,|$)'){exit 21}; "
-    "$s=Get-MpComputerStatus; "
+    "$s=Get-MpComputerStatus -ErrorAction Stop; "
     "if($null -eq $s -or $s.AMServiceEnabled -ne $true -or "
     "$s.AntivirusEnabled -ne $true -or "
     "$s.RealTimeProtectionEnabled -ne $true -or "
+    "$s.AMRunningMode -cne 'Normal' -or "
+    "$s.BehaviorMonitorEnabled -ne $true -or "
+    "$s.IoavProtectionEnabled -ne $true -or "
+    "$s.OnAccessProtectionEnabled -ne $true -or "
     "[string]::IsNullOrWhiteSpace($s.AntivirusSignatureVersion) -or "
     "$null -eq $s.AntivirusSignatureAge -or "
     "$s.AntivirusSignatureAge -gt 3){exit 22}; exit 0"
@@ -185,8 +189,13 @@ def scan_candidates(dist: str | Path, r9: str | Path,
     for name in gate.EXPECTED:
         _same_engine(scanner, scanner_pin)
         _unchanged(root, prior, checksum_sha)
+        # Require active, real-time, behavior, IOAV and on-access protection
+        # before *every* individual scan; a two-endpoint status is insufficient.
+        health_check(scanner)
         scan_one(scanner, root / name)
         _environment()  # Catch even successfully remediated local detections.
+        # A scanner that became passive/disabled during the scan cannot pass.
+        health_check(scanner)
         _unchanged(root, prior, checksum_sha)
         _same_engine(scanner, scanner_pin)
         scanned.append({"name": name, "sha256": prior[name],
@@ -198,6 +207,8 @@ def scan_candidates(dist: str | Path, r9: str | Path,
         "scanner_sha256": scanner_pin.sha256,
         "scanner_custody": "same_signed_engine_sha256_and_file_identity_observed",
         "defender_environment_observations": 7,
+        "defender_active_health_checkpoints": 14,
+        "defender_active_health_policy": "normal_mode_realtime_behavior_ioav_onaccess_fresh_signatures",
         "defender_environment_status": environment.OBSERVED,
         "schema": "fv-labs-offline-defender-r111-v1",
         "provider": "Microsoft Defender Antivirus",
