@@ -1,6 +1,6 @@
 # Original optional 40-second education film — storyboard (unpublished)
 
-**Title:** *Twelve Minutes Is Time. Not Proof.* **Target duration:** 00:40; vertical 9:16. **Presentation in this draft:** original static SVG poster + full readable transcript, not a pretend player. There is no hosted MP4 or live film playback.
+**Title:** *Twelve Minutes Is Time. Not Proof.* **Target duration:** 00:40; vertical 9:16. **Presentation in this draft:** original static SVG poster + full readable transcript, not a pretend player. An original 40.000-second silent MP4 was rendered offline and inspected; there is no hosted MP4 or live film playback.
 
 Each scene is an original documentary-style illustrator concept, not a copy of seller ads or testimonials. The associated `captions.vtt` records six planned caption intervals. It has NOT been synchronized to a hosted video.
 
@@ -13,6 +13,6 @@ Each scene is an original documentary-style illustrator concept, not a copy of s
 | 27–34 | Open notebook; twelve-minute no-cost comparison. | Give a useful alternative independent of commerce. |
 | 34–40 | Clock hands settle, words emerge: “Time is measurable. Promises need evidence.” | Short program duration alone does not establish the claimed hour-equivalence. |
 
-The script is educational, not a visual demonstration of a physiological effect. Use no medical symbols, induced-state assertions or fabricated testimonials. Provide full transcript and accurate VTT timing. If a filmed MP4 is later created and approved, host first-party, enable native controls, verify keyboard/zoom/no-JS/reduced-motion and WCAG 2.2 AA, and measure LCP/CLS without paid services.
+The script is educational, not a visual demonstration of a physiological effect. Use no medical symbols, induced-state assertions or fabricated testimonials. Provide full transcript and accurate VTT timing. If a rendered MP4 is later approved for publication, host first-party, enable native controls, verify keyboard/zoom/no-JS/reduced-motion and WCAG 2.2 AA, and measure LCP/CLS without paid services.
 
 **Release:** remains static. Do not replace poster with a clickable false player or activate any video, email, tracking, checkout, or merchant earning link without separate explicit founder release approval.
