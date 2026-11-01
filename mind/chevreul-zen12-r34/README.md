@@ -52,14 +52,14 @@ node mind/chevreul-zen12-r34/qa-r34.cjs
 node mind/chevreul-zen12-r34/privacy-hard-off.cjs
 ```
 
-At preparation, independently fetched the **12 actual GitHub source files** of this branch and executed the committed QA logic against exact readbacks in an isolated V8 with read-only modeled Node fs/path: **98 of 98 source assertions PASSED**, including **8/8 deliberately dangerous mutations rejected**. The separate privacy module `selfTest()`: **43/43 PASSED**; `ENABLED=false`, k=10. These are *source* checks only. Native Node checkout, hosted GitHub CI, browser/wcag/Lighthouse, WordPress rendering, video media/caption synchronization and conversion lift **not yet verified**. Never substitute synthetic tests for those gates.
+At preparation, independently fetched the **12 initial GitHub source files** of this branch and executed the committed QA logic against exact readbacks in an isolated V8 with read-only modeled Node fs/path: **98 of 98 source assertions PASSED**, including **8/8 deliberately dangerous mutations rejected**. The separate privacy module `selfTest()`: **43/43 PASSED**; `ENABLED=false`, k=10. These are *source* checks only. Native Node checkout, hosted GitHub CI, browser/wcag/Lighthouse, WordPress rendering, production first-party video playback/caption synchronization and conversion lift **not yet verified**. Never substitute synthetic tests for those gates.
 
 ## Release gates: HARD HOLD
 
 1. Written **Final Vestige Studios-specific** Inspire3 affiliate acceptance, exact approved Zen12 package/SKU tracking URLs, website + TikTok + email channel permissions, creative rights and customer privacy requirements. General program sign-up and unrelated Limitless Labs swipes do not suffice.
 2. Exact live product price/discount/checkout/terms/refund and phone requirements independently checked by authorized review before public claims. No dynamically displayed offer price in the pilot.
 3. Second-editor history/science review; FTC substantiation/near-CTA disclosure; QA #126 full WP staging a11y/mobile/no-JS/performance and claim/link checks. No automatic or guaranteed brainwave, medical or wealth claims.
-4. For B: actual first-party accessible H.264 30–45s asset, poster, synchronized accurate captions, transcript, manual controls, no autoplay, reduced-motion/performance QA. Current optional version is an **unrendered concept**.
+4. For B: the original 40.000s H.264 has been rendered **offline only**; require approved first-party hosting, synchronized caption and transcript verification, manual controls, no autoplay and reduced-motion/performance QA. The WordPress page remains a **static unhosted preview**, not a working player.
 5. Approval from founder for CMS publication, menu/navigation, affiliate link activation, tracking, media hosting, any merge or deployment. No approval assumed from earlier unrelated live changes.
 6. Art lead Issue #150 coordination before any homepage teaser. Mind hub PR #172 untouched. Dispatch #174 retains newsletter ownership, all commercial mails HOLD_UNSENT; don't modify the existing Focus welcome or add email infrastructure.
 
