@@ -230,10 +230,12 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
              patch.object(av, "_same_engine") as scanner_verified, \
              patch.object(av, "health_check") as health, \
+             patch.object(av, "_environment") as environment_check, \
              patch.object(av, "scan_one") as scan:
             result = av.scan_candidates("private-dist", "private-r9", PINNED)
         self.assertEqual(scan.call_count, 6)
         self.assertEqual(health.call_count, 2)
+        self.assertEqual(environment_check.call_count, 7)
         self.assertEqual(verified.call_count, 14)
         self.assertEqual(scanner_verified.call_count, 14)
         self.assertEqual(result["scanner_sha256"], "d" * 64)
@@ -245,6 +247,8 @@ class DefenderR111(unittest.TestCase):
         self.assertFalse(result["release_authorized"])
         self.assertFalse(result["independent_malware_clearance"])
         self.assertFalse(result["premium_distribution_authorized"])
+        self.assertEqual(result["defender_environment_observations"], 7)
+        self.assertEqual(result["defender_environment_status"], av.environment.OBSERVED)
         self.assertNotIn("scanner_path", result)
 
     def test_mid_scan_failure_has_no_partial_success(self):
@@ -260,6 +264,7 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
              patch.object(av, "_same_engine"), \
              patch.object(av, "health_check"), \
+             patch.object(av, "_environment"), \
              patch.object(av, "scan_one", side_effect=failing):
             with self.assertRaises(av.AVHold):
                 av.scan_candidates("private-dist", "private-r9", PINNED)
@@ -291,6 +296,7 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
              patch.object(av, "_same_engine", side_effect=av.AVHold("engine changed")), \
              patch.object(av, "health_check"), \
+             patch.object(av, "_environment"), \
              patch.object(av, "scan_one") as scanned:
             with self.assertRaises(av.AVHold):
                 av.scan_candidates("private-dist", "private-r9", PINNED)
@@ -307,6 +313,44 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "_same_engine",
                           side_effect=(None, None, av.AVHold("engine changed"))), \
              patch.object(av, "health_check"), \
+             patch.object(av, "_environment"), \
+             patch.object(av, "scan_one") as scanned:
+            with self.assertRaises(av.AVHold):
+                av.scan_candidates("private-dist", "private-r9", PINNED)
+        self.assertEqual(scanned.call_count, 1)
+
+    def test_r113_history_or_exclusions_fail_closed_and_redacted(self):
+        with patch.object(av.environment, "require_zero_observations",
+                          side_effect=av.environment.EnvironmentHold(
+                              "C:\\\\Users\\\\PRIVATE\\\\evidence.csv")):
+            with self.assertRaises(av.AVHold) as caught:
+                av._environment()
+        self.assertNotIn("PRIVATE", str(caught.exception))
+        self.assertNotIn("evidence.csv", str(caught.exception))
+
+    def test_r113_environment_preflight_blocks_any_candidate_execution(self):
+        with patch.object(av, "require_native_win11"), \
+             patch.object(av, "_pins", return_value=(SIX, CHECKSUMS)), \
+             patch.object(av, "_unchanged"), \
+             patch.object(av, "locate_defender", return_value=Path("scanner.exe")), \
+             patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
+             patch.object(av, "_same_engine"), \
+             patch.object(av, "health_check"), \
+             patch.object(av, "_environment", side_effect=av.AVHold("HOLD")), \
+             patch.object(av, "scan_one") as scanned:
+            with self.assertRaises(av.AVHold):
+                av.scan_candidates("private-dist", "private-r9", PINNED)
+        scanned.assert_not_called()
+
+    def test_r113_postfirst_scan_detection_blocks_remaining_five(self):
+        with patch.object(av, "require_native_win11"), \
+             patch.object(av, "_pins", return_value=(SIX, CHECKSUMS)), \
+             patch.object(av, "_unchanged"), \
+             patch.object(av, "locate_defender", return_value=Path("scanner.exe")), \
+             patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
+             patch.object(av, "_same_engine"), \
+             patch.object(av, "health_check"), \
+             patch.object(av, "_environment", side_effect=(None, av.AVHold("HOLD"))), \
              patch.object(av, "scan_one") as scanned:
             with self.assertRaises(av.AVHold):
                 av.scan_candidates("private-dist", "private-r9", PINNED)
