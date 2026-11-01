@@ -27,7 +27,7 @@ MAX_INVENTORY = 256
 FIELDS = ("dev", "ino", "mode", "nlink", "size", "mtime", "ctime")
 PERMITTED = frozenset(("PASS", "LSTAT", "REGULAR", "LINKS", "SIZE",
     "CONFINEMENT", "OPEN", "START_ID", "END_ID", "READ", "UNKNOWN",
-    "SOURCE_SCAN", "TEST_SCAN", "INVENTORY_LIMIT"))
+    "SOURCES_SCAN", "TESTS_SCAN", "INVENTORY_LIMIT"))
 
 
 def _difference(before, after):
