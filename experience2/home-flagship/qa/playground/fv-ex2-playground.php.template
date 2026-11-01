@@ -1,0 +1,68 @@
+<?php
+/**
+ * Plugin Name: FV Experience 2.0 Isolated Playground Renderer — REVIEW ONLY
+ * Description: WordPress-native seven-chapter staging adapter; refuses production environments and altered source.
+ * Version: 0.0.1-review
+ */
+if (!defined('ABSPATH')) { exit; }
+function fv_ex2_safe_stage() {
+    return defined('FV_EX2_ALLOW_LOCAL_REVIEW') && FV_EX2_ALLOW_LOCAL_REVIEW === true
+        && function_exists('wp_get_environment_type') && wp_get_environment_type() === 'local'
+        && strpos(home_url('/'), 'finalvestige.com') === false;
+}
+function fv_ex2_integrity() {
+    $expected = __FV_EXPECTED_HASHES__;
+    foreach ($expected as $name => $sha) {
+        $file = __DIR__ . '/assets/' . $name;
+        if (!is_readable($file) || hash_file('sha256', $file) !== $sha) { return false; }
+    }
+    // Public originals, locally imported into Playground. Exact metadata sizes, not rights certification.
+    $media = array(
+        'apollo.webp' => array(78346, 1041, 810),
+        'franklin.jpg' => array(466043, 960, 1526),
+        'nypl.jpg' => array(5553669, 5667, 3831),
+    );
+    foreach ($media as $name => $properties) {
+        $file = __DIR__ . '/media/' . $name;
+        if (!is_readable($file) || filesize($file) !== $properties[0]) { return false; }
+        $dimensions = @getimagesize($file);
+        if (!$dimensions || $dimensions[0] !== $properties[1] || $dimensions[1] !== $properties[2]) { return false; }
+    }
+    return true;
+}
+function fv_ex2_ready() { return fv_ex2_safe_stage() && fv_ex2_integrity(); }
+add_action('wp_enqueue_scripts', static function() {
+    if (!is_front_page() || !fv_ex2_ready()) { return; }
+    __FV_ENQUEUE_STATEMENTS__
+});
+add_shortcode('fv_ex2_stage_home', static function() {
+    if (!fv_ex2_safe_stage()) { return '<p>Staging denied: local review authorization absent.</p>'; }
+    if (!fv_ex2_integrity()) { return '<p>Staging CLOSED: missing/changed source or image originals.</p>'; }
+    $fragment = file_get_contents(__DIR__ . '/assets/wordpress-page-fragment.review-only.html');
+    if (!is_string($fragment)) { return '<p>Staging CLOSED: fragment unreadable.</p>'; }
+    $images = array(
+        's67-19766.webp' => 'apollo.webp',
+        'Franklinexpeditionnote.jpg' => 'franklin.jpg',
+        'edit-017-v02-nypl-5003296-original.jpg' => 'nypl.jpg',
+    );
+    $replaced = 0;
+    $fragment = preg_replace_callback('/<img\\b[^>]*>/i', static function($match) use ($images, &$replaced) {
+        $tag = $match[0];
+        $filename = null;
+        foreach ($images as $needle => $local) {
+            if (strpos($tag, $needle) !== false) { $filename = $local; break; }
+        }
+        if ($filename === null) { return $tag; }
+        $tag = preg_replace('/\\s(?:srcset|sizes)="[^"]*"/i', '', $tag);
+        $url = esc_url(plugins_url('media/' . $filename, __FILE__));
+        $tag = preg_replace('/\\ssrc="[^"]*"/i', ' src="' . $url . '"', $tag, 1);
+        ++$replaced;
+        return $tag;
+    }, $fragment);
+    if ($replaced !== 3 || strpos($fragment, '<main>') !== false
+        || strpos($fragment, 'fv-hf__masthead') !== false
+        || substr_count($fragment, 'data-fv-case="') !== 3) {
+        return '<p>Staging CLOSED: unreviewed source wrapper or evidence panels.</p>';
+    }
+    return $fragment;
+});
