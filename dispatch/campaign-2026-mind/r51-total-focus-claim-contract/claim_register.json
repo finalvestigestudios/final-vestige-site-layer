@@ -1,0 +1,152 @@
+{
+  "status": "REVIEW_ONLY_NO_RELEASE",
+  "observed_utc": "2026-11-01T21:34:39Z",
+  "wordpress": {
+    "site_id": 256784396,
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "featured_image_in_email": true,
+    "post_date_in_email": true,
+    "reply_to": "no-reply",
+    "recent_sends": "[] means NO REPORTED RECENT SENDS ONLY",
+    "subscribers_total": 2,
+    "subscribers_confirmed": 2,
+    "subscribers_unconfirmed": 2,
+    "unique_eligible": "UNKNOWN",
+    "welcome_configured": true,
+    "welcome_received_verified": false
+  },
+  "original_campaign": {
+    "pr": 175,
+    "issue": 174,
+    "companion": 171,
+    "canonical_issue05_blob": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+    "manifest_blob": "2fe3c10a26cb2c9e2406e8444a5734eabb21f209",
+    "mix": {
+      "editorial": 4,
+      "commercial_review_pending": 2
+    },
+    "candidate_selected": false,
+    "all_issues_hold_unsent": true,
+    "commercial_03_05_hold_merchant": true
+  },
+  "candidate": {
+    "number": 5,
+    "subject": "Can a 33-minute recording sharpen your focus?",
+    "preheader": "A test you can run first, and the claims to examine before buying.",
+    "proposed_custom_excerpt": "Total Focus is a 33-minute hypnosis recording, not a verified concentration treatment. This issue evaluates a commercial product: if a future approved guide contains a qualifying link, Final Vestige may earn a commission. The guide is not live. First try our no-cost three-minute attention exercise; no purchase is required.",
+    "proposed_excerpt_installed": false,
+    "native_preheader_field_verified": false,
+    "live_warmup_guide": false,
+    "merchant_affiliate_link": null,
+    "actual_wordpress_email_preview_verified": false,
+    "received_mime_verified": false,
+    "physical_postal_address_verified": false,
+    "functional_unsubscribe_verified": false,
+    "subscriber_eligibility_verified": false,
+    "partner_affiliate_approval_verified": false,
+    "product_specific_email_permission_verified": false,
+    "current_checkout_verified": false,
+    "refund_applicability_verified": false,
+    "founder_final_campaign_approval": false
+  },
+  "source_register": [
+    {
+      "id": "S1",
+      "role": "seller listing, product format only",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "observed": "2026-11-01",
+      "supported": [
+        "seller lists 33 mins",
+        "seller lists 47 MB",
+        "seller attributes recording to J.A. Amos",
+        "seller provides audio preview"
+      ],
+      "not_supported": [
+        "independently measured improvement",
+        "seller testimonials proven outcomes",
+        "current authorized checkout offer",
+        "email marketing rights"
+      ]
+    },
+    {
+      "id": "S2",
+      "role": "research context (not product test)",
+      "url": "https://www.nccih.nih.gov/health/hypnosis",
+      "observed": "2026-11-01",
+      "supported": [
+        "hypnosis studied in selected conditions",
+        "evidence varies by application"
+      ],
+      "not_supported": [
+        "effectiveness of Total Focus for concentration"
+      ]
+    },
+    {
+      "id": "S3",
+      "role": "official affiliate-resource boundary",
+      "url": "https://inspire3.com/ll/",
+      "observed": "2026-11-01",
+      "supported": [
+        "Limitless Labs-specific promotional materials",
+        "Limitless Labs requests affiliate approval"
+      ],
+      "not_supported": [
+        "Final Vestige Zen12 rights",
+        "Final Vestige Total Focus email rights"
+      ]
+    },
+    {
+      "id": "S4",
+      "role": "FTC legal source",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "observed": "2026-11-01",
+      "supported": [
+        "valid commercial mailing address",
+        "clear opt-out",
+        "honest subject and sender"
+      ],
+      "not_supported": [
+        "FV is compliant without received-email test"
+      ]
+    },
+    {
+      "id": "S5",
+      "role": "WordPress-native excerpt contract",
+      "url": "https://wordpress.com/support/newsletter-settings/",
+      "observed": "2026-11-01",
+      "supported": [
+        "excerpt setting and 55-word fallback",
+        "post-specific custom excerpt",
+        "newsletter sender settings"
+      ],
+      "not_supported": [
+        "delivery verified",
+        "separate preheader field verified"
+      ]
+    },
+    {
+      "id": "S6",
+      "role": "historical primary-source interpretation and first-party archival guide",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observed": "2026-11-01",
+      "supported": [
+        "the 1784 Puységur accounts are an historical illustration of observation versus explanation"
+      ],
+      "not_supported": [
+        "an analogy proves commercial hypnosis effectiveness",
+        "Puységur validates Total Focus"
+      ]
+    }
+  ],
+  "prohibited_claims": [
+    "100% razor-sharp concentration",
+    "brain reprogramming established as fact",
+    "refundable for every shopper",
+    "this mailing list was validated",
+    "affiliate email rights granted",
+    "real email was previewed or sent"
+  ],
+  "external_release_evidence_present": false
+}
