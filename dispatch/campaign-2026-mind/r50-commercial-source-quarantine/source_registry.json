@@ -1,0 +1,46 @@
+{
+  "status": "UNSENT_REVIEW_ONLY",
+  "recorded_at_utc": "2026-11-01T20:35:00Z",
+  "base_pr": 498,
+  "canonical_pr": 175,
+  "master_issue": 174,
+  "companion_issue": 171,
+  "canonical_issue03_blob": "b86572c15d05316801a007c00e9a2689a5de27c3",
+  "canonical_manifest_blob": "2fe3c10a26cb2c9e2406e8444a5734eabb21f209",
+  "only_source_changes": [
+    {
+      "before": "[sales page](https://zen12.com/)",
+      "after": "sales page"
+    },
+    {
+      "before": "[About page](https://zen12.com/about)",
+      "after": "About page"
+    }
+  ],
+  "official_source_urls_internal_only": [
+    "https://zen12.com/hnp",
+    "https://zen12.com/about",
+    "https://hypnosislive.com/mental-skills/total-focus"
+  ],
+  "official_claim_status": "Seller copy only; not independently verified product outcomes",
+  "source_of_truth": "Live audited 2026-11-01, final checkout pricing/refund and rights unverified",
+  "proposed_jetpack_custom_excerpts": {
+    "03": "Zen12 is under independent review. Final Vestige has not verified its advertised results or permission to promote it by email. If a future approved guide contains a qualifying purchase link, we may earn a commission. Try the free twelve-minute observation exercise first. The commercial guide is not live and no purchase is required.",
+    "05": "This Dispatch examines a hypnosis recording, not a proven concentration treatment. If a future approved guide includes an earning link, Final Vestige may receive a commission. Start with the free three-minute attention check. The Total Focus buyer guide is not live; no purchase is necessary."
+  },
+  "preview_assertions": {
+    "seller_links_in_proposed_email": 0,
+    "subscriber_count_verified": false,
+    "received_mime_verified": false,
+    "postal_verified": false,
+    "unsubscribe_verified": false,
+    "merchant_email_permission_verified": false,
+    "commercial_guides_live": false,
+    "founder_final_approval": false
+  },
+  "holds": [
+    "ALL_ISSUES_HOLD_UNSENT",
+    "ISSUES_03_AND_05_HOLD_MERCHANT"
+  ],
+  "scope": "Source-only. No WordPress write, email, list, affiliate link, production route, or homepage change."
+}
