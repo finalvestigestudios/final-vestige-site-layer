@@ -51,6 +51,19 @@ function fv_ex2_rd_shortcode($atts = array()): string {
     }
     // Trust boundary: this is a release-reviewed, immutable, bundled file, NOT shortcode input.
     // No user-supplied attributes or remote content are injected into the returned markup.
+    // A reusable block or template may render this shortcode several times on one page.
+    // Keep the first instance's historic anchors stable, but namespace later instances
+    // before handing markup to WordPress; this covers label/for, aria-labelledby and
+    // aria-controls without introducing client-side dependencies or random IDs.
+    static $render_count = 0;
+    $render_count++;
+    if ($render_count > 1) {
+        $markup = str_replace(
+            'fv-ex2-ledger-apollo1-',
+            'fv-ex2-ledger-apollo1-' . $render_count . '-',
+            $markup
+        );
+    }
     return $markup;
 }
 add_shortcode('fv_ex2_research_desk', 'fv_ex2_rd_shortcode');
