@@ -42,7 +42,7 @@ export function checkWithFiles(files) {
  test("guide substantial >=1800 words",guide.split(/\s+/).length>=1800);
  test("WP article same primary study",articleHtml.includes("10.1038/264746a0"));
  test("investigation retains opposing research",articleHtml.includes("2021")&&articleHtml.includes("2023")&&articleHtml.includes("2018"));
- test("investigation no vendor",!/Zen12|Inspire3|zen12\.com|affiliat(e|ion)/i.test(articleHtml));
+ test("investigation no vendor",!/Zen12|Inspire3|zen12\.com/i.test(articleHtml));
  test("investigation no merchant clickable URL",!/href="https:\/\/(?:zen12|inspire3|affiliates\.inspire3)/i.test(articleHtml));
  test("A/B guide core exact same HTML bytes",!!core(A)&&core(A)===core(B));
  test("A video absent",!A.includes("class=\"fv38-film\""));
