@@ -265,6 +265,33 @@ def csv_export(report: dict) -> str:
     return output.getvalue()
 
 
+def bind_full_R8_claim_evidence(lib, physical_rows, fingerprint, receipt,
+                               *, make_report, baseline, expected_occurrences=1959):
+    """Bounded re-derivation: R10 receipt is a DIGEST, not the 1,959 claims.
+
+    Independently regenerate the original full R8 claim ledger, compare its
+    canonical SHA-256 to R10's already validated HOLD receipt, and only then
+    let the heuristic action triage inspect individual claim positions. Never
+    mistake a compact custody receipt for the actual evidence ledger.
+    """
+    if (not isinstance(receipt, dict) or receipt.get('release_state') != 'HOLD'
+            or receipt.get('may_publish') is not False):
+        raise TriageFailure('R10 receipt lost explicit publication HOLD')
+    report = make_report(lib, rows=physical_rows, fingerprint=fingerprint,
+                         expect=baseline)
+    if (not isinstance(report, dict) or report.get('release_state') != 'HOLD'
+            or report.get('may_publish') is not False
+            or not isinstance(report.get('claims'), list)
+            or len(report['claims']) != expected_occurrences):
+        raise TriageFailure('R8 claim report missing or not HOLD')
+    content_digest = sha256(json.dumps(
+        report, ensure_ascii=False, sort_keys=True,
+        separators=(',', ':')).encode('utf-8')).hexdigest()
+    if receipt.get('source_content_digest_sha256') != content_digest:
+        raise TriageFailure('full R8 claims do not match frozen R10 custody digest')
+    return report
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--json-out', type=Path, help='private HOLD queue inside preparedness/build only')
@@ -283,14 +310,18 @@ def main(argv=None) -> int:
     errors, _warnings = validate.validate(lib)
     if errors:
         raise TriageFailure('native validator: ' + '; '.join(errors[:4]))
-    canonical = r10.audit_corpus(lib, source_review_queue.source_rows(root), evidence_freeze.fingerprint)
+    physical_rows = source_review_queue.source_rows(root)
+    canonical = r10.audit_corpus(lib, physical_rows, evidence_freeze.fingerprint)
     r11.audit_export(lib, root / 'build', build, canonical_receipt=canonical)
     rendered = r12.audit_corpus(lib, build, claim_parser=r8.parse_visible_claims)
     if (rendered.get('release_state') != 'HOLD' or rendered.get('may_publish') is not False
             or rendered.get('rendered_citation_occurrences') != 1959
             or rendered.get('article_source_pairs') != 367):
         raise TriageFailure('R12 rendered source/citation parity was not proven')
-    result = build_triage(lib, canonical=canonical)
+    frozen_claims = bind_full_R8_claim_evidence(
+        lib, physical_rows, evidence_freeze.fingerprint, canonical,
+        make_report=r8.make_report, baseline=r8.BASELINE)
+    result = build_triage(lib, canonical=frozen_claims)
     private_root = root / 'build'
     if args.json_out:
         r8.safe_export(args.json_out, json.dumps(result, indent=2, ensure_ascii=False, sort_keys=True) + '\n', private_root)
