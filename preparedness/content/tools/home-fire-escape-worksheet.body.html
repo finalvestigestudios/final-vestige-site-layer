@@ -18,7 +18,7 @@
 .pa-sheet textarea { min-height: 88px; resize: vertical; }
 .pa-sheet :focus-visible, .pa-btn:focus-visible { outline: 3px solid var(--pa-gold); outline-offset: 2px; }
 .pa-row { display: grid; gap: 10px; margin: 0 0 14px; padding: 0 0 12px; border-bottom: 1px dashed var(--pa-line); }
-.pa-row-title { margin: 0; font-size: 13px; color: var(--pa-muted); }
+.pa-row-title { margin: 0; font-size: 13px; color: var(--pa-muted); grid-column: 1 / -1; }
 @container (min-width: 560px) { .pa-row--2 { grid-template-columns: repeat(2, 1fr); } .pa-row--3 { grid-template-columns: repeat(3, 1fr); } .pa-row--4 { grid-template-columns: repeat(4, 1fr); } .pa-grid2 { grid-template-columns: repeat(2, 1fr); } }
 .pa-grid2 { display: grid; gap: 14px; margin: 0 0 12px; }
 .pa-check { display: flex; gap: 12px; align-items: flex-start; font-weight: 400 !important; min-height: 44px; padding: 6px 0; }
@@ -38,9 +38,16 @@
 .pa-sheet [hidden], .pa-printbar [hidden], .pa-sheet button[hidden] { display: none !important; }
 @media (max-width: 420px) { .pa-sheet { padding: 14px 12px; } .pa-sheet fieldset { padding: 12px 10px; } }
 @media print {
+  @page { margin: 0.5in; }
+  .pa-article:has(.pa-printsheet) > *:not(.pa-shell) { display: none !important; }
+  .pa-article:has(.pa-printsheet) .pa-shell > *:not(.pa-body) { display: none !important; }
+  .pa-article:has(.pa-printsheet) .pa-body > *:not(.pa-printsheet):not(:has(.pa-printsheet)) { display: none !important; }
+  .pa-row--2 { grid-template-columns: repeat(2, 1fr); } .pa-row--3 { grid-template-columns: repeat(3, 1fr); } .pa-row--4 { grid-template-columns: repeat(4, 1fr); } .pa-grid2 { grid-template-columns: repeat(2, 1fr); }
   .pa-sheet { border: 0 !important; padding: 0 !important; }
   .pa-noprint, .pa-printbar { display: none !important; }
-  .pa-sheet fieldset { border: 1px solid #000 !important; break-inside: avoid; }
+  .pa-sheet fieldset { border: 1px solid #000 !important; break-inside: auto; margin: 0 0 8pt; padding: 6pt 8pt; }
+  .pa-hint { font-size: 8pt; margin: 0 0 3pt; }
+  .pa-sheet p { margin: 0 0 4pt; font-size: 9.5pt; }
   .pa-sheet legend { font-size: 9pt; color: #000 !important; }
   .pa-sheet label { font-size: 9pt; color: #000 !important; }
   .pa-sheet input[type="text"], .pa-sheet input[type="tel"], .pa-sheet input[type="date"], .pa-sheet select, .pa-sheet textarea { border: 0 !important; border-bottom: 1px solid #000 !important; min-height: 0; padding: 2px 0; font-size: 10.5pt; color: #000 !important; }
@@ -57,7 +64,7 @@
 
 <noscript><div class="pa-alert pa-alert--note"><p class="pa-alert-title">JavaScript is off</p><p>This worksheet is a printable form. The form below still works and prints. Only the automatic reminders and the text download need JavaScript.</p></div></noscript>
 <h2 id="worksheet">Your home fire escape plan</h2>
-<form class="pa-sheet" id="fw" onsubmit="return false" aria-describedby="fw-help">
+<form class="pa-sheet pa-printsheet" id="fw" onsubmit="return false" aria-describedby="fw-help">
 <p id="fw-help">Every field is optional. Short answers are best. Nothing here asks for an address.</p>
 
 <fieldset><legend>Basics</legend>

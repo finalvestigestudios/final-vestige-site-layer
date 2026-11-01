@@ -18,7 +18,7 @@
 .pa-sheet textarea { min-height: 88px; resize: vertical; }
 .pa-sheet :focus-visible, .pa-btn:focus-visible { outline: 3px solid var(--pa-gold); outline-offset: 2px; }
 .pa-row { display: grid; gap: 10px; margin: 0 0 14px; padding: 0 0 12px; border-bottom: 1px dashed var(--pa-line); }
-.pa-row-title { margin: 0; font-size: 13px; color: var(--pa-muted); }
+.pa-row-title { margin: 0; font-size: 13px; color: var(--pa-muted); grid-column: 1 / -1; }
 @container (min-width: 560px) { .pa-row--2 { grid-template-columns: repeat(2, 1fr); } .pa-row--3 { grid-template-columns: repeat(3, 1fr); } .pa-row--4 { grid-template-columns: repeat(4, 1fr); } .pa-grid2 { grid-template-columns: repeat(2, 1fr); } }
 .pa-grid2 { display: grid; gap: 14px; margin: 0 0 12px; }
 .pa-check { display: flex; gap: 12px; align-items: flex-start; font-weight: 400 !important; min-height: 44px; padding: 6px 0; }
@@ -38,9 +38,16 @@
 .pa-sheet [hidden], .pa-printbar [hidden], .pa-sheet button[hidden] { display: none !important; }
 @media (max-width: 420px) { .pa-sheet { padding: 14px 12px; } .pa-sheet fieldset { padding: 12px 10px; } }
 @media print {
+  @page { margin: 0.5in; }
+  .pa-article:has(.pa-printsheet) > *:not(.pa-shell) { display: none !important; }
+  .pa-article:has(.pa-printsheet) .pa-shell > *:not(.pa-body) { display: none !important; }
+  .pa-article:has(.pa-printsheet) .pa-body > *:not(.pa-printsheet):not(:has(.pa-printsheet)) { display: none !important; }
+  .pa-row--2 { grid-template-columns: repeat(2, 1fr); } .pa-row--3 { grid-template-columns: repeat(3, 1fr); } .pa-row--4 { grid-template-columns: repeat(4, 1fr); } .pa-grid2 { grid-template-columns: repeat(2, 1fr); }
   .pa-sheet { border: 0 !important; padding: 0 !important; }
   .pa-noprint, .pa-printbar { display: none !important; }
-  .pa-sheet fieldset { border: 1px solid #000 !important; break-inside: avoid; }
+  .pa-sheet fieldset { border: 1px solid #000 !important; break-inside: auto; margin: 0 0 8pt; padding: 6pt 8pt; }
+  .pa-hint { font-size: 8pt; margin: 0 0 3pt; }
+  .pa-sheet p { margin: 0 0 4pt; font-size: 9.5pt; }
   .pa-sheet legend { font-size: 9pt; color: #000 !important; }
   .pa-sheet label { font-size: 9pt; color: #000 !important; }
   .pa-sheet input[type="text"], .pa-sheet input[type="tel"], .pa-sheet input[type="date"], .pa-sheet select, .pa-sheet textarea { border: 0 !important; border-bottom: 1px solid #000 !important; min-height: 0; padding: 2px 0; font-size: 10.5pt; color: #000 !important; }
@@ -119,9 +126,9 @@
 <div id="rc-live" hidden>
 <h2 id="preview" class="pa-card-mainhide">Preview</h2>
 <div id="rc-preview" class="pa-cardpv pa-card-mainhide" role="group" aria-label="Card preview"></div>
-<div id="rc-sheet" class="pa-printonly"></div>
+<div id="rc-sheet" class="pa-printonly pa-printsheet"></div>
 </div>
-<noscript><div class="pa-foldcard"><div class="pa-face"><p class="pa-face-title">Emergency contacts</p><p><b>Household:</b> ________________________</p><p><b>Phone:</b> ________________________</p><p><b>Out-of-area contact:</b> ________________________</p><p><b>Out-of-area phone:</b> ________________________</p><p><b>Meet first at:</b> ________________________</p><p><b>If not, meet at:</b> ________________________</p></div><div class="pa-face"><p class="pa-face-title">School and care</p><p><b>School or childcare:</b> ________________________</p><p><b>Reunification plan:</b> ________________________</p><p><b>Pick-up reminder:</b> ________________________</p><p><b>Caregiver:</b> ________________________</p><p><b>Caregiver phone:</b> ________________________</p><p><b>Communication needs:</b> ________________________</p><p><b>Reviewed:</b> ________________________</p></div></div></noscript>
+<noscript><div class="pa-printsheet"><div class="pa-foldcard"><div class="pa-face"><p class="pa-face-title">Emergency contacts</p><p><b>Household:</b> ________________________</p><p><b>Phone:</b> ________________________</p><p><b>Out-of-area contact:</b> ________________________</p><p><b>Out-of-area phone:</b> ________________________</p><p><b>Meet first at:</b> ________________________</p><p><b>If not, meet at:</b> ________________________</p></div><div class="pa-face"><p class="pa-face-title">School and care</p><p><b>School or childcare:</b> ________________________</p><p><b>Reunification plan:</b> ________________________</p><p><b>Pick-up reminder:</b> ________________________</p><p><b>Caregiver:</b> ________________________</p><p><b>Caregiver phone:</b> ________________________</p><p><b>Communication needs:</b> ________________________</p><p><b>Reviewed:</b> ________________________</p></div></div></div></noscript>
 <noscript><style>#rc, #rc-warn { display: none; }</style></noscript>
 
 <h2 id="how">How to use it well</h2>

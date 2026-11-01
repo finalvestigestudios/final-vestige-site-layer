@@ -325,6 +325,24 @@ class BrowserToolTests(unittest.TestCase):
             finally:
                 self.close(pg)
 
+    def test_print_output_is_only_the_printable_sheet(self):
+        """The printed page is the card, the worksheet or the checklist, not the whole article."""
+        limits = {"reunification-plan": 1, "home-fire-escape-worksheet": 5, "power-outage-planner": 4}
+        for slug, max_pages in limits.items():
+            pg = self.page(slug)
+            try:
+                if slug == "reunification-plan":
+                    pg.select_option("#rc-copies", "4")
+                    pg.fill("#rc-outName", "Aunt Rosa")
+                pdf = pg.pdf(format="Letter", print_background=True)
+                pages = len(re.findall(rb"/Type\s*/Page(?![s])", pdf))
+                self.assertLessEqual(pages, max_pages, f"{slug} prints {pages} pages; expected at most {max_pages}")
+                pg.emulate_media(media="print")
+                hidden = pg.evaluate("[...document.querySelectorAll('.pa-head, .pa-toc, .pa-crumbs')].every(e => getComputedStyle(e).display === 'none')")
+                self.assertTrue(hidden, slug)
+            finally:
+                self.close(pg)
+
     def test_pages_work_without_javascript(self):
         pg = self.page("home-fire-escape-worksheet", js=False)
         try:
