@@ -1,0 +1,103 @@
+{
+  "schema": "fv-dispatch-r33-native-proof-ledger-v1",
+  "snapshot_utc": "2026-11-01T02:31:23Z",
+  "evidence_is_public": false,
+  "reporting_scope": "status only, no subscribers, postal address, customer identity, token or raw MIME",
+  "source_prs": [
+    175,
+    201,
+    384
+  ],
+  "wordpress": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "recent_sends_count": 0,
+    "focus_fieldbook_welcome_configured": true,
+    "focus_fieldbook_welcome_received_verified": false,
+    "subscriber_counters": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "unique_eligible_recipients": "UNKNOWN_NOT_ADDITIVE"
+  },
+  "operational_evidence": {
+    "native_editor_preview": "NOT_CAPTURED",
+    "authorized_received_eml": "NOT_RECEIVED",
+    "native_html_and_plaintext_review": "NOT_VERIFIED",
+    "footer_fv_postal": "NOT_VERIFIED",
+    "fv_business_postal_ownership": "NOT_VERIFIED",
+    "unsubscribe_in_native_eml": "NOT_VERIFIED",
+    "unsubscribe_functional_result": "NOT_VERIFIED",
+    "sender_delivery_headers": "NOT_VERIFIED",
+    "eligible_recipient_consent": "NOT_VERIFIED",
+    "explicit_final_founder_campaign_approval": false
+  },
+  "merchant_evidence": {
+    "inspire3_account_accepted": "NOT_VERIFIED",
+    "zen12_email_channel": "NOT_VERIFIED",
+    "total_focus_email_channel": "NOT_VERIFIED",
+    "zen12_link_and_sku": "NOT_VERIFIED",
+    "total_focus_link_and_sku": "NOT_VERIFIED",
+    "current_price_and_refund": "NOT_VERIFIED",
+    "approved_creative_rights": "NOT_VERIFIED",
+    "zen12_guide_published": "NOT_VERIFIED",
+    "total_focus_guide_published": "NOT_VERIFIED"
+  },
+  "issues": [
+    {
+      "number": 1,
+      "type": "editorial",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "type": "editorial",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "type": "commercial",
+      "release": "HOLD_UNSENT",
+      "merchant_release": "HOLD_MERCHANT"
+    },
+    {
+      "number": 4,
+      "type": "editorial",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "type": "commercial",
+      "release": "HOLD_UNSENT",
+      "merchant_release": "HOLD_MERCHANT"
+    },
+    {
+      "number": 6,
+      "type": "editorial",
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "conversion_measurements": {
+    "sent": 0,
+    "delivered": "UNKNOWN",
+    "open_rate": "NOT_MEASURED",
+    "click_rate": "NOT_MEASURED",
+    "affiliate_sales": "NOT_MEASURED",
+    "a_b_significance": "NOT_APPLICABLE"
+  },
+  "restrictions": [
+    "DO NOT SEND OR TEST SEND",
+    "DO NOT CREATE/PUBLISH/SCHEDULE WORDPRESS POSTS",
+    "DO NOT ALTER WORDPRESS SETTINGS",
+    "DO NOT CONTACT OR EXPORT SUBSCRIBERS",
+    "DO NOT ACTIVATE AFFILIATE EARNING LINKS",
+    "DO NOT TREAT MIME STRUCTURE AS VERIFIED ACTUAL RECEIPT",
+    "DO NOT PRINT PII"
+  ],
+  "next_action": "After new explicit founder approval only: capture native draft preview and separately authorized controlled received .eml, then offline audit privately; all release gates remain locked"
+}
