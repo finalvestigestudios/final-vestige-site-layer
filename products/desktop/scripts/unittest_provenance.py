@@ -9,6 +9,7 @@ import contextlib
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import sys
 import unittest
@@ -16,6 +17,49 @@ import unittest
 SCHEMA = "fvs-unittest-provenance-v2"
 MAX_TEST_MODULES = 256
 MAX_TEST_CASES = 20000
+
+DIAG_PREFIX = "FVS_TEST_DIAG:"
+DIAG_SCHEMA = "fvs-offline-failure-modules-v1"
+MAX_DIAG_MODULES = 12
+MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\Z")
+
+
+def _public_failure_summary(result, modules):
+    """Only code-owned module names; never exception strings, paths, or subtest data."""
+    names = set()
+    for case, _private_traceback in (*result.failures, *result.errors):
+        original = getattr(case, "test_case", case)
+        name = type(original).__module__
+        if name in modules and MODULE_RE.fullmatch(name):
+            names.add(name)
+    selected = sorted(names)
+    return {
+        "schema": DIAG_SCHEMA,
+        "phase": "execution",
+        "failures": len(result.failures),
+        "errors": len(result.errors),
+        "modules": selected[:MAX_DIAG_MODULES],
+        "omitted_module_count": max(0, len(selected) - MAX_DIAG_MODULES),
+    }
+
+
+def _discovery_summary(modules, loaded_modules):
+    """List only static, missing source-test basenames, not import exceptions."""
+    missing = sorted(name for name in modules - loaded_modules if MODULE_RE.fullmatch(name))
+    return {
+        "schema": DIAG_SCHEMA,
+        "phase": "discovery",
+        "failures": 0,
+        "errors": 0,
+        "modules": missing[:MAX_DIAG_MODULES],
+        "omitted_module_count": max(0, len(missing) - MAX_DIAG_MODULES),
+    }
+
+
+def _emit_diagnostic(data):
+    """Single bounded stdout line; parent validates schema before showing it."""
+    print(DIAG_PREFIX + json.dumps(data, sort_keys=True, separators=(",", ":")))
+
 
 
 def _cases(suite):
@@ -64,10 +108,13 @@ def run(root: Path) -> dict:
                 raise ValueError("Duplicate desktop test identity")
             loaded_modules = {_module_id(identifier) for identifier in identifiers}
             if loaded_modules != modules:
+                _emit_diagnostic(_discovery_summary(modules, loaded_modules))
                 raise ValueError("Desktop test discovery omitted a module")
             result = unittest.TestResult()
             suite.run(result)
 
+    if not result.wasSuccessful():
+        _emit_diagnostic(_public_failure_summary(result, modules))
     if not result.wasSuccessful() or result.testsRun != len(identifiers):
         raise ValueError("Desktop regression suite failed or did not execute every case")
     skipped_ids = [case.id() for case, _reason in result.skipped]
