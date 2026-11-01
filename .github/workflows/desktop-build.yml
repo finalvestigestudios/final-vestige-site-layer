@@ -77,6 +77,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_active_health_r115.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_active_health_r115.py' > /dev/null 2>&1
+      - name: R116 native Defender known-folder installation contract (normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_trusted_defender_install_r116.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_trusted_defender_install_r116.py' > /dev/null 2>&1
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -240,6 +244,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R115 active-Defender checkpoint regression FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_active_health_r115.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R115 optimized active-Defender checkpoint regression FAILED" }
+      - name: R116 native Defender known-folder installation contract (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_trusted_defender_install_r116.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R116 native Defender installation regression FAILED" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_trusted_defender_install_r116.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R116 optimized native Defender installation regression FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
