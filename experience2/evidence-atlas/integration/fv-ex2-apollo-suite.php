@@ -2,36 +2,68 @@
 /**
  * Plugin Name: Final Vestige — Apollo Research Suite (STAGING ONLY)
  * Description: Fail-closed, exact-source Research Desk + Evidence Atlas co-host shortcode; no CMS writes.
- * Version: 0.0.51-staging
+ * Version: 0.0.52-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.51-staging'); }
+if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.52-staging'); }
 
 /** Git *blob* SHA-1 (not the SHA-1 of bare file bytes). */
 function fv_ex2_apollo_git_blob(string $bytes): string {
     return sha1('blob ' . strlen($bytes) . "\0" . $bytes);
 }
 
-/** Only exact, source-reviewed PR #158 files are admitted. Do not touch that plugin's branch. */
+/**
+ * Immutable, mutually exclusive release profiles. PR #158 is the original pilot;
+ * R38 is the later custody/search version already present in the R51 ancestry.
+ * Never combine file hashes from different profiles or accept arbitrary upgrades.
+ */
+function fv_ex2_apollo_desk_profiles(): array {
+    return array(
+        'pr158-original' => array(
+            'final-vestige-ex2-research-desk.php' => 'd1879a90101b5475990132369178f42743f4b57c',
+            'templates/ledger.html' => '403d128c57b9bc82dac7c619651689070edef86c',
+            'assets/source-ledger.css' => 'b8cf00afeceba115a9e9d19044fc11dcf2890cbe',
+            'assets/source-ledger.js' => '32e757cc4dc8708397ff65ac21e89dd319781d78',
+        ),
+        'r38-custody-search' => array(
+            'final-vestige-ex2-research-desk.php' => '44a43c63ba262de4193295563f5762df6e731077',
+            'templates/ledger.html' => '4842afb84b4c993cfc4861ce7f5a7a4d7b451871',
+            'assets/source-ledger.css' => '7b0972fc3a920ded08f9783fddcfc9c609c7ff06',
+            'assets/source-ledger.js' => '57f4a639d4c37fc4355b10fe7dec085bf87c6eb7',
+            'sources/R37_PHOTO_CUSTODY_CROSSWALK.json' => 'ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea',
+        ),
+    );
+}
+
+/** Check a whole pinned profile, not an independently mixed list of approved files. */
+function fv_ex2_apollo_match_desk_pins(string $dir, array $pins): bool {
+    if (count($pins) < 4) { return false; }
+    foreach ($pins as $relative => $expected) {
+        if (!is_string($relative) || !preg_match('~^[a-zA-Z0-9_./-]+$~D', $relative)
+            || fv_ex2_apollo_unsafe_relative($relative) || !is_string($expected)
+            || !preg_match('/^[0-9a-f]{40}$/D', $expected)) { return false; }
+        $path = $dir . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relative);
+        if (!is_file($path) || !is_readable($path)) { return false; }
+        $bytes = file_get_contents($path);
+        if (!is_string($bytes) || !hash_equals($expected, fv_ex2_apollo_git_blob($bytes))) { return false; }
+    }
+    return true;
+}
+function fv_ex2_apollo_unsafe_relative(string $relative): bool {
+    foreach (explode('/', $relative) as $segment) { if ($segment === '..' || $segment === '.') { return true; } }
+    return false;
+}
+
+/** Admit only a complete, exact original PR #158 or R38 Research Desk plugin. */
 function fv_ex2_apollo_verified_desk(): ?string {
     if (!function_exists('fv_ex2_rd_shortcode') || !function_exists('fv_ex2_atlas_shortcode')) { return null; }
     $origin = (new ReflectionFunction('fv_ex2_rd_shortcode'))->getFileName();
     if (!is_string($origin) || basename($origin) !== 'final-vestige-ex2-research-desk.php') { return null; }
-    $dir = dirname($origin);
-    $pins = array(
-        'final-vestige-ex2-research-desk.php' => 'd1879a90101b5475990132369178f42743f4b57c',
-        'templates/ledger.html' => '403d128c57b9bc82dac7c619651689070edef86c',
-        'assets/source-ledger.css' => 'b8cf00afeceba115a9e9d19044fc11dcf2890cbe',
-        'assets/source-ledger.js' => '32e757cc4dc8708397ff65ac21e89dd319781d78',
-    );
-    foreach ($pins as $relative => $expected) {
-        $path = $dir . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relative);
-        if (!is_file($path) || !is_readable($path)) { return null; }
-        $data = file_get_contents($path);
-        if (!is_string($data) || !hash_equals($expected, fv_ex2_apollo_git_blob($data))) { return null; }
+    foreach (fv_ex2_apollo_desk_profiles() as $pins) {
+        if (fv_ex2_apollo_match_desk_pins(dirname($origin), $pins)) { return $origin; }
     }
-    return $origin;
+    return null;
 }
 
 /** Explicit enqueue fixes PR #158's top-level-post-only asset assumption for nested shortcodes. */
