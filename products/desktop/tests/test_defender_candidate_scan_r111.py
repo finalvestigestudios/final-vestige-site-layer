@@ -224,12 +224,18 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "_pins", return_value=(SIX, CHECKSUMS)), \
              patch.object(av, "_unchanged") as verified, \
              patch.object(av, "locate_defender", return_value=Path("scanner.exe")), \
+             patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
+             patch.object(av, "_same_engine") as scanner_verified, \
              patch.object(av, "health_check") as health, \
              patch.object(av, "scan_one") as scan:
             result = av.scan_candidates("private-dist", "private-r9", PINNED)
         self.assertEqual(scan.call_count, 6)
         self.assertEqual(health.call_count, 2)
         self.assertEqual(verified.call_count, 14)
+        self.assertEqual(scanner_verified.call_count, 14)
+        self.assertEqual(result["scanner_sha256"], "d" * 64)
+        self.assertEqual(result["scanner_custody"],
+                         "same_signed_engine_sha256_and_file_identity_observed")
         self.assertEqual([r["name"] for r in result["artifacts"]],
                          list(av.gate.EXPECTED))
         self.assertTrue(all(x["defender_custom_scan"] == "zero_exit_result_remediation_ambiguous" for x in result["artifacts"]))
@@ -248,11 +254,60 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "_pins", return_value=(SIX, CHECKSUMS)), \
              patch.object(av, "_unchanged"), \
              patch.object(av, "locate_defender", return_value=Path("scanner.exe")), \
+             patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
+             patch.object(av, "_same_engine"), \
              patch.object(av, "health_check"), \
              patch.object(av, "scan_one", side_effect=failing):
             with self.assertRaises(av.AVHold):
                 av.scan_candidates("private-dist", "private-r9", PINNED)
         self.assertEqual(len(seen), 3)
+
+    def test_strict_microsoft_signer_not_generic_substring(self):
+        self.assertIn("CN=Microsoft Corporation", av.PREFLIGHT)
+        self.assertNotIn("-notmatch 'Microsoft'", av.PREFLIGHT)
+
+    def test_scanner_fingerprint_failure_stops_privately(self):
+        with patch.object(av.custody, "fingerprint",
+                          side_effect=av.custody.EngineHold("PRIVATE PATH")):
+            with self.assertRaises(av.AVHold) as caught:
+                av._engine_snapshot(Path("private-scanner"))
+        self.assertNotIn("PRIVATE", str(caught.exception))
+
+    def test_scanner_swap_refused_privately(self):
+        with patch.object(av.custody, "require_same_engine",
+                          side_effect=av.custody.EngineHold("PRIVATE PATH")):
+            with self.assertRaises(av.AVHold) as caught:
+                av._same_engine(Path("private-scanner"), object())
+        self.assertNotIn("PRIVATE", str(caught.exception))
+
+    def test_changed_engine_before_first_scan_stops_all_six(self):
+        with patch.object(av, "require_native_win11"), \
+             patch.object(av, "_pins", return_value=(SIX, CHECKSUMS)), \
+             patch.object(av, "_unchanged"), \
+             patch.object(av, "locate_defender", return_value=Path("scanner.exe")), \
+             patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
+             patch.object(av, "_same_engine", side_effect=av.AVHold("engine changed")), \
+             patch.object(av, "health_check"), \
+             patch.object(av, "scan_one") as scanned:
+            with self.assertRaises(av.AVHold):
+                av.scan_candidates("private-dist", "private-r9", PINNED)
+        scanned.assert_not_called()
+
+    def test_changed_engine_after_first_scan_aborts_no_report(self):
+        # One health preflight check, one before scan, then the first
+        # postscan engine recheck fails before the next candidate can run.
+        with patch.object(av, "require_native_win11"), \
+             patch.object(av, "_pins", return_value=(SIX, CHECKSUMS)), \
+             patch.object(av, "_unchanged"), \
+             patch.object(av, "locate_defender", return_value=Path("scanner.exe")), \
+             patch.object(av, "_engine_snapshot", return_value=SimpleNamespace(sha256="d"*64)), \
+             patch.object(av, "_same_engine",
+                          side_effect=(None, None, av.AVHold("engine changed"))), \
+             patch.object(av, "health_check"), \
+             patch.object(av, "scan_one") as scanned:
+            with self.assertRaises(av.AVHold):
+                av.scan_candidates("private-dist", "private-r9", PINNED)
+        self.assertEqual(scanned.call_count, 1)
 
     def test_cli_failure_never_publishes_report(self):
         with patch.object(av, "prepare_report_path", return_value=Path("private.json")), \
