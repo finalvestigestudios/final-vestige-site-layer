@@ -39,3 +39,9 @@ test('reject missing evidence case',()=>assert.throws(()=>verify(candidate.repla
 test('reject developer toolbar leakage',()=>assert.throws(()=>verify(candidate+'<div class="fv-hf__studio-controls"></div>'),/development control/));
 test('reject remote executable JS',()=>assert.throws(()=>verify(candidate+'<script src="https://test.example/js.js"></script>'),/remote executable/));
 test('reject missing verified production source digest',()=>assert.throws(()=>attest(legacy,candidate,{requireSourceDigest:true}),/missing independently checked/));
+test('reject deduplicated identical legacy Focus links',()=>{
+ const twin='<a href="/focus/">Focus Fieldbook</a>';
+ const identicalLegacy='<!-- wp:html -->'+margins+'<!-- /wp:html -->'+twin+twin+subscription;
+ const deduplicated=actualFragment+'\n'+identicalLegacy.replace(twin+twin,twin);
+ assert.throws(()=>attest(identicalLegacy,deduplicated,{expectedLegacySha:SHA(identicalLegacy)}),/Focus/);
+});
