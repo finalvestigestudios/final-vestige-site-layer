@@ -178,8 +178,8 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
     def test_real_manifest_inventory_binds_source_digest(self):
         source = self.root / "synthetic.csv"
         report = self.root / "report.csv"
-        source.write_bytes(b"id,amount\\nA,10\\n")
-        report.write_bytes(b"synthetic report\\n")
+        source.write_bytes(b"id,amount\nA,10\n")
+        report.write_bytes(b"synthetic report\n")
         digest = hashlib.sha256(source.read_bytes()).hexdigest()
         output = manifest_guard.inventory_text(
             [source], [report], expected_input_digests={source: digest})
@@ -188,7 +188,7 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
 
     def test_manifest_path_ctime_mutation_still_rejected(self):
         source = self.root / "synthetic.csv"
-        source.write_bytes(b"id,amount\\nA,10\\n")
+        source.write_bytes(b"id,amount\nA,10\n")
         original = manifest_guard._metadata
         calls = 0
         def simulate_path_change(path):
