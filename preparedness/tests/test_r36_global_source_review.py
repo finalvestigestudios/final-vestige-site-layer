@@ -178,4 +178,102 @@ class Mutations(unittest.TestCase):pass
 for _name,_mutation in MUTATIONS.items():
     setattr(Mutations,'test_reject_'+_name,fail_case(_name,_mutation))
 
+
+# R36's essential blind-spot fixture: a second shared URL never cited by any
+# of the 1,959-size population (miniature here). It still must receive review.
+UNCITED_URL='https://example.org/uncited-but-conflicting-source-readings'
+SMALL_UNCITED=(1,0,4,2,1,2)
+UNCITED_INVENTORY=(4,2,2,0)
+
+def synthetic_with_uncited():
+    lib,h=synthetic()
+    extra=[]
+    for i,origin in enumerate(('cluster-one','cluster-two')):
+        record={'id':'uncited-'+str(i), 'url':UNCITED_URL,'_origin':origin,
+                'supports':'UNREVIEWED source scope '+str(i),'notes':'Unique contributor note '+str(i),
+                'verified_on':None,'human_link_check':False,'publisher':'Unverified historical source'}
+        lib.source_variants[record['id']]=[copy.deepcopy(record)]
+        extra.append({'origin':origin,'source_file':FILES[origin],
+                      'row_index':1,'source':{k:copy.deepcopy(v) for k,v in record.items() if k!='_origin'}})
+    group={'url':UNCITED_URL,'canonical_url':UNCITED_URL,'review_status':gate.PENDING,
+           'reviewer':None,'reviewed_on':None,'variants':extra,
+           'identities':[{'origin':e['origin'],'id':e['source']['id'],
+                          'row_index':e['row_index']} for e in extra]}
+    lib.crosswalk['groups'].append(group)
+    lib.crosswalk_groups[UNCITED_URL]=copy.deepcopy(group)
+    lib.crosswalk.update(raw_source_rows=4,unique_source_urls=2,duplicate_url_groups=2)
+    h['counts']['shared_url_groups_unreviewed']=2
+    h['review_task_counts']['global_shared_url_groups_unreviewed']=2
+    h['fingerprint_sha256']=gate.sha({k:v for k,v in h.items() if k!='fingerprint_sha256'})
+    return lib,h
+
+def validate_uncited(lib,h,inventory=UNCITED_INVENTORY):
+    return gate.build_global_source_review(lib,h,expected=SMALL_UNCITED,
+                                           inventory=inventory,source_files=FILES)
+
+class UncitedReviewCoverage(unittest.TestCase):
+    def setUp(self):
+        self.lib,self.h=synthetic_with_uncited()
+        self.output=validate_uncited(self.lib,self.h)
+        self.by_url={c['source_url']:c for c in self.output['globally_unreviewed_shared_url_cards']}
+    def test_both_global_groups_retained(self):
+        self.assertEqual(len(self.by_url),2)
+    def test_uncited_group_not_dropped(self):
+        self.assertIn(UNCITED_URL,self.by_url)
+    def test_uncited_group_has_no_claim_case_ids(self):
+        self.assertEqual(self.by_url[UNCITED_URL]['cited_claim_review_case_ids'],[])
+    def test_uncited_group_has_no_relationship_case_ids(self):
+        self.assertEqual(self.by_url[UNCITED_URL]['cited_relationship_ids'],[])
+    def test_uncited_group_is_explicitly_unreviewed(self):
+        self.assertEqual(self.by_url[UNCITED_URL]['review_state'],'NOT_STARTED')
+    def test_uncited_group_not_laundered_as_cited(self):
+        self.assertIs(self.by_url[UNCITED_URL]['used_in_any_citation'],False)
+    def test_cited_group_still_cited(self):
+        self.assertIs(self.by_url[URL]['used_in_any_citation'],True)
+    def test_uncited_variant_notes_not_lost(self):
+        self.assertEqual({v['original_full_source_record']['notes'] for v in self.by_url[UNCITED_URL]['distinct_original_variants']},
+                         {'Unique contributor note 0','Unique contributor note 1'})
+    def test_uncited_unverified_metadata_preserved(self):
+        self.assertTrue(all(v['original_full_source_record']['verified_on'] is None
+                            for v in self.by_url[UNCITED_URL]['distinct_original_variants']))
+    def test_uncited_census_exact(self):
+        self.assertEqual(self.output['counts']['global_shared_url_groups'],2)
+    def test_no_false_reconciliation(self):
+        self.assertEqual(self.output['global_shared_url_groups_reviewed_by_human'],0)
+    def test_global_cited_uncited_partition(self):
+        self.assertEqual((self.output['shared_url_groups_with_cited_sources'],
+                          self.output['shared_url_groups_without_cited_sources']),(1,1))
+    def test_global_sha_stable_across_runs(self):
+        self.assertEqual(self.output,validate_uncited(self.lib,self.h))
+    def test_no_input_mutation_from_generation(self):
+        original=copy.deepcopy((self.lib,self.h));validate_uncited(self.lib,self.h)
+        self.assertEqual((self.lib,self.h),original)
+    def test_removing_uncited_group_is_hard_failure(self):
+        self.lib.crosswalk['groups'].pop()
+        with self.assertRaises(gate.GlobalSourceHold):validate_uncited(self.lib,self.h)
+    def test_removing_uncited_source_is_hard_failure(self):
+        self.lib.source_variants.pop('uncited-0')
+        with self.assertRaises(gate.GlobalSourceHold):validate_uncited(self.lib,self.h)
+    def test_uncited_row_reading_depth_mutation_is_hard_failure(self):
+        self.lib.crosswalk['groups'][1]['variants'][0]['source']['supports']='laundered'
+        with self.assertRaises(gate.GlobalSourceHold):validate_uncited(self.lib,self.h)
+    def test_uncited_forged_review_hard_failure(self):
+        self.lib.crosswalk['groups'][1]['reviewer']='FAKE HUMAN'
+        with self.assertRaises(gate.GlobalSourceHold):validate_uncited(self.lib,self.h)
+    def test_duplicate_id_groups_remain_distinct(self):
+        b=self.lib.source_variants.pop('uncited-1')[0]
+        b['id']='uncited-0'
+        self.lib.source_variants['uncited-0'].append(b)
+        self.lib.crosswalk['groups'][1]['variants'][1]['source']['id']='uncited-0'
+        self.lib.crosswalk['groups'][1]['identities'][1]['id']='uncited-0'
+        self.lib.crosswalk_groups[UNCITED_URL]=copy.deepcopy(self.lib.crosswalk['groups'][1])
+        self.lib.crosswalk['duplicate_id_groups']=1
+        output=validate_uncited(self.lib,self.h,inventory=(4,2,2,1))
+        self.assertEqual(output['counts']['repeated_source_id_groups'],1)
+        self.assertEqual(len(next(c for c in output['globally_unreviewed_shared_url_cards']
+                                  if c['source_url']==UNCITED_URL)['distinct_original_variants']),2)
+    def test_crosswalk_counter_must_include_uncited(self):
+        self.lib.crosswalk['duplicate_url_groups']=1
+        with self.assertRaises(gate.GlobalSourceHold):validate_uncited(self.lib,self.h)
+
 if __name__=='__main__':unittest.main()
