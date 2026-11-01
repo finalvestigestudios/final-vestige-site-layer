@@ -354,6 +354,118 @@ class ManualR109(unittest.TestCase):
         self.mutate_witness("observation", "Z" * (qa.MAX_OBSERVATION_CHARS + 1))
         with self.assertRaises(qa.ReviewHold): self.verify()
 
+    # R121: a local R9 hash is not an independent provenance anchor.
+    # Every manual template and verification intake must explicitly receive
+    # the separately communicated, lowercase, exact SHA-256 report digest.
+    def r121_load(self, pin=None, *, report_bytes=None, hashes=None, checksums=None):
+        raw = self.raw if report_bytes is None else report_bytes
+        r9 = self.dir / "r121-r9-report.json"
+        r9.write_bytes(raw)
+        if hashes is None:
+            hashes = self.hashes
+        fake_inventory = {
+            "checksums_sha256": (self.report["checksums_sha256"] if checksums is None else checksums),
+            "artifacts": [{"name": name, "sha256": hashes[name]} for name in qa.ALL],
+        }
+        fake_gate = __import__("types").SimpleNamespace(
+            verify=lambda _dist, smoke=False: fake_inventory)
+        with patch.dict(sys.modules, {"release_gate": fake_gate}):
+            return qa.load_custody(
+                self.dir, r9, DIGEST(self.raw) if pin is None else pin)
+
+    def test_r121_external_pin_rejects_missing(self):
+        with self.assertRaises(qa.ReviewHold): qa.external_r9_pin(None)
+
+    def test_r121_external_pin_rejects_boolean(self):
+        with self.assertRaises(qa.ReviewHold): qa.external_r9_pin(True)
+
+    def test_r121_external_pin_rejects_uppercase(self):
+        with self.assertRaises(qa.ReviewHold): qa.external_r9_pin("A" * 64)
+
+    def test_r121_external_pin_rejects_whitespace(self):
+        with self.assertRaises(qa.ReviewHold): qa.external_r9_pin(" " + "a" * 64)
+
+    def test_r121_external_pin_rejects_nonhex(self):
+        with self.assertRaises(qa.ReviewHold): qa.external_r9_pin("g" * 64)
+
+    def test_r121_external_pin_rejects_short_pin(self):
+        with self.assertRaises(qa.ReviewHold): qa.external_r9_pin("a" * 63)
+
+    def test_r121_external_pin_preserves_exact_lowercase_digest(self):
+        pin = DIGEST(self.raw)
+        self.assertEqual(qa.external_r9_pin(pin), pin)
+
+    def test_r121_independent_pin_allows_matching_synthetic_six_candidates(self):
+        report, hashes, raw = self.r121_load()
+        self.assertEqual(raw, self.raw)
+        self.assertEqual(hashes, self.hashes)
+        self.assertEqual(report["status"], "windows_smoke_passed")
+        self.assertIs(report["release_authorized"], False)
+
+    def test_r121_independent_pin_rejects_valid_but_different_digest(self):
+        with self.assertRaises(qa.ReviewHold):
+            self.r121_load(pin=DIGEST(b"another evidence record"))
+
+    def test_r121_independent_pin_rejects_equivalent_json_with_modified_bytes(self):
+        # Appending legal JSON whitespace does not change decoded values but
+        # MUST break the externally transmitted byte-for-byte SHA-256 pin.
+        with self.assertRaises(qa.ReviewHold):
+            self.r121_load(report_bytes=self.raw + b" ")
+
+    def test_r121_independent_pin_rejects_candidate_hash_drift(self):
+        changed = dict(self.hashes)
+        changed[qa.FREE[0]] = DIGEST(b"replaced LedgerDiff x64 image")
+        with self.assertRaises(qa.ReviewHold):
+            self.r121_load(hashes=changed)
+
+    def test_r121_independent_pin_rejects_checksum_inventory_drift(self):
+        with self.assertRaises(qa.ReviewHold):
+            self.r121_load(checksums=DIGEST(b"replaced checksum inventory"))
+
+    def test_r121_cli_missing_pin_holds_without_touching_custody(self):
+        review = self.dir / "r121-review.json"
+        err = io.StringIO()
+        with patch.object(qa, "load_custody", side_effect=AssertionError("should not run")) as gate:
+            with redirect_stderr(err):
+                status = qa.main(["template", "--dist", str(self.dir),
+                                  "--r9-report", str(self.dir / "private-r9.json"),
+                                  "--review", str(review)])
+        self.assertEqual(status, 1)
+        gate.assert_not_called()
+        self.assertFalse(review.exists())
+        self.assertEqual(err.getvalue().strip(), qa.ERROR)
+
+    def test_r121_cli_verify_also_requires_separate_pin(self):
+        err = io.StringIO()
+        with patch.object(qa, "load_custody", side_effect=AssertionError("should not run")) as gate:
+            with redirect_stderr(err):
+                status = qa.main(["verify", "--dist", str(self.dir),
+                                  "--r9-report", str(self.dir / "private-r9.json"),
+                                  "--review", str(self.dir / "review.json"),
+                                  "--witnesses", str(self.dir)])
+        self.assertEqual(status, 1)
+        gate.assert_not_called()
+        self.assertEqual(err.getvalue().strip(), qa.ERROR)
+
+    def test_r121_cli_template_passes_pin_and_never_sets_release_authorized(self):
+        dist = self.dir / "six-executables"
+        dist.mkdir()
+        review = self.dir / "r121-review.json"
+        pin = DIGEST(self.raw)
+        with patch.object(qa, "load_custody",
+                          return_value=(self.report, self.hashes, self.raw)) as custody:
+            with __import__("contextlib").redirect_stdout(io.StringIO()):
+                status = qa.main(["template", "--dist", str(dist),
+                                  "--r9-report", str(self.dir / "private-r9.json"),
+                                  "--expected-r9-sha256", pin,
+                                  "--review", str(review)])
+        self.assertEqual(status, 0)
+        self.assertEqual(custody.call_args.args[2], pin)
+        written = json.loads(review.read_text())
+        self.assertEqual(written["r9_report_sha256"], pin)
+        self.assertEqual(sum(len(x["checks"]) for x in written["apps"].values()), 46)
+        self.assertNotIn("release_authorized", written)
+
     def test_no_assert_statements_in_admission_logic(self):
         import ast
         module = ast.parse(MOD.read_text())

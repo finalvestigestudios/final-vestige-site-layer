@@ -1,13 +1,15 @@
 """Private Windows 11 six-app manual QA custody; NEVER authorizes distribution.
 
 This deliberately cannot certify physical keyboard, NVDA, contrast, AV, signing,
-licensing or human independence. It binds reviewer declarations to one exact R9
-candidate inventory and *local* witness hashes, without uploading any evidence.
+licensing or human independence. A separately transmitted R9 SHA-256 is
+mandatory for both template and verification; merely matching that hash cannot
+establish an independent witness. Local witness bytes never leave the machine.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
+import hmac
 import json
 import os
 import platform
@@ -255,11 +257,26 @@ def validate_review(review: dict, template: dict, witnesses: Path,
             "claims": "Reviewer-reported, checksum-bound private notes; NOT independently witnessed"}
 
 
-def load_custody(dist: Path, r9_path: Path) -> tuple[dict, dict, bytes]:
-    # R9 proof contains no executable bytes. Independently re-check all six
-    # current on-disk binaries via the existing source-owned release gate.
+def external_r9_pin(value: str) -> str:
+    """Require a caller-supplied out-of-band SHA-256, never infer it locally.
+
+    This tests digest equality, NOT whether the operator truly sourced the
+    claimed pin from an independent, authenticated QD-approved channel.
+    """
+    if type(value) is not str or HEX.fullmatch(value) is None:
+        raise ReviewHold("A separate lowercase 64-hex R9 evidence pin is required")
+    return value
+
+
+def load_custody(dist: Path, r9_path: Path,
+                 expected_r9_sha256: str) -> tuple[dict, dict, bytes]:
+    # R9 proof is not an independent anchor when a tool re-hashes its own
+    # local report. The separately supplied digest is mandatory at intake.
+    expected = external_r9_pin(expected_r9_sha256)
     try:
         report_raw = _bytes(r9_path, MAX_REPORT_BYTES)
+        if not hmac.compare_digest(_sha(report_raw), expected):
+            raise ReviewHold("R9 report differs from the separate custody pin")
         sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
         from release_gate import verify
         report = _strict_json(report_raw)
@@ -294,11 +311,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("action", choices=("template", "verify"))
     parser.add_argument("--dist", type=Path, required=True)
     parser.add_argument("--r9-report", type=Path, required=True)
+    # Deliberately not argparse-required: missing pins fail with the same
+    # redacted HOLD message as other privacy-sensitive custody failures.
+    parser.add_argument("--expected-r9-sha256")
     parser.add_argument("--review", type=Path, required=True)
     parser.add_argument("--witnesses", type=Path)
     args = parser.parse_args(argv)
     try:
-        report, actual, report_raw = load_custody(args.dist, args.r9_report)
+        report, actual, report_raw = load_custody(
+            args.dist, args.r9_report, external_r9_pin(args.expected_r9_sha256))
         template = make_template(report, actual, report_raw)
         if args.action == "template":
             # Do not write candidate directory; never overwrite an existing QA record.
