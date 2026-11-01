@@ -52,7 +52,7 @@ def build(destination: Path):
     shutil.copyfile(HERE/SOURCE_FILES[0], dest/SOURCE_FILES[0])
     for fn in SOURCE_FILES[1:]: shutil.copyfile(HERE/fn, assets/fn)
     outputs={str(p.relative_to(destination)):sha256(p) for p in sorted(dest.rglob('*')) if p.is_file()}
-    manifest={'schema':'fv.ex2.apollo.wp-stage.r45.v1','release':'STAGING_HOLD',
+    manifest={'schema':'fv.ex2.apollo.wp-stage.r46.v1','release':'STAGING_HOLD',
        'source_crosswalk_blob':build_atlas.EXPECTED_BLOB,'source_records':list(build_atlas.IDS),
        'media_rights_unreviewed':6,'embedded_images':0,'geographic_pins':0,
        'physical_wordpress_install':'NOT_TESTED','file_sha256':outputs}
