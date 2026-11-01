@@ -1,0 +1,63 @@
+id,group,claim,classification,source,status,copy,action
+1,Zen12,12-minute recording length,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,Do not imply one-hour benefit equivalence
+2,Zen12,Twelve progressive levels,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,Not independent progression efficacy
+3,Zen12,Four formats per level,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,List format choices accurately
+4,Zen12,Relaxation music,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,Audio preference not outcome
+5,Zen12,Guided meditation,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,Audio preference not outcome
+6,Zen12,Nature sounds,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,Audio preference not outcome
+7,Zen12,White noise,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE,Audio preference not outcome
+8,Zen12,Beginner first six levels,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+9,Zen12,Beginner 24 MP3 files,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+10,Zen12,Premium all twelve levels,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+11,Zen12,Premium 48 MP3 files,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+12,Zen12,Advanced final six levels,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+13,Zen12,Advanced 24 MP3 files,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+14,Zen12,Advanced aimed at experienced users,SELLER_SPEC,https://zen12.com/hnp,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+15,Zen12,Quick-start guide,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+16,Zen12,User manual,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+17,Zen12,Premium audio guides,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+18,Zen12,Premium one-hour training call,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+19,Zen12,Bonus items,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+20,Zen12,Seller claims lifetime support,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+21,Zen12,Seller advertises one-year money-back guarantee,SELLER_SPEC,https://zen12.com/getstarted,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,No fulfillment or refund test
+22,Zen12,One hour benefits in twelve minutes,SELLER_EFFICACY,https://zen12.com/hnp,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+23,Zen12,Audio automatically meditates for user,SELLER_EFFICACY,https://zen12.com/hnp,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+24,Zen12,Audio controls user brainwaves,SELLER_EFFICACY,https://zen12.com/research,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+25,Zen12,Instant stress or anxiety relief,SELLER_EFFICACY,https://zen12.com/about,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+26,Zen12,Meditation health or treatment outcomes,SELLER_EFFICACY,https://zen12.com/hnp,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+27,Zen12,Creativity guaranteed,SELLER_EFFICACY,https://zen12.com/hnp,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+28,Zen12,Future financial gains,SELLER_EFFICACY,https://inspire3.com/,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+29,Zen12,Specific medically beneficial brain states,SELLER_EFFICACY,https://zen12.com/research,UNSUBSTANTIATED_PRODUCT_SPECIFIC,EXCLUDE,Need adequate independent product-specific studies
+30,Independent,2023 review includes 14 heterogeneous EEG studies,GENERAL_SCIENCE,https://pubmed.ncbi.nlm.nih.gov/37205669/,INDEPENDENT_PUBLICATION,CONTEXT,Not a Zen12 product test
+31,Independent,2023 review five supportive eight contradictory one mixed,GENERAL_SCIENCE,https://pubmed.ncbi.nlm.nih.gov/37205669/,INDEPENDENT_PUBLICATION,CONTEXT,Do not equate EEG outcome with meditation
+32,Independent,Meditation risk research has limitations,GENERAL_SCIENCE,https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety,PUBLIC_HEALTH_CONTEXT,CONTEXT,General practice not branded track
+33,Merchant,Public checkout asks mobile number,CHECKOUT_OBSERVATION,https://zen12.com/getstarted,OBSERVED_PUBLIC_FIELD,ATTRIBUTE,No form submission or actual consent test
+34,Merchant,Public checkout displays dynamic countdown,CHECKOUT_OBSERVATION,https://zen12.com/getstarted,OBSERVED_PUBLIC_FIELD,EXCLUDE,Do not create scarcity
+35,Merchant,Public offer displays sale/discount prices,CHECKOUT_OBSERVATION,https://zen12.com/hnp,OBSERVED_DYNAMIC,EXCLUDE,Price may change; no guaranteed savings
+36,Merchant,Order support response quality,FULFILLMENT,https://zen12.com/getstarted,NOT_TESTED,EXCLUDE,Needs independent transaction/support review
+37,Merchant,Refund fulfillment success,FULFILLMENT,https://zen12.com/getstarted,NOT_TESTED,EXCLUDE,Request policy text before promotion
+38,Merchant,Audio device compatibility,FULFILLMENT,https://zen12.com/about,UNTESTED,ATTRIBUTE_ONLY,Ask seller; never assert technical tests
+39,Merchant,Headphones not required,SELLER_SPEC,https://zen12.com/about,OBSERVED_SELLER,ATTRIBUTE_WITH_CAUTION,Confirm mechanism-specific claims
+40,Merchant,Official company names Zen12,SELLER_CATALOG,https://inspire3.com/,OBSERVED_SELLER,ATTRIBUTE,Does not authorize affiliate activity
+41,Merchant,Official company names Hypnosis Live,SELLER_CATALOG,https://inspire3.com/,OBSERVED_SELLER,ATTRIBUTE,No exact product presell in this lane
+42,Merchant,Official company names Brainwave Shots,SELLER_CATALOG,https://inspire3.com/,OBSERVED_SELLER,ATTRIBUTE,Not independent evidence
+43,Affiliate,Generic public affiliate signup exists,NETWORK_PUBLIC,https://affiliates.inspire3.com/,OBSERVED_PUBLIC,EDITOR_ONLY,No verified Final Vestige partner acceptance
+44,Affiliate,Final Vestige acceptance,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,HOLD,Written acceptance required
+45,Affiliate,Approved Zen12 earning URL,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,HOLD,Exact approved SKU/link required
+46,Affiliate,Website promotion permission,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,HOLD,Written channel-specific terms
+47,Affiliate,TikTok promotion permission,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,HOLD,Written channel-specific terms
+48,Affiliate,Email marketing permission,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,HOLD,Coordinate only after Issue174 approved
+49,Affiliate,Creative swipe permissions,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,HOLD,No other-product swipe reuse
+50,Affiliate,Payment commissions or EPCs to FV,NETWORK_PERMISSION,https://affiliates.inspire3.com/,UNVERIFIED,EXCLUDE,Public averages not personal rates
+51,Compliance,Affiliate material connection disclosure,FTC_REQUIREMENT,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,PUBLIC_GUIDANCE,REQUIRE_NEAR_LINK,FTC clarity and proximity
+52,Compliance,Health outcome substantiation,FTC_REQUIREMENT,https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance,PUBLIC_GUIDANCE,REQUIRE_BEFORE_CLAIM,Competent evidence needed
+53,Compliance,No fabricated firsthand use,FTC_REQUIREMENT,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,PUBLIC_GUIDANCE,PROHIBIT,Don't imply seller testing
+54,Compliance,Seller testimonial evidence,FTC_REQUIREMENT,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,UNTESTED,EXCLUDE,No quote reuse or fake typicality
+55,History,Faraday 1853 hand-first indicator,PRIMARY_HISTORY,https://en.wikisource.org/wiki/Experimental_Researches_in_Chemistry_and_Physics/Table-turning,PRIMARY_SOURCE,INDEPENDENT_ARTICLE,No Zen12 efficacy extrapolation
+56,History,Carpenter 1852 suggestion and muscular motion,PRIMARY_HISTORY,https://wellcomecollection.org/works/k532hmn2,PRIMARY_CATALOG,INDEPENDENT_ARTICLE,Not full modern mechanism
+57,History,Pendulum visual detection accuracy near chance,PEER_REVIEWED,https://academic.oup.com/nc/article/2017/1/nix014/4060585,PUBLICATION,INDEPENDENT_ARTICLE,Sample 80 and task specific
+58,History,Ouija eye tracking and group agency,PEER_REVIEWED,https://link.springer.com/article/10.1007/s11097-018-9585-8,PUBLICATION,INDEPENDENT_ARTICLE,Field study limitations
+59,History,Puységur archive 153 rows 16 dossiers,LIVE_CMS,https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/,AUTHENTICATED_READ_ONLY,INDEPENDENT_ARTICLE,Historical archive not treatment
+60,Funnel,Existing Focus page with Jetpack,LIVE_CMS,https://finalvestige.com/focus/,AUTHENTICATED_READ_ONLY,ALLOW_EXISTING_ONLY,No duplicate signup form
+61,Release,Founder editorial and publication approval,PERMISSION,https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171,NOT_GRANTED,HOLD,Draft PR only
+62,Release,Live original MP4 VTT synchronization,ACCESSIBILITY,https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171,NOT_VERIFIED,HOLD,First-party host plus caption QA

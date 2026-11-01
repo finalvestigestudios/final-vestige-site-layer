@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {COLLECTION_ENABLED,MIN_REPORTING_CELL,validateSyntheticEvent,summarizeSyntheticOnly,recordRealVisitorEvent} from './privacy-synthetic.mjs';
+const okay={source:'organic',topic:'zen12-guide',variant:'text',action:'guide-read'};
+test('collection is hard off and threshold is at least 20',()=>{assert.equal(COLLECTION_ENABLED,false);assert.equal(MIN_REPORTING_CELL,20)});
+test('valid categorical input canonicalized and frozen',()=>{const x=validateSyntheticEvent(okay);assert.deepEqual(x,okay);assert.equal(Object.isFrozen(x),true)});
+test('emails rejected',()=>assert.throws(()=>validateSyntheticEvent({...okay,email:'visitor@example.com'})));
+test('IP, URL and referrer rejected',()=>{for(const key of ['ip','url','referrer','query','sessionId','userAgent'])assert.throws(()=>validateSyntheticEvent({...okay,[key]:'value'}))});
+test('nonallowlisted values rejected',()=>assert.throws(()=>validateSyntheticEvent({...okay,topic:'hypnosis-superpower'})));
+test('prototype pollution rejected',()=>assert.throws(()=>validateSyntheticEvent(Object.assign(Object.create({other:true}),okay))));
+test('missing fields rejected',()=>assert.throws(()=>validateSyntheticEvent({source:'organic'})));
+test('null and arrays rejected',()=>{assert.throws(()=>validateSyntheticEvent(null));assert.throws(()=>validateSyntheticEvent([okay]))});
+test('nineteen synthetic records suppressed',()=>{const r=summarizeSyntheticOnly(Array.from({length:19},()=>okay));assert.equal(r.visible.length,0);assert.equal(r.withheldCells,1)});
+test('twenty synthetic records displayed without identifiers',()=>{const r=summarizeSyntheticOnly(Array.from({length:20},()=>okay));assert.equal(r.visible[0].n,20);assert.equal(r.visible[0].source,'organic')});
+test('mixed cohort does not leak small cells',()=>{const r=summarizeSyntheticOnly([...Array.from({length:20},()=>okay),{...okay,source:'tiktok'}]);assert.equal(r.visible.length,1);assert.equal(r.withheldCells,1)});
+test('threshold cannot be weakened',()=>{assert.throws(()=>summarizeSyntheticOnly([okay],1));assert.throws(()=>summarizeSyntheticOnly([okay],19))});
+test('real event collector is inoperative',()=>assert.throws(()=>recordRealVisitorEvent(),/HARD_OFF/));
