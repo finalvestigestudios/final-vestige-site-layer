@@ -18,9 +18,11 @@ from report_evidence import prepare_report_path, publish_report
 
 
 PREFIX = "FVS_R104_TOOLCHAIN:"
-PHASES = ("runtime_file", "distribution_file", "distribution_inventory",
-          "snapshot", "evidence_preflight", "evidence_atomic_publish",
-          "capture", "verify")
+PHASES = ("runtime_file",
+          "runtime_dev", "runtime_ino", "runtime_mode", "runtime_nlink",
+          "runtime_size", "runtime_mtime_ns", "runtime_ctime_ns",
+          "distribution_file", "distribution_inventory", "snapshot",
+          "evidence_preflight", "evidence_atomic_publish", "capture", "verify")
 
 
 class SyntheticDistribution:
@@ -80,6 +82,26 @@ def diagnose():
             manifest = home / "toolchain-custody.json"
             evidence = home / "standalone-evidence.json"
             phase("runtime_file", lambda: gate._file_record(runtime))
+            # Only synthetic pathname-vs-descriptor stat *field agreement*
+            # is exposed. Never emit raw metadata, paths or exceptions.
+            fd = None
+            try:
+                path_stat = runtime.lstat()
+                fd = os.open(runtime, os.O_RDONLY | getattr(os, "O_BINARY", 0))
+                descriptor_stat = os.fstat(fd)
+                for name in ("dev", "ino", "mode", "nlink", "size",
+                             "mtime_ns", "ctime_ns"):
+                    attribute = "st_" + name
+                    statuses["runtime_" + name] = (
+                        "PASS" if getattr(path_stat, attribute)
+                        == getattr(descriptor_stat, attribute) else "BLOCKED")
+            except Exception:
+                for name in ("dev", "ino", "mode", "nlink", "size",
+                             "mtime_ns", "ctime_ns"):
+                    statuses["runtime_" + name] = "BLOCKED"
+            finally:
+                if fd is not None:
+                    os.close(fd)
             phase("distribution_file",
                   lambda: gate._file_record(installed / "crypto" / "__init__.py"))
             phase("distribution_inventory",
