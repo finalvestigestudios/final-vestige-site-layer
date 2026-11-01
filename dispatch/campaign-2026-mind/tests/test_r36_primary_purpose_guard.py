@@ -19,11 +19,11 @@ def fixture():
         manifest['issues'].append({'number': n, 'subject': f'Subject {n}', 'preheader': f'Preview {n}',
                                    'kind': kind, 'editorial_cta': cta,
                                    'publish_state': 'hold', 'merchant_affiliate_url': None})
-        disclosure = '**Commercial disclosure:** If you buy through the guide, Final Vestige may earn a commission.\\n' if n in G.OFFER else ''
-        texts[n] = (f'> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**\\n'
-                    f'**Subject:** Subject {n}\\n**Preheader:** Preview {n}\\n'
-                    f'**Content type:** {kind}\\nSource context.\\n{disclosure}Read {cta}\\n'
-                    f'**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**\\n'
+        disclosure = '**Commercial disclosure:** If you buy through the guide, Final Vestige may earn a commission.\n' if n in G.OFFER else ''
+        texts[n] = (f'> **STATUS: UNSENT DRAFT — DO NOT PUBLISH OR EMAIL**\n'
+                    f'**Subject:** Subject {n}\n**Preheader:** Preview {n}\n'
+                    f'**Content type:** {kind}\nSource context.\n{disclosure}Read {cta}\n'
+                    f'**Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.**\n'
                     f'Sender Final Vestige Studios. Address: {G.POSTAL} Unsubscribe: {G.OPT_OUT}')
     return manifest, texts
 
@@ -73,8 +73,8 @@ class R36PrimaryPurpose(unittest.TestCase):
 
     def test_disclosure_after_guide_rejected(self):
         m,t=fixture()
-        sentence='**Commercial disclosure:** If you buy through the guide, Final Vestige may earn a commission.\\n'
-        t[5]=t[5].replace(sentence,'')+'\\n'+sentence
+        sentence='**Commercial disclosure:** If you buy through the guide, Final Vestige may earn a commission.\n'
+        t[5]=t[5].replace(sentence,'')+'\n'+sentence
         self.assertFalse(G.inspect(m,t)['structural_integrity'])
 
     def test_premature_publication_rejected(self):
