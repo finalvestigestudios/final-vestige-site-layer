@@ -14,7 +14,7 @@ const fragmentSha=SHA(fragment);
 const marginTags=Array.from({length:72},(_,i)=>`<span class="fv-margin-strip__item" style="--i:${i}">Archive record ${i}</span>`).join('\n');
 const MARGIN_BLOCK=`<!-- wp:html -->\n<div class="fv-margin-strip" role="region" aria-label="Hidden in the Margins">${marginTags}</div>\n<!-- /wp:html -->`;
 const HERO=`<!-- wp:html -->\n<section class="fv-studios-hero" aria-labelledby="fv-studios-title">\n<h1 id="fv-studios-title">Find what others miss.</h1><p>Original hero, to be replaced only here.</p>\n<style>.fv-studios-hero{background:#070b0a}</style>\n</section>\n<!-- /wp:html -->`;
-const CTA=`<!-- wp:html -->\n<section class="fv-focus-cta"><h2>Seven Day Focus Fieldbook</h2><a href="/focus/">Get the fieldbook</a><a href="/focus/">Learn more</a></section>\n<!-- /wp:html -->`;
+const CTA=`<!-- wp:html -->\n<section class="fv-focus-cta"><h2>Seven Day Focus Fieldbook</h2><a href="/focus/">Get the fieldbook</a><a class="fv-focus-cta__art" href="/focus/" tabindex="-1" aria-hidden="true">Cover artwork</a></section>\n<!-- /wp:html -->`;
 const JETPACK=`<!-- wp:group --><div><p>Weekly Dispatch</p><!-- wp:jetpack/subscriptions {"className":"is-style-split"} /--></div><!-- /wp:group -->`;
 const FEED=`<!-- wp:query {"query":{"postType":"post"}} --><section class="archive-feed">Recent investigations</section><!-- /wp:query -->`;
 const SCHEMA=`<!-- wp:html -->\n<script type="application/ld+json">{"@type":"Organization","name":"Final Vestige Studios"}</script>\n<!-- /wp:html -->`;
@@ -63,6 +63,8 @@ test('reject hidden container around protected Margins',()=>assert.throws(()=>at
 test('reject display:none container around protected Margins',()=>assert.throws(()=>attestCandidate(candidate.replace(MARGIN_BLOCK,`<div style="display: none">${MARGIN_BLOCK}</div>`)),/concealed/));
 test('reject inert template around all protected blocks',()=>assert.throws(()=>attestCandidate(candidate.replace(JETPACK,`<template>${JETPACK}</template>`)),/concealed/));
 test('reject aria-hidden Focus links',()=>assert.throws(()=>attestCandidate(candidate.replace(CTA,`<div aria-hidden="true">${CTA}</div>`)),/concealed/));
+test('decorative self-hidden Focus artwork preserved while primary CTA stays visible',()=>{assert.ok(CTA.includes('fv-focus-cta__art'));assert.equal(attestCandidate().original_focus_links,2);});
+test('reject decorative art anchor hidden without intentional tabindex semantics',()=>{const x=candidate.replace('tabindex="-1" aria-hidden="true"','aria-hidden="true"');const old=legacy.replace('tabindex="-1" aria-hidden="true"','aria-hidden="true"');assert.throws(()=>attest(old,x,{expectedLegacySha:SHA(old)}),/concealed/);});
 test('reject visibility hidden Jetpack block',()=>assert.throws(()=>attestCandidate(candidate.replace(JETPACK,`<div style="visibility:hidden">${JETPACK}</div>`)),/concealed/));
 test('reject opacity zero Focus blocks',()=>assert.throws(()=>attestCandidate(candidate.replace(CTA,`<section style="opacity:0">${CTA}</section>`)),/concealed/));
 test('reject collapsed details with preserved subscription',()=>assert.throws(()=>attestCandidate(candidate.replace(JETPACK,`<details>${JETPACK}</details>`)),/concealed/));
