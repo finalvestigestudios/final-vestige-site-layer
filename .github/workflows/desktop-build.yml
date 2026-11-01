@@ -61,6 +61,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r122.py
           python -OO products/desktop/scripts/safe_unittest_r122.py
+      - name: R123 read-only Win11 progress custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r123.py
+          python -OO products/desktop/scripts/safe_unittest_r123.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -228,6 +232,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R122 private witness writer source regression FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r122.py
           if ($LASTEXITCODE -ne 0) { throw "R122 optimized private witness writer regression FAILED" }
+      - name: R123 read-only Win11 progress custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r123.py
+          if ($LASTEXITCODE -ne 0) { throw "R123 source progress custody regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r123.py
+          if ($LASTEXITCODE -ne 0) { throw "R123 optimized progress custody regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
