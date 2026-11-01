@@ -1,0 +1,8 @@
+# R31 QA provenance
+- Parent draft PR #370 `27b0c79205544d39e0b58d86864b6fd1b6593b75`, source GitHub-connected `manifest.json` blob `2fe3c10a26cb2c9e2406e8444a5734eabb21f209` and `delivery/wordpress_excerpt_copy.json` blob `32bd7922dd60b6e85594809afbe6a1d305943ce4`.
+- Independently executed **20 pure-function V8 assertions** and rejected **14 deliberately unsafe mutations** against the actual retrieved six-edition manifest and optional excerpts. Code under `route_audit.cjs` has no I/O in its exported audit function.
+- Existing archived R28 baseline Python tests locally independently rerun from mounted evidence with restored R23/R25 Gutenberg proof fixture: **134 passed**, a reconstruction, **NOT exact PR #370 head**. Initial archive-only reconstruction failed because the R28 ZIP omitted an R25 bridge fixture; resolved by restoring its documented archived source; no false green claimed.
+- Live read-only WordPress site status/settings 2026-11-01T00:34Z. Read `/dispatch/` page 523, `/focus/` page 1579 and `/editorial-standards/` page 17 via authenticated connector. All remain published, untouched.
+- Read-only Gmail searches for actual Welcome/Dispatch and partner approval found October 25 WordPress *confirmation* only; **no final welcome, native newsletter or merchant email approval**.
+- Static review HTML is not a received MIME and cannot validate real footer/unsubscribe/preheader. No emails/sends/test-sends, posts/pages, settings, subscribers, merchants or homepage changed.
+- All six HOLD_UNSENT and 03/05 HOLD_MERCHANT. No invented metrics, traffic, click counts, affiliate payouts or conversions.
