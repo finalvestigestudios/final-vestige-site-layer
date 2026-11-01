@@ -198,7 +198,7 @@ class SourceLabelFullPipelineR97(unittest.TestCase):
         self.assertEqual(labels_for_report(rows, "ledger_reference"),
                          r"LED\\u202E1; LED\u202E1")
         self.assertEqual(labels_for_report(rows, "related_claim"),
-                         r"C\\u003B; C\u003BB")
+                         r"C\u003BB; C\\u003B")
 
 
 if __name__ == "__main__":
