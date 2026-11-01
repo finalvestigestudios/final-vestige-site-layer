@@ -17,28 +17,58 @@ from replay_wordpress_stage_browser import Capture, Hold, browser_review, passin
 GIF = base64.b64decode('R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==')
 
 
-def mock_html(external_css=False, omit_margin=False, srcset=False):
+def mock_html(external_css=False, omit_margin=False, srcset=False, missing_control=False):
     margin = 71 if omit_margin else 72
     spans = ''.join(f'<span class="fv-margin-strip__item" style="--i:{i}">record {i}</span>' for i in range(margin))
     chapters = ''.join(f'<a href="#chapter-{i}">Chapter {i}</a>' for i in range(7))
     sections = ''.join(f'<section id="chapter-{i}">Evidence section {i}</section>' for i in range(7))
-    cases = ''.join(f'<article data-fv-case="c{i}"><img src="/media/c{i}.gif" '
+    cases = ''.join(f'<article data-fv-case="{name}"><img src="/media/c{i}.gif" '
                     + ('srcset="/media/c0.gif 2x" ' if srcset and i==0 else '')
-                    + f'alt="Synthetic test image {i}"></article>' for i in range(3))
+                    + f'alt="Synthetic test image {i}"></article>'
+                    for i,name in enumerate(('apollo', 'franklin', 'malbone')))
     css = 'https://unapproved.example/attack.css' if external_css else '/assets/style.css'
+    controls = ("""<div class="fv-hf__studio-controls" hidden><button data-fv-direction-choice="museum">Museum</button><button data-fv-direction-choice="dossier">Dossier</button></div>
+       <div data-fv-case-buttons hidden><button data-fv-case-button="apollo">Apollo</button><button data-fv-case-button="franklin">Franklin</button><button data-fv-case-button="malbone">Malbone</button></div>
+       <div data-fv-chronicle-lens hidden><button data-fv-chronicle-view="addition">Addition</button><button data-fv-chronicle-view="original">Original</button></div>
+       <div data-fv-observer-controls hidden><button data-fv-observer-switch="b">Frame B</button><button data-fv-observer-switch="a">Frame A</button></div>""")
+    if missing_control:
+        controls = controls.replace('data-fv-direction-choice="museum"', 'data-fv-unapproved="museum"')
     return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{css}"></head><body>'
-            + f'<main data-fv-home-flagship><div class="fv-margin-strip">{spans}</div>'
+            + f'<main data-fv-home-flagship data-fv-direction="dossier"><div class="fv-margin-strip">{spans}</div>'
             + f'<nav class="fv-hf__chapter-nav">{chapters}</nav>{sections}'
             + '<div data-fv-subscriptions-local-only="true">NO EMAIL COLLECTION</div>'
             + '<a href="/focus/">Focus</a><a href="/focus/">Book</a>'
+            + controls + '<section class="fv-hf__chronicle" data-fv-chronicle-mode="record">Chronicle</section>'
+            + '<div data-fv-observer-frame="a">Observer A</div><div data-fv-observer-frame="b">Observer B</div>'
             + cases + '</main><script src="/assets/flagship.js"></script></body></html>')
+
+# Test-only state transitions: never assert synthetic history or production functionality.
+TEST_JS = r"""const root=document.querySelector('[data-fv-home-flagship]');
+for(const selector of ['.fv-hf__studio-controls','[data-fv-case-buttons]','[data-fv-chronicle-lens]','[data-fv-observer-controls]'])
+ document.querySelector(selector).hidden=false;
+const ids=['apollo','franklin','malbone'];
+function selectCase(which){for(const p of document.querySelectorAll('[data-fv-case]'))p.hidden=p.dataset.fvCase!==which;}
+selectCase('apollo');
+function observer(which){for(const n of document.querySelectorAll('[data-fv-observer-frame]'))n.hidden=n.dataset.fvObserverFrame!==which;}
+observer('a');
+for(const b of document.querySelectorAll('[data-fv-direction-choice]'))b.addEventListener('click',()=>root.dataset.fvDirection=b.dataset.fvDirectionChoice);
+for(const b of document.querySelectorAll('[data-fv-case-button]')){
+ b.addEventListener('click',()=>selectCase(b.dataset.fvCaseButton));
+ b.addEventListener('keydown',e=>{const i=ids.indexOf(b.dataset.fvCaseButton);let next;
+  if(e.key==='ArrowRight')next=ids[(i+1)%3];if(e.key==='Home')next=ids[0];
+  if(next){e.preventDefault();selectCase(next);document.querySelector('[data-fv-case-button="'+next+'"]').focus();}
+ });
+}
+for(const b of document.querySelectorAll('[data-fv-chronicle-view]'))b.addEventListener('click',()=>document.querySelector('.fv-hf__chronicle').dataset.fvChronicleMode=b.dataset.fvChronicleView);
+for(const b of document.querySelectorAll('[data-fv-observer-switch]'))b.addEventListener('click',()=>observer(b.dataset.fvObserverSwitch));
+"""
 
 
 class ProbeServer:
     def __init__(self):
         self.data = {'/': (mock_html().encode(), 'text/html'),
                      '/assets/style.css': (b'body{margin:0}main{max-width:100%;overflow-wrap:anywhere}', 'text/css'),
-                     '/assets/flagship.js': (b'document.documentElement.dataset.fvTest="executed";', 'text/javascript'),
+                     '/assets/flagship.js': (TEST_JS.encode(), 'text/javascript'),
                      **{f'/media/c{i}.gif': (GIF,'image/gif') for i in range(3)}}
         root = self
         class Handler(BaseHTTPRequestHandler):

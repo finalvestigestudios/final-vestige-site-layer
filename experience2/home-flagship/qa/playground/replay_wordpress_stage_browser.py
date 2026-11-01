@@ -179,6 +179,57 @@ class Capture:
                            'http_resources': self.resources}
 
 
+async def audit_actual_interactions(page):
+    """Verify that *rendered* controls change visible evidence, not just ARIA labels.
+
+    Applied to replayed server-rendered WordPress HTML. This does NOT validate
+    HTTP CSP/cookies, WordPress host behavior, axe, or image reproduction rights.
+    Missing controls, inert scripts, or nonreversible states are explicit FAILs.
+    """
+    result = {name: False for name in (
+        'direction_changes_and_restores', 'case_selection_and_keyboard',
+        'chronicle_switch_and_restores', 'observer_switch_and_restores')}
+    try:
+        root = page.locator('[data-fv-home-flagship]')
+        museum = page.locator('[data-fv-direction-choice="museum"]')
+        dossier = page.locator('[data-fv-direction-choice="dossier"]')
+        await museum.click(timeout=1500)
+        changed = await root.get_attribute('data-fv-direction') == 'museum'
+        await dossier.click(timeout=1500)
+        restored = await root.get_attribute('data-fv-direction') == 'dossier'
+        result['direction_changes_and_restores'] = changed and restored
+
+        franklin_button = page.locator('[data-fv-case-button="franklin"]')
+        await franklin_button.click(timeout=1500)
+        franklin_on = (await page.locator('[data-fv-case="franklin"]').is_visible()
+                       and not await page.locator('[data-fv-case="apollo"]').is_visible())
+        await franklin_button.focus()
+        await page.keyboard.press('ArrowRight')
+        malbone_on = (await page.locator('[data-fv-case="malbone"]').is_visible()
+                      and not await page.locator('[data-fv-case="franklin"]').is_visible())
+        await page.keyboard.press('Home')
+        apollo_restored = (await page.locator('[data-fv-case="apollo"]').is_visible()
+                           and not await page.locator('[data-fv-case="malbone"]').is_visible())
+        result['case_selection_and_keyboard'] = franklin_on and malbone_on and apollo_restored
+
+        await page.locator('[data-fv-chronicle-view="addition"]').click(timeout=1500)
+        addition_on = await page.locator('.fv-hf__chronicle').get_attribute('data-fv-chronicle-mode') == 'addition'
+        await page.locator('[data-fv-chronicle-view="original"]').click(timeout=1500)
+        original_on = await page.locator('.fv-hf__chronicle').get_attribute('data-fv-chronicle-mode') == 'original'
+        result['chronicle_switch_and_restores'] = addition_on and original_on
+
+        await page.locator('[data-fv-observer-switch="b"]').click(timeout=1500)
+        b_on = (await page.locator('[data-fv-observer-frame="b"]').is_visible()
+                and not await page.locator('[data-fv-observer-frame="a"]').is_visible())
+        await page.locator('[data-fv-observer-switch="a"]').click(timeout=1500)
+        a_on = (await page.locator('[data-fv-observer-frame="a"]').is_visible()
+                and not await page.locator('[data-fv-observer-frame="b"]').is_visible())
+        result['observer_switch_and_restores'] = b_on and a_on
+    except Exception as exc:
+        result['interaction_error'] = type(exc).__name__ + ': ' + str(exc)[:120]
+    return result
+
+
 async def browser_review(html, out, chromium):
     results = {}
     async with async_playwright() as p:
@@ -216,6 +267,7 @@ async def browser_review(html, out, chromium):
                                'no_unverified_network': not blocked_requests,
                                'blocked_requests': blocked_requests,
                                'scroll_width': state['width'], 'js_errors': errors}
+            results[str(w)]['real_interactions'] = await audit_actual_interactions(page)
             if w in (320, 390, 768, 1440, 1920):
                 await page.screenshot(path=str(out / f'wp-http-replay-{w}.png'), full_page=(w in (390, 1440)))
             await page.wait_for_timeout(50)
@@ -234,7 +286,15 @@ async def browser_review(html, out, chromium):
         await page.route('**/*', block_no_js)
         await page.set_content(html, wait_until='domcontentloaded')
         visible = await page.locator('[data-fv-case]:visible').count()
+        hidden_controls = all([not await page.locator(selector).is_visible()
+                               for selector in ('[data-fv-case-buttons]',
+                                                '[data-fv-chronicle-lens]',
+                                                '[data-fv-observer-controls]',
+                                                '.fv-hf__studio-controls')])
+        both_observer_frames = await page.locator('[data-fv-observer-frame]:visible').count() == 2
         results['no_js'] = {'all_three_cases_visible': visible == 3,
+                            'both_observer_frames_visible': both_observer_frames,
+                            'enhancement_controls_hidden': hidden_controls,
                             'no_unverified_network': not no_js_blocked,
                             'blocked_requests': no_js_blocked}
         await page.close()
