@@ -22,12 +22,14 @@
   jumps.push(...backLinks);
   const copyButtons=[...root.querySelectorAll('[data-fva-copy]')];
   const copyStatus=root.querySelector('[data-fva-copy-status]');
+  const exportButton=root.querySelector('[data-fva-export]');
+  const exportStatus=root.querySelector('[data-fva-export-status]');
   const compare=root.querySelector('[data-fva-compare]');
   const compareStatus=root.querySelector('[data-fva-compare-status]');
   const compareClear=root.querySelector('[data-fva-compare-clear]');
   const compareSlots=[...root.querySelectorAll('[data-fva-compare-slot]')];
   const compareButtons=[...root.querySelectorAll('[data-fva-select]')];
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6)return;
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!exportButton||!exportStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6)return;
   let year='all';
   let active=false;
   const selected=[];
@@ -43,6 +45,8 @@
     compare.hidden=true;
     compareStatus.textContent='';
     copyStatus.textContent='';
+    exportButton.hidden=true;
+    exportStatus.textContent='';
     status.textContent='';
     root.dataset.fvaReady='';
     if(active){buttons.forEach(b=>b.removeEventListener('click',onFilter));
@@ -51,6 +55,7 @@
       reset.removeEventListener('click',onReset);
       jumps.forEach(link=>link.removeEventListener('click',onJump));
       copyButtons.forEach(b=>b.removeEventListener('click',onCopy));
+      exportButton.removeEventListener('click',onExport);
       compareButtons.forEach(b=>b.removeEventListener('click',onSelect));
       compareClear.removeEventListener('click',onClearSelection);
       compare.removeEventListener('click',onCompareJump);
@@ -167,6 +172,59 @@
       copyStatus.textContent='Clipboard unavailable. Select the visible citation text to copy manually.';
     }
   };
+  // R47: local, metadata-only archival citation export. We derive every line
+  // from the six visible original source citations, not filtered cards or a
+  // remote API. No image binaries, location metadata, or license assumptions.
+  // A mismatched NASA source/citation immediately withdraws this enhancement.
+  const sourceRegister=()=>{
+    if(!valid())throw new Error('Source register failed validation');
+    const lines=expected.map((id,i)=>{
+      const source=cards[i].querySelector('.fva-card__external');
+      const catalog=cards[i].querySelector('.fva-card__plate span')?.textContent?.trim();
+      const citation=citations[i].querySelector('[data-fva-citation-text]')?.textContent?.trim();
+      const href=source?.getAttribute('href');
+      let url;
+      try{url=new URL(href);}catch(_){throw new Error('Invalid NASA source URL');}
+      if(url.protocol!=='https:'||url.hostname!=='www.nasa.gov'||
+         url.pathname.indexOf('/image-detail/')!==0||!catalog||
+         !citation||!citation.includes(catalog)||!citation.includes(href)||
+         !citation.includes('individual review required')){
+        throw new Error('Citation/source mismatch');
+      }
+      return id+'. '+citation;
+    });
+    return ['FINAL VESTIGE STUDIOS — APOLLO 1 EVIDENCE ATLAS',
+      'NASA photographic-source reference register — STAGING ONLY',
+      'Six source links; no photographs are reproduced. NASA does not endorse this publication.',
+      'Image reuse: six individual photo-rights reviews are outstanding.',
+      'Dates identify source photographs, not the sequence or causes of the fire.',
+      'January 1967 photograph S67-19766 has no independently verified day.',
+      'Every entry is a source reference, not a reproduction license.',
+      '',...lines,'',
+      'Primary technical investigation: '+root.querySelector('.fva-guide a')?.getAttribute('href'),
+      'NASA media guidance: '+root.querySelector('.fva-footer a')?.getAttribute('href'),
+      ''].join('\n');
+  };
+  const onExport=()=>{
+    let link,blobUrl;
+    try{
+      const text=sourceRegister();
+      if(typeof Blob!=='function'||typeof URL.createObjectURL!=='function')throw new Error('Download unsupported');
+      blobUrl=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));
+      link=document.createElement('a');
+      link.href=blobUrl;
+      link.download='apollo-1-nasa-source-register.txt';
+      link.style.display='none';
+      root.appendChild(link);
+      link.click();
+      exportStatus.textContent='Six NASA source references prepared for download; check your browser downloads.';
+    }catch(_){
+      exportStatus.textContent='Download unavailable. All six citations remain readable below, or print the complete register.';
+    }finally{
+      if(link)link.remove();
+      if(blobUrl){setTimeout(()=>URL.revokeObjectURL(blobUrl),5000);}
+    }
+  };
   const onFilter=event=>{year=event.currentTarget.dataset.fvaFilter;apply();};
   const onReset=()=>{year='all';input.value='';apply();if(active)input.focus();};
   const onKey=event=>{if(event.key==='Escape'&&(input.value||year!=='all')){
@@ -193,6 +251,7 @@
     reset.addEventListener('click',onReset);
     jumps.forEach(link=>link.addEventListener('click',onJump));
     copyButtons.forEach(b=>b.addEventListener('click',onCopy));
+    exportButton.addEventListener('click',onExport);
     compareButtons.forEach(b=>b.addEventListener('click',onSelect));
     compareClear.addEventListener('click',onClearSelection);
     compare.addEventListener('click',onCompareJump);
@@ -204,6 +263,7 @@
     if(apply() && active){
       controls.hidden=false;
       compare.hidden=false;
+      exportButton.hidden=false;
       compareButtons.forEach(b=>{b.hidden=false;});
       updateComparison();
       // Native citation text is always accessible. Copy is optional and only
