@@ -22,7 +22,7 @@ SOURCE = 'https://www.ftc.gov/business-guidance/resources/can-spam-act-complianc
 
 
 def header(text: str, key: str) -> str | None:
-    m = re.search(r'^\\*\\*' + re.escape(key) + r':\\*\\*\\s*(.+?)\\s*$', text, re.M)
+    m = re.search(r'^\*\*' + re.escape(key) + r':\*\*\s*(.+?)\s*$', text, re.M)
     return m.group(1).strip() if m else None
 
 
@@ -65,7 +65,7 @@ def inspect(manifest: dict, manuscripts: dict[int, str]) -> dict:
             guide = GUIDES[n]
             if entry.get('editorial_cta') != guide or text.count(guide) != 1:
                 problems.append('commercial_guide_hold_or_manifest_mismatch')
-            match = re.search(r'^\\*\\*Commercial disclosure:\\*\\*(.+)$', text, re.M)
+            match = re.search(r'^\*\*Commercial disclosure:\*\*(.+)$', text, re.M)
             if not match or 'commission' not in match.group(1).lower() or 'may' not in match.group(1).lower():
                 problems.append('near_offer_conditional_commission_disclosure_missing')
             elif text.find('**Commercial disclosure:**') > text.find(guide):
