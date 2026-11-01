@@ -3,12 +3,16 @@ from __future__ import annotations
 
 import importlib.util
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "defender_environment_r113.py"
+# spec_from_file_location does not populate the imported module's sibling path.
+# Mirror real CLI import semantics for R114's native PowerShell resolver.
+sys.path.insert(0, str(SCRIPT.parent))
 spec = importlib.util.spec_from_file_location("defender_environment_r113", SCRIPT)
 review = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(review)
