@@ -98,7 +98,7 @@ class R35SourcePrecision(unittest.TestCase):
         self.reject(lambda p: p.__setitem__("html", p["html"].replace(V.ADDRESS, "")))
 
     def test_markdown_warning_removed_rejected(self):
-        self.reject(lambda p: p.__setitem__("markdown", p["markdown"].replace("DO NOT PUBLISH", "reviewed")))
+        self.reject(lambda p: p.__setitem__("markdown", p["markdown"].replace("DO NOT SEND", "reviewed")))
 
     def test_ledger_sendready_forgery_rejected(self):
         self.reject(lambda p: p["ledger"].__setitem__("release_state", "SEND_READY"))
