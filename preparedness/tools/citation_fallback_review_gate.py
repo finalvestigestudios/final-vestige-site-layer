@@ -112,12 +112,27 @@ def _load_global_shared_source_validator():
     return module.build_global_source_review
 
 
+def _load_private_reviewer_csv_export_validator():
+    # R37: mandatory private CSV reviewer-desk census. It is data-only:
+    # spreadsheet-safe read-only worksheets; no public/CMS writes or human signoff.
+    location = Path(__file__).with_name('reviewer_csv_export_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R37 private CSV human-review export gate')
+    spec = importlib.util.spec_from_file_location('preparedness_r37_private_csv_export', location)
+    need(spec is not None and spec.loader is not None,
+         'R37 private reviewer export module cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.build_review_csv_export
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
 build_source_reading_batches = _load_source_reading_batches_validator()
 build_human_review_intake = _load_human_review_intake_validator()
 build_global_shared_source_review = _load_global_shared_source_validator()
+build_private_reviewer_csv_export = _load_private_reviewer_csv_export_validator()
 
 
 def canonical(value):
@@ -274,7 +289,17 @@ def audit(lib, expected=EXPECTED):
     # 224-row crosswalk; R36 exercises those independently in its own 88 tests.
     # The real checkout and mandatory private preflight use EXPECTED, always.
     if expected == EXPECTED:
-        build_global_shared_source_review(lib, handoff, expected=expected)
+        # The full frozen corpus gets the R36 global crosswalk, then R37's
+        # optional-for-human-use but mandatory-for-machine-custody CSV desk.
+        # Older reduced R25 synthetic unit fixtures have no global crosswalk
+        # and are tested independently through the R37 synthetic suite.
+        original_global_packet = build_global_shared_source_review(
+            lib, handoff, expected=expected)
+        reviewer_csv = build_private_reviewer_csv_export(
+            handoff, original_global_packet, reviewer_batches, expected=expected)
+        need(reviewer_csv['manifest']['release_state'] == 'HOLD'
+             and reviewer_csv['manifest']['may_publish'] is False,
+             'private reviewer export cannot grant publishing approval')
     return payload
 
 def audit_checkout(root):
