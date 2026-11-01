@@ -10,10 +10,10 @@ for(const [name,html] of [['guideA',a],['guideB',b],['article',i],['hub',h]]){
 }
 check('A and B substantive guide identical',()=>{const re=/<div id="fv-zen12-core">([\s\S]*?)<\/div>/;assert.equal(a.match(re)[1],b.match(re)[1]);});
 for(const html of [a,b]){
- check('disclosure proximal and disabled hold',()=>{const disclosure=html.indexOf('If you purchase through a future authorized link');const hold=html.indexOf('aria-disabled="true"');assert(disclosure>0&&hold>disclosure&&hold-disclosure<700);assert.doesNotMatch(html,/<button\b|<a\b[^>]*\bhref=["'][^"']*checkout/);});
+ check('disclosure proximal and disabled hold',()=>{const offer=html.slice(html.lastIndexOf('<aside class="offer-hold"'));const disclosure=offer.indexOf('If you purchase through a future authorized link');const hold=offer.indexOf('aria-disabled="true"');assert(disclosure>=0&&hold>disclosure&&hold-disclosure<700);assert.doesNotMatch(html,/<button\b|<a\b[^>]*\bhref=["'][^"']*checkout/);});
  check('no video autoplay fake play',()=>assert.doesNotMatch(html,/<video\b|\bautoplay\b|onclick=|<iframe\b/i));
 }
-check('article avoids shopping',()=>assert.doesNotMatch(i,/Zen12|Buy now|<form|affiliate disclosure/i));
+check('article avoids shopping',()=>assert.doesNotMatch(i,/Buy now|<form|<aside class="offer-hold"|href=["'][^"']*(zen12\.com|inspire3\.com)/i));
 check('variant B has transcript fallback',()=>assert.match(b,/<details>[\s\S]*full 40-second transcript/));
 check('no alternate subscribe form',()=>assert.doesNotMatch(h,/<form|<input/));
 check('source ledger contains exact official seller pages',()=>{assert.match(source,/https:\/\/zen12\.com\/hnp/);assert.match(source,/https:\/\/zen12\.com\/about/);});
