@@ -1,6 +1,6 @@
 # Original 40-second film: The Word and the Ink
 
-**Production status:** concept, poster, captions and transcript source only. An MP4 was NOT rendered or hosted in this sprint. Never show a play button until playback exists and captions are checked. The film is a schematic explanation, not a real laboratory stimulus or evidence for Zen12.
+**Production status:** actual original MP4 rendered offline and visually inspected; poster, captions and transcript source-controlled. MP4 was NOT committed or hosted on WordPress in this sprint. Never show a play button until playback exists and captions are checked. The film is a schematic explanation, not a real laboratory stimulus or evidence for Zen12.
 
 0-6s: BLUE in rust-colored ink against an original low-motion night-paper background. Ask which color appears.
 6-13s: Split the printed word from its ink color. Explain the competition between reading and a naming task.
