@@ -108,10 +108,19 @@ def run(root: Path) -> dict:
                 raise ValueError("Duplicate desktop test identity")
             loaded_modules = {_module_id(identifier) for identifier in identifiers}
             if loaded_modules != modules:
-                _emit_diagnostic(_discovery_summary(modules, loaded_modules))
-                raise ValueError("Desktop test discovery omitted a module")
-            result = unittest.TestResult()
-            suite.run(result)
+                # Do not disclose import errors or test fixture output. Build a
+                # source-owned diagnostic, but emit it only AFTER leaving the
+                # stdout/stderr suppression context.
+                discovery_diagnostic = _discovery_summary(modules, loaded_modules)
+                result = None
+            else:
+                discovery_diagnostic = None
+                result = unittest.TestResult()
+                suite.run(result)
+
+    if discovery_diagnostic is not None:
+        _emit_diagnostic(discovery_diagnostic)
+        raise ValueError("Desktop test discovery omitted a module")
 
     if not result.wasSuccessful():
         _emit_diagnostic(_public_failure_summary(result, modules))
