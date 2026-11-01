@@ -54,8 +54,23 @@ def _load_review_index_validator():
     return module.build_index
 
 
+def _load_occurrence_priority_validator():
+    # R33: reviewer work order is required inside the existing mandatory
+    # final preflight stage, with NO new public/CMS/publishing actions.
+    location = Path(__file__).with_name('citation_occurrence_priority_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked human claim-priority custody gate')
+    spec = importlib.util.spec_from_file_location('preparedness_r33_claim_priority', location)
+    need(spec is not None and spec.loader is not None,
+         'claim-priority custody gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.build_priority_queue
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
+build_priority_queue = _load_occurrence_priority_validator()
 
 
 def canonical(value):
@@ -194,7 +209,10 @@ def audit(lib, expected=EXPECTED):
     # The packet digest now binds a second, independently maintained review
     # index validator. Every citation and source relationship must survive its
     # own reconciliation before this mandatory preflight stage can succeed.
-    build_review_index(payload, expected=expected)
+    review_index = build_review_index(payload, expected=expected)
+    # Bind all individual claim occurrences to both parent custody digests,
+    # preserve duplicate URLs, and always leave every task UNREVIEWED.
+    build_priority_queue(payload, review_index, expected=expected)
     return payload
 
 def audit_checkout(root):
