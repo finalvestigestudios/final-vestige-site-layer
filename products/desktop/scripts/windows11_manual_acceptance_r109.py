@@ -31,6 +31,9 @@ PREMIUM_CHECKS = (
     "locked_scaling_400",
 )
 SCHEMA = "fv-labs-win11-manual-r109-v1"
+WITNESS_SCHEMA = "fv-labs-win11-check-witness-r110-v1"
+MIN_OBSERVATION_CHARS = 80
+MAX_OBSERVATION_CHARS = 4096
 PURPOSE = "PRIVATE_MANUAL_REVIEW_ONLY_NOT_RELEASE_AUTHORIZED"
 HEX = re.compile(r"[0-9a-f]{64}\Z")
 OPERATOR = re.compile(r"[a-zA-Z0-9][a-zA-Z0-9_-]{2,31}\Z")
@@ -144,6 +147,47 @@ def _strict_json(raw: bytes) -> dict:
     return result
 
 
+def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str) -> None:
+    """Require each private note to identify its own check, reviewer and exact EXE.
+
+    A SHA-256 of anonymous free-form text cannot prevent accidental reuse of a
+    note from another app, test, candidate build or reviewer. This versioned JSON
+    envelope is still reviewer-declared and is NOT proof of independent QA.
+    """
+    try:
+        note = _strict_json(raw)
+    except (UnicodeError, json.JSONDecodeError):
+        raise ReviewHold("Witness JSON cannot be decoded") from None
+    keys = {"schema", "app", "check", "state", "candidate_sha256",
+            "r9_report_sha256", "reviewer_id", "windows11_build",
+            "observed_utc", "observation"}
+    if set(note) != keys:
+        raise ReviewHold("Witness fields are incomplete or unexpected")
+    expected = {
+        "schema": WITNESS_SCHEMA,
+        "app": app,
+        "check": check,
+        "state": state,
+        "candidate_sha256": review["apps"][app]["candidate_sha256"],
+        "r9_report_sha256": review["r9_report_sha256"],
+        "reviewer_id": review["reviewer_id"],
+        "windows11_build": review["windows11_build"],
+        "observed_utc": review["observed_utc"],
+    }
+    if (type(note["windows11_build"]) is not int or
+            any(note[field] != value or type(note[field]) is not type(value)
+                for field, value in expected.items())):
+        raise ReviewHold("Witness belongs to a different review or check")
+    observation = note["observation"]
+    if (type(observation) is not str or
+            not MIN_OBSERVATION_CHARS <= len(observation.strip()) <= MAX_OBSERVATION_CHARS or
+            any((ord(ch) < 32 and ch not in (chr(10), chr(9))) or
+                ord(ch) == 127 or 0x202A <= ord(ch) <= 0x202E or
+                0x2066 <= ord(ch) <= 0x2069
+                for ch in observation)):
+        raise ReviewHold("Witness observation invalid or insufficient")
+
+
 def _observed_time(value: str, now: datetime):
     if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ", value):
         raise ReviewHold("Invalid observation time")
@@ -198,16 +242,11 @@ def validate_review(review: dict, template: dict, witnesses: Path,
             else:
                 if not isinstance(digest, str) or HEX.fullmatch(digest) is None:
                     raise ReviewHold("Missing local witness seal")
-                witness = witnesses / (name.removesuffix(".exe") + "--" + check + ".txt")
+                witness = witnesses / (name.removesuffix(".exe") + "--" + check + ".json")
                 data = _bytes(witness, MAX_WITNESS_BYTES, minimum=64)
                 if _sha(data) != digest:
                     raise ReviewHold("Witness content changed")
-                try:
-                    text = data.decode("utf-8")
-                except UnicodeDecodeError:
-                    raise ReviewHold("Witness is not UTF-8 text") from None
-                if "\x00" in text:
-                    raise ReviewHold("Binary witness refused")
+                _bound_witness(data, review, name, check, state)
             counts[state] += 1
     complete = counts["NOT_RUN"] == 0 and counts["FAIL"] == 0
     return {"schema": SCHEMA, "status": "MANUAL_MATRIX_COMPLETE_UNCERTIFIED" if complete
