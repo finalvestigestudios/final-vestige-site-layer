@@ -154,6 +154,18 @@ class TestR52RenderedCitationCustody(unittest.TestCase):
         p["pages"]["household-emergency-plan"]["widths"]["390"]["consoleErrors"] = ["boom"]
         self.reject(layout=p)
 
+    def test_redistributed_source_entries_cannot_hide_in_global_total(self):
+        p = copy.deepcopy(self.layout)
+        p["pages"]["household-emergency-plan"]["widths"]["390"]["sourceItems"] -= 1
+        p["pages"]["three-day-kit"]["widths"]["390"]["sourceItems"] += 1
+        self.reject(layout=p)
+
+    def test_reviewer_hold_text_cannot_be_reinterpreted_as_pass(self):
+        rows = copy.deepcopy(self.rows)
+        rows[0]["blockers"] = rows[0]["blockers"].replace(
+            "independent QD pass not recorded", "independent QD pass granted")
+        self.reject(rows=rows)
+
 
 def make_original_article_source_test(slug: str):
     def test_case(self):
