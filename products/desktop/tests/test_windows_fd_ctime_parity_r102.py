@@ -11,11 +11,12 @@ import hashlib
 import tempfile
 import unittest
 
-from fvs_suite import csv_snapshot
+from fvs_suite import csv_snapshot, manifest_guard
+from scripts import build_input_guard
 import candidate_guard
 
 
-MODULES = (csv_snapshot, candidate_guard)
+MODULES = (csv_snapshot, candidate_guard, manifest_guard)
 
 
 def fake_stat(**changes):
@@ -172,6 +173,56 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
             self.skipTest("hardlinks unsupported")
         with self.assertRaises(candidate_guard.CandidateGuardError):
             candidate_guard.sha256_candidate(source)
+
+
+    def test_real_manifest_inventory_binds_source_digest(self):
+        source = self.root / "synthetic.csv"
+        report = self.root / "report.csv"
+        source.write_bytes(b"id,amount\\nA,10\\n")
+        report.write_bytes(b"synthetic report\\n")
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        output = manifest_guard.inventory_text(
+            [source], [report], expected_input_digests={source: digest})
+        self.assertIn(digest, output)
+        self.assertIn("SHA-256", output)
+
+    def test_manifest_path_ctime_mutation_still_rejected(self):
+        source = self.root / "synthetic.csv"
+        source.write_bytes(b"id,amount\\nA,10\\n")
+        original = manifest_guard._metadata
+        calls = 0
+        def simulate_path_change(path):
+            nonlocal calls
+            calls += 1
+            info = original(path)
+            if calls == 2:
+                return fake_stat(st_dev=info.st_dev, st_ino=info.st_ino,
+                    st_size=info.st_size, st_mtime_ns=info.st_mtime_ns,
+                    st_ctime_ns=info.st_ctime_ns + 1, st_mode=info.st_mode)
+            return info
+        with patch.object(manifest_guard, "_metadata", side_effect=simulate_path_change):
+            with self.assertRaisesRegex(ValueError, "path changed"):
+                manifest_guard._hash_regular(source, maximum=128)
+        self.assertEqual(calls, 2)
+
+    def test_build_manifest_windows_crossview_only_ctime_tolerated(self):
+        original = [1, 2, 3, 1, 5, 700, 100]
+        descriptor = [1, 2, 3, 1, 5, 700, 999]
+        self.assertTrue(build_input_guard._same_path_descriptor_identity(
+            original, descriptor, windows=True))
+        self.assertFalse(build_input_guard._same_path_descriptor_identity(
+            original, descriptor, windows=False))
+
+    def test_build_manifest_windows_inode_drift_rejected(self):
+        before = [1, 2, 3, 1, 5, 700, 100]
+        descriptor = [1, 3, 3, 1, 5, 700, 999]
+        self.assertFalse(build_input_guard._same_path_descriptor_identity(
+            before, descriptor, windows=True))
+
+    def test_build_manifest_same_view_ctime_remains_checked(self):
+        original = [1, 2, 3, 1, 5, 700, 100]
+        altered = [1, 2, 3, 1, 5, 700, 101]
+        self.assertNotEqual(original, altered)
 
 
 if __name__ == "__main__":
