@@ -95,7 +95,7 @@ def verify_reports(numeric, safety, *, expected=DEFAULT_COUNTS):
     need((len(nr), len(sr), len(si), len(sb)) ==
          (claims, candidates, incidents, blocked),
          "individual review records lost, duplicated or manufactured")
-    seen_claims, article_shas, scoped_sources = set(), {}, {}
+    seen_claims, article_shas, scoped_sources = {}, {}, {}
     cited_occurrences = 0
     numeric_urls = set()
     for index, task in enumerate(nr, start=1):
@@ -103,10 +103,10 @@ def verify_reports(numeric, safety, *, expected=DEFAULT_COUNTS):
              "original numeric claim occurrence order changed")
         identity = task.get("claim_identity_sha256")
         slug, article_sha = task.get("slug"), task.get("original_article_html_sha256")
-        need(sha(identity) and identity not in seen_claims and type(slug) is str
+        need(sha(identity) and (identity not in seen_claims or seen_claims[identity] == slug) and type(slug) is str
              and bool(slug) and sha(article_sha),
              "invalid or duplicated original quantified claim identity")
-        seen_claims.add(identity)
+        seen_claims[identity] = slug
         if slug in article_shas:
             need(article_shas[slug] == article_sha,
                  "conflicting original article body hash in numeric review")
