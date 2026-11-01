@@ -126,7 +126,7 @@ class R51TotalFocusClaimContract(unittest.TestCase):
         self.assertIn('name="viewport"',WEB)
         self.assertIn("max-width:640px",WEB)
         self.assertNotIn("<marquee",WEB.lower())
-    def test_25_named_product_not_a_general_brand endorsement(self):
+    def test_25_named_product_not_a_general_brand_endorsement(self):
         self.assertIn("one",MD.lower())
         self.assertIn("Total Focus",MD)
         self.assertNotIn("Hypnosis Live endorses",MD)
