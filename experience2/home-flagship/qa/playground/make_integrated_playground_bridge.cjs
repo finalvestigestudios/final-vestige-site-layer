@@ -16,7 +16,12 @@ function one(steps, step, pred) {
 }
 const BRIDGE = [
   "add_filter('render_block', static function($html, $block) {",
-  "  if (!is_front_page() || ($block['blockName'] ?? '') !== 'core/html' || strpos($html,'data-fv-home-flagship')===false) return $html;",
+  "  if (!is_front_page()) return $html;",
+  "  if (($block['blockName'] ?? '') === 'jetpack/subscriptions') {",
+  "    if (!fv_ex2_safe_stage()) return $html;",
+  "    return '<div class=\\\"fv-ex2-local-subscription-boundary\\\" role=\\\"note\\\" data-fv-subscriptions-local-only=\\\"true\\\"><strong>Dispatch signup — hosted verification required</strong><p>The original Jetpack signup block is preserved in the WordPress page source. It is unavailable in this isolated preview; no email addresses are collected here.</p></div>';",
+  "  }",
+  "  if (($block['blockName'] ?? '') !== 'core/html' || strpos($html,'data-fv-home-flagship')===false) return $html;",
   "  if (!fv_ex2_ready()) return '<p>Local stage CLOSED: media/source verification.</p>';",
   "  $source = @file_get_contents(__DIR__ . '/assets/wordpress-page-fragment.review-only.html');",
   "  if (!is_string($source) || trim($source) !== trim($html)) return '<p>Local stage CLOSED: changed WordPress flagship block.</p>';",
