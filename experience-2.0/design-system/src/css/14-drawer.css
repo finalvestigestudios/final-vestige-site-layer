@@ -1,0 +1,17 @@
+/* Source drawer: a native modal <dialog>. The browser provides the focus trap, inert background and Escape handling. */
+.fv-ex2-drawer {
+  position: fixed; inset: 0 0 0 auto; margin: 0; padding: 0; width: min(46rem, 100%); max-width: 100%; height: 100dvh; max-height: none;
+  background: var(--fvx-ink); color: var(--fvx-text); border: 0; border-left: 1px solid var(--fvx-gold-deep);
+  overscroll-behavior: contain; overflow-y: auto;
+}
+.fv-ex2-drawer::backdrop { background: rgba(0, 0, 0, 0.78); }
+.fv-ex2-drawer[open] { animation: fvx-drawer-in var(--fvx-dur-chapter) var(--fvx-ease); }
+@keyframes fvx-drawer-in { from { transform: translateX(2rem); opacity: 0; } to { transform: none; opacity: 1; } }
+.fv-ex2-drawer__bar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: var(--fvx-s-4); padding: var(--fvx-s-3) var(--fvx-s-5); background: var(--fvx-ink); border-bottom: 1px solid var(--fvx-line); }
+.fv-ex2-drawer__body { display: grid; gap: var(--fvx-s-5); padding: var(--fvx-s-5); }
+.fv-ex2-drawer__title { font-size: var(--fvx-fs-h2); line-height: 1.08; }
+.fv-ex2-drawer__figure img { width: 100%; height: auto; max-height: 70svh; object-fit: contain; background: #14120f; }
+.fv-ex2-drawer__figure figcaption { padding-top: var(--fvx-s-3); }
+.fv-ex2-drawer__links { display: flex; flex-wrap: wrap; gap: var(--fvx-s-3) var(--fvx-s-5); font-size: var(--fvx-fs-small); }
+.fv-ex2-drawer__pager { display: flex; justify-content: space-between; gap: var(--fvx-s-3); padding-top: var(--fvx-s-4); border-top: 1px solid var(--fvx-line); }
+html.fv-ex2-scroll-lock { overflow: hidden; }

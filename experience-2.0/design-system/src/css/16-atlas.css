@@ -1,0 +1,15 @@
+/* Evidence Atlas result card and catalogue controls. No map styling: pins are gated on verified geography. */
+.fv-ex2-atlas__controls { display: grid; gap: var(--fvx-s-4); padding-block: var(--fvx-s-5); border-top: 1px solid var(--fvx-line); }
+.fv-ex2-atlas__chips { display: flex; flex-wrap: wrap; gap: var(--fvx-s-2); }
+.fv-ex2-atlas__grid { display: grid; gap: var(--fvx-s-5); grid-template-columns: repeat(3, minmax(0, 1fr)); padding-bottom: var(--fvx-s-8); }
+.fv-ex2-atlascard { min-width: 0; display: flex; flex-direction: column; gap: var(--fvx-s-3); padding: var(--fvx-s-5); background: var(--fvx-raised); border: 1px solid var(--fvx-line); }
+.fv-ex2-atlascard__title { font-size: var(--fvx-fs-h3); line-height: 1.15; }
+.fv-ex2-atlascard__title a { color: var(--fvx-text); text-decoration: none; }
+.fv-ex2-atlascard__title a:hover { color: var(--fvx-gold); text-decoration: underline; }
+.fv-ex2-atlascard__meta { display: grid; gap: var(--fvx-s-1); font-size: var(--fvx-fs-small); color: var(--fvx-text-muted); }
+.fv-ex2-atlascard__place { display: flex; flex-wrap: wrap; gap: var(--fvx-s-2); align-items: center; padding-top: var(--fvx-s-3); border-top: 1px solid var(--fvx-line); margin-top: auto; font-size: var(--fvx-fs-small); }
+.fv-ex2-atlascard__place[data-location-status="verified_coordinate"] .fv-ex2-badge { color: #8fd19e; }
+.fv-ex2-atlascard__place[data-location-status="approximate_region"] .fv-ex2-badge { color: var(--fvx-amber); }
+.fv-ex2-atlascard__place[data-location-status="unverified_reference"] .fv-ex2-badge { color: var(--fvx-text-muted); }
+@media (max-width: 64rem) { .fv-ex2-atlas__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40rem) { .fv-ex2-atlas__grid { grid-template-columns: minmax(0, 1fr); } }

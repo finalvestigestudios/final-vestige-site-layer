@@ -1,0 +1,779 @@
+{
+  "schema_version": "0.1.0",
+  "generated_from": {
+    "wp_snapshot_sha256": "b2bb946b70521a7e3d082d33f78d71c49b178d54a454532ceca1c70d16accfef",
+    "apollo1_sha256": "7744053580fbe4a2430217cbf87da76c9da5a98aadd051030ff785bcc135316a",
+    "curation_sha256": "fe5905ebf869a1ce6a674bc6c14acd330bca51b47530707c7c55e1e5e4ab2448",
+    "snapshot_retrieved_at": "2026-10-30T16:15:59Z"
+  },
+  "investigations": [
+    {
+      "id": "inv-37",
+      "wordpress_post_id": 37,
+      "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "slug": "how-petra-made-water-flow-through-stone",
+      "title": "How Petra Made Water Flow Through Stone",
+      "published": "2026-08-16",
+      "modified_at_ingest": "2026-10-29T17:07:17",
+      "themes": [
+        "discovery",
+        "ingenuity"
+      ],
+      "theme_labels": [
+        "Discovery",
+        "Ingenuity"
+      ],
+      "event_ids": [
+        "evt-petra-water"
+      ],
+      "content_sha256": "66787fe9427c02851ee94f333856e73b5081f2e1ef27006c9342cfd373d6f09c",
+      "outbound_source_count": 3,
+      "editorial_status": "published",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "inv-269",
+      "wordpress_post_id": 269,
+      "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "slug": "the-watch-lost-its-hands-halifax-explosion",
+      "title": "The Watch Lost Its Hands",
+      "published": "2026-08-18",
+      "modified_at_ingest": "2026-10-29T20:59:49",
+      "themes": [
+        "catastrophe",
+        "ingenuity",
+        "survival"
+      ],
+      "theme_labels": [
+        "Catastrophe",
+        "Ingenuity",
+        "Survival"
+      ],
+      "event_ids": [
+        "evt-halifax-explosion"
+      ],
+      "content_sha256": "47f2e5a7d9c01f2231619369b050371d251909635b87c43f25b345cf4e5dfa7f",
+      "outbound_source_count": 5,
+      "editorial_status": "published",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "inv-370",
+      "wordpress_post_id": 370,
+      "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "slug": "the-lines-were-in-the-fire-west-loch",
+      "title": "The Lines Were in the Fire",
+      "published": "2026-08-19",
+      "modified_at_ingest": "2026-10-29T15:27:15",
+      "themes": [
+        "catastrophe",
+        "conflict"
+      ],
+      "theme_labels": [
+        "Catastrophe",
+        "Conflict"
+      ],
+      "event_ids": [
+        "evt-west-loch"
+      ],
+      "content_sha256": "182502c77a1061d5e05e318568e990462ee3035cfc13005ac3538e73e925c51d",
+      "outbound_source_count": 12,
+      "editorial_status": "published",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "inv-433",
+      "wordpress_post_id": 433,
+      "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "slug": "all-well-was-written-first-franklin-expedition",
+      "title": "All Well Was Written First",
+      "published": "2026-08-20",
+      "modified_at_ingest": "2026-10-29T16:31:22",
+      "themes": [
+        "discovery",
+        "lost",
+        "survival"
+      ],
+      "theme_labels": [
+        "Discovery",
+        "Lost",
+        "Survival"
+      ],
+      "event_ids": [
+        "evt-franklin-expedition"
+      ],
+      "content_sha256": "eeb8cc0bfbe5b52580bdf4dbb1986878bcbef58cf1e01de67676ea0d5455ca0b",
+      "outbound_source_count": 12,
+      "editorial_status": "published",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "inv-434",
+      "wordpress_post_id": 434,
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "slug": "the-hatch-opened-inward-apollo-1",
+      "title": "The Hatch Opened Inward",
+      "published": "2026-08-20",
+      "modified_at_ingest": "2026-09-08T02:51:21",
+      "themes": [
+        "catastrophe",
+        "discovery",
+        "ingenuity"
+      ],
+      "theme_labels": [
+        "Catastrophe",
+        "Discovery",
+        "Ingenuity"
+      ],
+      "event_ids": [
+        "evt-apollo1-fire"
+      ],
+      "content_sha256": "f18117c739c6e85993cd21a1ab5a50ecb0874fbbf14fb3642f514ddaab70657f",
+      "outbound_source_count": 11,
+      "editorial_status": "published",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "inv-621",
+      "wordpress_post_id": 621,
+      "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "slug": "six-miles-an-hour-malbone-street-wreck",
+      "title": "Six Miles an Hour",
+      "published": "2026-08-23",
+      "modified_at_ingest": "2026-09-09T12:03:35",
+      "themes": [
+        "catastrophe"
+      ],
+      "theme_labels": [
+        "Catastrophe"
+      ],
+      "event_ids": [
+        "evt-malbone-wreck"
+      ],
+      "content_sha256": "95325b895cccbaaa239f212cd7d73317176a3a53f16a9e2f3a5acafd7e1ac74b",
+      "outbound_source_count": 7,
+      "editorial_status": "published",
+      "review_status": "unreviewed"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-apollo1-fire",
+      "investigation_id": "inv-434",
+      "label": "Apollo 1 cabin fire",
+      "date_from": "1967-01-27",
+      "date_to": "1967-01-27",
+      "date_precision": "day",
+      "date_status": "documented",
+      "date_source_ids": [
+        "src-nasa-board-report"
+      ],
+      "place_id": "place-apollo1-lc34"
+    },
+    {
+      "id": "evt-malbone-wreck",
+      "investigation_id": "inv-621",
+      "label": "Malbone Street wreck",
+      "date_from": "1918-11-01",
+      "date_to": "1918-11-01",
+      "date_precision": "day",
+      "date_status": "candidate",
+      "date_source_ids": [],
+      "place_id": "place-malbone"
+    },
+    {
+      "id": "evt-west-loch",
+      "investigation_id": "inv-370",
+      "label": "West Loch disaster",
+      "date_from": "1944",
+      "date_to": "1944",
+      "date_precision": "year",
+      "date_status": "candidate",
+      "date_source_ids": [],
+      "place_id": "place-west-loch"
+    },
+    {
+      "id": "evt-halifax-explosion",
+      "investigation_id": "inv-269",
+      "label": "Halifax Explosion",
+      "date_from": "1917",
+      "date_to": "1917",
+      "date_precision": "year",
+      "date_status": "candidate",
+      "date_source_ids": [],
+      "place_id": "place-halifax"
+    },
+    {
+      "id": "evt-petra-water",
+      "investigation_id": "inv-37",
+      "label": "Petra water-management system",
+      "date_from": null,
+      "date_to": null,
+      "date_precision": "unknown",
+      "date_status": "candidate",
+      "date_source_ids": [],
+      "place_id": "place-petra"
+    },
+    {
+      "id": "evt-franklin-expedition",
+      "investigation_id": "inv-433",
+      "label": "Franklin expedition",
+      "date_from": "1847",
+      "date_to": "1848",
+      "date_precision": "range",
+      "date_status": "candidate",
+      "date_source_ids": [],
+      "place_id": "place-franklin"
+    }
+  ],
+  "places": [
+    {
+      "id": "place-apollo1-lc34",
+      "display_name": "Launch Complex 34, Kennedy Space Center region",
+      "reference_text": "Launch Complex 34 / Kennedy Space Center region",
+      "location_status": "unverified_reference",
+      "geometry": null,
+      "precision_note": "Not geocoded. Place reference only.",
+      "geography_source_ids": [],
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_on": null
+      }
+    },
+    {
+      "id": "place-malbone",
+      "display_name": "Malbone Street / Prospect Park, Brooklyn",
+      "reference_text": "Malbone Street / Prospect Park, Brooklyn",
+      "location_status": "unverified_reference",
+      "geometry": null,
+      "precision_note": "Not geocoded. Place reference only.",
+      "geography_source_ids": [],
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_on": null
+      }
+    },
+    {
+      "id": "place-west-loch",
+      "display_name": "West Loch, Pearl Harbor",
+      "reference_text": "West Loch, Pearl Harbor",
+      "location_status": "unverified_reference",
+      "geometry": null,
+      "precision_note": "Not geocoded. Place reference only.",
+      "geography_source_ids": [],
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_on": null
+      }
+    },
+    {
+      "id": "place-halifax",
+      "display_name": "Halifax, Nova Scotia",
+      "reference_text": "Halifax, Nova Scotia",
+      "location_status": "unverified_reference",
+      "geometry": null,
+      "precision_note": "Not geocoded. Place reference only.",
+      "geography_source_ids": [],
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_on": null
+      }
+    },
+    {
+      "id": "place-petra",
+      "display_name": "Petra, Jordan",
+      "reference_text": "Petra, Jordan",
+      "location_status": "unverified_reference",
+      "geometry": null,
+      "precision_note": "Not geocoded. Place reference only.",
+      "geography_source_ids": [],
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_on": null
+      }
+    },
+    {
+      "id": "place-franklin",
+      "display_name": "Canadian Arctic, Franklin expedition route",
+      "reference_text": "Canadian Arctic / Franklin expedition route; note-location versus wreck-location ambiguity must be resolved first",
+      "location_status": "unverified_reference",
+      "geometry": null,
+      "precision_note": "Not geocoded. Place reference only.",
+      "geography_source_ids": [],
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_on": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-wp-37",
+      "kind": "published_article",
+      "title": "How Petra Made Water Flow Through Stone",
+      "institution": "Final Vestige Studios",
+      "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-wp-269",
+      "kind": "published_article",
+      "title": "The Watch Lost Its Hands",
+      "institution": "Final Vestige Studios",
+      "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-wp-370",
+      "kind": "published_article",
+      "title": "The Lines Were in the Fire",
+      "institution": "Final Vestige Studios",
+      "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-wp-433",
+      "kind": "published_article",
+      "title": "All Well Was Written First",
+      "institution": "Final Vestige Studios",
+      "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-wp-434",
+      "kind": "published_article",
+      "title": "The Hatch Opened Inward",
+      "institution": "Final Vestige Studios",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-wp-621",
+      "kind": "published_article",
+      "title": "Six Miles an Hour",
+      "institution": "Final Vestige Studios",
+      "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-board-report",
+      "kind": "institutional_report",
+      "title": "Apollo 204 Review Board Final Report",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-S67-19766",
+      "kind": "archive_record",
+      "title": "NASA image record S67-19766",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-S67-15717",
+      "kind": "archive_record",
+      "title": "NASA image record S67-15717",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-S66-58038",
+      "kind": "archive_record",
+      "title": "NASA image record S66-58038",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-KSC-20170124-PH_KLS01_0129",
+      "kind": "archive_record",
+      "title": "NASA image record KSC-20170124-PH_KLS01_0129",
+      "institution": "NASA",
+      "url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-S67-21294",
+      "kind": "archive_record",
+      "title": "NASA image record S67-21294",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "retrieved_on": "2026-10-30"
+    },
+    {
+      "id": "src-nasa-KSC-20170124-PH_KLS01_0090",
+      "kind": "archive_record",
+      "title": "NASA image record KSC-20170124-PH_KLS01_0090",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "retrieved_on": "2026-10-30"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc-board-report",
+      "title": "Apollo 204 Review Board Final Report",
+      "institution": "NASA",
+      "archive_id": "Apollo 204 Review Board Final Report",
+      "original_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "document_type": "report",
+      "date_text": "1967",
+      "evidence_class": "original_document",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-S67-19766",
+      "title": "The Apollo 1 crew near Launch Complex 34 during training, January 1967.",
+      "institution": "NASA",
+      "archive_id": "S67-19766",
+      "original_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "document_type": "photograph",
+      "date_text": "January 1967",
+      "evidence_class": "original_document",
+      "depicts_event": false,
+      "credit": "NASA",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-S67-15717",
+      "title": "Spacecraft 012 during preparations for the Apollo/Saturn 204 mission, January 1967. Processing photograph, not an image of the fire.",
+      "institution": "NASA",
+      "archive_id": "S67-15717",
+      "original_url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "document_type": "photograph",
+      "date_text": "3 January 1967 (NASA record date)",
+      "evidence_class": "original_document",
+      "depicts_event": false,
+      "credit": "NASA",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-S66-58038",
+      "title": "The prime crew preparing to enter their spacecraft in the altitude chamber at Kennedy Space Center, 18 October 1966. Training photograph taken months before the fire.",
+      "institution": "NASA",
+      "archive_id": "S66-58038",
+      "original_url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "document_type": "photograph",
+      "date_text": "18 October 1966",
+      "evidence_class": "original_document",
+      "depicts_event": false,
+      "credit": "NASA",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-KSC-20170124-PH_KLS01_0129",
+      "title": "The three-part hatch that was in place on the Apollo 1 spacecraft, displayed in the 2017 tribute at Kennedy Space Center's Apollo/Saturn V Center. A museum display photographed 24 January 2017.",
+      "institution": "NASA",
+      "archive_id": "KSC-20170124-PH_KLS01_0129",
+      "original_url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129",
+      "document_type": "photograph",
+      "date_text": "24 January 2017",
+      "evidence_class": "later_depiction",
+      "depicts_event": false,
+      "credit": "NASA / Kim Shiflett",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-S67-21294",
+      "title": "Interior of Command Module 012 at Pad 34, photographed 28 January 1967, the day after the fire. No people are shown.",
+      "institution": "NASA",
+      "archive_id": "S67-21294",
+      "original_url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "document_type": "photograph",
+      "date_text": "28 January 1967",
+      "evidence_class": "original_document",
+      "depicts_event": true,
+      "credit": "NASA",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-KSC-20170124-PH_KLS01_0090",
+      "title": "The redesigned hatch in the 2017 Apollo 1 tribute at Kennedy Space Center. The exhibit text states the Block I hatch was designed to open in 90 seconds and the Block II in 5. A museum display photographed 24 January 2017.",
+      "institution": "NASA",
+      "archive_id": "KSC-20170124-PH_KLS01_0090",
+      "original_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "document_type": "photograph",
+      "date_text": "24 January 2017",
+      "evidence_class": "later_depiction",
+      "depicts_event": false,
+      "credit": "NASA / Kim Shiflett",
+      "rights_basis": "NASA Media Usage Guidelines",
+      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "doc-apollo1-chronology",
+      "title": "The recorded markers",
+      "institution": "Final Vestige Studios",
+      "archive_id": "apollo1-final-seconds",
+      "original_url": null,
+      "document_type": "chronology",
+      "date_text": "1967-01-27",
+      "evidence_class": "editorial_reconstruction",
+      "derived_from_source_ids": [
+        "src-nasa-board-report"
+      ],
+      "review_status": "unreviewed"
+    }
+  ],
+  "claims": [
+    {
+      "id": "clm-record-01-1",
+      "investigation_id": "inv-434",
+      "text": "The test was a plugs-out countdown rehearsal with an unfueled Saturn IB.",
+      "status": "article-only",
+      "source_ids": [
+        "src-wp-434"
+      ],
+      "caveat": "Final Vestige article; not re-checked against the Board text in Sprint 5."
+    },
+    {
+      "id": "clm-record-02-1",
+      "investigation_id": "inv-434",
+      "text": "The test used a 16.7 psia, 100 percent oxygen atmosphere.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board report: 'The test was conducted with a 16.7 pounds per square inch absolute, 100-percent oxygen atmosphere.'"
+    },
+    {
+      "id": "clm-record-02-2",
+      "investigation_id": "inv-434",
+      "text": "The test conditions were extremely hazardous.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board determination under Finding 2."
+    },
+    {
+      "id": "clm-record-03-1",
+      "investigation_id": "inv-434",
+      "text": "The first verbal fire report began at 23:31:04.7 GMT.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board report, chronology: 'the transmission reporting the fire which began at 23:31:04.7 GMT (6:31:04.7 p.m. EST)'."
+    },
+    {
+      "id": "clm-record-03-2",
+      "investigation_id": "inv-434",
+      "text": "The first pressure increase was recorded about 6 seconds after the report.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board report, Cabin Pressure Rise: 'about 6 seconds after the crew first reported the fire'. The NASA web text prints the clock time as 23:21:11, an apparent typographical error for 23:31:11; the interval is unaffected."
+    },
+    {
+      "id": "clm-record-03-3",
+      "investigation_id": "inv-434",
+      "text": "Pressure exceeded the transducer range (17 psia cabin) by 23:31:16 GMT.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board report, Cabin Pressure Rise."
+    },
+    {
+      "id": "clm-record-03-4",
+      "investigation_id": "inv-434",
+      "text": "The cabin ruptured at about 23:31:19 GMT at a pressure of at least 29 psia.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board report: 'ruptured at a time of about 23:31:19 GMT and at a pressure of at least 29 psia'; another passage gives 23:31:19.4."
+    },
+    {
+      "id": "clm-record-03-5",
+      "investigation_id": "inv-434",
+      "text": "Chapter title says fourteen seconds.",
+      "status": "editorial-note",
+      "source_ids": [
+        "src-wp-434"
+      ],
+      "caveat": "The Board says the first stage ended 'approximately 15 seconds after the verbal report'; its own stamps (04.7 to 19.4) give 14.7 s. Title unchanged pending editorial decision."
+    },
+    {
+      "id": "clm-record-04-1",
+      "investigation_id": "inv-434",
+      "text": "Due to internal pressure the inner hatch could not be opened before rupture.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board Finding 4: 'Due to internal pressure, the Command Module inner hatch could not be opened prior to rupture of the Command Module.'"
+    },
+    {
+      "id": "clm-record-04-2",
+      "investigation_id": "inv-434",
+      "text": "The Block I hatch opened inward.",
+      "status": "article-only",
+      "source_ids": [
+        "src-wp-434"
+      ],
+      "caveat": "Not located in the Board report landing-page text; source from NASA history or exhibit text before publication."
+    },
+    {
+      "id": "clm-record-05-1",
+      "investigation_id": "inv-434",
+      "text": "The Board's search for the specific initiator was unsuccessful.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board report: 'A great deal of effort has been expended in an attempt to find this specific initiator. Although unsuccessful in this search...'"
+    },
+    {
+      "id": "clm-record-05-2",
+      "investigation_id": "inv-434",
+      "text": "An electrical arc was the most likely initiator.",
+      "status": "partial",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Board text found: arcing considered as a possible cause of transients; electrostatic discharge, spontaneous combustion, mechanical heat and impact heat 'eliminated as reasonable possibilities'. The exact 'most probable' arc sentence was not located in the extracted text; confirm wording."
+    },
+    {
+      "id": "clm-record-06-1",
+      "investigation_id": "inv-434",
+      "text": "NASA redesigned the hatch to open outward quickly.",
+      "status": "partial",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "caveat": "Exhibit text in NASA image KSC-20170124-PH_KLS01_0090 (Block II designed to open in 5 seconds); outward direction not located in the Board landing-page text."
+    },
+    {
+      "id": "clm-record-06-2",
+      "investigation_id": "inv-434",
+      "text": "102 deliberate ignition tests of boilerplate 1224, Dec 1967 to Feb 1968.",
+      "status": "article-only",
+      "source_ids": [
+        "src-wp-434"
+      ],
+      "caveat": "Final Vestige article; not re-checked in Sprint 5."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-board-documents-fire",
+      "subject": "doc-board-report",
+      "predicate": "documents",
+      "object": "evt-apollo1-fire",
+      "basis": "documented",
+      "justification": "The Apollo 204 Review Board report is the institutional investigation of this event.",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-s67-21294-depicts-fire",
+      "subject": "doc-S67-21294",
+      "predicate": "depicts",
+      "object": "evt-apollo1-fire",
+      "basis": "documented",
+      "justification": "NASA's record describes the photograph as the interior of Command Module 012 at Pad 34 showing the effects of the flash fire.",
+      "source_ids": [
+        "src-nasa-S67-21294"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-chronology-interprets-fire",
+      "subject": "doc-apollo1-chronology",
+      "predicate": "interprets",
+      "object": "evt-apollo1-fire",
+      "basis": "interpretive",
+      "justification": "Final Vestige plots four times stated in the Board account on a proportional axis. It adds no values between markers.",
+      "source_ids": [
+        "src-nasa-board-report"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-s66-58038-context",
+      "subject": "doc-S66-58038",
+      "predicate": "related_editorially",
+      "object": "evt-apollo1-fire",
+      "basis": "interpretive",
+      "justification": "Chosen as a context image of crew training. It was taken on 18 October 1966 and does not depict the fire.",
+      "source_ids": [
+        "src-nasa-S66-58038"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-s67-15717-context",
+      "subject": "doc-S67-15717",
+      "predicate": "related_editorially",
+      "object": "evt-apollo1-fire",
+      "basis": "interpretive",
+      "justification": "Chosen as a context image of Spacecraft 012 in preparation. It was taken in January 1967 before the fire and does not depict it.",
+      "source_ids": [
+        "src-nasa-S67-15717"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-s67-19766-context",
+      "subject": "doc-S67-19766",
+      "predicate": "related_editorially",
+      "object": "evt-apollo1-fire",
+      "basis": "interpretive",
+      "justification": "Chosen as a context image of the crew at Launch Complex 34 during training. It does not depict the fire.",
+      "source_ids": [
+        "src-nasa-S67-19766"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-ksc-0129-context",
+      "subject": "doc-KSC-20170124-PH_KLS01_0129",
+      "predicate": "related_editorially",
+      "object": "evt-apollo1-fire",
+      "basis": "interpretive",
+      "justification": "A 2017 museum photograph of the three-part hatch used on the Apollo 1 spacecraft. It is a later depiction of an artifact, not a record made in 1967.",
+      "source_ids": [
+        "src-nasa-KSC-20170124-PH_KLS01_0129"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "rel-ksc-0090-context",
+      "subject": "doc-KSC-20170124-PH_KLS01_0090",
+      "predicate": "related_editorially",
+      "object": "evt-apollo1-fire",
+      "basis": "interpretive",
+      "justification": "A 2017 museum photograph of the redesigned hatch. It illustrates the engineering response and is not a record made in 1967.",
+      "source_ids": [
+        "src-nasa-KSC-20170124-PH_KLS01_0090"
+      ],
+      "review_status": "unreviewed"
+    }
+  ]
+}
