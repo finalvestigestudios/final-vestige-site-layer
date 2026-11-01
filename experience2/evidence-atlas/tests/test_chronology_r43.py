@@ -76,7 +76,7 @@ class R43Chronology(unittest.TestCase):
         php=(HERE/'final-vestige-ex2-evidence-atlas.php').read_text()
         h=hashlib.sha256(self.html.encode('utf-8')).hexdigest()
         self.assertIn("define('FV_EX2_ATLAS_TEMPLATE_SHA256', '"+h+"')",php)
-        self.assertIn('0.0.47-staging',php)
+        self.assertIn('0.0.48-staging',php)
 
     def test_deterministic_fragment_on_rebuild(self):
         with tempfile.TemporaryDirectory() as another:

@@ -29,7 +29,22 @@
   const compareClear=root.querySelector('[data-fva-compare-clear]');
   const compareSlots=[...root.querySelectorAll('[data-fva-compare-slot]')];
   const compareButtons=[...root.querySelectorAll('[data-fva-select]')];
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!exportButton||!exportStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6)return;
+  // R48: the optional same-page Research Desk bridge is admitted only after
+  // independently matching all six *exact* source identities. This metadata
+  // pin is a DOM-drift guard, not a defense against arbitrary hostile scripts.
+  const pinned=[
+    ['01','S67-19766','https://www.nasa.gov/image-detail/apollo-1-crew-honored/'],
+    ['02','S67-15717','https://www.nasa.gov/image-detail/amf-s67-15717/'],
+    ['03','S66-58038','https://www.nasa.gov/image-detail/amf-s66-58038/'],
+    ['04','KSC-20170124-PH_KLS01_0164','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/'],
+    ['05','S67-21294','https://www.nasa.gov/image-detail/amf-s67-21294/'],
+    ['06','KSC-20170124-PH_KLS01_0090','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/']
+  ];
+  const deskLinks=[...root.querySelectorAll('[data-fva-to-desk]')];
+  const deskStatus=root.querySelector('[data-fva-desk-status]');
+  let desk=null;
+  let deskRecords=[];
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!exportButton||!exportStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6||deskLinks.length!==6||!deskStatus)return;
   let year='all';
   let active=false;
   const selected=[];
@@ -48,6 +63,10 @@
     exportButton.hidden=true;
     exportStatus.textContent='';
     status.textContent='';
+    deskLinks.forEach(link=>{link.hidden=true;link.removeEventListener('click',onDeskJump);});
+    deskStatus.hidden=true;
+    deskStatus.textContent='';
+    desk=null;deskRecords=[];
     root.dataset.fvaReady='';
     if(active){buttons.forEach(b=>b.removeEventListener('click',onFilter));
       input.removeEventListener('input',apply);
@@ -79,6 +98,17 @@
        copyButtons[i].closest('[data-fva-cite-id]')===li &&
        compareButtons[i].closest('[data-fva-record]')===cards[i] &&
        compareButtons[i].dataset.fvaSelect===expected[i]))return false;
+    // A source URL and its citation could otherwise be altered together and
+    // pass a mere cross-reference consistency check. Pin each original NASA
+    // destination and catalog against immutable build-reviewed metadata.
+    if(!pinned.every(([id,catalog,url],i)=>
+        cards[i].dataset.fvaId===id &&
+        cards[i].querySelector('.fva-card__plate span')?.textContent.trim()===catalog &&
+        cards[i].querySelector('.fva-card__external')?.getAttribute('href')===url &&
+        citations[i].querySelector('[data-fva-citation-text]')?.textContent.includes(catalog) &&
+        citations[i].querySelector('[data-fva-citation-text]')?.textContent.includes(url) &&
+        deskLinks[i].closest('[data-fva-record]')===cards[i] &&
+        deskLinks[i].getAttribute('href')===`#fv-ex2-ledger-apollo1-record-${id}`))return false;
     const seen=new Set();
     return timeJumps.every(link=>{
       const id=link.dataset.fvaTimeId;
@@ -89,6 +119,60 @@
       return era && era.dataset.fvaEra===card.dataset.fvaYear&&
          link.getAttribute('href')===`#${card.id}`;
     })&&seen.size===6;
+  };
+
+  // Verify a single Research Desk root before revealing shortcuts. Both pages
+  // remain useful independently. No external requests or altered Desk files.
+  const verifyDesk=()=>{
+    const roots=[...document.querySelectorAll('[data-fvx-ledger]')];
+    if(roots.length!==1)return null;
+    const candidate=roots[0];
+    const records=[...candidate.querySelectorAll('[data-fvx-record]')];
+    if(records.length!==6)return null;
+    if(!pinned.every(([id,catalog,url],i)=>{
+      const record=records[i];
+      const photoLinks=[...record.querySelectorAll('a[href^="https://www.nasa.gov/image-detail/"]')];
+      const optionalIds=[...record.querySelectorAll('[data-fvx-photo-record]')];
+      return record.id===`fv-ex2-ledger-apollo1-record-${id}` &&
+        record.querySelector('.fv-ex2-ledger__recordid')?.textContent.includes(catalog) &&
+        photoLinks.length===1 && photoLinks[0].getAttribute('href')===url &&
+        (optionalIds.length===0 || (optionalIds.length===1 && optionalIds[0].dataset.fvxPhotoRecord===id));
+    }))return null;
+    return {root:candidate,records};
+  };
+  const withdrawDesk=(explain=false)=>{
+    deskLinks.forEach(link=>{link.hidden=true;});
+    desk=null;deskRecords=[];
+    if(explain){
+      deskStatus.textContent='Research Desk shortcuts are unavailable. All six original NASA references remain above.';
+      deskStatus.hidden=false;
+    }
+  };
+  const onDeskJump=event=>{
+    // Recheck immediately before navigating: the other component could have
+    // changed independently after the Atlas finished loading.
+    const proof=verifyDesk();
+    const link=event.currentTarget;
+    const id=link.closest('[data-fva-record]')?.dataset.fvaId;
+    const target=proof?.records[expected.indexOf(id)];
+    if(!valid()||!proof||!target){
+      event.preventDefault();withdrawDesk(true);return;
+    }
+    if(target.hidden){
+      const search=proof.root.querySelector('[data-fvx-search]');
+      if(search){search.value='';search.dispatchEvent(new Event('input',{bubbles:true}));}
+    }
+    if(target.hidden){event.preventDefault();withdrawDesk(true);return;}
+    // The Research Desk's record elements are normally not keyboard focusable.
+    // Temporarily set tabindex without modifying its source or listener code.
+    target.setAttribute('tabindex','-1');
+    requestAnimationFrame(()=>target.focus({preventScroll:true}));
+  };
+  const initDesk=()=>{
+    const proof=verifyDesk();
+    if(!proof){withdrawDesk();return;}
+    desk=proof.root;deskRecords=proof.records;
+    deskLinks.forEach(link=>{link.hidden=false;link.addEventListener('click',onDeskJump);});
   };
   const apply=()=>{
     try{
@@ -266,6 +350,7 @@
       exportButton.hidden=false;
       compareButtons.forEach(b=>{b.hidden=false;});
       updateComparison();
+      initDesk();
       // Native citation text is always accessible. Copy is optional and only
       // exposed when the browser actually supports a clipboard API.
       if(typeof navigator.clipboard?.writeText==='function'){
