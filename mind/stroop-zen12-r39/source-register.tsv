@@ -1,0 +1,20 @@
+id	title	url	checked	qualification
+catalog	Inspire3 catalog	https://inspire3.com/	2026-11-01	seller
+offer	Zen12 exact offer	https://zen12.com/hnp	2026-11-01	seller
+about	Zen12 About	https://zen12.com/about	2026-11-01	seller
+checkout	Zen12 public Premium checkout	https://zen12.com/getstarted	2026-11-01	seller changing
+affiliate	Inspire3 public affiliate signup	https://affiliates.inspire3.com/	2026-11-01	not FV approval
+capture	Zen12 public free capture	https://zen12.com/welcome	2026-11-01	seller newsletter
+stroop02	Raz et al 2002	https://doi.org/10.1001/archpsyc.59.12.1155	2026-11-01	primary study
+stroop05	Raz et al 2005	https://doi.org/10.1073/pnas.0503064102	2026-11-01	primary study
+stroop06	Raz et al 2006	https://doi.org/10.1111/j.1467-9280.2006.01669.x	2026-11-01	primary study
+stroop21	2021 Stroop suggestion study	https://pmc.ncbi.nlm.nih.gov/articles/PMC7835729/	2026-11-01	primary, captcha possible
+stroop24	2024 suggestion meta-analysis	https://pubmed.ncbi.nlm.nih.gov/38874567/	2026-11-01	review
+hypnosis	2024 hypnosis theories review	https://doi.org/10.1016/j.concog.2024.103730	2026-11-01	review
+eeg	2023 binaural beats EEG review	https://doi.org/10.1371/journal.pone.0286023	2026-11-01	independent
+nccihmed	NCCIH meditation health	https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety	2026-11-01	US NIH
+nccihhyp	NCCIH hypnosis	https://www.nccih.nih.gov/health/hypnosis	2026-11-01	US NIH
+ftcads	FTC endorsements FAQ	https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking	2026-11-01	regulatory
+ftchealth	FTC health product claims	https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance	2026-11-01	regulatory
+puysegur	FV Puységur Archive	https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/	issue 171; live fetch failed	existing route
+focus	FV Focus Fieldbook	https://finalvestige.com/focus/	issue 171; live fetch failed	existing route

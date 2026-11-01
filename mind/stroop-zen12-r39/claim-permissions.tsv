@@ -1,0 +1,49 @@
+product	claim_or_requirement	status	source	publication_rule
+zen12	12-minute session	seller specification	https://zen12.com/hnp	cite as advertised only
+zen12	12 progressive levels	seller specification	https://zen12.com/about	not independently heard
+zen12	4 styles per level	seller specification	https://zen12.com/about	not independently heard
+zen12	guided audio	seller format	https://zen12.com/about	preference, not therapy
+zen12	nature sounds	seller format	https://zen12.com/about	preference, not therapy
+zen12	white noise	seller format	https://zen12.com/about	preference, not therapy
+zen12	relaxation music	seller format	https://zen12.com/about	preference, not therapy
+zen12	Beginner first 6/24	seller package	https://zen12.com/hnp	check current contents
+zen12	Premium all 12/48	seller package	https://zen12.com/hnp	check current contents
+zen12	Advanced last 6/24	seller package	https://zen12.com/hnp	must not describe as all levels
+zen12	1 hour equals 12 minutes	unsupported efficacy	https://zen12.com/hnp	do not adopt
+zen12	audio meditates for you	unsupported efficacy	https://zen12.com/hnp	do not adopt
+zen12	automatic brain entrainment	mechanism not proven for SKU	https://doi.org/10.1371/journal.pone.0286023	review is not Zen12 trial
+zen12	instant anxiety relief	health claim unverified	https://zen12.com/hnp	do not adopt
+zen12	automatic focus improvement	outcome unverified	https://zen12.com/hnp	do not adopt
+zen12	creativity improvement	outcome unverified	https://zen12.com/hnp	do not adopt
+zen12	wealth manifestation	financial outcome unverified	https://inspire3.com/	do not claim
+zen12	one-year guarantee	merchant representation	https://zen12.com/getstarted	read current binding terms
+zen12	lifetime support	merchant representation	https://zen12.com/getstarted	not tested
+zen12	free offer may capture email	merchant opt-in form	https://zen12.com/welcome	do not duplicate
+zen12	checkout mobile field	visible field	https://zen12.com/getstarted	required status unknown
+zen12	prices and timers	volatile seller promotion	https://zen12.com/getstarted	no evergreen amount or scarcity
+zen12	refund successfully obtained	not observed	internal	never invent
+zen12	library personally tested	not performed	internal	never imply
+zen12	partner signed acceptance	not verified	https://affiliates.inspire3.com/	HARD HOLD
+zen12	specific approved tracking link	not verified	internal	HARD HOLD
+zen12	website promotion allowed	not verified	internal	HARD HOLD
+zen12	social promotion allowed	not verified	internal	HARD HOLD
+zen12	email promotion allowed	not verified	internal	HARD HOLD
+zen12	creative swipe licensed	not verified	internal	HARD HOLD
+stroop	2002 16+16 groups	primary experimental	https://doi.org/10.1001/archpsyc.59.12.1155	selection caveat
+stroop	2005 imaging and interference	primary experimental	https://doi.org/10.1073/pnas.0503064102	not consumer product test
+stroop	2006 no-induction condition	primary experimental	https://doi.org/10.1111/j.1467-9280.2006.01669.x	do not extrapolate universally
+stroop	2021 contrasting suggestions	primary study	https://pmc.ncbi.nlm.nih.gov/articles/PMC7835729/	different mechanisms proposed
+stroop	2024 19-study review	systematic synthesis	https://pubmed.ncbi.nlm.nih.gov/38874567/	meta of 14 interference studies
+meditation	some negative experiences	NCCIH public evidence	https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety	caution and professional care
+binaural	14 EEG studies mixed	independent synthesis	https://doi.org/10.1371/journal.pone.0286023	not Zen12
+regulatory	objective health claims need proof	FTC guidance	https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance	no implied medical results
+regulatory	earning link close disclosure	FTC guidance	https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking	adjacent to future CTA
+editorial	product evidence may lead checkout	route-bypass discovery	Issue171 Dispatch comment	no clickable merchant URL in candidates
+editorial	investigation must stay independent	internal requirement	Issue171	no commerce
+site	one existing Fieldbook list	existing funnel	https://finalvestige.com/focus/	no duplicate signup
+video	40s film only concept this sprint	storyboard VTT poster	internal	not rendered or hosted
+video	caption sync with hosted MP4	not tested	internal	HARD HOLD
+privacy	live events disabled	technical safeguard	internal	no collection
+privacy	count not same as sale	measurement principle	internal	never claim earnings
+release	founder signoff	not provided	internal	HARD HOLD
+release	CMS writes	not authorized	internal	HARD HOLD
