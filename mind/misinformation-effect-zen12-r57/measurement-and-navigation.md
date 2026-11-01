@@ -1,0 +1,14 @@
+# Evidence-first navigation, experiment and privacy protocol
+**Release state: HARD HOLD.**
+Visitor journey (no subscription gate): factual TikTok/organic teaser → independently sourced investigation (memory misinformation) → optional established Focus Fieldbook → direct independent Zen12 guide with disclosed but inactive prospective earnings block. No product is recommended in the investigation. Do not add a menu entry or overwrite the existing Explore navigation without homepage owner #150 and founder review.
+
+**SEO / TikTok originals:** 
+- Hook: "The video showed no broken glass. Why did people say they saw it a week later?" Clarifier: controlled 1974 lab study, not proof memories can be rewritten at will. Lead to the full Loftus & Palmer source; no link to a merchant in the teaser.
+- Search intent: "Loftus Palmer broken glass experiment", "what is misinformation effect", "leading questions eyewitness memory", "does suggestion change memory". The page provides what the user actually searched for rather than deceptive hypnotic transformation copy.
+- Companion micro-story: a single adjective in a question changes the frame through which a later event is recalled; editorial source transparency leads to the archive. No fake screenshots or recreations labeled real experiment footage.
+
+**Pre-release UX/accessibility audit plan:** Render at widths 360/390/768/1440/1920, 200% and 400% zoom. Verify WCAG 2.2 AA contrast, link target size, keyboard focus, proper landmarks and heading order, support for reduced motion and no-JS, screen-reader announcement of transcript details. Static poster must not pretend to be a playable video. For live MP4 use native controls, VTT captions, poster and transcript, `preload="none"`, `playsinline`, no autoplay. No offsite video-player script and no paid video SaaS. Confirm WordPress sanitizer and first-party caching on staging.
+
+**Randomized A/B plan after separate permission:** A text-only guide, B same exact guide plus a truly optional 40-second first-party video. Assignment requires approved minimal same-site method without cookies unless approved; no fingerprinting. Predefine primary metric as anonymous outbound approved CTA clicks per eligible exposure, not sales. Compare confidence intervals and stopping threshold only after technical instrumentation and sufficient data. Use only categorical source/variant/events; group by n≥20, no IP, email, phone, URL query parameters, visitor IDs, raw referrers or persistent unique IDs. Hold activation until legal/privacy and merchant tracking terms verified. **No active tracking today.**
+
+**Review gates:** #126 QA for real browser/a11y/performance, #150 art lead for monumental visual fit without touching frozen PR #49, #174 Dispatch for guide destination and EMAIL-specific partner hold. No Dispatch issue edits, no new Jetpack opt-in, no live CMS, menu, settings or affiliate changes. Explicit founder release approval remains necessary.
