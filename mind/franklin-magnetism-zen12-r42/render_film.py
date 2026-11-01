@@ -33,7 +33,7 @@ def make_frame(idx):
         d.ellipse((215,613,325,723),outline=(231,184,123),width=6)
         d.line((200,663,340,663),fill=(231,184,123),width=8)
     if idx==3:d.text((75,300),"NOT THE PREPARED TREE",font=font(20),fill=(255,223,162))
-    if idx==5:d.text((85,320),"FEELING ≠ CAUSE",font=font(33),fill=(255,223,162))
+    if idx==5:d.text((85,295),"FEELING ≠ CAUSE",font=font(33),fill=(255,223,162))
     return im
 def main():
     out=Path(__file__).parent/"offline-blind-test-40s.mp4"
