@@ -77,7 +77,8 @@ def audit(lib, triage, safety, *, expected=DEFAULT):
          and triage.get("no_citation_is_proof_of_accuracy") is True
          and triage.get("regex_heuristics_have_false_negatives") is True,
          "original machine triage review authority compromised")
-    need(safety.get("issue") == 136
+    need(safety.get("schema") == "r50-safety-exception-lineage-v1"
+         and safety.get("issue") == 136
          and safety.get("claim_accuracy_verified") is False
          and all(safety.get(k) is False for k in FALSE_FLAGS),
          "R50 safety/publication authority compromised")
@@ -85,6 +86,28 @@ def audit(lib, triage, safety, *, expected=DEFAULT):
          and safety.get("counts", {}).get("historically_blocked_sources") == blocked,
          "open safety-incident or historic inaccessible-source census changed")
     need(len(lib.articles) == items, "original article/tool inventory changed")
+    variants = getattr(lib, "source_variants", {})
+    need(type(variants) is dict, "missing contributor-specific source variants")
+    all_urls = []
+    for sid, records in variants.items():
+        need(type(sid) is str and type(records) is list and records,
+             "missing or invalid original source variants")
+        seen_origins, urls = set(), set()
+        for record in records:
+            need(type(record) is dict and record.get("id") == sid
+                 and type(record.get("_origin")) is str
+                 and record["_origin"] and record["_origin"] not in seen_origins
+                 and type(record.get("url")) is str
+                 and record["url"].startswith("https://"),
+                 "changed, ambiguous or unsafe contributor source variant")
+            seen_origins.add(record["_origin"])
+            urls.add(record["url"])
+            all_urls.append(record["url"])
+        need(len(urls) == 1, "same ID has conflicting original source URLs")
+    if expected == DEFAULT:
+        need(len(all_urls) == 224 and len(set(all_urls)) == 186
+             and len(getattr(lib, "crosswalk_groups", {})) == 30,
+             "224 original records / 186 URLs / 30 shared groups not preserved")
 
     # Recompute the R13 triage from the actual original article bodies; a
     # self-repinned altered report must not substitute for original visible text.
@@ -94,6 +117,24 @@ def audit(lib, triage, safety, *, expected=DEFAULT):
          and triage.get("without_same_block_citation") == uncited
          and flags - uncited == cited,
          "high-consequence action / uncited / cited census changed")
+    if expected == DEFAULT:
+        need(sum(row["visible_block_citation_occurrences"] for row in triage["articles"]) == 1959,
+             "1,959 visible source citation occurrences not preserved")
+        original_source_pairs = 0
+        fallback_pairs = 0
+        for slug, meta in lib.articles.items():
+            source_ids = set(r13.CITES.findall(meta["_body"]))
+            original_source_pairs += len(source_ids)
+            for sid in source_ids:
+                try:
+                    source = lib.source_for(meta, sid)
+                except (KeyError, ValueError, TypeError) as exc:
+                    raise QualitativeHold("missing source in original claim crosswalk") from exc
+                if (getattr(lib, "article_origins", {}).get(slug, "base") != "base"
+                        and source.get("_origin", "base") == "base"):
+                    fallback_pairs += 1
+        need(original_source_pairs == 367 and fallback_pairs == 43,
+             "367 original article/source relationships or 43 base fallbacks lost")
 
     open_sx = safety.get("open_incidents")
     need(type(open_sx) is list and len(open_sx) == incidents,
