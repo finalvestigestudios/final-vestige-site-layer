@@ -14,7 +14,7 @@ SCENES = [
  (8,16, ["EXPERIENCE IS NOT", "A STOPWATCH."], ["Chronostasis is a measured", "perceptual illusion."]),
  (16,25,["ZEN12 SELLS", "12-MINUTE AUDIOS."], ["The vendor describes three tiers", "and four listening styles."]),
  (25,34,["TWELVE IS", "NOT SIXTY."], ["An hour's meditation benefits are", "not independently proven for Zen12."]),
- (34,40,["TRY TWELVE MINUTES", "FOR FREE FIRST."], ["Read the independent evidence guide.", "Decide for yourself."])
+ (34,40,["TRY TWELVE", "FOR FREE FIRST."], ["Read the independent evidence guide.", "Decide for yourself."])
 ]
 
 def make(out, width=540, height=960, fps=12):
