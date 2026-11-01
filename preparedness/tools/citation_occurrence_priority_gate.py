@@ -126,6 +126,7 @@ def build_priority_queue(packet, index, *, expected=EXPECTED):
         n = row.get('citation_occurrences')
         demand(type(n) is int and n > 0 and type(offsets) is list and
                type(contexts) is list and len(offsets) == len(contexts) == n and
+               all(type(offset) is int and offset >= 0 for offset in offsets) and
                offsets == sorted(set(offsets)),
                'claim offsets/contexts are incomplete')
         demand(type(row.get('base_fallback_requires_human_scope_review')) is bool and
