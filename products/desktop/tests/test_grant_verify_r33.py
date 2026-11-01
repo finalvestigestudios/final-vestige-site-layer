@@ -153,11 +153,11 @@ class GrantVerifyTests(unittest.TestCase):
         # Windows prohibits tab/newline in a filename; its permitted bidi
         # format control still exercises the same untrusted-label renderer.
         if os.name == "nt":
-            injected = self.root / "claim\\u202emaliciousentry.csv"
-            forbidden = "\\u202e"
+            injected = self.root / "claim\u202emaliciousentry.csv"
+            forbidden = "\u202e"
         else:
-            injected = self.root / "claim\\tmalicious\\nentry.csv"
-            forbidden = "\\tmalicious\\n"
+            injected = self.root / "claim\tmalicious\nentry.csv"
+            forbidden = "\tmalicious\n"
         original.rename(injected)
         self.claims = injected
         self.refresh_inventory()
