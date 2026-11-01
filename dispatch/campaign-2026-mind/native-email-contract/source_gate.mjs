@@ -51,7 +51,7 @@ for (let n=1;n<=6;n++){
   if (row.preheader_plan!==item.preheader) errs.push('parity preheader drift '+n);
   if (row.kind!==item.kind) errs.push('parity allocation drift '+n);
   if (row.proposed_custom_excerpt_NOT_APPLIED!==ex.excerpt) errs.push('parity excerpt drift '+n);
-  const expectedCta=[3,5].includes(n)?'[[NONLIVE_FIRST_PARTY_GUIDE]]':item.editorial_cta;
+  const expectedCta=item.editorial_cta; // Exact current manifest parity, including DISABLED merchant-guide placeholders.
   if (row.original_editorial_cta!==expectedCta) errs.push('parity CTA drift '+n);
   if (row.actual_native_preheader!=='UNVERIFIED' ||
       row.actual_received_mime!=='NOT_RECEIVED' ||
