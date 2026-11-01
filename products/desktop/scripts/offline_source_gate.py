@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -23,6 +24,61 @@ import source_smoke_gate as source_gate
 from report_evidence import prepare_report_path, publish_report
 
 MAX_TEST_FILES = 256
+
+DIAG_PREFIX = "FVS_TEST_DIAG:"
+DIAG_SCHEMA = "fvs-offline-failure-modules-v1"
+MAX_DIAG_MODULES = 12
+_DIAG_MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\Z")
+
+
+class SourceSuiteFailure(RuntimeError):
+    """A failing source suite with optional validated, non-sensitive module names."""
+
+    def __init__(self, message: str, diagnostic: str | None = None):
+        super().__init__(message)
+        self.diagnostic = diagnostic
+
+
+def _safe_child_diagnostic(payload):
+    """Never replay untrusted child output, exceptions, paths or financial data."""
+    if type(payload) is not bytes or not 0 < len(payload) <= 2048:
+        return None
+    try:
+        line = payload.decode("ascii")
+    except UnicodeDecodeError:
+        return None
+    if line.endswith("\n"):
+        line = line[:-1]
+    if "\n" in line or "\r" in line or not line.startswith(DIAG_PREFIX):
+        return None
+    try:
+        data = json.loads(line[len(DIAG_PREFIX):])
+    except (ValueError, TypeError):
+        return None
+    if type(data) is not dict or set(data) != {
+            "schema", "phase", "failures", "errors", "modules", "omitted_module_count"}:
+        return None
+    if data["schema"] != DIAG_SCHEMA or data["phase"] not in ("discovery", "execution"):
+        return None
+    for name in ("failures", "errors", "omitted_module_count"):
+        if type(data[name]) is not int or not 0 <= data[name] <= 20000:
+            return None
+    if data["phase"] == "execution" and data["failures"] + data["errors"] < 1:
+        return None
+    if data["phase"] == "discovery" and (data["failures"] or data["errors"]):
+        return None
+    names = data["modules"]
+    if (type(names) is not list or len(names) > MAX_DIAG_MODULES or
+            any(type(name) is not str or not _DIAG_MODULE_RE.fullmatch(name) for name in names) or
+            names != sorted(set(names))):
+        return None
+    if data["omitted_module_count"] and len(names) != MAX_DIAG_MODULES:
+        return None
+    if (data["phase"] == "execution" and
+            len(names) + data["omitted_module_count"] > data["failures"] + data["errors"]):
+        return None
+    return DIAG_PREFIX + json.dumps(data, sort_keys=True, separators=(",", ":"))
+
 
 
 def _test_inventory(root: Path, gate=source_gate) -> list[dict[str, str]]:
@@ -101,7 +157,10 @@ def _child_suite(root: Path, optimized: bool, *, timeout: int) -> dict:
         raise RuntimeError("Could not execute complete desktop regression suite") from exc
     if result.returncode != 0:
         mode = "optimized" if optimized else "normal"
-        raise RuntimeError(f"Complete desktop {mode} regression suite failed; rerun unittest locally")
+        raise SourceSuiteFailure(
+            f"Complete desktop {mode} regression suite failed; rerun unittest locally",
+            _safe_child_diagnostic(result.stdout),
+        )
     payload = result.stdout
     if type(payload) is not bytes or not 0 < len(payload) <= 1024:
         raise RuntimeError("Complete desktop regression provenance missing or oversized")
@@ -163,6 +222,11 @@ def main(argv=None) -> int:
         )
         if destination is not None:
             publish_report(destination, evidence)
+    except SourceSuiteFailure as exc:
+        if exc.diagnostic is not None:
+            print(exc.diagnostic, file=sys.stderr)
+        print("REJECTED: offline source-only suite did not pass; inspect local tests", file=sys.stderr)
+        return 1
     except (OSError, ValueError, RuntimeError):
         # Only fixed errors leave this process: no customer paths or file rows.
         print("REJECTED: offline source-only suite did not pass; inspect local tests", file=sys.stderr)
