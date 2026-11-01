@@ -1,7 +1,7 @@
 # Dispatch R45 — Real received-email evidence gate
 **November 1, 2026 · isolated, unmerged DRAFT · master Issue #174, Mind & Affiliate Issue #171**
 
-This iteration addresses a gap no amount of static HTML, mocked email, AI-based copy editing or passing Python tests can close: **we have never examined a genuinely received Final Vestige Jetpack Dispatch email.** This folder adds a **local-only, read-only RFC 5322/MIME email inspection utility** and 40 synthetic adversarial unit tests. No email has been sent, test-sent, imported or scheduled. The original founder-approved four editorial / two commercial drafts are preserved in canonical PR #175. This branch is stacked on #466, not on the frozen homepage PR #49. The independently maintained edition readiness PR #201 is also unchanged.
+This iteration addresses a gap no amount of static HTML, mocked email, AI-based copy editing or passing Python tests can close: **we have never examined a genuinely received Final Vestige Jetpack Dispatch email.** This folder adds a **local-only, read-only RFC 5322/MIME email inspection utility** and 42 synthetic adversarial unit tests. No email has been sent, test-sent, imported or scheduled. The original founder-approved four editorial / two commercial drafts are preserved in canonical PR #175. This branch is stacked on #466, not on the frozen homepage PR #49. The independently maintained edition readiness PR #201 is also unchanged.
 
 ## Current verified production status, 2026-11-01 15:39 UTC
 Authenticated WordPress read-only diagnostics for site 256784396:
