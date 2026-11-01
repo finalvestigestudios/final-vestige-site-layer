@@ -159,7 +159,7 @@ class SourceSmokeIntegrityR42(unittest.TestCase):
             target = {"fd": None}
             def observe_open(path, flags, *args, **kwargs):
                 fd = real_open(path, flags, *args, **kwargs)
-                if Path(path) == item:
+                if Path(path).resolve(strict=True) == item.resolve(strict=True):
                     target["fd"] = fd
                 return fd
             def observe_fstat(fd):
@@ -176,7 +176,7 @@ class SourceSmokeIntegrityR42(unittest.TestCase):
         item = self.package / "engine.py"
         original_open = gate.os.open
         def replace_then_open(path, flags, *args, **kwargs):
-            if Path(path) == item:
+            if Path(path).resolve(strict=True) == item.resolve(strict=True):
                 item.unlink()
                 item.write_bytes(b"# swapped before descriptor\n")
             return original_open(path, flags, *args, **kwargs)
@@ -196,7 +196,7 @@ class SourceSmokeIntegrityR42(unittest.TestCase):
             target = {"fd": None, "changed": False}
             def observe_open(path, flags, *args, **kwargs):
                 fd = real_open(path, flags, *args, **kwargs)
-                if Path(path) == item:
+                if Path(path).resolve(strict=True) == item.resolve(strict=True):
                     target["fd"] = fd
                 return fd
             def observe_read(fd, size):
