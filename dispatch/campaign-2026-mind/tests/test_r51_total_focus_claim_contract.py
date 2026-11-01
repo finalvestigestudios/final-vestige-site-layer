@@ -106,7 +106,7 @@ class R51TotalFocusClaimContract(unittest.TestCase):
         self.assertNotIn("https://",e)
     def test_21_exact_official_sources_and_limitations(self):
         byid={x["id"]:x for x in REG["source_register"]}
-        self.assertEqual(len(byid),5)
+        self.assertEqual(len(byid),6)
         self.assertEqual(byid["S1"]["url"],"https://hypnosislive.com/mental-skills/total-focus")
         self.assertEqual(byid["S2"]["url"],"https://www.nccih.nih.gov/health/hypnosis")
         self.assertIn("Final Vestige Total Focus email rights",byid["S3"]["not_supported"])
@@ -136,6 +136,12 @@ class R51TotalFocusClaimContract(unittest.TestCase):
         notes=(PACK/"README.md").read_text(encoding="utf8")
         for phrase in ("postal address","unsubscribe","merchant","approval","WordPress","excerpt","received","HOLD"):
             self.assertIn(phrase.lower(),notes.lower())
+    def test_29_historical_source_is_rendered_not_merely_registered(self):
+        source="https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+        for label,s in (("markdown",MD),("plaintext",TXT),("email_html",WEB)):
+            with self.subTest(label=label): self.assertEqual(s.count(source),1)
+        self.assertIn("Puységur's 1784 accounts",MD)
+        self.assertEqual(REG["source_register"][5]["id"],"S6")
     def test_28_original_editorial_not_promoted_to_offer(self):
         self.assertEqual([x["kind"] for x in MAN["issues"]],["editorial","editorial","commercial-review-pending","editorial","commercial-review-pending","editorial"])
 if __name__=="__main__":unittest.main()
