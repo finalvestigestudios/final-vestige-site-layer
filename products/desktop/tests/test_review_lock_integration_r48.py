@@ -89,7 +89,7 @@ class PremiumWriterIntegrationTests(unittest.TestCase):
                     state["active"] = True
                 else:
                     self.lock.unlink()
-                    self.lock.write_bytes(b"competitor owns lock\\n")
+                    self.lock.write_bytes(b"competitor owns lock\n")
             return real_read_cases(*args, **kwargs)
 
         observer = altered_lstat(self.lock, state, real_lstat)
@@ -101,7 +101,7 @@ class PremiumWriterIntegrationTests(unittest.TestCase):
             # Synthetic metadata drift leaves an original lock for inspection.
             self.assertTrue(self.lock.read_bytes().startswith(b"pid="))
         else:
-            self.assertEqual(self.lock.read_bytes(), b"competitor owns lock\\n")
+            self.assertEqual(self.lock.read_bytes(), b"competitor owns lock\n")
         self.assertFalse(self.journal.exists() and self.journal.read_bytes().strip())
 
 
