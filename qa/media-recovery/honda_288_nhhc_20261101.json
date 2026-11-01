@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "post_id": 288,
+  "post_title": "The Bearing Was Right",
+  "wp_status": "publish",
+  "wp_modified": "2026-08-19T14:37:40",
+  "wp_readback": "6/6 exact src and ALT",
+  "source_inventory_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "audit_date": "2026-11-01",
+  "scope": "draft media recovery; no production changes",
+  "sitewide": {
+    "posts": 61,
+    "image_slots": 355,
+    "external_image_slots": 288,
+    "originals_over_1_5_mib": 13,
+    "reported_42_broken_verified": false,
+    "claimed_76_pct_transferred_savings_measured": false,
+    "production_repaired": 0
+  },
+  "rights_policy": "NHHC: most, NOT all archival photos public domain; donor and USNI rights remain item-specific HOLD",
+  "source_note": "rendered by web retriever does not prove website guest Chrome success, binary identical or HTTP 200",
+  "rows": [
+    {
+      "key": "288:0",
+      "post_id": 288,
+      "slot": 0,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "original_alt": "U.S. Navy destroyers wrecked along the California coast at Honda Point after the September 8, 1923 disaster.",
+      "wordpress_exact_src_alt_read_only_verified": true,
+      "retriever": {
+        "observed_date": "2026-11-01",
+        "method": "web_open_image_retriever_NOT_visitor",
+        "observation": "FETCH_TIMEOUT",
+        "http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "authority": {
+        "catalog_id": "NH 69586",
+        "record_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+        "relationship": "official-URL-ID",
+        "exact_image_binary_sha256": null,
+        "exact_binary_comparison_done": false,
+        "rights_status": "HOLD",
+        "rights_and_attribution_verified": false
+      },
+      "dimensions": {
+        "catalog_master_width": 6256,
+        "catalog_master_height": 4862,
+        "conditional_target_width": 960,
+        "conditional_target_height": 746,
+        "max_width": 960,
+        "no_upscale": true,
+        "published_original_binary_dimensions_known": false
+      },
+      "guest": {
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "final_http_status": null,
+        "encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "permissions": {
+        "cache": false,
+        "download": false,
+        "wordpress_upload": false,
+        "wordpress_edit": false
+      }
+    },
+    {
+      "key": "288:1",
+      "post_id": 288,
+      "slot": 1,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://ahoy.tk-jk.net/Images8/Honda/DelphiAndNicholasAtHondaPoint.jpg",
+      "original_alt": "USS Delphy and another wrecked destroyer at Honda Point after the 1923 disaster.",
+      "wordpress_exact_src_alt_read_only_verified": true,
+      "retriever": {
+        "observed_date": "2026-11-01",
+        "method": "web_open_image_retriever_NOT_visitor",
+        "observation": "RENDERED_IMAGE",
+        "http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "authority": {
+        "catalog_id": "NH 69059",
+        "record_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69059.html",
+        "relationship": "rendered-photo-heading-NH-69059",
+        "exact_image_binary_sha256": null,
+        "exact_binary_comparison_done": false,
+        "rights_status": "HOLD",
+        "rights_and_attribution_verified": false
+      },
+      "dimensions": {
+        "catalog_master_width": 6250,
+        "catalog_master_height": 4904,
+        "conditional_target_width": 960,
+        "conditional_target_height": 753,
+        "max_width": 960,
+        "no_upscale": true,
+        "published_original_binary_dimensions_known": false
+      },
+      "guest": {
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "final_http_status": null,
+        "encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "permissions": {
+        "cache": false,
+        "download": false,
+        "wordpress_upload": false,
+        "wordpress_edit": false
+      }
+    },
+    {
+      "key": "288:2",
+      "post_id": 288,
+      "slot": 2,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "original_alt": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+      "wordpress_exact_src_alt_read_only_verified": true,
+      "retriever": {
+        "observed_date": "2026-11-01",
+        "method": "web_open_image_retriever_NOT_visitor",
+        "observation": "FETCH_TIMEOUT",
+        "http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "authority": {
+        "catalog_id": "UG 21-01.02",
+        "record_url": "https://www.history.navy.mil/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio.html",
+        "relationship": "official-URL-ID",
+        "exact_image_binary_sha256": null,
+        "exact_binary_comparison_done": false,
+        "rights_status": "HOLD",
+        "rights_and_attribution_verified": false
+      },
+      "dimensions": {
+        "catalog_master_width": 2197,
+        "catalog_master_height": 2773,
+        "conditional_target_width": 960,
+        "conditional_target_height": 1212,
+        "max_width": 960,
+        "no_upscale": true,
+        "published_original_binary_dimensions_known": false
+      },
+      "guest": {
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "final_http_status": null,
+        "encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "permissions": {
+        "cache": false,
+        "download": false,
+        "wordpress_upload": false,
+        "wordpress_edit": false
+      }
+    },
+    {
+      "key": "288:3",
+      "post_id": 288,
+      "slot": 3,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://www.navsource.net/archives/05/pix1/0531104.jpg",
+      "original_alt": "Wrecked U.S. Navy destroyers at Honda Point after the 1923 disaster.",
+      "wordpress_exact_src_alt_read_only_verified": true,
+      "retriever": {
+        "observed_date": "2026-11-01",
+        "method": "web_open_image_retriever_NOT_visitor",
+        "observation": "RENDERED_IMAGE",
+        "http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "authority": {
+        "catalog_id": "NH 84820",
+        "record_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84820.html",
+        "relationship": "rendered-photo-heading-NH-84820",
+        "exact_image_binary_sha256": null,
+        "exact_binary_comparison_done": false,
+        "rights_status": "HOLD",
+        "rights_and_attribution_verified": false
+      },
+      "dimensions": {
+        "catalog_master_width": 6146,
+        "catalog_master_height": 5130,
+        "conditional_target_width": 960,
+        "conditional_target_height": 801,
+        "max_width": 960,
+        "no_upscale": true,
+        "published_original_binary_dimensions_known": false
+      },
+      "guest": {
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "final_http_status": null,
+        "encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "permissions": {
+        "cache": false,
+        "download": false,
+        "wordpress_upload": false,
+        "wordpress_edit": false
+      }
+    },
+    {
+      "key": "288:4",
+      "post_id": 288,
+      "slot": 4,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/h84000/h84822.jpg",
+      "original_alt": "USS Chauncey and wrecked destroyers during rescue operations at Honda Point in 1923.",
+      "wordpress_exact_src_alt_read_only_verified": true,
+      "retriever": {
+        "observed_date": "2026-11-01",
+        "method": "web_open_image_retriever_NOT_visitor",
+        "observation": "RENDERED_IMAGE",
+        "http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "authority": {
+        "catalog_id": "NH 84822",
+        "record_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84822.html",
+        "relationship": "official-URL-ID-and-heading",
+        "exact_image_binary_sha256": null,
+        "exact_binary_comparison_done": false,
+        "rights_status": "HOLD",
+        "rights_and_attribution_verified": false
+      },
+      "dimensions": {
+        "catalog_master_width": 6158,
+        "catalog_master_height": 4992,
+        "conditional_target_width": 960,
+        "conditional_target_height": 778,
+        "max_width": 960,
+        "no_upscale": true,
+        "published_original_binary_dimensions_known": false
+      },
+      "guest": {
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "final_http_status": null,
+        "encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "permissions": {
+        "cache": false,
+        "download": false,
+        "wordpress_upload": false,
+        "wordpress_edit": false
+      }
+    },
+    {
+      "key": "288:5",
+      "post_id": 288,
+      "slot": 5,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://www.usni.org/sites/default/files/styles/hero_image/public/LWF-PRO-3-20%201_0.jpg?itok=ex2XHVlK",
+      "original_alt": "Aerial historical view of the Honda Point destroyer wreck field along the California coast.",
+      "wordpress_exact_src_alt_read_only_verified": true,
+      "retriever": {
+        "observed_date": "2026-11-01",
+        "method": "web_open_image_retriever_NOT_visitor",
+        "observation": "RENDERED_IMAGE",
+        "http_status": null,
+        "content_type": null,
+        "transferred_bytes": null
+      },
+      "authority": {
+        "catalog_id": null,
+        "record_url": "https://www.usni.org/magazines/proceedings/2020/march/chaos-devils-jaw-0",
+        "relationship": "publisher-only-not-NHHC-exact",
+        "exact_image_binary_sha256": null,
+        "exact_binary_comparison_done": false,
+        "rights_status": "HOLD",
+        "rights_and_attribution_verified": false
+      },
+      "dimensions": {
+        "catalog_master_width": null,
+        "catalog_master_height": null,
+        "conditional_target_width": null,
+        "conditional_target_height": null,
+        "max_width": 960,
+        "no_upscale": true,
+        "published_original_binary_dimensions_known": false
+      },
+      "guest": {
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "final_http_status": null,
+        "encoded_bytes": null,
+        "visibly_broken": null
+      },
+      "permissions": {
+        "cache": false,
+        "download": false,
+        "wordpress_upload": false,
+        "wordpress_edit": false
+      }
+    }
+  ]
+}
