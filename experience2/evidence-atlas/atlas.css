@@ -112,3 +112,9 @@
 .fva-citations__status{min-height:1.7em;color:var(--gold)}
 @media(max-width:800px){.fva-citations ol{grid-template-columns:minmax(0,1fr)}}
 @media print{.fva-citations,.fva-citations li{background:#fff;border-color:#777;break-inside:avoid}.fva-citations button,.fva-citations__status{display:none!important}}
+
+/* R45: bidirectional, source-custody-preserving citation navigation. */
+.fva-card__cite-link{display:inline-flex;align-items:center;min-height:44px;align-self:start;margin-top:3px;font-size:14px;font-weight:650}
+.fva-citations [data-fva-cite-id]:target{outline:3px solid var(--gold);outline-offset:4px}
+.fva-citations [data-fva-back-record]{display:inline-flex;align-items:center;min-height:44px;margin-right:12px;font-size:13px}
+@media print{.fva-card__cite-link,.fva-citations [data-fva-back-record]{display:none!important}}

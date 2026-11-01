@@ -77,7 +77,8 @@ def make_html(custody: dict, css: str, js: str) -> str:
              <dt>Reuse status</dt><dd>Individual review required. No photograph is reproduced here.</dd>
              <dt>Documentary boundary</dt><dd>{q(r['photo_role'])}. The photograph alone does not prove the cause or sequence of the Apollo 1 fire.</dd></dl>
           </details>
-          <a class="fva-card__external" href="{q(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open original NASA record <span aria-hidden="true">↗</span></a>
+          <a class="fva-card__external" href="{q(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open original NASA record (opens in new tab) <span aria-hidden="true">↗</span></a>
+          <a class="fva-card__cite-link" data-fva-to-citation href="#fva-citation-{q(r['id'])}">Cite this NASA record</a>
         </article>''')
     all_cards = '\n'.join(cards)
     # Fixed, source-custody-backed navigation; still navigable when JS is absent.
@@ -119,8 +120,9 @@ def make_html(custody: dict, css: str, js: str) -> str:
         citation = (f'NASA · catalog {r["catalog"]} · photograph date {r["date_label"]} · '
                     f'source: {r["photo_url"]} · image reuse: individual review required.')
         citation_items.append(
-            f'<li data-fva-cite-id="{q(r["id"])}">'
+            f'<li data-fva-cite-id="{q(r["id"])}" id="fva-citation-{q(r["id"])}">'
             f'<p class="fva-citation__text" data-fva-citation-text>{q(citation)}</p>'
+            f'<a data-fva-back-record href="#fva-record-{q(r["id"])}">Return to NASA record {q(r["id"])}</a>'
             f'<button type="button" data-fva-copy hidden '
             f'aria-label="Copy NASA source {q(r["id"])} citation">Copy citation {q(r["id"])}</button></li>'
         )
@@ -182,7 +184,7 @@ def build(output: Path) -> dict:
     page_path = output / 'apollo-evidence-atlas.html'
     page_path.write_text(document, encoding='utf-8', newline='\n')
     receipt = {
-       'schema': 'fv.ex2.apollo.atlas.r44.v1', 'release': 'STAGING_HOLD',
+       'schema': 'fv.ex2.apollo.atlas.r45.v1', 'release': 'STAGING_HOLD',
        'crosswalk_git_blob': EXPECTED_BLOB, 'records': list(IDS),
        'source_year_counts': {'1966': 1, '1967': 3, '2017': 2},
        'image_rights': '6 INDIVIDUAL_REVIEW_REQUIRED', 'image_binaries': 0,

@@ -15,9 +15,14 @@
   const jumps=[...indexJumps,...timeJumps];
   const citationList=root.querySelector('[data-fva-citations]');
   const citations=[...root.querySelectorAll('[data-fva-cite-id]')];
+  const citeJumps=[...root.querySelectorAll('[data-fva-to-citation]')];
+  const backLinks=[...root.querySelectorAll('[data-fva-back-record]')];
+  // Source citations are never filtered. Backlinks share the same fail-open
+  // record-reveal behavior as source-index and chronology anchors.
+  jumps.push(...backLinks);
   const copyButtons=[...root.querySelectorAll('[data-fva-copy]')];
   const copyStatus=root.querySelector('[data-fva-copy-status]');
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||!copyStatus)return;
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus)return;
   let year='all';
   let active=false;
   const restore=()=>{
@@ -45,7 +50,12 @@
     // The chronology must contain exactly one native permalink to every
     // custody record, grouped by the photograph's verified year (not geography).
     if(!citations.every((li,i)=>li.dataset.fvaCiteId===expected[i] &&
+       li.id===`fva-citation-${expected[i]}` &&
        li.querySelector('[data-fva-citation-text]')?.textContent.trim() &&
+       citeJumps[i].closest('[data-fva-record]')===cards[i] &&
+       citeJumps[i].getAttribute('href')===`#${li.id}` &&
+       backLinks[i].closest('[data-fva-cite-id]')===li &&
+       backLinks[i].getAttribute('href')===`#${cards[i].id}` &&
        copyButtons[i].closest('[data-fva-cite-id]')===li))return false;
     const seen=new Set();
     return timeJumps.every(link=>{

@@ -21,7 +21,7 @@ class R44CitationRegressions(unittest.TestCase):
         self.assertEqual(self.html.count('data-fva-cite-id='),6)
         self.assertEqual(self.html.count('data-fva-citation-text>'),6)
         for r in self.custody['records']:
-            span=re.search(fr'<li data-fva-cite-id="{r["id"]}">(.*?)</li>',self.html,re.S)
+            span=re.search(fr'<li data-fva-cite-id="{r["id"]}"[^>]*>(.*?)</li>',self.html,re.S)
             self.assertIsNotNone(span)
             self.assertIn(r['catalog'],span.group(1))
             self.assertIn(r['photo_url'],span.group(1))
@@ -45,7 +45,7 @@ class R44CitationRegressions(unittest.TestCase):
             fragment=(package/'templates/atlas-fragment.html').read_bytes()
             php=(package/'final-vestige-ex2-evidence-atlas.php').read_text()
             self.assertIn(hashlib.sha256(fragment).hexdigest(),php)
-            self.assertIn('0.0.44-staging',php)
+            self.assertIn('0.0.45-staging',php)
             self.assertEqual(fragment.count(b'data-fva-copy hidden'),6)
 
 if __name__=='__main__':unittest.main()
