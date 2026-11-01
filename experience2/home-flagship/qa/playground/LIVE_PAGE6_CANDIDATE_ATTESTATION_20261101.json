@@ -1,0 +1,52 @@
+{
+  "schema": "fv-ex2-real-production-page6-candidate-proof/v1",
+  "status": "EXACT_REAL_SOURCE_COMPOSITION_PASSED__WORDPRESS_RENDER_AND_RELEASE_HOLD",
+  "site": "https://finalvestige.com",
+  "wordpress": {
+    "site_id": 256784396,
+    "page_id": 6,
+    "status": "publish",
+    "modified": "2026-10-30T09:14:14",
+    "raw_content_bytes": 47091,
+    "raw_content_sha256": "52f3a353d092c025b2c527058d2ae695a3d3f2d21bbaf4722955c30f3b784cab"
+  },
+  "github": {
+    "repository": "finalvestigestudios/final-vestige-site-layer",
+    "base_commit": "a71670d059d0046886d34f1ab3e36cad6be4f10c",
+    "flagship_index_git_blob": "70ebe0d8e122048343c99a3c6adc6f7ac498ed7f",
+    "build_release_review_git_blob": "c963b9da14e0d7ed7e5d5e7faccfbbb7af8af97f",
+    "selective_assembler_git_blob": "ba3f617af27afb95a637d09483c0c8db8637942e",
+    "original_preservation_gate_git_blob": "e85a7c16acddacfa16601d49052649d262fab16d"
+  },
+  "composition": {
+    "reviewed_fragment_sha256": "a868423c033a179d1821bb9eb1cf7b5c6c07106097e18cce6afe58b79f908cc1",
+    "fragment_bytes": 34902,
+    "removed_legacy_hero_sha256": "0ff3f9db1830713a78e9340d7b23277ff4b6ae18b54f6b33e5030c54baa475f5",
+    "removed_legacy_hero_bytes": 4288,
+    "composed_candidate_sha256": "9c6327faa11b733a853414562a6eddf45ee89105626d7766a052965b771418b4",
+    "candidate_bytes": 77740,
+    "unchanged_prefix_bytes": 15511,
+    "unchanged_suffix_bytes": 27292
+  },
+  "preserved": {
+    "margins_records": 72,
+    "jetpack_original_blocks": 1,
+    "focus_original_links": 2,
+    "chapter_anchors": 7,
+    "evidence_cases": 3,
+    "h1_in_gutenberg_candidate": 1
+  },
+  "execution": "Original GitHub code `render()`, `assemble()`, `attest()` invoked on actual edit-mode live public Page 6 raw Gutenberg in isolated ECMAScript runtime using read-only Node module facades. Independent pure-JavaScript SHA-256 implementation verified with abc known answer. No local Node CLI, WordPress executable, browser or CI was run for this exact candidate.",
+  "privacy": "Do not commit or publish the 77,740-byte raw candidate; receipt includes only public page metadata and source fingerprints. No subscriber/user record, secret, production database or CMS write.",
+  "not_certified": [
+    "native WordPress / Assembler page render",
+    "private Playground execution",
+    "real first-party image HTTP bytes or reproduction rights",
+    "WCAG 2.2 AA / axe / zoom / keyboard / Safari",
+    "measured Lighthouse and real p75 CWV",
+    "Jetpack delivery",
+    "GitHub Actions / independent QD PASS",
+    "release approval"
+  ],
+  "next_gate": "Recompute source digest on authorized isolated runner; acquire independently verified Assembler and media assets, run existing 19-step Blueprint and browser/axe/Lighthouse harness. Maintain HOLD, no production writes or merge."
+}
