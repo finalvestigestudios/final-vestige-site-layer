@@ -2,6 +2,7 @@
 import copy
 import json
 from pathlib import Path
+from html import escape
 import sys
 import unittest
 
@@ -75,7 +76,7 @@ class CanonicalCrossLayerTest(unittest.TestCase):
     def test_review_board_is_source_consistent(self):
         self.assertEqual(self.board.count('class="card '), 6)
         for issue in self.manifest["issues"]:
-            self.assertIn(issue["preheader"], self.board)
+            self.assertIn(escape(issue["preheader"], quote=True), self.board)
 
     def test_review_board_does_not_claim_approval(self):
         self.assertEqual(self.board.count("HELD — NOT SENT"), 6)
