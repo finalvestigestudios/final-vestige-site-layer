@@ -105,6 +105,14 @@ def _scan_one(app_id: str) -> None:
     title, input_labels, _, premium = product
     examined = False
     root_to_destroy = None
+    scheduled_initial_focus = []
+
+    def capture_idle(root, callback, *args):
+        # Keep the app's real declared initial focus target, but schedule it
+        # only once the intercepted root has become an active native window.
+        # A bare update_idletasks() can fire it before native focus is possible.
+        scheduled_initial_focus.append((root, callback, args))
+        return "r106-private-idle-capture"
 
     def deny(*_args, **_kwargs):
         raise KeyboardBlocked("Input chooser or financial action unexpectedly invoked")
@@ -151,6 +159,13 @@ def _scan_one(app_id: str) -> None:
             if current is None:
                 raise KeyboardBlocked("Tk focus traversal unavailable")
 
+        if len(scheduled_initial_focus) != 1:
+            raise KeyboardBlocked("Initial focus must be scheduled exactly once")
+        scheduled_root, callback, arguments = scheduled_initial_focus[0]
+        if scheduled_root is not root or getattr(callback, "__self__", None) != entries[0]:
+            raise KeyboardBlocked("Initial focus target is not the first entry")
+        callback(*arguments)
+        root.update()
         keys = _expected_bindings(inputs) | frozenset(("<Alt-Key-r>",))
         active_bindings = frozenset(key for key in keys if root.bind(key))
         static_labels = tuple(str(widget.cget("text")) for widget in widgets
@@ -168,6 +183,7 @@ def _scan_one(app_id: str) -> None:
         guarded = (title, input_labels, deny, premium)
         with (patch.dict(app.APPS, {app_id: guarded}),
               patch.object(tk.Tk, "mainloop", inspect),
+              patch.object(tk.Tk, "after_idle", capture_idle),
               patch.object(app.filedialog, "askopenfilename", side_effect=deny),
               patch.object(app.filedialog, "askdirectory", side_effect=deny)):
             app.run(app_id)
