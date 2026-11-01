@@ -38,6 +38,23 @@ class WindowsSourceStageR100(unittest.TestCase):
         with self.assertRaises(ValueError):
             probe._quiet_stage("customer-secret", lambda: None)
 
+    def test_blocked_inventory_does_not_run_source_tests_or_engine_smokes(self):
+        from scripts import offline_source_gate as gate
+        stdout = io.StringIO()
+        with patch.object(gate, "_snapshot", side_effect=ValueError("PRIVATE_CUSTOMER")), \
+             patch.object(gate, "_child_suite") as child, \
+             patch.object(gate.source_gate, "report_data") as smoke, \
+             contextlib.redirect_stdout(stdout):
+            states = probe.probe(Path("synthetic"))
+        self.assertFalse(states["inventory"])
+        self.assertFalse(states["normal_tests"])
+        self.assertFalse(states["optimized_tests"])
+        self.assertFalse(states["engine_smokes"])
+        child.assert_not_called()
+        smoke.assert_not_called()
+        self.assertIn("NOT_RUN_INVENTORY_BLOCKED", stdout.getvalue())
+        self.assertNotIn("PRIVATE", stdout.getvalue())
+
     def test_independent_phase_receipts_and_no_release_claim(self):
         from scripts import offline_source_gate as gate
         stdout = io.StringIO()
