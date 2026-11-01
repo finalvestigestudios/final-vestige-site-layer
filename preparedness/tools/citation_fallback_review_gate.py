@@ -253,6 +253,24 @@ def _load_private_html_semantic_gate():
     spec.loader.exec_module(module)
     return module.audit_private_zip_html
 
+
+def _load_private_visible_evidence_parity_gate():
+    # R47: independent literal on-screen row parity against original R42.
+    # Complements R44 ZIP custody and R45/R46 DOM safety. Every originally
+    # distinct citation, reading scope, fallback and shared URL variant must
+    # be visible in the private review HTML with no drops or rewording.
+    # This never performs human fact checks, reviewer auth or CMS writes.
+    location = Path(__file__).with_name('reviewer_visible_row_parity_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R47 visible evidence parity validator')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r47_private_visible_evidence', location)
+    need(spec is not None and spec.loader is not None,
+         'R47 visible source parity gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.audit_visible_evidence_rows
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -268,6 +286,7 @@ build_article_review_dossiers = _load_article_review_dossiers()
 build_private_offline_review_desk = _load_private_offline_html_gate()
 build_private_zip_custody, verify_private_zip_custody = _load_private_zip_custody_gate()
 audit_private_html_semantics = _load_private_html_semantic_gate()
+audit_private_visible_source_rows = _load_private_visible_evidence_parity_gate()
 
 
 def canonical(value):
@@ -524,6 +543,31 @@ def audit(lib, expected=EXPECTED):
                  'source_claim_accuracy_verified',
                  'reviewer_real_identity_verified')),
              'R45 private reviewer presentation or release-HOLD contract drift')
+        # R47 independently parses literal reviewer-visible field/value cells.
+        # Each original full source and citation record must remain readable
+        # within its correct article and the full cited/uncited global URL page.
+        # Machine consistency and UI integrity are NOT source or safety approval.
+        visible_evidence = audit_private_visible_source_rows(
+            article_dossiers, private_package['zip_bytes'],
+            trusted_r42_sha256=article_dossiers['fingerprint_sha256'],
+            trusted_r43_sha256=private_manifest['fingerprint_sha256'],
+            expected=expected)
+        need(visible_evidence['release_state'] == 'HOLD'
+             and visible_evidence['private_pages_checked'] == 38
+             and visible_evidence['counts'] == article_dossiers['counts']
+             and visible_evidence['parent_R45_fingerprint_sha256'] ==
+                 html_integrity['fingerprint_sha256']
+             and visible_evidence['visible_source_and_identity_fields_checked'] > 1959
+             and visible_evidence['individual_claim_reviews_still_unstarted'] == 1959
+             and visible_evidence['external_links_visited'] is False
+             and visible_evidence['source_accuracy_established'] is False
+             and visible_evidence['actual_human_review_started'] is False
+             and all(visible_evidence[flag] is False for flag in (
+                 'may_publish', 'qualified_safety_clearance',
+                 'independent_QD_approval', 'human_source_reviews_completed',
+                 'source_claim_accuracy_verified',
+                 'reviewer_real_identity_verified')),
+             'R47 visible source-cell custody or release HOLD failed')
         # The unedited baseline must round-trip R38 intact. This mandatory
         # check is intentionally zero progress: machine CI cannot verify that
         # a human actually visited, read or understood a referenced source.
