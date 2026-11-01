@@ -1,0 +1,28 @@
+# R101 — Windows multi-file inventory diagnosis (source-only, no release)
+
+**Status: DRAFT / RELEASE HOLD.** Parent R100 exact head `114ad40a96c0a4e84b3f65dc1fbb962e3cf67173`, PR #401. No changes to the production branch, binary build inputs, app algorithms, money handling, privacy controls, paid distribution, or independent QD approval.
+
+## Why this sprint
+
+R100 CI #41272202979 passed the complete Linux source suite in normal and optimized `-OO` modes and all six source smokes. Its native Windows runner passed single-file fingerprint tests and scanning the test directory, but **both whole-tree source and test inventory** were blocked. The mandatory R57 source gate therefore refused Windows packaging. The precise cause had not been verified.
+
+## Concrete additions
+
+- `scripts/diagnose_windows_inventory_r101.py`: read-only per-file source- and test-inventory diagnostics, using the **unchanged production `_fingerprint` function as first authority**. Failures are examined independently for a fixed category (regular file, unexpected hardlinks, confinement, length, descriptor identity, read, etc.). Never reclassifies an original failed fingerprint as passing, and never changes gate results.
+- `tests/test_windows_inventory_forensics_r101.py`: 15 synthetic tests for source-authority preservation, symlink/hardlink classification, missing/outside/oversized input, bounded metadata bitmasks, privacy-safe counters, invalid labels, and fail-closed semantics.
+- `.github/workflows/desktop-build.yml`: run two-mode synthetic tests and source-only probe **before the unchanged R57 Windows gate**; run synthetic tests on Linux too. The probe reports only static category counts with a fixed prefix and releases no file paths, personal data, exceptions, input bytes, or test fixtures.
+
+## Reproduce
+
+```
+PYTHONPATH=products/desktop python -m unittest discover -s products/desktop/tests -p 'test_windows_inventory_forensics_r101.py' -v
+PYTHONPATH=products/desktop python -OO -m unittest discover -s products/desktop/tests -p 'test_windows_inventory_forensics_r101.py' -v
+PYTHONPATH=products/desktop python products/desktop/scripts/diagnose_windows_inventory_r101.py
+PYTHONPATH=products/desktop python products/desktop/scripts/offline_source_gate.py
+```
+
+The diagnostic returning process status zero is **NOT proof the inventory is sound**; only the last mandatory command gates packaging. CI may show `FVS_R101_SOURCES:...` and `FVS_R101_TESTS:...` with known counters, no private paths. The `UNKNOWN` category explicitly remains a refusal to infer safe metadata. Full source and Windows packaging status must be checked from the actual Actions run; never infer success from unexecuted committed tests.
+
+## Next action
+
+Inspect GitHub Actions run for R101 exact branch head. If a common Windows-specific descriptor identity or file-link condition is demonstrated, correct it with adversarial regressions **without weakening** symlink, hardlink, same-byte-rewrite, metadata, source path or multi-pass inventory guards. Rerun complete normal/-OO suite, six source smokes and native Windows x64 candidate build/smoke. Check SHA256, AV, accessibility and controlled premium entitlement. Keep all six apps UNRELEASED until independent QD and founder signoff.
