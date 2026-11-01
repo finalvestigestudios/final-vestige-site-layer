@@ -125,6 +125,19 @@
         "delivery verified",
         "separate preheader field verified"
       ]
+    },
+    {
+      "id": "S6",
+      "role": "historical primary-source interpretation and first-party archival guide",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observed": "2026-11-01",
+      "supported": [
+        "the 1784 Puységur accounts are an historical illustration of observation versus explanation"
+      ],
+      "not_supported": [
+        "an analogy proves commercial hypnosis effectiveness",
+        "Puységur validates Total Focus"
+      ]
     }
   ],
   "prohibited_claims": [
