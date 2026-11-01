@@ -10,6 +10,7 @@ import unittest
 from contextlib import redirect_stderr
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 MOD = Path(__file__).resolve().parents[1] / "scripts" / "windows11_manual_acceptance_r109.py"
 spec = importlib.util.spec_from_file_location("windows11_manual_acceptance_r109", MOD)
@@ -197,6 +198,26 @@ class ManualR109(unittest.TestCase):
     def test_unperformed_check_with_witness_refused(self):
         self.review["apps"][qa.FREE[0]]["checks"][qa.FREE_CHECKS[0]]["witness_sha256"] = "a"*64
         with self.assertRaises(qa.ReviewHold): self.verify()
+
+    def test_native_review_rejects_non_windows_host(self):
+        with patch.object(qa.os, "name", "posix"):
+            with self.assertRaises(qa.ReviewHold): qa.native_win11_build()
+
+    def test_native_review_rejects_server_product_type(self):
+        class Server:
+            major = 10
+            build = 26100
+            product_type = 3
+        with patch.object(qa.os, "name", "nt"), patch.object(qa.platform, "machine", return_value="AMD64"), patch.object(qa.sys, "getwindowsversion", create=True, return_value=Server()):
+            with self.assertRaises(qa.ReviewHold): qa.native_win11_build()
+
+    def test_native_review_requires_windows11_workstation(self):
+        class Workstation:
+            major = 10
+            build = 26100
+            product_type = 1
+        with patch.object(qa.os, "name", "nt"), patch.object(qa.platform, "machine", return_value="AMD64"), patch.object(qa.sys, "getwindowsversion", create=True, return_value=Workstation()):
+            self.assertEqual(qa.native_win11_build(), 26100)
 
     def test_duplicate_json_keys_refused(self):
         with self.assertRaises(qa.ReviewHold): qa._strict_json(b'{"schema":"a","schema":"b"}')
