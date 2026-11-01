@@ -59,8 +59,8 @@ export function checkWithFiles(files) {
   test(variant+" no autoplay/scripts/iframes",!/<script\b|<iframe\b|autoplay/i.test(html));
   test(variant+" focus-visible and responsive",html.includes(":focus-visible")&&html.includes("@media(max-width:620px)"));
   test(variant+" reduced motion",html.includes("prefers-reduced-motion:reduce"));
-  test(variant+" opener safe",!/target="_blank"(?![^>]*rel="noopener noreferrer")/.test(html));
-  test(variant+" no seller clinical promises as FV claims",html.includes("does not justify")&&html.includes("did not"));
+  test(variant+" opener safe",![...html.matchAll(/<a\\b[^>]*>/g)].some(m=>/target="_blank"/.test(m[0])&&!/rel="noopener noreferrer"/.test(m[0])));
+  test(variant+" no seller clinical promises as FV claims",html.includes("does not justify")&&html.includes("did <strong>not</strong> test Zen12"));
  }
  test("hub contains four distinct streams",["id=\"perception\"","id=\"suggestion\"","id=\"practice\"","id=\"tools\""].every(s=>hub.includes(s)));
  test("hub published references correct",hub.includes("/2026/08/20/the-hatch-opened-inward-apollo-1/")&&hub.includes("/free-resources/puysegurs-animal-magnetism-files/"));
@@ -80,7 +80,7 @@ export function checkWithFiles(files) {
  test("VTT final end 40 seconds",vtt.includes("00:00:40.000"));
  test("VTT first start 0",vtt.includes("00:00:00.000 --> 00:00:06.000"));
  test("poster SVG original labelled schematic",files["mcgurk-film-poster.svg"].includes("<svg")&&files["mcgurk-film-poster.svg"].includes("not a real audiovisual experiment"));
- test("render source exactly 40s",files["render-mcgurk.py"].includes("SECONDS=540")===false&&files["render-mcgurk.py"].includes("W,H,FPS,SECONDS=540,960,12,40"));
+ test("render source exactly 40s",files["render-mcgurk.py"].includes("W,H,FPS,SECONDS=540,960,12,40"));
  test("renderer original only",!files["render-mcgurk.py"].includes("http")&&files["render-mcgurk.py"].includes("SCHEMATIC"));
  test("plan reminds Dispatch no send",plan.includes("HOLD_UNSENT")&&plan.includes("PR #49"));
  // Mutations deliberately simulate plausible unsafe regressions; expected detectors fail.
@@ -92,7 +92,7 @@ export function checkWithFiles(files) {
   ["lost alt",B.replace('alt="Original illustrative poster','aria-hidden="true" data-note="Original illustrative poster')],
   ["new signup",A.replace("<article","<form><input type=email></form><article")],
   ["new script",A.replace("<article","<script>sendBeacon()</script><article")],
-  ["broken core",B.replace("What Zen12 actually includes","What Zen12 excludes")],
+  ["broken core",B.replace("Three barriers recur","Three guaranteed cures")],
   ["missing no-purchase",A.replace("Merchant link withheld — approval pending","Purchase Zen12 now")],
   ["bad disclosure placement",A.replace('<p class="fv38-disclosure">','<p class="fv38-disclosure" hidden>')],
  ];
