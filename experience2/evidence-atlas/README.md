@@ -1,0 +1,25 @@
+# Apollo 1 Evidence Atlas — R39 staging component
+
+**DRAFT / HOLD. Not installed on WordPress, not cleared for public publication.**
+
+This is a **non-geospatial, source-reference gallery**, generated directly from the reviewed six-record R37 NASA photograph custody crosswalk in `../research-desk/sources/R37_PHOTO_CUSTODY_CROSSWALK.json`. It does **not** show photographs, NASA protected branding, a map, inferred geographic pins, relation edges, or any image claimed to demonstrate an ignition cause. The Atlas is a separate read-only component; no edit to the existing Research Desk plugin is required.
+
+### Reproduction
+
+From the repository root (with R37/R38 ancestry):
+
+```bash
+python -m unittest discover -s experience2/evidence-atlas -p 'test_atlas.py' -v
+python experience2/evidence-atlas/build_atlas.py --output /tmp/fv-apollo-atlas
+python experience2/evidence-atlas/browser_qa.py --output /tmp/fv-apollo-atlas-qa
+```
+
+The output `apollo-evidence-atlas.html` is a self-contained static preview with locally embedded CSS/JS, no network, and exact NASA hyperlinks. It is not an installed WordPress staging test. `atlas-build-manifest.json` records the original crosswalk Git blob and generated file SHA-256; repeated builds are byte-identical. Browser QA tests 320/360/390/768/1024/1440/1920, JS and no-JS, keyboard/touch, year/search filters, count announcements, Escape/reset/focus, corrupted metadata fail-open, and no horizontal overflow. Browser QA captures full-page screenshots and JSON receipts. Optional `--axe /path/to/approved/axe.min.js` runs an existing pinned axe bundle if made available; no runtime fetch.
+
+### Data custody
+
+The builder hard-pins original R37 crosswalk Git blob `ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea` and rejects altered sources, changed NASA image-link destinations, unexpected keys, missing records, or unreviewed changes to rights statuses. All image reuse statuses remain `INDIVIDUAL_REVIEW_REQUIRED`; the 2017 exhibit records are marked retrospective and S67-19766's metadata uncertainty remains visible. NASA's official media guidance permits informational reuse under conditions, but does not establish clearance for these six specific binaries or any third-party rights: https://www.nasa.gov/nasa-brand-center/ .
+
+### Release blockers
+
+No authentic isolated WordPress/Assembler installed staging, real HTTP CSP validation, approved axe-core, NVDA/VoiceOver/Safari, production-sized font/media performance, hosted LCP/CLS/INP, individual photograph-rights decisions, independent editorial/QD, founder art direction, or successful exact-head CI is represented as passing. **No production merge, WordPress content/settings writes, paid services, or live launch.** Keep homepage PR #49 and lead homepage branches untouched. Review against the R38 branch, not `main`.
