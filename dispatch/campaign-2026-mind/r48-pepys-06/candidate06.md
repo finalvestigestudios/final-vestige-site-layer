@@ -30,7 +30,7 @@ The same discipline matters to anyone keeping a personal log. An entry can be si
 
 In 2002, Arthur Stone and colleagues compared reported and observed diary timing in a study of 80 adults with chronic pain. Forty used paper diaries fitted with light sensors; forty used an electronic diary with reminders and time restrictions. In the paper group, reported compliance within the specified thirty-minute windows was 90 percent. Sensor-based compliance was 11 percent; with a more generous ninety-minute window it was 20 percent.
 
-This does **not** mean that 89 percent of everyone's memories are false. It does not compare meditation methods or establish that electronic diaries inherently make people more truthful. It measured compliance with a particular schedule in a particular study. The researchers also disclosed relationships with an electronic-diary supplier.
+These numbers do not measure memory accuracy in the general population. It does not compare meditation methods or establish that electronic diaries inherently make people more truthful. It measured compliance with a particular schedule in a particular study. The researchers also disclosed relationships with an electronic-diary supplier.
 
 The narrower lesson is useful: a notebook may record what we *intend* to have done, what we *remember* doing, or what we can actually document. Those are different claims.
 

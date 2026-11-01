@@ -78,7 +78,9 @@ class R48(unittest.TestCase):
     def test_bmj_precision(self):
         for s in (self.md,self.txt):self.assertIn("90 percent",s);self.assertIn("11 percent",s);self.assertIn("20 percent",s)
     def test_no_generalized_bmj_claim(self):
-        for s in (self.md,self.txt):self.assertNotIn("89 percent of everyone's memories are false",s.replace("not mean that ",""))
+        for s in (self.md,self.txt,self.em,self.wp):
+            self.assertIn("These numbers do not measure memory accuracy in the general population.",s)
+            self.assertNotIn("89 percent of everyone's memories are false",s)
     def test_no_mental_health_hype(self):
         for s in (self.md,self.txt,self.em):
             for x in ("100% effective","cures anxiety","guaranteed results","one hour in twelve minutes"):self.assertNotIn(x,s.lower())
