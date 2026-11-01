@@ -553,7 +553,7 @@ def card_body() -> str:
 <div id="rc-warn" class="pa-out pa-noprint pa-card-mainhide" role="status" aria-live="polite" aria-label="Things to check"></div>
 <div id="rc-live" hidden>
 <h2 id="preview" class="pa-card-mainhide">Preview</h2>
-<div id="rc-preview" class="pa-cardpv pa-card-mainhide" aria-label="Card preview"></div>
+<div id="rc-preview" class="pa-cardpv pa-card-mainhide" role="group" aria-label="Card preview"></div>
 <div id="rc-sheet" class="pa-printonly"></div>
 </div>
 <noscript>{card_fold("blank")}</noscript>
