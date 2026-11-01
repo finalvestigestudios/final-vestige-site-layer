@@ -45,7 +45,7 @@ class R44CitationRegressions(unittest.TestCase):
             fragment=(package/'templates/atlas-fragment.html').read_bytes()
             php=(package/'final-vestige-ex2-evidence-atlas.php').read_text()
             self.assertIn(hashlib.sha256(fragment).hexdigest(),php)
-            self.assertIn('0.0.47-staging',php)
+            self.assertIn('0.0.48-staging',php)
             self.assertEqual(fragment.count(b'data-fva-copy hidden'),6)
 
 if __name__=='__main__':unittest.main()

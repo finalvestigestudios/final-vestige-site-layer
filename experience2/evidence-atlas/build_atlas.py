@@ -79,6 +79,7 @@ def make_html(custody: dict, css: str, js: str) -> str:
           </details>
           <a class="fva-card__external" href="{q(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open original NASA record (opens in new tab) <span aria-hidden="true">↗</span></a>
           <a class="fva-card__cite-link" data-fva-to-citation href="#fva-citation-{q(r['id'])}">Cite this NASA record</a>
+          <a class="fva-card__desk-link" data-fva-to-desk href="#fv-ex2-ledger-apollo1-record-{q(r['id'])}" hidden>Read the Research Desk finding for this NASA record</a>
           <button type="button" class="fva-card__compare" data-fva-select="{q(r['id'])}" aria-pressed="false" hidden>Inspect source {q(r['id'])} alongside another</button>
         </article>''')
     all_cards = '\n'.join(cards)
@@ -163,6 +164,7 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <p class="fva-count" data-fva-status role="status" aria-live="polite" aria-atomic="true"></p>
   </div>
   <section class="fva-grid" id="fva-records" aria-label="NASA photographic-source gallery">{all_cards}</section>
+  <p class="fva-desk-status" data-fva-desk-status role="status" aria-live="polite" hidden></p>
   <p class="fva-empty" data-fva-empty hidden>No source records match. Reset filters to restore all six.</p>
   <section class="fva-compare" data-fva-compare hidden aria-labelledby="fva-compare-title">
     <p class="fva-compare__eyebrow">SOURCE PAIR INSPECTOR / OPTIONAL ENHANCEMENT</p>
@@ -197,7 +199,7 @@ def build(output: Path) -> dict:
     page_path = output / 'apollo-evidence-atlas.html'
     page_path.write_text(document, encoding='utf-8', newline='\n')
     receipt = {
-       'schema': 'fv.ex2.apollo.atlas.r47.v1', 'release': 'STAGING_HOLD',
+       'schema': 'fv.ex2.apollo.atlas.r48.v1', 'release': 'STAGING_HOLD',
        'crosswalk_git_blob': EXPECTED_BLOB, 'records': list(IDS),
        'source_year_counts': {'1966': 1, '1967': 3, '2017': 2},
        'image_rights': '6 INDIVIDUAL_REVIEW_REQUIRED', 'image_binaries': 0,
