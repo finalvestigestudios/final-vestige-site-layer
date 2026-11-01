@@ -134,5 +134,27 @@ class InventoryForensicsR101(unittest.TestCase):
             self.assertNotIn("PRIVATE", output)
 
 
+def _sanitized_focus_main():
+    """Only source-owned static method labels escape synthetic CI regressions."""
+    with open(os.devnull, "w", encoding="utf-8") as sink:
+        with contextlib.redirect_stdout(sink), contextlib.redirect_stderr(sink):
+            suite = unittest.defaultTestLoader.loadTestsFromTestCase(InventoryForensicsR101)
+            result = unittest.TextTestRunner(stream=sink, verbosity=0).run(suite)
+    if result.wasSuccessful():
+        print("FVS_R101_SYNTHETIC:PASS")
+        return 0
+    # Never show tracebacks or private test data. Only immediate methods from
+    # the named source-defined class may leave this trusted synthetic runner.
+    safe = {n for n in vars(InventoryForensicsR101)
+            if n.startswith("test_") and n.isascii() and n.replace("_", "").isalnum()}
+    failures = sorted({getattr(test, "_testMethodName", "") for test, _ in
+                       result.failures + result.errors})
+    for name in failures:
+        if name in safe:
+            print("FVS_R101_SYNTHETIC_FAIL:" + name)
+    print("FVS_R101_SYNTHETIC:BLOCKED")
+    return 1
+
+
 if __name__ == "__main__":
-    unittest.main()
+    raise SystemExit(_sanitized_focus_main())
