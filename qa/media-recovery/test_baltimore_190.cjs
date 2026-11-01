@@ -47,6 +47,7 @@ rejects('reject missing individual rights notes', d => { d.items[0].rights_notes
 rejects('reject missing exact publisher ID', d => { d.items[4].loc_digital_id = ''; }, 'catalog identity');
 rejects('reject lack of staging safeguards', d => { d.items[5].localization_plan = 'bulk replacement'; }, 'staging');
 rejects('reject poisoned census image source', (d,c) => { c.images.find(x => x.key === '190:1').source_url = 'https://unknown.example/b.jpg'; }, 'frozen URL/ALT');
+rejects('reject malformed URL without throwing', d => { d.items[0].source_url = 'https://%/npcc/18700/18735v.jpg'; }, 'malformed source URL');
 for (let i = 0; i < 6; i++) {
   rejects('image ' + i + ': tampered per-slot LCCN rejected', d => { d.items[i].loc_lccn += '0'; }, 'catalog identity');
   rejects('image ' + i + ': forged successful browser status rejected', d => { d.items[i].actual_browser_http_status = 200; }, 'fabricated');
