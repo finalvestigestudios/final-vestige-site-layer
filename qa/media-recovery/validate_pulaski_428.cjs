@@ -2,12 +2,12 @@
 // Read-only, fail-closed Pulaski/Big Burn six-image provenance validator.
 // Usage: node qa/media-recovery/validate_pulaski_428.cjs
 const EXPECTED=[
- ['428:0','pic_2014-09-30_005143b','archivalidaho432.html','RETRIEVER_INACCESSIBLE_NO_HTTP_STATUS'],
- ['428:1','8-B498b','bigburn23.html','RETRIEVER_IMAGE_DISPLAYED'],
- ['428:2','8-C05b','bigburn38.html','RETRIEVER_IMAGE_DISPLAYED'],
- ['428:3','8-X90','bigburn10.html','RETRIEVER_IMAGE_DISPLAYED'],
- ['428:4','8-X545e','bigburn18.html','RETRIEVER_IMAGE_DISPLAYED'],
- ['428:5','sanborn01687_005','sanborn01687_005/','RETRIEVER_IMAGE_DISPLAYED']
+ ["428:0","pic_2014-09-30_005143b","https://www.lib.uidaho.edu/digital/archivalidaho/items/archivalidaho432.html","https://objects.lib.uidaho.edu/archivalidaho/archivalidaho432.jpg","RETRIEVER_INACCESSIBLE_NO_HTTP_STATUS","PDM_1_0_CATALOG_WITH_OTHER_HOLDING_INSTITUTION"],
+ ["428:1","8-B498b","https://www.lib.uidaho.edu/digital/bigburn/items/bigburn23.html","https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg","RETRIEVER_IMAGE_DISPLAYED","PDM_1_0_CATALOG"],
+ ["428:2","8-C05b","https://www.lib.uidaho.edu/digital/bigburn/items/bigburn38.html","https://objects.lib.uidaho.edu/bigburn/bigburn38.jpg","RETRIEVER_IMAGE_DISPLAYED","PDM_1_0_CATALOG"],
+ ["428:3","8-X90","https://www.lib.uidaho.edu/digital/bigburn/items/bigburn10.html","https://objects.lib.uidaho.edu/bigburn/bigburn10.jpg","RETRIEVER_IMAGE_DISPLAYED","PDM_1_0_CATALOG"],
+ ["428:4","8-X545e","https://www.lib.uidaho.edu/digital/bigburn/items/bigburn18.html","https://objects.lib.uidaho.edu/bigburn/bigburn18.jpg","RETRIEVER_IMAGE_DISPLAYED","PDM_1_0_CATALOG"],
+ ["428:5","sanborn01687_005","https://www.loc.gov/item/sanborn01687_005/","https://www.loc.gov/resource/g4274wm.g016871905/","RETRIEVER_IMAGE_DISPLAYED","1905_US_WORK_COMPOSITE_PUBLIC_DOMAIN_CANDIDATE_RIGHTS_REVIEW"],
 ];
 function validate(manifest,census){
  const errors=[];
@@ -24,11 +24,11 @@ function validate(manifest,census){
   if(r?.key!==ex[0]||r?.post_id!==428||r?.slot!==i||seen.has(r?.key))fail('key_'+i);
   seen.add(r?.key);
   if(r?.published_source_url!==f?.source_url||r?.published_alt!==f?.alt||r?.live_cms_source_and_alt_verified!==true)fail('source_alt_'+i);
-  if(c?.catalog_id!==ex[1]||!c.archive_record_url?.includes(ex[2])||!/^https:\/\//.test(c?.candidate_asset_url||''))fail('archival_id_'+i);
+  if(c?.catalog_id!==ex[1]||c?.archive_record_url!==ex[2]||c?.candidate_asset_url!==ex[3])fail('archival_id_'+i);
   if((i>=1&&i<=4)&&c.candidate_asset_url!==r.published_source_url)fail('unjustified_substitution_'+i);
   if(c.master_binary_sha256!==null||c.confirmed_same_binary!==false)fail('fabricated_binary_identity_'+i);
-  if(rt.method!=='independent_web_image_retriever_NOT_logged_out_Chrome'||rt.result!==ex[3]||rt.origin_http_status!==null||rt.visitor_http_status!==null||rt.content_type!==null||rt.transferred_bytes!==null)fail('fabricated_http_'+i);
-  if(!rights.archive_rights_signal||rights.item_level_reuse_review!=='HOLD'||rights.cache_reproduction_permission!=='HOLD'||!rights.credit?.includes(ex[1]))fail('rights_'+i);
+  if(rt.method!=='independent_web_image_retriever_NOT_logged_out_Chrome'||rt.result!==ex[4]||rt.origin_http_status!==null||rt.visitor_http_status!==null||rt.content_type!==null||rt.transferred_bytes!==null)fail('fabricated_http_'+i);
+  if(rights.archive_rights_signal!==ex[5]||rights.item_level_reuse_review!=='HOLD'||rights.cache_reproduction_permission!=='HOLD'||!rights.credit?.includes(ex[1]))fail('rights_'+i);
   if(g.master_width_px!==null||g.master_height_px!==null||g.proposed_width_px!==null||g.proposed_height_px!==null||g.max_width_px!==960||g.no_upscale!==true||g.aspect_preserved!==true)fail('geometry_'+i);
   for(const key of ['page_current_src','natural_width_px','natural_height_px','network_http_status','final_mime','actual_encoded_transfer_bytes','visibly_broken','screenshot_evidence_url'])if(v[key]!==null)fail('fabricated_browser_'+i+'_'+key);
   if(rel.stage_ready!==false||rel.wordpress_media_upload_authorized!==false||rel.wordpress_post_edit_authorized!==false||rel.production_repaired!==false)fail('release_'+i);
