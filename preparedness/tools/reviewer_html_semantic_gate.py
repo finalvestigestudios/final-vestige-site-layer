@@ -193,7 +193,7 @@ class _Page(HTMLParser):
         self.stack.pop()
 
     def handle_data(self, data):
-        need(not any((ord(ch) < 32 and ch not in '\\t\\n\\r') or
+        need(not any((ord(ch) < 32 and ch not in '\t\n\r') or
                      0x7f <= ord(ch) <= 0x9f or
                      ord(ch) in VISUAL_CONTROL_CODEPOINTS
                      for ch in data),
