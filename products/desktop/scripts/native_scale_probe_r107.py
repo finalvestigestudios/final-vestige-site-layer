@@ -105,12 +105,6 @@ def _scan_one(app_id, scale):
             raise ScaleBlocked("Generate control changed")
         generates[0].focus_set()
         root.update()
-        visible_top = canvas.canvasy(0)
-        focused_y = generates[0].winfo_rooty() - (
-            generates[0].winfo_parent() and
-            next(w for w in children if isinstance(w, ttk.Frame) and
-                 w is generates[0].master).winfo_rooty()
-            if False else 0)
         # Use screen-space comparison to avoid relying on arbitrary ancestry:
         # if focused control is inside the scrolled viewport it must be fully
         # visible between the canvas screen top and bottom.
