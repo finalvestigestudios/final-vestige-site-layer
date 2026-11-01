@@ -136,6 +136,14 @@ def slate_status(lib: "Library", slug: str) -> str:
     return "safety-approved-draft" if meta["safety_review"]["state"] == "approved" else "drafted-pending-safety-review"
 
 
+def write_lf(path: Path, text: str) -> None:
+    """Write UTF-8 bytes with LF newlines on every platform.
+
+    Path.write_text() translates LF to CRLF on Windows, which made generated WordPress and preview
+    outputs differ byte-for-byte between operating systems and broke the export-custody byte checks."""
+    path.write_bytes(text.encode("utf-8"))
+
+
 def fmt_date(iso: str | None) -> str:
     if not iso:
         return ""
@@ -547,8 +555,8 @@ def main(argv=None) -> int:
     for slug in lib.articles:
         built = build_article(lib, slug)
         meta = built["meta"]
-        (out / "wp" / f"{slug}.html").write_text(wp_wrap(lib, built["inner"]), encoding="utf-8")
-        (out / "preview" / f"{slug}.html").write_text(preview_wrap(lib, built["inner"], f'{meta["h1"]} | The Preparedness Archive', meta["description"]), encoding="utf-8")
+        write_lf(out / "wp" / f"{slug}.html", wp_wrap(lib, built["inner"]))
+        write_lf(out / "preview" / f"{slug}.html", preview_wrap(lib, built["inner"], f'{meta["h1"]} | The Preparedness Archive', meta["description"]))
         report["articles"].append({k: built[k] for k in ("slug", "words", "minutes", "sources", "canonical")})
     from collections import Counter
     report["slate_status"] = dict(Counter(slate_status(lib, a["slug"]) for a in lib.taxonomy["slate"]))
@@ -556,15 +564,15 @@ def main(argv=None) -> int:
     for sec in lib.taxonomy["sections"]:
         h = build_hub(lib, sec["slug"], include_drafts=not args.public)
         if h:
-            (out / "wp" / f"{h['slug']}.html").write_text(wp_wrap(lib, h["inner"]), encoding="utf-8")
-            (out / "preview" / f"{h['slug']}.html").write_text(preview_wrap(lib, h["inner"], h["title"], h["description"]), encoding="utf-8")
+            write_lf(out / "wp" / f"{h['slug']}.html", wp_wrap(lib, h["inner"]))
+            write_lf(out / "preview" / f"{h['slug']}.html", preview_wrap(lib, h["inner"], h["title"], h["description"]))
             report["hubs"].append({"section": sec["slug"], "guides": h["count"]})
     land = build_landing(lib, include_drafts=not args.public)
     desc = "Evidence-based household preparedness and a historical record of how earlier generations managed without modern infrastructure."
-    (out / "wp" / "landing.html").write_text(wp_wrap(lib, land["inner"]), encoding="utf-8")
-    (out / "preview" / "landing.html").write_text(preview_wrap(lib, land["inner"], "The Preparedness Archive | Final Vestige", desc), encoding="utf-8")
+    write_lf(out / "wp" / "landing.html", wp_wrap(lib, land["inner"]))
+    write_lf(out / "preview" / "landing.html", preview_wrap(lib, land["inner"], "The Preparedness Archive | Final Vestige", desc))
     report["landing"] = {k: land[k] for k in ("populated_sections", "article_cards")}
-    (out / "build-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    write_lf(out / "build-report.json", json.dumps(report, indent=2))
     print(json.dumps(report, indent=2))
     return 0
 
