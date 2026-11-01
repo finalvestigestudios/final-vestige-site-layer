@@ -37,6 +37,30 @@ test('WordPress fragment avoids a nested main and includes no script/document el
   assert.match(wordpressFragment, /fv-hf__footer/);
 });
 
+
+test('WordPress content does not repeat theme-owned masthead, navigation or footer', () => {
+  const {documentHtml, wordpressFragment: frag} = render(input);
+  assert.match(documentHtml, /<header class="fv-hf__masthead">/);
+  assert.match(documentHtml, /<footer class="fv-hf__footer">/);
+  assert.doesNotMatch(frag, /<header class="fv-hf__masthead">/);
+  assert.doesNotMatch(frag, /<footer class="fv-hf__footer">/);
+  assert.doesNotMatch(frag, /class="fv-hf__nav"/);
+  assert.doesNotMatch(frag, /class="fv-hf__mast-cta"/);
+  assert.match(frag, /class="fv-hf__chapter-nav"/);
+  assert.match(frag, /class="fv-hf__footer" role="note"/);
+  assert.match(frag, /https:\/\/finalvestige\.com\/affiliate-disclosure\//);
+  assert.ok(count(frag, 'https://finalvestige.com/focus/') >= 2);
+});
+test('unrecognized site masthead must close WordPress export rather than leak duplicate nav', () => {
+  rejected(input.replace('class="fv-hf__masthead"', 'class="unreviewed-masthead"'));
+});
+test('changed site footer must close WordPress export rather than leak duplicate footer', () => {
+  rejected(input.replace('<footer class="fv-hf__footer">', '<footer class="unreviewed-footer">'));
+});
+test('lost editorial disclosure blocks WordPress export', () => {
+  rejected(input.replace('https://finalvestige.com/affiliate-disclosure/', 'https://example.invalid/no-disclosure/'));
+});
+
 test('all seven chapters, evidence cases and native fallback exist in WordPress fragment', () => {
   const {wordpressFragment: frag} = render(input);
   for (const id of CHAPTERS) assert.equal(count(frag, 'id="' + id + '"'), 1, id);
