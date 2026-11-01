@@ -124,6 +124,19 @@ class InventoryForensicsR101(unittest.TestCase):
     def test_real_fingerprint_remains_unchanged_and_positive(self):
         self.assertEqual(diagnostic._classify(self.path, self.root), "PASS")
 
+    def test_start_descriptor_identity_mask_is_bounded_and_non_sensitive(self):
+        before = self.path.lstat()
+        fake = types.SimpleNamespace(st_dev=before.st_dev, st_ino=before.st_ino + 1,
+            st_mode=before.st_mode, st_nlink=before.st_nlink, st_size=before.st_size,
+            st_mtime_ns=before.st_mtime_ns, st_ctime_ns=before.st_ctime_ns)
+        with patch.object(diagnostic.os, "fstat", return_value=fake):
+            label = diagnostic._classify(
+                self.path, self.root,
+                fingerprint=lambda *_: (_ for _ in ()).throw(ValueError("PRIVATE_INVOICE")))
+        self.assertEqual(label, "START_MASK_2")
+        self.assertIn("START_MASK_2", diagnostic.render("tests", {label: 1}))
+        self.assertNotIn(str(before.st_ino + 1), label)
+
     def test_output_contains_no_private_values(self):
         with patch.object(diagnostic, "probe", side_effect=ValueError("PRIVATE_CSV_ROW")):
             stream = io.StringIO()
