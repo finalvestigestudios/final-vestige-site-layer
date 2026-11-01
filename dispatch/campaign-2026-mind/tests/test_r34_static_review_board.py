@@ -76,7 +76,7 @@ class StaticReviewBoardTests(unittest.TestCase):
 
     def test_static_board_denies_actual_inbox_proof(self):
         self.assertIn("not a delivered email", self.html)
-        self.assertIn("no genuine", self.html.lower())
+        self.assertIn("none verified", self.html.lower())
 
     def test_all_evidence_editorial_urls_match_manifest(self):
         links = {issue["editorial_cta"] for issue in self.manifest["issues"] if issue["kind"] == "editorial"}
