@@ -10,9 +10,9 @@ const claims=read('claims-and-permissions.tsv'), sources=read('source-register.t
 let passed=0,mutations=0;
 function ok(predicate,why){assert.ok(predicate,why);passed++}
 function core(markup){const id='<div id="fvz-guide-core">'; assert.ok(markup.includes(id)); return markup.split(id)[1]}
-function noMerchantAnchor(markup){return !/<a\\b[^>]*\\bhref=["']https:\\/\\/(?:zen12\\.com|(?:www\\.)?inspire3\\.com|hypnosislive\\.com|affiliates\\.inspire3\\.com)/i.test(markup)}
+function noMerchantAnchor(markup){return !/<a\b[^>]*\bhref=["']https:\/\/(?:zen12\.com|(?:www\.)?inspire3\.com|hypnosislive\.com|affiliates\.inspire3\.com)/i.test(markup)}
 function disclosureSafe(markup){const d=markup.indexOf('may earn a commission at no additional cost to you'); const c=markup.indexOf('Merchant link withheld — approval pending');return d>=0&&c>d&&markup.slice(d,c).length<2000}
-function noActiveComponents(markup){return !/<(?:script|iframe|form|video)\\b/i.test(markup)&&!/<a\\b[^>]*\\bhref=["'][^"']*(?:affiliate|checkout|zen12\\.com)/i.test(markup)}
+function noActiveComponents(markup){return !/<(?:script|iframe|form|video)\b/i.test(markup)&&!/<a\b[^>]*\bhref=["'][^"']*(?:affiliate|checkout|zen12\.com)/i.test(markup)}
 function coreSafe(markup){return disclosureSafe(markup)&&noMerchantAnchor(markup)&&noActiveComponents(markup)}
 ok(core(a)===core(b),'A and B guide cores byte-for-byte equal');
 for(const [name,s] of [['A',a],['B',b]]){
@@ -24,7 +24,7 @@ for(const [name,s] of [['A',a],['B',b]]){
  ok(s.includes('24 MP3')&&s.includes('48 MP3'),name+' package file counts');
  ok(s.includes('2023'),name+' independent research review');
  ok(s.includes('https://finalvestige.com/focus/'),name+' one existing Focus route');
- ok(!/href=["']\\/mind\\//i.test(s),name+' no unlaunched hub link');
+ ok(!/href=["']\/mind\//i.test(s),name+' no unlaunched hub link');
  ok(s.includes('@media(max-width:760px)'),name+' responsive CSS breakpoint');
  ok(s.includes(':focus-visible'),name+' visible keyboard focus');
  ok(s.includes('prefers-reduced-motion:reduce'),name+' reduced motion');
@@ -32,16 +32,16 @@ for(const [name,s] of [['A',a],['B',b]]){
 ok(b.includes('40-second thought experiment')&&b.includes('Read the full proposed film transcript'),'B has optional educational transcript');
 ok(!a.includes('Read the full proposed film transcript'),'A has no film');
 ok(b.includes('No autoplay')&&b.includes('not been produced or hosted'),'B not misleading');
-ok(/WEBVTT/.test(vtt)&&/00:00:40\\.000/.test(vtt),'VTT spec 40 seconds');
+ok(/WEBVTT/.test(vtt)&&/00:00:40\.000/.test(vtt),'VTT spec 40 seconds');
 ok(/role="img"/.test(b)&&/<title id="fvz-poster-title">/.test(b),'poster inline accessible title');
 ok(!/commission|Zen12|purchase link/i.test(inv),'investigation commercially independent');
-ok(/Puységur/.test(inv)&&/10\\.1126\\/science\\.1111709/.test(inv),'investigation primary source and historical bridge');
-ok(!/<(?:script|iframe|form)\\b/i.test(hub),'alternate hub no scripts or forms');
-ok(!/href=["']\\/mind\\//.test(hub),'no fabricated live /mind/');
+ok(/Puységur/.test(inv)&&/10\.1126\/science\.1111709/.test(inv),'investigation primary source and historical bridge');
+ok(!/<(?:script|iframe|form)\b/i.test(hub),'alternate hub no scripts or forms');
+ok(!/href=["']\/mind\//.test(hub),'no fabricated live /mind/');
 ok(/153/.test(article)&&/16 case dossiers/.test(article),'historical provenance');
 ok(/five reported findings/.test(guide)&&/eight reported conflicting/.test(guide),'systematic-review denominators');
-ok(claims.split('\\n').length>=65,'large evidence claim matrix');
-ok(sources.split('\\n').length>=19,'source list');
+ok(claims.split('\n').length>=65,'large evidence claim matrix');
+ok(sources.split('\n').length>=19,'source list');
 ok(ENABLED===false,'attribution hard disabled');
 const privacy=selfTest();ok(privacy.passed>=16&&privacy.enabled===false,'synthetic privacy safety suite');
 const attacks=[
