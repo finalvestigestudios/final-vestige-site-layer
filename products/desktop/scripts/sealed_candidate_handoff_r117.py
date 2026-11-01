@@ -78,6 +78,7 @@ def _same_file(path, before):
 def _key(path):
     if not path.is_absolute():
         raise HandoffHold("Key file path must be absolute")
+    _private_directory(path.parent)
     before = _regular(path, 32)
     if before.st_size != 32 or (os.name != "nt" and (before.st_mode & 0o077)):
         raise HandoffHold("Key must be exactly 32 private bytes")
@@ -174,7 +175,7 @@ def _custody(root, r9, expected):
                 or historical.get("status") != "windows_smoke_passed"
                 or historical.get("windows_executables_verified") is not True
                 or historical.get("smoke_simulated") is not False):
-            raise HandoffHold("Six genuinely smoke-checked candidates are required")
+            raise HandoffHold("R9 must report six native Windows smoke checks")
     except (OSError, ValueError, KeyError):
         raise HandoffHold("Six-candidate R9 custody unavailable") from None
 
@@ -230,6 +231,32 @@ def seal(dist, r9, expected_r9, key_file, destination):
         Path(temporary).unlink(missing_ok=True)
     return {"status": "ENCRYPTED_PRIVATE_HANDOFF_ONLY", "six_exes": 6,
             "release_authorized": False}
+
+
+def _promote_no_replace(staged, destination):
+    """Atomically publish an intake directory without replacing a concurrent one.
+
+    Windows rename fails when destination exists. On Linux rename(2) would
+    replace an empty directory, so require renameat2(RENAME_NOREPLACE).
+    Other POSIX platforms HOLD pending independent review of their primitive.
+    """
+    if os.name == "nt":
+        os.rename(staged, destination)
+        return
+    if sys.platform.startswith("linux"):
+        import ctypes
+        libc = ctypes.CDLL(None, use_errno=True)
+        native = getattr(libc, "renameat2", None)
+        if native is None:
+            raise HandoffHold("Atomic no-replace directory publication unavailable")
+        native.argtypes = (ctypes.c_int, ctypes.c_char_p,
+                           ctypes.c_int, ctypes.c_char_p, ctypes.c_uint)
+        native.restype = ctypes.c_int
+        result = native(-100, os.fsencode(staged), -100, os.fsencode(destination), 1)
+        if result != 0:
+            raise HandoffHold("Reviewer destination already exists or cannot be published")
+        return
+    raise HandoffHold("Atomic reviewer publication unsupported on this platform")
 
 
 def unseal(bundle, key_file, expected_r9, destination):
@@ -296,7 +323,7 @@ def unseal(bundle, key_file, expected_r9, destination):
         _custody(temp / "exes", temp / "evidence" / "r9-report.json", expected_r9)
         if destination.exists() or destination.is_symlink():
             raise HandoffHold("Reviewer destination became occupied")
-        os.rename(temp, destination)
+        _promote_no_replace(temp, destination)
         return {"status": "PRIVATE_REVIEWER_INTAKE_UNCERTIFIED",
                 "six_exes": 6, "release_authorized": False}
     finally:
