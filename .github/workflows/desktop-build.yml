@@ -41,6 +41,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_native_gui_probe_r105.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_gui_probe_r105.py' > /dev/null 2>&1
+      - name: Verify R106 source-owned keyboard contracts (normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_native_keyboard_probe_r106.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_native_keyboard_probe_r106.py' > /dev/null 2>&1
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -132,6 +136,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R105 synthetic native GUI validation FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_gui_probe_r105.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R105 optimized synthetic native GUI validation FAILED" }
+      - name: Verify R106 source-owned keyboard contracts (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_native_keyboard_probe_r106.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R106 keyboard source contract FAILED" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_native_keyboard_probe_r106.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R106 optimized keyboard source contract FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
@@ -205,3 +217,13 @@ jobs:
           python products/desktop/scripts/windows_gui_probe_r105.py dist --report build/offline-gui-surface-evidence.json
           if ($LASTEXITCODE -ne 0) { throw "R105 GUI or premium lock unavailable; release HOLD" }
 
+      # Source Tk layout inspection runs only after six actual Windows EXEs
+      # have cleared R9 and R105; it cannot unlock or launch premium editors.
+      # Unlike R105, this inspects deterministic native Tk Tab traversal and
+      # shortcut bindings in the four free source interfaces. No files picked.
+      - name: R106 native Tk keyboard and focus preflight (release HOLD)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/native_keyboard_probe_r106.py
+          if ($LASTEXITCODE -ne 0) { throw "R106 native focus or keyboard contract unavailable; release HOLD" }
