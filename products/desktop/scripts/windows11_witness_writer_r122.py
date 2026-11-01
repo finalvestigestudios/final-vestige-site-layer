@@ -81,6 +81,7 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
     try:
         fd = os.open(lock, os.O_WRONLY | os.O_CREAT | os.O_EXCL |
                      getattr(os, "O_BINARY", 0), 0o600)
+        lock_identity = os.fstat(fd)
         old = qa._bytes(review, qa.MAX_REPORT_BYTES)
         matrix = qa._strict_json(old)
         if matrix.get("windows11_build") != build:
@@ -157,7 +158,10 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
             os.close(fd)
             # An unexplained modified/replaced lock is not silently removed.
             try:
-                if lock.is_file() and lock.stat().st_size == 0:
+                current = lock.lstat()
+                if (stat.S_ISREG(current.st_mode) and current.st_size == 0 and
+                        (current.st_dev, current.st_ino) ==
+                        (lock_identity.st_dev, lock_identity.st_ino)):
                     lock.unlink()
             except OSError:
                 pass
