@@ -7,6 +7,8 @@
  */
 if (!defined('ABSPATH')) { exit; }
 if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.40-staging'); }
+// Exact, reviewed R39 source-custody HTML fragment. A changed build needs new review.
+if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '45a552d460cf93a1b10ba5821a662956bee9a77f87c147b22182b805f5d27321'); }
 
 /** Register assets before the theme head; never depend on top-level shortcode scanning.
  * Trade-off: assets are loaded on all singular views, even when shortcode is absent.
@@ -35,7 +37,8 @@ function fv_ex2_atlas_shortcode($atts = array()): string {
     $markup = file_get_contents($path);
     if (!is_string($markup) || substr_count($markup, 'data-fva-record ') !== 6
         || strpos($markup, 'data-fva-atlas') === false
-        || strpos($markup, '<script') !== false || strpos($markup, '<img') !== false) {
+        || strpos($markup, '<script') !== false || strpos($markup, '<img') !== false
+        || !hash_equals(FV_EX2_ATLAS_TEMPLATE_SHA256, hash('sha256', $markup))) {
         return fv_ex2_atlas_fallback();
     }
     $rendered = true;
