@@ -95,7 +95,7 @@ class ExcerptContractTests(unittest.TestCase):
         self.corrupt(edit)
     def test_44_removed_postal_marker_is_rejected(self):
         def edit(p):
-            q=p/"issues"/M.MANUSCRIPTS[0];q.write_text(q.read_text().replace(M.LEGAL_MARKERS[0],""))
+            q=p/"issues"/M.MANUSCRIPTS[1];q.write_text(q.read_text().replace(M.LEGAL_MARKERS[0],""))
         self.corrupt(edit)
     def test_45_disclosure_after_350_is_rejected(self):
         def edit(p):
