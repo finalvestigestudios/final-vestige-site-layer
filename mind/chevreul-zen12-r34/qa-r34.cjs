@@ -47,7 +47,7 @@ function runTests(){
   function core(s){return s.slice(s.indexOf(start),s.indexOf(end));}
   check(core(a)===core(b),'identical substantive A/B guide core');
   check(b.includes('complete proposed 40-second transcript'),'B accessible transcript');
-  check(b.includes('concept only'),'B no fake film availability');
+  check(b.includes('offline render only'),'B unhosted film honesty');
   check(!a.includes('class="film"'),'A text-only');
   check(b.includes('role="img"')&&b.includes('aria-label="Original illustrated poster'),'B accessible poster');
   check(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(b),'B no autoplay attribute');
@@ -72,7 +72,7 @@ function runTests(){
   check(times.length>0&&toMs(times[0],1)===0,'start zero');
   check(times.length>0&&toMs(times[times.length-1],5)===40000,'ends 40s');
   for(let i=0;i<times.length;i++){check(toMs(times[i],5)>toMs(times[i],1),'positive cue '+i);if(i>0)check(toMs(times[i-1],5)===toMs(times[i],1),'gapless '+i);}
-  check(story.includes('NO Chevreul film render or approved website hosting'),'storyboard film limit');
+  check(story.includes('NOT hosted on Final Vestige'),'storyboard remains unhosted');
   check(story.includes('Original')&&story.includes('Carpenter'),'original sourced film plan');
   check(plan.includes('Issue #174')&&plan.includes('PR #172'),'ownership');
   check(plan.includes('k>=10'),'privacy threshold documented');
