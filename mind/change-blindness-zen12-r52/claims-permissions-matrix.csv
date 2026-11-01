@@ -1,0 +1,54 @@
+category,item,evidence_status,source_ids,reader_facing_action
+SELLER,Zen12 12-minute audio,SELLER_FORMAT,S2 S3,Attribute format only
+SELLER,Zen12 12 levels,SELLER_FORMAT,S2 S3,Attribute structure only
+SELLER,Guided style available,SELLER_FORMAT,S3,Advertised style
+SELLER,Music style available,SELLER_FORMAT,S3,Advertised style
+SELLER,Nature style available,SELLER_FORMAT,S3,Advertised style
+SELLER,White noise available,SELLER_FORMAT,S3,Advertised style
+SELLER,Beginner 6 levels,SELLER_FORMAT,S2,Advertised scope
+SELLER,Beginner 24 files,SELLER_FORMAT,S2,Advertised file count
+SELLER,Premium 12 levels,SELLER_FORMAT,S2 S5,Advertised scope
+SELLER,Premium 48 files,SELLER_FORMAT,S2 S5,Advertised file count
+SELLER,Advanced final 6 levels,SELLER_FORMAT,S2,Advertised scope
+SELLER,Advanced 24 files,SELLER_FORMAT,S2,Advertised file count
+SELLER,Premium extra guides support call,VERIFY_FULFILLMENT,S2 S5,"Attribute, recheck fulfillment"
+SELLER,Headphones optional,NOT_INDEPENDENTLY_TESTED,S3,"Attribute only, distinguish binaural mechanisms"
+SELLER,Twelve minutes equals an hour benefits,UNSUBSTANTIATED,S2 S3 E1 E2,Do not endorse outcome
+SELLER,Automatic brainwave entrainment,UNSUBSTANTIATED,S3 S4 E1,Do not endorse branded mechanism
+SELLER,Guaranteed stress reduction,UNSUBSTANTIATED_HEALTH,S2 S3 L2,Exclude benefit
+SELLER,Guaranteed improvements to cognitive skills,UNSUBSTANTIATED,S2 L2,Exclude benefit
+SELLER,Refund full year,NOT_VERIFIED_INDEPENDENTLY,S2 S5,Verify current terms if mentioning
+SELLER,Visible discount and countdown,VOLATILE_UNVERIFIED,S2 S5,No price or urgency promises
+SELLER,Checkout no recurring billing,UNKNOWN,S5,Do not claim
+SELLER,Zen12 recording quality,NOT_TESTED,S2 S3,Do not claim firsthand use
+SELLER,Testimonials typical outcomes,UNKNOWN,S5 L1,Do not use as proof
+SCIENCE,Pedestrian substitution about half detected,PEER_REVIEWED_SCOPED,C1,Only in studied context
+SCIENCE,Flicker paradigm reveals detection limits,PEER_REVIEWED_SCOPED,C2,Describe original procedure
+SCIENCE,Film cut actor can be substituted unnoticed,PEER_REVIEWED_SCOPED,C3,Describe controlled studies
+SCIENCE,Change blindness proves mind control,FALSE_INFERENCE,C4 C5,Reject
+SCIENCE,Binaural EEG review proves branded effect,FALSE_INFERENCE,E1,Review did not study Zen12
+SCIENCE,Meditation studies prove branded results,FALSE_INFERENCE,E2,NCCIH did not study Zen12
+PRACTICE,Free twelve-minute sound format exploration,NON_DIAGNOSTIC,E2,Avoid medical claims
+PRACTICE,Can listen while operating machines,SAFETY_WARN,S3,Advise not to do so
+AFFILIATE,Network public enrollment exists,PUBLIC_NOT_ACCOUNT_APPROVAL,S8,Do not activate
+AFFILIATE,Final Vestige Zen12 accepted,NOT_VERIFIED,S8,Written acceptance required
+AFFILIATE,Authorized Zen12 tracking link,NOT_VERIFIED,S8,Do not invent URL
+AFFILIATE,Website traffic approved,NOT_VERIFIED,S8,Channel permission needed
+AFFILIATE,TikTok approved,NOT_VERIFIED,S8,Channel permission needed
+AFFILIATE,Email marketing approved,NOT_VERIFIED,S8,Dispatch #174 no commercial CTA
+AFFILIATE,Public Limitless Labs swipe usable,FALSE_PERMISSION,S9,"Distinct product, never copy"
+AFFILIATE,Disclosure near affiliate CTA,MANDATORY,L1,Prospective clear language beside disabled button
+AFFILIATE,Global disclosure page alone sufficient,FALSE,L1,Near-link relationship must be clear
+AFFILIATE,Health promises can mirror seller,FALSE,L2,Independent substantiation necessary
+RELATED,Hypnosis Live Total Focus claims,NOT_INDEPENDENTLY_VERIFIED,S6,Separate review not activation
+RELATED,Brainwave Shots SKU/claims,NOT_VERIFIED,S7,Need exact SKU page
+FUNNEL,Focus signup is already live,VERIFIED_PUBLISHED,F2,Do not duplicate form
+HISTORY,Puységur validates audio product,FALSE_INFERENCE,F1,Methodological bridge only
+PRIVACY,User IP and full referrer stored,PROHIBITED,L1,Reject all raw IDs
+PRIVACY,Outbound attribution active,OFF,L1,No live events or scripts
+PRIVACY,Tiny audience cohorts reported,PROHIBITED,L1,Minimum twenty observations
+EXPERIMENT,Video variant is higher converting,UNTESTED_HYPOTHESIS,C1,No promise; founder-approved A/B required
+RELEASE,Can publish /mind/ now,HARD_HOLD,F3,Founder CMS approval needed
+RELEASE,Can host film now,HARD_HOLD,F3,First-party host and caption QA
+RELEASE,May edit homepage PR49 or hub PR172,FORBIDDEN,F3,No existing paths modified
+RELEASE,May send Dispatch commercial newsletter,HARD_HOLD,F2,Requires channel authorization
