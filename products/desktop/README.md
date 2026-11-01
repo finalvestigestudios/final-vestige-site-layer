@@ -11,6 +11,10 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R121 independently transmitted R9 pin required for physical Windows 11 QA (DRAFT / RELEASE HOLD)
+
+The [local-only Windows 11 reviewer witness tool](scripts/windows11_manual_acceptance_r109.py) now **requires an externally supplied, exact lowercase 64-character SHA-256 of the original R9 report on both template and verify**. Previously it derived its template entirely from the local report, so a locally self-consistent but unrelated six-EXE/R9 pair could enter a 46-check manual review without a separate evidence anchor. Fifteen new tests cover malformed and missing pins, raw-report edits, changed candidate fingerprints, six-file inventory drift, and CLI refusal before intake; the source-owned diagnostics require all 70 synthetic methods. See [R121 custody protocol and limitations](docs/INDEPENDENT_MANUAL_R9_PIN_R121.md). A matching operator-provided pin is not proof of independent sourcing, Win11 human testing, malware clearance or release authorization. **The six binaries remain private and unreleased; QD/founder review remains mandatory.**
+
 ## R120 real positive controls for sixteen-entry tamper matrix (DRAFT / RELEASE HOLD)
 
 The [R120 dual-control gate](scripts/sealed_tamper_matrix_r119.py) now proves the **unchanged** encrypted eight-record archive genuinely decrypts to the exact six native Windows candidate hashes **before and after** the R119 sixteen cipher/tag mutations. Seven added adversarial tests reject always-failing decryptors, fake success without bytes, corrupted/extra intake files, source drift, and missing final decryption. The existing CI privacy boundary is unchanged. [Threat model and test contract](docs/SEALED_TAMPER_POSITIVE_CONTROLS_R120.md). **No release authorization or physical Windows 11 acceptance.**
