@@ -15,7 +15,9 @@ Only the following paths are changed/added, all under `experience2/evidence-atla
 - `atlas.css` — Git blob `fb393fccf1d13a5ac4c50c8a41cfa0ee3ee18cf5`
 - `final-vestige-ex2-evidence-atlas.php` — Git blob `ceed1809c6eccfbc2d67d10824983631ba8ec2d8`, version to 0.0.41-staging; unchanged pinned source-fragment SHA-256
 - `build_wordpress_stage.py` — Git blob `0d02b64db72b64154010480c592b7c9b2d7affd6`, stage manifest schema to r41
-- `tests/browser_regression_r41.py` — Git blob `208106f6c5570f268a4e276ebaa9a5efb1843c5a`
+- `tests/browser_regression_r41.py` — Git blob `3a4ac889ccd1085598e79ec797757b5ddeb0c9ff`; optionally generates four Chromium screenshots and JSON receipt.
+- `tests/build_r41_review.py` — Git blob `dc06d3457df7e317cc5da0501acec5fce3499c0c`; deterministic offline QA ZIP builder.
+- `R41_FAILURE_RECOVERY_PRINT_CUSTODY_HOLD.md` — this source-controlled report.
 
 The original R37 source-custody crosswalk blob `ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea` and six external NASA catalog links remain unchanged. Six image-rights decisions remain `INDIVIDUAL_REVIEW_REQUIRED`. No image binaries, speculative coordinates, map pins, map edges or claims about a reconstructed fire timeline are introduced.
 
@@ -28,11 +30,12 @@ python -m unittest discover -s experience2/evidence-atlas -p test_atlas.py -q
 python -m unittest discover -s experience2/evidence-atlas/tests -p test_wordpress_stage.py -q
 php -l experience2/evidence-atlas/final-vestige-ex2-evidence-atlas.php
 node --check experience2/evidence-atlas/atlas.js
-python experience2/evidence-atlas/tests/browser_regression_r41.py
+python experience2/evidence-atlas/tests/browser_regression_r41.py --output /tmp/fv-apollo-r41-qa
+python experience2/evidence-atlas/tests/build_r41_review.py --qa /tmp/fv-apollo-r41-qa --out /tmp/fv-apollo-r41-review.zip
 python experience2/evidence-atlas/build_wordpress_stage.py --output /tmp/fv-apollo-r41-stage
 ```
 
-**Executed locally:** R39 source-custody Python 11/11 PASS; R40 WordPress adapter tests 12/12 PASS; PHP lint PASS; Node syntax PASS; **14/14** actual compiled R37/R39 custody / PHP-shortcode Chromium configurations PASS at widths 320, 360, 390, 768, 1024, 1440, 1920 with JavaScript on/off, keyboard disclosure, touch targets, filter and no-JS. Additional adversarial failure-in-initialization and print-custody tests PASS. All four screenshots at 390/1440 JS/no-JS reproduced byte-identically in two independent runs; the staging manifest reproduced byte-identically.
+**Executed locally:** R39 source-custody Python 11/11 PASS; R40 WordPress adapter tests 12/12 PASS; PHP lint PASS; Node syntax PASS; **14/14** actual compiled R37/R39 custody / PHP-shortcode Chromium configurations PASS at widths 320, 360, 390, 768, 1024, 1440, 1920 with JavaScript on/off, keyboard disclosure, touch targets, filter and no-JS. Additional adversarial failure-in-initialization and print-custody tests PASS. All four screenshots at 390/1440 JS/no-JS reproduced byte-identically in two independent runs; the staging manifest reproduced byte-identically. The 19-file ZIP built twice byte-identically: SHA-256 `dcd8f156dd0f2491bec832b3d7bd6b39b5e2588edbdc94ece81730b1489c7438`. A four-page PDF print proof was visually inspected but excluded from the deterministic ZIP because Chromium PDF metadata is timestamped.
 
 **Explicit testing boundary:** Chromium `page.goto` is blocked by administrator even for loopback HTTP, so browser tests use `set_content` on the *actual locally compiled PHP-rendered Atlas*, with inlined **test-only** CSS/JS. This is not navigated HTTP, authentic WordPress/Assembler, hosted CSP enforcement, or a production LCP/CLS/INP measurement. Pinned/approved axe-core bundle is absent; do not assert an axe pass or WCAG certification. No Safari/VoiceOver/NVDA tests or independent QD review have been performed.
 
