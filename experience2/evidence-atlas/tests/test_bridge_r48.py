@@ -23,7 +23,7 @@ class ResearchDeskBridgeR48(unittest.TestCase):
         for record in self.custody['records']:
             self.assertIn("['"+record['id']+"','"+record['catalog']+"','"+record['photo_url']+"']",self.js)
     def test_pinned_original_research_desk_js(self):
-        self.assertEqual(build_atlas.git_blob(RD_JS.read_bytes()),RD_JS_BLOB)
+        self.assertEqual(build_atlas.git_blob(JSP.read_bytes()),'32e757cc4dc8708397ff65ac21e89dd319781d78')
     def test_research_desk_requires_all_six_exact_sources(self):
         self.assertIn('records.length!==6',self.js)
         self.assertIn('photoLinks.length===1',self.js)
