@@ -201,7 +201,7 @@ class PremiumRuleTests(unittest.TestCase):
             load_price_policy(self.config({"version": 1.0,
                                            "price_absolute": "0.01",
                                            "price_fraction": "0.02"}))
-        with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
+        with self.assertRaisesRegex(ValueError, "Duplicate JSON price policy key"):
             load_price_policy(self.config({}, '{"version":1,"version":1,"price_absolute":"0.01","price_fraction":"0.02"}'))
 
     def test_empty_policy_is_default(self):
