@@ -10,6 +10,6 @@
 
 **Commercial hold:** No active earning link, commission rate, price or seller offer countdown; author has not used product; no actual purchases or sales observed.
 
-**Video:** A separately generated local 540x960 H.264 silent forty-second film was visually inspected; SHA-256 fd20815ec07b38a9fda3db63de11d0f86e64c9385187bd4acf66fcee3f728702. Its source-control renderer and text/caption proof belong to this PR; video binary is not hosted or deployed and is not rendered by WordPress drafts.
+**Video:** A separately generated local 540x960 H.264 silent forty-second film was visually inspected; SHA-256 7a1cc8e4a0e0047bd2ea090b79785f9555a6a9e996d63345a54b918ff3a231ae. Its source-control renderer and text/caption proof belong to this PR; video binary is not hosted or deployed and is not rendered by WordPress drafts.
 
 **Publication requires** merchant permission, editorial/FTC review, staging, WCAG, native browser/performance evidence and explicit founder approval.
