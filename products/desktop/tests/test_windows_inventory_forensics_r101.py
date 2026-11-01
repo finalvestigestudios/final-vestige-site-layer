@@ -141,6 +141,76 @@ class InventoryForensicsR101(unittest.TestCase):
         self.assertIn("START_MASK_2", diagnostic.render("tests", {label: 1}))
         self.assertNotIn(str(before.st_ino + 1), label)
 
+    def test_cross_view_windows_creation_time_only_mismatch_is_supported(self):
+        before = self.path.lstat()
+        after = types.SimpleNamespace(st_dev=before.st_dev, st_ino=before.st_ino,
+            st_mode=before.st_mode, st_nlink=before.st_nlink,
+            st_size=before.st_size, st_mtime_ns=before.st_mtime_ns,
+            st_ctime_ns=before.st_ctime_ns + 123456)
+        self.assertTrue(diagnostic.gate._same_path_descriptor_identity(
+            before, after, windows=True))
+        self.assertFalse(diagnostic.gate._same_path_descriptor_identity(
+            before, after, windows=False))
+
+    def test_cross_view_windows_other_metadata_changes_are_rejected(self):
+        before = self.path.lstat()
+        fields = ("st_dev", "st_ino", "st_mode", "st_nlink",
+                  "st_size", "st_mtime_ns")
+        for field in fields:
+            with self.subTest(field=field):
+                values = {name: getattr(before, name) for name in
+                          (*fields, "st_ctime_ns")}
+                values[field] += 1
+                after = types.SimpleNamespace(**values)
+                self.assertFalse(diagnostic.gate._same_path_descriptor_identity(
+                    before, after, windows=True))
+
+    def test_full_fingerprint_accepts_stable_windows_cross_view_ctime_only(self):
+        before = self.path.lstat()
+        values = {name: getattr(before, name) for name in
+                  ("st_dev", "st_ino", "st_mode", "st_nlink",
+                   "st_size", "st_mtime_ns", "st_ctime_ns")}
+        values["st_ctime_ns"] += 123456
+        stable_fd = types.SimpleNamespace(**values)
+        original = diagnostic.gate._same_path_descriptor_identity
+        with (
+            patch.object(diagnostic.gate, "_same_path_descriptor_identity",
+                         side_effect=lambda a,b: original(a,b,windows=True)),
+            patch.object(diagnostic.gate.os, "fstat", return_value=stable_fd),
+        ):
+            digest = diagnostic.gate._fingerprint(self.path, self.root)
+        self.assertEqual(len(digest), 64)
+
+    def test_full_fingerprint_rejects_fd_ctime_change_even_on_windows(self):
+        before = self.path.lstat()
+        values = {name: getattr(before, name) for name in
+                  ("st_dev", "st_ino", "st_mode", "st_nlink",
+                   "st_size", "st_mtime_ns", "st_ctime_ns")}
+        values["st_ctime_ns"] += 123456
+        first = types.SimpleNamespace(**values)
+        values["st_ctime_ns"] += 1
+        modified = types.SimpleNamespace(**values)
+        original = diagnostic.gate._same_path_descriptor_identity
+        with (
+            patch.object(diagnostic.gate, "_same_path_descriptor_identity",
+                         side_effect=lambda a,b: original(a,b,windows=True)),
+            patch.object(diagnostic.gate.os, "fstat", side_effect=[first,modified]),
+        ):
+            with self.assertRaises(ValueError):
+                diagnostic.gate._fingerprint(self.path, self.root)
+
+    def test_full_fingerprint_rejects_fd_inode_swap_after_open(self):
+        before = self.path.lstat()
+        values = {name: getattr(before, name) for name in
+                  ("st_dev", "st_ino", "st_mode", "st_nlink",
+                   "st_size", "st_mtime_ns", "st_ctime_ns")}
+        first = types.SimpleNamespace(**values)
+        values["st_ino"] += 1
+        modified = types.SimpleNamespace(**values)
+        with patch.object(diagnostic.gate.os, "fstat", side_effect=[first,modified]):
+            with self.assertRaises(ValueError):
+                diagnostic.gate._fingerprint(self.path, self.root)
+
     def test_output_contains_no_private_values(self):
         with patch.object(diagnostic, "probe", side_effect=ValueError("PRIVATE_CSV_ROW")):
             stream = io.StringIO()
