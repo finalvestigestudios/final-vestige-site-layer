@@ -112,6 +112,19 @@ def make_html(custody: dict, css: str, js: str) -> str:
             f'<p>{q(note)}</p></div><ol>{links}</ol></li>'
         )
     chronology = '\n'.join(chronology_items)
+    # R44: scholar-ready, TEXT-ONLY source citations. Every line is generated
+    # from the pinned NASA custody crosswalk; no photo licenses are inferred.
+    citation_items = []
+    for r in custody['records']:
+        citation = (f'NASA · catalog {r["catalog"]} · photograph date {r["date_label"]} · '
+                    f'source: {r["photo_url"]} · image reuse: individual review required.')
+        citation_items.append(
+            f'<li data-fva-cite-id="{q(r["id"])}">'
+            f'<p class="fva-citation__text" data-fva-citation-text>{q(citation)}</p>'
+            f'<button type="button" data-fva-copy hidden '
+            f'aria-label="Copy NASA source {q(r["id"])} citation">Copy citation {q(r["id"])}</button></li>'
+        )
+    citations = '\n'.join(citation_items)
     filters = '\n'.join(f'<button type="button" data-fva-filter="{v}" aria-pressed="{str(v=="all").lower()}">{label}</button>'
                         for v, label in [('all', 'All 6 sources'), ('1966', '1966 · 1 source'),
                                          ('1967', '1967 · 3 sources'), ('2017', '2017 · 2 exhibits')])
@@ -148,6 +161,13 @@ def make_html(custody: dict, css: str, js: str) -> str:
   </div>
   <section class="fva-grid" id="fva-records" aria-label="NASA photographic-source gallery">{all_cards}</section>
   <p class="fva-empty" data-fva-empty hidden>No source records match. Reset filters to restore all six.</p>
+  <section class="fva-citations" aria-labelledby="fva-citations-title" data-fva-citations>
+    <p class="fva-citations__eyebrow">RESEARCH ACCESS / CITATION REGISTER</p>
+    <h2 id="fva-citations-title">Trace every reference.</h2>
+    <p>These are source references, not licenses to reproduce photographs. Exact dates are not inferred where NASA's record gives only a month. The register remains complete when filters are applied or JavaScript is unavailable.</p>
+    <ol>{citations}</ol>
+    <p class="fva-citations__status" role="status" aria-live="polite" aria-atomic="true" data-fva-copy-status></p>
+  </section>
   <footer class="fva-footer"><p><strong>Six source references · Six individual image-rights reviews outstanding.</strong> This is a source-reference gallery, not a reproduction of NASA photographs or a geo-map.</p>
    <p>NASA record credits retained. <a href="{q(custody['rights_guidance'])}" target="_blank" rel="noopener noreferrer">NASA media and branding guidelines <span aria-hidden="true">↗</span></a> · Private staging candidate; not for publication. No endorsement implied.</p></footer>
 </main><script>{js}</script></body></html>\n'''
@@ -162,7 +182,7 @@ def build(output: Path) -> dict:
     page_path = output / 'apollo-evidence-atlas.html'
     page_path.write_text(document, encoding='utf-8', newline='\n')
     receipt = {
-       'schema': 'fv.ex2.apollo.atlas.r39.v1', 'release': 'STAGING_HOLD',
+       'schema': 'fv.ex2.apollo.atlas.r44.v1', 'release': 'STAGING_HOLD',
        'crosswalk_git_blob': EXPECTED_BLOB, 'records': list(IDS),
        'source_year_counts': {'1966': 1, '1967': 3, '2017': 2},
        'image_rights': '6 INDIVIDUAL_REVIEW_REQUIRED', 'image_binaries': 0,

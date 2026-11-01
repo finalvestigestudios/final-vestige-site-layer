@@ -2,13 +2,13 @@
 /**
  * Plugin Name: Final Vestige — Apollo Evidence Atlas (STAGING ONLY)
  * Description: NASA-custody source-reference gallery; not approved for production.
- * Version: 0.0.43-staging
+ * Version: 0.0.44-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.43-staging'); }
+if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.44-staging'); }
 // Exact, reviewed R39 source-custody HTML fragment. A changed build needs new review.
-if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '1a18e882c09a5437fd97dd10a2e464728c1f4c89ca5dc1ca95cd9ca3848ce22a'); }
+if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '169ffdbed3dd8f625a1b133deb8725f891d120e7320d8c4589398c8bbb511db6'); }
 
 /** Register once. Preload for a top-level shortcode; dynamically rendered shortcodes
  * enqueue in the callback, so reusable blocks and template parts are not excluded.

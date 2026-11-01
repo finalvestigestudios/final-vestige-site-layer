@@ -98,3 +98,17 @@
 @media(max-width:850px){.fva-chronology__eras>li{grid-template-columns:minmax(0,1fr)} }
 @media(max-width:520px){.fva-chronology__eras ol{grid-template-columns:minmax(0,1fr)} }
 @media print{.fva-chronology{background:#fff;border-color:#777}.fva-chronology__eras>li{background:#fff;break-inside:avoid}.fva-chronology__eras a{background:#fff;border-color:#777} }
+
+/* R44: source-register citations remain legible with JS disabled and on paper. */
+.fva-citations{padding:clamp(18px,3vw,38px);margin:16px 0 48px;border:1px solid var(--line);background:#181a16}
+.fva-citations__eyebrow{font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.14em;color:var(--gold)}
+.fva-citations h2{font:400 clamp(28px,3.3vw,43px)/1.15 Georgia,serif;margin:10px 0}
+.fva-citations>p:not(.fva-citations__eyebrow){max-width:850px;color:var(--muted)}
+.fva-citations ol{margin:28px 0 0;padding:0;list-style:decimal inside;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fva-citations li{min-width:0;border:1px solid var(--line);padding:15px 18px;background:#10120f;color:var(--gold)}
+.fva-citation__text{display:block;overflow-wrap:anywhere;color:var(--paper);font:13px/1.65 ui-monospace,monospace;margin:8px 0 12px;user-select:text}
+.fva-citations button{min-height:44px;padding:9px 15px;border:1px solid #927d53;background:var(--raised);color:var(--paper)}
+.fva-citations button:hover{border-color:var(--gold)}
+.fva-citations__status{min-height:1.7em;color:var(--gold)}
+@media(max-width:800px){.fva-citations ol{grid-template-columns:minmax(0,1fr)}}
+@media print{.fva-citations,.fva-citations li{background:#fff;border-color:#777;break-inside:avoid}.fva-citations button,.fva-citations__status{display:none!important}}
