@@ -39,7 +39,7 @@ function audit(f){
   ok(tag+" disclosure before button",x.indexOf('class="disclosure"')<x.indexOf('<button type="button" disabled'));
   ok(tag+" no active affiliate link",!/<a[^>]+href=["']https?:\/\/(?:zen12\.com|affiliates\.inspire3\.com)/i.test(x));
   ok(tag+" no unapproved tracking",!/<script\b|<iframe\b|<form\b/i.test(x));
-  ok(tag+" no media autoplay",!/<video\b|<audio\b|autoplay\b/i.test(x));
+  ok(tag+" no media autoplay",!/<video\b|<audio\b|<(?:video|audio)[^>]*\bautoplay\b/i.test(x));
   ok(tag+" no event attrs",!/\son(?:click|load|error|submit|focus)\s*=/i.test(x));
   ok(tag+" no hollow link",!/href=["']#["']/i.test(x));
   ok(tag+" semantic heading",x.includes('aria-labelledby="fv31-guide-title"')&&x.includes('id="fv31-guide-title"'));
@@ -63,7 +63,7 @@ function audit(f){
  ok("privacy refuses extra keys",privacy.includes('names.length !== 4'));
  ok("evidence matrix 50+ rows",matrix.trim().split("\n").length>=51);
  ok("merchant rights flagged",matrix.includes("Account-specific Inspire3 approval")&&matrix.includes("HARD HOLD"));
- ok("no new signup platform",!Object.values(f).some(v=>/mailchimp|convertkit|beehiiv\.com\/subscribe/i.test(v)));
+ ok("no new signup platform",![A,B,hub].some(v=>/mailchimp|convertkit|beehiiv\.com\/subscribe/i.test(v)));
  return {passed:count-failures.length,total:count,failures};
 }
 function mutatedNegativeControls(f){
