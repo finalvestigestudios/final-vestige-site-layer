@@ -35,3 +35,15 @@ and -OO source tests and six smokes, then native Win11 x64 binary/PE/SHA/AV/acce
 premium-controlled distribution, independent QD and explicit founder approval.
 
 **All six apps unreleased; no production/CMS write, public EXE, download URL, entitlement change or merge.**
+
+## Cross-platform finding (R100 hosted CI)
+
+The initial targeted R100 suite passed on Linux normal and -OO, but its real
+Windows subprocess case failed on both modes. Code inspection identified the
+parent validator's Linux-only terminal-LF parser: Python emits CRLF on Windows,
+which was rejected even for an otherwise valid single-line, source-allowlisted
+child diagnostic. R100 now removes exactly one terminal CRLF or LF and still
+refuses embedded CR/LF, multiple lines and arbitrary child output. Added
+Windows delimiter regression assertions without changing other trust gates.
+Hosted Windows re-test is required to prove this diagnosis; do not claim
+cross-platform PASS before the exact-head run shows it.
