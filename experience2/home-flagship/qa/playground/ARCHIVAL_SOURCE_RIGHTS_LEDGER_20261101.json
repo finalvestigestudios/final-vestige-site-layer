@@ -1,0 +1,87 @@
+{
+  "schema": "fv-source-artifacts-v1",
+  "observed_utc": "2026-11-01",
+  "base_parent_pr": 497,
+  "base_parent_head": "8458d28e7c5bdb4b4452144a39b00b8a68895ecc",
+  "flagship_html_blob": "70ebe0d8e122048343c99a3c6adc6f7ac498ed7f",
+  "site_id": 256784396,
+  "site_environment": "production_read_only",
+  "staging_environment": "NOT_EXECUTED",
+  "rationale": "Metadata and institutional catalogues are not uploaded-file binary authentication; statuses deliberately cannot authorize release.",
+  "artifacts": [
+    {
+      "key": "apollo.webp",
+      "wp_media_id": 473,
+      "wp_source": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+      "wp_reported_bytes": 78346,
+      "wp_width": 1041,
+      "wp_height": 810,
+      "primary_record": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "primary_record_width": 1041,
+      "primary_record_height": 810,
+      "source_identity": "NASA object/caption and dimensions corroborate filename and alt; exact bytes not compared",
+      "reuse_basis": "NASA media guidelines generally permit informational reproduction with credit; no implied endorsement, distinguish third-party works",
+      "reuse_policy": "https://www.nasa.gov/nasa-brand-center/",
+      "outstanding": [
+        "source_image_SHA256_independent_match",
+        "photograph_credit_and_no_endorsement_review",
+        "binary_transfer_browser_verified"
+      ],
+      "release_rights_status": "HOLD_EXACT_IMAGE_PENDING"
+    },
+    {
+      "key": "franklin.jpg",
+      "wp_media_id": 474,
+      "wp_source": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+      "wp_reported_bytes": 466043,
+      "wp_width": 960,
+      "wp_height": 1526,
+      "primary_image_record": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+      "commons_source": "1869 published illustration in McClintock, The Voyage of the Fox in the Arctic Seas, via Wikimedia Commons",
+      "commons_rendition_dimensions": "960 x 1526 pixels available",
+      "commons_licensing": "Public Domain Mark; US-tag warning also displayed (review international scope)",
+      "distinct_museum_object": "https://www.rmg.co.uk/collections/objects/rmgc-object-504898",
+      "source_identity": "Dimensions and filename match Commons rendition; NOT proof that WP image bytes match that reproduction",
+      "outstanding": [
+        "compare_WP_original_SHA256_to_exact_Commons_rendition",
+        "verify_any_edits_and_attribution",
+        "binary_transfer_browser_verified"
+      ],
+      "release_rights_status": "HOLD_EXACT_IMAGE_PENDING",
+      "caution": "Royal Museums Greenwich licensing terms apply to its own reproduction image; do not conflate with the 1869 Commons illustration."
+    },
+    {
+      "key": "nypl.jpg",
+      "wp_media_id": 1258,
+      "wp_source": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "wp_reported_bytes": 5553669,
+      "wp_width": 5667,
+      "wp_height": 3831,
+      "institution_guide": "https://libguides.nypl.org/nyc-rail-transit/brt",
+      "item_catalogue": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+      "nypl_rights_policy": "https://digitalcollections.nypl.org/about",
+      "source_identity": "NYPL guide corroborates 1903 BRT map and image ID 5003296; edited FV file is not authenticated against item",
+      "reuse_basis": "1903 map likely beyond U.S. copyright term, but individual NYPL rights statement and edited-file chain must be verified",
+      "outstanding": [
+        "item_level_NYPL_rights_statement",
+        "edits_provenance_of_edit_017_v02",
+        "exact_image_SHA256_comparison",
+        "binary_transfer_browser_verified"
+      ],
+      "release_rights_status": "HOLD_ITEM_AND_IMAGE_PENDING"
+    }
+  ],
+  "universal_remaining": [
+    "licensed_or_public_domain_use_in_deployment_jurisdictions",
+    "independently_reviewed_binary_hashes",
+    "original_or_authorized_derivatives_in_private_stage",
+    "real_WordPress_Assembler_render",
+    "axe_and_keyboard_touch_noJS_200pct_zoom",
+    "Lighthouse_lab_CWV",
+    "CI_and_QD_exact_HEAD",
+    "founder_explicit_release_approval"
+  ],
+  "production_write": false,
+  "rights_release_approved": false,
+  "release_decision": "HOLD"
+}
