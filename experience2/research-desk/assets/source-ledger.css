@@ -41,3 +41,24 @@
 @media(max-width:760px){.fv-ex2-ledger__grid{grid-template-columns:1fr}.fv-ex2-ledger__tools{align-items:stretch;flex-direction:column}.fv-ex2-ledger__tools input{width:100%}.fv-ex2-ledger__status{text-align:left}}
 @media(max-width:480px){.fv-ex2-ledger h1{font-size:clamp(55px,14vw,75px)}.fv-ex2-ledger__mast{flex-wrap:wrap}.fv-ex2-ledger__wrap{width:calc(100% - 36px)}.fv-ex2-ledger__card{padding:20px}}
 @media(prefers-reduced-motion:reduce){.fv-ex2-ledger *, .fv-ex2-ledger *::before,.fv-ex2-ledger *::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* R37: verified-photo custody and date navigation. Static-first, responsive and scoped. */
+.fv-ex2-ledger__chronology{margin:0 0 32px;padding:22px clamp(16px,3vw,32px);border:1px solid var(--fvx-border);background:var(--fvx-surface)}
+.fv-ex2-ledger__chronology-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:start;gap:16px;margin-bottom:20px}
+.fv-ex2-ledger__chronology h2{font:400 clamp(23px,3vw,35px)/1.15 Georgia,serif;letter-spacing:-.02em;color:var(--fvx-paper);margin:0}
+.fv-ex2-ledger__chronology p{margin:0;color:#ded8ce;font-size:14px;line-height:1.65}
+.fv-ex2-ledger__chronology ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.fv-ex2-ledger__chronology li{min-width:0}
+.fv-ex2-ledger__chronology a{display:flex;flex-direction:column;gap:8px;height:100%;padding:16px;min-width:0;border:1px solid #756343;color:var(--fvx-paper);text-decoration:none;overflow-wrap:anywhere}
+.fv-ex2-ledger__chronology a:hover,.fv-ex2-ledger__chronology a:focus-visible{border-color:var(--fvx-gold);background:#c7a66c10}
+.fv-ex2-ledger__chronology time{font:700 11px/1.5 ui-monospace,monospace;color:var(--fvx-gold);letter-spacing:.07em}
+.fv-ex2-ledger__chronology a span{font-size:14px;line-height:1.45}
+.fv-ex2-ledger__card:target{outline:3px solid var(--fvx-gold);outline-offset:3px}
+.fv-ex2-ledger__custody{border-top:1px solid var(--fvx-border);padding-top:17px;color:#e1d9c8}
+.fv-ex2-ledger__custody summary{cursor:pointer;font-size:14px;font-weight:700;line-height:1.5;color:var(--fvx-gold)}
+.fv-ex2-ledger__custody dl{margin:15px 0 0;display:grid;gap:5px}
+.fv-ex2-ledger__custody dt{margin-top:9px;font:700 10px/1.6 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--fvx-gold)}
+.fv-ex2-ledger__custody dd{margin:0;color:#ded8ce;font-size:13px;line-height:1.65;overflow-wrap:anywhere}
+@media(max-width:760px){.fv-ex2-ledger__chronology-head{grid-template-columns:1fr}.fv-ex2-ledger__chronology ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.fv-ex2-ledger__chronology ol{grid-template-columns:1fr}.fv-ex2-ledger__chronology a{padding:13px}}
+@media print{.fv-ex2-ledger__chronology a{color:#000;border-color:#555}.fv-ex2-ledger__custody{color:#000}.fv-ex2-ledger__custody dd{color:#000}}

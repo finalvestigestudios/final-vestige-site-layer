@@ -1,0 +1,75 @@
+{
+  "schema": "fv.ex2.apollo.photo_custody.r37.v1",
+  "release": "STAGING_HOLD",
+  "checked": "2026-10-31",
+  "historical_primary": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+  "rights_guidance": "https://www.nasa.gov/nasa-brand-center/",
+  "rules": [
+    "Photographic dates are not a reconstruction of January 27, 1967",
+    "External NASA links only; no image binaries embedded or licensed for local use",
+    "NASA-linked photos are contextual, not sole sources of technical findings",
+    "No speculative Evidence Atlas pins or edges"
+  ],
+  "records": [
+    {
+      "id": "01",
+      "catalog": "S67-19766",
+      "date": "1967-01",
+      "date_label": "January 1967; exact day not asserted",
+      "photo_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "photo_role": "crew portrait, not cabin/fire evidence",
+      "identity_note": "NASA-hosted image filename corroborates S67-19766; structured catalog metadata not separately confirmed",
+      "media_rights": "INDIVIDUAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "02",
+      "catalog": "S67-15717",
+      "date": "1967-01-03",
+      "date_label": "January 3, 1967",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "photo_role": "spacecraft preparation, not cabin-atmosphere evidence",
+      "identity_note": "Photo link verified; image-reuse review outstanding",
+      "media_rights": "INDIVIDUAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "03",
+      "catalog": "S66-58038",
+      "date": "1966-10-18",
+      "date_label": "October 18, 1966",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "photo_role": "earlier altitude-chamber rehearsal, not the fire",
+      "identity_note": "Photo link verified; image-reuse review outstanding",
+      "media_rights": "INDIVIDUAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "04",
+      "catalog": "KSC-20170124-PH_KLS01_0164",
+      "date": "2017-01-24",
+      "date_label": "January 24, 2017",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+      "photo_role": "2017 tribute hatch exhibit, not a 1967 accident scene",
+      "identity_note": "NASA/Kim Shiflett credit; image-reuse review outstanding",
+      "media_rights": "INDIVIDUAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "05",
+      "catalog": "S67-21294",
+      "date": "1967-01-28",
+      "date_label": "January 28, 1967",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "photo_role": "post-fire interior; cannot establish unique ignition mechanism",
+      "identity_note": "Photo link verified; image-reuse review outstanding",
+      "media_rights": "INDIVIDUAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "06",
+      "catalog": "KSC-20170124-PH_KLS01_0090",
+      "date": "2017-01-24",
+      "date_label": "January 24, 2017",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "photo_role": "2017 redesigned-hatch tribute exhibit, not the 1967 cabin",
+      "identity_note": "NASA/Kim Shiflett credit; image-reuse review outstanding",
+      "media_rights": "INDIVIDUAL_REVIEW_REQUIRED"
+    }
+  ]
+}

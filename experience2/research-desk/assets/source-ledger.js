@@ -8,6 +8,12 @@ document.querySelectorAll('[data-fvx-ledger]').forEach(root=>{
  const cards=[...root.querySelectorAll('[data-fvx-record]')];
  const empty=root.querySelector('[data-fvx-empty]');
  if(!search||!tools||!status||!cards.length||!empty)return;
+ const navigate=(event)=>{
+   const link=event.target.closest('[data-fvx-chrono-link]');
+   if(!link||!root.contains(link)||!search.value)return;
+   search.value='';
+   filter(); // restore hidden target before native anchor navigation
+ };
  const restore=()=>{
    // If any card becomes malformed while filtering, retain the complete evidence.
    cards.forEach(card=>{card.hidden=false;});
@@ -16,6 +22,7 @@ document.querySelectorAll('[data-fvx-ledger]').forEach(root=>{
    status.textContent='';
    root.dataset.fvxInitialized='';
    search.removeEventListener('input',filter);
+   root.removeEventListener('click',navigate);
  };
  const filter=()=>{
    try{
@@ -33,6 +40,7 @@ document.querySelectorAll('[data-fvx-ledger]').forEach(root=>{
  };
  try{
    search.addEventListener('input',filter);
+   root.addEventListener('click',navigate);
    root.dataset.fvxInitialized='yes';
    filter();
    tools.hidden=root.dataset.fvxInitialized!=='yes';

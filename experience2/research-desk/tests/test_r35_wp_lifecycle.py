@@ -59,20 +59,20 @@ class R35LifecycleTest(unittest.TestCase):
             p = subprocess.run(["php", "-l", str(f)], capture_output=True, text=True)
             self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
 
-    def test_original_pr158_static_assets_unmodified(self):
+    def test_r37_reviewed_assets_match_exact_git_blobs(self):
         # Detect accidental drift in the NASA evidence and progressive-enhancement source.
         pinned = {
-            "assets/source-ledger.css": "b8cf00afeceba115a9e9d19044fc11dcf2890cbe",
-            "assets/source-ledger.js": "32e757cc4dc8708397ff65ac21e89dd319781d78",
-            "templates/ledger.html": "403d128c57b9bc82dac7c619651689070edef86c",
+            "assets/source-ledger.css": "e1e448f1ab14061d5ddd94fb51b652799f859791",
+            "assets/source-ledger.js": "98e5cde97eb487df1a2854400833fd8ed1f06c69",
+            "templates/ledger.html": "8b14587187b375e93cfbd4436b99bfb6cd3d2f32",
         }
         missing = [rel for rel in pinned if not (ROOT / rel).is_file()]
         if missing:
-            self.skipTest("Original PR #158 assets not mounted in the local partial checkout: " + ', '.join(missing))
+            self.skipTest("R37 reviewed assets not mounted in the local partial checkout: " + ', '.join(missing))
         for rel, expected in pinned.items():
             b = (ROOT / rel).read_bytes()
             actual = hashlib.sha1(f"blob {len(b)}\0".encode() + b).hexdigest()
-            self.assertEqual(actual, expected, "Original source modified: " + rel)
+            self.assertEqual(actual, expected, "Reviewed R37 source unexpectedly changed: " + rel)
 
     def test_six_nasa_records_when_original_template_available(self):
         source = ROOT / "templates/ledger.html"
