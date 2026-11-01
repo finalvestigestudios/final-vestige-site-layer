@@ -309,11 +309,11 @@ class ManualR109(unittest.TestCase):
         with self.assertRaises(qa.ReviewHold): self.verify()
 
     def test_witness_rejects_control_characters(self):
-        self.mutate_witness("observation", "X" * 100 + "\\u0000")
+        self.mutate_witness("observation", "X" * 100 + chr(0))
         with self.assertRaises(qa.ReviewHold): self.verify()
 
     def test_witness_rejects_bidi_override(self):
-        self.mutate_witness("observation", "X" * 100 + "\\u202e")
+        self.mutate_witness("observation", "X" * 100 + chr(0x202e))
         with self.assertRaises(qa.ReviewHold): self.verify()
 
     def test_witness_rejects_duplicate_json_keys(self):
@@ -342,8 +342,8 @@ class ManualR109(unittest.TestCase):
         self.fill_witnesses()
         app, check = qa.FREE[0], qa.FREE_CHECKS[0]
         data = self.witness_bytes(app, check, observation=
-            "Testing a real multi-line note would require separate physical review.\\n"
-            "Synthetic data verifies that a standard line break and tab\\t"
+            "Testing a real multi-line note would require separate physical review." + chr(10)
+            "Synthetic data verifies that a standard line break and tab" + chr(9)
             "inside an otherwise detailed 80-character observation are allowed.")
         self.put_witness(app, check, data)
         result = self.verify()
