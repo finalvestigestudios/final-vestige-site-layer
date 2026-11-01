@@ -1,0 +1,51 @@
+id	claim	category	source_ids	status	render_rule
+C01	Thatcher illusion originated in Peter Thompson 1980	independent historical	S01	supported	allowed in investigation
+C02	Photograph of politician may be reused freely	rights	S01	not established	do not reproduce
+C03	Eyes and mouth inverted inside face appear less abnormal upside down	perception	S01,S02	supported with variability	condition-limited
+C04	The illusion occurs in every observer	perception	S01,S02	unsupported	exclude
+C05	Face inversion reduces unusual-expression grotesqueness equally	perception	S02	contradicted in study conditions	exclude
+C06	Visual inversion universally prevents recognition	perception	S02	overgeneralization	exclude
+C07	Configuration and local features interact	perception	S02,S03,S04	supported interpretation	allow qualified
+C08	Face experiments validate commercial hypnosis	efficacy	S01-S05	unsupported relevance	exclude
+C09	Face experiments prove Puységur's account invalid	historical claim	S12	unsupported inference	exclude
+C10	The SVG diagram reproduces Thompson's research	demonstration	S01	not established	label schematic only
+C11	Zen12 offers 12 progressive levels	seller specification	S08	seller-reported	attribute to vendor
+C12	Zen12 session length advertised as 12 minutes	seller specification	S08	seller-reported	attribute to vendor
+C13	Zen12 Beginner first six levels and 24 MP3	seller specification	S08	seller-reported	attribute to vendor
+C14	Zen12 Premium twelve levels and 48 MP3	seller specification	S08	seller-reported	attribute to vendor
+C15	Zen12 Advanced final six levels and 24 MP3	seller specification	S08	seller-reported	attribute to vendor
+C16	Four listening styles are available per level	seller specification	S08,S09	seller-reported	attribute to vendor
+C17	Premium includes tier-specific audio guides	seller specification	S08	seller-reported	attribute to vendor; verify current checkout
+C18	Premium includes special training call	seller specification	S08	seller-reported	attribute to vendor; verify current checkout
+C19	Every tier includes identical bonuses	seller specification	S08	not independently verified	avoid universal language
+C20	Seller advertises year-long guarantee	seller term	S08	seller-reported	not independent refund outcomes
+C21	Refund requests always honored instantly	seller term	S08	unsupported	exclude
+C22	Current package prices fixed	pricing	S08	volatile checkout not audited	omit
+C23	Zen12 12 minutes equals hour of advanced meditation	medical efficacy	S08,S11	seller claim lacks product-specific support	do not adopt
+C24	Zen12 automatically controls brainwaves	medical efficacy	S08,S06	not product validated	do not adopt
+C25	Binaural beats were examined in 14 EEG studies	science	S06	supported	allow study-scope qualifier
+C26	Review findings five supportive eight contradictory one mixed	science	S06	supported	allow study-scope qualifier
+C27	2023 review evaluated Zen12's exact files	science	S06	false	exclude
+C28	Binaural beat EEG data prove mental/health improvements	medical efficacy	S06,S11	not established	exclude
+C29	Zen12 clinically treats depression or anxiety	medical efficacy	S08,S11	no acceptable product-specific substantiation	exclude
+C30	Zen12 guarantees focus/wealth/creativity gains	outcome efficacy	S08,S11	unsupported	exclude
+C31	Final Vestige has used/endorsed Zen12 firsthand	testimonial	S07-S09	no evidence	exclude
+C32	Inspire3 accepted FV into affiliate program	authorization	S07	unverified	hard block
+C33	FV has approved tier-specific earning URLs	authorization	S07	unverified	hard block
+C34	Official seller homepage is an affiliate URL	authorization	S07	not established	never represent as earning URL
+C35	External creative/swipe rights verified	authorization	S07	unverified	create original assets only
+C36	Email promotion permitted by written partner terms	authorization	S07	unverified	hold Dispatch
+C37	Near-action commission disclosure required for endorsement	FTC	S10	supported	adjacent future earning link
+C38	General disclosure page alone sufficient	FTC	S10	not enough	do not rely on it alone
+C39	Health efficacy assertions require adequate substantiation	FTC	S11	supported	block unsubstantiated
+C40	Video version will convert better	marketing hypothesis	none	untested	A/B test only with approval and traffic
+C41	All video must autoplay	UX	none	unnecessary	never autoplay
+C42	Product guide requires subscribing to see citations	UX	none	not permitted	free independent access
+C43	PII must be captured to measure outbound intent	analytics	none	false necessity	categorical aggregate counts only
+C44	Click-through equals confirmed affiliate sale	analytics	none	false	do not infer transactions
+C45	Consent-free offsite events are okay by default	privacy/legal	S10	not verified	remain instrumentation disabled
+C46	Existing Focus Fieldbook is the only funnel	site state	S13	current owner direction	do not add forms
+C47	Thatcher illustration proves an individual has impaired perception	science	S01-S04	false	exclude
+C48	An idle CTA may secretly navigate on keydown	security/UX	none	not allowed	real inert span only
+C49	Use noreferrer noopener on permitted outbound links	security	none	implementation practice	only if activated after approval
+C50	Frames are first-party originally produced	creative	R37 local renderer	verified local produced	do not claim third-party licenses

@@ -1,0 +1,16 @@
+id	class	topic	url	date_or_checked	interpretation
+S01	original research	Thompson 1980 Thatcher demonstration	https://doi.org/10.1068/p090483	1980	verified primary publication
+S02	independent study	Bartlett and Searcy 1993 inversion and configuration	https://doi.org/10.1006/cogp.1993.1007	1993	verified via PubMed
+S03	independent study	Lewis and Johnston 1997 photographic negative tests	https://doi.org/10.1068/p260225	1997	journal abstract
+S04	independent study	Boutsen and Humphreys 2003 face matching	https://doi.org/10.1080/02724980244000774	2003	institutional publication record
+S05	independent study	Thatcher ERP configurality research	https://doi.org/10.3758/s13423-014-0705-3	2015	publisher abstract
+S06	independent review	Ingendoh Posny Heine EEG review 14 studies	https://doi.org/10.1371/journal.pone.0286023	2023	PubMed abstract verified
+S07	seller	Inspire3 catalog	https://inspire3.com/	2026-10-31	merchant's own statements
+S08	seller	Zen12 exact offer and SKU details	https://zen12.com/hnp	2026-10-31	merchant claims, price intentionally omitted
+S09	seller	Zen12 About details	https://zen12.com/about	2026-10-31	merchant claims
+S10	public FTC guidance	FTC endorsement FAQs	https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking	2026-10-31	FTC primary compliance guidance
+S11	public FTC guidance	FTC health products compliance	https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance	2026-10-31	FTC primary compliance guidance
+S12	FV existing resource	Puységur Animal Magnetism Files	https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/	2026-10-31	historical editorial context; live availability not independently retested
+S13	FV existing resource	Seven Day Focus Fieldbook	https://finalvestige.com/focus/	2026-10-31	one existing subscription path; not duplicated
+S14	FV editorial	Affiliate Disclosure	https://finalvestige.com/affiliate-disclosure/	2026-10-31	site policy; specific near-CTA disclosure still needed
+S15	FV editorial	Editorial Standards	https://finalvestige.com/editorial-standards/	2026-10-31	site editorial policy
