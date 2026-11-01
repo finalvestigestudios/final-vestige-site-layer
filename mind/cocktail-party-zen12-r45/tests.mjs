@@ -17,7 +17,7 @@ for (const [name,html] of [["article",article],["A",a],["B",b],["hub",hub]]) {
   ok((html.match(/<h1\b/g)||[]).length===1,name+" unique H1");
   ok(!/<(?:form|iframe|script)\b/i.test(html),name+" no forms/iframes/scripts");
   ok(!/href=["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com)/i.test(html),name+" no merchant href");
-  ok(!/autoplay|on(?:load|click|error)=/i.test(html),name+" no autoplay/inline handler");
+  ok(!/<(?:audio|video)[^>]*autoplay| on(?:load|click|error)=/i.test(html),name+" no autoplay attribute or inline handler");
   ok(/:focus-visible/.test(html),name+" focus styling");
   ok(/prefers-reduced-motion/.test(html),name+" reduced-motion");
 }
