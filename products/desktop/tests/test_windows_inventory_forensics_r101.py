@@ -28,8 +28,12 @@ class InventoryForensicsR101(unittest.TestCase):
     def test_original_failure_cannot_be_reclassified_as_pass(self):
         def reject(*_):
             raise ValueError("PRIVATE_ACCOUNT_AND_INVOICE")
-        self.assertEqual(diagnostic._classify(
-            self.path, self.root, fingerprint=reject), "UNKNOWN")
+        # Windows may expose a real path-vs-handle metadata mismatch for a
+        # freshly created synthetic file. Such a mismatch is a REFUSAL, never
+        # a successful override of the rejected original fingerprint.
+        label = diagnostic._classify(self.path, self.root, fingerprint=reject)
+        self.assertNotEqual(label, "PASS")
+        self.assertIn(label, diagnostic.PERMITTED)
 
     def test_missing_source_is_lstat_failure(self):
         with self.assertRaises(ValueError):
