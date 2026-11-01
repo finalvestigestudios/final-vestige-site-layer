@@ -19,6 +19,7 @@ from pathlib import Path
 
 import release_gate as gate
 import defender_engine_custody_r112 as custody
+import defender_environment_r113 as environment
 import report_attestation as attestation
 from report_evidence import ReportEvidenceError, prepare_report_path, publish_report
 
@@ -155,6 +156,14 @@ def _same_engine(scanner: Path, pinned: custody.EnginePin) -> None:
         raise AVHold("Installed Defender engine changed during scan") from None
 
 
+def _environment() -> None:
+    """Abort privately on local Defender history/exclusions/query uncertainty."""
+    try:
+        environment.require_zero_observations()
+    except environment.EnvironmentHold:
+        raise AVHold("Defender history/exclusion observation failed") from None
+
+
 def scan_candidates(dist: str | Path, r9: str | Path,
                     expected_r9: str) -> dict:
     """Requires a real Win11 workstation; no injected runner or OS override."""
@@ -166,11 +175,13 @@ def scan_candidates(dist: str | Path, r9: str | Path,
     scanner_pin = _engine_snapshot(scanner)
     health_check(scanner)
     _same_engine(scanner, scanner_pin)
+    _environment()  # Pre-scan snapshot; no Defender-record details leave host.
     scanned = []
     for name in gate.EXPECTED:
         _same_engine(scanner, scanner_pin)
         _unchanged(root, prior, checksum_sha)
         scan_one(scanner, root / name)
+        _environment()  # Catch even successfully remediated local detections.
         _unchanged(root, prior, checksum_sha)
         _same_engine(scanner, scanner_pin)
         scanned.append({"name": name, "sha256": prior[name],
@@ -181,6 +192,8 @@ def scan_candidates(dist: str | Path, r9: str | Path,
     return {
         "scanner_sha256": scanner_pin.sha256,
         "scanner_custody": "same_signed_engine_sha256_and_file_identity_observed",
+        "defender_environment_observations": 7,
+        "defender_environment_status": environment.OBSERVED,
         "schema": "fv-labs-offline-defender-r111-v1",
         "provider": "Microsoft Defender Antivirus",
         "status": "SIX_SCANS_ZERO_EXIT_UNCERTIFIED",
