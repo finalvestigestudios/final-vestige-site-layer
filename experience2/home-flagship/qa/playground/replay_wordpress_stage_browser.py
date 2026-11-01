@@ -179,6 +179,40 @@ class Capture:
                            'http_resources': self.resources}
 
 
+async def art_paint_signature(page):
+    """Computed, paint-relevant styling of the *artifact*, outside direction buttons.
+
+    A data attribute is not proof that the historical canvas changed.  The
+    signature captures rendered CSS, not a JS-controlled marker or ARIA label.
+    This is a limited visual-state contract, not an image-diff or WCAG audit.
+    """
+    return await page.evaluate("""() => {
+       const root = document.querySelector('[data-fv-home-flagship]');
+       const opening = root?.querySelector('.fv-hf__opening');
+       const art = root?.querySelector('.fv-hf__folio-arrival, .fv-hf__opening-art');
+       if (!opening || !art) return null;
+       const o=getComputedStyle(opening), a=getComputedStyle(art);
+       return [o.backgroundImage,o.backgroundColor,a.backgroundImage,
+               a.backgroundColor,a.borderColor,a.borderWidth,a.borderRadius,
+               a.clipPath,a.transform].join('|');
+    }""")
+
+
+async def chronicle_painted_entries(page):
+    """Read actual display/geometry of both dated entries, not mode metadata."""
+    return await page.evaluate("""() => {
+       const first=document.querySelector('.fv-hf__chronicle-entry--first');
+       const second=document.querySelector('.fv-hf__chronicle-entry--second');
+       if (!first || !second) return null;
+       function painted(n) {
+         const style=getComputedStyle(n), rect=n.getBoundingClientRect();
+         return style.display!=='none' && style.visibility!=='hidden' &&
+           Number(style.opacity)>0 && rect.width>0 && rect.height>0;
+       }
+       return [painted(first), painted(second)];
+    }""")
+
+
 async def audit_actual_interactions(page):
     """Verify that *rendered* controls change visible evidence, not just ARIA labels.
 
@@ -193,11 +227,15 @@ async def audit_actual_interactions(page):
         root = page.locator('[data-fv-home-flagship]')
         museum = page.locator('[data-fv-direction-choice="museum"]')
         dossier = page.locator('[data-fv-direction-choice="dossier"]')
+        dossier_paint = await art_paint_signature(page)
         await museum.click(timeout=1500)
         changed = await root.get_attribute('data-fv-direction') == 'museum'
+        museum_paint = await art_paint_signature(page)
         await dossier.click(timeout=1500)
         restored = await root.get_attribute('data-fv-direction') == 'dossier'
-        result['direction_changes_and_restores'] = changed and restored
+        result['direction_changes_and_restores'] = bool(
+            changed and restored and dossier_paint is not None and
+            museum_paint is not None and museum_paint != dossier_paint)
 
         franklin_button = page.locator('[data-fv-case-button="franklin"]')
         await franklin_button.click(timeout=1500)
@@ -214,9 +252,13 @@ async def audit_actual_interactions(page):
 
         await page.locator('[data-fv-chronicle-view="addition"]').click(timeout=1500)
         addition_on = await page.locator('.fv-hf__chronicle').get_attribute('data-fv-chronicle-mode') == 'addition'
+        addition_painted = await chronicle_painted_entries(page)
         await page.locator('[data-fv-chronicle-view="original"]').click(timeout=1500)
         original_on = await page.locator('.fv-hf__chronicle').get_attribute('data-fv-chronicle-mode') == 'original'
-        result['chronicle_switch_and_restores'] = addition_on and original_on
+        original_painted = await chronicle_painted_entries(page)
+        result['chronicle_switch_and_restores'] = bool(
+            addition_on and original_on and addition_painted == [False, True] and
+            original_painted == [True, False])
 
         await page.locator('[data-fv-observer-switch="b"]').click(timeout=1500)
         b_on = (await page.locator('[data-fv-observer-frame="b"]').is_visible()
