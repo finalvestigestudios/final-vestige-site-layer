@@ -18,7 +18,9 @@ for(let i=0;i<7;i++){
  ['imaginary license',r=>r.rights_status='CLEARED'],
  ['unapproved WordPress upload',r=>r.wordpress_upload_authorized=true],
  ['invented binary hash',r=>r.source_sha256='f'.repeat(64)],
- ['invented source exact match',r=>r.original_pixels_verified=true]
+ ['invented source exact match',r=>r.original_pixels_verified=true],
+ ['wrong source credit',r=>r.credit='Photographer unknown'],
+ ['missing identity evidence',r=>r.identity_evidence='unknown']
  ];
  for(const [name,mutate] of mutations)test('reject '+name+' '+i,()=>{const c=copy();mutate(c.records[i]);assert.ok(validate(c,inv).length>0)});
 }
