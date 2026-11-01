@@ -2,24 +2,34 @@
 /**
  * Plugin Name: Final Vestige — Apollo Evidence Atlas (STAGING ONLY)
  * Description: NASA-custody source-reference gallery; not approved for production.
- * Version: 0.0.41-staging
+ * Version: 0.0.42-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.41-staging'); }
+if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.42-staging'); }
 // Exact, reviewed R39 source-custody HTML fragment. A changed build needs new review.
-if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '45a552d460cf93a1b10ba5821a662956bee9a77f87c147b22182b805f5d27321'); }
+if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '1825ac0de797f6804c3d2eadfb52f0034d4c4c84e88d0c7bd4a32032df891894'); }
 
-/** Register assets before the theme head; never depend on top-level shortcode scanning.
- * Trade-off: assets are loaded on all singular views, even when shortcode is absent.
- * This must be re-evaluated with real WordPress/Assembler performance traces.
+/** Register once. Preload for a top-level shortcode; dynamically rendered shortcodes
+ * enqueue in the callback, so reusable blocks and template parts are not excluded.
+ * Late-rendered blocks can cause footer CSS / flash of unstyled content until WP
+ * prints late styles; validate in authentic Assembler/WordPress before approval.
  */
-function fv_ex2_atlas_enqueue(): void {
-    if (!is_singular()) { return; }
-    wp_enqueue_style('fv-ex2-evidence-atlas', plugins_url('assets/atlas.css', __FILE__), array(), FV_EX2_ATLAS_VERSION);
-    wp_enqueue_script('fv-ex2-evidence-atlas', plugins_url('assets/atlas.js', __FILE__), array(), FV_EX2_ATLAS_VERSION, true);
+function fv_ex2_atlas_enqueue_assets(): void {
+    wp_enqueue_style('fv-ex2-evidence-atlas');
+    wp_enqueue_script('fv-ex2-evidence-atlas');
 }
-add_action('wp_enqueue_scripts', 'fv_ex2_atlas_enqueue', 20);
+function fv_ex2_atlas_register_assets(): void {
+    wp_register_style('fv-ex2-evidence-atlas', plugins_url('assets/atlas.css', __FILE__), array(), FV_EX2_ATLAS_VERSION);
+    wp_register_script('fv-ex2-evidence-atlas', plugins_url('assets/atlas.js', __FILE__), array(), FV_EX2_ATLAS_VERSION, true);
+    if (!is_singular()) { return; }
+    $post = get_queried_object();
+    if ($post instanceof WP_Post && is_string($post->post_content)
+        && has_shortcode($post->post_content, 'fv_ex2_evidence_atlas')) {
+        fv_ex2_atlas_enqueue_assets();
+    }
+}
+add_action('wp_enqueue_scripts', 'fv_ex2_atlas_register_assets', 20);
 
 function fv_ex2_atlas_fallback(): string {
     return '<p class="fv-ex2-atlas-fallback">Evidence Atlas is unavailable. <a href="' . esc_url('https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/') . '">Read the Apollo 1 investigation</a>.</p>';
@@ -42,6 +52,7 @@ function fv_ex2_atlas_shortcode($atts = array()): string {
         return fv_ex2_atlas_fallback();
     }
     $rendered = true;
+    fv_ex2_atlas_enqueue_assets();
     return $markup;
 }
 add_shortcode('fv_ex2_evidence_atlas', 'fv_ex2_atlas_shortcode');

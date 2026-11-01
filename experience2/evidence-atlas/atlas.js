@@ -10,7 +10,8 @@
   const status=root.querySelector('[data-fva-status]');
   const empty=root.querySelector('[data-fva-empty]');
   const expected=['01','02','03','04','05','06'];
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4)return;
+  const jumps=[...root.querySelectorAll('[data-fva-jump]')];
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||jumps.length!==6)return;
   let year='all';
   let active=false;
   const restore=()=>{
@@ -22,11 +23,14 @@
     if(active){buttons.forEach(b=>b.removeEventListener('click',onFilter));
       input.removeEventListener('input',apply);
       input.removeEventListener('keydown',onKey);
-      reset.removeEventListener('click',onReset);}
+      reset.removeEventListener('click',onReset);
+      jumps.forEach(link=>link.removeEventListener('click',onJump));}
     active=false;
   };
   const valid=()=>cards.every((card,i)=>card.dataset.fvaId===expected[i]&&
-       ['1966','1967','2017'].includes(card.dataset.fvaYear));
+       ['1966','1967','2017'].includes(card.dataset.fvaYear)&&
+       card.id===`fva-record-${expected[i]}`&&
+       jumps[i].getAttribute('href')===`#${card.id}`);
   const apply=()=>{
     try{
       if(!valid())throw new Error('Source record altered');
@@ -48,12 +52,21 @@
   const onReset=()=>{year='all';input.value='';apply();if(active)input.focus();};
   const onKey=event=>{if(event.key==='Escape'&&(input.value||year!=='all')){
     event.preventDefault();onReset();}};
+  const onJump=event=>{
+    const target=cards.find(card=>'#'+card.id===event.currentTarget.getAttribute('href'));
+    if(!target)return;
+    // A source jump must not land on a record hidden by an unrelated prior filter.
+    if(target.hidden){year='all';input.value='';if(!apply())return;}
+    // Preserve native anchor URL and scroll behavior, then set keyboard focus.
+    requestAnimationFrame(()=>{if(active)target.focus({preventScroll:true});});
+  };
   try{
     if(!valid())throw new Error('Source records missing');
     buttons.forEach(b=>b.addEventListener('click',onFilter));
     input.addEventListener('input',apply);
     input.addEventListener('keydown',onKey);
     reset.addEventListener('click',onReset);
+    jumps.forEach(link=>link.addEventListener('click',onJump));
     active=true;
     root.dataset.fvaReady='yes';
     // apply() can itself detect altered custody and roll back listeners.
