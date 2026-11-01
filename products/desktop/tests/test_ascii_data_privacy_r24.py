@@ -103,7 +103,9 @@ class AsciiDataPrivacyR24(unittest.TestCase):
             "spend.csv", ("vendor", "amount", "date", "category"),
             [("Example Vendor", "25.00", "２０２６-１０-２８", "Office")],
         )
-        with self.assertRaisesRegex(ValueError, "Invalid date"):
+        # Spend's input boundary adds a safe physical-row citation while
+        # suppressing the original private/ambiguous date contents.
+        with self.assertRaisesRegex(ValueError, "Invalid spend date at physical row"):
             engine.spend_map(source, str(self.root))
         self.assert_no_output("spend-map")
 
