@@ -256,7 +256,7 @@ def audit_corpus(lib, rows, fingerprint, *, supplied_report=None, response_bundl
     return {'schema_version': 1, 'authority': 'MACHINE_CANONICAL_CUSTODY_ONLY',
             'release_state': 'HOLD', 'may_publish': False,
             'no_wordpress_or_public_writes': True,
-            'independent_human_source_checks_verified': 0, 'qualified_safety_approvals': 0,
+            'independent_human_source_checks_verified': False, 'qualified_safety_approvals': 0,
             'source_content_digest_sha256': hashlib.sha256(json.dumps(canonical, sort_keys=True, ensure_ascii=False,
                                                                      separators=(',', ':')).encode('utf-8')).hexdigest(),
             'evidence_digest_sha256': canonical['evidence_digest_sha256'],
