@@ -197,7 +197,9 @@ async def browser_review(html, out, chromium):
                 await route.abort()
             await page.route('**/*', block_unverified)
             await page.set_content(html, wait_until='domcontentloaded')
-            await page.wait_for_timeout(100)
+            # Bounded observation for startup/deferred subresources. Not a claim
+            # that arbitrary later network activity can be certified offline.
+            await page.wait_for_timeout(450)
             state = await page.evaluate('''() => ({
                width: document.documentElement.scrollWidth,
                chapters: [...document.querySelectorAll('.fv-hf__chapter-nav a')]
@@ -216,6 +218,13 @@ async def browser_review(html, out, chromium):
                                'scroll_width': state['width'], 'js_errors': errors}
             if w in (320, 390, 768, 1440, 1920):
                 await page.screenshot(path=str(out / f'wp-http-replay-{w}.png'), full_page=(w in (390, 1440)))
+            await page.wait_for_timeout(50)
+            # Full-page screenshots may trigger lazy resource requests. Do not
+            # finalize the success flags until after the screenshot completes.
+            results[str(w)]['no_unverified_network'] = not blocked_requests
+            results[str(w)]['blocked_requests'] = list(blocked_requests)
+            results[str(w)]['no_js_errors'] = not errors
+            results[str(w)]['js_errors'] = list(errors)
             await page.close()
         page = await browser.new_page(viewport={'width': 390, 'height': 844},java_script_enabled=False)
         no_js_blocked = []
@@ -237,12 +246,16 @@ async def browser_review(html, out, chromium):
             await route.abort()
         await page.route('**/*', block_zoom)
         await page.set_content(html, wait_until='domcontentloaded')
+        await page.wait_for_timeout(450)
         sw = await page.evaluate('document.documentElement.scrollWidth')
         results['zoom_proxy_720'] = {'no_overflow': sw <= 721,
                                      'no_unverified_network': not zoom_blocked,
                                      'blocked_requests': zoom_blocked,
                                      'scroll_width': sw}
         await page.screenshot(path=str(out / 'wp-http-replay-zoom-proxy.png'))
+        await page.wait_for_timeout(50)
+        results['zoom_proxy_720']['no_unverified_network'] = not zoom_blocked
+        results['zoom_proxy_720']['blocked_requests'] = list(zoom_blocked)
         await page.close()
         await browser.close()
     return version, results
