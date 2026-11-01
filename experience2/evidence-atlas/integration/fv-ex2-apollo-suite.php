@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Final Vestige — Apollo Research Suite (STAGING ONLY)
  * Description: Fail-closed, exact-source Research Desk + Evidence Atlas co-host shortcode; no CMS writes.
- * Version: 0.0.50-staging
+ * Version: 0.0.51-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.50-staging'); }
+if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.51-staging'); }
 
 /** Git *blob* SHA-1 (not the SHA-1 of bare file bytes). */
 function fv_ex2_apollo_git_blob(string $bytes): string {
@@ -89,6 +89,7 @@ function fv_ex2_apollo_suite_markup(string $desk, string $atlas): ?string {
         . '<header class="fv-ex2-apollo-suite__head"><p>FINAL VESTIGE / EVIDENCE, NOT SPECULATION</p>'
         . '<h2 id="fv-ex2-apollo-suite-heading">Apollo 1: the research sources</h2>'
         . '<p>Six documented findings and six NASA photographic-source references. The dates of the photographs are not an event timeline; no image-use rights are asserted.</p>'
+        . '<p class="fv-ex2-apollo-suite__provenance">Source custody notice: record 01 uses an unconfirmed S67-19766 catalog-to-photo association; the linked NASA page does not state the catalog number. See its source notes.</p>'
         . '<nav aria-label="Apollo research sections"><a href="#fv-ex2-ledger-apollo1-title">Review Research Desk</a>'
         . '<a href="#fva-title">Inspect photographic Evidence Atlas</a></nav></header>'
         . $desk . $atlas . '</section>';
