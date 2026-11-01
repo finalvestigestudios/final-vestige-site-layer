@@ -11,6 +11,7 @@ from integrated_admission_checks import (
     validate_stage_url, read_trusted_media_manifest,
     verify_integrated_dom, verify_media_payload)
 from archive_gallery_transfer import audit_archive_gallery
+from browser_consumed_media import BrowserEvidencePage
 
 
 WIDTHS=(320,360,390,768,1024,1440,1920)
@@ -52,7 +53,11 @@ def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
             for w in WIDTHS:
                 context=browser.new_context(viewport={'width':w,'height':900},reduced_motion='reduce')
                 page=context.new_page()
-                errors=[];page.on('pageerror',lambda err: errors.append(str(err)))
+                errors=[];browser_responses=[]
+                page.on('pageerror',lambda err: errors.append(str(err)))
+                # Capture browser image responses BEFORE navigation, including Apollo.
+                # A separate APIRequestContext GET cannot prove pixels actually loaded.
+                page.on('response',lambda event: browser_responses.append(event))
                 response=page.goto(url,wait_until='load',timeout=30000)
                 require(response and response.status==200,str(w)+': WordPress HTTP status not 200')
                 observed_origin=urlsplit(page.url)
@@ -86,7 +91,9 @@ def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
                     # The actual source has loading=lazy photos inside JS-hidden case
                     # panels. Select and scroll each case before requiring decode.
                     receipt['media']=audit_archive_gallery(
-                        page, (expected_origin.scheme,expected_origin.netloc),
+                        BrowserEvidencePage(page,browser_responses,
+                            (expected_origin.scheme,expected_origin.netloc)),
+                        (expected_origin.scheme,expected_origin.netloc),
                         trusted_media, MEDIA, require, verify_media_payload)
                     page.locator('[data-fv-case-button="franklin"]').click()
                     require(page.locator('[data-fv-case="franklin"]').is_visible(),'case chooser Franklin')
