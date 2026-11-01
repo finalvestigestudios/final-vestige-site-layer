@@ -64,7 +64,7 @@ function generate(outputPath, options={}) {
         : "    wp_enqueue_script('" + handle + "', " + url + ", array(), " + version + ", true);";
     }).join('\n');
     const mediaHashesPHP = hashesForMedia
-      ? 'array(\\n' + IMAGES.map(([name]) => "        '" + name + "' => '" + hashesForMedia[name] + "'").join(',\\n') + '\\n    )'
+      ? 'array(\n' + IMAGES.map(([name]) => "        '" + name + "' => '" + hashesForMedia[name] + "'").join(',\n') + '\n    )'
       : 'array()'; // explicit fail-closed until separately verified originals are provided
     const plugin = template.replace('__FV_EXPECTED_HASHES__', hashes)
       .replace('__FV_ENQUEUE_STATEMENTS__', enqueue)
