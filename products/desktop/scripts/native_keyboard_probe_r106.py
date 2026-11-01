@@ -89,6 +89,18 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
         raise KeyboardBlocked("Human-review disclaimer missing")
 
 
+def _verified_initial_focus(scheduled, root, first_entry):
+    """Admit exactly one source-scheduled, bound first-field focus callback."""
+    if type(scheduled) is not list or len(scheduled) != 1:
+        raise KeyboardBlocked("Expected exactly one initial focus idle callback")
+    owner, callback, args = scheduled[0]
+    if (owner is not root or getattr(callback, "__self__", None) is not first_entry
+            or getattr(callback, "__name__", None) != "focus_set"
+            or args != () or not callable(callback)):
+        raise KeyboardBlocked("Unexpected first focus callback")
+    return callback
+
+
 def _scan_one(app_id: str) -> None:
     """Construct actual free-app Tk widgets; reject unsafe calls and teardown."""
     if app_id not in FREE:
@@ -159,12 +171,9 @@ def _scan_one(app_id: str) -> None:
             if current is None:
                 raise KeyboardBlocked("Tk focus traversal unavailable")
 
-        if len(scheduled_initial_focus) != 1:
-            raise KeyboardBlocked("Initial focus must be scheduled exactly once")
-        scheduled_root, callback, arguments = scheduled_initial_focus[0]
-        if scheduled_root is not root or getattr(callback, "__self__", None) != entries[0]:
-            raise KeyboardBlocked("Initial focus target is not the first entry")
-        callback(*arguments)
+        focus_callback = _verified_initial_focus(
+            scheduled_initial_focus, root, entries[0])
+        focus_callback()
         root.update()
         keys = _expected_bindings(inputs) | frozenset(("<Alt-Key-r>",))
         active_bindings = frozenset(key for key in keys if root.bind(key))
