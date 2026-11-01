@@ -12,8 +12,8 @@
     "Reunification",
     "Children and school"
   ],
-  "updated": "2026-10-30",
-  "last_checked": "2026-10-29",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
   "recheck": "If Ready.gov, the FCC or the CDC revise these pages; the FCC and Colorado pages are undated and should be re-checked first. Otherwise at the next quarterly source sweep.",
   "status": {
     "editorial": "drafted",
@@ -28,7 +28,8 @@
   "related": [
     "outage-heat-cold-generators",
     "home-fire-escape-plan",
-    "shelter-or-evacuate"
+    "shelter-or-evacuate",
+    "reunification-plan"
   ],
   "source_use": {
     "shelter-fcc-comms": "Out-of-area central contact; network congestion; limit calls, brief calls, text, try other services, wait 10 seconds, vehicle stationary, call forwarding, backup power, corded phone, personal care attendant.",
@@ -44,6 +45,10 @@
     "shelter-ready-heat": "Summer-break family list: teach 911, emergency contact person, family password or phrase, meeting place.",
     "shelter-ready-disabilities": "Communication cards; deaf and hard-of-hearing tools; support network contact list.",
     "shelter-ready-shelter": "Many public shelters allow only service animals.",
-    "shelter-ready-home-fires": "Drill twice a year."
+    "shelter-ready-home-fires": "Drill twice a year.",
+    "shelter-ready-tech": "Current Ready.gov statement on texting, group chats, contacts, charging and conserving battery.",
+    "shelter-fema-reunification": "National Reunification Committee; NECLC activation after Presidential declaration; Unaccompanied Minors Registry; Red Cross welfare checks; communication access commitments; marked as archived content.",
+    "shelter-ncmec-hotline": "NCMEC's own listing of its 24-hour hotline, 1-800-843-5678.",
+    "shelter-cdc-chemical-sip": "Let a friend or relative outside your area know where you are; messages by text or social media."
   }
 }

@@ -1,0 +1,50 @@
+{
+  "kind": "tool",
+  "section": "field-tools",
+  "track": "modern",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "n": 103,
+  "slug": "power-outage-planner",
+  "title": "Power-outage readiness planner",
+  "h1": "Power-outage readiness planner",
+  "dek": "A checklist that adapts to your household and cites the agency page behind every item. It never sizes a generator, prescribes medical care or gives wiring or fuel advice. Free, private, works offline.",
+  "description": "A free outage checklist that adapts to your household, drawn from CDC, FEMA, CPSC and Ready.gov. No generator sizing or medical advice. Private; nothing is saved.",
+  "tags": [
+    "Checklist",
+    "Printable",
+    "Runs locally"
+  ],
+  "recheck": "If the CDC, FEMA, CPSC or Ready.gov revise their outage pages, or at the next quarterly source sweep.",
+  "related": [
+    "outage-heat-cold-generators",
+    "shelter-or-evacuate",
+    "family-communication-plan"
+  ],
+  "source_use": {
+    "shelter-fema-power-outage-sheet": "Medical-device and medication planning with your doctor; replace refrigerated medicines wording; paper communication plan; supplies for several days; food, water advisory, and vehicle items.",
+    "shelter-ready-disabilities": "Priority restoration, treatment facilities, equipment backups and communication cards.",
+    "shelter-cpsc-co": "Generator placement and carbon monoxide symptom first response.",
+    "shelter-ready-evacuation": "Never connect a generator to the home's electrical system.",
+    "shelter-cdc-heat": "Fans below 90 F; air conditioning options; do not stop or change medicines without asking.",
+    "shelter-cdc-power-outage": "Flashlights instead of candles; food timings; stay with others if the home is damaged; no gas oven for heat.",
+    "shelter-cdc-winter-storm": "Cold-weather items; infants; pipes; heaters.",
+    "shelter-cdc-co-basics": "Carbon monoxide alarm placement wording.",
+    "shelter-ready-power-outages": "Flashlights, power bank, home phone, community location, medication storage question.",
+    "shelter-ready-heat": "Heat-illness signs and cooling items; pets.",
+    "shelter-ready-winter-weather": "Extra batteries for radios and flashlights; winter items.",
+    "shelter-ready-shelter": "Shelter text line; pets and shelters.",
+    "shelter-ready-tech": "Text rather than call; charging; low-power mode.",
+    "shelter-ready-plan-locations": "School plans; neighbors and shared buildings.",
+    "shelter-nws-nwr": "NOAA Weather Radio description and receiver requirement."
+  }
+}

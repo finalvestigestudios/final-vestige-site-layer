@@ -12,8 +12,8 @@
     "Smoke alarms",
     "Rehearsal"
   ],
-  "updated": "2026-10-30",
-  "last_checked": "2026-10-30",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
   "recheck": "Immediately if USFA, NFPA or Ready.gov revise their escape-planning guidance; otherwise at the next quarterly source sweep.",
   "status": {
     "editorial": "drafted",
@@ -27,7 +27,8 @@
   "related": [
     "outage-heat-cold-generators",
     "shelter-or-evacuate",
-    "family-communication-plan"
+    "family-communication-plan",
+    "home-fire-escape-worksheet"
   ],
   "source_use": {
     "usfa-fire-escape": "Less than 2 minutes to escape; map with all doors and windows; two ways out of every room; keep exits unblocked; outside meeting place in front; practice with everyone; test button starts the drill; high-rise sequence.",
@@ -39,6 +40,9 @@
     "shelter-ready-plan-locations": "Ask for building alarm, evacuation and shelter-in-place plans; high-rise exits, elevators, stairwells.",
     "shelter-cdc-power-outage": "Flashlights over candles; candles away from flammables and never unattended.",
     "shelter-ready-plan": "Household plan questions including shelter, evacuation and communication; practice with the household.",
-    "shelter-usfa-high-rise": "USFA high-rise page: evacuate by stairs by default; shelter in place only for those who cannot self-evacuate; keep stair doors closed; no elevators."
+    "shelter-usfa-high-rise": "USFA high-rise page: evacuate by stairs by default; shelter in place only for those who cannot self-evacuate; keep stair doors closed; no elevators.",
+    "shelter-nfpa-high-rise": "Building-plan familiarization; know all exit stairs; feel the door; follow announcements; stairs not elevators (marked emergency elevators exist); cannot-get-out steps with a slightly opened window and be ready to close it; fire department evacuation can take a long time.",
+    "shelter-usfa-high-rise-handout": "Leave and close the door, pull the alarm, stairs; cannot-get-out steps, stay on the phone, open slightly then close the window.",
+    "shelter-usfa-escape-grid": "Fields of USFA's printable escape grid."
   }
 }
