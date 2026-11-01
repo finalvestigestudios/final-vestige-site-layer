@@ -17,9 +17,13 @@ if (!defined('FV_EX2_RD_VERSION')) {
  * existing Site Layer plugin, not bundled into PR #49, and has no background/admin actions.
  */
 function fv_ex2_rd_assets(): void {
+    // R35: render-time shortcode discovery is too late for a reliable head stylesheet.
+    // On singular views, assets must already be present when a dynamic/reusable block,
+    // pattern or template part renders [fv_ex2_research_desk] after wp_head.
+    // The CSS is entirely .fv-ex2-ledger scoped; JS is inert absent [data-fvx-ledger].
+    // Explicit trade-off: all singular views load these small, local assets, even when
+    // no Research Desk is present. Revisit with *measured* block-aware discovery.
     if (!is_singular()) { return; }
-    $post = get_post();
-    if (!$post || !has_shortcode((string) $post->post_content, 'fv_ex2_research_desk')) { return; }
     wp_enqueue_style(
         'fv-ex2-research-desk',
         plugins_url('assets/source-ledger.css', __FILE__),
