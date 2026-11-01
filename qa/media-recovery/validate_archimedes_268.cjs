@@ -12,6 +12,16 @@ const VALID_RETRIEVER = new Set([
 ]);
 const good = v => Number.isSafeInteger(v) && v > 0;
 const isHttps = v => typeof v === 'string' && /^https:\/\/[a-z0-9.-]+\//i.test(v);
+function exactCommonsFilePage(stored, record) {
+  try {
+    const src=new URL(stored), cat=new URL(record);
+    if (src.hostname!=='commons.wikimedia.org' || cat.hostname!=='commons.wikimedia.org') return false;
+    const prefix='/wiki/Special:Redirect/file/', catalogPrefix='/wiki/File:';
+    if (!src.pathname.startsWith(prefix) || !cat.pathname.startsWith(catalogPrefix)) return false;
+    return decodeURIComponent(src.pathname.slice(prefix.length)).replace(/_/g,' ') ===
+      decodeURIComponent(cat.pathname.slice(catalogPrefix.length)).replace(/_/g,' ');
+  } catch { return false; }
+}
 function validate(doc, census) {
   const errors = [];
   if (!doc || typeof doc !== 'object' || Array.isArray(doc))
@@ -26,11 +36,11 @@ function validate(doc, census) {
     census.images.filter(x => x.post_id === 268).sort((a,b)=>a.slot-b.slot) : [];
   if (observed.length !== SLOTS || expected.length !== SLOTS)
     errors.push('expected_ten_images');
-  if (new Set(observed.map(x=>x.image_key)).size !== observed.length)
+  if (new Set(observed.map(x=>x?.image_key)).size !== observed.length)
     errors.push('duplicate_image_key');
   for (let i=0;i<SLOTS;i++) {
     const r=observed[i], e=expected[i];
-    if (!r || !e) continue;
+    if (!r || !e) { errors.push(`missing_or_null_image_slot:${i}`); continue; }
     if (r.image_key !== `268:${i}` || r.post_id !== 268 || r.slot !== i ||
         r.exact_stored_url !== e.source_url || r.alt_text !== e.alt ||
         r.article_url !== e.post_url || !isHttps(r.exact_stored_url))
@@ -53,14 +63,15 @@ function validate(doc, census) {
         r.wordpress_media_upload_authorized!==false || r.wordpress_post_edit_authorized!==false)
       errors.push(`rights_or_production_gate_open:${i}`);
     const c=r.catalog, o=r.optimization;
-    if (!c || !o || c.original_sha256!==null || !isHttps(c.source_record_url ?? 'https://none.invalid/') ||
+    if (!c || !o || !rights) { errors.push(`missing_required_custody_object:${i}`); continue; }
+    if ( c.original_sha256!==null || !isHttps(c.source_record_url ?? 'https://none.invalid/') ||
         o.maximum_width_px!==960 || o.no_upscale!==true ||
         o.preserve_aspect_ratio!==true || o.source_material_not_downloaded!==true ||
         o.original_master_hash_verified!==false || o.derivative_quality_qa_complete!==false ||
         o.local_cached_media_id!==null)
       errors.push(`custody_or_derivative_gate:${i}`);
     if (COMMONS.has(i)) {
-      if (!isHttps(c?.source_record_url) ||
+      if (!isHttps(c?.source_record_url) || !exactCommonsFilePage(r.exact_stored_url, c.source_record_url) ||
           c.record_type!=='exact_commons_filename_record' ||
           !good(c.original_width_px) || !good(c.original_height_px))
         errors.push(`commons_catalog_missing:${i}`);
