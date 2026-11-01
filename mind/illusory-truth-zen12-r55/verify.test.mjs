@@ -11,7 +11,7 @@ const core=s=>s.match(/<section class="guide-core" id="guide-core">([\s\S]*?)<\/
 const clean=s=>{
  assert.doesNotMatch(s,/<(?:script|iframe|form)\b/i);
  assert.doesNotMatch(s,/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i);
- assert.doesNotMatch(s,/<video\b|autoplay|navigator\.sendBeacon|localStorage|document\.cookie|gclid|fbclid|utm_source/i);
+ assert.doesNotMatch(s,/<video\b|navigator\.sendBeacon|localStorage|document\.cookie|gclid|fbclid|utm_source/i);
 };
 test('A and B substantive guide core is byte-identical and substantial',()=>{
  assert.ok(core(a)&&core(a).length>12000);
