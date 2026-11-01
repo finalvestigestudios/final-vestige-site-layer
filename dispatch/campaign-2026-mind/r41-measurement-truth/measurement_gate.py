@@ -23,9 +23,11 @@ CHANNEL_METRICS = {
     "merchant": frozenset(("confirmed_orders", "net_commission_usd")),
 }
 PERSONAL_KEYS = re.compile(
-    r"(email|recipient|subscriber_id|customer_id|ip_address|user_agent|phone|"
-    r"cookie|password|access_token|session_id|click_id|visitor_id|"
-    r"person_id|contact_id|transaction_id|auth_)", re.I)
+    r"^(?:email|email_address|recipient|recipient_email|recipient_id|"
+    r"subscriber_email|subscriber_id|customer_id|ip_address|user_agent|"
+    r"phone|phone_number|cookie|cookie_id|password|access_token|"
+    r"session_id|click_id|visitor_id|person_id|contact_id|"
+    r"transaction_id|auth_token)$", re.I)
 EMAIL_LIKE = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 TOKEN_URL = re.compile(r"https?://[^\s\"']+[?&](?:token|key|auth|uid|email|"
                        r"customer|subscriber)=", re.I)
