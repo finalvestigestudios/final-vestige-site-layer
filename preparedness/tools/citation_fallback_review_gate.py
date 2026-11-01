@@ -238,6 +238,21 @@ def _load_private_zip_custody_gate():
     spec.loader.exec_module(module)
     return module.build_private_zip, module.verify_private_zip
 
+
+def _load_private_html_semantic_gate():
+    # R45 checks the actual offline HTML: inert markup, exact CSP/CSS,
+    # visible HOLD banner and local-only, complete dossier navigation.
+    location = Path(__file__).with_name('reviewer_html_semantic_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R45 private HTML semantic gate')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r45_private_html_semantics', location)
+    need(spec is not None and spec.loader is not None,
+         'R45 HTML semantic gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.audit_private_zip_html
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -252,6 +267,7 @@ build_history_unsigned_preflight = _load_historical_history_unsigned_preflight()
 build_article_review_dossiers = _load_article_review_dossiers()
 build_private_offline_review_desk = _load_private_offline_html_gate()
 build_private_zip_custody, verify_private_zip_custody = _load_private_zip_custody_gate()
+audit_private_html_semantics = _load_private_html_semantic_gate()
 
 
 def canonical(value):
@@ -483,6 +499,31 @@ def audit(lib, expected=EXPECTED):
              and private_package_manifest['independent_QD_approval'] is False
              and private_package_manifest['human_source_reviews_completed'] is False,
              'R44 package lost source-reading evidence or violated private HOLD')
+        # R45 inspects the actual pages after R44 byte/provenance custody:
+        # no active/external markup, weakened CSP/CSS, hidden HOLD banner,
+        # omitted article link, or outbound navigation may pass.
+        # Machine-side pins only check consistency, never external trust.
+        # No HTML or ZIP is persisted, uploaded, or publicly released.
+        html_integrity = audit_private_html_semantics(
+            private_package['zip_bytes'],
+            trusted_r42_sha256=article_dossiers['fingerprint_sha256'],
+            trusted_r43_sha256=private_manifest['fingerprint_sha256'],
+            expected=expected)
+        need(html_integrity['release_state'] == 'HOLD'
+             and html_integrity['pages_checked'] == 38
+             and html_integrity['article_and_tool_pages_checked'] == 36
+             and html_integrity['private_local_links_checked'] == 74
+             and html_integrity['counts'] == article_dossiers['counts']
+             and html_integrity['parent_R44_fingerprint_sha256'] ==
+                 private_package_manifest['fingerprint_sha256']
+             and html_integrity['external_or_active_links_allowed'] is False
+             and html_integrity['human_review_started'] is False
+             and all(html_integrity[flag] is False for flag in (
+                 'may_publish', 'qualified_safety_clearance',
+                 'independent_QD_approval', 'human_source_reviews_completed',
+                 'source_claim_accuracy_verified',
+                 'reviewer_real_identity_verified')),
+             'R45 private reviewer presentation or release-HOLD contract drift')
         # The unedited baseline must round-trip R38 intact. This mandatory
         # check is intentionally zero progress: machine CI cannot verify that
         # a human actually visited, read or understood a referenced source.
