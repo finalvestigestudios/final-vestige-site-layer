@@ -92,6 +92,15 @@ class R50SourceQuarantine(unittest.TestCase):
                           "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]"):
                 self.assertIn(token, payload)
 
+    def test_html_preview_keeps_terminal_footer_not_just_a_separator(self):
+        # Prevent the first hosted-run regression: a renderer saw a separator
+        # and incorrectly discarded the rest of the legal footer paragraph.
+        self.assertIn("Pre-send compliance block", HTML)
+        self.assertIn("Sender: Final Vestige Studios", HTML)
+        self.assertIn("These placeholders intentionally prevent sending.", HTML)
+        self.assertIn("[[VALID_POSTAL_ADDRESS_REQUIRED]]", HTML)
+        self.assertIn("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]", HTML)
+
     def test_commission_disclosure_before_inactive_guide_cta(self):
         for payload in (MARKDOWN, PLAINTEXT, HTML):
             self.assertIn("Commercial disclosure", payload)
