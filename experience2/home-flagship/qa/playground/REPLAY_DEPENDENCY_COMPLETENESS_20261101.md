@@ -13,10 +13,10 @@ These synthetic reproductions reveal test-coverage weaknesses; they do not alleg
 - Reject uncaptured embeds, picture/media elements, and speculative preload links.
 - Preserve linked stylesheet media conditions when inlining into the offline replay; print styles no longer apply globally by accident.
 - Log any network requests aborted by Chromium across seven widths, the no-JS page, and the 720px zoom *proxy*. A request now fails the acceptance predicate, with its URL and resource type in the receipt.
-- Add 11 positive and adversarial tests, including a dynamic-script fetch() verified with Chromium 144.
+- Add 12 positive and adversarial tests, including immediate and delayed dynamic-script fetch() calls verified with Chromium 144. A bounded 450ms observation period plus post-screenshot checks prevents the reproduced 260ms delayed-fetch false PASS; it is not a guarantee against arbitrarily later network activity.
 
 ## Executed local verification
-Combined 65 inherited sealed-staging tests + 7 inherited HTTP-replay tests + 11 new tests = **83/83 PASS**, November 1, 2026. Test inputs used a genuine localhost HTTP server, actual Chromium 144.0.7559.96, and synthetic 1-pixel GIFs. Widths exercised: 320/360/390/768/1024/1440/1920 CSS pixels. The two former false positives were separately reproduced before the patch. Source files were verified against their Git blobs, not only a textual test transcript.
+Combined 65 inherited sealed-staging tests + 7 inherited HTTP-replay tests + 12 new tests = **84/84 PASS**, November 1, 2026. Test inputs used a genuine localhost HTTP server, actual Chromium 144.0.7559.96, and synthetic 1-pixel GIFs. Widths exercised: 320/360/390/768/1024/1440/1920 CSS pixels. The two former false positives were separately reproduced before the patch. Source files were verified against their Git blobs, not only a textual test transcript.
 
 Command from the home-flagship QA directory: python -m unittest discover -s . -p 'test_*.py' -q
 
