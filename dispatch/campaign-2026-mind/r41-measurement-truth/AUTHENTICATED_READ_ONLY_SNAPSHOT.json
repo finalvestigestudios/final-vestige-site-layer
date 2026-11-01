@@ -1,0 +1,38 @@
+{
+  "site": "finalvestige.com",
+  "source": "AUTHENTICATED_WORDPRESS_READ_ONLY",
+  "observed_utc": "2026-11-01T11:37:02Z",
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post_emails": false,
+    "delivery": "excerpt",
+    "recent_sends": [],
+    "diagnostic_counters": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2
+    },
+    "featured_image_in_email": true,
+    "post_date_in_email": true,
+    "welcome_fieldbook_configured": true
+  },
+  "unique_consent_eligible": "UNKNOWN",
+  "lifetime_sends": "UNKNOWN",
+  "release_evidence": {
+    "merchant_zen12_email_permission": false,
+    "merchant_totalfocus_email_permission": false,
+    "commercial_guides_published": false,
+    "genuine_received_jetpack_email": false,
+    "welcome_received": false,
+    "postal_footer_received": false,
+    "functional_unsubscribe_received": false,
+    "audience_deduplicated_and_consented": false,
+    "founder_final_send_approval": false
+  },
+  "notes": [
+    "Empty recent_sends is not all-time sending history.",
+    "Counts are non-additive; audience unknown.",
+    "No recipient identities/addresses/credentials were retrieved.",
+    "All six editions held; offers have no live guide destinations."
+  ]
+}
