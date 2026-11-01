@@ -1,0 +1,63 @@
+{
+  "schema": "fv-dispatch-r45-readonly-v1",
+  "observed_at_utc": "2026-11-01T15:39:17Z",
+  "site": "finalvestige.com",
+  "wordpress_site_id": 256784396,
+  "campaign": {
+    "canonical_pr": 175,
+    "independent_readiness_pr": 201,
+    "master_issue": 174,
+    "mind_issue": 171,
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ],
+    "release": "HOLD_UNSENT"
+  },
+  "settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "featured_image_in_email": true,
+    "post_date_in_email": true,
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "welcome_52_page_focus_fieldbook_configured": true,
+    "actual_welcome_receipt_verified": false
+  },
+  "diagnostics": {
+    "recent_send_records": 0,
+    "lifetime_sends_known": false,
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "unique_consent_eligible_recipients": null
+  },
+  "gates": {
+    "received_jetpack_mime_verified": false,
+    "actual_post_title_subject_preheader_verified": false,
+    "verified_final_vestige_postal_address": false,
+    "actual_unsubscribe_function_verified": false,
+    "consent_and_uniqueness_verified": false,
+    "actual_welcome_received": false,
+    "zen12_specific_email_channel_authorized": false,
+    "total_focus_specific_email_channel_authorized": false,
+    "zen12_guide_published_approved": false,
+    "total_focus_guide_published_approved": false,
+    "founder_final_send_approved": false
+  },
+  "safety": "NO PRIVATE SUBSCRIBER ADDRESSES, TOKENS OR MIME IN THIS SNAPSHOT",
+  "notes": [
+    "A public provider's postal address cannot replace the Final Vestige business address.",
+    "An inbox-like HTML preview is not genuine email receipt evidence.",
+    "No reported recent sends does not imply no sends over the site's lifetime.",
+    "The local MIME parser is a future evidence tool, not a test-send authorization."
+  ]
+}
