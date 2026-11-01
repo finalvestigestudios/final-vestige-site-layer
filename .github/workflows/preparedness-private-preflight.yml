@@ -36,7 +36,8 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
-          python -I -B -m unittest discover -s preparedness/tests -p test_r46_visible_evidence_dom.py -v
+          python -I -B -m unittest discover -s preparedness/tests -p test_r45_offline_html_semantic.py -q
+          python -I -B -m unittest discover -s preparedness/tests -p test_r46_visible_evidence_dom.py -q
       - name: Execute only draft custody and safety gates
         shell: bash
         env:
