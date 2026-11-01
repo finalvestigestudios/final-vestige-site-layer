@@ -1,0 +1,11 @@
+# Mind & Affiliate Studio R36 — UNPUBLISHED source-controlled candidate
+
+Branch: feature/mind-choice-blindness-zen12-20261031-r36. Owner: Mind & Perception editor + ethical affiliate conversion only. New standalone files under mind/choice-blindness-zen12-r36. Do NOT merge, deploy, write to WP, change navigation, send email, add subscriptions, or activate merchant/link/tracking.
+
+* Original 1,795-word choice-blindness investigation + fully styled WordPress HTML; research Johansson 2005, 2006 introspection, Hall 2010 jam/tea and 2013 political survey handled with explicitly narrow inference, Puységur archival analogy that does not diagnose historical subjects. No commerce inside research.
+* Original 1,687-word independent Zen12 buyer guide; exact official seller pages and public Premium checkout were consulted; tier-specific first 6/24, full 12/48, final 6/24 are seller claims, not file audit. Inconclusive 2023 EEG review not Zen12-specific. No invented personal experience, medical/wealth outcomes, current price, refunds enforcement, commissions or links.
+* Two complete A/B WordPress candidate presells with byte-identical core guide. A text; B optional originally scripted **40-second** video, illustrated inline SVG poster, VTT draft + readable transcript. **The new film is only a concept, NOT rendered/hosted/player-operable**; B intentionally exposes no play button. No merchant outbound hyperlink even in citations; seller URLs are in source-controlled source register rather than active page anchors.
+* Alternative /mind/ hub does not replace canonical PR #172 and only links verified published live routes. Site 61 published post metadata and full existing Focus/Puységur pages read authenticated in WordPress. Single Focus Jetpack signup unchanged.
+* Evidence/permissions matrix and source register, original organic/TikTok/internal-link and privacy plan, disabled categorical synthetic tracking module. No live data captured.
+
+Reproduce in repo checkout: node mind/choice-blindness-zen12-r36/qa-r36.mjs . Browser staging, hosted CI, full media accessibility and real A/B outcomes NOT claimed. FTC review and all partner authorization gates HOLD. Coordination handoff to QA #126, homepage art Issue #150 and Dispatch #174; never touch those teams' working files.
