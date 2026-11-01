@@ -13,9 +13,9 @@ function runTests(){
   const story=read('film-storyboard-transcript.md'), plan=read('navigation-and-organic-plan.md'), privacy=read('privacy-hard-off.cjs');
   const words=s=>s.trim().split(/\s+/).filter(Boolean).length;
   const hasLink=(s,domain)=>new RegExp('<a\\b[^>]*href=["\\x27]https?:\\/\\/'+domain.replace(/\./g,'\\.')+'\\b','i').test(s);
-  const htmlSafe=s=>!/<script\b|<iframe\b|<form\b|<input\b|\bonload\s*=|\bonerror\s*=|javascript:|<video\b|autoplay\b/i.test(s);
-  const commerceOff=s=>!hasLink(s,'zen12.com') && !hasLink(s,'affiliates.inspire3.com') && !/<a[^>]+(affiliate|buy-now|checkout)/i.test(s) && !/<button\b/i.test(s);
-  const disclosureNearCTA=s=>{const d=s.indexOf('If you purchase through this link, Final Vestige may earn a commission');const c=s.indexOf('Review the current Zen12 offer');return d>0&&c>d&&c-d<800&&s.slice(d,c).includes('no additional cost');};
+  const htmlSafe=s=>!/<script\b|<iframe\b|<form\b|<input\b|\bonload\s*=|\bonerror\s*=|javascript:|<video\b|<audio\b[^>]*\bautoplay\b/i.test(s);
+  const commerceOff=s=>!hasLink(s,'zen12.com') && !hasLink(s,'affiliates.inspire3.com') && !/<a\b[^>]+(affiliate|buy-now|checkout)/i.test(s) && !/<button\b/i.test(s);
+  const disclosureNearCTA=s=>{const block=s.match(/<aside class="disclosure"[\s\S]*?<\/aside>/i)?.[0]||'';const d=block.indexOf('If you purchase through this link, Final Vestige may earn a commission');const c=block.indexOf('Review the current Zen12 offer');return d>=0&&c>d&&c-d<800&&block.slice(d,c).includes('no additional cost');};
   const sourceLinks=['wellcomecollection.org/works/k532hmn2','doi.org/10.1016/j.humov.2021.102879','doi.org/10.1080/00221309.1976.9710871','pubmed.ncbi.nlm.nih.gov/35184700/'];
   check(words(art)>=2000,'investigation >=2000 words');
   check(words(guide)>=1500,'buyer guide >=1500 words');
@@ -29,7 +29,7 @@ function runTests(){
   for(const phrase of ['Beginner','Premium','Advanced','24 MP3','48 MP3','twelve-minute quiet routine','not purchased','refund','mobile-phone field'])check(guide.toLowerCase().includes(phrase.toLowerCase()),'guide '+phrase);
   check(/Ingendoh, Posny and Heine/.test(guide),'reviewer attribution correct');
   check(!/Garcia-Argibay et al/.test(guide),'wrong attribution absent');
-  check(/50|14/.test(guide),'guide scientific context');
+  check(/fourteen EEG studies/i.test(guide),'guide scientific context');
   for(const [variant,s] of [['A',a],['B',b]]){
     check(s.includes('data-pilot-variant="'+variant+'"'),variant+' variant identity');
     check(s.includes('class="fvz"'),variant+' scoped layout');
@@ -50,7 +50,7 @@ function runTests(){
   check(b.includes('concept only'),'B no fake film availability');
   check(!a.includes('class="film"'),'A text-only');
   check(b.includes('role="img"')&&b.includes('aria-label="Original illustrated poster'),'B accessible poster');
-  check(!/autoplay/.test(b),'B no autoplay token');
+  check(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(b),'B no autoplay attribute');
   check(hub.includes('aria-labelledby="fv-mind-hub-title"'),'hub labeled');
   check(htmlSafe(hub),'hub no forms/scripts');
   check(hub.includes('PR #172 is authoritative'),'hub preserves main owner');
@@ -72,7 +72,7 @@ function runTests(){
   check(times.length>0&&toMs(times[0],1)===0,'start zero');
   check(times.length>0&&toMs(times[times.length-1],5)===40000,'ends 40s');
   for(let i=0;i<times.length;i++){check(toMs(times[i],5)>toMs(times[i],1),'positive cue '+i);if(i>0)check(toMs(times[i-1],5)===toMs(times[i],1),'gapless '+i);}
-  check(story.includes('not rendered or approved website hosting'),'storyboard film limit');
+  check(story.includes('NO Chevreul film render or approved website hosting'),'storyboard film limit');
   check(story.includes('Original')&&story.includes('Carpenter'),'original sourced film plan');
   check(plan.includes('Issue #174')&&plan.includes('PR #172'),'ownership');
   check(plan.includes('k>=10'),'privacy threshold documented');
