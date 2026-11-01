@@ -93,30 +93,51 @@ def _scan_one(app_id, scale):
         if not all(w.winfo_ismapped() for w in (*entries, *browses, *generates)):
             raise ScaleBlocked("Required controls not mapped")
         upper = canvas.canvasy(0)
+        region = canvas.bbox("all")
+        if region is None:
+            raise ScaleBlocked("No viewport content")
+        content_height = region[3] - region[1]
         canvas.yview_moveto(1.0)
         root.update_idletasks()
         lower = canvas.canvasy(0)
-        scrollable = lower > upper + 10 and canvas.winfo_height() >= 100
+        # If 200% still fits there is no reason to scroll. At 400% the
+        # layout must demonstrate actual overflow and working vertical travel.
+        scrollable = (
+            (content_height <= canvas.winfo_height() + 1 and abs(lower - upper) < 2)
+            or (content_height > canvas.winfo_height() + 1 and lower > upper + 2))
+        if scale == 4.0 and lower <= upper + 10:
+            raise ScaleBlocked("400% viewport did not expose scroll travel")
         canvas.yview_moveto(0.0)
         root.update()
-        # Native focus must automatically scroll a keyboard-accessible command
-        # into view. Its callback is NEVER invoked; no report is generated.
-        if len(generates) != 1:
-            raise ScaleBlocked("Generate control changed")
-        generates[0].focus_set()
+        if len(generates) != 1 or len(entries) < 1:
+            raise ScaleBlocked("Expected focusable controls missing")
+
+        def in_view(widget):
+            top = widget.winfo_rooty()
+            bottom = top + widget.winfo_height()
+            canvas_top = canvas.winfo_rooty()
+            return (top >= canvas_top - 2 and
+                    bottom <= canvas_top + canvas.winfo_height() + 2)
+
+        # A visible widget need not move. If generation is initially offscreen
+        # at top, native FocusIn must reveal it; otherwise scroll to bottom and
+        # request the first input focus (after focusing Generate) to test upward
+        # movement. No button commands are ever invoked.
+        target = generates[0]
+        if in_view(target):
+            target.focus_set()
+            root.update()
+            canvas.yview_moveto(1.0)
+            root.update()
+            target = entries[0]
+        initially_hidden = not in_view(target)
+        previous = canvas.canvasy(0)
+        target.focus_set()
         root.update()
-        # Use screen-space comparison to avoid relying on arbitrary ancestry:
-        # if focused control is inside the scrolled viewport it must be fully
-        # visible between the canvas screen top and bottom.
-        focused_top = generates[0].winfo_rooty()
-        focused_bottom = focused_top + generates[0].winfo_height()
-        canvas_top = canvas.winfo_rooty()
-        canvas_bottom = canvas_top + canvas.winfo_height()
+        moved = abs(canvas.canvasy(0) - previous) > 2
         focus_revealed = (
-            canvas.canvasy(0) > upper + 10 and
-            focused_top >= canvas_top - 2 and
-            focused_bottom <= canvas_bottom + 2 and
-            root.focus_get() == generates[0])
+            in_view(target) and root.focus_get() == target and
+            (not initially_hidden or moved))
         hints_wrap = int(float(hints[0].cget("wraplength")))
         labels_wrapped = 100 <= hints_wrap <= canvas.winfo_width() - 32
         controls_nonfocus = (
