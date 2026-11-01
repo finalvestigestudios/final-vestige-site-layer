@@ -160,7 +160,9 @@ def _check_manifest(header, expected_r9):
 
 
 def _custody(root, r9, expected):
-    # The existing attestation checks real PE/SHA files against six R9 smokes.
+    # Existing R9 attestation checks real PE/SHA files against six R9 smokes.
+    # The CLI is invoked from scripts/, but report_attestation lives in desktop/.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
     from report_attestation import verify_report, _read_verified_report, _validate_report
     try:
         proof = verify_report(r9, root, expected_report_sha256=expected)
