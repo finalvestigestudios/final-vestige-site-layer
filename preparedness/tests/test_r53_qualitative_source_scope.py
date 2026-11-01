@@ -219,10 +219,10 @@ TRIAGE_MUTATIONS = [
     ("flag_missing", lambda x: x["articles"][0]["flags"].pop()),
     ("flag_duplicate", lambda x: x["articles"][0]["flags"].append(
         copy.deepcopy(x["articles"][0]["flags"][0]))),
-    ("flag_wrong_article", lambda x: x["articles"][0]["flags"][0].__setitem__("article", "food-guide")),
+    ("flag_wrong_article", lambda x: x["articles"][0]["flags"][0].__setitem__("article", "water-guide")),
     ("flag_wrong_ordinal", lambda x: x["articles"][0]["flags"][0].__setitem__("block_ordinal", 2)),
     ("flag_wrong_citation_count", lambda x: x["articles"][0]["flags"][0].__setitem__(
-        "citation_occurrences_in_same_block", 1)),
+        "citation_occurrences_in_same_block", 99)),
     ("flag_cited_id", lambda x: x["articles"][0]["flags"][0].__setitem__(
         "source_ids_in_same_block", ["s2"])),
     ("flag_approval", lambda x: x["articles"][0]["flags"][0].__setitem__("review_state", "APPROVED")),
@@ -305,12 +305,12 @@ for group, rows in (("triage", TRIAGE_MUTATIONS),
                     ("safety", SAFETY_MUTATIONS),
                     ("library", LIBRARY_MUTATIONS)):
     for name, fn in rows:
-        setattr(ReFingerprintAdversarial, ("test_reject_" if group == "triage" and name in {n for n, _ in TRIAGE_MUTATIONS[10:15]} else "diagnose_reject_") + group + "_" + name,
+        setattr(ReFingerprintAdversarial, "test_reject_" + group + "_" + name,
                 make_negative(group, fn))
 
 
 class RealCorpus(unittest.TestCase):
-    def diagnose_original_35_articles_water_planner_and_15_open_incidents(self):
+    def test_original_35_articles_water_planner_and_15_open_incidents(self):
         build = gate.module("r53_real_build", "build.py")
         r50 = gate.module("r53_real_safety", "safety_exception_custody_gate.py")
         lib = build.Library(HERE)
