@@ -47,7 +47,10 @@ def _layout(bundle: Path, pin: str) -> tuple[tuple[int, int], ...]:
             position = tag_at + 16
         if stream.seek(0, os.SEEK_END) != position:
             raise MatrixHold("Sealed bundle record boundaries invalid")
-    handoff._same_file(bundle, before)
+    after = handoff._regular(bundle, 6 * handoff.LIMIT + 300 * 1024)
+    if (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) != (
+            after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns):
+        raise MatrixHold("Sealed bundle changed while reading record layout")
     return tuple(offsets)
 
 
