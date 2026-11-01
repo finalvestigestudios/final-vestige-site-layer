@@ -32,6 +32,28 @@ def _identity(info: os.stat_result) -> tuple[int, ...]:
             info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
+def _same_path_descriptor_identity(path_info: os.stat_result,
+                                   descriptor_info: os.stat_result,
+                                   *, windows: bool | None = None) -> bool:
+    """Compare two OS views without discarding per-view custody checks.
+
+    Windows 3.12 path lstat and fd fstat can report *different creation-time*
+    (st_ctime_ns) values for the same dev+inode (R101 hosted proof: three
+    files initially, then eleven). That timestamp is NOT portable as a
+    cross-API identity field. Keep all six structural fields in the
+    cross-view comparison. Preserve creation-time checks for each view
+    separately before/after the complete read in _fingerprint.
+    Linux keeps the original full seven-field comparison.
+    """
+    if windows is None:
+        windows = os.name == "nt"
+    path_identity = _identity(path_info)
+    descriptor_identity = _identity(descriptor_info)
+    if windows:
+        return path_identity[:-1] == descriptor_identity[:-1]
+    return path_identity == descriptor_identity
+
+
 def _fingerprint(path: Path, root: Path) -> str:
     """Hash a single bounded regular checkout file without following symlinks.
 
@@ -48,7 +70,7 @@ def _fingerprint(path: Path, root: Path) -> str:
         flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_BINARY", 0)
         fd = os.open(path, flags)
         start = os.fstat(fd)
-        if _identity(start) != _identity(before):
+        if not _same_path_descriptor_identity(before, start):
             raise ValueError("Desktop source changed before fingerprinting")
         digest = hashlib.sha256()
         consumed = 0
@@ -60,7 +82,10 @@ def _fingerprint(path: Path, root: Path) -> str:
             if consumed > MAX_SOURCE_BYTES:
                 raise ValueError("Desktop source exceeds safety bound")
             digest.update(block)
-        if (consumed != before.st_size or _identity(os.fstat(fd)) != _identity(before)
+        # Compare *each* view to itself so Windows creation-time mismatches
+        # across lstat/fstat never weaken same-view change detection. An
+        # in-flight rewrite/inode swap remains a hard failure.
+        if (consumed != before.st_size or _identity(os.fstat(fd)) != _identity(start)
                 or _identity(path.lstat()) != _identity(before)):
             raise ValueError("Desktop source changed while fingerprinting")
         return digest.hexdigest()
