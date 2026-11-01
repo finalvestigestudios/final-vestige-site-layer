@@ -27,3 +27,7 @@
 - https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ID1377: historical archive, preserved.
 - https://finalvestige.com/editorial-standards/; https://finalvestige.com/affiliate-disclosure/.
 - Canonical Mind hub work lives at PR #172; this alternate conceptual hub is not canonical and must not overwrite.
+
+## Affiliate portal and creative rights inspection (2026-11-01)
+- https://affiliates.inspire3.com/ is the public Inspire3 affiliate sign-in/signup page and mentions Zen12; that public portal advertises generic commissions but **does not prove Final Vestige acceptance, terms or Zen12 authorization**. No payout or commission quoted as a FV entitlement.
+- https://inspire3.com/ll/ publishes promotional swipe-copy access **specifically for Limitless Labs**, with product-specific approval requirements. Its availability does not grant rights to deploy that copy for Zen12 or use it in a Final Vestige newsletter. None of the merchant swipe was copied. A publicly accessible Zen12-specific authorized creative license was **not confirmed** in this pass; verified partner terms/dashboard remain necessary.
