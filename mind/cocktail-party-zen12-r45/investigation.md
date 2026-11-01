@@ -65,6 +65,14 @@ Preregistration strengthens the transparency of the test. It does not make the r
 
 A later 2025 study examined the same phenomenon in additional participant groups and again found that noticing one's name was far from universal. It should not be flattened into a claim about entire populations or their capabilities. [6]
 
+## A 2025 replication asks a more careful question
+
+A study published online in September 2025 provided another important test. Lejla Alikadic and Jan Philipp Röer used a preregistered version of the listening task with **48 autistic adults** and **50 non-autistic comparison participants**. Thirteen people in the autistic group (27%) and eighteen in the comparison group (36%) reported noticing their names in the ignored stream. The authors found no meaningful difference between groups on this particular outcome, and participants who noticed their names made more errors shortly afterward. [6]
+
+The study did **not** establish that autistic and non-autistic people experience every kind of attention identically. The authors identified limits of sample composition, including the fact that their autistic participants were adults with language abilities and intelligence scores in the normative range. Their result is about this listening task with these participants—not a diagnostic tool, a universal conclusion about disability, or an excuse to prescribe attention training to anyone.
+
+The historical progression is useful: an arresting demonstration becomes a question tested repeatedly, with each new result both narrowing and refining what we can claim.
+
 ## What the effect does not show
 
 The cocktail-party literature is sometimes enlisted in claims that the subconscious continuously hears everything, or that a voice can bypass attention to plant messages without awareness. The experiments above do not establish those conclusions.
