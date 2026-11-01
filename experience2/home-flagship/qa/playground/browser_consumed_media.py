@@ -50,7 +50,8 @@ class CapturedBrowserRequest:
         content_type = response.headers.get('content-type', '').split(';', 1)[0].strip().lower()
         require(content_type == IMAGE_MIME[name],
                 name + ': incorrect browser image response MIME')
-        response.finished()  # wait for the actual browser transfer to complete
+        # Response.body() below waits for the browser transfer; do not issue a
+        # separate finished() task that can outlive the Playwright context.
         return response
 
 
