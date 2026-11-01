@@ -1,6 +1,6 @@
 # Optional original 40-second evidence film — storyboard, not yet rendered
 
-**Production status:** Poster SVG, six-cue .vtt proposal and complete transcript in Zen12 B HTML exist. No MP4 is rendered, hosted, or claimed to be playable. No copied footage, no music, no use of merchant creatives. The film is a test hypothesis, not a conversion guarantee.
+**Production status (later R44 update):** The original silent MP4 has NOW been rendered **offline** and reviewed (40.000s H.264, 540×960, 12fps, 480 frames). Exact source-controlled Python renderer matches the executed file's Git blob; see FILM-VERIFICATION.md. No MP4 hosted or playable in WordPress; B remains a static self-contained poster with proposed six-cue VTT/transcript, not a fake player. No copied footage, music or merchant creatives; conversion benefit remains an untested hypothesis.
 
 1. 00:00–00:06 — Two number cards arrive in a rapid stream. Voiceover proposed: "Two numbers appear close together in a fast-moving stream. Sometimes the second never reaches the report."
 2. 00:06–00:13 — A vertical timeline marks the original 1992 first- and second-target task. "The 1992 experiment found a brief decline after people identified the first target."
