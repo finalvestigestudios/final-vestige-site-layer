@@ -60,8 +60,8 @@ def frame(t):
     d.line((53,126,486,126),fill=FRAME,width=2)
     d.text((53,156),f"0{i+1} / 06",font=font(18,True),fill=GOLD)
     head1,head2,small=HEADS[i]
-    centered(d,head1,211,font(39,serif=True),INK)
-    centered(d,head2,269,font(47,serif=True),INK)
+    centered(d,head1,211,font(39,serif=True),fill=INK)
+    centered(d,head2,269,font(47,serif=True),fill=INK)
     # Schematic centre; only this graphic is animated, not any real mouth or sound.
     cx,cy=270,509
     if i==0:
@@ -76,33 +76,33 @@ def frame(t):
         d.rounded_rectangle((296,400,479,631),radius=13,outline=GOLD,width=2)
         d.text((91,424),"AUDIO",font=font(20,True),fill=MUTED)
         d.text((325,424),"VISUAL",font=font(20,True),fill=MUTED)
-        centered(d,"BA",490,font(64,serif=True),INK) if False else None
-        d.text((107,499),"BA",font=font(61,serif=True),INK)
-        d.text((341,499),"GA",font=font(61,serif=True),INK)
+        centered(d,"BA",490,font(64,serif=True),fill=INK) if False else None
+        d.text((107,499),"BA",font=font(61,serif=True),fill=INK)
+        d.text((341,499),"GA",font=font(61,serif=True),fill=INK)
         if i==2:
             d.rounded_rectangle((167,583,374,663),radius=15,fill=(42,34,24),outline=GOLD,width=2)
-            d.text((186,596),"some: DA",font=font(28,True),INK)
+            d.text((186,596),"some: DA",font=font(28,True),fill=INK)
     elif i==3:
         for j,(x,label) in enumerate([(69,"BA"),(197,"DA"),(325,"OTHER")]):
             d.rounded_rectangle((x,445,x+114,572),radius=13,outline=GOLD if j==1 else FRAME,width=2)
-            d.text((x+12,484),label,font=font(22,True),INK)
-        d.text((68,612),"Different viewers; different reports.",font=font(16),MUTED)
+            d.text((x+12,484),label,font=font(22,True),fill=INK)
+        d.text((68,612),"Different viewers; different reports.",font=font(16),fill=MUTED)
     elif i==4:
         d.rounded_rectangle((57,408,483,645),radius=14,outline=GOLD,width=2)
-        d.text((82,444),"OBSERVED",font=font(22,True),GOLD)
-        d.text((82,482),"A listener reports DA.",font=font(19),INK)
+        d.text((82,444),"OBSERVED",font=font(22,True),fill=GOLD)
+        d.text((82,482),"A listener reports DA.",font=font(19),fill=INK)
         d.line((82,524,455,524),fill=FRAME,width=2)
-        d.text((82,543),"INFERRED",font=font(22,True),GOLD)
-        d.text((82,580),"Which mechanism caused it?",font=font(18),INK)
+        d.text((82,543),"INFERRED",font=font(22,True),fill=GOLD)
+        d.text((82,580),"Which mechanism caused it?",font=font(18),fill=INK)
     else:
         d.rounded_rectangle((59,423,482,632),radius=14,outline=GOLD,width=2)
-        centered(d,"McGurk & MacDonald",454,font(24,True),INK)
-        centered(d,"Nature · 1976",502,font(22),GOLD)
-        centered(d,"doi:10.1038/264746a0",548,font(18),MUTED)
+        centered(d,"McGurk & MacDonald",454,font(24,True),fill=INK)
+        centered(d,"Nature · 1976",502,font(22),fill=GOLD)
+        centered(d,"doi:10.1038/264746a0",548,font(18),fill=MUTED)
     d.line((53,707,486,707),fill=FRAME,width=2)
     centered(d,small,735,font(21),INK,430,12)
     centered(d,CAPTIONS[i],815,font(15),MUTED,430,7)
-    d.text((53,899),"SCHEMATIC · NOT A PERCEPTION TEST",font=font(13,True),GOLD)
+    d.text((53,899),"SCHEMATIC · NOT A PERCEPTION TEST",font=font(13,True),fill=GOLD)
     # tiny progress line, no blinking/flashing
     d.rectangle((53,918,53+round(434*t/SECONDS),922),fill=GOLD)
     return im
