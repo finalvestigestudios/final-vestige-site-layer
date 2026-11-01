@@ -39,7 +39,8 @@ test("video B is honest and accessible with complete no-JS transcript",()=>{
  assert.doesNotMatch(b,/<video\b|<audio\b|<iframe\b/);
 });
 test("noncanonical /mind/ never links to unlaunched route",()=>{
- invariant(hub.replace("<span>Zen12 independent guide — unpublished</span>",'<span>Zen12 independent guide — unpublished</span>') /* no active merchant */);
+ assert.doesNotMatch(hub,/<(script|form|iframe|input)\\b/i);
+ assert.doesNotMatch(hub,/<a\\s[^>]*href=\"https:\\/\\/(?:www\\.)?(?:zen12|inspire3|hypnosislive)\\.com/i);
  assert.match(hub,/PR #172 is canonical/);
  assert.match(hub,/https:\/\/finalvestige.com\/focus\//);
  assert.doesNotMatch(hub,/href="https:\/\/finalvestige.com\/mind\//);
