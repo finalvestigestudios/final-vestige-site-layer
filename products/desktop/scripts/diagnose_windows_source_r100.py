@@ -11,7 +11,9 @@ from pathlib import Path
 
 from scripts import offline_source_gate as gate
 
-PHASES = ("inventory", "normal_tests", "optimized_tests", "engine_smokes")
+PHASES = ("root_paths", "source_inventory", "test_inventory",
+          "source_metadata", "inventory", "normal_tests",
+          "optimized_tests", "engine_smokes")
 
 
 def _quiet_stage(label, operation):
@@ -35,6 +37,29 @@ def probe(root: Path) -> dict[str, bool]:
     """Independent observations, not a replacement for two-mode source gates."""
     root = Path(root)
     results = {}
+
+    def check_paths():
+        expected = (root, root / "products" / "desktop",
+                    root / "products" / "desktop" / "tests",
+                    root / "products" / "desktop" / "fvs_suite")
+        if not all(folder.is_dir() for folder in expected):
+            raise ValueError("Required directories unavailable")
+
+    ok, _ = _quiet_stage("root_paths", check_paths)
+    results["root_paths"] = ok
+    ok, source = _quiet_stage(
+        "source_inventory", lambda: gate.source_gate.source_inventory(root))
+    results["source_inventory"] = ok
+    ok, tests = _quiet_stage(
+        "test_inventory", lambda: gate._test_inventory(root))
+    results["test_inventory"] = ok
+    def metadata():
+        if source is None or tests is None:
+            raise ValueError("Incomplete inventory")
+        gate.source_gate._source_metadata(root, source)
+        gate.source_gate._source_metadata(root, tests)
+    ok, _ = _quiet_stage("source_metadata", metadata)
+    results["source_metadata"] = ok
     ok, _ = _quiet_stage("inventory", lambda: gate._snapshot(root))
     results["inventory"] = ok
 
