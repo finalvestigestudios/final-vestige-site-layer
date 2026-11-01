@@ -74,7 +74,7 @@ Our original forty-second explainer deliberately uses text and schematic imagery
 
 There is a tempting jump from “two senses can interact” to “a particular commercial sound can program your brain.” The McGurk research does not bridge it. Its experiments concern audiovisual speech perception, not meditation quality, clinical stress relief, treatment, wealth, suggestibility training or the efficacy of a packaged recording.
 
-Likewise, studies of binaural beats investigate a different phenomenon. A 2023 systematic review examined fourteen EEG studies of binaural-beat stimulation and found inconsistent outcomes: five aligned with the entrainment hypothesis, eight contradicted it, and one was mixed. The review did not test any Zen12 recording. Even definitive evidence for a generic binaural-beat effect would not automatically validate a particular seller's claim that twelve minutes equals an hour of meditation. [9]
+Likewise, studies of binaural beats investigate a different phenomenon. A 2023 systematic review examined fourteen EEG studies of binaural-beat stimulation and found inconsistent outcomes: five aligned with the entrainment hypothesis, eight contradicted it, and one was mixed. The review did not test any named commercial meditation recording. Even definitive evidence for a generic binaural-beat effect would not automatically validate a particular seller's claim that twelve minutes equals an hour of meditation. [9]
 
 Readers deserve both things: a serious account of an unusual perception and freedom from a retail promise smuggled into the conclusion.
 
@@ -98,6 +98,6 @@ When perception and a record disagree, the way forward is not to pick whichever 
 6. Getz, L. M. & Toscano, J. C. (2021), *Rethinking the McGurk effect as a perceptual illusion*. https://doi.org/10.3758/s13414-021-02265-6 — challenges reliability/generalization.
 7. *The McGurk Illusion: A Default Mechanism of the Auditory System* (2023). https://pmc.ncbi.nlm.nih.gov/articles/PMC10046462/ — competing mechanism interpretation.
 8. Final Vestige, *Puységur's Animal Magnetism Files*. https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ — 153 source rows / 16 dossiers and interpretive boundaries.
-9. Ingendoh, R. M. et al. (2023), *Binaural beats to entrain the brain?* PLOS ONE. https://doi.org/10.1371/journal.pone.0286023 — generic sound evidence only; not a test of Zen12.
+9. Ingendoh, R. M. et al. (2023), *Binaural beats to entrain the brain?* PLOS ONE. https://doi.org/10.1371/journal.pone.0286023 — generic sound evidence only; not a test of commercial meditation audio.
 
 **Editorial firewall:** No seller was used as a source for this investigation. Its scientific conclusion does not recommend purchasing anything. This article and any subsequent commercial guide must be independently reviewable.
