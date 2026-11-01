@@ -138,6 +138,12 @@ def main():
                     ensure(not violations, prefix+'axe: '+repr(violations))
                 name = f'r38-source-{width}-{"js" if enabled else "nojs"}.png'
                 screenshot = options.output / name
+                # Normalize touch hover and focused elements before immutable screenshot capture.
+                page.evaluate('document.activeElement && document.activeElement.blur()')
+                page.mouse.move(1,1)
+                if width < 500 and enabled:
+                    page.locator('h1').tap() # reset persistent mobile :hover state
+                page.evaluate('window.scrollTo(0,0)')
                 page.screenshot(path=str(screenshot), full_page=True, animations='disabled')
                 results.append({'width':width,'javascript':enabled,'passed':True,
                                 'screenshot':name,'sha256':digest(screenshot)})
