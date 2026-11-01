@@ -1,0 +1,17 @@
+# Experience 2.0 — archived-image origin and reproduction-rights review (2026-11-01)
+
+**Draft; rights NOT cleared; production HOLD.** This document is evidence for the seven-chapter integrated homepage, not a licence. WordPress.com media metadata is not a byte-level or intellectual-property certificate. No originals were downloaded by this review, and no source image was added to Git.
+
+| Exhibit | Live media identity read-only | Independent source grounding | Status |
+| --- | --- | --- | --- |
+| Apollo 1, WP media **473** | `s67-19766.webp`; 78,346 bytes, 1041×810 | NASA's [Apollo 1 crew photo report](https://www.nasa.gov/image-article/apollo-1-crew-honored/) identifies the photographed crew and scene. NASA's [usage guidelines](https://www.nasa.gov/nasa-brand-center/) generally allow NASA-produced imagery under conditions including source credit, no endorsement, embedded third-party rights, and relevant publicity restrictions. | **Not certified.** Tie this uploaded WebP to NASA's specific master photograph and verify bytes; preserve NASA attribution. |
+| Franklin Victory Point, WP media **474** | `Franklinexpeditionnote.jpg`; 466,043 bytes, 960×1526 | Royal Museums Greenwich [catalogue AGC/F/13](https://www.rmg.co.uk/collections/archive/rmgc-object-464477) identifies a **reproduction** of the 1847/1848 note and points to HSR/C/9/1 for the original. Its [collection-access policy](https://www.rmg.co.uk/policies/collections-information-access-policy) distinguishes free access from material with rights restrictions. | **Not certified.** Actual image origin/photographer and its reuse licence unknown. Catalogue prose must not be misrepresented as image permission. |
+| NYPL 1903 Brooklyn BRT map, WP media **1258** | `edit-017-v02-nypl-5003296-original.jpg`; 5,553,669 bytes, 5667×3831 | NYPL's [rail transit research guide](https://libguides.nypl.org/nyc-rail-transit/companies) identifies 1903 map and NYPL image ID **5003296**. NYPL's [rights guide](https://qa-digitalcollections.nypl.org/about) allows free reuse for **specific items** marked no known U.S. copyright restrictions; generic availability isn't permission. | **Not certified.** Check the actual item's rights statement/master file. The 1903 map must never imply a literal overlay of the 1918 Malbone curve. |
+
+The [NYPL legacy API](https://api.repo.nypl.org/) warns it has been deprecated after **August 1, 2026**; do not build new automatic permission attestations on that endpoint. No source rights or image bytes have been established in this execution environment.
+
+## Required before visual/publication certification
+
+Obtain each **original** independently; record provenance, source URL, actual transferred bytes, dimensions and SHA-256; check its exact item-level licence, rights/credits and any commercial display limitations; and verify Chromium rendered **those same bytes**, not a separately fetched image or a resized CDN derivative. The three image hashes remain unknown here. None should be fabricated, inferred from metadata, or reused from mock tests.
+
+These uncertainties block release; they do not prohibit private source-verified test engineering. **No merge, WP.com staging upgrade, production page 6 edit, or publication authorised.**
