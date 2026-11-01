@@ -156,7 +156,7 @@ class UrlSourceAuthority(unittest.TestCase):
     def test_url_is_not_rewritten_or_network_checked(self):
         src='https://nchfp.uga.edu/how/dry/recipes/jerky'
         self.assertEqual(gate.url_check(src),'nchfp.uga.edu')
-    def test_block_punycode_confusables_for_human_review(self):
+    def test_punycode_retained_for_unresolved_manual_identity_review(self):
         # Punycode may be legitimate, but source identity requires manual
         # checking; this static gate does not pretend to validate ownership.
         self.assertEqual(gate.url_check('https://xn--e1afmkfd.xn--p1ai/a'),
