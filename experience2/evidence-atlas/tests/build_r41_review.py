@@ -21,6 +21,7 @@ PATHS = (
     'experience2/evidence-atlas/build_wordpress_stage.py',
     'experience2/evidence-atlas/final-vestige-ex2-evidence-atlas.php',
     'experience2/evidence-atlas/tests/browser_regression_r41.py',
+    'experience2/evidence-atlas/tests/build_r41_review.py',
     'experience2/evidence-atlas/tests/wordpress_shortcode_probe.php',
     'experience2/evidence-atlas/tests/test_wordpress_stage.py',
     'experience2/evidence-atlas/test_atlas.py',
