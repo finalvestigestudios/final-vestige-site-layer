@@ -141,6 +141,23 @@ def _load_quarantined_csv_intake_validator():
     return module.quarantine_reviewer_csv
 
 
+def _load_private_key_receipt_validator():
+    # R39: the exact R38 evidence-quarantine chain now has a private
+    # key-possession receipt challenge. No credentials, reviewers, approvals,
+    # or progress are synthesized by CI. Independent trusted key registries
+    # and durable replay ledgers are mandatory for real receipt verification.
+    location = Path(__file__).with_name('reviewer_receipt_chain_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R39 reviewer receipt validator')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r39_private_receipt', location)
+    need(spec is not None and spec.loader is not None,
+         'R39 reviewer receipt validator cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.unsigned_challenge
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -149,6 +166,7 @@ build_human_review_intake = _load_human_review_intake_validator()
 build_global_shared_source_review = _load_global_shared_source_validator()
 build_private_reviewer_csv_export = _load_private_reviewer_csv_export_validator()
 build_quarantine_reviewer_csv = _load_quarantined_csv_intake_validator()
+build_private_key_receipt_challenge = _load_private_key_receipt_validator()
 
 
 def canonical(value):
@@ -327,6 +345,22 @@ def audit(lib, expected=EXPECTED):
              and quarantined['manifest']['independent_QD_approval'] is False
              and quarantined['manifest']['unverified_progress_records'] == 0,
              'R38 reviewer intake cannot authorize publication or safety clearance')
+        # R39 preflight verifies the entire zero-annotation R37 -> R38 -> R39
+        # challenge contract on the real checkout. No signing key is present,
+        # no identity is asserted, and no human reviews are marked done.
+        challenge = build_private_key_receipt_challenge(
+            reviewer_csv, reviewer_csv['csv_tables'])
+        need(challenge['release_state'] == 'HOLD'
+             and challenge['unverified_progress_records'] == 0
+             and challenge['parent_R37_fingerprint_sha256'] ==
+                 reviewer_csv['manifest']['fingerprint_sha256']
+             and challenge['parent_R38_fingerprint_sha256'] ==
+                 quarantined['manifest']['fingerprint_sha256']
+             and challenge['may_publish'] is False
+             and challenge['qualified_safety_clearance'] is False
+             and challenge['independent_QD_approval'] is False
+             and challenge['human_source_reviews_completed'] is False,
+             'R39 unsigned receipt challenge must remain zero-progress HOLD')
     return payload
 
 def audit_checkout(root):
