@@ -11,6 +11,10 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R118 real six-binary encrypted CI roundtrip (DRAFT / RELEASE HOLD)
+
+The [R118 source-owned integration harness](scripts/native_sealed_roundtrip_r118.py), its [15 fail-closed tests](tests/test_native_sealed_roundtrip_r118.py) and [limits/runbook](docs/NATIVE_SEALED_ROUNDTRIP_R118.md) exercise R117's AES-256-GCM seal/unseal against **all six actual Windows x64 R9-smoked EXEs** within the same ephemeral Windows Actions runner, preserve all eight exact source hashes, and require rejection of tampered real ciphertext. Temporary key/bundle/private plaintext are deleted and **never uploaded**. This is NOT physical Windows 11 acceptance, independent R9 evidence custody, malware clearance, premium distribution, signing, QD approval or a release.
+
 ## R117 private encrypted reviewer handoff (DRAFT / RELEASE HOLD)
 
 The new [offline sealed handoff tool](scripts/sealed_candidate_handoff_r117.py) and
