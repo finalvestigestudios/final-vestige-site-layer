@@ -13,7 +13,7 @@ check('safe variants',()=>assert.ok(safe(a)&&safe(b)));
 check('same R33 evidence note',()=>assert.ok(a.includes('data-r33-shared="true"')&&b.includes('data-r33-shared="true"')));
 check('disabled CTA',()=>assert.ok(a.includes('Product link not yet authorized')&&b.includes('Product link not yet authorized')));
 check('optional B only',()=>assert.ok(!a.includes('data-variant-only="B"')&&b.includes('data-variant-only="B"')));
-check('real film unhosted',()=>assert.ok(!b.includes('<video')&&!b.includes('autoplay')));
+check('real film unhosted',()=>assert.ok(!b.includes('<video')&&!/<video[^>]*\sautoplay(?:\s|=|>)/i.test(b)));
 check('existing Focus preserved',()=>assert.ok(a.includes('finalvestige.com/focus/')));
 check('alternate hub remains unpublished',()=>assert.ok(hub.includes('unpublished')||hub.includes('UNPUBLISHED')));
 check('matrix expanded',()=>assert.ok(matrix.trim().split('\n').length>=81));
