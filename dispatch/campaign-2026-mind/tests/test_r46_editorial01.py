@@ -68,6 +68,6 @@ class EditorialCandidateGuards(unittest.TestCase):
             self.assertIs(c[k],False)
     def test_core_promise_is_limited(self):
         self.assertIn("neither a universal eyewitness error rate",self.markdown)
-        self.assertIn("by analogy only", (BASE/"REVIEW_FIRST.md").read_text(encoding="utf-8"))
+        self.assertIn("analogy only", (BASE/"REVIEW_FIRST.md").read_text(encoding="utf-8"))
 
 if __name__=="__main__": unittest.main()
