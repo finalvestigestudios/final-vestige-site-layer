@@ -49,6 +49,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_scroll_access_r107.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_scroll_access_r107.py' > /dev/null 2>&1
+      - name: Verify R108 actual-event snapshot contracts (normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_native_shortcut_events_r108.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_native_shortcut_events_r108.py' > /dev/null 2>&1
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -156,6 +160,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R107 local-first viewport regression FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_scroll_access_r107.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R107 optimized viewport regression FAILED" }
+      - name: Verify R108 Tk accelerator and cancel safety (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_native_shortcut_events_r108.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R108 Tk accelerator regression FAILED" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_native_shortcut_events_r108.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R108 optimized Tk accelerator regression FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
@@ -248,3 +260,13 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/native_scale_probe_r107.py
           if ($LASTEXITCODE -ne 0) { throw "R107 scaled native focus unavailable; release HOLD" }
+
+      # R108 dispatches real source-bound Tk synthetic Alt/Ctrl events after
+      # all six packaged images, premium lock, focus and scaled layout gates.
+      # Cancelled file pickers, blank-input validation and no engine calls.
+      - name: R108 native Tk accelerator event and cancel-safety preflight (release HOLD)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/native_shortcut_events_r108.py
+          if ($LASTEXITCODE -ne 0) { throw "R108 Tk event delivery or cancel-safety unavailable; release HOLD" }
