@@ -16,17 +16,27 @@ function fv_ex2_integrity() {
         $file = __DIR__ . '/assets/' . $name;
         if (!is_readable($file) || hash_file('sha256', $file) !== $sha) { return false; }
     }
-    // Public originals, locally imported into Playground. Exact metadata sizes, not rights certification.
+    // Source attribution is NOT proven by file size and dimensions. Require three
+    // explicitly reviewed SHA-256 originals supplied at Blueprint generation.
+    // No manifest => layout preview stays CLOSED rather than falsely claiming media.
+    $trustedMedia = __FV_TRUSTED_MEDIA_SHA256__;
+    if (!is_array($trustedMedia) || count($trustedMedia) !== 3) { return false; }
     $media = array(
-        'apollo.webp' => array(78346, 1041, 810),
-        'franklin.jpg' => array(466043, 960, 1526),
-        'nypl.jpg' => array(5553669, 5667, 3831),
+        'apollo.webp' => array(78346, 1041, 810, 'image/webp'),
+        'franklin.jpg' => array(466043, 960, 1526, 'image/jpeg'),
+        'nypl.jpg' => array(5553669, 5667, 3831, 'image/jpeg'),
     );
     foreach ($media as $name => $properties) {
         $file = __DIR__ . '/media/' . $name;
         if (!is_readable($file) || filesize($file) !== $properties[0]) { return false; }
         $dimensions = @getimagesize($file);
-        if (!$dimensions || $dimensions[0] !== $properties[1] || $dimensions[1] !== $properties[2]) { return false; }
+        if (!$dimensions || $dimensions[0] !== $properties[1]
+            || $dimensions[1] !== $properties[2]
+            || !isset($dimensions['mime']) || $dimensions['mime'] !== $properties[3]) { return false; }
+        if (!isset($trustedMedia[$name]) || !is_string($trustedMedia[$name])
+            || !preg_match('/\\A[0-9a-f]{64}\\z/D', $trustedMedia[$name])) { return false; }
+        $actualSha = @hash_file('sha256', $file);
+        if (!is_string($actualSha) || !hash_equals($trustedMedia[$name], $actualSha)) { return false; }
     }
     return true;
 }
