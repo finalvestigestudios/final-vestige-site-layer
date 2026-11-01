@@ -393,7 +393,25 @@
       "wordpress_upload_authorized": false,
       "wordpress_post_rewrite_authorized": false,
       "verified_broken_for_visitors": null,
-      "verified_76_percent_reduction": false
+      "verified_76_percent_reduction": false,
+      "publisher_original_candidate": {
+        "record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "publisher": "U.S. Geological Survey",
+        "publisher_label": "Original",
+        "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "viewer_result": "IMAGE_RENDERED_BY_VIEWER",
+        "source_record_describes": "Hebgen Lake fault scarp in 1959",
+        "source_record_photographer": "J. R. Stacy",
+        "record_rights_statement": "Public Domain",
+        "per_item_editorial_rights_approval": false,
+        "same_binary_as_stored_url_verified": false,
+        "decoded_original_dimensions_px": null,
+        "maximum_proposed_output_width_px": 960,
+        "target_dimensions_px": null,
+        "master_sha256": null,
+        "wordpress_upload_authorized": false,
+        "note": "USGS links its viewer-decodable Original here. Stored /s3fs-public/img7535.jpg received unsupported octet-stream in independent viewer; neither result proves how the Final Vestige article loads."
+      }
     },
     {
       "image_key": "407:2",
@@ -786,5 +804,16 @@
       "verified_76_percent_reduction": false
     }
   ],
-  "hold": "No images copied or republished. Require logged-out Chrome currentSrc/naturalWidth, network status and MIME, redirects, bytes, screenshots, rights and original-image identity before any WordPress staging or 960px derivative."
+  "hold": "No images copied or republished. Require logged-out Chrome currentSrc/naturalWidth, network status and MIME, redirects, bytes, screenshots, rights and original-image identity before any WordPress staging or 960px derivative.",
+  "additional_positive_viewer_checks": [
+    {
+      "image_key": "407:1",
+      "method": "USGS item page Original link clicked in independent image viewer",
+      "record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+      "exact_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "viewer_result": "IMAGE_RENDERED_BY_VIEWER",
+      "http_status": null,
+      "visitor_browser_status": null
+    }
+  ]
 }
