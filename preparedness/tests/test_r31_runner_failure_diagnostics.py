@@ -102,6 +102,15 @@ class NativeFailureClassification(unittest.TestCase):
         self.assertNotIn('sensitive_', msg)
         self.assertNotIn('/home/private', msg)
 
+    def test_claim_corpus_failure_reports_source_line_not_private_value(self):
+        err=(b'Traceback (most recent call last):\n'
+             b'  File "/home/runner/preparedness/tools/claim_corpus_release_gate.py", line 171, in audit_corpus\n'
+             b'    raise ValueError("PRIVATE_CASE")\n'
+             b'ValueError: PRIVATE_CASE\n')
+        msg=self.classify(err)
+        self.assertIn('exception ValueError; source line 171', msg)
+        self.assertNotIn('PRIVATE_CASE', msg)
+
     def test_no_traceback_not_reported_as_exception(self):
         self.assertEqual(self.classify(b'ERROR unsafe source',2),
                          'private_draft_build: exit status 2')
