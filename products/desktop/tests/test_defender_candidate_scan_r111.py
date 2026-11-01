@@ -75,43 +75,80 @@ class DefenderR111(unittest.TestCase):
 
     def test_missing_defender_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
-            with patch.dict(os.environ, {"ProgramFiles": temp, "ProgramData": temp}):
+            data, files = Path(temp) / "Data", Path(temp) / "Files"
+            data.mkdir()
+            files.mkdir()
+            with patch.object(av.install, "native_roots", return_value=(data, files)):
                 with self.assertRaises(av.AVHold):
                     av.locate_defender()
 
     def test_locate_defender_prefers_known_local_install(self):
         with tempfile.TemporaryDirectory() as temp:
-            executable = Path(temp) / "Windows Defender" / "MpCmdRun.exe"
+            data, files = Path(temp) / "Data", Path(temp) / "Files"
+            data.mkdir()
+            files.mkdir()
+            executable = files / "Windows Defender" / "MpCmdRun.exe"
             executable.parent.mkdir()
             executable.write_bytes(b"synthetic unsigned scanner - discovery only")
-            with patch.dict(os.environ, {"ProgramFiles": temp, "ProgramData": temp}):
-                self.assertEqual(av.locate_defender(), executable.resolve())
+            with patch.object(av.install, "native_roots", return_value=(data, files)):
+                self.assertEqual(av.locate_defender(), executable)
 
     def test_newest_defender_platform_precedes_legacy_engine(self):
         with tempfile.TemporaryDirectory() as temp:
-            root = Path(temp)
-            current = root / "Microsoft" / "Windows Defender" / "Platform" / "4.18.3" / "MpCmdRun.exe"
-            older = root / "Microsoft" / "Windows Defender" / "Platform" / "4.18.2" / "MpCmdRun.exe"
-            legacy = root / "Windows Defender" / "MpCmdRun.exe"
+            data, files = Path(temp) / "Data", Path(temp) / "Files"
+            data.mkdir()
+            files.mkdir()
+            current = data / "Microsoft" / "Windows Defender" / "Platform" / "4.18.3" / "MpCmdRun.exe"
+            older = data / "Microsoft" / "Windows Defender" / "Platform" / "4.18.2" / "MpCmdRun.exe"
+            legacy = files / "Windows Defender" / "MpCmdRun.exe"
             for path in (current, older, legacy):
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(b"synthetic scanner discovery only")
-            with patch.dict(os.environ, {"ProgramFiles": temp, "ProgramData": temp}):
-                self.assertEqual(av.locate_defender(), current.resolve())
+            with patch.object(av.install, "native_roots", return_value=(data, files)):
+                self.assertEqual(av.locate_defender(), current)
 
     def test_symlink_scanner_is_denied(self):
         with tempfile.TemporaryDirectory() as temp:
+            data, files = Path(temp) / "Data", Path(temp) / "Files"
+            data.mkdir()
+            files.mkdir()
             target = Path(temp) / "other.exe"
             target.write_bytes(b"synthetic")
-            known = Path(temp) / "Windows Defender" / "MpCmdRun.exe"
+            known = files / "Windows Defender" / "MpCmdRun.exe"
             known.parent.mkdir()
             try:
                 known.symlink_to(target)
             except (OSError, NotImplementedError):
                 self.skipTest("symlink support unavailable")
-            with patch.dict(os.environ, {"ProgramFiles": temp, "ProgramData": temp}):
+            with patch.object(av.install, "native_roots", return_value=(data, files)):
                 with self.assertRaises(av.AVHold):
                     av.locate_defender()
+
+    def test_native_known_folder_failure_denies_all_scans_and_redacts_path(self):
+        with patch.object(av.install, "native_roots",
+                          side_effect=av.install.InstallHold("C:/Users/PRIVATE/customer.csv")):
+            with self.assertRaises(av.AVHold) as caught:
+                av.locate_defender()
+        self.assertNotIn("PRIVATE", str(caught.exception))
+        self.assertNotIn("customer.csv", str(caught.exception))
+
+    def test_tampered_environment_cannot_select_attacker_scanner(self):
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            data, files = base / "Data", base / "Files"
+            data.mkdir()
+            files.mkdir()
+            genuine = files / "Windows Defender" / "MpCmdRun.exe"
+            genuine.parent.mkdir()
+            genuine.write_bytes(b"synthetic genuine-path stand-in")
+            attacker = base / "Attacker" / "Windows Defender" / "MpCmdRun.exe"
+            attacker.parent.mkdir(parents=True)
+            attacker.write_bytes(b"synthetic attacker stand-in")
+            with patch.dict(os.environ, {"ProgramData": str(base / "Attacker"),
+                                         "ProgramFiles": str(base / "Attacker")}), \
+                 patch.object(av.install, "native_roots", return_value=(data, files)):
+                self.assertEqual(av.locate_defender(), genuine)
+
 
     def test_scan_invokes_synchronous_custom_file_only(self):
         calls = []
