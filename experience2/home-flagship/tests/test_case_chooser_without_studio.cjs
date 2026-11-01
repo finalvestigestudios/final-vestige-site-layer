@@ -10,7 +10,7 @@ const base = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(base, 'flagship.js'), 'utf8');
 const page = fs.readFileSync(path.join(base, 'index.html'), 'utf8');
 
-function exercise({ studio = false, brokenCases = false } = {}) {
+function exercise({ brokenCases = false } = {}) {
   const handlers = Object.create(null);
   const caseIds = ['apollo', 'franklin', 'malbone'];
   const caseButtons = (brokenCases ? caseIds.slice(0, 2) : caseIds).map(id => ({
@@ -22,29 +22,21 @@ function exercise({ studio = false, brokenCases = false } = {}) {
     dataset: { fvCase: id }, hidden: false,
     querySelector() { return { textContent: id.toUpperCase() }; }
   }));
-  const dirButtons = ['dossier', 'museum', 'observatory'].map(id => ({
-    dataset: { fvDirectionChoice: id }, attrs: {},
-    setAttribute(name, value) { this.attrs[name] = value; }
-  }));
   const caseGroup = { hidden: true, contains(button) { return caseButtons.includes(button); } };
-  const directionGroup = { hidden: true, contains(button) { return dirButtons.includes(button); } };
   const status = { textContent: '' };
   const root = {
-    dataset: { fvDirection: 'dossier' },
     classList: { add() {}, remove() {} },
     querySelector(sel) {
       return ({
         '[data-fv-case-buttons]': caseGroup,
-        '[data-fv-case-status]': status,
-        '.fv-hf__studio-controls': studio ? directionGroup : null
+        '[data-fv-case-status]': status
       })[sel] || null;
     },
     querySelectorAll(sel) {
       return ({
         '[data-fv-archive-img]': [],
         '[data-fv-case-button]': caseButtons,
-        '[data-fv-case]': panels,
-        '[data-fv-direction-choice]': studio ? dirButtons : []
+        '[data-fv-case]': panels
       })[sel] || [];
     },
     addEventListener(type, fn) { handlers[type] = fn; }
@@ -53,27 +45,24 @@ function exercise({ studio = false, brokenCases = false } = {}) {
   Element.prototype.closest = function () {};
   vm.runInNewContext(source, {
     document: { querySelectorAll: () => [root], createElement: () => ({ hidden: false }) },
-    window: { location: { search: '?direction=museum' } },
+    window: { location: { search: '' } },
     Element,
     URLSearchParams
   }, { timeout: 1000 });
-  return { root, caseGroup, directionGroup, caseButtons, panels, status, handlers };
+  return { root, caseGroup, caseButtons, panels, status, handlers };
 }
 const visible = state => state.panels.filter(p => !p.hidden).map(p => p.dataset.fvCase);
-
-test('the three-direction studio preview still works', () => {
-  const state = exercise({ studio: true });
-  assert.equal(state.caseGroup.hidden, false);
-  assert.equal(state.directionGroup.hidden, false);
-  assert.equal(state.root.dataset.fvDirection, 'museum');
-  assert.deepEqual(visible(state), ['apollo']);
-});
 
 test('publication-style markup without developer controls still enhances cases', () => {
   const state = exercise();
   assert.equal(state.caseGroup.hidden, false);
   assert.deepEqual(visible(state), ['apollo']);
-  assert.equal(state.root.dataset.fvDirection, 'dossier');
+});
+
+test('the retired studio direction-picker leaves no trace in the shipped script', () => {
+  assert.doesNotMatch(source, /DIRECTIONS/);
+  assert.doesNotMatch(source, /fvDirectionChoice/);
+  assert.doesNotMatch(source, /directionGroup/);
 });
 
 test('mouse/touch click targets select a real investigation without studio controls', () => {

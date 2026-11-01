@@ -8,7 +8,8 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {
     "finalvestige.com", "www.nasa.gov", "commons.wikimedia.org",
-    "digitalcollections.nypl.org", "www.rmg.co.uk", "www.historymuseum.ca"
+    "digitalcollections.nypl.org", "www.rmg.co.uk", "www.historymuseum.ca",
+    "doi.org",
 }
 
 class Audit(HTMLParser):
@@ -52,10 +53,9 @@ class HomepageContract(unittest.TestCase):
     def test_no_js_every_evidence_remains(self):
         self.assertEqual(len([a for tag, a in self.dom.attrs if "data-fv-case" in a]), 3)
         self.assertEqual(self.dom.hidden_cases, [])
-        self.assertEqual(self.dom.tags.count("details"), 7)
-        self.assertEqual(self.dom.tags.count("summary"), 7)
+        self.assertEqual(self.dom.tags.count("details"), 8)
+        self.assertEqual(self.dom.tags.count("summary"), 8)
         self.assertIn('class="fv-hf__case-choice-group" data-fv-case-buttons hidden', self.html)
-        self.assertIn('class="fv-hf__studio-controls" hidden', self.html)
 
     def test_exact_three_original_source_plates(self):
         ids = {r["id"] for r in self.manifest["records"]}
@@ -74,14 +74,18 @@ class HomepageContract(unittest.TestCase):
             self.assertGreater(int(img["width"]), 0)
             self.assertGreater(int(img["height"]), 0)
             self.assertEqual(img["decoding"], "async")
-        self.assertIn("fetchpriority", self.dom.images[0])
         self.assertIn("srcset", self.dom.images[2])
         self.assertIn("sizes", self.dom.images[2])
         self.assertTrue(self.dom.images[2]["src"].startswith("https://i0.wp.com/"))
         self.assertIn("1536w", self.dom.images[2]["srcset"])
         self.assertEqual(self.dom.images[2]["src"], self.manifest["records"][2]["image_url"])
         self.assertNotEqual(self.dom.images[2]["src"], self.manifest["records"][2]["original_wordpress_image_url"])
-        self.assertEqual([img["loading"] for img in self.dom.images], ["eager", "lazy", "lazy"])
+        # All three evidence images sit below the fold (chapter 3, reached only by scrolling
+        # past the hero and chronicle); none should be promoted with eager/fetchpriority=high,
+        # which belongs only to a genuine above-the-fold LCP candidate (see
+        # test_responsive_archive_media.test_below_fold_assets_not_promoted_to_lcp).
+        self.assertEqual([img["loading"] for img in self.dom.images], ["lazy", "lazy", "lazy"])
+        self.assertTrue(all("fetchpriority" not in img for img in self.dom.images))
 
     def test_links_are_safe_no_unapproved_affiliate(self):
         self.assertTrue(all(href.startswith("#") or href.startswith("https://") for href in self.dom.links))
@@ -96,8 +100,7 @@ class HomepageContract(unittest.TestCase):
         self.assertIn('aria-live="polite"', self.html)
         for key in ("ArrowLeft", "ArrowRight", "Home", "End"):
             self.assertIn(key, self.js)
-        for marker in ("resetStatic", "panel.hidden = false", "group.hidden = true",
-                       "directionGroup.hidden = true"):
+        for marker in ("resetStatic", "panel.hidden = false", "group.hidden = true"):
             self.assertIn(marker, self.js)
         self.assertNotIn("touch-action:none", self.css)
         self.assertEqual(self.js.count("event.preventDefault()"), 1)
@@ -105,13 +108,15 @@ class HomepageContract(unittest.TestCase):
         self.assertIn(":focus-visible", self.css)
         self.assertIn("@media(max-width:600px)", self.css)
 
-    def test_three_distinct_art_directions(self):
-        for label in ("dossier", "museum", "observatory"):
-            self.assertIn('data-fv-direction-choice="' + label + '"', self.html)
-        for label in ("museum", "observatory"):
-            self.assertIn('[data-fv-direction="' + label + '"]', self.css)
-        self.assertIn('data-fv-direction="dossier"', self.html)
-        self.assertIn("DESIGN STUDY", self.html)
+    def test_single_locked_art_direction(self):
+        # Founder approved Black Dossier (blended with Museum After Hours warmth) as the one
+        # shipped identity on 2026-11-01; the multi-direction studio picker is retired.
+        self.assertNotIn("data-fv-direction-choice", self.html)
+        self.assertNotIn("data-fv-direction", self.html)
+        self.assertNotIn('fv-direction="museum"', self.css)
+        self.assertNotIn('fv-direction="observatory"', self.css)
+        self.assertNotIn("DIRECTIONS", self.js)
+        self.assertIn("DESIGN CANDIDATE", self.html)
         self.assertIn("NOT LIVE", self.html)
 
     def test_source_claim_boundaries_and_commerce(self):

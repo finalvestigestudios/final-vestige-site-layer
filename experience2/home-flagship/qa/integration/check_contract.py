@@ -16,7 +16,6 @@ STYLES = ["flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css", 
 SCRIPTS = ["flagship.js", "observer-lab.js", "chronicle-lens.js", "reading-trail.js"]
 ASSETS = ["index.html", *STYLES, *SCRIPTS]
 CASES = {"apollo", "franklin", "malbone"}
-DIRECTIONS = {"dossier", "museum", "observatory"}
 CHAPTERS = ["fv-hf-title", "fv-hf-chronicle", "fv-hf-evidence", "fv-hf-inquiry", "fv-hf-method-title", "fv-hf-observer", "fv-hf-mind-title"]
 NECESSARY_DESTINATIONS = ["/focus/", "/editorial-standards/", "/free-resources/puysegurs-animal-magnetism-files/"]
 PUBLICATION_FORBIDDEN = ["inspire3.com/checkout", "clickbank.net/", "hop.clickbank", "buy now", "guaranteed brain reprogramming"]
@@ -26,7 +25,7 @@ class Capture(html.parser.HTMLParser):
         super().__init__(convert_charrefs=True)
         self.ids=[]; self.anchors=[]; self.assets=[]; self.scripts=[]; self.styles=[]
         self.images=[]; self.buttons=[]; self.details=[]; self.headings=[]; self.labels=[]
-        self.cases=[]; self.case_buttons=[]; self.dir_buttons=[]; self.section_ids=[]
+        self.cases=[]; self.case_buttons=[]; self.section_ids=[]
         self.observers=[]; self.chronicle_views=[]; self.forms=[]
     def handle_starttag(self,tag, attrs):
         a=dict(attrs)
@@ -42,7 +41,6 @@ class Capture(html.parser.HTMLParser):
         if tag in ("h1","h2","h3"):self.headings.append((tag,a))
         if a.get("data-fv-case"):self.cases.append(a["data-fv-case"])
         if a.get("data-fv-case-button"):self.case_buttons.append(a["data-fv-case-button"])
-        if a.get("data-fv-direction-choice"):self.dir_buttons.append(a["data-fv-direction-choice"])
         if a.get("data-fv-observer-frame"):self.observers.append(a["data-fv-observer-frame"])
         if a.get("data-fv-chronicle-view"):self.chronicle_views.append(a["data-fv-chronicle-view"])
 
@@ -70,13 +68,13 @@ def scan(root:Path):
     ck("internal_anchor_targets_resolve",all(x[1:] in p.ids for x in p.anchors if x.startswith("#") and x!="#"),"broken "+str([x for x in p.anchors if x.startswith("#") and x!="#" and x[1:] not in p.ids]))
     ck("exact_three_evidence_panels",set(p.cases)==CASES and len(p.cases)==3,p.cases)
     ck("exact_three_case_controls",set(p.case_buttons)==CASES and len(p.case_buttons)==3,p.case_buttons)
-    ck("three_design_preview_modes",set(p.dir_buttons)==DIRECTIONS and len(p.dir_buttons)==3,p.dir_buttons)
+    ck("single_locked_art_direction",'data-fv-direction-choice' not in content,"studio direction-picker markup must be fully retired, not merely hidden")
     ck("both_observer_frames",p.observers==["a","b"],p.observers)
     ck("three_lens_modes",set(p.chronicle_views)=={"original","addition","both"} and len(p.chronicle_views)==3,p.chronicle_views)
     ck("one_document_h1",len([x for x,_ in p.headings if x=="h1"])==1,[x for x,_ in p.headings if x=="h1"])
     ck("minimum_six_native_details",len(p.details)>=6,str(len(p.details)))
     ck("preserved_editorial_routes",all(s in content for s in NECESSARY_DESTINATIONS),NECESSARY_DESTINATIONS)
-    ck("unpublished_banner",'DESIGN STUDY · NOT LIVE' in content and 'DO NOT DEPLOY AS THE WORDPRESS HOME PAGE' in content)
+    ck("unpublished_banner",'DESIGN CANDIDATE · NOT LIVE' in content and 'DO NOT DEPLOY AS THE WORDPRESS HOME PAGE' in content)
     ck("no_external_executable_assets",all(x.startswith("./") for x in p.styles+p.scripts))
     ck("no_web_form_or_affiliate_checkout",not p.forms and not any(x in content.lower() for x in PUBLICATION_FORBIDDEN))
     ck("source_custody_links",all(s in content for s in ("rmg.co.uk/collections/objects/","historymuseum.ca/blog/a-very-special-piece-of-paper","nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/","digitalcollections.nypl.org/items/")))

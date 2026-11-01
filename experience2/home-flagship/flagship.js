@@ -1,9 +1,8 @@
-/* Final Vestige / unpublished Experience 2.0 art-direction prototype.
+/* Final Vestige / unpublished Experience 2.0 homepage candidate (Black Dossier direction).
  * JS is optional. No external resources, browser persistence, clocks, autoplay,
  * tracking, content rewriting, or concealed facts that cannot be read without JS. */
 (() => {
   'use strict';
-  const DIRECTIONS = ['dossier', 'museum', 'observatory'];
   const CASES = ['apollo', 'franklin', 'malbone'];
 
   const showImageFallback = (img) => {
@@ -22,8 +21,6 @@
     const status = root.querySelector('[data-fv-case-status]');
     const caseButtons = Array.from(root.querySelectorAll('[data-fv-case-button]'));
     const casePanels = Array.from(root.querySelectorAll('[data-fv-case]'));
-    const directionGroup = root.querySelector('.fv-hf__studio-controls');
-    const directionButtons = Array.from(root.querySelectorAll('[data-fv-direction-choice]'));
 
     // Fail open on any missing or duplicate case; every case remains readable.
     if (!group || !status ||
@@ -42,7 +39,6 @@
       casePanels.forEach((panel) => { panel.hidden = false; });
       caseButtons.forEach((button) => { button.setAttribute('aria-pressed', 'false'); });
       group.hidden = true;
-      if (directionGroup) directionGroup.hidden = true;
       root.classList.remove('fv-hf--enhanced');
       status.textContent = '';
       // No inert, role="tab", focus manipulation or touch-action side effects.
@@ -66,24 +62,11 @@
       }
     };
 
-    const selectDirection = (id) => {
-      if (!DIRECTIONS.includes(id)) return;
-      root.dataset.fvDirection = id;
-      directionButtons.forEach((button) => {
-        button.setAttribute('aria-pressed', String(button.dataset.fvDirectionChoice === id));
-      });
-    };
-
     const handleClick = (event) => {
       if (!enhanced) return;
       const button = event.target.closest && event.target.closest('[data-fv-case-button]');
       if (button && group.contains(button)) {
         selectCase(button.dataset.fvCaseButton);
-        return;
-      }
-      const choice = event.target.closest && event.target.closest('[data-fv-direction-choice]');
-      if (choice && directionGroup && directionGroup.contains(choice)) {
-        selectDirection(choice.dataset.fvDirectionChoice);
       }
     };
 
@@ -107,27 +90,14 @@
       if (!('hidden' in document.createElement('div')) || typeof Element.prototype.closest !== 'function') {
         return;
       }
-      if (directionGroup && !DIRECTIONS.every((id) => directionButtons.some((b) => b.dataset.fvDirectionChoice === id))) {
-        return;
-      }
       // Stage all operations before advertising any enhanced behavior.
       casePanels.forEach((panel) => { panel.hidden = panel.dataset.fvCase !== active; });
       caseButtons.forEach((button) => { button.setAttribute('aria-pressed', String(button.dataset.fvCaseButton === active)); });
       enhanced = true;
       group.hidden = false;
-      if (directionGroup) directionGroup.hidden = false;
       root.classList.add('fv-hf--enhanced');
       root.addEventListener('click', handleClick);
       root.addEventListener('keydown', handleKeydown);
-
-      // URL parameter selects only a visual design study; never executes any external script.
-      if (directionGroup) {
-        const requested = typeof URLSearchParams === 'function' ?
-          new URLSearchParams(window.location.search).get('direction') : null;
-        if (DIRECTIONS.includes(requested)) selectDirection(requested);
-        else selectDirection(root.dataset.fvDirection);
-      }
-
     } catch (err) {
       resetStatic();
     }

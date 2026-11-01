@@ -43,7 +43,7 @@ class InquirySourceContract(unittest.TestCase):
   self.assertEqual(INDEX.count('<link rel="stylesheet" href="./inquiry.css">'),1)
   self.assertLess(INDEX.index('id="fv-hf-evidence"'),INDEX.index('id="fv-hf-inquiry"'))
   self.assertLess(INDEX.index('id="fv-hf-inquiry"'),INDEX.index('class="fv-hf__method"'))
-  self.assertIn('06</span> The observer',INDEX)
+  self.assertIn('07</span> The observer',INDEX)
  def test_focus_paths_preserved(self):
   for url in ['https://finalvestige.com/focus/','https://finalvestige.com/blog/','https://finalvestige.com/editorial-standards/']:self.assertIn(url,INDEX)
   self.assertNotIn('inspire3.com',INDEX)

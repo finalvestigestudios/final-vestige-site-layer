@@ -22,7 +22,25 @@ class ReadingTrailRegression(unittest.TestCase):
         self.assertNotIn('https://',self.js+self.css)
     def test_no_js_story_not_hidden(self):
         self.assertIn('data-fv-trail-enhanced',self.css)
-        self.assertNotIn('display:none',self.css.replace(' ',''))
+        # A narrow @media print exception (hiding only the decorative progress-bar
+        # pseudo-element on paper) is fine; no screen-applied rule may hide content.
+        screen_only, depth, i, start = [], 0, 0, None
+        compact = self.css.replace(' ', '').replace('\n', '')
+        while i < len(compact):
+            if compact[i:i+11] == '@mediaprint' and depth == 0:
+                start = i
+            if compact[i] == '{':
+                depth += 1
+            elif compact[i] == '}':
+                depth -= 1
+                if depth == 0 and start is not None:
+                    i += 1
+                    start = None
+                    continue
+            if start is None:
+                screen_only.append(compact[i])
+            i += 1
+        self.assertNotIn('display:none', ''.join(screen_only))
         self.assertNotIn('innerHTML',self.js)
     def test_keyboard_focus_and_navigation(self):
         self.assertIn('event.detail !== 0',self.js)
