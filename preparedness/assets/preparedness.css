@@ -73,8 +73,11 @@
 /* ---------- Two-column article shell ---------- */
 .pa-shell { display: block; padding-top: 28px; }
 .pa-toc { margin: 0 0 28px; padding: 16px 18px; background: var(--pa-surface); border: 1px solid var(--pa-line); font-size: 15px; }
-.pa-toc h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
-.pa-toc ol { margin: 0; padding-left: 1.2em; }
+.pa-toc { padding: 0; }
+.pa-toc summary { cursor: pointer; padding: 14px 18px; min-height: 44px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--pa-gold); font-weight: 600; }
+.pa-toc summary span { letter-spacing: .04em; text-transform: none; font-weight: 400; color: var(--pa-muted); font-size: 13px; }
+.pa-toc details[open] > summary { padding-bottom: 6px; }
+.pa-toc ol { margin: 0; padding: 0 18px 14px 2.4em; }
 .pa-toc li { margin: 4px 0; }
 .pa-toc a { color: var(--pa-muted); text-decoration: none; }
 .pa-toc a:hover { color: var(--pa-gold); text-decoration: underline; }
@@ -83,6 +86,27 @@
   .pa-shell > .pa-toc { grid-column: 2; grid-row: 1; position: sticky; top: 24px; margin: 0; }
   .pa-shell > .pa-body { grid-column: 1; grid-row: 1; }
 }
+
+/* Narrow containers (phones, small tablets): keep the emergency action box near the first screen.
+   The title block shrinks: the section/track chips (repeated in the kicker) and the topic-tag chips are
+   hidden, only the parent breadcrumb shows, and the print button moves to the end of the article.
+   Status chips (draft, safety review pending) always stay. Topic tags remain on wide layouts and in hub cards. */
+@container (max-width: 899px) {
+  .pa-crumbs { padding: 14px 0 0; }
+  .pa-crumbs li:not(:nth-last-child(2)) { display: none; }
+  .pa-crumbs li + li::before { content: none; }
+  .pa-crumbs li:nth-last-child(2) a::before { content: "\2039\00a0"; content: "\2039\00a0" / ""; }
+  .pa-head { padding: 16px 0 20px; }
+  .pa-kicker { margin-bottom: 10px; }
+  .pa h1 { margin-bottom: 12px; }
+  .pa-dek { margin-bottom: 14px; }
+  .pa-chips { margin-top: 12px; }
+  .pa-chip--dup, .pa-chip--tag, .pa .pa-printbar--head { display: none; }
+  .pa-shell { padding-top: 18px; }
+  .pa-toc { margin-bottom: 20px; }
+  .pa .pa-printbar--end { margin: 28px 0 8px; }
+}
+@container (min-width: 900px) { .pa .pa-printbar--end { display: none; } }
 
 /* ---------- Body typography ---------- */
 .pa-body { max-width: var(--pa-measure); min-width: 0; }
