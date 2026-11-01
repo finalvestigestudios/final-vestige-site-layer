@@ -79,6 +79,7 @@ def make_html(custody: dict, css: str, js: str) -> str:
           </details>
           <a class="fva-card__external" href="{q(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open original NASA record (opens in new tab) <span aria-hidden="true">↗</span></a>
           <a class="fva-card__cite-link" data-fva-to-citation href="#fva-citation-{q(r['id'])}">Cite this NASA record</a>
+          <button type="button" class="fva-card__compare" data-fva-select="{q(r['id'])}" aria-pressed="false" hidden>Inspect source {q(r['id'])} alongside another</button>
         </article>''')
     all_cards = '\n'.join(cards)
     # Fixed, source-custody-backed navigation; still navigable when JS is absent.
@@ -163,6 +164,14 @@ def make_html(custody: dict, css: str, js: str) -> str:
   </div>
   <section class="fva-grid" id="fva-records" aria-label="NASA photographic-source gallery">{all_cards}</section>
   <p class="fva-empty" data-fva-empty hidden>No source records match. Reset filters to restore all six.</p>
+  <section class="fva-compare" data-fva-compare hidden aria-labelledby="fva-compare-title">
+    <p class="fva-compare__eyebrow">SOURCE PAIR INSPECTOR / OPTIONAL ENHANCEMENT</p>
+    <h2 id="fva-compare-title">Two records. Their documented limits.</h2>
+    <p>Choose up to two source cards to inspect their labels, photographic dates and documentary scope side by side. This comparison <strong>does not establish causation, proximity, or a historical connection</strong>. All six originals remain below and in the citation register.</p>
+    <button type="button" data-fva-compare-clear hidden>Clear comparison</button>
+    <p data-fva-compare-status role="status" aria-live="polite" aria-atomic="true">No records selected.</p>
+    <div class="fva-compare__pair"><div data-fva-compare-slot></div><div data-fva-compare-slot></div></div>
+  </section>
   <section class="fva-citations" aria-labelledby="fva-citations-title" data-fva-citations>
     <p class="fva-citations__eyebrow">RESEARCH ACCESS / CITATION REGISTER</p>
     <h2 id="fva-citations-title">Trace every reference.</h2>
@@ -184,7 +193,7 @@ def build(output: Path) -> dict:
     page_path = output / 'apollo-evidence-atlas.html'
     page_path.write_text(document, encoding='utf-8', newline='\n')
     receipt = {
-       'schema': 'fv.ex2.apollo.atlas.r45.v1', 'release': 'STAGING_HOLD',
+       'schema': 'fv.ex2.apollo.atlas.r46.v1', 'release': 'STAGING_HOLD',
        'crosswalk_git_blob': EXPECTED_BLOB, 'records': list(IDS),
        'source_year_counts': {'1966': 1, '1967': 3, '2017': 2},
        'image_rights': '6 INDIVIDUAL_REVIEW_REQUIRED', 'image_binaries': 0,
