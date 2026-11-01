@@ -1,6 +1,7 @@
 """R14 fail-closed schema guard regression tests (synthetic SQLite only)."""
 import hashlib
 import sqlite3
+from contextlib import closing
 import tempfile
 import unittest
 from pathlib import Path
@@ -129,12 +130,12 @@ class RegistryIntegrationR14Tests(unittest.TestCase):
         self.output.write_bytes(b'synthetic-license-content')
         digest = self.registry.finalize(**self.kwargs, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         self.assertEqual(digest, hashlib.sha256(b'synthetic-license-content').hexdigest())
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             self.assertEqual(con.execute("SELECT state FROM issuance").fetchone(), ("issued",))
 
     def test_missing_unique_primary_key_blocks_reservation_before_write(self):
         from license_registry import RegistryError
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             con.execute(EXPECTED_ISSUANCE_DDL.replace(
                 "license_id TEXT PRIMARY KEY", "license_id TEXT"))
         # sqlite3.connect created this external test database outside the
@@ -144,31 +145,31 @@ class RegistryIntegrationR14Tests(unittest.TestCase):
             self.registry_path.chmod(0o600)
         with self.assertRaisesRegex(RegistryError, "Unsafe registry schema"):
             self.registry.reserve(**self.kwargs)
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             self.assertEqual(con.execute("SELECT count(*) FROM issuance").fetchone(), (0,))
 
     def test_trigger_inserted_after_reservation_blocks_finalization(self):
         from license_registry import RegistryError
         self.registry.reserve(**self.kwargs)
         self.output.write_bytes(b'synthetic-license-content')
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             con.execute("""CREATE TRIGGER rewriting AFTER UPDATE ON issuance
                 BEGIN UPDATE issuance SET state='reserved' WHERE license_id=NEW.license_id; END""")
         with self.assertRaisesRegex(RegistryError, "Unsafe registry schema"):
             self.registry.finalize(**self.kwargs, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             self.assertEqual(con.execute("SELECT state FROM issuance").fetchone(), ("reserved",))
 
     def test_secondary_index_inserted_after_reservation_blocks_new_id(self):
         from license_registry import RegistryError
         self.registry.reserve(**self.kwargs)
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             con.execute("CREATE INDEX unexpected ON issuance(kid)")
         with self.assertRaisesRegex(RegistryError, "Unsafe registry schema"):
             self.registry.reserve(**{**self.kwargs,
                 "license_id": "regression-id-002",
                 "output": self.root / "another.fvslicense"})
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             self.assertEqual(con.execute("SELECT count(*) FROM issuance").fetchone(), (1,))
 
 
