@@ -26,10 +26,10 @@ class Anchors(HTMLParser):
 
 def git_blob_sha(s):
     b = s.encode("utf-8")
-    return hashlib.sha1(b"blob " + str(len(b)).encode() + b"\\0" + b).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(b)).encode() + b"\0" + b).hexdigest()
 
 def links_markdown(s):
-    return re.findall(r"\\[[^\\]]+\\]\\((https?://[^)]+)\\)", s)
+    return re.findall(r"\[[^\]]+\]\((https?://[^)]+)\)", s)
 
 def is_merchant(url):
     host = (urlsplit(url).hostname or "").lower()
@@ -55,7 +55,7 @@ class R50SourceQuarantine(unittest.TestCase):
     def test_no_merchant_url_in_proposed_reader_formats(self):
         for label, s in [("markdown", MARKDOWN), ("plaintext", PLAINTEXT), ("html", HTML)]:
             with self.subTest(label=label):
-                self.assertNotRegex(s.lower(), r"https?://(?:[a-z0-9-]+\\.)*(?:zen12|hypnosislive|inspire3)\\.com")
+                self.assertNotRegex(s.lower(), r"https?://(?:[a-z0-9-]+\.)*(?:zen12|hypnosislive|inspire3)\.com")
 
     def test_rendered_html_no_merchants_in_actual_anchors(self):
         reader = Anchors()
@@ -128,7 +128,7 @@ class R50SourceQuarantine(unittest.TestCase):
         self.assertNotIn("javascript:", HTML.lower())
 
     def test_plaintext_preserves_claim_skepticism(self):
-        for clause in ("twelve minutes", "seller", "not active", "NIH", "Commercial disclosure"):
+        for clause in ("twelve minutes", "zen12", "not active", "NIH", "Commercial disclosure"):
             self.assertIn(clause.lower(), PLAINTEXT.lower())
 
     def test_canonical_issue_five_also_remains_unmodified(self):
