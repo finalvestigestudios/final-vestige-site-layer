@@ -54,7 +54,12 @@ function rejectConcealedProtectedMarkup(html) {
     const hidden=hiddenAttr||ariaHidden||inlineHidden||tag==='template'||tag==='noscript'||closedDisclosure||closedDialog;
     const isMargin=tag==='span' && /\bclass\s*=\s*["'][^"']*\bfv-margin-strip__item\b/i.test(token);
     const isFocus=tag==='a' && /\bhref\s*=\s*["'](?:https:\/\/finalvestige\.com)?\/focus\/?["']/i.test(token);
-    if ((isMargin||isFocus) && (hidden||hiddenParent()))
+    // One original Focus art anchor is deliberately excluded from keyboard/AT
+    // (tabindex=-1, aria-hidden=true); preserve that exact decorative duplicate.
+    // This exception never licenses a hidden parent, changed URL or primary CTA.
+    const decorativeFocus=isFocus && /\bclass\s*=\s*["'][^"']*\bfv-focus-cta__art\b/i.test(token) &&
+      /\btabindex\s*=\s*["']-1["']/i.test(token) && ariaHidden && !hiddenAttr && !inlineHidden;
+    if ((isMargin||isFocus) && (hiddenParent() || (hidden && !decorativeFocus)))
       fail((isMargin?'Margins record':'Focus link')+' concealed by hidden/inert/closed ancestor');
     if(isMargin) margins++;
     if(isFocus) focus++;
