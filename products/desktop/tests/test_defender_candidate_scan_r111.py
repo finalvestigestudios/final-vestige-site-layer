@@ -27,6 +27,14 @@ CHECKSUMS = "c" * 64
 
 
 class DefenderR111(unittest.TestCase):
+    def setUp(self):
+        # Existing runner fakes model Defender, never the Windows shell lookup.
+        # R114's native locator has its own adversarial tests.
+        patcher = patch.object(av.trust, "require_system_powershell",
+                               return_value=Path("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
     def test_six_fixed_products_and_two_premium(self):
         self.assertEqual(len(av.gate.EXPECTED), 6)
         self.assertIn("GrantAuditStudioPro.exe", av.gate.EXPECTED)
@@ -163,13 +171,23 @@ class DefenderR111(unittest.TestCase):
             return ZERO
         av.health_check(Path("C:/Windows/Defender.exe"), runner=runner)
         self.assertEqual(saved[0][0][:3],
-                         ["powershell.exe", "-NoProfile", "-NonInteractive"])
+                         [str(Path("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe")), "-NoProfile", "-NonInteractive"])
         self.assertIn("Get-AuthenticodeSignature", saved[0][0][-1])
         self.assertIn("Get-MpComputerStatus", saved[0][0][-1])
         self.assertIn("RealTimeProtectionEnabled", saved[0][0][-1])
         self.assertIn("AntivirusSignatureAge", saved[0][0][-1])
         self.assertEqual(saved[0][1]["env"]["FVS_DEFENDER_SCANNER"],
                          str(Path("C:/Windows/Defender.exe")))
+
+    def test_untrusted_system_powershell_prevents_health_command(self):
+        calls = []
+        with patch.object(av.trust, "require_system_powershell",
+                          side_effect=av.trust.PowerShellHold("PRIVATE")):
+            with self.assertRaises(av.AVHold) as caught:
+                av.health_check(Path("scanner.exe"),
+                                runner=lambda *a, **kw: calls.append(a))
+        self.assertEqual(calls, [])
+        self.assertNotIn("PRIVATE", str(caught.exception))
 
     def test_health_nonzero_refused(self):
         with self.assertRaises(av.AVHold):
