@@ -130,7 +130,7 @@ class SanitizedFieldAlignment(unittest.TestCase):
         self.assertIn("custom_excerpt_missing_or_drifted", self.failures(p))
 
     def test_tampered_excerpt_fails(self):
-        p = copy.deepcopy(self.good); p["excerpt"] += " EXTRA"
+        p = copy.deepcopy(self.good); p["excerpt"]["raw"] += " EXTRA"
         self.assertIn("custom_excerpt_missing_or_drifted", self.failures(p))
 
     def test_short_body_fails(self):
@@ -252,7 +252,7 @@ class AdversarialRealSource(unittest.TestCase):
         self.expect_reject()
 
     def test_missing_hardstop_marker_fails(self):
-        path = self.root / "issues" / gate.ISSUES[0]
+        path = self.root / "issues" / gate.ISSUES[1]
         path.write_text(path.read_text().replace("DO NOT PUBLISH OR EMAIL", "READY TO SEND"))
         self.expect_reject()
 
