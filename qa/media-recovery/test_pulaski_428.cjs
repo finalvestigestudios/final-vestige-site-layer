@@ -46,7 +46,10 @@ const adversarial=[
  ['staging readiness bypassed',d=>{d.rows[1].release.stage_ready=true},'release_1'],
  ['WordPress upload bypassed',d=>{d.rows[0].release.wordpress_media_upload_authorized=true},'release_0'],
  ['WordPress post rewrite bypassed',d=>{d.rows[4].release.wordpress_post_edit_authorized=true},'release_4'],
- ['editorial overclaim omitted',d=>{d.rows[4].visual_integrity.review_required=false},'editorial_integrity_4']
+ ['editorial overclaim omitted',d=>{d.rows[4].visual_integrity.review_required=false},'editorial_integrity_4'],
+ ['falsified WordPress original bytes',d=>{d.rows[0].wordpress_media_proof.wordpress_original_storage_bytes=5000000},'wordpress_media_0'],
+ ['current WordPress image falsely upscaled',d=>{d.rows[0].wordpress_media_proof.no_upscale_maximum_for_present_wordpress_media_px.width=960},'wordpress_media_0'],
+ ['guessed Jetpack visitor bytes',d=>{d.rows[0].wordpress_media_proof.actual_guest_transfer_bytes=90157},'wordpress_media_0']
 ];
 for(const [name,change,expected] of adversarial){
  test(name,()=>{const mutated=copy(manifest);change(mutated);assert.ok(validate(mutated,frozen).includes(expected),name+' should fail closed on '+expected)});
