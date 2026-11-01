@@ -41,6 +41,10 @@ KNOWN_NONAUTHOR_ALIAS = {
     'food': 'e9cd7766dac59d47ab467d8945269b9146c2aef5',
 }
 CROSSWALK = 'preparedness/sources/crosswalk.json'
+# Existing original author instructions are documentation, not a ninth inventory.
+# Keep their exact Git blob pinned; never silently discard or rewrite them.
+FRAGMENT_README = 'preparedness/sources/fragments/README.md'
+FRAGMENT_README_GIT_BLOB = 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
 PENDING = 'pending-human-source-and-reading-scope-review'
 EXPECTED = dict(source_rows=224, unique_urls=186, shared_urls=30,
                 duplicate_id_groups=15, unread_placeholders=15)
@@ -154,9 +158,20 @@ def audit(root: Path, *, expected: dict | None = None,
     need(set(by_origin) == set(SOURCE_PATHS), 'source file coverage incomplete')
     fragment_dir = root / 'preparedness/sources/fragments'
     need(fragment_dir.is_dir() and not fragment_dir.is_symlink(), 'source fragments dir missing')
-    observed_files = {p.name for p in fragment_dir.iterdir() if p.is_file()}
-    need(observed_files == {Path(p).name for o, p in SOURCE_PATHS.items() if o != 'base'},
+    entries = list(fragment_dir.iterdir())
+    need(all(p.is_file() and not p.is_symlink() for p in entries),
+         'linked or non-file source fragment directory entry')
+    observed_files = {p.name for p in entries}
+    expected_json = {Path(p).name for o, p in SOURCE_PATHS.items() if o != 'base'}
+    # The original tracked README.md sits alongside the seven contributor JSON
+    # fragments. It does not contain source rows and must never be counted as
+    # an eighth fragment. Allow no other extras, including hidden/temp files.
+    allowed_with_documentation = expected_json | {Path(FRAGMENT_README).name}
+    need(observed_files in (expected_json, allowed_with_documentation),
          'unregistered fragment file present or source fragment missing')
+    if Path(FRAGMENT_README).name in observed_files:
+        need(git_blob(file_at(root, FRAGMENT_README)) == FRAGMENT_README_GIT_BLOB,
+             'original source fragment instructions drift')
 
     rows = []
     urls: dict[str, list[tuple[tuple[str, int, str], dict]]] = defaultdict(list)
