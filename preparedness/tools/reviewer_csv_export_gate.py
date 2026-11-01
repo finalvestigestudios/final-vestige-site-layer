@@ -113,3 +113,110 @@ GROUP = ('global_group_case_sha256', 'source_url', 'original_crosswalk_sha256',
 TABLES = {'claim_review.csv': CLAIM, 'source_scope_review.csv': SCOPE,
           'fallback_scope_review.csv': FALLBACK, 'global_shared_url_review.csv': GROUP}
 
+def build_review_csv_export(handoff, global_review, reading_batches, *, expected=EXPECTED):
+    """Produce content-addressed CSV worklists with strict cross-packet custody.
+
+    Machine success means only that the original evidence has reached the
+    private reviewer *desk*, not that any of it is true or medically safe.
+    """
+    need(type(expected) is tuple and len(expected) == 6 and
+         all(type(x) is int and x >= 0 for x in expected), 'invalid expected census')
+    hf = _frozen(handoff, 'SOURCE_AND_CLAIM_HUMAN_REVIEW_INTAKE_NOT_APPROVAL')
+    gf = _frozen(global_review, 'GLOBAL_SHARED_SOURCE_VARIANT_REVIEW_CUSTODY_NOT_APPROVAL')
+    rf = _frozen(reading_batches, 'LOSSLESS_HUMAN_REVIEW_BATCHES_NOT_APPROVAL')
+    need(handoff.get('parent_R34_fingerprint_sha256') == rf,
+         'handoff does not descend from the exact original R34 reading evidence')
+    cards = reading_batches.get('relationship_review_cards')
+    need(type(cards) is list and len(cards) == expected[3],
+         'missing original source-reading review cards')
+    original_index = {}
+    original_claims = {}
+    for card in cards:
+        need(type(card) is dict and card.get('review_state') == 'UNREVIEWED',
+             'original review card falsely approved')
+        rid = card.get('relationship_id_sha256')
+        need(_hex(rid) and rid not in original_index,
+             'duplicate original source-reading relationship')
+        original_index[rid] = card
+        original_cites = card.get('citation_review_items')
+        need(type(original_cites) is list and original_cites,
+             'original source card has no claim citations')
+        for item in original_cites:
+            need(type(item) is dict and item.get('review_state') ==
+                 'PENDING_INDEPENDENT_CLAIM_AND_SAFETY_REVIEW',
+                 'original claim not pending independent review')
+            claim_ref_sha = item.get('claim_ref_sha256')
+            cid = sha({'relationship_id_sha256':rid,'claim_ref_sha256':claim_ref_sha})
+            need(_hex(claim_ref_sha) and cid not in original_claims and
+                 item.get('claim_ref_sha256') == sha(item.get('claim_ref')) and
+                 type(item.get('original_context')) is str and
+                 item['claim_ref'].get('citation_context_sha256') ==
+                    hashlib.sha256(item['original_context'].encode('utf-8')).hexdigest(),
+                 'original claim citation context or original fingerprint altered')
+            original_claims[cid] = (rid, item)
+
+    need(global_review.get('parent_R35_fingerprint_sha256') == hf,
+         'global-source packet does not descend from exact cited-source handoff')
+    hcounts = handoff.get('counts')
+    need(type(hcounts) is dict and [hcounts.get(k) for k in
+         ('articles','tools','citations','relationships','base_fallback_relationships',
+          'shared_url_groups_unreviewed')] == list(expected),
+         'original article, claim, source or shared URL census drift')
+    gcounts = global_review.get('counts')
+    need(type(gcounts) is dict and gcounts.get('global_shared_url_groups') == expected[5],
+         'global source inventory census drift')
+    if expected == EXPECTED:
+        need(tuple(gcounts.get(k) for k in
+                   ('source_rows','unique_urls','global_shared_url_groups',
+                    'repeated_source_id_groups')) == (224, 186, 30, 15),
+             'original full source inventory was not preserved')
+    need(global_review.get('global_shared_url_groups_reviewed_by_human') == 0,
+         'unverified shared URLs marked human reviewed')
+    scopes = handoff.get('source_scope_review_forms')
+    claims = handoff.get('claim_occurrence_review_forms')
+    fallbacks = handoff.get('base_fallback_review_forms')
+    groups = global_review.get('globally_unreviewed_shared_url_cards')
+    need(all(type(x) is list for x in (scopes,claims,fallbacks,groups)) and
+         (len(scopes),len(claims),len(fallbacks),len(groups)) ==
+         (expected[3],expected[2],expected[4],expected[5]),
+         'missing, extra or incomplete reviewer worksheets')
+    source_index, url_index = {}, defaultdict(list)
+    source_rows = []
+    for s in scopes:
+        need(type(s) is dict and s.get('review_state') == 'NOT_STARTED',
+             'source scope falsely reviewed')
+        rid = s.get('relationship_id_sha256')
+        record = s.get('unabridged_original_source_record')
+        use = s.get('unabridged_article_specific_source_use')
+        need(_hex(rid) and rid not in source_index and type(record) is dict and
+             type(use) is str and bool(use.strip()) and
+             s.get('source_record_sha256') == sha(record) and
+             s.get('source_use_sha256') == hashlib.sha256(use.encode('utf-8')).hexdigest() and
+             record.get('id') == s.get('source_id') and
+             record.get('url') == s.get('source_url') and
+             record.get('_origin') == s.get('source_origin') and
+             type(s.get('source_url')) is str and s['source_url'].startswith('https://'),
+             'source record, scope, origin or digest lost')
+        need(_hex(s.get('source_case_id_sha256')) and
+             s['source_case_id_sha256'] == sha({'relationship_id_sha256':rid,
+                                  'review_type':'ORIGINAL_SOURCE_READING_SCOPE'}),
+             'source review task identity changed')
+        for key in ('human_link_access_date','human_source_reading_scope_assessment',
+                    'human_publisher_authority_assessment','human_discrepancy_or_correction_notes'):
+            need(s.get(key) is None, 'source review field already populated: '+key)
+        original = original_index.get(rid)
+        need(original is not None and original.get('slug') == s.get('slug') and
+             original.get('source_id') == s.get('source_id') and
+             original.get('article_origin') == s.get('article_origin') and
+             original.get('source_origin') == s.get('source_origin') and
+             original.get('source_url') == s.get('source_url') and
+             canonical(original.get('original_source_record_as_selected')) == canonical(record) and
+             original.get('full_original_article_source_use') == use,
+             'source reading evidence differs from original R34 card')
+        source_index[rid] = s
+        url_index[s['source_url']].append(rid)
+        source_rows.append(dict(zip(SCOPE, (
+            s['source_case_id_sha256'],rid,s['slug'],s['source_id'],
+            s['article_origin'],s['source_origin'],s['source_url'],record,use,
+            s['source_record_sha256'],s['source_use_sha256'],
+            s['source_impact_claim_occurrences'],'NOT_STARTED',None,None,None,None))))
