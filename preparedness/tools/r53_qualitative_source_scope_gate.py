@@ -111,7 +111,10 @@ def audit(lib, triage, safety, *, expected=DEFAULT):
 
     # Recompute the R13 triage from the actual original article bodies; a
     # self-repinned altered report must not substitute for original visible text.
-    actual = r13.build_triage(lib, expected_items=items)
+    try:
+        actual = r13.build_triage(lib, expected_items=items)
+    except (r13.TriageFailure, ValueError, TypeError, KeyError, AttributeError) as exc:
+        raise QualitativeHold("original visible claim triage failed closed") from exc
     need(triage == actual, "R13 visible action work-order evidence drift")
     need(triage.get("triaged_blocks") == flags
          and triage.get("without_same_block_citation") == uncited
