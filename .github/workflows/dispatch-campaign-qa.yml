@@ -15,8 +15,25 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Checkout exact PR SHA
+      - name: Checkout exact PR head SHA
         uses: actions/checkout@v4
+        with:
+          # actions/checkout defaults to the synthetic PR merge commit on pull_request.
+          # Explicitly test the submitted source identity, not an unlabeled merge.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Assert exact head was checked out
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          actual="$(git rev-parse HEAD)"
+          if [ "$actual" != "$EXPECTED_SHA" ]; then
+            echo "::error::Checkout mismatch: expected $EXPECTED_SHA, actual $actual"
+            exit 1
+          fi
+          echo "EXACT_PR_HEAD_VERIFIED=$actual"
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
