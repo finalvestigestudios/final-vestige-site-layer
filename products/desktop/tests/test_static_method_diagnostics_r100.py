@@ -121,6 +121,13 @@ class StaticMethodDiagnosticsR100(unittest.TestCase):
         original = child._discovery_summary({"test_safe", "test_missing"}, {"test_safe"})
         raw = (child.DIAG_PREFIX + json.dumps(original, sort_keys=True, separators=(",", ":")) + "\n").encode("ascii")
         self.assertIsNotNone(gate._safe_child_diagnostic(raw))
+        # Windows uses CRLF stdout: accept only one terminal line ending,
+        # never internal/multiple lines or a stray CR that could leak data.
+        windows = raw[:-1] + b"\r\n"
+        self.assertIsNotNone(gate._safe_child_diagnostic(windows))
+        self.assertIsNone(gate._safe_child_diagnostic(windows + b"PRIVATE"))
+        self.assertIsNone(gate._safe_child_diagnostic(raw[:-1] + b"\r\r\n"))
+        self.assertIsNone(gate._safe_child_diagnostic(raw[:-1] + b"\r"))
         self.assertNotIn("methods", original)
 
     def test_many_failures_are_sorted_and_limited_to_ten(self):
