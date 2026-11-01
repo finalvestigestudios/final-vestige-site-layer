@@ -19,6 +19,23 @@ def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
             info.st_mtime_ns, info.st_ctime_ns)
 
 
+def _same_path_descriptor_signature(path_info: os.stat_result,
+                                    descriptor_info: os.stat_result,
+                                    *, windows: bool | None = None) -> bool:
+    """Compare two API views without treating Windows ctime as portable identity.
+
+    On Windows, pathname lstat and descriptor fstat can disagree about creation
+    time for the same file. All other identity fields must match across views.
+    Each view's *full* signature, including ctime, is checked independently
+    before/after reading; this never ignores an observed mutation.
+    """
+    if windows is None:
+        windows = os.name == "nt"
+    path_sig = _signature(path_info)
+    descriptor_sig = _signature(descriptor_info)
+    return path_sig[:-1] == descriptor_sig[:-1] if windows else path_sig == descriptor_sig
+
+
 def _metadata(path: Path) -> os.stat_result:
     try:
         info = path.lstat()
@@ -58,7 +75,7 @@ def read_csv_snapshot(path: str | Path, maximum: int) -> bytes:
             raise
         with stream:
             opened = os.fstat(stream.fileno())
-            if not stat.S_ISREG(opened.st_mode) or _signature(opened) != _signature(before):
+            if not stat.S_ISREG(opened.st_mode) or not _same_path_descriptor_signature(before, opened):
                 raise ValueError("CSV input changed while opening")
             chunks: list[bytes] = []
             total = 0
@@ -75,6 +92,8 @@ def read_csv_snapshot(path: str | Path, maximum: int) -> bytes:
                 raise ValueError("CSV input changed while reading")
     except OSError:
         raise ValueError("Cannot read CSV input") from None
-    if _signature(_metadata(source)) != _signature(opened):
+    after_path = _metadata(source)
+    if (_signature(after_path) != _signature(before)
+            or not _same_path_descriptor_signature(after_path, opened)):
         raise ValueError("CSV input path changed during reading")
     return b"".join(chunks)
