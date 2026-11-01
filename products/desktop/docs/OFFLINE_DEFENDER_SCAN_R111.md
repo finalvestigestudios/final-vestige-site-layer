@@ -34,7 +34,7 @@ python -m unittest discover -s products/desktop/tests -p 'test_defender_candidat
 python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py'
 ```
 
-The **25 R111 adversarial/synthetic tests** exercise OS provenance, inactive or missing scanner refusal, command safety, failure/timeout handling, checksum drift, independence of R9 pinning, exactly-six processing and release flags. Both normal and `-OO` modes are mandatory in both existing source CI jobs. The `ci_artifact_policy.py` two-bundle upload allowlist remains unchanged; no executables, customer inputs or private AV records may be uploaded.
+The **26 R111 adversarial/synthetic tests** exercise OS provenance, inactive or missing scanner refusal, command safety, failure/timeout handling, checksum drift, independence of R9 pinning, exactly-six processing and release flags. Both normal and `-OO` modes are mandatory in both existing source CI jobs. The `ci_artifact_policy.py` two-bundle upload allowlist remains unchanged; no executables, customer inputs or private AV records may be uploaded.
 
 A **zero exit from Defender is NOT proof of no malware**, a multi-engine AV/EDR clearance, an independent signature, a completed Windows 11 accessibility review or a publishing decision. Definitions and behavior depend on the trusted review machine. A compromised workstation or an adversary who can replace both candidate and its independently retained digests defeats this custody model. The R9 report's original `malware_scan_verified=false` intentionally stays unchanged; this is a *separate* operator evidence lane. Native execution of this scanner is **pending**, not inferred from passing synthetic CI tests.
 
