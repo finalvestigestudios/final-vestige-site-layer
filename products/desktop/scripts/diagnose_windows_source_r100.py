@@ -11,8 +11,9 @@ from pathlib import Path
 
 from scripts import offline_source_gate as gate
 
-PHASES = ("root_paths", "source_inventory", "test_inventory",
-          "source_metadata", "inventory", "normal_tests",
+PHASES = ("root_paths", "checked_test_dir", "scan_test_tree",
+          "fingerprint_test", "fingerprint_engine", "source_inventory",
+          "test_inventory", "source_metadata", "inventory", "normal_tests",
           "optimized_tests", "engine_smokes")
 
 
@@ -47,6 +48,17 @@ def probe(root: Path) -> dict[str, bool]:
 
     ok, _ = _quiet_stage("root_paths", check_paths)
     results["root_paths"] = ok
+    tests_dir = root / "products" / "desktop" / "tests"
+    checks = (
+        ("checked_test_dir", lambda: gate.source_gate._checked_directory(tests_dir, root)),
+        ("scan_test_tree", lambda: gate.source_gate._package_python_sources(tests_dir)),
+        ("fingerprint_test", lambda: gate.source_gate._fingerprint(tests_dir / "test_engine.py", root)),
+        ("fingerprint_engine", lambda: gate.source_gate._fingerprint(
+            root / "products" / "desktop" / "fvs_suite" / "engine.py", root)),
+    )
+    for label, operation in checks:
+        passed, _ = _quiet_stage(label, operation)
+        results[label] = passed
     ok, source = _quiet_stage(
         "source_inventory", lambda: gate.source_gate.source_inventory(root))
     results["source_inventory"] = ok
