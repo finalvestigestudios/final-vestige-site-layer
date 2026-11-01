@@ -120,6 +120,7 @@
          link.getAttribute('href')===`#${card.id}`;
     })&&seen.size===6;
   };
+
   // Verify a single Research Desk root before revealing shortcuts. Both pages
   // remain useful independently. No external requests or altered Desk files.
   const verifyDesk=()=>{
