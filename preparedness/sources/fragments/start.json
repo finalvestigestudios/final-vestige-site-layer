@@ -368,6 +368,20 @@
       "human_link_check": false,
       "supports": "English two-page sheet (pages 1-2 of a 34-page file) read in full as extracted text: make a plan for refrigerating medicines and powering medical devices; talk to your doctor to plan for medical devices and medication storage; generators, camp stoves and charcoal grills outdoors at least 20 feet from building openings such as windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; CO and smoke alarms with battery backup; refrigerator keeps food cold about 4 hours, full freezer about 48 hours; throw away refrigerated food above 40 F for more than 4 hours; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'",
       "notes": "Newer than the 2020 FEMA guide and the Ready.gov power-outages web page, which say to discard refrigerated medication after a day and use a two-hour food rule. Pages 3-34 of the file yielded no extractable text (likely translations as images) and were not read. Downloaded directly with curl and converted with pdftotext because Firecrawl had no credits."
+    },
+    {
+      "id": "start-fsis-emergency-food",
+      "title": "Keeping Food Safe During an Emergency",
+      "publisher": "USDA Food Safety and Inspection Service",
+      "kind": "regulator",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-food-safe-during",
+      "published": null,
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "Refrigerator keeps food safely cold about 4 hours if unopened; refrigerated food should be safe as long as power is out no more than 4 hours; discard perishable food (meat, poultry, fish, eggs, leftovers) that has been above 40 F for 2 hours; coolers and frozen gel packs help if the outage will exceed 4 hours.",
+      "notes": "Search excerpt read 2026-11-01 and the full page text fetched by verify_sources.py on the same day (see audit/start-here/ledger.json for size and hash). Used only to separate the two conditions behind the 4-hour and 2-hour figures. The page shows no date in the text extracted."
     }
   ]
 }

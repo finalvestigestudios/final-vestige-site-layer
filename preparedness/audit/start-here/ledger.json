@@ -1,0 +1,1274 @@
+{
+  "generated": "2026-11-01T20:34:39+00:00",
+  "tool": "verify_sources.py (Playwright/Edge + pdftotext)",
+  "sources": [
+    {
+      "source_id": "start-ready-plan",
+      "register_title": "Make A Plan",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-09-01",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/plan",
+        "fetched_at": "2026-11-01T20:33:36+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/plan",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Make A Plan | Ready.gov",
+        "error": null,
+        "text_chars": 16630,
+        "text_sha256_normalized": "51239289b1e564c454908c79a8d548edb77e4b7f1c1c082c88747b21a33756ae",
+        "page_stated_dates": [
+          "Last Updated 09/01/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C01": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C02": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C01",
+        "C02"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "ready-are-you-ready",
+      "register_title": "Are You Ready? An In-Depth Guide to Citizen Preparedness (P-2064, September 2020)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2020-09",
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+        "fetched_at": "2026-11-01T20:33:39+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+        "content_type": "application/pdf",
+        "title": "ready-are-you-ready.pdf",
+        "error": null,
+        "text_chars": 78846,
+        "text_sha256_normalized": "4eea4480cb17ccfa1705c26cda578b67ea93c310e27b8888c1b9e78a4923efb4",
+        "page_stated_dates": [],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C03": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C04": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C05": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C10": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C15": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C21": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C21b": {
+          "anchors_found": null,
+          "anchors_missing": [],
+          "forbidden_found": [],
+          "note": "no automated check possible; see manual_evidence"
+        },
+        "C30": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C36": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C37": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C03",
+        "C04",
+        "C05",
+        "C10",
+        "C15",
+        "C21",
+        "C21b",
+        "C30",
+        "C36",
+        "C37"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-disability-plan",
+      "register_title": "Making an Emergency Plan (Emergency Preparedness and Disability Inclusion)",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-09-20",
+      "register_updated": "2024-08-29",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/make-a-plan.html",
+        "fetched_at": "2026-11-01T20:33:40+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/make-a-plan.html",
+        "content_type": "text/html",
+        "title": "Making an Emergency Plan | Emergency Preparedness and Disability Inclusion | CDC",
+        "error": null,
+        "text_chars": 11991,
+        "text_sha256_normalized": "bbfa6a3da9d59ae3e08b851a03a0591292a03058d716d6ab6fb244f73688ab0e",
+        "page_stated_dates": [
+          "Published September 20, 2024",
+          "Reviewed September 11, 2024",
+          "Updated August 29, 2024"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {},
+      "claims_using_source": [],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-evacuation",
+      "register_title": "Evacuation",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-03-20",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/evacuation",
+        "fetched_at": "2026-11-01T20:33:43+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/evacuation",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Evacuation | Ready.gov",
+        "error": null,
+        "text_chars": 20493,
+        "text_sha256_normalized": "078d64b8504e46e0f82481d43c490bed55d781427644b2364cbf4bcba612e2c9",
+        "page_stated_dates": [
+          "Last Updated 03/20/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C40": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C41": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C42": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-alerts",
+      "register_title": "Emergency Alerts",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-05-27",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/alerts",
+        "fetched_at": "2026-11-01T20:33:45+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/alerts",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Emergency Alerts | Ready.gov",
+        "error": null,
+        "text_chars": 21042,
+        "text_sha256_normalized": "ddbc53d57ffa125c21af83c12a75ca2e0d0792eb060d0e69e7b392384c7a02f1",
+        "page_stated_dates": [
+          "Last Updated 05/27/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C06": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C07": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C06",
+        "C07"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-kit",
+      "register_title": "Build A Kit",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-07-01",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/kit",
+        "fetched_at": "2026-11-01T20:33:47+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/kit",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Build A Kit | Ready.gov",
+        "error": null,
+        "text_chars": 18673,
+        "text_sha256_normalized": "6c225b331968c826e428647de304adfb285a0f7f9d750341ce2e0ed82b82eeab",
+        "page_stated_dates": [
+          "Last Updated 07/01/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C11": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C22": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C36b": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C39": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C11",
+        "C22",
+        "C36b",
+        "C39"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-disability",
+      "register_title": "People with Disabilities",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-09-09",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/people-disabilities",
+        "fetched_at": "2026-11-01T20:33:49+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/people-disabilities",
+        "content_type": "text/html; charset=utf-8",
+        "title": "People with Disabilities | Ready.gov",
+        "error": null,
+        "text_chars": 26014,
+        "text_sha256_normalized": "e0531497867a37b8bddae33a8694de8aaf1ce314eed5cdf3a948e6d545ddc5fb",
+        "page_stated_dates": [
+          "Last Updated 09/09/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C13": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C32": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C49": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C67": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C68": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C13",
+        "C32",
+        "C49",
+        "C67",
+        "C68"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-pyh-connected",
+      "register_title": "Stay Connected (Prepare Your Health)",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-04-18",
+      "register_updated": "2024-04-18",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/prepare-your-health/plan-ahead/stay-connected.html",
+        "fetched_at": "2026-11-01T20:33:51+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/prepare-your-health/plan-ahead/stay-connected.html",
+        "content_type": "text/html",
+        "title": "Stay Connected | Prepare Your Health | CDC",
+        "error": null,
+        "text_chars": 9205,
+        "text_sha256_normalized": "c1122d3a34cff1091bbcbbb78fc6d664fd2ecedbecd2dcf6f3961fdca44ff32d",
+        "page_stated_dates": [
+          "Published April 18, 2024",
+          "Reviewed April 18, 2024",
+          "Updated April 18, 2024"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C08": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C08"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "cdc-water-store",
+      "register_title": "How to Create an Emergency Water Supply",
+      "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-09-16",
+      "register_updated": "2025-06-27",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html",
+        "fetched_at": "2026-11-01T20:33:54+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html",
+        "content_type": "text/html",
+        "title": "How to Create an Emergency Water Supply | Water, Sanitation, and Hygiene (WASH)-related Emergencies and Outbreaks | CDC",
+        "error": null,
+        "text_chars": 16022,
+        "text_sha256_normalized": "50f9b9515e7b23e6cc8f2699073121b0c3a6ed94ae729b2c83460eb32aee5032",
+        "page_stated_dates": [
+          "Published September 16, 2024",
+          "Reviewed June 27, 2025",
+          "Updated June 27, 2025"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C20": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C20"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-redcross-older-adults",
+      "register_title": "Older Adults Emergency Preparedness",
+      "publisher": "American Red Cross",
+      "kind": "nonprofit",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/older-adults.html",
+        "fetched_at": "2026-11-01T20:33:56+00:00",
+        "http_status": 200,
+        "final_url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/older-adults.html",
+        "content_type": "text/html;charset=utf-8",
+        "title": "Older Adults Emergency Preparedness | American Red Cross",
+        "error": null,
+        "text_chars": 30938,
+        "text_sha256_normalized": "fca7cc81588ae55f7b58d89d1f5873f6b28a725256faf1e322762c80169f5afd",
+        "page_stated_dates": [],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C32d": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C65": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C32d",
+        "C65"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-financial",
+      "register_title": "Financial Preparedness",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-03-13",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/financial-preparedness",
+        "fetched_at": "2026-11-01T20:33:58+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/financial-preparedness",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Financial Preparedness | Ready.gov",
+        "error": null,
+        "text_chars": 20659,
+        "text_sha256_normalized": "0018aa7f6be42bdbfe91c786c4897b8bd056e80e8c946741522e28e22683b2fd",
+        "page_stated_dates": [
+          "Last Updated 03/13/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C09": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C64": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C69": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C09",
+        "C64",
+        "C69"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-low-cost",
+      "register_title": "Low and No Cost Preparedness (graphics collection)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-07-02",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/collection/low-and-no-cost-preparedness",
+        "fetched_at": "2026-11-01T20:34:00+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/collection/low-and-no-cost-preparedness",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Low and No Cost Preparedness | Ready.gov",
+        "error": null,
+        "text_chars": 17286,
+        "text_sha256_normalized": "403579a2c3b9c443eb7c0ba60a7ff14668ee2dcf71b2b2e4ac82979e7527d46f",
+        "page_stated_dates": [
+          "Last Updated 07/02/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C38": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C38"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-disability-kit",
+      "register_title": "Building an Emergency Kit (Emergency Preparedness and Disability Inclusion)",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-09-20",
+      "register_updated": "2024-08-29",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/build-a-kit.html",
+        "fetched_at": "2026-11-01T20:34:02+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/build-a-kit.html",
+        "content_type": "text/html",
+        "title": "Building an Emergency Kit | Emergency Preparedness and Disability Inclusion | CDC",
+        "error": null,
+        "text_chars": 10738,
+        "text_sha256_normalized": "38c650420e0831dc748c3af563810d0379acb737334184e6c88a411a6ee93355",
+        "page_stated_dates": [
+          "Published September 20, 2024",
+          "Reviewed September 11, 2024",
+          "Updated August 29, 2024"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C12": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C32b": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C12",
+        "C32b"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-family-kit",
+      "register_title": "Emergency Kit Checklist: Pregnant Women, Infants, and Children",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2026-04-30",
+      "register_updated": "2026-04-20",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/children-and-school-preparedness/resources/emergency-kit-checklist-pregnant-women-infants-and-children.html",
+        "fetched_at": "2026-11-01T20:34:05+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/children-and-school-preparedness/resources/emergency-kit-checklist-pregnant-women-infants-and-children.html",
+        "content_type": "text/html",
+        "title": "Emergency Kit Checklist: Pregnant Women, Infants, and Children | Children & School Preparedness | CDC",
+        "error": null,
+        "text_chars": 14374,
+        "text_sha256_normalized": "59377011b63ecc1e7f3754849484f256682932ad8bad3a878e1f4a91d3b188bc",
+        "page_stated_dates": [
+          "Published April 30, 2026",
+          "Reviewed April 30, 2026",
+          "Updated April 20, 2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C32c": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C46": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C47": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C32c",
+        "C46",
+        "C47"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-food",
+      "register_title": "Food (emergency food supplies)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-03-12",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/food",
+        "fetched_at": "2026-11-01T20:34:08+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/food",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Food | Ready.gov",
+        "error": null,
+        "text_chars": 18453,
+        "text_sha256_normalized": "45a5b93bda0874efccdce08f76167ed00b94d1e07b8cbd059f1cbd570be92215",
+        "page_stated_dates": [
+          "Last Updated 03/12/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C23": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C24": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C35": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C23",
+        "C24",
+        "C35"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-pyh-prescriptions",
+      "register_title": "Prescriptions (Prepare Your Health)",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-04-18",
+      "register_updated": "2024-04-18",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/prepare-your-health/take-action/prescriptions.html",
+        "fetched_at": "2026-11-01T20:34:10+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/prepare-your-health/take-action/prescriptions.html",
+        "content_type": "text/html",
+        "title": "Prescriptions | Prepare Your Health | CDC",
+        "error": null,
+        "text_chars": 8821,
+        "text_sha256_normalized": "2c9c2ee9a0696265dbf2131c621c818ce4df040426f1782d308c02cd1d8f3c68",
+        "page_stated_dates": [
+          "Published April 18, 2024",
+          "Reviewed April 18, 2024",
+          "Updated April 18, 2024"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {},
+      "claims_using_source": [],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-supply-list",
+      "register_title": "Ready Emergency Supply List (PDF)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/sites/default/files/2024-05/ready_supply-kit-checklist.pdf",
+        "fetched_at": "2026-11-01T20:34:13+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/sites/default/files/2024-05/ready_supply-kit-checklist.pdf",
+        "content_type": "application/pdf",
+        "title": "start-ready-supply-list.pdf",
+        "error": null,
+        "text_chars": 2548,
+        "text_sha256_normalized": "50376a23203b4dbc773acf7cb646e4178a22f3414aedbe5153305ad195095655",
+        "page_stated_dates": [],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {},
+      "claims_using_source": [],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-power",
+      "register_title": "Power Outages",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-06-04",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/power-outages",
+        "fetched_at": "2026-11-01T20:34:13+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/power-outages",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Power Outages | Ready.gov",
+        "error": null,
+        "text_chars": 19791,
+        "text_sha256_normalized": "7246be7adc9668590ff00293860fd042791bf87e8f9f194501959031f551050e",
+        "page_stated_dates": [
+          "Last Updated 06/04/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C25": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C26": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C31": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C33": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C25",
+        "C26",
+        "C31",
+        "C33"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-fema-power-sheet",
+      "register_title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-30",
+      "register_published": "2023-12",
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+        "fetched_at": "2026-11-01T20:34:15+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+        "content_type": "application/pdf",
+        "title": "start-fema-power-sheet.pdf",
+        "error": null,
+        "text_chars": 5033,
+        "text_sha256_normalized": "262fb44713cf4b88260400636ba7aa32807cb11d1ba9462d0a0e7e91aaa83cf1",
+        "page_stated_dates": [],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C27": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C29": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C34": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C27",
+        "C29",
+        "C34"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-fsis-emergency-food",
+      "register_title": "Keeping Food Safe During an Emergency",
+      "publisher": "USDA Food Safety and Inspection Service",
+      "kind": "regulator",
+      "register_verified_on": "2026-11-01",
+      "register_published": null,
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-food-safe-during",
+        "fetched_at": "2026-11-01T20:34:15+00:00",
+        "http_status": 200,
+        "final_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-food-safe-during",
+        "content_type": "text/html; charset=UTF-8",
+        "title": "Keeping Food Safe During an Emergency | Food Safety and Inspection Service",
+        "error": null,
+        "text_chars": 150781,
+        "text_sha256_normalized": "37e87f799d75d3b7cf98955e907f1d3e4826b56f7ddb6f299a916ef2c73671a7",
+        "page_stated_dates": [
+          "Last Updated Jul 30, 2013"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C28": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C28"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-infant-checklist",
+      "register_title": "Emergency List for Families With Infants and Young Children",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-05-15",
+      "register_updated": "2026-08-03",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/infant-feeding-emergencies-toolkit/php/checklist.html",
+        "fetched_at": "2026-11-01T20:34:17+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/infant-feeding-emergencies-toolkit/php/checklist.html",
+        "content_type": "text/html",
+        "title": "Emergency List for Families With Infants and Young Children | Infant and Child Feeding in Emergencies | CDC",
+        "error": null,
+        "text_chars": 13279,
+        "text_sha256_normalized": "e19c76272fc74d8a5bc05041c2d33e19ec83d201a945016a42559646c90bc19b",
+        "page_stated_dates": [
+          "Published May 15, 2024",
+          "Reviewed February 15, 2024",
+          "Updated August 3, 2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C43": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C44": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C45": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C43",
+        "C44",
+        "C45"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-car",
+      "register_title": "Car Safety",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-03-12",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/car",
+        "fetched_at": "2026-11-01T20:34:20+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/car",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Car Safety | Ready.gov",
+        "error": null,
+        "text_chars": 16629,
+        "text_sha256_normalized": "09f248ea8a80284ae6d045666aeea97db08d75d9f576376767374004fa0beff9",
+        "page_stated_dates": [
+          "Last Updated 03/12/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {},
+      "claims_using_source": [],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-hud-multifamily-template",
+      "register_title": "Multifamily Disaster Preparedness Plan Template",
+      "publisher": "U.S. Department of Housing and Urban Development (HUD Exchange)",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2026",
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://files.hudexchange.info/resources/documents/Multifamily-Disaster-Preparedness-Plan-Template.pdf",
+        "fetched_at": "2026-11-01T20:34:22+00:00",
+        "http_status": 200,
+        "final_url": "https://files.hudexchange.info/resources/documents/Multifamily-Disaster-Preparedness-Plan-Template.pdf",
+        "content_type": "application/pdf",
+        "title": "start-hud-multifamily-template.pdf",
+        "error": null,
+        "text_chars": 101478,
+        "text_sha256_normalized": "9676bf105bf2ea951c9bc29a6059609d2214ab04ad1ef6005f4930b887a7718e",
+        "page_stated_dates": [],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C62": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C62"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "ready-pets",
+      "register_title": "Prepare Your Pets for Disasters",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-03-20",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/pets",
+        "fetched_at": "2026-11-01T20:34:24+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/pets",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Prepare Your Pets for Disasters | Ready.gov",
+        "error": null,
+        "text_chars": 19903,
+        "text_sha256_normalized": "35e2a8360c6b75897c0e7bdb498c53d671206bd025464125b9b53f6379cd6bbd",
+        "page_stated_dates": [
+          "Last Updated 03/20/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C48": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C48"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-cdc-disability-evacuate",
+      "register_title": "Sheltering and Evacuating (Emergency Preparedness and Disability Inclusion)",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2024-09-20",
+      "register_updated": "2024-08-29",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/sheltering-and-evacuating.html",
+        "fetched_at": "2026-11-01T20:34:26+00:00",
+        "http_status": 200,
+        "final_url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/sheltering-and-evacuating.html",
+        "content_type": "text/html",
+        "title": "Sheltering and Evacuating | Emergency Preparedness and Disability Inclusion | CDC",
+        "error": null,
+        "text_chars": 11359,
+        "text_sha256_normalized": "71b274ced6b01cac954d6e52d9f4a11198acf00a91abaf2e2cee248e73ad343f",
+        "page_stated_dates": [
+          "Published September 20, 2024",
+          "Reviewed September 11, 2024",
+          "Updated August 29, 2024"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C50": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C50"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-ready-older-adults",
+      "register_title": "Older Adults",
+      "publisher": "FEMA / Ready.gov",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-03-26",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.ready.gov/older-adults",
+        "fetched_at": "2026-11-01T20:34:28+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ready.gov/older-adults",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Older Adults | Ready.gov",
+        "error": null,
+        "text_chars": 19732,
+        "text_sha256_normalized": "84e7b4668d6cc6221a0248ab00cdd4fb9a93810bb2098b92ce04a04970ac029b",
+        "page_stated_dates": [
+          "Last Updated 03/26/2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C70": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C70"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-acl-emergency",
+      "register_title": "Emergency Preparedness (older adults and people with disabilities)",
+      "publisher": "HHS Administration for Community Living",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-08-27",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://acl.gov/emergencypreparedness",
+        "fetched_at": "2026-11-01T20:34:31+00:00",
+        "http_status": 200,
+        "final_url": "https://acl.gov/emergencypreparedness",
+        "content_type": "text/html; charset=UTF-8",
+        "title": "Emergency Preparedness | ACL Administration for Community Living",
+        "error": null,
+        "text_chars": 30868,
+        "text_sha256_normalized": "89442867ea643937d8f5a09c56376eb07ed269030e8480eeeb5b11ccbf1c8336",
+        "page_stated_dates": [],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C51": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C66": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C51",
+        "C66"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-usfa-high-rise",
+      "register_title": "Protecting People Who Live or Work in High-Rises",
+      "publisher": "U.S. Fire Administration (FEMA)",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": "2022-01-12",
+      "register_updated": null,
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+        "fetched_at": "2026-11-01T20:34:34+00:00",
+        "http_status": 200,
+        "final_url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+        "content_type": "text/html",
+        "title": "Protecting people who live or work in high-rises",
+        "error": null,
+        "text_chars": 10415,
+        "text_sha256_normalized": "6ac63fd53c5c049ba3e656500e567d60c8362963dbb97466fef22b7cf5d5991f",
+        "page_stated_dates": [
+          "Posted Jan. 12, 2022"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C60": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        },
+        "C61": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C60",
+        "C61"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    },
+    {
+      "source_id": "start-fema-housing",
+      "register_title": "Assistance for Housing and Other Needs",
+      "publisher": "FEMA",
+      "kind": "regulator",
+      "register_verified_on": "2026-10-29",
+      "register_published": null,
+      "register_updated": "2026-07-29",
+      "human_link_check": false,
+      "automated": {
+        "requested_url": "https://www.fema.gov/assistance/individual/housing",
+        "fetched_at": "2026-11-01T20:34:36+00:00",
+        "http_status": 200,
+        "final_url": "https://www.fema.gov/assistance/individual/housing",
+        "content_type": "text/html; charset=utf-8",
+        "title": "Assistance for Housing and Other Needs | FEMA.gov",
+        "error": null,
+        "text_chars": 52763,
+        "text_sha256_normalized": "055ea73ae66f2fbf9cafb4a2f80919e7029fcf169980985044750e627c5c3090",
+        "page_stated_dates": [
+          "Last updated July 29, 2026"
+        ],
+        "resolves": true,
+        "redirected": false
+      },
+      "claim_checks": {
+        "C63": {
+          "anchors_found": true,
+          "anchors_missing": [],
+          "forbidden_found": []
+        }
+      },
+      "claims_using_source": [
+        "C63"
+      ],
+      "coverage_note": "Automated: URL fetched and anchor phrases located. This is NOT a human link check and does not prove the whole document was read or that an article paraphrase is faithful."
+    }
+  ]
+}

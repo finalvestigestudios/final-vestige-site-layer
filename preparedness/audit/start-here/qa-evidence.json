@@ -1,0 +1,1856 @@
+{
+ "summary": {
+  "browser": "Microsoft Edge 156.0.4314.50 via Playwright (headless)",
+  "widths": [
+   320,
+   360,
+   390,
+   428,
+   768,
+   1024,
+   1440,
+   1920
+  ],
+  "checks": 366,
+  "failed": 0,
+  "not_covered": [
+   "axe-core (not installed)",
+   "screen-reader testing with a person or NVDA/VoiceOver",
+   "installed WordPress rendering",
+   "real printer output",
+   "text-spacing and forced-colors modes"
+  ]
+ },
+ "results": [
+  {
+   "check": "no-horizontal-overflow hub@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@320",
+   "pass": true,
+   "detail": "225 ms"
+  },
+  {
+   "check": "a11y-names hub@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings hub@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast hub@320",
+   "pass": true,
+   "detail": "0 low-contrast of 77: []"
+  },
+  {
+   "check": "no-horizontal-overflow hub@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@360",
+   "pass": true,
+   "detail": "208 ms"
+  },
+  {
+   "check": "no-horizontal-overflow hub@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@390",
+   "pass": true,
+   "detail": "215 ms"
+  },
+  {
+   "check": "no-horizontal-overflow hub@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@428",
+   "pass": true,
+   "detail": "210 ms"
+  },
+  {
+   "check": "no-horizontal-overflow hub@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@768",
+   "pass": true,
+   "detail": "220 ms"
+  },
+  {
+   "check": "no-horizontal-overflow hub@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@1024",
+   "pass": true,
+   "detail": "211 ms"
+  },
+  {
+   "check": "no-horizontal-overflow hub@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@1440",
+   "pass": true,
+   "detail": "216 ms"
+  },
+  {
+   "check": "a11y-names hub@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings hub@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast hub@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 77: []"
+  },
+  {
+   "check": "no-horizontal-overflow hub@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors hub@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network hub@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable hub@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time hub@1920",
+   "pass": true,
+   "detail": "211 ms"
+  },
+  {
+   "check": "no-horizontal-overflow plan@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@320",
+   "pass": true,
+   "detail": "317 ms"
+  },
+  {
+   "check": "a11y-names plan@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings plan@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast plan@320",
+   "pass": true,
+   "detail": "0 low-contrast of 263: []"
+  },
+  {
+   "check": "no-horizontal-overflow plan@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@360",
+   "pass": true,
+   "detail": "246 ms"
+  },
+  {
+   "check": "no-horizontal-overflow plan@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@390",
+   "pass": true,
+   "detail": "244 ms"
+  },
+  {
+   "check": "no-horizontal-overflow plan@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@428",
+   "pass": true,
+   "detail": "243 ms"
+  },
+  {
+   "check": "no-horizontal-overflow plan@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@768",
+   "pass": true,
+   "detail": "240 ms"
+  },
+  {
+   "check": "no-horizontal-overflow plan@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@1024",
+   "pass": true,
+   "detail": "237 ms"
+  },
+  {
+   "check": "no-horizontal-overflow plan@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@1440",
+   "pass": true,
+   "detail": "240 ms"
+  },
+  {
+   "check": "a11y-names plan@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings plan@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast plan@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 263: []"
+  },
+  {
+   "check": "no-horizontal-overflow plan@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors plan@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network plan@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable plan@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time plan@1920",
+   "pass": true,
+   "detail": "246 ms"
+  },
+  {
+   "check": "no-horizontal-overflow kit@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@320",
+   "pass": true,
+   "detail": "226 ms"
+  },
+  {
+   "check": "a11y-names kit@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings kit@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast kit@320",
+   "pass": true,
+   "detail": "0 low-contrast of 274: []"
+  },
+  {
+   "check": "no-horizontal-overflow kit@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@360",
+   "pass": true,
+   "detail": "230 ms"
+  },
+  {
+   "check": "no-horizontal-overflow kit@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@390",
+   "pass": true,
+   "detail": "224 ms"
+  },
+  {
+   "check": "no-horizontal-overflow kit@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@428",
+   "pass": true,
+   "detail": "225 ms"
+  },
+  {
+   "check": "no-horizontal-overflow kit@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@768",
+   "pass": true,
+   "detail": "220 ms"
+  },
+  {
+   "check": "no-horizontal-overflow kit@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@1024",
+   "pass": true,
+   "detail": "222 ms"
+  },
+  {
+   "check": "no-horizontal-overflow kit@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@1440",
+   "pass": true,
+   "detail": "230 ms"
+  },
+  {
+   "check": "a11y-names kit@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings kit@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast kit@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 274: []"
+  },
+  {
+   "check": "no-horizontal-overflow kit@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors kit@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network kit@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable kit@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time kit@1920",
+   "pass": true,
+   "detail": "233 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a1@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@320",
+   "pass": true,
+   "detail": "233 ms"
+  },
+  {
+   "check": "a11y-names a1@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a1@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a1@320",
+   "pass": true,
+   "detail": "0 low-contrast of 298: []"
+  },
+  {
+   "check": "no-horizontal-overflow a1@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@360",
+   "pass": true,
+   "detail": "231 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a1@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@390",
+   "pass": true,
+   "detail": "219 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a1@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@428",
+   "pass": true,
+   "detail": "227 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a1@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@768",
+   "pass": true,
+   "detail": "232 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a1@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@1024",
+   "pass": true,
+   "detail": "230 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a1@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@1440",
+   "pass": true,
+   "detail": "226 ms"
+  },
+  {
+   "check": "a11y-names a1@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a1@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a1@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 298: []"
+  },
+  {
+   "check": "no-horizontal-overflow a1@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a1@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a1@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a1@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a1@1920",
+   "pass": true,
+   "detail": "225 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a2@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@320",
+   "pass": true,
+   "detail": "231 ms"
+  },
+  {
+   "check": "a11y-names a2@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a2@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a2@320",
+   "pass": true,
+   "detail": "0 low-contrast of 331: []"
+  },
+  {
+   "check": "no-horizontal-overflow a2@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@360",
+   "pass": true,
+   "detail": "224 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a2@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@390",
+   "pass": true,
+   "detail": "226 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a2@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@428",
+   "pass": true,
+   "detail": "236 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a2@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@768",
+   "pass": true,
+   "detail": "236 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a2@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@1024",
+   "pass": true,
+   "detail": "220 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a2@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@1440",
+   "pass": true,
+   "detail": "225 ms"
+  },
+  {
+   "check": "a11y-names a2@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a2@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a2@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 331: []"
+  },
+  {
+   "check": "no-horizontal-overflow a2@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a2@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a2@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a2@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a2@1920",
+   "pass": true,
+   "detail": "237 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a3@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@320",
+   "pass": true,
+   "detail": "238 ms"
+  },
+  {
+   "check": "a11y-names a3@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a3@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a3@320",
+   "pass": true,
+   "detail": "0 low-contrast of 316: []"
+  },
+  {
+   "check": "no-horizontal-overflow a3@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@360",
+   "pass": true,
+   "detail": "228 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a3@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@390",
+   "pass": true,
+   "detail": "228 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a3@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@428",
+   "pass": true,
+   "detail": "225 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a3@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@768",
+   "pass": true,
+   "detail": "230 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a3@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@1024",
+   "pass": true,
+   "detail": "231 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a3@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@1440",
+   "pass": true,
+   "detail": "231 ms"
+  },
+  {
+   "check": "a11y-names a3@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a3@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a3@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 316: []"
+  },
+  {
+   "check": "no-horizontal-overflow a3@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a3@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a3@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a3@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a3@1920",
+   "pass": true,
+   "detail": "236 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a4@320",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@320",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@320",
+   "pass": true,
+   "detail": "226 ms"
+  },
+  {
+   "check": "a11y-names a4@320",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a4@320",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a4@320",
+   "pass": true,
+   "detail": "0 low-contrast of 318: []"
+  },
+  {
+   "check": "no-horizontal-overflow a4@360",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@360",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@360",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@360",
+   "pass": true,
+   "detail": "232 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a4@390",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@390",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@390",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@390",
+   "pass": true,
+   "detail": "234 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a4@428",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@428",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@428",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@428",
+   "pass": true,
+   "detail": "238 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a4@768",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@768",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@768",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@768",
+   "pass": true,
+   "detail": "223 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a4@1024",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@1024",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@1024",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@1024",
+   "pass": true,
+   "detail": "227 ms"
+  },
+  {
+   "check": "no-horizontal-overflow a4@1440",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@1440",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@1440",
+   "pass": true,
+   "detail": "221 ms"
+  },
+  {
+   "check": "a11y-names a4@1440",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "a11y-ids-headings a4@1440",
+   "pass": true,
+   "detail": "{'unnamed': [], 'dupIds': [], 'headingJumps': [], 'emptyButtons': [], 'noLang': False, 'h1': 1}"
+  },
+  {
+   "check": "contrast a4@1440",
+   "pass": true,
+   "detail": "0 low-contrast of 318: []"
+  },
+  {
+   "check": "no-horizontal-overflow a4@1920",
+   "pass": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "check": "no-console-errors a4@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no-network a4@1920",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "layout-stable a4@1920",
+   "pass": true,
+   "detail": "CLS 0.000"
+  },
+  {
+   "check": "load-time a4@1920",
+   "pass": true,
+   "detail": "227 ms"
+  },
+  {
+   "check": "plan: builder rendered",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: blank worksheet collapsed when JS runs",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: preview shows entries",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: invalid phone flagged inline",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: export blocked with accessible error summary",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: print blocked too (no print attr set)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: hostile text is not interpreted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: focus moves into new row",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: focus returns to Add button after remove",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: suggested dates",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: download has entries and no network",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: status announced",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: no storage, cookies, URL state",
+   "pass": true,
+   "detail": "{'ls': 0, 'ss': 0, 'ck': '', 'url': 'file:///C:/Users/brhod/OneDrive/Desktop/Projects/final-vestige-site-layer/.claude/worktrees/prep-start-bbfeb8/preparedness/build/preview/reunification-plan.html', 'hash': '', 'search': ''}"
+  },
+  {
+   "check": "plan: print layout shows only the plan",
+   "pass": true,
+   "detail": "block/none"
+  },
+  {
+   "check": "plan: rendered PDF contains plan, not the form",
+   "pass": true,
+   "detail": "Household emergency plan Household members Alex (Adult) Out-of-area contact Sam Rivera \u00b7 555-123-4567 \u00b7 555-987-6543 Oth"
+  },
+  {
+   "check": "plan: wallet cards print layout",
+   "pass": true,
+   "detail": "block, 1 cards"
+  },
+  {
+   "check": "plan: clear asks for confirmation",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: cancel keeps data",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: clear empties fields, announces, moves focus",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan: keyboard reaches actions",
+   "pass": true,
+   "detail": "['download', 'pb-add-children', 'pb-add-contacts', 'pb-add-members', 'pb-add-pets', 'pb-c-160', 'pb-c-161', 'pb-c-162', 'pb-c-163', 'pb-c-164', 'pb-c-"
+  },
+  {
+   "check": "plan: no dialogs/errors/network during session",
+   "pass": true,
+   "detail": "{'requests': [], 'console': [], 'dialogs': [], 'errors': []}"
+  },
+  {
+   "check": "plan: reduced motion, no running animations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan(no-JS): blank worksheet open and tables visible",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan(no-JS): fallback explained",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "plan(no-JS): no overflow at 390",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kit: default shows basic groups only",
+   "pass": true,
+   "detail": "['core', 'hazard', 'adults']"
+  },
+  {
+   "check": "kit: scenarios reveal groups",
+   "pass": true,
+   "detail": "['core', 'hazard', 'adults', 'children', 'pets']"
+  },
+  {
+   "check": "kit: progress announced",
+   "pass": true,
+   "detail": "2 of 38 items ticked; 36 still to do."
+  },
+  {
+   "check": "kit: download lists ticked, excludes hidden groups",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kit: every item cites a source",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kit: no storage, cookies, URL state",
+   "pass": true,
+   "detail": "{'ls': 0, 'ss': 0, 'ck': '', 'h': '', 's': ''}"
+  },
+  {
+   "check": "kit: print hides controls, keeps list",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kit: rendered PDF is the checklist",
+   "pass": true,
+   "detail": "Emergency kit and go-bag checklist Prepared with the Final Vestige Preparedness Archive. A starting "
+  },
+  {
+   "check": "kit: reset restores defaults",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kit: no dialogs/errors/network",
+   "pass": true,
+   "detail": "{'requests': [], 'console': [], 'dialogs': [], 'errors': []}"
+  },
+  {
+   "check": "kit: keyboard toggles scenario",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kit(no-JS): every group is shown",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "kit(no-JS): explained",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "hub: every internal link goes to a built page",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "hub: title, theme and track label",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "hub: four steps in order",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "hub: both tools linked",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "hub: states draft status",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "hub: no history techniques mixed in",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

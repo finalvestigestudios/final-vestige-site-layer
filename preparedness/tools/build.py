@@ -390,6 +390,21 @@ def build_hub(lib: Library, section: str, include_drafts: bool = True) -> dict |
                 {"@type": "ListItem", "position": 3, "name": sec["label"]}]},
         ],
     }
+    custom = lib.root / "content" / "hubs" / f"{section}.body.html"
+    if custom.exists():
+        # Optional editorial hub: a hand-written body for one section. Tokens: {{link:slug|label}}, {{hub:section|label}}, {{cards}}.
+        populated = {m["section"] for m in lib.articles.values()}
+        text = custom.read_text(encoding="utf-8")
+        text = re.sub(r"\{\{link:([a-z0-9\-]+)\|([^}]+)\}\}", lambda m: f'<a href="{lib.url_path(m.group(1))}">{m.group(2)}</a>' if m.group(1) in lib.articles else m.group(2), text)
+        text = re.sub(r"\{\{hub:([a-z0-9\-]+)\|([^}]+)\}\}", lambda m: f'<a href="{lib.section_path(m.group(1))}">{m.group(2)}</a>' if m.group(1) in populated else m.group(2), text)
+        text = text.replace("{{cards}}", f'<ul class="pa-cards">{"".join(render_card(lib, m) for m in arts)}</ul>')
+        if "{{" in text:
+            raise ValueError(f"hub {section}: unresolved token near {text[text.index('{{'):][:60]!r}")
+        inner = (
+            f'<div class="pa pa-hub pa-hub--editorial" data-section="{section}"><a class="pa-skip" href="#pa-guides">Skip to the guides</a>{crumbs}'
+            f'{text}<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></div>'
+        )
+        return {"slug": f"hub-{section}", "inner": inner, "count": len(arts), "title": f'{sec["label"]} | The Preparedness Archive', "description": sec["blurb"]}
     inner = (
         f'<div class="pa pa-hub" data-section="{section}"><a class="pa-skip" href="#pa-guides">Skip to the guides</a>{crumbs}'
         f'<header class="pa-head"><p class="pa-kicker">The Preparedness Archive</p><h1>{esc(sec["label"])}</h1>'
