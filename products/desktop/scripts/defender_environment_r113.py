@@ -10,6 +10,8 @@ from __future__ import annotations
 import os
 import re
 import subprocess
+
+import trusted_powershell_r114 as trust
 from typing import Any
 
 # Zero user input is interpolated into PowerShell. Do not print raw Defender
@@ -51,10 +53,14 @@ def require_zero_observations(*, runner: Any = None) -> str:
     """
     if os.name != "nt":
         raise EnvironmentHold("Trusted native Windows Defender observation required")
+    try:
+        powershell = trust.require_system_powershell()
+    except trust.PowerShellHold:
+        raise EnvironmentHold("Native System32 PowerShell interpreter unavailable") from None
     execute = runner if runner is not None else subprocess.run
     try:
         result = execute(
-            ["powershell.exe", "-NoLogo", "-NoProfile", "-NonInteractive",
+            [str(powershell), "-NoLogo", "-NoProfile", "-NonInteractive",
              "-Command", HISTORY_COMMAND],
             check=False, timeout=TIMEOUT, shell=False,
             stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
