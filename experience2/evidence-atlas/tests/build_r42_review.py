@@ -22,7 +22,6 @@ PATHS = (
     'experience2/evidence-atlas/final-vestige-ex2-evidence-atlas.php',
     'experience2/evidence-atlas/tests/browser_regression_r42.py',
     'experience2/evidence-atlas/tests/build_r42_review.py',
-    'experience2/evidence-atlas/R42_SOURCE_INDEX_ASSET_LOADING_HOLD.md',
     'experience2/evidence-atlas/tests/wordpress_shortcode_probe.php',
     'experience2/evidence-atlas/tests/test_wordpress_stage.py',
     'experience2/evidence-atlas/test_atlas.py',
