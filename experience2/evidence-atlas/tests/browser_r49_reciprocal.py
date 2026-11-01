@@ -42,6 +42,8 @@ def main(output: Path):
                 assert pg.locator('[data-fvx-record]:visible').count()==6
                 assert pg.locator('[data-fva-to-desk]:visible').count()==(6 if enabled else 0)
                 assert pg.locator('[data-fvx-to-atlas]').count()==(6 if enabled else 0)
+                if enabled:
+                    assert min(pg.locator('[data-fvx-to-atlas]').evaluate_all('(a)=>a.map(x=>x.getBoundingClientRect().height)'))>=44
                 assert not pg.evaluate('document.documentElement.scrollWidth>innerWidth+2')
                 if enabled:
                     pg.locator('input[data-fvx-search]').fill('S67-19766')
