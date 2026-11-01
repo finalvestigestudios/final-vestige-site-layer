@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic, staging-HOLD Apollo R48 review archive, no network or deploy."""
+"""Deterministic, staging-HOLD Apollo R49 review archive, no network or deploy."""
 from pathlib import Path
 import argparse,hashlib,json,sys,tempfile,zipfile
 HERE=Path(__file__).resolve().parents[1]
@@ -7,16 +7,24 @@ sys.path.insert(0,str(HERE))
 import build_atlas,build_wordpress_stage
 
 def build(out:Path,qa:Path)->dict:
-    if not (qa/'R48_BROWSER_RECEIPT.json').is_file():
-        raise ValueError('Require executed browser receipt; no invented QA evidence')
-    receipt=json.loads((qa/'R48_BROWSER_RECEIPT.json').read_text())
-    if len(receipt.get('tests',[]))!=19 or not all(row.get('pass') for row in receipt['tests']):
-        raise ValueError('Require actual 19/19 Chromium QA receipt')
-    if set(receipt.get('screenshots',{})) != {'390','1440'}:
-        raise ValueError('Require reproducible mobile and desktop screenshots')
+    actual=(qa/'R49_ACTUAL_PR158_BROWSER_RECEIPT.json').is_file()
+    receipt_name='R49_ACTUAL_PR158_BROWSER_RECEIPT.json' if actual else 'R49_BROWSER_RECEIPT.json'
+    if not (qa/receipt_name).is_file():
+        raise ValueError('Require executed R49 browser receipt; no invented QA evidence')
+    receipt=json.loads((qa/receipt_name).read_text())
+    if actual:
+        if receipt.get('schema')!='fv.ex2.apollo.r49.original-pr158-browser.v1' or receipt.get('viewport_modes')!=14 or receipt.get('adversarial_cases')!=6:
+            raise ValueError('Original-PR158 receipt does not match strict R49 contract')
+        if set(receipt.get('screenshots_sha256',{}))!={'390','1440'}:
+            raise ValueError('Original PR158 screenshot custody incomplete')
+    else:
+        if receipt.get('schema')!='fv.ex2.apollo.r49.reciprocal-browser.v1' or len(receipt.get('tests',[]))!=20 or not all(row.get('pass') for row in receipt['tests']):
+            raise ValueError('Synthetic R49 QA receipt must show 20/20 executed tests')
+        if set(receipt.get('screenshots',{}))!={'390','1440'}:
+            raise ValueError('Synthetic R49 mobile/desktop screenshots incomplete')
     files={}
     for f in sorted(HERE.rglob('*')):
-        if f.is_file() and '__pycache__' not in f.parts and f.suffix in {'.md','.py','.js','.css','.php'}:
+        if f.is_file() and '__pycache__' not in f.parts and f.suffix in {'.md','.py','.js','.css','.php','.html'}:
             files['experience2/evidence-atlas/'+str(f.relative_to(HERE))]=f.read_bytes()
     crosswalk=HERE.parent/'research-desk/sources/R37_PHOTO_CUSTODY_CROSSWALK.json'
     if build_atlas.git_blob(crosswalk.read_bytes()) != build_atlas.EXPECTED_BLOB:
@@ -29,10 +37,11 @@ def build(out:Path,qa:Path)->dict:
         for f in sorted(root.rglob('*')):
             if f.is_file():files['compiled/'+str(f.relative_to(root))]=f.read_bytes()
     for f in sorted(qa.glob('*')):
-        if f.is_file() and (f.suffix=='.png' or f.name in {'R48_BROWSER_RECEIPT.json','probe-390.txt','R38_SOURCE_PARITY_READONLY.json'}):
+        if f.is_file() and (f.suffix=='.png' or f.name in {receipt_name}):
             files['qa/'+f.name]=f.read_bytes()
-    manifest={'schema':'fv.ex2.apollo.r48.bundle.v1','release':'STAGING_HOLD',
+    manifest={'schema':'fv.ex2.apollo.r49.bundle.v1','release':'STAGING_HOLD',
        'exact_custody_git_blob':build_atlas.EXPECTED_BLOB,
+       'research_desk_browser_markup':'ACTUAL_PR158' if actual else 'SYNTHETIC_CONTRACT_FIXTURE',
        'axe_core':'NOT_AVAILABLE_NOT_EXECUTED','navigated_wordpress':'NOT_TESTED',
        'hosted_CWV':'NOT_MEASURED','photo_rights':'6 UNREVIEWED',
        'sha256':{name:hashlib.sha256(data).hexdigest() for name,data in sorted(files.items())}}
