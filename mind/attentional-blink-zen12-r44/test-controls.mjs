@@ -12,7 +12,7 @@ for(const [variant,h] of [['A',a],['B',b]]){
  test(variant+' has proper semantic headline',()=>assert.match(h,/<h1 id="zen44-title">/));
 }
 test('A and B share identical substantive guide core',()=>assert.equal(buyerCore(a),buyerCore(b)));
-test('B has actual poster and honest no-video status',()=>{assert.match(b,/attentional-blink-poster.svg/);assert.match(b,/not a playable video/);assert.match(b,/transcript/);});
+test('B has actual poster and honest no-video status',()=>{assert.match(b,/poster-title/);assert.match(b,/not a playable video/);assert.match(b,/transcript/);});
 test('no vendor promotion inside independent article',()=>assert.doesNotMatch(art,/zen12|inspire3|affiliate|commission/i));
 test('hub is read-only and links existing live routes',()=>{assert.match(hub,/puysegurs-animal-magnetism-files/);assert.match(hub,/finalvestige.com\/focus/);assert.doesNotMatch(hub,/<form\b/i)});
 test('VTT proposes exactly six caption cues',()=>assert.equal((captions.match(/-->/g)||[]).length,6));

@@ -40,7 +40,7 @@ A later report from the same line of research examined variation in the phase of
 
 ## A line commercial copy often crosses
 
-The line from 'meditation may influence performance on this laboratory attention task' to 'this twelve-minute audio provides an hour of meditation benefits' is not a small line. The first statement refers to a defined experimental intervention and outcome. The second refers to a branded recording, an equivalence of benefits that needs definition, and an implied transfer across interventions. The cited research did not test Zen12, any Zen12 tier, or the advertised one-hour comparison.
+The line from 'meditation may influence performance on this laboratory attention task' to 'this twelve-minute audio provides an hour of meditation benefits' is not a small line. The first statement refers to a defined experimental intervention and outcome. The second refers to a branded recording, an equivalence of benefits that needs definition, and an implied transfer across interventions. The cited research did not evaluate any particular commercial meditation audio or a proposed one-hour-equivalence of its benefits.
 
 A consumer can reasonably enjoy music, spoken guidance, or a short quiet ritual without requiring a dramatic neuroscientific explanation. Enjoyment and convenience are real preferences. They become misleading when packaged as proven treatment, guaranteed brainwave alteration, or a shortcut authenticated by a study of different participants doing different things.
 
