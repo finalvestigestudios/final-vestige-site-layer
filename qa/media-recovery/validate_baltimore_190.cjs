@@ -38,10 +38,13 @@ function validate(ledger, census) {
     if (a.key !== e.key || a.slot !== i) errors.push('slot identity mismatch ' + i);
     if (!src || a.source_url !== src.source_url || a.stored_alt !== src.alt || a.source_host !== src.source_host)
       errors.push('frozen URL/ALT mismatch ' + e.key);
+    let host = '';
+    try { host = new URL(a.source_url).hostname.toLowerCase(); }
+    catch (_) { errors.push('malformed source URL ' + e.key); }
     if (typeof a.source_url !== 'string' ||
         !a.source_url.startsWith('https://') ||
         !a.source_url.includes(e.suffix) ||
-        !['cdn.loc.gov','tile.loc.gov'].includes(new URL(a.source_url).hostname))
+        !['cdn.loc.gov','tile.loc.gov'].includes(host))
       errors.push('expected LOC original URL mismatch ' + e.key);
     if (a.loc_lccn !== e.id || a.loc_digital_id !== e.digital ||
         a.loc_record_url !== 'https://www.loc.gov/item/' + e.id + '/')
