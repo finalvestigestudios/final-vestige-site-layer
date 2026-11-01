@@ -204,8 +204,25 @@ def execute(root: Path, expected_sha: str, *, run: Callable = subprocess.run,
             raise PreflightHold(f"{step.name}: timed out") from exc
         except OSError as exc:
             raise PreflightHold(f"{step.name}: native execution unavailable") from exc
-        require(type(proc.returncode) is int and proc.returncode == 0,
-                f"{step.name}: exit status {proc.returncode}")
+        if type(proc.returncode) is not int or proc.returncode != 0:
+            # Tracebacks from Python's private draft build can explain a CI
+            # blocker but may contain private paths, article text or values.
+            # Retain only an allowlisted exception class and a tool line number.
+            diagnostic = ""
+            if isinstance(proc.stderr, bytes) and len(proc.stderr) <= 2_000_000:
+                decoded = proc.stderr.decode("utf-8", errors="replace")
+                exception = re.search(r"(?m)^(KeyError|ValueError|NameError|TypeError|"
+                                      r"AttributeError|FileNotFoundError|OSError|"
+                                      r"IndexError|AssertionError|RuntimeError|"
+                                      r"PermissionError|UnboundLocalError|TriageFailure|LinkCustodyFailure):", decoded)
+                locations = re.findall(
+                    r'File "[^"\r\n]*[/\\]preparedness[/\\]tools[/\\]'
+                    r'(?:build|validate|claim_corpus_release_gate|high_consequence_claim_triage|outbound_link_custody)\.py", line ([0-9]{1,5})', decoded)
+                if exception:
+                    diagnostic = "; exception " + exception.group(1)
+                if locations:
+                    diagnostic += "; source line " + locations[-1]
+            raise PreflightHold(f"{step.name}: exit status {proc.returncode}" + diagnostic)
         summary = {"gate": step.name, "exit_code": 0,
                    "stdout_sha256": sha256(proc.stdout),
                    "stderr_sha256": sha256(proc.stderr)}
@@ -275,10 +292,29 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(report, sort_keys=True))
         return 0  # Machine tests complete; release continues HOLD.
     except (PreflightHold, ValueError, OSError) as exc:
+        # GitHub Actions redirects stdout to a private runner-only JSON
+        # receipt. Emit just the known failing gate and a reason digest to
+        # stderr so CI diagnoses failures without leaking internal source
+        # details, filesystem paths, review notes, or private contents.
+        detail = str(exc)
+        known_gate = next((name for name, _, _ in STEPS
+                           if detail.startswith(name + ":")), None)
+        print(json.dumps({"gate": "R18_PRIVATE_PREFLIGHT_FAILURE",
+                          "release_state": "HOLD", "may_publish": False,
+                          "machine_integrity_result": "INCOMPLETE_OR_FAILED",
+                          "failed_step": known_gate or "setup_or_checkout",
+                          "exception_class": (
+                              re.search(r"; exception ([A-Za-z]+)", detail).group(1)
+                              if re.search(r"; exception ([A-Za-z]+)", detail) else None),
+                          "script_line": (
+                              int(re.search(r"; source line ([0-9]{1,5})", detail).group(1))
+                              if re.search(r"; source line ([0-9]{1,5})", detail) else None),
+                          "reason_sha256": sha256(detail.encode("utf-8"))},
+                         sort_keys=True), file=sys.stderr)
         print(json.dumps({"schema_version": 1, "release_state": "HOLD",
                           "may_publish": False,
                           "machine_integrity_result": "INCOMPLETE_OR_FAILED",
-                          "error": str(exc)}, sort_keys=True))
+                          "error": detail}, sort_keys=True))
         return 2
 
 

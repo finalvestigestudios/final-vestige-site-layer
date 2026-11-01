@@ -40,7 +40,22 @@ def _load_placement_validator():
     return module.verified_citations
 
 
+def _load_review_index_validator():
+    # R31 hardens the existing mandatory 13th preflight stage without
+    # changing the hosted runner's step contract or claiming review completion.
+    location = Path(__file__).with_name('citation_review_index_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked independent citation review index gate')
+    spec = importlib.util.spec_from_file_location('preparedness_citation_review_index', location)
+    need(spec is not None and spec.loader is not None,
+         'citation review index gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.build_index
+
+
 verified_citations = _load_placement_validator()
+build_review_index = _load_review_index_validator()
 
 
 def canonical(value):
@@ -176,6 +191,10 @@ def audit(lib, expected=EXPECTED):
                           'shared_url_groups_unreviewed': len(collisions)},
                'review_queue': queue}
     payload['fingerprint_sha256'] = hashlib.sha256(canonical(payload)).hexdigest()
+    # The packet digest now binds a second, independently maintained review
+    # index validator. Every citation and source relationship must survive its
+    # own reconciliation before this mandatory preflight stage can succeed.
+    build_review_index(payload, expected=expected)
     return payload
 
 def audit_checkout(root):
