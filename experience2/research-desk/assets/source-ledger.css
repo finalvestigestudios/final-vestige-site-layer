@@ -62,3 +62,9 @@
 @media(max-width:760px){.fv-ex2-ledger__chronology-head{grid-template-columns:1fr}.fv-ex2-ledger__chronology ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.fv-ex2-ledger__chronology ol{grid-template-columns:1fr}.fv-ex2-ledger__chronology a{padding:13px}}
 @media print{.fv-ex2-ledger__chronology a{color:#000;border-color:#555}.fv-ex2-ledger__custody{color:#000}.fv-ex2-ledger__custody dd{color:#000}}
+
+/* R38: optional, keyboard/touch-sized search reset; hidden without JS. */
+.fv-ex2-ledger__clear{flex:0 0 auto;min-height:44px;min-width:108px;padding:9px 14px;border:1px solid var(--fvx-gold);border-radius:0;color:var(--fvx-paper);background:var(--fvx-raised);font:600 13px/1.4 ui-monospace,monospace}
+.fv-ex2-ledger__clear:hover{background:#322c1e}
+.fv-ex2-ledger__clear[hidden]{display:none!important}
+@media(max-width:760px){.fv-ex2-ledger__clear{width:100%}}

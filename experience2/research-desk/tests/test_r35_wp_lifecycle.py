@@ -62,9 +62,9 @@ class R35LifecycleTest(unittest.TestCase):
     def test_r37_reviewed_assets_match_exact_git_blobs(self):
         # Detect accidental drift in the NASA evidence and progressive-enhancement source.
         pinned = {
-            "assets/source-ledger.css": "e1e448f1ab14061d5ddd94fb51b652799f859791",
-            "assets/source-ledger.js": "98e5cde97eb487df1a2854400833fd8ed1f06c69",
-            "templates/ledger.html": "8b14587187b375e93cfbd4436b99bfb6cd3d2f32",
+            "assets/source-ledger.css": "7b0972fc3a920ded08f9783fddcfc9c609c7ff06",
+            "assets/source-ledger.js": "57f4a639d4c37fc4355b10fe7dec085bf87c6eb7",
+            "templates/ledger.html": "4842afb84b4c993cfc4861ce7f5a7a4d7b451871",
         }
         missing = [rel for rel in pinned if not (ROOT / rel).is_file()]
         if missing:
