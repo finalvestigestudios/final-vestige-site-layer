@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""Generate a deterministic, map-free Apollo 1 Evidence Atlas from R37 custody.
+
+Only approved metadata fields are rendered. Unreviewed images and inferred
+geospatial claims are never emitted. Generate for private review, not publishing.
+"""
+from __future__ import annotations
+import argparse
+import hashlib
+import html
+import json
+from pathlib import Path
+import re
+
+HERE = Path(__file__).resolve().parent
+CROSSWALK = HERE.parent / 'research-desk/sources/R37_PHOTO_CUSTODY_CROSSWALK.json'
+EXPECTED_BLOB = 'ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea'
+IDS = ('01', '02', '03', '04', '05', '06')
+ALLOWED_YEARS = {'1966', '1967', '2017'}
+EXPECTED_URLS = {
+    '01': 'https://www.nasa.gov/image-detail/apollo-1-crew-honored/',
+    '02': 'https://www.nasa.gov/image-detail/amf-s67-15717/',
+    '03': 'https://www.nasa.gov/image-detail/amf-s66-58038/',
+    '04': 'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/',
+    '05': 'https://www.nasa.gov/image-detail/amf-s67-21294/',
+    '06': 'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/',
+}
+RECORD_KEYS = {'id', 'catalog', 'date', 'date_label', 'photo_url', 'photo_role', 'identity_note', 'media_rights'}
+
+def sha256(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+def git_blob(data: bytes) -> str:
+    return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+
+def validate_custody(path: Path = CROSSWALK) -> dict:
+    data = path.read_bytes()
+    if git_blob(data) != EXPECTED_BLOB:
+        raise ValueError('R37 custody blob changed without independent review: refuse build')
+    crosswalk = json.loads(data)
+    if crosswalk.get('schema') != 'fv.ex2.apollo.photo_custody.r37.v1' or crosswalk.get('release') != 'STAGING_HOLD':
+        raise ValueError('Unapproved custody schema/release')
+    if crosswalk.get('rights_guidance') != 'https://www.nasa.gov/nasa-brand-center/':
+        raise ValueError('NASA rights-guidance link changed')
+    rows = crosswalk.get('records')
+    if not isinstance(rows, list) or [r.get('id') for r in rows] != list(IDS):
+        raise ValueError('Expected exactly six reviewed source IDs in custody order')
+    for r in rows:
+        if set(r) != RECORD_KEYS or r['photo_url'] != EXPECTED_URLS[r['id']]:
+            raise ValueError('Unexpected source fields or NASA destination')
+        if r['media_rights'] != 'INDIVIDUAL_REVIEW_REQUIRED':
+            raise ValueError('Image reuse not reviewed for this candidate')
+        if r['date'][:4] not in ALLOWED_YEARS or not re.fullmatch(r'\d{4}-\d{2}(?:-\d{2})?', r['date']):
+            raise ValueError('Invalid historical photographic date')
+        if not all(isinstance(r[k], str) and r[k].strip() for k in RECORD_KEYS):
+            raise ValueError('Empty source datum')
+    return crosswalk
+
+def make_html(custody: dict, css: str, js: str) -> str:
+    q = lambda s: html.escape(str(s), quote=True)
+    cards = []
+    for r in custody['records']:
+        year = r['date'][:4]
+        is_2017 = year == '2017'
+        label = ('Retrospective exhibit, not contemporaneous evidence' if is_2017
+                 else 'Contextual source photograph, not proof of causation')
+        cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" id="fva-record-{q(r['id'])}">
+          <div class="fva-card__top"><span>DOCUMENT {q(r['id'])} / 06</span><span>{year} · NASA RECORD</span></div>
+          <div class="fva-card__plate" aria-hidden="true"><span>{q(r['catalog'])}</span><b>ARCHIVAL RECORD</b></div>
+          <h2>{q(r['photo_role'].capitalize())}</h2>
+          <p class="fva-card__date"><strong>Photograph date</strong> <span>{q(r['date_label'])}</span></p>
+          <p class="fva-card__limit">{q(label)}</p>
+          <details data-fva-drawer>
+             <summary>Source custody and reuse status</summary>
+             <dl><dt>Catalog reference</dt><dd>{q(r['catalog'])}</dd>
+             <dt>Record identity note</dt><dd>{q(r['identity_note'])}</dd>
+             <dt>Reuse status</dt><dd>Individual review required. No photograph is reproduced here.</dd>
+             <dt>Documentary boundary</dt><dd>{q(r['photo_role'])}. The photograph alone does not prove the cause or sequence of the Apollo 1 fire.</dd></dl>
+          </details>
+          <a class="fva-card__external" href="{q(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open original NASA record <span aria-hidden="true">↗</span></a>
+        </article>''')
+    all_cards = '\n'.join(cards)
+    filters = '\n'.join(f'<button type="button" data-fva-filter="{v}" aria-pressed="{str(v=="all").lower()}">{label}</button>'
+                        for v, label in [('all', 'All 6 sources'), ('1966', '1966 · 1 source'),
+                                         ('1967', '1967 · 3 sources'), ('2017', '2017 · 2 exhibits')])
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apollo 1 Evidence Atlas · Final Vestige Studios · STAGING ONLY</title><style>{css}</style></head>
+<body><main class="fva" data-fva-atlas aria-labelledby="fva-title">
+  <header class="fva-header"><div class="fva-mark">FINAL VESTIGE STUDIOS <span> / EXPERIENCE 2.0</span></div>
+    <p class="fva-kicker">RESEARCH DESK / APOLLO 1</p>
+    <h1 id="fva-title">The Evidence <em>Atlas.</em></h1>
+    <p class="fva-deck">Six NASA photographic-source records, presented without imagery until reuse review is complete. Navigate what a record documents—and what it does not.</p>
+    <div class="fva-caution"><strong>Why no map?</strong> The reviewed source ledger does not establish precise locations for six independently verified map pins or evidentiary connections. No coordinates or inferred relationships are shown.</div>
+  </header>
+  <section class="fva-guide" aria-labelledby="fva-how"><h2 id="fva-how">Read before exploring</h2>
+    <p>The 1966 rehearsal image precedes the 1967 fire. The 2017 exhibit photographs are retrospective. Photograph dates are not a minute-by-minute fire chronology; NASA's Apollo 204 Review Board report is the source for technical findings.</p>
+    <p><a href="{q(custody['historical_primary'])}" target="_blank" rel="noopener noreferrer">Read the Apollo 204 Review Board report <span aria-hidden="true">↗</span></a></p>
+  </section>
+  <div class="fva-controls" data-fva-controls hidden>
+    <div class="fva-filter" role="group" aria-label="Filter photographic-source records by year">{filters}</div>
+    <div class="fva-search"><label for="fva-search">Search source descriptions</label><input type="search" id="fva-search" data-fva-search aria-controls="fva-records" autocomplete="off" placeholder="Hatch, rehearsal, Shiflett…" />
+      <button type="button" data-fva-reset>Reset filters</button></div>
+    <p class="fva-count" data-fva-status role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+  <section class="fva-grid" id="fva-records" aria-label="NASA photographic-source gallery">{all_cards}</section>
+  <p class="fva-empty" data-fva-empty hidden>No source records match. Reset filters to restore all six.</p>
+  <footer class="fva-footer"><p><strong>Six source references · Six individual image-rights reviews outstanding.</strong> This is a source-reference gallery, not a reproduction of NASA photographs or a geo-map.</p>
+   <p>NASA record credits retained. <a href="{q(custody['rights_guidance'])}" target="_blank" rel="noopener noreferrer">NASA media and branding guidelines <span aria-hidden="true">↗</span></a> · Private staging candidate; not for publication. No endorsement implied.</p></footer>
+</main><script>{js}</script></body></html>\n'''
+
+def build(output: Path) -> dict:
+    custody = validate_custody()
+    css_path, js_path = HERE / 'atlas.css', HERE / 'atlas.js'
+    css, js = css_path.read_text(encoding='utf-8'), js_path.read_text(encoding='utf-8')
+    document = make_html(custody, css, js)
+    # The output is self-contained; a browser cannot fetch NASA images because none are present.
+    output.mkdir(parents=True, exist_ok=True)
+    page_path = output / 'apollo-evidence-atlas.html'
+    page_path.write_text(document, encoding='utf-8', newline='\n')
+    receipt = {
+       'schema': 'fv.ex2.apollo.atlas.r39.v1', 'release': 'STAGING_HOLD',
+       'crosswalk_git_blob': EXPECTED_BLOB, 'records': list(IDS),
+       'source_year_counts': {'1966': 1, '1967': 3, '2017': 2},
+       'image_rights': '6 INDIVIDUAL_REVIEW_REQUIRED', 'image_binaries': 0,
+       'geographic_pins': 0, 'relationship_edges': 0,
+       'output_sha256': sha256(page_path.read_bytes()),
+       'css_sha256': sha256(css_path.read_bytes()),
+       'js_sha256': sha256(js_path.read_bytes()),
+       'crosswalk_sha256': sha256(CROSSWALK.read_bytes()),
+       'wordPress_staging': 'NOT_TESTED', 'hosted_CWV': 'NOT_MEASURED',
+    }
+    (output / 'atlas-build-manifest.json').write_text(json.dumps(receipt, indent=2, sort_keys=True)+'\n', encoding='utf-8', newline='\n')
+    return receipt
+
+if __name__ == '__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--output', type=Path, required=True)
+    args=parser.parse_args()
+    print(json.dumps(build(args.output), indent=2, sort_keys=True))
