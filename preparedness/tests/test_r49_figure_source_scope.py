@@ -336,5 +336,28 @@ def make_case(name, fn):
 for name, fn in BAD_CASES.items():
     setattr(RejectedSyntheticEvidence, "test_reject_" + name, make_case(name, fn))
 
+
+class FrozenR48RealCorpus(unittest.TestCase):
+    """Exercise the entire 35-article numeric dataset on the exact repo checkout."""
+    def test_all_186_claim_blocks_and_89_scoped_urls_stay_on_hold(self):
+        import json
+        root = Path(__file__).resolve().parents[2]
+        path = root / "preparedness/tools/build.py"
+        spec = importlib.util.spec_from_file_location("r49_real_library", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        lib = module.Library(root / "preparedness")
+        p = root / "preparedness/docs/r48"
+        figures = json.loads((p / "FIGURE-TRIAGE-2026-11-01.json").read_text(encoding="utf-8"))
+        access = json.loads((p / "SOURCE-ACCESSIBILITY-2026-11-01.json").read_text(encoding="utf-8"))
+        report = gate.audit(lib, figures, access, expected=(186, 89, 82, 7))
+        self.assertEqual(report["counts"]["original_numeric_claim_blocks"], 186)
+        self.assertEqual(len(report["review_tasks"]), 186)
+        self.assertEqual(report["counts"]["unavailable_source_urls"], 7)
+        self.assertEqual(report["counts"]["number_token_status_only"]["ALL_FIGURES_FOUND"], 178)
+        self.assertTrue(all(r["state"] == gate.HOLD for r in report["review_tasks"]))
+        self.assertFalse(report["human_source_reviews_completed"])
+        self.assertFalse(report["may_publish"])
+
 if __name__ == "__main__":
     unittest.main()
