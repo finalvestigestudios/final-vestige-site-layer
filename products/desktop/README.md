@@ -11,6 +11,18 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R117 private encrypted reviewer handoff (DRAFT / RELEASE HOLD)
+
+The new [offline sealed handoff tool](scripts/sealed_candidate_handoff_r117.py) and
+[operator runbook](docs/SEALED_WINDOWS_HANDOFF_R117.md) let an **authorized**
+operator encrypt exactly six previously smoke-tested Windows x64 candidates,
+their checksum inventory and independently SHA-pinned R9 evidence for controlled
+physical Windows 11 reviewer intake. AES-256-GCM transfer and atomic no-clobber
+intake protect custody; **the key must travel through a separate approved path**.
+No executables, keys or encrypted envelopes are uploaded by CI. Local synthetic
+cryptography regressions do **not** replace actual Windows 11 testing or QD
+approval of premium-candidate transfer. All six products remain unreleased.
+
 ## R97 LedgerDiff and GrantAudit source-label visibility (pre-release)
 
 LedgerDiff Lite and both GrantAudit Studio Pro reconciliation modes now display
