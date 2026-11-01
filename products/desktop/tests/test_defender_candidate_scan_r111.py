@@ -154,7 +154,7 @@ class DefenderR111(unittest.TestCase):
         self.assertIn("RealTimeProtectionEnabled", saved[0][0][-1])
         self.assertIn("AntivirusSignatureAge", saved[0][0][-1])
         self.assertEqual(saved[0][1]["env"]["FVS_DEFENDER_SCANNER"],
-                         "C:/Windows/Defender.exe")
+                         str(Path("C:/Windows/Defender.exe")))
 
     def test_health_nonzero_refused(self):
         with self.assertRaises(av.AVHold):
