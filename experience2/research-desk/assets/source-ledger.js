@@ -1,4 +1,4 @@
-/* Self-contained, optional progressive enhancement. No network, storage, third-party JS or HTML injection. */
+/* Optional, per-instance source search. No network, storage, third-party JS or HTML injection. */
 (()=>{'use strict';
 document.querySelectorAll('[data-fvx-ledger]').forEach(root=>{
  if(root.dataset.fvxInitialized==='yes')return;
@@ -8,26 +8,34 @@ document.querySelectorAll('[data-fvx-ledger]').forEach(root=>{
  const cards=[...root.querySelectorAll('[data-fvx-record]')];
  const empty=root.querySelector('[data-fvx-empty]');
  if(!search||!tools||!status||!cards.length||!empty)return;
- try{
-   const filter=()=>{
+ const restore=()=>{
+   // If any card becomes malformed while filtering, retain the complete evidence.
+   cards.forEach(card=>{card.hidden=false;});
+   empty.hidden=true;
+   tools.hidden=true;
+   status.textContent='';
+   root.dataset.fvxInitialized='';
+   search.removeEventListener('input',filter);
+ };
+ const filter=()=>{
+   try{
      const needle=search.value.trim().toLocaleLowerCase();
      let shown=0;
      cards.forEach(card=>{
-       const visible=!needle||card.dataset.fvxSearch.toLocaleLowerCase().includes(needle);
+       const indexed=card.getAttribute('data-fvx-search');
+       if(indexed===null)throw new Error('Missing source search index');
+       const visible=!needle||indexed.toLocaleLowerCase().includes(needle);
        card.hidden=!visible;if(visible)shown++;
      });
      status.textContent=`${shown} of ${cards.length} evidence records`;
      empty.hidden=shown!==0;
-   };
+   }catch(_){restore();}
+ };
+ try{
    search.addEventListener('input',filter);
    root.dataset.fvxInitialized='yes';
    filter();
-   tools.hidden=false;
- }catch(_){
-   root.dataset.fvxInitialized='';
-   cards.forEach(card=>card.hidden=false);
-   tools.hidden=true;
-   empty.hidden=true;
- }
+   tools.hidden=root.dataset.fvxInitialized!=='yes';
+ }catch(_){restore();}
 });
 })();
