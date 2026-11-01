@@ -12,6 +12,8 @@ from pathlib import Path
 import stat
 from typing import Callable
 
+from .csv_snapshot import _same_path_descriptor_signature
+
 
 def _regular(info: os.stat_result, limit: int, kind: str) -> None:
     if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
@@ -35,7 +37,7 @@ def _unchanged(before: os.stat_result, after: os.stat_result) -> bool:
     )
 
 
-def _same_path(path: Path, descriptor: os.stat_result, kind: str) -> None:
+def _same_path(path: Path, descriptor: os.stat_result, kind: str) -> os.stat_result:
     try:
         current = os.lstat(path)
     except FileNotFoundError as exc:
@@ -43,6 +45,7 @@ def _same_path(path: Path, descriptor: os.stat_result, kind: str) -> None:
     if (not stat.S_ISREG(current.st_mode) or current.st_nlink != 1
             or _identity(current) != _identity(descriptor)):
         raise ValueError(f"{kind} path changed during access")
+    return current
 
 
 def _flags(base: int) -> int:
@@ -64,16 +67,18 @@ def read_regular_bytes(path: str | Path, limit: int, kind: str) -> bytes:
     try:
         before = os.fstat(descriptor)
         _regular(before, limit, kind)
-        if not _unchanged(initial, before):
+        if not _same_path_descriptor_signature(initial, before):
             raise ValueError(f"{kind} changed before read")
-        _same_path(source, before, kind)
+        if not _unchanged(initial, _same_path(source, before, kind)):
+            raise ValueError(f"{kind} path changed during access")
         with os.fdopen(os.dup(descriptor), "rb") as stream:
             data = stream.read(limit + 1)
         after = os.fstat(descriptor)
         _regular(after, limit, kind)
         if len(data) > limit or not _unchanged(before, after):
             raise ValueError(f"{kind} changed during read or exceeded its size limit")
-        _same_path(source, after, kind)
+        if not _unchanged(initial, _same_path(source, after, kind)):
+            raise ValueError(f"{kind} path changed during access")
         return data
     finally:
         os.close(descriptor)
@@ -108,11 +113,13 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
     try:
         before = os.fstat(descriptor)
         _regular(before, limit, "Review journal")
-        if first is not None and not _unchanged(first, before):
+        if first is not None and not _same_path_descriptor_signature(first, before):
             raise ValueError("Review journal changed before append")
         if created and before.st_size != 0:
             raise ValueError("New review journal was not empty")
-        _same_path(target, before, "Review journal")
+        path_baseline = _same_path(target, before, "Review journal")
+        if first is not None and not _unchanged(first, path_baseline):
+            raise ValueError("Review journal path changed before append")
         if before.st_size + len(data) > limit:
             raise ValueError("Review journal file-size limit reached")
         verify()
@@ -120,7 +127,8 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         _regular(verified, limit, "Review journal")
         if not _unchanged(before, verified):
             raise ValueError("Review journal changed while validating append")
-        _same_path(target, verified, "Review journal")
+        if not _unchanged(path_baseline, _same_path(target, verified, "Review journal")):
+            raise ValueError("Review journal path changed before append")
         offset = 0
         while offset < len(data):
             count = os.write(descriptor, data[offset:])
