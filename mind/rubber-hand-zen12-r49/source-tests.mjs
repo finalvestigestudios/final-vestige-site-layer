@@ -16,8 +16,9 @@ function scanRisk(s) {
  if (hrefs(s).some(h=>/zen12\.com|inspire3\.com|hypnosislive\.com|clickbank|hop\.click/i.test(h)))bad.push('merchant-link');
  if (/<script\b|<form\b|<iframe\b|<input\b/i.test(s)) bad.push('scripts-forms-embeds');
  if (/<video\b[^>]*\bautoplay|<audio\b[^>]*\bautoplay/i.test(s))bad.push('autoplay');
- if (!/Affiliate disclosure:/i.test(s))bad.push('disclosure');
- if (!/<button\b[^>]*\bdisabled\b/i.test(s))bad.push('enabled-offer');
+ const offer=(s.match(/<aside class="fv-z12__offer"[\s\S]*?<\/aside>/i)||[])[0]||'';
+ if (!/class="fv-z12__disclosure"[\s\S]*?Affiliate disclosure:/i.test(offer)) bad.push('disclosure');
+ if (!/<button\b[^>]*\sdisabled(?=[\s>])/i.test(offer)) bad.push('enabled-offer');
  if (/on(click|load|error)\s*=|fetch\s*\(|sendBeacon\s*\(/i.test(s))bad.push('active-tracker');
  return bad;
 }
