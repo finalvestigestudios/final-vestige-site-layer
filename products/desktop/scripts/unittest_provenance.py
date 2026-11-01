@@ -5,6 +5,7 @@ never writes traceback, synthetic fixture contents, or local filesystem paths.
 """
 from __future__ import annotations
 
+import ast
 import contextlib
 import hashlib
 import json
@@ -21,19 +22,58 @@ MAX_TEST_CASES = 20000
 DIAG_PREFIX = "FVS_TEST_DIAG:"
 DIAG_SCHEMA = "fvs-offline-failure-modules-v1"
 MAX_DIAG_MODULES = 12
-MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\Z")
+MODULE_RE = re.compile(r"test_[a-z0-9_]{1,90}\\Z")
+METHOD_RE = re.compile(r"test_[a-z0-9_]{1,90}\\.test_[a-z0-9_]{1,90}\\Z")
+MAX_DIAG_METHODS = 10
+MAX_METHOD_LABEL = 104
 
 
-def _public_failure_summary(result, modules):
-    """Only code-owned module names; never exception strings, paths, or subtest data."""
+def _source_method_inventory(directory: Path) -> set[str]:
+    """Extract *static code-owned* test labels; never use runtime case IDs.
+
+    Only immediate methods of top-level classes count. Dynamic subtest
+    parameters, exception messages and user-provided labels are never included.
+    Source parse errors deliberately abort the whole suite, not weaken the gate.
+    """
+    allowed = set()
+    for source in directory.rglob("test_*.py"):
+        module = ".".join(source.relative_to(directory).with_suffix("").parts)
+        if not MODULE_RE.fullmatch(module):
+            continue
+        tree = ast.parse(source.read_text(encoding="utf-8"))
+        for node in tree.body:
+            if not isinstance(node, ast.ClassDef):
+                continue
+            for child in node.body:
+                if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    label = module + "." + child.name
+                    if len(label) <= MAX_METHOD_LABEL and METHOD_RE.fullmatch(label):
+                        allowed.add(label)
+    return allowed
+
+
+def _public_failure_summary(result, modules, allowed_methods=None):
+    """Source-owned failing methods, never exception text or subtest parameters.
+
+    The existing R98 module-only shape remains compatible for callers without
+    an independently parsed source allowlist.
+    """
     names = set()
+    methods = set()
     for case, _private_traceback in (*result.failures, *result.errors):
         original = getattr(case, "test_case", case)
         name = type(original).__module__
         if name in modules and MODULE_RE.fullmatch(name):
             names.add(name)
+            method = getattr(original, "_testMethodName", None)
+            if type(method) is str:
+                label = name + "." + method
+                if (allowed_methods is not None and label in allowed_methods
+                        and len(label) <= MAX_METHOD_LABEL
+                        and METHOD_RE.fullmatch(label)):
+                    methods.add(label)
     selected = sorted(names)
-    return {
+    summary = {
         "schema": DIAG_SCHEMA,
         "phase": "execution",
         "failures": len(result.failures),
@@ -41,6 +81,11 @@ def _public_failure_summary(result, modules):
         "modules": selected[:MAX_DIAG_MODULES],
         "omitted_module_count": max(0, len(selected) - MAX_DIAG_MODULES),
     }
+    if allowed_methods is not None:
+        selected_methods = sorted(methods)
+        summary["methods"] = selected_methods[:MAX_DIAG_METHODS]
+        summary["omitted_method_count"] = max(0, len(selected_methods) - MAX_DIAG_METHODS)
+    return summary
 
 
 def _discovery_summary(modules, loaded_modules):
@@ -123,7 +168,8 @@ def run(root: Path) -> dict:
         raise ValueError("Desktop test discovery omitted a module")
 
     if not result.wasSuccessful():
-        _emit_diagnostic(_public_failure_summary(result, modules))
+        _emit_diagnostic(_public_failure_summary(
+            result, modules, _source_method_inventory(directory)))
     if not result.wasSuccessful() or result.testsRun != len(identifiers):
         raise ValueError("Desktop regression suite failed or did not execute every case")
     skipped_ids = [case.id() for case, _reason in result.skipped]
