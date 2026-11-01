@@ -150,12 +150,19 @@ class GrantVerifyTests(unittest.TestCase):
 
     def test_filename_control_characters_do_not_inject_inventory(self):
         original = self.claims
-        injected = self.root / "claim\tmalicious\nentry.csv"
+        # Windows prohibits tab/newline in a filename; its permitted bidi
+        # format control still exercises the same untrusted-label renderer.
+        if os.name == "nt":
+            injected = self.root / "claim\u202emaliciousentry.csv"
+            forbidden = "\u202e"
+        else:
+            injected = self.root / "claim\tmalicious\nentry.csv"
+            forbidden = "\tmalicious\n"
         original.rename(injected)
         self.claims = injected
         self.refresh_inventory()
         self.assertTrue(self.verify())
-        self.assertNotIn("\tmalicious\n", self.inventory.read_text())
+        self.assertNotIn(forbidden, self.inventory.read_text())
 
     def test_replaced_inventory_during_hashing_rejected(self):
         from fvs_suite import grant_verify

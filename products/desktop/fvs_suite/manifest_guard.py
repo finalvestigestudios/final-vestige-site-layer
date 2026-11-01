@@ -13,6 +13,8 @@ import stat
 import unicodedata
 from pathlib import Path
 
+from .csv_snapshot import _same_path_descriptor_signature
+
 # Source CSV imports have a 64 MiB cap; finished reports can be larger.
 MAX_INPUT_BYTES = 64 * 1024 * 1024
 MAX_REPORT_BYTES = 256 * 1024 * 1024
@@ -55,7 +57,7 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
     try:
         with os.fdopen(descriptor, "rb") as stream:
             opened = os.fstat(stream.fileno())
-            if not stat.S_ISREG(opened.st_mode) or _signature(opened) != _signature(before):
+            if not stat.S_ISREG(opened.st_mode) or not _same_path_descriptor_signature(before, opened):
                 raise ValueError("Inventory evidence changed while opening")
             digest = hashlib.sha256()
             total = 0
@@ -70,9 +72,13 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
     except OSError:
         raise ValueError("Unable to read inventory evidence") from None
     # Reject replacement of the pathname while the descriptor was being read.
-    if _signature(_metadata(path)) != _signature(opened):
+    after_path = _metadata(path)
+    if (_signature(after_path) != _signature(before)
+            or not _same_path_descriptor_signature(after_path, opened)):
         raise ValueError("Inventory evidence path changed while hashing")
-    return digest.hexdigest(), _signature(opened)
+    # Return PATH-view identity for the later whole-inventory path recheck.
+    # The descriptor's full signature was independently verified above.
+    return digest.hexdigest(), _signature(after_path)
 
 
 def inventory_text(inputs, outputs, *, expected_input_digests=None) -> str:

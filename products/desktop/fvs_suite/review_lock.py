@@ -11,22 +11,30 @@ from pathlib import Path
 import stat
 from typing import Callable, Iterator
 
+from .csv_snapshot import _same_path_descriptor_signature
+
 
 def _identity(info: os.stat_result) -> tuple[int, int]:
     return info.st_dev, info.st_ino
 
 
-def _owned(path: Path, baseline: os.stat_result) -> None:
+def _owned(path: Path, baseline: os.stat_result,
+           path_baseline: os.stat_result) -> None:
     """Reject loss, replacement, aliasing, or modification of our lock."""
     try:
         now = os.lstat(path)
     except FileNotFoundError as exc:
         raise ValueError("Review writer lock disappeared; inspect journal before retrying") from exc
+    # Cross-view Windows descriptor/path creation-time values can disagree.
+    # Compare all portable fields across views, then the *complete* path
+    # signature against its own original pathname observation. Descriptor
+    # custody is separately checked on every assert_owned() call.
+    fields = ("st_dev", "st_ino", "st_mode", "st_nlink", "st_size",
+              "st_mtime_ns", "st_ctime_ns")
     if (not stat.S_ISREG(now.st_mode) or now.st_nlink != 1
-            or _identity(now) != _identity(baseline)
-            or now.st_size != baseline.st_size
-            or now.st_mtime_ns != baseline.st_mtime_ns
-            or now.st_ctime_ns != baseline.st_ctime_ns):
+            or not _same_path_descriptor_signature(now, baseline)
+            or any(getattr(now, name) != getattr(path_baseline, name)
+                   for name in fields)):
         raise ValueError("Review writer lock changed; inspect journal before retrying")
 
 
@@ -68,11 +76,14 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
         _write_all(fd, f"pid={os.getpid()}\n".encode("ascii"))
         os.fsync(fd)
         baseline = os.fstat(fd)
-        _owned(target, baseline)
+        # Keep the first pathname identity for same-view ctime drift detection.
+        # No successful writer is admitted before both views are checked.
+        path_baseline = os.lstat(target)
+        _owned(target, baseline, path_baseline)
         issued = True
 
         def assert_owned() -> None:
-            _owned(target, baseline)
+            _owned(target, baseline, path_baseline)
             current = os.fstat(fd)
             if (_identity(current) != _identity(baseline)
                     or current.st_size != baseline.st_size
@@ -89,7 +100,7 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
         # disappeared, or substituted lock is left untouched for investigation.
         if issued and baseline is not None:
             try:
-                _owned(target, baseline)
+                _owned(target, baseline, path_baseline)
             except ValueError:
                 pass
             else:

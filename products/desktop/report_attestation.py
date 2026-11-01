@@ -38,6 +38,16 @@ def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
     return (info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
+def _same_path_descriptor_signature(path_info: os.stat_result,
+                                    descriptor_info: os.stat_result,
+                                    *, windows: bool | None = None) -> bool:
+    """Cross-view ctime is not portable on Windows; same-view checks remain strict."""
+    if windows is None:
+        windows = os.name == "nt"
+    path_sig, fd_sig = _signature(path_info), _signature(descriptor_info)
+    return path_sig[:-1] == fd_sig[:-1] if windows else path_sig == fd_sig
+
+
 def _read_verified_report(path: str | Path, candidate_dir: str | Path) -> tuple[bytes, str]:
     """Read a bounded, nonlinked report outside dist, with descriptor checks.
 
@@ -59,7 +69,7 @@ def _read_verified_report(path: str | Path, candidate_dir: str | Path) -> tuple[
         fd = os.open(file, flags)
         with os.fdopen(fd, "rb") as stream:
             opened = os.fstat(stream.fileno())
-            if (_signature(opened) != _signature(before) or not stat.S_ISREG(opened.st_mode)
+            if (not _same_path_descriptor_signature(before, opened) or not stat.S_ISREG(opened.st_mode)
                     or opened.st_nlink != 1):
                 raise ReportAttestationError("Report changed during opening")
             raw = stream.read(MAX_REPORT_BYTES + 1)
@@ -68,7 +78,8 @@ def _read_verified_report(path: str | Path, candidate_dir: str | Path) -> tuple[
                     or len(raw) > MAX_REPORT_BYTES):
                 raise ReportAttestationError("Report changed during reading")
         after = file.lstat()
-        if _signature(after) != _signature(opened):
+        if (_signature(after) != _signature(before)
+                or not _same_path_descriptor_signature(after, opened)):
             raise ReportAttestationError("Report changed during reading")
         if file.resolve(strict=True) != resolved:
             raise ReportAttestationError("Report path changed during reading")
