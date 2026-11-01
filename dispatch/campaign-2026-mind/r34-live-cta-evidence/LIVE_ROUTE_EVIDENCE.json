@@ -1,0 +1,104 @@
+{
+  "schema": "fv-dispatch-r34-live-destination-evidence-v1",
+  "as_of_utc": "2026-11-01T03:32:58Z",
+  "source": "Authenticated WordPress.com site 256784396 pages.list/posts.list exact-slug published-record checks plus newsletter.status/get_settings",
+  "snapshot_not_live_requery": true,
+  "no_send_authorization": true,
+  "release": "HOLD_UNSENT",
+  "commercial_release": "HOLD_MERCHANT_03_05",
+  "subscriber_counts_nonadditive": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0
+  },
+  "eligible_unique_recipients": "UNKNOWN",
+  "newsletter": {
+    "enabled": true,
+    "can_send": true,
+    "new_post_automatic_email": false,
+    "content_format": "excerpt",
+    "recent_sends": 0,
+    "welcome_fieldbook_52_pages_configured": true,
+    "welcome_received_verified": false
+  },
+  "routes": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "wp_type": "page",
+      "wp_id": 1122,
+      "slug": "the-missing-caption",
+      "status": "publish",
+      "url": "https://finalvestige.com/the-missing-caption/"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "wp_type": "page",
+      "wp_id": 1377,
+      "slug": "puysegurs-animal-magnetism-files",
+      "status": "publish",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "wp_type": null,
+      "wp_id": null,
+      "slug": "zen12-guide",
+      "status": "exact_slug_not_found",
+      "url": null,
+      "partner_email_permission_verified": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "wp_type": "post",
+      "wp_id": 434,
+      "slug": "the-hatch-opened-inward-apollo-1",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "wp_type": null,
+      "wp_id": null,
+      "slug": "hypnosis-live-guide",
+      "status": "exact_slug_not_found",
+      "url": null,
+      "partner_email_permission_verified": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "wp_type": "page",
+      "wp_id": 1579,
+      "slug": "focus",
+      "status": "publish",
+      "url": "https://finalvestige.com/focus/"
+    }
+  ],
+  "page_observations": {
+    "dispatch_page_id": 523,
+    "published": true,
+    "wp_rendered_subscribe_anchor_instead_of_static_email_input": true,
+    "actual_browser_signup_form_verified": false,
+    "focus_page_id": 1579,
+    "editorial_standards_id": 17,
+    "mind_exact_slug_not_found": true
+  },
+  "missing": [
+    "genuine received native email",
+    "Final Vestige postal address in commercial footer",
+    "functional opt-out",
+    "permissioned audience count",
+    "written specific-product email affiliate permission",
+    "live approved commercial guides",
+    "founder final campaign send approval"
+  ],
+  "no_wordpress_writes": true,
+  "no_merchant_links": true
+}
