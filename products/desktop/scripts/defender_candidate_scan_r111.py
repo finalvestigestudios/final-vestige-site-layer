@@ -21,6 +21,7 @@ import release_gate as gate
 import defender_engine_custody_r112 as custody
 import defender_environment_r113 as environment
 import trusted_powershell_r114 as trust
+import trusted_defender_install_r116 as install
 import report_attestation as attestation
 from report_evidence import ReportEvidenceError, prepare_report_path, publish_report
 
@@ -65,24 +66,28 @@ def require_native_win11() -> None:
 
 
 def locate_defender() -> Path:
-    """Use only well-known installed Defender paths; never download a scanner."""
-    options = []
-    program_data = Path(os.environ.get("ProgramData", ""))
-    if program_data.is_absolute():
-        platform_root = program_data / "Microsoft" / "Windows Defender" / "Platform"
-        if platform_root.is_dir() and not platform_root.is_symlink():
-            # Microsoft documents that the newest platform engine lives here.
-            try:
-                options += custody.installed_platform_engines(platform_root)
-            except custody.EngineHold:
-                raise AVHold("Defender platform engine discovery failed") from None
-    program_files = Path(os.environ.get("ProgramFiles", ""))
-    if program_files.is_absolute():
-        options.append(program_files / "Windows Defender" / "MpCmdRun.exe")
-    for item in options:
-        if item.is_file() and not item.is_symlink() and item.is_absolute():
-            return item.resolve(strict=True)
-    raise AVHold("A local Microsoft Defender scanner is unavailable")
+    """Choose only a native Windows Defender installation, never env paths.
+
+    ProgramData and ProgramFiles from os.environ are writable process state.
+    Only SHGetKnownFolderPath-derived roots are permitted; an unavailable
+    native API or reparse-linked install must HOLD rather than fall back.
+    """
+    try:
+        data, files = install.native_roots()
+        options = []
+        platform_root = data / "Microsoft" / "Windows Defender" / "Platform"
+        if platform_root.exists() or platform_root.is_symlink():
+            install._no_reparse(platform_root)
+            if not platform_root.is_dir():
+                raise AVHold("Native Defender platform installation is invalid")
+            options.extend(custody.installed_platform_engines(platform_root))
+        options.append(files / "Windows Defender" / "MpCmdRun.exe")
+        for item in options:
+            if item.exists() or item.is_symlink():
+                return install.require_candidate(item, data, files)
+    except (install.InstallHold, custody.EngineHold, OSError, ValueError):
+        raise AVHold("Native Defender installation cannot be trusted") from None
+    raise AVHold("A native Microsoft Defender scanner is unavailable")
 
 
 def _run_quiet(args: list[str], *, timeout: int, env=None, runner=None) -> None:
