@@ -4,9 +4,12 @@
 Browser navigation is blocked in the current runner. set_content is NOT HTTP,
 WordPress, axe, LCP, CLS, or production accessibility certification.
 """
+import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 from playwright.sync_api import sync_playwright
@@ -22,10 +25,22 @@ def check(condition, name):
         raise AssertionError(name)
 
 def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument('--output',type=Path,help='Optional screenshot and deterministic QA receipt directory')
+    args=ap.parse_args()
+    out=args.output
+    if out:out.mkdir(parents=True,exist_ok=True)
+    receipt={'schema':'fv.ex2.apollo.r41.qa.v1','release':'STAGING_HOLD',
+        'transport':'ACTUAL_PHP_RENDERED_PLAYWRIGHT_SET_CONTENT_NOT_HTTP',
+        'axe':'NOT_EXECUTED','hosted_lcp_cls_inp':'NOT_MEASURED',
+        'authentic_wordpress':'NOT_TESTED','cases':[],'regression_checks':[]}
     from tempfile import TemporaryDirectory
     with TemporaryDirectory(prefix='fv-r41-') as tmp:
         destination = Path(tmp)
         stage.build(destination)
+        if out:
+            (out/'stage').mkdir(exist_ok=True)
+            shutil.copyfile(destination/'STAGING-MANIFEST.json',out/'stage/STAGING-MANIFEST.json')
         plugin = destination / 'fv-ex2-evidence-atlas'
         proc = subprocess.run(['php', str(HERE/'tests/wordpress_shortcode_probe.php'),
             str(plugin/'final-vestige-ex2-evidence-atlas.php')],
@@ -73,6 +88,14 @@ def main():
                     else:
                         check(not page.locator('[data-fva-controls]').is_visible(),
                             'no-JS hidden controls')
+                    screenshot=None
+                    if out and width in (390,1440):
+                        page.evaluate('document.activeElement && document.activeElement.blur()')
+                        page.evaluate('window.scrollTo(0,0)')
+                        path=out/('r41-evidence-%d-%s.png' % (width,'js' if enabled else 'nojs'))
+                        page.screenshot(path=str(path),full_page=True,animations='disabled')
+                        screenshot={'name':path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+                    receipt['cases'].append({'width':width,'javascript':enabled,'status':'PASS','screenshot':screenshot})
                     cases+=1;context.close()
             # Fail-open after listeners attach but before the first application finishes.
             corruption='''<script>(()=>{const x=document.querySelector('[data-fva-record]');
@@ -83,6 +106,7 @@ def main():
                   'all custody must survive failure')
             check(not page.locator('[data-fva-controls]').is_visible(),
                   'no dead controls after rollback')
+            receipt['regression_checks'].append('PASS: post-preflight corruption rolls back controls while retaining six sources')
             page.close()
             # Printing must restore filtered records and show provenance + source URLs.
             page=browser.new_page(viewport={'width':768,'height':900})
@@ -99,7 +123,10 @@ def main():
                   'print exact NASA destination')
             check(not page.locator('[data-fva-controls]').is_visible(),
                   'hide interactive controls on paper')
+            receipt['regression_checks'].append('PASS: print mode restores 6 sources, expands provenance and prints original NASA URLs')
+            if out:page.pdf(path=str(out/'r41-evidence-custody-print.pdf'),print_background=True)
             page.close();browser.close()
+        if out:(out/'R41_QA_RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n',encoding='utf-8')
         print('PASS R41: %d/14 real Chromium component cases; fail-open and print custody checks' % cases)
         print('HOLD: no navigated HTTP, WordPress install, axe, Safari, hosted LCP/CLS/INP')
 
