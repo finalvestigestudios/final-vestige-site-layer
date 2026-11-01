@@ -208,6 +208,9 @@ def main(argv=None):
     import importlib.util
     from pathlib import Path
     import sys
+    # The JSON below is emitted with ensure_ascii=False; a Windows console defaults to cp1252 and crashed on U+2212 and similar.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo-root', type=Path,
                         default=Path(__file__).resolve().parents[2])

@@ -1,0 +1,1045 @@
+[
+ {
+  "id": "A01",
+  "article": "emergency-hygiene-sanitation",
+  "file": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+  "line": 54,
+  "section_anchor": "toilets",
+  "note": "bucket-toilet setup",
+  "excerpt": "Turn off the water valve to the toilet and flush out any water still in the bowl.",
+  "keys": [
+   "turn off|shut off",
+   "flush"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "health-cdc-septic": [
+    "ull to prevent it from collapsing or floating If your septic system requires electricity: Turn off the pump at the circuit box before the area floods. Waterproof all electrical connections to avoid electrical"
+   ],
+   "health-osu-sanitation": [
+    "n Zone earthquake or other disaster if you are in a hard-hit area As a proactive measure, turn off the water supply to your home to avoid contamination from broken pipes along the supply infrastructure and to"
+   ],
+   "health-wadoh-toilet": [
+    "an Emergency If my toilet doesn't work, how do I go to the bathroom? If your toilet won't flush, you don't have water to flush with, or your sewage system isn't working, you'll need an alternative way to g"
+   ],
+   "health-ready-kit": [
+    " towelettes, garbage bags and plastic ties (for personal sanitation) Wrench or pliers (to turn off utilities) Manual can opener (for food) Local maps Cell phone with chargers and a backup battery Additional E"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A02",
+  "article": "emergency-hygiene-sanitation",
+  "file": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+  "line": 59,
+  "section_anchor": "toilets",
+  "note": "wipes as handwashing substitute",
+  "excerpt": "Wash your hands with soap and running water, or use wet wipes or sanitizer if there is none.",
+  "keys": [
+   "wet wipes|wipes",
+   "sanitizer"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "cdc-hygiene-emergency": [
+    " by using a large water jug. If you do not have soap and water, use an alcohol-based hand sanitizer that contains at least 60% alcohol. If soap and water are not available... Alcohol-based hand sanitizers can "
+   ],
+   "health-osu-sanitation": [
+    "ble paper towels to turn the spigot off when you’re done rinsing hands. A note about hand sanitizer: The CDC recommends washing your hands with soap and water whenever possible because hand-washing reduces the"
+   ],
+   "health-wadoh-toilet": [
+    " garage inside the garbage can for disposal. Wash your hands with soap and running water. Wet wipes and sanitizer can be used if you don't have running water. Option 3 Use a five gallon bucket. You can add a t"
+   ],
+   "health-ready-kit": [
+    "mergency supply kit based on your individual needs: Soap, hand sanitizer and disinfecting wipes to disinfect surfaces Prescription medications. About half of all Americans take a prescription medicine ever"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A03",
+  "article": "emergency-hygiene-sanitation",
+  "file": "preparedness/content/articles/emergency-hygiene-sanitation.body.html",
+  "line": 68,
+  "section_anchor": "toilets",
+  "note": "urine disposal on the ground",
+  "excerpt": "Emptying. When the urine bucket is about one-quarter full or before it gets too heavy to carry, add water if you can to dilute it and pour it on the ground, changing the spot each time. Fill the poo bucket no more than half full. Then put on disposable gloves,",
+  "keys": [
+   "urine",
+   "dilut",
+   "ground|soil|garden|yard"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "health-cdc-septic": [
+    " inspection is necessary to ensure proper functioning. During heavy rains and floods, the ground can become saturated, preventing proper operation of the system. For example, a septic tank can collapse or f"
+   ],
+   "health-osu-sanitation": [
+    "oduce disease, including viruses, bacteria, parasites, protozoa and fungi. “No-mix” means urine is separated from feces. Pee has volume and odor but is generally sterile. Poo has pathogens, but when you ad"
+   ],
+   "health-wadoh-toilet": [
+    "a “cat hole” can be an option. Cat holes, or personal use holes, are holes you dig in the ground and squat over. Each hole is one-time use. Dig the hole on dry land at least 100 feet away from wells, homes,"
+   ],
+   "health-cdc-sanitation-archive": [
+    "container or bin which stores organic waste for decomposition. Dehydrating toilets divert urine from organic waste and require bulk drying and pH additives. Non-urine diverting toilets collect all waste fo"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A04",
+  "article": "food-safety-power-outage",
+  "file": "preparedness/content/articles/food-safety-power-outage.body.html",
+  "line": 76,
+  "section_anchor": "after",
+  "note": "freezer check without thermometer",
+  "excerpt": "If the freezer had no thermometer , check each package. Food that still contains ice crystals, or is 40°F or below, can be refrozen or cooked. You cannot judge by appearance or smell.",
+  "keys": [
+   "ice crystals",
+   "refreez|refrozen"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-cdc-after-emergency": [
+    "d or is above 40°. You can safely refreeze or cook thawed frozen food that still contains ice crystals or is at 40 °F or below. Resource Check this FoodSafety.gov chart for a list of what foods you should throw o"
+   ],
+   "food-foodsafety-outage-chart": [
+    " half full and the door remains closed). Food may be safely refrozen if it still contains ice crystals or is at 40°F (4°C) or below, however, its quality may suffer. Never taste food to determine its safety. Use "
+   ],
+   "food-fsis-emergencies": [
+    "and nuts. Frozen Foods Safe-to-Eat Foods Frozen foods that have thawed, but still contain ice crystals. Foods that have remained at refrigerator temperatures — 40 °F or below. They may be safely refrozen; however"
+   ],
+   "food-fda-outage-flood": [
+    "to determine its safety. You can’t rely on appearance or odor. If the food still contains ice crystals or is 40° F or below, it is safe to refreeze or cook. If the power was out for no more than 4 hours , refrige"
+   ],
+   "food-ready-food": [
+    "can be eaten if it is still “refrigerator cold.” It can be re-frozen if it still contains ice crystals. Remember “When in doubt, throw it out.” Do: Keep food in covered containers. Keep cooking and eating utensil"
+   ],
+   "food-osu-survival-food": [
+    " or coated with Vaseline are of poor quality. Meat that was thawing in the fridge but has ice crystals present should begin cooking within two hours. Dried beans stored for more than three years may not rehydrate"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A05",
+  "article": "food-safety-power-outage",
+  "file": "preparedness/content/articles/food-safety-power-outage.body.html",
+  "line": 77,
+  "section_anchor": "after",
+  "note": "coolers",
+  "excerpt": "Check coolers the same way. Throw out food that has thawed or is above 40°F.",
+  "keys": [
+   "cooler",
+   "40"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-cdc-after-emergency": [
+    "elow. Freeze containers of water and gel packs to help keep food at 40°F or below. Have a cooler and frozen gel packs ready in case you have to remove food from the refrigerator to keep it cold. Buy dry ice"
+   ],
+   "food-foodsafety-outage-chart": [
+    "efrigerated Food During Power Outage Safety Chart Type of Food Exposed to temperatures of 40°F (4°C) or above for more than 2 hours Meat, poultry, seafood Raw or leftover cooked meat, poultry, fish, or "
+   ],
+   "food-fsis-emergencies": [
+    "at and poultry. This will keep them at a safe temperature longer. Have a large, insulated cooler and frozen gel packs available. Perishable foods will stay safe in a refrigerator only 4 hours. Find out wher"
+   ],
+   "food-fema-outage-sheet": [
+    "ubt, throw it out! Throw away any refrigerated food that has been exposed to temperatures 40 degrees Fahrenheit or higher for more than 4 hours. Throw away refrigerated food that has an unusual odor, co"
+   ],
+   "food-fda-outage-flood": [
+    "reeze containers of water for ice to help keep food cold in the freezer, refrigerator, or coolers in case the power goes out. If your normal water supply is contaminated or unavailable, the melting ice will"
+   ],
+   "food-ready-food": [
+    "ors and freezers can become unsafe. Bacteria in food grow rapidly at temperatures between 40 and 140 degrees Fahrenheit and if these foods are consumed you can become very sick. Thawed food usually can "
+   ],
+   "food-osu-survival-food": [
+    "sful. Leftovers can become unsafe without refrigeration. Foods held in the “Danger Zone” (40°F to 140°F) for over two hours can cause someone to become sick. Consider how you might use a wood stove, gas"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A06",
+  "article": "home-fire-escape-plan",
+  "file": "preparedness/content/articles/home-fire-escape-plan.body.html",
+  "line": 100,
+  "section_anchor": "during",
+  "note": "feel door before opening",
+  "excerpt": "Before opening a door, feel the doorknob and the door. If either is hot, or if smoke is coming around the door, leave the door closed and use your second way out.",
+  "keys": [
+   "feel",
+   "door",
+   "hot"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "usfa-fire-escape": [
+    "on Fire Prevention Home Home Fires Arson & Youth Firesetting Hotels & Vacation Rentals Outdoor Fires/Wildfires Vehicle Fires Workplace Fires Life Safety Hazards Fire Is Everyone’s Fight ® Fire Prevention "
+   ],
+   "shelter-nfpa-smoke-alarms": [
+    "ms at least once a month. Press the test button to be sure the alarm is working. A closed door may slow the spread of smoke, heat, and fire. Working smoke alarms are an important part of a home fire escap"
+   ],
+   "shelter-ready-home-fires": [
+    " screens can be taken out quickly and that security bars can be properly opened. Practice feeling your way out of the house in the dark or with your eyes closed. Teach children not to hide from firefighte"
+   ],
+   "shelter-nfpa-escape": [
+    "ou as little as one or two minutes to escape safely once the smoke alarm sounds. A closed door may slow the spread of smoke, heat and fire. Install smoke alarms in every sleeping room and outside each sep"
+   ],
+   "shelter-cpsc-co": [
+    " Carbon Monoxide Poisoning Never use portable generators inside homes or garages, even if doors and windows are open. Use generators outside only, at least 20 feet away from homes with exhaust facing away"
+   ],
+   "shelter-ready-disabilities": [
+    "des shade, hydration, sun protection, and limiting exposure time if you’re going to be outdoors. Identify possible locations with air-conditioning and ensure needed accommodations ahead of time. This coul"
+   ],
+   "shelter-usfa-high-rise": [
+    "se fire safety messages with pictures. Browse pictographs Practice what to do if the door feels hot. Call 911. Place a cloth outside your window to let firefighters know you are still inside. Handout Down"
+   ],
+   "shelter-ready-plan-locations": [
+    " safety plans depending on how they are built and what kind of emergency is happening. Outdoor locations like sports fields or golf courses need specific plans for rapid short-term shelter (e.g. for thund"
+   ],
+   "shelter-cdc-power-outage": [
+    "safely refreeze or cook food from the freezer if the food still contains ice crystals and feels as cold as if refrigerated. Check this FoodSafety.gov chart for a list of what foods you should throw out an"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A07",
+  "article": "safe-jerky-dehydration",
+  "file": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+  "line": 76,
+  "section_anchor": "handling",
+  "note": "raw meat refrigeration times",
+  "excerpt": "Keep meat and poultry refrigerated at 40°F or below. Use ground beef and poultry within 2 days and red meats within 3 to 5 days, or freeze them for later.",
+  "keys": [
+   "2 days|two days",
+   "3 to 5 days|3-5 days|three to five"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-fsis-jerky": [
+    "ltry refrigerated at 40°F or slightly below; use or freeze ground beef and poultry within 2 days; whole red meats within 3 to 5 days. Defrost frozen meat in the refrigerator, not on the kitchen counter. Mar"
+   ],
+   "food-fsis-jerky-qa": [
+    "try refrigerated at 40 °F or slightly below; use or freeze ground beef and poultry within 2 days; whole red meats, within 3 to 5 days. Defrost frozen meat in the refrigerator, not on the kitchen counter. Ma"
+   ],
+   "nchfp-jerky": [
+    ". Keep meat and poultry refrigerated at 40ºF or below. Use ground beef and poultry within 2 days, red meats within 3 to 5 days or freeze for later use. Thaw frozen meat in the refrigerator, not on the kitch"
+   ],
+   "food-ksu-jerky": [
+    "meat refrigerated at 40°F or slightly below; use or freeze ground beef and poultry within 2 days and whole red meats within 3 to 5 days. • Defrost frozen meat in the refrigerator, not on the kitchen counter"
+   ],
+   "food-fsis-emergencies": [
+    " for a prolonged period. Fifty pounds of dry ice should hold an 18-cubic-foot freezer for 2 days. (Caution: Do not touch dry ice with bare hands or place it in direct contact with food.) In freezers, food i"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A08",
+  "article": "safe-jerky-dehydration",
+  "file": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+  "line": 79,
+  "section_anchor": "handling",
+  "note": "slice thickness",
+  "excerpt": "Partially freeze the meat to make slicing easier. Slice no thicker than ¼ inch; thickness makes a difference to safety.",
+  "keys": [
+   "partially frozen|partially freeze|freeze",
+   "1/4|¼|quarter|0\\.25"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-fsis-jerky": [
+    " Food Safety Keep Your Food Safe During Emergencies Removing Odors from Refrigerators and Freezers USDA Meat and Poultry Hotline Brochures & Publications Food Defense and Emergency Response Emergency Respon"
+   ],
+   "food-fsis-jerky-qa": [
+    "pment and utensils. Keep meat and poultry refrigerated at 40 °F or slightly below; use or freeze ground beef and poultry within 2 days; whole red meats, within 3 to 5 days. Defrost frozen meat in the refrig"
+   ],
+   "nchfp-jerky": [
+    "is sliced and marinated. This parasite causes the disease trichinosis. To treat the meat, freeze a portion that is 6 inches or less thick at 0ºF or below for at least 30 days. Freezing will not eliminate ba"
+   ],
+   "food-ksu-jerky": [
+    "ng the last century when electricity became widely available to power commercial and home freezers. Food dehydration technology is both simple and readily available to most of the world’s cultures. The scie"
+   ],
+   "food-fsis-emergencies": [
+    " Food Safety Keep Your Food Safe During Emergencies Removing Odors from Refrigerators and Freezers USDA Meat and Poultry Hotline Brochures & Publications Food Defense and Emergency Response Emergency Respon"
+   ],
+   "food-fsis-shelf-stable": [
+    " Food Safety Keep Your Food Safe During Emergencies Removing Odors from Refrigerators and Freezers USDA Meat and Poultry Hotline Brochures & Publications Food Defense and Emergency Response Emergency Respon"
+   ],
+   "food-osu-survival-food": [
+    "e to use perishable foods in the refrigerator for the next meal and access foods from the freezer for the next few days. Then, you will need to use the nonperishable food you have stocked for an emergency. "
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A09",
+  "article": "safe-jerky-dehydration",
+  "file": "preparedness/content/articles/safe-jerky-dehydration.body.html",
+  "line": 36,
+  "section_anchor": "pathogens",
+  "note": "marinade",
+  "excerpt": "Salmonella and E. coli O157:H7 Raw meat; ground meat is harder to make safe. Heat to 160°F (poultry 165°F); measure with a metal stem-type thermometer; keep meat at 40°F or below; marinate in the refrigerator and do not reuse the marinade.",
+  "keys": [
+   "marinat",
+   "refrigerator",
+   "reuse|discard|save"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-fsis-jerky": [
+    "lk Turkey Roasting Poultry Processing: Questions & Answers Poultry: Basting, Brining, and Marinating Stuffing and Food Safety The Poultry Label Says \"Fresh\" Turduckens Require Safe Food Handling Turkey Basic"
+   ],
+   "food-fsis-jerky-qa": [
+    " within 3 to 5 days. Defrost frozen meat in the refrigerator, not on the kitchen counter. Marinate meat in the refrigerator. Don't save marinade to re-use. Marinades are used to tenderize and flavor the jerk"
+   ],
+   "nchfp-jerky": [
+    "erky, the meat should be treated to kill the trichinella parasite before it is sliced and marinated. This parasite causes the disease trichinosis. To treat the meat, freeze a portion that is 6 inches or less"
+   ],
+   "food-ksu-jerky": [
+    "hin 3 to 5 days. • Defrost frozen meat in the refrigerator, not on the kitchen counter. • Marinate meat in the refrigerator. Don’t save marinade to reuse. Marinades are used to tenderize and flavor the jerky"
+   ],
+   "food-fsis-emergencies": [
+    "lk Turkey Roasting Poultry Processing: Questions & Answers Poultry: Basting, Brining, and Marinating Stuffing and Food Safety The Poultry Label Says \"Fresh\" Turduckens Require Safe Food Handling Turkey Basic"
+   ],
+   "food-fsis-shelf-stable": [
+    "lk Turkey Roasting Poultry Processing: Questions & Answers Poultry: Basting, Brining, and Marinating Stuffing and Food Safety The Poultry Label Says \"Fresh\" Turduckens Require Safe Food Handling Turkey Basic"
+   ],
+   "food-osu-survival-food": [
+    "ou to “shelter in place” in your own home. You may be able to use perishable foods in the refrigerator for the next meal and access foods from the freezer for the next few days. Then, you will need to use the non"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A10",
+  "article": "shelter-or-evacuate",
+  "file": "preparedness/content/articles/shelter-or-evacuate.body.html",
+  "line": 69,
+  "section_anchor": "hazmat",
+  "note": "chemical shelter-in-place list",
+  "excerpt": "If told to stay indoors: bring pets inside; go to an internal room; close and lock exterior doors and windows; close vents, fireplace dampers and as many interior doors as possible; turn off air conditioners and ventilation, or set ventilation to 100 percent r",
+  "keys": [
+   "pets",
+   "interior room|internal room",
+   "vents|dampers"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "shelter-ready-hurricanes": [
+    "ive in an evacuation zone. Learn your evacuation routes, practice with your household and pets, and identify where you will stay. Follow the instructions from local emergency managers, who work closely wi"
+   ],
+   "shelter-ready-wildfires": [
+    "y have to evacuate quickly due to a wildfire. Learn your evacuation routes, practice with pets and identify where you will go. Follow the instructions from local authorities. They will provide the latest "
+   ],
+   "shelter-ready-hazmat": [
+    "d area, move as far away as possible and shelter-in-place. If told to stay indoors: Bring pets inside. Seek shelter in an internal room. Close and lock all exterior doors and windows. Close vents, firepla"
+   ],
+   "shelter-ready-evacuation": [
+    "ss Financial Preparedness Get Tech Ready People with Disabilities Older Adults Caregivers Pets and Animals #SummerReady #WinterReady FIFA World Cup 2026™ Evacuation Shelter Safety Skills Plan for Location"
+   ],
+   "shelter-ready-shelter": [
+    "ss Financial Preparedness Get Tech Ready People with Disabilities Older Adults Caregivers Pets and Animals #SummerReady #WinterReady FIFA World Cup 2026™ Evacuation Shelter Safety Skills Plan for Location"
+   ],
+   "shelter-ready-floods": [
+    "e can protect you. Preparing for a Flood - Make a plan for your household, including your pets so that you and your family know what to do, where to go and what you will need to protect yourselves from fl"
+   ],
+   "shelter-ready-winter-weather": [
+    " heat, power and communication services. Put older adults, children, sick individuals and pets at greater risk. How to Protect Yourself from Winter Weather IF YOU ARE UNDER A WINTER STORM WARNING, FIND SH"
+   ],
+   "shelter-ready-power-outages": [
+    "our home. Carbon monoxide is a colorless, odorless gas that can kill you, your family and pets. Keep the generator dry and protected from rain or flooding. Touching a wet generator or devices connected to"
+   ],
+   "shelter-ready-disabilities": [
+    "ss Financial Preparedness Get Tech Ready People with Disabilities Older Adults Caregivers Pets and Animals #SummerReady #WinterReady FIFA World Cup 2026™ Evacuation Shelter Safety Skills Plan for Location"
+   ],
+   "shelter-ready-plan": [
+    "ss Financial Preparedness Get Tech Ready People with Disabilities Older Adults Caregivers Pets and Animals #SummerReady #WinterReady FIFA World Cup 2026™ Evacuation Shelter Safety Skills Plan for Location"
+   ],
+   "shelter-ready-plan-locations": [
+    "ss Financial Preparedness Get Tech Ready People with Disabilities Older Adults Caregivers Pets and Animals #SummerReady #WinterReady FIFA World Cup 2026™ Evacuation Shelter Safety Skills Plan for Location"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A11",
+  "article": "shelter-or-evacuate",
+  "file": "preparedness/content/articles/shelter-or-evacuate.body.html",
+  "line": 85,
+  "section_anchor": "evacuate",
+  "note": "fuel tank levels",
+  "excerpt": "If you have a car: keep a full tank if an evacuation seems likely, and keep at least a half tank at all times, since gas stations may be closed or unable to pump during outages. Plan to take one car per family to reduce congestion. Keep an emergency kit in the",
+  "keys": [
+   "half tank|half a tank|1/2 tank|full tank|tank"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "shelter-ready-evacuation": [
+    " and supplies for traveling longer distances if you have a car. If you have a car: Keep a full tank of gas if an evacuation seems likely. Keep a half tank of gas in it at all times in case of an unexpected nee"
+   ],
+   "shelter-ready-winter-weather": [
+    "nd, a flashlight, warm clothes, blankets, bottled water and non-perishable snacks. Keep a full tank of gas. Stay Safe During Winter Weather Avoid carbon monoxide poisoning. Only use generators and grills outdo"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A12",
+  "article": "shelter-or-evacuate",
+  "file": "preparedness/content/articles/shelter-or-evacuate.body.html",
+  "line": 68,
+  "section_anchor": "hazmat",
+  "note": "chemical evacuate",
+  "excerpt": "If told to evacuate: do so immediately. Work out which areas are affected or where the chemical is coming from and get away. If the chemical is inside your building, leave without passing through the contaminated area if possible. If you cannot, move as far fr",
+  "keys": [
+   "evacuate",
+   "chemical"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "shelter-ready-hurricanes": [
+    "an to continue operating when disaster strikes. Know your Evacuation Zone You may have to evacuate quickly due to a hurricane if you live in an evacuation zone. Learn your evacuation routes, practice with you"
+   ],
+   "shelter-ready-wildfires": [
+    "e sure everyone in your household knows and understands what to do if you need to quickly evacuate. Don’t forget a plan for the office, kids’ school or daycare and anywhere you frequent. Review Important Docu"
+   ],
+   "shelter-ready-tornadoes": [
+    "anche Biohazard Exposure Cybersecurity Drought Earthquakes Explosions Extreme Heat Floods Chemicals and Hazardous Materials Incidents Home Fires Home Safety Household Chemical Emergencies Hurricanes Landslide"
+   ],
+   "shelter-ready-hazmat": [
+    "e. Sometimes, it may be safer to shelter inside your home, other times it may be safer to evacuate. Image If told to evacuate: If asked to evacuate, do so immediately. To find a public shelter, text SHELTER +"
+   ],
+   "shelter-nws-nwr": [
+    "f hazards – including natural (such as earthquakes or avalanches), environmental (such as chemical releases or oil spills), and public safety (such as AMBER alerts or 911 Telephone outages). Known as the \"Voi"
+   ],
+   "shelter-ready-evacuation": [
+    "ncy, it can be lifesaving. This is why we are encouraging everyone to “Be in the Know” to evacuate safely. Know Your Risks It’s important to understand your location’s risks because no two communities face th"
+   ],
+   "shelter-ready-floods": [
+    "hat is normally dry. Floods are the most common disaster in the United States. Failing to evacuate flooded areas or entering flood waters can lead to injury or death. Floods may: Result from rain, snow, coast"
+   ],
+   "shelter-ready-winter-weather": [
+    "anche Biohazard Exposure Cybersecurity Drought Earthquakes Explosions Extreme Heat Floods Chemicals and Hazardous Materials Incidents Home Fires Home Safety Household Chemical Emergencies Hurricanes Landslide"
+   ],
+   "shelter-ready-power-outages": [
+    "anche Biohazard Exposure Cybersecurity Drought Earthquakes Explosions Extreme Heat Floods Chemicals and Hazardous Materials Incidents Home Fires Home Safety Household Chemical Emergencies Hurricanes Landslide"
+   ],
+   "shelter-ready-disabilities": [
+    " others how to communicate with you. If you use assistive technologies, plan how you will evacuate with the devices or how you will replace equipment if lost or destroyed. Locate and access your electronic he"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A13",
+  "article": "pressure-canning-low-acid",
+  "file": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+  "line": 53,
+  "section_anchor": "outline",
+  "note": "canner checks",
+  "excerpt": "Check the canner before you prepare food: clean the gasket, clear the vent pipe, make sure the burner and range are level. NCHFP says in general not to use a canner on an outdoor LP-gas burner or a range burner over 12,000 BTU, and to check the manufacturer's ",
+  "keys": [
+   "gasket",
+   "vent",
+   "level"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-cdc-home-canned": [
+    " will check gauges. Contact the pressure canner manufacturer for other options. Clean lid gaskets and other parts according to the manufacturer's directions. Vent the pressure canner before pressurizing and"
+   ],
+   "food-nchfp-multicooker": [
+    "steam, the temperature is lower than the same pressure of pure steam. That’s why a proper venting process is so important in pressure canning – to obtain a pure steam environment inside the canner. Also, "
+   ],
+   "cdc-botulism-prevention": [
+    "ited States government Here's how you know Botulism EXPLORE THIS TOPIC SEARCH Botulism Prevention FEB. 26, 2026 , VISIT LINK FOR DETAILS. For Everyone PURPOSE Many cases of botulism are preventable. Read "
+   ],
+   "food-fsis-shelf-stable": [
+    " Health Partners State Departments of Public Health Outbreaks Outbreak Investigations: Prevention Outbreak Investigations: Response Safe Food Handling and Preparation Food Safety Basics Additives in Meat "
+   ],
+   "food-nchfp-using-pressure-canners": [
+    "pressure canners are lightweight, thin-walled kettles; most have turn-on lids fitted with gaskets. At least one style is still made with heavy cast aluminum, has screw-down knobs around the canner and does "
+   ],
+   "food-nchfp-ensuring-safe": [
+    " for Problems with Canned Fruit Juices Find Your Elevation Sterilization of Empty Jars Preventing Spoilage Maintaining Color and Flavor in Canned Food Aspectos Básicos de la Preparación de Conservas en Ca"
+   ],
+   "food-nchfp-recommended-canners": [
+    "nners are lightweight, thin-walled kettles; most have turn-on lids. They have a jar rack, gasket, dial or weighted gauge, an automatic vent/cover lock, a vent port (steam vent) to be closed with a counterwe"
+   ],
+   "food-nchfp-dry-canning": [
+    "ual changes to the food or odors. Please read what the Centers for Disease Control and Prevention (CDC) has to say about botulism and home canning. But people say it works and like the food... Someone can"
+   ],
+   "food-nchfp-not-recommended": [
+    " for Problems with Canned Fruit Juices Find Your Elevation Sterilization of Empty Jars Preventing Spoilage Maintaining Color and Flavor in Canned Food Aspectos Básicos de la Preparación de Conservas en Ca"
+   ],
+   "food-osu-survival-food": [
+    "ing Parenting Physical activity Youth education resources Get involved Programs Projects Events About About us Our leadership Get involved News Career opportunities Donate Contact us Find a location near "
+   ],
+   "food-nchfp-steam-canning": [
+    "d a potential food quality concern, not a food safety concern. In some cases, they could eventually cause the food to spoil, but they are not expected to cause foodborne illness. Approved atmospheric stea"
+   ],
+   "food-usda-canning-guide-1": [
+    "at lid is crimped around its bottom edge to form a trough, which is filled with a colored gasket compound. When jars are processed, the lid gasket softens and flows slightly to cover the jar-sealing surface"
+   ],
+   "food-usu-canned-goods": [
+    "o store water safely and where you can find an emergency source if needed. Previous Next Events View Events Near You Learn More Take an Online Course Tips SIGN UP Find an Event USU EXTENSION CONNECT WITH "
+   ],
+   "food-fsis-emergencies": [
+    "drinking water. Wash the interior of the refrigerator and freezer, including the door and gaskets, with hot water and baking soda. Rinse with a sanitizing solution (see above). Leave the door open for about"
+   ],
+   "food-cdc-after-emergency": [
+    "xplore This Topic Search Search Clear Search For Everyone Basics Symptoms Risk Factors Preventing Food Poisoning Facts and Stats Educational Materials and Videos Patient Stories View all Health Care Provi"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A14",
+  "article": "pressure-canning-low-acid",
+  "file": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+  "line": 58,
+  "section_anchor": "outline",
+  "note": "canner cooling",
+  "excerpt": "Turn off the heat and let the canner cool and depressurize by itself. Forced cooling \"may result in food spoilage\" or unsafe food.",
+  "keys": [
+   "cool|depressuri",
+   "spoilage|unsafe|forced"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "nchfp-home": [
+    "ICE JAM READ MORE ABOUT BLUEBERRY-SPICE JAM PUBLICATIONS DRY CANNING RAW VEGETABLES IS AN UNSAFE PRACTICE READ MORE ABOUT DRY CANNING RAW VEGETABLES IS AN UNSAFE PRACTICE PUBLICATIONS PEACH SEASON HAS ARRIV"
+   ],
+   "food-cdc-home-canned": [
+    "acturer's directions. Vent the pressure canner before pressurizing and follow recommended cooling steps. If your recipe is old, be sure to use current processing times and pressures. Be mindful of the kin"
+   ],
+   "food-nchfp-multicooker": [
+    "s coming to pressure, during the actual process time, and then during the early stages of cooling the canner and jars. Even after the heat is turned off under the canner, at the end of the recommended pro"
+   ],
+   "food-fsis-shelf-stable": [
+    "essed at 250 degrees F. This destroys microorganisms and inactivates enzymes. As the food cools, a vacuum seal is formed that prevents any new bacteria from getting in. Since the food in the container is "
+   ],
+   "food-nchfp-using-pressure-canners": [
+    " Lids How to Use Boiling Water and Pressure Canners Selecting the Correct Processing Time Cooling Jars and Testing Jar Seals Storing Home Canned Foods Identifying and Handling Spoiled Canned Food Canned F"
+   ],
+   "food-nchfp-ensuring-safe": [
+    " Lids How to Use Boiling Water and Pressure Canners Selecting the Correct Processing Time Cooling Jars and Testing Jar Seals Storing Home Canned Foods Identifying and Handling Spoiled Canned Food Canned F"
+   ],
+   "food-nchfp-recommended-canners": [
+    " Lids How to Use Boiling Water and Pressure Canners Selecting the Correct Processing Time Cooling Jars and Testing Jar Seals Storing Home Canned Foods Identifying and Handling Spoiled Canned Food Canned F"
+   ],
+   "food-nchfp-dry-canning": [
+    "ams and Jellies Pickling Recipes Seasonal Food Tips Blog Dry Canning Raw Vegetables is an Unsafe Practice DRY CANNING RAW VEGETABLES IS AN UNSAFE PRACTICE Jun 25, 2020 Some people are experimenting with can"
+   ],
+   "food-nchfp-not-recommended": [
+    " Lids How to Use Boiling Water and Pressure Canners Selecting the Correct Processing Time Cooling Jars and Testing Jar Seals Storing Home Canned Foods Identifying and Handling Spoiled Canned Food Canned F"
+   ],
+   "food-osu-survival-food": [
+    "f risky foods. Keep other foods that benefit from refrigeration for extended quality in a cool, dark, dry and ventilated location. Watch for signs of spoilage such as off-odor, mold or sliminess. Immediat"
+   ],
+   "food-usda-canning-guide-1": [
+    "etermining proper process time.......................................................1-23 Cooling jars......................................................................................................"
+   ],
+   "food-usu-canned-goods": [
+    " labeling purchase date (month and year) on can lid with marker. Store all canned food in cool, dark, dry space away from furnaces, pipes, and places where temperatures change like un-insulated attics. Do"
+   ],
+   "food-fsis-emergencies": [
+    "at and poultry. This will keep them at a safe temperature longer. Have a large, insulated cooler and frozen gel packs available. Perishable foods will stay safe in a refrigerator only 4 hours. Find out wh"
+   ],
+   "food-cdc-after-emergency": [
+    "elow. Freeze containers of water and gel packs to help keep food at 40°F or below. Have a cooler and frozen gel packs ready in case you have to remove food from the refrigerator to keep it cold. Buy dry i"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A15",
+  "article": "family-communication-plan",
+  "file": "preparedness/content/articles/family-communication-plan.body.html",
+  "line": 72,
+  "section_anchor": "phones",
+  "note": "call forwarding before evacuation",
+  "excerpt": "If you have call forwarding on your home number, forward it to your mobile before an evacuation so incoming calls reach you.",
+  "keys": [
+   "forward"
+  ],
+  "status": "NO_KEYS_FOUND",
+  "sources_with_hits": {},
+  "sources_not_in_corpus": [
+   "shelter-fcc-comms",
+   "shelter-co-oss-reunification"
+  ]
+ },
+ {
+  "id": "A16",
+  "article": "pantry-rotation",
+  "file": "preparedness/content/articles/pantry-rotation.body.html",
+  "line": 58,
+  "section_anchor": "chart",
+  "note": "refrigerator time table cell",
+  "excerpt": "Low-acid canned goods (canned meat and poultry, stews, soups other than tomato, corn, carrots, beans, peas) 2 to 5 years 3 to 4 days in the refrigerator",
+  "keys": [
+   "3 to 4 days|3-4 days"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-fsis-shelf-stable": [
+    " Chart FOOD STORAGE ON SHELF STORAGE AFTER OPENING Canned ham (shelf-stable) 2 to 5 years 3 to 4 days in the refrigerator Low-acid canned goods. Examples: canned meat and poultry, stews, soups (except tomato), s"
+   ]
+  },
+  "sources_not_in_corpus": [
+   "food-foodkeeper"
+  ]
+ },
+ {
+  "id": "A17",
+  "article": "pantry-rotation",
+  "file": "preparedness/content/articles/pantry-rotation.body.html",
+  "line": 59,
+  "section_anchor": "chart",
+  "note": "refrigerator time table cell",
+  "excerpt": "High-acid canned goods (juices, tomatoes, fruits, pickles, sauerkraut) 12 to 18 months 5 to 7 days in the refrigerator",
+  "keys": [
+   "5 to 7 days|5-7 days|a week"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-osu-survival-food": [
+    "potatoes, winter squash, cabbage, apples, pears, avocados and tomatoes unrefrigerated for a week or more. The same goes for root vegetables (carrots, beets, turnips and rutabagas). Also safe: fresh mushroom"
+   ],
+   "food-usu-canned-goods": [
+    "led for 5 - 10 minutes before eating. Once opened canned foods may last between a day and a week depending on the food. References Andress, E. L. (Revised 2005). Preserving food: Using boiling water canners"
+   ],
+   "food-fsis-shelf-stable": [
+    "negar-based sauces or dressings like German potato salad and sauerbraten. 12 to 18 months 5 to 7 days in the refrigerator Home canned foods 12 months. Before using, boil 10 minutes for high-acid foods; 20 minute"
+   ]
+  },
+  "sources_not_in_corpus": [
+   "food-foodkeeper"
+  ]
+ },
+ {
+  "id": "A18",
+  "article": "pantry-rotation",
+  "file": "preparedness/content/articles/pantry-rotation.body.html",
+  "line": 63,
+  "section_anchor": "chart",
+  "note": "refrigerator time table cell",
+  "excerpt": "Hard or dry sausage 6 weeks in the pantry 3 weeks refrigerated",
+  "keys": [
+   "3 weeks|three weeks|21 days"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-fsis-shelf-stable": [
+    "aged 12 months N/A Jerky, home-dried 1 to 2 months N/A Hard/dry sausage 6 weeks in pantry 3 weeks refrigerated, or until it no longer smells or tastes good. USDA Dried Egg Mix Store below 50 °F, preferably r"
+   ]
+  },
+  "sources_not_in_corpus": [
+   "food-foodkeeper"
+  ]
+ },
+ {
+  "id": "A19",
+  "article": "go-bags",
+  "file": "preparedness/content/articles/go-bags.body.html",
+  "line": 65,
+  "section_anchor": "babies",
+  "note": "pediatric dosing caution (editor)",
+  "excerpt": "Editor's note Safe dosing of a children's medicine depends on the child's age and weight, the product's concentration and its label. Do not give any medicine to an infant, or pack one on the assumption that you can work out a dose later, without direction from",
+  "keys": [
+   "dos|label|weight|age"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "start-ready-evacuation": [
+    "n routes. Learn your state and local plans by visiting your state and county emergency management websites. Know What to Bring Build a go-bag with all the essentials you might need, so you don’t need to "
+   ],
+   "start-ready-kit": [
+    "air) Plastic sheeting, scissors and duct tape (to shelter in place) Moist towelettes, garbage bags and plastic ties (for personal sanitation) Wrench or pliers (to turn off utilities) Manual can opener (f"
+   ],
+   "start-ready-disability": [
+    "t Disability intersects every demographic group—there are people with disabilities of all ages, races, sex or national origin. And, disabilities can impact a person in a variety of ways—both visible and "
+   ],
+   "ready-are-you-ready": [
+    "............................................................................. 10 Power Outage ............................................................................................................."
+   ],
+   "start-ready-supply-list": [
+    "aminated air and plastic sheeting and duct tape to shelter-in-place Moist towelettes, garbage bags and plastic ties for personal sanitation Non-sparking wrench or pliers to turn off utilities Can opener "
+   ],
+   "start-hud-multifamily-template": [
+    "ents like storms, blizzards, and heat waves can lead to flooding, power loss, property damage, transportation disruptions, interrupted access to critical resources, and even loss of life. However, with a"
+   ],
+   "start-ready-car": [
+    "ou are stranded, keep an emergency supply kit in your car with these automobile extras: Image Jumper cables Flares or reflective triangle Ice scraper Car cell phone charger Blanket Map Cat litter or sand"
+   ],
+   "start-ready-financial": [
+    "rance policies are the same. Review your policy to make sure the amount and types of coverage you have meets the requirements for all possible hazards. Homeowners insurance does not typically cover flood"
+   ],
+   "start-cdc-family-kit": [
+    "ng, and duct tape (to shelter in place) Zip ties, toilet paper, moist towelettes, and garbage bags (for keeping yourself/things clean) Matches in a waterproof container or re-sealable plastic bag, small "
+   ],
+   "start-cdc-infant-checklist": [
+    "Skip directly to site content Skip directly to search Skip directly to On This Page An official website of the United States government Here's how you know Infant and Child Feeding in Emergenci"
+   ],
+   "start-ready-food": [
+    "Sanitation Cooking Managing Food without Power Following a disaster there may be power outages that could last for several days. Stock canned foods, dry mixes and other staples that do not require refrig"
+   ],
+   "ready-pets": [
+    " for an emergency contact outside of your immediate area. Contact your local emergency management office, animal shelter or animal control office to get additional advice and information if you’re unsure"
+   ],
+   "start-cdc-pyh-connected": [
+    "Skip directly to site content Skip directly to search Skip directly to On This Page An official website of the United States government Here's how you know Prepare Your Health EXPLORE THIS TOPI"
+   ],
+   "start-cdc-disability-evacuate": [
+    "ISIT LINK FOR DETAILS. For Everyone Sheltering and Evacuating PEOPLE WITH DISABILITIES | PAGE 3 OF 5 | ALL PAGES WHAT TO KNOW During an emergency, you may have to evacuate from your home or another locat"
+   ],
+   "start-cdc-disability-kit": [
+    "ISIT LINK FOR DETAILS. For Everyone Building an Emergency Kit PEOPLE WITH DISABILITIES | PAGE 2 OF 5 | ALL PAGES WHAT TO KNOW Build an emergency kit that is specific to your individual needs. Read on for"
+   ],
+   "start-ready-older-adults": [
+    "n older adult, you may have specific needs after a disaster. Use the information on this page to assess your needs and take simple, low-cost steps that help you get better prepared. Take Control in 1, 2,"
+   ],
+   "start-acl-emergency": [
+    "ng the Aging and Disability Networks Success Stories Volunteer Opportunities and Civic Engagement Disasters and other emergencies can happen at any time, anywhere, and vary in magnitude. Older adults and"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "A20",
+  "article": "three-day-kit",
+  "file": "preparedness/content/articles/three-day-kit.body.html",
+  "line": 79,
+  "section_anchor": "medicine",
+  "note": "do not stop medicine (editor)",
+  "excerpt": "Editor's note Do not stop, throw away or ration a medicine you depend on because of anything on this page. Ask your prescriber or pharmacist, before an emergency, whether each of your medicines needs refrigeration, how long it can safely stay warm, and what th",
+  "keys": [
+   "doctor|pharmacist|prescrib"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "ready-are-you-ready": [
+    "ormation for other important people or organizations as well, such as medical facilities, doctors, schools, or service providers. You should also set an out-of-state point of contact, which enables everyone"
+   ],
+   "start-cdc-pyh-prescriptions": [
+    "over-the-counter drugs, and vitamins to prepare for an emergency. The Basics Talk to your doctor or pharmacist about how you can create an emergency supply of medicines. A list of your prescription medicine"
+   ],
+   "start-ready-power": [
+    "ication that should be refrigerated, unless the drug’s label says otherwise. Consult your doctor or pharmacist immediately for a new supply. Associated Content Carbon Monoxide Dangers | U.S. Consumer Produc"
+   ],
+   "start-fema-power-sheet": [
+    "arn the signs of carbon monoxide poisoning, which include flu-like symptoms. Talk to your doctor to make a plan for how you will use your medical devices that need electricity, store your medications and st"
+   ],
+   "start-ready-disability": [
+    "lp you. If you use medical equipment in your home that requires electricity, talk to your doctor or health care provider about what you may be able to do to keep it running during a power outage. You can al"
+   ],
+   "start-redcross-older-adults": [
+    "e List of Medical Information : conditions, allergies, medications, prescription records, doctors and insurance cards. How to Respond During a Disaster The 3 most important things to do when disaster strike"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "B01",
+  "article": "food-safety-power-outage",
+  "file": "preparedness/content/articles/food-safety-power-outage.body.html",
+  "line": 41,
+  "section_anchor": "clocks",
+  "note": "FDA 45F pass",
+  "excerpt": "FDA alone allows a measured 45°F as a pass, and says to cook and eat such food quickly. FSIS and CDC state a flat 4-hour cut-off and do not mention 45°F. FEMA's own two documents differ: its Ready.gov Food page says to discard perishables above 40°F for two ho",
+  "keys": [
+   "45\\s?°?\\s?F|45 degrees"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-fda-outage-flood": [
+    " temperatures above 40°F for 4 hours or more. Perishable foods with temperatures that are 45°F or below (measured with a food thermometer) should be safe, but should be cooked and consumed as soon as poss"
+   ],
+   "food-osu-survival-food": [
+    " Minimum temperatures for food safety: Whole cuts of beef, pork, veal, lamb or fin fish: 145°F (or cook fish until it is opaque) Ground meats, such as beef and pork: 160°F Poultry, including ground chicke"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "B02",
+  "article": "food-safety-power-outage",
+  "file": "preparedness/content/articles/food-safety-power-outage.body.html",
+  "line": 42,
+  "section_anchor": "clocks",
+  "note": "4 hour cut-off",
+  "excerpt": "Editor's note We take the cautious reading: treat 4 hours without power as the outer limit for a closed, cold, well-stocked refrigerator, and count any time above 40°F separately and strictly. If you have no thermometer reading and you are unsure how long the ",
+  "keys": [
+   "4 hours|four hours"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "fsis-power-failure": [
+    "ng a power failure? During a power outage, the refrigerator will keep food cold for about 4 hours if it remains unopened. A full stand-alone freezer will hold the temperature for approximately 48 hours (24 h"
+   ],
+   "food-cdc-after-emergency": [
+    "frigerator and freezer doors closed. If the doors stay closed, food will stay safe up to: 4 hours in a refrigerator, 48 hours in a full freezer, 24 hours in a half-full freezer. If the power has been out for"
+   ],
+   "food-foodsafety-outage-chart": [
+    "n Keeping Food Safe During an Emergency , your refrigerator will keep food safe for up to 4 hours during a power outage. Keep the door closed as much as possible. Discard refrigerated perishable food such as"
+   ],
+   "food-fsis-emergencies": [
+    "er and frozen gel packs available. Perishable foods will stay safe in a refrigerator only 4 hours. Find out where dry ice and block ice can be purchased. During a Power Outage Keep refrigerator and freezer d"
+   ],
+   "food-fema-outage-sheet": [
+    "ide. Keep freezers and refrigerators closed. A refrigerator will keep food cold for about 4 hours. A full freezer will stay a safe temperature for about 48 hours. Do not store food in the outside or in the s"
+   ],
+   "food-fda-outage-flood": [
+    "ave coolers on hand to keep refrigerated food cold if the power will be out for more than 4 hours. Purchase or make ice cubes in advance , and freeze gel packs ahead of time. Store all of these in the freeze"
+   ],
+   "food-ready-food": [
+    " freezer doors closed as much as possible. The refrigerator will keep food cold for about four hours if it is unopened. Refrigerated or frozen foods should be kept at 40 degrees Fahrenheit or below for proper f"
+   ],
+   "food-osu-survival-food": [
+    "munity Assembly Areas or other safe places at higher elevations. Stay there for at least 24 hours to avoid the risks of tsunami surges. Wait until after the surge risk has passed to unite with loved ones. On"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "B03",
+  "article": "pemmican-and-dried-meats",
+  "file": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+  "line": 52,
+  "section_anchor": "modern",
+  "note": "USDA storage time vs NCHFP",
+  "excerpt": "The two agencies disagree on details. The 160°F target is shared, but USDA says to apply the heat before dehydrating and gives a one-to-two-month home storage time, while NCHFP permits heating after drying and gives two weeks at room temperature. We report bot",
+  "keys": [
+   "1 to 2 months|one to two months|1-2 months|two months",
+   "160"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "hist-food-fsis-jerky": [
+    " jerky? Commercially packaged jerky can be kept 12 months; home-dried jerky can be stored 1 to 2 months. Featured Factsheets & Resources Slow Cookers and Food Safety At any time of year, a slow cooker can make lif"
+   ],
+   "hist-food-nchfp-jerky": [
+    "me-dried jerky can be decreased by allowing the internal temperature of the meat to reach 160ºF, but in such a way as to prevent case hardening. Two methods can be used: heating meat strips in marinade b"
+   ]
+  },
+  "sources_not_in_corpus": [
+   "hist-food-ce-pemmican",
+   "hist-food-metis-fur-trade",
+   "hist-food-nk360-bison",
+   "loc-prairie-traveler"
+  ]
+ },
+ {
+  "id": "B04",
+  "article": "pressure-canning-low-acid",
+  "file": "preparedness/content/articles/pressure-canning-low-acid.body.html",
+  "line": 99,
+  "section_anchor": "boil",
+  "note": "boil home-canned low-acid before eating",
+  "excerpt": "The agencies do not fully agree on the boil, or on tasting",
+  "keys": [
+   "10 minutes",
+   "boil"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "food-cdc-home-canned": [
+    "oods All home-fermented Alaska Native foods At altitudes below 1,000 feet, boil foods for 10 minutes. Add 1 minute for each additional 1,000 feet of elevation. When in doubt, throw it out! Do not eat food if yo"
+   ],
+   "food-nchfp-multicooker": [
+    "nt done to support the recommendations with it. Jarden Home Brands also sells an electric boiling water canner, but it is not a pressurized appliance and for canning purposes operates similar to a traditi"
+   ],
+   "cdc-botulism-prevention": [
+    "ood properly. Use traditional methods to prepare Alaska Native foods. Boil some foods for 10 minutes before eating them.* Home-canned tomatoes Foods containing home-canned tomatoes All low-acid home-canned food"
+   ],
+   "food-fsis-shelf-stable": [
+    "right away by boiling for 10 to 20 minutes. At altitudes below 1,000 feet, boil foods for 10 minutes. Add an additional minute of boiling time for each additional 1,000 feet elevation (for example, at 3,000 fee"
+   ],
+   "food-nchfp-using-pressure-canners": [
+    " in underprocessing. To be safe, USDA recommends that all pressure canners must be vented 10 minutes before they are pressurized. To vent a canner, leave the vent pipe (steam vent) uncovered (or manually open t"
+   ],
+   "food-nchfp-ensuring-safe": [
+    "s Not Recommended Ensuring High-Quality Canned Foods Recommended Jars and Lids How to Use Boiling Water and Pressure Canners Selecting the Correct Processing Time Cooling Jars and Testing Jar Seals Storin"
+   ],
+   "food-nchfp-recommended-canners": [
+    "ssure canner requires about 12 to 15 minutes of heating before it begins to vent; another 10 minutes to vent the canner; another 5 minutes to pressurize the canner; another 8 to 10 minutes to process the acid f"
+   ],
+   "nchfp-pressure-ground-meat": [
+    "Ground meat may be sauteed without shaping. Remove excess fat. Fill jars with pieces. Add boiling meat broth, tomato juice, or water, leaving 1-inch headspace. Add 2 teaspoons of salt per quart to the jar"
+   ],
+   "food-nchfp-not-recommended": [
+    "s Not Recommended Ensuring High-Quality Canned Foods Recommended Jars and Lids How to Use Boiling Water and Pressure Canners Selecting the Correct Processing Time Cooling Jars and Testing Jar Seals Storin"
+   ],
+   "food-osu-survival-food": [
+    "ime for the burning materials to turn to coals for even cooking. Open flames are good for boiling water, but cooking with them usually results in burned food on the outside and undercooked food on the ins"
+   ],
+   "food-usda-canning-guide-1": [
+    ". Sterilization of empty jars All jams, jellies, and pickled products processed less than 10 minutes should be filled into sterile empty jars. To sterilize empty jars after washing in detergent and rinsing thor"
+   ],
+   "food-usu-canned-goods": [
+    "e. For added safety, in the case of older canned foods, you may wish to boil the food for 10 minutes before tasting. Discard if there is an off-flavor. High-acid foods may leach metal or metallic flavors from c"
+   ],
+   "food-fsis-emergencies": [
+    "ing can openers) with soap and water (hot water if available). Rinse and sanitize them by boiling in clean water or immersing them for 15 minutes in a solution of 1 tablespoon of unscented, liquid chlorin"
+   ],
+   "food-cdc-after-emergency": [
+    "ld bleach in 5 gallons of water for 15 minutes, OR put them in a pot of water, bring to a boil, and continue boiling for 2 minutes. Re-label Re-label cans or pouches with a marker. Include the expiration "
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "B05",
+  "article": "home-fire-escape-plan",
+  "file": "preparedness/content/articles/home-fire-escape-plan.body.html",
+  "line": 44,
+  "section_anchor": "alarms",
+  "note": "NFPA 60% vs half",
+  "excerpt": "Uncertain NFPA's page gives two different figures for how much working smoke alarms reduce the risk of dying in a home fire: \"60 percent\" in one place and \"cut in half\" in another. We have not tried to resolve that, and we do not quote either number. The instr",
+  "keys": [
+   "60 percent|60%",
+   "cut in half|half"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "shelter-nfpa-smoke-alarms": [
+    "working smoke alarms are present in your home, the risk of dying in a home fire is cut by 60 percent, according to the latest NFPA research. But how often are smoke alarms used in the United States and are they"
+   ],
+   "shelter-ready-disabilities": [
+    "n also ask your power provider to put you on a list for priority power restoration. About half of all Americans take a prescription medicine every day. An emergency can make it difficult for them to refil"
+   ],
+   "shelter-cdc-power-outage": [
+    "ible while the power is out. A full freezer will keep food safe for 48 hours (24 hours if half-full) without power if you don't open the door. Your refrigerator will keep food safe for up to 4 hours witho"
+   ]
+  },
+  "sources_not_in_corpus": []
+ },
+ {
+  "id": "B06",
+  "article": "medication-and-devices",
+  "file": "preparedness/content/articles/medication-and-devices.body.html",
+  "line": 127,
+  "section_anchor": "limits",
+  "note": "FDA device water bleach dose",
+  "excerpt": "The FDA's medical-device page also gives its own instructions for treating water for device use, using a different bleach dose than the one in our water guide. We reproduce neither, and we tell readers to take device-specific water advice from the manufacturer",
+  "keys": [
+   "bleach",
+   "drops|teaspoon|tablespoon"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "health-fda-devices": [
+    "ou can treat water with chlorine tablets, iodine tablets, or unscented household chlorine bleach (5.25% sodium hypochlorite). If you use chlorine tablets or iodine tablets, follow the directions that come w"
+   ]
+  },
+  "sources_not_in_corpus": [
+   "health-fcc-comms-tips"
+  ]
+ },
+ {
+  "id": "B07",
+  "article": "medication-and-devices",
+  "file": "preparedness/content/articles/medication-and-devices.body.html",
+  "line": 61,
+  "section_anchor": "cold",
+  "note": "discard vs replace medicine",
+  "excerpt": "Uncertain The CDC and FEMA's Ready.gov page lead with a rule (discard after a day or more, unless the label says otherwise). FEMA's newer fact sheet softens the verb to \"replace\" and adds \"call your doctor or pharmacist\" for anyone who depends on the medicine.",
+  "keys": [
+   "discard|throw away",
+   "replace"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "health-fda-safe-drug-use": [
+    " effects. Medicines that have come into contact with floodwater or unsafe water should be discarded, even if they are in their original containers with screw-top caps, snap lids, or droppers. Exception for L"
+   ],
+   "health-ready-power-outages": [
+    "instructions carefully. Returning After A Power Outage Image When in doubt, throw it out! Throw away any food that has been exposed to temperatures 40 degrees or higher for two hours or more, or that has an unu"
+   ],
+   "health-ready-disabilities": [
+    "u use assistive technologies, plan how you will evacuate with the devices or how you will replace equipment if lost or destroyed. Locate and access your electronic health records from a variety of sources by"
+   ],
+   "health-fema-power-outage-sheet": [
+    "or and freezer so that you can make sure food stays at a safe temperature. Be prepared to throw away food that’s no longer at a safe temperature. Survive DURING Avoid carbon monoxide poisoning. Use generators, "
+   ],
+   "health-fda-insulin": [
+    " direct heat and out of direct sunlight. Once you have access to properly stored insulin, throw away any vials that were exposed to extreme temperatures and replace them as soon as possible. If patients or heal"
+   ],
+   "health-cdc-power-outage": [
+    "eep their strength, including many liquid drugs. When the power is out for a day or more, throw away any medication that should be refrigerated, unless the drug's label says otherwise. If a life depends on the "
+   ]
+  },
+  "sources_not_in_corpus": [
+   "health-fcc-comms-tips"
+  ]
+ },
+ {
+  "id": "B08",
+  "article": "root-cellars-cool-storage",
+  "file": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+  "line": 59,
+  "section_anchor": "not-a-fridge",
+  "note": "cool storage unsuitable for perishable (editor reasoning)",
+  "excerpt": "Editor's note This is our reasoning, not a statement from either agency: a space that holds whole produce acceptably is not thereby fit for cooked food, meat or dairy, because the produce guidance does not claim to protect those foods. If a cellar's temperatur",
+  "keys": [
+   "cooked|meat|dairy"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "hist-home-fsis-refrigeration": [
+    "vestigations: Response Safe Food Handling and Preparation Food Safety Basics Additives in Meat and Poultry Products Air Fryers and Food Safety Appliance Thermometers Cleanliness Helps Prevent Foodborne Il"
+   ],
+   "cdc-botulism-prevention": [
+    "ked to botulism illness and outbreaks. Low acid-foods include all fresh vegetables, figs, meats, poultry, fish, seafood, and some tomatoes. Pressure canning is the only recommended method for canning low-"
+   ],
+   "hist-home-nps-ww2-canning": [
+    "ords Administration (NAID: 515098). Victory Gardeners canned fruits, vegetables, and even meats.[9] One source recommended canning 85 to 115 quarts of produce per person in a family to last over the winte"
+   ]
+  },
+  "sources_not_in_corpus": [
+   "hist-home-monticello-ice-house"
+  ]
+ },
+ {
+  "id": "B09",
+  "article": "making-water-safer",
+  "file": "preparedness/content/articles/making-water-safer.body.html",
+  "line": null,
+  "section_anchor": null,
+  "note": "placeholder",
+  "excerpt": null,
+  "keys": [
+   "boil"
+  ],
+  "status": "ALL_KEYS_FOUND_IN_CITED_SOURCES",
+  "sources_with_hits": {
+   "cdc-water-safe": [
+    "ints After an emergency, your tap water may not be available or safe to use. Use bottled, boiled, or treated water to avoid getting sick. Boiling is the best way to kill germs in water. Overview After an "
+   ],
+   "epa-emergency-disinfection": [
+    "flood, or water pipe breakage – local authorities may recommend using only bottled water, boiled water, or disinfected water until regular water service is restored. The instructions below show you how to"
+   ],
+   "nps-purify-water": [
+    "tural water. Purifying water involves filtering to remove large particles and treating by boiling or with chemicals to kill organisms such as bacteria, viruses and parasites. If you plan to use natural wa"
+   ],
+   "cdc-water-advisories": [
+    "efrigerator or freezer. Terms to know There are three types of drinking water advisories: Boil water advisories tell you to boil your tap water before using it. Boiling kills germs in the tap water that c"
+   ],
+   "ready-water": [
+    "ettle to the bottom or strain them through coffee filters or layers of clean cloth. Image Boiling Boiling is the safest method of treating water. In a large pot or kettle, bring water to a rolling boil fo"
+   ],
+   "cdc-water-hiking": [
+    " are not sure whether the water you are using is safe to drink, treat it to remove germs. Boiling is the best way to kill germs in water. The next best option is to filter water and then disinfect the fil"
+   ],
+   "usscm-brenckle-2019": [
+    "rigate in the 1840s, wrote: “I sometimes thought that the junks of lean pork - which were boiled in their own bristles, and looked gaunt and grim, like pick- led chins of half-famished, unwashed Cossacks "
+   ]
+  },
+  "sources_not_in_corpus": []
+ }
+]

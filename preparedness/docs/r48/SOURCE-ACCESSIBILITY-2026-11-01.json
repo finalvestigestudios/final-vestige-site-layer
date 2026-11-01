@@ -1,0 +1,1142 @@
+[
+ {
+  "url": "https://americanhistory.si.edu/explore/exhibitions/on-the-water/online/fishing-living/commercial-fishers/atlantic-cod/life-aboard",
+  "ok": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl."
+ },
+ {
+  "url": "https://americanhistory.si.edu/explore/stories/keeping-your-food-cool-ice-harvesting-electric-refrigeration",
+  "ok": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl."
+ },
+ {
+  "url": "https://archive.org/download/prairietravelerh01marc/prairietravelerh01marc_djvu.txt",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://ia801809.us.archive.org/23/items/prairietravelerh01marc/prairietravelerh01marc_djvu.txt",
+  "ctype": "text/plain; charset=utf-8",
+  "bytes": 617745,
+  "kind": "html",
+  "title": "",
+  "dates": {},
+  "sha256": "6697009494d45a40fa3e53c5d966836ae1740eb86cd43d244b4ec52e3edf43da"
+ },
+ {
+  "url": "https://ask.fsis.usda.gov/article/How-do-I-dry-jerky",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://ask.fsis.usda.gov/article/How-do-I-dry-jerky",
+  "title": "How can I make meat or poultry jerky at home?",
+  "chars": 2002,
+  "blocked_or_thin": false,
+  "sha256": "8b6bc785ba12656f0fb070a08d727804eaf1731db23758a6ccaf1dc3398d14a1",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+  "title": "How do you keep food safe during a power failure?",
+  "chars": 783,
+  "blocked_or_thin": false,
+  "sha256": "1de7e41f2d579318dfba690ed0e21055dc9e9234ca293715aa7ebe1eae224db4",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+  "title": "What foods should I keep in my house for emergencies?",
+  "chars": 1106,
+  "blocked_or_thin": false,
+  "sha256": "ddb8aa30705a95efd6f5fde0c49d1f7191c949df95db28f6438e0d7c429c42dc",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://bookstore.ksre.ksu.edu/pubs/dehydrating-meat-safely-at-home_MF3173.PDF",
+  "ok": true,
+  "kind": "html",
+  "via": "edge-browser+pymupdf",
+  "pdf_pages": 2
+ },
+ {
+  "url": "https://doh.wa.gov/community-and-environment/wastewater-management/toilet-use-during-emergencies",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://doh.wa.gov/community-and-environment/wastewater-management/toilet-use-during-emergencies",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 111499,
+  "kind": "html",
+  "title": "Toilet Use During an Emergency | Washington State Department of Health",
+  "dates": {},
+  "sha256": "3d49606f1e6aa50e452a9b2c23c076b3157b4759680be999d8e31e95261e57a5"
+ },
+ {
+  "url": "https://extension.illinois.edu/food-safety/room-temperature-storage",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://extension.illinois.edu/food-safety/room-temperature-storage",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 31926,
+  "kind": "html",
+  "title": "Room Temperature Storage | Food Safety | Illinois Extension | Illinois",
+  "dates": {},
+  "sha256": "9361ed8fe6f1d719baf91465386f27f7afe5f79fb3a40256deec195f0a6d984e"
+ },
+ {
+  "url": "https://extension.missouri.edu/publications/mp562",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://extension.missouri.edu/publications/mp562",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 33890,
+  "kind": "html",
+  "title": "Home Storage of Fruits and Vegetables in Root Cellars | MU Extension",
+  "dates": {},
+  "sha256": "086a16179d4a6fa092ccc00e6e289d971a053c8124e4c8fc0cf25eb9645917b7"
+ },
+ {
+  "url": "https://extension.oregonstate.edu/catalog/em-9331-survival-basics-food",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://extension.oregonstate.edu/catalog/em-9331-survival-basics-food",
+  "ctype": "text/html; charset=utf-8",
+  "bytes": 107872,
+  "kind": "html",
+  "title": "Survival Basics: Food — How to Stock Up and Prepare for Natural Disasters | OSU Extension Service",
+  "dates": {
+   "og:updated_time": "2026-10-31T07:36:42-07:00",
+   "article:published_time": "2021-08-16T14:39:27-07:00",
+   "article:modified_time": "2026-10-31T07:36:42-07:00",
+   "dcterms.date": "2021-08-16T14:39:27-07:00",
+   "msvalidate.01": "01E6B7ABE9BFAA29633865AEA217911A"
+  },
+  "sha256": "637f9e4aaecf80add0068000e59f48b1b54b965faa17f8466628f60eca734307"
+ },
+ {
+  "url": "https://extension.oregonstate.edu/catalog/pub/em9334-s",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://extension.oregonstate.edu/catalog/pub/em9334-s",
+  "ctype": "text/html; charset=utf-8",
+  "bytes": 80764,
+  "kind": "html",
+  "title": "Survival Basics: Sanitation and Waste Management | OSU Extension Service",
+  "dates": {
+   "og:updated_time": "2025-09-24T09:14:41-07:00",
+   "article:published_time": "2021-10-14T09:41:53-07:00",
+   "article:modified_time": "2025-09-24T09:14:41-07:00",
+   "dcterms.date": "2021-10-14T09:41:53-07:00",
+   "msvalidate.01": "01E6B7ABE9BFAA29633865AEA217911A"
+  },
+  "sha256": "75c91fced159bc184d6f730744b293b60a0960d5dcafa25a33d758267ab8cb57"
+ },
+ {
+  "url": "https://extension.usu.edu/preserve-the-harvest/research/storing-canned-goods",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://extension.usu.edu/preserve-the-harvest/research/storing-canned-goods",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 47234,
+  "kind": "html",
+  "title": "Storing Canned Goods | USU",
+  "dates": {},
+  "sha256": "9ea84c1cccab1da0805ae1cf422a600545509e35cf0d60ab871900f84f69afee"
+ },
+ {
+  "url": "https://lewis-clark.org/the-trail/fort-clatsop/the-salt-works/",
+  "ok": false,
+  "status": 403,
+  "error": "HTTP 403"
+ },
+ {
+  "url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1805-12-28",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1805-12-28",
+  "title": "December 28, 1805 | Journals of the Lewis and Clark Expedition",
+  "chars": 4347,
+  "blocked_or_thin": false,
+  "sha256": "6a945d38378a3877cfd26cf823c6d26f9fbfbfa38f00cc14ee59d9c25e03b2d3",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1806-01-05",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1806-01-05",
+  "title": "January 5, 1806 | Journals of the Lewis and Clark Expedition",
+  "chars": 7495,
+  "blocked_or_thin": false,
+  "sha256": "27f6fb4bfb358d0312b12d013b2b133f52f13dbf2930dab65b3e86db0ac78460",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1806-02-21",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1806-02-21",
+  "title": "February 21, 1806 | Journals of the Lewis and Clark Expedition",
+  "chars": 7724,
+  "blocked_or_thin": false,
+  "sha256": "09d1862c3831a0ea80d4e302d99b58de52b51e96714805b9b4092694bca37deb",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://nchfp.uga.edu/how/can/general-information/ensuring-safe-canned-foods/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nchfp.uga.edu/how/can/general-information/ensuring-safe-canned-foods/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 98736,
+  "kind": "html",
+  "title": "Ensuring Safe Canned Foods - National Center for Home Food Preservation",
+  "dates": {},
+  "sha256": "001d6a772c23a4b4b2047f557dfe74d8b2fdb7eeff19e2bde2ca8ddf1728739f"
+ },
+ {
+  "url": "https://nchfp.uga.edu/how/can/general-information/recommended-canners/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nchfp.uga.edu/how/can/general-information/recommended-canners/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 108451,
+  "kind": "html",
+  "title": "How to Use Boiling Water and Pressure Canners - National Center for Home Food Preservation",
+  "dates": {},
+  "sha256": "64ca2909f779b674960fa1034f0ce7f87d32163af983e187f2aea73f9782a814"
+ },
+ {
+  "url": "https://nchfp.uga.edu/how/can/general-information/using-pressure-canners/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nchfp.uga.edu/how/can/general-information/using-pressure-canners/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 105115,
+  "kind": "html",
+  "title": "Using Pressure Canners - National Center for Home Food Preservation",
+  "dates": {},
+  "sha256": "004705779acaa06ba64eaa8f997cbe11a63c59747b45c6a4759c62026ce1abeb"
+ },
+ {
+  "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 64624,
+  "kind": "html",
+  "title": "Jerky - National Center for Home Food Preservation",
+  "dates": {},
+  "sha256": "2d2d00b173d04b041b22940587356dbb93ded7b1b7fe0d9ea4ce1a50513ce60d"
+ },
+ {
+  "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 64624,
+  "kind": "html",
+  "title": "Jerky - National Center for Home Food Preservation",
+  "dates": {},
+  "sha256": "4d06a7194a092a5d7451858c73ba5caa3d2a261c89ada1d18b28d50cd1ecaf1d"
+ },
+ {
+  "url": "https://nchfp.uga.edu/papers/guide/GUIDE01_HomeCan_rev0715.pdf",
+  "ok": true,
+  "kind": "html",
+  "via": "edge-browser+pymupdf",
+  "pdf_pages": 40
+ },
+ {
+  "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 33131,
+  "kind": "html",
+  "title": "Historical Origins of Food Preservation - National Center for Home Food Preservation",
+  "dates": {},
+  "sha256": "e6d881b5b89ce17cdca4edf33b3a875afb3c54b37808af4fa0c925189feb79ab"
+ },
+ {
+  "url": "https://science.nasa.gov/solar-system/what-is-the-north-star-and-how-do-you-find-it/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://science.nasa.gov/solar-system/what-is-the-north-star-and-how-do-you-find-it/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 282884,
+  "kind": "html",
+  "title": "What is the North Star and How Do You Find It? - NASA Science",
+  "dates": {
+   "og:updated_time": "2024-11-06T05:36:35-05:00",
+   "article:published_time": "2021-07-28T07:00:00-04:00",
+   "article:modified_time": "2024-11-06T05:36:35-05:00"
+  },
+  "sha256": "e7043808f5b233d6955621e35f102ed07988e3023b861b833b56348feb71a44e"
+ },
+ {
+  "url": "https://timeandnavigation.si.edu/multimedia-asset/sextant",
+  "ok": false,
+  "status": 403,
+  "error": "HTTP 403"
+ },
+ {
+  "url": "https://ussconstitutionmuseum.org/wp-content/uploads/dlm_uploads/2019/05/Food-and-Drink-in-the-US-Navy.pdf",
+  "ok": true,
+  "kind": "html",
+  "via": "edge-browser+pymupdf",
+  "pdf_pages": 32
+ },
+ {
+  "url": "https://www.britannica.com/topic/Donner-party",
+  "ok": false,
+  "status": 403,
+  "error": "HTTP 403"
+ },
+ {
+  "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+  "ctype": "text/html",
+  "bytes": 59357,
+  "kind": "html",
+  "title": "Home-Canned Foods | Botulism | CDC",
+  "dates": {
+   "og:updated_time": "2025-12-02T10:38:33-05:00",
+   "cdc:first_published": "May 15, 2024",
+   "cdc:last_updated": "April 25, 2024",
+   "cdc:last_reviewed": "April 25, 2024",
+   "dc.date": "2025-12-02T10:38:33Z",
+   "cdc:last_published": "2025-12-02T10:39:27Z"
+  },
+  "sha256": "f79ab35e824d60e991971eebb55cdae4107965f2e5cdd24e6207380319712005"
+ },
+ {
+  "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+  "ctype": "text/html",
+  "bytes": 50475,
+  "kind": "html",
+  "title": "Carbon Monoxide (CO) Poisoning Basics | Carbon Monoxide Poisoning | CDC",
+  "dates": {
+   "og:updated_time": "2026-10-26T10:44:54-04:00",
+   "cdc:first_published": "May 15, 2024",
+   "cdc:last_updated": "October 26, 2026",
+   "cdc:last_reviewed": "October 26, 2026",
+   "dc.date": "2026-10-26T10:44:54Z",
+   "cdc:last_published": "2026-10-26T13:45:54Z"
+  },
+  "sha256": "0283c21b685dec7c0c12e3790f0322002b79a59a02f5525f2d5ba098b5ccdaaf"
+ },
+ {
+  "url": "https://www.cdc.gov/children-and-school-preparedness/before-during-after/reunification.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/children-and-school-preparedness/before-during-after/reunification.html",
+  "ctype": "text/html",
+  "bytes": 55981,
+  "kind": "html",
+  "title": "Reunification with Children After a Disaster or Emergency | Children & School Preparedness | CDC",
+  "dates": {
+   "og:updated_time": "2025-12-17T13:00:07-05:00",
+   "cdc:first_published": "November 15, 2024",
+   "cdc:last_updated": "October 25, 2024",
+   "cdc:last_reviewed": "January 6, 2021",
+   "dc.date": "2025-12-17T13:00:07Z",
+   "cdc:last_published": "2026-01-20T10:42:22Z"
+  },
+  "sha256": "1a5e73e9b2843775858ef4d0a2d05010df1bbbb5a841bfdeecaece90c2434b80"
+ },
+ {
+  "url": "https://www.cdc.gov/children-and-school-preparedness/resources/emergency-kit-checklist-pregnant-women-infants-and-children.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/children-and-school-preparedness/resources/emergency-kit-checklist-pregnant-women-infants-and-children.html",
+  "ctype": "text/html",
+  "bytes": 56127,
+  "kind": "html",
+  "title": "Emergency Kit Checklist: Pregnant Women, Infants, and Children | Children & School Preparedness | CDC",
+  "dates": {
+   "og:updated_time": "2026-06-17T16:10:45-04:00",
+   "cdc:first_published": "April 30, 2026",
+   "cdc:last_updated": "April 20, 2026",
+   "cdc:last_reviewed": "April 30, 2026",
+   "dc.date": "2026-06-17T16:10:45Z",
+   "cdc:last_published": "2026-06-17T16:12:13Z"
+  },
+  "sha256": "923fe1a183dbc473a8e16c483242aa2217f236a9a6562caeb300c4417c07b263"
+ },
+ {
+  "url": "https://www.cdc.gov/clean-hands/about/index.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/clean-hands/about/index.html",
+  "ctype": "text/html",
+  "bytes": 52231,
+  "kind": "html",
+  "title": "About Handwashing | Clean Hands | CDC",
+  "dates": {
+   "og:updated_time": "2024-04-30T14:37:55-04:00",
+   "cdc:last_updated": "January 11, 2024",
+   "cdc:last_reviewed": "February 16, 2024",
+   "dc.date": "2024-04-30T14:37:55Z",
+   "cdc:last_published": "2024-04-30T15:16:56Z"
+  },
+  "sha256": "8e3c749797ee1be87a2030e1c99f14ffc37d12069bc505cc8f93dc9a8a1c5c34"
+ },
+ {
+  "url": "https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html",
+  "ctype": "text/html",
+  "bytes": 56941,
+  "kind": "html",
+  "title": "Collecting Rainwater and Your Health: An Overview | Drinking Water | CDC",
+  "dates": {
+   "og:updated_time": "2025-06-27T17:25:00-04:00",
+   "cdc:first_published": "September 16, 2024",
+   "cdc:last_updated": "July 16, 2024",
+   "cdc:last_reviewed": "July 23, 2024",
+   "dc.date": "2025-06-27T17:25:00Z",
+   "cdc:last_published": "2025-06-30T15:09:09Z"
+  },
+  "sha256": "30d1164092d283306327e9b6238811ef55e384685bdce3998cb83f69ccf756f8"
+ },
+ {
+  "url": "https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html",
+  "ctype": "text/html",
+  "bytes": 59677,
+  "kind": "html",
+  "title": "About Water Treatment Options When Hiking, Camping, or Traveling | Drinking Water | CDC",
+  "dates": {
+   "og:updated_time": "2025-11-24T15:26:26-05:00",
+   "cdc:first_published": "September 16, 2024",
+   "cdc:last_updated": "March 25, 2024",
+   "cdc:last_reviewed": "January 30, 2025",
+   "dc.date": "2025-11-24T15:26:26Z",
+   "cdc:last_published": "2025-11-24T15:31:45Z"
+  },
+  "sha256": "730032a784a7a077338437f7177f4e5a6ca2be17ec94cebc2b5fa7bcc4c38c3b"
+ },
+ {
+  "url": "https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html",
+  "ctype": "text/html",
+  "bytes": 62735,
+  "kind": "html",
+  "title": "Keep Food Safe After a Disaster or Emergency | Food Safety | CDC",
+  "dates": {
+   "og:updated_time": "2025-11-24T13:13:30-05:00",
+   "cdc:first_published": "May 15, 2024",
+   "cdc:last_updated": "November 24, 2025",
+   "cdc:last_reviewed": "November 24, 2025",
+   "dc.date": "2025-11-24T13:13:30Z",
+   "cdc:last_published": "2025-11-25T12:11:11Z"
+  },
+  "sha256": "fb236f0203b52f208aae8f01a469db86c1a3ebf6b6bb3d175ecd6e8670dc56ae"
+ },
+ {
+  "url": "https://www.cdc.gov/heat-health/about/index.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/heat-health/about/index.html",
+  "ctype": "text/html",
+  "bytes": 50356,
+  "kind": "html",
+  "title": "About Heat and Your Health | Heat Health | CDC",
+  "dates": {
+   "og:updated_time": "2026-07-20T08:23:57-04:00",
+   "cdc:first_published": "July 17, 2024",
+   "cdc:last_updated": "July 20, 2026",
+   "cdc:last_reviewed": "July 20, 2026",
+   "dc.date": "2026-07-20T08:23:57Z",
+   "cdc:last_published": "2026-07-20T08:24:12Z"
+  },
+  "sha256": "2078695ad67076c0ed391e5cf3e25c2a013679bbfa5a7fd8bf4be7b3c41455ba"
+ },
+ {
+  "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+  "ctype": "text/html",
+  "bytes": 61833,
+  "kind": "html",
+  "title": "What to Do to Protect Yourself During a Power Outage | Natural Disasters | CDC",
+  "dates": {
+   "og:updated_time": "2026-08-26T15:57:02-04:00",
+   "cdc:first_published": "May 15, 2024",
+   "cdc:last_updated": "January 26, 2024",
+   "cdc:last_reviewed": "August 26, 2026",
+   "dc.date": "2026-08-26T15:57:02Z",
+   "cdc:last_published": "2026-08-27T06:27:29Z"
+  },
+  "sha256": "8b4f5b0d703b0b2be973aeec0879bb65b0eaca6cc5cc992ef95cf11de9d1d8e2"
+ },
+ {
+  "url": "https://www.cdc.gov/water-emergency/about/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/water-emergency/about/",
+  "ctype": "text/html",
+  "bytes": 71052,
+  "kind": "html",
+  "title": "How to Make Water Safe in an Emergency | Water, Sanitation, and Hygiene (WASH)-related Emergencies and Outbreaks | CDC",
+  "dates": {
+   "og:updated_time": "2025-12-17T17:31:32-05:00",
+   "cdc:first_published": "September 16, 2024",
+   "cdc:last_updated": "September 19, 2024",
+   "cdc:last_reviewed": "September 19, 2024",
+   "dc.date": "2025-12-17T17:31:32Z",
+   "cdc:last_published": "2025-12-18T11:16:52Z"
+  },
+  "sha256": "784b6c05a5bd8f6d97db197d27e883ad1be3f3b4a20d52761c85a5cde99ae2ec"
+ },
+ {
+  "url": "https://www.cdc.gov/water-emergency/about/drinking-water-advisories-an-overview.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/water-emergency/about/drinking-water-advisories-an-overview.html",
+  "ctype": "text/html",
+  "bytes": 63481,
+  "kind": "html",
+  "title": "Drinking Water Advisories: An Overview | Water, Sanitation, and Hygiene (WASH)-related Emergencies and Outbreaks | CDC",
+  "dates": {
+   "og:updated_time": "2025-06-17T11:57:43-04:00",
+   "cdc:first_published": "September 16, 2024",
+   "cdc:last_updated": "February 21, 2024",
+   "cdc:last_reviewed": "March 4, 2024",
+   "dc.date": "2025-06-17T11:57:43Z",
+   "cdc:last_published": "2025-06-25T14:03:46Z"
+  },
+  "sha256": "d3bee2ccb3adf9d19a43019530282ac9f1bce9c4db89e49e2e5f34b0d81ef960"
+ },
+ {
+  "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html",
+  "ctype": "text/html",
+  "bytes": 61378,
+  "kind": "html",
+  "title": "How to Create an Emergency Water Supply | Water, Sanitation, and Hygiene (WASH)-related Emergencies and Outbreaks | CDC",
+  "dates": {
+   "og:updated_time": "2026-04-24T13:38:46-04:00",
+   "cdc:first_published": "September 16, 2024",
+   "cdc:last_updated": "June 27, 2025",
+   "cdc:last_reviewed": "June 27, 2025",
+   "dc.date": "2026-04-24T13:38:46Z",
+   "cdc:last_published": "2026-04-24T13:43:47Z"
+  },
+  "sha256": "8320a10549004de36d4db4c91af40887ad0fe1012f2b9665df161100afce82fa"
+ },
+ {
+  "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+  "ctype": "text/html",
+  "bytes": 57585,
+  "kind": "html",
+  "title": "Guidelines for Personal Hygiene During an Emergency | Water, Sanitation, and Hygiene (WASH)-related Emergencies and Outbreaks | CDC",
+  "dates": {
+   "og:updated_time": "2026-04-24T16:32:57-04:00",
+   "cdc:first_published": "September 16, 2024",
+   "cdc:last_updated": "July 18, 2024",
+   "cdc:last_reviewed": "August 5, 2024",
+   "dc.date": "2026-04-24T16:32:57Z",
+   "cdc:last_published": "2026-04-24T16:33:49Z"
+  },
+  "sha256": "0dcdbd7202881bfd5524e7059499392b5878a4784c21e6a7004a3c723d650312"
+ },
+ {
+  "url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html",
+  "ctype": "text/html",
+  "bytes": 64053,
+  "kind": "html",
+  "title": "Safety Guidelines: During & After a Winter Storm | Winter Weather | CDC",
+  "dates": {
+   "og:updated_time": "2026-08-25T11:14:02-04:00",
+   "cdc:first_published": "May 15, 2024",
+   "cdc:last_updated": "January 26, 2026",
+   "cdc:last_reviewed": "August 25, 2026",
+   "dc.date": "2026-08-25T11:14:02Z",
+   "cdc:last_published": "2026-08-25T11:30:20Z"
+  },
+  "sha256": "c4d501d635b1f40af8fe0fb0c273f580390f502dd0b2e13e6262999603c1d365"
+ },
+ {
+  "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 80508,
+  "kind": "html",
+  "title": "Carbon Monoxide | CPSC.govLock",
+  "dates": {},
+  "sha256": "4b4482ce0e35ce8f2cbd4bbc7c0f48c4ea62a3666fdd5375233783ce2f46fea7"
+ },
+ {
+  "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 64815,
+  "kind": "html",
+  "title": "Emergency Disinfection of Drinking Water | US EPALockPrimary navigationOpen Sidenav MenuClose Sidenav Menu",
+  "dates": {
+   "dc.date.created": "2015-11-18",
+   "dc.date.modified": "2026-02-24",
+   "dc.date.reviewed": "2027-02-24",
+   "og:updated_time": "2026-02-24",
+   "article:published_time": "2015-11-18T17:10:05-05:00",
+   "article:modified_time": "2026-02-24"
+  },
+  "sha256": "f8df146eea8b042bed4c966b6f129ac65e1f33c152dabef4daec27ab86df6ee2"
+ },
+ {
+  "url": "https://www.fda.gov/drugs/emergency-preparedness-drugs/information-regarding-insulin-storage-and-switching-between-products-emergency",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fda.gov/drugs/emergency-preparedness-drugs/information-regarding-insulin-storage-and-switching-between-products-emergency",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 44520,
+  "kind": "html",
+  "title": "Information Regarding Insulin Storage and Switching Between Products in an Emergency | FDA",
+  "dates": {
+   "og:updated_time": "Mon, 09/28/2026 - 11:52",
+   "article:published_time": "Mon, 09/28/2026 - 12:06",
+   "article:modified_time": "Mon, 09/28/2026 - 11:52"
+  },
+  "sha256": "4ff67279a9c14204bb2c4fd20b87a0a31bdb1511b8eb5ef26066bb276e23cbd2"
+ },
+ {
+  "url": "https://www.fda.gov/food/buy-store-serve-safe-food/food-and-water-safety-during-power-outages-and-floods",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fda.gov/food/buy-store-serve-safe-food/food-and-water-safety-during-power-outages-and-floods",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 45032,
+  "kind": "html",
+  "title": "Food and Water Safety During Power Outages and Floods | FDA",
+  "dates": {
+   "og:updated_time": "Tue, 03/05/2024 - 09:00",
+   "article:published_time": "Tue, 02/25/2025 - 12:06",
+   "article:modified_time": "Tue, 03/05/2024 - 09:00"
+  },
+  "sha256": "8399ac1feb44a36f66adb14c876f68c86b1380389aa84e47ff59840d51ed42b2"
+ },
+ {
+  "url": "https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 40690,
+  "kind": "html",
+  "title": "FDA Offers Tips about Medical Devices and Natural Disasters | FDA",
+  "dates": {
+   "og:updated_time": "Tue, 04/16/2024 - 16:12",
+   "article:published_time": "Tue, 04/16/2024 - 16:13",
+   "article:modified_time": "Tue, 04/16/2024 - 16:12"
+  },
+  "sha256": "f7f88fa726106cf7600625f09d649815cd17ffbedc9212ff5719f597e2dc3bf9"
+ },
+ {
+  "url": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+  "ctype": "text/html; charset=utf-8",
+  "bytes": 60700,
+  "kind": "html",
+  "title": "Food Safety During Power Outage | FoodSafety.gov",
+  "dates": {
+   "article:published_time": "2019-04-12 18:05:56",
+   "article:modified_time": "2024-08-08 19:28:00",
+   "og:updated_time": "2024-08-15T13:39:18-0400",
+   "dcterms.modified": "2024-08-15T13:39:18-0400"
+  },
+  "sha256": "b46f930fa32b9c140dc8850004be7d11cd445973d99542a1877fcad5ac2c2f8d"
+ },
+ {
+  "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 307471,
+  "kind": "html",
+  "title": "Keep Your Food Safe During Emergencies: Power Outages, Floods & Fires | Food Safety and Inspection Service",
+  "dates": {},
+  "sha256": "34502bcdab1684b2b261bb21c878f2cddf0912d5814f94a791e3077a6d93584c"
+ },
+ {
+  "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 309106,
+  "kind": "html",
+  "title": "Food Product Dating | Food Safety and Inspection Service",
+  "dates": {},
+  "sha256": "4eb11f6587ce5e2b061c5a2d360ba942e5c1c96737d2ccf51aa745335ab8e343"
+ },
+ {
+  "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 320093,
+  "kind": "html",
+  "title": "Refrigeration & Food Safety | Food Safety and Inspection Service",
+  "dates": {},
+  "sha256": "11e82cf9bf89f56d6974d9b278f8d681d787f859c3a55d64c906658f8cf1ceb2"
+ },
+ {
+  "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 339310,
+  "kind": "html",
+  "title": "Shelf-Stable Food Safety | Food Safety and Inspection Service",
+  "dates": {},
+  "sha256": "4adac41661c4ab6a59110f80da9993856c7ce2327c3c839d43af8ed68839850d"
+ },
+ {
+  "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 304864,
+  "kind": "html",
+  "title": "Jerky and Food Safety | Food Safety and Inspection Service",
+  "dates": {},
+  "sha256": "62de540dc8c2f237a13f9cc2e514f1081038a8b5300b2ca9839807dc1db10d7e"
+ },
+ {
+  "url": "https://www.jameslindlibrary.org/articles/james-lind-and-scurvy-1747-to-1795/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.jameslindlibrary.org/articles/james-lind-and-scurvy-1747-to-1795/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 76622,
+  "kind": "html",
+  "title": "James Lind and scurvy: 1747 to 1795. - The James Lind Library The James Lind Library",
+  "dates": {
+   "article:modified_time": "2022-10-26T10:45:19+00:00"
+  },
+  "sha256": "a567d7ce029e060122785c2c8c98f20daeb192d51a9e111518dc00ae5a8eba8a"
+ },
+ {
+  "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+  "ok": false,
+  "status": 403,
+  "error": "HTTP 403"
+ },
+ {
+  "url": "https://www.monticello.org/encyclopedia/cisterns",
+  "ok": false,
+  "status": 403,
+  "error": "HTTP 403"
+ },
+ {
+  "url": "https://www.nfpa.org/education-and-research/home-fire-safety/escape-planning",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.nfpa.org/education-and-research/home-fire-safety/escape-planning",
+  "title": "How to make a home fire escape plan | NFPA",
+  "chars": 8249,
+  "blocked_or_thin": false,
+  "sha256": "e40f6c02ec4f2fb760bc516caff22f0e35a30cacdcb794bbeb4b5e3c0ee2bbd0",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.nfpa.org/education-and-research/home-fire-safety/smoke-alarms",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.nfpa.org/education-and-research/home-fire-safety/smoke-alarms",
+  "title": "Learn More About Smoke Alarms",
+  "chars": 4784,
+  "blocked_or_thin": false,
+  "sha256": "f6e9794fc081acc170121518a76665ac3604dbe56a197bf038e7dab087d4995a",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2025/09/10/wildfire-prevention-tips-for-fire-pits-and-outdoor-fires",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2025/09/10/wildfire-prevention-tips-for-fire-pits-and-outdoor-fires",
+  "title": "Wildfire Prevention Tips for Fire Pits and Outdoor Fires",
+  "chars": 13792,
+  "blocked_or_thin": false,
+  "sha256": "a9d9aa1166db2c3e5beee3ae84f64251c88018bfcf8be3784a7c7d884d22511c",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.nps.gov/articles/000/the-icebox-the-predecessor-of-modern-refrigeration.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/articles/000/the-icebox-the-predecessor-of-modern-refrigeration.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 45955,
+  "kind": "html",
+  "title": "The Icebox, the Predecessor of Modern Refrigeration (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "2e6eadc981cfd24fb2e5c129e9ebd674bf5b62c3ded3bbbc886b39c22e289542"
+ },
+ {
+  "url": "https://www.nps.gov/articles/000/traveling-emigrant-trails.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/articles/000/traveling-emigrant-trails.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 44787,
+  "kind": "html",
+  "title": "Traveling the Emigrant Trails (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "db033e008250abb1993687f72e206b2dda2b39dc6378234158cbb3f03019042a"
+ },
+ {
+  "url": "https://www.nps.gov/articles/2wayspurifywater.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/articles/2wayspurifywater.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 813129,
+  "kind": "html",
+  "title": "Two Ways to Purify Water (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "a6e3c69de8da0052fcb5cb2761dae9504a2b413d7c8b9208f0794d763e7708dc"
+ },
+ {
+  "url": "https://www.nps.gov/articles/campfires.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/articles/campfires.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 38904,
+  "kind": "html",
+  "title": "Campfires (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "d8d0d349f5278db1be4c66c7818aaaf32bba807201c25b87a0a3d2515740be4b"
+ },
+ {
+  "url": "https://www.nps.gov/cali/learn/historyculture/donner-reed-party.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/cali/learn/historyculture/donner-reed-party.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 37795,
+  "kind": "html",
+  "title": "Donner and Reed Wagon Train Incident - California National Historic Trail (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "82979fce599eacff42d80cb03b2ab381d45bbfdf3234ef38efdd82738d61c4d4"
+ },
+ {
+  "url": "https://www.nps.gov/fosc/learn/education/cookrations.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/fosc/learn/education/cookrations.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 45043,
+  "kind": "html",
+  "title": "Cooking - Food Rations - Fort Scott National Historic Site (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "33777228f8effa7e7334e828aab4daa03643db1bbba544591bbb75a43f150c41"
+ },
+ {
+  "url": "https://www.nps.gov/foun/learn/historyculture/water-supply.htm",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nps.gov/foun/learn/historyculture/water-supply.htm",
+  "ctype": "text/html;charset=UTF-8",
+  "bytes": 46396,
+  "kind": "html",
+  "title": "Water Supply - Fort Union National Monument (U.S. National Park Service)Lock",
+  "dates": {},
+  "sha256": "667350d3114cc7c49743c858703bfc447ce4d16f48702df347a5bb7628d589e2"
+ },
+ {
+  "url": "https://www.parks.ca.gov/DonnerMemorial",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.parks.ca.gov/?page_id=503",
+  "ctype": "text/html; charset=utf-8",
+  "bytes": 106102,
+  "kind": "html",
+  "title": "Donner Memorial State Park",
+  "dates": {},
+  "sha256": "c23d9a3fb5bdca1e549874a9a02150044df51471d60ca315ea6f8800ded31bd9"
+ },
+ {
+  "url": "https://www.ready.gov/alerts",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/alerts",
+  "title": "Emergency Alerts | Ready.gov",
+  "chars": 6278,
+  "blocked_or_thin": false,
+  "sha256": "0e2671f2c42ea73d15c62293506e65678bf1d038e82912bd2a5f9582dabd608f",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/floods",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/floods",
+  "title": "Floods | Ready.gov",
+  "chars": 6860,
+  "blocked_or_thin": false,
+  "sha256": "1cf1f0f04f1b5233e02e2129fe1b765429560253da64f685421b9dc0acd3ed0a",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/food",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/food",
+  "title": "Food | Ready.gov",
+  "chars": 4611,
+  "blocked_or_thin": false,
+  "sha256": "22fdb4b510e2438cc24dbaaee73e962cb526f1300a899cf5c922599295246dfd",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/heat",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/heat",
+  "title": "Extreme Heat | Ready.gov",
+  "chars": 6436,
+  "blocked_or_thin": false,
+  "sha256": "b8349ce4c9048ebf32f504a06f371bf405b332654158678a99bd3b83805dbb94",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/home-fires",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/home-fires",
+  "title": "Home Fires | Ready.gov",
+  "chars": 9207,
+  "blocked_or_thin": false,
+  "sha256": "41376f548ac69959b338567fd4ea2233acf859f3aa06a0ae85813563e32e0d2e",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/kit",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/kit",
+  "title": "Build A Kit | Ready.gov",
+  "chars": 5017,
+  "blocked_or_thin": false,
+  "sha256": "c6978f81778dcfb326a7daeef7187fe8d7477c908ee26a327104db646f14c74c",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/older-adults",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/older-adults",
+  "title": "Older Adults | Ready.gov",
+  "chars": 5425,
+  "blocked_or_thin": false,
+  "sha256": "cb66e52c997da9cbb4cac87c18cb776ef8045dedf1515cab2b51676952c863d5",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/power-outages",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/power-outages",
+  "title": "Power Outages | Ready.gov",
+  "chars": 5412,
+  "blocked_or_thin": false,
+  "sha256": "8037d29722e2de55138c210728c88dc782d26e02ba3467c22d6003f4052a643a",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+  "ok": true,
+  "kind": "html",
+  "via": "edge-browser+pymupdf",
+  "pdf_pages": 36
+ },
+ {
+  "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+  "ok": true,
+  "kind": "html",
+  "via": "edge-browser+pymupdf",
+  "pdf_pages": 2
+ },
+ {
+  "url": "https://www.ready.gov/sites/default/files/2024-05/ready_supply-kit-checklist.pdf",
+  "ok": true,
+  "kind": "html",
+  "via": "edge-browser+pymupdf",
+  "pdf_pages": 2
+ },
+ {
+  "url": "https://www.ready.gov/tornadoes",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/tornadoes",
+  "title": "Tornadoes | Ready.gov",
+  "chars": 5409,
+  "blocked_or_thin": false,
+  "sha256": "f1404718319472629283b588241c21057911cf16273a1dfa2dcf01162bde8f43",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/water",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/water",
+  "title": "Water | Ready.gov",
+  "chars": 5959,
+  "blocked_or_thin": false,
+  "sha256": "7904754e908d19da2e964c1bc248d7c3a44a75160d03ab10135619ed9f413dc2",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.ready.gov/winter-weather",
+  "ok": true,
+  "kind": "html",
+  "status": 200,
+  "final_url": "https://www.ready.gov/winter-weather",
+  "title": "Winter Weather | Ready.gov",
+  "chars": 6176,
+  "blocked_or_thin": false,
+  "sha256": "87444ec68a71f31307891f36fa208c9af526c2da68efcc639df93a2ca0780629",
+  "via": "edge-browser"
+ },
+ {
+  "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/older-adults.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/older-adults.html",
+  "ctype": "text/html;charset=utf-8",
+  "bytes": 144309,
+  "kind": "html",
+  "title": "Older Adults Emergency Preparedness | American Red Cross",
+  "dates": {},
+  "sha256": "f32cd46be6a11e9b8e5aeb5ba8662708aaaa3831005f9ab97152e31e5314ab21"
+ },
+ {
+  "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-6813",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.rmg.co.uk/collections/objects/rmgc-object-6813",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 81564,
+  "kind": "html",
+  "title": "Ship's Biscuit | Royal Museums GreenwichRoyal Museums GreenwichRoyal Museums GreenwichRoyal Museums Greenwich",
+  "dates": {},
+  "sha256": "f6734238cf82a4b0ce2fb5ab7ca66d6f5070ec5a6c658183c47343ba1df74f54"
+ },
+ {
+  "url": "https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 99945,
+  "kind": "html",
+  "title": "Longitude found - the story of Harrison's timekeepers | Royal Museums GreenwichRoyal Museums GreenwichRoyal Museums GreenwichRoyal Museums Greenwich",
+  "dates": {},
+  "sha256": "a8337e44be2fa99a55b3771b80da23d659d24d5dfa63d2a5b0e8fe13ef0eb257"
+ },
+ {
+  "url": "https://www.rmg.co.uk/stories/time/longitude-found-nevil-maskelyne-lunar-method",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.rmg.co.uk/stories/time/longitude-found-nevil-maskelyne-lunar-method",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 91005,
+  "kind": "html",
+  "title": "Longitude found: Nevil Maskelyne and the lunar method | Royal Museums GreenwichRoyal Museums GreenwichRoyal Museums GreenwichRoyal Museums Greenwich",
+  "dates": {},
+  "sha256": "a99799d04e3272f4cec650a1b3810758f1ec95aac03cb3fe47a74ba95e7cfbb2"
+ },
+ {
+  "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+  "ctype": "text/html",
+  "bytes": 41163,
+  "kind": "html",
+  "title": "Home Fire Escape Plans",
+  "dates": {},
+  "sha256": "8375321164570be4f087c8ea72b3972fce148ead7f44702d410edce9c7d62e3d"
+ },
+ {
+  "url": "https://www.usfa.fema.gov/prevention/outdoor-fires/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.usfa.fema.gov/prevention/outdoor-fires/",
+  "ctype": "text/html",
+  "bytes": 44566,
+  "kind": "html",
+  "title": "Outdoor Fire Safety",
+  "dates": {},
+  "sha256": "5884f20176ee54a1a4d8ba28bae01efe357d3085610c48d8d16d596932deb9f4"
+ },
+ {
+  "url": "https://www.weather.gov/nwr/",
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.weather.gov/nwr/",
+  "ctype": "text/html; charset=UTF-8",
+  "bytes": 41091,
+  "kind": "html",
+  "title": "NOAA Weather Radio",
+  "dates": {},
+  "sha256": "127063383ece5ba55b732744ac0bd97e71952cd2353b1c45aec929429555cc32"
+ }
+]

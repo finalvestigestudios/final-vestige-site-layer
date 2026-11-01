@@ -1,0 +1,732 @@
+....................................................................................................................................................E..............................................................................E..................................................................E....................................................................................s...............................................................................E......E.E......EEEE........EE...........EEEEE..F..............................EEE.....................................................................................................................................................................................................................................................................E..EE.........................................................................E...................................................E...E.E......................................E..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................EE..F..FFF.FFFFEFF................................................FF............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................E..................................E.........................................................E.....................................................................................................................................................................E...................................................................................................................E.................................................................................EE..
+======================================================================
+ERROR: test_reject_private_json_symlink (test_claim_corpus_release_gate.R10PrivateInputTests.test_reject_private_json_symlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_claim_corpus_release_gate.py", line 321, in test_reject_private_json_symlink
+    s=Path(tmp)/'link.json';s.symlink_to(p)
+                            ~~~~~~~~~~~~^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmp4v37s90i\\file.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmp4v37s90i\\link.json'
+
+======================================================================
+ERROR: test_export_rejects_file_symlink (test_claim_occurrence_audit.ExportChecks.test_export_rejects_file_symlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_claim_occurrence_audit.py", line 294, in test_export_rejects_file_symlink
+    (root/'report').symlink_to(Path(d)/'other')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpv09i5g9g\\other' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpv09i5g9g\\build\\report'
+
+======================================================================
+ERROR: test_no_symlink_output (test_claim_review_intake.R9FileSecurity.test_no_symlink_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_claim_review_intake.py", line 321, in test_no_symlink_output
+    target.write_text('ORIGINAL');p.symlink_to(target)
+                                  ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpulf_3r9d\\real' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpulf_3r9d\\build\\review.json'
+
+======================================================================
+ERROR: test_accept_current_matching_canonical_receipt (test_draft_export_custody.TestDraftExportCustody.test_accept_current_matching_canonical_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 131, in test_accept_current_matching_canonical_receipt
+    result = self.audit(canonical_receipt={'release_state': 'HOLD', 'may_publish': False,
+                       'independent_human_source_checks_verified': 0, 'qualified_safety_approvals': 0,
+                       'editorial': {'draft_items': 3}, 'sources': {'physical_source_records': 4}})
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 91, in audit
+    return guard.audit_export(self.lib, self.out, FakeBuild, **(self.settings() | extra))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tools\draft_export_custody.py", line 201, in audit_export
+    raise CustodyFailure(f'{filename}: source-to-export byte mismatch; stale/edited output')
+draft_export_custody.CustodyFailure: hub-field-tools.html: source-to-export byte mismatch; stale/edited output
+
+======================================================================
+ERROR: test_reject_cross_swapped_html (test_draft_export_custody.TestDraftExportCustody.test_reject_cross_swapped_html)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 277, in test_reject_cross_swapped_html
+    a.write_bytes(b.read_bytes())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-01f7_un9\\preparedness\\build\\wp\\water-math.html'
+
+======================================================================
+ERROR: test_reject_empty_preview (test_draft_export_custody.TestDraftExportCustody.test_reject_empty_preview)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 241, in test_reject_empty_preview
+    (self.out / 'preview' / 'water-math.html').write_bytes(b'')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-s49q8z5w\\preparedness\\build\\preview\\water-math.html'
+
+======================================================================
+ERROR: test_reject_hidden_preview_mutation (test_draft_export_custody.TestDraftExportCustody.test_reject_hidden_preview_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 260, in test_reject_hidden_preview_mutation
+    p.write_text(p.read_text().replace('noindex,nofollow', 'index,follow'))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 555, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-ah37o_hk\\preparedness\\build\\preview\\water-math.html'
+
+======================================================================
+ERROR: test_reject_html_content_mutation (test_draft_export_custody.TestDraftExportCustody.test_reject_html_content_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 255, in test_reject_html_content_mutation
+    p.write_text(p.read_text().replace('Research, not medical advice', 'No safety review needed'))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 555, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-y6gobb3f\\preparedness\\build\\wp\\water-math.html'
+
+======================================================================
+ERROR: test_reject_html_duplicate (test_draft_export_custody.TestDraftExportCustody.test_reject_html_duplicate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 270, in test_reject_html_duplicate
+    p.write_bytes(p.read_bytes() + p.read_bytes())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-yl516_pw\\preparedness\\build\\preview\\water-math.html'
+
+======================================================================
+ERROR: test_reject_html_truncation (test_draft_export_custody.TestDraftExportCustody.test_reject_html_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 265, in test_reject_html_truncation
+    p.write_bytes(p.read_bytes()[:-80])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-7dnd1riu\\preparedness\\build\\wp\\salt-history.html'
+
+======================================================================
+ERROR: test_reject_oversized_wp_artifact (test_draft_export_custody.TestDraftExportCustody.test_reject_oversized_wp_artifact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 236, in test_reject_oversized_wp_artifact
+    (self.out / 'wp' / 'water-math.html').write_bytes(b'x' * (guard.MAX_HTML_BYTES + 1))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-6t2_2ppv\\preparedness\\build\\wp\\water-math.html'
+
+======================================================================
+ERROR: test_reject_parent_symlink_root (test_draft_export_custody.TestDraftExportCustody.test_reject_parent_symlink_root)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 249, in test_reject_parent_symlink_root
+    original.symlink_to(real, target_is_directory=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-m_oiz_0c\\actual' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-m_oiz_0c\\preparedness'
+
+======================================================================
+ERROR: test_reject_symlinked_build_folder (test_draft_export_custody.TestDraftExportCustody.test_reject_symlinked_build_folder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 171, in test_reject_symlinked_build_folder
+    self.out.symlink_to(outside, target_is_directory=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-___hgxx3\\preparedness\\other' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-___hgxx3\\preparedness\\build'
+
+======================================================================
+ERROR: test_reject_symlinked_html_file (test_draft_export_custody.TestDraftExportCustody.test_reject_symlinked_html_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 194, in test_reject_symlinked_html_file
+    file.symlink_to(target)
+    ~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-n1irgp41\\preparedness\\build\\alternate.html' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-n1irgp41\\preparedness\\build\\wp\\water-math.html'
+
+======================================================================
+ERROR: test_reject_symlinked_preview_folder (test_draft_export_custody.TestDraftExportCustody.test_reject_symlinked_preview_folder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 185, in test_reject_symlinked_preview_folder
+    (self.out / 'preview').symlink_to(other, target_is_directory=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-8wpwqjvh\\preparedness\\build\\other' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-8wpwqjvh\\preparedness\\build\\preview'
+
+======================================================================
+ERROR: test_reject_symlinked_report (test_draft_export_custody.TestDraftExportCustody.test_reject_symlinked_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 211, in test_reject_symlinked_report
+    file.symlink_to(target)
+    ~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-kg9rj0pt\\preparedness\\build\\backup-report.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-kg9rj0pt\\preparedness\\build\\build-report.json'
+
+======================================================================
+ERROR: test_reject_symlinked_wp_folder (test_draft_export_custody.TestDraftExportCustody.test_reject_symlinked_wp_folder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 178, in test_reject_symlinked_wp_folder
+    (self.out / 'wp').symlink_to(other, target_is_directory=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-wbhe79vs\\preparedness\\build\\other' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\preparedness-r11-wbhe79vs\\preparedness\\build\\wp'
+
+======================================================================
+ERROR: test_rewrite_matching_content_is_idempotent (test_draft_export_custody.TestDraftExportCustody.test_rewrite_matching_content_is_idempotent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 137, in test_rewrite_matching_content_is_idempotent
+    first = self.audit()
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 91, in audit
+    return guard.audit_export(self.lib, self.out, FakeBuild, **(self.settings() | extra))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tools\draft_export_custody.py", line 201, in audit_export
+    raise CustodyFailure(f'{filename}: source-to-export byte mismatch; stale/edited output')
+draft_export_custody.CustodyFailure: hub-field-tools.html: source-to-export byte mismatch; stale/edited output
+
+======================================================================
+ERROR: test_run_is_read_only_and_no_receipt_created (test_draft_export_custody.TestDraftExportCustody.test_run_is_read_only_and_no_receipt_created)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 143, in test_run_is_read_only_and_no_receipt_created
+    self.audit()
+    ~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 91, in audit
+    return guard.audit_export(self.lib, self.out, FakeBuild, **(self.settings() | extra))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tools\draft_export_custody.py", line 201, in audit_export
+    raise CustodyFailure(f'{filename}: source-to-export byte mismatch; stale/edited output')
+draft_export_custody.CustodyFailure: hub-field-tools.html: source-to-export byte mismatch; stale/edited output
+
+======================================================================
+ERROR: test_valid_full_draft_bundle_and_digest_reproducible (test_draft_export_custody.TestDraftExportCustody.test_valid_full_draft_bundle_and_digest_reproducible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 120, in test_valid_full_draft_bundle_and_digest_reproducible
+    a, b = self.audit(), self.audit()
+           ~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 91, in audit
+    return guard.audit_export(self.lib, self.out, FakeBuild, **(self.settings() | extra))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tools\draft_export_custody.py", line 201, in audit_export
+    raise CustodyFailure(f'{filename}: source-to-export byte mismatch; stale/edited output')
+draft_export_custody.CustodyFailure: hub-field-tools.html: source-to-export byte mismatch; stale/edited output
+
+======================================================================
+ERROR: test_21_refuse_symlink_manifest (test_private_release_preflight.Fixture.test_21_refuse_symlink_manifest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_private_release_preflight.py", line 174, in test_21_refuse_symlink_manifest
+    f.symlink_to(self.root/".git")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fv-r18-test-gc405jdn\\repo\\.git' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fv-r18-test-gc405jdn\\repo\\preparedness\\docs\\R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json'
+
+======================================================================
+ERROR: test_24_refuse_symlink_gate_script (test_private_release_preflight.Fixture.test_24_refuse_symlink_gate_script)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_private_release_preflight.py", line 188, in test_24_refuse_symlink_gate_script
+    f.symlink_to(self.root/".git")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fv-r18-test-iv98torp\\repo\\.git' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fv-r18-test-iv98torp\\repo\\preparedness\\tools\\validate.py'
+
+======================================================================
+ERROR: test_25_refuse_symlinked_build_directory (test_private_release_preflight.Fixture.test_25_refuse_symlinked_build_directory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_private_release_preflight.py", line 193, in test_25_refuse_symlinked_build_directory
+    (self.root/"preparedness/build").symlink_to(self.root/".git")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fv-r18-test-7zciql36\\repo\\.git' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fv-r18-test-7zciql36\\repo\\preparedness\\build'
+
+======================================================================
+ERROR: test_source_symlink_rejected (test_qa_current_copy_gate.ReviewOnlyTests.test_source_symlink_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_qa_current_copy_gate.py", line 82, in test_source_symlink_rejected
+    self.source.unlink();self.source.symlink_to(self.taxonomy)
+                         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r16-lnm5ozec\\preparedness\\taxonomy.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r16-lnm5ozec\\preparedness\\sources\\fragments\\start.json'
+
+======================================================================
+ERROR: test_81_file_drift_50 (test_r23_archive_bytes.ByteCustody.test_81_file_drift_50)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r23_archive_bytes.py", line 177, in test
+    x.write_bytes(x.read_bytes()+b'\n<!-- byte drift -->')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpjmoly_kz\\preparedness\\content\\articles\\article-25.body.html'
+
+======================================================================
+ERROR: test_81_file_drift_54 (test_r23_archive_bytes.ByteCustody.test_81_file_drift_54)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r23_archive_bytes.py", line 177, in test
+    x.write_bytes(x.read_bytes()+b'\n<!-- byte drift -->')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpot19zzeg\\preparedness\\content\\articles\\article-27.body.html'
+
+======================================================================
+ERROR: test_81_file_drift_56 (test_r23_archive_bytes.ByteCustody.test_81_file_drift_56)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r23_archive_bytes.py", line 177, in test
+    x.write_bytes(x.read_bytes()+b'\n<!-- byte drift -->')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpsce25lpa\\preparedness\\content\\articles\\article-28.body.html'
+
+======================================================================
+ERROR: test_symlink_source (test_r23_archive_bytes.ByteCustody.test_symlink_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r23_archive_bytes.py", line 165, in test_symlink_source
+    x.symlink_to(self.root/PATHS[1])
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpwl_lkzt_\\preparedness\\content\\articles\\article-00.meta.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpwl_lkzt_\\preparedness\\content\\articles\\article-00.body.html'
+
+======================================================================
+ERROR: test_extra_symlink_is_rejected (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_extra_symlink_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 159, in test_extra_symlink_is_rejected
+    (self.fragment_dir / 'source-shadow').symlink_to(self.fragment_dir / 'food.json')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r32-j5n9uk4i\\preparedness\\sources\\fragments\\food.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r32-j5n9uk4i\\preparedness\\sources\\fragments\\source-shadow'
+
+======================================================================
+ERROR: test_extra_symlink_to_directory_is_rejected (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_extra_symlink_to_directory_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 164, in test_extra_symlink_to_directory_is_rejected
+    (self.fragment_dir / 'linked-folder').symlink_to(self.fragment_dir, target_is_directory=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r32-gl1jdya4\\preparedness\\sources\\fragments' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r32-gl1jdya4\\preparedness\\sources\\fragments\\linked-folder'
+
+======================================================================
+ERROR: test_original_readme_symlink_is_rejected (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_readme_symlink_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 154, in test_original_readme_symlink_is_rejected
+    self.doc.symlink_to(target)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r32-xiu8xgud\\preparedness\\sources\\fragments\\food.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\fvs-r32-xiu8xgud\\preparedness\\sources\\fragments\\README.md'
+
+======================================================================
+ERROR: test_symlinked_input_rejected_by_upstream (test_review_discrepancy_audit.ReviewDiscrepancyTests.test_symlinked_input_rejected_by_upstream)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_review_discrepancy_audit.py", line 499, in test_symlinked_input_rejected_by_upstream
+    link.symlink_to(real)
+    ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmp8vrhsjtg\\real.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmp8vrhsjtg\\link.json'
+
+======================================================================
+ERROR: test_output_guard_rejects_symlinked_build_root (test_review_receipts.ReviewReceiptSyntheticTests.test_output_guard_rejects_symlinked_build_root)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_review_receipts.py", line 236, in test_output_guard_rejects_symlinked_build_root
+    (root / "build").symlink_to(Path(td), target_is_directory=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpoxoi410c' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpoxoi410c\\preparedness\\build'
+
+======================================================================
+ERROR: test_load_response_symlink_rejected (test_review_response_audit.ReviewResponseAuditTests.test_load_response_symlink_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_review_response_audit.py", line 414, in test_load_response_symlink_rejected
+    link.symlink_to(p)
+    ~~~~~~~~~~~~~~~^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpxfwdjxbr\\responses.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpxfwdjxbr\\link.json'
+
+======================================================================
+ERROR: test_symlink_source_is_rejected (test_source_group_frozen_custody.FrozenCustody.test_symlink_source_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_source_group_frozen_custody.py", line 127, in test_symlink_source_is_rejected
+    original.unlink();original.symlink_to(replacement)
+                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmp38xfa58e\\copy.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmp38xfa58e\\preparedness\\taxonomy.json'
+
+======================================================================
+ERROR: test_json_symlink_denied (test_workflow_contract_gate.ReceiptContractTests.test_json_symlink_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_workflow_contract_gate.py", line 135, in test_json_symlink_denied
+    q.symlink_to(p)
+    ~~~~~~~~~~~~^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpeupp17js\\receipt.json' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\tmpeupp17js\\alias.json'
+
+======================================================================
+ERROR: test_symlink_repo_fails (test_workflow_contract_gate.WorkflowContractTests.test_symlink_repo_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_workflow_contract_gate.py", line 93, in test_symlink_repo_fails
+    alias.symlink_to(self.root, target_is_directory=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\r19-draft-ci-aeub7lcx\\checkout' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\r19-draft-ci-aeub7lcx\\link'
+
+======================================================================
+ERROR: test_symlink_workflow_fails (test_workflow_contract_gate.WorkflowContractTests.test_symlink_workflow_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_workflow_contract_gate.py", line 85, in test_symlink_workflow_fails
+    self.file.symlink_to(p)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\brhod\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\brhod\\AppData\\Local\\Temp\\r19-draft-ci-w_mkhwjs\\checkout\\.github\\workflows\\preparedness-private-preflight.original' -> 'C:\\Users\\brhod\\AppData\\Local\\Temp\\r19-draft-ci-w_mkhwjs\\checkout\\.github\\workflows\\preparedness-private-preflight.yml'
+
+======================================================================
+FAIL: test_report_diagnostic_does_not_expose_payload (test_draft_export_custody.TestDraftExportCustody.test_report_diagnostic_does_not_expose_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 361, in test_report_diagnostic_does_not_expose_payload
+    try: self.audit()
+         ~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 91, in audit
+    return guard.audit_export(self.lib, self.out, FakeBuild, **(self.settings() | extra))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tools\draft_export_custody.py", line 201, in audit_export
+    raise CustodyFailure(f'{filename}: source-to-export byte mismatch; stale/edited output')
+draft_export_custody.CustodyFailure: hub-field-tools.html: source-to-export byte mismatch; stale/edited output
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_draft_export_custody.py", line 364, in test_report_diagnostic_does_not_expose_payload
+    self.assertIn('build report:', str(e))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'build report:' not found in 'hub-field-tools.html: source-to-export byte mismatch; stale/edited output'
+
+======================================================================
+FAIL: test_missing_contributor_source_is_rejected_with_doc_present (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_missing_contributor_source_is_rejected_with_doc_present)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 142, in test_missing_contributor_source_is_rejected_with_doc_present
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_only_original_readme_is_eligible_extra (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_only_original_readme_is_eligible_extra)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 184, in test_only_original_readme_is_eligible_extra
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_original_documentation_is_not_treated_as_a_source (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_documentation_is_not_treated_as_a_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 98, in test_original_documentation_is_not_treated_as_a_source
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_original_readme_audit_is_repeatable (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_readme_audit_is_repeatable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 94, in test_original_readme_audit_is_repeatable
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_original_readme_does_change_custody_fingerprint (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_readme_does_change_custody_fingerprint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 89, in test_original_readme_does_change_custody_fingerprint
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_original_readme_does_not_change_source_inventory_counts (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_readme_does_not_change_source_inventory_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 80, in test_original_readme_does_not_change_source_inventory_counts
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_original_readme_is_allowed_and_fingerprinted (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_readme_is_allowed_and_fingerprinted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 71, in test_original_readme_is_allowed_and_fingerprinted
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_original_readme_is_not_rewritten_by_audit (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_original_readme_is_not_rewritten_by_audit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 136, in test_original_readme_is_not_rewritten_by_audit
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_readme_append_is_rejected (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_readme_append_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 114, in test_readme_append_is_rejected
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_readme_truncation_is_rejected (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_readme_truncation_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 120, in test_readme_truncation_is_rejected
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_reworded_original_readme_is_rejected (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_reworded_original_readme_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 108, in test_reworded_original_readme_is_rejected
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+======================================================================
+FAIL: test_source_fragment_instruction_file_does_not_approve_human_review (test_r32_fragment_directory_readme_custody.OriginalDocumentationCustody.test_source_fragment_instruction_file_does_not_approve_human_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 176, in test_source_fragment_instruction_file_does_not_approve_human_review
+    self.write_original_readme()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\brhod\OneDrive\Desktop\Projects\_wt-r47-lf\preparedness\tests\test_r32_fragment_directory_readme_custody.py", line 54, in write_original_readme
+    self.assertEqual(gate.git_blob(self.doc.read_bytes()),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     gate.FRAGMENT_README_GIT_BLOB)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '76778396751557ffc652965cb66dc732c033956f' != 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
+- 76778396751557ffc652965cb66dc732c033956f
++ cec167dd6acaf9f6e92e87a61fa9aeacdad151a5
+
+
+----------------------------------------------------------------------
+Ran 3753 tests in 46.588s
+
+FAILED (failures=13, errors=38, skipped=1)
+exit=1
