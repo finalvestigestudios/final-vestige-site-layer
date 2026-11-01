@@ -20,7 +20,7 @@ check(B.includes("fv-film-title")&&B.includes("not an available player"),"B hone
 check((T.match(/-->/g)||[]).length===6,"VTT six caption cues");
 check(T.includes("00:00:40.000"),"captions through 40s");
 check(V.startsWith("<svg")&&V.includes("<title"),"original poster SVG accessibility");
-check(I.includes("Deslon") && I.includes("1785") && I.includes("not a modern"),"historical nuance");
+check(I.includes("Deslon") && I.includes("1785") && I.includes("modern randomized trial"),"historical nuance");
 check(!/Zen12|inspire3|Hypnosis Live/.test(I),"independent investigation no commercial brands");
 check(C.split("\n").length>=40,"claim matrix breadth");
 check(H.includes("Focus Fieldbook") && H.includes("Puységur"),"existing internal routes");
