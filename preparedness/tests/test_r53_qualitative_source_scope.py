@@ -168,10 +168,15 @@ class Positive(unittest.TestCase):
 
     def test_stable_digest_and_no_mutation(self):
         args = fixture()
-        frozen = copy.deepcopy(args)
+        lib, triage, safety = args
+        frozen = copy.deepcopy((lib.articles, lib.source_variants,
+                                lib.article_origins, lib.crosswalk_groups,
+                                triage, safety))
         first = run(args)
         self.assertEqual(first, run(args))
-        self.assertEqual(args, frozen)
+        self.assertEqual((lib.articles, lib.source_variants,
+                          lib.article_origins, lib.crosswalk_groups,
+                          triage, safety), frozen)
         self.assertEqual(first["fingerprint_sha256"], gate.digest({
             k: v for k, v in first.items() if k != "fingerprint_sha256"}))
 
