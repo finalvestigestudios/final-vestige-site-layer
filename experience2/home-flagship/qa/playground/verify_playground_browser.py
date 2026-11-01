@@ -3,7 +3,7 @@
 Run only against a separately launched local/Playground URL with explicit axe-core JS.
 No URL is assumed and unavailable axe, HTTP, image transfers or browser tests are failures.
 """
-import argparse, hashlib, json, shutil
+import argparse, json, shutil
 from pathlib import Path
 from urllib.parse import urlsplit
 from playwright.sync_api import sync_playwright
@@ -37,6 +37,7 @@ def metrics(page):
     })""")
 def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
     host=validate_stage_url(url,approved_stage_host)
+    expected_origin=urlsplit(url)
     trusted_media=read_trusted_media_manifest(media_manifest)
     require(axe_file.is_file() and axe_file.stat().st_size>10000,'axe-core JS file missing')
     outdir.mkdir(parents=True,exist_ok=True)
@@ -53,6 +54,10 @@ def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
                 errors=[];page.on('pageerror',lambda err: errors.append(str(err)))
                 response=page.goto(url,wait_until='load',timeout=30000)
                 require(response and response.status==200,str(w)+': WordPress HTTP status not 200')
+                observed_origin=urlsplit(page.url)
+                require((observed_origin.scheme,observed_origin.netloc)==
+                        (expected_origin.scheme,expected_origin.netloc),
+                        str(w)+': off-stage redirect or scheme/port change denied')
                 page.wait_for_timeout(200)
                 m=metrics(page)
                 verify_integrated_dom(m)  # never accept a seven-chapter-only mock without the protected WP content
@@ -87,6 +92,10 @@ def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
                         obj=page.request.get(source,timeout=30000)
                         raw=obj.body()
                         length,iw,ih=MEDIA[name]
+                        media_origin=urlsplit(obj.url)
+                        require((media_origin.scheme,media_origin.netloc)==
+                                (expected_origin.scheme,expected_origin.netloc),
+                                name+': first-party URL redirected outside the isolated stage')
                         require(obj.status==200 and len(raw)==length, name+' HTTP byte transfer mismatch')
                         require(el.evaluate('(e)=>e.complete && e.naturalWidth>0 && e.naturalHeight>0'),
                             name+' image not decoded')
@@ -115,6 +124,10 @@ def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
                 context.close()
             noctx=browser.new_context(viewport={'width':390,'height':900},java_script_enabled=False)
             nopage=noctx.new_page();nopage.goto(url,wait_until='load',timeout=30000)
+            no_origin=urlsplit(nopage.url)
+            require((no_origin.scheme,no_origin.netloc)==
+                    (expected_origin.scheme,expected_origin.netloc),
+                    'no-JS page redirected away from isolated stage')
             require(all(nopage.locator(f'[data-fv-case="{x}"]').is_visible() for x in ('apollo','franklin','malbone')),
                     'no-JS original evidence not visible')
             require(nopage.locator('.fv-hf__chapter-nav a').count()==7,'no-JS chapter nav not present')
