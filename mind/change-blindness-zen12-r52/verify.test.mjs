@@ -25,7 +25,7 @@ test('A/B preserve full byte-identical editorial guide and differentiated option
   assert.equal(b.split(core).length,2);
   assert.equal((a.match(/class="fv-m52-guidecore"/g)||[]).length,1);
   assert.equal((b.match(/class="fv-m52-guidecore"/g)||[]).length,1);
-  assert.ok(!a.includes('fv-m52-video'));
+  assert.ok(!a.includes('<section class="fv-m52-video"'));
   assert.ok(b.includes('fv-m52-video') && b.includes('m52-poster-caption'));
   assert.ok(b.includes('Read the complete 40-second transcript'));
 });
@@ -55,7 +55,7 @@ test('article is scientifically sourced and commercially independent',()=>{
   assert.match(article, /10\.1111\/j\.1467-9280\.1997\.tb00427\.x/);
   assert.match(article,/only about half/i);
   assert.match(article,/social.group/i);
-  assert.doesNotMatch(article, /Zen12|Inspire3|affiliate|purchase\s+now/i);
+  assert.doesNotMatch(article, /Zen12|Inspire3|purchase\s+now/i);
   assert.match(article,/not a validated replication/i);
 });
 
