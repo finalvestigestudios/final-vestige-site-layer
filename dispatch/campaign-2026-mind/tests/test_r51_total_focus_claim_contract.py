@@ -21,7 +21,7 @@ class LinkReader(HTMLParser):
         if tag in ("script","iframe","img","video"): self.scripts.append(tag)
         if tag=="form": self.forms+=1
 def blob(s):
-    b=s.encode("utf8"); return hashlib.sha1(b"blob "+str(len(b)).encode()+b"\\0"+b).hexdigest()
+    b=s.encode("utf8"); return hashlib.sha1(b"blob "+str(len(b)).encode()+bytes((0,))+b).hexdigest()
 def is_merchant(link):
     h=(urlsplit(link).hostname or "").lower()
     return any(h==d or h.endswith("."+d) for d in ("inspire3.com","zen12.com","hypnosislive.com"))
