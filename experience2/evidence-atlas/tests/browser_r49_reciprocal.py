@@ -27,6 +27,13 @@ def document():
 def main(output: Path):
     output.mkdir(parents=True,exist_ok=True)
     page_html=document();counts=[];screenshots={};metrics=[]
+    perf_script="""<script>window.__fvPerf={lcp:null,cls:0};try{
+       new PerformanceObserver(x=>{for(const e of x.getEntries())window.__fvPerf.lcp=e.startTime;})
+          .observe({type:'largest-contentful-paint',buffered:true});
+       new PerformanceObserver(x=>{for(const e of x.getEntries())if(!e.hadRecentInput)window.__fvPerf.cls+=e.value;})
+          .observe({type:'layout-shift',buffered:true});
+       }catch(e){window.__fvPerf.error=String(e)}</script>"""
+    page_html=page_html.replace('<head>','<head>'+perf_script,1)
     with sync_playwright() as p:
         browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
         for width in (320,360,390,768,1024,1440,1920):
@@ -67,6 +74,10 @@ def main(output: Path):
                         path=output/f'r49-{width}-actual-pr158.png'
                         path.write_bytes(snapshot)
                         screenshots[str(width)]=hashlib.sha256(snapshot).hexdigest()
+                if enabled:
+                    perf=pg.evaluate('window.__fvPerf')
+                    metrics.append({'width':width,'lcp_ms':perf.get('lcp'),'cls':perf.get('cls'),
+                                    'environment':'SET_CONTENT_ACTUAL_PR158_NOT_HOSTED'})
                 counts.append((width,enabled));ctx.close()
         for attack,markup in (
            ('altered_catalog',page_html.replace('NASA S67-19766 · NASA','NASA FAKE · NASA',1)),
@@ -100,7 +111,8 @@ def main(output: Path):
       'research_desk':'ACTUAL_PR158_TEMPLATE_CSS_AND_JS_EXACT_GIT_BLOBS',
       'atlas':'ACTUAL_PHP_SHORTCODE_MARKUP','transport':'PLAYWRIGHT_SET_CONTENT_NO_HTTP',
       'axe':'NOT_AVAILABLE_NOT_EXECUTED','hosted_core_web_vitals':'NOT_MEASURED',
-      'viewport_modes':len(counts),'adversarial_cases':6,'screenshots_sha256':screenshots}
+      'viewport_modes':len(counts),'adversarial_cases':6,'screenshots_sha256':screenshots,
+      'component_lab_metrics':metrics}
     (output/'R49_ACTUAL_PR158_BROWSER_RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
     print('PASS R49: 14 Chromium modes, six adversarial cases, actual PR158 legacy source blobs; not WordPress')
 
