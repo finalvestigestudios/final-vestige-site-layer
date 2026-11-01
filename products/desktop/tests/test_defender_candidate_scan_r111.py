@@ -145,7 +145,7 @@ class DefenderR111(unittest.TestCase):
             attacker.parent.mkdir(parents=True)
             attacker.write_bytes(b"synthetic attacker stand-in")
             with patch.dict(os.environ, {"ProgramData": str(base / "Attacker"),
-                                         "ProgramFiles": str(base / "Attacker")}), \\
+                                         "ProgramFiles": str(base / "Attacker")}), \
                  patch.object(av.install, "native_roots", return_value=(data, files)):
                 self.assertEqual(av.locate_defender(), genuine)
 
