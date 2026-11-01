@@ -119,12 +119,19 @@ class PolicyDiffR26Tests(unittest.TestCase):
 
     def test_filename_with_newline_cannot_forge_diff_header(self):
         self.write()
-        self.old.rename(self.root / "before\n+forged.txt")
-        self.old = self.root / "before\n+forged.txt"
+        # Windows forbids LF in filenames. A bidi-control filename is legal
+        # and still verifies that source typography cannot forge a header.
+        name = "before\\u202e+forged.txt" if os.name == "nt" else "before\\n+forged.txt"
+        self.old.rename(self.root / name)
+        self.old = self.root / name
         self.run_diff()
         report = self.output.read_text()
-        self.assertIn('"before\\n+forged.txt"', report)
-        self.assertNotIn("\n+forged.txt", report)
+        if os.name == "nt":
+            self.assertIn('"before\\\\u202e+forged.txt"', report)
+            self.assertNotIn("\\u202e", report)
+        else:
+            self.assertIn('"before\\\\n+forged.txt"', report)
+            self.assertNotIn("\\n+forged.txt", report)
 
     def test_unsupported_extension_or_missing_input_rejected(self):
         self.write()
