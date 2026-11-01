@@ -13,7 +13,7 @@
 ## Explicitly NOT executed or verified
 - Native Node `node --test test-controls.mjs` against a real checkout, or hosted CI. Test file committed and intended to be run by reviewer in a proper checkout.
 - Real WordPress staging, real browser viewport/200% zoom/keyboard/screen reader/WCAG 2.2 AA, Lighthouse or core web vitals, cross-origin/CSP testing, production consent/analytics.
-- Video rendering, actual 30–45-second MP4, hosting, cue synchronization or conversion measurement. Only source-controlled original poster + six-caption VTT *proposal* + 40-second storyboard/transcript concept exists. B shows no fake player.
+- **Initial QA was performed before the film render.** Later in R44, an actual original silent **40.000-second MP4 (H.264, 540×960, 12 fps, 480 frames, 126,406 bytes)** was rendered offline and all six scenes visually inspected; exact executed Python source Git blob verified. **No WordPress/first-party hosting, hosted VTT synchronization or conversion measurement**. B still shows no fake player. See FILM-VERIFICATION.md.
 - Any real Inspire3 purchase, refund, fulfillment or customer support experience.
 - Any written Final Vestige-specific affiliate acceptance, exact product earning URL, creative license, website/TikTok/email terms or product-specific efficacy evidence.
 
