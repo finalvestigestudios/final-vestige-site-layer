@@ -173,7 +173,17 @@ def inspect_page(name, html):
     except (AssertionError, UnicodeError, TypeError) as exc:
         raise SemanticHold('unparseable private HTML') from exc
     page.assert_safe()
-    return tuple(page.links)
+    links = tuple(page.links)
+    if name == 'index.html':
+        need(all(link == 'global-source-variants.html' or
+                 (link.startswith('articles/') and r44.allowed(link))
+                 for link in links),
+             'index contains an external or unsafe navigation target')
+    elif name == 'global-source-variants.html':
+        need(links == ('index.html',), 'shared-source page has unsafe navigation')
+    else:
+        need(links == ('../index.html',), 'article page has unsafe navigation')
+    return links
 
 
 def audit_private_zip_html(archive, *, trusted_r42_sha256, trusted_r43_sha256,
