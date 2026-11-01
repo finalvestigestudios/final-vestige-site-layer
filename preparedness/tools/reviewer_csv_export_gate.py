@@ -220,3 +220,89 @@ def build_review_csv_export(handoff, global_review, reading_batches, *, expected
             s['article_origin'],s['source_origin'],s['source_url'],record,use,
             s['source_record_sha256'],s['source_use_sha256'],
             s['source_impact_claim_occurrences'],'NOT_STARTED',None,None,None,None))))
+    claim_index = {}
+    claim_rows = []
+    claim_counts = Counter()
+    for c in claims:
+        need(type(c) is dict and c.get('review_state') == 'NOT_STARTED',
+             'claim falsely marked reviewed')
+        rid, cid = c.get('relationship_id_sha256'), c.get('review_case_id_sha256')
+        source = source_index.get(rid)
+        need(source is not None and _hex(cid) and cid not in claim_index and
+             cid == sha({'relationship_id_sha256': rid,
+                         'claim_ref_sha256': c.get('claim_ref_sha256')}) and
+             c.get('slug') == source['slug'] and c.get('source_id') == source['source_id'] and
+             c.get('source_url') == source['source_url'] and
+             type(c.get('exact_original_context')) is str and
+             c['exact_original_context'].count('[CITATION]') == 1 and
+             type(c.get('original_codepoint_offset')) is int and
+             c['original_codepoint_offset'] >= 0 and
+             c.get('triage_priority_not_verdict') in ('REVIEW_FIRST','STANDARD_REVIEW') and
+             type(c.get('triage_tags_not_safety_findings')) is list,
+             'claim context, identity, source or priority lost')
+        original_claim = original_claims.get(cid)
+        need(original_claim is not None and original_claim[0] == rid and
+             original_claim[1]['claim_ref_sha256'] == c.get('claim_ref_sha256') and
+             original_claim[1]['original_context'] == c.get('exact_original_context') and
+             original_claim[1]['claim_ref']['citation_codepoint_offset'] ==
+                 c.get('original_codepoint_offset') and
+             original_claim[1]['priority'] == c.get('triage_priority_not_verdict') and
+             original_claim[1]['triage_tags_not_safety_findings'] ==
+                 c.get('triage_tags_not_safety_findings'),
+             'individual reviewer claim differs from original R34 citation reading')
+        for key in ('human_source_access_date','human_exact_page_or_section_locator',
+                    'human_claim_to_source_support_assessment','human_risk_or_scope_notes',
+                    'independent_qualified_safety_review'):
+            need(c.get(key) is None, 'claim reviewer result forged: '+key)
+        claim_counts[rid] += 1
+        claim_index[cid] = c
+        claim_rows.append(dict(zip(CLAIM, (
+            cid,rid,c['slug'],c['source_id'],c['source_url'],
+            c['original_codepoint_offset'],c['triage_priority_not_verdict'],
+            c['triage_tags_not_safety_findings'],c['exact_original_context'],
+            'NOT_STARTED',None,None,None,None,None))))
+    need(set(original_index) == set(source_index) and
+         set(original_claims) == set(claim_index),
+         'original R34 source/citation evidence omitted from CSV tasks')
+    need(all(claim_counts[rid] == s['source_impact_claim_occurrences']
+             for rid,s in source_index.items()),
+         'source-to-claim count or reviewer scope drift')
+    fallback_rows = []
+    fallback_ids = set()
+    for f in fallbacks:
+        need(type(f) is dict and f.get('review_state') == 'NOT_STARTED',
+             'fallback source falsely marked reviewed')
+        rid = f.get('relationship_id_sha256')
+        s = source_index.get(rid)
+        need(s is not None and rid not in fallback_ids and
+             s['article_origin'] != s['source_origin'] and
+             f.get('article_origin') == s['article_origin'] and
+             f.get('original_source_origin') == s['source_origin'] and
+             f.get('source_url') == s['source_url'] and
+             f.get('fallback_case_id_sha256') == sha({'relationship_id_sha256':rid,
+                'review_type':'ORIGINAL_CROSS_CLUSTER_FALLBACK_SCOPE'}),
+             'fallback provenance detached from original source scope')
+        need(f.get('human_original_reading_scope_matches_article_use') is None and
+             f.get('human_provenance_exception_notes') is None,
+             'fallback reviewer fields already populated')
+        fallback_ids.add(rid)
+        fallback_rows.append(dict(zip(FALLBACK, (
+            f['fallback_case_id_sha256'],rid,f['article_origin'],
+            f['original_source_origin'],f['source_url'],'NOT_STARTED',None,None))))
+    need({rid for rid,s in source_index.items() if s['article_origin'] != s['source_origin']} == fallback_ids,
+         'missing fallback scope review assignment')
+    group_rows = []
+    seen_urls, seen_group_ids = set(), set()
+    for g in groups:
+        need(type(g) is dict and g.get('review_state') == 'NOT_STARTED',
+             'global shared URL falsely reconciled')
+        url, gid = g.get('source_url'),g.get('global_group_case_id_sha256')
+        original = g.get('unabridged_original_crosswalk_group')
+        variants = g.get('distinct_original_variants')
+        need(type(url) is str and url.startswith('https://') and url not in seen_urls and
+             _hex(gid) and gid not in seen_group_ids and type(original) is dict and
+             type(variants) is list and len(variants) >= 2 and
+             g.get('original_crosswalk_group_sha256') == sha(original) and
+             gid == sha({'url':url,'original_crosswalk_group_sha256':sha(original)}) and
+             original.get('url') == url,
+             'crosswalk group ID, URL or unabridged original evidence changed')
