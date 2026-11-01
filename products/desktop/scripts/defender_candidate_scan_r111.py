@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import release_gate as gate
+import defender_engine_custody_r112 as custody
 import report_attestation as attestation
 from report_evidence import ReportEvidenceError, prepare_report_path, publish_report
 
@@ -30,7 +31,7 @@ PREFLIGHT = (
     "$sig=Get-AuthenticodeSignature -LiteralPath $p; "
     "if($null -eq $sig -or $sig.Status -ne 'Valid' -or "
     "$null -eq $sig.SignerCertificate -or "
-    "$sig.SignerCertificate.Subject -notmatch 'Microsoft'){exit 21}; "
+    "$sig.SignerCertificate.Subject -notmatch '(^|,\\s*)CN=Microsoft Corporation(\\s*,|$)'){exit 21}; "
     "$s=Get-MpComputerStatus; "
     "if($null -eq $s -or $s.AMServiceEnabled -ne $true -or "
     "$s.AntivirusEnabled -ne $true -or "
@@ -65,7 +66,10 @@ def locate_defender() -> Path:
         platform_root = program_data / "Microsoft" / "Windows Defender" / "Platform"
         if platform_root.is_dir() and not platform_root.is_symlink():
             # Microsoft documents that the newest platform engine lives here.
-            options += sorted(platform_root.glob("*/MpCmdRun.exe"), reverse=True)
+            try:
+                options += custody.installed_platform_engines(platform_root)
+            except custody.EngineHold:
+                raise AVHold("Defender platform engine discovery failed") from None
     program_files = Path(os.environ.get("ProgramFiles", ""))
     if program_files.is_absolute():
         options.append(program_files / "Windows Defender" / "MpCmdRun.exe")
@@ -137,6 +141,20 @@ def _unchanged(dist: Path, expected: dict[str, str], checksum_sha: str) -> None:
         raise AVHold("Candidate bytes changed before or during antivirus scan")
 
 
+def _engine_snapshot(scanner: Path) -> custody.EnginePin:
+    try:
+        return custody.fingerprint(scanner)
+    except custody.EngineHold:
+        raise AVHold("Installed Defender engine custody unavailable") from None
+
+
+def _same_engine(scanner: Path, pinned: custody.EnginePin) -> None:
+    try:
+        custody.require_same_engine(scanner, pinned)
+    except custody.EngineHold:
+        raise AVHold("Installed Defender engine changed during scan") from None
+
+
 def scan_candidates(dist: str | Path, r9: str | Path,
                     expected_r9: str) -> dict:
     """Requires a real Win11 workstation; no injected runner or OS override."""
@@ -145,17 +163,24 @@ def scan_candidates(dist: str | Path, r9: str | Path,
     prior, checksum_sha = _pins(root, Path(r9), expected_r9)
     _unchanged(root, prior, checksum_sha)
     scanner = locate_defender()
+    scanner_pin = _engine_snapshot(scanner)
     health_check(scanner)
+    _same_engine(scanner, scanner_pin)
     scanned = []
     for name in gate.EXPECTED:
+        _same_engine(scanner, scanner_pin)
         _unchanged(root, prior, checksum_sha)
         scan_one(scanner, root / name)
         _unchanged(root, prior, checksum_sha)
+        _same_engine(scanner, scanner_pin)
         scanned.append({"name": name, "sha256": prior[name],
                         "defender_custom_scan": "zero_exit_result_remediation_ambiguous"})
     health_check(scanner)
+    _same_engine(scanner, scanner_pin)
     _unchanged(root, prior, checksum_sha)
     return {
+        "scanner_sha256": scanner_pin.sha256,
+        "scanner_custody": "same_signed_engine_sha256_and_file_identity_observed",
         "schema": "fv-labs-offline-defender-r111-v1",
         "provider": "Microsoft Defender Antivirus",
         "status": "SIX_SCANS_ZERO_EXIT_UNCERTIFIED",
