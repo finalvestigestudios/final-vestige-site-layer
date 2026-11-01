@@ -1,0 +1,36 @@
+'use strict';
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const {validateRecheck}=require('./validate_prinsendam_292_recheck_20261101.cjs');
+const d=require('./prinsendam_292_uscg_rotterdam_20261101.json');
+const c=require('./parts/02.json');
+const b=require('./prinsendam_292_primary_20261031.json');
+const clone=x=>JSON.parse(JSON.stringify(x));
+test('complete new six-slot web viewer crosswalk is safe',()=>assert.deepEqual(validateRecheck(clone(d),clone(c),clone(b)),[]));
+function negative(name,change){
+ test(name,()=>{const a=clone(d),s=clone(c),old=clone(b);change(a,s,old);assert.ok(validateRecheck(a,s,old).length>0,name);});
+}
+negative('made-up guest 404',(a)=>a.records[3].guest_browser.image_get_status=404);
+negative('invented 42 failures',(a)=>a.claimed_broken_42_verified=true);
+negative('invented 76 percent savings',(a)=>a.claimed_transfer_savings_76_percent_measured=true);
+negative('visitor status inferred from web retriever',(a)=>a.records[5].source_retriever.origin_http_status=403);
+negative('web 403 turned into 200',(a)=>a.records[5].source_retriever.reported_wrapper_code=200);
+negative('CG aviation timeout mislabeled success',(a)=>a.records[3].source_retriever.result='IMAGE_RENDERED');
+negative('artist rights silently approved',(a)=>a.records[5].archive.rights_review='APPROVED');
+negative('cache authorization',(a)=>a.records[1].release.cache_approved=true);
+negative('Gutenberg production edit authorization',(a)=>a.records[2].release.post_edit_approved=true);
+negative('invented binary match',(a)=>a.records[0].release.exact_binary_identity_verified=true);
+negative('catalog dimensions upscaled',(a)=>a.records[1].geometry.conditional_target_width_px=1200);
+negative('unknown master dimensions guessed',(a)=>a.records[4].geometry.conditional_target_width_px=960);
+negative('crop warning deleted',(a)=>a.records[0].geometry.published_crop_warning='none');
+negative('different launch photographs declared identical',(a)=>a.records[2].archive.relationship='exact_same_photo');
+negative('visually different photos declared identical',(a)=>a.visual_comparisons[0].same_image=true);
+negative('false binary hash proof',(a)=>a.visual_comparisons[0].binary_identity_checked=true);
+negative('wrong primary photo for second helicopter shot',(a)=>a.records[3].archive.official_record_url='https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/');
+negative('source URL tampered',(a)=>a.records[0].stored_src='https://elsewhere.example/ship.jpg');
+negative('ALT truncated',(a)=>a.records[1].stored_alt='A boat');
+negative('source census tampered',(_,s)=>s.images.find(x=>x.key==='292:0').source_url='https://wrong.example/a.jpg');
+negative('old baseline tampered',(_,__,old)=>old.images[0].stored_url='https://wrong.example/a.jpg');
+negative('invented CMS recheck',(a)=>a.records[1].cms_readback_this_sprint=true);
+negative('guest transfer measured fiction',(a)=>a.records[0].guest_browser.encoded_transfer_bytes=100);
+negative('slot dropped',(a)=>a.records.pop());
