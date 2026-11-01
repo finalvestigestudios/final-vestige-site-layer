@@ -35,7 +35,9 @@ function attest(legacy, candidate, opts={}) {
   if(oldSub.length !== 1 || newSub.length!==1 || oldSub[0]!==newSub[0]) fail('original Jetpack subscription block lost/changed/duplicated');
   const oldFocus=[...legacy.matchAll(FOCUS_LINK)].map(m=>m[0]);
   const candidateFocus=[...candidate.matchAll(FOCUS_LINK)].map(m=>m[0]);
-  if(oldFocus.length < 2 || oldFocus.some(link=>!candidateFocus.includes(link))) fail('original Focus links were removed or altered');
+  if(oldFocus.length < 2 || oldFocus.some(link =>
+      candidateFocus.filter(x=>x===link).length < oldFocus.filter(x=>x===link).length))
+    fail('original Focus links were removed, deduplicated or altered');
   const h1=[...candidate.matchAll(/<h1\b[^>]*>/gi)];
   if(h1.length!==1) fail('candidate has '+h1.length+' H1 elements (expected 1, before theme chrome)');
   for(const id of CHAPTERS){
