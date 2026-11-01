@@ -26,6 +26,19 @@ MAX_DOCUMENT = 5_000_000
 MAX_ASSET = 12_000_000
 MAX_TOTAL = 32_000_000
 SHA = re.compile(r'^[a-f0-9]{64}$')
+# HTTP DOM replay can only attest resources whose bytes it has captured. A
+# blocked subresource is a QA failure, not proof of successful offline display.
+NETWORK_TAGS = ('iframe', 'frame', 'object', 'embed', 'video', 'audio',
+                'source', 'track', 'picture', 'portal')
+
+
+def audit_css_dependencies(css, label):
+    """Refuse resources whose bytes won't be available in captured HTML."""
+    require(not re.search(r'@import\b', css, re.I), label + ': CSS @import not captured')
+    for match in re.finditer(r'url\s*\(\s*([^)]*)\)', css, re.I | re.S):
+        target = match.group(1).strip().strip('\"\'').strip()
+        require(target.startswith(('#', 'data:')),
+                label + ': CSS url() resource not captured: ' + target[:120])
 
 
 class Hold(RuntimeError):
@@ -83,6 +96,16 @@ class Capture:
         html, mime, _ = self.get('/', MAX_DOCUMENT)
         require(mime in ('text/html', 'application/xhtml+xml'), 'root is not HTML')
         soup = BeautifulSoup(html, 'html.parser')
+        require(not soup.find(NETWORK_TAGS),
+                'embedded/picture/media content is not captured or certified')
+        for tag in soup.find_all('link'):
+            require(not set(tag.get('rel', [])) &
+                    {'preload', 'modulepreload', 'prefetch', 'prerender'},
+                    'preloaded or speculative resource is not captured')
+        for tag in soup.find_all('style'):
+            audit_css_dependencies(tag.get_text(), 'inline stylesheet')
+        for tag in soup.find_all(style=True):
+            audit_css_dependencies(str(tag['style']), 'inline style attribute')
         require(bool(soup.select_one('[data-fv-home-flagship]')),
                 'actual homepage contains no flagship')
         require(len(soup.select('.fv-margin-strip__item')) == 72,
@@ -105,10 +128,11 @@ class Capture:
             require(kind in ('text/css', 'text/plain', 'application/octet-stream'),
                     'stylesheet MIME mismatch')
             css = payload.decode('utf-8')
-            require(not re.search(r'url\s*\(\s*["\']?\s*(?:https?:|//)', css, re.I),
-                    'CSS references live network asset; cannot certify offline replay')
+            audit_css_dependencies(css, 'linked stylesheet')
             require('</style' not in css.lower(), 'CSS cannot be safely inlined')
             tag = soup.new_tag('style')
+            if link.get('media'):
+                tag['media'] = link['media']
             tag['data-fv-source-sha256'] = hashlib.sha256(payload).hexdigest()
             tag.string = css
             link.replace_with(tag)
@@ -165,10 +189,17 @@ async def browser_review(html, out, chromium):
             page = await browser.new_page(viewport={'width': w, 'height': 900},
                                           reduced_motion='reduce' if w == 1024 else 'no-preference')
             errors = []
+            blocked_requests = []
             page.on('pageerror', lambda error: errors.append(str(error)))
-            await page.route('**/*', lambda route: route.abort())
+            async def block_unverified(route):
+                blocked_requests.append({'url': route.request.url,
+                                         'type': route.request.resource_type})
+                await route.abort()
+            await page.route('**/*', block_unverified)
             await page.set_content(html, wait_until='domcontentloaded')
-            await page.wait_for_timeout(100)
+            # Bounded observation for startup/deferred subresources. Not a claim
+            # that arbitrary later network activity can be certified offline.
+            await page.wait_for_timeout(450)
             state = await page.evaluate('''() => ({
                width: document.documentElement.scrollWidth,
                chapters: [...document.querySelectorAll('.fv-hf__chapter-nav a')]
@@ -182,23 +213,49 @@ async def browser_review(html, out, chromium):
                                'images_decoded': state['unloadedImages'] == 0,
                                'focus_preserved': state['focus'] >= 2,
                                'no_js_errors': not errors,
+                               'no_unverified_network': not blocked_requests,
+                               'blocked_requests': blocked_requests,
                                'scroll_width': state['width'], 'js_errors': errors}
             if w in (320, 390, 768, 1440, 1920):
                 await page.screenshot(path=str(out / f'wp-http-replay-{w}.png'), full_page=(w in (390, 1440)))
+            await page.wait_for_timeout(50)
+            # Full-page screenshots may trigger lazy resource requests. Do not
+            # finalize the success flags until after the screenshot completes.
+            results[str(w)]['no_unverified_network'] = not blocked_requests
+            results[str(w)]['blocked_requests'] = list(blocked_requests)
+            results[str(w)]['no_js_errors'] = not errors
+            results[str(w)]['js_errors'] = list(errors)
             await page.close()
         page = await browser.new_page(viewport={'width': 390, 'height': 844},java_script_enabled=False)
-        await page.route('**/*', lambda route: route.abort())
+        no_js_blocked = []
+        async def block_no_js(route):
+            no_js_blocked.append(route.request.url)
+            await route.abort()
+        await page.route('**/*', block_no_js)
         await page.set_content(html, wait_until='domcontentloaded')
         visible = await page.locator('[data-fv-case]:visible').count()
-        results['no_js'] = {'all_three_cases_visible': visible == 3}
+        results['no_js'] = {'all_three_cases_visible': visible == 3,
+                            'no_unverified_network': not no_js_blocked,
+                            'blocked_requests': no_js_blocked}
         await page.close()
         # Viewport-width approximation is not a claim of real browser 200% zoom.
         page = await browser.new_page(viewport={'width': 720, 'height': 900})
-        await page.route('**/*', lambda route: route.abort())
+        zoom_blocked = []
+        async def block_zoom(route):
+            zoom_blocked.append(route.request.url)
+            await route.abort()
+        await page.route('**/*', block_zoom)
         await page.set_content(html, wait_until='domcontentloaded')
+        await page.wait_for_timeout(450)
         sw = await page.evaluate('document.documentElement.scrollWidth')
-        results['zoom_proxy_720'] = {'no_overflow': sw <= 721, 'scroll_width': sw}
+        results['zoom_proxy_720'] = {'no_overflow': sw <= 721,
+                                     'no_unverified_network': not zoom_blocked,
+                                     'blocked_requests': zoom_blocked,
+                                     'scroll_width': sw}
         await page.screenshot(path=str(out / 'wp-http-replay-zoom-proxy.png'))
+        await page.wait_for_timeout(50)
+        results['zoom_proxy_720']['no_unverified_network'] = not zoom_blocked
+        results['zoom_proxy_720']['blocked_requests'] = list(zoom_blocked)
         await page.close()
         await browser.close()
     return version, results
@@ -206,7 +263,7 @@ async def browser_review(html, out, chromium):
 
 def passing(checks):
     return all(passing(v) if isinstance(v, dict) else v is True for k, v in checks.items()
-               if k not in ('scroll_width', 'js_errors'))
+               if k not in ('scroll_width', 'js_errors', 'blocked_requests'))
 
 
 def main():
