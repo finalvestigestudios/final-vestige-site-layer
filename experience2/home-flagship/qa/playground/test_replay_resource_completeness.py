@@ -78,6 +78,17 @@ class ReplayResourceCompleteness(unittest.TestCase):
             self.assertFalse(checks['390']['no_unverified_network'])
             self.assertTrue(any('bad.example' in x['url'] for x in checks['390']['blocked_requests']))
 
+    def test_delayed_script_request_cannot_create_false_visual_pass(self):
+        with ProbeServer() as s, tempfile.TemporaryDirectory() as d:
+            s.data['/assets/flagship.js'] = (
+                b'setTimeout(()=>fetch("https://bad.example/delayed").catch(()=>{}),260);',
+                'text/javascript')
+            html, _ = Capture(s.url, s.manifest).assemble()
+            _, checks = asyncio.run(browser_review(html, Path(d), '/usr/bin/chromium'))
+            self.assertFalse(passing(checks), 'deferred network was silently ignored')
+            self.assertTrue(any('bad.example/delayed' in v['url']
+                                for v in checks['390']['blocked_requests']))
+
     def test_visual_capture_for_local_whitelisted_assets_still_passes(self):
         with ProbeServer() as s, tempfile.TemporaryDirectory() as d:
             html, report = Capture(s.url, s.manifest).assemble()
