@@ -85,14 +85,14 @@ function runTests(){
     a+'<script>alert(1)</script>',
     a+'<form><input type="email"></form>',
     b.replace('complete proposed 40-second transcript','transcript removed'),
-    b.replace('concept only','available now'),
+    b.replace('offline render only','available now'),
     b+'<video controls autoplay src="test.mp4"></video>',
   ];
   const guards=[
     x=>!disclosureNearCTA(x),x=>!x.includes('aria-disabled="true"'),
     x=>!commerceOff(x),x=>!htmlSafe(x),
     x=>!htmlSafe(x),x=>!x.includes('complete proposed 40-second transcript'),
-    x=>!x.includes('concept only'),x=>!htmlSafe(x)
+    x=>!x.includes('offline render only'),x=>!htmlSafe(x)
   ];
   mutants.forEach((x,i)=>{const killed=guards[i](x);check(killed,'dangerous mutation '+i);if(killed)report.mutationsKilled++;});
   return report;
