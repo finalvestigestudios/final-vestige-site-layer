@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Final Vestige — Apollo Evidence Atlas (STAGING ONLY)
  * Description: NASA-custody source-reference gallery; not approved for production.
- * Version: 0.0.40-staging
+ * Version: 0.0.41-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.40-staging'); }
+if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.41-staging'); }
 // Exact, reviewed R39 source-custody HTML fragment. A changed build needs new review.
 if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '45a552d460cf93a1b10ba5821a662956bee9a77f87c147b22182b805f5d27321'); }
 
