@@ -19,7 +19,7 @@
 - `ab-test-protocol.md`: hypothesis, experiment ethics, primary metric, safeguards, privacy and no false results.
 ## Executed verification, no inflated test claim
 - Authenticated committed GitHub source readback: 11 key files, including renderer (SHA verified via local `git hash-object`) and captions (SHA verified).
-- Actual source bodies of both committed JS test suites run in isolated V8 with Node API compatibility shims: **59 assertions passed** across 8 commerce test cases and the privacy suite; 4 explicit commercial mutation failures, multiple privacy PII payload rejections. This is NOT native Node or hosted CI.
+- Actual source bodies of both committed JS test suites run in isolated V8 with Node API compatibility shims: **59 assertions passed** across 8 commerce test cases and the privacy suite; 5 explicit commercial mutation failures, multiple privacy PII payload rejections. This is NOT native Node or hosted CI.
 - The first ad-hoc validator attempt was corrected after an assertion incorrectly recognized `aria-disabled` as equivalent to native `disabled`; later source-controlled test uses whitespace-bound native disabled selector. False positives are unsafe: validator now tests concrete mutation.
 - Local film Python/Pillow and ffmpeg succeeded: H.264 540x960, 12fps, 480 frames, exactly 40.000 s, 121054 bytes, SHA256 88f7e03e20ab9560ed972bdf31f0a802a32271cd10811f7c6bae04de6a868ee5. Six original stills plus contact sheet visually inspected. GitHub film renderer source blob `5ec302d7058beed1f6bc8df8ec29266647b7e4cb` matches locally executed source; VTT blob `416ff2972c542f6adee728901f9c4ba6b256846f` matches local VTT.
 - Affiliate CTA is not enabled; film *only offline*, no hosted first-party MP4 or actual on-site video element in B.
