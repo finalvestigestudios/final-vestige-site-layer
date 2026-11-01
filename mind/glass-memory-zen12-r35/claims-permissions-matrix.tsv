@@ -1,0 +1,57 @@
+ID	Claim / permission	Source IDs	Evidence class	Finding	Editorial/release disposition
+H01	1974 Loftus/Palmer experiment changed speed-question verbs	H01	primary study	supported	editorial
+H02	Experiment II had 150 student participants	H01	primary study	supported	editorial
+H03	Broken glass not present in the test film	H01	primary study	supported	editorial
+H04	Sixteen of 50 smashed subjects reported glass	H01	primary study	supported	editorial
+H05	Seven of 50 hit subjects reported glass	H01	primary study	supported	editorial
+H06	Six of 50 control subjects reported glass	H01	primary study	supported	editorial
+H07	The glass question was delayed one week	H01	primary study	supported	editorial
+H08	Every witness had a rewritten memory	H01	inference	contradicted	reject
+H09	Recorded answers establish the exact internal memory mechanism	H01	inference	not established	qualify
+H10	Laboratory frequency equals real forensic error rate	H01	extrapolation	unsupported	reject
+H11	Systematic review considered 59 false-memory experiments	H02	independent review	supported	editorial
+H12	Hypnosis retrieves hidden factual memories reliably	H03;H04	unsubstantiated efficacy	unsupported	reject
+H13	Hypnosis is always ineffective or harmful	H03;H04	extrapolation	unsupported	reject
+H14	AMA Council 1985 raised forensic hypnotic recall concerns	H04	historical guidance	supported	editorial
+H15	Puységur archive tracks 153 source rows	F01	first-party archive	observed	editorial
+H16	Puységur archive describes sixteen case dossiers	F01	first-party archive	observed	editorial
+H17	Loftus proves Puységur testimony untrue	H01;F01	false inference	unsupported	reject
+M01	Official Inspire3 catalog includes Zen12	M01	seller	confirmed as merchant description	attribute
+M02	Zen12 advertises approx. twelve-minute sessions	M02	seller	confirmed as merchant description	attribute
+M03	Beginner first 6 levels, 24 MP3	M02	seller	confirmed as merchant description	attribute
+M04	Premium 12 levels, 48 MP3	M02;M04	seller	confirmed as merchant description	attribute
+M05	Advanced last 6 levels, 24 MP3	M02	seller	confirmed as merchant description	attribute
+M06	Four audio styles are advertised	M02;M03	seller	confirmed as merchant description	attribute
+M07	Premium checkout represents every tier's extras	M04	unsupported inference	not verified	reject
+M08	Zen12 twelve minutes equal one hour of meditation	M02;M03	commercial outcome	no Zen12-specific proof	seller-claim only
+M09	All users show automatic EEG entrainment from Zen12	M02;M03	commercial outcome	no Zen12-specific proof	reject
+M10	Zen12 clinically treats anxiety or depression	M02	health	no Zen12-specific proof	reject
+M11	Zen12 causes wealth or guaranteed memory improvements	M01;M02	financial/psychological	no Zen12-specific proof	reject
+M12	EEG binaural review reported mixed/inconsistent results	S01	independent systematic review	supported	include with caveats
+M13	Binaural EEG review studied the Zen12 MP3 files	S01	incorrect extrapolation	false	reject
+M14	Seller says headphones are unnecessary	M03	seller	verified attribution	attribute
+M15	Seller warns against listening while driving	M03	seller	verified attribution	include warning
+M16	Public Premium checkout displays phone field	M04	observed seller UI	verified	neutral
+M17	Mobile phone field is mandatory	M04	seller UI inference	unknown	withhold
+M18	Merchant advertises one-year refund	M02;M04	seller promise	observed not audited	attribute and caveat
+M19	One-year refunds are always promptly honored	M02;M04	unknown experience	unverified	reject
+M20	Specific price/promo fixed at all checkout paths	M02;M04	volatile	unverified	omit
+A01	FTC requires clear nearby earning link disclosure	C01	regulatory	supported	adjacent
+A02	FTC expects adequate objective health claims proof	C02	regulatory	supported	do not assert unsupported outcomes
+A03	Public partner registration means Final Vestige is approved	M05	permission	FALSE	HARD HOLD
+A04	Exact eligible Zen12 SKU and earning link verified	M05	permission	not verified	HARD HOLD
+A05	Website promotion rights accepted in account	M05	permission	not verified	HARD HOLD
+A06	TikTok social promotion rights accepted in account	M05	permission	not verified	HARD HOLD
+A07	Dispatch email promotion rights accepted in account	M05	permission	not verified	HARD HOLD
+A08	Limitless Labs swipe authorizes Zen12 creative	M06	permission	FALSE	prohibited
+A09	Merchant endorsements can be represented as user experience	M02	deceptive review	FALSE	prohibited
+A10	Buying/return experience tested by Final Vestige	M04	personal experience	not tested	must not claim
+A11	B short film demonstrably improves conversion	none	performance	unmeasured hypothesis	do not claim lift
+A12	Original silent 40-second film rendered offline	R35 video SHA256	local output	confirmed offline	not hosted
+A13	B live player/captions integrated in WordPress	none	release QA	not implemented	HARD HOLD
+A14	Commerce CTA must remain inert pending permission	C01;M05	release gate	implemented	HARD HOLD
+A15	Prospective disclosure appears immediately before inert CTA	C01	draft design	implemented	independent QA needed
+A16	New signup list or SaaS is needed	F02	site architecture	false	prohibited
+A17	Proposed /mind/ URL is already published	F01	site status	not verified	avoid invented URL
+A18	Raw referrer/IP/email/UUID needed for attribution	none	privacy	not approved	prohibited
+A19	Categorical synthetic reporting may enforce k>=10	R35 offline source	prototype	implemented offline	disabled live
