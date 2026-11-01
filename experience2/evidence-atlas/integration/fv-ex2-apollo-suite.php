@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Final Vestige — Apollo Research Suite (STAGING ONLY)
  * Description: Fail-closed, exact-source Research Desk + Evidence Atlas co-host shortcode; no CMS writes.
- * Version: 0.0.52-staging
+ * Version: 0.0.53-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.52-staging'); }
+if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.53-staging'); }
 
 /** Git *blob* SHA-1 (not the SHA-1 of bare file bytes). */
 function fv_ex2_apollo_git_blob(string $bytes): string {
@@ -73,13 +73,37 @@ function fv_ex2_apollo_suite_enqueue(): bool {
     wp_enqueue_style('fv-ex2-research-desk', plugins_url('assets/source-ledger.css', $origin), array(), FV_EX2_RD_VERSION);
     wp_enqueue_script('fv-ex2-research-desk', plugins_url('assets/source-ledger.js', $origin), array(), FV_EX2_RD_VERSION, true);
     wp_enqueue_style('fv-ex2-apollo-suite', plugins_url('apollo-suite.css', __FILE__), array(), FV_EX2_APOLLO_SUITE_VERSION);
+    // Important: Atlas registers its assets at priority 20. Enqueue the already-
+    // registered handles NOW, before wp_head, for predeclared nested blocks.
+    // Otherwise Atlas CSS can arrive only after the shortcode renders.
+    if (function_exists('fv_ex2_atlas_enqueue_assets')) {
+        fv_ex2_atlas_enqueue_assets();
+    }
     return true;
+}
+/**
+ * For a nested Gutenberg/reusable-block/template-part shortcode, the page's raw
+ * post_content may not contain the shortcode. An explicitly configured staging
+ * page ID preloads assets before wp_head, without site-wide JS/CSS overhead.
+ * Define FV_EX2_APOLLO_SUITE_PRELOAD_PAGE_IDS as an array of positive int IDs
+ * in PRIVATE staging configuration only. This is not a WordPress setting.
+ */
+function fv_ex2_apollo_suite_page_opted_in($post): bool {
+    if (!($post instanceof WP_Post) || !isset($post->ID) || !is_int($post->ID) || $post->ID < 1) { return false; }
+    if (!defined('FV_EX2_APOLLO_SUITE_PRELOAD_PAGE_IDS')) { return false; }
+    $ids = FV_EX2_APOLLO_SUITE_PRELOAD_PAGE_IDS;
+    if (!is_array($ids)) { return false; }
+    foreach ($ids as $id) {
+        if (is_int($id) && $id > 0 && $id === $post->ID) { return true; }
+    }
+    return false;
 }
 function fv_ex2_apollo_suite_pre_enqueue(): void {
     if (!is_singular()) { return; }
     $post = get_queried_object();
-    if ($post instanceof WP_Post && is_string($post->post_content)
-        && has_shortcode($post->post_content, 'fv_ex2_apollo_suite')) {
+    if ($post instanceof WP_Post &&
+        ((is_string($post->post_content) && has_shortcode($post->post_content, 'fv_ex2_apollo_suite'))
+         || fv_ex2_apollo_suite_page_opted_in($post))) {
         fv_ex2_apollo_suite_enqueue();
     }
 }
