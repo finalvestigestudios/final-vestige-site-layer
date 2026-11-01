@@ -42,7 +42,7 @@ class PremiumReviewLockTests(unittest.TestCase):
         # a loss of identity and intentionally withheld automatic cleanup.
         self.assertTrue(self.lock.is_file())
         self.assertEqual(self.lock.read_bytes(),
-                         f"pid={os.getpid()}\\n".encode("ascii"))
+                         f"pid={os.getpid()}\n".encode("ascii"))
 
     def test_exclusive_private_lock_and_cleanup(self):
         with exclusive_review_lock(self.journal) as owned:
