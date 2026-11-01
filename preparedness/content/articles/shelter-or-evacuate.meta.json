@@ -12,8 +12,8 @@
     "Evacuation",
     "Warnings"
   ],
-  "updated": "2026-10-30",
-  "last_checked": "2026-10-29",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
   "recheck": "Immediately if Ready.gov revises any hazard page below, especially the 2023 hazardous-materials page; otherwise at the next quarterly source sweep.",
   "status": {
     "editorial": "drafted",
@@ -42,6 +42,7 @@
     "shelter-ready-power-outages": "Go to a community location with power if heat or cold is extreme.",
     "shelter-ready-plan": "Household discussion questions; household-needs checklist.",
     "shelter-ready-plan-locations": "Plan for school, daycare, work; ask about alerts, evacuation and shelter-in-place plans.",
-    "shelter-ready-disabilities": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters."
+    "shelter-ready-disabilities": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters.",
+    "shelter-cdc-chemical-sip": "CDC chemical shelter-in-place: safe-room choice, seal kit, practice, vehicles not airtight, all clear, 'few hours, possibly a few days, or longer' as the possible length of the emergency."
   }
 }
