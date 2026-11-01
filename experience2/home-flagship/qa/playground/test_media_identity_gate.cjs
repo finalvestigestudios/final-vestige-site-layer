@@ -17,8 +17,8 @@ function synthetic(name,size,w,h,kind) {
   b.writeUInt32LE(10,16);b.writeUIntLE(w-1,24,3);b.writeUIntLE(h-1,27,3);
  } else if(kind==='jpeg'){
   Buffer.from('ffd8ffe000104a46494600010100000100010000ffc0001108','hex').copy(b,0);
-  b.writeUInt16BE(h,26);b.writeUInt16BE(w,28);
-  Buffer.from('03012200021101031101ffd9','hex').copy(b,30);
+  b.writeUInt16BE(h,25);b.writeUInt16BE(w,27);
+  Buffer.from('03012200021101031101ffd9','hex').copy(b,29);
  } else if(kind==='gif'){
   b.write('GIF89a',0);b.writeUInt16LE(w,6);b.writeUInt16LE(h,8);
  } else throw new Error(kind);
