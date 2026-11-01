@@ -14,6 +14,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERN = "test_windows11_manual_acceptance_r109.py"
+# Fail closed if any required R121 independent-custody regression is removed.
+R121_REQUIRED = frozenset((
+    "test_r121_external_pin_rejects_missing",
+    "test_r121_external_pin_rejects_boolean",
+    "test_r121_external_pin_rejects_uppercase",
+    "test_r121_external_pin_rejects_whitespace",
+    "test_r121_external_pin_rejects_nonhex",
+    "test_r121_external_pin_rejects_short_pin",
+    "test_r121_external_pin_preserves_exact_lowercase_digest",
+    "test_r121_independent_pin_allows_matching_synthetic_six_candidates",
+    "test_r121_independent_pin_rejects_valid_but_different_digest",
+    "test_r121_independent_pin_rejects_equivalent_json_with_modified_bytes",
+    "test_r121_independent_pin_rejects_candidate_hash_drift",
+    "test_r121_independent_pin_rejects_checksum_inventory_drift",
+    "test_r121_cli_missing_pin_holds_without_touching_custody",
+    "test_r121_cli_verify_also_requires_separate_pin",
+    "test_r121_cli_template_passes_pin_and_never_sets_release_authorized",
+))
 SAFE_NAME = re.compile(r"test_[a-z][a-z0-9_]{0,100}$")
 
 
@@ -35,7 +53,8 @@ def main() -> int:
         suite = unittest.defaultTestLoader.discover(
             start_dir=str(ROOT / "tests"), pattern=PATTERN)
         admitted = collect_names(suite)
-        if len(admitted) < 55 or len(set(admitted)) != len(admitted):
+        if (len(admitted) < 70 or len(set(admitted)) != len(admitted)
+                or not R121_REQUIRED.issubset(set(admitted))):
             raise ValueError("Missing or duplicate synthetic test methods")
         result = unittest.TestResult()
         # A failing test may otherwise leak customer file paths in a traceback
@@ -49,7 +68,7 @@ def main() -> int:
         if not set(failed + skipped).issubset(set(admitted)):
             raise ValueError("Unrecognized test result")
         status = "PASS" if result.wasSuccessful() and not skipped else "FAIL"
-        print(f"R110 synthetic suite {status}; ran={result.testsRun} expected={len(admitted)} "
+        print(f"R121 manual-custody synthetic suite {status}; ran={result.testsRun} expected={len(admitted)} "
               f"failures={len(result.failures)} errors={len(result.errors)} "
               f"skipped={len(skipped)}")
         if failed or skipped:
@@ -57,7 +76,7 @@ def main() -> int:
                   ", ".join(failed + skipped))
         return 0 if status == "PASS" else 1
     except Exception:  # fail closed without disclosing exception contents
-        print("R110 synthetic suite HOLD: static test inventory or execution unavailable")
+        print("R121 manual-custody synthetic suite HOLD: static test inventory or execution unavailable")
         return 2
 
 
