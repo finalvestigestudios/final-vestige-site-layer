@@ -10,14 +10,15 @@
 | `investigation-chevreul.wp.html` | Full article as scope-styled WordPress Custom HTML candidate; no live CMS writes. |
 | `zen12-independent-guide.md` | ~1,850-word independent seller-specific product guide; documented formats, honest scientific limitations, free routine, objections, checkout questions, no price or affiliate URL. |
 | `zen12-a-text.wp.html` | Full text-only independent buyer guide and visible adjacent prospective commission notice, inert CTA. |
-| `zen12-b-film.wp.html` | Identical substantive guide + original optional 40-second film poster/transcript concept. Film NOT rendered or hosted. No player or autoplay. |
-| `film-chevreul.vtt` | Six draft caption cues, continuous 00:00–00:40. Timing not media-synced. |
-| `film-storyboard-transcript.md` | 40-second original visual sequence and full transcript, sources and video accessibility plan. |
+| `zen12-b-film.wp.html` | Identical substantive guide + original optional 40-second film: an actual 40.000-second H.264 original has been rendered and inspected **offline only**, not hosted or linked as a playback player. Version B keeps static poster and transcript pending permission, captions sync and accessibility review. No autoplay. |
+| `film-chevreul.vtt` | Six draft caption cues, continuous 00:00–00:40. Film exists offline; hosted playback caption sync still unverified. |
+| `film-storyboard-transcript.md` | 40-second original visual sequence and full transcript, sources, offline artifact SHA-256 and video accessibility plan. |
 | `mind-hub-alternative.wp.html` | Accessible polished alternative source-controlled Mind Archive; existing PR #172 remains authoritative. |
 | `claims-and-permissions.csv` | 50 claims, permission gates, exact source URLs, and approved wording restrictions across 17 source IDs. |
 | `navigation-and-organic-plan.md` | Real existing source links, no speculative /mind/ or product URLs, ethically sequenced search/TikTok route, existing Focus/Jetpack, Dispatch coordination. |
 | `privacy-hard-off.cjs` | Not wired; categorical synthetic-only model, no direct tracking calls, k>=10 suppression, fails closed on extra fields. |
 | `qa-r34.cjs` | Reproducible source and regression checks. |
+| `render_chevreul.py` | Actual original offline H.264 film + poster renderer (Pillow and ffmpeg). Rendered 540×960, 12 fps, 40.000s; first caption-clipping defect corrected and six scenes visually inspected. |
 
 ## Read-first verification (31 Oct 2026 PT)
 
