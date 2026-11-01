@@ -91,8 +91,8 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' > /dev/null 2>&1
       - name: R119 all-eight-entry sealed transfer tamper matrix (normal and -OO)
         run: |
-          python -m unittest discover -s products/desktop/tests -p 'test_sealed_tamper_matrix_r119.py' > /dev/null 2>&1
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_sealed_tamper_matrix_r119.py' > /dev/null 2>&1
+          python products/desktop/scripts/safe_unittest_r119.py
+          python -OO products/desktop/scripts/safe_unittest_r119.py
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -284,10 +284,10 @@ jobs:
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -p 'test_sealed_tamper_matrix_r119.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R119 synthetic 16-case tamper matrix FAILED" }
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_sealed_tamper_matrix_r119.py' *> $null
-          if ($LASTEXITCODE -ne 0) { throw "R119 optimized synthetic tamper matrix FAILED" }
+          python products/desktop/scripts/safe_unittest_r119.py
+          if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (normal)" }
+          python -OO products/desktop/scripts/safe_unittest_r119.py
+          if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (optimized)" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
