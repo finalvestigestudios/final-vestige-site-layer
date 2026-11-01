@@ -43,7 +43,7 @@ After successful intake, `intake-r117/exes/` contains the six private candidates
 
 ## Limits and mandatory separate release gates
 
-Passing synthetic unit tests does **not** demonstrate secure handling of actual Windows executable bytes, independently reviewed Windows ACLs or endpoint compromise resistance. Authenticated encryption cannot mitigate an insider who has the key or guarantee that Windows Defender cleared the applications. No actual sealed candidate envelope or encryption key is created by CI. The key must never travel alongside the encrypted archive. Windows rename and filesystem permission expectations need QD review on a real NTFS system.
+Passing synthetic unit tests does **not** demonstrate secure handling of actual Windows executable bytes, independently reviewed Windows ACLs or endpoint compromise resistance. Authenticated encryption cannot mitigate an insider who has the key or guarantee that Windows Defender cleared the applications. R118's follow-on Windows CI check now creates an **ephemeral key, bundle and private decrypted intake on the same hosted runner**, then deletes all three within that run. **None is uploaded or transferred to a physical reviewer**; it is not independent evidence custody or Win11 acceptance. The key must never travel alongside the encrypted archive. Windows rename and filesystem permission expectations need QD review on a real NTFS system.
 
 The physical Windows 11 reviewer still needs actual Defender/EDR/detection-history review, R109–R110's 46 physical keyboard/NVDA/contrast/scaling acceptance checks, SmartScreen/code signing, genuine premium entitlement and authenticated checkout/download protections, independent QD exact-SHA review, and founder approval. **All six programs remain unreleased.**
 
