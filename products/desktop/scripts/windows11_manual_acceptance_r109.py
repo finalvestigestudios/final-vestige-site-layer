@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import json
 import os
+import platform
 import re
 import stat
 import sys
@@ -233,6 +234,22 @@ def load_custody(dist: Path, r9_path: Path) -> tuple[dict, dict, bytes]:
         raise ReviewHold("Candidate verification unavailable") from None
 
 
+
+def native_win11_build() -> int:
+    """An unattended Linux/Windows Server invocation is never a Win11 review."""
+    if os.name != "nt" or platform.machine().lower() not in ("amd64", "x86_64"):
+        raise ReviewHold("A native Windows 11 x64 reviewer workstation is required")
+    getter = getattr(sys, "getwindowsversion", None)
+    if getter is None:
+        raise ReviewHold("Cannot verify Windows workstation version")
+    version = getter()
+    if (type(version.major) is not int or version.major != 10 or
+            type(version.build) is not int or version.build < 22000 or
+            getattr(version, "product_type", None) != 1):
+        raise ReviewHold("Windows 11 workstation is not independently established")
+    return version.build
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("template", "verify"))
@@ -256,6 +273,8 @@ def main(argv: list[str] | None = None) -> int:
             if args.witnesses is None:
                 raise ReviewHold("Private witnesses required")
             record = _strict_json(_bytes(args.review, MAX_REPORT_BYTES))
+            if record.get("windows11_build") != native_win11_build():
+                raise ReviewHold("Reviewer build does not match actual workstation")
             result = validate_review(record, template, args.witnesses)
             print("MANUAL MATRIX: " + json.dumps(result, sort_keys=True))
             if result["status"] != "MANUAL_MATRIX_COMPLETE_UNCERTIFIED":
