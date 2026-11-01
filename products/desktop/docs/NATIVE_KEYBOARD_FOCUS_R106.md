@@ -6,7 +6,7 @@
 
 R105 verified six real Windows x64 portable EXE candidates, PE/SHA256 and command-line smokes; launching actual EXEs showed four distinct free Tk windows and two premium lock dialogs ([Actions #41289376447](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41289376447)). A visible window does **not** prove keyboard focus order, working accelerators, Windows accessibility, or screen-reader support.
 
-This draft adds scripts/native_keyboard_probe_r106.py, using **the real free-app fvs_suite.app.run() Tk widget construction** on a native Windows x64 QA runner. It intercepts only Tk.mainloop to inspect the mapped UI without loading private financial documents or generating reports. File dialogs and report-generation commands are replaced by fail-closed deny callbacks; premium apps are never instantiated, and no production public keys or licenses are changed. Every UI root is torn down.
+This draft adds scripts/native_keyboard_probe_r106.py, using **the real free-app fvs_suite.app.run() Tk widget construction** on a native Windows x64 QA runner. It intercepts Tk.mainloop and captures the source-scheduled first-field after_idle callback until the native window is foregrounded, then inspects the mapped UI without loading private financial documents or generating reports. File dialogs and report-generation commands are replaced by fail-closed deny callbacks; premium apps are never instantiated, and no production public keys or licenses are changed. Every UI root is torn down. Capturing the callback avoids a false focus failure from triggering it before the window is active; its bound target, method name and zero-argument shape are independently checked (including five adversarial regressions).
 
 The native verification demands, per free app:
 
@@ -16,7 +16,7 @@ The native verification demands, per free app:
 4. Actual registered root binding scripts exist for Alt+1..N, Ctrl+1..N, Alt+O, Ctrl+O, Alt+G and Ctrl+Enter. The free windows do not register the premium review accelerator.
 5. Required visible field labels, keyboard-help text and the non-determination disclaimer remain present.
 
-Source-only tests/test_native_keyboard_probe_r106.py includes **25 adversarial regression methods** for missing/reordered/duplicated traversal, wrong window identities or field counts, focus failures, missing shortcuts, leaked premium review binding, label/disclaimer loss and invalid CLI arguments. Tests run under normal and optimized Python on Linux and Windows *before* the mandatory source gate; the existing full suite also discovers them. The separate native Windows step follows R9/R105. None of the upload-artifact paths or premium entitlements changed; fail-closed CI failure remains nonoptional.
+Source-only tests/test_native_keyboard_probe_r106.py includes **30 adversarial regression methods** for missing/reordered/duplicated traversal, wrong window identities or field counts, focus failures, missing shortcuts, leaked premium review binding, label/disclaimer loss and invalid CLI arguments. Tests run under normal and optimized Python on Linux and Windows *before* the mandatory source gate; the existing full suite also discovers them. The separate native Windows step follows R9/R105. None of the upload-artifact paths or premium entitlements changed; fail-closed CI failure remains nonoptional.
 
 ## How to verify privately
 
@@ -31,7 +31,7 @@ python products/desktop/scripts/offline_source_gate.py
 python products/desktop/scripts/native_keyboard_probe_r106.py
 ~~~
 
-The native test prints **only** fixed source-owned PASS/BLOCKED labels. It produces no screenshot, user path, customer value, audit report, license or executable artifact. A Linux terminal or unavailable graphical session must produce a blocking result; it is not silently skipped. The 25 synthetic tests can run without a Tk display.
+The native test prints **only** fixed source-owned PASS/BLOCKED labels. It produces no screenshot, user path, customer value, audit report, license or executable artifact. A Linux terminal or unavailable graphical session must produce a blocking result; it is not silently skipped. The 30 synthetic tests can run without a Tk display.
 
 ## What this deliberately does NOT certify
 
