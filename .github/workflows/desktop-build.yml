@@ -89,6 +89,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' > /dev/null 2>&1
+      - name: R119 all-eight-entry sealed transfer tamper matrix (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r119.py
+          python -OO products/desktop/scripts/safe_unittest_r119.py
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -276,6 +280,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R118 native roundtrip integration contracts FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R118 optimized roundtrip integration contracts FAILED" }
+      - name: R119 all-eight-entry sealed transfer tamper matrix (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r119.py
+          if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (normal)" }
+          python -OO products/desktop/scripts/safe_unittest_r119.py
+          if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (optimized)" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
@@ -351,6 +363,22 @@ jobs:
           try {
             python products/desktop/scripts/native_sealed_roundtrip_r118.py dist build/offline-candidate-evidence.json $scratch
             if ($LASTEXITCODE -ne 0) { throw "R118 actual-six-EXE private roundtrip FAILED; HOLD" }
+          } finally {
+            if (Test-Path -LiteralPath $scratch) {
+              Remove-Item -LiteralPath $scratch -Recurse -Force -ErrorAction Stop
+            }
+          }
+      # Verify ciphertext AND GCM tag integrity for each of six REAL private
+      # Windows EXEs plus SHA256 inventory and R9 report. Never upload bundles.
+      - name: R119 REAL eight-record sixteen-case AES-GCM tamper matrix (HOLD)
+        shell: pwsh
+        run: |
+          $scratch = Join-Path $env:RUNNER_TEMP "fvs-r119-native-$env:GITHUB_RUN_ATTEMPT"
+          if (Test-Path -LiteralPath $scratch) { throw "R119 runner scratch already exists; HOLD" }
+          New-Item -ItemType Directory -Path $scratch -ErrorAction Stop | Out-Null
+          try {
+            python products/desktop/scripts/sealed_tamper_matrix_r119.py dist build/offline-candidate-evidence.json $scratch
+            if ($LASTEXITCODE -ne 0) { throw "R119 actual-eight-record private authentication FAILED; HOLD" }
           } finally {
             if (Test-Path -LiteralPath $scratch) {
               Remove-Item -LiteralPath $scratch -Recurse -Force -ErrorAction Stop
