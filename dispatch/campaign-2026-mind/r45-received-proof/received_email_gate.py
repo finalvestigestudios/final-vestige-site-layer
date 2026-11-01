@@ -99,7 +99,13 @@ def inspect_eml(data, issue, expected_subject=None, expected_guide=None,
     if html:
         parser.feed(html)
         parser.close()
-    text = "\n".join((plain, " ".join(parser.parts)))
+    visible_html = " ".join(parser.parts)
+    text = "\n".join((plain, visible_html))
+    parts = {"plain": plain, "html": visible_html}
+    present = {"plain": bool(plain.strip()), "html": bool(html.strip())}
+    def all_available(predicate):
+        return any(present.values()) and all(not present[k] or predicate(parts[k])
+                                             for k in ("plain", "html"))
     links = parser.links + URL_IN_TEXT.findall(plain)
     unsafe_count = sum(bool(unsafe_href(h)) for h in links)
 
@@ -131,6 +137,16 @@ def inspect_eml(data, issue, expected_subject=None, expected_guide=None,
         "physical_address": "TEXT_MATCH_NOT_VERIFIED_OWNERSHIP" if address_match else "UNVERIFIED",
         "unsubscribe": "PRESENT_NOT_FUNCTIONALLY_TESTED" if unsub_candidate else "NOT_FOUND",
         "commercial_disclosure_present": bool(DISCLOSURE.search(text)) if commercial else None,
+        "mime_plain_present": present["plain"],
+        "mime_html_present": present["html"],
+        "commercial_disclosure_in_each_present_alternative": (
+            all_available(lambda body: bool(DISCLOSURE.search(body))) if commercial else None),
+        "postal_text_in_each_present_alternative": (
+            all_available(lambda body: bool(expected_postal_address and
+                len(normalized(expected_postal_address)) >= 10 and
+                normalized(expected_postal_address) in normalized(body)))),
+        "unsubscribe_text_in_each_present_alternative": (
+            all_available(lambda body: bool(UNSUB.search(body)))),
         "guide_url_first_party": guide_valid if commercial else None,
         "guide_url_present": guide_found if commercial else None,
         "blocked_merchant_or_active_href_count": unsafe_count,
