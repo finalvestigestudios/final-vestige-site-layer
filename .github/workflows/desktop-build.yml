@@ -85,6 +85,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_sealed_candidate_handoff_r117.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_sealed_candidate_handoff_r117.py' > /dev/null 2>&1
+      - name: R118 native six-EXE sealed roundtrip contracts (normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' > /dev/null 2>&1
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -264,6 +268,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R117 offline handoff cryptographic regressions FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_sealed_candidate_handoff_r117.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R117 optimized handoff cryptographic regressions FAILED" }
+      - name: R118 ephemeral six-EXE roundtrip orchestration regressions (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R118 native roundtrip integration contracts FAILED" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_native_sealed_roundtrip_r118.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R118 optimized roundtrip integration contracts FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
@@ -327,6 +339,23 @@ jobs:
             build/offline-candidate-evidence.json
           if-no-files-found: error
           retention-days: 7
+      # Run ONLY in a disposable CI workspace after R9's evidence has been
+      # retained. The key, ciphertext and decrypted PREMIUM candidates never
+      # enter artifacts or logs; the operator still needs independent Win11 review.
+      - name: R118 REAL six-EXE ephemeral AES-GCM roundtrip and tamper rejection (HOLD)
+        shell: pwsh
+        run: |
+          $scratch = Join-Path $env:RUNNER_TEMP "fvs-r118-native-$env:GITHUB_RUN_ATTEMPT"
+          if (Test-Path -LiteralPath $scratch) { throw "R118 runner scratch already exists; HOLD" }
+          New-Item -ItemType Directory -Path $scratch -ErrorAction Stop | Out-Null
+          try {
+            python products/desktop/scripts/native_sealed_roundtrip_r118.py dist build/offline-candidate-evidence.json $scratch
+            if ($LASTEXITCODE -ne 0) { throw "R118 actual-six-EXE private roundtrip FAILED; HOLD" }
+          } finally {
+            if (Test-Path -LiteralPath $scratch) {
+              Remove-Item -LiteralPath $scratch -Recurse -Force -ErrorAction Stop
+            }
+          }
       # Deliberately AFTER the internal R9 evidence upload: an unavailable
       # interactive desktop must never erase independently verified PE/SHA proof.
       # Any failure still marks the full workflow RED and blocks all release.
