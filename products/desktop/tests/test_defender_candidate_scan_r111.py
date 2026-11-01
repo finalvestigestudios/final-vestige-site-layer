@@ -13,6 +13,9 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "defender_candidate_scan_r111.py"
+# This test uses spec_from_file_location, which does not add the script folder
+# to sys.path as direct CLI execution would. Match the CLI import contract.
+sys.path.insert(0, str(SCRIPT.parent))
 spec = importlib.util.spec_from_file_location("defender_candidate_scan_r111", SCRIPT)
 av = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(av)
