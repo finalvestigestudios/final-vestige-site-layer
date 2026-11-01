@@ -1,0 +1,75 @@
+{
+  "notice": "SCHEMA-ONLY EXAMPLE. NO VERIFIED HISTORICAL RECORDS OR COORDINATES INCLUDED. Do not publish or treat entries as real.",
+  "version": "0.1-proposed",
+  "investigations": [{
+    "id": "investigation-PLACEHOLDER",
+    "wordpress_post_id": null,
+    "canonical_url": null,
+    "title": null,
+    "summary": null,
+    "themes": [],
+    "editorial_status": "draft",
+    "last_reviewed_at": null,
+    "event_ids": [],
+    "artifact_ids": [],
+    "claim_ids": []
+  }],
+  "events": [{
+    "id": "event-PLACEHOLDER",
+    "label": null,
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "place_id": null,
+    "source_ids": [],
+    "review_status": "unverified"
+  }],
+  "places": [{
+    "id": "place-PLACEHOLDER",
+    "display_name": null,
+    "geometry_type": "unknown",
+    "latitude": null,
+    "longitude": null,
+    "precision_note": "Not geocoded",
+    "geography_source_url": null,
+    "review_status": "unverified"
+  }],
+  "artifacts": [{
+    "id": "artifact-PLACEHOLDER",
+    "title": null,
+    "archive_institution": null,
+    "archive_id": null,
+    "original_url": null,
+    "reproduction_url": null,
+    "rights_or_license": null,
+    "credit_text": null,
+    "alt_or_transcript": null,
+    "artifact_date": null,
+    "review_status": "unverified"
+  }],
+  "claims": [{
+    "id": "claim-PLACEHOLDER",
+    "claim_text": null,
+    "classification": "unverified",
+    "supporting_artifact_ids": [],
+    "source_ids": [],
+    "caveat": null,
+    "review_status": "unverified"
+  }],
+  "relationships": [{
+    "subject_id": "entity-PLACEHOLDER",
+    "predicate": "documents",
+    "object_id": "entity-PLACEHOLDER",
+    "justification": null,
+    "source_ids": [],
+    "review_status": "unverified"
+  }],
+  "allowed_predicates": ["documents", "depicts", "occurred_at", "mentions", "corroborates", "contradicts", "interprets", "related_editorially"],
+  "publish_invariants": [
+    "Every visible claim has at least one source anchor and review_status approved",
+    "Every visible artifact has source URL, adequate attribution, rights clearance and accessible text",
+    "Every map feature has verified geographic provenance, geometry type and stated precision",
+    "No edges of type caused_by are generated from co-occurrence or spatial adjacency",
+    "No experimental draft placeholders are emitted to the public site"
+  ]
+}

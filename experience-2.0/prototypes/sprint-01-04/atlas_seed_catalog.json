@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "project": "Final Vestige Evidence Atlas — source-review queue",
+  "version": "0.1.0",
+  "status": "Not geocoded; NOT a mappable verified dataset",
+  "captured_on": "2026-10-29",
+  "editorial_rule": "Article existence and URL verified via connected WordPress. Place names and event geographies are research prompts; no coordinates or geographic precision approved. Absence of coordinate is intentional, not missing implementation.",
+  "items": [
+    {"post_id":434,"title":"The Hatch Opened Inward","url":"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/","theme":"Space & systems","place_candidate":"Launch Complex 34 / Kennedy Space Center region","time_candidate":"1967-01-27","location_review":"unverified","geometry":null,"asset_review":"NASA source trail available in original article","story_relationships":[]},
+    {"post_id":621,"title":"Six Miles an Hour","url":"https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/","theme":"Urban systems","place_candidate":"Malbone Street / Prospect Park, Brooklyn","time_candidate":"1918-11-01","location_review":"unverified","geometry":null,"asset_review":"NYPL map + New York Transit Museum sources in original article","story_relationships":[]},
+    {"post_id":370,"title":"The Lines Were in the Fire","url":"https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/","theme":"Naval history","place_candidate":"West Loch, Pearl Harbor","time_candidate":"1944","location_review":"unverified","geometry":null,"asset_review":"Check source and media rights","story_relationships":[]},
+    {"post_id":269,"title":"The Watch Lost Its Hands","url":"https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/","theme":"Urban systems","place_candidate":"Halifax, Nova Scotia","time_candidate":"1917","location_review":"unverified","geometry":null,"asset_review":"Check primary record and media rights","story_relationships":[]},
+    {"post_id":37,"title":"How Petra Made Water Flow Through Stone","url":"https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/","theme":"Ancient infrastructure","place_candidate":"Petra, Jordan","time_candidate":"ancient","location_review":"unverified","geometry":null,"asset_review":"Check historical period, geographic precision and rights","story_relationships":[]},
+    {"post_id":433,"title":"All Well Was Written First","url":"https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/","theme":"Exploration","place_candidate":"Canadian Arctic / Franklin expedition route","time_candidate":"1847–1848","location_review":"unverified","geometry":null,"asset_review":"Verify location ambiguity of note versus shipwrecks","story_relationships":[]}
+  ]
+}

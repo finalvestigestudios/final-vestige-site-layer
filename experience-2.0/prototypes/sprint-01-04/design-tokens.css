@@ -1,0 +1,36 @@
+/* FINAL VESTIGE EXPERIENCE 2.0 — PROPOSED, NAMESPACED, NONPRODUCTION TOKENS */
+.fv-ex2 {
+  --fvex-ink: #090a0a;
+  --fvex-surface: #0c0d0d;
+  --fvex-surface-raised: #171715;
+  --fvex-line: #34322e;
+  --fvex-gold: #b8955e;
+  --fvex-gold-bright: #c7a66c;
+  --fvex-parchment: #f4efe6;
+  --fvex-text-muted: #b8b1a6;
+  --fvex-paper: #e9e0d1;
+  --fvex-display: 'Fraunces', Georgia, serif;
+  --fvex-interface: Inter, system-ui, sans-serif;
+  --fvex-catalog: ui-monospace, 'Cascadia Code', 'SFMono-Regular', monospace;
+  --fvex-reading: 760px;
+  --fvex-wide: 1440px;
+  --fvex-gutter: clamp(20px, 4vw, 64px);
+  --fvex-space-section: clamp(72px, 9vw, 152px);
+  --fvex-display-size: clamp(3.7rem, 8.5vw, 9rem);
+  --fvex-body-size: clamp(1rem, 1.2vw, 1.1875rem);
+  --fvex-motion-fast: 140ms;
+  --fvex-motion-reveal: 260ms;
+  --fvex-motion-chapter: 420ms;
+  --fvex-ease: cubic-bezier(.22, 1, .36, 1);
+  color: var(--fvex-parchment);
+  background: var(--fvex-ink);
+  font-family: var(--fvex-interface);
+}
+.fv-ex2 :focus-visible { outline: 2px solid var(--fvex-gold-bright); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .fv-ex2 *, .fv-ex2 *::before, .fv-ex2 *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
