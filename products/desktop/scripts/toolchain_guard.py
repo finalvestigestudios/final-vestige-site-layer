@@ -38,18 +38,35 @@ def _identity(info: os.stat_result) -> tuple[int, ...]:
 
 def _same_path_descriptor_identity(path_info: os.stat_result,
                                    descriptor_info: os.stat_result,
-                                   *, windows: bool | None = None) -> bool:
-    """Compare two API views without equating Windows creation-time encodings.
+                                   *, windows: bool | None = None,
+                                   executable_path: bool = False) -> bool:
+    """Guard two OS stat views; never loosen before/after same-view custody.
 
-    Never use this for before/after checks: those must compare all seven fields,
-    including ctime, within their own respective APIs.
+    Windows 3.12 path-vs-descriptor ctime can disagree (R101). Hosted R104
+    additionally proved only st_mode disagreed for a *synthetic .exe* runtime,
+    while dev, inode, link count, size, mtime and ctime agreed. Windows marks
+    executable permission from pathname suffix; a descriptor need not do so.
+    Accept only those executable permission-bit differences for a regular
+    .exe file, never for manifests, Python modules or other file types.
     """
     if windows is None:
         windows = os.name == "nt"
     path_identity = _identity(path_info)
     descriptor_identity = _identity(descriptor_info)
-    return (path_identity[:-1] == descriptor_identity[:-1] if windows
-            else path_identity == descriptor_identity)
+    if not windows:
+        return path_identity == descriptor_identity
+    if not executable_path:
+        return path_identity[:-1] == descriptor_identity[:-1]
+    if not (stat.S_ISREG(path_info.st_mode) and
+            stat.S_ISREG(descriptor_info.st_mode)):
+        return False
+    execute_bits = stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+    if (path_info.st_mode ^ descriptor_info.st_mode) & ~execute_bits:
+        return False
+    # Only ctime and path-extension executable flags may differ cross-view.
+    # All other stat identity values are still compared exactly.
+    return all(path_identity[index] == descriptor_identity[index]
+               for index in (0, 1, 3, 4, 5))
 
 
 def _file_record(path: Path) -> tuple[str, tuple[int, ...], int]:
@@ -63,7 +80,11 @@ def _file_record(path: Path) -> tuple[str, tuple[int, ...], int]:
         fd = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
                      | getattr(os, "O_BINARY", 0))
         opened = os.fstat(fd)
-        if not _same_path_descriptor_identity(before, opened):
+        # Only a Windows .exe pathname may expose extension-derived execute
+        # bits that the opened descriptor does not. Never relax other files.
+        executable_path = os.name == "nt" and path.suffix.lower() == ".exe"
+        if not _same_path_descriptor_identity(
+                before, opened, executable_path=executable_path):
             raise ValueError("Toolchain file replaced")
         digest = hashlib.sha256()
         length = 0
@@ -80,7 +101,8 @@ def _file_record(path: Path) -> tuple[str, tuple[int, ...], int]:
         if (length != before.st_size
                 or _identity(finished) != _identity(opened)
                 or _identity(after) != _identity(before)
-                or not _same_path_descriptor_identity(after, finished)):
+                or not _same_path_descriptor_identity(
+                    after, finished, executable_path=executable_path)):
             raise ValueError("Toolchain file modified")
         return digest.hexdigest(), _identity(before), length
     except (OSError, RuntimeError):
