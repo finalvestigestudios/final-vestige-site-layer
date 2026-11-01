@@ -44,6 +44,13 @@
   const deskStatus=root.querySelector('[data-fva-desk-status]');
   let desk=null;
   let deskRecords=[];
+  // Optional reciprocal links belong to the Atlas enhancement, never to the
+  // independently versioned Research Desk plugin or its static source HTML.
+  const deskBacklinks=[];
+  const removeDeskBacklinks=()=>{
+    deskBacklinks.forEach(link=>link.remove());
+    deskBacklinks.length=0;
+  };
   if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!exportButton||!exportStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6||deskLinks.length!==6||!deskStatus)return;
   let year='all';
   let active=false;
@@ -64,6 +71,7 @@
     exportStatus.textContent='';
     status.textContent='';
     deskLinks.forEach(link=>{link.hidden=true;link.removeEventListener('click',onDeskJump);});
+    removeDeskBacklinks();
     deskStatus.hidden=true;
     deskStatus.textContent='';
     desk=null;deskRecords=[];
@@ -142,6 +150,7 @@
   };
   const withdrawDesk=(explain=false)=>{
     deskLinks.forEach(link=>{link.hidden=true;});
+    removeDeskBacklinks();
     desk=null;deskRecords=[];
     if(explain){
       deskStatus.textContent='Research Desk shortcuts are unavailable. All six original NASA references remain above.';
@@ -168,11 +177,38 @@
     target.setAttribute('tabindex','-1');
     requestAnimationFrame(()=>target.focus({preventScroll:true}));
   };
+  const onDeskBackJump=event=>{
+    // A late source mutation must not leave a misleading shortcut available.
+    const proof=verifyDesk();
+    const link=event.currentTarget;
+    const id=link.dataset.fvxToAtlas;
+    const index=expected.indexOf(id);
+    if(!valid()||!proof||index<0||proof.records[index].querySelector('.fv-ex2-ledger__recordlinks')!==link.parentElement ||
+       cards[index].id!==link.getAttribute('href').slice(1)){
+      event.preventDefault();withdrawDesk(true);return;
+    }
+    revealTarget(cards[index]);
+  };
   const initDesk=()=>{
     const proof=verifyDesk();
     if(!proof){withdrawDesk();return;}
     desk=proof.root;deskRecords=proof.records;
     deskLinks.forEach(link=>{link.hidden=false;link.addEventListener('click',onDeskJump);});
+    // Legacy PR #158 contains one recordlinks container per card but no
+    // back-navigation. Enhance it only when all six eligible slots exist.
+    // Synthesized, incomplete or duplicated records never get partial links.
+    const slots=proof.records.map(record=>record.querySelector('.fv-ex2-ledger__recordlinks'));
+    if(slots.every(Boolean) && slots.every(slot=>!slot.querySelector('[data-fvx-to-atlas]'))){
+      expected.forEach((id,i)=>{
+        const link=document.createElement('a');
+        link.setAttribute('data-fvx-to-atlas',id);
+        link.href='#'+cards[i].id;
+        link.textContent='Open photographic record '+id+' in Evidence Atlas';
+        link.addEventListener('click',onDeskBackJump);
+        slots[i].appendChild(link);
+        deskBacklinks.push(link);
+      });
+    }
   };
   const apply=()=>{
     try{
