@@ -57,6 +57,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_methods_r110.py
           python -OO products/desktop/scripts/safe_unittest_methods_r110.py
+      - name: R122 private one-check Win11 witness writer (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r122.py
+          python -OO products/desktop/scripts/safe_unittest_r122.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -216,6 +220,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R110 private acceptance source validation FAILED" }
           python -OO products/desktop/scripts/safe_unittest_methods_r110.py
           if ($LASTEXITCODE -ne 0) { throw "R110 optimized private acceptance source validation FAILED" }
+      - name: R122 private one-check Win11 witness writer (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r122.py
+          if ($LASTEXITCODE -ne 0) { throw "R122 private witness writer source regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r122.py
+          if ($LASTEXITCODE -ne 0) { throw "R122 optimized private witness writer regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
