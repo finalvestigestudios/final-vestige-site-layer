@@ -79,7 +79,7 @@ function runTests(){
   check(privacy.includes('const ENABLED = false'),'privacy hard disabled');
   check(!/fetch\(|sendBeacon\(|XMLHttpRequest|localStorage|document\.cookie|navigator\./.test(privacy),'no network/browser collection');
   const mutants=[
-    a.replace('If you purchase through this link, Final Vestige may earn a commission',''),
+    a.replace(/(<aside class="disclosure"[^>]*>[\s\S]*?)If you purchase through this link, Final Vestige may earn a commission/, '$1'),
     a.replace('aria-disabled="true"','aria-disabled="false"'),
     a+'<a href="https://zen12.com/getstarted">Buy now</a>',
     a+'<script>alert(1)</script>',
