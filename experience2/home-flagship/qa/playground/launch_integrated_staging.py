@@ -9,7 +9,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
+import socket
+import uuid
 from pathlib import Path
 import re
 import shutil
@@ -18,6 +21,7 @@ import subprocess
 import sys
 import time
 from urllib.parse import urlsplit
+from datetime import datetime, timezone
 from urllib.request import build_opener, HTTPRedirectHandler
 
 THEME_URL = 'https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip'
@@ -112,10 +116,13 @@ def check_axe(path: Path, expected_sha: str) -> dict:
     require(len(raw)>10000 and sha(raw)==expected_sha,'axe-core source incomplete or SHA-256 mismatch')
     return {'axe_local_bytes':len(raw),'axe_sha256':sha(raw),'axe_executed':False}
 
-def check_runner(path: Path) -> dict:
+def check_runner(path: Path, approved_sha: str) -> dict:
+    require(bool(DIGEST.fullmatch(approved_sha or '')),
+            'independent reviewed browser-runner SHA-256 required')
     require(path.name==EXPECTED_SCRIPT and path.is_file() and not path.is_symlink(),
             'existing verified WordPress browser acceptance harness required')
     raw=path.read_bytes()
+    require(sha(raw)==approved_sha, 'browser runner differs from independently approved SHA-256')
     require(b'from integrated_admission_checks import' in raw and b'audit_archive_gallery' in raw
             and b'BrowserEvidencePage' in raw and b'axe.run' in raw,
             'browser harness does not include integrated, image-byte and axe admission')
@@ -125,12 +132,22 @@ class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self,req,fp,code,msg,headers,newurl):
         raise Hold('HTTP redirect disallowed during local stage readiness')
 
-def local_ready(port,timeout):
+def port_vacant(port: int) -> None:
+    """Refuse already-bound localhost; a 200 from a different service is not WP proof."""
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as listener:
+            listener.bind(('127.0.0.1', port))
+    except OSError as exc:
+        raise Hold('STAGING ADMISSION HOLD: stage port occupied or unavailable; '+str(exc)) from exc
+
+def local_ready(port,timeout,proc=None):
     url=f'http://127.0.0.1:{port}/'
     require(urlsplit(url).hostname=='127.0.0.1','only loopback server permitted')
     op=build_opener(NoRedirect)
     deadline=time.monotonic()+timeout
     while time.monotonic()<deadline:
+        if proc is not None and proc.poll() is not None:
+            raise Hold('STAGING ADMISSION HOLD: Playground process exited before ready')
         try:
             with op.open(url, timeout=1) as res:
                 if res.status==200: return url
@@ -139,21 +156,67 @@ def local_ready(port,timeout):
         time.sleep(.5)
     raise Hold('actual local WordPress HTTP root never reached 200; server did not become ready')
 
+def check_executable(path: Path | None, approved_sha: str, label: str) -> Path:
+    require(path is not None and path.is_file() and not path.is_symlink()
+            and os.access(path, os.X_OK), label+' executable missing, symlinked or not permitted')
+    require(bool(DIGEST.fullmatch(approved_sha or '')), label+' independent reviewed SHA-256 required')
+    require(sha(path.read_bytes()) == approved_sha, label+' executable differs from approved SHA-256')
+    return path.resolve()
+
+def measured_lighthouse(path: Path, requested_url: str, label: str) -> dict:
+    """A JSON file alone is not evidence of a successful Lighthouse run."""
+    report=json.loads(path.read_text(encoding='utf-8'))
+    require(isinstance(report,dict) and isinstance(report.get('lighthouseVersion'),str)
+            and not report.get('runtimeError'),label+': Lighthouse report incomplete or runtime failed')
+    require(report.get('requestedUrl')==requested_url,label+': Lighthouse audited unexpected URL')
+    final=report.get('finalDisplayedUrl')
+    a,b=urlsplit(final or ''),urlsplit(requested_url)
+    require((a.scheme,a.netloc,a.path)==(b.scheme,b.netloc,b.path),
+            label+': Lighthouse navigated away from exact local stage URL')
+    audits=report.get('audits')
+    require(isinstance(audits,dict),label+': Lighthouse audits missing')
+    vals={}
+    for key,alias in [('largest-contentful-paint','lcp_ms'),('cumulative-layout-shift','cls'),
+                      ('total-blocking-time','tbt_ms')]:
+        item=audits.get(key)
+        v=item.get('numericValue') if isinstance(item,dict) else None
+        require(type(v) in (int,float) and math.isfinite(v) and v>=0,
+                label+': Lighthouse '+key+' missing/invalid')
+        vals[alias]=v
+    perf=report.get('categories',{}).get('performance',{}).get('score')
+    require(type(perf) in (int,float) and math.isfinite(perf) and 0<=perf<=1,
+            label+': Lighthouse performance score missing')
+    vals['performance_score']=perf
+    vals['good_lab_lcp']=vals['lcp_ms']<=2500
+    vals['good_lab_cls']=vals['cls']<=0.1
+    vals['lab_not_field']=True
+    return vals
+
+def write_receipt(private_dir: Path, report: dict) -> Path:
+    """Append an immutable per-run report; never reuse a stale success/failure file."""
+    stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    name=f'FV_STAGE_LAUNCH_RECEIPT_{stamp}_{uuid.uuid4().hex[:10]}.json'
+    path=private_dir/name
+    report['receipt_file']=name
+    payload=json.dumps(report,indent=2,sort_keys=True)+'\n'
+    flags=os.O_WRONLY|os.O_CREAT|os.O_EXCL
+    if hasattr(os,'O_NOFOLLOW'):flags|=os.O_NOFOLLOW
+    fd=os.open(path,flags,0o600)
+    with os.fdopen(fd,'w',encoding='utf-8') as output:output.write(payload)
+    return path
+
 def run(args, receipt: dict) -> None:
     require(1025<=args.port<=65535,'nonprivileged local TCP port required')
-    require(args.playground_cli is not None and Path(args.playground_cli).is_file()
-            and os.access(args.playground_cli,os.X_OK),
-            'local @wp-playground/cli binary not installed; no remote install attempted')
-    require(not Path(args.playground_cli).is_symlink(),'Playground CLI symlink refused; use real installed executable')
-    require(args.lighthouse_cli and Path(args.lighthouse_cli).is_file() and os.access(args.lighthouse_cli,os.X_OK),
-            'local Lighthouse CLI required for measured release-stage acceptance')
+    playground=check_executable(args.playground_cli,args.playground_cli_sha256,'Playground CLI')
+    lighthouse=check_executable(args.lighthouse_cli,args.lighthouse_cli_sha256,'Lighthouse CLI')
+    port_vacant(args.port)
     require(Path(args.output_dir).resolve().is_relative_to(Path(args.private_dir).resolve()),
             'output receipts/screenshots must remain inside private workspace')
     require(not args.output_dir.is_symlink(),'output workspace symlink refused')
     args.output_dir.mkdir(parents=True,exist_ok=True,mode=0o700)
     if os.name=='posix':
         require(not (args.output_dir.stat().st_mode & 0o077),'output workspace is group/other accessible')
-    launch=[str(Path(args.playground_cli).resolve()),'server',f'--blueprint={str(args.blueprint.resolve())}',
+    launch=[str(playground),'server',f'--blueprint={str(args.blueprint.resolve())}',
             f'--port={args.port}','--php=8.3']
     receipt['launch_argv_no_secrets']=launch[1:]
     log=args.output_dir/'WORDPRESS_PLAYGROUND_STARTUP.log'
@@ -162,7 +225,7 @@ def run(args, receipt: dict) -> None:
         proc=subprocess.Popen(launch,cwd=str(args.private_dir),stdin=subprocess.DEVNULL,
                                stdout=output,stderr=subprocess.STDOUT,start_new_session=(os.name=='posix'))
         try:
-            url=local_ready(args.port,args.ready_timeout)
+            url=local_ready(args.port,args.ready_timeout,proc)
             receipt['actual_local_http_200']=True
             cmd=[sys.executable,str(args.browser_runner.resolve()),'--url',url,
                  '--axe-js',str(args.axe_js.resolve()),'--trusted-media-manifest',str(args.media_manifest.resolve()),
@@ -178,16 +241,14 @@ def run(args, receipt: dict) -> None:
             receipt['interactive_stage_verified']=True
             for label, extra in [('mobile',[]),('desktop',['--preset=desktop'])]:
                 out=args.output_dir/f'LIGHTHOUSE_{label.upper()}.json'
-                lh=[str(Path(args.lighthouse_cli).resolve()),url,'--output=json',f'--output-path={out}',
+                lh=[str(lighthouse),url,'--output=json',f'--output-path={out}',
                     '--quiet','--chrome-flags=--headless --no-sandbox',*extra]
                 v=subprocess.run(lh,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,timeout=180)
                 require(v.returncode==0 and out.is_file(),label+': Lighthouse did not produce measured lab evidence')
-                parsed=json.loads(out.read_text())
-                receipt.setdefault('lighthouse',{})[label]={
-                    'lcp':parsed.get('audits',{}).get('largest-contentful-paint',{}).get('numericValue'),
-                    'cls':parsed.get('audits',{}).get('cumulative-layout-shift',{}).get('numericValue'),
-                    'lab_not_field':True}
+                receipt.setdefault('lighthouse',{})[label]=measured_lighthouse(out,url,label)
             receipt['lighthouse_measured']=True
+            require(all(r['good_lab_lcp'] and r['good_lab_cls'] for r in receipt['lighthouse'].values()),
+                    'one or more Lighthouse lab LCP/CLS budgets exceeded; release remains on HOLD')
             receipt['status']='ISOLATED_WORDPRESS_LAB_EVIDENCE_COLLECTED_RELEASE_HOLD'
         finally:
             if proc.poll() is None:
@@ -206,11 +267,14 @@ def main(argv=None):
     p.add_argument('--axe-js',type=Path,required=True)
     p.add_argument('--axe-sha256',required=True)
     p.add_argument('--browser-runner',type=Path,required=True)
+    p.add_argument('--browser-runner-sha256',required=True,help='independently reviewed exact browser harness fingerprint')
     p.add_argument('--private-dir',type=Path,required=True)
     p.add_argument('--output-dir',type=Path,required=True)
     p.add_argument('--execute',action='store_true',help='run installed Playground CLI and actual WordPress/Chromium/axe/Lighthouse')
     p.add_argument('--playground-cli',type=Path)
+    p.add_argument('--playground-cli-sha256',help='independently reviewed executable fingerprint')
     p.add_argument('--lighthouse-cli',type=Path)
+    p.add_argument('--lighthouse-cli-sha256',help='independently reviewed executable fingerprint')
     p.add_argument('--port',type=int,default=19400)
     p.add_argument('--ready-timeout',type=int,default=75)
     p.add_argument('--browser-timeout',type=int,default=240)
@@ -226,7 +290,7 @@ def main(argv=None):
         report.update(check_blueprint(args.blueprint,args.blueprint_sha256))
         report.update(check_manifest(args.media_manifest))
         report.update(check_axe(args.axe_js,args.axe_sha256))
-        report.update(check_runner(args.browser_runner))
+        report.update(check_runner(args.browser_runner,args.browser_runner_sha256))
         if args.execute:run(args,report)
         else:report['status']='PRIVATE_BLUEPRINT_PREFLIGHT_PASSED_NOT_WORDPRESS_EXECUTED'
     except Exception as exc:
@@ -235,10 +299,7 @@ def main(argv=None):
         report['status']='FAILED_CLOSED'
     finally:
         args.private_dir.mkdir(parents=True,exist_ok=True)
-        path=args.private_dir/'FV_STAGE_LAUNCH_RECEIPT.json'
-        if not path.exists():
-            path.write_text(json.dumps(report,indent=2)+'\n')
-            if os.name=='posix':os.chmod(path,0o600)
+        write_receipt(args.private_dir,report)
         print(json.dumps(report,indent=2))
     return 0 if report['status'].startswith('PRIVATE_BLUEPRINT_PREFLIGHT_') or report['status']=='ISOLATED_WORDPRESS_LAB_EVIDENCE_COLLECTED_RELEASE_HOLD' else 1
 
