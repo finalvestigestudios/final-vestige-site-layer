@@ -68,7 +68,7 @@
       },
       "visual_integrity": {
         "review_required": false,
-        "note": "Exact original-size Archival Idaho image linked; same-scene candidate, source current first-party small derivative not binary matched."
+        "note": "Exact original-size Archival Idaho image linked; same-scene candidate, source current first-party small derivative not binary matched. Verified current WordPress media ID 476 is a 623×900, 90,157-byte stored image with Jetpack variants; not a >1.5MiB optimizer target."
       },
       "guest_browser": {
         "page_current_src": null,
@@ -85,6 +85,25 @@
         "wordpress_media_upload_authorized": false,
         "wordpress_post_edit_authorized": false,
         "production_repaired": false
+      },
+      "wordpress_media_proof": {
+        "method": "authenticated_wordpress_media_list_read_only",
+        "media_id": 476,
+        "mime_type": "image/jpeg",
+        "post_id": 428,
+        "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg",
+        "wordpress_original_dimensions_px": {
+          "width": 623,
+          "height": 900
+        },
+        "wordpress_original_storage_bytes": 90157,
+        "recorded_jetpack_medium_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?fit=208%2C300&ssl=1",
+        "recorded_jetpack_full_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?fit=623%2C900&ssl=1",
+        "no_upscale_maximum_for_present_wordpress_media_px": {
+          "width": 623,
+          "height": 900
+        },
+        "actual_guest_transfer_bytes": null
       }
     },
     {
@@ -415,7 +434,7 @@
   ],
   "source_limitations": "Direct image display and failure come from a web retriever, not actual logged-out visitor Chrome; no origin HTTP status, byte count, naturalWidth, screenshot or master SHA; no automatic caching or WordPress production writes.",
   "next_steps": [
-    "Site QA #154: logged-out Chrome/mobile verify first-party source 428:0 and the other five actual currentSrc image loads/redirects/MIME and encoded bytes.",
+    "Site QA #154: verify 428:0 guest Chrome load despite retriever access limitation; WordPress confirms media ID 476 exists at 623×900 and 90,157 original-storage bytes, not visitor-transfer proof.",
     "After confirmation, item-level rights/credit review, exact original/derivative visual identity and SHA-256 before any binary caching.",
     "Calculate ≤960px no-upscale derivatives from decoded original image dimensions; stage in isolated test WordPress only after rights/editorial approval.",
     "Recheck historical ALT for 428:4 with the University's Pacific Hotel caption; do not rewrite post blocks automatically."
