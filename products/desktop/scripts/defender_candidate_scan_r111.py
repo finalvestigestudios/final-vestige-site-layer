@@ -20,6 +20,7 @@ from pathlib import Path
 import release_gate as gate
 import defender_engine_custody_r112 as custody
 import defender_environment_r113 as environment
+import trusted_powershell_r114 as trust
 import report_attestation as attestation
 from report_evidence import ReportEvidenceError, prepare_report_path, publish_report
 
@@ -96,10 +97,14 @@ def _run_quiet(args: list[str], *, timeout: int, env=None, runner=None) -> None:
 
 
 def health_check(scanner: Path, *, runner=None) -> None:
+    try:
+        powershell = trust.require_system_powershell()
+    except trust.PowerShellHold:
+        raise AVHold("Native System32 PowerShell interpreter unavailable") from None
     env = dict(os.environ)
     env["FVS_DEFENDER_SCANNER"] = str(scanner)
     _run_quiet(
-        ["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", PREFLIGHT],
+        [str(powershell), "-NoProfile", "-NonInteractive", "-Command", PREFLIGHT],
         timeout=45, env=env, runner=runner,
     )
 
