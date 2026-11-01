@@ -158,6 +158,23 @@ def _load_private_key_receipt_validator():
     return module.unsigned_challenge
 
 
+def _load_recent_transcript_validator():
+    # R40: freeze the zero-review R39 baseline and require the new offline
+    # transcript auditor to exist as an exact, nonsymlinked sibling. Actual
+    # reviewer receipts require EXTERNAL trusted anchors and are never
+    # manufactured or signed by private CI.
+    location = Path(__file__).with_name('reviewer_receipt_transcript_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R40 offline receipt-transcript audit gate')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r40_offline_transcript', location)
+    need(spec is not None and spec.loader is not None,
+         'R40 transcript validator cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.preflight_unsigned_baseline
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -167,6 +184,7 @@ build_global_shared_source_review = _load_global_shared_source_validator()
 build_private_reviewer_csv_export = _load_private_reviewer_csv_export_validator()
 build_quarantine_reviewer_csv = _load_quarantined_csv_intake_validator()
 build_private_key_receipt_challenge = _load_private_key_receipt_validator()
+build_recent_transcript_unsigned_preflight = _load_recent_transcript_validator()
 
 
 def canonical(value):
@@ -361,6 +379,22 @@ def audit(lib, expected=EXPECTED):
              and challenge['independent_QD_approval'] is False
              and challenge['human_source_reviews_completed'] is False,
              'R39 unsigned receipt challenge must remain zero-progress HOLD')
+        # R40 binds the same frozen real-corpus R37/R38/R39 challenge and
+        # guarantees the machine has NOT fabricated a signed human receipt.
+        # Recent signed segments are separately audited only with external
+        # trusted start/end anchors, keyring, clock and nonce replay registry.
+        unsigned_baseline = build_recent_transcript_unsigned_preflight(
+            reviewer_csv, challenge)
+        need(unsigned_baseline['release_state'] == 'HOLD'
+             and unsigned_baseline['verified_human_receipts'] == 0
+             and unsigned_baseline['key_possession_verified'] is False
+             and unsigned_baseline['reviewer_real_identity_verified'] is False
+             and unsigned_baseline['parent_R37_fingerprint_sha256'] ==
+                 reviewer_csv['manifest']['fingerprint_sha256']
+             and unsigned_baseline['may_publish'] is False
+             and unsigned_baseline['qualified_safety_clearance'] is False
+             and unsigned_baseline['independent_QD_approval'] is False,
+             'R40 machine baseline cannot certify real reviewer or release')
     return payload
 
 def audit_checkout(root):
