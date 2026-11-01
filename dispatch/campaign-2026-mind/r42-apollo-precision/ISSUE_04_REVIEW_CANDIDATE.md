@@ -1,0 +1,52 @@
+# THE DISPATCH — ISSUE 04 / OPTIONAL R42 REVIEW CANDIDATE
+
+> **UNSENT DRAFT — DO NOT PUBLISH OR EMAIL.** NOT an approved replacement for canonical PR #175. All six issues remain HOLD_UNSENT.
+
+**Proposed subject:** The spark NASA could not name
+
+**Proposed preheader (Jetpack custom preheader unverified):** Apollo 1's investigators couldn't identify one proven ignition wire. They identified six dangerous conditions.
+
+**Type:** Historical editorial. No affiliate offer.
+
+---
+
+At 6:31 p.m. on January 27, 1967, three astronauts were inside a command module that was not going to launch that evening. Gus Grissom, Ed White and Roger Chaffee were rehearsing a countdown on the ground. The rocket was unfueled. A fire was not the emergency everyone had organized the test around.
+
+When a crew member reported fire, the surviving record became a race between rising pressure, trapped people and the limits of an inward-opening hatch. We know some of that sequence to tenths of a second. We do not know which damaged wire, if any, first ignited nearby material. Those two facts belong in the same account.
+
+## What the instruments actually recorded
+
+The Apollo 204 Review Board placed the first transmission reporting fire at 23:31:04.7 GMT. At roughly 23:31:19, pressure ruptured the cabin. That interval is about fourteen seconds—not the full duration of the fire, and not proof of precisely when ignition began. The Board described the first stage as lasting approximately fifteen seconds after the verbal report.
+
+The cabin had been filled with pure oxygen at 16.7 pounds per square inch absolute for the ground test. Investigators found that pressure reached at least 29 psia at rupture. Increased pressure defeated the inward-opening inner hatch. Pad crews needed approximately five minutes after the first fire report to get all hatches open.
+
+## What the investigation could not establish
+
+Electrical arcing was the most probable initiator. The Review Board placed the likely origin in the lower forward left-hand equipment bay near environmental-control equipment. But it could not conclusively identify a single ignition source. The probable origin area was badly damaged, and important physical evidence had been destroyed.
+
+This is a difference between a likely mechanism and a demonstrated culprit. The first explains why investigators looked in a particular part of the spacecraft. The second would require evidence strong enough to identify the specific conductor or component. The Board did not claim to have that evidence.
+
+## Six conditions, not one neat culprit
+
+The Board identified six conditions that let a small failure become catastrophic: a sealed oxygen-pressurized cabin; widely distributed combustible materials; vulnerable electrical wiring; vulnerable coolant plumbing; inadequate means of escape; and inadequate arrangements for rescue or medical assistance.
+
+Oxygen supported rapid burning; the interior contained fuel; pressure made the hatch unusable; the rescue organization was not ready for this particular emergency. The findings reached beyond the hatch to material choices, wiring protection, test classification and safety practices. Fixing a single damaged wire would not have resolved those conditions.
+
+There is another uncomfortable distinction. A rocket with no propellant could still contain a highly hazardous crew compartment. The absence of a launch explosion risk did not remove the cabin's fire risk. The investigation criticized the failure to recognize that hazard in advance.
+
+## A small test for the next extraordinary explanation
+
+Pick a striking explanation you see this week. Write two short notes. In the first, put what a source directly records: times, instrument readings, observable designs. In the second, put what investigators infer from those records. In Apollo 1's case, a recorded pressure trace and an inward-opening hatch belong in the first note; the identity of the first failed conductor does not.
+
+That distinction is not an invitation to distrust every conclusion. Good investigators can be certain that a system had dangerous conditions while remaining uncertain about one initiating event. The honest record is often more useful than a perfectly neat story.
+
+Our full investigation follows the surviving hardware, the ground test, the rescue and the Review Board's findings. It explains why two real hatches, displayed side by side, can tell a deeper story than a memorable one-line cause.
+
+**ONE READER ACTION — Read the full investigation:** [The Hatch Opened Inward](https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).
+
+**Primary sources (not commercial CTAs):** [NASA Apollo 204 report](https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/); [NASA Apollo 204 summary](https://www.nasa.gov/missions/apollo/apollo-1/apollo-204-review-board-summary/).
+
+---
+**HARD STOP:** Missing verified business mailing address and genuine received-email unsubscribe evidence.
+
+Sender: Final Vestige Studios. Physical mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]].
