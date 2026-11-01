@@ -157,7 +157,7 @@
         "candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:23562-3-2_Hoog_overzicht_stapelloop_passagiersschip_%27Prinsendam%27_bij_scheepswerf_%27De_Merwede%27_in_Hardinxveld-Giessendam.jpg",
         "identifier": "Rotterdam Stadsarchief 4121 / 23562-3-2",
         "credit": "Ary Groeneveld; Gemeente Rotterdam (Stadsarchief)",
-        "relationship": "same_launch_scene_publisher_binary_unverified",
+        "relationship": "different_launch_sequence_frame_authoritative_alternative_not_exact",
         "original_binary_hash": null,
         "rights_review": "HOLD",
         "rights_rationale": "Commons marks CC0 1.0; independently check Stadsarchief item/license and publisher rights before cache."
@@ -169,9 +169,9 @@
         "conditional_target_height_px": 969,
         "source": "catalog_metadata_not_current_browser_or_downloaded_binary",
         "do_not_upscale": true,
-        "published_crop_warning": "Published Pubble image includes horizontal padding and image framing; visual crop must be compared before substitution."
+        "published_crop_warning": "Actual Pubble image visually shows the ship already afloat in open water beside a large crane; official 23562-3-2 archive shows the vessel on the shipyard slipway before launch. These are different photographs; do not substitute without changing historical context."
       },
-      "visual_risk": "Do not replace with a different shipyard photo merely because both show a Prinsendam launch.",
+      "visual_risk": "VERIFIED VISUAL SUBJECT/FRAME DIFFERENCE in independent web image renderer: current Pubble photo is afloat at launch while Commons Stadsarchief 23562-3-2 is on slipway. Same event/ship, NOT same image. Copyright of Pubble derivative unknown.",
       "guest_browser": {
         "current_src": null,
         "image_get_status": null,
@@ -217,7 +217,7 @@
         "relationship": "published_filename_equal_to_archival_Commons_filename_no_binary_verified",
         "original_binary_hash": null,
         "rights_review": "HOLD",
-        "rights_rationale": "Likely US-government original from matching named source; prove exact asset identity, reuse rights and source credit individually."
+        "rights_rationale": "Likely US-government original from matching named source; prove exact asset identity, reuse rights and source credit individually. USCG photo 210210-G-G0000-1014 is a separately cataloged frame and cannot be assumed identical to DF-SN-86-12843."
       },
       "geometry": {
         "catalog_candidate_width_px": 2870,
@@ -363,5 +363,18 @@
       }
     }
   ],
-  "workflow": "HOLD until guest currentSrc+network+decode+screenshot, exact image/crop match, item rights+credit, source SHA and pixel geometry; then stage 960px/no-upscale local candidate for visual QA; never edit WordPress without separate release authorization."
+  "workflow": "HOLD until guest currentSrc+network+decode+screenshot, exact image/crop match, item rights+credit, source SHA and pixel geometry; then stage 960px/no-upscale local candidate for visual QA; never edit WordPress without separate release authorization.",
+  "visual_comparisons": [
+    {
+      "pair": "292:2 actual Pubble vs Stadsarchief candidate 23562-3-2",
+      "published_source": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "candidate_catalog": "https://commons.wikimedia.org/wiki/File:23562-3-2_Hoog_overzicht_stapelloop_passagiersschip_%27Prinsendam%27_bij_scheepswerf_%27De_Merwede%27_in_Hardinxveld-Giessendam.jpg",
+      "published_view": "afloat in river with tugboats, dockside crane to right",
+      "catalog_view": "ship remains on slipway viewed lengthwise from elevated dock",
+      "same_image": false,
+      "binary_identity_checked": false,
+      "method": "independent web renderer visual comparison only",
+      "production_edit_allowed": false
+    }
+  ]
 }
