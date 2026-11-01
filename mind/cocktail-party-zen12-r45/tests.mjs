@@ -58,7 +58,7 @@ ok(aggregateSyntheticObservations(Array.from({length:19},()=>sample)).length===0
 ok(aggregateSyntheticObservations(Array.from({length:20},()=>sample))[0].count===20,"include n=20");
 const dangerous=[
  a.replace(/disabled aria-disabled="true"/,""),
- a.replace(/may receive a commission at no additional cost to you/,""),
+ a.replace(/may receive a commission at no additional cost to you/g,""),
  a.replace("Zen12 offer unavailable — approval pending",'<a href="https://zen12.com/getstarted">BUY</a>'),
  b.replace(/<aside class="film"[\s\S]*?<\/aside>/,"<script>navigator.sendBeacon('/collect')</script>"),
  privacy.replace("LIVE_COLLECTION_ENABLED = false","LIVE_COLLECTION_ENABLED = true")
