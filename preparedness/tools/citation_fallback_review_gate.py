@@ -68,9 +68,24 @@ def _load_occurrence_priority_validator():
     return module.build_priority_queue
 
 
+def _load_source_reading_batches_validator():
+    # R34: mandatory lossless review-batch custody in existing private stage 13.
+    # An absent/linked validator fails closed; no CMS, navigation or public writes.
+    location = Path(__file__).with_name('citation_review_batch_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked full source-reading batch gate')
+    spec = importlib.util.spec_from_file_location('preparedness_r34_reading_batches', location)
+    need(spec is not None and spec.loader is not None,
+         'source-reading batch validator cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.make_batch_index
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
+build_source_reading_batches = _load_source_reading_batches_validator()
 
 
 def canonical(value):
@@ -212,7 +227,11 @@ def audit(lib, expected=EXPECTED):
     review_index = build_review_index(payload, expected=expected)
     # Bind all individual claim occurrences to both parent custody digests,
     # preserve duplicate URLs, and always leave every task UNREVIEWED.
-    build_priority_queue(payload, review_index, expected=expected)
+    priority_queue = build_priority_queue(payload, review_index, expected=expected)
+    # Assert full original contributor evidence survives reviewer batching.
+    # One card per original source-use relationship, one item per claim occurrence.
+    # No automated approval is granted even when this structural gate succeeds.
+    build_source_reading_batches(payload, priority_queue, expected=expected)
     return payload
 
 def audit_checkout(root):
