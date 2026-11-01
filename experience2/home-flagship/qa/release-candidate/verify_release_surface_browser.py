@@ -29,7 +29,18 @@ def check(condition, reason):
 
 def create_page(bundle):
     manifest = json.loads((bundle/'SOURCE_MANIFEST.json').read_text())
+    # Refuse a malformed or incomplete bundle before trusting source paths.
+    expected = set(STYLES + SCRIPTS + ['index.release-review.html',
+                                       'wordpress-page-fragment.review-only.html'])
+    check(isinstance(manifest.get('files'), dict) and
+          set(manifest['files']) == expected, 'unexpected release manifest inventory')
     for filename, record in manifest['files'].items():
+        check(Path(filename).name == filename and '/' not in filename and
+              '\\\\' not in filename, 'unsafe asset filename')
+        check(isinstance(record, dict) and type(record.get('bytes')) is int and
+              record['bytes'] >= 0 and isinstance(record.get('sha256'), str) and
+              len(record['sha256']) == 64, 'invalid source metadata')
+        check(not (bundle/filename).is_symlink(), 'symlinked release asset')
         raw = (bundle/filename).read_bytes()
         check(len(raw)==record['bytes'] and sha256(raw)==record['sha256'], f'source seal drift: {filename}')
     source=(bundle/'index.release-review.html').read_text(encoding='utf8')
@@ -48,9 +59,15 @@ def create_page(bundle):
         check('</script' not in original.lower(),f'unsafe closing script: {js}')
         scripts.append(f'<script nonce="{NONCE}" data-fv-exact-asset="{js}">\n{original}\n</script>')
     csp=f"default-src 'none'; img-src 'none'; style-src 'nonce-{NONCE}'; script-src 'nonce-{NONCE}'; object-src 'none'; connect-src 'none'; base-uri 'none'"
+    check(source.count('</head>') == 1 and source.count('</body>') == 1,
+          'missing or duplicate HTML injection boundaries')
+    check('http-equiv="Content-Security-Policy"' not in source,
+          'unexpected preexisting CSP meta tag')
     source=source.replace('</head>',f'<meta http-equiv="Content-Security-Policy" content="{html_module.escape(csp,quote=True)}">\n</head>')
     source=source.replace('</body>', '\n'.join(scripts)+'\n</body>')
     check(source.count('data-fv-exact-asset=')==10,'all 10 original assets present')
+    check(source.count('http-equiv="Content-Security-Policy"')==1,
+          'CSP was not applied exactly once')
     return source,manifest
 
 def browser_test(html, outdir, chromium):
