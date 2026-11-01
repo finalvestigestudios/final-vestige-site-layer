@@ -237,7 +237,7 @@ def build_triage(lib, *, expected_items=36, canonical=None, expected_occurrences
     flags = [f for row in rows for f in row['flags']]
     result = {'schema_version': 1, 'authority': 'MACHINE_HEURISTIC_TRIAGE_ONLY',
               'release_state': 'HOLD', 'may_publish': False,
-              'independent_human_source_checks_verified': 0,
+              'independent_human_source_checks_verified': False,
               'qualified_safety_approvals': 0, 'no_citation_is_proof_of_accuracy': True,
               'uncited_is_review_priority_not_proof_of_inaccuracy': True,
               'regex_heuristics_have_false_negatives': True,
