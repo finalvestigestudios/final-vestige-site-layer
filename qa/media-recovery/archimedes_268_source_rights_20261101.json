@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "scope": "Published article 268; authenticated read-only CMS; exact original URLs with archival/rights reviewer notes; no actual guest browser proof",
+  "cms": {
+    "post_id": 268,
+    "url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+    "modified": "2026-10-30T01:10:13",
+    "status": "publish",
+    "source_census_git_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "live_exact_source_url_matches": 10,
+    "live_exact_alt_matches": 10
+  },
+  "summary": {
+    "image_slots": 10,
+    "commons_file_records": 6,
+    "publisher_hosted_jpegs": 4,
+    "web_retriever_rendered": 2,
+    "web_retriever_inconclusive": 8,
+    "visitor_broken_confirmed": null,
+    "measured_weight_reduction_percent": null,
+    "production_replacements": 0
+  },
+  "publisher_license_scope_warning": "Publisher digital DATASET CC BY 3.0 wording does not necessarily extend to separately hosted site presentation photographs. Five Commons file pages display CC BY 2.0 while their inherited textual description cites project dataset CC BY 3.0. Record both; choose a legally supported per-file reuse basis before staging.",
+  "sources": [
+    "https://archimedespalimpsest.net/0_ReadMe.html",
+    "https://www.tei-c.org/activities/projects/archimedes-palimpsest-project/",
+    "https://commons.wikimedia.org/wiki/Category:Archimedes_Palimpsest_Image_Bank"
+  ],
+  "rows": [
+    {
+      "image_key": "268:0",
+      "slot": 0,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "source_kind": "wikimedia_redirect",
+      "alt_text": "Open page of the Archimedes Palimpsest showing the later prayer-book text written across older erased Greek mathematics and diagrams.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE_OR_REDIRECT_NOT_FOLLOWED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+        "record_type": "exact_commons_filename_record",
+        "original_width_px": 665,
+        "original_height_px": 448,
+        "dimensions_origin": "commons_file_page_original_master_metadata",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "commons_us_public_domain_claim_unevaluated",
+        "credit_to_preserve": "Commons file record lists Matthew Kon; verify photograph reuse and original source",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": 665,
+        "proposed_height_px": 448,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:1",
+      "slot": 1,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "source_kind": "external",
+      "alt_text": "A forged painted page in the Archimedes Palimpsest covering older erased writing beneath the medieval prayer text.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "RENDERED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": null,
+        "record_type": "publisher_site_jpeg_no_individual_catalog_record_confirmed",
+        "original_width_px": null,
+        "original_height_px": null,
+        "dimensions_origin": "unverified",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "no_item_specific_reuse_permission_verified_for_project_website_presentation_photo",
+        "credit_to_preserve": "Archimedes Palimpsest Project / named individual creator to verify",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:2",
+      "slot": 2,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "source_kind": "wikimedia_redirect",
+      "alt_text": "Ultraviolet image of a folio from the Archimedes Palimpsest showing the medieval prayer text and faint erased undertext.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE_OR_REDIRECT_NOT_FOLLOWED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": "https://commons.wikimedia.org/wiki/File:002r-001v_Arch13r_Sinar_uvblue_norm8_Euchologion_up_(9737603804).jpg",
+        "record_type": "exact_commons_filename_record",
+        "original_width_px": 10880,
+        "original_height_px": 8160,
+        "dimensions_origin": "commons_file_page_original_master_metadata",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "commons_cc_by_2_0_vs_project_data_cc_by_3_0",
+        "credit_to_preserve": "RIT/Equipoise/Boeing LTS project imaging; Commons/Flickr source ryanfb; attribution/license/change notice required",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": 960,
+        "proposed_height_px": 720,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:3",
+      "slot": 3,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "source_kind": "wikimedia_redirect",
+      "alt_text": "Image of an Archimedes Palimpsest folio associated with Heiberg's early twentieth-century study and modern ultraviolet imaging.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE_OR_REDIRECT_NOT_FOLLOWED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Heiberg-UV-blue_(9737623542).jpg",
+        "record_type": "exact_commons_filename_record",
+        "original_width_px": 2040,
+        "original_height_px": 2720,
+        "dimensions_origin": "commons_file_page_original_master_metadata",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "commons_cc_by_2_0_vs_project_data_cc_by_3_0",
+        "credit_to_preserve": "RIT/Equipoise/Boeing LTS project imaging; Commons/Flickr source ryanfb; attribution/license/change notice required",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": 960,
+        "proposed_height_px": 1280,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:4",
+      "slot": 4,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "source_kind": "external",
+      "alt_text": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "APEX_REDIRECT_TARGET_UNAVAILABLE",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": null,
+        "record_type": "publisher_site_jpeg_no_individual_catalog_record_confirmed",
+        "original_width_px": null,
+        "original_height_px": null,
+        "dimensions_origin": "unverified",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "no_item_specific_reuse_permission_verified_for_project_website_presentation_photo",
+        "credit_to_preserve": "Archimedes Palimpsest Project / named individual creator to verify",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:5",
+      "slot": 5,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "source_kind": "wikimedia_redirect",
+      "alt_text": "Processed multispectral image of an Archimedes Palimpsest folio making the erased undertext more legible beneath the prayer book.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE_OR_REDIRECT_NOT_FOLLOWED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Arch07r_Sinar_pseudo_no-veil_(9734386225).jpg",
+        "record_type": "exact_commons_filename_record",
+        "original_width_px": 8160,
+        "original_height_px": 10880,
+        "dimensions_origin": "commons_file_page_original_master_metadata",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "commons_cc_by_2_0_vs_project_data_cc_by_3_0",
+        "credit_to_preserve": "RIT/Equipoise/Boeing LTS project imaging; Commons/Flickr source ryanfb; attribution/license/change notice required",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": 960,
+        "proposed_height_px": 1280,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:6",
+      "slot": 6,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "source_kind": "wikimedia_redirect",
+      "alt_text": "X-ray fluorescence iron map of an Archimedes Palimpsest folio revealing erased writing through elemental imaging.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE_OR_REDIRECT_NOT_FOLLOWED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": "https://commons.wikimedia.org/wiki/File:028v-021r_Arch08r_XRF_FeFront_registered_(9734104759).jpg",
+        "record_type": "exact_commons_filename_record",
+        "original_width_px": 8160,
+        "original_height_px": 10880,
+        "dimensions_origin": "commons_file_page_original_master_metadata",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "commons_cc_by_2_0_vs_project_data_cc_by_3_0",
+        "credit_to_preserve": "RIT/Equipoise/Boeing LTS/SLAC XRF project imaging; Commons/Flickr source ryanfb; attribution/license/change notice required",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": 960,
+        "proposed_height_px": 1280,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:7",
+      "slot": 7,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+      "source_kind": "external",
+      "alt_text": "An Archimedes Palimpsest leaf mounted vertically on a scanning stage for X-ray fluorescence imaging at Stanford Synchrotron Radiation Laboratory.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "RENDERED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": null,
+        "record_type": "publisher_site_jpeg_no_individual_catalog_record_confirmed",
+        "original_width_px": null,
+        "original_height_px": null,
+        "dimensions_origin": "unverified",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "no_item_specific_reuse_permission_verified_for_project_website_presentation_photo",
+        "credit_to_preserve": "Archimedes Palimpsest Project / named individual creator to verify",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:8",
+      "slot": 8,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "source_kind": "external",
+      "alt_text": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": null,
+        "record_type": "publisher_site_jpeg_no_individual_catalog_record_confirmed",
+        "original_width_px": null,
+        "original_height_px": null,
+        "dimensions_origin": "unverified",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "no_item_specific_reuse_permission_verified_for_project_website_presentation_photo",
+        "credit_to_preserve": "Archimedes Palimpsest Project / named individual creator to verify",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": null,
+        "proposed_height_px": null,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "268:9",
+      "slot": 9,
+      "post_id": 268,
+      "article_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "source_kind": "wikimedia_redirect",
+      "alt_text": "Processed multispectral image of a Palimpsest folio containing erased text by the Athenian orator Hyperides.",
+      "source_viewer": {
+        "method": "independent_web_retriever_2026_11_01",
+        "result": "UNAVAILABLE_OR_REDIRECT_NOT_FOLLOWED",
+        "http_status": null,
+        "decoded_dimensions_px": null,
+        "is_guest_browser_proof": false
+      },
+      "catalog": {
+        "source_record_url": "https://commons.wikimedia.org/wiki/File:176r-173v_Hype03r_Sinar_LED445-735_pseudo_(9734660151).jpg",
+        "record_type": "exact_commons_filename_record",
+        "original_width_px": 6600,
+        "original_height_px": 9500,
+        "dimensions_origin": "commons_file_page_original_master_metadata",
+        "original_sha256": null
+      },
+      "rights": {
+        "recorded_claim": "commons_cc_by_2_0_vs_project_data_cc_by_3_0",
+        "credit_to_preserve": "RIT/Equipoise/Boeing LTS project imaging; Commons/Flickr source ryanfb; attribution/license/change notice required",
+        "license_decision": "HOLD",
+        "item_permission_verified": false,
+        "rights_review_done": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "proposed_width_px": 960,
+        "proposed_height_px": 1382,
+        "no_upscale": true,
+        "preserve_aspect_ratio": true,
+        "source_material_not_downloaded": true,
+        "local_cached_media_id": null,
+        "original_master_hash_verified": false,
+        "derivative_quality_qa_complete": false
+      },
+      "visitor_browser": {
+        "http_status": null,
+        "final_image_url": null,
+        "decoded_width_px": null,
+        "encoded_transfer_bytes": null,
+        "broken": null,
+        "measured_savings_percent": null
+      },
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    }
+  ]
+}
