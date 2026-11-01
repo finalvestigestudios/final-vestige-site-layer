@@ -26,8 +26,9 @@ import source_smoke_gate as gate
 MAX_INVENTORY = 256
 FIELDS = ("dev", "ino", "mode", "nlink", "size", "mtime", "ctime")
 PERMITTED = frozenset(("PASS", "LSTAT", "REGULAR", "LINKS", "SIZE",
-    "CONFINEMENT", "OPEN", "START_ID", "END_ID", "READ", "UNKNOWN",
-    "SOURCES_SCAN", "TESTS_SCAN", "INVENTORY_LIMIT"))
+    "CONFINEMENT", "OPEN", "END_ID", "READ", "UNKNOWN",
+    "SOURCES_SCAN", "TESTS_SCAN", "INVENTORY_LIMIT")) | frozenset(
+        "START_MASK_" + str(value) for value in range(1, 1 << len(FIELDS)))
 
 
 def _difference(before, after):
@@ -75,7 +76,9 @@ def _classify(path: Path, root: Path, *, fingerprint=None) -> str:
             beginning = os.fstat(fd)
             mismatch = _difference(info, beginning)
             if mismatch:
-                return "START_ID"
+                # A 7-bit *field-difference mask*; never expose metadata values.
+                # Bits are DEV/INO/MODE/NLINK/SIZE/MTIME/CTIME in that order.
+                return "START_MASK_" + str(mismatch)
             consumed = 0
             while True:
                 block = os.read(fd, gate._READ_SIZE)
