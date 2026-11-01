@@ -9,7 +9,7 @@ R100 CI #41272202979 passed the complete Linux source suite in normal and optimi
 ## Concrete additions
 
 - `scripts/diagnose_windows_inventory_r101.py`: read-only per-file source- and test-inventory diagnostics, using the **unchanged production `_fingerprint` function as first authority**. Failures are examined independently for a fixed category (regular file, unexpected hardlinks, confinement, length, descriptor identity, read, etc.). Never reclassifies an original failed fingerprint as passing, and never changes gate results.
-- `tests/test_windows_inventory_forensics_r101.py`: 15 synthetic tests for source-authority preservation, symlink/hardlink classification, missing/outside/oversized input, bounded metadata bitmasks, privacy-safe counters, invalid labels, and fail-closed semantics.
+- `tests/test_windows_inventory_forensics_r101.py`: 16 synthetic tests for source-authority preservation, symlink/hardlink classification, missing/outside/oversized input, bounded metadata bitmasks, privacy-safe counters, invalid labels, and fail-closed semantics.
 - `.github/workflows/desktop-build.yml`: run two-mode synthetic tests and source-only probe **before the unchanged R57 Windows gate**; run synthetic tests on Linux too. The probe reports only static category counts with a fixed prefix and releases no file paths, personal data, exceptions, input bytes, or test fixtures.
 
 ## Reproduce
@@ -26,3 +26,9 @@ The diagnostic returning process status zero is **NOT proof the inventory is sou
 ## Next action
 
 Inspect GitHub Actions run for R101 exact branch head. If a common Windows-specific descriptor identity or file-link condition is demonstrated, correct it with adversarial regressions **without weakening** symlink, hardlink, same-byte-rewrite, metadata, source path or multi-pass inventory guards. Rerun complete normal/-OO suite, six source smokes and native Windows x64 candidate build/smoke. Check SHA256, AV, accessibility and controlled premium entitlement. Keep all six apps UNRELEASED until independent QD and founder signoff.
+
+## Executed CI observation (first diagnostic iteration)
+
+R101 early CI run [#41274890357](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41274890357) executed the Python synthetic tests on both hosted platforms in normal and `-OO` modes. Both passed. The Windows read-only probe reported **71 source files: 70 pass, 1 descriptor START identity mismatch; 134 tests: 132 pass, 2 START mismatches**, confirming three concrete Windows path-versus-open-file metadata discrepancies. The unchanged R57 Windows source gate continued to fail and packaging was skipped; the Linux full source gate finished green. These numbers include any new probe and test source files (not claims of a binary build).
+
+The next probe now records a *bounded seven-bit identity-field mask* (device, inode, mode, link count, size, mtime, ctime) for these mismatch categories without disclosing filenames, paths, timestamps or file values. **A mismatch remains a failure, not a bypass.** Pending exact-head CI evidence for this follow-on change.
