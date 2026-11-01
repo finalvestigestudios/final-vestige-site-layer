@@ -221,6 +221,23 @@ def _load_private_offline_html_gate():
     return module.build_offline_html
 
 
+
+def _load_private_zip_custody_gate():
+    # R44: offline, deterministic 38-page + manifest ZIP evidence custody.
+    # All ZIP bytes remain in memory inside the mandatory private stage.
+    # External reviewers need separately pinned R42/R43 trust anchors.
+    # No publication, CMS upload, reviewer identity or safety approval.
+    location = Path(__file__).with_name('reviewer_private_zip_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R44 private ZIP custody gate')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r44_private_zip_custody', location)
+    need(spec is not None and spec.loader is not None,
+         'R44 private ZIP custody gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.build_private_zip, module.verify_private_zip
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -234,6 +251,7 @@ build_recent_transcript_unsigned_preflight = _load_recent_transcript_validator()
 build_history_unsigned_preflight = _load_historical_history_unsigned_preflight()
 build_article_review_dossiers = _load_article_review_dossiers()
 build_private_offline_review_desk = _load_private_offline_html_gate()
+build_private_zip_custody, verify_private_zip_custody = _load_private_zip_custody_gate()
 
 
 def canonical(value):
@@ -445,6 +463,26 @@ def audit(lib, expected=EXPECTED):
              and private_manifest['human_source_reviews_completed'] is False
              and 'global-source-variants.html' in private_pages,
              'R43 offline review view corpus/presentation/safety HOLD drift')
+        # R44: privately package, read back and byte-verify every R43 page.
+        # CI uses the upstream frozen machine fingerprints for consistency,
+        # NOT an independent human-controlled trust anchor or safety finding.
+        # No ZIP is written to disk, attached publicly, emailed or published.
+        private_package = build_private_zip_custody(
+            article_dossiers,
+            trusted_r42_sha256=article_dossiers['fingerprint_sha256'])
+        private_package_manifest = verify_private_zip_custody(
+            private_package['zip_bytes'],
+            trusted_r42_sha256=article_dossiers['fingerprint_sha256'],
+            trusted_r43_sha256=private_manifest['fingerprint_sha256'])
+        need(private_package_manifest == private_package['manifest']
+             and private_package['member_count'] == 39
+             and private_package_manifest['counts'] == article_dossiers['counts']
+             and private_package_manifest['release_state'] == 'HOLD'
+             and private_package_manifest['may_publish'] is False
+             and private_package_manifest['qualified_safety_clearance'] is False
+             and private_package_manifest['independent_QD_approval'] is False
+             and private_package_manifest['human_source_reviews_completed'] is False,
+             'R44 package lost source-reading evidence or violated private HOLD')
         # The unedited baseline must round-trip R38 intact. This mandatory
         # check is intentionally zero progress: machine CI cannot verify that
         # a human actually visited, read or understood a referenced source.
