@@ -13,8 +13,8 @@ function validate(m, inv) {
   const r=m.records[i],e=expected[i];if(!r){bad('missing record '+i);continue;}
   if(r.key!==e.key||r.slot!==i||r.source_url!==e.source_url||r.alt!==e.alt||r.source_kind!==e.source_kind)bad('wrong source/ALT '+i);
   if(r.primary_catalog_id!==IDS[i]||!r.primary_catalog_url?.startsWith('https://www.history.navy.mil/')||!r.primary_catalog_url?.endsWith(TAILS[i]))bad('wrong Navy record '+i);
-  if(!r.credit?.includes('Navy')||!r.credit?.includes('National Archives'))bad('credit '+i);
-  if(!r.chronology_crop_caution||r.chronology_crop_caution.length<30)bad('chronology/crop '+i);
+  if(!r.credit?.includes('U.S. Navy')||!r.credit?.includes(IDS[i]))bad('credit '+i);
+  if(!r.chronology_crop_caution||r.chronology_crop_caution.length<30||!r.identity_evidence||r.identity_evidence.length<60)bad('chronology/crop/provenance '+i);
   const d=r.catalog_geometry,t=r.conditional_derivative;
   if(![d?.width,d?.height,t?.width,t?.height].every(x=>Number.isInteger(x)&&x>0)){bad('dimensions '+i);continue;}
   const w=Math.min(960,d.width),h=Math.round(w*d.height/d.width);
