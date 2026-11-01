@@ -1,0 +1,69 @@
+ID	Claim or permission	Source IDs	Evidence class	Finding	Disposition
+R01	Photograph-choice outcome can be covertly changed	S01	2005 peer-reviewed experiment	supported in experiment	investigation
+R02	Some participants explained swapped face	S01,S03	experimental observation	supported, not universal	investigation
+R03	All decisions are arbitrary or controlled	S01	overgeneralization	unsupported	reject
+R04	All participants were fooled	S01	overgeneralization	unsupported	reject
+R05	One universal detection rate across protocols	S01,S04	invalid cross-study denominator	unsupported	reject
+R06	2010 jam/tea marketplace switching study existed	S04	peer-reviewed paper	supported	investigation
+R07	No more than a third manipulated marketplace trials detected	S04	published summary	supported in that setting	qualify denominator
+R08	All taste preferences can be reversed	S04	extrapolation	unsupported	reject
+R09	Swedish survey response manipulation studied	S05	2013 study	supported	neutral methods only
+R10	Survey demonstration determines election result	S05	causal leap	unsupported	reject
+R11	Introspection can include reconstructed explanations	S03	peer-reviewed follow-up	supported contextually	qualified
+R12	Choice blindness proves hypnotic efficacy	S01,S13	historical and causal leap	not established	reject
+R13	Historical Puységur page contains 153 source rows	S13	authenticated site reading	verified	link
+R14	Puységur page contains 16 case dossiers	S13	authenticated site reading	verified	link
+R15	Published Focus is a single existing Jetpack funnel	S14	authenticated site reading	verified existing content	preserve
+R16	Published investigation post list contains 61 items	S15	authenticated WordPress posts.list	61 metadata records; not full bodies	audit scoped
+R17	Published Apollo 1 investigation is an actual link	S15	authenticated post metadata	verified	internal-link only
+P01	Inspire3 advertises Zen12	S07	seller catalog	verified	attribute
+P02	Zen12 audio sessions described as 12 minutes	S08,S09	seller offering	advertised	attribute
+P03	Four Zen12 listening styles	S08,S09	seller offering	music/guided/nature/white noise	attribute
+P04	Beginner first 6 levels 24 MP3	S08	seller package	listed, files not audited	attribute
+P05	Premium 12 levels 48 MP3	S08,S10	seller package and public checkout	listed, files not audited	attribute
+P06	Advanced final 6 levels 24 MP3	S08	seller package	listed, files not audited	attribute
+P07	Advanced positioned toward experienced meditators	S08	seller package positioning	listed	attribute
+P08	12 minutes equals one hour regular meditation	S08,S09	seller performance claim	no adequate product-specific proof reviewed	omit as fact
+P09	Automatic brainwave entrainment guarantees deep meditation	S08,S09,S06	seller neuroscience claim	unsupported as product-specific promise	omit as fact
+P10	Zen12 reliably treats anxiety or disease	S08,S12	health-related efficacy claim	not independently substantiated	omit
+P11	Zen12 produces creativity or focus gains	S08,S12	psychological efficacy claim	not product-specific verified	omit as fact
+P12	Zen12 boosts wealth or financial performance	S07,S12	unsupported extrapolation	not product-specific proven	reject
+P13	Binaural review included 14 studies	S06	independent systematic review	verified	state with scope
+P14	Review: 5 concordant 8 conflicting 1 mixed	S06	independent systematic review	verified	state with limitations
+P15	Binaural review evaluated Zen12 library	S06	inference error	false	reject
+P16	Seller public checkout displays mobile phone field	S10	merchant UI evidence	display verified	attribute
+P17	Mobile phone compulsory	S10	form validation unknown	not tested	withhold
+P18	Merchant advertises one year refund	S08	seller promise	not independently redeemed	terms to reverify
+P19	Refund guarantee eligibility applies to all readers	S08,S10	legal/checkout unverified	unknown	withhold
+P20	Support call and bonuses across all packages	S08,S10	merchant tier-dependent features	not transferable to all tiers	reverify by SKU
+P21	Checkout prices valid across social routes	S08,S10	specific offer prices	not channel-verified	withhold
+P22	Zen12 product files evaluated firsthand	none	personal use	not done	prohibit
+P23	Audio compatibility across any device	S08	technical extrapolation	not tested	avoid
+P24	General meditation research proves Zen12 efficacy	S06	research-to-product leap	not established	prohibit
+P25	Merchant affiliate promotional emails available for Zen12	S18,S19	creative approval	not verified	hard hold
+P26	Public Limitless Labs swipes grant Zen12 rights	S19	invalid rights inference	no	reject
+C01	Written FV account approval for Inspire3	S18	partner authority	not verified	hard hold
+C02	Exact approved earning URL for Zen12	S18	partner authority	not verified	hard hold
+C03	Authorized specific SKU and tracking format	S18	partner terms	not verified	hard hold
+C04	Approved Final Vestige website channel	S18	partner terms	not verified	hard hold
+C05	Approved TikTok channel	S18	partner terms	not verified	hard hold
+C06	Approved Dispatch/newsletter channel	S18	partner terms	not verified	hard hold
+C07	Approved promotional creatives/license	S18,S19	rights	not verified	hard hold
+C08	FTC near earning CTA disclosure	S11,S17	endorsement policy	text present adjacent to inert CTA	test before activation
+C09	General disclosure page alone sufficient	S11,S17	FTC guideline	not sufficient	reject
+C10	Health-claim substantiation required	S12	FTC guidance	adequate evidence for implied/express claims	hard gate
+C11	Affiliate commission/percentage known	S18	partner payout	not verified	do not state
+C12	Free Focus routine remains optional	S14	live funnel	verified	retain
+C13	New email list needed	S14	architecture	no	prohibit
+C14	A and B guide text is identical	internal	A/B structural integrity	testable	must verify
+C15	Short film effectiveness in conversion established	internal	no outcome measurements	not established	do not assert
+C16	40s video produced and first-party hosted	internal	media readiness	NO: storyboard/poster/VTT only	display no player
+C17	No-JS browser still useful	internal	markup property	static text remains visible	browser QA remains
+C18	No PII or outbound click tracking active	internal	privacy	no live code	keep off
+C19	Affiliate clicks equal purchases	internal	metric interpretation	false	never claim
+C20	Explicit founder approval to publish	Issue171	release gate	not granted	hard hold
+C21	Homepage PR49 editable by this lane	Issue171	scope	not authorized	prohibit
+C22	Canonical Mind hub PR172 replaceable	Issue171	scope	not authorized	preserve
+C23	Dispatch Issue174 email drafts editable here	Issue174	scope	not authorized	read-only handoff
+C24	All 61 original article bodies individually audited	WordPress	scope	false: metadata only	do not claim
+C25	Live WP CMS/navigation altered in this sprint	WordPress	write audit	none	do not assert publication
