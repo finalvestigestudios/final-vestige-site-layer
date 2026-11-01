@@ -1,0 +1,12 @@
+/* R50 staging-only cohost chrome. Actual components retain their own scoped styles. */
+.fv-ex2-apollo-suite{background:#090a0a;color:#f4efe6;isolation:isolate;overflow-wrap:anywhere}
+.fv-ex2-apollo-suite,.fv-ex2-apollo-suite *{box-sizing:border-box}
+.fv-ex2-apollo-suite__head{max-width:1400px;margin:auto;padding:clamp(24px,5vw,72px) clamp(18px,6vw,88px) 28px;border-bottom:1px solid #514738}
+.fv-ex2-apollo-suite__head>p:first-child{font:700 12px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:#d6b574}
+.fv-ex2-apollo-suite__head h2{font:400 clamp(32px,5vw,62px)/1.06 Georgia,serif;letter-spacing:-.035em;margin:16px 0 20px}
+.fv-ex2-apollo-suite__head>p:not(:first-child){max-width:70ch;color:#ded8ce;font:400 17px/1.65 system-ui,sans-serif}
+.fv-ex2-apollo-suite__head nav{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:28px}
+.fv-ex2-apollo-suite__head nav a{min-height:44px;display:inline-flex;align-items:center;padding:10px 0;color:#e5c487;text-decoration:underline;text-underline-offset:5px;font:600 14px/1.5 system-ui,sans-serif}
+.fv-ex2-apollo-suite__head nav a:focus-visible{outline:3px solid #e5c487;outline-offset:4px}
+@media(max-width:420px){.fv-ex2-apollo-suite__head nav{display:grid;gap:8px}}
+@media print{.fv-ex2-apollo-suite__head nav{display:none}.fv-ex2-apollo-suite{color:#111;background:#fff}}
