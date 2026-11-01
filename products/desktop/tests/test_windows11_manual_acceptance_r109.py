@@ -342,8 +342,8 @@ class ManualR109(unittest.TestCase):
         self.fill_witnesses()
         app, check = qa.FREE[0], qa.FREE_CHECKS[0]
         data = self.witness_bytes(app, check, observation=
-            "Testing a real multi-line note would require separate physical review." + chr(10)
-            "Synthetic data verifies that a standard line break and tab" + chr(9)
+            "Testing a real multi-line note would require separate physical review." + chr(10) +
+            "Synthetic data verifies that a standard line break and tab" + chr(9) +
             "inside an otherwise detailed 80-character observation are allowed.")
         self.put_witness(app, check, data)
         result = self.verify()
