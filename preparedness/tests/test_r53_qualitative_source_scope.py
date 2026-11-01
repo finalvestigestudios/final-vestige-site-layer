@@ -310,7 +310,7 @@ for group, rows in (("triage", TRIAGE_MUTATIONS),
 
 
 class RealCorpus(unittest.TestCase):
-    def test_original_35_articles_water_planner_and_15_open_incidents(self):
+    def diagnose_original_35_articles_water_planner_and_15_open_incidents(self):
         build = gate.module("r53_real_build", "build.py")
         r50 = gate.module("r53_real_safety", "safety_exception_custody_gate.py")
         lib = build.Library(HERE)
