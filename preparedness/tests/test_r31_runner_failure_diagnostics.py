@@ -70,5 +70,61 @@ for i, exception in enumerate((ValueError('invalid input'), OSError('network fai
         return case
     setattr(Tests, 'test_setup_failure_'+str(i), make(exception))
 
+
+class NativeFailureClassification(unittest.TestCase):
+    def classify(self, stderr, code=1):
+        class P:
+            returncode = code
+            stdout = b""
+        P.stderr = stderr
+        def fake_run(*args, **kwargs):
+            return P()
+        step = preflight.Step('private_draft_build',
+                              ('fake-python', '-I', '-B', 'preparedness/tools/build.py'),
+                              'plain')
+        with (patch.object(preflight, 'checked_root', return_value=Path('/tmp')),
+              patch.object(preflight, 'git_check', return_value='a'*40),
+              patch.object(preflight, 'commands', return_value=(step,))):
+            with self.assertRaises(preflight.PreflightHold) as ctx:
+                preflight.execute(Path('/tmp'), 'a'*40,
+                                  run=fake_run, git_run=fake_run,
+                                  python='fake-python')
+        return str(ctx.exception)
+
+    def test_safe_exception_name_and_line(self):
+        err=(b'Traceback (most recent call last):\n'
+             b'  File "/home/private/preparedness/tools/build.py", line 387, in build_article\n'
+             b'    secret = sensitive_statement\n'
+             b"KeyError: 'sensitive_patient_value'\n")
+        msg = self.classify(err)
+        self.assertIn('private_draft_build: exit status 1', msg)
+        self.assertIn('; exception KeyError; source line 387', msg)
+        self.assertNotIn('sensitive_', msg)
+        self.assertNotIn('/home/private', msg)
+
+    def test_no_traceback_not_reported_as_exception(self):
+        self.assertEqual(self.classify(b'ERROR unsafe source',2),
+                         'private_draft_build: exit status 2')
+
+    def test_non_allowlisted_exception_not_exposed(self):
+        msg = self.classify(b'CustomPrivateDataError: private\n')
+        self.assertEqual(msg,'private_draft_build: exit status 1')
+
+    def test_unsafe_path_is_not_echoed(self):
+        err=(b'  File "/customer/medical/preparedness/tools/build.py", '
+             b'line 7, in main\nValueError: CUSTOMER PRIVATE 9988')
+        msg=self.classify(err)
+        self.assertIn('ValueError; source line 7',msg)
+        self.assertNotIn('CUSTOMER',msg)
+        self.assertNotIn('/customer/',msg)
+
+    def test_non_utf8_traceback_fails_to_safe_category(self):
+        msg=self.classify(b'\xff\xfe\x00')
+        self.assertEqual(msg,'private_draft_build: exit status 1')
+
+    def test_large_stderr_does_not_leak(self):
+        msg=self.classify(b'A'*2_000_001)
+        self.assertEqual(msg,'private_draft_build: exit status 1')
+
 if __name__ == '__main__':
     unittest.main()
