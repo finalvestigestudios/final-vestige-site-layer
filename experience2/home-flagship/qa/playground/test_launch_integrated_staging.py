@@ -1,13 +1,17 @@
 import hashlib
 import json
 import os
+import socket
+import subprocess
+from types import SimpleNamespace
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 from launch_integrated_staging import (
     Hold, check_axe, check_blueprint, check_manifest,
-    check_runner, local_ready, MEDIA_SOURCES, SITE_PREFIX, THEME_URL,
+    check_runner, local_ready, port_vacant, measured_lighthouse,
+    check_executable, write_receipt, MEDIA_SOURCES, SITE_PREFIX, THEME_URL,
 )
 
 ASSETS=('wordpress-page-fragment.review-only.html','flagship.css','chronicle.css',
@@ -103,10 +107,102 @@ class SafetyTests(unittest.TestCase):
         self.assert_closed(lambda:check_axe(p,'0'*64),'axe-core source incomplete')
     def test_requires_integrated_browser_runner(self):
         p=self.root/'verify_playground_browser.py';p.write_text('from integrated_admission_checks import X\naudit_archive_gallery BrowserEvidencePage axe.run\n')
-        self.assertEqual(len(check_runner(p)['browser_runner_sha256']),64)
+        self.assertEqual(len(check_runner(p,hashlib.sha256(p.read_bytes()).hexdigest())['browser_runner_sha256']),64)
         p.write_text('print("pretend test passed")')
-        self.assert_closed(lambda:check_runner(p),'browser harness does not include')
+        self.assert_closed(lambda:check_runner(p,hashlib.sha256(p.read_bytes()).hexdigest()),'browser harness does not include')
     def test_readiness_timeout_does_not_accept_unavailable_localhost(self):
         self.assert_closed(lambda:local_ready(59999,.1),'never reached 200')
+
+    def test_browser_runner_token_comments_not_enough_without_approved_hash(self):
+        p=self.root/'verify_playground_browser.py'
+        p.write_text('# from integrated_admission_checks import\n'
+                     '# audit_archive_gallery BrowserEvidencePage axe.run\n'
+                     'print("FAKE PASS")\n')
+        self.assert_closed(lambda:check_runner(p,'0'*64),'differs from independently approved')
+        self.assert_closed(lambda:check_runner(p,''),'reviewed browser-runner SHA-256 required')
+
+    def test_browser_runner_mutation_rejected_after_independent_review(self):
+        p=self.root/'verify_playground_browser.py'
+        p.write_text('from integrated_admission_checks import X\n'
+                     'audit_archive_gallery BrowserEvidencePage axe.run\n')
+        reviewed=hashlib.sha256(p.read_bytes()).hexdigest()
+        p.write_text(p.read_text()+'\nprint("altered")\n')
+        self.assert_closed(lambda:check_runner(p,reviewed),'differs from independently approved')
+
+    def test_occupied_local_staging_port_rejected(self):
+        with socket.socket() as held:
+            held.bind(('127.0.0.1',0))
+            port=held.getsockname()[1]
+            self.assert_closed(lambda:port_vacant(port),'stage port occupied')
+        port_vacant(port)
+
+    def test_dead_playground_process_fails_immediately(self):
+        class Dead:
+            def poll(self):return 1
+        self.assert_closed(lambda:local_ready(59999,.1,Dead()),'process exited before ready')
+
+    def test_executable_fingerprint_required_and_enforced(self):
+        p=self.root/'wp-playground'
+        p.write_text('#!/bin/sh\nexit 0\n')
+        p.chmod(0o700)
+        digest=hashlib.sha256(p.read_bytes()).hexdigest()
+        self.assertEqual(check_executable(p,digest,'Playground CLI'),p.resolve())
+        self.assert_closed(lambda:check_executable(p,'0'*64,'Playground CLI'),'differs from approved')
+        linked=self.root/'symlink';linked.symlink_to(p)
+        self.assert_closed(lambda:check_executable(linked,digest,'Playground CLI'),'symlinked')
+
+    def test_lighthouse_requires_real_audits_not_empty_json(self):
+        p=self.root/'lighthouse.json';url='http://127.0.0.1:19400/'
+        p.write_text('{}')
+        self.assert_closed(lambda:measured_lighthouse(p,url,'mobile'),'report incomplete')
+        p.write_text(json.dumps({'lighthouseVersion':'13.0.0',
+                                 'requestedUrl':url,'finalDisplayedUrl':url,
+                                 'audits':{},'categories':{'performance':{'score':1}}}))
+        self.assert_closed(lambda:measured_lighthouse(p,url,'mobile'),'largest-contentful-paint')
+
+    def test_lighthouse_strict_origin_and_metrics(self):
+        p=self.root/'lighthouse.json';url='http://127.0.0.1:19400/'
+        report={'lighthouseVersion':'13.0.0','requestedUrl':url,
+                'finalDisplayedUrl':url,
+                'audits':{'largest-contentful-paint':{'numericValue':2100},
+                          'cumulative-layout-shift':{'numericValue':0.03},
+                          'total-blocking-time':{'numericValue':150}},
+                'categories':{'performance':{'score':0.89}}}
+        p.write_text(json.dumps(report))
+        score=measured_lighthouse(p,url,'mobile')
+        self.assertTrue(score['good_lab_lcp'] and score['good_lab_cls'])
+        report['finalDisplayedUrl']='https://finalvestige.com/'
+        p.write_text(json.dumps(report))
+        self.assert_closed(lambda:measured_lighthouse(p,url,'mobile'),'navigated away')
+        report['finalDisplayedUrl']=url
+        report['audits']['largest-contentful-paint']['numericValue']=float('nan')
+        p.write_text(json.dumps(report))
+        self.assert_closed(lambda:measured_lighthouse(p,url,'mobile'),'missing/invalid')
+
+    def test_lighthouse_bad_lab_threshold_is_recorded_not_a_pass(self):
+        p=self.root/'lighthouse.json';url='http://127.0.0.1:19400/'
+        report={'lighthouseVersion':'13.0.0','requestedUrl':url,'finalDisplayedUrl':url,
+                'audits':{'largest-contentful-paint':{'numericValue':5000},
+                          'cumulative-layout-shift':{'numericValue':0.32},
+                          'total-blocking-time':{'numericValue':900}},
+                'categories':{'performance':{'score':0.36}}}
+        p.write_text(json.dumps(report))
+        score=measured_lighthouse(p,url,'desktop')
+        self.assertFalse(score['good_lab_lcp'])
+        self.assertFalse(score['good_lab_cls'])
+
+    def test_append_only_receipts_dont_reuse_stale_success(self):
+        old=self.root/'FV_STAGE_LAUNCH_RECEIPT.json'
+        old.write_text('{"status":"PREVIOUS_RUN_PASSED"}\n')
+        first={'status':'FAILED_CLOSED','reason':'first failure'}
+        second={'status':'FAILED_CLOSED','reason':'second failure'}
+        a=write_receipt(self.root,first)
+        b=write_receipt(self.root,second)
+        self.assertNotEqual(a,b)
+        self.assertEqual(len(list(self.root.glob('FV_STAGE_LAUNCH_RECEIPT_*.json'))),2)
+        self.assertEqual(old.read_text(),'{"status":"PREVIOUS_RUN_PASSED"}\n')
+        self.assertEqual(json.loads(a.read_text())['reason'],'first failure')
+        self.assertEqual(json.loads(b.read_text())['reason'],'second failure')
+        if os.name=='posix':self.assertEqual(a.stat().st_mode&0o077,0)
 
 if __name__=='__main__':unittest.main(verbosity=2)
