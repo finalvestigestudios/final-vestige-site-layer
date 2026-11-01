@@ -11,6 +11,10 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R120 real positive controls for sixteen-entry tamper matrix (DRAFT / RELEASE HOLD)
+
+The [R120 dual-control gate](scripts/sealed_tamper_matrix_r119.py) now proves the **unchanged** encrypted eight-record archive genuinely decrypts to the exact six native Windows candidate hashes **before and after** the R119 sixteen cipher/tag mutations. Seven added adversarial tests reject always-failing decryptors, fake success without bytes, corrupted/extra intake files, source drift, and missing final decryption. The existing CI privacy boundary is unchanged. [Threat model and test contract](docs/SEALED_TAMPER_POSITIVE_CONTROLS_R120.md). **No release authorization or physical Windows 11 acceptance.**
+
 ## R118 real six-binary encrypted CI roundtrip (DRAFT / RELEASE HOLD)
 
 The [R118 source-owned integration harness](scripts/native_sealed_roundtrip_r118.py), its [15 fail-closed tests](tests/test_native_sealed_roundtrip_r118.py) and [limits/runbook](docs/NATIVE_SEALED_ROUNDTRIP_R118.md) exercise R117's AES-256-GCM seal/unseal against **all six actual Windows x64 R9-smoked EXEs** within the same ephemeral Windows Actions runner, preserve all eight exact source hashes, and require rejection of tampered real ciphertext. Temporary key/bundle/private plaintext are deleted and **never uploaded**. This is NOT physical Windows 11 acceptance, independent R9 evidence custody, malware clearance, premium distribution, signing, QD approval or a release.
