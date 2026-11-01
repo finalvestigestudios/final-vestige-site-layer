@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERN = "test_windows11_manual_acceptance_r109.py"
-SAFE_NAME = re.compile(r"test_[a-z][a-z0-9_]{0,100}\\Z")
+SAFE_NAME = re.compile(r"test_[a-z][a-z0-9_]{0,100}$")
 
 
 def collect_names(cases):
