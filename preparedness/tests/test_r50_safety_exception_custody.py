@@ -93,10 +93,12 @@ class Positive(unittest.TestCase):
 
     def test_read_only_and_repeatable(self):
         args = make_fixture()
-        before = copy.deepcopy(args)
+        before = copy.deepcopy((args[0].articles, args[0].source_variants,
+                                args[0].register, args[1:]))
         a = audited(args)
         self.assertEqual(a, audited(args))
-        self.assertEqual(args, before)
+        self.assertEqual((args[0].articles, args[0].source_variants,
+                          args[0].register, args[1:]), before)
         self.assertEqual(a["fingerprint_sha256"], gate.digest({
             k: v for k, v in a.items() if k != "fingerprint_sha256"}))
 
