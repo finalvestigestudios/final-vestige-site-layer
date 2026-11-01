@@ -42,6 +42,16 @@ def _stat_identity(path: Path) -> list[int]:
         raise ValueError('unsafe build input') from None
 
 
+def _same_path_descriptor_identity(path_identity: list[int],
+                                   descriptor_identity: list[int],
+                                   *, windows: bool | None = None) -> bool:
+    """Keep complete per-view custody despite Windows lstat/fstat ctime drift."""
+    if windows is None:
+        windows = os.name == 'nt'
+    return (path_identity[:-1] == descriptor_identity[:-1] if windows
+            else path_identity == descriptor_identity)
+
+
 def snapshot(root: Path) -> dict:
     """Capture complete Python source inventory plus two build-control files."""
     root = Path(root).resolve(strict=True)
@@ -105,7 +115,8 @@ def _read_manifest(path: Path, root: Path) -> dict:
             raise ValueError('oversized custody manifest')
         flags = os.O_RDONLY | getattr(os, 'O_NOFOLLOW', 0) | getattr(os, 'O_BINARY', 0)
         fd = os.open(path, flags)
-        if list(source_gate._identity(os.fstat(fd))) != before:
+        opened = list(source_gate._identity(os.fstat(fd)))
+        if not _same_path_descriptor_identity(before, opened):
             raise ValueError('custody manifest replaced')
         payload = bytearray()
         while len(payload) <= MAX_MANIFEST_BYTES:
@@ -114,7 +125,7 @@ def _read_manifest(path: Path, root: Path) -> dict:
                 break
             payload.extend(chunk)
         if (len(payload) != before[4] or len(payload) > MAX_MANIFEST_BYTES or
-                list(source_gate._identity(os.fstat(fd))) != before or
+                list(source_gate._identity(os.fstat(fd))) != opened or
                 _stat_identity(path) != before):
             raise ValueError('custody manifest changed')
         def no_duplicate_keys(pairs):
