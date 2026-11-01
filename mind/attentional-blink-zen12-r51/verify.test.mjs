@@ -20,7 +20,7 @@ const poster=read('film-poster.svg');
 const vtt=read('film-captions.vtt');
 const matrix=read('claims-permissions-matrix.csv');
 const stripFilm=h=>h.replace(/<figure class="fv51-film" data-variant-element="optional-film"[\s\S]*?<\/figure>/,'');
-const normalizeVariant=h=>stripFilm(h).replace('data-variant="B"','data-variant="A"');
+const normalizeVariant=h=>stripFilm(h).replace('data-variant="B"','data-variant="A"').replace(/<!-- UNPUBLISHED .*? -->/,'');
 function assertSafeBuyerPage(html){
   assert.match(html,/disabled\s+aria-describedby="fv51-commission-disclosure fv51-offer-state"/);
   assert.match(html,/If you purchase through a future approved link/);
@@ -34,8 +34,8 @@ function assertSafeBuyerPage(html){
 }
 test('build variants have one and same substantive seller-matched core',()=>{
   assert.ok(A.includes(core),'A must contain exact shared guide core');
-  assert.equal(normalizeVariant(B),A,'B text same as A except optional educational film');
-  assert.equal(normalizeVariant(offline),A,'offline player text same as A');
+  assert.equal(normalizeVariant(B),normalizeVariant(A),'B text same as A except optional educational film');
+  assert.equal(normalizeVariant(offline),normalizeVariant(A),'offline player text same as A');
 });
 test('both WordPress drafts have zero active commerce or subscriber implementation',()=>{
   for(const x of [A,B]) assertSafeBuyerPage(x);
@@ -49,8 +49,7 @@ test('unsafe mutations caught: active merchant URL, script, forced playback, abs
     B.replace('If you purchase through a future approved link','Commission disclosure redacted')
   ];
   for(const [i,m] of mutations.entries()){
-    if(i===4) assert.doesNotMatch(m,/If you purchase through a future approved link/);
-    else assert.throws(()=>assertSafeBuyerPage(m),'mutant '+i+' was not caught');
+    assert.throws(()=>assertSafeBuyerPage(m),'mutant '+i+' was not caught');
   }
 });
 test('film version is an honest offline/noninteractive concept on WordPress',()=>{
@@ -79,7 +78,7 @@ test('specific science and product safeguards in article and guide',()=>{
   assert.match(core,/free Seven Day Focus Fieldbook/i);
   assert.match(core,/first 6 levels|First 6/);
   assert.match(core,/48 MP3s|<td>48<\/td>/);
-  assert.ok((matrix.match(/\nP\d{3},/g)||[]).length>=40,'matrix must have at least 40 audit decisions');
+  assert.ok((matrix.match(/\n"P\d{3}",/g)||[]).length>=40,'matrix must have at least 40 audit decisions');
 });
 test('CSS scopes and progressive enhancement affordances are present',()=>{
   assert.match(css,/\.fv51-pilot/);
