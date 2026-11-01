@@ -1,6 +1,6 @@
 # Scotch Cap / 1946 Hilo tsunami: six-image recovery and rights-held cache plan — 2026-11-01
 
-**Scope:** [*The Lighthouse Was Gone at Dawn*, published post 418](https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/). Fresh **authenticated, read-only WordPress `posts.get(context=edit)`** returned status `publish`, modified `2026-08-28T03:11:08`, and all **six image URLs plus six full ALT descriptions match** immutable census `qa/media-recovery/parts/01.json` (Git blob `4d...` is NOT asserted; the exact blob SHA is stored in the JSON ledger). No Gutenberg post block rewrites or image downloads.
+**Scope:** [*The Lighthouse Was Gone at Dawn*, published post 418](https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/). Fresh **authenticated, read-only WordPress `posts.get(context=edit)`** returned status `publish`, modified `2026-08-28T03:11:08`, and all **six image URLs plus six full ALT descriptions match** immutable census `qa/media-recovery/parts/01.json` (the frozen file's exact Git blob SHA is recorded in the JSON ledger). No Gutenberg post block rewrites or image downloads.
 
 [Machine-readable exact-URL/source/viewer/browser/rights/size audit](../qa/media-recovery/tsunami_418_uscg_noaa_usgs_20261101.json). [Independent offline validator](../qa/media-recovery/validate_tsunami_418.cjs); [53 adversarial cases](../qa/media-recovery/test_tsunami_418.cjs).
 
