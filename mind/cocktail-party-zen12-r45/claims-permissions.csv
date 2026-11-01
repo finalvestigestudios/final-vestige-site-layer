@@ -18,7 +18,7 @@ id,claim_or_decision,source_ids,evidence_type,status,editorial_action
 "017","2021 sample had 29 percent own-name detection","S05","original result","supported for sample","Include scope"
 "018","Unexpected words rarely captured attention","S05","original result","supported for task","Avoid universal language"
 "019","Preregistration proves universal accuracy","S05","methodological limit","reject","Explain conditions"
-"020","2025 follow-up exists","S06","peer-reviewed 2025 publication","supported","Optional nuanced reference"
+"020","2025 preregistered study: own-name report 13/48 (27%) autistic and 18/50 (36%) comparison","S06","peer-reviewed 2025 publication","supported","Optional nuanced reference"
 "021","2025 group findings justify stereotypes","S06","ethics and external validity","reject","No group profiling"
 "022","Puységur records have 153 source rows","S07","authenticated published page","supported on read-only check","Archive link"
 "023","Puységur history proves modern hypnosis efficacy","S07","different research domain","reject","Historical parallel only"
