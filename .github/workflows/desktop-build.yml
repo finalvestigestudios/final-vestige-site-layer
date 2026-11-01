@@ -59,6 +59,12 @@ jobs:
         run: python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
+      - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/diagnose_windows_source_r100.py
+          if ($LASTEXITCODE -ne 0) { throw "Windows source-stage diagnostic unavailable" }
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         shell: pwsh
         run: |
