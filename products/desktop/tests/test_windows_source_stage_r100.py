@@ -46,10 +46,14 @@ class WindowsSourceStageR100(unittest.TestCase):
              patch.object(gate.source_gate, "report_data", return_value={"all_six_passed": True}), \
              contextlib.redirect_stdout(stdout):
             results = probe.probe(Path("synthetic"))
-        self.assertEqual(results, {
+        for phase, expected in {
+            "root_paths": False,
+            "source_inventory": False, "test_inventory": False,
+            "source_metadata": False,
             "inventory": True, "normal_tests": False,
             "optimized_tests": False, "engine_smokes": True,
-        })
+        }.items():
+            self.assertEqual(results[phase], expected, phase)
         rendered = stdout.getvalue()
         self.assertNotIn("PRIVATE", rendered)
         self.assertIn("FVS_WIN_SOURCE_STAGE:read_only_no_release=TRUE", rendered)
