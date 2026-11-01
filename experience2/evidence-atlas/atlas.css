@@ -149,3 +149,9 @@
 .fva-card__desk-link[hidden],.fva-desk-status[hidden]{display:none!important}
 .fva-desk-status{padding:12px 16px;border-left:2px solid var(--gold);color:var(--paper);font-size:14px}
 @media print{.fva-card__desk-link,.fva-desk-status{display:none!important}}
+
+/* R49: Only Atlas-generated, custody-gated links inside legacy Research Desk.
+   The Research Desk's original CSS/template remain unchanged. */
+.fv-ex2-ledger [data-fvx-to-atlas]{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #8b744b}
+.fv-ex2-ledger [data-fvx-to-atlas]:focus-visible{outline:3px solid #d8b46e;outline-offset:3px}
+@media print{.fv-ex2-ledger [data-fvx-to-atlas]{display:none!important}}

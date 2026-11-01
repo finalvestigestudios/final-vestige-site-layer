@@ -52,7 +52,7 @@ class ResearchDeskBridgeR48(unittest.TestCase):
             frag=(Path(temp)/'fv-ex2-evidence-atlas/templates/atlas-fragment.html').read_bytes()
             expected=hashlib.sha256(frag).hexdigest()
             self.assertIn(expected,(HERE/'final-vestige-ex2-evidence-atlas.php').read_text())
-            self.assertEqual(manifest['schema'],'fv.ex2.apollo.wp-stage.r48.v1')
+            self.assertEqual(manifest['schema'],'fv.ex2.apollo.wp-stage.r49.v1')
     def test_component_css_keyboard_and_print(self):
         css=(HERE/'atlas.css').read_text()
         self.assertIn('.fva-card__desk-link{display:inline-flex;align-items:center;min-height:44px',css)
