@@ -50,8 +50,12 @@ def audit(html: str, output: pathlib.Path):
                 assert not overflow, (width, js_enabled, 'horizontal overflow')
                 assert not requests, (width, js_enabled, requests)
                 if width in (390, 1440):
+                    # Fresh document avoids transient hover/focus from interaction testing.
+                    shot = context.new_page()
+                    shot.set_content(html, wait_until='load')
                     path = output / f"r35-r34-{width}-{'js' if js_enabled else 'nojs'}.png"
-                    page.screenshot(path=str(path), full_page=True, animations='disabled')
+                    shot.screenshot(path=str(path), full_page=True, animations='disabled')
+                    shot.close()
                 # set_content bypasses an HTTP navigation and is NOT a hosted CWV test.
                 perf = page.evaluate('''() => ({
                   lcp: performance.getEntriesByType('largest-contentful-paint').map(x=>x.startTime).at(-1)||null,
