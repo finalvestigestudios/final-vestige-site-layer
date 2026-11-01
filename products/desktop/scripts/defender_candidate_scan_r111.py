@@ -60,14 +60,15 @@ def require_native_win11() -> None:
 def locate_defender() -> Path:
     """Use only well-known installed Defender paths; never download a scanner."""
     options = []
-    program_files = Path(os.environ.get("ProgramFiles", ""))
-    if program_files.is_absolute():
-        options.append(program_files / "Windows Defender" / "MpCmdRun.exe")
     program_data = Path(os.environ.get("ProgramData", ""))
     if program_data.is_absolute():
         platform_root = program_data / "Microsoft" / "Windows Defender" / "Platform"
         if platform_root.is_dir() and not platform_root.is_symlink():
+            # Microsoft documents that the newest platform engine lives here.
             options += sorted(platform_root.glob("*/MpCmdRun.exe"), reverse=True)
+    program_files = Path(os.environ.get("ProgramFiles", ""))
+    if program_files.is_absolute():
+        options.append(program_files / "Windows Defender" / "MpCmdRun.exe")
     for item in options:
         if item.is_file() and not item.is_symlink() and item.is_absolute():
             return item.resolve(strict=True)
@@ -151,7 +152,7 @@ def scan_candidates(dist: str | Path, r9: str | Path,
         scan_one(scanner, root / name)
         _unchanged(root, prior, checksum_sha)
         scanned.append({"name": name, "sha256": prior[name],
-                        "defender_custom_scan": "zero_exit_no_detection_reported"})
+                        "defender_custom_scan": "zero_exit_result_remediation_ambiguous"})
     health_check(scanner)
     _unchanged(root, prior, checksum_sha)
     return {
