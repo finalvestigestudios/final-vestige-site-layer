@@ -7,6 +7,7 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
+from html import escape
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -71,7 +72,7 @@ def audit(manifest: dict, fixture: dict, ledger: dict, manuscripts: dict[int, st
         if commercial and "Commercial disclosure:" not in body:
             errors.append(f"issue_{n}_missing_commercial_disclosure")
         if board:
-            if original_item.get("preheader", "") not in board:
+            if escape(original_item.get("preheader", ""), quote=True).replace("&#x27;", "&#x27;") not in board:
                 errors.append(f"issue_{n}_reviewer_preheader_drift")
             if ledger_item.get("destination_status", "") not in board:
                 errors.append(f"issue_{n}_reviewer_destination_drift")
