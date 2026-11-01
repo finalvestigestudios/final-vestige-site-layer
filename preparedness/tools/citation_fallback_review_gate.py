@@ -175,6 +175,21 @@ def _load_recent_transcript_validator():
     return module.preflight_unsigned_baseline
 
 
+def _load_historical_history_unsigned_preflight():
+    # R41: evidence-retaining retrospective audit contract. Still zero actual
+    # receipts, human review or ledger in CI; keep the public release on HOLD.
+    location = Path(__file__).with_name('reviewer_receipt_history_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R41 historical receipt-custody gate')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r41_private_retrospective_custody', location)
+    need(spec is not None and spec.loader is not None,
+         'R41 history gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.preflight_unsigned_history
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -185,6 +200,7 @@ build_private_reviewer_csv_export = _load_private_reviewer_csv_export_validator(
 build_quarantine_reviewer_csv = _load_quarantined_csv_intake_validator()
 build_private_key_receipt_challenge = _load_private_key_receipt_validator()
 build_recent_transcript_unsigned_preflight = _load_recent_transcript_validator()
+build_history_unsigned_preflight = _load_historical_history_unsigned_preflight()
 
 
 def canonical(value):
@@ -395,6 +411,20 @@ def audit(lib, expected=EXPECTED):
              and unsigned_baseline['qualified_safety_clearance'] is False
              and unsigned_baseline['independent_QD_approval'] is False,
              'R40 machine baseline cannot certify real reviewer or release')
+        # R41 protects the long-term original R40 full-evidence retention
+        # contract WITHOUT inventing receipts or an authenticated human.
+        # No durable ledger, external trust anchor or export is created here.
+        history_baseline = build_history_unsigned_preflight(unsigned_baseline)
+        need(history_baseline['release_state'] == 'HOLD'
+             and history_baseline['archived_signed_receipt_records'] == 0
+             and history_baseline['trusted_external_ledger_present'] is False
+             and history_baseline['parent_R37_fingerprint_sha256'] ==
+                 reviewer_csv['manifest']['fingerprint_sha256']
+             and history_baseline['may_publish'] is False
+             and history_baseline['qualified_safety_clearance'] is False
+             and history_baseline['independent_QD_approval'] is False
+             and history_baseline['human_source_reviews_completed'] is False,
+             'R41 machine history cannot fabricate human review or release')
     return payload
 
 def audit_checkout(root):
