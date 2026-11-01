@@ -9,6 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from fvs_suite.journal_io import read_regular_bytes, append_verified_event
+from synthetic_windows_fs_r104 import altered_lstat, changed_stat
 
 
 class DescriptorJournalR47Tests(unittest.TestCase):
@@ -128,6 +129,22 @@ class DescriptorJournalR47Tests(unittest.TestCase):
 
     def test_change_during_validation_blocks_append(self):
         self.journal.write_bytes(self.first)
+        if os.name == "nt":
+            # NTFS may deny a second writer while our append descriptor is
+            # live. Simulate descriptor metadata drift AFTER validation, and
+            # require the exact production _unchanged check to reject it.
+            real_fstat = os.fstat
+            active = {"active": False}
+            def modified():
+                active["active"] = True
+            def drift(fd):
+                info = real_fstat(fd)
+                return changed_stat(info, "st_size") if active["active"] else info
+            with patch("fvs_suite.journal_io.os.fstat", side_effect=drift):
+                with self.assertRaisesRegex(ValueError, "changed while validating"):
+                    append_verified_event(self.journal, self.second, 128, modified)
+            self.assertEqual(self.journal.read_bytes(), self.first)
+            return
         def modified():
             self.journal.write_bytes(b'{"review":"bad"}\n')
         with self.assertRaisesRegex(ValueError, "changed while validating"):
@@ -136,11 +153,25 @@ class DescriptorJournalR47Tests(unittest.TestCase):
 
     def test_replacement_during_validation_blocks_append(self):
         self.journal.write_bytes(self.first)
-        def swap():
-            self.journal.unlink()
-            os.link(self.other, self.journal)
-        with self.assertRaises(ValueError):
-            append_verified_event(self.journal, self.second, 128, swap)
+        if os.name == "nt":
+            # A live Windows handle can prevent unlink; the adversarial
+            # observation is the *different pathname inode*, not successful
+            # platform-specific deletion.
+            active = {"active": False}
+            original_lstat = os.lstat
+            def swap():
+                active["active"] = True
+            observer = altered_lstat(self.journal, active, original_lstat)
+            with patch("fvs_suite.journal_io.os.lstat", side_effect=observer):
+                with self.assertRaises(ValueError):
+                    append_verified_event(self.journal, self.second, 128, swap)
+            self.assertEqual(self.journal.read_bytes(), self.first)
+        else:
+            def swap():
+                self.journal.unlink()
+                os.link(self.other, self.journal)
+            with self.assertRaises(ValueError):
+                append_verified_event(self.journal, self.second, 128, swap)
         self.assertEqual(self.other.read_bytes(), b"UNRELATED-PRIVATE-DATA\n")
 
     def test_validation_of_single_newline_event(self):
@@ -154,6 +185,22 @@ class DescriptorJournalR47Tests(unittest.TestCase):
         self.journal.write_bytes(self.first)
         actual_fdopen = os.fdopen
         race_once = False
+        if os.name == "nt":
+            active = {"active": False}
+            original_lstat = os.lstat
+            def redirect_fdopen(*args, **kwargs):
+                nonlocal race_once
+                if not race_once:
+                    race_once = True
+                    active["active"] = True
+                return actual_fdopen(*args, **kwargs)
+            observer = altered_lstat(self.journal, active, original_lstat)
+            with patch("fvs_suite.journal_io.os.lstat", side_effect=observer):
+                with patch("fvs_suite.journal_io.os.fdopen", side_effect=redirect_fdopen):
+                    with self.assertRaisesRegex(ValueError, "path changed"):
+                        read_regular_bytes(self.journal, 128, "Review journal")
+            self.assertEqual(self.journal.read_bytes(), self.first)
+            return
         def redirect_fdopen(*args, **kwargs):
             nonlocal race_once
             if not race_once:

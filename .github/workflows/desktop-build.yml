@@ -83,6 +83,12 @@ jobs:
           }
           python products/desktop/scripts/diagnose_windows_inventory_r101.py
           if ($LASTEXITCODE -ne 0) { throw "R101 diagnostic execution unavailable" }
+      - name: R104 synthetic toolchain stage diagnosis (read-only, NOT a release gate)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/diagnose_windows_toolchain_r104.py
+          if ($LASTEXITCODE -ne 0) { throw "R104 diagnostic unavailable" }
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         shell: pwsh
         run: |

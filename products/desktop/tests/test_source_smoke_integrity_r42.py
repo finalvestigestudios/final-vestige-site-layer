@@ -12,6 +12,7 @@ SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "source_smoke_gate.py
 SPEC = importlib.util.spec_from_file_location("source_smoke_gate_r42", SCRIPT)
 gate = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(gate)
+from synthetic_windows_fs_r104 import changed_stat
 
 
 class SourceSmokeIntegrityR42(unittest.TestCase):
@@ -149,10 +150,33 @@ class SourceSmokeIntegrityR42(unittest.TestCase):
             gate.source_inventory(self.root)
 
     def test_file_replaced_after_lstat_before_open_is_rejected(self):
+        if os.name == "nt":
+            # Native Windows may refuse unlink for files held elsewhere.
+            # Simulate a new descriptor inode after path lstat, validating
+            # the real fail-closed identity gate without an OS-dependent race.
+            item = self.package / "engine.py"
+            real_open, real_fstat = gate.os.open, gate.os.fstat
+            target = {"fd": None}
+            def observe_open(path, flags, *args, **kwargs):
+                fd = real_open(path, flags, *args, **kwargs)
+                if Path(path).resolve(strict=True) == item.resolve(strict=True):
+                    target["fd"] = fd
+                return fd
+            def observe_fstat(fd):
+                info = real_fstat(fd)
+                return changed_stat(info) if target["fd"] == fd else info
+            with patch.object(gate.os, "open", side_effect=observe_open):
+                with patch.object(gate.os, "fstat", side_effect=observe_fstat):
+                    with self.assertRaisesRegex(ValueError, "changed"):
+                        gate.source_inventory(self.root)
+            self.assertEqual(item.read_bytes(), b"# deterministic synthetic engine\n")
+            return
+        # POSIX tests an actual unlink/recreate race before opening.
+
         item = self.package / "engine.py"
         original_open = gate.os.open
         def replace_then_open(path, flags, *args, **kwargs):
-            if Path(path) == item:
+            if Path(path).resolve(strict=True) == item.resolve(strict=True):
                 item.unlink()
                 item.write_bytes(b"# swapped before descriptor\n")
             return original_open(path, flags, *args, **kwargs)
@@ -161,6 +185,39 @@ class SourceSmokeIntegrityR42(unittest.TestCase):
                 gate.source_inventory(self.root)
 
     def test_file_mutated_while_reading_is_rejected(self):
+        if os.name == "nt":
+            # Windows can deny writes while the source descriptor is open.
+            # Exercise unchanged production before/after descriptor custody
+            # by changing the reported mtime after the first actual read.
+            item = self.package / "engine.py"
+            real_open = gate.os.open
+            real_read = gate.os.read
+            real_fstat = gate.os.fstat
+            target = {"fd": None, "changed": False}
+            def observe_open(path, flags, *args, **kwargs):
+                fd = real_open(path, flags, *args, **kwargs)
+                if Path(path).resolve(strict=True) == item.resolve(strict=True):
+                    target["fd"] = fd
+                return fd
+            def observe_read(fd, size):
+                data = real_read(fd, size)
+                if fd == target["fd"]:
+                    target["changed"] = True
+                return data
+            def observe_fstat(fd):
+                info = real_fstat(fd)
+                if fd == target["fd"] and target["changed"]:
+                    return changed_stat(info, "st_mtime_ns")
+                return info
+            with patch.object(gate.os, "open", side_effect=observe_open):
+                with patch.object(gate.os, "read", side_effect=observe_read):
+                    with patch.object(gate.os, "fstat", side_effect=observe_fstat):
+                        with self.assertRaisesRegex(ValueError, "changed"):
+                            gate.source_inventory(self.root)
+            self.assertEqual(item.read_bytes(), b"# deterministic synthetic engine\n")
+            return
+        # POSIX mutates the real file after the first descriptor read.
+
         item = self.package / "engine.py"
         original_read = gate.os.read
         mutated = False

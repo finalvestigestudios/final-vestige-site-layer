@@ -28,7 +28,13 @@ class ReleaseReportR38Tests(unittest.TestCase):
         return self.reports / name
 
     def test_preflight_valid_outside(self):
-        self.assertEqual(prepare_report_path(self.target(), self.dist), self.target())
+        accepted = prepare_report_path(self.target(), self.dist)
+        # Windows temporary directories may resolve through volume junctions,
+        # short names or differently cased drive paths. Verify the *actual*
+        # existing parent directory, rather than its textual spelling.
+        self.assertTrue(os.path.samefile(accepted.parent, self.reports))
+        self.assertEqual(accepted.name, self.target().name)
+        self.assertFalse(os.path.lexists(accepted))
 
     def test_atomic_complete_json_is_readable(self):
         dest = prepare_report_path(self.target(), self.dist)

@@ -9,6 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from fvs_suite.review_lock import exclusive_review_lock
+from synthetic_windows_fs_r104 import altered_lstat
 
 
 class PremiumReviewLockTests(unittest.TestCase):
@@ -18,6 +19,30 @@ class PremiumReviewLockTests(unittest.TestCase):
         self.folder = Path(self.tmp.name)
         self.journal = self.folder / "human-review.jsonl"
         self.lock = self.folder / "human-review.jsonl.lock"
+
+    def _assert_synthetic_lock_drift(self, *, missing=False, field="st_ino",
+                                     call_owner=True):
+        """Model an observed race on Windows without deleting a held file.
+
+        Real Windows sharing semantics may reject unlink/overwrite while the
+        descriptor is live. Simulate only the path's security metadata and
+        demand fail-closed ownership + no cleanup of a suspect lock.
+        """
+        real_lstat = os.lstat
+        active = {"active": False}
+        observer = altered_lstat(self.lock, active, real_lstat,
+                                 missing=missing, field=field)
+        with patch("fvs_suite.review_lock.os.lstat", side_effect=observer):
+            with self.assertRaises(ValueError):
+                with exclusive_review_lock(self.journal) as owned:
+                    active["active"] = True
+                    if call_owner:
+                        owned()
+        # This lock is real and unchanged on disk, but the custody check saw
+        # a loss of identity and intentionally withheld automatic cleanup.
+        self.assertTrue(self.lock.is_file())
+        self.assertEqual(self.lock.read_bytes(),
+                         f"pid={os.getpid()}\n".encode("ascii"))
 
     def test_exclusive_private_lock_and_cleanup(self):
         with exclusive_review_lock(self.journal) as owned:
@@ -65,6 +90,9 @@ class PremiumReviewLockTests(unittest.TestCase):
         self.assertEqual(private.read_bytes(), b"private records\n")
 
     def test_replaced_lock_blocks_confirmation_and_never_deletes_replacement(self):
+        if os.name == "nt":
+            self._assert_synthetic_lock_drift()
+            return
         with self.assertRaises(ValueError):
             with exclusive_review_lock(self.journal) as owned:
                 self.lock.unlink()
@@ -73,6 +101,9 @@ class PremiumReviewLockTests(unittest.TestCase):
         self.assertEqual(self.lock.read_bytes(), b"different writer\n")
 
     def test_unlinked_lock_blocks_confirmation(self):
+        if os.name == "nt":
+            self._assert_synthetic_lock_drift(missing=True)
+            return
         with self.assertRaises(ValueError):
             with exclusive_review_lock(self.journal) as owned:
                 self.lock.unlink()
@@ -93,6 +124,9 @@ class PremiumReviewLockTests(unittest.TestCase):
         self.assertTrue(extra.exists())
 
     def test_modified_lock_blocks_confirmation_without_silent_cleanup(self):
+        if os.name == "nt":
+            self._assert_synthetic_lock_drift(field="st_size")
+            return
         with self.assertRaises(ValueError):
             with exclusive_review_lock(self.journal) as owned:
                 with self.lock.open("ab") as stream:
@@ -101,6 +135,9 @@ class PremiumReviewLockTests(unittest.TestCase):
         self.assertIn(b"tampered", self.lock.read_bytes())
 
     def test_missing_ownership_check_still_fails_on_exit(self):
+        if os.name == "nt":
+            self._assert_synthetic_lock_drift(call_owner=False)
+            return
         with self.assertRaises(ValueError):
             with exclusive_review_lock(self.journal):
                 self.lock.unlink()
