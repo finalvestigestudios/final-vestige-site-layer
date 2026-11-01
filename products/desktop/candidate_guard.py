@@ -24,6 +24,23 @@ def _signature(info: os.stat_result) -> tuple[int, int, int, int, int]:
             info.st_mtime_ns, info.st_ctime_ns)
 
 
+def _same_path_descriptor_signature(path_info: os.stat_result,
+                                    descriptor_info: os.stat_result,
+                                    *, windows: bool | None = None) -> bool:
+    """Keep strict two-view custody while tolerating Windows creation-time API drift.
+
+    Path lstat and fd fstat can report different st_ctime_ns on Windows for an
+    unchanged file. Compare all other identity fields across APIs, and retain
+    full within-path and within-descriptor timestamp checks around the read.
+    Linux retains the full cross-API signature equality.
+    """
+    if windows is None:
+        windows = os.name == "nt"
+    path_sig = _signature(path_info)
+    descriptor_sig = _signature(descriptor_info)
+    return path_sig[:-1] == descriptor_sig[:-1] if windows else path_sig == descriptor_sig
+
+
 def _ordinary(path: Path, maximum: int) -> os.stat_result:
     try:
         info = path.lstat()
@@ -58,7 +75,7 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
     try:
         with os.fdopen(descriptor, "rb") as stream:
             opened = os.fstat(stream.fileno())
-            if (_signature(opened) != _signature(before)
+            if (not _same_path_descriptor_signature(before, opened)
                     or not stat.S_ISREG(opened.st_mode) or opened.st_nlink > 1):
                 raise CandidateGuardError("Candidate changed during opening")
             digest = hashlib.sha256()
@@ -76,7 +93,9 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
                 raise CandidateGuardError("Candidate changed during reading")
     except OSError:
         raise CandidateGuardError("Unable to read candidate payload safely") from None
-    if _signature(_ordinary(path, maximum)) != _signature(opened):
+    after_path = _ordinary(path, maximum)
+    if (_signature(after_path) != _signature(before)
+            or not _same_path_descriptor_signature(after_path, opened)):
         raise CandidateGuardError("Candidate path changed during reading")
     if return_bytes:
         return b"".join(chunks)
