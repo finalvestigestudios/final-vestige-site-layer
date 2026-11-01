@@ -11,6 +11,20 @@
 | GrantAuditStudioPro.exe | Premium (internal preview) | claims, ledger, budget CSV | reconciliation, budget exceptions, evidence SHA256 manifest |
 | ProcureGuardStudioPro.exe | Premium (internal preview) | PO, invoice, receipt CSV | three-way matching exceptions and SHA256 manifest |
 
+## R97 LedgerDiff and GrantAudit source-label visibility (pre-release)
+
+LedgerDiff Lite and both GrantAudit Studio Pro reconciliation modes now display
+original source-ID/program/reference labels with visible Unicode controls,
+backslashes, and escaped literal semicolons. A source semicolon cannot pretend
+to be an additional report-list entry; a typed escape differs from an actual
+hidden character. The old casefold-sorted order and ordinary ASCII display
+remain unchanged. This is **display-only**, not a new matching rule or approval.
+Original CSV bytes/SHA-256, financial amounts, physical row references and
+human-review obligations remain authoritative. See
+[R97 threat model and pending release gates](docs/LEDGER_GRANT_VISIBLE_LABELS_R97.md).
+All six EXEs remain **unreleased** pending complete source/Windows testing,
+premium access control, independent QD and founder approval.
+
 ## R96 ProcureGuard human-readable document-list integrity (pre-release)
 
 ProcureGuard Studio Pro now uses the same safe, **human-display-only** rendering
