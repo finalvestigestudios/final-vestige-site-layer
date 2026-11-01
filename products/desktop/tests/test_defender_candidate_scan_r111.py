@@ -76,6 +76,18 @@ class DefenderR111(unittest.TestCase):
             with patch.dict(os.environ, {"ProgramFiles": temp, "ProgramData": temp}):
                 self.assertEqual(av.locate_defender(), executable.resolve())
 
+    def test_newest_defender_platform_precedes_legacy_engine(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            current = root / "Microsoft" / "Windows Defender" / "Platform" / "4.18.3" / "MpCmdRun.exe"
+            older = root / "Microsoft" / "Windows Defender" / "Platform" / "4.18.2" / "MpCmdRun.exe"
+            legacy = root / "Windows Defender" / "MpCmdRun.exe"
+            for path in (current, older, legacy):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"synthetic scanner discovery only")
+            with patch.dict(os.environ, {"ProgramFiles": temp, "ProgramData": temp}):
+                self.assertEqual(av.locate_defender(), current.resolve())
+
     def test_symlink_scanner_is_denied(self):
         with tempfile.TemporaryDirectory() as temp:
             target = Path(temp) / "other.exe"
@@ -220,6 +232,7 @@ class DefenderR111(unittest.TestCase):
         self.assertEqual(verified.call_count, 14)
         self.assertEqual([r["name"] for r in result["artifacts"]],
                          list(av.gate.EXPECTED))
+        self.assertTrue(all(x["defender_custom_scan"] == "zero_exit_result_remediation_ambiguous" for x in result["artifacts"]))
         self.assertFalse(result["release_authorized"])
         self.assertFalse(result["independent_malware_clearance"])
         self.assertFalse(result["premium_distribution_authorized"])
