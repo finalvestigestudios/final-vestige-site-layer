@@ -18,6 +18,15 @@
 .fva-guide{padding:24px clamp(16px,3vw,34px);background:var(--raised);border:1px solid var(--line);max-width:1100px}
 .fva-guide h2{font:400 clamp(26px,3vw,38px)/1.2 Georgia,serif;margin:0 0 8px}
 .fva-guide p{color:var(--muted);max-width:900px}
+.fva-index{margin-top:32px;padding:24px clamp(16px,3vw,34px);background:#191b17;border:1px solid var(--line);display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,2.2fr);gap:24px}
+.fva-index h2{font:400 clamp(25px,2.7vw,36px)/1.2 Georgia,serif;margin:0}
+.fva-index p{color:var(--muted);font-size:14px;margin:12px 0}
+.fva-index ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fva-index a{display:flex;align-items:center;gap:15px;border:1px solid var(--line);min-height:48px;padding:10px 12px;text-decoration:none;background:#11130f}
+.fva-index a:hover,.fva-index a:focus-visible{border-color:var(--gold);text-decoration:underline}
+.fva-index__num{font:700 12px/1.5 ui-monospace,monospace;color:var(--gold)}
+.fva-index__name{font:600 13px/1.5 ui-monospace,monospace;overflow-wrap:anywhere}
+.fva-index__name small{display:block;font:400 12px/1.4 system-ui;color:var(--muted)}
 .fva-controls{margin-top:45px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}
 .fva-filter{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
 .fva-filter button,.fva-search button{border:1px solid #877755;background:var(--raised);color:var(--paper);padding:10px 16px;min-height:44px;text-align:center}
@@ -46,7 +55,7 @@
 .fva-empty{border:1px dashed var(--gold);padding:24px}
 .fva-footer{border-top:1px solid var(--line);padding:25px 0 45px;color:var(--muted);font-size:13px;max-width:1000px}
 @media(max-width:1080px){.fva-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.fva-grid{grid-template-columns:minmax(0,1fr)}.fva-card h2{min-height:0}.fva-search{align-items:stretch;flex-direction:column}.fva-search>*{width:100%;max-width:none!important}}
+@media(max-width:700px){.fva-index{grid-template-columns:minmax(0,1fr)}.fva-index ol{grid-template-columns:minmax(0,1fr)}.fva-grid{grid-template-columns:minmax(0,1fr)}.fva-card h2{min-height:0}.fva-search{align-items:stretch;flex-direction:column}.fva-search>*{width:100%;max-width:none!important}}
 @media(max-width:420px){.fva-filter button{flex:1 1 100%}.fva{padding:18px}.fva-mark span{display:block;margin-top:5px}.fva-header{padding:22px 0 28px}}
 @media(prefers-reduced-motion:reduce){.fva *, .fva *::before,.fva *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{.fva{background:#fff;color:#000}.fva *{color:#000!important}.fva-card,.fva-guide,.fva-card__plate,.fva-caution{background:#fff;border-color:#777}.fva [data-fva-record]{break-inside:avoid}.fva [data-fva-controls]{display:none!important}}
@@ -55,7 +64,7 @@
    silently remove original sources from a printed research record. */
 @media print {
   /* Decorative placeholder plates carry no archival content; omit on paper. */
-  .fva-card__plate { display:none!important; }
+  .fva-card__plate,.fva-index { display:none!important; }
   .fva-card h2 { min-height:0!important; }
   .fva-grid { padding-bottom:10px!important; }
   .fva-footer { padding:10px 0 8px!important; }

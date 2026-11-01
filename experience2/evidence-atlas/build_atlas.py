@@ -64,7 +64,7 @@ def make_html(custody: dict, css: str, js: str) -> str:
         is_2017 = year == '2017'
         label = ('Retrospective exhibit, not contemporaneous evidence' if is_2017
                  else 'Contextual source photograph, not proof of causation')
-        cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" id="fva-record-{q(r['id'])}">
+        cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" id="fva-record-{q(r['id'])}" tabindex="-1">
           <div class="fva-card__top"><span>DOCUMENT {q(r['id'])} / 06</span><span>{year} · NASA RECORD</span></div>
           <div class="fva-card__plate" aria-hidden="true"><span>{q(r['catalog'])}</span><b>ARCHIVAL RECORD</b></div>
           <h2>{q(r['photo_role'].capitalize())}</h2>
@@ -80,6 +80,11 @@ def make_html(custody: dict, css: str, js: str) -> str:
           <a class="fva-card__external" href="{q(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open original NASA record <span aria-hidden="true">↗</span></a>
         </article>''')
     all_cards = '\n'.join(cards)
+    # Fixed, source-custody-backed navigation; still navigable when JS is absent.
+    index_items = '\n'.join(
+        f'<li><a data-fva-jump href="#fva-record-{q(r["id"])}"><span class="fva-index__num">{q(r["id"])}</span>'
+        f'<span class="fva-index__name">{q(r["catalog"])} <small>{q(r["date_label"])}</small></span></a></li>'
+        for r in custody['records'])
     filters = '\n'.join(f'<button type="button" data-fva-filter="{v}" aria-pressed="{str(v=="all").lower()}">{label}</button>'
                         for v, label in [('all', 'All 6 sources'), ('1966', '1966 · 1 source'),
                                          ('1967', '1967 · 3 sources'), ('2017', '2017 · 2 exhibits')])
@@ -97,6 +102,10 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <p>The 1966 rehearsal image precedes the 1967 fire. The 2017 exhibit photographs are retrospective. Photograph dates are not a minute-by-minute fire chronology; NASA's Apollo 204 Review Board report is the source for technical findings.</p>
     <p><a href="{q(custody['historical_primary'])}" target="_blank" rel="noopener noreferrer">Read the Apollo 204 Review Board report <span aria-hidden="true">↗</span></a></p>
   </section>
+  <nav class="fva-index" aria-labelledby="fva-index-title">
+    <div><h2 id="fva-index-title">Source index</h2><p>Navigate by NASA reference label. The index lists records, not geographic sites or links between events.</p></div>
+    <ol>{index_items}</ol>
+  </nav>
   <div class="fva-controls" data-fva-controls hidden>
     <div class="fva-filter" role="group" aria-label="Filter photographic-source records by year">{filters}</div>
     <div class="fva-search"><label for="fva-search">Search source descriptions</label><input type="search" id="fva-search" data-fva-search aria-controls="fva-records" autocomplete="off" placeholder="Hatch, rehearsal, Shiflett…" />

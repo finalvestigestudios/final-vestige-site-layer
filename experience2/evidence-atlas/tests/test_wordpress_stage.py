@@ -27,8 +27,8 @@ class WordPressStage(unittest.TestCase):
         cls.html=(cls.plugin/'templates/atlas-fragment.html').read_text()
     @classmethod
     def tearDownClass(cls):cls.tmp.cleanup()
-    def probe(self,singular=True):
-        env={**os.environ, 'FV_SINGULAR':'1' if singular else '0'}
+    def probe(self,singular=True, mode="direct", render=True):
+        env={**os.environ, 'FV_SINGULAR':'1' if singular else '0', 'FV_POST_MODE':mode, 'FV_RENDER_SHORTCODE':'1' if render else '0'}
         result=subprocess.run(['php',str(PROBE),str(self.plugin/'final-vestige-ex2-evidence-atlas.php')],
              capture_output=True,text=True,check=True,env=env)
         return json.loads(result.stdout)
@@ -59,7 +59,22 @@ class WordPressStage(unittest.TestCase):
         self.assertEqual(list(p['assets']['scripts']),['fv-ex2-evidence-atlas'])
         self.assertTrue(p['assets']['scripts']['fv-ex2-evidence-atlas'][2]);self.assertIn('data-fva-atlas',p['markup'])
     def test_non_singular_does_not_enqueue(self):
-        self.assertFalse(self.probe(False)['assets'])
+        self.assertFalse(self.probe(False,mode='none',render=False)['assets'])
+    def test_regular_page_does_not_load_global_assets(self):
+        p=self.probe(mode='none',render=False)
+        self.assertTrue(p['registered']['scripts'])
+        self.assertFalse(p['early_assets'])
+        self.assertFalse(p['assets'])
+    def test_nested_shortcode_late_enqueue_without_global_penalty(self):
+        p=self.probe(mode='none',render=True)
+        self.assertFalse(p['early_assets'])
+        self.assertIn('fv-ex2-evidence-atlas',p['assets']['styles'])
+        self.assertIn('fv-ex2-evidence-atlas',p['assets']['scripts'])
+        self.assertIn('data-fva-atlas',p['markup'])
+    def test_top_level_shortcode_preloads_assets_before_render(self):
+        p=self.probe(mode='direct',render=False)
+        self.assertIn('fv-ex2-evidence-atlas',p['early_assets']['styles'])
+        self.assertIn('fv-ex2-evidence-atlas',p['early_assets']['scripts'])
     def test_second_shortcode_does_not_duplicate_ids(self):
         p=self.probe();self.assertEqual(p['markup'].count('data-fva-record '),6)
         self.assertIn('already on this page',p['duplicate'])
