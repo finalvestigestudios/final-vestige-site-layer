@@ -306,3 +306,69 @@ def build_review_csv_export(handoff, global_review, reading_batches, *, expected
              gid == sha({'url':url,'original_crosswalk_group_sha256':sha(original)}) and
              original.get('url') == url,
              'crosswalk group ID, URL or unabridged original evidence changed')
+        original_variants = original.get('variants')
+        need(type(original_variants) is list and len(original_variants) == len(variants) and
+             original.get('canonical_url') == url and
+             original.get('review_status') == 'pending-human-source-and-reading-scope-review' and
+             original.get('reviewer') is None and original.get('reviewed_on') is None,
+             'original crosswalk reading variants missing or previously approved')
+        original_keys = {(x['origin'], x['row_index'], canonical(x['source']))
+                         for x in original_variants if type(x) is dict and
+                         type(x.get('source')) is dict and type(x.get('origin')) is str and
+                         type(x.get('row_index')) is int}
+        variant_keys = {(v['origin'], v['row_index'], canonical({k:value for k,value in
+                            v['original_full_source_record'].items() if k != '_origin'}))
+                        for v in variants if type(v) is dict and
+                        type(v.get('original_full_source_record')) is dict and
+                        type(v.get('origin')) is str and type(v.get('row_index')) is int}
+        need(len(original_keys) == len(variants) and original_keys == variant_keys,
+             'original source-row locations or reading-depth variants changed')
+        for v in variants:
+            need(type(v) is dict and v.get('review_state') == 'NOT_STARTED' and
+                 type(v.get('original_full_source_record')) is dict and
+                 v.get('source_identity_sha256') == sha(v['original_full_source_record']) and
+                 v['original_full_source_record'].get('url') == url and
+                 v.get('human_source_access_date') is None and
+                 v.get('human_reading_scope_vs_other_variants') is None and
+                 v.get('human_conflict_or_provenance_notes') is None,
+                 'global source variant is missing evidence or falsely reviewed')
+        related = g.get('cited_relationship_ids')
+        related_claims = g.get('cited_claim_review_case_ids')
+        need(type(related) is list and type(related_claims) is list and
+             related == sorted(set(url_index[url])) and
+             related_claims == sorted(cid for cid,c in claim_index.items()
+                                      if c['source_url'] == url) and
+             g.get('used_in_any_citation') is bool(related),
+             'global URL group citation lineage lost, duplicated or invented')
+        for key in ('human_url_and_reading_scope_reconciliation','human_source_conflict_notes',
+                    'human_independent_safety_assessment'):
+            need(g.get(key) is None, 'global URL reviewer result forged: '+key)
+        seen_urls.add(url)
+        seen_group_ids.add(gid)
+        group_rows.append(dict(zip(GROUP, (
+            gid,url,g['original_crosswalk_group_sha256'],original,variants,
+            bool(related),related,related_claims,'NOT_STARTED',None,None,None))))
+    need(len(seen_urls) == expected[5], 'global duplicate URL rows dropped')
+    rows = {'claim_review.csv': sorted(claim_rows,key=lambda x:x['claim_case_sha256']),
+            'source_scope_review.csv': sorted(source_rows,key=lambda x:x['source_case_sha256']),
+            'fallback_scope_review.csv': sorted(fallback_rows,key=lambda x:x['fallback_case_sha256']),
+            'global_shared_url_review.csv': sorted(group_rows,key=lambda x:x['source_url'])}
+    csvs = {name:_render(header,rows[name]) for name,header in TABLES.items()}
+    manifest = {'schema_version':1,'issue':136,'release_state':'HOLD',
+                'machine_authority':AUTHORITY,
+                **{f:False for f in HOLD_FLAGS},
+                'parent_R35_fingerprint_sha256':hf,
+                'parent_R36_fingerprint_sha256':gf,
+                'parent_R34_original_reading_sha256':rf,
+                'counts':dict(zip(('articles','tools','claim_reviews','source_scope_reviews',
+                                   'fallback_reviews','global_shared_url_reviews'), expected)),
+                'csv_tables':{name:{'rows':len(rows[name]),
+                                    'sha256_utf8':hashlib.sha256(csvs[name].encode('utf-8')).hexdigest(),
+                                    'bytes_utf8':len(csvs[name].encode('utf-8')),
+                                    'columns':list(header)}
+                              for name,header in TABLES.items()},
+                'limits':'CSV reviewer worksheets are NOT an approval record. Full original research and '
+                         'reading depth remain upstream, fingerprint-bound. No external source visited; '
+                         'all human review blank; no medical safety or QD signoff.'}
+    manifest['fingerprint_sha256'] = sha(manifest)
+    return {'manifest':manifest,'csv_tables':csvs}
