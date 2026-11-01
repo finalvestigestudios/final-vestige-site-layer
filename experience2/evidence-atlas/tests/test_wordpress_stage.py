@@ -78,6 +78,13 @@ class WordPressStage(unittest.TestCase):
         source.rename(source.with_suffix('.held'))
         try:self.assertIn('Evidence Atlas is unavailable',self.probe()['markup'])
         finally:source.with_suffix('.held').rename(source)
+    def test_mutated_compiled_source_fails_closed(self):
+        source=self.plugin/'templates/atlas-fragment.html'
+        original=source.read_bytes()
+        try:
+            source.write_bytes(original.replace(b'S67-19766',b'S67-19765',1))
+            self.assertIn('Evidence Atlas is unavailable',self.probe()['markup'])
+        finally:source.write_bytes(original)
     def test_no_geo_or_unreviewed_image(self):
         for token in ('<img','<picture','data-lat=','data-lng=','<iframe','<canvas','<svg'):
             self.assertNotIn(token,self.html)
