@@ -11,7 +11,7 @@ import hashlib
 import tempfile
 import unittest
 
-from fvs_suite import csv_snapshot, manifest_guard
+from fvs_suite import csv_snapshot, manifest_guard, review_lock
 from scripts import build_input_guard
 import candidate_guard
 
@@ -223,6 +223,62 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
         original = [1, 2, 3, 1, 5, 700, 100]
         altered = [1, 2, 3, 1, 5, 700, 101]
         self.assertNotEqual(original, altered)
+
+
+    def test_real_human_review_lock_remains_exclusive_and_cleans_up(self):
+        journal = self.root / "review.jsonl"
+        lock = self.root / "review.jsonl.lock"
+        with review_lock.exclusive_review_lock(journal) as owned:
+            owned()
+            self.assertTrue(lock.exists())
+            with self.assertRaises(ValueError):
+                with review_lock.exclusive_review_lock(journal):
+                    self.fail("second writer admitted")
+        self.assertFalse(lock.exists())
+
+    def test_windows_lock_path_fd_ctime_difference_does_not_disown(self):
+        import stat
+        path = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                         st_ctime_ns=100)
+        descriptor = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                               st_ctime_ns=999)
+        with patch.object(review_lock.os, "lstat", return_value=path):
+            with patch.object(review_lock, "_same_path_descriptor_signature",
+                              side_effect=lambda a,b: csv_snapshot._same_path_descriptor_signature(
+                                  a,b,windows=True)):
+                review_lock._owned(self.root / "synthetic.lock", descriptor, path)
+
+    def test_windows_lock_same_path_ctime_mutation_still_refused(self):
+        import stat
+        baseline_path = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                                  st_ctime_ns=100)
+        current_path = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                                 st_ctime_ns=101)
+        descriptor = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                               st_ctime_ns=999)
+        with patch.object(review_lock.os, "lstat", return_value=current_path):
+            with patch.object(review_lock, "_same_path_descriptor_signature",
+                              side_effect=lambda a,b: csv_snapshot._same_path_descriptor_signature(
+                                  a,b,windows=True)):
+                with self.assertRaisesRegex(ValueError, "lock changed"):
+                    review_lock._owned(self.root / "synthetic.lock", descriptor,
+                                       baseline_path)
+
+    def test_windows_lock_same_path_inode_substitution_refused(self):
+        import stat
+        baseline_path = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                                  st_ino=101, st_ctime_ns=100)
+        current_path = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                                 st_ino=102, st_ctime_ns=100)
+        descriptor = fake_stat(st_mode=stat.S_IFREG | 0o600, st_nlink=1,
+                               st_ino=101, st_ctime_ns=999)
+        with patch.object(review_lock.os, "lstat", return_value=current_path):
+            with patch.object(review_lock, "_same_path_descriptor_signature",
+                              side_effect=lambda a,b: csv_snapshot._same_path_descriptor_signature(
+                                  a,b,windows=True)):
+                with self.assertRaisesRegex(ValueError, "lock changed"):
+                    review_lock._owned(self.root / "synthetic.lock", descriptor,
+                                       baseline_path)
 
 
 if __name__ == "__main__":
