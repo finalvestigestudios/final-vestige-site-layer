@@ -8,7 +8,7 @@ Contents:
 - Two polished presell HTML variants with **identical main guide core**, and inert, disclosed commercial controls;
 - Alternative /mind/ WordPress hub for comparison only (PR #172 remains canonical);
 - Claims / permissions evidence matrix, source register, navigation measurement, disabled local attribution prototype and reproducible regression test;
-- Original 40-second offline editorial film storyboard, SVG poster, VTT. Local film MP4 is separate review asset, not hosted and not automatically placed in GitHub. Native video player intentionally absent until accessible, approved hosting is ready.
+- Original 40-second offline editorial film exact reproducible Python renderer, storyboard, SVG poster, VTT. Local film MP4 is separate review asset, not hosted and not automatically placed in GitHub. Native video player intentionally absent until accessible, approved hosting is ready.
 
 Source records cross-referenced in source-register.tsv. Seller sources support *seller statements*, not independently demonstrated efficacy. No claim that we have purchased/listened to Zen12.
 
