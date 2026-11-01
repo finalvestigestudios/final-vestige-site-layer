@@ -252,7 +252,9 @@ class DefenderR111(unittest.TestCase):
              patch.object(av, "scan_one") as scan:
             result = av.scan_candidates("private-dist", "private-r9", PINNED)
         self.assertEqual(scan.call_count, 6)
-        self.assertEqual(health.call_count, 2)
+        self.assertEqual(health.call_count, 14)
+        self.assertEqual(result["defender_active_health_checkpoints"], 14)
+        self.assertIn("normal_mode", result["defender_active_health_policy"])
         self.assertEqual(environment_check.call_count, 7)
         self.assertEqual(verified.call_count, 14)
         self.assertEqual(scanner_verified.call_count, 14)
