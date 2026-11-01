@@ -8,7 +8,7 @@ function inline(s){
   let text=esc(s);
   // Links are parsed after escaping; direct merchant URLs are always NON-CLICKABLE.
   text=text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,(_,label,href)=>{
-    const host=new URL(href).hostname.toLowerCase();
+    const host=href.split('/')[2].split(':')[0].toLowerCase();
     if(host==='zen12.com'||host.endsWith('.zen12.com')||host==='inspire3.com'||host.endsWith('.inspire3.com'))
       return '<span class="fv-mind32-seller" title="Seller source cited for research, not an active product link">'+label+' [seller source: '+esc(host)+']</span>';
     return '<a href="'+esc(href)+'" rel="noopener noreferrer">'+label+'</a>';
