@@ -65,6 +65,8 @@ class WindowsSourceStageR100(unittest.TestCase):
             results = probe.probe(Path("synthetic"))
         for phase, expected in {
             "root_paths": False,
+            "checked_test_dir": False, "scan_test_tree": False,
+            "fingerprint_test": False, "fingerprint_engine": False,
             "source_inventory": False, "test_inventory": False,
             "source_metadata": False,
             "inventory": True, "normal_tests": False,
