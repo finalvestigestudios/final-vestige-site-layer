@@ -190,6 +190,22 @@ def _load_historical_history_unsigned_preflight():
     return module.preflight_unsigned_history
 
 
+def _load_article_review_dossiers():
+    # R42: bind each individual article/tool to its exact original R37
+    # human-review worksheets, preserving all duplicate URL reading scopes.
+    # Machine preflight cannot approve sources, medical guidance, or release.
+    location = Path(__file__).with_name('article_review_dossier_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R42 article review evidence gate')
+    spec = importlib.util.spec_from_file_location(
+        'preparedness_r42_article_source_review_handoff', location)
+    need(spec is not None and spec.loader is not None,
+         'R42 article review gate cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.build_article_review_dossiers
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -201,6 +217,7 @@ build_quarantine_reviewer_csv = _load_quarantined_csv_intake_validator()
 build_private_key_receipt_challenge = _load_private_key_receipt_validator()
 build_recent_transcript_unsigned_preflight = _load_recent_transcript_validator()
 build_history_unsigned_preflight = _load_historical_history_unsigned_preflight()
+build_article_review_dossiers = _load_article_review_dossiers()
 
 
 def canonical(value):
@@ -368,6 +385,32 @@ def audit(lib, expected=EXPECTED):
         need(reviewer_csv['manifest']['release_state'] == 'HOLD'
              and reviewer_csv['manifest']['may_publish'] is False,
              'private reviewer export cannot grant publishing approval')
+        # R42: structurally reconcile the complete original 35+1 corpus at
+        # article level, preserving every citation, reading scope, fallback,
+        # cross-cluster source and uncited shared-URL group. Every result is
+        # an UNREVIEWED, nonpublishing machine HOLD, not an editorial verdict.
+        article_dossiers = build_article_review_dossiers(
+            reviewer_csv, lib.taxonomy,
+            trusted_r37_manifest_sha256=reviewer_csv['manifest']['fingerprint_sha256'])
+        dossier_rows = article_dossiers['article_dossiers']
+        need(article_dossiers['release_state'] == 'HOLD'
+             and len(dossier_rows) == 36
+             and article_dossiers['counts'] ==
+                 reviewer_csv['manifest']['counts']
+             and sum(x['counts']['claims'] for x in dossier_rows) == 1959
+             and sum(x['counts']['scopes'] for x in dossier_rows) == 367
+             and sum(x['counts']['fallbacks'] for x in dossier_rows) == 43
+             and article_dossiers['all_case_rows_preserved_without_url_deduplication'] is True
+             and article_dossiers['may_publish'] is False
+             and article_dossiers['qualified_safety_clearance'] is False
+             and article_dossiers['independent_QD_approval'] is False
+             and article_dossiers['human_source_reviews_completed'] is False
+             and all(x['release_state'] == 'HOLD'
+                     and x['may_publish'] is False
+                     and x['qualified_safety_clearance'] is False
+                     and x['independent_QD_approval'] is False
+                     for x in dossier_rows),
+             'R42 individual article evidence or mandatory safety HOLD drift')
         # The unedited baseline must round-trip R38 intact. This mandatory
         # check is intentionally zero progress: machine CI cannot verify that
         # a human actually visited, read or understood a referenced source.
