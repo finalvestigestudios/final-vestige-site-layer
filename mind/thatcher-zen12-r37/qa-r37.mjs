@@ -24,7 +24,7 @@ for(const [n,x] of [['text',a],['film',b]]){
  test(n+' is legible without JS',()=>assert.ok(x.includes('data-guide-core="r37"')&&x.includes('Offer link not yet available')));
 }
 test('article has zero Zen12 recommendation',()=>assert.ok(!/earn a commission|View Zen12 options/.test(i)));
-test('video has static poster and full transcript, no faux video control',()=>{assert.match(b,/film-transcript/);assert.match(b,/<summary>/);assert.match(b,/APPROVED-FIRST-PARTY-SVG-POSTER-URL-REQUIRED/);assert.ok(!b.includes('play-button'))});
+test('video has static poster and full transcript, no faux video control',()=>{assert.match(b,/film-transcript/);assert.match(b,/<summary>/);assert.match(b,/class="fv-original-poster"/);assert.ok(!b.includes('APPROVED-FIRST-PARTY-SVG-POSTER-URL-REQUIRED'));assert.ok(!b.includes('play-button'))});
 test('text-only variant has no film block',()=>assert.ok(!a.includes('film-stage')));
 test('seller claims qualified',()=>{assert.match(g,/seller efficacy claims/);assert.match(g,/did not evaluate Zen12/);assert.match(g,/without the Hype|without the hype|What You Actually Get/);assert.ok(!/we (used|tried|tested) Zen12/i.test(g))});
 test('specific tiers and four styles',()=>{for(const w of ['Beginner','Premium','Advanced','24 MP3s','48 MP3s','four audio styles'])assert.ok(g.includes(w),w)});
