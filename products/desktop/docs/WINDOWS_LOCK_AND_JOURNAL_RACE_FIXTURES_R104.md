@@ -16,7 +16,7 @@ The exact-head R103 Windows source gate reported **3 test failures and 22 errors
 - `tests/test_source_smoke_integrity_r42.py`: Windows source-file substitution and concurrent modification tests simulate FD inode/mtime drift while exercising the actual source inventory; POSIX retains destructive synthetic fixtures.
 - `tests/test_release_report_r38.py`: compare the **existing parent directory's actual identity** with `os.path.samefile` rather than exact spelling of Windows resolved temporary paths. Still demand a new, nonexistent output file outside the distribution directory.
 
-No matching, monetary, Decimal, invoice classification, procurement approval, license entitlement, premium encryption, source-file guard implementation, WordPress, website, deployment or production branch is modified. **These changes do not grant release authority.**
+No financial matching, Decimal, invoice classification, procurement approval, license entitlement, premium encryption, WordPress, website, deployment or production branch is modified. The only production-code change is the separately documented Windows-specific toolchain EXE cross-API mode comparison; it does not change finance, review or entitlement behavior. **These changes do not grant release authority.**
 
 ## Reproduce with Python 3.12+ in an exact Git checkout
 
