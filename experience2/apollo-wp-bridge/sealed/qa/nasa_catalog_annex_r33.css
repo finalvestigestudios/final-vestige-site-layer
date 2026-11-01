@@ -1,4 +1,3 @@
-
 :root{color-scheme:dark;--ink:#e9e1d5;--gold:#d5b984;--edge:#615542;--paper:#13191a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0c1112;color:var(--ink);font:1rem/1.65 system-ui,Arial,sans-serif}
 a{color:#f1d49f;text-underline-offset:.2em}a:focus-visible,summary:focus-visible{outline:3px solid #f7db9a;outline-offset:4px}
@@ -10,3 +9,4 @@ h2{font:1.5rem/1.2 Georgia,serif}details{border-top:1px solid var(--edge);margin
 footer{margin-top:3rem;border-top:1px solid var(--edge);padding-top:1rem}.skip{position:absolute;left:1rem;top:-100px;background:#fff;color:#000;padding:.5rem}.skip:focus{top:1rem}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{html{color-scheme:light}body,article{background:white;color:black}a,.small,.stamp{color:black}article{break-inside:avoid;border:1px solid #333}.warning{background:white;color:black}details{display:block}details>*{display:block}}
+
