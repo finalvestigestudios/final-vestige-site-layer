@@ -67,7 +67,7 @@ class EditorialCandidateGuards(unittest.TestCase):
         for k in ("actual_jetpack_received_email_verified","physical_postal_address_verified","functional_unsubscribe_verified","unique_subscriber_consent_verified","founder_final_send_approval"):
             self.assertIs(c[k],False)
     def test_core_promise_is_limited(self):
-        self.assertIn("not a universal eyewitness error rate",self.markdown)
+        self.assertIn("neither a universal eyewitness error rate",self.markdown)
         self.assertIn("by analogy only", (BASE/"REVIEW_FIRST.md").read_text(encoding="utf-8"))
 
 if __name__=="__main__": unittest.main()
