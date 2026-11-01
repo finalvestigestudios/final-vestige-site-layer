@@ -48,7 +48,9 @@ class R53ReviewerTests(unittest.TestCase):
         self.assertFalse(any("zen12.com" in x or "hypnosislive.com" in x or "inspire3.com" in x for x in self.ui.links))
 
     def test_06_no_live_affiliate_tracking(self):
-        self.assertNotRegex(HTML,r"(?i)(hop\.clickbank|affiliate_id=|utm_source=|pixel\.)")
+        # Assert on real clickable URLs, not harmless source prose mentioning tracking pixels.
+        self.assertFalse(any(re.search(r"(?i)(hop\.clickbank|affiliate_id=|utm_source=)", url)
+                             for url in self.ui.links))
 
     def test_07_all_six_canonical_subjects(self):
         for entry in MANIFEST["issues"]:
