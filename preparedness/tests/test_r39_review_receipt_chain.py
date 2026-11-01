@@ -42,13 +42,17 @@ def signed(b=None, edits=None, head=None, *, secret=SECRET, nonce=NONCE,
         issued_at_utc=issued,trusted_chain_head=head)
     return b, edits, gate.sign_progress_receipt(envelope,secret)
 
-def verify(b,e,r,*,keys=None,head=None,now=NOW):
+# Sentinel distinguishes no override from an explicitly untrusted None keyring.
+# A None keyring MUST be rejected; tests must not silently replace it.
+_DEFAULT_REGISTRY = object()
+
+def verify(b,e,r,*,keys=_DEFAULT_REGISTRY,head=None,now=NOW):
     return gate.verify_progress_receipt(
-        b,e,r,trusted_registry=registry() if keys is None else keys,
+        b,e,r,trusted_registry=registry() if keys is _DEFAULT_REGISTRY else keys,
         trusted_chain_head=copy.deepcopy(GENESIS) if head is None else head,
         trusted_now=now)
 
-def refuses(b,e,r,*,keys=None,head=None,now=NOW):
+def refuses(b,e,r,*,keys=_DEFAULT_REGISTRY,head=None,now=NOW):
     with unittest.TestCase().assertRaises(gate.ReceiptHold):
         verify(b,e,r,keys=keys,head=head,now=now)
 
