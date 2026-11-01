@@ -126,6 +126,21 @@ def _load_private_reviewer_csv_export_validator():
     return module.build_review_csv_export
 
 
+def _load_quarantined_csv_intake_validator():
+    # R38: even an edited reviewer CSV can only enter a quarantined, untrusted
+    # private annotation queue. Original citation/source cells are immutable;
+    # false completed reviews, QD-PASS, safety or publication claims fail closed.
+    location = Path(__file__).with_name('reviewer_quarantine_gate.py')
+    need(location.is_file() and not location.is_symlink(),
+         'missing or linked R38 quarantine validator')
+    spec = importlib.util.spec_from_file_location('preparedness_r38_quarantined_intake', location)
+    need(spec is not None and spec.loader is not None,
+         'R38 quarantine validator cannot load')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.quarantine_reviewer_csv
+
+
 verified_citations = _load_placement_validator()
 build_review_index = _load_review_index_validator()
 build_priority_queue = _load_occurrence_priority_validator()
@@ -133,6 +148,7 @@ build_source_reading_batches = _load_source_reading_batches_validator()
 build_human_review_intake = _load_human_review_intake_validator()
 build_global_shared_source_review = _load_global_shared_source_validator()
 build_private_reviewer_csv_export = _load_private_reviewer_csv_export_validator()
+build_quarantine_reviewer_csv = _load_quarantined_csv_intake_validator()
 
 
 def canonical(value):
@@ -300,6 +316,17 @@ def audit(lib, expected=EXPECTED):
         need(reviewer_csv['manifest']['release_state'] == 'HOLD'
              and reviewer_csv['manifest']['may_publish'] is False,
              'private reviewer export cannot grant publishing approval')
+        # The unedited baseline must round-trip R38 intact. This mandatory
+        # check is intentionally zero progress: machine CI cannot verify that
+        # a human actually visited, read or understood a referenced source.
+        quarantined = build_quarantine_reviewer_csv(
+            reviewer_csv, reviewer_csv['csv_tables'])
+        need(quarantined['manifest']['release_state'] == 'HOLD'
+             and quarantined['manifest']['may_publish'] is False
+             and quarantined['manifest']['qualified_safety_clearance'] is False
+             and quarantined['manifest']['independent_QD_approval'] is False
+             and quarantined['manifest']['unverified_progress_records'] == 0,
+             'R38 reviewer intake cannot authorize publication or safety clearance')
     return payload
 
 def audit_checkout(root):
