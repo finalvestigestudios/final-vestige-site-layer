@@ -86,6 +86,35 @@ function render(html) {
   let wordpressFragment = documentHtml.slice(rootStart, bodyEnd).trim();
   check(count(wordpressFragment, '<main>') === 1 && count(wordpressFragment, '</main>') === 1, 'fragment main mismatch');
   wordpressFragment = wordpressFragment.replace('<main>', '<div class="fv-hf__story">').replace('</main>', '</div>');
+
+  // WordPress Assembler's page template already owns global site chrome.
+  // Remove duplicate header/navigation/footer only from the embedded fragment.
+  const wpMasthead = /    <header class="fv-hf__masthead">[\s\S]*?    <\/header>\n\n/;
+  const mastheadMatch = wordpressFragment.match(wpMasthead);
+  check(mastheadMatch &&
+        count(mastheadMatch[0], 'class="fv-hf__nav"') === 1 &&
+        count(mastheadMatch[0], 'class="fv-hf__mast-cta"') === 1 &&
+        mastheadMatch[0].includes('class="fv-hf__brand"'),
+        'WordPress header removal ambiguous; refuse export');
+  wordpressFragment = wordpressFragment.replace(wpMasthead, '');
+
+  const wpFooter = /    <footer class="fv-hf__footer">([\s\S]*?)<\/footer>/;
+  const footerMatch = wordpressFragment.match(wpFooter);
+  const disclosure = footerMatch && footerMatch[1].match(
+    /<a href="https:\/\/finalvestige\.com\/affiliate-disclosure\/"[^>]*>[\s\S]*?<\/a>/
+  );
+  check(footerMatch && disclosure && footerMatch[1].includes('fv-hf__brand'),
+        'WordPress footer/disclosure removal ambiguous; refuse export');
+  wordpressFragment = wordpressFragment.replace(
+    wpFooter,
+    '    <div class="fv-hf__footer" role="note"><span>EDITORIAL TRANSPARENCY</span>' +
+      disclosure[0] + '</div>'
+  );
+  check(!wordpressFragment.includes('<header class="fv-hf__masthead"') &&
+        !wordpressFragment.includes('<footer class="fv-hf__footer"') &&
+        !wordpressFragment.includes('class="fv-hf__nav"') &&
+        wordpressFragment.includes('https://finalvestige.com/affiliate-disclosure/'),
+        'WordPress duplicate theme chrome or lost disclosure');
   check(!wordpressFragment.includes('<main>') && !wordpressFragment.includes('</main>'), 'nested WordPress main landmark');
   check(!wordpressFragment.includes('<html') && !wordpressFragment.includes('<script '), 'fragment includes document/script tag');
   check(!documentHtml.includes('DESIGN STUDY · NOT LIVE') && !wordpressFragment.includes('data-fv-direction-choice'), 'preview controls leaked');
