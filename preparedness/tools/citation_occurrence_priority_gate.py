@@ -199,3 +199,46 @@ def build_priority_queue(packet, index, *, expected=EXPECTED):
     }
     result['fingerprint_sha256'] = digest(result)
     return result
+
+
+def main(argv=None):
+    """Private stdout-only reviewer export. Does not save, publish or fetch URLs."""
+    import argparse
+    import importlib.util
+    from pathlib import Path
+    import sys
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--repo-root', type=Path,
+                        default=Path(__file__).resolve().parents[2])
+    parser.add_argument('--format', choices=('summary', 'json', 'ndjson'), default='summary')
+    args = parser.parse_args(argv)
+    try:
+        sibling = Path(__file__).with_name('citation_fallback_review_gate.py')
+        demand(sibling.is_file() and not sibling.is_symlink(),
+               'missing or linked original claim evidence producer')
+        spec = importlib.util.spec_from_file_location('preparedness_r33_original_review', sibling)
+        demand(spec is not None and spec.loader is not None, 'claim producer unavailable')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        packet = module.audit_checkout(args.repo_root)
+        index = module.build_review_index(packet)
+        output = build_priority_queue(packet, index)
+        if args.format == 'json':
+            print(json.dumps(output, sort_keys=True, ensure_ascii=False))
+        elif args.format == 'ndjson':
+            for item in output['review_tasks']:
+                print(json.dumps(item, sort_keys=True, ensure_ascii=False))
+        else:
+            summary = {k: output[k] for k in ('schema_version','issue','release_state',
+                       'may_publish','machine_authority','parent_R25_fingerprint_sha256',
+                       'parent_R31_fingerprint_sha256','counts','priority_counts',
+                       'limitations','fingerprint_sha256')}
+            print(json.dumps(summary, sort_keys=True, ensure_ascii=False))
+        return 0
+    except (PriorityHold, OSError, ValueError, TypeError, KeyError) as exc:
+        print('Preparedness reviewer work order HOLD: '+str(exc), file=sys.stderr)
+        return 2
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
