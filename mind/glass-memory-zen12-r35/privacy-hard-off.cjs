@@ -1,5 +1,5 @@
 'use strict';
-// Offline categorical prototype; intentionally no network, localStorage, cookie or IO.
+// Offline categorical prototype; intentionally no network, persistent browser storage, cookie or IO.
 const CONFIG=Object.freeze({ENABLED:false,K:10,SOURCES:Object.freeze(['tiktok','organic','internal','direct','unknown']),VARIANTS:Object.freeze(['A','B']),EVENTS:Object.freeze(['view','guide_complete','cta_intent','outbound_approved'])});
 const KEYS=Object.freeze(['page','source','variant','event']);
 function validSynthetic(e){if(!e||typeof e!=='object'||Array.isArray(e))return false;const keys=Object.keys(e);if(keys.length!==KEYS.length||keys.some(k=>!KEYS.includes(k)))return false;return e.page==='zen12-guide'&&CONFIG.SOURCES.includes(e.source)&&CONFIG.VARIANTS.includes(e.variant)&&CONFIG.EVENTS.includes(e.event);}
