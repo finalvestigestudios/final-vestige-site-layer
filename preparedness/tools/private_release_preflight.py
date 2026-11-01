@@ -216,8 +216,8 @@ def execute(root: Path, expected_sha: str, *, run: Callable = subprocess.run,
                                       r"IndexError|AssertionError|RuntimeError|"
                                       r"PermissionError|UnboundLocalError):", decoded)
                 locations = re.findall(
-                    r'File "[^"\\r\\n]*[/\\\\]preparedness[/\\\\]tools[/\\\\]'
-                    r'(?:build|validate)\\.py", line ([0-9]{1,5})', decoded)
+                    r'File "[^"\r\n]*[/\\]preparedness[/\\]tools[/\\]'
+                    r'(?:build|validate)\.py", line ([0-9]{1,5})', decoded)
                 if exception:
                     diagnostic = "; exception " + exception.group(1)
                 if locations:
