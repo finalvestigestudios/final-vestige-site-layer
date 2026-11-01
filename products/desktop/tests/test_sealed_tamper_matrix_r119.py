@@ -155,7 +155,9 @@ class AllEntryTamperR119Tests(unittest.TestCase):
         self.assert_clean()
 
     def test_scratch_under_candidate_directory_is_denied(self):
-        with self.assertRaises(matrix.MatrixHold):
+        # Both an owner-only ACL/permission failure and explicit nesting HOLD
+        # are correct; POSIX directories are deliberately not 0700 here.
+        with self.assertRaises((matrix.MatrixHold, handoff.HandoffHold)):
             matrix.verify_all_entry_tamper_rejection(self.dist, self.r9, self.dist)
         self.assert_clean()
 
