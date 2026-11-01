@@ -8,6 +8,8 @@ from __future__ import annotations
 from decimal import Context, Decimal, localcontext
 from typing import Iterable, Mapping
 
+from .audit_display import visible_source_text
+
 
 _ASCII_CASE_TABLE = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
 
@@ -31,8 +33,16 @@ def raw_values(rows: Iterable[Mapping[str, str]], field: str) -> tuple[str, ...]
 
 
 def labels_for_report(rows: Iterable[Mapping[str, str]], field: str) -> str:
-    """Show original keys, never only the lossy normalized matching key."""
-    return "; ".join(raw_values(rows, field))
+    """Render original source labels visibly without forging report separators.
+
+    This is a HUMAN DISPLAY string, not a source identifier. Matching/collision
+    checks keep the raw values; original input bytes and SHA-256 are authoritative.
+    Preserve the existing deterministic case-insensitive sort of raw_values.
+    """
+    return "; ".join(
+        visible_source_text(label).replace(";", r"\u003B")
+        for label in raw_values(rows, field)
+    )
 
 
 def normalized_collision(rows: Iterable[Mapping[str, str]], field: str) -> bool:
