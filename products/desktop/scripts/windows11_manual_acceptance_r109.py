@@ -181,7 +181,7 @@ def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str) -
     observation = note["observation"]
     if (type(observation) is not str or
             not MIN_OBSERVATION_CHARS <= len(observation.strip()) <= MAX_OBSERVATION_CHARS or
-            any((ord(ch) < 32 and ch not in "\\n\\t") or
+            any((ord(ch) < 32 and ch not in (chr(10), chr(9))) or
                 ord(ch) == 127 or 0x202A <= ord(ch) <= 0x202E or
                 0x2066 <= ord(ch) <= 0x2069
                 for ch in observation)):
