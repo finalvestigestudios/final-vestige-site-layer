@@ -212,3 +212,62 @@ MUTATIONS={
     'h_source_missing': lambda h,g:h['source_scope_review_forms'].pop(),
     'h_fallback_missing': lambda h,g:h['base_fallback_review_forms'].pop(),
     'g_group_missing': lambda h,g:g['globally_unreviewed_shared_url_cards'].pop(),
+    'g_count_fake_approval': lambda h,g:g.update(global_shared_url_groups_reviewed_by_human=1),
+    'h_case_approved': lambda h,g:h['claim_occurrence_review_forms'][0].update(review_state='REVIEWED'),
+    'h_case_human_date': lambda h,g:h['claim_occurrence_review_forms'][0].update(human_source_access_date='2026-10-31'),
+    'h_case_human_support': lambda h,g:h['claim_occurrence_review_forms'][0].update(human_claim_to_source_support_assessment='YES'),
+    'h_case_human_safety': lambda h,g:h['claim_occurrence_review_forms'][0].update(independent_qualified_safety_review=True),
+    'h_scope_approved': lambda h,g:h['source_scope_review_forms'][0].update(review_state='DONE'),
+    'h_scope_human_access': lambda h,g:h['source_scope_review_forms'][0].update(human_link_access_date='2026-10-31'),
+    'h_scope_notes_forged': lambda h,g:h['source_scope_review_forms'][0]['unabridged_original_source_record'].update(notes='changed'),
+    'h_scope_url_forged': lambda h,g:h['source_scope_review_forms'][0].update(source_url='https://wrong.example'),
+    'h_scope_source_id_forged': lambda h,g:h['source_scope_review_forms'][0].update(source_id='wrong'),
+    'h_scope_record_digest_forged': lambda h,g:h['source_scope_review_forms'][0].update(source_record_sha256='0'*64),
+    'h_scope_use_digest_forged': lambda h,g:h['source_scope_review_forms'][0].update(source_use_sha256='0'*64),
+    'h_scope_case_id_forged': lambda h,g:h['source_scope_review_forms'][0].update(source_case_id_sha256='0'*64),
+    'h_case_duplicate_id': lambda h,g:h['claim_occurrence_review_forms'][1].update(review_case_id_sha256=h['claim_occurrence_review_forms'][0]['review_case_id_sha256']),
+    'h_case_orphan': lambda h,g:h['claim_occurrence_review_forms'][0].update(relationship_id_sha256='0'*64),
+    'h_case_wrong_url': lambda h,g:h['claim_occurrence_review_forms'][0].update(source_url='https://wrong.example'),
+    'h_case_changed_context': lambda h,g:h['claim_occurrence_review_forms'][0].update(exact_original_context='[CITATION] missing original'),
+    'h_case_multiple_citations': lambda h,g:h['claim_occurrence_review_forms'][0].update(exact_original_context='[CITATION] and [CITATION]'),
+    'h_case_wrong_priority': lambda h,g:h['claim_occurrence_review_forms'][0].update(triage_priority_not_verdict='SAFE'),
+    'h_case_negative_offset': lambda h,g:h['claim_occurrence_review_forms'][0].update(original_codepoint_offset=-1),
+    'h_fallback_approved': lambda h,g:h['base_fallback_review_forms'][0].update(review_state='REVIEWED'),
+    'h_fallback_wrong_origin': lambda h,g:h['base_fallback_review_forms'][0].update(original_source_origin='fake'),
+    'h_fallback_wrong_url': lambda h,g:h['base_fallback_review_forms'][0].update(source_url='https://wrong.example'),
+    'h_fallback_wrong_case': lambda h,g:h['base_fallback_review_forms'][0].update(fallback_case_id_sha256='0'*64),
+    'g_group_approved': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(review_state='DONE'),
+    'g_group_human_safety': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(human_independent_safety_assessment='YES'),
+    'g_group_changed_url': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(source_url='https://wrong.example'),
+    'g_group_changed_crosswalk': lambda h,g:g['globally_unreviewed_shared_url_cards'][0]['unabridged_original_crosswalk_group'].update(url='https://bad.example'),
+    'g_group_case_changed': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(global_group_case_id_sha256='0'*64),
+    'g_group_drop_variant': lambda h,g:g['globally_unreviewed_shared_url_cards'][0]['distinct_original_variants'].pop(),
+    'g_group_approve_variant': lambda h,g:g['globally_unreviewed_shared_url_cards'][0]['distinct_original_variants'][0].update(review_state='APPROVED'),
+    'g_group_mutate_notes': lambda h,g:g['globally_unreviewed_shared_url_cards'][0]['distinct_original_variants'][0]['original_full_source_record'].update(notes='tampered'),
+    'g_group_wrong_relationships': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(cited_relationship_ids=[]),
+    'g_group_wrong_claim_ids': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(cited_claim_review_case_ids=[]),
+    'g_group_uncited_lie': lambda h,g:g['globally_unreviewed_shared_url_cards'][0].update(used_in_any_citation=False),
+}
+
+class Mutations(unittest.TestCase):pass
+
+def test_mutation(name,mutate):
+    def test(self):
+        h,g,t,original=inputs()
+        mutate(h,g)
+        # Resign both packets to prove derived constraints, not only SHA checks,
+        # reject a maliciously edited but internally rehashed reviewer handoff.
+        refresh(h)
+        if name!='g_detached_parent':
+            g['parent_R35_fingerprint_sha256']=h['fingerprint_sha256']
+        refresh(g)
+        if name in ('h_wrong_fingerprint','g_wrong_fingerprint'):
+            if name.startswith('h_'):h['fingerprint_sha256']='0'*64
+            else:g['fingerprint_sha256']='0'*64
+        with self.assertRaises(gate.ExportHold,msg=name): export(h,g,t)
+    test.__name__='test_reject_'+name
+    return test
+for name,change in MUTATIONS.items():
+    setattr(Mutations,'test_reject_'+name,test_mutation(name,change))
+
+if __name__=='__main__':unittest.main()
