@@ -42,7 +42,7 @@ class RegisterExportR47(unittest.TestCase):
             fragment=(Path(td)/'fv-ex2-evidence-atlas/templates/atlas-fragment.html').read_bytes()
             php=(HERE/'final-vestige-ex2-evidence-atlas.php').read_text()
             self.assertIn(hashlib.sha256(fragment).hexdigest(),php)
-            self.assertIn('0.0.49-staging',php)
+            self.assertIn('0.0.51-staging',php)
             self.assertEqual(m['schema'],'fv.ex2.apollo.wp-stage.r49.v1')
             self.assertEqual(m['embedded_images'],0)
             self.assertEqual(m['geographic_pins'],0)

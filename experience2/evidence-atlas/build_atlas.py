@@ -26,6 +26,12 @@ EXPECTED_URLS = {
     '06': 'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/',
 }
 RECORD_KEYS = {'id', 'catalog', 'date', 'date_label', 'photo_url', 'photo_role', 'identity_note', 'media_rights'}
+# R51: NASA's linked crew-photo page does not itself print this catalog number.
+# Preserve the pinned R37 crosswalk but do not promote its filename-based match
+# into an independently authenticated catalog-to-photograph identity.
+PROVISIONAL_CATALOG_NOTICE = ('The S67-19766 association is based on a NASA-hosted filename; '
+    'the linked NASA page does not state that catalog number. '
+    'Catalog-to-photograph identity remains unconfirmed pending archival review.')
 
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -64,9 +70,12 @@ def make_html(custody: dict, css: str, js: str) -> str:
         is_2017 = year == '2017'
         label = ('Retrospective exhibit, not contemporaneous evidence' if is_2017
                  else 'Contextual source photograph, not proof of causation')
+        provisional = ('<p class="fva-card__catalog-caution" data-fva-catalog-unconfirmed>'
+            + q(PROVISIONAL_CATALOG_NOTICE) + '</p>') if r['id'] == '01' else ''
         cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" id="fva-record-{q(r['id'])}" tabindex="-1">
           <div class="fva-card__top"><span>DOCUMENT {q(r['id'])} / 06</span><span>{year} · NASA RECORD</span></div>
           <div class="fva-card__plate" aria-hidden="true"><span>{q(r['catalog'])}</span><b>ARCHIVAL RECORD</b></div>
+          {provisional}
           <h2>{q(r['photo_role'].capitalize())}</h2>
           <p class="fva-card__date"><strong>Photograph date</strong> <span>{q(r['date_label'])}</span></p>
           <p class="fva-card__limit">{q(label)}</p>
@@ -121,6 +130,8 @@ def make_html(custody: dict, css: str, js: str) -> str:
     for r in custody['records']:
         citation = (f'NASA · catalog {r["catalog"]} · photograph date {r["date_label"]} · '
                     f'source: {r["photo_url"]} · image reuse: individual review required.')
+        if r["id"] == "01":
+            citation += " " + PROVISIONAL_CATALOG_NOTICE
         citation_items.append(
             f'<li data-fva-cite-id="{q(r["id"])}" id="fva-citation-{q(r["id"])}">'
             f'<p class="fva-citation__text" data-fva-citation-text>{q(citation)}</p>'
@@ -140,6 +151,7 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <p class="fva-kicker">RESEARCH DESK / APOLLO 1</p>
     <h1 id="fva-title">The Evidence <em>Atlas.</em></h1>
     <p class="fva-deck">Six NASA photographic-source records, presented without imagery until reuse review is complete. Navigate what a record documents—and what it does not.</p>
+    <p class="fva-provenance-note">Catalog verification notice: record 01 has a provisional catalog-to-image association. See the record and source register for the limitation.</p>
     <div class="fva-caution"><strong>Why no map?</strong> The reviewed source ledger does not establish precise locations for six independently verified map pins or evidentiary connections. No coordinates or inferred relationships are shown.</div>
   </header>
   <section class="fva-guide" aria-labelledby="fva-how"><h2 id="fva-how">Read before exploring</h2>

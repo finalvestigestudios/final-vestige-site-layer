@@ -10,3 +10,7 @@
 .fv-ex2-apollo-suite__head nav a:focus-visible{outline:3px solid #e5c487;outline-offset:4px}
 @media(max-width:420px){.fv-ex2-apollo-suite__head nav{display:grid;gap:8px}}
 @media print{.fv-ex2-apollo-suite__head nav{display:none}.fv-ex2-apollo-suite{color:#111;background:#fff}}
+
+/* R51: visible provenance disclosure also survives no-JS and print. */
+.fv-ex2-apollo-suite__head .fv-ex2-apollo-suite__provenance{border-inline-start:3px solid #d7b378;padding:12px 16px;background:#282418;color:#fff3db;font-size:14px;line-height:1.6}
+@media print{.fv-ex2-apollo-suite__head .fv-ex2-apollo-suite__provenance{background:#fff;color:#111;border-color:#333}}

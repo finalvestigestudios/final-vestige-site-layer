@@ -155,3 +155,9 @@
 .fv-ex2-ledger [data-fvx-to-atlas]{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #8b744b}
 .fv-ex2-ledger [data-fvx-to-atlas]:focus-visible{outline:3px solid #d8b46e;outline-offset:3px}
 @media print{.fv-ex2-ledger [data-fvx-to-atlas]{display:none!important}}
+
+/* R51 provenance warning: persistent in static, filtered, downloaded and print views. */
+.fva-card__catalog-caution,.fva-provenance-note{padding:14px 16px;border-inline-start:3px solid #d7b378;background:#282418;color:#fff3db;line-height:1.6;font-size:14px}
+.fva-card__catalog-caution{margin:12px 0 16px}
+.fva-provenance-note{max-width:900px;margin:18px 0}
+@media print{.fva-card__catalog-caution,.fva-provenance-note{background:#fff;color:#171717;border-color:#333}}
