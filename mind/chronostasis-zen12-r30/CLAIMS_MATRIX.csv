@@ -47,7 +47,7 @@ id,kind,statement,source,grade,gate,observed_utc
 "M30-46","permission","Permission for TikTok promotion","https://affiliates.inspire3.com/","NOT_VERIFIED","hard_hold","2026-10-31"
 "M30-47","permission","Permission for email promotion","https://affiliates.inspire3.com/","NOT_VERIFIED","hard_hold","2026-10-31"
 "M30-48","permission","Creative and merchant swipes license","https://affiliates.inspire3.com/","NOT_VERIFIED","hard_hold","2026-10-31"
-"M30-49","creative","Original 40-second silent film offline preview","LOCAL_VIDEO_SHA_fd20815e","offline_rendered_not_hosted","hold_until_a11y_staging","2026-10-31"
+"M30-49","creative","Original 40-second silent film offline preview","LOCAL_VIDEO_SHA_7a1cc8e4","offline_rendered_not_hosted","hold_until_a11y_staging","2026-10-31"
 "M30-50","a11y","No-JS guide content and static film fallback","SELF_TEST","static_source_check_only","browser_a11y_pending","2026-10-31"
 "M30-51","privacy","Attribution code ENABLED=false","SELF_TEST","static_off_synthetic","no_live_collection","2026-10-31"
 "M30-52","release","Independent Site QA #126 acceptance","https://github.com/finalvestigestudios/final-vestige-site-layer/issues/126","NOT_VERIFIED","hard_hold","2026-10-31"
