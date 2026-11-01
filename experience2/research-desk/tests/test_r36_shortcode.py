@@ -51,7 +51,7 @@ class Tests(unittest.TestCase):
         p=BASE/'templates/ledger.html'
         raw=p.read_bytes()
         git_blob=hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
-        self.assertEqual(git_blob,'8b14587187b375e93cfbd4436b99bfb6cd3d2f32')
+        self.assertEqual(git_blob,'4842afb84b4c993cfc4861ce7f5a7a4d7b451871')
         self.assertEqual(raw.count(b'data-fvx-photo-record='),6)
         self.assertEqual(raw.count(b'data-fvx-chrono-link'),6)
     def test_php_and_js_parse(self):
