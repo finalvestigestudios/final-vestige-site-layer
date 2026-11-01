@@ -283,15 +283,15 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
 
     def test_real_journal_descriptor_read_snapshot(self):
         journal = self.root / "audit.jsonl"
-        contents = b'{"decision":"needs_evidence"}\\n'
+        contents = b'{"decision":"needs_evidence"}\n'
         journal.write_bytes(contents)
         self.assertEqual(journal_io.read_regular_bytes(
             journal, 4096, "Review journal"), contents)
 
     def test_real_journal_descriptor_append_preserves_prior_bytes(self):
         journal = self.root / "audit.jsonl"
-        first = b'{"review":"one"}\\n'
-        next_event = b'{"review":"two"}\\n'
+        first = b'{"review":"one"}\n'
+        next_event = b'{"review":"two"}\n'
         journal.write_bytes(first)
         calls = []
         def verify():
@@ -302,7 +302,7 @@ class WindowsDescriptorCtimeParityR102(unittest.TestCase):
 
     def test_new_journal_validation_failure_cannot_publish_event(self):
         journal = self.root / "audit.jsonl"
-        event = b'{"review":"one"}\\n'
+        event = b'{"review":"one"}\n'
         with self.assertRaisesRegex(ValueError, "reject"):
             journal_io.append_verified_event(journal, event, 4096,
                 lambda: (_ for _ in ()).throw(ValueError("reject")))
