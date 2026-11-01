@@ -56,7 +56,11 @@ def _safe_child_diagnostic(payload, *, allowed_methods=None):
         line = payload.decode("ascii")
     except UnicodeDecodeError:
         return None
-    if line.endswith("\n"):
+    # Python writes one CRLF line on Windows and one LF line on Linux.
+    # Strip exactly one terminal delimiter; internal CR/LF still fails closed.
+    if line.endswith("\r\n"):
+        line = line[:-2]
+    elif line.endswith("\n"):
         line = line[:-1]
     if "\n" in line or "\r" in line or not line.startswith(DIAG_PREFIX):
         return None
