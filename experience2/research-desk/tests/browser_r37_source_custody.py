@@ -88,14 +88,24 @@ def main():
                     search.fill('zz-unmatched-record')
                     ensure(page.locator('[data-fvx-record]:visible').count() == 0,
                            prefix+'search did not filter')
-                    page.locator('[data-fvx-chrono-link]').first.click()
+                    (page.locator('[data-fvx-chrono-link]').first.tap() if width < 500 else
+                     page.locator('[data-fvx-chrono-link]').first.click())
                     ensure(search.input_value() == '', prefix+'chronology failed to clear search')
                     ensure(page.locator('[data-fvx-record]:visible').count() == 6,
                            prefix+'chronology failed to restore hidden evidence')
+                    # Malformed search metadata must NEVER leave the evidence inaccessible.
+                    page.locator('[data-fvx-record]').nth(2).evaluate(
+                        "el => el.removeAttribute('data-fvx-search')")
+                    search.fill('malformed-index')
+                    ensure(page.locator('[data-fvx-record]:visible').count() == 6,
+                           prefix+'malformed search did not fail open')
+                    ensure(not page.locator('[data-fvx-tools]').is_visible(),
+                           prefix+'failed enhancement not disabled')
                 else:
                     ensure(not page.locator('[data-fvx-tools]').is_visible(),
                            prefix+'no-JS controls unexpectedly visible')
-                    page.locator('[data-fvx-chrono-link]').first.click()
+                    (page.locator('[data-fvx-chrono-link]').first.tap() if width < 500 else
+                     page.locator('[data-fvx-chrono-link]').first.click())
                     ensure(page.locator('[data-fvx-record]:visible').count() == 6,
                            prefix+'no-JS chronology lost evidence')
                 if options.axe:
