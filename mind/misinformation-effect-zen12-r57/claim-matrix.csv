@@ -35,3 +35,5 @@ id,claim_or_feature,source,class,decision,reason_or_gate
 34,"draft video should autoplay",accessibility-requirement,a11y,REJECT,"No autoplay; captions/transcript/no-JS."
 35,"standalone product guide should require signup",https://finalvestige.com/focus/,funnel,REJECT,"Direct guide access remains ungated."
 36,"publish without written founder approval",issue-171,release,REJECT,"Hard hold."
+37,"public Inspire3 affiliate portal implies FV authorization",https://affiliates.inspire3.com/,affiliate-portal,REJECT,"Public login/signup is not FV acceptance or Zen12 permission."
+38,"Limitless Labs public swipe is Zen12 approved",https://inspire3.com/ll/,creative-rights,REJECT,"Another SKU's creative and email samples do not authorize Zen12 promotion."
