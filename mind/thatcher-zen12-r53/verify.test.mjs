@@ -21,7 +21,7 @@ function invariant(x){
  noActiveMerchants(x);
  assert.doesNotMatch(x,/<(script|form|iframe|input)\b/i);
  assert.doesNotMatch(x,/\bonclick\s*=|\bonload\s*=|<video[^>]*\bautoplay\b|[?&](?:clickid|aff_id|affid)=/i);
- const d=x.indexOf("If you purchase through an approved link"),c=x.indexOf('<button type="button" disabled',d);
+ const d=x.lastIndexOf("If you purchase through an approved link"),c=x.indexOf('<button type="button" disabled',d);
  assert.ok(d>0&&c>d&&c-d<500,"commission disclosure adjacent to disabled control");
  assert.match(x,/aria-labelledby=/);assert.match(x,/class="fv53-skip"/);
 }
