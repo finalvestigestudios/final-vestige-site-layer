@@ -202,5 +202,38 @@ class TestReceivedEvidenceSafety(unittest.TestCase):
     def test_output_json_serializable(self):
         self.assertIsInstance(json.loads(json.dumps(run())), dict)
 
+    def test_both_mime_parts_disclosure_present(self):
+        r = run(content=eml(plain=BODY, html="<p>"+BODY+"</p>"))
+        self.assertTrue(r["commercial_disclosure_in_each_present_alternative"])
+
+    def test_mime_plain_missing_disclosure_cannot_hide_behind_html(self):
+        r = run(content=eml(plain="Just the story.", html="<p>Final Vestige may earn a commission.</p>"))
+        self.assertTrue(r["commercial_disclosure_present"])
+        self.assertFalse(r["commercial_disclosure_in_each_present_alternative"])
+
+    def test_mime_html_missing_disclosure_cannot_hide_behind_plain(self):
+        r = run(content=eml(plain=BODY, html="<p>Just the story</p>"))
+        self.assertFalse(r["commercial_disclosure_in_each_present_alternative"])
+
+    def test_postal_in_only_one_mime_part_not_sufficient(self):
+        r = run(content=eml(plain=BODY, html="<p>No postal address</p>"))
+        self.assertEqual(r["physical_address"], "TEXT_MATCH_NOT_VERIFIED_OWNERSHIP")
+        self.assertFalse(r["postal_text_in_each_present_alternative"])
+
+    def test_unsubscribe_text_only_in_one_mime_part(self):
+        r = run(content=eml(plain=BODY, html="<p>No opt-out details</p>"))
+        self.assertFalse(r["unsubscribe_text_in_each_present_alternative"])
+
+    def test_mime_part_presence_audited(self):
+        r = run(content=eml(plain=BODY, html="<p>"+BODY+"</p>"))
+        self.assertTrue(r["mime_plain_present"])
+        self.assertTrue(r["mime_html_present"])
+
+    def test_plain_only_is_available_alternative(self):
+        r = run(content=eml())
+        self.assertTrue(r["mime_plain_present"])
+        self.assertFalse(r["mime_html_present"])
+        self.assertTrue(r["commercial_disclosure_in_each_present_alternative"])
+
 if __name__ == "__main__":
     unittest.main()
