@@ -144,5 +144,58 @@ class NativeKeyboardContractR106(unittest.TestCase):
         self.assertEqual(captured.getvalue().strip(), audit.ERROR)
 
 
+    def test_source_scheduled_first_focus_is_accepted(self):
+        class Input:
+            def focus_set(self):
+                pass
+        root = object()
+        entry = Input()
+        self.assertEqual(audit._verified_initial_focus(
+            [(root, entry.focus_set, ())], root, entry).__name__, "focus_set")
+
+    def test_missing_or_multiple_focus_schedules_rejected(self):
+        class Input:
+            def focus_set(self):
+                pass
+        root, entry = object(), Input()
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([], root, entry)
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([
+                (root, entry.focus_set, ()), (root, entry.focus_set, ())
+            ], root, entry)
+
+    def test_unrelated_window_focus_schedule_rejected(self):
+        class Input:
+            def focus_set(self):
+                pass
+        root, entry = object(), Input()
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([(object(), entry.focus_set, ())], root, entry)
+
+    def test_wrong_widget_or_unbound_callback_rejected(self):
+        class Input:
+            def focus_set(self):
+                pass
+        root, entry, other = object(), Input(), Input()
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([(root, other.focus_set, ())], root, entry)
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([(root, lambda: None, ())], root, entry)
+
+    def test_focus_schedule_arguments_and_command_rejected(self):
+        class Input:
+            def focus_set(self):
+                pass
+            def focus_force(self):
+                pass
+        root, entry = object(), Input()
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([(root, entry.focus_set, ("unsafe",))], root, entry)
+        with self.assertRaises(audit.KeyboardBlocked):
+            audit._verified_initial_focus([(root, entry.focus_force, ())], root, entry)
+
+
+
 if __name__ == "__main__":
     unittest.main()
