@@ -10,6 +10,7 @@ from playwright.sync_api import sync_playwright
 from integrated_admission_checks import (
     validate_stage_url, read_trusted_media_manifest,
     verify_integrated_dom, verify_media_payload)
+from archive_gallery_transfer import audit_archive_gallery
 
 
 WIDTHS=(320,360,390,768,1024,1440,1920)
@@ -82,28 +83,11 @@ def stage_check(url,outdir,axe_file,media_manifest,approved_stage_host=None):
                     require(len(axe['violations'])==0,f'{w}: axe WCAG violations: {axe["violations"]}')
                     require(len(axe['incomplete'])==0,f'{w}: axe incomplete requires manual resolution: {axe["incomplete"]}')
                 if w==390:
-                    images=page.locator('.fv-hf img').all()
-                    require(len(images)==3,f'expected 3 local archived images, got {len(images)}')
-                    for el in images:
-                        source=el.evaluate('(e)=>e.currentSrc')
-                        name=next((x for x in MEDIA if source.endswith('/'+x)),None)
-                        require(name and urlsplit(source).netloc==urlsplit(url).netloc,
-                            'not first-party stage image: '+source)
-                        obj=page.request.get(source,timeout=30000)
-                        raw=obj.body()
-                        length,iw,ih=MEDIA[name]
-                        media_origin=urlsplit(obj.url)
-                        require((media_origin.scheme,media_origin.netloc)==
-                                (expected_origin.scheme,expected_origin.netloc),
-                                name+': first-party URL redirected outside the isolated stage')
-                        require(obj.status==200 and len(raw)==length, name+' HTTP byte transfer mismatch')
-                        require(el.evaluate('(e)=>e.complete && e.naturalWidth>0 && e.naturalHeight>0'),
-                            name+' image not decoded')
-                        observed=el.evaluate('(e)=>[e.naturalWidth,e.naturalHeight]')
-                        require(observed==[iw,ih],name+' image dimensions mismatch '+str(observed))
-                        verified=verify_media_payload(name,raw,observed,trusted_media[name])
-                        receipt['media'][name]={**verified,'origin':urlsplit(source).netloc,
-                                                'trusted_identity':'INDEPENDENT_MANIFEST_MATCH'}
+                    # The actual source has loading=lazy photos inside JS-hidden case
+                    # panels. Select and scroll each case before requiring decode.
+                    receipt['media']=audit_archive_gallery(
+                        page, (expected_origin.scheme,expected_origin.netloc),
+                        trusted_media, MEDIA, require, verify_media_payload)
                     page.locator('[data-fv-case-button="franklin"]').click()
                     require(page.locator('[data-fv-case="franklin"]').is_visible(),'case chooser Franklin')
                     receipt['interactions']['case']='PASS'
