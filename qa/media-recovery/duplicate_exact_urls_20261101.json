@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "audit_date_utc": "2026-11-01",
+  "audit_kind": "EXACT_STORED_URL_DUPLICATES_NOT_NETWORK_RESPONSES",
+  "inventory": {
+    "ref": "qa/media-recovery-reviewed-20261030-1158",
+    "parts": 8,
+    "posts": 61,
+    "stored_image_references": 355,
+    "exact_distinct_urls": 353,
+    "offsite_references": 288,
+    "offsite_exact_distinct_urls": 286,
+    "first_party_references": 67,
+    "first_party_exact_distinct_urls": 67,
+    "intrapost_repeated_url_groups": 2,
+    "intrapost_redundant_image_references": 2,
+    "slots_using_intrapost_repeated_urls": 4
+  },
+  "live_cms_readback": {
+    "read_only": true,
+    "posts": [
+      {
+        "id": 213,
+        "status": "publish",
+        "modified": "2026-10-29T20:59:21",
+        "same_url_occurrences": 2,
+        "source_alt_match_to_frozen_census": true
+      },
+      {
+        "id": 291,
+        "status": "publish",
+        "modified": "2026-08-28T15:14:59",
+        "same_url_occurrences": 2,
+        "source_alt_match_to_frozen_census": true
+      }
+    ],
+    "method": "WordPress posts.get context=edit, inspected exact repeated image URLs, ALTs and adjacent figure captions; not a public browser verification."
+  },
+  "duplicate_groups": [
+    {
+      "post_id": 213,
+      "post_title": "The Fire He Lit Himself",
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "exact_stored_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "source_host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "source_kind": "external",
+      "source_references": [
+        {
+          "slot": 2,
+          "image_key": "213:2",
+          "exact_alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations."
+        },
+        {
+          "slot": 6,
+          "image_key": "213:6",
+          "exact_alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge."
+        }
+      ],
+      "distinct_alt_count": 2,
+      "confirmed_live_cms_duplicate": true,
+      "image_binary_identity_verified": false,
+      "visitor_browser_http_status": null,
+      "visitor_network_transfer_bytes": null,
+      "confirmed_broken_slots": null,
+      "rights_status": "HOLD",
+      "publication_authorized": false,
+      "review_type": "P2_DUPLICATED_MAP_DIFFERENT_NARRATIVE_USE",
+      "review_note": "Identical NWCG 1993 Mann Gulch route/escape-fire map displayed twice with different, potentially complementary, narrative ALT and captions. Duplicate is not itself a factual error; check intended reader experience without removing either image automatically.",
+      "candidate_primary_record_url": "https://www.nwcg.gov/page/staff-ride-to-the-mann-gulch-fire",
+      "candidate_identity_status": "original_publisher_identified_duplicate_exact_stored_url"
+    },
+    {
+      "post_id": 291,
+      "post_title": "One Bulldozer Never Came Back",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "exact_stored_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "source_host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "source_kind": "external",
+      "source_references": [
+        {
+          "slot": 2,
+          "image_key": "291:2",
+          "exact_alt": "Growing breach in Teton Dam during the final hour before collapse."
+        },
+        {
+          "slot": 5,
+          "image_key": "291:5",
+          "exact_alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho."
+        }
+      ],
+      "distinct_alt_count": 2,
+      "confirmed_live_cms_duplicate": true,
+      "image_binary_identity_verified": false,
+      "visitor_browser_http_status": null,
+      "visitor_network_transfer_bytes": null,
+      "confirmed_broken_slots": null,
+      "rights_status": "HOLD",
+      "publication_authorized": false,
+      "review_type": "P0_CONTRADICTORY_SUBJECT_ALT_REVIEW",
+      "review_note": "Same Deseret News photograph used in one section as an actively growing pre-collapse breach and later as post-collapse cleanup; prior editorial source check identified this image as aftermath. Correct only after exact source confirmation/editorial approval. NARA NAID 28894684 is a candidate DIFFERENT photograph, not a binary-exact swap.",
+      "candidate_primary_record_url": "https://catalog.archives.gov/id/28894684",
+      "candidate_identity_status": "subject_alternative_only_not_exact"
+    }
+  ],
+  "network_and_performance_proof": {
+    "actual_guest_browser_response_statuses": null,
+    "actual_browser_decoded_image_statuses": null,
+    "broken_image_slots_count": null,
+    "broken_distinct_source_count": null,
+    "claimed_42_broken_confirmed": false,
+    "measured_76_percent_weight_reduction": null,
+    "original_wordpress_items_over_1point5_mib": 13,
+    "original_wp_storage_bytes_not_wire_bytes": true
+  },
+  "safety": {
+    "no_cms_writes": true,
+    "no_media_downloads": true,
+    "no_licensed_asset_copy": true,
+    "no_homepage_design_edits": true,
+    "no_new_spend": true
+  },
+  "interpretation": [
+    "An image URL can occupy two visible slots but produce one cached browser network resource; do not equate image-slot failures, exact-URL failures, HTTP requests or page bytes.",
+    "Numerical equality between 286 unique offsite URLs and Site QA's older 286 offsite-source count does not establish a shared counting method; an independently documented input/proxy-classification discrepancy remains.",
+    "Exact URL equality does not prove the embedded image decoded or that its ALT correctly describes its pixels.",
+    "No browser network evidence was collected; the reported 42 broken images and 76% savings remain unverified."
+  ]
+}
