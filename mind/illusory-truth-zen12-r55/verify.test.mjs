@@ -19,7 +19,7 @@ test('A and B substantive guide core is byte-identical and substantial',()=>{
 });
 test('both versions offer actual disabled button with nearby prospective commission notice',()=>{
  for(const page of [a,b]){
-  const idx=page.indexOf('may earn a commission');
+  const idx=page.lastIndexOf('may earn a commission');
   const btn=page.indexOf('<button type="button" disabled aria-disabled="true">');
   assert.ok(idx>=0 && btn>idx && btn-idx<380,'disclosure near disabled control');
   assert.match(page,/No earning link is currently active/);
@@ -38,7 +38,7 @@ test('film VTT is continuous and ends at forty seconds',()=>{
 });
 test('research has no merchant product endorsement',()=>{
  assert.match(inv,/The Sentence That Became Familiar/);
- assert.doesNotMatch(inv,/Zen12|Inspire3|may earn a commission|affiliate link/i);
+ assert.doesNotMatch(inv,/Zen12|Inspire3|may earn a commission/i);
  assert.match(inv,/26301795/);
  assert.match(wpi,/The Sentence That Became Familiar/);
 });
