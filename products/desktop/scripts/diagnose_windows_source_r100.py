@@ -62,6 +62,15 @@ def probe(root: Path) -> dict[str, bool]:
     results["source_metadata"] = ok
     ok, _ = _quiet_stage("inventory", lambda: gate._snapshot(root))
     results["inventory"] = ok
+    if not ok:
+        # If source custody is already broken, don't spend minutes executing
+        # redundant suites or risk misleading smoke evidence. Only the
+        # mandatory R57 gate can authorize subsequent CI packaging.
+        for name in ("normal_tests", "optimized_tests", "engine_smokes"):
+            results[name] = False
+            print("FVS_WIN_SOURCE_STAGE:" + name + "=NOT_RUN_INVENTORY_BLOCKED")
+        print("FVS_WIN_SOURCE_STAGE:read_only_no_release=TRUE")
+        return results
 
     for optimized, name in ((False, "normal_tests"), (True, "optimized_tests")):
         passed, _ = _quiet_stage(
