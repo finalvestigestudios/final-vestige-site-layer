@@ -41,7 +41,8 @@
       buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fvaFilter===year)));
       status.textContent=`${count} of 6 NASA photographic-source records shown`;
       empty.hidden=count!==0;
-    }catch(_){restore();}
+      return true;
+    }catch(_){restore();return false;}
   };
   const onFilter=event=>{year=event.currentTarget.dataset.fvaFilter;apply();};
   const onReset=()=>{year='all';input.value='';apply();if(active)input.focus();};
@@ -55,7 +56,8 @@
     reset.addEventListener('click',onReset);
     active=true;
     root.dataset.fvaReady='yes';
-    apply();
-    controls.hidden=false;
+    // apply() can itself detect altered custody and roll back listeners.
+    // Do not expose controls after that rollback (previously a stale live UI).
+    if(apply() && active)controls.hidden=false;
   }catch(_){restore();}
 })();
