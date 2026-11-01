@@ -13,9 +13,11 @@ from scripts import diagnose_windows_toolchain_r104 as diag
 class ToolchainPhaseDiagnosticR104(unittest.TestCase):
     def test_exact_static_phase_inventory(self):
         self.assertEqual(diag.PHASES,
-            ("runtime_file", "distribution_file", "distribution_inventory",
-             "snapshot", "evidence_preflight", "evidence_atomic_publish",
-             "capture", "verify"))
+            ("runtime_file", "runtime_dev", "runtime_ino", "runtime_mode",
+             "runtime_nlink", "runtime_size", "runtime_mtime_ns",
+             "runtime_ctime_ns", "distribution_file",
+             "distribution_inventory", "snapshot", "evidence_preflight",
+             "evidence_atomic_publish", "capture", "verify"))
         self.assertEqual(len(set(diag.PHASES)), len(diag.PHASES))
 
     def test_synthetic_diagnostic_has_no_release_authorization(self):
