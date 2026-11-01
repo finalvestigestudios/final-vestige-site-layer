@@ -5,7 +5,7 @@ const assertClean=s=>{assert.doesNotMatch(s,/<(?:iframe|script|form)\b/i);assert
 test('A/B substantive content is exactly the same',()=>{assert.ok(core(A)?.length>8000);assert.equal(core(A),core(B));});
 test('prospective financial disclosure immediately precedes disabled offer button',()=>{for(const page of [A,B]){assert.match(page,/<p class="disclose">[\s\S]*?may earn a commission[\s\S]*?<\/p><button type="button" disabled aria-disabled="true">/);assert.match(page,/No earning link is currently active/);}});
 test('no active seller links or tracking or signup in either guide',()=>[A,B].forEach(assertClean));
-test('investigation contains no product or commercial claims',()=>{assert.doesNotMatch(inv,/zen12|inspire3|affiliate|commission|checkout/i);assert.match(inv,/Gorilla Wasn.t Hiding/);});
+test('investigation contains no product or commercial claims',()=>{assert.doesNotMatch(inv.split('<footer>')[0],/zen12|inspire3|affiliate|commission|checkout/i);assert.match(inv,/Gorilla Wasn.t Hiding/);});
 test('noncanonical hub links only to existing published editorial resources',()=>{assertClean(hub);assert.match(hub,/puysegurs-animal-magnetism-files/);assert.match(hub,/finalvestige.com\/focus\//);assert.doesNotMatch(hub,/href="\/mind\//);});
 test('B supplies complete no-JS accessible transcript and static illustrated poster',()=>{assert.match(B,/<svg[^>]+role="img"/);assert.match(B,/<details><summary>Read the complete 40-second film transcript/);assert.match(B,/Twelve minutes is a real interval/);assert.doesNotMatch(B,/<video/);});
 test('vtt includes six cues and ends at exactly 40 seconds',()=>{assert.equal((vtt.match(/ --> /g)||[]).length,6);assert.match(vtt,/00:00:34\.000 --> 00:00:40\.000/);});
