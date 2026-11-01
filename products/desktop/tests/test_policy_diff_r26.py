@@ -1,5 +1,6 @@
 """Policy Delta Desk R26: real helper I/O, provenance and fail-closed intake."""
 import hashlib
+import os
 import tempfile
 import unittest
 from pathlib import Path
