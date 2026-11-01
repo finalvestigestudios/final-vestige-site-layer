@@ -69,6 +69,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_environment_r113.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_environment_r113.py' > /dev/null 2>&1
+      - name: R114 native System32 PowerShell anti-hijack contracts (normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_trusted_powershell_r114.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_trusted_powershell_r114.py' > /dev/null 2>&1
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -216,6 +220,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R113 Defender environment regression FAILED" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_defender_environment_r113.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R113 optimized Defender environment regression FAILED" }
+      - name: R114 native System32 PowerShell anti-hijack contracts (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_trusted_powershell_r114.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R114 native PowerShell path regression FAILED" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_trusted_powershell_r114.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R114 optimized native PowerShell path regression FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
