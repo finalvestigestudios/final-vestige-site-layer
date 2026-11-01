@@ -1,0 +1,47 @@
+<?php
+/**
+ * Plugin Name: Final Vestige — Apollo Evidence Atlas (STAGING ONLY)
+ * Description: NASA-custody source-reference gallery; not approved for production.
+ * Version: 0.0.40-staging
+ * Requires PHP: 7.4
+ */
+if (!defined('ABSPATH')) { exit; }
+if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.40-staging'); }
+// Exact, reviewed R39 source-custody HTML fragment. A changed build needs new review.
+if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '45a552d460cf93a1b10ba5821a662956bee9a77f87c147b22182b805f5d27321'); }
+
+/** Register assets before the theme head; never depend on top-level shortcode scanning.
+ * Trade-off: assets are loaded on all singular views, even when shortcode is absent.
+ * This must be re-evaluated with real WordPress/Assembler performance traces.
+ */
+function fv_ex2_atlas_enqueue(): void {
+    if (!is_singular()) { return; }
+    wp_enqueue_style('fv-ex2-evidence-atlas', plugins_url('assets/atlas.css', __FILE__), array(), FV_EX2_ATLAS_VERSION);
+    wp_enqueue_script('fv-ex2-evidence-atlas', plugins_url('assets/atlas.js', __FILE__), array(), FV_EX2_ATLAS_VERSION, true);
+}
+add_action('wp_enqueue_scripts', 'fv_ex2_atlas_enqueue', 20);
+
+function fv_ex2_atlas_fallback(): string {
+    return '<p class="fv-ex2-atlas-fallback">Evidence Atlas is unavailable. <a href="' . esc_url('https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/') . '">Read the Apollo 1 investigation</a>.</p>';
+}
+
+/** Only compiled, source-reviewed local markup; no shortcode attributes or remote input. */
+function fv_ex2_atlas_shortcode($atts = array()): string {
+    static $rendered = false;
+    if ($rendered) {
+        // The underlying R39 JS supports a single Atlas root. Never silently duplicate IDs.
+        return '<p class="fv-ex2-atlas-duplicate">The Atlas is already on this page. <a href="#fva-title">Jump to its evidence records</a>.</p>';
+    }
+    $path = plugin_dir_path(__FILE__) . 'templates/atlas-fragment.html';
+    if (!is_readable($path)) { return fv_ex2_atlas_fallback(); }
+    $markup = file_get_contents($path);
+    if (!is_string($markup) || substr_count($markup, 'data-fva-record ') !== 6
+        || strpos($markup, 'data-fva-atlas') === false
+        || strpos($markup, '<script') !== false || strpos($markup, '<img') !== false
+        || !hash_equals(FV_EX2_ATLAS_TEMPLATE_SHA256, hash('sha256', $markup))) {
+        return fv_ex2_atlas_fallback();
+    }
+    $rendered = true;
+    return $markup;
+}
+add_shortcode('fv_ex2_evidence_atlas', 'fv_ex2_atlas_shortcode');
