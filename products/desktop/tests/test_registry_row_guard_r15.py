@@ -1,6 +1,7 @@
 """R15 synthetic operator registry semantic guard regression tests."""
 import hashlib
 import sqlite3
+from contextlib import closing
 import unittest
 
 from registry_row_guard import RegistryRowError, enforce_registry_rows
@@ -141,7 +142,7 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         self.output.write_bytes(b"synthetic signed entitlement bytes")
         digest = self.registry.finalize(**self.params, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
         self.assertEqual(digest, hashlib.sha256(self.output.read_bytes()).hexdigest())
-        with sqlite3.connect(self.registry_file) as db:
+        with closing(sqlite3.connect(self.registry_file)) as db, db:
             self.assertEqual(db.execute("SELECT state FROM issuance").fetchone(), ("issued",))
 
     def test_same_output_path_cannot_be_reserved_twice(self):
@@ -149,19 +150,19 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         self.registry.reserve(**self.params)
         with self.assertRaisesRegex(RegistryError, "destination already reserved"):
             self.registry.reserve(**{**self.params, "license_id": "synthetic-002"})
-        with sqlite3.connect(self.registry_file) as db:
+        with closing(sqlite3.connect(self.registry_file)) as db, db:
             self.assertEqual(db.execute("SELECT count(*) FROM issuance").fetchone(), (1,))
 
     def test_semantic_corruption_blocks_new_reservations(self):
         from license_registry import RegistryError
         self.registry.reserve(**self.params)
-        with sqlite3.connect(self.registry_file) as db:
+        with closing(sqlite3.connect(self.registry_file)) as db, db:
             db.execute("UPDATE issuance SET license_sha256=? WHERE license_id=?",
                        ("f" * 64, "synthetic-001"))
         with self.assertRaisesRegex(RegistryError, "Unsafe registry schema or issuance records"):
             self.registry.reserve(license_id="synthetic-002", product="procurement",
                                   kid="test-key-001", output=self.root / "other.fvslicense")
-        with sqlite3.connect(self.registry_file) as db:
+        with closing(sqlite3.connect(self.registry_file)) as db, db:
             self.assertEqual(db.execute("SELECT count(*) FROM issuance").fetchone(), (1,))
 
     def test_finalize_rejects_clock_rollback_without_poisoning_record(self):
@@ -172,7 +173,7 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         with patch("license_registry._stamp", return_value="2000-01-01T00:00:00Z"):
             with self.assertRaisesRegex(RegistryError, "No matching reserved issuance"):
                 self.registry.finalize(**self.params, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
-        with sqlite3.connect(self.registry_file) as db:
+        with closing(sqlite3.connect(self.registry_file)) as db, db:
             self.assertEqual(db.execute("SELECT state,issued_at FROM issuance").fetchone(),
                              ("reserved", None))
 
@@ -181,7 +182,7 @@ class RegistryEntryPointR15Tests(unittest.TestCase):
         self.registry.reserve(**self.params)
         self.output.write_bytes(b"synthetic entitlement")
         self.registry.finalize(**self.params, expected_sha256=hashlib.sha256(self.output.read_bytes()).hexdigest())
-        with sqlite3.connect(self.registry_file) as db:
+        with closing(sqlite3.connect(self.registry_file)) as db, db:
             db.execute("UPDATE issuance SET license_sha256='tampered'")
         with self.assertRaisesRegex(RegistryError, "Unsafe registry"):
             self.registry.reserve(license_id="synthetic-002", product="grants",

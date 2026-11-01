@@ -2,6 +2,7 @@
 import hashlib
 import os
 import sqlite3
+from contextlib import closing
 import tempfile
 import threading
 import unittest
@@ -32,7 +33,7 @@ class RegistryR13Tests(unittest.TestCase):
         return self.registry.finalize(**{**self.data, **kw}, expected_sha256=expected)
 
     def status(self):
-        with sqlite3.connect(self.database) as con:
+        with closing(sqlite3.connect(self.database)) as con, con:
             return con.execute("SELECT state,license_sha256 FROM issuance WHERE license_id=?",
                                (self.data["license_id"],)).fetchone()
 
@@ -211,7 +212,7 @@ class RegistryCliIntegrationR13Tests(unittest.TestCase):
             self.target, "grants", trusted_keys={"test-only-operator-01": public})
         self.assertEqual(license_data.license_id, "test-only-license-001")
         before = self.target.read_bytes()
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             state, digest = con.execute(
                 "SELECT state,license_sha256 FROM issuance WHERE license_id=?",
                 ("test-only-license-001",)).fetchone()
@@ -228,7 +229,7 @@ class RegistryCliIntegrationR13Tests(unittest.TestCase):
             self.run_cli(password="invalid-passphrase")
         self.assertEqual(error.exception.code, 1)
         self.assertFalse(self.target.exists())
-        with sqlite3.connect(self.registry_path) as con:
+        with closing(sqlite3.connect(self.registry_path)) as con, con:
             self.assertEqual(con.execute(
                 "SELECT state FROM issuance WHERE license_id=?",
                 ("test-only-license-001",)).fetchone(), ("reserved",))

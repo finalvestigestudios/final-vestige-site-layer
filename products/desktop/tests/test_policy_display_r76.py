@@ -6,6 +6,8 @@ text comparison is not a legal interpretation or compliance determination.
 from __future__ import annotations
 
 import hashlib
+import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -105,10 +107,20 @@ class PolicyDisplayR76Tests(unittest.TestCase):
         self.assertIn("Diff display escapes source backslash as \\\\, tab as \\t and CR as \\r.", report)
 
     def test_header_filename_escape_remains_separate_from_source_encoding(self):
-        self.before = self.folder / "A\\r.txt"
-        report = self.compare(b"x\r\n", b"y\r\n")
-        self.assertIn('before "A\\\\r.txt"', report)
-        self.assertNotIn("\r", report)
+        # Windows treats backslash as a directory separator, not a filename
+        # character. Test the real formatter with the same JSON label there.
+        if os.name == "nt":
+            rendered = pd._unified_diff(
+                ["x\r\n"], ["y\r\n"],
+                json.dumps("A\\r.txt", ensure_ascii=True),
+                json.dumps("after.txt", ensure_ascii=True))
+            self.assertIn('before "A\\\\r.txt"', rendered)
+            self.assertNotIn("\r", rendered)
+        else:
+            self.before = self.folder / "A\\r.txt"
+            report = self.compare(b"x\r\n", b"y\r\n")
+            self.assertIn('before "A\\\\r.txt"', report)
+            self.assertNotIn("\r", report)
 
     def test_hunk_headers_remain_unchanged_for_multiple_hunks(self):
         before = [f"row {i}\n" for i in range(20)]

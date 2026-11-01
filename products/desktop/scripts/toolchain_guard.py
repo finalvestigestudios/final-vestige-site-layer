@@ -36,6 +36,22 @@ def _identity(info: os.stat_result) -> tuple[int, ...]:
             info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
+def _same_path_descriptor_identity(path_info: os.stat_result,
+                                   descriptor_info: os.stat_result,
+                                   *, windows: bool | None = None) -> bool:
+    """Compare two API views without equating Windows creation-time encodings.
+
+    Never use this for before/after checks: those must compare all seven fields,
+    including ctime, within their own respective APIs.
+    """
+    if windows is None:
+        windows = os.name == "nt"
+    path_identity = _identity(path_info)
+    descriptor_identity = _identity(descriptor_info)
+    return (path_identity[:-1] == descriptor_identity[:-1] if windows
+            else path_identity == descriptor_identity)
+
+
 def _file_record(path: Path) -> tuple[str, tuple[int, ...], int]:
     """Hash descriptor-checked bytes, rejecting links, swaps, and oversized data."""
     fd = None
@@ -46,7 +62,8 @@ def _file_record(path: Path) -> tuple[str, tuple[int, ...], int]:
             raise ValueError("Unsafe toolchain file")
         fd = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
                      | getattr(os, "O_BINARY", 0))
-        if _identity(os.fstat(fd)) != _identity(before):
+        opened = os.fstat(fd)
+        if not _same_path_descriptor_identity(before, opened):
             raise ValueError("Toolchain file replaced")
         digest = hashlib.sha256()
         length = 0
@@ -58,8 +75,12 @@ def _file_record(path: Path) -> tuple[str, tuple[int, ...], int]:
             if length > MAX_FILE_BYTES:
                 raise ValueError("Oversized toolchain file")
             digest.update(chunk)
-        if (length != before.st_size or _identity(os.fstat(fd)) != _identity(before)
-                or _identity(path.lstat()) != _identity(before)):
+        finished = os.fstat(fd)
+        after = path.lstat()
+        if (length != before.st_size
+                or _identity(finished) != _identity(opened)
+                or _identity(after) != _identity(before)
+                or not _same_path_descriptor_identity(after, finished)):
             raise ValueError("Toolchain file modified")
         return digest.hexdigest(), _identity(before), length
     except (OSError, RuntimeError):
@@ -158,7 +179,8 @@ def _read_manifest(root: Path, path: Path) -> dict:
     fd = None
     try:
         fd = os.open(safe_path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0))
-        if _identity(os.fstat(fd)) != _identity(before):
+        opened = os.fstat(fd)
+        if not _same_path_descriptor_identity(before, opened):
             raise ValueError("Toolchain manifest replaced")
         data = bytearray()
         while len(data) <= MAX_MANIFEST_BYTES:
@@ -166,9 +188,12 @@ def _read_manifest(root: Path, path: Path) -> dict:
             if not part:
                 break
             data.extend(part)
+        finished = os.fstat(fd)
+        after = safe_path.lstat()
         if (len(data) != before.st_size or len(data) > MAX_MANIFEST_BYTES
-                or _identity(os.fstat(fd)) != _identity(before)
-                or _identity(safe_path.lstat()) != _identity(before)):
+                or _identity(finished) != _identity(opened)
+                or _identity(after) != _identity(before)
+                or not _same_path_descriptor_identity(after, finished)):
             raise ValueError("Toolchain manifest modified")
     finally:
         if fd is not None:

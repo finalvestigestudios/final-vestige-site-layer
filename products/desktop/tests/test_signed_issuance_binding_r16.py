@@ -2,6 +2,7 @@
 import hashlib
 import os
 import sqlite3
+from contextlib import closing
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -51,7 +52,7 @@ class SignedIssuanceBindingR16(unittest.TestCase):
         )
 
     def state(self):
-        with sqlite3.connect(self.database) as db:
+        with closing(sqlite3.connect(self.database)) as db, db:
             return db.execute(
                 "SELECT state, license_sha256 FROM issuance WHERE license_id=?",
                 (self.details["license_id"],)).fetchone()
