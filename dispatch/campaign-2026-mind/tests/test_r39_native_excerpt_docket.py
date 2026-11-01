@@ -125,7 +125,7 @@ class NativeExcerptDocket(unittest.TestCase):
     def test_36_reject_merchant_link_in_editorial_issue(self):
         def f(t,e):
             p=t/"issues"/"02-before-hypnosis-had-a-name.md"
-            p.write_text(p.read_text()+"\nhttps://zen12.com/hnp\n")
+            s=p.read_text();p.write_text(s.replace("\n---\n","\n---\nhttps://zen12.com/hnp\n",1))
         self.replacement_test(f)
     def test_37_reject_missing_header_separator(self):
         def f(t,e):
