@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {COLLECTION_ENABLED,MIN_REPORTING_CELL,validateSyntheticEvent,summarizeSyntheticOnly,recordRealVisitorEvent} from './privacy-guard.mjs';
+const e={source:'organic',topic:'zen12-guide',variant:'text',action:'guide-read'};
+test('collector disabled',()=>{assert.equal(COLLECTION_ENABLED,false);assert.equal(MIN_REPORTING_CELL,20)});
+test('strict allowlist',()=>assert.deepEqual(validateSyntheticEvent(e),e));
+test('email rejected',()=>assert.throws(()=>validateSyntheticEvent({...e,email:'x@y.com'})));
+test('metadata rejected',()=>{for(const key of ['ip','url','referrer','cookie','sessionId','userAgent'])assert.throws(()=>validateSyntheticEvent({...e,[key]:'x'}))});
+test('bad category rejected',()=>assert.throws(()=>validateSyntheticEvent({...e,variant:'personal'})));
+test('prototype rejected',()=>assert.throws(()=>validateSyntheticEvent(Object.assign(Object.create({x:1}),e))));
+test('null and arrays rejected',()=>{assert.throws(()=>validateSyntheticEvent(null));assert.throws(()=>validateSyntheticEvent([e]))});
+test('19 hidden',()=>{const r=summarizeSyntheticOnly(Array(19).fill(e));assert.equal(r.visible.length,0);assert.equal(r.withheld,1)});
+test('20 shown',()=>assert.equal(summarizeSyntheticOnly(Array(20).fill(e)).visible[0].n,20));
+test('low threshold rejected',()=>assert.throws(()=>summarizeSyntheticOnly([e],1)));
+test('real tracking impossible',()=>assert.throws(()=>recordRealVisitorEvent(),/HARD_OFF/));
