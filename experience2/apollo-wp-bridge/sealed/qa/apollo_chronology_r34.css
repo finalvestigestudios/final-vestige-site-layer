@@ -1,0 +1,16 @@
+/* R34: date-indexed NASA source records. Static/no-script content stays readable. */
+.r34-chronology{border:1px solid #736247;background:#172024;padding:clamp(1rem,3vw,2rem);margin:2rem 0;overflow-wrap:anywhere}
+.r34-eyebrow,.r34-label{color:#e7c88d;text-transform:uppercase;letter-spacing:.1em;font:bold .75rem/1.5 system-ui,sans-serif}
+.r34-chronology h2{font:clamp(1.5rem,3.5vw,2.4rem)/1.2 Georgia,serif;margin:.5rem 0 1rem}
+.r34-chronology p{max-width:75ch}.r34-period-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;gap:.75rem;padding:0;margin:1.5rem 0}
+.r34-period-index li{border-top:2px solid #caa56b;padding:.7rem .6rem;font-size:.9rem;line-height:1.4}
+.r34-period-index strong{display:block;color:#f1d49f;font:1.5rem/1.4 Georgia,serif}
+.r34-controls[hidden]{display:none!important}.r34-filters{display:flex;flex-wrap:wrap;gap:.65rem;margin:.7rem 0 1rem}
+.r34-filters button{min-height:46px;min-width:70px;border:1px solid #b79a66;padding:.65rem 1rem;border-radius:.2rem;background:#101516;color:#f2e6ce;font:bold .9rem system-ui,sans-serif;cursor:pointer;touch-action:manipulation}
+.r34-filters button[aria-pressed="true"]{background:#e4c58b;color:#121616;border-color:#e4c58b}
+.r34-filters button:focus-visible{outline:3px solid #ffe3a8;outline-offset:3px}
+.r34-status{min-height:1.6em;color:#f1d49f;font-size:.85rem}.r34-caveat{border-left:3px solid #e4c58b;padding:.35rem 1rem;background:#0e1619}
+.records > article[hidden]{display:none!important}
+@media(max-width:610px){.r34-period-index{grid-template-columns:1fr}.r34-period-index li{padding:.45rem 0}.r34-filters button{flex:1 1 125px}}
+@media(prefers-reduced-motion:reduce){.r34-chronology *, .r34-chronology *::before, .r34-chronology *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.r34-controls{display:none!important}.records > article[hidden]{display:block!important}.r34-chronology{color:#000;background:white;border:1px solid black}.r34-eyebrow,.r34-label,.r34-period-index strong{color:#000}.r34-period-index li{border-color:#000}}
