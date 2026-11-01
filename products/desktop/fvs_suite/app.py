@@ -4,6 +4,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
 from .keyboard_access import install_shortcuts
+from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
 
 APPS = {
@@ -79,23 +80,24 @@ def run(app_id):
     root.minsize(760, 520) if premium else root.minsize(600, 390)
     root.columnconfigure(0, weight=1)
     root.rowconfigure(0, weight=1)
-    frame = ttk.Frame(root, padding=24)
-    frame.grid(row=0, column=0, sticky="nsew")
-    frame.columnconfigure(1, weight=1)
-    ttk.Label(frame, text=title, font=("Segoe UI", 17, "bold")).grid(
+    scroll = ScrollableForm(root)
+    frame = scroll.frame
+    def ui_label(*args, **kwargs):
+        return scroll.track_label(ttk.Label(*args, **kwargs))
+    ui_label(frame, text=title, font=("Segoe UI", 17, "bold")).grid(
         row=0, column=0, columnspan=3, sticky="w", pady=(0, 12))
-    ttk.Label(frame, text="Local-first review tools. Findings are not audit, legal, or fraud determinations.",
+    ui_label(frame, text="Local-first review tools. Findings are not audit, legal, or fraud determinations.",
               wraplength=700).grid(row=1, column=0, columnspan=3, sticky="w", pady=(0, 16))
     if premium:
-        ttk.Label(frame, text="PRE-RELEASE: not licensed for production use.",
-                  foreground="#9c3d20").grid(row=2, column=0, columnspan=3, sticky="w")
+        ui_label(frame, text="PRE-RELEASE: not licensed for production use.",
+                  font=("Segoe UI", 10, "bold")).grid(row=2, column=0, columnspan=3, sticky="w")
     selected = [tk.StringVar() for _ in labels]
     input_controls = []
     last_report = [None]
     base_row = 3
     for index, label in enumerate(labels):
         row = base_row + index
-        ttk.Label(frame, text=label).grid(row=row, column=0, sticky="w", pady=7, padx=(0, 12))
+        ui_label(frame, text=label).grid(row=row, column=0, sticky="w", pady=7, padx=(0, 12))
         entry = ttk.Entry(frame, textvariable=selected[index], width=65)
         entry.grid(row=row, column=1, sticky="ew", pady=7)
         def choose_file(i=index):
@@ -107,7 +109,7 @@ def run(app_id):
         input_controls.append((entry, browse))
     output = tk.StringVar(value=str(Path.home() / "Documents"))
     folder_row = base_row + len(labels) + 1
-    ttk.Label(frame, text="Output folder").grid(row=folder_row, column=0, sticky="w", padx=(0, 12))
+    ui_label(frame, text="Output folder").grid(row=folder_row, column=0, sticky="w", padx=(0, 12))
     output_entry = ttk.Entry(frame, textvariable=output)
     output_entry.grid(row=folder_row, column=1, sticky="ew")
     def choose_output():
@@ -117,7 +119,7 @@ def run(app_id):
     output_browse.grid(row=folder_row, column=2, padx=(8, 0))
     rules = tk.StringVar()
     if app_id == "procurement":
-        ttk.Label(frame, text="Price review policy JSON (optional)").grid(
+        ui_label(frame, text="Price review policy JSON (optional)").grid(
             row=folder_row+1, column=0, sticky="w", padx=(0, 12), pady=7)
         ttk.Entry(frame, textvariable=rules).grid(row=folder_row+1, column=1, sticky="ew", pady=7)
         def choose_rules():
@@ -127,7 +129,7 @@ def run(app_id):
         ttk.Button(frame, text="Browse…", command=choose_rules).grid(
             row=folder_row+1, column=2, padx=(8, 0))
     status = tk.StringVar(value="Choose your input files. Originals will not be modified.")
-    ttk.Label(frame, textvariable=status, wraplength=690).grid(
+    ui_label(frame, textvariable=status, wraplength=690).grid(
         row=folder_row+2, column=0, columnspan=3, sticky="w", pady=(18, 8))
     def execute():
         if premium and not _require_current_premium_entitlement(root, app_id, entitlement_source):
@@ -170,14 +172,14 @@ def run(app_id):
         review_button = ttk.Button(frame, text="Review exceptions (human only)…",
                                    command=open_exception_review)
         review_button.grid(row=folder_row+4, column=0, columnspan=3, sticky="w")
-    ttk.Label(frame, text="No AI model is used in this preview. All flags follow deterministic rules.",
+    ui_label(frame, text="No AI model is used in this preview. All flags follow deterministic rules.",
               wraplength=690).grid(row=folder_row+(5 if premium else 4), column=0,
                                    columnspan=3, sticky="w")
     hint = (f"Keyboard: Alt+1..{len(labels)} focus an input; Ctrl+1..{len(labels)} browse; "
             "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
     if premium:
         hint += "; Alt+R review exceptions"
-    ttk.Label(frame, text=hint, wraplength=700).grid(
+    ui_label(frame, text=hint, wraplength=700).grid(
         row=folder_row+(6 if premium else 5), column=0, columnspan=3,
         sticky="w", pady=(6, 0))
     install_shortcuts(root, input_controls, (output_entry, output_browse),
