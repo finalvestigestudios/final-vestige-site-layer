@@ -33,6 +33,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_static_method_diagnostics_r100.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_static_method_diagnostics_r100.py' > /dev/null 2>&1
+      - name: Verify R101 synthetic inventory forensics (normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_windows_inventory_forensics_r101.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_windows_inventory_forensics_r101.py' > /dev/null 2>&1
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -65,6 +69,20 @@ jobs:
           $env:PYTHONPATH = "products/desktop"
           python products/desktop/scripts/diagnose_windows_source_r100.py
           if ($LASTEXITCODE -ne 0) { throw "Windows source-stage diagnostic unavailable" }
+      - name: R101 inventory root-cause probe and regressions (diagnostic only)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          foreach ($mode in @("normal","optimized")) {
+            if ($mode -eq "normal") {
+              python -m unittest discover -s products/desktop/tests -p 'test_windows_inventory_forensics_r101.py' *> $null
+            } else {
+              python -OO -m unittest discover -s products/desktop/tests -p 'test_windows_inventory_forensics_r101.py' *> $null
+            }
+            if ($LASTEXITCODE -ne 0) { throw "R101 synthetic inventory verification FAILED ($mode)" }
+          }
+          python products/desktop/scripts/diagnose_windows_inventory_r101.py
+          if ($LASTEXITCODE -ne 0) { throw "R101 diagnostic execution unavailable" }
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         shell: pwsh
         run: |
