@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-01",
+  "scope": "Draft-only independent FV media recovery; not Site QA PR 154 or homepage design",
+  "article": {
+    "id": 219,
+    "url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+    "title": "The Airship Had No Life Jackets",
+    "modified": "2026-10-29T15:54:20",
+    "wp_read_method": "authenticated read-only posts.get(context=edit)",
+    "current_wp_matches_frozen_src_and_alt": 6,
+    "source_part": "qa/media-recovery/parts/05.json",
+    "source_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+  },
+  "sitewide": {
+    "published_posts": 61,
+    "stored_image_refs": 355,
+    "external_stored_refs": 288,
+    "large_wp_originals_over_1_5_mib": 13,
+    "claimed_42_broken_verified": false,
+    "claimed_76_percent_transfer_reduction_measured": false,
+    "actual_guest_broken_count": null,
+    "actual_transfer_reduction_percent": null,
+    "production_replacements": 0
+  },
+  "probe_method": {
+    "official_catalog_pages": "NHHC and Commons catalog text verified November 1 via web search/open; catalog text is not direct browser image load",
+    "guest_browser_run": false,
+    "origin_http_checks_performed": false,
+    "local_python_dns_resolution": "failed for both finalvestige.com and commons.wikimedia.org; not evidence of visitor outage"
+  },
+  "safety": {
+    "wordpress_production_writes": false,
+    "asset_downloads": false,
+    "unlicensed_caching": false,
+    "homepage_design_changes": false,
+    "site_qa_code_changes": false,
+    "subscription_spend_usd": 0
+  },
+  "images": [
+    {
+      "key": "219:0",
+      "post_id": 219,
+      "slot": 0,
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/80-G-1009363_(30087379334).jpg?width=1280",
+      "published_alt": "USS Akron flying over Washington, D.C., showing the immense scale of the Navy rigid airship.",
+      "stored_source_kind": "wikimedia_redirect",
+      "source_query_requested_width_px": 1280,
+      "authority": {
+        "catalog_number": "80-G-1009363",
+        "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/aircraft-us/aircraft-usn-a/uss-akron-zrs-4/80-g-1009363.html",
+        "commons_file_url": "https://commons.wikimedia.org/wiki/File:80-G-1009363_(30087379334).jpg",
+        "source_description": "USS Akron over Lincoln Memorial, Washington, D.C.; Navy photograph received 1957, exposure circa 1931–33",
+        "credit_recommendation": "U.S. Navy / National Archives; 80-G-1009363",
+        "creator_caution": "official U.S. Navy",
+        "matched_by": "exact Commons filename and cited primary Navy catalog identifier (not binary comparison)",
+        "exact_binary_sha256": null,
+        "same_photo_pixels_verified": false
+      },
+      "rights": {
+        "commons_pd_statement_observed": true,
+        "individual_reuse_review_complete": false,
+        "independent_creator_rights_cleared": false,
+        "local_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "notes": "Navy collection guidance says most, not every, collection image is public domain. Check item-specific restrictions and credits."
+      },
+      "geometry": {
+        "catalog_commons_original_width_px": 2650,
+        "catalog_commons_original_height_px": 2190,
+        "reference_measurement": "Commons file original metadata, not downloaded binary or browser delivery",
+        "proposed_max_width_px": 960,
+        "proposed_height_px": 793,
+        "no_upscale": true,
+        "requested_width_exceeds_original": false,
+        "visitor_encoded_bytes": null
+      },
+      "guest": {
+        "rendered_current_src": null,
+        "identity_proven": null,
+        "network_http_status": null,
+        "origin_http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "wp_media_uploaded": false,
+        "wp_post_edited": false,
+        "live_media_repaired": false
+      }
+    },
+    {
+      "key": "219:1",
+      "post_id": 219,
+      "slot": 1,
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_(ZRS-4)_in_flight_over_Manhattan,_circa_1931-1933.jpg?width=1280",
+      "published_alt": "USS Akron flying above lower Manhattan in the early 1930s.",
+      "stored_source_kind": "wikimedia_redirect",
+      "source_query_requested_width_px": 1280,
+      "authority": {
+        "catalog_number": "NH 43900",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-43000/NH-43900.html",
+        "commons_file_url": "https://commons.wikimedia.org/wiki/File:USS_Akron_(ZRS-4)_in_flight_over_Manhattan,_circa_1931-1933.jpg",
+        "source_description": "USS Akron over southern Manhattan, circa 1931–33",
+        "credit_recommendation": "U.S. Naval History and Heritage Command; NH 43900",
+        "creator_caution": "U.S. Navy credited",
+        "matched_by": "exact Commons filename and cited primary Navy catalog identifier (not binary comparison)",
+        "exact_binary_sha256": null,
+        "same_photo_pixels_verified": false
+      },
+      "rights": {
+        "commons_pd_statement_observed": true,
+        "individual_reuse_review_complete": false,
+        "independent_creator_rights_cleared": false,
+        "local_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "notes": "Navy collection guidance says most, not every, collection image is public domain. Check item-specific restrictions and credits."
+      },
+      "geometry": {
+        "catalog_commons_original_width_px": 5516,
+        "catalog_commons_original_height_px": 4241,
+        "reference_measurement": "Commons file original metadata, not downloaded binary or browser delivery",
+        "proposed_max_width_px": 960,
+        "proposed_height_px": 738,
+        "no_upscale": true,
+        "requested_width_exceeds_original": false,
+        "visitor_encoded_bytes": null
+      },
+      "guest": {
+        "rendered_current_src": null,
+        "identity_proven": null,
+        "network_http_status": null,
+        "origin_http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "wp_media_uploaded": false,
+        "wp_post_edited": false,
+        "live_media_repaired": false
+      }
+    },
+    {
+      "key": "219:2",
+      "post_id": 219,
+      "slot": 2,
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/NH_98039_USS_Akron_(ZRS-4).png?width=1280",
+      "published_alt": "USS Akron flying over the Panama Canal Zone with an N2Y-1 aircraft suspended beneath its internal hangar.",
+      "stored_source_kind": "wikimedia_redirect",
+      "source_query_requested_width_px": 1280,
+      "authority": {
+        "catalog_number": "NH 98039",
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-98000/NH-98039.html",
+        "commons_file_url": "https://commons.wikimedia.org/wiki/File:NH_98039_USS_Akron_(ZRS-4).png",
+        "source_description": "Akron in Panama Canal Zone with N2Y-1 suspended, 15 March 1933; original Army Air Corps photograph",
+        "credit_recommendation": "U.S. Army Air Corps photograph / NHHC; NH 98039",
+        "creator_caution": "official U.S. Army Air Corps, not proven U.S. Navy employee",
+        "matched_by": "exact Commons filename and cited primary Navy catalog identifier (not binary comparison)",
+        "exact_binary_sha256": null,
+        "same_photo_pixels_verified": false
+      },
+      "rights": {
+        "commons_pd_statement_observed": true,
+        "individual_reuse_review_complete": false,
+        "independent_creator_rights_cleared": false,
+        "local_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "notes": "Commons Navy-employee copyright tag does not match primary catalog's Army Air Corps photographer attribution. Review rather than silently reuse rationale."
+      },
+      "geometry": {
+        "catalog_commons_original_width_px": 5482,
+        "catalog_commons_original_height_px": 4160,
+        "reference_measurement": "Commons file original metadata, not downloaded binary or browser delivery",
+        "proposed_max_width_px": 960,
+        "proposed_height_px": 728,
+        "no_upscale": true,
+        "requested_width_exceeds_original": false,
+        "visitor_encoded_bytes": null
+      },
+      "guest": {
+        "rendered_current_src": null,
+        "identity_proven": null,
+        "network_http_status": null,
+        "origin_http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "wp_media_uploaded": false,
+        "wp_post_edited": false,
+        "live_media_repaired": false
+      }
+    },
+    {
+      "key": "219:3",
+      "post_id": 219,
+      "slot": 3,
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_releases_its_N2Y_1_aircraft.jpg?width=1280",
+      "published_alt": "USS Akron releasing an N2Y-1 training aircraft from its aerial trapeze during flight tests in 1932.",
+      "stored_source_kind": "wikimedia_redirect",
+      "source_query_requested_width_px": 1280,
+      "authority": {
+        "catalog_number": "80-G-463185",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-460000/80-G-463185.html",
+        "commons_file_url": "https://commons.wikimedia.org/wiki/File:USS_Akron_releases_its_N2Y_1_aircraft.jpg",
+        "source_description": "Akron launches N2Y-1 #A8604 near Lakehurst, 4 May 1932; Commons version cropped",
+        "credit_recommendation": "U.S. Navy / National Archives; 80-G-463185",
+        "creator_caution": "official U.S. Navy",
+        "matched_by": "exact Commons filename and cited primary Navy catalog identifier (not binary comparison)",
+        "exact_binary_sha256": null,
+        "same_photo_pixels_verified": false
+      },
+      "rights": {
+        "commons_pd_statement_observed": true,
+        "individual_reuse_review_complete": false,
+        "independent_creator_rights_cleared": false,
+        "local_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "notes": "Navy collection guidance says most, not every, collection image is public domain. Check item-specific restrictions and credits."
+      },
+      "geometry": {
+        "catalog_commons_original_width_px": 740,
+        "catalog_commons_original_height_px": 581,
+        "reference_measurement": "Commons file original metadata, not downloaded binary or browser delivery",
+        "proposed_max_width_px": 740,
+        "proposed_height_px": 581,
+        "no_upscale": true,
+        "requested_width_exceeds_original": true,
+        "visitor_encoded_bytes": null
+      },
+      "guest": {
+        "rendered_current_src": null,
+        "identity_proven": null,
+        "network_http_status": null,
+        "origin_http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "wp_media_uploaded": false,
+        "wp_post_edited": false,
+        "live_media_repaired": false
+      }
+    },
+    {
+      "key": "219:4",
+      "post_id": 219,
+      "slot": 4,
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Akron_approaches_mooring_mast.jpg?width=1280",
+      "published_alt": "USS Akron approaching a mooring mast during its operating career in the early 1930s.",
+      "stored_source_kind": "wikimedia_redirect",
+      "source_query_requested_width_px": 1280,
+      "authority": {
+        "catalog_number": "NH 97977",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-97000/NH-97977.html",
+        "commons_file_url": "https://commons.wikimedia.org/wiki/File:USS_Akron_approaches_mooring_mast.jpg",
+        "source_description": "Akron approaches mooring mast, circa 1931–33; Commons version cropped",
+        "credit_recommendation": "U.S. Naval History and Heritage Command; NH 97977",
+        "creator_caution": "U.S. Navy credited",
+        "matched_by": "exact Commons filename and cited primary Navy catalog identifier (not binary comparison)",
+        "exact_binary_sha256": null,
+        "same_photo_pixels_verified": false
+      },
+      "rights": {
+        "commons_pd_statement_observed": true,
+        "individual_reuse_review_complete": false,
+        "independent_creator_rights_cleared": false,
+        "local_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "notes": "Navy collection guidance says most, not every, collection image is public domain. Check item-specific restrictions and credits."
+      },
+      "geometry": {
+        "catalog_commons_original_width_px": 740,
+        "catalog_commons_original_height_px": 586,
+        "reference_measurement": "Commons file original metadata, not downloaded binary or browser delivery",
+        "proposed_max_width_px": 740,
+        "proposed_height_px": 586,
+        "no_upscale": true,
+        "requested_width_exceeds_original": true,
+        "visitor_encoded_bytes": null
+      },
+      "guest": {
+        "rendered_current_src": null,
+        "identity_proven": null,
+        "network_http_status": null,
+        "origin_http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "wp_media_uploaded": false,
+        "wp_post_edited": false,
+        "live_media_repaired": false
+      }
+    },
+    {
+      "key": "219:5",
+      "post_id": 219,
+      "slot": 5,
+      "published_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Akron_kitchen.jpg?width=1280",
+      "published_alt": "A sailor aboard USS Akron getting water from a wash basin inside the airship, showing the aluminum structural framework.",
+      "stored_source_kind": "wikimedia_redirect",
+      "source_query_requested_width_px": 1280,
+      "authority": {
+        "catalog_number": null,
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Akron_kitchen.jpg",
+        "commons_file_url": "https://commons.wikimedia.org/wiki/File:Akron_kitchen.jpg",
+        "source_description": "Crewman getting a cup of water aboard Akron; supplied by Navy Recruiting Bureau 1932; photographer not named",
+        "credit_recommendation": "U.S. Navy Recruiting Bureau (recipient); original creator unknown",
+        "creator_caution": "unknown; publication/holding by federal agency does not itself prove government authorship",
+        "matched_by": "exact Commons filename and cited primary Navy catalog identifier (not binary comparison)",
+        "exact_binary_sha256": null,
+        "same_photo_pixels_verified": false
+      },
+      "rights": {
+        "commons_pd_statement_observed": true,
+        "individual_reuse_review_complete": false,
+        "independent_creator_rights_cleared": false,
+        "local_cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "notes": "Navy Recruiting Bureau received photograph; original photographer unknown, federal creation unproven."
+      },
+      "geometry": {
+        "catalog_commons_original_width_px": 590,
+        "catalog_commons_original_height_px": 765,
+        "reference_measurement": "Commons file original metadata, not downloaded binary or browser delivery",
+        "proposed_max_width_px": 590,
+        "proposed_height_px": 765,
+        "no_upscale": true,
+        "requested_width_exceeds_original": true,
+        "visitor_encoded_bytes": null
+      },
+      "guest": {
+        "rendered_current_src": null,
+        "identity_proven": null,
+        "network_http_status": null,
+        "origin_http_status": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "release": {
+        "asset_downloaded": false,
+        "wp_media_uploaded": false,
+        "wp_post_edited": false,
+        "live_media_repaired": false
+      }
+    }
+  ]
+}
