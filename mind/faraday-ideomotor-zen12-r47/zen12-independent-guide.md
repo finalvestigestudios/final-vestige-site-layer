@@ -60,7 +60,7 @@ For the next three minutes, imagine a calm spoken cue: 'Notice where your attent
 
 Afterward write four short observations: Did you want a voice? Did quiet feel manageable? Was sound helpful or intrusive? Would you willingly repeat the practice tomorrow? Those are preference observations, not efficacy outcomes.
 
-An unrelated short observation from history can sharpen the distinction. When Faraday investigated table-turning in 1853, he did not assume that the sitters' vivid experience established the mechanism. He added an instrument to test which moved first. The lesson transfers to consumer audio: if a vendor proposes a mechanism, ask what was measured in this actual product—not merely what someone felt. The complete [Faraday investigation](#editor-only-faraday-link) will be linked only if the article receives separate editorial publication approval.
+An unrelated short observation from history can sharpen the distinction. When Faraday investigated table-turning in 1853, he did not assume that the sitters' vivid experience established the mechanism. He added an instrument to test which moved first. The lesson transfers to consumer audio: if a vendor proposes a mechanism, ask what was measured in this actual product—not merely what someone felt. A separate original Faraday investigation remains an unpublished editorial draft and has no public link yet.
 
 ## Is Zen12 worth further investigation?
 
