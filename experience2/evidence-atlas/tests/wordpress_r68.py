@@ -255,7 +255,10 @@ def accept(stage,axe,out):
                 page.on('pageerror',lambda error:errors.append('JS_ERROR'))
                 def route(req):
                     if req.request.url.startswith(BASE):req.continue_()
-                    else:outbound.append('OUTBOUND_BLOCKED');req.abort()
+                    else:
+                        outbound.append({'host':urllib.parse.urlsplit(req.request.url).hostname or 'UNKNOWN',
+                                         'resource_type':req.request.resource_type})
+                        req.abort()
                 page.route('**/*',route)
                 res=page.goto(BASE+'?pagename='+SLUG,wait_until='networkidle',timeout=45000)
                 assert res is not None and res.status==200,'LOCAL_HTTP_FAILED'
@@ -267,7 +270,13 @@ def accept(stage,axe,out):
                 assert page.locator('[data-fva-cite-id]').count()==6
                 assert page.locator('.fv-ex2-apollo-suite img').count()==0, 'APOLLO_EMBEDDED_IMAGE_NOT_CLEARED'
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
-                assert not outbound and not errors,(outbound,errors)
+                if outbound or errors:
+                    # Public hostnames and MIME categories only; never include full
+                    # URLs, query parameters, cookies, auth or private CLI output.
+                    report['blocked_external_requests'] = outbound
+                    report['pageerror_count'] = len(errors)
+                    snapshot()
+                assert not outbound and not errors,'BROWSER_REQUEST_OR_JS_ERROR'
                 if js:
                     assert page.locator('[data-fva-atlas]').get_attribute('data-fva-ready')=='yes'
                     assert page.locator('[data-fva-to-desk]:visible').count()==6
