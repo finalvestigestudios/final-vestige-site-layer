@@ -6,6 +6,7 @@ import io
 import os
 import sys
 import unittest
+from types import SimpleNamespace
 from contextlib import redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
@@ -98,6 +99,37 @@ class PrivateObservationInputR127(unittest.TestCase):
         else:
             self.hold()
             self.assertTrue(alias.exists())
+
+    def test_cross_api_timestamp_precision_difference_does_not_block_stable_note(self):
+        # Windows may report different timestamp precision for path lstat and
+        # descriptor fstat. Identity/size must still agree across the two.
+        ordinary_open, ordinary_fstat = os.open, os.fstat
+        current = {"fd": None}
+
+        def observe_open(path, flags, *args, **kwargs):
+            fd = ordinary_open(path, flags, *args, **kwargs)
+            if Path(path) == self.fx.observation:
+                current["fd"] = fd
+            return fd
+
+        def fstat_with_distinct_precision(fd):
+            meta = ordinary_fstat(fd)
+            if current["fd"] != fd:
+                return meta
+            return SimpleNamespace(
+                st_mode=meta.st_mode, st_nlink=meta.st_nlink,
+                st_dev=meta.st_dev, st_ino=meta.st_ino,
+                st_size=meta.st_size, st_mtime_ns=meta.st_mtime_ns + 1,
+                st_ctime_ns=meta.st_ctime_ns + 1)
+
+        with patch.object(writer.os, "open", side_effect=observe_open), patch.object(
+                writer.os, "fstat", side_effect=fstat_with_distinct_precision):
+            observed = writer._read_private_observation(
+                self.fx.observation, dist=self.fx.dist, review=self.fx.review,
+                witnesses=self.fx.witnesses, r9_report=self.fx.r9)
+        self.assertIn("SYNTHETIC TEST ONLY", observed)
+        self.assertEqual(self.fx.review.read_bytes(), self.original)
+        self.assertFalse(self.fx.path().exists())
 
     def test_replaced_note_before_open_is_rejected_even_if_bytes_identical(self):
         original_open = os.open
