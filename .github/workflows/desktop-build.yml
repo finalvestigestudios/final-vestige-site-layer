@@ -73,6 +73,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r125.py
           python -OO products/desktop/scripts/safe_unittest_r125.py
+      - name: R126 distinct per-check capture-time provenance (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r126.py
+          python -OO products/desktop/scripts/safe_unittest_r126.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -264,6 +268,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R125 private witness identity regression FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r125.py
           if ($LASTEXITCODE -ne 0) { throw "R125 optimized private witness identity regression FAILED" }
+      - name: R126 distinct per-check capture-time provenance (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r126.py
+          if ($LASTEXITCODE -ne 0) { throw "R126 capture-time witness regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r126.py
+          if ($LASTEXITCODE -ne 0) { throw "R126 optimized capture-time witness regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

@@ -1,5 +1,10 @@
 # Final Vestige Labs — Desktop Utilities
 
+## R126 — separate UTC capture timestamp for EACH private Win11 check (DRAFT / HOLD)
+
+R122 previously reused a one-time session `observed_utc` for every witness note, making checks written days apart appear simultaneous. R126 records `recorded_utc` from the local UTC clock **separately for each new v2 witness**, validates the strict timestamp, chronology and future-date bounds on write and verification, and preserves historic v1 notes as legacy records without fabricating timestamps. This is *tool capture time*, NOT independent physical observation or trusted clock proof. [R126 operator runbook](docs/PRIVATE_WIN11_CAPTURE_TIME_R126.md). Sixteen focused synthetic methods run in Linux/Windows CI normal and `-OO`. **All six apps UNRELEASED; 46 physical checks, real Defender/EDR, premium controls, QD and founder release approval still HOLD.**
+
+
 **Pre-release engineering branch. Not production-ready.** Four free utilities and two premium product prototypes share a local-only deterministic engine. Nothing uploads user documents, calls an LLM, or makes an automated compliance decision.
 
 | Executable name | Tier | Inputs | Output |
