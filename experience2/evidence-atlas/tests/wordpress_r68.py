@@ -183,7 +183,7 @@ def accept(stage,axe,out):
                     else:outbound.append('OUTBOUND_BLOCKED');req.abort()
                 page.route('**/*',route)
                 res=page.goto(BASE+'?pagename='+SLUG,wait_until='networkidle',timeout=45000)
-                assert res is not None and res.status()==200,'LOCAL_HTTP_FAILED'
+                assert res is not None and res.status==200,'LOCAL_HTTP_FAILED'
                 assert page.locator('.fv-ex2-apollo-suite').count()==1
                 assert page.locator('[data-fvx-record]').count()==6
                 assert page.locator('[data-fva-record]').count()==6
