@@ -30,7 +30,7 @@
     "posts_with_mismatch": 2,
     "mismatching_external_proxy_slots": 2
   },
-  "method": "Compare all 61 post IDs and image counts; classify media-recovery offsite only as source_kind external or wikimedia_redirect; compare to Site QA archived per-post offsite counts. Rows with delta=1 contain externally sourced images passed through i0.wp.com. Site QA per-image classifications are not available, so these are precisely localized candidate explanations, NOT a proven classification bug.",
+  "method": "Compare all 61 post IDs and image counts; classify media-recovery offsite only as source_kind external or wikimedia_redirect; compare to Site QA archived per-post offsite counts. Rows with delta=1 contain externally sourced images passed through i0.wp.com. Site QA per-image classifications are not available, so these are precisely localized candidate explanations, NOT a proven classification bug. Primary-source candidate metadata is provisional and cannot establish binary identity, rights, or guest HTTP.",
   "rows": [
     {
       "post_id": 621,
@@ -602,7 +602,27 @@
           "site_qa_per_slot_classification": null,
           "visitor_browser_status": null,
           "rights_to_cache_confirmed": false,
-          "automatic_replacement_authorized": false
+          "automatic_replacement_authorized": false,
+          "authoritative_alternate_candidate": {
+            "authority": "U.S. National Archives, Textual Records Division; Record Group 115",
+            "catalog_page_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+            "national_archives_identifier": "28894685",
+            "depicted_event": "June 5, 1976 Teton Dam; breach reached dam crest",
+            "potential_relationship": "Strong scene-level chronological alternate suggested by same National Archives blog; original image-to-NAID binary equivalence NOT established; verify matching photo and crop.",
+            "source_image_master_width_px": null,
+            "source_image_master_height_px": null,
+            "derivative_target": {
+              "max_width_px": 960,
+              "width_px": null,
+              "height_px": null,
+              "no_upscaling": true
+            },
+            "rights": "The NARA narrative credits Jerry Dursteller, contractor employee, as photographer; federal archive possession alone does not establish U.S.-government-work copyright or redistribution permission. Item-specific rights confirmation REQUIRED.",
+            "rights_cleared": false,
+            "visual_match_verified": false,
+            "visitor_image_failure_verified": false,
+            "approved_for_caching": false
+          }
         }
       ]
     },
@@ -625,7 +645,29 @@
           "site_qa_per_slot_classification": null,
           "visitor_browser_status": null,
           "rights_to_cache_confirmed": false,
-          "automatic_replacement_authorized": false
+          "automatic_replacement_authorized": false,
+          "authoritative_alternate_candidate": {
+            "authority": "U.S. National Archives, President's Commission on the Accident at Three Mile Island",
+            "catalog_page_url": "https://catalog.archives.gov/id/540034",
+            "independent_archival_transcription_url": "https://commons.wikimedia.org/wiki/File:Control_room_Number_2._Nuclear_Regulatory_Commission_inspector_looking_at_meters._-_NARA_-_540034.tif",
+            "national_archives_identifier": "540034",
+            "depicted_event": "April 3, 1979 Three Mile Island Unit 2 control room, NRC inspector checking meters",
+            "potential_relationship": "Historically contemporary control-room alternate, not established to be the same wide view or subject as the Squawkpoint-hosted photo. Do NOT silently replace.",
+            "source_image_master_width_px": 3000,
+            "source_image_master_height_px": 2023,
+            "master_dimensions_basis": "Wikimedia NARA file record, official NARA catalog binary not fetched",
+            "derivative_target": {
+              "max_width_px": 960,
+              "width_px": 960,
+              "height_px": 647,
+              "no_upscaling": true
+            },
+            "rights": "Commons presents NARA cooperation/public-domain notice; confirm actual government creation, item-specific record and credits before caching. Exact source image identity is unverified.",
+            "rights_cleared": false,
+            "visual_match_verified": false,
+            "visitor_image_failure_verified": false,
+            "approved_for_caching": false
+          }
         }
       ]
     }
