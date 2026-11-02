@@ -60,6 +60,7 @@ async function main() {
       }
     } finally { await direct.close(); }
     const results=[];
+    const boundedProfiles=[];
     const profiles=[
       { name:'mobile_390', formFactor:'mobile',
         screenEmulation:{mobile:true,width:390,height:844,deviceScaleFactor:1,disabled:false}},
@@ -81,6 +82,21 @@ async function main() {
       });
       const lhr=run?.lhr;
       if (!lhr || lhr.finalUrl!==u.href) throw Error('LIGHTHOUSE_DID_NOT_AUDIT_PRIVATE_RENDERER');
+      // Publish ONLY bounded emulation values to diagnose a profile-label
+      // mismatch; never raw Lighthouse JSON, URLs, body, cookie or debug trace.
+      const cfg=lhr.configSettings||{};
+      const e=cfg.screenEmulation||{},t=cfg.throttling||{};
+      const bounded=(value)=>typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=10000?value:null;
+      boundedProfiles.push({
+        profile:p.name,
+        form_factor:['mobile','desktop'].includes(cfg.formFactor)?cfg.formFactor:'OTHER',
+        effective_width_px:bounded(e.width),effective_height_px:bounded(e.height),
+        effective_mobile:typeof e.mobile==='boolean'?e.mobile:null,
+        cpu_multiplier:bounded(t.cpuSlowdownMultiplier),
+      });
+      writeFileSync(resolve(out,'LIGHTHOUSE_PROFILE_DIAGNOSTIC.json'),
+        JSON.stringify({status:'DIAGNOSTIC_ONLY_RELEASE_HOLD',
+          exact_source_commit:sha,profiles:boundedProfiles},null,2)+'\n',{mode:0o600});
       results.push(sanitizedSample(lhr,p.name));
     }
     const rec=buildReceipt(results,sha);
@@ -92,8 +108,19 @@ async function main() {
 }
 try {await main();}
 catch(e) {
-  // Error messages can contain protected URLs from third-party libraries.
-  // Export ONLY a bounded static failure type; no exception detail.
+  // Never forward arbitrary Lighthouse errors, which can contain nonce URLs.
+  const safeCodes=new Set([
+    'LIGHTHOUSE_EFFECTIVE_PROFILE_MISMATCH','LIGHTHOUSE_DID_NOT_AUDIT_PRIVATE_RENDERER',
+    'CANONICAL_RENDERER_NOT_READY','LIGHTHOUSE_RUNTIME_FAILURE',
+    'CATEGORY_SCORE_MISSING','AUDIT_METRIC_MISSING','PRIVATE_WORDPRESS_LOGIN_MISSING',
+    'LIGHTHOUSE_VERSION_MISSING','SOURCE_HEAD_CHANGED','NON_LOOPBACK_COOKIE_REFUSED'
+  ]);
+  const classification=safeCodes.has(e?.message)?e.message:'OTHER_LIGHTHOUSE_PRIVATE_GATE_FAILURE';
+  try {
+    const output=get('--out');
+    if (output) writeFileSync(resolve(output,'LIGHTHOUSE_FAILURE_CLASS.json'),
+      JSON.stringify({status:'RELEASE_HOLD',code:classification},null,2)+'\n',{mode:0o600});
+  } catch {}
   process.stderr.write('LIGHTHOUSE_PRIVATE_GATE_HOLD\n');
   process.exitCode=2;
 } finally {
