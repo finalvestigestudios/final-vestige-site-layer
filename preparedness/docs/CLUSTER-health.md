@@ -67,3 +67,20 @@ Scope: `medication-and-devices`, `emergency-hygiene-sanitation`, `warnings-radio
 
 ### Link checks
 All sources in `health.json` remain `human_link_check: false`. No human has clicked these links.
+
+## Live fidelity re-check (2026-11-01)
+Method: `curl` each page, strip tags, exact-string match the figures used in the articles. This checks that quoted figures still appear on the live page; it does not replace a human reading.
+
+| Source | Result |
+|---|---|
+| FDA insulin | Matched: 36-46 F, 59-86 F up to 28 days, two weeks, do not use (frozen), 48 hours, 98.6 F |
+| FDA safe drug use | Matched: floodwater discard even in original containers, "appears unchanged", purified or bottled water, state emergency refill laws |
+| Ready.gov power outages | Matched: "discard" wording and "more than a day" (page unchanged since read) |
+| OSU EM 9334 | Matched: 13-gallon, 3-5 mil, half cup, half full, 100 feet, one-quarter full, under $20 |
+| NWS NWR national | Matched: all seven frequencies, "more than 1000" transmitters |
+| Ready.gov alerts | Matched: 10 minutes, repeated twice, no subscription, five locations |
+| CDC power outage, FCC tips | **Not re-checked**: server returned HTTP 403 to scripted requests. Last read 2026-10-29 via Firecrawl. |
+| Washington DOH toilet page | **Not re-checked**: connection failed from this machine. Last read 2026-10-29 via Firecrawl. |
+| All other sources | Not re-checked (no distinctive figures used). |
+
+No article text changed as a result. `human_link_check` remains `false` on every source.

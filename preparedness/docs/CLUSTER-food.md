@@ -18,6 +18,8 @@ The merge was clean. The derived section test and the gating fixes resolved the 
 
 Suggested fix for the lead: use a synthetic fixture id (or a placeholder no contributor is assigned) in both tests. I cannot use a different id for the same page, because the validator rejects a second source with the placeholder's URL. `validate.py` and `build.py` both exit 0.
 
+**Update 2026-11-01: fixed on this branch at the user's request, outside the original brief.** I edited `preparedness/tests/test_preparedness.py` (shared file; 12 lines added, 3 removed) so the two tests no longer hard-code `nchfp-jerky`. `test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source` now picks a register placeholder that no fragment has upgraded (and skips only if none is left); `test_unverified_source_cannot_be_cited` now cites whichever source is currently unverified and fails if none exists. No assertion was removed or weakened. Result: `python -I -m unittest discover -s preparedness/tests -v` Ran 36 tests, OK (36 passed, 0 failed, 0 skipped); validate exit 0 (0 errors, 0 warnings); build exit 0. If the lead has made a different fix to these tests, take the lead's version on merge.
+
 ## 2. Sources verified (all in `sources/fragments/food.json`)
 
 Upgraded placeholders (same ids): `fsis-power-failure`, `fsis-emergency-foods` (first fetch returned only the title; a second fetch with a 5 s render wait returned the text), `nchfp-jerky`, `nchfp-pressure-ground-meat`, `nchfp-home`.

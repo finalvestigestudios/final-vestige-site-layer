@@ -1,0 +1,91 @@
+<style>
+.pa .ph-hero{padding:34px 0 30px}
+.pa .ph-hero h1{max-width:16ch}
+.pa .ph-draft{margin:0 0 18px;padding:12px 16px;border:1px solid var(--pa-warn);border-left-width:5px;background:var(--pa-surface);font-size:15px;color:var(--pa-text)}
+.pa .ph-steps{counter-reset:step;display:grid;gap:14px;margin:18px 0 0;padding:0;list-style:none}
+.pa .ph-step{counter-increment:step;position:relative;padding:22px 22px 18px 22px;background:var(--pa-surface);border:1px solid var(--pa-line);border-top:2px solid var(--pa-gold-dim)}
+.pa .ph-step::before{content:"Step " counter(step);display:block;margin:0 0 8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pa-gold);font-weight:600}
+.pa .ph-step h3{margin:0 0 8px;font-size:22px;line-height:1.25}
+.pa .ph-step h3 a{color:var(--pa-text);text-decoration:none}
+.pa .ph-step h3 a::after{content:"";position:absolute;inset:0}
+.pa .ph-step h3 a:focus-visible::after{outline:3px solid var(--pa-gold);outline-offset:-3px}
+.pa .ph-step p{margin:0 0 10px;color:var(--pa-muted);font-size:16px;line-height:1.55}
+.pa .ph-step .ph-meta{font-size:13px;letter-spacing:.04em;color:var(--pa-gold-dim);margin:0}
+.pa .ph-when{display:grid;gap:0;margin:18px 0 0;border:1px solid var(--pa-line)}
+.pa .ph-when > div{padding:16px 18px;background:var(--pa-surface-2)}
+.pa .ph-when > div + div{border-top:1px solid var(--pa-line);background:var(--pa-surface)}
+.pa .ph-when h3{margin:0 0 6px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--pa-gold)}
+.pa .ph-when p{margin:0;font-size:15.5px;color:var(--pa-muted)}
+.pa .ph-tools{display:grid;gap:14px;margin:18px 0 0;padding:0;list-style:none}
+.pa .ph-tool{position:relative;padding:20px 22px;background:var(--pa-surface);border:1px solid var(--pa-line);border-left:4px solid var(--pa-gold)}
+.pa .ph-tool h3{margin:0 0 6px;font-size:20px}
+.pa .ph-tool h3 a{color:var(--pa-text);text-decoration:none}
+.pa .ph-tool h3 a::after{content:"";position:absolute;inset:0}
+.pa .ph-tool p{margin:0 0 8px;color:var(--pa-muted);font-size:15.5px}
+.pa .ph-trust{margin:18px 0 0;padding:20px 22px;border:1px solid var(--pa-line);background:var(--pa-surface-2)}
+.pa .ph-trust ul{margin:0;padding-left:1.2em}
+.pa .ph-trust li{margin:0 0 8px;color:var(--pa-muted)}
+.pa .ph-note{margin:22px 0 0;color:var(--pa-muted);font-size:15px;max-width:68ch}
+@media (min-width:760px){
+ .pa .ph-steps{grid-template-columns:repeat(2,1fr)}
+ .pa .ph-when{grid-template-columns:repeat(3,1fr)}
+ .pa .ph-when > div + div{border-top:0;border-left:1px solid var(--pa-line)}
+ .pa .ph-tools{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1100px){.pa .ph-steps{grid-template-columns:repeat(4,1fr)}}
+</style>
+<header class="pa-head ph-hero">
+<p class="pa-kicker">ACT NOW &mdash; Evidence-Based Guidance</p>
+<h1>Preparedness Starts at Home</h1>
+<p class="pa-dek">Practical plans. Real households. Evidence you can trust.</p>
+<p class="ph-draft"><strong>Draft for review.</strong> These guides and tools are not published. They are waiting for a human safety review, and every source link is waiting for a human link check. If there is an emergency now, call 911 or your local emergency number.</p>
+<ul class="pa-chips" aria-label="About this section"><li class="pa-chip pa-chip--gold">Act now: current official guidance</li><li class="pa-chip">Free, no sign-up</li><li class="pa-chip pa-chip--warn">Draft: pending safety review</li></ul>
+</header>
+
+<section class="pa-section" id="pa-guides" aria-labelledby="h-steps">
+<h2 id="h-steps">Four steps, in order</h2>
+<p class="pa-lede">You do not need to do all of it, or buy anything, to be better prepared than you were yesterday. Start at step one and stop wherever your household reaches a sensible place.</p>
+<ol class="ph-steps">
+<li class="ph-step"><h3>{{link:household-emergency-plan|Make a plan}}</h3><p>Five decisions on one page: how you will hear, where you will meet, who you will call, and when you will practice.</p><p class="ph-meta">Guide · then the plan builder below</p></li>
+<li class="ph-step"><h3>{{link:three-day-kit|Build a kit}}</h3><p>Water, food and the basics for three days, built from what you already own and what you actually eat.</p><p class="ph-meta">Guide · then the checklist planner below</p></li>
+<li class="ph-step"><h3>{{link:go-bags|Prepare to leave}}</h3><p>A bag each person can carry: adults, children, babies, pets and anyone who needs help getting out.</p><p class="ph-meta">Guide</p></li>
+<li class="ph-step"><h3>{{link:preparedness-real-households|Adapt for your household}}</h3><p>Renters, apartments, tight budgets, older adults, caregivers and people with disabilities: what the sources say, where they run out, and who to ask.</p><p class="ph-meta">Guide</p></li>
+</ol>
+</section>
+
+<section class="pa-section" aria-labelledby="h-when">
+<h2 id="h-when">The first hour, the first 72 hours, the first two weeks</h2>
+<p class="pa-lede">Official guidance plans in three windows. They are planning windows, not predictions.</p>
+<div class="ph-when" role="group" aria-label="Three planning windows">
+<div><h3>First hour</h3><p>Check on everyone, find out what is happening, and decide whether to stay or go. Follow local officials. See {{link:household-emergency-plan|the plan guide}}.</p></div>
+<div><h3>First 72 hours</h3><p>Water, food you will eat, light, a radio and medicines. See {{link:three-day-kit|the three-day kit}} and {{link:water-math|water math}}.</p></div>
+<div><h3>First two weeks</h3><p>A larger water supply and a plan for the days after help is slow to arrive. See {{link:two-week-water-storage|two-week water storage}} and {{link:making-water-safer|making water safer}}.</p></div>
+</div>
+</section>
+
+<section class="pa-section" aria-labelledby="h-tools">
+<h2 id="h-tools">Free tools that keep nothing</h2>
+<p class="pa-lede">Both run in your browser. Nothing you type is sent anywhere or saved. Print the result or save a copy to your own device.</p>
+<ul class="ph-tools">
+<li class="ph-tool"><h3>{{link:reunification-plan|Household emergency plan builder}}</h3><p>Contacts, meeting places, schools, pets, access needs and practice dates. Prints a full plan and a wallet card for each person, and includes a blank worksheet that works without JavaScript.</p></li>
+<li class="ph-tool"><h3>{{link:kit-builder|Emergency kit and go-bag planner}}</h3><p>Choose what describes your household and get a checklist with the reason for each item and its official source. Prints or saves as text.</p></li>
+</ul>
+</section>
+
+<section class="pa-section" aria-labelledby="h-trust">
+<h2 id="h-trust">How we handle evidence</h2>
+<div class="ph-trust">
+<ul>
+<li>Every instruction comes from a named official source, such as FEMA and Ready.gov, the CDC, USDA, the U.S. Fire Administration or the Red Cross, and is cited where it appears.</li>
+<li>What an agency says and what we think are labeled differently on every page. Where agencies disagree, we say so rather than pick one.</li>
+<li>We give no medical, legal or product advice. Where a decision belongs to a pharmacist, clinician, landlord or local official, the page says to ask them.</li>
+<li>Essential guidance is free to read and print, with no email or payment.</li>
+</ul>
+</div>
+<p class="ph-note">Looking for how earlier generations managed? {{hub:lost-ways|The Lost Ways}} is a separate historical record. It documents the past and is not safety guidance. Nothing in it replaces the modern advice here.</p>
+</section>
+
+<section class="pa-section" aria-labelledby="h-all">
+<h2 id="h-all">All guides in this section</h2>
+{{cards}}
+</section>

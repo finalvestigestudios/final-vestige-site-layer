@@ -188,13 +188,23 @@ def resolve_tokens(lib: Library, meta: dict) -> tuple[str, list[str]]:
     return body, order
 
 
+TOC_OPEN_JS = (
+    "<script>(function(){var d=document.querySelectorAll('.pa-toc details');"
+    "for(var i=0;i<d.length;i++){var p=d[i].closest('.pa');if(p&&p.clientWidth>=900){d[i].open=true;}}})();</script>"
+)
+
+
 def build_toc(body: str) -> str:
     items = re.findall(r'<h2 id="([a-z0-9\-]+)"[^>]*>(.*?)</h2>', body, flags=re.S)
     items = [(i, re.sub(r"<[^>]+>", "", t).strip()) for i, t in items if not i.endswith("-h")]
     if len(items) < 3:
         return ""
     lis = "".join(f'<li><a href="#{i}">{esc(t)}</a></li>' for i, t in items)
-    return f'<nav class="pa-toc" aria-label="On this page"><h2>On this page</h2><ol>{lis}</ol></nav>'
+    # Closed by default so phones reach the action box quickly; TOC_OPEN_JS opens it in wide containers.
+    return (
+        f'<nav class="pa-toc" aria-label="On this page"><details><summary>On this page <span>({len(items)} sections)</span></summary>'
+        f'<ol>{lis}</ol></details></nav>'
+    )
 
 
 def breadcrumbs(lib: Library, meta: dict) -> tuple[str, list[dict]]:
@@ -297,13 +307,14 @@ def build_article(lib: Library, slug: str) -> dict:
     crumbs_html, crumbs_ld = breadcrumbs(lib, meta)
     canonical = SITE + lib.url_path(slug)
 
-    chips = [f'<li class="pa-chip pa-chip--gold">{esc(track["label"])}</li>', f'<li class="pa-chip">{esc(sec["label"])}</li>']
+    # The first two chips repeat the kicker above the title; narrow containers hide them (see .pa-chip--dup).
+    chips = [f'<li class="pa-chip pa-chip--gold pa-chip--dup">{esc(track["label"])}</li>', f'<li class="pa-chip pa-chip--dup">{esc(sec["label"])}</li>']
     if meta["status"]["publish"] != "published":
         chips.append('<li class="pa-chip pa-chip--warn">Draft: not public</li>')
     if meta.get("safety_review", {}).get("state") == "pending":
         chips.append('<li class="pa-chip pa-chip--warn">Safety review pending</li>')
     for t in meta.get("tags", []):
-        chips.append(f'<li class="pa-chip">{esc(t)}</li>')
+        chips.append(f'<li class="pa-chip pa-chip--tag">{esc(t)}</li>')
 
     head = (
         f'<header class="pa-head"><p class="pa-kicker">{esc(sec["label"])} · {esc(track["label"])}</p>'
@@ -311,7 +322,7 @@ def build_article(lib: Library, slug: str) -> dict:
         f'<ul class="pa-meta"><li><b>{minutes} min read</b></li><li>Updated <b>{fmt_date(meta["updated"])}</b></li>'
         f'<li>Sources last checked <b>{fmt_date(meta["last_checked"])}</b></li></ul>'
         f'<ul class="pa-chips" aria-label="Article status and topics">{"".join(chips)}</ul>'
-        f'<div class="pa-printbar"><button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button></div></header>'
+        f'<div class="pa-printbar pa-printbar--head"><button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button></div></header>'
     )
     toc = build_toc(body)
     ld = {
@@ -340,7 +351,9 @@ def build_article(lib: Library, slug: str) -> dict:
         f'<div class="pa pa-article" data-slug="{slug}" data-track="{meta["track"]}" data-section="{meta["section"]}">'
         f'<a class="pa-skip" href="#pa-main">Skip to the guide</a>{crumbs_html}{head}'
         f'<div class="pa-shell">{toc}<div class="pa-body" id="pa-main">{body}</div></div>'
-        f'{sources_block(lib, order, meta)}{review_block(meta)}{related_block(lib, meta)}{ld_tag}</div>'
+        f'{sources_block(lib, order, meta)}{review_block(meta)}{related_block(lib, meta)}'
+        f'<div class="pa-printbar pa-printbar--end"><button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button></div>'
+        f'{ld_tag}{TOC_OPEN_JS if toc else ""}</div>'
     )
     return {"slug": slug, "inner": inner, "words": words, "minutes": minutes, "sources": order, "canonical": canonical, "meta": meta}
 
@@ -473,6 +486,21 @@ def build_hub(lib: Library, section: str, include_drafts: bool = True) -> dict |
                 {"@type": "ListItem", "position": 3, "name": sec["label"]}]},
         ],
     }
+    custom = lib.root / "content" / "hubs" / f"{section}.body.html"
+    if custom.exists():
+        # Optional editorial hub: a hand-written body for one section. Tokens: {{link:slug|label}}, {{hub:section|label}}, {{cards}}.
+        populated = {m["section"] for m in lib.articles.values()}
+        text = custom.read_text(encoding="utf-8")
+        text = re.sub(r"\{\{link:([a-z0-9\-]+)\|([^}]+)\}\}", lambda m: f'<a href="{lib.url_path(m.group(1))}">{m.group(2)}</a>' if m.group(1) in lib.articles else m.group(2), text)
+        text = re.sub(r"\{\{hub:([a-z0-9\-]+)\|([^}]+)\}\}", lambda m: f'<a href="{lib.section_path(m.group(1))}">{m.group(2)}</a>' if m.group(1) in populated else m.group(2), text)
+        text = text.replace("{{cards}}", f'<ul class="pa-cards">{"".join(render_card(lib, m) for m in arts)}</ul>')
+        if "{{" in text:
+            raise ValueError(f"hub {section}: unresolved token near {text[text.index('{{'):][:60]!r}")
+        inner = (
+            f'<div class="pa pa-hub pa-hub--editorial" data-section="{section}"><a class="pa-skip" href="#pa-guides">Skip to the guides</a>{crumbs}'
+            f'{text}<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></div>'
+        )
+        return {"slug": f"hub-{section}", "inner": inner, "count": len(arts), "title": f'{sec["label"]} | The Preparedness Archive', "description": sec["blurb"]}
     inner = (
         f'<div class="pa pa-hub" data-section="{section}"><a class="pa-skip" href="#pa-guides">Skip to the guides</a>{crumbs}'
         f'<header class="pa-head"><p class="pa-kicker">The Preparedness Archive</p><h1>{esc(sec["label"])}</h1>'

@@ -1,0 +1,3673 @@
+[
+ {
+  "slug": "emergency-hygiene-sanitation",
+  "track": "modern",
+  "text": " wash your hands with soap and water for at least 20 seconds, especially after using the toilet, before preparing or eating food, and after caring for anyone who is sick. no running water? make a handwashing station from a large water jug. ",
+  "figs": [
+   "20 seconds"
+  ],
+  "cites": [
+   "cdc-hygiene-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-hygiene-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "emergency-hygiene-sanitation",
+  "track": "modern",
+  "text": "the cdc's advice is to wash with soap and water for at least 20 seconds, and to pay particular attention at the key times when you are most likely to spread germs. oregon state's guide reproduces the cdc's list of key times: before, during and after preparing food; before and after eating; before and after caring for someone with vomiting or diarrhea; before and after treating a cut or wound; afte",
+  "figs": [
+   "20 seconds"
+  ],
+  "cites": [
+   "cdc-hygiene-emergency",
+   "health-osu-sanitation"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-hygiene-emergency",
+   "health-osu-sanitation"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "emergency-hygiene-sanitation",
+  "track": "modern",
+  "text": "wash at least 20 seconds. this is the cdc's baseline. ",
+  "figs": [
+   "20 seconds"
+  ],
+  "cites": [
+   "cdc-hygiene-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-hygiene-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "emergency-hygiene-sanitation",
+  "track": "modern",
+  "text": "if none of the above is possible and you will be without a toilet for only a day or two, washington allows a \"cat hole\": dig on dry land at least 100 feet from wells, homes and open water, avoiding slopes that could erode in rain; make it at least 6 inches deep and about 6 inches across; cover and pack it down after use; mark or remember where it is. toilet paper may go in the hole; wet wipes, tam",
+  "figs": [
+   "100 feet",
+   "6 inches"
+  ],
+  "cites": [
+   "health-wadoh-toilet",
+   "health-osu-sanitation"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-wadoh-toilet",
+   "health-osu-sanitation"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "family-communication-plan",
+  "track": "modern",
+  "text": "if a child is missing after a disaster, the cdc lists the national center for missing and exploited children's 24-hour hotline, 1-800-the-lost. ncmec's own site lists its 24-hour hotline and call center as 1-800-843-5678, which is the same number written with digits, and says to contact ncmec if you think you have seen a missing child. ",
+  "figs": [
+   "24-hour"
+  ],
+  "cites": [
+   "shelter-cdc-reunification",
+   "shelter-ncmec-hotline"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-reunification",
+   "shelter-ncmec-hotline"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "family-communication-plan",
+  "track": "modern",
+  "text": "fema's reunification fact sheet explains the national picture. fema, the red cross and ncmec co-lead a national reunification committee. after a presidentially declared disaster, and at a state, tribal or territorial request, ncmec can activate a national emergency child locator center call center to help identify and locate children separated from parents or guardians; ncmec's unaccompanied minor",
+  "figs": [
+   "24 hours"
+  ],
+  "cites": [
+   "shelter-fema-reunification"
+  ],
+  "status": "NO_TESTABLE_SOURCE",
+  "missing": [],
+  "tested_sources": [],
+  "untested_sources": [
+   "shelter-fema-reunification"
+  ]
+ },
+ {
+  "slug": "fire-making-across-time",
+  "track": "lost-ways",
+  "text": "campfires at least 25 feet from tents, shrubs and anything that can burn; fire pits and outdoor fireplaces at least 10 feet from the home or anything that can burn. ",
+  "figs": [
+   "10 feet",
+   "25 feet"
+  ],
+  "cites": [
+   "hist-field-usfa-outdoor-fire"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-usfa-outdoor-fire"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "fire-making-across-time",
+  "track": "lost-ways",
+  "text": "tents, gear and other flammables at least 15 feet away and upwind. ",
+  "figs": [
+   "15 feet"
+  ],
+  "cites": [
+   "hist-field-nps-campfires"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-nps-campfires"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "fire-making-across-time",
+  "track": "lost-ways",
+  "text": "fire pits at least 10 feet from anything that can burn. nfpa's article says that where its nfpa 1 fire code is adopted, outdoor fires must be at least 50 feet from any structure, and that the local authority can require more. we have read nfpa's article about the code, not the code itself. ",
+  "figs": [
+   "10 feet",
+   "50 feet"
+  ],
+  "cites": [
+   "hist-field-nfpa-outdoor-fire"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-nfpa-outdoor-fire"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "fire-making-across-time",
+  "track": "lost-ways",
+  "text": " editor's note we do not pick a number for you. the spread from 10 to 50 feet reflects fire size, setting and whether a number is guidance or law. your local fire authority's rule is the one that governs, and if you cannot get an answer, the larger distance is the safer choice. we also note two official differences on fuels: the national park service permits lighter fluid where the park allows it,",
+  "figs": [
+   "50 feet"
+  ],
+  "cites": [
+   "hist-field-nps-campfires",
+   "hist-field-nfpa-outdoor-fire"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-nps-campfires",
+   "hist-field-nfpa-outdoor-fire"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " keep the refrigerator and freezer doors shut. an unopened refrigerator keeps food cold for about 4 hours. a full freezer holds its temperature for about 48 hours, a half-full one for about 24. ",
+  "figs": [
+   "4 hours",
+   "48 hours"
+  ],
+  "cites": [
+   "fsis-power-failure",
+   "food-cdc-after-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "fsis-power-failure",
+   "food-cdc-after-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " watch the clock from the moment the power goes out , and write the time down. if it has been 4 hours and you have a cooler and ice, move the perishable food into the cooler and keep it at 40°f or below with ice or frozen gel packs. ",
+  "figs": [
+   "4 hours",
+   "40°f"
+  ],
+  "cites": [
+   "food-cdc-after-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-after-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " do not taste food to decide whether it is safe. after the power returns, throw out perishable food (meat, fish, eggs, milk, cut fruits and vegetables, leftovers) that spent more than 4 hours without power or a cold source, and anything with an unusual smell, colour or texture. ",
+  "figs": [
+   "4 hours"
+  ],
+  "cites": [
+   "food-cdc-after-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-after-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " frozen food that still has ice crystals, or is at 40°f or below, can be refrozen or cooked. quality may suffer. safety depends on the food, so check the chart further down. ",
+  "figs": [
+   "40°f"
+  ],
+  "cites": [
+   "food-cdc-after-emergency",
+   "food-foodsafety-outage-chart"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-after-emergency",
+   "food-foodsafety-outage-chart"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "every page we read gives the same headline figure: a closed refrigerator keeps food safe for about 4 hours. most of those pages also contain a second figure, 2 hours, and the two get tangled in memory. they measure different things.",
+  "figs": [
+   "2 hours",
+   "4 hours"
+  ],
+  "cites": [
+   "fsis-power-failure",
+   "food-cdc-after-emergency",
+   "food-fda-outage-flood",
+   "food-ready-food",
+   "food-fema-outage-sheet"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "fsis-power-failure",
+   "food-cdc-after-emergency",
+   "food-fda-outage-flood",
+   "food-ready-food",
+   "food-fema-outage-sheet"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " the 4-hour figure is how long a refrigerator that was cold, full and kept shut is expected to stay cold after it stops running. it is a property of the appliance. fda says \"about 4 hours\". ",
+  "figs": [
+   "4 hours",
+   "4-hour"
+  ],
+  "cites": [
+   "food-fda-outage-flood"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fda-outage-flood"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " the 2-hour figure is how long a perishable food may spend at unsafe temperatures. foodsafety.gov's refrigerated-food chart is built on it: its question is whether the food was exposed to 40°f or above for more than 2 hours. fda says to discard perishable food held at room temperature for 2 hours or more, or 1 hour if it is above 90°f outdoors. ",
+  "figs": [
+   "1 hour",
+   "2 hours",
+   "2-hour",
+   "40°f",
+   "90°f"
+  ],
+  "cites": [
+   "food-foodsafety-outage-chart",
+   "food-fda-outage-flood"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-foodsafety-outage-chart",
+   "food-fda-outage-flood"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "refrigerator keeps food safe up to 4 hours. discard listed perishables if the refrigerator has been without power for more than 4 hours. ",
+  "figs": [
+   "4 hours"
+  ],
+  "cites": [
+   "food-fsis-emergencies"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-emergencies"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "food stays safe up to 4 hours. throw out perishables after 4 hours without power or without a cold source such as ice. ",
+  "figs": [
+   "4 hours"
+  ],
+  "cites": [
+   "food-cdc-after-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-after-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "discard refrigerated perishables held above 40°f for 4 hours or more. perishables at 45°f or below, measured with a food thermometer, \"should be safe\" but should be cooked and eaten as soon as possible. ",
+  "figs": [
+   "4 hours",
+   "40°f",
+   "45°f"
+  ],
+  "cites": [
+   "food-fda-outage-flood"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fda-outage-flood"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "refrigerated food should be safe if the power was out no more than 4 hours. discard perishables that have been above 40°f for two hours or more. ",
+  "figs": [
+   "4 hours",
+   "40°f"
+  ],
+  "cites": [
+   "food-ready-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-ready-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "throw away any refrigerated food that has been exposed to temperatures of 40°f or higher for more than 4 hours, and any with an unusual odor, color or texture. ",
+  "figs": [
+   "4 hours",
+   "40°f"
+  ],
+  "cites": [
+   "food-fema-outage-sheet"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fema-outage-sheet"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "columns are keyed to food \"exposed to temperatures of 40°f or above for more than 2 hours\". ",
+  "figs": [
+   "2 hours",
+   "40°f"
+  ],
+  "cites": [
+   "food-foodsafety-outage-chart"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-foodsafety-outage-chart"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "food in a closed refrigerator can be safe for 4 hours. after the temperature rises above 40°f, most refrigerated foods keep no longer than two more hours. ",
+  "figs": [
+   "4 hours",
+   "40°f"
+  ],
+  "cites": [
+   "food-osu-survival-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-osu-survival-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " put an appliance thermometer in the refrigerator and another in the freezer. aim for 40°f or below in the refrigerator and 0°f or below in the freezer. ",
+  "figs": [
+   "0°f",
+   "40°f"
+  ],
+  "cites": [
+   "food-fsis-emergencies",
+   "food-cdc-after-emergency",
+   "food-fda-outage-flood"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-emergencies",
+   "food-cdc-after-emergency",
+   "food-fda-outage-flood"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " at the 4-hour mark, transfer the perishables to a cooler with ice or frozen gel packs, and add more ice as it melts. the aim is 40°f or below, checked with a thermometer. ",
+  "figs": [
+   "4-hour",
+   "40°f"
+  ],
+  "cites": [
+   "food-fsis-emergencies",
+   "food-cdc-after-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-emergencies",
+   "food-cdc-after-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " if you plan to eat refrigerated or frozen meat, poultry, fish or eggs that are still at a safe temperature , fda says to cook them thoroughly to a safe minimum internal temperature. it also says that perishable food held at room temperature for 2 hours or more (1 hour if it is above 90°f outdoors) should be discarded, however well it is cooked. ",
+  "figs": [
+   "1 hour",
+   "2 hours",
+   "90°f"
+  ],
+  "cites": [
+   "food-fda-outage-flood"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fda-outage-flood"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "fsis and fda both say 50 pounds of dry ice should keep an 18-cubic-foot, fully stocked freezer cold for two days. ready.gov gives a different example: 25 pounds of dry ice for a 10-cubic-foot freezer, for three to four days. those are not the same freezer or the same claim, so they are not a contradiction, but neither is a formula you can scale to your own appliance. treat them as order-of-magnitu",
+  "figs": [
+   "25 pounds",
+   "50 pounds"
+  ],
+  "cites": [
+   "food-fsis-emergencies",
+   "food-fda-outage-flood",
+   "food-ready-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-emergencies",
+   "food-fda-outage-flood",
+   "food-ready-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "running a refrigerator from a generator brings fuel and exhaust hazards that have nothing to do with food safety. fema's fact sheet says to use generators outdoors and at least 20 feet from building openings. this guide does not cover the rest of generator safety; see {{link:outage-heat-cold-generators|our guide to heat, cold and generator safety}}. editor's note we would not improvise a power set",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "food-fema-outage-sheet"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fema-outage-sheet"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": " the chart lists many more foods, and the frozen-food chart works differently: a frozen item with ice crystals is a \"refreeze\" for most foods, but ice cream and frozen yogurt are a \"discard\" even then, and for frozen vegetables the chart says to discard them after being held above 40°f for 6 hours. use the original, which you can open at the link in the sources list, for anything not in the rows a",
+  "figs": [
+   "40°f",
+   "6 hours"
+  ],
+  "cites": [
+   "food-foodsafety-outage-chart",
+   "food-foodsafety-outage-chart"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-foodsafety-outage-chart",
+   "food-foodsafety-outage-chart"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "foodborne illness usually appears within 1 to 3 days of eating the contaminated food, but fda says it can appear within 20 minutes or as late as 6 weeks afterwards. symptoms can include vomiting, diarrhea and abdominal pain, or flu-like fever, headache and body ache. if you think you or a family member has a foodborne illness, fda says to contact a healthcare provider promptly. the long window is ",
+  "figs": [
+   "20 minutes",
+   "3 days",
+   "6 weeks"
+  ],
+  "cites": [
+   "food-fda-outage-flood"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fda-outage-flood"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "food-safety-power-outage",
+  "track": "modern",
+  "text": "the four pages that give sanitizing amounts do not agree with each other. fsis gives 1 tablespoon of unscented bleach per gallon of water for utensils, counters and cans. fda gives the same 1 tablespoon per gallon for utensils and counters, but 1 cup of bleach in 5 gallons of water for cans. cdc gives 1 cup in 5 gallons for dishes, surfaces and cans. ready.gov gives 1 part bleach to 10 parts water",
+  "figs": [
+   "1 cup",
+   "1 tablespoon",
+   "5 gallons"
+  ],
+  "cites": [
+   "food-fsis-emergencies",
+   "food-fda-outage-flood",
+   "food-cdc-after-emergency",
+   "food-ready-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-emergencies",
+   "food-fda-outage-flood",
+   "food-cdc-after-emergency",
+   "food-ready-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "go-bags",
+  "track": "modern",
+  "text": "the cdc's emergency kit checklist for pregnant women, infants and children adds specific items for a young child (1 to 5 years): nutritious snacks, an age-appropriate water bottle, transportable activities such as coloring supplies, extra clothes and shoes, a play yard, potty-training supplies, and disposable feeding items. ",
+  "figs": [
+   "5 years"
+  ],
+  "cites": [
+   "start-cdc-family-kit"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "start-cdc-family-kit"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "history-of-food-preservation",
+  "track": "lost-ways",
+  "text": "the nchfp calls canning \"the newest of the food preservations methods\", pioneered in the 1790s by the french confectioner nicolas appert, who found that heat applied to food in sealed glass bottles kept it from deteriorating. in about 1806 the french navy trialed his principles on a range of foods, and in 1810 the englishman peter durand used tin cans. appert \"did not fully understand it\": it was ",
+  "figs": [
+   "212°f"
+  ],
+  "cites": [
+   "nchfp-historical-origins"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-historical-origins"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "history-of-food-preservation",
+  "track": "lost-ways",
+  "text": "the national park service adds figures from its account of an icebox in a kennedy family kitchen: in 1847, nearly 52,000 tons of ice moved by ship or train to 28 u.s. cities, nearly half from boston and most of it tudor's. ice-making factories gradually replaced harvesting, the first widely popular electric refrigerator was general electric's in 1927, and by 1944 about 85 percent of american house",
+  "figs": [
+   "85 percent"
+  ],
+  "cites": [
+   "hist-food-nps-icebox",
+   "hist-food-si-cold"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-nps-icebox"
+  ],
+  "untested_sources": [
+   "hist-food-si-cold"
+  ]
+ },
+ {
+  "slug": "home-fire-escape-plan",
+  "track": "modern",
+  "text": " press the test button on every smoke alarm tonight. usfa's own drill starts that way: push the test button to sound the alarm and begin the drill. alarms belong in every sleeping room, outside each sleeping area and on every level, and the whole unit should be replaced 10 years after its manufacturing date. ",
+  "figs": [
+   "10 years"
+  ],
+  "cites": [
+   "usfa-fire-escape",
+   "shelter-nfpa-smoke-alarms"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usfa-fire-escape",
+   "shelter-nfpa-smoke-alarms"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "home-fire-escape-plan",
+  "track": "modern",
+  "text": "if there is a fire right now, do not read on. get out, stay out, and call 911 or the fire department from outside. the u.s. fire administration says residents could have less than 2 minutes to escape once the smoke alarm sounds. for burns, smoke inhalation or anyone not breathing normally, emergency services come before anything on this page.",
+  "figs": [
+   "2 minutes"
+  ],
+  "cites": [
+   "usfa-fire-escape"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usfa-fire-escape"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "home-fire-escape-plan",
+  "track": "modern",
+  "text": "a home fire plan is unusual among preparedness tasks because the time you have to use it is measured in seconds. usfa says residents could have less than 2 minutes to escape once the smoke alarm sounds, and ties that to modern building contents and open floor plans, which it says make home fires more severe. nfpa says you may have as little as one or two minutes. ready.gov puts the same idea more ",
+  "figs": [
+   "2 minutes",
+   "30 seconds"
+  ],
+  "cites": [
+   "usfa-fire-escape",
+   "shelter-nfpa-escape",
+   "shelter-ready-home-fires"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usfa-fire-escape",
+   "shelter-nfpa-escape",
+   "shelter-ready-home-fires"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "home-fire-escape-plan",
+  "track": "modern",
+  "text": "ready.gov agrees on every level, adds that batteries should be replaced twice a year unless the alarm uses a 10-year lithium battery, and warns never to disable an alarm while cooking. nfpa says either a yearly-battery unit or a 10-year unit will give protection. ",
+  "figs": [
+   "10-year"
+  ],
+  "cites": [
+   "shelter-ready-home-fires",
+   "shelter-nfpa-smoke-alarms"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-ready-home-fires",
+   "shelter-nfpa-smoke-alarms"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "homemade-water-filters",
+  "track": "modern",
+  "text": " then treat it. boiling is the best method. after it, a rolling boil for 1 minute, or 3 minutes above 6,500 feet, is the cdc's instruction. ",
+  "figs": [
+   "1 minute",
+   "3 minutes",
+   "6,500 feet"
+  ],
+  "cites": [
+   "cdc-water-hiking"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-hiking"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "homemade-water-filters",
+  "track": "modern",
+  "text": " find the absolute pore size or the certification on the label. one micron or smaller, or nsf 53 or 58 certified for cyst reduction or removal, for parasites; 0.3 micron or smaller for bacteria as well. a label that does not state a rating is a label that cannot be checked.",
+  "figs": [
+   "0.3 micron"
+  ],
+  "cites": [
+   "cdc-water-hiking"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-hiking"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "homemade-water-filters",
+  "track": "modern",
+  "text": " for the disinfectant, follow its label. the nps recommends nsf-approved products and notes that contact time varies by product, for example from 30 minutes to 4 hours. pre-filter cloudy water so the disinfectant works better. ",
+  "figs": [
+   "30 minutes",
+   "4 hours"
+  ],
+  "cites": [
+   "nps-purify-water"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nps-purify-water"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "homemade-water-filters",
+  "track": "modern",
+  "text": " boil it. a rolling boil for 1 minute, or 3 minutes above 6,500 feet, then let it cool and store it in a clean container. ",
+  "figs": [
+   "1 minute",
+   "3 minutes",
+   "6,500 feet"
+  ],
+  "cites": [
+   "cdc-water-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "household-emergency-plan",
+  "track": "modern",
+  "text": "fema frames the kit as supplies \"to last for at least 72 hours.\" the cdc baseline is at least 1 gallon of water per person per day for at least 3 days. ",
+  "figs": [
+   "1 gallon",
+   "3 days",
+   "72 hours"
+  ],
+  "cites": [
+   "ready-are-you-ready",
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "ready-are-you-ready",
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "household-emergency-plan",
+  "track": "modern",
+  "text": "the cdc advises aiming for a two-week water supply if possible. the red cross tells older adults to plan to stay home at least two weeks or evacuate. fema's guide says that depending where you live you may wish to keep 3, 7 or even 14 days of water. ",
+  "figs": [
+   "14 days"
+  ],
+  "cites": [
+   "cdc-water-store",
+   "start-redcross-older-adults",
+   "ready-are-you-ready"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store",
+   "start-redcross-older-adults",
+   "ready-are-you-ready"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "household-emergency-plan",
+  "track": "modern",
+  "text": " uncertain none of these sources says that any particular event will last for 72 hours or two weeks, and none explains why those numbers were chosen. they are planning windows. the cdc's water page itself does not give a reason for them. treat them as sensible round numbers, not predictions.",
+  "figs": [
+   "72 hours"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "NO_FIGURES_FOUND",
+  "missing": [
+   "72 hours"
+  ],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "lewis-and-clark-salt-works",
+  "track": "lost-ways",
+  "text": "the five-day search for a site was not quick. when willard and weiser returned on 5 january, lewis and clark both wrote that it was not until the fifth day after leaving the fort that they found a convenient place, and that they had settled on the coast about 15 miles from the fort. ",
+  "figs": [
+   "15 miles"
+  ],
+  "cites": [
+   "hist-food-lc-journal-1806-01-05"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-lc-journal-1806-01-05"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "lewis-and-clark-salt-works",
+  "track": "lost-ways",
+  "text": "the journals do record what the men did while they worked. willard and weiser reported on 5 january that the salt makers had built a \"comfortable camp\", killed an elk and several deer, and secured a good stock of meat, and that they could make \"from 3 quarts to a gallon a day\". ",
+  "figs": [
+   "3 quarts"
+  ],
+  "cites": [
+   "hist-food-lc-journal-1806-01-05"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-lc-journal-1806-01-05"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "lewis-and-clark-salt-works",
+  "track": "lost-ways",
+  "text": "willard and weiser brought back a specimen of about a gallon on 5 january. lewis found it \"excellent, fine, strong, & white\" and a \"great treat\". clark found it \"excellent white & fine\" but \"not so strong\" as rock salt or the salt made in kentucky. two other diarists recorded the amount differently: sergeant ordway and private whitehouse both wrote that the men came with about 2 gallons. the capta",
+  "figs": [
+   "2 gallons"
+  ],
+  "cites": [
+   "hist-food-lc-journal-1806-01-05",
+   "hist-food-lc-journal-1806-01-05"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-lc-journal-1806-01-05",
+   "hist-food-lc-journal-1806-01-05"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "lewis-and-clark-salt-works",
+  "track": "lost-ways",
+  "text": "the totals are similarly loose. lewis's entry for 21 february, when the camp was evacuated, puts the stock of salt at about 20 gallons, 12 of them secured in \"2 small iron bound kegs\" and set aside for the voyage. the journal editors' footnote says the whole camp produced about three or four bushels, and the plaque quoted by the trail alliance says approximately four bushels. gallons of stock on h",
+  "figs": [
+   "20 gallons"
+  ],
+  "cites": [
+   "hist-food-lc-journal-1806-02-21",
+   "hist-food-lc-journal-1805-12-28",
+   "hist-food-lc-salt-works-trail-alliance"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-lc-journal-1806-02-21",
+   "hist-food-lc-journal-1805-12-28"
+  ],
+  "untested_sources": [
+   "hist-food-lc-salt-works-trail-alliance"
+  ]
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": " no bottled water, and your tap water is unsafe or suspect? boil it. start with clear water. bring it to a rolling boil for 1 minute, or for 3 minutes at high elevation. let it cool and keep it in clean, sanitized containers with tight lids. (the cdc puts \"high elevation\" at 6,500 feet and the epa at 5,000 feet. see the boiling section: if you are anywhere near those heights, boil 3 minutes.) ",
+  "figs": [
+   "1 minute",
+   "3 minutes",
+   "5,000 feet",
+   "6,500 feet"
+  ],
+  "cites": [
+   "cdc-water-safe",
+   "epa-emergency-disinfection"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe",
+   "epa-emergency-disinfection"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": " can't boil? disinfect with plain household bleach , following the label first and the table further down this page second. stir, then wait at least 30 minutes before drinking. ",
+  "figs": [
+   "30 minutes"
+  ],
+  "cites": [
+   "cdc-water-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "\"best way to kill germs in water.\" 1 minute at a rolling boil; 3 minutes at high elevation (see below).",
+  "figs": [
+   "1 minute",
+   "3 minutes"
+  ],
+  "cites": [
+   "cdc-water-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "the cdc says to boil for 3 minutes above 6,500 feet. the epa says above 5,000 feet. we checked both pages on the same day and they genuinely differ.",
+  "figs": [
+   "3 minutes",
+   "5,000 feet",
+   "6,500 feet"
+  ],
+  "cites": [
+   "cdc-water-safe",
+   "epa-emergency-disinfection"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe",
+   "epa-emergency-disinfection"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": " if the water is cloudy, murky, colored or very cold, the cdc says to add double the amount listed. stir the mixture well and let it stand at least 30 minutes before drinking. store it in clean, sanitized containers with tight covers. ",
+  "figs": [
+   "30 minutes"
+  ],
+  "cites": [
+   "cdc-water-safe",
+   "cdc-water-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe",
+   "cdc-water-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "the epa's independent page matches the dose for 6% bleach (8 drops a gallon, double if the water is cloudy, colored or very cold) and adds a check the cdc page does not: after 30 minutes the water should smell faintly of chlorine. if it doesn't, the epa says to repeat the dose and wait another 15 minutes. fema's ready.gov gives the same check and goes one step further: if the water still does not ",
+  "figs": [
+   "15 minutes",
+   "30 minutes",
+   "8 drops"
+  ],
+  "cites": [
+   "epa-emergency-disinfection",
+   "ready-water",
+   "epa-emergency-disinfection"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "epa-emergency-disinfection",
+   "ready-water",
+   "epa-emergency-disinfection"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "fema's ready.gov page, which was last updated in 2021, is narrower than the cdc. it says to use only regular household liquid bleach containing 5.25 to 6.0 percent sodium hypochlorite, and that iodine and water-treatment products sold in camping or surplus stores that do not have that bleach as the only active ingredient \"are not recommended and should not be used.\" the cdc, by contrast, accepts b",
+  "figs": [
+   "6.0 percent"
+  ],
+  "cites": [
+   "ready-water",
+   "cdc-water-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "ready-water",
+   "cdc-water-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "a portable filter is a physical sieve. whether it stops a given germ depends on the size of the holes. the cdc's numbers: to remove bacteria, the filter needs an absolute pore size of 0.3 micron or smaller; to remove parasites such as giardia or cryptosporidium , 1 micron or smaller. filters do not remove viruses. the cdc's backcountry guidance gives a second way to check: a filter certified to ns",
+  "figs": [
+   "0.3 micron",
+   "1 micron"
+  ],
+  "cites": [
+   "cdc-water-safe",
+   "cdc-water-hiking"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe",
+   "cdc-water-hiking"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "the cdc also describes solar disinfection as an emergency measure: fill clean, clear plastic bottles with clear water and lay them on their sides in the sun for 6 hours if it is sunny, or 2 days if it is cloudy. a dark surface underneath helps. note the careful verb: the sun \"can improve the quality of your water by reducing the number of germs.\" that is a smaller promise than \"makes water safe,\" ",
+  "figs": [
+   "2 days",
+   "6 hours"
+  ],
+  "cites": [
+   "cdc-water-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "keep stored water cool (the cdc gives 50°f to 70°f), out of direct sunlight, and away from gasoline, pesticides and other toxic substances. replace water you stored yourself every six months. when you draw water out, use a clean scoop or pour it. never dip a hand in. the cdc's preferred containers are food-grade water-storage containers, and it says never to reuse a container that once held bleach",
+  "figs": [
+   "50°f",
+   "70°f"
+  ],
+  "cites": [
+   "cdc-water-store",
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store",
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": " quantity. the cdc's baseline is at least 1 gallon per person per day, and it suggests storing more for pregnant women, people who are sick, pets, and hot climates. planning the amounts is its own guide.",
+  "figs": [
+   "1 gallon"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": " documented history u.s. navy regulations of 1802 allowed each man at least half a gallon of water a day for drinking on foreign voyages. a 450-man frigate like uss constitution left port in 1813 with roughly 47,000 gallons aboard. ",
+  "figs": [
+   "47,000 gallons"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": " official guidance at least 1 gallon per person per day for drinking, cooking and brushing teeth, for at least three days and ideally two weeks, stored in food-grade containers that have been washed and sanitized, replaced every six months. ",
+  "figs": [
+   "1 gallon"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "making-water-safer",
+  "track": "modern",
+  "text": "the two figures are not like for like. the navy's half gallon covered drinking only; cooking water was extra, and the museum's study estimates it at up to 150 gallons a day for a crew of that size. the shared lesson is not the number. it is that clean containers matter as much as clean water. for what else the sailors ate and drank, see {{link:salt-beef-salt-pork-age-of-sail|salt beef and salt por",
+  "figs": [
+   "150 gallons"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "medication-and-devices",
+  "track": "modern",
+  "text": "the fda's insulin page is specific because insulin labels are. it says that, according to the labels of the manufacturers it lists, insulin is stored in a refrigerator at roughly 36 degrees f to 46 degrees f, and that unopened insulin stored that way keeps its effectiveness until the expiration date. insulin in vials or cartridges supplied by the manufacturers, opened or unopened, may be left unre",
+  "figs": [
+   "28 days",
+   "36 degrees",
+   "46 degrees",
+   "59 degrees",
+   "86 degrees"
+  ],
+  "cites": [
+   "health-fda-insulin"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-fda-insulin"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "medication-and-devices",
+  "track": "modern",
+  "text": "the page adds that extreme temperatures make insulin less effective, that the longer it is exposed to extreme heat or cold the less effective it becomes, and that in emergency conditions you might still need to use insulin stored above 86 degrees f. that is the fda's acknowledgment of a last-resort situation, not a recommendation; over time the heat can make blood sugar harder to control, so tell ",
+  "figs": [
+   "48 hours",
+   "86 degrees",
+   "98.6 degrees"
+  ],
+  "cites": [
+   "health-fda-insulin",
+   "health-fda-insulin"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-fda-insulin",
+   "health-fda-insulin"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "medication-and-devices",
+  "track": "modern",
+  "text": " editor's note these are the fda's figures for the products on its page, quoted with their conditions. a different insulin product, a pen, or a newer product may have different label limits; the fda page itself notes one weekly product with a longer window. your product's label and your clinician's guidance come first. we add one observation: the 28-day room-temperature figure sits uneasily beside",
+  "figs": [
+   "28-day"
+  ],
+  "cites": [
+   "health-fda-insulin"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-fda-insulin"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "medication-and-devices",
+  "track": "modern",
+  "text": "many home medical devices need electricity, so people turn to generators. the fda's warning is direct: never run a generator, pressure washer or any gasoline-powered engine inside a basement, garage or other enclosed structure, even if the doors or windows are open, unless the equipment is professionally installed and vented. the cdc says never run one inside your home, basement or garage or less ",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "health-fda-devices",
+   "health-cdc-power-outage",
+   "health-cdc-power-outage"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-fda-devices",
+   "health-cdc-power-outage",
+   "health-cdc-power-outage"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "medication-and-devices",
+  "track": "modern",
+  "text": " renters and apartment dwellers. editor's note a generator is rarely an option in an apartment, and the sources' 20-foot rule is hard to meet in a building. a battery backup, a power bank, a plan to go to a relative or a shelter, and a conversation with your clinician matter more. fema suggests checking with local officials about heating and cooling locations and community locations with power. ",
+  "figs": [
+   "20-foot"
+  ],
+  "cites": [
+   "health-ready-power-outages"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-ready-power-outages"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "navigation-before-gps",
+  "track": "lost-ways",
+  "text": "his first marine timekeeper, h1, was taken to lisbon and back aboard royal navy ships in 1736. on the return trip, rmg says, harrison announced that a headland the officers believed was the start was in fact the lizard, which meant the ship was 60 miles off course. he was correct. documented history his fourth, h4, was tried on voyages to jamaica in 1761 and to barbados in 1764. in february 1765 t",
+  "figs": [
+   "60 miles"
+  ],
+  "cites": [
+   "hist-field-rmg-harrison",
+   "hist-field-rmg-harrison"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-rmg-harrison",
+   "hist-field-rmg-harrison"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "navigation-before-gps",
+  "track": "lost-ways",
+  "text": "the rival approach used no clock at all. it used the sky as one, by measuring the angle between the moon and a star or the sun and looking up the result in tables. rmg describes the astronomer tobias mayer's lunar tables and says james bradley concluded that, with a good instrument, they could give a ship's longitude to within 1 degree. the instrument developed in sea trials from a repeating circl",
+  "figs": [
+   "1 degree",
+   "60-degree"
+  ],
+  "cites": [
+   "hist-field-rmg-lunar",
+   "hist-field-si-sextant"
+  ],
+  "status": "SOME_FIGURES_NOT_FOUND",
+  "missing": [
+   "60-degree"
+  ],
+  "tested_sources": [
+   "hist-field-rmg-lunar"
+  ],
+  "untested_sources": [
+   "hist-field-si-sextant"
+  ]
+ },
+ {
+  "slug": "navigation-before-gps",
+  "track": "lost-ways",
+  "text": "in 1761 nevil maskelyne tested the method on the voyage to st helena. by the time they anchored, he reported, his longitude by lunars was only about 11/2 degrees in error, against errors of up to 10 degrees from dead reckoning on the same voyage. documented history editor's note dead reckoning means working out where you are from your starting point, your heading and how far you think you have tra",
+  "figs": [
+   "10 degrees",
+   "11/2 degrees"
+  ],
+  "cites": [
+   "hist-field-rmg-lunar"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-rmg-lunar"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "navigation-before-gps",
+  "track": "lost-ways",
+  "text": "the same page states the limits. polaris is near the pole, not exactly at it. the southern hemisphere has no bright star marking the south celestial pole, and people there use other methods such as the stars of the southern cross. the pole star also changes over thousands of years because of a wobble in earth's axis of about 26,000 years. ",
+  "figs": [
+   "26,000 years"
+  ],
+  "cites": [
+   "hist-field-nasa-north-star"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-nasa-north-star"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": " if you use a portable generator, keep it at least 20 feet from windows, doors and vents , with the exhaust pointed away from the house, and run a long heavy-duty extension cord to the things it powers. ",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "shelter-cpsc-co",
+   "shelter-ready-power-outages"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cpsc-co",
+   "shelter-ready-power-outages"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": " outdoors only, and far from the house. at least 20 feet from windows, doors and vents. fema's december 2023 power-outage sheet words it as outdoors, at least 20 feet away from \"any building openings like windows, doors or garages,\" and applies the same distance to camp stoves and charcoal grills. ready.gov names attached garages in the same sentence and says the fuel belongs outdoors too. the cps",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "shelter-cdc-power-outage",
+   "shelter-cpsc-co",
+   "shelter-fema-power-outage-sheet",
+   "shelter-ready-power-outages",
+   "shelter-cpsc-co",
+   "shelter-cpsc-co-tips"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-power-outage",
+   "shelter-cpsc-co",
+   "shelter-fema-power-outage-sheet",
+   "shelter-ready-power-outages",
+   "shelter-cpsc-co",
+   "shelter-cpsc-co-tips"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": " use distance, not a closed door, as your protection. the cdc suggests an extension cord more than 20 feet long to keep the generator at a safe distance. ready.gov and the cdc both say to connect appliances with heavy-duty extension cords, and the cdc specifies individual, outdoor-rated cords. ",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "shelter-cdc-power-outage",
+   "shelter-ready-power-outages",
+   "shelter-cdc-winter-storm"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-power-outage",
+   "shelter-ready-power-outages",
+   "shelter-cdc-winter-storm"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "the cpsc says one portable generator can produce as much carbon monoxide as hundreds of cars. that is why \"i'll leave the garage door up\" is not a compromise that any of these agencies recognizes. editor's note twenty feet is the distance the agencies give as the minimum. none of the pages we read describes 20 feet as full protection by itself, and the cdc pairs the distance with a battery co alar",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "shelter-cpsc-co"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cpsc-co"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "check batteries when you change clocks in spring and fall. replace following the manufacturer's instructions or every 5 years. a digital readout can show the highest level recorded. ",
+  "figs": [
+   "5 years"
+  ],
+  "cites": [
+   "shelter-cdc-co-basics"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-co-basics"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "for electric space heaters , which only apply if you have power or a generator, the cdc's rules are: use models with automatic shut-off switches and non-glowing elements; keep them at least 3 feet from drapes, furniture, bedding and other flammable materials; never cover them; never put them on furniture or near water; never leave children unattended near one; and do not use one with a damaged cor",
+  "figs": [
+   "3 feet"
+  ],
+  "cites": [
+   "shelter-cdc-winter-storm",
+   "shelter-ready-home-fires"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-winter-storm",
+   "shelter-ready-home-fires"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "the cdc's hypothermia signs in adults are shivering, exhaustion, confusion, fumbling hands, memory loss, slurred speech and drowsiness. in babies the signs are bright red, cold skin and very low energy. if you notice them, take the person's temperature; below 95°f is an emergency and calls for medical attention immediately. if help is not available right away, warm the person up. ready.gov's first",
+  "figs": [
+   "95°f"
+  ],
+  "cites": [
+   "shelter-cdc-winter-storm",
+   "shelter-ready-winter-weather"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-winter-storm",
+   "shelter-ready-winter-weather"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "if you are stranded in a car in a winter storm, the cdc says staying in the car is often the safest choice. it advises running the motor and heater for about 10 minutes each hour with one window opened slightly, and making sure snow is not blocking the exhaust pipe, to reduce the risk of co poisoning. editor's note this is a roadside instruction for a car in open air. it is not guidance for runnin",
+  "figs": [
+   "10 minutes"
+  ],
+  "cites": [
+   "shelter-cdc-winter-storm",
+   "shelter-cdc-co-basics",
+   "shelter-nws-winter-during",
+   "shelter-fema-power-outage-sheet"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-winter-storm",
+   "shelter-cdc-co-basics",
+   "shelter-nws-winter-during",
+   "shelter-fema-power-outage-sheet"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "ready.gov defines extreme heat as a period of high heat and humidity, with temperatures above 90 degrees, lasting at least two to three days. it says extreme heat is responsible for the highest number of annual deaths among all weather-related hazards, and that older adults, children and people with certain illnesses and chronic conditions are at greater risk. a heat wave can also cause the outage",
+  "figs": [
+   "90 degrees"
+  ],
+  "cites": [
+   "shelter-ready-heat",
+   "shelter-ready-heat"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-ready-heat",
+   "shelter-ready-heat"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": " do not rely on a fan alone. the cdc says to use fans only if the indoor temperature is below 90°f, because above that a fan can increase body temperature. ready.gov says a fan creates airflow and a false sense of comfort without reducing body temperature or preventing heat illness. the cdc's outage page adds that when it is really hot, fans will not prevent heat-related illness. ",
+  "figs": [
+   "90°f"
+  ],
+  "cites": [
+   "shelter-cdc-heat",
+   "shelter-ready-heat",
+   "shelter-cdc-power-outage"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-heat",
+   "shelter-ready-heat",
+   "shelter-cdc-power-outage"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "symptoms of overheating, per the cdc, include muscle cramping, unusually heavy sweating, shortness of breath, dizziness, headaches, weakness and nausea. ready.gov separates the severe form: heat stroke, with signs of an extremely high body temperature (above 103°f), red, hot, dry skin with no sweat, a rapid, strong pulse, and dizziness, confusion or unconsciousness. for suspected heat stroke it sa",
+  "figs": [
+   "103°f",
+   "106°f",
+   "15 minutes"
+  ],
+  "cites": [
+   "shelter-cdc-heat",
+   "shelter-ready-heat",
+   "shelter-cdc-power-outage"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-heat",
+   "shelter-ready-heat",
+   "shelter-cdc-power-outage"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "outage-heat-cold-generators",
+  "track": "modern",
+  "text": "this guide stays on heat, cold and combustion. food safety has its own page in this library once it is built. the numbers agencies give for the first hours are worth knowing, though: a refrigerator will keep food cold for about four hours if the door stays closed, and a full freezer for about 48 hours (24 if half full). ready.gov also advises disconnecting appliances and electronics to avoid damag",
+  "figs": [
+   "48 hours"
+  ],
+  "cites": [
+   "shelter-cdc-power-outage",
+   "shelter-ready-power-outages",
+   "fsis-power-failure",
+   "shelter-ready-power-outages"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-cdc-power-outage",
+   "shelter-ready-power-outages",
+   "fsis-power-failure",
+   "shelter-ready-power-outages"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": " keep it cool and dry, away from the stove, pipes and furnace, and keep metal cans off the floor. fsis says temperatures below 85°f are best and that you should check your pantry every few weeks. ",
+  "figs": [
+   "85°f"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable",
+   "food-usu-canned-goods"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable",
+   "food-usu-canned-goods"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "the official lists share three features. the foods need no refrigeration. they need little or no cooking and little or no water. and they are foods people will eat when they are stressed. oregon state warns that dehydrated and freeze-dried foods may need extra water and fuel, and that freeze-dried food, though it may advertise a 20- to 30-year storage life, does not ensure quality. ",
+  "figs": [
+   "30-year"
+  ],
+  "cites": [
+   "food-osu-survival-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-osu-survival-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "the official sources are more cautious about the amount than most marketing is. ready.gov says \"at least a several-day supply\". fsis names a 3-day supply of commercially bottled water per person, a minimum of 3 gallons, alongside the food. oregon state's publication, written for people at risk of a major pacific northwest earthquake, says the state's minimum goal is two weeks of meals and that man",
+  "figs": [
+   "3 gallons",
+   "3-day"
+  ],
+  "cites": [
+   "food-ready-food",
+   "fsis-emergency-foods",
+   "food-osu-survival-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-ready-food",
+   "fsis-emergency-foods",
+   "food-osu-survival-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "two things in that table deserve emphasis. first, infant formula is the exception: federal regulations require a \"use-by\" date on it, and fsis says not to buy or use formula after that date. illinois extension lists infant formula and baby food among products whose expiration dates should be respected. we give no advice on the dates on medicines; ask your pharmacist. second, a can can carry both a",
+  "figs": [
+   "18 months"
+  ],
+  "cites": [
+   "food-fsis-dating",
+   "food-illinois-room-temp",
+   "food-fsis-dating"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-dating",
+   "food-illinois-room-temp",
+   "food-fsis-dating"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "the same chart says home-canned foods keep 12 months and should be boiled \"10 minutes for high-acid foods; 20 minutes for low-acid foods\" before use. the text of the same fsis page says something different: low-acid and tomato foods should be boiled 10 minutes, plus 1 minute for each 1,000 feet of elevation, and \"properly home-canned fruits have never needed the 10-minute boil\". the cdc page agree",
+  "figs": [
+   "1 minute",
+   "1,000 feet",
+   "10 minutes",
+   "10-minute",
+   "12 months",
+   "20 minutes"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable",
+   "food-cdc-home-canned"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable",
+   "food-cdc-home-canned"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": " fsis: store canned and other shelf-stable foods in a cool, dry place, never above or beside the stove, under the sink, in a damp garage or basement, or anywhere with temperature extremes. temperatures below 85°f are best, and high temperatures (over 100°f) are harmful to canned goods. ",
+  "figs": [
+   "100°f",
+   "85°f"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": " oregon state extension: storage in a cool, dry, dark location is best, but in an earthquake-prone area the best place may be one you can reach if the house is damaged; in a small home, closets, under beds or behind furniture can work. it says canned foods can become dangerous when stored above 95°f. ",
+  "figs": [
+   "95°f"
+  ],
+  "cites": [
+   "food-osu-survival-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-osu-survival-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "the temperature advice differs in what it is trying to protect. fsis's 85°f is a quality and shelf-life target. cdc's and oregon state's 95°f is a safety line for home-canned food, with cdc adding that 50°f to 70°f is best for quality. editor's note for an apartment with no cool basement, the practical reading is the same in all of them: choose the coolest interior spot you have, away from the ove",
+  "figs": [
+   "50°f",
+   "70°f",
+   "85°f",
+   "95°f"
+  ],
+  "cites": [
+   "food-cdc-home-canned",
+   "food-osu-survival-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-home-canned",
+   "food-osu-survival-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "the reason for caution is botulism. fsis describes a rare but serious danger in incorrectly processed canned foods: the toxin-producing bacterium grows where there is no oxygen, symptoms appear within 12 to 48 hours and include double vision, droopy eyelids, trouble swallowing and difficulty breathing, and without treatment a patient can die of suffocation. fsis's advice is not to taste food from ",
+  "figs": [
+   "48 hours"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "fsis: do not use a swollen can, and discard frozen cans that are not swollen if they have been allowed to thaw at 40°f or higher. a frozen can that has not thawed can be defrosted in the refrigerator, and used if the contents look and smell normal. utah state extension is more blunt about prevention: do not allow sealed cans or jars to freeze, because freezing can lead to rust, bursting cans and b",
+  "figs": [
+   "40°f"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable",
+   "food-usu-canned-goods"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable",
+   "food-usu-canned-goods"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pantry-rotation",
+  "track": "modern",
+  "text": "if part of your stock is food you preserved yourself, handle it separately. utah state extension's general rule is that unopened home-canned food has a one-year shelf life and should be used before two years. cdc advises canning only the amount of food you will use in one year, and not storing it above 95°f. beyond that, the safety of home-canned low-acid food depends on how it was processed, and ",
+  "figs": [
+   "95°f"
+  ],
+  "cites": [
+   "food-usu-canned-goods",
+   "food-cdc-home-canned"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-usu-canned-goods",
+   "food-cdc-home-canned"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pemmican-and-dried-meats",
+  "track": "lost-ways",
+  "text": "usda's current recommendation for making jerky safely is to heat meat to 160°f and poultry to 165°f before the dehydrating process. usda explains that most dehydrator instructions omit this, that a dehydrator may not reach those temperatures, and that after drying bacteria become much more heat resistant. ",
+  "figs": [
+   "160°f",
+   "165°f"
+  ],
+  "cites": [
+   "hist-food-fsis-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-fsis-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pemmican-and-dried-meats",
+  "track": "lost-ways",
+  "text": "the national center for home food preservation gives a similar target of 160°f but allows the heating to be done either in a marinade before drying or in an oven after drying, and says properly dried jerky keeps at room temperature two weeks in a sealed container. usda says home-dried jerky can be stored one to two months, commercially packaged jerky twelve. ",
+  "figs": [
+   "160°f"
+  ],
+  "cites": [
+   "hist-food-nchfp-jerky",
+   "hist-food-fsis-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-nchfp-jerky",
+   "hist-food-fsis-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pemmican-and-dried-meats",
+  "track": "lost-ways",
+  "text": "for dried meat generally, follow usda and nchfp jerky guidance, including the 160°f heat step, their handling advice for pork and wild game, and their short storage times for home-dried jerky. ",
+  "figs": [
+   "160°f"
+  ],
+  "cites": [
+   "hist-food-fsis-jerky",
+   "hist-food-nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-fsis-jerky",
+   "hist-food-nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-supply-chains-failed",
+  "track": "lost-ways",
+  "text": " time. a route over the sierra nevada had to be finished before winter snow. the national park service notes a late start, with 2,500 miles to go when the party passed independence, missouri. ",
+  "figs": [
+   "2,500 miles"
+  ],
+  "cites": [
+   "hist-field-nps-donner"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-nps-donner"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-supply-chains-failed",
+  "track": "lost-ways",
+  "text": "the national park service says the party of 87 men, women and children, led by george donner and james reed, left illinois on april 12 and passed independence on may 12, with 2,500 miles to go. late starters, the park service says, found lansford w. hastings's claim of a faster route enticing, and the party agreed to join hastings's group to save 150 to 500 miles, a range the park service notes ha",
+  "figs": [
+   "2,500 miles",
+   "500 miles"
+  ],
+  "cites": [
+   "hist-field-nps-donner"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-nps-donner"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-supply-chains-failed",
+  "track": "lost-ways",
+  "text": "britannica's account differs in a few details: it has the families leaving springfield on april 14 and says hastings claimed to shave more than 300 miles. uncertain it also says that in reality the cutoff was 125 miles longer than the established trail. the sources disagree on the departure date and on the promised saving, and we have not found a record that resolves either.",
+  "figs": [
+   "125 miles",
+   "300 miles"
+  ],
+  "cites": [
+   "hist-field-britannica-donner",
+   "hist-field-britannica-donner"
+  ],
+  "status": "NO_TESTABLE_SOURCE",
+  "missing": [],
+  "tested_sources": [],
+  "untested_sources": [
+   "hist-field-britannica-donner",
+   "hist-field-britannica-donner"
+  ]
+ },
+ {
+  "slug": "pioneer-supply-chains-failed",
+  "track": "lost-ways",
+  "text": "the guide itself is digitized. in the internet archive's scan of the 1845 cincinnati edition, as we read its machine-made (ocr) text, hastings gives the distance from independence to oregon or california by the fort hall route as about 2,100 miles and says the usual time to make the journey is about 120 days, exclusive of delays, while admitting that parties had often taken much longer. he also na",
+  "figs": [
+   "120 days",
+   "2,100 miles"
+  ],
+  "cites": [
+   "hist-field-ia-hastings-guide",
+   "hist-field-ia-hastings-guide",
+   "hist-field-nps-donner"
+  ],
+  "status": "NO_FIGURES_FOUND",
+  "missing": [
+   "120 days",
+   "2,100 miles"
+  ],
+  "tested_sources": [
+   "hist-field-ia-hastings-guide",
+   "hist-field-ia-hastings-guide",
+   "hist-field-nps-donner"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-supply-chains-failed",
+  "track": "lost-ways",
+  "text": "california state parks runs donner memorial state park near truckee, at an elevation of about 6,000 feet. its pioneer monument, completed in 1918 by the native sons of the golden west, stands on a 22-foot pedestal where the schallenberger and later the breen cabin once stood, and was restored in 2022. the park's visitor center has exhibits on the emigrant experience and the donner party, and on th",
+  "figs": [
+   "22-foot",
+   "6,000 feet"
+  ],
+  "cites": [
+   "hist-field-ca-parks-donner"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-field-ca-parks-donner"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-travel-rations",
+  "track": "lost-ways",
+  "text": "the national park service reports that ware's 1849 guide, published in st. louis, suggested the following food for three people headed west on the oregon trail: 1,080 pounds of flour, 600 of bacon, 100 of coffee, 5 of tea, 150 of sugar, 75 of rice, 50 of dried fruit, 50 of salt and pepper, 10 of saleratus (baking soda) and 50 of lard, along with corn meal, hard-tack, dried beef, molasses, vinegar,",
+  "figs": [
+   "1,080 pounds"
+  ],
+  "cites": [
+   "hist-food-nps-emigrant-trails",
+   "hist-food-nps-emigrant-trails"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-nps-emigrant-trails",
+   "hist-food-nps-emigrant-trails"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-travel-rations",
+  "track": "lost-ways",
+  "text": "marcy's allowance is different in kind. writing for travelers crossing from the missouri river to california, he recommends, for each grown person, enough to last 110 days: 150 pounds of flour \"or its equivalent in hard bread\", 25 pounds of bacon or pork, enough fresh beef driven on the hoof to make up the meat portion, 15 pounds of coffee and 25 pounds of sugar, plus saleratus or yeast powder, sa",
+  "figs": [
+   "110 days",
+   "15 pounds",
+   "150 pounds",
+   "25 pounds"
+  ],
+  "cites": [
+   "hist-food-marcy-prairie-traveler-text"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-marcy-prairie-traveler-text"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-travel-rations",
+  "track": "lost-ways",
+  "text": "usda's current recommendation for home jerky is to heat meat to 160°f and poultry to 165°f before dehydrating, because dried meat's bacteria become much more heat resistant, and a dehydrator may not reach those temperatures. marcy describes jerking in the sun with no heat step and no salt. ",
+  "figs": [
+   "160°f",
+   "165°f"
+  ],
+  "cites": [
+   "hist-food-fsis-jerky",
+   "hist-food-marcy-prairie-traveler-text"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-fsis-jerky",
+   "hist-food-marcy-prairie-traveler-text"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pioneer-travel-rations",
+  "track": "lost-ways",
+  "text": "the two federal and extension sources we read disagree in detail on timing: the national center for home food preservation lists heating in marinade before drying or in an oven after drying, while usda recommends the heat before dehydrating. both give 160°f for meat. for a gated safety question we link to both rather than choosing, and flag it for the human reviewer.",
+  "figs": [
+   "160°f"
+  ],
+  "cites": [
+   "hist-food-nchfp-jerky",
+   "hist-food-fsis-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-nchfp-jerky",
+   "hist-food-fsis-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "preparedness-real-households",
+  "track": "modern",
+  "text": "the cdc baseline is 1 gallon of water per person per day for at least 3 days. for a household of four, that is 12 gallons, and, as {{link:water-math|water math}} notes, water weighs a little over 8 pounds a gallon. that is manageable in a small unit. a two-week supply is not, and the {{link:two-week-water-storage|storage guide}} deals with containers and placement. editor's note if you have no roo",
+  "figs": [
+   "1 gallon",
+   "12 gallons",
+   "3 days",
+   "8 pounds"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "SOME_FIGURES_NOT_FOUND",
+  "missing": [
+   "12 gallons"
+  ],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "preparedness-real-households",
+  "track": "modern",
+  "text": " medicines and papers. the red cross recommends at least 30 days of medications and extra assistive items such as a cane or eyeglasses; see {{link:three-day-kit|the kit guide}} for how the sources differ on days. ready.gov suggests copies of medicaid, medicare and other insurance cards. ",
+  "figs": [
+   "30 days"
+  ],
+  "cites": [
+   "start-redcross-older-adults",
+   "start-ready-older-adults"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "start-redcross-older-adults",
+   "start-ready-older-adults"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "botulism is a medical emergency. symptoms can include double vision, droopy eyelids, trouble swallowing and difficulty breathing, and they typically start 12 to 48 hours after eating contaminated food. if you or anyone you know has them after eating home-canned food, call your emergency number immediately. if you are new to canning, ask your county cooperative extension office about classes before",
+  "figs": [
+   "48 hours"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable",
+   "food-nchfp-using-pressure-canners"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable",
+   "food-nchfp-using-pressure-canners"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "most spoilage in a canned jar is a nuisance. one kind is not. clostridium botulinum forms spores that survive harmlessly in soil and water for years. nchfp explains that when conditions suit them, the spores produce cells that multiply rapidly and can make a deadly toxin within 3 to 4 days in an environment with three features: a moist, low-acid food; a temperature between 40°f and 120°f; and less",
+  "figs": [
+   "120°f",
+   "2 percent",
+   "4 days",
+   "40°f"
+  ],
+  "cites": [
+   "food-nchfp-ensuring-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-nchfp-ensuring-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "botulinum spores are very hard to destroy at boiling-water temperatures. higher temperatures destroy them more easily, so nchfp says all low-acid foods should be sterilized at 240°f to 250°f, which pressure canners operated at 10 to 15 psig can reach. at those temperatures, it says, the time needed to destroy bacteria in low-acid food ranges from 20 to 100 minutes depending on the food, the pack, ",
+  "figs": [
+   "100 minutes",
+   "11 hours",
+   "240°f",
+   "250°f"
+  ],
+  "cites": [
+   "food-nchfp-ensuring-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-nchfp-ensuring-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "a second point from nchfp is easy to miss: it is temperature that kills spores, not pressure. \"pressure does not destroy microorganisms, but high temperatures applied for an adequate period of time do kill microorganisms.\" the pressure matters because the temperature of pure steam depends on it. at sea level a canner at 10.5 pounds of gauge pressure gives an internal temperature of 240°f. that is ",
+  "figs": [
+   "10.5 pounds",
+   "240°f"
+  ],
+  "cites": [
+   "food-nchfp-recommended-canners"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-nchfp-recommended-canners"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "internal canner temperatures are lower at higher elevations, so canners must be run at increased pressures. using a sea-level process at 1,000 feet or more may result in spoilage. ",
+  "figs": [
+   "1,000 feet"
+  ],
+  "cites": [
+   "food-nchfp-using-pressure-canners",
+   "food-nchfp-ensuring-safe"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-nchfp-using-pressure-canners",
+   "food-nchfp-ensuring-safe"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "air trapped in a closed canner lowers the temperature reached for a given pressure and results in underprocessing, so usda says all pressure canners must be vented for 10 minutes before they are pressurized. ",
+  "figs": [
+   "10 minutes"
+  ],
+  "cites": [
+   "food-nchfp-using-pressure-canners"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-nchfp-using-pressure-canners"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "the cdc tells people to boil certain home-canned foods in a saucepan before eating them: home-canned tomatoes, foods containing them, and all low-acid home-canned foods. at altitudes below 1,000 feet, boil for 10 minutes, adding 1 minute for each additional 1,000 feet of elevation. the reason given is that high temperatures can destroy the toxin. fsis gives the same figures but qualifies them hard",
+  "figs": [
+   "1 minute",
+   "1,000 feet",
+   "10 minutes"
+  ],
+  "cites": [
+   "food-cdc-home-canned",
+   "food-fsis-shelf-stable"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-home-canned",
+   "food-fsis-shelf-stable"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": " fsis contradicts itself. its shelf-stable page gives the 10-minutes-plus-1-minute-per-1,000-feet rule in its text and says properly home-canned fruits never needed the boil, but its storage chart tells you to boil home-canned foods 10 minutes if high-acid and 20 minutes if low-acid. cdc agrees with the text. ",
+  "figs": [
+   "1,000-feet",
+   "1-minute",
+   "10 minutes",
+   "10-minutes",
+   "20 minutes"
+  ],
+  "cites": [
+   "food-fsis-shelf-stable",
+   "food-cdc-home-canned"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-shelf-stable",
+   "food-cdc-home-canned"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": " utah state extension says that if older canned food shows no strange appearance or odor, you may taste a sample, and suggests boiling older canned food for 10 minutes before tasting, or heating low-acid food to 165°f or boiling it 5 to 10 minutes. the cdc says never to taste food to see if it is safe, and the usda guide says not to taste food from a jar showing signs of spoilage. ",
+  "figs": [
+   "10 minutes",
+   "165°f"
+  ],
+  "cites": [
+   "food-usu-canned-goods",
+   "food-cdc-home-canned",
+   "food-usda-canning-guide-1"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-usu-canned-goods",
+   "food-cdc-home-canned",
+   "food-usda-canning-guide-1"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "pressure-canning-low-acid",
+  "track": "modern",
+  "text": "the cdc says to can only the amount of food you will use in one year (unless directions for a specific food say otherwise), to label and date jars, and to store them in a clean, cool, dark place. for best quality, 50°f to 70°f; for safety, never above 95°f, and not near hot pipes, a range, a furnace, in an uninsulated attic, or in direct sunlight. the usda guide says the same about temperature and",
+  "figs": [
+   "50°f",
+   "70°f",
+   "95°f"
+  ],
+  "cites": [
+   "food-cdc-home-canned",
+   "food-usda-canning-guide-1",
+   "food-usu-canned-goods",
+   "food-fsis-emergencies",
+   "food-cdc-after-emergency"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-cdc-home-canned",
+   "food-usda-canning-guide-1",
+   "food-usu-canned-goods",
+   "food-fsis-emergencies",
+   "food-cdc-after-emergency"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "rain-barrels-and-cisterns",
+  "track": "lost-ways",
+  "text": "thomas jefferson's house stood on a mountaintop, and the thomas jefferson foundation records that he had four brick cisterns installed from 1809 to collect rainwater and ease the problem of supplying water to the house. two on the north side were reserved for fire, and two on the south to serve the kitchen, laundry and garden. documented history jefferson did the arithmetic himself, multiplying av",
+  "figs": [
+   "600 gallons"
+  ],
+  "cites": [
+   "hist-home-monticello-cisterns",
+   "hist-home-monticello-cisterns"
+  ],
+  "status": "NO_TESTABLE_SOURCE",
+  "missing": [],
+  "tested_sources": [],
+  "untested_sources": [
+   "hist-home-monticello-cisterns",
+   "hist-home-monticello-cisterns"
+  ]
+ },
+ {
+  "slug": "rain-barrels-and-cisterns",
+  "track": "lost-ways",
+  "text": "at fort union in new mexico, the national park service records a different pattern. the fort's original water source was a stream, with troops hauling it in wagons; later it drilled a main well to about 85 feet, and in the mid-1880s indoor plumbing arrived. documented history the rain was a supplement, not the supply. the fort kept a large store of water on hand in case of fire, \"using primarily c",
+  "figs": [
+   "20,000 gallons",
+   "85 feet"
+  ],
+  "cites": [
+   "hist-home-nps-fort-union-water",
+   "hist-home-nps-fort-union-water"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-nps-fort-union-water",
+   "hist-home-nps-fort-union-water"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "rain-barrels-and-cisterns",
+  "track": "lost-ways",
+  "text": "the second hazard is what happens in the tank. the cdc advises regularly emptying rain barrels and keeping the system clean and in repair, and says that to stop mosquitoes laying eggs in a barrel you can add a screen where the water enters or empty it at least every 10 days. ",
+  "figs": [
+   "10 days"
+  ],
+  "cites": [
+   "hist-home-cdc-rainwater"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-cdc-rainwater"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": "for perishable foods, the usda's benchmark is a refrigerator at 40 °f or below. a cellar is a different tool. ",
+  "figs": [
+   "40 °f"
+  ],
+  "cites": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": "university of missouri extension's quick-reference chart sorts crops into groups. most root crops and the cabbage family belong in cold and very moist storage. potatoes want cold and moist, with a note not to store them with fruits. onions, garlic and dry beans are cool and dry. a few crops are different again: sweet potatoes want warm and moist storage and the chart warns not to let them drop bel",
+  "figs": [
+   "50 °f"
+  ],
+  "cites": [
+   "hist-home-mu-root-cellars"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-mu-root-cellars"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": "the usda's food safety and inspection service says that bacteria grow most rapidly between 40 and 140 °f, a range it calls the danger zone, and that some double in number in as little as 20 minutes. it advises keeping the refrigerator at 40 °f or below, using an appliance thermometer, and not eating food held above 40 °f for more than two hours. official guidance ",
+  "figs": [
+   "140 °f",
+   "20 minutes",
+   "40 °f"
+  ],
+  "cites": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": "notice how the two sets of numbers sit side by side. the extension chart gives a target range for whole produce, with an upper end at 40 °f for the coldest crops. the usda rule is for perishable foods, with a line at 40 °f and a clock of two hours above it. a cellar's temperature changes with the seasons, and none of our sources say how a given cellar behaves across a year.",
+  "figs": [
+   "40 °f"
+  ],
+  "cites": [
+   "hist-home-mu-root-cellars",
+   "hist-home-fsis-refrigeration"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-mu-root-cellars",
+   "hist-home-fsis-refrigeration"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": "no extension source we read says so; usda's benchmark for perishable food is a 40 °f refrigerator. ",
+  "figs": [
+   "40 °f"
+  ],
+  "cites": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": " meat, dairy, cooked and other perishable food: not covered by the produce guidance. use refrigeration at 40 °f or below with a thermometer. ",
+  "figs": [
+   "40 °f"
+  ],
+  "cites": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-fsis-refrigeration"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "root-cellars-cool-storage",
+  "track": "lost-ways",
+  "text": " official guidance crop-specific temperature and humidity ranges for produce, no freezing, fruit kept away from vegetables, and refrigeration at or below 40 °f for perishable foods, checked with an appliance thermometer. for preserved foods, see {{link:pickling-fermentation-old-recipes|pickling, fermentation and old recipes}} and {{link:salt-beef-salt-pork-age-of-sail|salt beef and salt pork at se",
+  "figs": [
+   "40 °f"
+  ],
+  "cites": [
+   "hist-home-mu-root-cellars",
+   "hist-home-fsis-refrigeration"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-mu-root-cellars",
+   "hist-home-fsis-refrigeration"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " do not assume drying makes raw meat safe. usda says pathogenic bacteria are likely to survive the dry heat of a warm oven and especially the 130°f to 140°f of a food dehydrator, and that illnesses from salmonella and e. coli o157:h7 have been traced to homemade jerky. ",
+  "figs": [
+   "130°f",
+   "140°f"
+  ],
+  "cites": [
+   "food-fsis-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " heat the meat to a safe internal temperature, and prove it with a thermometer. the usda meat and poultry hotline's current recommendation is to heat meat to 160°f and poultry to 165°f before dehydrating, checked with a food thermometer. nchfp and kansas state extension offer two other routes to 160°f: heat the strips in the marinade before drying, or heat the dried strips in an oven afterwards. t",
+  "figs": [
+   "160°f",
+   "165°f"
+  ],
+  "cites": [
+   "food-fsis-jerky-qa",
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky-qa",
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " slice no thicker than 1/4 inch, trim off the fat, and keep the meat cold (40°f or below) and the equipment clean until it goes in. ",
+  "figs": [
+   "1/4 inch",
+   "40°f"
+  ],
+  "cites": [
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " pork and wild game: nchfp says to treat the meat for the parasite trichinella first, by freezing a portion 6 inches or less thick at 0°f or below for at least 30 days, before slicing and marinating. freezing does not remove bacteria. ",
+  "figs": [
+   "0°f",
+   "30 days",
+   "6 inches"
+  ],
+  "cites": [
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " store home-dried jerky cold if you want it to last. the sources give different shelf lives (2 weeks to 2 months) for room temperature; all agree that refrigerating or freezing extends it. ",
+  "figs": [
+   "2 months",
+   "2 weeks"
+  ],
+  "cites": [
+   "nchfp-jerky",
+   "food-fsis-jerky",
+   "food-ksu-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky",
+   "food-fsis-jerky",
+   "food-ksu-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "the usda meat and poultry hotline (1-888-674-6854, monday to friday 10 a.m. to 6 p.m. eastern) answers questions about making jerky safely. for a ready-made supply, commercially made jerky is produced under federal inspection and is listed by fsis as shelf-stable for 12 months. ",
+  "figs": [
+   "12 months"
+  ],
+  "cites": [
+   "food-fsis-emergencies",
+   "food-fsis-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-emergencies",
+   "food-fsis-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "heat to 160°f (poultry 165°f); measure with a metal stem-type thermometer; keep meat at 40°f or below; marinate in the refrigerator and do not reuse the marinade. ",
+  "figs": [
+   "160°f",
+   "165°f",
+   "40°f"
+  ],
+  "cites": [
+   "food-fsis-jerky-qa",
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky-qa",
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "freeze a portion 6 inches or less thick at 0°f or below for at least 30 days, before slicing and marinating. freezing does not remove bacteria. ",
+  "figs": [
+   "0°f",
+   "30 days",
+   "6 inches"
+  ],
+  "cites": [
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " before dehydrating. steam or roast the meat to 160°f, or poultry to 165°f, checked with a food thermometer. ",
+  "figs": [
+   "160°f",
+   "165°f"
+  ],
+  "cites": [
+   "food-fsis-jerky",
+   "food-fsis-jerky-qa"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky",
+   "food-fsis-jerky-qa"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "a dehydrator with an adjustable temperature dial that holds at least 130°f to 140°f throughout. dry until a test piece cracks but does not break when bent. ",
+  "figs": [
+   "130°f",
+   "140°f"
+  ],
+  "cites": [
+   "food-fsis-jerky-qa"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky-qa"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " before drying, by bringing the strips and their marinade to a boil and boiling for 5 minutes, then draining. thicker strips may need longer. if possible, check several strips with a metal stem-type thermometer for 160°f. ",
+  "figs": [
+   "160°f",
+   "5 minutes"
+  ],
+  "cites": [
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "dehydrator or oven preheated to 140°f; strips close together but not touching. test piece cracks but does not break. begin checking at 3 hours. ",
+  "figs": [
+   "140°f",
+   "3 hours"
+  ],
+  "cites": [
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " after drying, if the strips were not heated in the marinade: bake on a baking sheet. for strips cut 1/4 inch or less, 10 minutes in an oven preheated to 275°f. thicker strips may take longer to reach 160°f. ",
+  "figs": [
+   "1/4 inch",
+   "10 minutes",
+   "160°f",
+   "275°f"
+  ],
+  "cites": [
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "10 to 24 hours for strips not heated in the marinade, per nchfp and kansas state. ",
+  "figs": [
+   "24 hours"
+  ],
+  "cites": [
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "ground-meat jerky, made with a jerky gun or press, is harder. nchfp says disease-causing organisms are more difficult to eliminate in ground meat, and that an internal temperature of 160°f is necessary to eliminate bacteria such as e. coli o157:h7. kansas state extension adds that after dehydrating, ground-meat jerky should be heated for 10 minutes in an oven preheated to 275°f. ",
+  "figs": [
+   "10 minutes",
+   "160°f",
+   "275°f"
+  ],
+  "cites": [
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky",
+   "food-ksu-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "fsis says to heat before dehydrating, and notes that after drying, bacteria become much more heat resistant. nchfp offers heating after drying as an acceptable alternative. its conditions are strips sliced no thicker than 1/4 inch and reaching 160°f \"in such a way as to prevent case hardening\". ",
+  "figs": [
+   "1/4 inch",
+   "160°f"
+  ],
+  "cites": [
+   "food-fsis-jerky",
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky",
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " most dehydrator instructions do not include the heating step, and a dehydrator may not reach 160°f or 165°f, fsis says. so do the heating step separately.",
+  "figs": [
+   "160°f",
+   "165°f"
+  ],
+  "cites": [
+   "food-fsis-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " the dehydrator should have an adjustable temperature dial and hold at least 130°f to 140°f throughout drying. ",
+  "figs": [
+   "130°f",
+   "140°f"
+  ],
+  "cites": [
+   "food-fsis-jerky-qa"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky-qa"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " poultry: fsis gives a 165°f procedure for poultry. nchfp and kansas state say raw poultry is generally not recommended for jerky because of the texture and flavor of the finished product. that is a quality reason, not a safety one. nchfp lists smoked turkey breast among the meats that can be used. ",
+  "figs": [
+   "165°f"
+  ],
+  "cites": [
+   "food-fsis-jerky-qa",
+   "nchfp-jerky",
+   "food-ksu-jerky",
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky-qa",
+   "nchfp-jerky",
+   "food-ksu-jerky",
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "home-dried jerky can be stored 1 to 2 months. commercially packaged jerky can be kept 12 months. fsis recommends a shorter shelf life for homemade jerky because the process varies. ",
+  "figs": [
+   "12 months",
+   "2 months"
+  ],
+  "cites": [
+   "food-fsis-jerky",
+   "food-fsis-shelf-stable"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky",
+   "food-fsis-shelf-stable"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": "homemade jerky is best used within 1 to 2 months. refrigerate or freeze for longer storage. ",
+  "figs": [
+   "2 months"
+  ],
+  "cites": [
+   "food-ksu-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-ksu-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " buying instead of making. commercially made jerky is made under federal inspection and, fsis says, keeps 12 months. oregon state extension lists beef or turkey jerky among pantry proteins. for an emergency supply that you will not make fresh, buying may be both safer and simpler.",
+  "figs": [
+   "12 months"
+  ],
+  "cites": [
+   "food-fsis-jerky",
+   "food-osu-survival-food"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "food-fsis-jerky",
+   "food-osu-survival-food"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "safe-jerky-dehydration",
+  "track": "modern",
+  "text": " renters and small kitchens. heating meat to 160°f, drying for hours, and keeping raw meat apart from other food all take counter space and attention. nchfp's procedure allows an oven in place of a dehydrator, with a baking sheet and a thermometer. ",
+  "figs": [
+   "160°f"
+  ],
+  "cites": [
+   "nchfp-jerky"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "nchfp-jerky"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "track": "lost-ways",
+  "text": "when uss constitution was provisioned for a projected six-month cruise in 1813, the numbers recorded in the court of inquiry that later examined her captain run like this: 84,456 pounds of bread, 57,700 pounds of beef, and 50,600 pounds of pork, with about 47,000 gallons of water, for a crew of roughly 450. documented history ",
+  "figs": [
+   "47,000 gallons",
+   "50,600 pounds",
+   "57,700 pounds",
+   "84,456 pounds"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "track": "lost-ways",
+  "text": "the 1813 weekly ration for an american sailor, as tabulated in the constitution museum's study, was built around bread and barrelled meat. per man, it came to roughly 31/2 pounds of beef and 3 pounds of pork a week, plus 98 ounces of bread (14 ounces a day), a pound of flour with half a pound of suet, and smaller amounts of cheese, butter, peas, rice, molasses and vinegar, along with a daily spiri",
+  "figs": [
+   "14 ounces",
+   "3 pounds",
+   "31/2 pounds",
+   "98 ounces"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "track": "lost-ways",
+  "text": "the most useful single document in the story is not a sailor's complaint but a purchasing order. in december 1812 the navy's boston agent, amos binney, put out a circular seeking 700 barrels of mess beef and 500 of mess pork. the beef was to come from well-fatted oxen of at least 600 pounds, with the neck, shins, shoulder blades and leg rounds excluded, cut into ten-pound pieces, twenty to a white",
+  "figs": [
+   "180 pounds",
+   "600 pounds"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "track": "lost-ways",
+  "text": "a post-war contract for navy bread, quoted by the study, required wheat flour only (no rye) and that the bread be thoroughly kiln dried before shipment. surviving british biscuits are about half an inch thick, 43/4 to 53/4 inches wide and weigh about four ounces, which puts a 14-ounce daily ration at three to four pieces. a surviving example is in the national maritime museum's collection: a biscu",
+  "figs": [
+   "14-ounce",
+   "53/4 inches"
+  ],
+  "cites": [
+   "usscm-brenckle-2019",
+   "rmg-biscuit-aab0766"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019",
+   "rmg-biscuit-aab0766"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "track": "lost-ways",
+  "text": "the navy's response was slow. the year after the treatise appeared, the sick and hurt board rejected a proposal to supply sailors with fruit juice. lind himself recommended a concentrated \"rob\" made by heating juice for hours, and the scholarship notes that heat destroys much of the ascorbic acid, so it is unsurprising later observers saw no benefit. the admiralty did not sanction lemon juice on a",
+  "figs": [
+   "42-year"
+  ],
+  "cites": [
+   "jll-trohler-2003"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "jll-trohler-2003"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "salt-beef-salt-pork-age-of-sail",
+  "track": "lost-ways",
+  "text": "the smithsonian's national museum of american history preserves the provisions list in the journal of george w. scott, cook aboard the gloucester schooner ocean king on a four-month grand banks voyage in 1879. it includes 210 hogsheads of salt for salting the cod , five barrels of beef, one of pork, one of hams, ten of flour, 330 pounds of sugar and 200 pounds of butter. by volume, the salt aboard",
+  "figs": [
+   "200 pounds",
+   "330 pounds"
+  ],
+  "cites": [
+   "si-nmah-life-aboard",
+   "si-nmah-life-aboard"
+  ],
+  "status": "NO_TESTABLE_SOURCE",
+  "missing": [],
+  "tested_sources": [],
+  "untested_sources": [
+   "si-nmah-life-aboard",
+   "si-nmah-life-aboard"
+  ]
+ },
+ {
+  "slug": "sanitation-before-germ-theory",
+  "track": "lost-ways",
+  "text": " handwashing: validated by the cdc as one of the best ways to stay healthy. wet, lather, scrub for at least 20 seconds, rinse and dry. ",
+  "figs": [
+   "20 seconds"
+  ],
+  "cites": [
+   "hist-home-cdc-clean-hands"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-home-cdc-clean-hands"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "shelter-or-evacuate",
+  "track": "modern",
+  "text": "ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. the signs include a rotating, funnel-shaped cloud, an approaching cloud of debris or a loud roar like a freight train. the page's instruction is to go immediately to a safe location that you have identified, and it describes vehicles only as the least-bad option for someone ",
+  "figs": [
+   "200 miles"
+  ],
+  "cites": [
+   "shelter-ready-tornadoes",
+   "shelter-ready-tornadoes"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-ready-tornadoes",
+   "shelter-ready-tornadoes"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "shelter-or-evacuate",
+  "track": "modern",
+  "text": "the page also says homeowner's insurance policies do not cover flooding and that flood policies typically take up to 30 days to take effect, so the time to buy is well before a disaster. ",
+  "figs": [
+   "30 days"
+  ],
+  "cites": [
+   "shelter-ready-floods"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-ready-floods"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "shelter-or-evacuate",
+  "track": "modern",
+  "text": "the two agencies differ in small ways. ready.gov's hazmat page suggests an above-ground room with as few openings as possible and allows setting ventilation to 100 percent recirculation as an alternative to turning it off; the cdc says to turn off the fan, air conditioner and furnace, and close the fireplace damper, and says \"highest floor possible.\" for vehicles, ready.gov's hazmat page says to k",
+  "figs": [
+   "100 percent"
+  ],
+  "cites": [
+   "shelter-ready-hazmat",
+   "shelter-cdc-chemical-sip",
+   "shelter-ready-hazmat"
+  ],
+  "status": "NO_FIGURES_FOUND",
+  "missing": [
+   "100 percent"
+  ],
+  "tested_sources": [
+   "shelter-cdc-chemical-sip"
+  ],
+  "untested_sources": [
+   "shelter-ready-hazmat",
+   "shelter-ready-hazmat"
+  ]
+ },
+ {
+  "slug": "shelter-or-evacuate",
+  "track": "modern",
+  "text": "the national weather service describes noaa weather radio all hazards as a nationwide network broadcasting official warnings, watches and forecasts 24 hours a day, working with the emergency alert system, and also carrying non-weather hazard information, including chemical releases. it needs a special receiver, and some individual transmitters are out of service at any given time, so check the cou",
+  "figs": [
+   "24 hours"
+  ],
+  "cites": [
+   "shelter-nws-nwr"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "shelter-nws-nwr"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "ships-biscuit-and-hardtack",
+  "track": "lost-ways",
+  "text": "a warship in 1813 could not count on a market, a bakery or a cold room. when uss constitution was provisioned for a projected six-month cruise, the load-out recorded in the court of inquiry that later examined her captain included 84,456 pounds of bread, set against 57,700 pounds of beef and 50,600 pounds of pork. documented history bread was the heaviest single item in the hold. it was also the o",
+  "figs": [
+   "50,600 pounds",
+   "57,700 pounds",
+   "84,456 pounds"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "ships-biscuit-and-hardtack",
+  "track": "lost-ways",
+  "text": "the study quotes a post-war contract for navy bread requiring wheat flour only, with no rye, and that the bread be thoroughly kiln dried before shipment. surviving british biscuits are about half an inch thick, 43/4 to 53/4 inches wide and weigh about four ounces, which puts the 14-ounce daily ration at three to four pieces. a surviving example is in the collection of the national maritime museum ",
+  "figs": [
+   "14-ounce",
+   "53/4 inches"
+  ],
+  "cites": [
+   "usscm-brenckle-2019",
+   "rmg-biscuit-aab0766"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019",
+   "rmg-biscuit-aab0766"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "ships-biscuit-and-hardtack",
+  "track": "lost-ways",
+  "text": "the 1813 weekly ration for an american sailor, as tabulated in the museum's study, included 98 ounces of bread, which is 14 ounces a day, alongside beef, pork, flour, suet, cheese, butter, peas, rice, molasses and vinegar. the same study warns that the table describes the ideal diet and \"did not always reflect actual practice\".",
+  "figs": [
+   "14 ounces",
+   "98 ounces"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "ships-biscuit-and-hardtack",
+  "track": "lost-ways",
+  "text": "on land the figures were similar. an 1840s u.s. army ration, as described by the national park service at fort scott, included 18 ounces of flour made into bread, baked on site, with hardtack issued when fresh bread was not available. on campaign about a pound of hardtack, nine or ten crackers, was issued to a soldier whether on the march or in camp. the park's page credits its hardtack details to",
+  "figs": [
+   "18 ounces"
+  ],
+  "cites": [
+   "hist-food-nps-fosc-rations"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-nps-fosc-rations"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "ships-biscuit-and-hardtack",
+  "track": "lost-ways",
+  "text": "captain randolph marcy's 1859 handbook for overland emigrants, digitized by the library of congress, recommends for each grown person on the journey from the missouri river to california 150 pounds of flour \"or its equivalent in hard bread\", with bacon or pork, coffee and sugar, and fresh beef driven on the hoof. note the phrase: hard bread is offered as one of two ways to carry the same flour. ma",
+  "figs": [
+   "150 pounds"
+  ],
+  "cites": [
+   "hist-food-marcy-prairie-traveler-text",
+   "loc-prairie-traveler"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "hist-food-marcy-prairie-traveler-text"
+  ],
+  "untested_sources": [
+   "loc-prairie-traveler"
+  ]
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": " start with water. the cdc baseline is at least 1 gallon of water per person per day, for at least 3 days; it suggests aiming for 2 weeks if you can. fema's guide tells you to store commercially bottled water with your kit, not tap water. the arithmetic is in {{link:water-math|water math}}.",
+  "figs": [
+   "1 gallon",
+   "2 weeks",
+   "3 days"
+  ],
+  "cites": [
+   "cdc-water-store",
+   "ready-are-you-ready"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store",
+   "ready-are-you-ready"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": "fema's 2020 guide describes being prepared as having your own food, water and other supplies \"to last for at least 72 hours,\" and adds that most of the recommended items are inexpensive and easy to find. ready.gov's current kit page speaks of several days rather than a specific number: after an emergency you may need to survive on your own for several days, so you should have a supply to last for ",
+  "figs": [
+   "72 hours"
+  ],
+  "cites": [
+   "ready-are-you-ready",
+   "start-ready-kit"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "ready-are-you-ready",
+   "start-ready-kit"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": "the printable ready.gov checklist makes two points worth noting. first, it describes its own list as only a starting point and asks you to consider your family's needs, including pets. second, it recommends at least two kits: one full kit at home, and smaller portable kits at work, in a vehicle or wherever you spend time. ready.gov's kit page says the same about work and the car, and suggests bein",
+  "figs": [
+   "24 hours"
+  ],
+  "cites": [
+   "start-ready-supply-list",
+   "start-ready-kit"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "start-ready-supply-list",
+   "start-ready-kit"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": "water is the first line of the list and, for most households, the most important one. the cdc says to store at least 1 gallon per person per day for at least 3 days and to try for 2 weeks. fema's guide gives the same gallon figure and says that, depending on where you live, you may wish to keep 3, 7 or even 14 days of water on hand. how to scale this to your household, including extras for heat, i",
+  "figs": [
+   "1 gallon",
+   "14 days",
+   "2 weeks",
+   "3 days"
+  ],
+  "cites": [
+   "cdc-water-store",
+   "ready-are-you-ready"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store",
+   "ready-are-you-ready"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": "an unopened refrigerator keeps food cold for about four hours, and a full freezer for about 48 hours, according to ready.gov and fema. the usda's food safety and inspection service describes two different conditions: a closed refrigerator keeps food safely cold for about 4 hours after power is lost, and perishable food (meat, poultry, fish, eggs, leftovers) that has itself been above 40°f for 2 ho",
+  "figs": [
+   "2 hours",
+   "4 hours",
+   "4-hour",
+   "40°f",
+   "48 hours"
+  ],
+  "cites": [
+   "start-ready-power",
+   "start-fema-power-sheet",
+   "start-fsis-emergency-food",
+   "start-ready-power",
+   "start-ready-food",
+   "start-fema-power-sheet"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "start-ready-power",
+   "start-fema-power-sheet",
+   "start-fsis-emergency-food",
+   "start-ready-power",
+   "start-ready-food",
+   "start-fema-power-sheet"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": "charcoal grills and camp stoves are for outdoor use only. ready.gov's power-outage page places generators, camp stoves and grills outdoors and at least 20 feet from windows, doors and attached garages, and says never to heat a home with a gas stovetop or oven. fema's 2023 fact sheet gives the same 20 feet from building openings such as windows, doors or garages, says never to use a grill or dryer ",
+  "figs": [
+   "20 feet"
+  ],
+  "cites": [
+   "start-ready-food",
+   "start-ready-power",
+   "start-fema-power-sheet",
+   "start-cdc-power-outage"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "start-ready-food",
+   "start-ready-power",
+   "start-fema-power-sheet",
+   "start-cdc-power-outage"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "three-day-kit",
+  "track": "modern",
+  "text": "at least 30 days of medications, plus extra assistive items. ",
+  "figs": [
+   "30 days"
+  ],
+  "cites": [
+   "start-redcross-older-adults"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "start-redcross-older-adults"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "two-week-water-storage",
+  "track": "modern",
+  "text": " if you fill your own containers, use food-grade water-storage containers that have been washed with soap, rinsed, and sanitized with 1 teaspoon of unscented household bleach (5%-9% sodium hypochlorite) per quart of water. cover, shake, wait at least 30 seconds, pour out, air-dry, then fill. ",
+  "figs": [
+   "1 teaspoon",
+   "30 seconds"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "two-week-water-storage",
+  "track": "modern",
+  "text": " keep it cool, shaded and away from chemicals. the cdc's range is 50°f to 70°f, out of direct sunlight, away from gasoline and pesticides. ",
+  "figs": [
+   "50°f",
+   "70°f"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "warnings-radios-offline-maps",
+  "track": "modern",
+  "text": "noaa weather radio all hazards is a nationwide network of radio stations that broadcasts official warnings, watches, forecasts and other hazard information 24 hours a day, every day, from the nearest national weather service office. it works with the fcc's emergency alert system, and its broadcasts cover more than weather: the nws page lists earthquakes and avalanches, chemical releases and oil sp",
+  "figs": [
+   "24 hours"
+  ],
+  "cites": [
+   "health-nws-nwr-national",
+   "health-nws-nwr-national"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-nws-nwr-national",
+   "health-nws-nwr-national"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "warnings-radios-offline-maps",
+  "track": "modern",
+  "text": "the emergency alert system is the older channel. ready.gov describes it as a national public warning system that allows the president to address the nation within 10 minutes during a national emergency; other authorized federal, state, local, tribal and territorial authorities can use it for weather information, imminent threats, amber alerts and local incident information targeted to specific are",
+  "figs": [
+   "10 minutes"
+  ],
+  "cites": [
+   "health-ready-alerts",
+   "health-ready-alerts"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "health-ready-alerts",
+   "health-ready-alerts"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-advisories-explained",
+  "track": "modern",
+  "text": " boil-water advisory: use commercially bottled water or boil your tap water at a full rolling boil for 1 minute (3 minutes above 6,500 feet), even if the water has been through a home filter. ",
+  "figs": [
+   "1 minute",
+   "3 minutes",
+   "6,500 feet"
+  ],
+  "cites": [
+   "cdc-water-advisories"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-advisories"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-advisories-explained",
+  "track": "modern",
+  "text": "use commercially bottled water or boiled water to drink and to prepare and cook food. if you have no bottled water, boil your tap water to a full rolling boil for 1 minute, or 3 minutes above 6,500 feet, and let it cool before using it. boil it even if it has been through a home filter or a pitcher that filters water. ",
+  "figs": [
+   "1 minute",
+   "3 minutes",
+   "6,500 feet"
+  ],
+  "cites": [
+   "cdc-water-advisories",
+   "cdc-water-advisories"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-advisories",
+   "cdc-water-advisories"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-advisories-explained",
+  "track": "modern",
+  "text": "if possible, use disposable plates, cups and utensils, and sanitize all baby bottles. a dishwasher is generally safe if it has a sanitizing cycle or reaches a final rinse temperature of at least 150°f (66°c), and the cdc says to check the manual or contact the manufacturer to find out what yours reaches. to wash by hand: ",
+  "figs": [
+   "150°f",
+   "66°c"
+  ],
+  "cites": [
+   "cdc-water-advisories"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-advisories"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-math",
+  "track": "modern",
+  "text": " multiply by 1 gallon a day. the cdc's baseline is at least 1 gallon of water per person per day, for at least 3 days. it suggests aiming for 2 weeks if you can. fema's ready.gov uses the same figure. ",
+  "figs": [
+   "1 gallon",
+   "2 weeks",
+   "3 days"
+  ],
+  "cites": [
+   "cdc-water-store",
+   "ready-water"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store",
+   "ready-water"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-math",
+  "track": "modern",
+  "text": "two federal sources give the same starting point. the cdc says to store at least 1 gallon of water per person, per day, for 3 days, and to try for a 2-week supply if possible. ready.gov puts it as at least one gallon per person per day \"for several days, for drinking and sanitation.\" ",
+  "figs": [
+   "1 gallon",
+   "2-week",
+   "3 days"
+  ],
+  "cites": [
+   "cdc-water-store",
+   "ready-water"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store",
+   "ready-water"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-math",
+  "track": "modern",
+  "text": " documented history u.s. navy regulations of 1802 allowed at least half a gallon a day per man for drinking on foreign voyages. testimony at the 1814 inquiry into uss constitution 's 1813 cruise records the crew's allotment as 250 gallons a day, 280 on pea and rice days, rising to 310 and 340 once grog water was allowed. ",
+  "figs": [
+   "250 gallons"
+  ],
+  "cites": [
+   "usscm-brenckle-2019"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "usscm-brenckle-2019"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-math",
+  "track": "modern",
+  "text": " official guidance at least 1 gallon per person per day, for drinking, cooking and brushing teeth, for three days and ideally two weeks. ",
+  "figs": [
+   "1 gallon"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "ALL_FIGURES_FOUND",
+  "missing": [],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-math",
+  "track": "modern",
+  "text": " baseline. four people at 1 gallon a day for 3 days is 12 gallons. for 14 days it is 56 gallons. ",
+  "figs": [
+   "1 gallon",
+   "12 gallons",
+   "14 days",
+   "3 days",
+   "56 gallons"
+  ],
+  "cites": [
+   "cdc-water-store"
+  ],
+  "status": "SOME_FIGURES_NOT_FOUND",
+  "missing": [
+   "12 gallons",
+   "14 days",
+   "56 gallons"
+  ],
+  "tested_sources": [
+   "cdc-water-store"
+  ],
+  "untested_sources": []
+ },
+ {
+  "slug": "water-math",
+  "track": "modern",
+  "text": " heat. the household lives where summer temperatures are very high. ready.gov says needs can double in very hot temperatures, so the summer figure is 24 gallons for 3 days and 112 gallons for 14 days. ",
+  "figs": [
+   "112 gallons",
+   "14 days",
+   "24 gallons",
+   "3 days"
+  ],
+  "cites": [
+   "ready-water"
+  ],
+  "status": "SOME_FIGURES_NOT_FOUND",
+  "missing": [
+   "112 gallons",
+   "14 days",
+   "24 gallons"
+  ],
+  "tested_sources": [
+   "ready-water"
+  ],
+  "untested_sources": []
+ }
+]

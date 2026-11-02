@@ -1,0 +1,97 @@
+[
+ {
+  "page": "hub-start-here",
+  "lighthouse": "12.6.1",
+  "form_factor": "mobile",
+  "throttling": "simulate",
+  "perf": 100,
+  "a11y": 100,
+  "best": 96,
+  "seo": 60,
+  "FCP_ms": 869,
+  "LCP_ms": 902,
+  "TBT_ms": 0,
+  "CLS": 0,
+  "transfer_kb": 34,
+  "failed_audits": [
+   "errors-in-console",
+   "is-crawlable"
+  ]
+ },
+ {
+  "page": "landing",
+  "lighthouse": "12.6.1",
+  "form_factor": "mobile",
+  "throttling": "simulate",
+  "perf": 100,
+  "a11y": 100,
+  "best": 96,
+  "seo": 60,
+  "FCP_ms": 1105,
+  "LCP_ms": 1174,
+  "TBT_ms": 0,
+  "CLS": 0,
+  "transfer_kb": 63,
+  "failed_audits": [
+   "errors-in-console",
+   "is-crawlable"
+  ]
+ },
+ {
+  "page": "making-water-safer",
+  "lighthouse": "12.6.1",
+  "form_factor": "mobile",
+  "throttling": "simulate",
+  "perf": 100,
+  "a11y": 100,
+  "best": 96,
+  "seo": 60,
+  "FCP_ms": 1082,
+  "LCP_ms": 1082,
+  "TBT_ms": 0,
+  "CLS": 0,
+  "transfer_kb": 58,
+  "failed_audits": [
+   "errors-in-console",
+   "is-crawlable"
+  ]
+ },
+ {
+  "page": "outage-heat-cold-generators",
+  "lighthouse": "12.6.1",
+  "form_factor": "mobile",
+  "throttling": "simulate",
+  "perf": 100,
+  "a11y": 100,
+  "best": 96,
+  "seo": 60,
+  "FCP_ms": 1227,
+  "LCP_ms": 1227,
+  "TBT_ms": 0,
+  "CLS": 0,
+  "transfer_kb": 86,
+  "failed_audits": [
+   "errors-in-console",
+   "is-crawlable"
+  ]
+ },
+ {
+  "page": "power-outage-planner",
+  "lighthouse": "12.6.1",
+  "form_factor": "mobile",
+  "throttling": "simulate",
+  "perf": 100,
+  "a11y": 100,
+  "best": 96,
+  "seo": 60,
+  "FCP_ms": 1228,
+  "LCP_ms": 1228,
+  "TBT_ms": 0,
+  "CLS": 0,
+  "transfer_kb": 99,
+  "failed_audits": [
+   "errors-in-console",
+   "is-crawlable"
+  ]
+ }
+]

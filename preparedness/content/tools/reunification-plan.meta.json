@@ -1,0 +1,43 @@
+{
+  "kind": "tool",
+  "n": 102,
+  "slug": "reunification-plan",
+  "title": "Household emergency plan builder",
+  "h1": "Household emergency plan builder",
+  "dek": "Organize who to call, where to meet, who needs extra help and when to practice. Print the plan and wallet cards, or save a text copy. It runs in your browser and keeps nothing.",
+  "description": "A free, private planner for your household's emergency plan: contacts, meeting places, schools, pets, access needs and practice dates, with print and wallet cards.",
+  "section": "field-tools",
+  "track": "modern",
+  "tags": [
+    "Planner",
+    "Printable",
+    "Runs locally"
+  ],
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
+  "recheck": "If Ready.gov, FEMA or the CDC revise their planning pages, or at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "household-emergency-plan",
+    "three-day-kit",
+    "go-bags",
+    "preparedness-real-households"
+  ],
+  "source_use": {
+    "start-ready-plan": "The five planning questions and the list of household factors.",
+    "ready-are-you-ready": "Out-of-area contact reachable two ways; wallet or digital copy; meeting places in different directions; school reunification; practice like a fire drill.",
+    "start-cdc-pyh-connected": "Two meeting places; text messages; microchip pets; account for children, older adults and pets.",
+    "start-cdc-disability-plan": "Contact list of the people who support health; check-ins; practice and annual review.",
+    "start-ready-evacuation": "Choose a pet-friendly place in advance because most public shelters allow only service animals.",
+    "start-cdc-pyh-prescriptions": "Talk to a doctor or pharmacist about an emergency supply of medicines; no number of days is given.",
+    "start-ready-power": "Talk to your medical provider about a plan for powered medical devices and refrigerated medicine."
+  }
+}
