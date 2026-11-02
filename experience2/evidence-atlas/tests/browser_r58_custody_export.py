@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R58 actual source-built Atlas custody export, 8 viewports JS/no-JS; not WordPress or axe."""
+"""R58 source-built actual Atlas custody export and failure QA, not WP/axe/hosted CWV."""
 from __future__ import annotations
 import argparse,hashlib,json,sys
 from pathlib import Path
@@ -56,6 +56,7 @@ def run(folder:Path):
             assert 'NASA/Kim Shiflett' in data
             assert 'No producing center displayed in reviewed metadata.' in data
             assert 'human link or image-rights check' in data
+            # Source index remains complete after filtering/download.
             assert page.locator('[data-fva-cite-id]:visible').count()==6
             page.emulate_media(media='print')
             assert page.locator('[data-fva-record]:visible').count()==6
@@ -70,8 +71,7 @@ def run(folder:Path):
               (folder/name).write_bytes(screenshot)
               receipt['screenshots'][name]=hashlib.sha256(screenshot).hexdigest()
             receipt['lab_metrics'].append({'width':width,**page.evaluate('window.__r58')})
-            # A changed individual-rights field invalidates the derived export;
-            # original source drawers and citations remain visible.
+            # Tampered rights/custody text must never download a misleading packet.
             page.locator('[data-fva-drawer] dd').nth(7).evaluate("e=>e.textContent='Cleared for reuse'")
             page.locator('[data-fva-export]').click()
             assert 'Download unavailable' in page.locator('[data-fva-export-status]').inner_text()
@@ -87,7 +87,8 @@ def run(folder:Path):
           ctx.close()
       browser.close()
     (folder/'R58_CUSTODY_EXPORT_BROWSER_RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
-    print('PASS',len(receipt['cases']),'actual-source custody-export browser cases; 8 tamper cases')
+    print('PASS',len(receipt['cases']),'actual-source custody-export browser cases;'
+          ' 8 tamper cases; no WordPress, axe, or hosted CWV claims')
     return receipt
 if __name__=='__main__':
     a=argparse.ArgumentParser();a.add_argument('--output',required=True,type=Path)
