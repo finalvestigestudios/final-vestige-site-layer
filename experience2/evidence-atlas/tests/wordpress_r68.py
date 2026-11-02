@@ -7,6 +7,7 @@ Produces an authentic local WordPress render gate only when CLI and axe are pres
 from __future__ import annotations
 import argparse, hashlib, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.request, zipfile
 from pathlib import Path, PurePosixPath
+from urllib.parse import urlsplit
 # The exact-head/clean-tree admission runs AFTER imports; suppress local .pyc
 # creation so the safety check is not invalidated by our own helper import.
 sys.dont_write_bytecode = True
@@ -22,6 +23,16 @@ PLUGINS=(
  ('fv-ex2-apollo-suite','fv-ex2-apollo-suite.php'),
 )
 def digest(b):return hashlib.sha256(b).hexdigest()
+
+def is_strict_loopback_request(address):
+    """Avoid prefix-confused origins and all remote/HTTPS/credentialed URLs."""
+    try:
+        parsed=urlsplit(address)
+        return (parsed.scheme=='http' and parsed.hostname=='127.0.0.1'
+                and parsed.port==9438 and not parsed.username
+                and not parsed.password)
+    except (ValueError, TypeError):
+        return False
 
 def unpack_assembler(source,dest):
     names=set();total=0
@@ -189,7 +200,7 @@ def accept(stage,axe,out):
                 page=context.new_page();errors=[];outbound=[]
                 page.on('pageerror',lambda error:errors.append('JS_ERROR'))
                 def route(req):
-                    if req.request.url.startswith(BASE):req.continue_()
+                    if is_strict_loopback_request(req.request.url):req.continue_()
                     else:outbound.append(req.request.resource_type);req.abort()
                 page.route('**/*',route)
                 res=page.goto(BASE+'?pagename='+SLUG,wait_until='networkidle',timeout=45000)
