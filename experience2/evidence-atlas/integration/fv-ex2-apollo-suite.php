@@ -131,11 +131,56 @@ function fv_ex2_apollo_suite_page_opted_in($post): bool {
     }
     return false;
 }
+/**
+ * R77: resolve source-controlled Apollo shortcodes in published synced patterns.
+ * Core/block references are stored in wp_block posts and are absent from the
+ * containing page's raw post_content. Inspect ONLY refs and their child blocks;
+ * never render arbitrary dynamic blocks before wp_head, fetch remote patterns,
+ * or mutate the WordPress database. Bounded traversal fails closed on cycles.
+ * Explicit PRIVATE staging page-ID opt-in remains the fallback for dynamic
+ * template parts and non-core patterns that cannot be safely discovered.
+ */
+function fv_ex2_apollo_suite_reusable_contains_shortcode(string $content, array &$seen, int $depth = 0): bool {
+    if ($depth > 6 || strlen($content) > 200000) { return false; }
+    if (has_shortcode($content, 'fv_ex2_apollo_suite')) { return true; }
+    if (!function_exists('parse_blocks')) { return false; }
+    $blocks = parse_blocks($content);
+    if (!is_array($blocks)) { return false; }
+    $stack = $blocks;
+    $count = 0;
+    while ($stack) {
+        if (++$count > 256) { return false; }
+        $block = array_pop($stack);
+        if (!is_array($block)) { continue; }
+        if (($block['blockName'] ?? null) === 'core/block') {
+            $ref = $block['attrs']['ref'] ?? null;
+            if (is_int($ref) && $ref > 0 && !isset($seen[$ref])) {
+                if (count($seen) >= 32) { return false; }
+                $seen[$ref] = true;
+                $reuse = get_post($ref);
+                if ($reuse instanceof WP_Post && $reuse->post_type === 'wp_block'
+                    && $reuse->post_status === 'publish' && is_string($reuse->post_content)
+                    && fv_ex2_apollo_suite_reusable_contains_shortcode($reuse->post_content, $seen, $depth + 1)) {
+                    return true;
+                }
+            }
+        }
+        foreach (($block['innerBlocks'] ?? array()) as $child) { $stack[] = $child; }
+    }
+    return false;
+}
+function fv_ex2_apollo_suite_nested_reusable_on_page($post): bool {
+    if (!($post instanceof WP_Post) || !is_string($post->post_content)) { return false; }
+    $seen = array();
+    return fv_ex2_apollo_suite_reusable_contains_shortcode($post->post_content, $seen);
+}
+
 function fv_ex2_apollo_suite_pre_enqueue(): void {
     if (!is_singular()) { return; }
     $post = get_queried_object();
     if ($post instanceof WP_Post &&
         ((is_string($post->post_content) && has_shortcode($post->post_content, 'fv_ex2_apollo_suite'))
+         || fv_ex2_apollo_suite_nested_reusable_on_page($post)
          || fv_ex2_apollo_suite_page_opted_in($post))) {
         fv_ex2_apollo_suite_enqueue();
     }
