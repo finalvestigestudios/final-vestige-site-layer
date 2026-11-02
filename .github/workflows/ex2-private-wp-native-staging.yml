@@ -36,6 +36,7 @@ jobs:
           php -l experience2/home-flagship/qa/integration/private-preview/fv-ex2-private-preview.php
           python -m unittest discover -s experience2/home-flagship/qa/integration/private-preview/tests -p test_current_candidate_compose.py -v
           python -m unittest discover -s experience2/home-flagship/qa/playground -p test_normalize_official_assembler.py -v
+          python -m unittest discover -s experience2/home-flagship/qa/playground/parity -p test_prepare_unified_playground.py -v
 
   ephemeral-wordpress:
     if: github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102'
