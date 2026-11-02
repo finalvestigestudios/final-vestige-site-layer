@@ -32,11 +32,18 @@ class LibraryTests(unittest.TestCase):
 
     def test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source(self):
         frag = ROOT / "sources" / "fragments" / "_upgrade_test.json"
-        entry = '{"sources": [{"id": "nchfp-jerky", "title": "Jerky", "url": "https://nchfp.uga.edu/how/dry/recipes/jerky", "kind": "extension", "publisher": "NCHFP", "verified_on": "2026-10-29", "supports": "x"}]}'
+        # Use a placeholder no contributor fragment has upgraded yet, so the test does not depend on which clusters have landed.
+        base = json.loads((ROOT / "sources" / "register.json").read_text(encoding="utf-8"))["sources"]
+        taken = {s["id"] for f in (ROOT / "sources" / "fragments").glob("*.json") for s in json.loads(f.read_text(encoding="utf-8"))["sources"]}
+        free = [s for s in base if not s.get("verified_on") and s["id"] not in taken]
+        if not free:
+            self.skipTest("every register placeholder has been upgraded by a fragment")
+        ph = free[0]
+        entry = json.dumps({"sources": [{"id": ph["id"], "title": "Upgrade fixture", "url": ph["url"], "kind": ph["kind"], "publisher": ph["publisher"], "verified_on": "2026-10-29", "supports": "x"}]})
         frag.write_text(entry, encoding="utf-8")
         try:
             lib = build.Library()
-            self.assertEqual(lib.register["nchfp-jerky"]["verified_on"], "2026-10-29")
+            self.assertEqual(lib.register[ph["id"]]["verified_on"], "2026-10-29")
             errors, _ = validate.validate(lib)
             self.assertFalse([e for e in errors if "duplicate url" in e], errors)
         finally:
@@ -64,7 +71,9 @@ class LibraryTests(unittest.TestCase):
 
     def test_unverified_source_cannot_be_cited(self):
         lib = build.Library()
-        lib.articles["making-water-safer"]["_body"] += " {{cite:nchfp-jerky}}"
+        unverified = [sid for sid, src in lib.register.items() if not src.get("verified_on")]
+        self.assertTrue(unverified, "the register has no unverified placeholder left to test against")
+        lib.articles["making-water-safer"]["_body"] += " {{cite:%s}}" % unverified[0]
         errors, _ = validate.validate(lib)
         self.assertTrue(any("unverified source" in e for e in errors), errors)
 
