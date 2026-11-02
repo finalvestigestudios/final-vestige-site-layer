@@ -1,0 +1,74 @@
+name: Preparedness R62 isolated synthetic custody tests (NOT a release gate)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r61-two-version-citation-lineage-hold-20261101
+    paths:
+      - preparedness/tools/r62_contributor_claim_context_docket.py
+      - preparedness/tests/test_r62_contributor_claim_context_docket.py
+      - preparedness/docs/R62_CLAIM_CONTEXT_SOURCE_DRIFT_QUARANTINE_HOLD.md
+      - .github/workflows/preparedness-r62-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r62-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  synthetic-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact PR test merge, no persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Pin Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fail closed if parent SHA, branch or changed-file scope moved
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = 'bdfd08794ae1a0e31e585dbd28c9b4c0c3ee69c3'
+          test "$BASE_REF" = 'review/preparedness-r61-two-version-citation-lineage-hold-20261101'
+          test "$HEAD_REF" = 'review/preparedness-r62-claim-context-custody-hold-20261101'
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r62-changed-paths.bin
+          python -I - <<'PY'
+          from pathlib import Path
+          paths = {x.decode('utf-8') for x in Path('/tmp/r62-changed-paths.bin').read_bytes().split(b'\0') if x}
+          allowed = {
+              'preparedness/tools/r62_contributor_claim_context_docket.py',
+              'preparedness/tests/test_r62_contributor_claim_context_docket.py',
+              'preparedness/docs/R62_CLAIM_CONTEXT_SOURCE_DRIFT_QUARANTINE_HOLD.md',
+              '.github/workflows/preparedness-r62-isolated-tests.yml',
+          }
+          if paths != allowed:
+              raise SystemExit('R62 SCOPE HOLD: unexpected/missing file changes ' + repr(sorted(paths ^ allowed)))
+          print('R62 changed-path custody: exactly four isolated audit/test files')
+          PY
+      - name: Execute original R60, R61 and new R62 synthetic tests (no CMS, no publish)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s preparedness/tests -p 'test_r60_contributor_provenance_drift_docket.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r61_contributor_version_source_lineage.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r62_contributor_claim_context_docket.py' -v
+      - name: Release HOLD reminder
+        if: always()
+        run: |
+          echo 'SYNTHETIC TESTS ONLY: R15 real seven-branch provenance, original R58 custody, human source checks, qualified hazard/medical review, browser QA and independent QD remain HOLD.'
+          echo 'No WordPress, CMS, navigation, public publishing, or source-baseline rebasing is authorized.'
