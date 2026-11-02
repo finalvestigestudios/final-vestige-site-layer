@@ -1,0 +1,19 @@
+id,date_or_review,source,type,url,permitted_interpretation_and_limit
+"R64-08","live 2026-11-01","Final Vestige Puységur source archive","existing live source room","https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/","153 rows and 16 dossiers claimed in site; link verified through WP authenticated read."
+"R64-09","live 2026-11-01","Existing Seven Day Focus Fieldbook","approved funnel","https://finalvestige.com/focus/","One Jetpack/Focus opt-in; no second list."
+"R64-10","live 2026-11-01","Inspire3 catalog","official merchant","https://inspire3.com/","Brand ownership and claimed product catalog only."
+"R64-11","live 2026-11-01","Zen12 hnp exact sales page","official merchant offer","https://zen12.com/hnp","12 min, 12 levels, four formats, 48 MP3s, one-year guarantee as claims."
+"R64-12","live 2026-11-01","Zen12 About","official merchant","https://zen12.com/about","Audio mechanism and safety driving caveat; claims not independently substantiated."
+"R64-13","live 2026-11-01","Zen12 Research","official merchant editorial","https://zen12.com/research","Company scientific narrative; cannot substitute for named product RCT."
+"R64-14","live 2026-11-01","Zen12 checkout","official merchant checkout","https://zen12.com/getstarted","Public mobile-number field and variable price/countdown displayed. No transaction."
+"R64-15","live 2026-11-01","Inspire3 privacy","official merchant policy","https://inspire3.com/privacy/","SMS/affiliate sharing are policy representations, not traced behavior."
+"R64-16","live 2026-11-01","Inspire3 affiliates portal","merchant recruitment not authorization","https://affiliates.inspire3.com/","No named Final Vestige approval/swipe verified."
+"R64-17","live 2026-11-01","FTC endorsements Q and A","regulatory guidance","https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking","Clear material connection disclosure near recommendations."
+"R64-18","live 2026-11-01","FTC Health Products Compliance Guidance","regulatory guidance","https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance","Specific scientific substantiation required for health claims."
+"R64-19","live 2026-11-01","NCCIH meditation safety","US public health synthesis","https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety","Broader evidence and risks, not Zen12 test."
+"R64-20","live 2026-11-01","Final Vestige Editorial Standards","existing site policy","https://finalvestige.com/editorial-standards/","Link target only, no live modifications."
+"R64-21","live 2026-11-01","Final Vestige Affiliate Disclosure","existing site policy","https://finalvestige.com/affiliate-disclosure/","Not a substitute for near-link disclosure."
+R65-01,1998-12,Simons Levin door field experiment,primary,https://doi.org/10.3758/BF03208840,Half detected in studied sample; not universal
+R65-02,1997-09,Rensink ORegan Clark flicker study,primary,https://doi.org/10.1111/j.1467-9280.1997.tb00427.x,Alternating pictures and blank
+R65-03,1999-03,ORegan Rensink Clark mudsplashes,primary,https://www.nature.com/articles/17953,Distinct interruption
+R65-04,1999-09,Simons Chabris gorilla study,primary,https://doi.org/10.1068/p281059,Inattentional blindness distinct from door
