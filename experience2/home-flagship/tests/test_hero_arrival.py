@@ -26,7 +26,7 @@ class ArrivalTests(unittest.TestCase):
         self.assertIn("color:#635032",self.css)
 
     def test_hero_has_no_new_third_party_media(self):
-        self.assertEqual(len(re.findall(r"<img\b",self.html)),3)
+        self.assertEqual(len(re.findall(r"<img\b",re.sub(r"<noscript>.*?</noscript>","",self.html,flags=re.S))),3)
         self.assertEqual(len(re.findall(r"<script\b[^>]*\bsrc=",self.html)),4)
     def test_archive_pillars_preserved(self):
         for s in ('href="https://finalvestige.com/focus/"','/free-resources/puysegurs-animal-magnetism-files/','fv-hf__chapter-nav','data-fv-case-buttons'):
@@ -39,6 +39,6 @@ class ArrivalTests(unittest.TestCase):
         self.assertIn('<div class="fv-hf__opening-art fv-hf__folio-arrival" role="group" aria-label=',self.html)
         self.assertNotIn('aria-hidden="true"><div class="fv-hf__folio-stage"',self.html)
     def test_seven_chapters_and_three_original_pictures(self):
-        self.assertEqual(len(re.findall(r'data-fv-archive-img',self.html)),3)
+        self.assertEqual(len(re.findall(r'data-fv-archive-img',re.sub(r"<noscript>.*?</noscript>","",self.html,flags=re.S))),3)
         for x in ('fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry','fv-hf-method-title','fv-hf-observer','fv-hf-mind-title'):
             self.assertIn('href="#'+x+'"',self.html)

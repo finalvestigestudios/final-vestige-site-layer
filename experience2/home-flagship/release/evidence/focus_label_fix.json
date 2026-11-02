@@ -1,0 +1,13 @@
+{
+ "rule": "label-content-name-mismatch (WCAG 2.5.3)",
+ "before": {
+  "violations": 1,
+  "passes": 0,
+  "name": "Get the free Seven Day Focus Fieldbook"
+ },
+ "after_removing_aria_label": {
+  "violations": 0,
+  "passes": 0,
+  "name": null
+ }
+}

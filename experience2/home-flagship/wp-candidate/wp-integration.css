@@ -69,3 +69,14 @@
 .fv-hf .fv-hf__folio-original span,
 .fv-hf .fv-hf__observer-paper-head span,
 .fv-hf .fv-hf__observer-paper-foot span{font-size:11px}
+
+/* Below-the-fold rendering cost (mobile style/layout was the main-thread bottleneck).
+   Only the long PRESERVED production sections that follow the flagship are skipped until they
+   approach the viewport. The flagship's own chapters stay fully rendered so the Reading Trail
+   (active chapter, progress) and chapter anchors measure real positions. Fragment navigation,
+   find-in-page and focus still reveal skipped content; the remembered intrinsic size avoids jumps. */
+.fv-home-shell,.fv-enter-record{content-visibility:auto;contain-intrinsic-size:auto 1400px}
+
+/* Preserved category links: WCAG 2.5.8 target size (axe target-size on .fv-stream-taxonomy a). */
+.fv-stream-taxonomy a,.fv-home-taxonomy-name a{display:inline-block;min-height:24px;padding-block:5px}
+@media (pointer:coarse){.fv-stream-taxonomy a,.fv-home-taxonomy-name a{min-height:44px;display:inline-flex;align-items:center}}

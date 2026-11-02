@@ -73,13 +73,14 @@ def main():
     ap.add_argument("--port", type=int, default=9400)
     ap.add_argument("--launch", action="store_true")
     ap.add_argument("--delivery", choices=["plugin", "inline"], default="plugin")
+    ap.add_argument("--minify", default="", help="esbuild binary path to minify the flagship CSS/JS")
     ap.add_argument("--cli", default="", help="path to cli.js of an installed @wp-playground/cli")
     a = ap.parse_args()
     work = a.work.resolve()
     if work.is_relative_to(HERE.parent.parent.parent):
         sys.exit("work dir must be outside the checkout")
     stage = work / "stage"
-    subprocess.run([sys.executable, str(HERE / "build_candidate.py"), "--out", str(stage), "--delivery", a.delivery], check=True)
+    subprocess.run([sys.executable, str(HERE / "build_candidate.py"), "--out", str(stage), "--delivery", a.delivery] + (["--minify", a.minify] if a.minify else []), check=True)
 
     theme = work / "theme"
     theme.mkdir(parents=True, exist_ok=True)

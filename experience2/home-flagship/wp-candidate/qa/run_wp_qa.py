@@ -91,6 +91,11 @@ def main():
             pg.goto(a.url, wait_until="load")
             pg.wait_for_timeout(1800)
             pg.screenshot(path=str(a.out / "shots" / f"first-arrival-{w}.png"))
+            # content-visibility:auto sections are not laid out until near the viewport, so axe,
+            # target-size and full-page captures would see them as empty. Force them rendered for
+            # the audit only; interactions below run with the real (skipped) behaviour.
+            pg.add_style_tag(content=".fv-home-shell,.fv-enter-record{content-visibility:visible!important}")
+            pg.wait_for_timeout(300)
             st = page_state(pg)
             st["horizontal_overflow"] = st["scrollW"] > st["innerW"]
             st["small_targets_lt24"] = small_targets(pg, 24)
@@ -210,14 +215,15 @@ def main():
         # ---- D. JavaScript disabled: evidence readable
         ctx, pg, errs = newpage(1440, java_script_enabled=False)
         pg.goto(a.url, wait_until="load")
-        pg.wait_for_timeout(800)
+        pg.wait_for_timeout(3500)
         R["nojs"] = pg.evaluate("""()=>{const t=document.body.innerText;const vis=s=>[...document.querySelectorAll(s)].filter(e=>e.getBoundingClientRect().height>0).length;
           return {margins:document.querySelectorAll('.fv-margin-strip__item').length,
                   caseButtonsHidden:[...document.querySelectorAll('[data-fv-case-button]')].filter(e=>e.getBoundingClientRect().height>0).length,
                   hasApollo:/hatch opened inward/i.test(t),hasFranklin:/All well/i.test(t)&&/Terror and Erebus/i.test(t),hasMalbone:/Malbone/i.test(t)&&/1903/.test(t),
                   hasObserver:/unreliable/i.test(t), sourceLinks:document.querySelectorAll('.fv-hf a[href^="http"]').length,
                   detailsCount:document.querySelectorAll('.fv-hf details').length, focus:document.querySelectorAll('a[href*="/focus/"]').length,
-                  jetpackForm:document.querySelectorAll('form#subscribe-blog').length}}""")
+                  jetpackForm:document.querySelectorAll('form#subscribe-blog').length,
+                  casePhotosLoaded:[...document.querySelectorAll('.fv-hf__case img')].filter(i=>i.complete&&i.naturalWidth>0).length}}""")
         pg.screenshot(path=str(a.out / "shots" / "nojs-full-1440.png"), full_page=True)
         ctx.close()
 

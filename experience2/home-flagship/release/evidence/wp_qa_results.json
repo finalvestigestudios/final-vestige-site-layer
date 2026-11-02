@@ -21,146 +21,7 @@
    "small_targets_lt24": [],
    "small_targets_lt44": 3,
    "axe": {
-    "violations": [
-     {
-      "id": "color-contrast",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-margin-strip__item:nth-child(2)"
-      ],
-      "help": "Elements must meet minimum color contrast ratio thresholds"
-     }
-    ],
-    "incomplete": [
-     {
-      "id": "aria-prohibited-attr",
-      "impact": "serious",
-      "nodes": 2,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-margin-strip__window",
-       ".fv-enter-record__grid"
-      ],
-      "help": "Elements must only use permitted ARIA attributes"
-     },
-     {
-      "id": "color-contrast",
-      "impact": "serious",
-      "nodes": 270,
-      "nodes_in_flagship": 144,
-      "targets": [
-       ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
-       ".fv-header-tagline",
-       "a[href$=\"#fv-hf-title\"] > span",
-       "a[href$=\"#fv-hf-chronicle\"] > span"
-      ],
-      "help": "Elements must meet minimum color contrast ratio thresholds"
-     }
-    ],
-    "passes": 49,
-    "violations_inside_flagship": 0,
-    "violations_total_nodes": 1
-   },
-   "console_errors": []
-  },
-  "360": {
-   "scrollW": 360,
-   "innerW": 360,
-   "margins": 72,
-   "flagship": 1,
-   "mains": 1,
-   "headers": 1,
-   "footers": 1,
-   "h1": [
-    "Find what others miss."
-   ],
-   "devBanner": false,
-   "candidateText": false,
-   "jetpackForm": 1,
-   "focusLinks": 4,
-   "ids": [],
-   "horizontal_overflow": false,
-   "small_targets_lt24": [],
-   "small_targets_lt44": 3,
-   "axe": {
-    "violations": [
-     {
-      "id": "color-contrast",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-margin-strip__item:nth-child(2)"
-      ],
-      "help": "Elements must meet minimum color contrast ratio thresholds"
-     }
-    ],
-    "incomplete": [
-     {
-      "id": "aria-prohibited-attr",
-      "impact": "serious",
-      "nodes": 2,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-margin-strip__window",
-       ".fv-enter-record__grid"
-      ],
-      "help": "Elements must only use permitted ARIA attributes"
-     },
-     {
-      "id": "color-contrast",
-      "impact": "serious",
-      "nodes": 270,
-      "nodes_in_flagship": 144,
-      "targets": [
-       ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
-       ".fv-header-tagline",
-       "a[href$=\"#fv-hf-title\"] > span",
-       "a[href$=\"#fv-hf-chronicle\"] > span"
-      ],
-      "help": "Elements must meet minimum color contrast ratio thresholds"
-     }
-    ],
-    "passes": 49,
-    "violations_inside_flagship": 0,
-    "violations_total_nodes": 1
-   },
-   "console_errors": []
-  },
-  "390": {
-   "scrollW": 390,
-   "innerW": 390,
-   "margins": 72,
-   "flagship": 1,
-   "mains": 1,
-   "headers": 1,
-   "footers": 1,
-   "h1": [
-    "Find what others miss."
-   ],
-   "devBanner": false,
-   "candidateText": false,
-   "jetpackForm": 1,
-   "focusLinks": 4,
-   "ids": [],
-   "horizontal_overflow": false,
-   "small_targets_lt24": [],
-   "small_targets_lt44": 3,
-   "axe": {
-    "violations": [
-     {
-      "id": "color-contrast",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-margin-strip__item:nth-child(2)"
-      ],
-      "help": "Elements must meet minimum color contrast ratio thresholds"
-     }
-    ],
+    "violations": [],
     "incomplete": [
      {
       "id": "aria-prohibited-attr",
@@ -189,7 +50,117 @@
     ],
     "passes": 49,
     "violations_inside_flagship": 0,
-    "violations_total_nodes": 1
+    "violations_total_nodes": 0
+   },
+   "console_errors": [
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?w=824&ssl=1",
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+   ]
+  },
+  "360": {
+   "scrollW": 360,
+   "innerW": 360,
+   "margins": 72,
+   "flagship": 1,
+   "mains": 1,
+   "headers": 1,
+   "footers": 1,
+   "h1": [
+    "Find what others miss."
+   ],
+   "devBanner": false,
+   "candidateText": false,
+   "jetpackForm": 1,
+   "focusLinks": 4,
+   "ids": [],
+   "horizontal_overflow": false,
+   "small_targets_lt24": [],
+   "small_targets_lt44": 3,
+   "axe": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "aria-prohibited-attr",
+      "impact": "serious",
+      "nodes": 2,
+      "nodes_in_flagship": 0,
+      "targets": [
+       ".fv-margin-strip__window",
+       ".fv-enter-record__grid"
+      ],
+      "help": "Elements must only use permitted ARIA attributes"
+     },
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 271,
+      "nodes_in_flagship": 144,
+      "targets": [
+       ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+       ".fv-header-tagline",
+       "a[href$=\"#fv-hf-title\"] > span",
+       "a[href$=\"#fv-hf-chronicle\"] > span"
+      ],
+      "help": "Elements must meet minimum color contrast ratio thresholds"
+     }
+    ],
+    "passes": 49,
+    "violations_inside_flagship": 0,
+    "violations_total_nodes": 0
+   },
+   "console_errors": []
+  },
+  "390": {
+   "scrollW": 390,
+   "innerW": 390,
+   "margins": 72,
+   "flagship": 1,
+   "mains": 1,
+   "headers": 1,
+   "footers": 1,
+   "h1": [
+    "Find what others miss."
+   ],
+   "devBanner": false,
+   "candidateText": false,
+   "jetpackForm": 1,
+   "focusLinks": 4,
+   "ids": [],
+   "horizontal_overflow": false,
+   "small_targets_lt24": [],
+   "small_targets_lt44": 3,
+   "axe": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "aria-prohibited-attr",
+      "impact": "serious",
+      "nodes": 2,
+      "nodes_in_flagship": 0,
+      "targets": [
+       ".fv-margin-strip__window",
+       ".fv-enter-record__grid"
+      ],
+      "help": "Elements must only use permitted ARIA attributes"
+     },
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 271,
+      "nodes_in_flagship": 144,
+      "targets": [
+       ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+       ".fv-header-tagline",
+       "a[href$=\"#fv-hf-title\"] > span",
+       "a[href$=\"#fv-hf-chronicle\"] > span"
+      ],
+      "help": "Elements must meet minimum color contrast ratio thresholds"
+     }
+    ],
+    "passes": 49,
+    "violations_inside_flagship": 0,
+    "violations_total_nodes": 0
    },
    "console_errors": []
   },
@@ -229,7 +200,7 @@
      {
       "id": "color-contrast",
       "impact": "serious",
-      "nodes": 281,
+      "nodes": 283,
       "nodes_in_flagship": 152,
       "targets": [
        ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
@@ -269,18 +240,7 @@
    "small_targets_lt24": [],
    "small_targets_lt44": 3,
    "axe": {
-    "violations": [
-     {
-      "id": "target-size",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-home-lead-copy > .fv-stream-taxonomy.wp-block-post-terms.taxonomy-category > a[rel=\"tag\"]"
-      ],
-      "help": "All touch targets must be 24px large, or leave sufficient space"
-     }
-    ],
+    "violations": [],
     "incomplete": [
      {
       "id": "aria-prohibited-attr",
@@ -296,7 +256,7 @@
      {
       "id": "color-contrast",
       "impact": "serious",
-      "nodes": 298,
+      "nodes": 299,
       "nodes_in_flagship": 157,
       "targets": [
        ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
@@ -309,10 +269,11 @@
     ],
     "passes": 49,
     "violations_inside_flagship": 0,
-    "violations_total_nodes": 1
+    "violations_total_nodes": 0
    },
    "console_errors": [
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero"
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
    ]
   },
   "1440": {
@@ -335,18 +296,7 @@
    "small_targets_lt24": [],
    "small_targets_lt44": 3,
    "axe": {
-    "violations": [
-     {
-      "id": "target-size",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-home-lead-copy > .fv-stream-taxonomy.wp-block-post-terms.taxonomy-category > a[rel=\"tag\"]"
-      ],
-      "help": "All touch targets must be 24px large, or leave sufficient space"
-     }
-    ],
+    "violations": [],
     "incomplete": [
      {
       "id": "aria-prohibited-attr",
@@ -375,10 +325,11 @@
     ],
     "passes": 48,
     "violations_inside_flagship": 0,
-    "violations_total_nodes": 1
+    "violations_total_nodes": 0
    },
    "console_errors": [
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero"
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
    ]
   },
   "1920": {
@@ -401,18 +352,7 @@
    "small_targets_lt24": [],
    "small_targets_lt44": 3,
    "axe": {
-    "violations": [
-     {
-      "id": "target-size",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-home-lead-copy > .fv-stream-taxonomy.wp-block-post-terms.taxonomy-category > a[rel=\"tag\"]"
-      ],
-      "help": "All touch targets must be 24px large, or leave sufficient space"
-     }
-    ],
+    "violations": [],
     "incomplete": [
      {
       "id": "aria-prohibited-attr",
@@ -441,9 +381,10 @@
     ],
     "passes": 48,
     "violations_inside_flagship": 0,
-    "violations_total_nodes": 1
+    "violations_total_nodes": 0
    },
    "console_errors": [
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?w=824&ssl=1",
     "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
     "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
    ]
@@ -775,7 +716,8 @@
   "sourceLinks": 30,
   "detailsCount": 8,
   "focus": 4,
-  "jetpackForm": 1
+  "jetpackForm": 1,
+  "casePhotosLoaded": 6
  },
  "reduced_motion": {
   "mediaMatches": true,
@@ -1123,5 +1065,5 @@
   ],
   "stops_without_visible_indicator": []
  },
- "delivery": "inline (flagship CSS/JS inside the core/html block; stage-only site CSS parity)"
+ "delivery": "inline (flagship CSS/JS inside the core/html block; stage-only site CSS parity); content-visibility forced visible for axe/screenshots only"
 }

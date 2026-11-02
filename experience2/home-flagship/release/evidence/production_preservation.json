@@ -24,10 +24,8 @@
     "text": "FINAL VESTIGE STUDIOS Find what others miss. Investigations built from primary sources: the disasters, discoveries and buried records that history tends to skip. 01 \u00b7 INVESTIGATIONS Stories reconstructed from surviving evidence. Journal, archives, History Lab, field research \u2192 02 \u00b7 THE PUBLIC RECORD Public information made easier to find, follow, and check. Open the first release \u2192 03 \u00b7 EDITIONS B"
   },
   "live": {
-    "sha256": "f2b6df6c2cb92b75dee1170a90233fb5902b2e5faa38ae895829754bf9d87b45",
+    "sha256": "635c8ed38b3e9d78556423b60c4dffdbf57873b4a9b49f5b87f16f57a5066a47",
     "snapshot_sha256": "635c8ed38b3e9d78556423b60c4dffdbf57873b4a9b49f5b87f16f57a5066a47",
-    "identical_to_snapshot": false,
-    "bytes_live": 71825,
-    "bytes_snapshot": 71825
+    "identical_to_snapshot": true
   }
 }

@@ -1,0 +1,13 @@
+<!-- wp:html -->
+<div class="fv-probe" data-fv-probe="markup"><p class="a">PROBE 2: hazards.</p><span>x</span></div>
+<style>
+.fv-probe>p.a~span+em{color:#d4ad73}
+.fv-probe p::before{content:"- ";}
+.fv-probe:where([data-fv-probe]) :is(p,span){background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E")}
+@media (min-width:600px) and (max-width:1200px){.fv-probe>p{font-size:clamp(14px,2vw,20px)}}
+</style>
+<script>
+(() => { 'use strict'; const e = document.querySelector('.fv-probe'); const n = 3; if (e && n < 5 && n > 1 && !(n === 4) || false) { const re = /^fv-[a-z]+$/i; const t = `ok ${n > 2 && n < 4 ? 'lt/gt' : 'bad'} ${re.test('fv-probe') && true}`; e.setAttribute('data-fv-probe-js', t); e.firstChild.textContent += ' ' + t; } })();
+</script>
+<noscript><img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=300%2C233&amp;ssl=1" alt="" width="300" height="233"></noscript>
+<!-- /wp:html -->

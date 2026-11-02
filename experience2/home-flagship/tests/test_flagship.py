@@ -22,7 +22,11 @@ class Audit(HTMLParser):
         self.buttons = []
         self.attrs = []
         self.hidden_cases = []
+    _ns = 0
+    def handle_endtag(self, tag):
+        if tag.lower() == 'noscript': self._ns -= 1
     def handle_starttag(self, tag, attrs):
+        if tag.lower() == 'noscript': self._ns += 1
         a = dict(attrs)
         self.tags.append(tag)
         self.attrs.append((tag, a))
@@ -31,7 +35,7 @@ class Audit(HTMLParser):
                 raise ValueError("Duplicate id: " + a["id"])
             self.ids.add(a["id"])
         if tag == "a": self.links.append(a.get("href", ""))
-        if tag == "img": self.images.append(a)
+        if tag == "img" and not self._ns: self.images.append(a)
         if tag == "button": self.buttons.append(a)
         if "data-fv-case" in a and "hidden" in a: self.hidden_cases.append(a["data-fv-case"])
 

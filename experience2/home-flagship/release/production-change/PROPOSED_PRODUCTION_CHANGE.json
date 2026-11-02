@@ -20,12 +20,6 @@
       "block_hash": "6948a35c4e60ff43154440a7fad980dc3cae6859"
     },
     {
-      "index": 2,
-      "type": "core/html",
-      "what": "Focus CTA (/focus/)",
-      "block_hash": "abc983ae1b3cf45d35589c7e5366ccc522cb0462"
-    },
-    {
       "index": 3,
       "type": "core/group",
       "what": "home shell incl. Jetpack subscription (Dispatch), latest, trails, research desk",
@@ -55,9 +49,30 @@
       "expected_content_hash": "7afdb933d2ec68fd993ef015c97a6eb9edfe0576",
       "block_markup_file": "replacement-block-index1.html"
     },
-    "replacement_sha256": "39933cc23351d44e858aae19aa8f0480e294c0af1fc27b1ccba886e40ead741a",
-    "replacement_sha1": "d487b1945b56a25ef0d690bb8cef72a60a07971a",
-    "replacement_bytes": 111257
+    "replacement_sha256": "2f58b75ed1ec6cd22afd208896dea6268508ade1eca4388da1faa5d8f8d2073b",
+    "replacement_sha1": "9b591838cea0e926d6a823d7c6bb3a2373f59d07",
+    "replacement_bytes": 114355
+  },
+  "operation_2_optional": {
+    "what": "Focus CTA button: remove aria-label so the accessible name equals the visible text (WCAG 2.5.3)",
+    "run_after": "operation 1, with FRESH lock tokens from page-sections.list (content_hash changes after operation 1)",
+    "params": {
+      "id": 6,
+      "index": 2,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "abc983ae1b3cf45d35589c7e5366ccc522cb0462",
+      "block_markup_file": "replacement-block-index2.html"
+    },
+    "replacement_sha1": "6968fd0dcd2f89db318e65ef266971b7c1c251fe",
+    "replacement_bytes": 2827,
+    "rollback_params": {
+      "id": 6,
+      "index": 2,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "6968fd0dcd2f89db318e65ef266971b7c1c251fe",
+      "block_markup_file": "original-block-index2.html"
+    },
+    "original_block_sha1_verified_against_live_block_hash": true
   },
   "rollback": {
     "operation": "page-sections.replace",
@@ -65,7 +80,7 @@
       "id": 6,
       "index": 1,
       "expected_block_type": "core/html",
-      "expected_block_hash": "d487b1945b56a25ef0d690bb8cef72a60a07971a",
+      "expected_block_hash": "9b591838cea0e926d6a823d7c6bb3a2373f59d07",
       "block_markup_file": "original-block-index1.html"
     },
     "original_block_sha1_verified_against_live_block_hash": true,

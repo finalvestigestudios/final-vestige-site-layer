@@ -101,6 +101,7 @@ def main():
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--delivery", choices=["plugin", "inline"], default="plugin",
                     help="plugin: flagship CSS/JS enqueued by a plugin; inline: CSS/JS ship inside the page block itself (no plugin)")
+    ap.add_argument("--minify", metavar="ESBUILD_BIN", help="path to an esbuild binary/cmd; minifies the flagship CSS bundle and JS (visual/behavioural parity is re-tested by qa/run_wp_qa.py)")
     ap.add_argument("--page6", type=Path, default=HERE / "snapshot" / "page6-live-frontend-body.html")
     a = ap.parse_args()
     out = a.out.resolve()
@@ -114,9 +115,14 @@ def main():
         src = (FLAG / f) if (FLAG / f).exists() else (HERE / f)
         parts.append("/* ==== " + f + " ==== */" + chr(10) + src.read_text(encoding="utf-8").rstrip() + chr(10))
     css_bundle = "".join(parts)
+    if a.minify:
+        import subprocess
+        mini = lambda text, loader: subprocess.run([a.minify, "--minify", "--loader=" + loader, "--legal-comments=none"], input=text.encode("utf-8"), capture_output=True, check=True).stdout.decode("utf-8")
+        css_bundle = mini(css_bundle, "css")
     inline_block = ""
     if a.delivery == "inline":
-        js = "".join("<script>" + chr(10) + (FLAG / f).read_text(encoding="utf-8").rstrip() + chr(10) + "</script>" + chr(10) for f in ASSETS_JS)
+        read_js = (lambda f: mini((FLAG / f).read_text(encoding="utf-8"), "js")) if a.minify else (lambda f: (FLAG / f).read_text(encoding="utf-8").rstrip())
+        js = "".join("<script>" + chr(10) + read_js(f).rstrip() + chr(10) + "</script>" + chr(10) for f in ASSETS_JS)
         if "</script" in "".join((FLAG / f).read_text(encoding="utf-8") for f in ASSETS_JS).lower():
             raise SystemExit("a JS asset contains </script; cannot inline")
         inline_block = "<style>" + chr(10) + css_bundle + "</style>" + chr(10) + js
