@@ -293,5 +293,8 @@ if __name__=='__main__':
     try:main()
     except Exception as exc:
         # Never include private CLI output or auth material in CI logs.
-        print('APOLLO_R69_HOLD '+type(exc).__name__ +\n            (' '+str(exc) if isinstance(exc, RuntimeError) and str(exc) in\n              ('PLAYGROUND_PROCESS_EXITED','WORDPRESS_REST_NOT_READY') else ''),\n            file=sys.stderr)
+        print('APOLLO_R69_HOLD '+type(exc).__name__ +
+            (' '+str(exc) if isinstance(exc, RuntimeError) and str(exc) in
+              ('PLAYGROUND_PROCESS_EXITED','WORDPRESS_REST_NOT_READY') else ''),
+            file=sys.stderr)
         sys.exit(2)
