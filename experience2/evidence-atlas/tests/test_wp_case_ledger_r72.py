@@ -41,8 +41,11 @@ class R72LedgerTests(unittest.TestCase):
                     for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN"):
                         gate.advance(stage)
                     if js:
-                        for stage in ("INTERACTION", "LAB_METRICS", "PRINT"):
-                            gate.advance(stage)
+                        gate.advance("INTERACTION")
+                        if width in (390, 1440):
+                            gate.advance("AXE")
+                        gate.advance("LAB_METRICS")
+                        gate.advance("PRINT")
                     else:
                         gate.advance("NO_JS_CONTENT")
                     gate.pass_case()
@@ -55,7 +58,8 @@ class R72LedgerTests(unittest.TestCase):
             gate.advance("NO_JS_CONTENT")
             gate.pass_case()
             gate.begin(320, True)
-            gate.advance("INTERACTION")
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "INTERACTION"):
+                gate.advance(stage)
             with self.assertRaisesRegex(ValueError, "INCOMPLETE_CASE"):
                 gate.pass_case()
 
@@ -97,6 +101,7 @@ class R72LedgerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             gate = self.make(d)
             gate.begin(320, False)
+            gate.advance("HTTP_200")
             gate.advance("SOURCE_CUSTODY")
             with self.assertRaisesRegex(ValueError, "MILESTONE_NOT_MONOTONIC"):
                 gate.advance("HTTP_200")
@@ -123,6 +128,65 @@ class R72LedgerTests(unittest.TestCase):
             gate.advance("HTTP_200")
             self.assertFalse((Path(d) / "R72_CASE_LEDGER.json.tmp").exists())
             self.assertTrue(gate.destination.is_file())
+
+    def test_skipped_source_and_network_gates_refused(self):
+        with tempfile.TemporaryDirectory() as d:
+            gate = self.make(d)
+            gate.begin(320, False)
+            with self.assertRaisesRegex(ValueError, "MILESTONE_SKIPPED_OR_UNEXPECTED"):
+                gate.advance("SOURCE_CUSTODY")
+            gate.advance("HTTP_200")
+            with self.assertRaisesRegex(ValueError, "MILESTONE_SKIPPED_OR_UNEXPECTED"):
+                gate.advance("NO_JS_CONTENT")
+
+    def test_axe_cannot_be_skipped_at_390(self):
+        with tempfile.TemporaryDirectory() as d:
+            gate = self.make(d)
+            for width in (320,):
+                for js in (False, True):
+                    gate.begin(width, js)
+                    for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN"):
+                        gate.advance(stage)
+                    if js:
+                        gate.advance("INTERACTION")
+                        gate.advance("LAB_METRICS")
+                        gate.advance("PRINT")
+                    else:
+                        gate.advance("NO_JS_CONTENT")
+                    gate.pass_case()
+            gate.begin(360, False)
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "NO_JS_CONTENT"):
+                gate.advance(stage)
+            gate.pass_case()
+            gate.begin(360, True)
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "INTERACTION", "LAB_METRICS", "PRINT"):
+                gate.advance(stage)
+            gate.pass_case()
+            gate.begin(390, False)
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "NO_JS_CONTENT"):
+                gate.advance(stage)
+            gate.pass_case()
+            gate.begin(390, True)
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "INTERACTION"):
+                gate.advance(stage)
+            with self.assertRaisesRegex(ValueError, "MILESTONE_SKIPPED_OR_UNEXPECTED"):
+                gate.advance("LAB_METRICS")
+            gate.advance("AXE")
+            gate.advance("LAB_METRICS")
+
+    def test_axe_not_accepted_at_unreviewed_320_width(self):
+        with tempfile.TemporaryDirectory() as d:
+            gate = self.make(d)
+            gate.begin(320, False)
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "NO_JS_CONTENT"):
+                gate.advance(stage)
+            gate.pass_case()
+            gate.begin(320, True)
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "INTERACTION"):
+                gate.advance(stage)
+            with self.assertRaisesRegex(ValueError, "MILESTONE_SKIPPED_OR_UNEXPECTED"):
+                gate.advance("AXE")
+            gate.advance("LAB_METRICS")
 
     def test_failure_cannot_be_resumed(self):
         with tempfile.TemporaryDirectory() as d:
