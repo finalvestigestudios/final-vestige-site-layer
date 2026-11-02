@@ -243,8 +243,24 @@ def construct(parent):
 
 
 def verify(report):
-    """Defend against a forged/re-sealed workload or source substitution."""
+    """Fast fail on unsafe forged packets; then independently reconstruct evidence.
+
+    Early checks save the expensive re-derivation for legitimate sealed inputs.
+    An attacker can re-seal a forged report, so the FULL independently derived
+    comparison remains mandatory after every cheap check passes.
+    """
     sealed(report)
+    work = report.get("review_orders_347_NOT_UNSUPPORTED_OR_UNSAFE_VERDICTS")
+    need(type(work) is list and len(work) == 347,
+         "R79 review-order inventory omitted or expanded")
+    for item in work:
+        need(type(item) is dict and
+             item.get("human_claim_support_review") == REVIEW and
+             item.get("qualified_safety_review") == REVIEW and
+             item.get("independent_QD_review") == REVIEW and
+             item.get("packet_sha256") ==
+                 digest({k:v for k,v in item.items() if k != "packet_sha256"}),
+             "R79 original review work order or mandatory HOLD state forged")
     parent = report.get("complete_R78_evidence_UNABRIDGED_NOT_APPROVED")
     need(type(parent) is dict and report.get("original_R78_fingerprint_sha256") ==
          parent.get("fingerprint_sha256") and construct(parent) == report,
