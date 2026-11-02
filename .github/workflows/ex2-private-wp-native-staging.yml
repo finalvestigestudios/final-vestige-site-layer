@@ -35,6 +35,7 @@ jobs:
           php -v
           php -l experience2/home-flagship/qa/integration/private-preview/fv-ex2-private-preview.php
           python -m unittest discover -s experience2/home-flagship/qa/integration/private-preview/tests -p test_current_candidate_compose.py -v
+          python -m unittest discover -s experience2/home-flagship/qa/playground -p test_normalize_official_assembler.py -v
 
   ephemeral-wordpress:
     if: github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102'
@@ -71,28 +72,32 @@ jobs:
           set -euo pipefail
           curl --fail --location --silent --show-error --retry 3 --max-time 90 --proto '=https' --proto-redir '=https' --tlsv1.2 "$THEME_URL" --output "$RUNNER_TEMP/fv-ex2-official-assembler.zip"
           unzip -t "$RUNNER_TEMP/fv-ex2-official-assembler.zip" >/dev/null
-          echo "Official archive member paths, first 35 (no extraction):"
-          unzip -Z1 "$RUNNER_TEMP/fv-ex2-official-assembler.zip" | sed -n '1,35p'
-          unzip -p "$RUNNER_TEMP/fv-ex2-official-assembler.zip" assembler/style.css | grep -Fq 'Theme Name: Assembler'
-          unzip -p "$RUNNER_TEMP/fv-ex2-official-assembler.zip" assembler/style.css | grep -Fq 'Version: 0.0.126'
-          sha256sum "$RUNNER_TEMP/fv-ex2-official-assembler.zip" | tee "$RUNNER_TEMP/fv-ex2-wordpress-receipt/THEME_SOURCE_SHA256.txt"
-          echo "Official WordPress.com download URL: $THEME_URL" >> "$RUNNER_TEMP/fv-ex2-wordpress-receipt/THEME_SOURCE_SHA256.txt"
+          # Automattic packages official files beneath assembler-wpcom/, while
+          # the pinned local WordPress staging kit requires assembler/.
+          # Rewrite only the archive folder prefix; preserve each file's bytes
+          # and retain BOTH SHA-256 digests for custody review.
+          python experience2/home-flagship/qa/playground/normalize_official_assembler.py \
+            --source "$RUNNER_TEMP/fv-ex2-official-assembler.zip" \
+            --derived "$RUNNER_TEMP/fv-ex2-canonical-assembler.zip" \
+            --receipt "$RUNNER_TEMP/fv-ex2-wordpress-receipt/THEME_CUSTODY.json"
+          echo "Official WordPress.com download URL: $THEME_URL" >> "$RUNNER_TEMP/fv-ex2-wordpress-receipt/THEME_SOURCE_ORIGIN.txt"
+          echo "Derived ZIP is NOT a separately signed official release" >> "$RUNNER_TEMP/fv-ex2-wordpress-receipt/THEME_SOURCE_ORIGIN.txt"
       - name: Prepare existing, custody-checked private WordPress/Assembler kit
         shell: bash
         env:
           EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          THEME_SHA=$(sha256sum "$RUNNER_TEMP/fv-ex2-official-assembler.zip" | cut -d' ' -f1)
+          THEME_SHA=$(sha256sum "$RUNNER_TEMP/fv-ex2-canonical-assembler.zip" | cut -d' ' -f1)
           python experience2/home-flagship/qa/playground/prepare_isolated_stage.py \
             --repo . --expected-head "$EXPECTED_HEAD" \
-            --assembler-zip "$RUNNER_TEMP/fv-ex2-official-assembler.zip" \
+            --assembler-zip "$RUNNER_TEMP/fv-ex2-canonical-assembler.zip" \
             --expected-theme-sha256 "$THEME_SHA" \
             --out "$RUNNER_TEMP/fv-ex2-ephemeral-stage"
           python experience2/home-flagship/qa/playground/parity/prepare_unified_playground.py \
             --repo . --expected-head "$EXPECTED_HEAD" \
             --prepared-stage "$RUNNER_TEMP/fv-ex2-ephemeral-stage" \
-            --assembler-zip "$RUNNER_TEMP/fv-ex2-official-assembler.zip" \
+            --assembler-zip "$RUNNER_TEMP/fv-ex2-canonical-assembler.zip" \
             --assembler-sha256 "$THEME_SHA"
       - name: Install actual browser and axe-core for real accessibility testing
         shell: bash
