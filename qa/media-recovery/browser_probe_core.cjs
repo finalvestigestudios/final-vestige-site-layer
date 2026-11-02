@@ -100,7 +100,13 @@ function classifyImages(stored,rendered,network,pageVerified){
  return matchStoredImages(stored,rendered).map(j=>{
   const r=j.rendered,s=stored.find(x=>x.key===j.key);
   // Never attribute a stale src/data-src request to the decoded currentSrc.
-  const req=r&&r.currentSrc&&network.findLast(n=>[n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc)));
+  // When the same canonical image has multiple CDP Image requests, URL matching
+  // cannot prove which response belongs to the decoded DOM element. Never use
+  // findLast(): a retry, preload or theme copy might have the opposite status.
+  const matchingRequests=r?.currentSrc?network.filter(n=>
+   [n.url,...(n.url_aliases||[])].some(u=>sameSource(u,r.currentSrc))):[];
+  const ambiguousRequestIdentity=matchingRequests.length>1;
+  const req=matchingRequests.length===1?matchingRequests[0]:null;
   const responseStatus=req&&Number.isInteger(req.status)?req.status:null,reqError=req?.failed_error||null;
   const responseMime=typeof req?.mime_type==='string'?req.mime_type.split(';')[0].trim().toLowerCase():null;
   // The DOM currentSrc retains the requested URL after HTTP redirects. A successful
@@ -143,6 +149,7 @@ function classifyImages(stored,rendered,network,pageVerified){
   if(!pageVerified)state='page_not_verified';
   else if(!r)state='not_mapped';
   else if(j.match==='alt_only_unverified')state='alt_only_identity_unverified';
+  else if(ambiguousRequestIdentity)state='ambiguous_network_request_identity';
   else if(domMapped&&!identityVerified)state='current_src_identity_unverified';
   else if(visiblyBroken)state='confirmed_broken_in_probe_browser';
   else if(finalRedirectIdentityUnverified)state='redirected_image_identity_unverified';
@@ -157,6 +164,8 @@ function classifyImages(stored,rendered,network,pageVerified){
    loaded_network_proof_verified:loadedNetworkProof,
    complete:r?.complete??null,natural_width:r?.naturalWidth??null,
    request_url:req?.url||null,request_id:typeof req?.request_id==='string'?req.request_id:null,
+   matching_cdp_image_request_count:matchingRequests.length,
+   ambiguous_network_request_identity:ambiguousRequestIdentity,
    network_final_identity_verified:req?finalNetworkIdentityVerified:null,
    redirected_image_identity_unverified:finalRedirectIdentityUnverified,
    http_status:responseStatus,response_mime_type:responseMime,
