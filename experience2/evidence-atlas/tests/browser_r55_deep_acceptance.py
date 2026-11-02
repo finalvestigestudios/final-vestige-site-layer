@@ -12,10 +12,18 @@ SIZES=(320,360,390,428,768,1024,1440,1920)
 def run(out):
     out.mkdir(parents=True,exist_ok=True)
     html,manifest=document() # Exact R37 blob required by deterministic stage builder.
+    # Observe local fragment paint and shifts. Never call these hosted/p75 CWV.
+    monitor="""<script>window.__r55={lcp:null,cls:0};try{
+      new PerformanceObserver(l=>l.getEntries().forEach(e=>window.__r55.lcp=e.startTime))
+        .observe({type:'largest-contentful-paint',buffered:true});
+      new PerformanceObserver(l=>l.getEntries().forEach(e=>{if(!e.hadRecentInput)window.__r55.cls+=e.value}))
+        .observe({type:'layout-shift',buffered:true});
+      }catch(e){window.__r55.observer_error=String(e)}</script>"""
+    html=html.replace('<head>','<head>'+monitor,1)
     receipt={'schema':'fv.ex2.apollo.r55.deep-browser.v1','scope':'ACTUAL_R37_ATLAS_NOT_WORDPRESS',
       'source_blob':manifest['source_crosswalk_blob'],'axe':'NOT_RUN',
       'screen_reader':'NOT_RUN','original_r38_cohost':'NOT_RUN','hosted_cwv':'NOT_RUN',
-      'cases':[],'screenshots':{}}
+      'cases':[],'screenshots':{},'lab_metrics':[]}
     with sync_playwright() as p:
         browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
         for width in SIZES:
@@ -56,6 +64,7 @@ def run(out):
                     page.locator('[data-fva-select="02"]').click()
                     assert page.locator('[data-fva-compare-slot] h3').count()==2
                     page.locator('[data-fva-compare-clear]').click()
+                    receipt['lab_metrics'].append({'width':width,**page.evaluate('window.__r55'), 'scope':'SET_CONTENT_NOT_HOSTED'})
                     if width in (390,1440):
                         shot=page.screenshot(full_page=True,animations='disabled')
                         assert shot==page.screenshot(full_page=True,animations='disabled')
