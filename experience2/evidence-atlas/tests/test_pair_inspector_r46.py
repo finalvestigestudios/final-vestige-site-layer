@@ -60,7 +60,7 @@ class PairInspectorR46(unittest.TestCase):
             markup=(plugin/'templates/atlas-fragment.html').read_bytes()
             php=(plugin/'final-vestige-ex2-evidence-atlas.php').read_text()
             self.assertIn(hashlib.sha256(markup).hexdigest(),php)
-            self.assertIn('0.0.51-staging',php)
+            self.assertIn('0.0.56-staging',php)
             self.assertEqual(manifest['schema'],'fv.ex2.apollo.wp-stage.r49.v1')
             self.assertEqual(markup.count(b'data-fva-select='),6)
             self.assertNotIn(b'<script',markup)

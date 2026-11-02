@@ -33,6 +33,39 @@ PROVISIONAL_CATALOG_NOTICE = ('The S67-19766 association is based on a NASA-host
     'the linked NASA page does not state that catalog number. '
     'Catalog-to-photograph identity remains unconfirmed pending archival review.')
 
+# R56: The page-level NASA metadata audit is an independently tracked preflight,
+# not image-use clearance. Pin the exact reviewed ledger so a quiet JSON edit
+# cannot silently change public-facing SourceDrawer metadata.
+RIGHTS_AUDIT = HERE / 'sources/NASA_PAGE_RIGHTS_AUDIT_R55.json'
+EXPECTED_AUDIT_SHA256 = 'a3c87196da3c48490a84e6a5b1ad7f3e6a21f4d908ebccded7ab8517597f25c9'
+
+def validate_rights_audit(custody: dict, path: Path = RIGHTS_AUDIT) -> dict:
+    raw = path.read_bytes()
+    if sha256(raw) != EXPECTED_AUDIT_SHA256:
+        raise ValueError('NASA source page audit changed without review: refuse build')
+    audit = json.loads(raw)
+    rows = audit.get('records')
+    if (audit.get('schema') != 'fv.ex2.apollo.nasa-page-rights.r55.v1'
+        or audit.get('status') != 'STAGING_HOLD'
+        or audit.get('policy', {}).get('independent_rights_clearance') != 'NOT_COMPLETE'
+        or audit.get('crosswalk_blob_git_sha1') != EXPECTED_BLOB
+        or not isinstance(rows, list) or len(rows) != 6):
+        raise ValueError('NASA page audit schema or release gate changed')
+    for source, rights in zip(custody['records'], rows):
+        if (rights.get('id') != source['id']
+            or rights.get('crosswalk_catalog') != source['catalog']
+            or rights.get('nasa_page') != source['photo_url']
+            or rights.get('rights_status') != 'INDIVIDUAL_REVIEW_PENDING'
+            or rights.get('human_link_check') is not False
+            or rights.get('downloaded_or_embedded') is not False
+            or rights.get('recognizable_person_review') != 'required_or_undetermined'
+            or not rights.get('page_last_updated')):
+            raise ValueError('NASA source page identity or image-release status changed')
+    if (rows[0]['catalog_display'] != 'not_displayed_on_linked_nasa_page'
+        or any(r['catalog_display'] != 'displayed_as_PIA_number' for r in rows[1:])):
+        raise ValueError('Unreviewed NASA catalog verification change')
+    return audit
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -63,6 +96,8 @@ def validate_custody(path: Path = CROSSWALK) -> dict:
     return crosswalk
 
 def make_html(custody: dict, css: str, js: str) -> str:
+    audit = validate_rights_audit(custody)
+    rights_by_id = {entry['id']: entry for entry in audit['records']}
     q = lambda s: html.escape(str(s), quote=True)
     cards = []
     for r in custody['records']:
@@ -72,6 +107,11 @@ def make_html(custody: dict, css: str, js: str) -> str:
                  else 'Contextual source photograph, not proof of causation')
         provisional = ('<p class="fva-card__catalog-caution" data-fva-catalog-unconfirmed>'
             + q(PROVISIONAL_CATALOG_NOTICE) + '</p>') if r['id'] == '01' else ''
+        audit_entry = rights_by_id[r['id']]
+        catalog_display = ('Not printed on the linked NASA page; attribution provisional.'
+            if r['id'] == '01' else 'Identifier displayed in the linked NASA page PIA field.')
+        credit = audit_entry['image_credit_as_displayed'] or 'No individual image credit displayed in reviewed metadata.'
+        producer = audit_entry['producer_as_displayed'] or 'No producing center displayed in reviewed metadata.'
         cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" id="fva-record-{q(r['id'])}" tabindex="-1">
           <div class="fva-card__top"><span>DOCUMENT {q(r['id'])} / 06</span><span>{year} · NASA RECORD</span></div>
           <div class="fva-card__plate" aria-hidden="true"><span>{q(r['catalog'])}</span><b>ARCHIVAL RECORD</b></div>
@@ -83,6 +123,11 @@ def make_html(custody: dict, css: str, js: str) -> str:
              <summary>Source custody and reuse status</summary>
              <dl><dt>Catalog reference</dt><dd>{q(r['catalog'])}</dd>
              <dt>Record identity note</dt><dd>{q(r['identity_note'])}</dd>
+             <dt>Catalog verification on NASA page</dt><dd data-fva-catalog-status>{q(catalog_display)}</dd>
+             <dt>Credit displayed by NASA</dt><dd>{q(credit)}</dd>
+             <dt>Producing center displayed by NASA</dt><dd>{q(producer)}</dd>
+             <dt>NASA page last updated</dt><dd>{q(audit_entry['page_last_updated'])}</dd>
+             <dt>Editorial source check</dt><dd>NASA metadata reviewed {q(audit['page_text_reviewed_on'])}; no human link check or photograph inspection completed.</dd>
              <dt>Reuse status</dt><dd>Individual review required. No photograph is reproduced here.</dd>
              <dt>Documentary boundary</dt><dd>{q(r['photo_role'])}. The photograph alone does not prove the cause or sequence of the Apollo 1 fire.</dd></dl>
           </details>
@@ -154,6 +199,14 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <p class="fva-provenance-note">Catalog verification notice: record 01 has a provisional catalog-to-image association. See the record and source register for the limitation.</p>
     <div class="fva-caution"><strong>Why no map?</strong> The reviewed source ledger does not establish precise locations for six independently verified map pins or evidentiary connections. No coordinates or inferred relationships are shown.</div>
   </header>
+  <section class="fva-custody-status" aria-labelledby="fva-custody-status-title" data-fva-custody-status>
+    <h2 id="fva-custody-status-title">What is verified—and what is not.</h2>
+    <p>The source-page metadata was checked on {q(audit['page_text_reviewed_on'])}. This was an editorial research pass, <strong>not a human link check, photograph inspection, or rights clearance</strong>.</p>
+    <ul><li><strong>5 of 6</strong> catalog identifiers are displayed on their linked NASA pages.</li>
+      <li><strong>1 of 6</strong> identifier-to-photograph associations remains provisional: S67-19766.</li>
+      <li><strong>0 of 6</strong> photographs is approved for reuse or reproduced here.</li></ul>
+    <p>Open each record's <em>Source custody and reuse status</em> drawer for the NASA credit, producing-center field, page revision date, and remaining limitations. NASA metadata alone is not a license.</p>
+  </section>
   <section class="fva-guide" aria-labelledby="fva-how"><h2 id="fva-how">Read before exploring</h2>
     <p>The 1966 rehearsal image precedes the 1967 fire. The 2017 exhibit photographs are retrospective. Photograph dates are not a minute-by-minute fire chronology; NASA's Apollo 204 Review Board report is the source for technical findings.</p>
     <p><a href="{q(custody['historical_primary'])}" target="_blank" rel="noopener noreferrer">Read the Apollo 204 Review Board report <span aria-hidden="true">↗</span></a></p>
