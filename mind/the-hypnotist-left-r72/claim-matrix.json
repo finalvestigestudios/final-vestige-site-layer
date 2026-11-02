@@ -220,7 +220,7 @@
     },
     {
       "claim": "video increases conversion",
-      "status": "UNTETSTED_HYPOTHESIS",
+      "status": "UNTESTED_HYPOTHESIS",
       "source": "none",
       "copy": "must run later consent-safe experiment"
     },
