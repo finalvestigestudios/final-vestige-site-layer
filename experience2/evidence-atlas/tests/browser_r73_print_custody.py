@@ -78,7 +78,7 @@ def run(out: Path) -> dict:
                     assert source['catalog'] in rendered
                     assert source['date_label'] in rendered
                     assert 'Individual photo review outstanding' in rendered
-                    assert panel.locator('a').get_attribute('href') == source['photo_url']
+                    assert panel.locator('[data-r73-print-url]').inner_text() == source['photo_url']
                     assert 'Credit:' in rendered and 'Producing center:' in rendered
                     assert 'Catalog verification:' in rendered
                     assert 'Documentary boundary:' in rendered
