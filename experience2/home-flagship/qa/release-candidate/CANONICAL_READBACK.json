@@ -1,0 +1,154 @@
+{
+  "checked_git_commit": "7741595191d733f779cc05586accb1e7a4926bb4",
+  "blob_ids": {
+    "index.html": "679eb35418dd18842853f7a0faf9db39be116526",
+    "source-manifest.json": "28f0de44a157dbafe99544ba6020d550433b673d",
+    "flagship.css": "1ad6d82f57d1a8a6ca29865ffef82c15edbe1a9c",
+    "chronicle.css": "a779320ef6468b853a65a268502d15a19a9c1b64",
+    "chronicle-lens.css": "97fb86e6469c98461f422d4a0a9629e757522146",
+    "inquiry.css": "28c747679969374bf1bcda386899cde03197db60",
+    "observer-lab.css": "f01b336fe76470df88c8b748fd13321376f27aa2",
+    "reading-trail.css": "b86f944f25987c5324fdcf01d86b702d54e0de41",
+    "flagship.js": "fb2353d00e83cb4f4c6b5e88cf0cf1739c087d50",
+    "observer-lab.js": "9b69d69dc61909d3e802365e47ab5287108efa4e",
+    "chronicle-lens.js": "f22b5e3a4f0dfabfc29e0a9829d56dab4e697df2",
+    "reading-trail.js": "3ec89c6f267d6ea8a2698b07fe3fc77d6809d54f"
+  },
+  "source_report": {
+    "status": "PASS",
+    "checks": {
+      "one_h1": true,
+      "unique_ids": true,
+      "seven_chapters": true,
+      "chapter_anchor_links": true,
+      "all_fragment_targets_exist": true,
+      "unpublished_guard": true,
+      "native_nojs_cases": true,
+      "editorial_no_checkout": true,
+      "focus_and_primary_sources": true,
+      "six_css_four_js_exact": true,
+      "ten_asset_files_present": true,
+      "no_remote_js_css": true,
+      "three_images_have_alt_dimensions": true,
+      "image_ledger_ids": true,
+      "every_image_exactly_in_ledger": true,
+      "image_delivery_host_scoped": true,
+      "nypl_map_uses_responsive_delivery": true,
+      "original_sources_linked": true,
+      "map_not_fake_crash_overlay": true
+    },
+    "errors": [],
+    "counts": {
+      "ids": 20,
+      "chapters": 7,
+      "images": 3,
+      "details": 8,
+      "styles": 6,
+      "scripts": 4,
+      "source_chars": 35173
+    }
+  },
+  "rights_report": {
+    "status": "HOLD",
+    "pending_signoff": [
+      "apollo",
+      "franklin",
+      "malbone"
+    ],
+    "source_claims": [
+      {
+        "id": "apollo",
+        "media_credit": "NASA, image S67-19766",
+        "source_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+        "declared_status": "NASA's general image usage rules reviewed; this individual image and commercial page context still require publication review, including no implied NASA endorsement"
+      },
+      {
+        "id": "franklin",
+        "media_credit": "Victory Point Note, 1847–48; scan reproduced from McClintock's 1869 edition; Wikimedia Commons PDM",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+        "declared_status": "Wikimedia Commons source page explicitly marks the work public domain; credit and image provenance retained"
+      },
+      {
+        "id": "malbone",
+        "media_credit": "1903 Brooklyn Rapid Transit map, NYPL Digital Collections, item 5003296",
+        "source_url": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+        "declared_status": "Rights and full-resolution catalog metadata pending external record access; page returned HTTP 403 to text fetch; existing Final Vestige hosted image only"
+      }
+    ],
+    "image_transfer_bytes": null,
+    "loaded_media_browser_test": null
+  },
+  "release_status": {
+    "status": "HOLD",
+    "blockers": [
+      "Source-specific signed media-rights review missing: apollo, franklin, malbone.",
+      "No separately authorized private WordPress/Assembler staging instance connected or verified.",
+      "Actual staging Chromium cookies/CSP and first-party image loads not verified.",
+      "Genuine WCAG 2.2 AA, keyboard/assistive-tech/Safari and real Lighthouse/field p75 CWV not measured.",
+      "Hosted CI and independent QD on final SHA plus founder-governed release approval pending."
+    ]
+  },
+  "mutations": [
+    {
+      "name": "duplicate-ids",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "lost-historical-source",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "lost-map-responsive",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "bad-image-credit",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "nojs-hidden",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "unsupported-pitch",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "remote-javascript",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "broken-chapter-link",
+      "failed": true,
+      "did_change": true
+    },
+    {
+      "name": "missing-alt",
+      "failed": true,
+      "did_change": true
+    }
+  ],
+  "wordpress_live_read_only": {
+    "site_id": 256784396,
+    "page_id": 6,
+    "theme": "assembler",
+    "published_margin_indices": "0–71 (72 unique)",
+    "focus_jetpack_present": true,
+    "wordpress_staging_connected": false,
+    "map_media_id": 1258,
+    "map_original_size_bytes": 5553669,
+    "media_derivatives": [
+      768,
+      1024,
+      1536
+    ]
+  },
+  "evidence_scope": "Direct GitHub connector exact source read + authenticated WordPress read. No actual WordPress staging or exact-checkout Node tests run yet."
+}
