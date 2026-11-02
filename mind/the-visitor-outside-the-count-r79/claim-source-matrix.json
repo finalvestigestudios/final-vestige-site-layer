@@ -1,0 +1,500 @@
+{
+  "updated": "2026-11-02",
+  "purpose": "Unpublished source-and-permissions audit, not proof of results",
+  "sources": [
+    {
+      "id": "R1",
+      "title": "Simons & Chabris 1999 original inattentional blindness",
+      "url": "https://doi.org/10.1068/p281059",
+      "kind": "primary research",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "R2",
+      "title": "Drew et al. 2013 radiologist experiment",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "kind": "primary research",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "R3",
+      "title": "Drew et al. open-access full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "kind": "primary research",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "R4",
+      "title": "Neisser & Becklen 1975 selective looking",
+      "url": "https://doi.org/10.1016/0010-0285(75)90019-5",
+      "kind": "primary research",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "R5",
+      "title": "Simons & Levin 1998 change blindness field experiment",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "kind": "primary research",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "R6",
+      "title": "Ingendoh et al. 2023 binaural beats EEG review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "systematic review",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "R7",
+      "title": "NCCIH meditation safety/effectiveness",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government health evidence",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "S1",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "review_date": "2026-11-02",
+      "status": "seller-description-only"
+    },
+    {
+      "id": "S2",
+      "title": "Zen12 exact sales offer",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant",
+      "review_date": "2026-11-02",
+      "status": "seller-description-only"
+    },
+    {
+      "id": "S3",
+      "title": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "kind": "merchant",
+      "review_date": "2026-11-02",
+      "status": "seller-description-only"
+    },
+    {
+      "id": "S4",
+      "title": "Zen12 Research",
+      "url": "https://zen12.com/research",
+      "kind": "merchant",
+      "review_date": "2026-11-02",
+      "status": "seller-description-only"
+    },
+    {
+      "id": "S5",
+      "title": "Zen12 order entry",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant checkout",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "S6",
+      "title": "Inspire3 privacy terms",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant policy",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "S7",
+      "title": "Inspire3 terms inaccessible this run",
+      "url": "https://inspire3.com/terms/",
+      "kind": "HOLD not fetched",
+      "review_date": "2026-11-02",
+      "status": "inaccessible"
+    },
+    {
+      "id": "S8",
+      "title": "Public affiliate signup is not account acceptance",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public recruiting",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "L1",
+      "title": "Live Puységur source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "live read-only WordPress",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "L2",
+      "title": "Live Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live read-only WordPress",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "L3",
+      "title": "Existing Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "existing website policy",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "L4",
+      "title": "Existing Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "existing website policy",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "L5",
+      "title": "Explore entry",
+      "url": "https://finalvestige.com/explore/",
+      "kind": "existing website nav",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "F1",
+      "title": "FTC endorsement and material-connection guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "government regulation",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    },
+    {
+      "id": "F2",
+      "title": "FTC health products substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "government regulation",
+      "review_date": "2026-11-02",
+      "status": "reviewed-with-source-limits"
+    }
+  ],
+  "claims": [
+    {
+      "id": "gorilla-experiment",
+      "claim": "Gorilla study is an experimental inattentional blindness case",
+      "source": "R1",
+      "decision": "supported, qualified"
+    },
+    {
+      "id": "gorilla-universal",
+      "claim": "Exactly 50% of everyone always misses the gorilla",
+      "source": "R1",
+      "decision": "reject generalized rate"
+    },
+    {
+      "id": "attention-selection",
+      "claim": "Detection changes with monitoring task and unexpected object's similarity",
+      "source": "R1",
+      "decision": "supported study-specific"
+    },
+    {
+      "id": "gaze-notice",
+      "claim": "Looking at object establishes awareness",
+      "source": "R3",
+      "decision": "reject"
+    },
+    {
+      "id": "expert-20",
+      "claim": "20 of 24 radiologists did not report surprise gorilla in CT scan",
+      "source": "R2",
+      "decision": "supported study-specific"
+    },
+    {
+      "id": "expert-83-diagnosis",
+      "claim": "83 percent of radiologists miss medical diagnoses",
+      "source": "R2",
+      "decision": "reject clinical inference"
+    },
+    {
+      "id": "original-1999",
+      "claim": "Simons and Chabris published in 1999",
+      "source": "R1",
+      "decision": "supported"
+    },
+    {
+      "id": "neisser",
+      "claim": "Selective looking research dates before famous video",
+      "source": "R4",
+      "decision": "supported"
+    },
+    {
+      "id": "door-difference",
+      "claim": "Change blindness door swap has distinct protocol",
+      "source": "R5",
+      "decision": "supported"
+    },
+    {
+      "id": "puy-record",
+      "claim": "Public Puységur archive is a historical source project",
+      "source": "L1",
+      "decision": "supported as history"
+    },
+    {
+      "id": "focus-resource",
+      "claim": "Existing Focus resource is publicly available",
+      "source": "L2",
+      "decision": "supported as site route"
+    },
+    {
+      "id": "health-diagnosis",
+      "claim": "A film can diagnose visual attention disorder",
+      "source": "R1",
+      "decision": "reject"
+    },
+    {
+      "id": "story-proves-puy",
+      "claim": "Experimental attention deficit proves animal magnetism",
+      "source": "L1",
+      "decision": "reject"
+    },
+    {
+      "id": "product-exists",
+      "claim": "Zen12 appears in official Inspire3 catalog",
+      "source": "S1",
+      "decision": "seller-described"
+    },
+    {
+      "id": "product-format",
+      "claim": "Sessions are advertised as twelve minutes",
+      "source": "S2",
+      "decision": "seller-described only"
+    },
+    {
+      "id": "twelve-levels",
+      "claim": "Twelve levels are advertised",
+      "source": "S2",
+      "decision": "seller-described only"
+    },
+    {
+      "id": "four-styles",
+      "claim": "Four listening styles advertised",
+      "source": "S3",
+      "decision": "seller-described only"
+    },
+    {
+      "id": "forty-eight",
+      "claim": "Complete advertised 48 MP3 set",
+      "source": "S2",
+      "decision": "seller-described not delivery verified"
+    },
+    {
+      "id": "twenty-four",
+      "claim": "Seller advertises 24 MP3 smaller tier",
+      "source": "S2",
+      "decision": "seller-described not delivery verified"
+    },
+    {
+      "id": "health-claim",
+      "claim": "Zen12 treats medical disorder",
+      "source": "S2",
+      "decision": "NOT substantiated omit"
+    },
+    {
+      "id": "hour-claim",
+      "claim": "Twelve minutes produces same benefit as hour of advanced meditation",
+      "source": "S2",
+      "decision": "NOT substantiated omit"
+    },
+    {
+      "id": "automatic-claim",
+      "claim": "Audio automatically shifts brainwave state into deep meditation",
+      "source": "S4",
+      "decision": "NOT independently proven omit"
+    },
+    {
+      "id": "entrainment-literature",
+      "claim": "Binaural beat entrainment EEG review reports inconsistent evidence",
+      "source": "R6",
+      "decision": "supported, heterogeneous studies"
+    },
+    {
+      "id": "meditation-evidence",
+      "claim": "Meditation practices and study quality are diverse",
+      "source": "R7",
+      "decision": "supported with limitations"
+    },
+    {
+      "id": "refund-marketing",
+      "claim": "Seller advertises one-year refund promise",
+      "source": "S2",
+      "decision": "seller description; conditions HOLD"
+    },
+    {
+      "id": "refund-mechanics",
+      "claim": "Full refund process and exclusions confirmed",
+      "source": "S7",
+      "decision": "HOLD inaccessible"
+    },
+    {
+      "id": "price",
+      "claim": "Fixed current price or discount confirmed",
+      "source": "S5",
+      "decision": "HOLD dynamic checkout"
+    },
+    {
+      "id": "checkout-mobile",
+      "claim": "Seller checkout displays mobile field",
+      "source": "S5",
+      "decision": "observed seller checkout"
+    },
+    {
+      "id": "SMS",
+      "claim": "Seller policy provides for possible marketing SMS",
+      "source": "S6",
+      "decision": "supported seller policy"
+    },
+    {
+      "id": "affiliate-data",
+      "claim": "Merchant may share buyer name/email/product with affiliate",
+      "source": "S6",
+      "decision": "supported seller policy"
+    },
+    {
+      "id": "customer-ingestion",
+      "claim": "FV is authorized to receive buyer PII",
+      "source": "S6",
+      "decision": "HOLD default no ingestion"
+    },
+    {
+      "id": "affiliate-accept",
+      "claim": "Public signup means FV approved affiliate",
+      "source": "S8",
+      "decision": "reject"
+    },
+    {
+      "id": "approved-url",
+      "claim": "FV has valid earning URL",
+      "source": "S8",
+      "decision": "HOLD no authorization"
+    },
+    {
+      "id": "channel-site",
+      "claim": "FV website promotion permission exists",
+      "source": "S8",
+      "decision": "HOLD written rights"
+    },
+    {
+      "id": "channel-tiktok",
+      "claim": "FV TikTok promotion permission exists",
+      "source": "S8",
+      "decision": "HOLD written rights"
+    },
+    {
+      "id": "channel-email",
+      "claim": "FV email promotion permission exists",
+      "source": "S8",
+      "decision": "HOLD written rights"
+    },
+    {
+      "id": "merchant-creatives",
+      "claim": "Public swipe file authorizes repurposing",
+      "source": "S8",
+      "decision": "reject absent rights"
+    },
+    {
+      "id": "FTC-earnings",
+      "claim": "Affiliate material connection should be disclosed near link",
+      "source": "F1",
+      "decision": "supported compliance design"
+    },
+    {
+      "id": "FTC-health",
+      "claim": "Efficacy health claims need adequate substantiation",
+      "source": "F2",
+      "decision": "supported compliance design"
+    },
+    {
+      "id": "general-disclose",
+      "claim": "A separate general disclaimer alone suffices",
+      "source": "F1",
+      "decision": "reject"
+    },
+    {
+      "id": "native-button",
+      "claim": "Disabled control is not functional merchant link",
+      "source": "F1",
+      "decision": "design test"
+    },
+    {
+      "id": "conversion",
+      "claim": "Original film improves conversion rate",
+      "source": "R1",
+      "decision": "untested hypothesis"
+    },
+    {
+      "id": "video-science",
+      "claim": "Film is a trial of Zen12",
+      "source": "R1",
+      "decision": "reject"
+    },
+    {
+      "id": "sales",
+      "claim": "Outbound intent equals completed seller transaction",
+      "source": "S8",
+      "decision": "reject"
+    },
+    {
+      "id": "inventory",
+      "claim": "61 published posts and 79 published pages observed in read-only WP",
+      "source": "L5",
+      "decision": "verified site read"
+    },
+    {
+      "id": "single-funnel",
+      "claim": "Maintain one existing Jetpack/Focus list",
+      "source": "L2",
+      "decision": "preserve"
+    },
+    {
+      "id": "subscriber-invite",
+      "claim": "New newsletter signup needed for product guides",
+      "source": "L2",
+      "decision": "reject"
+    },
+    {
+      "id": "privacy-analytics",
+      "claim": "Raw referrer/query/PII is essential for measurement",
+      "source": "S6",
+      "decision": "reject"
+    },
+    {
+      "id": "email-disclosure",
+      "claim": "Email disclosure must be shown in recipient-readable message",
+      "source": "F1",
+      "decision": "HOLD recipient QA and sender approval"
+    }
+  ],
+  "gates": {
+    "founder_release_approval": false,
+    "FV_partner_acceptance": false,
+    "zen12_product_promotion_rights": false,
+    "website_channel_rights": false,
+    "tiktok_channel_rights": false,
+    "email_channel_rights": false,
+    "authorized_merchant_earning_url": false,
+    "verified_link_tracking_terms": false,
+    "merchant_creative_rights": false,
+    "data_processing_agreement": false,
+    "current_checkout_and_refund_fresh_verification": false,
+    "claim_substantiation_and_independent_review": false,
+    "first_party_media_hosting": false,
+    "captions_and_poster_browser_verification": false,
+    "wordpress_staging_and_a11y_QA": false,
+    "attribution_activation": false
+  },
+  "price": null,
+  "commission_rate": null,
+  "affiliate_earning_url": null,
+  "customer_PII_ingestion": false
+}
