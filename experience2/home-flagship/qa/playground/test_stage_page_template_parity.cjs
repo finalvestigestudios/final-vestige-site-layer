@@ -14,7 +14,7 @@ const sample='<!-- wp:template-part {"slug":"header","theme":"assembler"} /-->\n
 '<!-- Public template presentation tokens only. -->\n'.repeat(30);
 const digest=SHA(sample);
 function blueprint(){const s=Array.from({length:19},()=>({step:'writeFile',path:'/dummy',data:'local'}));s[0]={step:'defineWpConfigConsts',consts:{WP_ENVIRONMENT_TYPE:'local',FV_EX2_ALLOW_LOCAL_REVIEW:true}};s[1]={step:'installTheme',themeData:{url:'/private/assembler.zip'}};s[18]={step:'setSiteOptions',options:{blogname:'local'}};s[2]={step:'runPHP',code:"<?php require_once '/wordpress/wp-load.php';\nif (!fv_ex2_ready() || get_stylesheet() !== 'assembler' || wp_get_environment_type() !== 'local') throw new Exception('closed');\n$id=wp_insert_post(array('post_title'=>'FV LOCAL Integrated Homepage Review','post_status'=>'publish','post_type'=>'page','post_content'=>$raw));"};return {steps:s}}
-function phpProbe(code,termFailure=false){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'fv-template-'));try{
+function phpProbe(code,termFailure=false,frontPageConflict=false){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'fv-template-'));try{
 const snippet=code.slice(code.indexOf('// FV LOCAL TEMPLATE PARITY:'),code.indexOf("$id=wp_insert_post(array('post_title'=>'FV LOCAL Integrated Homepage Review'"));
 const src=[
 '<?php',
@@ -25,7 +25,7 @@ const src=[
 'function is_wp_error($x){return false;}',
 "function wp_insert_post($x,$strict){$GLOBALS['insert']=$x;return 123;}",
 "function wp_set_object_terms($id,$term,$taxonomy){return "+(termFailure?'array()':'array(17)')+';}',
-"function wp_get_block_template($slug,$type){return (object)array('content'=>$GLOBALS['insert']['post_content']);}",
+"function wp_get_block_template($slug,$type){if ($slug==='assembler//front-page') return " + (frontPageConflict ? "(object)array('content'=>'conflict')" : "null") + ";return (object)array('content'=>$GLOBALS['insert']['post_content']);}",
 snippet,
 "echo json_encode(array('post_type'=>$GLOBALS['insert']['post_type'],'post_name'=>$GLOBALS['insert']['post_name'],'tagged'=>strpos($GLOBALS['insert']['post_content'],'body.home')!==false));"
 ].join('\n');
@@ -42,3 +42,5 @@ test('requires staged local approval, Assembler ZIP and bootstrap',()=>{for(cons
 test('refuses duplicate template import or additional database/WXR import',()=>{const a=stageTemplate(blueprint(),sample,digest);assert.throws(()=>stageTemplate(a.blueprint,sample,digest),/already added/);const b=blueprint();b.steps[3]={step:'runSql',sql:'x'};assert.throws(()=>stageTemplate(b,sample,digest),/database\/user import/)});
 test('real PHP 8.4 accepts generated local wp_template insertion and verifies binding',()=>{const p=phpProbe(stageTemplate(blueprint(),sample,digest).blueprint.steps[2].code);assert.equal(p.status,0,p.stderr);const r=JSON.parse(p.stdout);assert.equal(r.post_type,'wp_template');assert.equal(r.post_name,'page');assert.equal(r.tagged,true)});
 test('PHP runtime fails closed if template theme binding fails',()=>{const p=phpProbe(stageTemplate(blueprint(),sample,digest).blueprint.steps[2].code,true);assert.notEqual(p.status,0);assert.match(p.stderr,/theme binding/)});
+
+test('PHP runtime fails closed if front-page template shadows imported page template',()=>{const p=phpProbe(stageTemplate(blueprint(),sample,digest).blueprint.steps[2].code,false,true);assert.notEqual(p.status,0);assert.match(p.stderr,/front-page template would supersede/)});
