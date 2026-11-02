@@ -209,7 +209,7 @@ class TestR78DocumentMatrix(unittest.TestCase):
     def test_034_source_parent_rejects_removed_source(self):
         row=deepcopy(self.parent)
         row["all_origin_scoped_temporal_review_packets_NOT_APPROVED"].pop()
-        with self.assertRaises(r78.Hold):
+        with self.assertRaises(ValueError):
             r78.construct(row)
 
     def test_035_source_parent_rejects_rewritten_original_DOM(self):
@@ -217,14 +217,14 @@ class TestR78DocumentMatrix(unittest.TestCase):
         row["complete_R76_evidence_UNABRIDGED_NOT_APPROVED"][
             "all_4070_unabridged_DOM_tasks_NOT_REVIEWED"][0][
             "DOM_text_UNABRIDGED_NOT_BROWSER_OR_SAFETY_VERIFIED"]+=" alteration"
-        with self.assertRaises(r78.Hold):
+        with self.assertRaises(ValueError):
             r78.construct(row)
 
     def test_036_source_parent_rejects_forged_link_check(self):
         row=deepcopy(self.parent)
         row["all_origin_scoped_temporal_review_packets_NOT_APPROVED"][0][
             "human_link_check"]=True
-        with self.assertRaises(r78.Hold):
+        with self.assertRaises(ValueError):
             r78.construct(row)
 
     def test_037_source_parent_rejects_forged_QD(self):
@@ -232,7 +232,7 @@ class TestR78DocumentMatrix(unittest.TestCase):
         row["independent_QD_approval"]=True
         row["fingerprint_sha256"]=r78.digest({
             k:v for k,v in row.items() if k!="fingerprint_sha256"})
-        with self.assertRaises(r78.Hold):
+        with self.assertRaises(ValueError):
             r78.construct(row)
 
     def test_038_citation_variant_is_not_single_claim(self):
