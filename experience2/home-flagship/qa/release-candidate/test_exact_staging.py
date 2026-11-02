@@ -103,6 +103,14 @@ class GateTests(unittest.TestCase):
             with self.subTest(candidate=candidate),self.assertRaises(ValueError):
                 gate.check_private_render_url(candidate,outer)
 
+    def test_private_browser_errors_cannot_leak_nonce_or_local_url(self):
+        private='http://127.0.0.1:9400/wp-admin/admin-ajax.php?_wpnonce=secret'
+        got=gate.sanitized_page_error('ReferenceError: '+private)
+        self.assertEqual(got,'PAGE_JS_REFERENCEERROR')
+        self.assertNotIn(private,got)
+        self.assertEqual(gate.sanitized_page_error('unexpected '+private),
+                         'PAGE_JS_UNCLASSIFIED_ERROR')
+
     def test_archive_case_controls_match_source_images(self):
         # Every lazy archive image belongs to its own real interactive case.
         # A no-JS reader must still receive all three readable case panels.
