@@ -64,3 +64,21 @@
     outline-offset:3px;
   }
 }
+
+/* R63: Honor operating-system contrast settings without relying on brand gold.
+   Component assets remain exactly pinned; this only strengthens the isolated
+   suite's high-contrast link and keyboard-focus affordances. */
+@media screen and (forced-colors: active) {
+  .fv-ex2-apollo-suite a { text-decoration:underline; text-underline-offset:3px; }
+  .fv-ex2-apollo-suite a:focus-visible,
+  .fv-ex2-apollo-suite button:focus-visible,
+  .fv-ex2-apollo-suite summary:focus-visible,
+  .fv-ex2-apollo-suite input:focus-visible {
+    outline:3px solid Highlight;
+    outline-offset:3px;
+  }
+  .fv-ex2-apollo-suite .fv-ex2-apollo-suite__provenance {
+    border-color:CanvasText;
+    forced-color-adjust:auto;
+  }
+}
