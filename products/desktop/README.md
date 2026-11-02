@@ -1,3 +1,7 @@
+## R130 — finite-only private Win11 release evidence (DRAFT / HOLD)
+
+The shared private R109 JSON intake now refuses nonstandard `NaN`, `Infinity` and `-Infinity` tokens, as well as exponent-overflow numbers such as `1e9999`; direct R9 verification rejects nonfinite in-memory smoke durations. SHA-256 custody alone cannot make such values meaningful. [R130 threat model, 18 synthetic regression methods and CI contract](docs/PRIVATE_REVIEW_NONFINITE_JSON_R130.md). Mandatory Linux/Windows normal and `-OO` verification; existing six native candidate build and evidence gates remain. **No physical Windows 11 checks, AV/EDR, signing, gated premium distribution or release authorization. All six apps UNRELEASED.**
+
 ## R129 — Windows 11 reviewer evidence ancestry (DRAFT / RELEASE HOLD)
 
 Direct private R109 source and witness validation now rejects linked/reparse parent directories, checks directory identity before/after file reads, and validates even empty witness-folder ancestry. [R129 path-custody threat model and 16 synthetic tests](docs/PRIVATE_WIN11_PARENT_PATH_CUSTODY_R129.md). Linux/Windows normal and `-OO` source gates are mandatory; no synthetic test certifies human Win11 accessibility, malware clearance, code signing, protected premium delivery, independent QD or founder approval. **All six utilities remain UNRELEASED.**
