@@ -53,7 +53,7 @@ class R61EditorialDecisionTests(unittest.TestCase):
             with self.subTest(issue=entry["number"]):
                 self.assertLessEqual(len(entry["preheader"]),120)
                 self.assertGreaterEqual(len(entry["preheader"]),32)
-        self.assertIn("not verified",self.memo.lower())
+        self.assertIn("may not be controllable",self.memo.lower())
 
     def test_excerpts_are_useful_and_not_empty(self):
         for entry in self.issues:
@@ -118,7 +118,7 @@ class R61EditorialDecisionTests(unittest.TestCase):
         self.assertNotIn("data:",self.board.lower())
 
     def test_board_uses_disabled_future_guide_instead_of_fake_link(self):
-        self.assertEqual(self.board.count("No approved live purchase-guide URL"),2)
+        self.assertEqual(self.board.count('class="disabled"'),2)
         self.assertIn("[[VALID_POSTAL_ADDRESS_REQUIRED]]",self.board)
         self.assertIn("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]",self.board)
 
