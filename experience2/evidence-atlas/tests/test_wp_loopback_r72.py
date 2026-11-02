@@ -34,7 +34,7 @@ class R72LoopbackSafety(unittest.TestCase):
         # created LOCAL WordPress VM. Retain the stronger actual safety rule:
         # every page stays PRIVATE, pattern publication is limited to wp_block,
         # and all mutations occur after the strict local-environment gate.
-        statuses=re.findall(r"'post_type'=>'([^']+)'\\s*,\\s*'post_status'=>'([^']+)'",code)
+        statuses=re.findall(r"'post_type'=>'([^']+)'\s*,\s*'post_status'=>'([^']+)'",code)
         self.assertEqual(statuses.count(('page','private')),3)
         self.assertEqual(statuses.count(('wp_block','publish')),3)
         self.assertEqual(len(statuses),6)
