@@ -200,6 +200,19 @@ def accept(stage,axe,out):
                 assert page.locator('.fv-ex2-ledger__custody dd').count()==30
                 assert page.locator('[data-fva-drawer] dd').count()==54
                 assert page.locator('[data-fva-cite-id]').count()==6
+                # Same six reviewed NASA catalog destinations used by the
+                # independently green R70 editorial browser suite. No images,
+                # geographic points, or unreviewed source substitutions.
+                expected_nasa_links=(
+                  'https://www.nasa.gov/image-detail/apollo-1-crew-honored/',
+                  'https://www.nasa.gov/image-detail/amf-s67-15717/',
+                  'https://www.nasa.gov/image-detail/amf-s66-58038/',
+                  'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/',
+                  'https://www.nasa.gov/image-detail/amf-s67-21294/',
+                  'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/',
+                )
+                assert tuple(x.get_attribute('href') for x in page.locator('.fva-card__external').all())==expected_nasa_links,'NASA_LINK_CUSTODY_HOLD'
+                assert page.locator('.fv-ex2-apollo-suite [data-lat],[data-lon],[data-geo-edge]').count()==0,'UNREVIEWED_GEO_HOLD'
                 assert page.locator('.fv-ex2-apollo-suite img').count()==0
                 ledger.advance('SOURCE_CUSTODY')
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
@@ -215,6 +228,22 @@ def accept(stage,axe,out):
                 if js:
                     assert page.locator('[data-fva-atlas]').get_attribute('data-fva-ready')=='yes'
                     assert page.locator('[data-fva-to-desk]:visible').count()==6
+                    # Exercise native keyboard and real touch/mouse interactions
+                    # in INSTALLED WordPress, rather than checking selectors only.
+                    summary=page.locator('[data-fva-drawer] summary').first
+                    summary.focus()
+                    assert summary.evaluate('e=>document.activeElement===e')
+                    was_open=summary.evaluate('e=>e.parentElement.open')
+                    page.keyboard.press('Enter')
+                    assert summary.evaluate('e=>e.parentElement.open')!=was_open
+                    page.keyboard.press('Enter')
+                    assert summary.evaluate('e=>e.parentElement.open')==was_open
+                    provisional=page.locator('[data-fva-proof-filter="provisional"]')
+                    (provisional.tap() if w<=390 else provisional.click())
+                    assert page.locator('[data-fva-record]:visible').count()==1
+                    reset=page.locator('[data-fva-proof-filter="all"]')
+                    (reset.tap() if w<=390 else reset.click())
+                    assert page.locator('[data-fva-record]:visible').count()==6
                     ledger.advance('INTERACTION')
                     if w in (390,1440):
                         page.add_script_tag(path=str(axe))
@@ -247,6 +276,9 @@ def accept(stage,axe,out):
                 else:
                     assert page.locator('[data-fvx-record]:visible').count()==6
                     assert page.locator('[data-fva-record]:visible').count()==6
+                    page.emulate_media(media='print')
+                    assert page.locator('.fv-ex2-ledger__custody dd:visible').count()==30
+                    assert page.locator('[data-fva-drawer] dd:visible').count()==54
                     ledger.advance('NO_JS_CONTENT')
                 ledger.pass_case()
                 report['cases'].append({'width':w,'js':js,'pass':True})
