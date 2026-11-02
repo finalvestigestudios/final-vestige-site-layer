@@ -1,4 +1,4 @@
-"""R129 exact-method, zero-skip, privacy-redacted Win11 witness regression gate."""
+"""R129 exact-method, zero-skip, privacy-redacted Win11 directory-custody regression gate."""
 from __future__ import annotations
 
 import contextlib
@@ -46,7 +46,7 @@ def main():
     try:
         suite = unittest.defaultTestLoader.discover(
             start_dir=str(ROOT / "tests"),
-            pattern="test_windows11_visible_observations_r129.py")
+            pattern="test_windows11_parent_path_custody_r129.py")
         found = all_names(suite)
         if len(found) != len(REQUIRED) or set(found) != REQUIRED:
             raise ValueError("Missing, duplicate or unexpected test")
