@@ -11,3 +11,20 @@
   .fv-hf.fv-hf--wp .fv-hf__opening-inner{padding-top:clamp(24px,3vw,48px);padding-bottom:clamp(40px,5vw,80px)}
   .fv-hf.fv-hf--wp .fv-hf__opening h1{font-size:clamp(70px,7.6vw,118px)}
 }
+
+/* Anchored chapter headings must clear the sticky chapter nav (55px). inquiry.css and
+   chronicle.css set scroll-margin-top:26px at narrow widths, which parked "Test a claim"
+   under the nav after a tap on mobile. */
+.fv-hf [id^="fv-hf-"],.fv-hf #fv-hf-inquiry{scroll-margin-top:84px}
+
+/* Touch targets: standalone text links were 14-23px tall (WCAG 2.5.8 AA floor is 24px; aim 44px). */
+.fv-hf .fv-hf__text-link,
+.fv-hf .fv-hf__opening-foot a,
+.fv-hf .fv-hf__index-note a,
+.fv-hf .fv-hf__case-source a,
+.fv-hf .fv-hf__method > a,
+.fv-hf .fv-hf__observer a[href^="https://doi.org"],
+.fv-hf .fv-hf__observer-exit a,
+.fv-hf .fv-hf__mind-actions a,
+.fv-hf .fv-hf__exit a,
+.fv-hf details > summary{display:inline-flex;align-items:center;min-height:44px}

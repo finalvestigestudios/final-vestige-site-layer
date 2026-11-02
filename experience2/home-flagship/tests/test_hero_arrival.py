@@ -36,7 +36,7 @@ class ArrivalTests(unittest.TestCase):
         self.assertIn('prefers-reduced-motion:reduce',self.css)
         self.assertIn(':focus-visible',self.css)
     def test_folio_not_hidden_from_accessibility_tree(self):
-        self.assertIn('<aside class="fv-hf__opening-art fv-hf__folio-arrival" aria-label=',self.html)
+        self.assertIn('<div class="fv-hf__opening-art fv-hf__folio-arrival" role="group" aria-label=',self.html)
         self.assertNotIn('aria-hidden="true"><div class="fv-hf__folio-stage"',self.html)
     def test_seven_chapters_and_three_original_pictures(self):
         self.assertEqual(len(re.findall(r'data-fv-archive-img',self.html)),3)
