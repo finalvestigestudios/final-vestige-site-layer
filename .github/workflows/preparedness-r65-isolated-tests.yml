@@ -123,6 +123,8 @@ jobs:
           assert c["frozen_contributor_articles"] == 29
           assert c["six_other_integrated_articles"] == 6
           assert c["integrated_citation_occurrences"] == 1959
+          assert c["original_water_tool_citation_occurrences"] == 7
+          assert c["original_article_citation_occurrences"] == 1952
           assert c["frozen_contributor_citations"] == 1709
           assert c["proposed_contributor_citations_UNREVIEWED"] == 1728
           print(json.dumps(c,sort_keys=True))
