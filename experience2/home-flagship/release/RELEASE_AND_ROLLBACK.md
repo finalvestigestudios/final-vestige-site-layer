@@ -4,7 +4,7 @@
 
 ## What changes (exactly)
 
-**Operation 1 (the release):** `page-sections.replace` on page 6, **block index 1**, `core/html`, replacing the old Studios hero (SHA-1 `1c97fec5cc356a02fb2f51a092f749c81efcd98c`, 4,288 bytes) with `production-change/replacement-block-index1.html` (114,355 bytes; bytes and hashes in `PROPOSED_PRODUCTION_CHANGE.json`). The flagship's CSS and JS travel **inside that block**; no plugin is installed or updated.
+**Operation 1 (the release):** `page-sections.replace` on page 6, **block index 1**, `core/html`, replacing the old Studios hero (SHA-1 `1c97fec5cc356a02fb2f51a092f749c81efcd98c`, 4,288 bytes) with `production-change/replacement-block-index1.html` (108,155 bytes; bytes and hashes in `PROPOSED_PRODUCTION_CHANGE.json`, which is authoritative if this figure ever disagrees). The flagship's CSS and JS travel **inside that block**; no plugin is installed or updated.
 
 **Operation 2 (optional accessibility fix, run only after operation 1 and with fresh lock tokens):** `page-sections.replace` on **block index 2**, the Focus CTA (SHA-1 `abc983ae1b3cf45d35589c7e5366ccc522cb0462`), with `replacement-block-index2.html`, which is identical except the button's `aria-label` is removed so its accessible name equals its visible text (WCAG 2.5.3). Its original was read raw from the page and hashes to the live block hash.
 

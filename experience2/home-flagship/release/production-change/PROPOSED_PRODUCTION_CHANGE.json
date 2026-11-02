@@ -49,9 +49,9 @@
       "expected_content_hash": "7afdb933d2ec68fd993ef015c97a6eb9edfe0576",
       "block_markup_file": "replacement-block-index1.html"
     },
-    "replacement_sha256": "d73124abab24d5f493bca97b9bc8f4f9102c1996df78e299c3a454608a656d6b",
-    "replacement_sha1": "78c845b0e4c7014f1241277cf6ca852e475a1713",
-    "replacement_bytes": 108152
+    "replacement_sha256": "506aa8d9d9d9c3fe7821d8e479dc8857957667f06f5f6ea5432e3f3ad0fbc7c9",
+    "replacement_sha1": "8c0dd5c3adce073fd58f5001e0f90d523ffad277",
+    "replacement_bytes": 108155
   },
   "operation_2_optional": {
     "what": "Focus CTA button: remove aria-label so the accessible name equals the visible text (WCAG 2.5.3)",
@@ -80,7 +80,7 @@
       "id": 6,
       "index": 1,
       "expected_block_type": "core/html",
-      "expected_block_hash": "78c845b0e4c7014f1241277cf6ca852e475a1713",
+      "expected_block_hash": "8c0dd5c3adce073fd58f5001e0f90d523ffad277",
       "block_markup_file": "original-block-index1.html"
     },
     "original_block_sha1_verified_against_live_block_hash": true,
@@ -89,5 +89,5 @@
   "no_plugin_install": true,
   "no_theme_or_navigation_change": true,
   "no_new_pages_in_the_change_itself": true,
-  "unverified_on_wordpress_com": "Whether WordPress.com keeps inline <style>/<script> inside a core/html block on the Personal plan is NOT TESTED: existing blocks already carry <style> and a JSON-LD <script>, but a dry run is required (RELEASE_AND_ROLLBACK.md step 1)."
+  "wordpress_com_verification": "Probe-level only: on private draft 1902 the editor and renderer kept an inline <style>, <script> and <noscript> and stored hazard characters byte-for-byte (block_hash equal to the local SHA-1). The exact replacement block has NOT yet been stored in a draft, and no authenticated WordPress.com render of it has been seen (needs a signed-in browser). See release/dry-run/WORDPRESS_COM_DRAFT_VERIFICATION.md."
 }
