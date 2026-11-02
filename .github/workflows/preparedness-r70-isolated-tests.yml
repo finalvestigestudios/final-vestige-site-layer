@@ -1,0 +1,137 @@
+name: Preparedness R70 Source URL and Citation Custody (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r69-dom-citation-context-hold-20261102]
+    paths:
+      - preparedness/tools/r70_rc_source_url_citation_custody.py
+      - preparedness/tests/test_r70_rc_source_url_citation_custody.py
+      - preparedness/docs/R70_RC_SOURCE_URL_CITATION_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r70-isolated-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r70-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-source-link-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Read-only checkout without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Frozen R69 parent and exact four-file additive review scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "531af57730c9039857df18d9444e0aaedaa4abda"
+          test "$BASE_REF" = "review/preparedness-r69-dom-citation-context-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r70-source-url-citation-link-custody-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r70-changed-paths
+          python -I - <<'PY'
+          from pathlib import Path
+          paths={x.decode() for x in Path('/tmp/r70-changed-paths').read_bytes().split(b'\0') if x}
+          required={
+            'preparedness/tools/r70_rc_source_url_citation_custody.py',
+            'preparedness/tests/test_r70_rc_source_url_citation_custody.py',
+            'preparedness/docs/R70_RC_SOURCE_URL_CITATION_CUSTODY_HOLD.md',
+            '.github/workflows/preparedness-r70-isolated-tests.yml',
+          }
+          assert paths==required,(sorted(paths),sorted(required))
+          print('Four review-only additions; no source, CMS, or homepage edits: PASS')
+          PY
+      - name: Seven Claude contributor and RC reference exact SHA pins
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            'claude/prep-start-bbfeb8':'2122d856fce9f64887c16df3d52e64be9f59a55b',
+            'claude/prep-shelter-5e1e0e':'5daeaf2dd5ab71806a6b73c91edfb1d8df5da976',
+            'claude/prep-food-ccdc55':'f911ff7a655de8d81535ea86ec3d65a49ee76648',
+            'claude/prep-health-837444':'d5ef5bafd68361434dd1cc9209915b8e8a4eaf17',
+            'claude/prep-hist-food-b81f19':'67e116e536c7410bed30f8f3b1bb8c166f3c223d',
+            'claude/prep-hist-home-0e0e38':'7504a5f099594d635e3dd7332a33a2e1346c43a2',
+            'claude/prep-hist-field-9db767':'4e5caf812727953aa45e3bda2d382f2c67b6a09c',
+            'integration/preparedness-release-candidate-20261101':'ddb3528ba6494dada1fa1c3a142ce746e3a67706',
+          }
+          for ref,pin in refs.items():
+              found=subprocess.check_output(['git','rev-parse','--verify',
+                  'refs/remotes/origin/'+ref+'^{commit}'],text=True).strip()
+              assert found==pin,(ref,pin,found)
+          print('Seven contributor and one separate RC source SHA pins: PASS')
+          PY
+      - name: R70 Python syntax
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in ('preparedness/tools/r70_rc_source_url_citation_custody.py',
+                    'preparedness/tests/test_r70_rc_source_url_citation_custody.py'):
+              compile(Path(p).read_text(encoding='utf-8'),p,'exec')
+          print('Syntax PASS')
+          PY
+      - name: R70 synthetic and adversarial tests (36+)
+        run: python -I -m unittest discover -s preparedness/tests -p test_r70_rc_source_url_citation_custody.py -v
+      - name: Exact 244 source and 2173 citation URL review work orders
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          from pathlib import Path
+          import importlib.util,json
+          path=Path('preparedness/tools/r70_rc_source_url_citation_custody.py')
+          spec=importlib.util.spec_from_file_location('r70_ci',path)
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          r=mod.live_report()
+          Path('/tmp/r70-private-summary.json').write_text(json.dumps(
+              {'schema':mod.SCHEMA,'release_state':'HOLD',
+               'fingerprint_sha256':r['fingerprint_sha256'],
+               'counts':r['counts'],'all_publication_clearance':False},
+              sort_keys=True),encoding='utf-8')
+          Path('/tmp/r70-source-review.csv').write_text(mod.csv_tasks(r),encoding='utf-8')
+          Path('/tmp/r70-citation-review.csv').write_text(mod.csv_tasks(r,citations=True),encoding='utf-8')
+          if r['counts']['source_rows_with_structural_URL_blockers']:
+              raise SystemExit('R70 PRIVATE HOLD: structurally unsafe source URLs require human correction')
+          print('One verified live_report reused for all three private outputs: PASS')
+          PY
+          python -I - <<'PY'
+          from pathlib import Path
+          import csv,json
+          r=json.loads(Path('/tmp/r70-private-summary.json').read_text())
+          c=r['counts']
+          assert r['release_state']=='HOLD' and r['all_publication_clearance'] is False
+          assert (c['source_records_conserved'],c['candidate_articles'],
+                  c['candidate_tools'],c['citation_occurrences_conserved'])==(244,35,6,2173),c
+          assert c['human_url_or_claim_checks_performed_BY_R70']==0,c
+          for file,count in (('/tmp/r70-source-review.csv',244),
+                             ('/tmp/r70-citation-review.csv',2173)):
+              with Path(file).open(encoding='utf-8',newline='') as f:
+                  assert sum(1 for _ in csv.DictReader(f))==count
+          print('Private source URL and citation work orders PASS; review/approval HOLD:',json.dumps(c,sort_keys=True))
+          PY
+      - name: Native original-archive validation (machine-only)
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready PRIVATE draft build
+        run: python -I preparedness/tools/build.py
+      - name: Full native Preparedness Python test suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Preserve mandatory release HOLD
+        if: always()
+        run: |
+          echo 'No CMS, WordPress, navigation, merge or publication authority.'
+          echo 'Syntax and source/citation identity do not establish clinical or emergency safety.'
+          echo 'Separate mandatory seven_cluster_git_parity, qualified review and QD remain closed.'
