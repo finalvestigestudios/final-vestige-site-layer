@@ -107,7 +107,7 @@ def html_report(report: dict) -> str:
     rows.append("<tr><th scope='row'>HTML links, count only</th><td>" +
                 str(r["signals"]["html_links_count"]) + "</td></tr>")
     items = "".join("<li>" + escape(b.replace("_", " ").title()) + "</li>" for b in r["blockers"])
-    return """<!doctype html>
+    return ("""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive"><title>Dispatch received MIME | HOLD</title>
 <style>
@@ -133,7 +133,7 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{text-align:le
 <section aria-labelledby="gates"><h2 id="gates">Outstanding release evidence</h2><ol>""" + items + """</ol></section>
 <footer><p class="small">Synthetic fixtures or user-supplied private MIME can generate this same appearance. A reviewer must independently establish actual receipt, sender identity, qualified postal ownership, working opt-out, eligible audience, approved merchant rights and explicit founder approval.</p></footer>
 </main></body></html>
-"""
+""")
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Render a redacted R70 JSON report to local static HTML and text")
