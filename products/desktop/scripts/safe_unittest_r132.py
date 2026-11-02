@@ -26,6 +26,9 @@ EXPECTED = frozenset((
     "test_scaled_entry_bool_is_not_a_count",
     "test_ledger_cancel_events_still_require_no_engine_calls",
     "test_premium_apps_rejected_by_all_three_native_contracts",
+    "test_scaled_access_failure_reports_only_fixed_reason_code",
+    "test_private_exception_text_never_reaches_native_diagnostic",
+    "test_unknown_diagnostic_scope_fails_without_private_details",
 ))
 
 
