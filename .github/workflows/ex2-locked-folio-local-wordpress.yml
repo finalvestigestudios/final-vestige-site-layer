@@ -89,7 +89,7 @@ jobs:
                   out[rel]=z.read(member)
               if 'templates/index.html' not in out or 'style.css' not in out:
                   raise RuntimeError('HOLD: expected Assembler block theme paths missing')
-              if not re.search(r'(?im)^\\s*Theme Name:\\s*Assembler\\s*$',out['style.css'].decode('utf-8')):
+              if 'Theme Name: Assembler' not in [line.strip() for line in out['style.css'].decode('utf-8').splitlines()]:
                   raise RuntimeError('HOLD: theme identity header mismatch')
               if len(out)>4000 or sum(map(len,out.values()))>80*1024*1024:
                   raise RuntimeError('HOLD: theme package exceeds resource limits')
