@@ -112,7 +112,8 @@ def make_html(custody: dict, css: str, js: str) -> str:
             if r['id'] == '01' else 'Identifier displayed in the linked NASA page PIA field.')
         credit = audit_entry['image_credit_as_displayed'] or 'No individual image credit displayed in reviewed metadata.'
         producer = audit_entry['producer_as_displayed'] or 'No producing center displayed in reviewed metadata.'
-        cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" id="fva-record-{q(r['id'])}" tabindex="-1">
+        catalog_state = "provisional" if r["id"] == "01" else "page-displayed"
+        cards.append(f'''<article class="fva-card" data-fva-record data-fva-id="{q(r['id'])}" data-fva-year="{year}" data-fva-catalog-state="{catalog_state}" id="fva-record-{q(r['id'])}" tabindex="-1">
           <div class="fva-card__top"><span>DOCUMENT {q(r['id'])} / 06</span><span>{year} · NASA RECORD</span></div>
           <div class="fva-card__plate" aria-hidden="true"><span>{q(r['catalog'])}</span><b>ARCHIVAL RECORD</b></div>
           {provisional}
@@ -188,6 +189,13 @@ def make_html(custody: dict, css: str, js: str) -> str:
     filters = '\n'.join(f'<button type="button" data-fva-filter="{v}" aria-pressed="{str(v=="all").lower()}">{label}</button>'
                         for v, label in [('all', 'All 6 sources'), ('1966', '1966 · 1 source'),
                                          ('1967', '1967 · 3 sources'), ('2017', '2017 · 2 exhibits')])
+    # Catalog certainty is a *page-metadata* label only, never image clearance.
+    # The filter is optional and must never conceal the complete citation index.
+    catalog_filters = '\n'.join(
+        f'<button type="button" data-fva-proof-filter="{value}" aria-pressed="{str(value=="all").lower()}">{label}</button>'
+        for value, label in [('all', 'All catalog records (6)'),
+                             ('page-displayed', 'Identifier displayed on NASA page (5)'),
+                             ('provisional', 'Provisional association (1)')])
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Apollo 1 Evidence Atlas · Final Vestige Studios · STAGING ONLY</title><style>{css}</style></head>
@@ -224,6 +232,8 @@ def make_html(custody: dict, css: str, js: str) -> str:
   </section>
   <div class="fva-controls" data-fva-controls hidden>
     <div class="fva-filter" role="group" aria-label="Filter photographic-source records by year">{filters}</div>
+    <div class="fva-proof-filter" role="group" aria-label="Filter catalog verification against NASA page metadata">
+      <p>Catalog identifier on linked NASA page (not image-use permission)</p>{catalog_filters}</div>
     <div class="fva-search"><label for="fva-search">Search source descriptions</label><input type="search" id="fva-search" data-fva-search aria-controls="fva-records" autocomplete="off" placeholder="Hatch, rehearsal, Shiflett…" />
       <button type="button" data-fva-reset>Reset filters</button></div>
     <p class="fva-count" data-fva-status role="status" aria-live="polite" aria-atomic="true"></p>

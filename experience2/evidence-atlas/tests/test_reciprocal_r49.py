@@ -32,7 +32,7 @@ class ReciprocalR49(unittest.TestCase):
         for token in ('fetch(', 'navigator.geolocation','data-fva-geo','localStorage'):
             self.assertNotIn(token,self.js)
     def test_version_and_staging_manifest(self):
-        self.assertIn('0.0.56-staging',(HERE/'final-vestige-ex2-evidence-atlas.php').read_text())
+        self.assertIn('0.0.57-staging',(HERE/'final-vestige-ex2-evidence-atlas.php').read_text())
         self.assertIn('fv.ex2.apollo.wp-stage.r49.v1',(HERE/'build_wordpress_stage.py').read_text())
     def test_source_integrity_and_safety(self):
         import tempfile

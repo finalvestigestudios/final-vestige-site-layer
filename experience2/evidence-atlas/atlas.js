@@ -4,6 +4,7 @@
   if(!root||root.dataset.fvaReady==='yes')return;
   const controls=root.querySelector('[data-fva-controls]');
   const buttons=[...root.querySelectorAll('[data-fva-filter]')];
+  const proofButtons=[...root.querySelectorAll('[data-fva-proof-filter]')];
   const cards=[...root.querySelectorAll('[data-fva-record]')];
   const input=root.querySelector('[data-fva-search]');
   const reset=root.querySelector('[data-fva-reset]');
@@ -51,8 +52,9 @@
     deskBacklinks.forEach(link=>link.remove());
     deskBacklinks.length=0;
   };
-  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!exportButton||!exportStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6||deskLinks.length!==6||!deskStatus)return;
+  if(!controls||!input||!reset||!status||!empty||cards.length!==6||buttons.length!==4||proofButtons.length!==3||indexJumps.length!==6||timeJumps.length!==6||!citationList||citations.length!==6||copyButtons.length!==6||citeJumps.length!==6||backLinks.length!==6||!copyStatus||!exportButton||!exportStatus||!compare||!compareStatus||!compareClear||compareSlots.length!==2||compareButtons.length!==6||deskLinks.length!==6||!deskStatus)return;
   let year='all';
+  let proofFilter='all';
   let active=false;
   const selected=[];
   const restore=()=>{
@@ -77,6 +79,7 @@
     desk=null;deskRecords=[];
     root.dataset.fvaReady='';
     if(active){buttons.forEach(b=>b.removeEventListener('click',onFilter));
+      proofButtons.forEach(b=>b.removeEventListener('click',onProofFilter));
       input.removeEventListener('input',apply);
       input.removeEventListener('keydown',onKey);
       reset.removeEventListener('click',onReset);
@@ -91,6 +94,7 @@
   };
   const valid=()=>{
     if(!cards.every((card,i)=>card.dataset.fvaId===expected[i]&&
+        card.dataset.fvaCatalogState===(i===0?'provisional':'page-displayed')&&
         ['1966','1967','2017'].includes(card.dataset.fvaYear)&&
         card.id===`fva-record-${expected[i]}`&&
         indexJumps[i].getAttribute('href')===`#${card.id}`))return false;
@@ -217,11 +221,13 @@
       let count=0;
       cards.forEach(card=>{
         const matchYear=year==='all'||card.dataset.fvaYear===year;
+        const matchProof=proofFilter==='all'||card.dataset.fvaCatalogState===proofFilter;
         const matchText=!query||card.textContent.toLocaleLowerCase().includes(query);
-        card.hidden=!(matchYear&&matchText);
+        card.hidden=!(matchYear&&matchProof&&matchText);
         if(!card.hidden)count++;
       });
       buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fvaFilter===year)));
+      proofButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fvaProofFilter===proofFilter)));
       status.textContent=`${count} of 6 NASA photographic-source records shown`;
       empty.hidden=count!==0;
       return true;
@@ -346,13 +352,14 @@
     }
   };
   const onFilter=event=>{year=event.currentTarget.dataset.fvaFilter;apply();};
-  const onReset=()=>{year='all';input.value='';apply();if(active)input.focus();};
-  const onKey=event=>{if(event.key==='Escape'&&(input.value||year!=='all')){
+  const onProofFilter=event=>{proofFilter=event.currentTarget.dataset.fvaProofFilter;apply();};
+  const onReset=()=>{year='all';proofFilter='all';input.value='';apply();if(active)input.focus();};
+  const onKey=event=>{if(event.key==='Escape'&&(input.value||year!=='all'||proofFilter!=='all')){
     event.preventDefault();onReset();}};
   const revealTarget=target=>{
     // Native anchors are the no-JS fallback. Enhanced browsing must also
     // restore a record concealed by a user-selected filter before focusing it.
-    if(target.hidden){year='all';input.value='';if(!apply())return;}
+    if(target.hidden){year='all';proofFilter='all';input.value='';if(!apply())return;}
     requestAnimationFrame(()=>{if(active)target.focus({preventScroll:true});});
   };
   const onJump=event=>{
@@ -366,6 +373,7 @@
   try{
     if(!valid())throw new Error('Source records missing');
     buttons.forEach(b=>b.addEventListener('click',onFilter));
+    proofButtons.forEach(b=>b.addEventListener('click',onProofFilter));
     input.addEventListener('input',apply);
     input.addEventListener('keydown',onKey);
     reset.addEventListener('click',onReset);
