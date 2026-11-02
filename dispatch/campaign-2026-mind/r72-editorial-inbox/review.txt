@@ -19,9 +19,11 @@ Preheader PLANNING TEXT (not guaranteed Jetpack): One encounter in 1784. Two acc
 CUSTOM EXCERPT PROPOSAL:
 On May 4, 1784, Puységur reported visiting a sick young man; his account appeared in a letter dated May 8. Later descriptions of the encounter do not agree neatly about its duration. More importantly, the surviving text records what its author believed happened—not independent proof that animal magnetism healed anyone. Read the source as a historian would: separate the reported behavior, the explanation attached to it, and the evidence that would test that explanation. Our Puységur archive preserves the unsettling question without pretending the mechanism was established.
 Future single CTA: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
-Review notes: Dates/source-image review required; printed-date/OCR discrepancy not independently settled.
+Review notes: First-edition digitized copy and CIRCEE cross-check locate May 4 report within May 8 letter, but exact printed page image/OCR has not been independently inspected; do not imply proven treatment.
 Source references:
-https://gallica.bnf.fr/
+https://archive.org/details/mmoirespourservi00chas
+https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/
+https://catalogue.bnf.fr/ark:/12148/cb31160297p
 
 ----------------------------------------
 
