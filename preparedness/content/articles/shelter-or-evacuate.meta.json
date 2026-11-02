@@ -3,8 +3,8 @@
   "slug": "shelter-or-evacuate",
   "title": "Shelter in place or evacuate?",
   "h1": "Shelter in place or evacuate: what the specific hazard changes",
-  "dek": "Tornadoes mean shelter, wildfires mean leave early, floods and chemical releases mean it depends. What Ready.gov and the National Weather Service say for each hazard, and how to be ready for either choice.",
-  "description": "Shelter in place or evacuate? What Ready.gov and NWS say for tornadoes, hurricanes, floods, wildfires and chemical incidents, plus evacuation and shelter checklists.",
+  "dek": "Whether to stay or go depends on the hazard, your warning time, where you are and what officials tell your area. What Ready.gov and the National Weather Service say for each hazard, and how to be ready for either choice.",
+  "description": "Shelter in place or evacuate? How the hazard, warning time, location and official orders change the answer, from Ready.gov, CDC and NWS, with checklists for both.",
   "section": "shelter-power",
   "track": "modern",
   "tags": [
@@ -12,8 +12,8 @@
     "Evacuation",
     "Warnings"
   ],
-  "updated": "2026-10-30",
-  "last_checked": "2026-10-29",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
   "recheck": "Immediately if Ready.gov revises any hazard page below, especially the 2023 hazardous-materials page; otherwise at the next quarterly source sweep.",
   "status": {
     "editorial": "drafted",
@@ -27,7 +27,9 @@
   "related": [
     "outage-heat-cold-generators",
     "home-fire-escape-plan",
-    "family-communication-plan"
+    "family-communication-plan",
+    "power-outage-planner",
+    "family-reunification-card"
   ],
   "source_use": {
     "shelter-ready-hurricanes": "Mandatory evacuation zones; interior room or storm shelter for wind; highest level and no closed attic if flooded; six inches / one foot of moving water; surge as leading cause of deaths; not just coastal; FEMA app, EAS and WEA alerts.",
@@ -42,6 +44,8 @@
     "shelter-ready-power-outages": "Go to a community location with power if heat or cold is extreme.",
     "shelter-ready-plan": "Household discussion questions; household-needs checklist.",
     "shelter-ready-plan-locations": "Plan for school, daycare, work; ask about alerts, evacuation and shelter-in-place plans.",
-    "shelter-ready-disabilities": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters."
+    "shelter-ready-disabilities": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters.",
+    "shelter-cdc-chemical-sip": "CDC chemical shelter-in-place: safe-room choice, seal kit, practice, vehicles not airtight, all clear, 'few hours, possibly a few days, or longer' as the possible length of the emergency.",
+    "shelter-cdc-chemical-evac": "Chemical evacuation: follow officials, do not go to separated children unless officials say it is safe, text or call an outside contact, medications for up to a week, some shelters take only service animals."
   }
 }

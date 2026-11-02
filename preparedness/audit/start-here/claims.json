@@ -1,0 +1,1035 @@
+{
+  "_comment": "Hand-authored claim-to-source matrix for the Start Here cluster. 'anchors' are SHORT phrases that must appear in the fetched source text for the automated check to pass (all of them). 'anchors_absent' must NOT appear. The automated check only shows the phrase is present on the page on the run date; it does not show the article paraphrase is faithful. 'basis': direct = agency instruction/figure reproduced; synthesis = our combination of several sources; interpretation = our reading of an ambiguous source; editorial = our own reasoning with no source. 'review' says who must look at it before publication.",
+  "claims": [
+    {
+      "id": "C01",
+      "article": "household-emergency-plan",
+      "claim": "Ready.gov's first planning step is five questions (alerts, shelter, evacuation route, communication plan, kit update).",
+      "source": "start-ready-plan",
+      "anchors": [
+        "How will I receive emergency alerts and warnings",
+        "Do I need to update my"
+      ],
+      "location": "Step 1: Meet with Your Family",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Page re-fetched in full each run.",
+      "review": "editorial"
+    },
+    {
+      "id": "C02",
+      "article": "household-emergency-plan",
+      "claim": "Household factors to consider include access and functional needs, languages, pets/service animals, school-aged children.",
+      "source": "start-ready-plan",
+      "anchors": [
+        "Disabilities or access and functional needs",
+        "Languages spoken",
+        "Pets or service animals",
+        "Households with school-aged children"
+      ],
+      "location": "Step 2: Assess Your Household Needs",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "The 'question to answer' prompts in our table are editorial.",
+      "review": "editorial"
+    },
+    {
+      "id": "C03",
+      "article": "household-emergency-plan",
+      "claim": "When something happens without warning: assess the situation, then decide whether to stay or change location; follow local authorities.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "Assess the Situation",
+        "Decide to Stay or Change Location",
+        "follow the orders and advice of local"
+      ],
+      "location": "Basic Protective Actions for all Disasters; Make an Evacuation and Shelter Plan",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "September 2020 edition; older than the Ready.gov web pages. The article's 'first hour' bullet list is editorial and flagged as such.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C04",
+      "article": "household-emergency-plan",
+      "claim": "Choose an out-of-state contact reachable two ways; carry a wallet or digital copy of the plan.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "out-of-state point of contact",
+        "at least two",
+        "wallet card"
+      ],
+      "location": "Create a Family Emergency Communication Plan",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "PDF text extraction; 'two forms of contact' wording spans a line break.",
+      "review": "editorial"
+    },
+    {
+      "id": "C05",
+      "article": "household-emergency-plan",
+      "claim": "FEMA says practicing the communication plan is vital, just like a fire drill; it lists a regular practice schedule and one-year timeline.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "just like you would a fire drill",
+        "Practice Your Disaster Plans",
+        "Test your evacuation and shelter"
+      ],
+      "location": "Create a Family Emergency Communication Plan; Practice Your Disaster Plans",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "No study of effectiveness is cited by the source; the article says so.",
+      "review": "editorial"
+    },
+    {
+      "id": "C06",
+      "article": "household-emergency-plan",
+      "claim": "Wireless Emergency Alerts need no subscription or charge; older phones may not be capable.",
+      "source": "start-ready-alerts",
+      "anchors": [
+        "no need to subscribe",
+        "Older phones may not be WEA capable"
+      ],
+      "location": "Wireless Emergency Alerts",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C07",
+      "article": "household-emergency-plan",
+      "claim": "NOAA Weather Radio broadcasts around the clock; FEMA does not review or approve local alerts.",
+      "source": "start-ready-alerts",
+      "anchors": [
+        "24 hours a day, seven days a week",
+        "FEMA does not review, edit or approve alerts"
+      ],
+      "location": "NOAA Weather Radio; IPAWS",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C08",
+      "article": "household-emergency-plan",
+      "claim": "Text messages will often go through when a phone call will not; identify at least two meeting places.",
+      "source": "start-cdc-pyh-connected",
+      "anchors": [
+        "text messages will go through when a phone call may not",
+        "at least two (2) emergency meeting places"
+      ],
+      "location": "The Basics",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Page reviewed April 2024.",
+      "review": "editorial"
+    },
+    {
+      "id": "C09",
+      "article": "household-emergency-plan",
+      "claim": "Keep a small amount of cash in small bills; ATMs and cards may not work.",
+      "source": "start-ready-financial",
+      "anchors": [
+        "small amount of cash",
+        "small bills",
+        "ATMs and credit cards may not work"
+      ],
+      "location": "Financial Preparedness Tips, item 2",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "No source gives a dollar figure; the article says so.",
+      "review": "editorial"
+    },
+    {
+      "id": "C10",
+      "article": "household-emergency-plan",
+      "claim": "FEMA 2020: refresh supplies at least every six months / check needs every six months.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "check your needs every six months",
+        "every six months"
+      ],
+      "location": "Gather Emergency Supplies; Practice Your Disaster Plans",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Conflicts with C11 (annual).",
+      "review": "editorial"
+    },
+    {
+      "id": "C11",
+      "article": "household-emergency-plan",
+      "claim": "Ready.gov 2026 kit page: re-think your needs every year.",
+      "source": "start-ready-kit",
+      "anchors": [
+        "Re-think your needs every year"
+      ],
+      "location": "Maintaining Your Kit",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Conflicts with C10 and C12; our reconciliation (contents every 6 months, plan yearly) is editorial.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C12",
+      "article": "household-emergency-plan",
+      "claim": "CDC: check kits every six months; review plan every year.",
+      "source": "start-cdc-disability-kit",
+      "anchors": [
+        "Check emergency kits every 6 months"
+      ],
+      "location": "Tips to consider",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Disability-focused page.",
+      "review": "editorial"
+    },
+    {
+      "id": "C13",
+      "article": "household-emergency-plan",
+      "claim": "Deaf or hard-of-hearing alert path: weather radio with text display and flashing alert.",
+      "source": "start-ready-disability",
+      "anchors": [
+        "Weather radio (with text display and a flashing alert)"
+      ],
+      "location": "Tips for People Who are Deaf or Hard of Hearing",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C14",
+      "article": "household-emergency-plan",
+      "claim": "Simulated-outage drill: use only nonessential lights and devices; keep refrigeration, alarms, sump pumps, security and medical equipment on; never flip the main breaker.",
+      "source": null,
+      "anchors": [],
+      "location": "n/a",
+      "basis": "editorial",
+      "confidence": "n/a",
+      "limits": "Our own safety design; no agency source supports a household outage drill procedure.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C15",
+      "article": "household-emergency-plan",
+      "claim": "Ask schools how they communicate, shelter, evacuate and reunite families.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "plans to reunite families",
+        "schools and daycare centers have emergency"
+      ],
+      "location": "Know Local Plans and Resources",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C20",
+      "article": "three-day-kit",
+      "claim": "CDC water baseline: at least 1 gallon per person per day for at least 3 days; try for 2 weeks.",
+      "source": "cdc-water-store",
+      "anchors": [
+        "1 gallon",
+        "3 days"
+      ],
+      "location": "Water supply amounts",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Verified in the water cluster; re-checked here for presence only.",
+      "review": "editorial"
+    },
+    {
+      "id": "C21",
+      "article": "three-day-kit",
+      "claim": "FEMA 2020 guide: keep one gallon of water per person per day; depending on where you live you may wish to keep 3, 7 or even 14 days.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "3, 7, or even 14 days"
+      ],
+      "location": "Gather Emergency Supplies",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C21b",
+      "article": "three-day-kit",
+      "claim": "FEMA 2020 guide frames being prepared as supplies to last at least 72 hours, and says most recommended items are inexpensive and easy to find.",
+      "source": "ready-are-you-ready",
+      "anchors": [],
+      "manual_evidence": "Seen in the Firecrawl PDF parse of 2026-10-29 ('Being prepared means having your own food, water, and other supplies to last for at least 72 hours. Most of the items recommended for a disaster supply kit are inexpensive and easy to find'). pdftotext does not extract this call-out box from the live PDF, so the automated check cannot confirm it.",
+      "location": "Gather Emergency Supplies (call-out box)",
+      "basis": "direct",
+      "confidence": "medium",
+      "limits": "Not reproduced by the automated tool; needs a human to confirm on the rendered PDF page.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C22",
+      "article": "three-day-kit",
+      "claim": "Basic kit list items (radio with NOAA tone alert, flashlight, first aid kit, whistle, can opener, local maps, phone charger).",
+      "source": "start-ready-kit",
+      "anchors": [
+        "NOAA Weather Radio with tone alert",
+        "Whistle (to signal for help)",
+        "Manual can opener",
+        "Local maps"
+      ],
+      "location": "Basic Disaster Supplies Kit",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C23",
+      "article": "three-day-kit",
+      "claim": "Store at least a several-day supply of non-perishable food; choose foods your family will eat; remember dietary needs.",
+      "source": "start-ready-food",
+      "anchors": [
+        "at least a several-day supply of non-perishable food",
+        "Choose foods your family will eat",
+        "special dietary needs"
+      ],
+      "location": "Suggested Emergency Food Supplies",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C24",
+      "article": "three-day-kit",
+      "claim": "Do not eat from swollen, dented or corroded cans.",
+      "source": "start-ready-food",
+      "anchors": [
+        "swollen, dented or corroded"
+      ],
+      "location": "Food Safety and Sanitation: Don't",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C25",
+      "article": "three-day-kit",
+      "claim": "Refrigerator keeps food cold about four hours if unopened; full freezer about 48 hours.",
+      "source": "start-ready-power",
+      "anchors": [
+        "about four hours",
+        "about 48 hours"
+      ],
+      "location": "Food Storage",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C26",
+      "article": "three-day-kit",
+      "claim": "Ready.gov: discard perishable food that has been above 40 F for two hours or more.",
+      "source": "start-ready-power",
+      "anchors": [
+        "40 degrees or higher for two hours or more"
+      ],
+      "location": "Returning After A Power Outage",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Different condition from C27; see C28.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C27",
+      "article": "three-day-kit",
+      "claim": "FEMA Dec 2023 sheet: throw away refrigerated food exposed to 40 F or higher for more than 4 hours.",
+      "source": "start-fema-power-sheet",
+      "anchors": [
+        "more than 4 hours"
+      ],
+      "location": "Be Safe After (page 1)",
+      "basis": "direct",
+      "confidence": "medium",
+      "limits": "Wording differs from USDA, which applies 4 hours to how long a closed refrigerator stays safely cold and 2 hours to food held above 40 F. The sheet does not say it intends to change the 2-hour rule.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C28",
+      "article": "three-day-kit",
+      "claim": "USDA FSIS separates two conditions: refrigerator keeps food safe about 4 hours unopened; perishable food above 40 F for 2 hours should be discarded.",
+      "source": "start-fsis-emergency-food",
+      "anchors": [
+        "safely cold for about 4 hours if it is unopened",
+        "above 40",
+        "for over 2 hours"
+      ],
+      "location": "Q&A on thawed food and power off",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Page text fetched; the article states both FEMA wordings and the USDA clarification and does not declare an official universal rule.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C29",
+      "article": "three-day-kit",
+      "claim": "FEMA Dec 2023 sheet: replace refrigerated medications if power is out a day or more unless the label says otherwise; call your doctor or pharmacist; use the medicine only until you have a new supply.",
+      "source": "start-fema-power-sheet",
+      "anchors": [
+        "Replace refrigerated medications if the power is out for a day or more",
+        "Call your doctor or pharmacist",
+        "Only use the medicine until you have a new supply"
+      ],
+      "location": "Be Safe After (page 1)",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Page 1 of a 34-page file; other pages not extractable. The article never tells readers to stop, discard, ration or keep using a medicine; it routes them to the prescriber or pharmacist.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C30",
+      "article": "three-day-kit",
+      "claim": "FEMA 2020 guide: if power is out more than a day, discard any medication that should be refrigerated unless the label says otherwise.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "discard any medication that should be refrigerated"
+      ],
+      "location": "Power Outage section",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Older wording; the article presents it as superseded in tone by the 2023 sheet but does not choose between them for the reader.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C31",
+      "article": "three-day-kit",
+      "claim": "Ready.gov power page: talk to your medical provider; find out how long medication can be stored at higher temperatures.",
+      "source": "start-ready-power",
+      "anchors": [
+        "how long medication can be stored at higher temperatures"
+      ],
+      "location": "Know Your Medical Needs",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "The same page also repeats a discard instruction.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C32",
+      "article": "three-day-kit",
+      "claim": "Medicine supply durations differ: several days (Ready.gov), 1 week (CDC disability), 2 weeks (CDC family), 30 days (Red Cross).",
+      "source": "start-ready-disability",
+      "anchors": [
+        "Several days supply of prescription medicines"
+      ],
+      "location": "Additional Items",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Companion claims C32b-d. The article chooses no universal number.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C32b",
+      "article": "three-day-kit",
+      "claim": "CDC disability kit: at least one week's supply of prescription medications.",
+      "source": "start-cdc-disability-kit",
+      "anchors": [
+        "At least 1 week's supply of all prescription medications"
+      ],
+      "location": "Tips to consider",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Disability-focused.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C32c",
+      "article": "three-day-kit",
+      "claim": "CDC family checklist: prescription medications at least a two-week supply.",
+      "source": "start-cdc-family-kit",
+      "anchors": [
+        "at least 2 weeks supply"
+      ],
+      "location": "Essential Items",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Pregnancy, infants and children checklist.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C32d",
+      "article": "three-day-kit",
+      "claim": "Red Cross older adults: keep at least 30 days of medications.",
+      "source": "start-redcross-older-adults",
+      "anchors": [
+        "at least 30 days of medications"
+      ],
+      "location": "Gather Your Supplies",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Nonprofit; directed at older adults.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C33",
+      "article": "three-day-kit",
+      "claim": "Generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; never heat a home with a gas stovetop or oven.",
+      "source": "start-ready-power",
+      "anchors": [
+        "at least 20 feet away from windows",
+        "Never use a gas stovetop or oven to heat your home"
+      ],
+      "location": "Using Appliances During Power Outages; Generator Safety",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Twenty feet is the stated minimum distance, not site-specific safety; the article says so and points to maker's instructions and CO alarms.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C34",
+      "article": "three-day-kit",
+      "claim": "FEMA 2023: 20 feet from building openings; never use a gas stovetop, oven, grill or dryer to heat a home; do not run a vehicle in a garage.",
+      "source": "start-fema-power-sheet",
+      "anchors": [
+        "at least 20 feet away from any building openings",
+        "Never use a gas stovetop, oven, grill or dryer",
+        "Don't leave a vehicle running inside a garage"
+      ],
+      "location": "Survive During (page 1)",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Same limits as C33.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C34b",
+      "article": "three-day-kit",
+      "claim": "CDC: never run a generator or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent.",
+      "source": "start-cdc-power-outage",
+      "anchors": [
+        "less than 20 feet from any window, door, or vent"
+      ],
+      "location": "Carbon monoxide poisoning",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Minimum distance, not a guarantee of safety at a given site; CDC's CO basics page words it 'more than 20 feet', Ready.gov 'at least 20 feet'. The article states the distance as the agencies' stated minimum.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C35",
+      "article": "three-day-kit",
+      "claim": "Charcoal grills and camp stoves are for outdoor use only.",
+      "source": "start-ready-food",
+      "anchors": [
+        "for outdoor use only"
+      ],
+      "location": "Cooking",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C36",
+      "article": "three-day-kit",
+      "claim": "Mask wording differs: dust mask (Ready.gov) vs fit-tested N95 (FEMA 2020).",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "N95 respirator masks",
+        "fit test each mask"
+      ],
+      "location": "Gather Emergency Supplies",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Companion claim C36b.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C36b",
+      "article": "three-day-kit",
+      "claim": "Ready.gov kit lists a dust mask to help filter contaminated air.",
+      "source": "start-ready-kit",
+      "anchors": [
+        "Dust mask (to help filter contaminated air)"
+      ],
+      "location": "Basic Disaster Supplies Kit",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C37",
+      "article": "three-day-kit",
+      "claim": "Shut off utilities only if home damaged and told to; learn how beforehand.",
+      "source": "ready-are-you-ready",
+      "anchors": [
+        "If there is damage to your home and you are told to do so",
+        "Learn how to do this before a disaster"
+      ],
+      "location": "evacuation checklist",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "The article restricts the instruction to FEMA's stated conditions.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C38",
+      "article": "three-day-kit",
+      "claim": "Low-cost: garage sales and thrift stores for camping gear, tools, cookware; older clothing that fits.",
+      "source": "start-ready-low-cost",
+      "anchors": [
+        "garage sales and thrift stores",
+        "older clothing that still fits"
+      ],
+      "location": "English graphic caption",
+      "basis": "direct",
+      "confidence": "medium",
+      "limits": "Read from graphic caption text on a collection page.",
+      "review": "editorial"
+    },
+    {
+      "id": "C39",
+      "article": "three-day-kit",
+      "claim": "Store kit in airtight bags in one or two easy-to-carry containers; kits for home, work (24 hours) and car.",
+      "source": "start-ready-kit",
+      "anchors": [
+        "airtight plastic bags",
+        "one or two easy-to-carry containers",
+        "at least 24 hours"
+      ],
+      "location": "Basic Disaster Supplies Kit; Kit Storage Locations",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C40",
+      "article": "go-bags",
+      "claim": "Prepare a go-bag to carry on foot or public transport; everyone knows where it is and who is responsible.",
+      "source": "start-ready-evacuation",
+      "anchors": [
+        "Build a go-bag with all the essentials",
+        "who is responsible for it",
+        "on foot or public transportation"
+      ],
+      "location": "Know What to Bring; Before an Evacuation",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Ready.gov gives no go-bag list or weight; the portable-share framing is editorial.",
+      "review": "editorial"
+    },
+    {
+      "id": "C41",
+      "article": "go-bags",
+      "claim": "Keep a half tank of gas at all times; one car per family.",
+      "source": "start-ready-evacuation",
+      "anchors": [
+        "Keep a half tank of gas",
+        "one car per family"
+      ],
+      "location": "Before an Evacuation",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C42",
+      "article": "go-bags",
+      "claim": "Evacuation checklist: sturdy shoes, leave a note, follow routes, do not drive into flooded areas, unplug small equipment but leave fridge/freezer plugged in unless flooding risk.",
+      "source": "start-ready-evacuation",
+      "anchors": [
+        "Leave a note",
+        "Do not drive into flooded areas",
+        "unless there is a risk of flooding"
+      ],
+      "location": "During an Evacuation",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C43",
+      "article": "go-bags",
+      "claim": "CDC lists infant pain reliever with acetaminophen with no dosing, age or weight guidance on the page.",
+      "source": "start-cdc-infant-checklist",
+      "anchors": [
+        "Infant pain reliever with acetaminophen"
+      ],
+      "anchors_absent": [
+        "dosage",
+        "dosing",
+        "mg/kg",
+        "per pound"
+      ],
+      "location": "For all families of infants and young children",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Absence check covers only the page text; the CDC PDF version was not read. The article tells readers not to dose without the pediatrician.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C44",
+      "article": "go-bags",
+      "claim": "Starred items may not be safe in certain emergencies; do not use them if they cannot be cleaned with safe water and soap.",
+      "source": "start-cdc-infant-checklist",
+      "anchors": [
+        "may not be safe in certain emergencies",
+        "If you cannot clean these items appropriately with safe water and soap, do not use them"
+      ],
+      "location": "Important safety information",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Which six items carry asterisks was checked by hand on 2026-10-30 (asterisks are not preserved in the automated text).",
+      "review": "human-safety"
+    },
+    {
+      "id": "C45",
+      "article": "go-bags",
+      "claim": "Ready-to-feed formula is the safest formula option in an emergency; powder needs extra care.",
+      "source": "start-cdc-infant-checklist",
+      "anchors": [
+        "Ready-to-feed infant formula is the safest option",
+        "extra care must be taken"
+      ],
+      "location": "For families feeding their child any formula",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Article does not give formula preparation steps.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C46",
+      "article": "go-bags",
+      "claim": "CDC pregnancy list includes emergency birth supplies; the article presents this as context only.",
+      "source": "start-cdc-family-kit",
+      "anchors": [
+        "Emergency birth supplies"
+      ],
+      "location": "If pregnant add",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Not clinically reviewed by us; article gives no instruction.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C47",
+      "article": "go-bags",
+      "claim": "ID tags, wristbands, memorized numbers and family photos for children.",
+      "source": "start-cdc-family-kit",
+      "anchors": [
+        "Simple ID tags",
+        "Wearable identification",
+        "memorize important names and phone numbers"
+      ],
+      "location": "For a young child (1-5 years)",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C48",
+      "article": "go-bags",
+      "claim": "Pets: two kits (shelter and lightweight evacuation); pets evacuate with you; buddy system; microchip.",
+      "source": "ready-pets",
+      "anchors": [
+        "Have two kits",
+        "your pet should evacuate too",
+        "buddy system",
+        "microchipped"
+      ],
+      "location": "Make a Plan; Build a Kit",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "No per-animal quantities; article says so.",
+      "review": "editorial"
+    },
+    {
+      "id": "C49",
+      "article": "go-bags",
+      "claim": "Power wheelchair users: lightweight manual chair, spare battery, patch kit, air pump, cushion.",
+      "source": "start-ready-disability",
+      "anchors": [
+        "lightweight manual chair",
+        "extra battery for a power wheelchair",
+        "portable air pump"
+      ],
+      "location": "Tips for People with a Mobility Disability",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C50",
+      "article": "go-bags",
+      "claim": "Accessible transport may not be available in an emergency; shelters must be ADA accessible and allow service animals; emotional support animals under the Fair Housing Amendments Act.",
+      "source": "start-cdc-disability-evacuate",
+      "anchors": [
+        "may not be available in an emergency",
+        "Shelters must allow service animals",
+        "required to allow emotional support animals"
+      ],
+      "location": "Sheltering and Evacuating",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "This is the CDC's statement of law, not independently checked against statute.",
+      "review": "human-legal"
+    },
+    {
+      "id": "C51",
+      "article": "go-bags",
+      "claim": "ACL offers a Medical Information Card and Communication Assistance Card.",
+      "source": "start-acl-emergency",
+      "anchors": [
+        "Medical Information Card",
+        "Communication Assistance Card"
+      ],
+      "location": "Individual Preparedness",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Cards not opened.",
+      "review": "editorial"
+    },
+    {
+      "id": "C60",
+      "article": "preparedness-real-households",
+      "claim": "USFA fire guidance: know exits, practice route, do not use elevators during a fire, close stair doors, call 911.",
+      "source": "start-usfa-high-rise",
+      "anchors": [
+        "Do not use elevators during a fire",
+        "Practice your exit route",
+        "Call 911"
+      ],
+      "location": "Key messages; If a fire occurs",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Fire only.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C61",
+      "article": "preparedness-real-households",
+      "claim": "USFA: person who cannot self-evacuate should call 911 and be prepared to shelter in place (door closed, wet towel), or wait on a clear stair landing.",
+      "source": "start-usfa-high-rise",
+      "anchors": [
+        "cannot self-evacuate",
+        "wet towel to seal the cracks",
+        "stair landing"
+      ],
+      "location": "Additional considerations",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Page is about fires in tall buildings; article marks it fire-only and building-specific, and tells readers to follow the 911 dispatcher.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C62",
+      "article": "preparedness-real-households",
+      "claim": "HUD template is an optional owner-facing model; disclaims reflecting HUD's official position; lists an evacuation special assistance form.",
+      "source": "start-hud-multifamily-template",
+      "anchors": [
+        "do not necessarily reflect the official position",
+        "Evacuation Special Assistance Form"
+      ],
+      "location": "Disclaimer; Table of Contents",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Only pages 1-12 of 79 read. No legal or program duty is claimed.",
+      "review": "human-legal"
+    },
+    {
+      "id": "C63",
+      "article": "preparedness-real-households",
+      "claim": "FEMA eligibility conditions as printed; Serious Needs is not reimbursement for power loss or food; apply at disasterassistance.gov or 1-800-621-3362.",
+      "source": "start-fema-housing",
+      "anchors": [
+        "U.S. citizen, non-citizen national, or qualified alien",
+        "declared disaster",
+        "not a form of reimbursement for loss of power or replacing food",
+        "1-800-621-3362"
+      ],
+      "location": "How FEMA Can Help You; Who May Receive FEMA Assistance",
+      "basis": "direct",
+      "confidence": "medium",
+      "limits": "Conditions change and depend on the declaration; the Individual Assistance Program and Policy Guide was not read. No immigration or legal advice is given.",
+      "review": "human-legal"
+    },
+    {
+      "id": "C64",
+      "article": "preparedness-real-households",
+      "claim": "Ready.gov: get property (homeowners or renters) insurance; homeowners insurance does not typically cover flooding.",
+      "source": "start-ready-financial",
+      "anchors": [
+        "(homeowners or renters)",
+        "does not typically cover flooding"
+      ],
+      "location": "Financial Preparedness Tips, item 3",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Says nothing about renters flood coverage; article tells readers to ask their insurer.",
+      "review": "human-legal"
+    },
+    {
+      "id": "C65",
+      "article": "preparedness-real-households",
+      "claim": "Red Cross older adults: plan to stay home at least two weeks or evacuate; two ways out of every room; sign up for local registries.",
+      "source": "start-redcross-older-adults",
+      "anchors": [
+        "Plan to stay home for at least two weeks",
+        "two ways out of every room",
+        "local registries"
+      ],
+      "location": "Develop Your Plan",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Nonprofit.",
+      "review": "editorial"
+    },
+    {
+      "id": "C66",
+      "article": "preparedness-real-households",
+      "claim": "ACL: about half of people 65+ have two or more chronic conditions; Eldercare Locator 1-800-677-1116; Disaster Distress Helpline 1-800-985-5990.",
+      "source": "start-acl-emergency",
+      "anchors": [
+        "approximately half of those 65 and older",
+        "1-800-677-1116",
+        "1-800-985-5990"
+      ],
+      "location": "Opening paragraph; resource lists",
+      "basis": "direct",
+      "confidence": "medium",
+      "limits": "Numbers as printed on the ACL page; not called.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C67",
+      "article": "preparedness-real-households",
+      "claim": "Ready.gov: priority power restoration list; voluntary local registries; know more than one dialysis facility.",
+      "source": "start-ready-disability",
+      "anchors": [
+        "priority power restoration",
+        "voluntary registries",
+        "more than one facility"
+      ],
+      "location": "Make a Plan",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "No source promises a response from such lists.",
+      "review": "editorial"
+    },
+    {
+      "id": "C68",
+      "article": "preparedness-real-households",
+      "claim": "Heat: older adults and people with disabilities may be at increased risk; ask utility for priority access.",
+      "source": "start-ready-disability",
+      "anchors": [
+        "increased risk to extreme heat",
+        "priority access in the event of power loss"
+      ],
+      "location": "People Experiencing Extreme Heat",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C69",
+      "article": "preparedness-real-households",
+      "claim": "Direct deposit or Direct Express protects benefits when mail is disrupted.",
+      "source": "start-ready-financial",
+      "anchors": [
+        "Direct Express",
+        "disrupt mail service"
+      ],
+      "location": "Get Your Benefits Electronically",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C70",
+      "article": "preparedness-real-households",
+      "claim": "Older adults: support-network member should have a key and know how to use lifesaving equipment or give medicine; ask clinics about their emergency plans.",
+      "source": "start-ready-older-adults",
+      "anchors": [
+        "extra key",
+        "back-up service providers"
+      ],
+      "location": "Make a Plan",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "None.",
+      "review": "editorial"
+    },
+    {
+      "id": "C71",
+      "article": "preparedness-real-households",
+      "claim": "The 'free to costly' ordering of preparedness steps and the 'who to ask' table.",
+      "source": null,
+      "anchors": [],
+      "location": "n/a",
+      "basis": "editorial",
+      "confidence": "n/a",
+      "limits": "Our own synthesis, labeled as such.",
+      "review": "editorial"
+    },
+    {
+      "id": "C72",
+      "article": "household-emergency-plan",
+      "claim": "Worked example of a first hour (Marcus, Dana, Priya): invented, labeled as such; uses only steps the cited sources support.",
+      "source": null,
+      "anchors": [],
+      "location": "n/a",
+      "basis": "editorial",
+      "confidence": "n/a",
+      "limits": "Illustrative only; names and circumstances are invented. A reviewer should confirm no example reads as an instruction.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C73",
+      "article": "three-day-kit",
+      "claim": "Worked example of building a kit over six grocery trips on a small budget: invented, labeled; staging is editorial.",
+      "source": null,
+      "anchors": [],
+      "location": "n/a",
+      "basis": "editorial",
+      "confidence": "n/a",
+      "limits": "Illustrative only; names and circumstances are invented. A reviewer should confirm no example reads as an instruction.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C74",
+      "article": "go-bags",
+      "claim": "Worked example of an older adult, a granddaughter and a cat preparing to leave: invented, labeled; no source claims are added beyond those cited.",
+      "source": null,
+      "anchors": [],
+      "location": "n/a",
+      "basis": "editorial",
+      "confidence": "n/a",
+      "limits": "Illustrative only; names and circumstances are invented. A reviewer should confirm no example reads as an instruction.",
+      "review": "human-safety"
+    },
+    {
+      "id": "C75",
+      "article": "preparedness-real-households",
+      "claim": "Worked example of a fifth-floor renter who uses a power wheelchair: invented, labeled; every step is a question to ask or a source-backed action.",
+      "source": null,
+      "anchors": [],
+      "location": "n/a",
+      "basis": "editorial",
+      "confidence": "n/a",
+      "limits": "Illustrative only; names and circumstances are invented. A reviewer should confirm no example reads as an instruction.",
+      "review": "human-safety"
+    }
+  ]
+}

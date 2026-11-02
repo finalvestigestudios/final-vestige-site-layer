@@ -91,3 +91,16 @@ Commands run from the repo root, with actual results:
 * The Wellcome Collection records for Chadwick's report and Blane's *Observations* (HTTP 429; not cited) and the NCBI Bookshelf historical note (blocked; not cited).
 
 **All 27 sources in `hist-home.json` remain `human_link_check: false`.** No page has had a human click-through.
+
+## Update 2026-11-01
+
+* The Wellcome Collection record for Chadwick's 1842 report (works/vgy8svyj) loaded on an ordinary retry (the earlier HTTP 429 was a rate limit). It is now source `hist-home-wellcome-chadwick-1842` (`primary-digitized`, catalogue record only; the 546-image report was not read) and is cited once in `sanitation-before-germ-theory`. The Blane *Observations* record (works/unn6mqpb) was not retried and remains uncited. The source count is now 28; all remain `human_link_check: false`.
+* Decision recorded: NPS and Monticello pages stay `museum` (chosen in chat, 2026-11-01).
+
+## Update 2026-11-01 (Simmons text read)
+
+* **The Simmons book text was read, with limits.** The Library of Congress page has no book text and the Internet Archive facsimile is a restricted lending item. The openly readable text is Michigan State University Libraries' Feeding America transcription of the **1798 printing** (Hartford, printed for Simeon Butler, Northampton), not the 1796 edition the Library catalogues. It is recorded as source `hist-home-msu-simmons-1798` (`primary-digitized`; source count now 29). It was fetched by a plain HTTP request for the repository's published full-text file (about 82,000 characters) after a Firecrawl extraction returned only a summary, then searched by keyword and read in the pickle, preserve, cellar and pea passages. It was not read cover to cover. No claim is made that the 1796 printing reads the same.
+* **What it added to `pickling-fermentation-old-recipes`:** pickle directions (cucumbers, melons made into "mangoes", barberries) judge brine strength by a household test and give no reason or acidity check; one direction keeps green peas, a low-acid vegetable, in fat-sealed bottles with no heating step described, which contradicts the CDC's statement that pressure canning is the only recommended home method for low-acid foods. The page describes this only as far as needed to say it is unsafe and gives none of its details. Brass and bell-metal vessels appear in cooking and preserving directions with no warning in the transcription; no source we read evaluates that, so the page draws no conclusion.
+* **What it added to `root-cellars-cool-storage`:** the 1798 text tells the cook to keep potatoes from frost and dampness through the winter in the cellar, to set butter in the coldest part of the cellar or the ice-house, and says parsnips may be left in the ground over winter. The page notes a difference of emphasis with the Extension chart (dampness versus 80 to 90 percent relative humidity) without reconciling it.
+* The words "poison", "verdigris", "copper" and "lead" do not occur in the transcription searched (OCR or transcription errors could hide a word).
+* For the reviewer: the pea paragraph in `pickling-fermentation-old-recipes` should be checked to confirm it does not read as instructions.

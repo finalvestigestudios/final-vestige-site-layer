@@ -7,22 +7,41 @@
   "description": "How ships, forts and towns tried to stay healthy under miasma theory, what the records show, and what current CDC guidance says about handwashing and clean water.",
   "section": "lost-ways",
   "track": "lost-ways",
-  "tags": ["Sanitation", "Miasma", "Naval hygiene", "Public health"],
-  "updated": "2026-10-30",
-  "last_checked": "2026-10-30",
-  "recheck": "When the Wellcome Collection records for Chadwick's report and Blane's Observations (rate-limited when we tried) are read, or if the CDC revises its handwashing page.",
-  "status": {"editorial": "drafted", "publish": "draft"},
-  "safety_review": {"state": "not-required", "reviewer": null, "date": null, "scope": "Not gated in the taxonomy. Contains a current handwashing statement and a modern verdict panel that a human reviewer should still read before publication."},
-  "related": ["water-purification-through-history", "water-advisories-explained", "making-water-safer", "salt-beef-salt-pork-age-of-sail"],
+  "tags": [
+    "Sanitation",
+    "Miasma",
+    "Naval hygiene",
+    "Public health"
+  ],
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
+  "recheck": "When the Wellcome Collection record for Blane's Observations (rate-limited when we tried) is read, when Chadwick's 1842 report itself is read, or if the CDC revises its handwashing page.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "not-required",
+    "reviewer": null,
+    "date": null,
+    "scope": "Not gated in the taxonomy. Contains a current handwashing statement and a modern verdict panel that a human reviewer should still read before publication."
+  },
+  "related": [
+    "water-purification-through-history",
+    "water-advisories-explained",
+    "making-water-safer",
+    "salt-beef-salt-pork-age-of-sail"
+  ],
   "source_use": {
     "hist-home-smith-naval-hygiene": "Royal Navy hygiene: washing and fumigating decks, 'cleanse or die', Admiralty instructions, miasma beliefs, contagionist adherents, limits and later decline in casualties.",
     "hist-home-chadwick-cureus": "Miasma theory defined; Chadwick's 1842 report; its cost and rejection; the 1848 Public Health Act; a claimed reduction in cholera and typhoid.",
     "hist-home-nps-fort-union-water": "Privies, pits, bathing and flooding at an army post.",
-    "hist-home-wellcome-snow-map": "Archive record of Snow's vestry report, which covered sanitation, sewerage, cess pools and water supply.",
+    "hist-home-wellcome-snow-map": "Archive record of a map from the Cholera Inquiry Committee's 1855 vestry report (Snow's section), which covered sanitation, sewerage, cess pools and water supply.",
     "hist-home-tulchinsky-snow": "Snow's two-water-company comparison and the 14-times figure.",
     "hist-home-snow-mode-of-communication": "Snow's description of the comparison as an experiment on the grandest scale.",
     "rmg-life-at-sea": "Poor storage, ventilation and vermin degraded shipboard food; scurvy and malnutrition.",
     "hist-home-cdc-clean-hands": "Handwashing with soap prevents respiratory and diarrheal infections; five steps; 60% alcohol sanitizer when soap is unavailable.",
-    "cdc-water-safe": "Current CDC water-safety guidance as the modern benchmark."
+    "cdc-water-safe": "Current CDC water-safety guidance as the modern benchmark.",
+    "hist-home-wellcome-chadwick-1842": "Archive record of a digitized copy of Chadwick's 1842 report (imprint, parliamentary presentation, 546 images). Catalogue record only."
   }
 }

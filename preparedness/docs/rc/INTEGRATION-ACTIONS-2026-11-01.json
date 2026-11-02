@@ -1,0 +1,467 @@
+{
+ "clusters": {
+  "shelter": {
+   "pinned": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+   "newest": "6a5998ead97eca997e573ce8d3ceacf1c6aabad4",
+   "files": [
+    {
+     "path": "preparedness/content/articles/family-communication-plan.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/family-communication-plan.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/tools/home-fire-escape-worksheet.body.html",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/home-fire-escape-worksheet.meta.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/power-outage-planner.body.html",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/power-outage-planner.meta.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/reunification-plan.body.html",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/reunification-plan.meta.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/CLUSTER-shelter.md",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/docs/SHELTER-FOUNDER-DECISIONS.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/SHELTER-PR-AND-ISSUE-TEXT.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/SHELTER-QA.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/SHELTER-QD-PACKET.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/SHELTER-SOURCE-LEDGER.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/axe-home-fire-escape-worksheet-1440.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/axe-home-fire-escape-worksheet-390.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/axe-power-outage-planner-1440.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/axe-power-outage-planner-390.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/axe-reunification-plan-1440.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/axe-reunification-plan-390.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/fig-decision.png",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/fig-floor.png",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/home-fire-escape-worksheet-print.pdf",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/power-outage-planner-print.pdf",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/reunification-card-print.pdf",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/v-fw-1440.png",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/v-op-1024.png",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/qa/v-rc-390.png",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/sources/fragments/shelter.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/taxonomy.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/tests/test_shelter_tools.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tests/test_shelter_tools.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tests/test_shelter_tools_browser.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/fire_worksheet.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/gen_shelter_tools.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/outage_items.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/reunion_card.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/shelter_common.js",
+     "action": "add"
+    }
+   ]
+  },
+  "start": {
+   "pinned": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+   "newest": "2af10621b0f4b5837f9224bf7f7163cc21590293",
+   "files": [
+    {
+     "path": "preparedness/audit/start-here/README.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/SOURCE-AUDIT.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/claim-matrix.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/claims.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/ledger.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/qa-evidence.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/render_audit.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/screenshots/hub-1440.jpg",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/screenshots/hub-320.jpg",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/screenshots/kit-1440.jpg",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/screenshots/kit-320.jpg",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/screenshots/plan-1440.jpg",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/screenshots/plan-320.jpg",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/audit/start-here/verify_sources.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/articles/go-bags.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/household-emergency-plan.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/preparedness-real-households.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/three-day-kit.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/three-day-kit.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/hubs/start-here.body.html",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/kit-builder.body.html",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/kit-builder.meta.json",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/reunification-plan.body.html",
+     "action": "CONFLICT-add-add"
+    },
+    {
+     "path": "preparedness/content/tools/reunification-plan.meta.json",
+     "action": "CONFLICT-add-add"
+    },
+    {
+     "path": "preparedness/content/tools/src/gen_kit_builder.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/content/tools/src/kit_builder_items.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/docs/CLUSTER-start.md",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/docs/QD-REVIEW-PACKET-start.md",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/sources/fragments/start.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/taxonomy.json",
+     "action": "CONFLICT-three-way"
+    },
+    {
+     "path": "preparedness/tests/browser_qa_start.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tests/test_start_here.py",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tests/test_start_tools.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/build.py",
+     "action": "three-way-clean"
+    },
+    {
+     "path": "preparedness/tools/kit_planner.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/kit_planner_ui.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/plan_builder.js",
+     "action": "add"
+    },
+    {
+     "path": "preparedness/tools/plan_builder_ui.js",
+     "action": "add"
+    }
+   ]
+  },
+  "food": {
+   "pinned": "4b009361277ea1d4617b368f5d45104c7318b284",
+   "newest": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+   "files": [
+    {
+     "path": "preparedness/docs/CLUSTER-food.md",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/tests/test_preparedness.py",
+     "action": "CONFLICT-three-way"
+    }
+   ]
+  },
+  "health": {
+   "pinned": "d2212d0ca0750817d3929865d3069835980faf20",
+   "newest": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+   "files": [
+    {
+     "path": "preparedness/docs/CLUSTER-health.md",
+     "action": "take-newest"
+    }
+   ]
+  },
+  "hist-food": {
+   "pinned": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+   "newest": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+   "files": [],
+   "note": "NOT INTEGRATED (see decision register)"
+  },
+  "hist-home": {
+   "pinned": "f654e600f89c321a480dd8f055be4d13d0673490",
+   "newest": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+   "files": [
+    {
+     "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/docs/CLUSTER-hist-home.md",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/sources/fragments/hist-home.json",
+     "action": "take-newest"
+    }
+   ]
+  },
+  "hist-field": {
+   "pinned": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+   "newest": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+   "files": [
+    {
+     "path": "preparedness/content/articles/navigation-before-gps.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/docs/CLUSTER-hist-field.md",
+     "action": "take-newest"
+    },
+    {
+     "path": "preparedness/sources/fragments/hist-field.json",
+     "action": "take-newest"
+    }
+   ]
+  }
+ },
+ "conflicts": [
+  {
+   "cluster": "start",
+   "path": "preparedness/content/tools/reunification-plan.body.html",
+   "kind": "CONFLICT-add-add",
+   "resolution": "slug collision: shelter's wallet-card tool renamed family-reunification-card; Start Here's household plan builder keeps reunification-plan; shelter articles' links and the shelter generator/tests retargeted"
+  },
+  {
+   "cluster": "start",
+   "path": "preparedness/content/tools/reunification-plan.meta.json",
+   "kind": "CONFLICT-add-add",
+   "resolution": "same as body"
+  },
+  {
+   "cluster": "start",
+   "path": "preparedness/taxonomy.json",
+   "kind": "CONFLICT-three-way",
+   "resolution": "union: shelter's 2 new tool rows + renamed card row + Start Here's two gated tool rows"
+  },
+  {
+   "cluster": "food",
+   "path": "preparedness/tests/test_preparedness.py",
+   "kind": "CONFLICT-three-way",
+   "resolution": "kept the current isolated-fixture tests; food's fixture rewrite is superseded"
+  }
+ ],
+ "skipped_clusters": [
+  "hist-food"
+ ]
+}

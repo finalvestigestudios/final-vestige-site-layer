@@ -35,7 +35,7 @@
   "source_use": {
     "start-ready-kit": "The Basic Disaster Supplies Kit list and additional items; storing items in airtight bags in one or two easy-to-carry containers; maintenance; home, work and car kits.",
     "start-ready-supply-list": "The printable checklist, the 'only a starting point' caveat and the recommendation of one full kit at home plus smaller portable kits elsewhere.",
-    "start-ready-food": "Several-day non-perishable food; choose foods your family will eat; example items; the four-hour refrigerator figure and the swollen/dented can rule; outdoor-only cooking appliances.",
+    "start-ready-food": "Several-day non-perishable food; choose foods your family will eat; example items; the swollen/dented can rule; outdoor-only cooking appliances; Ready.gov's two-hour rule.",
     "ready-are-you-ready": "'At least 72 hours'; water of 3, 7 or 14 days depending on location; cash in small bills; N95 masks; the maintenance steps; bottled water for the kit; learning to shut off utilities before an emergency. Its 2020 'discard refrigerated medication after a day' line, shown as older than the 2023 FEMA sheet.",
     "cdc-water-store": "Water baseline of 1 gallon per person per day for at least 3 days, and try for 2 weeks.",
     "start-ready-power": "Outage effects; refrigerator and freezer holding times; Ready.gov's two-hour food rule and discard-medicine wording (older than FEMA's 2023 sheet); 20-foot generator rule; talk to your provider about how long medicine can be stored warm.",
@@ -48,6 +48,8 @@
     "start-ready-financial": "Small amounts of cash in small bills; document storage.",
     "start-ready-car": "The car kit extras and keeping the tank full.",
     "start-cdc-infant-checklist": "Ready-to-feed formula is the safest formula option; check the kit monthly because babies grow quickly.",
-    "start-fema-power-sheet": "FEMA's December 2023 power-outage fact sheet: replace refrigerated medicines after a day or more unless the label says otherwise, call the doctor or pharmacist, use only until a new supply; 4-hour food rule; 20 feet from building openings; no grill, dryer or stove for heat."
+    "start-fema-power-sheet": "FEMA's December 2023 power-outage fact sheet: replace refrigerated medicines after a day or more unless the label says otherwise, call the doctor or pharmacist, use only until a new supply; 4-hour food rule; 20 feet from building openings; no grill, dryer or stove for heat.",
+    "start-fsis-emergency-food": "USDA FSIS: a closed refrigerator keeps food safely cold about 4 hours; perishable food above 40 F for 2 hours should be discarded (two different conditions).",
+    "start-cdc-power-outage": "CDC cross-check of the generator rule: never inside the home, basement or garage, or less than 20 feet from any window, door or vent."
   }
 }
