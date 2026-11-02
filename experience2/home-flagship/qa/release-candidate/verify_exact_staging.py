@@ -236,6 +236,13 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
                 check('nypl_capture_not_embedded',panel.locator('img').count()==0)
                 check('nypl_source_catalog_link_preserved',panel.locator(
                   'a[href="https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0"]').count()==1)
+                if width in (390, 1440):
+                    # Real currently selected CMS case, not the Apollo-restored
+                    # fullpage capture. Required visual custody for rights-safe
+                    # typography at founder review widths.
+                    panel.screenshot(path=str(out/f'malbone-source-plate-{width}.png'),
+                                     timeout=20000)
+                    check('nypl_rights_safe_visual_receipt',True)
             else:
                 visible=activated and case_img.is_visible()
                 check('archive_image_visible_'+case_id,visible)
