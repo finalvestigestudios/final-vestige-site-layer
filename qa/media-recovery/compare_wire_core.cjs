@@ -1,13 +1,14 @@
 'use strict';
 /** Offline strict wire-byte comparison. No server contact, no claims from originals. */
-const {sameSource,scopeArticleImageWire}=require('./browser_probe_core.cjs');
+const {sameSource}=require('./browser_probe_core.cjs');
+const {scopeByRequestId}=require('./request_id_wire_core.cjs');
 const good=n=>Number.isSafeInteger(n)&&n>0;
 const https=u=>typeof u==='string'&&/^https:\/\/[a-z0-9.-]+\//i.test(u);
 const page=u=>typeof u==='string'&&/^https:\/\/finalvestige\.com\//.test(u);
 function inspectRun(r){
  const e=[],posts=new Map();
  if(!r||typeof r!=='object'||Array.isArray(r))return{ok:false,errors:['invalid_run'],posts};
- if(r.schema_version!==1||r.probe_version!==3)e.push('probe_v3_current_src_proof_required');
+ if(r.schema_version!==1||r.probe_version!==4)e.push('probe_v4_request_id_proof_required');
  if(r.probe!=='logged-out Chrome CDP, no npm dependencies or WordPress writes')e.push('unrecognized_probe');
  if(!['390x844','1440x900'].includes(r.viewport))e.push('unrecognized_viewport');
  if(typeof r.browser_product!=='string'||!/^Chrome\/\d+\./.test(r.browser_product))e.push('unknown_browser_version');
@@ -34,6 +35,10 @@ function inspectRun(r){
    !https(v.request_url)||v.http_status!==200||!good(v.transfer_bytes))
    e.push('unsettled_or_unmeasured:'+id+':'+v.image_key);
   if(!net.length)e.push('no_image_network_log:'+id);
+  if(x.article_wire_attribution_mode!=='strict_cdp_request_id'||
+   x.article_wire_evidence_complete!==true||
+   !Array.isArray(x.article_wire_evidence_errors)||x.article_wire_evidence_errors.length)
+   e.push('strict_article_wire_provenance_missing:'+id);
   let total=0,validNetwork=[];
   for(const n of net){
    if(!https(n.url)||n.status!==200||!/^image\//.test(n.mime_type||'')||
@@ -45,15 +50,18 @@ function inspectRun(r){
   // Each classified slot must have actual image-network proof of its byte count.
   // Shared network requests may legitimately serve multiple DOM slots.
   for(const v of slots){
-   const proof=validNetwork.some(n=>[n.url,...(Array.isArray(n.url_aliases)?n.url_aliases:[])]
+   const proof=validNetwork.some(n=>typeof v.request_id==='string'&&
+    n.request_id===v.request_id&&
+    [n.url,...(Array.isArray(n.url_aliases)?n.url_aliases:[])]
     .some(u=>sameSource(u,v.request_url))&&n.status===v.http_status&&
     n.encoded_data_length===v.transfer_bytes&&sameSource(v.current_src,v.request_url));
    if(!proof)e.push('slot_network_evidence_missing:'+id+':'+v.image_key);
   }
   if(!good(x.image_wire_bytes_total)||total!==x.image_wire_bytes_total)e.push('wire_total_mismatch:'+id);
   // Do not turn decorative image changes into claimed article-photo compression.
-  const articleScope=scopeArticleImageWire(slots,net);
-  if(!good(articleScope.article_bytes)||x.article_image_wire_bytes_total!==articleScope.article_bytes)
+  const articleScope=scopeByRequestId(slots,net);
+  if(!articleScope.complete||!good(articleScope.article_bytes)||
+    x.article_image_wire_bytes_total!==articleScope.article_bytes)
    e.push('article_wire_scope_mismatch:'+id);
   posts.set(id,{url:x.url,keys:keys.sort().join('|'),stored:x.stored_image_count,
     rendered:x.rendered_image_count,bytes:articleScope.article_bytes,
