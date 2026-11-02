@@ -1,0 +1,31 @@
+{
+  "release_status": "OFFLINE_ONLY_UNPUBLISHED_HARD_HOLD",
+  "title": "The Name in the Other Ear",
+  "film_type": "original conceptual educational short; not experimental footage, no merchant/audio",
+  "media": {
+    "local_file": "the-name-in-the-other-ear-40s.mp4",
+    "sha256": "afbfa900936fb6a81e9e8648a0a95bfcfff2bec26946944b72261d1eb72cbbfa",
+    "bytes": 134980,
+    "codec": "H.264",
+    "width": 540,
+    "height": 960,
+    "fps": 12,
+    "frames": 480,
+    "duration_seconds": 40,
+    "first_party_hosted": false,
+    "cms_uploaded": false,
+    "render_source": "render_film.py",
+    "render_source_git_blob": "00457ade2860f8ed71e9c947013c6144b92d8e14",
+    "captions": "film-captions.vtt",
+    "caption_web_sync_verified": false
+  },
+  "offline_review": {
+    "zip_name": "offline-review.zip",
+    "sha256": "ce8dfdc4163fd12ccbb5f502c6350cfae75c993c6005bb54b221d89a457ba7ff",
+    "bytes": 270182,
+    "crc_check": "passed",
+    "files": 8
+  },
+  "page_variant_B": "original inline SVG + open no-JS complete transcript; no pretend video player or live embed",
+  "publishing_restrictions": "Do not merge, deploy, upload MP4, link seller or instrument visitors without named approval, legal/FTC/privacy and WCAG/browser QA, verified captions and founder publication authorization."
+}
