@@ -15,14 +15,14 @@ sys.path.insert(0, str(SCRIPTS))
 
 import windows11_manual_acceptance_r109 as qa
 import windows11_witness_inventory_r124 as inventory
-from test_windows11_witness_writer_r122 import PrivateWitnessR122
+import test_windows11_witness_writer_r122 as fixture_module
 
 
 class WitnessInventoryR124(unittest.TestCase):
     def setUp(self):
         # Reuse R122's complete source-bound synthetic six-app fixture. No
         # native Windows 11/real user observation is asserted by these tests.
-        self.fixture = PrivateWitnessR122(
+        self.fixture = fixture_module.PrivateWitnessR122(
             methodName="test_one_observed_pass_updates_exact_check_only")
         self.fixture.setUp()
         self.addCleanup(self.fixture.doCleanups)
