@@ -11,7 +11,7 @@
 ## Media & performance
 - Offline film actually rendered: H.264, portrait 540×960, 12 fps, exactly 480 frames / 40.000s, 106,216 bytes; video SHA256 `c4983447e6acf6e57835f46d6dd2eecc4fefa6c6ee05ebff874a1b16a2a6dff9`.
 - Local review ZIP SHA256 `a3aa2777ea78660761cb346895ff01eed331c219796c5d9d35cc11b3deb5312f`. Six original scene PNGs created by local `render_door_film.py`. Offline renderer SHA256 `5a80d5348b1d2bf4582a8072b0d9b8890a36872a4f37016c107f142dbaf41ed4`. Offline ZIP includes exact renderer, MP4, poster, captions, and no-JS HTML5 player.
-- **Source control includes the exact caption source.** The full exact renderer is also archived inside offline ZIP and should be added in readable form before canonicalization; any source-control reconstruction claim must be demonstrated by a hash comparison.
+- **Source control includes the exact caption source.** The complete renderer is also committed at `render_door_film.py`; exact Github blob SHA `f5801f4172a69559ce4bb029e5709b3c6a8d4c2e` was checked against the local executed renderer's Git blob. The filmed MP4 remains OFFLINE, not hosted or committed.
 - Unpublished landing page B deliberately does **not** include a broken video tag or pretend that an MP4 is hosted. It contains an accessible original conceptual poster and full transcript. Playback requires approved first-party host with real URL and independent synchronized VTT verification, `controls`, `preload="none"`, no autoplay and no third-party origin.
 - Proposed weight budgets (not measured against live WordPress): poster ≤45KB, MP4 ≤250KB, VTT ≤2KB, no autoplay or preloading. Measure mobile LCP/INP/CLS under representative throttling before approval.
 
