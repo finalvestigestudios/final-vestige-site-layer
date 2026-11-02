@@ -14,6 +14,20 @@ from build_atlas import build_rights_matrix_r71, validate_custody
 WIDTHS = (320, 360, 390, 428, 768, 1024, 1440, 1920)
 
 
+def stable_capture(page) -> bytes:
+    """Wait for fonts/scroll/focus to settle; require two identical actual PNGs."""
+    page.evaluate('() => { if (document.activeElement) document.activeElement.blur(); window.scrollTo(0,0); }')
+    page.evaluate('() => document.fonts.ready')
+    previous = page.screenshot(full_page=True, animations='disabled', caret='hide')
+    for _ in range(6):
+        page.wait_for_timeout(160)
+        current = page.screenshot(full_page=True, animations='disabled', caret='hide')
+        if previous == current:
+            return current
+        previous = current
+    raise AssertionError('R73_SCREENSHOT_UNSTABLE_AFTER_SIX_RETRIES')
+
+
 def run(out: Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     custody = validate_custody()
@@ -61,8 +75,7 @@ def run(out: Path) -> dict:
                 assert page.locator('[data-r71-rights-row]:visible').count() == 6
                 assert not page.evaluate('document.documentElement.scrollWidth > innerWidth + 2')
                 if width in (390, 1440) and enabled:
-                    screenshot = page.screenshot(full_page=True, animations='disabled')
-                    assert screenshot == page.screenshot(full_page=True, animations='disabled')
+                    screenshot = stable_capture(page)
                     name = f'R73_RIGHTS_SCREEN_{width}.png'
                     (out / name).write_bytes(screenshot)
                     receipt['screenshots'][name] = hashlib.sha256(screenshot).hexdigest()
@@ -84,8 +97,7 @@ def run(out: Path) -> dict:
                     assert 'Documentary boundary:' in rendered
                 assert page.locator('[data-fva-record]:visible').count() == 6
                 if width in (390, 1440) and enabled:
-                    picture = page.screenshot(full_page=True, animations='disabled')
-                    assert picture == page.screenshot(full_page=True, animations='disabled')
+                    picture = stable_capture(page)
                     name = f'R73_RIGHTS_PRINT_{width}.png'
                     (out / name).write_bytes(picture)
                     receipt['screenshots'][name] = hashlib.sha256(picture).hexdigest()
