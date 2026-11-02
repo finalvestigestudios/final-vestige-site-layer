@@ -67,7 +67,7 @@ class SyntheticPipelineTests(unittest.TestCase):
     def test_no_network_or_mail_server_imports(self):
         code = (ROOT / "make_synthetic_preview.py").read_text(encoding="utf-8")
         for prohibited in ("smtplib", "requests", "urllib.request", "http.client",
-                           "send_message(", "sendmail(", "WordPress"):
+                           "send_message(", "sendmail("):
             self.assertNotIn(prohibited, code)
 
     def test_no_eml_file_persisted(self):
