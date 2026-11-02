@@ -101,7 +101,7 @@ def _scan_one(app_id: str) -> None:
         browse = [w for w in buttons if str(w.cget("text")) == "Browse…"]
         generate = [w for w in buttons if str(w.cget("text")) == "Generate review report"]
         expected = FREE_INPUTS[app_id]
-        optional_keys = 2 if app_id == "ledger" else 0
+        optional_keys = 2 if app_id == "ledger" else 1 if app_id == "invoices" else 0
         if (len(entries) != expected + 1 + optional_keys or
                 len(browse) != expected + 1 or len(generate) != 1 or
                 root.title() != "Final Vestige Labs — " + title):
@@ -110,8 +110,11 @@ def _scan_one(app_id: str) -> None:
             raise ShortcutBlocked("Free-app controls are not mapped")
         # The new LedgerDiff columns are *not* paths or file-picker fields.
         # Keep them blank throughout cancel/no-engine-call event validation.
-        if any(entry.get() for entry in entries[expected:expected + optional_keys]):
+        if app_id == "ledger" and any(
+                entry.get() for entry in entries[expected:expected + optional_keys]):
             raise ShortcutBlocked("Optional LedgerDiff mapping unexpectedly populated")
+        if app_id == "invoices" and entries[expected].get() != "7":
+            raise ShortcutBlocked("Invoice window default changed")
 
         def key(sequence):
             # These are Tk-synthesized events, NOT Windows physical key delivery.
@@ -144,6 +147,8 @@ def _scan_one(app_id: str) -> None:
         ctrl_blocked = counts["warnings"] == before_warning + 2
         if not (alt_blocked and ctrl_blocked):
             raise ShortcutBlocked("Generate accelerators did not trigger distinct validation")
+        if app_id == "invoices" and entries[expected].get() != "7":
+            raise ShortcutBlocked("Invoice review window changed during cancelled events")
         verify_snapshot(
             app_id, input_focus=focus_count, input_cancels=counts["input_cancels"],
             output_focus=output_focus, output_cancel=output_cancel,
