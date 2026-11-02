@@ -135,9 +135,22 @@ def verify_report(
         source_sha256=tuple(result[0] for result in source_before))
 
 
+class _PrivateArgumentParser(argparse.ArgumentParser):
+    """Turn argparse diagnostics into a caller-safe error.
+
+    Standard argparse embeds the rejected value or option in stderr. An invalid
+    invoice window, unknown flag or product identifier can be an actual client
+    filename, financial cell or secret passed by mistake. Do not echo it.
+    --help retains its standard, static usage output and successful exit.
+    """
+
+    def error(self, message: str) -> None:
+        raise ValueError("Private replay command arguments rejected") from None
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     """Privacy-preserving CLI; never echo paths, financial cells or exceptions."""
-    parser = argparse.ArgumentParser(
+    parser = _PrivateArgumentParser(
         description="Offline exact-byte replay for four free Final Vestige Labs reports; not compliance approval.")
     parser.add_argument("--kind", required=True, choices=tuple(_SOURCE_COUNTS))
     parser.add_argument("--report", required=True)
@@ -147,8 +160,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--right-match-column")
     parser.add_argument("--left-amount-column")
     parser.add_argument("--right-amount-column")
-    args = parser.parse_args(argv)
     try:
+        # Parse inside the privacy boundary: otherwise argparse exposes
+        # rejected customer-supplied values and exits before generic HOLD.
+        args = parser.parse_args(argv)
         receipt = verify_report(
             args.kind, args.report, args.source,
             window_days=args.window_days,
