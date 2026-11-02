@@ -65,7 +65,7 @@ def paint(idx):
         centered(d,510,"PROVEN",FONT,GOLD)
     centered(d,727,STAGES[idx][1],FONT,INK)
     centered(d,765,STAGES[idx][2],FONT,INK)
-    centered(d,868,"THOMPSON 1980  /  EXPERIMENT, NOT ENDORSEMENT",SMALL,MUTED)
+    centered(d,868,"THOMPSON 1980 / NO PRODUCT ENDORSEMENT",SMALL,MUTED)
     fn=DEST/f"scene-{idx+1:02d}.png";im.save(fn,optimize=True);return fn
 frames=[paint(i) for i in range(6)]
 manifest=DEST/"sequence.ffconcat"
