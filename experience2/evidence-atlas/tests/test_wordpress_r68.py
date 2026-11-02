@@ -50,6 +50,12 @@ class R68WordPressContracts(unittest.TestCase):
         source=Path(__file__).with_name('wordpress_r68.py').read_text()
         self.assertIn('res.status==200', source)
         self.assertNotIn('res.status()', source)
+    def test_nasa_image_prohibition_scoped_to_component(self):
+        # Assembler theme may own decorative images. Only Apollo-owned
+        # photographic usage is subject to its current media clearance HOLD.
+        source=Path(__file__).with_name('wordpress_r68.py').read_text()
+        self.assertIn("page.locator('.fv-ex2-apollo-suite img').count()==0",source)
+        self.assertNotIn("page.locator('img').count()==0",source)
     def test_reject_unrecognized_theme(self):
         with tempfile.TemporaryDirectory() as t:
             root=Path(t);z=root/'t.zip'
