@@ -288,6 +288,94 @@ def build(output: Path) -> dict:
     (output / 'atlas-build-manifest.json').write_text(json.dumps(receipt, indent=2, sort_keys=True)+'\n', encoding='utf-8', newline='\n')
     return receipt
 
+
+# R71: OPTIONAL read-only editorial rights matrix, never installed by default.
+# The six source rows derive from exact, independently pinned R37/R55 records.
+# This is a staging review utility, NOT an image-use admission or change to
+# the existing shortcode template hash/Research Desk/production WordPress.
+def build_rights_matrix_r71(output: Path) -> dict:
+    custody=validate_custody()
+    audit=validate_rights_audit(custody)
+    q=lambda value: html.escape(str(value), quote=True)
+    rows=[]
+    for source, rights in zip(custody['records'], audit['records']):
+        if (source['id'] != rights['id'] or source['catalog'] != rights['crosswalk_catalog']
+            or source['photo_url'] != rights['nasa_page']
+            or source['media_rights'] != 'INDIVIDUAL_REVIEW_REQUIRED'
+            or rights['rights_status'] != 'INDIVIDUAL_REVIEW_PENDING'
+            or rights['human_link_check'] is not False
+            or rights['downloaded_or_embedded'] is not False):
+            raise ValueError('Photo identity or rights drift: review board withheld')
+        provisional=source['id']=='01'
+        catalog=rights['catalog_display']
+        if catalog != ('not_displayed_on_linked_nasa_page' if provisional else 'displayed_as_PIA_number'):
+            raise ValueError('Unreviewed catalog certainty change')
+        certainty=('PROVISIONAL: NASA page does not print this catalog ID'
+                   if provisional else 'Identifier displayed in NASA page PIA metadata')
+        rows.append(f'''<li data-r71-rights-row data-r71-id="{q(source['id'])}">
+          <details><summary>NASA source {q(source['id'])} / {q(source['catalog'])} — reuse pending</summary>
+          <p><strong>Photograph date:</strong> {q(source['date_label'])}</p>
+          <p><strong>Catalog verification:</strong> {q(certainty)}</p>
+          <p><strong>Credit:</strong> {q(rights['image_credit_as_displayed'] or 'Not individually listed')}</p>
+          <p><strong>Producing center:</strong> {q(rights['producer_as_displayed'] or 'Not listed')}</p>
+          <p><strong>Page updated:</strong> {q(rights['page_last_updated'])}</p>
+          <p><strong>Documentary boundary:</strong> {q(source['photo_role'])}</p>
+          <p><strong>Reuse:</strong> Individual photo review outstanding; no human
+          link verification, image inspection, or license granted.</p>
+          <a href="{q(source['photo_url'])}" rel="noopener noreferrer"
+             target="_blank">Original NASA source for record {q(source['id'])} ↗</a>
+          </details></li>''')
+    if len(rows)!=6:
+        raise ValueError('Expected six individual source reviews')
+    matrix=('''<section class="fva-r71-rights" data-r71-rights aria-labelledby="r71-rights-title">
+      <h2 id="r71-rights-title">Six source reviews. Zero reuse clearances.</h2>
+      <p>This private editorial matrix is not a license. NASA's general media
+      guidance is not image-specific permission. No photographs, map pins or
+      unsupported historical relationships are reproduced. S67-19766 remains
+      a provisional catalog-to-photograph association.</p><ol>'''
+      + ''.join(rows) + '</ol></section>')
+    style='''<style id="r71-private-rights-css">
+      .fva-r71-rights{margin:24px 0 36px;padding:clamp(18px,3vw,32px);
+        border:1px solid #998052;background:#1b1e18;color:#eee8dc}
+      .fva-r71-rights h2{font:400 clamp(25px,3vw,39px)/1.2 Georgia,serif;
+        margin:0 0 12px;color:#f4efe2}
+      .fva-r71-rights>p{max-width:75ch;line-height:1.7}
+      .fva-r71-rights ol{list-style:none;padding:0;
+        display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+      .fva-r71-rights li{min-width:0;background:#121510;border:1px solid #89734e}
+      .fva-r71-rights summary{cursor:pointer;min-height:44px;padding:13px;
+        font-weight:600;color:#ffe1a2;overflow-wrap:anywhere}
+      .fva-r71-rights details p{padding:0 14px;line-height:1.55}
+      .fva-r71-rights details a{display:inline-flex;align-items:center;
+        min-height:44px;margin:4px 14px 18px;color:#ffe1a2}
+      .fva-r71-rights summary:focus-visible,.fva-r71-rights a:focus-visible{
+        outline:3px solid #fff;outline-offset:2px}
+      @media(max-width:760px){.fva-r71-rights ol{grid-template-columns:1fr}}
+      @media(forced-colors:active){.fva-r71-rights,.fva-r71-rights li{
+        border-color:CanvasText}.fva-r71-rights summary,.fva-r71-rights a{color:LinkText}}
+      @media print{.fva-r71-rights,.fva-r71-rights li{background:none!important;
+        color:#111;border-color:#444}.fva-r71-rights h2,.fva-r71-rights summary,
+        .fva-r71-rights a{color:#111}.fva-r71-rights li{break-inside:avoid}
+        .fva-r71-rights details>*{display:block!important}}
+      </style>'''
+    base=make_html(custody,(HERE/'atlas.css').read_text(encoding='utf-8'),
+                   (HERE/'atlas.js').read_text(encoding='utf-8'))
+    marker='<section class="fva-guide"'
+    if base.count(marker)!=1 or base.count('</head>')!=1:
+        raise ValueError('Atlas template changed: refuse review board injection')
+    document=base.replace('</head>',style+'</head>',1).replace(marker,matrix+'\n  '+marker,1)
+    output.mkdir(parents=True,exist_ok=True)
+    path=output/'apollo-r71-media-rights-STAGING-ONLY.html'
+    path.write_text(document,encoding='utf-8',newline='\n')
+    receipt={'schema':'fv.apollo.r71.media-review.v1','release':'STAGING_HOLD',
+      'crosswalk_git_blob':EXPECTED_BLOB,'source_audit_sha256':EXPECTED_AUDIT_SHA256,
+      'source_rows':len(rows),'photo_reuse_clearances':0,'photograph_binaries':0,
+      'actual_wordpress_tested':False,'html_sha256':sha256(path.read_bytes())}
+    (output/'R71_MEDIA_RIGHTS_BUILD_RECEIPT.json').write_text(
+      json.dumps(receipt,sort_keys=True,indent=2)+'\n',encoding='utf-8')
+    return receipt
+
+
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
