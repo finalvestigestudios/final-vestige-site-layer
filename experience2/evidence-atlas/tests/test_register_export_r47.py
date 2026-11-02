@@ -22,7 +22,7 @@ class RegisterExportR47(unittest.TestCase):
         self.assertEqual(doc.count('data-fva-export-status'),1)
         self.assertEqual(doc.count('data-fva-citation-text'),6)
         self.assertEqual(doc.count('data-fva-record '),6)
-        self.assertIn('With JavaScript enabled you may save the same references',doc)
+        self.assertIn('With JavaScript enabled, save a plain-text research sheet',doc)
         for needle in ('<img','<canvas','data-lat','data-lng'):
             self.assertNotIn(needle,doc)
 
@@ -42,7 +42,7 @@ class RegisterExportR47(unittest.TestCase):
             fragment=(Path(td)/'fv-ex2-evidence-atlas/templates/atlas-fragment.html').read_bytes()
             php=(HERE/'final-vestige-ex2-evidence-atlas.php').read_text()
             self.assertIn(hashlib.sha256(fragment).hexdigest(),php)
-            self.assertIn('0.0.57-staging',php)
+            self.assertIn('0.0.58-staging',php)
             self.assertEqual(m['schema'],'fv.ex2.apollo.wp-stage.r49.v1')
             self.assertEqual(m['embedded_images'],0)
             self.assertEqual(m['geographic_pins'],0)

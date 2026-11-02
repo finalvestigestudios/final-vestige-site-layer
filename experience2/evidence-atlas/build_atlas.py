@@ -253,8 +253,8 @@ def make_html(custody: dict, css: str, js: str) -> str:
     <p class="fva-citations__eyebrow">RESEARCH ACCESS / CITATION REGISTER</p>
     <h2 id="fva-citations-title">Trace every reference.</h2>
     <p>These are source references, not licenses to reproduce photographs. Exact dates are not inferred where NASA's record gives only a month. The register remains complete when filters are applied or JavaScript is unavailable.</p>
-    <div class="fva-export"><p>The full six-record register is always available below. With JavaScript enabled you may save the same references as a plain-text research sheet; it contains no photographs or inferred historical relationships.</p>
-      <button type="button" data-fva-export hidden>Save all six source citations (.txt)</button>
+    <div class="fva-export"><p>All six citations remain below. With JavaScript enabled, save a plain-text research sheet containing each record’s NASA source-custody details and pending photo-rights status. No images or inferred historical relationships are included.</p>
+      <button type="button" data-fva-export hidden>Save six citations and source-custody notes (.txt)</button>
       <p class="fva-export__status" role="status" aria-live="polite" aria-atomic="true" data-fva-export-status></p>
     </div>
     <ol>{citations}</ol>

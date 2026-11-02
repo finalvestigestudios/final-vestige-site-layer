@@ -50,6 +50,6 @@ class CatalogR57(unittest.TestCase):
         self.assertIn('proofButtons.forEach(b=>b.addEventListener',js)
         self.assertIn('card.dataset.fvaCatalogState',js)
         self.assertIn('.fva-proof-filter button[aria-pressed="true"]',css)
-        self.assertIn('0.0.57-staging',php)
+        self.assertIn('0.0.58-staging',php)
 
 if __name__=='__main__':unittest.main()
