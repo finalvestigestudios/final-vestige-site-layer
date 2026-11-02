@@ -1,0 +1,109 @@
+{
+  "schema": "fv-dispatch-r69-release-choices/1",
+  "created_utc": "2026-11-02T15:41:42Z",
+  "parent_pr": 633,
+  "parent_sha": "4068e3feaa50aee8174d0f169e9bd05aa3a2c42f",
+  "original_pr": 175,
+  "original_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "founder_final_version_approved": false,
+  "word_press": {
+    "site_id": 256784396,
+    "email_content_format": "excerpt",
+    "automatic_new_posts": false,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "subscriber_counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "actual_unique_email_eligible": null,
+    "recent_sends": [],
+    "all_time_send_count": null,
+    "native_preview_verified": false,
+    "received_mime_verified": false,
+    "valid_publisher_postal_address_verified": false,
+    "unsubscribe_verified": false
+  },
+  "delivery_method_approved": null,
+  "final_send_approved": false,
+  "issues": [
+    {
+      "id": 1,
+      "role": "editorial",
+      "subject_original": "The mind is not a camera",
+      "subject_stacked": "The mind is not a camera",
+      "final_approved_blob": null,
+      "cta": "https://finalvestige.com/the-missing-caption/",
+      "cta_live_verified_this_sprint": false,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "id": 2,
+      "role": "editorial",
+      "subject_original": "Before hypnosis had a name",
+      "subject_stacked": "Before hypnosis had a name",
+      "final_approved_blob": null,
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_live_verified_this_sprint": false,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "id": 3,
+      "role": "commercial-reserved",
+      "product": "Zen12",
+      "subject_original": "The twelve-minute meditation question",
+      "subject_stacked": "The twelve-minute meditation question",
+      "final_approved_blob": null,
+      "cta": null,
+      "guide_live_approved": false,
+      "merchant_affiliate_approval": false,
+      "email_channel_permission": false,
+      "verified_earning_url": null,
+      "release": "HOLD_UNSENT_AND_HOLD_MERCHANT"
+    },
+    {
+      "id": 4,
+      "role": "editorial",
+      "subject_original": "Fourteen seconds. A much longer explanation.",
+      "subject_stacked": "Seventeen seconds. A much longer explanation.",
+      "suggested_subject_unapproved": "Apollo 1: why one spark was never the whole story",
+      "final_approved_blob": null,
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "cta_live_verified_this_sprint": false,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "id": 5,
+      "role": "commercial-reserved",
+      "product": "Hypnosis Live Total Focus",
+      "subject_original": "Before you press play on a hypnosis audio",
+      "subject_stacked": "Before you press play on a hypnosis audio",
+      "final_approved_blob": null,
+      "cta": null,
+      "guide_live_approved": false,
+      "merchant_affiliate_approval": false,
+      "email_channel_permission": false,
+      "verified_earning_url": null,
+      "release": "HOLD_UNSENT_AND_HOLD_MERCHANT"
+    },
+    {
+      "id": 6,
+      "role": "editorial",
+      "subject_original": "What did seven days of attention reveal?",
+      "subject_stacked": "What did seven days of attention reveal?",
+      "final_approved_blob": null,
+      "cta": "https://finalvestige.com/focus/",
+      "cta_live_verified_this_sprint": true,
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "source_read_only": true,
+  "newsletter_send_authorized": false,
+  "tracking_enabled": false,
+  "actual_open_rate": null,
+  "actual_conversion_rate": null,
+  "actual_revenue": null,
+  "subscriber_pii_included": false
+}
