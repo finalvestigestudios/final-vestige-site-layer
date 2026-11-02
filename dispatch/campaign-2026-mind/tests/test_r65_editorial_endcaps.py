@@ -103,9 +103,10 @@ class R65Endcaps(unittest.TestCase):
             self.assertIn('role="presentation"',s)
             self.assertIn('width="100%"',s)
             self.assertIn("max-width:640px",s)
-            self.assertNotRegex(s,r"<(?:script|form|iframe|video|img|svg)\\b")
+            self.assertNotRegex(s,r"<(?:script|form|iframe|video|img|svg)\b")
             self.assertNotIn("http-equiv=\"refresh\"",s)
-            self.assertNotIn("tracking",s.split("<tr><td style=\"padding:18px 24px")[1].split("</td></tr>")[0].lower())
+            self.assertNotIn("utm_",s)
+            self.assertNotIn("pixel.gif",s)
 
     def test_html_and_text_contain_complete_story(self):
         for n in ISSUES:
@@ -137,9 +138,9 @@ class R65Endcaps(unittest.TestCase):
 
     def test_channel_contract(self):
         s=(NEW/"channel-and-consent.md").read_text(encoding="utf-8")
-        for x in ("excerpt","55 words","/dispatch/","/focus/","not a promised delivered field","WITHOUT"):
-            if x=="WITHOUT":continue
-            self.assertIn(x,s)
+        for x in ("excerpt","55 words","/dispatch/","/focus/","not a promised delivered field"):
+            # Case-insensitive check: publisher draft uses deliberate emphasis.
+            self.assertIn(x.lower(),s.lower())
         self.assertIn("NO changes applied",s)
 
     def test_first_party_destinations(self):
