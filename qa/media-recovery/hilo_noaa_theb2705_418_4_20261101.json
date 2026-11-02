@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-01",
+  "scope": "read-only archival-source lead; no guest-browser verification or production edits",
+  "baseline": {
+    "published_posts": 61,
+    "stored_image_slots": 355,
+    "external_references": 288,
+    "wp_originals_over_1_5_mib": 13,
+    "prior_p0_source_candidates": 35,
+    "prior_p0_source_slots": 36,
+    "now_p0_candidates_with_contextual_primary_lead": 36,
+    "reported_broken_42_verified": false,
+    "claimed_transfer_savings_76_percent_measured": false,
+    "images_repaired_in_production": 0
+  },
+  "post": {
+    "id": 418,
+    "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+    "title": "The Lighthouse Was Gone at Dawn"
+  },
+  "record": {
+    "image_key": "418:4",
+    "slot": 4,
+    "stored_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+    "stored_alt": "Tsunami water inundating the Hilo waterfront in April 1946, with a person visible near the advancing water.",
+    "publisher_article": "https://www.hawaiimagazine.com/three-tsunamis-that-changed-hilo-and-hawaiis-big-island/",
+    "publisher_evidence": {
+      "source_kind": "publisher_context",
+      "article_publish_date": "2009-11-25",
+      "image_caption_says": "NOAA photograph of tsunami cresting over Hilo Harbor Pier 1, person indicated by arrow",
+      "publisher_image_retrieval": "WEB_RETRIEVER_IMAGE_DISPLAYED_NOT_BROWSER",
+      "visual_similarity_to_candidate": "scene_and_description_consistent_not_binary_verified"
+    },
+    "primary_candidate": {
+      "institution": "National Oceanic and Atmospheric Administration",
+      "collection": "Historic Coast & Geodetic Survey",
+      "catalog_id": "theb2705",
+      "catalog_filename": "pl23_theb2705.jpg",
+      "catalog_url": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+      "stable_catalog_url": "https://www.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+      "display_date": "1946-04",
+      "location": "Hilo, Hawaii",
+      "catalog_credit": "NOAA",
+      "catalog_download_label": "265 KB",
+      "published_original_exact_binary_match_verified": false,
+      "master_sha256": null,
+      "source_master_dimensions_px": null
+    },
+    "supporting_records": [
+      {
+        "role": "independent_subject_confirmation",
+        "source": "https://earthweb.ess.washington.edu/tsunami/general/historic/images_46.html",
+        "description": "Photograph shows tsunami breaking over Hilo Pier No. 1; arrow designates man; source NOAA/EDIS via NGDC; historical account says taken aboard SS Brigham Victory."
+      },
+      {
+        "role": "government_archive_description",
+        "source": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+        "description": "NOAA indexed item theb2705; tsunami inundating Hilo; man on pier; April 1946; credit NOAA."
+      },
+      {
+        "role": "publication_image_direct",
+        "source": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+        "description": "Independent web image viewer rendered publisher photograph; not real guest Chrome status."
+      }
+    ],
+    "retrieval_observations": [
+      {
+        "url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+        "method": "web_page_link_image_viewer",
+        "result": "DISPLAYED",
+        "origin_http_status": null,
+        "guest_browser_status": null
+      },
+      {
+        "url": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+        "method": "indexed_noaa_catalog_and_separate_web_open",
+        "result": "INDEXED_CATALOG_WITH_265_KB_DOWNLOAD_LABEL_BUT_WEB_OPEN_503",
+        "origin_http_status": null,
+        "guest_browser_status": null
+      },
+      {
+        "url": "https://www.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+        "method": "independent_web_open",
+        "result": "WEB_RETRIEVER_405_WRAPPER",
+        "origin_http_status": null,
+        "guest_browser_status": null
+      }
+    ],
+    "rights": {
+      "candidate_agency_credit": "NOAA",
+      "source_policy_url": "https://oceanservice.noaa.gov/about/faq.html",
+      "policy_summary": "NOAA-origin material generally public domain unless otherwise noted; attribution and nonendorsement required; third-party rights and identifiable-person/publicity issues remain item-specific.",
+      "source_id_item_release_verification": "NOT_VERIFIED_TO_ORIGINAL_BINARY",
+      "cache_or_republication_review": "HOLD",
+      "publisher_mirror_not_a_license": true,
+      "photo_of_identifiable_person": true,
+      "wp_media_upload_authorized": false,
+      "wordpress_post_rewrite_authorized": false
+    },
+    "dimensions": {
+      "max_width_px": 960,
+      "master_width_px": null,
+      "master_height_px": null,
+      "proposed_width_px": null,
+      "proposed_height_px": null,
+      "no_upscale": true,
+      "preserve_aspect_ratio": true,
+      "conversion_performed": false
+    },
+    "visitor": {
+      "http_status": null,
+      "current_src": null,
+      "final_image_url": null,
+      "natural_width_px": null,
+      "image_transfer_bytes": null,
+      "verified_broken": null
+    },
+    "conclusion": "NOAA official accession lead now identified for final previously-context-only P0 image. Historic scene supported, exact binary/crop and legal publication gates still pending."
+  },
+  "actions": [
+    "In DNS-enabled logged-out Chrome inspect 418:4 currentSrc, image decode, final network URL/status and bytes; capture exact-element screenshot.",
+    "Use NOAA catalog photo for side-by-side pixel/crop match and confirm source rights/attribution before considering download.",
+    "If approved separately, generate <=960px no-upscale responsive derivative, retain NOAA credit and original archive link; use controlled WP Media Library item, not raw post-block rewrite.",
+    "Compare same-page mobile article-image transfers before/after with all images loaded; no 76% claim without equivalent complete runs."
+  ],
+  "safety": {
+    "no_unlicensed_downloads": true,
+    "no_wordpress_writes": true,
+    "no_homepage_work": true,
+    "no_spend": true,
+    "live_broken_count_claim": null,
+    "transfer_reduction_percent_claim": null
+  }
+}
