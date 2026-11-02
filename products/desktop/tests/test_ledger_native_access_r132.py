@@ -16,12 +16,12 @@ def observed_ledger():
     labels = ("Left ledger CSV", "Right ledger CSV")
     return dict(
         window_title=keyboard.FREE["ledger"][1],
-        entry_count=5,
+        entry_count=7,
         traversal=keyboard._expected_order(2, ledger_keys=True),
         cycle_closed=True,
         bindings=keyboard._expected_bindings(2),
         first_focus=True,
-        static_labels=labels + keyboard.LEDGER_KEY_LABELS + (
+        static_labels=labels + keyboard.LEDGER_KEY_LABELS + keyboard.LEDGER_AMOUNT_LABELS + (
             "Output folder",
             "Local-first review tools. Findings are not audit, legal, or fraud determinations.",
             "Keyboard: Alt+1..2 focus; Ctrl+1..2 browse; Alt+G/Ctrl+Enter generate",
@@ -31,7 +31,7 @@ def observed_ledger():
 
 
 def scaled_ledger(scale_value=2.0):
-    return dict(scale=scale_value, entries=5, browse=3, generate=1,
+    return dict(scale=scale_value, entries=7, browse=3, generate=1,
                 scrollable=True, focus_revealed=True, labels_wrapped=True,
                 controls_nonfocus=True, system_background=True)
 
@@ -40,7 +40,8 @@ class LedgerNativeAccessibilityR132(unittest.TestCase):
     def test_ledger_has_two_visible_key_entry_tab_stops(self):
         self.assertEqual(keyboard._expected_order(2, ledger_keys=True), (
             "input_1", "browse_1", "input_2", "browse_2",
-            "ledger_left_key", "ledger_right_key", "output", "browse_output",
+            "ledger_left_key", "ledger_right_key",
+            "ledger_left_amount", "ledger_right_amount", "output", "browse_output",
             "generate"))
 
     def test_original_free_app_tab_order_unchanged(self):
@@ -71,13 +72,13 @@ class LedgerNativeAccessibilityR132(unittest.TestCase):
 
     def test_missing_optional_ledger_entry_blocks(self):
         sample = observed_ledger()
-        sample["entry_count"] = 4
+        sample["entry_count"] = 8
         with self.assertRaises(keyboard.KeyboardBlocked):
             keyboard._verify_snapshot("ledger", **sample)
 
     def test_extra_ledger_entry_blocks(self):
         sample = observed_ledger()
-        sample["entry_count"] = 6
+        sample["entry_count"] = 8
         with self.assertRaises(keyboard.KeyboardBlocked):
             keyboard._verify_snapshot("ledger", **sample)
 
