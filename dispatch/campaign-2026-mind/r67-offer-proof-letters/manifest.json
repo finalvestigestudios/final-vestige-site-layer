@@ -1,0 +1,56 @@
+{
+  "run": "R67",
+  "created": "2026-11-02",
+  "status": "DRAFT_ONLY_HOLD_UNSENT",
+  "master_pr": 175,
+  "parent_pr": 621,
+  "coordination_issue": 171,
+  "release_issue": 174,
+  "canonical_changed": false,
+  "founder_approved_substitution": false,
+  "mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "letters": [
+    {
+      "id": 3,
+      "product": "Zen12",
+      "cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "affiliate_url": null
+    },
+    {
+      "id": 5,
+      "product": "Hypnosis Live Total Focus",
+      "cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "affiliate_url": null
+    }
+  ],
+  "gates": {
+    "partner_email_permission": false,
+    "buyer_guides_live": false,
+    "founder_approval": false,
+    "publisher_postal_verified": false,
+    "received_jetpack_mime": false,
+    "functional_unsubscribe": false,
+    "recipient_eligibility": false
+  },
+  "live_attribution": false,
+  "actual_metrics": {
+    "sends": null,
+    "delivered": null,
+    "unique_clicks": null,
+    "affiliate_purchases": null
+  },
+  "no_wordpress_writes": true,
+  "no_email_sent": true,
+  "no_contacts": true
+}
