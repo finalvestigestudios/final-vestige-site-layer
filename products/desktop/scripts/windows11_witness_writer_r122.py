@@ -18,6 +18,7 @@ import tempfile
 from pathlib import Path
 
 import windows11_manual_acceptance_r109 as qa
+import windows11_witness_inventory_r124 as inventory
 
 NOTE_LIMIT = 4096 * 4
 HOLD = qa.ERROR
@@ -71,6 +72,8 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
     _excluded_from_candidates(observation_file, dist)
     if review.parent.resolve() == dist.resolve() or review == observation_file:
         raise qa.ReviewHold("Review path must be separate")
+    if review_dir == witness_dir:
+        raise qa.ReviewHold("Witness folder must be dedicated and separate from review matrix")
 
     # One exclusive lock prevents cooperating review writers from racing.
     lock = review.with_name(review.name + ".r122.lock")
@@ -87,6 +90,8 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
         if matrix.get("windows11_build") != build:
             raise qa.ReviewHold("Reviewer build mismatch")
         qa.validate_review(matrix, template, witness_dir)
+        # R124: an orphan or interrupted prior R122 write is a hard HOLD.
+        inventory.verify_clean(matrix, witness_dir)
         slot = matrix["apps"][app]["checks"][check]
         if slot != {"state": "NOT_RUN", "witness_sha256": None}:
             raise qa.ReviewHold("Previously recorded checks cannot be overwritten")
@@ -119,6 +124,9 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
             out.flush()
             os.fsync(out.fileno())
         qa.validate_review(updated, template, witness_dir)
+        # Recheck after the new witness is on disk, before committing matrix.
+        # If another actor added a stray entry, rollback only our own note.
+        inventory.verify_clean(updated, witness_dir)
         new_raw = (json.dumps(updated, ensure_ascii=False, sort_keys=True,
                               indent=2) + "\n").encode("utf-8")
         if len(new_raw) > qa.MAX_REPORT_BYTES:

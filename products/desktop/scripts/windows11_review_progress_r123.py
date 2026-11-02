@@ -8,13 +8,12 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
-import stat
 import sys
 from pathlib import Path
 
 import windows11_manual_acceptance_r109 as qa
 import windows11_witness_writer_r122 as writer
+import windows11_witness_inventory_r124 as inventory
 
 SCHEMA = "fv-labs-win11-progress-r123-v1"
 HOLD = qa.ERROR
@@ -50,7 +49,6 @@ def inspect(*, dist: Path, r9_report: Path, expected_pin: str,
     # R109 checks every referenced witness but intentionally ignores stray
     # files. An orphan may indicate an interrupted R122 write; require manual
     # custody investigation instead of reporting an apparently clean queue.
-    expected = set()
     per_app = []
     for app in qa.ALL:
         counts = {"PASS": 0, "FAIL": 0, "NOT_RUN": 0}
@@ -60,31 +58,17 @@ def inspect(*, dist: Path, r9_report: Path, expected_pin: str,
             counts[state] += 1
             if state == "NOT_RUN" and next_check is None:
                 next_check = check
-            if state in ("PASS", "FAIL"):
-                expected.add(app.removesuffix(".exe") + "--" + check + ".json")
         per_app.append({"app": app, "counts": counts, "next_check": next_check})
 
-    seen = set()
-    for entry in witness_dir.iterdir():
-        if entry.name not in expected or entry.name in seen:
-            raise qa.ReviewHold("Unreferenced witness evidence requires investigation")
-        meta = entry.lstat()
-        if (not stat.S_ISREG(meta.st_mode) or meta.st_nlink != 1
-                or entry.is_symlink()
-                or (hasattr(entry, "is_junction") and entry.is_junction())
-                or (os.name == "nt" and
-                    bool(getattr(meta, "st_file_attributes", 0) &
-                         getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)))):
-            raise qa.ReviewHold("Untrusted witness entry")
-        seen.add(entry.name)
-    if seen != expected:
-        raise qa.ReviewHold("Witness inventory incomplete")
+    # R124: same strict inventory contract as the one-check writer.
+    inventory.verify_clean(matrix, witness_dir)
 
     # Bind the output to a second full witness check and the original matrix
     # bytes; this is still cooperative local custody, not a hostile-FS proof.
     if qa._bytes(review, qa.MAX_REPORT_BYTES) != original:
         raise qa.ReviewHold("Review changed during inspection")
     verified_again = qa.validate_review(matrix, template, witness_dir)
+    inventory.verify_clean(matrix, witness_dir)
     if verified_again != valid or sum(valid["counts"].values()) != 46:
         raise qa.ReviewHold("Inconsistent manual acceptance counts")
     combined = {key: sum(p["counts"][key] for p in per_app)
