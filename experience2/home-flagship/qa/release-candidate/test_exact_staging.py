@@ -1,5 +1,6 @@
 """Offline admission tests. No claim of a real WordPress staging site."""
 import hashlib
+import re
 from pathlib import Path
 import subprocess
 import tempfile
@@ -81,6 +82,26 @@ class GateTests(unittest.TestCase):
             (q/'media_transfer_admission.py').write_text('modified verifier')
             with self.assertRaisesRegex(ValueError,'modified staging QA code'):
                 gate.checkout(repo,head)
+    def test_archive_case_controls_match_source_images(self):
+        # Every lazy archive image belongs to its own real interactive case.
+        # A no-JS reader must still receive all three readable case panels.
+        html=(Path(__file__).resolve().parents[2]/'index.html').read_text()
+        case_ids=('apollo','franklin','malbone')
+        buttons=re.findall(r'data-fv-case-button="([^"]+)"',html)
+        panels=re.findall(r'<article\b[^>]*data-fv-case="[^"]+"[^>]*>',html)
+        self.assertEqual(buttons,list(case_ids))
+        self.assertEqual(len(panels),3)
+        self.assertEqual([re.search(r'data-fv-case="([^"]+)"',p).group(1)
+                          for p in panels],list(case_ids))
+        self.assertEqual(html.count('data-fv-archive-img'),3)
+        for position,case_id in enumerate(case_ids):
+            start=html.index('data-fv-case="'+case_id+'"')
+            end=(html.index('data-fv-case="'+case_ids[position+1]+'"')
+                 if position+1<len(case_ids) else len(html))
+            case_html=html[start:end]
+            self.assertEqual(case_html.count('data-fv-archive-img'),1)
+            self.assertNotIn('hidden',panels[position])
+
     def test_no_staging_means_fail_closed_receipt(self):
         with self.assertRaises(ValueError):
             gate.check_url('https://finalvestige.com/','finalvestige.com')

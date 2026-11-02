@@ -121,18 +121,72 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
             actual = content[1:-1] if content.startswith('\n') and content.endswith('\n') else None
             check('asset_bytes_exact_'+name, actual==files[name].decode('utf-8'))
             delivered[name] = sha(actual.encode('utf-8')) if actual is not None else 'MISSING_WRAPPERS'
+    # Archive exhibits are mutually exclusive ONLY after JS enhancement.
+    # An inactive case image is intentionally hidden, so Playwright cannot
+    # scroll it into view. Activate its REAL visible selector before testing
+    # lazy loading and actual HTTP payloads; never remove [hidden] in QA.
+    case_ids = ('apollo', 'franklin', 'malbone')
     images = frame.locator('img[data-fv-archive-img]').all()
-    check('three_archival_images',len(images)==3)
+    check('three_archival_images',len(images)==len(case_ids))
+    chooser = frame.locator('[data-fv-case-buttons]')
+    try:
+        chooser.wait_for(state='visible', timeout=7000)
+        check('archive_chooser_enhanced',True)
+    except Exception:
+        check('archive_chooser_enhanced',False)
+
     imagedata=[]
-    for el in images:
-        el.scroll_into_view_if_needed()
-        image = el.evaluate("""async e => {
-          if (!e.complete) await Promise.race([
-            new Promise(r=>{e.addEventListener('load',r,{once:true});e.addEventListener('error',r,{once:true});}),
-            new Promise(r=>setTimeout(r,8000))]);
-          return {url:e.currentSrc||e.src,complete:e.complete,width:e.naturalWidth,height:e.naturalHeight};
-        }""")
-        imagedata.append(image)
+    for case_id in case_ids:
+        unknown = {'url':'','complete':False,'width':0,'height':0}
+        button = frame.locator(f'[data-fv-case-button="{case_id}"]')
+        panel = frame.locator(f'[data-fv-case="{case_id}"]')
+        check('archive_button_present_'+case_id,button.count()==1)
+        check('archive_panel_present_'+case_id,panel.count()==1)
+        if button.count()!=1 or panel.count()!=1:
+            imagedata.append(unknown)
+            continue
+        case_img=panel.locator('img[data-fv-archive-img]')
+        check('archive_image_present_'+case_id,case_img.count()==1)
+        is_button_visible=button.is_visible()
+        check('archive_button_visible_'+case_id,is_button_visible)
+        if not is_button_visible or case_img.count()!=1:
+            imagedata.append(unknown)
+            continue
+        try:
+            # Real user click proves the enhanced case chooser is operable.
+            button.click(timeout=6000)
+            activated=panel.is_visible() and button.get_attribute('aria-pressed')=='true'
+            check('archive_case_activated_'+case_id,activated)
+            visible=activated and case_img.is_visible()
+            check('archive_image_visible_'+case_id,visible)
+            if visible:
+                case_img.scroll_into_view_if_needed(timeout=6000)
+                unknown=case_img.evaluate("""async e => {
+                  if (!e.complete) await Promise.race([
+                    new Promise(r=>{e.addEventListener('load',r,{once:true});e.addEventListener('error',r,{once:true});}),
+                    new Promise(r=>setTimeout(r,8000))]);
+                  return {url:e.currentSrc||e.src,complete:e.complete,width:e.naturalWidth,height:e.naturalHeight};
+                }""")
+        except Exception:
+            # A broken interaction/image becomes an explicit per-case HOLD,
+            # not a 30-second hidden-element timeout that erases all evidence.
+            check('archive_case_interaction_'+case_id,False)
+        imagedata.append(unknown)
+    if width in (390,1440):
+        # Capture representative real WordPress-rendered previews, with the
+        # first archive active again; screenshot failures remain release holds.
+        first=frame.locator('[data-fv-case-button="apollo"]')
+        try:
+            first.click(timeout=6000)
+            check('archive_first_case_restored',first.get_attribute('aria-pressed')=='true')
+            frame.locator('.fv-hf__opening').screenshot(
+                path=str(out/f'first-screen-{width}.png'),timeout=15000)
+            check('real_hero_screenshot',True)
+            frame.locator('body').screenshot(
+                path=str(out/f'full-seven-chapter-{width}.png'),timeout=20000)
+            check('real_fullpage_screenshot',True)
+        except Exception:
+            check('real_screenshot_capture',False)
     check('real_images_loaded',len(imagedata)==3 and all(i['complete'] and i['width']>0 for i in imagedata))
     # naturalWidth/metadata is insufficient: prove that Chromium received each
     # chosen currentSrc as a real HTTP 200 image response with a nonempty body.
@@ -150,8 +204,6 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
           and folio.get_by_text('EDITORIAL TYPESETTING · NOT A FACSIMILE').count()==1)
     check('franklin_folio_primary_record_link', folio.count()==1
           and folio.locator('a[href="https://www.rmg.co.uk/collections/objects/rmgc-object-504898"]').count()==1)
-    if width in (390,1440):
-        frame.locator('body').screenshot(path=str(out/f'full-seven-chapter-{width}.png'))
     perf = frame.evaluate("() => ({observer:window.__fvLab||null,resources:performance.getEntriesByType('resource').filter(e=>e.initiatorType==='img').map(e=>({name:e.name,transferSize:e.transferSize,decodedBodySize:e.decodedBodySize}))})")
     axe = {'status':'NOT_RUN','findings':None}
     if axe_source is not None:
