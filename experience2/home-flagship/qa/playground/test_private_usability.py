@@ -12,6 +12,7 @@ spec.loader.exec_module(module)
 REQUIRED = {
     "reflow_320:real_wordpress", "reflow_320:no_root_overflow",
     "reflow_320:seven_chapters", "reflow_320:reduced_motion",
+    "reflow_320:primary_nav_fully_visible",
     "keyboard_390:real_wordpress", "keyboard_390:focus_visible",
     "keyboard_390:case_enter", "keyboard_390:case_space",
     "keyboard_390:chronicle_enter", "keyboard_390:native_details_keyboard",
@@ -22,7 +23,7 @@ REQUIRED = {
 
 
 class UsabilityContract(TestCase):
-    def test_all_fifteen_checks_produce_clean_result(self):
+    def test_all_sixteen_checks_produce_clean_result(self):
         self.assertEqual(module.grade({k: True for k in REQUIRED}), [])
 
     def test_empty_checks_fail_closed(self):
