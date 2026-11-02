@@ -389,6 +389,7 @@ def spend_map(source,folder):
     return [save(folder,"spend-map",(
         "vendor_key","month","category","amount","flag",
         "vendor_month_total","baseline_median","history_months",
+        "category_history_months","category_baseline_median","category_review_flag",
         "source_rows","source_vendor_labels","vendor_label_variants",
         "source_sha256"
     ),rows)]

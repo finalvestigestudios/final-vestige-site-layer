@@ -55,6 +55,10 @@ def summarize_spend(
     vendor_rows: dict[str, list[dict[str, str]]] = defaultdict(list)
     monthly: dict[str, dict[str, Decimal]] = defaultdict(
         lambda: defaultdict(lambda: Decimal(0)))
+    # Category baselines are independent of the vendor-wide spike signal.
+    # Never normalize categories or manufacture missing calendar months.
+    category_monthly: dict[tuple[str, str], dict[str, Decimal]] = defaultdict(
+        lambda: defaultdict(lambda: Decimal(0)))
 
     for record, vendor, month, category, amount in validated_spend_rows(
             records, normalize_vendor=normalize_vendor,
@@ -62,6 +66,7 @@ def summarize_spend(
         bucket = (vendor, month, category)
         totals[bucket] += amount
         monthly[vendor][month] += amount
+        category_monthly[(vendor, category)][month] += amount
         members[bucket].append(record)
         vendor_rows[vendor].append(record)
 
@@ -82,11 +87,24 @@ def summarize_spend(
             history[(vendor, month)] = (len(prior), baseline, spike)
             prior.add(total)
 
+    # A category spike can be hidden by a fall in another category even when
+    # vendor-wide month totals do not change. Separate transparent evidence
+    # lets a human reviewer identify that pattern without changing legacy flags.
+    category_history: dict[tuple[str, str, str], tuple[int, Decimal | None, bool]] = {}
+    for (vendor, category), months in category_monthly.items():
+        prior = RunningDecimalMedian()
+        for month, total in sorted(months.items()):
+            baseline = prior.median() if len(prior) >= 3 else None
+            spike = baseline is not None and baseline > 0 and total >= 2 * baseline
+            category_history[(vendor, month, category)] = (len(prior), baseline, spike)
+            prior.add(total)
+
     report = []
     for bucket in sorted(totals):
         vendor, month, category = bucket
         rows = members[bucket]
         count, baseline, spike = history[(vendor, month)]
+        category_count, category_baseline, category_spike = category_history[bucket]
         flags = []
         if spike:
             flags.append("review_spike")
@@ -102,6 +120,10 @@ def summarize_spend(
             # An even-sized median may be half a cent; do not round evidence.
             "baseline_median": "" if baseline is None else format(baseline, "f"),
             "history_months": str(count),
+            "category_history_months": str(category_count),
+            "category_baseline_median": (
+                "" if category_baseline is None else format(category_baseline, "f")),
+            "category_review_flag": "review_category_spike" if category_spike else "",
             "source_rows": ";".join(row["row"] for row in rows),
             "source_vendor_labels": labels_for_report(rows, "vendor"),
             "vendor_label_variants": str(variant_counts[vendor]),
