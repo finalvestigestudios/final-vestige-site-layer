@@ -127,8 +127,8 @@ class SourceDeskGuards(unittest.TestCase):
         self.assertNotIn("utm_", self.email_html.lower())
 
     def test_email_table_avoids_fixed_640_pixel_width(self):
-        self.assertNotIn(\'width="640"\', self.email_html)
-        self.assertIn(\'max-width:640px;width:100%\', self.email_html)
+        self.assertNotIn('width="640"', self.email_html)
+        self.assertIn('max-width:640px;width:100%', self.email_html)
 
     def test_html_has_only_one_first_party_link(self):
         links = [urlparse(x) for x in self.parser.links]
