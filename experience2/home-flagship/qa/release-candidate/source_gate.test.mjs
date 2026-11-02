@@ -11,7 +11,9 @@ const bad={
  "missing source":h=>h.replaceAll("https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/","/unsourced/"),
  "broken image provenance":h=>h.replace("https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp","https://unverified.invalid/photo.jpg"),
  "hidden no-JS case":h=>h.replace('data-fv-case="apollo" id="fv-hf-apollo"','data-fv-case="apollo" hidden id="fv-hf-apollo"'),
- "unresponsive map":h=>h.replace(/ srcset="[^"]+" sizes="[^"]+"/,""),
+ "unresponsive retained image":h=>h.replace(/ srcset="[^"]+" sizes="[^"]+"/,""),
+ "unverified NYPL capture added":h=>h.replace('<div class="fv-hf__source-plate"', '<img src="https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg"><div class="fv-hf__source-plate"'),
+ "NYPL source plate removed":h=>h.replace('class="fv-hf__source-plate"','class="fv-hf__uncited-plate"'),
  "unsupported merchant pitch":h=>h+"<p>guaranteed brain reprogramming</p>",
  "remote executable":h=>h.replace("./flagship.js","https://unverified.invalid/script.js"),
 };for(const [name,mutate] of Object.entries(bad))test("fail closed "+name,()=>{const changed=mutate(html);assert.notEqual(changed,html);assert.equal(check(changed).source.status,"FAIL")});
