@@ -1,0 +1,292 @@
+{
+  "schema": "fv.media_recovery.forrestal_289_primary_source_recheck.v1",
+  "date": "2026-11-02",
+  "source_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "post_id": 289,
+  "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+  "description": "Exact six published image sources checked independently; one publisher endpoint refused retrieval, but no guest-browser failure is proven.",
+  "baseline": {
+    "articles": 61,
+    "published_image_slots": 355,
+    "offsite_origin_refs": 288,
+    "wp_originals_over_1_5_mib": 13,
+    "reported_42_broken_verified": false,
+    "claimed_76_percent_wire_reduction_measured": false,
+    "production_repaired_images": 0
+  },
+  "summary": {
+    "exact_published_source_checks": 6,
+    "independent_viewer_displayed": 5,
+    "independent_retriever_403": 1,
+    "visitor_broken_confirmed": 0,
+    "candidates_from_authoritative_primary_catalogs": 3
+  },
+  "image_entries": [
+    {
+      "key": "289:0",
+      "article_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "published_src": "https://upload.wikimedia.org/wikipedia/commons/b/b8/USS_Forrestal_A-4_Skyhawk_burning.png",
+      "published_alt": "Fire spreading among armed aircraft on the flight deck of USS Forrestal on July 29, 1967.",
+      "source_kind": "external",
+      "external_origin": true,
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observed_on": "2026-11-02",
+        "observation": "DISPLAYED",
+        "retriever_wrapper_status": null,
+        "note": "The Wikimedia original rendered in independent viewer; not a guest browser HTTP response."
+      },
+      "visitor_browser": {
+        "request_id": null,
+        "http_status": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "transfer_bytes": null,
+        "visual_failure": null
+      },
+      "chronology": "1967 USS Forrestal historical incident or aftermath; confirm image-specific capture date",
+      "same_image_replacement_approved": false,
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "289:1",
+      "article_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "published_src": "https://specials-images.forbesimg.com/imageserve/69a2157d5ca34a424f6e4791/0x0.jpg",
+      "published_alt": "USS Forrestal sailors directing firefighting hoses across the burned flight deck during the 1967 fire.",
+      "source_kind": "external",
+      "external_origin": true,
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observed_on": "2026-11-02",
+        "observation": "DISPLAYED",
+        "retriever_wrapper_status": null,
+        "note": "The publisher-served color rescue photograph rendered in independent viewer."
+      },
+      "visitor_browser": {
+        "request_id": null,
+        "http_status": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "transfer_bytes": null,
+        "visual_failure": null
+      },
+      "chronology": "1967 USS Forrestal historical incident or aftermath; confirm image-specific capture date",
+      "same_image_replacement_approved": false,
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "289:2",
+      "article_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "published_src": "https://k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?by=cms_fixed_width",
+      "published_alt": "Aerial view of the burned and damaged USS Forrestal flight deck after the 1967 fire.",
+      "source_kind": "external",
+      "external_origin": true,
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observed_on": "2026-11-02",
+        "observation": "DISPLAYED",
+        "retriever_wrapper_status": null,
+        "note": "The Sina-hosted black-and-white overhead aftermath photograph rendered in independent viewer."
+      },
+      "visitor_browser": {
+        "request_id": null,
+        "http_status": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "transfer_bytes": null,
+        "visual_failure": null
+      },
+      "chronology": "1967 USS Forrestal historical incident or aftermath; confirm image-specific capture date",
+      "same_image_replacement_approved": false,
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "289:3",
+      "article_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "published_src": "https://k-static.appmobile.cn/uploads3/allimg/2603/15/1K1364K1-2.jpg",
+      "published_alt": "USS Forrestal crewmen fighting and cooling wreckage on the flight deck after the 1967 fire.",
+      "source_kind": "external",
+      "external_origin": true,
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observed_on": "2026-11-02",
+        "observation": "DISPLAYED",
+        "retriever_wrapper_status": null,
+        "note": "The appmobile-hosted black-and-white firefighting photograph rendered in independent viewer; not interchangeable with slot 1."
+      },
+      "visitor_browser": {
+        "request_id": null,
+        "http_status": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "transfer_bytes": null,
+        "visual_failure": null
+      },
+      "chronology": "1967 USS Forrestal historical incident or aftermath; confirm image-specific capture date",
+      "same_image_replacement_approved": false,
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "289:4",
+      "article_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "published_src": "https://media.defense.gov/2021/Dec/04/2002903623/1460/1280/0/210811-N-SG189-1105.JPG",
+      "published_alt": "U.S. Navy sailors training on a shipboard fire simulation at Farrier Firefighting School in Norfolk.",
+      "source_kind": "external",
+      "external_origin": true,
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observed_on": "2026-11-02",
+        "observation": "RETRIEVER_403",
+        "retriever_wrapper_status": 403,
+        "note": "Independent web.open reported 403 Forbidden. This is NOT visitor-browser or verified origin HTTP status."
+      },
+      "visitor_browser": {
+        "request_id": null,
+        "http_status": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "transfer_bytes": null,
+        "visual_failure": null
+      },
+      "chronology": "2021 contemporary firefighting simulation, not a 1967 disaster photograph",
+      "same_image_replacement_approved": false,
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "289:5",
+      "article_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "published_src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1307/985674/1000w_q95.jpg",
+      "published_alt": "A Navy firefighting instructor beside the memorial to Gerald W. Farrier at the school that bears his name.",
+      "source_kind": "external",
+      "external_origin": true,
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observed_on": "2026-11-02",
+        "observation": "DISPLAYED",
+        "retriever_wrapper_status": null,
+        "note": "The 2013 Farrier plaque/instructor portrait rendered in independent viewer. It is NOT a 1967 fire image."
+      },
+      "visitor_browser": {
+        "request_id": null,
+        "http_status": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "transfer_bytes": null,
+        "visual_failure": null
+      },
+      "chronology": "2013 Farrier memorial/instructor portrait, not a 1967 disaster photograph",
+      "same_image_replacement_approved": false,
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    }
+  ],
+  "replacement_candidates": [
+    {
+      "candidate_id": "DVIDS-6947585",
+      "for_image_key": "289:4",
+      "catalog_url": "https://www.dvidshub.net/image/6947585/farrier-firefighting-school",
+      "preview_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2111/6947585/1000w_q95.jpg",
+      "virin": "210811-N-SG189-1105",
+      "published_filename_virin_match": true,
+      "identical_binary_sha256_verified": false,
+      "scene_class": "same_catalog_photo_by_exact_virin_not_sha_verified",
+      "creator": "U.S. Navy / Mass Communication Specialist 2nd Class J. Keith Wilson",
+      "created_date": "2021-08-11",
+      "caption": "Two hose teams extinguish a simulated Class B fire at Farrier Firefighting School in Norfolk.",
+      "catalog_original_width_px": 5448,
+      "catalog_original_height_px": 3625,
+      "max_target_width_px": 960,
+      "conditional_width_px": 960,
+      "conditional_height_px": 639,
+      "no_upscale": true,
+      "source_bytes_transferred": null,
+      "rights": {
+        "catalog_marked_public_domain": true,
+        "official_dvids_public_use_notice": "https://www.dvidshub.net/about/copyright",
+        "item_specific_review_required": true,
+        "nonendorsement_and_credit_required_for_staging_review": true,
+        "wordpress_rehosting_cleared": false
+      },
+      "action": "HOLD_FOR_VISITOR_NETWORK_EVIDENCE_AND_RIGHTS_REVIEW"
+    },
+    {
+      "candidate_id": "NHHC-USN-1124785",
+      "for_image_key": "289:1",
+      "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/USN-1124000/USN-1124785.html",
+      "preview_url": null,
+      "virin": null,
+      "published_filename_virin_match": false,
+      "identical_binary_sha256_verified": false,
+      "scene_class": "different_1967_firefighting_scene_editor_approval_required",
+      "creator": "U.S. Navy archive; individual photographer unverified",
+      "created_date": "1967-07-29",
+      "caption": "Crewmen fight fires while USS Rupertus directs water toward USS Forrestal.",
+      "catalog_original_width_px": 5634,
+      "catalog_original_height_px": 4484,
+      "max_target_width_px": 960,
+      "conditional_width_px": 960,
+      "conditional_height_px": 764,
+      "no_upscale": true,
+      "source_bytes_transferred": null,
+      "rights": {
+        "catalog_marked_public_domain": false,
+        "official_dvids_public_use_notice": null,
+        "item_specific_review_required": true,
+        "nonendorsement_and_credit_required_for_staging_review": true,
+        "wordpress_rehosting_cleared": false
+      },
+      "action": "ALTERNATE_SCENE_ONLY_DO_NOT_AUTOSWAP"
+    },
+    {
+      "candidate_id": "NHHC-USN-1124802",
+      "for_image_key": "289:3",
+      "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/USN-1124000/USN-1124802.html",
+      "preview_url": null,
+      "virin": null,
+      "published_filename_virin_match": false,
+      "identical_binary_sha256_verified": false,
+      "scene_class": "different_1967_firefighting_scene_editor_approval_required",
+      "creator": "U.S. Navy archive; individual photographer unverified",
+      "created_date": "1967-07-29",
+      "caption": "Crewmembers fighting fires and explosions on the flight deck, 29 July 1967.",
+      "catalog_original_width_px": 6184,
+      "catalog_original_height_px": 4956,
+      "max_target_width_px": 960,
+      "conditional_width_px": 960,
+      "no_upscale": true,
+      "source_bytes_transferred": null,
+      "rights": {
+        "catalog_marked_public_domain": false,
+        "official_dvids_public_use_notice": null,
+        "item_specific_review_required": true,
+        "nonendorsement_and_credit_required_for_staging_review": true,
+        "wordpress_rehosting_cleared": false
+      },
+      "action": "ALTERNATE_SCENE_ONLY_DO_NOT_AUTOSWAP",
+      "conditional_height_px": 769
+    }
+  ],
+  "controls": {
+    "all_images_verified_guest_browser": false,
+    "source_binary_downloaded": false,
+    "wp_media_cache_authorized": false,
+    "wordpress_production_write": false,
+    "homepage_design_modified": false,
+    "site_qa_draft_modified": false,
+    "subscription_spend": false,
+    "claimed_76_percent_savings_proven": false
+  },
+  "staging_plan": [
+    "Site QA #154: guest Chrome capture exact img.currentSrc/naturalWidth and CDP request ID/HTTP/MIME/redirect/encoded bytes plus screenshot for 289:4",
+    "If guest failure is independently confirmed, compare DVIDS catalog preview against original 289:4 image scene; same VIRIN does not prove binary equivalence",
+    "Complete DVIDS item rights and nonendorsement review, request any missing permission, preserve 2021 simulation chronology and credit",
+    "Only on separate staging authorization: obtain approved image, verify source sha256 and intrinsic 5448x3625 geometry; create no-upscale 960x639 derivative, preserve photo credit/ALT",
+    "Record WordPress staging attachment ID and srcset; compare desktop and mobile screenshots, LCP/CLS and actual transfer bytes; document deterministic rollback",
+    "No Gutenberg block rewriting or production WordPress action in this lane"
+  ]
+}
