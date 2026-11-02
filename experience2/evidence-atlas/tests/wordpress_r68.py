@@ -5,7 +5,7 @@ Does not access production WordPress, import database/users, deploy or publish.
 Produces an authentic local WordPress render gate only when CLI and axe are present.
 """
 from __future__ import annotations
-import argparse, hashlib, http.client, json, os, re, signal, stat, subprocess, sys, tempfile, time, zipfile
+import argparse, hashlib, http.client, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.parse, zipfile
 from pathlib import Path, PurePosixPath
 
 BASE='http://127.0.0.1:9438/'
@@ -123,6 +123,20 @@ def probe_local_rest(connection_factory=None):
         try:
             client.request('GET', path, headers={'Accept': 'application/json'})
             response = client.getresponse()
+            if response.status in (301,302,303,307,308):
+                # Do not follow redirects. A localhost-only redirect is enough
+                # to move into the REAL authenticated browser gate; it is not
+                # a REST-index pass and never clears the release on its own.
+                location = response.getheader('Location')
+                destination = urllib.parse.urlsplit(
+                    urllib.parse.urljoin(BASE + path, location or ''))
+                if (location and destination.scheme == 'http'
+                    and destination.hostname in ('127.0.0.1','localhost')
+                    and destination.port == 9438):
+                    observations.append('LOCAL_REDIRECT')
+                else:
+                    observations.append('NONLOCAL_REDIRECT_REFUSED')
+                continue
             if response.status != 200:
                 observations.append('HTTP_' + str(response.status)
                     if 100 <= response.status <= 599 else 'HTTP_INVALID')
@@ -143,6 +157,8 @@ def probe_local_rest(connection_factory=None):
             observations.append('REST_NOT_JSON')
         finally:
             client.close()
+    if observations == ['LOCAL_REDIRECT','LOCAL_REDIRECT']:
+        return True, 'LOOPBACK_HTTP_RESPONSIVE_REST_NOT_VERIFIED'
     return False, '/'.join(observations)
 
 
@@ -159,7 +175,12 @@ def accept(stage,axe,out):
       'environment':'AUTHENTIC_EPHEMERAL_WORDPRESS_PLAYGROUND',
       'release':'STAGING_HOLD','public_wordpress_writes':False,
       'wp_com_host_parity':False,'manual_screen_reader':False,'field_cwv':False,
-      'image_rights_cleared':False,'cases':[],'axe':[],'lab':[],'screenshots':{}}
+      'image_rights_cleared':False,'cases':[],'axe':[],'lab':[],'screenshots':{},
+      'acceptance_complete':False,'stage':'ADMISSION'}
+    def snapshot():
+        (out/'R69_PARTIAL_BROWSER_RECEIPT.json').write_text(
+            json.dumps(report,indent=2,sort_keys=True)+'\n')
+    snapshot()
     with tempfile.TemporaryDirectory(prefix='fv-apollo-wp-private-') as secret:
       child=None
       try:
@@ -187,13 +208,17 @@ def accept(stage,axe,out):
             time.sleep(1)
           admission = {'schema':'fv.apollo.r69.loopback-admission.v1',
             'release':'STAGING_HOLD', 'loopback_only':True,
-            'startup_verified':ready, 'failure_code':failure,
+            'startup_verified':ready, 'rest_index_verified':bool(
+                ready and observation == 'REST_INDEX_VERIFIED'),
+            'browser_acceptance_required':True, 'failure_code':failure,
             'polls':polls, 'elapsed_seconds':round(time.monotonic()-started, 1),
             'probe_reason_counts':dict(sorted(observations.items())),
             'private_cli_logs_excluded':True, 'production_writes':False}
           (out/'R69_LOCAL_STARTUP_RECEIPT.json').write_text(
               json.dumps(admission,indent=2,sort_keys=True)+'\n')
           if not ready:raise RuntimeError(failure)
+          report['stage']='AUTHENTIC_BROWSER_AUTHENTICATION'
+          snapshot()
           with sync_playwright() as pw:
             browser=pw.chromium.launch(headless=True,args=['--no-sandbox'])
             auth=browser.new_context()
@@ -206,6 +231,8 @@ def accept(stage,axe,out):
             login.goto(BASE+'?pagename='+SLUG,wait_until='domcontentloaded',timeout=45000)
             assert login.locator('.fv-ex2-apollo-suite').count()==1,'AUTHENTIC_WP_RENDER_NOT_FOUND'
             state=auth.storage_state();auth.close()
+            report['stage']='WORDPRESS_AUTHENTICATED'
+            snapshot()
             for w in WIDTHS:
               for js in (False,True):
                 context=browser.new_context(viewport={'width':w,'height':900},
@@ -221,6 +248,8 @@ def accept(stage,axe,out):
                        for(const e of x.getEntries())if(!e.hadRecentInput)window.__apolloLab.cls+=e.value;
                     }).observe({type:'layout-shift',buffered:true});}catch(e){}
                   })();""")
+                report['stage']=f'BROWSER_{w}_JS_{int(js)}'
+                snapshot()
                 page=context.new_page();errors=[];outbound=[]
                 page.on('pageerror',lambda error:errors.append('JS_ERROR'))
                 def route(req):
@@ -249,6 +278,7 @@ def accept(stage,axe,out):
                           return {violations:x.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length})),passes:x.passes.length};
                         }""")
                         report['axe'].append({'width':w,**a})
+                        snapshot()
                         assert not a['violations'],a
                         img=page.screenshot(full_page=True,animations='disabled')
                         filename=f'R68_AUTHENTIC_WP_{w}.png'
@@ -266,8 +296,12 @@ def accept(stage,axe,out):
                     assert page.locator('[data-fvx-record]:visible').count()==6
                     assert page.locator('[data-fva-record]:visible').count()==6
                 report['cases'].append({'width':w,'js':js,'pass':True})
+                snapshot()
                 context.close()
             browser.close()
+        report['acceptance_complete']=True
+        report['stage']='COMPLETED_ALL_BROWSER_CASES'
+        snapshot()
         (out/'R68_AUTHENTIC_WP_RECEIPT.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
         return report
       finally:
