@@ -22,6 +22,7 @@ FREE = {
     "spend": (1, "Final Vestige Labs — SpendMap Lite"),
     "policy": (2, "Final Vestige Labs — Policy Delta Desk"),
 }
+LEDGER_KEY_LABELS = ("Left match-key CSV header (optional)", "Right match-key CSV header (optional)")
 ERROR = "BLOCKED: native Labs keyboard/focus contract could not be verified"
 
 
@@ -29,12 +30,14 @@ class KeyboardBlocked(ValueError):
     """Fail closed without displaying private widget state or exception details."""
 
 
-def _expected_order(inputs: int) -> tuple[str, ...]:
-    if type(inputs) is not int or not 1 <= inputs <= 3:
+def _expected_order(inputs: int, *, ledger_keys: bool = False) -> tuple[str, ...]:
+    if type(inputs) is not int or not 1 <= inputs <= 3 or type(ledger_keys) is not bool:
         raise KeyboardBlocked("Invalid source-owned input count")
     result = []
     for i in range(1, inputs + 1):
         result.extend((f"input_{i}", f"browse_{i}"))
+    if ledger_keys:
+        result.extend(("ledger_left_key", "ledger_right_key"))
     result.extend(("output", "browse_output", "generate"))
     return tuple(result)
 
@@ -63,9 +66,9 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
     if app_id not in FREE or type(entry_count) is not int:
         raise KeyboardBlocked("Unknown or premium product")
     inputs, expected_title = FREE[app_id]
-    if window_title != expected_title or entry_count != inputs + 1:
+    if window_title != expected_title or entry_count != inputs + 1 + (2 if app_id == "ledger" else 0):
         raise KeyboardBlocked("Window or editable-control contract changed")
-    if type(traversal) is not tuple or traversal != _expected_order(inputs):
+    if type(traversal) is not tuple or traversal != _expected_order(inputs, ledger_keys=(app_id == "ledger")):
         raise KeyboardBlocked("Incomplete or reordered Tab sequence")
     if cycle_closed is not True or first_focus is not True:
         raise KeyboardBlocked("Keyboard cycle or first focus unavailable")
@@ -78,8 +81,13 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
             len(source_input_labels) != inputs or
             any(type(label) is not str for label in static_labels + source_input_labels)):
         raise KeyboardBlocked("Missing source-owned labels")
-    if any(label not in static_labels for label in (*source_input_labels, "Output folder")):
-        raise KeyboardBlocked("Input/output labels missing")
+    expected_labels = (*source_input_labels, "Output folder")
+    if app_id == "ledger":
+        expected_labels += LEDGER_KEY_LABELS
+    if any(label not in static_labels for label in expected_labels):
+        raise KeyboardBlocked("Input/output/ledger-key labels missing")
+    if app_id != "ledger" and any(label in static_labels for label in LEDGER_KEY_LABELS):
+        raise KeyboardBlocked("Ledger-only controls exposed in another app")
     if not any("Keyboard:" in label and "Alt+G" in label and
                "Ctrl+Enter" in label and "Alt+1" in label and
                "Ctrl+1" in label for label in static_labels):
@@ -152,15 +160,18 @@ def _scan_one(app_id: str) -> None:
         generate = [widget for widget in buttons
                     if widget.cget("text") == "Generate review report"]
         inputs = FREE[app_id][0]
-        if len(entries) != inputs + 1 or len(browses) != inputs + 1 or len(generate) != 1:
+        expected_entries = inputs + 1 + (2 if app_id == "ledger" else 0)
+        if len(entries) != expected_entries or len(browses) != inputs + 1 or len(generate) != 1:
             raise KeyboardBlocked("Interactive control inventory changed")
         if any(not widget.winfo_ismapped() for widget in (*entries, *browses, *generate)):
             raise KeyboardBlocked("Required control not mapped")
 
-        expected = _expected_order(inputs)
+        expected = _expected_order(inputs, ledger_keys=(app_id == "ledger"))
         canonical_widgets = []
         for i in range(inputs):
             canonical_widgets.extend((entries[i], browses[i]))
+        if app_id == "ledger":
+            canonical_widgets.extend(entries[inputs:inputs + 2])
         canonical_widgets.extend((entries[-1], browses[-1], generate[0]))
         names_by_widget = dict(zip(canonical_widgets, expected))
         current = entries[0]
@@ -220,8 +231,9 @@ def main(argv=None) -> int:
         # is exported to CI: failure is blocking, investigation is local only.
         print(ERROR, file=sys.stderr)
         return 1
-    print("PASS: 4/4 free native Tk focus/Tab/accelerator contracts; "
-          "premium editor untouched; NOT NVDA/physical-keys/WCAG/Win11/QD")
+    print("PASS: 4/4 free native Tk focus/Tab/accelerator contracts, including "
+          "2 LedgerDiff source-key Tab stops; premium editor untouched; "
+          "NOT NVDA/physical-keys/WCAG/Win11/QD")
     return 0
 
 
