@@ -96,7 +96,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 1258,
@@ -135,7 +136,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 1257,
@@ -174,7 +176,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 39,
@@ -213,7 +216,16 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": {
+        "observed_date": "2026-11-02",
+        "method": "web_open_exact_published_original_binary_url",
+        "outcome": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "image_decode_verified": false
+      }
     },
     {
       "media_id": 43,
@@ -252,7 +264,16 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": {
+        "observed_date": "2026-11-02",
+        "method": "web_open_exact_published_original_binary_url",
+        "outcome": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "image_decode_verified": false
+      }
     },
     {
       "media_id": 389,
@@ -291,7 +312,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 40,
@@ -330,7 +352,16 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": {
+        "observed_date": "2026-11-02",
+        "method": "web_open_exact_published_original_binary_url",
+        "outcome": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "image_decode_verified": false
+      }
     },
     {
       "media_id": 41,
@@ -369,7 +400,16 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": {
+        "observed_date": "2026-11-02",
+        "method": "web_open_exact_published_original_binary_url",
+        "outcome": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "image_decode_verified": false
+      }
     },
     {
       "media_id": 42,
@@ -408,7 +448,16 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": {
+        "observed_date": "2026-11-02",
+        "method": "web_open_exact_published_original_binary_url",
+        "outcome": "TOOL_INACCESSIBLE_NO_HTTP_STATUS",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "image_decode_verified": false
+      }
     },
     {
       "media_id": 382,
@@ -447,7 +496,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 482,
@@ -473,7 +523,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 405,
@@ -499,7 +550,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     },
     {
       "media_id": 293,
@@ -525,7 +577,8 @@
       "guest_visual_decode": null,
       "measured_savings_bytes": null,
       "rights_cleared_for_derivative": false,
-      "wordpress_production_write_authorized": false
+      "wordpress_production_write_authorized": false,
+      "independent_source_retriever_check": null
     }
   ]
 }
