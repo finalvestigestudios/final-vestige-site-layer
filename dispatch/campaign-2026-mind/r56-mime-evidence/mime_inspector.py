@@ -43,6 +43,14 @@ def domain_is_seller(value: str) -> bool:
     return any(host == d or host.endswith("." + d) for d in SELLER_DOMAINS)
 
 
+def safe_url_scheme(href: str) -> str:
+    """Untrusted MIME links must never crash a privacy-safe inspector."""
+    try:
+        return urlsplit(href).scheme.casefold()
+    except ValueError:
+        return ""
+
+
 class VisibleHTML(HTMLParser):
     """Conservative approximation of visible HTML; NOT an email-client renderer."""
 
@@ -50,27 +58,44 @@ class VisibleHTML(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack: list[tuple[str, bool]] = []
         self.words: list[str] = []
-        self.links: list[str] = []
+        self.links: list[str] = []  # candidate opt-out links must be visible
+        self.all_links: list[str] = []  # hidden merchant links still count as routes
         self.remote_images = 0
         self.unsafe_links = 0
+        self.malformed_links = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         a = dict(attrs)
-        css = (a.get("style") or "").replace(" ", "").casefold()
+        style = a.get("style") or ""
+        css = re.sub(r"\s+", "", style.casefold())
+        # CSS invisibility is approximate: a genuine mail-client visual preview
+        # is still necessary. Do not certify a financially important disclosure.
+        zero_opacity = re.search(r"(?:^|;)opacity:0(?:\.0+)?(?:;|$)", css) is not None
+        zero_font = re.search(r"(?:^|;)font-size:0(?:px|pt|em|rem|%|;|$)", css) is not None
         self_hidden = (
             tag in HIDDEN or "hidden" in a
-            or (a.get("aria-hidden") or "").casefold() == "true"
+            or (a.get("aria-hidden") or "").strip().casefold() == "true"
             or "display:none" in css or "visibility:hidden" in css
+            or zero_opacity or zero_font
         )
         hidden = self_hidden or (self.stack[-1][1] if self.stack else False)
-        if not hidden and tag == "a":
+        if tag == "a":
             href = a.get("href") or ""
-            self.links.append(href)
-            if urlsplit(href).scheme.casefold() in {"javascript", "file", "data"}:
+            self.all_links.append(href)
+            try:
+                scheme = urlsplit(href).scheme.casefold()
+            except ValueError:
+                self.malformed_links += 1
+                scheme = ""
+            if scheme in {"javascript", "file", "data"}:
                 self.unsafe_links += 1
-        if not hidden and tag == "img":
-            if (a.get("src") or "").lower().startswith(("http://", "https://")):
-                self.remote_images += 1
+            if not hidden:
+                self.links.append(href)
+        if tag == "img" and (a.get("src") or "").lower().startswith(("http://", "https://")):
+            self.remote_images += 1
+        # Remote CSS backgrounds may trigger fetches in some email clients.
+        if re.search(r"url\(\s*['\"]?https?://", style, re.I):
+            self.remote_images += 1
         if tag not in VOID:
             self.stack.append((tag, hidden))
 
@@ -136,11 +161,11 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
     unsub_header = str(message.get("List-Unsubscribe", ""))
     header_candidate = bool(re.search(r"<(?:https://|mailto:)[^<>]+>", unsub_header, re.I))
     visible_unsub_anchor = any(
-        urlsplit(href).scheme.casefold() == "https"
+        safe_url_scheme(href) == "https"
         for href in parsed.links
         if "unsubscribe" in href.casefold() or "follow" in href.casefold()
     ) and "unsubscribe" in normalize(body)
-    links = set(parsed.links)
+    links = set(parsed.all_links)
     links.update(URL.findall(plain))
     sellers = sum(1 for link in links if domain_is_seller(link))
     commercial = edition.get("number") in {3, 5}
@@ -162,6 +187,7 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
         "unsubscription_functionally_verified": False,
         "remote_image_count": parsed.remote_images,
         "unsafe_link_scheme_count": parsed.unsafe_links,
+        "malformed_link_count": parsed.malformed_links,
         "direct_seller_link_count": sellers,
         "unreplaced_placeholder_in_visible_body": bool(PLACEHOLDER.search(body)),
         "unique_consent_eligible_audience_verified": False,
@@ -188,6 +214,8 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
         holds.append("UNSUBSCRIBE_MARKUP_CANDIDATE_ABSENT")
     if observed["unsafe_link_scheme_count"]:
         holds.append("UNSAFE_LINK_SCHEME")
+    if observed["malformed_link_count"]:
+        holds.append("MALFORMED_LINK_HUMAN_REVIEW")
     if observed["unreplaced_placeholder_in_visible_body"]:
         holds.append("UNREPLACED_RELEASE_PLACEHOLDER")
     if commercial:
