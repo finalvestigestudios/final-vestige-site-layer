@@ -113,5 +113,45 @@ class WordPressTemplatePersistence(unittest.TestCase):
         self.assertIn('local template readback differs', result.stderr)
 
 
+
+class CliStartupDiagnostics(unittest.TestCase):
+    @staticmethod
+    def _script():
+        import importlib.util
+        path = HERE.parent / 'ci_ex2_wp_playground.py'
+        spec = importlib.util.spec_from_file_location('fv_isolated_cli_diagnostics', path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+    def test_private_log_failure_excerpt_redacts_paths_urls_and_passwords(self):
+        module = self._script()
+        with tempfile.TemporaryDirectory(prefix='fv-cli-log-test-') as temp:
+            path = Path(temp) / 'private.log'
+            path.write_text(
+                "An Error: failed to read /home/runner/confidential/example.php\n"
+                "Error: cannot download https://example.org/a?private=1\n"
+                "Error: password=do-not-disclose\n", encoding='utf-8')
+            summary = module.safe_cli_failure_excerpt(path)
+        self.assertIn('failed to read [LOCAL_PATH]', summary)
+        self.assertIn('[URL]', summary)
+        self.assertNotIn('/home/runner/', summary)
+        self.assertNotIn('example.org', summary)
+        self.assertNotIn('do-not-disclose', summary)
+        self.assertNotIn('password', summary)
+
+    def test_private_log_classifies_exact_template_corruption_without_leaking_source(self):
+        module = self._script()
+        with tempfile.TemporaryDirectory(prefix='fv-cli-log-test-') as temp:
+            path = Path(temp) / 'private.log'
+            path.write_text('PHP Error: REFUSED: local template readback differs: header\n', encoding='utf-8')
+            self.assertEqual(module.diagnose_private_cli_log(path), 'WP_SAVED_TEMPLATE_BYTES_CHANGED')
+            self.assertIn('readback differs', module.safe_cli_failure_excerpt(path))
+
+    def test_missing_private_log_fails_to_specific_nonsecret_marker(self):
+        module = self._script()
+        self.assertEqual(module.safe_cli_failure_excerpt(HERE / 'nonexistent-private-stdout.log'), 'NO_PRIVATE_LOG')
+
+
 if __name__ == '__main__':
     unittest.main()
