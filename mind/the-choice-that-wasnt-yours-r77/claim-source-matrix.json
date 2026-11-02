@@ -145,6 +145,18 @@
       "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
       "kind": "GitHub",
       "scope": "workstream governance"
+    },
+    {
+      "id": "affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "merchant-affiliate-public",
+      "scope": "public signup/login describes network but does not establish Final Vestige acceptance or named-product authorization"
+    },
+    {
+      "id": "limitless_creatives",
+      "url": "https://inspire3.com/ll/",
+      "kind": "merchant-affiliate-public",
+      "scope": "public Limitless Labs request-approval creative and swipe references, not licensed Zen12 campaign material"
     }
   ],
   "claims": [
@@ -594,6 +606,24 @@
         "choice2005"
       ],
       "scope": "Investigation contains no seller CTA."
+    },
+    {
+      "id": "49",
+      "claim": "Public affiliate sign-up page proves Final Vestige is approved",
+      "decision": "FALSE_PUBLIC_RECRUITMENT_ONLY",
+      "source_ids": [
+        "affiliate_portal"
+      ],
+      "scope": "Acceptance and channel grants still require documentation."
+    },
+    {
+      "id": "50",
+      "claim": "Limitless Labs swipe assets authorize Zen12 videos or email",
+      "decision": "FALSE_PRODUCT_RIGHTS_NOT_TRANSFERABLE",
+      "source_ids": [
+        "limitless_creatives"
+      ],
+      "scope": "Do not copy or reuse; separate named-product creative rights needed."
     }
   ],
   "activation": {
