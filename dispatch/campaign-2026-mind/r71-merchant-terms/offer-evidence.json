@@ -1,0 +1,141 @@
+{
+  "schema_version": "r71-public-seller-evidence-v1",
+  "reviewed_on": "2026-11-02",
+  "status": "HOLD_UNSENT",
+  "notes": "Public seller pages and terms were reviewed, but individual checkout completion, affiliate membership, email rights, creative use, live buyer guides, actual recipient eligibility, valid publisher postal address, unsub function, and genuine Jetpack received-email rendering remain UNVERIFIED.",
+  "permission_gate": {
+    "specific_inspire3_account_accepted": "UNVERIFIED",
+    "written_zen12_email_permission": "UNVERIFIED",
+    "written_total_focus_email_permission": "UNVERIFIED",
+    "approved_earning_link": "UNVERIFIED",
+    "member_only_creative_rights": "UNVERIFIED",
+    "publisher_postal_address": "UNVERIFIED",
+    "functional_jetpack_unsubscribe": "UNVERIFIED",
+    "received_jetpack_test_email": "UNVERIFIED",
+    "deliverable_subscriber_cohort": "UNVERIFIED",
+    "final_founder_send_approval": "NOT_GRANTED"
+  },
+  "source_provenance": [
+    {
+      "name": "Zen12 public offer",
+      "url": "https://zen12.com/",
+      "role": "seller_claims_and_packages"
+    },
+    {
+      "name": "Zen12 purchase form",
+      "url": "https://zen12.com/getstarted",
+      "role": "public_checkout_snapshot_not_final_payment"
+    },
+    {
+      "name": "Total Focus named product",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "seller_product_claims_price_snapshot"
+    },
+    {
+      "name": "Hypnosis Live FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "role": "seller_refund_limit_and_generic_price"
+    },
+    {
+      "name": "Inspire3 Terms of Sale",
+      "url": "https://inspire3.com/terms/?s=zen12",
+      "role": "seller_legal_terms_including_seller_refunds"
+    },
+    {
+      "name": "Inspire3 Privacy",
+      "url": "https://inspire3.com/privacy/",
+      "role": "merchant_purchase_phone_sms_and_affiliate_data_sharing"
+    },
+    {
+      "name": "Inspire3 public affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public_invitation_not_publisher_specific_acceptance"
+    },
+    {
+      "name": "WordPress Email Appearance",
+      "url": "https://wordpress.com/support/newsletter/email-appearance/",
+      "role": "native_excerpt_preview_instructions"
+    },
+    {
+      "name": "FTC CAN-SPAM Guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "role": "publisher_postal_and_unsubscribe"
+    },
+    {
+      "name": "FTC Endorsement Guides",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "commission_disclosure"
+    }
+  ],
+  "issues": [
+    {
+      "number": 3,
+      "product": "Zen12",
+      "purchase_condition": "seller_public_snapshots_not_verified_checkout",
+      "seller_described": {
+        "session_length_minutes": 12,
+        "premium_levels": 12,
+        "premium_mp3s": 48,
+        "beginner_levels": 6,
+        "beginner_mp3s": 24,
+        "advanced_levels": 6,
+        "advanced_mp3s": 24,
+        "styles": [
+          "guided meditation",
+          "relaxation music",
+          "white noise",
+          "nature sounds"
+        ]
+      },
+      "seller_terms": {
+        "refund_days": 365,
+        "refund_language": "seller-advertised one-year guarantee; confirm applicability for selected order and payment route",
+        "card_refunds_over_90_days": "seller says refunds after 90 days on card are fulfilled manually via PayPal",
+        "sms_caveat": "seller terms say providing a mobile number may lead to SMS marketing 3-4 times per week",
+        "checkout_phone_field": "displayed in observed order form; whether required was NOT determined"
+      },
+      "observed_prices_internal_only": {
+        "premium_usd": 87.99,
+        "as_of": "2026-11-02",
+        "do_not_quote_in_email": true
+      },
+      "unsupported_claims": [
+        "twelve minutes gives the benefits of one hour's meditation",
+        "automatic brainwave change establishes measurable outcome",
+        "product-specific proven focus or health gain"
+      ],
+      "affiliate_and_privacy": "seller policy says purchase through affiliate link MAY share purchaser name, email and product details with the affiliate; no evidence Final Vestige has received any data",
+      "route": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "permission": "UNVERIFIED"
+    },
+    {
+      "number": 5,
+      "product": "Hypnosis Live — Total Focus",
+      "purchase_condition": "seller_public_snapshots_not_verified_checkout",
+      "seller_described": {
+        "duration_minutes": 33,
+        "file_size_mb": 47,
+        "format": "downloadable MP3 recording"
+      },
+      "seller_terms": {
+        "refund_days": 14,
+        "refund_album_cap_per_twelve_months": 5,
+        "refund_limit_language": "seller public FAQ and Inspire3 terms limit refunds to five albums per customer per 12 months; checkout-specific conditions not verified",
+        "price_disagreement": "named Total Focus product page and generic FAQ list different amounts; do not infer fixed price"
+      },
+      "observed_prices_internal_only": {
+        "named_single_offer_usd": 24.44,
+        "generic_faq_usd": 22.95,
+        "as_of": "2026-11-02",
+        "do_not_quote_in_email": true
+      },
+      "unsupported_claims": [
+        "100% razor-sharp concentration on demand",
+        "brain reprogramming causes guaranteed workplace outcomes"
+      ],
+      "affiliate_and_privacy": "same seller policy says purchase through affiliate link MAY share purchaser name, email and product details with affiliate; no evidence Final Vestige has received any data",
+      "route": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "permission": "UNVERIFIED"
+    }
+  ]
+}
