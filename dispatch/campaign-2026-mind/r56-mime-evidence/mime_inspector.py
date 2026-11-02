@@ -28,7 +28,7 @@ DISCLOSURE = re.compile(
     r"(?:earn|receive)\s+(?:a\s+)?commission\b", re.I | re.S
 )
 PLACEHOLDER = re.compile(r"\[\[[^\]]+\]\]")
-URL = re.compile(r"https?://[^\s<>\\"']+", re.I)
+URL = re.compile(r"https?://[^\s<>]+", re.I)
 
 
 def normalize(value: str) -> str:
