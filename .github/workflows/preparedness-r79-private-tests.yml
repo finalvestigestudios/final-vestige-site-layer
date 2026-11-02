@@ -1,0 +1,129 @@
+name: Preparedness R79 Consequential Context (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r78-document-citation-review-matrix-hold-20261102]
+    paths:
+      - preparedness/tools/r79_consequential_context_review.py
+      - preparedness/tests/test_r79_consequential_context_review.py
+      - preparedness/docs/R79_CONSEQUENTIAL_CONTEXT_REVIEW_HOLD.md
+      - .github/workflows/preparedness-r79-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r79-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  sealed-context-review-private-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout isolated exact commit without retained credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce R78 immutable parent and precisely four additive private files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "7b25206767793753860dc4165d7e89f00a105afe"
+          test "$BASE_REF" = "review/preparedness-r78-document-citation-review-matrix-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r79-uncited-consequential-context-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r79-changed
+          python -I - <<'PY'
+          from pathlib import Path
+          raw=Path("/tmp/r79-changed").read_bytes().split(b"\0")
+          found=[(raw[i].decode(),raw[i+1].decode()) for i in range(0,len(raw)-1,2)]
+          want={
+            "preparedness/tools/r79_consequential_context_review.py",
+            "preparedness/tests/test_r79_consequential_context_review.py",
+            "preparedness/docs/R79_CONSEQUENTIAL_CONTEXT_REVIEW_HOLD.md",
+            ".github/workflows/preparedness-r79-private-tests.yml"}
+          assert len(found)==4 and {p for _,p in found}==want,found
+          assert all(status=="A" for status,_ in found),found
+          print("R79 exact immutable-base and four add-only file scope PASS")
+          PY
+      - name: Pin all seven Claude contributor heads and separate RC
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":
+                "ddb3528ba6494dada1fa1c3a142ce746e3a67706"}
+          for ref,want in refs.items():
+              got=subprocess.check_output(["git","rev-parse","--verify",
+                  "refs/remotes/origin/"+ref+"^{commit}"],text=True).strip()
+              assert got==want,(ref,got,want)
+          print("Seven Claude heads and independent RC pins PASS.")
+          print("Historical frozen-branch parity remains a separate required gate.")
+          PY
+      - name: Compile all new Python without cached bytecode
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for f in ("preparedness/tools/r79_consequential_context_review.py",
+                    "preparedness/tests/test_r79_consequential_context_review.py"):
+              compile(Path(f).read_text(encoding="utf-8"),f,"exec")
+          print("R79 syntax PASS")
+          PY
+      - name: Run R79 109 isolated adversarial and per-document tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r79_consequential_context_review.py -v
+      - name: Validate sealed private 347-context reviewer orders
+        run: |
+          python -I - <<'PY'
+          import importlib.util
+          from pathlib import Path
+          import csv,io
+          p=Path("preparedness/tools/r79_consequential_context_review.py")
+          spec=importlib.util.spec_from_file_location("r79_ci",p)
+          mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+          report=mod.live_report()
+          mod.verify(report)
+          c=report["counts"]
+          assert tuple(c[k] for k in (
+              "articles","tools","source_readings_preserved",
+              "citation_occurrences_preserved",
+              "origin_scoped_source_variant_edges_preserved",
+              "original_DOM_blocks_preserved",
+              "shared_URL_groups_unresolved",
+              "reused_ID_groups_unresolved",
+              "consequential_lexical_review_blocks",
+              "consequential_without_same_block_citation_review_orders"
+          ))==(35,6,244,2173,2359,4070,32,15,1068,347),c
+          assert len(report["document_workload_overview_41_PRIVATE"])==41
+          assert len(list(csv.DictReader(io.StringIO(
+              mod.csv_private_queue(report)))))==347
+          assert all(report[k] is False for k in mod.HOLD_KEYS)
+          assert report["publication_clearance"] is False
+          print("R79 deterministic original-order source-custody census PASS; release HOLD")
+          PY
+      - name: Native Preparedness validator (read-only)
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready PRIVATE draft build (no CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Full native Preparedness Python suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Never conflate diagnostics with mandatory 13-stage integrity
+        if: always()
+        run: |
+          echo "PRIVATE/HOLD — no public WordPress/CMS, navigation or publication."
+          echo "No human link/claim review, emergency safety clearance or QD PASS."
+          echo "Historical branch parity and the complete mandatory release integrity remain separate."
