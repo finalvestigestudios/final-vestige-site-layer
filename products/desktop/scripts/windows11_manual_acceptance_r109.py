@@ -34,6 +34,7 @@ PREMIUM_CHECKS = (
 )
 SCHEMA = "fv-labs-win11-manual-r109-v1"
 WITNESS_SCHEMA = "fv-labs-win11-check-witness-r110-v1"
+WITNESS_SCHEMA_V2 = "fv-labs-win11-check-witness-r126-v2"
 MIN_OBSERVATION_CHARS = 80
 MAX_OBSERVATION_CHARS = 4096
 PURPOSE = "PRIVATE_MANUAL_REVIEW_ONLY_NOT_RELEASE_AUTHORIZED"
@@ -149,7 +150,8 @@ def _strict_json(raw: bytes) -> dict:
     return result
 
 
-def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str) -> None:
+def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str,
+                   *, now: datetime | None = None) -> None:
     """Require each private note to identify its own check, reviewer and exact EXE.
 
     A SHA-256 of anonymous free-form text cannot prevent accidental reuse of a
@@ -160,13 +162,19 @@ def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str) -
         note = _strict_json(raw)
     except (UnicodeError, json.JSONDecodeError):
         raise ReviewHold("Witness JSON cannot be decoded") from None
+    # Legacy r110 notes remain readable. All new writes are timestamped v2.
+    schema = note.get("schema")
+    if type(schema) is not str or schema not in (WITNESS_SCHEMA, WITNESS_SCHEMA_V2):
+        raise ReviewHold("Unknown witness version")
     keys = {"schema", "app", "check", "state", "candidate_sha256",
             "r9_report_sha256", "reviewer_id", "windows11_build",
             "observed_utc", "observation"}
+    if schema == WITNESS_SCHEMA_V2:
+        keys.add("recorded_utc")
     if set(note) != keys:
         raise ReviewHold("Witness fields are incomplete or unexpected")
     expected = {
-        "schema": WITNESS_SCHEMA,
+        "schema": schema,
         "app": app,
         "check": check,
         "state": state,
@@ -180,6 +188,13 @@ def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str) -
             any(note[field] != value or type(note[field]) is not type(value)
                 for field, value in expected.items())):
         raise ReviewHold("Witness belongs to a different review or check")
+    if schema == WITNESS_SCHEMA_V2:
+        clock = now if now is not None else datetime.now(timezone.utc)
+        captured = _observed_time(note["recorded_utc"], clock)
+        session_start = _observed_time(review["observed_utc"], clock)
+        # Local wall-clock sanity only; not trusted physical observation time.
+        if captured < session_start or captured > clock + timedelta(minutes=1):
+            raise ReviewHold("Inconsistent check capture time")
     observation = note["observation"]
     if (type(observation) is not str or
             not MIN_OBSERVATION_CHARS <= len(observation.strip()) <= MAX_OBSERVATION_CHARS or
@@ -199,6 +214,7 @@ def _observed_time(value: str, now: datetime):
         raise ReviewHold("Invalid observation time") from None
     if not now - timedelta(days=30) <= observed <= now + timedelta(hours=1):
         raise ReviewHold("Observation is stale or future dated")
+    return observed
 
 
 def validate_review(review: dict, template: dict, witnesses: Path,
@@ -248,7 +264,7 @@ def validate_review(review: dict, template: dict, witnesses: Path,
                 data = _bytes(witness, MAX_WITNESS_BYTES, minimum=64)
                 if _sha(data) != digest:
                     raise ReviewHold("Witness content changed")
-                _bound_witness(data, review, name, check, state)
+                _bound_witness(data, review, name, check, state, now=now)
             counts[state] += 1
     complete = counts["NOT_RUN"] == 0 and counts["FAIL"] == 0
     return {"schema": SCHEMA, "status": "MANUAL_MATRIX_COMPLETE_UNCERTIFIED" if complete
