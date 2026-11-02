@@ -56,8 +56,10 @@ function integrate(base, publicPage, pageSha) {
     "if (substr_count($raw,'--i:') !== 72 || substr_count($raw,'<!-- wp:jetpack/subscriptions') !== 1) throw new Exception('FV stage CLOSED: protected history or Jetpack missing');",
     "$found=0; foreach(parse_blocks($raw) as $block) { if (($block['blockName'] ?? '')==='core/html' && strpos($block['innerHTML'] ?? '', 'data-fv-home-flagship') !== false) ++$found; }",
     "if ($found !== 1) throw new Exception('FV stage CLOSED: no unique Gutenberg flagship block');",
-    "$id=wp_insert_post(array('post_title'=>'FV LOCAL Integrated Homepage Review','post_name'=>'fv-integrated-local-review','post_status'=>'publish','post_type'=>'page','post_content'=>$raw));",
+    "$id=wp_insert_post(array('post_title'=>'FV LOCAL Integrated Homepage Review','post_name'=>'fv-integrated-local-review','post_status'=>'publish','post_type'=>'page','post_content'=>wp_slash($raw)),true);",
     "if (!$id || is_wp_error($id)) throw new Exception('FV stage CLOSED: local WordPress insert');",
+    "$fv_stored=get_post_field('post_content',$id,'raw');",
+    "if (!is_string($fv_stored) || !hash_equals('"+digest+"',hash('sha256',$fv_stored))) throw new Exception('FV stage CLOSED: Gutenberg content changed during WordPress save');",
     "update_option('show_on_front','page'); update_option('page_on_front',$id); echo 'LOCAL STAGE ONLY: page '.$id;"
   ].join('\n');
   next.meta={title:'FV Integrated Seven-Chapter Homepage — LOCAL ONLY',description:'Public Gutenberg content and independently pinned media; no production DB/users/subscribers/secrets.'};
