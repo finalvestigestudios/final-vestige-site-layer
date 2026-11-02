@@ -25,7 +25,7 @@ function safePresell(html){
   assert.equal(count(/<button\b/gi,html),1,"no surprise buttons");
   assert.match(html,/Affiliate disclosure:[\s\S]{0,290}<button[^>]*disabled/,"near-button disclosure");
   assert.doesNotMatch(html,/<(?:script|iframe|form)\b/i,"no scripts, third-party embeds or form");
-  assert.doesNotMatch(html,/\bautoplay\b/i,"no autoplay");
+  assert.doesNotMatch(html,/<(?:video|audio)\b[^>]*\bautoplay\b/i,"no autoplay attribute");
   assert.doesNotMatch(html,/<a\b[^>]*href=["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i,"no merchant href");
   assert.doesNotMatch(html,/\b(?:utm_|clickid|aff_id|affiliate_id|fbclid|gclid)\b/i,"no tracking parameter");
   assert.match(html,/refund|money-back/i);

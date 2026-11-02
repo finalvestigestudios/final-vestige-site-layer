@@ -25,3 +25,5 @@ No unique user IDs, raw referer, URL parameters, location, IP, user agent, email
 Issue #126 QA: source accuracy, WCAG browser, real performance, adjacent disclosure, security, WordPress sanitation. Issue #150/homepage art PR #49: optional home feature only by owner, don't overwrite release candidate. Issue #174 Dispatch: Mind owns presell/partner rights, Dispatch owns UNSENT newsletter manuscripts, no sends or edits. Canonical Mind PR #172: noncanonical candidate is for consideration only. Founder explicitly authorizes any publication or earning link activation.
 
 Missing permission: written Final Vestige-specific Inspire3 acceptance; Zen12 earning URL/format and web/TikTok/email named permissions; current offer/refund/consent terms; licensed creative and video hosting rights; real staging and WCAG/performance QA; explicit founder release signoff. All HARD HOLD.
+
+No real conversion results, visitor assignments, affiliate outbound events or attributed sales have been observed in this unpublished prototype.
