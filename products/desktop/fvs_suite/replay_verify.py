@@ -172,17 +172,51 @@ def verify_report(
         source_sha256=tuple(result[0] for result in source_before))
 
 
-class _PrivateArgumentParser(argparse.ArgumentParser):
-    """Turn argparse diagnostics into a caller-safe error.
+# Each named setting is a singular reviewer decision. Only --source is repeatable:
+# LedgerDiff/Policy Delta require two independently selected inputs.
+_REPLAY_SINGLETON_FLAGS = frozenset((
+    "--kind", "--report", "--window-days",
+    "--left-match-column", "--right-match-column",
+    "--left-amount-column", "--right-amount-column",
+))
 
-    Standard argparse embeds the rejected value or option in stderr. An invalid
-    invoice window, unknown flag or product identifier can be an actual client
-    filename, financial cell or secret passed by mistake. Do not echo it.
-    --help retains its standard, static usage output and successful exit.
+
+class _PrivateArgumentParser(argparse.ArgumentParser):
+    """Reject private argument diagnostics and ambiguous replay selections.
+
+    argparse otherwise accepts a second --report/--kind/--window-days and
+    silently uses its *last* value. This undermines the operator's certainty
+    about which financial evidence was verified. Long-option abbreviations
+    are also ambiguous when new mappings are introduced.
     """
 
+    def __init__(self, *args, **kwargs):
+        kwargs["allow_abbrev"] = False
+        super().__init__(*args, **kwargs)
+
     def error(self, message: str) -> None:
+        # Standard argparse embeds secret filenames and rejected options in
+        # stderr. Only the outer main() may print its fixed generic HOLD.
         raise ValueError("Private replay command arguments rejected") from None
+
+    def parse_args(self, args: Sequence[str] | None = None, namespace=None):
+        tokens = list(sys.argv[1:] if args is None else args)
+        seen: set[str] = set()
+        for token in tokens:
+            if type(token) is not str:
+                raise ValueError("Private replay command arguments rejected")
+            option = token.partition("=")[0]
+            # No positional arguments are admitted; the -- separator is not
+            # useful and can conceal otherwise confusing command structure.
+            if token == "--":
+                raise ValueError("Private replay command arguments rejected")
+            if option in ("-h", "--help") and len(tokens) != 1:
+                raise ValueError("Private replay command arguments rejected")
+            if option in _REPLAY_SINGLETON_FLAGS:
+                if option in seen:
+                    raise ValueError("Private replay command arguments rejected")
+                seen.add(option)
+        return super().parse_args(tokens, namespace)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
