@@ -76,7 +76,7 @@ function fv_ex2_apollo_atlas_runtime_pins(): array {
     return array(
         'final-vestige-ex2-evidence-atlas.php' => '8f5a21b42cbd00acf0e390aaeb22e55f3bb216f8',
         'assets/atlas.css' => '079f2ef9785184a098ec7686f5018a474181031b',
-        'assets/atlas.js' => '1bfde47e00abc522f5af0b125c5668f8c7617256',
+        'assets/atlas.js' => '93c274410579f1e539e454ddd75b8317e2add33a',
     );
 }
 function fv_ex2_apollo_verified_atlas(): ?string {

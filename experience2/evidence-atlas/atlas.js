@@ -78,6 +78,22 @@
           : pinnedCustody[i][j]);
     });
   });
+  // R67: Source custody in the ORIGINAL independently maintained R38
+  // Research Desk must agree with its SHA-verified five-field source register
+  // before Atlas offers cross-component links. This is an EDITORIAL DRIFT
+  // guard, not a security boundary, NASA rights review, or an alteration to
+  // Research Desk PR #158. All native source links remain available.
+  const pinnedDeskCustody=[["Photograph date","January 1967; exact day not asserted","What the linked NASA photograph documents","NASA identifies the three Apollo 1 astronauts near Launch Complex 34 in the preflight period. This image does not establish cabin pressure, ignition, or the fire sequence.","Support for the historical interpretation","NASA institutional Apollo 1 historical account, separately linked on this evidence plate.","Catalog and identity notes","NASA-hosted s67-19766.jpg filename corroborates the association; a separate structured catalog identifier on the image-detail page has not been confirmed.","Photograph reuse","External NASA source link only. Image reuse has not been individually reviewed or cleared for publication here."],["Photograph date","January 3, 1967","What the linked NASA photograph documents","Spacecraft 012 preparation and movement for adapter mating; this photo cannot determine the oxygen concentration or pressure during the January 27 test.","Support for the historical interpretation","Apollo 204 Review Board report, separately linked on this evidence plate.","Catalog and identity notes","NASA photo detail page linked; individual media reuse review outstanding.","Photograph reuse","External NASA source link only. Image reuse has not been individually reviewed or cleared for publication here."],["Photograph date","October 18, 1966","What the linked NASA photograph documents","Earlier altitude-chamber training; this is not an image of the January 27 fire and is not a sensor trace.","Support for the historical interpretation","Apollo 204 Review Board report, separately linked on this evidence plate.","Catalog and identity notes","NASA photo detail page linked; individual media reuse review outstanding.","Photograph reuse","External NASA source link only. Image reuse has not been individually reviewed or cleared for publication here."],["Photograph date","January 24, 2017","What the linked NASA photograph documents","A 2017 Apollo 1 tribute exhibit with hatch-related hardware; not a contemporary photograph of the 1967 emergency.","Support for the historical interpretation","Apollo 204 Review Board report, separately linked on this evidence plate.","Catalog and identity notes","Retrospective image, NASA / Kim Shiflett credit; individual media reuse review outstanding.","Photograph reuse","External NASA source link only. Image reuse has not been individually reviewed or cleared for publication here."],["Photograph date","January 28, 1967","What the linked NASA photograph documents","Photographs the damaged spacecraft after the accident. Damage alone does not prove one unique ignition mechanism.","Support for the historical interpretation","Apollo 204 Review Board report, separately linked on this evidence plate.","Catalog and identity notes","NASA photo detail page linked; individual media reuse review outstanding.","Photograph reuse","External NASA source link only. Image reuse has not been individually reviewed or cleared for publication here."],["Photograph date","January 24, 2017","What the linked NASA photograph documents","A 2017 Apollo 1 tribute display illustrating redesigned hatch hardware; not an operational view of the 1967 command module.","Support for the historical interpretation","Apollo 204 Review Board report, separately linked on this evidence plate.","Catalog and identity notes","Retrospective image, NASA / Kim Shiflett credit; individual media reuse review outstanding.","Photograph reuse","External NASA source link only. Image reuse has not been individually reviewed or cleared for publication here."]];
+  const deskCustodyIntact=records=>records.every((record,i)=>{
+    const drawers=[...record.querySelectorAll('[data-fvx-photo-record]')];
+    if(drawers.length!==1||drawers[0].dataset.fvxPhotoRecord!==expected[i]||
+       drawers[0].querySelectorAll('dl').length!==1)return false;
+    const cells=[...drawers[0].querySelector('dl').children];
+    if(cells.length!==10)return false;
+    return pinnedDeskCustody[i].every((value,j)=>
+      cells[j]?.tagName===(j%2===0?'DT':'DD') &&
+      cells[j].textContent.trim()===value);
+  });
   const deskLinks=[...root.querySelectorAll('[data-fva-to-desk]')];
   const deskStatus=root.querySelector('[data-fva-desk-status]');
   let desk=null;
@@ -195,7 +211,7 @@
     if(roots.length!==1)return null;
     const candidate=roots[0];
     const records=[...candidate.querySelectorAll('[data-fvx-record]')];
-    if(records.length!==6)return null;
+    if(records.length!==6||!deskCustodyIntact(records))return null;
     if(!pinned.every(([id,catalog,url],i)=>{
       const record=records[i];
       const photoLinks=[...record.querySelectorAll('a[href^="https://www.nasa.gov/image-detail/"]')];

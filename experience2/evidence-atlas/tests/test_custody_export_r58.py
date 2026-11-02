@@ -34,6 +34,6 @@ class CustodyExportR58(unittest.TestCase):
         suite=(ROOT/'integration/fv-ex2-apollo-suite.php').read_text()
         self.assertIn('0.0.58-staging',php)
         self.assertIn('0.0.66-staging',suite)
-        self.assertIn('1bfde47e00abc522f5af0b125c5668f8c7617256',suite)
+        self.assertIn('93c274410579f1e539e454ddd75b8317e2add33a',suite)
         self.assertEqual(build_atlas.validate_rights_audit(build_atlas.validate_custody())['status'],'STAGING_HOLD')
 if __name__=='__main__':unittest.main()
