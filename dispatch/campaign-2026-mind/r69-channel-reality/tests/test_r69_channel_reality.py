@@ -93,5 +93,5 @@ class ReleaseTests(unittest.TestCase):
     def test_no_future_claim(self):
         self.assertFalse(self.data["word_press"]["welcome_received_verified"])
         self.assertIn("NOT AUTHORIZED",self.docs["received-mail-check.md"])
-        self.assertIn("not native Python execution",self.docs["README.md"].lower())
+        self.assertIn("not native python execution",self.docs["README.md"].lower())
 if __name__=="__main__":unittest.main()
