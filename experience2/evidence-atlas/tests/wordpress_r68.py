@@ -261,7 +261,35 @@ def main():
     p.add_argument('--head',required=True);p.add_argument('--stage',required=True,type=Path)
     p.add_argument('--axe',type=Path);p.add_argument('--out',type=Path)
     a=p.parse_args()
-    prepare(a.repo,a.theme_zip,a.stage,a.theme_sha256,a.head)
+    # Bootstrap evidence even if exact-head validation fails before Playground
+    # is launched. Never make a write inside the review checkout.
+    if a.axe and a.out:
+        repo_root=a.repo.resolve(strict=True)
+        output_root=a.out.resolve()
+        if output_root==repo_root or repo_root in output_root.parents:
+            raise ValueError('ARTIFACT_DESTINATION_INSIDE_REPO')
+        output_root.mkdir(parents=True,exist_ok=True)
+        (output_root/'R69_BOOTSTRAP_RECEIPT.json').write_text(json.dumps({
+            'schema':'fv.apollo.r69.bootstrap.v1','release':'STAGING_HOLD',
+            'preparation_attempted':True,'real_wordpress_accepted':False,
+            'public_wordpress_writes':False
+        },indent=2,sort_keys=True)+'\n')
+    try:
+        prepare(a.repo,a.theme_zip,a.stage,a.theme_sha256,a.head)
+    except Exception as exc:
+        if a.axe and a.out:
+            allowed={'THEME_HASH_MISMATCH','STAGE_DESTINATION_UNSAFE',
+                     'EXACT_HEAD_REQUIRED','GIT_HEAD_DIRTY_OR_MISMATCHED',
+                     'RUNNER_NOT_EXACT_HEAD','PLUGIN_STAGING_CUSTODY_FAILED',
+                     'PLUGIN_SOURCE_CHANGED','THEME_ROOT_NOT_ASSEMBLER',
+                     'THEME_NOT_ASSEMBLER','UNSAFE_THEME_ARCHIVE'}
+            category=str(exc) if type(exc) is ValueError and str(exc) in allowed else type(exc).__name__
+            (a.out/'R69_PREPARE_HOLD.json').write_text(json.dumps({
+                'schema':'fv.apollo.r69.prepare-failed.v1','release':'STAGING_HOLD',
+                'category':category,'real_wordpress_accepted':False,
+                'raw_logs_uploaded':False,'public_wordpress_writes':False
+            },indent=2,sort_keys=True)+'\n')
+        raise
     if a.axe:
         if not a.out:p.error('--out required with --axe')
         accept(a.stage,a.axe,a.out)
