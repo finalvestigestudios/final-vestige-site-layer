@@ -31,7 +31,7 @@ class AtlasRuntimeIntegrity(unittest.TestCase):
         self.assertIn('function fv_ex2_apollo_verified_atlas(): ?string', src)
         self.assertIn('fv_ex2_apollo_verified_atlas() === null', src)
         self.assertIn('hash_file(\'sha256\', $template)', src)
-        self.assertIn('0.0.64-staging', src)
+        self.assertIn('0.0.65-staging', src)
         for forbidden in ('wp_insert_post(', 'update_option(', 'wp_update_post(', 'wp_remote_get(', 'file_get_contents(\'http'):
             self.assertNotIn(forbidden, src)
         self.assertIn('function fv_ex2_apollo_suite_fallback()', src)
