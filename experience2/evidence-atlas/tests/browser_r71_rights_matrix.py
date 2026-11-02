@@ -37,6 +37,33 @@ def run(out:Path,axe:Path|None=None,axe_sha:str|None=None)->dict:
                 page.on('pageerror',lambda e:errors.append(str(e)))
                 page.on('request',lambda r:requests.append(r.url))
                 page.set_content(doc)
+                # Buffered PerformanceObserver values are real Chromium laboratory
+                # observations for this isolated HTML, NEVER hosted p75 CWV.
+                metrics=page.evaluate("""async () => {
+                  const values={lcp_ms:null,cls:0,scope:'isolated-local-component',
+                                source:'PerformanceObserver',hosted_field:false};
+                  const observers=[];
+                  try {
+                    const lcp=new PerformanceObserver(list=>{
+                      for(const entry of list.getEntries())
+                        values.lcp_ms=Math.round(entry.startTime*10)/10;
+                    });
+                    lcp.observe({type:'largest-contentful-paint',buffered:true});
+                    observers.push(lcp);
+                  } catch(e) {values.lcp_unsupported=true;}
+                  try {
+                    const cls=new PerformanceObserver(list=>{
+                      for(const entry of list.getEntries())
+                        if(!entry.hadRecentInput) values.cls+=entry.value;
+                    });
+                    cls.observe({type:'layout-shift',buffered:true});
+                    observers.push(cls);
+                  } catch(e) {values.cls_unsupported=true;}
+                  await new Promise(resolve=>setTimeout(resolve,150));
+                  for(const o of observers)o.disconnect();
+                  values.cls=Math.round(values.cls*1e6)/1e6;
+                  return values;
+                }""")
                 assert page.locator('[data-r71-rights-row]').count()==6
                 assert page.locator('[data-r71-rights-row]:visible').count()==6
                 assert page.locator('[data-fva-record]:visible').count()==6
@@ -72,7 +99,7 @@ def run(out:Path,axe:Path|None=None,axe_sha:str|None=None)->dict:
                         receipt['axe'].append({'width':width,'color_mode':'normal',**report})
                         assert not report['violations'],report
                 assert not errors and not requests,(width,errors,requests)
-                receipt['cases'].append({'width':width,'javascript_enabled':javascript,'passed':True})
+                receipt['cases'].append({'width':width,'javascript_enabled':javascript,'passed':True,'lab_vitals':metrics})
                 ctx.close()
         browser.close()
     (out/'R71_BROWSER_RECEIPT.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
