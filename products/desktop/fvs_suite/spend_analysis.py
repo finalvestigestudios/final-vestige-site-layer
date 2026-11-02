@@ -51,6 +51,11 @@ def summarize_spend(
         raise ValueError("Source snapshot SHA-256 must be 64 lowercase hexadecimal characters")
 
     totals: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
+    # A net total can hide large purchases offset by credits or refunds.
+    # Keep charges and credit magnitudes separately, in exact Decimal cents.
+    # Do not treat either a matched sign or a refund as a compliance finding.
+    gross_charges: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
+    gross_credits: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
     members: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     vendor_rows: dict[str, list[dict[str, str]]] = defaultdict(list)
     monthly: dict[str, dict[str, Decimal]] = defaultdict(
@@ -65,6 +70,12 @@ def summarize_spend(
             parse_date=parse_date, parse_money=parse_money):
         bucket = (vendor, month, category)
         totals[bucket] += amount
+        if amount > 0:
+            gross_charges[bucket] += amount
+        elif amount < 0:
+            # copy_negate never rounds the original Decimal under hostile
+            # caller contexts; this magnitude is not a new source amount.
+            gross_credits[bucket] += amount.copy_negate()
         monthly[vendor][month] += amount
         category_monthly[(vendor, category)][month] += amount
         members[bucket].append(record)
@@ -115,6 +126,11 @@ def summarize_spend(
             "month": month,
             "category": category,
             "amount": format_money(totals[bucket]),
+            "gross_charges": format_money(gross_charges[bucket]),
+            "gross_credits": format_money(gross_credits[bucket]),
+            "credit_offset_review": (
+                "review_mixed_sign_offset"
+                if gross_charges[bucket] > 0 and gross_credits[bucket] > 0 else ""),
             "flag": ";".join(flags),
             "vendor_month_total": format_money(monthly[vendor][month]),
             # An even-sized median may be half a cent; do not round evidence.
