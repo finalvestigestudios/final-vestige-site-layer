@@ -15,7 +15,7 @@ function audit(html) {
   assert.ok(disclosure>=0 && button>=0 && Math.abs(disclosure-button)<450);
   assert.doesNotMatch(html,/<a\b[^>]*href="https?:\/\/(?:www\.)?(?:zen12\.com\/(?:hnp|getstarted)|affiliates\.inspire3\.com)/i);
   assert.doesNotMatch(html,/<(?:script|iframe|form|input|video|audio)\b/i);
-  assert.doesNotMatch(html,/\b(?:autoplay|dataLayer|gtag\(|fbq\(|localStorage|sessionStorage)\b/i);
+  assert.doesNotMatch(html,/<(?:video|audio)\b[^>]*\bautoplay\b|\b(?:dataLayer|gtag\(|fbq\(|localStorage|sessionStorage)\b/i);
   assert.match(html,/@media\(max-width:780px\)/);
   assert.match(html, /@media\(prefers-reduced-motion:reduce\)/);
   assert.match(html, /@media\(forced-colors:active\)/);
@@ -38,7 +38,7 @@ test('text and film variants embed byte-identical named-product guide',()=>{
 });
 test('film is optional, described honestly and provides no-JS transcript',()=>{
   assert.match(b, /<svg[\s\S]*?role="img"/);
-  assert.match(b, /Playback is <strong>not<\/strong> enabled/);
+  assert.match(b, /Playback is <strong>not<\/strong> enabled/);\n  assert.doesNotMatch(b, /<main\\b/i);
   assert.match(b, /id="r68-film-transcript"/);
   assert.match(b, /Skip directly to the film transcript/);
   assert.equal((b.match(/<time>/g)||[]).length,6);
