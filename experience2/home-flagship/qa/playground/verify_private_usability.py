@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Real keyboard, touch, 320px reflow and reduced-motion controls in disposable WordPress.
+"""Real keyboard, touch, reflow, CDP pinch zoom and reduced-motion controls in WordPress.
 
 This is an exact-source, private localhost-only Playwright check, NOT manual WCAG
-2.2 AA, assistive-technology, actual browser 200% zoom, WP.com-host or field-CWV
+2.2 AA, assistive-technology, browser UI zoom, WP.com-host or field-CWV
 certification. Private WordPress nonce, cookies, URLs and LHR are never exported.
 """
 from __future__ import annotations
@@ -19,8 +19,9 @@ VERIFIER = HERE.parent / "release-candidate" / "verify_exact_staging.py"
 PAGE = "http://127.0.0.1:9400/?pagename=fv-ex2-playground-review"
 CHAPTERS = ("fv-hf-title", "fv-hf-chronicle", "fv-hf-evidence", "fv-hf-inquiry",
             "fv-hf-method-title", "fv-hf-observer", "fv-hf-mind-title")
-PROFILES = (("reflow_320", 320, False), ("keyboard_390", 390, False),
-            ("touch_390", 390, True))
+PROFILES = (("reflow_320", 320, False), ("reflow_640", 640, False),
+            ("keyboard_390", 390, False), ("touch_390", 390, True),
+            ("pinch_200_390", 390, True))
 
 
 def exact_checkout(repo: Path, expected: str) -> None:
@@ -55,12 +56,20 @@ def grade(checks: dict[str, bool], profiles: tuple = PROFILES) -> list[str]:
     expected = {"reflow_320:real_wordpress", "reflow_320:no_root_overflow",
                 "reflow_320:primary_nav_fully_visible",
                 "reflow_320:seven_chapters", "reflow_320:reduced_motion",
+                "reflow_640:real_wordpress", "reflow_640:no_root_overflow",
+                "reflow_640:seven_chapters", "reflow_640:primary_nav_fully_visible",
+                "reflow_640:reduced_motion",
                 "keyboard_390:real_wordpress", "keyboard_390:focus_visible",
                 "keyboard_390:case_enter", "keyboard_390:case_space",
                 "keyboard_390:chronicle_enter", "keyboard_390:native_details_keyboard",
                 "keyboard_390:reduced_motion", "touch_390:real_wordpress",
                 "touch_390:case_tap", "touch_390:chronicle_tap",
-                "touch_390:reduced_motion"}
+                "touch_390:reduced_motion",
+                "pinch_200_390:real_wordpress", "pinch_200_390:reduced_motion",
+                "pinch_200_390:visual_viewport_2x",
+                "pinch_200_390:seven_chapters",
+                "pinch_200_390:case_tap_at_2x",
+                "pinch_200_390:text_200_percent_no_root_overflow"}
     missing = sorted(expected.difference(checks))
     failures = sorted(key for key, ok in checks.items() if not ok)
     return ["MISSING_" + key.replace(":", "_") for key in missing] + [
@@ -128,6 +137,63 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
                         page.evaluate("window.scrollTo(0, 0)")
                         page.screenshot(path=str(out / "usability-320-first-screen.png"),
                                         full_page=False, timeout=15000)
+                    if profile == "reflow_640":
+                        # Equivalent *CSS layout width* to a 1280px desktop
+                        # viewport at 200% browser zoom; this does not claim
+                        # that Chrome's browser UI zoom control was exercised.
+                        mark(profile, "seven_chapters", all(
+                            page.locator("#" + chapter).count() == 1 for chapter in CHAPTERS))
+                        mark(profile, "no_root_overflow", bool(page.evaluate(
+                            "document.documentElement.scrollWidth <= innerWidth + 1 && innerWidth === 640")))
+                        mark(profile, "primary_nav_fully_visible", bool(page.evaluate("""() => {
+                            const nav = document.querySelector('.fv-hf__nav');
+                            if (!nav) return false;
+                            const links = [...nav.querySelectorAll('a')];
+                            return links.length === 3 &&
+                              nav.scrollWidth <= nav.clientWidth + 1 &&
+                              links.every(a => {
+                                const b = a.getBoundingClientRect();
+                                return b.left >= 0 && b.right <= innerWidth - 4;
+                              });
+                        }""")))
+                        page.evaluate("window.scrollTo(0, 0)")
+                        page.screenshot(path=str(out / "usability-640-200-percent-reflow-equivalent.png"),
+                                        full_page=False, timeout=15000)
+                    if profile == "pinch_200_390":
+                        # A real CDP visual-viewport pinch zoom, not simulated
+                        # desktop UI zoom. Underlying CSS layout width remains
+                        # 390px; visual viewport must shrink to ~195 CSS px.
+                        session = context.new_cdp_session(page)
+                        session.send("Emulation.setPageScaleFactor", {"pageScaleFactor": 2})
+                        page.wait_for_timeout(120)
+                        mark(profile, "visual_viewport_2x", bool(page.evaluate("""() =>
+                            Math.abs(visualViewport.scale - 2) <= 0.05 &&
+                            visualViewport.width >= 185 && visualViewport.width <= 205 &&
+                            innerWidth === 390
+                        """)))
+                        mark(profile, "seven_chapters", all(
+                            page.locator("#" + chapter).count() == 1 for chapter in CHAPTERS))
+                        case = page.locator('[data-fv-case-button="malbone"]')
+                        case.wait_for(state="visible", timeout=8000)
+                        case.tap(timeout=10000)
+                        mark(profile, "case_tap_at_2x", bool(
+                            case.get_attribute("aria-pressed") == "true" and
+                            page.locator('[data-fv-case="malbone"]').is_visible()))
+                        page.evaluate("window.scrollTo(0, 0)")
+                        page.screenshot(path=str(out / "usability-390-cdp-pinch-200.png"),
+                                        full_page=False, timeout=15000)
+                        # The second independent scaling challenge is 200%
+                        # root-text magnification. It is not a system browser
+                        # font setting and cannot replace manual WCAG review.
+                        page.evaluate("document.documentElement.style.fontSize='200%'")
+                        page.wait_for_timeout(120)
+                        mark(profile, "text_200_percent_no_root_overflow", bool(page.evaluate("""() =>
+                            parseFloat(getComputedStyle(document.documentElement).fontSize) >= 31 &&
+                            document.documentElement.scrollWidth <= innerWidth + 1
+                        """)))
+                        page.evaluate("window.scrollTo(0, 0)")
+                        page.screenshot(path=str(out / "usability-390-200-percent-root-text.png"),
+                                        full_page=False, timeout=15000)
                     if profile == "keyboard_390":
                         case = page.locator('[data-fv-case-button="malbone"]')
                         case.wait_for(state="visible", timeout=8000)
@@ -190,6 +256,9 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
             "target": "NONPRODUCTION_AUTHENTICATED_WORDPRESS_ASSEMBLER",
             "checks": checks, "failure_codes": failures,
             "manual_browser_200_percent_zoom": "NOT_TESTED",
+            "cdp_visual_viewport_pinch_200_percent": "AUTOMATED_TESTED",
+            "reflow_200_percent_equivalent_1280px": "AUTOMATED_TESTED",
+            "root_text_magnification_200_percent": "AUTOMATED_TESTED",
             "screen_reader_and_manual_AT": "NOT_TESTED",
             "real_world_mobile_touch_device": "NOT_TESTED",
             "wpcom_host_compatibility": "NOT_ESTABLISHED",
