@@ -7,8 +7,9 @@
  */
 if (!defined('ABSPATH')) { exit; }
 if (!defined('FV_EX2_ATLAS_VERSION')) { define('FV_EX2_ATLAS_VERSION', '0.0.58-staging'); }
-// Exact, reviewed R39 source-custody HTML fragment. A changed build needs new review.
-if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', '33c72ea1b64d5b3b93dd949da9143debea6bda1cc1143402a20e9e1abcaef82a'); }
+// R72 reviewed source-custody HTML fragment: six citation-copy buttons now
+// satisfy visible-first accessible names. SHA must match exact compiled HTML.
+if (!defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { define('FV_EX2_ATLAS_TEMPLATE_SHA256', 'f2cf346ab5801729fada99643168be7878d9f83237c038e3f9dd638d49613250'); }
 
 /** Register once. Preload for a top-level shortcode; dynamically rendered shortcodes
  * enqueue in the callback, so reusable blocks and template parts are not excluded.
