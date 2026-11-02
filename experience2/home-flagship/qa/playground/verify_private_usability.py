@@ -53,6 +53,7 @@ def grade(checks: dict[str, bool], profiles: tuple = PROFILES) -> list[str]:
     if not checks or any(type(value) is not bool for value in checks.values()):
         return ["MISSING_OR_NONBOOLEAN_CHECK"]
     expected = {"reflow_320:real_wordpress", "reflow_320:no_root_overflow",
+                "reflow_320:primary_nav_fully_visible",
                 "reflow_320:seven_chapters", "reflow_320:reduced_motion",
                 "keyboard_390:real_wordpress", "keyboard_390:focus_visible",
                 "keyboard_390:case_enter", "keyboard_390:case_space",
@@ -110,6 +111,20 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
                             page.locator("#" + chapter).count() == 1 for chapter in CHAPTERS))
                         mark(profile, "no_root_overflow", bool(page.evaluate(
                             "document.documentElement.scrollWidth <= window.innerWidth + 1 && window.innerWidth === 320")))
+                        # Distinct from the intentionally scrollable chapter rail:
+                        # at 320px the three primary top-level destinations
+                        # must all remain readable without hidden horizontal scroll.
+                        mark(profile, "primary_nav_fully_visible", bool(page.evaluate("""() => {
+                            const nav = document.querySelector('.fv-hf__nav');
+                            if (!nav) return false;
+                            const links = [...nav.querySelectorAll('a')];
+                            return links.length === 3 &&
+                                   nav.scrollWidth <= nav.clientWidth + 1 &&
+                                   links.every(a => {
+                                       const box = a.getBoundingClientRect();
+                                       return box.left >= 0 && box.right <= innerWidth - 4;
+                                   });
+                        }""")))
                         page.evaluate("window.scrollTo(0, 0)")
                         page.screenshot(path=str(out / "usability-320-first-screen.png"),
                                         full_page=False, timeout=15000)
