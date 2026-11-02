@@ -22,6 +22,34 @@ class ReleaseCandidateParityTests(unittest.TestCase):
         self.assertEqual(parity.verify_repo(ROOT)["status"],
                          "CHAPTER_BYTES_AND_EDITORIAL_NOTICES_IDENTICAL")
 
+    def test_nojs_fallbacks_are_exactly_two_decorative_eager_images(self):
+        for content in (SOURCE.decode("utf-8"), PAYLOAD.decode("utf-8")):
+            self.assertEqual(content.count('<noscript>'), 2)
+            self.assertEqual(content.count('data-fv-noscript-archive'), 2)
+            self.assertEqual(content.count('loading="eager"'), 2)
+            self.assertEqual(content.count('role="presentation" aria-hidden="true"'), 2)
+
+    def test_joint_removal_of_nojs_images_is_detected(self):
+        import re
+        a = re.sub(r'<noscript>\\s*<img\\b[^>]*>\\s*</noscript>', '', SOURCE.decode('utf-8'))
+        p = re.sub(r'<noscript>\\s*<img\\b[^>]*>\\s*</noscript>', '', PAYLOAD.decode('utf-8'))
+        with self.assertRaisesRegex(ValueError, 'RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE'):
+            parity.compare_interiors(a, p)
+
+    def test_joint_repointing_of_nojs_image_to_unreviewed_source_fails(self):
+        a = SOURCE.decode('utf-8').replace('data-fv-noscript-archive', 'data-fv-noscript-archive', 1)
+        p = PAYLOAD.decode('utf-8')
+        target = 'https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'
+        import re
+        # Change only the fallback source; preserve the real lazy image.
+        def reroute(text):
+            return re.sub(r'(<noscript><img src=")' + re.escape(target),
+                          r'\\g<1>https://example.invalid/unreviewed.jpg', text, count=1)
+        a, p = reroute(a), reroute(p)
+        self.assertNotEqual(a, SOURCE.decode('utf-8'))
+        with self.assertRaisesRegex(ValueError, 'RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE'):
+            parity.compare_interiors(a, p)
+
     def test_stage_rights_deletion_is_detected_even_without_blob_pins(self):
         a = SOURCE.decode("utf-8")
         p = PAYLOAD.decode("utf-8")
