@@ -28,9 +28,13 @@ def synthetic(text, citations=(), ident="b"):
 class TestR79Conservation(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.parent=r79._r78().live_report()
-        cls.report=r79.construct(cls.parent)
+        # Live report reconstructs the source provenance exactly once.
+        cls.report=r79.live_report()
+        cls.parent=cls.report["complete_R78_evidence_UNABRIDGED_NOT_APPROVED"]
         cls.orders=cls.report["review_orders_347_NOT_UNSUPPORTED_OR_UNSAFE_VERDICTS"]
+        # Verified once for all CSV assertions; avoid rebuilding an entire
+        # seven-cluster evidence tree for every serialization-only test.
+        cls.private_csv=r79.csv_private_queue(cls.report)
         cls.docs=cls.parent["document_review_packets_NOT_APPROVED"]
         cls.lookup={(d["kind"],d["slug"]):d for d in cls.docs}
 
@@ -157,12 +161,12 @@ class TestR79Conservation(unittest.TestCase):
             self.assertEqual(t["independent_QD_review"],r79.REVIEW)
 
     def test_027_csv_is_one_way_and_carries_347_rows(self):
-        rows=list(csv.DictReader(io.StringIO(r79.csv_private_queue(self.report))))
+        rows=list(csv.DictReader(io.StringIO(self.private_csv)))
         self.assertEqual(len(rows),347)
         self.assertTrue(all(x["qualified_safety_review"]==r79.REVIEW for x in rows))
 
     def test_028_csv_round_trip_full_text_preserved(self):
-        rows=list(csv.DictReader(io.StringIO(r79.csv_private_queue(self.report))))
+        rows=list(csv.DictReader(io.StringIO(self.private_csv)))
         self.assertEqual(len(rows),len(self.orders))
         for i,(row,order) in enumerate(zip(rows,self.orders)):
             self.assertEqual(row["block_id"],order["block_id"],i)
@@ -172,8 +176,9 @@ class TestR79Conservation(unittest.TestCase):
                              r79._csv_safe(raw))
 
     def test_029_csv_output_deterministic(self):
-        self.assertEqual(r79.csv_private_queue(self.report),
-                         r79.csv_private_queue(self.report))
+        # A fresh one-way export must be byte-identical with the previously
+        # source-verified export; never cache verification in production.
+        self.assertEqual(self.private_csv, r79.csv_private_queue(self.report))
 
     def test_030_report_fingerprint_exact(self):
         self.assertEqual(self.report["fingerprint_sha256"],r79.digest({
