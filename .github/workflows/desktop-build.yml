@@ -97,6 +97,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r131.py
           python -OO products/desktop/scripts/safe_unittest_r131.py
+      - name: R132 LedgerDiff mapping native keyboard/scale regression (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r132.py
+          python -OO products/desktop/scripts/safe_unittest_r132.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -341,6 +345,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R131 ledger key mapping regression FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r131.py
           if ($LASTEXITCODE -ne 0) { throw "R131 optimized ledger key mapping regression FAILED" }
+      - name: R132 LedgerDiff mapping native keyboard/scale regression (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r132.py
+          if ($LASTEXITCODE -ne 0) { throw "R132 ledger native accessibility regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r132.py
+          if ($LASTEXITCODE -ne 0) { throw "R132 optimized ledger native accessibility regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
