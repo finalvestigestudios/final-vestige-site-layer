@@ -66,6 +66,57 @@ def _ordinary_file_identity(path: Path) -> tuple[int, int]:
     return (meta.st_dev, meta.st_ino)
 
 
+def _observation_snapshot(metadata) -> tuple[int, int, int, int, int]:
+    """Bind a human note to one ordinary local file throughout its read."""
+    return (metadata.st_dev, metadata.st_ino, metadata.st_size,
+            metadata.st_mtime_ns, metadata.st_ctime_ns)
+
+
+def _read_private_observation(path: Path, *, dist: Path, review: Path,
+                              witnesses: Path, r9_report: Path) -> str:
+    """Read only a stable, standalone local text note; never chase file links.
+
+    An attacker controlling the reviewer's filesystem is outside this
+    cooperative gate's trust model. This prevents accidental copying of R9
+    custody, an existing witness, or a symlinked financial/client file into
+    the reviewer evidence bundle. No text/path is emitted on failure.
+    """
+    parent = _safe_dir(path.parent)
+    if (parent.is_relative_to(dist.resolve(strict=True)) or
+            parent.is_relative_to(_safe_dir(witnesses))):
+        raise qa.ReviewHold("Human observation must be outside candidate and witness custody")
+    before = path.lstat()
+    _ordinary_file_identity(path)
+    if (path.resolve(strict=True) == review.resolve() or
+            path.resolve(strict=True) == r9_report.resolve()):
+        raise qa.ReviewHold("Human observation must not be a custody record")
+    if not qa.MIN_OBSERVATION_CHARS <= before.st_size <= NOTE_LIMIT:
+        raise qa.ReviewHold("Human observation has invalid size")
+
+    # NONBLOCK avoids hanging on an adversarial FIFO substituted between
+    # lstat() and open() on POSIX. NOFOLLOW is used where the OS supports it.
+    flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0) |
+             getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+    fd = os.open(path, flags)
+    with os.fdopen(fd, "rb") as source:
+        opened = os.fstat(source.fileno())
+        if not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1:
+            raise qa.ReviewHold("Human observation is not an ordinary file")
+        data = source.read(NOTE_LIMIT + 1)
+        completed = os.fstat(source.fileno())
+    after = path.lstat()
+    _ordinary_file_identity(path)
+    if not (_observation_snapshot(before) == _observation_snapshot(opened) ==
+            _observation_snapshot(completed) == _observation_snapshot(after)):
+        raise qa.ReviewHold("Human observation changed during reading")
+    if not qa.MIN_OBSERVATION_CHARS <= len(data) <= NOTE_LIMIT:
+        raise qa.ReviewHold("Human observation has invalid length")
+    try:
+        return data.decode("utf-8")
+    except UnicodeError:
+        raise qa.ReviewHold("Human observation must be UTF-8") from None
+
+
 def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
                witnesses: Path, app: str, check: str, state: str,
                observation_file: Path) -> dict:
@@ -117,7 +168,9 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
         if target.exists() or target.is_symlink():
             raise qa.ReviewHold("Previous witness file exists")
 
-        observation = qa._bytes(observation_file, NOTE_LIMIT, minimum=qa.MIN_OBSERVATION_CHARS).decode("utf-8")
+        observation = _read_private_observation(
+            observation_file, dist=dist, review=review, witnesses=witness_dir,
+            r9_report=r9_report)
         note = {
             "schema": qa.WITNESS_SCHEMA_V2, "app": app, "check": check, "state": state,
             "candidate_sha256": matrix["apps"][app]["candidate_sha256"],
