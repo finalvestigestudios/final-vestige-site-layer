@@ -13,6 +13,7 @@ import re
 import subprocess
 from urllib.parse import urlsplit
 from media_transfer_admission import audit_image_payloads
+from editorial_identity_gate import check_locked_editorial_identity
 
 HOME = Path('experience2/home-flagship')
 CHAPTERS = ('fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry',
@@ -72,7 +73,7 @@ def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
             raise ValueError('RELEASE HOLD: uncommitted staging source: '+str(path))
         files[name] = raw
     # Attest the executed QA code as well as the original eleven homepage assets.
-    for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py'):
+    for name in ('verify_exact_staging.py', 'editorial_identity_gate.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py'):
         rel = HOME/'qa/release-candidate'/name
         p = repo/rel
         if p.is_symlink() or not p.is_file() or not p.resolve().is_relative_to(repo):
@@ -139,7 +140,10 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
     network_receipt = audit_image_payloads(imagedata, media_responses or [])
     check('actual_image_http_payloads', network_receipt['status']=='PASS')
     # Validate actual enhancement, rather than inferring from script tags.
-    check('direction_visible',frame.locator('[data-fv-direction-choice="museum"]').is_visible())
+    # The founder-selected locked identity retired the three-way studio picker.
+    # Test the real dated Franklin folio, provenance and painted geometry instead.
+    for name, verdict in check_locked_editorial_identity(frame).items():
+        check(name, verdict)
     if width in (390,1440):
         frame.locator('body').screenshot(path=str(out/f'full-seven-chapter-{width}.png'))
     perf = frame.evaluate("() => ({observer:window.__fvLab||null,resources:performance.getEntriesByType('resource').filter(e=>e.initiatorType==='img').map(e=>({name:e.name,transferSize:e.transferSize,decodedBodySize:e.decodedBodySize}))})")
