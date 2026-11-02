@@ -274,7 +274,7 @@ FAULTS={
     "quantity_citation":lambda p:qty_mutation(p,"original_R72_task_sha256","f"*64),
     "quantity_safety":lambda p:qty_mutation(p,"qualified_safety_review","PASS"),
     "quantity_total":lambda p:p["counts"].update(numeric_unit_occurrences=999),
-    "qualifier_parent_fingerprint":lambda p:p.update(original_R73_evidence_fingerprint_sha256="f"*64),
+    "qualifier_parent_fingerprint":lambda p:p.update(original_R73_evidence_fingerprint_sha256="not-a-sha"),
 }
 
 def fault_test(label, mutate):
