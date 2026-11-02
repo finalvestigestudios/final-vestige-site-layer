@@ -11,7 +11,7 @@ permissions:
   contents: read
 jobs:
   exact-source-php:
-    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101' || github.head_ref == 'fix/ex2-pr580-playground-runtime-pin-20261102' || github.head_ref == 'fix/ex2-pr588-real-wp-admission-20261102' || github.head_ref == 'fix/ex2-pr591-redirect-classification-20261102' || github.head_ref == 'fix/ex2-pr594-direct-login-health-20261102' || github.head_ref == 'fix/ex2-pr597-rest-readiness-20261102' || github.head_ref == 'fix/ex2-pr601-redirect-provenance-20261102' || github.head_ref == 'fix/ex2-pr603-loopback-cookie-handshake-20261102' || github.head_ref == 'fix/ex2-pr605-visible-archive-browser-admission-20261102' || github.head_ref == 'qa/ex2-pr607-true-viewport-private-render-20261102' || github.head_ref == 'qa/ex2-pr609-release-content-parity-20261102' || github.head_ref == 'qa/ex2-pr613-throttled-private-performance-20261102' || github.head_ref == 'qa/ex2-nypl-capture-rights-custody-20261102')
+    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101' || github.head_ref == 'fix/ex2-pr580-playground-runtime-pin-20261102' || github.head_ref == 'fix/ex2-pr588-real-wp-admission-20261102' || github.head_ref == 'fix/ex2-pr591-redirect-classification-20261102' || github.head_ref == 'fix/ex2-pr594-direct-login-health-20261102' || github.head_ref == 'fix/ex2-pr597-rest-readiness-20261102' || github.head_ref == 'fix/ex2-pr601-redirect-provenance-20261102' || github.head_ref == 'fix/ex2-pr603-loopback-cookie-handshake-20261102' || github.head_ref == 'fix/ex2-pr605-visible-archive-browser-admission-20261102' || github.head_ref == 'qa/ex2-pr607-true-viewport-private-render-20261102' || github.head_ref == 'qa/ex2-pr609-release-content-parity-20261102' || github.head_ref == 'qa/ex2-pr613-throttled-private-performance-20261102' || github.head_ref == 'qa/ex2-nypl-capture-rights-custody-20261102' || github.head_ref == 'qa/ex2-pr625-private-lighthouse-20261102')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -40,6 +40,9 @@ jobs:
           python -m unittest discover -s experience2/home-flagship/qa/playground/parity -p test_wp_slash_persistence.py -v
           python -m unittest discover -s experience2/home-flagship/qa/playground -p test_local_http_readiness.py -v
           python -m unittest discover -s experience2/home-flagship/qa/playground -p test_measure_private_lab.py -v
+          node --check experience2/home-flagship/qa/playground/lighthouse_receipt.mjs
+          node --check experience2/home-flagship/qa/playground/measure_private_lighthouse.mjs
+          node --test experience2/home-flagship/qa/playground/test_private_lighthouse.mjs
           python -m unittest discover -s experience2/home-flagship/qa/playground -p test_playground_runtime_contract.py -v
           python experience2/home-flagship/qa/release-candidate/verify_release_content_parity.py --repo .
           python -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_release_content_parity.py -v
@@ -47,7 +50,7 @@ jobs:
           python -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_media_transfer_admission.py -v
 
   ephemeral-wordpress:
-    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101' || github.head_ref == 'fix/ex2-pr580-playground-runtime-pin-20261102' || github.head_ref == 'fix/ex2-pr588-real-wp-admission-20261102' || github.head_ref == 'fix/ex2-pr591-redirect-classification-20261102' || github.head_ref == 'fix/ex2-pr594-direct-login-health-20261102' || github.head_ref == 'fix/ex2-pr597-rest-readiness-20261102' || github.head_ref == 'fix/ex2-pr601-redirect-provenance-20261102' || github.head_ref == 'fix/ex2-pr603-loopback-cookie-handshake-20261102' || github.head_ref == 'fix/ex2-pr605-visible-archive-browser-admission-20261102' || github.head_ref == 'qa/ex2-pr607-true-viewport-private-render-20261102' || github.head_ref == 'qa/ex2-pr609-release-content-parity-20261102' || github.head_ref == 'qa/ex2-pr613-throttled-private-performance-20261102' || github.head_ref == 'qa/ex2-nypl-capture-rights-custody-20261102')
+    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101' || github.head_ref == 'fix/ex2-pr580-playground-runtime-pin-20261102' || github.head_ref == 'fix/ex2-pr588-real-wp-admission-20261102' || github.head_ref == 'fix/ex2-pr591-redirect-classification-20261102' || github.head_ref == 'fix/ex2-pr594-direct-login-health-20261102' || github.head_ref == 'fix/ex2-pr597-rest-readiness-20261102' || github.head_ref == 'fix/ex2-pr601-redirect-provenance-20261102' || github.head_ref == 'fix/ex2-pr603-loopback-cookie-handshake-20261102' || github.head_ref == 'fix/ex2-pr605-visible-archive-browser-admission-20261102' || github.head_ref == 'qa/ex2-pr607-true-viewport-private-render-20261102' || github.head_ref == 'qa/ex2-pr609-release-content-parity-20261102' || github.head_ref == 'qa/ex2-pr613-throttled-private-performance-20261102' || github.head_ref == 'qa/ex2-nypl-capture-rights-custody-20261102' || github.head_ref == 'qa/ex2-pr625-private-lighthouse-20261102')
     needs: exact-source-php
     env:
       npm_config_engine_strict: 'true'
@@ -127,6 +130,22 @@ jobs:
           python -m pip install --disable-pip-version-check playwright==1.55.0
           python -m playwright install --with-deps chromium
           npm install --prefix "$RUNNER_TEMP/fv-ex2-axe" --no-save --ignore-scripts --no-package-lock axe-core@4.14.0
+      - name: Install pinned genuine Lighthouse and copy exact-SHA runner outside checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="experience2/home-flagship/qa/playground"
+          DEST="$RUNNER_TEMP/fv-ex2-lighthouse"
+          mkdir -p "$DEST"
+          npm install --prefix "$DEST" --no-save --no-audit --no-fund --ignore-scripts \
+            lighthouse@12.8.2 chrome-launcher@1.2.0 playwright-core@1.55.0
+          for name in lighthouse_receipt.mjs measure_private_lighthouse.mjs test_private_lighthouse.mjs; do
+            cp "$SRC/$name" "$DEST/$name"
+            cmp "$SRC/$name" "$DEST/$name"
+          done
+          node --check "$DEST/measure_private_lighthouse.mjs"
+          node --test "$DEST/test_private_lighthouse.mjs"
+
       - name: Prewarm pinned Playground 3.1.61 CLI under engine-strict runtime
         shell: bash
         env:
@@ -148,6 +167,7 @@ jobs:
             --repo . --expected-head "$EXPECTED_HEAD" \
             --stage "$RUNNER_TEMP/fv-ex2-ephemeral-stage" \
             --axe-script "$RUNNER_TEMP/fv-ex2-axe/node_modules/axe-core/axe.min.js" \
+            --lighthouse-runner "$RUNNER_TEMP/fv-ex2-lighthouse/measure_private_lighthouse.mjs" \
             --out "$RUNNER_TEMP/fv-ex2-wordpress-receipt"
       - name: Upload redacted staging receipts and screenshots only (no credentials, database or plugin)
         if: always()
