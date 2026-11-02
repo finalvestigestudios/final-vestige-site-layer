@@ -1,0 +1,133 @@
+name: Preparedness R79 Context-Dependent Source Work Orders (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r78-document-citation-review-matrix-hold-20261102]
+    paths:
+      - preparedness/tools/r79_context_source_workorders.py
+      - preparedness/tests/test_r79_context_source_workorders.py
+      - preparedness/docs/R79_CONTEXT_SOURCE_WORKORDERS_HOLD.md
+      - .github/workflows/preparedness-r79-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r79-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-dependency-and-context-review-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout pinned draft only, no retained credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Use Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require exact immutable R78 parent and four additive engineering files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "7b25206767793753860dc4165d7e89f00a105afe"
+          test "$BASE_REF" = "review/preparedness-r78-document-citation-review-matrix-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r79-context-dependent-source-workorders-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > /tmp/preparedness-r79-change-scope
+          python -I - <<'PY'
+          from pathlib import Path
+          raw=Path("/tmp/preparedness-r79-change-scope").read_bytes().split(b"\0")
+          changes=[(raw[i].decode(), raw[i+1].decode())
+                   for i in range(0,len(raw)-1,2)]
+          expected={
+            "preparedness/tools/r79_context_source_workorders.py",
+            "preparedness/tests/test_r79_context_source_workorders.py",
+            "preparedness/docs/R79_CONTEXT_SOURCE_WORKORDERS_HOLD.md",
+            ".github/workflows/preparedness-r79-private-tests.yml"}
+          assert len(changes)==4 and {f for _,f in changes}==expected,changes
+          assert all(status=="A" for status,_ in changes),changes
+          print("R79 strict four-file additive source custody PASS")
+          PY
+      - name: Pin all seven Claude contributor refs and separate release candidate
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":
+                "ddb3528ba6494dada1fa1c3a142ce746e3a67706"}
+          for branch,pinned_sha in refs.items():
+            got=subprocess.check_output(["git","rev-parse","--verify",
+                 "refs/remotes/origin/"+branch+"^{commit}"],text=True).strip()
+            assert got==pinned_sha,(branch,got,pinned_sha)
+          print("Seven Claude current refs + separate RC pinned; historical parity still independent")
+          PY
+      - name: Python syntax check for R79 source and tests, without pycache
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in (
+             "preparedness/tools/r79_context_source_workorders.py",
+             "preparedness/tests/test_r79_context_source_workorders.py"):
+             compile(Path(path).read_text(encoding="utf-8"),path,"exec")
+          print("R79 compile PASS")
+          PY
+      - name: Run 91 R79 isolated adversarial and document custody tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r79_context_source_workorders.py -v
+      - name: Verify unabridged source/action work orders and formula-neutralized exports
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          import csv,importlib.util,io
+          path=Path("preparedness/tools/r79_context_source_workorders.py")
+          spec=importlib.util.spec_from_file_location("r79_ci",path)
+          mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+          r=mod.live_report()
+          mod.sealed(r)
+          c=r["counts"]
+          assert tuple(c[k] for k in (
+            "article_drafts","tool_drafts","source_full_readings",
+            "citation_occurrences_NOT_UNIQUE_CLAIMS",
+            "citation_source_variant_edges_NOT_CLAIMS",
+            "unabridged_DOM_blocks","shared_exact_URL_groups_NOT_EQUIVALENT",
+            "reused_ID_groups_NOT_EQUIVALENT",
+            "lexical_action_or_quantity_work_orders",
+            "lexical_action_or_quantity_without_same_block_citation")) == (
+              35,6,244,2173,2359,4070,32,15,1068,347),c
+          assert len(r["document_source_dependency_orders_NOT_APPROVED"])==41
+          assert c["source_readings_without_citation_edges"]==2
+          assert all(c[k]==0 for k in (
+             "human_link_checks","human_claim_reviews",
+             "qualified_safety_reviews","independent_QD_approvals"))
+          assert len(list(csv.DictReader(io.StringIO(
+             mod.csv_private_source_queue(r)))))==244
+          assert len(list(csv.DictReader(io.StringIO(
+             mod.csv_private_action_queue(r)))))==1068
+          assert all(r[k] is False for k in mod.HOLD_KEYS)
+          assert r["publication_clearance"] is False
+          print("R79 complete review work orders and HOLD PASS",r["fingerprint_sha256"])
+          PY
+      - name: Native Preparedness source/claim validator, no publishing
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready private draft build only
+        run: python -I preparedness/tools/build.py
+      - name: Complete native Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Publication decision is ALWAYS separate, regardless of diagnostic results
+        if: always()
+        run: |
+          echo "HOLD: mandatory 13-stage integrity and human source/safety/QD approvals NOT satisfied."
+          echo "No publishing, no CMS, navigation, WordPress writes, or safety verdict."
