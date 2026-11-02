@@ -1,0 +1,617 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 1,
+  "method": "Authenticated WordPress posts.get context=edit, read-only, actual original URLs; NO visitor network requests",
+  "frozen_git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+  "posts": [
+    {
+      "id": 621,
+      "modified": "2026-09-09T12:03:35",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "621:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+          "alt": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "621:1",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+          "alt": "1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "621:2",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v03r2-six-mph-curve-responsive.png",
+          "alt": "Schematic showing the Malbone Street reverse curve with a six-mile-per-hour limit and approximately thirty-mile-per-hour reported entry speed; not to scale.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "621:3",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v04r2-five-car-consist-responsive.png",
+          "alt": "Five-car sequence showing motor, trailer, trailer, motor, motor, with the adjacent trailer cars highlighted as the abnormal grouping.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "621:4",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v05r2-rescue-power-sequence-responsive.png",
+          "alt": "Sequence diagram showing derailment, third-rail interruption, incomplete substation awareness, power restoration, and explosion and fire complications during rescue.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "621:5",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v06r2-evidence-not-blame-responsive.png",
+          "alt": "Chronology separating strike-day operating failures, the derailment and rescue from the later trials and acquittals.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 434,
+      "modified": "2026-09-08T02:51:21",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "434:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+          "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during training in January 1967.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "434:1",
+          "source_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+          "alt": "Apollo Command and Service Module 012 during preflight processing before the Apollo 1 launch-pad fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "434:2",
+          "source_url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+          "alt": "The Apollo 1 crew preparing to enter a command module during preflight training in 1966.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "434:3",
+          "source_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+          "alt": "Apollo 1 tribute displaying the original three-part Block I hatch associated with the command module fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "434:4",
+          "source_url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+          "alt": "Interior of Apollo Command Module 012 after the January 27, 1967 fire, showing severe heat and fire damage.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "434:5",
+          "source_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+          "alt": "Redesigned unified Apollo hatch developed after the Apollo 1 fire to open outward within seconds.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 433,
+      "modified": "2026-10-29T16:31:22",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "433:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+          "alt": "The Victory Point note from the Franklin expedition, with the original 1847 message in the center and the 1848 update written around its margins.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "433:1",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+          "alt": "Illustrated London News engraving of HMS Erebus and HMS Terror departing for the Arctic expedition in May 1845.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "433:2",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Dr_John_Rae%2C_with_relics_from_the_Franklin_Expedition%2C_gold_medal%2C_and_map%2C_August_1886_%28PORTRAITS_2459%29.jpg",
+          "alt": "John Rae seated beside Franklin expedition relics, a Royal Geographical Society medal and a map in an 1886 portrait.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "433:3",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%281860%29_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg/1280px-%281860%29_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg",
+          "alt": "1860 map showing the probable route of Erebus and Terror and areas searched after the Franklin expedition disappeared.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "433:4",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/L23402-c8qmb-t3-05-rx.jpg/1280px-L23402-c8qmb-t3-05-rx.jpg",
+          "alt": "James Fitzjames photographed in 1845 shortly before sailing aboard HMS Erebus on the Franklin expedition.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "433:5",
+          "source_url": "https://d3d0lqu00lnqvz.cloudfront.net/media/media/cea975ac-62ed-4c2f-bf13-67a0f3a90092.jpg",
+          "alt": "British Admiralty poster from 1850 offering rewards for rescuing Franklin’s crews or determining their fate.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 432,
+      "modified": "2026-08-28T03:07:30",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "432:0",
+          "source_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+          "alt": "Mourners gathered for a funeral service for victims of the 1928 hurricane at Woodlawn Cemetery in West Palm Beach.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "432:1",
+          "source_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+          "alt": "Floodwater and storm damage in the Lake Okeechobee region after the 1928 hurricane.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "432:2",
+          "source_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+          "alt": "Collapsed automotive garage and debris in Belle Glade after the 1928 Okeechobee Hurricane.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "432:3",
+          "source_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+          "alt": "Florida State Board of Health personnel at the Pahokee disaster-response headquarters after the 1928 hurricane.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "432:4",
+          "source_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+          "alt": "Wooden coffins stacked beside a canal at Belle Glade during recovery from the 1928 Okeechobee Hurricane.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "432:5",
+          "source_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+          "alt": "Crowds gathered during burial of victims of the 1928 hurricane in West Palm Beach.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "432:6",
+          "source_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+          "alt": "The historic African American mass burial site for victims of the 1928 Okeechobee Hurricane at 25th Street and Tamarind Avenue in West Palm Beach.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 431,
+      "modified": "2026-10-29T18:42:26",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "431:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/News03a.jpg",
+          "alt": "Frank, Alberta, after the 1903 Frank Slide, with limestone debris from Turtle Mountain covering part of the settlement.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "431:1",
+          "source_url": "https://www.geoinstitute.org/sites/default/files/inline-images/Image%2003_3.jpg",
+          "alt": "Historical topographic and geological map of Frank and Turtle Mountain showing the town, railway, mine mouth and Frank Slide debris area.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "431:2",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Frank_Alberta_1903_A15276.jpg",
+          "alt": "The mining town of Frank, Alberta, around 1903 with railway cars in the foreground and Turtle Mountain behind the community.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "431:3",
+          "source_url": "https://www.geoinstitute.org/sites/default/files/inline-images/Image%2001_2.jpg",
+          "alt": "Aerial view of Turtle Mountain and the Frank Slide debris field showing North Peak, South Peak, the slide scar and debris across the valley.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "431:4",
+          "source_url": "https://static.ags.aer.ca/files/styles/wysiwyg_image/azblob/image-content/figure-46-720px.jpg?itok=vVXzpUCQ",
+          "alt": "Historical Alberta Geological Survey topographic map of Turtle Mountain showing the Frank Slide area and early hazard analysis.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "431:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Frank_Slide_from_NW_flank_of_Turtle_Mountain.jpg?width=1280",
+          "alt": "Wide view of the Frank Slide debris field from Turtle Mountain showing the limestone deposit spanning the Crowsnest Pass valley.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 428,
+      "modified": "2026-10-29T18:28:59",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "428:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg",
+          "alt": "Ed Pulaski at the mine tunnel associated with the shelter of his firefighting crew during the Big Burn of 1910.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "428:1",
+          "source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg",
+          "alt": "Buildings burning in Wallace, Idaho, during the night of August 20, 1910, as the Big Burn reached the city.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "428:2",
+          "source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn38.jpg",
+          "alt": "Burned timber and fire-damaged terrain along Placer Creek after the August 1910 fires near Wallace, Idaho.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "428:3",
+          "source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn10.jpg",
+          "alt": "Elevated view across burned blocks of Wallace, Idaho, after the August 1910 Big Burn.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "428:4",
+          "source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn18.jpg",
+          "alt": "Ruins of the Pacific Hotel district in Wallace after the 1910 Big Burn, with brick, timber and machinery scattered through the burned block.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "428:5",
+          "source_url": "https://tile.loc.gov/image-services/iiif/service%3Agmd%3Agmd427m%3Ag4274m%3Ag4274wm%3Ag016871905%3A01687_1905-0001/full/pct%3A25/0/default.jpg",
+          "alt": "1905 Sanborn fire insurance map of Wallace, Idaho, showing the city five years before the Big Burn.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 425,
+      "modified": "2026-10-30T01:08:21",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_inline_count": 9,
+      "slots": [
+        {
+          "key": "425:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg",
+          "alt": "Survivors of the Courrières mine disaster after thirteen men emerged following twenty days underground in 1906.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Groupe_de_Sauveteurs,_Fosse_n%C2%B0_2.jpg?width=960",
+          "alt": "Mine rescuers gathered at Courrières pit number 2 during rescue operations after the March 10, 1906 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_La_remonte_des_victimes.jpg?width=960",
+          "alt": "Rescue and recovery workers bringing victims to the surface during the 1906 Courrières mine disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Les_rescap%C3%A9s_sont_soign%C3%A9s.jpg?width=1280",
+          "alt": "Survivors of the Courrières mine disaster receiving medical care after emerging from the mine in March 1906.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Arriv%C3%A9e_des_Sauveteurs_allemands.jpg?width=960",
+          "alt": "German mine rescuers arriving in northern France to assist after the 1906 Courrières mine disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Appareil_Guglielminetti-Drager_(01).jpg?width=1280",
+          "alt": "A rescuer demonstrating Guglielminetti-Dräger breathing equipment associated with the 1906 Courrières mine rescue effort.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Courri%C3%A8res_1906_LeJ.jpg?width=960",
+          "alt": "Contemporary Le Petit Journal illustration depicting recovery operations after the Courrières mine disaster in March 1906.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:7",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Berthou,_le_dernier_survivant,_24_jours_dans_la_Mine_en_feu.jpg?width=960",
+          "alt": "Auguste Berthon, the Courrières miner who emerged alive on April 4, 1906 after approximately twenty-five days underground.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "425:8",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_La_gr%C3%A8ve_des_mineurs.jpg?width=1280",
+          "alt": "Coal miners marching during the strike that followed the Courrières disaster in 1906.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 418,
+      "modified": "2026-08-28T03:11:08",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "418:0",
+          "source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+          "alt": "The old and new Scotch Cap lighthouses on Unimak Island before the concrete lighthouse was destroyed by the April 1, 1946 tsunami.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "418:1",
+          "source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+          "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "418:2",
+          "source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+          "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "418:3",
+          "source_url": "https://www.history.uscg.mil/Portals/6/6_%20Scotch%20Cap%20remains.jpg",
+          "alt": "Aerial photograph of the destroyed Scotch Cap light station on Unimak Island after the 1946 tsunami.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "418:4",
+          "source_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+          "alt": "Tsunami water inundating the Hilo waterfront in April 1946, with a person visible near the advancing water.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "418:5",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+          "alt": "Debris covering a Hilo street and partly burying a vehicle after the April 1, 1946 tsunami.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 8,
+    "inline_img_tags": 52,
+    "external_origin_count": 41,
+    "classes": {
+      "FIRST_PARTY": 11,
+      "THIRD_PARTY": 41
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}
