@@ -225,6 +225,12 @@ def construct(parent, *, expected=EXPECTED):
                 seen.add(skey)
                 cited_sources.add(skey)
                 reverse_edges[skey].append([kind,slug,bid,edge["ordinal"]])
+            preferred=edge.get("preferred_identity_NOT_APPROVED")
+            need(preferred is None or (type(preferred) is list and len(preferred)==2
+                 and tuple(preferred) in seen),
+                 "preferred identity not among original preserved source variants")
+            need([ (v["source_origin"],v["source_id"]) for v in variants ]==sorted(seen),
+                 "original citation source-origin variant ordering changed")
         spans=qualifier_spans(t)
         qualification_by_key[key]=spans
         if spans:
