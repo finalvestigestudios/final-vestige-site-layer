@@ -21,10 +21,22 @@ SPEC.loader.exec_module(r80)
 class R80FullCorpus(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        # Build original R79 evidence once, then test the rendering layer on
+        # that exact live parent. The separate R80 hosted integration step runs
+        # render() UNMOCKED (full independent R79 verify/reconstruction). Avoid
+        # re-deriving the same 35-article tree twice during this unit suite:
+        # the mandatory workflow's per-gate 180-second execution ceiling
+        # should not turn evidence-preserving regression tests into a timeout.
         cls.report = r80._r79().live_report()
-        cls.docs, cls.orders, cls.sources = r80.unpack(cls.report)
-        # The independent original-evidence verification runs again inside render.
-        cls.html = r80.render(cls.report)
+        cls.docs = cls.report["complete_R78_evidence_UNABRIDGED_NOT_APPROVED"][
+            "document_review_packets_NOT_APPROVED"]
+        cls.orders = cls.report[
+            "review_orders_347_NOT_UNSUPPORTED_OR_UNSAFE_VERDICTS"]
+        cls.sources = r80._source_index(cls.report)
+        with patch.object(r80, "unpack", return_value=(
+                cls.docs, cls.orders, cls.sources)) as checked_parent:
+            cls.html = r80.render(cls.report)
+            checked_parent.assert_called_once_with(cls.report)
         cls.parser = r80._Structure()
         cls.parser.feed(cls.html)
         cls.parser.close()
