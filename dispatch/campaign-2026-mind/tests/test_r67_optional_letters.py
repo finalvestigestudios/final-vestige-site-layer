@@ -41,7 +41,7 @@ class R67Tests(unittest.TestCase):
    self.assertIn('role="presentation"',html)
    self.assertNotRegex(html,r"<(?:script|form|iframe|img|button)\b")
    self.assertNotIn('href=',html)
-   self.assertIn("HOLD_UNSENT",html)
+   self.assertIn("hold_unsent",html)
    self.assertIn("[[APPROVED_",plain)
  def test_no_unsupported_promises(self):
   banned=("guaranteed income","clinically proven zen12","guarantees better concentration","buy now before midnight","cures anxiety")
