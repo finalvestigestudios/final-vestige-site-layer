@@ -25,7 +25,7 @@ for(const [name,page] of [['A',a],['B',b]]){
   test(name+' no autoplay attribute',()=>assert.doesNotMatch(page,/<[^>]+\sautoplay(?:\s|>|=)/i));
   test(name+' preserves only one existing Focus destination',()=>assert.match(page,/https:\/\/finalvestige\.com\/focus\//));
 }
-test('B has transcript without JS',()=>{assert.match(b,/<details>/);assert.match(b,/00:00:40/ )});
+test('B has transcript without JS',()=>{assert.match(b,/<details>/);assert.match(b,/35–40 s\\./)});
 test('B explicitly refuses unhosted playback',()=>assert.match(b,/Playback disabled in this unpublished candidate/));
 test('A is text only without optional film block',()=>assert.doesNotMatch(a,/data-optional-video/));
 test('B has film placeholder',()=>assert.match(b,/data-optional-video="awaiting-first-party-host"/));
