@@ -435,6 +435,31 @@ def main() -> int:
                     receipt(out, 'WORDPRESS_RENDERED_BUT_LIGHTHOUSE_MEASUREMENT_HOLD',
                             'Lighthouse report custody mismatch')
                     return 2
+                # Additional genuine 320px, keyboard and emulated-touch checks
+                # against the same authenticated isolated WP render. Distinct
+                # from manual AT, real-device testing or 200% browser zoom.
+                usability_cmd = [sys.executable,
+                    str(repo / 'experience2/home-flagship/qa/playground/verify_private_usability.py'),
+                    '--repo', str(repo), '--expected-head', args.expected_head,
+                    '--storage-state', str(storage), '--out', str(out)]
+                usability = subprocess.run(usability_cmd, cwd=repo, check=False,
+                                           timeout=180, capture_output=True, text=True)
+                if usability.returncode:
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_ACCESSIBILITY_USABILITY_HOLD',
+                            '320px reflow, keyboard, touch or reduced-motion gate failed')
+                    return 2
+                usability_receipt = out / 'PRIVATE_USABILITY.json'
+                if not usability_receipt.is_file():
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_ACCESSIBILITY_USABILITY_HOLD',
+                            'No isolated usability receipt was produced')
+                    return 2
+                usability_report = json.loads(usability_receipt.read_text())
+                if (usability_report.get('exact_source_commit') != args.expected_head
+                        or usability_report.get('failure_codes') != []
+                        or usability_report.get('production_writes') is not False):
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_ACCESSIBILITY_USABILITY_HOLD',
+                            'Isolated usability receipt rejected by custody gate')
+                    return 2
                 receipt(out, 'ISOLATED_BROWSER_AND_LAB_ADMISSION_PASSED_NOT_RELEASE')
                 return 0
     except Exception as exc:
