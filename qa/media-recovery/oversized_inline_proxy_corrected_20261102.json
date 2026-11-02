@@ -1,0 +1,480 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-11-02",
+  "purpose": "Correct November 2 direct-only image-exposure undercount using October 31 same-origin Jetpack Vasa match and frozen post corpus; no new browser data",
+  "supersedes_direct_only_inference": "qa/media-recovery/oversized_inline_exposure_20261102.json",
+  "frozen_inputs": {
+    "reconciled_oct31": {
+      "path": "qa/media-recovery/oversize_inline_reconciled_20261031.json",
+      "blob_sha": "8388236ca03c283da3f72354bdc3f7ca9913e440"
+    },
+    "direct_only_nov02": {
+      "path": "qa/media-recovery/oversized_inline_exposure_20261102.json",
+      "blob_sha": "f8207544a0d11823b6e10cb500bc9f3abbc009ed"
+    },
+    "vasa_post_census": {
+      "path": "qa/media-recovery/parts/02.json",
+      "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+    },
+    "full_inventory_post_count": 61,
+    "full_inventory_stored_images": 355
+  },
+  "summary": {
+    "oversized_original_count": 13,
+    "original_storage_bytes": 43522829,
+    "inline_original_count": 10,
+    "inline_original_storage_bytes": 36937913,
+    "direct_inline_count": 7,
+    "direct_inline_storage_bytes": 23619602,
+    "first_party_jetpack_inline_count": 3,
+    "first_party_jetpack_inline_storage_bytes": 13318311,
+    "not_matched_inline_count": 3,
+    "not_matched_inline_storage_bytes": 6584916,
+    "five_unvarianted_png_original_storage_bytes": 13267538,
+    "reported_broken_42_guest_verified": false,
+    "claimed_76_percent_wire_savings_measured": false,
+    "production_repairs": 0
+  },
+  "rights_and_implementation_gates": {
+    "no_third_party_images_downloaded": true,
+    "rights_review_required": true,
+    "visual_integrity_review_required": true,
+    "each_derivative_max_width_px": 960,
+    "never_upscale": true,
+    "wordpress_media_upload_authorized": false,
+    "wordpress_post_edit_authorized": false,
+    "homepage_visual_design_changed": false,
+    "site_qa_pr_154_modified": false,
+    "subscription_spend": false
+  },
+  "rows": [
+    {
+      "media_id": 388,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "original_storage_bytes": 8176362,
+      "original_geometry_px": {
+        "width": 4256,
+        "height": 2832
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "299:1",
+          "post_id": 299,
+          "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+          "stored_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+          "origin_match_kind": "first_party_jetpack_proxy",
+          "alt": "Painted one-tenth-scale reconstruction of Vasa showing how the heavily armed warship likely appeared in 1628."
+        }
+      ],
+      "inline_class": "INLINE_FIRST_PARTY_JETPACK_PROXY",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 639,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 1258,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_storage_bytes": 5553669,
+      "original_geometry_px": {
+        "width": 5667,
+        "height": 3831
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "621:1",
+          "post_id": 621,
+          "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 649,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 1257,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_storage_bytes": 4798395,
+      "original_geometry_px": {
+        "width": 4000,
+        "height": 3000
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "621:0",
+          "post_id": 621,
+          "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1024%2C768&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 720,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 39,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_storage_bytes": 2892087,
+      "original_geometry_px": {
+        "width": 1672,
+        "height": 941
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "34:0",
+          "post_id": 34,
+          "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": null,
+      "has_registered_subsizes": false,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 540,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 43,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_storage_bytes": 2836245,
+      "original_geometry_px": {
+        "width": 1672,
+        "height": 941
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "38:0",
+          "post_id": 38,
+          "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": null,
+      "has_registered_subsizes": false,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 540,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 389,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "original_storage_bytes": 2822969,
+      "original_geometry_px": {
+        "width": 2147,
+        "height": 1417
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "299:0",
+          "post_id": 299,
+          "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+          "stored_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+          "origin_match_kind": "first_party_jetpack_proxy",
+          "alt": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull."
+        }
+      ],
+      "inline_class": "INLINE_FIRST_PARTY_JETPACK_PROXY",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 634,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 40,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_storage_bytes": 2552136,
+      "original_geometry_px": {
+        "width": 1672,
+        "height": 941
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "35:0",
+          "post_id": 35,
+          "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": null,
+      "has_registered_subsizes": false,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 540,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 41,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_storage_bytes": 2498247,
+      "original_geometry_px": {
+        "width": 1672,
+        "height": 941
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "36:0",
+          "post_id": 36,
+          "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": null,
+      "has_registered_subsizes": false,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 540,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 42,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_storage_bytes": 2488823,
+      "original_geometry_px": {
+        "width": 1672,
+        "height": 941
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "37:0",
+          "post_id": 37,
+          "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+          "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+          "origin_match_kind": "direct_first_party",
+          "alt": null
+        }
+      ],
+      "inline_class": "INLINE_DIRECT_FIRST_PARTY",
+      "recorded_responsive_variant_url": null,
+      "has_registered_subsizes": false,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 540,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 382,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "original_storage_bytes": 2318980,
+      "original_geometry_px": {
+        "width": 1800,
+        "height": 1200
+      },
+      "inline_slot_matches": [
+        {
+          "image_key": "299:7",
+          "post_id": 299,
+          "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+          "stored_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+          "origin_match_kind": "first_party_jetpack_proxy",
+          "alt": "Vasa inside the museum with old and new support structures used to reduce continuing deformation of the historic hull."
+        }
+      ],
+      "inline_class": "INLINE_FIRST_PARTY_JETPACK_PROXY",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 640,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 482,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "original_storage_bytes": 2293016,
+      "original_geometry_px": {
+        "width": 1672,
+        "height": 941
+      },
+      "inline_slot_matches": [],
+      "inline_class": "NOT_MATCHED_INLINE_IN_FROZEN_61_POSTS",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=1024%2C576&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 540,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 405,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "original_storage_bytes": 2201573,
+      "original_geometry_px": {
+        "width": 1122,
+        "height": 1402
+      },
+      "inline_slot_matches": [],
+      "inline_class": "NOT_MATCHED_INLINE_IN_FROZEN_61_POSTS",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=819%2C1024&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 1200,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    },
+    {
+      "media_id": 293,
+      "original_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "original_storage_bytes": 2090327,
+      "original_geometry_px": {
+        "width": 1122,
+        "height": 1402
+      },
+      "inline_slot_matches": [],
+      "inline_class": "NOT_MATCHED_INLINE_IN_FROZEN_61_POSTS",
+      "recorded_responsive_variant_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=819%2C1024&ssl=1",
+      "has_registered_subsizes": true,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 1200,
+        "no_upscale": true,
+        "source_dimensions_only": true
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_encoded_wire_bytes": null,
+      "guest_visual_decode": null,
+      "measured_savings_bytes": null,
+      "rights_cleared_for_derivative": false,
+      "wordpress_production_write_authorized": false
+    }
+  ]
+}
