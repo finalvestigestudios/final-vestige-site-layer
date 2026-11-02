@@ -69,7 +69,7 @@ def grade(checks: dict[str, bool], profiles: tuple = PROFILES) -> list[str]:
                 "pinch_200_390:visual_viewport_2x",
                 "pinch_200_390:seven_chapters",
                 "pinch_200_390:case_tap_at_2x",
-                "pinch_200_390:text_200_percent_no_root_overflow"}
+                "pinch_200_390:zoomed_layout_no_global_overflow"}
     missing = sorted(expected.difference(checks))
     failures = sorted(key for key, ok in checks.items() if not ok)
     return ["MISSING_" + key.replace(":", "_") for key in missing] + [
@@ -200,18 +200,12 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
                         page.evaluate("window.scrollTo(0, 0)")
                         page.screenshot(path=str(out / "usability-390-cdp-pinch-200.png"),
                                         full_page=False, timeout=15000)
-                        # The second independent scaling challenge is 200%
-                        # root-text magnification. It is not a system browser
-                        # font setting and cannot replace manual WCAG review.
-                        page.evaluate("document.documentElement.style.fontSize='200%'")
-                        page.wait_for_timeout(120)
-                        mark(profile, "text_200_percent_no_root_overflow", bool(page.evaluate("""() =>
-                            parseFloat(getComputedStyle(document.documentElement).fontSize) >= 31 &&
-                            document.documentElement.scrollWidth <= innerWidth + 1
-                        """)))
-                        page.evaluate("window.scrollTo(0, 0)")
-                        page.screenshot(path=str(out / "usability-390-200-percent-root-text.png"),
-                                        full_page=False, timeout=15000)
+                        # Keep the actual 2× pinch active: a root font-size
+                        # override is NOT text-only browser zoom. Pixel review
+                        # proved that previous override changed zero pixels,
+                        # so test genuine layout containment instead.
+                        mark(profile, "zoomed_layout_no_global_overflow", bool(page.evaluate(
+                            "document.documentElement.scrollWidth <= innerWidth + 1")))
                     if profile == "keyboard_390":
                         case = page.locator('[data-fv-case-button="malbone"]')
                         case.wait_for(state="visible", timeout=8000)
@@ -276,7 +270,7 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
             "manual_browser_200_percent_zoom": "NOT_TESTED",
             "cdp_visual_viewport_pinch_200_percent": "AUTOMATED_TESTED",
             "reflow_200_percent_equivalent_1280px": "AUTOMATED_TESTED",
-            "root_text_magnification_200_percent": "AUTOMATED_TESTED",
+            "browser_text_only_zoom_200_percent": "NOT_TESTED",
             "screen_reader_and_manual_AT": "NOT_TESTED",
             "real_world_mobile_touch_device": "NOT_TESTED",
             "wpcom_host_compatibility": "NOT_ESTABLISHED",
