@@ -73,8 +73,10 @@ foreach ($records as $key => $record) {
 
 function fv_local_parity_insert_verified($record, $old) {
     $type = $record['type']; $slug = $record['slug'];
+    // wp_insert_post() unslashes post content. Preserve the exact reviewed Gutenberg
+    // bytes through that boundary; the post-save readback below remains mandatory.
     $args = ['post_type'=>$type, 'post_status'=>'publish', 'post_title'=>'FV local-only '.$slug,
-             'post_name'=>$slug, 'post_content'=>$record['content'], 'comment_status'=>'closed'];
+             'post_name'=>$slug, 'post_content'=>wp_slash($record['content']), 'comment_status'=>'closed'];
     if ($old) { $args['ID'] = $old->ID; }
     $id = wp_insert_post($args, true);
     if (is_wp_error($id) || !$id) {
