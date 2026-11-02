@@ -1,0 +1,45 @@
+FINAL VESTIGE / THE DISPATCH — R66 OFFLINE REVIEW BOARD
+2026-11-02 — UNSENT; NOT WORDPRESS MIME; NOT A NATIVE PREVIEW
+ALL SIX HOLD_UNSENT; ISSUES 03 & 05 ALSO HOLD_MERCHANT.
+
+Authenticated production: newsletter enabled, site-can-send technically true,
+new-post auto-send OFF, email_content_format=excerpt. Configured Fieldbook welcome
+is not evidence of receipt. total=2 / confirmed=2 / unconfirmed=2 are nonadditive,
+not proof of delivery eligibility. Recent-sends [] does not prove no lifetime sends.
+
+Issue 01 — Canonical "The mind is not a camera".
+Default short excerpt misses the final documentary CTA. R61 custom excerpt optional.
+
+Issue 02 — "Before hypnosis had a name".
+Opening teaser cannot convey the entire 1784/1785 evidentiary question or source.
+
+Issue 03 — "The twelve-minute meditation question".
+Commission disclosure and placeholder guide CTA are below default excerpt.
+The R61 explicit custom excerpt is an UNAPPROVED preview; merchant permission false.
+
+Issue 04 — Canonical "Fourteen seconds. A much longer explanation."
+The specific duration is not explained by the canonical body. NASA's Board
+records 5.3 + 5.0 seconds of voice, 6.8 seconds without transmission, 17.1
+seconds total span. Do NOT replace fourteen with an unexplained seventeen.
+Review-only proposed subject: "Apollo 1: why one spark was never the whole story".
+NASA original: https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+
+Issue 05 — "Before you press play on a hypnosis audio".
+Commercial note and future Total Focus guide CTA absent from default excerpt.
+R61 optional candidate is unapproved and guide unpublished.
+
+Issue 06 — "What did seven days of attention reveal?"
+Default excerpt misses free Focus Fieldbook CTA. Full copy isn't in inbox.
+
+REAL GATES: founder's format/subject decision; authorized draft-only native
+Jetpack preview; qualifying Final Vestige physical postal address; actual
+received email + functional unsub; private consent/eligible recipient count;
+approved live guide URLs; named-account/product EMAIL marketing permission;
+fresh checkout terms; explicit final founder send/date/list authorization.
+No changes, new list, tracking, outbound email, merchant contact or spend.
+
+OFFICIAL: https://wordpress.com/support/newsletter-settings/
+https://wordpress.com/support/newsletter/email-appearance/
+https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+
+Source index: Issue #174, PR #175, PR #201, PR #581, PR #615.
