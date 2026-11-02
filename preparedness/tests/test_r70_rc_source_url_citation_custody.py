@@ -380,7 +380,7 @@ URL_CASES = [
     ("dotinternal","https://portal.internal/a","PRIVATE_OR_LOCAL_HOSTNAME"),
     ("dottest","https://example.test/a","PRIVATE_OR_LOCAL_HOSTNAME"),
     ("single_label","https://intranet/a","SINGLE_LABEL_HOSTNAME"),
-    ("double_dot","https://foo..com/a","INVALID_DNS_HOST_LABEL"),
+    ("double_dot","https://foo..com/a","INVALID_HOST_IDNA"),
     ("leading_hyphen","https://-example.org/a","INVALID_DNS_HOST_LABEL"),
     ("trailing_hyphen","https://example-.org/a","INVALID_DNS_HOST_LABEL"),
     ("newline","https://example.gov/a\nb","UNSAFE_RAW_URL_CHARACTERS_OR_LENGTH"),
