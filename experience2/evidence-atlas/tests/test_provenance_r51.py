@@ -24,7 +24,7 @@ class R51SourceDisclosure(unittest.TestCase):
         with tempfile.TemporaryDirectory() as path:
             m=build_wordpress_stage.build(Path(path))
             fragment=(Path(path)/'fv-ex2-evidence-atlas/templates/atlas-fragment.html').read_bytes()
-            self.assertIn('0.0.56-staging',(HERE/'final-vestige-ex2-evidence-atlas.php').read_text())
+            self.assertIn('0.0.57-staging',(HERE/'final-vestige-ex2-evidence-atlas.php').read_text())
             self.assertIn(hashlib.sha256(fragment).hexdigest(),(HERE/'final-vestige-ex2-evidence-atlas.php').read_text())
             self.assertEqual(m['embedded_images'],0)
             self.assertEqual(m['geographic_pins'],0)

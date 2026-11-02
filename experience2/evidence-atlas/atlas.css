@@ -29,6 +29,10 @@
 .fva-index__name small{display:block;font:400 12px/1.4 system-ui;color:var(--muted)}
 .fva-controls{margin-top:45px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}
 .fva-filter{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.fva-proof-filter{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:22px}
+.fva-proof-filter p{flex:1 1 100%;margin:0 0 5px;color:var(--muted);font-size:13px}
+.fva-proof-filter button{border:1px solid #877755;background:var(--raised);color:var(--paper);padding:10px 16px;min-height:44px;text-align:center}
+.fva-proof-filter button[aria-pressed="true"]{background:var(--gold);color:#14120c;border-color:var(--gold);font-weight:700}
 .fva-filter button,.fva-search button{border:1px solid #877755;background:var(--raised);color:var(--paper);padding:10px 16px;min-height:44px;text-align:center}
 .fva-filter button[aria-pressed="true"]{background:var(--gold);color:#14120c;border-color:var(--gold);font-weight:700}
 .fva-search{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
@@ -56,7 +60,7 @@
 .fva-footer{border-top:1px solid var(--line);padding:25px 0 45px;color:var(--muted);font-size:13px;max-width:1000px}
 @media(max-width:1080px){.fva-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.fva-index{grid-template-columns:minmax(0,1fr)}.fva-index ol{grid-template-columns:minmax(0,1fr)}.fva-grid{grid-template-columns:minmax(0,1fr)}.fva-card h2{min-height:0}.fva-search{align-items:stretch;flex-direction:column}.fva-search>*{width:100%;max-width:none!important}}
-@media(max-width:420px){.fva-filter button{flex:1 1 100%}.fva{padding:18px}.fva-mark span{display:block;margin-top:5px}.fva-header{padding:22px 0 28px}}
+@media(max-width:420px){.fva-filter button,.fva-proof-filter button{flex:1 1 100%}.fva{padding:18px}.fva-mark span{display:block;margin-top:5px}.fva-header{padding:22px 0 28px}}
 @media(prefers-reduced-motion:reduce){.fva *, .fva *::before,.fva *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{.fva{background:#fff;color:#000}.fva *{color:#000!important}.fva-card,.fva-guide,.fva-card__plate,.fva-caution{background:#fff;border-color:#777}.fva [data-fva-record]{break-inside:avoid}.fva [data-fva-controls]{display:none!important}}
 

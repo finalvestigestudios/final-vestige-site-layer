@@ -56,7 +56,7 @@ class CitationNavigationR45(unittest.TestCase):
             fragment=(package/'templates/atlas-fragment.html').read_bytes()
             php=(package/'final-vestige-ex2-evidence-atlas.php').read_text()
             self.assertIn(hashlib.sha256(fragment).hexdigest(),php)
-            self.assertIn('0.0.56-staging',php)
+            self.assertIn('0.0.57-staging',php)
             self.assertEqual(manifest['schema'],'fv.ex2.apollo.wp-stage.r49.v1')
             self.assertEqual(fragment.count(b'data-fva-to-citation'),6)
             self.assertEqual(fragment.count(b'data-fva-back-record'),6)
