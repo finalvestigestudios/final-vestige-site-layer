@@ -148,6 +148,39 @@ class CliStartupDiagnostics(unittest.TestCase):
             self.assertEqual(module.diagnose_private_cli_log(path), 'WP_SAVED_TEMPLATE_BYTES_CHANGED')
             self.assertIn('readback differs', module.safe_cli_failure_excerpt(path))
 
+
+    def test_local_debug_blueprint_is_separate_and_loopback_only(self):
+        module = self._script()
+        with tempfile.TemporaryDirectory(prefix='fv-blueprint-probe-') as td:
+            stage = Path(td) / 'stage'
+            secret = Path(td) / 'secrets'
+            stage.mkdir()
+            secret.mkdir()
+            blueprint = stage / 'playground-blueprint.json'
+            original = {'steps': [{'step': 'defineWpConfigConsts', 'consts': {
+                'WP_ENVIRONMENT_TYPE': 'local', 'FV_EX2_ALLOW_PREVIEW': True,
+                'WP_DEBUG_DISPLAY': False}},
+                {'step':'activateTheme', 'themeFolderName':'assembler'}]}
+            blueprint.write_text(json.dumps(original))
+            argv = ['npx','@wp-playground/cli@latest','server',
+                    '--blueprint='+str(blueprint),'--port=9400',
+                    '--mount='+str(stage/'assembler')+':/wordpress/wp-content/themes/assembler',
+                    '--mount='+str(stage/'plugin')+':/wordpress/wp-content/plugins/fv-ex2-private-preview',
+                    '--mount='+str(stage/'parity')+':/wordpress/wp-content/uploads/fv-ex2-parity']
+            result = module.build_local_debug_blueprint_argv(stage, argv, secret)
+            self.assertEqual(result.count('--port=9401'), 1)
+            self.assertEqual(result.count('--port=9400'), 0)
+            self.assertEqual(len([x for x in result if x.startswith('--mount=')]), 3)
+            diagnostic = json.loads((secret/'local-debug-blueprint.json').read_text())
+            self.assertEqual(diagnostic['steps'][0]['consts']['WP_ENVIRONMENT_TYPE'], 'local')
+            self.assertTrue(diagnostic['steps'][0]['consts']['WP_DISABLE_FATAL_ERROR_HANDLER'])
+            self.assertTrue(diagnostic['steps'][0]['consts']['WP_DEBUG_DISPLAY'])
+            self.assertFalse(json.loads(blueprint.read_text())['steps'][0]['consts']['WP_DEBUG_DISPLAY'])
+            original['steps'][0]['consts']['WP_ENVIRONMENT_TYPE'] = 'production'
+            blueprint.write_text(json.dumps(original))
+            with self.assertRaisesRegex(ValueError, 'outside isolated local'):
+                module.build_local_debug_blueprint_argv(stage, argv, secret)
+
     def test_missing_private_log_fails_to_specific_nonsecret_marker(self):
         module = self._script()
         self.assertEqual(module.safe_cli_failure_excerpt(HERE / 'nonexistent-private-stdout.log'), 'NO_PRIVATE_LOG')
