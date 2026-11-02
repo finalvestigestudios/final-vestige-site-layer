@@ -166,6 +166,19 @@ def construct(parent, *, expected=EXPECTED):
     need(all(seen_orders[k] == doc["block_ids_in_original_order"]
              for k,doc in doc_index.items()), "DOM block order changed")
 
+    # Keep R75's action/quantity queue categorization tethered to the independently
+    # preserved R73/R74 packets; neither label can be forged by re-sealing R75.
+    old_actions = parent.get("all_975_action_triage_packets_NOT_APPROVED")
+    old_quantities = parent.get("all_numeric_unit_packets_NOT_APPROVED")
+    need(type(old_actions) is list and type(old_quantities) is list,
+         "historical action or numeric packets missing")
+    action_keys = {(x.get("kind"),x.get("slug"),x.get("block_id"))
+                   for x in old_actions if type(x) is dict}
+    quantity_keys = {(x.get("kind"),x.get("slug"),x.get("block_id"))
+                     for x in old_quantities if type(x) is dict}
+    need(len(action_keys) == len(old_actions)
+         and len(quantity_keys) == len(old_quantities),
+         "duplicated or malformed original action/quantity task")
     review_index = {}
     for item in review:
         need(type(item) is dict and item.get("packet_sha256") ==
@@ -184,6 +197,8 @@ def construct(parent, *, expected=EXPECTED):
                      "DOM_text_UNABRIDGED_NOT_BROWSER_OR_SAFETY_VERIFIED"])
              and type(item.get("action_language_TRIAGE_NOT_VERDICT")) is bool
              and type(item.get("numeric_units_TRIAGE_NOT_DOSAGE_CHECK")) is bool
+             and item["action_language_TRIAGE_NOT_VERDICT"] == (key in action_keys)
+             and item["numeric_units_TRIAGE_NOT_DOSAGE_CHECK"] == (key in quantity_keys)
              and (item["action_language_TRIAGE_NOT_VERDICT"]
                   or item["numeric_units_TRIAGE_NOT_DOSAGE_CHECK"])
              and all(item.get(k) == REVIEW for k in (
@@ -191,6 +206,8 @@ def construct(parent, *, expected=EXPECTED):
                  "independent_QD_review")),
              "action/quantity review source, qualifier, or HOLD binding changed")
         review_index[key] = item
+    need(set(review_index) == action_keys | quantity_keys,
+         "action or numeric source review task omitted or invented")
 
     citation_index = []
     source_edges = defaultdict(list)
@@ -267,6 +284,48 @@ def construct(parent, *, expected=EXPECTED):
     # Rebuild uncited inventory independently; historical uncited research is NOT deleted.
     need([list(sk) for sk in sorted(set(source_index)-set(source_edges))] == uncited,
          "uncited complete research reading dropped or made into a phantom citation")
+    # Recompute complete collision groups and document-source assignments from
+    # individual occurrence edges rather than trusting source IDs or cached lists.
+    def crosschecked_collision(mapping, category):
+        rebuilt = []
+        for value, keys in sorted(mapping.items()):
+            if len(keys) < 2:
+                continue
+            rows = []
+            for sk in sorted(keys):
+                source = source_index[sk]
+                downstream = sorted([[
+                    edge["kind"],edge["slug"],edge["block_id"],
+                    edge["citation_ordinal"]] for edge in source_edges[sk]])
+                rows.append({
+                    "origin":sk[0], "id":sk[1],
+                    "full_candidate_reading_sha256":source["candidate_reading_sha256"],
+                    "exact_URL_NOT_CANONICALIZED":source["exact_URL_NO_ALIAS"],
+                    "downstream_block_citation_edges_NOT_SUPPORT":downstream,
+                    "human_scope_and_claim_review":REVIEW})
+            rebuilt.append({
+                "collision_type_NOT_AUTOMATIC_ERROR":category,
+                "value":value, "source_readings_NOT_MERGED":rows,
+                "human_scope_resolution":REVIEW})
+        return rebuilt
+    need(collision_urls == crosschecked_collision(url_to_keys,
+         "SHARED_EXACT_URL_NOT_SOURCE_EQUIVALENCE")
+         and collision_ids == crosschecked_collision(id_to_keys,
+         "SAME_ID_DIFFERENT_RESEARCH_ORIGINS"),
+         "cross-reconstructed duplicate URL/ID source readings or citation impact mismatch")
+    for dkey, doc in doc_index.items():
+        expected_scopes = sorted(sk for sk, edges in source_edges.items()
+                               if any((e["kind"],e["slug"]) == dkey for e in edges))
+        need(doc.get("origin_scoped_sources_USED_NOT_SUPPORT_APPROVED") ==
+             [list(sk) for sk in expected_scopes],
+             "document source scopes changed, including duplicate-ID origin variants")
+    by_doc_ordinals = defaultdict(list)
+    for kind,slug,ordinal in total_keys:
+        by_doc_ordinals[(kind,slug)].append(ordinal)
+    for dkey, seq in by_doc_ordinals.items():
+        # All R72 citation ordinals are 1-based, sequential inside each document.
+        need(sorted(seq) == list(range(1,len(seq)+1)),
+             "citation ordinal gap/substitution in document evidence")
     citation_index.sort(key=lambda p:(
         p["kind"],p["slug"],p["citation_ordinal"]))
 
