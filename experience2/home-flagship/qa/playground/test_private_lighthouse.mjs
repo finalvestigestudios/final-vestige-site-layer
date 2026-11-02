@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {sanitizedSample,buildReceipt} from './lighthouse_receipt.mjs';
-const good=(secret='private-nonce-SECRET')=>({
+const good=(secret='private-nonce-SECRET',desktop=false)=>({
+  configSettings:{formFactor:desktop?'desktop':'mobile',
+    screenEmulation:{width:desktop?1440:390,height:desktop?900:844,mobile:!desktop},
+    throttling:{cpuSlowdownMultiplier:desktop?1:4}},
   lighthouseVersion:'12.8.2',
   finalUrl:'http://127.0.0.1:9400/?nonce='+secret,
   categories:{performance:{score:0.86},accessibility:{score:1},
@@ -16,7 +19,7 @@ const good=(secret='private-nonce-SECRET')=>({
   }
 });
 test('real numerical Lighthouse values and exact release HOLD',()=>{
-  const m=sanitizedSample(good(),'mobile_390'),d=sanitizedSample(good(),'desktop_1440');
+  const m=sanitizedSample(good(),'mobile_390'),d=sanitizedSample(good('private-nonce-SECRET',true),'desktop_1440');
   const report=buildReceipt([m,d],'a'.repeat(40));
   assert.equal(report.audit_profiles[0].laboratory_metrics.lcp_ms,2092);
   assert.equal(report.audit_profiles[0].laboratory_metrics.cls,0.006);
@@ -25,7 +28,7 @@ test('real numerical Lighthouse values and exact release HOLD',()=>{
 });
 test('no leaked URL, nonce, page title, raw audits or cookie',()=>{
   const record=buildReceipt([sanitizedSample(good(),'mobile_390'),
-    sanitizedSample(good(),'desktop_1440')],'a'.repeat(40));
+    sanitizedSample(good('private-nonce-SECRET',true),'desktop_1440')],'a'.repeat(40));
   for(const forbidden of ['private-nonce-SECRET','127.0.0.1','finalUrl','debug-audit','cookie']){
     assert.equal(JSON.stringify(record).includes(forbidden),false,forbidden);
   }
@@ -43,6 +46,14 @@ test('missing category score or wrong profile fails closed',()=>{
   const x=good();x.categories.performance.score=null;
   assert.throws(()=>sanitizedSample(x,'mobile_390'));
   assert.throws(()=>sanitizedSample(good(),'rogue'));
+});
+test('desktop score requires actual desktop CPU and viewport preset',()=>{
+  const m=good('secret',true);
+  m.configSettings.throttling.cpuSlowdownMultiplier=4;
+  assert.throws(()=>sanitizedSample(m,'desktop_1440'));
+  const d=good('secret',true);
+  d.configSettings.screenEmulation.width=412;
+  assert.throws(()=>sanitizedSample(d,'desktop_1440'));
 });
 test('one profile or changed source SHA cannot be labeled complete',()=>{
   const s=sanitizedSample(good(),'mobile_390');
