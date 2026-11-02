@@ -12,7 +12,7 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import urlsplit
-from media_transfer_admission import audit_image_payloads
+from media_transfer_admission import audit_image_payloads, archive_identity
 from verify_release_content_parity import verify_repo, RIGHTS, MIND_NOTICE
 
 HOME = Path('experience2/home-flagship')
@@ -417,6 +417,33 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     'no_js_case_panels_visible':all(rendered.locator('[data-fv-case="'+id+'"]').is_visible()
                                                    for id in ('apollo','franklin','malbone'))
                 }
+                # Browsers often never fetch loading=lazy <img> with JS off.
+                # Confirm BOTH noscript eager fallbacks load actual pixels,
+                # and the rights-pending Malbone map remains unrendered.
+                nojs_images = rendered.locator('img[data-fv-noscript-archive]')
+                nojs['checks']['two_nojs_archival_fallbacks'] = nojs_images.count() == 2
+                if nojs_images.count() == 2:
+                    try:
+                        direct.wait_for_function("""() => [...document.querySelectorAll(
+                          'img[data-fv-noscript-archive]')].every(img =>
+                            img.complete && img.naturalWidth > 0 && img.naturalHeight > 0)
+                        """, timeout=15000)
+                    except Exception:
+                        pass  # Below: emit fail-closed boolean, no URLs/tokens.
+                    actual = nojs_images.evaluate_all("""els => els.map(e => ({
+                        url: e.currentSrc || e.src,
+                        loaded: e.complete && e.naturalWidth > 0 && e.naturalHeight > 0
+                    }))""")
+                    nojs['checks']['nojs_archival_photographs_fetched'] = all(
+                        row['loaded'] for row in actual)
+                    nojs['checks']['nojs_only_approved_photo_sources'] = (
+                        {archive_identity(row['url']) for row in actual}
+                        == {'apollo', 'franklin'})
+                else:
+                    nojs['checks']['nojs_archival_photographs_fetched'] = False
+                    nojs['checks']['nojs_only_approved_photo_sources'] = False
+                nojs['checks']['nojs_malbone_map_not_reproduced'] = (
+                    rendered.locator('[data-fv-case="malbone"] img').count() == 0)
             except Exception as exc:
                 nojs['checks']['no_js_available']=False;nojs['errors'].append(type(exc).__name__+': PRIVATE_WORDPRESS_NO_JS_GATE_BLOCKED')
             failures += ['nojs:'+k for k,v in nojs['checks'].items() if not v]
