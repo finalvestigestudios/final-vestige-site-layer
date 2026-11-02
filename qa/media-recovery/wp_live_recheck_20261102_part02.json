@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 2,
+  "method": "Authenticated WordPress posts.get context=edit, read-only, actual original URLs; NO visitor network requests",
+  "frozen_git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+  "posts": [
+    {
+      "id": 413,
+      "modified": "2026-10-29T15:30:32",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "413:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg",
+          "alt": "Stone prison cell in Saint-Pierre associated with survivor Louis-Auguste Cyparis after the 1902 eruption of Mount Pelée.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "413:1",
+          "source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41590v.jpg",
+          "alt": "Saint-Pierre and its roadstead before the 1902 eruption, with Mount Pelée rising beyond the city.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "413:2",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/saint-pierre-waterfront.jpg",
+          "alt": "Busy commercial waterfront at Saint-Pierre before the 1902 eruption of Mount Pelee.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "413:3",
+          "source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41518v.jpg",
+          "alt": "An early morning eruption of Mount Pelée photographed in 1902, with a dense volcanic cloud rising from the mountain.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "413:4",
+          "source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41400/1s41424v.jpg",
+          "alt": "Ruins of Saint-Pierre after the 1902 eruption, looking north toward Mount Pelée in the distance.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "413:5",
+          "source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s41000/1s41500/1s41568v.jpg",
+          "alt": "Panoramic view across destroyed Saint-Pierre and its bay after the May 1902 Mount Pelée eruption.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "modified": "2026-10-29T18:30:30",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_inline_count": 8,
+      "slots": [
+        {
+          "key": "407:0",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+          "alt": "A house partly submerged in Hebgen Lake beside a broken roadway after the 1959 earthquake.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:1",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+          "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:2",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+          "alt": "The Madison Slide and rapidly filling Earthquake Lake four days after the 1959 Hebgen Lake earthquake, with camping gear abandoned by survivors in the foreground.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:3",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+          "alt": "Dragline excavating the Earthquake Lake spillway on October 18, 1959, with one of the nighttime lighting plants visible on the hillside.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:4",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg",
+          "alt": "Rockslide damage along the Golden Gate road near Mammoth Hot Springs caused by the 1959 Hebgen Lake earthquake.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:5",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg",
+          "alt": "Sapphire Pool in Yellowstone erupting after the 1959 Hebgen Lake earthquake altered the park’s hydrothermal system.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:6",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg",
+          "alt": "Seismic Geyser erupting in Yellowstone in 1970 after developing from a fracture formed following the 1959 earthquake.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "407:7",
+          "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+          "alt": "Earthquake Lake in 2023 with standing dead trees in the water and the 1959 Madison Slide scar visible beyond the lake.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "modified": "2026-10-29T15:27:15",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "stored_inline_count": 8,
+      "slots": [
+        {
+          "key": "370:0",
+          "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+          "alt": "Aerial view of Pearl Harbor's West Loch on May 21, 1944, showing burning LSTs at berths T-8 and T-9 while other landing ships maneuver away.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:1",
+          "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-200000%2F80-G-202485&rendition=cq5dam.web.1280.1280.jpeg",
+          "alt": "U.S. Marines wading ashore from USS LST-353 at Empress Augusta Bay, Bougainville, on November 6, 1943.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:2",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-lst-39-burning.jpg",
+          "alt": "Smoke rising from the wreck of USS LST-480 as tugs and other craft fight fires in West Loch, with burning USS LST-39 at left.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:3",
+          "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg",
+          "alt": "Burned-out USS LST-39 grounded near the Pearl Harbor Naval Ammunition Depot on May 22, 1944.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:4",
+          "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FSC-400000%2FSC-427947&rendition=cq5dam.web.1280.1280.jpeg",
+          "alt": "Firefighters working aboard a destroyed landing ship in West Loch on the morning after the 1944 explosions.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:5",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-afire-again.jpg",
+          "alt": "The wreck of USS LST-480 burning again in West Loch on May 23, 1944, with the sunken remains of LST-353 nearby.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:6",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-overhead.jpg",
+          "alt": "Overhead view of the burning hulk of USS LST-480 in West Loch, Pearl Harbor, on May 22, 1944.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "370:7",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-unidentified-headstone.jpg",
+          "alt": "Headstone marking two unidentified West Loch disaster victims.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 367,
+      "modified": "2026-10-29T17:34:27",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_inline_count": 9,
+      "slots": [
+        {
+          "key": "367:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Palomares_H-Bomb_Incident.jpg",
+          "alt": "The recovered Palomares nuclear weapon aboard USS Petrel after its recovery from the Mediterranean in April 1966.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Operation_Chrome_Dome_route.jpg?width=1280",
+          "alt": "Map of the eastern Operation Chrome Dome airborne-alert route showing refueling tracks near Spain.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg?width=1280",
+          "alt": "USS Skill operating off Spain in February 1966 as part of the Palomares search task force.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg?width=1280",
+          "alt": "The submersible Alvin being lowered into the Mediterranean during the 1966 search for the missing Palomares nuclear weapon.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:4",
+          "source_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+          "alt": "CURV I remotely operated recovery vehicle aboard USS Petrel during the Palomares operation.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/428-GX-_USN_118930_(26941557635).jpg?width=1280",
+          "alt": "Carl Brashear preparing to dive from USS Hunley in 1971 after returning to Navy diving with an artificial leg.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg?width=1280",
+          "alt": "U.S. Navy personnel aboard USS Petrel after recovery of the Palomares hydrogen bomb, with CURV visible in the background.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:7",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
+          "alt": "Barrels of contaminated soil collected at Palomares in 1966 for shipment to the United States.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "367:8",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280",
+          "alt": "The damaged Mark 28 nuclear weapon recovered from the Mediterranean and displayed aboard USS Petrel after the Palomares search.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 330,
+      "modified": "2026-08-30T01:56:40",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "stored_inline_count": 8,
+      "slots": [
+        {
+          "key": "330:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s960_4.jpg",
+          "alt": "Windscale Pile 1 and Pile 2 in 1951 with their distinctive filter galleries mounted at the tops of the ventilation chimneys.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:1",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Picture2.jpg",
+          "alt": "The Windscale Piles under construction in the late 1940s, showing the massive reactor and chimney structures taking shape.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:2",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s960_P-50-2604-LOWRES__B29__GOV.jpg",
+          "alt": "The Pile Fuel Storage Pond at Sellafield, which received irradiated fuel from the Windscale Piles and fuel removed during the 1957 fire response.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:3",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Picture4.jpg",
+          "alt": "The filter gallery under construction at the top of a Windscale chimney during the late 1940s or early 1950s.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:4",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s960_11.jpg",
+          "alt": "The Windscale Pile 1 chimney diffuser and filter-gallery structure before dismantling.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:5",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s960_10.jpg",
+          "alt": "Sellafield decommissioning workers cutting concrete blocks from the top of the Windscale Pile 1 chimney.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:6",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/SPIDA-Lift-1-620x465-1.jpg",
+          "alt": "SPIDA suspended hydraulic work platform being lifted into place on a replica chimney during off-site testing for Windscale Pile 1 demolition.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "330:7",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s960_1.jpg",
+          "alt": "Windscale Pile 1 at Sellafield in 2025 after removal of the filter gallery and diffuser, with the remaining chimney barrel standing beside the reactor building.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "modified": "2026-09-08T10:07:10",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "stored_inline_count": 8,
+      "slots": [
+        {
+          "key": "299:0",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+          "alt": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:1",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+          "alt": "Painted one-tenth-scale reconstruction of Vasa showing how the heavily armed warship likely appeared in 1628.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:2",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/kanoner-livet-ombord-foto-anneli-karlsson.jpg?fit=1024%2C427&ssl=1",
+          "alt": "Full-scale reconstruction of Vasa's upper gun deck showing cannon positions and the confined deck space.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:3",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/kanoner-strid-19200-800-anneli-karlsson.jpg?fit=1024%2C427&ssl=1",
+          "alt": "Original 24-pound bronze cannon from Vasa displayed at the Vasa Museum.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:4",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/kungens-skepp-foto-anneli-karlsson.jpg?fit=1024%2C427&ssl=1",
+          "alt": "Vasa Museum model showing Vasa heeling as water enters the open lower gunports during the 1628 sinking.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:5",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/09_18_i-liv-och-dod_foto-lovisa-bramming-kopiera.jpg?fit=1024%2C576&ssl=1",
+          "alt": "Forensic facial reconstructions based on human remains recovered from Vasa and displayed at the Vasa Museum.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:6",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Vasa_24_april_1961_kl_903.jpg",
+          "alt": "Vasa breaking the water surface during the salvage operation at 9:03 a.m. on April 24, 1961.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "299:7",
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+          "alt": "Vasa inside the museum with old and new support structures used to reduce continuing deformation of the historic hull.",
+          "origin_class": "FIRST_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "modified": "2026-08-27T11:24:49",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "292:0",
+          "source_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/DF-SN-86-12843-header-image-900x675.jpeg",
+          "alt": "A U.S. Coast Guard helicopter hovering beside the fire-damaged cruise ship Prinsendam during the October 1980 rescue.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "292:1",
+          "source_url": "https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg?h=3e6ca723&itok=wjXwUo3w",
+          "alt": "Prinsendam at Rotterdam's Wilhelminakade in 1973, seven years before the Gulf of Alaska fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "292:2",
+          "source_url": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+          "alt": "Passenger ship Prinsendam during her launch at a Dutch shipyard.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "292:3",
+          "source_url": "https://cgaviationhistory.org/wp-content/uploads/MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpg",
+          "alt": "A U.S. Coast Guard HH-3F helicopter operating near the damaged Prinsendam in the Gulf of Alaska in 1980.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "292:4",
+          "source_url": "https://www.travelserver.net/travelpage/aspgallery/pictures/Ad_1981_12.jpg",
+          "alt": "Prinsendam listing heavily in the Gulf of Alaska after the 1980 fire and evacuation.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "292:5",
+          "source_url": "https://static.thisdayinaviation.com/wp-content/uploads/tdia/2020/10/Screen-Shot-2020-10-03-at-14.51.27.png",
+          "alt": "Historical illustration of the Coast Guard rescue operation around Prinsendam in the Gulf of Alaska.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 291,
+      "modified": "2026-08-28T15:14:59",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "291:0",
+          "source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+          "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976.",
+          "origin_class": "THIRD_PARTY_JETPACK",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "291:1",
+          "source_url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+          "alt": "Aerial view of Teton Dam and reservoir around the time of the 1976 failure.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "291:2",
+          "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "291:3",
+          "source_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+          "alt": "Aerial view of the flooding downstream after the Teton Dam collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "291:4",
+          "source_url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+          "alt": "The surviving remains of Teton Dam in Idaho, with the river passing through the unreconstructed breach.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "291:5",
+          "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+          "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 8,
+    "inline_img_tags": 59,
+    "external_origin_count": 36,
+    "classes": {
+      "FIRST_PARTY": 16,
+      "THIRD_PARTY": 35,
+      "FIRST_PARTY_JETPACK": 7,
+      "THIRD_PARTY_JETPACK": 1
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}
