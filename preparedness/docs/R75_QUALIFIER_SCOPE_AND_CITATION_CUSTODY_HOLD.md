@@ -15,6 +15,8 @@ For human review, it forms the **set union** of all pre-existing R73 action-lang
 
 All 244 distinct complete source readings (including historical versions and uncited records), all 2,173 candidate citation occurrences, all 4,070 exact DOM blocks, all 41 unique draft document paths and their reading order, all 975 previous action packets, all 272 quantity-bearing packets, 32 proposed shared-URL groups, 15 repeated source-ID groups, all duplicate URL/source origin distinctions, all source reading SHA bindings, and original HOLD states must remain intact. The earlier 35+1 archived baseline with 1,959 citations is not silently treated as if identical to the 35+6 release candidate.
 
+R75 additionally recomputes shared-URL groups, reused source-ID groups, uncited source identities, every document's directly used source variant set, and reverse source-to-citation impact edges from the sealed complete source-and-block graph. The recalculated inventories must be exactly equal to the historical R72/R74 preserved lists, including the pending human scope-review flags. This catches a maliciously resealed parent that quietly drops a duplicate URL, rewrites a collision, reorders origin variants or silently erases an uncited original source.
+
 CSV exports are **one-way, private, spreadsheet-formula-neutralized reviewer aids**; there is no CSV approval importer. The schema is sealed and explicitly keeps human claim/source review, qualified safety review, independent QD and publication permissions unresolved/false.
 
 ## Scope and QA coordination — November 2, 2026
