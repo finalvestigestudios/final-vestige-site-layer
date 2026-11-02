@@ -129,6 +129,17 @@ jobs:
           d['ci_scope']='DISCOVERY_BOOT_AND_PRIVATE_RENDER_ONLY'
           p.write_text(json.dumps(d,indent=2)+'\n')
           PY
+      - name: Block non-loopback ingress before launching Playground
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Current Playground CLI binds *:9400 on GitHub-hosted Linux.
+          # Fail closed unless both IP families are blocked before launch.
+          sudo iptables -I INPUT 1 ! -i lo -p tcp --dport 9400 -j REJECT
+          sudo ip6tables -I INPUT 1 ! -i lo -p tcp --dport 9400 -j REJECT
+          sudo iptables -C INPUT ! -i lo -p tcp --dport 9400 -j REJECT
+          sudo ip6tables -C INPUT ! -i lo -p tcp --dport 9400 -j REJECT
+          echo 'IPv4 and IPv6 external ingress to WordPress TCP/9400 blocked; localhost permitted.'
       - name: Boot genuine free WordPress Playground on CI loopback
         shell: bash
         run: |
@@ -150,12 +161,11 @@ jobs:
           done
           curl --silent --fail --max-time 6 --output /dev/null 'http://127.0.0.1:9400/wp-login.php'
           ss -lnt | grep ':9400'
-          # Do not accept a public listener: ephemeral CI is NOT authorization
-          # to expose an unpublished source-backed preview to the internet.
-          if ss -lntH | grep -E ':9400[[:space:]]' | grep -Eq '0\.0\.0\.0:9400|\[::\]:9400|\*:9400'; then
-            echo 'RELEASE HOLD: Playground bound publicly rather than loopback' >&2
-            exit 2
-          fi
+          # The CLI may bind *:9400; only accept the listener if both
+          # fail-closed firewall rules remain installed and verified.
+          sudo iptables -C INPUT ! -i lo -p tcp --dport 9400 -j REJECT
+          sudo ip6tables -C INPUT ! -i lo -p tcp --dport 9400 -j REJECT
+          echo 'Playground listener is network-isolated by host firewall; WordPress acceptance still unverified.'
       - name: Confirm editor-only private preview and capture ephemeral auth
         shell: bash
         run: |
@@ -206,7 +216,6 @@ jobs:
           name: ex2-private-local-wordpress-acceptance-HOLD
           path: |
             ${{ runner.temp }}/fv-acceptance/
-            ${{ runner.temp }}/fv-playground.log
             ${{ runner.temp }}/fv-private-stage/STAGING_PREP_RECEIPT.json
             ${{ runner.temp }}/fv-resources/theme-sha256.txt
             ${{ runner.temp }}/fv-resources/theme-original-sha256.txt
