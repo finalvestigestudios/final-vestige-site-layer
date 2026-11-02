@@ -30,6 +30,27 @@ def receipt(out: Path, status: str, error: str = '') -> None:
     }, indent=2) + '\n')
 
 
+def diagnose_private_cli_log(logpath: Path) -> str:
+    """Only publish an allowlisted failure category; NEVER echo raw CLI output."""
+    if not logpath.is_file():
+        return 'CLI_LOG_NOT_CREATED'
+    data = logpath.read_text(errors='replace')[-12000:].lower()
+    patterns = (
+        ('npm error canceled', 'NPM_INTERACTIVE_INSTALL_CANCELLED'),
+        ('npm err! canceled', 'NPM_INTERACTIVE_INSTALL_CANCELLED'),
+        ('could not determine executable', 'NPM_EXECUTABLE_UNRESOLVED'),
+        ('unknown option', 'UNRECOGNIZED_PLAYGROUND_CLI_OPTION'),
+        ('invalid option', 'UNRECOGNIZED_PLAYGROUND_CLI_OPTION'),
+        ('econnrefused', 'PLAYGROUND_DEPENDENCY_NETWORK_FAILURE'),
+        ('enotfound', 'PLAYGROUND_DEPENDENCY_DNS_FAILURE'),
+        ('etimedout', 'PLAYGROUND_DEPENDENCY_TIMEOUT'),
+        ('enoent', 'PLAYGROUND_MISSING_RUNTIME_FILE'),
+        ('error:', 'PLAYGROUND_CLI_RUNTIME_ERROR'),
+    )
+    return next((code for phrase, code in patterns if phrase in data),
+                'PLAYGROUND_CLI_EXIT_REASON_UNCLASSIFIED_PRIVATE_LOG_ONLY')
+
+
 def ready(process: subprocess.Popen, seconds: int = 180) -> None:
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
     stop = time.monotonic() + seconds
@@ -75,8 +96,14 @@ def main() -> int:
             secret_dir = Path(secrets)
             with (secret_dir / 'wp-cli-private.log').open('w', encoding='utf8') as log:
                 process = subprocess.Popen(argv, cwd=repo, stdout=log, stderr=subprocess.STDOUT,
-                                           start_new_session=True)
-                ready(process)
+                                           start_new_session=True, env={
+                                               **os.environ, 'npm_config_yes':'true',
+                                               'npm_config_audit':'false', 'CI':'true'})
+                try:
+                    ready(process)
+                except RuntimeError as exc:
+                    reason = diagnose_private_cli_log(secret_dir / 'wp-cli-private.log')
+                    raise RuntimeError(str(exc) + '; safe_category=' + reason) from None
                 from playwright.sync_api import sync_playwright
                 storage = secret_dir / 'local-editor-storage.json'
                 with sync_playwright() as playwright:
