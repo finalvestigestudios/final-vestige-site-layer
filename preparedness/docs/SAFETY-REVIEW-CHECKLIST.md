@@ -41,8 +41,8 @@ Not covered and said so on the page: 1% bleach table, wells and cisterns, radiat
 
 | Article | Reviewer | Date | Result | Notes |
 |---|---|---|---|---|
-| making-water-safer | Bryan Rhodes (founder) | 2026-10-29 | Approved as drafted | Reviewer's own spot-check scope unknown; claims A1-A14 not individually confirmed |
-| salt-beef-salt-pork-age-of-sail | Bryan Rhodes (founder) | 2026-10-29 | Approved as drafted | Primary records still unpulled (B5); verdict wording approved |
+| making-water-safer | Founder chat reply 'approved' (name and scope unconfirmed; NOT a completed review, see 2026-11-01 correction) | 2026-10-29 | Approved as drafted | Reviewer's own spot-check scope unknown; claims A1-A14 not individually confirmed |
+| salt-beef-salt-pork-age-of-sail | Founder chat reply 'approved' (name and scope unconfirmed; NOT a completed review, see 2026-11-01 correction) | 2026-10-29 | Approved as drafted | Primary records still unpulled (B5); verdict wording approved |
 
 ## C. Sprint 2 drafts awaiting review (all still `pending`)
 
