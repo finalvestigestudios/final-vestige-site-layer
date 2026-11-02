@@ -218,7 +218,8 @@ class AdversarialSourceChecks(unittest.TestCase):
         self.assertIn("EDITION_KIND_NOT_CANONICAL", outcome["source_errors"])
 
     def test_39_synthetic_seller_quote_not_a_source_approval(self):
-        scan = review.scan_issue(self.entry3, self.markdown3 + "\nPrice $2 today!")
+        bad = self.markdown3.replace("**Read our independent Zen12 evaluation", "Price $2 today!\n\n**Read our independent Zen12 evaluation")
+        scan = review.scan_issue(self.entry3, bad)
         self.assertTrue(scan["unverified_price_quoted_in_narrative"])
         self.assertFalse(scan["send_allowed"])
 
