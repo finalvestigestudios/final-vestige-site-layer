@@ -13,6 +13,7 @@ import re
 import subprocess
 from urllib.parse import urlsplit
 from media_transfer_admission import audit_image_payloads
+from verify_release_content_parity import verify_repo, RIGHTS, MIND_NOTICE
 
 HOME = Path('experience2/home-flagship')
 CHAPTERS = ('fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry',
@@ -111,7 +112,8 @@ def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
             raise ValueError('RELEASE HOLD: uncommitted staging source: '+str(path))
         files[name] = raw
     # Attest the executed QA code as well as the original eleven homepage assets.
-    for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py'):
+    for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py',
+                 'verify_release_content_parity.py', 'test_release_content_parity.py'):
         rel = HOME/'qa/release-candidate'/name
         p = repo/rel
         if p.is_symlink() or not p.is_file() or not p.resolve().is_relative_to(repo):
@@ -119,6 +121,15 @@ def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
         committed = subprocess.run(['git','-C',str(repo),'show',expected_sha+':'+rel.as_posix()],capture_output=True)
         if committed.returncode or committed.stdout != p.read_bytes():
             raise ValueError('RELEASE HOLD: modified staging QA code: '+str(rel))
+    # The proposed page-6 replacement is pinned to the release author's
+    # exact #604 blob. Never use a mutated private fixture to certify release.
+    rel = HOME/'qa/release-candidate/fixtures/proposed-production-block-pr604.html'
+    pp = repo/rel
+    if pp.is_symlink() or not pp.is_file() or not pp.resolve().is_relative_to(repo):
+        raise ValueError('RELEASE HOLD: missing/unsafe proposed production fixture')
+    committed = subprocess.run(['git','-C',str(repo),'show',expected_sha+':'+rel.as_posix()],capture_output=True)
+    if committed.returncode or committed.stdout != pp.read_bytes():
+        raise ValueError('RELEASE HOLD: uncommitted proposed production fixture')
     return repo, files
 
 
@@ -149,6 +160,7 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
     check('no_horizontal_root_overflow',frame.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'))
     check('source_galleries_survive',frame.locator('[data-fv-case]').count()==3)
     check('focus_link_present',frame.locator('a[href="https://finalvestige.com/focus/"]').count()>=1)
+    check('mind_no_unverified_commercial_claims',frame.locator('.fv-hf__mind small').filter(has_text=MIND_NOTICE).count()==1)
     delivered = {}
     for tag,name in [('style',n) for n in STYLES]+[('script',n) for n in SCRIPTS]:
         loc = frame.locator(f'{tag}[data-fv-private-asset="{name}"]')
@@ -207,6 +219,17 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
         try:
             # Real user click proves the enhanced case chooser is operable.
             button.click(timeout=6000)
+            # Verify credit/rights language in actual WordPress DOM and that
+            # a keyboard/touch-operable native <details> can reveal it.
+            credit=panel.locator('.fv-hf__case-source p').filter(has_text=RIGHTS[case_id])
+            check('archival_credit_present_'+case_id, credit.count()==1)
+            note=panel.locator('details').first
+            if note.count()==1 and credit.count()==1:
+                note.locator('summary').click(timeout=6000)
+                check('archival_credit_revealed_'+case_id,credit.is_visible())
+                note.locator('summary').click(timeout=6000)
+            else:
+                check('archival_credit_revealed_'+case_id,False)
             activated=panel.is_visible() and button.get_attribute('aria-pressed')=='true'
             check('archive_case_activated_'+case_id,activated)
             visible=activated and case_img.is_visible()
@@ -247,7 +270,9 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
     # Require the actual folio and cited editorial disclaimer; do not demand retired controls.
     check('locked_visual_identity', frame.locator('[data-fv-direction-choice]').count()==0
           and frame.locator('.fv-hf__studio-controls').count()==0)
-    folio = frame.locator('aside.fv-hf__folio-arrival[aria-label]')
+    # Canonical proposed production source uses a named group, not an aside
+    # landmark. Do not require a staging-only wrapper/semantic deviation.
+    folio = frame.locator('div.fv-hf__folio-arrival[role="group"][aria-label]')
     check('franklin_folio_primary_date', folio.count()==1
           and folio.locator('time[datetime="1847-05-28"]').count()==1)
     check('franklin_folio_editorial_disclosure', folio.count()==1
@@ -273,6 +298,10 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
         storage_state: Path, axe_script: Path | None = None) -> dict:
     check_url(url,allowed_host)
     repo,files=checkout(repo,expected_sha)
+    # Cross-PR custody must be proven before spending time on Chromium.
+    # Only inner chapter markup is parity-scoped; standalone study chrome
+    # must never leak into the native WordPress replacement block.
+    content_parity=verify_repo(repo)
     if not storage_state.is_file(): raise ValueError('RELEASE HOLD: missing authorized private editor browser storage_state file')
     from playwright.sync_api import sync_playwright
     output.mkdir(parents=True,exist_ok=True)
@@ -381,6 +410,7 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
     if axe_code is None: failures.append('AXE_NOT_RUN')
     return {'status':'HOLD_INDEPENDENT_RELEASE_APPROVAL_REQUIRED','pass_for_measured_browser_gates':not failures,
             'source_git_head':expected_sha,'index_sha256':sha(files['index.html']),
+            'proposed_production_content_parity':content_parity,
             'screenshots_captured':[x.name for x in output.glob('*.png')],
             'viewports':results,'no_javascript':nojs,'failure_codes':failures,
             'axe':'REQUIRES_LOCAL_AXE_CORE_JS' if axe_code is None else 'EXECUTED_WHEN_POSSIBLE',
