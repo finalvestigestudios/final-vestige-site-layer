@@ -116,7 +116,7 @@ class GateTests(unittest.TestCase):
                          'PAGE_JS_UNCLASSIFIED_ERROR')
 
     def test_archive_case_controls_match_source_images(self):
-        # Every lazy archive image belongs to its own real interactive case.
+        # Two cleared images and one rights-safe source plate belong to three interactive cases.
         # A no-JS reader must still receive all three readable case panels.
         html=(Path(__file__).resolve().parents[2]/'index.html').read_text()
         case_ids=('apollo','franklin','malbone')
@@ -126,13 +126,16 @@ class GateTests(unittest.TestCase):
         self.assertEqual(len(panels),3)
         self.assertEqual([re.search(r'data-fv-case="([^"]+)"',p).group(1)
                           for p in panels],list(case_ids))
-        self.assertEqual(html.count('data-fv-archive-img'),3)
+        self.assertEqual(html.count('data-fv-archive-img'),2)
         for position,case_id in enumerate(case_ids):
             start=html.index('data-fv-case="'+case_id+'"')
             end=(html.index('data-fv-case="'+case_ids[position+1]+'"')
                  if position+1<len(case_ids) else len(html))
             case_html=html[start:end]
-            self.assertEqual(case_html.count('data-fv-archive-img'),1)
+            self.assertEqual(case_html.count('data-fv-archive-img'),0 if case_id=='malbone' else 1)
+            if case_id=='malbone':
+                self.assertIn('fv-hf__source-plate',case_html)
+                self.assertNotIn('<img',case_html.split('<div class="fv-hf__case-body">')[0])
             self.assertNotIn('hidden',panels[position])
 
     def test_no_staging_means_fail_closed_receipt(self):
