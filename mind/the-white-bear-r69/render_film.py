@@ -27,8 +27,8 @@ scenes = [
 ]
 
 def center(draw, y, txt, font, fill, width=W):
-    if draw.textlength(txt,font=font)>width-52:
-        font=ImageFont.truetype(FONT,max(16,round(font.size*(width-52)/draw.textlength(txt,font=font))))
+    if draw.textlength(txt,font=font)>width-120:
+        font=ImageFont.truetype(FONT,max(16,round(font.size*(width-120)/draw.textlength(txt,font=font))))
     box=draw.textbbox((0,0),txt,font=font)
     draw.text(((width-(box[2]-box[0]))//2,y),txt,font=font,fill=fill)
 
