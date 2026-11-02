@@ -324,7 +324,21 @@ def build_rights_matrix_r71(output: Path) -> dict:
           link verification, image inspection, or license granted.</p>
           <a href="{q(source['photo_url'])}" rel="noopener noreferrer"
              target="_blank">Original NASA source for record {q(source['id'])} ↗</a>
-          </details></li>''')
+          </details>
+          <div class="fva-r73-print-proof" data-r73-print-proof>
+            <h3>NASA source {q(source['id'])} / {q(source['catalog'])} — reuse pending</h3>
+            <p><strong>Photograph date:</strong> {q(source['date_label'])}</p>
+            <p><strong>Catalog verification:</strong> {q(certainty)}</p>
+            <p><strong>Credit:</strong> {q(rights['image_credit_as_displayed'] or 'Not individually listed')}</p>
+            <p><strong>Producing center:</strong> {q(rights['producer_as_displayed'] or 'Not listed')}</p>
+            <p><strong>Page updated:</strong> {q(rights['page_last_updated'])}</p>
+            <p><strong>Documentary boundary:</strong> {q(source['photo_role'])}</p>
+            <p><strong>Reuse:</strong> Individual photo review outstanding; no human
+            link verification, image inspection, or license granted.</p>
+            <p><strong>Original NASA source:</strong>
+              <a href="{q(source['photo_url'])}" rel="noopener noreferrer">{q(source['photo_url'])}</a>
+            </p>
+          </div></li>''')
     if len(rows)!=6:
         raise ValueError('Expected six individual source reviews')
     matrix=('''<section class="fva-r71-rights" data-r71-rights aria-labelledby="r71-rights-title">
@@ -343,6 +357,7 @@ def build_rights_matrix_r71(output: Path) -> dict:
       .fva-r71-rights ol{list-style:none;padding:0;
         display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
       .fva-r71-rights li{min-width:0;background:#121510;border:1px solid #89734e}
+      .fva-r71-rights .fva-r73-print-proof{display:none}
       .fva-r71-rights summary{cursor:pointer;min-height:44px;padding:13px;
         font-weight:600;color:#ffe1a2;overflow-wrap:anywhere}
       .fva-r71-rights details p{padding:0 14px;line-height:1.55}
@@ -353,7 +368,15 @@ def build_rights_matrix_r71(output: Path) -> dict:
       @media(max-width:760px){.fva-r71-rights ol{grid-template-columns:1fr}}
       @media(forced-colors:active){.fva-r71-rights,.fva-r71-rights li{
         border-color:CanvasText}.fva-r71-rights summary,.fva-r71-rights a{color:LinkText}}
-      @media print{.fva-r71-rights,.fva-r71-rights li{background:none!important;
+      @media print{
+        .fva-r71-rights details{display:none!important}
+        .fva-r71-rights ol{display:block!important}
+        .fva-r71-rights .fva-r73-print-proof{display:block!important}
+        .fva-r71-rights .fva-r73-print-proof h3{font:700 15px/1.3 Georgia,serif;color:#111}
+        .fva-r71-rights .fva-r73-print-proof p{padding:0 12px;line-height:1.35;color:#111}
+        .fva-r71-rights .fva-r73-print-proof a{color:#111;text-decoration:underline;overflow-wrap:anywhere}
+        .fva-r71-rights li{margin:0 0 14px;page-break-inside:avoid}
+        .fva-r71-rights,.fva-r71-rights li{background:none!important;
         color:#111;border-color:#444}.fva-r71-rights h2,.fva-r71-rights summary,
         .fva-r71-rights a{color:#111}.fva-r71-rights li{break-inside:avoid}
         .fva-r71-rights details>*{display:block!important}}
