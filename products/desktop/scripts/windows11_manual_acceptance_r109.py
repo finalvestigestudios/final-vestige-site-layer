@@ -58,11 +58,42 @@ def _checks(app):
     raise ReviewHold("Unexpected product")
 
 
-def _bytes(path: Path, maximum: int, *, minimum: int = 1) -> bytes:
-    """Read an ordinary, single-linked file through one descriptor, no symlinks."""
+def _directory_chain(directory: Path) -> tuple[tuple[str, int, int], ...]:
+    """Pin every ordinary directory ancestor of private evidence.
+
+    A safe leaf path alone is insufficient: a linked parent or Windows
+    junction can redirect the R9 source or human testimony outside custody.
+    This is a cooperative on-disk identity check, not protection against a
+    malicious administrator or an attacker who wins an in-place race.
+    """
     try:
+        current = directory.absolute()
+        entries = []
+        while True:
+            meta = current.lstat()
+            if (not stat.S_ISDIR(meta.st_mode) or current.is_symlink() or
+                    (hasattr(current, "is_junction") and current.is_junction()) or
+                    bool(getattr(meta, "st_file_attributes", 0) &
+                         getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0))):
+                raise ReviewHold("Untrusted private evidence directory")
+            entries.append((str(current), meta.st_dev, meta.st_ino))
+            if current == current.parent:
+                return tuple(entries)
+            current = current.parent
+    except OSError:
+        raise ReviewHold("Untrusted private evidence directory") from None
+
+
+def _bytes(path: Path, maximum: int, *, minimum: int = 1) -> bytes:
+    """Read a stable private file and reject redirected directory ancestors."""
+    try:
+        parent_chain = _directory_chain(path.parent)
         before = path.lstat()
         if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1 or
+                path.is_symlink() or
+                (hasattr(path, "is_junction") and path.is_junction()) or
+                bool(getattr(before, "st_file_attributes", 0) &
+                     getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)) or
                 not minimum <= before.st_size <= maximum):
             raise ReviewHold("Untrusted evidence file")
         flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
@@ -76,7 +107,10 @@ def _bytes(path: Path, maximum: int, *, minimum: int = 1) -> bytes:
             data = os.read(fd, maximum + 1)
             second = os.fstat(fd)
             after = path.lstat()
-            if (len(data) != first.st_size or
+            # A stable file descriptor does not establish a stable parent:
+            # a substituted directory can redirect later evidence reads.
+            if (_directory_chain(path.parent) != parent_chain or
+                    len(data) != first.st_size or
                     (second.st_dev, second.st_ino, second.st_size,
                      second.st_mtime_ns, second.st_ctime_ns) !=
                     (first.st_dev, first.st_ino, first.st_size,
@@ -255,6 +289,7 @@ def validate_review(review: dict, template: dict, witnesses: Path,
     _observed_time(review.get("observed_utc"), now)
     if witnesses.is_symlink() or not witnesses.is_dir():
         raise ReviewHold("Witness directory must be ordinary")
+    witness_chain = _directory_chain(witnesses)
     counts = {"PASS": 0, "FAIL": 0, "NOT_RUN": 0}
     for name in ALL:
         obj = review["apps"][name]
@@ -282,6 +317,8 @@ def validate_review(review: dict, template: dict, witnesses: Path,
                     raise ReviewHold("Witness content changed")
                 _bound_witness(data, review, name, check, state, now=now)
             counts[state] += 1
+    if _directory_chain(witnesses) != witness_chain:
+        raise ReviewHold("Witness directory changed during validation")
     complete = counts["NOT_RUN"] == 0 and counts["FAIL"] == 0
     return {"schema": SCHEMA, "status": "MANUAL_MATRIX_COMPLETE_UNCERTIFIED" if complete
             else "REVIEW_HOLD_INCOMPLETE_OR_FAILED", "counts": counts,
