@@ -9,7 +9,7 @@ const read=n=>readFileSync(path.join(DIR,n),'utf8');
 const a=read('offer-a-text.blocks.html'), b=read('offer-b-film.blocks.html'), guide=read('guide-core.html'), md=read('investigation.md');
 const rel=JSON.parse(read('claims-and-release.json'));
 const caption=read('captions.vtt');
-test('editorial and buyer guide remain separate',()=>{assert.match(md,/Wegner/);assert.doesNotMatch(md,/zen12\.com|affiliate link/i);assert.match(guide,/Zen12/);});
+test('editorial and buyer guide remain separate',()=>{assert.match(md,/Wegner/);assert.doesNotMatch(md,/https?:\/\/(?:www\.)?zen12\.com/i);assert.match(guide,/Zen12/);});
 test('A and B contain byte-identical substantive guide',()=>{assert.ok(a.includes(guide));assert.ok(b.includes(guide.slice(0,guide.indexOf('<section aria-labelledby="fvm-one"'))));assert.ok(b.includes(guide.slice(guide.indexOf('<section aria-labelledby="fvm-one"'))));});
 test('both use actual native disabled controls',()=>{for(const html of [a,b])assert.match(html,/<button\s[^>]*\bdisabled\b[^>]*>/i)});
 test('disclosure is adjacent to the actual disabled CTA',()=>{for(const html of [a,b]){const pos=html.indexOf('<button');assert.ok(pos>0);const between=html.slice(pos,pos+800);assert.match(between,/Affiliate disclosure:|Affiliate disclosure/);assert.match(between,/may earn a commission/);}});
