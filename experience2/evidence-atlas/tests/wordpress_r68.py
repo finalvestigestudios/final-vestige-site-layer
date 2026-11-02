@@ -13,6 +13,8 @@ from urllib.parse import urlsplit
 sys.dont_write_bytecode = True
 from wp_readiness_r69 import wait_for_wordpress, ReadinessFailure, diagnose_private_cli_log
 from wp_case_ledger_r72 import CaseLedger
+from wp_pdf_custody_r74 import verify_wordpress_print_page
+from wp_accessibility_r74 import verify_installed_controls
 
 BASE='http://127.0.0.1:9438/'
 SLUG='fv-apollo-review-private'
@@ -276,6 +278,10 @@ def accept(stage,axe,out):
                     assert all(link in register for link in expected_nasa_links),'NASA_REGISTER_CROSSWALK_MISMATCH'
                     ledger.advance('INTERACTION')
                     if w in (390,1440):
+                        # R74: installed WordPress source-label and forced-color gate.
+                        report.setdefault('r74_a11y',[]).append(
+                            verify_installed_controls(page,w,out))
+                    if w in (390,1440):
                         page.add_script_tag(path=str(axe))
                         a=page.evaluate("""async()=>{
                           const x=await axe.run(document.querySelector('.fv-ex2-apollo-suite'),{
@@ -318,6 +324,13 @@ def accept(stage,axe,out):
                     page.emulate_media(media='print')
                     assert page.locator('.fv-ex2-ledger__custody dd:visible').count()==30
                     assert page.locator('[data-fva-drawer] dd:visible').count()==54
+                    if w==1440:
+                        # Chromium's actual PDF can omit CLOSED source details
+                        # despite passing DOM print-media visibility checks.
+                        report['r74_print_pdf']=verify_wordpress_print_page(
+                            page,out/'R74_AUTHENTIC_WP_PRINT_1440.pdf')
+                        (out/'R74_PRINT_CUSTODY_RECEIPT.json').write_text(
+                            json.dumps(report['r74_print_pdf'],indent=2,sort_keys=True)+'\n')
                     ledger.advance('NO_JS_CONTENT')
                 ledger.pass_case()
                 report['cases'].append({'width':w,'js':js,'pass':True})
