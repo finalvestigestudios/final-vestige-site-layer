@@ -213,10 +213,10 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
             cols[field] = headers[matches[0]] if matches else None
             if field in required and cols[field] is None:
                 raise csv_input_error("column_missing", field=field)
-        # One imported source column cannot serve as both match identity and
-        # amount. This would fabricate reconciliation identity from money.
-        selected = [name for name in cols.values() if name is not None]
-        if len(selected) != len(set(selected)):
+        # Scope this new restriction to explicit LedgerDiff mappings; other
+        # applications retain their pre-existing alias resolution contract.
+        # Identity and amount cannot both reference the same physical column.
+        if override_id is not None and cols.get("id") == cols.get("amount"):
             raise ValueError("Ledger match and amount must use distinct CSV columns")
         out = []
         previous_end_line = reader.line_num
