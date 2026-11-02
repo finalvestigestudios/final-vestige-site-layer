@@ -124,7 +124,7 @@ test('accept identical stored sources and descriptions with different encoded by
 
 test('unrelated page-chrome image cannot masquerade as article-image savings',()=>{
  const before=a(),after=fixture('2026-10-30T19:00:00.000Z',[5000,5000]);
- const extra={url:'https://finalvestige.com/logo-huge.png',status:200,mime_type:'image/png',
+ const extra={request_id:'ui.extra',url:'https://finalvestige.com/logo-huge.png',status:200,mime_type:'image/png',
   encoded_data_length:50000,error:null,from_disk_cache:false,from_service_worker:false,was_cached:false};
  before.pages[0].network_images.push(extra);
  before.pages[0].image_wire_bytes_total=60000;
