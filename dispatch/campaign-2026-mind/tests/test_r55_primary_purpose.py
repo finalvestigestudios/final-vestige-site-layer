@@ -24,7 +24,7 @@ class ExistingCampaignContract(unittest.TestCase):
             cls.docs[e["number"]] = (ROOT / "issues" / f"{e['number']:02d}-{e['slug']}.md").read_text(encoding="utf-8")
 
     def test_01_six_canonical_editions(self):
-        self.assertEqual([i["number"] for i in self.report["issues"]], list(range(1, 7)))
+        self.assertEqual([i["issue"] for i in self.report["issues"]], list(range(1, 7)))
 
     def test_02_four_editorial_two_commercial(self):
         kinds = [i["type"] for i in self.report["issues"]]
