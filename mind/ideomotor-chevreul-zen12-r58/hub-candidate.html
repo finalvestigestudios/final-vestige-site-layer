@@ -1,0 +1,38 @@
+<style>/* Source-controlled WordPress-ready pilot styling. Scoped; no global header/nav or JS. */
+.fv-mind-pilot,.fv-mind-investigation,.fv-mind-hub{--night:#090a0a;--panel:#121514;--line:#4b4943;--paper:#f4efe6;--body:#ded9cf;--muted:#c0b8ac;--gold:#dcc08e;background:var(--night);color:var(--body);font:400 clamp(1rem,.95rem + .25vw,1.125rem)/1.75 Inter,system-ui,-apple-system,sans-serif;overflow-wrap:anywhere}
+.fv-mind-pilot *, .fv-mind-investigation *, .fv-mind-hub *{box-sizing:border-box}
+.fv-mind-pilot :is(a,summary,button):focus-visible,.fv-mind-investigation a:focus-visible,.fv-mind-hub a:focus-visible{outline:3px solid #ffe0a7;outline-offset:4px}
+.fv-mind-pilot a,.fv-mind-investigation a,.fv-mind-hub a{color:var(--gold);text-underline-offset:.17em}
+.fv-mind-pilot :is(h1,h2,h3),.fv-mind-investigation :is(h1,h2,h3),.fv-mind-hub :is(h1,h2,h3){color:var(--paper);line-height:1.14;font-family:Georgia,serif;font-weight:400}
+.fv-mind-pilot h1,.fv-mind-investigation h1,.fv-mind-hub h1{font-size:clamp(2.1rem,5vw,4.65rem);max-width:18ch;margin:.4em 0}
+.fv-mind-pilot h2,.fv-mind-investigation h2,.fv-mind-hub h2{font-size:clamp(1.65rem,3.2vw,2.5rem);margin:2.25em 0 .6em}
+.fv-mind-pilot h3,.fv-mind-investigation h3,.fv-mind-hub h3{font-size:1.4rem;margin:1.6em 0 .45em}
+.fv-mind-pilot p,.fv-mind-investigation p,.fv-mind-hub p{margin:1em 0;max-width:72ch}
+.fv-mind-pilot ol,.fv-mind-investigation ol{padding-left:1.5rem}
+.fv-mind-pilot li,.fv-mind-investigation li{margin:1em 0}
+.fv-mind-pilot .fv-eyebrow,.fv-mind-investigation .fv-eyebrow,.fv-mind-hub .fv-eyebrow{font:700 .79rem/1.4 Inter,system-ui,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--gold)}
+.fv-mind-pilot .fv-deck,.fv-mind-investigation .fv-deck,.fv-mind-hub .fv-deck{color:var(--paper);font:400 clamp(1.2rem,2.7vw,1.6rem)/1.48 Georgia,serif;max-width:56ch}
+.fv-mind-pilot>.fv-shell,.fv-mind-hub>.fv-shell{max-width:1120px;margin-inline:auto;padding:clamp(24px,5vw,78px) clamp(18px,4vw,64px)}
+.fv-mind-pilot .fv-guide-core{max-width:790px}
+.fv-mind-pilot .fv-commercial-boundary{max-width:790px;border:1px solid #897754;padding:clamp(20px,3vw,32px);margin:3rem 0 0;background:var(--panel)}
+.fv-mind-pilot .fv-disclosure{color:var(--paper);font-size:1rem;line-height:1.5;font-weight:600;margin:.6em 0}
+.fv-mind-pilot button[disabled]{color:#dcc08e;background:#26231e;border:2px solid #8b7c61;opacity:1;cursor:not-allowed;min-height:52px;padding:.8rem 1.25rem;font-weight:700;font-size:1rem;width:100%;max-width:340px}
+.fv-mind-pilot .fv-why-disabled{font-size:.95rem;color:var(--muted)}
+.fv-mind-pilot .fv-video-review{max-width:790px;margin:0 0 2.5rem;border:1px solid var(--line);padding:clamp(16px,3vw,30px);background:#151716}
+.fv-mind-pilot .fv-video-review figure{margin:0}
+.fv-mind-pilot .fv-video-review svg{display:block;width:100%;max-height:480px;height:auto;background:#090a0a}
+.fv-mind-pilot .fv-video-review figcaption{max-width:67ch;color:var(--muted);font-size:.95rem;margin-top:12px}
+.fv-mind-pilot summary{cursor:pointer;min-height:44px;padding:12px;color:var(--gold);font-weight:700}
+.fv-mind-pilot details{border-top:1px solid var(--line);margin-top:16px}
+.fv-mind-investigation{max-width:920px;margin:auto;padding:clamp(20px,5vw,76px)}
+.fv-mind-investigation .fv-sources{font-size:.97rem;border-top:1px solid var(--line);padding-top:16px}
+.fv-mind-hub .fv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,2vw,24px);margin-top:36px}
+.fv-mind-hub .fv-card{border:1px solid var(--line);background:var(--panel);padding:clamp(20px,3vw,28px)}
+.fv-mind-hub .fv-card h2{font-size:1.55rem;margin:0 0 .5rem}
+.fv-mind-hub .fv-card p{font-size:1rem;margin:0}
+.fv-mind-hub .fv-card a{display:inline-block;min-height:44px;padding-top:12px}
+@media (prefers-reduced-motion:reduce){.fv-mind-pilot *,.fv-mind-hub *,.fv-mind-investigation *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media (max-width:390px){.fv-mind-pilot .fv-eyebrow,.fv-mind-hub .fv-eyebrow{letter-spacing:.07em}.fv-mind-pilot .fv-video-review{padding:14px}}
+@media print{.fv-mind-pilot,.fv-mind-investigation,.fv-mind-hub{background:white;color:black}.fv-mind-pilot :is(h1,h2,h3),.fv-mind-investigation :is(h1,h2,h3){color:black}}</style>
+<!-- UNPUBLISHED HUB CANDIDATE. NOT CANONICAL: existing /mind/ PR #172 retains ownership. -->
+<main class="fv-mind-hub" aria-labelledby="archive-title"><div class="fv-shell"><p class="fv-eyebrow">THE LIBRARY / A PROPOSED WINDOW INTO THE UNRELIABLE WITNESS</p><h1 id="archive-title">The Mind &amp; Perception Archive</h1><p class="fv-deck">A face looks normal upside down. A witness remembers something that was not there. A pendulum moves without a felt decision. We go to the original experiments before we reach for explanations.</p><p><strong>Editorial architecture:</strong> Four streams; one route into evidence. This design is a noncanonical review only. No new category, live menu or CMS page is created by this draft.</p><div class="fv-grid"><section class="fv-card"><h2>Perception &amp; Attention</h2><p>The invisible gorilla, change blindness, attentional blink and the Thatcher illusion are planned as separately sourced independent articles. A view count is not a scientific result.</p><span>In editorial review · No unpublished URL presented as live</span></section><section class="fv-card"><h2>History of Suggestion</h2><p>From Puységur's casebooks to Carpenter's ideomotor paper: what records reveal, and what they cannot prove.</p><a href="https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/">Explore the published Puységur case files</a></section><section class="fv-card"><h2>Practice &amp; Reflection</h2><p>A free fieldbook and small observation exercises—without miracle claims or a second mailing list.</p><a href="https://finalvestige.com/focus/">Open the existing Seven Day Focus Fieldbook</a></section><section class="fv-card"><h2>Tools Under Review</h2><p>Reader-first evaluations of meditation and self-hypnosis products: documented specifications, limits, free alternatives and conspicuous financial relationships if earning links become authorized.</p><span>Zen12 guide draft in review · no live merchant link</span></section></div><h2>Why research first?</h2><p>Final Vestige's original mission is to investigate the distance between a compelling account and its surviving evidence. That rule applies to optical illusions, historical magnetism, a guided meditation file and our own conversion experiment. Read freely; no email is required to reach an investigation.</p><p><a href="https://finalvestige.com/explore/">Explore the existing historical investigations</a> · <a href="https://finalvestige.com/free-resources/research-sources/">Research sources</a> · <a href="https://finalvestige.com/editorial-standards/">Editorial standards</a> · <a href="https://finalvestige.com/affiliate-disclosure/">Affiliate disclosure</a></p></div></main>
