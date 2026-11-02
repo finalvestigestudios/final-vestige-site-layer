@@ -304,6 +304,7 @@ def main() -> int:
     p.add_argument('--stage', required=True, type=Path)
     p.add_argument('--out', required=True, type=Path)
     p.add_argument('--axe-script', required=True, type=Path)
+    p.add_argument('--lighthouse-runner', required=True, type=Path)
     args = p.parse_args()
     process = None
     try:
@@ -393,6 +394,46 @@ def main() -> int:
                 if lab.returncode:
                     receipt(out, 'WORDPRESS_RENDERED_BUT_THROTTLED_PERFORMANCE_HOLD',
                             'Private CDP lab failed or exceeded measured LCP/CLS budget')
+                    return 2
+                # Real Lighthouse measures the SAME nonce-authenticated localhost
+                # WordPress renderer. It must never write raw LHR, URLs or cookies
+                # into GitHub artifacts, even on failure.
+                lighthouse_root = 'experience2/home-flagship/qa/playground/'
+                for name in ('measure_private_lighthouse.mjs',
+                             'lighthouse_receipt.mjs', 'test_private_lighthouse.mjs'):
+                    source = repo / lighthouse_root / name
+                    committed = subprocess.check_output(
+                        ['git', '-C', str(repo), 'show',
+                         args.expected_head + ':' + lighthouse_root + name])
+                    if source.is_symlink() or source.read_bytes() != committed:
+                        raise ValueError('LIGHTHOUSE_SOURCE_NOT_EXACT_HEAD')
+                if (not args.lighthouse_runner.is_file()
+                        or args.lighthouse_runner.is_symlink()
+                        or args.lighthouse_runner.read_bytes() !=
+                            (repo / lighthouse_root / 'measure_private_lighthouse.mjs').read_bytes()):
+                    raise ValueError('LIGHTHOUSE_RUNNER_NOT_SOURCE_IDENTICAL')
+                lh_cmd = ['node', str(args.lighthouse_runner),
+                          '--repo', str(repo),
+                          '--expected-head', args.expected_head,
+                          '--storage-state', str(storage),
+                          '--out', str(out)]
+                lh = subprocess.run(lh_cmd, cwd=repo, check=False,
+                                    timeout=420, capture_output=True, text=True)
+                if lh.returncode:
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_LIGHTHOUSE_MEASUREMENT_HOLD',
+                            'Authenticated, localhost-only Lighthouse audit failed')
+                    return 2
+                lh_receipt = out / 'LIGHTHOUSE_PRIVATE_LAB.json'
+                if not lh_receipt.is_file():
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_LIGHTHOUSE_MEASUREMENT_HOLD',
+                            'Lighthouse report missing')
+                    return 2
+                details = json.loads(lh_receipt.read_text())
+                if (details.get('exact_source_commit') != args.expected_head
+                        or len(details.get('audit_profiles', [])) != 2
+                        or details.get('public_wordpress_writes') is not False):
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_LIGHTHOUSE_MEASUREMENT_HOLD',
+                            'Lighthouse report custody mismatch')
                     return 2
                 receipt(out, 'ISOLATED_BROWSER_AND_LAB_ADMISSION_PASSED_NOT_RELEASE')
                 return 0
