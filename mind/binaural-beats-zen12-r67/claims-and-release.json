@@ -1,0 +1,329 @@
+{
+  "reviewed": "2026-11-02",
+  "commercial_status": "HARD_HOLD",
+  "affiliate_link": null,
+  "publisher_acceptance": "UNVERIFIED",
+  "website_rights": "UNVERIFIED",
+  "email_rights": "UNVERIFIED",
+  "creative_rights": "UNVERIFIED",
+  "outbound_tracking_active": false,
+  "wordpress_published": false,
+  "founder_release_approval": false,
+  "claims": [
+    {
+      "id": 1,
+      "statement": "12-minute sessions",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 2,
+      "statement": "12 levels",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 3,
+      "statement": "4 styles",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 4,
+      "statement": "Full 48 MP3 library",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 5,
+      "statement": "Beginner first six levels 24 MP3",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 6,
+      "statement": "Advanced last six levels 24 MP3",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 7,
+      "statement": "One year refund policy",
+      "type": "SELLER_POLICY",
+      "status": "DESCRIBED_NOT_FULFILLMENT_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 8,
+      "statement": "Guides/support/bonus descriptions",
+      "type": "SELLER_FEATURE",
+      "status": "DESCRIBED_NOT_DELIVERY_TESTED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 9,
+      "statement": "Twelve minutes equals sixty meditation",
+      "type": "EFFICACY",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 10,
+      "statement": "Automatic deep brainwave meditation",
+      "type": "MECHANISM",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 research"
+    },
+    {
+      "id": 11,
+      "statement": "Zen12 reliably relieves anxiety",
+      "type": "HEALTH",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 12,
+      "statement": "Zen12 improves health",
+      "type": "HEALTH",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 13,
+      "statement": "Zen12 improves brain power",
+      "type": "PERFORMANCE",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 14,
+      "statement": "Zen12 improves focus",
+      "type": "PERFORMANCE",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 15,
+      "statement": "Zen12 improves creativity",
+      "type": "PERFORMANCE",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 16,
+      "statement": "Every Zen12 audio is binaural",
+      "type": "TECHNICAL",
+      "status": "NOT_VERIFIED",
+      "basis": "Zen12 research"
+    },
+    {
+      "id": 17,
+      "statement": "Stereo headphone requirement per file",
+      "type": "TECHNICAL",
+      "status": "NOT_VERIFIED",
+      "basis": "Zen12 research"
+    },
+    {
+      "id": 18,
+      "statement": "Binaural beat auditory percept",
+      "type": "SCIENCE",
+      "status": "SUPPORTED_GENERAL_NOT_PRODUCT",
+      "basis": "Oster 1973"
+    },
+    {
+      "id": 19,
+      "statement": "Five of fourteen EEG supportive",
+      "type": "SCIENCE",
+      "status": "SUPPORTED_WITH_HETEROGENEITY",
+      "basis": "Ingendoh Posny Heine 2023"
+    },
+    {
+      "id": 20,
+      "statement": "Eight of fourteen EEG contradictory",
+      "type": "SCIENCE",
+      "status": "SUPPORTED_WITH_HETEROGENEITY",
+      "basis": "Ingendoh Posny Heine 2023"
+    },
+    {
+      "id": 21,
+      "statement": "One of fourteen EEG mixed",
+      "type": "SCIENCE",
+      "status": "SUPPORTED_WITH_HETEROGENEITY",
+      "basis": "Ingendoh Posny Heine 2023"
+    },
+    {
+      "id": 22,
+      "statement": "Eight stress trials some favorable",
+      "type": "SCIENCE",
+      "status": "SUPPORTED_WITH_LIMITATIONS",
+      "basis": "Platt Hammond 2024 online"
+    },
+    {
+      "id": 23,
+      "statement": "Four stress trials none favorable",
+      "type": "SCIENCE",
+      "status": "SUPPORTED_WITH_LIMITATIONS",
+      "basis": "Platt Hammond 2024 online"
+    },
+    {
+      "id": 24,
+      "statement": "Stress efficacy for named Zen12",
+      "type": "HEALTH",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED",
+      "basis": "Platt Hammond 2024 online"
+    },
+    {
+      "id": 25,
+      "statement": "Cognitive gains from audio broadly",
+      "type": "PERFORMANCE",
+      "status": "MIXED_OR_INSUFFICIENT",
+      "basis": "Chee et al 2024"
+    },
+    {
+      "id": 26,
+      "statement": "Mobile number field visible",
+      "type": "PRIVACY",
+      "status": "PUBLIC_PAGE_OBSERVED",
+      "basis": "Zen12 checkout"
+    },
+    {
+      "id": 27,
+      "statement": "Mobile input is technically mandatory",
+      "type": "PRIVACY",
+      "status": "UNVERIFIED",
+      "basis": "Zen12 checkout"
+    },
+    {
+      "id": 28,
+      "statement": "Phone or SMS communication possible",
+      "type": "PRIVACY",
+      "status": "SELLER_POLICY_OBSERVED",
+      "basis": "Inspire3 privacy"
+    },
+    {
+      "id": 29,
+      "statement": "Affiliate sharing possible under policy",
+      "type": "PRIVACY",
+      "status": "SELLER_POLICY_OBSERVED",
+      "basis": "Inspire3 privacy"
+    },
+    {
+      "id": 30,
+      "statement": "Refund fulfillment confirmed",
+      "type": "SELLER_POLICY",
+      "status": "UNVERIFIED",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 31,
+      "statement": "Current fixed price",
+      "type": "COMMERCE",
+      "status": "NOT_VERIFIED_DO_NOT_REPRINT",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 32,
+      "statement": "Current countdown is true deadline",
+      "type": "COMMERCE",
+      "status": "NOT_VERIFIED_DO_NOT_REPRINT",
+      "basis": "Zen12 sales"
+    },
+    {
+      "id": 33,
+      "statement": "Public affiliate recruitment exists",
+      "type": "PERMISSION",
+      "status": "PUBLIC_ONLY",
+      "basis": "Inspire3 affiliate portal"
+    },
+    {
+      "id": 34,
+      "statement": "Final Vestige-specific acceptance",
+      "type": "PERMISSION",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "basis": "Inspire3 affiliate portal"
+    },
+    {
+      "id": 35,
+      "statement": "Named Zen12 earning URL",
+      "type": "PERMISSION",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "basis": "Inspire3 affiliate portal"
+    },
+    {
+      "id": 36,
+      "statement": "Website promotional rights",
+      "type": "PERMISSION",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "basis": "Inspire3 affiliate portal"
+    },
+    {
+      "id": 37,
+      "statement": "Newsletter promotional rights",
+      "type": "PERMISSION",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "basis": "Inspire3 affiliate portal"
+    },
+    {
+      "id": 38,
+      "statement": "Creative licensing for swipe assets",
+      "type": "PERMISSION",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "basis": "Inspire3 affiliate portal"
+    },
+    {
+      "id": 39,
+      "statement": "Adjacent FTC earning link disclosure",
+      "type": "COMPLIANCE",
+      "status": "REQUIRED",
+      "basis": "FTC endorsement FAQ"
+    },
+    {
+      "id": 40,
+      "statement": "Product-specific health substantiation",
+      "type": "COMPLIANCE",
+      "status": "REQUIRED_BEFORE_ANY_HEALTH_CLAIM",
+      "basis": "FTC health product guidance"
+    },
+    {
+      "id": 41,
+      "statement": "New email subscription form",
+      "type": "OPERATIONS",
+      "status": "PROHIBITED_EXISTING_FUNNEL_ONLY",
+      "basis": "Seven Day Focus Fieldbook"
+    },
+    {
+      "id": 42,
+      "statement": "Inbound visitor identity tracking",
+      "type": "PRIVACY",
+      "status": "PROHIBITED",
+      "basis": "FTC endorsement FAQ"
+    },
+    {
+      "id": 43,
+      "statement": "Outbound click analytics activation",
+      "type": "PRIVACY",
+      "status": "DISABLED_HARD_HOLD",
+      "basis": "FTC endorsement FAQ"
+    },
+    {
+      "id": 44,
+      "statement": "Variant B conversions exceed A",
+      "type": "EXPERIMENT",
+      "status": "UNTESTED_HYPOTHESIS",
+      "basis": "none"
+    },
+    {
+      "id": 45,
+      "statement": "Personal experience with product",
+      "type": "ENDORSEMENT",
+      "status": "NONE_MUST_NOT_INVENT",
+      "basis": "FTC endorsement FAQ"
+    }
+  ]
+}
