@@ -21,7 +21,7 @@ jobs:
           # actions/checkout defaults to the synthetic PR merge commit on pull_request.
           # Explicitly test the submitted source identity, not an unlabeled merge.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-          persist-credentials: false
+          # Retain source ancestry so original PR #175's exact pinned tree is\n          # independently runnable in the R74 baseline guard (read-only).\n          fetch-depth: 0\n          persist-credentials: false
       - name: Assert exact head was checked out
         shell: bash
         env:
