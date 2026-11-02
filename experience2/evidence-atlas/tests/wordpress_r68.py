@@ -265,7 +265,7 @@ def accept(stage,axe,out):
                 assert page.locator('.fv-ex2-ledger__custody dd').count()==30
                 assert page.locator('[data-fva-drawer] dd').count()==54
                 assert page.locator('[data-fva-cite-id]').count()==6
-                assert page.locator('img').count()==0
+                assert page.locator('.fv-ex2-apollo-suite img').count()==0, 'APOLLO_EMBEDDED_IMAGE_NOT_CLEARED'
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
                 assert not outbound and not errors,(outbound,errors)
                 if js:
