@@ -55,9 +55,9 @@
       "expected_content_hash": "7afdb933d2ec68fd993ef015c97a6eb9edfe0576",
       "block_markup_file": "replacement-block-index1.html"
     },
-    "replacement_sha256": "a26b678cbe1c8c772d2293cb051a0a934633765328f2e8cbf7b03731104c4153",
-    "replacement_sha1": "e1054d45184409469e182ae9fbfa3dad99a43d6e",
-    "replacement_bytes": 111229
+    "replacement_sha256": "39933cc23351d44e858aae19aa8f0480e294c0af1fc27b1ccba886e40ead741a",
+    "replacement_sha1": "d487b1945b56a25ef0d690bb8cef72a60a07971a",
+    "replacement_bytes": 111257
   },
   "rollback": {
     "operation": "page-sections.replace",
@@ -65,7 +65,7 @@
       "id": 6,
       "index": 1,
       "expected_block_type": "core/html",
-      "expected_block_hash": "e1054d45184409469e182ae9fbfa3dad99a43d6e",
+      "expected_block_hash": "d487b1945b56a25ef0d690bb8cef72a60a07971a",
       "block_markup_file": "original-block-index1.html"
     },
     "original_block_sha1_verified_against_live_block_hash": true,
@@ -73,6 +73,6 @@
   },
   "no_plugin_install": true,
   "no_theme_or_navigation_change": true,
-  "no_new_pages": true,
-  "unverified_on_wordpress_com": "Whether WordPress.com keeps inline <style>/<script> inside a core/html block on the Personal plan is NOT TESTED: existing blocks already carry <style> and a JSON-LD <script>, but a draft-page dry run is required (see RELEASE_AND_ROLLBACK.md step 1)."
+  "no_new_pages_in_the_change_itself": true,
+  "unverified_on_wordpress_com": "Whether WordPress.com keeps inline <style>/<script> inside a core/html block on the Personal plan is NOT TESTED: existing blocks already carry <style> and a JSON-LD <script>, but a dry run is required (RELEASE_AND_ROLLBACK.md step 1)."
 }

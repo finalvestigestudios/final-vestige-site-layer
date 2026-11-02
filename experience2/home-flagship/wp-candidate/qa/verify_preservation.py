@@ -41,7 +41,7 @@ def main():
     c["focus_links_in_preserved_part"] = len(re.findall(r'href="[^"]*/focus/"', before + after))
     c["jetpack_form_action"] = sorted(set(re.findall(r'<form[^>]*action="([^"]*)"', comp)))
     c["studios_hero_gone_from_candidate"] = 'fv-studios-hero"' not in comp
-    c["flagship_present_once"] = comp.count("data-fv-home-flagship") == 1
+    c["flagship_present_once"] = len(re.findall(r'<div class="fv-hf [^>]*data-fv-home-flagship', comp)) == 1
     if a.live:
         raw = subprocess.run(["curl", "-sS", "--ssl-no-revoke", "-A", "Mozilla/5.0", "-L", "https://finalvestige.com/"], capture_output=True, check=True).stdout.decode("utf-8", "replace")
         live = entry_content(raw)

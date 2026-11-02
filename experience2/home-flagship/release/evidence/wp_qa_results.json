@@ -312,8 +312,7 @@
     "violations_total_nodes": 1
    },
    "console_errors": [
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero"
    ]
   },
   "1440": {
@@ -337,16 +336,6 @@
    "small_targets_lt44": 3,
    "axe": {
     "violations": [
-     {
-      "id": "color-contrast",
-      "impact": "serious",
-      "nodes": 1,
-      "nodes_in_flagship": 0,
-      "targets": [
-       ".fv-margin-strip__item:nth-child(5)"
-      ],
-      "help": "Elements must meet minimum color contrast ratio thresholds"
-     },
      {
       "id": "target-size",
       "impact": "serious",
@@ -386,11 +375,10 @@
     ],
     "passes": 48,
     "violations_inside_flagship": 0,
-    "violations_total_nodes": 2
+    "violations_total_nodes": 1
    },
    "console_errors": [
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero"
    ]
   },
   "1920": {
@@ -1134,5 +1122,6 @@
    }
   ],
   "stops_without_visible_indicator": []
- }
+ },
+ "delivery": "inline (flagship CSS/JS inside the core/html block; stage-only site CSS parity)"
 }
