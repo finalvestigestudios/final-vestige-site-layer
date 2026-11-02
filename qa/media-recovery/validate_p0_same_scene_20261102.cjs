@@ -21,7 +21,7 @@ function validate(d){
  if(t.geometry.catalog_original_width_px!==819||t.geometry.catalog_original_height_px!==614||t.geometry.conditional_derived_width_px!==819||t.geometry.conditional_derived_height_px!==614||t.decision!=='HIGH_CONFIDENCE_SAME_SCENE_ORIGINAL_FOR_STAGING_REVIEW_ONLY')fail('tmi_size_or_decision');
  if(h.published_url!==USGS||h.source_chain.catalog_original_link!==USGS||h.source_chain.catalog_original_same_as_published!==true||h.retriever.observation!=='exact_published_source_displayed_2026_11_02'||h.retriever.wrapper_status!==null)fail('hebgen_source');
  if(!h.rights.creator_credit.includes('Mrs. Steven W. Nile')||!h.rights.catalog_assertion.includes('Public Domain')||h.geometry.viewer_rendered_width_px!==1000||h.geometry.viewer_rendered_height_px!==745||h.geometry.conditional_derived_width_px!==960||h.geometry.conditional_derived_height_px!==715||h.geometry.dimensions_not_visitor_decode!==true||h.decision!=='RETRIEVER_POSITIVE_KEEP_SOURCE_BROWSER_VERIFY_NOT_REPLACE')fail('hebgen_provenance_or_geometry');
- const c=d.common_controls;if(!c||Object.values(c).some(v=>v!==true)&&false)fail('controls');
+ const c=d.common_controls;if(!c)fail('controls');
  for(const k of ['no_unlicensed_scraping','no_binary_downloads','no_wordpress_production_writes','no_homepage_design_changes','no_site_qa_pr_changes','no_subscription_spend'])if(c[k]!==true)fail('controls_'+k);
  if(c.all_reported_guest_http_statuses!==null)fail('claimed_guest_status');
  return {ok:true,verified_records:2,browser_verified_failures:0,publication_authorized:false};
