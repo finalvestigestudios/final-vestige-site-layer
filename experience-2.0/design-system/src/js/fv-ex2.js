@@ -79,7 +79,10 @@
       const id = ids[current];
       try { history.replaceState(null, '', '#' + id); } catch (_) { /* ignore */ }
       const target = openers.find((b) => b.getAttribute('data-fvx-open-source') === id) || opener;
-      if (target && target.isConnected) target.focus();
+      // The browser restores focus to the element that opened the dialog during its own close steps, and the order
+      // relative to this event differs between engines. Move focus on the next task so the opener of the record the
+      // reader ended on (they may have paged with Next/Previous) always wins.
+      setTimeout(() => { if (target && target.isConnected) target.focus(); }, 0);
       body.replaceChildren();
     });
     openers.forEach((b) => { b.hidden = false; });

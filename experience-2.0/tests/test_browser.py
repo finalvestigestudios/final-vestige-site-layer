@@ -132,6 +132,7 @@ class Flagship(Base):
         self.assertEqual(page.locator(f"#{dialog.get_attribute('aria-labelledby')}").inner_text(), "The spark was never conclusively identified.")
         page.keyboard.press("Escape")
         self.assertFalse(dialog.evaluate("d => d.open"))
+        page.wait_for_function("document.activeElement && document.activeElement.getAttribute('data-fvx-open-source') === 'record-05'", timeout=3000)
         self.assertEqual(page.evaluate("document.activeElement.getAttribute('data-fvx-open-source')"), "record-05")
         self.assertFalse(page.evaluate("document.documentElement.classList.contains('fv-ex2-scroll-lock')"))
         self.assertEqual(page.evaluate("location.hash"), "#record-05")
