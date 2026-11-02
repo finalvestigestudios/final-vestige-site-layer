@@ -1,0 +1,501 @@
+{
+  "updated_on": "2026-11-02",
+  "author": "FV Mind & Affiliate Studio",
+  "purpose": "Product-claim/source and release-permission matrix; sources keyed in source-ledger.md",
+  "sale_link_authorized": false,
+  "tracking_allowed": false,
+  "rows": [
+    {
+      "id": "C01",
+      "claim": "12-minute session length",
+      "kind": "seller_feature",
+      "sources": [
+        "M2",
+        "M3"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "seller says; not independently purchased"
+    },
+    {
+      "id": "C02",
+      "claim": "12 progression levels",
+      "kind": "seller_feature",
+      "sources": [
+        "M2",
+        "M3"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "seller says; course not independently inventoried"
+    },
+    {
+      "id": "C03",
+      "claim": "four listening styles",
+      "kind": "seller_feature",
+      "sources": [
+        "M2",
+        "M3"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "music/guided/nature/white noise"
+    },
+    {
+      "id": "C04",
+      "claim": "full course 48 MP3s",
+      "kind": "seller_feature",
+      "sources": [
+        "M2",
+        "M5"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "seller catalog/checkout only"
+    },
+    {
+      "id": "C05",
+      "claim": "six-level 24 MP3 package",
+      "kind": "seller_feature",
+      "sources": [
+        "M2"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "package may change"
+    },
+    {
+      "id": "C06",
+      "claim": "headphones optional",
+      "kind": "seller_feature",
+      "sources": [
+        "M3"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "seller statement not technical validation"
+    },
+    {
+      "id": "C07",
+      "claim": "avoid while driving",
+      "kind": "seller_warning",
+      "sources": [
+        "M3"
+      ],
+      "status": "RETAIN",
+      "reason": "safety warning"
+    },
+    {
+      "id": "C08",
+      "claim": "one-year money-back guarantee",
+      "kind": "seller_policy",
+      "sources": [
+        "M2",
+        "M5"
+      ],
+      "status": "ATTRIBUTED_ONLY",
+      "reason": "independent refunds not verified"
+    },
+    {
+      "id": "C09",
+      "claim": "mobile field at checkout",
+      "kind": "observed_interface",
+      "sources": [
+        "M5"
+      ],
+      "status": "RETAIN",
+      "reason": "capture at 2026-11-02; no transaction"
+    },
+    {
+      "id": "C10",
+      "claim": "name/email/postcode at checkout",
+      "kind": "observed_interface",
+      "sources": [
+        "M5"
+      ],
+      "status": "RETAIN",
+      "reason": "not a claim about handling"
+    },
+    {
+      "id": "C11",
+      "claim": "merchant privacy terms",
+      "kind": "policy",
+      "sources": [
+        "M5",
+        "M6"
+      ],
+      "status": "REVIEW",
+      "reason": "release-time privacy review"
+    },
+    {
+      "id": "C12",
+      "claim": "hour of meditation in 12 minutes",
+      "kind": "health_cognitive",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "no Zen12-specific adequate independent trial"
+    },
+    {
+      "id": "C13",
+      "claim": "automatic deep meditation",
+      "kind": "health_cognitive",
+      "sources": [
+        "M2",
+        "M4"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "mechanism and outcomes unverified"
+    },
+    {
+      "id": "C14",
+      "claim": "automatic brainwave entrainment",
+      "kind": "physiology",
+      "sources": [
+        "M2",
+        "M4"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "not established for exact product"
+    },
+    {
+      "id": "C15",
+      "claim": "immediate stress relief",
+      "kind": "health",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "no specific controlled substantiation"
+    },
+    {
+      "id": "C16",
+      "claim": "reduced anxiety",
+      "kind": "health",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "clinical outcome unsupported"
+    },
+    {
+      "id": "C17",
+      "claim": "health benefits",
+      "kind": "health",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "not demonstrated for Zen12"
+    },
+    {
+      "id": "C18",
+      "claim": "better focus",
+      "kind": "cognitive",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "Stroop studies do not transfer"
+    },
+    {
+      "id": "C19",
+      "claim": "enhanced creativity",
+      "kind": "cognitive",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "not verified"
+    },
+    {
+      "id": "C20",
+      "claim": "increased productivity",
+      "kind": "cognitive",
+      "sources": [
+        "M2"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "not verified"
+    },
+    {
+      "id": "C21",
+      "claim": "wealth manifestation from audio",
+      "kind": "financial",
+      "sources": [
+        "none"
+      ],
+      "status": "OMIT_UNSUBSTANTIATED",
+      "reason": "no guarantees; not seller feature being evaluated"
+    },
+    {
+      "id": "C22",
+      "claim": "buyer guide written from firsthand use",
+      "kind": "testimonial",
+      "sources": [
+        "none"
+      ],
+      "status": "PROHIBIT",
+      "reason": "no purchase/test"
+    },
+    {
+      "id": "C23",
+      "claim": "product price, discount, scarcity",
+      "kind": "commercial",
+      "sources": [
+        "M2",
+        "M5"
+      ],
+      "status": "WITHHOLD",
+      "reason": "volatile, no affiliate authority"
+    },
+    {
+      "id": "C24",
+      "claim": "affiliate commissions/payout",
+      "kind": "commercial",
+      "sources": [
+        "none"
+      ],
+      "status": "WITHHOLD",
+      "reason": "terms unverified"
+    },
+    {
+      "id": "C25",
+      "claim": "Final Vestige has approved Zen12 link",
+      "kind": "permission",
+      "sources": [
+        "none"
+      ],
+      "status": "FALSE_HOLD",
+      "reason": "no partner acceptance"
+    },
+    {
+      "id": "C26",
+      "claim": "merchant link at guide CTAs",
+      "kind": "permission",
+      "sources": [
+        "none"
+      ],
+      "status": "DISABLED",
+      "reason": "native disabled button; no href"
+    },
+    {
+      "id": "C27",
+      "claim": "near-link disclosure",
+      "kind": "compliance",
+      "sources": [
+        "FTC1"
+      ],
+      "status": "REQUIRED",
+      "reason": "adjacent visible text; future earning link"
+    },
+    {
+      "id": "C28",
+      "claim": "disclosure in commercial video",
+      "kind": "compliance",
+      "sources": [
+        "FTC1"
+      ],
+      "status": "REQUIRED_IF_ENDORSEMENT",
+      "reason": "R70 video is purely educational"
+    },
+    {
+      "id": "C29",
+      "claim": "general affiliate disclosure page alone",
+      "kind": "compliance",
+      "sources": [
+        "FTC1"
+      ],
+      "status": "INSUFFICIENT",
+      "reason": "not substitute for near-CTA"
+    },
+    {
+      "id": "C30",
+      "claim": "medical efficacy substantiation",
+      "kind": "compliance",
+      "sources": [
+        "FTC2"
+      ],
+      "status": "REQUIRED_PRIOR_TO_CLAIM",
+      "reason": "independent product-specific evidence needed"
+    },
+    {
+      "id": "C31",
+      "claim": "Raz 2002 group selection",
+      "kind": "research",
+      "sources": [
+        "S2"
+      ],
+      "status": "RETAIN",
+      "reason": "16 highly and 16 less suggestible"
+    },
+    {
+      "id": "C32",
+      "claim": "Stroop neutral vs incongruent differences",
+      "kind": "research",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "status": "RETAIN",
+      "reason": "task-specific experimental measure"
+    },
+    {
+      "id": "C33",
+      "claim": "Raz 2006 without induction",
+      "kind": "research",
+      "sources": [
+        "S4"
+      ],
+      "status": "RETAIN",
+      "reason": "only selected context"
+    },
+    {
+      "id": "C34",
+      "claim": "EEG/fMRI observations 2005",
+      "kind": "research",
+      "sources": [
+        "S3"
+      ],
+      "status": "RETAIN",
+      "reason": "not guaranteed mechanism elsewhere"
+    },
+    {
+      "id": "C35",
+      "claim": "hypnosis theories unsettled",
+      "kind": "research",
+      "sources": [
+        "S5"
+      ],
+      "status": "RETAIN",
+      "reason": "review has competing perspectives"
+    },
+    {
+      "id": "C36",
+      "claim": "Puységur cure cases prove cures",
+      "kind": "historical",
+      "sources": [
+        "H1"
+      ],
+      "status": "REJECT",
+      "reason": "original accounts are evidence of reporting, not efficacy"
+    },
+    {
+      "id": "C37",
+      "claim": "Focus landing existing Jetpack signup",
+      "kind": "first_party",
+      "sources": [
+        "F1"
+      ],
+      "status": "PRESERVE",
+      "reason": "no duplicate email form"
+    },
+    {
+      "id": "C38",
+      "claim": "video conversion uplift",
+      "kind": "hypothesis",
+      "sources": [
+        "none"
+      ],
+      "status": "UNTESTED",
+      "reason": "A/B on identical substantive copy"
+    },
+    {
+      "id": "C39",
+      "claim": "affiliate outbound equals sale",
+      "kind": "analytics",
+      "sources": [
+        "none"
+      ],
+      "status": "PROHIBIT",
+      "reason": "click is not merchant conversion"
+    },
+    {
+      "id": "C40",
+      "claim": "collect full URL/referrer/email/IP",
+      "kind": "privacy",
+      "sources": [
+        "none"
+      ],
+      "status": "PROHIBIT",
+      "reason": "enum-only aggregation or no tracking"
+    },
+    {
+      "id": "C41",
+      "claim": "free audio listening preference audit",
+      "kind": "editorial",
+      "sources": [
+        "R70 guide"
+      ],
+      "status": "ALLOW_NO_EFFICACY",
+      "reason": "not validated experiment"
+    },
+    {
+      "id": "C42",
+      "claim": "silent 40s educational storyboard",
+      "kind": "media",
+      "sources": [
+        "R70 film"
+      ],
+      "status": "ALLOW_PENDING_HOST_QA",
+      "reason": "no endorsement or autoplay"
+    },
+    {
+      "id": "C43",
+      "claim": "merchant freebie newsletter",
+      "kind": "third_party",
+      "sources": [
+        "M7"
+      ],
+      "status": "DO_NOT_EMBED",
+      "reason": "separate signup incompatible with single FV funnel"
+    },
+    {
+      "id": "C44",
+      "claim": "TikTok original research hook",
+      "kind": "distribution",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "status": "ALLOW_SOURCED",
+      "reason": "not commercial claims"
+    },
+    {
+      "id": "C45",
+      "claim": "approved partner creatives",
+      "kind": "rights",
+      "sources": [
+        "none"
+      ],
+      "status": "HOLD",
+      "reason": "do not copy swipe or logo without license"
+    },
+    {
+      "id": "C46",
+      "claim": "FV email channel permission",
+      "kind": "rights",
+      "sources": [
+        "none"
+      ],
+      "status": "HOLD",
+      "reason": "Dispatch issue #174 separate"
+    },
+    {
+      "id": "C47",
+      "claim": "current checkout tax/refund policy",
+      "kind": "commercial",
+      "sources": [
+        "M5",
+        "M6"
+      ],
+      "status": "REVERIFY",
+      "reason": "release gate"
+    },
+    {
+      "id": "C48",
+      "claim": "WordPress public URL is live",
+      "kind": "release",
+      "sources": [
+        "none"
+      ],
+      "status": "FALSE_HOLD",
+      "reason": "files in draft PR only"
+    }
+  ]
+}
