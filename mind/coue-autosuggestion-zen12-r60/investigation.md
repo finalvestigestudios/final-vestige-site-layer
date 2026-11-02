@@ -98,4 +98,4 @@ The most interesting question is not whether the sentence was powerful. It is wh
 
 [4] Dell, “What is the Source of Hypnotic Responses?” (2024), *International Journal of Clinical and Experimental Hypnosis* 72(1), 64–83; https://pubmed.ncbi.nlm.nih.gov/38060715/ . Theoretical argument, not consensus.
 
-**Editorial embargo:** Unpublished draft. No merchant endorsement, checkout link, or treatment recommendation in this investigation. Do not use the essay to imply support for a recording product.
+**Editorial embargo:** Unpublished draft. No merchant endorsement, purchase routing, or treatment recommendation in this investigation. Do not use the essay to imply support for a recording product.
