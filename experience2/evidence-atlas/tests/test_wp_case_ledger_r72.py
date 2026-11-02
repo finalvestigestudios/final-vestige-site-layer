@@ -55,7 +55,8 @@ class R72LedgerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             gate = self.make(d)
             gate.begin(320, False)
-            gate.advance("NO_JS_CONTENT")
+            for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "NO_JS_CONTENT"):
+                gate.advance(stage)
             gate.pass_case()
             gate.begin(320, True)
             for stage in ("HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN", "INTERACTION"):
