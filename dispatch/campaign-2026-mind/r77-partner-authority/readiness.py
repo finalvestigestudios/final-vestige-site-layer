@@ -129,7 +129,7 @@ def html_report(result: dict) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Final Vestige · Dispatch R77 · HOLD</title>
 <style>body{font:16px/1.6 system-ui;background:#090a0a;color:#f4efe6;max-width:850px;padding:24px;margin:auto}
-a{color:#c7a66c} h1{line-height:1.14}h2{margin-top:2rem}table{border-collapse:collapse;width:100%}
+a{color:#c7a66c} h1{line-height:1.14}h2{margin-top:2rem}table{border-collapse:collapse;width:100%%}
 th,td{padding:10px;text-align:left;border-bottom:1px solid #555}th{color:#e3c695}
 .notice{padding:18px;border-left:6px solid #c7a66c;background:#191818}
 :focus-visible{outline:3px solid white;outline-offset:3px}
