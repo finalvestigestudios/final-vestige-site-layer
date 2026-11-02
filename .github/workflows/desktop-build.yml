@@ -81,6 +81,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r127.py
           python -OO products/desktop/scripts/safe_unittest_r127.py
+      - name: R128 unambiguous private Win11 testimony (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r128.py
+          python -OO products/desktop/scripts/safe_unittest_r128.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -293,6 +297,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R127 observation file custody regression FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r127.py
           if ($LASTEXITCODE -ne 0) { throw "R127 optimized observation file custody regression FAILED" }
+      - name: R128 unambiguous private Win11 testimony (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r128.py
+          if ($LASTEXITCODE -ne 0) { throw "R128 private witness display integrity regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r128.py
+          if ($LASTEXITCODE -ne 0) { throw "R128 optimized witness display integrity regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
