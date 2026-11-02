@@ -169,17 +169,25 @@ def parse_date(value):
     raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
 
 def table(path, required, optional=(), *, include_headers=False, include_digest=False,
-          id_column=None, include_columns=False):
-    # Explicit LedgerDiff key mapping is opt-in and scoped to the ID field.
+          id_column=None, amount_column=None, include_columns=False):
+    # Explicit LedgerDiff identity/amount mappings are opt-in; only the
+    # LedgerDiff caller supplies them, preserving other engines' contracts.
     # Normalize exactly like imported CSV headers; reject unbounded, unsafe
     # or visually ambiguous names without reflecting private input values.
     override_id = None
+    override_amount = None
     if id_column is not None:
         if type(id_column) is not str or "id" not in required:
             raise ValueError("Invalid explicit ledger match column")
         override_id = id_column.strip().lower().replace(" ", "_")
         if re.fullmatch(r"[a-z_][a-z0-9_]{0,127}", override_id) is None:
             raise ValueError("Invalid explicit ledger match column")
+    if amount_column is not None:
+        if type(amount_column) is not str or "amount" not in required:
+            raise ValueError("Invalid explicit ledger amount column")
+        override_amount = amount_column.strip().lower().replace(" ", "_")
+        if re.fullmatch(r"[a-z_][a-z0-9_]{0,127}", override_amount) is None:
+            raise ValueError("Invalid explicit ledger amount column")
     p = Path(path)
     if p.suffix.lower() != ".csv" or not p.is_file(): raise csv_input_error("select_file")
     # Parse a verified single-descriptor snapshot: no source can change between
@@ -207,6 +215,8 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         for field in (*required,*optional):
             if field == "id" and override_id is not None:
                 matches = [override_id] if override_id in headers else []
+            elif field == "amount" and override_amount is not None:
+                matches = [override_amount] if override_amount in headers else []
             else:
                 matches = [alias for alias in ALIASES.get(field,(field,)) if alias in headers]
             if len(matches) > 1:
@@ -217,7 +227,7 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         # Scope this new restriction to explicit LedgerDiff mappings; other
         # applications retain their pre-existing alias resolution contract.
         # Identity and amount cannot both reference the same physical column.
-        if override_id is not None and cols.get("id") == cols.get("amount"):
+        if (override_id is not None or override_amount is not None) and cols.get("id") == cols.get("amount"):
             raise ValueError("Ledger match and amount must use distinct CSV columns")
         out = []
         previous_end_line = reader.line_num
@@ -309,24 +319,29 @@ def manifest(folder,inputs,outputs, *, expected_inputs=None):
     return publish_text(outpath(folder,"evidence-manifest",".txt"), contents)
 
 @_exact_reconciliation_context
-def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column=None):
+def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column=None,
+                left_amount_column=None, right_amount_column=None):
     """Reconcile on auto-detected IDs or independently chosen CSV key headers.
 
-    Only explicit, bounded column names may override automatic ID aliases.
-    Sources remain immutable; the actual mapped headers appear in each report
+    Only explicit, bounded column names may override automatic ID or amount aliases.
+    Per-side mappings stay independent; original financial sources remain immutable.
+    The actual mapped headers appear in each report
     row and the original byte digests identify the two audited imports.
     """
     from .ledger_provenance import attach_ledger_provenance
     groups=[defaultdict(list),defaultdict(list)]
     digests=[]
     selected_headers=[]
-    for source,d,override in ((left,groups[0],left_match_column),
-                              (right,groups[1],right_match_column)):
+    selected_amount_headers=[]
+    for source,d,override,amount_override in (
+            (left,groups[0],left_match_column,left_amount_column),
+            (right,groups[1],right_match_column,right_amount_column)):
         records, source_sha256, columns=table(
             source,("id","amount"), include_digest=True,
-            id_column=override, include_columns=True)
+            id_column=override, amount_column=amount_override, include_columns=True)
         digests.append(source_sha256)
         selected_headers.append(columns["id"])
+        selected_amount_headers.append(columns["amount"])
         for r in records:
             k=key(r["id"])
             if not k: raise csv_input_error("blank_ledger_id", line=int(r["row"]))
@@ -344,13 +359,16 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
                      "left_ids":labels_for_report(a,"id"),
                      "right_ids":labels_for_report(b,"id"),
                      "left_match_column":selected_headers[0],
-                     "right_match_column":selected_headers[1]})
+                     "right_match_column":selected_headers[1],
+                      "left_amount_column":selected_amount_headers[0],
+                      "right_amount_column":selected_amount_headers[1]})
     rows=attach_ledger_provenance(
         rows, left_sha256=digests[0], right_sha256=digests[1])
     return [save(folder,"ledger-diff",(
         "id","status","left_amount","right_amount","difference",
         "left_rows","right_rows","left_ids","right_ids",
         "left_match_column","right_match_column",
+        "left_amount_column","right_amount_column",
         "left_source_sha256","right_source_sha256","input_identity_review"),rows)]
 
 def invoice_window_days(text):
