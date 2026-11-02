@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "scope": "read-only, no visitor browser proof; source-only museum/USCG asset recovery",
+  "official_sources": [
+    "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+    "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/"
+  ],
+  "counts": {
+    "posts": 61,
+    "inline_source_references": 355,
+    "external_references": 288,
+    "wp_originals_over_1_5MiB": 13,
+    "alleged_broken_unverified": 42,
+    "claimed_savings_unmeasured_percent": 76,
+    "confirmed_production_repairs": 0
+  },
+  "rows": [
+    {
+      "key": "418:0",
+      "published_src": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "alt": "The old and new Scotch Cap lighthouses on Unimak Island before the concrete lighthouse was destroyed by the April 1, 1946 tsunami.",
+      "retriever": "NO_ORIGIN_STATUS",
+      "retriever_code": null,
+      "candidate_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/2_-new-and-old-lighthouses-19849609-e1728394749751-600x480.jpg",
+      "candidate_kind": "same scene, edited/cropped museum derivative; not proved same binary",
+      "preview": "DISPLAYED",
+      "preview_dimensions_px": [
+        600,
+        480
+      ],
+      "target_dimensions_px": [
+        600,
+        480
+      ],
+      "chronology": "Old and 1940 new lighthouse together before the April 1, 1946 disaster; exact exposure date unknown.",
+      "rights": "HOLD",
+      "image_master_sha256": null,
+      "identity_binary_verified": false,
+      "wp_media_upload_authorized": false,
+      "wp_post_edit_authorized": false,
+      "cache_authorized": false,
+      "guest_browser": {
+        "status": null,
+        "currentSrc": null,
+        "finalUrl": null,
+        "naturalWidth": null,
+        "encodedBytes": null,
+        "visibleFailure": null
+      },
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "max_width_px": 960,
+      "no_upscale": true,
+      "preview_source": "WEB_IMAGE_RETRIEVER_NOT_VISITOR_BROWSER"
+    },
+    {
+      "key": "418:1",
+      "published_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+      "retriever": "RETRIEVER_403",
+      "retriever_code": 403,
+      "candidate_url": "https://media.defense.gov/2021/Mar/30/2002905913/-1/-1/0/210330-G-DE713-0002.JPG",
+      "candidate_kind": "exact USCG VIRIN filename via official photograph page; master/crop equivalence not hashed",
+      "preview": "DISPLAYED",
+      "preview_dimensions_px": null,
+      "target_dimensions_px": null,
+      "chronology": "Undated service portrait; USCG photo-caption spelling Pettit differs from casualty list Petit; editorial correction held.",
+      "rights": "HOLD",
+      "image_master_sha256": null,
+      "identity_binary_verified": false,
+      "wp_media_upload_authorized": false,
+      "wp_post_edit_authorized": false,
+      "cache_authorized": false,
+      "guest_browser": {
+        "status": null,
+        "currentSrc": null,
+        "finalUrl": null,
+        "naturalWidth": null,
+        "encodedBytes": null,
+        "visibleFailure": null
+      },
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "max_width_px": 960,
+      "no_upscale": true,
+      "preview_source": "WEB_IMAGE_RETRIEVER_NOT_VISITOR_BROWSER"
+    },
+    {
+      "key": "418:2",
+      "published_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "retriever": "RETRIEVER_403",
+      "retriever_code": 403,
+      "candidate_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+      "candidate_kind": "same unique debris2 filename and caption/photo scene, but unverified original binary/crop",
+      "preview": "DISPLAYED",
+      "preview_dimensions_px": [
+        600,
+        463
+      ],
+      "target_dimensions_px": [
+        600,
+        463
+      ],
+      "chronology": "Debris after April 1, 1946 tsunami; museum caption identifies shot from the bluff.",
+      "rights": "HOLD",
+      "image_master_sha256": null,
+      "identity_binary_verified": false,
+      "wp_media_upload_authorized": false,
+      "wp_post_edit_authorized": false,
+      "cache_authorized": false,
+      "guest_browser": {
+        "status": null,
+        "currentSrc": null,
+        "finalUrl": null,
+        "naturalWidth": null,
+        "encodedBytes": null,
+        "visibleFailure": null
+      },
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "max_width_px": 960,
+      "no_upscale": true,
+      "preview_source": "WEB_IMAGE_RETRIEVER_NOT_VISITOR_BROWSER"
+    }
+  ],
+  "excluded_wrong_photos": [
+    {
+      "url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/Scotch_Cap_debris1_1946-600x471.jpg",
+      "reason": "Different aerial rubble pile, NOT published debris2 photograph"
+    },
+    {
+      "url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/Scotch_Cap_debris3_1946-600x458.jpg",
+      "reason": "Different standing wall, NOT published debris2 photograph"
+    }
+  ],
+  "publication_gate": {
+    "approved": false,
+    "reason": "Visitor Chrome proof, exact binary/scene/crop verification, rights/credit and separate publication approval pending",
+    "caching": "HOLD",
+    "wordpress_writes": false,
+    "downloaded_photos": false,
+    "claimed_wire_bytes_saved": null
+  },
+  "notes": [
+    "The two museum previews are only 600px wide and must not be upscaled to 960px.",
+    "Official USCG 418:1 record expressly calls photo public domain and cleared for release, subject to appropriate photo credit and DoD restrictions; no permission decision inferred for museum derivatives.",
+    "Two 403 reports are independent web retrieval wrapper results, not validated visitor-facing origin or browser HTTP status.",
+    "Published 418:2 / museum derivative share unique filename stem; image scene is consistent, but published original was blocked from independent retrieval."
+  ]
+}
