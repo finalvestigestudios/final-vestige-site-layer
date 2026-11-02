@@ -1,0 +1,174 @@
+# DRAFT-only, non-production WordPress Playground admission. No CMS tokens, exports,
+# subscriber records, WP.com staging sync, publishing, or deployment.
+name: EX2 locked-folio isolated WordPress staging probe
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/home-flagship/**'
+      - '.github/workflows/ex2-locked-folio-local-wordpress.yml'
+permissions:
+  contents: read
+jobs:
+  isolated-playground:
+    if: startsWith(github.head_ref, 'qa/ex2-wordpress-stage-locked-folio-gate-')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - name: Checkout the EXACT PR head (not synthetic merge)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Record exact HEAD and installed runtime
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          echo "HEAD=$EXPECTED_HEAD"
+          node --version
+          python --version
+          php --version | head -1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install real Chromium and axe (no SaaS)
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          mkdir -p "$RUNNER_TEMP/fv-axe"
+          npm --prefix "$RUNNER_TEMP/fv-axe" install --no-audit --no-fund --save-exact axe-core@4.14.0
+      - name: Run 9 real-browser adversarial identity tests
+        run: |
+          python -m unittest discover -s experience2/home-flagship/tests -p test_staging_locked_identity_browser.py -v
+      - name: Fetch authentic public Assembler from WordPress.com
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/fv-resources"
+          curl --fail --location --silent --show-error --retry 2 --max-time 90 \
+            'https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip' \
+            --output "$RUNNER_TEMP/fv-resources/assembler.zip"
+          file "$RUNNER_TEMP/fv-resources/assembler.zip"
+          sha256sum "$RUNNER_TEMP/fv-resources/assembler.zip" | tee "$RUNNER_TEMP/fv-resources/theme-sha256.txt"
+          python - <<'PY'
+          import zipfile, os
+          p=os.path.join(os.environ['RUNNER_TEMP'],'fv-resources','assembler.zip')
+          with zipfile.ZipFile(p) as z:
+              files=z.namelist()
+              assert 'assembler/style.css' in files and 'assembler/templates/index.html' in files
+              assert 'Theme Name: Assembler' in z.read('assembler/style.css').decode('utf-8')
+          print('Official WordPress.com ZIP structural checks: PASS. Independent frozen theme digest: NOT AVAILABLE / HOLD.')
+          PY
+      - name: Build exact-source local-only PHP staging using existing attester
+        shell: bash
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          theme_sha=$(cut -d' ' -f1 "$RUNNER_TEMP/fv-resources/theme-sha256.txt")
+          python experience2/home-flagship/qa/playground/prepare_isolated_stage.py \
+            --repo . --expected-head "$EXPECTED_HEAD" \
+            --assembler-zip "$RUNNER_TEMP/fv-resources/assembler.zip" \
+            --expected-theme-sha256 "$theme_sha" \
+            --out "$RUNNER_TEMP/fv-private-stage"
+          # This runner's same-download SHA check does NOT meet the separately
+          # reviewed, out-of-band digest provenance release requirement.
+          python - <<'PY'
+          from pathlib import Path
+          import json, os
+          p=Path(os.environ['RUNNER_TEMP'])/'fv-private-stage'/'STAGING_PREP_RECEIPT.json'
+          d=json.loads(p.read_text())
+          assert d['release']=='HOLD' and d['exact_git_head']==os.environ['EXPECTED_HEAD']
+          d['ci_theme_download_origin']='https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip'
+          d['ci_theme_checksum_independently_pinned']=False
+          d['ci_theme_provenance_release_gate']='HOLD_OUT_OF_BAND_DIGEST_REQUIRED'
+          d['ci_scope']='DISCOVERY_BOOT_AND_PRIVATE_RENDER_ONLY'
+          p.write_text(json.dumps(d,indent=2)+'\n')
+          PY
+      - name: Boot genuine free WordPress Playground on CI loopback
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json, os, subprocess
+          stage=Path(os.environ['RUNNER_TEMP'])/'fv-private-stage'
+          argv=json.loads((stage/'playground-cli-arguments.json').read_text())
+          assert argv[:3]==['npx','@wp-playground/cli@latest','server']
+          assert '--port=9400' in argv and not any('finalvestige.com' in x for x in argv)
+          log=open(Path(os.environ['RUNNER_TEMP'])/'fv-playground.log','w')
+          p=subprocess.Popen(argv,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+          (Path(os.environ['RUNNER_TEMP'])/'fv-playground.pid').write_text(str(p.pid))
+          PY
+          for i in $(seq 1 90); do
+            if curl --silent --fail --max-time 4 --output /dev/null 'http://127.0.0.1:9400/wp-login.php'; then break; fi
+            sleep 2
+          done
+          curl --silent --fail --max-time 6 --output /dev/null 'http://127.0.0.1:9400/wp-login.php'
+          ss -lnt | grep ':9400'
+          # Do not accept a public listener: ephemeral CI is NOT authorization
+          # to expose an unpublished source-backed preview to the internet.
+          if ss -lntH | grep -E ':9400[[:space:]]' | grep -Eq '0\.0\.0\.0:9400|\[::\]:9400|\*:9400'; then
+            echo 'RELEASE HOLD: Playground bound publicly rather than loopback' >&2
+            exit 2
+          fi
+      - name: Confirm editor-only private preview and capture ephemeral auth
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/fv-acceptance"
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          base='http://127.0.0.1:9400'
+          state=Path(os.environ['RUNNER_TEMP'])/'fv-editor-storage-state.json'
+          with sync_playwright() as p:
+              br=p.chromium.launch(headless=True)
+              anon=br.new_page()
+              anon.goto(base+'/?pagename=fv-ex2-playground-review',wait_until='domcontentloaded')
+              if anon.locator('iframe[title="Final Vestige Experience 2.0, unpublished editorial preview"]').count():
+                  raise RuntimeError('RELEASE HOLD: private staging preview leaked to anonymous visitor')
+              anon.close()
+              ctx=br.new_context()
+              page=ctx.new_page()
+              page.goto(base+'/wp-login.php',wait_until='domcontentloaded')
+              if page.locator('#user_login').count():
+                  page.fill('#user_login','admin')
+                  page.fill('#user_pass','password')
+                  page.click('#wp-submit')
+              page.goto(base+'/?pagename=fv-ex2-playground-review',wait_until='domcontentloaded')
+              page.locator('iframe[title="Final Vestige Experience 2.0, unpublished editorial preview"]').wait_for(timeout=20000)
+              ctx.storage_state(path=str(state))
+              state.chmod(0o600)
+              br.close()
+          print('PLAYGROUND: true WordPress + Assembler + authenticated private iframe found. Storage state is temporary and NEVER uploaded.')
+          PY
+      - name: Genuine five-width local WordPress/Assembler + axe + media proof
+        shell: bash
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python experience2/home-flagship/qa/release-candidate/verify_exact_staging.py \
+            --url 'http://127.0.0.1:9400/?pagename=fv-ex2-playground-review' \
+            --allow-host 127.0.0.1 --expected-head "$EXPECTED_HEAD" --repo . \
+            --storage-state "$RUNNER_TEMP/fv-editor-storage-state.json" \
+            --axe-script "$RUNNER_TEMP/fv-axe/node_modules/axe-core/axe.min.js" \
+            --out "$RUNNER_TEMP/fv-acceptance"
+      - name: Upload safely scoped read-only evidence (no cookies, users or original media)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-private-local-wordpress-acceptance-HOLD
+          path: |
+            ${{ runner.temp }}/fv-acceptance/
+            ${{ runner.temp }}/fv-playground.log
+            ${{ runner.temp }}/fv-private-stage/STAGING_PREP_RECEIPT.json
+            ${{ runner.temp }}/fv-resources/theme-sha256.txt
+          if-no-files-found: warn
+          retention-days: 7
