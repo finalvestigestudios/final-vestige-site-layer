@@ -95,7 +95,7 @@ def run(out: Path) -> dict:
                     pdf = page.pdf(format='A4', print_background=True)
                     text = ' '.join((page.extract_text() or '')
                                     for page in PdfReader(io.BytesIO(pdf)).pages)
-                    normalized = re.sub(r'\\s+', ' ', text)
+                    normalized = re.sub(r'\s+', ' ', text)
                     exact = re.findall(r'Individual photo review outstanding', normalized)
                     assert len(exact) == 6, ('PRINT_PDF_CUSTODY_INCOMPLETE', len(exact))
                     for source in custody['records']:
