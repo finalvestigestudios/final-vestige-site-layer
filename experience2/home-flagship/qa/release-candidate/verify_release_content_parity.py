@@ -29,7 +29,7 @@ RIGHTS = {
 MIND_NOTICE = "this section makes no health, performance or product claims"
 
 def git_blob(raw: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\0" + raw).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw).hexdigest()
 
 def chapter_interior(source: str, *, inline_block: bool) -> str:
     # Intentionally strict and deterministic: changing the wrapper contract
