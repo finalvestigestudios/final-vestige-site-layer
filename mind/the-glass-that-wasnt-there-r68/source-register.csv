@@ -1,0 +1,19 @@
+key,type,source_url,observed_2026_11_02,use_limits
+R1,primary_study,https://doi.org/10.1016/S0022-5371(74)80011-3,"1974 experiment abstract checked; paywalled full text",no unverified numeric table claims
+R2,primary_study,https://pubmed.ncbi.nlm.nih.gov/621467/,"1978 1242 across 5 experiments and pilot",not one cell sample
+R3,primary_study,https://doi.org/10.1002/acp.885,"2003 experimental co-witness 71 percent discussion condition",not a general population rate
+R4,meta_analysis,https://doi.org/10.1017/mem.2024.14,"2024 13 articles, memory/belief separate",avoid per-event vs at-least-one confusion
+S1,systematic_review,https://doi.org/10.1371/journal.pone.0286023,"2023 14-study EEG systematic review mixed",not named Zen12 outcome evidence
+M0,merchant_catalog,https://inspire3.com/,"Zen12 Hypnosis Live Brainwave Shots product identities",seller descriptions only
+M1,merchant_offer,https://zen12.com/hnp,"12 minute 12 levels four styles packages and marketing",purchase route not hyperlinked in review
+M2,merchant_about,https://zen12.com/about,"audio formats and machinery caution",seller account not trial
+M3,merchant_marketing,https://zen12.com/research,"entrainment explanation seller marketing",not independent product clinical evidence
+M4,merchant_checkout,https://zen12.com/getstarted,"48 MP3 mobile field advertised refund",not a verified commercial transaction; no active checkout link
+M5,merchant_privacy,https://inspire3.com/privacy/,"calls SMS affiliate purchaser data policy wording",publisher does not have buyer data
+M6,affiliate_recruitment,https://affiliates.inspire3.com/,"public recruitment not publisher approval",no tracking link or creative license
+F1,regulator,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,"disclosure proximity material connection",no disclosure-only safe harbor
+F2,regulator,https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance,"adequate health claim substantiation",seller claims unsupported
+FV1,published_archive,https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/,"historical suggestion archive page 1377",not proof of magnetism
+FV2,published_edition,https://finalvestige.com/focus/,"published 52 page Focus Fieldbook 1579",one original Jetpack funnel
+FV3,published_policy,https://finalvestige.com/editorial-standards/,"FV source handling",original article only
+FV4,published_policy,https://finalvestige.com/affiliate-disclosure/,"existing general disclosure",near-link disclosure still required
