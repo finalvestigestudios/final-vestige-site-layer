@@ -81,3 +81,18 @@ Merged cleanly (no conflicts). Fixes were targeted edits; `status.publish` is `d
 * `python -I preparedness/tools/validate.py` -> `0 error(s), 0 warning(s)`
 * `python -I preparedness/tools/build.py` -> completed, exit 0 (outputs are git-ignored now)
 * `python -I -m unittest discover -s preparedness/tests -v` -> `Ran 36 tests ... OK` (no failures, no errors, no skips reported)
+
+## Follow-up pass (2026-11-01): primary sources attempted
+
+Firecrawl credits were nearly exhausted, so each attempt was kept small. Still `publish: draft`; #31 still `pending`; all 30 sources `human_link_check: false`.
+
+| Item | Result |
+|---|---|
+| Breen diary | **Added** `hist-field-oac-breen-diary` (Bancroft Library finding aid via OAC), read in full as prose. The diary's own entries and transcription were NOT read. Finding aid adds a useful caveat (early printed versions "considered to be corrupt") and does not say the diary is "the only contemporary record" (that claim stays attributed to Britannica). Breen's first name is now sourced |
+| Hastings's 1845 guide | **Added** `hist-field-ia-hastings-guide` (Internet Archive OCR). Full text fetched, but only the passages around printed pp. ~137-139 and the Bear River valley were read. States about 2,100 miles / about 120 days "exclusive of delays" and Fort Hall as the supply point. The cutoff passage OCR is too garbled to characterize, so the article still rests on the Utah essay for Hastings's intent. Article adds one of our own arithmetic notes, labelled as ours |
+| Virginia Reed's letter | Not found in an archive or government record; still reported only as Britannica quotes it (four words) |
+| Marcy chapters | Full-text file returned 404; page-by-page reading is too costly. Read both contents pages (images 17-18): seven chapters, none described as covering finding direction by sun, stars or compass. The nav article states this as a fact about the contents list, not the book. Chapters still unread |
+| NFPA 1 | Not attempted: the code is licensed text. Statements remain "NFPA's summary of the code" |
+| `reference` source kind | Needs a `tools/validate.py` change, which I do not make. Britannica stays `scholarship` and NPS interpretive pages `museum` |
+
+Verification run: see the commit message / final report for the exact results of the three commands.

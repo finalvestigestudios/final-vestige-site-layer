@@ -11,8 +11,8 @@
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
-      "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
-      "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, contents and the opening of chapter I), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
+      "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list (seven chapters, read in full) shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
+      "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, both contents pages and the opening of chapter I). The two contents pages (images 17 and 18) were read in full on 2026-11-01; the book's full-text file could not be fetched (404), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
     },
     {
       "id": "loc-pioneer-diaries",
@@ -363,6 +363,34 @@
       "human_link_check": false,
       "supports": "Tertiary reference summary: Hastings Cutoff was proposed by an unreliable guide and was in reality 125 miles longer than the established trail; Reed was warned at Fort Laramie by a friend who had just come east through the cutoff; the party spent about two weeks breaking a trail through the Wasatch; a note from Hastings said the Great Salt Lake Desert could be crossed in two days but it took five; dozens of cattle were lost and several wagons abandoned; Paiute warriors killed several remaining oxen; they cached nearly all personal possessions except food, clothing and essentials; snow blocked the pass on October 31; many oxen wandered off and were lost in the snow; deaths totaled 42 with 47 survivors; Breen's diary is the only contemporary written record of the ordeal; in 2010 researchers reported no physical evidence of cannibalism at Alder Creek while noting absence of evidence does not rule it out.",
       "notes": "Tertiary encyclopedia article; the register's kind list has no 'reference' kind, so 'scholarship' is the closest available and is imperfect (flagged for the lead). Read in full. Used for specific figures that NPS and the Utah essay do not give (the desert crossing, the 125-mile figure, relief-party dates), each attributed by name in the text. Its figure of 42 deaths with 47 survivors does not add up to the 87-person party it names. Britannica attributes oxen losses to Paiute warriors, whereas NPS quotes Sarah Winnemucca that her people were afraid and would have helped; the article reports the disagreement."
+    },
+    {
+      "id": "hist-field-oac-breen-diary",
+      "title": "Patrick Breen Diary, 1846 November 20 - 1847 March 1 (BANC MSS C-E 176), finding aid",
+      "publisher": "The Bancroft Library, University of California, Berkeley, via the Online Archive of California",
+      "kind": "archive",
+      "url": "https://oac.cdlib.org/findaid/ark:/13030/tf10000759/",
+      "published": "1997",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "Finding aid for the manuscript diary kept by Patrick Breen at Donner (Truckee) Lake from November 20, 1846 to March 1, 1847: a 32-page booklet with entries on the first 29 pages; terse, matter-of-fact style recording weather, health, food, deaths and visits; ends on the day Reed's relief party arrived; the diary passed from Breen to George McKinstry to H. H. Bancroft; early printed versions (from a May 1847 newspaper copy) are considered corrupt through omissions, alterations or falsification; Teggart (1910) is the first complete scholarly edition and Stewart (1946) added a transcription and facsimile.",
+      "notes": "Read in full (finding aid prose). The diary's own entries, the digital images and the container-listing transcription were NOT read. The finding aid's background paragraph repeats the standard account (starvation; some survivors consumed the dead) without citing sources. It does not say this is the only contemporary record. Finding aid dated 1997 (source date March 2011)."
+    },
+    {
+      "id": "hist-field-ia-hastings-guide",
+      "title": "The emigrants' guide to Oregon and California (Lansford W. Hastings, Cincinnati, 1845), Internet Archive scan, full text",
+      "publisher": "Internet Archive (scan of the 1845 Cincinnati edition; holding library not verified)",
+      "kind": "primary-digitized",
+      "url": "https://archive.org/details/GR_1815",
+      "published": "1845",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "Primary source. In the passages read (OCR of printed pages around 137-139): the distance from Independence to Oregon or California by the Fort Hall route is about 2,100 miles and the usual time about 120 days exclusive of delays, though parties had often taken longer; Fort Hall is the only settlement in that vicinity where emigrants can obtain horses and provisions; a California route is described leaving the Oregon route and heading southwest toward the Salt Lake.",
+      "notes": "The drafting agent fetched the full OCR text (about 540,000 characters) but READ ONLY the passages around the California-route summary (printed pp. ~137-139) and the Bear River valley passage; the rest was not read. The OCR is noisy and the Salt Lake passage is too garbled to quote or characterize with confidence, so no claim is made about what the guide recommends for the cutoff. The details page (archive.org/details/GR_1815) was not itself opened; the URL came from a search result and the text from /stream/GR_1815/GR_1815_djvu.txt. Other copies exist (BYU Trail Guides, HathiTrust) and were not checked."
     }
   ]
 }
