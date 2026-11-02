@@ -1,0 +1,130 @@
+name: Preparedness R72 Origin-Scoped Source Collision Impact (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r71-dom-block-source-review-hold-20261102]
+    paths:
+      - preparedness/tools/r72_source_scope_collision_impact.py
+      - preparedness/tests/test_r72_source_scope_collision_impact.py
+      - preparedness/docs/R72_SOURCE_SCOPE_COLLISION_IMPACT_HOLD.md
+      - .github/workflows/preparedness-r72-isolated-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r72-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-source-scope-collision-impact-audit:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Exact read-only checkout without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact R71 base, R72 branch and four-file additive scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "41edfb1155a8b62ab0a4d5d4c638f5b14c5d0746"
+          test "$BASE_REF" = "review/preparedness-r71-dom-block-source-review-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r72-source-scope-impact-collision-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r72-changed-paths
+          python -I - <<'PY'
+          from pathlib import Path
+          actual={p.decode() for p in Path("/tmp/r72-changed-paths").read_bytes().split(b"\0") if p}
+          expected={
+            "preparedness/tools/r72_source_scope_collision_impact.py",
+            "preparedness/tests/test_r72_source_scope_collision_impact.py",
+            "preparedness/docs/R72_SOURCE_SCOPE_COLLISION_IMPACT_HOLD.md",
+            ".github/workflows/preparedness-r72-isolated-tests.yml",
+          }
+          assert actual==expected,(sorted(actual),sorted(expected))
+          print("R72 exact 4-file draft-only scope PASS")
+          PY
+      - name: Seven current contributor heads plus separate RC SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for name,pin in refs.items():
+              found=subprocess.check_output(["git","rev-parse","--verify",
+                  "refs/remotes/origin/"+name+"^{commit}"],text=True).strip()
+              assert found==pin,(name,pin,found)
+          print("7/7 contributor and 1/1 independent release candidate SHA pins PASS")
+          PY
+      - name: R72 syntax and private code scope
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for name in ("preparedness/tools/r72_source_scope_collision_impact.py",
+                       "preparedness/tests/test_r72_source_scope_collision_impact.py"):
+              compile(Path(name).read_text(encoding="utf-8"),name,"exec")
+          print("R72 syntax PASS")
+          PY
+      - name: Synthetic and adversarial scope collision tests 36+
+        run: python -I -m unittest discover -s preparedness/tests -p test_r72_source_scope_collision_impact.py -v
+      - name: Full original source / candidate source scope impact census
+        run: |
+          python -I - <<'PY'
+          import csv,importlib.util,io,json
+          from pathlib import Path
+          name=Path("preparedness/tools/r72_source_scope_collision_impact.py")
+          spec=importlib.util.spec_from_file_location("r72_ci",name)
+          m=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(m)
+          x=m.live_report()
+          c=x["counts"]
+          assert x["release_state"]=="HOLD" and x["machine_only"] is True
+          assert all(x[k] is False for k in m.HOLD)
+          assert (c["articles"],c["tools"],
+                  c["complete_distinct_origin_scoped_source_readings"],
+                  c["citation_occurrences"])==(35,6,244,2173),c
+          assert c["same_block_topic_absent_citation_review_candidates"]==599,c
+          assert c["direct_DOM_citation_occurrences"]+\
+                 c["unattached_citation_review_tasks"]==2173,c
+          assert (c["human_claim_support_reviews"],c["human_qualified_safety_reviews"],
+                  c["independent_QD_approvals"])==(0,0,0),c
+          a=m.live_report()
+          assert x==a,"non-deterministic review record"
+          collisions=list(csv.DictReader(io.StringIO(m.csv_collisions(x))))
+          assert len(collisions)==(c["shared_exact_URL_collision_groups"]+
+                                  c["reused_source_ID_collision_groups"]),c
+          print("R72 private collision census PASS:",json.dumps(c,sort_keys=True))
+          print("All collision work orders and complete source readings retained; no approval.")
+          PY
+      - name: Native original archive validation — machine only
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready private draft build
+        run: python -I preparedness/tools/build.py
+      - name: Complete native Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Independent mandatory integrity remains HOLD
+        if: always()
+        run: |
+          echo 'R72 grants NO article, source, medical, emergency safety, QD or publication approval.'
+          echo 'Mandatory separate thirteen-stage release integrity is NOT bypassed.'
+          echo 'No CMS, WP, navigation, production merge or public site changes.'
