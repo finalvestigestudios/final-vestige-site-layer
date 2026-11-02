@@ -88,6 +88,17 @@ class WordPressTemplatePersistence(unittest.TestCase):
         self.assertGreaterEqual(markup['header'].count('\\'), 1)
         self.assertGreaterEqual(markup['overlay'].count('\\'), 1)
 
+    def test_throwaway_wordpress_admin_context_is_behind_local_host_gate(self):
+        source = PHP.read_text(encoding='utf-8')
+        guard = source.index("wp_get_environment_type() !== 'local'")
+        admin = source.index('wp_set_current_user(1);')
+        insert = source.index('function fv_local_parity_insert_verified')
+        self.assertLess(guard, admin)
+        self.assertLess(admin, insert)
+        self.assertIn("is_multisite()", source[guard:admin])
+        self.assertIn("current_user_can('unfiltered_html')", source[admin:insert])
+        self.assertIn("get_current_user_id() !== 1", source[admin:insert])
+
     def test_source_explicitly_slashes_before_wp_insert_post(self):
         self.assertIn("'post_content'=>wp_slash($record['content'])", get_function_source())
         self.assertIn("$saved->post_content !== $record['content']", get_function_source())
