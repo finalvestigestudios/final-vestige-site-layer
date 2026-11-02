@@ -50,6 +50,7 @@
     "shelter-ready-shelter": "Many shelters accept only service animals.",
     "shelter-fema-power-outage-sheet": "FEMA December 2023 sheet: 20 ft from any building openings; no gas stovetop, oven, grill or dryer for heat; vehicle never running in a garage; CO alarms on every level and near sleeping areas; medication wording (replace, call doctor or pharmacist, use only until new supply).",
     "shelter-cpsc-co-tips": "Rapid high-level CO exposure from generators can cause confusion and loss of muscle control without milder symptoms first; severity depends on level and duration; exhaust facing away; open the fireplace damper; no gas range or oven for heating.",
-    "shelter-nws-winter-during": "Stuck-car instruction: stay in the vehicle, run the motor about 10 minutes an hour, open the window a little, clear the exhaust pipe."
+    "shelter-nws-winter-during": "Stuck-car instruction: stay in the vehicle, run the motor about 10 minutes an hour, open the window a little, clear the exhaust pipe.",
+    "fsis-power-failure": "Refrigerator about 4 hours unopened; full freezer about 48 hours (24 if half full)."
   }
 }

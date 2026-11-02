@@ -573,6 +573,62 @@
       "human_link_check": false,
       "supports": "If your car gets stuck: stay in the vehicle, run the motor about 10 minutes each hour for heat, open the window a little for fresh air while running it to avoid carbon monoxide poisoning, clear snow from the exhaust pipe, be visible to rescuers (dome light at night, bright cloth, raise the hood after snow stops); indoors: use fire safeguards and ventilate when using a fireplace, wood stove or space heater, make sure a gas furnace vent is not blocked by snow; close off rooms, stuff towels in cracks, close curtains.",
       "notes": "Read: the whole page text, extracted from a direct download on 2026-11-01 (the 'Outside' section includes advice to build a fire for heat when no shelter is nearby, which is not reproduced in these guides). No page date. Corroborates the CDC 10-minutes-per-hour stranded-vehicle instruction. human_link_check remains false."
+    },
+    {
+      "id": "fsis-power-failure",
+      "title": "How do you keep food safe during a power failure? (Ask USDA)",
+      "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+      "kind": "regulator",
+      "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+      "published": null,
+      "updated": "2024-12-17",
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+      "notes": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false."
+    },
+    {
+      "id": "shelter-usda-fsis-emergencies",
+      "title": "Keep Your Food Safe During Emergencies: Power Outages, Floods & Fires",
+      "publisher": "USDA Food Safety and Inspection Service",
+      "kind": "regulator",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "published": null,
+      "updated": "2013-08-07",
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "Keep an appliance thermometer in the refrigerator and freezer (refrigerator 40 F or below, freezer 0 F or below); group foods; keep the freezer full or fill gaps with frozen jugs of water, ice or gel packs; have an insulated cooler and frozen gel packs; perishable food stays safe in a refrigerator only 4 hours; refrigerator up to 4 hours and full freezer about 48 hours (24 if half full); never taste food to judge its safety, when in doubt throw it out; discard listed perishable foods (raw, cooked or leftover meat, poultry, fish, eggs, milk, soft cheeses, cut fruit and others) if the refrigerator has been without power for more than 4 hours; do not put perishable food in the snow, make ice instead; USDA Meat and Poultry Hotline 1-888-MPHotline; flood and fire sections.",
+      "notes": "Read: the whole page as rendered by Firecrawl on 2026-11-01, including the flood and fire sections, which these guides do not reproduce. Page shows 'Last Updated: Aug 07, 2013', so it is old; its 4-hour figure matches the newer Ask USDA article (Dec 2024), CDC and FEMA. Resolves the Ready.gov '40 F for two hours' wording by giving a specific outage rule. The dry-ice figure is on this page and is not reproduced. human_link_check remains false."
+    },
+    {
+      "id": "shelter-cdc-chemical-evac",
+      "title": "What to Do to Evacuate in a Chemical Emergency",
+      "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+      "kind": "regulator",
+      "url": "https://www.cdc.gov/chemical-emergencies/response/evacuation.html",
+      "published": "2024-09-16",
+      "updated": "2026-06-10",
+      "reviewed": "2026-06-10",
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "In some chemical emergencies staying put and sealing off the space may be dangerous and it may be safer to evacuate; follow instructions from police, fire or other local officials, who identify shelters and give directions; plan several routes; find a place that takes pets, noting that some shelters such as the American Red Cross's take only service animals; make a plan to stay in contact and expect to send messages by text or social media; go kits and medications for up to a week; check with neighbors who need a ride; call or text a friend or relative outside your area; leave a note; vehicles may not be airtight; do not go to your children, loved ones or pets unless police, fire or other local officials say it is safe, because they may be sheltered where they are; wait for the 'all clear' before returning.",
+      "notes": "Read: the whole page as rendered by Firecrawl on 2026-11-01. human_link_check remains false."
+    },
+    {
+      "id": "shelter-ca-cde-safety-plans",
+      "title": "Comprehensive School Safety Plans (California Department of Education)",
+      "publisher": "California Department of Education",
+      "kind": "regulator",
+      "url": "https://www.cde.ca.gov/ls/ss/vp/cssp.asp",
+      "published": null,
+      "updated": null,
+      "reviewed": "2026-02-05",
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "California's state education agency recommends that schools establish reunification locations and procedures and ensure parents and guardians are aware of them, and that schools inform parents in languages they understand of reunification plans and the necessity of cooperating with first responders; it also lists required safety-plan components, which this guide does not reproduce.",
+      "notes": "Read: the whole page as rendered by Firecrawl on 2026-11-01 (about 8,000 words, mostly about school and district planning duties). The page is written for schools, districts and county offices, not parents, and is specific to California law. Page shows 'Last Reviewed: Thursday, February 5, 2026'. A banner on the page about an election is unrelated. human_link_check remains false."
     }
   ]
 }

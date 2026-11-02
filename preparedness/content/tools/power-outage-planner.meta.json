@@ -45,6 +45,8 @@
     "shelter-ready-shelter": "Shelter text line; pets and shelters.",
     "shelter-ready-tech": "Text rather than call; charging; low-power mode.",
     "shelter-ready-plan-locations": "School plans; neighbors and shared buildings.",
-    "shelter-nws-nwr": "NOAA Weather Radio description and receiver requirement."
+    "shelter-nws-nwr": "NOAA Weather Radio description and receiver requirement.",
+    "shelter-usda-fsis-emergencies": "Thermometer temperatures, grouping, full freezer, cooler and gel packs, up to 4 hours, never taste food, which perishables to discard after more than 4 hours without power.",
+    "fsis-power-failure": "Refrigerator about 4 hours unopened; full freezer about 48 hours (24 if half full)."
   }
 }
