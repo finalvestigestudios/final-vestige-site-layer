@@ -1,0 +1,5 @@
+export const ATTRIBUTION_ENABLED = false; // always off; NO network, NO storage
+const allowed={surface:new Set(["mind_guide","investigation","hub"]),topic:new Set(["zen12","stroop"]),variant:new Set(["text","video_concept"]),event:new Set(["view","intent"])};
+export function valid(sample){if(!sample||typeof sample!=="object"||Array.isArray(sample))return false;const keys=Object.keys(sample);return keys.length===4 && keys.every(x=>Object.hasOwn(allowed,x))&&Object.entries(allowed).every(([k,set])=>typeof sample[k]==="string"&&set.has(sample[k]));}
+export function record(_sample){return false;} // invariant: no visitor tracking
+export function aggregateSynthetic(samples){if(!Array.isArray(samples))throw new TypeError("array required");let x=new Map();for(let s of samples){if(!valid(s))throw new TypeError("PII or unapproved attribute");let key=Object.keys(allowed).map(k=>s[k]).join("/");x.set(key,(x.get(key)||0)+1)}return [...x].filter(([k,n])=>n>=20).map(([category,count])=>({category,count}));}

@@ -1,0 +1,13 @@
+import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";
+import {ATTRIBUTION_ENABLED,record,valid,aggregateSynthetic} from "./attribution.mjs";
+const read=f=>fs.readFileSync(new URL(f,import.meta.url),"utf8");const A=read("presell-a.html"),B=read("presell-b.html"),core=read("guide-core.html"),article=read("investigation.wordpress-draft.html"),hub=read("mind-hub-candidate.html");
+test("both guide variants embed exactly one identical substantive core",()=>{for(const s of [A,B])assert.equal(s.split(core).length,2)});
+test("all public-facing drafts have no scripts, forms, external videos or analytics",()=>{for(const s of [A,B,hub])assert.doesNotMatch(s,/<script|<form|<iframe|<video|onload=|onclick=|autoplay|gtag\(/i)});
+test("no active merchant links",()=>{for(const s of [A,B,hub])assert.doesNotMatch(s,/href="https?:\/\/(?:www\.)?(zen12|inspire3)\.com/i)});
+test("real native disabled control",()=>{for(const s of [A,B])assert.match(s,/<button type="button" class="disabled" disabled\b/)});
+test("plain financial disclosure appears before control",()=>{for(const s of [A,B]){let p=s.indexOf("Possible commission disclosure:");let b=s.indexOf("<button");assert.ok(p>0&&b>p&&b-p<550)}});
+test("original investigation no product commerce",()=>assert.doesNotMatch(article,/Zen12|affiliate|commission|checkout|purchase through/i));
+test("one existing Focus and no new email fields",()=>{for(const s of [A,B,hub]){assert.match(s,/finalvestige\.com\/focus\//);assert.doesNotMatch(s,/<input/i)}});
+test("no-JS captions/transcript concept",()=>{assert.match(B,/<details/);assert.match(B,/Read the original 40-second transcript/);assert.ok(read("film.vtt").startsWith("WEBVTT"));assert.equal((read("film.vtt").match(/ --> /g)||[]).length,6)});
+test("privacy is fail-closed and rejects PII",()=>{const s={surface:"mind_guide",topic:"zen12",variant:"text",event:"intent"};assert.equal(ATTRIBUTION_ENABLED,false);assert.equal(record(s),false);assert.equal(valid(s),true);assert.equal(valid({...s,email:"x@y.com"}),false);assert.deepEqual(aggregateSynthetic(Array(19).fill(s)),[]);assert.equal(aggregateSynthetic(Array(20).fill(s))[0].count,20);assert.throws(()=>aggregateSynthetic([{...s,ip:"127.0.0.1"}]))});
+test("canonical hub left untouched",()=>assert.match(hub,/Noncanonical hub candidate/));
