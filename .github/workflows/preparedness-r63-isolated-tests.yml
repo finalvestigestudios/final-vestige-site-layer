@@ -1,0 +1,89 @@
+name: Preparedness R63 isolated source-impact custody (SYNTHETIC, NOT release)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r62-claim-context-custody-hold-20261101
+    paths:
+      - preparedness/tools/r63_contributor_source_impact_crosswalk.py
+      - preparedness/tests/test_r63_contributor_source_impact_crosswalk.py
+      - preparedness/docs/R63_SOURCE_IMPACT_RECONCILIATION_HOLD.md
+      - .github/workflows/preparedness-r63-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r63-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  synthetic-source-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Exact test-merge checkout; no saved credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse moved parent, widened scope, or review-state escape
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = 'd7944cec67c22952e7e74d4981e7e7adad28ea07'
+          test "$BASE_REF" = 'review/preparedness-r62-claim-context-custody-hold-20261101'
+          test "$HEAD_REF" = 'review/preparedness-r63-source-impact-crosswalk-hold-20261101'
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/preparedness-r63-paths.bin
+          python -I - <<'PY'
+          from pathlib import Path
+          changed = {x.decode('utf-8') for x in Path('/tmp/preparedness-r63-paths.bin').read_bytes().split(b'\0') if x}
+          allowed = {
+              'preparedness/tools/r63_contributor_source_impact_crosswalk.py',
+              'preparedness/tests/test_r63_contributor_source_impact_crosswalk.py',
+              'preparedness/docs/R63_SOURCE_IMPACT_RECONCILIATION_HOLD.md',
+              '.github/workflows/preparedness-r63-isolated-tests.yml',
+          }
+          if changed != allowed:
+              raise SystemExit('R63 SCOPE HOLD: unexpected or missing file changes: ' +
+                               repr(sorted(changed ^ allowed)))
+          print('Exact R63 source-impact test scope preserved: four files.')
+          PY
+      - name: Compile R63 only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          from pathlib import Path
+          for name in ('preparedness/tools/r63_contributor_source_impact_crosswalk.py',
+                       'preparedness/tests/test_r63_contributor_source_impact_crosswalk.py'):
+              compile(Path(name).read_text(encoding='utf-8'), name, 'exec')
+          print('R63 files compile without writing bytecode.')
+          PY
+      - name: Execute R60, R61, R62 and R63 repository-native synthetic/adversarial suites
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s preparedness/tests -p 'test_r60_contributor_provenance_drift_docket.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r61_contributor_version_source_lineage.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r62_contributor_claim_context_docket.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r63_contributor_source_impact_crosswalk.py' -v
+      - name: Explicit HOLD for separate full-integrity and all human checks
+        if: always()
+        run: |
+          echo 'R63 synthetic Git tests only. R15 seven-contributor provenance parity is NOT bypassed.'
+          echo 'Full validation/build/36+ native suite, 206 link checks, qualified review,'
+          echo 'WordPress browser/accessibility QA and independent QD remain NOT VERIFIED.'
+          echo 'No source rebasing, CMS writes, navigation edits, merges or public publishing.'
