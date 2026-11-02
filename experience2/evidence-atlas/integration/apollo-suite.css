@@ -82,3 +82,36 @@
     forced-color-adjust:auto;
   }
 }
+
+/* R64: the original Atlas research-context and NASA media-guidance links were
+   22px and 18px tall on desktop. Preserve the reviewed source destinations
+   while giving those two *important source-context links* a reliable 44px
+   activation area. Apply only in the isolated Apollo suite; never modify the
+   Atlas plugin, Research Desk source assets, or either frozen release lane. */
+@media screen {
+  .fv-ex2-apollo-suite .fva-guide a,
+  .fv-ex2-apollo-suite .fva-footer a {
+    display:inline-flex;
+    align-items:center;
+    max-width:100%;
+    min-height:44px;
+    padding-block:11px;
+    overflow-wrap:anywhere;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .fv-ex2-apollo-suite .fva-guide a:focus-visible,
+  .fv-ex2-apollo-suite .fva-footer a:focus-visible {
+    outline:3px solid #e5c487;
+    outline-offset:3px;
+  }
+}
+/* The source URLs must survive printing, not only active browser links. */
+@media print {
+  .fv-ex2-apollo-suite .fva-guide a::after,
+  .fv-ex2-apollo-suite .fva-footer a::after {
+    content:" [" attr(href) "]";
+    font:9pt/1.5 ui-monospace,monospace;
+    overflow-wrap:anywhere;
+  }
+}
