@@ -104,7 +104,7 @@ class Tests(unittest.TestCase):
         self.assertIn('apollo:IMAGE_MIME_MISMATCH',audit_image_payloads(IMAGES,r)['failure_codes'])
 
     def test_duplicate_payload_rejected(self):
-        r=self.responses();r[1].payload=r[0].payload
+        r=self.responses();r[1].payload=r[0].payload;r[1].typ='image/webp'
         self.assertIn('DUPLICATE_ARCHIVAL_IMAGE_PAYLOAD',audit_image_payloads(IMAGES,r)['failure_codes'])
 
     def test_corrupt_webp_and_truncated_jpeg_rejected(self):
