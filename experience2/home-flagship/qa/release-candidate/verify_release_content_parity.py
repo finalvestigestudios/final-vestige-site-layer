@@ -53,13 +53,13 @@ def compare_interiors(source: str, production: str) -> dict:
     b = chapter_interior(production, inline_block=True)
     if a != b:
         raise ValueError("RELEASE_PARITY_CHAPTER_BYTES_DIFFER")
+    # The former item-level public-domain assertion must remain prohibited
+    # even if someone edits BOTH staging and proposed production together.
+    if "NYPL believes this item is in the public domain under United States law." in a:
+        raise ValueError("RELEASE_PARITY_UNVERIFIED_NYPL_RIGHTS_CLAIM")
     for case, text in RIGHTS.items():
         if a.count(text) != 1:
             raise ValueError("RELEASE_PARITY_RIGHTS_" + case.upper())
-    # Copyright statements are capture-specific. The earlier version
-    # asserted an unverified item-level NYPL rights conclusion.
-    if "NYPL believes this item is in the public domain under United States law." in a:
-        raise ValueError("RELEASE_PARITY_UNVERIFIED_NYPL_RIGHTS_CLAIM")
     if a.count("https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0") != 1:
         raise ValueError("RELEASE_PARITY_NYPL_ORIGINAL_LINK")
     if a.count(MIND_NOTICE) != 1:
