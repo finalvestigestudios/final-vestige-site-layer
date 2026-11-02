@@ -232,13 +232,17 @@ def construct(dom_report, url_report, *, expected=EXPECTED):
                  and cite.get("all_source_identity_variants_NOT_ALIASED") ==
                      r70cite["all_candidate_origin_scoped_identities_NOT_ALIASED"]
                  and cite.get("candidate_source_identity_OR_NULL") ==
-                     r70cite["preferred_candidate_identity_NOT_APPROVED"],
+                     r70cite["preferred_candidate_identity_NOT_APPROVED"]
+                 and r70cite.get("draft_url") == url,
                  "R69/R70 citation text offset, visibility or origin scope changed")
             used_citations.add(ck)
             nearest = cite.get("nearest_HTML_text_block_id_OR_NULL")
             need(nearest is None or nearest in block_index,
                  "citation assigned to nonexistent DOM block")
             if nearest is None:
+                need(cite["DOM_CLASSIFICATION_NOT_BROWSER_PROOF"] !=
+                     "DOM_TEXT_POTENTIALLY_VISIBLE_NOT_BROWSER_VERIFIED",
+                     "potentially visible citation cannot lack a DOM text block")
                 unattached.append({
                     "kind":kind,"slug":slug,"citation_ordinal":ck[2],
                     "source_id":cite["source_id"],"review_state":"NOT_REVIEWED"})
@@ -252,6 +256,10 @@ def construct(dom_report, url_report, *, expected=EXPECTED):
             need([c["unicode_codepoint_offset"] for c,_ in local] ==
                  block["citation_offsets_in_DOM_text"],
                  "DOM-block local citation / nearest-block mapping mismatch")
+            observed_tokens = re.findall(r"\{\{cite:([a-z0-9-]+)\}\}",
+                block["DOM_TEXT_UNABRIDGED_NOT_BROWSER_VERIFIED"])
+            need(sorted(observed_tokens) == sorted(c["source_id"] for c,_ in local),
+                 "visible citation tokens and same-block source edges differ")
             edges=[]
             for c,u in local:
                 keys = _identities(u["all_candidate_origin_scoped_identities_NOT_ALIASED"])
