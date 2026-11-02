@@ -28,6 +28,8 @@ function inspectRun(r){
   if(new Set(keys).size!==keys.length)e.push('duplicate_image_slot:'+id);
   for(const v of slots)if(v.result!=='loaded_in_probe_browser'||v.verified_broken_in_browser!==false||
    !good(v.natural_width)||v.current_src_identity_verified!==true||
+   v.network_final_identity_verified!==true||v.loaded_network_proof_verified!==true||
+   !['exact_url_or_jetpack_origin','exact_url_unique_alt'].includes(v.match)||
    !sameSource(v.stored_url,v.current_src)||!https(v.current_src)||
    !https(v.request_url)||v.http_status!==200||!good(v.transfer_bytes))
    e.push('unsettled_or_unmeasured:'+id+':'+v.image_key);
