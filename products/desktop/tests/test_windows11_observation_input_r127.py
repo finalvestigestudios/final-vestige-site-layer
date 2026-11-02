@@ -108,7 +108,7 @@ class PrivateObservationInputR127(unittest.TestCase):
             self.hold()
         self.assertTrue(replaced[0])
 
-    def test_replaced_note_after_read_is_rejected_even_if_bytes_identical(self):
+    def test_changed_note_after_open_is_rejected_on_both_platforms(self):
         original_open, original_fstat = os.open, os.fstat
         source = self.fx.observation
         held = {"fd": None, "count": 0, "replaced": False}
@@ -125,7 +125,16 @@ class PrivateObservationInputR127(unittest.TestCase):
                 if held["count"] == 2:
                     replacement = self.fx.root / "substitute-after.txt"
                     replacement.write_bytes(source.read_bytes())
-                    os.replace(replacement, source)
+                    try:
+                        os.replace(replacement, source)
+                    except PermissionError:
+                        # Windows may deny rename while a read descriptor is
+                        # open. Mutate in place to exercise the same hold.
+                        with source.open("r+b") as current:
+                            current.seek(0)
+                            current.write(b"Z")
+                            current.flush()
+                        replacement.unlink()
                     held["replaced"] = True
             return original_fstat(fd)
 
