@@ -198,7 +198,8 @@ class LocalReportReplayR143(unittest.TestCase):
 
     def test_cli_hold_redacts_private_filename(self):
         a,report=self.spend()
-        a.rename(self.root/"private-client-payroll-secret.csv")
+        secret=a.rename(self.root/"private-client-payroll-secret.csv")
+        self.tamper(secret)
         out,err=io.StringIO(),io.StringIO()
         with contextlib.redirect_stdout(out),contextlib.redirect_stderr(err):
             code=main(["--kind","spend-map","--report",str(report),
