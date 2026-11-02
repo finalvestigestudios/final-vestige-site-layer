@@ -60,6 +60,8 @@ def run(folder:Path):
                 page.emulate_media(media='screen')
                 if enabled:
                     assert page.locator('[data-fva-record]:visible').count()==2
+                    # Jump from the static index to a filtered source. Must restore
+                    # all six without losing the newly disclosed source status.
                     link=page.locator('[data-fva-jump]').first
                     link.tap() if width<=390 else link.click()
                     page.wait_for_timeout(65)
