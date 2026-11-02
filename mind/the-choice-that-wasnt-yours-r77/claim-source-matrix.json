@@ -1,0 +1,640 @@
+{
+  "as_of": "2026-11-02",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "article": "The Choice That Wasn't Yours",
+  "offer": "Zen12 exact merchant sales/checkout",
+  "source_types_not_equivalent": true,
+  "verified_official_pages": [
+    "inspire3.com",
+    "zen12.com/hnp",
+    "zen12.com/about",
+    "zen12.com/research",
+    "zen12.com/getstarted",
+    "inspire3.com/privacy"
+  ],
+  "terms_last_attempt": "Unreachable via web on 2026-11-02; do not claim reverified 90-day detail.",
+  "sources": [
+    {
+      "id": "choice2005",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "kind": "peer-reviewed",
+      "scope": "choice-blindness original"
+    },
+    {
+      "id": "lund2005",
+      "url": "https://www.lunduniversity.lu.se/publication/c579a9b6-1b4a-4572-932e-0ff15f9832b4",
+      "kind": "institutional",
+      "scope": "original paper record"
+    },
+    {
+      "id": "choice2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "kind": "peer-reviewed-index",
+      "scope": "introspective reports"
+    },
+    {
+      "id": "moral2012",
+      "url": "https://doi.org/10.1371/journal.pone.0045457",
+      "kind": "peer-reviewed",
+      "scope": "moral-survey reversal, 69 percent of participants at least one of two"
+    },
+    {
+      "id": "poll2013",
+      "url": "https://doi.org/10.1371/journal.pone.0060554",
+      "kind": "peer-reviewed",
+      "scope": "Swedish political survey manipulation"
+    },
+    {
+      "id": "review2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "systematic-review",
+      "scope": "EEG entrainment evidence 5/8/1"
+    },
+    {
+      "id": "nccih",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government",
+      "scope": "meditation broader evidence"
+    },
+    {
+      "id": "merchant",
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "scope": "products and claims not independently substantiated"
+    },
+    {
+      "id": "zenoffer",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant",
+      "scope": "specific Zen12 main sales offer"
+    },
+    {
+      "id": "zenabout",
+      "url": "https://zen12.com/about",
+      "kind": "merchant",
+      "scope": "four versions per level"
+    },
+    {
+      "id": "zenresearch",
+      "url": "https://zen12.com/research",
+      "kind": "merchant",
+      "scope": "seller research argument not product trial"
+    },
+    {
+      "id": "checkout",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant",
+      "scope": "full tier + mobile field, visible dynamic pricing"
+    },
+    {
+      "id": "privacy",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant-policy",
+      "scope": "affiliate purchaser sharing, optional SMS risk"
+    },
+    {
+      "id": "terms",
+      "url": "https://inspire3.com/terms/",
+      "kind": "merchant-policy-not-accessible-this-run",
+      "scope": "not independently retrievable on current pass"
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "scope": "clear conspicuous material-connection disclosures"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "scope": "adequate product claim substantiation"
+    },
+    {
+      "id": "puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "FV published",
+      "scope": "historical evidence bridge, read-only WP authenticated"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "FV published",
+      "scope": "single existing fieldbook/Jetpack route, read-only WP authenticated"
+    },
+    {
+      "id": "editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "FV published",
+      "scope": "editorial safeguards"
+    },
+    {
+      "id": "disclose",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "FV published",
+      "scope": "general site disclosure"
+    },
+    {
+      "id": "hubpr",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/172",
+      "kind": "GitHub",
+      "scope": "canonical Mind hub preserve"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "GitHub",
+      "scope": "workstream governance"
+    },
+    {
+      "id": "affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "merchant-affiliate-public",
+      "scope": "public signup/login describes network but does not establish Final Vestige acceptance or named-product authorization"
+    },
+    {
+      "id": "limitless_creatives",
+      "url": "https://inspire3.com/ll/",
+      "kind": "merchant-affiliate-public",
+      "scope": "public Limitless Labs request-approval creative and swipe references, not licensed Zen12 campaign material"
+    }
+  ],
+  "claims": [
+    {
+      "id": "01",
+      "claim": "Choice blindness demonstrated with face swaps",
+      "decision": "RESEARCH_SUPPORTED",
+      "source_ids": [
+        "choice2005"
+      ],
+      "scope": "Only in tested 2005 task; no universal prevalence."
+    },
+    {
+      "id": "02",
+      "claim": "Participants sometimes rationalized substituted outcome",
+      "decision": "RESEARCH_SUPPORTED",
+      "source_ids": [
+        "choice2005",
+        "choice2006"
+      ],
+      "scope": "Do not equate with dishonesty."
+    },
+    {
+      "id": "03",
+      "claim": "69% missed at least one of two reversals in moral survey",
+      "decision": "RESEARCH_SUPPORTED",
+      "source_ids": [
+        "moral2012"
+      ],
+      "scope": "Condition-specific; not population estimate."
+    },
+    {
+      "id": "04",
+      "claim": "Political opinion universally programmable",
+      "decision": "PROHIBITED_UNSUBSTANTIATED",
+      "source_ids": [
+        "poll2013"
+      ],
+      "scope": "Study cannot justify broad control claims."
+    },
+    {
+      "id": "05",
+      "claim": "Research proves hypnosis cures anything",
+      "decision": "PROHIBITED_UNSUBSTANTIATED",
+      "source_ids": [
+        "choice2005"
+      ],
+      "scope": "Unrelated paradigm."
+    },
+    {
+      "id": "06",
+      "claim": "Puységur archive is a verified live resource",
+      "decision": "VERIFIED_WORDPRESS_READ_ONLY",
+      "source_ids": [
+        "puy"
+      ],
+      "scope": "Never claim magnetism validated."
+    },
+    {
+      "id": "07",
+      "claim": "Fieldbook is existing free route with Jetpack funnel",
+      "decision": "VERIFIED_WORDPRESS_READ_ONLY",
+      "source_ids": [
+        "focus"
+      ],
+      "scope": "No second list."
+    },
+    {
+      "id": "08",
+      "claim": "Zen12 is marketed as 12-minute sessions",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "zenabout"
+      ],
+      "scope": "No downloaded product inspection."
+    },
+    {
+      "id": "09",
+      "claim": "Zen12 complete offer is 12 levels",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "checkout"
+      ],
+      "scope": "Do not conflate partial tiers."
+    },
+    {
+      "id": "10",
+      "claim": "Zen12 full offer advertises 48 MP3s",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "checkout"
+      ],
+      "scope": "Not delivery verification."
+    },
+    {
+      "id": "11",
+      "claim": "Zen12 has four selectable listening formats",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "zenabout"
+      ],
+      "scope": "Music, guided, nature, noise in seller copy."
+    },
+    {
+      "id": "12",
+      "claim": "Zen12 includes bonuses and manuals",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "checkout"
+      ],
+      "scope": "Availability may vary."
+    },
+    {
+      "id": "13",
+      "claim": "Zen12 works on phones/computers",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer"
+      ],
+      "scope": "Compatibility must be checked independently."
+    },
+    {
+      "id": "14",
+      "claim": "Zen12 uses 'brainwave entrainment' technology",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "zenresearch"
+      ],
+      "scope": "Do not imply independent validation."
+    },
+    {
+      "id": "15",
+      "claim": "One hour of advanced meditation in 12 minutes",
+      "decision": "UNSUBSTANTIATED_WITHHOLD",
+      "source_ids": [
+        "zenoffer",
+        "review2023"
+      ],
+      "scope": "No Zen12-specific controlled comparison established."
+    },
+    {
+      "id": "16",
+      "claim": "Automatic brainwave synchronization from Zen12",
+      "decision": "UNSUBSTANTIATED_WITHHOLD",
+      "source_ids": [
+        "zenresearch",
+        "review2023"
+      ],
+      "scope": "EEG review 5 consistent / 8 contradict / 1 mixed."
+    },
+    {
+      "id": "17",
+      "claim": "Zen12 guaranteed stress/anxiety relief",
+      "decision": "UNSUBSTANTIATED_WITHHOLD",
+      "source_ids": [
+        "zenoffer",
+        "ftc_health"
+      ],
+      "scope": "Do not carry over seller outcomes."
+    },
+    {
+      "id": "18",
+      "claim": "Zen12 increases creativity",
+      "decision": "UNSUBSTANTIATED_WITHHOLD",
+      "source_ids": [
+        "zenoffer",
+        "ftc_health"
+      ],
+      "scope": "No product-specific adequate substantiation reviewed."
+    },
+    {
+      "id": "19",
+      "claim": "Zen12 produces health gains",
+      "decision": "UNSUBSTANTIATED_WITHHOLD",
+      "source_ids": [
+        "zenoffer",
+        "ftc_health"
+      ],
+      "scope": "Treat as unsupported seller claim."
+    },
+    {
+      "id": "20",
+      "claim": "Zen12 improves wealth or income",
+      "decision": "UNSUBSTANTIATED_WITHHOLD",
+      "source_ids": [
+        "merchant",
+        "ftc_health"
+      ],
+      "scope": "No claim allowed."
+    },
+    {
+      "id": "21",
+      "claim": "Broader meditation science proves Zen12 effectiveness",
+      "decision": "INVALID_INFERENCE",
+      "source_ids": [
+        "nccih",
+        "review2023"
+      ],
+      "scope": "Technique evidence is not named-product evidence."
+    },
+    {
+      "id": "22",
+      "claim": "Binaural-beat entrainment EEG consistent across studies",
+      "decision": "FALSE",
+      "source_ids": [
+        "review2023"
+      ],
+      "scope": "Systematic review found mixed results."
+    },
+    {
+      "id": "23",
+      "claim": "Short listening slot can be convenient",
+      "decision": "NON_EFFICACY_COMMON_SENSE",
+      "source_ids": [
+        "zenoffer"
+      ],
+      "scope": "Frame as scheduling feature not transformation."
+    },
+    {
+      "id": "24",
+      "claim": "Free format-comparison exercise is useful",
+      "decision": "ORIGINAL_EXERCISE_NOT_EFFECTIVENESS_EVIDENCE",
+      "source_ids": [
+        "nccih"
+      ],
+      "scope": "No medical or brainwave results inferred."
+    },
+    {
+      "id": "25",
+      "claim": "Checkout shows mobile telephone input",
+      "decision": "VERIFIED_SELLER_CHECKOUT_VISIBLE",
+      "source_ids": [
+        "checkout"
+      ],
+      "scope": "Whether mandatory not tested."
+    },
+    {
+      "id": "26",
+      "claim": "Supplying a cell number may lead to marketing SMS",
+      "decision": "VERIFIED_SELLER_POLICY_NOTICE",
+      "source_ids": [
+        "privacy"
+      ],
+      "scope": "No assertion of actual texts."
+    },
+    {
+      "id": "27",
+      "claim": "Affiliate-referred buyer PII may be shared with affiliate",
+      "decision": "VERIFIED_SELLER_POLICY_NOTICE",
+      "source_ids": [
+        "privacy"
+      ],
+      "scope": "FV default is receive no buyer PII; handling decision required."
+    },
+    {
+      "id": "28",
+      "claim": "Checkout displays countdown/discount figures",
+      "decision": "VERIFIED_SELLER_PAGE_DYNAMIC",
+      "source_ids": [
+        "checkout"
+      ],
+      "scope": "Exclude from copy; never induce scarcity."
+    },
+    {
+      "id": "29",
+      "claim": "Zen12 refund guarantee advertised for one year",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "zenoffer",
+        "checkout"
+      ],
+      "scope": "Not independently tested; legal terms unverified current run."
+    },
+    {
+      "id": "30",
+      "claim": "Refund beyond 90 days paid manually by PayPal",
+      "decision": "HOLD_NOT_REVERIFIED",
+      "source_ids": [
+        "terms"
+      ],
+      "scope": "Mention only after current terms recheck; terms unreachable on this run."
+    },
+    {
+      "id": "31",
+      "claim": "Zen12 displayed price is permanent",
+      "decision": "PROHIBITED_UNVERIFIED",
+      "source_ids": [
+        "checkout"
+      ],
+      "scope": "Do not display any fixed price."
+    },
+    {
+      "id": "32",
+      "claim": "Merchant testimonials are independently proven",
+      "decision": "PROHIBITED_UNVERIFIED",
+      "source_ids": [
+        "zenoffer"
+      ],
+      "scope": "Do not borrow endorsements."
+    },
+    {
+      "id": "33",
+      "claim": "Inspire3 affiliate approval is verified for FV",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "No documented acceptance."
+    },
+    {
+      "id": "34",
+      "claim": "Zen12 affiliate link is verified and active",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Must not invent URL or activate CTA."
+    },
+    {
+      "id": "35",
+      "claim": "Site/TikTok/email channel affiliate permissions",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Need rights per channel; Dispatch #174 holds email."
+    },
+    {
+      "id": "36",
+      "claim": "Official creatives may be copied",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Seller public copy != usage license."
+    },
+    {
+      "id": "37",
+      "claim": "Zen12 copyright/brand rights for video",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Use only own graphics/copy."
+    },
+    {
+      "id": "38",
+      "claim": "Near-offer disclosure required",
+      "decision": "REQUIRE_EXPLICIT",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "scope": "Both versions contain prospective notice."
+    },
+    {
+      "id": "39",
+      "claim": "General site disclosure suffices near purchase link",
+      "decision": "INADEQUATE",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "scope": "Need contextual connection disclosure."
+    },
+    {
+      "id": "40",
+      "claim": "Sale conversion can be inferred from outbound click",
+      "decision": "FALSE",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Click is not purchase."
+    },
+    {
+      "id": "41",
+      "claim": "Do not collect email/mobile/buyer-level data",
+      "decision": "DEFAULT_POLICY",
+      "source_ids": [
+        "privacy"
+      ],
+      "scope": "Attribution disabled with aggregate-only synthetic tests."
+    },
+    {
+      "id": "42",
+      "claim": "Subgroup counts below 20 exposed",
+      "decision": "PROHIBITED_DEFAULT",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Suppress in synthetic summary."
+    },
+    {
+      "id": "43",
+      "claim": "New email capture form or list",
+      "decision": "PROHIBITED",
+      "source_ids": [
+        "focus"
+      ],
+      "scope": "Preserve one existing Jetpack/Focus funnel."
+    },
+    {
+      "id": "44",
+      "claim": "Video advantage is a demonstrated conversion effect",
+      "decision": "UNTESTED_HYPOTHESIS",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "No live A/B experiment, no results."
+    },
+    {
+      "id": "45",
+      "claim": "WordPress sanitizer/accessibility has passed",
+      "decision": "UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Source candidate only."
+    },
+    {
+      "id": "46",
+      "claim": "Founder approval to publish/merge/deploy",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [
+        "issue171"
+      ],
+      "scope": "Explicit approval required."
+    },
+    {
+      "id": "47",
+      "claim": "Exact updated merchant terms were reviewed this sprint",
+      "decision": "FALSE",
+      "source_ids": [
+        "terms"
+      ],
+      "scope": "Open returned error, recorded candidly."
+    },
+    {
+      "id": "48",
+      "claim": "Choice-blindness article endorses Zen12",
+      "decision": "FALSE_EDITORIAL_SEPARATION",
+      "source_ids": [
+        "choice2005"
+      ],
+      "scope": "Investigation contains no seller CTA."
+    },
+    {
+      "id": "49",
+      "claim": "Public affiliate sign-up page proves Final Vestige is approved",
+      "decision": "FALSE_PUBLIC_RECRUITMENT_ONLY",
+      "source_ids": [
+        "affiliate_portal"
+      ],
+      "scope": "Acceptance and channel grants still require documentation."
+    },
+    {
+      "id": "50",
+      "claim": "Limitless Labs swipe assets authorize Zen12 videos or email",
+      "decision": "FALSE_PRODUCT_RIGHTS_NOT_TRANSFERABLE",
+      "source_ids": [
+        "limitless_creatives"
+      ],
+      "scope": "Do not copy or reuse; separate named-product creative rights needed."
+    }
+  ],
+  "activation": {
+    "partner_acceptance": false,
+    "link_authorized": false,
+    "channel_rights": false,
+    "creative_rights": false,
+    "privacy_approval": false,
+    "checkout_and_terms_final_verification": false,
+    "editorial_QA": false,
+    "accessibility_QA": false,
+    "founder_release": false
+  }
+}
