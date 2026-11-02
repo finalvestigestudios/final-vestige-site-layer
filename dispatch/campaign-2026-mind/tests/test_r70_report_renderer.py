@@ -47,7 +47,7 @@ class RendererSafetyTests(unittest.TestCase):
         body = renderer.text_report(fake_report())
         self.assertIn("ISSUE 03 | HOLD_UNSENT | SEND ALLOWED: NO", body)
         self.assertIn("UNRESOLVED REQUIREMENTS", body)
-        self.assertIn("not a delivered Jetpack preview", body.lower())
+        self.assertIn("not a delivered jetpack preview", body.lower())
 
     def test_no_script_tracking_form_or_remote_images(self):
         html = renderer.html_report(fake_report()).lower()
