@@ -11,13 +11,15 @@ const kind=(original,stored)=>{
   return 'first_party_jetpack_proxy';
  return null;
 };
-function validate(a,old,direct,part){
+function validate(a,old,direct,part,part01,part08){
  const e=[],fail=s=>e.push(s),sum=v=>v.reduce((n,x)=>n+x.original_storage_bytes,0);
  if(!a||a.schema_version!==1||!Array.isArray(a.rows)||a.rows.length!==13)return{ok:false,errors:['invalid_rows_or_schema']};
  if(a.supersedes_direct_only_inference!=='qa/media-recovery/oversized_inline_exposure_20261102.json')fail('superseded_artifact_missing');
  const refs=[['reconciled_oct31','8388236ca03c283da3f72354bdc3f7ca9913e440'],
  ['direct_only_nov02','f8207544a0d11823b6e10cb500bc9f3abbc009ed'],
- ['vasa_post_census','48e1ebf07207e948ba5802e714eb39659d2e1c1d']];
+ ['vasa_post_census','48e1ebf07207e948ba5802e714eb39659d2e1c1d'],
+ ['malbone_post_census','948bc1b65b42799aa40cfdb810ddf6ffd80886b6'],
+ ['five_png_post_census','5659ec243c188928be3f89c0f96354b660608ca2']];
  for(const [k,sha]of refs)if(a.frozen_inputs?.[k]?.blob_sha!==sha)fail('unpinned_source:'+k);
  if(a.frozen_inputs?.full_inventory_post_count!==61||a.frozen_inputs?.full_inventory_stored_images!==355)fail('census_unpinned');
  if(old?.summary?.inline_media_records!==10||old?.rows?.length!==13||
@@ -25,7 +27,9 @@ function validate(a,old,direct,part){
   fail('prior_evidence_invalid');
  const seenIds=new Set(),seenKeys=new Set(),byOld=new Map(old.rows.map(x=>[x.media_id,x])),
   byDirect=new Map(direct.rows.map(x=>[x.media_id,x]));
- const source=new Map((part?.images||[]).filter(x=>x.post_id===299).map(x=>[x.key,x]));
+ const corpus=[part,part01,part08];
+ if(corpus.some(p=>!p||!Array.isArray(p.images)))fail('missing_source_parts');
+ const source=new Map(corpus.flatMap(p=>p?.images||[]).map(x=>[x.key,x]));
  const classified={INLINE_DIRECT_FIRST_PARTY:[],INLINE_FIRST_PARTY_JETPACK_PROXY:[],NOT_MATCHED_INLINE_IN_FROZEN_61_POSTS:[]};
  for(const row of a.rows){
   const id=row.media_id,origin=byOld.get(id),legacy=byDirect.get(id);
@@ -47,11 +51,12 @@ function validate(a,old,direct,part){
       fail('historical_slot_identity_changed:'+id);
    const actualKind=kind(row.original_source_url,m.stored_source_url);
    if(actualKind!==m.origin_match_kind)fail('origin_not_verified:'+id);
-   if(m.post_id===299){
-    const frozen=source.get(m.image_key);
-    if(!frozen||frozen.source_url!==m.stored_source_url||frozen.alt!==m.alt||
-       frozen.post_url!==m.post_url)fail('vasa_source_snapshot_mismatch:'+m.image_key);
-   }
+   const frozen=source.get(m.image_key);
+   if(!frozen||frozen.source_url!==m.stored_source_url||frozen.alt!==m.alt||
+      !frozen.alt||frozen.post_id!==m.post_id||frozen.post_url!==m.post_url||
+      frozen.width_px!==m.stored_html_geometry_px?.width||
+      frozen.height_px!==m.stored_html_geometry_px?.height)
+    fail('inline_alt_or_html_geometry_mismatch:'+m.image_key);
   }
   let expected=!matches.length?'NOT_MATCHED_INLINE_IN_FROZEN_61_POSTS':
    matches.some(m=>m.origin_match_kind==='first_party_jetpack_proxy')?
@@ -86,8 +91,15 @@ function validate(a,old,direct,part){
   first_party_jetpack_inline_count:3,first_party_jetpack_inline_storage_bytes:13318311,
   not_matched_inline_count:3,not_matched_inline_storage_bytes:6584916,
   five_unvarianted_png_original_storage_bytes:13267538,
-  reported_broken_42_guest_verified:false,claimed_76_percent_wire_savings_measured:false,production_repairs:0};
+  reported_broken_42_guest_verified:false,claimed_76_percent_wire_savings_measured:false,production_repairs:0,
+  previously_omitted_snapshot_alts_recovered:7,source_snapshot_nonempty_alts_for_inline_originals:10,
+  five_unvarianted_png_html_geometry_verified:5};
  for(const [k,v]of Object.entries(expected))if(a.summary?.[k]!==v)fail('summary_mismatch:'+k);
+ const pngs=directRows.filter(r=>r.original_source_url.endsWith('.png')&&!r.has_registered_subsizes);
+ if(pngs.length!==5||pngs.some(r=>r.original_geometry_px?.width!==1672||
+    r.original_geometry_px?.height!==941||r.inline_slot_matches[0]?.stored_html_geometry_px?.width!==1024||
+    r.inline_slot_matches[0]?.stored_html_geometry_px?.height!==576)||sum(pngs)!==13267538)
+  fail('five_png_source_metadata_mismatch');
  if(sum(directRows)!==23619602||sum(proxy)!==13318311||sum(unmatched)!==6584916)
   fail('category_sum_mismatch');
  if(JSON.stringify(proxy.map(r=>r.media_id).sort((x,y)=>x-y))!=='[382,388,389]')
