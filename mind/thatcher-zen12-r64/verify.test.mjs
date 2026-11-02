@@ -36,7 +36,7 @@ test('no active commerce, forms, trackers, video embeds or unreachable asset sou
  for(const html of [a,b]){
   assert.doesNotMatch(html,/<(?:script|iframe|form|input|video|audio|source)\b/i);
   assert.doesNotMatch(html,/\b(?:href|src)=["'](?:https?:)?\/\/[^"']*(?:zen12|inspire3|hypnosislive|affiliate)/i);
-  assert.doesNotMatch(html,/<video\\b[^>]*\\bautoplay|\\bonerror=|\\bonclick=|dataLayer|fbq\\(/i);
+  assert.doesNotMatch(html,/<video\b[^>]*\bautoplay|\bonerror=|\bonclick=|dataLayer|fbq\(/i);
  }
 });
 
