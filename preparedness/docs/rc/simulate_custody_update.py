@@ -4,7 +4,7 @@ Copies the repository's preparedness/ directory to DEST, regenerates sources/cro
 sources/article-evidence-lock.json **in the copy only** from the current bytes, and writes a delta report.
 The repository's own custody records, pins and gates are never modified. The copy lets validate/build/QA run
 on the integrated content; the real tree stays fail-closed (HOLD) until a reviewer re-baselines.
-Usage: python simulate_custody_update.py DEST_DIR REPORT.json [ACTIONS.json]   (run from the repo root)
+Usage: python simulate_custody_update.py DEST_DIR|--in-place REPORT.json [ACTIONS.json]   (run from the repo root)
 """
 import hashlib, json, shutil, sys
 from pathlib import Path
@@ -19,10 +19,14 @@ def blob(p: Path) -> str:
     return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
 
 
-if dest.exists():
-    shutil.rmtree(dest)
-shutil.copytree(ROOT, dest / "preparedness", ignore=shutil.ignore_patterns("build", "__pycache__", "qa", "qa-shots", "r48", "r49", "rc", "audit"))
-R = dest / "preparedness"
+IN_PLACE = str(dest) == "--in-place"  # QA runs that need the real repo layout; restore afterwards with: git checkout -- preparedness/sources/crosswalk.json preparedness/sources/article-evidence-lock.json
+if IN_PLACE:
+    R = ROOT
+else:
+    if dest.exists():
+        shutil.rmtree(dest)
+    shutil.copytree(ROOT, dest / "preparedness", ignore=shutil.ignore_patterns("build", "__pycache__", "qa", "qa-shots", "r48", "r49", "rc", "audit"))
+    R = dest / "preparedness"
 cw = json.loads((R / "sources/crosswalk.json").read_text(encoding="utf-8"))
 lock = json.loads((R / "sources/article-evidence-lock.json").read_text(encoding="utf-8"))
 before = {"raw_rows": cw["raw_source_rows"], "unique_urls": cw["unique_source_urls"], "dup_url_groups": cw["duplicate_url_groups"], "dup_id_groups": cw["duplicate_id_groups"], "tools": lock["local_tool_count"], "longform": lock["longform_article_count"]}
@@ -57,8 +61,9 @@ new_origin = {}
 for name, v in actions.get("clusters", {}).items():
     for r in v["files"]:
         parts = r["path"].split("/")
-        if r["action"] == "add" and len(parts) == 5 and parts[2] == "content" and parts[3] in ("articles", "tools") and parts[4].endswith(".meta.json"):
-            new_origin[parts[4][: -len(".meta.json")]] = name
+        if r["action"] == "add" and len(parts) == 4 and parts[1] == "content" and parts[2] in ("articles", "tools") and parts[3].endswith(".meta.json"):
+            new_origin[parts[3][: -len(".meta.json")]] = name
+new_origin["reunification-plan"] = "start"  # add/add conflict with shelter resolved to Start Here's tool
 new_origin["family-reunification-card"] = "shelter"  # renamed after integration (slug collision with Start Here's reunification-plan)
 slugs = {}
 for d in ("articles", "tools"):

@@ -1,0 +1,70 @@
+{
+ "authority": "QA_SIMULATION_ONLY",
+ "before": {
+  "raw_rows": 224,
+  "unique_urls": 186,
+  "dup_url_groups": 30,
+  "dup_id_groups": 15,
+  "tools": 1,
+  "longform": 35
+ },
+ "after": {
+  "raw_rows": 244,
+  "unique_urls": 202,
+  "dup_url_groups": 32,
+  "dup_id_groups": 15,
+  "tools": 6,
+  "longform": 35
+ },
+ "new_shared_url_groups": [
+  "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+  "https://www.weather.gov/safety/winter-during"
+ ],
+ "changed_shared_url_groups": [
+  "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+  "https://www.loc.gov/item/2002564479/",
+  "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+  "https://www.ready.gov/food",
+  "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+  "https://www.weather.gov/nwr/",
+  "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+  "https://www.ready.gov/power-outages",
+  "https://www.ready.gov/people-disabilities",
+  "https://www.ready.gov/kit",
+  "https://www.ready.gov/plan",
+  "https://www.ready.gov/alerts",
+  "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+  "https://www.cdc.gov/carbon-monoxide/about/index.html",
+  "https://www.ready.gov/evacuation",
+  "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/"
+ ],
+ "changed_articles": [
+  "family-communication-plan",
+  "go-bags",
+  "home-fire-escape-plan",
+  "household-emergency-plan",
+  "navigation-before-gps",
+  "outage-heat-cold-generators",
+  "pickling-fermentation-old-recipes",
+  "pioneer-supply-chains-failed",
+  "preparedness-real-households",
+  "root-cellars-cool-storage",
+  "sanitation-before-germ-theory",
+  "shelter-or-evacuate",
+  "three-day-kit"
+ ],
+ "added_articles_and_tools": [
+  "family-reunification-card",
+  "home-fire-escape-worksheet",
+  "kit-builder",
+  "power-outage-planner",
+  "reunification-plan"
+ ],
+ "new_article_origins": {
+  "home-fire-escape-worksheet": "shelter",
+  "power-outage-planner": "shelter",
+  "reunification-plan": "start",
+  "kit-builder": "start",
+  "family-reunification-card": "shelter"
+ }
+}
