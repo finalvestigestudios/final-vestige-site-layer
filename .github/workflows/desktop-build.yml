@@ -113,6 +113,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r135.py
           python -OO products/desktop/scripts/safe_unittest_r135.py
+      - name: R136 Policy Delta physical-line change index (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r136.py
+          python -OO products/desktop/scripts/safe_unittest_r136.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -389,6 +393,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R135 SpendMap category baseline regressions FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r135.py
           if ($LASTEXITCODE -ne 0) { throw "R135 optimized SpendMap category baseline regressions FAILED" }
+      - name: R136 Policy Delta physical-line change index (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r136.py
+          if ($LASTEXITCODE -ne 0) { throw "R136 Policy Delta index regressions FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r136.py
+          if ($LASTEXITCODE -ne 0) { throw "R136 optimized Policy Delta index regressions FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
