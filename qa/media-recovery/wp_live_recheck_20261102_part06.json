@@ -1,0 +1,586 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 6,
+  "method": "Authenticated WordPress posts.get context=edit, read-only, actual original URLs; NO visitor network requests",
+  "frozen_git_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+  "posts": [
+    {
+      "id": 218,
+      "modified": "2026-10-29T16:01:32",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "218:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Manganese_Nodule_Encased_in_Lucite.jpg?width=1280",
+          "alt": "Manganese nodule recovered from the Pacific by the Glomar Explorer and preserved in Lucite by the CIA Museum.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "218:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USNS_Glomar_Explorer_(T-AG-193).jpg?width=1280",
+          "alt": "Hughes Glomar Explorer at sea, the vessel secretly built for Project AZORIAN.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "218:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Patch.jpg?width=1280",
+          "alt": "Hughes Glomar Explorer crew patch bearing the Summa Corporation name used during Project AZORIAN.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "218:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+          "alt": "CIA model of the wrecked Soviet submarine K-129 created during Project AZORIAN.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "218:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Painting-of-AZORIAN-mission-approved.jpg?width=1280",
+          "alt": "Project AZORIAN lead engineer Sherman Wetmore looking at a painting of Glomar Explorer raising K-129 during a 2022 CIA Museum visit.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "218:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+          "alt": "Glomar Explorer coveralls and ashtray created as part of the Hughes and Summa Corporation cover identity for Project AZORIAN.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "modified": "2026-10-29T16:04:52",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "217:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_explosion.jpg?width=1280",
+          "alt": "The shattered New London School after the March 18, 1937 gas explosion, with rescuers gathered around the ruins.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "217:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_before_explosion.webp?width=1280",
+          "alt": "London School in East Texas before the March 1937 explosion, showing the large modern school building intact.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "217:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion.jpg?width=1280",
+          "alt": "Rescuers and debris at New London School after the 1937 explosion, photographed for International News Photos.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "217:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(1).jpg?width=1280",
+          "alt": "Emergency workers at the New London School ruins after the March 1937 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "217:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(2).jpg?width=1280",
+          "alt": "Rescue and recovery activity among the wreckage of New London School after the gas explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "217:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_Explosion_Memorial_-_46699056584.jpg?width=1280",
+          "alt": "New London School Explosion Memorial in Texas, photographed in 2016.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 216,
+      "modified": "2026-10-30T01:13:09",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "216:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterparkinglot.jpg?width=1280",
+          "alt": "Wrecked automobiles in a parking lot about one quarter mile from the Texas City explosion, photographed April 18, 1947.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "216:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_City_Disaster_Firemen_Memorial.jpg?width=960",
+          "alt": "Memorial to the Texas City firefighters killed in the 1947 disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "216:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisaster5storybuilding.jpg",
+          "alt": "A damaged five-story building in Texas City two days after the 1947 explosions.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "216:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_-_Texas_City_-_NARA_-_68149862.jpg?width=1280",
+          "alt": "Aerial view of the Texas City industrial waterfront from a U.S. government photographic series dating to the 1940s.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "216:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterboat.jpg",
+          "alt": "A wrecked ship in the Texas City harbor after the 1947 explosions, associated with the High Flyer and Wilson B. Keene disaster area.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "216:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grandcampanchor.jpg",
+          "alt": "One of the Grandcamp anchors displayed in Texas City Memorial Park after the 1947 disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 215,
+      "modified": "2026-10-29T15:59:59",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "215:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg?width=1280",
+          "alt": "Crowd gathered at the mouth of the Cherry Mine shaft during the November 1909 disaster in Illinois.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "215:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg?width=1280",
+          "alt": "Ruins of the Cherry Mine fan house and escape shaft following the 1909 mine fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "215:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg?width=1280",
+          "alt": "A mother and children seated at a dinner table after the Cherry Mine disaster while waiting for the miner in their family to return.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "215:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png?width=1280",
+          "alt": "Contemporary 1909 illustrated account of the Cherry Mine disaster showing rescue activity around the mine.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "215:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg?width=1280",
+          "alt": "Mourners and coffins at Cherry, Illinois, after the November 1909 mine disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "215:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg?width=1280",
+          "alt": "Children identified in a 1909 photograph as having been made orphans by the Cherry Mine disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "modified": "2026-10-29T16:30:42",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "214:0",
+          "source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+          "alt": "SS Eastland lying on its side beside the Chicago River wharf after capsizing on July 24, 1915.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "214:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+          "alt": "Panoramic view of the overturned Eastland and rescue activity along the Chicago River in 1915.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "214:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+          "alt": "The tug Kenosha alongside the overturned Eastland, rescuing survivors from the exposed hull in the Chicago River.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "214:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+          "alt": "Western Electric nurse Helen Repa assisting a victim after the Eastland disaster in Chicago.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "214:4",
+          "source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+          "alt": "Rescuers attempting to revive a victim of the Eastland disaster in Chicago in July 1915.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "214:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+          "alt": "National Archives photograph of the overturned Eastland in the Chicago River after the 1915 disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "modified": "2026-10-29T20:59:21",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "213:0",
+          "source_url": "https://research.fs.usda.gov/sites/default/files/2024-08/firelab-northface-manngulch-printable.jpg",
+          "alt": "Annotated view of the north slope of Mann Gulch showing the crew route, tool drop, Dodge escape fire, and firefighter locations.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "213:1",
+          "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-fire-progression-map.jpg?VersionId=nXjGkeGzQeXNCaBmxg9oBNzb6As7WcRA",
+          "alt": "Topographic map showing the progression of the Mann Gulch Fire on August 5, 1949.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "213:2",
+          "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+          "alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "213:3",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Mann_Gulch_Fire%2C_1949._US_Forest_Service%2C_retrieval_of_victim%27s_bodies.jpg",
+          "alt": "U.S. Forest Service recovery crew carrying a victim from the steep Mann Gulch slope on August 6, 1949.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "213:4",
+          "source_url": "https://research.fs.usda.gov/sites/default/files/2024-02/firelab-nffl_chamber97_0.jpg",
+          "alt": "Researchers conducting an early controlled fire experiment in the combustion chamber at the Missoula Fire Sciences Laboratory.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "213:5",
+          "source_url": "https://research.fs.usda.gov/sites/default/files/2023-02/rmrs-firelabwindtunnel-courtesy-newyorktimes.jpg",
+          "alt": "Researchers observing a controlled wildfire experiment inside the Missoula Fire Sciences Laboratory wind tunnel and combustion chamber.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "213:6",
+          "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+          "alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "modified": "2026-10-29T17:37:13",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "211:0",
+          "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+          "alt": "African American sailors loading munitions onto a ship at Port Chicago Naval Magazine during World War II.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "211:1",
+          "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80A5458E-F39E-DB01-9A32F52ABA3482BE/80A5458E-F39E-DB01-9A32F52ABA3482BE.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+          "alt": "African American sailors handling munitions at Port Chicago Naval Magazine during World War II.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "211:2",
+          "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/ED8E4950-C94B-14B3-1E358F1265D3F870/ED8E4950-C94B-14B3-1E358F1265D3F870.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+          "alt": "Wreckage, destroyed structures, and damaged automobiles at Port Chicago after the July 17, 1944 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "211:3",
+          "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/14DAEF66-B99F-637F-316D6B52D59F0C1E/14DAEF66-B99F-637F-316D6B52D59F0C1E.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+          "alt": "Railroad tracks and debris at Port Chicago Naval Magazine after the 1944 ammunition explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "211:4",
+          "source_url": "https://www.nps.gov/poch/learn/historyculture/images/Mutiny-Trial.jpeg?autorotate=false&maxwidth=650",
+          "alt": "The Port Chicago 50 seated in a Navy courtroom during the 1944 mutiny trial at Treasure Island.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "211:5",
+          "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+          "alt": "Destroyed pier and debris along the waterfront at Port Chicago after the July 1944 explosion.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "modified": "2026-10-29T14:46:47",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "190:0",
+          "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18735v.jpg",
+          "alt": "Firefighters battling the Great Baltimore Fire on Baltimore Street in February 1904, with hose lines running through the street.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "190:1",
+          "source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s46000/1s46000/1s46043v.jpg",
+          "alt": "Engine 15 near the Hurst Building at the beginning of the Great Baltimore Fire on February 7, 1904.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "190:2",
+          "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18713v.jpg",
+          "alt": "Baltimore and Ohio locomotive and crew associated with transporting Washington firefighters to Baltimore during the 1904 fire.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "190:3",
+          "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18729v.jpg",
+          "alt": "District of Columbia firefighters who traveled to Baltimore to assist during the Great Fire of 1904.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "190:4",
+          "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18712v.jpg",
+          "alt": "Jones Falls in Baltimore after the 1904 fire, near the area where the advancing fire was finally checked.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "190:5",
+          "source_url": "https://cdn.loc.gov/service/pnp/pan/6a05000/6a05800/6a05834r.jpg",
+          "alt": "Panoramic view of Baltimore’s burned commercial district after the Great Fire of February 1904.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 8,
+    "inline_img_tags": 49,
+    "external_origin_count": 49,
+    "classes": {
+      "THIRD_PARTY": 49
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}
