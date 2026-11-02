@@ -1,0 +1,125 @@
+name: Preparedness R71 DOM-Block and Source Review (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r70-source-url-citation-link-custody-hold-20261102]
+    paths:
+      - preparedness/tools/r71_rc_dom_block_source_review.py
+      - preparedness/tests/test_r71_rc_dom_block_source_review.py
+      - preparedness/docs/R71_DOM_BLOCK_SOURCE_CLAIM_REVIEW_HOLD.md
+      - .github/workflows/preparedness-r71-isolated-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r71-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-block-citation-source-audit:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Read-only checkout without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact parent and four-file additive private review scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "c42c2c32291442ddce91d33b039785f7adce22f3"
+          test "$BASE_REF" = "review/preparedness-r70-source-url-citation-link-custody-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r71-dom-block-source-review-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r71-changed-paths
+          python -I - <<'PY'
+          from pathlib import Path
+          actual={p.decode() for p in Path("/tmp/r71-changed-paths").read_bytes().split(b"\0") if p}
+          expected={
+            "preparedness/tools/r71_rc_dom_block_source_review.py",
+            "preparedness/tests/test_r71_rc_dom_block_source_review.py",
+            "preparedness/docs/R71_DOM_BLOCK_SOURCE_CLAIM_REVIEW_HOLD.md",
+            ".github/workflows/preparedness-r71-isolated-tests.yml",
+          }
+          assert actual==expected,(sorted(actual),sorted(expected))
+          print("R71 exact-four-file private-only change scope PASS")
+          PY
+      - name: Seven contributor and separate RC source Git SHA pins
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref,pin in refs.items():
+              found=subprocess.check_output(["git","rev-parse","--verify",
+                  "refs/remotes/origin/"+ref+"^{commit}"],text=True).strip()
+              assert found==pin,(ref,pin,found)
+          print("All seven contributors and the separate RC source SHAs matched")
+          PY
+      - name: R71 Python syntax
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in ("preparedness/tools/r71_rc_dom_block_source_review.py",
+                    "preparedness/tests/test_r71_rc_dom_block_source_review.py"):
+              compile(Path(p).read_text(encoding="utf-8"),p,"exec")
+          print("R71 syntax PASS")
+          PY
+      - name: R71 synthetic and adversarial tests (36+)
+        run: python -I -m unittest discover -s preparedness/tests -p test_r71_rc_dom_block_source_review.py -v
+      - name: Exact 244-source and 2173-citation DOM-block review census
+        run: |
+          python -I - <<'PY'
+          import csv,importlib.util,io,json
+          from pathlib import Path
+          path=Path("preparedness/tools/r71_rc_dom_block_source_review.py")
+          spec=importlib.util.spec_from_file_location("r71_ci",path)
+          tool=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(tool)
+          report=tool.live_report()
+          c=report["counts"]
+          assert report["release_state"]=="HOLD" and report["machine_only"] is True
+          assert all(report[k] is False for k in tool.HOLD)
+          assert (c["candidate_articles"],c["candidate_tools"],
+                  c["unabridged_source_readings_conserved"],
+                  c["candidate_citations_conserved"])==(35,6,244,2173),c
+          assert c["keyword_topic_blocks_without_same_block_citation"]==599,c
+          assert c["citation_occurrences_attached_to_DOM_blocks"]+\
+                 c["citations_without_DOM_block_unresolved"]==2173,c
+          assert c["DOM_text_blocks_review_tasks"]>=599,c
+          assert c["human_source_claim_or_safety_reviews_by_R71"]==0
+          with io.StringIO(tool.csv_tasks(report)) as stream:
+              assert sum(1 for _ in csv.DictReader(stream))==c["DOM_text_blocks_review_tasks"]
+          print("R71 private review census, all source reading texts, citations and blocks PASS:",json.dumps(c,sort_keys=True))
+          print("All human/QD/qualified safety approvals remain NOT_REVIEWED")
+          PY
+      - name: Native original-archive validation (machine only)
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready private draft build
+        run: python -I preparedness/tools/build.py
+      - name: Complete native Preparedness Python regression tests
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Preserve independent mandatory release HOLD
+        if: always()
+        run: |
+          echo 'R71 grants no source support, medical safety, QD or publication authority.'
+          echo '13-stage integrity / seven_cluster_git_parity remain separate and CLOSED.'
+          echo 'No CMS, WordPress, navigation, homepage, public publishing or merges.'
