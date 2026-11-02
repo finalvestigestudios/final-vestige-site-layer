@@ -90,6 +90,24 @@ def audit_image_payloads(images: list[dict], observed_responses: list) -> dict:
            and getattr(getattr(r, 'request', None), 'resource_type', '') == 'image'
            for r in observed_responses):
         failures.append('NYPL_UNCLEARED_CAPTURE_HTTP_REQUEST_DETECTED')
+    # The old capture-name check alone would miss a renamed copy, another
+    # CDN transform or an unsolicited CSS-background image. In this locked
+    # homepage candidate ONLY two archive raster sources have an editorial
+    # attribution/rights review. Examine *all* browser-observed image HTTP
+    # responses, including a fetch() returning image/*, not just <img> tags
+    # carrying data-fv-archive-img. Never serialize rejected URLs.
+    unreviewed_image_seen = False
+    for response in observed_responses:
+        resource = getattr(getattr(response, 'request', None), 'resource_type', '')
+        try:
+            mime = (response.header_value('content-type') or '').split(';', 1)[0].strip().lower()
+        except Exception:
+            mime = ''
+        is_image_response = resource == 'image' or mime.startswith('image/')
+        if is_image_response and archive_identity(getattr(response, 'url', '')) is None:
+            unreviewed_image_seen = True
+    if unreviewed_image_seen:
+        failures.append('UNREVIEWED_IMAGE_HTTP_RESOURCE')
     for image in images:
         url = image.get('url', '')
         ident = archive_identity(url)
