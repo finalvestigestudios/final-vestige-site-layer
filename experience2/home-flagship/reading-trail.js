@@ -33,6 +33,8 @@
   const restore = () => {
     running = false;
     nav.removeAttribute('data-fv-trail-enhanced');
+    nav.removeAttribute('data-fv-trail-overflow-left');
+    nav.removeAttribute('data-fv-trail-overflow-right');
     nav.style.removeProperty('--fv-trail-progress');
     links.forEach((link) => link.removeAttribute('aria-current'));
     originalTabindex.forEach((value, target) => {
@@ -42,6 +44,24 @@
     window.removeEventListener('scroll', enqueue);
     window.removeEventListener('resize', enqueue);
     window.removeEventListener('hashchange', enqueue);
+    nav.removeEventListener('scroll', updateOverflow);
+  };
+  // The nav scrolls horizontally on narrow viewports (seven full chapter labels
+  // never fit); this only signals that more chapters sit off to one side so the
+  // CSS can fade that edge -- scrolling itself, and every label's full text,
+  // already work with no JS at all.
+  const updateOverflow = () => {
+    if (!running) return;
+    const max = nav.scrollWidth - nav.clientWidth;
+    if (max <= 1) {
+      nav.removeAttribute('data-fv-trail-overflow-left');
+      nav.removeAttribute('data-fv-trail-overflow-right');
+      return;
+    }
+    if (nav.scrollLeft > 2) nav.setAttribute('data-fv-trail-overflow-left', '');
+    else nav.removeAttribute('data-fv-trail-overflow-left');
+    if (nav.scrollLeft < max - 2) nav.setAttribute('data-fv-trail-overflow-right', '');
+    else nav.removeAttribute('data-fv-trail-overflow-right');
   };
   const render = () => {
     queued = false;
@@ -63,6 +83,7 @@
         if (index === active) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
+      updateOverflow();
     } catch (_) { restore(); }
   };
   function enqueue() {
@@ -85,6 +106,8 @@
     window.addEventListener('scroll', enqueue, { passive: true });
     window.addEventListener('resize', enqueue, { passive: true });
     window.addEventListener('hashchange', enqueue);
+    nav.addEventListener('scroll', updateOverflow, { passive: true });
     enqueue();
+    updateOverflow();
   } catch (_) { restore(); }
 })();

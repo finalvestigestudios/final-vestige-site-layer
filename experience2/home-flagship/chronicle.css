@@ -7,6 +7,11 @@
 .fv-hf__chapter-nav a{display:inline-flex;flex:0 0 auto;align-items:center;min-height:55px;gap:10px;padding:10px clamp(13px,1.9vw,28px);color:var(--hf-muted);font:750 11px/1.4 var(--hf-sans);letter-spacing:.025em;text-decoration:none;border-bottom:2px solid transparent;transition:background 180ms ease,color 180ms ease,border-color 180ms ease}
 .fv-hf__chapter-nav a span{font:700 10px/1 var(--hf-mono);color:var(--hf-gold)}
 .fv-hf__chapter-nav a:hover,.fv-hf__chapter-nav a:focus-visible{background:rgba(199,166,108,.1);color:var(--hf-ink);border-bottom-color:var(--hf-gold)}
+/* Signals that more chapters sit off to one side; every label's full text and the
+   scrolling itself already work with no JS, this is a discoverability cue only. */
+.fv-hf__chapter-nav[data-fv-trail-overflow-left]{-webkit-mask-image:linear-gradient(to right,transparent,#000 28px);mask-image:linear-gradient(to right,transparent,#000 28px)}
+.fv-hf__chapter-nav[data-fv-trail-overflow-right]{-webkit-mask-image:linear-gradient(to left,transparent,#000 28px);mask-image:linear-gradient(to left,transparent,#000 28px)}
+.fv-hf__chapter-nav[data-fv-trail-overflow-left][data-fv-trail-overflow-right]{-webkit-mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
 .fv-hf :where(#fv-hf-chronicle,#fv-hf-evidence,#fv-hf-method-title,#fv-hf-mind-title,#fv-hf-title){scroll-margin-top:26px}
 .fv-hf__chronicle{position:relative;isolation:isolate;overflow:hidden;padding:clamp(78px,11vw,170px) clamp(19px,6vw,100px);color:var(--hf-ink);border-bottom:1px solid var(--hf-line);background:radial-gradient(ellipse at 82% 5%,rgba(22,67,63,.22),transparent 42%),linear-gradient(130deg,#0d100f,var(--hf-bg) 65%)}
 .fv-hf__chronicle::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.2;background:repeating-linear-gradient(90deg,transparent 0 120px,rgba(199,166,108,.05) 121px)}
