@@ -132,7 +132,7 @@ class RendererSafetyTests(unittest.TestCase):
 
     def test_human_checks_not_reported_as_real_evidence(self):
         html = renderer.html_report(fake_report()).lower()
-        self.assertIn("not a received-mail screenshot", html)
+        self.assertIn("<strong>not</strong> a received-mail screenshot", html)
         self.assertIn("functioning opt-out", html) if "functioning opt-out" in html else self.assertIn("validated unsubscribe", html)
         self.assertIn("independently establish actual receipt", html)
 
