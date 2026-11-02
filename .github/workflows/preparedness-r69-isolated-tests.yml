@@ -1,0 +1,135 @@
+name: Preparedness R69 DOM citation review (PRIVATE HOLD)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r68-rc-claim-source-scope-hold-20261102
+    paths:
+      - preparedness/tools/r69_rc_citation_dom_review.py
+      - preparedness/tests/test_r69_rc_citation_dom_review.py
+      - preparedness/docs/R69_RC_CITATION_DOM_CONTEXT_HOLD.md
+      - .github/workflows/preparedness-r69-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r69-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  private-citation-render-context-diagnostics:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Private checkout without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact R68 parent and additive four-path restriction
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "654094057e3795902a21d73c39fe678414e4fe11"
+          test "$BASE_REF" = "review/preparedness-r68-rc-claim-source-scope-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r69-dom-citation-context-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r69-changed-paths
+          python -I - <<'PY'
+          from pathlib import Path
+          paths={x.decode() for x in Path('/tmp/r69-changed-paths').read_bytes().split(b'\0') if x}
+          required={
+            'preparedness/tools/r69_rc_citation_dom_review.py',
+            'preparedness/tests/test_r69_rc_citation_dom_review.py',
+            'preparedness/docs/R69_RC_CITATION_DOM_CONTEXT_HOLD.md',
+            '.github/workflows/preparedness-r69-isolated-tests.yml',
+          }
+          assert paths == required,(sorted(paths),sorted(required))
+          print('Exactly four private review-only additions; no source/WordPress changes.')
+          PY
+      - name: Python source and test syntax without bytecode files
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for rel in (
+            'preparedness/tools/r69_rc_citation_dom_review.py',
+            'preparedness/tests/test_r69_rc_citation_dom_review.py',
+          ):
+              compile(Path(rel).read_text(encoding='utf-8'),rel,'exec')
+          print('R69 syntax: PASS')
+          PY
+      - name: R69 synthetic and adversarial tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r69_rc_citation_dom_review.py -v
+      - name: Seven contributor branch SHA and RC exact reference custody
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            'claude/prep-start-bbfeb8':'2122d856fce9f64887c16df3d52e64be9f59a55b',
+            'claude/prep-shelter-5e1e0e':'5daeaf2dd5ab71806a6b73c91edfb1d8df5da976',
+            'claude/prep-food-ccdc55':'f911ff7a655de8d81535ea86ec3d65a49ee76648',
+            'claude/prep-health-837444':'d5ef5bafd68361434dd1cc9209915b8e8a4eaf17',
+            'claude/prep-hist-food-b81f19':'67e116e536c7410bed30f8f3b1bb8c166f3c223d',
+            'claude/prep-hist-home-0e0e38':'7504a5f099594d635e3dd7332a33a2e1346c43a2',
+            'claude/prep-hist-field-9db767':'4e5caf812727953aa45e3bda2d382f2c67b6a09c',
+            'integration/preparedness-release-candidate-20261101':
+              'ddb3528ba6494dada1fa1c3a142ce746e3a67706',
+          }
+          for ref, pin in refs.items():
+              observed=subprocess.check_output(['git','rev-parse','--verify',
+                 'refs/remotes/origin/'+ref+'^{commit}'],text=True).strip()
+              if observed != pin:
+                  raise SystemExit('HOLD: source branch changed: '+ref+
+                                   ' expected '+pin+' observed '+observed)
+          print('Seven Claude contributors and RC exact source SHA pins: PASS')
+          PY
+      - name: R69 exact R68 report and all 2,173 RC citation positions
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r69_rc_citation_dom_review.py > /tmp/r69-private-summary.json
+          python -I preparedness/tools/r69_rc_citation_dom_review.py --task-csv-stdout > /tmp/r69-private-citation-queue.csv
+          python -I - <<'PY'
+          from pathlib import Path
+          import csv,json
+          report=json.loads(Path('/tmp/r69-private-summary.json').read_text())
+          cnt=report['counts']
+          assert report['release_state']=='HOLD' and report['all_publication_clearance'] is False
+          assert cnt['candidate_articles']==35,cnt
+          assert cnt['candidate_tools']==6,cnt
+          assert cnt['original_citation_occurrences_kept_in_R68']==1959,cnt
+          assert cnt['candidate_source_records_kept_in_R68']==244,cnt
+          assert cnt['candidate_citation_occurrences_accounted_for']==2173,cnt
+          assert sum(cnt[x] for x in ('citations_in_potentially_visible_DOM_text',
+                  'citations_in_suppressed_or_a11y_hidden_DOM_text',
+                  'citations_outside_HTML_data_nodes'))==2173,cnt
+          assert cnt['human_claim_or_safety_checks_performed_BY_R69']==0,cnt
+          with Path('/tmp/r69-private-citation-queue.csv').open(newline='') as f:
+              tasks=list(csv.DictReader(f))
+          assert len(tasks)==2173,len(tasks)
+          assert all(row['human_review_state']=='NOT_REVIEWED' for row in tasks)
+          print('Private DOM citation census, all UNAPPROVED:',json.dumps(cnt,sort_keys=True))
+          PY
+      - name: Native validation of original archive (machine only)
+        run: python -I preparedness/tools/validate.py
+      - name: WordPress-ready offline PRIVATE draft build
+        run: python -I preparedness/tools/build.py
+      - name: Full native Preparedness Python suite, machine diagnostics only
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Explicitly preserve release HOLD
+        if: always()
+        run: |
+          echo 'Never treat DOM location, machine URLs or synthetic tests as claim or medical safety review.'
+          echo 'Mandatory seven_cluster_git_parity is a separate closed release gate.'
+          echo 'NO merge, publishing, navigation, WordPress, CMS or approval writes.'
