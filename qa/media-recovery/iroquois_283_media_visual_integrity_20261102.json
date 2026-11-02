@@ -1,0 +1,427 @@
+{
+  "schema": "fv.media-recovery.iroquois283.v1",
+  "date": "2026-11-02",
+  "post_id": 283,
+  "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+  "source_inventory": "qa/media-recovery/parts/03.json",
+  "source_inventory_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "source_read": "frozen authenticated WP October 30 census; NOT fresh production read",
+  "seven_external_sources": true,
+  "external_source_count": 7,
+  "image_viewer_displayed_count": 6,
+  "image_viewer_inaccessible_count": 1,
+  "confirmed_browser_broken_count": null,
+  "claimed_42_broken_verified": false,
+  "claimed_76_percent_savings_measured": false,
+  "production_image_repairs": 0,
+  "all_caching_hold": true,
+  "editorial_correction_proposed_not_published": true,
+  "records": [
+    {
+      "key": "283:0",
+      "published_url": "https://2.bp.blogspot.com/-vFf9zOG42QU/W2shS055U-I/AAAAAAAACc0/uHswGJB19E4OgUANkDatBX7LSCIEswfZgCLcBGAs/s1600/Fire%2BEscape%2BDoors%2BPortrait%2BMode.jpg",
+      "published_alt": "Fire-damaged exit doors inside Chicago's Iroquois Theatre after the December 30, 1903 fire.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "displayed_web_image_viewer",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "published_alt_describes_photo_but_source_is_mixed_illustrated_diagram",
+        "visual_verified_in_independent_viewer": true,
+        "suggested_alt_subject_to_editor_review": "Illustrated comparison of the Iroquois Theatre's fire-escape doors and blocked exits, combining diagrams, historical photographs and newspaper excerpts.",
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "Northwestern Florence Kelley historical collection",
+        "catalog_id": null,
+        "source_page": "https://florencekelley.northwestern.edu/historical/iroquois",
+        "relation": "visual_comparison_only_not_same_image",
+        "match_type": "editorial_misdescription_visually_confirmed",
+        "visual_note": "Current binary is a modern multi-panel diagram with text, arrows, drawings and embedded older photographs. Published ALT incorrectly describes it as a photograph of fire-damaged exit doors.",
+        "creator_credit": null
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    },
+    {
+      "key": "283:1",
+      "published_url": "https://miro.medium.com/v2/resize:fit:1400/1*IcflN4VAkB2zIyMzIbcmyQ.jpeg",
+      "published_alt": "The new Iroquois Theatre on Randolph Street in Chicago shortly before the 1903 fire.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "displayed_web_image_viewer",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "no_proven_factual_alt_mismatch",
+        "visual_verified_in_independent_viewer": true,
+        "suggested_alt_subject_to_editor_review": null,
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "Chicago History Museum",
+        "catalog_id": "DN-0001578",
+        "source_page": "https://digitalchicagohistory.org/items/show/1119",
+        "relation": "alternate_exterior_scene_not_exact",
+        "match_type": "scene_type_only_not_exact",
+        "visual_note": "Published Medium CDN image shows theatre entrance, not yet identified as exact CHM DN-0001578 photo. DN-0001578 is a separate CHM Chicago Daily News 1903-12-30 exterior photograph, use only as non-identical option.",
+        "creator_credit": "Chicago Daily News Inc. for the different cataloged comparison image"
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    },
+    {
+      "key": "283:2",
+      "published_url": "https://chicagology.com/wp-content/themes/revolution-20/chicagoimages2/iroquoispromenade.jpg",
+      "published_alt": "Contemporary drawing of the ornate Iroquois Theatre foyer and promenade before the fire.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "displayed_web_image_viewer",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "no_proven_factual_alt_mismatch",
+        "visual_verified_in_independent_viewer": true,
+        "suggested_alt_subject_to_editor_review": null,
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "Chicago History Museum via Northwestern University",
+        "catalog_id": "ICHi-36010",
+        "source_page": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+        "relation": "catalog_illustrative_scene_match_not_binary",
+        "match_type": "subject_catalog_match_binary_unverified",
+        "visual_note": "CHM's ICHi-36010 documents promenade foyer from pre-fire souvenir program; currently published Chicagology image is illustrated view. Drawing/photo medium wording needs editorial verification.",
+        "creator_credit": null
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    },
+    {
+      "key": "283:3",
+      "published_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+      "published_alt": "Charred seating and stage area inside the Iroquois Theatre after the 1903 fire.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "inaccessible_no_origin_http_code",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "no_proven_factual_alt_mismatch",
+        "visual_verified_in_independent_viewer": false,
+        "suggested_alt_subject_to_editor_review": null,
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "Chicago History Museum",
+        "catalog_id": "DN-0001586",
+        "source_page": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+        "relation": "alternate_1904_01_04_damage_scene_not_exact",
+        "match_type": "alternate_scene_only",
+        "visual_note": "Published TownNews photo inaccessible in renderer. CHM DN-0001586 is a distinct documented damaged-stage photograph dated January 4, 1904, after disaster; not proven same image.",
+        "creator_credit": "Chicago Daily News Inc. for the different cataloged comparison image"
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    },
+    {
+      "key": "283:4",
+      "published_url": "https://www.wttw.com/sites/default/files/csdd-investigators_02.jpg",
+      "published_alt": "Investigators inside the damaged Iroquois Theatre after the 1903 fire.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "displayed_web_image_viewer",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "no_proven_factual_alt_mismatch",
+        "visual_verified_in_independent_viewer": true,
+        "suggested_alt_subject_to_editor_review": null,
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "WTTW Chicago",
+        "catalog_id": null,
+        "source_page": "https://www.wttw.com/chicago-stories/downtown-disasters/the-tragedy-of-the-iroquois-theater-fire",
+        "relation": "same_publisher_article_photo_no_custodian_accession",
+        "match_type": "publisher_exact_image_link",
+        "visual_note": "Exact WTTW photo displays investigators surveying fire damage. Do not assume WTTW's photo archive licenses are cleared for WordPress redistribution.",
+        "creator_credit": null
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    },
+    {
+      "key": "283:5",
+      "published_url": "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/627134-wikimedia-iroquois-fire-66b8dccd06d18b8b1200a566c6d50b53.jpg",
+      "published_alt": "Historical Iroquois Theatre exit and fire-escape area after the disaster.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "displayed_web_image_viewer",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "no_proven_factual_alt_mismatch",
+        "visual_verified_in_independent_viewer": true,
+        "suggested_alt_subject_to_editor_review": null,
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "Library of Congress",
+        "catalog_id": null,
+        "source_page": "https://www.loc.gov/pictures/item/2007662240/",
+        "relation": "alternate_historical_after_fire_panorama_not_exact",
+        "match_type": "alternate_scene_only",
+        "visual_note": "Current Minutemedia image depicts a burned doorway/fire-escape area; LOC LC-DIG-ppmsca-07431 depicts outside panoramic scene on Dec 31, 1903. Explicitly not a same-image replacement.",
+        "creator_credit": "Henry Albert Ericson for different LOC panorama"
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    },
+    {
+      "key": "283:6",
+      "published_url": "https://florencekelley.northwestern.edu/img/galleries/historical/iroquois/i36009aa.jpg",
+      "published_alt": "Crowd and street scene outside the Iroquois Theatre after the 1903 fire.",
+      "post_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "source_snapshot_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "independent_viewer_observation": {
+        "at": "2026-11-02",
+        "method": "web.open image viewer",
+        "result": "displayed_web_image_viewer",
+        "status_code_reported_by_retriever": null,
+        "origin_http_status": null,
+        "logged_out_browser_status": null,
+        "chrome_current_src": null,
+        "decoded_width_px": null,
+        "decoded_height_px": null,
+        "transferred_bytes": null
+      },
+      "visual_editorial_finding": {
+        "finding": "caption_emphasizes_crowd_but_original_catalog_identifies_exterior_theatre_facade",
+        "visual_verified_in_independent_viewer": true,
+        "suggested_alt_subject_to_editor_review": "Exterior of the Iroquois Theatre and pedestrians on the street in Chicago following the December 1903 fire.",
+        "editorial_change_authorized": false
+      },
+      "candidate": {
+        "institution": "Chicago History Museum via Northwestern University",
+        "catalog_id": "ICHi-36009",
+        "source_page": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+        "relation": "same_exact_Northwestern_publisher_file_and_museum_accession",
+        "match_type": "exact_college_publisher_image_and_catalog_accession",
+        "visual_note": "Exact Northwestern image filename i36009aa maps to Chicago History Museum ICHi-36009, photographer Charles R. Clark. Image shows the theatre facade and street pedestrians; current ALT emphasizes crowd rather than the façade. Photo details/credit review needed.",
+        "creator_credit": "Charles R. Clark (cataloged by Chicago History Museum)"
+      },
+      "rights": {
+        "rights_basis": "UNVERIFIED_ITEM_LEVEL",
+        "copyright_clearance": "HOLD",
+        "existing_publisher_display_not_republication_license": true,
+        "site_owned_binary_not_in_scope": true,
+        "download_authorized": false,
+        "wordpress_upload_authorized": false
+      },
+      "optimization": {
+        "maximum_width_px": 960,
+        "allow_upscale": false,
+        "current_original_dimensions_verified": false,
+        "candidate_archive_master_dimensions_verified": false,
+        "target_height_px": null,
+        "source_image_sha256": null
+      },
+      "staging": {
+        "browser_failure_confirmed": false,
+        "candidate_pixel_identical": false,
+        "identity_and_crop_review_passed": false,
+        "rights_approved": false,
+        "wordpress_write_approved": false,
+        "rollback_record_prepared": false
+      }
+    }
+  ]
+}
