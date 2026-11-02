@@ -63,6 +63,16 @@ def sample_issues(data: dict, width: int) -> list[str]:
     return issues
 
 
+def budget_miss_codes(samples: list[dict]) -> list[str]:
+    """Release-admission failures, distinct from instrumentation validity."""
+    return [
+        sample["profile"] + ":" + metric.upper()
+        for sample in samples
+        for metric in ("lcp", "cls")
+        if sample.get("lab_good_" + metric) is not True
+    ]
+
+
 def run_saved_native_lab(page, page_id: int, out: Path, exact_sha: str) -> dict:
     """Reload the real saved page; measure LCP/CLS under exact CDP conditions."""
     if not isinstance(exact_sha, str) or len(exact_sha) != 40 or any(
@@ -163,12 +173,7 @@ def run_saved_native_lab(page, page_id: int, out: Path, exact_sha: str) -> dict:
                 page.set_viewport_size(original_viewport)
     failures = sorted({issue for sample in samples
                        for issue in sample["failure_codes"]})
-    budget_misses = [
-        sample["profile"] + ":" + metric.upper()
-        for sample in samples
-        for metric in ("lcp", "cls")
-        if not sample["lab_good_" + metric]
-    ]
+    budget_misses = budget_miss_codes(samples)
     report = {
         "status": ("SAVED_NATIVE_CDP_INVALID_RELEASE_HOLD" if failures else
                    "SAVED_NATIVE_CDP_BUDGET_MISS_RELEASE_HOLD" if budget_misses else
