@@ -28,7 +28,7 @@ export function sanitizedSample(lhr, profile) {
   const cpu=s?.throttling?.cpuSlowdownMultiplier;
   if (s?.formFactor!==(desktop?'desktop':'mobile') ||
       s?.screenEmulation?.width!==width ||
-      s?.screenEmulation?.mobile===desktop ||
+      s?.screenEmulation?.mobile!==!desktop ||
       !finite(cpu) || cpu===0 ||
       (desktop && cpu!==1)) throw Error('LIGHTHOUSE_EFFECTIVE_PROFILE_MISMATCH');
   return {
