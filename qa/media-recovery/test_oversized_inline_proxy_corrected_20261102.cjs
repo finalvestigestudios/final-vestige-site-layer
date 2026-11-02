@@ -19,6 +19,9 @@ test('crosswalk validates 10/13 oversized inline originals and 3 Vasa proxies',(
  if(r.summary.inline_original_storage_bytes!==36937913)throw Error('wrong inline bytes');
 });
 const mutations=[
+ ['fabricated PNG retriever 404',x=>x.rows.find(r=>r.media_id===39).independent_source_retriever_check.origin_http_status=404],
+ ['fabricated PNG successful decode',x=>x.rows.find(r=>r.media_id===43).independent_source_retriever_check.image_decode_verified=true],
+ ['mislabelled inaccessible tool as guest HTTP',x=>x.rows.find(r=>r.media_id===40).independent_source_retriever_check.guest_browser_http_status=403],
  ['San Francisco source ALT omitted again',x=>x.rows.find(r=>r.media_id===39).inline_slot_matches[0].alt=null],
  ['Vicksburg source ALT altered',x=>x.rows.find(r=>r.media_id===41).inline_slot_matches[0].alt='Not Vicksburg'],
  ['Malbone tunnel ALT erased',x=>x.rows.find(r=>r.media_id===1257).inline_slot_matches[0].alt=null],
