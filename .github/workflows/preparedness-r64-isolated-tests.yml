@@ -1,0 +1,133 @@
+name: Preparedness R64 article-source private diagnostics (NOT release)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r63-source-impact-crosswalk-hold-20261101
+    paths:
+      - preparedness/tools/r64_article_source_dependency_review.py
+      - preparedness/tests/test_r64_article_source_dependency_review.py
+      - preparedness/docs/R64_ARTICLE_SOURCE_DEPENDENCY_HOLD.md
+      - .github/workflows/preparedness-r64-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r64-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  private-citation-dependency-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Exact draft checkout without retained write credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject wrong parent, broadened scope and branch swapping
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = 'c0117fa41c058e55926aaa62ee7440fbcad680fe'
+          test "$BASE_REF" = 'review/preparedness-r63-source-impact-crosswalk-hold-20261101'
+          test "$HEAD_REF" = 'review/preparedness-r64-claim-source-review-coverage-hold-20261102'
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r64-protected-paths.bin
+          python -I - <<'PY'
+          from pathlib import Path
+          observed = {x.decode("utf-8") for x in
+                      Path("/tmp/r64-protected-paths.bin").read_bytes().split(b"\0") if x}
+          allowed = {
+              "preparedness/tools/r64_article_source_dependency_review.py",
+              "preparedness/tests/test_r64_article_source_dependency_review.py",
+              "preparedness/docs/R64_ARTICLE_SOURCE_DEPENDENCY_HOLD.md",
+              ".github/workflows/preparedness-r64-isolated-tests.yml",
+          }
+          if observed != allowed:
+              raise SystemExit("R64 HOLD: unexpected changed paths: " +
+                               repr(sorted(observed ^ allowed)))
+          print("R64 scope: exactly four additive private files; no existing articles changed")
+          PY
+      - name: Parse new Python without writing bytecode
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in ("preparedness/tools/r64_article_source_dependency_review.py",
+                    "preparedness/tests/test_r64_article_source_dependency_review.py"):
+              compile(Path(p).read_text(encoding="utf-8"), p, "exec")
+          print("R64 source and test syntax PASS")
+          PY
+      - name: Native adversarial tests — original R60 through new R64
+        run: |
+          set -euo pipefail
+          for unit in \
+            test_r60_contributor_provenance_drift_docket.py \
+            test_r61_contributor_version_source_lineage.py \
+            test_r62_contributor_claim_context_docket.py \
+            test_r63_contributor_source_impact_crosswalk.py \
+            test_r64_article_source_dependency_review.py; do
+            python -I -m unittest discover -s preparedness/tests -p "$unit" -v
+          done
+      - name: Verify exact original seven contributor refs and regenerate real Git docket
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          expected = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+          }
+          for name, target in expected.items():
+              actual = subprocess.check_output(
+                  ["git", "rev-parse", "--verify",
+                   "refs/remotes/origin/" + name + "^{commit}"],
+                  text=True).strip()
+              if actual != target:
+                  raise SystemExit("R64 Git contributor SHA mismatch " + name +
+                                   " expected " + target + " got " + actual)
+          print("All seven contributor refs exact: investigation pin only, NOT source approval")
+          PY
+          python -I preparedness/tools/r64_article_source_dependency_review.py --summary > /tmp/r64-private-summary.json
+          python -I - <<'PY'
+          import json
+          from pathlib import Path
+          obj = json.loads(Path("/tmp/r64-private-summary.json").read_text())
+          assert obj["release_state"] == "HOLD"
+          assert obj["counts"]["original_articles"] == 29
+          assert obj["counts"]["work_orders"] > 0
+          print("Verified Git-backed private article/source work orders (NOT independent claim support):")
+          print(json.dumps(obj["counts"], sort_keys=True))
+          PY
+      - name: Native integrated source/article validation (diagnostic only)
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready draft build (NO CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Full native Preparedness Python unittest suite (diagnostic only)
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Explicit separate mandatory-integrity and human review HOLD
+        if: always()
+        run: |
+          echo "R64 checks protect lossless candidate records only; source claims and emergency advice not safety-reviewed."
+          echo "Mandatory 13-stage private integrity still fails closed at seven_cluster_git_parity."
+          echo "206 human link checks, 30 shared URLs, 43 fallbacks, 15 safety exceptions, WordPress browser QA and independent QD still HOLD."
+          echo "No source rebaseline, original article edits, WordPress/CMS writes, public publishing or merge."
