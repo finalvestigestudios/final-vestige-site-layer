@@ -280,6 +280,28 @@ _MUTATIONS = [
     ("unattached_citation_phantom",lambda p: append_to(p,"citations_without_DOM_block_UNRESOLVED",{
         "kind":"article","slug":"phantom","citation_ordinal":1,
         "source_id":"ghost","review_state":"NOT_REVIEWED"})),
+    ("shared_collision_changed_same_count",lambda p:
+        p["shared_URL_scope_collisions_NOT_REVIEWED"][0].__setitem__(
+            "value","https://invented.invalid/source")),
+    ("reused_id_collision_changed_same_count",lambda p:
+        p["reused_ID_scope_collisions_NOT_REVIEWED"][0].__setitem__(
+            "value","invented-source-id")),
+    ("source_doc_scope_lost",lambda p:
+        p["all_document_block_orders_NOT_REVIEWED"][0].__setitem__(
+            "origin_scoped_sources_USED_NOT_SUPPORT_APPROVED",[])),
+    ("review_action_flag_inverted",lambda p: alter_review(p,
+        "action_language_TRIAGE_NOT_VERDICT",not p[
+            "action_or_quantity_qualifier_context_queue_NOT_APPROVED"][0][
+            "action_language_TRIAGE_NOT_VERDICT"])),
+    ("review_quantity_flag_inverted",lambda p: alter_review(p,
+        "numeric_units_TRIAGE_NOT_DOSAGE_CHECK",not p[
+            "action_or_quantity_qualifier_context_queue_NOT_APPROVED"][0][
+            "numeric_units_TRIAGE_NOT_DOSAGE_CHECK"])),
+    ("citation_variant_duplicated",lambda p: alter_citation(p,
+        "origin_scoped_source_variants_NOT_ALIASED",
+        p["all_4070_unabridged_DOM_tasks_NOT_REVIEWED"][0][
+            "local_citations_NOT_CLAIM_SUPPORT_PROOF"][0][
+            "origin_scoped_source_variants_NOT_ALIASED"]*2)),
 ]
 
 
