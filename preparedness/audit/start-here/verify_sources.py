@@ -130,7 +130,7 @@ def main() -> int:
         })
     (HERE / "ledger.json").write_text(json.dumps({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                                                    "tool": "verify_sources.py (Playwright/Edge + pdftotext)",
-                                                   "sources": ledger}, indent=2, ensure_ascii=False), encoding="utf-8")
+                                                   "sources": ledger}, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n")
     by_src = {l["source_id"]: l for l in ledger}
     matrix = []
     for c in claims:
