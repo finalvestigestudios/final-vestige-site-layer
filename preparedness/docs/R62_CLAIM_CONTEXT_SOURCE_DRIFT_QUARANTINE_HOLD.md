@@ -36,6 +36,12 @@ Five branches remain substantively advanced beyond the frozen R14 baseline, with
 - Start Here RC #553: `2af10621b0f4b5837f9224bf7f7163cc21590293`; shelter evidence PR #554: `6a5998ead97eca997e573ce8d3ceacf1c6aabad4`. Review candidates only; not incorporated or safety-cleared.
 - Homepage flagship PR #550: `6ef459ec76208fc84022328b938d79bf556ac774`; exact-browser QA PR #565: `91ca7a7d0e9e1b22374ea354775a0ae9d985e502`. Left untouched.
 
+## Hosted verification of exact R62 branch (2026-11-01 Pacific)
+
+A NEW isolated **machine-only** workflow `.github/workflows/preparedness-r62-isolated-tests.yml` enforces the exact base SHA and four-file changed-path allowlist. Hosted GitHub Actions run [#41394562900](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41394562900) **SUCCEEDED** for R60 **76**, R61 **69**, and the *exact repository-native R62 test file* **64** synthetic/adversarial tests: **209 passing in total**. These tests do not establish factual claim support or qualified safety review.
+
+The mandatory full private machine integrity workflow [#41394562896](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41394562896) **FAILED CLOSED** at `seven_cluster_git_parity` (`R18_PRIVATE_PREFLIGHT_FAILURE`) because original contributor branch heads differ from frozen R14. Consequently, **do not claim that validation/build, the full repository test suite, all 13 stages or independent QD passed**. The frozen manifest and contributor evidence have not been rebaselined.
+
 ## Verify only from a trusted complete checkout
 
 ```bash
