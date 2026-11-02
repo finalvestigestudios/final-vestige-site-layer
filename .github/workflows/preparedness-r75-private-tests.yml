@@ -1,0 +1,132 @@
+name: Preparedness R75 Qualifier Scope and Citation Custody (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r74-quantity-context-custody-hold-20261102]
+    paths:
+      - preparedness/tools/r75_qualifier_scope_citation_custody.py
+      - preparedness/tests/test_r75_qualifier_scope_citation_custody.py
+      - preparedness/docs/R75_QUALIFIER_SCOPE_AND_CITATION_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r75-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r75-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-source-qualifier-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Read-only checkout without stored credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact R74 parent, R75 draft head and four additive review-only paths
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "33ef31ecfb9bf992eb6e265b45e3e938f178fc3f"
+          test "$BASE_REF" = "review/preparedness-r74-quantity-context-custody-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r75-qualifier-scope-citation-custody-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r75-changed
+          python -I - <<'PY'
+          from pathlib import Path
+          b=Path("/tmp/r75-changed").read_bytes().split(b"\0")
+          seen=[(b[i].decode(),b[i+1].decode()) for i in range(0,len(b)-1,2)]
+          permitted={
+              "preparedness/tools/r75_qualifier_scope_citation_custody.py",
+              "preparedness/tests/test_r75_qualifier_scope_citation_custody.py",
+              "preparedness/docs/R75_QUALIFIER_SCOPE_AND_CITATION_CUSTODY_HOLD.md",
+              ".github/workflows/preparedness-r75-private-tests.yml",
+          }
+          assert len(seen)==4 and {path for _,path in seen}==permitted,seen
+          assert all(status=="A" for status,_ in seen),seen
+          print("R75 exactly four additive private review-only paths")
+          PY
+      - name: Verify all seven contributor refs plus separate release candidate exact current SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          expected={
+              "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for branch,sha in expected.items():
+              found=subprocess.check_output(["git","rev-parse","--verify",
+                  "refs/remotes/origin/"+branch+"^{commit}"],text=True).strip()
+              assert found==sha,(branch,found,sha)
+          print("Seven contributor refs and separate RC pinned; NOT publication approval")
+          PY
+      - name: Compile Python in-memory without changing working tree
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in ("preparedness/tools/r75_qualifier_scope_citation_custody.py",
+                    "preparedness/tests/test_r75_qualifier_scope_citation_custody.py"):
+              compile(Path(p).read_text(encoding="utf-8"),p,"exec")
+          print("R75 Python syntax verified")
+          PY
+      - name: Run 36+ isolated synthetic/adversarial R75 tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r75_qualifier_scope_citation_custody.py -v
+      - name: Deterministic full citation DOM and source qualifier review census
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          import importlib.util,io,csv,json
+          path=Path("preparedness/tools/r75_qualifier_scope_citation_custody.py")
+          spec=importlib.util.spec_from_file_location("r75_ci",path)
+          module=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          report=module.live_report()
+          module.sealed(report,module.SCHEMA)
+          c=report["counts"]
+          assert tuple(c[k] for k in ("articles","tools",
+              "complete_origin_scoped_source_readings","citation_occurrences",
+              "unabridged_DOM_blocks")) == (35,6,244,2173,4070),c
+          assert c["parent_action_language_packets"]==975,c
+          assert c["parent_numeric_unit_packets"]==272,c
+          assert 975<=c["union_action_or_quantity_review_queue"]<=1247,c
+          assert c["lexical_qualifier_blocks"]>0 and c["literal_qualifier_occurrences"]>0,c
+          assert c["union_without_same_block_lexical_qualifier_triage"]<=c["union_action_or_quantity_review_queue"],c
+          assert all(report[k] is False for k in module.HOLD_KEYS)
+          assert all(c[k]==0 for k in ("human_claim_support_reviews",
+              "qualified_safety_reviews","independent_QD_approvals"))
+          assert report==module.live_report(),"R75 nondeterministic reviewer census"
+          rows=list(csv.DictReader(io.StringIO(module.csv_review_worklist(report))))
+          assert len(rows)==c["union_action_or_quantity_review_queue"],c
+          print("R75 literal-only reviewer inventory",json.dumps(c,sort_keys=True))
+          print("Qualifier presence/absence and citations NOT medical or source approval.")
+          PY
+      - name: Native source and release-state validation
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready PRIVATE DRAFT build only
+        run: python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Independent mandatory release integrity not bypassed
+        if: always()
+        run: |
+          echo 'RELEASE HOLD: historical seven_cluster_git_parity unresolved.'
+          echo 'No human sources, qualified safety decision, QD, browser or WordPress clearance.'
+          echo 'No merges, public publishing, navigation/CMS writes or source edits.'
