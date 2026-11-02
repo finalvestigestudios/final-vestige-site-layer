@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import argparse
 from collections import defaultdict
-from copy import deepcopy
 import hashlib
 from html import escape
 from html.parser import HTMLParser
@@ -251,8 +250,6 @@ def render(report):
                               '</pre></details>'])
                 counted["queue"] += 1
             parts.append('</section>')
-        need(counted["queue"] >= sum(len(queues[k]) for k in document_keys
-             if k <= key) or True, "unreachable")
         parts.append('</section>')
     need(tuple(counted[k] for k in ("documents","blocks","citations",
          "variants","queue")) == (41,4070,2173,2359,347),
