@@ -164,6 +164,60 @@ class ReadinessTest(TestCase):
             server.server_close()
             worker.join(timeout=2)
 
+    def test_local_session_cookie_handshake_recovers_302_to_200(self):
+        seen = []
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                seen.append(self.headers.get('Cookie', ''))
+                if 'fv_ready=1' not in seen[-1]:
+                    self.send_response(302)
+                    self.send_header('Location', '/')
+                    self.send_header('Set-Cookie', 'fv_ready=1; Path=/; HttpOnly; SameSite=Lax')
+                    self.end_headers()
+                else:
+                    body = b'<html><body>isolated WordPress ready</body></html>'
+                    self.send_response(200)
+                    self.send_header('Content-Length', str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                self.assertIsNone(ci.ready(Alive(), seconds=2))
+            self.assertGreaterEqual(len(seen), 2)
+            self.assertTrue(any('fv_ready=1' in request for request in seen[1:]))
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+    def test_external_redirect_with_cookie_still_fails_closed(self):
+        requests = []
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                requests.append(self.path)
+                self.send_response(302)
+                self.send_header('Location', 'https://finalvestige.com/')
+                self.send_header('Set-Cookie', 'fv_ready=1; Path=/; HttpOnly')
+                self.end_headers()
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                with patch.object(ci.time, 'sleep', lambda _: None):
+                    with self.assertRaisesRegex(RuntimeError, 'REDIRECT_SCHEME_OTHER'):
+                        ci.ready(Alive(), seconds=0.08)
+            self.assertEqual(set(requests), {'/'})
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
     def test_wordpress_install_redirect_is_classified_without_url_disclosure(self):
         class Handler(BaseHTTPRequestHandler):
             def do_GET(self):
