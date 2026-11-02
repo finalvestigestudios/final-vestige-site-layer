@@ -94,10 +94,21 @@ function fv_local_parity_insert_verified($record, $old) {
     // WP may filter/sanitize post content or adjust duplicate slugs silently.
     // Read back the exact WordPress-stored record, not the wp_insert_post return.
     $saved = get_post($id);
-    if (!$saved || $saved->post_type !== $type || $saved->post_name !== $slug
-        || $saved->post_status !== 'publish' || $saved->post_content !== $record['content']
-        || get_post_meta($id, '_fv_ex2_local_parity', true) !== '1') {
-        throw new RuntimeException('REFUSED: local template readback differs: '.$slug);
+    // Report only which local-only invariants failed; never emit HTML, source
+    // bytes, logged-in user records or filesystem paths in CI artifacts.
+    $drift = [];
+    if (!$saved) {
+        $drift[] = 'missing';
+    } else {
+        if ($saved->post_type !== $type) $drift[] = 'type';
+        if ($saved->post_name !== $slug) $drift[] = 'slug';
+        if ($saved->post_status !== 'publish') $drift[] = 'status';
+        if ($saved->post_content !== $record['content']) $drift[] = 'content';
+    }
+    if (get_post_meta($id, '_fv_ex2_local_parity', true) !== '1') $drift[] = 'marker';
+    if ($drift) {
+        throw new RuntimeException('REFUSED: local template readback differs: '.$slug
+            .'; mismatches='.implode(',', $drift));
     }
     $themes = wp_get_object_terms($id, 'wp_theme', ['fields'=>'names']);
     if (is_wp_error($themes) || !is_array($themes) || !in_array('assembler', $themes, true)) {
