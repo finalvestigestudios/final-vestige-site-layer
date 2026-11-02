@@ -88,7 +88,7 @@ class GateTests(unittest.TestCase):
         html=(Path(__file__).resolve().parents[2]/'index.html').read_text()
         case_ids=('apollo','franklin','malbone')
         buttons=re.findall(r'data-fv-case-button="([^"]+)"',html)
-        panels=re.findall(r'<article\\b[^>]*data-fv-case="([^"]+)"[^>]*>',html)
+        panels=re.findall(r'<article\b[^>]*data-fv-case="[^"]+"[^>]*>',html)
         self.assertEqual(buttons,list(case_ids))
         self.assertEqual(len(panels),3)
         self.assertEqual([re.search(r'data-fv-case="([^"]+)"',p).group(1)
