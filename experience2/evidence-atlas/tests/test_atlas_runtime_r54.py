@@ -12,9 +12,9 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PROBE = ROOT / 'tests/php_atlas_runtime_r54_probe.php'
 PINS = {
-    'final-vestige-ex2-evidence-atlas.php': '7d91dcacc9d921c032923826dfefca731dac1d64',
+    'final-vestige-ex2-evidence-atlas.php': '1de50c0a55551d2946ca60ac48e6ab4e406202d5',
     'atlas.css': '079f2ef9785184a098ec7686f5018a474181031b',
-    'atlas.js': '596746d3a7f2194d1b179fcb339df460daffb031',
+    'atlas.js': '7bfc8d7fe216a7b786c6dc33ffd7841abcf92914',
 }
 TEMPLATE_SHA = '51de8c18f7b58be0a02d1a45cbcb2794dd822cc768d31fc6a05c6d4022e14de4'
 
@@ -31,7 +31,7 @@ class AtlasRuntimeIntegrity(unittest.TestCase):
         self.assertIn('function fv_ex2_apollo_verified_atlas(): ?string', src)
         self.assertIn('fv_ex2_apollo_verified_atlas() === null', src)
         self.assertIn('hash_file(\'sha256\', $template)', src)
-        self.assertIn('0.0.57-staging', src)
+        self.assertIn('0.0.58-staging', src)
         for forbidden in ('wp_insert_post(', 'update_option(', 'wp_update_post(', 'wp_remote_get(', 'file_get_contents(\'http'):
             self.assertNotIn(forbidden, src)
         self.assertIn('function fv_ex2_apollo_suite_fallback()', src)
