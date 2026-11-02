@@ -18,7 +18,7 @@ REQUIRED = frozenset((
     "test_note_parent_symlink_is_rejected_before_reading",
     "test_hardlinked_note_is_not_accepted",
     "test_replaced_note_before_open_is_rejected_even_if_bytes_identical",
-    "test_replaced_note_after_read_is_rejected_even_if_bytes_identical",
+    "test_changed_note_after_open_is_rejected_on_both_platforms",
     "test_nonregular_file_is_rejected_without_blocking",
     "test_redacted_cli_error_contains_no_private_observation_or_path",
     "test_no_assertions_in_observation_gate_or_writer",
