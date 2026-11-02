@@ -16,6 +16,8 @@ import sys
 import tempfile
 import time
 import urllib.request
+import urllib.parse
+import urllib.error
 
 BASE = 'http://127.0.0.1:9400/'
 PAGE = BASE + '?pagename=fv-ex2-playground-review'
@@ -182,9 +184,31 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                     return
                 record('HTTP_' + str(response.status) + '_EMPTY_OR_UNREADY')
         except urllib.error.HTTPError as exc:
-            # A local 3xx or 5xx is a responding server, NOT an unopened port.
-            # Never follow even an attacker-supplied off-host Location header.
-            record('HTTP_' + str(exc.code))
+            # A canonical local login redirect can be a healthy WordPress
+            # response. Never follow arbitrary redirects: probe ONLY a fixed
+            # same-origin login endpoint, then let Chromium prove page render.
+            location = exc.headers.get('Location', '')
+            if exc.code in (301, 302, 303, 307, 308):
+                target = urllib.parse.urljoin(BASE, location)
+                base_url = urllib.parse.urlsplit(BASE)
+                dest = urllib.parse.urlsplit(target)
+                if (dest.scheme == 'http' and dest.hostname == '127.0.0.1'
+                        and dest.port == base_url.port
+                        and dest.path in ('/wp-login.php', '/wp-admin/')
+                        and not dest.username and not dest.password):
+                    try:
+                        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
+                        with opener.open(login_url, timeout=3) as login:
+                            chunk = login.read(4096).lower()
+                            if login.status == 200 and b'wp-login' in chunk:
+                                exc.close()
+                                return  # Login works; full browser gate still mandatory.
+                    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
+                        record('LOCAL_LOGIN_NOT_READY')
+                else:
+                    record('UNEXPECTED_HTTP_REDIRECT')
+            else:
+                record('HTTP_' + str(exc.code))
             exc.close()
         except (OSError, urllib.error.URLError):
             record('NO_HTTP_RESPONSE')
