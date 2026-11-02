@@ -7,6 +7,7 @@ Produces an authentic local WordPress render gate only when CLI and axe are pres
 from __future__ import annotations
 import argparse, hashlib, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.request, zipfile
 from pathlib import Path, PurePosixPath
+from wp_readiness_r69 import wait_for_wordpress, ReadinessFailure, diagnose_private_cli_log
 
 BASE='http://127.0.0.1:9438/'
 SLUG='fv-apollo-review-private'
@@ -122,21 +123,29 @@ def accept(stage,axe,out):
       'release':'STAGING_HOLD','public_wordpress_writes':False,
       'wp_com_host_parity':False,'manual_screen_reader':False,'field_cwv':False,
       'image_rights_cleared':False,'cases':[],'axe':[],'lab':[],'screenshots':{}}
+    # Safe artifact preflight: no URL, storage state, cookie, CLI output or nonce.
+    (out/'R69_PREPARED_GATE.json').write_text(json.dumps({
+      'schema':'fv.apollo.r69.stage-gate.v1','release':'STAGING_HOLD',
+      'prepared_source_verified':True,'real_wordpress_accepted':False,
+      'axe_accepted':False,'public_wordpress_writes':False
+    },indent=2,sort_keys=True)+'\n')
     with tempfile.TemporaryDirectory(prefix='fv-apollo-wp-private-') as secret:
       child=None
       try:
         with (Path(secret)/'private-cli.log').open('w') as logfile:
           child=subprocess.Popen(argv,stdout=logfile,stderr=subprocess.STDOUT,
              start_new_session=True,env={**os.environ,'CI':'true','npm_config_audit':'false'})
-          for i in range(150):
-            if child.poll() is not None:raise RuntimeError('PLAYGROUND_PROCESS_EXITED')
-            try:
-              with urllib.request.urlopen(BASE+'wp-json/',timeout=2) as response:
-                body=response.read(8192)
-              if b'"namespaces"' in body and b'"routes"' in body:break
-            except Exception:pass
-            time.sleep(1)
-          else:raise RuntimeError('WORDPRESS_REST_NOT_READY')
+          # WordPress Playground may redirect / to a Blueprint landing page;
+          # readiness must honor that local cookie handshake without ever
+          # following an arbitrary Location header or external URL.
+          endpoint, observations = wait_for_wordpress(child, seconds=180)
+          (out/'R69_LOCAL_WORDPRESS_READINESS.json').write_text(json.dumps({
+            'schema':'fv.apollo.r69.readiness.v1','release':'STAGING_HOLD',
+            'positive_fixed_endpoint':endpoint,
+            'allowlisted_probe_counts':observations,
+            'wordpress_identified_not_browser_accepted':True,
+            'off_origin_redirects_never_followed':True
+          },indent=2,sort_keys=True)+'\n')
           with sync_playwright() as pw:
             browser=pw.chromium.launch(headless=True,args=['--no-sandbox'])
             auth=browser.new_context()
@@ -212,7 +221,29 @@ def accept(stage,axe,out):
                 context.close()
             browser.close()
         (out/'R68_AUTHENTIC_WP_RECEIPT.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
+        (out/'R69_REAL_WP_ADMISSION.json').write_text(json.dumps({
+          'schema':'fv.apollo.r69.admission.v1','release':'STAGING_HOLD',
+          'all_actual_wordpress_cases_passed':len(report['cases'])==14,
+          'axe_passed_at_390_and_1440':len(report['axe'])==2,
+          'actual_wordpress_browser_evidence':True,
+          'local_lab_not_hosted_cwv':True,
+          'public_wordpress_writes':False
+        },indent=2,sort_keys=True)+'\n')
         return report
+      except Exception as exc:
+        # Preserve an actionable allowlisted failure receipt. The private
+        # CLI log is destroyed on exit; no raw log, URL or auth may escape.
+        phase = getattr(exc,'reason',type(exc).__name__)
+        safe = phase if phase in ('PLAYGROUND_EXITED','WORDPRESS_LOCAL_READINESS_TIMEOUT') else type(exc).__name__
+        (out/'R69_FAIL_CLOSED_RECEIPT.json').write_text(json.dumps({
+          'schema':'fv.apollo.r69.failure.v1','release':'STAGING_HOLD',
+          'real_wordpress_accepted':False,'axe_accepted':False,
+          'failure_category':safe,
+          'private_cli_log_class':diagnose_private_cli_log(Path(secret)/'private-cli.log'),
+          'allowlisted_probe_counts':getattr(exc,'states',{}),
+          'public_wordpress_writes':False,'raw_log_or_auth_material_uploaded':False
+        },indent=2,sort_keys=True)+'\n')
+        raise
       finally:
         if child is not None and child.poll() is None:
           try:os.killpg(child.pid,signal.SIGTERM)
@@ -236,5 +267,5 @@ if __name__=='__main__':
     try:main()
     except Exception as exc:
         # Never include private CLI output or auth material in CI logs.
-        print('APOLLO_R68_HOLD '+type(exc).__name__,file=sys.stderr)
+        print('APOLLO_R69_HOLD '+type(exc).__name__,file=sys.stderr)
         sys.exit(2)
