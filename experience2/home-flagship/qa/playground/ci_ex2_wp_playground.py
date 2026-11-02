@@ -195,6 +195,25 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
         except (ValueError, TypeError):
             return 'MALFORMED'
 
+    def probe_login() -> bool:
+        # Constant localhost destination; never follow root Location.
+        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
+        try:
+            with opener.open(login_url, timeout=3) as login:
+                chunk = login.read(4096).lower()
+                if login.status == 200 and b'wp-login' in chunk:
+                    return True
+                record('LOCAL_LOGIN_200_MARKER_ABSENT' if login.status == 200
+                       else 'LOCAL_LOGIN_OTHER_STATUS')
+        except urllib.error.HTTPError as err:
+            code = err.code
+            err.close()
+            group = '3XX' if 300 <= code < 400 else '4XX' if 400 <= code < 500 else '5XX' if 500 <= code < 600 else 'OTHER'
+            record('LOCAL_LOGIN_HTTP_' + group)
+        except (urllib.error.URLError, OSError):
+            record('LOCAL_LOGIN_TRANSPORT_ERROR')
+        return False
+
     stop = time.monotonic() + seconds
     while time.monotonic() < stop:
         if process.poll() is not None:
@@ -213,34 +232,12 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                 target = urllib.parse.urljoin(BASE, location)
                 base_url = urllib.parse.urlsplit(BASE)
                 dest = urllib.parse.urlsplit(target)
-                if (dest.scheme == 'http' and dest.hostname == '127.0.0.1'
-                        and dest.port == base_url.port
-                        and dest.path in ('/wp-login.php', '/wp-admin/')
-                        and not dest.username and not dest.password):
-                    try:
-                        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
-                        with opener.open(login_url, timeout=3) as login:
-                            chunk = login.read(4096).lower()
-                            if login.status == 200 and b'wp-login' in chunk:
-                                exc.close()
-                                return  # Login works; full browser gate still mandatory.
-                    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
-                        record('LOCAL_LOGIN_NOT_READY')
-                else:
-                    # Playground may redirect / to its configured private
-                    # landingPage. That route is not a server-health oracle.
-                    # Probe only the fixed, same-origin WordPress login path;
-                    # never follow or fetch the rejected Location itself.
-                    try:
-                        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
-                        with opener.open(login_url, timeout=3) as login:
-                            chunk = login.read(4096).lower()
-                            if login.status == 200 and b'wp-login' in chunk:
-                                exc.close()
-                                return  # Browser/page admission remains required.
-                        record('LOCAL_LOGIN_NOT_READY')
-                    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
-                        record('REDIRECT_' + redirect_reason(location))
+                # Record root redirect class without disclosing the target.
+                # Actual acceptance requires fixed-path local login evidence.
+                if probe_login():
+                    exc.close()
+                    return
+                record('ROOT_REDIRECT_' + redirect_reason(location))
             else:
                 record('HTTP_' + str(exc.code))
             exc.close()
