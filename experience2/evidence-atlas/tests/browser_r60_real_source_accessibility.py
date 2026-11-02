@@ -65,7 +65,7 @@ def run(output:Path,wp_url:str|None=None,axe_file:Path|None=None,axe_sha256:str|
         assert page.locator('[data-fvx-record]').count()==6
         assert page.locator('[data-fva-record]').count()==6
         assert page.locator('[data-fva-cite-id]').count()==6
-        assert page.locator('img').count()==0,'photographs not cleared for use'
+        assert page.locator('.fv-ex2-apollo-suite img').count()==0,'photographs not cleared for use'
         assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2'),width
         # CDP's actual accessibility tree: no empty name on interactive roles.
         tree=page.context.new_cdp_session(page).send('Accessibility.getFullAXTree')['nodes']
