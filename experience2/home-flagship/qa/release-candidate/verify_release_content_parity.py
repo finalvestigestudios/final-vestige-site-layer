@@ -17,14 +17,14 @@ HOME = Path("experience2/home-flagship")
 SOURCE = HOME / "index.html"
 RELEASE_FIXTURE = HOME / "qa/release-candidate/fixtures/proposed-production-block-pr604.html"
 PRODUCTION_RELEASE_HEAD = "5f87f1b0a48ed2f17ecca49a60c44a482ca530de"
-PRODUCTION_SOURCE_BLOB = "4202728b4bbceafbf89dd1d53fd68ceebee1b5fa"
-PRODUCTION_BLOCK_BLOB = "e0a80528cf9069718855ab580bfe294b7021998b"
+PRODUCTION_SOURCE_BLOB = "11cc5471f414efe5422995cc0c81b9709bb3fdd3"
+PRODUCTION_BLOCK_BLOB = "a2ba62602ddfebdc3b1a04f5e40753075bb08511"
 OPENING = '<section class="fv-hf__opening"'
 CLOSING = "</section>"
 RIGHTS = {
     "apollo": "NASA does not endorse Final Vestige or any product or service.",
     "franklin": "The displayed scan is the Wikimedia Commons file marked public domain",
-    "malbone": "NYPL believes this item is in the public domain under United States law.",
+    "malbone": "From The New York Public Library. Reuse rights for this exact digital capture are pending verification; a 1903 map date alone does not establish image-use clearance.",
 }
 MIND_NOTICE = "this section makes no health, performance or product claims"
 
@@ -56,6 +56,12 @@ def compare_interiors(source: str, production: str) -> dict:
     for case, text in RIGHTS.items():
         if a.count(text) != 1:
             raise ValueError("RELEASE_PARITY_RIGHTS_" + case.upper())
+    # Copyright statements are capture-specific. The earlier version
+    # asserted an unverified item-level NYPL rights conclusion.
+    if "NYPL believes this item is in the public domain under United States law." in a:
+        raise ValueError("RELEASE_PARITY_UNVERIFIED_NYPL_RIGHTS_CLAIM")
+    if a.count("https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0") != 1:
+        raise ValueError("RELEASE_PARITY_NYPL_ORIGINAL_LINK")
     if a.count(MIND_NOTICE) != 1:
         raise ValueError("RELEASE_PARITY_MIND_DISCLOSURE")
     if "DESIGN CANDIDATE" in production or "DESIGN CANDIDATE" in a:
@@ -66,7 +72,8 @@ def compare_interiors(source: str, production: str) -> dict:
         raise ValueError("RELEASE_PARITY_STUDY_WRAPPER")
     return {
         "status": "CHAPTER_BYTES_AND_EDITORIAL_NOTICES_IDENTICAL",
-        "source_head": PRODUCTION_RELEASE_HEAD,
+        "historical_proposal_head": PRODUCTION_RELEASE_HEAD,
+        "nypl_capture_rights": "UNVERIFIED_HOLD",
         "chapter_sha256": hashlib.sha256(a.encode("utf-8")).hexdigest(),
         "chapter_characters": len(a),
         "attribution_notices": sorted(RIGHTS),
