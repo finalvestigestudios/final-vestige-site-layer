@@ -1,0 +1,142 @@
+name: Preparedness R63 private source and native diagnostics (NOT release)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r62-claim-context-custody-hold-20261101
+    paths:
+      - preparedness/tools/r63_contributor_source_impact_crosswalk.py
+      - preparedness/tests/test_r63_contributor_source_impact_crosswalk.py
+      - preparedness/docs/R63_SOURCE_IMPACT_RECONCILIATION_HOLD.md
+      - .github/workflows/preparedness-r63-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r63-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  synthetic-source-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Exact test-merge checkout; no saved credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse moved parent, widened scope, or review-state escape
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = 'd7944cec67c22952e7e74d4981e7e7adad28ea07'
+          test "$BASE_REF" = 'review/preparedness-r62-claim-context-custody-hold-20261101'
+          test "$HEAD_REF" = 'review/preparedness-r63-source-impact-crosswalk-hold-20261101'
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/preparedness-r63-paths.bin
+          python -I - <<'PY'
+          from pathlib import Path
+          changed = {x.decode('utf-8') for x in Path('/tmp/preparedness-r63-paths.bin').read_bytes().split(b'\0') if x}
+          allowed = {
+              'preparedness/tools/r63_contributor_source_impact_crosswalk.py',
+              'preparedness/tests/test_r63_contributor_source_impact_crosswalk.py',
+              'preparedness/docs/R63_SOURCE_IMPACT_RECONCILIATION_HOLD.md',
+              '.github/workflows/preparedness-r63-isolated-tests.yml',
+          }
+          if changed != allowed:
+              raise SystemExit('R63 SCOPE HOLD: unexpected or missing file changes: ' +
+                               repr(sorted(changed ^ allowed)))
+          print('Exact R63 source-impact test scope preserved: four files.')
+          PY
+      - name: Compile R63 only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          from pathlib import Path
+          for name in ('preparedness/tools/r63_contributor_source_impact_crosswalk.py',
+                       'preparedness/tests/test_r63_contributor_source_impact_crosswalk.py'):
+              compile(Path(name).read_text(encoding='utf-8'), name, 'exec')
+          print('R63 files compile without writing bytecode.')
+          PY
+      - name: Execute R60, R61, R62 and R63 repository-native synthetic/adversarial suites
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s preparedness/tests -p 'test_r60_contributor_provenance_drift_docket.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r61_contributor_version_source_lineage.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r62_contributor_claim_context_docket.py' -v
+          python -I -m unittest discover -s preparedness/tests -p 'test_r63_contributor_source_impact_crosswalk.py' -v
+      - name: Real seven-contributor read-only source custody (NOT publication approval)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          expected = {
+              'claude/prep-start-bbfeb8': '2122d856fce9f64887c16df3d52e64be9f59a55b',
+              'claude/prep-shelter-5e1e0e': '5daeaf2dd5ab71806a6b73c91edfb1d8df5da976',
+              'claude/prep-food-ccdc55': 'f911ff7a655de8d81535ea86ec3d65a49ee76648',
+              'claude/prep-health-837444': 'd5ef5bafd68361434dd1cc9209915b8e8a4eaf17',
+              'claude/prep-hist-food-b81f19': '67e116e536c7410bed30f8f3b1bb8c166f3c223d',
+              'claude/prep-hist-home-0e0e38': '7504a5f099594d635e3dd7332a33a2e1346c43a2',
+              'claude/prep-hist-field-9db767': '4e5caf812727953aa45e3bda2d382f2c67b6a09c',
+          }
+          for branch, sha in expected.items():
+              actual = subprocess.check_output(
+                  ['git', 'rev-parse', '--verify',
+                   'refs/remotes/origin/' + branch + '^{commit}'],
+                  text=True).strip()
+              if actual != sha:
+                  raise SystemExit('R63 original contributor Git head moved: ' + branch +
+                                   ' expected ' + sha + ' observed ' + actual)
+          print('R63 real original contributor refs: exact 7/7 approved-for-investigation SHAs pinned (NOT QD-approved).')
+          PY
+          python -I preparedness/tools/r63_contributor_source_impact_crosswalk.py --summary > /tmp/preparedness-r63-git-summary.json
+          python -I - <<'PY'
+          import json
+          from pathlib import Path
+          doc = json.loads(Path('/tmp/preparedness-r63-git-summary.json').read_text(encoding='utf-8'))
+          assert doc['release_state'] == 'HOLD'
+          c = doc['counts']
+          assert c['work_orders'] > 0
+          assert c['original_source_records'] > 0
+          assert c['observed_source_records_UNVERIFIED'] > 0
+          print('Real Git-object provenance and source-impact counts (NOT human verified):')
+          print(json.dumps(c, sort_keys=True))
+          PY
+      - name: Native integrated article/source validator (diagnostic only, NEVER publish)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready draft build (diagnostic only, NO CMS)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/build.py
+      - name: Entire native Preparedness Python unittest suite (not independent QD)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s preparedness/tests -v
+      - name: Explicit HOLD for separate full-integrity and all human checks
+        if: always()
+        run: |
+          echo 'R63 separate diagnostics: synthetic plus real pinned Git-object source custody, offline native validation/build/Python tests.'
+          echo 'Mandatory 13-stage full private integrity still fails closed at seven_cluster_git_parity; 206 human link checks and qualified review,'
+          echo 'WordPress browser/accessibility QA and independent QD remain NOT VERIFIED.'
+          echo 'No source rebasing, CMS writes, navigation edits, merges or public publishing.'
