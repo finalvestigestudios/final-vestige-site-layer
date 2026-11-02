@@ -18,7 +18,7 @@ import native_scale_probe_r107 as probe
 
 def observed(app_id="ledger", scale=2.0):
     browse_fields = probe.FREE_INPUTS[app_id] + 1
-    editable_fields = browse_fields + (2 if app_id == "ledger" else 1 if app_id == "invoices" else 0)
+    editable_fields = browse_fields + (4 if app_id == "ledger" else 1 if app_id == "invoices" else 0)
     return dict(scale=scale, entries=editable_fields, browse=browse_fields, generate=1,
                 scrollable=True, focus_revealed=True, labels_wrapped=True,
                 controls_nonfocus=True, system_background=True)
