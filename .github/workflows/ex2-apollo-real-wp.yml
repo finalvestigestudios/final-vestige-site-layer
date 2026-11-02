@@ -28,6 +28,8 @@ jobs:
         run: |
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
+      - name: Install Playwright Python API required by legacy source tests
+        run: python -m pip install --disable-pip-version-check playwright==1.55.0
       - name: Source syntax, SHA-driven regressions and hostile staging fixtures
         run: |
           python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py
