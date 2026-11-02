@@ -377,6 +377,20 @@
       "human_link_check": false,
       "supports": "Handwashing with soap is one of the best ways to stay healthy and prevents the spread of respiratory and diarrheal infections; the five steps are wet, lather, scrub for at least 20 seconds, rinse, dry; if soap and water are not available use a hand sanitizer with at least 60% alcohol.",
       "notes": "Visible Updated date (January 11, 2024) precedes the Published date (April 30, 2024); both recorded as shown. Reading depth: PARTIAL: read through a targeted extraction (key points and five steps)."
+    },
+    {
+      "id": "hist-home-wellcome-chadwick-1842",
+      "title": "Report to Her Majesty's Principal Secretary of State for the Home Department from the Poor Law Commissioners, on an Inquiry into the sanitary condition of the labouring population of Great Britain (Edwin Chadwick, 1842), digitized copy",
+      "publisher": "Wellcome Collection, London (copy provided by King's College London; Medical Heritage Library)",
+      "kind": "primary-digitized",
+      "url": "https://wellcomecollection.org/works/vgy8svyj",
+      "published": "1842",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "Catalogue record of a digitized copy of Chadwick's 1842 report: London, Her Majesty's Stationery Office, 1842; xxx, 457 pages with plates; presented to both Houses of Parliament by command of Her Majesty, July 1842 (title page); 546 images online; Public Domain Mark; Chadwick was Secretary to the Poor Law Board (catalogue note).",
+      "notes": "Reading depth: FULL for the catalogue record only. The report itself (546 images) was not read. The first attempt on 2026-10-30 returned HTTP 429; this ordinary retry on 2026-11-01 succeeded. No image is used in the archive."
     }
   ]
 }

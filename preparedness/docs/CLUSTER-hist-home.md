@@ -91,3 +91,8 @@ Commands run from the repo root, with actual results:
 * The Wellcome Collection records for Chadwick's report and Blane's *Observations* (HTTP 429; not cited) and the NCBI Bookshelf historical note (blocked; not cited).
 
 **All 27 sources in `hist-home.json` remain `human_link_check: false`.** No page has had a human click-through.
+
+## Update 2026-11-01
+
+* The Wellcome Collection record for Chadwick's 1842 report (works/vgy8svyj) loaded on an ordinary retry (the earlier HTTP 429 was a rate limit). It is now source `hist-home-wellcome-chadwick-1842` (`primary-digitized`, catalogue record only; the 546-image report was not read) and is cited once in `sanitation-before-germ-theory`. The Blane *Observations* record (works/unn6mqpb) was not retried and remains uncited. The source count is now 28; all remain `human_link_check: false`.
+* Decision recorded: NPS and Monticello pages stay `museum` (chosen in chat, 2026-11-01).
