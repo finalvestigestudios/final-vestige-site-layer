@@ -82,6 +82,16 @@ def check_private_render_url(src: str, shortcode_page_url: str) -> str:
     return src
 
 
+def sanitized_page_error(err) -> str:
+    """Keep only a bounded JS exception CLASS; no private AJAX URL or nonce."""
+    message=str(err)
+    for kind in ('ReferenceError','TypeError','SyntaxError','SecurityError',
+                 'NetworkError','RangeError'):
+        if kind in message:
+            return 'PAGE_JS_' + kind.upper()
+    return 'PAGE_JS_UNCLASSIFIED_ERROR'
+
+
 def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
     if not re.fullmatch(r'[0-9a-f]{40}',expected_sha):
         raise ValueError('expected_sha must be a 40-character lowercase Git commit SHA')
@@ -291,7 +301,7 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     render_url=check_private_render_url(preview.get_attribute('src'),url)
                     visual=context.new_page()
                     visual_errors=[];image_responses=[]
-                    visual.on('pageerror',lambda err:visual_errors.append(str(err)[:250]))
+                    visual.on('pageerror',lambda err:visual_errors.append(sanitized_page_error(err)))
                     visual.on('response',lambda response:image_responses.append(response)
                               if response.request.resource_type=='image' else None)
                     actual_response=visual.goto(render_url,wait_until='domcontentloaded',timeout=30000)
@@ -319,7 +329,7 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     record['errors']=visual_errors
                 except Exception as exc:
                     record['checks']['staging_page_rendered']=False
-                    record['errors'].append(type(exc).__name__+': '+str(exc)[:220])
+                    record['errors'].append(type(exc).__name__+': PRIVATE_WORDPRESS_BROWSER_GATE_BLOCKED')
                 results.append(record)
                 failures += [f'{width}:{k}' for k,v in record['checks'].items() if not v]
                 context.close()
@@ -353,7 +363,7 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                                                    for id in ('apollo','franklin','malbone'))
                 }
             except Exception as exc:
-                nojs['checks']['no_js_available']=False;nojs['errors'].append(type(exc).__name__+': '+str(exc)[:220])
+                nojs['checks']['no_js_available']=False;nojs['errors'].append(type(exc).__name__+': PRIVATE_WORDPRESS_NO_JS_GATE_BLOCKED')
             failures += ['nojs:'+k for k,v in nojs['checks'].items() if not v]
             cx.close()
         finally: browser.close()
