@@ -330,7 +330,18 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
         "left_match_column","right_match_column",
         "left_source_sha256","right_source_sha256","input_identity_review"),rows)]
 
-def invoice_twins(source,folder):
+def invoice_window_days(text):
+    """Parse user-entered day limits without coercion or untrusted error echoes."""
+    if (type(text) is not str
+            or re.fullmatch(r"(?:0|[1-9][0-9]{0,2})", text, re.ASCII) is None):
+        raise ValueError("Invoice near-match days must be a whole number from 0 to 365")
+    days = int(text)
+    if days > 365:
+        raise ValueError("Invoice near-match days must be a whole number from 0 to 365")
+    return days
+
+
+def invoice_twins(source,folder, *, window_days=7):
     """Produce a bounded, provenance-rich review report without internet access.
 
     Date-window scanning is chronological rather than all-history quadratic.
@@ -348,7 +359,7 @@ def invoice_twins(source,folder):
         if not r["v"] or not r["inv"]:
             raise ValueError("Blank vendor/invoice at row "+r["row"])
     rows=[]
-    for a,b,status,reason in candidate_pairs(records):
+    for a,b,status,reason in candidate_pairs(records, window_days=window_days):
         rows.append({
             "row_a":a["row"],"row_b":b["row"],"status":status,
             "vendor":a["vendor"],"invoice_a":a["invoice_number"],
@@ -356,13 +367,14 @@ def invoice_twins(source,folder):
             "amount_a":dollars(a["amt"]),"amount_b":dollars(b["amt"]),
             "reason":reason,"vendor_b":b["vendor"],
             "date_a":a["dt"].isoformat(),"date_b":b["dt"].isoformat(),
-            "review_flags":invoice_review_flags(a,b,status)
+            "review_flags":invoice_review_flags(a,b,status,window_days=window_days),
+            "review_window_days":str(window_days)
         })
     rows=attach_invoice_provenance(rows,source_sha256=source_sha256)
     return [save(folder,"invoice-twins",(
         "row_a","row_b","status","vendor","invoice_a","invoice_b",
         "amount_a","amount_b","reason","vendor_b","date_a","date_b","review_flags",
-        "source_sha256","candidate_ref"
+        "review_window_days","source_sha256","candidate_ref"
     ),rows)]
 
 def spend_map(source,folder):

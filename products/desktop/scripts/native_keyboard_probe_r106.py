@@ -23,6 +23,7 @@ FREE = {
     "policy": (2, "Final Vestige Labs — Policy Delta Desk"),
 }
 LEDGER_KEY_LABELS = ("Left match-key CSV header (optional)", "Right match-key CSV header (optional)")
+INVOICE_WINDOW_LABEL = "Near-match days (0-365)"
 ERROR = "BLOCKED: native Labs keyboard/focus contract could not be verified"
 
 
@@ -30,14 +31,19 @@ class KeyboardBlocked(ValueError):
     """Fail closed without displaying private widget state or exception details."""
 
 
-def _expected_order(inputs: int, *, ledger_keys: bool = False) -> tuple[str, ...]:
-    if type(inputs) is not int or not 1 <= inputs <= 3 or type(ledger_keys) is not bool:
+def _expected_order(inputs: int, *, ledger_keys: bool = False,
+                    invoice_window: bool = False) -> tuple[str, ...]:
+    if (type(inputs) is not int or not 1 <= inputs <= 3
+            or type(ledger_keys) is not bool or type(invoice_window) is not bool
+            or (ledger_keys and invoice_window)):
         raise KeyboardBlocked("Invalid source-owned input count")
     result = []
     for i in range(1, inputs + 1):
         result.extend((f"input_{i}", f"browse_{i}"))
     if ledger_keys:
         result.extend(("ledger_left_key", "ledger_right_key"))
+    if invoice_window:
+        result.append("invoice_window")
     result.extend(("output", "browse_output", "generate"))
     return tuple(result)
 
@@ -66,9 +72,10 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
     if app_id not in FREE or type(entry_count) is not int:
         raise KeyboardBlocked("Unknown or premium product")
     inputs, expected_title = FREE[app_id]
-    if window_title != expected_title or entry_count != inputs + 1 + (2 if app_id == "ledger" else 0):
+    if window_title != expected_title or entry_count != inputs + 1 + (2 if app_id == "ledger" else 1 if app_id == "invoices" else 0):
         raise KeyboardBlocked("Window or editable-control contract changed")
-    if type(traversal) is not tuple or traversal != _expected_order(inputs, ledger_keys=(app_id == "ledger")):
+    if type(traversal) is not tuple or traversal != _expected_order(inputs, ledger_keys=(app_id == "ledger"),
+                                         invoice_window=(app_id == "invoices")):
         raise KeyboardBlocked("Incomplete or reordered Tab sequence")
     if cycle_closed is not True or first_focus is not True:
         raise KeyboardBlocked("Keyboard cycle or first focus unavailable")
@@ -84,8 +91,12 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
     expected_labels = (*source_input_labels, "Output folder")
     if app_id == "ledger":
         expected_labels += LEDGER_KEY_LABELS
+    if app_id == "invoices":
+        expected_labels += (INVOICE_WINDOW_LABEL,)
     if any(label not in static_labels for label in expected_labels):
         raise KeyboardBlocked("Input/output/ledger-key labels missing")
+    if app_id != "invoices" and INVOICE_WINDOW_LABEL in static_labels:
+        raise KeyboardBlocked("Invoice-only control exposed in another app")
     if app_id != "ledger" and any(label in static_labels for label in LEDGER_KEY_LABELS):
         raise KeyboardBlocked("Ledger-only controls exposed in another app")
     if not any("Keyboard:" in label and "Alt+G" in label and
@@ -160,18 +171,21 @@ def _scan_one(app_id: str) -> None:
         generate = [widget for widget in buttons
                     if widget.cget("text") == "Generate review report"]
         inputs = FREE[app_id][0]
-        expected_entries = inputs + 1 + (2 if app_id == "ledger" else 0)
+        expected_entries = inputs + 1 + (2 if app_id == "ledger" else 1 if app_id == "invoices" else 0)
         if len(entries) != expected_entries or len(browses) != inputs + 1 or len(generate) != 1:
             raise KeyboardBlocked("Interactive control inventory changed")
         if any(not widget.winfo_ismapped() for widget in (*entries, *browses, *generate)):
             raise KeyboardBlocked("Required control not mapped")
 
-        expected = _expected_order(inputs, ledger_keys=(app_id == "ledger"))
+        expected = _expected_order(inputs, ledger_keys=(app_id == "ledger"),
+                                   invoice_window=(app_id == "invoices"))
         canonical_widgets = []
         for i in range(inputs):
             canonical_widgets.extend((entries[i], browses[i]))
         if app_id == "ledger":
             canonical_widgets.extend(entries[inputs:inputs + 2])
+        if app_id == "invoices":
+            canonical_widgets.append(entries[inputs])
         canonical_widgets.extend((entries[-1], browses[-1], generate[0]))
         names_by_widget = dict(zip(canonical_widgets, expected))
         current = entries[0]

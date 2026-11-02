@@ -134,7 +134,9 @@ class LedgerNativeAccessibilityR132(unittest.TestCase):
             for factor in scale.SCALES:
                 with self.subTest(app_id=app_id, factor=factor):
                     sample = scaled_ledger(factor)
-                    sample["entries"] = required + 1
+                    # R134 adds a keyboard-focusable review-window entry to
+                    # Invoice Twin only; do not relax any native scale gate.
+                    sample["entries"] = required + 1 + (1 if app_id == "invoices" else 0)
                     sample["browse"] = required + 1
                     scale.verify_snapshot(app_id, **sample)
 
