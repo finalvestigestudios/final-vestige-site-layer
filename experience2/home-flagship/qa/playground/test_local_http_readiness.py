@@ -73,7 +73,7 @@ class ReadinessTest(TestCase):
     def test_redirect_is_not_followed_and_is_reported(self):
         # If the no-redirect boundary regresses the destination is loopback,
         # not an external website or any production service.
-        with self.assertRaisesRegex(RuntimeError, r"probe_states=REDIRECT_PORT_MISMATCH:[1-9]"):
+        with self.assertRaisesRegex(RuntimeError, r"probe_states=ROOT_REDIRECT_PORT_MISMATCH:[1-9]"):
             self.probe(302, body=b"", redirect="http://127.0.0.1:1/never-follow")
 
     def test_private_preview_redirect_uses_fixed_local_login_probe(self):
@@ -105,16 +105,21 @@ class ReadinessTest(TestCase):
             worker.join(timeout=2)
 
     def test_external_redirect_still_fails_closed(self):
-        with self.assertRaisesRegex(RuntimeError, 'REDIRECT_SCHEME_OTHER'):
+        with self.assertRaisesRegex(RuntimeError, 'ROOT_REDIRECT_SCHEME_OTHER'):
             self.probe(302, body=b'', redirect='https://finalvestige.com/wp-login.php')
 
     def test_unexpected_path_is_sanitized_class_only(self):
-        with self.assertRaisesRegex(RuntimeError, 'REDIRECT_PATH_NOT_ALLOWLISTED'):
+        with self.assertRaisesRegex(RuntimeError, 'ROOT_REDIRECT_PATH_NOT_ALLOWLISTED'):
             self.probe(302, body=b'', redirect='/private-secret?token=hidden')
 
     def test_missing_location_is_classified(self):
-        with self.assertRaisesRegex(RuntimeError, 'REDIRECT_LOCATION_MISSING'):
+        with self.assertRaisesRegex(RuntimeError, 'ROOT_REDIRECT_LOCATION_MISSING'):
             self.probe(302, body=b'')
+
+    def test_redirect_login_probe_does_not_leak_query_string(self):
+        with self.assertRaises(RuntimeError) as found:
+            self.probe(302, body=b'', redirect='/private?token=very-secret')
+        self.assertNotIn('very-secret', str(found.exception))
 
     def test_empty_200_is_not_a_false_acceptance(self):
         with self.assertRaisesRegex(RuntimeError, r"probe_states=HTTP_200_EMPTY_OR_UNREADY:[1-9]"):
