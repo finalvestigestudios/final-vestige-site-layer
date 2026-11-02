@@ -1,0 +1,41 @@
+{
+  "schema": "fv-dispatch-r76-sitewide",
+  "periods": [
+    {
+      "start": "2026-10-19",
+      "end": "2026-10-25",
+      "complete": true,
+      "views": 287,
+      "visitors": 18
+    },
+    {
+      "start": "2026-10-26",
+      "end": "2026-11-01",
+      "complete": true,
+      "views": 795,
+      "visitors": 17
+    },
+    {
+      "start": "2026-11-02",
+      "end": "2026-11-02",
+      "complete": false,
+      "views": 32,
+      "visitors": 6
+    }
+  ],
+  "newsletter": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "eligible": null,
+    "recent_sends": 0,
+    "auto_send": false,
+    "format": "excerpt",
+    "welcome_received": false
+  },
+  "merchants": {
+    "03": false,
+    "05": false
+  }
+}
