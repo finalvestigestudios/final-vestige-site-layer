@@ -104,6 +104,97 @@ class ReadinessTest(TestCase):
             server.server_close()
             worker.join(timeout=2)
 
+    def test_blueprint_landing_redirect_with_live_rest_is_ready(self):
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                if self.path == '/':
+                    self.send_response(302)
+                    self.send_header('Location', '/?pagename=fv-ex2-playground-review')
+                    self.end_headers()
+                elif self.path == '/wp-json/':
+                    body = b'{"namespaces":["wp/v2"],"routes":{"/":{}}}'
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json; charset=UTF-8')
+                    self.send_header('Content-Length', str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                else:
+                    self.send_response(302)
+                    self.send_header('Location', '/wp-admin/')
+                    self.end_headers()
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                self.assertIsNone(ci.ready(Alive(), seconds=2))
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+    def test_external_redirect_is_not_laundered_by_valid_local_rest(self):
+        requests = []
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                requests.append(self.path)
+                if self.path == '/':
+                    self.send_response(302)
+                    self.send_header('Location', 'https://finalvestige.com/')
+                    self.end_headers()
+                else:
+                    body = b'{"namespaces":["wp/v2"],"routes":{"/":{}}}'
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                    self.end_headers()
+                    self.wfile.write(body)
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                with patch.object(ci.time, 'sleep', lambda _: None):
+                    with self.assertRaisesRegex(RuntimeError, 'REDIRECT_SCHEME_OTHER'):
+                        ci.ready(Alive(), seconds=0.08)
+            self.assertEqual(set(requests), {'/'})
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+    def test_fake_rest_schema_cannot_admit_redirect(self):
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                if self.path == '/':
+                    self.send_response(302)
+                    self.send_header('Location', '/?pagename=review')
+                    self.end_headers()
+                elif self.path == '/wp-json/':
+                    body = b'{"status":"ok"}'
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                    self.end_headers()
+                    self.wfile.write(body)
+                else:
+                    self.send_response(200)
+                    self.end_headers()
+                    self.wfile.write(b'<html>generic landing page</html>')
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                with patch.object(ci.time, 'sleep', lambda _: None):
+                    with self.assertRaisesRegex(RuntimeError, 'REST_NO_WORDPRESS_SCHEMA'):
+                        ci.ready(Alive(), seconds=0.08)
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
     def test_external_redirect_still_fails_closed(self):
         with self.assertRaisesRegex(RuntimeError, 'REDIRECT_SCHEME_OTHER'):
             self.probe(302, body=b'', redirect='https://finalvestige.com/wp-login.php')

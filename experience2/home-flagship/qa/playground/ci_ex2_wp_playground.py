@@ -195,6 +195,44 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
         except (ValueError, TypeError):
             return 'MALFORMED'
 
+    def local_wordpress_positive_probe() -> bool:
+        """Check fixed loopback endpoints ONLY; never follow a redirect target.
+
+        A Blueprint landingPage can intentionally redirect / to a private
+        preview. Login may also redirect (e.g. Playground auto-login), so
+        neither a root 3xx nor a login 3xx proves WordPress is ready.
+        Chromium still has to establish the real seven-chapter render.
+        """
+        try:
+            with opener.open(urllib.parse.urljoin(BASE, '/wp-json/'), timeout=3) as response:
+                body = response.read(131072)
+                ctype = response.headers.get('Content-Type', '').lower()
+                if (response.status == 200 and 'application/json' in ctype
+                        and b'"namespaces"' in body and b'"routes"' in body
+                        and b'wp/v2' in body):
+                    return True
+                record('REST_NO_WORDPRESS_SCHEMA')
+        except urllib.error.HTTPError as exc:
+            record('REST_HTTP_' + str(exc.code))
+            exc.close()
+        except (OSError, urllib.error.URLError, ValueError):
+            record('REST_UNAVAILABLE')
+        for endpoint, marker in (('/wp-login.php', b'wp-login'),
+                                 ('/wp-admin/', b'id="wpwrap"')):
+            label = 'LOGIN' if endpoint == '/wp-login.php' else 'ADMIN'
+            try:
+                with opener.open(urllib.parse.urljoin(BASE, endpoint), timeout=3) as response:
+                    body = response.read(32768).lower()
+                    if response.status == 200 and marker in body:
+                        return True
+                    record(label + '_NOT_WORDPRESS_HTML')
+            except urllib.error.HTTPError as exc:
+                record(label + '_HTTP_' + str(exc.code))
+                exc.close()
+            except (OSError, urllib.error.URLError, ValueError):
+                record(label + '_UNAVAILABLE')
+        return False
+
     stop = time.monotonic() + seconds
     while time.monotonic() < stop:
         if process.poll() is not None:
@@ -205,42 +243,25 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                     return
                 record('HTTP_' + str(response.status) + '_EMPTY_OR_UNREADY')
         except urllib.error.HTTPError as exc:
-            # A canonical local login redirect can be a healthy WordPress
-            # response. Never follow arbitrary redirects: probe ONLY a fixed
-            # same-origin login endpoint, then let Chromium prove page render.
             location = exc.headers.get('Location', '')
             if exc.code in (301, 302, 303, 307, 308):
-                target = urllib.parse.urljoin(BASE, location)
-                base_url = urllib.parse.urlsplit(BASE)
-                dest = urllib.parse.urlsplit(target)
-                if (dest.scheme == 'http' and dest.hostname == '127.0.0.1'
-                        and dest.port == base_url.port
-                        and dest.path in ('/wp-login.php', '/wp-admin/')
-                        and not dest.username and not dest.password):
-                    try:
-                        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
-                        with opener.open(login_url, timeout=3) as login:
-                            chunk = login.read(4096).lower()
-                            if login.status == 200 and b'wp-login' in chunk:
-                                exc.close()
-                                return  # Login works; full browser gate still mandatory.
-                    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
-                        record('LOCAL_LOGIN_NOT_READY')
-                else:
-                    # Playground may redirect / to its configured private
-                    # landingPage. That route is not a server-health oracle.
-                    # Probe only the fixed, same-origin WordPress login path;
-                    # never follow or fetch the rejected Location itself.
-                    try:
-                        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
-                        with opener.open(login_url, timeout=3) as login:
-                            chunk = login.read(4096).lower()
-                            if login.status == 200 and b'wp-login' in chunk:
-                                exc.close()
-                                return  # Browser/page admission remains required.
-                        record('LOCAL_LOGIN_NOT_READY')
-                    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
-                        record('REDIRECT_' + redirect_reason(location))
+                # Never request the redirect Location. Check origin safely, then
+                # request ONLY three fixed, known WordPress loopback paths.
+                local = False
+                try:
+                    dest = urllib.parse.urlsplit(urllib.parse.urljoin(BASE, location))
+                    origin = urllib.parse.urlsplit(BASE)
+                    local = (bool(location) and len(location) < 512
+                             and dest.scheme == 'http'
+                             and dest.hostname == '127.0.0.1'
+                             and dest.port == origin.port
+                             and not dest.username and not dest.password)
+                except (ValueError, TypeError):
+                    pass
+                if local and local_wordpress_positive_probe():
+                    exc.close()
+                    return  # Browser/axe/media verification is still mandatory.
+                record('REDIRECT_' + redirect_reason(location))
             else:
                 record('HTTP_' + str(exc.code))
             exc.close()
