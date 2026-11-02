@@ -125,6 +125,15 @@ function validateCrosswalk(ledger, parts) {
         && (alt.source_image_master_height_px===null || dim.height_px===null
             || dim.height_px<=alt.source_image_master_height_px),
         'primary_archive_dimensions:'+c.image_key);
+      const viewer=c.independent_source_image_retrieval;
+      fail(errors,!!viewer && viewer.checked_on==='2026-11-02'
+        && viewer.method==='read-only web image viewer, exact stored i0.wp.com URL'
+        && viewer.image_displayed===true && viewer.retriever_result_kind==='rendered_image'
+        && viewer.actual_origin_http_status===null && viewer.actual_guest_chrome_http_status===null
+        && viewer.guest_current_src===null && viewer.guest_decoded_intrinsic_width_px===null
+        && viewer.guest_encoded_transfer_bytes===null && viewer.source_master_dimensions_verified===false
+        && viewer.license_verified===false,
+        'retriever_not_browser_proof:'+c.image_key);
     }
   }
   fail(errors,disputeIds.size===2,'dispute_count');
