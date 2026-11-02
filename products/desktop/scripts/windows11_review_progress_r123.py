@@ -7,6 +7,7 @@ separate gates. No evidence files or candidate executables are modified.
 from __future__ import annotations
 
 import argparse
+from private_review_cli_r146 import PrivateReviewParser
 import json
 import sys
 from pathlib import Path
@@ -83,15 +84,16 @@ def inspect(*, dist: Path, r9_report: Path, expected_pin: str,
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = PrivateReviewParser(description=__doc__)
     parser.add_argument("--dist", type=Path, required=True)
     parser.add_argument("--r9-report", type=Path, required=True)
     # Intentionally redact missing/invalid pin through the common HOLD handler.
     parser.add_argument("--expected-r9-sha256")
     parser.add_argument("--review", type=Path, required=True)
     parser.add_argument("--witnesses", type=Path, required=True)
-    args = parser.parse_args(argv)
     try:
+        # Parse inside the same constant-message privacy boundary as inspect.
+        args = parser.parse_args(argv)
         result = inspect(
             dist=args.dist, r9_report=args.r9_report,
             expected_pin=args.expected_r9_sha256,

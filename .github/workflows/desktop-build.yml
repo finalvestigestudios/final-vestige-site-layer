@@ -153,6 +153,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r145.py
           python -OO products/desktop/scripts/safe_unittest_r145.py
+      - name: R146 private Win11 reviewer CLI argument custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r146.py
+          python -OO products/desktop/scripts/safe_unittest_r146.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -509,6 +513,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R145 private snapshot custody FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r145.py
           if ($LASTEXITCODE -ne 0) { throw "R145 optimized private snapshot custody FAILED" }
+      - name: R146 private Win11 reviewer CLI argument custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r146.py
+          if ($LASTEXITCODE -ne 0) { throw "R146 private reviewer CLI FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r146.py
+          if ($LASTEXITCODE -ne 0) { throw "R146 optimized reviewer CLI FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

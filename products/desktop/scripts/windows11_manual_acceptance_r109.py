@@ -8,6 +8,7 @@ establish an independent witness. Local witness bytes never leave the machine.
 from __future__ import annotations
 
 import argparse
+from private_review_cli_r146 import PrivateReviewParser
 import hashlib
 import hmac
 import json
@@ -395,7 +396,7 @@ def native_win11_build() -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = PrivateReviewParser(description=__doc__)
     parser.add_argument("action", choices=("template", "verify"))
     parser.add_argument("--dist", type=Path, required=True)
     parser.add_argument("--r9-report", type=Path, required=True)
@@ -404,8 +405,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--expected-r9-sha256")
     parser.add_argument("--review", type=Path, required=True)
     parser.add_argument("--witnesses", type=Path)
-    args = parser.parse_args(argv)
     try:
+        # CLI parsing is part of the private HOLD boundary, not an
+        # argparse stderr/usage path that can disclose a rejected value.
+        args = parser.parse_args(argv)
         report, actual, report_raw = load_custody(
             args.dist, args.r9_report, external_r9_pin(args.expected_r9_sha256))
         template = make_template(report, actual, report_raw)
@@ -428,7 +431,7 @@ def main(argv: list[str] | None = None) -> int:
             if result["status"] != "MANUAL_MATRIX_COMPLETE_UNCERTIFIED":
                 return 2
         return 0
-    except (ReviewHold, OSError, UnicodeError, TypeError, KeyError):
+    except (ReviewHold, OSError, UnicodeError, ValueError, TypeError, KeyError):
         print(ERROR, file=sys.stderr)
         return 1
 
