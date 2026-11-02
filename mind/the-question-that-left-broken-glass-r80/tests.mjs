@@ -24,7 +24,7 @@ test("investigation stays commercially separate", () => {
   assert.doesNotMatch(article,/affiliate (?:buy|checkout|purchase) link/i);
 });
 test("exact named product and bounded evidence", () => {
-  for (const token of ["Total Focus", "33-minute","47 MB","J. A. Amos","not a hands-on review","not independently", "not a substitute"]) {
+  for (const token of ["Total Focus", "33-minute","47 MB","J. A. Amos","not a hands-on review","not independently", "not a treatment"]) {
     assert.ok(guide.includes(token), token);
   }
   assert.ok(guide.split(/\s+/).length > 1400);
