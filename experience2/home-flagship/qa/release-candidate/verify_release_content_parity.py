@@ -60,7 +60,8 @@ def compare_interiors(source: str, production: str) -> dict:
     for case, text in RIGHTS.items():
         if a.count(text) != 1:
             raise ValueError("RELEASE_PARITY_RIGHTS_" + case.upper())
-    if a.count("https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0") != 1:
+    # The case source drawer and evidence inquiry each link the official map.
+    if a.count("https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0") != 2:
         raise ValueError("RELEASE_PARITY_NYPL_ORIGINAL_LINK")
     if a.count(MIND_NOTICE) != 1:
         raise ValueError("RELEASE_PARITY_MIND_DISCLOSURE")
