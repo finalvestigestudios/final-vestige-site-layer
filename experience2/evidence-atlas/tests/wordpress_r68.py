@@ -56,6 +56,10 @@ $host = strtolower((string) parse_url(home_url('/'), PHP_URL_HOST));
 if (wp_get_environment_type() !== 'local' ||
     !in_array($host, ['127.0.0.1','localhost'], true))
     throw new RuntimeException('NONLOCAL_WORDPRESS_REFUSED');
+// Ephemeral-only privacy fixture: default WP admin-bar Gravatar images
+// otherwise attempt secure.gravatar.com external requests on EVERY case.
+// Disable remote avatars in this disposable VM, never in production.
+update_option('show_avatars', 0);
 $slug = 'fv-apollo-review-private';
 if (get_page_by_path($slug, OBJECT, 'page'))
     throw new RuntimeException('REFUSE_EXISTING_CONTENT');
