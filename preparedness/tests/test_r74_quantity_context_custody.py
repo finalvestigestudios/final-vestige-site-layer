@@ -41,6 +41,13 @@ def change_block(p,key,val):
 def change_doc(p,key,val):
     p["all_document_block_orders_NOT_REVIEWED"][0][key]=val
 
+def remove_first_real_citation(p):
+    # R73 synthetic fixture's first block has no citation. Mutate a real edge.
+    item=next(b for b in p["all_4070_unabridged_DOM_tasks_NOT_REVIEWED"]
+              if b["local_citations_NOT_CLAIM_SUPPORT_PROOF"])
+    item["local_citations_NOT_CLAIM_SUPPORT_PROOF"]=[]
+    reseal(item,"task_sha256")
+
 def change_action(p,key,val):
     item=p["consequential_action_wording_review_packets_NOT_APPROVED"][0]
     item[key]=val
@@ -118,9 +125,13 @@ class Baseline(unittest.TestCase):
 
     def test_csv_untrusted_formula_prefix(self):
         r=self.make()
-        if not r["exact_quantity_review_packets_NOT_APPROVED"]:
-            self.skipTest("synthetic parent has no numbers")
-        r["exact_quantity_review_packets_NOT_APPROVED"][0]["full_DOM_text_UNABRIDGED_NOT_VERIFIED"]="\u2060=2+2"
+        # A standalone synthetic work order, never an imported approval.
+        fake={"kind":"article","slug":"first","draft_URL_PRIVATE":"/preparedness/first/",
+              "block_id":"synthetic-only","full_DOM_text_UNABRIDGED_NOT_VERIFIED":"\u2060=2+2",
+              "quantities_EXACT_TEXT_NO_UNIT_CONVERSION":[],
+              "local_cited_source_variants_NOT_CLAIM_SUPPORT":[],
+              "caution_wording_PRESENT_NOT_SUFFICIENT":False}
+        r["exact_quantity_review_packets_NOT_APPROVED"].insert(0,fake)
         reseal(r)
         rows=list(csv.DictReader(io.StringIO(gate.csv_review_packets(r))))
         self.assertTrue(rows[0]["full_DOM_text_UNVERIFIED"].startswith("'"))
@@ -209,7 +220,7 @@ FAULTS={
     "block_id_changed":lambda p:change_block(p,"block_id","not-original"),
     "block_bad_topics":lambda p:change_block(p,"topic_signals_TRIAGE_NOT_SAFETY_VERDICT",["z","a"]),
     "block_duplicate_topics":lambda p:change_block(p,"topic_signals_TRIAGE_NOT_SAFETY_VERDICT",["x","x"]),
-    "block_citation_removed":lambda p:change_block(p,"local_citations_NOT_CLAIM_SUPPORT_PROOF",[]),
+    "block_citation_removed":lambda p:remove_first_real_citation(p),
     "doc_removed":lambda p:p["all_document_block_orders_NOT_REVIEWED"].pop(),
     "doc_slug_changed":lambda p:change_doc(p,"slug","wrong"),
     "doc_public_url":lambda p:change_doc(p,"draft_url_NOT_PUBLIC","https://published.example/"),
