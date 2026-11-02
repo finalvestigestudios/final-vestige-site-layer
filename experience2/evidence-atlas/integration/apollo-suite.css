@@ -115,3 +115,24 @@
     overflow-wrap:anywhere;
   }
 }
+
+/* R65: all six actual NASA evidence-plate archive controls were only 39.1px
+   tall in desktop Chromium, despite passing the earlier partial source-link
+   audit. This isolated cohost override enlarges their ACTUAL clickable boxes;
+   it does not introduce new links, assert image rights, or alter Atlas data. */
+@media screen {
+  .fv-ex2-apollo-suite .fva-card__external {
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    max-width:100%;
+    padding-block:11px;
+    overflow-wrap:anywhere;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .fv-ex2-apollo-suite .fva-card__external:focus-visible {
+    outline:3px solid #e5c487;
+    outline-offset:3px;
+  }
+}
