@@ -97,6 +97,21 @@ jobs:
           print('Real Git-object provenance and source-impact counts (NOT human verified):')
           print(json.dumps(c, sort_keys=True))
           PY
+      - name: Native integrated article/source validator (diagnostic only, NEVER publish)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready draft build (diagnostic only, NO CMS)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/build.py
+      - name: Entire native Preparedness Python unittest suite (not independent QD)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s preparedness/tests -v
       - name: Explicit HOLD for separate full-integrity and all human checks
         if: always()
         run: |
