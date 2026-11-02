@@ -163,6 +163,15 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
                         # A real CDP visual-viewport pinch zoom, not simulated
                         # desktop UI zoom. Underlying CSS layout width remains
                         # 390px; visual viewport must shrink to ~195 CSS px.
+                        # Position the case at a deterministic y-coordinate
+                        # before enlarging the visual viewport. Playwright's
+                        # Locator.tap auto-scroll can target a hidden element
+                        # under CDP page-scale; native touchscreen injection
+                        # at a DOM-verified visible point avoids that harness
+                        # artifact while still testing a genuine touch event.
+                        case = page.locator('[data-fv-case-button="malbone"]')
+                        case.wait_for(state="visible", timeout=8000)
+                        case.evaluate("e => {e.scrollIntoView({block:'start'});window.scrollBy(0,-72)}")
                         session = context.new_cdp_session(page)
                         session.send("Emulation.setPageScaleFactor", {"pageScaleFactor": 2})
                         page.wait_for_timeout(120)
@@ -173,11 +182,20 @@ def run(repo: Path, expected: str, storage_state: Path, out: Path) -> dict:
                         """)))
                         mark(profile, "seven_chapters", all(
                             page.locator("#" + chapter).count() == 1 for chapter in CHAPTERS))
-                        case = page.locator('[data-fv-case-button="malbone"]')
-                        case.wait_for(state="visible", timeout=8000)
-                        case.tap(timeout=10000)
+                        point = case.evaluate("""e => {
+                            const b = e.getBoundingClientRect(), v = visualViewport;
+                            const x = Math.max(b.left + 16, v.offsetLeft + 8);
+                            const y = Math.max(b.top + 16, v.offsetTop + 8);
+                            if (x >= Math.min(b.right - 4, v.offsetLeft + v.width - 6) ||
+                                y >= Math.min(b.bottom - 4, v.offsetTop + v.height - 6) ||
+                                !document.elementFromPoint(x, y)?.closest(
+                                  '[data-fv-case-button="malbone"]')) return null;
+                            return {x, y};
+                        }""")
+                        if point is not None:
+                            page.touchscreen.tap(point["x"], point["y"])
                         mark(profile, "case_tap_at_2x", bool(
-                            case.get_attribute("aria-pressed") == "true" and
+                            point is not None and case.get_attribute("aria-pressed") == "true" and
                             page.locator('[data-fv-case="malbone"]').is_visible()))
                         page.evaluate("window.scrollTo(0, 0)")
                         page.screenshot(path=str(out / "usability-390-cdp-pinch-200.png"),
