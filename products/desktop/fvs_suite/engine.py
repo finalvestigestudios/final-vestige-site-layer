@@ -401,11 +401,18 @@ def invoice_twins(source,folder, *, window_days=7):
             raise ValueError("Blank vendor/invoice at row "+r["row"])
     rows=[]
     for a,b,status,reason in candidate_pairs(records, window_days=window_days):
+        # B-minus-A measures the exact difference between the displayed
+        # cent-rounded source amounts, independent of caller Decimal traps.
+        # Candidate ordering and source/candidate fingerprints stay unchanged.
+        with localcontext(Context(prec=64)):
+            amount_delta = dollars(b["amt"] - a["amt"])
         rows.append({
             "row_a":a["row"],"row_b":b["row"],"status":status,
             "vendor":a["vendor"],"invoice_a":a["invoice_number"],
             "invoice_b":b["invoice_number"],
             "amount_a":dollars(a["amt"]),"amount_b":dollars(b["amt"]),
+            "amount_delta_b_minus_a":amount_delta,
+            "date_gap_days":str(abs((b["dt"] - a["dt"]).days)),
             "reason":reason,"vendor_b":b["vendor"],
             "date_a":a["dt"].isoformat(),"date_b":b["dt"].isoformat(),
             "review_flags":invoice_review_flags(a,b,status,window_days=window_days),
@@ -414,7 +421,8 @@ def invoice_twins(source,folder, *, window_days=7):
     rows=attach_invoice_provenance(rows,source_sha256=source_sha256)
     return [save(folder,"invoice-twins",(
         "row_a","row_b","status","vendor","invoice_a","invoice_b",
-        "amount_a","amount_b","reason","vendor_b","date_a","date_b","review_flags",
+        "amount_a","amount_b","amount_delta_b_minus_a","date_gap_days",
+        "reason","vendor_b","date_a","date_b","review_flags",
         "review_window_days","source_sha256","candidate_ref"
     ),rows)]
 

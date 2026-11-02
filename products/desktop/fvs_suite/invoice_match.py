@@ -176,4 +176,10 @@ def review_flags(a: dict[str, Any], b: dict[str, Any], status: str,
             flags.append("amount_variance_review")
         if abs((a["dt"] - b["dt"]).days) > window_days:
             flags.append("distant_dates_review")
+        # An exact invoice identifier with an invoice and opposing credit is
+        # not evidence of a second charge. Escalate for HUMAN interpretation;
+        # zeros (including signed negative zero) are never credits here.
+        if (a["amt"] != 0 and b["amt"] != 0
+                and (a["amt"] < 0) != (b["amt"] < 0)):
+            flags.append("opposing_signed_amounts_review")
     return ";".join(flags)
