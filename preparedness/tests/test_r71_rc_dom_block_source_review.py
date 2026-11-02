@@ -289,7 +289,13 @@ class R71ConservationTests(unittest.TestCase):
         d=dom["all_document_DOM_text_and_citation_review_orders_NOT_APPROVED"][0]
         d["citation_visibility_audit_NOT_BROWSER_PROOF"][0][
             "nearest_HTML_text_block_id_OR_NULL"]=None
+        d["citation_visibility_audit_NOT_BROWSER_PROOF"][0][
+            "DOM_CLASSIFICATION_NOT_BROWSER_PROOF"]="NON_DOM_TEXT_ATTRIBUTE_COMMENT_OR_TOKEN_SPLIT"
+        urls["all_2173_citation_URL_identity_work_orders_NOT_APPROVED"][0][
+            "DOM_visibility_NOT_BROWSER_VERIFIED"]="NON_DOM_TEXT_ATTRIBUTE_COMMENT_OR_TOKEN_SPLIT"
         b=d["full_DOM_text_blocks_UNABRIDGED_NOT_SOURCE_APPROVED"][1]
+        b["DOM_TEXT_UNABRIDGED_NOT_BROWSER_VERIFIED"]="Ask a pharmacist"
+        b["DOM_text_sha256"]=gate.raw_sha("Ask a pharmacist")
         b["citation_offsets_in_DOM_text"]=[]
         b["review_flags_NOT_SAFETY_VERDICTS"]=[
             "TOPIC_SIGNAL_WITH_NO_CITATION_IN_THIS_DOM_BLOCK_REVIEW_CONTEXT"]
@@ -393,6 +399,8 @@ FAULTS={
         lambda d,u:_url_cite(u,1).update(citation_ordinal=1),
     "citation_changed_source_id":
         lambda d,u:_url_cite(u,1).update(source_id="beta"),
+    "citation_changed_draft_url":
+        lambda d,u:_url_cite(u,1).update(draft_url="/preparedness/other/"),
     "citation_changed_offset":
         lambda d,u:_url_cite(u,1).update(unicode_codepoint_offset=201),
     "citation_changed_visibility":
@@ -468,6 +476,14 @@ FAULTS={
         lambda d,u:_block(d).update(DOM_TEXT_UNABRIDGED_NOT_BROWSER_VERIFIED="Water now"),
     "block_mutated_sha":
         lambda d,u:_block(d).update(DOM_text_sha256="f"*64),
+    "block_removed_visible_token_with_matching_sha":
+        lambda d,u:_block(d,0,1).update(
+            DOM_TEXT_UNABRIDGED_NOT_BROWSER_VERIFIED="Ask a pharmacist",
+            DOM_text_sha256=gate.raw_sha("Ask a pharmacist")),
+    "block_added_phantom_token_with_matching_sha":
+        lambda d,u:_block(d).update(
+            DOM_TEXT_UNABRIDGED_NOT_BROWSER_VERIFIED="Medication backup {{cite:beta}}",
+            DOM_text_sha256=gate.raw_sha("Medication backup {{cite:beta}}")),
     "block_duplicate_id":
         lambda d,u:_block(d,0,1).update(block_id="block-1"),
     "block_missing_id":
@@ -496,6 +512,8 @@ FAULTS={
         lambda d,u:_citation(d).update(unicode_codepoint_offset=101),
     "r69_citation_unknown_block":
         lambda d,u:_citation(d).update(nearest_HTML_text_block_id_OR_NULL="absent"),
+    "r69_citation_visible_but_unanchored":
+        lambda d,u:_citation(d).update(nearest_HTML_text_block_id_OR_NULL=None),
     "r69_citation_fake_review":
         lambda d,u:_citation(d).update(human_claim_support_review="SAFE"),
     "r69_citation_variant_collapse":
