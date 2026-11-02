@@ -3,21 +3,23 @@ const{test}=require('node:test'),assert=require('node:assert/strict');
 const{inspectRun,compareWireRuns}=require('./compare_wire_core.cjs');
 function fixture(t='2026-10-30T18:00:00.000Z',numbers=[5000,5000]){
  const url='https://finalvestige.com/example/';
- return{schema_version:1,probe_version:3,created:t,mode:'priority',viewport:'390x844',
+ return{schema_version:1,probe_version:4,created:t,mode:'priority',viewport:'390x844',
  probe:'logged-out Chrome CDP, no npm dependencies or WordPress writes',
  browser_product:'Chrome/142.0.1.0',
  run_profile:{cache_disabled:true,service_worker_bypassed:true,scroll_step_px:720,scroll_wait_ms:220,settle_wait_ms:1000},
  requested_pages:1,verified_pages:1,pages:[{post_id:123,url,document_url:url,page_result:'inspected_browser',
  document_network_failures:[],stored_image_count:2,rendered_image_count:2,
  scroll_coverage:{complete:true,state:'full_height_scanned',reason:null},
- stored_images:numbers.map((n,i)=>({image_key:'123:'+i,result:'loaded_in_probe_browser',
+ stored_images:numbers.map((n,i)=>({image_key:'123:'+i,request_id:'req.'+i,result:'loaded_in_probe_browser',
  verified_broken_in_browser:false,current_src_identity_verified:true,
  match:'exact_url_or_jetpack_origin',network_final_identity_verified:true,loaded_network_proof_verified:true,
  stored_url:'https://example.edu/img'+i+'.jpg',current_src:'https://example.edu/img'+i+'.jpg',natural_width:960,request_url:'https://example.edu/img'+i+'.jpg',http_status:200,transfer_bytes:n})),
- network_images:numbers.map((n,i)=>({url:'https://example.edu/img'+i+'.jpg',status:200,mime_type:'image/jpeg',
+ network_images:numbers.map((n,i)=>({request_id:'req.'+i,url:'https://example.edu/img'+i+'.jpg',status:200,mime_type:'image/jpeg',
  encoded_data_length:n,error:null,from_disk_cache:false,from_service_worker:false,was_cached:false})),
  image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0),
- article_image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0)}]};
+ article_image_wire_bytes_total:numbers.reduce((a,b)=>a+b,0),
+ article_wire_attribution_mode:'strict_cdp_request_id',
+ article_wire_evidence_complete:true,article_wire_evidence_errors:[]} ]};
 }
 const a=()=>fixture(),b=()=>fixture('2026-10-30T19:00:00.000Z',[1200,1200]);
 test('SYNTHETIC 10000 to 2400 bytes is 76%, not a live observation',()=>{const r=compareWireRuns(a(),b());assert.equal(r.reduction_percent,76);assert.equal(r.comparable,true)});
@@ -72,8 +74,8 @@ test('redirect alias alone cannot prove historical identity when final URL diffe
 });
 test('multiple visible uses of one URL can share one actual network request without double-counting bytes',()=>{
  const r=a(),p=r.pages[0],url='https://example.edu/shared.jpg';
- p.stored_images.forEach(v=>{v.stored_url=url;v.current_src=url;v.request_url=url;v.transfer_bytes=5000;});
- p.network_images=[{url,status:200,mime_type:'image/jpeg',encoded_data_length:5000,
+ p.stored_images.forEach(v=>{v.stored_url=url;v.current_src=url;v.request_url=url;v.transfer_bytes=5000;v.request_id='req.shared';});
+ p.network_images=[{request_id:'req.shared',url,status:200,mime_type:'image/jpeg',encoded_data_length:5000,
   error:null,from_disk_cache:false,from_service_worker:false,was_cached:false}];
  p.image_wire_bytes_total=5000;p.article_image_wire_bytes_total=5000;
  assert.equal(inspectRun(r).ok,true);
