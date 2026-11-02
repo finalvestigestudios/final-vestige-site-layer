@@ -110,5 +110,10 @@ class R69RestProbe(unittest.TestCase):
                  and node.func.attr == 'status']
         self.assertEqual(calls, [])
 
+    def test_nasa_photo_guard_scoped_to_apollo_not_wordpress_theme(self):
+        source = Path(__file__).with_name('wordpress_r68.py').read_text()
+        self.assertIn("page.locator('.fv-ex2-apollo-suite img').count()==0", source)
+        self.assertNotIn("page.locator('img').count()==0", source)
+
 if __name__ == '__main__':
     unittest.main()
