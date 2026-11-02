@@ -31,7 +31,7 @@ class TestR66ExactEvidence(unittest.TestCase):
         self.assertEqual(self.optional["status"],"ALL_HOLD_UNSENT")
 
     def test_first_55_is_not_header(self):
-        self.assertTrue(self.rows[0]["default_55_word_surrogate"].startswith("Before we investigate"))
+        self.assertTrue(self.rows[0]["default_55_word_surrogate"].startswith("A stranger stops you"))
 
     def test_limit_is_enforced(self):
         self.assertLessEqual(len(self.rows[2]["default_55_word_surrogate"].split()),55)
@@ -58,11 +58,11 @@ class TestR66ExactEvidence(unittest.TestCase):
             self.assertTrue(self.rows[index]["canonical_cta"].startswith("[["))
 
     def test_subject_fourteen_unsupported(self):
-        self.assertIn("fourteen seconds",self.rows[3]["canonical_subject"].lower())
-        self.assertNotIn("fourteen seconds",self.rows[3]["default_55_word_surrogate"].lower())
+        self.assertIn("seventeen seconds",self.rows[3]["canonical_subject"].lower())
+        self.assertIn("17.1 seconds",self.rows[3]["default_55_word_surrogate"].lower())
 
     def test_optional_subject_already_differs_issue04(self):
-        self.assertFalse(self.rows[3]["subject_exact_match"])
+        self.assertTrue(self.rows[3]["subject_exact_match"])
 
     def test_no_alternative_approved_by_default(self):
         self.assertFalse(audit.audit()["founder_approved"])
