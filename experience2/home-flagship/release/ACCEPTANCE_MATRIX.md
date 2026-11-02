@@ -57,7 +57,7 @@ Reading: the candidate is **not a regression** against today's homepage (lighter
 |---|---|---|
 | B1 | `unittest discover` on `experience2/home-flagship/tests` (local Windows) | 71 of 77 pass; **6 errors are harness portability** (no `php` binary on this machine; four temp-directory write errors specific to Windows). Not product failures; hosted CI is the reference run. |
 | B2 | Hosted CI on #550 `6ef459ec` and #565 `91ca7a7d` | `verify` success on both, `chromium` success on #565 (read from the API today). |
-| B3 | Hosted CI on **this branch's exact head** | **NOT RUN YET** at the time of writing; recorded in the PR once opened. No pass is claimed. |
+| B3 | Hosted CI on this branch (draft PR #604) | `verify` **success** on code head `e2245ce35d5825fb29048c15decfde94e168ab63` (read from the API; `deploy` skipped by design, the `chromium` job is scoped to PR #565 only and skipped). The final head differs from that SHA only by this documentation edit; its own `verify` result is recorded on the PR. This is the repository's existing source CI, **not** a WordPress browser run. |
 | B4 | `verify_archival_attribution.py` | `PASS_SOURCE_LINKS_ONLY` (its own output says rights_cleared=false by design). |
 | B5 | Byte-for-byte preservation of live blocks 0,2,3,4,5 in the composed body | PASS (`verify_preservation.py`, live drift check: identical to the snapshot). |
 | B6 | Original index-1 block rebuilt from the public snapshot hashes to the live `block_hash` `1c97fec5...` | PASS (rollback copy is verifiably the live bytes). |
