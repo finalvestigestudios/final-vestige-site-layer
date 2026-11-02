@@ -1,0 +1,40 @@
+# DRAFT/HOLD, source-only exact-SHA gate for the ACTUAL proposed page-6 replacement.
+# No WP.com access, publication, artifact upload, secrets or subscriber data.
+name: EX2 proposed WordPress production block rights and byte parity
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "experience2/home-flagship/**"
+      - ".github/workflows/ex2-production-replacement-custody.yml"
+permissions:
+  contents: read
+jobs:
+  release-byte-parity:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'release/ex2-pr604-rights-safe-byte-parity-20261102'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Exact branch checkout, never synthetic merge
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Assert clean 40-character source
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          test "${#EXPECTED_HEAD}" -eq 40
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify actual block, all seven inline styles and four scripts, hashes, rollback and hostile cases
+        run: |
+          python -m unittest discover -s experience2/home-flagship/release -p 'test_rights_safe_payload.py' -v
+          python experience2/home-flagship/release/verify_rights_safe_payload.py
+          test -z "$(git status --porcelain --untracked-files=no)"
+      - name: Release is not approved by these checks
+        run: |
+          echo "DRAFT_PAYLOAD_SOURCE_CHECKED; independent QD, real WP.com host test, rights, AT and founder publication approval remain HOLD."
