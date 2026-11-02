@@ -71,6 +71,8 @@ jobs:
           set -euo pipefail
           curl --fail --location --silent --show-error --retry 3 --max-time 90 --proto '=https' --proto-redir '=https' --tlsv1.2 "$THEME_URL" --output "$RUNNER_TEMP/fv-ex2-official-assembler.zip"
           unzip -t "$RUNNER_TEMP/fv-ex2-official-assembler.zip" >/dev/null
+          echo "Official archive member paths, first 35 (no extraction):"
+          unzip -Z1 "$RUNNER_TEMP/fv-ex2-official-assembler.zip" | sed -n '1,35p'
           unzip -p "$RUNNER_TEMP/fv-ex2-official-assembler.zip" assembler/style.css | grep -Fq 'Theme Name: Assembler'
           unzip -p "$RUNNER_TEMP/fv-ex2-official-assembler.zip" assembler/style.css | grep -Fq 'Version: 0.0.126'
           sha256sum "$RUNNER_TEMP/fv-ex2-official-assembler.zip" | tee "$RUNNER_TEMP/fv-ex2-wordpress-receipt/THEME_SOURCE_SHA256.txt"
