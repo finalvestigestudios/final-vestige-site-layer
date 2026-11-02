@@ -1,0 +1,322 @@
+{
+ "article_origins_missing": [
+  "home-fire-escape-worksheet",
+  "power-outage-planner",
+  "reunification-plan"
+ ],
+ "articles": [
+  {
+   "change": "MODIFIED body+metadata",
+   "new": {
+    "body": {
+     "bytes": 26124,
+     "git_blob_sha": "27ccaadfc94a16769e2d3f613678791daf627fe9"
+    },
+    "metadata": {
+     "bytes": 4138,
+     "git_blob_sha": "6866607108b9ff1a5e8bcf8f522ca8423a047f05"
+    }
+   },
+   "old": {
+    "body": {
+     "bytes": 23180,
+     "git_blob_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9"
+    },
+    "metadata": {
+     "bytes": 3524,
+     "git_blob_sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee"
+    }
+   },
+   "slug": "family-communication-plan"
+  },
+  {
+   "change": "MODIFIED body+metadata",
+   "new": {
+    "body": {
+     "bytes": 31595,
+     "git_blob_sha": "0412484304a3bcf08f0bb1b170110f617e3c2869"
+    },
+    "metadata": {
+     "bytes": 3711,
+     "git_blob_sha": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8"
+    }
+   },
+   "old": {
+    "body": {
+     "bytes": 26250,
+     "git_blob_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873"
+    },
+    "metadata": {
+     "bytes": 3127,
+     "git_blob_sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368"
+    }
+   },
+   "slug": "home-fire-escape-plan"
+  },
+  {
+   "change": "ADDED",
+   "kind_dir": "tools",
+   "new": {
+    "body": {
+     "bytes": 36155,
+     "git_blob_sha": "01161948b6de6ffbd1b053c9b83a420758e707e4"
+    },
+    "metadata": {
+     "bytes": 1917,
+     "git_blob_sha": "397c7d3072fb237b490a5a316c93fc863c101be9"
+    }
+   },
+   "slug": "home-fire-escape-worksheet"
+  },
+  {
+   "change": "MODIFIED body+metadata",
+   "new": {
+    "body": {
+     "bytes": 33110,
+     "git_blob_sha": "f5d39eb43bc7b231e493bcda5fc66691d976efb9"
+    },
+    "metadata": {
+     "bytes": 5042,
+     "git_blob_sha": "2fa877b8b15d83eb6257683739591ba6555e051d"
+    }
+   },
+   "old": {
+    "body": {
+     "bytes": 31428,
+     "git_blob_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29"
+    },
+    "metadata": {
+     "bytes": 4568,
+     "git_blob_sha": "77dd194b096bb60ea99728a5b0042adf016b905e"
+    }
+   },
+   "slug": "outage-heat-cold-generators"
+  },
+  {
+   "change": "ADDED",
+   "kind_dir": "tools",
+   "new": {
+    "body": {
+     "bytes": 38695,
+     "git_blob_sha": "66a70ecc4192166958fcde125ada2b6f98e92b6c"
+    },
+    "metadata": {
+     "bytes": 2707,
+     "git_blob_sha": "bcbe83a82cc3bfbd10e179e6e18742253683b3ab"
+    }
+   },
+   "slug": "power-outage-planner"
+  },
+  {
+   "change": "ADDED",
+   "kind_dir": "tools",
+   "new": {
+    "body": {
+     "bytes": 18678,
+     "git_blob_sha": "79fe2cf7c7d486c105bac7a6a256136c2e237a0f"
+    },
+    "metadata": {
+     "bytes": 2093,
+     "git_blob_sha": "61187860e045e41dd5f8df992927ff702c0d5156"
+    }
+   },
+   "slug": "reunification-plan"
+  },
+  {
+   "change": "MODIFIED body+metadata",
+   "new": {
+    "body": {
+     "bytes": 30738,
+     "git_blob_sha": "ed1d33cefce3af0f21f74b5da8da56d712b9ee30"
+    },
+    "metadata": {
+     "bytes": 3687,
+     "git_blob_sha": "c16756f76628d34e267a09910c53be55b76eb6ca"
+    }
+   },
+   "old": {
+    "body": {
+     "bytes": 24382,
+     "git_blob_sha": "b8acf07e533eea43795aa242f39fd926b080130f"
+    },
+    "metadata": {
+     "bytes": 3398,
+     "git_blob_sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186"
+    }
+   },
+   "slug": "shelter-or-evacuate"
+  }
+ ],
+ "authority": "PROPOSAL_ONLY_NOT_A_BASELINE_NOT_A_REVIEW",
+ "counts": {
+  "duplicate_url_groups": {
+   "now": 31,
+   "recorded": 30
+  },
+  "longform_articles": {
+   "now": 35,
+   "recorded": 35
+  },
+  "raw_rows": {
+   "now": 234,
+   "recorded": 224
+  },
+  "tools": {
+   "now": 4,
+   "recorded": 1
+  },
+  "unique_urls": {
+   "now": 195,
+   "recorded": 186
+  }
+ },
+ "new_shared_url_groups_needing_human_scope_review": {
+  "https://www.weather.gov/safety/winter-during": [
+   [
+    "shelter",
+    "shelter-nws-winter-during"
+   ],
+   [
+    "hist-field",
+    "hist-field-nws-winter-during"
+   ]
+  ]
+ },
+ "pins_in_code_and_tests": {
+  "186 unique URLs": [
+   "claim_corpus_release_gate.py",
+   "global_shared_source_review_gate.py",
+   "reviewer_csv_export_gate.py",
+   "source_crosswalk_truth_gate.py",
+   "source_group_review_gate.py",
+   "test_r31_unread_base_register_custody.py",
+   "test_source_crosswalk.py",
+   "test_source_group_review_gate.py",
+   "test_source_review_queue_corpus.py",
+   "test_start_latest_reconciliation.py"
+  ],
+  "224 raw rows": [
+   "citation_fallback_review_gate.py",
+   "claim_corpus_release_gate.py",
+   "claim_occurrence_audit.py",
+   "draft_export_custody.py",
+   "global_shared_source_review_gate.py",
+   "reviewer_csv_export_gate.py",
+   "source_crosswalk_truth_gate.py",
+   "source_group_review_gate.py",
+   "test_integration_audit.py",
+   "test_r31_unread_base_register_custody.py",
+   "test_r32_fragment_directory_readme_custody.py",
+   "test_source_crosswalk.py",
+   "test_source_crosswalk_truth_gate.py",
+   "test_source_group_review_gate.py",
+   "test_source_review_queue_corpus.py",
+   "test_start_latest_reconciliation.py"
+  ],
+  "35+1 / 72-file inventory": [
+   "article_review_dossier_gate.py",
+   "citation_fallback_review_gate.py",
+   "citation_review_index_gate.py",
+   "claim_corpus_release_gate.py",
+   "cluster_git_parity_gate.py",
+   "evidence_freeze.py",
+   "qa_current_copy_concordance.py",
+   "rendered_citation_gate.py",
+   "reviewer_visible_row_parity_gate.py",
+   "test_claim_corpus_release_gate.py",
+   "test_cluster_git_parity_gate.py",
+   "test_outbound_link_custody.py",
+   "test_start_latest_reconciliation.py",
+   "validate.py"
+  ],
+  "81-file manifest": [
+   "citation_fallback_review_gate.py",
+   "claim_corpus_release_gate.py",
+   "global_shared_source_review_gate.py",
+   "private_release_preflight.py",
+   "source_group_review_gate.py",
+   "test_r23_archive_bytes.py",
+   "test_r24_preflight_gate_wiring.py",
+   "test_r41_receipt_history.py"
+  ],
+  "FROZEN_BLOBS pins": [
+   "source_group_review_gate.py",
+   "test_r23_archive_bytes.py",
+   "test_source_group_frozen_custody.py"
+  ]
+ },
+ "source_files": [
+  {
+   "changed": false,
+   "new_blob": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77",
+   "new_count": 34,
+   "old_blob": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77",
+   "old_count": 34,
+   "origin": "base",
+   "path": "preparedness/sources/register.json"
+  },
+  {
+   "changed": false,
+   "new_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+   "new_count": 27,
+   "old_blob": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+   "old_count": 27,
+   "origin": "start",
+   "path": "preparedness/sources/fragments/start.json"
+  },
+  {
+   "changed": true,
+   "new_blob": "e880f6e5a61e8236be8385b04d47d9014d7072b7",
+   "new_count": 41,
+   "old_blob": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+   "old_count": 31,
+   "origin": "shelter",
+   "path": "preparedness/sources/fragments/shelter.json"
+  },
+  {
+   "changed": false,
+   "new_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+   "new_count": 30,
+   "old_blob": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+   "old_count": 30,
+   "origin": "food",
+   "path": "preparedness/sources/fragments/food.json"
+  },
+  {
+   "changed": false,
+   "new_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+   "new_count": 28,
+   "old_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+   "old_count": 28,
+   "origin": "hist-food",
+   "path": "preparedness/sources/fragments/hist-food.json"
+  },
+  {
+   "changed": false,
+   "new_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+   "new_count": 21,
+   "old_blob": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+   "old_count": 21,
+   "origin": "health",
+   "path": "preparedness/sources/fragments/health.json"
+  },
+  {
+   "changed": false,
+   "new_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+   "new_count": 27,
+   "old_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+   "old_count": 27,
+   "origin": "hist-home",
+   "path": "preparedness/sources/fragments/hist-home.json"
+  },
+  {
+   "changed": false,
+   "new_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+   "new_count": 26,
+   "old_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+   "old_count": 26,
+   "origin": "hist-field",
+   "path": "preparedness/sources/fragments/hist-field.json"
+  }
+ ]
+}
