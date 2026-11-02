@@ -77,6 +77,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r126.py
           python -OO products/desktop/scripts/safe_unittest_r126.py
+      - name: R127 private human observation file custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r127.py
+          python -OO products/desktop/scripts/safe_unittest_r127.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -236,6 +240,11 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R110 private acceptance source validation FAILED" }
           python -OO products/desktop/scripts/safe_unittest_methods_r110.py
           if ($LASTEXITCODE -ne 0) { throw "R110 optimized private acceptance source validation FAILED" }
+      - name: R127 synthetic Windows descriptor metadata parity diagnostic
+        shell: pwsh
+        run: |
+          python products/desktop/scripts/diagnose_observation_parity_r127.py
+          if ($LASTEXITCODE -ne 0) { throw "R127 synthetic descriptor parity unavailable" }
       - name: R122 private one-check Win11 witness writer (normal and -OO)
         shell: pwsh
         run: |
@@ -276,6 +285,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R126 capture-time witness regression FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r126.py
           if ($LASTEXITCODE -ne 0) { throw "R126 optimized capture-time witness regression FAILED" }
+      - name: R127 private human observation file custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r127.py
+          if ($LASTEXITCODE -ne 0) { throw "R127 observation file custody regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r127.py
+          if ($LASTEXITCODE -ne 0) { throw "R127 optimized observation file custody regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

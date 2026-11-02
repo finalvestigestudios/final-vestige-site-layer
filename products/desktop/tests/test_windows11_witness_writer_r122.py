@@ -224,12 +224,12 @@ class PrivateWitnessR122(unittest.TestCase):
     def test_do_not_clear_nonempty_modified_lock(self):
         self.observation.write_text("short")
         lock = self.root / "review.json.r122.lock"
-        original = writer.qa._bytes
-        def changed(path, maximum, **kwargs):
+        original = writer._read_private_observation
+        def changed(path, **kwargs):
             if path == self.observation:
                 lock.write_text("reviewer changed lock")
-            return original(path, maximum, **kwargs)
-        with patch.object(writer.qa, "_bytes", side_effect=changed):
+            return original(path, **kwargs)
+        with patch.object(writer, "_read_private_observation", side_effect=changed):
             with self.assertRaises(qa.ReviewHold): self.one()
         self.assertEqual(lock.read_text(), "reviewer changed lock")
 
