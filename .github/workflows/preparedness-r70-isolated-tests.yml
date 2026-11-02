@@ -89,9 +89,25 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -I preparedness/tools/r70_rc_source_url_citation_custody.py > /tmp/r70-private-summary.json
-          python -I preparedness/tools/r70_rc_source_url_citation_custody.py --source-csv-stdout > /tmp/r70-source-review.csv
-          python -I preparedness/tools/r70_rc_source_url_citation_custody.py --citation-csv-stdout > /tmp/r70-citation-review.csv
+          python -I - <<'PY'
+          from pathlib import Path
+          import importlib.util,json
+          path=Path('preparedness/tools/r70_rc_source_url_citation_custody.py')
+          spec=importlib.util.spec_from_file_location('r70_ci',path)
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          r=mod.live_report()
+          Path('/tmp/r70-private-summary.json').write_text(json.dumps(
+              {'schema':mod.SCHEMA,'release_state':'HOLD',
+               'fingerprint_sha256':r['fingerprint_sha256'],
+               'counts':r['counts'],'all_publication_clearance':False},
+              sort_keys=True),encoding='utf-8')
+          Path('/tmp/r70-source-review.csv').write_text(mod.csv_tasks(r),encoding='utf-8')
+          Path('/tmp/r70-citation-review.csv').write_text(mod.csv_tasks(r,citations=True),encoding='utf-8')
+          if r['counts']['source_rows_with_structural_URL_blockers']:
+              raise SystemExit('R70 PRIVATE HOLD: structurally unsafe source URLs require human correction')
+          print('One verified live_report reused for all three private outputs: PASS')
+          PY
           python -I - <<'PY'
           from pathlib import Path
           import csv,json
