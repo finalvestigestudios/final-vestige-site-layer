@@ -55,7 +55,7 @@ test('source register 22 data rows, decision matrix 56 rows',()=>{
  assert.match(claims,/NOT SUBSTANTIATED/);assert.match(claims,/NOT VERIFIED/);assert.match(claims,/PROHIBITED/);
 });
 test('privacy model is non-instrumenting and rejects unknown identifiers',async()=>{
- assert.ok(noPiiCode(privacy));const mod=await import('./privacy-attribution.js');
+ assert.ok(noPiiCode(privacy));const mod=await import('data:text/javascript,'+encodeURIComponent(privacy));
  assert.equal(mod.ACTIVE,false);
  assert.equal(mod.acceptSynthetic({variant:'text',topic:'attention',event:'outbound-intent'}),true);
  assert.equal(mod.acceptSynthetic({variant:'text',topic:'attention',event:'outbound-intent',email:'person@example.invalid'}),false);
