@@ -22,6 +22,8 @@ DISPLAY = (
     ("visible_body_present", "Visible message text present"),
     ("html_lang_en_present", "HTML declares English"),
     ("html_interactive_markup_detected", "Unexpected interactive/script markup detected"),
+    ("html_hidden_node_encountered", "Hidden/non-body HTML detected; ignored in visible claims"),
+    ("html_css_visibility_ambiguous", "Stylesheet visibility requires native inbox review"),
     ("remote_image_present", "Remote image or tracker-capable asset present"),
     ("unsubscribe_labeled_https_link_present", "Labeled HTTPS opt-out link appears in HTML"),
     ("plain_text_optout_and_https_present", "Opt-out text and HTTPS present in plaintext"),
@@ -103,7 +105,7 @@ def html_report(report: dict) -> str:
         val = r["signals"][key]
         css = "good" if val is True else ("warn" if val is None else "muted")
         # A true signal is never permission; e.g., true remote-image or hard-stop is bad.
-        if key in ("html_interactive_markup_detected", "remote_image_present",
+        if key in ("html_interactive_markup_detected", "html_css_visibility_ambiguous", "remote_image_present",
                    "merchant_domain_link_detected", "hard_stop_placeholder_detected"):
             css = "warn" if val is True else "muted"
         rows.append("<tr><th scope='row'>" + escape(label) + "</th><td class='" + css + "'>" +
