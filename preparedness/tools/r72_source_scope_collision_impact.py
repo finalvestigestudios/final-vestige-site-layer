@@ -361,8 +361,8 @@ def csv_collisions(report):
         trim=value.lstrip(" \t\r\n\ufeff\u200b")
         return "'"+value if value[:1] in ("\t","\r","\n","\ufeff","\u200b") or \
             trim.startswith(("=","+","-","@")) else value
-    for key in ("shared_exact_URL_collision_review_orders_NOT_APPROVED",
-                "reused_source_ID_collision_review_orders_NOT_APPROVED"):
+    for key in ("reused_source_ID_collision_review_orders_NOT_APPROVED",
+                "shared_exact_URL_collision_review_orders_NOT_APPROVED"):
         for row in report[key]:
             variants=row["source_readings_NOT_MERGED"]
             w.writerow([safe(row["collision_type_NOT_AUTOMATIC_ERROR"]),
