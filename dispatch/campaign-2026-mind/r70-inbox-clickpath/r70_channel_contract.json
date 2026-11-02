@@ -1,0 +1,170 @@
+{
+  "schema": "fv-dispatch-r70-inbox-clickpath-v1",
+  "created_utc": "2026-11-02T16:37:11Z",
+  "campaign_issue": 174,
+  "merchant_issue": 171,
+  "source_pr": 175,
+  "source_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 639,
+  "parent_sha": "38ae79ebdae2f7b909abfdd8011a99da045f63ac",
+  "status": "HOLD_UNSENT",
+  "not_approved_for_publication": true,
+  "native_contract": {
+    "newsletter_enabled": true,
+    "automatic_post_email": false,
+    "format": "excerpt",
+    "sender_display": "Final Vestige",
+    "sender_address_verified": "donotreply@wordpress.com (WordPress documentation; received MIME NOT verified)",
+    "reply_to": "no-reply",
+    "as_of_utc": "2026-11-02T16:37:11Z",
+    "welcome_configured": true,
+    "welcome_received": false,
+    "recipients_total": 2,
+    "confirmed_count": 2,
+    "unconfirmed_count": 2,
+    "eligible_deliverable_count": null,
+    "recent_sends": [],
+    "received_test_email": false,
+    "postal_address_verified": false,
+    "unsubscribe_verified": false
+  },
+  "disclosure_rule": "Commercial excerpts must disclose prospective commissions within the excerpt itself, even if no qualifying link is active. Exact rendered email still unknown.",
+  "delivery_truth": "Jetpack excerpt default Read More routes to the newly published notification post, not automatically to the separate archived investigation or future buyer guide. This requires an intentional live post-to-article CTA and native received-mail proof; no direct excerpt link preservation is assumed.",
+  "evidence_source_urls": [
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/subscribers/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://affiliates.inspire3.com/"
+  ],
+  "send_authorized": false,
+  "post_publish_authorized": false,
+  "wp_settings_write_authorized": false,
+  "affiliate_tracking_enabled": false,
+  "actual_send_metrics": null,
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "title": "The mind is not a camera",
+      "subject_candidate": "The mind is not a camera",
+      "preheader_candidate": "A stranger changed mid-conversation. What can a witness actually claim?",
+      "excerpt_candidate": "Imagine describing a conversation with complete confidence—then discovering the person across from you had changed. A real-world change-blindness experiment shows why attention and accuracy aren't the same thing. Its findings concern a particular experiment, not a universal failure rate for eyewitnesses. This edition offers a practical way to separate an observation from an inference. Read the full investigation and inspect the source for yourself.",
+      "archive_url": "https://finalvestige.com/the-missing-caption/",
+      "source_urls": [
+        "https://doi.org/10.3758/BF03208840"
+      ],
+      "merchant_guide_url": null,
+      "merchant_permission_verified": false,
+      "status": "HOLD_UNSENT",
+      "founder_approved_final_sha": null,
+      "cta_live": false,
+      "planned_first_hop": "new issue post (not created or published)",
+      "intended_second_hop": "https://finalvestige.com/the-missing-caption/",
+      "actual_received_email_evidence": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "title": "Before hypnosis had a name",
+      "subject_candidate": "Before hypnosis had a name",
+      "preheader_candidate": "A report from 1784 is fascinating—and not the same thing as proof.",
+      "excerpt_candidate": "On May 4, 1784, Puységur described an encounter that seemed to challenge ordinary explanations. He wrote about it four days later. The first question isn't whether his theory was true; it's what the record actually permits us to say. This edition compares testimony, retrospective claims and what independent corroboration would require. Read the evidence trail before deciding what the story means.",
+      "archive_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source_urls": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "merchant_guide_url": null,
+      "merchant_permission_verified": false,
+      "status": "HOLD_UNSENT",
+      "founder_approved_final_sha": null,
+      "cta_live": false,
+      "planned_first_hop": "new issue post (not created or published)",
+      "intended_second_hop": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "actual_received_email_evidence": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial_reserved",
+      "title": "The twelve-minute meditation question",
+      "subject_candidate": "What twelve minutes can tell you",
+      "preheader_candidate": "Try a free observation exercise before considering an audio product.",
+      "excerpt_candidate": "Twelve minutes is a measurable duration, not a verified mental-health result. Try sitting quietly, note when your attention wanders, and record what you actually observed. This edition examines Zen12's advertised audio formats while treating its extraordinary benefits as unverified seller claims. Commercial note: a future independent guide could contain links that earn Final Vestige a commission. No guide or recommendation is active while partner email permission remains unverified.",
+      "archive_url": null,
+      "source_urls": [
+        "https://zen12.com/hnp",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+      ],
+      "merchant_guide_url": null,
+      "merchant_permission_verified": false,
+      "status": "HOLD_UNSENT",
+      "founder_approved_final_sha": null,
+      "cta_live": false,
+      "planned_first_hop": "new issue post (not created or published)",
+      "intended_second_hop": "approved buyer guide not live; no outbound CTA",
+      "actual_received_email_evidence": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "title": "Apollo 1 and the unproven spark",
+      "subject_candidate": "Apollo 1: why one spark was never the whole story",
+      "preheader_candidate": "NASA's record distinguishes radio silence, speech and the causes it could establish.",
+      "excerpt_candidate": "The final Apollo 1 radio record covers about 17.1 seconds, but not 17.1 seconds of continuous speech—and not the fire's entire duration. NASA's investigators could describe the dangerous system even without definitively locating a single ignition source. We examine the cabin atmosphere, materials, hatch and the uncomfortable difference between evidence and a tidy explanation. Read the investigation, then follow the primary source.",
+      "archive_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "source_urls": [
+        "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html"
+      ],
+      "merchant_guide_url": null,
+      "merchant_permission_verified": false,
+      "status": "HOLD_UNSENT",
+      "founder_approved_final_sha": null,
+      "cta_live": false,
+      "planned_first_hop": "new issue post (not created or published)",
+      "intended_second_hop": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "actual_received_email_evidence": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial_reserved",
+      "title": "Before you press play on a hypnosis audio",
+      "subject_candidate": "Before you press play on a hypnosis audio",
+      "preheader_candidate": "What a 33-minute file can tell you—and what it cannot prove.",
+      "excerpt_candidate": "A recording's length is a fact about a file. Better concentration is a claim that requires evidence. This edition uses a free three-minute task check to examine how easily those two get confused, then looks at Total Focus as a seller-described hypnosis audio—not a clinically established concentration treatment. Commercial note: a future independent guide could contain links that earn Final Vestige a commission. No recommendation is active without verified partner email permission.",
+      "archive_url": null,
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://www.nccih.nih.gov/health/hypnosis"
+      ],
+      "merchant_guide_url": null,
+      "merchant_permission_verified": false,
+      "status": "HOLD_UNSENT",
+      "founder_approved_final_sha": null,
+      "cta_live": false,
+      "planned_first_hop": "new issue post (not created or published)",
+      "intended_second_hop": "approved buyer guide not live; no outbound CTA",
+      "actual_received_email_evidence": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "title": "What did seven days of attention reveal?",
+      "subject_candidate": "What did seven days of attention reveal?",
+      "preheader_candidate": "A notebook records observations, not automatic proof of transformation.",
+      "excerpt_candidate": "What happened this week, and what are you only reconstructing from memory? A diary is most useful when it preserves dates, gaps and interruptions instead of smoothing them into an inspiring story. This edition borrows a lesson about recordkeeping from actual diary-method research, without claiming that our Focus Fieldbook has a proven treatment effect. Review the seven-day evidence exercise and get the existing free Fieldbook.",
+      "archive_url": "https://finalvestige.com/focus/",
+      "source_urls": [
+        "https://www.bmj.com/content/324/7347/1193"
+      ],
+      "merchant_guide_url": null,
+      "merchant_permission_verified": false,
+      "status": "HOLD_UNSENT",
+      "founder_approved_final_sha": null,
+      "cta_live": false,
+      "planned_first_hop": "new issue post (not created or published)",
+      "intended_second_hop": "https://finalvestige.com/focus/",
+      "actual_received_email_evidence": false
+    }
+  ]
+}
