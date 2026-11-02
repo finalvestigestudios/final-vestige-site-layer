@@ -34,7 +34,7 @@ def build(output,qa):
     for name,sha in receipt['screenshots'].items():
         data=(qa/name).read_bytes();assert hashlib.sha256(data).hexdigest()==sha
         files['qa-r62/'+name]=data
-    files['qa-r62/R62_BROWSER_RECEIPT.json']=(qa/'R62_BROWSER_RECEIPT.json').read_bytes()
+    files['qa-r62/R62_DATE_CUSTODY_BROWSER_RECEIPT.json']=(qa/'R62_DATE_CUSTODY_BROWSER_RECEIPT.json').read_bytes()
     with tempfile.TemporaryDirectory() as temp:
         stage=Path(temp)/'staging'
         result=build_wordpress_stage.build(stage)
