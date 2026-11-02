@@ -164,6 +164,53 @@ class ReadinessTest(TestCase):
             server.server_close()
             worker.join(timeout=2)
 
+    def test_wordpress_install_redirect_is_classified_without_url_disclosure(self):
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                self.send_response(302)
+                self.send_header('Location', '/wp-admin/install.php')
+                self.end_headers()
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                with patch.object(ci.time, 'sleep', lambda _: None):
+                    with self.assertRaisesRegex(RuntimeError,
+                                                'REST_REDIRECT_WP_INSTALL_NOT_FINISHED') as failure:
+                        ci.ready(Alive(), seconds=0.08)
+            self.assertIn('LOGIN_REDIRECT_WP_INSTALL_NOT_FINISHED', str(failure.exception))
+            self.assertIn('ADMIN_REDIRECT_WP_INSTALL_NOT_FINISHED', str(failure.exception))
+            self.assertNotIn('/wp-admin/install.php', str(failure.exception))
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+    def test_all_endpoints_private_landing_redirect_is_not_ready(self):
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                self.send_response(302)
+                self.send_header('Location', '/?pagename=fv-ex2-playground-review')
+                self.end_headers()
+            def log_message(self, *_args): pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                with patch.object(ci.time, 'sleep', lambda _: None):
+                    with self.assertRaisesRegex(RuntimeError,
+                                                'REDIRECT_BLUEPRINT_PRIVATE_LANDING') as failure:
+                        ci.ready(Alive(), seconds=0.08)
+            self.assertIn('REST_REDIRECT_BLUEPRINT_PRIVATE_LANDING', str(failure.exception))
+            self.assertNotIn('?pagename=', str(failure.exception))
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
     def test_fake_rest_schema_cannot_admit_redirect(self):
         class Handler(BaseHTTPRequestHandler):
             def do_GET(self):
