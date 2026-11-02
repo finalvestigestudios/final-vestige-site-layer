@@ -302,9 +302,46 @@
   // from the six visible original source citations, not filtered cards or a
   // remote API. No image binaries, location metadata, or license assumptions.
   // A mismatched NASA source/citation immediately withdraws this enhancement.
+  // R58: preserve the six complete *on-page* source-custody disclosures in the
+  // downloadable text sheet, not just the older catalog/date/URL citations.
+  // This copies reviewed static HTML into plain text; it does not clear rights,
+  // fetch NASA data, or invent extra metadata. On tampering, the download is
+  // refused and the always-readable native source drawers remain accessible.
+  const custodyFields=[
+    'Catalog reference','Record identity note','Catalog verification on NASA page',
+    'Credit displayed by NASA','Producing center displayed by NASA',
+    'NASA page last updated','Editorial source check','Reuse status',
+    'Documentary boundary'
+  ];
+  const sourceCustody=(card,id,catalog)=>{
+    const drawer=card.querySelector('[data-fva-drawer]');
+    if(!drawer||drawer.querySelectorAll('dl').length!==1)throw new Error('Custody drawer missing');
+    const dl=drawer.querySelector('dl');
+    const children=[...dl.children];
+    if(children.length!==custodyFields.length*2)throw new Error('Incomplete source custody');
+    const fields=[];
+    custodyFields.forEach((name,i)=>{
+      const label=children[i*2],value=children[i*2+1];
+      const txt=value?.textContent?.trim();
+      if(label?.tagName!=='DT'||label.textContent.trim()!==name||
+         value?.tagName!=='DD'||!txt)throw new Error('Custody field drift');
+      fields.push(txt);
+    });
+    if(fields[0]!==catalog ||
+       fields[2]!== (id==='01'
+         ? 'Not printed on the linked NASA page; attribution provisional.'
+         : 'Identifier displayed in the linked NASA page PIA field.') ||
+       fields[6].indexOf('no human link check or photograph inspection completed.')<0 ||
+       fields[7]!==('Individual review required.'+' No photograph is reproduced here.') ||
+       fields[8].indexOf('does not prove the cause or sequence')<0){
+      throw new Error('Custody claims changed');
+    }
+    return custodyFields.map((name,i)=>'    '+name+': '+fields[i]);
+  };
   const sourceRegister=()=>{
     if(!valid())throw new Error('Source register failed validation');
-    const lines=expected.map((id,i)=>{
+    const lines=[];
+    expected.forEach((id,i)=>{
       const source=cards[i].querySelector('.fva-card__external');
       const catalog=cards[i].querySelector('.fva-card__plate span')?.textContent?.trim();
       const citation=citations[i].querySelector('[data-fva-citation-text]')?.textContent?.trim();
@@ -317,16 +354,20 @@
          !citation.includes('individual review required')){
         throw new Error('Citation/source mismatch');
       }
-      return id+'. '+citation;
+      lines.push(id+'. '+citation);
+      lines.push('  Source custody disclosure (editorial metadata; NOT rights clearance):');
+      lines.push(...sourceCustody(cards[i],id,catalog));
+      lines.push('');
     });
     return ['FINAL VESTIGE STUDIOS — APOLLO 1 EVIDENCE ATLAS',
-      'NASA photographic-source reference register — STAGING ONLY',
+      'NASA photographic-source reference AND CUSTODY register — STAGING ONLY',
       'Six source links; no photographs are reproduced. NASA does not endorse this publication.',
       'Image reuse: six individual photo-rights reviews are outstanding.',
+      'Metadata is transcribed from the linked NASA-page source notes and has NOT received a human link or image-rights check.',
       'Dates identify source photographs, not the sequence or causes of the fire.',
-      'January 1967 photograph S67-19766 has no independently verified day.',
+      'January 1967 photograph S67-19766 has no independently verified day or confirmed catalog-to-photo match.',
       'Every entry is a source reference, not a reproduction license.',
-      '',...lines,'',
+      '',...lines,
       'Primary technical investigation: '+root.querySelector('.fva-guide a')?.getAttribute('href'),
       'NASA media guidance: '+root.querySelector('.fva-footer a')?.getAttribute('href'),
       ''].join('\n');
@@ -343,7 +384,7 @@
       link.style.display='none';
       root.appendChild(link);
       link.click();
-      exportStatus.textContent='Six NASA source references prepared for download; check your browser downloads.';
+      exportStatus.textContent='Six NASA citations and source-custody disclosures prepared for download; rights reviews remain pending.';
     }catch(_){
       exportStatus.textContent='Download unavailable. All six citations remain readable below, or print the complete register.';
     }finally{
