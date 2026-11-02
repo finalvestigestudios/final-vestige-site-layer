@@ -1,0 +1,78 @@
+{
+  "scope": "Exact chronicle.html and chronicle.css base blobs verified against PR199 plus new reading lens, in an offline representative shell. NOT the full homepage or WordPress.",
+  "run_date": "2026-10-30",
+  "base_source_sha": "9f8b8857412b8f1180ad057d3dc22e204e59d1df",
+  "baseline_gh_git_blobs": {
+    "chronicle_html": "e1cc2321b079f940aa05e7d4bb8e6bbe10d9b627",
+    "chronicle_css": "a779320ef6468b853a65a268502d15a19a9c1b64"
+  },
+  "browser": "installed headless Chromium, Playwright",
+  "visual_before_after_screenshots": "Local QA artifact only (not in GitHub): before, after/compare, revealed at 390px and 1440px.",
+  "viewports": [
+    320,
+    360,
+    390,
+    600,
+    768,
+    1024,
+    1440,
+    1920
+  ],
+  "view_tests_per_width": [
+    "both notes visible on initial render",
+    "3 button view switches",
+    "original-only and addition-only show requested original passage",
+    "compare restores both",
+    "keyboard Home/End/ArrowRight",
+    "native details opens",
+    "original museum and investigation links intact",
+    "button height >=49 CSS px",
+    "no root horizontal overflow",
+    "no page JS errors"
+  ],
+  "widths_root_overflow_px": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "button_heights_css_px": [
+    49,
+    49,
+    49,
+    51,
+    51,
+    51,
+    51,
+    51
+  ],
+  "javascript_disabled": {
+    "widths": [
+      390,
+      1440
+    ],
+    "both_entries_visible": true,
+    "evidence_note_usable": true
+  },
+  "fault_injection": "Second addEventListener registration throws; hidden controls + both source entries visible",
+  "zoom": "CSS zoom 200% tested at widths 390, 768; no root overflow; not browser 200% certification",
+  "source_python_unit_tests": "6/6 passed on representative local template",
+  "performance": "JS/CSS asset transfer bytes counted from authored files; no production LCP/INP/CLS or Lighthouse scores",
+  "unverified": [
+    "Exact combined GitHub head Chromium",
+    "Live WordPress 2.0 integration",
+    "WCAG 2.2 AA",
+    "Axe",
+    "Assistive technology",
+    "Safari",
+    "Production Core Web Vitals",
+    "Hosted CI",
+    "Full media rights",
+    "Independent QD"
+  ],
+  "release": "HOLD"
+}

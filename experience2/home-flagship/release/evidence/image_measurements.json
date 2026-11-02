@@ -1,0 +1,216 @@
+{
+  "mobile-390@3x": [
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1",
+      "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during ",
+      "nw": 390,
+      "nh": 303,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "apollo",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 76876
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1",
+      "alt": "The Victory Point note: an 1847 message with a later handwritten update dating from April ",
+      "nw": 389,
+      "nh": 619,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "franklin",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 301260
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1",
+      "alt": "1903 Brooklyn Rapid Transit railway and rapid-transit map, created before the Malbone Stre",
+      "nw": 351,
+      "nh": 237,
+      "cw": 352,
+      "ch": 238,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": true,
+      "case": "malbone",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 282367
+    }
+  ],
+  "tablet-768@2x": [
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1",
+      "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during ",
+      "nw": 768,
+      "nh": 597,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "apollo",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 76876
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1",
+      "alt": "The Victory Point note: an 1847 message with a later handwritten update dating from April ",
+      "nw": 768,
+      "nh": 1220,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "franklin",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 301260
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1",
+      "alt": "1903 Brooklyn Rapid Transit railway and rapid-transit map, created before the Malbone Stre",
+      "nw": 673,
+      "nh": 455,
+      "cw": 674,
+      "ch": 455,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": true,
+      "case": "malbone",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 282367
+    }
+  ],
+  "desktop-1440@1x": [
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1",
+      "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during ",
+      "nw": 1440,
+      "nh": 1120,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "apollo",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 76876
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1",
+      "alt": "The Victory Point note: an 1847 message with a later handwritten update dating from April ",
+      "nw": 1440,
+      "nh": 2289,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "franklin",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 301260
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
+      "alt": "1903 Brooklyn Rapid Transit railway and rapid-transit map, created before the Malbone Stre",
+      "nw": 890,
+      "nh": 602,
+      "cw": 891,
+      "ch": 602,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": true,
+      "case": "malbone",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 129395
+    }
+  ],
+  "wide-1920@1x": [
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1",
+      "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during ",
+      "nw": 1919,
+      "nh": 1494,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "apollo",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 76876
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1",
+      "alt": "The Victory Point note: an 1847 message with a later handwritten update dating from April ",
+      "nw": 1920,
+      "nh": 3052,
+      "cw": 0,
+      "ch": 0,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": false,
+      "case": "franklin",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 301260
+    },
+    {
+      "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1",
+      "alt": "1903 Brooklyn Rapid Transit railway and rapid-transit map, created before the Malbone Stre",
+      "nw": 1037,
+      "nh": 701,
+      "cw": 1038,
+      "ch": 702,
+      "complete": true,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "visible": true,
+      "case": "malbone",
+      "http": 200,
+      "mime": "image/webp",
+      "transfer_bytes": 282367
+    }
+  ],
+  "_bodies": {
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1": {
+      "error": "HTTP Error 404: Not Found"
+    },
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1": {
+      "error": "HTTP Error 404: Not Found"
+    },
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1": {
+      "error": "HTTP Error 404: Not Found"
+    },
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1": {
+      "error": "HTTP Error 404: Not Found"
+    }
+  }
+}

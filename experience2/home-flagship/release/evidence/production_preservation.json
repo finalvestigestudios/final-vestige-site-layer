@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "preserved_before_flagship_byte_exact": true,
+    "preserved_after_flagship_byte_exact": true,
+    "margins_72_unique_0_to_71": true,
+    "jetpack_form_and_email_input": true,
+    "focus_links_in_preserved_part": 2,
+    "jetpack_form_action": [
+      "https://wordpress.com/email-subscriptions"
+    ],
+    "studios_hero_gone_from_candidate": true,
+    "flagship_present_once": true
+  },
+  "removed_section": {
+    "links": [
+      "/blog/",
+      "/accountability/",
+      "/collection/",
+      "/watch/",
+      "/community/",
+      "/labs/"
+    ],
+    "bytes": 4239,
+    "text": "FINAL VESTIGE STUDIOS Find what others miss. Investigations built from primary sources: the disasters, discoveries and buried records that history tends to skip. 01 \u00b7 INVESTIGATIONS Stories reconstructed from surviving evidence. Journal, archives, History Lab, field research \u2192 02 \u00b7 THE PUBLIC RECORD Public information made easier to find, follow, and check. Open the first release \u2192 03 \u00b7 EDITIONS B"
+  },
+  "live": {
+    "sha256": "635c8ed38b3e9d78556423b60c4dffdbf57873b4a9b49f5b87f16f57a5066a47",
+    "snapshot_sha256": "635c8ed38b3e9d78556423b60c4dffdbf57873b4a9b49f5b87f16f57a5066a47",
+    "identical_to_snapshot": true
+  }
+}

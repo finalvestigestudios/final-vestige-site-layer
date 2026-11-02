@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-30",
+  "scope": "New isolated Observer Lab module tested in offline Chromium; full combined homepage not browser tested",
+  "base_pr": 192,
+  "base_sha": "02898f44ce6ac57d63f55d38629770d970b8bfe2",
+  "static_local": "8/8 PASS",
+  "browser_local": "10/10 PASS",
+  "js_enabled_widths": [
+    320,
+    360,
+    390,
+    580,
+    768,
+    1024,
+    1440,
+    1920
+  ],
+  "js_disabled_widths": [
+    390,
+    1440
+  ],
+  "checks": {
+    "keyboard_enter": "PASS",
+    "native_details": "PASS",
+    "aria_pressed": "PASS",
+    "aria_live": "PASS",
+    "js_off_two_frames_visible": "PASS",
+    "horizontal_root_overflow_px": 0,
+    "button_height_px": 49,
+    "uncaught_errors": 0,
+    "reduced_motion_390": "PASS"
+  },
+  "source_git_blobs": {
+    "html": "3ea6f13d3c0b98a523f2942577ef37fc1b1fb8a1",
+    "css": "f01b336fe76470df88c8b748fd13321376f27aa2",
+    "js": "9b69d69dc61909d3e802365e47ab5287108efa4e"
+  },
+  "caveats": [
+    "Not WordPress staging, full homepage, real traffic metrics, p75 CWV, Lighthouse or WCAG 2.2 AA validation",
+    "Offline component-only screenshots; no axe, VoiceOver/NVDA or iOS Safari",
+    "No archival image reuse; studio-created geometry only",
+    "No CI green, final QD or founder release approval"
+  ],
+  "wp_live_checked": {
+    "page": 6,
+    "published": true,
+    "hidden_in_margins_unique": 72,
+    "margin_range": "0-71",
+    "focus": true,
+    "jetpack": true
+  }
+}

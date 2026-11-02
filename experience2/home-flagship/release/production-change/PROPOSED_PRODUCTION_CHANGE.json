@@ -1,0 +1,93 @@
+{
+  "status": "PROPOSED - NOT APPLIED - requires explicit founder approval; re-run page-sections.list first and refuse if modified/content_hash differ from these tokens",
+  "target": {
+    "wpcom_site": 256784396,
+    "page_id": 6,
+    "read_at": "2026-11-02",
+    "top_level_blocks": 6,
+    "block_to_replace": {
+      "index": 1,
+      "type": "core/html",
+      "block_hash_sha1": "1c97fec5cc356a02fb2f51a092f749c81efcd98c",
+      "what": "old Studios hero (+ its <style>)"
+    }
+  },
+  "blocks_left_untouched_byte_for_byte": [
+    {
+      "index": 0,
+      "type": "core/html",
+      "what": "72 Hidden in the Margins strip",
+      "block_hash": "6948a35c4e60ff43154440a7fad980dc3cae6859"
+    },
+    {
+      "index": 3,
+      "type": "core/group",
+      "what": "home shell incl. Jetpack subscription (Dispatch), latest, trails, research desk",
+      "block_hash": "f9da41225609adcca1c23f18b39079d1275c9249"
+    },
+    {
+      "index": 4,
+      "type": "core/html",
+      "what": "Enter the record",
+      "block_hash": "e53df6922591588603a41ce2e56dfdc418ba2d98"
+    },
+    {
+      "index": 5,
+      "type": "core/html",
+      "what": "Organization JSON-LD",
+      "block_hash": "9454d1e44ee4932a4975796a88d2640ab9ecae8d"
+    }
+  ],
+  "apply": {
+    "operation": "page-sections.replace",
+    "params": {
+      "id": 6,
+      "index": 1,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "1c97fec5cc356a02fb2f51a092f749c81efcd98c",
+      "expected_modified": "2026-10-30T09:14:14",
+      "expected_content_hash": "7afdb933d2ec68fd993ef015c97a6eb9edfe0576",
+      "block_markup_file": "replacement-block-index1.html"
+    },
+    "replacement_sha256": "506aa8d9d9d9c3fe7821d8e479dc8857957667f06f5f6ea5432e3f3ad0fbc7c9",
+    "replacement_sha1": "8c0dd5c3adce073fd58f5001e0f90d523ffad277",
+    "replacement_bytes": 108155
+  },
+  "operation_2_optional": {
+    "what": "Focus CTA button: remove aria-label so the accessible name equals the visible text (WCAG 2.5.3)",
+    "run_after": "operation 1, with FRESH lock tokens from page-sections.list (content_hash changes after operation 1)",
+    "params": {
+      "id": 6,
+      "index": 2,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "abc983ae1b3cf45d35589c7e5366ccc522cb0462",
+      "block_markup_file": "replacement-block-index2.html"
+    },
+    "replacement_sha1": "6968fd0dcd2f89db318e65ef266971b7c1c251fe",
+    "replacement_bytes": 2827,
+    "rollback_params": {
+      "id": 6,
+      "index": 2,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "6968fd0dcd2f89db318e65ef266971b7c1c251fe",
+      "block_markup_file": "original-block-index2.html"
+    },
+    "original_block_sha1_verified_against_live_block_hash": true
+  },
+  "rollback": {
+    "operation": "page-sections.replace",
+    "params": {
+      "id": 6,
+      "index": 1,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "8c0dd5c3adce073fd58f5001e0f90d523ffad277",
+      "block_markup_file": "original-block-index1.html"
+    },
+    "original_block_sha1_verified_against_live_block_hash": true,
+    "also_available": "WordPress post revisions for page 6 (restore the revision dated 2026-10-30T09:14:14)"
+  },
+  "no_plugin_install": true,
+  "no_theme_or_navigation_change": true,
+  "no_new_pages_in_the_change_itself": true,
+  "wordpress_com_verification": "Probe-level only: on private draft 1902 the editor and renderer kept an inline <style>, <script> and <noscript> and stored hazard characters byte-for-byte (block_hash equal to the local SHA-1). The exact replacement block has NOT yet been stored in a draft, and no authenticated WordPress.com render of it has been seen (needs a signed-in browser). See release/dry-run/WORDPRESS_COM_DRAFT_VERIFICATION.md."
+}

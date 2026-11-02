@@ -1,0 +1,84 @@
+/* Integration-only rules for the flagship inside the Assembler page template.
+   flagship.css sets :where(.fv-hf){width:100%}; inside a constrained post-content that
+   pins the wrapper to the content box, so the alignfull negative margins shift it left
+   instead of widening it. Let the full-bleed wrapper size from its (negative) margins. */
+.fv-hf.fv-hf--wp{width:auto;max-width:none}
+
+/* Inside WordPress the Assembler header, the Margins strip and the chapter nav already take
+   ~260px above the hero, which pushed the primary call to action below a 1440x900 first view.
+   Tighten only the desktop hero's vertical rhythm (the 390px composition is unchanged). */
+@media (min-width:921px){
+  .fv-hf.fv-hf--wp .fv-hf__opening-inner{padding-top:clamp(24px,3vw,48px);padding-bottom:clamp(40px,5vw,80px)}
+  .fv-hf.fv-hf--wp .fv-hf__opening h1{font-size:clamp(70px,7.6vw,118px)}
+}
+
+/* Anchored chapter headings must clear the sticky chapter nav (55px). inquiry.css and
+   chronicle.css set scroll-margin-top:26px at narrow widths, which parked "Test a claim"
+   under the nav after a tap on mobile. */
+.fv-hf [id^="fv-hf-"],.fv-hf #fv-hf-inquiry{scroll-margin-top:84px}
+
+/* Touch targets: standalone text links were 14-23px tall (WCAG 2.5.8 AA floor is 24px; aim 44px). */
+.fv-hf .fv-hf__text-link,
+.fv-hf .fv-hf__opening-foot a,
+.fv-hf .fv-hf__index-note a,
+.fv-hf .fv-hf__case-source a,
+.fv-hf .fv-hf__method > a,
+.fv-hf .fv-hf__observer a[href^="https://doi.org"],
+.fv-hf .fv-hf__observer-exit a,
+.fv-hf .fv-hf__mind-actions a,
+.fv-hf .fv-hf__exit a,
+/* plain disclosures only: the classed accordion headers (.fv-hf__inquiry-record, .fv-hf__observer-reveal)
+   already lay themselves out as grids and are tall enough; list-item keeps the native marker. */
+.fv-hf details:not([class]) > summary{display:list-item;min-height:44px;padding-block:.7em;box-sizing:border-box}
+
+/* Legibility floor. The study ships 7-10px mono labels, including evidence-bearing ones
+   ("EDITORIAL TYPESETTING - NOT A FACSIMILE" at 8px, image credits at 10px, the museum-record
+   link at 8-9px). Evidence/credit/limit text and actionable links get 12px; decorative section
+   labels and numerals get 11px. Layout is otherwise unchanged. */
+.fv-hf .fv-hf__folio-note-foot,
+.fv-hf .fv-hf__image-frame span,
+.fv-hf .fv-hf__chronicle-artnote,
+.fv-hf small,
+.fv-hf .fv-hf__folio-bottomline a{font-size:12px}
+.fv-hf .fv-hf__folio-bottomline a{display:inline-flex;align-items:center;gap:.4em;min-height:44px;white-space:nowrap;flex:0 0 auto}
+.fv-hf .fv-hf__eyebrow,
+.fv-hf .fv-hf__inquiry-stamp,
+.fv-hf [class*="overline"],
+.fv-hf [class*="overline"] span,
+.fv-hf .fv-hf__case-no,
+.fv-hf .fv-hf__chapter-nav a span,
+.fv-hf .fv-hf__opening-foot a,
+.fv-hf .fv-hf__issue,
+.fv-hf .fv-hf__folio-topline,
+.fv-hf .fv-hf__folio-topline span,
+.fv-hf .fv-hf__folio-bottomline,
+.fv-hf .fv-hf__folio-bottomline span,
+.fv-hf .fv-hf__folio-index,
+.fv-hf .fv-hf__inquiry-verdict span,
+.fv-hf .fv-hf__inquiry-outro span,
+.fv-hf .fv-hf__exit p,
+.fv-hf .fv-hf__chronicle-entryhead span,
+.fv-hf .fv-hf__chronicle-divider,
+.fv-hf .fv-hf__case-index-head span{font-size:11px}
+.fv-hf .fv-hf__folio-back,
+.fv-hf .fv-hf__folio-margin,
+.fv-hf .fv-hf__folio-note-head span,
+.fv-hf .fv-hf__folio-original,
+.fv-hf .fv-hf__observer-seal,
+.fv-hf .fv-hf__observer-kicker{font-size:11px}
+.fv-hf .fv-hf__folio-back span,
+.fv-hf .fv-hf__folio-margin span,
+.fv-hf .fv-hf__folio-original span,
+.fv-hf .fv-hf__observer-paper-head span,
+.fv-hf .fv-hf__observer-paper-foot span{font-size:11px}
+
+/* Below-the-fold rendering cost (mobile style/layout was the main-thread bottleneck).
+   Only the long PRESERVED production sections that follow the flagship are skipped until they
+   approach the viewport. The flagship's own chapters stay fully rendered so the Reading Trail
+   (active chapter, progress) and chapter anchors measure real positions. Fragment navigation,
+   find-in-page and focus still reveal skipped content; the remembered intrinsic size avoids jumps. */
+.fv-home-shell,.fv-enter-record{content-visibility:auto;contain-intrinsic-size:auto 1400px}
+
+/* Preserved category links: WCAG 2.5.8 target size (axe target-size on .fv-stream-taxonomy a). */
+.fv-stream-taxonomy a,.fv-home-taxonomy-name a{display:inline-block;min-height:24px;padding-block:5px}
+@media (pointer:coarse){.fv-stream-taxonomy a,.fv-home-taxonomy-name a{min-height:44px;display:inline-flex;align-items:center}}

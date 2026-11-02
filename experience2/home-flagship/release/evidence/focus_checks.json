@@ -1,0 +1,22 @@
+{
+ "after_enter_on_chapter_link": {
+  "el": "SECTION CHAPTER 06 / THE OBSERVE",
+  "visibleInViewport": false,
+  "hash": "#fv-hf-observer"
+ },
+ "next_tab_stop_after_jump": {
+  "el": "BUTTON 01 / Frame A",
+  "inObserverSection": true,
+  "inViewport": false
+ },
+ "details_toggle_keeps_focus": true,
+ "details_space_closes": true,
+ "case_arrow_right": {
+  "focus": "franklin",
+  "pressed": [
+   "false",
+   "true",
+   "false"
+  ]
+ }
+}

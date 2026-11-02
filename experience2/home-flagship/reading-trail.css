@@ -1,0 +1,45 @@
+/* First-party reading trail: an original wayfinding layer, no outside fonts or media.
+ * The seven native chapter links remain visible with scripts disabled. */
+.fv-hf .fv-hf__chapter-nav {
+  position: sticky;
+  top: var(--fv-trail-top, 0px);
+  z-index: 65;
+  isolation: isolate;
+  overscroll-behavior-inline: contain;
+}
+.fv-hf .fv-hf__chapter-nav[data-fv-trail-enhanced]::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  pointer-events: none;
+  background: linear-gradient(90deg, #b8955e, #d4bf91 70%, #b8955e);
+  transform: scaleX(var(--fv-trail-progress, 0));
+  transform-origin: left center;
+  transition: transform 160ms linear;
+}
+.fv-hf .fv-hf__chapter-nav a[aria-current="location"] {
+  color: #fff7e8;
+  background: rgba(199, 166, 108, .11);
+  border-bottom-color: #c7a66c;
+  box-shadow: inset 0 1px 0 rgba(199, 166, 108, .28);
+}
+.fv-hf :where(#fv-hf-title,#fv-hf-chronicle,#fv-hf-evidence,#fv-hf-inquiry,#fv-hf-method-title,#fv-hf-observer,#fv-hf-mind-title) {
+  scroll-margin-top: calc(var(--fv-trail-top, 0px) + 74px);
+}
+.fv-hf :where(#fv-hf-title,#fv-hf-chronicle,#fv-hf-evidence,#fv-hf-inquiry,#fv-hf-method-title,#fv-hf-observer,#fv-hf-mind-title):focus {
+  outline-offset: 5px;
+}
+.fv-hf :where(#fv-hf-title,#fv-hf-chronicle,#fv-hf-evidence,#fv-hf-inquiry,#fv-hf-method-title,#fv-hf-observer,#fv-hf-mind-title):focus-visible {
+  outline: 3px solid #d4bf91;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fv-hf .fv-hf__chapter-nav[data-fv-trail-enhanced]::after { transition: none; }
+}
+@media print {
+  .fv-hf .fv-hf__chapter-nav { position: static; }
+  .fv-hf .fv-hf__chapter-nav[data-fv-trail-enhanced]::after { display: none; }
+}

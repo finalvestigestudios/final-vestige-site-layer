@@ -1,0 +1,67 @@
+{
+  "fixture": "offline excerpt with exact isolated new CSS/HTML; not full PR177",
+  "network_images": "NOT_TESTED",
+  "Lighthouse": "NOT_MEASURED",
+  "results": [
+    {
+      "width": 360,
+      "horizontal_overflow": 0,
+      "mobile_nav_visible": true,
+      "chapter_targets": 5,
+      "native_details": true,
+      "no_javascript": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "horizontal_overflow": 0,
+      "mobile_nav_visible": true,
+      "chapter_targets": 5,
+      "native_details": true,
+      "no_javascript": true,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "horizontal_overflow": 0,
+      "mobile_nav_visible": true,
+      "chapter_targets": 5,
+      "native_details": true,
+      "no_javascript": true,
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "horizontal_overflow": 0,
+      "mobile_nav_visible": true,
+      "chapter_targets": 5,
+      "native_details": true,
+      "no_javascript": true,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "horizontal_overflow": 0,
+      "mobile_nav_visible": true,
+      "chapter_targets": 5,
+      "native_details": true,
+      "no_javascript": true,
+      "errors": []
+    },
+    {
+      "width": 1920,
+      "horizontal_overflow": 0,
+      "mobile_nav_visible": true,
+      "chapter_targets": 5,
+      "native_details": true,
+      "no_javascript": true,
+      "errors": []
+    },
+    {
+      "zoom": "CSS 200% at width 390",
+      "viewport": 390,
+      "rootWidth": 390,
+      "quote": 218
+    }
+  ]
+}

@@ -1,0 +1,1056 @@
+{
+  "url": "http://127.0.0.1:9401/",
+  "widths": {
+    "320": {
+      "scrollW": 320,
+      "innerW": 320,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 271,
+            "nodes_in_flagship": 144,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "a[href$=\"#fv-hf-title\"] > span",
+              "a[href$=\"#fv-hf-chronicle\"] > span"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 49
+      },
+      "console_errors": []
+    },
+    "360": {
+      "scrollW": 360,
+      "innerW": 360,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 271,
+            "nodes_in_flagship": 144,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "a[href$=\"#fv-hf-title\"] > span",
+              "a[href$=\"#fv-hf-chronicle\"] > span"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 49
+      },
+      "console_errors": []
+    },
+    "390": {
+      "scrollW": 390,
+      "innerW": 390,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 271,
+            "nodes_in_flagship": 144,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "a[href$=\"#fv-hf-title\"] > span",
+              "a[href$=\"#fv-hf-chronicle\"] > span"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 49
+      },
+      "console_errors": []
+    },
+    "768": {
+      "scrollW": 768,
+      "innerW": 768,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 283,
+            "nodes_in_flagship": 152,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "a[href$=\"#fv-hf-title\"]",
+              "a[href$=\"#fv-hf-title\"] > span"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 49
+      },
+      "console_errors": [
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+      ]
+    },
+    "1024": {
+      "scrollW": 1024,
+      "innerW": 1024,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 299,
+            "nodes_in_flagship": 157,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "button[aria-label=\"Investigations submenu\"] > .wp-block-navigation-item__label",
+              ".wp-block-navigation-link.wp-block-navigation-item:nth-child(2) > .wp-block-navigation-item__content[href$=\"podcast/\"] > .wp-block-navigation-item__label"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 49
+      },
+      "console_errors": [
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+      ]
+    },
+    "1440": {
+      "scrollW": 1440,
+      "innerW": 1440,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 299,
+            "nodes_in_flagship": 157,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "button[aria-label=\"Investigations submenu\"] > .wp-block-navigation-item__label",
+              ".wp-block-navigation-link.wp-block-navigation-item:nth-child(2) > .wp-block-navigation-item__content[href$=\"podcast/\"] > .wp-block-navigation-item__label"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 48
+      },
+      "console_errors": [
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+      ]
+    },
+    "1920": {
+      "scrollW": 1920,
+      "innerW": 1920,
+      "margins": 72,
+      "flagship": 1,
+      "mains": 1,
+      "headers": 1,
+      "footers": 1,
+      "h1": [
+        "Find what others miss."
+      ],
+      "devBanner": false,
+      "candidateText": false,
+      "jetpackForm": 1,
+      "focusLinks": 4,
+      "ids": [],
+      "horizontal_overflow": false,
+      "small_targets_lt24": [],
+      "small_targets_lt44": 3,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 2,
+            "nodes_in_flagship": 0,
+            "targets": [
+              ".fv-margin-strip__window",
+              ".fv-enter-record__grid"
+            ],
+            "help": "Elements must only use permitted ARIA attributes"
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 300,
+            "nodes_in_flagship": 158,
+            "targets": [
+              ".has-text-color.wp-block-paragraph:nth-child(1) > a[href=\"/\"]",
+              ".fv-header-tagline",
+              "button[aria-label=\"Investigations submenu\"] > .wp-block-navigation-item__label",
+              ".wp-block-navigation-link.wp-block-navigation-item:nth-child(2) > .wp-block-navigation-item__content[href$=\"podcast/\"] > .wp-block-navigation-item__label"
+            ],
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          }
+        ],
+        "passes": 48
+      },
+      "console_errors": [
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
+        "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
+      ]
+    }
+  },
+  "interactions": {
+    "desktop": {
+      "franklin_switch": {
+        "original": {
+          "pressed": [
+            "true",
+            "false",
+            "false"
+          ],
+          "root": {
+            "fvChronicleLens": ""
+          }
+        },
+        "addition": {
+          "pressed": [
+            "false",
+            "true",
+            "false"
+          ],
+          "root": {
+            "fvChronicleLens": ""
+          }
+        },
+        "both": {
+          "pressed": [
+            "false",
+            "false",
+            "true"
+          ],
+          "root": {
+            "fvChronicleLens": ""
+          }
+        },
+        "pressed_follows_clicks": true
+      },
+      "case_chooser": {
+        "franklin": {
+          "pressed": [
+            "false",
+            "true",
+            "false"
+          ],
+          "visiblePanels": [
+            "franklin"
+          ],
+          "status": "Now viewing: \u201cAll well\u201d was written first.",
+          "only_selected_visible": true
+        },
+        "malbone": {
+          "pressed": [
+            "false",
+            "false",
+            "true"
+          ],
+          "visiblePanels": [
+            "malbone"
+          ],
+          "status": "Now viewing: The map predates the curve.",
+          "only_selected_visible": true
+        },
+        "apollo": {
+          "pressed": [
+            "true",
+            "false",
+            "false"
+          ],
+          "visiblePanels": [
+            "apollo"
+          ],
+          "status": "Now viewing: The hatch opened inward.",
+          "only_selected_visible": true
+        }
+      },
+      "inquiry_toggle": {
+        "before": [
+          true,
+          false,
+          false
+        ],
+        "after": [
+          true,
+          true,
+          false
+        ],
+        "changed": true
+      },
+      "observer_lab": {
+        "after_b": [
+          "false",
+          "true"
+        ],
+        "after_a": [
+          "true",
+          "false"
+        ],
+        "toggles": true,
+        "answer_open": true
+      },
+      "chapter_nav": [
+        {
+          "href": "#fv-hf-title",
+          "found": true,
+          "top": 110,
+          "inView": true,
+          "hash": "#fv-hf-title",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-chronicle",
+          "found": true,
+          "top": 110,
+          "inView": true,
+          "hash": "#fv-hf-chronicle",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-evidence",
+          "found": true,
+          "top": 110,
+          "inView": true,
+          "hash": "#fv-hf-evidence",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-inquiry",
+          "found": true,
+          "top": 84,
+          "inView": true,
+          "hash": "#fv-hf-inquiry",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-method-title",
+          "found": true,
+          "top": 110,
+          "inView": true,
+          "hash": "#fv-hf-method-title",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-observer",
+          "found": true,
+          "top": 110,
+          "inView": true,
+          "hash": "#fv-hf-observer",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-mind-title",
+          "found": true,
+          "top": 110,
+          "inView": true,
+          "hash": "#fv-hf-mind-title",
+          "underStickyHeader": false
+        }
+      ],
+      "console_errors": []
+    },
+    "mobile_touch": {
+      "franklin_switch": {
+        "original": {
+          "pressed": [
+            "true",
+            "false",
+            "false"
+          ],
+          "root": {
+            "fvChronicleLens": ""
+          }
+        },
+        "addition": {
+          "pressed": [
+            "false",
+            "true",
+            "false"
+          ],
+          "root": {
+            "fvChronicleLens": ""
+          }
+        },
+        "both": {
+          "pressed": [
+            "false",
+            "false",
+            "true"
+          ],
+          "root": {
+            "fvChronicleLens": ""
+          }
+        },
+        "pressed_follows_clicks": true
+      },
+      "case_chooser": {
+        "franklin": {
+          "pressed": [
+            "false",
+            "true",
+            "false"
+          ],
+          "visiblePanels": [
+            "franklin"
+          ],
+          "status": "Now viewing: \u201cAll well\u201d was written first.",
+          "only_selected_visible": true
+        },
+        "malbone": {
+          "pressed": [
+            "false",
+            "false",
+            "true"
+          ],
+          "visiblePanels": [
+            "malbone"
+          ],
+          "status": "Now viewing: The map predates the curve.",
+          "only_selected_visible": true
+        },
+        "apollo": {
+          "pressed": [
+            "true",
+            "false",
+            "false"
+          ],
+          "visiblePanels": [
+            "apollo"
+          ],
+          "status": "Now viewing: The hatch opened inward.",
+          "only_selected_visible": true
+        }
+      },
+      "inquiry_toggle": {
+        "before": [
+          true,
+          false,
+          false
+        ],
+        "after": [
+          true,
+          true,
+          false
+        ],
+        "changed": true
+      },
+      "observer_lab": {
+        "after_b": [
+          "false",
+          "true"
+        ],
+        "after_a": [
+          "true",
+          "false"
+        ],
+        "toggles": true,
+        "answer_open": true
+      },
+      "chapter_nav": [
+        {
+          "href": "#fv-hf-title",
+          "found": true,
+          "top": 92,
+          "inView": true,
+          "hash": "#fv-hf-title",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-chronicle",
+          "found": true,
+          "top": 92,
+          "inView": true,
+          "hash": "#fv-hf-chronicle",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-evidence",
+          "found": true,
+          "top": 92,
+          "inView": true,
+          "hash": "#fv-hf-evidence",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-inquiry",
+          "found": true,
+          "top": 84,
+          "inView": true,
+          "hash": "#fv-hf-inquiry",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-method-title",
+          "found": true,
+          "top": 92,
+          "inView": true,
+          "hash": "#fv-hf-method-title",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-observer",
+          "found": true,
+          "top": 92,
+          "inView": true,
+          "hash": "#fv-hf-observer",
+          "underStickyHeader": false
+        },
+        {
+          "href": "#fv-hf-mind-title",
+          "found": true,
+          "top": 92,
+          "inView": true,
+          "hash": "#fv-hf-mind-title",
+          "underStickyHeader": false
+        }
+      ],
+      "console_errors": []
+    }
+  },
+  "nojs": {
+    "margins": 72,
+    "caseButtonsHidden": 0,
+    "hasApollo": true,
+    "hasFranklin": true,
+    "hasMalbone": true,
+    "hasObserver": true,
+    "sourceLinks": 30,
+    "detailsCount": 8,
+    "focus": 4,
+    "jetpackForm": 1,
+    "casePhotosLoaded": 3
+  },
+  "reduced_motion": {
+    "mediaMatches": true,
+    "runningFlagshipAnimations": [],
+    "scrollBehavior": "auto"
+  },
+  "zoom": {
+    "200pct_640css": {
+      "scrollW": 640,
+      "innerW": 640,
+      "overflow": false
+    },
+    "400pct_320css": {
+      "scrollW": 320,
+      "innerW": 320,
+      "overflow": false
+    }
+  },
+  "touch": {
+    "targets_lt24": [],
+    "targets_lt44_count": 3
+  },
+  "keyboard": {
+    "first_40_stops": [
+      {
+        "tag": "A",
+        "txt": "Skip to content",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "FINAL VESTIGE STUDIOS",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "Investigations",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "Podcast",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "The Public Record",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "Labs",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "Editions",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "The Library",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "Research",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "Community",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "About",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "Dispatch",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "",
+        "outline": "solid 2px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "DIV",
+        "txt": "Nearly 4,000 years ago, Nanni ",
+        "outline": "solid 1px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": false
+      },
+      {
+        "tag": "A",
+        "txt": "Skip to the evidence room",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "01 The find",
+        "outline": "solid 3px",
+        "shadow": true,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "02 A document changed",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "03 Inspect the evidence",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "04 Test a claim",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "05 Our method",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "06 Test your observation",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "07 The observer",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Enter the evidence room \u2197",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Read the investigations \u2197",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Inspect the museum record \u2197",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": true,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "SCROLL TO INSPECT \u2193",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "01 Original \u00b7 1847",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "02 Addition \u00b7 1848",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "03 Compare both",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "SUMMARY",
+        "txt": "What this evidence establishes",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Museum\u2019s original-object recor",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Museum transcription \u2197",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Investigate the full story \u2197",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "01A hatch that opened inwardAP",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "02A note rewritten in the marg",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "BUTTON",
+        "txt": "03A map fifteen years too earl",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Read our editorial standards \u2197",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "A",
+        "txt": "Read the complete investigatio",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "SUMMARY",
+        "txt": "Inspect the source & limits",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      },
+      {
+        "tag": "SUMMARY",
+        "txt": "IFRANKLIN EXPEDITION / 1847\u201318",
+        "outline": "solid 3px",
+        "shadow": false,
+        "visible": false,
+        "inFlagship": true
+      }
+    ],
+    "stops_without_visible_indicator": []
+  },
+  "dispatch_anchor": {
+    "found": true,
+    "top": 123,
+    "height": 444,
+    "inView": true,
+    "formVisible": true
+  }
+}

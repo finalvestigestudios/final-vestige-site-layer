@@ -1,0 +1,488 @@
+{
+ "note": "LAB results, Lighthouse 12.6.1. Not field Core Web Vitals; no production measurement exists. \"simulate\" = Lighthouse modelled throttling; \"devtools\" = applied throttling (4x CPU, 1.6 Mbps, 150 ms RTT) and is noisy run to run. direct = Playground (uncompressed, 1-3 s PHP-WASM TTFB, NOT production); proxy = gzip+cache front (front-end cost only, NOT production). live = public homepage measured read-only on 2026-11-02.",
+ "candidate_direct_simulate": {
+  "mobile": {
+   "runs": [
+    {
+     "performance": 66,
+     "accessibility": 100,
+     "FCP_ms": 3275,
+     "LCP_ms": 6162,
+     "TBT_ms": 228,
+     "CLS": 0,
+     "transfer_KB": 984,
+     "requests": 15
+    },
+    {
+     "performance": 69,
+     "accessibility": 100,
+     "FCP_ms": 2845,
+     "LCP_ms": 6084,
+     "TBT_ms": 176,
+     "CLS": 0.0,
+     "transfer_KB": 1039,
+     "requests": 16
+    },
+    {
+     "performance": 69,
+     "accessibility": 100,
+     "FCP_ms": 3079,
+     "LCP_ms": 6011,
+     "TBT_ms": 148,
+     "CLS": 0.003,
+     "transfer_KB": 984,
+     "requests": 15
+    }
+   ],
+   "median": {
+    "performance": 69,
+    "accessibility": 100,
+    "FCP_ms": 3079,
+    "LCP_ms": 6084,
+    "TBT_ms": 176,
+    "CLS": 0.0,
+    "transfer_KB": 984,
+    "requests": 15
+   }
+  },
+  "desktop": {
+   "runs": [
+    {
+     "performance": 94,
+     "accessibility": 100,
+     "FCP_ms": 652,
+     "LCP_ms": 1272,
+     "TBT_ms": 0,
+     "CLS": 0.01,
+     "transfer_KB": 1120,
+     "requests": 18
+    },
+    {
+     "performance": 95,
+     "accessibility": 100,
+     "FCP_ms": 710,
+     "LCP_ms": 1235,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "transfer_KB": 1120,
+     "requests": 18
+    },
+    {
+     "performance": 90,
+     "accessibility": 96,
+     "FCP_ms": 890,
+     "LCP_ms": 1570,
+     "TBT_ms": 0,
+     "CLS": 0.012,
+     "transfer_KB": 1791,
+     "requests": 20
+    }
+   ],
+   "median": {
+    "performance": 94,
+    "accessibility": 100,
+    "FCP_ms": 710,
+    "LCP_ms": 1272,
+    "TBT_ms": 0,
+    "CLS": 0.01,
+    "transfer_KB": 1120,
+    "requests": 18
+   }
+  }
+ },
+ "candidate_proxy_simulate": {
+  "mobile": {
+   "runs": [
+    {
+     "performance": 82,
+     "accessibility": 100,
+     "FCP_ms": 1299,
+     "LCP_ms": 4577,
+     "TBT_ms": 34,
+     "CLS": 0,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 83,
+     "accessibility": 100,
+     "FCP_ms": 1282,
+     "LCP_ms": 4576,
+     "TBT_ms": 84,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 80,
+     "accessibility": 100,
+     "FCP_ms": 1442,
+     "LCP_ms": 4502,
+     "TBT_ms": 160,
+     "CLS": 0,
+     "transfer_KB": 644,
+     "requests": 14
+    }
+   ],
+   "median": {
+    "performance": 82,
+    "accessibility": 100,
+    "FCP_ms": 1299,
+    "LCP_ms": 4576,
+    "TBT_ms": 84,
+    "CLS": 0,
+    "transfer_KB": 644,
+    "requests": 14
+   }
+  },
+  "desktop": {
+   "runs": [
+    {
+     "performance": 99,
+     "accessibility": 100,
+     "FCP_ms": 360,
+     "LCP_ms": 1041,
+     "TBT_ms": 0,
+     "CLS": 0.01,
+     "transfer_KB": 780,
+     "requests": 17
+    },
+    {
+     "performance": 99,
+     "accessibility": 100,
+     "FCP_ms": 365,
+     "LCP_ms": 971,
+     "TBT_ms": 51,
+     "CLS": 0,
+     "transfer_KB": 780,
+     "requests": 17
+    },
+    {
+     "performance": 99,
+     "accessibility": 100,
+     "FCP_ms": 378,
+     "LCP_ms": 984,
+     "TBT_ms": 0,
+     "CLS": 0.01,
+     "transfer_KB": 780,
+     "requests": 17
+    }
+   ],
+   "median": {
+    "performance": 99,
+    "accessibility": 100,
+    "FCP_ms": 365,
+    "LCP_ms": 984,
+    "TBT_ms": 0,
+    "CLS": 0.01,
+    "transfer_KB": 780,
+    "requests": 17
+   }
+  }
+ },
+ "candidate_proxy_devtools_mobile": {
+  "batchA_earlier_build": {
+   "runs": [
+    {
+     "performance": 77,
+     "accessibility": 96,
+     "FCP_ms": 2779,
+     "LCP_ms": 2779,
+     "TBT_ms": 523,
+     "CLS": 0.002,
+     "transfer_KB": 530,
+     "requests": 12
+    },
+    {
+     "performance": 82,
+     "accessibility": 96,
+     "FCP_ms": 2606,
+     "LCP_ms": 2606,
+     "TBT_ms": 437,
+     "CLS": 0.002,
+     "transfer_KB": 530,
+     "requests": 12
+    },
+    {
+     "performance": 65,
+     "accessibility": 96,
+     "FCP_ms": 3231,
+     "LCP_ms": 3231,
+     "TBT_ms": 936,
+     "CLS": 0.002,
+     "transfer_KB": 530,
+     "requests": 12
+    }
+   ],
+   "median": {
+    "performance": 77,
+    "accessibility": 96,
+    "FCP_ms": 2779,
+    "LCP_ms": 2779,
+    "TBT_ms": 523,
+    "CLS": 0.002,
+    "transfer_KB": 530,
+    "requests": 12
+   }
+  },
+  "batchB_earlier_build": {
+   "runs": [
+    {
+     "performance": 67,
+     "accessibility": 96,
+     "FCP_ms": 3206,
+     "LCP_ms": 3206,
+     "TBT_ms": 825,
+     "CLS": 0.002,
+     "transfer_KB": 530,
+     "requests": 12
+    },
+    {
+     "performance": 61,
+     "accessibility": 100,
+     "FCP_ms": 3189,
+     "LCP_ms": 3335,
+     "TBT_ms": 1225,
+     "CLS": 0.002,
+     "transfer_KB": 530,
+     "requests": 12
+    },
+    {
+     "performance": 69,
+     "accessibility": 96,
+     "FCP_ms": 3146,
+     "LCP_ms": 3146,
+     "TBT_ms": 733,
+     "CLS": 0.002,
+     "transfer_KB": 530,
+     "requests": 12
+    }
+   ],
+   "median": {
+    "performance": 67,
+    "accessibility": 96,
+    "FCP_ms": 3189,
+    "LCP_ms": 3206,
+    "TBT_ms": 825,
+    "CLS": 0.002,
+    "transfer_KB": 530,
+    "requests": 12
+   }
+  },
+  "final_build": {
+   "runs": [
+    {
+     "performance": 68,
+     "accessibility": 100,
+     "FCP_ms": 3018,
+     "LCP_ms": 3135,
+     "TBT_ms": 828,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 66,
+     "accessibility": 100,
+     "FCP_ms": 3145,
+     "LCP_ms": 3275,
+     "TBT_ms": 847,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 68,
+     "accessibility": 100,
+     "FCP_ms": 3157,
+     "LCP_ms": 3157,
+     "TBT_ms": 780,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    }
+   ],
+   "median": {
+    "performance": 68,
+    "accessibility": 100,
+    "FCP_ms": 3145,
+    "LCP_ms": 3157,
+    "TBT_ms": 828,
+    "CLS": 0.003,
+    "transfer_KB": 644,
+    "requests": 14
+   }
+  }
+ },
+ "live_simulate": {
+  "mobile": {
+   "runs": [
+    {
+     "performance": 65,
+     "accessibility": 100,
+     "FCP_ms": 2054,
+     "LCP_ms": 6174,
+     "TBT_ms": 404,
+     "CLS": 0.007,
+     "transfer_KB": 1296,
+     "requests": 33
+    },
+    {
+     "performance": 58,
+     "accessibility": 100,
+     "FCP_ms": 3491,
+     "LCP_ms": 9210,
+     "TBT_ms": 265,
+     "CLS": 0,
+     "transfer_KB": 1287,
+     "requests": 33
+    },
+    {
+     "performance": 54,
+     "accessibility": 100,
+     "FCP_ms": 3073,
+     "LCP_ms": 9941,
+     "TBT_ms": 448,
+     "CLS": 0,
+     "transfer_KB": 1269,
+     "requests": 33
+    }
+   ],
+   "median": {
+    "performance": 58,
+    "accessibility": 100,
+    "FCP_ms": 3073,
+    "LCP_ms": 9210,
+    "TBT_ms": 404,
+    "CLS": 0,
+    "transfer_KB": 1287,
+    "requests": 33
+   }
+  },
+  "desktop": {
+   "runs": [
+    {
+     "performance": 97,
+     "accessibility": 96,
+     "FCP_ms": 654,
+     "LCP_ms": 1280,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "transfer_KB": 1843,
+     "requests": 37
+    },
+    {
+     "performance": 96,
+     "accessibility": 96,
+     "FCP_ms": 604,
+     "LCP_ms": 1430,
+     "TBT_ms": 15,
+     "CLS": 0,
+     "transfer_KB": 1843,
+     "requests": 37
+    },
+    {
+     "performance": 96,
+     "accessibility": 96,
+     "FCP_ms": 590,
+     "LCP_ms": 1420,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "transfer_KB": 1825,
+     "requests": 37
+    }
+   ],
+   "median": {
+    "performance": 96,
+    "accessibility": 96,
+    "FCP_ms": 604,
+    "LCP_ms": 1420,
+    "TBT_ms": 0,
+    "CLS": 0,
+    "transfer_KB": 1843,
+    "requests": 37
+   }
+  }
+ },
+ "live_devtools_mobile": {
+  "runs": [
+   {
+    "performance": 71,
+    "accessibility": 96,
+    "FCP_ms": 2139,
+    "LCP_ms": 2912,
+    "TBT_ms": 942,
+    "CLS": 0.003,
+    "transfer_KB": 1302,
+    "requests": 33
+   },
+   {
+    "performance": 68,
+    "accessibility": 96,
+    "FCP_ms": 2432,
+    "LCP_ms": 3217,
+    "TBT_ms": 941,
+    "CLS": 0.003,
+    "transfer_KB": 1319,
+    "requests": 33
+   },
+   {
+    "performance": 66,
+    "accessibility": 100,
+    "FCP_ms": 2134,
+    "LCP_ms": 2844,
+    "TBT_ms": 1684,
+    "CLS": 0.003,
+    "transfer_KB": 1296,
+    "requests": 33
+   }
+  ],
+  "median": {
+   "performance": 68,
+   "accessibility": 96,
+   "FCP_ms": 2139,
+   "LCP_ms": 2912,
+   "TBT_ms": 942,
+   "CLS": 0.003,
+   "transfer_KB": 1302,
+   "requests": 33
+  }
+ },
+ "before_this_round_proxy_simulate_mobile": {
+  "note": "previous release build (PR #604 head 5f87f1b0), same proxy + simulate config",
+  "runs": [
+   {
+    "performance": 75,
+    "FCP_ms": 1638,
+    "LCP_ms": 4580,
+    "TBT_ms": 279,
+    "transfer_KB": 648,
+    "requests": 19
+   },
+   {
+    "performance": 75,
+    "FCP_ms": 1619,
+    "LCP_ms": 4578,
+    "TBT_ms": 276,
+    "transfer_KB": 648,
+    "requests": 19
+   },
+   {
+    "performance": 75,
+    "FCP_ms": 1629,
+    "LCP_ms": 4577,
+    "TBT_ms": 278,
+    "transfer_KB": 648,
+    "requests": 19
+   }
+  ],
+  "median": {
+   "performance": 75,
+   "FCP_ms": 1629,
+   "LCP_ms": 4578,
+   "TBT_ms": 278,
+   "transfer_KB": 648,
+   "requests": 19
+  }
+ }
+}
