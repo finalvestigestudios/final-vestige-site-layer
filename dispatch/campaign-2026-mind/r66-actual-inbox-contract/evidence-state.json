@@ -1,0 +1,54 @@
+{
+  "sprint": "R66",
+  "date": "2026-11-02",
+  "source": "Authenticated WordPress.com site 256784396, GitHub #174/#171, canonical #175, R61 #581, R65 #615, official NASA/WordPress/FTC/seller pages",
+  "wordpress_snapshot_utc": "2026-11-02T12:35:51Z",
+  "newsletter_enabled": true,
+  "technical_can_send": true,
+  "new_posts_default_send": false,
+  "email_content_format": "excerpt",
+  "reply_to": "no-reply",
+  "welcome_configured": true,
+  "welcome_received_verified": false,
+  "confirmed_registration_bucket": 2,
+  "total_registration_bucket": 2,
+  "unconfirmed_registration_bucket": 2,
+  "non_additive_subscriber_buckets": true,
+  "eligible_recipients_verified": false,
+  "recent_sends_returned": 0,
+  "lifetime_zero_sends_claim": false,
+  "owner_postal_address_verified": false,
+  "unsubscribe_actual_received_verified": false,
+  "real_jetpack_mime_verified": false,
+  "custom_excerpts_r61_founder_approved": false,
+  "issue04_subject_approved_correction": false,
+  "merchant_acceptance_zen12_verified": false,
+  "merchant_email_permission_zen12_verified": false,
+  "merchant_acceptance_total_focus_verified": false,
+  "merchant_email_permission_total_focus_verified": false,
+  "live_zen12_guide_approved": false,
+  "live_total_focus_guide_approved": false,
+  "tracking_live": false,
+  "affiliate_links_live": false,
+  "final_campaign_approval": false,
+  "release_status": {
+    "editorial": [
+      "HOLD_UNSENT",
+      "HOLD_UNSENT",
+      "HOLD_UNSENT",
+      "HOLD_UNSENT"
+    ],
+    "commercial": [
+      "HOLD_MERCHANT",
+      "HOLD_MERCHANT"
+    ]
+  },
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "no_send": true,
+  "no_publish": true,
+  "no_wordpress_write": true,
+  "simulated_test_not_delivery": true
+}
