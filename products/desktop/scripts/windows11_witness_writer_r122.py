@@ -49,6 +49,22 @@ def _excluded_from_candidates(path: Path, dist: Path) -> None:
         raise qa.ReviewHold("Review data cannot be stored inside candidate directory")
 
 
+def _ordinary_file_identity(path: Path) -> tuple[int, int]:
+    """Reject linked, symlinked or reparse files before trusting file identity.
+
+    This reduces accidental reviewer substitution; it is not hostile-FS proof.
+    """
+    meta = path.lstat()
+    if (not stat.S_ISREG(meta.st_mode) or meta.st_nlink != 1
+            or path.is_symlink()
+            or (hasattr(path, "is_junction") and path.is_junction())
+            or (os.name == "nt" and bool(
+                getattr(meta, "st_file_attributes", 0) &
+                getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)))):
+        raise qa.ReviewHold("Untrusted private review file")
+    return (meta.st_dev, meta.st_ino)
+
+
 def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
                witnesses: Path, app: str, check: str, state: str,
                observation_file: Path) -> dict:
@@ -80,11 +96,13 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
     fd = None
     tmp = None
     created = False
+    created_identity = None
     target = witness_dir / (app.removesuffix(".exe") + "--" + check + ".json")
     try:
         fd = os.open(lock, os.O_WRONLY | os.O_CREAT | os.O_EXCL |
                      getattr(os, "O_BINARY", 0), 0o600)
         lock_identity = os.fstat(fd)
+        old_identity = _ordinary_file_identity(review)
         old = qa._bytes(review, qa.MAX_REPORT_BYTES)
         matrix = qa._strict_json(old)
         if matrix.get("windows11_build") != build:
@@ -118,8 +136,10 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
         # Verify new evidence against the source-bound envelope after writing.
         wf = os.open(target, os.O_WRONLY | os.O_CREAT | os.O_EXCL |
                      getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0), 0o600)
-        created = True
         with os.fdopen(wf, "wb") as out:
+            created = True
+            created_metadata = os.fstat(out.fileno())
+            created_identity = (created_metadata.st_dev, created_metadata.st_ino)
             out.write(note_bytes)
             out.flush()
             os.fsync(out.fileno())
@@ -139,8 +159,9 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
             out.flush()
             os.fsync(out.fileno())
         # Stop if an independent actor changed the original review during writing.
-        if not hmac.compare_digest(qa._sha(qa._bytes(review, qa.MAX_REPORT_BYTES)),
-                                   qa._sha(old)):
+        if (_ordinary_file_identity(review) != old_identity or
+                not hmac.compare_digest(qa._sha(qa._bytes(review, qa.MAX_REPORT_BYTES)),
+                                        qa._sha(old))):
             raise qa.ReviewHold("Review changed concurrently")
         os.replace(tmp, review)
         tmp = None
@@ -149,9 +170,15 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
     except Exception:
         # A witness without a matrix reference must never count as acceptance.
         # Remove only if it is still precisely our own freshly written bytes.
-        if created:
+        if created and created_identity is not None:
             try:
-                if qa._sha(qa._bytes(target, qa.MAX_WITNESS_BYTES)) == qa._sha(note_bytes):
+                # Never delete a substituted witness, even when its bytes
+                # match our freshly written note. Preserve unknown evidence.
+                if (_ordinary_file_identity(target) == created_identity and
+                        hmac.compare_digest(
+                            qa._sha(qa._bytes(target, qa.MAX_WITNESS_BYTES)),
+                            qa._sha(note_bytes)) and
+                        _ordinary_file_identity(target) == created_identity):
                     target.unlink()
             except (OSError, qa.ReviewHold):
                 pass
