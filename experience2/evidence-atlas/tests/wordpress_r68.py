@@ -7,6 +7,9 @@ Produces an authentic local WordPress render gate only when CLI and axe are pres
 from __future__ import annotations
 import argparse, hashlib, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.request, zipfile
 from pathlib import Path, PurePosixPath
+# The exact-head/clean-tree admission runs AFTER imports; suppress local .pyc
+# creation so the safety check is not invalidated by our own helper import.
+sys.dont_write_bytecode = True
 from wp_readiness_r69 import wait_for_wordpress, ReadinessFailure, diagnose_private_cli_log
 
 BASE='http://127.0.0.1:9438/'
