@@ -16,6 +16,7 @@ import platform
 import re
 import stat
 import sys
+import unicodedata
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -150,6 +151,24 @@ def _strict_json(raw: bytes) -> dict:
     return result
 
 
+def _ambiguous_observation_char(char: str) -> bool:
+    """Prevent hidden text and display-spoofing glyphs in human QA evidence.
+
+    Rejection applies to v1 legacy and v2 current private witness validation.
+    Ordinary multilingual letters and accent combining marks remain allowed.
+    """
+    cp = ord(char)
+    category = unicodedata.category(char)
+    return (
+        (category in ("Cc", "Cf", "Cs", "Zl", "Zp") and char not in ("\t", "\n"))
+        or (char.isspace() and char not in (" ", "\t", "\n"))
+        or cp in (0x034F, 0x115F, 0x1160, 0x2800, 0x3164, 0xFFA0)
+        or 0x180B <= cp <= 0x180F
+        or 0xFE00 <= cp <= 0xFE0F
+        or 0xE0100 <= cp <= 0xE01EF
+    )
+
+
 def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str,
                    *, now: datetime | None = None) -> None:
     """Require each private note to identify its own check, reviewer and exact EXE.
@@ -198,10 +217,7 @@ def _bound_witness(raw: bytes, review: dict, app: str, check: str, state: str,
     observation = note["observation"]
     if (type(observation) is not str or
             not MIN_OBSERVATION_CHARS <= len(observation.strip()) <= MAX_OBSERVATION_CHARS or
-            any((ord(ch) < 32 and ch not in (chr(10), chr(9))) or
-                ord(ch) == 127 or 0x202A <= ord(ch) <= 0x202E or
-                0x2066 <= ord(ch) <= 0x2069
-                for ch in observation)):
+            any(_ambiguous_observation_char(ch) for ch in observation)):
         raise ReviewHold("Witness observation invalid or insufficient")
 
 
