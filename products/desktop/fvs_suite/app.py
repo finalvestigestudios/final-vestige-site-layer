@@ -157,6 +157,13 @@ def run(app_id):
             ttk.Entry(frame, textvariable=variable, width=1).grid(
                 row=entry_row, column=0, columnspan=3,
                 sticky="ew", pady=7)
+    invoice_window = tk.StringVar(value="7") if app_id == "invoices" else None
+    if invoice_window is not None:
+        ui_label(frame, text="Near-match days (0-365)", wraplength=220).grid(
+            row=base_row + len(labels), column=0, sticky="w", pady=7,
+            padx=(0, 12))
+        ttk.Entry(frame, textvariable=invoice_window, width=6).grid(
+            row=base_row + len(labels), column=1, sticky="w", pady=7)
     output = tk.StringVar(value=str(Path.home() / "Documents"))
     folder_row = ledger_layout["output"][0] if ledger_layout else base_row + len(labels) + 1
     ui_label(frame, text="Output folder").grid(
@@ -208,6 +215,10 @@ def run(app_id):
                     *args, output.get().strip(),
                     left_match_column=ledger_columns[0].get().strip() or None,
                     right_match_column=ledger_columns[1].get().strip() or None)
+            elif app_id == "invoices":
+                outputs = action(*args, output.get().strip(),
+                                 window_days=engine.invoice_window_days(
+                                     invoice_window.get().strip()))
             else:
                 outputs = action(*args, output.get().strip())
         except (ValueError, OSError, UnicodeError) as exc:
@@ -249,6 +260,8 @@ def run(app_id):
             "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
     if app_id == "ledger":
         hint += "; Tab to optional left/right match headers (blank = automatic)"
+    if app_id == "invoices":
+        hint += "; Tab to near-match day window (0-365; default 7)"
     if premium:
         hint += "; Alt+R review exceptions"
     hint_row = (ledger_layout["hint"] if ledger_layout
