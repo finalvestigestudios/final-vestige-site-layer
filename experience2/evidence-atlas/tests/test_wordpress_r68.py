@@ -45,6 +45,11 @@ class R68WordPressContracts(unittest.TestCase):
             make_zip(z,{'assembler-wpcom/STYLE.CSS':'bad'})
             with self.assertRaisesRegex(ValueError,'DUPLICATE_THEME_FILE'):
                 unpack_assembler(z,root/'out')
+    def test_real_browser_uses_playwright_response_status_property(self):
+        # Playwright Python Response.status is an int property, not a function.
+        source=Path(__file__).with_name('wordpress_r68.py').read_text()
+        self.assertIn('res.status==200', source)
+        self.assertNotIn('res.status()', source)
     def test_reject_unrecognized_theme(self):
         with tempfile.TemporaryDirectory() as t:
             root=Path(t);z=root/'t.zip'
