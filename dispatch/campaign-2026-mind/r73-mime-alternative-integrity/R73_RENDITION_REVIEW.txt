@@ -1,0 +1,40 @@
+FINAL VESTIGE / DISPATCH / MIME RENDITION INTEGRITY — REVIEWER ONLY
+NOVEMBER 2, 2026 — SYNTHETIC / HOLD_UNSENT / NO EMAIL SENT
+
+01 — UNSUBSCRIBE FALSE POSITIVE
+Old inspector: word "unsubscribe" anywhere + unrelated HTTPS website anywhere => true.
+Example: "Unsubscribe anytime. Read https://finalvestige.com/focus/"
+Corrected: not a linked plaintext opt-out; fail closed.
+A candidate format: Unsubscribe: https://unsubscribe.example.invalid/u/SYNTHETIC_ONLY
+That URL is fictional and would still need a functional authorized test.
+
+02 — HTML/PLAINTEXT POSTAL MISMATCH
+Plaintext contains the fictional "P.O. Box 123, Example City, CA 90000."
+HTML does not. Prior union search returned a misleading match.
+Corrected: separate boolean for each MIME alternative and a blocker if either is missing.
+This does not verify a legitimate Final Vestige business address.
+
+03 — COMMERCIAL DISCLOSURE MISMATCH
+Plaintext: "Final Vestige may receive a commission ..." early in first 55 words.
+HTML: product copy omits disclosure.
+Corrected: BOTH renditions must contain the disclosure early; otherwise HOLD.
+Both "may receive a commission" and "may earn a commission" are now recognized.
+No affiliate account acceptance or permission to market Zen12/Total Focus by email is established.
+
+04 — UNSUPPORTED ONE-CLICK HEADER
+List-Unsubscribe-Post declared "List-Unsubscribe=One-Click" without a valid
+HTTPS List-Unsubscribe target. Corrected: declaration is not counted alone.
+Even syntactically correct headers are not proof of functioning unsubscribe.
+
+VERDICT: ALL SIX HOLD_UNSENT. ISSUES 03/05 HOLD_MERCHANT.
+A real received Jetpack MIME sample, sender/subscriber consent, a publisher-owned
+qualified postal address, tested opt-out, verified merchant email permission,
+published buyer guides and explicit final founder approval are still missing.
+
+No real email, recipient, subscriber, token, URL verification, CMS write or affiliate
+activation occurred. The generated report remains privacy-redacted.
+
+Source: https://wordpress.com/support/newsletter/email-appearance/
+Source: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+Source: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
+Issue #174: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174
