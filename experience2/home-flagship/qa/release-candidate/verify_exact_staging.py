@@ -191,7 +191,7 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
     # lazy loading and actual HTTP payloads; never remove [hidden] in QA.
     case_ids = ('apollo', 'franklin', 'malbone')
     images = frame.locator('img[data-fv-archive-img]').all()
-    check('three_archival_images',len(images)==len(case_ids))
+    check('two_cleared_archival_images',len(images)==2)
     chooser = frame.locator('[data-fv-case-buttons]')
     try:
         chooser.wait_for(state='visible', timeout=7000)
@@ -201,26 +201,24 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
 
     imagedata=[]
     for case_id in case_ids:
+        has_media = case_id != 'malbone'  # Unverified NYPL capture not reproduced.
         unknown = {'url':'','complete':False,'width':0,'height':0}
         button = frame.locator(f'[data-fv-case-button="{case_id}"]')
         panel = frame.locator(f'[data-fv-case="{case_id}"]')
         check('archive_button_present_'+case_id,button.count()==1)
         check('archive_panel_present_'+case_id,panel.count()==1)
         if button.count()!=1 or panel.count()!=1:
-            imagedata.append(unknown)
+            if has_media: imagedata.append(unknown)
             continue
         case_img=panel.locator('img[data-fv-archive-img]')
-        check('archive_image_present_'+case_id,case_img.count()==1)
+        check('archive_image_present_'+case_id,case_img.count()==(1 if has_media else 0))
         is_button_visible=button.is_visible()
         check('archive_button_visible_'+case_id,is_button_visible)
-        if not is_button_visible or case_img.count()!=1:
-            imagedata.append(unknown)
+        if not is_button_visible or case_img.count()!=(1 if has_media else 0):
+            if has_media: imagedata.append(unknown)
             continue
         try:
-            # Real user click proves the enhanced case chooser is operable.
             button.click(timeout=6000)
-            # Verify credit/rights language in actual WordPress DOM and that
-            # a keyboard/touch-operable native <details> can reveal it.
             credit=panel.locator('.fv-hf__case-source p').filter(has_text=RIGHTS[case_id])
             check('archival_credit_present_'+case_id, credit.count()==1)
             note=panel.locator('details').first
@@ -232,21 +230,26 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
                 check('archival_credit_revealed_'+case_id,False)
             activated=panel.is_visible() and button.get_attribute('aria-pressed')=='true'
             check('archive_case_activated_'+case_id,activated)
-            visible=activated and case_img.is_visible()
-            check('archive_image_visible_'+case_id,visible)
-            if visible:
-                case_img.scroll_into_view_if_needed(timeout=6000)
-                unknown=case_img.evaluate("""async e => {
-                  if (!e.complete) await Promise.race([
-                    new Promise(r=>{e.addEventListener('load',r,{once:true});e.addEventListener('error',r,{once:true});}),
-                    new Promise(r=>setTimeout(r,8000))]);
-                  return {url:e.currentSrc||e.src,complete:e.complete,width:e.naturalWidth,height:e.naturalHeight};
-                }""")
+            if not has_media:
+                plate=panel.locator('.fv-hf__source-plate[role="group"]')
+                check('nypl_rights_safe_plate_visible',activated and plate.count()==1 and plate.is_visible())
+                check('nypl_capture_not_embedded',panel.locator('img').count()==0)
+                check('nypl_source_catalog_link_preserved',panel.locator(
+                  'a[href="https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0"]').count()==1)
+            else:
+                visible=activated and case_img.is_visible()
+                check('archive_image_visible_'+case_id,visible)
+                if visible:
+                    case_img.scroll_into_view_if_needed(timeout=6000)
+                    unknown=case_img.evaluate("""async e => {
+                      if (!e.complete) await Promise.race([
+                        new Promise(r=>{e.addEventListener('load',r,{once:true});e.addEventListener('error',r,{once:true});}),
+                        new Promise(r=>setTimeout(r,8000))]);
+                      return {url:e.currentSrc||e.src,complete:e.complete,width:e.naturalWidth,height:e.naturalHeight};
+                    }""")
         except Exception:
-            # A broken interaction/image becomes an explicit per-case HOLD,
-            # not a 30-second hidden-element timeout that erases all evidence.
             check('archive_case_interaction_'+case_id,False)
-        imagedata.append(unknown)
+        if has_media: imagedata.append(unknown)
     if width in (390,1440):
         # Capture representative real WordPress-rendered previews, with the
         # first archive active again; screenshot failures remain release holds.
@@ -260,7 +263,7 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
             check('real_fullpage_screenshot',True)
         except Exception:
             check('real_screenshot_capture',False)
-    check('real_images_loaded',len(imagedata)==3 and all(i['complete'] and i['width']>0 for i in imagedata))
+    check('real_images_loaded',len(imagedata)==2 and all(i['complete'] and i['width']>0 for i in imagedata))
     # naturalWidth/metadata is insufficient: prove that Chromium received each
     # chosen currentSrc as a real HTTP 200 image response with a nonempty body.
     network_receipt = audit_image_payloads(imagedata, media_responses or [])
