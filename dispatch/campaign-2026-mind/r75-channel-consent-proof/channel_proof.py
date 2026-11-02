@@ -176,7 +176,7 @@ def html_board(result: dict) -> str:
     cs = "".join("<li>Issue " + issue + ": " +
         escape(", ".join(result["commercial_issues"][issue]["unverified"]).replace("_", " ").title()) +
         "</li>" for issue in COMMERCIAL)
-    return """<!doctype html><html lang="en"><head><meta charset="utf-8">
+    return ("""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive"><title>Dispatch Channel Proof | HOLD</title>
 <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0b0c0c;color:#f2ebe2;font:16px/1.65 system-ui,sans-serif}
@@ -201,7 +201,7 @@ footer{margin-top:50px;border-top:1px solid #555047;padding-top:25px;font-size:.
 <section aria-labelledby="rule"><h2 id="rule">What the small list cannot tell us</h2>
 <p>Reported total=2, confirmed=2, unconfirmed=2 are overlapping counters, not four subscribers. Without a native email-status filter there is no justified eligible audience count. Do not present open-rate, A/B winners, sales, attributed revenue, or causal conversion claims.</p></section>
 <footer><p>No live links, publisher address, recipient personal data or unsubscribe token appears here. Homepage PR #49 is untouched. Use one existing Jetpack subscriber list only.</p></footer>
-</main></body></html>"""
+</main></body></html>""")
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Read-only, private COUNT-ONLY human evidence review")
