@@ -8,6 +8,14 @@ import unittest
 import verify_exact_staging as gate
 
 class GateTests(unittest.TestCase):
+    def test_browser_network_observer_includes_image_mime_fetches(self):
+        # A Playwright resource_type=image prefilter silently discards
+        # fetch()-delivered image/* responses before the rights gate sees them.
+        import inspect
+        source = inspect.getsource(gate.run)
+        self.assertIn("visual.on('response',lambda response:image_responses.append(response))", source)
+        self.assertNotIn("if response.request.resource_type=='image'", source)
+
     def test_production_is_denied_even_if_allowlisted(self):
         for domain in ('finalvestige.com','www.finalvestige.com'):
             with self.assertRaisesRegex(ValueError,'never production'):
