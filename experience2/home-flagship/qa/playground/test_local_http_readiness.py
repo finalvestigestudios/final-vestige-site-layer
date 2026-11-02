@@ -76,12 +76,12 @@ class ReadinessTest(TestCase):
         with self.assertRaisesRegex(RuntimeError, r"probe_states=REDIRECT_PORT_MISMATCH:[1-9]"):
             self.probe(302, body=b"", redirect="http://127.0.0.1:1/never-follow")
 
-    def test_same_origin_login_redirect_requires_real_login_page(self):
+    def test_private_preview_redirect_uses_fixed_local_login_probe(self):
         class LoginHandler(BaseHTTPRequestHandler):
             def do_GET(self):
                 if self.path == '/':
                     self.send_response(302)
-                    self.send_header('Location', '/wp-login.php')
+                    self.send_header('Location', '/?pagename=fv-ex2-playground-review')
                     self.end_headers()
                 elif self.path == '/wp-login.php':
                     body = b'<html><body id="wp-login">WordPress Login</body></html>'

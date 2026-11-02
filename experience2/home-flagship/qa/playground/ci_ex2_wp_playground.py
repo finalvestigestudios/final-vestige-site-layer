@@ -227,7 +227,20 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                     except (urllib.error.HTTPError, urllib.error.URLError, OSError):
                         record('LOCAL_LOGIN_NOT_READY')
                 else:
-                    record('REDIRECT_' + redirect_reason(location))
+                    # Playground may redirect / to its configured private
+                    # landingPage. That route is not a server-health oracle.
+                    # Probe only the fixed, same-origin WordPress login path;
+                    # never follow or fetch the rejected Location itself.
+                    try:
+                        login_url = urllib.parse.urljoin(BASE, '/wp-login.php')
+                        with opener.open(login_url, timeout=3) as login:
+                            chunk = login.read(4096).lower()
+                            if login.status == 200 and b'wp-login' in chunk:
+                                exc.close()
+                                return  # Browser/page admission remains required.
+                        record('LOCAL_LOGIN_NOT_READY')
+                    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
+                        record('REDIRECT_' + redirect_reason(location))
             else:
                 record('HTTP_' + str(exc.code))
             exc.close()
