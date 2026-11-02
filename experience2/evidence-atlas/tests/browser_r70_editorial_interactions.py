@@ -117,13 +117,22 @@ def exercise(page,width,out,receipt,axe_js=None):
         (out/name).write_bytes(image)
         receipt['screenshots'][name]=hashlib.sha256(image).hexdigest()
     if width in (390,1440) and axe_js:
+        # Forced-colors semantics were exercised above. Audit contrast under
+        # ordinary colors; the forced-colors browser palette invalidates the
+        # normal computed-color contrast ratios that axe attempts to measure.
+        page.emulate_media(forced_colors='none')
+        page.wait_for_timeout(100)
         page.add_script_tag(content=axe_js)
         audit=page.evaluate("""async () => {
           const r=await axe.run(document.querySelector('.fv-ex2-apollo-suite'),{
             runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});
           return {violations:r.violations.map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.length})),passes:r.passes.length};
         }""")
-        receipt['axe'].append({'width':width,**audit})
+        receipt['axe'].append({'width':width,'color_mode':'ordinary_after_forced_colors_interaction',**audit})
+        (out/f'R70_AXE_AUDIT_{width}.json').write_text(json.dumps({
+          'schema':'fv.apollo.r70.axe-result.v1','viewport':width,
+          'color_mode':'ordinary_after_forced_colors_interaction',
+          'sha256_same_run_verified':True,**audit},indent=2,sort_keys=True)+'\n')
         assert not audit['violations'],audit
     lab=page.evaluate('window.__fv_r53_lab || {}')
     receipt['lab'].append({'width':width,'lcp_ms':lab.get('lcp') if isinstance(lab,dict) else None,'cls':lab.get('cls') if isinstance(lab,dict) else None,'component_not_field_cwv':True})
