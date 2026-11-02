@@ -104,8 +104,8 @@ def audit():
         raise EvidenceError("Expected late-disclosure issue changed; independently review before reusing")
     if any(not i["optional_excerpt_contains_commission_note"] for i in commercial):
         raise EvidenceError("Proposed commercial excerpt lacks commission disclosure")
-    if "fourteen" not in data[3]["canonical_subject"].lower():
-        raise EvidenceError("Apollo subject was modified; review the changed premise")
+    if "seventeen seconds" not in data[3]["canonical_subject"].lower() or "17.1 seconds" not in data[3]["default_55_word_surrogate"]:
+        raise EvidenceError("Stacked Apollo source or measured span changed; recheck primary evidence")
     return {
       "mode":"READ_ONLY_SIMULATION_NOT_JETPACK_MIME",
       "source":"canonical PR #175 + R61 proposal; actual live email_content_format=excerpt",
