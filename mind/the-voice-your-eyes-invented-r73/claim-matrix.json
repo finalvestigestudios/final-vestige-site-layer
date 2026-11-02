@@ -1,0 +1,564 @@
+{
+  "milestone": "R73",
+  "date_checked": "2026-11-02",
+  "publication": "UNPUBLISHED_HARD_HOLD",
+  "producer": "FV Mind & Affiliate Studio",
+  "sources": [
+    {
+      "id": "P1",
+      "type": "primary",
+      "url": "https://doi.org/10.1038/264746a0",
+      "fact": "1976 original McGurk audiovisual syllable conflict",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "P2",
+      "type": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31264598/",
+      "fact": "2019 110-person playback-speed study; variability and 11 percentage-point reduction",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "P3",
+      "type": "primary",
+      "url": "https://doi.org/10.1371/journal.pone.0202908",
+      "fact": "2018 group-difference effect inflation under significance filtering",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "R1",
+      "type": "systematic-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "fact": "2023 binaural-beat EEG: 5 consistent, 8 contradictory, 1 mixed; not Zen12 test",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "R2",
+      "type": "government",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "fact": "general meditation evidence, limitations and possible adverse reactions; not product-specific",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M1",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "fact": "exact Zen12 public offer and seller's advertising claims; no validated efficacy",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M2",
+      "type": "seller",
+      "url": "https://zen12.com/about",
+      "fact": "seller package and audio-style descriptions",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M3",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "fact": "official catalog, owner and related products",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M4",
+      "type": "seller",
+      "url": "https://zen12.com/research",
+      "fact": "marketing research page; not product-specific independent evidence verified",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M5",
+      "type": "seller",
+      "url": "https://zen12.com/getstarted",
+      "fact": "checkout endpoint timed out in this run; requires live audit before publication",
+      "checked": "2026-11-02",
+      "access": "TIMEOUT_UNVERIFIED"
+    },
+    {
+      "id": "M6",
+      "type": "seller-policy",
+      "url": "https://inspire3.com/privacy/",
+      "fact": "published phone, SMS and affiliate purchaser data policy",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "F1",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "fact": "clear conspicuous affiliate link material-connection disclosures",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "F2",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "fact": "product-specific adequate objective substantiation; seller advertising not sufficient",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "H1",
+      "type": "internal-live-route",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "fact": "existing Puységur research bridge, per Issue #171; web fetch unavailable this run",
+      "checked": "2026-11-02",
+      "access": "ISSUE_CONFIRMED_WEB_UNAVAILABLE"
+    },
+    {
+      "id": "H2",
+      "type": "internal-live-route",
+      "url": "https://finalvestige.com/focus/",
+      "fact": "one existing Focus Fieldbook and Jetpack funnel; route from Issue #171",
+      "checked": "2026-11-02",
+      "access": "ISSUE_CONFIRMED_WEB_UNAVAILABLE"
+    },
+    {
+      "id": "H3",
+      "type": "internal-live-route",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "fact": "editorial standards route verified in existing Issue #171 inventory",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "H4",
+      "type": "internal-live-route",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "fact": "site-wide disclosure not a substitute for near-link disclosure",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "A1",
+      "type": "seller-recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "fact": "recruitment site does not establish named FV acceptance, approved terms, or earning URL",
+      "checked": "2026-11-02"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "claim": "1976 original audiovisual speech mismatch",
+      "status": "SUPPORTED_ORIGINAL_STUDY",
+      "source_ids": [
+        "P1"
+      ],
+      "disposition": "Hearing a fusion syllable under mismatched dubbed mouth and audio; not universal."
+    },
+    {
+      "id": "D02",
+      "claim": "Some subjects report a third syllable absent from isolated audio",
+      "status": "SUPPORTED_ORIGINAL_STUDY",
+      "source_ids": [
+        "P1"
+      ],
+      "disposition": "Report only under specific conditions; do not fabricate a test."
+    },
+    {
+      "id": "D03",
+      "claim": "McGurk is a universal 100% illusion",
+      "status": "REJECT_UNSUPPORTED",
+      "source_ids": [
+        "P2"
+      ],
+      "disposition": "Study shows strong participant and stimulus variability."
+    },
+    {
+      "id": "D04",
+      "claim": "Slower playback increases illusion incidence",
+      "status": "REJECT_CONTRADICTED",
+      "source_ids": [
+        "P2"
+      ],
+      "disposition": "2019 110-person study reports lower occurrence with slowdown."
+    },
+    {
+      "id": "D05",
+      "claim": "2019 study included 110 subjects",
+      "status": "SUPPORTED_RECORD",
+      "source_ids": [
+        "P2"
+      ],
+      "disposition": "Experimental sample; not Zen12 sample."
+    },
+    {
+      "id": "D06",
+      "claim": "Individual effect ranged from 0 to 100% in tested conditions",
+      "status": "SUPPORTED_STUDY_SPECIFIC",
+      "source_ids": [
+        "P2"
+      ],
+      "disposition": "Not a population prevalence estimate."
+    },
+    {
+      "id": "D07",
+      "claim": "McGurk responses diagnose suggestibility or neurodivergence",
+      "status": "REJECT_UNSUPPORTED",
+      "source_ids": [
+        "P2",
+        "P3"
+      ],
+      "disposition": "No diagnosis or personality inference from one clip."
+    },
+    {
+      "id": "D08",
+      "claim": "Group-difference significance filtering can inflate reported effect",
+      "status": "SUPPORTED_WITH_SCOPE",
+      "source_ids": [
+        "P3"
+      ],
+      "disposition": "Analytic bias finding, does not invalidate original sensory phenomenon."
+    },
+    {
+      "id": "D09",
+      "claim": "Exact McGurk experimental stimulus is shown in our film",
+      "status": "REJECT_FALSE",
+      "source_ids": [
+        "P1"
+      ],
+      "disposition": "Film is a silent original explanatory illustration; never call it a demonstration."
+    },
+    {
+      "id": "D10",
+      "claim": "McGurk proves meditation audio reprograms the brain",
+      "status": "REJECT_NO_LINK",
+      "source_ids": [
+        "P1",
+        "R1"
+      ],
+      "disposition": "The McGurk study tests audiovisual speech, not commercial audio."
+    },
+    {
+      "id": "D11",
+      "claim": "The historical Puységur record proves magnetic fluid",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "H1"
+      ],
+      "disposition": "Use only as historical contextual source; original causal claim not proven."
+    },
+    {
+      "id": "D12",
+      "claim": "Puységur comparison is methodological not mechanism equivalence",
+      "status": "EDITORIAL_RULE",
+      "source_ids": [
+        "H1",
+        "P1"
+      ],
+      "disposition": "Separate testimony, mechanism and controls."
+    },
+    {
+      "id": "D13",
+      "claim": "Zen12 sessions are described as 12 minutes",
+      "status": "SELLER_FEATURE_ONLY",
+      "source_ids": [
+        "M1"
+      ],
+      "disposition": "Current public seller description."
+    },
+    {
+      "id": "D14",
+      "claim": "Zen12 advertises 12 levels",
+      "status": "SELLER_FEATURE_ONLY",
+      "source_ids": [
+        "M1",
+        "M2"
+      ],
+      "disposition": "Year-long progression merchant representation."
+    },
+    {
+      "id": "D15",
+      "claim": "Zen12 advertises four listening formats",
+      "status": "SELLER_FEATURE_ONLY",
+      "source_ids": [
+        "M1",
+        "M2"
+      ],
+      "disposition": "Relaxation music, guided, nature, white noise."
+    },
+    {
+      "id": "D16",
+      "claim": "Complete Zen12 library advertises 48 MP3s",
+      "status": "SELLER_FEATURE_ONLY",
+      "source_ids": [
+        "M1"
+      ],
+      "disposition": "Unverified delivery; seller's named Premium tier."
+    },
+    {
+      "id": "D17",
+      "claim": "Smaller Zen12 tiers advertise six levels and 24 MP3s",
+      "status": "SELLER_FEATURE_ONLY",
+      "source_ids": [
+        "M1"
+      ],
+      "disposition": "Different course configurations; verify at checkout."
+    },
+    {
+      "id": "D18",
+      "claim": "12 minutes equals one hour of advanced meditation",
+      "status": "REJECT_PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "M1",
+        "R1",
+        "R2"
+      ],
+      "disposition": "Seller statement; no appropriate independent Zen12-specific study."
+    },
+    {
+      "id": "D19",
+      "claim": "Zen12 automatically puts brain in prescribed waves",
+      "status": "REJECT_PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "M1",
+        "R1"
+      ],
+      "disposition": "EEG literature mixed; no product trial establishing outcome."
+    },
+    {
+      "id": "D20",
+      "claim": "All binaural beat EEG literature confirms entrainment",
+      "status": "REJECT_CONTRADICTED",
+      "source_ids": [
+        "R1"
+      ],
+      "disposition": "Review 5 supportive/8 contradictory/1 mixed, heterogeneous."
+    },
+    {
+      "id": "D21",
+      "claim": "Zen12 cures anxiety, insomnia or mental illness",
+      "status": "REJECT_MEDICAL_UNSUBSTANTIATED",
+      "source_ids": [
+        "M1",
+        "R2",
+        "F2"
+      ],
+      "disposition": "Do not imply clinical treatment or medical guarantees."
+    },
+    {
+      "id": "D22",
+      "claim": "Zen12 guarantees creativity or financial success",
+      "status": "REJECT_OUTCOME_UNSUBSTANTIATED",
+      "source_ids": [
+        "M1",
+        "F2"
+      ],
+      "disposition": "Do not use."
+    },
+    {
+      "id": "D23",
+      "claim": "Broader meditation findings prove Zen12",
+      "status": "REJECT_EVIDENCE_TRANSFER",
+      "source_ids": [
+        "R2",
+        "M1"
+      ],
+      "disposition": "Methods/populations/programs not identical."
+    },
+    {
+      "id": "D24",
+      "claim": "Seller's public product testimonials establish typical results",
+      "status": "REJECT_TESTIMONIAL_SUBSTITUTION",
+      "source_ids": [
+        "M1",
+        "F2"
+      ],
+      "disposition": "Unverified experiences not product-specific objective substantiation."
+    },
+    {
+      "id": "D25",
+      "claim": "Zen12 advertised refund for one year",
+      "status": "SELLER_POLICY_UNVERIFIED_EXECUTION",
+      "source_ids": [
+        "M1",
+        "M5"
+      ],
+      "disposition": "Represent as seller claim, verify full checkout and exclusions."
+    },
+    {
+      "id": "D26",
+      "claim": "Merchant checkout current total and prices",
+      "status": "HOLD_LIVE_CHECKOUT_UNAVAILABLE",
+      "source_ids": [
+        "M5"
+      ],
+      "disposition": "Live checkout timed out. No final prices or discounts in public guide."
+    },
+    {
+      "id": "D27",
+      "claim": "Seller privacy describes potential marketing SMS if mobile provided",
+      "status": "SUPPORTED_SELLER_POLICY",
+      "source_ids": [
+        "M6"
+      ],
+      "disposition": "Potential, not a statement that any buyer was contacted."
+    },
+    {
+      "id": "D28",
+      "claim": "Seller privacy permits sharing name/email/purchases with affiliate",
+      "status": "SUPPORTED_SELLER_POLICY",
+      "source_ids": [
+        "M6"
+      ],
+      "disposition": "Potential; do not assume sale was reported to FV."
+    },
+    {
+      "id": "D29",
+      "claim": "Final Vestige accepted into Inspire3 partner program",
+      "status": "HOLD_NOT_VERIFIED",
+      "source_ids": [
+        "A1"
+      ],
+      "disposition": "No written named acceptance."
+    },
+    {
+      "id": "D30",
+      "claim": "Named authorized Zen12 commission URL",
+      "status": "HOLD_NOT_VERIFIED",
+      "source_ids": [
+        "A1"
+      ],
+      "disposition": "Do not invent, shorten, cloak or activate."
+    },
+    {
+      "id": "D31",
+      "claim": "Approved partner email promotion channel",
+      "status": "HOLD_NOT_VERIFIED",
+      "source_ids": [
+        "A1"
+      ],
+      "disposition": "Dispatch must remain unsent; partner terms not verified."
+    },
+    {
+      "id": "D32",
+      "claim": "Approved partner TikTok promotion channel",
+      "status": "HOLD_NOT_VERIFIED",
+      "source_ids": [
+        "A1"
+      ],
+      "disposition": "No commercial TikTok links or swipe creatives until approved."
+    },
+    {
+      "id": "D33",
+      "claim": "Official affiliate swipe creative copying permitted",
+      "status": "HOLD_NOT_VERIFIED",
+      "source_ids": [
+        "A1"
+      ],
+      "disposition": "No member access or usage license established; original copy only."
+    },
+    {
+      "id": "D34",
+      "claim": "Affiliate disclosure near specific recommendation",
+      "status": "MUST_HAVE",
+      "source_ids": [
+        "F1"
+      ],
+      "disposition": "Plain commission language next to disabled pilot CTA now; next to actual link if approved."
+    },
+    {
+      "id": "D35",
+      "claim": "General affiliate disclosure footer sufficient",
+      "status": "REJECT_COMPLIANCE",
+      "source_ids": [
+        "F1"
+      ],
+      "disposition": "Must be clear and conspicuous near recommendation."
+    },
+    {
+      "id": "D36",
+      "claim": "Claims substantiation can come from merchant promotional research page alone",
+      "status": "REJECT_COMPLIANCE",
+      "source_ids": [
+        "F2",
+        "M4"
+      ],
+      "disposition": "Need adequate reliable objective science for each claim."
+    },
+    {
+      "id": "D37",
+      "claim": "Independent guide can be read without signup",
+      "status": "IMPLEMENTED_DRAFT",
+      "source_ids": [
+        "H2"
+      ],
+      "disposition": "No gate or new forms; one existing Focus path optional."
+    },
+    {
+      "id": "D38",
+      "claim": "Original 40-second pilot film is accessible in WordPress now",
+      "status": "HOLD_NO_HOSTING",
+      "source_ids": [
+        "H2"
+      ],
+      "disposition": "Offline film exists, no hosted source or caption/QA validation."
+    },
+    {
+      "id": "D39",
+      "claim": "A/B video variant has proven a higher conversion rate",
+      "status": "REJECT_NOT_TESTED",
+      "source_ids": [
+        "F1"
+      ],
+      "disposition": "Hypothesis only. No visitors or purchases observed."
+    },
+    {
+      "id": "D40",
+      "claim": "Attribution tracking has begun",
+      "status": "REJECT_NOT_ACTIVE",
+      "source_ids": [
+        "F1"
+      ],
+      "disposition": "Module hard disabled, synthetic only, no cookies/storage/network."
+    },
+    {
+      "id": "D41",
+      "claim": "Collected visitor IP or email is required for testing",
+      "status": "REJECT_UNNECESSARY",
+      "source_ids": [
+        "F1"
+      ],
+      "disposition": "Proposed aggregate-only categories and consent-aware controls."
+    },
+    {
+      "id": "D42",
+      "claim": "First-party video source can preload or autoplay before consent",
+      "status": "REJECT_UX",
+      "source_ids": [
+        "F1"
+      ],
+      "disposition": "Require controls, preload none, no autoplay, caption transcript."
+    },
+    {
+      "id": "D43",
+      "claim": "Live WordPress page is published",
+      "status": "REJECT_NOT_PUBLISHED",
+      "source_ids": [
+        "H1"
+      ],
+      "disposition": "All R73 source-only drafts; no CMS or nav write."
+    },
+    {
+      "id": "D44",
+      "claim": "Fieldbook signup should be duplicated on offer page",
+      "status": "REJECT_FUNNEL_DUPLICATION",
+      "source_ids": [
+        "H2"
+      ],
+      "disposition": "Link to existing Focus page only."
+    },
+    {
+      "id": "D45",
+      "claim": "User must provide email before reading guide",
+      "status": "REJECT_EDITORIAL_POLICY",
+      "source_ids": [
+        "H2"
+      ],
+      "disposition": "Guide freely accessible without signup."
+    }
+  ],
+  "notes": [
+    "Sources record scope and access limitations; checked dates are editorial read dates, not guarantees of continuing accuracy.",
+    "Affiliate acceptance, exact tracking link and member creatives are NOT verified.",
+    "Merchant checkout timed out this run; no final prices represented."
+  ]
+}
