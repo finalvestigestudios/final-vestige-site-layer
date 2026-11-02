@@ -336,7 +336,7 @@ def build_rights_matrix_r71(output: Path) -> dict:
             <p><strong>Reuse:</strong> Individual photo review outstanding; no human
             link verification, image inspection, or license granted.</p>
             <p><strong>Original NASA source:</strong>
-              <a href="{q(source['photo_url'])}" rel="noopener noreferrer">{q(source['photo_url'])}</a>
+              <span data-r73-print-url>{q(source['photo_url'])}</span>
             </p>
           </div></li>''')
     if len(rows)!=6:
@@ -374,7 +374,7 @@ def build_rights_matrix_r71(output: Path) -> dict:
         .fva-r71-rights .fva-r73-print-proof{display:block!important}
         .fva-r71-rights .fva-r73-print-proof h3{font:700 15px/1.3 Georgia,serif;color:#111}
         .fva-r71-rights .fva-r73-print-proof p{padding:0 12px;line-height:1.35;color:#111}
-        .fva-r71-rights .fva-r73-print-proof a{color:#111;text-decoration:underline;overflow-wrap:anywhere}
+        .fva-r71-rights .fva-r73-print-proof [data-r73-print-url]{color:#111;text-decoration:underline;overflow-wrap:anywhere}
         .fva-r71-rights li{margin:0 0 14px;page-break-inside:avoid}
         .fva-r71-rights,.fva-r71-rights li{background:none!important;
         color:#111;border-color:#444}.fva-r71-rights h2,.fva-r71-rights summary,
