@@ -55,7 +55,7 @@ test("Separate source conclusions from product-effectiveness promises",()=>{
   assert.doesNotMatch(inv,/https:\/\/zen12\.com|https:\/\/inspire3\.com/);
   assert.match(core,/not.*tests of Zen12|not.*test.*Zen12/i);
   assert.match(core,/not.*product-specific substantiation|no such product-specific substantiation/i);
-  assert.match(core,/not.*clinically tested|not.*independently verified|has not.*purchased/i);
+  assert.match(core,/We have not purchased or audited the actual files/i);
 });
 test("Seller claim matrix remains approval-gated and specific",()=>{
   assert.equal(claim.affiliate_link,null);
