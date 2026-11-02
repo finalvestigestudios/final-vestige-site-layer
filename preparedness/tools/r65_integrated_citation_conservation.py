@@ -118,7 +118,7 @@ def construct(original, lineage, dependency, *, expected=EXPECTED):
         seen_ids.add(work_id)
         ordinals[(slug, sid)].append(ordinal)
         by_slug[slug].append(row)
-    need(len(by_slug) == expected[0], "one or more integrated original articles missing")
+    need(len(by_slug) == expected[0], "integrated original citation-bearing slug census mismatch: observed " + str(len(by_slug)) + ", expected " + str(expected[0]) + "; slugs=" + repr(sorted(by_slug)))
     for key, value in ordinals.items():
         need(sorted(value) == list(range(1, len(value) + 1)),
              "lost per-source citation ordinal " + repr(key))
