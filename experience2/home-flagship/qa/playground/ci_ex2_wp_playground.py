@@ -174,6 +174,27 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
     def summary() -> str:
         return ','.join(f'{key}:{observations[key]}' for key in sorted(observations)) or 'NO_PROBE'
 
+    def redirect_reason(raw: str) -> str:
+        # Only report an allowlisted CLASS, never the redirect target.
+        if not raw:
+            return 'LOCATION_MISSING'
+        try:
+            dest = urllib.parse.urlsplit(urllib.parse.urljoin(BASE, raw))
+            origin = urllib.parse.urlsplit(BASE)
+            if dest.username or dest.password:
+                return 'USERINFO_PRESENT'
+            if dest.scheme != 'http':
+                return 'SCHEME_OTHER'
+            if dest.hostname != '127.0.0.1':
+                return 'HOST_NOT_EXACT_LOOPBACK'
+            if dest.port != origin.port:
+                return 'PORT_MISMATCH'
+            if dest.path not in ('/wp-login.php', '/wp-admin/'):
+                return 'PATH_NOT_ALLOWLISTED'
+            return 'ALLOWED_PATH_BUT_LOGIN_UNVERIFIED'
+        except (ValueError, TypeError):
+            return 'MALFORMED'
+
     stop = time.monotonic() + seconds
     while time.monotonic() < stop:
         if process.poll() is not None:
@@ -206,7 +227,7 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                     except (urllib.error.HTTPError, urllib.error.URLError, OSError):
                         record('LOCAL_LOGIN_NOT_READY')
                 else:
-                    record('UNEXPECTED_HTTP_REDIRECT')
+                    record('REDIRECT_' + redirect_reason(location))
             else:
                 record('HTTP_' + str(exc.code))
             exc.close()
