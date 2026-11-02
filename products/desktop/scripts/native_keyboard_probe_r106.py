@@ -23,6 +23,7 @@ FREE = {
     "policy": (2, "Final Vestige Labs — Policy Delta Desk"),
 }
 LEDGER_KEY_LABELS = ("Left match-key CSV header (optional)", "Right match-key CSV header (optional)")
+LEDGER_AMOUNT_LABELS = ("Left amount CSV header (optional)", "Right amount CSV header (optional)")
 INVOICE_WINDOW_LABEL = "Near-match days (0-365)"
 ERROR = "BLOCKED: native Labs keyboard/focus contract could not be verified"
 
@@ -41,7 +42,8 @@ def _expected_order(inputs: int, *, ledger_keys: bool = False,
     for i in range(1, inputs + 1):
         result.extend((f"input_{i}", f"browse_{i}"))
     if ledger_keys:
-        result.extend(("ledger_left_key", "ledger_right_key"))
+        result.extend(("ledger_left_key", "ledger_right_key",
+                       "ledger_left_amount", "ledger_right_amount"))
     if invoice_window:
         result.append("invoice_window")
     result.extend(("output", "browse_output", "generate"))
@@ -72,7 +74,7 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
     if app_id not in FREE or type(entry_count) is not int:
         raise KeyboardBlocked("Unknown or premium product")
     inputs, expected_title = FREE[app_id]
-    if window_title != expected_title or entry_count != inputs + 1 + (2 if app_id == "ledger" else 1 if app_id == "invoices" else 0):
+    if window_title != expected_title or entry_count != inputs + 1 + (4 if app_id == "ledger" else 1 if app_id == "invoices" else 0):
         raise KeyboardBlocked("Window or editable-control contract changed")
     if type(traversal) is not tuple or traversal != _expected_order(inputs, ledger_keys=(app_id == "ledger"),
                                          invoice_window=(app_id == "invoices")):
@@ -90,14 +92,15 @@ def _verify_snapshot(app_id: str, *, window_title: str, entry_count: int,
         raise KeyboardBlocked("Missing source-owned labels")
     expected_labels = (*source_input_labels, "Output folder")
     if app_id == "ledger":
-        expected_labels += LEDGER_KEY_LABELS
+        expected_labels += LEDGER_KEY_LABELS + LEDGER_AMOUNT_LABELS
     if app_id == "invoices":
         expected_labels += (INVOICE_WINDOW_LABEL,)
     if any(label not in static_labels for label in expected_labels):
         raise KeyboardBlocked("Input/output/ledger-key labels missing")
     if app_id != "invoices" and INVOICE_WINDOW_LABEL in static_labels:
         raise KeyboardBlocked("Invoice-only control exposed in another app")
-    if app_id != "ledger" and any(label in static_labels for label in LEDGER_KEY_LABELS):
+    if app_id != "ledger" and any(label in static_labels for label in
+                                   LEDGER_KEY_LABELS + LEDGER_AMOUNT_LABELS):
         raise KeyboardBlocked("Ledger-only controls exposed in another app")
     if not any("Keyboard:" in label and "Alt+G" in label and
                "Ctrl+Enter" in label and "Alt+1" in label and
@@ -171,7 +174,7 @@ def _scan_one(app_id: str) -> None:
         generate = [widget for widget in buttons
                     if widget.cget("text") == "Generate review report"]
         inputs = FREE[app_id][0]
-        expected_entries = inputs + 1 + (2 if app_id == "ledger" else 1 if app_id == "invoices" else 0)
+        expected_entries = inputs + 1 + (4 if app_id == "ledger" else 1 if app_id == "invoices" else 0)
         if len(entries) != expected_entries or len(browses) != inputs + 1 or len(generate) != 1:
             raise KeyboardBlocked("Interactive control inventory changed")
         if any(not widget.winfo_ismapped() for widget in (*entries, *browses, *generate)):
@@ -183,7 +186,7 @@ def _scan_one(app_id: str) -> None:
         for i in range(inputs):
             canonical_widgets.extend((entries[i], browses[i]))
         if app_id == "ledger":
-            canonical_widgets.extend(entries[inputs:inputs + 2])
+            canonical_widgets.extend(entries[inputs:inputs + 4])
         if app_id == "invoices":
             canonical_widgets.append(entries[inputs])
         canonical_widgets.extend((entries[-1], browses[-1], generate[0]))
@@ -246,7 +249,7 @@ def main(argv=None) -> int:
         print(ERROR, file=sys.stderr)
         return 1
     print("PASS: 4/4 free native Tk focus/Tab/accelerator contracts, including "
-          "2 LedgerDiff source-key Tab stops; premium editor untouched; "
+          "4 LedgerDiff source-header Tab stops; premium editor untouched; "
           "NOT NVDA/physical-keys/WCAG/Win11/QD")
     return 0
 
