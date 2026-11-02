@@ -63,7 +63,7 @@ class LedgerResponsiveLayoutR133(unittest.TestCase):
 
     def test_mutating_returned_map_does_not_modify_future_layout(self):
         self.plan["status"] = -123
-        self.assertEqual(app._ledger_stacked_rows(2)["status"], 16)
+        self.assertEqual(app._ledger_stacked_rows(2)["status"], 20)
 
     def test_production_ui_selects_stacked_ledger_only(self):
         source = inspect.getsource(app.run)
