@@ -80,6 +80,23 @@ jobs:
           python -I -m unittest discover -s preparedness/tests -p 'test_r61_contributor_version_source_lineage.py' -v
           python -I -m unittest discover -s preparedness/tests -p 'test_r62_contributor_claim_context_docket.py' -v
           python -I -m unittest discover -s preparedness/tests -p 'test_r63_contributor_source_impact_crosswalk.py' -v
+      - name: Real seven-contributor read-only source custody (NOT publication approval)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r63_contributor_source_impact_crosswalk.py --summary > /tmp/preparedness-r63-git-summary.json
+          python -I - <<'PY'
+          import json
+          from pathlib import Path
+          doc = json.loads(Path('/tmp/preparedness-r63-git-summary.json').read_text(encoding='utf-8'))
+          assert doc['release_state'] == 'HOLD'
+          c = doc['counts']
+          assert c['work_orders'] > 0
+          assert c['original_source_records'] > 0
+          assert c['observed_source_records_UNVERIFIED'] > 0
+          print('Real Git-object provenance and source-impact counts (NOT human verified):')
+          print(json.dumps(c, sort_keys=True))
+          PY
       - name: Explicit HOLD for separate full-integrity and all human checks
         if: always()
         run: |
