@@ -101,11 +101,17 @@ def _scan_one(app_id: str) -> None:
         browse = [w for w in buttons if str(w.cget("text")) == "Browse…"]
         generate = [w for w in buttons if str(w.cget("text")) == "Generate review report"]
         expected = FREE_INPUTS[app_id]
-        if (len(entries) != expected + 1 or len(browse) != expected + 1
-                or len(generate) != 1 or root.title() != "Final Vestige Labs — " + title):
+        optional_keys = 2 if app_id == "ledger" else 0
+        if (len(entries) != expected + 1 + optional_keys or
+                len(browse) != expected + 1 or len(generate) != 1 or
+                root.title() != "Final Vestige Labs — " + title):
             raise ShortcutBlocked("Actual free-app control inventory changed")
         if any(not w.winfo_ismapped() for w in (*entries, *browse, *generate)):
             raise ShortcutBlocked("Free-app controls are not mapped")
+        # The new LedgerDiff columns are *not* paths or file-picker fields.
+        # Keep them blank throughout cancel/no-engine-call event validation.
+        if any(entry.get() for entry in entries[expected:expected + optional_keys]):
+            raise ShortcutBlocked("Optional LedgerDiff mapping unexpectedly populated")
 
         def key(sequence):
             # These are Tk-synthesized events, NOT Windows physical key delivery.
@@ -143,7 +149,7 @@ def _scan_one(app_id: str) -> None:
             output_focus=output_focus, output_cancel=output_cancel,
             blocked_generates=counts["warnings"], warnings=counts["warnings"],
             engine_calls=counts["engine_calls"],
-            files_selected=sum(bool(entry.get()) for entry in entries[:-1]),
+            files_selected=sum(bool(entry.get()) for entry in entries[:expected]),
             extra_dialogs=counts["extra_dialogs"], premium_opened=False)
         seen = True
 
