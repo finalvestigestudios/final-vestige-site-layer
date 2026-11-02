@@ -56,16 +56,21 @@ def main() -> int:
         with open(os.devnull, "w", encoding="utf-8") as sink:
             with contextlib.redirect_stdout(sink), contextlib.redirect_stderr(sink):
                 suite.run(result)
-        if (result.testsRun != len(REQUIRED) or result.errors or result.failures
-                or result.skipped or result.expectedFailures or
-                result.unexpectedSuccesses):
-            raise ValueError("R123 source regressions failed or skipped")
-        print("R123_PRIVATE_PROGRESS_OK: 17 synthetic methods, zero skips; NO physical acceptance")
-        return 0
+        bad = sorted({case._testMethodName for case, _ in
+                      result.failures + result.errors + result.skipped}
+                     | {case._testMethodName for case in result.unexpectedSuccesses})
+        if not set(bad).issubset(REQUIRED):
+            raise ValueError("Untrusted test method")
+        passed = (result.wasSuccessful() and not result.skipped
+                  and result.testsRun == len(REQUIRED))
+        print(f"R123 private progress regression {'PASS' if passed else 'FAIL'}; "
+              f"methods={result.testsRun} failed={len(bad)}")
+        if bad:
+            print("Source-owned failed method names: " + ", ".join(bad))
+        return 0 if passed else 1
     except Exception:
-        print("HOLD: R123 private reviewer progress source checks unverified",
-              file=sys.stderr)
-        return 1
+        print("R123 private progress regression HOLD: inventory or execution unavailable")
+        return 2
 
 
 if __name__ == "__main__":
