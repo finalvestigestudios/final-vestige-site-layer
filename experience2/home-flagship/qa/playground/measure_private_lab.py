@@ -13,6 +13,7 @@ import json
 import math
 from pathlib import Path
 import subprocess
+import sys
 
 HERE = Path(__file__).resolve().parent
 VERIFIER = HERE.parent / "release-candidate" / "verify_exact_staging.py"
@@ -52,7 +53,14 @@ def exact_checkout(repo: Path, expected: str) -> None:
 def load_verifier():
     spec = importlib.util.spec_from_file_location("fv_exact_staging", VERIFIER)
     mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
+    # The canonical verifier imports sibling custody/rights modules. A direct
+    # file import lacks Python's normal script-directory search path.
+    sibling = str(VERIFIER.parent)
+    sys.path.insert(0, sibling)
+    try:
+        spec.loader.exec_module(mod)
+    finally:
+        sys.path.remove(sibling)
     return mod
 
 
