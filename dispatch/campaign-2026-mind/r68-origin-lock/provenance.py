@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
+ROOT = HERE.parents[2]
 MANIFEST = HERE / "manifest.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 
