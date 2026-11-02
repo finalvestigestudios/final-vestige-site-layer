@@ -77,17 +77,22 @@ def run_browser(html,output,chromium):
             assert all(page.locator("#"+c).count()==1 for c in CHAPTERS)
             assert page.locator("style[data-ex2-style]").count()==6
             assert page.locator("script[data-ex2-script]").count()==4
-            assert page.locator(".fv-hf__studio-controls").is_visible()
+            assert page.locator(".fv-hf__studio").is_visible()
+            assert page.locator("[data-fv-direction-choice]").count()==0
+            assert page.locator(".fv-hf__folio-note").is_visible()
             assert page.locator("[data-fv-case-buttons]").is_visible()
             assert page.locator("[data-fv-chronicle-lens]").is_visible()
             assert page.locator("[data-fv-observer-controls]").is_visible()
             assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
             assert not issues,issues
-            page.locator('[data-fv-direction-choice="museum"]').click()
-            assert page.locator("[data-fv-home-flagship]").get_attribute("data-fv-direction")=="museum"
             page.locator('[data-fv-case-button="franklin"]').click()
             assert page.locator('[data-fv-case="franklin"]').is_visible()
             assert not page.locator('[data-fv-case="apollo"]').is_visible()
+            page.locator('[data-fv-case-button="franklin"]').focus()
+            page.keyboard.press("ArrowRight")
+            assert page.locator('[data-fv-case-button="malbone"]').get_attribute("aria-pressed")=="true"
+            assert page.locator('[data-fv-case="malbone"]').is_visible()
+            assert not page.locator('[data-fv-case="franklin"]').is_visible()
             page.locator('[data-fv-chronicle-view="addition"]').click()
             assert page.locator(".fv-hf__chronicle").get_attribute("data-fv-chronicle-mode")=="addition"
             page.locator('[data-fv-observer-switch="b"]').click()
@@ -100,7 +105,8 @@ def run_browser(html,output,chromium):
         page=ctx.new_page();page.route("**/*",lambda route:route.abort());page.set_content(html)
         assert page.locator("[data-fv-case]:visible").count()==3
         assert page.locator("[data-fv-observer-frame]:visible").count()==2
-        assert not page.locator(".fv-hf__studio-controls").is_visible()
+        assert page.locator("[data-fv-direction-choice]").count()==0
+        assert page.locator(".fv-hf__folio-note").is_visible()
         assert not page.locator("[data-fv-case-buttons]").is_visible()
         assert not page.locator("[data-fv-chronicle-lens]").is_visible()
         assert not page.locator("[data-fv-observer-controls]").is_visible()
@@ -113,7 +119,7 @@ def run_browser(html,output,chromium):
         page.on("console",lambda m:violations.append(m.text) if "Content Security Policy" in m.text or "Refused to" in m.text else None)
         page.set_content(tampered);page.wait_for_timeout(65)
         assert page.evaluate("window.FV_HACK !== 1")
-        assert page.locator(".fv-hf__studio-controls").is_visible()
+        assert page.locator("[data-fv-case-buttons]").is_visible()
         assert violations
         tests.append({"negative":"unapproved_inline_script","pass":True,"blocked":True})
         ctx.close()
@@ -122,7 +128,7 @@ def run_browser(html,output,chromium):
         assert swapped!=html
         ctx=browser.new_context();page=ctx.new_page();page.route("**/*",lambda route:route.abort())
         page.set_content(swapped);page.wait_for_timeout(65)
-        assert not page.locator(".fv-hf__studio-controls").is_visible()
+        assert not page.locator("[data-fv-case-buttons]").is_visible()
         assert page.locator("[data-fv-case]:visible").count()==3
         tests.append({"negative":"bad_flagship_nonce","pass":True,"evidence_fails_open":True})
         ctx.close();browser.close()

@@ -104,8 +104,20 @@ def run(root:Path, out:Path, chromium_path: str|None=None):
             ck(f"width_{width}_both_return",page.locator('.fv-hf__chronicle').get_attribute('data-fv-chronicle-mode')=="both" and page.locator('.fv-hf__chronicle-entry--first').is_visible() and page.locator('.fv-hf__chronicle-entry--second').is_visible())
             page.locator('[data-fv-observer-switch="b"]').click()
             ck(f"width_{width}_observer_b",page.locator('[data-fv-observer-switch="b"]').get_attribute('aria-pressed')=="true" and page.locator('[data-fv-observer-frame="b"]').is_visible() and not page.locator('[data-fv-observer-frame="a"]').is_visible())
-            page.locator('[data-fv-direction-choice="museum"]').click()
-            ck(f"width_{width}_museum_direction",page.locator('[data-fv-home-flagship]').get_attribute('data-fv-direction')=="museum")
+            ck(f"width_{width}_locked_editorial_direction",
+               page.locator('[data-fv-direction-choice]').count()==0
+               and page.locator('[data-fv-home-flagship]').get_attribute('data-fv-direction') is None)
+            folio=page.locator('.fv-hf__folio-note')
+            folio_paint=folio.evaluate("""node => {
+              const box=node.getBoundingClientRect(),style=getComputedStyle(node);
+              return {width:box.width,height:box.height,background:style.backgroundColor,
+                      original:node.querySelector('time[datetime="1847-05-28"]')!==null,
+                      addition:node.querySelector('.fv-hf__folio-margin')?.textContent.includes('1848')===true};
+            }""")
+            ck(f"width_{width}_franklin_folio_painted",
+               folio.is_visible() and folio_paint["width"]>150 and folio_paint["height"]>250
+               and folio_paint["background"] not in ("transparent","rgba(0, 0, 0, 0)")
+               and folio_paint["original"] and folio_paint["addition"],str(folio_paint))
             if width in (390,1440):
                 page.screenshot(path=str(out/f"complete-home-{width}-enhanced.png"),full_page=True,animations="disabled")
             context.close()
