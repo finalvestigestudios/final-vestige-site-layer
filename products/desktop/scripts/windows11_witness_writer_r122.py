@@ -8,6 +8,7 @@ ONLY reviewer testimony, not independent QA or a premium entitlement.
 from __future__ import annotations
 
 import argparse
+from private_review_cli_r146 import PrivateReviewParser
 import copy
 import hmac
 import json
@@ -270,7 +271,7 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = PrivateReviewParser(description=__doc__)
     parser.add_argument("--dist", type=Path, required=True)
     parser.add_argument("--r9-report", type=Path, required=True)
     parser.add_argument("--expected-r9-sha256", required=True)
@@ -280,8 +281,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--check", required=True)
     parser.add_argument("--state", required=True, choices=("PASS", "FAIL"))
     parser.add_argument("--observation-file", type=Path, required=True)
-    args = parser.parse_args(argv)
     try:
+        # Redact parser failures before they reach stderr or custody storage.
+        args = parser.parse_args(argv)
         result = record_one(
             dist=args.dist, r9_report=args.r9_report,
             expected_pin=args.expected_r9_sha256, review=args.review,
