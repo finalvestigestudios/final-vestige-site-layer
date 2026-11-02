@@ -44,6 +44,14 @@ python -I -m unittest discover -s preparedness/tests -v
 
 The isolated R79 test file comprises **91** checks: 41 individually named complete-document dependency tests and 50 source provenance, source-collision, temporal, context, CSV injection, evidence-tampering, HOLD and cardinality safeguards. Hosted exact-head results must be checked before calling it passed. Any outputs remain offline WordPress-ready drafts, not a public deployment.
 
+## R79 native-suite execution watchdog (critical engineering distinction)
+
+The first two exact-head R79 diagnostic workflows identified an ordering bug in the source-to-citation comparison; it was fixed in \`9d08b82636a8b592122cd1407c4906cd6e86ded9\`. At that head **91/91 isolated R79 tests and 6,409/6,409 full-native regression tests passed**, along with native validation and offline draft build, in diagnostic run [#41536564295](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41536564295). The full suite used **184.418 seconds**.
+
+However, the separate mandatory run [#41536564316](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41536564316) failed closed earlier than the historical branch-parity gate: its R18 preflight reported \`failed_step=native_unit_suite\`. Its unchanged \`private_release_preflight.py\` defaults to a **180-second per-step timeout**, so the recent 184-second diagnostic duration provides a concrete probable cause, not a proven diagnosis from the redacted mandatory receipt.
+
+To avoid weakening any historical gate or modifying a shared workflow, R79's own *test class only* now reuses the previous R78 class's **sealed exact in-process R78 report** when running in the native full-suite discovery process. An R79-alone test run still reconstructs R78 independently from source. **Both paths run \`r79.construct\`**, whose checks independently reconstruct the R77→R78 evidence and every R79 source/citation/context relationship. No tests, source controls, publication checks or release permissions are removed. This saves redundant file reads and costly report generation in the full suite. A new hosted run must verify the actual full-suite duration and whether mandatory release integrity proceeds to its known frozen historical \`seven_cluster_git_parity\` blocker; no PASS is presumed.
+
 ## Rechecked collaborator refs, 2026-11-02
 
 | Workstream | GitHub head SHA at inspection |
