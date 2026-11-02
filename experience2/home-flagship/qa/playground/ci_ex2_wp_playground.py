@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import signal
 import subprocess
@@ -36,6 +37,12 @@ def diagnose_private_cli_log(logpath: Path) -> str:
         return 'CLI_LOG_NOT_CREATED'
     data = logpath.read_text(errors='replace')[-12000:].lower()
     patterns = (
+        ('refused: local template readback differs', 'WP_SAVED_TEMPLATE_BYTES_CHANGED'),
+        ('existing non-fv local override', 'WP_PARITY_EXISTING_CONTENT_CONFLICT'),
+        ('local theme taxonomy assignment failed', 'WP_THEME_TAXONOMY_FAILURE'),
+        ('local template area assignment failed', 'WP_TEMPLATE_AREA_FAILURE'),
+        ('refused: staging parity contract mismatch', 'WP_PARITY_CONTRACT_FAILURE'),
+        ('could not activate', 'WP_BLUEPRINT_ACTIVATION_FAILURE'),
         ('npm error canceled', 'NPM_INTERACTIVE_INSTALL_CANCELLED'),
         ('npm err! canceled', 'NPM_INTERACTIVE_INSTALL_CANCELLED'),
         ('could not determine executable', 'NPM_EXECUTABLE_UNRESOLVED'),
@@ -49,6 +56,100 @@ def diagnose_private_cli_log(logpath: Path) -> str:
     )
     return next((code for phrase, code in patterns if phrase in data),
                 'PLAYGROUND_CLI_EXIT_REASON_UNCLASSIFIED_PRIVATE_LOG_ONLY')
+
+
+def safe_cli_failure_excerpt(logpath: Path) -> str:
+    """Expose only a tiny redacted error class/phrase, never raw CLI logs.
+
+    The ephemeral runner has no production tokens, but the full Node/Blueprint
+    output is still PRIVATE and never copied to an artifact. This deliberately
+    destroys URLs, filesystem paths, emails, long IDs and credential-bearing
+    lines before selecting a diagnostic fragment.
+    """
+    if not logpath.is_file():
+        return 'NO_PRIVATE_LOG'
+    data = logpath.read_text(errors='replace')[-16000:]
+    data = re.sub(r'\x1b\[[0-9;]*[A-Za-z]', '', data)
+    selected = []
+    for line in data.splitlines():
+        if not re.search(r'(?i)\b(error|exception|fatal|refused|failed|invalid|cannot)\b', line):
+            continue
+        if re.search(r'(?i)authorization|password|secret|api[_ -]?key|bearer|session|cookie|credential|token', line):
+            continue
+        # Do not surface execution environment paths or external URLs.
+        line = re.sub(r'https?://\S+', '[URL]', line)
+        line = re.sub(r'(?:/home/|/tmp/|/var/|/opt/|/usr/)\S+', '[LOCAL_PATH]', line)
+        line = re.sub(r'\b[A-Za-z0-9_.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b', '[EMAIL]', line)
+        line = re.sub(r'\b[A-Za-z0-9+/=_-]{50,}\b', '[LONG_ID]', line)
+        line = re.sub(r'[^A-Za-z0-9 .,;:()_\-\[\]]', ' ', line)
+        line = ' '.join(line.split())
+        if len(line) >= 8:
+            selected.append(line[-110:])
+    if not selected:
+        return 'NO_SAFE_ERROR_LINES'
+    # Prefer a final error declaration over a JavaScript stack-frame line.
+    return ' ; '.join(selected[-2:])[-180:]
+
+
+def build_local_debug_blueprint_argv(stage: Path, argv: list[str], secret_dir: Path) -> list[str]:
+    """Construct a localhost-only FORENSIC blueprint, never an acceptance input.
+
+    This runs only after canonical staging fails. No mutation of the reviewed
+    Blueprint, site database, source assets, or production service is permitted.
+    """
+    if argv[:3] != ['npx', '@wp-playground/cli@latest', 'server']:
+        raise ValueError('Refuse diagnostic on unknown CLI')
+    expected = '--blueprint=' + str(stage / 'playground-blueprint.json')
+    if argv.count(expected) != 1 or argv.count('--port=9400') != 1:
+        raise ValueError('Refuse diagnostic on unknown Blueprint or port')
+    if len([x for x in argv if x.startswith('--mount=')]) != 3:
+        raise ValueError('Refuse diagnostic on unknown mount topology')
+    data = json.loads((stage / 'playground-blueprint.json').read_text())
+    first = data.get('steps', [None])[0]
+    if not isinstance(first, dict) or first.get('step') != 'defineWpConfigConsts':
+        raise ValueError('Refuse diagnostic without local environment declaration')
+    consts = first.get('consts')
+    if not isinstance(consts, dict) or consts.get('WP_ENVIRONMENT_TYPE') != 'local' or consts.get('FV_EX2_ALLOW_PREVIEW') is not True:
+        raise ValueError('Refuse diagnostic outside isolated local preview')
+    first['consts'] = {**consts, 'WP_DEBUG': True, 'WP_DEBUG_LOG': True,
+                       'WP_DEBUG_DISPLAY': True, 'WP_DISABLE_FATAL_ERROR_HANDLER': True}
+    file = secret_dir / 'local-debug-blueprint.json'
+    file.write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
+    return ['--blueprint=' + str(file) if a == expected
+            else '--port=9401' if a == '--port=9400' else a for a in argv]
+
+
+def local_debug_error_category(repo: Path, stage: Path, argv: list[str], secret_dir: Path) -> str:
+    """Retry once on private loopback 9401 solely to diagnose PHP startup failure.
+
+    Exposed diagnostic is sanitized text only. Raw WP/CLI output is never sent
+    to Actions logs or uploaded artifacts. Retry cannot change release status.
+    """
+    logpath = secret_dir / 'local-debug-private.log'
+    try:
+        command = build_local_debug_blueprint_argv(stage, argv, secret_dir)
+    except (ValueError, OSError, KeyError, TypeError):
+        return 'DIAGNOSTIC_PRECONDITION_REJECTED'
+    child = None
+    try:
+        with logpath.open('w', encoding='utf-8') as private_log:
+            child = subprocess.Popen(command, cwd=repo, stdout=private_log, stderr=subprocess.STDOUT,
+                                     start_new_session=True, env={**os.environ,
+                                         'npm_config_yes':'true', 'npm_config_audit':'false', 'CI':'true'})
+            deadline = time.monotonic() + 75
+            while time.monotonic() < deadline and child.poll() is None:
+                time.sleep(0.5)
+        if child.poll() is None:
+            return 'DIAGNOSTIC_WORDPRESS_REMAINED_ALIVE_NOT_RELEASE'
+        return diagnose_private_cli_log(logpath) + ': ' + safe_cli_failure_excerpt(logpath)
+    except (OSError, subprocess.SubprocessError):
+        return 'DIAGNOSTIC_PROCESS_LAUNCH_FAILED'
+    finally:
+        if child is not None and child.poll() is None:
+            try: os.killpg(child.pid, signal.SIGTERM)
+            except ProcessLookupError: pass
+            try: child.wait(timeout=5)
+            except subprocess.TimeoutExpired: os.killpg(child.pid, signal.SIGKILL)
 
 
 def ready(process: subprocess.Popen, seconds: int = 180) -> None:
@@ -103,7 +204,11 @@ def main() -> int:
                     ready(process)
                 except RuntimeError as exc:
                     reason = diagnose_private_cli_log(secret_dir / 'wp-cli-private.log')
-                    raise RuntimeError(str(exc) + '; safe_category=' + reason) from None
+                    forensic = local_debug_error_category(repo, stage, argv, secret_dir)
+                    detail = safe_cli_failure_excerpt(secret_dir / 'wp-cli-private.log')
+                    raise RuntimeError(str(exc) + '; safe_category=' + reason
+                                       + '; local_diagnostic=' + forensic
+                                       + '; safe_excerpt=' + detail) from None
                 from playwright.sync_api import sync_playwright
                 storage = secret_dir / 'local-editor-storage.json'
                 with sync_playwright() as playwright:

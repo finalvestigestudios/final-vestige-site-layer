@@ -8,6 +8,19 @@ if (wp_get_environment_type() !== 'local' || !in_array($host, ['127.0.0.1', 'loc
 if (wp_get_theme()->get_stylesheet() !== 'assembler' || wp_get_theme()->get('Version') !== '0.0.126') {
     throw new RuntimeException('REFUSED: independently verified Assembler 0.0.126 required');
 }
+// The Blueprint executes runPHP with no authenticated browser session.
+// WordPress applies KSES to Gutenberg/template content when no user has the
+// unfiltered_html capability. That silently changes reviewed archival markup.
+// Only inside this *fresh localhost-only disposable* instance, adopt WP's
+// known default administrator (ID 1) and verify the exact capability before
+// attempting a write. NEVER copy or reuse this shortcut on a hosted site.
+if (is_multisite() || !function_exists('wp_set_current_user')) {
+    throw new RuntimeException('REFUSED: local parity requires single-site WordPress API');
+}
+wp_set_current_user(1);
+if (get_current_user_id() !== 1 || !current_user_can('unfiltered_html')) {
+    throw new RuntimeException('REFUSED: local throwaway admin cannot persist unfiltered Gutenberg');
+}
 $path = '/wordpress/wp-content/uploads/fv-ex2-parity/assembler-public-safe.json';
 if (!is_file($path) || filesize($path) < 200 || filesize($path) > 350000) {
     throw new RuntimeException('Missing or oversized sanitized parity manifest');
@@ -73,8 +86,10 @@ foreach ($records as $key => $record) {
 
 function fv_local_parity_insert_verified($record, $old) {
     $type = $record['type']; $slug = $record['slug'];
+    // wp_insert_post() unslashes post content. Preserve the exact reviewed Gutenberg
+    // bytes through that boundary; the post-save readback below remains mandatory.
     $args = ['post_type'=>$type, 'post_status'=>'publish', 'post_title'=>'FV local-only '.$slug,
-             'post_name'=>$slug, 'post_content'=>$record['content'], 'comment_status'=>'closed'];
+             'post_name'=>$slug, 'post_content'=>wp_slash($record['content']), 'comment_status'=>'closed'];
     if ($old) { $args['ID'] = $old->ID; }
     $id = wp_insert_post($args, true);
     if (is_wp_error($id) || !$id) {
@@ -92,10 +107,21 @@ function fv_local_parity_insert_verified($record, $old) {
     // WP may filter/sanitize post content or adjust duplicate slugs silently.
     // Read back the exact WordPress-stored record, not the wp_insert_post return.
     $saved = get_post($id);
-    if (!$saved || $saved->post_type !== $type || $saved->post_name !== $slug
-        || $saved->post_status !== 'publish' || $saved->post_content !== $record['content']
-        || get_post_meta($id, '_fv_ex2_local_parity', true) !== '1') {
-        throw new RuntimeException('REFUSED: local template readback differs: '.$slug);
+    // Report only which local-only invariants failed; never emit HTML, source
+    // bytes, logged-in user records or filesystem paths in CI artifacts.
+    $drift = [];
+    if (!$saved) {
+        $drift[] = 'missing';
+    } else {
+        if ($saved->post_type !== $type) $drift[] = 'type';
+        if ($saved->post_name !== $slug) $drift[] = 'slug';
+        if ($saved->post_status !== 'publish') $drift[] = 'status';
+        if ($saved->post_content !== $record['content']) $drift[] = 'content';
+    }
+    if (get_post_meta($id, '_fv_ex2_local_parity', true) !== '1') $drift[] = 'marker';
+    if ($drift) {
+        throw new RuntimeException('REFUSED: local template readback differs: '.$slug
+            .'; mismatches='.implode(',', $drift));
     }
     $themes = wp_get_object_terms($id, 'wp_theme', ['fields'=>'names']);
     if (is_wp_error($themes) || !is_array($themes) || !in_array('assembler', $themes, true)) {
