@@ -64,6 +64,7 @@ function stageTemplate(blueprint, source, digest) {
     "if (is_wp_error($fv_terms) || !$fv_terms) throw new Exception('FV stage CLOSED: local block template theme binding');",
     "$fv_resolved=wp_get_block_template('assembler//page','wp_template');",
     "if (!$fv_resolved || !isset($fv_resolved->content) || !str_contains($fv_resolved->content,'"+LOCAL_WIDTH+"')) throw new Exception('FV stage CLOSED: custom block template did not resolve');",
+    "if (wp_get_block_template('assembler//front-page','wp_template')) throw new Exception('FV stage CLOSED: front-page template would supersede the verified page template');",
     "// The public site uses page-id-6; the isolated local front page gets an unrelated ID."
   ].join('\n')+'\n';
   const cloned=JSON.parse(JSON.stringify(blueprint));
