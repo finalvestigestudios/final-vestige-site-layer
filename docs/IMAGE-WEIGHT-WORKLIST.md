@@ -1,5 +1,12 @@
 # IMAGE-WEIGHT-WORKLIST — Final Vestige Media Recovery
 
+## November 2 — Forrestal 289 six-source independent recheck + exact DVIDS same-VIRIN recovery (Media PR #183)
+
+**Concrete new batch:** Reconciled post 289's **6/6 exact published `<img src>` URLs and ALTs** against immutable source `qa/media-recovery/parts/03.json` (blob `49183f66f880f7c4dfd363acca906876877f2e5e`). **5/6 exact image URLs independently rendered** (289:0/1/2/3/5); **289:4 `media.defense.gov` returned web retriever 403**, **NOT** verified guest-browser 403/broken image. Actual visitor currentSrc, HTTP/MIME, naturalWidth, bytes and screenshots **unknown** for all six. Reported 42 and 76% still unverified/unmeasured.
+
+**Strong exact photo recovery:** 289:4 filename **`210811-N-SG189-1105.JPG`** exactly matches [official DVIDS photo 6947585](https://www.dvidshub.net/image/6947585/farrier-firefighting-school), released U.S. Navy photo by **J. Keith Wilson** (Aug **11, 2021** simulation, **not** the 1967 event). Its [official DVIDS thumbnail](https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2111/6947585/1000w_q95.jpg) displays. Master catalog **5448×3625**, conditional no-upscale **960×639**; exact resized derivative SHA, guest-browser failure, actual wire bytes and rights clearance **not verified**. DVIDS marks image public domain, but [usage notice](https://www.dvidshub.net/about/copyright) has third-party, privacy, non-endorsement and marking restrictions: **WordPress rehost HOLD**. Two NHHC **different-scene** 1967 historical options, **USN 1124785** and **USN 1124802**, documented only as alternate-scene editorial candidates; avoid silent incorrect swaps.
+
+**Artifacts:** [machine six-source + 3-primary-candidate ledger](../qa/media-recovery/forrestal_289_virin_recovery_20261102.json), [offline validator](../qa/media-recovery/validate_forrestal_289_20261102.cjs), [20-case mutation suite](../qa/media-recovery/test_forrestal_289_20261102.cjs), [rights, caching, 960px, and QA memo](MEDIA-FORRESTAL-289-DVIDS-VIRIN-20261102.md). **20/20 precommit isolated JS checks pass**; native Node CI and actual Chrome pending. Site QA #154 retains browser lane, no duplicate edits. **0 media downloads, production repairs, CMS writes, homepage design changes or subscriptions**.
 
 ## November 2 — TMI 285:5 original-photo provenance solved; Hebgen 407:3 exact source displays (Media Recovery PR #183)
 
