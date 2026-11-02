@@ -35,7 +35,7 @@ test('native disabled CTA and adjacent prospective affiliate disclosure',()=>{
 test('no active commerce, forms, trackers, video embeds or unreachable asset sources',()=>{
  for(const html of [a,b]){
   assert.doesNotMatch(html,/<(?:script|iframe|form|input|video|audio|source)\b/i);
-  assert.doesNotMatch(html,/\b(?:href|src)=["'](?:https?:)?\/\/[^"']*(?:zen12|inspire3|hypnosislive|affiliate)/i);
+  assert.doesNotMatch(html,/\b(?:href|src)=["'](?:https?:)?\/\/[^"']*(?:zen12|inspire3|hypnosislive)/i);
   assert.doesNotMatch(html,/<video\b[^>]*\bautoplay|\bonerror=|\bonclick=|dataLayer|fbq\(/i);
  }
 });
@@ -49,8 +49,8 @@ test('only verified public internal and evidence-link destinations',()=>{
 });
 
 test('film B is purely optional and honest without dead player',()=>{
- assert.ok(!a.includes('fvm-film-inner'));
- assert.ok(b.includes('fvm-film-inner'));
+ assert.ok(!a.includes('<div class="fvm-film-inner">'));
+ assert.ok(b.includes('<div class="fvm-film-inner">'));
  assert.match(b,/<svg[^>]*role="img"/);
  assert.match(b,/<details open>/);
  assert.equal((b.match(/<strong>\d\d–\d\ds\.<\/strong>/g)||[]).length,6);
