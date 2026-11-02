@@ -5,10 +5,10 @@
  */
 export const ATTRIBUTION_ENABLED = false;
 export const ALLOWED_EVENTS = Object.freeze(["guide_open", "offer_intent", "focus_visit"]);
-export const ALLOWED_TOPICS = Object.freeze(["cou e".replace(" ", ""), "zen12", "attention", "hypnosis"]);
+export const ALLOWED_TOPICS = Object.freeze(["coue", "zen12", "attention", "hypnosis"]);
 export const ALLOWED_VARIANTS = Object.freeze(["A", "B"]);
 const PERMITTED = Object.freeze(["event", "topic", "variant"]);
-const VALID_ID = /^[a-z][a-z0-9_]{0,30}$/;
+const VALID_ID = /^[A-Za-z][A-Za-z0-9_]{0,30}$/;
 
 export function classify(value) {
   if (value === null || typeof value !== "object" || Array.isArray(value)) return null;
