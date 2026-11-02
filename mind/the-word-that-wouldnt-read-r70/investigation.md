@@ -80,7 +80,7 @@ Research in highly selected subjects on a few seconds of ink-color naming does n
 
 The scientific accomplishment is narrower and, in its way, more remarkable. A highly practiced behavior that seems involuntary was influenced under a controlled suggestion, at least for some participants. Whether the effect generalizes, which mechanisms best account for it, and how it compares with other interventions remain the questions.
 
-To evaluate modern audio tools separately, an independent [Zen12 listening guide](../zen12-guide-a.blocks.html) in this unpublished research package distinguishes the seller’s advertised file formats from unproven outcome claims. This investigation is not sponsored by an audio merchant and contains no purchasing link.
+To evaluate modern audio tools separately, an independent Zen12 listening guide in this unpublished research package distinguishes the seller’s advertised file formats from unproven outcome claims. This investigation is not sponsored by an audio merchant and contains no purchasing link.
 
 ## In the end, the word remains
 
