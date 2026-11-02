@@ -316,7 +316,7 @@ FAULTS={
     "quantity_total":lambda p:p["counts"].update(numeric_unit_occurrences=999),
     "shared_group_removed":lambda p:p["shared_URL_scope_collisions_NOT_REVIEWED"].pop(),
     "reused_group_removed":lambda p:p["reused_ID_scope_collisions_NOT_REVIEWED"].pop(),
-    "uncited_origin_removed":lambda p:p["uncited_source_readings_NOT_REVIEWED"].pop(),
+    "uncited_origin_forged":lambda p:p["uncited_source_readings_NOT_REVIEWED"].append(["fake-origin","absent-source"]),
     "shared_fake_safety":lambda p:p["shared_URL_scope_collisions_NOT_REVIEWED"][0].update(
         human_scope_resolution="APPROVED"),
     "shared_value_altered":lambda p:p["shared_URL_scope_collisions_NOT_REVIEWED"][0].update(
