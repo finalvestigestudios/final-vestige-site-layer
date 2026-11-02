@@ -25,7 +25,7 @@ REQUIRED = {
     "pinch_200_390:real_wordpress", "pinch_200_390:reduced_motion",
     "pinch_200_390:visual_viewport_2x",
     "pinch_200_390:seven_chapters", "pinch_200_390:case_tap_at_2x",
-    "pinch_200_390:text_200_percent_no_root_overflow"
+    "pinch_200_390:zoomed_layout_no_global_overflow"
 }
 
 
@@ -70,10 +70,10 @@ class UsabilityContract(TestCase):
         checks["pinch_200_390:visual_viewport_2x"] = False
         self.assertIn("FAIL_pinch_200_390_visual_viewport_2x", module.grade(checks))
 
-    def test_text_200_percent_overflow_fails_closed(self):
+    def test_2x_pinch_global_overflow_fails_closed(self):
         checks = {k: True for k in REQUIRED}
-        checks["pinch_200_390:text_200_percent_no_root_overflow"] = False
-        self.assertIn("FAIL_pinch_200_390_text_200_percent_no_root_overflow", module.grade(checks))
+        checks["pinch_200_390:zoomed_layout_no_global_overflow"] = False
+        self.assertIn("FAIL_pinch_200_390_zoomed_layout_no_global_overflow", module.grade(checks))
 
     def test_reflow_640_nav_clipping_fails_closed(self):
         checks = {k: True for k in REQUIRED}
