@@ -3,8 +3,10 @@
 No sockets are opened here; factory injection models complete REST indices,
 incorrect 8-KiB prefix assumptions, alternate route, and refusals.
 """
+import ast
 import json
 import unittest
+from pathlib import Path
 from wordpress_r68 import probe_local_rest
 
 class Response:
@@ -98,6 +100,15 @@ class R69RestProbe(unittest.TestCase):
         self.assertEqual(code,'PORT_UNAVAILABLE/PORT_UNAVAILABLE')
         self.assertNotIn('private',code)
         self.assertEqual(factory.closed, 2)
+
+    def test_playwright_response_status_must_be_property_not_method(self):
+        source = Path(__file__).with_name('wordpress_r68.py').read_text()
+        self.assertIn('res.status==200', source)
+        calls = [node for node in ast.walk(ast.parse(source))
+                 if isinstance(node, ast.Call)
+                 and isinstance(node.func, ast.Attribute)
+                 and node.func.attr == 'status']
+        self.assertEqual(calls, [])
 
 if __name__ == '__main__':
     unittest.main()
