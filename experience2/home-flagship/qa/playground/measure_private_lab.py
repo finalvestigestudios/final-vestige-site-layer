@@ -127,7 +127,7 @@ def measure(repo: Path, expected: str, storage_state: Path) -> dict:
                         sample["failure_codes"] = grade(sample)
                     except Exception as exc:
                         # Exception CLASS only: Playwright messages can contain
-                        # the nonce-bearing AJAX URL. Never serialize str(exc).
+                        # the nonce-bearing AJAX URL. Never serialize raw exception messages.
                         sample = {"profile":label,"trial":trial,"viewport":width,
                                   "http_status":0,"chapter_count":0,
                                   "lcp_ms":None,"cls":None,
