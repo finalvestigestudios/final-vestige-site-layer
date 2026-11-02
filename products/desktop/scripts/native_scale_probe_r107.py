@@ -32,10 +32,19 @@ def verify_snapshot(app_id, *, scale, entries, browse, generate, scrollable,
             type(browse) is not int or browse != FREE_INPUTS[app_id] + 1 or
             type(generate) is not int or generate != 1):
         raise ScaleBlocked("Required input/output widgets changed")
-    if any(value is not True for value in (
-            scrollable, focus_revealed, labels_wrapped,
-            controls_nonfocus, system_background)):
-        raise ScaleBlocked("Scaled-layout verification failed")
+    # Use only fixed, source-controlled reason identifiers. Native failures
+    # must be diagnosable without logging customer paths, widget values,
+    # screen coordinates or Windows private exception strings.
+    checks = (
+        ("scrollable", scrollable),
+        ("focus_revealed", focus_revealed),
+        ("labels_wrapped", labels_wrapped),
+        ("controls_nonfocus", controls_nonfocus),
+        ("system_background", system_background),
+    )
+    for name, value in checks:
+        if value is not True:
+            raise ScaleBlocked("Scaled layout: " + name)
 
 
 def _scan_one(app_id, scale):
@@ -172,19 +181,50 @@ def _scan_one(app_id, scale):
                 pass
 
 
+# The only diagnostics admitted into CI output are fixed, source-owned codes.
+# Never export str(error), Tk exception text, file paths, geometry or data.
+_SAFE_FAILURE_CODES = {
+    "Invalid source-controlled app or zoom": "scope",
+    "Required input/output widgets changed": "inventory",
+    "Scaled layout: scrollable": "scroll",
+    "Scaled layout: focus_revealed": "focus",
+    "Scaled layout: labels_wrapped": "wrap",
+    "Scaled layout: controls_nonfocus": "focus_stops",
+    "Scaled layout: system_background": "background",
+    "Unknown free app or test scale": "scope",
+    "Product access scope changed": "scope",
+    "Unexpected root window": "root",
+    "Private source/engine action unexpectedly invoked": "denied_action",
+    "Expected native form viewport not found": "viewport",
+    "Viewport scrollbar disconnected": "scrollbar",
+    "Required controls not mapped": "unmapped",
+    "No viewport content": "empty_viewport",
+    "400% viewport did not expose scroll travel": "no_travel",
+    "Expected focusable controls missing": "no_controls",
+    "Native Tk preflight did not execute": "not_executed",
+}
+
+
+def safe_failure(app_id, scale, error):
+    if app_id not in FREE_INPUTS or scale not in SCALES:
+        return ERROR
+    code = _SAFE_FAILURE_CODES.get(str(error), "unexpected") if type(error) is ScaleBlocked else "unexpected"
+    return f"{ERROR} [app={app_id}, zoom={int(scale * 100)}%, check={code}]"
+
+
 def main(argv=None):
     if argv is None:
         argv = sys.argv[1:]
     if argv or os.name != "nt" or platform.machine().lower() not in ("amd64", "x86_64"):
         print(ERROR, file=sys.stderr)
         return 1
-    try:
-        for app_id in FREE_INPUTS:
-            for scale in SCALES:
+    for app_id in FREE_INPUTS:
+        for scale in SCALES:
+            try:
                 _scan_one(app_id, scale)
-    except Exception:
-        print(ERROR, file=sys.stderr)
-        return 1
+            except Exception as exc:
+                print(safe_failure(app_id, scale, exc), file=sys.stderr)
+                return 1
     print("PASS: 4 free Tk forms x 2 scales = 8 native vertical-reflow/focus checks; not Win11/NVDA/QD approval")
     return 0
 
