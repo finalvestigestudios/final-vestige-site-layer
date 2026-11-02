@@ -3,7 +3,8 @@
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {spawn}=require('node:child_process');
 const {loadSnapshot}=require('./validate_inventory.cjs');
-const {classifyImages,pageHostVerified,countTransfer,scopeArticleImageWire}=require('./browser_probe_core.cjs');
+const {classifyImages,pageHostVerified,countTransfer}=require('./browser_probe_core.cjs');
+const {scopeByRequestId}=require('./request_id_wire_core.cjs');
 const {selectCdpImageRequests}=require('./cdp_image_request_scope.cjs');
 const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
@@ -86,7 +87,7 @@ function monitor(cdp){
   if(m.method==='Network.requestWillBeSent'){
    const old=reqs.get(id)||{url_aliases:[],encodedDataLength:null};
    if(old.url&&old.url!==p.request.url)old.url_aliases.push(old.url);
-   const r={...old,url:p.request.url,type:p.type||old.type||null};
+   const r={...old,request_id:id,url:p.request.url,type:p.type||old.type||null};
    if(p.redirectResponse){r.url_aliases.push(p.redirectResponse.url);r.redirect_status=p.redirectResponse.status}
    reqs.set(id,r);
   }else if(m.method==='Network.responseReceived'){
@@ -130,10 +131,10 @@ async function inspect(cdp,page,outputDir){
   const imageRecords=selectCdpImageRequests(records);
   const images=classifyImages(page.stored,doc?.images||[],imageRecords,verified);
   const networkImages=imageRecords.map(x=>({
-   url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
+   request_id:x.request_id||null,url:x.url,url_aliases:x.url_aliases,status:x.status??null,error:x.failed_error||null,
    mime_type:x.mime_type||null,encoded_data_length:x.encodedDataLength??null,
    from_disk_cache:x.from_disk_cache===true,from_service_worker:x.from_service_worker===true,was_cached:x.was_cached===true}));
-  const articleWire=scopeArticleImageWire(images,networkImages);
+  const articleWire=scopeByRequestId(images,networkImages);
   const pageResult=verified?(coverage.complete?'inspected_browser':'inspected_browser_partial_scroll'):'blocked_or_unverified_page';
   const evidence=assessPage({page_result:pageResult,scroll_coverage:coverage,stored_image_count:page.stored.length,stored_images:images});
   const broken=images.filter(x=>x.verified_broken_in_browser===true),screenshots=[];
@@ -174,6 +175,9 @@ async function inspect(cdp,page,outputDir){
    article_image_wire_bytes_total:verified&&coverage.complete?articleWire.article_bytes:null,
    unattributed_image_wire_bytes_total:verified&&coverage.complete?articleWire.unattributed_bytes:null,
    matched_article_network_requests:verified&&coverage.complete?articleWire.matched_request_count:null,
+   article_wire_attribution_mode:articleWire.attribution_mode,
+   article_wire_evidence_complete:verified&&coverage.complete?articleWire.complete:false,
+   article_wire_evidence_errors:articleWire.reasons,
    unmeasured_article_network_requests:verified&&coverage.complete?articleWire.unmeasured_article_requests:null,
    network_images:networkImages,
    interpretation:verified&&coverage.complete?'Logged-out Chromium reached page bottom, with currentSrc and network evidence; source rights still require review.':verified?'Partial browser scan; do not infer a complete broken-image census or weight baseline.':'Environment or page unverified: no claims of broken images are permitted.'};
@@ -191,7 +195,7 @@ async function main(){
   post_ids:pages.map(x=>x.id),image_sources:pages.reduce((n,p)=>n+p.stored.length,0),
   urls:pages.map(x=>x.url),priority_targets:pages.flatMap(x=>x.priority_targets),browser_probe_executed:false},null,2));return}
  const dir=path.join(__dirname,'runs');fs.mkdirSync(dir,{recursive:true});
- const result={schema_version:1,probe_version:3,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
+ const result={schema_version:1,probe_version:4,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
   probe:'logged-out Chrome CDP, no npm dependencies or WordPress writes',
   requested_pages:pages.length,priority_image_keys:pages.flatMap(x=>x.priority_image_keys),status:'starting',pages:[]};
  let browser;
