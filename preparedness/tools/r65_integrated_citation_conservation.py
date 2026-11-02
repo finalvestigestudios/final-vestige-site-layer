@@ -118,7 +118,10 @@ def construct(original, lineage, dependency, *, expected=EXPECTED):
         seen_ids.add(work_id)
         ordinals[(slug, sid)].append(ordinal)
         by_slug[slug].append(row)
-    need(len(by_slug) == expected[0], "integrated original citation-bearing slug census mismatch: observed " + str(len(by_slug)) + ", expected " + str(expected[0]) + "; slugs=" + repr(sorted(by_slug)))
+    need(len(by_slug) == expected[0] + 1 and "water-planner" in by_slug,
+         "integrated original article+water-tool citation census mismatch: observed " +
+         str(len(by_slug)) + ", expected " + str(expected[0] + 1) +
+         " including water-planner; slugs=" + repr(sorted(by_slug)))
     for key, value in ordinals.items():
         need(sorted(value) == list(range(1, len(value) + 1)),
              "lost per-source citation ordinal " + repr(key))
@@ -263,7 +266,9 @@ def construct(original, lineage, dependency, *, expected=EXPECTED):
                 "proposed_citations_UNREVIEWED": len(new_tokens),
             }
         else:
-            flags.add("INTEGRATED_ONLY_SIX_ARTICLES_OUTSIDE_SEVEN_R14_CLUSTERS")
+            flags.add("INTEGRATED_ORIGINAL_WATER_TOOL_OUTSIDE_SEVEN_R14_CLUSTERS"
+                      if slug == "water-planner" else
+                      "INTEGRATED_ONLY_SIX_ARTICLES_OUTSIDE_SEVEN_R14_CLUSTERS")
         if not flags:
             flags.add("UNCHANGED_STRUCTURAL_REFERENCES_NOT_VERIFIED")
         flag_counts.update(flags)
@@ -276,21 +281,26 @@ def construct(original, lineage, dependency, *, expected=EXPECTED):
             "human_source_review": "NOT_REVIEWED",
             "qualified_safety_review": "NOT_REVIEWED",
         })
-    need(len(result_rows) == expected[0] and
+    need(len(result_rows) == expected[0] + 1 and
          sum(len(x["all_original_integrated_citation_and_reading_evidence_UNABRIDGED"])
              for x in result_rows) == expected[2] and
          sum(x["frozen_and_proposed_contributor_custody_OR_NULL"] is None
-             for x in result_rows) == expected[5],
+             for x in result_rows if x["article_slug"] != "water-planner") == expected[5],
          "original integrated citation/contributor evidence disappeared")
     report = {
         "schema": SCHEMA, "issue": 136, "release_state": "HOLD", "machine_only": True,
         "original_R58_fingerprint_sha256": original["fingerprint_sha256"],
         "frozen_proposed_R61_fingerprint_sha256": lineage["fingerprint_sha256"],
         "original_dependency_R64_fingerprint_sha256": dependency["fingerprint_sha256"],
-        "all_35_original_article_review_work_orders_NOT_APPROVED": result_rows,
+        "all_35_original_article_review_work_orders_NOT_APPROVED": [
+            row for row in result_rows if row["article_slug"] != "water-planner"],
+        "original_water_planning_tool_review_work_order_NOT_APPROVED": next(
+            row for row in result_rows if row["article_slug"] == "water-planner"),
         "counts": {
             "integrated_articles": expected[0], "original_water_planning_tools": 1,
             "integrated_citation_occurrences": expected[2],
+            "original_water_tool_citation_occurrences": len(by_slug["water-planner"]),
+            "original_article_citation_occurrences": expected[2] - len(by_slug["water-planner"]),
             "frozen_contributor_articles": expected[1],
             "frozen_contributor_citations": frozen_count,
             "proposed_contributor_citations_UNREVIEWED": proposed_count,
@@ -299,7 +309,7 @@ def construct(original, lineage, dependency, *, expected=EXPECTED):
             "unpaired_frozen_contributor_tokens_NEED_HUMAN_REVIEW": unpaired,
             "review_flags_NOT_SAFETY_VERDICTS": dict(sorted(flag_counts.items())),
         },
-        "limitations": ("The original 35-article evidence is preserved alongside both "
+        "limitations": ("The original 35-article plus separately cited water-planner evidence is preserved alongside both "
                         "29-article versions. URL/source-ID equality is NOT proof of "
                         "citation support, verified source access, safe advice, reviewer "
                         "approval, or inclusion of proposed contributor changes."),
