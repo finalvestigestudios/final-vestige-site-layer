@@ -105,6 +105,26 @@ function validateCrosswalk(ledger, parts) {
       fail(errors,c.site_qa_per_slot_classification===null && c.visitor_browser_status===null
         && c.rights_to_cache_confirmed===false && c.automatic_replacement_authorized===false,
         'source_rights_or_browser_overclaim:'+c.image_key);
+      const alt=c.authoritative_alternate_candidate;
+      const expectedNaid={'291:0':'28894685','285:1':'540034'}[c.image_key];
+      fail(errors,!!alt && alt.national_archives_identifier===expectedNaid
+        && typeof alt.catalog_page_url==='string'
+        && /(?:archives\.gov|blogs\.archives\.gov)\//.test(alt.catalog_page_url)
+        && typeof alt.potential_relationship==='string' && alt.potential_relationship.length>45,
+        'primary_archive_identity:'+c.image_key);
+      fail(errors,!!alt && alt.rights_cleared===false && alt.approved_for_caching===false
+        && alt.visual_match_verified===false && alt.visitor_image_failure_verified===false
+        && typeof alt.rights==='string' && alt.rights.length>50,
+        'primary_archive_rights_hold:'+c.image_key);
+      const dim=alt?.derivative_target;
+      fail(errors,!!dim && dim.max_width_px===960 && dim.no_upscaling===true
+        && (dim.width_px===null || (Number.isSafeInteger(dim.width_px) && dim.width_px>0 && dim.width_px<=960))
+        && (dim.height_px===null || (Number.isSafeInteger(dim.height_px) && dim.height_px>0))
+        && (alt.source_image_master_width_px===null || dim.width_px===null
+            || dim.width_px<=alt.source_image_master_width_px)
+        && (alt.source_image_master_height_px===null || dim.height_px===null
+            || dim.height_px<=alt.source_image_master_height_px),
+        'primary_archive_dimensions:'+c.image_key);
     }
   }
   fail(errors,disputeIds.size===2,'dispute_count');
