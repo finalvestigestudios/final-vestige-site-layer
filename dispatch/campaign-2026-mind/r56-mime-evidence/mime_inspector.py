@@ -24,8 +24,8 @@ VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input",
 HIDDEN = {"head", "script", "style", "template", "title", "svg"}
 SELLER_DOMAINS = {"zen12.com", "hypnosislive.com", "inspire3.com"}
 DISCLOSURE = re.compile(
-    r"\\b(?:Final\\s+Vestige|we)\\b.{0,100}\\b(?:may|might)\\s+"
-    r"(?:earn|receive)\\s+(?:a\\s+)?commission\\b", re.I | re.S
+    r"\b(?:Final\s+Vestige|we)\b.{0,100}\b(?:may|might)\s+"
+    r"(?:earn|receive)\s+(?:a\s+)?commission\b", re.I | re.S
 )
 PLACEHOLDER = re.compile(r"\\[\\[[^\\]]+\\]\\]")
 URL = re.compile(r"https?://[^\\s<>\\\"']+", re.I)
