@@ -8,6 +8,7 @@ This program requires R61's fresh Git-object provenance check via subprocess.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 from collections import defaultdict
 import csv
 import hashlib
@@ -19,7 +20,14 @@ import subprocess
 import sys
 import unicodedata
 
-import r62_contributor_claim_context_docket as r62
+_parent_path = Path(__file__).with_name('r62_contributor_claim_context_docket.py')
+if not _parent_path.is_file() or _parent_path.is_symlink():
+    raise ImportError('R62 original claim-context custody gate missing')
+_spec = importlib.util.spec_from_file_location('r63_r62_dependency', _parent_path)
+if _spec is None or _spec.loader is None:
+    raise ImportError('R62 original gate could not be loaded')
+r62 = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(r62)
 
 SCHEMA = 'r63-private-contributor-source-impact-crosswalk-v1'
 NOTE_SCHEMA = 'r63-unsigned-source-review-notes-v1'
