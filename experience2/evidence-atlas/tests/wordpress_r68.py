@@ -238,10 +238,23 @@ def accept(stage,axe,out):
         # CLI log is destroyed on exit; no raw log, URL or auth may escape.
         phase = getattr(exc,'reason',type(exc).__name__)
         safe = phase if phase in ('PLAYGROUND_EXITED','WORDPRESS_LOCAL_READINESS_TIMEOUT') else type(exc).__name__
+        # Only source-controlled function/line locations are allowed into
+        # review artifacts; no traceback values, path, locals, URLs or cookies.
+        site=[]
+        tb=exc.__traceback__
+        while tb is not None:
+          frame=tb.tb_frame
+          basename=Path(frame.f_code.co_filename).name
+          if basename in ('wordpress_r68.py','wp_readiness_r69.py'):
+            site.append({'module':basename,
+                         'function':frame.f_code.co_name,
+                         'line':tb.tb_lineno})
+          tb=tb.tb_next
         (out/'R69_FAIL_CLOSED_RECEIPT.json').write_text(json.dumps({
           'schema':'fv.apollo.r69.failure.v1','release':'STAGING_HOLD',
           'real_wordpress_accepted':False,'axe_accepted':False,
           'failure_category':safe,
+          'source_location_only':site[-4:],
           'private_cli_log_class':diagnose_private_cli_log(Path(secret)/'private-cli.log'),
           'allowlisted_probe_counts':getattr(exc,'states',{}),
           'public_wordpress_writes':False,'raw_log_or_auth_material_uploaded':False
