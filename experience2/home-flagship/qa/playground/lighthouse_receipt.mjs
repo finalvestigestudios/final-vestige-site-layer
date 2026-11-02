@@ -21,9 +21,21 @@ export function sanitizedSample(lhr, profile) {
   if (lhr?.runtimeError) throw Error('LIGHTHOUSE_RUNTIME_FAILURE');
   if (typeof lhr?.lighthouseVersion !== 'string' ||
       !/^\d+\.\d+\.\d+/.test(lhr.lighthouseVersion)) throw Error('LIGHTHOUSE_VERSION_MISSING');
+  // Validate the effective Lighthouse configuration, not merely our intended
+  // CLI flags. Otherwise a mobile-slowdown run could be falsely called desktop.
+  const s=lhr.configSettings, desktop=profile==='desktop_1440';
+  const width=desktop?1440:390;
+  const cpu=s?.throttling?.cpuSlowdownMultiplier;
+  if (s?.formFactor!==(desktop?'desktop':'mobile') ||
+      s?.screenEmulation?.width!==width ||
+      s?.screenEmulation?.mobile===desktop ||
+      !finite(cpu) || cpu===0 ||
+      (desktop && cpu!==1)) throw Error('LIGHTHOUSE_EFFECTIVE_PROFILE_MISMATCH');
   return {
     profile,
     lighthouse_version: lhr.lighthouseVersion.slice(0, 24),
+    effective_emulation: {form_factor:s.formFactor,viewport_width_px:width,
+      cpu_slowdown_multiplier:cpu,throttling_method:'simulate'},
     scores_0_to_100: {
       performance: score(lhr.categories?.performance),
       accessibility: score(lhr.categories?.accessibility),
