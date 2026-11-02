@@ -1,0 +1,54 @@
+# DRAFT/HOLD: isolated original-source Apollo visitor journeys; never publish.
+name: Apollo R70 independent editorial visitor journeys
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tests/browser_r70_editorial_interactions.py'
+      - '.github/workflows/ex2-apollo-r70-visitor-journeys.yml'
+permissions:
+  contents: read
+jobs:
+  r70-original-source-interactions:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact head and clean source checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+      - name: Install fixed Playwright, Chromium and axe-core without paid services
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r70-axe" --no-save --ignore-scripts --no-audit --no-fund axe-core@4.14.0
+      - name: Original R38 source checks and actual PHP integration
+        run: |
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_desk_custody_r67.py -v
+          php -l experience2/evidence-atlas/integration/fv-ex2-apollo-suite.php
+          python -m py_compile experience2/evidence-atlas/tests/browser_r70_editorial_interactions.py
+      - name: Real browser visitor journeys and axe on the source-verified PHP simulator
+        run: |
+          set -euo pipefail
+          AXE="$RUNNER_TEMP/r70-axe/node_modules/axe-core/axe.min.js"
+          SHA=$(sha256sum "$AXE" | awk '{print $1}')
+          python experience2/evidence-atlas/tests/browser_r70_editorial_interactions.py \
+            --output "$RUNNER_TEMP/r70-visitor-evidence" --axe "$AXE" --axe-sha256 "$SHA"
+      - name: Retain source-scoped staging QA only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r70-source-visitor-HOLD
+          path: ${{ runner.temp }}/r70-visitor-evidence/
+          if-no-files-found: warn
+          retention-days: 7
