@@ -37,6 +37,28 @@ export const auditHomepage = function auditHomepage(html,ledger,assets){
   const srcs=imgTags.map(t=>decode(a(t,"src"))),allowed=new Set(ledger.records.map(r=>r.image_url));
   record("displayed_images_exactly_in_ledger",srcs.length===2&&new Set(srcs).size===2&&srcs.every(url=>allowed.has(url)));
   record("image_delivery_host_scoped",srcs.every(u=>u.startsWith("https://finalvestige.com/wp-content/uploads/")||u.startsWith("https://i0.wp.com/finalvestige.com/wp-content/uploads/")));
+
+  // PR #652 verifies ALL actual HTTP image responses, but browser data:/blob:
+  // images create NO HTTP response. Preserve only the two original FV noise
+  // textures at exact byte-level; all other embedded images and asset URLs
+  // must undergo new rights approval, not pass silently via inline transport.
+  // This source gate complements (never substitutes for) browser response QA.
+  const approvedNoiseDataUris=["data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E","data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E"];
+  let sealedFlagshipCSS=assets["flagship.css"]||"";
+  const originalNoisePinned=approvedNoiseDataUris.every(uri=>{
+    const wrapped='url("'+uri+'")';
+    if(sealedFlagshipCSS.split(wrapped).length!==2) return false;
+    sealedFlagshipCSS=sealedFlagshipCSS.replace(wrapped,"");
+    return true;
+  });
+  record("two_original_noise_textures_byte_pinned",originalNoisePinned);
+  const nonHttpSource=[html,sealedFlagshipCSS,
+    ...[...css.slice(1),...js].map(name=>assets[name]||"")].join("\n");
+  record("no_unreviewed_embedded_image_transport",
+    !/(?:\bdata\s*:\s*(?:image|application|octet-stream)|\bblob\s*:|<\s*(?:svg|canvas|picture|object|embed)\b|\bnew\s+Image\s*\(|\bcreateObjectURL\s*\(|\bcreateElement\s*\(\s*["'](?:img|svg|canvas|picture|object|embed)["'])/i.test(nonHttpSource));
+  const assetCSS=[sealedFlagshipCSS,...css.slice(1).map(name=>assets[name]||"")].join("\n");
+  record("no_unreviewed_css_image_url_or_image_set",
+    !/\b(?:url|image-set|-webkit-image-set)\s*\(/i.test(assetCSS));
   const mapTag=imgTags.find(t=>decode(a(t,"src")).includes("5003296"));
   const sourcePlate=html.includes('class="fv-hf__source-plate"')&&html.includes("ARCHIVAL REFERENCE · IMAGE NOT REPRODUCED");
   record("retained_archive_images_responsive",imgTags.every(t=>!!a(t,"srcset")&&!!a(t,"sizes")));
