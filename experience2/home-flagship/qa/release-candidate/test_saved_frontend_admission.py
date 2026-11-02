@@ -1,6 +1,7 @@
 """Dependency-free adversarial tests of exact saved-page browser guards."""
 import unittest
-from verify_saved_frontend_admission import validate_saved_preview, require_checks
+from verify_saved_frontend_admission import (validate_saved_preview, require_checks,
+                                              allowed_archive_url, ARCHIVAL_MEDIA)
 
 
 class SavedFrontendGuards(unittest.TestCase):
@@ -19,6 +20,8 @@ class SavedFrontendGuards(unittest.TestCase):
             'http://127.0.0.1:9401/?page_id=42&preview=true',
             'http://user:password@127.0.0.1:9400/?page_id=42&preview=true',
             'http://127.0.0.1:9400/?page_id=42&preview=true&token=secret',
+            'http://127.0.0.1:9400/?page_id=42&preview=true&token=',
+            'http://127.0.0.1:9400/?page_id=42&preview=true&preview=',
             'http://127.0.0.1:9400/?page_id=42&page_id=99&preview=true',
             'http://127.0.0.1:9400/wp-admin/?page_id=42&preview=true',
             'http://127.0.0.1:9400/?page_id=42&preview=true#fragment',
@@ -42,6 +45,36 @@ class SavedFrontendGuards(unittest.TestCase):
             require_checks({'native_saved': True, 'rights_safe': False})
         with self.assertRaisesRegex(ValueError, 'NOT_BOOLEAN'):
             require_checks({})
+
+    def test_allow_only_audited_original_image_ids_and_wp_derivatives(self):
+        good = (
+            ('https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp',
+             'apollo'),
+            ('https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/'
+             'Franklinexpeditionnote.jpg?fit=768%2C1221&ssl=1', 'franklin'),
+        )
+        for url, case in good:
+            with self.subTest(url=url):
+                self.assertTrue(allowed_archive_url(url, case))
+        bad = (
+            ('https://evil.test/wp-content/uploads/2026/08/s67-19766.webp', 'apollo'),
+            ('https://finalvestige.com/wp-content/uploads/2026/08/5003296.jpg', 'apollo'),
+            ('https://finalvestige.com/wp-content/uploads/2026/09/s67-19766.webp', 'apollo'),
+            ('http://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp', 'apollo'),
+            ('https://i0.wp.com/evil.test/wp-content/uploads/2026/08/s67-19766.webp', 'apollo'),
+            ('https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg', 'apollo'),
+            ('https://finalvestige.com:8443/wp-content/uploads/2026/08/s67-19766.webp', 'apollo'),
+            ('https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp#wrong', 'apollo'),
+        )
+        for url, case in bad:
+            with self.subTest(url=url):
+                self.assertFalse(allowed_archive_url(url, case))
+
+    def test_expected_media_identity_contract(self):
+        self.assertEqual(ARCHIVAL_MEDIA, {'apollo': 's67-19766.webp',
+                                         'franklin': 'Franklinexpeditionnote.jpg'})
+        self.assertFalse(allowed_archive_url('https://finalvestige.com/wp-content/uploads/'
+                                             '2026/08/s67-19766.webp', 'malbone'))
 
 
 if __name__ == '__main__':
