@@ -129,6 +129,31 @@ jobs:
           d['ci_scope']='DISCOVERY_BOOT_AND_PRIVATE_RENDER_ONLY'
           p.write_text(json.dumps(d,indent=2)+'\n')
           PY
+      - name: Disable auto-admin login in ephemeral Blueprint for anonymous-access test
+        shell: bash
+        run: |
+          set -euo pipefail
+          # The standard convenience login:true Blueprint auto-authenticates
+          # every initial browser session on Playground CLI. That is unsuitable
+          # for testing an anonymous denied/privileged allowed security boundary.
+          # Change ONLY this local trial's generated copy, record the deviation,
+          # and do not imply it is an identical canonical Blueprint byte hash.
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os
+          root=Path(os.environ['RUNNER_TEMP'])/'fv-private-stage'
+          path=root/'playground-blueprint.json'
+          bp=json.loads(path.read_text())
+          assert bp['login'] is True
+          bp['login']=False
+          path.write_text(json.dumps(bp,indent=2)+'\n')
+          receipt_path=root/'STAGING_PREP_RECEIPT.json'
+          receipt=json.loads(receipt_path.read_text())
+          receipt['blueprint_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+          receipt['ci_blueprint_override']={'login': {'before':True,'after':False}}
+          receipt['ci_auth_behavior_release_gate']='HOLD_UNTIL_ANONYMOUS_DENIAL_AND_EDITOR_LOGIN_VERIFIED'
+          receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
+          PY
       - name: Block non-loopback ingress before launching Playground
         shell: bash
         run: |
