@@ -75,12 +75,26 @@ class CaseLedger:
         if milestone not in MILESTONES or milestone in ("STARTED", "PASSED"):
             raise ValueError("UNEXPECTED_MILESTONE")
         row = self.cases[self.active]
-        if MILESTONES.index(milestone) <= MILESTONES.index(row["milestone"]):
-            raise ValueError("MILESTONE_NOT_MONOTONIC")
         if not row["javascript"] and milestone in ("INTERACTION", "AXE", "LAB_METRICS", "PRINT"):
             raise ValueError("JAVASCRIPT_ONLY_MILESTONE")
         if row["javascript"] and milestone == "NO_JS_CONTENT":
             raise ValueError("WRONG_JAVASCRIPT_MODE")
+        if MILESTONES.index(milestone) <= MILESTONES.index(row["milestone"]):
+            raise ValueError("MILESTONE_NOT_MONOTONIC")
+        # A monotonic-only receipt lets a broken runner jump straight from
+        # STARTED to PRINT, falsely certifying unexecuted source or axe checks.
+        # Require every intermediate gate in the exact expected order.
+        chain = ["STARTED", "HTTP_200", "SOURCE_CUSTODY", "NETWORK_CLEAN"]
+        if row["javascript"]:
+            chain.append("INTERACTION")
+            if row["width"] in (390, 1440):
+                chain.append("AXE")
+            chain.extend(("LAB_METRICS", "PRINT"))
+        else:
+            chain.append("NO_JS_CONTENT")
+        expected = chain[chain.index(row["milestone"]) + 1]
+        if milestone != expected:
+            raise ValueError("MILESTONE_SKIPPED_OR_UNEXPECTED")
         row["milestone"] = milestone
         self._save()
 
