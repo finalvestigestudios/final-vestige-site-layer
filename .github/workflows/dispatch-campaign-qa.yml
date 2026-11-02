@@ -22,6 +22,12 @@ jobs:
           # Explicitly test the submitted source identity, not an unlabeled merge.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
+      - name: Independently checkout original PR175 head for six native tests
+        uses: actions/checkout@v4
+        with:
+          ref: d57ccdba3aee8f065e143e101c2945f4f3d01647
+          path: .pinned-pr175-source-review
+          persist-credentials: false
       - name: Assert exact head was checked out
         shell: bash
         env:

@@ -1,0 +1,37 @@
+FINAL VESTIGE / DISPATCH R74 — THE HIDDEN EVIDENCE TRAP
+SYNTHETIC REVIEW ONLY | ALL SIX HOLD_UNSENT | 03/05 HOLD_MERCHANT
+
+An email can contain compliance words in source code yet conceal them from
+readers. A received-mail inspector must not call invisible text "visible."
+
+CASE 01: <span hidden>Final Vestige may receive a commission</span>
+Before: source-only disclosure could be mistaken for a visible notice.
+R74: excluded from HTML-visible commercial disclosure detection.
+
+CASE 02: <p style="display:none">Publisher postal address</p>
+Before: the HTML source could be accepted as containing postal evidence.
+R74: excluded from visible postal text. Real publisher address still unknown.
+
+CASE 03: <a hidden href="[REDACTED PRIVATE TOKEN]">Unsubscribe</a>
+Before: an invisible but labeled HTTPS anchor could count as opt-out.
+R74: excluded from visible unsubscribe anchor detection.
+
+The parser checks source-level signs only. CSS classes, mailbox quirks,
+clipping, mobile render, actual delivery and unsubscribe link functionality
+still require a separately authorized human test. No real .eml inspected.
+
+EXACT ORIGINAL CAMPAIGN: Test wrapper reconstructs PR #175's six source
+issues, manifest and original six Python tests from pinned Git commit
+d57ccdba3aee8f065e143e101c2945f4f3d01647 and executes them natively.
+It never upgrades the manuscript's approval status.
+
+2026-11-02 WordPress status: Newsletter on; new-post emails default off;
+format excerpt; welcome contains 52-page Fieldbook; no recent sends.
+Subscriber counters total 2, confirmed 2, unconfirmed 2: nonadditive,
+email-eligible audience not verified. No addresses are disclosed.
+
+Source/operation: dispatch/campaign-2026-mind/r74-visibility-and-live-channel/
+RELEASE_EVIDENCE_AND_SOURCE_AUDIT.md
+
+NO emails, test sends, WordPress writes, merchant outreach, list changes
+or affiliate links were performed. Final founder approval still required.
