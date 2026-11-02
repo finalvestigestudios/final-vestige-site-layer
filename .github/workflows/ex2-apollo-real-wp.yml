@@ -32,7 +32,7 @@ jobs:
         run: python -m pip install --disable-pip-version-check playwright==1.55.0 pypdf==5.9.0 pymupdf==1.26.7
       - name: Source syntax, SHA-driven regressions and hostile staging fixtures
         run: |
-          python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py experience2/evidence-atlas/tests/wp_readiness_r69.py experience2/evidence-atlas/tests/wp_pdf_custody_r74.py experience2/evidence-atlas/tests/wp_pdf_pagination_r75.py experience2/evidence-atlas/tests/wp_native_print_r76.py experience2/evidence-atlas/tests/wp_accessibility_r74.py
+          python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py experience2/evidence-atlas/tests/wp_readiness_r69.py experience2/evidence-atlas/tests/wp_pdf_custody_r74.py experience2/evidence-atlas/tests/wp_pdf_pagination_r75.py experience2/evidence-atlas/tests/wp_native_print_r76.py experience2/evidence-atlas/tests/wp_reusable_r77.py experience2/evidence-atlas/tests/wp_accessibility_r74.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_readiness_r69.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_case_ledger_r72.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_pdf_custody_r74.py -v
@@ -42,6 +42,8 @@ jobs:
           python -m unittest discover -s experience2/evidence-atlas/tests -p 'test_*.py' -q
           python -m unittest discover -s experience2/evidence-atlas -p test_atlas.py -q
           php -l experience2/evidence-atlas/integration/fv-ex2-apollo-suite.php
+          php -l experience2/evidence-atlas/tests/test_nested_reusable_r77.php
+          php experience2/evidence-atlas/tests/test_nested_reusable_r77.php
 
   authentic-ephemeral-wordpress:
     if: github.event.pull_request.head.repo.full_name == github.repository
@@ -101,7 +103,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: apollo-r76-authentic-wordpress-native-print-HOLD
+          name: apollo-r77-synced-pattern-admission-HOLD
           path: ${{ runner.temp }}/apollo-r68-evidence/
           if-no-files-found: warn
           retention-days: 7
