@@ -72,7 +72,7 @@ class LedgerNativeAccessibilityR132(unittest.TestCase):
 
     def test_missing_optional_ledger_entry_blocks(self):
         sample = observed_ledger()
-        sample["entry_count"] = 8
+        sample["entry_count"] = 6
         with self.assertRaises(keyboard.KeyboardBlocked):
             keyboard._verify_snapshot("ledger", **sample)
 
