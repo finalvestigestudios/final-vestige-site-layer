@@ -153,19 +153,43 @@ def local_debug_error_category(repo: Path, stage: Path, argv: list[str], secret_
 
 
 def ready(process: subprocess.Popen, seconds: int = 180) -> None:
-    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    """Probe ONLY loopback. Record HTTP status classes, never URLs, bodies, or logs.
+
+    A live CLI with persistent HTTP 500 is different from an unopened port.
+    The old probe silently treated both as 'no response', hiding actionable
+    WordPress/Blueprint failures in exact-head staging CI.
+    """
+    class _NeverRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            return None
+
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), _NeverRedirect())
+    observations: dict[str, int] = {}
+
+    def record(state: str) -> None:
+        observations[state] = observations.get(state, 0) + 1
+
+    def summary() -> str:
+        return ','.join(f'{key}:{observations[key]}' for key in sorted(observations)) or 'NO_PROBE'
+
     stop = time.monotonic() + seconds
     while time.monotonic() < stop:
         if process.poll() is not None:
-            raise RuntimeError('Isolated WordPress process exited before localhost HTTP readiness')
+            raise RuntimeError('Isolated WordPress CLI exited before localhost readiness; probe_states=' + summary())
         try:
             with opener.open(BASE, timeout=3) as response:
                 if response.status == 200 and len(response.read(256)) > 0:
                     return
+                record('HTTP_' + str(response.status) + '_EMPTY_OR_UNREADY')
+        except urllib.error.HTTPError as exc:
+            # A local 3xx or 5xx is a responding server, NOT an unopened port.
+            # Never follow even an attacker-supplied off-host Location header.
+            record('HTTP_' + str(exc.code))
+            exc.close()
         except (OSError, urllib.error.URLError):
-            pass
+            record('NO_HTTP_RESPONSE')
         time.sleep(1)
-    raise RuntimeError('Isolated WordPress did not respond on loopback within startup gate')
+    raise RuntimeError('Isolated WordPress not HTTP 200 on loopback within startup gate; probe_states=' + summary())
 
 
 def main() -> int:
