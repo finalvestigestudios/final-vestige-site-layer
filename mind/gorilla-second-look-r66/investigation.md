@@ -108,7 +108,7 @@ When the gorilla enters, you may see it. You may even smile at having caught the
 
 [4] Earlier Final Vestige DRAFT ONLY: R65 “The Stranger Who Came Back as Someone Else.” Unpublished, not yet a public link. https://github.com/finalvestigestudios/final-vestige-site-layer/pull/583
 
-[5] Final Vestige Studios, *Puységur's Animal Magnetism Files*, published archive. https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ — Historical source archive; last independent page load not available in this sprint, so do not claim an authenticated fresh CMS inspection.
+[5] Final Vestige Studios, *Puységur's Animal Magnetism Files*, published archive. https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ — Authenticated read-only WordPress content inspection, 2 November 2026: 153 master-source rows and 16 case dossiers, including recorded failures and an explicit historical-claim-versus-modern-proof boundary. Cross-reference concerns research method, not product efficacy.
 
 ### Editorial limitations
 
