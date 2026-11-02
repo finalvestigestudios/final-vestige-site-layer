@@ -1,7 +1,7 @@
 'use strict';
-/** Read-only local CLI. Usage: node qa/media-recovery/cli_weight_claim_pair_gate_20261102.cjs --before path --after path [--approvals path] */
+/** Read-only local CLI. RELEASE requires the immutable 61/355 source ledger. Usage: node qa/media-recovery/cli_weight_claim_pair_gate_20261102.cjs --before path --after path [--approvals path] */
 const fs=require('node:fs');
-const {assessPair}=require('./weight_claim_pair_gate_20261102.cjs');
+const {assessFrozenPair}=require('./frozen_census_claim_gate_20261102.cjs');
 function parse(argv){
  const out={};const allow=new Set(['--before','--after','--approvals']);
  for(let i=0;i<argv.length;i+=2){
@@ -14,7 +14,7 @@ function parse(argv){
 function run(argv){
  const args=parse(argv);
  const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
- return assessPair(read(args['--before']),read(args['--after']),args['--approvals']?read(args['--approvals']):[]);
+ return assessFrozenPair(read(args['--before']),read(args['--after']),args['--approvals']?read(args['--approvals']):[]);
 }
 if(require.main===module){
  try{
