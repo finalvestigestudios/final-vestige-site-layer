@@ -22,10 +22,10 @@
 | M3 | https://zen12.com/about | Official product description, playback styles, headphone statements, do-not-drive warning |
 | M4 | https://zen12.com/research | Merchant-selected research narrative, not a Zen12-specific independent controlled test |
 | M5 | https://zen12.com/getstarted | Public checkout shows name, email, mobile, postcode and payment fields; 12-level/48-MP3 description; capture is not a test purchase |
-| M6 | https://inspire3.com/privacy | Official privacy link discoverable from Zen12 checkout; text/permissions require release-time manual legal/privacy review; no current buyer-data processing tested |
+| M6 | https://inspire3.com/privacy/ | Official current privacy policy explicitly says supplied phone may trigger calls/SMS and affiliate purchases may share purchaser name/email/product details with affiliate; actual processing unverified |
 | M7 | https://zen12.com/welcome | Seller-operated free sample invitation includes its own newsletter; **must not** be embedded or swapped into FV Jetpack consent |
 
-## Affiliate/creative approval status
+| M8 | https://inspire3.com/terms/?s=zen12 | Official terms list Zen12 one-year seller guarantee, card refunds after 90 days processed manually by PayPal, SMS possibility, and restriction on using Inspire3 copyrighted creative without written permission; no fulfillment tested |\n\n## Affiliate/creative approval status
 - No verified written Final Vestige-specific affiliate acceptance.
 - No verified named Zen12 earning URL, no verified approved ad/swipe rights, and no demonstrated permission for WordPress, TikTok or Jetpack email referrals.
 - No current commission/payout, refund fulfillment, buyer consent, pricing or conversion data authenticated.
