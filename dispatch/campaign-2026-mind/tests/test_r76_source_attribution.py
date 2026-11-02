@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 R76=ROOT/"r76-attribution-integrity"
 spec=importlib.util.spec_from_file_location("r76metrics",R76/"metrics_contract.py")
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-class R76(unittest.TestCase):
+class R76AttributionTests(unittest.TestCase):
  def setUp(self):self.d=json.loads((R76/"source_snapshot.json").read_text(encoding="utf-8"))
  def test_exact_authentic_traffic(self):
   self.assertEqual([x["views"] for x in self.d["periods"]],[287,795,32])
