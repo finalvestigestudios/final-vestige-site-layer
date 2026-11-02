@@ -117,6 +117,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r136.py
           python -OO products/desktop/scripts/safe_unittest_r136.py
+      - name: R137 GrantAudit budget source-row and SHA custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r137.py
+          python -OO products/desktop/scripts/safe_unittest_r137.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -401,6 +405,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R136 Policy Delta index regressions FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r136.py
           if ($LASTEXITCODE -ne 0) { throw "R136 optimized Policy Delta index regressions FAILED" }
+      - name: R137 GrantAudit budget source-row and SHA custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r137.py
+          if ($LASTEXITCODE -ne 0) { throw "R137 GrantAudit budget custody FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r137.py
+          if ($LASTEXITCODE -ne 0) { throw "R137 optimized GrantAudit budget custody FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

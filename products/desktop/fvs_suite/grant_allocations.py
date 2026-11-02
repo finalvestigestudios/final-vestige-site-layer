@@ -25,7 +25,8 @@ REPORT_FIELDS = (
 )
 BUDGET_FIELDS = (
     "program", "claimed", "budget", "status", "source_programs",
-    "gross_claimed", "credit_total", "claim_rows",
+    "gross_claimed", "credit_total", "claim_rows", "budget_rows",
+    "claim_source_sha256", "ledger_source_sha256", "budget_source_sha256",
 )
 
 
@@ -126,6 +127,7 @@ def reconcile_allocations(
     ledgers = _validate_ledger(ledger_rows, engine)
 
     limits: dict[str, Decimal] = {}
+    budget_rows_by_program: dict[str, str] = {}
     program_sources = defaultdict(list)
     for source in (claim_rows, ledger_rows, budget_rows):
         for row in source:
@@ -138,6 +140,7 @@ def reconcile_allocations(
             raise ValueError("Blank or duplicate budget program at row " + row["row"])
         limits[program] = _as_positive_money(
             row["budget"], engine=engine, row=row["row"], field="budget")
+        budget_rows_by_program[program] = row["row"]
 
     program_gross = defaultdict(lambda: Decimal(0))
     program_credits = defaultdict(lambda: Decimal(0))
@@ -275,6 +278,10 @@ def reconcile_allocations(
             "gross_claimed": engine.dollars(gross),
             "credit_total": engine.dollars(credits),
             "claim_rows": ";".join(r["row"] for r in program_rows[program]),
+            "budget_rows": budget_rows_by_program.get(program, ""),
+            "claim_source_sha256": claim_digest,
+            "ledger_source_sha256": ledger_digest,
+            "budget_source_sha256": budget_digest,
         })
 
     from .grant_bundle import publish_grant_bundle
