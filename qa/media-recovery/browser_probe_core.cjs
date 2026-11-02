@@ -106,11 +106,19 @@ function classifyImages(stored,rendered,network,pageVerified){
   // Require a completed, zero-width decode and a matching real CDP network response.
   const incompatibleResponse=!!(responseStatus>=200&&responseStatus<300&&responseMime&&
    ['text/html','application/json','application/xml','text/xml'].includes(responseMime));
+  // HTTP 200 image/* can still be broken if Chrome receives bytes but cannot decode pixels.
+  // Only accept an uncached, exact final CDP response for the completed currentSrc.
+  const decodeFailure=!!(req&&finalNetworkIdentityVerified&&responseStatus===200&&
+   responseMime&&responseMime.startsWith('image/')&&!reqError&&
+   r?.complete===true&&r.naturalWidth===0&&
+   Number.isSafeInteger(req.encodedDataLength)&&req.encodedDataLength>0&&
+   req.was_cached!==true&&req.from_disk_cache!==true&&req.from_service_worker!==true);
   const domMapped=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
   const identityVerified=domMapped&&activeImageIdentity(s,r);
   const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&
-   (reqError||(responseStatus!==null&&responseStatus>=400)||incompatibleResponse));
-  const failureKind=visiblyBroken?(reqError?'network_error':responseStatus>=400?'http_error':'non_image_error_payload'):null;
+   (reqError||(responseStatus!==null&&responseStatus>=400)||incompatibleResponse||decodeFailure));
+  const failureKind=visiblyBroken?(reqError?'network_error':responseStatus>=400?'http_error':
+   incompatibleResponse?'non_image_error_payload':decodeFailure?'image_decode_failure':null):null;
   // Decoded pixels without independent successful CDP image network evidence are
   // NOT proof that the historical source loaded (even if naturalWidth > 0).
   const loadedNetworkProof=!!(req&&finalNetworkIdentityVerified&&responseStatus===200&&
