@@ -27,7 +27,7 @@ def verify_snapshot(app_id, *, scale, entries, browse, generate, scrollable,
         raise ScaleBlocked("Invalid source-controlled app or zoom")
     # LedgerDiff's two optional key mappings are real, keyboard-focusable
     # entries, and MUST remain mapped at 200% and 400% scaling.
-    required_entries = FREE_INPUTS[app_id] + 1 + (2 if app_id == "ledger" else 0)
+    required_entries = FREE_INPUTS[app_id] + 1 + (2 if app_id == "ledger" else 1 if app_id == "invoices" else 0)
     if (type(entries) is not int or entries != required_entries or
             type(browse) is not int or browse != FREE_INPUTS[app_id] + 1 or
             type(generate) is not int or generate != 1):
