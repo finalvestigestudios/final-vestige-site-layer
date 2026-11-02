@@ -53,11 +53,19 @@ class PrivateObservationInputR127(unittest.TestCase):
         self.hold(observation_file=self.fx.r9)
         self.assertTrue(self.fx.r9.is_file())
 
-    def test_note_inside_witness_directory_is_rejected(self):
-        inside = self.fx.witnesses / "untrusted-note.txt"
-        inside.write_bytes(self.fx.observation.read_bytes())
-        self.hold(observation_file=inside)
-        self.assertTrue(inside.is_file())
+    def test_previous_valid_witness_cannot_be_recycled_as_next_observation(self):
+        self.fx.one()
+        existing = self.fx.path()
+        original_note = existing.read_bytes()
+        original_matrix = self.fx.review.read_bytes()
+        with self.assertRaises((qa.ReviewHold, OSError, UnicodeError)):
+            self.fx.one(check=qa.FREE_CHECKS[1], observation_file=existing)
+        self.assertEqual(existing.read_bytes(), original_note)
+        self.assertEqual(self.fx.review.read_bytes(), original_matrix)
+        later = self.fx.witnesses / (
+            self.fx.app.removesuffix(".exe") + "--" +
+            qa.FREE_CHECKS[1] + ".json")
+        self.assertFalse(later.exists())
 
     def test_direct_note_symlink_is_rejected_without_following(self):
         original = Path.is_symlink
