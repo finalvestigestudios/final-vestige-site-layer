@@ -27,7 +27,8 @@ function commonsFile(p){
 function contentQuery(p){
  // Preserve query values which may select different archival photos at the same path.
  // Only established image resizing/format knobs are excluded from file identity.
- const transforms=new Set(['width','height','w','h','fit','resize','crop','quality','q','ssl','auto','format','fm']);
+ // A crop selector can remove historically meaningful content. It is NOT a size-only transform.
+ const transforms=new Set(['width','height','w','h','fit','resize','quality','q','ssl','auto','format','fm']);
  const staticImage=/\.(?:jpe?g|png|webp|gif|svg|avif|bmp|tiff?)$/i.test(p.pathname);
  // Dynamic endpoints may use ANY parameter as a photo selector, even 'width'.
  // Navy's documented imageDownload endpoint specifically uses image= for archival identity,
@@ -43,7 +44,14 @@ function imageIdentity(url){
   const p=new URL(u),host=p.hostname.toLowerCase();
   if(/^i\d?\.wp\.com$/.test(host)){
    const seg=p.pathname.replace(/^\//,'').split('/');
-   if(seg.length>1&&seg[0].includes('.'))return imageIdentity('https://'+seg.join('/'));
+   if(seg.length>1&&seg[0].includes('.')){
+    // A Jetpack proxy wraps the source URL. Dropping ALL its query parameters can
+    // collapse dynamic image selectors (image=, file=, id=) or material crops into
+    // a different historical photograph. Only ssl= is unambiguously proxy-only.
+    // For static images, contentQuery() independently drops resize-only knobs.
+    const q=new URLSearchParams([...p.searchParams].filter(([k])=>k.toLowerCase()!=='ssl')).toString();
+    return imageIdentity('https://'+seg.join('/')+(q?'?'+q:''));
+   }
   }
   const filename=commonsFile(p);
   if(filename)return 'commons-file:'+filename;
