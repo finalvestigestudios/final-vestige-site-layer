@@ -116,6 +116,15 @@ def exercise(page,width,out,receipt,axe_js=None):
         name=f'R70_EDITORIAL_JOURNEY_{width}.png'
         (out/name).write_bytes(image)
         receipt['screenshots'][name]=hashlib.sha256(image).hexdigest()
+        # Capture the actual editorial palette as well as the forced-colors
+        # accessibility rendering. Both images must be deterministic.
+        page.emulate_media(forced_colors='none')
+        page.wait_for_timeout(120)
+        standard=page.screenshot(full_page=True,animations='disabled')
+        assert standard==page.screenshot(full_page=True,animations='disabled')
+        standard_name=f'R70_EDITORIAL_JOURNEY_STANDARD_{width}.png'
+        (out/standard_name).write_bytes(standard)
+        receipt['screenshots'][standard_name]=hashlib.sha256(standard).hexdigest()
     if width in (390,1440) and axe_js:
         # Forced-colors semantics were exercised above. Audit contrast under
         # ordinary colors; the forced-colors browser palette invalidates the
