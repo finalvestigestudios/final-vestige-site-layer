@@ -12,6 +12,7 @@ import re
 import subprocess
 from urllib.parse import urlsplit
 from verify_saved_frontend_admission import check_saved_frontend
+from verify_saved_gutenberg_lab import run_saved_native_lab
 
 FIXTURE = 'experience2/home-flagship/qa/release-candidate/fixtures/proposed-production-block-pr604.html'
 SITE = 'http://127.0.0.1:9400'
@@ -147,6 +148,13 @@ def run(page, repo: Path, expected_sha: str, out: Path, axe_script: Path) -> dic
         page.set_viewport_size({'width': 1440, 'height': 900})
         page.screenshot(path=str(out / 'GUTENBERG_SAVED_FIRST_SCREEN_1440.png'))
         notes['saved_frontend_screenshots'] = ['390', '1440']
+        # Measure the native SAVED Gutenberg frontend itself, not merely the
+        # separate iframe. Three real cold-cache CDP browser samples and
+        # redacted LCP/CLS receipts; never call this Lighthouse or field CWV.
+        saved_lab = run_saved_native_lab(page, page_id, out, expected_sha)
+        notes['saved_native_cdp_lab_status'] = saved_lab['status']
+        notes['saved_native_cdp_lab_profiles'] = len(saved_lab['samples'])
+        notes['saved_native_cdp_lab_any_budget_missed'] = saved_lab['any_lab_budget_missed']
         if not all(notes[k] for k in ('persisted_gutenberg_bytes_exact',
                     'frontend_flagship_dom_visible', 'authored_inline_script_present_in_frontend')):
             raise ValueError('LOCAL_WORDPRESS_PERSISTENCE_HOLD')
