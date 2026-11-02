@@ -101,7 +101,7 @@ def _scan_one(app_id: str) -> None:
         browse = [w for w in buttons if str(w.cget("text")) == "Browse…"]
         generate = [w for w in buttons if str(w.cget("text")) == "Generate review report"]
         expected = FREE_INPUTS[app_id]
-        optional_keys = 2 if app_id == "ledger" else 1 if app_id == "invoices" else 0
+        optional_keys = 4 if app_id == "ledger" else 1 if app_id == "invoices" else 0
         if (len(entries) != expected + 1 + optional_keys or
                 len(browse) != expected + 1 or len(generate) != 1 or
                 root.title() != "Final Vestige Labs — " + title):
