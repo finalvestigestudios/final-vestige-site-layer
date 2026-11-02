@@ -291,7 +291,7 @@ def accept(stage,axe,out):
                             json.dumps({'schema':'fv.apollo.r72.axe-progress.v1',
                               'release':'STAGING_HOLD','human_review_required':True,
                               'scope':'ORIGINAL_APOLLO_COMPONENT_INSIDE_REAL_LOCAL_WORDPRESS',
-                              'observations':report['axe']},indent=2,sort_keys=True)+'\\n')
+                              'observations':report['axe']},indent=2,sort_keys=True))
                         assert not a['violations'],a
                         ledger.advance('AXE')
                         img=page.screenshot(full_page=True,animations='disabled')
