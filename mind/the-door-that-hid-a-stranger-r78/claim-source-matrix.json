@@ -1,0 +1,435 @@
+{
+  "as_of": "2026-11-02",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "scope": "Mind & Perception Zen12 presell pilot / door-study editorial",
+  "sources": [
+    {
+      "id": "simons1998",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "type": "primary-research",
+      "scope": "Door field experiment; 7/15 initial reported detection"
+    },
+    {
+      "id": "levin1997",
+      "url": "https://doi.org/10.3758/BF03214339",
+      "type": "primary-research",
+      "scope": "Attention to actor across film edits"
+    },
+    {
+      "id": "rensink1997",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+      "type": "primary-research",
+      "scope": "Flicker change detection and cueing"
+    },
+    {
+      "id": "review2005",
+      "url": "https://doi.org/10.1016/j.tics.2004.11.006",
+      "type": "review",
+      "scope": "Change blindness theory and limits"
+    },
+    {
+      "id": "eeg2023",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic-review",
+      "scope": "5 supportive / 8 contradictory / 1 mixed of 14 EEG studies"
+    },
+    {
+      "id": "nccih",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "type": "government-health",
+      "scope": "Broader meditation evidence and risks"
+    },
+    {
+      "id": "ftcendorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "scope": "Near-recommendation affiliate disclosure"
+    },
+    {
+      "id": "ftchealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "scope": "Scientific substantiation for product claims"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "scope": "Official catalog, not proof of results"
+    },
+    {
+      "id": "zenoffer",
+      "url": "https://zen12.com/hnp",
+      "type": "seller",
+      "scope": "Hour-for-12m marketing assertion"
+    },
+    {
+      "id": "zenabout",
+      "url": "https://zen12.com/about",
+      "type": "seller",
+      "scope": "12 levels/4 formats/audio structure"
+    },
+    {
+      "id": "zenresearch",
+      "url": "https://zen12.com/research",
+      "type": "seller",
+      "scope": "Brainwave claims, not clinical validation"
+    },
+    {
+      "id": "zencheckout",
+      "url": "https://zen12.com/getstarted",
+      "type": "seller-checkout",
+      "scope": "48 MP3 full bundle and mobile field, dynamic amounts excluded"
+    },
+    {
+      "id": "inspireprivacy",
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller-policy",
+      "scope": "Purchaser collection and possible partner sharing"
+    },
+    {
+      "id": "inspireterms",
+      "url": "https://inspire3.com/terms/",
+      "type": "seller-policy-unavailable",
+      "scope": "Tool could not fetch 2 Nov 2026; mechanics unverified"
+    },
+    {
+      "id": "inspirecreatives",
+      "url": "https://inspire3.com/ll/",
+      "type": "seller-creatives-other-product",
+      "scope": "Limitless Labs only, approval required, not Zen12 license"
+    },
+    {
+      "id": "inspireaffiliates",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller-recruitment",
+      "scope": "Public affiliate program does not demonstrate FV acceptance"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "live-editorial",
+      "scope": "Existing published evidence archive"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "live-editorial-funnel",
+      "scope": "Published existing lead magnet"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "live-policy",
+      "scope": "Site-wide disclosure is not enough for near-link notice"
+    },
+    {
+      "id": "editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "live-policy",
+      "scope": "Editorial research and sourcing"
+    },
+    {
+      "id": "explore",
+      "url": "https://finalvestige.com/explore/",
+      "type": "live-navigation",
+      "scope": "Public explore destination"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "First door-study condition: seven of fifteen pedestrians reported detecting replacement",
+      "status": "primary-supported",
+      "source": "simons1998",
+      "qualification": "Precise first-study count; do not extrapolate to population"
+    },
+    {
+      "id": "C02",
+      "claim": "Door-carrying interruption masked field replacement",
+      "status": "primary-supported",
+      "source": "simons1998",
+      "qualification": "Procedure, not transcript"
+    },
+    {
+      "id": "C03",
+      "claim": "Second field experiment tested social group relevance",
+      "status": "primary-supported-qualified",
+      "source": "simons1998",
+      "qualification": "No universal age/race inference"
+    },
+    {
+      "id": "C04",
+      "claim": "Changed actor across a film cut can be missed",
+      "status": "primary-supported",
+      "source": "levin1997",
+      "qualification": "Context-specific"
+    },
+    {
+      "id": "C05",
+      "claim": "Cues help observers detect changes in flicker tasks",
+      "status": "primary-supported",
+      "source": "rensink1997",
+      "qualification": "Different controlled paradigm"
+    },
+    {
+      "id": "C06",
+      "claim": "Change blindness means all memories are worthless",
+      "status": "reject",
+      "source": "review2005",
+      "qualification": "Unsupported generalization"
+    },
+    {
+      "id": "C07",
+      "claim": "Change blindness demonstrates Zen12 benefit",
+      "status": "reject",
+      "source": "simons1998",
+      "qualification": "No intervention tested"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur archive documents historical claims",
+      "status": "verified-live",
+      "source": "puysegur",
+      "qualification": "Historical method, not efficacy"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 described as twelve-minute recordings",
+      "status": "seller-description",
+      "source": "zenoffer",
+      "qualification": "No direct audio test"
+    },
+    {
+      "id": "Z02",
+      "claim": "Twelve levels exist as advertised",
+      "status": "seller-description",
+      "source": "zenabout",
+      "qualification": "No purchased package inspected"
+    },
+    {
+      "id": "Z03",
+      "claim": "Four formats: music, guided, white noise, nature",
+      "status": "seller-description",
+      "source": "zenabout",
+      "qualification": "No quality verdict"
+    },
+    {
+      "id": "Z04",
+      "claim": "48 MP3s in current full checkout bundle",
+      "status": "seller-checkout-description",
+      "source": "zencheckout",
+      "qualification": "Deliverables not verified; package may change"
+    },
+    {
+      "id": "Z05",
+      "claim": "An hour's advanced meditation in twelve minutes",
+      "status": "unsubstantiated",
+      "source": "zenoffer",
+      "qualification": "No Zen12-specific controlled comparison located"
+    },
+    {
+      "id": "Z06",
+      "claim": "Audio automatically meditates for user",
+      "status": "unsubstantiated",
+      "source": "zenresearch",
+      "qualification": "Mechanistic/human-outcome implication unsupported"
+    },
+    {
+      "id": "Z07",
+      "claim": "All users experience stress relief, health gains, focus or creativity",
+      "status": "reject",
+      "source": "zenoffer",
+      "qualification": "No product-specific substantiation"
+    },
+    {
+      "id": "Z08",
+      "claim": "Binaural-beat EEG entrainment strongly established",
+      "status": "not-established",
+      "source": "eeg2023",
+      "qualification": "14 heterogeneous papers: 5/8/1"
+    },
+    {
+      "id": "Z09",
+      "claim": "Meditation research proves Zen12 effects",
+      "status": "reject",
+      "source": "nccih",
+      "qualification": "Cannot transfer intervention effects"
+    },
+    {
+      "id": "Z10",
+      "claim": "Meditation uniformly risk-free",
+      "status": "reject",
+      "source": "nccih",
+      "qualification": "Some negative experiences reported"
+    },
+    {
+      "id": "Z11",
+      "claim": "Seller displays mobile phone field on checkout",
+      "status": "directly-observed",
+      "source": "zencheckout",
+      "qualification": "Mandatory status untested"
+    },
+    {
+      "id": "Z12",
+      "claim": "Current Zen12 price fixed across sessions",
+      "status": "do-not-publish",
+      "source": "zencheckout",
+      "qualification": "Dynamic timer/discount, amounts excluded"
+    },
+    {
+      "id": "Z13",
+      "claim": "Seller privacy describes potential buyer data sharing",
+      "status": "seller-policy",
+      "source": "inspireprivacy",
+      "qualification": "FV does not claim receipt of buyer data"
+    },
+    {
+      "id": "Z14",
+      "claim": "Precise seller refund mechanics verified today",
+      "status": "not-verified",
+      "source": "inspireterms",
+      "qualification": "Terms page inaccessible; omit exact promises"
+    },
+    {
+      "id": "Z15",
+      "claim": "Seller advertises a guarantee",
+      "status": "seller-description",
+      "source": "zencheckout",
+      "qualification": "Do not equate advertising with verified fulfillment"
+    },
+    {
+      "id": "Z16",
+      "claim": "Official Limitless Labs swipe licenses Zen12 email copy",
+      "status": "reject",
+      "source": "inspirecreatives",
+      "qualification": "Wrong product; separate approval"
+    },
+    {
+      "id": "Z17",
+      "claim": "Final Vestige affiliate partner acceptance proven",
+      "status": "blocked",
+      "source": "inspireaffiliates",
+      "qualification": "Written specific approval missing"
+    },
+    {
+      "id": "Z18",
+      "claim": "Final Vestige can send Zen12 promotion in Jetpack",
+      "status": "blocked",
+      "source": "inspireaffiliates",
+      "qualification": "No specific email rights"
+    },
+    {
+      "id": "Z19",
+      "claim": "Final Vestige can advertise Zen12 on TikTok",
+      "status": "blocked",
+      "source": "inspireaffiliates",
+      "qualification": "No channel authorization"
+    },
+    {
+      "id": "Z20",
+      "claim": "Final Vestige has a trackable earned destination",
+      "status": "blocked",
+      "source": "inspireaffiliates",
+      "qualification": "No verified affiliate URL"
+    },
+    {
+      "id": "Z21",
+      "claim": "Customer name/email/product feed may be accepted",
+      "status": "blocked",
+      "source": "inspireprivacy",
+      "qualification": "Explicit FV privacy decision needed"
+    },
+    {
+      "id": "D01",
+      "claim": "Prospective commission notice displayed beside disabled CTA",
+      "status": "implemented-in-draft",
+      "source": "ftcendorsement",
+      "qualification": "Not a legal approval"
+    },
+    {
+      "id": "D02",
+      "claim": "General footer disclosure alone enough for earning CTA",
+      "status": "reject",
+      "source": "ftcendorsement",
+      "qualification": "Near-link disclosure required"
+    },
+    {
+      "id": "D03",
+      "claim": "Verified sale can be inferred from a click",
+      "status": "reject",
+      "source": "ftcendorsement",
+      "qualification": "Only merchant reporting can establish sale"
+    },
+    {
+      "id": "D04",
+      "claim": "No subscriber form added; canonical Focus funnel remains",
+      "status": "draft-design",
+      "source": "focus",
+      "qualification": "No WP writes"
+    },
+    {
+      "id": "D05",
+      "claim": "A short video will increase conversions",
+      "status": "hypothesis-untested",
+      "source": "editorial",
+      "qualification": "No live trial; no causal evidence"
+    },
+    {
+      "id": "D06",
+      "claim": "A/B variants should change guide claims",
+      "status": "reject",
+      "source": "ftchealth",
+      "qualification": "Shared guide must be byte-identical"
+    },
+    {
+      "id": "D07",
+      "claim": "No-JS transcript and native controls remain accessible",
+      "status": "design-target",
+      "source": "editorial",
+      "qualification": "Real browser QA needed"
+    },
+    {
+      "id": "D08",
+      "claim": "No direct merchant purchase link should activate before rights",
+      "status": "held",
+      "source": "inspireaffiliates",
+      "qualification": "Disabled native CTA"
+    },
+    {
+      "id": "D09",
+      "claim": "Page can promise clinical results with fine-print disclaimer",
+      "status": "reject",
+      "source": "ftchealth",
+      "qualification": "Disclosure does not cure deceptive claim"
+    },
+    {
+      "id": "D10",
+      "claim": "First-party hosted video captions synchronized",
+      "status": "blocked",
+      "source": "editorial",
+      "qualification": "No hosted MP4; staging QA needed"
+    }
+  ],
+  "gates": {
+    "written_fv_partner_acceptance": false,
+    "product_specific_zen12_link": false,
+    "website_rights": false,
+    "tiktok_rights": false,
+    "email_rights": false,
+    "creative_license": false,
+    "privacy_buyer_data_review": false,
+    "independent_editorial_and_ftc_review": false,
+    "checkout_and_terms_rereview": false,
+    "hosted_media_and_a11y_review": false,
+    "wp_staging_browser_and_lighthouse": false,
+    "founder_release_approval": false
+  },
+  "account_policy": "No consumer PII, no checkout links, no live analytics. Public recruitment is not authorization.",
+  "source_limitations": [
+    "Publisher DOI records verified; primary text consulted for first experiment.",
+    "Inspire3 terms page inaccessible 2026-11-02.",
+    "No paid Zen12 access or experience.",
+    "No live WordPress editing or merchant contact."
+  ]
+}
