@@ -1,0 +1,12 @@
+<svg viewBox="0 0 540 720" role="img" aria-label="Original educational artwork: two twelve-minute clocks, with a question mark between listening time and scientific evidence." xmlns="http://www.w3.org/2000/svg">
+<rect width="540" height="720" fill="#101313"/><rect x="24" y="24" width="492" height="672" fill="none" stroke="#b8955e" stroke-width="2"/>
+<text x="270" y="100" font-size="22" text-anchor="middle" fill="#d6bd8e" font-family="sans-serif" letter-spacing="5">FINAL VESTIGE / MIND</text>
+<circle cx="270" cy="290" r="128" fill="#191b1b" stroke="#c6a775" stroke-width="8"/>
+<circle cx="270" cy="290" r="95" fill="none" stroke="#514b42" stroke-width="3"/>
+<path d="M270 290 L270 212 M270 290 L341 330" stroke="#e5dbcb" stroke-width="8" stroke-linecap="round"/>
+<circle cx="270" cy="290" r="10" fill="#d2b47d"/>
+<text x="270" y="475" font-size="84" text-anchor="middle" fill="#f5ebdc" font-family="Georgia,serif">12:00</text>
+<text x="270" y="530" font-size="23" text-anchor="middle" fill="#c8c0b3" font-family="sans-serif">A duration, not a result.</text>
+<path d="M120 576 H420" stroke="#b8955e" stroke-width="2"/>
+<text x="270" y="626" font-size="21" text-anchor="middle" fill="#e0c591" font-family="sans-serif">40-SECOND EVIDENCE EXPLAINER</text>
+</svg>
