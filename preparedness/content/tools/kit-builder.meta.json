@@ -1,0 +1,59 @@
+{
+  "kind": "tool",
+  "n": 103,
+  "slug": "kit-builder",
+  "title": "Emergency kit and go-bag planner",
+  "h1": "Emergency kit and go-bag planner",
+  "dek": "Choose what describes your household, tick what you already have, and print a checklist that shows why each item is there and where it comes from. It runs in your browser and keeps nothing.",
+  "description": "A free, private checklist for emergency kits and go-bags: adults, children, infants, pets, mobility, powered equipment, limited storage and budget, with sources.",
+  "section": "field-tools",
+  "track": "modern",
+  "tags": [
+    "Checklist",
+    "Printable",
+    "Runs locally"
+  ],
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
+  "recheck": "If Ready.gov, FEMA or the CDC revise their kit, infant, pet or disability pages, or at the next quarterly source sweep.",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "related": [
+    "three-day-kit",
+    "go-bags",
+    "household-emergency-plan",
+    "preparedness-real-households",
+    "water-planner"
+  ],
+  "source_use": {
+    "start-ready-supply-list": "The checklist is only a starting point, and one full kit at home plus smaller portable kits elsewhere.",
+    "cdc-water-store": "Items and reasons in the checklist that cite this source.",
+    "ready-are-you-ready": "Items and reasons in the checklist that cite this source.",
+    "start-ready-food": "Items and reasons in the checklist that cite this source.",
+    "start-ready-kit": "Items and reasons in the checklist that cite this source.",
+    "start-ready-alerts": "Items and reasons in the checklist that cite this source.",
+    "start-ready-financial": "Items and reasons in the checklist that cite this source.",
+    "start-cdc-family-kit": "Items and reasons in the checklist that cite this source.",
+    "start-cdc-pyh-prescriptions": "Items and reasons in the checklist that cite this source.",
+    "start-cdc-pyh-connected": "Items and reasons in the checklist that cite this source.",
+    "start-cdc-infant-checklist": "Items and reasons in the checklist that cite this source.",
+    "ready-pets": "Items and reasons in the checklist that cite this source.",
+    "start-ready-evacuation": "Items and reasons in the checklist that cite this source.",
+    "start-ready-disability": "Items and reasons in the checklist that cite this source.",
+    "start-cdc-disability-kit": "Items and reasons in the checklist that cite this source.",
+    "start-cdc-disability-evacuate": "Items and reasons in the checklist that cite this source.",
+    "start-acl-emergency": "Items and reasons in the checklist that cite this source.",
+    "start-ready-power": "Items and reasons in the checklist that cite this source.",
+    "start-fema-power-sheet": "Items and reasons in the checklist that cite this source.",
+    "start-ready-car": "Items and reasons in the checklist that cite this source.",
+    "start-ready-low-cost": "Items and reasons in the checklist that cite this source.",
+    "start-fema-housing": "Items and reasons in the checklist that cite this source."
+  }
+}

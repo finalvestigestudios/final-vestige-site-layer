@@ -100,4 +100,17 @@ No test, tool, asset or `taxonomy.json` was edited.
 1. Firecrawl credits ran out on 2026-10-30; the follow-up checks used curl/pdftotext, the browser pane and a web-fetch agent, as listed above. A second pass with Firecrawl (or a human) would give a cleaner audit trail, especially for `start-fema-power-sheet`.
 2. A human link check is needed for all 27 sources (`human_link_check: false`).
 3. The auto-built `start-here` hub needs review before it is used for navigation.
-4. Tools worth building (not started): a one-page printable household plan / wallet card generator (the `reunification-plan` tool) and a kit and go-bag checklist that keeps data on-device.
+4. The two tools named here were built in the second sprint (below).
+
+## Second sprint (2026-11-01): release-candidate work
+
+Branch `claude/start-here-rc`. Full detail: `docs/QD-REVIEW-PACKET-start.md` and `audit/start-here/`.
+
+* **Source audit.** `audit/start-here/verify_sources.py` re-fetched 30 sources and checked anchor phrases for 63 sourced claims (69-row matrix including 6 editorial rows). 61 confirmed; C21b (FEMA 2020 "at least 72 hours") needs a human. `human_link_check` stays `false` for all 29 sources in `start.json`.
+* **New source** `start-fsis-emergency-food` (USDA FSIS) to separate the 4-hour (closed refrigerator) and 2-hour (food held above 40 F) conditions. Page-stated date: "Last Updated Jul 30, 2013" (the text may have been revised without the date changing).
+* **Wording changes.** Medicine box and the two-FEMA-documents box in `three-day-kit` are neutral and give no instruction about any medicine; the "follow the newer wording" and "use the shorter food time" editorial lines were removed.
+* **Built:** Household Emergency Plan Builder (`reunification-plan`), Emergency Kit and Go-Bag Planner (`kit-builder`), editorial hub (`content/hubs/start-here.body.html`).
+* **Worked examples** (invented, labeled) added to each article. Not source claims; reviewer please confirm none reads as an instruction.
+* **Lead-owned files touched:** `taxonomy.json` (two tool rows gated and retitled) and `tools/build.py` (optional editorial hub hook). See the packet.
+* **Results:** validate 0/0; build exit 0; unittest 58 run, 58 ok, 0 skipped; node tool tests pass; browser QA 366 checks, 0 failed (Edge 156 via Playwright). Not covered: axe-core, screen reader, installed WordPress, physical printing.
+* **QD status: PENDING.** No pass is claimed.
