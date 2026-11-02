@@ -106,8 +106,18 @@ def _read_private_observation(path: Path, *, dist: Path, review: Path,
         completed = os.fstat(source.fileno())
     after = path.lstat()
     _ordinary_file_identity(path)
-    if not (_observation_snapshot(before) == _observation_snapshot(opened) ==
-            _observation_snapshot(completed) == _observation_snapshot(after)):
+    # Python's path-stat and descriptor-stat APIs can report differing
+    # timestamp representations on Windows. Compare each view against itself,
+    # and bridge the two views using device, inode and exact byte length.
+    # A byte-identical path replacement still changes the path file identity.
+    path_identity = (before.st_dev, before.st_ino)
+    fd_identity = (opened.st_dev, opened.st_ino)
+    if (path_identity != fd_identity or
+            (after.st_dev, after.st_ino) != path_identity or
+            (completed.st_dev, completed.st_ino) != fd_identity or
+            before.st_size != opened.st_size or
+            _observation_snapshot(before) != _observation_snapshot(after) or
+            _observation_snapshot(opened) != _observation_snapshot(completed)):
         raise qa.ReviewHold("Human observation changed during reading")
     if not qa.MIN_OBSERVATION_CHARS <= len(data) <= NOTE_LIMIT:
         raise qa.ReviewHold("Human observation has invalid length")
