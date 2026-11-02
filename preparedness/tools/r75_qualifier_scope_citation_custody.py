@@ -97,6 +97,9 @@ def construct(parent, *, expected=EXPECTED):
          and all(type(n) is int and n>0 for n in expected),
          "immutable corpus census invalid")
     sealed(parent,PARENT)
+    ancestor=parent.get("original_R73_evidence_fingerprint_sha256")
+    need(type(ancestor) is str and HEX.fullmatch(ancestor),
+         "R73 upstream custody ancestor fingerprint missing or malformed")
     counts=parent.get("counts")
     need(type(counts) is dict and tuple(counts.get(k) for k in (
          "articles","tools","complete_origin_scoped_source_readings",
