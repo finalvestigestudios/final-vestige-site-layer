@@ -33,8 +33,8 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertFalse(list(self.root.glob("ledger-diff-*.csv")))
 
     def test_default_aliases_remain_compatible_and_cited(self):
-        self.left.write_bytes(b"transaction_id,amount\\nA,1.20\\n")
-        self.right.write_bytes(b"id,amount\\nA,1.20\\n")
+        self.left.write_bytes(b"transaction_id,amount\nA,1.20\n")
+        self.right.write_bytes(b"id,amount\nA,1.20\n")
         records, _ = self.load()
         self.assertEqual(records[0]["status"], "matched")
         self.assertEqual(records[0]["left_match_column"], "transaction_id")
@@ -42,8 +42,8 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertEqual(records[0]["left_amount"], "1.20")
 
     def test_distinct_explicit_left_and_right_match_headers(self):
-        left = b"Payment Reference,amount,id\\nX-1,12.30,WRONG\\n"
-        right = b"pay_ref,amount,id\\nX-1,12.30,OTHER\\n"
+        left = b"Payment Reference,amount,id\nX-1,12.30,WRONG\n"
+        right = b"pay_ref,amount,id\nX-1,12.30,OTHER\n"
         self.left.write_bytes(left)
         self.right.write_bytes(right)
         records, _ = self.load(left_match_column="Payment Reference",
@@ -59,7 +59,7 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertEqual(records[0]["right_source_sha256"], hashlib.sha256(right).hexdigest())
 
     def test_override_disambiguates_two_auto_id_aliases(self):
-        raw = b"id,transaction_id,amount\\nA,B,1.00\\n"
+        raw = b"id,transaction_id,amount\nA,B,1.00\n"
         self.left.write_bytes(raw)
         self.right.write_bytes(raw)
         with self.assertRaises(ValueError):
@@ -70,23 +70,23 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertEqual(rows[0]["id"], "A")
 
     def test_case_and_space_normalize_to_exact_imported_header(self):
-        self.left.write_bytes(b"Payment Reference,amount\\nX,1.00\\n")
-        self.right.write_bytes(b"pay_ref,amount\\nX,1.00\\n")
+        self.left.write_bytes(b"Payment Reference,amount\nX,1.00\n")
+        self.right.write_bytes(b"pay_ref,amount\nX,1.00\n")
         rows, _ = self.load(left_match_column="  PAYMENT REFERENCE  ",
                             right_match_column="PAY_REF")
         self.assertEqual(rows[0]["status"], "matched")
         self.assertEqual(rows[0]["left_match_column"], "Payment Reference")
 
     def test_only_one_side_explicit_uses_other_auto_id_alias(self):
-        self.left.write_bytes(b"document_key,amount\\nT5,1.00\\n")
-        self.right.write_bytes(b"reference,amount\\nT5,1.00\\n")
+        self.left.write_bytes(b"document_key,amount\nT5,1.00\n")
+        self.right.write_bytes(b"reference,amount\nT5,1.00\n")
         rows, _ = self.load(left_match_column="document_key")
         self.assertEqual(rows[0]["status"], "matched")
         self.assertEqual(rows[0]["right_match_column"], "reference")
 
     def test_unmatched_selected_keys_never_claim_match(self):
-        self.left.write_bytes(b"external_ref,amount,id\\nA,8.00,SAME\\n")
-        self.right.write_bytes(b"external_ref,amount,id\\nB,8.00,SAME\\n")
+        self.left.write_bytes(b"external_ref,amount,id\nA,8.00,SAME\n")
+        self.right.write_bytes(b"external_ref,amount,id\nB,8.00,SAME\n")
         rows, _ = self.load(left_match_column="external_ref",
                             right_match_column="external_ref")
         self.assertEqual({r["status"] for r in rows},
@@ -94,26 +94,26 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertEqual({r["id"] for r in rows}, {"A", "B"})
 
     def test_missing_explicit_header_fails_before_save(self):
-        self.left.write_bytes(b"id,amount\\nA,1.00\\n")
-        self.right.write_bytes(b"id,amount\\nA,1.00\\n")
+        self.left.write_bytes(b"id,amount\nA,1.00\n")
+        self.right.write_bytes(b"id,amount\nA,1.00\n")
         with self.assertRaises(ValueError):
             engine.ledger_diff(self.left, self.right, self.root,
                                left_match_column="not_present")
         self.no_report()
 
     def test_amount_cannot_be_reused_as_identity(self):
-        self.left.write_bytes(b"id,amount\\nA,1.00\\n")
-        self.right.write_bytes(b"id,amount\\nA,1.00\\n")
+        self.left.write_bytes(b"id,amount\nA,1.00\n")
+        self.right.write_bytes(b"id,amount\nA,1.00\n")
         with self.assertRaisesRegex(ValueError, "distinct CSV columns"):
             engine.ledger_diff(self.left, self.right, self.root,
                                left_match_column="amount")
         self.no_report()
 
     def test_dangerous_or_private_header_name_is_never_echoed(self):
-        self.left.write_bytes(b"id,amount\\nA,1.00\\n")
-        self.right.write_bytes(b"id,amount\\nA,1.00\\n")
+        self.left.write_bytes(b"id,amount\nA,1.00\n")
+        self.right.write_bytes(b"id,amount\nA,1.00\n")
         marker = "bank=987654321"
-        for invalid in ("", "\\n" + marker, "ID\\x00" + marker, "id;"+marker,
+        for invalid in ("", "\n" + marker, "ID\x00" + marker, "id;"+marker,
                         "id/"+marker, "æ_reference", "=" + marker,
                         "x" * 129, 9, False):
             with self.subTest(length=len(str(invalid))):
@@ -124,8 +124,8 @@ class LedgerCustomMatchR131(unittest.TestCase):
                 self.no_report()
 
     def test_duplicate_normalized_headers_remain_rejected(self):
-        self.left.write_bytes(b"Payment Ref,payment_ref,amount\\nA,B,1.00\\n")
-        self.right.write_bytes(b"id,amount\\nA,1.00\\n")
+        self.left.write_bytes(b"Payment Ref,payment_ref,amount\nA,B,1.00\n")
+        self.right.write_bytes(b"id,amount\nA,1.00\n")
         with self.assertRaises(ValueError):
             engine.ledger_diff(self.left, self.right, self.root,
                                left_match_column="payment_ref")
@@ -133,8 +133,8 @@ class LedgerCustomMatchR131(unittest.TestCase):
 
     def test_physical_line_citations_survive_quoted_multiline(self):
         self.left.write_bytes(
-            b'local_ref,amount,note\\r\\nA,1.00,"first\\r\\nsecond"\\r\\nA,2.00,ok\\r\\n')
-        self.right.write_bytes(b"remote_ref,amount\\nA,3.00\\n")
+            b'local_ref,amount,note\r\nA,1.00,"first\r\nsecond"\r\nA,2.00,ok\r\n')
+        self.right.write_bytes(b"remote_ref,amount\nA,3.00\n")
         records, _ = self.load(left_match_column="local_ref",
                                right_match_column="remote_ref")
         self.assertEqual(records[0]["left_rows"], "2;4")
@@ -143,8 +143,8 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertEqual(records[0]["difference"], "0.00")
 
     def test_header_only_report_exposes_mapping_schema_without_fabricated_rows(self):
-        self.left.write_bytes(b"local_ref,amount\\n")
-        self.right.write_bytes(b"remote_ref,amount\\n")
+        self.left.write_bytes(b"local_ref,amount\n")
+        self.right.write_bytes(b"remote_ref,amount\n")
         records, fields = self.load(left_match_column="local_ref",
                                     right_match_column="remote_ref")
         self.assertEqual(records, [])
@@ -154,14 +154,14 @@ class LedgerCustomMatchR131(unittest.TestCase):
                                        "right_source_sha256", "input_identity_review"])
 
     def test_invalid_money_and_missing_keys_still_fail_closed(self):
-        self.left.write_bytes(b"local_ref,amount\\nA,NaN\\n")
-        self.right.write_bytes(b"remote_ref,amount\\nA,1.00\\n")
+        self.left.write_bytes(b"local_ref,amount\nA,NaN\n")
+        self.right.write_bytes(b"remote_ref,amount\nA,1.00\n")
         with self.assertRaises(ValueError):
             engine.ledger_diff(self.left, self.right, self.root,
                                left_match_column="local_ref",
                                right_match_column="remote_ref")
         self.no_report()
-        self.left.write_bytes(b"local_ref,amount\\n,1.00\\n")
+        self.left.write_bytes(b"local_ref,amount\n,1.00\n")
         with self.assertRaises(ValueError):
             engine.ledger_diff(self.left, self.right, self.root,
                                left_match_column="local_ref",
@@ -169,8 +169,8 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.no_report()
 
     def test_original_inputs_are_never_modified(self):
-        left = b"local_ref,amount\\nA,1.00\\n"
-        right = b"remote_ref,amount\\nA,1.00\\n"
+        left = b"local_ref,amount\nA,1.00\n"
+        right = b"remote_ref,amount\nA,1.00\n"
         self.left.write_bytes(left)
         self.right.write_bytes(right)
         self.load(left_match_column="local_ref", right_match_column="remote_ref")
@@ -178,7 +178,7 @@ class LedgerCustomMatchR131(unittest.TestCase):
         self.assertEqual(self.right.read_bytes(), right)
 
     def test_existing_table_tuple_shapes_stay_compatible(self):
-        self.left.write_bytes(b"id,amount\\nA,1.00\\n")
+        self.left.write_bytes(b"id,amount\nA,1.00\n")
         rows = engine.table(self.left, ("id", "amount"))
         self.assertEqual(len(rows), 1)
         rows_digest = engine.table(self.left, ("id", "amount"), include_digest=True)
