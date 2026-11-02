@@ -64,7 +64,7 @@
       "case": "apollo",
       "http": 200,
       "mime": "image/webp",
-      "transfer_bytes": 76877
+      "transfer_bytes": 76876
     },
     {
       "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1",
@@ -80,7 +80,7 @@
       "case": "franklin",
       "http": 200,
       "mime": "image/webp",
-      "transfer_bytes": 301261
+      "transfer_bytes": 301260
     },
     {
       "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1",
@@ -96,7 +96,7 @@
       "case": "malbone",
       "http": 200,
       "mime": "image/webp",
-      "transfer_bytes": 282368
+      "transfer_bytes": 282367
     }
   ],
   "desktop-1440@1x": [

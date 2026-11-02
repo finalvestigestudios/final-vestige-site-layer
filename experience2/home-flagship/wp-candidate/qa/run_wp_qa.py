@@ -194,6 +194,19 @@ def main():
                 R["touch"]["targets_lt44_count"] = len(small_targets(pg, 44))
             ctx.close()
 
+        # ---- B2. fragment navigation into content-visibility-skipped preserved sections (#dispatch is the
+        # target of the site header's "Dispatch" link) must land with the target in view
+        ctx, pg, errs = newpage(1440)
+        pg.goto(a.url + "#dispatch", wait_until="load")
+        last, stable = -1, 0
+        for _ in range(60):
+            pg.wait_for_timeout(100)
+            y = pg.evaluate("window.scrollY"); stable = stable + 1 if y == last else 0; last = y
+            if stable >= 4: break
+        R["dispatch_anchor"] = pg.evaluate("""()=>{const t=document.getElementById('dispatch');const r=t?t.getBoundingClientRect():null;
+            return {found:!!t,top:r?Math.round(r.top):null,height:r?Math.round(r.height):null,inView:!!r&&r.top<innerHeight&&r.bottom>0,formVisible:!!document.querySelector('#dispatch form#subscribe-blog')&&document.querySelector('#dispatch form#subscribe-blog').getBoundingClientRect().height>0}}""")
+        ctx.close()
+
         # ---- C. keyboard: visible focus, skip link, tab order sample
         ctx, pg, errs = newpage(1440)
         pg.goto(a.url, wait_until="load")

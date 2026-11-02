@@ -1,6 +1,6 @@
 # Flagship release package (2026-11-02)
 
-**Verdict: HOLD for publication, READY for founder visual review.** See `ACCEPTANCE_MATRIX.md`.
+**Verdict: HOLD.** Not yet ready to request go-live authorization: QD acceptance, the authenticated WordPress.com render of the exact block, and NASA item sign-off are outstanding. See `ACCEPTANCE_MATRIX.md`.
 
 | File | Contents |
 |---|---|
@@ -8,7 +8,10 @@
 | `WORDPRESS_STAGING_DIAGNOSIS.md` | The real cause of the 302/502 behaviour and the working local WordPress |
 | `ACCEPTANCE_MATRIX.md` | PASS / FAIL / BLOCKED / NOT TESTED, Lighthouse, blockers P0-P2, recommendation |
 | `RELEASE_AND_ROLLBACK.md` | Exact proposed production change, verification and rollback |
-| `production-change/` | Replacement block, original block (hash-verified), apply/rollback parameters |
+| `IMAGE_RIGHTS_REGISTER.md` | Attribution and rights register for the three archival images |
+| `PAGE_LENGTH_DECISION.md` | Decision record on page length and the preserved-content destination ledger |
+| `dry-run/` | WordPress.com private-draft verification and the probe block |
+| `production-change/` | Replacement blocks (1 and optional 2), originals (hash-verified), apply/rollback parameters |
 | `evidence/` | Raw measured results and compressed screenshots |
 
 ## Reproduce

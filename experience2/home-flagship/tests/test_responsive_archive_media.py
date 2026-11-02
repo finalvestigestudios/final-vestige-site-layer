@@ -21,14 +21,10 @@ class ImageParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.images = []
-    _ns = 0
-    def handle_endtag(self, tag):
-        if tag.lower() == 'noscript': self._ns -= 1
     def handle_starttag(self, tag, attrs):
-        if tag.lower() == 'noscript': self._ns += 1
         if tag.lower() == "img":
             d = dict(attrs)
-            if "data-fv-archive-img" in d and not self._ns:
+            if "data-fv-archive-img" in d:
                 self.images.append(d)
 
 class ResponsiveArchiveMedia(unittest.TestCase):

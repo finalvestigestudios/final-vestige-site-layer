@@ -4,11 +4,13 @@
 
 ## What changes (exactly)
 
-One write: `page-sections.replace` on page 6, **block index 1**, `core/html`, replacing the old Studios hero (SHA-1 `1c97fec5cc356a02fb2f51a092f749c81efcd98c`, 4,288 bytes) with `production-change/replacement-block-index1.html` (see `PROPOSED_PRODUCTION_CHANGE.json` for its bytes and hashes). The flagship's CSS and JS travel **inside that block**; no plugin is installed or updated.
+**Operation 1 (the release):** `page-sections.replace` on page 6, **block index 1**, `core/html`, replacing the old Studios hero (SHA-1 `1c97fec5cc356a02fb2f51a092f749c81efcd98c`, 4,288 bytes) with `production-change/replacement-block-index1.html` (114,355 bytes; bytes and hashes in `PROPOSED_PRODUCTION_CHANGE.json`). The flagship's CSS and JS travel **inside that block**; no plugin is installed or updated.
 
-Not changed: blocks 0, 2, 3, 4, 5 (72 Margins strip, Focus CTA, home shell with the Jetpack Dispatch form, Enter-the-record, Organization JSON-LD), theme, navigation, templates, site settings, plugins, Jetpack configuration, subscribers, any other page. PR #49 untouched.
+**Operation 2 (optional accessibility fix, run only after operation 1 and with fresh lock tokens):** `page-sections.replace` on **block index 2**, the Focus CTA (SHA-1 `abc983ae1b3cf45d35589c7e5366ccc522cb0462`), with `replacement-block-index2.html`, which is identical except the button's `aria-label` is removed so its accessible name equals its visible text (WCAG 2.5.3). Its original was read raw from the page and hashes to the live block hash.
 
-Lock tokens read on 2026-11-02: `modified` `2026-10-30T09:14:14`, `content_hash` `7afdb933d2ec68fd993ef015c97a6eb9edfe0576`. If either differs at execution time, stop and re-review.
+Not changed: blocks 0, 3, 4, 5 (72 Margins strip, the home shell with the **native Jetpack Dispatch block**, Enter-the-record, Organization JSON-LD), theme, navigation, templates, site settings, plugins, Jetpack configuration, subscribers, any other page. PR #49 untouched.
+
+Lock tokens read on 2026-11-02 (again before this round, unchanged): `modified` `2026-10-30T09:14:14`, `content_hash` `7afdb933d2ec68fd993ef015c97a6eb9edfe0576`. If either differs at execution time, stop and re-review. After operation 1 the page `content_hash` changes; re-list before operation 2.
 
 ## Preconditions (all must be true; none is true yet)
 
@@ -20,9 +22,9 @@ Lock tokens read on 2026-11-02: `modified` `2026-10-30T09:14:14`, `content_hash`
 
 ## Steps
 
-**0. Freeze and record (read-only).** Run `page-sections.list` on page 6; confirm 6 sections and that block 1's `block_hash` is `1c97fec5...`. Save the raw page via `pages.get context=edit` to private storage (not the repo) as the full-page backup. Note the WordPress.com revision list for page 6.
+**0. Freeze and record (read-only).** Run `page-sections.list` on page 6; confirm 6 sections, block 1 `1c97fec5...`, block 2 `abc983ae...`, and the lock tokens above. Save the raw page via `pages.get context=edit` to private storage (not the repo) as the full-page backup, and note the WordPress.com revision list for page 6. (Blocks 1 and 2 are already backed up in `production-change/`.)
 
-**1. Dry run on WordPress.com (needs explicit founder authorization: it creates one private draft page).** `pages.create` status `draft`, title "FV flagship dry run - delete after", content = the composed body from `wp-candidate/qa` stage output (`page-content.html`, inline mode). Check `_content_warnings` is empty, view the preview while signed in, run `wp-candidate/qa/run_wp_qa.py` against the preview, confirm the inline `<style>` and `<script>` survived and every interaction works. Trash the draft afterwards. **If anything was stripped, stop:** fall back to a plugin delivery (the stage plugin in `wp-candidate/build_candidate.py` is the prototype) through the governed Site Layer lane.
+**1. Dry run on WordPress.com (authorized; draft page 1902 exists).** Done so far: the inline `<style>`, `<script>` and `<noscript>` and hazard characters are stored byte-for-byte (`dry-run/WORDPRESS_COM_DRAFT_VERIFICATION.md`). Still to do, needs a signed-in browser: put the exact replacement block into draft 1902 (`pages.update`, status `draft`), confirm `page-sections.list` shows its `block_hash` equals the SHA-1 of `replacement-block-index1.html`, view the preview, run `wp-candidate/qa/run_wp_qa.py` against it, capture screenshots, then trash the draft. **If anything was stripped, stop:** fall back to a plugin delivery through the governed Site Layer lane.
 
 **2. Apply.** `page-sections.replace` with the parameters in `PROPOSED_PRODUCTION_CHANGE.json` -> `apply`. Idempotent; the call is rejected if the lock tokens or block hash no longer match.
 
@@ -36,14 +38,19 @@ Lock tokens read on 2026-11-02: `modified` `2026-10-30T09:14:14`, `content_hash`
 
 ## Rollback
 
-Trigger: any broken interaction, stripped markup, layout regression, form regression, or founder request.
+Trigger: any broken interaction, stripped markup, layout regression, form regression, or founder request. Roll back in the reverse order of application.
 
-1. `page-sections.list`, confirm block 1 `block_hash` equals the replacement's SHA-1.
-2. `page-sections.replace` with `PROPOSED_PRODUCTION_CHANGE.json` -> `rollback` (puts back `original-block-index1.html`).
-3. Verify: block 1 hash is `1c97fec5cc356a02fb2f51a092f749c81efcd98c` again, and the page `content_hash` returns to `7afdb933d2ec68fd993ef015c97a6eb9edfe0576`. That equality proves the page is byte-identical to the pre-release state.
-4. Alternative path if the section API is unavailable: restore the page 6 revision dated 2026-10-30T09:14:14 in the editor.
+**If operation 2 was applied (reverse it first):**
+1. `page-sections.list`; block 2 `block_hash` must equal the SHA-1 of `replacement-block-index2.html` (`PROPOSED_PRODUCTION_CHANGE.json` -> `operation_2_optional`).
+2. `page-sections.replace` index 2 with `original-block-index2.html` using `operation_2_optional.rollback_params`. Verify block 2 is `abc983ae1b3cf45d35589c7e5366ccc522cb0462` again.
 
-The original block is reconstructed from the public page and verified against the live `block_hash`, so the rollback copy is the live bytes, not an approximation.
+**Operation 1:**
+1. `page-sections.list`; block 1 `block_hash` must equal the replacement's SHA-1 (`apply.replacement_sha1`).
+2. `page-sections.replace` index 1 with `original-block-index1.html` using `rollback`.
+3. Verify block 1 is `1c97fec5cc356a02fb2f51a092f749c81efcd98c` again. **Only when both operations are reverted** does the page `content_hash` return to `7afdb933d2ec68fd993ef015c97a6eb9edfe0576`; that equality proves the page is byte-identical to the pre-release state.
+4. Alternative if the section API is unavailable: restore the page 6 revision dated 2026-10-30T09:14:14 in the editor.
+
+Both original blocks were checked against the live `block_hash` values (block 1 rebuilt from the public page, block 2 read raw from the editor), so the rollback copies are the live bytes. The production-change files are marked `-text` in `.gitattributes` so that no checkout can rewrite their line endings and invalidate the hashes.
 
 ## Not covered by this procedure
 

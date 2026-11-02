@@ -52,11 +52,7 @@
     "violations_inside_flagship": 0,
     "violations_total_nodes": 0
    },
-   "console_errors": [
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?w=824&ssl=1",
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
-   ]
+   "console_errors": []
   },
   "360": {
    "scrollW": 360,
@@ -384,7 +380,6 @@
     "violations_total_nodes": 0
    },
    "console_errors": [
-    "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?w=824&ssl=1",
     "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_hero",
     "reqfailed[net::ERR_ABORTED]:https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?w=1024&ssl=1"
    ]
@@ -717,7 +712,7 @@
   "detailsCount": 8,
   "focus": 4,
   "jetpackForm": 1,
-  "casePhotosLoaded": 6
+  "casePhotosLoaded": 3
  },
  "reduced_motion": {
   "mediaMatches": true,
@@ -1064,6 +1059,13 @@
    }
   ],
   "stops_without_visible_indicator": []
+ },
+ "dispatch_anchor": {
+  "found": true,
+  "top": 123,
+  "height": 444,
+  "inView": true,
+  "formVisible": true
  },
  "delivery": "inline (flagship CSS/JS inside the core/html block; stage-only site CSS parity); content-visibility forced visible for axe/screenshots only"
 }

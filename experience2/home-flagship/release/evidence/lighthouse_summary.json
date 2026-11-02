@@ -4,89 +4,89 @@
   "mobile": {
    "runs": [
     {
-     "performance": 63,
-     "accessibility": 96,
-     "FCP_ms": 4663,
-     "LCP_ms": 7663,
-     "TBT_ms": 0,
+     "performance": 66,
+     "accessibility": 100,
+     "FCP_ms": 3275,
+     "LCP_ms": 6162,
+     "TBT_ms": 228,
      "CLS": 0,
-     "transfer_KB": 1326,
+     "transfer_KB": 984,
      "requests": 15
     },
     {
-     "performance": 33,
-     "accessibility": 96,
-     "FCP_ms": 5455,
-     "LCP_ms": 7153,
-     "TBT_ms": 1193,
+     "performance": 69,
+     "accessibility": 100,
+     "FCP_ms": 2845,
+     "LCP_ms": 6084,
+     "TBT_ms": 176,
      "CLS": 0.0,
-     "transfer_KB": 929,
-     "requests": 14
+     "transfer_KB": 1039,
+     "requests": 16
     },
     {
-     "performance": 62,
-     "accessibility": 96,
-     "FCP_ms": 3121,
-     "LCP_ms": 5604,
-     "TBT_ms": 320,
-     "CLS": 0.0,
-     "transfer_KB": 875,
-     "requests": 13
+     "performance": 69,
+     "accessibility": 100,
+     "FCP_ms": 3079,
+     "LCP_ms": 6011,
+     "TBT_ms": 148,
+     "CLS": 0.003,
+     "transfer_KB": 984,
+     "requests": 15
     }
    ],
    "median": {
-    "performance": 62,
-    "accessibility": 96,
-    "FCP_ms": 4663,
-    "LCP_ms": 7153,
-    "TBT_ms": 320,
+    "performance": 69,
+    "accessibility": 100,
+    "FCP_ms": 3079,
+    "LCP_ms": 6084,
+    "TBT_ms": 176,
     "CLS": 0.0,
-    "transfer_KB": 929,
-    "requests": 14
+    "transfer_KB": 984,
+    "requests": 15
    }
   },
   "desktop": {
    "runs": [
     {
-     "performance": 81,
+     "performance": 94,
      "accessibility": 100,
-     "FCP_ms": 759,
-     "LCP_ms": 1322,
-     "TBT_ms": 202,
+     "FCP_ms": 652,
+     "LCP_ms": 1272,
+     "TBT_ms": 0,
+     "CLS": 0.01,
+     "transfer_KB": 1120,
+     "requests": 18
+    },
+    {
+     "performance": 95,
+     "accessibility": 100,
+     "FCP_ms": 710,
+     "LCP_ms": 1235,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "transfer_KB": 1120,
+     "requests": 18
+    },
+    {
+     "performance": 90,
+     "accessibility": 96,
+     "FCP_ms": 890,
+     "LCP_ms": 1570,
+     "TBT_ms": 0,
      "CLS": 0.012,
-     "transfer_KB": 1011,
-     "requests": 16
-    },
-    {
-     "performance": 89,
-     "accessibility": 96,
-     "FCP_ms": 767,
-     "LCP_ms": 1289,
-     "TBT_ms": 45,
-     "CLS": 0.023,
-     "transfer_KB": 1011,
-     "requests": 16
-    },
-    {
-     "performance": 87,
-     "accessibility": 96,
-     "FCP_ms": 998,
-     "LCP_ms": 1553,
-     "TBT_ms": 51,
-     "CLS": 0.023,
-     "transfer_KB": 1011,
-     "requests": 16
+     "transfer_KB": 1791,
+     "requests": 20
     }
    ],
    "median": {
-    "performance": 87,
-    "accessibility": 96,
-    "FCP_ms": 767,
-    "LCP_ms": 1322,
-    "TBT_ms": 51,
-    "CLS": 0.023,
-    "transfer_KB": 1011,
-    "requests": 16
+    "performance": 94,
+    "accessibility": 100,
+    "FCP_ms": 710,
+    "LCP_ms": 1272,
+    "TBT_ms": 0,
+    "CLS": 0.01,
+    "transfer_KB": 1120,
+    "requests": 18
    }
   }
  },
@@ -94,45 +94,45 @@
   "mobile": {
    "runs": [
     {
-     "performance": 84,
-     "accessibility": 100,
-     "FCP_ms": 1445,
-     "LCP_ms": 4127,
-     "TBT_ms": 39,
-     "CLS": 0,
-     "transfer_KB": 530,
-     "requests": 12
-    },
-    {
      "performance": 82,
      "accessibility": 100,
-     "FCP_ms": 1642,
-     "LCP_ms": 4052,
-     "TBT_ms": 166,
+     "FCP_ms": 1299,
+     "LCP_ms": 4577,
+     "TBT_ms": 34,
      "CLS": 0,
-     "transfer_KB": 530,
-     "requests": 12
+     "transfer_KB": 644,
+     "requests": 14
     },
     {
      "performance": 83,
      "accessibility": 100,
-     "FCP_ms": 1570,
-     "LCP_ms": 4052,
-     "TBT_ms": 134,
+     "FCP_ms": 1282,
+     "LCP_ms": 4576,
+     "TBT_ms": 84,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 80,
+     "accessibility": 100,
+     "FCP_ms": 1442,
+     "LCP_ms": 4502,
+     "TBT_ms": 160,
      "CLS": 0,
-     "transfer_KB": 530,
-     "requests": 12
+     "transfer_KB": 644,
+     "requests": 14
     }
    ],
    "median": {
-    "performance": 83,
+    "performance": 82,
     "accessibility": 100,
-    "FCP_ms": 1570,
-    "LCP_ms": 4052,
-    "TBT_ms": 134,
+    "FCP_ms": 1299,
+    "LCP_ms": 4576,
+    "TBT_ms": 84,
     "CLS": 0,
-    "transfer_KB": 530,
-    "requests": 12
+    "transfer_KB": 644,
+    "requests": 14
    }
   },
   "desktop": {
@@ -140,48 +140,48 @@
     {
      "performance": 99,
      "accessibility": 100,
-     "FCP_ms": 364,
-     "LCP_ms": 922,
-     "TBT_ms": 45,
-     "CLS": 0,
-     "transfer_KB": 666,
-     "requests": 15
-    },
-    {
-     "performance": 99,
-     "accessibility": 100,
-     "FCP_ms": 373,
-     "LCP_ms": 902,
+     "FCP_ms": 360,
+     "LCP_ms": 1041,
      "TBT_ms": 0,
      "CLS": 0.01,
-     "transfer_KB": 666,
-     "requests": 15
+     "transfer_KB": 780,
+     "requests": 17
     },
     {
      "performance": 99,
      "accessibility": 100,
-     "FCP_ms": 383,
-     "LCP_ms": 922,
-     "TBT_ms": 0,
+     "FCP_ms": 365,
+     "LCP_ms": 971,
+     "TBT_ms": 51,
      "CLS": 0,
-     "transfer_KB": 666,
-     "requests": 15
+     "transfer_KB": 780,
+     "requests": 17
+    },
+    {
+     "performance": 99,
+     "accessibility": 100,
+     "FCP_ms": 378,
+     "LCP_ms": 984,
+     "TBT_ms": 0,
+     "CLS": 0.01,
+     "transfer_KB": 780,
+     "requests": 17
     }
    ],
    "median": {
     "performance": 99,
     "accessibility": 100,
-    "FCP_ms": 373,
-    "LCP_ms": 922,
+    "FCP_ms": 365,
+    "LCP_ms": 984,
     "TBT_ms": 0,
-    "CLS": 0,
-    "transfer_KB": 666,
-    "requests": 15
+    "CLS": 0.01,
+    "transfer_KB": 780,
+    "requests": 17
    }
   }
  },
  "candidate_proxy_devtools_mobile": {
-  "batchA": {
+  "batchA_earlier_build": {
    "runs": [
     {
      "performance": 77,
@@ -225,7 +225,7 @@
     "requests": 12
    }
   },
-  "batchB": {
+  "batchB_earlier_build": {
    "runs": [
     {
      "performance": 67,
@@ -267,6 +267,50 @@
     "CLS": 0.002,
     "transfer_KB": 530,
     "requests": 12
+   }
+  },
+  "final_build": {
+   "runs": [
+    {
+     "performance": 68,
+     "accessibility": 100,
+     "FCP_ms": 3018,
+     "LCP_ms": 3135,
+     "TBT_ms": 828,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 66,
+     "accessibility": 100,
+     "FCP_ms": 3145,
+     "LCP_ms": 3275,
+     "TBT_ms": 847,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    },
+    {
+     "performance": 68,
+     "accessibility": 100,
+     "FCP_ms": 3157,
+     "LCP_ms": 3157,
+     "TBT_ms": 780,
+     "CLS": 0.003,
+     "transfer_KB": 644,
+     "requests": 14
+    }
+   ],
+   "median": {
+    "performance": 68,
+    "accessibility": 100,
+    "FCP_ms": 3145,
+    "LCP_ms": 3157,
+    "TBT_ms": 828,
+    "CLS": 0.003,
+    "transfer_KB": 644,
+    "requests": 14
    }
   }
  },

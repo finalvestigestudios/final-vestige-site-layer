@@ -62,7 +62,7 @@ def main():
                      "original_block_sha1_verified_against_live_block_hash": True,
                      "also_available": "WordPress post revisions for page 6 (restore the revision dated 2026-10-30T09:14:14)"},
         "no_plugin_install": True, "no_theme_or_navigation_change": True, "no_new_pages_in_the_change_itself": True,
-        "unverified_on_wordpress_com": "Whether WordPress.com keeps inline <style>/<script> inside a core/html block on the Personal plan is NOT TESTED: existing blocks already carry <style> and a JSON-LD <script>, but a dry run is required (RELEASE_AND_ROLLBACK.md step 1).",
+        "wordpress_com_verification": "Probe-level only: on private draft 1902 the editor and renderer kept an inline <style>, <script> and <noscript> and stored hazard characters byte-for-byte (block_hash equal to the local SHA-1). The exact replacement block has NOT yet been stored in a draft, and no authenticated WordPress.com render of it has been seen (needs a signed-in browser). See release/dry-run/WORDPRESS_COM_DRAFT_VERIFICATION.md.",
     }
     (out / "PROPOSED_PRODUCTION_CHANGE.json").write_text(json.dumps(doc, indent=2), encoding="utf-8")
     print(json.dumps({"replacement_bytes": len(new.encode()), "replacement_sha256": sha256(new), "original_bytes": len(orig.encode())}))

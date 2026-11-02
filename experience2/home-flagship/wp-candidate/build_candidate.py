@@ -126,6 +126,12 @@ def main():
         if "</script" in "".join((FLAG / f).read_text(encoding="utf-8") for f in ASSETS_JS).lower():
             raise SystemExit("a JS asset contains </script; cannot inline")
         inline_block = "<style>" + chr(10) + css_bundle + "</style>" + chr(10) + js
+        # Visitors view-source: drop internal authoring comments (CSS /* */ and HTML <!-- -->) from the
+        # shipped block. wp:html markers are added later and are unaffected.
+        css_only = css_bundle
+        stripped = re.sub(r"/\*.*?\*/", "", css_only, flags=re.S)
+        inline_block = inline_block.replace(css_only, stripped, 1)
+        fragment = re.sub(r"<!--.*?-->", "", fragment, flags=re.S)
         fragment = fragment + inline_block
     body = compose(page6, fragment)
 

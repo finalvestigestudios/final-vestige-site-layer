@@ -1,11 +1,13 @@
 {
  "390": {
-  "measured": 190,
+  "skipped_beyond_16300px": 16,
+  "measured": 208,
   "failures": 0,
   "items": []
  },
  "1440": {
-  "measured": 202,
+  "skipped_beyond_16300px": 0,
+  "measured": 236,
   "failures": 0,
   "items": []
  }

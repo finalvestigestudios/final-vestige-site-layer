@@ -40,7 +40,7 @@ def parse(c):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--url", default="http://127.0.0.1:9400/"); ap.add_argument("--out", required=True, type=Path)
-    ap.add_argument("--scope", default="flagship"); ap.add_argument("--widths", default="390,1440"); a = ap.parse_args()
+    ap.add_argument("--scope", default="flagship"); ap.add_argument("--hide", default="", help="CSS selectors to display:none so a tall page's tail fits Chrome's 16,384px capture limit"); ap.add_argument("--tag", default=""); ap.add_argument("--widths", default="390,1440"); a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True); R = {}
     with sync_playwright() as p:
         b = p.chromium.launch(channel="chrome")
@@ -50,7 +50,10 @@ def main():
             # open every details so text inside is painted and measurable
             pg.add_style_tag(content=".fv-home-shell,.fv-enter-record{content-visibility:visible!important}")
             pg.evaluate("document.querySelectorAll('details').forEach(d=>d.open=true)")
-            # make every case panel visible too (chooser shows one at a time)
+            # the case chooser shows one investigation at a time: reveal all three so their text is audited
+            pg.evaluate("document.querySelectorAll('[data-fv-case]').forEach(e=>{e.hidden=false;e.removeAttribute('hidden');e.style.display='block'})")
+            if a.hide:
+                pg.add_style_tag(content=a.hide + "{display:none!important}")
             els = pg.evaluate(JS_COLLECT, a.scope)
             pg.add_style_tag(content="*,*::before,*::after{color:transparent!important;text-shadow:none!important;-webkit-text-fill-color:transparent!important;caret-color:transparent!important} *::selection{background:transparent!important}")
             pg.wait_for_timeout(300)
@@ -58,6 +61,8 @@ def main():
             png = pg.screenshot(full_page=True)
             im = np.asarray(Image.open(io.BytesIO(png)).convert("RGB"))
             fails, worst, n = [], [], 0
+            skipped = sum(1 for e in els if e["y"] + e["h"] > 16300)
+            els = [e for e in els if e["y"] + e["h"] <= 16300]  # beyond Chrome's capture limit: audited in the tail pass
             for e in els:
                 rgb, alpha = parse(e["color"]); alpha *= e["op"]
                 if alpha < 0.05: continue
@@ -75,11 +80,11 @@ def main():
                 n += 1
                 if r5 < need:
                     fails.append({"text": e["t"], "cls": e["cls"], "fs": e["fs"], "ratio_p5": round(r5, 2), "need": need, "x": round(e["x"]), "y": round(e["y"])})
-            R[str(w)] = {"measured": n, "failures": len(fails), "items": sorted(fails, key=lambda f: f["ratio_p5"])[:60]}
+            R[str(w)] = {"skipped_beyond_16300px": skipped, "measured": n, "failures": len(fails), "items": sorted(fails, key=lambda f: f["ratio_p5"])[:60]}
             print(w, "measured", n, "below threshold", len(fails))
             pg.close()
         b.close()
-    (a.out / f"contrast_audit_{a.scope}.json").write_text(json.dumps(R, indent=1), encoding="utf-8")
+    (a.out / f"contrast_audit_{a.scope}{a.tag}.json").write_text(json.dumps(R, indent=1), encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -27,7 +27,9 @@
 .fv-hf .fv-hf__observer-exit a,
 .fv-hf .fv-hf__mind-actions a,
 .fv-hf .fv-hf__exit a,
-.fv-hf details > summary{display:inline-flex;align-items:center;gap:.4em;min-height:44px}
+/* plain disclosures only: the classed accordion headers (.fv-hf__inquiry-record, .fv-hf__observer-reveal)
+   already lay themselves out as grids and are tall enough; list-item keeps the native marker. */
+.fv-hf details:not([class]) > summary{display:list-item;min-height:44px;padding-block:.7em;box-sizing:border-box}
 
 /* Legibility floor. The study ships 7-10px mono labels, including evidence-bearing ones
    ("EDITORIAL TYPESETTING - NOT A FACSIMILE" at 8px, image credits at 10px, the museum-record

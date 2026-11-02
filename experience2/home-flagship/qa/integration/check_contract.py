@@ -27,18 +27,14 @@ class Capture(html.parser.HTMLParser):
         self.images=[]; self.buttons=[]; self.details=[]; self.headings=[]; self.labels=[]
         self.cases=[]; self.case_buttons=[]; self.section_ids=[]
         self.observers=[]; self.chronicle_views=[]; self.forms=[]
-    _ns = 0
-    def handle_endtag(self, tag):
-        if tag.lower() == 'noscript': self._ns -= 1
     def handle_starttag(self,tag, attrs):
-        if tag.lower() == 'noscript': self._ns += 1
         a=dict(attrs)
         if a.get("id"):self.ids.append(a["id"])
         if tag=="section" and a.get("id"):self.section_ids.append(a["id"])
         if tag=="a" and "href" in a:self.anchors.append(a["href"])
         if tag=="link" and a.get("rel")=="stylesheet":self.styles.append(a.get("href"))
         if tag=="script" and a.get("src"):self.scripts.append(a["src"])
-        if tag=="img" and not self._ns:self.images.append(a)
+        if tag=="img":self.images.append(a)
         if tag=="button":self.buttons.append(a)
         if tag=="form":self.forms.append(a)
         if tag=="details":self.details.append(a)

@@ -8,13 +8,13 @@
 |---|---|---|---|
 | 1 | Does the editor keep an inline `<style>`? | **YES** | Raw (`context=edit`) and rendered (`context=view`) content both returned the `<style>` unchanged, no `_content_warnings`. |
 | 2 | Does it keep an inline `<script>`? | **YES** | Same. A JSON-LD script already lives in page 6 block 5; an executable inline IIFE with arrow functions and template literals also survived. |
-| 3 | Does it keep `<noscript>` with an `<img>`? | **YES** | Same (needed for the no-JS archival photographs). |
+| 3 | Does it keep `<noscript>` with an `<img>`? | **YES** | Same (no longer used by the candidate: the no-JS photographs load without it). |
 | 4 | Does sanitisation alter hazard characters? | **NO** | Probe 2 contained `>`, `~`, `+`, `::before`, `:where`, `:is`, a `data:` URL, `@media`, `&&`, `\|\|`, `<`, `>`, a regex literal, a template literal with `${}`, and `&amp;`. The draft's `block_hash` from `page-sections.list` equals my local SHA-1 of the same bytes (`8346f10143988d7793c1021c061752edb7834939`): stored byte-for-byte (`dry-run/probe2-block.html`). |
 | 5 | Is the draft exposed publicly? | **NO** | Signed-out request to `https://finalvestige.com/?page_id=1902&preview=true` returned the theme's "Page not found". |
 | 6 | Could the draft subscribe anyone or post a form? | **NO** | The probes contain no form. The full candidate does not contain the Jetpack block; the Jetpack subscription lives only in page 6 block 3, which the dry run does not include. |
 | 7 | Was page 6 changed? | **NO** | `page-sections.list` on page 6 before and after: same six `block_hash` values, `modified` `2026-10-30T09:14:14`, `content_hash` `7afdb933d2ec68fd993ef015c97a6eb9edfe0576`. |
 
-Conclusion: **the inline-block route is not stripped or altered by WordPress.com.** The fallback (a Site Layer plugin delivery) is not needed on current evidence.
+Conclusion: on **probe-level** evidence the inline-block route is not stripped or altered by WordPress.com. The draft currently holds only a 957-byte probe; the exact 108 KB candidate block has **not** been stored there yet (that is the next step below), so this is necessary but not sufficient evidence. The fallback (a Site Layer plugin delivery) is not indicated on current evidence.
 
 ## Not yet verified (BLOCKED on a signed-in browser)
 
@@ -28,7 +28,7 @@ Those checks were run, with the same scripts, on the local WordPress + Assembler
 
 ## To finish (needs one action from you)
 
-Sign in to WordPress.com in the in-app browser pane (or tell me to use your signed-in Chrome). Then: insert the exact replacement block (`production-change/replacement-block-index1.html`, 114,355 bytes) into draft 1902, confirm its `block_hash` equals the SHA-1 in `PROPOSED_PRODUCTION_CHANGE.json`, run `qa/run_wp_qa.py` against the preview URL (its POST blocker stays on), capture desktop and mobile screenshots, then trash the draft only after the evidence and rollback copies are verified.
+Sign in to WordPress.com in the in-app browser pane (or tell me to use your signed-in Chrome). Then: insert the exact replacement block (`production-change/replacement-block-index1.html`; size and hashes in `PROPOSED_PRODUCTION_CHANGE.json`) into draft 1902, confirm its `block_hash` equals the SHA-1 in `PROPOSED_PRODUCTION_CHANGE.json`, run `qa/run_wp_qa.py` against the preview URL (its POST blocker stays on), capture desktop and mobile screenshots, then trash the draft only after the evidence and rollback copies are verified.
 
 ## Retention
 
