@@ -78,7 +78,15 @@ async function main() {
         // simulated CPU/network. formFactor alone does not.
         preset:p.name==='desktop_1440'?'desktop':undefined,
         formFactor:p.formFactor,screenEmulation:p.screenEmulation,
-        throttlingMethod:'simulate'
+        throttlingMethod:'simulate',
+        // Node Lighthouse does NOT automatically apply the desktop CPU/network
+        // preset when flags provide formFactor/viewport. Exact CI diagnosis at
+        // 8ba0c05 recorded effective desktop width 1440 but CPU x4. Override
+        // the desktop model explicitly and re-validate effective settings.
+        throttling:p.name==='desktop_1440'?{
+          rttMs:40,throughputKbps:10240,cpuSlowdownMultiplier:1,
+          requestLatencyMs:0,downloadThroughputKbps:0,uploadThroughputKbps:0
+        }:undefined
       });
       const lhr=run?.lhr;
       if (!lhr || lhr.finalUrl!==u.href) throw Error('LIGHTHOUSE_DID_NOT_AUDIT_PRIVATE_RENDERER');
