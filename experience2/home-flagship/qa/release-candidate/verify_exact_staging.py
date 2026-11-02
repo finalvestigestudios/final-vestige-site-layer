@@ -53,6 +53,35 @@ def check_url(url: str, allowed_host: str) -> str:
     return host
 
 
+def check_private_render_url(src: str, shortcode_page_url: str) -> str:
+    """Authorize ONLY the nonce-bearing AJAX renderer found in WP shortcode.
+
+    This is a same-origin, authenticated, read-only WordPress response.
+    The nonce is NEVER logged, captured or serialized in a QA receipt.
+    A direct top-level context supplies true 360/390/768/1440/1920 widths;
+    the separate embedded shortcode remains an independently checked gate.
+    """
+    from urllib.parse import parse_qs
+    if not isinstance(src,str) or not src or len(src)>1024:
+        raise ValueError('Private renderer URL unavailable or invalid')
+    p=urlsplit(src)
+    outer=urlsplit(shortcode_page_url)
+    if (p.scheme!=outer.scheme or p.hostname!=outer.hostname
+        or p.port!=outer.port or p.username or p.password or p.fragment
+        or p.path!='/wp-admin/admin-ajax.php'):
+        raise ValueError('Private renderer must be exact same-origin AJAX path')
+    try:
+        params=parse_qs(p.query,strict_parsing=True,keep_blank_values=True)
+    except ValueError:
+        raise ValueError('Private renderer query invalid') from None
+    if (set(params)!={'action','_wpnonce'}
+        or params.get('action')!=['fv_ex2_private_render']
+        or len(params.get('_wpnonce',[]))!=1
+        or not re.fullmatch(r'[A-Za-z0-9]{10,16}',params['_wpnonce'][0])):
+        raise ValueError('Private renderer action or nonce invalid')
+    return src
+
+
 def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
     if not re.fullmatch(r'[0-9a-f]{40}',expected_sha):
         raise ValueError('expected_sha must be a 40-character lowercase Git commit SHA')
