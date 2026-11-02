@@ -9,14 +9,15 @@ from scripts import native_keyboard_probe_r106 as audit
 def fixture(app_id="ledger"):
     count, title = audit.FREE[app_id]
     labels = tuple(f"Required input {n}" for n in range(1, count + 1))
+    ledger = app_id == "ledger"
     return dict(
         window_title=title,
-        entry_count=count + 1,
-        traversal=audit._expected_order(count),
+        entry_count=count + 1 + (2 if ledger else 0),
+        traversal=audit._expected_order(count, ledger_keys=ledger),
         cycle_closed=True,
         bindings=audit._expected_bindings(count),
         first_focus=True,
-        static_labels=labels + (
+        static_labels=labels + (audit.LEDGER_KEY_LABELS if ledger else ()) + (
             "Output folder",
             "Local-first review tools. Findings are not audit, legal, or fraud determinations.",
             "Keyboard: Alt+1..3 focus input; Ctrl+1..3 browse; Alt+O/Ctrl+O output; "
@@ -48,17 +49,17 @@ class NativeKeyboardContractR106(unittest.TestCase):
         self.check_blocked(traversal=audit._expected_order(2)[:-1])
 
     def test_invalid_tab_order_rejected(self):
-        order = list(audit._expected_order(2))
+        order = list(audit._expected_order(2, ledger_keys=True))
         order[0], order[1] = order[1], order[0]
         self.check_blocked(traversal=tuple(order))
 
     def test_duplicate_focus_target_rejected(self):
-        order = list(audit._expected_order(2))
+        order = list(audit._expected_order(2, ledger_keys=True))
         order[1] = order[0]
         self.check_blocked(traversal=tuple(order))
 
     def test_unexpected_focus_target_rejected(self):
-        order = list(audit._expected_order(2))
+        order = list(audit._expected_order(2, ledger_keys=True))
         order[2] = "<unverified>"
         self.check_blocked(traversal=tuple(order))
 
