@@ -6,11 +6,11 @@ Branch: `claude/start-here-rc` (continuation of `claude/prep-start-bbfeb8` at `2
 
 ## What changed since the last QD hold
 
-1. **Source audit.** 29 sources re-fetched; 68-row claim matrix; ledger with hashes (`audit/start-here/`). 61 of 62 sourced claims have their anchor phrases on the live pages; 1 (C21b) needs a human.
+1. **Source audit.** 30 sources re-fetched; 69-row claim matrix; ledger with hashes (`audit/start-here/`). 62 of 63 sourced claims have their anchor phrases on the live pages; 1 (C21b) needs a human.
 2. **Discrepancies reworked, no "winner" chosen.**
    * Refrigerated medicine: `three-day-kit` now quotes FEMA 2020 and FEMA Dec 2023 side by side, says we do not know which governs and are not choosing the newer, gives no instruction about any medicine, and routes the reader to the prescriber or pharmacist. Removed the line "we follow the newer, more cautious wording."
    * Refrigerated food: USDA FSIS (new source `start-fsis-emergency-food`) states two different conditions (a closed refrigerator keeps food safely cold about 4 hours; perishable food that has itself been above 40 F for 2 hours should be discarded). The page quotes Ready.gov, FEMA 2023 and USDA, marks the FEMA wording as possibly differing, and no longer says "use the shorter time."
-   * Carbon monoxide: Ready.gov and FEMA 2023 both say 20 feet; page says it is a stated distance, not site-specific safety. The CDC generator page was **not** cross-checked (see blockers).
+   * Carbon monoxide: Ready.gov and FEMA 2023 both say 20 feet; page says it is a stated distance, not site-specific safety. The CDC power-outage page (`start-cdc-power-outage`, added 2026-11-02) gives the same distance in slightly different words.
    * HUD and FEMA assistance: no landlord-duty, RAD or eligibility inference; FEMA conditions dated and marked changeable.
 3. **Two tools** (`content/tools/reunification-plan`, `content/tools/kit-builder`) with pure-logic modules, UI scripts, a no-JavaScript fallback, and tests.
 4. **Editorial hub** `content/hubs/start-here.body.html`, rendered through a small new hook in `tools/build.py`.
@@ -50,12 +50,12 @@ Browser checks covered, per page and width: horizontal overflow, console errors,
 
 1. Human safety review of the four articles and two tools (`pending`).
 2. An independent QD pass on this commit (`PENDING`; to be requested from the lead session).
-3. A human link check of all 28 sources in `sources/fragments/start.json` (`human_link_check: false`).
+3. A human link check of all 29 sources in `sources/fragments/start.json` (`human_link_check: false`).
 4. Human confirmation of claim C21b on the rendered FEMA PDF.
 5. An installed-WordPress test: scripts and styles survive saving, tools run, print output acceptable.
 6. A screen-reader pass by a person and an axe-core run.
 7. Reviewer decisions: medicine box wording, FEMA 2020 vs 2023 handling, "plan for" checkboxes and wallet-card note, worked examples.
-8. A CDC generator/carbon monoxide page cross-check (`cdc-co-generators` is a placeholder owned by another cluster).
+8. ~~CDC carbon monoxide cross-check~~ **Done 2026-11-02:** `start-cdc-power-outage` added and anchored (claim C34b); remaining caveat: no source says 20 feet is safe at every site.
 9. Lead decisions listed below. The hub is auto-built from the articles and must not become navigation until reviewed.
 
 ## Changes to lead-owned files (please review)

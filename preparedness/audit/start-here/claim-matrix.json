@@ -19,7 +19,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C02",
@@ -43,7 +43,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C03",
@@ -66,7 +66,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C04",
@@ -89,7 +89,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C05",
@@ -112,7 +112,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C06",
@@ -134,7 +134,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C07",
@@ -156,7 +156,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C08",
@@ -178,7 +178,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C09",
@@ -201,7 +201,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C10",
@@ -223,7 +223,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C11",
@@ -244,7 +244,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C12",
@@ -265,7 +265,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C13",
@@ -286,7 +286,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C14",
@@ -320,7 +320,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C20",
@@ -342,7 +342,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C21",
@@ -363,7 +363,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C21b",
@@ -384,7 +384,7 @@
       "note": "no automated check possible; see manual_evidence"
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C22",
@@ -408,7 +408,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C23",
@@ -431,7 +431,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C24",
@@ -452,7 +452,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C25",
@@ -474,7 +474,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C26",
@@ -495,7 +495,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C27",
@@ -516,7 +516,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C28",
@@ -539,7 +539,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C29",
@@ -562,7 +562,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C30",
@@ -583,7 +583,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C31",
@@ -604,7 +604,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C32",
@@ -625,7 +625,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C32b",
@@ -646,7 +646,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C32c",
@@ -667,7 +667,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C32d",
@@ -688,7 +688,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C33",
@@ -710,7 +710,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C34",
@@ -733,7 +733,28 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
+  },
+  {
+    "id": "C34b",
+    "article": "three-day-kit",
+    "claim": "CDC: never run a generator or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent.",
+    "source": "start-cdc-power-outage",
+    "anchors": [
+      "less than 20 feet from any window, door, or vent"
+    ],
+    "location": "Carbon monoxide poisoning",
+    "basis": "direct",
+    "confidence": "high",
+    "limits": "Minimum distance, not a guarantee of safety at a given site; CDC's CO basics page words it 'more than 20 feet', Ready.gov 'at least 20 feet'. The article states the distance as the agencies' stated minimum.",
+    "review": "human-safety",
+    "automated_result": {
+      "anchors_found": true,
+      "anchors_missing": [],
+      "forbidden_found": []
+    },
+    "source_resolves": true,
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C35",
@@ -754,7 +775,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C36",
@@ -776,7 +797,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C36b",
@@ -797,7 +818,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C37",
@@ -819,7 +840,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C38",
@@ -841,7 +862,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C39",
@@ -864,7 +885,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C40",
@@ -887,7 +908,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C41",
@@ -909,7 +930,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C42",
@@ -932,7 +953,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C43",
@@ -959,7 +980,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C44",
@@ -981,7 +1002,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C45",
@@ -1003,7 +1024,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C46",
@@ -1024,7 +1045,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C47",
@@ -1047,7 +1068,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C48",
@@ -1071,7 +1092,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C49",
@@ -1094,7 +1115,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C50",
@@ -1117,7 +1138,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C51",
@@ -1139,7 +1160,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C60",
@@ -1162,7 +1183,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C61",
@@ -1185,7 +1206,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C62",
@@ -1207,7 +1228,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C63",
@@ -1231,7 +1252,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C64",
@@ -1253,7 +1274,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C65",
@@ -1276,7 +1297,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C66",
@@ -1299,7 +1320,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C67",
@@ -1322,7 +1343,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C68",
@@ -1344,7 +1365,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C69",
@@ -1366,7 +1387,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C70",
@@ -1388,7 +1409,7 @@
       "forbidden_found": []
     },
     "source_resolves": true,
-    "date_reviewed_automated": "2026-11-01"
+    "date_reviewed_automated": "2026-11-02"
   },
   {
     "id": "C71",

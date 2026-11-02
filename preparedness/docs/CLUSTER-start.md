@@ -106,7 +106,7 @@ No test, tool, asset or `taxonomy.json` was edited.
 
 Branch `claude/start-here-rc`. Full detail: `docs/QD-REVIEW-PACKET-start.md` and `audit/start-here/`.
 
-* **Source audit.** `audit/start-here/verify_sources.py` re-fetched 29 sources and checked anchor phrases for 62 sourced claims (68-row matrix including 6 editorial rows). 61 confirmed; C21b (FEMA 2020 "at least 72 hours") needs a human. `human_link_check` stays `false` for all 28 sources in `start.json`.
+* **Source audit.** `audit/start-here/verify_sources.py` re-fetched 30 sources and checked anchor phrases for 63 sourced claims (69-row matrix including 6 editorial rows). 61 confirmed; C21b (FEMA 2020 "at least 72 hours") needs a human. `human_link_check` stays `false` for all 29 sources in `start.json`.
 * **New source** `start-fsis-emergency-food` (USDA FSIS) to separate the 4-hour (closed refrigerator) and 2-hour (food held above 40 F) conditions. Page-stated date: "Last Updated Jul 30, 2013" (the text may have been revised without the date changing).
 * **Wording changes.** Medicine box and the two-FEMA-documents box in `three-day-kit` are neutral and give no instruction about any medicine; the "follow the newer wording" and "use the shorter food time" editorial lines were removed.
 * **Built:** Household Emergency Plan Builder (`reunification-plan`), Emergency Kit and Go-Bag Planner (`kit-builder`), editorial hub (`content/hubs/start-here.body.html`).

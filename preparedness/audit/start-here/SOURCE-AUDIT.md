@@ -1,12 +1,12 @@
 # Start Here: source audit and claim matrix (generated)
 
-Generated 2026-11-01T20:34:39+00:00 by `verify_sources.py` (verify_sources.py (Playwright/Edge + pdftotext)). Regenerate with the two commands in `README.md`.
+Generated 2026-11-02T01:54:53+00:00 by `verify_sources.py` (verify_sources.py (Playwright/Edge + pdftotext)). Regenerate with the two commands in `README.md`.
 
 **What this is.** An automated re-fetch of every source the four Start Here articles cite, plus a check that short anchor phrases for each consequential claim are present in the fetched text. **What it is not.** It is not a human link check (`human_link_check` stays `false` for every source), it does not prove an article's paraphrase is faithful, and a phrase being present does not mean the whole page or PDF was read. Items marked `needs human` could not be confirmed by the tool.
 
-**Sources:** 29 fetched, 29 resolved with usable text.
+**Sources:** 30 fetched, 30 resolved with usable text.
 
-**Claims with a source:** 62; anchors found: 61; anchor failures: none; not checkable by tool: ['C21b']. Editorial (no source): ['C14', 'C71', 'C72', 'C73', 'C74', 'C75'].
+**Claims with a source:** 63; anchors found: 62; anchor failures: none; not checkable by tool: ['C21b']. Editorial (no source): ['C14', 'C71', 'C72', 'C73', 'C74', 'C75'].
 
 ## Source ledger
 
@@ -14,10 +14,10 @@ Generated 2026-11-01T20:34:39+00:00 by `verify_sources.py` (verify_sources.py (P
 |---|---|---|---|---|---|---|---|
 | `start-ready-plan` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 09/01/2026 | 16630 | `51239289b1e5` | C01, C02 |
 | `ready-are-you-ready` | FEMA / Ready.gov / regulator | 200 | no | none found | 78846 | `4eea4480cb17` | C03, C04, C05, C10, C15, C21, C21b, C30, C36, C37 |
-| `start-cdc-disability-plan` | CDC / regulator | 200 | no | Published September 20, 2024; Reviewed September 11, 2024; Updated August 29, 2024 | 11991 | `bbfa6a3da9d5` | (background only) |
+| `start-cdc-disability-plan` | CDC / regulator | 200 | no | Published September 20, 2024; Reviewed September 11, 2024; Updated August 29, 2024 | 11614 | `b44de13578e0` | (background only) |
 | `start-ready-evacuation` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 03/20/2026 | 20493 | `078d64b8504e` | C40, C41, C42 |
 | `start-ready-alerts` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 05/27/2026 | 21042 | `ddbc53d57ffa` | C06, C07 |
-| `start-ready-kit` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 07/01/2026 | 18673 | `6c225b331968` | C11, C22, C36b, C39 |
+| `start-ready-kit` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 07/01/2026 | 18655 | `c2b407bfc570` | C11, C22, C36b, C39 |
 | `start-ready-disability` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 09/09/2026 | 26014 | `e0531497867a` | C13, C32, C49, C67, C68 |
 | `start-cdc-pyh-connected` | CDC / regulator | 200 | no | Published April 18, 2024; Reviewed April 18, 2024; Updated April 18, 2024 | 9205 | `c1122d3a34cf` | C08 |
 | `cdc-water-store` | Centers for Disease Control and Prevention (National Center for Environmental Health) / regulator | 200 | no | Published September 16, 2024; Reviewed June 27, 2025; Updated June 27, 2025 | 16022 | `50f9b9515e7b` | C20 |
@@ -32,6 +32,7 @@ Generated 2026-11-01T20:34:39+00:00 by `verify_sources.py` (verify_sources.py (P
 | `start-ready-power` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 06/04/2026 | 19791 | `7246be7adc96` | C25, C26, C31, C33 |
 | `start-fema-power-sheet` | FEMA / Ready.gov / regulator | 200 | no | none found | 5033 | `262fb44713cf` | C27, C29, C34 |
 | `start-fsis-emergency-food` | USDA Food Safety and Inspection Service / regulator | 200 | no | Last Updated Jul 30, 2013 | 150781 | `37e87f799d75` | C28 |
+| `start-cdc-power-outage` | CDC / regulator | 200 | no | Published May 15, 2024; Reviewed August 26, 2026; Updated January 26, 2024 | 20359 | `51bf5e435ec3` | C34b |
 | `start-cdc-infant-checklist` | CDC / regulator | 200 | no | Published May 15, 2024; Reviewed February 15, 2024; Updated August 3, 2026 | 13279 | `e19c76272fc7` | C43, C44, C45 |
 | `start-ready-car` | FEMA / Ready.gov / regulator | 200 | no | Last Updated 03/12/2026 | 16629 | `09f248ea8a80` | (background only) |
 | `start-hud-multifamily-template` | U.S. Department of Housing and Urban Development (HUD Exchange) / regulator | 200 | no | none found | 101478 | `9676bf105bf2` | C62 |
@@ -82,6 +83,7 @@ Columns: claim, article, source, location in source, basis (direct = agency text
 | C32d | three-day-kit | Red Cross older adults: keep at least 30 days of medications. | `start-redcross-older-adults` | Gather Your Supplies | direct | anchors found | high. Nonprofit; directed at older adults. | human-safety |
 | C33 | three-day-kit | Generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; never heat a home with a gas stovetop or oven. | `start-ready-power` | Using Appliances During Power Outages; Generator Safety | direct | anchors found | high. Twenty feet is the stated minimum distance, not site-specific safety; the article says so and points to maker's instructions and CO alarms. | human-safety |
 | C34 | three-day-kit | FEMA 2023: 20 feet from building openings; never use a gas stovetop, oven, grill or dryer to heat a home; do not run a vehicle in a garage. | `start-fema-power-sheet` | Survive During (page 1) | direct | anchors found | high. Same limits as C33. | human-safety |
+| C34b | three-day-kit | CDC: never run a generator or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent. | `start-cdc-power-outage` | Carbon monoxide poisoning | direct | anchors found | high. Minimum distance, not a guarantee of safety at a given site; CDC's CO basics page words it 'more than 20 feet', Ready.gov 'at least 20 feet'. The article states the distance as the agencies' stated minimum. | human-safety |
 | C35 | three-day-kit | Charcoal grills and camp stoves are for outdoor use only. | `start-ready-food` | Cooking | direct | anchors found | high. None. | human-safety |
 | C36 | three-day-kit | Mask wording differs: dust mask (Ready.gov) vs fit-tested N95 (FEMA 2020). | `ready-are-you-ready` | Gather Emergency Supplies | direct | anchors found | high. Companion claim C36b. | human-safety |
 | C36b | three-day-kit | Ready.gov kit lists a dust mask to help filter contaminated air. | `start-ready-kit` | Basic Disaster Supplies Kit | direct | anchors found | high. None. | human-safety |

@@ -4,7 +4,7 @@ Reproducible evidence for the four Start Here articles and the two tools. Nothin
 
 | File | What it is |
 |---|---|
-| `claims.json` | Hand-written claim-to-source matrix (68 rows: 62 with a source, 6 editorial). Each row has short anchor phrases, the location in the source, the basis (direct / synthesis / interpretation / editorial), confidence, limits and who must review. |
+| `claims.json` | Hand-written claim-to-source matrix (69 rows: 63 with a source, 6 editorial). Each row has short anchor phrases, the location in the source, the basis (direct / synthesis / interpretation / editorial), confidence, limits and who must review. |
 | `verify_sources.py` | Re-fetches every source cited by the four articles (Playwright with Microsoft Edge for pages; PDFs through Playwright's request API and `pdftotext`) and checks the anchor phrases. Writes `ledger.json` and `claim-matrix.json`. |
 | `ledger.json` | Per source: HTTP status, final URL, title, page-stated dates, text length, SHA-256 of the normalized text, and per-claim anchor results. |
 | `claim-matrix.json` | `claims.json` merged with the automated results. |

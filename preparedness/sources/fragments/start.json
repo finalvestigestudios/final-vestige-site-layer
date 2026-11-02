@@ -382,6 +382,20 @@
       "human_link_check": false,
       "supports": "Refrigerator keeps food safely cold about 4 hours if unopened; refrigerated food should be safe as long as power is out no more than 4 hours; discard perishable food (meat, poultry, fish, eggs, leftovers) that has been above 40 F for 2 hours; coolers and frozen gel packs help if the outage will exceed 4 hours.",
       "notes": "Search excerpt read 2026-11-01 and the full page text fetched by verify_sources.py on the same day (see audit/start-here/ledger.json for size and hash). Used only to separate the two conditions behind the 4-hour and 2-hour figures. The page shows no date in the text extracted."
+    },
+    {
+      "id": "start-cdc-power-outage",
+      "title": "What to Do to Protect Yourself During a Power Outage",
+      "publisher": "CDC",
+      "kind": "regulator",
+      "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+      "published": null,
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-11-02",
+      "human_link_check": false,
+      "supports": "Carbon monoxide section: never use a generator, pressure washer or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent; use an extension cord longer than 20 feet to keep the generator at a safe distance.",
+      "notes": "Search excerpt read 2026-11-02; full page text fetched by audit/start-here/verify_sources.py on the same run (size and hash in ledger.json). Added to cross-check the 20-foot figure from Ready.gov and FEMA. The CDC's wording ('less than 20 feet') and its carbon monoxide basics page ('more than 20 feet') differ slightly from Ready.gov's 'at least 20 feet'; none of them says 20 feet is safe at every site."
     }
   ]
 }

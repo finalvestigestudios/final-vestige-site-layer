@@ -506,6 +506,20 @@
       "review": "human-safety"
     },
     {
+      "id": "C34b",
+      "article": "three-day-kit",
+      "claim": "CDC: never run a generator or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent.",
+      "source": "start-cdc-power-outage",
+      "anchors": [
+        "less than 20 feet from any window, door, or vent"
+      ],
+      "location": "Carbon monoxide poisoning",
+      "basis": "direct",
+      "confidence": "high",
+      "limits": "Minimum distance, not a guarantee of safety at a given site; CDC's CO basics page words it 'more than 20 feet', Ready.gov 'at least 20 feet'. The article states the distance as the agencies' stated minimum.",
+      "review": "human-safety"
+    },
+    {
       "id": "C35",
       "article": "three-day-kit",
       "claim": "Charcoal grills and camp stoves are for outdoor use only.",

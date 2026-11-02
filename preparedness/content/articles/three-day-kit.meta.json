@@ -49,6 +49,7 @@
     "start-ready-car": "The car kit extras and keeping the tank full.",
     "start-cdc-infant-checklist": "Ready-to-feed formula is the safest formula option; check the kit monthly because babies grow quickly.",
     "start-fema-power-sheet": "FEMA's December 2023 power-outage fact sheet: replace refrigerated medicines after a day or more unless the label says otherwise, call the doctor or pharmacist, use only until a new supply; 4-hour food rule; 20 feet from building openings; no grill, dryer or stove for heat.",
-    "start-fsis-emergency-food": "USDA FSIS: a closed refrigerator keeps food safely cold about 4 hours; perishable food above 40 F for 2 hours should be discarded (two different conditions)."
+    "start-fsis-emergency-food": "USDA FSIS: a closed refrigerator keeps food safely cold about 4 hours; perishable food above 40 F for 2 hours should be discarded (two different conditions).",
+    "start-cdc-power-outage": "CDC cross-check of the generator rule: never inside the home, basement or garage, or less than 20 feet from any window, door or vent."
   }
 }
