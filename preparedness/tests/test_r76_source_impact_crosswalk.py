@@ -288,7 +288,7 @@ _MUTATIONS = [
             "value","invented-source-id")),
     ("source_doc_scope_lost",lambda p:
         p["all_document_block_orders_NOT_REVIEWED"][0].__setitem__(
-            "origin_scoped_sources_USED_NOT_SUPPORT_APPROVED",[])),
+            "origin_scoped_sources_USED_NOT_SUPPORT_APPROVED",[["bogus","source"]])),
     ("review_action_flag_inverted",lambda p: alter_review(p,
         "action_language_TRIAGE_NOT_VERDICT",not p[
             "action_or_quantity_qualifier_context_queue_NOT_APPROVED"][0][
@@ -299,9 +299,7 @@ _MUTATIONS = [
             "numeric_units_TRIAGE_NOT_DOSAGE_CHECK"])),
     ("citation_variant_duplicated",lambda p: alter_citation(p,
         "origin_scoped_source_variants_NOT_ALIASED",
-        p["all_4070_unabridged_DOM_tasks_NOT_REVIEWED"][0][
-            "local_citations_NOT_CLAIM_SUPPORT_PROOF"][0][
-            "origin_scoped_source_variants_NOT_ALIASED"]*2)),
+        citation(p)["origin_scoped_source_variants_NOT_ALIASED"]*2)),
 ]
 
 
