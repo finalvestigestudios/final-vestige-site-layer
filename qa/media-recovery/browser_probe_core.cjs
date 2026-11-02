@@ -115,7 +115,11 @@ function classifyImages(stored,rendered,network,pageVerified){
    req.was_cached!==true&&req.from_disk_cache!==true&&req.from_service_worker!==true);
   const domMapped=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
   const identityVerified=domMapped&&activeImageIdentity(s,r);
-  const visiblyBroken=!!(pageVerified&&r&&identityVerified&&r.complete===true&&r.naturalWidth===0&&
+  // A redirect whose final CDP URL is not the displayed historical source cannot
+  // establish that source's 404/network/HTML failure. Fail closed for *all* failure
+  // kinds, not only the successful-200 decode-failure branch.
+  const visiblyBroken=!!(pageVerified&&r&&identityVerified&&finalNetworkIdentityVerified&&
+   !finalRedirectIdentityUnverified&&r.complete===true&&r.naturalWidth===0&&
    (reqError||(responseStatus!==null&&responseStatus>=400)||incompatibleResponse||decodeFailure));
   const failureKind=visiblyBroken?(reqError?'network_error':responseStatus>=400?'http_error':
    incompatibleResponse?'non_image_error_payload':decodeFailure?'image_decode_failure':null):null;
