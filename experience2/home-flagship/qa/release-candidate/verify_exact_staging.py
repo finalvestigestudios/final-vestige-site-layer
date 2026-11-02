@@ -160,6 +160,19 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
             actual = content[1:-1] if content.startswith('\n') and content.endswith('\n') else None
             check('asset_bytes_exact_'+name, actual==files[name].decode('utf-8'))
             delivered[name] = sha(actual.encode('utf-8')) if actual is not None else 'MISSING_WRAPPERS'
+    # Genuine founder first-screen visual: capture the browser viewport at
+    # scroll=0 BEFORE selecting distant archive cases. An element screenshot
+    # taken after scrolling can misleadingly composite the fixed skip link
+    # and sticky chapter bar over the hero, especially on mobile.
+    if width in (390,1440):
+        try:
+            frame.page.evaluate('window.scrollTo(0,0)')
+            frame.page.screenshot(path=str(out/f'first-screen-{width}.png'),
+                                  full_page=False,timeout=15000)
+            check('real_hero_screenshot',True)
+        except Exception:
+            check('real_hero_screenshot',False)
+
     # Archive exhibits are mutually exclusive ONLY after JS enhancement.
     # An inactive case image is intentionally hidden, so Playwright cannot
     # scroll it into view. Activate its REAL visible selector before testing
@@ -218,11 +231,9 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
         try:
             first.click(timeout=6000)
             check('archive_first_case_restored',first.get_attribute('aria-pressed')=='true')
-            frame.locator('.fv-hf__opening').screenshot(
-                path=str(out/f'first-screen-{width}.png'),timeout=15000)
-            check('real_hero_screenshot',True)
-            frame.locator('body').screenshot(
-                path=str(out/f'full-seven-chapter-{width}.png'),timeout=20000)
+            frame.page.evaluate('window.scrollTo(0,0)')
+            frame.page.screenshot(path=str(out/f'full-seven-chapter-{width}.png'),
+                                  full_page=True,timeout=20000)
             check('real_fullpage_screenshot',True)
         except Exception:
             check('real_screenshot_capture',False)
