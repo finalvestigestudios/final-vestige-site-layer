@@ -1,0 +1,637 @@
+{
+  "last_reviewed": "2026-11-02",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "type": "merchant",
+      "note": "Publisher lists Zen12, Hypnosis Live, Brainwave Shots; not efficacy evidence"
+    },
+    {
+      "id": "S02",
+      "title": "Zen12 exact official offer",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant",
+      "note": "12-minute sessions; 12 levels; 4 formats; 48/24 MP3 packages; seller's efficacy and refund statements"
+    },
+    {
+      "id": "S03",
+      "title": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "type": "merchant",
+      "note": "Audio formats and descriptive claims"
+    },
+    {
+      "id": "S04",
+      "title": "Zen12 Research",
+      "url": "https://zen12.com/research",
+      "type": "merchant",
+      "note": "Seller's entrainment narrative; not product-specific controlled clinical proof"
+    },
+    {
+      "id": "S05",
+      "title": "Zen12 checkout",
+      "url": "https://zen12.com/getstarted",
+      "type": "merchant",
+      "note": "Full premium bundle, phone field, stated refund; no completed test purchase"
+    },
+    {
+      "id": "S06",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "type": "merchant-policy",
+      "note": "Phone/SMS marketing and affiliate purchaser-data sharing policy language"
+    },
+    {
+      "id": "S07",
+      "title": "Inspire3 public affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "merchant-recruitment",
+      "note": "Public sign-up is not proof of approval, license or channel permission; payout figures are generic advertisements"
+    },
+    {
+      "id": "S08",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "note": "Clear and conspicuous disclosure close to specific earning recommendation"
+    },
+    {
+      "id": "S09",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "note": "Objective health claims need adequate reliable substantiation before dissemination"
+    },
+    {
+      "id": "S10",
+      "title": "NIH NCCIH meditation evidence review",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "type": "government-science",
+      "note": "Meditation research is broader than any named seller's recording"
+    },
+    {
+      "id": "S11",
+      "title": "NIH NCCIH hypnosis evidence review",
+      "url": "https://www.nccih.nih.gov/health/hypnosis",
+      "type": "government-science",
+      "note": "Condition-specific evidence is mixed; cannot validate a commercial audio MP3"
+    },
+    {
+      "id": "S12",
+      "title": "Ingendoh et al 2023 EEG systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "independent-research",
+      "note": "14 studies; 5 supporting, 8 contrary, 1 mixed; heterogeneous methods"
+    },
+    {
+      "id": "S13",
+      "title": "Shenefelt 2011 ideomotor historical review",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "type": "scholarly-review",
+      "note": "Chevreul, Carpenter and history of ideomotor signalling"
+    },
+    {
+      "id": "S14",
+      "title": "Easton and Shor 1976 pendulum experiment",
+      "url": "https://doi.org/10.1080/00221309.1976.9710871",
+      "type": "experimental",
+      "note": "60 college students; measurable swing conditions"
+    },
+    {
+      "id": "S15",
+      "title": "Ask the pendulum 2017",
+      "url": "https://doi.org/10.1093/nc/nix014",
+      "type": "experimental",
+      "note": "80 participants, ideomotor performance on visual detection task"
+    },
+    {
+      "id": "S16",
+      "title": "Moga and Dienes 2022",
+      "url": "https://doi.org/10.1080/00029157.2021.2010641",
+      "type": "experimental",
+      "note": "General knowledge guessed at chance; pendulum no demonstrated advantage over verbal report"
+    },
+    {
+      "id": "S17",
+      "title": "Published Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv-publication",
+      "note": "Historical source trail, 16 dossiers, independent method and consent framing"
+    },
+    {
+      "id": "S18",
+      "title": "Existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv-publication",
+      "note": "Established 52-page Fieldbook and one existing Jetpack funnel"
+    },
+    {
+      "id": "S19",
+      "title": "Final Vestige editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "fv-policy",
+      "note": "Reader-first research standards"
+    },
+    {
+      "id": "S20",
+      "title": "Final Vestige affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "fv-policy",
+      "note": "Site-wide notice supplements, does not replace, near-offer disclosure"
+    },
+    {
+      "id": "S21",
+      "title": "Hypnosis Live exact Total Focus offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "merchant",
+      "note": "Separate 33-minute/47MB offer; cannot blend its seller copy with Zen12"
+    },
+    {
+      "id": "S22",
+      "title": "Hypnosis Live general catalog",
+      "url": "https://hypnosislive.com/catalog",
+      "type": "merchant",
+      "note": "Distinct product library and categories; no authorized creative evidence"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Zen12 offers 12-minute sessions",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "decision": "may describe as merchant-advertised duration",
+      "limitation": "not independently timed"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 full course has 12 levels",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S05"
+      ],
+      "decision": "may describe as seller catalog structure",
+      "limitation": "delivery unaudited"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 full course has 48 MP3s",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02",
+        "S05"
+      ],
+      "decision": "may describe as merchant offer",
+      "limitation": "no purchase made"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 six-level packages have 24 MP3s",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "may describe as seller offer",
+      "limitation": "package choice must be verified at checkout"
+    },
+    {
+      "id": "Z05",
+      "claim": "Four listening styles: music, guided, nature and white noise",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "decision": "may describe styles as advertised",
+      "limitation": "not independently inspected"
+    },
+    {
+      "id": "Z06",
+      "claim": "Recorded audio is downloadable MP3 content",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "may describe as seller-advertised MP3 format",
+      "limitation": "device compatibility unspecified"
+    },
+    {
+      "id": "Z07",
+      "claim": "Zen12 quick-start/user guide support",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02",
+        "S05"
+      ],
+      "decision": "may describe as seller-advertised inclusion",
+      "limitation": "actual quality unaudited"
+    },
+    {
+      "id": "Z08",
+      "claim": "Zen12 offers lifetime support",
+      "category": "seller-feature",
+      "source_ids": [
+        "S02",
+        "S05"
+      ],
+      "decision": "may quote only as seller representation",
+      "limitation": "no support response audit"
+    },
+    {
+      "id": "Z09",
+      "claim": "Zen12 advertises a 1-year money-back guarantee",
+      "category": "seller-policy",
+      "source_ids": [
+        "S02",
+        "S05"
+      ],
+      "decision": "say seller advertises; verify terms before release",
+      "limitation": "unverified refund execution"
+    },
+    {
+      "id": "Z10",
+      "claim": "Zen12 public checkout contains mobile-number field",
+      "category": "observed-form",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "note that current observed checkout displays this field",
+      "limitation": "not proof required or marketing consent"
+    },
+    {
+      "id": "Z11",
+      "claim": "Inspire3 policy allows possible SMS marketing",
+      "category": "seller-policy",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "disclose in purchase considerations",
+      "limitation": "no specific user outcome inferred"
+    },
+    {
+      "id": "Z12",
+      "claim": "Inspire3 policy allows sharing affiliate customer details",
+      "category": "seller-policy",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "disclose accurately; read full policy",
+      "limitation": "no active FV affiliate link"
+    },
+    {
+      "id": "Z13",
+      "claim": "Zen12 12 min equals an hour of advanced meditation",
+      "category": "unsubstantiated-merchant-efficacy",
+      "source_ids": [
+        "S02",
+        "S04",
+        "S10"
+      ],
+      "decision": "do not adopt as fact; identify as seller claim",
+      "limitation": "no verified product-specific comparison"
+    },
+    {
+      "id": "Z14",
+      "claim": "Zen12 automatically produces deep meditation",
+      "category": "unsubstantiated-merchant-efficacy",
+      "source_ids": [
+        "S02",
+        "S04",
+        "S12"
+      ],
+      "decision": "do not state as outcome",
+      "limitation": "no validated named-product EEG trial"
+    },
+    {
+      "id": "Z15",
+      "claim": "Zen12 boosts IQ/creativity/focus through brainwaves",
+      "category": "unsubstantiated-merchant-efficacy",
+      "source_ids": [
+        "S02",
+        "S04",
+        "S12"
+      ],
+      "decision": "do not promise or imply",
+      "limitation": "general research inadequate"
+    },
+    {
+      "id": "Z16",
+      "claim": "Zen12 relieves anxiety and treats illness",
+      "category": "health-claim-hold",
+      "source_ids": [
+        "S02",
+        "S09",
+        "S10"
+      ],
+      "decision": "do not claim clinical effects",
+      "limitation": "clinical substantiation missing"
+    },
+    {
+      "id": "Z17",
+      "claim": "Zen12 improves income or financial outcomes",
+      "category": "finance-claim-hold",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "do not claim",
+      "limitation": "no product trial"
+    },
+    {
+      "id": "Z18",
+      "claim": "Meditation research establishes efficacy for Zen12",
+      "category": "invalid-inference",
+      "source_ids": [
+        "S10",
+        "S12"
+      ],
+      "decision": "explicitly reject product extrapolation",
+      "limitation": "different populations and interventions"
+    },
+    {
+      "id": "Z19",
+      "claim": "One review of 14 EEG studies reported 5 positive 8 contrary 1 mixed",
+      "category": "research-summary",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "state exactly with methodological context",
+      "limitation": "does not study Zen12"
+    },
+    {
+      "id": "Z20",
+      "claim": "Meditation usually has no risks",
+      "category": "overstated-safety",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "do not claim universal safety",
+      "limitation": "NIH notes possible negative experiences"
+    },
+    {
+      "id": "Z21",
+      "claim": "Checkout price is fixed",
+      "category": "pricing-hold",
+      "source_ids": [
+        "S02",
+        "S05"
+      ],
+      "decision": "omit price/discount from stable guide",
+      "limitation": "merchant prices change"
+    },
+    {
+      "id": "Z22",
+      "claim": "Claiming a first-person Zen12 testimonial",
+      "category": "prohibited-without-use",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "never assert personal use",
+      "limitation": "not purchased/tested"
+    },
+    {
+      "id": "Z23",
+      "claim": "Zen12 official testimonials are typical outcomes",
+      "category": "unsubstantiated-merchant-efficacy",
+      "source_ids": [
+        "S02",
+        "S08"
+      ],
+      "decision": "do not reproduce as typical",
+      "limitation": "representativeness unverified"
+    },
+    {
+      "id": "A01",
+      "claim": "Affiliate approval for Final Vestige",
+      "category": "authorization-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "HARD HOLD",
+      "limitation": "no written acceptance verified"
+    },
+    {
+      "id": "A02",
+      "claim": "Approved tracked earning URL for Zen12",
+      "category": "authorization-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "HARD HOLD; null",
+      "limitation": "not retrieved"
+    },
+    {
+      "id": "A03",
+      "claim": "Permission to use email channel",
+      "category": "authorization-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "HARD HOLD",
+      "limitation": "public partner site not terms"
+    },
+    {
+      "id": "A04",
+      "claim": "Permission to use paid search or TikTok",
+      "category": "authorization-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "HARD HOLD",
+      "limitation": "not established"
+    },
+    {
+      "id": "A05",
+      "claim": "Official marketing swipe creative license",
+      "category": "creative-rights-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "HARD HOLD; use original content only",
+      "limitation": "no approved material inspected"
+    },
+    {
+      "id": "A06",
+      "claim": "Generic public commission figures equal FV terms",
+      "category": "authorization-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "must not quote commissions",
+      "limitation": "unverified FV contract"
+    },
+    {
+      "id": "A07",
+      "claim": "CTA commission relationship disclosure",
+      "category": "FTC-requirement",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "place adjacent plain-language statement before disabled CTA",
+      "limitation": "release requires independent review"
+    },
+    {
+      "id": "A08",
+      "claim": "Affiliate disclosure only in footer",
+      "category": "FTC-inadequate",
+      "source_ids": [
+        "S08",
+        "S20"
+      ],
+      "decision": "prohibited as sole disclosure",
+      "limitation": "near link required"
+    },
+    {
+      "id": "A09",
+      "claim": "Health claims supported by generic publications",
+      "category": "FTC-inadequate",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "do not repeat claims",
+      "limitation": "need adequate product-specific support"
+    },
+    {
+      "id": "A10",
+      "claim": "Merchant link cloaking",
+      "category": "partner-terms-hold",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "no cloaking or redirects",
+      "limitation": "unverified rights"
+    },
+    {
+      "id": "A11",
+      "claim": "Cookie/PII analytics tracking",
+      "category": "privacy-hold",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "disabled instrumentation; no client analytics active",
+      "limitation": "no consent assessment"
+    },
+    {
+      "id": "A12",
+      "claim": "Affiliate click equals sale",
+      "category": "measurement-error",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "do not infer purchases from clicks",
+      "limitation": "no partner verified conversions"
+    },
+    {
+      "id": "A13",
+      "claim": "New WordPress email signup",
+      "category": "funnel-protection",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "forbidden; preserve single existing Jetpack/Focus path",
+      "limitation": "no secondary list"
+    },
+    {
+      "id": "A14",
+      "claim": "Publisher endorsement in science investigation",
+      "category": "editorial-separation",
+      "source_ids": [
+        "S17",
+        "S19"
+      ],
+      "decision": "forbidden; keep commercial decision on independent buyer guide",
+      "limitation": "mission-first"
+    },
+    {
+      "id": "A15",
+      "claim": "Hypnosis Live Total Focus is Zen12",
+      "category": "product-specificity",
+      "source_ids": [
+        "S01",
+        "S21"
+      ],
+      "decision": "forbidden; separate exact-offer guide",
+      "limitation": "33-minute focus hypnosis distinct from 12-minute meditation"
+    },
+    {
+      "id": "A16",
+      "claim": "Affiliate link active on unpublished page",
+      "category": "release-hold",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "decision": "forbidden",
+      "limitation": "explicit founder release permission absent"
+    },
+    {
+      "id": "I01",
+      "claim": "Chevreul pendulum can oscillate without consciously felt act",
+      "category": "scholarly-background",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "decision": "describe cautiously, with conditions",
+      "limitation": "not paranormal evidence"
+    },
+    {
+      "id": "I02",
+      "claim": "1976 experiment involved 60 students",
+      "category": "research-finding",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "cite the specific laboratory setup",
+      "limitation": "not population average"
+    },
+    {
+      "id": "I03",
+      "claim": "2017 pendulum test involved 80 participants",
+      "category": "research-finding",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "state context",
+      "limitation": "not universal rate"
+    },
+    {
+      "id": "I04",
+      "claim": "2022 pendulum experiment showed no guessing advantage",
+      "category": "research-finding",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "report about-chance performance in tested task",
+      "limitation": "cannot generalize to every form of knowledge"
+    },
+    {
+      "id": "I05",
+      "claim": "Pendulum response proves secret knowledge",
+      "category": "invalid-inference",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "do not assert",
+      "limitation": "no such result in direct test"
+    }
+  ],
+  "activation": {
+    "enabled": false,
+    "approved_partner": false,
+    "approved_affiliate_url": null,
+    "email_rights_verified": false,
+    "social_rights_verified": false,
+    "creative_license_verified": false,
+    "checkout_refund_revalidated": false,
+    "founder_release_approval": false,
+    "wordPress_write_permitted": false
+  },
+  "policy": "The claims matrix is an evidence and permission register, not an affiliate agreement."
+}
