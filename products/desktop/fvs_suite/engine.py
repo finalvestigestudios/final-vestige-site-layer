@@ -377,7 +377,8 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
         # movement; neither this flag nor 'matched' authorizes payment.
         if (a and b and x == y and
                 (left_charges != right_charges or left_credits != right_credits)):
-            status += (";" if status else "") + "gross_flow_mismatch_review"
+            status = ("gross_flow_mismatch_review" if status == "matched" else
+                      status + ";gross_flow_mismatch_review")
         rows.append({"id":k,"status":status,"left_amount":dollars(x),"right_amount":dollars(y),
                      "difference":dollars(x-y),"left_rows":";".join(r["row"] for r in a),
                      "right_rows":";".join(r["row"] for r in b),
