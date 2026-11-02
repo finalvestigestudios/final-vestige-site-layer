@@ -94,7 +94,7 @@ The most interesting question is not whether the sentence was powerful. It is wh
 
 [2] Final Vestige Studios, *Puységur's Animal Magnetism Files*. Published historical source-provenance and ethics archive, not independent clinical substantiation: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ .
 
-[3] Zahedi, Lynn & Sommer, “How hypnotic suggestions work — A systematic review of prominent theories of hypnosis” (2024), *Consciousness and Cognition* 123, 103730; https://pubmed.ncbi.nlm.nih.gov/39032268/ . Review of theory, not Zen12 testing or Coué clinical validation.
+[3] Zahedi, Lynn & Sommer, “How hypnotic suggestions work — A systematic review of prominent theories of hypnosis” (2024), *Consciousness and Cognition* 123, 103730; https://pubmed.ncbi.nlm.nih.gov/39032268/ . Review of theory, not a commercial-audio trial or Coué clinical validation.
 
 [4] Dell, “What is the Source of Hypnotic Responses?” (2024), *International Journal of Clinical and Experimental Hypnosis* 72(1), 64–83; https://pubmed.ncbi.nlm.nih.gov/38060715/ . Theoretical argument, not consensus.
 
