@@ -22,9 +22,9 @@ Neither of these image slots has a verified guest browser failure. They are cand
 ## Machine evidence and tests
 - [61-row crosswalk and two item-level primary-source candidates](../qa/media-recovery/qa154_183_origin_count_crosswalk_20261102.json)
 - [Offline fail-closed crosswalk validator](../qa/media-recovery/validate_qa154_183_origin_crosswalk_20261102.cjs)
-- [30 regression checks](../qa/media-recovery/test_qa154_183_origin_crosswalk_20261102.cjs)
+- [34 regression checks](../qa/media-recovery/test_qa154_183_origin_crosswalk_20261102.cjs)
 
-A replay of the **exact committed source** against all eight real inventory parts and the new ledger passed **30/30 cases**, including 24 successful/negative fixtures and six archival-licensing mutations, in isolated V8 with native Node assertions/load behavior shimmed. Independent native Node execution/CI and logged-out Chrome remain pending. The validator's native loader additionally checks each part against its recorded **Git blob SHA**. The Site QA CSV **blob SHA** is pinned but its original per-image HTML is unavailable on the Media Recovery branch.
+A replay of the **exact committed source** against all eight real inventory parts and the new ledger passed **34/34 cases**, including baseline/negative source-count fixtures, six archival-licensing mutations, and four additional viewer/HTTP evidence safeguards, in isolated V8 with native Node assertions/load behavior shimmed. Independent native Node execution/CI and logged-out Chrome remain pending. The validator's native loader additionally checks each part against its recorded **Git blob SHA**. The Site QA CSV **blob SHA** is pinned but its original per-image HTML is unavailable on the Media Recovery branch.
 
 Specific new commit identifiers:
 - Cross-branch 61-row ledger initially: `db143a72013c57477e4ab8553033b3742671fa3d`
@@ -33,6 +33,17 @@ Specific new commit identifiers:
 - NARA item-level candidates/rights HOLD: `296c49441ac567cac67c3d6f96b4c1d0146f44aa`
 - Strict archival rights/dimension guard: `7677b9ebd8f7c593f2ec19f2b478300fb8c1faf9`
 - Additional adverse tests: `1c71cf463562a80260e738e3e03834dc42088929`
+
+## Nov 2 exact-source rendering recheck (no HTTP claim)
+Read-only image-viewer retrieval successfully **displayed the actual stored Jetpack images** for both discrepancy slots:
+- Teton dam `291:0`: [exact stored `i0.wp.com` URL](https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1) — original breach photograph visibly rendered.
+- Three Mile Island `285:1`: [exact stored `i0.wp.com` URL](https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1) — original wide control-room photograph visibly rendered.
+
+The viewer supplied **no independently verified origin HTTP code, visitor Chrome request/response, transferred bytes, cache state, intrinsic file dimensions, or copyright grant**. This is **positive independent rendering evidence**, not a reliable guarantee that all visitor browsers can load them. The image scene comparison also reinforces the prohibition on silently swapping Squawkpoint's wide view with a distinct NARA image.
+
+Evidence recorded as `independent_source_image_retrieval` in the machine ledger; validator demands browser/copyright fields remain unknown. Four new adversarial tests reject fake browser HTTP, fake byte transfer, fabricated license permission and false viewer result.
+
+Additional exact commits: viewer evidence `fdd262ac7ed8e310e83d59da01d7f8d11494a385`; strict evidence typing `890ddc1855ceca32ca02e1563ce2859186fcead7`; 34-case test suite `42af979be3e89db6c140568d7e8c87efd6ce0705`.
 
 ## Release and transfer-weight gates remain CLOSED
 The 13 oversized WordPress originals and five 1672×941 inline PNGs remain storage observations, not page-wire measurements. **76% reduction: NOT MEASURED.** Compute valid savings only from complete paired, same-viewport, fully decoded actual CDP transfer-byte traces with exact request IDs and no missing images. **42 broken: NOT verified** in logged-out visitor Chrome. Do not count image retriever 403/404 as visitor status.
