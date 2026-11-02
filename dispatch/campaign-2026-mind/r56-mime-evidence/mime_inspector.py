@@ -58,7 +58,9 @@ class VisibleHTML(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack: list[tuple[str, bool]] = []
         self.words: list[str] = []
-        self.links: list[str] = []  # candidate opt-out links must be visible
+        self.links: list[str] = []  # legacy visible href inventory
+        self.visible_anchors: list[dict] = []  # href plus actual visible anchor text
+        self._active_anchor: dict | None = None
         self.all_links: list[str] = []  # hidden merchant links still count as routes
         self.remote_images = 0
         self.unsafe_links = 0
@@ -79,8 +81,22 @@ class VisibleHTML(HTMLParser):
             or zero_opacity or zero_font
         )
         hidden = self_hidden or (self.stack[-1][1] if self.stack else False)
-        if tag == "a":
-            href = a.get("href") or ""
+        # Clickable/navigation-bearing HTML is not limited to <a>. Preserve
+        # destinations privately as fixed counts only, never in the report.
+        routes = {
+            "a": a.get("href") or "",
+            "area": a.get("href") or "",
+            "form": a.get("action") or "",
+            "button": a.get("formaction") or "",
+            "input": a.get("formaction") or "",
+            "iframe": a.get("src") or "",
+            "object": a.get("data") or "",
+        }
+        href = routes.get(tag, "")
+        if tag == "meta" and (a.get("http-equiv") or "").casefold() == "refresh":
+            found = re.search(r"(?:^|;)\s*url\s*=\s*['\"]?([^;'\"]+)", a.get("content") or "", re.I)
+            href = found.group(1).strip() if found else ""
+        if href:
             self.all_links.append(href)
             try:
                 scheme = urlsplit(href).scheme.casefold()
@@ -89,8 +105,10 @@ class VisibleHTML(HTMLParser):
                 scheme = ""
             if scheme in {"javascript", "file", "data"}:
                 self.unsafe_links += 1
-            if not hidden:
-                self.links.append(href)
+        if tag == "a" and not hidden:
+            self.links.append(href)
+            self._active_anchor = {"href": href, "text": []}
+            self.visible_anchors.append(self._active_anchor)
         if tag == "img" and (a.get("src") or "").lower().startswith(("http://", "https://")):
             self.remote_images += 1
         # Remote CSS backgrounds may trigger fetches in some email clients.
@@ -105,14 +123,22 @@ class VisibleHTML(HTMLParser):
             self.handle_endtag(tag)
 
     def handle_endtag(self, tag: str) -> None:
+        if tag == "a":
+            self._active_anchor = None
         for index in range(len(self.stack) - 1, -1, -1):
             if self.stack[index][0] == tag:
                 del self.stack[index:]
                 return
 
     def handle_data(self, data: str) -> None:
+        # A hidden <style> element can still request remote images when read
+        # by a mail client. This is a risk indicator, not proof of retrieval.
+        if self.stack and self.stack[-1][0] == "style":
+            self.remote_images += len(re.findall(r"url\(\s*['\"]?https?://", data, re.I))
         if not self.stack or not self.stack[-1][1]:
             self.words.append(data)
+            if self._active_anchor is not None:
+                self._active_anchor["text"].append(data)
 
     @property
     def text(self) -> str:
@@ -159,12 +185,29 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
     subject = normalize(str(message.get("Subject", "")))
     sender_display = normalize(parseaddr(str(message.get("From", "")))[0])
     unsub_header = str(message.get("List-Unsubscribe", ""))
-    header_candidate = bool(re.search(r"<(?:https://|mailto:)[^<>]+>", unsub_header, re.I))
+    # Neither the presence of a List-Unsubscribe header nor a plausible
+    # visible link proves functional opt-out; reject obvious unrelated URLs.
+    unsub_paths = re.compile(r"unsub|opt[._-]?out|subscription|follow", re.I)
+    header_candidate = any(
+        safe_url_scheme(href) in {"https", "mailto"}
+        and not domain_is_seller(href)
+        and bool(unsub_paths.search(href))
+        for href in re.findall(r"<([^<>]+)>", unsub_header)
+    )
     visible_unsub_anchor = any(
-        safe_url_scheme(href) == "https"
-        for href in parsed.links
-        if "unsubscribe" in href.casefold() or "follow" in href.casefold()
-    ) and "unsubscribe" in normalize(body)
+        safe_url_scheme(anchor["href"]) == "https"
+        and not domain_is_seller(anchor["href"])
+        and bool(unsub_paths.search(anchor["href"]))
+        and bool(re.search(r"\bunsubscribe\b|\bopt[ -]?out\b",
+                           normalize(" ".join(anchor["text"])), re.I))
+        for anchor in parsed.visible_anchors
+    )
+    # Report the real MIME alternatives separately: a beautiful HTML
+    # disclosure cannot repair an undisclosed plaintext alternative.
+    plain_early_disclosure = bool(DISCLOSURE.search(" ".join(plain.split()[:85])))
+    html_early_disclosure = bool(DISCLOSURE.search(" ".join(parsed.text.split()[:85])))
+    disclosure_parity = ((not plain.strip() or plain_early_disclosure)
+                         and (not html.strip() or html_early_disclosure))
     links = set(parsed.all_links)
     links.update(URL.findall(plain))
     sellers = sum(1 for link in links if domain_is_seller(link))
@@ -181,6 +224,11 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
         "commercial_slot": commercial,
         "disclosure_in_visible_first_85_words": bool(DISCLOSURE.search(prefix)),
         "disclosure_in_visible_body": bool(DISCLOSURE.search(body)),
+        "disclosure_in_text_plain_first_85_words": plain_early_disclosure,
+        "disclosure_in_text_html_first_85_words": html_early_disclosure,
+        "commercial_disclosure_parity_across_mime_alternatives": (
+            disclosure_parity if commercial else True
+        ),
         "postal_exact_match_to_local_private_value": postal_seen,
         "list_unsubscribe_header_candidate": header_candidate,
         "visible_unsubscribe_link_candidate": visible_unsub_anchor,
@@ -223,6 +271,8 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
                       "HOLD_MERCHANT_GUIDE_AND_TRACKING_UNVERIFIED"])
         if not observed["disclosure_in_visible_first_85_words"]:
             holds.append("EARLY_COMMERCIAL_DISCLOSURE_MISSING")
+        if plain.strip() and html.strip() and not disclosure_parity:
+            holds.append("EARLY_DISCLOSURE_NOT_PRESENT_IN_BOTH_MIME_ALTERNATIVES")
         if sellers:
             holds.append("DIRECT_MERCHANT_LINK_BYPASSES_REVIEWED_GUIDE")
     observed["holds"] = holds
