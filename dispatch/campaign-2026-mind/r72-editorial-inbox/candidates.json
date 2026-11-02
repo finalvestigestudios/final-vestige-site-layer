@@ -60,9 +60,11 @@
       "planned_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
       "guide_url": null,
       "source_urls": [
-        "https://gallica.bnf.fr/"
+        "https://archive.org/details/mmoirespourservi00chas",
+        "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+        "https://catalogue.bnf.fr/ark:/12148/cb31160297p"
       ],
-      "notes": "Dates/source-image review required; printed-date/OCR discrepancy not independently settled.",
+      "notes": "First-edition digitized copy and CIRCEE cross-check locate May 4 report within May 8 letter, but exact printed page image/OCR has not been independently inspected; do not imply proven treatment.",
       "send_approved": false,
       "production_excerpt_installed": false,
       "original_full_manuscript_modified": false
