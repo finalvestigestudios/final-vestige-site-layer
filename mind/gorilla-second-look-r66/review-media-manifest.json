@@ -1,0 +1,64 @@
+{
+  "title": "The Other Change — original six-scene educational film / source-only review",
+  "milestone": "R66",
+  "produced": "2026-11-02",
+  "publication": "NOT_PUBLISHED",
+  "active_site_playback": false,
+  "film": {
+    "filename": "the-other-change-40s.mp4",
+    "availability": "local-offline-review-attachment-only",
+    "duration_seconds": 40,
+    "dimensions": "540x960",
+    "frames": 480,
+    "frame_rate": 12,
+    "codec": "h264",
+    "bytes": 73742,
+    "sha256": "919f6e1cd8d94334c70c7b595aa42f49429e54476ba378ce6316027fb561f7c1"
+  },
+  "renderer": {
+    "path": "render_film.py",
+    "git_blob_sha": "ab0db0e384abd00d3fe29e1b10e4514e62928de0",
+    "source_controlled": true,
+    "local_git_hash_verified_equal": true,
+    "fonts": "uses locally installed DejaVu fonts; font files not redistributed"
+  },
+  "captions": {
+    "path": "captions.vtt",
+    "git_blob_sha": "ef71c5aec20d9341dd8aae558354e45414059765",
+    "local_git_hash_verified_equal": true,
+    "cues": 6,
+    "first_second": 0,
+    "last_second": 40
+  },
+  "poster": {
+    "filename": "poster.png",
+    "sha256": "ce271feca54b8d7df1b31a413cf501d9ed322bc5061f295fa74fef7cc2fb34ee"
+  },
+  "contact_sheet": {
+    "filename": "contact-sheet.jpg",
+    "sha256": "375bd3c113a0f36a636bb7538bec18419b7a85f89359ab09561ac0aee67d1200",
+    "visual_review": "all six scenes inspected via contact sheet"
+  },
+  "offline_review_zip": {
+    "filename": "r66-offline-review.zip",
+    "sha256": "c98f65c0cca7019fb5c3b1ed636f5e6827051283f88430f3d06f2b104a980cdc",
+    "zip_integrity": "PASS",
+    "includes": [
+      "film",
+      "poster",
+      "contact sheet",
+      "renderer",
+      "captions",
+      "HTML5 review player"
+    ]
+  },
+  "film_copy": "Historical-science educational narrative; not original 1999/2010 experiment footage, not a controlled trial, not a Zen12 endorsement.",
+  "caption_sync": "Timed VTT cue boundaries match the six 7/7/6/7/7/6-second scene blocks. Browser-native caption QA still required before hosted publication.",
+  "release_requirements": [
+    "No active merchant links until written publisher-specific terms and URL verified",
+    "No CMS media upload until separate approval",
+    "No hosted player claim before media hosted and tested",
+    "No autoplay, first-party media only, subtitles/transcript reviewed",
+    "Film B variant is currently illustrated transcript only; no fake playable HTML5 src"
+  ]
+}
