@@ -1,0 +1,18 @@
+# USS Tang: exact original-render recheck and archival crop disparities — 2026-11-02
+
+**Incremental update to the existing** 2026-10-31 `tang_274_nhhc_20261031.json` archival mapping; not a new claim of seven undiscovered records. All seven NHHC catalog IDs had already been identified in the earlier batch. This sprint adds **two independent displays of exact published URLs** and a source-vs-NHHC-high-master aspect-ratio crosscheck. Frozen WordPress post reference: `parts/04.json`, blob `6df3251e5a67a971d87a516a1ba4a0cc32f51f96`; **no fresh WordPress production read**.
+
+### New observations
+- **274:0 — NH 42273**: the exact published Wikimedia 1280px JPEG displayed through the independent web image renderer. Commons original **5019×3070 (1.635)** versus Navy high-resolution TIFF catalog **5782×3672 (1.575)**. Different ratio means catalog master is **not a verified identical-frame replacement**, though the scene/acquisition ID matches.
+- **274:5 — 80-G-227991**: exact published Wikimedia 1280px JPEG displayed. Commons original **5670×4150 (1.366)**, NHHC TIFF catalog **6102×4918 (1.241)**. A raw Navy master substitute could materially alter the historic photo crop. The 1280px publisher thumb is not its 7.73MB Commons original as a measured wire transfer.
+- **274:6 — 80-G-227989**: the published WarHistoryOnline source returned no independent numeric origin status. Commons scene JPEG **1910×1288 (1.483)** versus NHHC TIFF **6060×4926 (1.230)**; this is a **candidate composition mismatch**, not a demonstrated defect of the existing article.
+- **274:1, 274:2, 274:3 and 274:4**: independent image-viewer retrieval was inaccessible without a numeric origin status. No actual visitor-browser failures can be inferred. Keep current images unless Site QA verifies a failure.
+- **274:2 editorial caveat:** Navy **NH 84498** depicts Mark 18-2 (top) **and** Mark 16-1 (bottom). The existing ALT mentions only the first; whether the latter is visible in the displayed crop remains unknown. **274:3** is **1930 USS V-5** escape lung demonstration, not the USS Tang's 1944 escape. Retain historically correct editorial distinctions.
+
+### Rights and 960px WordPress staging plan
+
+[Official NHHC image policy](https://www.history.navy.mil/our-collections/photography.html) says **most**, not all, photographs are public domain. Each specific accession needs review, creator/custodian credit and a release/caching decision. All rights, downloads, WordPress uploads, post rewrites and staging **HOLD**. Catalog TIFF dimensions are not current browser intrinsic dimensions. If logged-out guest Chrome verifies a failure, verify same crop via side-by-side authorized asset review; capture true decoded orientation, SHA-256 and copyright basis. Only then create a **maximum 960px** derivative, no upscale. Compare screenshot, CDP image request IDs, actual origin HTTP/MIME, responsive `currentSrc`, natural pixels and bytes at matched desktop/mobile conditions, with rollback media ID; obtain separate production publishing approval.
+
+Machine-readable [seven-source follow-up ledger](../qa/media-recovery/tang_274_nhhc_20261102.json), [strict delta validator](../qa/media-recovery/validate_tang_274_20261102.cjs) and [35-case regression suite](../qa/media-recovery/test_tang_274_20261102.cjs) are separate from the earlier Tang audit and from Site QA PR #154.
+
+**Important:** 2 displayed via external image renderer, 5 inaccessible **without numeric origin HTTP**, 0 confirmed visitor-browser failures, no proven 42, no measured 76%, 0 production fixes. No archival binaries downloaded and no WordPress or homepage changes or spend.
