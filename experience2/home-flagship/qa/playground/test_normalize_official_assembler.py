@@ -33,7 +33,10 @@ class AssemblerNormalizationTests(unittest.TestCase):
                     entry.external_attr = (stat.S_IFLNK | 0o777) << 16 if symlink else (stat.S_IFREG | 0o644) << 16
                     z.writestr(entry, raw)
                 else:
-                    z.writestr(name, payload)
+                    entry = zipfile.ZipInfo(name)
+                    entry.create_system = 3
+                    entry.external_attr = (stat.S_IFREG | 0o644) << 16
+                    z.writestr(entry, payload)
 
     def valid(self):
         return {
