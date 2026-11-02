@@ -1,6 +1,6 @@
 {
  "summary": {
-  "browser": "Microsoft Edge 156.0.4314.50 via Playwright (headless)",
+  "browser": "Microsoft Edge 156.0.4314.58 via Playwright (headless)",
   "widths": [
    320,
    360,
@@ -45,7 +45,7 @@
   {
    "check": "load-time hub@320",
    "pass": true,
-   "detail": "225 ms"
+   "detail": "239 ms"
   },
   {
    "check": "a11y-names hub@320",
@@ -85,7 +85,7 @@
   {
    "check": "load-time hub@360",
    "pass": true,
-   "detail": "208 ms"
+   "detail": "211 ms"
   },
   {
    "check": "no-horizontal-overflow hub@390",
@@ -110,7 +110,7 @@
   {
    "check": "load-time hub@390",
    "pass": true,
-   "detail": "215 ms"
+   "detail": "206 ms"
   },
   {
    "check": "no-horizontal-overflow hub@428",
@@ -135,7 +135,7 @@
   {
    "check": "load-time hub@428",
    "pass": true,
-   "detail": "210 ms"
+   "detail": "203 ms"
   },
   {
    "check": "no-horizontal-overflow hub@768",
@@ -160,7 +160,7 @@
   {
    "check": "load-time hub@768",
    "pass": true,
-   "detail": "220 ms"
+   "detail": "214 ms"
   },
   {
    "check": "no-horizontal-overflow hub@1024",
@@ -185,7 +185,7 @@
   {
    "check": "load-time hub@1024",
    "pass": true,
-   "detail": "211 ms"
+   "detail": "203 ms"
   },
   {
    "check": "no-horizontal-overflow hub@1440",
@@ -210,7 +210,7 @@
   {
    "check": "load-time hub@1440",
    "pass": true,
-   "detail": "216 ms"
+   "detail": "208 ms"
   },
   {
    "check": "a11y-names hub@1440",
@@ -250,7 +250,7 @@
   {
    "check": "load-time hub@1920",
    "pass": true,
-   "detail": "211 ms"
+   "detail": "217 ms"
   },
   {
    "check": "no-horizontal-overflow plan@320",
@@ -275,7 +275,7 @@
   {
    "check": "load-time plan@320",
    "pass": true,
-   "detail": "317 ms"
+   "detail": "252 ms"
   },
   {
    "check": "a11y-names plan@320",
@@ -340,7 +340,7 @@
   {
    "check": "load-time plan@390",
    "pass": true,
-   "detail": "244 ms"
+   "detail": "243 ms"
   },
   {
    "check": "no-horizontal-overflow plan@428",
@@ -365,7 +365,7 @@
   {
    "check": "load-time plan@428",
    "pass": true,
-   "detail": "243 ms"
+   "detail": "244 ms"
   },
   {
    "check": "no-horizontal-overflow plan@768",
@@ -390,7 +390,7 @@
   {
    "check": "load-time plan@768",
    "pass": true,
-   "detail": "240 ms"
+   "detail": "264 ms"
   },
   {
    "check": "no-horizontal-overflow plan@1024",
@@ -415,7 +415,7 @@
   {
    "check": "load-time plan@1024",
    "pass": true,
-   "detail": "237 ms"
+   "detail": "255 ms"
   },
   {
    "check": "no-horizontal-overflow plan@1440",
@@ -440,7 +440,7 @@
   {
    "check": "load-time plan@1440",
    "pass": true,
-   "detail": "240 ms"
+   "detail": "249 ms"
   },
   {
    "check": "a11y-names plan@1440",
@@ -480,7 +480,7 @@
   {
    "check": "load-time plan@1920",
    "pass": true,
-   "detail": "246 ms"
+   "detail": "233 ms"
   },
   {
    "check": "no-horizontal-overflow kit@320",
@@ -505,7 +505,7 @@
   {
    "check": "load-time kit@320",
    "pass": true,
-   "detail": "226 ms"
+   "detail": "229 ms"
   },
   {
    "check": "a11y-names kit@320",
@@ -545,7 +545,7 @@
   {
    "check": "load-time kit@360",
    "pass": true,
-   "detail": "230 ms"
+   "detail": "221 ms"
   },
   {
    "check": "no-horizontal-overflow kit@390",
@@ -570,7 +570,7 @@
   {
    "check": "load-time kit@390",
    "pass": true,
-   "detail": "224 ms"
+   "detail": "222 ms"
   },
   {
    "check": "no-horizontal-overflow kit@428",
@@ -595,7 +595,7 @@
   {
    "check": "load-time kit@428",
    "pass": true,
-   "detail": "225 ms"
+   "detail": "224 ms"
   },
   {
    "check": "no-horizontal-overflow kit@768",
@@ -620,7 +620,7 @@
   {
    "check": "load-time kit@768",
    "pass": true,
-   "detail": "220 ms"
+   "detail": "234 ms"
   },
   {
    "check": "no-horizontal-overflow kit@1024",
@@ -645,7 +645,7 @@
   {
    "check": "load-time kit@1024",
    "pass": true,
-   "detail": "222 ms"
+   "detail": "233 ms"
   },
   {
    "check": "no-horizontal-overflow kit@1440",
@@ -670,7 +670,7 @@
   {
    "check": "load-time kit@1440",
    "pass": true,
-   "detail": "230 ms"
+   "detail": "226 ms"
   },
   {
    "check": "a11y-names kit@1440",
@@ -710,7 +710,7 @@
   {
    "check": "load-time kit@1920",
    "pass": true,
-   "detail": "233 ms"
+   "detail": "227 ms"
   },
   {
    "check": "no-horizontal-overflow a1@320",
@@ -735,7 +735,7 @@
   {
    "check": "load-time a1@320",
    "pass": true,
-   "detail": "233 ms"
+   "detail": "227 ms"
   },
   {
    "check": "a11y-names a1@320",
@@ -775,7 +775,7 @@
   {
    "check": "load-time a1@360",
    "pass": true,
-   "detail": "231 ms"
+   "detail": "223 ms"
   },
   {
    "check": "no-horizontal-overflow a1@390",
@@ -800,7 +800,7 @@
   {
    "check": "load-time a1@390",
    "pass": true,
-   "detail": "219 ms"
+   "detail": "221 ms"
   },
   {
    "check": "no-horizontal-overflow a1@428",
@@ -825,7 +825,7 @@
   {
    "check": "load-time a1@428",
    "pass": true,
-   "detail": "227 ms"
+   "detail": "238 ms"
   },
   {
    "check": "no-horizontal-overflow a1@768",
@@ -850,7 +850,7 @@
   {
    "check": "load-time a1@768",
    "pass": true,
-   "detail": "232 ms"
+   "detail": "228 ms"
   },
   {
    "check": "no-horizontal-overflow a1@1024",
@@ -875,7 +875,7 @@
   {
    "check": "load-time a1@1024",
    "pass": true,
-   "detail": "230 ms"
+   "detail": "226 ms"
   },
   {
    "check": "no-horizontal-overflow a1@1440",
@@ -900,7 +900,7 @@
   {
    "check": "load-time a1@1440",
    "pass": true,
-   "detail": "226 ms"
+   "detail": "230 ms"
   },
   {
    "check": "a11y-names a1@1440",
@@ -940,7 +940,7 @@
   {
    "check": "load-time a1@1920",
    "pass": true,
-   "detail": "225 ms"
+   "detail": "237 ms"
   },
   {
    "check": "no-horizontal-overflow a2@320",
@@ -965,7 +965,7 @@
   {
    "check": "load-time a2@320",
    "pass": true,
-   "detail": "231 ms"
+   "detail": "241 ms"
   },
   {
    "check": "a11y-names a2@320",
@@ -980,7 +980,7 @@
   {
    "check": "contrast a2@320",
    "pass": true,
-   "detail": "0 low-contrast of 331: []"
+   "detail": "0 low-contrast of 336: []"
   },
   {
    "check": "no-horizontal-overflow a2@360",
@@ -1005,7 +1005,7 @@
   {
    "check": "load-time a2@360",
    "pass": true,
-   "detail": "224 ms"
+   "detail": "264 ms"
   },
   {
    "check": "no-horizontal-overflow a2@390",
@@ -1030,7 +1030,7 @@
   {
    "check": "load-time a2@390",
    "pass": true,
-   "detail": "226 ms"
+   "detail": "236 ms"
   },
   {
    "check": "no-horizontal-overflow a2@428",
@@ -1055,7 +1055,7 @@
   {
    "check": "load-time a2@428",
    "pass": true,
-   "detail": "236 ms"
+   "detail": "233 ms"
   },
   {
    "check": "no-horizontal-overflow a2@768",
@@ -1080,7 +1080,7 @@
   {
    "check": "load-time a2@768",
    "pass": true,
-   "detail": "236 ms"
+   "detail": "245 ms"
   },
   {
    "check": "no-horizontal-overflow a2@1024",
@@ -1105,7 +1105,7 @@
   {
    "check": "load-time a2@1024",
    "pass": true,
-   "detail": "220 ms"
+   "detail": "221 ms"
   },
   {
    "check": "no-horizontal-overflow a2@1440",
@@ -1130,7 +1130,7 @@
   {
    "check": "load-time a2@1440",
    "pass": true,
-   "detail": "225 ms"
+   "detail": "234 ms"
   },
   {
    "check": "a11y-names a2@1440",
@@ -1145,7 +1145,7 @@
   {
    "check": "contrast a2@1440",
    "pass": true,
-   "detail": "0 low-contrast of 331: []"
+   "detail": "0 low-contrast of 336: []"
   },
   {
    "check": "no-horizontal-overflow a2@1920",
@@ -1170,7 +1170,7 @@
   {
    "check": "load-time a2@1920",
    "pass": true,
-   "detail": "237 ms"
+   "detail": "221 ms"
   },
   {
    "check": "no-horizontal-overflow a3@320",
@@ -1195,7 +1195,7 @@
   {
    "check": "load-time a3@320",
    "pass": true,
-   "detail": "238 ms"
+   "detail": "228 ms"
   },
   {
    "check": "a11y-names a3@320",
@@ -1235,7 +1235,7 @@
   {
    "check": "load-time a3@360",
    "pass": true,
-   "detail": "228 ms"
+   "detail": "237 ms"
   },
   {
    "check": "no-horizontal-overflow a3@390",
@@ -1260,7 +1260,7 @@
   {
    "check": "load-time a3@390",
    "pass": true,
-   "detail": "228 ms"
+   "detail": "224 ms"
   },
   {
    "check": "no-horizontal-overflow a3@428",
@@ -1285,7 +1285,7 @@
   {
    "check": "load-time a3@428",
    "pass": true,
-   "detail": "225 ms"
+   "detail": "243 ms"
   },
   {
    "check": "no-horizontal-overflow a3@768",
@@ -1310,7 +1310,7 @@
   {
    "check": "load-time a3@768",
    "pass": true,
-   "detail": "230 ms"
+   "detail": "222 ms"
   },
   {
    "check": "no-horizontal-overflow a3@1024",
@@ -1335,7 +1335,7 @@
   {
    "check": "load-time a3@1024",
    "pass": true,
-   "detail": "231 ms"
+   "detail": "219 ms"
   },
   {
    "check": "no-horizontal-overflow a3@1440",
@@ -1360,7 +1360,7 @@
   {
    "check": "load-time a3@1440",
    "pass": true,
-   "detail": "231 ms"
+   "detail": "235 ms"
   },
   {
    "check": "a11y-names a3@1440",
@@ -1400,7 +1400,7 @@
   {
    "check": "load-time a3@1920",
    "pass": true,
-   "detail": "236 ms"
+   "detail": "214 ms"
   },
   {
    "check": "no-horizontal-overflow a4@320",
@@ -1425,7 +1425,7 @@
   {
    "check": "load-time a4@320",
    "pass": true,
-   "detail": "226 ms"
+   "detail": "221 ms"
   },
   {
    "check": "a11y-names a4@320",
@@ -1465,7 +1465,7 @@
   {
    "check": "load-time a4@360",
    "pass": true,
-   "detail": "232 ms"
+   "detail": "220 ms"
   },
   {
    "check": "no-horizontal-overflow a4@390",
@@ -1490,7 +1490,7 @@
   {
    "check": "load-time a4@390",
    "pass": true,
-   "detail": "234 ms"
+   "detail": "233 ms"
   },
   {
    "check": "no-horizontal-overflow a4@428",
@@ -1515,7 +1515,7 @@
   {
    "check": "load-time a4@428",
    "pass": true,
-   "detail": "238 ms"
+   "detail": "221 ms"
   },
   {
    "check": "no-horizontal-overflow a4@768",
@@ -1540,7 +1540,7 @@
   {
    "check": "load-time a4@768",
    "pass": true,
-   "detail": "223 ms"
+   "detail": "224 ms"
   },
   {
    "check": "no-horizontal-overflow a4@1024",
@@ -1565,7 +1565,7 @@
   {
    "check": "load-time a4@1024",
    "pass": true,
-   "detail": "227 ms"
+   "detail": "216 ms"
   },
   {
    "check": "no-horizontal-overflow a4@1440",
@@ -1590,7 +1590,7 @@
   {
    "check": "load-time a4@1440",
    "pass": true,
-   "detail": "221 ms"
+   "detail": "225 ms"
   },
   {
    "check": "a11y-names a4@1440",
@@ -1630,7 +1630,7 @@
   {
    "check": "load-time a4@1920",
    "pass": true,
-   "detail": "227 ms"
+   "detail": "233 ms"
   },
   {
    "check": "plan: builder rendered",
