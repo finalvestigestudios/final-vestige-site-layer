@@ -1,0 +1,11 @@
+{
+  "source": "https://finalvestige.com/ front-end HTML, inner HTML of .entry-content.wp-block-post-content (public, unauthenticated GET)",
+  "wordpress_page_id": 6,
+  "page_modified": "2026-10-30T09:14:14",
+  "fetched": "2026-11-02",
+  "sha256": "635c8ed38b3e9d78556423b60c4dffdbf57873b4a9b49f5b87f16f57a5066a47",
+  "bytes": 71955,
+  "why_not_rest": "REST content.rendered omits the Jetpack subscribe form's email input; the front-end HTML is the faithful render",
+  "note": "Read-only public snapshot; no subscriber records, credentials or private data.",
+  "extraction": "byte-exact substring of the live HTML between the entry-content opening tag and its matching </div>; no re-serialization"
+}

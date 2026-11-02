@@ -28,10 +28,15 @@ wp_set_current_user(1);
 if (!current_user_can('unfiltered_html')) { throw new RuntimeException('admin lacks unfiltered_html'); }
 $body = file_get_contents('/wordpress/wp-content/uploads/fv-ex2-stage/page-content.html');
 if (!$body || strlen($body) < 50000) { throw new RuntimeException('page content missing'); }
+// Production's homepage is page ID 6 and many live CSS rules are keyed to .page-id-6.
+// The local copy takes the same ID so those selectors apply exactly as they do in production.
+if (get_post(6)) { throw new RuntimeException('local post ID 6 already in use'); }
 $id = wp_insert_post(wp_slash([
     'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Final Vestige Studios',
     'post_name' => 'fv-flagship-candidate', 'post_content' => $body, 'comment_status' => 'closed',
+    'import_id' => 6,
 ]), true);
+if (!is_wp_error($id) && (int) $id !== 6) { throw new RuntimeException('page did not take ID 6: ' . $id); }
 if (is_wp_error($id)) { throw new RuntimeException($id->get_error_message()); }
 if (get_post_field('post_content', $id) !== $body) { throw new RuntimeException('READBACK MISMATCH'); }
 update_option('show_on_front', 'page');
@@ -54,9 +59,9 @@ def blueprint():
                 "WP_DEBUG_LOG": True}},
             {"step": "activateTheme", "themeFolderName": "assembler"},
             {"step": "activatePlugin", "pluginPath": "fv-flagship-candidate/fv-flagship-candidate.php"},
+            {"step": "runPHP", "code": SEED_PHP},
             {"step": "runPHP", "code": "<?php require_once '/wordpress/wp-load.php'; wp_set_current_user(1); "
                                        "require '/wordpress/wp-content/uploads/fv-ex2-parity/apply_local_parity.php';"},
-            {"step": "runPHP", "code": SEED_PHP},
         ],
     }
 

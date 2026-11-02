@@ -3,7 +3,7 @@
 
 Inputs (all committed):
   ../index.html + css/js            the seven-chapter Experience 2.0 flagship (PR #550)
-  snapshot/page6-public-rendered.html   public rendered body of live page 6 (read-only snapshot)
+  snapshot/page6-live-frontend-body.html   public rendered body of live page 6 (read-only snapshot)
   parity/                           public-safe Assembler header/footer/page template parity
 
 Output directory (never inside the git checkout):
@@ -27,7 +27,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FLAG = HERE.parent
-ASSETS_CSS = ["site-parity.css", "flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css",
+ASSETS_CSS = ["site-parity.css", "live-block-support.css", "flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css",
               "observer-lab.css", "reading-trail.css", "wp-integration.css"]
 ASSETS_JS = ["flagship.js", "observer-lab.js", "chronicle-lens.js", "reading-trail.js"]
 
@@ -72,6 +72,11 @@ PLUGIN_PHP = r"""<?php
  * Version: 0.1.0
  */
 if (!defined('ABSPATH')) { exit; }
+// Local review safety: the preserved Jetpack form posts to wordpress.com/email-subscriptions
+// (the real production list). Refuse any cross-origin form submission from this copy.
+add_action('send_headers', function () {
+    header("Content-Security-Policy: form-action 'self'");
+});
 add_action('wp_enqueue_scripts', function () {
     if (!is_front_page()) { return; }
     $base = plugin_dir_url(__FILE__) . 'assets/';
@@ -89,7 +94,7 @@ add_action('wp_enqueue_scripts', function () {
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, type=Path)
-    ap.add_argument("--page6", type=Path, default=HERE / "snapshot" / "page6-public-rendered.html")
+    ap.add_argument("--page6", type=Path, default=HERE / "snapshot" / "page6-live-frontend-body.html")
     a = ap.parse_args()
     out = a.out.resolve()
     if FLAG in out.parents or out == FLAG:
@@ -109,6 +114,9 @@ def main():
     (plug / "assets" / "site-parity.css").write_text(parity["global_styles"]["styles"]["css"], encoding="utf-8")
     for f in ASSETS_CSS + ASSETS_JS:
         if f == "site-parity.css":
+            continue
+        if f == "live-block-support.css":
+            shutil.copyfile(HERE / "snapshot" / f, plug / "assets" / f)
             continue
         shutil.copyfile((FLAG / f) if (FLAG / f).exists() else (HERE / f), plug / "assets" / f)
     php = PLUGIN_PHP.replace("%CSS%", json.dumps(ASSETS_CSS).replace('"', "'").replace("[", "[").replace("]", "]"))
