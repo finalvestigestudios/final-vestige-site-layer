@@ -11,7 +11,7 @@ permissions:
   contents: read
 jobs:
   exact-source-php:
-    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101')
+    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101' || github.head_ref == 'fix/ex2-pr580-playground-runtime-pin-20261102')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -39,10 +39,13 @@ jobs:
           python -m unittest discover -s experience2/home-flagship/qa/playground/parity -p test_prepare_unified_playground.py -v
           python -m unittest discover -s experience2/home-flagship/qa/playground/parity -p test_wp_slash_persistence.py -v
           python -m unittest discover -s experience2/home-flagship/qa/playground -p test_local_http_readiness.py -v
+          python -m unittest discover -s experience2/home-flagship/qa/playground -p test_playground_runtime_contract.py -v
 
   ephemeral-wordpress:
-    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101')
+    if: github.event.pull_request.head.repo.full_name == github.repository && (github.head_ref == 'qa/ex2-private-wp-candidate-contract-20261102' || github.head_ref == 'fix/ex2-pr573-native-wordpress-slash-custody-20261101' || github.head_ref == 'fix/ex2-pr576-local-playground-readiness-evidence-20261101' || github.head_ref == 'fix/ex2-pr580-playground-runtime-pin-20261102')
     needs: exact-source-php
+    env:
+      npm_config_engine_strict: 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 24
     steps:
@@ -56,7 +59,17 @@ jobs:
           python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24.18.0'
+      - name: Pin Node/npm to installed Playground CLI 3.1.61 engine requirements
+        shell: bash
+        run: |
+          set -euo pipefail
+          # 3.1.61 requires Node >=24.18.0 and npm >=11.16.0;
+          # GitHub run 41407578279 incorrectly used Node 22/npm 10.
+          # GitHub runner only: no CMS, hosted staging or credentials.
+          npm install --global --no-audit --no-fund npm@11.16.0
+          python experience2/home-flagship/qa/playground/check_playground_runtime.py
+          test "$(npm config get engine-strict)" = "true"
       - name: Pin exact source and ensure no staging CMS production endpoint
         shell: bash
         env:
@@ -108,7 +121,7 @@ jobs:
           python -m pip install --disable-pip-version-check playwright==1.55.0
           python -m playwright install --with-deps chromium
           npm install --prefix "$RUNNER_TEMP/fv-ex2-axe" --no-save --ignore-scripts --no-package-lock axe-core@4.14.0
-      - name: Prewarm actual Playground CLI; prove noninteractive package resolution
+      - name: Prewarm pinned Playground 3.1.61 CLI under engine-strict runtime
         shell: bash
         env:
           npm_config_yes: 'true'
@@ -118,7 +131,7 @@ jobs:
           set -euo pipefail
           # No production URL or credentials. This is a CLI-only preflight,
           # never a claim that WordPress has rendered.
-          timeout 120s npx --yes @wp-playground/cli@latest server --version
+          timeout 120s npx --yes @wp-playground/cli@3.1.61 server --help >/dev/null
 
       - name: Launch ephemeral local WordPress and run the existing five-width source/integration/axe/media gate
         shell: bash
