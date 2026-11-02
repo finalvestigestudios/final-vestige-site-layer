@@ -41,6 +41,7 @@ def run_compose(assets: dict[str, bytes]) -> tuple[int, dict]:
 define('ABSPATH', '/local-test-only/');
 function add_shortcode($name,$handler) { return true; }
 function add_action($name,$handler) { return true; }
+function plugin_dir_path($path) { return dirname($path) . DIRECTORY_SEPARATOR; }
 require $argv[1];
 $composed = fv_ex2_private_compose();
 if ($composed === null) { echo json_encode(['status'=>'BLOCKED']); exit(2); }
