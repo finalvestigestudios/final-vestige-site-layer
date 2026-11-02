@@ -1,3 +1,7 @@
+## R129 — Windows 11 reviewer evidence ancestry (DRAFT / RELEASE HOLD)
+
+Direct private R109 source and witness validation now rejects linked/reparse parent directories, checks directory identity before/after file reads, and validates even empty witness-folder ancestry. [R129 path-custody threat model and 16 synthetic tests](docs/PRIVATE_WIN11_PARENT_PATH_CUSTODY_R129.md). Linux/Windows normal and `-OO` source gates are mandatory; no synthetic test certifies human Win11 accessibility, malware clearance, code signing, protected premium delivery, independent QD or founder approval. **All six utilities remain UNRELEASED.**
+
 ## R128 — human-witness Unicode display integrity (DRAFT / RELEASE HOLD)
 
 Local Windows 11 accessibility observations now reject C1 controls, hidden format marks, exotic spaces, blank/filler characters and Unicode variation selectors at both recording and revalidation of old v1/new v2 witnesses, even when evidence has a recomputed SHA-256. Ordinary multilingual letters, combining accents, spaces, tabs and newlines remain usable. [R128 engineering and limitations](docs/PRIVATE_WIN11_VISIBLE_OBSERVATIONS_R128.md). Fourteen synthetic regression methods must pass on Linux and Windows in normal and optimized modes. This does not constitute independent physical testing. **All six apps UNRELEASED; 46 human checks, real Defender/EDR, signing, protected premium delivery, independent QD and founder approval HOLD.**
