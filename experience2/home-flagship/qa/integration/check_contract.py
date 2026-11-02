@@ -78,7 +78,29 @@ def scan(root:Path):
     ck("no_external_executable_assets",all(x.startswith("./") for x in p.styles+p.scripts))
     ck("no_web_form_or_affiliate_checkout",not p.forms and not any(x in content.lower() for x in PUBLICATION_FORBIDDEN))
     ck("source_custody_links",all(s in content for s in ("rmg.co.uk/collections/objects/","historymuseum.ca/blog/a-very-special-piece-of-paper","nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/","digitalcollections.nypl.org/items/")))
-    ck("image_dimensions_declared",all(x.get("width") and x.get("height") and x.get("alt") for x in p.images),str([x.get("src") for x in p.images if not (x.get("width") and x.get("height") and x.get("alt"))]))
+    # A photo with no script must still render; its eager duplicate is
+    # intentionally decorative because the original lazy image already has
+    # meaningful alt text. Reject arbitrary empty-alt images, or a fallback
+    # with an unreviewed source. The normal image remains semantically named.
+    primary = [x for x in p.images if "data-fv-archive-img" in x]
+    fallback = [x for x in p.images if "data-fv-noscript-archive" in x]
+    def valid_image(x):
+        has_dims = bool(x.get("width") and x.get("height"))
+        normal = bool(x.get("alt")) and "data-fv-noscript-archive" not in x
+        decorative = ("data-fv-noscript-archive" in x
+                      and x.get("alt") == "" and x.get("role") == "presentation"
+                      and x.get("aria-hidden") == "true" and x.get("loading") == "eager")
+        return has_dims and (normal or decorative)
+    ck("image_dimensions_declared", all(valid_image(x) for x in p.images),
+       str([x.get("src") for x in p.images if not valid_image(x)]))
+    ck("nojs_archive_fallbacks_source_locked",
+       len(primary) == 2 and len(fallback) == 2 and len(p.images) == 4
+       and all(f.get("src") == n.get("src") and f.get("width") == n.get("width")
+               and f.get("height") == n.get("height") and f.get("srcset") == n.get("srcset")
+               and f.get("sizes") == n.get("sizes") and n.get("loading") == "lazy"
+               for n, f in zip(primary, fallback)),
+       "Only the two original Apollo/Franklin archive images may have no-JS fallbacks")
+
     ck("no_script_only_chapters",all(x in content for x in ('id="fv-hf-chronicle"','id="fv-hf-evidence"','id="fv-hf-inquiry"','id="fv-hf-observer"')))
     # Relative assets are fully enumerated, preventing accidental unbundled files.
     ck("asset_manifest_self_contained",all((root/x.lstrip("./")).is_file() for x in p.styles+p.scripts))

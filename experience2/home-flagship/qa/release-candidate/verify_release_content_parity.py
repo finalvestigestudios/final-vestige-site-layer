@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail-closed, offline #604 production -> #609 WordPress source-custody contract.
 
-The fixture is the exact proposed page-6 replacement block from release PR #604,
+The fixture began as proposed page-6 block PR #604 but is explicitly revised on this review branch,
 NOT a production WordPress read, deployment instruction or rights clearance.
 Only the seven-chapter editorial interior is expected to match byte-for-byte:
 WordPress retains its single native header/main/footer and excludes the
@@ -11,14 +11,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 
 HOME = Path("experience2/home-flagship")
 SOURCE = HOME / "index.html"
 RELEASE_FIXTURE = HOME / "qa/release-candidate/fixtures/proposed-production-block-pr604.html"
-PRODUCTION_RELEASE_HEAD = "5f87f1b0a48ed2f17ecca49a60c44a482ca530de"
-PRODUCTION_SOURCE_BLOB = "4227e008d157ba53a015caf4095927caf8436c3d"
-PRODUCTION_BLOCK_BLOB = "8629aeec91a0aab9b832679eb27f741c1b9465cb"
+PRODUCTION_RELEASE_HEAD = "5f87f1b0a48ed2f17ecca49a60c44a482ca530de"  # historical origin only, not current blob
+PRODUCTION_SOURCE_BLOB = "978e25e69cd6b077863515158a9e696a5c4e9a8c"
+PRODUCTION_BLOCK_BLOB = "ebe62f4b145fddf6925efc1b8502abef4a2177a8"
 OPENING = '<section class="fv-hf__opening"'
 CLOSING = "</section>"
 RIGHTS = {
@@ -67,6 +68,29 @@ def compare_interiors(source: str, production: str) -> dict:
             or '<img' in malbone_figure
             or 'edit-017-v02-nypl-5003296-original.jpg' in a):
         raise ValueError("RELEASE_PARITY_NYPL_UNCLEARED_IMAGE_REPRODUCTION")
+    # Source and proposed WordPress block must retain a real image even when
+    # JavaScript is disabled. The script-enabled <img> remains lazy; the
+    # <noscript> sibling is eager, decorative (avoids duplicate announced alt),
+    # and references the SAME reviewed image URL. Neither branch may add NYPL.
+    normal = re.findall(r'<img\b[^>]*\bdata-fv-archive-img>', a)
+    fallback = re.findall(r'<noscript>\s*(<img\b[^>]*>)\s*</noscript>', a)
+    attr = lambda tag, key: (re.search(r'\b'+key+r'="([^"]*)"', tag) or [None, None])[1]
+    if (len(normal) != 2 or len(fallback) != 2
+            or a.count('<noscript>') != 2
+            or a.count('data-fv-noscript-archive') != 2):
+        raise ValueError("RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE")
+    for normal_tag, fallback_tag in zip(normal, fallback):
+        if (attr(normal_tag, 'src') != attr(fallback_tag, 'src')
+                or attr(normal_tag, 'loading') != 'lazy'
+                or attr(fallback_tag, 'loading') != 'eager'
+                or attr(fallback_tag, 'alt') != ''
+                or attr(fallback_tag, 'role') != 'presentation'
+                or attr(fallback_tag, 'aria-hidden') != 'true'
+                or 'data-fv-noscript-archive' not in fallback_tag
+                or 'data-fv-archive-img' in fallback_tag):
+            raise ValueError("RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE")
+    if 'data-fv-noscript-archive' in malbone_figure:
+        raise ValueError("RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE")
     for case, text in RIGHTS.items():
         if a.count(text) != 1:
             raise ValueError("RELEASE_PARITY_RIGHTS_" + case.upper())
