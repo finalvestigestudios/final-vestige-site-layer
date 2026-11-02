@@ -17,6 +17,7 @@ from wp_pdf_custody_r74 import verify_wordpress_print_page
 from wp_accessibility_r74 import verify_installed_controls
 from wp_pdf_pagination_r75 import prepare_review_pdf
 from wp_native_print_r76 import verify_native_apollo_print
+from wp_reusable_r77 import accept_synced_patterns, REUSABLE_SLUG, NEGATIVE_SLUG
 
 BASE='http://127.0.0.1:9438/'
 SLUG='fv-apollo-review-private'
@@ -82,6 +83,39 @@ $id = wp_insert_post(['post_type'=>'page','post_status'=>'private',
   'post_name'=>$slug,'post_title'=>'Apollo ephemeral test only',
   'post_content'=>'[fv_ex2_apollo_suite]','comment_status'=>'closed','ping_status'=>'closed'],true);
 if (is_wp_error($id) || !$id) throw new RuntimeException('LOCAL_PAGE_CREATION_FAILED');
+// R77: real two-level synced-pattern fixtures. Every database write is inside
+// the short-lived LOCAL Playground VM; never WordPress.com or production.
+if (get_page_by_path('fv-apollo-synced-review-private', OBJECT, 'page') ||
+    get_page_by_path('fv-apollo-unrelated-review-private', OBJECT, 'page'))
+    throw new RuntimeException('REFUSE_EXISTING_R77_CONTENT');
+$r77_insert = function(array $data, string $failure) {
+    $newid=wp_insert_post($data,true);
+    if (is_wp_error($newid) || !$newid) throw new RuntimeException($failure);
+    return $newid;
+};
+$inner = $r77_insert(['post_type'=>'wp_block','post_status'=>'publish',
+  'post_title'=>'Apollo ephemeral inner pattern',
+  'post_content'=>'<!-- wp:shortcode -->[fv_ex2_apollo_suite]<!-- /wp:shortcode -->'],
+  'LOCAL_INNER_PATTERN_FAILED');
+$outer = $r77_insert(['post_type'=>'wp_block','post_status'=>'publish',
+  'post_title'=>'Apollo ephemeral outer pattern',
+  'post_content'=>'<!-- wp:block {"ref":'.$inner.'} /-->'],
+  'LOCAL_OUTER_PATTERN_FAILED');
+$r77_insert(['post_type'=>'page','post_status'=>'private',
+  'post_name'=>'fv-apollo-synced-review-private','post_title'=>'Apollo ephemeral test only',
+  'post_content'=>'<!-- wp:block {"ref":'.$outer.'} /-->',
+  'comment_status'=>'closed','ping_status'=>'closed'],
+  'LOCAL_NESTED_PAGE_FAILED');
+$unrelated = $r77_insert(['post_type'=>'wp_block','post_status'=>'publish',
+  'post_title'=>'Unrelated ephemeral synced pattern',
+  'post_content'=>'<!-- wp:paragraph --><p>No Apollo shortcode.</p><!-- /wp:paragraph -->'],
+  'LOCAL_NEGATIVE_PATTERN_FAILED');
+$r77_insert(['post_type'=>'page','post_status'=>'private',
+  'post_name'=>'fv-apollo-unrelated-review-private',
+  'post_title'=>'Unrelated local page',
+  'post_content'=>'<!-- wp:block {"ref":'.$unrelated.'} /-->',
+  'comment_status'=>'closed','ping_status'=>'closed'],
+  'LOCAL_NEGATIVE_PAGE_FAILED');
 ?>"""
     return {'$schema':'https://playground.wordpress.net/blueprint-schema.json',
       'landingPage':'/?pagename='+SLUG,'login':True,'steps':[
@@ -353,12 +387,16 @@ def accept(stage,axe,out):
                 ledger.pass_case()
                 report['cases'].append({'width':w,'js':js,'pass':True})
                 context.close()
+            report['r77_synced_patterns'] = accept_synced_patterns(
+                browser, state, out, BASE, is_strict_loopback_request, axe,
+                verify_wordpress_print_page, verify_native_apollo_print)
             browser.close()
         ledger.require_complete()
         (out/'R68_AUTHENTIC_WP_RECEIPT.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
         (out/'R69_REAL_WP_ADMISSION.json').write_text(json.dumps({
           'schema':'fv.apollo.r69.admission.v1','release':'STAGING_HOLD',
           'all_actual_wordpress_cases_passed':len(report['cases'])==14,
+          'r77_synced_pattern_cases_passed':len(report['r77_synced_patterns']['cases'])==5,
           'axe_passed_at_390_and_1440':len(report['axe'])==2,
           'actual_wordpress_browser_evidence':True,
           'local_lab_not_hosted_cwv':True,
