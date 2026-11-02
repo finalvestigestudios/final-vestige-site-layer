@@ -216,7 +216,7 @@ def construct(parent, *, expected=EXPECTED):
          expected[4], "loss of original article or water tool citations")
 
     shared = {key: identities for key, identities in by_url.items()
-              if len(identities) > 1}
+              if key[1] not in (None, "") and len(identities) > 1}
     source_rows = []
     for key in sorted(source_by_identity):
         row = source_by_identity[key]
@@ -225,7 +225,8 @@ def construct(parent, *, expected=EXPECTED):
         references = sorted(source_refs[key], key=lambda ref: (
             ref["original_document_slug"], ref["original_unicode_codepoint_offset"],
             ref["original_R58_citation_work_order_sha256"]))
-        group_members = by_url[("exact",url if type(url) is str else None)]
+        group_members = (by_url[("exact",url)] if type(url) is str and url
+                         else {key})
         flags = set()
         if len(group_members)>1:
             flags.add("EXACT_URL_SHARED_BY_DISTINCT_SOURCE_IDENTITIES_NO_ALIAS")
@@ -293,10 +294,10 @@ def construct(parent, *, expected=EXPECTED):
             "source_identities_in_shared_url_groups":
                 sum(len(k) for k in shared.values()),
             "source_references_in_changed_contributor_bodies":
-                sum(len(x["all_original_citation_occurrences_AND_RELATIONSHIPS_UNABRIDGED"])
-                    for x in source_rows if
-                    "CITED_IN_CHANGED_CONTRIBUTOR_ARTICLE_NOT_APPROVED" in
-                    x["flags_NOT_FACT_CHECK_OR_SAFETY_APPROVAL"]),
+                sum(1 for x in source_rows for ref in
+                    x["all_original_citation_occurrences_AND_RELATIONSHIPS_UNABRIDGED"]
+                    if "CONTRIBUTOR_BODY_CHANGED_UNREVIEWED" in
+                    ref["original_R65_document_flags_NOT_SAFETY_VERDICTS"]),
         },
         "limitations":("CITED sources only: uncited and proposed contributor source records "
                         "remain in R57/R63/R65 evidence. Exact URLs never imply same "
