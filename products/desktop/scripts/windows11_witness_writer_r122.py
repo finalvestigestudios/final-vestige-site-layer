@@ -15,6 +15,7 @@ import os
 import stat
 import sys
 import tempfile
+from datetime import datetime, timezone
 from pathlib import Path
 
 import windows11_manual_acceptance_r109 as qa
@@ -118,12 +119,15 @@ def record_one(*, dist: Path, r9_report: Path, expected_pin: str, review: Path,
 
         observation = qa._bytes(observation_file, NOTE_LIMIT, minimum=qa.MIN_OBSERVATION_CHARS).decode("utf-8")
         note = {
-            "schema": qa.WITNESS_SCHEMA, "app": app, "check": check, "state": state,
+            "schema": qa.WITNESS_SCHEMA_V2, "app": app, "check": check, "state": state,
             "candidate_sha256": matrix["apps"][app]["candidate_sha256"],
             "r9_report_sha256": matrix["r9_report_sha256"],
             "reviewer_id": matrix["reviewer_id"],
             "windows11_build": matrix["windows11_build"],
             "observed_utc": matrix["observed_utc"],
+            # Timestamp when this private tool recorded human testimony,
+            # NOT when any physical check was independently witnessed.
+            "recorded_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "observation": observation,
         }
         note_bytes = (json.dumps(note, ensure_ascii=False, sort_keys=True,
