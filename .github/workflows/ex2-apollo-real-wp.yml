@@ -34,6 +34,7 @@ jobs:
         run: |
           python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wordpress_r68.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wordpress_r69.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p 'test_*.py' -q
           python -m unittest discover -s experience2/evidence-atlas -p test_atlas.py -q
           php -l experience2/evidence-atlas/integration/fv-ex2-apollo-suite.php
@@ -77,7 +78,7 @@ jobs:
           python -m pip install --disable-pip-version-check playwright==1.55.0
           python -m playwright install --with-deps chromium
           npm install --prefix "$RUNNER_TEMP/apollo-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
-      - name: Genuine ephemeral WordPress/Assembler rendering, axe and responsive acceptance
+      - name: R69 genuine ephemeral WordPress/Assembler rendering, axe and responsive acceptance
         env:
           EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
@@ -96,7 +97,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: apollo-r68-authentic-wordpress-HOLD
+          name: apollo-r69-authentic-wordpress-HOLD
           path: ${{ runner.temp }}/apollo-r68-evidence/
           if-no-files-found: warn
           retention-days: 7
