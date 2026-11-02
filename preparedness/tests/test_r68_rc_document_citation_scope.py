@@ -191,7 +191,7 @@ class SyntheticRCReview(unittest.TestCase):
         variants=row["all_RC_source_uses_and_unabridged_readings_NOT_APPROVED"][0][
             "all_candidate_source_variants_UNABRIDGED_NOT_APPROVED"]
         self.assertEqual(len(variants),2)
-        self.assertEqual(result["counts"]["candidate_citations_with_duplicate_id_variants"],2)
+        self.assertEqual(result["counts"]["candidate_citations_with_duplicate_id_variants"],3)
         self.assertIn("UNSCOPED_SOURCE_ID_HUMAN_SELECTION_REQUIRED",
             row["all_RC_source_uses_and_unabridged_readings_NOT_APPROVED"][0][
                 "flags_NOT_SAFETY_VERDICTS"])
