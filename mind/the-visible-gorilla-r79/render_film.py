@@ -77,7 +77,7 @@ for j,(title,sub,seconds) in enumerate(SCENES):
   im.save(frames/f'{idx:04}.png',compress_level=1)
   idx+=1
  a=now;b=now+seconds
- vtt.extend([f'00:00:{a:02}.000 --> 00:00:{b:02}.000',f'{title}. {sub}.',''])
+ vtt.extend([f'00:00:{a:02}.000 --> 00:00:{b:02}.000',f'{title} {sub}.',''])
  now=b
 (OUT/'film-captions.vtt').write_text('\n'.join(vtt),encoding='utf8')
 frame(0,0).save(OUT/'poster.png')
