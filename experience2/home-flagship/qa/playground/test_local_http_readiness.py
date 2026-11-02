@@ -73,8 +73,40 @@ class ReadinessTest(TestCase):
     def test_redirect_is_not_followed_and_is_reported(self):
         # If the no-redirect boundary regresses the destination is loopback,
         # not an external website or any production service.
-        with self.assertRaisesRegex(RuntimeError, r"probe_states=HTTP_302:[1-9]"):
+        with self.assertRaisesRegex(RuntimeError, r"probe_states=UNEXPECTED_HTTP_REDIRECT:[1-9]"):
             self.probe(302, body=b"", redirect="http://127.0.0.1:1/never-follow")
+
+    def test_same_origin_login_redirect_requires_real_login_page(self):
+        class LoginHandler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                if self.path == '/':
+                    self.send_response(302)
+                    self.send_header('Location', '/wp-login.php')
+                    self.end_headers()
+                elif self.path == '/wp-login.php':
+                    body = b'<html><body id="wp-login">WordPress Login</body></html>'
+                    self.send_response(200)
+                    self.send_header('Content-Length', str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                else:
+                    self.send_error(404)
+            def log_message(self, *_args):
+                pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), LoginHandler)
+        worker = Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with patch.object(ci, 'BASE', 'http://127.0.0.1:%d/' % server.server_port):
+                self.assertIsNone(ci.ready(Alive(), seconds=2))
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+    def test_external_redirect_still_fails_closed(self):
+        with self.assertRaisesRegex(RuntimeError, 'UNEXPECTED_HTTP_REDIRECT'):
+            self.probe(302, body=b'', redirect='https://finalvestige.com/wp-login.php')
 
     def test_empty_200_is_not_a_false_acceptance(self):
         with self.assertRaisesRegex(RuntimeError, r"probe_states=HTTP_200_EMPTY_OR_UNREADY:[1-9]"):
