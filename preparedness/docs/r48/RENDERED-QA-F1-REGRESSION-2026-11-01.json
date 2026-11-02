@@ -1,0 +1,648 @@
+{
+ "axe": {
+  "emergency-hygiene-sanitation@390": [],
+  "emergency-hygiene-sanitation@1440": [],
+  "family-communication-plan@390": [],
+  "family-communication-plan@1440": [],
+  "fire-making-across-time@390": [],
+  "fire-making-across-time@1440": [],
+  "food-safety-power-outage@390": [],
+  "food-safety-power-outage@1440": [],
+  "go-bags@390": [],
+  "go-bags@1440": [],
+  "history-of-food-preservation@390": [],
+  "history-of-food-preservation@1440": [],
+  "home-fire-escape-plan@390": [],
+  "home-fire-escape-plan@1440": [],
+  "homemade-water-filters@390": [],
+  "homemade-water-filters@1440": [],
+  "household-emergency-plan@390": [],
+  "household-emergency-plan@1440": [],
+  "hub-family-communication@390": [],
+  "hub-family-communication@1440": [],
+  "hub-field-tools@390": [],
+  "hub-field-tools@1440": [],
+  "hub-food@390": [],
+  "hub-food@1440": [],
+  "hub-health-sanitation@390": [],
+  "hub-health-sanitation@1440": [],
+  "hub-lost-ways@390": [],
+  "hub-lost-ways@1440": [],
+  "hub-shelter-power@390": [],
+  "hub-shelter-power@1440": [],
+  "hub-start-here@390": [],
+  "hub-start-here@1440": [],
+  "hub-water@390": [],
+  "hub-water@1440": [],
+  "landing@390": [],
+  "landing@1440": [],
+  "lewis-and-clark-salt-works@390": [],
+  "lewis-and-clark-salt-works@1440": [],
+  "making-water-safer@390": [],
+  "making-water-safer@1440": [],
+  "medication-and-devices@390": [],
+  "medication-and-devices@1440": [],
+  "navigation-before-gps@390": [],
+  "navigation-before-gps@1440": [],
+  "outage-heat-cold-generators@390": [],
+  "outage-heat-cold-generators@1440": [],
+  "pantry-rotation@390": [],
+  "pantry-rotation@1440": [],
+  "pemmican-and-dried-meats@390": [],
+  "pemmican-and-dried-meats@1440": [],
+  "pickling-fermentation-old-recipes@390": [],
+  "pickling-fermentation-old-recipes@1440": [],
+  "pioneer-supply-chains-failed@390": [],
+  "pioneer-supply-chains-failed@1440": [],
+  "pioneer-travel-rations@390": [],
+  "pioneer-travel-rations@1440": [],
+  "preparedness-real-households@390": [],
+  "preparedness-real-households@1440": [],
+  "pressure-canning-low-acid@390": [],
+  "pressure-canning-low-acid@1440": [],
+  "rain-barrels-and-cisterns@390": [],
+  "rain-barrels-and-cisterns@1440": [],
+  "root-cellars-cool-storage@390": [],
+  "root-cellars-cool-storage@1440": [],
+  "safe-jerky-dehydration@390": [],
+  "safe-jerky-dehydration@1440": [],
+  "salt-beef-salt-pork-age-of-sail@390": [],
+  "salt-beef-salt-pork-age-of-sail@1440": [],
+  "sanitation-before-germ-theory@390": [],
+  "sanitation-before-germ-theory@1440": [],
+  "shelter-or-evacuate@390": [],
+  "shelter-or-evacuate@1440": [],
+  "ships-biscuit-and-hardtack@390": [],
+  "ships-biscuit-and-hardtack@1440": [],
+  "smokehouses-salting-curing@390": [],
+  "smokehouses-salting-curing@1440": [],
+  "three-day-kit@390": [],
+  "three-day-kit@1440": [],
+  "two-week-water-storage@390": [],
+  "two-week-water-storage@1440": [],
+  "warnings-radios-offline-maps@390": [],
+  "warnings-radios-offline-maps@1440": [],
+  "water-advisories-explained@390": [],
+  "water-advisories-explained@1440": [],
+  "water-math@390": [],
+  "water-math@1440": [],
+  "water-planner@390": [],
+  "water-planner@1440": [],
+  "water-purification-through-history@390": [],
+  "water-purification-through-history@1440": []
+ },
+ "overflow": [],
+ "wide_toc_open": {
+  "emergency-hygiene-sanitation": {
+   "1440": true
+  },
+  "family-communication-plan": {
+   "1440": true
+  },
+  "fire-making-across-time": {
+   "1440": true
+  },
+  "food-safety-power-outage": {
+   "1440": true
+  },
+  "go-bags": {
+   "1440": true
+  },
+  "history-of-food-preservation": {
+   "1440": true
+  },
+  "home-fire-escape-plan": {
+   "1440": true
+  },
+  "homemade-water-filters": {
+   "1440": true
+  },
+  "household-emergency-plan": {
+   "1440": true
+  },
+  "lewis-and-clark-salt-works": {
+   "1440": true
+  },
+  "making-water-safer": {
+   "1440": true
+  },
+  "medication-and-devices": {
+   "1440": true
+  },
+  "navigation-before-gps": {
+   "1440": true
+  },
+  "outage-heat-cold-generators": {
+   "1440": true
+  },
+  "pantry-rotation": {
+   "1440": true
+  },
+  "pemmican-and-dried-meats": {
+   "1440": true
+  },
+  "pickling-fermentation-old-recipes": {
+   "1440": true
+  },
+  "pioneer-supply-chains-failed": {
+   "1440": true
+  },
+  "pioneer-travel-rations": {
+   "1440": true
+  },
+  "preparedness-real-households": {
+   "1440": true
+  },
+  "pressure-canning-low-acid": {
+   "1440": true
+  },
+  "rain-barrels-and-cisterns": {
+   "1440": true
+  },
+  "root-cellars-cool-storage": {
+   "1440": true
+  },
+  "safe-jerky-dehydration": {
+   "1440": true
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "1440": true
+  },
+  "sanitation-before-germ-theory": {
+   "1440": true
+  },
+  "shelter-or-evacuate": {
+   "1440": true
+  },
+  "ships-biscuit-and-hardtack": {
+   "1440": true
+  },
+  "smokehouses-salting-curing": {
+   "1440": true
+  },
+  "three-day-kit": {
+   "1440": true
+  },
+  "two-week-water-storage": {
+   "1440": true
+  },
+  "warnings-radios-offline-maps": {
+   "1440": true
+  },
+  "water-advisories-explained": {
+   "1440": true
+  },
+  "water-math": {
+   "1440": true
+  },
+  "water-purification-through-history": {
+   "1440": true
+  }
+ },
+ "narrow_toc_closed": {
+  "emergency-hygiene-sanitation": {
+   "390": false,
+   "768": false
+  },
+  "family-communication-plan": {
+   "390": false,
+   "768": false
+  },
+  "fire-making-across-time": {
+   "390": false,
+   "768": false
+  },
+  "food-safety-power-outage": {
+   "390": false,
+   "768": false
+  },
+  "go-bags": {
+   "390": false,
+   "768": false
+  },
+  "history-of-food-preservation": {
+   "390": false,
+   "768": false
+  },
+  "home-fire-escape-plan": {
+   "390": false,
+   "768": false
+  },
+  "homemade-water-filters": {
+   "390": false,
+   "768": false
+  },
+  "household-emergency-plan": {
+   "390": false,
+   "768": false
+  },
+  "lewis-and-clark-salt-works": {
+   "390": false,
+   "768": false
+  },
+  "making-water-safer": {
+   "390": false,
+   "768": false
+  },
+  "medication-and-devices": {
+   "390": false,
+   "768": false
+  },
+  "navigation-before-gps": {
+   "390": false,
+   "768": false
+  },
+  "outage-heat-cold-generators": {
+   "390": false,
+   "768": false
+  },
+  "pantry-rotation": {
+   "390": false,
+   "768": false
+  },
+  "pemmican-and-dried-meats": {
+   "390": false,
+   "768": false
+  },
+  "pickling-fermentation-old-recipes": {
+   "390": false,
+   "768": false
+  },
+  "pioneer-supply-chains-failed": {
+   "390": false,
+   "768": false
+  },
+  "pioneer-travel-rations": {
+   "390": false,
+   "768": false
+  },
+  "preparedness-real-households": {
+   "390": false,
+   "768": false
+  },
+  "pressure-canning-low-acid": {
+   "390": false,
+   "768": false
+  },
+  "rain-barrels-and-cisterns": {
+   "390": false,
+   "768": false
+  },
+  "root-cellars-cool-storage": {
+   "390": false,
+   "768": false
+  },
+  "safe-jerky-dehydration": {
+   "390": false,
+   "768": false
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "390": false,
+   "768": false
+  },
+  "sanitation-before-germ-theory": {
+   "390": false,
+   "768": false
+  },
+  "shelter-or-evacuate": {
+   "390": false,
+   "768": false
+  },
+  "ships-biscuit-and-hardtack": {
+   "390": false,
+   "768": false
+  },
+  "smokehouses-salting-curing": {
+   "390": false,
+   "768": false
+  },
+  "three-day-kit": {
+   "390": false,
+   "768": false
+  },
+  "two-week-water-storage": {
+   "390": false,
+   "768": false
+  },
+  "warnings-radios-offline-maps": {
+   "390": false,
+   "768": false
+  },
+  "water-advisories-explained": {
+   "390": false,
+   "768": false
+  },
+  "water-math": {
+   "390": false,
+   "768": false
+  },
+  "water-purification-through-history": {
+   "390": false,
+   "768": false
+  }
+ },
+ "nojs_narrow_toc_closed": {
+  "emergency-hygiene-sanitation": true,
+  "family-communication-plan": true,
+  "fire-making-across-time": true,
+  "food-safety-power-outage": true,
+  "go-bags": true,
+  "history-of-food-preservation": true,
+  "home-fire-escape-plan": true,
+  "homemade-water-filters": true,
+  "household-emergency-plan": true,
+  "lewis-and-clark-salt-works": true,
+  "making-water-safer": true,
+  "medication-and-devices": true,
+  "navigation-before-gps": true,
+  "outage-heat-cold-generators": true,
+  "pantry-rotation": true,
+  "pemmican-and-dried-meats": true,
+  "pickling-fermentation-old-recipes": true,
+  "pioneer-supply-chains-failed": true,
+  "pioneer-travel-rations": true,
+  "preparedness-real-households": true,
+  "pressure-canning-low-acid": true,
+  "rain-barrels-and-cisterns": true,
+  "root-cellars-cool-storage": true,
+  "safe-jerky-dehydration": true,
+  "salt-beef-salt-pork-age-of-sail": true,
+  "sanitation-before-germ-theory": true,
+  "shelter-or-evacuate": true,
+  "ships-biscuit-and-hardtack": true,
+  "smokehouses-salting-curing": true,
+  "three-day-kit": true,
+  "two-week-water-storage": true,
+  "warnings-radios-offline-maps": true,
+  "water-advisories-explained": true,
+  "water-math": true,
+  "water-purification-through-history": true
+ },
+ "nojs_wide_toc_closed": {
+  "emergency-hygiene-sanitation": true,
+  "family-communication-plan": true,
+  "fire-making-across-time": true,
+  "food-safety-power-outage": true,
+  "go-bags": true,
+  "history-of-food-preservation": true,
+  "home-fire-escape-plan": true,
+  "homemade-water-filters": true,
+  "household-emergency-plan": true,
+  "lewis-and-clark-salt-works": true,
+  "making-water-safer": true,
+  "medication-and-devices": true,
+  "navigation-before-gps": true,
+  "outage-heat-cold-generators": true,
+  "pantry-rotation": true,
+  "pemmican-and-dried-meats": true,
+  "pickling-fermentation-old-recipes": true,
+  "pioneer-supply-chains-failed": true,
+  "pioneer-travel-rations": true,
+  "preparedness-real-households": true,
+  "pressure-canning-low-acid": true,
+  "rain-barrels-and-cisterns": true,
+  "root-cellars-cool-storage": true,
+  "safe-jerky-dehydration": true,
+  "salt-beef-salt-pork-age-of-sail": true,
+  "sanitation-before-germ-theory": true,
+  "shelter-or-evacuate": true,
+  "ships-biscuit-and-hardtack": true,
+  "smokehouses-salting-curing": true,
+  "three-day-kit": true,
+  "two-week-water-storage": true,
+  "warnings-radios-offline-maps": true,
+  "water-advisories-explained": true,
+  "water-math": true,
+  "water-purification-through-history": true
+ },
+ "print": {
+  "emergency-hygiene-sanitation": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "family-communication-plan": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "fire-making-across-time": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "food-safety-power-outage": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "go-bags": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "history-of-food-preservation": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "home-fire-escape-plan": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "homemade-water-filters": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "household-emergency-plan": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "lewis-and-clark-salt-works": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "making-water-safer": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "medication-and-devices": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "navigation-before-gps": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "outage-heat-cold-generators": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "pantry-rotation": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "pemmican-and-dried-meats": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "pickling-fermentation-old-recipes": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "pioneer-supply-chains-failed": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "pioneer-travel-rations": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "preparedness-real-households": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "pressure-canning-low-acid": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "rain-barrels-and-cisterns": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "root-cellars-cool-storage": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "safe-jerky-dehydration": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "sanitation-before-germ-theory": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "shelter-or-evacuate": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "ships-biscuit-and-hardtack": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "smokehouses-salting-curing": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "three-day-kit": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "two-week-water-storage": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "warnings-radios-offline-maps": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "water-advisories-explained": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "water-math": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  },
+  "water-purification-through-history": {
+   "toc": "none",
+   "head": "none",
+   "end": "none",
+   "pdf_has_act_and_sources": true
+  }
+ },
+ "kbd": {
+  "tab_order_first5": [
+   "A:Skip to the guide",
+   "A:Water",
+   "SUMMARY:ON THIS PAGE (11 sections)",
+   "A:[1]",
+   "A:[2]"
+  ],
+  "enter_toggles": [
+   false,
+   true
+  ],
+  "summary_focus_outline_and_height": {
+   "outline": "solid",
+   "h": 44
+  }
+ },
+ "errors": []
+}
