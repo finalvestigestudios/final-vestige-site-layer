@@ -52,4 +52,4 @@ Rules: tags `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa`, `wcag22aa`, `best-practi
 * Layout stability (cumulative layout shift): not measured.
 * Color contrast: covered by axe and the repository's token contrast test, not by manual review of every state or Windows high-contrast mode.
 * The FCC, NFPA, USDA and Red Cross pages listed in `SHELTER-SOURCE-LEDGER.md` as unread.
-* No human has verified any source link (`human_link_check` is false for all 41).
+* No human has verified any source link (`human_link_check` is false for all 45).
