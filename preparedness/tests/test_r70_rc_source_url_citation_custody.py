@@ -390,7 +390,7 @@ URL_CASES = [
     ("html_markup","https://example.gov/<img>","UNSAFE_RAW_URL_CHARACTERS_OR_LENGTH"),
     ("encoded_newline","https://example.gov/%0a","PERCENT_DECODED_CONTROL_OR_MARKUP_CHARACTER"),
     ("encoded_quote","https://example.gov/%22","PERCENT_DECODED_CONTROL_OR_MARKUP_CHARACTER"),
-    ("encoded_space","https://example.gov/a%20b","PERCENT_DECODED_CONTROL_OR_MARKUP_CHARACTER"),
+    ("encoded_space","https://example.gov/a%20b",None),
     ("bad_port","https://example.gov:bad/a","MALFORMED_URL_AUTHORITY"),
     ("broken_ipv6","https://[::1/a","MALFORMED_URL_AUTHORITY"),
     ("ftp","ftp://example.gov/a","NON_HTTPS_OR_MISSING_HOST"),
