@@ -67,8 +67,12 @@ class GateTests(unittest.TestCase):
             # The current exact-stage gate also attests its OWN QA source files.
             q=d/'qa'/'release-candidate';q.mkdir(parents=True)
             for name in ('verify_exact_staging.py','media_transfer_admission.py',
-                         'test_media_transfer_admission.py','test_exact_staging.py'):
+                         'test_media_transfer_admission.py','test_exact_staging.py',
+                         'verify_release_content_parity.py', 'test_release_content_parity.py'):
                 (q/name).write_text('committed QA fixture '+name)
+            fixture=q/'fixtures'/'proposed-production-block-pr604.html'
+            fixture.parent.mkdir(parents=True)
+            fixture.write_text('committed release fixture; not production')
             run('add','.');run('commit','-qm','fixture')
             head=run('rev-parse','HEAD')
             _,assets=gate.checkout(repo,head)
