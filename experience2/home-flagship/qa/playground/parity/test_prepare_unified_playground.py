@@ -86,7 +86,7 @@ def fixture():
                         {'step':'runPHP','code':CANONICAL_LOCAL_SEED}]}
     bytes_bp=(json.dumps(blueprint,indent=2)+'\n').encode()
     (stage/'playground-blueprint.json').write_bytes(bytes_bp)
-    cli=['npx','@wp-playground/cli@latest','server',
+    cli=['npx','@wp-playground/cli@3.1.61','server',
          '--blueprint='+str(stage/'playground-blueprint.json'),
          '--mount='+str(stage/'mounts'/'assembler')+':/wordpress/wp-content/themes/assembler',
          '--mount='+str(stage/'mounts'/'fv-ex2-private-preview')+':/wordpress/wp-content/plugins/fv-ex2-private-preview',
