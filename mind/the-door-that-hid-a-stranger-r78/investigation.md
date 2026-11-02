@@ -98,7 +98,7 @@ The deeper lesson is not that seeing is impossible. It is that **observation is 
 ## Evidence desk
 
 1. **Primary field experiment** — Simons, D. J., & Levin, D. T. (1998). *Failure to detect changes to people during a real-world interaction*. *Psychonomic Bulletin & Review*, 5, 644–649. https://doi.org/10.3758/BF03208840 . Initial field condition: 7 of 15 reported the change. Do not generalize as a population rate.
-2. **Film precedent** — Levin, D. T., & Simons, D. J. (1997). *Failure to detect changes to attended objects in motion pictures*. *Psychonomic Bulletin & Review*, 4, 501–506. https://doi.org/10.3758/BF03210735 .
+2. **Film precedent** — Levin, D. T., & Simons, D. J. (1997). *Failure to detect changes to attended objects in motion pictures*. *Psychonomic Bulletin & Review*, 4, 501–506. https://doi.org/10.3758/BF03214339 .
 3. **Flicker paradigm** — Rensink, R. A., O'Regan, J. K., & Clark, J. J. (1997). *To see or not to see: The need for attention to perceive changes in scenes*. *Psychological Science*, 8, 368–373. https://doi.org/10.1111/j.1467-9280.1997.tb00427.x .
 4. **Review** — Simons, D. J., & Rensink, R. A. (2005). *Change blindness: Past, present, and future*. *Trends in Cognitive Sciences*, 9, 16–20. https://doi.org/10.1016/j.tics.2004.11.006 .
 5. **Published FV archive** — *Puységur's Animal Magnetism Files*. https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ .
