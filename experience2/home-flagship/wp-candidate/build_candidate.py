@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+"""Build the isolated, local-only WordPress release candidate for the flagship homepage.
+
+Inputs (all committed):
+  ../index.html + css/js            the seven-chapter Experience 2.0 flagship (PR #550)
+  snapshot/page6-public-rendered.html   public rendered body of live page 6 (read-only snapshot)
+  parity/                           public-safe Assembler header/footer/page template parity
+
+Output directory (never inside the git checkout):
+  plugin/fv-flagship-candidate/     enqueues the flagship CSS/JS on the front page only
+  page-content.html                 the composed page body (this is the proposed production body)
+  stage-manifest.json               sha256 of every produced byte
+
+Composition rule: the live page keeps EVERYTHING it has today (72 Margins strip, Focus CTA,
+Jetpack subscription, journal links, schema) except the old "Studios hero" section, which the
+seven-chapter flagship replaces. The flagship drops its own studio banner, masthead and footer
+because the Assembler header/footer already render around post-content, and its <main> becomes
+a <div> because the page template already provides the single <main> landmark.
+"""
+import argparse
+import hashlib
+import json
+import re
+import shutil
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+FLAG = HERE.parent
+ASSETS_CSS = ["site-parity.css", "flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css",
+              "observer-lab.css", "reading-trail.css", "wp-integration.css"]
+ASSETS_JS = ["flagship.js", "observer-lab.js", "chronicle-lens.js", "reading-trail.js"]
+
+
+def sha(b: bytes) -> str:
+    return hashlib.sha256(b).hexdigest()
+
+
+def extract(pattern, text, what):
+    m = re.search(pattern, text, re.S)
+    if not m:
+        raise SystemExit(f"index.html no longer contains expected {what}")
+    return m
+
+
+def flagship_fragment(index_html: str) -> str:
+    skip = extract(r'<a class="fv-hf__skip"[^>]*>.*?</a>', index_html, "skip link").group(0)
+    nav = extract(r'<nav class="fv-hf__chapter-nav".*?</nav>', index_html, "chapter nav").group(0)
+    main = extract(r'<main>(.*?)</main>', index_html, "main landmark").group(1)
+    return (
+        '<div class="fv-hf fv-hf--wp alignfull" data-fv-home-flagship>\n'
+        '  <div class="fv-hf__canvas">\n'
+        f'    {skip}\n{nav}\n    <div class="fv-hf__main">{main}</div>\n'
+        '  </div>\n</div>\n'
+    )
+
+
+def compose(page6: str, fragment: str) -> str:
+    a = page6.index('<section class="fv-studios-hero"')
+    b = page6.index('<section class="fv-focus-cta"')
+    before, after = page6[:a], page6[b:]
+    if "fv-margin-strip" not in before or "fv-focus-cta" not in after:
+        raise SystemExit("snapshot layout changed; re-review the composition")
+    blk = lambda s: f"<!-- wp:html -->\n{s.strip()}\n<!-- /wp:html -->\n\n"
+    return blk(before) + blk(fragment) + blk(after)
+
+
+PLUGIN_PHP = r"""<?php
+/**
+ * Plugin Name: FV Flagship Candidate (local review only)
+ * Description: Enqueues the seven-chapter flagship CSS/JS on the front page. Local staging only.
+ * Version: 0.1.0
+ */
+if (!defined('ABSPATH')) { exit; }
+add_action('wp_enqueue_scripts', function () {
+    if (!is_front_page()) { return; }
+    $base = plugin_dir_url(__FILE__) . 'assets/';
+    $dir  = plugin_dir_path(__FILE__) . 'assets/';
+    foreach (%CSS% as $f) {
+        wp_enqueue_style('fv-hf-' . basename($f, '.css'), $base . $f, [], filemtime($dir . $f));
+    }
+    foreach (%JS% as $f) {
+        wp_enqueue_script('fv-hf-' . basename($f, '.js'), $base . $f, [], filemtime($dir . $f), ['strategy' => 'defer', 'in_footer' => true]);
+    }
+});
+"""
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--page6", type=Path, default=HERE / "snapshot" / "page6-public-rendered.html")
+    a = ap.parse_args()
+    out = a.out.resolve()
+    if FLAG in out.parents or out == FLAG:
+        sys.exit("output must live outside the checkout")
+    index = (FLAG / "index.html").read_text(encoding="utf-8")
+    page6 = a.page6.read_text(encoding="utf-8")
+    body = compose(page6, flagship_fragment(index))
+
+    plug = out / "plugin" / "fv-flagship-candidate"
+    if out.exists():
+        shutil.rmtree(out)
+    (plug / "assets").mkdir(parents=True)
+    # Live site-wide CSS (dark body, link/selection rules, header/footer chrome) as captured in the
+    # public-safe parity file. WordPress drops styles.css from a seeded wp_global_styles record
+    # (KSES/edit_css), so ship the identical bytes as a plain stylesheet for the local review.
+    parity = json.loads((HERE / "parity" / "assembler-public-safe.json").read_text(encoding="utf-8"))
+    (plug / "assets" / "site-parity.css").write_text(parity["global_styles"]["styles"]["css"], encoding="utf-8")
+    for f in ASSETS_CSS + ASSETS_JS:
+        if f == "site-parity.css":
+            continue
+        shutil.copyfile((FLAG / f) if (FLAG / f).exists() else (HERE / f), plug / "assets" / f)
+    php = PLUGIN_PHP.replace("%CSS%", json.dumps(ASSETS_CSS).replace('"', "'").replace("[", "[").replace("]", "]"))
+    php = php.replace("%JS%", json.dumps(ASSETS_JS).replace('"', "'"))
+    (plug / "fv-flagship-candidate.php").write_text(php, encoding="utf-8")
+    (out / "page-content.html").write_text(body, encoding="utf-8")
+
+    manifest = {"schema": "fv-flagship-candidate-stage-v1", "local_only": True,
+                "files": {str(p.relative_to(out)).replace("\\", "/"): sha(p.read_bytes())
+                          for p in sorted(out.rglob("*")) if p.is_file()},
+                "page6_snapshot_sha256": sha(page6.encode("utf-8")),
+                "index_html_sha256": sha(index.encode("utf-8"))}
+    (out / "stage-manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    print(json.dumps({"page_bytes": len(body), "files": len(manifest["files"])}))
+
+
+if __name__ == "__main__":
+    main()

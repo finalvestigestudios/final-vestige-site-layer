@@ -1,0 +1,13 @@
+/* Integration-only rules for the flagship inside the Assembler page template.
+   flagship.css sets :where(.fv-hf){width:100%}; inside a constrained post-content that
+   pins the wrapper to the content box, so the alignfull negative margins shift it left
+   instead of widening it. Let the full-bleed wrapper size from its (negative) margins. */
+.fv-hf.fv-hf--wp{width:auto;max-width:none}
+
+/* Inside WordPress the Assembler header, the Margins strip and the chapter nav already take
+   ~260px above the hero, which pushed the primary call to action below a 1440x900 first view.
+   Tighten only the desktop hero's vertical rhythm (the 390px composition is unchanged). */
+@media (min-width:921px){
+  .fv-hf.fv-hf--wp .fv-hf__opening-inner{padding-top:clamp(24px,3vw,48px);padding-bottom:clamp(40px,5vw,80px)}
+  .fv-hf.fv-hf--wp .fv-hf__opening h1{font-size:clamp(70px,7.6vw,118px)}
+}
