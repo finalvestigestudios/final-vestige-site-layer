@@ -1,0 +1,101 @@
+name: Preparedness R81 Frozen-Current-RC Provenance (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r80-offline-evidence-reading-room-hold-20261102
+    paths:
+      - preparedness/tools/r81_frozen_contributor_threeway_custody.py
+      - preparedness/tests/test_r81_frozen_contributor_threeway_custody.py
+      - preparedness/docs/R81_FROZEN_CURRENT_RC_PROVENANCE_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r81-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r81-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  frozen-current-RC-readonly-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Exact checkout without retained credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce immutable R80 parent and four new files only
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "c4661d9e8fa5366977f010ec581da757ac03b1d6"
+          test "$BASE_REF" = "review/preparedness-r80-offline-evidence-reading-room-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r81-frozen-contributor-three-way-provenance-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > "$RUNNER_TEMP/r81-scoped-diff"
+          python -I - <<'PY'
+          import os
+          from pathlib import Path
+          raw = Path(os.environ['RUNNER_TEMP'], 'r81-scoped-diff').read_bytes().split(b'\0')
+          found = [(raw[i].decode(), raw[i + 1].decode()) for i in range(0, len(raw) - 1, 2)]
+          wanted = {
+              'preparedness/tools/r81_frozen_contributor_threeway_custody.py',
+              'preparedness/tests/test_r81_frozen_contributor_threeway_custody.py',
+              'preparedness/docs/R81_FROZEN_CURRENT_RC_PROVENANCE_CUSTODY_HOLD.md',
+              '.github/workflows/preparedness-r81-private-tests.yml',
+          }
+          assert len(found) == 4 and {p for _, p in found} == wanted, found
+          assert all(s == 'A' for s, _ in found), found
+          print('Immutable R80 base + four strictly ADDITIVE files PASS')
+          PY
+      - name: Compile source and tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for filename in (
+              'preparedness/tools/r81_frozen_contributor_threeway_custody.py',
+              'preparedness/tests/test_r81_frozen_contributor_threeway_custody.py',
+          ):
+              compile(Path(filename).read_text(encoding='utf-8'), filename, 'exec')
+          print('R81 Python source/test syntax PASS')
+          PY
+      - name: Execute R81 synthetic Git lineage and adversarial tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r81_frozen_contributor_threeway_custody.py -v
+      - name: Independently read 7 frozen/current contributor refs and RC full Git blobs
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r81_frozen_contributor_threeway_custody.py
+          python -I preparedness/tools/r81_frozen_contributor_threeway_custody.py --csv-stdout > "$RUNNER_TEMP/r81-private-one-way.csv"
+          python -I - <<'PY'
+          import csv, os
+          from pathlib import Path
+          path = Path(os.environ['RUNNER_TEMP']) / 'r81-private-one-way.csv'
+          with path.open(newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          assert len(rows) == 72, len(rows)
+          assert all(r['human_review'] == 'NOT_REVIEWED' and r['release'] == 'HOLD' for r in rows)
+          print('72 unreviewed source/current/RC file reviews CSV PASS')
+          PY
+          rm -f "$RUNNER_TEMP/r81-private-one-way.csv"
+      - name: Original native safety/source validator (no CMS)
+        run: python -I preparedness/tools/validate.py
+      - name: Generate OFFLINE WordPress-ready drafts only (no CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Strict release hold remains
+        if: always()
+        run: |
+          echo 'R81 is a historical Git/source custody tool, NOT source verification.'
+          echo 'Original 13-stage release integrity is separate and remains FAILED CLOSED.'
+          echo 'No medical/food/water/CO guidance safety clearance or QD approval.'
+          echo 'No branch merges, WordPress writes, CMS publication, or navigation changes.'
