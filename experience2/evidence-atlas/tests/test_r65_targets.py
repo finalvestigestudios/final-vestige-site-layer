@@ -20,7 +20,7 @@ class R65Tests(unittest.TestCase):
             self.assertIn('min-height:44px',text)
             self.assertIn('outline:3px solid #e5c487',text)
             php=(folder/'fv-ex2-apollo-suite/fv-ex2-apollo-suite.php').read_text()
-            self.assertIn('0.0.65-staging',php)
+            self.assertIn('0.0.66-staging',php)
     def test_staging_does_not_mutate_source(self):
         css=Path(__file__).resolve().parents[1]/'integration/apollo-suite.css'
         original=css.read_bytes()

@@ -13,7 +13,7 @@ def build(output:Path):
     css=(output/'fv-ex2-apollo-suite/apollo-suite.css').read_text()
     php=(output/'fv-ex2-apollo-suite/fv-ex2-apollo-suite.php').read_text()
     assert '.fva-card__external' in css and 'min-height:44px' in css
-    assert '0.0.65-staging' in php
+    assert '0.0.66-staging' in php
     manifest['schema']='fv.apollo.r65.wp-triplet.v1'
     manifest['scope']='Original R38 plus source-built Atlas, no embedded NASA photography'
     manifest['browser_axe_verified']=False

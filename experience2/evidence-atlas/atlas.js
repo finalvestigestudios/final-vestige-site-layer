@@ -53,6 +53,31 @@
     ['05','1967','1967-01-28','January 28, 1967'],
     ['06','2017','2017-01-24','January 24, 2017']
   ];
+  // R66: every displayed SourceDrawer value is part of the reviewed source
+  // custody, not merely a decorative caption. Pin ALL 54 dt/dd facts against
+  // the exact R37 crosswalk and SHA-256-pinned R55 NASA-page audit. Earlier
+  // validators checked only selected rights strings and permitted silent
+  // alteration of credits, producing centers, dates and identity notes.
+  // These are EDITORIAL DRIFT checks, not hostile-script security guarantees;
+  // no photograph is licensed or embedded by this verification.
+  const pinnedCustody=[["S67-19766","NASA-hosted image filename corroborates S67-19766; structured catalog metadata not separately confirmed","Not printed on the linked NASA page; attribution provisional.","NASA","No producing center displayed in reviewed metadata.","2023-03-26","NASA metadata reviewed 2026-11-01; no human link check or photograph inspection completed.",null,"crew portrait, not cabin/fire evidence. The photograph alone does not prove the cause or sequence of the Apollo 1 fire."],["S67-15717","Photo link verified; image-reuse review outstanding","Identifier displayed in the linked NASA page PIA field.","No individual image credit displayed in reviewed metadata.","JSC","2024-06-06","NASA metadata reviewed 2026-11-01; no human link check or photograph inspection completed.",null,"spacecraft preparation, not cabin-atmosphere evidence. The photograph alone does not prove the cause or sequence of the Apollo 1 fire."],["S66-58038","Photo link verified; image-reuse review outstanding","Identifier displayed in the linked NASA page PIA field.","No individual image credit displayed in reviewed metadata.","JSC","2024-06-06","NASA metadata reviewed 2026-11-01; no human link check or photograph inspection completed.",null,"earlier altitude-chamber rehearsal, not the fire. The photograph alone does not prove the cause or sequence of the Apollo 1 fire."],["KSC-20170124-PH_KLS01_0164","NASA/Kim Shiflett credit; image-reuse review outstanding","Identifier displayed in the linked NASA page PIA field.","NASA/Kim Shiflett","KSC","2023-05-04","NASA metadata reviewed 2026-11-01; no human link check or photograph inspection completed.",null,"2017 tribute hatch exhibit, not a 1967 accident scene. The photograph alone does not prove the cause or sequence of the Apollo 1 fire."],["S67-21294","Photo link verified; image-reuse review outstanding","Identifier displayed in the linked NASA page PIA field.","No individual image credit displayed in reviewed metadata.","JSC","2024-06-06","NASA metadata reviewed 2026-11-01; no human link check or photograph inspection completed.",null,"post-fire interior; cannot establish unique ignition mechanism. The photograph alone does not prove the cause or sequence of the Apollo 1 fire."],["KSC-20170124-PH_KLS01_0090","NASA/Kim Shiflett credit; image-reuse review outstanding","Identifier displayed in the linked NASA page PIA field.","NASA/Kim Shiflett","KSC","2024-06-12","NASA metadata reviewed 2026-11-01; no human link check or photograph inspection completed.",null,"2017 redesigned-hatch tribute exhibit, not the 1967 cabin. The photograph alone does not prove the cause or sequence of the Apollo 1 fire."]];
+  const custodyLabels=['Catalog reference','Record identity note',
+    'Catalog verification on NASA page','Credit displayed by NASA',
+    'Producing center displayed by NASA','NASA page last updated',
+    'Editorial source check','Reuse status','Documentary boundary'];
+  const custodyIntact=()=>cards.every((card,i)=>{
+    const drawer=card.querySelector('[data-fva-drawer]');
+    if(!drawer||drawer.querySelectorAll('dl').length!==1)return false;
+    const children=[...drawer.querySelector('dl').children];
+    if(children.length!==custodyLabels.length*2)return false;
+    return custodyLabels.every((name,j)=>{
+      const label=children[j*2],value=children[j*2+1];
+      return label?.tagName==='DT'&&label.textContent.trim()===name&&
+        value?.tagName==='DD'&&value.textContent.trim()===(j===7
+          ? 'Individual review required.'+' No photograph is reproduced here.'
+          : pinnedCustody[i][j]);
+    });
+  });
   const deskLinks=[...root.querySelectorAll('[data-fva-to-desk]')];
   const deskStatus=root.querySelector('[data-fva-desk-status]');
   let desk=null;
@@ -148,6 +173,9 @@
         time?.textContent.trim()===label &&
         text?.includes('photograph date '+label);
     }))return false;
+    // Withdraw optional filters/export/comparison if ANY custody value drifts.
+    // Original native source disclosures and complete citations stay readable.
+    if(!custodyIntact())return false;
     const seen=new Set();
     return timeJumps.every(link=>{
       const id=link.dataset.fvaTimeId;
