@@ -1,0 +1,586 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 3,
+  "method": "Authenticated WordPress posts.get context=edit, read-only; NOT a guest browser audit",
+  "frozen_git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "posts": [
+    {
+      "id": 290,
+      "modified": "2026-08-31T03:32:37",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "290:0",
+          "source_url": "https://www.popsci.com/wp-content/uploads/2024/11/campcentury_aerial_radar_lrg.jpg",
+          "alt": "Airborne radar view revealing structural elements of Camp Century beneath the Greenland Ice Sheet.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "290:1",
+          "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/archetype/GDXA2BRAMRAU7HKJBA3QPMH5IA.png",
+          "alt": "U.S. Army engineers constructing a steel-roofed trench at Camp Century on the Greenland Ice Sheet.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "290:2",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Camp_Century_trench_deformation.png",
+          "alt": "Camp Century trench deformation showing steel arches distorted inward by the surrounding firn and ice.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "290:3",
+          "source_url": "https://www.vol.at/2024/11/camp-century-plans.jpg",
+          "alt": "U.S. Army layout plan of Camp Century showing its underground corridors and facilities.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "290:4",
+          "source_url": "https://scitechdaily.com/images/Camp-Century-Ice-Cores.jpg",
+          "alt": "Camp Century scientists handling deep ice core material recovered from the Greenland Ice Sheet.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "290:5",
+          "source_url": "https://www.researchgate.net/profile/Nanna-Karlsson/publication/333896089/figure/fig18/AS:771826441658368@1561031015362/As-built-map-of-Camp-Century-geo-referenced-to-August-2017-position-using-radar-data.jpg",
+          "alt": "Camp Century map georeferenced to the 2017 radar-detected position beneath the moving Greenland Ice Sheet.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 289,
+      "modified": "2026-08-28T15:23:16",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "289:0",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/USS_Forrestal_A-4_Skyhawk_burning.png",
+          "alt": "Fire spreading among armed aircraft on the flight deck of USS Forrestal on July 29, 1967.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "289:1",
+          "source_url": "https://specials-images.forbesimg.com/imageserve/69a2157d5ca34a424f6e4791/0x0.jpg",
+          "alt": "USS Forrestal sailors directing firefighting hoses across the burned flight deck during the 1967 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "289:2",
+          "source_url": "https://k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?by=cms_fixed_width",
+          "alt": "Aerial view of the burned and damaged USS Forrestal flight deck after the 1967 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "289:3",
+          "source_url": "https://k-static.appmobile.cn/uploads3/allimg/2603/15/1K1364K1-2.jpg",
+          "alt": "USS Forrestal crewmen fighting and cooling wreckage on the flight deck after the 1967 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "289:4",
+          "source_url": "https://media.defense.gov/2021/Dec/04/2002903623/1460/1280/0/210811-N-SG189-1105.JPG",
+          "alt": "U.S. Navy sailors training on a shipboard fire simulation at Farrier Firefighting School in Norfolk.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "289:5",
+          "source_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1307/985674/1000w_q95.jpg",
+          "alt": "A Navy firefighting instructor beside the memorial to Gerald W. Farrier at the school that bears his name.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "modified": "2026-08-19T14:37:40",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "288:0",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+          "alt": "U.S. Navy destroyers wrecked along the California coast at Honda Point after the September 8, 1923 disaster.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "288:1",
+          "source_url": "https://ahoy.tk-jk.net/Images8/Honda/DelphiAndNicholasAtHondaPoint.jpg",
+          "alt": "USS Delphy and another wrecked destroyer at Honda Point after the 1923 disaster.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "288:2",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+          "alt": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "288:3",
+          "source_url": "https://www.navsource.net/archives/05/pix1/0531104.jpg",
+          "alt": "Wrecked U.S. Navy destroyers at Honda Point after the 1923 disaster.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "288:4",
+          "source_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/h84000/h84822.jpg",
+          "alt": "USS Chauncey and wrecked destroyers during rescue operations at Honda Point in 1923.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "288:5",
+          "source_url": "https://www.usni.org/sites/default/files/styles/hero_image/public/LWF-PRO-3-20%201_0.jpg?itok=ex2XHVlK",
+          "alt": "Aerial historical view of the Honda Point destroyer wreck field along the California coast.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 287,
+      "modified": "2026-10-29T18:42:40",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "287:0",
+          "source_url": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+          "alt": "An automobile stopped near the broken end of the Sunshine Skyway Bridge after the May 9, 1980 collapse.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "287:1",
+          "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/tbt/555OWMWIJMI6TGNIIBWI6S7HAY.jpg",
+          "alt": "The bulk carrier Summit Venture beneath the broken Sunshine Skyway Bridge after the collision.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "287:2",
+          "source_url": "https://skywaydisaster.com/images/timeline2.jpg",
+          "alt": "Diagram showing the Summit Venture collision sequence at the Sunshine Skyway Bridge.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "287:3",
+          "source_url": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+          "alt": "Automobile halted at the broken end of the Sunshine Skyway after the 1980 collapse.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "287:4",
+          "source_url": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+          "alt": "Federal archival view of the collapsed Sunshine Skyway Bridge and Summit Venture after the May 1980 accident.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "287:5",
+          "source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 285,
+      "modified": "2026-09-08T10:06:47",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "285:0",
+          "source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+          "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "285:1",
+          "source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+          "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "285:2",
+          "source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+          "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "285:3",
+          "source_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+          "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "285:4",
+          "source_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+          "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "285:5",
+          "source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+          "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 283,
+      "modified": "2026-08-21T00:33:14",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "283:0",
+          "source_url": "https://2.bp.blogspot.com/-vFf9zOG42QU/W2shS055U-I/AAAAAAAACc0/uHswGJB19E4OgUANkDatBX7LSCIEswfZgCLcBGAs/s1600/Fire%2BEscape%2BDoors%2BPortrait%2BMode.jpg",
+          "alt": "Fire-damaged exit doors inside Chicago's Iroquois Theatre after the December 30, 1903 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "283:1",
+          "source_url": "https://miro.medium.com/v2/resize:fit:1400/1*IcflN4VAkB2zIyMzIbcmyQ.jpeg",
+          "alt": "The new Iroquois Theatre on Randolph Street in Chicago shortly before the 1903 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "283:2",
+          "source_url": "https://chicagology.com/wp-content/themes/revolution-20/chicagoimages2/iroquoispromenade.jpg",
+          "alt": "Contemporary drawing of the ornate Iroquois Theatre foyer and promenade before the fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "283:3",
+          "source_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+          "alt": "Charred seating and stage area inside the Iroquois Theatre after the 1903 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "283:4",
+          "source_url": "https://www.wttw.com/sites/default/files/csdd-investigators_02.jpg",
+          "alt": "Investigators inside the damaged Iroquois Theatre after the 1903 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "283:5",
+          "source_url": "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/627134-wikimedia-iroquois-fire-66b8dccd06d18b8b1200a566c6d50b53.jpg",
+          "alt": "Historical Iroquois Theatre exit and fire-escape area after the disaster.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "283:6",
+          "source_url": "https://florencekelley.northwestern.edu/img/galleries/historical/iroquois/i36009aa.jpg",
+          "alt": "Crowd and street scene outside the Iroquois Theatre after the 1903 fire.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 280,
+      "modified": "2026-09-07T09:43:49",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "280:0",
+          "source_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+          "alt": "USS Pueblo underway off San Diego in October 1967, three months before its capture by North Korea.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "280:1",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+          "alt": "A USS Pueblo sailor drawing coffee in the ship's mess during 1967.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "280:2",
+          "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+          "alt": "Interior mess and living space aboard USS Pueblo before the 1968 seizure.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "280:3",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+          "alt": "Released USS Pueblo crewmen at Panmunjom in December 1968.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "280:4",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+          "alt": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "280:5",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+          "alt": "USS Pueblo crewmen eating after their release from North Korean captivity in December 1968.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 279,
+      "modified": "2026-09-08T10:06:54",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "279:0",
+          "source_url": "https://cdn-sw.spidersweb.pl/2024/02/kosmos_954.jpg",
+          "alt": "Operation Morning Light personnel searching Arctic terrain for radioactive debris from Cosmos 954.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "279:1",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Short_SC.7_Skyvan_C-FQSL_TOR_27.07.75_edited-2.jpg",
+          "alt": "A Short Skyvan aircraft of the type used in Canadian airborne geophysical survey work during the 1970s.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "279:2",
+          "source_url": "https://bkimg.cdn.bcebos.com/pic/024f78f0f736afc379317e1bd848fcc4b74543a9b436",
+          "alt": "Technical illustration of a Soviet nuclear-powered radar ocean reconnaissance satellite similar to Cosmos 954.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "279:3",
+          "source_url": "https://www.spaceacademy.net.au/watch/debris/oml.jpg",
+          "alt": "Operation Morning Light aircraft, search personnel and recovered debris during the 1978 Cosmos 954 response.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "279:4",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Cosmos-954_Reactor.png",
+          "alt": "U.S. government technical reconstruction of the BES-5 BUK nuclear reactor used in Soviet RORSAT satellites.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "279:5",
+          "source_url": "https://media.licdn.com/dms/image/v2/D4D12AQHmW14R-yIi1g/article-inline_image-shrink_1000_1488/B4DZctCqx_q4AM-/0/1748804514162?e=2147483647&v=beta&t=cK4Wg6FhyvLGIEHJU44N_Rj9uCSsywcjtMc_ZoQSgaA",
+          "alt": "Operation Morning Light search personnel preparing radiological equipment beside an aircraft.",
+          "origin_class": "INVALID_URL",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 8,
+    "inline_img_tags": 49,
+    "external_origin_count": 0,
+    "classes": {
+      "INVALID_URL": 49
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}
