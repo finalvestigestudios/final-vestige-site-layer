@@ -40,7 +40,7 @@
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Catalogue record of the digitized 1796 Hartford edition printed by Hudson & Goodwin for the author; title page lists vegetables, pastes, pies, preserves and cakes; cataloguer's note: first cook book written by an American and published in the United States; Library of Congress is not aware of any U.S. copyright or other restrictions on the digitized documents.",
-      "notes": "Only the catalogue record was read. The text of the pickling or preserving sections of the book was NOT read and no claim about its contents is made in the archive. Reading depth: PARTIAL: catalogue record only, via targeted extraction. The book text was not read (a separate extraction of the archive.org facsimile text returned nothing)."
+      "notes": "Only the catalogue record was read. The text of the pickling or preserving sections of the book was NOT read and no claim about its contents is made in the archive. Reading depth: PARTIAL: catalogue record only, via targeted extraction. The Library's page has no book text and the Internet Archive facsimile (firstamericancoo00simm) is a restricted lending item that could not be opened on 2026-11-01. The text that WAS read is the 1798 printing, recorded as hist-home-msu-simmons-1798; no claim is made that the 1796 printing reads the same."
     },
     {
       "id": "hist-home-cdc-botulism-about",
@@ -391,6 +391,20 @@
       "human_link_check": false,
       "supports": "Catalogue record of a digitized copy of Chadwick's 1842 report: London, Her Majesty's Stationery Office, 1842; xxx, 457 pages with plates; presented to both Houses of Parliament by command of Her Majesty, July 1842 (title page); 546 images online; Public Domain Mark; Chadwick was Secretary to the Poor Law Board (catalogue note).",
       "notes": "Reading depth: FULL for the catalogue record only. The report itself (546 images) was not read. The first attempt on 2026-10-30 returned HTTP 429; this ordinary retry on 2026-11-01 succeeded. No image is used in the archive."
+    },
+    {
+      "id": "hist-home-msu-simmons-1798",
+      "title": "American cookery, or The art of dressing viands, fish, poultry, and vegetables ... (Amelia Simmons, Hartford: printed for Simeon Butler, Northampton, 1798), Feeding America transcription",
+      "publisher": "Michigan State University Libraries, Feeding America: The Historic American Cookbook Project (digital repository)",
+      "kind": "primary-digitized",
+      "url": "https://d.lib.msu.edu/fa/1",
+      "published": "1798",
+      "updated": null,
+      "reviewed": null,
+      "verified_on": "2026-11-01",
+      "human_link_check": false,
+      "supports": "Transcribed text of the 1798 printing of Simmons's American Cookery (title page in the text: 'Printed for Simeon Butler, Northhampton. 1798'; the repository describes it as first edition, second printing and names the Jan Longone Wine and Food Library as the transcription source). Passages relied on: potatoes dug before the autumn rains, dried, kept from frost and dampness through winter, moved from the cellar to a dry loft in spring; parsnips that may be kept anywhere that avoids heat and frost and are richer if left in the ground over winter and dug in April; May-packed butter set in the coldest part of the cellar or in the ice-house; parsley grown in a cask taken into the cellar for winter; preserved fruit set in a cool dry cellar; pickling directions for cucumbers, melons ('mangoes') and barberries using brine or vinegar; sugar preserves of many fruits; a direction for keeping green peas until Christmas in fat-sealed bottles with no heating step described; brass and bell-metal vessels used in cooking and preserving directions with no warning attached in the passages searched.",
+      "notes": "Reading depth: PARTIAL. The repository's published full-text download (about 82,000 characters) was fetched by a plain HTTP request (not Firecrawl, whose extraction was only a summary) and searched for pickl*, cellar, preserv*, brass, copper, lead, verdigr*, poison, danger, frost and related words; the matching passages and the sections on pickles, preserved fruit and keeping peas were read. The book was NOT read cover to cover. The repository page offers a Public Domain Mark link. This is the 1798 printing, not the 1796 edition catalogued by the Library of Congress. No amounts, brine strengths, times or procedures from the text are reproduced in the archive."
     }
   ]
 }
