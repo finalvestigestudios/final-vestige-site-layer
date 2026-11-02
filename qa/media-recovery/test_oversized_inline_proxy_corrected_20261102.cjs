@@ -1,5 +1,5 @@
 'use strict';
-/** Regression tests: source-level Vasa Jetpack repair, not a browser or upload test. */
+/** Regression tests: 10/13 source proxy/ALT/dimensions; no browser or WordPress writes. */
 const test=require('node:test');
 const fs=require('node:fs'),path=require('node:path');
 const {validate}=require('./validate_oversized_inline_proxy_corrected_20261102.cjs');
@@ -8,7 +8,9 @@ const inputs=[
  load('oversized_inline_proxy_corrected_20261102.json'),
  load('oversize_inline_reconciled_20261031.json'),
  load('oversized_inline_exposure_20261102.json'),
- load('parts/02.json')
+ load('parts/02.json'),
+ load('parts/01.json'),
+ load('parts/08.json')
 ];
 const clone=x=>JSON.parse(JSON.stringify(x));
 test('crosswalk validates 10/13 oversized inline originals and 3 Vasa proxies',()=>{
@@ -17,6 +19,16 @@ test('crosswalk validates 10/13 oversized inline originals and 3 Vasa proxies',(
  if(r.summary.inline_original_storage_bytes!==36937913)throw Error('wrong inline bytes');
 });
 const mutations=[
+ ['San Francisco source ALT omitted again',x=>x.rows.find(r=>r.media_id===39).inline_slot_matches[0].alt=null],
+ ['Vicksburg source ALT altered',x=>x.rows.find(r=>r.media_id===41).inline_slot_matches[0].alt='Not Vicksburg'],
+ ['Malbone tunnel ALT erased',x=>x.rows.find(r=>r.media_id===1257).inline_slot_matches[0].alt=null],
+ ['malformed five PNG stored HTML width',x=>x.rows.find(r=>r.media_id===43).inline_slot_matches[0].stored_html_geometry_px.width=1672],
+ ['invented HTML height',x=>x.rows.find(r=>r.media_id===39).inline_slot_matches[0].stored_html_geometry_px.height=941],
+ ['frozen Malbone census SHA changed',x=>x.frozen_inputs.malbone_post_census.blob_sha='0'.repeat(40)],
+ ['frozen five PNG census SHA changed',x=>x.frozen_inputs.five_png_post_census.blob_sha='0'.repeat(40)],
+ ['false ALT correction total',x=>x.summary.previously_omitted_snapshot_alts_recovered=0],
+ ['false recorded source ALT coverage',x=>x.summary.source_snapshot_nonempty_alts_for_inline_originals=3],
+ ['source geometry count suppressed',x=>x.summary.five_unvarianted_png_html_geometry_verified=0],
  ['proxy host spoof',x=>x.rows.find(r=>r.media_id===388).inline_slot_matches[0].stored_source_url=
    'https://i0.wp.com/notfinalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1'],
  ['proxy selector appended',x=>x.rows.find(r=>r.media_id===388).inline_slot_matches[0].stored_source_url+='&file=other'],
