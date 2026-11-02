@@ -37,7 +37,7 @@ class PrintRightsCustody(unittest.TestCase):
                 self.assertIn('<strong>Credit:</strong>', proof)
                 self.assertIn('<strong>Producing center:</strong>', proof)
                 self.assertIn('<strong>Catalog verification:</strong>', proof)
-                self.assertIn('rel="noopener noreferrer"', proof)
+                self.assertIn('data-r73-print-url', proof)
 
     def test_print_is_not_a_rights_clearance(self):
         with tempfile.TemporaryDirectory() as td:
