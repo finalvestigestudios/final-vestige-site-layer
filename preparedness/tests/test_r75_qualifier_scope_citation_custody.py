@@ -23,6 +23,20 @@ N=(1,1,3,3,4)
 def sample():
     return previous.gate.construct(previous.sample(),expected=N)
 
+def synthetic_with_numeric_context():
+    """Derive a quantity-bearing fixture solely from a sealed synthetic R72 corpus."""
+    r72=previous.prior.sample()
+    b=r72["all_unabridged_DOM_block_citation_tasks_NOT_APPROVED"][0]
+    t=b["DOM_text_UNABRIDGED_NOT_BROWSER_OR_SAFETY_VERIFIED"]+" Keep 2 days for test routing."
+    b["DOM_text_UNABRIDGED_NOT_BROWSER_OR_SAFETY_VERIFIED"]=t
+    b["DOM_text_sha256"]=gate.text_digest(t)
+    b["task_sha256"]=gate.digest({k:v for k,v in b.items() if k!="task_sha256"})
+    r72["fingerprint_sha256"]=gate.digest({k:v for k,v in r72.items() if k!="fingerprint_sha256"})
+    r73=previous.prior.gate.construct(r72,expected=N)
+    row=previous.gate.construct(r73,expected=N)
+    assert row["exact_quantity_review_packets_NOT_APPROVED"],"synthetic numeric fixture missing"
+    return row
+
 def reseal(r,key="fingerprint_sha256"):
     r.pop(key,None)
     r[key]=gate.digest(r)
@@ -196,6 +210,16 @@ class Baseline(unittest.TestCase):
         rows=list(csv.DictReader(io.StringIO(gate.csv_review_worklist(r))))
         self.assertTrue(rows[0]["full_text_NOT_APPROVED"].startswith("'"))
 
+    def test_synthetic_numeric_context_packet_is_generated(self):
+        p=synthetic_with_numeric_context()
+        self.assertGreater(p["counts"]["numeric_unit_occurrences"],0)
+        self.assertTrue(gate.construct(p,expected=N)[
+            "action_or_quantity_qualifier_context_queue_NOT_APPROVED"])
+
+    def test_synthetic_numeric_context_remains_unapproved(self):
+        p=synthetic_with_numeric_context()
+        self.assertEqual(gate.construct(p,expected=N)["counts"]["qualified_safety_reviews"],0)
+
     def test_boolean_count_not_used_as_approval(self):
         r=self.make()
         self.assertIs(type(r["counts"]["union_without_same_block_lexical_qualifier_triage"]),int)
@@ -279,7 +303,7 @@ FAULTS={
 
 def fault_test(label, mutate):
     def run(self):
-        p=sample()
+        p=synthetic_with_numeric_context() if label.startswith("quantity_") else sample()
         mutate(p)
         reseal(p)
         with self.assertRaises(gate.Hold,msg=label):
