@@ -1,0 +1,15 @@
+FINAL VESTIGE STUDIOS / THE DISPATCH / R77
+2026-11-02 23:38 UTC
+ALL SIX: HOLD_UNSENT. COMMERCIAL ISSUES 03 & 05: HOLD_MERCHANT.
+
+Original balance remains four editorial issues (01/02/04/06) and two optionally commercial (03 Zen12, 05 Total Focus).
+#03 Zen12 exact seller offer: 12-minute sessions, four formats, 12 levels in advertised full tier; health, brainwave and hour-equivalence claims unverified. Mind guide PR #687 is UNPUBLISHED.
+#05 Hypnosis Live Total Focus exact seller offer: 33-minute, 47 MB MP3; concentration and career promises unproven. Mind guide PR #692 is UNPUBLISHED.
+
+Current Jetpack: enabled, automatic emails off, excerpt mode, no recent sends. Fieldbook welcome configured but receipt unverified.
+Subscriber dashboard: total=2; confirmed=2; unconfirmed=2; NOT ADDITIVE; deliverable recipients unknown.
+Partner: neither specific named-product EMAIL permission, nor Final Vestige partner acceptance or actual attributable link verified.
+Compliance: qualifying publisher postal address and actual received unsubscribe/footer unverified.
+Approval: No founder final send permission.
+
+Independent offline reviewer only: NOT an actual received Jetpack email or authorization to publish/send. No subscriber PII or tracking. See R77 CROSS_LANE_RELEASE_AUDIT.md, MERCHANT_AUTHORIZATION_DOSSIER.md and WORDPRESS_GENUINE_DELIVERY_PROCEDURE.md.
