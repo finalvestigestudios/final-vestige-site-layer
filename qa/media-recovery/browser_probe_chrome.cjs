@@ -8,13 +8,18 @@ const {selectCdpImageRequests}=require('./cdp_image_request_scope.cjs');
 const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
-const P0=[268,432,418,407,434,621],nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
+const {buildPriorityPlan}=require('./probe_p0_queue_core.cjs');
+const auditedReleaseQueue=require('./p0_restoration_release_queue_20261101.json');
+const nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
 function plan(snapshot,all){
  const posts=snapshot.parts.flatMap(x=>x.posts),images=snapshot.parts.flatMap(x=>x.images);
- return (all?posts.map(p=>p.id):P0).map(id=>{
+ const priority=buildPriorityPlan(snapshot,auditedReleaseQueue);
+ return (all?posts.map(p=>p.id):priority.post_ids).map(id=>{
   const p=posts.find(v=>v.id===id);if(!p)throw Error('Missing post '+id);
   if(new URL(p.url).hostname!=='finalvestige.com')throw Error('Offsite page refused '+p.url);
-  return {id,url:p.url,title:p.title,stored:images.filter(v=>v.post_id===id)};
+  return {id,url:p.url,title:p.title,stored:images.filter(v=>v.post_id===id),
+   priority_image_keys:priority.priority_targets.filter(t=>t.post_id===id).map(t=>t.image_key),
+   priority_targets:priority.priority_targets.filter(t=>t.post_id===id)};
  });
 }
 class CDP{
@@ -184,11 +189,11 @@ async function main(){
  const pages=plan(loadSnapshot(),all);
  if(dry){console.log(JSON.stringify({mode:all?'all':'priority',page_count:pages.length,
   post_ids:pages.map(x=>x.id),image_sources:pages.reduce((n,p)=>n+p.stored.length,0),
-  urls:pages.map(x=>x.url),browser_probe_executed:false},null,2));return}
+  urls:pages.map(x=>x.url),priority_targets:pages.flatMap(x=>x.priority_targets),browser_probe_executed:false},null,2));return}
  const dir=path.join(__dirname,'runs');fs.mkdirSync(dir,{recursive:true});
  const result={schema_version:1,probe_version:3,created:now(),mode:all?'all':'priority',viewport:desktop?'1440x900':'390x844',
   probe:'logged-out Chrome CDP, no npm dependencies or WordPress writes',
-  requested_pages:pages.length,status:'starting',pages:[]};
+  requested_pages:pages.length,priority_image_keys:pages.flatMap(x=>x.priority_image_keys),status:'starting',pages:[]};
  let browser;
  try{
   browser=await launch();const c=browser.cdp;
