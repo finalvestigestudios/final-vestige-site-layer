@@ -1,0 +1,461 @@
+{
+  "status": "SOURCE_CONTROLLED_DRAFT_HARD_HOLD",
+  "run_date": "2026-11-02",
+  "merchant": "Inspire3",
+  "product": "Zen12",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "scope": "Official Inspire3 seller portfolio",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "scope": "Exact Zen12 seller sales page and tier info",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/about",
+      "scope": "Seller duration/levels/four listening styles",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "S04",
+      "url": "https://zen12.com/research",
+      "scope": "Seller proposed brainwave mechanism",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "S05",
+      "url": "https://zen12.com/getstarted",
+      "scope": "Merchant current checkout fields: read only, no form submission",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "S06",
+      "url": "https://inspire3.com/privacy/",
+      "scope": "Seller policy on telephone and potential referring-affiliate data",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "S07",
+      "url": "https://inspire3.com/terms/",
+      "scope": "Inaccessible at review; do not attribute current detailed terms",
+      "review_date": "2026-11-02",
+      "verified_access": false
+    },
+    {
+      "id": "R01",
+      "url": "https://doi.org/10.1068/p281059",
+      "scope": "1999 primary inattentional blindness experiment",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "R02",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "scope": "2013 primary radiologist inattentional blindness study",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "R03",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "scope": "2013 radiologist author manuscript",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "R04",
+      "url": "https://doi.org/10.1073/pnas.2214930120",
+      "scope": "2023 three-experiment motion-speed follow-up",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "R05",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "scope": "1998 change blindness field study distinct phenomenon",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "R06",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "2023 systematic review on binaural-beat EEG",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "G01",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "scope": "General meditation research context only",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "G02",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "FTC near-recommendation affiliate disclosure",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "G03",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "FTC scientific substantiation standard",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "F01",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Existing Puységur source archive, WP read-only verified",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "F02",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Existing sole Focus Fieldbook/Jetpack route, WP read-only verified",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "F03",
+      "url": "https://finalvestige.com/explore/",
+      "scope": "Existing Explore route",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "F04",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "scope": "Existing editorial standards",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    },
+    {
+      "id": "F05",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "Existing disclosure route",
+      "review_date": "2026-11-02",
+      "verified_access": true
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Inspire3 publicly identifies Zen12 as its product",
+      "classification": "seller description",
+      "source": "S01"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 session length twelve minutes",
+      "classification": "seller description",
+      "source": "S02 S03"
+    },
+    {
+      "id": "C03",
+      "claim": "Twelve progressive levels are offered",
+      "classification": "seller description",
+      "source": "S02 S03"
+    },
+    {
+      "id": "C04",
+      "claim": "Four different listening formats are advertised",
+      "classification": "seller description",
+      "source": "S03"
+    },
+    {
+      "id": "C05",
+      "claim": "Full course advertised as 48 MP3 recordings",
+      "classification": "seller description (not firsthand inspected)",
+      "source": "S02 S05"
+    },
+    {
+      "id": "C06",
+      "claim": "Beginner tier is first six levels/24 MP3",
+      "classification": "seller description",
+      "source": "S02"
+    },
+    {
+      "id": "C07",
+      "claim": "Premium tier is twelve levels/48 MP3",
+      "classification": "seller description",
+      "source": "S02"
+    },
+    {
+      "id": "C08",
+      "claim": "Advanced tier is last six levels/24 MP3",
+      "classification": "seller description",
+      "source": "S02"
+    },
+    {
+      "id": "C09",
+      "claim": "Premium checkout advertises a training call",
+      "classification": "seller description (not fulfillment inspected)",
+      "source": "S05"
+    },
+    {
+      "id": "C10",
+      "claim": "One hour advanced meditation equivalence",
+      "classification": "EXCLUDE: independent Zen12 comparative outcome proof absent",
+      "source": "S02"
+    },
+    {
+      "id": "C11",
+      "claim": "Audio automatically meditates for you",
+      "classification": "EXCLUDE: unsupported product-specific mechanism/outcome",
+      "source": "S03 S04"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 independently treats anxiety/stress",
+      "classification": "EXCLUDE: independent product clinical substantiation absent",
+      "source": "S02 G03"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 independently improves attention/focus",
+      "classification": "EXCLUDE: product-specific substantiation absent",
+      "source": "S02 G03"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 improves creativity or mood",
+      "classification": "EXCLUDE: product-specific substantiation absent",
+      "source": "S02 G03"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 delivers health gains",
+      "classification": "EXCLUDE: product-specific substantiation absent",
+      "source": "S02 G03"
+    },
+    {
+      "id": "C16",
+      "claim": "Binaural-beat EEG review has 14 studies",
+      "classification": "SUPPORTED: independent review, not Zen12 trial",
+      "source": "R06"
+    },
+    {
+      "id": "C17",
+      "claim": "EEG findings: 5 support/8 contradict/1 mixed",
+      "classification": "SUPPORTED with review scope and heterogeneity",
+      "source": "R06"
+    },
+    {
+      "id": "C18",
+      "claim": "General meditation efficacy transfers to Zen12",
+      "classification": "REJECT inference from class to named product",
+      "source": "G01"
+    },
+    {
+      "id": "C19",
+      "claim": "1999 46% missed unexpected EVENT across 192 analyzed viewers",
+      "classification": "SUPPORTED only pooled scope",
+      "source": "R01"
+    },
+    {
+      "id": "C20",
+      "claim": "1999 46% missed a gorilla specifically",
+      "classification": "REJECT inaccurate generalization",
+      "source": "R01"
+    },
+    {
+      "id": "C21",
+      "claim": "2013 radiologists 83% did not report inserted gorilla",
+      "classification": "SUPPORTED condition-specific n=24",
+      "source": "R02 R03"
+    },
+    {
+      "id": "C22",
+      "claim": "2013 suggests 83% of physicians miss lung disease",
+      "classification": "REJECT, not a clinical-error trial",
+      "source": "R02 R03"
+    },
+    {
+      "id": "C23",
+      "claim": "2023 fast motion draws attention in tested paradigms",
+      "classification": "SUPPORTED condition-specific 3 experiments n=4493",
+      "source": "R04"
+    },
+    {
+      "id": "C24",
+      "claim": "Inattentional blindness is identical to change blindness",
+      "classification": "REJECT distinct operational tasks",
+      "source": "R01 R05"
+    },
+    {
+      "id": "C25",
+      "claim": "Seller advertises one-year refund",
+      "classification": "SELLER description, no verified mechanics",
+      "source": "S02"
+    },
+    {
+      "id": "C26",
+      "claim": "Refund processing/card/PayPal details current",
+      "classification": "UNVERIFIED terms inaccessible",
+      "source": "S07"
+    },
+    {
+      "id": "C27",
+      "claim": "Current merchant price or discount",
+      "classification": "EXCLUDE volatile/dynamic checkout; not price-verified",
+      "source": "S05"
+    },
+    {
+      "id": "C28",
+      "claim": "Merchant checkout displays mobile number input",
+      "classification": "OBSERVED, mandatory status not tested",
+      "source": "S05"
+    },
+    {
+      "id": "C29",
+      "claim": "Merchant can use submitted mobile for marketing",
+      "classification": "SELLER stated policy",
+      "source": "S06"
+    },
+    {
+      "id": "C30",
+      "claim": "Merchant may share buyer names/emails/products with affiliate",
+      "classification": "SELLER stated possibility, NOT FV receipt",
+      "source": "S06"
+    },
+    {
+      "id": "C31",
+      "claim": "Public Inspire3 affiliate enrollment means FV accepted",
+      "classification": "REJECT; FV written terms absent",
+      "source": "S01"
+    },
+    {
+      "id": "C32",
+      "claim": "FV approved Zen12 affiliate URL exists",
+      "classification": "NOT VERIFIED, no CTA activation",
+      "source": null
+    },
+    {
+      "id": "C33",
+      "claim": "FV allowed to promote Zen12 on website",
+      "classification": "NOT VERIFIED",
+      "source": null
+    },
+    {
+      "id": "C34",
+      "claim": "FV allowed to promote Zen12 on TikTok",
+      "classification": "NOT VERIFIED",
+      "source": null
+    },
+    {
+      "id": "C35",
+      "claim": "FV allowed to promote Zen12 by Jetpack email",
+      "classification": "NOT VERIFIED; Dispatch HOLD",
+      "source": null
+    },
+    {
+      "id": "C36",
+      "claim": "Public unrelated affiliate swipe grants rights",
+      "classification": "REJECT license/approval inference",
+      "source": null
+    },
+    {
+      "id": "C37",
+      "claim": "Promotional commission disclosure near offer",
+      "classification": "REQUIRED per FTC guidance",
+      "source": "G02"
+    },
+    {
+      "id": "C38",
+      "claim": "Standalone global disclosure suffices instead",
+      "classification": "REJECT near-link needed",
+      "source": "G02"
+    },
+    {
+      "id": "C39",
+      "claim": "FV personally used product or files",
+      "classification": "DO NOT CLAIM: unverified",
+      "source": null
+    },
+    {
+      "id": "C40",
+      "claim": "Audio product medically or financially guaranteed",
+      "classification": "DO NOT CLAIM: unsubstantiated",
+      "source": "G03"
+    },
+    {
+      "id": "C41",
+      "claim": "Video provides product efficacy proof",
+      "classification": "REJECT: only educational attention illustration",
+      "source": "R01 R04"
+    },
+    {
+      "id": "C42",
+      "claim": "Video reproduces an original experiment",
+      "classification": "REJECT: original schematic, not official footage",
+      "source": "R01"
+    },
+    {
+      "id": "C43",
+      "claim": "Film on-site rights, subtitles and playback",
+      "classification": "UNVERIFIED; offline review only",
+      "source": null
+    },
+    {
+      "id": "C44",
+      "claim": "A/B guide-only vs video conversion lift",
+      "classification": "UNTESTED; no user exposure data",
+      "source": null
+    },
+    {
+      "id": "C45",
+      "claim": "Click intention proves merchant sales",
+      "classification": "REJECT; merchant report required",
+      "source": null
+    },
+    {
+      "id": "C46",
+      "claim": "Additional email signup is needed",
+      "classification": "REJECT: preserve existing Jetpack and Focus",
+      "source": "F02"
+    },
+    {
+      "id": "C47",
+      "claim": "Puységur historical evidence proves hypnosis efficacy",
+      "classification": "REJECT; methodological analogy only",
+      "source": "F01"
+    },
+    {
+      "id": "C48",
+      "claim": "Independent product guide can be published today",
+      "classification": "HOLD: founder/partner/QA release not complete",
+      "source": null
+    }
+  ],
+  "release_gates": {
+    "fv_partner_acceptance": false,
+    "zen12_authorized_tracking_url": false,
+    "website_channel_authorization": false,
+    "tiktok_channel_authorization": false,
+    "email_channel_authorization": false,
+    "licensed_creatives": false,
+    "full_current_terms_refund_review": false,
+    "merchant_purchaser_data_decision": false,
+    "independent_claims_ftc_signoff": false,
+    "site_accessibility_browser_signoff": false,
+    "on_site_caption_playback_signoff": false,
+    "explicit_founder_release_approval": false
+  },
+  "active_affiliate_urls": [],
+  "collected_real_person_data": false
+}
