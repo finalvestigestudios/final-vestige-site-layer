@@ -108,6 +108,9 @@
 }
 @container (min-width: 900px) { .pa .pa-printbar--end { display: none; } }
 
+/* Source notes can contain a raw URL (e.g. 'Fetched from the old PDF address https://...'); let it wrap instead of widening the page at 320px. */
+.pa-sources li span { overflow-wrap: anywhere; }
+
 /* ---------- Body typography ---------- */
 .pa-body { max-width: var(--pa-measure); min-width: 0; }
 .pa-body h2 { margin: 2.1em 0 .55em; font-size: clamp(24px, 3.6cqw, 32px); line-height: 1.2; letter-spacing: -.01em; font-weight: 650; color: var(--pa-text); scroll-margin-top: 20px; text-wrap: balance; }
