@@ -102,10 +102,10 @@ def scene(d,index,local):
         center_text(d,'TWO STORIES\nIN THE DATA',175,35,WHITE,True)
         d.rounded_rectangle((65,355,259,615),radius=14,fill=(32,36,34),outline=(140,114,72),width=2)
         d.rounded_rectangle((281,355,475,615),radius=14,fill=(32,36,34),outline=(140,114,72),width=2)
-        center_text(d,'SENSORY',408,19,GOLD)
-        center_text(d,'TIMING',452,19,GOLD)
-        d.text((318,408),'EXPECTATION',font=font(17),fill=GOLD)
-        d.text((323,452),'& SUGGESTION',font=font(14),fill=GOLD)
+        d.text((98,420),'SENSORY',font=font(19),fill=GOLD)
+        d.text((107,465),'TIMING',font=font(19),fill=GOLD)
+        d.text((304,420),'EXPECTATION',font=font(15),fill=GOLD)
+        d.text((311,465),'SUGGESTION',font=font(15),fill=GOLD)
         center_text(d,'Their relative roles are debated.',691,17,SOFT)
         center_text(d,'Lush 2020  /  Slater & Ehrsson 2022',740,13,SOFT)
     else:
@@ -134,6 +134,7 @@ def render():
         start,end=boundary[sc]
         frame,d=paper_base(i)
         scene(d,sc,(second-start)/(end-start))
+        # Gentler beginning/end fade improves social crop legibility, without flashing.
         fade=min(1,second/0.55,(SECONDS-second)/0.55)
         if fade<1:
             darkness=Image.new('RGB',(W,H),INK)
