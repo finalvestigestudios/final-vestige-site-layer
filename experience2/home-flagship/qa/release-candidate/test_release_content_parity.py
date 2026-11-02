@@ -31,8 +31,8 @@ class ReleaseCandidateParityTests(unittest.TestCase):
 
     def test_joint_removal_of_nojs_images_is_detected(self):
         import re
-        a = re.sub(r'<noscript>\\s*<img\\b[^>]*>\\s*</noscript>', '', SOURCE.decode('utf-8'))
-        p = re.sub(r'<noscript>\\s*<img\\b[^>]*>\\s*</noscript>', '', PAYLOAD.decode('utf-8'))
+        a = re.sub(r'<noscript>\s*<img\b[^>]*>\s*</noscript>', '', SOURCE.decode('utf-8'))
+        p = re.sub(r'<noscript>\s*<img\b[^>]*>\s*</noscript>', '', PAYLOAD.decode('utf-8'))
         with self.assertRaisesRegex(ValueError, 'RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE'):
             parity.compare_interiors(a, p)
 
@@ -44,7 +44,7 @@ class ReleaseCandidateParityTests(unittest.TestCase):
         # Change only the fallback source; preserve the real lazy image.
         def reroute(text):
             return re.sub(r'(<noscript><img src=")' + re.escape(target),
-                          r'\\g<1>https://example.invalid/unreviewed.jpg', text, count=1)
+                          r'\g<1>https://example.invalid/unreviewed.jpg', text, count=1)
         a, p = reroute(a), reroute(p)
         self.assertNotEqual(a, SOURCE.decode('utf-8'))
         with self.assertRaisesRegex(ValueError, 'RELEASE_PARITY_NOJS_ARCHIVE_FALLBACK_UNSAFE'):
