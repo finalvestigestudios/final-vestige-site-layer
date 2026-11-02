@@ -44,7 +44,7 @@
       "depicts": "Transit system map before Malbone temporary curve was constructed",
       "claim": "Provides historical network context, not exact wreck geometry",
       "limitation": "Do not spatially or chronologically align this map with 1918 crash curve",
-      "media_rights_status": "Rights and full-resolution catalog metadata pending external record access; page returned HTTP 403 to text fetch; existing Final Vestige hosted image only",
+      "media_rights_status": "The real WordPress media library record (ID 1258, re-verified 2026-11-02 via media.get, read-only) carries the site's own rights determination in its caption/description field: \"New York Public Library Digital Collections; public domain in the United States.\" Independent verification against NYPL's own catalog/rights page is still pending -- that page returned HTTP 403 to this project's fetch attempts in prior rounds and remains unreachable from this sandbox's network (confirmed again 2026-11-02; this sandbox's egress proxy denies connections to digitalcollections.nypl.org entirely, not just that one page).",
       "policy_source": "https://www.nypl.org/research/rights-and-permissions",
       "original_wordpress_image_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
       "original_wordpress_width": 5667,
@@ -60,7 +60,13 @@
         ],
         "default_width": 1024,
         "optimized_payload_bytes": "NOT_MEASURED",
-        "rights_review": "STILL_PENDING"
+        "rights_review": "SITE_RECORD_FOUND_NYPL_CATALOG_PAGE_STILL_UNREACHABLE",
+        "verified_2026_11_02": {
+          "method": "read-only WordPress.com MCP media.get, no writes",
+          "dimensions_match_manifest": true,
+          "filesize_match_manifest": true,
+          "image_url_match_manifest": true
+        }
       }
     }
   ],
