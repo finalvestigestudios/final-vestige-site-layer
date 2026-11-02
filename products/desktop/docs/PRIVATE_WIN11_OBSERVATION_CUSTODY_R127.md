@@ -14,7 +14,7 @@ they would be copied into the human review evidence. The writer also could not
 reliably notice an ordinary file swapped during intake.
 
 R127 requires an independent **regular, single-linked UTF-8 note file** and
-verifies its identity and size before, during and after an exact size-bounded
+verifies consistent file identities, bounded size and per-API metadata stability before, during and after an exact size-bounded
 descriptor read. It rejects linked inputs and linked/reparse ancestors, raw R9
 report paths, review matrix paths, notes from inside executable or witness
 custody, malformed UTF-8, oversized input, and path replacement, including a
@@ -49,11 +49,11 @@ or modify historical evidence.
 
 ## Regression scope
 
-`test_windows11_observation_input_r127.py` contains **13 synthetic,
+`test_windows11_observation_input_r127.py` contains **14 synthetic,
 source-owned methods**. The exact-method runner
 `scripts/safe_unittest_r127.py` rejects missing, extra, skipped and
 unexpected methods and redacts failures. Mandatory Linux and Windows GitHub
-Actions run both normal Python and `-OO` (52 method executions total).
+Actions run both normal Python and `-OO` (56 method executions total).
 Coverage includes ordinary notes, linked sources, linked parents, hardlinks,
 oversize/UTF-8 failures, R9 path and witness input, file replacement
 before opening and after opening, nonregular inputs, privacy-safe CLI errors,
