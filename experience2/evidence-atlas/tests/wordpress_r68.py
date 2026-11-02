@@ -283,6 +283,15 @@ def accept(stage,axe,out):
                           return {violations:x.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length})),passes:x.passes.length};
                         }""")
                         report['axe'].append({'width':w,**a})
+                        # Axe failure used to vanish when the full 14-case
+                        # report was withheld. Store ONLY rule IDs, impact and
+                        # numeric counts before admission; no DOM snippets,
+                        # CSS targets, text, private URLs, or credentials.
+                        (out/'R72_INCREMENTAL_AXE_RECEIPT.json').write_text(
+                            json.dumps({'schema':'fv.apollo.r72.axe-progress.v1',
+                              'release':'STAGING_HOLD','human_review_required':True,
+                              'scope':'ORIGINAL_APOLLO_COMPONENT_INSIDE_REAL_LOCAL_WORDPRESS',
+                              'observations':report['axe']},indent=2,sort_keys=True)+'\\n')
                         assert not a['violations'],a
                         ledger.advance('AXE')
                         img=page.screenshot(full_page=True,animations='disabled')
