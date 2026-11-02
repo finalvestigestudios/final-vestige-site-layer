@@ -36,3 +36,31 @@
     content:" [" attr(href) "]";font:9pt/1.5 ui-monospace,monospace;overflow-wrap:anywhere;
   }
 }
+
+/* R60: WCAG 2.2 pointer-size hardening for the unchanged R38 Research Desk.
+   The original NASA links and native <summary> controls measured ~21px tall
+   in Chromium. Enlarge only hit areas, preserving native disclosure markers,
+   link wording, source bytes, focus order, and print custody. */
+@media screen {
+  .fv-ex2-apollo-suite .fv-ex2-ledger__recordlinks a,
+  .fv-ex2-apollo-suite .fv-ex2-ledger__footer a {
+    display:inline-flex;
+    min-height:44px;
+    align-items:center;
+    padding-block:10px;
+  }
+  .fv-ex2-apollo-suite .fv-ex2-ledger__fulltext summary,
+  .fv-ex2-apollo-suite .fv-ex2-ledger__custody summary {
+    min-height:44px;
+    padding-block:11px;
+    /* Keep native display:list-item and its disclosure marker. */
+    cursor:pointer;
+  }
+  .fv-ex2-apollo-suite .fv-ex2-ledger__recordlinks a:focus-visible,
+  .fv-ex2-apollo-suite .fv-ex2-ledger__footer a:focus-visible,
+  .fv-ex2-apollo-suite .fv-ex2-ledger__fulltext summary:focus-visible,
+  .fv-ex2-apollo-suite .fv-ex2-ledger__custody summary:focus-visible {
+    outline:3px solid #e5c487;
+    outline-offset:3px;
+  }
+}
