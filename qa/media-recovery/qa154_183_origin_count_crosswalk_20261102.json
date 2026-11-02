@@ -30,7 +30,7 @@
     "posts_with_mismatch": 2,
     "mismatching_external_proxy_slots": 2
   },
-  "method": "Compare all 61 post IDs and image counts; classify media-recovery offsite only as source_kind external or wikimedia_redirect; compare to Site QA archived per-post offsite counts. Rows with delta=1 contain externally sourced images passed through i0.wp.com. Site QA per-image classifications are not available, so these are precisely localized candidate explanations, NOT a proven classification bug. Primary-source candidate metadata is provisional and cannot establish binary identity, rights, or guest HTTP.",
+  "method": "Compare all 61 post IDs and image counts; classify media-recovery offsite only as source_kind external or wikimedia_redirect; compare to Site QA archived per-post offsite counts. Rows with delta=1 contain externally sourced images passed through i0.wp.com. Site QA per-image classifications are not available, so these are precisely localized candidate explanations, NOT a proven classification bug. Primary-source candidate metadata is provisional and cannot establish binary identity, rights, or guest HTTP. Nov 2 independent image-viewer opened both exact stored i0.wp.com URLs and visibly rendered photographs; neither supplies browser HTTP status/transfer evidence.",
   "rows": [
     {
       "post_id": 621,
@@ -622,6 +622,20 @@
             "visual_match_verified": false,
             "visitor_image_failure_verified": false,
             "approved_for_caching": false
+          },
+          "independent_source_image_retrieval": {
+            "checked_on": "2026-11-02",
+            "method": "read-only web image viewer, exact stored i0.wp.com URL",
+            "image_displayed": true,
+            "retriever_result_kind": "rendered_image",
+            "actual_origin_http_status": null,
+            "actual_guest_chrome_http_status": null,
+            "guest_current_src": null,
+            "guest_decoded_intrinsic_width_px": null,
+            "guest_encoded_transfer_bytes": null,
+            "source_master_dimensions_verified": false,
+            "license_verified": false,
+            "interpretation": "Independent viewer rendered the image from the exact stored URL; no browser network/HTTP/bytes or publication rights proved."
           }
         }
       ]
@@ -667,6 +681,20 @@
             "visual_match_verified": false,
             "visitor_image_failure_verified": false,
             "approved_for_caching": false
+          },
+          "independent_source_image_retrieval": {
+            "checked_on": "2026-11-02",
+            "method": "read-only web image viewer, exact stored i0.wp.com URL",
+            "image_displayed": true,
+            "retriever_result_kind": "rendered_image",
+            "actual_origin_http_status": null,
+            "actual_guest_chrome_http_status": null,
+            "guest_current_src": null,
+            "guest_decoded_intrinsic_width_px": null,
+            "guest_encoded_transfer_bytes": null,
+            "source_master_dimensions_verified": false,
+            "license_verified": false,
+            "interpretation": "Independent viewer rendered the image from the exact stored URL; no browser network/HTTP/bytes or publication rights proved."
           }
         }
       ]
