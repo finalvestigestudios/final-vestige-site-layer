@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_on": "2026-11-02",
-  "purpose": "Correct November 2 direct-only image-exposure undercount using October 31 same-origin Jetpack Vasa match and frozen post corpus; no new browser data",
+  "purpose": "November 2 reconciled oversized first-party originals against frozen post HTML, including original-vs-proxy exposure AND complete stored ALT/HTML geometry (not live browser proof)",
   "supersedes_direct_only_inference": "qa/media-recovery/oversized_inline_exposure_20261102.json",
   "frozen_inputs": {
     "reconciled_oct31": {
@@ -17,7 +17,15 @@
       "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
     },
     "full_inventory_post_count": 61,
-    "full_inventory_stored_images": 355
+    "full_inventory_stored_images": 355,
+    "malbone_post_census": {
+      "path": "qa/media-recovery/parts/01.json",
+      "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+    },
+    "five_png_post_census": {
+      "path": "qa/media-recovery/parts/08.json",
+      "blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+    }
   },
   "summary": {
     "oversized_original_count": 13,
@@ -33,7 +41,10 @@
     "five_unvarianted_png_original_storage_bytes": 13267538,
     "reported_broken_42_guest_verified": false,
     "claimed_76_percent_wire_savings_measured": false,
-    "production_repairs": 0
+    "production_repairs": 0,
+    "previously_omitted_snapshot_alts_recovered": 7,
+    "source_snapshot_nonempty_alts_for_inline_originals": 10,
+    "five_unvarianted_png_html_geometry_verified": 5
   },
   "rights_and_implementation_gates": {
     "no_third_party_images_downloaded": true,
@@ -63,7 +74,11 @@
           "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
           "stored_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
           "origin_match_kind": "first_party_jetpack_proxy",
-          "alt": "Painted one-tenth-scale reconstruction of Vasa showing how the heavily armed warship likely appeared in 1628."
+          "alt": "Painted one-tenth-scale reconstruction of Vasa showing how the heavily armed warship likely appeared in 1628.",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 681
+          }
         }
       ],
       "inline_class": "INLINE_FIRST_PARTY_JETPACK_PROXY",
@@ -98,7 +113,11 @@
           "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.",
+          "stored_html_geometry_px": {
+            "width": null,
+            "height": null
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -133,7 +152,11 @@
           "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+          "stored_html_geometry_px": {
+            "width": null,
+            "height": null
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -168,7 +191,11 @@
           "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 576
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -203,7 +230,11 @@
           "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 576
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -238,7 +269,11 @@
           "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
           "stored_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
           "origin_match_kind": "first_party_jetpack_proxy",
-          "alt": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull."
+          "alt": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull.",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 676
+          }
         }
       ],
       "inline_class": "INLINE_FIRST_PARTY_JETPACK_PROXY",
@@ -273,7 +308,11 @@
           "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 576
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -308,7 +347,11 @@
           "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 576
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -343,7 +386,11 @@
           "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
           "stored_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
           "origin_match_kind": "direct_first_party",
-          "alt": null
+          "alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 576
+          }
         }
       ],
       "inline_class": "INLINE_DIRECT_FIRST_PARTY",
@@ -378,7 +425,11 @@
           "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
           "stored_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
           "origin_match_kind": "first_party_jetpack_proxy",
-          "alt": "Vasa inside the museum with old and new support structures used to reduce continuing deformation of the historic hull."
+          "alt": "Vasa inside the museum with old and new support structures used to reduce continuing deformation of the historic hull.",
+          "stored_html_geometry_px": {
+            "width": 1024,
+            "height": 683
+          }
         }
       ],
       "inline_class": "INLINE_FIRST_PARTY_JETPACK_PROXY",
