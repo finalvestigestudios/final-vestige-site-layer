@@ -1,0 +1,41 @@
+FINAL VESTIGE STUDIOS — DISPATCH R75 / PRIVATE CHANNEL REVIEW
+HOLD_UNSENT (all six). Additional HOLD_MERCHANT for issues 03 and 05.
+
+NEW LIVE FINDING — SUBSCRIPTION EXPECTATION GAP
+/dispatch/ page 523: "New investigations and archive finds by email, when we publish them."
+This page also references the 52-page Focus Fieldbook and unsubscribe, but
+does not prominently mention possible commission-earning recommendations.
+
+/focus/ page 1579: "Some emails may include recommendations that earn us a commission."
+Both use the same existing Jetpack subscriber list. The Focus wording is NOT
+merchant-specific email authorization or permission to send.
+
+PROPOSED DRAFT COPY (NOT APPROVED OR PUBLISHED):
+"We also occasionally examine tools related to attention and perception.
+Some Dispatch issues may include clearly labeled recommendations that could
+earn Final Vestige a commission if you choose to buy. Most issues remain
+independent research and archive reporting. Unsubscribe anytime."
+Suggested position: before existing /dispatch/ email field, if founder approves.
+
+LIVE VERIFIED SNAPSHOT 2026-11-02 21:33 UTC:
+Jetpack newsletter enabled. Automatic new-post email OFF. Excerpt mode.
+Welcome text configured with 52-page Fieldbook PDF; actual receipt UNVERIFIED.
+Recent sends none. Counts: total=2; confirmed=2; unconfirmed=2; suppressed=0.
+The counts are NONADDITIVE. Actual active email-eligible audience unknown.
+
+CAMPAIGN: 01 EDITORIAL HOLD, 02 EDITORIAL HOLD, 03 ZEN12 HOLD_MERCHANT,
+04 APOLLO 1 HOLD and subject timing dispute, 05 TOTAL FOCUS HOLD_MERCHANT,
+06 EDITORIAL HOLD.
+
+LEGAL AND PROMOTIONAL HOLDS:
+Publisher postal address verified privately? NO.
+Functional opt-out in real received message? NO.
+Founder-approved real received Jetpack email? NO.
+Native full/HTML/plain excerpt and disclosure? NOT VERIFIED.
+Zen12 and Total Focus *named-offer email permission*? NOT VERIFIED.
+Approved published warm-up guides and authorized links? NO.
+Final manuscripts/excerpts, recipient cohort and send approval? NO.
+
+NO NEW PLATFORM, NO EXTRA LIST, NO WORDPRESS WRITE, NO TEST SEND.
+NO FALSE OPEN/CLICK/ROI/A-B METRICS. DO NOT LOG RECIPIENT DETAILS.
+See RELEASE_DECISION_RECORD.md for sources and exact decision path.
