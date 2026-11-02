@@ -360,8 +360,8 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
                      "right_ids":labels_for_report(b,"id"),
                      "left_match_column":selected_headers[0],
                      "right_match_column":selected_headers[1],
-                      "left_amount_column":selected_amount_headers[0],
-                      "right_amount_column":selected_amount_headers[1]})
+                     "left_amount_column":selected_amount_headers[0],
+                     "right_amount_column":selected_amount_headers[1]})
     rows=attach_ledger_provenance(
         rows, left_sha256=digests[0], right_sha256=digests[1])
     return [save(folder,"ledger-diff",(
