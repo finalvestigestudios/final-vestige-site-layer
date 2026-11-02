@@ -189,6 +189,16 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                 return 'HOST_NOT_EXACT_LOOPBACK'
             if dest.port != origin.port:
                 return 'PORT_MISMATCH'
+            # Only public, fixed WordPress routes are categorized. Never
+            # reveal a full Location, arbitrary path, query, host or token.
+            if dest.path == '/wp-admin/install.php':
+                return 'WP_INSTALL_NOT_FINISHED'
+            if dest.path == '/wp-admin/upgrade.php':
+                return 'WP_DATABASE_UPGRADE_REQUIRED'
+            if dest.path == '/' and dest.query == 'pagename=fv-ex2-playground-review':
+                return 'BLUEPRINT_PRIVATE_LANDING'
+            if dest.path == '/' and not dest.query:
+                return 'ROOT_PATH'
             if dest.path not in ('/wp-login.php', '/wp-admin/'):
                 return 'PATH_NOT_ALLOWLISTED'
             return 'ALLOWED_PATH_BUT_LOGIN_UNVERIFIED'
@@ -213,7 +223,10 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                     return True
                 record('REST_NO_WORDPRESS_SCHEMA')
         except urllib.error.HTTPError as exc:
-            record('REST_HTTP_' + str(exc.code))
+            if exc.code in (301, 302, 303, 307, 308):
+                record('REST_REDIRECT_' + redirect_reason(exc.headers.get('Location', '')))
+            else:
+                record('REST_HTTP_' + str(exc.code))
             exc.close()
         except (OSError, urllib.error.URLError, ValueError):
             record('REST_UNAVAILABLE')
@@ -227,7 +240,10 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
                         return True
                     record(label + '_NOT_WORDPRESS_HTML')
             except urllib.error.HTTPError as exc:
-                record(label + '_HTTP_' + str(exc.code))
+                if exc.code in (301, 302, 303, 307, 308):
+                    record(label + '_REDIRECT_' + redirect_reason(exc.headers.get('Location', '')))
+                else:
+                    record(label + '_HTTP_' + str(exc.code))
                 exc.close()
             except (OSError, urllib.error.URLError, ValueError):
                 record(label + '_UNAVAILABLE')
