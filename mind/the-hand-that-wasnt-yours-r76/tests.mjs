@@ -1,0 +1,18 @@
+import { readFileSync } from 'node:fs';import { test } from 'node:test';import assert from 'node:assert/strict';
+const root=new URL('./',import.meta.url);const get=n=>readFileSync(new URL(n,root),'utf8');
+const A=get('zen12-a-text.blocks.html'),B=get('zen12-b-original-film.blocks.html'),core=get('zen12-guide-core.html'),hub=get('mind-hub-noncanonical.blocks.html'),matrix=JSON.parse(get('claim-source-matrix.json')),article=get('investigation.md'),film=get('film-storyboard-and-captions.vtt');
+test('exact buyer-guide core in both variants',()=>{assert.equal(A.split(core).length,2);assert.equal(B.split(core).length,2)});
+test('separate film only in B',()=>{assert.doesNotMatch(A,/class="film"/);assert.match(B,/class="film"/)});
+test('both use truly disabled native button',()=>{for(const s of [A,B])assert.match(s,/<button[^>]*\\sdisabled(?:\\s|>)[^>]*>/)});
+test('near CTA disclosure in same offer box',()=>{for(const s of [A,B]){const offer=s.match(/<div class="fv-r76-offer"[\\s\\S]*?<\\/div>/)?.[0];assert.ok(offer);assert.match(offer,/may earn a commission/);assert.match(offer,/<button[^>]*disabled/);assert.ok(offer.indexOf('may earn a commission')<offer.indexOf('<button'))}});
+test('merchant purchase links absent',()=>{for(const s of [A,B,hub])assert.doesNotMatch(s,/<a\\s[^>]*href=["']https?:\\/\\/(?:www\\.)?(?:zen12\\.com|inspire3\\.com|hypnosislive\\.com)/i)});
+test('no forms, tracking, merchant scripts, autoplay, iframe',()=>{for(const s of [A,B,hub]){assert.doesNotMatch(s,/<(?:form|iframe|script|input)\\b/i);assert.doesNotMatch(s,/\\bautoplay\\s*(?:=|>)/i)}});
+test('consumer caveats stay visible',()=>{for(const s of [A,B])for(const caveat of ['ninety days','3–4 marketing texts','may</strong> share','no price','no evidence']){if(caveat==='no price')continue;assert.ok(s.toLowerCase().includes(caveat.toLowerCase()),caveat)}});
+test('film transcript readable without JS',()=>{assert.match(B,/<details open>/);assert.match(B,/0:34–0:40/);assert.doesNotMatch(B,/<video\\b/)});
+test('responsive and reduced motion',()=>{for(const s of [A,B]){assert.match(s,/@media\\(max-width:480px\\)/);assert.match(s,/prefers-reduced-motion:reduce/);assert.match(s,/:focus-visible/)}});
+test('article remains independent of merchant',()=>{assert.ok(article.split(/\\s+/).length>=1700);assert.doesNotMatch(article,/https?:\\/\\/(?:inspire3|zen12)\\.com/);assert.match(article,/Lush/);assert.match(article,/Slater/) });
+test('hub links only published known routes',()=>{for(const path of ['/focus/','puysegurs-animal-magnetism-files/','/editorial-standards/','/affiliate-disclosure/'])assert.ok(hub.includes(path));assert.doesNotMatch(hub,/href="\\/mind\\//)});
+test('matrix has explicit unverified affiliate gate',()=>{assert.ok(matrix.rows.length>=35);assert.equal(matrix.activation.partner_accepted,false);assert.equal(matrix.activation.authorized_earning_url,null);assert.equal(matrix.activation.tracking_enabled,false);assert.equal(matrix.activation.newsletter_edit,false)});
+test('claim matrix has no permissive health outcomes',()=>{for(const r of matrix.rows.filter(r=>r.type==='health-or-psychological'))assert.match(r.status,/exclude|prohibited/)});
+test('VTT timing fully covers exactly 40 seconds',()=>{let re=/(\\d\\d):(\\d\\d):(\\d\\d)\\.(\\d{3}) --> (\\d\\d):(\\d\\d):(\\d\\d)\\.(\\d{3})/g;let a=[...film.matchAll(re)];assert.equal(a.length,6);let toMs=(h,m,s,ms)=>((+h*3600+ +m*60+ +s)*1000+ +ms);assert.equal(toMs(...a[0].slice(1,5)),0);assert.equal(toMs(...a.at(-1).slice(5,9)),40000);for(let i=1;i<a.length;i++)assert.equal(toMs(...a[i-1].slice(5,9)),toMs(...a[i].slice(1,5)))});
+test('no new Jetpack or newsletter form',()=>{assert.doesNotMatch(A+B+hub,/<form\\b|mailchimp|beehiiv|subscribe/i)});
