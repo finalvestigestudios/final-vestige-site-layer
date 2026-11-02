@@ -41,6 +41,18 @@
     ['05','S67-21294','https://www.nasa.gov/image-detail/amf-s67-21294/'],
     ['06','KSC-20170124-PH_KLS01_0090','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/']
   ];
+  // R62: The ChronologyRail must not accept a plausible but *different* NASA
+  // photographic date just because its year is in the allowed three-year set.
+  // These six pairs come from the reviewed R37 custody crosswalk. They are not
+  // the Apollo 1 fire/event chronology, and record 01 has no verified day.
+  const pinnedDates=[
+    ['01','1967','1967-01','January 1967; exact day not asserted'],
+    ['02','1967','1967-01-03','January 3, 1967'],
+    ['03','1966','1966-10-18','October 18, 1966'],
+    ['04','2017','2017-01-24','January 24, 2017'],
+    ['05','1967','1967-01-28','January 28, 1967'],
+    ['06','2017','2017-01-24','January 24, 2017']
+  ];
   const deskLinks=[...root.querySelectorAll('[data-fva-to-desk]')];
   const deskStatus=root.querySelector('[data-fva-desk-status]');
   let desk=null;
@@ -121,6 +133,21 @@
         citations[i].querySelector('[data-fva-citation-text]')?.textContent.includes(url) &&
         deskLinks[i].closest('[data-fva-record]')===cards[i] &&
         deskLinks[i].getAttribute('href')===`#fv-ex2-ledger-apollo1-record-${id}`))return false;
+    // A forged date label could previously flow into the source comparison
+    // or a chronology jump without invalidating the interactive view. Require
+    // complete agreement across source card, time element, era and citation.
+    if(!pinnedDates.every(([id,year,iso,label],i)=>{
+      const record=cards[i];
+      const link=timeJumps.find(jump=>jump.dataset.fvaTimeId===id);
+      const time=link?.querySelector('time');
+      const text=citations[i].querySelector('[data-fva-citation-text]')?.textContent;
+      return record.dataset.fvaYear===year &&
+        record.querySelector('.fva-card__date span')?.textContent.trim()===label &&
+        link?.closest('[data-fva-era]')?.dataset.fvaEra===year &&
+        time?.getAttribute('datetime')===iso &&
+        time?.textContent.trim()===label &&
+        text?.includes('photograph date '+label);
+    }))return false;
     const seen=new Set();
     return timeJumps.every(link=>{
       const id=link.dataset.fvaTimeId;
@@ -437,6 +464,9 @@
     return true;
   };
   const onHash=()=>{
+    // History navigation is itself an enhancement: recheck custody even when
+    // the destination is already visible, not only when a filter is cleared.
+    if(!valid()){restore();return;}
     if(onDeskHash(window.location.hash))return;
     const target=cards.find(card=>'#'+card.id===window.location.hash);
     if(target)revealTarget(target); // Covers back/forward navigation after filtering.

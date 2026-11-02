@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Final Vestige — Apollo Research Suite (STAGING ONLY)
  * Description: Fail-closed, exact-source Research Desk + Evidence Atlas co-host shortcode; no CMS writes.
- * Version: 0.0.61-staging
+ * Version: 0.0.62-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.61-staging'); }
+if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.62-staging'); }
 
 /** Git *blob* SHA-1 (not the SHA-1 of bare file bytes). */
 function fv_ex2_apollo_git_blob(string $bytes): string {
@@ -76,7 +76,7 @@ function fv_ex2_apollo_atlas_runtime_pins(): array {
     return array(
         'final-vestige-ex2-evidence-atlas.php' => '8f5a21b42cbd00acf0e390aaeb22e55f3bb216f8',
         'assets/atlas.css' => '079f2ef9785184a098ec7686f5018a474181031b',
-        'assets/atlas.js' => '7c77b2e8074d5d497c231fb17869d56d791fe691',
+        'assets/atlas.js' => '25b23884c72cb9369ce2b5ee5d70b83ded368e29',
     );
 }
 function fv_ex2_apollo_verified_atlas(): ?string {
