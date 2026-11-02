@@ -73,9 +73,9 @@ class PrivateProgressR123(unittest.TestCase):
                     witnesses=self.witnesses)
         opts.update(overrides)
         native, custody = self.gates()
-        with native, custody:
+        with native, custody as mocked_custody:
             result = progress.inspect(**opts)
-        self.assertEqual(custody.call_args.args[2], self.pin)
+        self.assertEqual(mocked_custody.call_args.args[2], self.pin)
         return result
 
     def record(self, app=None, check=None, state="PASS"):
