@@ -173,7 +173,7 @@ class CliStartupDiagnostics(unittest.TestCase):
                 'WP_DEBUG_DISPLAY': False}},
                 {'step':'activateTheme', 'themeFolderName':'assembler'}]}
             blueprint.write_text(json.dumps(original))
-            argv = ['npx','@wp-playground/cli@latest','server',
+            argv = ['npx','@wp-playground/cli@3.1.61','server',
                     '--blueprint='+str(blueprint),'--port=9400',
                     '--mount='+str(stage/'assembler')+':/wordpress/wp-content/themes/assembler',
                     '--mount='+str(stage/'plugin')+':/wordpress/wp-content/plugins/fv-ex2-private-preview',

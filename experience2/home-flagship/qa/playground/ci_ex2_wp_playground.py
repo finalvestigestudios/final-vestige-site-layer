@@ -97,7 +97,7 @@ def build_local_debug_blueprint_argv(stage: Path, argv: list[str], secret_dir: P
     This runs only after canonical staging fails. No mutation of the reviewed
     Blueprint, site database, source assets, or production service is permitted.
     """
-    if argv[:3] != ['npx', '@wp-playground/cli@latest', 'server']:
+    if argv[:3] != ['npx', '@wp-playground/cli@3.1.61', 'server']:
         raise ValueError('Refuse diagnostic on unknown CLI')
     expected = '--blueprint=' + str(stage / 'playground-blueprint.json')
     if argv.count(expected) != 1 or argv.count('--port=9400') != 1:
@@ -211,9 +211,14 @@ def main() -> int:
         if not args.axe_script.is_file() or args.axe_script.stat().st_size < 100000:
             raise ValueError('Missing actual axe-core test library; fail closed')
         argv = json.loads((stage / 'playground-cli-arguments.json').read_text())
-        if (not isinstance(argv, list) or argv[:3] != ['npx','@wp-playground/cli@latest','server']
+        if (not isinstance(argv, list) or argv[:3] != ['npx','@wp-playground/cli@3.1.61','server']
             or '--port=9400' not in argv or len([x for x in argv if x.startswith('--mount=')]) != 3):
             raise ValueError('Unexpected WordPress startup flags or mount topology')
+        runtime = subprocess.run(
+            [sys.executable, str(Path(__file__).with_name('check_playground_runtime.py'))],
+            capture_output=True, text=True, timeout=20)
+        if runtime.returncode:
+            raise ValueError('Unsupported pinned Playground Node/npm engine; no staging launched')
         if out == stage or repo in out.parents or repo in stage.parents:
             raise ValueError('Artifacts and isolated stage must be outside repository')
         out.mkdir(parents=True, exist_ok=True)

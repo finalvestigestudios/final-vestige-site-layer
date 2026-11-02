@@ -291,7 +291,7 @@ def verify_stage(stage: Path, head: str) -> tuple[dict, dict, list[str]]:
     if steps[3] != {'step':'runPHP', 'code':CANONICAL_LOCAL_SEED}:
         raise ValueError('STAGE HOLD: changed local-only preview seed PHP')
     verified_mount_tree(stage)
-    if not isinstance(argv, list) or argv[:3] != ['npx', '@wp-playground/cli@latest', 'server'] or '--port=9400' not in argv:
+    if not isinstance(argv, list) or argv[:3] != ['npx', '@wp-playground/cli@3.1.61', 'server'] or '--port=9400' not in argv:
         raise ValueError('STAGE HOLD: unexpected Playground CLI')
     mounts = [v for v in argv if isinstance(v, str) and v.startswith('--mount=')]
     expected = {
