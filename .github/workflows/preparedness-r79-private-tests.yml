@@ -118,7 +118,7 @@ jobs:
              mod.csv_private_action_queue(r)))))==1068
           assert all(r[k] is False for k in mod.HOLD_KEYS)
           assert r["publication_clearance"] is False
-          print("R79 complete review work orders and HOLD PASS",r["fingerprint_sha256"])
+          print("R79 complete review work orders and HOLD PASS",r["fingerprint_sha256"], "PINNED_R78_PARENT_SHA256",r["original_R78_fingerprint_sha256"])
           PY
       - name: Native Preparedness source/claim validator, no publishing
         run: python -I preparedness/tools/validate.py
