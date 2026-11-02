@@ -42,6 +42,29 @@ class ReleaseCandidateParityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_RIGHTS_MALBONE"):
             parity.compare_interiors(a, p)
 
+    def test_nypl_credit_is_present_without_unsupported_public_domain_conclusion(self):
+        for content in (SOURCE.decode("utf-8"), PAYLOAD.decode("utf-8")):
+            self.assertIn(parity.RIGHTS["malbone"], content)
+            self.assertNotIn(
+                "NYPL believes this item is in the public domain under United States law.",
+                content,
+            )
+        self.assertEqual(parity.verify_bytes(SOURCE, PAYLOAD)["nypl_capture_rights"], "UNVERIFIED_HOLD")
+
+    def test_reintroducing_old_nypl_claim_to_both_sources_fails(self):
+        old = "NYPL believes this item is in the public domain under United States law."
+        a = SOURCE.decode("utf-8").replace(parity.RIGHTS["malbone"], old, 1)
+        p = PAYLOAD.decode("utf-8").replace(parity.RIGHTS["malbone"], old, 1)
+        with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_UNVERIFIED_NYPL_RIGHTS_CLAIM"):
+            parity.compare_interiors(a, p)
+
+    def test_repointing_nypl_source_link_in_both_sources_fails(self):
+        official = "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0"
+        a = SOURCE.decode("utf-8").replace(official, "https://example.org/unknown", 1)
+        p = PAYLOAD.decode("utf-8").replace(official, "https://example.org/unknown", 1)
+        with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_NYPL_ORIGINAL_LINK"):
+            parity.compare_interiors(a, p)
+
     def test_matching_but_missing_commercial_notice_is_not_accepted(self):
         a = SOURCE.decode("utf-8").replace(parity.MIND_NOTICE, "", 1)
         p = PAYLOAD.decode("utf-8").replace(parity.MIND_NOTICE, "", 1)
