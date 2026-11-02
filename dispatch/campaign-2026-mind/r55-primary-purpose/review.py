@@ -102,6 +102,9 @@ def scan_issue(entry: dict, markdown: str) -> dict:
         if seller_occurrences:
             hard_stops.append("DIRECT_SELLER_CITATIONS_BYPASS_UNAPPROVED_BUYER_GUIDE")
     source_errors = []
+    expected_kind = "commercial-review-pending" if is_commercial else "editorial"
+    if entry["kind"] != expected_kind:
+        source_errors.append("EDITION_KIND_NOT_CANONICAL")
     if POSTAL not in markdown or UNSUB not in markdown:
         source_errors.append("LEGAL_PLACEHOLDER_BROKEN")
     if f"**Subject:** {entry['subject']}" not in markdown:
@@ -158,6 +161,7 @@ def audit(root: Path = ROOT) -> dict:
             "final_vestige_accepted", "specific_email_channel_permission",
             "approved_earning_url", "final_checkout_verified",
             "refund_applies_to_current_cart_verified",
+            "approved_creative_rights", "approved_live_first_party_guide",
         )):
             raise ValueError("merchant evidence may not be self-approved")
     reports = []
