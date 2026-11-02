@@ -38,7 +38,7 @@ class PuysegurOriginalEvidenceTests(unittest.TestCase):
         self.assertIn("half-quarter", self.source)
         self.assertIn("not independent clocks", self.source)
     def test_07_failed_case_in_record(self):
-        self.assertIn("seventeen-year-old", self.source)
+        self.assertIn("17-year-old", self.source)
         self.assertIn("seventeen-year-old", self.txt)
     def test_08_source_misread_risk_visible(self):
         self.assertIn("1754", self.source)
