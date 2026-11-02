@@ -20,7 +20,10 @@ function proofKind(v){
     Number.isSafeInteger(v.transfer_bytes)&&v.transfer_bytes>0&&
     v.redirected_image_identity_unverified!==true)return 'loaded';
  if(v.result==='confirmed_broken_in_probe_browser'&&v.verified_broken_in_browser===true&&
-    v.natural_width===0&&goodUrl(v.request_url)){
+    v.natural_width===0&&goodUrl(v.request_url)&&
+    v.network_final_identity_verified===true&&
+    v.redirected_image_identity_unverified!==true&&
+    sameSource(v.current_src,v.request_url)){
   if(typeof v.network_failure==='string'&&v.network_failure.trim()&&v.visual_failure_kind==='network_error')return 'broken';
   if(Number.isInteger(v.http_status)&&v.http_status>=400&&v.visual_failure_kind==='http_error')return 'broken';
   const mime=String(v.response_mime_type||'').toLowerCase();
