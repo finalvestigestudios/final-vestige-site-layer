@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 const read=name=>readFileSync(new URL('./'+name,import.meta.url),'utf8');
 const [article,core,a,b,hub,vtt,claims,sources,privacy]=['investigation.md','guide-core.html','offer-a-text-only.blocks.html','offer-b-video-concept.blocks.html','mind-hub-concept.blocks.html','film-captions.vtt','claim-approval-matrix.csv','source-register.csv','privacy-attribution.js'].map(read);
 const noCommerce=page=>!/<a\b[^>]*href=["'][^"']*(zen12|inspire3|affiliates\.inspire3|hypnosislive|brainwaveshots)/i.test(page)&&!/<(?:script|iframe|form)\b/i.test(page)&&!/<video\b[^>]*autoplay/i.test(page);
-const nativeDisabled=page=>/<button\b(?=[^>]*\bdisabled\b)[^>]*>Seller link withheld/.test(page);
+const nativeDisabled=page=>/<button\b[^>]*\sdisabled(?:\s|=|>)[^>]*>Seller link withheld/.test(page);
 const closeDisclosure=page=>{const d=page.indexOf('Affiliate disclosure:');const btn=page.indexOf('<button',d);return d>=0&&btn>d&&btn-d<900;};
 const noPiiCode=text=>!/(document\.cookie|localStorage|sessionStorage|navigator\.sendBeacon|fetch\(|XMLHttpRequest|email\s*:|ip_address|userAgent)/i.test(text);
 test('research article has primary citations and no seller naming',()=>{
