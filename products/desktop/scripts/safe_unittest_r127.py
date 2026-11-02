@@ -13,7 +13,7 @@ REQUIRED = frozenset((
     "test_oversized_note_fails_without_new_witness",
     "test_invalid_utf8_note_fails_closed",
     "test_note_reusing_raw_r9_report_path_is_rejected",
-    "test_note_inside_witness_directory_is_rejected",
+    "test_previous_valid_witness_cannot_be_recycled_as_next_observation",
     "test_direct_note_symlink_is_rejected_without_following",
     "test_note_parent_symlink_is_rejected_before_reading",
     "test_hardlinked_note_is_not_accepted",
