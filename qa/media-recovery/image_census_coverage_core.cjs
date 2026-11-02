@@ -26,6 +26,14 @@ function proofKind(v){
   const mime=String(v.response_mime_type||'').toLowerCase();
   if(v.http_status>=200&&v.http_status<300&&v.visual_failure_kind==='non_image_error_payload'&&
      ['text/html','application/json','application/xml','text/xml'].includes(mime))return 'broken';
+  // A 200 image response with positive uncached bytes can still fail decoding.
+  // The browser classifier already demands completed zero-width pixels and exact
+  // CDP final-request proof. Preserve those guards at the independent census gate.
+  if(v.http_status===200&&v.visual_failure_kind==='image_decode_failure'&&
+     mime.startsWith('image/')&&Number.isSafeInteger(v.transfer_bytes)&&v.transfer_bytes>0&&
+     v.loaded_network_proof_verified===true&&v.network_final_identity_verified===true&&
+     v.redirected_image_identity_unverified!==true&&!v.network_failure&&
+     sameSource(v.current_src,v.request_url))return 'broken';
  }
  return 'unresolved';
 }
