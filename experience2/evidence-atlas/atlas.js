@@ -407,7 +407,37 @@
     const target=cards.find(card=>'#'+card.id===event.currentTarget.getAttribute('href'));
     if(target)revealTarget(target);
   };
+  // R61: a browser-history or pasted #Research-Desk-record fragment is not a
+  // click on an Atlas shortcut. Before this handler, changing the hash while a
+  // Desk search hid that record silently landed on invisible historical proof.
+  // Revalidate the ENTIRE Desk against the reviewed six-source crosswalk first;
+  // do not manufacture missing content or bypass a failed source-custody gate.
+  const onDeskHash=hash=>{
+    const match=/^#fv-ex2-ledger-apollo1-record-(0[1-6])$/.exec(hash);
+    if(!match)return false;
+    const index=expected.indexOf(match[1]);
+    const proof=verifyDesk();
+    if(!valid()||!proof||index<0){withdrawDesk(true);return true;}
+    const target=proof.records[index];
+    if(target.hidden){
+      const search=proof.root.querySelector('[data-fvx-search]');
+      if(search){
+        search.value='';
+        search.dispatchEvent(new Event('input',{bubbles:true}));
+      }
+    }
+    if(target.hidden){withdrawDesk(true);return true;}
+    // No synthetic hash changes; let native anchor scrolling occur. Set
+    // programmatic focus only after visibility has been restored, preserving
+    // keyboard/screen-reader continuity without changing reviewed R38 bytes.
+    target.setAttribute('tabindex','-1');
+    requestAnimationFrame(()=>{
+      if(active&&target.isConnected&&!target.hidden)target.focus({preventScroll:true});
+    });
+    return true;
+  };
   const onHash=()=>{
+    if(onDeskHash(window.location.hash))return;
     const target=cards.find(card=>'#'+card.id===window.location.hash);
     if(target)revealTarget(target); // Covers back/forward navigation after filtering.
   };

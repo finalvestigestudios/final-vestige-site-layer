@@ -14,7 +14,7 @@ PROBE = ROOT / 'tests/php_atlas_runtime_r54_probe.php'
 PINS = {
     'final-vestige-ex2-evidence-atlas.php': '8f5a21b42cbd00acf0e390aaeb22e55f3bb216f8',
     'atlas.css': '079f2ef9785184a098ec7686f5018a474181031b',
-    'atlas.js': '7bfc8d7fe216a7b786c6dc33ffd7841abcf92914',
+    'atlas.js': '7c77b2e8074d5d497c231fb17869d56d791fe691',
 }
 TEMPLATE_SHA = '33c72ea1b64d5b3b93dd949da9143debea6bda1cc1143402a20e9e1abcaef82a'
 
@@ -31,7 +31,7 @@ class AtlasRuntimeIntegrity(unittest.TestCase):
         self.assertIn('function fv_ex2_apollo_verified_atlas(): ?string', src)
         self.assertIn('fv_ex2_apollo_verified_atlas() === null', src)
         self.assertIn('hash_file(\'sha256\', $template)', src)
-        self.assertIn('0.0.60-staging', src)
+        self.assertIn('0.0.61-staging', src)
         for forbidden in ('wp_insert_post(', 'update_option(', 'wp_update_post(', 'wp_remote_get(', 'file_get_contents(\'http'):
             self.assertNotIn(forbidden, src)
         self.assertIn('function fv_ex2_apollo_suite_fallback()', src)
