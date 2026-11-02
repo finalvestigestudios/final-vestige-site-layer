@@ -33,10 +33,11 @@ test('missing network event never proves broken even if DOM width is zero',()=>{
  assert.equal(r.result,'zero_intrinsic_width_needs_review');
  assert.equal(r.verified_broken_in_browser,null);
 });
-test('200 image/jpeg with a failed decode stays under review, not assumed broken by MIME',()=>{
+test('200 image/jpeg with positive uncached bytes and zero decoded width is now a verified decode failure',()=>{
  const r=probe({mime:'image/jpeg'});
- assert.equal(r.result,'zero_intrinsic_width_needs_review');
- assert.equal(r.verified_broken_in_browser,null);
+ assert.equal(r.result,'confirmed_broken_in_probe_browser');
+ assert.equal(r.verified_broken_in_browser,true);
+ assert.equal(r.visual_failure_kind,'image_decode_failure');
 });
 test('200 octet-stream body is not automatically called a broken image',()=>{
  const r=probe({mime:'application/octet-stream'});
