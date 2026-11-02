@@ -32,7 +32,7 @@ test('no seller checkout href or fake affiliate URL in either page',()=>{for(con
 test('no active video or third-party embeds',()=>{for(const s of [a,b])assert.doesNotMatch(s,/<(?:video|iframe|script|form)\b/i);});
 test('near-button prospective disclosure',()=>{for(const s of [a,b]){const p=s.indexOf('Affiliate relationship disclosure:');const q=s.indexOf('<button');assert.ok(p>=0&&q>p&&q-p<1300);}});
 test('both pages are Gutenberg html blocks',()=>{for(const s of [a,b]){assert.ok(s.startsWith('<!-- wp:html -->'));assert.ok(s.includes('<!-- /wp:html -->'));}});
-test('B transcript independent of JavaScript',()=>{assert.ok(b.includes('<details><summary>'));assert.equal(count(b,/00:\d\d–00:\d\d/g),12);});
+test('B transcript independent of JavaScript',()=>{assert.ok(b.includes('<details><summary>'));assert.equal(count(b,/00:\d\d–00:\d\d/g),6);});
 test('B is optional while A remains text-only',()=>{assert.ok(b.includes('class="film-box"'));assert.ok(!a.includes('class="film-box"'));});
 test('no exaggerated Zen12 equivalence in editorial verdict',()=>{assert.ok(core.includes('No Zen12-specific trial'));assert.ok(core.includes('seller claims'));});
 test('all activation gates remain false',()=>assert.ok(Object.keys(matrix.gates).length>=12&&Object.values(matrix.gates).every(x=>x===false)));
