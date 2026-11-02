@@ -39,31 +39,37 @@ def run(out:Path,axe:Path|None=None,axe_sha:str|None=None)->dict:
                 page.set_content(doc)
                 # Buffered PerformanceObserver values are real Chromium laboratory
                 # observations for this isolated HTML, NEVER hosted p75 CWV.
-                metrics=page.evaluate("""async () => {
-                  const values={lcp_ms:null,cls:0,scope:'isolated-local-component',
-                                source:'PerformanceObserver',hosted_field:false};
-                  const observers=[];
-                  try {
-                    const lcp=new PerformanceObserver(list=>{
-                      for(const entry of list.getEntries())
-                        values.lcp_ms=Math.round(entry.startTime*10)/10;
-                    });
-                    lcp.observe({type:'largest-contentful-paint',buffered:true});
-                    observers.push(lcp);
-                  } catch(e) {values.lcp_unsupported=true;}
-                  try {
-                    const cls=new PerformanceObserver(list=>{
-                      for(const entry of list.getEntries())
-                        if(!entry.hadRecentInput) values.cls+=entry.value;
-                    });
-                    cls.observe({type:'layout-shift',buffered:true});
-                    observers.push(cls);
-                  } catch(e) {values.cls_unsupported=true;}
-                  await new Promise(resolve=>setTimeout(resolve,150));
-                  for(const o of observers)o.disconnect();
-                  values.cls=Math.round(values.cls*1e6)/1e6;
-                  return values;
-                }""")
+                if javascript:
+                    metrics=page.evaluate("""async () => {
+                      const values={lcp_ms:null,cls:0,scope:'isolated-local-component',
+                                    source:'PerformanceObserver',hosted_field:false};
+                      const observers=[];
+                      try {
+                        const lcp=new PerformanceObserver(list=>{
+                          for(const entry of list.getEntries())
+                            values.lcp_ms=Math.round(entry.startTime*10)/10;
+                        });
+                        lcp.observe({type:'largest-contentful-paint',buffered:true});
+                        observers.push(lcp);
+                      } catch(e) {values.lcp_unsupported=true;}
+                      try {
+                        const cls=new PerformanceObserver(list=>{
+                          for(const entry of list.getEntries())
+                            if(!entry.hadRecentInput) values.cls+=entry.value;
+                        });
+                        cls.observe({type:'layout-shift',buffered:true});
+                        observers.push(cls);
+                      } catch(e) {values.cls_unsupported=true;}
+                      await new Promise(resolve=>setTimeout(resolve,150));
+                      for(const o of observers)o.disconnect();
+                      values.cls=Math.round(values.cls*1e6)/1e6;
+                      return values;
+                    }""")
+                else:
+                    # JS disabled: asynchronous PerformanceObserver callbacks cannot run.
+                    metrics={'lcp_ms':None,'cls':None,'scope':'isolated-local-component',
+                             'source':'not-measured-with-js-off','hosted_field':False}
+
                 assert page.locator('[data-r71-rights-row]').count()==6
                 assert page.locator('[data-r71-rights-row]:visible').count()==6
                 assert page.locator('[data-fva-record]:visible').count()==6
