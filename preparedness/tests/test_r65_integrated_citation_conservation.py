@@ -14,7 +14,7 @@ r65_path = TOOLS / "r65_integrated_citation_conservation.py"
 spec = importlib.util.spec_from_file_location("r65_tested", r65_path)
 r65 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(r65)
-EXPECTED = (35, 29, 35, 29, 29, 6)
+EXPECTED = (35, 29, 36, 29, 29, 6)
 
 
 def sign(obj):
@@ -89,10 +89,31 @@ def fixtures():
             "human_source_retrieval_state":"NOT_REVIEWED",
             "human_claim_support_state":"NOT_REVIEWED",
             "qualified_hazard_safety_state":"NOT_REVIEWED"})
+    # R58's 1,959 citation tokens include SEVEN from the water-planner tool.
+    # Synthetic fixture includes one token and preserves it separately.
+    tool_source={"id":"water-planner-original","_origin":"base",
+                 "url":"https://example.invalid/same-url",
+                 "notes":"Original unabridged local water tool source reading"}
+    tool_identity={"slug":"water-planner","source_id":"water-planner-original",
+                   "source_origin":"base","citation_ordinal_within_article_source":1,
+                   "token_offset_codepoints_in_original_html":5,
+                   "frozen_article_html_sha256":"e"*64,
+                   "original_source_record_sha256":r65.digest(tool_source)}
+    original_tasks.append({
+        "citation_occurrence_work_order_id_sha256":r65.digest(tool_identity),
+        "exact_original_token_identity":tool_identity,
+        "original_unabridged_visible_context":"Complete tool citation context",
+        "original_unabridged_contributor_source_record":tool_source,
+        "original_unabridged_article_source_relationship":{
+            "slug":"water-planner","source_id":"water-planner-original",
+            "source_origin":"base","original_source_record_as_selected":tool_source},
+        "human_source_retrieval_state":"NOT_REVIEWED",
+        "human_claim_support_state":"NOT_REVIEWED",
+        "qualified_hazard_safety_state":"NOT_REVIEWED"})
     full=sign({"schema":"r58-private-exact-citation-occurrence-docket-v1",
                "release_state":"HOLD","machine_only":True,
                "counts":{"original_articles":35, "water_tools":1,
-                         "exact_citation_occurrence_work_orders":35},
+                         "exact_citation_occurrence_work_orders":36},
                "individual_original_citation_occurrence_review_queue":original_tasks,
                **{x:False for x in r65.HOLD}})
     return [full,lin,dep]
@@ -126,7 +147,20 @@ class R65ConservationTests(unittest.TestCase):
         self.assertEqual(self.report()["counts"]["original_water_planning_tools"],1)
 
     def test_original_citation_census_preserved(self):
-        self.assertEqual(self.report()["counts"]["integrated_citation_occurrences"],35)
+        self.assertEqual(self.report()["counts"]["integrated_citation_occurrences"],36)
+
+    def test_original_tool_citation_preserved_as_separate_evidence(self):
+        self.assertEqual(self.report()["counts"]["original_water_tool_citation_occurrences"],1)
+        record=self.report()["original_water_planning_tool_review_work_order_NOT_APPROVED"]
+        self.assertEqual(record["article_slug"],"water-planner")
+        self.assertIn("unabridged",str(record).lower())
+
+    def test_original_article_citation_census_excludes_tool(self):
+        self.assertEqual(self.report()["counts"]["original_article_citation_occurrences"],35)
+
+    def test_exactly_35_article_work_orders_plus_tool(self):
+        self.assertEqual(len(self.report()["all_35_original_article_review_work_orders_NOT_APPROVED"]),35)
+        self.assertEqual(self.report()["original_water_planning_tool_review_work_order_NOT_APPROVED"]["article_slug"],"water-planner")
 
     def test_full_original_source_reading_kept_for_six_other_articles(self):
         row=self.report()["all_35_original_article_review_work_orders_NOT_APPROVED"][0]
