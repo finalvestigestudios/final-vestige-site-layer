@@ -1,0 +1,521 @@
+{
+  "version": 1,
+  "date_checked": "2026-11-02",
+  "subject": "Mind R76: Rubber Hand / Zen12 pilot",
+  "method": "Source page publicly reviewed; seller feature/policy != product-specific efficacy evidence; no account rights inferred.",
+  "sources": [
+    {
+      "key": "n",
+      "url": "https://doi.org/10.1038/35784",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "t",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15709864/",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "o",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19820918/",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "l",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "s",
+      "url": "https://doi.org/10.3389/fnhum.2022.834492",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "r",
+      "url": "https://doi.org/10.1177/17470218221078858",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "cat",
+      "url": "https://inspire3.com/",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "zen",
+      "url": "https://zen12.com/hnp",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "about",
+      "url": "https://zen12.com/about",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "checkout",
+      "url": "https://zen12.com/getstarted",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "research",
+      "url": "https://zen12.com/research",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "terms",
+      "url": "https://inspire3.com/terms/",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "privacy",
+      "url": "https://inspire3.com/privacy/",
+      "source_type": "official-merchant"
+    },
+    {
+      "key": "eeg",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "nccih",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "source_type": "scholarly-or-agency"
+    },
+    {
+      "key": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "source_type": "government"
+    },
+    {
+      "key": "health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "source_type": "government"
+    },
+    {
+      "key": "puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source_type": "publisher"
+    },
+    {
+      "key": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "source_type": "publisher"
+    },
+    {
+      "key": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "source_type": "publisher"
+    }
+  ],
+  "rows": [
+    {
+      "id": "research-rhi-original",
+      "claim": "Rubber-hand illusion reported in 1998 correspondence",
+      "type": "independent-research",
+      "status": "describe-with-design-limits",
+      "evidence": [
+        "https://doi.org/10.1038/35784"
+      ],
+      "note": "The original is brief and supports sensory-interaction account, not universal induction."
+    },
+    {
+      "id": "research-rhi-timing",
+      "claim": "Synchrony is important but insufficient alone",
+      "type": "independent-research",
+      "status": "qualified",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/15709864/"
+      ],
+      "note": "Body representation and plausible form matter."
+    },
+    {
+      "id": "research-rhi-shape",
+      "claim": "Hand-like appearance constrains ownership reports",
+      "type": "independent-research",
+      "status": "qualified",
+      "evidence": [
+        "https://pubmed.ncbi.nlm.nih.gov/19820918/"
+      ],
+      "note": "Specific protocol tested shape."
+    },
+    {
+      "id": "research-rhi-demand",
+      "claim": "Expectancy may confound conventional subjective controls",
+      "type": "scientific-contestation",
+      "status": "present-as-Lush-argument",
+      "evidence": [
+        "https://doi.org/10.1525/collabra.325"
+      ],
+      "note": "Lush's interpretation disputed; don't say illusion disproven."
+    },
+    {
+      "id": "research-rhi-reanalysis",
+      "claim": "Synchrony effect persists across hypnotisability scores in reanalysis",
+      "type": "scientific-contestation",
+      "status": "present-as-Slater-Ehrsson-analysis",
+      "evidence": [
+        "https://doi.org/10.3389/fnhum.2022.834492"
+      ],
+      "note": "Correlational/secondary analyses not decisive for every case."
+    },
+    {
+      "id": "research-rhi-topdown",
+      "claim": "Instructions and load modulate dimensions of report",
+      "type": "independent-research",
+      "status": "qualified",
+      "evidence": [
+        "https://doi.org/10.1177/17470218221078858"
+      ],
+      "note": "Different features changed different outcomes."
+    },
+    {
+      "id": "research-rhi-zen12",
+      "claim": "Rubber-hand illusion demonstrates Zen12 efficacy",
+      "type": "unsupported-cross-domain",
+      "status": "prohibited",
+      "evidence": [
+        "https://doi.org/10.1038/35784",
+        "https://zen12.com/hnp"
+      ],
+      "note": "No causal connection or named-product trial."
+    },
+    {
+      "id": "zen-session-duration",
+      "claim": "Zen12 audio sessions are described as 12 min",
+      "type": "seller-feature",
+      "status": "seller-says",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/about"
+      ],
+      "note": "Not independently sampled."
+    },
+    {
+      "id": "zen-levels",
+      "claim": "Twelve levels advertised",
+      "type": "seller-feature",
+      "status": "seller-says",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/about",
+        "https://zen12.com/getstarted"
+      ],
+      "note": "Delivery unverified."
+    },
+    {
+      "id": "zen-style-count",
+      "claim": "Four formats for each level advertised",
+      "type": "seller-feature",
+      "status": "seller-says",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/about"
+      ],
+      "note": "Style and audio quality not directly tested."
+    },
+    {
+      "id": "zen-full",
+      "claim": "Complete offer describes 48 MP3 files",
+      "type": "seller-feature",
+      "status": "seller-says",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/getstarted"
+      ],
+      "note": "Package differs from partial tiers."
+    },
+    {
+      "id": "zen-partial",
+      "claim": "Two six-level tiers describe 24 MP3s each",
+      "type": "seller-feature",
+      "status": "seller-says",
+      "evidence": [
+        "https://zen12.com/hnp"
+      ],
+      "note": "Must verify selected cart."
+    },
+    {
+      "id": "zen-bonuses",
+      "claim": "Manual, support, call, bonuses claimed in checkout",
+      "type": "seller-feature",
+      "status": "seller-says",
+      "evidence": [
+        "https://zen12.com/getstarted"
+      ],
+      "note": "No delivery proof."
+    },
+    {
+      "id": "zen-12-equals-60",
+      "claim": "12 minutes equals an hour advanced meditation",
+      "type": "seller-outcome",
+      "status": "exclude-as-benefit",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://doi.org/10.1371/journal.pone.0286023",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+      ],
+      "note": "Named product-specific comparative support not identified."
+    },
+    {
+      "id": "zen-brainwaves",
+      "claim": "Audio automatically controls brainwaves into deep meditation",
+      "type": "seller-outcome",
+      "status": "exclude-as-verified-effect",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://doi.org/10.1371/journal.pone.0286023"
+      ],
+      "note": "EEG evidence inconsistent, no Zen12 validation."
+    },
+    {
+      "id": "zen-stress",
+      "claim": "Reduces stress/worry/anxiety",
+      "type": "health-or-psychological",
+      "status": "exclude-as-verified-effect",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "note": "General mindfulness literature cannot substantiate named product."
+    },
+    {
+      "id": "zen-health",
+      "claim": "Dozens of health improvements",
+      "type": "health-or-psychological",
+      "status": "prohibited-until-substantiated",
+      "evidence": [
+        "https://zen12.com/hnp",
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+      ],
+      "note": "Competent reliable product-specific evidence absent."
+    },
+    {
+      "id": "zen-creativity",
+      "claim": "Improves focus or creativity",
+      "type": "seller-outcome",
+      "status": "unverified-seller-claim-only",
+      "evidence": [
+        "https://zen12.com/hnp"
+      ],
+      "note": "No independent product trial identified."
+    },
+    {
+      "id": "zen-user-testimonial",
+      "claim": "Celebrities' customer endorsement outcomes",
+      "type": "seller-testimonial",
+      "status": "do-not-reproduce",
+      "evidence": [
+        "https://zen12.com/getstarted",
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ],
+      "note": "No independently validated typical results/permissions."
+    },
+    {
+      "id": "zen-price",
+      "claim": "Published quote is a guaranteed checkout price",
+      "type": "dynamic-checkout",
+      "status": "prohibited",
+      "evidence": [
+        "https://zen12.com/getstarted",
+        "https://inspire3.com/terms/"
+      ],
+      "note": "Amount, tax, discounts and eligibility may vary."
+    },
+    {
+      "id": "zen-timer",
+      "claim": "Checkout countdown proves genuine expiration",
+      "type": "dynamic-checkout",
+      "status": "prohibited",
+      "evidence": [
+        "https://zen12.com/getstarted"
+      ],
+      "note": "No scarcity evidence; do not copy countdown."
+    },
+    {
+      "id": "zen-guarantee",
+      "claim": "One-year Zen12 guarantee is advertised",
+      "type": "seller-policy",
+      "status": "seller-says-with-qualifications",
+      "evidence": [
+        "https://inspire3.com/terms/",
+        "https://zen12.com/getstarted"
+      ],
+      "note": "Policy text, not independently experienced refund."
+    },
+    {
+      "id": "zen-post90",
+      "claim": "Card refunds after 90 days may be manual via PayPal",
+      "type": "seller-policy",
+      "status": "include",
+      "evidence": [
+        "https://inspire3.com/terms/"
+      ],
+      "note": "Avoid promise on refund method."
+    },
+    {
+      "id": "zen-mobile",
+      "claim": "Checkout displays mobile phone field",
+      "type": "seller-checkout",
+      "status": "include-without-mandatory-assumption",
+      "evidence": [
+        "https://zen12.com/getstarted"
+      ],
+      "note": "Field requirement not tested."
+    },
+    {
+      "id": "zen-sms",
+      "claim": "Providing number may yield 3-4 marketing texts/week",
+      "type": "seller-policy",
+      "status": "include",
+      "evidence": [
+        "https://inspire3.com/terms/",
+        "https://inspire3.com/privacy/"
+      ],
+      "note": "Possible; do not say certain or required."
+    },
+    {
+      "id": "zen-affiliate-data",
+      "claim": "Seller may share buyer name/email/items with referring affiliate",
+      "type": "privacy-risk",
+      "status": "include-hold-feed",
+      "evidence": [
+        "https://inspire3.com/privacy/"
+      ],
+      "note": "No evidence FV receives purchaser data."
+    },
+    {
+      "id": "zen-registration",
+      "claim": "Product intended for 18+",
+      "type": "seller-policy",
+      "status": "seller-says",
+      "evidence": [
+        "https://inspire3.com/terms/"
+      ],
+      "note": "Do not target children."
+    },
+    {
+      "id": "partner-acceptance",
+      "claim": "Final Vestige has named affiliate approval",
+      "type": "partner-rights",
+      "status": "unverified-hard-hold",
+      "evidence": [
+        "https://inspire3.com/"
+      ],
+      "note": "Public recruitment is not approval."
+    },
+    {
+      "id": "partner-url",
+      "claim": "Authorized tracking affiliate URL exists",
+      "type": "partner-rights",
+      "status": "unverified-no-link",
+      "evidence": [
+        "https://inspire3.com/"
+      ],
+      "note": "Never construct tracking URL."
+    },
+    {
+      "id": "partner-channels",
+      "claim": "Website TikTok email channels approved",
+      "type": "partner-rights",
+      "status": "unverified-hard-hold",
+      "evidence": [
+        "https://inspire3.com/"
+      ],
+      "note": "Written permission required per channel."
+    },
+    {
+      "id": "partner-creatives",
+      "claim": "Official marketing images/swipes licensed for FV",
+      "type": "partner-rights",
+      "status": "unverified-hard-hold",
+      "evidence": [
+        "https://inspire3.com/terms/"
+      ],
+      "note": "Terms prohibit unlicensed copying of merchant materials."
+    },
+    {
+      "id": "affiliate-near-link",
+      "claim": "Commission disclosure adjacent to recommendation",
+      "type": "publisher-compliance",
+      "status": "mandatory-for-future-live-link",
+      "evidence": [
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+        "https://finalvestige.com/affiliate-disclosure/"
+      ],
+      "note": "Sitewide policy alone insufficient."
+    },
+    {
+      "id": "medicine-advice",
+      "claim": "Zen12 as medical or mental health treatment",
+      "type": "health-claim",
+      "status": "prohibited",
+      "evidence": [
+        "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+      ],
+      "note": "Do not suggest substituting for care."
+    },
+    {
+      "id": "focus-existing",
+      "claim": "Existing Focus route and one Jetpack funnel",
+      "type": "verified-public-asset",
+      "status": "link-only-no-forms",
+      "evidence": [
+        "https://finalvestige.com/focus/"
+      ],
+      "note": "No new signup or welcome edits."
+    },
+    {
+      "id": "historical-bridge",
+      "claim": "Puységur archive establishes magnetic healing",
+      "type": "history-v-science",
+      "status": "prohibited",
+      "evidence": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "note": "Historical evidence proves record, not mechanism."
+    },
+    {
+      "id": "ab-variant",
+      "claim": "Film improves affiliate conversions",
+      "type": "hypothesis",
+      "status": "not-established",
+      "evidence": [],
+      "note": "Measure only with approved privacy-safe instrument and adequate traffic."
+    },
+    {
+      "id": "measurement-pii",
+      "claim": "Capture purchaser names/emails/IPs/cookies",
+      "type": "privacy",
+      "status": "prohibited",
+      "evidence": [
+        "https://inspire3.com/privacy/"
+      ],
+      "note": "No buyer feeds or tracking without separate explicit review."
+    },
+    {
+      "id": "publisher-activation",
+      "claim": "Final Vestige authorized to publish this guide",
+      "type": "release-gate",
+      "status": "unverified-hard-hold",
+      "evidence": [],
+      "note": "Founder approval + QA + CI required."
+    },
+    {
+      "id": "media-hosting",
+      "claim": "Video is hosted and synchronized",
+      "type": "implementation-gate",
+      "status": "unverified-hard-hold",
+      "evidence": [],
+      "note": "Offline media is not production media."
+    }
+  ],
+  "activation": {
+    "partner_accepted": false,
+    "authorized_earning_url": null,
+    "channel_rights": [],
+    "customer_data_feed_approved": false,
+    "founder_publication_approval": false,
+    "tracking_enabled": false,
+    "newsletter_edit": false
+  }
+}
