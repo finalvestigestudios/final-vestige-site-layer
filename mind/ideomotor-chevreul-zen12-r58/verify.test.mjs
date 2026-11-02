@@ -21,9 +21,9 @@ const plan=read("navigation-experiment.md");
 const readme=read("README.md");
 function count(regex,txt){return [...txt.matchAll(regex)].length;}
 function safePresell(html){
-  assert.equal(count(/<button\b[^>]*\bdisabled\b/gi,html),1,"exactly one disabled CTA");
+  assert.equal(count(/<button\b[^>]*\sdisabled(?=[\s>])/gi,html),1,"exactly one disabled CTA");
   assert.equal(count(/<button\b/gi,html),1,"no surprise buttons");
-  assert.match(html,/Affiliate disclosure:[\s\S]{0,290}<button[^>]*disabled/,"near-button disclosure");
+  assert.match(html,/Affiliate disclosure:[\s\S]{0,290}<button[^>]*\sdisabled(?=[\s>])/,"near-button disclosure");
   assert.doesNotMatch(html,/<(?:script|iframe|form)\b/i,"no scripts, third-party embeds or form");
   assert.doesNotMatch(html,/<(?:video|audio)\b[^>]*\bautoplay\b/i,"no autoplay attribute");
   assert.doesNotMatch(html,/<a\b[^>]*href=["'][^"']*(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i,"no merchant href");
