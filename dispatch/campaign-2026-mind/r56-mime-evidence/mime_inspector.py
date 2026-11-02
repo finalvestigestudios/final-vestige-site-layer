@@ -198,7 +198,7 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
         safe_url_scheme(anchor["href"]) == "https"
         and not domain_is_seller(anchor["href"])
         and bool(unsub_paths.search(anchor["href"]))
-        and bool(re.search(r"\\bunsubscribe\\b|\\bopt[ -]?out\\b",
+        and bool(re.search(r"\bunsubscribe\b|\bopt[ -]?out\b",
                            normalize(" ".join(anchor["text"])), re.I))
         for anchor in parsed.visible_anchors
     )
