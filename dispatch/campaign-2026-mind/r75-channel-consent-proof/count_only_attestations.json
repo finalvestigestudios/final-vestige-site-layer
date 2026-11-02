@@ -1,0 +1,42 @@
+{
+  "schema": "fv-dispatch-human-evidence-v1",
+  "snapshot": {
+    "captured_utc": "2026-11-02T21:33:53Z",
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "eligible_email_count": null,
+    "newsletter_enabled": true,
+    "new_post_auto_email": false,
+    "content_format": "excerpt",
+    "welcome_configured": true,
+    "recent_send_count": 0
+  },
+  "attestations": {
+    "recipient_email_status_filtered_in_native_wordpress": false,
+    "publisher_postal_address_ownership_verified": false,
+    "native_editor_email_preview_reviewed": false,
+    "explicitly_authorized_received_test_email_inspected": false,
+    "html_and_plain_mime_claims_and_footers_reviewed": false,
+    "unsubscribe_functionally_verified": false,
+    "focus_fieldbook_welcome_actually_received": false,
+    "final_founder_campaign_approval": false
+  },
+  "merchants": {
+    "03": {
+      "partner_account_acceptance": false,
+      "email_channel_permission_specific_to_product": false,
+      "approved_tracking_link_and_format": false,
+      "guide_published_and_founder_approved": false,
+      "seller_terms_and_claims_rechecked": false
+    },
+    "05": {
+      "partner_account_acceptance": false,
+      "email_channel_permission_specific_to_product": false,
+      "approved_tracking_link_and_format": false,
+      "guide_published_and_founder_approved": false,
+      "seller_terms_and_claims_rechecked": false
+    }
+  }
+}
