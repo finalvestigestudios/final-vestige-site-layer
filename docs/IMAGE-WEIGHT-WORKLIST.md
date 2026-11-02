@@ -1,5 +1,10 @@
 # IMAGE-WEIGHT-WORKLIST — Final Vestige Media Recovery
 
+## November 1 — complete-article wire evidence gate (Media Recovery PR #183)
+
+**Concrete performance measurement correction:** `scopeArticleImageWire()` now refuses to report a numeric article-image transfer total when ANY stored image lacks verified exact DOM/currentSrc-to-uncached-CDP image proof, is ALT-only, redirects to unrelated media, failed, cached, has missing bytes or is otherwise unresolved. Previously partial totals could be presented even when other article images were unmeasured. Paired comparison now strictly requires `loaded_network_proof_verified`, `network_final_identity_verified` and exact URL/ALT-mapped slots. Genuine duplicated article request URLs still count network requests once each, and unrelated site chrome is excluded. **52/52 synthetic V8 shim tests passed**; native Node CI/browser measurements outstanding. See [technical memorandum](MEDIA-ARTICLE-WIRE-EVIDENCE-GATES-20261101.md). Not a production repair. **42 claimed broken and 76% weight reduction remain unverified; 13 oversized Media Library originals are storage, not transferred bytes.**
+
+
 ## November 1 — media browser-core 200-image decode-failure hardening (independent PR #183)
 
 **Concrete visual-integrity fix in isolated source (not WordPress):** Existing browser-core classified an actual logged-out Chrome HTTP **200** response with `image/*` MIME and nonzero delivered bytes, but **zero decoded naturalWidth**, as unresolved. It now recognizes a fail-closed `image_decode_failure` **only** when the completed page/DOM image maps to the exact final uncached CDP request and has genuine response bytes. Ambiguous redirects, cached/service-worker entries, absent data, and alternate image identities stay unverified. Existing 403/404/HTML-error behavior is retained. [Memo](MEDIA-IMAGE-DECODE-FAILURES-20261101.md); isolated `browser_probe_core.cjs` plus **14 new regression cases**, existing **12 cases**. **26/26 V8 Node-shim tests passed against exact committed GitHub code**; native Node CI and Chrome still pending. No Site QA PR #154 code or browser harness touched.
