@@ -1,0 +1,4525 @@
+{
+ "pages": [
+  "emergency-hygiene-sanitation",
+  "family-communication-plan",
+  "family-reunification-card",
+  "fire-making-across-time",
+  "food-safety-power-outage",
+  "go-bags",
+  "history-of-food-preservation",
+  "home-fire-escape-plan",
+  "home-fire-escape-worksheet",
+  "homemade-water-filters",
+  "household-emergency-plan",
+  "hub-family-communication",
+  "hub-field-tools",
+  "hub-food",
+  "hub-health-sanitation",
+  "hub-lost-ways",
+  "hub-shelter-power",
+  "hub-start-here",
+  "hub-water",
+  "kit-builder",
+  "landing",
+  "lewis-and-clark-salt-works",
+  "making-water-safer",
+  "medication-and-devices",
+  "navigation-before-gps",
+  "outage-heat-cold-generators",
+  "pantry-rotation",
+  "pemmican-and-dried-meats",
+  "pickling-fermentation-old-recipes",
+  "pioneer-supply-chains-failed",
+  "pioneer-travel-rations",
+  "power-outage-planner",
+  "preparedness-real-households",
+  "pressure-canning-low-acid",
+  "rain-barrels-and-cisterns",
+  "reunification-plan",
+  "root-cellars-cool-storage",
+  "safe-jerky-dehydration",
+  "salt-beef-salt-pork-age-of-sail",
+  "sanitation-before-germ-theory",
+  "shelter-or-evacuate",
+  "ships-biscuit-and-hardtack",
+  "smokehouses-salting-curing",
+  "three-day-kit",
+  "two-week-water-storage",
+  "warnings-radios-offline-maps",
+  "water-advisories-explained",
+  "water-math",
+  "water-planner",
+  "water-purification-through-history"
+ ],
+ "widths": [
+  320,
+  360,
+  390,
+  640,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "layout": {
+  "emergency-hygiene-sanitation": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "family-communication-plan": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "family-reunification-card": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "fire-making-across-time": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "food-safety-power-outage": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "go-bags": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "history-of-food-preservation": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "home-fire-escape-plan": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "home-fire-escape-worksheet": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "homemade-water-filters": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "household-emergency-plan": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-family-communication": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-field-tools": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-food": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-health-sanitation": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-lost-ways": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-shelter-power": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-start-here": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "hub-water": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "kit-builder": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "landing": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "lewis-and-clark-salt-works": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "making-water-safer": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "medication-and-devices": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "navigation-before-gps": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "outage-heat-cold-generators": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "pantry-rotation": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "pemmican-and-dried-meats": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "pickling-fermentation-old-recipes": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "pioneer-supply-chains-failed": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "pioneer-travel-rations": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "power-outage-planner": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "preparedness-real-households": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "pressure-canning-low-acid": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "rain-barrels-and-cisterns": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "reunification-plan": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "root-cellars-cool-storage": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "safe-jerky-dehydration": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "sanitation-before-germ-theory": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "shelter-or-evacuate": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "ships-biscuit-and-hardtack": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "smokehouses-salting-curing": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "three-day-kit": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "two-week-water-storage": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "warnings-radios-offline-maps": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "water-advisories-explained": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "water-math": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "water-planner": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  },
+  "water-purification-through-history": {
+   "320": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "360": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "390": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "640": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "768": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1024": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1440": {
+    "overflow_px": 0,
+    "errors": []
+   },
+   "1920": {
+    "overflow_px": 0,
+    "errors": []
+   }
+  }
+ },
+ "axe": {
+  "emergency-hygiene-sanitation@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "emergency-hygiene-sanitation@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "emergency-hygiene-sanitation@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "family-communication-plan@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "family-communication-plan@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "family-communication-plan@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "family-reunification-card@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "family-reunification-card@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "family-reunification-card@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "fire-making-across-time@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "fire-making-across-time@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "fire-making-across-time@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "food-safety-power-outage@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "food-safety-power-outage@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "food-safety-power-outage@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "go-bags@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "go-bags@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "go-bags@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "history-of-food-preservation@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "history-of-food-preservation@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "history-of-food-preservation@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-plan@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-plan@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-plan@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-worksheet@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-worksheet@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "home-fire-escape-worksheet@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "homemade-water-filters@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "homemade-water-filters@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "homemade-water-filters@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "household-emergency-plan@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "household-emergency-plan@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "household-emergency-plan@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "hub-family-communication@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-family-communication@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-family-communication@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-field-tools@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-field-tools@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-field-tools@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-food@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-food@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-food@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-health-sanitation@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-health-sanitation@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-health-sanitation@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-lost-ways@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-lost-ways@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-lost-ways@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-shelter-power@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-shelter-power@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-shelter-power@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-start-here@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-start-here@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-start-here@1440": {
+   "v": [],
+   "inc": []
+  },
+  "hub-water@390": {
+   "v": [],
+   "inc": []
+  },
+  "hub-water@1024": {
+   "v": [],
+   "inc": []
+  },
+  "hub-water@1440": {
+   "v": [],
+   "inc": []
+  },
+  "kit-builder@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "kit-builder@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "kit-builder@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "landing@390": {
+   "v": [],
+   "inc": []
+  },
+  "landing@1024": {
+   "v": [],
+   "inc": []
+  },
+  "landing@1440": {
+   "v": [],
+   "inc": []
+  },
+  "lewis-and-clark-salt-works@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "lewis-and-clark-salt-works@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "lewis-and-clark-salt-works@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "making-water-safer@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "making-water-safer@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "making-water-safer@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "medication-and-devices@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "medication-and-devices@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "medication-and-devices@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "navigation-before-gps@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "navigation-before-gps@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "navigation-before-gps@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "outage-heat-cold-generators@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "outage-heat-cold-generators@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "outage-heat-cold-generators@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pantry-rotation@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pantry-rotation@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pantry-rotation@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pemmican-and-dried-meats@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pemmican-and-dried-meats@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pemmican-and-dried-meats@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pickling-fermentation-old-recipes@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pickling-fermentation-old-recipes@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pickling-fermentation-old-recipes@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-supply-chains-failed@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-supply-chains-failed@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-supply-chains-failed@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-travel-rations@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-travel-rations@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pioneer-travel-rations@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "power-outage-planner@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "power-outage-planner@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "power-outage-planner@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "preparedness-real-households@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "preparedness-real-households@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "preparedness-real-households@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pressure-canning-low-acid@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pressure-canning-low-acid@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "pressure-canning-low-acid@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "rain-barrels-and-cisterns@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "rain-barrels-and-cisterns@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "rain-barrels-and-cisterns@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "reunification-plan@390": {
+   "v": [],
+   "inc": [
+    "aria-prohibited-attr",
+    "color-contrast"
+   ]
+  },
+  "reunification-plan@1024": {
+   "v": [],
+   "inc": [
+    "aria-prohibited-attr",
+    "color-contrast"
+   ]
+  },
+  "reunification-plan@1440": {
+   "v": [],
+   "inc": [
+    "aria-prohibited-attr",
+    "color-contrast"
+   ]
+  },
+  "root-cellars-cool-storage@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "root-cellars-cool-storage@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "root-cellars-cool-storage@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "safe-jerky-dehydration@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "safe-jerky-dehydration@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "safe-jerky-dehydration@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "salt-beef-salt-pork-age-of-sail@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "salt-beef-salt-pork-age-of-sail@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "salt-beef-salt-pork-age-of-sail@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "sanitation-before-germ-theory@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "sanitation-before-germ-theory@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "sanitation-before-germ-theory@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "shelter-or-evacuate@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "shelter-or-evacuate@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "shelter-or-evacuate@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "ships-biscuit-and-hardtack@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "ships-biscuit-and-hardtack@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "ships-biscuit-and-hardtack@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "smokehouses-salting-curing@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "smokehouses-salting-curing@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "smokehouses-salting-curing@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "three-day-kit@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "three-day-kit@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "three-day-kit@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "two-week-water-storage@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "two-week-water-storage@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "two-week-water-storage@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "warnings-radios-offline-maps@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "warnings-radios-offline-maps@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "warnings-radios-offline-maps@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-advisories-explained@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-advisories-explained@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-advisories-explained@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-math@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-math@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-math@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-planner@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-planner@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-planner@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-purification-through-history@390": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-purification-through-history@1024": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  },
+  "water-purification-through-history@1440": {
+   "v": [],
+   "inc": [
+    "color-contrast"
+   ]
+  }
+ },
+ "keyboard": {
+  "emergency-hygiene-sanitation": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "family-communication-plan": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "family-reunification-card": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "fire-making-across-time": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "food-safety-power-outage": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "go-bags": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "history-of-food-preservation": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "home-fire-escape-plan": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "home-fire-escape-worksheet": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "homemade-water-filters": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "household-emergency-plan": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "hub-family-communication": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-field-tools": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-food": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-health-sanitation": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-lost-ways": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-shelter-power": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-start-here": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "hub-water": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-guides"
+  },
+  "kit-builder": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "landing": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-library"
+  },
+  "lewis-and-clark-salt-works": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "making-water-safer": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "medication-and-devices": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "navigation-before-gps": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "outage-heat-cold-generators": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pantry-rotation": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pemmican-and-dried-meats": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pickling-fermentation-old-recipes": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pioneer-supply-chains-failed": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pioneer-travel-rations": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "power-outage-planner": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "preparedness-real-households": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "pressure-canning-low-acid": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "rain-barrels-and-cisterns": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "reunification-plan": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "root-cellars-cool-storage": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "safe-jerky-dehydration": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "sanitation-before-germ-theory": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "shelter-or-evacuate": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "ships-biscuit-and-hardtack": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "smokehouses-salting-curing": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "three-day-kit": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "two-week-water-storage": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "warnings-radios-offline-maps": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-advisories-explained": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-math": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-planner": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  },
+  "water-purification-through-history": {
+   "first_is_skip": true,
+   "no_visible_focus": 0,
+   "skip_hash": "#pa-main"
+  }
+ },
+ "nojs": {
+  "emergency-hygiene-sanitation": {
+   "js": 26384,
+   "nojs": 26098,
+   "same": false
+  },
+  "family-communication-plan": {
+   "js": 35562,
+   "nojs": 35174,
+   "same": false
+  },
+  "family-reunification-card": {
+   "js": 13433,
+   "nojs": 12999,
+   "same": false
+  },
+  "fire-making-across-time": {
+   "js": 27358,
+   "nojs": 27020,
+   "same": false
+  },
+  "food-safety-power-outage": {
+   "js": 25813,
+   "nojs": 25566,
+   "same": false
+  },
+  "go-bags": {
+   "js": 31225,
+   "nojs": 30954,
+   "same": false
+  },
+  "history-of-food-preservation": {
+   "js": 21091,
+   "nojs": 20887,
+   "same": false
+  },
+  "home-fire-escape-plan": {
+   "js": 34043,
+   "nojs": 33529,
+   "same": false
+  },
+  "home-fire-escape-worksheet": {
+   "js": 12314,
+   "nojs": 11763,
+   "same": false
+  },
+  "homemade-water-filters": {
+   "js": 16190,
+   "nojs": 15899,
+   "same": false
+  },
+  "household-emergency-plan": {
+   "js": 27996,
+   "nojs": 27594,
+   "same": false
+  },
+  "hub-family-communication": {
+   "js": 1141,
+   "nojs": 1141,
+   "same": true
+  },
+  "hub-field-tools": {
+   "js": 1938,
+   "nojs": 1938,
+   "same": true
+  },
+  "hub-food": {
+   "js": 1400,
+   "nojs": 1400,
+   "same": true
+  },
+  "hub-health-sanitation": {
+   "js": 816,
+   "nojs": 816,
+   "same": true
+  },
+  "hub-lost-ways": {
+   "js": 4697,
+   "nojs": 4697,
+   "same": true
+  },
+  "hub-shelter-power": {
+   "js": 867,
+   "nojs": 867,
+   "same": true
+  },
+  "hub-start-here": {
+   "js": 4510,
+   "nojs": 4510,
+   "same": true
+  },
+  "hub-water": {
+   "js": 1645,
+   "nojs": 1645,
+   "same": true
+  },
+  "kit-builder": {
+   "js": 18075,
+   "nojs": 30810,
+   "same": false
+  },
+  "landing": {
+   "js": 15411,
+   "nojs": 15395,
+   "same": true
+  },
+  "lewis-and-clark-salt-works": {
+   "js": 21462,
+   "nojs": 21212,
+   "same": false
+  },
+  "making-water-safer": {
+   "js": 22747,
+   "nojs": 22389,
+   "same": false
+  },
+  "medication-and-devices": {
+   "js": 32179,
+   "nojs": 31809,
+   "same": false
+  },
+  "navigation-before-gps": {
+   "js": 23796,
+   "nojs": 23376,
+   "same": false
+  },
+  "outage-heat-cold-generators": {
+   "js": 40764,
+   "nojs": 40465,
+   "same": false
+  },
+  "pantry-rotation": {
+   "js": 25109,
+   "nojs": 24761,
+   "same": false
+  },
+  "pemmican-and-dried-meats": {
+   "js": 24093,
+   "nojs": 23860,
+   "same": false
+  },
+  "pickling-fermentation-old-recipes": {
+   "js": 24704,
+   "nojs": 24493,
+   "same": false
+  },
+  "pioneer-supply-chains-failed": {
+   "js": 29077,
+   "nojs": 28771,
+   "same": false
+  },
+  "pioneer-travel-rations": {
+   "js": 22275,
+   "nojs": 22076,
+   "same": false
+  },
+  "power-outage-planner": {
+   "js": 19897,
+   "nojs": 29355,
+   "same": false
+  },
+  "preparedness-real-households": {
+   "js": 30939,
+   "nojs": 30705,
+   "same": false
+  },
+  "pressure-canning-low-acid": {
+   "js": 31710,
+   "nojs": 31379,
+   "same": false
+  },
+  "rain-barrels-and-cisterns": {
+   "js": 21625,
+   "nojs": 21354,
+   "same": false
+  },
+  "reunification-plan": {
+   "js": 14239,
+   "nojs": 9470,
+   "same": false
+  },
+  "root-cellars-cool-storage": {
+   "js": 22474,
+   "nojs": 22197,
+   "same": false
+  },
+  "safe-jerky-dehydration": {
+   "js": 25013,
+   "nojs": 24731,
+   "same": false
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "js": 22231,
+   "nojs": 21868,
+   "same": false
+  },
+  "sanitation-before-germ-theory": {
+   "js": 24631,
+   "nojs": 24340,
+   "same": false
+  },
+  "shelter-or-evacuate": {
+   "js": 34672,
+   "nojs": 34124,
+   "same": false
+  },
+  "ships-biscuit-and-hardtack": {
+   "js": 21772,
+   "nojs": 21465,
+   "same": false
+  },
+  "smokehouses-salting-curing": {
+   "js": 20303,
+   "nojs": 20045,
+   "same": false
+  },
+  "three-day-kit": {
+   "js": 33225,
+   "nojs": 32845,
+   "same": false
+  },
+  "two-week-water-storage": {
+   "js": 14286,
+   "nojs": 13967,
+   "same": false
+  },
+  "warnings-radios-offline-maps": {
+   "js": 24372,
+   "nojs": 24028,
+   "same": false
+  },
+  "water-advisories-explained": {
+   "js": 15067,
+   "nojs": 14755,
+   "same": false
+  },
+  "water-math": {
+   "js": 15229,
+   "nojs": 14955,
+   "same": false
+  },
+  "water-planner": {
+   "js": 6307,
+   "nojs": 5820,
+   "same": false
+  },
+  "water-purification-through-history": {
+   "js": 27905,
+   "nojs": 27636,
+   "same": false
+  }
+ },
+ "print": {
+  "emergency-hygiene-sanitation": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "family-communication-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 17,
+   "has_sources": true
+  },
+  "family-reunification-card": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 1,
+   "has_sources": false
+  },
+  "fire-making-across-time": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 14,
+   "has_sources": true
+  },
+  "food-safety-power-outage": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "go-bags": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 15,
+   "has_sources": true
+  },
+  "history-of-food-preservation": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 11,
+   "has_sources": true
+  },
+  "home-fire-escape-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 17,
+   "has_sources": true
+  },
+  "home-fire-escape-worksheet": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 5,
+   "has_sources": false
+  },
+  "homemade-water-filters": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 9,
+   "has_sources": true
+  },
+  "household-emergency-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 14,
+   "has_sources": true
+  },
+  "hub-family-communication": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 2,
+   "has_sources": null
+  },
+  "hub-field-tools": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 2,
+   "has_sources": null
+  },
+  "hub-food": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 2,
+   "has_sources": null
+  },
+  "hub-health-sanitation": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 1,
+   "has_sources": null
+  },
+  "hub-lost-ways": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 4,
+   "has_sources": null
+  },
+  "hub-shelter-power": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 1,
+   "has_sources": null
+  },
+  "hub-start-here": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 4,
+   "has_sources": null
+  },
+  "hub-water": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 2,
+   "has_sources": null
+  },
+  "kit-builder": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 10,
+   "has_sources": true
+  },
+  "landing": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": null,
+   "pages": 12,
+   "has_sources": null
+  },
+  "lewis-and-clark-salt-works": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 11,
+   "has_sources": true
+  },
+  "making-water-safer": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "medication-and-devices": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 15,
+   "has_sources": true
+  },
+  "navigation-before-gps": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "outage-heat-cold-generators": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 19,
+   "has_sources": true
+  },
+  "pantry-rotation": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "pemmican-and-dried-meats": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "pickling-fermentation-old-recipes": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "pioneer-supply-chains-failed": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 14,
+   "has_sources": true
+  },
+  "pioneer-travel-rations": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "power-outage-planner": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 3,
+   "has_sources": false
+  },
+  "preparedness-real-households": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 16,
+   "has_sources": true
+  },
+  "pressure-canning-low-acid": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 16,
+   "has_sources": true
+  },
+  "rain-barrels-and-cisterns": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 11,
+   "has_sources": true
+  },
+  "reunification-plan": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 6,
+   "has_sources": true
+  },
+  "root-cellars-cool-storage": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "safe-jerky-dehydration": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "sanitation-before-germ-theory": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "shelter-or-evacuate": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 17,
+   "has_sources": true
+  },
+  "ships-biscuit-and-hardtack": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 12,
+   "has_sources": true
+  },
+  "smokehouses-salting-curing": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 11,
+   "has_sources": true
+  },
+  "three-day-kit": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 17,
+   "has_sources": true
+  },
+  "two-week-water-storage": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 8,
+   "has_sources": true
+  },
+  "warnings-radios-offline-maps": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 13,
+   "has_sources": true
+  },
+  "water-advisories-explained": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 9,
+   "has_sources": true
+  },
+  "water-math": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 8,
+   "has_sources": true
+  },
+  "water-planner": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 4,
+   "has_sources": true
+  },
+  "water-purification-through-history": {
+   "bg": "rgb(255, 255, 255)",
+   "toc": "none",
+   "pages": 14,
+   "has_sources": true
+  }
+ },
+ "links": {
+  "archive_unresolved": {},
+  "distinct_internal": 53
+ },
+ "motion": {
+  "reduce": "0s",
+  "normal": "0.18s, 0.18s, 0.18s"
+ },
+ "dom": {
+  "emergency-hygiene-sanitation": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 460
+  },
+  "family-communication-plan": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 513
+  },
+  "family-reunification-card": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": true,
+   "dom": 305
+  },
+  "fire-making-across-time": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 450
+  },
+  "food-safety-power-outage": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 475
+  },
+  "go-bags": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 495
+  },
+  "history-of-food-preservation": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 411
+  },
+  "home-fire-escape-plan": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 527
+  },
+  "home-fire-escape-worksheet": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": true,
+   "dom": 538
+  },
+  "homemade-water-filters": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 367
+  },
+  "household-emergency-plan": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 471
+  },
+  "hub-family-communication": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 57
+  },
+  "hub-field-tools": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 84
+  },
+  "hub-food": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 66
+  },
+  "hub-health-sanitation": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 48
+  },
+  "hub-lost-ways": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 165
+  },
+  "hub-shelter-power": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 48
+  },
+  "hub-start-here": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 135
+  },
+  "hub-water": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 75
+  },
+  "kit-builder": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 1051
+  },
+  "landing": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": false,
+   "noscript": false,
+   "dom": 502
+  },
+  "lewis-and-clark-salt-works": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 380
+  },
+  "making-water-safer": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 435
+  },
+  "medication-and-devices": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 475
+  },
+  "navigation-before-gps": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 393
+  },
+  "outage-heat-cold-generators": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 634
+  },
+  "pantry-rotation": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 482
+  },
+  "pemmican-and-dried-meats": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 378
+  },
+  "pickling-fermentation-old-recipes": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 381
+  },
+  "pioneer-supply-chains-failed": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 476
+  },
+  "pioneer-travel-rations": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 363
+  },
+  "power-outage-planner": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": true,
+   "dom": 802
+  },
+  "preparedness-real-households": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 500
+  },
+  "pressure-canning-low-acid": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 515
+  },
+  "rain-barrels-and-cisterns": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 359
+  },
+  "reunification-plan": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": true,
+   "dom": 647
+  },
+  "root-cellars-cool-storage": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 400
+  },
+  "safe-jerky-dehydration": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 488
+  },
+  "salt-beef-salt-pork-age-of-sail": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 422
+  },
+  "sanitation-before-germ-theory": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 419
+  },
+  "shelter-or-evacuate": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 500
+  },
+  "ships-biscuit-and-hardtack": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 385
+  },
+  "smokehouses-salting-curing": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 338
+  },
+  "three-day-kit": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 546
+  },
+  "two-week-water-storage": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 271
+  },
+  "warnings-radios-offline-maps": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 417
+  },
+  "water-advisories-explained": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 342
+  },
+  "water-math": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 319
+  },
+  "water-planner": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 220
+  },
+  "water-purification-through-history": {
+   "h1": 1,
+   "headingJumps": 0,
+   "dupIds": 0,
+   "imgNoAlt": 0,
+   "imgs": 0,
+   "tables": [
+    true,
+    true
+   ],
+   "brokenCites": 0,
+   "unreferencedSources": 0,
+   "extNoRel": 0,
+   "brokenHashes": 0,
+   "jsonld": [
+    true
+   ],
+   "draftMarker": true,
+   "noscript": false,
+   "dom": 519
+  }
+ },
+ "action_box_top": {
+  "390x844": {
+   "emergency-hygiene-sanitation": 561,
+   "family-communication-plan": 593,
+   "family-reunification-card": 529,
+   "fire-making-across-time": 593,
+   "food-safety-power-outage": 593,
+   "go-bags": 561,
+   "history-of-food-preservation": 593,
+   "home-fire-escape-plan": 529,
+   "home-fire-escape-worksheet": 529,
+   "homemade-water-filters": 593,
+   "household-emergency-plan": 588,
+   "kit-builder": 529,
+   "lewis-and-clark-salt-works": 561,
+   "making-water-safer": 529,
+   "medication-and-devices": 561,
+   "navigation-before-gps": 566,
+   "outage-heat-cold-generators": 556,
+   "pantry-rotation": 561,
+   "pemmican-and-dried-meats": 653,
+   "pickling-fermentation-old-recipes": 653,
+   "pioneer-supply-chains-failed": 620,
+   "pioneer-travel-rations": 626,
+   "power-outage-planner": 529,
+   "preparedness-real-households": 620,
+   "pressure-canning-low-acid": 593,
+   "rain-barrels-and-cisterns": 593,
+   "reunification-plan": 529,
+   "root-cellars-cool-storage": 620,
+   "safe-jerky-dehydration": 620,
+   "salt-beef-salt-pork-age-of-sail": 593,
+   "sanitation-before-germ-theory": 593,
+   "shelter-or-evacuate": 588,
+   "ships-biscuit-and-hardtack": 561,
+   "smokehouses-salting-curing": 626,
+   "three-day-kit": 561,
+   "two-week-water-storage": 561,
+   "warnings-radios-offline-maps": 561,
+   "water-advisories-explained": 561,
+   "water-math": 561,
+   "water-planner": 529,
+   "water-purification-through-history": 620
+  },
+  "360x740": {
+   "emergency-hygiene-sanitation": 620,
+   "family-communication-plan": 642,
+   "family-reunification-card": 550,
+   "fire-making-across-time": 593,
+   "food-safety-power-outage": 620,
+   "go-bags": 588,
+   "history-of-food-preservation": 626,
+   "home-fire-escape-plan": 610,
+   "home-fire-escape-worksheet": 550,
+   "homemade-water-filters": 593,
+   "household-emergency-plan": 588,
+   "kit-builder": 550,
+   "lewis-and-clark-salt-works": 620,
+   "making-water-safer": 529,
+   "medication-and-devices": 588,
+   "navigation-before-gps": 599,
+   "outage-heat-cold-generators": 588,
+   "pantry-rotation": 561,
+   "pemmican-and-dried-meats": 653,
+   "pickling-fermentation-old-recipes": 680,
+   "pioneer-supply-chains-failed": 653,
+   "pioneer-travel-rations": 626,
+   "power-outage-planner": 577,
+   "preparedness-real-households": 653,
+   "pressure-canning-low-acid": 620,
+   "rain-barrels-and-cisterns": 653,
+   "reunification-plan": 550,
+   "root-cellars-cool-storage": 620,
+   "safe-jerky-dehydration": 620,
+   "salt-beef-salt-pork-age-of-sail": 593,
+   "sanitation-before-germ-theory": 653,
+   "shelter-or-evacuate": 588,
+   "ships-biscuit-and-hardtack": 593,
+   "smokehouses-salting-curing": 658,
+   "three-day-kit": 588,
+   "two-week-water-storage": 588,
+   "warnings-radios-offline-maps": 610,
+   "water-advisories-explained": 593,
+   "water-math": 561,
+   "water-planner": 577,
+   "water-purification-through-history": 653
+  }
+ }
+}
