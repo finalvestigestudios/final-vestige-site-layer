@@ -220,7 +220,7 @@ def build_stage(repo: Path, head: str, theme_zip: Path, out: Path, *, expected_t
     blueprint = create_blueprint()
     (out/'playground-blueprint.json').write_text(json.dumps(blueprint,indent=2)+'\n',encoding='utf-8')
     (out/'playground-cli-arguments.json').write_text(json.dumps([
-        'npx','@wp-playground/cli@latest','server',
+        'npx','@wp-playground/cli@3.1.61','server',
         '--blueprint='+str(out/'playground-blueprint.json'),
         '--mount='+str(out/'mounts'/'assembler')+':/wordpress/wp-content/themes/assembler',
         '--mount='+str(out/'mounts'/PLUGIN)+':/wordpress/wp-content/plugins/'+PLUGIN,
