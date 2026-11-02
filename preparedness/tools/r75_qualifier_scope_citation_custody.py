@@ -149,6 +149,10 @@ def construct(parent, *, expected=EXPECTED):
              "historical reading altered")
         source_index[key]=row
     need(list(source_index)==sorted(source_index), "original distinct source ordering changed")
+    URL_groups,ID_groups=defaultdict(list),defaultdict(list)
+    for skey,source in source_index.items():
+        URL_groups[source["exact_URL_NO_ALIAS"]].append(skey)
+        ID_groups[skey[1]].append(skey)
 
     doc_index={}
     for doc in docs:
@@ -171,6 +175,8 @@ def construct(parent, *, expected=EXPECTED):
 
     block_index={}
     seen_orders=defaultdict(list)
+    reverse_edges=defaultdict(list)
+    cited_sources=set()
     edges=set()
     qualifier_packets=[]
     qualification_by_key={}
@@ -217,6 +223,8 @@ def construct(parent, *, expected=EXPECTED):
                      and variant.get("human_source_and_claim_review")==REVIEW,
                      "citation origin/URL/source reading collapsed or altered")
                 seen.add(skey)
+                cited_sources.add(skey)
+                reverse_edges[skey].append([kind,slug,bid,edge["ordinal"]])
         spans=qualifier_spans(t)
         qualification_by_key[key]=spans
         if spans:
@@ -231,9 +239,49 @@ def construct(parent, *, expected=EXPECTED):
                 "independent_QD_review":REVIEW}
             packet["packet_sha256"]=digest(packet)
             qualifier_packets.append(packet)
-    need(len(edges)+len(unattached)==expected[3]
+    for row in unattached:
+        need(type(row) is dict and row.get("review_state")==REVIEW
+             and row.get("kind") in ("article","tool")
+             and (row.get("kind"),row.get("slug")) in doc_index
+             and type(row.get("citation_ordinal")) is int and row["citation_ordinal"]>0
+             and type(row.get("source_id")) is str and row["source_id"],
+             "unattached original citation altered or falsely reviewed")
+        key=(row["kind"],row["slug"],row["citation_ordinal"])
+        need(key not in edges,"unattached citation silently double counted")
+        edges.add(key)
+    need(len(edges)==expected[3]
          and all(seen_orders.get(k)==doc["block_ids_in_original_order"]
                  for k,doc in doc_index.items()),"dropped citation or changed full document DOM order")
+    for (kind,slug),doc in doc_index.items():
+        linked=sorted(skey for skey,occ in reverse_edges.items()
+                      if any(edge[0]==kind and edge[1]==slug for edge in occ))
+        need(doc.get("unabridged_block_count")==len(doc["block_ids_in_original_order"])
+             and doc.get("origin_scoped_sources_USED_NOT_SUPPORT_APPROVED")==
+                 [list(x) for x in linked],
+             "document source scope or block census silently changed")
+
+    def original_collision_groups(mapping, name):
+        result=[]
+        for value,keys in sorted(mapping.items()):
+            if len(keys)<2:
+                continue
+            rows=[{
+                "origin":skey[0],"id":skey[1],
+                "full_candidate_reading_sha256":source_index[skey]["candidate_reading_sha256"],
+                "exact_URL_NOT_CANONICALIZED":source_index[skey]["exact_URL_NO_ALIAS"],
+                "downstream_block_citation_edges_NOT_SUPPORT":sorted(reverse_edges.get(skey,[])),
+                "human_scope_and_claim_review":REVIEW,
+            } for skey in sorted(keys)]
+            result.append({"collision_type_NOT_AUTOMATIC_ERROR":name,
+                           "value":value,"source_readings_NOT_MERGED":rows,
+                           "human_scope_resolution":REVIEW})
+        return result
+    need(shared==original_collision_groups(URL_groups,
+              "SHARED_EXACT_URL_NOT_SOURCE_EQUIVALENCE")
+         and reused==original_collision_groups(ID_groups,
+              "SAME_ID_DIFFERENT_RESEARCH_ORIGINS")
+         and uncited==[list(x) for x in sorted(set(source_index)-cited_sources)],
+         "URL/source-ID collision, uncited source or downstream evidence was lost")
 
     action_keys=set()
     for action in actions:
@@ -335,7 +383,11 @@ def construct(parent, *, expected=EXPECTED):
         "action_or_quantity_qualifier_context_queue_NOT_APPROVED":review_packets,
         "counts":{"articles":expected[0],"tools":expected[1],
             "complete_origin_scoped_source_readings":len(sources),
-            "citation_occurrences":len(edges)+len(unattached),
+            "citation_occurrences":len(edges),
+            "shared_exact_URL_collision_groups_preserved":len(shared),
+            "reused_source_ID_collision_groups_preserved":len(reused),
+            "uncited_source_readings_kept":len(uncited),
+            "unattached_citation_review_tasks":len(unattached),
             "unabridged_DOM_blocks":len(blocks),
             "parent_action_language_packets":len(actions),
             "parent_numeric_unit_packets":len(qty),
