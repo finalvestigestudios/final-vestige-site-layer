@@ -104,7 +104,7 @@ When the gorilla enters, you may see it. You may even smile at having caught the
 
 [2] Simons, D. J. (2010). “Monkeying around with the gorillas in our midst: Familiarity with an inattentional-blindness task does not improve the detection of unexpected events.” *i-Perception*, 1(1), 3–6. https://doi.org/10.1068/i0386 — Primary sequel study, the unexpected curtain/player changes and the familiarity qualification.
 
-[3] “The visible gorilla: Unexpected fast—not physically salient—objects are noticeable.” (2023). *PNAS*. https://doi.org/10.1073/pnas.2214930120 — Large online experiments on speed, task set and detection. Check study design and limitations before asserting population detection rates.
+[3] Wallisch, P., Mackey, W. E., Karlovich, M. W., & Heeger, D. J. (2023). “The visible gorilla: Unexpected fast—not physically salient—objects are noticeable.” *Proceedings of the National Academy of Sciences*, 120(22), e2214930120. https://doi.org/10.1073/pnas.2214930120 — Three high-powered experiments (total reported n = 4,493), examining speed, task set and detection. The controlled dot-display studies are not identical to the real-scene gorilla demonstration; the authors discuss methodological limitations.
 
 [4] Earlier Final Vestige DRAFT ONLY: R65 “The Stranger Who Came Back as Someone Else.” Unpublished, not yet a public link. https://github.com/finalvestigestudios/final-vestige-site-layer/pull/583
 
