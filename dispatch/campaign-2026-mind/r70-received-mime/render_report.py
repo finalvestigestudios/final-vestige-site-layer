@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 import re
 
-SCHEMA = "fv-dispatch-received-eml-readonly-v1"
+SCHEMA = "fv-dispatch-received-eml-readonly-v2"
 DISPLAY = (
     ("subject_present", "Received MIME contains a subject"),
     ("subject_matches_selected_copy", "Subject matches independently approved reference"),
@@ -27,8 +27,12 @@ DISPLAY = (
     ("plain_text_optout_and_https_present", "Opt-out text and HTTPS present in plaintext"),
     ("list_unsubscribe_header_present", "List-Unsubscribe header present"),
     ("list_unsubscribe_post_one_click_declared", "One-click header declared (not exercised)"),
-    ("postal_text_matches_private_publisher_reference", "Text matches privately supplied publisher-address reference"),
-    ("commercial_disclosure_within_first_55_visible_words", "Commercial disclosure appears in first 55 visible words"),
+    ("plain_part_postal_matches_private_reference", "Postal reference appears in the plaintext rendition"),
+    ("html_part_postal_matches_private_reference", "Postal reference appears in the HTML rendition"),
+    ("postal_text_matches_private_publisher_reference", "Postal reference appears in EVERY present MIME rendition"),
+    ("commercial_early_disclosure_plain", "Commercial disclosure appears early in plaintext"),
+    ("commercial_early_disclosure_html", "Commercial disclosure appears early in HTML"),
+    ("commercial_disclosure_within_first_55_visible_words", "Commercial disclosure appears early in EVERY present rendition"),
     ("merchant_domain_link_detected", "Merchant-domain link detected; never automatically approved"),
     ("hard_stop_placeholder_detected", "Unresolved release placeholder detected"),
 )

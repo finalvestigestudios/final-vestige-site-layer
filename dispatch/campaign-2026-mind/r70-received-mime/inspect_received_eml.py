@@ -19,8 +19,14 @@ from urllib.parse import urlsplit
 
 MAX_BYTES = 4 * 1024 * 1024
 MERCHANT_DOMAINS = ("inspire3.com", "zen12.com", "hypnosislive.com")
-DISCLOSURE = re.compile(r"\b(?:final\s+vestige\s+)?may\s+earn\s+(?:a\s+)?commission\b", re.I)
+DISCLOSURE = re.compile(r"\b(?:final\s+vestige\s+)?may\s+(?:earn|receive)\s+(?:a\s+)?commission\b", re.I)
 OPT_OUT = re.compile(r"\bunsubscribe\b|\bopt[\s-]?out\b", re.I)
+# A generic URL elsewhere in the message is NOT an unsubscribe destination.
+PLAIN_OPT_OUT = re.compile(
+    r"\b(?:unsubscribe|opt[ \t-]?out)\b[ \t]*[:\-\u2013\u2014]?[ \t]*"
+    r"(?:\r?\n[ \t]*)?(https://[^\s<>\"']+)", re.I
+)
+HEADER_HTTPS_URL = re.compile(r"<(https://[^<>]+)>", re.I)
 HOLD = "HOLD_UNSENT"
 
 def normal(text: str) -> str:
@@ -39,6 +45,14 @@ def merchant_url(value: str) -> bool:
         return False
     host = (urlsplit(value).hostname or "").lower()
     return any(host == d or host.endswith("." + d) for d in MERCHANT_DOMAINS)
+
+def labelled_plain_optout(plain: str) -> bool:
+    """Detect an HTTPS link attached to a plaintext opt-out label, not any URL.
+
+    Syntax is a candidate only. The parser NEVER tests link functionality.
+    """
+    return any(valid_url(match.group(1).rstrip(".,;:!?")) for match in PLAIN_OPT_OUT.finditer(plain))
+
 
 class VisibleHTML(HTMLParser):
     """Extract visible body text and link *properties*, never raw href in results."""
@@ -140,8 +154,9 @@ def audit_bytes(
         except Exception:
             # Broken markup is a failure of safe preview, not evidence of delivery.
             parsed.has_interactive_or_script = True
+    # Inspect BOTH MIME renditions independently. A passing plaintext footer
+    # must not conceal a missing HTML footer (and vice versa).
     visible = plain if plain.strip() else parsed.visible_text
-    all_visible = normal(plain + " " + parsed.visible_text)
     text_55 = " ".join(visible.split()[:55])
 
     # Do not expose raw headers, addresses, names, links, body or tokens.
@@ -150,16 +165,38 @@ def audit_bytes(
     header_unsub = str(msg.get("List-Unsubscribe") or "")
     header_unsub_post = str(msg.get("List-Unsubscribe-Post") or "")
     unsub_anchor = any(OPT_OUT.search(label) and valid_url(href) for href, label in parsed.links)
-    plain_unsub = bool(OPT_OUT.search(plain)) and bool(re.search(
-        r"https://[^\s<>\"]+", plain, flags=re.I
-    ))
+    plain_unsub = labelled_plain_optout(plain)
     merchant_link = any(merchant_url(href) for href, _ in parsed.links)
     if not merchant_link:
         merchant_link = any(merchant_url(u) for u in re.findall(r"https://[^\s<>\"]+", plain))
     supplied_address = bool(publisher_postal_address and publisher_postal_address.strip())
-    postal_match = normal(publisher_postal_address) in all_visible if supplied_address else None
+    postal_plain = (
+        normal(publisher_postal_address) in normal(plain)
+        if supplied_address and plain.strip() else None
+    )
+    postal_html = (
+        normal(publisher_postal_address) in normal(parsed.visible_text)
+        if supplied_address and html.strip() else None
+    )
+    postal_variants = [v for v in (postal_plain, postal_html) if v is not None]
+    postal_match = all(postal_variants) if postal_variants else None
     is_commercial = edition in ("03", "05")
-    possible_early_disclosure = bool(DISCLOSURE.search(text_55)) if is_commercial else None
+    disclosure_plain = (
+        bool(DISCLOSURE.search(" ".join(plain.split()[:55])))
+        if is_commercial and plain.strip() else None
+    )
+    disclosure_html = (
+        bool(DISCLOSURE.search(" ".join(parsed.visible_text.split()[:55])))
+        if is_commercial and html.strip() else None
+    )
+    disclosure_variants = [v for v in (disclosure_plain, disclosure_html) if v is not None]
+    possible_early_disclosure = (
+        all(disclosure_variants) if disclosure_variants else False
+    ) if is_commercial else None
+    one_click_header_syntax = (
+        "list-unsubscribe=one-click" in header_unsub_post.lower()
+        and any(valid_url(match.group(1)) for match in HEADER_HTTPS_URL.finditer(header_unsub))
+    )
 
     signals = {
         "subject_present": bool(subject.strip()),
@@ -178,10 +215,12 @@ def audit_bytes(
         "unsubscribe_labeled_https_link_present": unsub_anchor,
         "plain_text_optout_and_https_present": plain_unsub,
         "list_unsubscribe_header_present": bool(header_unsub.strip()),
-        "list_unsubscribe_post_one_click_declared": (
-            "list-unsubscribe=one-click" in header_unsub_post.lower()
-        ),
+        "list_unsubscribe_post_one_click_declared": one_click_header_syntax,
+        "plain_part_postal_matches_private_reference": postal_plain,
+        "html_part_postal_matches_private_reference": postal_html,
         "postal_text_matches_private_publisher_reference": postal_match,
+        "commercial_early_disclosure_plain": disclosure_plain,
+        "commercial_early_disclosure_html": disclosure_html,
         "commercial_disclosure_within_first_55_visible_words": possible_early_disclosure,
         "merchant_domain_link_detected": merchant_link,
         "hard_stop_placeholder_detected": bool(re.search(
@@ -200,8 +239,12 @@ def audit_bytes(
     ]
     if postal_match is not True:
         blockers.append("PUBLISHER_ADDRESS_NOT_MATCHED_IN_RECEIVED_BODY")
+    if plain.strip() and html.strip() and (postal_plain is not True or postal_html is not True):
+        blockers.append("PUBLISHER_ADDRESS_MISSING_IN_A_MIME_ALTERNATIVE")
     if not (unsub_anchor or plain_unsub):
         blockers.append("NO_VISIBLE_OPT_OUT_DESTINATION_DETECTED")
+    if plain.strip() and html.strip() and (not unsub_anchor or not plain_unsub):
+        blockers.append("OPT_OUT_REFERENCE_MISSING_IN_A_MIME_ALTERNATIVE")
     if not (subject.strip() and visible.strip()):
         blockers.append("SUBJECT_OR_VISIBLE_BODY_MISSING")
     if expected_subject is None or (subject.strip() != expected_subject.strip()):
@@ -214,6 +257,8 @@ def audit_bytes(
         ])
         if not possible_early_disclosure:
             blockers.append("DISCLOSURE_NOT_DETECTED_IN_FIRST_55_WORDS")
+        if plain.strip() and html.strip() and disclosure_plain is not disclosure_html:
+            blockers.append("COMMERCIAL_DISCLOSURE_MIME_ALTERNATIVES_MISMATCH")
         if merchant_link:
             blockers.append("MERCHANT_DOMAIN_LINK_REQUIRES_MANUAL_APPROVAL")
     if signals["hard_stop_placeholder_detected"]:
@@ -222,7 +267,7 @@ def audit_bytes(
         blockers.append("UNSAFE_OR_UNEXPECTED_HTML_ELEMENTS")
 
     return {
-        "schema": "fv-dispatch-received-eml-readonly-v1",
+        "schema": "fv-dispatch-received-eml-readonly-v2",
         "edition": edition,
         "evidence_level": "UNAUTHENTICATED_LOCAL_MIME_INSPECTION_ONLY",
         "synthetic_or_real_not_determined": True,
