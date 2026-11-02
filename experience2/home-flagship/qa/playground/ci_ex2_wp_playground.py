@@ -364,6 +364,19 @@ def main() -> int:
                     if frame is None:
                         raise RuntimeError('Local WordPress iframe not attached')
                     frame.locator('[data-fv-home-flagship]').wait_for(timeout=25000)
+                    # A separate release-critical path: actually SAVE the reviewed
+                    # Gutenberg block on a disposable LOCAL WordPress draft, then
+                    # read it back and render it as a front-end post. The iframe
+                    # preview above does not exercise editor persistence.
+                    admission_dir = repo / 'experience2/home-flagship/qa/release-candidate'
+                    sys.path.insert(0, str(admission_dir))
+                    try:
+                        from verify_local_gutenberg_roundtrip import run as verify_gutenberg_saved
+                        saved = verify_gutenberg_saved(page, repo, args.expected_head, out)
+                    finally:
+                        sys.path.remove(str(admission_dir))
+                    if saved.get('status') != 'ISOLATED_GUTENBERG_PERSISTENCE_PASS_NOT_HOSTED_RELEASE':
+                        raise ValueError('LOCAL_WORDPRESS_GUTENBERG_PERSISTENCE_HOLD')
                     context.storage_state(path=str(storage))
                     os.chmod(storage, 0o600)
                     context.close()
