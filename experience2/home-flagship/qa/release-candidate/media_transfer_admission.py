@@ -12,7 +12,6 @@ from urllib.parse import urlsplit
 EXPECTED_ARCHIVES = (
     '/wp-content/uploads/2026/08/s67-19766.webp',
     '/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg',
-    '/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg',
 )
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
 # Browsers may receive a differently encoded CDN derivative (e.g. WebP for JPG).
@@ -66,7 +65,6 @@ def archive_identity(url: str) -> str | None:
         if normalized not in EXPECTED_ARCHIVES: return None
         if normalized.endswith('/s67-19766.webp'): return 'apollo'
         if normalized.endswith('/Franklinexpeditionnote.jpg'): return 'franklin'
-        if normalized.endswith('/edit-017-v02-nypl-5003296-original.jpg'): return 'malbone'
         return None
     except (ValueError, TypeError):
         return None
@@ -81,11 +79,17 @@ def audit_image_payloads(images: list[dict], observed_responses: list) -> dict:
     """
     results, failures = [], []
     selected = {image.get('url', '') for image in images}
-    if len(images) != 3 or len(selected) != 3:
-        failures.append('EXPECTED_THREE_DISTINCT_ARCHIVAL_IMAGES')
+    if len(images) != 2 or len(selected) != 2:
+        failures.append('EXPECTED_TWO_RIGHTS_CLEARED_ARCHIVAL_IMAGES')
     identities = [archive_identity(image.get('url', '')) for image in images]
-    if set(identities) != {'apollo', 'franklin', 'malbone'}:
+    if set(identities) != {'apollo', 'franklin'}:
         failures.append('IMAGE_URL_PROVENANCE_OUT_OF_SCOPE')
+    # Even if a contributor silently adds a third image outside the archive
+    # locator, this candidate must fail if the unlicensed capture is fetched.
+    if any('edit-017-v02-nypl-5003296-original.jpg' in getattr(r, 'url', '')
+           and getattr(getattr(r, 'request', None), 'resource_type', '') == 'image'
+           for r in observed_responses):
+        failures.append('NYPL_UNCLEARED_CAPTURE_HTTP_REQUEST_DETECTED')
     for image in images:
         url = image.get('url', '')
         ident = archive_identity(url)
