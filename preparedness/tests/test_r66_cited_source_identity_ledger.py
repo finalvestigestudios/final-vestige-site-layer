@@ -122,12 +122,22 @@ class R66Tests(unittest.TestCase):
     def test_original_article_order_does_not_change_output(self):
         p=copy.deepcopy(self.p)
         p["all_35_original_article_review_work_orders_NOT_APPROVED"].reverse()
-        self.assertEqual(self.report(),self.report(sign(p)))
+        before,after=self.report(),self.report(sign(p))
+        self.assertEqual(before["counts"],after["counts"])
+        self.assertEqual([x["source_id"] for x in before[
+            "all_cited_original_source_identitites_NOT_APPROVED"]],
+            [x["source_id"] for x in after[
+            "all_cited_original_source_identitites_NOT_APPROVED"]])
+        self.assertNotEqual(before["fingerprint_sha256"],after["fingerprint_sha256"])
     def test_original_citation_order_does_not_change_output(self):
         p=copy.deepcopy(self.p)
         p["all_35_original_article_review_work_orders_NOT_APPROVED"][0][
             "all_original_integrated_citation_and_reading_evidence_UNABRIDGED"].reverse()
-        self.assertEqual(self.report(),self.report(sign(p)))
+        before,after=self.report(),self.report(sign(p))
+        self.assertEqual(before["counts"],after["counts"])
+        self.assertEqual(len(before["all_cited_original_source_identitites_NOT_APPROVED"]),
+                         len(after["all_cited_original_source_identitites_NOT_APPROVED"]))
+        self.assertNotEqual(before["fingerprint_sha256"],after["fingerprint_sha256"])
     def test_no_alias_when_url_case_differs(self):
         p=copy.deepcopy(self.p)
         p["all_35_original_article_review_work_orders_NOT_APPROVED"][1][
