@@ -1,0 +1,514 @@
+{
+  "package": "mind-r80-20261102",
+  "checked_on": "2026-11-02",
+  "live_site_mutations": 0,
+  "commercial_activation": false,
+  "source_count": 20,
+  "decision_count": 40,
+  "sources": [
+    {
+      "id": "s1",
+      "type": "primary_paper",
+      "label": "Loftus & Palmer (1974) collision wording study",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "verification": "publisher abstract and bibliographic details accessed",
+      "limits": "not raw data"
+    },
+    {
+      "id": "s2",
+      "type": "primary_paper",
+      "label": "Loftus, Miller & Burns (1978) 1,242 participants",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "verification": "abstract directly read",
+      "limits": "abstract only"
+    },
+    {
+      "id": "s3",
+      "type": "primary_paper",
+      "label": "Loftus et al (1978) DOI record",
+      "url": "https://doi.org/10.1037/0278-7393.4.1.19",
+      "verification": "journal details verified via PubMed",
+      "limits": "not manuscript full text"
+    },
+    {
+      "id": "s4",
+      "type": "primary_paper",
+      "label": "Wiechert et al online Sep 2025 print Jul 2026 replication",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41021526/",
+      "verification": "abstract directly read",
+      "limits": "outcome method-sensitive"
+    },
+    {
+      "id": "s5",
+      "type": "primary_paper",
+      "label": "Wiechert et al DOI",
+      "url": "https://doi.org/10.1037/xlm0001529",
+      "verification": "DOI from PubMed",
+      "limits": "not product study"
+    },
+    {
+      "id": "s6",
+      "type": "primary_paper",
+      "label": "O'Donnell et al contradictory misinformation registered report",
+      "url": "https://doi.org/10.1111/lcrp.12242",
+      "verification": "published journal narrative read",
+      "limits": "interpretation bounded"
+    },
+    {
+      "id": "s7",
+      "type": "primary_paper",
+      "label": "Raz et al (2002) posthypnotic Stroop",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "verification": "PubMed abstract directly read",
+      "limits": "16 high and 16 lower suggestibility, not consumer audio"
+    },
+    {
+      "id": "s8",
+      "type": "merchant_catalog",
+      "label": "Inspire3 seller catalog",
+      "url": "https://inspire3.com/",
+      "verification": "live catalog read 2026-11-02",
+      "limits": "seller marketing not efficacy"
+    },
+    {
+      "id": "s9",
+      "type": "merchant_exact",
+      "label": "Hypnosis Live Total Focus exact named offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "verification": "live page read 2026-11-02",
+      "limits": "public prices inconsistent across snapshots; omit"
+    },
+    {
+      "id": "s10",
+      "type": "merchant_category",
+      "label": "Hypnosis Live Mental Skills category",
+      "url": "https://hypnosislive.com/mental-skills",
+      "verification": "public page read",
+      "limits": "category not same as SKU"
+    },
+    {
+      "id": "s11",
+      "type": "merchant_privacy",
+      "label": "Inspire3 group privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "verification": "live notice read 2026-11-02",
+      "limits": "policy statements not evidence of actual sharing"
+    },
+    {
+      "id": "s12",
+      "type": "merchant_terms",
+      "label": "Inspire3 terms of sale",
+      "url": "https://inspire3.com/terms/",
+      "verification": "unavailable to this run",
+      "limits": "HOLD; do not infer details"
+    },
+    {
+      "id": "s13",
+      "type": "merchant_compare",
+      "label": "Zen12 separate specific offer",
+      "url": "https://zen12.com/hnp",
+      "verification": "public page read 2026-11-02",
+      "limits": "distinct 12 minute multi-level program"
+    },
+    {
+      "id": "s14",
+      "type": "compliance",
+      "label": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verification": "read 2026-11-02",
+      "limits": "near recommendation disclosure"
+    },
+    {
+      "id": "s15",
+      "type": "compliance",
+      "label": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verification": "read 2026-11-02",
+      "limits": "objective claims require evidence"
+    },
+    {
+      "id": "s16",
+      "type": "fv_live",
+      "label": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verification": "authenticated WordPress read-only 2026-11-02",
+      "limits": "history not hypnotic efficacy"
+    },
+    {
+      "id": "s17",
+      "type": "fv_live",
+      "label": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "verification": "authenticated WordPress read-only 2026-11-02",
+      "limits": "one existing signup funnel"
+    },
+    {
+      "id": "s18",
+      "type": "fv_live",
+      "label": "FV Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "verification": "authenticated WordPress read-only 2026-11-02",
+      "limits": "source before claim"
+    },
+    {
+      "id": "s19",
+      "type": "fv_live",
+      "label": "FV affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "verification": "authenticated WordPress read-only 2026-11-02",
+      "limits": "general disclosure not sufficient near earning link"
+    },
+    {
+      "id": "s20",
+      "type": "fv_live",
+      "label": "Explore landing page",
+      "url": "https://finalvestige.com/explore/",
+      "verification": "authenticated WordPress read-only 2026-11-02",
+      "limits": "do not add live nav"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "kind": "claim",
+      "statement": "1974 word choice changed mean speed estimates and later reports of nonexistent glass",
+      "source_id": "s1",
+      "disposition": "supported_bounded",
+      "restriction": "Report group behavioral finding only; no universal memory-erasure claim"
+    },
+    {
+      "id": "D02",
+      "kind": "claim",
+      "statement": "1978 experiments involved 1,242 people across five experiments plus pilot",
+      "source_id": "s2",
+      "disposition": "supported_bounded",
+      "restriction": "Use PubMed abstract wording; do not imply all in one experiment"
+    },
+    {
+      "id": "D03",
+      "kind": "claim",
+      "statement": "1978 misleading narrative reduced accuracy on tested recognition tasks",
+      "source_id": "s2",
+      "disposition": "supported_bounded",
+      "restriction": "Does not prove every participant adopted a false memory"
+    },
+    {
+      "id": "D04",
+      "kind": "claim",
+      "statement": "2025 online/2026 print replication observed misinformation effect",
+      "source_id": "s4",
+      "disposition": "supported_bounded",
+      "restriction": "Smaller with more response options/confidence betting"
+    },
+    {
+      "id": "D05",
+      "kind": "claim",
+      "statement": "Mechanism of misinformation is settled as overwritten memory trace",
+      "source_id": "s4",
+      "disposition": "reject",
+      "restriction": "Mechanisms remain debated; do not state"
+    },
+    {
+      "id": "D06",
+      "kind": "claim",
+      "statement": "Contradictory false detail reliably immunizes against all misinformation",
+      "source_id": "s6",
+      "disposition": "reject",
+      "restriction": "Registered report does not establish this"
+    },
+    {
+      "id": "D07",
+      "kind": "claim",
+      "statement": "Puységur source page documents 153 rows and ethical/operator pressure issues",
+      "source_id": "s16",
+      "disposition": "supported_bounded",
+      "restriction": "Do not convert historical case records to magnetic force proof"
+    },
+    {
+      "id": "D08",
+      "kind": "claim",
+      "statement": "Animal magnetism proved a physical mechanism",
+      "source_id": "s16",
+      "disposition": "reject",
+      "restriction": "The archive explicitly denies such inference"
+    },
+    {
+      "id": "D09",
+      "kind": "claim",
+      "statement": "Suggestion in memory research means everyone was hypnotized",
+      "source_id": "s1",
+      "disposition": "reject",
+      "restriction": "Different operational definitions"
+    },
+    {
+      "id": "D10",
+      "kind": "claim",
+      "statement": "Hypnosis is equivalent to mind control",
+      "source_id": "s7",
+      "disposition": "reject",
+      "restriction": "Not supported"
+    },
+    {
+      "id": "D11",
+      "kind": "offer",
+      "statement": "Total Focus exists as a named Hypnosis Live Mental Skills MP3",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "Direct exact page"
+    },
+    {
+      "id": "D12",
+      "kind": "offer",
+      "statement": "Total Focus public page lists 33 minutes",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "Not tested purchased file"
+    },
+    {
+      "id": "D13",
+      "kind": "offer",
+      "statement": "Total Focus public page lists 47MB",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "Not tested download"
+    },
+    {
+      "id": "D14",
+      "kind": "offer",
+      "statement": "Total Focus written/recorded by J. A. Amos",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "No independently authenticated authorship"
+    },
+    {
+      "id": "D15",
+      "kind": "offer",
+      "statement": "Seller offers an audio preview",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "Preview not consumed/tested here"
+    },
+    {
+      "id": "D16",
+      "kind": "offer",
+      "statement": "Seller advertises individual session and Whole Brain Thinking bundle",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "Bundle separate SKU decision"
+    },
+    {
+      "id": "D17",
+      "kind": "offer",
+      "statement": "Public current fixed price can safely be promised",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "Observed price snapshots differ, omit"
+    },
+    {
+      "id": "D18",
+      "kind": "offer",
+      "statement": "Seller advertises 14-day satisfaction refund",
+      "source_id": "s9",
+      "disposition": "seller_described",
+      "restriction": "Not verified claims processing and full terms"
+    },
+    {
+      "id": "D19",
+      "kind": "offer",
+      "statement": "Inspire3 terms processing details verified",
+      "source_id": "s12",
+      "disposition": "hold",
+      "restriction": "Terms page inaccessible"
+    },
+    {
+      "id": "D20",
+      "kind": "offer",
+      "statement": "Hypnosis Live Total Focus equals Zen12",
+      "source_id": "s13",
+      "disposition": "reject",
+      "restriction": "Different product, sessions, mechanisms and claims"
+    },
+    {
+      "id": "D21",
+      "kind": "efficacy",
+      "statement": "Total Focus provides 100% concentration",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "Unsubstantiated seller outcome marketing"
+    },
+    {
+      "id": "D22",
+      "kind": "efficacy",
+      "statement": "Total Focus permanently rewires brain via NLP",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "No independent Total Focus trial"
+    },
+    {
+      "id": "D23",
+      "kind": "efficacy",
+      "statement": "Total Focus clears inbox in minutes",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "No relevant product-specific comparative outcomes"
+    },
+    {
+      "id": "D24",
+      "kind": "efficacy",
+      "statement": "Total Focus improves career promotion prospects",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "No relevant product-specific comparative outcomes"
+    },
+    {
+      "id": "D25",
+      "kind": "efficacy",
+      "statement": "Total Focus is a medical treatment for attention disorders",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "Not established; never imply"
+    },
+    {
+      "id": "D26",
+      "kind": "efficacy",
+      "statement": "Raz 2002 high-suggestibility participants showed reduced Stroop interference",
+      "source_id": "s7",
+      "disposition": "supported_bounded",
+      "restriction": "Small specific laboratory cohort, not product efficacy"
+    },
+    {
+      "id": "D27",
+      "kind": "efficacy",
+      "statement": "Raz 2002 proves this commercial recording improves work output",
+      "source_id": "s7",
+      "disposition": "reject",
+      "restriction": "Wrong intervention, population and outcome"
+    },
+    {
+      "id": "D28",
+      "kind": "privacy",
+      "statement": "Seller policy lists purchaser name/email/postal/payment data",
+      "source_id": "s11",
+      "disposition": "seller_policy",
+      "restriction": "No evidence FV receives it"
+    },
+    {
+      "id": "D29",
+      "kind": "privacy",
+      "statement": "Seller policy may share buyer name/email/purchased product with affiliate",
+      "source_id": "s11",
+      "disposition": "seller_policy",
+      "restriction": "FV buyer PII feed remains disallowed"
+    },
+    {
+      "id": "D30",
+      "kind": "privacy",
+      "statement": "Seller policy says supplying mobile number may trigger SMS marketing",
+      "source_id": "s11",
+      "disposition": "seller_policy",
+      "restriction": "Contextual privacy notice, not guaranteed contact"
+    },
+    {
+      "id": "D31",
+      "kind": "compliance",
+      "statement": "Near-link commission language required for commercial endorsement",
+      "source_id": "s14",
+      "disposition": "required",
+      "restriction": "General policy page alone inadequate"
+    },
+    {
+      "id": "D32",
+      "kind": "compliance",
+      "statement": "'Affiliate link' alone adequately explains earnings to all readers",
+      "source_id": "s14",
+      "disposition": "reject",
+      "restriction": "FTC recommends plain earning explanation"
+    },
+    {
+      "id": "D33",
+      "kind": "compliance",
+      "statement": "Health-related outcomes can be claimed without matching studies",
+      "source_id": "s15",
+      "disposition": "reject",
+      "restriction": "Adequate scientific substantiation needed"
+    },
+    {
+      "id": "D34",
+      "kind": "compliance",
+      "statement": "An experimental illustration can imply product has been proven",
+      "source_id": "s15",
+      "disposition": "reject",
+      "restriction": "Separate education film from commercial claim"
+    },
+    {
+      "id": "D35",
+      "kind": "rights",
+      "statement": "Public Inspire3 affiliate recruitment proves FV approval",
+      "source_id": "s8",
+      "disposition": "reject",
+      "restriction": "Account-specific written acceptance missing"
+    },
+    {
+      "id": "D36",
+      "kind": "rights",
+      "statement": "Public merchant creative can be copied into Final Vestige ads",
+      "source_id": "s8",
+      "disposition": "reject",
+      "restriction": "Explicit creative rights not established"
+    },
+    {
+      "id": "D37",
+      "kind": "rights",
+      "statement": "Zen12 permission authorizes Total Focus email promotion",
+      "source_id": "s13",
+      "disposition": "reject",
+      "restriction": "Product/channel-specific terms needed"
+    },
+    {
+      "id": "D38",
+      "kind": "privacy",
+      "statement": "Live outbound tracking may capture raw URL/referrer identifiers",
+      "source_id": "s14",
+      "disposition": "reject",
+      "restriction": "Synthetic category-only OFF by default"
+    },
+    {
+      "id": "D39",
+      "kind": "measurement",
+      "statement": "A disabled page button proves real affiliate conversions",
+      "source_id": "s9",
+      "disposition": "reject",
+      "restriction": "No activated sale or click"
+    },
+    {
+      "id": "D40",
+      "kind": "measurement",
+      "statement": "A/B guide + film will outperform text-only",
+      "source_id": "s14",
+      "disposition": "hypothesis_only",
+      "restriction": "No visitors or experiments; identical main guide"
+    }
+  ],
+  "gates": {
+    "founder_product_page_publication_approval": false,
+    "written_fv_affiliate_acceptance": false,
+    "total_focus_named_product_permission": false,
+    "website_channel_permission": false,
+    "tiktok_channel_permission": false,
+    "email_channel_permission": false,
+    "approved_earning_url_and_link_format": false,
+    "creative_license_or_original_only_clearance": false,
+    "current_terms_checkout_refund_verified": false,
+    "buyer_pii_policy_and_dpa_review": false,
+    "independent_claims_legal_signoff": false,
+    "hosted_video_a11y_performance_verified": false,
+    "site_qa_and_release_approval": false,
+    "analytics_live_activation_approved": false
+  },
+  "notes": [
+    "Seller claims are not independent evidence. 'seller_described' means a public sales-page representation, not a hands-on observation.",
+    "A 14-day merchant page refund sentence is NOT a promise that full refund processing terms have been verified.",
+    "Do not email or receive merchant buyer PII. Public affiliate signup ≠ account permission. No prices, commission rates, screenshots, earning URLs, or creative rights invented.",
+    "The previous Zen12 A/B film PRs remain isolated and unopened for activation. This new pilot is separately for the exact Total Focus recording."
+  ]
+}
