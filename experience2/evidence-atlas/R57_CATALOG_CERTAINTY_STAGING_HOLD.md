@@ -10,7 +10,7 @@ Version: 0.0.57-staging. Reviewed WordPress fragment SHA-256: 51de8c18f7b58be0a0
 
 ## Executed local QA (November 1, 2026)
 
-Standalone R56 archive with R57 code: 99 Python unit tests, 98 pass and one R38 skip; original Atlas tests 11/11. R57 actual-source Chromium 16/16 cases at 320, 360, 390, 428, 768, 1024, 1440 and 1920px with JS on/off, mobile touch and reduced motion. Verified provenance-facet intersections, reset, native navigation, full six-record print, native SourceDrawer access, no overflow and zero external requests. R56/R55/R54 regressions each passed 16/16. PHP and JS syntax checks passed. Local fragment LCP 108–180ms and CLS 0 are NOT hosted CWV. Screenshots SHA-256: 390px c514c92f74e4b25bc7c6a406c131b142ffce47b306cd1c6d0e1d760c0c633cc8; 1440px a741ed42177634dfdac72b6f9af178eec32a1f4d16b78e10072e4cfca8d50d36.
+Standalone R56 archive with R57 code: 99 Python unit tests, 98 pass and one R38 skip; original Atlas tests 11/11. R57 actual-source Chromium 16/16 cases at 320, 360, 390, 428, 768, 1024, 1440 and 1920px with JS on/off, mobile touch and reduced motion. Verified provenance-facet intersections, reset, native navigation, full six-record print, native SourceDrawer access, no overflow and zero external requests. R56/R55/R54 regressions each passed 16/16. PHP and JS syntax checks passed. Local fragment LCP 92–124ms and CLS 0 are NOT hosted CWV. Screenshots SHA-256: 390px adc63d900bdc41cf089ce795b5fa8625d5e6556825f5a4b46a6834ada8f7d74b; 1440px 14104b8b518e1c66ec083e39be98f81adde73de28350c6749bb4d42894721cb2.
 
 ## Release blockers: HOLD
 
