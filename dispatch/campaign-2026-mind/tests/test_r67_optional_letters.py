@@ -39,7 +39,7 @@ class R67Tests(unittest.TestCase):
    plain=(D/f"preview-{n}.txt").read_text(encoding="utf8")
    self.assertIn('<html lang="en">',html)
    self.assertIn('role="presentation"',html)
-   self.assertNotRegex(html,r"<(?:script|form|iframe|img|button)\\b")
+   self.assertNotRegex(html,r"<(?:script|form|iframe|img|button)\b")
    self.assertNotIn('href=',html)
    self.assertIn("HOLD_UNSENT",html)
    self.assertIn("[[APPROVED_",plain)
