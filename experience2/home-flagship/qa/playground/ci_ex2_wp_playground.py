@@ -372,7 +372,7 @@ def main() -> int:
                     sys.path.insert(0, str(admission_dir))
                     try:
                         from verify_local_gutenberg_roundtrip import run as verify_gutenberg_saved
-                        saved = verify_gutenberg_saved(page, repo, args.expected_head, out)
+                        saved = verify_gutenberg_saved(page, repo, args.expected_head, out, args.axe_script)
                     finally:
                         sys.path.remove(str(admission_dir))
                     if saved.get('status') != 'ISOLATED_GUTENBERG_PERSISTENCE_PASS_NOT_HOSTED_RELEASE':

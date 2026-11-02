@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import urlsplit
+from verify_saved_frontend_admission import check_saved_frontend
 
 FIXTURE = 'experience2/home-flagship/qa/release-candidate/fixtures/proposed-production-block-pr604.html'
 SITE = 'http://127.0.0.1:9400'
@@ -78,7 +79,7 @@ def check_saved_raw(actual: str, candidate: str, others: tuple[str, ...]) -> Non
         raise ValueError('WORDPRESS_PROTECTED_BLOCK_CHANGED')
 
 
-def run(page, repo: Path, expected_sha: str, out: Path) -> dict:
+def run(page, repo: Path, expected_sha: str, out: Path, axe_script: Path) -> dict:
     """Use only the authenticated local editor Playwright page from CI."""
     guard_origin(SITE + '/wp-admin/post-new.php?post_type=page')
     candidate = validate_candidate(repo, expected_sha)
@@ -133,6 +134,14 @@ def run(page, repo: Path, expected_sha: str, out: Path) -> dict:
         }""", timeout=18000)
         notes['authored_inline_script_present_in_frontend'] = True
         out.mkdir(parents=True, exist_ok=True)
+        # Exercise real saved-page Assembler DOM, axe WCAG tags, keyboard,
+        # rights-safe case switching and actual JS-disabled image fallback.
+        # This is distinct from the isolated private iframe acceptance.
+        saved = check_saved_frontend(page, page_id, axe_script.read_text(encoding='utf-8'), out)
+        notes['saved_frontend_admission_status'] = saved['status']
+        notes['saved_frontend_checks_passed'] = len(saved['checks'])
+        (out / 'GUTENBERG_SAVED_FRONTEND_ADMISSION.json').write_text(
+            json.dumps(saved, indent=2, sort_keys=True) + '\n', encoding='utf-8')
         page.set_viewport_size({'width': 390, 'height': 844})
         page.screenshot(path=str(out / 'GUTENBERG_SAVED_FIRST_SCREEN_390.png'))
         page.set_viewport_size({'width': 1440, 'height': 900})
