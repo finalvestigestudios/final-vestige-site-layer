@@ -342,9 +342,9 @@ class Negative(unittest.TestCase):
             signed(action)
         self.assert_rejected(f)
 
-    def test_source_variant_origin_collision(self):
+    def test_source_variant_identity_mismatch(self):
         self.assert_rejected(lambda lib,cited,action:
-            lib.source_variants["s4"][0].__setitem__("_origin", "start"))
+            lib.source_variants["s4"][0].__setitem__("id", "s3"))
 
     def test_missing_historic_provenance(self):
         self.assert_rejected(lambda lib,cited,action:
