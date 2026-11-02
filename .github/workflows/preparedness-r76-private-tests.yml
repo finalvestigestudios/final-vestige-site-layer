@@ -1,0 +1,134 @@
+name: Preparedness R76 Origin-Scoped Source Impact (PRIVATE HOLD)
+on:
+  pull_request:
+    branches: [review/preparedness-r75-qualifier-scope-citation-custody-hold-20261102]
+    paths:
+      - preparedness/tools/r76_source_impact_crosswalk.py
+      - preparedness/tests/test_r76_source_impact_crosswalk.py
+      - preparedness/docs/R76_SOURCE_IMPACT_CROSSWALK_HOLD.md
+      - .github/workflows/preparedness-r76-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r76-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  source-impact-private-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout exact private candidate without stored credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin parent, branch and four additive private files only
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "16b6ff1141b56686c0e9db0cde3adc1e637dd524"
+          test "$BASE_REF" = "review/preparedness-r75-qualifier-scope-citation-custody-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r76-consequential-source-impact-crosswalk-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r76-changed
+          python -I - <<'PY'
+          from pathlib import Path
+          b=Path("/tmp/r76-changed").read_bytes().split(b"\0")
+          rows=[(b[i].decode(),b[i+1].decode()) for i in range(0,len(b)-1,2)]
+          allowed={
+            "preparedness/tools/r76_source_impact_crosswalk.py",
+            "preparedness/tests/test_r76_source_impact_crosswalk.py",
+            "preparedness/docs/R76_SOURCE_IMPACT_CROSSWALK_HOLD.md",
+            ".github/workflows/preparedness-r76-private-tests.yml"}
+          assert len(rows)==4 and {f for _,f in rows}==allowed,rows
+          assert all(s=="A" for s,_ in rows),rows
+          print("Four additive private engineering files ONLY; no article/source/CMS changes")
+          PY
+      - name: Check all seven contributor refs and separate candidate exact SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706"}
+          for ref,want in refs.items():
+            got=subprocess.check_output(["git","rev-parse","--verify",
+              "refs/remotes/origin/"+ref+"^{commit}"],text=True).strip()
+            assert got==want,(ref,got,want)
+          print("Seven contributor refs + separate RC pinned (machine only)")
+          PY
+      - name: Syntax compile without working-tree writes
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for file in (
+            "preparedness/tools/r76_source_impact_crosswalk.py",
+            "preparedness/tests/test_r76_source_impact_crosswalk.py"):
+            compile(Path(file).read_text(encoding="utf-8"),file,"exec")
+          print("Python syntax clean")
+          PY
+      - name: Run 36+ isolated synthetic and adversarial R76 tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r76_source_impact_crosswalk.py -v
+      - name: Verify exact citation/source impact census, source variants and HOLD
+        run: |
+          python -I - <<'PY'
+          import csv,io,importlib.util,json
+          from pathlib import Path
+          path=Path("preparedness/tools/r76_source_impact_crosswalk.py")
+          spec=importlib.util.spec_from_file_location("r76_ci",path)
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          report=mod.live_report()
+          mod.sealed(report)
+          c=report["counts"]
+          assert tuple(c[k] for k in (
+            "articles","tools","complete_origin_scoped_source_readings",
+            "citation_occurrences","unabridged_DOM_blocks"))==(35,6,244,2173,4070),c
+          assert c["consequential_action_or_quantity_review_blocks"]==1068,c
+          assert c["complete_source_impact_packets"]==244,c
+          assert c["citation_source_variant_edges_NOT_CLAIM_COUNT"] >= \
+              c["attached_citation_occurrences"],c
+          assert c["shared_URL_groups_preserved"]==32,c
+          assert c["reused_source_ID_groups_preserved"]==15,c
+          assert c["uncited_source_records_preserved"]==2,c
+          assert all(report[k] is False for k in mod.HOLD_KEYS)
+          assert all(c[k]==0 for k in (
+            "human_claim_support_reviews","qualified_safety_reviews",
+            "independent_QD_approvals"))
+          assert report==mod.live_report(),"Nondeterministic impact crosswalk"
+          rows=list(csv.DictReader(io.StringIO(mod.csv_review_work_order(report))))
+          assert len(rows)==244,len(rows)
+          print("R76 machine-only source impact census:",json.dumps(c,sort_keys=True))
+          print("R76 HOLD: no medical safety or source/claim approvals")
+          PY
+      - name: Run original native source/content validator
+        run: python -I preparedness/tools/validate.py
+      - name: Build offline WordPress-ready private drafts only
+        run: python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Publication gate remains independent and CLOSED
+        if: always()
+        run: |
+          echo "RELEASE HOLD: mandatory seven_cluster_git_parity not passed."
+          echo "No source link approvals, qualified safety reviews, QD or WP browser verification."
+          echo "No merge, CMS, WordPress, navigation, homepage or public publishing."
