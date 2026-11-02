@@ -30,12 +30,15 @@ export function sanitizedSample(lhr, profile) {
       s?.screenEmulation?.width!==width ||
       s?.screenEmulation?.mobile!==!desktop ||
       !finite(cpu) || cpu===0 ||
-      (desktop && cpu!==1)) throw Error('LIGHTHOUSE_EFFECTIVE_PROFILE_MISMATCH');
+      (desktop && (cpu!==1 || s?.throttling?.rttMs!==40 ||
+                   s?.throttling?.throughputKbps!==10240))) throw Error('LIGHTHOUSE_EFFECTIVE_PROFILE_MISMATCH');
   return {
     profile,
     lighthouse_version: lhr.lighthouseVersion.slice(0, 24),
     effective_emulation: {form_factor:s.formFactor,viewport_width_px:width,
-      cpu_slowdown_multiplier:cpu,throttling_method:'simulate'},
+      cpu_slowdown_multiplier:cpu,rtt_ms:s.throttling.rttMs,
+      throughput_kbps:s.throttling.throughputKbps,
+      throttling_method:'simulate'},
     scores_0_to_100: {
       performance: score(lhr.categories?.performance),
       accessibility: score(lhr.categories?.accessibility),
