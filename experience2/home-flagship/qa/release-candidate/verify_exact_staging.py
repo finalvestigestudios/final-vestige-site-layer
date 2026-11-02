@@ -139,7 +139,17 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
     network_receipt = audit_image_payloads(imagedata, media_responses or [])
     check('actual_image_http_payloads', network_receipt['status']=='PASS')
     # Validate actual enhancement, rather than inferring from script tags.
-    check('direction_visible',frame.locator('[data-fv-direction-choice="museum"]').is_visible())
+    # PR #550 locked the approved blended identity and removed its direction picker.
+    # Require the actual folio and cited editorial disclaimer; do not demand retired controls.
+    check('locked_visual_identity', frame.locator('[data-fv-direction-choice]').count()==0
+          and frame.locator('.fv-hf__studio-controls').count()==0)
+    folio = frame.locator('aside.fv-hf__folio-arrival[aria-label]')
+    check('franklin_folio_primary_date', folio.count()==1
+          and folio.locator('time[datetime="1847-05-28"]').count()==1)
+    check('franklin_folio_editorial_disclosure', folio.count()==1
+          and folio.get_by_text('EDITORIAL TYPESETTING · NOT A FACSIMILE').count()==1)
+    check('franklin_folio_primary_record_link', folio.count()==1
+          and folio.locator('a[href="https://www.rmg.co.uk/collections/objects/rmgc-object-504898"]').count()==1)
     if width in (390,1440):
         frame.locator('body').screenshot(path=str(out/f'full-seven-chapter-{width}.png'))
     perf = frame.evaluate("() => ({observer:window.__fvLab||null,resources:performance.getEntriesByType('resource').filter(e=>e.initiatorType==='img').map(e=>({name:e.name,transferSize:e.transferSize,decodedBodySize:e.decodedBodySize}))})")
