@@ -16,6 +16,7 @@ import sys
 import tempfile
 import time
 import urllib.request
+import http.cookiejar
 import urllib.parse
 import urllib.error
 
@@ -165,7 +166,16 @@ def ready(process: subprocess.Popen, seconds: int = 180) -> None:
         def redirect_request(self, req, fp, code, msg, headers, newurl):
             return None
 
-    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), _NeverRedirect())
+    # Playground/WP may establish a localhost session via Set-Cookie + 302
+    # before serving HTML. A stateless urllib opener repeats the same 302
+    # forever. Preserve cookies only in this ephemeral loopback probe;
+    # NEVER follow Location, allow remote hosts, or persist cookie values.
+    cookies = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(
+        urllib.request.ProxyHandler({}),
+        urllib.request.HTTPCookieProcessor(cookies),
+        _NeverRedirect(),
+    )
     observations: dict[str, int] = {}
 
     def record(state: str) -> None:
