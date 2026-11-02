@@ -12,11 +12,11 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PROBE = ROOT / 'tests/php_atlas_runtime_r54_probe.php'
 PINS = {
-    'final-vestige-ex2-evidence-atlas.php': 'cb3cbf0bfb2cd915fcc91f74627ca66edb90bd63',
-    'atlas.css': 'aeac4a457ceb6d463113041afa4e037bb3681459',
+    'final-vestige-ex2-evidence-atlas.php': 'f7b41a7aafb92208afce661b9f6f1c7171f4e13b',
+    'atlas.css': 'ad64e7967f84856672fd8a229a61370d7a865227',
     'atlas.js': '23212093d354917e403a5a9dbd9dca6b0eb8ca28',
 }
-TEMPLATE_SHA = '139f64b52b27977c4caf71685a03065b21b477ac3fbbbe3b6fafd14e635736f3'
+TEMPLATE_SHA = '5d76b85ab62feb0c9a3a5733cd0718d8f0f4fe8f820edb1d61f57e499d0fdb73'
 
 def blob(data):
     return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
@@ -31,7 +31,7 @@ class AtlasRuntimeIntegrity(unittest.TestCase):
         self.assertIn('function fv_ex2_apollo_verified_atlas(): ?string', src)
         self.assertIn('fv_ex2_apollo_verified_atlas() === null', src)
         self.assertIn('hash_file(\'sha256\', $template)', src)
-        self.assertIn('0.0.54-staging', src)
+        self.assertIn('0.0.56-staging', src)
         for forbidden in ('wp_insert_post(', 'update_option(', 'wp_update_post(', 'wp_remote_get(', 'file_get_contents(\'http'):
             self.assertNotIn(forbidden, src)
         self.assertIn('function fv_ex2_apollo_suite_fallback()', src)
