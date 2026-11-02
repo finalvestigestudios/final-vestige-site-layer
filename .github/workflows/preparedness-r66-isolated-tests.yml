@@ -1,0 +1,138 @@
+name: Preparedness R66 cited source identity diagnostics (PRIVATE HOLD)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r65-integrated-35-citation-conservation-hold-20261102
+    paths:
+      - preparedness/tools/r66_cited_source_identity_ledger.py
+      - preparedness/tests/test_r66_cited_source_identity_ledger.py
+      - preparedness/docs/R66_CITED_SOURCE_IDENTITY_REVIEW_HOLD.md
+      - .github/workflows/preparedness-r66-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r66-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  private-original-source-identity-diagnostics:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Exact private draft checkout without write credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject any parent, head, or path-scope mutation
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "b9f482c159accf1d00761d03ef5cc28399f44bd6"
+          test "$BASE_REF" = "review/preparedness-r65-integrated-35-citation-conservation-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r66-cited-source-identity-ledger-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r66-files.bin
+          python -I - <<'PY'
+          from pathlib import Path
+          names={x.decode("utf-8") for x in
+                 Path("/tmp/r66-files.bin").read_bytes().split(b"\0") if x}
+          expected={
+              "preparedness/tools/r66_cited_source_identity_ledger.py",
+              "preparedness/tests/test_r66_cited_source_identity_ledger.py",
+              "preparedness/docs/R66_CITED_SOURCE_IDENTITY_REVIEW_HOLD.md",
+              ".github/workflows/preparedness-r66-isolated-tests.yml",
+          }
+          if names!=expected:
+              raise SystemExit("Unexpected R66 scope: "+repr(sorted(names^expected)))
+          print("Only four additive R66 paths, all original research untouched")
+          PY
+      - name: Syntax-check new source and adversarial tests without bytecode writes
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in (
+              "preparedness/tools/r66_cited_source_identity_ledger.py",
+              "preparedness/tests/test_r66_cited_source_identity_ledger.py",
+          ):
+              compile(Path(path).read_text(encoding="utf-8"),path,"exec")
+          print("Python 3.12 compile: PASS")
+          PY
+      - name: Native R66 synthetic and adversarial test suite (NOT release approval)
+        run: python -I -m unittest discover -s preparedness/tests -p test_r66_cited_source_identity_ledger.py -v
+      - name: Exact contributor refs and fresh real Git provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+          }
+          for name,sha in refs.items():
+              actual=subprocess.check_output([
+                  "git","rev-parse","--verify",
+                  "refs/remotes/origin/"+name+"^{commit}"],text=True).strip()
+              if actual!=sha:
+                  raise SystemExit("CONTRIBUTOR SHA DRIFT HOLD: "+name+
+                                   " old="+sha+" observed="+actual)
+          print("Seven original contributor SHAs exact; not human source approval")
+          PY
+          python -I preparedness/tools/r66_cited_source_identity_ledger.py > /tmp/r66-summary.json
+          python -I - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("/tmp/r66-summary.json").read_text())
+          c=d["counts"]
+          assert d["release_state"]=="HOLD" and d["may_publish"] is False
+          assert c["original_articles"]==35
+          assert c["original_water_tools"]==1
+          assert c["all_original_citation_occurrences"]==1959
+          assert c["article_citation_occurrences"]==1952
+          assert c["water_tool_citation_occurrences"]==7
+          assert c["distinct_original_CITED_source_origin_and_id_pairs"]>=1
+          print(json.dumps(c,sort_keys=True))
+          print("Machine source identity census only, NOT claim support or safety")
+          PY
+          python -I preparedness/tools/r66_cited_source_identity_ledger.py --task-csv-stdout > /tmp/r66-review.csv
+          python -I - <<'PY'
+          import csv,json
+          from pathlib import Path
+          n=sum(1 for _ in csv.DictReader(Path("/tmp/r66-review.csv").open(newline="")))
+          c=json.loads(Path("/tmp/r66-summary.json").read_text())["counts"]
+          assert n==c["distinct_original_CITED_source_origin_and_id_pairs"]
+          print("Private CSV task rows conserved:",n)
+          PY
+      - name: Independent native article/source validation — diagnostics only
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready private draft build — no CMS
+        run: python -I preparedness/tools/build.py
+      - name: Full native Preparedness Python suite — diagnostic only
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Preserve independent mandatory 13-stage integrity and human QD HOLD
+        if: always()
+        run: |
+          echo "No bypass of seven_cluster_git_parity; full 13-stage mandatory release integrity remains HOLD."
+          echo "No link, claim, medical/emergency safety, independent QD, or browser approval."
+          echo "No merge, CMS write, WordPress post, navigation edit, or public publishing."
