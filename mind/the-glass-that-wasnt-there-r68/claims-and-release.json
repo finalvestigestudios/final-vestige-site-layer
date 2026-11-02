@@ -1,0 +1,714 @@
+{
+  "schema_version": "1.0",
+  "date_checked_utc": "2026-11-02",
+  "release_status": "HARD_HOLD",
+  "affiliate_link": null,
+  "partner_approval": "UNVERIFIED",
+  "website_channel": "UNVERIFIED",
+  "tiktok_channel": "UNVERIFIED",
+  "email_channel": "UNVERIFIED",
+  "creative_permissions": "UNVERIFIED",
+  "checkout_refund_terms": "UNVERIFIED",
+  "independent_zen12_trial": "NOT_IDENTIFIED",
+  "visitor_measurement_enabled": false,
+  "source_urls": {
+    "M0": "https://inspire3.com/",
+    "M1": "https://zen12.com/hnp",
+    "M2": "https://zen12.com/about",
+    "M3": "https://zen12.com/research",
+    "M4": "https://zen12.com/getstarted",
+    "M5": "https://inspire3.com/privacy/",
+    "M6": "https://affiliates.inspire3.com/",
+    "S1": "https://doi.org/10.1371/journal.pone.0286023",
+    "R1": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+    "R2": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+    "R3": "https://doi.org/10.1002/acp.885",
+    "R4": "https://doi.org/10.1017/mem.2024.14",
+    "F1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "F2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "FV1": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FV2": "https://finalvestige.com/focus/",
+    "FV3": "https://finalvestige.com/editorial-standards/",
+    "FV4": "https://finalvestige.com/affiliate-disclosure/"
+  },
+  "decisions": [
+    {
+      "id": "R68-01",
+      "claim": "Zen12 is listed in Inspire3 official catalog",
+      "category": "seller_product_identity",
+      "sources": [
+        {
+          "id": "M0",
+          "url": "https://inspire3.com/"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Seller catalog identity not affiliate authorization."
+    },
+    {
+      "id": "R68-02",
+      "claim": "Zen12 sessions are advertised as 12 minutes",
+      "category": "seller_feature",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M2",
+          "url": "https://zen12.com/about"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Session duration advertised, actual delivered media not independently audited."
+    },
+    {
+      "id": "R68-03",
+      "claim": "Zen12 has twelve levels",
+      "category": "seller_feature",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M2",
+          "url": "https://zen12.com/about"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Seller description."
+    },
+    {
+      "id": "R68-04",
+      "claim": "Zen12 lists four listening styles",
+      "category": "seller_feature",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M2",
+          "url": "https://zen12.com/about"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Music, guided, nature and white noise."
+    },
+    {
+      "id": "R68-05",
+      "claim": "Complete package advertised at 48 MP3s",
+      "category": "seller_feature",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M4",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Not verified after purchasing."
+    },
+    {
+      "id": "R68-06",
+      "claim": "Beginner offer describes 24 MP3s/first six levels",
+      "category": "seller_feature",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Not verified after purchasing."
+    },
+    {
+      "id": "R68-07",
+      "claim": "Advanced offer describes 24 MP3s/final six levels",
+      "category": "seller_feature",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        }
+      ],
+      "decision": "seller_format_only",
+      "notes": "Not verified after purchasing."
+    },
+    {
+      "id": "R68-08",
+      "claim": "Seller advertises a one-year money-back guarantee",
+      "category": "seller_policy",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M4",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "decision": "blocked_pending_independent_verification",
+      "notes": "Current binding terms and fulfillment unverified; do not assert risk-free."
+    },
+    {
+      "id": "R68-09",
+      "claim": "Zen12 equals one hour of advanced meditation in 12 minutes",
+      "category": "efficacy",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M3",
+          "url": "https://zen12.com/research"
+        },
+        {
+          "id": "S1",
+          "url": "https://doi.org/10.1371/journal.pone.0286023"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Named-product, controlled comparison evidence absent."
+    },
+    {
+      "id": "R68-10",
+      "claim": "Zen12 automatically entrains any user's brainwaves",
+      "category": "physiological",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M3",
+          "url": "https://zen12.com/research"
+        },
+        {
+          "id": "S1",
+          "url": "https://doi.org/10.1371/journal.pone.0286023"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Systematic EEG review mixed, no named-product validation."
+    },
+    {
+      "id": "R68-11",
+      "claim": "Zen12 improves focus for all listeners",
+      "category": "cognitive_outcome",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "S1",
+          "url": "https://doi.org/10.1371/journal.pone.0286023"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "No adequate named-product proof."
+    },
+    {
+      "id": "R68-12",
+      "claim": "Zen12 cures stress/anxiety",
+      "category": "health",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "F2",
+          "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Medical/health claim, no adequate substantiation."
+    },
+    {
+      "id": "R68-13",
+      "claim": "Zen12 enhances creativity predictably",
+      "category": "cognitive",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "F2",
+          "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Seller claim unverified."
+    },
+    {
+      "id": "R68-14",
+      "claim": "Zen12 gives dozens of proven health benefits",
+      "category": "health",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "F2",
+          "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Do not transfer general meditation effects to product."
+    },
+    {
+      "id": "R68-15",
+      "claim": "Zen12 replaces meditation practice or therapy",
+      "category": "medical",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "F2",
+          "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Unsupported and potentially harmful."
+    },
+    {
+      "id": "R68-16",
+      "claim": "Binaural-beat EEG evidence mixed in systematic review",
+      "category": "independent_science",
+      "sources": [
+        {
+          "id": "S1",
+          "url": "https://doi.org/10.1371/journal.pone.0286023"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "14 eligible studies: 5 supportive, 8 contrary, 1 mixed."
+    },
+    {
+      "id": "R68-17",
+      "claim": "One changed accident verb can affect later reports",
+      "category": "independent_science",
+      "sources": [
+        {
+          "id": "R1",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "1974 two experiments; avoid universal generalization."
+    },
+    {
+      "id": "R68-18",
+      "claim": "1978 misleading-information study reported total n=1242",
+      "category": "independent_science",
+      "sources": [
+        {
+          "id": "R2",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/621467/"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Five studies plus pilot collectively."
+    },
+    {
+      "id": "R68-19",
+      "claim": "2003 cowitness discussion sample had 71% effect",
+      "category": "independent_science",
+      "sources": [
+        {
+          "id": "R3",
+          "url": "https://doi.org/10.1002/acp.885"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Condition-specific; no population inference."
+    },
+    {
+      "id": "R68-20",
+      "claim": "2024 fake-news meta-analysis rates",
+      "category": "independent_science",
+      "sources": [
+        {
+          "id": "R4",
+          "url": "https://doi.org/10.1017/mem.2024.14"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Different denominators, memory vs belief carefully distinguished."
+    },
+    {
+      "id": "R68-21",
+      "claim": "Loftus studies establish hypnosis product effectiveness",
+      "category": "scientific_transfer",
+      "sources": [
+        {
+          "id": "R1",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        },
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "No named-product trial; disallow transfer."
+    },
+    {
+      "id": "R68-22",
+      "claim": "Zen12 price or discount held as reliable future offer",
+      "category": "commerce",
+      "sources": [
+        {
+          "id": "M1",
+          "url": "https://zen12.com/hnp"
+        },
+        {
+          "id": "M4",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "decision": "blocked_pending_independent_verification",
+      "notes": "Do not quote: seller checkout can change, tax/localization unknown."
+    },
+    {
+      "id": "R68-23",
+      "claim": "Inspire3 price/commission/payout for Final Vestige known",
+      "category": "affiliate",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Public recruitment cannot prove account-specific terms."
+    },
+    {
+      "id": "R68-24",
+      "claim": "Final Vestige approved for Zen12 affiliate",
+      "category": "affiliate",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Written acceptance required."
+    },
+    {
+      "id": "R68-25",
+      "claim": "Final Vestige website promotion channel approved",
+      "category": "affiliate",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Written channel permission required."
+    },
+    {
+      "id": "R68-26",
+      "claim": "TikTok promotion channel approved",
+      "category": "affiliate",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Written channel permission required."
+    },
+    {
+      "id": "R68-27",
+      "claim": "Dispatch email promotion channel approved",
+      "category": "affiliate",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Distinct named-product commercial email permission required."
+    },
+    {
+      "id": "R68-28",
+      "claim": "Affiliates may reuse seller creatives/video",
+      "category": "copyright",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "No creative-license evidence; use original authored assets."
+    },
+    {
+      "id": "R68-29",
+      "claim": "Approved Zen12 tracking URL exists",
+      "category": "affiliate",
+      "sources": [
+        {
+          "id": "M6",
+          "url": "https://affiliates.inspire3.com/"
+        }
+      ],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Null by design."
+    },
+    {
+      "id": "R68-30",
+      "claim": "Checkout includes a mobile field",
+      "category": "privacy",
+      "sources": [
+        {
+          "id": "M4",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Field visibility does not prove mandatory collection."
+    },
+    {
+      "id": "R68-31",
+      "claim": "Inspire3 privacy states possible marketing SMS",
+      "category": "privacy",
+      "sources": [
+        {
+          "id": "M5",
+          "url": "https://inspire3.com/privacy/"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Quote as seller policy; verify consent."
+    },
+    {
+      "id": "R68-32",
+      "claim": "Inspire3 privacy states possible affiliate buyer-data sharing",
+      "category": "privacy",
+      "sources": [
+        {
+          "id": "M5",
+          "url": "https://inspire3.com/privacy/"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Does not mean Final Vestige currently receives data."
+    },
+    {
+      "id": "R68-33",
+      "claim": "Final Vestige offers one published Focus Fieldbook",
+      "category": "site_inventory",
+      "sources": [
+        {
+          "id": "FV2",
+          "url": "https://finalvestige.com/focus/"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Do not duplicate Jetpack signup."
+    },
+    {
+      "id": "R68-34",
+      "claim": "Puységur historical resource is published",
+      "category": "site_inventory",
+      "sources": [
+        {
+          "id": "FV1",
+          "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+        }
+      ],
+      "decision": "verified_reference_only",
+      "notes": "Methodological bridge; not product efficacy."
+    },
+    {
+      "id": "R68-35",
+      "claim": "An FTC disclosure only on sitewide policy is enough",
+      "category": "compliance",
+      "sources": [
+        {
+          "id": "F1",
+          "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+        },
+        {
+          "id": "FV4",
+          "url": "https://finalvestige.com/affiliate-disclosure/"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Near-offer disclosure required; avoid policy-only."
+    },
+    {
+      "id": "R68-36",
+      "claim": "Words 'may earn' allow unverified activation",
+      "category": "compliance",
+      "sources": [
+        {
+          "id": "F1",
+          "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Disclosure is not partner acceptance."
+    },
+    {
+      "id": "R68-37",
+      "claim": "Disabling CTA by class name is sufficient",
+      "category": "security",
+      "sources": [],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Must use genuine disabled HTML attribute."
+    },
+    {
+      "id": "R68-38",
+      "claim": "Publishing original video without verifying rights is permitted",
+      "category": "release",
+      "sources": [],
+      "decision": "blocked_pending_independent_verification",
+      "notes": "Need asset provenance and approved first-party hosting."
+    },
+    {
+      "id": "R68-39",
+      "claim": "No-JS and keyboard transcript works in WP staging",
+      "category": "accessibility",
+      "sources": [],
+      "decision": "release_qa_required",
+      "notes": "Browser, sanitizer and WCAG QA needed."
+    },
+    {
+      "id": "R68-40",
+      "claim": "Video improves conversion relative to text-only",
+      "category": "experiment",
+      "sources": [],
+      "decision": "blocked_pending_independent_verification",
+      "notes": "No observed conversion data, preregister future comparison."
+    },
+    {
+      "id": "R68-41",
+      "claim": "Outbound events equal completed sales",
+      "category": "analytics",
+      "sources": [],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Clicks are not purchases."
+    },
+    {
+      "id": "R68-42",
+      "claim": "Affiliate attribution can store email/referrer URL",
+      "category": "privacy",
+      "sources": [
+        {
+          "id": "M5",
+          "url": "https://inspire3.com/privacy/"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Avoid PII and full URL retention."
+    },
+    {
+      "id": "R68-43",
+      "claim": "Affiliate outbound tracking currently active",
+      "category": "analytics",
+      "sources": [],
+      "decision": "publisher_specific_permission_missing",
+      "notes": "Must remain false until partner approval, privacy and consent review."
+    },
+    {
+      "id": "R68-44",
+      "claim": "Future A/B experiments use equivalent substantive guide",
+      "category": "experiment",
+      "sources": [],
+      "decision": "release_qa_required",
+      "notes": "Verify identical guide content and disclose all necessary elements."
+    },
+    {
+      "id": "R68-45",
+      "claim": "Checkout seller guarantee equals zero consumer risk",
+      "category": "commerce",
+      "sources": [
+        {
+          "id": "M4",
+          "url": "https://zen12.com/getstarted"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Merchant representation not fulfillment proof."
+    },
+    {
+      "id": "R68-46",
+      "claim": "No current published /mind/ page is confirmed",
+      "category": "site_inventory",
+      "sources": [],
+      "decision": "verified_reference_only",
+      "notes": "WordPress inventory 79 published pages has no /mind/ slug on 2026-11-02."
+    },
+    {
+      "id": "R68-47",
+      "claim": "Article falsely states first-hand trial experience",
+      "category": "editorial",
+      "sources": [
+        {
+          "id": "FV3",
+          "url": "https://finalvestige.com/editorial-standards/"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Use precise 'reviewed sources' phrasing."
+    },
+    {
+      "id": "R68-48",
+      "claim": "Ads may assert named-product clinical effects based on general review",
+      "category": "compliance",
+      "sources": [
+        {
+          "id": "F2",
+          "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Objective health claims need competent/reliable support."
+    },
+    {
+      "id": "R68-49",
+      "claim": "Film is footage from 1974 experiment",
+      "category": "media",
+      "sources": [
+        {
+          "id": "R1",
+          "url": "https://doi.org/10.1016/S0022-5371(74)80011-3"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Original illustration, clearly not trial footage."
+    },
+    {
+      "id": "R68-50",
+      "claim": "Marketing email may replace existing Focus welcome",
+      "category": "funnel",
+      "sources": [
+        {
+          "id": "FV2",
+          "url": "https://finalvestige.com/focus/"
+        }
+      ],
+      "decision": "unsupported_do_not_assert",
+      "notes": "Preserve original Jetpack + welcome."
+    }
+  ]
+}
