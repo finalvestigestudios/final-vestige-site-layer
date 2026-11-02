@@ -29,13 +29,14 @@ jobs:
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
       - name: Install Playwright Python API required by legacy source tests
-        run: python -m pip install --disable-pip-version-check playwright==1.55.0 pypdf==5.9.0
+        run: python -m pip install --disable-pip-version-check playwright==1.55.0 pypdf==5.9.0 pymupdf==1.26.7
       - name: Source syntax, SHA-driven regressions and hostile staging fixtures
         run: |
-          python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py experience2/evidence-atlas/tests/wp_readiness_r69.py experience2/evidence-atlas/tests/wp_pdf_custody_r74.py experience2/evidence-atlas/tests/wp_accessibility_r74.py
+          python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py experience2/evidence-atlas/tests/wp_readiness_r69.py experience2/evidence-atlas/tests/wp_pdf_custody_r74.py experience2/evidence-atlas/tests/wp_pdf_pagination_r75.py experience2/evidence-atlas/tests/wp_accessibility_r74.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_readiness_r69.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_case_ledger_r72.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_pdf_custody_r74.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_pdf_pagination_r75.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wordpress_r68.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p 'test_*.py' -q
           python -m unittest discover -s experience2/evidence-atlas -p test_atlas.py -q
@@ -77,7 +78,7 @@ jobs:
           echo "Theme pin here is from same-run official download, not independent signature."
       - name: Install actual Chromium and axe 4.14.0 without paid services
         run: |
-          python -m pip install --disable-pip-version-check playwright==1.55.0 pypdf==5.9.0
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pypdf==5.9.0 pymupdf==1.26.7
           python -m playwright install --with-deps chromium
           npm install --prefix "$RUNNER_TEMP/apollo-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
       - name: Genuine ephemeral WordPress/Assembler rendering, axe and responsive acceptance
@@ -99,7 +100,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: apollo-r74-authentic-wordpress-pdf-a11y-HOLD
+          name: apollo-r75-authentic-wordpress-paged-review-HOLD
           path: ${{ runner.temp }}/apollo-r68-evidence/
           if-no-files-found: warn
           retention-days: 7
