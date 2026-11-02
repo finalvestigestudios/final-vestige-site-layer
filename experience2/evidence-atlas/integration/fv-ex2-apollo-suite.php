@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Final Vestige — Apollo Research Suite (STAGING ONLY)
  * Description: Fail-closed, exact-source Research Desk + Evidence Atlas co-host shortcode; no CMS writes.
- * Version: 0.0.53-staging
+ * Version: 0.0.54-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.53-staging'); }
+if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.54-staging'); }
 
 /** Git *blob* SHA-1 (not the SHA-1 of bare file bytes). */
 function fv_ex2_apollo_git_blob(string $bytes): string {
@@ -66,10 +66,43 @@ function fv_ex2_apollo_verified_desk(): ?string {
     return null;
 }
 
+/**
+ * Reviewed Atlas *runtime* files. The generated HTML template is validated
+ * against the constant defined by the exact pinned Atlas PHP plugin itself.
+ * This is a custody / accidental-drift gate, NOT a hostile-server security boundary.
+ * Keep the Atlas and Research Desk profiles mutually independent.
+ */
+function fv_ex2_apollo_atlas_runtime_pins(): array {
+    return array(
+        'final-vestige-ex2-evidence-atlas.php' => 'cb3cbf0bfb2cd915fcc91f74627ca66edb90bd63',
+        'assets/atlas.css' => 'aeac4a457ceb6d463113041afa4e037bb3681459',
+        'assets/atlas.js' => '23212093d354917e403a5a9dbd9dca6b0eb8ca28',
+    );
+}
+function fv_ex2_apollo_verified_atlas(): ?string {
+    if (!function_exists('fv_ex2_atlas_shortcode') || !defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { return null; }
+    $origin = (new ReflectionFunction('fv_ex2_atlas_shortcode'))->getFileName();
+    if (!is_string($origin) || basename($origin) !== 'final-vestige-ex2-evidence-atlas.php') { return null; }
+    $dir = dirname($origin);
+    foreach (fv_ex2_apollo_atlas_runtime_pins() as $relative => $expected) {
+        $path = $dir . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relative);
+        if (!is_file($path) || !is_readable($path)) { return null; }
+        $bytes = file_get_contents($path);
+        if (!is_string($bytes) || !hash_equals($expected, fv_ex2_apollo_git_blob($bytes))) { return null; }
+    }
+    $expectedTemplate = FV_EX2_ATLAS_TEMPLATE_SHA256;
+    if (!is_string($expectedTemplate) || !preg_match('/^[0-9a-f]{64}$/D', $expectedTemplate)) { return null; }
+    $template = $dir . DIRECTORY_SEPARATOR . 'templates/atlas-fragment.html';
+    if (!is_file($template) || !is_readable($template)) { return null; }
+    $actualTemplate = hash_file('sha256', $template);
+    if (!is_string($actualTemplate) || !hash_equals($expectedTemplate, $actualTemplate)) { return null; }
+    return $origin;
+}
+
 /** Explicit enqueue fixes PR #158's top-level-post-only asset assumption for nested shortcodes. */
 function fv_ex2_apollo_suite_enqueue(): bool {
     $origin = fv_ex2_apollo_verified_desk();
-    if ($origin === null) { return false; }
+    if ($origin === null || fv_ex2_apollo_verified_atlas() === null) { return false; }
     wp_enqueue_style('fv-ex2-research-desk', plugins_url('assets/source-ledger.css', $origin), array(), FV_EX2_RD_VERSION);
     wp_enqueue_script('fv-ex2-research-desk', plugins_url('assets/source-ledger.js', $origin), array(), FV_EX2_RD_VERSION, true);
     wp_enqueue_style('fv-ex2-apollo-suite', plugins_url('apollo-suite.css', __FILE__), array(), FV_EX2_APOLLO_SUITE_VERSION);
@@ -121,7 +154,8 @@ function fv_ex2_apollo_suite_shortcode($atts = array()): string {
     if ($rendered) {
         return '<p class="fv-ex2-apollo-suite-duplicate">Research suite already appears on this page. <a href="#fv-ex2-apollo-suite-heading">Return to research sources</a>.</p>';
     }
-    if (fv_ex2_apollo_verified_desk() === null || !function_exists('shortcode_exists')
+    if (fv_ex2_apollo_verified_desk() === null || fv_ex2_apollo_verified_atlas() === null
+        || !function_exists('shortcode_exists')
         || !shortcode_exists('fv_ex2_research_desk') || !shortcode_exists('fv_ex2_evidence_atlas')) {
         return fv_ex2_apollo_suite_fallback();
     }
