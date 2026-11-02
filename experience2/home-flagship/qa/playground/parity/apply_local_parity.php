@@ -8,6 +8,19 @@ if (wp_get_environment_type() !== 'local' || !in_array($host, ['127.0.0.1', 'loc
 if (wp_get_theme()->get_stylesheet() !== 'assembler' || wp_get_theme()->get('Version') !== '0.0.126') {
     throw new RuntimeException('REFUSED: independently verified Assembler 0.0.126 required');
 }
+// The Blueprint executes runPHP with no authenticated browser session.
+// WordPress applies KSES to Gutenberg/template content when no user has the
+// unfiltered_html capability. That silently changes reviewed archival markup.
+// Only inside this *fresh localhost-only disposable* instance, adopt WP's
+// known default administrator (ID 1) and verify the exact capability before
+// attempting a write. NEVER copy or reuse this shortcut on a hosted site.
+if (is_multisite() || !function_exists('wp_set_current_user')) {
+    throw new RuntimeException('REFUSED: local parity requires single-site WordPress API');
+}
+wp_set_current_user(1);
+if (get_current_user_id() !== 1 || !current_user_can('unfiltered_html')) {
+    throw new RuntimeException('REFUSED: local throwaway admin cannot persist unfiltered Gutenberg');
+}
 $path = '/wordpress/wp-content/uploads/fv-ex2-parity/assembler-public-safe.json';
 if (!is_file($path) || filesize($path) < 200 || filesize($path) > 350000) {
     throw new RuntimeException('Missing or oversized sanitized parity manifest');
