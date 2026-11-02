@@ -101,6 +101,7 @@ async function main() {
         effective_width_px:bounded(e.width),effective_height_px:bounded(e.height),
         effective_mobile:typeof e.mobile==='boolean'?e.mobile:null,
         cpu_multiplier:bounded(t.cpuSlowdownMultiplier),
+        rtt_ms:bounded(t.rttMs),throughput_kbps:bounded(t.throughputKbps),
       });
       writeFileSync(resolve(out,'LIGHTHOUSE_PROFILE_DIAGNOSTIC.json'),
         JSON.stringify({status:'DIAGNOSTIC_ONLY_RELEASE_HOLD',
