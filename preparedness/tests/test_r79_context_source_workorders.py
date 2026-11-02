@@ -7,6 +7,7 @@ import csv
 import hashlib
 import importlib.util
 import io
+import sys
 from pathlib import Path
 import unittest
 
@@ -19,7 +20,25 @@ SPEC.loader.exec_module(r79)
 class TestR79ContextWorkOrders(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.parent = r79._r78().live_report()
+        # Full unittest discovery has already constructed the exact, sealed
+        # R78 report in its preceding test class. Reuse ONLY that validated
+        # in-process report to avoid ~60 seconds of duplicate corpus I/O,
+        # which otherwise trips the separate R18 180-second native-suite
+        # watchdog. Standalone R79 runs rebuild the source themselves.
+        previous = sys.modules.get("test_r78_document_citation_review_matrix")
+        known_file = Path(__file__).with_name(
+            "test_r78_document_citation_review_matrix.py").resolve()
+        from_full_suite = (previous is not None and
+                           Path(getattr(previous, "__file__", "")).resolve() == known_file)
+        prior_class = getattr(previous, "TestR78DocumentMatrix", None) if from_full_suite else None
+        prior_report = getattr(prior_class, "report", None)
+        if prior_report is not None:
+            r79._r78().sealed(prior_report)
+            cls.parent = prior_report
+        else:
+            cls.parent = r79._r78().live_report()
+        # Full independent R77 -> R78 reconstruction and R79 crosswalk
+        # verification STILL run; no machine source/safety gate is skipped.
         cls.report = r79.construct(cls.parent)
         cls.actions = cls.report[
             "action_context_work_orders_LEXICAL_ONLY_NOT_APPROVED"]
