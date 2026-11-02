@@ -1,0 +1,668 @@
+{
+  "date": "2026-11-02",
+  "state": "HARD_HOLD",
+  "source_count": 21,
+  "decision_count": 55,
+  "sources": [
+    {
+      "id": "T1",
+      "title": "Thompson 1980 original",
+      "url": "https://doi.org/10.1068/p090483",
+      "kind": "peer reviewed",
+      "scope": "origination and specific image manipulation",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "T2",
+      "title": "Boutsen Humphreys 2003",
+      "url": "https://doi.org/10.1080/02724980244000774",
+      "kind": "peer reviewed",
+      "scope": "four face feature vs whole experiments",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "T3",
+      "title": "Lobmaier Mast 2007",
+      "url": "https://doi.org/10.1068/p5508",
+      "kind": "peer reviewed",
+      "scope": "retinal and body-tilt reference frames",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "T4",
+      "title": "Rakover 1999",
+      "url": "https://doi.org/10.1068/p2774",
+      "kind": "peer reviewed",
+      "scope": "alternative interpretation",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "T5",
+      "title": "Orientation sensitivity research 2014",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4191594/",
+      "kind": "peer reviewed",
+      "scope": "feature-level contributions; access intermittent",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M1",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "scope": "brand listing is not efficacy proof",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M2",
+      "title": "Zen12 exact sales offer",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant",
+      "scope": "tier descriptions and efficacy promises",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M3",
+      "title": "Zen12 official about",
+      "url": "https://zen12.com/about",
+      "kind": "merchant",
+      "scope": "four styles and level progression",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M4",
+      "title": "Zen12 research presentation",
+      "url": "https://zen12.com/research",
+      "kind": "merchant",
+      "scope": "claims of entrainment",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M5",
+      "title": "Zen12 official checkout",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant checkout",
+      "scope": "mobile field, countdown, final total displayed on 2026-11-02",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M6",
+      "title": "Inspire3 terms of sale",
+      "url": "https://inspire3.com/terms/?s=zen12",
+      "kind": "merchant legal",
+      "scope": "refund after 90 days manual through PayPal; potential SMS",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M7",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant legal",
+      "scope": "may share buyer identity/products with affiliate",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "M8",
+      "title": "Inspire3 recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "recruitment only",
+      "scope": "not named Final Vestige approval",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "P1",
+      "title": "Ingendoh Posny Heine 2023",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "systematic review",
+      "scope": "heterogeneous EEG entrainment findings",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "P2",
+      "title": "NCCIH meditation evidence",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government science",
+      "scope": "not named product evidence",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "L1",
+      "title": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "US FTC",
+      "scope": "material connection disclosure",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "L2",
+      "title": "FTC health-claims guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "US FTC",
+      "scope": "competent and reliable scientific evidence",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "F1",
+      "title": "Published Puységur file",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "authenticated owned",
+      "scope": "historical evidence context",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "F2",
+      "title": "Published Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "authenticated owned",
+      "scope": "one existing Jetpack funnel",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "F3",
+      "title": "FV editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "owned policy",
+      "scope": "site content credibility",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "F4",
+      "title": "FV affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "owned policy",
+      "scope": "not a replacement for near-link disclosure",
+      "checked": "2026-11-02"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "C01",
+      "claim": "Thatcher original source",
+      "status": "research_supported",
+      "source_ids": [
+        "T1"
+      ],
+      "reason": "phenomenon only, no broader mind control"
+    },
+    {
+      "id": "C02",
+      "claim": "Inverted faces disable all recognition",
+      "status": "reject_overclaim",
+      "source_ids": [
+        "T2"
+      ],
+      "reason": "task and condition specific"
+    },
+    {
+      "id": "C03",
+      "claim": "Thatcher image free to reuse",
+      "status": "rights_hold",
+      "source_ids": [
+        "T1"
+      ],
+      "reason": "original study photos may be licensed"
+    },
+    {
+      "id": "C04",
+      "claim": "Feature relationships contribute",
+      "status": "research_qualified",
+      "source_ids": [
+        "T2"
+      ],
+      "reason": "depends on task"
+    },
+    {
+      "id": "C05",
+      "claim": "Retinal orientation matters",
+      "status": "research_qualified",
+      "source_ids": [
+        "T3"
+      ],
+      "reason": "body tilt nuance"
+    },
+    {
+      "id": "C06",
+      "claim": "Whole-face theory exclusively true",
+      "status": "reject_overclaim",
+      "source_ids": [
+        "T4"
+      ],
+      "reason": "alternative explanations"
+    },
+    {
+      "id": "C07",
+      "claim": "Isolated feature orientation irrelevant",
+      "status": "reject_overclaim",
+      "source_ids": [
+        "T5"
+      ],
+      "reason": "orientation-sensitive parts reported"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur evidence shows brainwave effects",
+      "status": "reject_nonsequitur",
+      "source_ids": [
+        "F1"
+      ],
+      "reason": "historical source cannot prove audio mechanism"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 is an Inspire3 product",
+      "status": "seller_verified",
+      "source_ids": [
+        "M1"
+      ],
+      "reason": "catalog"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 twelve-minute session",
+      "status": "seller_described",
+      "source_ids": [
+        "M2"
+      ],
+      "reason": "not personally tested"
+    },
+    {
+      "id": "C11",
+      "claim": "Twelve levels",
+      "status": "seller_described",
+      "source_ids": [
+        "M2"
+      ],
+      "reason": "premium"
+    },
+    {
+      "id": "C12",
+      "claim": "Four styles",
+      "status": "seller_described",
+      "source_ids": [
+        "M3"
+      ],
+      "reason": "guided/music/nature/white noise"
+    },
+    {
+      "id": "C13",
+      "claim": "48 MP3 complete package",
+      "status": "seller_described",
+      "source_ids": [
+        "M2"
+      ],
+      "reason": "tier-specific"
+    },
+    {
+      "id": "C14",
+      "claim": "24 MP3 smaller tier",
+      "status": "seller_described",
+      "source_ids": [
+        "M2"
+      ],
+      "reason": "tier-specific"
+    },
+    {
+      "id": "C15",
+      "claim": "Named Zen12 fulfillment tested",
+      "status": "unverified",
+      "source_ids": [
+        "M5"
+      ],
+      "reason": "no purchase"
+    },
+    {
+      "id": "C16",
+      "claim": "Support and training call availability",
+      "status": "seller_described",
+      "source_ids": [
+        "M2"
+      ],
+      "reason": "not independently fulfilled"
+    },
+    {
+      "id": "C17",
+      "claim": "Twelve minutes equals hour benefits",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "M2",
+        "P1",
+        "P2"
+      ],
+      "reason": "no named product equivalence trial"
+    },
+    {
+      "id": "C18",
+      "claim": "Audio entrainment always succeeds",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "M4",
+        "P1"
+      ],
+      "reason": "mixed review"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 treats anxiety",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "M2",
+        "L2"
+      ],
+      "reason": "named-product proof absent"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 cures insomnia",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "L2"
+      ],
+      "reason": "named-product proof absent"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 increases income",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "L2"
+      ],
+      "reason": "no evidence"
+    },
+    {
+      "id": "C22",
+      "claim": "Zen12 improves cognition guaranteed",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "M2",
+        "L2"
+      ],
+      "reason": "named-product proof absent"
+    },
+    {
+      "id": "C23",
+      "claim": "Marketing testimonials prove typical results",
+      "status": "reject_unsupported",
+      "source_ids": [
+        "M5",
+        "L1"
+      ],
+      "reason": "no independent substantiation"
+    },
+    {
+      "id": "C24",
+      "claim": "Claims of firsthand Zen12 use",
+      "status": "reject_false",
+      "source_ids": [],
+      "reason": "no purchase or test"
+    },
+    {
+      "id": "C25",
+      "claim": "Fixed checkout price",
+      "status": "reject_volatile",
+      "source_ids": [
+        "M5"
+      ],
+      "reason": "dynamic terms and tax"
+    },
+    {
+      "id": "C26",
+      "claim": "Countdown necessitates purchase",
+      "status": "reject_urgency",
+      "source_ids": [
+        "M5"
+      ],
+      "reason": "not evidence"
+    },
+    {
+      "id": "C27",
+      "claim": "Mobile phone field displayed",
+      "status": "observed_2026_11_02",
+      "source_ids": [
+        "M5"
+      ],
+      "reason": "required status not tested"
+    },
+    {
+      "id": "C28",
+      "claim": "Mobile field mandatory",
+      "status": "unverified",
+      "source_ids": [
+        "M5"
+      ],
+      "reason": "no submission"
+    },
+    {
+      "id": "C29",
+      "claim": "Possible three to four SMS weekly",
+      "status": "seller_legal_qualification",
+      "source_ids": [
+        "M6"
+      ],
+      "reason": "only if number supplied"
+    },
+    {
+      "id": "C30",
+      "claim": "Seller claims one-year refund",
+      "status": "seller_legal_qualification",
+      "source_ids": [
+        "M6"
+      ],
+      "reason": "not personally exercised"
+    },
+    {
+      "id": "C31",
+      "claim": "Card refund after 90 days manual PayPal",
+      "status": "seller_legal_qualification",
+      "source_ids": [
+        "M6"
+      ],
+      "reason": "include near purchase considerations"
+    },
+    {
+      "id": "C32",
+      "claim": "Payment immediately delivered",
+      "status": "seller_described_only",
+      "source_ids": [
+        "M6"
+      ],
+      "reason": "not tested"
+    },
+    {
+      "id": "C33",
+      "claim": "Affiliate may receive buyer identity/products",
+      "status": "must_review",
+      "source_ids": [
+        "M7"
+      ],
+      "reason": "do not process merchant feed"
+    },
+    {
+      "id": "C34",
+      "claim": "FV has received such identity data",
+      "status": "unverified",
+      "source_ids": [
+        "M7"
+      ],
+      "reason": "no evidence"
+    },
+    {
+      "id": "C35",
+      "claim": "FV approved affiliate",
+      "status": "hard_hold",
+      "source_ids": [
+        "M8"
+      ],
+      "reason": "public recruitment not authorization"
+    },
+    {
+      "id": "C36",
+      "claim": "Exact earning link",
+      "status": "hard_hold",
+      "source_ids": [
+        "M8"
+      ],
+      "reason": "unknown"
+    },
+    {
+      "id": "C37",
+      "claim": "Website promotion permission",
+      "status": "hard_hold",
+      "source_ids": [
+        "M8"
+      ],
+      "reason": "unknown"
+    },
+    {
+      "id": "C38",
+      "claim": "TikTok promotion permission",
+      "status": "hard_hold",
+      "source_ids": [
+        "M8"
+      ],
+      "reason": "unknown"
+    },
+    {
+      "id": "C39",
+      "claim": "Email promotion permission",
+      "status": "hard_hold",
+      "source_ids": [
+        "M8"
+      ],
+      "reason": "unknown"
+    },
+    {
+      "id": "C40",
+      "claim": "Creative and swipe license",
+      "status": "hard_hold",
+      "source_ids": [
+        "M6"
+      ],
+      "reason": "express written permission"
+    },
+    {
+      "id": "C41",
+      "claim": "Affiliate rate for FV",
+      "status": "unverified",
+      "source_ids": [
+        "M8"
+      ],
+      "reason": "recruitment is generic"
+    },
+    {
+      "id": "C42",
+      "claim": "Near-link disclosure",
+      "status": "prospective_only",
+      "source_ids": [
+        "L1"
+      ],
+      "reason": "clear plain language adjacent disabled CTA"
+    },
+    {
+      "id": "C43",
+      "claim": "Only global disclosure needed",
+      "status": "reject",
+      "source_ids": [
+        "L1",
+        "F4"
+      ],
+      "reason": "must be clear near specific endorsement"
+    },
+    {
+      "id": "C44",
+      "claim": "Existing Focus route",
+      "status": "approved_internal_only",
+      "source_ids": [
+        "F2"
+      ],
+      "reason": "one funnel no new signup"
+    },
+    {
+      "id": "C45",
+      "claim": "New email form",
+      "status": "forbidden",
+      "source_ids": [
+        "F2"
+      ],
+      "reason": "duplicate list"
+    },
+    {
+      "id": "C46",
+      "claim": "Publish new Mind hub",
+      "status": "founder_approval_required",
+      "source_ids": [
+        "F2"
+      ],
+      "reason": "source candidate only"
+    },
+    {
+      "id": "C47",
+      "claim": "Publish guide to Dispatch now",
+      "status": "forbidden",
+      "source_ids": [],
+      "reason": "not live, not approved"
+    },
+    {
+      "id": "C48",
+      "claim": "Video conversion lift",
+      "status": "untested_hypothesis",
+      "source_ids": [],
+      "reason": "no real experiment"
+    },
+    {
+      "id": "C49",
+      "claim": "First-party video VTT hosted",
+      "status": "hard_hold",
+      "source_ids": [],
+      "reason": "no media deployed"
+    },
+    {
+      "id": "C50",
+      "claim": "Live PII analytics",
+      "status": "forbidden",
+      "source_ids": [
+        "M7"
+      ],
+      "reason": "no tracking"
+    },
+    {
+      "id": "C51",
+      "claim": "Synthetic coarse attribution prototype",
+      "status": "disabled",
+      "source_ids": [],
+      "reason": "no collection"
+    },
+    {
+      "id": "C52",
+      "claim": "WCAG validated in browser",
+      "status": "not_tested",
+      "source_ids": [],
+      "reason": "HTML checks not certification"
+    },
+    {
+      "id": "C53",
+      "claim": "Payment links active",
+      "status": "forbidden",
+      "source_ids": [],
+      "reason": "no link authorization"
+    },
+    {
+      "id": "C54",
+      "claim": "Final checkout refund terms reviewed at launch",
+      "status": "recheck_required",
+      "source_ids": [
+        "M5",
+        "M6"
+      ],
+      "reason": "volatile"
+    },
+    {
+      "id": "C55",
+      "claim": "Independent legal and science clearance",
+      "status": "required",
+      "source_ids": [
+        "L1",
+        "L2"
+      ],
+      "reason": "not yet complete"
+    }
+  ]
+}
