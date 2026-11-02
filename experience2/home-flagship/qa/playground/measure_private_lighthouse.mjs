@@ -72,8 +72,12 @@ async function main() {
       const run=await lighthouse(u.href,{
         port:chrome.port,logLevel:'silent',output:'json',
         onlyCategories:['performance','accessibility','best-practices'],
-        disableStorageReset:true,formFactor:p.formFactor,
-        screenEmulation:p.screenEmulation,throttlingMethod:'simulate'
+        disableStorageReset:true,
+        // Lighthouse's official desktop preset adjusts scoring calibration AND
+        // simulated CPU/network. formFactor alone does not.
+        preset:p.name==='desktop_1440'?'desktop':undefined,
+        formFactor:p.formFactor,screenEmulation:p.screenEmulation,
+        throttlingMethod:'simulate'
       });
       const lhr=run?.lhr;
       if (!lhr || lhr.finalUrl!==u.href) throw Error('LIGHTHOUSE_DID_NOT_AUDIT_PRIVATE_RENDERER');
