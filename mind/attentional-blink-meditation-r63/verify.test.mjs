@@ -19,7 +19,7 @@ test('original investigation substantive, sourced, no commerce',()=>{
 });
 test('source-based guide has seller-versus-evidence and consumer boundary',()=>{
  assert.ok(core.length>10000);
- for(const term of ['twelve-minute','twelve','forty-eight','48 MP3','Slagter','mobile','SMS','refund','FTC','NCCIH','not a test of Zen12','no live purchasing link'])assert.ok(core.toLowerCase().includes(term.toLowerCase()),term);
+ for(const term of ['twelve-minute','twelve','forty-eight','forty-eight MP3','Slagter','mobile','SMS','refund','FTC','NCCIH','not a test of Zen12','no live purchasing link'])assert.ok(core.toLowerCase().includes(term.toLowerCase()),term);
 });
 test('A and B contain identical substantive guide once',()=>{
  assert.equal(a.split(core).length,2);assert.equal(b.split(core).length,2);
