@@ -1,0 +1,362 @@
+{
+  "title": "Mind R69 seller-claim and independent-evidence matrix",
+  "as_of": "2026-11-02",
+  "reviewed_against": [
+    "inspire3.com",
+    "zen12.com/hnp",
+    "zen12.com/about",
+    "zen12.com/research",
+    "zen12.com/getstarted",
+    "inspire3.com/privacy/",
+    "affiliates.inspire3.com"
+  ],
+  "affiliate_activation": "HARD_HOLD",
+  "approved_affiliate_url": null,
+  "approval": {
+    "partner_account": "UNVERIFIED",
+    "website": "UNVERIFIED",
+    "tiktok": "UNVERIFIED",
+    "email": "UNVERIFIED",
+    "creative": "UNVERIFIED",
+    "publisher_review": "PENDING",
+    "founder_release": "NOT_APPROVED"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "12-minute length",
+      "evidence": "seller specifies session format",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C02",
+      "claim": "12-level sequence",
+      "evidence": "merchant describes sequence, not progression outcomes",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C03",
+      "claim": "four sound formats",
+      "evidence": "music, guided, nature, white noise",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C04",
+      "claim": "48 files full plan",
+      "evidence": "seller full-library description",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C05",
+      "claim": "24-file limited packages",
+      "evidence": "seller six-level packages",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C06",
+      "claim": "manual/quick start",
+      "evidence": "seller description; fulfillment untested",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C07",
+      "claim": "support available",
+      "evidence": "advertised, delivery not tested",
+      "source": "https://zen12.com/hnp",
+      "status": "DESCRIBE_SELLER_ONLY"
+    },
+    {
+      "id": "C08",
+      "claim": "merchant refund offer",
+      "evidence": "advertised guarantee, fulfillment and binding terms not independently validated",
+      "source": "https://zen12.com/hnp",
+      "status": "QUALIFIED_SELLER_ONLY"
+    },
+    {
+      "id": "C09",
+      "claim": "one hour in 12 minutes",
+      "evidence": "requires product-specific controlled comparison",
+      "source": "https://zen12.com/hnp",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C10",
+      "claim": "automatic deep meditation",
+      "evidence": "requires product-specific evidence",
+      "source": "https://zen12.com/hnp",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C11",
+      "claim": "automatic brainwave entrainment",
+      "evidence": "no independently verified Zen12 EEG support",
+      "source": "https://zen12.com/about",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C12",
+      "claim": "anxiety reduction",
+      "evidence": "clinical/health outcome no product specific studies",
+      "source": "https://zen12.com/hnp",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C13",
+      "claim": "stress dissolves instantly",
+      "evidence": "immediate health claim unsupported",
+      "source": "https://zen12.com/hnp",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C14",
+      "claim": "cognitive improvement",
+      "evidence": "no product evidence",
+      "source": "https://zen12.com/hnp",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C15",
+      "claim": "creativity improvement",
+      "evidence": "no product evidence",
+      "source": "https://zen12.com/hnp",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C16",
+      "claim": "health benefits guaranteed",
+      "evidence": "FTC substantiation needed",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C17",
+      "claim": "wealth/transformation guarantees",
+      "evidence": "no proof and outside purpose",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "status": "BLOCK_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C18",
+      "claim": "white bear rebound",
+      "evidence": "reported in original experiment and synthesis, task-bound",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "status": "PUBLISH_WITH_CONTEXT"
+    },
+    {
+      "id": "C19",
+      "claim": "during-suppression enhancement",
+      "evidence": "meta analysis conditional on cognitive load",
+      "source": "https://journals.sagepub.com/doi/10.1177/1745691619898795",
+      "status": "PUBLISH_WITH_CONTEXT"
+    },
+    {
+      "id": "C20",
+      "claim": "ironic-process mechanism",
+      "evidence": "theory not directly proven brain mechanism",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/8121959/",
+      "status": "QUALIFY_THEORY"
+    },
+    {
+      "id": "C21",
+      "claim": "meditation general outcome",
+      "evidence": "review does not validate Zen12",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/34537665/",
+      "status": "INDEPENDENT_ONLY"
+    },
+    {
+      "id": "C22",
+      "claim": "audio preference journal",
+      "evidence": "educational nonclinical reflection",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/34537665/",
+      "status": "ALLOW_FREE_EXERCISE"
+    },
+    {
+      "id": "C23",
+      "claim": "personal use review",
+      "evidence": "no user testing performed",
+      "source": null,
+      "status": "BLOCK_TESTIMONIAL"
+    },
+    {
+      "id": "C24",
+      "claim": "current price/discount",
+      "evidence": "variable checkout; not verified offer promise",
+      "source": "https://zen12.com/getstarted",
+      "status": "WITHHOLD_PRICE"
+    },
+    {
+      "id": "C25",
+      "claim": "phone field at checkout",
+      "evidence": "observed public full course checkout",
+      "source": "https://zen12.com/getstarted",
+      "status": "DESCRIBE_FIELD_ONLY"
+    },
+    {
+      "id": "C26",
+      "claim": "potential partner phone marketing",
+      "evidence": "merchant privacy policy possibility",
+      "source": "https://inspire3.com/privacy/",
+      "status": "DESCRIBE_POLICY_WITH_CAVEAT"
+    },
+    {
+      "id": "C27",
+      "claim": "potential SMS marketing",
+      "evidence": "merchant privacy policy possibility",
+      "source": "https://inspire3.com/privacy/",
+      "status": "DESCRIBE_POLICY_WITH_CAVEAT"
+    },
+    {
+      "id": "C28",
+      "claim": "potential affiliate data sharing",
+      "evidence": "merchant privacy policy possibility",
+      "source": "https://inspire3.com/privacy/",
+      "status": "DESCRIBE_POLICY_WITH_CAVEAT"
+    },
+    {
+      "id": "C29",
+      "claim": "merchant affiliate recruitment",
+      "evidence": "not actual partner acceptance",
+      "source": "https://affiliates.inspire3.com/",
+      "status": "NO_PERMISSION_INFERENCE"
+    },
+    {
+      "id": "C30",
+      "claim": "FV affiliate acceptance",
+      "evidence": "not in evidence dossier",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C31",
+      "claim": "FV approved earning URL",
+      "evidence": "not supplied or verified",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C32",
+      "claim": "FV site promotion",
+      "evidence": "not confirmed by contract",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C33",
+      "claim": "FV TikTok promotion",
+      "evidence": "not confirmed by contract",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C34",
+      "claim": "FV email promotion",
+      "evidence": "not confirmed by contract; Dispatch HOLD_UNSENT",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C35",
+      "claim": "approved creative usage",
+      "evidence": "seller login/swipes not authenticated or licensed",
+      "source": "https://affiliates.inspire3.com/",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C36",
+      "claim": "near-CTA affiliate disclosure",
+      "evidence": "must be plain language adjacent and accessible",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "status": "REQUIRED_PREACTIVATION"
+    },
+    {
+      "id": "C37",
+      "claim": "external checkout link",
+      "evidence": "inactive until permissions and founder release",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C38",
+      "claim": "video preview variant",
+      "evidence": "conversion benefit untested; media not hosted",
+      "source": null,
+      "status": "EXPERIMENT_ONLY"
+    },
+    {
+      "id": "C39",
+      "claim": "video closed captions",
+      "evidence": "offline VTT/storyboard drafted, hosted sync not verified",
+      "source": null,
+      "status": "QA_PENDING"
+    },
+    {
+      "id": "C40",
+      "claim": "WordPress publish/edit",
+      "evidence": "requires founder/release approval",
+      "source": null,
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "C41",
+      "claim": "single Focus signup",
+      "evidence": "preserve active /focus/ Jetpack; no new form",
+      "source": "https://finalvestige.com/focus/",
+      "status": "PRESERVE"
+    },
+    {
+      "id": "C42",
+      "claim": "investigation neutrality",
+      "evidence": "separate from commerce and avoid affiliate links",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "C43",
+      "claim": "tracking script",
+      "evidence": "not permitted in unpublished pilot",
+      "source": null,
+      "status": "DISABLED"
+    },
+    {
+      "id": "C44",
+      "claim": "privacy cohort reporting",
+      "evidence": "synthetic only, threshold n >=20",
+      "source": null,
+      "status": "PROTOTYPE_ONLY"
+    },
+    {
+      "id": "C45",
+      "claim": "consumer offer terms",
+      "evidence": "payment/refund applicability not independently tested",
+      "source": "https://zen12.com/getstarted",
+      "status": "VERIFY_BEFORE_RELEASE"
+    },
+    {
+      "id": "C46",
+      "claim": "email excerpt disclosure risk",
+      "evidence": "Dispatch notes excerpt mode; do not assume deep-email disclosure visible",
+      "source": null,
+      "status": "HARD_HOLD_EMAIL"
+    },
+    {
+      "id": "C47",
+      "claim": "captions and transcripts in videos",
+      "evidence": "original required; no third-party stock rights implied",
+      "source": null,
+      "status": "DESIGN_GATE"
+    },
+    {
+      "id": "C48",
+      "claim": "audience is 18+ per policy",
+      "evidence": "merchant policy statement, not restriction implemented by FV",
+      "source": "https://inspire3.com/privacy/",
+      "status": "SELLER_POLICY_ONLY"
+    }
+  ]
+}
