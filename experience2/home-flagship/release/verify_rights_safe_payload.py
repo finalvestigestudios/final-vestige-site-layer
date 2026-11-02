@@ -14,7 +14,7 @@ import sys
 
 HOME = Path(__file__).resolve().parents[1]
 STYLE_NAMES = ("flagship.css", "chronicle.css", "chronicle-lens.css",
-               "inquiry.css", "observer-lab.css", "reading-trail.css")
+               "inquiry.css", "observer-lab.css", "reading-trail.css", "wp-integration.css")
 SCRIPT_NAMES = ("flagship.js", "observer-lab.js", "chronicle-lens.js", "reading-trail.js")
 TARGET = "release/production-change/"
 NYPL_CAPTURE = "edit-017-v02-nypl-5003296-original.jpg"
@@ -70,7 +70,7 @@ def audit(source: str, block: str, styles: dict[str, str], scripts: dict[str, st
     for i, name in enumerate(STYLE_NAMES):
         if len(marks) == len(STYLE_NAMES):
             chunk = inline_css[marks[i].end():marks[i+1].start() if i+1<len(marks) else len(inline_css)]
-            require(chunk.strip() == styles[name].strip(), "INLINE_CSS_BYTE_PARITY_" + name)
+            require(chunk.strip() == styles[name].replace("\\r\\n","\\n").strip(), "INLINE_CSS_BYTE_PARITY_" + name)
     embedded_scripts = re.findall(r"<script>([\s\S]*?)</script>", block)
     require(len(embedded_scripts) == len(SCRIPT_NAMES), "INLINE_SCRIPT_CARDINALITY")
     for i, name in enumerate(SCRIPT_NAMES):
@@ -112,7 +112,7 @@ def read_and_audit(home: Path = HOME) -> list[str]:
     base = home / "release" / "production-change"
     return audit((home / "index.html").read_text("utf-8"),
                  (base / "replacement-block-index1.html").read_text("utf-8"),
-                 {n:(home/n).read_text("utf-8") for n in STYLE_NAMES},
+                 {n:(home/("wp-candidate" if n=="wp-integration.css" else "")/n).read_text("utf-8") for n in STYLE_NAMES},
                  {n:(home/n).read_text("utf-8") for n in SCRIPT_NAMES},
                  json.loads((base/"PROPOSED_PRODUCTION_CHANGE.json").read_text("utf-8")),
                  (base/"original-block-index1.html").read_text("utf-8"))
