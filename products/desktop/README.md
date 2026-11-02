@@ -987,3 +987,8 @@ R132 exact-head [Windows CI #41419512396](https://github.com/finalvestigestudios
 
 ### R134 — Invoice Twin Scout configurable near-match window (draft; unreleased)
 The free Invoice Twin Scout screen now exposes a local-only **Near-match days (0-365)** setting (default 7). Exact normalized invoice-number anchors remain independent of the window; same-vendor/same-amount *near* candidates require the selected calendar-day window. `review_window_days` accompanies each review CSV finding alongside source SHA-256, physical source line references and stable candidate IDs. Invalid values fail closed without a partial report; no telemetry, automatic fraud determinations, or premium entitlement changes. See [R134 operator notes](docs/INVOICE_WINDOW_R134.md). Release is on HOLD pending physical Windows 11 acceptance, genuine Defender/EDR, signing, premium distribution access control, independent QD and founder approval.
+
+
+### R138 — ProcureGuard source and offset-line custody (draft; unreleased)
+
+The premium ProcureGuard Studio Pro three-way report now includes the exact snapshot SHA-256 for each purchase-order, invoice, and receipt CSV, plus deterministic physical-row candidate links from credit memos to source invoice documents and returns to source receipt documents. Ambiguous and missing links remain visible and carry the existing human-review flags; source identifiers are not copied into link JSON. No payment approvals, premium unlocks, money-rule changes, telemetry, or public downloads. The [R138 operator and review guide](docs/PROCURE_OFFSET_CUSTODY_R138.md) defines the limitations and the 22-method two-OS normal/optimized CI gate. **Release HOLD** until independent physical Win11/QD and founder gates pass.
