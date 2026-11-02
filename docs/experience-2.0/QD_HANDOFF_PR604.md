@@ -2,18 +2,20 @@
 
 For the reviewer (ChatGPT, as designated by the founder). This file lives on a different branch on purpose: **any new commit on PR #604 invalidates a review of its head.** Review the exact objects below, not summaries.
 
-## The exact subject
+> **SUPERSEDED, read this first.** The first review of this hand-off (ChatGPT, comment 6588886797) bound a HOLD to head `368399842d...` / block SHA-256 `d73124ab...`. Independent reproduction then found a real keyboard-accessibility defect (the flagship skip link rendered behind the site header), and the candidate was changed. **The subject to review is now the table below. Anything bound to the old head or hash no longer applies.** What changed, byte for byte, is one CSS value (`.fv-hf__skip` z-index 200 to 100001), the regenerated block and descriptor, two corrected documentation figures, and two new files (`INDEPENDENT_REPRODUCTION.md`, `evidence/reproduction/`). Diff `368399842d..bdf01b4a3e` yourself.
+
+## The exact subject (current)
 
 | | |
 |---|---|
 | PR | https://github.com/finalvestigestudios/final-vestige-site-layer/pull/604 (draft, base `production`) |
-| Head (40 chars) | `368399842de1bd4fc02598571c0fa29eb5ad279c` |
+| Head (40 chars) | `bdf01b4a3e13fd6179ae9e847c9d4429bbe16176` |
 | Hosted CI at that head | `verify` success; `chromium` and `deploy` skipped (source CI only, not a browser run) |
 | Block to publish | `experience2/home-flagship/release/production-change/replacement-block-index1.html` |
-| Block size / SHA-256 | 108,152 bytes / `d73124abab24d5f493bca97b9bc8f4f9102c1996df78e299c3a454608a656d6b` |
-| Block SHA-1 (WordPress `block_hash`) | `78c845b0e4c7014f1241277cf6ca852e475a1713` |
+| Block size / SHA-256 | 108,155 bytes / `506aa8d9d9d9c3fe7821d8e479dc8857957667f06f5f6ea5432e3f3ad0fbc7c9` |
+| Block SHA-1 (WordPress `block_hash`) | `8c0dd5c3adce073fd58f5001e0f90d523ffad277` |
 
-I re-hashed the block from that head on 2026-11-02 and it matches `PROPOSED_PRODUCTION_CHANGE.json`. Confirm this yourself.
+The committed blob was re-hashed from git after the push and matches `PROPOSED_PRODUCTION_CHANGE.json`, whose rollback guard uses the new SHA-1. Confirm this yourself. The original blocks (`1c97fec5...`, `abc983ae...`) are unchanged.
 
 **Authorship disclosure:** a previous Claude session built #604. The session writing this hand-off did not change it and has no stake in the verdict.
 
@@ -53,10 +55,10 @@ Post a comment on PR #604 with: your name or tool and the date; the exact 40-cha
 
 ```
 FVSL-QD-PASS: YES
-FVSL-QD-HEAD: 368399842de1bd4fc02598571c0fa29eb5ad279c
-FVSL-PACKAGE-SHA256: d73124abab24d5f493bca97b9bc8f4f9102c1996df78e299c3a454608a656d6b
+FVSL-QD-HEAD: bdf01b4a3e13fd6179ae9e847c9d4429bbe16176
+FVSL-PACKAGE-SHA256: 506aa8d9d9d9c3fe7821d8e479dc8857957667f06f5f6ea5432e3f3ad0fbc7c9
 ```
 
-Write `FVSL-QD-PASS: NO` otherwise. A pass for this head does not cover the NASA rights sign-off, the authenticated WordPress.com render, or any later commit.
+Write `FVSL-QD-PASS: NO` otherwise. A pass for this head does not cover the NASA rights sign-off, the authenticated WordPress.com render, or any later commit. Read `experience2/home-flagship/release/INDEPENDENT_REPRODUCTION.md` first: it lists what a second session did and did not reproduce, including what the original harness overstated.
 
 After a genuine approval and the other two P0 items, publishing is the apply step in `RELEASE_AND_ROLLBACK.md` followed by its verification list on the live site.

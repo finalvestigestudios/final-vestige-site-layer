@@ -35,7 +35,9 @@ P1 still open: mobile LCP is above 2.5 s in the stricter lab modes (about equal 
 | Workstream | Branch / PR | Exact commit | Tests | Status | Next |
 |---|---|---|---|---|---|
 | Experience 2.0 Sprint 5 (design system, Apollo 1 companion, Research Desk, Atlas model, plugin) | `feature/experience-2-living-archive-sprint5`, draft PR #485 | `9508c9dc` | `run_all.py`: 83 tests, 33 live URLs, 50 hero regions; hosted CI green on push and `pull_request` | integration candidate, not installed | independent QD; WordPress staging; dynamic block |
-| Flagship homepage | `release/homepage-flagship-candidate-20261102`, draft PR #604 | `368399842d` | hosted `verify` green; local WordPress QA per acceptance matrix | HOLD on the three P0 items above | see above |
+| Flagship homepage | `release/homepage-flagship-candidate-20261102`, draft PR #604 | **`bdf01b4a3e`** (was `368399842d`) | hosted `verify` green; local WordPress + Edge QA reproduced by a second session (`INDEPENDENT_REPRODUCTION.md`); independent ChatGPT review of the previous head: **HOLD, `FVSL-QD-PASS: NO`** | HOLD: fresh exact-head review, authenticated WordPress.com render, NASA named sign-off | request re-review of `bdf01b4a3e`; see `PR604_RELEASE_RECORDS.md` |
+
+**Update (later 2026-11-02):** the reproduction found a real WCAG 2.2 AA defect the original keyboard check could not see (the flagship skip link rendered behind the site header when focused). Fixed with one CSS value; the package changed to 108,155 bytes, SHA-256 `506aa8d9...`, SHA-1 `8c0dd5c3...`. All approvals bound to `368399842d` / `d73124ab...` are void for the new head. Not published; page 6 unchanged.
 | Preparedness release candidate | `integration/preparedness-release-candidate-20261101`, draft PR #584 | `ddb3528ba6` | machine integrity **failing** | HOLD | see root cause below |
 | Preparedness R76 source impact | PR #668 | `06593b2ee8` | integrity failing; `source-impact-private-only` success | HOLD | same root cause class |
 | Shelter follow-up evidence | PR #554 | `6a5998ead9` | no checks | draft, QD pending | merge order with #584 |
