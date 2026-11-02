@@ -61,7 +61,7 @@
           "id": "Commons 2010 Marque1313",
           "archive": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
           "credit": "Commons creator Marque1313",
-          "date": "2010-06-06",
+          "date": "2010-06",
           "relationship": "different post-accident view, 31 years after disaster",
           "rights_evidence": "Creator-dedicated public domain; content identification remains distinct",
           "master_px": [
@@ -73,7 +73,8 @@
             614
           ],
           "size_basis": "Commons file catalog",
-          "release": "HOLD"
+          "release": "HOLD",
+          "date_note": "Commons file narrative says taken June 6, 2010, while its Date field says June 16, 2010. Do not assert a precise day until independently resolved."
         }
       ]
     },
