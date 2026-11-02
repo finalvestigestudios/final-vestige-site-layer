@@ -37,7 +37,6 @@
   }
 }
 
-
 /* R60: WCAG 2.2 pointer-size hardening for the unchanged R38 Research Desk.
    The original NASA links and native <summary> controls measured ~21px tall
    in Chromium. Enlarge only hit areas, preserving native disclosure markers,
