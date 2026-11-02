@@ -34,6 +34,7 @@ test('near-button prospective disclosure',()=>{for(const s of [a,b]){const p=s.i
 test('both pages are Gutenberg html blocks',()=>{for(const s of [a,b]){assert.ok(s.startsWith('<!-- wp:html -->'));assert.ok(s.includes('<!-- /wp:html -->'));}});
 test('B transcript independent of JavaScript',()=>{assert.ok(b.includes('<details><summary>'));assert.equal(count(b,/00:\d\d–00:\d\d/g),6);});
 test('B is optional while A remains text-only',()=>{assert.ok(b.includes('class="film-box"'));assert.ok(!a.includes('class="film-box"'));});
+test('six film transcript cues span full 0–40 seconds without truncation',()=>{const expected=['00:00–00:06','00:06–00:12','00:12–00:19','00:19–00:26','00:26–00:33','00:33–00:40'];for(const time of expected)assert.ok(b.includes(time),time+' missing');});
 test('no exaggerated Zen12 equivalence in editorial verdict',()=>{assert.ok(core.includes('No Zen12-specific trial'));assert.ok(core.includes('seller claims'));});
 test('all activation gates remain false',()=>assert.ok(Object.keys(matrix.gates).length>=12&&Object.values(matrix.gates).every(x=>x===false)));
 test('source matrix has 20+ distinct source URLs and 35+ claims',()=>{assert.ok(matrix.sources.length>=20);assert.ok(matrix.claims.length>=35);assert.equal(new Set(matrix.sources.map(s=>s.url)).size,matrix.sources.length);});
