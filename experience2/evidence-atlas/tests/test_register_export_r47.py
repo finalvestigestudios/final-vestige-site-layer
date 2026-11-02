@@ -22,7 +22,7 @@ class RegisterExportR47(unittest.TestCase):
         self.assertEqual(doc.count('data-fva-export-status'),1)
         self.assertEqual(doc.count('data-fva-citation-text'),6)
         self.assertEqual(doc.count('data-fva-record '),6)
-        self.assertIn('With JavaScript enabled you may save the same references',doc)
+        self.assertIn('With JavaScript enabled, save a plain-text research sheet',doc)
         for needle in ('<img','<canvas','data-lat','data-lng'):
             self.assertNotIn(needle,doc)
 
