@@ -161,6 +161,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r147.py
           python -OO products/desktop/scripts/safe_unittest_r147.py
+      - name: R148 LedgerDiff exact gross flow mismatches (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r148.py
+          python -OO products/desktop/scripts/safe_unittest_r148.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -533,6 +537,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R147 replay argument custody FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r147.py
           if ($LASTEXITCODE -ne 0) { throw "R147 optimized replay argument custody FAILED" }
+      - name: R148 LedgerDiff exact gross flow mismatches (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r148.py
+          if ($LASTEXITCODE -ne 0) { throw "R148 gross reconciliation FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r148.py
+          if ($LASTEXITCODE -ne 0) { throw "R148 optimized gross reconciliation FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

@@ -1041,3 +1041,19 @@ argument custody](docs/PRIVATE_REPLAY_ARGV_CUSTODY_R147.md), the
 [strict two-OS normal/optimized gate](scripts/safe_unittest_r147.py).
 No Windows 11 physical accessibility or genuine AV assessment is implied.
 **All six apps UNRELEASED; QD and founder approval required.**
+
+
+### Labs R148 — LedgerDiff gross flow mismatch evidence (DRAFT / RELEASE HOLD)
+
+LedgerDiff Lite exposes separate **gross charge and credit magnitudes on each
+source side**, so equal net ledger totals cannot conceal financially different
+offsetting movements. A 'gross_flow_mismatch_review' status is emitted with
+existing duplicate/normalization findings whenever both ledgers share the
+same net but differ in gross flows. Existing missing/variance statuses,
+explicit independent source column mappings, SHA-256, physical CSV source rows
+and exact Decimal accounting remain intact. This is a HUMAN REVIEW indicator,
+not compliance judgment or payment clearance. See
+[R148 gross reconciliation specification](docs/LEDGER_GROSS_FLOW_REVIEW_R148.md)
+and [28 strict synthetic tests](tests/test_ledger_gross_flow_r148.py).
+No public downloads, no premium exposure, no physical Win11 or QD approval.
+**All six applications remain UNRELEASED.**

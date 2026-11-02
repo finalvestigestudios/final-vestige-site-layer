@@ -325,8 +325,10 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
 
     Only explicit, bounded column names may override automatic ID or amount aliases.
     Per-side mappings stay independent; original financial sources remain immutable.
-    The actual mapped headers appear in each report
-    row and the original byte digests identify the two audited imports.
+    The actual mapped headers and separate gross charge/credit magnitudes
+    appear in each report row; original byte digests identify the two imports.
+    Matching net amounts with different gross flows are explicitly flagged
+    for independent human review rather than silently declared matched.
     """
     from .ledger_provenance import attach_ledger_provenance
     groups=[defaultdict(list),defaultdict(list)]
@@ -346,18 +348,46 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
             k=key(r["id"])
             if not k: raise csv_input_error("blank_ledger_id", line=int(r["row"]))
             d[k].append(r)
+    def gross_flows(items):
+        """Keep charge and credit magnitudes independent of their net balance.
+
+        The source importer has already pinned each input to a byte snapshot;
+        re-parsing each amount once here retains the suite's exact cents and
+        private 64-digit Decimal context, including signed zero neutrality.
+        """
+        charges = Decimal(0)
+        credits = Decimal(0)
+        for item in items:
+            amount = money(item["amount"])
+            if amount > 0:
+                charges += amount
+            elif amount < 0:
+                credits += amount.copy_negate()
+        return charges, credits, charges - credits
+
     rows=[]
     for k in sorted(set(groups[0])|set(groups[1])):
         a,b=groups[0][k],groups[1][k]
-        x=sum((money(r["amount"]) for r in a),Decimal(0))
-        y=sum((money(r["amount"]) for r in b),Decimal(0))
+        left_charges,left_credits,x=gross_flows(a)
+        right_charges,right_credits,y=gross_flows(b)
         status=reconciliation_status(
             a,b,x,y,missing_left="missing_left",missing_right="missing_right")
+        # Equal NET totals can conceal offsetting charges, credits and
+        # reversals on one side. A reviewer must see the unmatched GROSS
+        # movement; neither this flag nor 'matched' authorizes payment.
+        if (a and b and x == y and
+                (left_charges != right_charges or left_credits != right_credits)):
+            status = ("gross_flow_mismatch_review" if status == "matched" else
+                      status + ";gross_flow_mismatch_review")
         rows.append({"id":k,"status":status,"left_amount":dollars(x),"right_amount":dollars(y),
                      "difference":dollars(x-y),"left_rows":";".join(r["row"] for r in a),
                      "right_rows":";".join(r["row"] for r in b),
                      "left_ids":labels_for_report(a,"id"),
                      "right_ids":labels_for_report(b,"id"),
+                     "left_gross_charges":dollars(left_charges),
+                     "left_gross_credits":dollars(left_credits),
+                     "right_gross_charges":dollars(right_charges),
+                     "right_gross_credits":dollars(right_credits),
                      "left_match_column":selected_headers[0],
                      "right_match_column":selected_headers[1],
                      "left_amount_column":selected_amount_headers[0],
@@ -367,6 +397,8 @@ def ledger_diff(left,right,folder, *, left_match_column=None, right_match_column
     return [save(folder,"ledger-diff",(
         "id","status","left_amount","right_amount","difference",
         "left_rows","right_rows","left_ids","right_ids",
+        "left_gross_charges","left_gross_credits",
+        "right_gross_charges","right_gross_credits",
         "left_match_column","right_match_column",
         "left_amount_column","right_amount_column",
         "left_source_sha256","right_source_sha256","input_identity_review"),rows)]
