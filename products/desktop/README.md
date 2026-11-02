@@ -1,3 +1,8 @@
+## R139 — spreadsheet invisible-prefix CSV report guard (DRAFT / HOLD)
+
+The shared five-financial-app CSV exporter now neutralizes formulas behind leading hidden Unicode, bidi, control, combining and exotic spacing characters, while leaving exact negative numeric cells unchanged. A [20-test source-owned R139 runbook](docs/SPREADSHEET_PREFIX_GUARD_R139.md) covers Unicode adversaries, actual LedgerDiff/Invoice Twin/SpendMap reports, unchanged SHA-256 source custody, atomic/no-overwrite output and money. Ubuntu and Windows normal/-OO source and existing six-x64-candidate gates are mandatory. No Excel runtime certification or physical Win11 clearance is claimed. **All six apps remain UNRELEASED; physical acceptance, real Defender/EDR, signing, protected premium delivery, independent QD and founder approval HOLD.**
+
+
 ## R137 — GrantAudit budget-source line and SHA custody (DRAFT / HOLD)
 
 Both legacy and linked premium GrantAudit budget CSVs now identify the exact claim physical starting lines, authorized-budget physical line (or blank when missing), and the three original CSV snapshot SHA-256 hashes. Linked existing `claim_rows` stays stable. This shortens review without treating a match as eligibility or authorization. [18 synthetic integration methods and reviewer runbook](docs/GRANT_BUDGET_CUSTODY_R137.md) cover precision, BOM/quoted-newline citations, manifest custody and no-overwrite; Linux and Windows normal/`-OO` CI gates are required. **All six utilities UNRELEASED, premium locks retained, QD/founder approval and physical Win11/Defender/signing/gated distribution pending.**

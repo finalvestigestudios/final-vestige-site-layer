@@ -1,6 +1,6 @@
 """Local-first Final Vestige Labs desktop engines. All findings require human review."""
 from __future__ import annotations
-import csv, difflib, hashlib, os, re, statistics
+import csv, difflib, hashlib, os, re, statistics, unicodedata
 from collections import defaultdict
 from datetime import datetime, date
 from decimal import Context, Decimal, InvalidOperation, ROUND_HALF_UP, localcontext
@@ -8,6 +8,7 @@ from functools import wraps
 from pathlib import Path
 
 from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
+from .audit_display import _escape_source_character
 from .csv_diagnostics import csv_input_error
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
 
@@ -262,11 +263,33 @@ def outpath(folder,stem,suffix=".csv"):
     return p/(stem+"-"+datetime.now().strftime("%Y%m%d-%H%M%S-%f")+suffix)
 
 def safe_cell(value):
-    """Neutralize spreadsheet formulas in user-controlled text fields."""
-    s=str(value)
-    trimmed=s.lstrip()
-    if trimmed.startswith(("=","+","@","\t","\r","\n")) or (trimmed.startswith("-") and not re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?",trimmed)):
-        return "\x27"+s
+    """Conservatively neutralize spreadsheet formulas behind invisible prefixes.
+
+    Spreadsheet importers can ignore leading format, bidi, control, combining
+    or exotic whitespace characters that Python str.lstrip() does not.
+    Quote ALL labels with such a leading character, even benign labels.
+    Ordinary ASCII-space prefixes and exact negative decimals remain intact.
+    The original input SHA and source rows remain the audit authority.
+    """
+    s = str(value)
+    index = 0
+    invisible_prefix = False
+    while index < len(s):
+        character = s[index]
+        if character == " ":
+            index += 1
+            continue
+        if (character.isspace() or _escape_source_character(character)
+                or unicodedata.category(character) in ("Mn", "Me")):
+            invisible_prefix = True
+            index += 1
+            continue
+        break
+    token = s[index:]
+    if (invisible_prefix or token.startswith(("=", "+", "@"))
+            or (token.startswith("-") and
+                re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?", token) is None)):
+        return "'" + s
     return s
 
 def save(folder,stem,fields,rows):
