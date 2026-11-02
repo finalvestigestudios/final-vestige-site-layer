@@ -137,7 +137,7 @@ jobs:
           SRC="experience2/home-flagship/qa/playground"
           DEST="$RUNNER_TEMP/fv-ex2-lighthouse"
           mkdir -p "$DEST"
-          npm install --prefix "$DEST" --no-save --no-audit --no-fund --ignore-scripts \\
+          npm install --prefix "$DEST" --no-save --no-audit --no-fund --ignore-scripts \
             lighthouse@12.8.2 chrome-launcher@1.2.0 playwright-core@1.55.0
           for name in lighthouse_receipt.mjs measure_private_lighthouse.mjs test_private_lighthouse.mjs; do
             cp "$SRC/$name" "$DEST/$name"
