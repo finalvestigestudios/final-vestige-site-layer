@@ -54,16 +54,54 @@ jobs:
             'https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip' \
             --output "$RUNNER_TEMP/fv-resources/assembler.zip"
           file "$RUNNER_TEMP/fv-resources/assembler.zip"
-          sha256sum "$RUNNER_TEMP/fv-resources/assembler.zip" | tee "$RUNNER_TEMP/fv-resources/theme-sha256.txt"
+          sha256sum "$RUNNER_TEMP/fv-resources/assembler.zip" | tee "$RUNNER_TEMP/fv-resources/theme-original-sha256.txt"
+          # The WP.com download ZIP may be flat-rooted. The existing *isolated*
+          # stage builder specifically requires assembler/; normalize safely
+          # without changing theme file bytes or claiming an official ZIP digest.
           python - <<'PY'
-          import zipfile, os
-          p=os.path.join(os.environ['RUNNER_TEMP'],'fv-resources','assembler.zip')
-          with zipfile.ZipFile(p) as z:
-              files=z.namelist()
-              assert 'assembler/style.css' in files and 'assembler/templates/index.html' in files
-              assert 'Theme Name: Assembler' in z.read('assembler/style.css').decode('utf-8')
-          print('Official WordPress.com ZIP structural checks: PASS. Independent frozen theme digest: NOT AVAILABLE / HOLD.')
+          from pathlib import Path, PurePosixPath
+          import os, re, zipfile
+          root=Path(os.environ['RUNNER_TEMP'])/'fv-resources'
+          source=root/'assembler.zip'
+          with zipfile.ZipFile(source) as z:
+              members=[i for i in z.infolist() if not i.is_dir()]
+              names=[m.filename for m in members]
+              print('Original official download first entries:',names[:18])
+              style=[n for n in names if n=='style.css' or n.endswith('/style.css')]
+              if len(style)!=1:
+                  raise RuntimeError('HOLD: expected exactly one root style.css; actual '+repr(style))
+              prefix=style[0][:-len('style.css')]
+              if not (prefix=='' or (prefix.endswith('/') and prefix.count('/')==1)):
+                  raise RuntimeError('HOLD: unexpected top-level folder '+repr(prefix))
+              out={}
+              for member in members:
+                  name=member.filename
+                  if not name.startswith(prefix):
+                      raise RuntimeError('HOLD: archive has out-of-root file '+repr(name))
+                  rel=name[len(prefix):]
+                  path=PurePosixPath(rel)
+                  if not rel or rel.startswith('/') or '\\' in rel or any(p in ('.','..') for p in path.parts):
+                      raise RuntimeError('HOLD: archive path rejected '+repr(rel))
+                  if rel.casefold() in {k.casefold() for k in out}:
+                      raise RuntimeError('HOLD: duplicate/casefold archive member '+rel)
+                  if member.file_size>80*1024*1024:
+                      raise RuntimeError('HOLD: overlarge archive member')
+                  out[rel]=z.read(member)
+              if 'templates/index.html' not in out or 'style.css' not in out:
+                  raise RuntimeError('HOLD: expected Assembler block theme paths missing')
+              if not re.search(r'(?im)^\\s*Theme Name:\\s*Assembler\\s*$',out['style.css'].decode('utf-8')):
+                  raise RuntimeError('HOLD: theme identity header mismatch')
+              if len(out)>4000 or sum(map(len,out.values()))>80*1024*1024:
+                  raise RuntimeError('HOLD: theme package exceeds resource limits')
+          target=root/'assembler.normalized.zip'
+          with zipfile.ZipFile(target,'w',compression=zipfile.ZIP_DEFLATED) as z:
+              for rel,data in sorted(out.items()):
+                  z.writestr('assembler/'+rel,data)
+          target.replace(source)
+          print('Safe normalized Assembler files:',len(out),'root source folder:',repr(prefix))
+          print('PROVENANCE HOLD: downloaded original and normalized ZIP have different hashes.')
           PY
+          sha256sum "$RUNNER_TEMP/fv-resources/assembler.zip" | tee "$RUNNER_TEMP/fv-resources/theme-sha256.txt"
       - name: Build exact-source local-only PHP staging using existing attester
         shell: bash
         env:
@@ -171,5 +209,6 @@ jobs:
             ${{ runner.temp }}/fv-playground.log
             ${{ runner.temp }}/fv-private-stage/STAGING_PREP_RECEIPT.json
             ${{ runner.temp }}/fv-resources/theme-sha256.txt
+            ${{ runner.temp }}/fv-resources/theme-original-sha256.txt
           if-no-files-found: warn
           retention-days: 7
