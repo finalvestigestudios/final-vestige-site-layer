@@ -49,7 +49,7 @@ class ReleaseCandidateParityTests(unittest.TestCase):
                 "NYPL believes this item is in the public domain under United States law.",
                 content,
             )
-        self.assertEqual(parity.verify_bytes(SOURCE, PAYLOAD)["nypl_capture_rights"], "UNVERIFIED_HOLD")
+        self.assertEqual(parity.verify_bytes(SOURCE, PAYLOAD)["nypl_capture_rights"], "UNVERIFIED_NOT_REPRODUCED")
 
     def test_reintroducing_old_nypl_claim_to_both_sources_fails(self):
         old = "NYPL believes this item is in the public domain under United States law."
@@ -64,6 +64,25 @@ class ReleaseCandidateParityTests(unittest.TestCase):
         p = PAYLOAD.decode("utf-8").replace(official, "https://example.org/unknown", 1)
         with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_NYPL_ORIGINAL_LINK"):
             parity.compare_interiors(a, p)
+
+    def test_joint_reintroduction_of_nypl_capture_reproduction_fails(self):
+        # Matching staging/production HTML must not launder unlicensed images.
+        needle = '<div class="fv-hf__source-plate"'
+        img = ('<img src="https://i0.wp.com/finalvestige.com/'
+               'wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg">')
+        a = SOURCE.decode("utf-8").replace(needle, img + needle, 1)
+        p = PAYLOAD.decode("utf-8").replace(needle, img + needle, 1)
+        self.assertNotEqual(a, SOURCE.decode("utf-8"))
+        with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_NYPL_UNCLEARED_IMAGE_REPRODUCTION"):
+            parity.compare_interiors(a, p)
+
+    def test_original_nypl_link_is_preserved_without_image_payload(self):
+        for raw in (SOURCE, PAYLOAD):
+            page=raw.decode("utf-8")
+            self.assertNotIn('edit-017-v02-nypl-5003296-original.jpg',page)
+            self.assertIn('ARCHIVAL REFERENCE · IMAGE NOT REPRODUCED',page)
+        self.assertEqual(parity.verify_bytes(SOURCE,PAYLOAD)["nypl_capture_rights"],
+                         "UNVERIFIED_NOT_REPRODUCED")
 
     def test_matching_but_missing_commercial_notice_is_not_accepted(self):
         a = SOURCE.decode("utf-8").replace(parity.MIND_NOTICE, "", 1)
