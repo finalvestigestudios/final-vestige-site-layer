@@ -53,6 +53,45 @@ def check_url(url: str, allowed_host: str) -> str:
     return host
 
 
+def check_private_render_url(src: str, shortcode_page_url: str) -> str:
+    """Authorize ONLY the nonce-bearing AJAX renderer found in WP shortcode.
+
+    This is a same-origin, authenticated, read-only WordPress response.
+    The nonce is NEVER logged, captured or serialized in a QA receipt.
+    A direct top-level context supplies true 360/390/768/1440/1920 widths;
+    the separate embedded shortcode remains an independently checked gate.
+    """
+    from urllib.parse import parse_qs
+    if not isinstance(src,str) or not src or len(src)>1024:
+        raise ValueError('Private renderer URL unavailable or invalid')
+    p=urlsplit(src)
+    outer=urlsplit(shortcode_page_url)
+    if (p.scheme!=outer.scheme or p.hostname!=outer.hostname
+        or p.port!=outer.port or p.username or p.password or p.fragment
+        or p.path!='/wp-admin/admin-ajax.php'):
+        raise ValueError('Private renderer must be exact same-origin AJAX path')
+    try:
+        params=parse_qs(p.query,strict_parsing=True,keep_blank_values=True)
+    except ValueError:
+        raise ValueError('Private renderer query invalid') from None
+    if (set(params)!={'action','_wpnonce'}
+        or params.get('action')!=['fv_ex2_private_render']
+        or len(params.get('_wpnonce',[]))!=1
+        or not re.fullmatch(r'[A-Za-z0-9]{10,16}',params['_wpnonce'][0])):
+        raise ValueError('Private renderer action or nonce invalid')
+    return src
+
+
+def sanitized_page_error(err) -> str:
+    """Keep only a bounded JS exception CLASS; no private AJAX URL or nonce."""
+    message=str(err)
+    for kind in ('ReferenceError','TypeError','SyntaxError','SecurityError',
+                 'NetworkError','RangeError'):
+        if kind in message:
+            return 'PAGE_JS_' + kind.upper()
+    return 'PAGE_JS_UNCLASSIFIED_ERROR'
+
+
 def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
     if not re.fullmatch(r'[0-9a-f]{40}',expected_sha):
         raise ValueError('expected_sha must be a 40-character lowercase Git commit SHA')
@@ -121,6 +160,19 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
             actual = content[1:-1] if content.startswith('\n') and content.endswith('\n') else None
             check('asset_bytes_exact_'+name, actual==files[name].decode('utf-8'))
             delivered[name] = sha(actual.encode('utf-8')) if actual is not None else 'MISSING_WRAPPERS'
+    # Genuine founder first-screen visual: capture the browser viewport at
+    # scroll=0 BEFORE selecting distant archive cases. An element screenshot
+    # taken after scrolling can misleadingly composite the fixed skip link
+    # and sticky chapter bar over the hero, especially on mobile.
+    if width in (390,1440):
+        try:
+            frame.page.evaluate('window.scrollTo(0,0)')
+            frame.page.screenshot(path=str(out/f'first-screen-{width}.png'),
+                                  full_page=False,timeout=15000)
+            check('real_hero_screenshot',True)
+        except Exception:
+            check('real_hero_screenshot',False)
+
     # Archive exhibits are mutually exclusive ONLY after JS enhancement.
     # An inactive case image is intentionally hidden, so Playwright cannot
     # scroll it into view. Activate its REAL visible selector before testing
@@ -179,11 +231,9 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
         try:
             first.click(timeout=6000)
             check('archive_first_case_restored',first.get_attribute('aria-pressed')=='true')
-            frame.locator('.fv-hf__opening').screenshot(
-                path=str(out/f'first-screen-{width}.png'),timeout=15000)
-            check('real_hero_screenshot',True)
-            frame.locator('body').screenshot(
-                path=str(out/f'full-seven-chapter-{width}.png'),timeout=20000)
+            frame.page.evaluate('window.scrollTo(0,0)')
+            frame.page.screenshot(path=str(out/f'full-seven-chapter-{width}.png'),
+                                  full_page=True,timeout=20000)
             check('real_fullpage_screenshot',True)
         except Exception:
             check('real_screenshot_capture',False)
@@ -228,49 +278,103 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
     output.mkdir(parents=True,exist_ok=True)
     results=[]; failures=[]
     axe_code=axe_script.read_text() if axe_script and axe_script.is_file() else None
+    # WordPress's editor shortcode embeds a deliberately sandboxed iframe in
+    # the THEME'S text column (~744px at desktop). That is a legitimate
+    # authorization/integration gate, but NOT a 1440px visual viewport.
+    # Open ONLY its validated, nonce-protected same-origin WordPress AJAX HTML
+    # in a separate top-level browser page for real full-width composition.
+    # Do not loosen the original iframe sandbox or claim WP.com host parity.
+    sandbox_warning = ("Failed to read the 'serviceWorker' property from 'Navigator': "
+                       "Service worker is disabled because the context is sandboxed "
+                       "and lacks the 'allow-same-origin' flag.")
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=True)
         try:
             for width in WIDTHS:
                 context=browser.new_context(storage_state=str(storage_state),viewport={'width':width,'height':900},reduced_motion='reduce',service_workers='block')
                 context.add_init_script(PERF_INIT)
-                page=context.new_page();errors=[];ajax=[];image_responses=[]
-                page.on('response', lambda response:image_responses.append(response)
-                        if response.request.resource_type=='image' else None)
-                page.on('pageerror',lambda err:errors.append(str(err)[:250]))
-                page.on('response',lambda response:ajax.append(response) if 'action=fv_ex2_private_render' in response.url else None)
+                parent=context.new_page()
+                parent_errors=[]
+                parent.on('pageerror',lambda err:parent_errors.append(str(err)[:250]))
                 record={'width':width,'checks':{},'errors':[]}
                 try:
-                    page.goto(url,wait_until='domcontentloaded',timeout=30000)
-                    preview=page.locator('iframe[title="Final Vestige Experience 2.0, unpublished editorial preview"]')
+                    parent.goto(url,wait_until='domcontentloaded',timeout=30000)
+                    preview=parent.locator('iframe[title="Final Vestige Experience 2.0, unpublished editorial preview"]')
                     preview.wait_for(state='attached',timeout=15000)
-                    frame=preview.element_handle().content_frame()
-                    if not frame: raise RuntimeError('Authorized preview iframe inaccessible')
-                    frame.locator('[data-fv-home-flagship]').wait_for(timeout=20000)
-                    if not ajax: raise RuntimeError('Private AJAX response not captured')
-                    headers={k.lower():v for k,v in ajax[-1].headers.items()}
-                    if ajax[-1].status!=200: raise RuntimeError('Authenticated staging AJAX returned '+str(ajax[-1].status))
-                    record=inspect_frame(frame,files,sha(files['index.html']),headers,width,output,axe_code,image_responses)
-                    record['checks']['no_page_errors']=not errors
-                    record['errors']=errors
+                    if set((preview.get_attribute('sandbox') or '').split())!={'allow-scripts','allow-popups'}:
+                        raise RuntimeError('Private shortcode iframe security boundary changed')
+                    embedded=preview.element_handle().content_frame()
+                    if not embedded: raise RuntimeError('Authorized WordPress shortcode iframe unavailable')
+                    embedded.locator('[data-fv-home-flagship]').wait_for(timeout=20000)
+                    embedded_width=embedded.evaluate('window.innerWidth')
+                    # The private AJAX action and nonce come ONLY from the
+                    # authenticated shortcode; never synthesize or disclose it.
+                    render_url=check_private_render_url(preview.get_attribute('src'),url)
+                    visual=context.new_page()
+                    visual_errors=[];image_responses=[]
+                    visual.on('pageerror',lambda err:visual_errors.append(sanitized_page_error(err)))
+                    visual.on('response',lambda response:image_responses.append(response)
+                              if response.request.resource_type=='image' else None)
+                    actual_response=visual.goto(render_url,wait_until='domcontentloaded',timeout=30000)
+                    if actual_response is None or actual_response.status!=200:
+                        raise RuntimeError('Authenticated WordPress private renderer did not return HTTP 200')
+                    rendered=visual.main_frame
+                    rendered.locator('[data-fv-home-flagship]').wait_for(timeout=20000)
+                    headers={k.lower():v for k,v in actual_response.headers.items()}
+                    record=inspect_frame(rendered,files,sha(files['index.html']),headers,width,output,axe_code,image_responses)
+                    actual_width=rendered.evaluate('window.innerWidth')
+                    record['embedded_wordpress_shortcode_width']=embedded_width
+                    record['authenticated_render_viewport_width']=actual_width
+                    record['render_context']='AUTHENTICATED_WORDPRESS_AJAX_FULL_VIEWPORT_NOT_THEME_PARITY'
+                    record['checks']['private_wordpress_shortcode_iframe_renders']=True
+                    record['checks']['secure_preview_iframe_sandbox_preserved']=True
+                    record['checks']['true_rendered_viewport_width']=actual_width==width
+                    record['checks']['no_page_errors']=not visual_errors
+                    # WordPress Playground can access navigator.serviceWorker
+                    # inside an intentionally opaque-origin iframe. The exact
+                    # sandbox warning is documented, never reclassified as a
+                    # homepage JS success; all other WP shortcode errors fail.
+                    known=sum(e==sandbox_warning for e in parent_errors)
+                    record['preview_sandbox_serviceworker_warnings']=known
+                    record['checks']['no_unclassified_preview_errors']=known==len(parent_errors)
+                    record['errors']=visual_errors
                 except Exception as exc:
                     record['checks']['staging_page_rendered']=False
-                    record['errors'].append(type(exc).__name__+': '+str(exc)[:220])
+                    record['errors'].append(type(exc).__name__+': PRIVATE_WORDPRESS_BROWSER_GATE_BLOCKED')
                 results.append(record)
                 failures += [f'{width}:{k}' for k,v in record['checks'].items() if not v]
                 context.close()
-            # Explicit no-JS HTML meaning. No scripted observations permitted here.
+            # Verify no-JS meaning in BOTH the real WP shortcode and its
+            # protected renderer at an actual 390px top-level viewport.
             cx=browser.new_context(storage_state=str(storage_state),viewport={'width':390,'height':850},java_script_enabled=False,service_workers='block')
             pg=cx.new_page(); nojs={'checks':{},'errors':[]}
             try:
                 pg.goto(url,wait_until='domcontentloaded',timeout=30000)
-                f=pg.locator('iframe[title="Final Vestige Experience 2.0, unpublished editorial preview"]').element_handle().content_frame()
-                f.locator('[data-fv-home-flagship]').wait_for(timeout=15000)
-                nojs['checks']={'all_chapters':all(f.locator('#'+id).count()==1 for id in CHAPTERS),
-                               'three_cases':f.locator('[data-fv-case]').count()==3,
-                               'no_root_overflow':f.evaluate('document.documentElement.scrollWidth <= innerWidth + 1')}
+                preview=pg.locator('iframe[title="Final Vestige Experience 2.0, unpublished editorial preview"]')
+                preview.wait_for(state='attached',timeout=15000)
+                if set((preview.get_attribute('sandbox') or '').split())!={'allow-scripts','allow-popups'}:
+                    raise RuntimeError('No-JS WordPress preview sandbox changed')
+                iframe=preview.element_handle().content_frame()
+                if not iframe: raise RuntimeError('No-JS preview iframe missing')
+                iframe.locator('[data-fv-home-flagship]').wait_for(timeout=15000)
+                private_render=check_private_render_url(preview.get_attribute('src'),url)
+                direct=cx.new_page()
+                response=direct.goto(private_render,wait_until='domcontentloaded',timeout=30000)
+                if response is None or response.status!=200:
+                    raise RuntimeError('No-JS authenticated WordPress renderer failed')
+                rendered=direct.main_frame
+                rendered.locator('[data-fv-home-flagship]').wait_for(timeout=15000)
+                nojs['checks']={
+                    'private_shortcode_renders':iframe.locator('[data-fv-home-flagship]').count()==1,
+                    'all_chapters':all(rendered.locator('#'+id).count()==1 for id in CHAPTERS),
+                    'three_cases':rendered.locator('[data-fv-case]').count()==3,
+                    'no_root_overflow':rendered.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'),
+                    'true_390px_viewport':rendered.evaluate('window.innerWidth')==390,
+                    'no_js_case_panels_visible':all(rendered.locator('[data-fv-case="'+id+'"]').is_visible()
+                                                   for id in ('apollo','franklin','malbone'))
+                }
             except Exception as exc:
-                nojs['checks']['no_js_available']=False;nojs['errors'].append(type(exc).__name__+': '+str(exc)[:220])
+                nojs['checks']['no_js_available']=False;nojs['errors'].append(type(exc).__name__+': PRIVATE_WORDPRESS_NO_JS_GATE_BLOCKED')
             failures += ['nojs:'+k for k,v in nojs['checks'].items() if not v]
             cx.close()
         finally: browser.close()

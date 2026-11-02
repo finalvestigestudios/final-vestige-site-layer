@@ -82,6 +82,35 @@ class GateTests(unittest.TestCase):
             (q/'media_transfer_admission.py').write_text('modified verifier')
             with self.assertRaisesRegex(ValueError,'modified staging QA code'):
                 gate.checkout(repo,head)
+    def test_only_exact_authenticated_same_origin_renderer_is_admitted(self):
+        outer='http://127.0.0.1:9400/?pagename=fv-ex2-playground-review'
+        base='http://127.0.0.1:9400/wp-admin/admin-ajax.php'
+        query='?action=fv_ex2_private_render&_wpnonce=0123456789'
+        self.assertEqual(gate.check_private_render_url(base+query,outer),base+query)
+        bad=(
+            'https://finalvestige.com/wp-admin/admin-ajax.php'+query,
+            'http://127.0.0.1:9401/wp-admin/admin-ajax.php'+query,
+            'http://127.0.0.1:9400/wp-login.php'+query,
+            '/wp-admin/admin-ajax.php'+query,
+            base+'?action=other&_wpnonce=0123456789',
+            base+'?action=fv_ex2_private_render',
+            base+query+'&other=token',
+            base+query+'#fragment',
+            base+'?action=fv_ex2_private_render&_wpnonce=wrong',
+            'http://admin:password@127.0.0.1:9400/wp-admin/admin-ajax.php'+query,
+        )
+        for candidate in bad:
+            with self.subTest(candidate=candidate),self.assertRaises(ValueError):
+                gate.check_private_render_url(candidate,outer)
+
+    def test_private_browser_errors_cannot_leak_nonce_or_local_url(self):
+        private='http://127.0.0.1:9400/wp-admin/admin-ajax.php?_wpnonce=secret'
+        got=gate.sanitized_page_error('ReferenceError: '+private)
+        self.assertEqual(got,'PAGE_JS_REFERENCEERROR')
+        self.assertNotIn(private,got)
+        self.assertEqual(gate.sanitized_page_error('unexpected '+private),
+                         'PAGE_JS_UNCLASSIFIED_ERROR')
+
     def test_archive_case_controls_match_source_images(self):
         # Every lazy archive image belongs to its own real interactive case.
         # A no-JS reader must still receive all three readable case panels.
