@@ -1,0 +1,125 @@
+{
+  "schema": "fv.media_recovery.high_value_same_scene_crosswalk.v1",
+  "audit_date": "2026-11-02",
+  "scope": "Read-only exact-published-source retriever recheck and origin attribution; independent image rendering is not guest Chrome or origin response status",
+  "baseline": {
+    "published_articles": 61,
+    "stored_image_slots": 355,
+    "offsite_origin_refs": 288,
+    "wordpress_originals_over_1_5_mib": 13,
+    "reported_broken_42_browser_verified": false,
+    "claimed_76_percent_wire_reduction_measured": false,
+    "production_repairs": 0
+  },
+  "entries": [
+    {
+      "image_key": "285:5",
+      "article_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "retriever": {
+        "method": "web.open exact published image URL",
+        "observation": "retriever_404_not_browser_404",
+        "wrapper_status": 404,
+        "visitor_http_status": null,
+        "visitor_natural_width": null,
+        "visitor_transfer_bytes": null
+      },
+      "source_chain": {
+        "publisher_article": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "publisher_current_image": "https://discover.hubpages.com/.image/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?profile=w2560&x=50&y=50",
+        "publisher_current_image_viewer": "displayed",
+        "original_creator_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "original_creator_file": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+        "original_creator_file_viewer": "displayed",
+        "publisher_attribution": "Photo of Three Mile Island Nuclear Generating Station taken in June 2010; Wikimedia Commons/Public Domain",
+        "same_apparent_scene": "visually_inspected_matching_composition_not_hash_verified",
+        "same_bytes_verified": false
+      },
+      "rights": {
+        "catalog_assertion": "Creator Marque1313 self-photographed, dedicated original photograph to public domain; catalog last edited 2026-06-27",
+        "creator_credit": "Marque1313 / Wikimedia Commons",
+        "copyright_release_source": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "item_rights_cleared_for_wordpress_upload": false,
+        "publisher_processed_derivative_rights_assumed": false,
+        "exact_master_photo_date": "June 2010; catalog text June 6 versus date field June 16, exact day unresolved",
+        "not_a_1979_accident_photograph": true
+      },
+      "geometry": {
+        "catalog_original_width_px": 819,
+        "catalog_original_height_px": 614,
+        "max_derived_width_px": 960,
+        "conditional_derived_width_px": 819,
+        "conditional_derived_height_px": 614,
+        "no_upscale": true,
+        "thumbnail_downloaded": false
+      },
+      "decision": "HIGH_CONFIDENCE_SAME_SCENE_ORIGINAL_FOR_STAGING_REVIEW_ONLY",
+      "required_before_repair": [
+        "guest browser confirm published image actually fails",
+        "human side-by-side crop/scene review",
+        "final item rights/credit and original-versus-processed-image choice",
+        "record cached asset checksum and rollback",
+        "separate staging approval, never a production write in this lane"
+      ],
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "image_key": "407:3",
+      "article_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "published_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "published_alt": "Dragline excavating the Earthquake Lake spillway on October 18, 1959, with one of the nighttime lighting plants visible on the hillside.",
+      "retriever": {
+        "method": "web.open exact published image URL, also linked as USGS Original",
+        "observation": "exact_published_source_displayed_2026_11_02",
+        "wrapper_status": null,
+        "visitor_http_status": null,
+        "visitor_natural_width": null,
+        "visitor_transfer_bytes": null,
+        "previous_retriever_outcome": "inaccessible_without_numeric_http_status"
+      },
+      "source_chain": {
+        "primary_catalog": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+        "catalog_original_link": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+        "catalog_thumbnail_link": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/thumbnail/public/media/images/EarthquakeLake3.jpg?itok=tFKn2cP5",
+        "catalog_medium_link": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/medium/public/media/images/EarthquakeLake3.jpg?itok=CeFY5xC-",
+        "catalog_original_same_as_published": true,
+        "visual_subject": "October 18, 1959 dragline work on Earthquake Lake outlet, lighting plant on slope"
+      },
+      "rights": {
+        "catalog_assertion": "USGS item catalog states Public Domain",
+        "creator_credit": "Photo by Mrs. Steven W. Nile",
+        "item_rights_cleared_for_wordpress_upload": false,
+        "reason_hold": "Named private photographer; confirm item-level reuse and credit in context before rehosting"
+      },
+      "geometry": {
+        "viewer_rendered_width_px": 1000,
+        "viewer_rendered_height_px": 745,
+        "source_binary_sha256": null,
+        "max_derived_width_px": 960,
+        "conditional_derived_width_px": 960,
+        "conditional_derived_height_px": 715,
+        "no_upscale": true,
+        "dimensions_not_visitor_decode": true
+      },
+      "decision": "RETRIEVER_POSITIVE_KEEP_SOURCE_BROWSER_VERIFY_NOT_REPLACE",
+      "required_before_repair": [
+        "guest Chrome decode/currentSrc and request ID on actual article",
+        "record HTTP/MIME/transfer and guest screenshot",
+        "do not rewrite an apparently working archival photo without stronger evidence"
+      ],
+      "wordpress_media_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    }
+  ],
+  "common_controls": {
+    "no_unlicensed_scraping": true,
+    "no_binary_downloads": true,
+    "no_wordpress_production_writes": true,
+    "no_homepage_design_changes": true,
+    "no_site_qa_pr_changes": true,
+    "no_subscription_spend": true,
+    "all_reported_guest_http_statuses": null
+  }
+}
