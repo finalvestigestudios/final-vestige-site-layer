@@ -107,8 +107,20 @@ def run(app_id):
         browse = ttk.Button(frame, text="Browse…", command=choose_file)
         browse.grid(row=row, column=2, padx=(8, 0))
         input_controls.append((entry, browse))
+    ledger_columns = None
+    if app_id == "ledger":
+        # Allow independent export schemas without remapping or editing
+        # original source files. Empty values retain safe ID-alias discovery.
+        ledger_columns = (tk.StringVar(), tk.StringVar())
+        for side, variable in enumerate(ledger_columns):
+            row = base_row + len(labels) + side
+            label = ("Left" if side == 0 else "Right") + " match-key CSV header (optional)"
+            ui_label(frame, text=label).grid(
+                row=row, column=0, sticky="w", padx=(0, 12), pady=7)
+            ttk.Entry(frame, textvariable=variable, width=65).grid(
+                row=row, column=1, sticky="ew", pady=7)
     output = tk.StringVar(value=str(Path.home() / "Documents"))
-    folder_row = base_row + len(labels) + 1
+    folder_row = base_row + len(labels) + (3 if ledger_columns else 1)
     ui_label(frame, text="Output folder").grid(row=folder_row, column=0, sticky="w", padx=(0, 12))
     output_entry = ttk.Entry(frame, textvariable=output)
     output_entry.grid(row=folder_row, column=1, sticky="ew")
@@ -141,6 +153,11 @@ def run(app_id):
             args = [p.get().strip() for p in selected]
             if app_id == "procurement":
                 outputs = action(*args, output.get().strip(), policy_path=rules.get().strip() or None)
+            elif app_id == "ledger":
+                outputs = action(
+                    *args, output.get().strip(),
+                    left_match_column=ledger_columns[0].get().strip() or None,
+                    right_match_column=ledger_columns[1].get().strip() or None)
             else:
                 outputs = action(*args, output.get().strip())
         except (ValueError, OSError, UnicodeError) as exc:
@@ -177,6 +194,8 @@ def run(app_id):
                                    columnspan=3, sticky="w")
     hint = (f"Keyboard: Alt+1..{len(labels)} focus an input; Ctrl+1..{len(labels)} browse; "
             "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
+    if app_id == "ledger":
+        hint += "; Tab to optional left/right match headers (blank = automatic)"
     if premium:
         hint += "; Alt+R review exceptions"
     ui_label(frame, text=hint, wraplength=700).grid(
