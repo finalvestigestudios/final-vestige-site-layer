@@ -27,7 +27,7 @@ class StageR64Tests(unittest.TestCase):
                 self.assertEqual(blob((output/'fv-ex2-research-desk'/relative).read_bytes()),sha)
             for filename,hash_ in manifest['files'].items():
                 self.assertEqual(hashlib.sha256((output/filename).read_bytes()).hexdigest(),hash_)
-            self.assertIn('0.0.65-staging',(output/'fv-ex2-apollo-suite/fv-ex2-apollo-suite.php').read_text())
+            self.assertIn('0.0.66-staging',(output/'fv-ex2-apollo-suite/fv-ex2-apollo-suite.php').read_text())
             style=(output/'fv-ex2-apollo-suite/apollo-suite.css').read_text()
             self.assertIn('.fva-guide a',style)
             self.assertIn('.fva-footer a',style)
