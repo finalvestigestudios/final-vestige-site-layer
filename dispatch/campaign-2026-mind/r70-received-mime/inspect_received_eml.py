@@ -66,11 +66,11 @@ class VisibleHTML(HTMLParser):
     NON_CONTENT = frozenset(("head", "title", "script", "style", "noscript",
                              "template", "svg"))
     INLINE_HIDDEN = re.compile(
-        r"(?<![\\w-])display\\s*:\\s*none\\b"
-        r"|(?<![\\w-])visibility\\s*:\\s*(?:hidden|collapse)\\b"
-        r"|(?<![\\w-])opacity\\s*:\\s*0(?:\\s*!important)?\\s*(?:;|$)"
-        r"|(?<![\\w-])font-size\\s*:\\s*0(?:px|pt|rem|em|%)?"
-        r"(?:\\s*!important)?\\s*(?:;|$)",
+        r"(?<![\w-])display\s*:\s*none\b"
+        r"|(?<![\w-])visibility\s*:\s*(?:hidden|collapse)\b"
+        r"|(?<![\w-])opacity\s*:\s*0(?:\s*!important)?\s*(?:;|$)"
+        r"|(?<![\w-])font-size\s*:\s*0(?:px|pt|rem|em|%)?"
+        r"(?:\s*!important)?\s*(?:;|$)",
         re.I,
     )
 
