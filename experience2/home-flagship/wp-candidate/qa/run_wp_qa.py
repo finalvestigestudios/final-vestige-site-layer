@@ -82,7 +82,7 @@ def main():
             errs = []
             pg.on("console", lambda m: errs.append(m.text[:200]) if m.type == "error" else None)
             pg.on("pageerror", lambda e: errs.append("pageerror:" + str(e)[:200]))
-            pg.on("requestfailed", lambda r: errs.append("reqfailed:" + r.url[:120]))
+            pg.on("requestfailed", lambda r: errs.append("reqfailed[" + str(r.failure) + "]:" + r.url[:110]))
             return ctx, pg, errs
 
         # ---- A. seven widths: structure, overflow, console, axe, screenshots
@@ -169,7 +169,15 @@ def main():
                 pg.evaluate("window.scrollTo(0,0)")
                 pg.wait_for_timeout(150)
                 click(f'.fv-hf__chapter-nav a[href="{href}"]')
-                pg.wait_for_timeout(900)
+                # smooth scrolling can take ~2 s for long jumps: wait until scrollY stops changing
+                last, stable = -1, 0
+                for _ in range(60):
+                    pg.wait_for_timeout(100)
+                    y = pg.evaluate("window.scrollY")
+                    stable = stable + 1 if y == last else 0
+                    last = y
+                    if stable >= 4:
+                        break
                 nav.append(pg.evaluate("""(h)=>{const t=document.querySelector(h);const r=t?t.getBoundingClientRect():null;
                     return {href:h,found:!!t,top:r?Math.round(r.top):null,inView:r?(r.top<innerHeight&&r.bottom>0):false,hash:location.hash,
                             underStickyHeader:r?r.top<60:null}}""", href))

@@ -1,0 +1,78 @@
+{
+  "status": "PROPOSED - NOT APPLIED - requires explicit founder approval; re-run page-sections.list first and refuse if modified/content_hash differ from these tokens",
+  "target": {
+    "wpcom_site": 256784396,
+    "page_id": 6,
+    "read_at": "2026-11-02",
+    "top_level_blocks": 6,
+    "block_to_replace": {
+      "index": 1,
+      "type": "core/html",
+      "block_hash_sha1": "1c97fec5cc356a02fb2f51a092f749c81efcd98c",
+      "what": "old Studios hero (+ its <style>)"
+    }
+  },
+  "blocks_left_untouched_byte_for_byte": [
+    {
+      "index": 0,
+      "type": "core/html",
+      "what": "72 Hidden in the Margins strip",
+      "block_hash": "6948a35c4e60ff43154440a7fad980dc3cae6859"
+    },
+    {
+      "index": 2,
+      "type": "core/html",
+      "what": "Focus CTA (/focus/)",
+      "block_hash": "abc983ae1b3cf45d35589c7e5366ccc522cb0462"
+    },
+    {
+      "index": 3,
+      "type": "core/group",
+      "what": "home shell incl. Jetpack subscription (Dispatch), latest, trails, research desk",
+      "block_hash": "f9da41225609adcca1c23f18b39079d1275c9249"
+    },
+    {
+      "index": 4,
+      "type": "core/html",
+      "what": "Enter the record",
+      "block_hash": "e53df6922591588603a41ce2e56dfdc418ba2d98"
+    },
+    {
+      "index": 5,
+      "type": "core/html",
+      "what": "Organization JSON-LD",
+      "block_hash": "9454d1e44ee4932a4975796a88d2640ab9ecae8d"
+    }
+  ],
+  "apply": {
+    "operation": "page-sections.replace",
+    "params": {
+      "id": 6,
+      "index": 1,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "1c97fec5cc356a02fb2f51a092f749c81efcd98c",
+      "expected_modified": "2026-10-30T09:14:14",
+      "expected_content_hash": "7afdb933d2ec68fd993ef015c97a6eb9edfe0576",
+      "block_markup_file": "replacement-block-index1.html"
+    },
+    "replacement_sha256": "a26b678cbe1c8c772d2293cb051a0a934633765328f2e8cbf7b03731104c4153",
+    "replacement_sha1": "e1054d45184409469e182ae9fbfa3dad99a43d6e",
+    "replacement_bytes": 111229
+  },
+  "rollback": {
+    "operation": "page-sections.replace",
+    "params": {
+      "id": 6,
+      "index": 1,
+      "expected_block_type": "core/html",
+      "expected_block_hash": "e1054d45184409469e182ae9fbfa3dad99a43d6e",
+      "block_markup_file": "original-block-index1.html"
+    },
+    "original_block_sha1_verified_against_live_block_hash": true,
+    "also_available": "WordPress post revisions for page 6 (restore the revision dated 2026-10-30T09:14:14)"
+  },
+  "no_plugin_install": true,
+  "no_theme_or_navigation_change": true,
+  "no_new_pages": true,
+  "unverified_on_wordpress_com": "Whether WordPress.com keeps inline <style>/<script> inside a core/html block on the Personal plan is NOT TESTED: existing blocks already carry <style> and a JSON-LD <script>, but a draft-page dry run is required (see RELEASE_AND_ROLLBACK.md step 1)."
+}

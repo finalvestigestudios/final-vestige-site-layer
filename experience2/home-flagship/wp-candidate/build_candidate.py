@@ -27,8 +27,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FLAG = HERE.parent
-ASSETS_CSS = ["site-parity.css", "live-block-support.css", "flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css",
-              "observer-lab.css", "reading-trail.css", "wp-integration.css"]
+SITE_CSS = ["site-parity.css", "live-block-support.css"]  # production emits these inline in <head>
+FLAG_CSS = ["flagship.css", "chronicle.css", "chronicle-lens.css", "inquiry.css",
+            "observer-lab.css", "reading-trail.css", "wp-integration.css"]  # shipped as ONE bundle
 ASSETS_JS = ["flagship.js", "observer-lab.js", "chronicle-lens.js", "reading-trail.js"]
 
 
@@ -81,9 +82,13 @@ add_action('wp_enqueue_scripts', function () {
     if (!is_front_page()) { return; }
     $base = plugin_dir_url(__FILE__) . 'assets/';
     $dir  = plugin_dir_path(__FILE__) . 'assets/';
-    foreach (%CSS% as $f) {
-        wp_enqueue_style('fv-hf-' . basename($f, '.css'), $base . $f, [], filemtime($dir . $f));
-    }
+    // Production prints the site-wide CSS inline (global styles); do the same so the stage does
+    // not add stylesheet round trips that the real site does not have.
+    wp_register_style('fv-hf-site', false);
+    wp_enqueue_style('fv-hf-site');
+    wp_add_inline_style('fv-hf-site', file_get_contents($dir . 'site-parity.css') . "
+" . file_get_contents($dir . 'live-block-support.css'));
+    wp_enqueue_style('fv-hf-bundle', $base . 'flagship.bundle.css', ['fv-hf-site'], filemtime($dir . 'flagship.bundle.css'));
     foreach (%JS% as $f) {
         wp_enqueue_script('fv-hf-' . basename($f, '.js'), $base . $f, [], filemtime($dir . $f), ['strategy' => 'defer', 'in_footer' => true]);
     }
@@ -94,6 +99,8 @@ add_action('wp_enqueue_scripts', function () {
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--delivery", choices=["plugin", "inline"], default="plugin",
+                    help="plugin: flagship CSS/JS enqueued by a plugin; inline: CSS/JS ship inside the page block itself (no plugin)")
     ap.add_argument("--page6", type=Path, default=HERE / "snapshot" / "page6-live-frontend-body.html")
     a = ap.parse_args()
     out = a.out.resolve()
@@ -101,7 +108,20 @@ def main():
         sys.exit("output must live outside the checkout")
     index = (FLAG / "index.html").read_text(encoding="utf-8")
     page6 = a.page6.read_text(encoding="utf-8")
-    body = compose(page6, flagship_fragment(index))
+    fragment = flagship_fragment(index)
+    parts = []
+    for f in FLAG_CSS:
+        src = (FLAG / f) if (FLAG / f).exists() else (HERE / f)
+        parts.append("/* ==== " + f + " ==== */" + chr(10) + src.read_text(encoding="utf-8").rstrip() + chr(10))
+    css_bundle = "".join(parts)
+    inline_block = ""
+    if a.delivery == "inline":
+        js = "".join("<script>" + chr(10) + (FLAG / f).read_text(encoding="utf-8").rstrip() + chr(10) + "</script>" + chr(10) for f in ASSETS_JS)
+        if "</script" in "".join((FLAG / f).read_text(encoding="utf-8") for f in ASSETS_JS).lower():
+            raise SystemExit("a JS asset contains </script; cannot inline")
+        inline_block = "<style>" + chr(10) + css_bundle + "</style>" + chr(10) + js
+        fragment = fragment + inline_block
+    body = compose(page6, fragment)
 
     plug = out / "plugin" / "fv-flagship-candidate"
     if out.exists():
@@ -112,17 +132,19 @@ def main():
     # (KSES/edit_css), so ship the identical bytes as a plain stylesheet for the local review.
     parity = json.loads((HERE / "parity" / "assembler-public-safe.json").read_text(encoding="utf-8"))
     (plug / "assets" / "site-parity.css").write_text(parity["global_styles"]["styles"]["css"], encoding="utf-8")
-    for f in ASSETS_CSS + ASSETS_JS:
-        if f == "site-parity.css":
-            continue
-        if f == "live-block-support.css":
-            shutil.copyfile(HERE / "snapshot" / f, plug / "assets" / f)
-            continue
-        shutil.copyfile((FLAG / f) if (FLAG / f).exists() else (HERE / f), plug / "assets" / f)
-    php = PLUGIN_PHP.replace("%CSS%", json.dumps(ASSETS_CSS).replace('"', "'").replace("[", "[").replace("]", "]"))
-    php = php.replace("%JS%", json.dumps(ASSETS_JS).replace('"', "'"))
+    shutil.copyfile(HERE / "snapshot" / "live-block-support.css", plug / "assets" / "live-block-support.css")
+    for f in ASSETS_JS:
+        shutil.copyfile(FLAG / f, plug / "assets" / f)
+    bundle = css_bundle
+    (plug / "assets" / "flagship.bundle.css").write_text(bundle, encoding="utf-8")
+    php = PLUGIN_PHP.replace("%JS%", json.dumps([] if a.delivery == "inline" else ASSETS_JS).replace('"', "'"))
+    if a.delivery == "inline":
+        php = php.replace("    wp_enqueue_style('fv-hf-bundle'", "    // inline delivery: flagship CSS/JS live inside the page block" + chr(10) + "    // wp_enqueue_style('fv-hf-bundle'")
     (plug / "fv-flagship-candidate.php").write_text(php, encoding="utf-8")
     (out / "page-content.html").write_text(body, encoding="utf-8")
+    if a.delivery == "inline":
+        blk = "<!-- wp:html -->" + chr(10) + (fragment).strip() + chr(10) + "<!-- /wp:html -->" + chr(10)
+        (out / "production-replacement-block.html").write_text(blk, encoding="utf-8")
 
     manifest = {"schema": "fv-flagship-candidate-stage-v1", "local_only": True,
                 "files": {str(p.relative_to(out)).replace("\\", "/"): sha(p.read_bytes())

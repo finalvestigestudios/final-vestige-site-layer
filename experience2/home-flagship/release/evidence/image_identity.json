@@ -1,0 +1,20 @@
+{
+  "apollo": {
+    "ncc": 0.9999,
+    "source_sha256": "73b1d25fcb1fd246574209b2d1ff85f5bc85203c43ce2989f4b478985e34d9b4",
+    "site_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1",
+    "site_sha256": "21d1822ed5558200822b050a6addfcdbb3cd9f185210bddf6a3b311bd47716a6"
+  },
+  "franklin": {
+    "ncc": 0.9998,
+    "source_sha256": "c416ddf4fda1928216cff2f33dfbd0bf1bac32f30d5157ab8bae8af19b5b1eac",
+    "site_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1",
+    "site_sha256": "addddf3aa66a2ffec498c1db46e0323eece2123091585de34eadd5080e4f614d"
+  },
+  "malbone": {
+    "ncc": 0.9982,
+    "source_sha256": "af807e6c5b499dbd344b45ef9961373ba2d78d73565cfd4783a11ac0f0a77202",
+    "site_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1",
+    "site_sha256": "321d00479e801532dd7790c46d72e8ded9cf4af3e30467f473eded1359882ed8"
+  }
+}

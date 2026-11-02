@@ -1,0 +1,381 @@
+{
+ "note": "LAB results (Lighthouse 12.6.1, simulated throttling). Not field Core Web Vitals. direct_stage = Playground (uncompressed, 1-1.6s PHP-WASM TTFB); proxy_gzip_cache = same pages via cache_proxy.py (isolates front-end cost, NOT production); live_baseline = current public homepage measured 2026-11-02 with the identical config (earlier run, before final CSS polish).",
+ "direct_stage": {
+  "mobile": {
+   "runs": [
+    {
+     "performance": 67,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 2718,
+     "LCP_ms": 6393,
+     "TBT_ms": 248,
+     "CLS": 0,
+     "TTFB_ms": 1109,
+     "transfer_KB": 1044,
+     "requests": 21,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 56,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 3081,
+     "LCP_ms": 6162,
+     "TBT_ms": 541,
+     "CLS": 0,
+     "TTFB_ms": 1452,
+     "transfer_KB": 989,
+     "requests": 20,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 57,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 3082,
+     "LCP_ms": 6082,
+     "TBT_ms": 531,
+     "CLS": 0,
+     "TTFB_ms": 1200,
+     "transfer_KB": 989,
+     "requests": 20,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    }
+   ],
+   "median": {
+    "performance": 57,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 92,
+    "FCP_ms": 3081,
+    "LCP_ms": 6162,
+    "TBT_ms": 531,
+    "CLS": 0,
+    "TTFB_ms": 1200,
+    "transfer_KB": 989,
+    "requests": 20
+   }
+  },
+  "desktop": {
+   "runs": [
+    {
+     "performance": 95,
+     "accessibility": 93,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 653,
+     "LCP_ms": 1190,
+     "TBT_ms": 87,
+     "CLS": 0,
+     "TTFB_ms": 1158,
+     "transfer_KB": 1125,
+     "requests": 23,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 93,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 559,
+     "LCP_ms": 1189,
+     "TBT_ms": 166,
+     "CLS": 0,
+     "TTFB_ms": 948,
+     "transfer_KB": 1125,
+     "requests": 23,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 97,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 607,
+     "LCP_ms": 1188,
+     "TBT_ms": 53,
+     "CLS": 0,
+     "TTFB_ms": 902,
+     "transfer_KB": 1125,
+     "requests": 23,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    }
+   ],
+   "median": {
+    "performance": 95,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 92,
+    "FCP_ms": 607,
+    "LCP_ms": 1189,
+    "TBT_ms": 87,
+    "CLS": 0,
+    "TTFB_ms": 948,
+    "transfer_KB": 1125,
+    "requests": 23
+   }
+  }
+ },
+ "proxy_gzip_cache": {
+  "mobile": {
+   "runs": [
+    {
+     "performance": 75,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 77,
+     "FCP_ms": 1638,
+     "LCP_ms": 4580,
+     "TBT_ms": 279,
+     "CLS": 0,
+     "TTFB_ms": 0,
+     "transfer_KB": 648,
+     "requests": 19,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 75,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 77,
+     "FCP_ms": 1619,
+     "LCP_ms": 4578,
+     "TBT_ms": 276,
+     "CLS": 0,
+     "TTFB_ms": 0,
+     "transfer_KB": 648,
+     "requests": 19,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 75,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 77,
+     "FCP_ms": 1629,
+     "LCP_ms": 4577,
+     "TBT_ms": 278,
+     "CLS": 0,
+     "TTFB_ms": 1,
+     "transfer_KB": 648,
+     "requests": 19,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    }
+   ],
+   "median": {
+    "performance": 75,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 77,
+    "FCP_ms": 1629,
+    "LCP_ms": 4578,
+    "TBT_ms": 278,
+    "CLS": 0,
+    "TTFB_ms": 0,
+    "transfer_KB": 648,
+    "requests": 19
+   }
+  },
+  "desktop": {
+   "runs": [
+    {
+     "performance": 99,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 77,
+     "FCP_ms": 350,
+     "LCP_ms": 998,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "TTFB_ms": 0,
+     "transfer_KB": 784,
+     "requests": 22,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 99,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 77,
+     "FCP_ms": 430,
+     "LCP_ms": 995,
+     "TBT_ms": 46,
+     "CLS": 0,
+     "TTFB_ms": 0,
+     "transfer_KB": 784,
+     "requests": 22,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 99,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 77,
+     "FCP_ms": 432,
+     "LCP_ms": 991,
+     "TBT_ms": 22,
+     "CLS": 0,
+     "TTFB_ms": 0,
+     "transfer_KB": 784,
+     "requests": 22,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    }
+   ],
+   "median": {
+    "performance": 99,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 77,
+    "FCP_ms": 430,
+    "LCP_ms": 995,
+    "TBT_ms": 22,
+    "CLS": 0,
+    "TTFB_ms": 0,
+    "transfer_KB": 784,
+    "requests": 22
+   }
+  }
+ },
+ "live_baseline": {
+  "mobile": {
+   "runs": [
+    {
+     "performance": 65,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 2054,
+     "LCP_ms": 6174,
+     "TBT_ms": 404,
+     "CLS": 0.007,
+     "TTFB_ms": 805,
+     "transfer_KB": 1296,
+     "requests": 33,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 58,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 3491,
+     "LCP_ms": 9210,
+     "TBT_ms": 265,
+     "CLS": 0,
+     "TTFB_ms": 31,
+     "transfer_KB": 1287,
+     "requests": 33,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 54,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 3073,
+     "LCP_ms": 9941,
+     "TBT_ms": 448,
+     "CLS": 0,
+     "TTFB_ms": 34,
+     "transfer_KB": 1269,
+     "requests": 33,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    }
+   ],
+   "median": {
+    "performance": 58,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 92,
+    "FCP_ms": 3073,
+    "LCP_ms": 9210,
+    "TBT_ms": 404,
+    "CLS": 0,
+    "TTFB_ms": 34,
+    "transfer_KB": 1287,
+    "requests": 33
+   }
+  },
+  "desktop": {
+   "runs": [
+    {
+     "performance": 97,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 654,
+     "LCP_ms": 1280,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "TTFB_ms": 35,
+     "transfer_KB": 1843,
+     "requests": 37,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 96,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 604,
+     "LCP_ms": 1430,
+     "TBT_ms": 15,
+     "CLS": 0,
+     "TTFB_ms": 22,
+     "transfer_KB": 1843,
+     "requests": 37,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    },
+    {
+     "performance": 96,
+     "accessibility": 96,
+     "bestPractices": 100,
+     "seo": 92,
+     "FCP_ms": 590,
+     "LCP_ms": 1420,
+     "TBT_ms": 0,
+     "CLS": 0,
+     "TTFB_ms": 31,
+     "transfer_KB": 1825,
+     "requests": 37,
+     "lighthouse": "12.6.1",
+     "throttling": "simulate"
+    }
+   ],
+   "median": {
+    "performance": 96,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 92,
+    "FCP_ms": 604,
+    "LCP_ms": 1420,
+    "TBT_ms": 0,
+    "CLS": 0,
+    "TTFB_ms": 31,
+    "transfer_KB": 1843,
+    "requests": 37
+   }
+  }
+ }
+}
