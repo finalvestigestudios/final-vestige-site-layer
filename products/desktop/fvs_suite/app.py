@@ -73,11 +73,12 @@ def _ledger_stacked_rows(input_count):
     return {
         "inputs": inputs,
         "keys": ((first, first + 1), (first + 2, first + 3)),
-        "output": (first + 4, first + 5, first + 6),
-        "status": first + 7,
-        "generate": first + 8,
-        "disclaimer": first + 9,
-        "hint": first + 10,
+        "amounts": ((first + 4, first + 5), (first + 6, first + 7)),
+        "output": (first + 8, first + 9, first + 10),
+        "status": first + 11,
+        "generate": first + 12,
+        "disclaimer": first + 13,
+        "hint": first + 14,
     }
 
 
@@ -157,6 +158,17 @@ def run(app_id):
             ttk.Entry(frame, textvariable=variable, width=1).grid(
                 row=entry_row, column=0, columnspan=3,
                 sticky="ew", pady=7)
+    ledger_amount_columns = None
+    if ledger_layout:
+        ledger_amount_columns = (tk.StringVar(), tk.StringVar())
+        for side, variable in enumerate(ledger_amount_columns):
+            label_row, entry_row = ledger_layout["amounts"][side]
+            label = ("Left" if side == 0 else "Right") + " amount CSV header (optional)"
+            ui_label(frame, text=label).grid(
+                row=label_row, column=0, columnspan=3, sticky="ew",
+                padx=(0, 12), pady=7)
+            ttk.Entry(frame, textvariable=variable, width=1).grid(
+                row=entry_row, column=0, columnspan=3, sticky="ew", pady=7)
     invoice_window = tk.StringVar(value="7") if app_id == "invoices" else None
     if invoice_window is not None:
         ui_label(frame, text="Near-match days (0-365)", wraplength=220).grid(
@@ -214,7 +226,9 @@ def run(app_id):
                 outputs = action(
                     *args, output.get().strip(),
                     left_match_column=ledger_columns[0].get().strip() or None,
-                    right_match_column=ledger_columns[1].get().strip() or None)
+                    right_match_column=ledger_columns[1].get().strip() or None,
+                    left_amount_column=ledger_amount_columns[0].get().strip() or None,
+                    right_amount_column=ledger_amount_columns[1].get().strip() or None)
             elif app_id == "invoices":
                 outputs = action(*args, output.get().strip(),
                                  window_days=engine.invoice_window_days(
@@ -259,7 +273,7 @@ def run(app_id):
     hint = (f"Keyboard: Alt+1..{len(labels)} focus an input; Ctrl+1..{len(labels)} browse; "
             "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
     if app_id == "ledger":
-        hint += "; Tab to optional left/right match headers (blank = automatic)"
+        hint += "; Tab to optional left/right match and amount headers (blank = automatic)"
     if app_id == "invoices":
         hint += "; Tab to near-match day window (0-365; default 7)"
     if premium:

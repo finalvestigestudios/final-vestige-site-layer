@@ -19,14 +19,15 @@ class LedgerResponsiveLayoutR133(unittest.TestCase):
     def test_exact_two_input_row_plan(self):
         self.assertEqual(self.plan["inputs"], ((3, 4, 5), (6, 7, 8)))
         self.assertEqual(self.plan["keys"], ((9, 10), (11, 12)))
-        self.assertEqual(self.plan["output"], (13, 14, 15))
+        self.assertEqual(self.plan["amounts"], ((13, 14), (15, 16)))
+        self.assertEqual(self.plan["output"], (17, 18, 19))
 
     def test_each_rendered_control_gets_its_own_row(self):
         rows = tuple(v for group in
-                     (self.plan["inputs"] + self.plan["keys"] +
+                     (self.plan["inputs"] + self.plan["keys"] + self.plan["amounts"] +
                       (self.plan["output"],))
                      for v in group)
-        self.assertEqual(rows, tuple(range(3, 16)))
+        self.assertEqual(rows, tuple(range(3, 20)))
         self.assertEqual(len(rows), len(set(rows)))
 
     def test_first_controls_preserve_native_tab_creation_order(self):
@@ -35,14 +36,16 @@ class LedgerResponsiveLayoutR133(unittest.TestCase):
         self.assertLess(fields[0][2], fields[1][1])
         self.assertLess(fields[1][2], self.plan["keys"][0][1])
         self.assertLess(self.plan["keys"][0][1], self.plan["keys"][1][1])
-        self.assertLess(self.plan["keys"][1][1], self.plan["output"][1])
+        self.assertLess(self.plan["keys"][1][1], self.plan["amounts"][0][1])
+        self.assertLess(self.plan["amounts"][0][1], self.plan["amounts"][1][1])
+        self.assertLess(self.plan["amounts"][1][1], self.plan["output"][1])
         self.assertLess(self.plan["output"][1], self.plan["output"][2])
 
     def test_actions_and_hint_follow_every_editable_control(self):
-        self.assertEqual(self.plan["status"], 16)
-        self.assertEqual(self.plan["generate"], 17)
-        self.assertEqual(self.plan["disclaimer"], 18)
-        self.assertEqual(self.plan["hint"], 19)
+        self.assertEqual(self.plan["status"], 20)
+        self.assertEqual(self.plan["generate"], 21)
+        self.assertEqual(self.plan["disclaimer"], 22)
+        self.assertEqual(self.plan["hint"], 23)
         self.assertGreater(self.plan["generate"], self.plan["output"][2])
 
     def test_title_and_disclaimer_rows_are_not_overwritten(self):
@@ -60,7 +63,7 @@ class LedgerResponsiveLayoutR133(unittest.TestCase):
 
     def test_mutating_returned_map_does_not_modify_future_layout(self):
         self.plan["status"] = -123
-        self.assertEqual(app._ledger_stacked_rows(2)["status"], 16)
+        self.assertEqual(app._ledger_stacked_rows(2)["status"], 20)
 
     def test_production_ui_selects_stacked_ledger_only(self):
         source = inspect.getsource(app.run)

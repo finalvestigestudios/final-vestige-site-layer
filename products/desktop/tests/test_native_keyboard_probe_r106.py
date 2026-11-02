@@ -13,13 +13,13 @@ def fixture(app_id="ledger"):
     invoices = app_id == "invoices"
     return dict(
         window_title=title,
-        entry_count=count + 1 + (2 if ledger else 1 if invoices else 0),
+        entry_count=count + 1 + (4 if ledger else 1 if invoices else 0),
         traversal=audit._expected_order(count, ledger_keys=ledger,
                                         invoice_window=invoices),
         cycle_closed=True,
         bindings=audit._expected_bindings(count),
         first_focus=True,
-        static_labels=labels + (audit.LEDGER_KEY_LABELS if ledger else ())
+        static_labels=labels + (audit.LEDGER_KEY_LABELS + audit.LEDGER_AMOUNT_LABELS if ledger else ())
                       + ((audit.INVOICE_WINDOW_LABEL,) if invoices else ()) + (
             "Output folder",
             "Local-first review tools. Findings are not audit, legal, or fraud determinations.",
