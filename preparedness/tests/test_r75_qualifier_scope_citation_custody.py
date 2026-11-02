@@ -124,6 +124,22 @@ class Baseline(unittest.TestCase):
                         ("citations_without_DOM_block_UNRESOLVED","citations_without_DOM_block_UNRESOLVED")):
             self.assertEqual(p[old],x[new])
 
+    def test_collision_review_lists_cannot_be_dropped(self):
+        p=sample();r=self.make(p)
+        self.assertEqual(len(r["shared_URL_scope_collisions_NOT_REVIEWED"]),
+                         len(p["shared_URL_scope_collisions_NOT_REVIEWED"]))
+        self.assertEqual(len(r["reused_ID_scope_collisions_NOT_REVIEWED"]),
+                         len(p["reused_ID_scope_collisions_NOT_REVIEWED"]))
+        self.assertEqual(len(r["uncited_source_readings_NOT_REVIEWED"]),
+                         len(p["uncited_source_readings_NOT_REVIEWED"]))
+
+    def test_origin_scoped_reviewer_inventory_is_readonly(self):
+        r=self.make()
+        self.assertTrue(all(g["human_scope_resolution"]=="NOT_REVIEWED"
+            for g in r["shared_URL_scope_collisions_NOT_REVIEWED"]))
+        self.assertTrue(all(g["human_scope_resolution"]=="NOT_REVIEWED"
+            for g in r["reused_ID_scope_collisions_NOT_REVIEWED"]))
+
     def test_full_citation_conservation(self):
         self.assertEqual(self.make()["counts"]["citation_occurrences"],3)
 
@@ -298,6 +314,23 @@ FAULTS={
     "quantity_citation":lambda p:qty_mutation(p,"original_R72_task_sha256","f"*64),
     "quantity_safety":lambda p:qty_mutation(p,"qualified_safety_review","PASS"),
     "quantity_total":lambda p:p["counts"].update(numeric_unit_occurrences=999),
+    "shared_group_removed":lambda p:p["shared_URL_scope_collisions_NOT_REVIEWED"].pop(),
+    "reused_group_removed":lambda p:p["reused_ID_scope_collisions_NOT_REVIEWED"].pop(),
+    "uncited_origin_removed":lambda p:p["uncited_source_readings_NOT_REVIEWED"].pop(),
+    "shared_fake_safety":lambda p:p["shared_URL_scope_collisions_NOT_REVIEWED"][0].update(
+        human_scope_resolution="APPROVED"),
+    "shared_value_altered":lambda p:p["shared_URL_scope_collisions_NOT_REVIEWED"][0].update(
+        value="https://wrong.example.org"),
+    "reused_id_altered":lambda p:p["reused_ID_scope_collisions_NOT_REVIEWED"][0].update(
+        value="source-not-in-register"),
+    "document_source_scope_dropped":lambda p:doc_mutation(p,
+        "origin_scoped_sources_USED_NOT_SUPPORT_APPROVED",[]),
+    "document_block_census":lambda p:doc_mutation(p,"unabridged_block_count",-1),
+    "citation_preferred_unresolved":lambda p:citation_mutation(p,
+        "preferred_identity_NOT_APPROVED",["fictional","source"]),
+    "unattached_forged":lambda p:p["citations_without_DOM_block_UNRESOLVED"].append(
+        {"kind":"article","slug":"first","source_id":"forged",
+         "citation_ordinal":999,"review_state":"APPROVED"}),
     "qualifier_parent_fingerprint":lambda p:p.update(original_R73_evidence_fingerprint_sha256="not-a-sha"),
 }
 
