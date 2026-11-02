@@ -31,16 +31,19 @@ class LibraryTests(unittest.TestCase):
                 self.assertEqual(st, "not-started")
 
     def test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source(self):
+        # Self-contained: the test makes its own placeholder, so it never depends on which real register entries are still unverified.
+        base = ROOT / "sources" / "fragments" / "_a_placeholder_test.json"
         frag = ROOT / "sources" / "fragments" / "_upgrade_test.json"
-        entry = '{"sources": [{"id": "nchfp-jerky", "title": "Jerky", "url": "https://nchfp.uga.edu/how/dry/recipes/jerky", "kind": "extension", "publisher": "NCHFP", "verified_on": "2026-10-29", "supports": "x"}]}'
-        frag.write_text(entry, encoding="utf-8")
+        base.write_text('{"sources": [{"id": "zz-placeholder", "title": "Placeholder", "url": "https://example.gov/placeholder", "kind": "extension", "publisher": "x", "verified_on": null}]}', encoding="utf-8")
+        frag.write_text('{"sources": [{"id": "zz-placeholder", "title": "Placeholder", "url": "https://example.gov/placeholder", "kind": "extension", "publisher": "x", "verified_on": "2026-10-29", "supports": "x"}]}', encoding="utf-8")
         try:
             lib = build.Library()
-            self.assertEqual(lib.register["nchfp-jerky"]["verified_on"], "2026-10-29")
+            self.assertEqual(lib.register["zz-placeholder"]["verified_on"], "2026-10-29")
             errors, _ = validate.validate(lib)
             self.assertFalse([e for e in errors if "duplicate url" in e], errors)
         finally:
             frag.unlink()
+            base.unlink()
 
     def test_register_fragments_cannot_duplicate_ids(self):
         frag = ROOT / "sources" / "fragments" / "_dup_test.json"
@@ -63,10 +66,15 @@ class LibraryTests(unittest.TestCase):
         self.assertTrue(any("CANNOT be published" in e for e in errors), errors)
 
     def test_unverified_source_cannot_be_cited(self):
-        lib = build.Library()
-        lib.articles["making-water-safer"]["_body"] += " {{cite:nchfp-jerky}}"
-        errors, _ = validate.validate(lib)
-        self.assertTrue(any("unverified source" in e for e in errors), errors)
+        frag = ROOT / "sources" / "fragments" / "_unverified_test.json"
+        frag.write_text('{"sources": [{"id": "zz-unverified", "title": "Unverified", "url": "https://example.gov/unverified", "kind": "extension", "publisher": "x", "verified_on": null}]}', encoding="utf-8")
+        try:
+            lib = build.Library()
+            lib.articles["making-water-safer"]["_body"] += " {{cite:zz-unverified}}"
+            errors, _ = validate.validate(lib)
+            self.assertTrue(any("unverified source" in e for e in errors), errors)
+        finally:
+            frag.unlink()
 
     def test_unknown_citation_is_an_error(self):
         lib = build.Library()

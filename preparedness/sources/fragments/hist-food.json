@@ -197,18 +197,18 @@
       "notes": "A 2002 overview that gives some claims without citation (for example 12,000 B.C. drying, ketchup origins). We use only the dated canning, curing and refrigeration statements, and flag the rest as undocumented. Extent read: full page text, live scrape."
     },
     {
-      "id": "hist-food-nchfp-jerky",
+      "id": "nchfp-jerky",
       "title": "Jerky",
       "publisher": "National Center for Home Food Preservation, University of Georgia (from So Easy to Preserve, 6th ed., Bulletin 989)",
       "kind": "extension",
-      "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+      "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
       "published": "2014",
       "updated": null,
       "reviewed": null,
       "verified_on": "2026-10-29",
       "human_link_check": false,
       "supports": "Jerky raw-meat hazards; wild game and pork trichinella treatment; heating meat strips to 160 F either in marinade before drying or in an oven after drying; fecal contamination of game; properly dried jerky keeps at room temperature two weeks in a sealed container.",
-      "notes": "Same page as the register placeholder 'nchfp-jerky' (read at the URL without the trailing slash; both return HTTP 200). Defined under a new id because the shared test suite uses 'nchfp-jerky' as its permanent unverified-placeholder fixture. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky. Extent read: full page text, live scrape."
+      "notes": "Upgrades the register placeholder of the same id. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky. Extent read: full page text, live scrape."
     },
     {
       "id": "hist-food-fsis-jerky",
