@@ -10,6 +10,46 @@ from __future__ import annotations
 from pathlib import Path
 from urllib.parse import urlsplit, parse_qs
 
+ARCHIVAL_MEDIA = {'apollo': 's67-19766.webp',
+                  'franklin': 'Franklinexpeditionnote.jpg'}
+
+
+def allowed_archive_url(url: str, case: str) -> bool:
+    """Accept only exact audited photo identities on first-party or WP image CDN."""
+    filename = ARCHIVAL_MEDIA.get(case)
+    if not filename or not isinstance(url, str):
+        return False
+    try:
+        p = urlsplit(url)
+        if (p.scheme != 'https' or p.username is not None or p.password is not None
+                or p.port not in (None, 443) or p.fragment):
+            return False
+        source = '/wp-content/uploads/2026/08/' + filename
+        return ((p.hostname == 'finalvestige.com' and p.path == source)
+                or (p.hostname == 'i0.wp.com' and
+                    p.path == '/finalvestige.com' + source))
+    except (ValueError, TypeError):
+        return False
+
+
+def loaded_archive_photo(locator, case: str) -> bool:
+    """A real image decoded on the saved frontend, not metadata alone."""
+    if locator.count() != 1:
+        return False
+    try:
+        locator.scroll_into_view_if_needed(timeout=12000)
+        locator.evaluate('img => img.decode().catch(() => null)')
+        data = locator.evaluate("""img => ({
+          url: img.currentSrc || img.src,
+          complete: img.complete, width: img.naturalWidth,
+          height: img.naturalHeight
+        })""")
+        return bool(data['complete'] and data['width'] > 0 and
+                    data['height'] > 0 and allowed_archive_url(data['url'], case))
+    except Exception:
+        return False
+
+
 CHAPTERS = ('fv-hf-title', 'fv-hf-chronicle', 'fv-hf-evidence', 'fv-hf-inquiry',
             'fv-hf-method-title', 'fv-hf-observer', 'fv-hf-mind-title')
 CASES = ('apollo', 'franklin', 'malbone')
@@ -19,7 +59,7 @@ def validate_saved_preview(url: str, page_id: int) -> None:
     """Fail closed on production, arbitrary hosts, ports, tokens or wrong drafts."""
     try:
         p = urlsplit(url)
-        query = parse_qs(p.query, strict_parsing=True)
+        query = parse_qs(p.query, strict_parsing=True, keep_blank_values=True)
         allowed = (p.scheme == 'http' and p.hostname == '127.0.0.1'
                    and p.port == 9400 and p.username is None and p.password is None
                    and p.path == '/' and not p.fragment
@@ -53,7 +93,8 @@ def check_saved_frontend(page, page_id: int, axe_source: str, out: Path) -> dict
               'hosted_wordpress_compatibility': 'NOT_TESTED',
               'manual_assistive_technology': 'NOT_TESTED',
               'production_writes': False}
-    for width, height in ((390, 844), (1440, 900)):
+    for width, height in ((320, 844), (390, 844), (768, 1024),
+                          (1440, 900), (1920, 1080)):
         page.set_viewport_size({'width': width, 'height': height})
         page.evaluate('window.scrollTo(0,0)')
         key = str(width)
@@ -74,6 +115,11 @@ def check_saved_frontend(page, page_id: int, axe_source: str, out: Path) -> dict
             button.click(timeout=12000)
             report['checks']['case_' + case_id + '_' + key] = (
                 button.get_attribute('aria-pressed') == 'true' and panel.is_visible())
+            if case_id in ARCHIVAL_MEDIA:
+                # Separate from iframe media admission: WordPress's saved-page
+                # markup must itself decode and identify the authentic source.
+                report['checks']['native_archive_' + case_id + '_' + key] = (
+                    loaded_archive_photo(panel.locator('img[data-fv-archive-img]'), case_id))
             if case_id == 'malbone':
                 report['checks']['nypl_image_absent_' + key] = panel.locator('img').count() == 0
                 report['checks']['rights_safe_source_plate_' + key] = (
@@ -121,17 +167,15 @@ def check_saved_frontend(page, page_id: int, axe_source: str, out: Path) -> dict
             for case_id in CASES)
         fallback = nojs.locator('img[data-fv-noscript-archive]')
         report['checks']['saved_nojs_two_archives'] = fallback.count() == 2
-        if fallback.count() == 2:
-            try:
-                nojs.wait_for_function("""() => [...document.querySelectorAll(
-                  'img[data-fv-noscript-archive]')].every(e =>
-                    e.complete && e.naturalWidth > 0 && e.naturalHeight > 0)""",
-                    timeout=15000)
-                report['checks']['saved_nojs_archives_loaded'] = True
-            except Exception:
-                report['checks']['saved_nojs_archives_loaded'] = False
-        else:
-            report['checks']['saved_nojs_archives_loaded'] = False
+        # JavaScript-disabled photos must be the *actual* Apollo/Franklin
+        # captures, not arbitrary replacement files with nonzero dimensions.
+        # Playwright's locator evaluates in its isolated automation world.
+        report['checks']['saved_nojs_archives_loaded'] = (
+            fallback.count() == 2 and all(
+                loaded_archive_photo(
+                    nojs.locator('[data-fv-case="' + case + '"] '
+                                 'img[data-fv-noscript-archive]'), case)
+                for case in ARCHIVAL_MEDIA))
         report['checks']['saved_nojs_nypl_image_absent'] = (
             nojs.locator('[data-fv-case="malbone"] img').count() == 0)
         nojs.evaluate('window.scrollTo(0,0)')
