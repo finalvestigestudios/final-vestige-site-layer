@@ -141,6 +141,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r142.py
           python -OO products/desktop/scripts/safe_unittest_r142.py
+      - name: R143 local report replay and source-custody tests (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r143.py
+          python -OO products/desktop/scripts/safe_unittest_r143.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -473,6 +477,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R142 Invoice Twin evidence FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r142.py
           if ($LASTEXITCODE -ne 0) { throw "R142 optimized Invoice Twin evidence FAILED" }
+      - name: R143 local report replay and source-custody tests (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r143.py
+          if ($LASTEXITCODE -ne 0) { throw "R143 replay evidence FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r143.py
+          if ($LASTEXITCODE -ne 0) { throw "R143 optimized replay evidence FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
