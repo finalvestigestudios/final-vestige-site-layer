@@ -42,7 +42,7 @@ async function main() {
     await probe.goto(REVIEW,{waitUntil:'domcontentloaded',timeout:45000});
     const frame=probe.locator('iframe[title="'+FRAME_TITLE+'"]');
     await frame.waitFor({state:'attached',timeout:20000});
-    if ((await frame.getAttribute('sandbox')||'').split(/\\s+/).sort().join(' ')!==
+    if ((await frame.getAttribute('sandbox')||'').split(/\s+/).sort().join(' ')!==
         ['allow-popups','allow-scripts'].sort().join(' ')) throw Error('PREVIEW_SANDBOX_CHANGED');
     const src=await frame.getAttribute('src');
     if (!src) throw Error('PRIVATE_RENDERER_MISSING');
@@ -82,15 +82,15 @@ async function main() {
     const rec=buildReceipt(results,sha);
     // This file is the only Lighthouse artifact. NEVER persist raw LHR, devtools
     // trace, private URL, browser cookies, redirects or diagnosis stack.
-    writeFileSync(resolve(out,'LIGHTHOUSE_PRIVATE_LAB.json'),JSON.stringify(rec,null,2)+'\\n',{mode:0o600});
-    process.stdout.write('LIGHTHOUSE_PRIVATE_LAB_RECEIPT_WRITTEN\\n');
+    writeFileSync(resolve(out,'LIGHTHOUSE_PRIVATE_LAB.json'),JSON.stringify(rec,null,2)+'\n',{mode:0o600});
+    process.stdout.write('LIGHTHOUSE_PRIVATE_LAB_RECEIPT_WRITTEN\n');
   } finally {await probe.close();}
 }
 try {await main();}
 catch(e) {
   // Error messages can contain protected URLs from third-party libraries.
   // Export ONLY a bounded static failure type; no exception detail.
-  process.stderr.write('LIGHTHOUSE_PRIVATE_GATE_HOLD\\n');
+  process.stderr.write('LIGHTHOUSE_PRIVATE_GATE_HOLD\n');
   process.exitCode=2;
 } finally {
   try{await browser?.close();}catch{}
