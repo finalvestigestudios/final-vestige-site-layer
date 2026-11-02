@@ -15,6 +15,7 @@ from wp_readiness_r69 import wait_for_wordpress, ReadinessFailure, diagnose_priv
 from wp_case_ledger_r72 import CaseLedger
 from wp_pdf_custody_r74 import verify_wordpress_print_page
 from wp_accessibility_r74 import verify_installed_controls
+from wp_pdf_pagination_r75 import prepare_review_pdf
 
 BASE='http://127.0.0.1:9438/'
 SLUG='fv-apollo-review-private'
@@ -331,6 +332,14 @@ def accept(stage,axe,out):
                             page,out/'R74_AUTHENTIC_WP_PRINT_1440.pdf')
                         (out/'R74_PRINT_CUSTODY_RECEIPT.json').write_text(
                             json.dumps(report['r74_print_pdf'],indent=2,sort_keys=True)+'\n')
+                        # R75: a *separate* source-reverified PDF copy removes
+                        # proven decorative-only terminal paper pages. Preserve
+                        # the original Chromium PDF unmodified for forensic QA.
+                        original_pdf = (out/'R74_AUTHENTIC_WP_PRINT_1440.pdf').read_bytes()
+                        _, report['r75_pagination'] = prepare_review_pdf(
+                            original_pdf, out/'R75_SOURCE_SAFE_PRINT_REVIEW.pdf')
+                        (out/'R75_PAGINATION_RECEIPT.json').write_text(
+                            json.dumps(report['r75_pagination'],indent=2,sort_keys=True)+'\n')
                     ledger.advance('NO_JS_CONTENT')
                 ledger.pass_case()
                 report['cases'].append({'width':w,'js':js,'pass':True})
