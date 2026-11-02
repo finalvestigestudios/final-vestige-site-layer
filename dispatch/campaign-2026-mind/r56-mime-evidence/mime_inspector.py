@@ -145,17 +145,35 @@ class VisibleHTML(HTMLParser):
         return " ".join(self.words)
 
 
+def _reader_body_parts(part: object, omitted: dict):
+    """Analyze reader-facing top-level MIME content, not attached/forwarded mail.
+
+    email.message.walk() descends into attached message/rfc822 objects; checking
+    only the leaf's disposition can falsely count a forwarded disclosure as
+    a disclosure present in the actual newsletter.
+    """
+    if part.get_content_disposition() == "attachment" or part.get_filename():
+        omitted["attachments"] += 1
+        return
+    if part.get_content_type() == "message/rfc822":
+        omitted["encapsulated"] += 1
+        return
+    if part.is_multipart():
+        for child in part.iter_parts():
+            yield from _reader_body_parts(child, omitted)
+        return
+    if part.get_content_type() in {"text/plain", "text/html"}:
+        yield part
+
+
 def parse_parts(raw: bytes) -> tuple[object, str, str, VisibleHTML]:
     if len(raw) > MAX_BYTES:
         raise ValueError("MESSAGE_TOO_LARGE")
     message = BytesParser(policy=policy.default).parsebytes(raw)
     plain: list[str] = []
     html: list[str] = []
-    for part in message.walk():
-        if part.is_multipart() or part.get_content_disposition() == "attachment":
-            continue
-        if part.get_content_type() not in {"text/plain", "text/html"}:
-            continue
+    omitted = {"attachments": 0, "encapsulated": 0}
+    for part in _reader_body_parts(message, omitted):
         try:
             content = part.get_content()
         except (UnicodeError, LookupError, ValueError):
@@ -164,6 +182,10 @@ def parse_parts(raw: bytes) -> tuple[object, str, str, VisibleHTML]:
             continue
         (html if part.get_content_type() == "text/html" else plain).append(content)
     scan = VisibleHTML()
+    scan.plain_body_part_count = len(plain)
+    scan.html_body_part_count = len(html)
+    scan.attachment_count = omitted["attachments"]
+    scan.encapsulated_message_count = omitted["encapsulated"]
     if html:
         scan.feed("\n".join(html))
         scan.close()
@@ -207,11 +229,17 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
     plain_early_disclosure = bool(DISCLOSURE.search(" ".join(plain.split()[:85])))
     html_early_disclosure = bool(DISCLOSURE.search(" ".join(parsed.text.split()[:85])))
     disclosure_parity = ((not plain.strip() or plain_early_disclosure)
-                         and (not html.strip() or html_early_disclosure))
+                         and (not html.strip() or html_early_disclosure)
+                         and parsed.plain_body_part_count <= 1
+                         and parsed.html_body_part_count <= 1)
     links = set(parsed.all_links)
     links.update(URL.findall(plain))
     sellers = sum(1 for link in links if domain_is_seller(link))
     commercial = edition.get("number") in {3, 5}
+    duplicate_headers = sum(
+        max(0, len(message.get_all(name, [])) - 1)
+        for name in ("From", "Subject", "List-Unsubscribe")
+    )
     observed = {
         "schema_version": 1,
         "issue": edition["number"],
@@ -219,6 +247,11 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
         "source_is_received_message_independently_attested": False,
         "has_text_plain": bool(plain.strip()),
         "has_text_html": bool(html.strip()),
+        "top_level_text_plain_part_count": parsed.plain_body_part_count,
+        "top_level_text_html_part_count": parsed.html_body_part_count,
+        "ignored_attachment_or_named_part_count": parsed.attachment_count,
+        "ignored_inline_forwarded_message_count": parsed.encapsulated_message_count,
+        "duplicate_relevant_header_count": duplicate_headers,
         "subject_equals_canonical": subject == normalize(edition.get("subject", "")),
         "from_display_equals_final_vestige": sender_display == "final vestige",
         "commercial_slot": commercial,
@@ -252,6 +285,16 @@ def inspect_bytes(raw: bytes, edition: dict, *, postal_address: str | None = Non
     ]
     if origin == "synthetic":
         holds.append("NO_ACTUAL_RECEIVED_EMAIL_EVIDENCE")
+    if not plain.strip() and not html.strip():
+        holds.append("NO_READABLE_TOP_LEVEL_MESSAGE_BODY")
+    if parsed.attachment_count:
+        holds.append("ATTACHMENT_PRESENT_HUMAN_REVIEW")
+    if parsed.encapsulated_message_count:
+        holds.append("INLINE_FORWARDED_MESSAGE_IGNORED")
+    if parsed.plain_body_part_count > 1 or parsed.html_body_part_count > 1:
+        holds.append("AMBIGUOUS_MULTIPLE_MIME_BODY_PARTS")
+    if duplicate_headers:
+        holds.append("AMBIGUOUS_DUPLICATE_MESSAGE_HEADERS")
     if not observed["subject_equals_canonical"]:
         holds.append("SUBJECT_MISMATCH")
     if not observed["from_display_equals_final_vestige"]:

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-02T05:30:53Z",
+  "source": "authenticated_wordpress_read_only_and_official_public_seller_pages",
+  "existing_campaign": {
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ],
+    "send_allowed": false,
+    "canonical_pr": 175,
+    "controls_pr": 201,
+    "source_sha": "7479c62bd52f4591646f8c830d26289dad7c8bf7"
+  },
+  "commerce": {
+    "named_publisher_acceptance": "UNVERIFIED",
+    "specific_email_promotion_permission": "UNVERIFIED",
+    "approved_creatives": "UNVERIFIED",
+    "verified_earning_link": "UNVERIFIED",
+    "actual_checkout_price": "UNVERIFIED",
+    "refund_execution": "UNVERIFIED",
+    "live_approved_buyer_guide": "UNVERIFIED"
+  },
+  "seller_pages": [
+    {
+      "issue": 3,
+      "name": "Zen12",
+      "official_page": "https://zen12.com/hnp",
+      "seller_described_format": [
+        "12-minute audio sessions",
+        "12 levels",
+        "four styles",
+        "48 MP3s in full library"
+      ],
+      "claims_not_independently_established": [
+        "12 minutes equals an hour of advanced meditation",
+        "specific brainwave effects",
+        "specific physical or cognitive outcomes"
+      ]
+    },
+    {
+      "issue": 5,
+      "name": "Hypnosis Live Total Focus",
+      "official_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_described_format": [
+        "33 minutes",
+        "47 MB download"
+      ],
+      "claims_not_independently_established": [
+        "100% on-demand sharp focus",
+        "brain reprogramming",
+        "guaranteed concentration and productivity outcomes"
+      ],
+      "public_price_discrepancy": "Current indexed capture differs from earlier observed page; final checkout unknown"
+    }
+  ],
+  "wordpress": {
+    "site_id": 256784396,
+    "newsletter_enabled": true,
+    "new_post_auto_email": false,
+    "content_format": "excerpt",
+    "reply_to": "no-reply",
+    "sender_display": "Final Vestige",
+    "recent_sends_reported": 0,
+    "subscribers_total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "counts_are_nonadditive": true,
+    "verified_unique_eligible_email_audience": false,
+    "welcome_message_contains_52_page_download": true,
+    "welcome_received_verified": false
+  },
+  "compliance": {
+    "real_received_email_verified": false,
+    "final_vestige_postal_address_verified": false,
+    "functional_unsubscribe_verified": false,
+    "founder_final_send_approval": false,
+    "send_allowed": false,
+    "legal_compliance_certified": false
+  },
+  "new_inspector": {
+    "scope": "reader_top_level_mime_only",
+    "attachment_content_is_never_release_evidence": true,
+    "duplicate_subject_from_unsubscribe_hold": true,
+    "ambiguous_multiple_body_parts_hold": true,
+    "origin_attestation_not_possible_offline": true,
+    "source_tests_target_count": 34
+  },
+  "references": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus"
+  ]
+}
