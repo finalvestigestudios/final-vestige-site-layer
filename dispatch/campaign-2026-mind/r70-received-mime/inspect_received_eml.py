@@ -55,25 +55,60 @@ def labelled_plain_optout(plain: str) -> bool:
 
 
 class VisibleHTML(HTMLParser):
-    """Extract visible body text and link *properties*, never raw href in results."""
+    """Conservative semantic-text extractor, never a real email render.
+
+    Hidden/head/template text and hidden link labels MUST NOT count as visible
+    legal footer, opt-out or disclosure evidence. CSS classes, media queries,
+    clipping and actual inbox rendering still require an authorized preview.
+    """
+    VOID = frozenset(("area", "base", "br", "col", "embed", "hr", "img",
+                      "input", "link", "meta", "param", "source", "track", "wbr"))
+    NON_CONTENT = frozenset(("head", "title", "script", "style", "noscript",
+                             "template", "svg"))
+    INLINE_HIDDEN = re.compile(
+        r"(?<![\\w-])display\\s*:\\s*none\\b"
+        r"|(?<![\\w-])visibility\\s*:\\s*(?:hidden|collapse)\\b"
+        r"|(?<![\\w-])opacity\\s*:\\s*0(?:\\s*!important)?\\s*(?:;|$)"
+        r"|(?<![\\w-])font-size\\s*:\\s*0(?:px|pt|rem|em|%)?"
+        r"(?:\\s*!important)?\\s*(?:;|$)",
+        re.I,
+    )
+
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.fragments: list[str] = []
         self.links: list[tuple[str, str]] = []
         self._current_href: str | None = None
         self._current_label: list[str] = []
-        self.skip_depth = 0
+        self._elements: list[tuple[str, bool]] = []
         self.html_lang_en = False
         self.has_interactive_or_script = False
         self.remote_image = False
+        self.hidden_node_encountered = False
+        self.css_visibility_ambiguous = False
+
+    def _hidden(self):
+        return any(hidden for _, hidden in self._elements)
 
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
         props = dict(attrs)
         if tag == "html" and (props.get("lang") or "").lower().startswith("en"):
             self.html_lang_en = True
-        if tag in ("script", "style", "noscript"):
-            self.skip_depth += 1
+        style = str(props.get("style") or "")
+        hidden_here = (
+            tag in self.NON_CONTENT or
+            "hidden" in props or
+            str(props.get("aria-hidden") or "").lower() == "true" or
+            bool(self.INLINE_HIDDEN.search(style))
+        )
+        if hidden_here:
+            self.hidden_node_encountered = True
+        if tag == "style" or (tag == "link" and
+            str(props.get("rel") or "").lower() == "stylesheet"):
+            self.css_visibility_ambiguous = True
+        if tag not in self.VOID:
+            self._elements.append((tag, hidden_here))
         if tag in ("script", "form", "iframe", "object", "embed"):
             self.has_interactive_or_script = True
         if any(k.lower().startswith("on") for k, _ in attrs):
@@ -81,20 +116,25 @@ class VisibleHTML(HTMLParser):
         if tag == "img" and str(props.get("src") or "").startswith(("https:", "http:")):
             self.remote_image = True
         if tag == "a":
-            self._current_href = str(props.get("href") or "")
+            # An invisible anchor must not count as a usable opt-out.
+            self._current_href = None if self._hidden() else str(props.get("href") or "")
             self._current_label = []
 
     def handle_endtag(self, tag):
         tag = tag.lower()
-        if tag in ("script", "style", "noscript") and self.skip_depth:
-            self.skip_depth -= 1
         if tag == "a" and self._current_href is not None:
             self.links.append((self._current_href, normal(" ".join(self._current_label))))
             self._current_href = None
             self._current_label = []
+        # Recover conservatively from malformed / misnested markup.
+        # A missing closing hidden tag fails closed for later text.
+        for pos in range(len(self._elements) - 1, -1, -1):
+            if self._elements[pos][0] == tag:
+                del self._elements[pos:]
+                break
 
     def handle_data(self, data):
-        if not self.skip_depth:
+        if not self._hidden():
             self.fragments.append(data)
             if self._current_href is not None:
                 self._current_label.append(data)
@@ -210,6 +250,8 @@ def audit_bytes(
         "visible_body_present": bool(visible.strip()),
         "html_lang_en_present": parsed.html_lang_en if html else None,
         "html_interactive_markup_detected": parsed.has_interactive_or_script,
+        "html_hidden_node_encountered": parsed.hidden_node_encountered if html else None,
+        "html_css_visibility_ambiguous": parsed.css_visibility_ambiguous if html else None,
         "remote_image_present": parsed.remote_image if html else None,
         "html_links_count": len(parsed.links),
         "unsubscribe_labeled_https_link_present": unsub_anchor,
