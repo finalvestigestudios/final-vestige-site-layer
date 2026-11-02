@@ -45,4 +45,8 @@ ok('imply identical historical scene',l=>l.discrepancies[1].candidate_slots[0].a
 ok('invent archival browser failure',l=>l.discrepancies[0].candidate_slots[0].authoritative_alternate_candidate.visitor_image_failure_verified=true);
 ok('allow archive caching',l=>l.discrepancies[0].candidate_slots[0].authoritative_alternate_candidate.approved_for_caching=true);
 ok('upscale beyond cap',l=>l.discrepancies[1].candidate_slots[0].authoritative_alternate_candidate.derivative_target.width_px=1200);
+ok('misreport visitor HTTP from retriever',l=>l.discrepancies[0].candidate_slots[0].independent_source_image_retrieval.actual_guest_chrome_http_status=200);
+ok('invent transferred bytes from retriever',l=>l.discrepancies[0].candidate_slots[0].independent_source_image_retrieval.guest_encoded_transfer_bytes=1234);
+ok('claim copyright clearance from viewer',l=>l.discrepancies[1].candidate_slots[0].independent_source_image_retrieval.license_verified=true);
+ok('false viewer result',l=>l.discrepancies[0].candidate_slots[0].independent_source_image_retrieval.image_displayed=false);
 console.log('MEDIA_SOURCE_COUNT_CROSSWALK: '+checks+'/'+checks+' PASS; 61 posts, 355 images, 286 vs 288 offsite; 2 localized discrepancies; 0 browser claims');
