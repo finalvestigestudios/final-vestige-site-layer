@@ -5,7 +5,7 @@ Does not access production WordPress, import database/users, deploy or publish.
 Produces an authentic local WordPress render gate only when CLI and axe are present.
 """
 from __future__ import annotations
-import argparse, hashlib, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.request, zipfile
+import argparse, hashlib, http.client, json, os, re, signal, stat, subprocess, sys, tempfile, time, zipfile
 from pathlib import Path, PurePosixPath
 
 BASE='http://127.0.0.1:9438/'
@@ -108,6 +108,44 @@ def prepare(repo,theme_zip,stage,theme_sha,head):
     (stage/'PREP_RECEIPT.json').write_text(json.dumps(r,indent=2,sort_keys=True)+'\n')
     return r
 
+def probe_local_rest(connection_factory=None):
+    """Recognize the *full* real WordPress REST index; do not fetch external URLs.
+
+    The R68 8192-byte prefix test could reject a valid index when "routes" was
+    beyond byte 8192, leaving the acceptance runner stalled for nine minutes.
+    Direct loopback HTTP also makes redirects to outside hosts impossible.
+    """
+    factory = connection_factory or (lambda: http.client.HTTPConnection(
+        '127.0.0.1', 9438, timeout=2))
+    observations = []
+    for path in ('/wp-json/', '/?rest_route=%2F'):
+        client = factory()
+        try:
+            client.request('GET', path, headers={'Accept': 'application/json'})
+            response = client.getresponse()
+            if response.status != 200:
+                observations.append('HTTP_' + str(response.status)
+                    if 100 <= response.status <= 599 else 'HTTP_INVALID')
+                continue
+            data = response.read(2_000_001)
+            if len(data) > 2_000_000:
+                observations.append('REST_INDEX_TOO_LARGE')
+                continue
+            document = json.loads(data)
+            if (isinstance(document, dict) and
+                isinstance(document.get('namespaces'), list) and
+                isinstance(document.get('routes'), dict)):
+                return True, 'REST_INDEX_VERIFIED'
+            observations.append('REST_INDEX_WRONG_SHAPE')
+        except (OSError, http.client.HTTPException, TimeoutError):
+            observations.append('PORT_UNAVAILABLE')
+        except (ValueError, UnicodeDecodeError):
+            observations.append('REST_NOT_JSON')
+        finally:
+            client.close()
+    return False, '/'.join(observations)
+
+
 def accept(stage,axe,out):
     from playwright.sync_api import sync_playwright
     if not axe.is_file() or axe.stat().st_size<100000:
@@ -128,15 +166,34 @@ def accept(stage,axe,out):
         with (Path(secret)/'private-cli.log').open('w') as logfile:
           child=subprocess.Popen(argv,stdout=logfile,stderr=subprocess.STDOUT,
              start_new_session=True,env={**os.environ,'CI':'true','npm_config_audit':'false'})
-          for i in range(150):
-            if child.poll() is not None:raise RuntimeError('PLAYGROUND_PROCESS_EXITED')
-            try:
-              with urllib.request.urlopen(BASE+'wp-json/',timeout=2) as response:
-                body=response.read(8192)
-              if b'"namespaces"' in body and b'"routes"' in body:break
-            except Exception:pass
+          # The original readiness gate read only 8192 bytes from a large REST
+          # index. Always recognize the *complete* bounded JSON object.
+          # Emit only a sanitized probe receipt; private CLI logs stay private.
+          started = time.monotonic()
+          polls = 0
+          observations = {}
+          ready = False
+          failure = 'WORDPRESS_REST_NOT_READY'
+          while time.monotonic() - started < 180:
+            if child.poll() is not None:
+              failure = 'PLAYGROUND_PROCESS_EXITED'
+              break
+            ready, observation = probe_local_rest()
+            polls += 1
+            observations[observation] = observations.get(observation, 0) + 1
+            if ready:
+              failure = None
+              break
             time.sleep(1)
-          else:raise RuntimeError('WORDPRESS_REST_NOT_READY')
+          admission = {'schema':'fv.apollo.r69.loopback-admission.v1',
+            'release':'STAGING_HOLD', 'loopback_only':True,
+            'startup_verified':ready, 'failure_code':failure,
+            'polls':polls, 'elapsed_seconds':round(time.monotonic()-started, 1),
+            'probe_reason_counts':dict(sorted(observations.items())),
+            'private_cli_logs_excluded':True, 'production_writes':False}
+          (out/'R69_LOCAL_STARTUP_RECEIPT.json').write_text(
+              json.dumps(admission,indent=2,sort_keys=True)+'\n')
+          if not ready:raise RuntimeError(failure)
           with sync_playwright() as pw:
             browser=pw.chromium.launch(headless=True,args=['--no-sandbox'])
             auth=browser.new_context()
@@ -236,5 +293,5 @@ if __name__=='__main__':
     try:main()
     except Exception as exc:
         # Never include private CLI output or auth material in CI logs.
-        print('APOLLO_R68_HOLD '+type(exc).__name__,file=sys.stderr)
+        print('APOLLO_R69_HOLD '+type(exc).__name__ +\n            (' '+str(exc) if isinstance(exc, RuntimeError) and str(exc) in\n              ('PLAYGROUND_PROCESS_EXITED','WORDPRESS_REST_NOT_READY') else ''),\n            file=sys.stderr)
         sys.exit(2)
