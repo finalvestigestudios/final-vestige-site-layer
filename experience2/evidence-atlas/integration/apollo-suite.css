@@ -136,3 +136,17 @@
     outline-offset:3px;
   }
 }
+
+
+/* R76: The standalone Research Desk/Atlas PRINT record already credits NASA.
+   The disposable Assembler Gutenberg *theme* footer contains unrelated sample
+   address/contact blocks, and its background spills onto a decorative-only
+   extra PDF page. Omit ONLY that theme template footer when this exact Apollo
+   suite is present. Do not hide .fva-footer or .fv-ex2-ledger__footer (both
+   contain source custody), and leave all SCREEN layout untouched.
+   Staging HOLD: authentic WordPress acceptance must verify the native PDF. */
+@media print {
+  body:has(.fv-ex2-apollo-suite) footer.wp-block-template-part {
+    display: none !important;
+  }
+}

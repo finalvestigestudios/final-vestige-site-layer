@@ -16,6 +16,7 @@ from wp_case_ledger_r72 import CaseLedger
 from wp_pdf_custody_r74 import verify_wordpress_print_page
 from wp_accessibility_r74 import verify_installed_controls
 from wp_pdf_pagination_r75 import prepare_review_pdf
+from wp_native_print_r76 import verify_native_apollo_print
 
 BASE='http://127.0.0.1:9438/'
 SLUG='fv-apollo-review-private'
@@ -332,6 +333,14 @@ def accept(stage,axe,out):
                             page,out/'R74_AUTHENTIC_WP_PRINT_1440.pdf')
                         (out/'R74_PRINT_CUSTODY_RECEIPT.json').write_text(
                             json.dumps(report['r74_print_pdf'],indent=2,sort_keys=True)+'\n')
+                        # R76: native print must NOT need R75's PDF normalization.
+                        # Audit the unchanged browser PDF, its terminal page,
+                        # exact NASA custody and site/footer print isolation.
+                        raw_native_pdf = (out/'R74_AUTHENTIC_WP_PRINT_1440.pdf').read_bytes()
+                        report['r76_native_print'] = verify_native_apollo_print(
+                            page, raw_native_pdf, out/'R76_NATIVE_PRINT_LAST_PAGE.png')
+                        (out/'R76_NATIVE_PRINT_RECEIPT.json').write_text(
+                            json.dumps(report['r76_native_print'],indent=2,sort_keys=True)+'\n')
                         # R75: a *separate* source-reverified PDF copy removes
                         # proven decorative-only terminal paper pages. Preserve
                         # the original Chromium PDF unmodified for forensic QA.
