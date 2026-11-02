@@ -1,0 +1,14 @@
+<svg class="poster" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Original illustration: two steady waves from separate ears and a perceived beat; illustration is not an EEG trace or an actual laboratory recording" viewBox="0 0 500 650">
+<rect width="500" height="650" rx="16" fill="#0a1627"/>
+<rect x="24" y="24" width="452" height="45" rx="20" fill="none" stroke="#e7b979" stroke-width="2"/>
+<text x="250" y="53" fill="#e7b979" font-family="sans-serif" font-size="17" text-anchor="middle">FINAL VESTIGE / MIND ARCHIVE</text>
+<text x="250" y="125" fill="#f5f2ea" font-family="sans-serif" font-weight="700" font-size="31" text-anchor="middle">THE PHANTOM BEAT</text>
+<text x="250" y="168" fill="#a7bed0" font-family="sans-serif" font-size="17" text-anchor="middle">Two tones. A perceived rhythm.</text>
+<path d="M25 253 Q50 173 75 253 T125 253 T175 253 T225 253 T275 253 T325 253 T375 253 T425 253 T475 253" stroke="#87f1dc" fill="none" stroke-width="5"/>
+<path d="M25 369 Q50 289 75 369 T125 369 T175 369 T225 369 T275 369 T325 369 T375 369 T425 369 T475 369" stroke="#e7b979" fill="none" stroke-width="5"/>
+<text x="29" y="205" fill="#a7bed0" font-size="16" font-family="sans-serif">LEFT</text><text x="29" y="323" fill="#a7bed0" font-size="16" font-family="sans-serif">RIGHT</text>
+<text x="250" y="457" text-anchor="middle" fill="#f5f2ea" font-size="20" font-family="sans-serif">A percept is not a clinical result.</text>
+<rect x="39" y="502" width="422" height="1" fill="#596e82"/>
+<text x="250" y="546" text-anchor="middle" fill="#87f1dc" font-size="18" font-family="sans-serif">What was measured?</text>
+<text x="250" y="582" text-anchor="middle" fill="#a7bed0" font-size="16" font-family="sans-serif">Original artwork / offline film review</text>
+</svg>
