@@ -1,4 +1,5 @@
 """Prevent origin prefix confusion and production avatar-setting regressions."""
+import re
 import unittest
 from wordpress_r68 import blueprint, is_strict_loopback_request
 
@@ -29,5 +30,15 @@ class R72LoopbackSafety(unittest.TestCase):
         code=blueprint()['steps'][-1]['code'].lower()
         self.assertNotIn('rights_cleared',code)
         self.assertNotIn('allow_remote',code)
-        self.assertNotIn('publish',code)
+        # R77 requires *published wp_block synced patterns* inside a freshly
+        # created LOCAL WordPress VM. Retain the stronger actual safety rule:
+        # every page stays PRIVATE, pattern publication is limited to wp_block,
+        # and all mutations occur after the strict local-environment gate.
+        statuses=re.findall(r"'post_type'=>'([^']+)'\\s*,\\s*'post_status'=>'([^']+)'",code)
+        self.assertEqual(statuses.count(('page','private')),3)
+        self.assertEqual(statuses.count(('wp_block','publish')),3)
+        self.assertEqual(len(statuses),6)
+        self.assertLess(code.index('nonlocal_wordpress_refused'),code.index('wp_insert_post'))
+        self.assertNotIn('wp_publish_post',code)
+        self.assertNotIn('wp_update_post',code)
 if __name__=='__main__':unittest.main()
