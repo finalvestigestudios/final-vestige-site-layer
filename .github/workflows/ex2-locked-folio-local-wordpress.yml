@@ -85,6 +85,7 @@ jobs:
           d=json.loads(p.read_text())
           assert d['release']=='HOLD' and d['exact_git_head']==os.environ['EXPECTED_HEAD']
           d['ci_theme_download_origin']='https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip'
+          d['assembler_sha256_out_of_band_pin_verified']=False
           d['ci_theme_checksum_independently_pinned']=False
           d['ci_theme_provenance_release_gate']='HOLD_OUT_OF_BAND_DIGEST_REQUIRED'
           d['ci_scope']='DISCOVERY_BOOT_AND_PRIVATE_RENDER_ONLY'
