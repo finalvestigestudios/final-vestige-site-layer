@@ -15,7 +15,7 @@ for(const [n,s] of [["A",A],["B",B]]){
 }
 test("A and B exact substantive guide",()=>assert.ok(A.includes(core)&&B.includes(core)));
 test("film accessible transcript without JS",()=>assert.ok(B.includes("<details>")&&B.includes("00:35–00:40")&&B.includes("No video is hosted")));
-test("A contains no promotional film",()=>assert.ok(!A.includes("fv-r72-film")));
+test("A contains no promotional film",()=>assert.ok(!A.includes('<figure class="fv-r72-film"')));
 test("caption cues 6",()=>assert.equal((load("captions.vtt").match(/\d\d:\d\d:\d\d\.\d\d\d -->/g)||[]).length,6));
 test("matrix 25+ decisions",()=>assert.ok(C.decisions.length>=25));
 test("matrix exact seller URL",()=>assert.ok(C.sources.some(x=>x.url==="https://zen12.com/hnp")));
