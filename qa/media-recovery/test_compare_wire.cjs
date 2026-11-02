@@ -12,6 +12,7 @@ function fixture(t='2026-10-30T18:00:00.000Z',numbers=[5000,5000]){
  scroll_coverage:{complete:true,state:'full_height_scanned',reason:null},
  stored_images:numbers.map((n,i)=>({image_key:'123:'+i,result:'loaded_in_probe_browser',
  verified_broken_in_browser:false,current_src_identity_verified:true,
+ match:'exact_url_or_jetpack_origin',network_final_identity_verified:true,loaded_network_proof_verified:true,
  stored_url:'https://example.edu/img'+i+'.jpg',current_src:'https://example.edu/img'+i+'.jpg',natural_width:960,request_url:'https://example.edu/img'+i+'.jpg',http_status:200,transfer_bytes:n})),
  network_images:numbers.map((n,i)=>({url:'https://example.edu/img'+i+'.jpg',status:200,mime_type:'image/jpeg',
  encoded_data_length:n,error:null,from_disk_cache:false,from_service_worker:false,was_cached:false})),
@@ -144,4 +145,17 @@ test('reject purported article bytes from a redirect to unrelated final media',(
  // Deliberately retains old request URL, as a raw alias alone is not image identity.
  assert.equal(inspectRun(r).ok,false);
  assert.ok(inspectRun(r).errors.includes('article_wire_scope_mismatch:123'));
+});
+
+test('reject article byte claim without independent successful CDP proof',()=>{
+ const r=a();r.pages[0].stored_images[0].loaded_network_proof_verified=false;
+ assert.equal(inspectRun(r).ok,false);
+});
+test('reject article byte claim from CDN redirect identity uncertainty',()=>{
+ const r=a();r.pages[0].stored_images[0].network_final_identity_verified=false;
+ assert.equal(inspectRun(r).ok,false);
+});
+test('reject article byte claim from ALT-only DOM identity guess',()=>{
+ const r=a();r.pages[0].stored_images[0].match='alt_only_unverified';
+ assert.equal(inspectRun(r).ok,false);
 });
