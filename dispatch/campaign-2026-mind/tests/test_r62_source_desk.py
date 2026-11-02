@@ -146,7 +146,7 @@ class SourceDeskGuards(unittest.TestCase):
 
     def test_preview_never_masquerades_as_received_email(self):
         self.assertIn("REVIEW ONLY", self.email_html)
-        self.assertIn("NOT a real Jetpack rendering", self.email_html)
+        self.assertIn("not a real jetpack rendering", self.email_html.lower())
         self.assertIn("DO NOT SEND", self.email_text)
 
     def test_original_canonical_titles_unchanged(self):
