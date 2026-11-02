@@ -1,4 +1,4 @@
-name: Preparedness R63 isolated source-impact custody (SYNTHETIC, NOT release)
+name: Preparedness R63 private source and native diagnostics (NOT release)
 
 on:
   pull_request:
@@ -84,6 +84,27 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          expected = {
+              'claude/prep-start-bbfeb8': '2122d856fce9f64887c16df3d52e64be9f59a55b',
+              'claude/prep-shelter-5e1e0e': '5daeaf2dd5ab71806a6b73c91edfb1d8df5da976',
+              'claude/prep-food-ccdc55': 'f911ff7a655de8d81535ea86ec3d65a49ee76648',
+              'claude/prep-health-837444': 'd5ef5bafd68361434dd1cc9209915b8e8a4eaf17',
+              'claude/prep-hist-food-b81f19': '67e116e536c7410bed30f8f3b1bb8c166f3c223d',
+              'claude/prep-hist-home-0e0e38': '7504a5f099594d635e3dd7332a33a2e1346c43a2',
+              'claude/prep-hist-field-9db767': '4e5caf812727953aa45e3bda2d382f2c67b6a09c',
+          }
+          for branch, sha in expected.items():
+              actual = subprocess.check_output(
+                  ['git', 'rev-parse', '--verify',
+                   'refs/remotes/origin/' + branch + '^{commit}'],
+                  text=True).strip()
+              if actual != sha:
+                  raise SystemExit('R63 original contributor Git head moved: ' + branch +
+                                   ' expected ' + sha + ' observed ' + actual)
+          print('R63 real original contributor refs: exact 7/7 approved-for-investigation SHAs pinned (NOT QD-approved).')
+          PY
           python -I preparedness/tools/r63_contributor_source_impact_crosswalk.py --summary > /tmp/preparedness-r63-git-summary.json
           python -I - <<'PY'
           import json
@@ -115,7 +136,7 @@ jobs:
       - name: Explicit HOLD for separate full-integrity and all human checks
         if: always()
         run: |
-          echo 'R63 synthetic Git tests only. R15 seven-contributor provenance parity is NOT bypassed.'
-          echo 'Full validation/build/36+ native suite, 206 link checks, qualified review,'
+          echo 'R63 separate diagnostics: synthetic plus real pinned Git-object source custody, offline native validation/build/Python tests.'
+          echo 'Mandatory 13-stage full private integrity still fails closed at seven_cluster_git_parity; 206 human link checks and qualified review,'
           echo 'WordPress browser/accessibility QA and independent QD remain NOT VERIFIED.'
           echo 'No source rebasing, CMS writes, navigation edits, merges or public publishing.'
