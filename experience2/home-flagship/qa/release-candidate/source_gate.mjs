@@ -18,7 +18,7 @@ export const auditHomepage = function auditHomepage(html,ledger,assets){
   record("seven_chapters",chapter.every(id=>ids.includes(id)));
   record("chapter_anchor_links",chapter.every(id=>html.includes('href="#'+id+'"')));
   record("all_fragment_targets_exist",anchors.every(id=>ids.includes(id)));
-  record("unpublished_guard",html.includes("DO NOT DEPLOY AS THE WORDPRESS HOME PAGE")&&html.includes("DESIGN STUDY · NOT LIVE"));
+  record("unpublished_guard",html.includes("DO NOT DEPLOY AS THE WORDPRESS HOME PAGE")&&html.includes("DESIGN CANDIDATE · NOT LIVE"));
   record("native_nojs_cases",panels.length===3&&frames.length===2&&[...panels,...frames].every(tag=>!/\shidden(?:\s|=|>)/i.test(tag))&&(html.match(/<details\b/gi)||[]).length>=6);
   record("editorial_no_checkout",!/<form\b/i.test(html)&&!/clickbank\.net|hop\.clickbank|inspire3\.com\/checkout|guaranteed brain reprogramming/i.test(html));
   record("focus_and_primary_sources",[
