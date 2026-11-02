@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "part": 4,
+  "method": "Authenticated WordPress posts.get context=edit, read-only, actual original URLs; NO visitor network requests",
+  "frozen_git_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+  "posts": [
+    {
+      "id": 278,
+      "modified": "2026-08-21T00:32:59",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "278:0",
+          "source_url": "https://media.defense.gov/2007/Jan/25/2000519451/-1/-1/0/070125-F-0000Z-099.JPG",
+          "alt": "The B-24D Lady Be Good lying largely intact in the Libyan Desert after its discovery.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "278:1",
+          "source_url": "https://media.defense.gov/2006/May/30/2000572755/2000/2000/0/050606-F-1234P-012.JPG",
+          "alt": "The nine members of the Lady Be Good crew posed in front of a B-24 before the 1943 mission.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "278:2",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/0000050606-F-1234P-014.jpg",
+          "alt": "The preserved wreck of Lady Be Good in the Libyan Desert.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "278:3",
+          "source_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+          "alt": "The Model 1910 canteen recovered from the Lady Be Good crew's desert trail.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "278:4",
+          "source_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+          "alt": "A page from Robert Toner's diary recovered with members of the Lady Be Good crew.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "278:5",
+          "source_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+          "alt": "U.S. military investigators examining the Lady Be Good wreck in the Libyan Desert.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "278:6",
+          "source_url": "https://media.defense.gov/2006/Jun/02/2000554420/-1/-1/0/060530-F-1234S-041.JPG",
+          "alt": "Search and recovery personnel working around Lady Be Good in the Libyan Desert.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "modified": "2026-08-21T00:32:52",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "277:0",
+          "source_url": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+          "alt": "Aerial view of Lituya Bay after the July 1958 megatsunami showing the stripped shoreline and runup scar.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "277:1",
+          "source_url": "https://www.researchgate.net/profile/Tim-Davies-4/publication/258771194/figure/fig10/AS:669504034914309@1536632655693/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph.png",
+          "alt": "Scientific aerial view of Lituya Bay showing the fjord, Cenotaph Island and tsunami damage.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "277:2",
+          "source_url": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+          "alt": "The enormous landslide and runup scar at the head of Lituya Bay.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "277:3",
+          "source_url": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+          "alt": "Shoreline stripped of mature forest by the 1958 Lituya Bay tsunami.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "277:4",
+          "source_url": "https://miro.medium.com/v2/resize:fit:1400/1*NtiMuQy8rJhpG_xg-nv92g.png",
+          "alt": "Aerial photograph showing the pale band left where the 1958 wave stripped forest around Lituya Bay.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "277:5",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Lituyabay_Earth_Observatory_image_2020.jpg",
+          "alt": "Modern satellite view of Lituya Bay, Alaska, with forest regrown around the shoreline.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 276,
+      "modified": "2026-10-29T18:28:26",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "276:0",
+          "source_url": "https://cdn2.picryl.com/photo/1907/12/31/quebec-bridge-hs85-10-18815-460e1c-1024.jpg",
+          "alt": "The first Quebec Bridge under construction shortly before its 1907 collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "276:1",
+          "source_url": "https://historicbridges.org/quebec/quebec/oldbridge3.jpg",
+          "alt": "Quebec Bridge wreckage after the August 29, 1907 collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "276:2",
+          "source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+          "alt": "Twisted steel wreckage of the Quebec Bridge after the 1907 collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "276:3",
+          "source_url": "https://quebecblogue.com/files/2023/04/tragedie-pont-quebec.jpg",
+          "alt": "Historical view of the twisted Quebec Bridge wreckage in the St. Lawrence after the 1907 collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "276:4",
+          "source_url": "https://cdn2.picryl.com/photo/1916/09/11/quebec-bridge-collapse-of-the-suspended-span-5a20eb-1024.jpg",
+          "alt": "Quebec Bridge center span after it fell during erection in September 1916.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "276:5",
+          "source_url": "https://historicbridges.org/quebec/quebec/complete_large.jpg",
+          "alt": "The completed Quebec Bridge across the St. Lawrence River.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 274,
+      "modified": "2026-10-29T16:02:05",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "274:0",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg/1280px-USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg",
+          "alt": "USS Tang SS-306 underway off Mare Island Navy Yard on December 2, 1943.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "274:1",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+          "alt": "Richard O'Kane with twenty-two American aircrewmen rescued by USS Tang off Truk in May 1944.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "274:2",
+          "source_url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+          "alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "274:3",
+          "source_url": "https://warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg",
+          "alt": "U.S. Navy submariner demonstrating the Momsen escape lung and submarine escape hatch during trials in July 1930.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "274:4",
+          "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+          "alt": "USS Tang commander Richard O'Kane after liberation from Japanese captivity in September 1945.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "274:5",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg/1280px-Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg",
+          "alt": "Overloaded Vought OS2U Kingfisher with rescued American airmen off Truk awaiting pickup by USS Tang on May 1, 1944.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "274:6",
+          "source_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+          "alt": "USS Tang crewmen taking a rescued American airman aboard the submarine off Truk in May 1944.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "modified": "2026-10-29T20:59:49",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "269:0",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-blast-cloud-1917.jpg",
+          "alt": "The blast cloud rising above Halifax Harbour after the Mont-Blanc exploded on December 6, 1917.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "269:1",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+          "alt": "Map of Halifax Harbour showing the 1917 coastline, the area destroyed by the explosion and the tsunami zone.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "269:2",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-campbell-road.jpg",
+          "alt": "Wrecked homes on Campbell Road in Halifax's north end after the December 1917 explosion.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "269:3",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-damaged-houses.jpg",
+          "alt": "Houses wrecked by the December 6, 1917 Halifax explosion.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "269:4",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-waterfront-panorama.jpg",
+          "alt": "Panoramic photograph of wrecked buildings along the Halifax waterfront after the December 1917 explosion.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "269:5",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-ymca-hospital.jpg",
+          "alt": "Emergency relief hospital operating inside the YMCA on Barrington Street after the Halifax Explosion.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "269:6",
+          "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-ferry-vincent-coleman.jpg",
+          "alt": "Halifax Transit ferry Vincent Coleman arriving at the Halifax Ferry Terminal.",
+          "origin_class": "FIRST_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "modified": "2026-10-30T01:10:13",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_inline_count": 10,
+      "slots": [
+        {
+          "key": "268:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+          "alt": "Open page of the Archimedes Palimpsest showing the later prayer-book text written across older erased Greek mathematics and diagrams.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:1",
+          "source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+          "alt": "A forged painted page in the Archimedes Palimpsest covering older erased writing beneath the medieval prayer text.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+          "alt": "Ultraviolet image of a folio from the Archimedes Palimpsest showing the medieval prayer text and faint erased undertext.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+          "alt": "Image of an Archimedes Palimpsest folio associated with Heiberg's early twentieth-century study and modern ultraviolet imaging.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:4",
+          "source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+          "alt": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+          "alt": "Processed multispectral image of an Archimedes Palimpsest folio making the erased undertext more legible beneath the prayer book.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+          "alt": "X-ray fluorescence iron map of an Archimedes Palimpsest folio revealing erased writing through elemental imaging.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:7",
+          "source_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+          "alt": "An Archimedes Palimpsest leaf mounted vertically on a scanning stage for X-ray fluorescence imaging at Stanford Synchrotron Radiation Laboratory.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:8",
+          "source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+          "alt": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "268:9",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+          "alt": "Processed multispectral image of a Palimpsest folio containing erased text by the Athenian orator Hyperides.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 258,
+      "modified": "2026-10-29T14:43:40",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "stored_inline_count": 6,
+      "slots": [
+        {
+          "key": "258:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%2C%201928.jpg",
+          "alt": "Silver Bridge spanning the Ohio River between Point Pleasant, West Virginia, and Ohio shortly after completion in 1928.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "258:1",
+          "source_url": "https://www-d.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+          "alt": "National Transportation Safety Board diagram showing a typical Silver Bridge eyebar-chain and hanger connection.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "258:2",
+          "source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1_thumb.jpg",
+          "alt": "Collapsed Silver Bridge steel and roadway on the Ohio bank after the December 1967 disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "258:3",
+          "source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1B.jpg",
+          "alt": "Investigators and responders standing among collapsed Silver Bridge members at the Ohio end after the 1967 disaster.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "258:4",
+          "source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_4.jpg",
+          "alt": "Five Federal Highway Administration engineers standing behind the 18-foot scale model built to study the Silver Bridge collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "258:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%20-%20DPLA%20-%209fc0bcf07698072f128124fc79edd1c7%20%28page%202%29.jpg",
+          "alt": "Historical view of the Silver Bridge crossing the Ohio River before its 1967 collapse.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    },
+    {
+      "id": 257,
+      "modified": "2026-10-29T20:59:35",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_inline_count": 7,
+      "slots": [
+        {
+          "key": "257:0",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Blitzeinschlag.jpg?width=1280",
+          "alt": "Lightning channel reaching Launch Pad 39A shortly after Apollo 12 passed through clouds during launch on November 14, 1969.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "257:1",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20crew%20walk%20to%20transfer%20van%20%28KSC-69PC-646%29.jpg?width=1280",
+          "alt": "Apollo 12 astronauts Pete Conrad, Richard Gordon and Alan Bean walking to the transfer van in rainy weather on the morning of launch.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "257:2",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Saturn%20V%20launch.jpg?width=1280",
+          "alt": "Apollo 12 Saturn V lifting from Pad 39A on November 14, 1969.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "257:3",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/KSC-69P-0856.jpg?width=1280",
+          "alt": "Controllers in Firing Room 2 monitoring Apollo 12 during the early minutes of launch on November 14, 1969.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "257:4",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%20Command%20Module%20Main%20Control%20Panel.gif?width=1280",
+          "alt": "Technical drawing of the Apollo command module main control panel showing hundreds of switches, gauges, warning lights and circuit breakers.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "257:5",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lunar%20module%20AS12-51-7507.jpg?width=1280",
+          "alt": "Apollo 12 lunar module Intrepid in lunar orbit before descent on November 19, 1969.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        },
+        {
+          "key": "257:6",
+          "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20LRO.jpg?width=1280",
+          "alt": "Lunar Reconnaissance Orbiter image of the Apollo 12 landing site showing the Intrepid descent stage, ALSEP experiment package and Surveyor 3 spacecraft.",
+          "origin_class": "THIRD_PARTY",
+          "matches_20261030_snapshot": true,
+          "guest_browser_http_status": null,
+          "guest_browser_decoded": null,
+          "visitor_transfer_bytes": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "published_posts": 8,
+    "inline_img_tags": 56,
+    "external_origin_count": 49,
+    "classes": {
+      "THIRD_PARTY": 49,
+      "FIRST_PARTY": 7
+    },
+    "source_drift_count": 0
+  },
+  "source_drift": [],
+  "rights_cleared_for_rehosting": false,
+  "wordpress_writes_authorized": false,
+  "measured_weight_reduction_pct": null,
+  "claimed_42_broken_images_confirmed": false,
+  "network_source_statuses_verified": false
+}
