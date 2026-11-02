@@ -12,10 +12,10 @@ export const auditHomepage = function auditHomepage(html,ledger,assets){
   const links=[...html.matchAll(/<a\b[^>]*\bhref\s*=\s*["']([^"']+)["'][^>]*>/gi)].map(m=>decode(m[1]));
   // <noscript> fallback images are parsed only without scripting. Check them
   // independently, keeping the two script-enabled lazy archive images locked.
-  const nojsBlocks=[...html.matchAll(/<noscript>([\\s\\S]*?)<\\/noscript>/gi)].map(m=>m[1]);
-  const activeHtml=html.replace(/<noscript>[\\s\\S]*?<\\/noscript>/gi,"");
-  const imgTags=[...activeHtml.matchAll(/<img\\b[^>]*>/gi)].map(m=>m[0]);
-  const nojsImgTags=nojsBlocks.flatMap(block=>[...block.matchAll(/<img\\b[^>]*>/gi)].map(m=>m[0]));
+  const nojsBlocks=[...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/gi)].map(m=>m[1]);
+  const activeHtml=html.replace(/<noscript>[\s\S]*?<\/noscript>/gi,"");
+  const imgTags=[...activeHtml.matchAll(/<img\b[^>]*>/gi)].map(m=>m[0]);
+  const nojsImgTags=nojsBlocks.flatMap(block=>[...block.matchAll(/<img\b[^>]*>/gi)].map(m=>m[0]));
   const panels=[...html.matchAll(/<(?:article|section|div)\b[^>]*\bdata-fv-case\s*=\s*["'][^"']+["'][^>]*>/gi)].map(m=>m[0]);
   const frames=[...html.matchAll(/<(?:figure|section|div)\b[^>]*\bdata-fv-observer-frame\s*=\s*["'][^"']+["'][^>]*>/gi)].map(m=>m[0]);
   record("one_h1",(html.match(/<h1\b/gi)||[]).length===1);
@@ -43,9 +43,9 @@ export const auditHomepage = function auditHomepage(html,ledger,assets){
     nojsImgTags.every((tag,i)=>a(tag,"src")===a(imgTags[i],"src") &&
       a(tag,"loading")==="eager" && a(tag,"alt")==="" &&
       a(tag,"role")==="presentation" && a(tag,"aria-hidden")==="true" &&
-      /\\bdata-fv-noscript-archive\\b/.test(tag) &&
+      /\bdata-fv-noscript-archive\b/.test(tag) &&
       !!a(tag,"srcset") && !!a(tag,"sizes")) &&
-    !/\\bdata-fv-noscript-archive\\b/.test(activeHtml));
+    !/\bdata-fv-noscript-archive\b/.test(activeHtml));
   record("image_ledger_ids",ledger.records.length===3&&["apollo","franklin","malbone"].every(id=>ledger.records.some(r=>r.id===id)));
   const srcs=imgTags.map(t=>decode(a(t,"src"))),allowed=new Set(ledger.records.map(r=>r.image_url));
   record("displayed_images_exactly_in_ledger",srcs.length===2&&new Set(srcs).size===2&&srcs.every(url=>allowed.has(url)));
