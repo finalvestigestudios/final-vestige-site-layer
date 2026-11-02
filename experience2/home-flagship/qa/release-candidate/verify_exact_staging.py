@@ -237,11 +237,13 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
                 check('nypl_source_catalog_link_preserved',panel.locator(
                   'a[href="https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0"]').count()==1)
                 if width in (390, 1440):
-                    # Real currently selected CMS case, not the Apollo-restored
-                    # fullpage capture. Required visual custody for rights-safe
-                    # typography at founder review widths.
-                    panel.screenshot(path=str(out/f'malbone-source-plate-{width}.png'),
-                                     timeout=20000)
+                    # Capture the genuinely selected Malbone case from the
+                    # actual WordPress document origin, not an element-shot
+                    # that auto-scrolls beneath the sticky chapter navigation
+                    # and wrongly composites the skip link over the plate.
+                    frame.page.evaluate('window.scrollTo(0,0)')
+                    frame.page.screenshot(path=str(out/f'malbone-selected-fullpage-{width}.png'),
+                                          full_page=True,timeout=20000)
                     check('nypl_rights_safe_visual_receipt',True)
             else:
                 visible=activated and case_img.is_visible()
