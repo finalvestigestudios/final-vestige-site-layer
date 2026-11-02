@@ -1,0 +1,37 @@
+{
+  "artifact": "Franklin Victory Point note chronological reading, staged homepage narrative",
+  "reviewed": "2026-10-30",
+  "publication_status": "UNPUBLISHED DESIGN STUDY",
+  "chronology": [
+    {
+      "date": "1847-05-28",
+      "entry": "Original note reporting 'All well' signed by Graham Gore and Charles Des Voeux",
+      "source": "https://www.historymuseum.ca/blog/a-very-special-piece-of-paper",
+      "limitation": "Describes what those writers recorded at that time, not later fate"
+    },
+    {
+      "date": "1848-04",
+      "entry": "Marginal addition records ships abandoned on 22 April, deaths and intended journey toward Back's Fish River",
+      "source": "https://www.rmg.co.uk/collections/objects/rmgc-object-504898",
+      "date_discrepancy": "Transcription opens '25th April 1848'; Royal Museums Greenwich object catalog describes an addition on 26 April 1848. The display deliberately says April 1848.",
+      "limitation": "Does not establish individual later fates; no speculative Arctic track"
+    }
+  ],
+  "object": {
+    "museum_catalog": "https://www.rmg.co.uk/collections/objects/rmgc-object-504898",
+    "reference": "HSR/C/9/1",
+    "independent_transcription": "https://www.historymuseum.ca/blog/a-very-special-piece-of-paper",
+    "reproduction_record": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+    "final_vestige_article": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/"
+  },
+  "asset_rights": {
+    "new_external_images": 0,
+    "new_external_fonts": 0,
+    "new_frameworks": 0,
+    "new_javascript_bytes": 0,
+    "visual_art": "Original CSS/typeset representation, NOT a document image or photographic facsimile",
+    "document_copy": "Two brief historical phrases reproduced from nineteenth-century primary-source writing. The museum's modern commentary is paraphrased, not duplicated.",
+    "full_media_license_clearance": "NOT REQUESTED OR IMPLIED; no new media are embedded"
+  },
+  "commercial_boundary": "No affiliate links, no vendor product claims, no NASA media endorsement; existing published /focus/ and historic routes retained"
+}

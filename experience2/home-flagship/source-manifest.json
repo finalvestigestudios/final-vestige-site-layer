@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-10-30",
+  "status": "Staging design research; not an image license or publication clearance",
+  "evidence_policy": "Separate what an original photo or document depicts from the inference of the surrounding historical investigation.",
+  "records": [
+    {
+      "id": "apollo",
+      "wordpress_post_id": 434,
+      "title": "The Hatch Opened Inward",
+      "image_url": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+      "source_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "board_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "article_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "image_credit": "NASA, image S67-19766",
+      "depicts": "Apollo 1 astronauts during training, not hatch mechanics",
+      "claim": "Investigation draws on Apollo 204 Review Board's documented hazards",
+      "limitation": "Ignition source not definitively established; the image alone establishes no hatch design",
+      "media_rights_status": "NASA's general image usage rules reviewed; this individual image and commercial page context still require publication review, including no implied NASA endorsement",
+      "policy_source": "https://www.nasa.gov/nasa-brand-center/"
+    },
+    {
+      "id": "franklin",
+      "wordpress_post_id": 433,
+      "title": "All Well Was Written First",
+      "image_url": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+      "article_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "image_credit": "Victory Point Note, 1847–48; scan reproduced from McClintock's 1869 edition; Wikimedia Commons PDM",
+      "depicts": "1847 original message and 1848 update in margins",
+      "claim": "The note's later writing reports abandonment of the ships",
+      "limitation": "Does not establish subsequent fate of every expedition member",
+      "media_rights_status": "Wikimedia Commons source page explicitly marks the work public domain; credit and image provenance retained",
+      "policy_source": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "id": "malbone",
+      "wordpress_post_id": 621,
+      "title": "Six Miles an Hour",
+      "image_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
+      "source_url": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+      "article_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "image_credit": "1903 Brooklyn Rapid Transit map, NYPL Digital Collections, item 5003296",
+      "depicts": "Transit system map before Malbone temporary curve was constructed",
+      "claim": "Provides historical network context, not exact wreck geometry",
+      "limitation": "Do not spatially or chronologically align this map with 1918 crash curve",
+      "media_rights_status": "The real WordPress media library record (ID 1258, re-verified 2026-11-02 via media.get, read-only) carries the site's own rights determination in its caption/description field: \"New York Public Library Digital Collections; public domain in the United States.\" Independent verification against NYPL's own catalog/rights page is still pending -- that page returned HTTP 403 to this project's fetch attempts in prior rounds and remains unreachable from this sandbox's network (confirmed again 2026-11-02; this sandbox's egress proxy denies connections to digitalcollections.nypl.org entirely, not just that one page).",
+      "policy_source": "https://www.nypl.org/research/rights-and-permissions",
+      "original_wordpress_image_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_wordpress_width": 5667,
+      "original_wordpress_height": 3831,
+      "original_wordpress_filesize_bytes": 5553669,
+      "image_delivery": {
+        "strategy": "WordPress-authorized Jetpack CDN responsive sizes",
+        "source": "WordPress media.get ID 1258",
+        "srcset_widths": [
+          768,
+          1024,
+          1536
+        ],
+        "default_width": 1024,
+        "optimized_payload_bytes": "NOT_MEASURED",
+        "rights_review": "SITE_RECORD_FOUND_NYPL_CATALOG_PAGE_STILL_UNREACHABLE",
+        "verified_2026_11_02": {
+          "method": "read-only WordPress.com MCP media.get, no writes",
+          "dimensions_match_manifest": true,
+          "filesize_match_manifest": true,
+          "image_url_match_manifest": true
+        }
+      }
+    }
+  ],
+  "commercial_boundaries": {
+    "focus_url": "https://finalvestige.com/focus/",
+    "mind_hub_status": "Draft Issue #171 / PR #172, not published",
+    "affiliate_links_in_prototype": 0,
+    "rule": "No NASA imagery alongside affiliate endorsements; no unverified Inspire3 claims."
+  }
+}

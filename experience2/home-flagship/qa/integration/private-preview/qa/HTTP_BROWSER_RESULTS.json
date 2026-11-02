@@ -1,0 +1,92 @@
+{
+  "scope": "Real local PHP HTTP status/auth/CSP checks; Chromium rendered response via set_content because browser localhost navigation is blocked. Set FV_EX2_TEST_HOME to exact repo checkout for exact-source QA; otherwise local fixture. Not actual WordPress.",
+  "candidate_plugin_sha256": "4bf96ea4d7377a90d87a5a893a1fc55cc97b9f61ac2fc96258b342e932903dec",
+  "candidate_builder_sha256": "11cf5bc8a5d6265ab9e833ba069b09f92c2bfa42d59648374115de21850344d0",
+  "source_checkout": "/mnt/data/fv-reading-trail/integration-fixture",
+  "source_ref_label": "c1c00acfa79664163214e1f424a8868e64aa2ee3 (unattested caller input)",
+  "assertions": 62,
+  "passed": 62,
+  "errors": [],
+  "viewports": [
+    {
+      "width": 320,
+      "observation": {
+        "overflow": false,
+        "chapters": 0,
+        "links": 0,
+        "scripts": 4,
+        "styles": 6,
+        "h1": 1
+      },
+      "requests": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 390,
+      "observation": {
+        "overflow": false,
+        "chapters": 0,
+        "links": 0,
+        "scripts": 4,
+        "styles": 6,
+        "h1": 1
+      },
+      "requests": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "observation": {
+        "overflow": false,
+        "chapters": 0,
+        "links": 0,
+        "scripts": 4,
+        "styles": 6,
+        "h1": 1
+      },
+      "requests": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 1440,
+      "observation": {
+        "overflow": false,
+        "chapters": 0,
+        "links": 0,
+        "scripts": 4,
+        "styles": 6,
+        "h1": 1
+      },
+      "requests": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp"
+      ],
+      "page_errors": []
+    },
+    {
+      "width": 1920,
+      "observation": {
+        "overflow": false,
+        "chapters": 0,
+        "links": 0,
+        "scripts": 4,
+        "styles": 6,
+        "h1": 1
+      },
+      "requests": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp"
+      ],
+      "page_errors": []
+    }
+  ],
+  "HTTP_headers": {
+    "Content-Security-Policy": "default-src 'none'; base-uri 'none'; object-src 'none'; frame-ancestors 'self'; script-src 'nonce-cPdVnuMmCiNunijjgNs6HmdF'; style-src 'unsafe-inline'; img-src https://finalvestige.com https://i0.wp.com data:; font-src 'none'; connect-src 'none'; form-action 'none'",
+    "X-Robots-Tag": "noindex, nofollow, noarchive",
+    "Cache-Control": "private, no-store, max-age=0"
+  }
+}

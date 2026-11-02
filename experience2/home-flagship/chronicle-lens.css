@@ -1,0 +1,24 @@
+/* Final Vestige / Victory Point note reading lens, original UI, scoped to the unpublished flagship.
+   No false facsimile, remote assets, audio, JS-required reading, or third-party libraries. */
+.fv-hf__chronicle-lens{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1.3fr);gap:18px 30px;align-items:center;padding:clamp(19px,2.8vw,30px);margin:0 0 15px;background:linear-gradient(113deg,rgba(20,45,43,.94),rgba(9,19,18,.94));border:1px solid #61553e;border-left:4px solid #c7a66c;box-shadow:0 22px 55px rgba(0,0,0,.22)}
+.fv-hf__chronicle-lens[hidden]{display:none!important}
+.fv-hf__chronicle-lens-heading>span{display:block;color:#d8b87c;font:750 11px/1.4 var(--hf-mono);letter-spacing:.12em}
+.fv-hf__chronicle-lens-heading p{margin:7px 0 0!important;max-width:480px;color:#e4d8c4;font:400 14px/1.55 var(--hf-sans)}
+.fv-hf__chronicle-lens-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;min-width:0}
+.fv-hf__chronicle-lens-actions button{display:flex;align-items:center;justify-content:center;gap:9px;min-height:51px;min-width:0;padding:10px 7px;border:1px solid #7d715b;background:#152421;color:#eadfcb;font:750 clamp(11px,1vw,13px)/1.35 var(--hf-sans);cursor:pointer;transition:background-color .15s ease,color .15s ease,border-color .15s ease;overflow-wrap:anywhere}
+.fv-hf__chronicle-lens-actions button span{color:#d2b883;font:750 10px var(--hf-mono)}
+.fv-hf__chronicle-lens-actions button[aria-pressed="true"]{color:#171812;background:#e5ce9a;border-color:#f6ddb0}
+.fv-hf__chronicle-lens-actions button[aria-pressed="true"] span{color:#38301e}
+.fv-hf__chronicle-lens-actions button:hover:not([aria-pressed="true"]){background:#264440}
+.fv-hf__chronicle-lens-actions button:focus-visible{outline:3px solid #f6cc86;outline-offset:3px}
+.fv-hf__chronicle-lens-status{grid-column:1/-1;margin:0!important;padding:12px 0 0;border-top:1px solid #4c5548;color:#d8d0bb;font:400 13px/1.55 var(--hf-sans)}
+/* When enhancement is disabled, no attribute is added and both archival excerpts remain visible.
+   Mode styles apply only AFTER all event handlers were safely installed. */
+.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-paper,.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-paper{grid-template-columns:minmax(0,1fr)}
+.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-entry--second,.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-entry--first,.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-divider,.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-divider{display:none!important}
+.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-entry,.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-entry{min-height:325px;max-width:none;padding-inline:clamp(25px,7vw,105px)}
+.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-entry p,.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-entry p{max-width:840px}
+@media(max-width:1000px){.fv-hf__chronicle-lens{grid-template-columns:1fr}.fv-hf__chronicle-lens-status{grid-column:1}}
+@media(max-width:480px){.fv-hf__chronicle-lens{padding:18px 14px}.fv-hf__chronicle-lens-actions{grid-template-columns:1fr;gap:7px}.fv-hf__chronicle-lens-actions button{min-height:49px;justify-content:flex-start;padding-inline:15px}.fv-hf__chronicle-lens-status{font-size:13px}.fv-hf__chronicle[data-fv-chronicle-mode="original"] .fv-hf__chronicle-entry,.fv-hf__chronicle[data-fv-chronicle-mode="addition"] .fv-hf__chronicle-entry{min-height:290px}}
+@media(prefers-reduced-motion:reduce){.fv-hf__chronicle-lens-actions button{transition:none}}
+@media print{.fv-hf__chronicle-lens{display:none!important}.fv-hf__chronicle[data-fv-chronicle-mode] .fv-hf__chronicle-paper{grid-template-columns:1fr 35px 1fr!important}.fv-hf__chronicle[data-fv-chronicle-mode] .fv-hf__chronicle-entry,.fv-hf__chronicle[data-fv-chronicle-mode] .fv-hf__chronicle-divider{display:flex!important}}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-30",
+  "scope": "isolated inquiry HTML/CSS fixture not full WordPress",
+  "actual_local_chromium": {
+    "viewport_css_pixels": [
+      360,
+      390,
+      600,
+      768,
+      1024,
+      1440,
+      1920,
+      320
+    ],
+    "root_overflow_px": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mouse_and_keyboard_native_details": "PASS on all 8",
+    "six_original_source_links": "PRESENT on all 8",
+    "page_errors": 0,
+    "screenshots": "390 and 1440 local run"
+  },
+  "local_source_unittest": {
+    "passed": 11,
+    "failed": 0
+  },
+  "rights": {
+    "new_images": 0,
+    "new_scripts": 0,
+    "new_fonts": 0,
+    "prior_NYPL_NASA_media_rights": "STILL_OPEN"
+  },
+  "performance": {
+    "new_JS_bytes": 0,
+    "new_image_bytes": 0,
+    "Lighthouse": "NOT_RUN",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "accessibility": {
+    "no_JS_keyboard": "TESTED_ISOLATED",
+    "WCAG_2_2_AA": "NOT_CERTIFIED",
+    "screen_reader": "NOT_RUN"
+  },
+  "release": "HOLD",
+  "exact_GitHub_SHA_tests": "NOT_YET_RERUN"
+}
