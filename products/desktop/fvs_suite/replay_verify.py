@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .manifest_guard import _hash_regular, MAX_INPUT_BYTES, MAX_REPORT_BYTES
+from .csv_snapshot import read_csv_snapshot
 from .policy_diff import MAX_POLICY_BYTES
 
 _SOURCE_COUNTS = {
@@ -47,6 +48,38 @@ def _require_financial_rows(generated: Path) -> None:
             if record:
                 return
     raise ValueError("No source-bound review rows; verify the original sources manually")
+
+
+
+def _snapshot_sources_for_replay(
+    sources: tuple[Path, ...],
+    custody_hashes: tuple[tuple[str, tuple[int, int, int, int, int]], ...],
+    maximum: int,
+    private_root: Path,
+) -> tuple[Path, ...]:
+    """Run engines only on private copies of the *already hashed* source bytes.
+
+    Reopening original paths during replay allows a file to change between
+    the custody hash and engine parsing. A later path recheck still detects
+    ordinary mutations, but the engine should never depend on those mutable
+    paths. The copy must match the original pre-replay SHA-256, or HOLD.
+    Subdirectories preserve original basenames (Policy Delta reports them)
+    without colliding when two sources have the same filename.
+    """
+    copies: list[Path] = []
+    for index, (source, observed) in enumerate(zip(sources, custody_hashes)):
+        raw = read_csv_snapshot(source, maximum)
+        if hashlib.sha256(raw).hexdigest() != observed[0]:
+            raise ValueError("Selected evidence changed before replay snapshot")
+        private_slot = private_root / f"source-{index}"
+        private_slot.mkdir()
+        snapshot = private_slot / source.name
+        snapshot.write_bytes(raw)
+        copied_hash, _ = _hash_regular(snapshot, maximum)
+        if copied_hash != observed[0]:
+            raise ValueError("Private replay source does not match the custody hash")
+        copies.append(snapshot)
+    return tuple(copies)
 
 
 def verify_report(
@@ -99,19 +132,23 @@ def verify_report(
     from . import engine
 
     with tempfile.TemporaryDirectory(prefix="fvs-local-replay-") as private:
+        # Bind engine reads to descriptor-verified bytes, not mutable originals.
+        # Source/report pathname custody is independently rechecked below.
+        replay_inputs = _snapshot_sources_for_replay(
+            inputs, source_before, source_cap, Path(private))
         if kind == "ledger-diff":
             generated = engine.ledger_diff(
-                inputs[0], inputs[1], private,
+                replay_inputs[0], replay_inputs[1], private,
                 left_match_column=left_match_column,
                 right_match_column=right_match_column,
                 left_amount_column=left_amount_column,
                 right_amount_column=right_amount_column)
         elif kind == "invoice-twins":
-            generated = engine.invoice_twins(inputs[0], private, window_days=window_days)
+            generated = engine.invoice_twins(replay_inputs[0], private, window_days=window_days)
         elif kind == "spend-map":
-            generated = engine.spend_map(inputs[0], private)
+            generated = engine.spend_map(replay_inputs[0], private)
         else:
-            generated = engine.policy_delta(inputs[0], inputs[1], private)
+            generated = engine.policy_delta(replay_inputs[0], replay_inputs[1], private)
         if len(generated) != 1:
             raise ValueError("Unexpected report count; replay cannot be certified")
         comparison = Path(generated[0])
