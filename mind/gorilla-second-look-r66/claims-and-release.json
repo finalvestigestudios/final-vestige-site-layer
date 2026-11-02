@@ -1,0 +1,281 @@
+{
+  "milestone": "R66",
+  "as_of": "2026-11-02",
+  "verification": "Public seller, scholarly and regulatory pages reviewed; no seller transaction, login, product download, or affiliate account access. Actual research links below.",
+  "product": "Zen12",
+  "commercial_status": "HARD_HOLD",
+  "affiliate_link": null,
+  "publisher_acceptance": "UNVERIFIED",
+  "website_rights": "UNVERIFIED",
+  "tiktok_rights": "UNVERIFIED",
+  "email_rights": "UNVERIFIED",
+  "approved_creatives": "UNVERIFIED",
+  "claims": [
+    {
+      "id": "SC01",
+      "statement": "Inspire3 publicly lists Zen12 as a brainwave/meditation program",
+      "classification": "seller_catalog",
+      "status": "ATTRIBUTED",
+      "source": "https://inspire3.com/",
+      "context": "Category description; not evidence of effect"
+    },
+    {
+      "id": "SC02",
+      "statement": "Zen12 sessions last 12 minutes",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED_NOT_DELIVERY_TESTED",
+      "source": "https://zen12.com/about",
+      "context": "Session duration advertised"
+    },
+    {
+      "id": "SC03",
+      "statement": "Zen12 has 12 levels",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED_NOT_DELIVERY_TESTED",
+      "source": "https://zen12.com/hnp",
+      "context": "Full course tiers differ"
+    },
+    {
+      "id": "SC04",
+      "statement": "Four listening styles are described",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED_NOT_DELIVERY_TESTED",
+      "source": "https://zen12.com/about",
+      "context": "Guided, relaxing music, white noise, nature"
+    },
+    {
+      "id": "SC05",
+      "statement": "Complete program advertised as 48 MP3s",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED_NOT_DELIVERY_TESTED",
+      "source": "https://zen12.com/getstarted",
+      "context": "Distinguish whole course from six-level options"
+    },
+    {
+      "id": "SC06",
+      "statement": "Beginner is described as six levels",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED",
+      "source": "https://zen12.com/hnp",
+      "context": "No current package price promise"
+    },
+    {
+      "id": "SC07",
+      "statement": "Advanced is described as six levels",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED",
+      "source": "https://zen12.com/hnp",
+      "context": "No current package price promise"
+    },
+    {
+      "id": "SC08",
+      "statement": "Premium includes all twelve levels",
+      "classification": "seller_feature",
+      "status": "ATTRIBUTED",
+      "source": "https://zen12.com/hnp",
+      "context": "No bundle delivery independently audited"
+    },
+    {
+      "id": "SC09",
+      "statement": "Product claims a one-year money-back guarantee",
+      "classification": "seller_policy",
+      "status": "SELLER_CLAIM_UNTESTED",
+      "source": "https://zen12.com/hnp",
+      "context": "No payment, refund request, or terms eligibility verified"
+    },
+    {
+      "id": "SC10",
+      "statement": "Public checkout includes a cell/mobile number input",
+      "classification": "seller_checkout",
+      "status": "OBSERVED_FIELD_NOT_REQUIREDNESS",
+      "source": "https://zen12.com/getstarted",
+      "context": "Never claim technical requiredness without form submission"
+    },
+    {
+      "id": "SC11",
+      "statement": "Seller privacy policy describes possible mobile/SMS promotions",
+      "classification": "seller_policy",
+      "status": "DOCUMENTED_POLICY_NOT_OCCURRED_EVENT",
+      "source": "https://inspire3.com/privacy/",
+      "context": "Conditional if number provided"
+    },
+    {
+      "id": "SC12",
+      "statement": "Seller privacy policy describes possible affiliate purchaser-data sharing",
+      "classification": "seller_policy",
+      "status": "DOCUMENTED_POLICY_NOT_OCCURRED_EVENT",
+      "source": "https://inspire3.com/privacy/",
+      "context": "Conditional affiliate referrals"
+    },
+    {
+      "id": "SC13",
+      "statement": "Public checkout displays a discount and timer",
+      "classification": "seller_checkout",
+      "status": "OBSERVED_DYNAMIC_UNRELIABLE",
+      "source": "https://zen12.com/getstarted",
+      "context": "No pricing, urgency or coupon in reader-facing drafts"
+    },
+    {
+      "id": "SC14",
+      "statement": "Inspire3 public affiliate recruitment exists",
+      "classification": "seller_affiliate_program",
+      "status": "PUBLIC_PROGRAM_ONLY",
+      "source": "https://affiliates.inspire3.com/",
+      "context": "Not publisher acceptance or specific permissions"
+    },
+    {
+      "id": "SC15",
+      "statement": "Marketing research page describes brainwave entrainment science",
+      "classification": "seller_research_marketing",
+      "status": "ATTRIBUTED_NOT_VALIDATION",
+      "source": "https://zen12.com/research",
+      "context": "No product-specific controlled study identified"
+    },
+    {
+      "id": "EF01",
+      "statement": "Focused counting can lead observers to fail to report an unexpected object",
+      "classification": "peer_reviewed_experiment",
+      "status": "SUPPORTED_SPECIFIC_CONDITIONS",
+      "source": "https://doi.org/10.1068/p281059",
+      "context": "Avoid universal 50% assertion"
+    },
+    {
+      "id": "EF02",
+      "statement": "Prior familiarity with gorilla video does not guarantee notice of different changes",
+      "classification": "peer_reviewed_experiment",
+      "status": "SUPPORTED_SPECIFIC_CONDITIONS",
+      "source": "https://doi.org/10.1068/i0386",
+      "context": "2010 curtain and departing player"
+    },
+    {
+      "id": "EF03",
+      "statement": "Unexpected-object motion speed can modulate detection depending on task",
+      "classification": "peer_reviewed_experiment",
+      "status": "SUPPORTED_SPECIFIC_CONDITIONS",
+      "source": "https://doi.org/10.1073/pnas.2214930120",
+      "context": "Study design limitations; not a consumer audio result"
+    },
+    {
+      "id": "PS01",
+      "statement": "12 minutes of Zen12 equal 60 minutes of advanced meditation",
+      "classification": "seller_efficacy",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED_DO_NOT_ENDORSE",
+      "source": "https://zen12.com/hnp",
+      "context": "Named finished-product comparator missing"
+    },
+    {
+      "id": "PS02",
+      "statement": "Zen12 automatically eliminates worry/stress/anxiety",
+      "classification": "seller_health",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED_DO_NOT_ENDORSE",
+      "source": "https://zen12.com/about",
+      "context": "No medical claims"
+    },
+    {
+      "id": "PS03",
+      "statement": "Zen12 automatically controls brainwaves and produces full meditation benefits",
+      "classification": "seller_efficacy",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED_DO_NOT_ENDORSE",
+      "source": "https://zen12.com/research",
+      "context": "Research on technique does not verify named product"
+    },
+    {
+      "id": "PS04",
+      "statement": "Zen12 guarantees greater creativity/focus/mental power",
+      "classification": "seller_efficacy",
+      "status": "NOT_INDEPENDENTLY_SUBSTANTIATED_DO_NOT_ENDORSE",
+      "source": "https://zen12.com/hnp",
+      "context": "No named-product comparative data"
+    },
+    {
+      "id": "PS05",
+      "statement": "Zen12 medically treats a disorder",
+      "classification": "medical_claim",
+      "status": "DO_NOT_MAKE",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "context": "No product-specific competent reliable scientific support"
+    },
+    {
+      "id": "PR01",
+      "statement": "FV has an active Zen12 payout relationship",
+      "classification": "permission",
+      "status": "UNVERIFIED_DO_NOT_CLAIM",
+      "source": null,
+      "context": "Written account-specific acceptance required"
+    },
+    {
+      "id": "PR02",
+      "statement": "A Zen12 earning link may be published",
+      "classification": "permission",
+      "status": "UNVERIFIED_DISABLED",
+      "source": null,
+      "context": "Link withheld; no invented URLs"
+    },
+    {
+      "id": "PR03",
+      "statement": "Inspire3 creatives may be copied",
+      "classification": "permission",
+      "status": "UNVERIFIED_DO_NOT_COPY",
+      "source": null,
+      "context": "No access to authenticated approved swipe; entirely original copy and art"
+    },
+    {
+      "id": "PR04",
+      "statement": "Newsletter email promotion is authorized",
+      "classification": "permission",
+      "status": "UNVERIFIED_DO_NOT_SEND",
+      "source": null,
+      "context": "Dispatch #174 distinct owner; protect Jetpack Focus welcome"
+    },
+    {
+      "id": "PR05",
+      "statement": "Real affiliate conversion/sale occurred",
+      "classification": "attribution",
+      "status": "UNKNOWN_DO_NOT_REPORT",
+      "source": null,
+      "context": "Clicks cannot substantiate sales"
+    },
+    {
+      "id": "REG01",
+      "statement": "Affiliate compensation must be clear and adjacent to recommendation",
+      "classification": "regulatory",
+      "status": "IMPLEMENTED_PROSPECTIVELY_DISABLED",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "context": "Inline notice immediately before disabled button"
+    },
+    {
+      "id": "REG02",
+      "statement": "Health benefit advertising must avoid unsubstantiated net impression",
+      "classification": "regulatory",
+      "status": "IMPLEMENTED",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "context": "No implied clinical endorsement"
+    },
+    {
+      "id": "REG03",
+      "statement": "No new subscriber form, tracking pixel or account identifier",
+      "classification": "privacy",
+      "status": "IMPLEMENTED_IN_DRAFT",
+      "source": null,
+      "context": "Native guide only, 1 existing Jetpack/Focus funnel"
+    }
+  ],
+  "review_notes": {
+    "verified_offer_pages": [
+      "https://inspire3.com/",
+      "https://zen12.com/hnp",
+      "https://zen12.com/about",
+      "https://zen12.com/research",
+      "https://zen12.com/getstarted",
+      "https://inspire3.com/privacy/",
+      "https://affiliates.inspire3.com/"
+    ],
+    "research_limitations": [
+      "Pages are public-facing and dynamic; checkout price/claims can change.",
+      "No private approved creatives or partner terms observed.",
+      "Product is not independently downloaded, purchased, measured or trialed.",
+      "One-year guarantee is seller-advertised, not refund testing."
+    ],
+    "deployment": "UNPUBLISHED"
+  }
+}
