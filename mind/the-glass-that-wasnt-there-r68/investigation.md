@@ -72,7 +72,7 @@ You can also do it alone on paper: underline every adjective that appears for th
 
 A claim that **all** memory is unreliable is as unscientific as a claim that memory is a perfect recording. Experimental misinformation effects do not mean an account of abuse, a witness statement, or a childhood recollection is false merely because it was recalled later. Accuracy must be assessed through the particulars and independently available evidence, not inferred from the existence of a psychological phenomenon.
 
-Nor do these studies establish that commercial audio, suggestion, hypnosis or meditation can insert or erase any desired experience. They were not trials of Zen12, Hypnosis Live or any other product. General findings about memory and suggestion cannot honestly be converted into a named product's efficacy claim.
+Nor do these studies establish that commercial audio, suggestion, hypnosis or meditation can insert or erase any desired experience. They were not trials of any commercial self-help audio. General findings about memory and suggestion cannot honestly be converted into a named product's efficacy claim.
 
 The practical lesson is a modest, durable procedure: record early, separate observation from interpretation, preserve original notes, identify the first source for every detail, and avoid exchanging accounts before independent recollections when circumstances permit. These safeguards cannot guarantee accuracy. They can make it easier to see where a later idea entered the story.
 
