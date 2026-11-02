@@ -13,17 +13,24 @@ REQUIRED = {
     "reflow_320:real_wordpress", "reflow_320:no_root_overflow",
     "reflow_320:seven_chapters", "reflow_320:reduced_motion",
     "reflow_320:primary_nav_fully_visible",
+    "reflow_640:real_wordpress", "reflow_640:no_root_overflow",
+    "reflow_640:seven_chapters", "reflow_640:primary_nav_fully_visible",
+    "reflow_640:reduced_motion",
     "keyboard_390:real_wordpress", "keyboard_390:focus_visible",
     "keyboard_390:case_enter", "keyboard_390:case_space",
     "keyboard_390:chronicle_enter", "keyboard_390:native_details_keyboard",
     "keyboard_390:reduced_motion", "touch_390:real_wordpress",
     "touch_390:case_tap", "touch_390:chronicle_tap",
-    "touch_390:reduced_motion"
+    "touch_390:reduced_motion",
+    "pinch_200_390:real_wordpress", "pinch_200_390:reduced_motion",
+    "pinch_200_390:visual_viewport_2x",
+    "pinch_200_390:seven_chapters", "pinch_200_390:case_tap_at_2x",
+    "pinch_200_390:text_200_percent_no_root_overflow"
 }
 
 
 class UsabilityContract(TestCase):
-    def test_all_sixteen_checks_produce_clean_result(self):
+    def test_all_twenty_seven_checks_produce_clean_result(self):
         self.assertEqual(module.grade({k: True for k in REQUIRED}), [])
 
     def test_empty_checks_fail_closed(self):
@@ -48,10 +55,30 @@ class UsabilityContract(TestCase):
         checks["keyboard_390:focus_visible"] = "true"
         self.assertIn("MISSING_OR_NONBOOLEAN_CHECK", module.grade(checks))
 
-    def test_profile_contract_remains_three_real_browser_modes(self):
+    def test_profile_contract_five_browser_modes(self):
         self.assertEqual(module.PROFILES, (
-            ("reflow_320", 320, False), ("keyboard_390", 390, False),
-            ("touch_390", 390, True)))
+            ("reflow_320", 320, False), ("reflow_640", 640, False),
+            ("keyboard_390", 390, False), ("touch_390", 390, True),
+            ("pinch_200_390", 390, True)))
+
+    def test_missing_actual_visual_zoom_fails_closed(self):
+        checks = {k: True for k in REQUIRED if k != "pinch_200_390:visual_viewport_2x"}
+        self.assertIn("MISSING_pinch_200_390_visual_viewport_2x", module.grade(checks))
+
+    def test_false_pinch_zoom_target_fails_closed(self):
+        checks = {k: True for k in REQUIRED}
+        checks["pinch_200_390:visual_viewport_2x"] = False
+        self.assertIn("FAIL_pinch_200_390_visual_viewport_2x", module.grade(checks))
+
+    def test_text_200_percent_overflow_fails_closed(self):
+        checks = {k: True for k in REQUIRED}
+        checks["pinch_200_390:text_200_percent_no_root_overflow"] = False
+        self.assertIn("FAIL_pinch_200_390_text_200_percent_no_root_overflow", module.grade(checks))
+
+    def test_reflow_640_nav_clipping_fails_closed(self):
+        checks = {k: True for k in REQUIRED}
+        checks["reflow_640:primary_nav_fully_visible"] = False
+        self.assertIn("FAIL_reflow_640_primary_nav_fully_visible", module.grade(checks))
 
     def test_production_is_never_a_target(self):
         self.assertEqual(module.PAGE,
