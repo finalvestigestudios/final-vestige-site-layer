@@ -89,6 +89,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r129.py
           python -OO products/desktop/scripts/safe_unittest_r129.py
+      - name: R130 strict finite-only private R9 and witness JSON (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r130.py
+          python -OO products/desktop/scripts/safe_unittest_r130.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -317,6 +321,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R129 private parent-path custody regression FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r129.py
           if ($LASTEXITCODE -ne 0) { throw "R129 optimized parent-path custody regression FAILED" }
+      - name: R130 strict finite-only private R9 and witness JSON (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r130.py
+          if ($LASTEXITCODE -ne 0) { throw "R130 private finite-only evidence regression FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r130.py
+          if ($LASTEXITCODE -ne 0) { throw "R130 optimized finite-only evidence regression FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

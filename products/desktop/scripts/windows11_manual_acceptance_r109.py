@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import hmac
 import json
+import math
 import os
 import platform
 import re
@@ -150,7 +151,9 @@ def verify_r9(r9: dict, actual: dict) -> dict[str, str]:
                 not isinstance(item.get("sha256"), str) or
                 HEX.fullmatch(item["sha256"]) is None or
                 type(item.get("seconds")) not in (float, int) or
-                item["seconds"] < 0 or item["sha256"] != actual[item["name"]]):
+                item["seconds"] < 0 or
+                (type(item["seconds"]) is float and not math.isfinite(item["seconds"])) or
+                item["sha256"] != actual[item["name"]]):
             raise ReviewHold("Candidate artifact mismatch")
         hashes[item["name"]] = item["sha256"]
     if set(hashes) != set(ALL):
@@ -172,6 +175,21 @@ def make_template(r9: dict, actual: dict, r9_raw: bytes) -> dict:
 
 
 def _strict_json(raw: bytes) -> dict:
+    """Strict RFC 8259 JSON: no duplicate keys or nonfinite numeric tokens.
+
+    json.loads normally accepts NaN/Infinity literals and overflows e.g.
+    1e9999 to float infinity. Financial audit/QA evidence cannot silently
+    represent such values, even when a local SHA-256 is recomputed.
+    """
+    def reject_constant(_value):
+        raise ReviewHold("Nonfinite JSON constant")
+
+    def finite_float(value):
+        parsed = float(value)
+        if not math.isfinite(parsed):
+            raise ReviewHold("Nonfinite JSON number")
+        return parsed
+
     def unique(pairs):
         obj = {}
         for key, value in pairs:
@@ -179,7 +197,8 @@ def _strict_json(raw: bytes) -> dict:
                 raise ReviewHold("Duplicate JSON key")
             obj[key] = value
         return obj
-    result = json.loads(raw, object_pairs_hook=unique)
+    result = json.loads(raw, object_pairs_hook=unique,
+                        parse_constant=reject_constant, parse_float=finite_float)
     if not isinstance(result, dict):
         raise ReviewHold("Expected JSON object")
     return result
