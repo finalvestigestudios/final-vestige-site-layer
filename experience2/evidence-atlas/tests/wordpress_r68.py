@@ -259,6 +259,21 @@ def accept(stage,axe,out):
                     reset=page.locator('[data-fva-proof-filter="all"]')
                     (reset.tap() if w<=390 else reset.click())
                     assert page.locator('[data-fva-record]:visible').count()==6
+                    # The source register is generated in-browser from the six
+                    # reviewed NASA records, with explicit reuse limitations.
+                    # Read it inside the disposable runner; never upload the
+                    # downloaded text or leak local browser file paths.
+                    with page.expect_download(timeout=15000) as download_event:
+                        export=page.locator('[data-fva-export]')
+                        (export.tap() if w<=390 else export.click())
+                    source_download=download_event.value
+                    assert source_download.suggested_filename=='apollo-1-nasa-source-register.txt','SOURCE_REGISTER_FILENAME_CHANGED'
+                    register=Path(source_download.path()).read_text(encoding='utf-8')
+                    assert register.count('Catalog reference:')==6,'INCOMPLETE_SOURCE_REGISTER'
+                    assert register.count('Reuse status:')==6,'SOURCE_REGISTER_RIGHTS_MISSING'
+                    assert 'rights reviews are outstanding' in register,'FALSE_RIGHTS_ASSURANCE'
+                    assert 'NASA does not endorse this publication.' in register,'ENDORSEMENT_NOTICE_MISSING'
+                    assert all(link in register for link in expected_nasa_links),'NASA_REGISTER_CROSSWALK_MISMATCH'
                     ledger.advance('INTERACTION')
                     if w in (390,1440):
                         page.add_script_tag(path=str(axe))
