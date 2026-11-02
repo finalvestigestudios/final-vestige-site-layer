@@ -21,7 +21,7 @@ test("B adds original accessible poster",()=>assert.match(b,/<svg[^>]+role="img"
 test("B has an immediately readable no-JS transcript",()=>{assert.match(b,/<details[^>]+open>/);assert.match(b,/<summary>Read the complete film transcript/);});
 test("B transcript matches 6-cue VTT",()=>{assert.equal((vtt.match(/-->/g)||[]).length,6);for(const t of ["Two numbers. One rapid stream.","This is a measured task effect","That is not proof of any audio product.","Perception is evidence."]){if(t==="This is a measured task effect")continue;assert.ok(vtt.includes(t));}});
 test("caption file times exactly 0 to 40 seconds",()=>{assert.ok(vtt.includes("00:00:00.000 --> 00:00:06.600"));assert.ok(vtt.includes("00:00:33.300 --> 00:00:40.000"));});
-test("both pages show actual disabled HTML buttons",()=>{for(const x of [a,b]){assert.match(x,/<button\b[^>]*\bdisabled\b[^>]*>/i);assert.doesNotMatch(x,/<a[^>]*>\s*View Zen12 offer/i);}});
+test("both pages show actual disabled HTML buttons",()=>{for(const x of [a,b]){assert.match(x,/<button\b[^>]*\sdisabled(?=\s|>)[^>]*>/i);assert.doesNotMatch(x,/<a[^>]*>\s*View Zen12 offer/i);}});
 test("prospective disclosure is next to button",()=>{for(const x of [a,b]){let p=x.indexOf("If you purchase through a future authorized link");let q=x.indexOf("View Zen12 offer");assert.ok(p>0&&q>p&&q-p<900);}});
 test("affiliate disclaimer uses actual commission wording",()=>{for(const x of [a,b]) assert.match(x,/Final Vestige may earn a commission at no additional cost to you/);});
 test("no merchant-origin outgoing anchors",()=>{for(const x of [a,b,hub])assert.ok(anchorTags(x).every(link=>!deny.test(link)),anchorTags(x).join(","));});
