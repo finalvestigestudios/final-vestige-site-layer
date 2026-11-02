@@ -193,6 +193,7 @@ def accept(stage,axe,out):
           started = time.monotonic()
           polls = 0
           observations = {}
+          observation = 'NO_PROBE'
           ready = False
           failure = 'WORDPRESS_REST_NOT_READY'
           while time.monotonic() - started < 180:
