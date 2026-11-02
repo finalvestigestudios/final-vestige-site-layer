@@ -354,8 +354,11 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     visual=context.new_page()
                     visual_errors=[];image_responses=[]
                     visual.on('pageerror',lambda err:visual_errors.append(sanitized_page_error(err)))
-                    visual.on('response',lambda response:image_responses.append(response)
-                              if response.request.resource_type=='image' else None)
+                    # Keep all network responses IN MEMORY for the media
+                    # auditor: a fetch() returning image/* would otherwise
+                    # bypass the new no-unreviewed-image gate. Only reviewed
+                    # archive URL identities are serialized to receipts.
+                    visual.on('response',lambda response:image_responses.append(response))
                     actual_response=visual.goto(render_url,wait_until='domcontentloaded',timeout=30000)
                     if actual_response is None or actual_response.status!=200:
                         raise RuntimeError('Authenticated WordPress private renderer did not return HTTP 200')
