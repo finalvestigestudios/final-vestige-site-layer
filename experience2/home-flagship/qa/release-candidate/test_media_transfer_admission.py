@@ -6,7 +6,7 @@ from media_transfer_admission import audit_image_payloads, archive_identity
 APOLLO = 'https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'
 FRANKLIN = 'https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=768%2C1221&ssl=1'
 MAP = 'https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=768%2C519&ssl=1'
-IMAGES = [{'url': x, 'complete': True, 'width': 50} for x in (APOLLO,FRANKLIN,MAP)]
+IMAGES = [{'url': x, 'complete': True, 'width': 50} for x in (APOLLO,FRANKLIN)]
 # Real, self-contained 2x2 raster fixtures (generated once using Pillow).
 # Runtime regression tests require only the Python standard library.
 FIXTURE_BYTES = tuple(base64.b64decode(s) for s in (
@@ -28,73 +28,94 @@ class Response:
     def body(self):return self.payload
 class Tests(unittest.TestCase):
     def responses(self):return [Response(a['url']) for a in IMAGES]
-    def test_three_real_http_body_receipts_are_required(self):
-        r=audit_image_payloads(IMAGES,self.responses())
-        self.assertEqual(r['status'],'PASS'); self.assertEqual(len(r['images']),3)
-        self.assertTrue(all(x['decoded_payload_bytes']>0 and len(x['payload_sha256'])==64 for x in r['images']))
-    def test_missing_response_is_not_substituted_with_natural_width(self):
-        r=audit_image_payloads(IMAGES,self.responses()[:2])
-        self.assertEqual(r['status'],'HOLD');self.assertIn('malbone:IMAGE_HTTP_RESPONSE_MISSING',r['failure_codes'])
-    def test_error_http_is_rejected(self):
+
+    def test_two_cleared_http_payloads_are_required(self):
+        receipt=audit_image_payloads(IMAGES,self.responses())
+        self.assertEqual(receipt['status'],'PASS')
+        self.assertEqual([r['archive'] for r in receipt['images']],['apollo','franklin'])
+        self.assertTrue(all(r['decoded_payload_bytes']>0 and len(r['payload_sha256'])==64 for r in receipt['images']))
+
+    def test_missing_body_is_not_forgiven_by_naturalwidth(self):
+        receipt=audit_image_payloads(IMAGES,self.responses()[:1])
+        self.assertIn('franklin:IMAGE_HTTP_RESPONSE_MISSING',receipt['failure_codes'])
+
+    def test_non_200_http_rejected(self):
         responses=self.responses();responses[1].status=403
         self.assertEqual(audit_image_payloads(IMAGES,responses)['status'],'HOLD')
-    def test_non_image_content_type_rejected(self):
-        responses=self.responses();responses[0].typ='text/html'
-        self.assertIn('apollo:NOT_IMAGE_CONTENT_TYPE',audit_image_payloads(IMAGES,responses)['failure_codes'])
-    def test_empty_and_oversize_rejected(self):
-        r=self.responses();r[2].payload=b''
-        self.assertIn('malbone:IMAGE_BODY_SIZE_INVALID',audit_image_payloads(IMAGES,r)['failure_codes'])
-        r[2].payload=b'x'*(8*1024*1024+1)
+
+    def test_non_image_type_rejected(self):
+        r=self.responses();r[0].typ='text/html'
+        self.assertIn('apollo:NOT_IMAGE_CONTENT_TYPE',audit_image_payloads(IMAGES,r)['failure_codes'])
+
+    def test_empty_and_large_body_rejected(self):
+        r=self.responses();r[1].payload=b''
+        self.assertIn('franklin:IMAGE_BODY_SIZE_INVALID',audit_image_payloads(IMAGES,r)['failure_codes'])
+        r[1].payload=b'x'*(8*1024*1024+1)
         self.assertEqual(audit_image_payloads(IMAGES,r)['status'],'HOLD')
-    def test_duplicate_source_does_not_fake_three_archives(self):
-        r=audit_image_payloads([IMAGES[0],IMAGES[0],IMAGES[1]],self.responses())
-        self.assertEqual(r['status'],'HOLD')
-    def test_untrusted_host_cannot_spoof_valid_path(self):
-        self.assertIsNone(archive_identity('https://evil.example/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'))
-        self.assertIsNone(archive_identity('http://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'))
-        self.assertIsNone(archive_identity('https://finalvestige.com.evil.test/wp-content/uploads/2026/08/s67-19766.webp'))
-    def test_individual_valid_images_are_recognized(self):
-        self.assertEqual([archive_identity(i['url']) for i in IMAGES],['apollo','franklin','malbone'])
-    def test_response_body_exception_fails_closed(self):
+
+    def test_duplicate_image_identity_rejected(self):
+        receipt=audit_image_payloads([IMAGES[0], IMAGES[0]],self.responses())
+        self.assertEqual(receipt['status'],'HOLD')
+
+    def test_embargoed_map_fetched_as_extra_resource_fails(self):
+        receipt=audit_image_payloads(IMAGES,self.responses()+[Response(MAP)])
+        self.assertIn('NYPL_UNCLEARED_CAPTURE_HTTP_REQUEST_DETECTED',receipt['failure_codes'])
+
+    def test_embargoed_map_in_expected_images_rejected(self):
+        receipt=audit_image_payloads(IMAGES+[{'url':MAP,'complete':True,'width':100}],
+                                    self.responses()+[Response(MAP)])
+        self.assertEqual(receipt['status'],'HOLD')
+        self.assertIsNone(archive_identity(MAP))
+
+    def test_untrusted_host_and_scheme_rejected(self):
+        for url in ('https://evil.example/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp',
+                    'http://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp',
+                    'https://finalvestige.com.evil.test/wp-content/uploads/2026/08/s67-19766.webp'):
+            self.assertIsNone(archive_identity(url))
+
+    def test_pinned_provenance_only(self):
+        self.assertEqual([archive_identity(i['url']) for i in IMAGES],['apollo','franklin'])
+
+    def test_read_error_fails_closed(self):
         class Broken(Response):
-            def body(self):raise RuntimeError('body access denied')
+            def body(self):raise RuntimeError('body unavailable')
         r=self.responses();r[0]=Broken(APOLLO)
         self.assertIn('apollo:BODY_FETCH_FAILED',audit_image_payloads(IMAGES,r)['failure_codes'])
-    def test_non_image_resource_type_does_not_count(self):
-        r=self.responses();r[2].request.resource_type='fetch'
-        self.assertIn('malbone:IMAGE_HTTP_RESPONSE_MISSING',audit_image_payloads(IMAGES,r)['failure_codes'])
-    def test_html_masquerading_as_jpeg_is_rejected(self):
-        r=self.responses(); r[1].payload=b'<html>fake archive</html>'
+
+    def test_fetch_resource_type_does_not_pass(self):
+        r=self.responses();r[1].request.resource_type='fetch'
+        self.assertIn('franklin:IMAGE_HTTP_RESPONSE_MISSING',audit_image_payloads(IMAGES,r)['failure_codes'])
+
+    def test_html_masquerading_as_jpeg_rejected(self):
+        r=self.responses();r[1].payload=b'<html>fake</html>'
         self.assertIn('franklin:IMAGE_MAGIC_INVALID',audit_image_payloads(IMAGES,r)['failure_codes'])
 
-    def test_all_three_forged_image_mime_responses_are_rejected(self):
-        r=[Response(i['url'],typ='image/jpeg',body=b'<html>not an image</html>') for i in IMAGES]
+    def test_forged_mime_rejected(self):
+        r=[Response(i['url'],typ='image/jpeg',body=b'<html>fake</html>') for i in IMAGES]
         self.assertEqual(audit_image_payloads(IMAGES,r)['status'],'HOLD')
 
-    def test_svg_and_generic_image_mime_are_out_of_scope(self):
-        for typ in ('image/svg+xml','image/gif','image/unknown'):
-            r=self.responses(); r[0].typ=typ
+    def test_svg_mime_rejected(self):
+        for mime in ('image/svg+xml','image/gif','image/unknown'):
+            r=self.responses();r[0].typ=mime
             self.assertIn('apollo:NOT_SUPPORTED_RASTER_MIME',audit_image_payloads(IMAGES,r)['failure_codes'])
 
-    def test_raster_mime_mismatch_rejected(self):
-        r=self.responses(); r[0].typ='image/jpeg'
+    def test_mime_mismatch_rejected(self):
+        r=self.responses();r[0].typ='image/jpeg'
         self.assertIn('apollo:IMAGE_MIME_MISMATCH',audit_image_payloads(IMAGES,r)['failure_codes'])
 
-    def test_duplicate_archival_placeholder_rejected(self):
-        r=self.responses(); r[2].payload=r[1].payload
+    def test_duplicate_payload_rejected(self):
+        r=self.responses();r[1].payload=r[0].payload
         self.assertIn('DUPLICATE_ARCHIVAL_IMAGE_PAYLOAD',audit_image_payloads(IMAGES,r)['failure_codes'])
 
-    def test_webp_corrupt_riff_length_rejected(self):
-        r=self.responses(); b=bytearray(r[0].payload); b[4:8]=b'\0\0\0\0';r[0].payload=bytes(b)
+    def test_corrupt_webp_and_truncated_jpeg_rejected(self):
+        r=self.responses();bb=bytearray(r[0].payload);bb[4:8]=b'\\0\\0\\0\\0';r[0].payload=bytes(bb)
         self.assertIn('apollo:IMAGE_MAGIC_INVALID',audit_image_payloads(IMAGES,r)['failure_codes'])
-
-    def test_truncated_jpeg_rejected(self):
-        r=self.responses(); r[1].payload=r[1].payload[:-2]
+        r=self.responses();r[1].payload=r[1].payload[:-2]
         self.assertIn('franklin:IMAGE_MAGIC_INVALID',audit_image_payloads(IMAGES,r)['failure_codes'])
 
-    def test_raster_receipt_includes_observed_format(self):
-        r=audit_image_payloads(IMAGES,self.responses())
-        self.assertEqual(r['status'],'PASS')
-        self.assertEqual([e['detected_raster_format'] for e in r['images']],['webp','jpeg','jpeg'])
+    def test_receipt_reports_real_observed_formats(self):
+        receipt=audit_image_payloads(IMAGES,self.responses())
+        self.assertEqual(receipt['status'],'PASS')
+        self.assertEqual([e['detected_raster_format'] for e in receipt['images']],['webp','jpeg'])
 
 if __name__=='__main__':unittest.main()
