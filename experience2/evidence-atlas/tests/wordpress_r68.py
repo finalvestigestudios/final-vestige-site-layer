@@ -132,6 +132,7 @@ def accept(stage,axe,out):
       'prepared_source_verified':True,'real_wordpress_accepted':False,
       'axe_accepted':False,'public_wordpress_writes':False
     },indent=2,sort_keys=True)+'\n')
+    last_browser_case={}
     with tempfile.TemporaryDirectory(prefix='fv-apollo-wp-private-') as secret:
       child=None
       try:
@@ -180,7 +181,7 @@ def accept(stage,axe,out):
                 page.on('pageerror',lambda error:errors.append('JS_ERROR'))
                 def route(req):
                     if req.request.url.startswith(BASE):req.continue_()
-                    else:outbound.append('OUTBOUND_BLOCKED');req.abort()
+                    else:outbound.append(req.request.resource_type);req.abort()
                 page.route('**/*',route)
                 res=page.goto(BASE+'?pagename='+SLUG,wait_until='networkidle',timeout=45000)
                 assert res is not None and res.status==200,'LOCAL_HTTP_FAILED'
@@ -192,7 +193,14 @@ def accept(stage,axe,out):
                 assert page.locator('[data-fva-cite-id]').count()==6
                 assert page.locator('.fv-ex2-apollo-suite img').count()==0
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
-                assert not outbound and not errors,(outbound,errors)
+                # Only boolean/count/type diagnostics, never raw URLs or JS
+                # messages. Theme-initiated requests remain blocked and
+                # uncertified until reviewed; do not silently weaken gate.
+                last_browser_case={'width':w,'javascript_enabled':js,
+                  'blocked_external_request_count':len(outbound),
+                  'blocked_resource_types':sorted(set(outbound)),
+                  'page_javascript_error_count':len(errors)}
+                assert not outbound and not errors,'NETWORK_OR_JAVASCRIPT_GATE_HOLD'
                 if js:
                     assert page.locator('[data-fva-atlas]').get_attribute('data-fva-ready')=='yes'
                     assert page.locator('[data-fva-to-desk]:visible').count()==6
@@ -255,6 +263,7 @@ def accept(stage,axe,out):
           'real_wordpress_accepted':False,'axe_accepted':False,
           'failure_category':safe,
           'source_location_only':site[-4:],
+          'last_browser_case_safe_counts':last_browser_case,
           'private_cli_log_class':diagnose_private_cli_log(Path(secret)/'private-cli.log'),
           'allowlisted_probe_counts':getattr(exc,'states',{}),
           'public_wordpress_writes':False,'raw_log_or_auth_material_uploaded':False
