@@ -16,6 +16,7 @@ FILES = (
     'experience2/evidence-atlas/tests/build_review_r77.py',
     'experience2/evidence-atlas/tests/test_build_review_r77.py',
     'experience2/evidence-atlas/tests/test_nested_reusable_r77.php',
+    'experience2/evidence-atlas/tests/test_wp_loopback_r72.py',
     'experience2/evidence-atlas/tests/wordpress_r68.py',
     'experience2/evidence-atlas/tests/wp_reusable_r77.py',
 )
