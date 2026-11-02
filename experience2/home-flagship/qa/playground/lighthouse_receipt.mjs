@@ -20,7 +20,7 @@ export function sanitizedSample(lhr, profile) {
   if (!['mobile_390', 'desktop_1440'].includes(profile)) throw Error('PROFILE_UNEXPECTED');
   if (lhr?.runtimeError) throw Error('LIGHTHOUSE_RUNTIME_FAILURE');
   if (typeof lhr?.lighthouseVersion !== 'string' ||
-      !/^\\d+\\.\\d+\\.\\d+/.test(lhr.lighthouseVersion)) throw Error('LIGHTHOUSE_VERSION_MISSING');
+      !/^\d+\.\d+\.\d+/.test(lhr.lighthouseVersion)) throw Error('LIGHTHOUSE_VERSION_MISSING');
   return {
     profile,
     lighthouse_version: lhr.lighthouseVersion.slice(0, 24),
