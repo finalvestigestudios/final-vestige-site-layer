@@ -96,6 +96,12 @@ function validate(a,old,direct,part,part01,part08){
   five_unvarianted_png_html_geometry_verified:5};
  for(const [k,v]of Object.entries(expected))if(a.summary?.[k]!==v)fail('summary_mismatch:'+k);
  const pngs=directRows.filter(r=>r.original_source_url.endsWith('.png')&&!r.has_registered_subsizes);
+ const expectedRetriever={observed_date:'2026-11-02',method:'web_open_exact_published_original_binary_url',
+  outcome:'TOOL_INACCESSIBLE_NO_HTTP_STATUS',wrapper_http_status:null,origin_http_status:null,
+  guest_browser_http_status:null,image_decode_verified:false};
+ if(pngs.some(r=>JSON.stringify(r.independent_source_retriever_check)!==JSON.stringify(expectedRetriever))||
+    a.rows.filter(r=>!pngs.includes(r)).some(r=>r.independent_source_retriever_check!==null))
+  fail('unsupported_png_origin_status_assertion');
  if(pngs.length!==5||pngs.some(r=>r.original_geometry_px?.width!==1672||
     r.original_geometry_px?.height!==941||r.inline_slot_matches[0]?.stored_html_geometry_px?.width!==1024||
     r.inline_slot_matches[0]?.stored_html_geometry_px?.height!==576)||sum(pngs)!==13267538)
