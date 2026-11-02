@@ -20,14 +20,14 @@ SCENES = [
 assert sum(scene[3] for scene in SCENES) == SECONDS
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
-regular = ImageFont.truetype(FONT, 29)
+regular = ImageFont.truetype(FONT, 25)
 small = ImageFont.truetype(FONT, 17)
 caption_font = ImageFont.truetype(FONT, 20)
 bold = ImageFont.truetype(BOLD, 45)
 numfont = ImageFont.truetype(FONT, 83)
 
 
-def center(d, y, line, font, color, maxw=490):
+def center(d, y, line, font, color, maxw=440):
     """Truncate only if an original script line is unexpectedly too wide."""
     while d.textbbox((0, 0), line, font=font)[2] > maxw:
         line = line[:-1]
@@ -58,7 +58,7 @@ def render(index, local_fraction, frame):
     py = cy + (radius-16)*math.sin(theta)
     draw.line((cx, cy, px, py), fill=(209, 175, 109), width=5)
     draw.ellipse((cx-6, cy-6, cx+6, cy+6), fill=(235, 218, 184))
-    center(draw, 307, f'{frame // FPS:02d}:00', numfont, (240, 231, 214), 450)
+    center(draw, 307, f'00:{frame // FPS:02d}', numfont, (240, 231, 214), 450)
     draw.line((80, 555, 460, 555), fill=(174, 146, 100), width=2)
     center(draw, 589, SCENES[index][0], caption_font, (205, 173, 116))
     center(draw, 637, SCENES[index][1], regular, (239, 232, 223))
