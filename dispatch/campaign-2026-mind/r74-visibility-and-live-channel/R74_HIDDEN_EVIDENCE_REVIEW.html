@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>R74 Dispatch | The hidden evidence trap</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0a0b0b;color:#eee9e1;font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:940px;margin:auto;padding:clamp(22px,6vw,72px) 22px 96px}a{color:#ebc486}:focus-visible{outline:3px solid #e5b971;outline-offset:4px}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.16em;color:#d0a86b;font-weight:700}
+h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.1}h1{font-size:clamp(2.4rem,6vw,4.9rem);margin:.3rem 0 1rem}h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+.intro{font-size:1.14rem;max-width:68ch;color:#d6d0c7}.hold{background:#281b12;border:2px solid #d5a466;color:#fff2d7;padding:16px 20px;margin:28px 0;font-weight:700}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr));margin:30px 0}
+article{border:1px solid #4a443a;background:#111312;padding:22px;min-width:0}article h2{margin:0 0 14px}article p{color:#d4cbbd}
+.badge{display:inline-block;border:1px solid #d6a86c;padding:3px 9px;font-size:.78rem;letter-spacing:.05em;margin-bottom:12px;color:#f1cc90}
+code{font-family:ui-monospace,Consolas,monospace;color:#f1cd9d;overflow-wrap:anywhere}pre{background:#070808;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere;color:#e5d4bc;font-size:.87rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}.pair>div{background:#121414;border-left:2px solid #b99058;padding:12px 18px}
+ul{padding-left:1.4em}li{margin:10px 0}.note{color:#bdb5a9}footer{border-top:1px solid #51493c;margin-top:40px;padding-top:18px;color:#b5ab9b}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.pair{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body><main>
+<p class="eyebrow">Final Vestige Studios / Dispatch / evidence lab</p>
+<h1>The hidden evidence trap.</h1>
+<p class="intro">An email can contain the words “Unsubscribe” or “Final Vestige may receive a commission” in its HTML source—and still hide them from readers. R74 prevents those invisible strings from being treated as proof of compliance.</p>
+<div class="hold" role="status">HOLD_UNSENT · SYNTHETIC REVIEW ONLY · NO MESSAGE SENT</div>
+<section aria-labelledby="traps"><h2 id="traps">Three false-positive examples</h2>
+<div class="grid">
+<article><span class="badge">01 / commercial disclosure</span><h2>Disclosure in a hidden span</h2><pre>&lt;span hidden&gt;May receive a commission&lt;/span&gt;</pre><p>Prior logic could count this hidden content as disclosure in the first 55 visible words.</p><p><strong>Now:</strong> not counted as a visible disclosure.</p></article>
+<article><span class="badge">02 / postal identity</span><h2>Invisible publisher address</h2><pre>&lt;p style="display:none"&gt;Publisher address&lt;/p&gt;</pre><p>Source bytes can contain an address while the HTML presentation leaves it inaccessible.</p><p><strong>Now:</strong> cannot satisfy the visible HTML postal-reference check.</p></article>
+<article><span class="badge">03 / unsubscribe</span><h2>Hidden opt-out anchor</h2><pre>&lt;a hidden href="[PRIVATE TOKEN]"&gt;Unsubscribe&lt;/a&gt;</pre><p>A real-looking HTTPS link is not evidence that a reader can see or use it.</p><p><strong>Now:</strong> invisible opt-out anchors are excluded.</p></article>
+</div></section>
+<section aria-labelledby="parity"><h2 id="parity">What evidence still matters?</h2>
+<div class="pair"><div><h3>Offline source inspection</h3><p>Conservative parser checks both MIME renditions, flags hidden nodes and CSS ambiguity, and never echoes email addresses, tokens, full copy or secret links.</p></div><div><h3>Actual authorized delivery</h3><p>Requires approved Jetpack native preview, separately authorized test delivery, private account-level recipient status, qualified postal ownership and functional unsubscribe. Not performed here.</p></div></div></section>
+<section aria-labelledby="boundaries"><h2 id="boundaries">Release boundaries</h2>
+<ul><li>Issue 03 Zen12 and Issue 05 Total Focus require named-product and <strong>EMAIL-channel</strong> merchant permissions, approved live buyer guides and near-offer disclosure.</li>
+<li>Commercial vendor claims about hour-equivalent meditation, brain rewriting, or guaranteed concentration are not proven by a merchant's sales copy.</li>
+<li>Four editorial and two commercial slots stay intact; no manuscript has been silently replaced.</li>
+<li>WordPress is currently configured for <strong>excerpt</strong> emails; no publisher address or received unsubscribe has been verified.</li></ul></section>
+<footer><p>Reviewer demonstration, not a genuine WordPress generated message or a representation of a real subscriber. The entire campaign remains HOLD_UNSENT. Original six drafts: PR #175. R74 verifies its six original native Python tests from the exact original Git commit.</p></footer>
+</main></body></html>
