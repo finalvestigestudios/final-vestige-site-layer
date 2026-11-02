@@ -34,6 +34,7 @@ jobs:
         run: |
           python -m py_compile experience2/evidence-atlas/tests/wordpress_r68.py experience2/evidence-atlas/tests/wp_readiness_r69.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_readiness_r69.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_case_ledger_r72.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wordpress_r68.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p 'test_*.py' -q
           python -m unittest discover -s experience2/evidence-atlas -p test_atlas.py -q
@@ -97,7 +98,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: apollo-r68-authentic-wordpress-HOLD
+          name: apollo-r72-authentic-wordpress-HOLD
           path: ${{ runner.temp }}/apollo-r68-evidence/
           if-no-files-found: warn
           retention-days: 7

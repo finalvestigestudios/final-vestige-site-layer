@@ -183,7 +183,7 @@ def make_html(custody: dict, css: str, js: str) -> str:
             f'<p class="fva-citation__text" data-fva-citation-text>{q(citation)}</p>'
             f'<a data-fva-back-record href="#fva-record-{q(r["id"])}">Return to NASA record {q(r["id"])}</a>'
             f'<button type="button" data-fva-copy hidden '
-            f'aria-label="Copy NASA source {q(r["id"])} citation">Copy citation {q(r["id"])}</button></li>'
+            f'aria-label="Copy citation {q(r["id"])} from NASA source">Copy citation {q(r["id"])}</button></li>'
         )
     citations = '\n'.join(citation_items)
     filters = '\n'.join(f'<button type="button" data-fva-filter="{v}" aria-pressed="{str(v=="all").lower()}">{label}</button>'

@@ -7,10 +7,12 @@ Produces an authentic local WordPress render gate only when CLI and axe are pres
 from __future__ import annotations
 import argparse, hashlib, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.request, zipfile
 from pathlib import Path, PurePosixPath
+from urllib.parse import urlsplit
 # The exact-head/clean-tree admission runs AFTER imports; suppress local .pyc
 # creation so the safety check is not invalidated by our own helper import.
 sys.dont_write_bytecode = True
 from wp_readiness_r69 import wait_for_wordpress, ReadinessFailure, diagnose_private_cli_log
+from wp_case_ledger_r72 import CaseLedger
 
 BASE='http://127.0.0.1:9438/'
 SLUG='fv-apollo-review-private'
@@ -21,6 +23,16 @@ PLUGINS=(
  ('fv-ex2-apollo-suite','fv-ex2-apollo-suite.php'),
 )
 def digest(b):return hashlib.sha256(b).hexdigest()
+
+def is_strict_loopback_request(address):
+    """Avoid prefix-confused origins and all remote/HTTPS/credentialed URLs."""
+    try:
+        parsed=urlsplit(address)
+        return (parsed.scheme=='http' and parsed.hostname=='127.0.0.1'
+                and parsed.port==9438 and not parsed.username
+                and not parsed.password)
+    except (ValueError, TypeError):
+        return False
 
 def unpack_assembler(source,dest):
     names=set();total=0
@@ -55,6 +67,10 @@ $host = strtolower((string) parse_url(home_url('/'), PHP_URL_HOST));
 if (wp_get_environment_type() !== 'local' ||
     !in_array($host, ['127.0.0.1','localhost'], true))
     throw new RuntimeException('NONLOCAL_WORDPRESS_REFUSED');
+// Ephemeral-only privacy fixture: default WP admin-bar Gravatar images
+// otherwise attempt secure.gravatar.com external requests on EVERY case.
+// Disable remote avatars in this disposable VM, never in production.
+update_option('show_avatars', 0);
 $slug = 'fv-apollo-review-private';
 if (get_page_by_path($slug, OBJECT, 'page'))
     throw new RuntimeException('REFUSE_EXISTING_CONTENT');
@@ -121,6 +137,9 @@ def accept(stage,axe,out):
         argv[-1]!='--port=9438' or sum(s.startswith('--mount=') for s in argv)!=4):
         raise ValueError('UNEXPECTED_PLAYGROUND_COMMAND')
     out.mkdir(parents=True,exist_ok=True)
+    # This atomic, allowlist-only receipt survives any later browser failure.
+    # It never treats an incomplete run, or a no-JS measurement, as a pass.
+    ledger=CaseLedger(out/'R72_CASE_LEDGER.json')
     report={'schema':'fv.apollo.r68.actual-wp-browser.v1',
       'environment':'AUTHENTIC_EPHEMERAL_WORDPRESS_PLAYGROUND',
       'release':'STAGING_HOLD','public_wordpress_writes':False,
@@ -177,21 +196,40 @@ def accept(stage,axe,out):
                        for(const e of x.getEntries())if(!e.hadRecentInput)window.__apolloLab.cls+=e.value;
                     }).observe({type:'layout-shift',buffered:true});}catch(e){}
                   })();""")
+                ledger.begin(w,js)
                 page=context.new_page();errors=[];outbound=[]
                 page.on('pageerror',lambda error:errors.append('JS_ERROR'))
                 def route(req):
-                    if req.request.url.startswith(BASE):req.continue_()
+                    if is_strict_loopback_request(req.request.url):req.continue_()
                     else:outbound.append(req.request.resource_type);req.abort()
                 page.route('**/*',route)
                 res=page.goto(BASE+'?pagename='+SLUG,wait_until='networkidle',timeout=45000)
                 assert res is not None and res.status==200,'LOCAL_HTTP_FAILED'
+                # Admission is for an actual top-level browser, not a shrunk
+                # editor/iframe preview: the viewport must be the requested CSS width.
+                assert page.evaluate('window.top===window.self && window.innerWidth')==w,'NOT_TOP_LEVEL_REQUESTED_WIDTH'
+                ledger.advance('HTTP_200')
                 assert page.locator('.fv-ex2-apollo-suite').count()==1
                 assert page.locator('[data-fvx-record]').count()==6
                 assert page.locator('[data-fva-record]').count()==6
                 assert page.locator('.fv-ex2-ledger__custody dd').count()==30
                 assert page.locator('[data-fva-drawer] dd').count()==54
                 assert page.locator('[data-fva-cite-id]').count()==6
+                # Same six reviewed NASA catalog destinations used by the
+                # independently green R70 editorial browser suite. No images,
+                # geographic points, or unreviewed source substitutions.
+                expected_nasa_links=(
+                  'https://www.nasa.gov/image-detail/apollo-1-crew-honored/',
+                  'https://www.nasa.gov/image-detail/amf-s67-15717/',
+                  'https://www.nasa.gov/image-detail/amf-s66-58038/',
+                  'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/',
+                  'https://www.nasa.gov/image-detail/amf-s67-21294/',
+                  'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/',
+                )
+                assert tuple(x.get_attribute('href') for x in page.locator('.fva-card__external').all())==expected_nasa_links,'NASA_LINK_CUSTODY_HOLD'
+                assert page.locator('.fv-ex2-apollo-suite [data-lat],[data-lon],[data-geo-edge]').count()==0,'UNREVIEWED_GEO_HOLD'
                 assert page.locator('.fv-ex2-apollo-suite img').count()==0
+                ledger.advance('SOURCE_CUSTODY')
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
                 # Only boolean/count/type diagnostics, never raw URLs or JS
                 # messages. Theme-initiated requests remain blocked and
@@ -201,9 +239,42 @@ def accept(stage,axe,out):
                   'blocked_resource_types':sorted(set(outbound)),
                   'page_javascript_error_count':len(errors)}
                 assert not outbound and not errors,'NETWORK_OR_JAVASCRIPT_GATE_HOLD'
+                ledger.advance('NETWORK_CLEAN')
                 if js:
                     assert page.locator('[data-fva-atlas]').get_attribute('data-fva-ready')=='yes'
                     assert page.locator('[data-fva-to-desk]:visible').count()==6
+                    # Exercise native keyboard and real touch/mouse interactions
+                    # in INSTALLED WordPress, rather than checking selectors only.
+                    summary=page.locator('[data-fva-drawer] summary').first
+                    summary.focus()
+                    assert summary.evaluate('e=>document.activeElement===e')
+                    was_open=summary.evaluate('e=>e.parentElement.open')
+                    page.keyboard.press('Enter')
+                    assert summary.evaluate('e=>e.parentElement.open')!=was_open
+                    page.keyboard.press('Enter')
+                    assert summary.evaluate('e=>e.parentElement.open')==was_open
+                    provisional=page.locator('[data-fva-proof-filter="provisional"]')
+                    (provisional.tap() if w<=390 else provisional.click())
+                    assert page.locator('[data-fva-record]:visible').count()==1
+                    reset=page.locator('[data-fva-proof-filter="all"]')
+                    (reset.tap() if w<=390 else reset.click())
+                    assert page.locator('[data-fva-record]:visible').count()==6
+                    # The source register is generated in-browser from the six
+                    # reviewed NASA records, with explicit reuse limitations.
+                    # Read it inside the disposable runner; never upload the
+                    # downloaded text or leak local browser file paths.
+                    with page.expect_download(timeout=15000) as download_event:
+                        export=page.locator('[data-fva-export]')
+                        (export.tap() if w<=390 else export.click())
+                    source_download=download_event.value
+                    assert source_download.suggested_filename=='apollo-1-nasa-source-register.txt','SOURCE_REGISTER_FILENAME_CHANGED'
+                    register=Path(source_download.path()).read_text(encoding='utf-8')
+                    assert register.count('Catalog reference:')==6,'INCOMPLETE_SOURCE_REGISTER'
+                    assert register.count('Reuse status:')==6,'SOURCE_REGISTER_RIGHTS_MISSING'
+                    assert 'rights reviews are outstanding' in register,'FALSE_RIGHTS_ASSURANCE'
+                    assert 'NASA does not endorse this publication.' in register,'ENDORSEMENT_NOTICE_MISSING'
+                    assert all(link in register for link in expected_nasa_links),'NASA_REGISTER_CROSSWALK_MISMATCH'
+                    ledger.advance('INTERACTION')
                     if w in (390,1440):
                         page.add_script_tag(path=str(axe))
                         a=page.evaluate("""async()=>{
@@ -212,25 +283,47 @@ def accept(stage,axe,out):
                           return {violations:x.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length})),passes:x.passes.length};
                         }""")
                         report['axe'].append({'width':w,**a})
+                        # Axe failure used to vanish when the full 14-case
+                        # report was withheld. Store ONLY rule IDs, impact and
+                        # numeric counts before admission; no DOM snippets,
+                        # CSS targets, text, private URLs, or credentials.
+                        (out/'R72_INCREMENTAL_AXE_RECEIPT.json').write_text(
+                            json.dumps({'schema':'fv.apollo.r72.axe-progress.v1',
+                              'release':'STAGING_HOLD','human_review_required':True,
+                              'scope':'ORIGINAL_APOLLO_COMPONENT_INSIDE_REAL_LOCAL_WORDPRESS',
+                              'observations':report['axe']},indent=2,sort_keys=True))
                         assert not a['violations'],a
+                        ledger.advance('AXE')
                         img=page.screenshot(full_page=True,animations='disabled')
                         filename=f'R68_AUTHENTIC_WP_{w}.png'
                         (out/filename).write_bytes(img)
                         report['screenshots'][filename]=digest(img)
+                    # LCP PerformanceObserver is asynchronous: do not read
+                    # immediately and misdiagnose a healthy WordPress render.
+                    # A missing entry after a bounded wait still fails closed.
+                    page.wait_for_function("window.__apolloLab && Number.isFinite(window.__apolloLab.lcp)",timeout=10000)
                     metric=page.evaluate("""()=>({lcp:window.__apolloLab?.lcp??null,
                       cls:window.__apolloLab?.cls??null})""")
                     report['lab'].append({'width':w,**metric,'authentic_local_lab_not_field_cwv':True})
                     assert metric['lcp'] is not None and metric['lcp']<=2500
                     assert metric['cls'] is not None and metric['cls']<=0.1
+                    ledger.advance('LAB_METRICS')
                     page.emulate_media(media='print')
                     assert page.locator('[data-fvx-record]:visible').count()==6
                     assert page.locator('[data-fva-record]:visible').count()==6
+                    ledger.advance('PRINT')
                 else:
                     assert page.locator('[data-fvx-record]:visible').count()==6
                     assert page.locator('[data-fva-record]:visible').count()==6
+                    page.emulate_media(media='print')
+                    assert page.locator('.fv-ex2-ledger__custody dd:visible').count()==30
+                    assert page.locator('[data-fva-drawer] dd:visible').count()==54
+                    ledger.advance('NO_JS_CONTENT')
+                ledger.pass_case()
                 report['cases'].append({'width':w,'js':js,'pass':True})
                 context.close()
             browser.close()
+        ledger.require_complete()
         (out/'R68_AUTHENTIC_WP_RECEIPT.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
         (out/'R69_REAL_WP_ADMISSION.json').write_text(json.dumps({
           'schema':'fv.apollo.r69.admission.v1','release':'STAGING_HOLD',
@@ -242,6 +335,14 @@ def accept(stage,axe,out):
         },indent=2,sort_keys=True)+'\n')
         return report
       except Exception as exc:
+        # Preserve only a classification, never the exception text/URL or
+        # private Playground credentials. The last completed milestone stays
+        # durable even if the process exits before its full 14-case receipt.
+        failure_class=('NETWORK' if last_browser_case.get('blocked_external_request_count',0) else
+                       'ASSERTION' if isinstance(exc,AssertionError) else
+                       'BROWSER' if type(exc).__name__ in ('TimeoutError','Error','TargetClosedError') else
+                       'UNKNOWN')
+        ledger.hold(failure_class)
         # Preserve an actionable allowlisted failure receipt. The private
         # CLI log is destroyed on exit; no raw log, URL or auth may escape.
         phase = getattr(exc,'reason',type(exc).__name__)

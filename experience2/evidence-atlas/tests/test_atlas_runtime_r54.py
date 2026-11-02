@@ -12,11 +12,11 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PROBE = ROOT / 'tests/php_atlas_runtime_r54_probe.php'
 PINS = {
-    'final-vestige-ex2-evidence-atlas.php': '8f5a21b42cbd00acf0e390aaeb22e55f3bb216f8',
+    'final-vestige-ex2-evidence-atlas.php': 'ac7c11133b5e7974a3f9ceaa37fe2166aa7e7164',
     'atlas.css': '079f2ef9785184a098ec7686f5018a474181031b',
     'atlas.js': '93c274410579f1e539e454ddd75b8317e2add33a',
 }
-TEMPLATE_SHA = '33c72ea1b64d5b3b93dd949da9143debea6bda1cc1143402a20e9e1abcaef82a'
+TEMPLATE_SHA = 'f2cf346ab5801729fada99643168be7878d9f83237c038e3f9dd638d49613250'
 
 def blob(data):
     return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
