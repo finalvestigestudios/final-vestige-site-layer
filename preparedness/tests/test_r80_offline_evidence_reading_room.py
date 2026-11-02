@@ -9,6 +9,7 @@ import importlib.util
 import json
 from pathlib import Path
 import re
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -27,7 +28,20 @@ class R80FullCorpus(unittest.TestCase):
         # re-deriving the same 35-article tree twice during this unit suite:
         # the mandatory workflow's per-gate 180-second execution ceiling
         # should not turn evidence-preserving regression tests into a timeout.
-        cls.report = r80._r79().live_report()
+        # Python unittest discovery executes the immutable R79 corpus tests
+        # before R80. Reuse its already reconstructed R79 evidence when present
+        # (never mutate it); otherwise build independently for R80-only runs.
+        # This avoids a second costly 35-article reconstruction while retaining
+        # the separate, entirely UNMOCKED R80 integration workflow as the
+        # authoritative exact-head evidence-conservation test.
+        previous = sys.modules.get("test_r79_consequential_context_review")
+        prior_cls = getattr(previous, "TestR79Conservation", None)
+        validated_prior = getattr(prior_cls, "report", None)
+        cls.report = (validated_prior if type(validated_prior) is dict
+                      and validated_prior.get("schema") ==
+                      "r79-consequential-passage-context-hold-v1"
+                      else r80._r79().live_report())
+        r80._r79().sealed(cls.report)
         cls.docs = cls.report["complete_R78_evidence_UNABRIDGED_NOT_APPROVED"][
             "document_review_packets_NOT_APPROVED"]
         cls.orders = cls.report[
