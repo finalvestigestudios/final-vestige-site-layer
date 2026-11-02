@@ -1,0 +1,402 @@
+{
+  "title": "R64 named-product and publication-rights matrix",
+  "updated": "2026-11-01",
+  "scope": "Unpublished editorial research only",
+  "source_review_method": "Public seller offer/about/research/checkout/privacy + FTC/NCCIH + actual original studies; no affiliate account or purchase.",
+  "commercial_activation": false,
+  "conditions": [
+    "Final Vestige-specific partner acceptance in writing",
+    "Exact approved tracked destination URL and attribution terms",
+    "Explicit allowed website, social, TikTok and email channels",
+    "Product-specific creative license and acceptable claims",
+    "Checkout/refund/mobile/privacy re-verification",
+    "Independent science, FTC, Site QA, founder final exact-SHA release",
+    "Approved first-party film hosting with captions and offline-safe fallback"
+  ],
+  "entries": [
+    {
+      "id": "zen12-001",
+      "claim": "Zen12 is an Inspire3 product",
+      "category": "seller relationship",
+      "source": "https://inspire3.com/",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-002",
+      "claim": "Sessions are marketed as 12 minutes",
+      "category": "format",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-003",
+      "claim": "The program advertises 12 levels",
+      "category": "format",
+      "source": "https://zen12.com/about",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-004",
+      "claim": "The seller describes 4 listening styles",
+      "category": "format",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-005",
+      "claim": "Complete course advertised as 48 MP3s",
+      "category": "package",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-006",
+      "claim": "Beginner and Advanced offered separately",
+      "category": "package",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-007",
+      "claim": "Seller lists manual and quickstart guide",
+      "category": "package",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-008",
+      "claim": "Seller advertises customer support",
+      "category": "package",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "zen12-009",
+      "claim": "Seller advertises a one-year refund guarantee",
+      "category": "seller terms",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller-described-unverified-execution",
+      "decision": "ATTRIBUTE_ONLY_AND_RECHECK"
+    },
+    {
+      "id": "zen12-010",
+      "claim": "Checkout shows a mobile phone number field",
+      "category": "seller checkout observed 2026-11-01",
+      "source": "https://zen12.com/getstarted",
+      "evidence": "direct public observation",
+      "decision": "ALLOW_WITH_NO_REQUIREMENT_INFERENCE"
+    },
+    {
+      "id": "zen12-011",
+      "claim": "Mobile phone field is technically required",
+      "category": "checkout completion behavior",
+      "source": "https://zen12.com/getstarted",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-012",
+      "claim": "Seller uses some telephone or SMS marketing",
+      "category": "seller privacy statement",
+      "source": "https://inspire3.com/privacy/",
+      "evidence": "seller-described",
+      "decision": "ATTRIBUTE_ONLY"
+    },
+    {
+      "id": "zen12-013",
+      "claim": "Seller may share affiliate purchasers' contact/purchase details with affiliates",
+      "category": "seller privacy statement",
+      "source": "https://inspire3.com/privacy/",
+      "evidence": "seller-described",
+      "decision": "ATTRIBUTE_ONLY"
+    },
+    {
+      "id": "zen12-014",
+      "claim": "Any named customer was actually shared or contacted",
+      "category": "operational outcome",
+      "source": "https://inspire3.com/privacy/",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-015",
+      "claim": "Advertised price or discount is stable at checkout",
+      "category": "price/urgency",
+      "source": "https://zen12.com/getstarted",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-016",
+      "claim": "Countdown indicates authentic limited scarcity",
+      "category": "price/urgency",
+      "source": "https://zen12.com/getstarted",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-017",
+      "claim": "Merchant has approved exact Final Vestige Zen12 partnership",
+      "category": "affiliate authorization",
+      "source": "https://affiliates.inspire3.com/",
+      "evidence": "not established by public recruitment",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-018",
+      "claim": "Merchant has authorized Final Vestige site-based earning URL",
+      "category": "affiliate authorization",
+      "source": "https://affiliates.inspire3.com/",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-019",
+      "claim": "Merchant permits Final Vestige TikTok promotion",
+      "category": "channel permission",
+      "source": "https://affiliates.inspire3.com/",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-020",
+      "claim": "Merchant permits Final Vestige email campaign promotion",
+      "category": "channel permission",
+      "source": "https://affiliates.inspire3.com/",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-021",
+      "claim": "Final Vestige may use Inspire3 ad swipe/copy/creative",
+      "category": "creative rights",
+      "source": "https://affiliates.inspire3.com/",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-022",
+      "claim": "Final Vestige has used or independently tested Zen12",
+      "category": "experience",
+      "source": "none",
+      "evidence": "false/not performed",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-023",
+      "claim": "A 12-minute Zen12 session yields one hour's advanced-meditation benefits",
+      "category": "quantitative efficacy",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller assertion; independent product trial not verified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-024",
+      "claim": "Zen12 automatically creates a deep meditation state",
+      "category": "efficacy",
+      "source": "https://zen12.com/research",
+      "evidence": "seller assertion; no named-product support verified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-025",
+      "claim": "Zen12 rapidly eliminates stress/anxiety",
+      "category": "health efficacy",
+      "source": "https://zen12.com/about",
+      "evidence": "seller assertion; no product-specific adequate support verified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-026",
+      "claim": "Zen12 improves depression or treats attention disorders",
+      "category": "medical efficacy",
+      "source": "none",
+      "evidence": "no evidence reviewed",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-027",
+      "claim": "Zen12 improves long-term memory or intelligence",
+      "category": "cognitive efficacy",
+      "source": "https://zen12.com/hnp",
+      "evidence": "seller implication, unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-028",
+      "claim": "Zen12 alters brain waves to produce promised health gains",
+      "category": "mechanism-to-outcome",
+      "source": "https://zen12.com/research",
+      "evidence": "seller inference, unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-029",
+      "claim": "Broader meditation research proves Zen12 works",
+      "category": "evidence category error",
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "evidence": "not logically established",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-030",
+      "claim": "Meditation practice has heterogeneous evidence and safety limitations",
+      "category": "independent synthesis",
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "evidence": "independent contextual guidance",
+      "decision": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "zen12-031",
+      "claim": "A short free listening-preference exercise is a clinical assessment",
+      "category": "clinical interpretation",
+      "source": "none",
+      "evidence": "not tested",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-032",
+      "claim": "A free, nonmedical listening-preference exercise lets readers compare their personal preference",
+      "category": "editorial activity",
+      "source": "original non-experimental design",
+      "evidence": "editorial design, not trial",
+      "decision": "ALLOW_NO_EFFICACY_INFERENCE"
+    },
+    {
+      "id": "zen12-033",
+      "claim": "Commercial link disclosure must be clear, conspicuous and near a recommendation",
+      "category": "FTC material connection",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence": "FTC guidance",
+      "decision": "REQUIRED_IF_ACTIVATED"
+    },
+    {
+      "id": "zen12-034",
+      "claim": "Health-related benefits need adequate scientific substantiation",
+      "category": "FTC product claims",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "evidence": "FTC guidance",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "zen12-035",
+      "claim": "Artist-created face schematic reproduces controlled Thatcher phenomenon",
+      "category": "art/experimental fidelity",
+      "source": "https://doi.org/10.1068/p090483",
+      "evidence": "not validated",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-036",
+      "claim": "Thompson first described the Thatcher illusion in 1980",
+      "category": "historical source",
+      "source": "https://doi.org/10.1068/p090483",
+      "evidence": "original journal paper",
+      "decision": "ALLOW"
+    },
+    {
+      "id": "zen12-037",
+      "claim": "Orientation sensitivity has been tested via facial expression discrimination",
+      "category": "peer-reviewed empirical",
+      "source": "https://doi.org/10.1068/p7755",
+      "evidence": "primary research",
+      "decision": "ALLOW_WITH_STUDY_LIMITS"
+    },
+    {
+      "id": "zen12-038",
+      "claim": "2014 imaging research demonstrated orientation-dependent neural response pattern",
+      "category": "peer-reviewed empirical",
+      "source": "https://doi.org/10.1177/0956797613501521",
+      "evidence": "primary research",
+      "decision": "ALLOW_WITH_STUDY_LIMITS"
+    },
+    {
+      "id": "zen12-039",
+      "claim": "ERP research suggests perceptual and decision contributions",
+      "category": "peer-reviewed empirical",
+      "source": "https://doi.org/10.3758/s13423-014-0705-3",
+      "evidence": "primary research",
+      "decision": "ALLOW_WITH_CAVEAT"
+    },
+    {
+      "id": "zen12-040",
+      "claim": "Optional original 40s film will convert better than text-only",
+      "category": "conversion hypothesis",
+      "source": "no controlled test",
+      "evidence": "hypothesis only",
+      "decision": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "zen12-041",
+      "claim": "Text and video versions must have identical substantive guide",
+      "category": "A/B experimental integrity",
+      "source": "internal exact-byte test",
+      "evidence": "engineering acceptance",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "zen12-042",
+      "claim": "Film has a validated live WordPress video and synchronized captions",
+      "category": "hosting/QA",
+      "source": "not hosted",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-043",
+      "claim": "WordPress sanitizer preserves exact CSS/HTML of pilot",
+      "category": "release QA",
+      "source": "not staged",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-044",
+      "claim": "All 360/390/768/1440/1920 and 200%/400% zoom states pass",
+      "category": "a11y QA",
+      "source": "not browser-tested",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-045",
+      "claim": "Inspire3 conversion sale data may be collected by FV",
+      "category": "partner reporting/privacy",
+      "source": "partner terms not established",
+      "evidence": "unverified",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-046",
+      "claim": "A merchant outbound click proves purchase",
+      "category": "measurement inference",
+      "source": "none",
+      "evidence": "false",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "zen12-047",
+      "claim": "No new Jetpack signup stack is created",
+      "category": "current approved funnel",
+      "source": "https://finalvestige.com/focus/",
+      "evidence": "verified live page",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "zen12-048",
+      "claim": "Puységur archive documents historical reports not efficacy validation",
+      "category": "archive method",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence": "verified published archive",
+      "decision": "ALLOW_WITH_DISTINCTION"
+    }
+  ]
+}
