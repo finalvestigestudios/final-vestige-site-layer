@@ -19,6 +19,11 @@ def sample(**changes):
 
 
 class PrivateLabTest(unittest.TestCase):
+    def test_canonical_verifier_imports_its_own_sibling_modules(self):
+        verifier = lab.load_verifier()
+        self.assertEqual(len(verifier.CHAPTERS), 7)
+        self.assertEqual(verifier.check_url(lab.PAGE,"127.0.0.1"),"127.0.0.1")
+
     def test_good_measured_mobile(self):
         self.assertEqual(lab.grade(sample()), [])
 
