@@ -5,7 +5,7 @@ Does not access production WordPress, import database/users, deploy or publish.
 Produces an authentic local WordPress render gate only when CLI and axe are present.
 """
 from __future__ import annotations
-import argparse, hashlib, http.client, json, os, re, signal, stat, subprocess, sys, tempfile, time, urllib.parse, zipfile
+import argparse, hashlib, http.client, json, os, re, signal, stat, subprocess, sys, tempfile, time, traceback, urllib.parse, zipfile
 from pathlib import Path, PurePosixPath
 
 BASE='http://127.0.0.1:9438/'
@@ -328,7 +328,10 @@ if __name__=='__main__':
     try:main()
     except Exception as exc:
         # Never include private CLI output or auth material in CI logs.
-        print('APOLLO_R69_HOLD '+type(exc).__name__ +
+        source_lines = [frame.lineno for frame in traceback.extract_tb(exc.__traceback__)
+            if Path(frame.filename).name == 'wordpress_r68.py']
+        source_marker = (' local_source_line='+str(source_lines[-1])) if source_lines else ''
+        print('APOLLO_R69_HOLD '+type(exc).__name__ + source_marker +
             (' '+str(exc) if isinstance(exc, RuntimeError) and str(exc) in
               ('PLAYGROUND_PROCESS_EXITED','WORDPRESS_REST_NOT_READY') else ''),
             file=sys.stderr)
