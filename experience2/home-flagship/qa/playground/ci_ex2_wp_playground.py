@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import signal
 import subprocess
@@ -36,6 +37,12 @@ def diagnose_private_cli_log(logpath: Path) -> str:
         return 'CLI_LOG_NOT_CREATED'
     data = logpath.read_text(errors='replace')[-12000:].lower()
     patterns = (
+        ('refused: local template readback differs', 'WP_SAVED_TEMPLATE_BYTES_CHANGED'),
+        ('existing non-fv local override', 'WP_PARITY_EXISTING_CONTENT_CONFLICT'),
+        ('local theme taxonomy assignment failed', 'WP_THEME_TAXONOMY_FAILURE'),
+        ('local template area assignment failed', 'WP_TEMPLATE_AREA_FAILURE'),
+        ('refused: staging parity contract mismatch', 'WP_PARITY_CONTRACT_FAILURE'),
+        ('could not activate', 'WP_BLUEPRINT_ACTIVATION_FAILURE'),
         ('npm error canceled', 'NPM_INTERACTIVE_INSTALL_CANCELLED'),
         ('npm err! canceled', 'NPM_INTERACTIVE_INSTALL_CANCELLED'),
         ('could not determine executable', 'NPM_EXECUTABLE_UNRESOLVED'),
@@ -49,6 +56,39 @@ def diagnose_private_cli_log(logpath: Path) -> str:
     )
     return next((code for phrase, code in patterns if phrase in data),
                 'PLAYGROUND_CLI_EXIT_REASON_UNCLASSIFIED_PRIVATE_LOG_ONLY')
+
+
+def safe_cli_failure_excerpt(logpath: Path) -> str:
+    """Expose only a tiny redacted error class/phrase, never raw CLI logs.
+
+    The ephemeral runner has no production tokens, but the full Node/Blueprint
+    output is still PRIVATE and never copied to an artifact. This deliberately
+    destroys URLs, filesystem paths, emails, long IDs and credential-bearing
+    lines before selecting a diagnostic fragment.
+    """
+    if not logpath.is_file():
+        return 'NO_PRIVATE_LOG'
+    data = logpath.read_text(errors='replace')[-16000:]
+    data = re.sub(r'\x1b\[[0-9;]*[A-Za-z]', '', data)
+    selected = []
+    for line in data.splitlines():
+        if not re.search(r'(?i)\b(error|exception|fatal|refused|failed|invalid|cannot)\b', line):
+            continue
+        if re.search(r'(?i)authorization|password|secret|api[_ -]?key|bearer|session|cookie|credential|token', line):
+            continue
+        # Do not surface execution environment paths or external URLs.
+        line = re.sub(r'https?://\S+', '[URL]', line)
+        line = re.sub(r'(?:/home/|/tmp/|/var/|/opt/|/usr/)\S+', '[LOCAL_PATH]', line)
+        line = re.sub(r'\b[A-Za-z0-9_.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b', '[EMAIL]', line)
+        line = re.sub(r'\b[A-Za-z0-9+/=_-]{50,}\b', '[LONG_ID]', line)
+        line = re.sub(r'[^A-Za-z0-9 .,;:()_\-\[\]]', ' ', line)
+        line = ' '.join(line.split())
+        if len(line) >= 8:
+            selected.append(line[-110:])
+    if not selected:
+        return 'NO_SAFE_ERROR_LINES'
+    # Prefer a final error declaration over a JavaScript stack-frame line.
+    return ' ; '.join(selected[-2:])[-180:]
 
 
 def ready(process: subprocess.Popen, seconds: int = 180) -> None:
@@ -103,7 +143,9 @@ def main() -> int:
                     ready(process)
                 except RuntimeError as exc:
                     reason = diagnose_private_cli_log(secret_dir / 'wp-cli-private.log')
-                    raise RuntimeError(str(exc) + '; safe_category=' + reason) from None
+                    detail = safe_cli_failure_excerpt(secret_dir / 'wp-cli-private.log')
+                    raise RuntimeError(str(exc) + '; safe_category=' + reason
+                                       + '; safe_excerpt=' + detail) from None
                 from playwright.sync_api import sync_playwright
                 storage = secret_dir / 'local-editor-storage.json'
                 with sync_playwright() as playwright:
