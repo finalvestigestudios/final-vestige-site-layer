@@ -179,8 +179,13 @@ class R67Positive(unittest.TestCase):
         a,b,c,d=fixture()
         b["base"][-1]["url"]="HTTPS://EXAMPLE.INVALID/KEPT-EXACT"
         x = r67.construct(a,b,c,d,expected=(3,4,2,3,1,1,2,1,1,0))
-        self.assertNotEqual(x["all_original_and_RC_source_review_work_orders_NOT_APPROVED"]
-                            [-1]["candidate_exact_url_NO_ALIAS"],URL_SHARED)
+        new_record=next(row for row in
+            x["all_original_and_RC_source_review_work_orders_NOT_APPROVED"]
+            if row["source_id"]=="new-1")
+        self.assertEqual(new_record["candidate_exact_url_NO_ALIAS"],
+                         "HTTPS://EXAMPLE.INVALID/KEPT-EXACT")
+        self.assertEqual(len(new_record[
+            "candidate_distinct_identities_sharing_exact_url"]),1)
 
 
 class R67Adversarial(unittest.TestCase):
@@ -278,8 +283,8 @@ class R67Adversarial(unittest.TestCase):
             signed(d[2])
         self.assert_hold(edit)
     def test_refuse_rc_group_census_drift(self):
-        self.assert_hold(lambda d:d[1]["base"][-1].update(
-            url="https://different.invalid/new-source"))
+        self.assert_hold(lambda d:d[1]["food"][0].update(
+            url=URL_OTHER))
     def test_refuse_orig_group_census_drift(self):
         self.assert_hold(lambda d:d[0]["food"][0].update(url=URL_OTHER))
     def test_refuse_candidate_record_count_drift(self):
