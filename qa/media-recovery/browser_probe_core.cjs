@@ -165,23 +165,37 @@ function countTransfer(network){
 // A claim about ARTICLE image transfer size must count only requests attributable
 // to a browser-visible, identity-verified stored article image, once per request.
 // Multiple DOM slots can share a single request; separate real requests still count.
+// Savings-grade article bytes require every stored article slot to be bound to
+// decoded pixels AND a fresh, exact-identity CDP Image response. Unknown != zero.
 function scopeArticleImageWire(slots,networkImages){
- if(!Array.isArray(slots)||!Array.isArray(networkImages))
-  return{article_bytes:null,unattributed_bytes:null,matched_request_count:0,unmeasured_article_requests:0};
+ const empty={article_bytes:null,unattributed_bytes:null,matched_request_count:0,
+  unmeasured_article_requests:0,unverified_slot_count:0,unmatched_verified_slot_count:0};
+ if(!Array.isArray(slots)||!Array.isArray(networkImages)||slots.length===0)return empty;
+ const eligible=v=>!!(v&&v.result==='loaded_in_probe_browser'&&
+  (v.match==='exact_url_or_jetpack_origin'||v.match==='exact_url_unique_alt')&&
+  v.current_src_identity_verified===true&&v.network_final_identity_verified===true&&
+  v.loaded_network_proof_verified===true&&v.verified_broken_in_browser===false&&
+  v.stored_url&&v.current_src&&v.request_url&&
+  sameSource(v.stored_url,v.current_src)&&sameSource(v.current_src,v.request_url));
+ const valid=slots.filter(eligible),unverified=slots.length-valid.length;
+ const applies=(v,n)=>!!(n?.url&&sameSource(v.current_src,n.url)&&sameSource(v.request_url,n.url));
  let article=0,unattributed=0,matched=0,unmeasured=0;
  for(const n of networkImages){
-  const aliases=Array.isArray(n?.url_aliases)?n.url_aliases:[];
-  const urls=[n?.url,...aliases];
-  const attributed=slots.some(v=>v?.current_src&&v?.request_url&&
-   sameSource(v.current_src,n?.url)&&urls.some(u=>sameSource(v.request_url,u)));
+  const attributed=valid.some(v=>applies(v,n));
   const bytes=n?.encoded_data_length;
   if(attributed){
    matched++;
-   if(!Number.isSafeInteger(bytes)||bytes<0)unmeasured++;
+   if(!Number.isSafeInteger(bytes)||bytes<=0||n.status!==200||
+     typeof n.mime_type!=='string'||!/^image\//i.test(n.mime_type)||
+     n.error||n.was_cached===true||n.from_disk_cache===true||n.from_service_worker===true)unmeasured++;
    else article+=bytes;
   }else if(Number.isSafeInteger(bytes)&&bytes>=0)unattributed+=bytes;
  }
- return{article_bytes:unmeasured?null:article,unattributed_bytes:unattributed,
-  matched_request_count:matched,unmeasured_article_requests:unmeasured};
+ const unmatched=valid.filter(v=>!networkImages.some(n=>applies(v,n))).length;
+ return{article_bytes:unverified||unmatched||!matched||unmeasured?null:article,
+  unattributed_bytes:unattributed,matched_request_count:matched,
+  unmeasured_article_requests:unmeasured,
+  unverified_slot_count:unverified,unmatched_verified_slot_count:unmatched};
 }
+
 module.exports={imageIdentity,sameSource,matchStoredImages,classifyImages,pageHostVerified,countTransfer,scopeArticleImageWire};
