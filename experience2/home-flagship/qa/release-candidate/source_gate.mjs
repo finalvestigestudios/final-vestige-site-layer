@@ -32,13 +32,16 @@ export const auditHomepage = function auditHomepage(html,ledger,assets){
     (html.match(/<script\b[^>]*\bsrc=/gi)||[]).length===js.length);
   record("ten_asset_files_present",[...css,...js].every(n=>typeof assets[n]==="string"&&assets[n].length>0));
   record("no_remote_js_css",!/<(?:script|link)\b[^>]*\b(?:src|href)=["']https?:/i.test(html));
-  record("three_images_have_alt_dimensions",imgTags.length===3&&imgTags.every(tag=>a(tag,"alt")&&Number(a(tag,"width"))>0&&Number(a(tag,"height"))>0));
+  record("two_retained_images_have_alt_dimensions",imgTags.length===2&&imgTags.every(tag=>a(tag,"alt")&&Number(a(tag,"width"))>0&&Number(a(tag,"height"))>0));
   record("image_ledger_ids",ledger.records.length===3&&["apollo","franklin","malbone"].every(id=>ledger.records.some(r=>r.id===id)));
   const srcs=imgTags.map(t=>decode(a(t,"src"))),allowed=new Set(ledger.records.map(r=>r.image_url));
-  record("every_image_exactly_in_ledger",srcs.length===3&&new Set(srcs).size===3&&srcs.every(url=>allowed.has(url)));
+  record("displayed_images_exactly_in_ledger",srcs.length===2&&new Set(srcs).size===2&&srcs.every(url=>allowed.has(url)));
   record("image_delivery_host_scoped",srcs.every(u=>u.startsWith("https://finalvestige.com/wp-content/uploads/")||u.startsWith("https://i0.wp.com/finalvestige.com/wp-content/uploads/")));
   const mapTag=imgTags.find(t=>decode(a(t,"src")).includes("5003296"));
-  record("nypl_map_uses_responsive_delivery",!!mapTag&&!!a(mapTag,"srcset")&&!!a(mapTag,"sizes")&&decode(a(mapTag,"src")).includes("fit=1024"));
+  const sourcePlate=html.includes('class="fv-hf__source-plate"')&&html.includes("ARCHIVAL REFERENCE · IMAGE NOT REPRODUCED");
+  record("retained_archive_images_responsive",imgTags.every(t=>!!a(t,"srcset")&&!!a(t,"sizes")));
+  record("nypl_uncleared_capture_not_embedded",!mapTag&&sourcePlate&&
+    !html.includes("edit-017-v02-nypl-5003296-original.jpg"));
   record("original_sources_linked",ledger.records.every(r=>r.source_url&&links.includes(r.source_url)));
   record("map_not_fake_crash_overlay",html.includes("1903")&&html.includes("1918")&&ledger.records.some(r=>r.id==="malbone"&&r.limitation?.includes("Do not spatially")));
   const unsigned=ledger.records.filter(r=>!r.rights_approval||r.rights_approval.outcome!=="approved"||!r.rights_approval.reviewer||!r.rights_approval.checked_at||!r.rights_approval.evidence_url).map(r=>r.id);
