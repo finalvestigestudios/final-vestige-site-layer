@@ -431,6 +431,11 @@ def grant_audit(claims,ledger,budgets,folder):
             k=(key(r["program"]),key(r["id"]))
             if not all(k):raise ValueError("Blank program or ID at row "+r["row"])
             d[k].append(r)
+    # Physical CSV start lines are the budget report's audit navigation,
+    # never a reconstructed ordinal after quoted-newline records.
+    claim_rows_by_program=defaultdict(list)
+    for claim_row in claims_rows:
+        claim_rows_by_program[key(claim_row["program"])].append(claim_row["row"])
     checks=[];claimed=defaultdict(lambda:Decimal(0))
     for (program,id_) in sorted(set(grouped[0])|set(grouped[1])):
         a,b=grouped[0][(program,id_)],grouped[1][(program,id_)]
@@ -449,10 +454,12 @@ def grant_audit(claims,ledger,budgets,folder):
                        "claim_programs":labels_for_report(a,"program"),
                        "ledger_programs":labels_for_report(b,"program")})
     limits={}
+    budget_rows_by_program={}
     for r in budget_rows:
         program=key(r["program"])
         if not program or program in limits:raise ValueError("Blank/duplicate budget program at row "+r["row"])
         limits[program]=money(r["budget"])
+        budget_rows_by_program[program]=r["row"]
     budget_checks=[]
     for program in sorted(set(limits)|set(claimed)):
         total=claimed[program];limit=limits.get(program)
@@ -461,11 +468,19 @@ def grant_audit(claims,ledger,budgets,folder):
             status="normalized_budget_program_review;"+status
         budget_checks.append({"program":program,"claimed":dollars(total),
                               "budget":"" if limit is None else dollars(limit),"status":status,
-                              "source_programs":labels_for_report(program_sources[program],"program")})
+                              "source_programs":labels_for_report(program_sources[program],"program"),
+                              "claim_rows":";".join(claim_rows_by_program[program]),
+                              "budget_rows":budget_rows_by_program.get(program, ""),
+                              "claim_source_sha256":claims_digest,
+                              "ledger_source_sha256":ledger_digest,
+                              "budget_source_sha256":budget_digest})
     from .grant_bundle import publish_grant_bundle
     def build(staging):
         paths=[save(staging,"grant-audit-exceptions",("program","id","status","claim_amount","ledger_amount","difference","claim_rows","ledger_rows","claim_ids","ledger_ids","claim_programs","ledger_programs"),checks),
-               save(staging,"grant-budget-check",("program","claimed","budget","status","source_programs"),budget_checks)]
+               save(staging,"grant-budget-check",(
+                   "program","claimed","budget","status","source_programs",
+                   "claim_rows","budget_rows","claim_source_sha256",
+                   "ledger_source_sha256","budget_source_sha256"),budget_checks)]
         return paths+[manifest(staging,[claims,ledger,budgets],paths,
                                expected_inputs={claims: claims_digest, ledger: ledger_digest,
                                                 budgets: budget_digest})]

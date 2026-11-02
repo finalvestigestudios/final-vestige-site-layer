@@ -1,3 +1,7 @@
+## R137 — GrantAudit budget-source line and SHA custody (DRAFT / HOLD)
+
+Both legacy and linked premium GrantAudit budget CSVs now identify the exact claim physical starting lines, authorized-budget physical line (or blank when missing), and the three original CSV snapshot SHA-256 hashes. Linked existing `claim_rows` stays stable. This shortens review without treating a match as eligibility or authorization. [18 synthetic integration methods and reviewer runbook](docs/GRANT_BUDGET_CUSTODY_R137.md) cover precision, BOM/quoted-newline citations, manifest custody and no-overwrite; Linux and Windows normal/`-OO` CI gates are required. **All six utilities UNRELEASED, premium locks retained, QD/founder approval and physical Win11/Defender/signing/gated distribution pending.**
+
 ## R136 — Policy Delta exact-line change index (DRAFT / HOLD)
 
 Policy Delta Desk now places a **per-hunk before/after physical-line citation index** ahead of its existing fingerprinted, source-escaped unified text diff. The index records exact changed-line spans and counts for additions/removals, handles pure insertions, deletions and BOM-only zero-diff cases, and never interprets policy compliance. The original source SHA-256, Unicode visibility, no-overwrite behavior and local-first processing are preserved. See [R136 20-test operator runbook](docs/POLICY_CHANGE_INDEX_R136.md). Linux/Windows normal and `-OO` tests are mandatory; **all six apps remain UNRELEASED pending genuine physical Windows 11 review, Defender/EDR, code signing, gated premium delivery, QD/founder approval**.
