@@ -321,7 +321,7 @@ class TestR79Synthetic(unittest.TestCase):
 
     def test_064_context_malformed_block_fails_closed(self):
         with self.assertRaises(KeyError):
-            r79.context([{"block_id":"x"}],0)
+            r79.context([{"block_id":"x"},synthetic("neighbor",[],"n")],0)
 
     def test_065_digest_stable_for_key_order(self):
         self.assertEqual(r79.digest({"a":1,"b":2}),r79.digest({"b":2,"a":1}))
