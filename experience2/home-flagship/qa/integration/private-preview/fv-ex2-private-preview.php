@@ -61,7 +61,7 @@ function fv_ex2_private_compose(): ?array {
     $html = $raw['index.html'];
     if (strpos($html, 'DO NOT DEPLOY AS THE WORDPRESS HOME PAGE') === false
         || strpos($html, 'data-fv-home-flagship') === false
-        || strpos($html, 'DESIGN STUDY · NOT LIVE') === false) { return null; }
+        || strpos($html, 'DESIGN CANDIDATE · NOT LIVE') === false) { return null; }
     $nonce = base64_encode(random_bytes(18));
     foreach ($styles as $name) {
         $old = '<link rel="stylesheet" href="./' . $name . '">';

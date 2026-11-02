@@ -105,8 +105,7 @@ def archive_file_map(raw: bytes, *, root: str, limit: int = MAX_THEME_UNPACKED_B
             parts = PurePosixPath(name).parts
             if (name.startswith('/') or '\\' in name or len(parts) < 2 or
                 parts[0] != root or any(x in ('', '.', '..') for x in parts) or
-                stat.S_ISLNK(member.external_attr >> 16) or
-                not stat.S_ISREG(member.external_attr >> 16) and member.create_system == 3 and (member.external_attr >> 16) != 0):
+                stat.S_IFMT(member.external_attr >> 16) not in (0, stat.S_IFREG)):
                 raise ValueError('MOUNT HOLD: unsafe archive entry')
             key = PurePosixPath(*parts[1:]).as_posix()
             if key.casefold() in seen:
@@ -115,6 +114,9 @@ def archive_file_map(raw: bytes, *, root: str, limit: int = MAX_THEME_UNPACKED_B
             total += member.file_size
             if member.file_size > limit or total > limit:
                 raise ValueError('MOUNT HOLD: archive exceeds extracted byte limit')
+            # Python ZipFile.writestr(name, bytes) records 0600 permissions but
+            # no POSIX file-type bits. This is a regular untyped archive member,
+            # unlike a symlink/special member whose file-type bits are explicit.
             payload = archive.read(member)
             if len(payload) != member.file_size:
                 raise ValueError('MOUNT HOLD: truncated archive entry')

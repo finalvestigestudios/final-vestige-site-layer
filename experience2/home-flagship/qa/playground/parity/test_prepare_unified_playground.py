@@ -1,6 +1,8 @@
 """Offline regression tests; fixture is NOT a running WordPress/Playground instance."""
 from __future__ import annotations
 import copy
+from io import BytesIO
+import stat
 import hashlib
 import json
 import subprocess
@@ -8,7 +10,7 @@ import tempfile
 import unittest
 import zipfile
 from pathlib import Path
-from prepare_unified_playground import bind, verify_sources, verify_parity, verify_stage, sha, PARITY, CANONICAL_LOCAL_SEED, expected_php_payload
+from prepare_unified_playground import bind, verify_sources, verify_parity, verify_stage, sha, PARITY, CANONICAL_LOCAL_SEED, expected_php_payload, archive_file_map
 
 HERE = Path(__file__).parent
 SOURCE_ASSETS = ('index.html','flagship.css','chronicle.css','chronicle-lens.css',
@@ -99,6 +101,25 @@ def fixture():
 
 
 class UnifiedStageTests(unittest.TestCase):
+    def test_python_generated_untyped_plugin_zip_file_is_safe(self):
+        # Real deterministic PHP preview builder uses writestr(name, data):
+        # GitHub's built-in zipfile records mode 0600, no S_IFREG type bit.
+        memory = BytesIO()
+        with zipfile.ZipFile(memory, 'w') as archive:
+            archive.writestr('fv-ex2-private-preview/INSTALLATION_HOLD.txt', 'NO PRODUCTION')
+        actual = archive_file_map(memory.getvalue(), root='fv-ex2-private-preview')
+        self.assertEqual(actual['INSTALLATION_HOLD.txt'], b'NO PRODUCTION')
+
+    def test_explicit_symlink_in_php_preview_zip_still_rejected(self):
+        memory = BytesIO()
+        with zipfile.ZipFile(memory, 'w') as archive:
+            entry=zipfile.ZipInfo('fv-ex2-private-preview/payload.php')
+            entry.create_system=3
+            entry.external_attr=(stat.S_IFLNK | 0o777) << 16
+            archive.writestr(entry, '../../etc/passwd')
+        with self.assertRaisesRegex(ValueError, 'unsafe archive entry'):
+            archive_file_map(memory.getvalue(), root='fv-ex2-private-preview')
+
     def test_safely_combines_existing_seven_chapter_preview_and_parity(self):
         temp,repo,head,stage,theme_zip,theme_sha=fixture()
         with temp:
