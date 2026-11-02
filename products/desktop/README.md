@@ -1024,3 +1024,20 @@ The R143 local free-report replay command now fails closed with one **generic, p
 ### Labs R146 — protected Windows 11 reviewer CLI arguments (DRAFT / RELEASE HOLD)
 
 The 46-check physical Windows reviewer template, one-check witness recorder, and read-only progress tool now redact malformed command arguments **before** financial paths, reviewer labels, or alleged R9 pins could reach default parser diagnostics. Duplicate custody flags and abbreviated long flags fail closed, while standalone static help and normal commands remain available. See [R146 operator/security notes](docs/PRIVATE_WIN11_REVIEW_CLI_R146.md) and [strict synthetic regression gate](scripts/safe_unittest_r146.py). This is a confidentiality/ambiguity fix, **not evidence of completed physical review**; the six Windows apps, real Defender/EDR, code signing, premium distribution, QD and founder gates remain on HARD HOLD.
+
+
+### Labs R147 — exact local replay CLI evidence selection (DRAFT / RELEASE HOLD)
+
+The four-free-app offline replay command now **rejects duplicate singleton
+reviewer options**, including mixed `--flag=value` forms, rather than silently
+verifying the last selected report, product, window or LedgerDiff mapping.
+Abbreviated long flags, mixed `--help`, and the useless `--` separator also
+fail closed to the existing private-data-free HOLD line. `--source` remains
+repeatable for the two-input LedgerDiff and Policy Delta workflows, with
+source counts still checked before processing. Real valid SpendMap, LedgerDiff
+and Policy Delta replays remain supported. See [R147 reviewer privacy and
+argument custody](docs/PRIVATE_REPLAY_ARGV_CUSTODY_R147.md), the
+[33 exact synthetic tests](tests/test_replay_argv_custody_r147.py) and the
+[strict two-OS normal/optimized gate](scripts/safe_unittest_r147.py).
+No Windows 11 physical accessibility or genuine AV assessment is implied.
+**All six apps UNRELEASED; QD and founder approval required.**
