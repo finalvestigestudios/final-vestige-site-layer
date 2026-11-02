@@ -1,0 +1,64 @@
+{
+  "schema": "fv-dispatch-r77-authority-review-v1",
+  "observed_utc": "2026-11-02T23:38:25Z",
+  "newsletter": {
+    "enabled": true,
+    "auto_send": false,
+    "email_format": "excerpt",
+    "sender_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "recent_sends": 0,
+    "counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "email_eligible_count": null,
+    "welcome_fieldbook_configured": true,
+    "welcome_delivery_verified": false
+  },
+  "common_gates": {
+    "final_manuscript_approval": false,
+    "editorial_factcheck": false,
+    "subscriber_eligibility_verified": false,
+    "verified_fv_postal_address": false,
+    "actual_jetpack_native_preview": false,
+    "actual_received_email": false,
+    "working_unsubscribe": false,
+    "dispatch_signup_notice_approved": false,
+    "founder_send_approval": false
+  },
+  "offers": {
+    "zen12": {
+      "issue": "03",
+      "draft_pr": 687,
+      "draft_commit": "1afb0a27c692df9ef25c556f4a25fa5d01f8c735",
+      "guide_blob": "85a9a095120a5e1678788ac930a571d5e9de0a71",
+      "partner_accepted": false,
+      "email_channel_permission": false,
+      "named_product_permission": false,
+      "approved_link_format": false,
+      "published_guide_url_verified": false,
+      "product_claims_reviewed": false,
+      "current_terms_verified": false,
+      "purchaser_data_reviewed": false,
+      "near_offer_disclosure_verified": false
+    },
+    "total_focus": {
+      "issue": "05",
+      "draft_pr": 692,
+      "draft_commit": "94ea3c6004d643afa201860ab1879a1cdd4e5920",
+      "guide_blob": "d942800ca553c172f5d4735287da2782134d34a8",
+      "partner_accepted": false,
+      "email_channel_permission": false,
+      "named_product_permission": false,
+      "approved_link_format": false,
+      "published_guide_url_verified": false,
+      "product_claims_reviewed": false,
+      "current_terms_verified": false,
+      "purchaser_data_reviewed": false,
+      "near_offer_disclosure_verified": false
+    }
+  }
+}
