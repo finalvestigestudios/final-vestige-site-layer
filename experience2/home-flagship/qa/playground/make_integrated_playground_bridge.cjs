@@ -5,6 +5,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { assemble } = require('../release-candidate/assemble_homepage_migration.cjs');
 const { SHA } = require('../release-candidate/verify_homepage_migration.cjs');
+const { stageTemplate } = require('./stage_page_template_parity.cjs');
 const FRAGMENT = '/wordpress/wp-content/plugins/fv-ex2-playground/assets/wordpress-page-fragment.review-only.html';
 const PLUGIN = '/wordpress/wp-content/plugins/fv-ex2-playground/fv-ex2-playground.php';
 const REVIEWED = 'a868423c033a179d1821bb9eb1cf7b5c6c07106097e18cce6afe58b79f908cc1';
@@ -65,7 +66,7 @@ function integrate(base, publicPage, pageSha) {
 }
 function cli(args){
   const get=k=>{const i=args.indexOf(k);return i>=0?args[i+1]:null;};
-  for(const k of ['--public-page','--page-sha256','--output','--receipt']) assert(get(k) && !get(k).startsWith('--'),'missing '+k);
+  for(const k of ['--public-page','--page-sha256','--public-template','--template-sha256','--output','--receipt']) assert(get(k) && !get(k).startsWith('--'),'missing '+k);
   assert(!fs.existsSync(get('--output')) && !fs.existsSync(get('--receipt')) && path.resolve(get('--output'))!==path.resolve(get('--receipt')),'refuse overwrite');
   const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fv-isolated-page-'));
   try {
@@ -73,7 +74,9 @@ function cli(args){
     require('./make_playground_blueprint.cjs').generate(basefile,{trustedMediaManifest:get('--trusted-media-manifest')||null});
     const base=JSON.parse(fs.readFileSync(basefile,'utf8'));
     const r=integrate(base,fs.readFileSync(get('--public-page'),'utf8'),get('--page-sha256'));
-    fs.writeFileSync(get('--output'),JSON.stringify(r.blueprint,null,2)+'\n',{flag:'wx',mode:0o600});
+    const t=stageTemplate(r.blueprint,fs.readFileSync(get('--public-template'),'utf8'),get('--template-sha256'));
+    r.receipt.template_parity=t.receipt;
+    fs.writeFileSync(get('--output'),JSON.stringify(t.blueprint,null,2)+'\n',{flag:'wx',mode:0o600});
     try{fs.writeFileSync(get('--receipt'),JSON.stringify(r.receipt,null,2)+'\n',{flag:'wx',mode:0o600});}
     catch(e){fs.rmSync(get('--output'),{force:true});throw e;}
     process.stdout.write(JSON.stringify(r.receipt)+'\n');
