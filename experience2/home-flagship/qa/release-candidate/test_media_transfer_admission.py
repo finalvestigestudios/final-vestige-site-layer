@@ -61,6 +61,40 @@ class Tests(unittest.TestCase):
         receipt=audit_image_payloads(IMAGES,self.responses()+[Response(MAP)])
         self.assertIn('NYPL_UNCLEARED_CAPTURE_HTTP_REQUEST_DETECTED',receipt['failure_codes'])
 
+    def test_renamed_first_party_upload_cannot_bypass_custody(self):
+        extra=Response(APOLLO)
+        extra.url='https://finalvestige.com/wp-content/uploads/2026/08/map-renamed.webp'
+        result=audit_image_payloads(IMAGES,self.responses()+[extra])
+        self.assertIn('UNREVIEWED_IMAGE_HTTP_RESOURCE',result['failure_codes'])
+        self.assertNotIn('map-renamed.webp',str(result))
+
+    def test_alt_cdn_proxy_image_is_not_silently_admitted(self):
+        extra=Response(FRANKLIN)
+        extra.url='https://i2.wp.com/finalvestige.com/wp-content/uploads/2026/08/unknown.webp'
+        result=audit_image_payloads(IMAGES,self.responses()+[extra])
+        self.assertIn('UNREVIEWED_IMAGE_HTTP_RESOURCE',result['failure_codes'])
+
+    def test_external_image_and_css_background_fetch_are_rejected(self):
+        extra=Response(APOLLO)
+        extra.url='https://unreviewed.example/archival-copy.webp'
+        # Chromium uses resource_type=image for CSS background images as well.
+        result=audit_image_payloads(IMAGES,self.responses()+[extra])
+        self.assertIn('UNREVIEWED_IMAGE_HTTP_RESOURCE',result['failure_codes'])
+
+    def test_image_mime_returned_to_fetch_still_requires_review(self):
+        extra=Response(FRANKLIN)
+        extra.url='https://unreviewed.example/archive-payload'
+        extra.request.resource_type='fetch'
+        result=audit_image_payloads(IMAGES,self.responses()+[extra])
+        self.assertIn('UNREVIEWED_IMAGE_HTTP_RESOURCE',result['failure_codes'])
+
+    def test_unrelated_json_fetch_is_not_misclassified_as_image(self):
+        extra=Response(APOLLO)
+        extra.url='https://unrelated.example/status'
+        extra.request.resource_type='fetch'
+        extra.typ='application/json'
+        self.assertEqual(audit_image_payloads(IMAGES,self.responses()+[extra])['status'],'PASS')
+
     def test_embargoed_map_in_expected_images_rejected(self):
         receipt=audit_image_payloads(IMAGES+[{'url':MAP,'complete':True,'width':100}],
                                     self.responses()+[Response(MAP)])
