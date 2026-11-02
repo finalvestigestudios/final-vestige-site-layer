@@ -72,9 +72,9 @@ def compare_interiors(source: str, production: str) -> dict:
     # JavaScript is disabled. The script-enabled <img> remains lazy; the
     # <noscript> sibling is eager, decorative (avoids duplicate announced alt),
     # and references the SAME reviewed image URL. Neither branch may add NYPL.
-    normal = re.findall(r'<img\\b[^>]*\\bdata-fv-archive-img>', a)
-    fallback = re.findall(r'<noscript>\\s*(<img\\b[^>]*>)\\s*</noscript>', a)
-    attr = lambda tag, key: (re.search(r'\\b'+key+r'="([^"]*)"', tag) or [None, None])[1]
+    normal = re.findall(r'<img\b[^>]*\bdata-fv-archive-img>', a)
+    fallback = re.findall(r'<noscript>\s*(<img\b[^>]*>)\s*</noscript>', a)
+    attr = lambda tag, key: (re.search(r'\b'+key+r'="([^"]*)"', tag) or [None, None])[1]
     if (len(normal) != 2 or len(fallback) != 2
             or a.count('<noscript>') != 2
             or a.count('data-fv-noscript-archive') != 2):
