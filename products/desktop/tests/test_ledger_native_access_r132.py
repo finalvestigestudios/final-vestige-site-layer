@@ -168,5 +168,33 @@ class LedgerNativeAccessibilityR132(unittest.TestCase):
                 premium_opened=False)
 
 
+    def test_scaled_access_failure_reports_only_fixed_reason_code(self):
+        sample = scaled_ledger()
+        sample["focus_revealed"] = False
+        with self.assertRaises(scale.ScaleBlocked) as caught:
+            scale.verify_snapshot("ledger", **sample)
+        message = scale.safe_failure("ledger", 4.0, caught.exception)
+        self.assertIn("app=ledger", message)
+        self.assertIn("zoom=400%", message)
+        self.assertIn("check=focus", message)
+
+    def test_private_exception_text_never_reaches_native_diagnostic(self):
+        marker = "customer-account-0001234"
+        for exception in (ValueError(marker), RuntimeError(marker),
+                          scale.ScaleBlocked(marker)):
+            with self.subTest(kind=type(exception).__name__):
+                text = scale.safe_failure("ledger", 2.0, exception)
+                self.assertIn("check=unexpected", text)
+                self.assertNotIn(marker, text)
+
+    def test_unknown_diagnostic_scope_fails_without_private_details(self):
+        marker = "private-financial-98765"
+        result = scale.safe_failure("grants", 4.0, scale.ScaleBlocked(marker))
+        self.assertEqual(result, scale.ERROR)
+        self.assertNotIn(marker, result)
+        result = scale.safe_failure("ledger", 3.0, scale.ScaleBlocked(marker))
+        self.assertEqual(result, scale.ERROR)
+
+
 if __name__ == "__main__":
     unittest.main()
