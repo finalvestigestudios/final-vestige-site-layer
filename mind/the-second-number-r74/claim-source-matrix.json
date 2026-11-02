@@ -1,0 +1,533 @@
+{
+  "document": "FV Mind R74 product claim, source and permissions ledger",
+  "checked_date": "2026-11-02",
+  "product": "Zen12",
+  "merchant": "Inspire3",
+  "affiliate_activation": false,
+  "publication_approved": false,
+  "unverified_member_swipe_creatives": true,
+  "sources": [
+    {
+      "id": "s01",
+      "kind": "original experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "note": "Raymond Shapiro Arnell 1992 abstract",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s02",
+      "kind": "independent replication/theory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22428668/",
+      "note": "Akyurek et al 2012 lag-one integration",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s03",
+      "kind": "independent model",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22629426/",
+      "note": "Pincham Szucs 2012 target cueing",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s04",
+      "kind": "independent longitudinal meditation training",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "note": "Slagter et al 2007 PLoS Biology",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s05",
+      "kind": "independent EEG systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "note": "2023 binaural-beat EEG review; results heterogeneous",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s06",
+      "kind": "US federal health research",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "note": "Meditation evidence and potential harms",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s07",
+      "kind": "merchant official catalog",
+      "url": "https://inspire3.com/",
+      "note": "Product family positioning and seller claims",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": "Source reports seller claims; product performance not independently verified"
+    },
+    {
+      "id": "s08",
+      "kind": "merchant exact Zen12 offer",
+      "url": "https://zen12.com/hnp",
+      "note": "12 minutes/levels/styles/tier features and seller promises",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": "Source reports seller claims; product performance not independently verified"
+    },
+    {
+      "id": "s09",
+      "kind": "merchant exact product About",
+      "url": "https://zen12.com/about",
+      "note": "12 levels, 4 styles and claimed benefits",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": "Source reports seller claims; product performance not independently verified"
+    },
+    {
+      "id": "s10",
+      "kind": "merchant purported science page",
+      "url": "https://zen12.com/research",
+      "note": "Seller's proposed mechanism, not product-specific RCT evidence",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": "Source reports seller claims; product performance not independently verified"
+    },
+    {
+      "id": "s11",
+      "kind": "merchant checkout",
+      "url": "https://zen12.com/getstarted",
+      "note": "Full tier/48 MP3, cell field, countdown, seller refund; transaction untested",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": "Source reports seller claims; product performance not independently verified"
+    },
+    {
+      "id": "s12",
+      "kind": "merchant privacy",
+      "url": "https://inspire3.com/privacy/",
+      "note": "Phone/SMS and affiliate-related customer details disclosure",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": "Source reports seller claims; product performance not independently verified"
+    },
+    {
+      "id": "s13",
+      "kind": "public affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "General sign-up is NOT authorization for FV",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s14",
+      "kind": "FTC endorsement disclosures",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Conspicuous proximate economic-relationship disclosures",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s15",
+      "kind": "FTC health advertising guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Substantiation must fit product and claim",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s16",
+      "kind": "live FV historical archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Authenticated WordPress read of published source-oriented page, 2 Nov",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s17",
+      "kind": "live FV Focus page",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Authenticated WordPress read; existing Jetpack fieldbook and consent",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s18",
+      "kind": "live FV editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "note": "Existing public editorial boundary",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    },
+    {
+      "id": "s19",
+      "kind": "live FV affiliate policy",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "Existing disclosure policy, not adequate alone near link",
+      "reviewed_utc_date": "2026-11-02",
+      "caveat": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "RSVP target report is worse at certain post-target delays",
+      "status": "research_sourced",
+      "source_id": "s01",
+      "limit": "Investigative framing only; don't generalize to all memories.",
+      "release_gate": null
+    },
+    {
+      "id": "c02",
+      "claim": "1992 vulnerable window 180 ms start / ~270 ms duration",
+      "status": "research_sourced",
+      "source_id": "s01",
+      "limit": "Precise protocol-specific outcome.",
+      "release_gate": null
+    },
+    {
+      "id": "c03",
+      "claim": "Task and blank intervals change suppression",
+      "status": "research_sourced",
+      "source_id": "s01",
+      "limit": "Not the eyes closing.",
+      "release_gate": null
+    },
+    {
+      "id": "c04",
+      "claim": "Lag-one second-target performance can be spared",
+      "status": "research_sourced",
+      "source_id": "s02",
+      "limit": "Conditional on protocol.",
+      "release_gate": null
+    },
+    {
+      "id": "c05",
+      "claim": "Models of attentional blink remain contested",
+      "status": "research_sourced",
+      "source_id": "s03",
+      "limit": "Do not assert one proven mechanism.",
+      "release_gate": null
+    },
+    {
+      "id": "c06",
+      "claim": "2007 training research involved 17 practitioners, 23 novices",
+      "status": "research_sourced",
+      "source_id": "s04",
+      "limit": "Nonrandomized, unequal exposures.",
+      "release_gate": null
+    },
+    {
+      "id": "c07",
+      "claim": "2007 practitioners underwent months of intensive training",
+      "status": "research_sourced",
+      "source_id": "s04",
+      "limit": "Not twelve-minute audio.",
+      "release_gate": null
+    },
+    {
+      "id": "c08",
+      "claim": "2007 P3b association indexes processing not global IQ",
+      "status": "research_sourced",
+      "source_id": "s04",
+      "limit": "Do not infer wealth/medical outcomes.",
+      "release_gate": null
+    },
+    {
+      "id": "c09",
+      "claim": "Puységur source archive treats testimony and mechanism separately",
+      "status": "first_party_documented",
+      "source_id": "s16",
+      "limit": "Historical analogy only.",
+      "release_gate": null
+    },
+    {
+      "id": "c10",
+      "claim": "Seller offers twelve-minute audio sessions",
+      "status": "seller_description_only",
+      "source_id": "s08",
+      "limit": "No independent playback/product audit.",
+      "release_gate": null
+    },
+    {
+      "id": "c11",
+      "claim": "Full seller offer describes twelve levels",
+      "status": "seller_description_only",
+      "source_id": "s08",
+      "limit": "Tier-specific.",
+      "release_gate": null
+    },
+    {
+      "id": "c12",
+      "claim": "Four described styles: music, guide, nature, white noise",
+      "status": "seller_description_only",
+      "source_id": "s09",
+      "limit": "No guarantee of exact delivered files.",
+      "release_gate": null
+    },
+    {
+      "id": "c13",
+      "claim": "Full course describes forty-eight MP3s",
+      "status": "seller_description_only",
+      "source_id": "s11",
+      "limit": "Compare checkout tier.",
+      "release_gate": null
+    },
+    {
+      "id": "c14",
+      "claim": "Beginner and advanced six-level, twenty-four-MP3 variants",
+      "status": "seller_description_only",
+      "source_id": "s08",
+      "limit": "Not one uniform offer.",
+      "release_gate": null
+    },
+    {
+      "id": "c15",
+      "claim": "Full checkout also describes additional guide/call/support",
+      "status": "seller_description_only",
+      "source_id": "s11",
+      "limit": "Availability not verified by purchase.",
+      "release_gate": null
+    },
+    {
+      "id": "c16",
+      "claim": "Seller promises twelve minutes equivalent to one hour",
+      "status": "unsupported_product_efficacy",
+      "source_id": "s08",
+      "limit": "OMIT as a benefit and present as seller unproven claim.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c17",
+      "claim": "Seller claims brainwave audio automatically induces meditation",
+      "status": "unsupported_product_efficacy",
+      "source_id": "s10",
+      "limit": "No product-specific controlled evidence located.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c18",
+      "claim": "Seller claims instant stress/anxiety relief",
+      "status": "unsupported_health_efficacy",
+      "source_id": "s08",
+      "limit": "Do not adopt or imply treatment.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c19",
+      "claim": "Seller claims better health/creativity/focus",
+      "status": "unsupported_health_cognitive_efficacy",
+      "source_id": "s08",
+      "limit": "Do not endorse.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c20",
+      "claim": "Broad meditation research implies this audio works",
+      "status": "invalid_inference",
+      "source_id": "s06",
+      "limit": "Reject product-generalization.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c21",
+      "claim": "2023 EEG review found mixed entrainment findings",
+      "status": "research_sourced",
+      "source_id": "s05",
+      "limit": "Does not test Zen12.",
+      "release_gate": null
+    },
+    {
+      "id": "c22",
+      "claim": "A twelve-minute schedule is shorter than an hour",
+      "status": "logical_time_comparison",
+      "source_id": "s08",
+      "limit": "Convenience only, not outcomes.",
+      "release_gate": null
+    },
+    {
+      "id": "c23",
+      "claim": "People may prefer structured downloadable audio",
+      "status": "qualified_consumer_hypothesis",
+      "source_id": "s09",
+      "limit": "No survey, never state proven preference.",
+      "release_gate": null
+    },
+    {
+      "id": "c24",
+      "claim": "Checkout includes a mobile-number field",
+      "status": "seller_checkout_observed",
+      "source_id": "s11",
+      "limit": "Avoid collecting or forwarding any details.",
+      "release_gate": null
+    },
+    {
+      "id": "c25",
+      "claim": "Inspire3 may send SMS to supplied cell numbers",
+      "status": "seller_privacy_documented",
+      "source_id": "s12",
+      "limit": "Exact consent choices unverified.",
+      "release_gate": null
+    },
+    {
+      "id": "c26",
+      "claim": "Inspire3 may share purchasers' details with an affiliate",
+      "status": "seller_privacy_documented",
+      "source_id": "s12",
+      "limit": "No claim FV receives customer data.",
+      "release_gate": null
+    },
+    {
+      "id": "c27",
+      "claim": "Seller advertises a one-year refund",
+      "status": "seller_policy_claim_only",
+      "source_id": "s11",
+      "limit": "Actual exclusions/fulfillment untested.",
+      "release_gate": null
+    },
+    {
+      "id": "c28",
+      "claim": "Seller checkout displays countdown and discount",
+      "status": "seller_checkout_observed",
+      "source_id": "s11",
+      "limit": "DO NOT echo urgency, offer price or discount.",
+      "release_gate": null
+    },
+    {
+      "id": "c29",
+      "claim": "Inspire3 public recruitment promises commissions",
+      "status": "seller_recruitment_claim",
+      "source_id": "s13",
+      "limit": "Not FV-specific payout or acceptance; never publish as earnings fact.",
+      "release_gate": null
+    },
+    {
+      "id": "c30",
+      "claim": "FV is an accepted Inspire3 partner",
+      "status": "NOT_VERIFIED",
+      "source_id": "s13",
+      "limit": "BLOCK earning links until signed acceptance.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c31",
+      "claim": "Zen12 earning URL provided to FV",
+      "status": "NOT_VERIFIED",
+      "source_id": "s13",
+      "limit": "BLOCK merchant CTA.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c32",
+      "claim": "Inspire3 approved website, TikTok, email channels",
+      "status": "NOT_VERIFIED",
+      "source_id": "s13",
+      "limit": "Require named written terms per channel.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c33",
+      "claim": "Affiliate swipe/creative reuse rights are granted",
+      "status": "NOT_VERIFIED",
+      "source_id": "s13",
+      "limit": "No reuse absent license; original design only.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c34",
+      "claim": "FV has used or tested Zen12",
+      "status": "FALSE_NOT_CLAIMED",
+      "source_id": "s08",
+      "limit": "No purchase/use was performed.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c35",
+      "claim": "Nearby disclosure is required when monetized",
+      "status": "policy",
+      "source_id": "s14",
+      "limit": "Prospective disclosure adjacent disabled button in draft.",
+      "release_gate": null
+    },
+    {
+      "id": "c36",
+      "claim": "Specific efficacy assertions need adequate evidence",
+      "status": "policy",
+      "source_id": "s15",
+      "limit": "Seller copy is not independent substantiation.",
+      "release_gate": null
+    },
+    {
+      "id": "c37",
+      "claim": "Existing FV Focus/Jetpack signup is the sole email funnel",
+      "status": "first_party_documented",
+      "source_id": "s17",
+      "limit": "No extra email forms, newsletters, new app.",
+      "release_gate": null
+    },
+    {
+      "id": "c38",
+      "claim": "Product guide has been published or tested for conversions",
+      "status": "FALSE_NOT_CLAIMED",
+      "source_id": "s17",
+      "limit": "Unpublished A/B hypothesis; no measurements.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c39",
+      "claim": "Anonymous attribution events may include raw URLs or UTM values",
+      "status": "PROHIBITED_DATA",
+      "source_id": "s17",
+      "limit": "Never capture raw query/referrer/customer IDs.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c40",
+      "claim": "Proposed film proves perceptual mechanism or Zen12 effect",
+      "status": "FALSE_NOT_CLAIMED",
+      "source_id": "s04",
+      "limit": "Silent didactic illustration, not replication.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c41",
+      "claim": "Video lifts conversion versus text",
+      "status": "UNTESTED_HYPOTHESIS",
+      "source_id": "s14",
+      "limit": "Compare only with privacy-safe aggregate experiment after release.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c42",
+      "claim": "Real user counts/sales can be derived from demo aggregates",
+      "status": "FALSE_NOT_CLAIMED",
+      "source_id": "s13",
+      "limit": "Simulation only; no partner data.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c43",
+      "claim": "A free 3-day listening preference audit tests clinical efficacy",
+      "status": "FALSE_NOT_CLAIMED",
+      "source_id": "s06",
+      "limit": "No diagnosis or outcome claims.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c44",
+      "claim": "Effective interest must be proved before enabling merchant link",
+      "status": "release_gate",
+      "source_id": "s14",
+      "limit": "Exact destination, permissions, claims review, founder approval.",
+      "release_gate": null
+    },
+    {
+      "id": "c45",
+      "claim": "Current price and terms can be hardcoded",
+      "status": "PROHIBITED_DYNAMIC",
+      "source_id": "s11",
+      "limit": "Recheck at release; no price/payout promises.",
+      "release_gate": "hold"
+    },
+    {
+      "id": "c46",
+      "claim": "Established Puységur historical source conclusions depend on our vendor relationship",
+      "status": "SEPARATION_REQUIRED",
+      "source_id": "s16",
+      "limit": "No commercial recommendations inside investigations.",
+      "release_gate": null
+    }
+  ]
+}
