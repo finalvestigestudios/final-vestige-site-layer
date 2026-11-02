@@ -1,0 +1,295 @@
+{
+  "reviewed_at": "2026-11-02",
+  "product": "Zen12 only",
+  "affiliate_active": false,
+  "product_used_by_editor": false,
+  "partner_account_approval": "unverified",
+  "source_types": "seller_claim, independent_research, policy, historical, permission",
+  "sources": [
+    {
+      "id": "M1",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog"
+    },
+    {
+      "id": "M2",
+      "url": "https://zen12.com/hnp",
+      "kind": "exact_sales_page"
+    },
+    {
+      "id": "M3",
+      "url": "https://zen12.com/about",
+      "kind": "seller_about"
+    },
+    {
+      "id": "M4",
+      "url": "https://zen12.com/research",
+      "kind": "seller_research"
+    },
+    {
+      "id": "M5",
+      "url": "https://zen12.com/getstarted",
+      "kind": "public_checkout"
+    },
+    {
+      "id": "M6",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "seller_privacy"
+    },
+    {
+      "id": "E1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "independent_EEG_review"
+    },
+    {
+      "id": "E2",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government_background"
+    },
+    {
+      "id": "E3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40466319/",
+      "kind": "randomized_self_hypnosis_trial_NOT_Zen12"
+    },
+    {
+      "id": "E4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
+      "kind": "randomized_active_control_specific_symptom_NOT_Zen12"
+    },
+    {
+      "id": "E5",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "kind": "hypnosis_mechanisms_review"
+    },
+    {
+      "id": "E6",
+      "url": "https://doi.org/10.1176/ajp.145.10.1191",
+      "kind": "historical_scholarship"
+    },
+    {
+      "id": "H1",
+      "url": "https://content.www.wellcomecollection.org/works/demkv24m",
+      "kind": "1843_primary_bibliographic_record"
+    },
+    {
+      "id": "H2",
+      "url": "https://content.www.wellcomecollection.org/works/uxg9rq3v",
+      "kind": "1899_edition_not_1843_primary_pages"
+    },
+    {
+      "id": "H3",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "existing_live_historical_archive"
+    },
+    {
+      "id": "F1",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "existing_live_focus_funnel"
+    },
+    {
+      "id": "F2",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "FTC_endorsement"
+    },
+    {
+      "id": "F3",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "FTC_health_claims"
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "12-minute session length",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "M2",
+      "copy": "merchant describes twelve-minute sessions"
+    },
+    {
+      "claim": "12 levels",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "M2",
+      "copy": "merchant advertises twelve levels"
+    },
+    {
+      "claim": "48 MP3 full program",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "M2/M5",
+      "copy": "full package described as 48 recordings"
+    },
+    {
+      "claim": "24 MP3 shorter tiers",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "M2",
+      "copy": "some packages described as 24 recordings"
+    },
+    {
+      "claim": "four styles",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source": "M2/M3",
+      "copy": "music, guided, nature, white noise"
+    },
+    {
+      "claim": "same benefits as one hour meditation",
+      "status": "REJECT_UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source": "M2 vs E1/E2",
+      "copy": "not substantiated"
+    },
+    {
+      "claim": "automatic brainwave entrainment",
+      "status": "REJECT_UNSUBSTANTIATED_PRODUCT_MECHANISM",
+      "source": "M2/M4 vs E1",
+      "copy": "do not assert"
+    },
+    {
+      "claim": "guaranteed lowered anxiety",
+      "status": "REJECT_PRODUCT_SPECIFIC_HEALTH_CLAIM",
+      "source": "M2 vs E2",
+      "copy": "do not assert"
+    },
+    {
+      "claim": "guaranteed creativity and focus improvement",
+      "status": "REJECT_PRODUCT_SPECIFIC_COGNITIVE_CLAIM",
+      "source": "M2",
+      "copy": "do not assert"
+    },
+    {
+      "claim": "money/wealth transformation",
+      "status": "REJECT",
+      "source": "F3",
+      "copy": "do not assert"
+    },
+    {
+      "claim": "one-year refund",
+      "status": "SELLER_REPRESENTATION_UNTESTED",
+      "source": "M2/M5",
+      "copy": "subject to current seller terms; no tested refund"
+    },
+    {
+      "claim": "visible cell phone checkout field",
+      "status": "VISIBLE_FIELD_REQUIREMENT_UNTESTED",
+      "source": "M5",
+      "copy": "form field visible; required status untested"
+    },
+    {
+      "claim": "possible SMS marketing",
+      "status": "POLICY_DESCRIPTION_NOT_ACTUAL_CONTACT",
+      "source": "M6",
+      "copy": "seller policy possibility; no buyer experience asserted"
+    },
+    {
+      "claim": "publisher personally tried Zen12",
+      "status": "FALSE_MUST_NOT_ASSERT",
+      "source": "none",
+      "copy": "no firsthand product use"
+    },
+    {
+      "claim": "affiliate acceptance",
+      "status": "HOLD_UNVERIFIED",
+      "source": "none",
+      "copy": "no permission asserted"
+    },
+    {
+      "claim": "specific tracked earning link",
+      "status": "HOLD_UNVERIFIED",
+      "source": "none",
+      "copy": "none allowed"
+    },
+    {
+      "claim": "permitted website promotion",
+      "status": "HOLD_UNVERIFIED",
+      "source": "none",
+      "copy": "require written permission"
+    },
+    {
+      "claim": "permitted TikTok promotion",
+      "status": "HOLD_UNVERIFIED",
+      "source": "none",
+      "copy": "require written permission"
+    },
+    {
+      "claim": "permitted email promotion",
+      "status": "HOLD_UNVERIFIED",
+      "source": "none",
+      "copy": "require separate permission"
+    },
+    {
+      "claim": "approved vendor creative/swipe",
+      "status": "HOLD_NOT_LICENSED",
+      "source": "none",
+      "copy": "original content only"
+    },
+    {
+      "claim": "video increases conversion",
+      "status": "UNTESTED_HYPOTHESIS",
+      "source": "none",
+      "copy": "must run later consent-safe experiment"
+    },
+    {
+      "claim": "consent from visitor",
+      "status": "NOT_COLLECTED",
+      "source": "none",
+      "copy": "no forms or analytics"
+    },
+    {
+      "claim": "purchase from outbound click",
+      "status": "NOT_INFERABLE",
+      "source": "none",
+      "copy": "partner-verified reporting only"
+    },
+    {
+      "claim": "native video hosted",
+      "status": "HOLD_UNPUBLISHED",
+      "source": "none",
+      "copy": "only poster/transcript until first-party approved video"
+    },
+    {
+      "claim": "self-hypnosis trial validates Zen12",
+      "status": "REJECT_CATEGORY_ERROR",
+      "source": "E3/E4",
+      "copy": "different intervention, conditions and populations"
+    },
+    {
+      "claim": "Braid established universal mechanism",
+      "status": "REJECT_HISTORICAL_OVERCLAIM",
+      "source": "H1/H2/E6",
+      "copy": "early account evolved; mechanisms still debated"
+    },
+    {
+      "claim": "FTC material connection disclosure",
+      "status": "REQUIRED_NEAR_EARNING_LINK",
+      "source": "F2",
+      "copy": "plain prospective commission disclosure"
+    },
+    {
+      "claim": "product-specific health proof",
+      "status": "REQUIRED_FOR_EFFICACY_MARKETING",
+      "source": "F3",
+      "copy": "no product-specific support identified"
+    },
+    {
+      "claim": "Focus subscription duplicated",
+      "status": "PROHIBITED",
+      "source": "F1",
+      "copy": "single existing Jetpack route only"
+    },
+    {
+      "claim": "live release authorization",
+      "status": "HOLD_FOUNDER",
+      "source": "none",
+      "copy": "explicit founder approval and site QA"
+    }
+  ],
+  "hard_holds": [
+    "written named-account partner acceptance",
+    "channel specific rights incl. email",
+    "exact approved earning URL and link conventions",
+    "checkout price and refund recheck",
+    "partner creative license",
+    "founder release",
+    "WordPress staging sanitizer",
+    "screen reader + mobile 360,390,768,1440,1920",
+    "first party video and caption sync",
+    "real performance evidence",
+    "approved privacy-aware study"
+  ]
+}
