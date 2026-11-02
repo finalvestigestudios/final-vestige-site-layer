@@ -80,7 +80,7 @@ def classify_url(exact):
         port = parsed.port
     except ValueError:
         return sorted(set(blockers + ["MALFORMED_URL_AUTHORITY"])), []
-    if parsed.scheme != "https" or not parsed.netloc or not hostname:
+    if parsed.scheme != "https" or not exact.startswith("https://") or not parsed.netloc or not hostname:
         blockers.append("NON_HTTPS_OR_MISSING_HOST")
     if parsed.username is not None or parsed.password is not None or "@" in parsed.netloc:
         blockers.append("URL_CONTAINS_USERINFO")
@@ -92,7 +92,7 @@ def classify_url(exact):
         except UnicodeError:
             blockers.append("INVALID_PERCENT_ENCODING_UTF8")
         else:
-            if BAD_URL_CHARS.search(decoded):
+            if BAD_URL_CHARS.search(decoded.replace(" ", "")):
                 blockers.append("PERCENT_DECODED_CONTROL_OR_MARKUP_CHARACTER")
     if hostname:
         name = hostname.rstrip(".").lower()
