@@ -28,9 +28,9 @@ numfont = ImageFont.truetype(FONT, 83)
 
 
 def center(d, y, line, font, color, maxw=440):
-    """Truncate only if an original script line is unexpectedly too wide."""
-    while d.textbbox((0, 0), line, font=font)[2] > maxw:
-        line = line[:-1]
+    """Scale intact copy to fit; never clip or truncate an evidence caption."""
+    while d.textbbox((0, 0), line, font=font)[2] > maxw and font.size > 17:
+        font = ImageFont.truetype(FONT, font.size - 1)
     x = (W - d.textbbox((0, 0), line, font=font)[2]) / 2
     d.text((x, y), line, font=font, fill=color)
 
@@ -56,7 +56,7 @@ def render(index, local_fraction, frame):
     theta = -math.pi/2 + angle
     px = cx + (radius-16)*math.cos(theta)
     py = cy + (radius-16)*math.sin(theta)
-    draw.line((cx, cy, px, py), fill=(209, 175, 109), width=5)
+    draw.ellipse((px-8, py-8, px+8, py+8), fill=(209, 175, 109))
     draw.ellipse((cx-6, cy-6, cx+6, cy+6), fill=(235, 218, 184))
     center(draw, 307, f'00:{frame // FPS:02d}', numfont, (240, 231, 214), 450)
     draw.line((80, 555, 460, 555), fill=(174, 146, 100), width=2)
