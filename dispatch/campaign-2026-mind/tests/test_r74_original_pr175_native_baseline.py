@@ -26,20 +26,33 @@ FILES = [
 
 class OriginalPR175IndependentSuite(unittest.TestCase):
     def test_exact_original_PR_head_runs_all_six_python_tests(self):
-        # Explicitly fail if the pinned original tree is unavailable: a silent
-        # skip would falsely imply independent verification.
-        t = subprocess.run(
-            ["git", "cat-file", "-t", ORIGINAL_HEAD],
-            cwd=ROOT, capture_output=True, timeout=10, check=True,
-        )
-        self.assertEqual(t.stdout.strip(), b"commit")
-        with tempfile.TemporaryDirectory(prefix="fv-pr175-pinned-") as temp:
-            home = Path(temp)
-            for relative in FILES:
-                original = subprocess.run(
+        # A separate read-only actions/checkout retrieves the EXACT original
+        # PR #175 head, even when it is not ancestral to this stacked branch.
+        pinned = ROOT / ".pinned-pr175-source-review"
+        if pinned.is_dir():
+            actual = subprocess.run(
+                ["git", "-C", str(pinned), "rev-parse", "HEAD"],
+                capture_output=True, timeout=10, check=True,
+            ).stdout.decode("ascii").strip()
+            self.assertEqual(actual, ORIGINAL_HEAD)
+            def original_bytes(relative):
+                return (pinned / PREFIX / relative).read_bytes()
+        else:
+            # Local full clones can still verify the original via Git objects.
+            original_type = subprocess.run(
+                ["git", "cat-file", "-t", ORIGINAL_HEAD],
+                cwd=ROOT, capture_output=True, timeout=10, check=True,
+            )
+            self.assertEqual(original_type.stdout.strip(), b"commit")
+            def original_bytes(relative):
+                return subprocess.run(
                     ["git", "show", ORIGINAL_HEAD + ":" + PREFIX + relative],
                     cwd=ROOT, capture_output=True, timeout=10, check=True,
                 ).stdout
+        with tempfile.TemporaryDirectory(prefix="fv-pr175-pinned-") as temp:
+            home = Path(temp)
+            for relative in FILES:
+                original = original_bytes(relative)
                 dest = home / relative
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 dest.write_bytes(original)
