@@ -129,6 +129,37 @@ def event_kind(row: Mapping[str, str], *, source: str) -> str:
     return safe_event_kind(row, source=source)
 
 
+
+def offset_source_line_links(
+    rows: list[dict[str, str]], *, source: str, offset: str,
+    identifier: Callable[[str], str],
+) -> str:
+    """Deterministic candidate source-line evidence for credit and return events.
+
+    Links remain scoped to ONE normalized PO/line group. Multiple matching
+    document rows stay visible; unresolved references have an empty candidates
+    array. This is not a decision that an offset is genuine or authorized.
+    Private document labels are deliberately absent from this JSON.
+    """
+    originals: dict[str, list[str]] = defaultdict(list)
+    for row in rows:
+        if event_kind(row, source=source) == source:
+            document = identifier(row.get("document_id", ""))
+            if document:
+                originals[document].append(row["row"])
+    links: list[dict[str, object]] = []
+    for row in rows:
+        if event_kind(row, source=source) != offset:
+            continue
+        reference = identifier(row.get("related_document", ""))
+        links.append({
+            "offset_row": row["row"],
+            "target_rows": list(dict.fromkeys(originals.get(reference, ())))
+            if reference else [],
+        })
+    return json.dumps(links, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+
+
 @_audit_decimal_precision
 def review_line(
     ordered: list[dict[str, str]],
@@ -343,6 +374,13 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                      ("event_type", "document_id", "related_document"), include_digest=True),
     ]
     sources = [rows for rows, _ in snapshots]
+    # Pin exported per-row custody to the exact descriptor-verified bytes
+    # parsed for each source, rather than re-reading mutable input paths.
+    source_custody = {
+        "po_source_sha256": snapshots[0][1],
+        "invoice_source_sha256": snapshots[1][1],
+        "receipt_source_sha256": snapshots[2][1],
+    }
     expected_digests = {str(path): digest for path, (_, digest) in zip(source_paths, snapshots)}
     groups = [defaultdict(list) for _ in range(3)]
     for rows, group in zip(sources, groups):
@@ -365,7 +403,11 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
         if normalized_collision(source_records, "line"):
             flags.insert(0, "normalized_line_key_review")
         report.append({
-            "po": po_id, "line": line, **metrics,
+            "po": po_id, "line": line, **metrics, **source_custody,
+            "credit_source_line_links": offset_source_line_links(
+                inv, source="invoice", offset="credit", identifier=engine.key),
+            "return_source_line_links": offset_source_line_links(
+                received, source="receipt", offset="return", identifier=engine.key),
             "status": ";".join(dict.fromkeys(flags)) or "matched",
             "po_rows": ";".join(r["row"] for r in ordered),
             "invoice_rows": ";".join(r["row"] for r in inv),
@@ -384,7 +426,9 @@ def reconcile_procurement(po: str, invoices: str, receipts: str, folder: str,
                      "invoice_total_exact", "gross_invoice_total_exact", "credit_value_exact",
                      "invoice_documents", "credit_references", "return_references",
                      "price_policy_absolute", "price_policy_fraction",
-                     "price_policy_sha256", "receipt_documents", "return_documents")
+                     "price_policy_sha256", "receipt_documents", "return_documents",
+                     "po_source_sha256", "invoice_source_sha256", "receipt_source_sha256",
+                     "credit_source_line_links", "return_source_line_links")
     inputs = list(source_paths)
     if policy_path is not None and str(policy_path).strip():
         inputs.append(policy_path)
