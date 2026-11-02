@@ -31,7 +31,7 @@ test("CTA remains genuinely natively disabled and disclosed adjacently",()=>{
 });
 test("No email forms, pixels, third-party videos, auto-play, tracking or dangerous embeds",()=>{
   for(const s of [a,b]){
-    assert.doesNotMatch(s,/<form\b|<iframe\b|<img\b|<script\b|<(?:audio|video)[^>]*\\sautoplay\\b|<object\b|<embed\b|navigator\.sendBeacon|gtag\(|fbq\(/i);
+    assert.doesNotMatch(s,/<form\b|<iframe\b|<img\b|<script\b|<(?:audio|video)[^>]*\sautoplay\b|<object\b|<embed\b|navigator\.sendBeacon|gtag\(|fbq\(/i);
   }
 });
 test("Poster variant includes accessible readable full transcript and actual media hold",()=>{
