@@ -62,8 +62,10 @@ function stageTemplate(blueprint, source, digest) {
     "if (!$fv_template_id || is_wp_error($fv_template_id)) throw new Exception('FV stage CLOSED: local block template insert');",
     "$fv_terms=wp_set_object_terms($fv_template_id,'assembler','wp_theme');",
     "if (is_wp_error($fv_terms) || !$fv_terms) throw new Exception('FV stage CLOSED: local block template theme binding');",
+    "$fv_stored_template=get_post_field('post_content',$fv_template_id,'raw');",
+    "if (!is_string($fv_stored_template) || !hash_equals('"+templateDigest+"',hash('sha256',$fv_stored_template))) throw new Exception('FV stage CLOSED: saved template content differs from reviewed source');",
     "$fv_resolved=wp_get_block_template('assembler//page','wp_template');",
-    "if (!$fv_resolved || !isset($fv_resolved->content) || !str_contains($fv_resolved->content,'"+LOCAL_WIDTH+"')) throw new Exception('FV stage CLOSED: custom block template did not resolve');",
+    "if (!$fv_resolved || !isset($fv_resolved->content) || !is_string($fv_resolved->content) || !hash_equals('"+templateDigest+"',hash('sha256',$fv_resolved->content)) || ($fv_resolved->source ?? null) !== 'custom') throw new Exception('FV stage CLOSED: exact custom page template did not resolve');",
     "if (wp_get_block_template('assembler//front-page','wp_template')) throw new Exception('FV stage CLOSED: front-page template would supersede the verified page template');",
     "// The public site uses page-id-6; the isolated local front page gets an unrelated ID."
   ].join('\n')+'\n';
