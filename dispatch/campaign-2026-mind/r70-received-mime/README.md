@@ -29,6 +29,16 @@ To run the deliberately synthetic/adversarial suite:
 
 Tests create in-memory example.invalid addresses, a deliberately fictional address and nonfunctional opt-out tokens. They exercise mail with/without MIME alternatives, email-only HTML, commercial disclosure before/after 55 words, opt-out headers versus visual anchor, bad schemes/userinfo, dangerous markup, merchant-source URLs, wrong/missing subject, private address matching, invalid editions, oversized files, empty content, and privacy redaction. **Passing these synthetic tests never establishes actual mail compliance.**
 
+## Generate actual previewable HTML + plaintext without a real email
+
+A second standard-library utility provides a complete end-to-end **SYNTHETIC** pipeline. It creates an in-memory example.invalid MIME message, applies the inspector, then writes a safe HTML review board, plaintext review and redacted JSON. **No .eml is persisted, and no email is sent.** It demonstrates the rendering and privacy contract for reviewers while making no assertion about real WordPress delivery:
+
+    python -I dispatch/campaign-2026-mind/r70-received-mime/make_synthetic_preview.py --out-dir /private/path/fv-dispatch-preview
+
+Open the generated synthetic-review.html locally at mobile and desktop widths; compare synthetic-review.txt and synthetic-redacted-report.json. Everything visibly says HOLD_UNSENT, including cases where synthetic header/footer syntax is detected. The next step after an independently approved real test is to run inspect_received_eml.py privately and pass only its **redacted JSON** to render_report.py using --report-json, --html-out and --text-out. **Never commit real .eml or subscriber details.**
+
+The additive native tests now include 44 inspector/renderer adversarial tests **plus eight synthetic end-to-end pipeline checks** (52 new tests). Their passing result is software behavior evidence, never receipt, authorization, legal compliance or a campaign send clearance.
+
 ## Independently observed upstream state
 
 Authenticated read-only WordPress.com/JETPACK at **2026-11-02 16:46:10–16:46:13 UTC**, blog 256784396:
