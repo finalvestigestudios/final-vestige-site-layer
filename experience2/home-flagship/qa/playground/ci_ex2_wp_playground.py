@@ -381,7 +381,20 @@ def main() -> int:
                     receipt(out, 'WORDPRESS_RENDERED_BUT_ADMISSION_HOLD',
                             'exact staging browser audit exited '+str(outcome.returncode))
                     return 2
-                receipt(out, 'ISOLATED_BROWSER_ADMISSION_PASSED_NOT_RELEASE')
+                # Extra exact-head CDP lab against the SAME authenticated
+                # WordPress renderer, while isolated Playground remains alive.
+                # Never log storage-state, AJAX nonce or full private URL.
+                lab_cmd = [sys.executable, str(repo /
+                    'experience2/home-flagship/qa/playground/measure_private_lab.py'),
+                    '--repo', str(repo), '--expected-head', args.expected_head,
+                    '--storage-state', str(storage), '--out', str(out)]
+                lab = subprocess.run(lab_cmd, cwd=repo, check=False,
+                                     timeout=240, capture_output=True, text=True)
+                if lab.returncode:
+                    receipt(out, 'WORDPRESS_RENDERED_BUT_THROTTLED_PERFORMANCE_HOLD',
+                            'Private CDP lab failed or exceeded measured LCP/CLS budget')
+                    return 2
+                receipt(out, 'ISOLATED_BROWSER_AND_LAB_ADMISSION_PASSED_NOT_RELEASE')
                 return 0
     except Exception as exc:
         receipt(args.out, 'STAGING_STARTUP_OR_RENDER_BLOCKED', type(exc).__name__+': '+str(exc))
