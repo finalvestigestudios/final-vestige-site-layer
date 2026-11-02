@@ -36,6 +36,30 @@ function fv_ex2_apollo_desk_profiles(): array {
     );
 }
 
+/**
+ * R78 source-custody boundary: pinned files must remain within the physical
+ * plugin root with no symlinks in any file or nested directory segment.
+ * Equal bytes at an external symlink target are not package provenance.
+ * This is a staging drift check, not hostile-server / TOCTOU security.
+ * Intentional symlink deployments require explicit hosted-platform review.
+ */
+function fv_ex2_apollo_pinned_file(string $dir, string $relative): ?string {
+    if ($relative === '' || !preg_match('~^[A-Za-z0-9_./-]+$~D', $relative)
+        || fv_ex2_apollo_unsafe_relative($relative) || is_link($dir)) { return null; }
+    $root = realpath($dir);
+    if (!is_string($root) || !is_dir($root)) { return null; }
+    $part = $dir;
+    foreach (explode('/', $relative) as $segment) {
+        if ($segment === '' || $segment === '.' || $segment === '..') { return null; }
+        $part .= DIRECTORY_SEPARATOR . $segment;
+        if (is_link($part)) { return null; }
+    }
+    $resolved = realpath($part);
+    if (!is_string($resolved) || strpos($resolved, $root . DIRECTORY_SEPARATOR) !== 0
+        || !is_file($resolved) || !is_readable($resolved)) { return null; }
+    return $resolved;
+}
+
 /** Check a whole pinned profile, not an independently mixed list of approved files. */
 function fv_ex2_apollo_match_desk_pins(string $dir, array $pins): bool {
     if (count($pins) < 4) { return false; }
@@ -43,8 +67,8 @@ function fv_ex2_apollo_match_desk_pins(string $dir, array $pins): bool {
         if (!is_string($relative) || !preg_match('~^[a-zA-Z0-9_./-]+$~D', $relative)
             || fv_ex2_apollo_unsafe_relative($relative) || !is_string($expected)
             || !preg_match('/^[0-9a-f]{40}$/D', $expected)) { return false; }
-        $path = $dir . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relative);
-        if (!is_file($path) || !is_readable($path)) { return false; }
+        $path = fv_ex2_apollo_pinned_file($dir, $relative);
+        if ($path === null) { return false; }
         $bytes = file_get_contents($path);
         if (!is_string($bytes) || !hash_equals($expected, fv_ex2_apollo_git_blob($bytes))) { return false; }
     }
@@ -59,7 +83,8 @@ function fv_ex2_apollo_unsafe_relative(string $relative): bool {
 function fv_ex2_apollo_verified_desk(): ?string {
     if (!function_exists('fv_ex2_rd_shortcode') || !function_exists('fv_ex2_atlas_shortcode')) { return null; }
     $origin = (new ReflectionFunction('fv_ex2_rd_shortcode'))->getFileName();
-    if (!is_string($origin) || basename($origin) !== 'final-vestige-ex2-research-desk.php') { return null; }
+    if (!is_string($origin) || basename($origin) !== 'final-vestige-ex2-research-desk.php'
+        || fv_ex2_apollo_pinned_file(dirname($origin), basename($origin)) === null) { return null; }
     foreach (fv_ex2_apollo_desk_profiles() as $pins) {
         if (fv_ex2_apollo_match_desk_pins(dirname($origin), $pins)) { return $origin; }
     }
@@ -82,18 +107,19 @@ function fv_ex2_apollo_atlas_runtime_pins(): array {
 function fv_ex2_apollo_verified_atlas(): ?string {
     if (!function_exists('fv_ex2_atlas_shortcode') || !defined('FV_EX2_ATLAS_TEMPLATE_SHA256')) { return null; }
     $origin = (new ReflectionFunction('fv_ex2_atlas_shortcode'))->getFileName();
-    if (!is_string($origin) || basename($origin) !== 'final-vestige-ex2-evidence-atlas.php') { return null; }
+    if (!is_string($origin) || basename($origin) !== 'final-vestige-ex2-evidence-atlas.php'
+        || fv_ex2_apollo_pinned_file(dirname($origin), basename($origin)) === null) { return null; }
     $dir = dirname($origin);
     foreach (fv_ex2_apollo_atlas_runtime_pins() as $relative => $expected) {
-        $path = $dir . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relative);
-        if (!is_file($path) || !is_readable($path)) { return null; }
+        $path = fv_ex2_apollo_pinned_file($dir, $relative);
+        if ($path === null) { return null; }
         $bytes = file_get_contents($path);
         if (!is_string($bytes) || !hash_equals($expected, fv_ex2_apollo_git_blob($bytes))) { return null; }
     }
     $expectedTemplate = FV_EX2_ATLAS_TEMPLATE_SHA256;
     if (!is_string($expectedTemplate) || !preg_match('/^[0-9a-f]{64}$/D', $expectedTemplate)) { return null; }
-    $template = $dir . DIRECTORY_SEPARATOR . 'templates/atlas-fragment.html';
-    if (!is_file($template) || !is_readable($template)) { return null; }
+    $template = fv_ex2_apollo_pinned_file($dir, 'templates/atlas-fragment.html');
+    if ($template === null) { return null; }
     $actualTemplate = hash_file('sha256', $template);
     if (!is_string($actualTemplate) || !hash_equals($expectedTemplate, $actualTemplate)) { return null; }
     return $origin;
