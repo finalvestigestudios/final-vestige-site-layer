@@ -4,7 +4,8 @@ import {sanitizedSample,buildReceipt} from './lighthouse_receipt.mjs';
 const good=(secret='private-nonce-SECRET',desktop=false)=>({
   configSettings:{formFactor:desktop?'desktop':'mobile',
     screenEmulation:{width:desktop?1440:390,height:desktop?900:844,mobile:!desktop},
-    throttling:{cpuSlowdownMultiplier:desktop?1:4}},
+    throttling:{cpuSlowdownMultiplier:desktop?1:4,
+      rttMs:desktop?40:150,throughputKbps:desktop?10240:1638}},
   lighthouseVersion:'12.8.2',
   finalUrl:'http://127.0.0.1:9400/?nonce='+secret,
   categories:{performance:{score:0.86},accessibility:{score:1},
@@ -54,6 +55,9 @@ test('desktop score requires actual desktop CPU and viewport preset',()=>{
   const d=good('secret',true);
   d.configSettings.screenEmulation.width=412;
   assert.throws(()=>sanitizedSample(d,'desktop_1440'));
+  const n=good('secret',true);
+  n.configSettings.throttling.rttMs=150;
+  assert.throws(()=>sanitizedSample(n,'desktop_1440'));
 });
 test('one profile or changed source SHA cannot be labeled complete',()=>{
   const s=sanitizedSample(good(),'mobile_390');
