@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Final Vestige — Apollo Research Suite (STAGING ONLY)
  * Description: Fail-closed, exact-source Research Desk + Evidence Atlas co-host shortcode; no CMS writes.
- * Version: 0.0.57-staging
+ * Version: 0.0.58-staging
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.57-staging'); }
+if (!defined('FV_EX2_APOLLO_SUITE_VERSION')) { define('FV_EX2_APOLLO_SUITE_VERSION', '0.0.58-staging'); }
 
 /** Git *blob* SHA-1 (not the SHA-1 of bare file bytes). */
 function fv_ex2_apollo_git_blob(string $bytes): string {
@@ -74,9 +74,9 @@ function fv_ex2_apollo_verified_desk(): ?string {
  */
 function fv_ex2_apollo_atlas_runtime_pins(): array {
     return array(
-        'final-vestige-ex2-evidence-atlas.php' => '7d91dcacc9d921c032923826dfefca731dac1d64',
+        'final-vestige-ex2-evidence-atlas.php' => '1de50c0a55551d2946ca60ac48e6ab4e406202d5',
         'assets/atlas.css' => '079f2ef9785184a098ec7686f5018a474181031b',
-        'assets/atlas.js' => '596746d3a7f2194d1b179fcb339df460daffb031',
+        'assets/atlas.js' => '7bfc8d7fe216a7b786c6dc33ffd7841abcf92914',
     );
 }
 function fv_ex2_apollo_verified_atlas(): ?string {
