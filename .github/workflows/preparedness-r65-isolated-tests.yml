@@ -1,0 +1,145 @@
+name: Preparedness R65 integrated citation conservation diagnostics (NOT release)
+
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r64-claim-source-review-coverage-hold-20261102
+    paths:
+      - preparedness/tools/r65_integrated_citation_conservation.py
+      - preparedness/tests/test_r65_integrated_citation_conservation.py
+      - preparedness/docs/R65_INTEGRATED_35_ARTICLE_CITATION_CONSERVATION_HOLD.md
+      - .github/workflows/preparedness-r65-isolated-tests.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preparedness-r65-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  private-complete-citation-conservation:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Exact private draft checkout without write credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fail closed on parent SHA, branch swapping or unexpected file changes
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = '6d6d7f6c7666f00ff11290581c897662e1843f17'
+          test "$BASE_REF" = 'review/preparedness-r64-claim-source-review-coverage-hold-20261102'
+          test "$HEAD_REF" = 'review/preparedness-r65-integrated-35-citation-conservation-hold-20261102'
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-only -z "$BASE_SHA" "$HEAD_SHA" > /tmp/r65-files.bin
+          python -I - <<'PY'
+          from pathlib import Path
+          found = {item.decode("utf-8") for item in
+                   Path("/tmp/r65-files.bin").read_bytes().split(b"\0") if item}
+          expected = {
+              "preparedness/tools/r65_integrated_citation_conservation.py",
+              "preparedness/tests/test_r65_integrated_citation_conservation.py",
+              "preparedness/docs/R65_INTEGRATED_35_ARTICLE_CITATION_CONSERVATION_HOLD.md",
+              ".github/workflows/preparedness-r65-isolated-tests.yml",
+          }
+          if found != expected:
+              raise SystemExit("R65 unexpected modified files: " + repr(sorted(found ^ expected)))
+          print("Exactly four additive private R65 files; original article/source evidence untouched")
+          PY
+      - name: Python syntax parse without writing bytecode
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in (
+              "preparedness/tools/r65_integrated_citation_conservation.py",
+              "preparedness/tests/test_r65_integrated_citation_conservation.py",
+          ):
+              compile(Path(path).read_text(encoding="utf-8"), path, "exec")
+          print("R65 Python syntax PASS")
+          PY
+      - name: Native R60–R65 synthetic and adversarial tests (diagnostic only)
+        run: |
+          set -euo pipefail
+          for file in \
+            test_r60_contributor_provenance_drift_docket.py \
+            test_r61_contributor_version_source_lineage.py \
+            test_r62_contributor_claim_context_docket.py \
+            test_r63_contributor_source_impact_crosswalk.py \
+            test_r64_article_source_dependency_review.py \
+            test_r65_integrated_citation_conservation.py; do
+            python -I -m unittest discover -s preparedness/tests -p "$file" -v
+          done
+      - name: Verify exact seven original Git refs and regenerate the real 35/29 source crosswalk
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          expected = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+          }
+          for name, sha in expected.items():
+              actual = subprocess.check_output([
+                  "git", "rev-parse", "--verify",
+                  "refs/remotes/origin/" + name + "^{commit}"],
+                  text=True).strip()
+              if actual != sha:
+                  raise SystemExit("R65 contributor SHA drift: " + name +
+                                   " expected " + sha + " observed " + actual)
+          print("Exact 7/7 contributor refs pinned — NOT human approved")
+          PY
+          python -I preparedness/tools/r65_integrated_citation_conservation.py > /tmp/r65-summary.json
+          python -I - <<'PY'
+          import json
+          from pathlib import Path
+          summary=json.loads(Path("/tmp/r65-summary.json").read_text())
+          c=summary["counts"]
+          assert summary["release_state"] == "HOLD"
+          assert summary["may_publish"] is False
+          assert c["integrated_articles"] == 35
+          assert c["original_water_planning_tools"] == 1
+          assert c["frozen_contributor_articles"] == 29
+          assert c["six_other_integrated_articles"] == 6
+          assert c["integrated_citation_occurrences"] == 1959
+          assert c["original_water_tool_citation_occurrences"] == 7
+          assert c["original_article_citation_occurrences"] == 1952
+          assert c["frozen_contributor_citations"] == 1709
+          assert c["proposed_contributor_citations_UNREVIEWED"] == 1728
+          print(json.dumps(c,sort_keys=True))
+          print("Machine-only citation preservation; NOT claim support or medical safety")
+          PY
+      - name: Independent native source/article validation (diagnostic, NOT release)
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready draft build (NO CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Full native Preparedness Python unittest suite (diagnostic, NOT release)
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Mandatory integrity and independent human safety HOLD
+        if: always()
+        run: |
+          echo "R65 diagnostics cannot override mandatory seven_cluster_git_parity or 13-stage integrity."
+          echo "NO human link approval (206 tracked), 30 shared URLs, 43 fallbacks, 15 safety exceptions."
+          echo "NO qualified emergency/medical safety review, WordPress browser QA, independent QD."
+          echo "All 35 original articles and water tool remain private; no merges or CMS/nav changes."
