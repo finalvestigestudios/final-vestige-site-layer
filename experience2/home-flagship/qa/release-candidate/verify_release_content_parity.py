@@ -17,8 +17,8 @@ HOME = Path("experience2/home-flagship")
 SOURCE = HOME / "index.html"
 RELEASE_FIXTURE = HOME / "qa/release-candidate/fixtures/proposed-production-block-pr604.html"
 PRODUCTION_RELEASE_HEAD = "5f87f1b0a48ed2f17ecca49a60c44a482ca530de"
-PRODUCTION_SOURCE_BLOB = "11cc5471f414efe5422995cc0c81b9709bb3fdd3"
-PRODUCTION_BLOCK_BLOB = "a2ba62602ddfebdc3b1a04f5e40753075bb08511"
+PRODUCTION_SOURCE_BLOB = "4227e008d157ba53a015caf4095927caf8436c3d"
+PRODUCTION_BLOCK_BLOB = "8629aeec91a0aab9b832679eb27f741c1b9465cb"
 OPENING = '<section class="fv-hf__opening"'
 CLOSING = "</section>"
 RIGHTS = {
@@ -57,6 +57,16 @@ def compare_interiors(source: str, production: str) -> dict:
     # even if someone edits BOTH staging and proposed production together.
     if "NYPL believes this item is in the public domain under United States law." in a:
         raise ValueError("RELEASE_PARITY_UNVERIFIED_NYPL_RIGHTS_CLAIM")
+    # The 1903 record remains CATALOGED but its exact digital capture is NOT
+    # licensed for display: refuse silent image reintroduction even if a
+    # contributor edits both editorial sources to match.
+    malbone_figure = a.split('data-fv-case="malbone"', 1)[-1].split(
+        '<div class="fv-hf__case-body">', 1)[0]
+    if (a.count('data-fv-case="malbone"') != 1
+            or 'fv-hf__source-plate' not in malbone_figure
+            or '<img' in malbone_figure
+            or 'edit-017-v02-nypl-5003296-original.jpg' in a):
+        raise ValueError("RELEASE_PARITY_NYPL_UNCLEARED_IMAGE_REPRODUCTION")
     for case, text in RIGHTS.items():
         if a.count(text) != 1:
             raise ValueError("RELEASE_PARITY_RIGHTS_" + case.upper())
@@ -74,7 +84,7 @@ def compare_interiors(source: str, production: str) -> dict:
     return {
         "status": "CHAPTER_BYTES_AND_EDITORIAL_NOTICES_IDENTICAL",
         "historical_proposal_head": PRODUCTION_RELEASE_HEAD,
-        "nypl_capture_rights": "UNVERIFIED_HOLD",
+        "nypl_capture_rights": "UNVERIFIED_NOT_REPRODUCED",
         "chapter_sha256": hashlib.sha256(a.encode("utf-8")).hexdigest(),
         "chapter_characters": len(a),
         "attribution_notices": sorted(RIGHTS),
