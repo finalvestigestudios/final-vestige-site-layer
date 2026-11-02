@@ -342,8 +342,12 @@ def construct(parent, *, expected=CENSUS):
             e["kind"], e["slug"], e["citation_ordinal"], e["block_id"]))
         expected_edges = t[
             "all_downstream_citation_variant_edges_NOT_CLAIM_PROOF"]
+        # Keep citation ordinal as the primary within-document order; a
+        # lexical block-id sort would silently reorder valid citations.
         need([_edge_identity(e) for e in edges] ==
-             sorted(_edge_identity(e) for e in expected_edges),
+             [_edge_identity(e) for e in sorted(expected_edges,
+                key=lambda e: (e["kind"], e["slug"],
+                               e["citation_ordinal"], e["block_id"]))],
              "downstream citation edges lost or attributed to wrong origin")
         need(all(e["raw_source_id"] == key[1] for e in edges),
              "source key was confused with same-URL variant")
