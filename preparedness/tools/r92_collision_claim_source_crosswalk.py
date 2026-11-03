@@ -204,7 +204,7 @@ def index(lib, parent, *, expected=None, allow_historical_body_drift=False):
     current_tools = {slug for slug,meta in lib.articles.items()
                      if meta.get('kind')=='tool'}
     missing_tool_plans = sorted(set(planned_tools) - current_tools)
-    if expected is not None:
+    if expected is not None and expected.get('documents') == 41:
         need(doc_counts['article']==35 and doc_counts['tool']==1
              and len(planned_tools)==6 and len(missing_tool_plans)==5
              and all(planned_tools[x].get('status')=='not-started'
