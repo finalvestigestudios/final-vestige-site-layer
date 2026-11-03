@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-11-03T11:33:00Z",
+  "exact_public_offer_pages": [
+    {
+      "product": "Zen12",
+      "source": "https://zen12.com/hnp",
+      "seller_describes": "12-minute MP3 sessions, four styles, 24-MP3 six-level and 48-MP3 twelve-level packages",
+      "public_page_snapshot_price": "$67.77 / $87.99 on displayed page; no checkout verification",
+      "public_page_refund_advertising": "1-year money-back; no checkout verification",
+      "unsupported_claims": [
+        "12 minutes equals one hour of meditation",
+        "automatic deep meditation through entrainment",
+        "guaranteed health or cognitive outcomes"
+      ]
+    },
+    {
+      "product": "Hypnosis Live Total Focus",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_describes": "33 minutes, 47 MB MP3, credited to J.A. Amos",
+      "public_page_snapshot_price": "$24.44 shown; bundle promotions differ; no checkout verification",
+      "public_page_refund_advertising": "14-day guarantee advertised; no checkout verification",
+      "unsupported_claims": [
+        "100% focus",
+        "brain reprogramming",
+        "guaranteed workplace performance"
+      ]
+    }
+  ],
+  "publisher_email_promotion_permission_verified": false,
+  "merchant_account_acceptance_verified": false,
+  "partner_creative_permissions_verified": false,
+  "tracking_url_verified": false,
+  "purchaser_data_sharing_terms_verified": false,
+  "checkout_refund_terms_verified": false,
+  "approved_live_offer_guides_verified": false,
+  "postal_address_verified": false,
+  "received_jetpack_email_unsubscribe_verified": false,
+  "actual_eligible_recipients_verified": false,
+  "founder_final_send_approval": false,
+  "all_six_campaign_send_status": "HOLD_UNSENT",
+  "issue_03_05_additional_status": "HOLD_MERCHANT"
+}
