@@ -106,4 +106,5 @@ jobs:
         run: python -I -m unittest discover -s preparedness/tests -v
       - name: Human source, qualified safety, browser QA, QD and release integrity NOT APPROVED
         if: always()
-        run: echo 'R101 PRIVATE HOLD: no CMS, WordPress writes, publishing, nav, qualified safety or QD PASS.'
+        run: |
+          echo 'R101 PRIVATE HOLD: no CMS, WordPress writes, publishing, nav, qualified safety or QD PASS.'
