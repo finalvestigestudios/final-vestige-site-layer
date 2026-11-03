@@ -1,0 +1,30 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {fileURLToPath} from "node:url";
+import {dirname,join} from "node:path";
+import {validateSynthetic,groupedSynthetic} from "./privacy-attribution.mjs";
+const dir=dirname(fileURLToPath(import.meta.url)), read=n=>readFileSync(join(dir,n),"utf8");
+const A=read("zen12-A-text.blocks.html"), B=read("zen12-B-film.blocks.html");
+const evid=JSON.parse(read("evidence-and-permissions.json"));
+const norm=s=>s.replace(/<figure class="fm-film"[\s\S]*?<\/figure>/,"").replace(/Pilot [AB]/g,"Pilot X");
+test("A/B common editorial content exactly equal after optional film removal",()=>assert.equal(norm(A),norm(B)));
+test("critical source references present",()=>assert.ok(evid.sources.some(s=>s.id==="R01")&&evid.sources.some(s=>s.id==="M02")));
+test("sufficient concrete decisions and all release gates closed",()=>{assert.ok(evid.claims.length>=30);assert.ok(evid.gates.length>=20);assert.ok(evid.gates.every(g=>g.status==="HARD_HOLD"));});
+for (const [v,html] of [["A",A],["B",B]]) {
+  test(v+" native disabled button",()=>assert.match(html,/<button[^>]*\sdisabled(?:\s|>)/));
+  test(v+" affiliate disclosure occurs adjacent to disabled CTA",()=>{const d=html.indexOf("Affiliate disclosure:");const b=html.indexOf("<button",d);assert.ok(d>0&&b>d&&b-d<500);});
+  test(v+" seller/affiliate links never clickable",()=>assert.doesNotMatch(html,/<a[^>]+href\s*=\s*["'][^"']*(inspire3|zen12|hypnosislive)[^"']*["']/i));
+  test(v+" no iframe, script, form, autoplay, tracking pixel or live video",()=>assert.doesNotMatch(html,/<(?:iframe|script|form|video|audio)\b|\sautoplay\b|<img\b/i));
+  test(v+" no misleading price/discount/payout figures",()=>assert.doesNotMatch(html,/\$\d+|\b60%\+\b|\bEPC\b/i));
+  test(v+" exactly one FOCUS link, no duplicate newsletter funnel",()=>assert.equal((html.match(/https:\/\/finalvestige.com\/focus\//g)||[]).length,1));
+  test(v+" entire guide readable without JS",()=>{assert.match(html,/<h1\s+id="fm-guide-title"/);assert.ok((html.match(/class="fm-section"/g)||[]).length>=5);});
+}
+test("B poster after H1 and caption/transcript visible via open details",()=>{assert.ok(B.indexOf("<h1")<B.indexOf("<figure"));assert.match(B,/<details open>/);assert.match(B,/<svg/);});
+test("A truly text-only, no film figure",()=>assert.doesNotMatch(A,/<figure/));
+test("film transcript covers exactly six intervals",()=>assert.equal((read("film-40s.vtt").match(/--> /g)||[]).length,6));
+test("film poster is static svg without script",()=>assert.doesNotMatch(read("film-poster.svg"),/<script|foreignObject|onload=/i));
+test("attribution rejects unapproved identifiers",()=>assert.throws(()=>validateSynthetic({kind:"guide_view",topic:"troxler",source:"direct",variant:"a",email:"x@y.com"})));
+test("attribution rejects sales-by-click",()=>assert.throws(()=>validateSynthetic({kind:"outbound_verified",topic:"troxler",source:"direct",variant:"a"})));
+test("attribution suppresses small cells and permits at least 20",()=>{const e={kind:"guide_view",topic:"troxler",source:"direct",variant:"a"};assert.equal(groupedSynthetic(Array(19).fill(e)).length,0);assert.equal(groupedSynthetic(Array(20).fill(e))[0].count,20);});
+test("research manuscript has no commerce",()=>assert.doesNotMatch(read("investigation.md"),/zen12|affiliate commission|buy now|inspire3/i));

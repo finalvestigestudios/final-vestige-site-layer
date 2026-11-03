@@ -1,0 +1,45 @@
+{
+  "title": "The Circle That Did Not Leave",
+  "run": "R93",
+  "rendered_offline_at": "2026-11-03",
+  "distribution": "OFFLINE_REVIEW_ONLY_NO_CMS_NO_MERCHANT",
+  "film": {
+    "filename": "the-circle-that-did-not-leave-40s.mp4",
+    "sha256": "35476a2944eada4e82b071d5df4c94e98f37d358ff05323a1d62a46178467e76",
+    "format": "H.264 MP4",
+    "duration_s": 40,
+    "width": 540,
+    "height": 960,
+    "fps": 12,
+    "frames": 480,
+    "bytes": 118144,
+    "audio": "silent"
+  },
+  "renderer": {
+    "file": "render_film.py",
+    "git_blob_sha": "198e32f4e9a0fbe4fa17e2ae967e2cae07fbf1ce",
+    "verified_identical_to_executed_source": true
+  },
+  "captions": {
+    "file": "film-40s.vtt",
+    "cues": 6,
+    "coverage_s": [
+      0,
+      40
+    ],
+    "hosted_caption_sync_verified": false
+  },
+  "poster": {
+    "file": "film-poster.svg",
+    "type": "static/source-controlled; a separate rendered PNG exists offline"
+  },
+  "release_holds": [
+    "video not hosted",
+    "no WordPress draft/CMS write",
+    "no first-party browser playback check",
+    "no screenshot/a11y approval",
+    "no affiliate authorization",
+    "no founder publication approval"
+  ],
+  "notes": "The film is original educational schematic, not a participant experiment, product use report or efficacy evidence. Variant B remains static poster/transcript only pending approval."
+}
