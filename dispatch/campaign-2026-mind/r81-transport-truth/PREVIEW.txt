@@ -26,7 +26,7 @@ ISSUE 03 | HOLD_MERCHANT
 SUBJECT (PROPOSED): The twelve-minute question: practice first, purchase later
 PREHEADER (UNVERIFIED AS JETPACK FIELD): A free observation exercise before considering meditation audio.
 CUSTOM EXCERPT (NOT SAVED ON WORDPRESS; 314 CHARACTERS):
-Commercial disclosure: If you later buy through a qualifying link in an approved guide, Final Vestige may earn a commission. No buying link is active. Twelve minutes can reveal whether a routine fits your schedule; they cannot prove that Zen12 produces its advertised brainwave results. Here's what to check first.
+Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Twelve minutes can reveal whether a routine fits your schedule; they cannot prove that Zen12 produces its advertised brainwave results. Here's what to check first.
 ONE CONTENT CTA: RESERVED — independent Zen12 guide unpublished; no active link
 DESTINATION: NONE — UNPUBLISHED, INACTIVE
 PRIMARY SOURCE: https://zen12.com/hnp
@@ -46,7 +46,7 @@ ISSUE 05 | HOLD_MERCHANT
 SUBJECT (PROPOSED): A focus recording isn't proof of better focus
 PREHEADER (UNVERIFIED AS JETPACK FIELD): What a 33-minute MP3 can tell you, and what it cannot.
 CUSTOM EXCERPT (NOT SAVED ON WORDPRESS; 337 CHARACTERS):
-Commercial disclosure: If you later buy through a qualifying link in an approved guide, Final Vestige may earn a commission. No buying link is active. Total Focus is advertised as a 33-minute hypnosis recording. Its format is described by the seller; the promised concentration gains are not independently established for this recording.
+Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Total Focus is advertised as a 33-minute hypnosis recording. Its format is described by the seller; the promised concentration gains are not independently established for this recording.
 ONE CONTENT CTA: RESERVED — independent Total Focus guide unpublished; no active link
 DESTINATION: NONE — UNPUBLISHED, INACTIVE
 PRIMARY SOURCE: https://hypnosislive.com/mental-skills/total-focus
