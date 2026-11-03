@@ -69,17 +69,53 @@ function restrictNetwork(page,blocked){
   });
 }
 async function imageBodies(page){
-  const urls=await page.locator('img').evaluateAll(els=>[...new Set(els.map(x=>x.currentSrc||x.src).filter(Boolean))]);
-  const rows=[];
-  for(const url of urls){
-    if(!mediaHost(url))continue;
-    const res=await page.request.get(url,{maxRedirects:2,timeout:30000,failOnStatusCode:false});
-    const body=await res.body(),mime=(res.headers()['content-type']||'').split(';')[0];
-    const pass=res.status()===200&&mime.startsWith('image/')&&body.byteLength>100;
-    rows.push({host:new URL(url).hostname,status:res.status(),mime,bytes:body.byteLength,sha256:sha(body),pass});
-    if(!pass)throw new Error('First-party archival media body unreadable');
+  // HTTP bytes alone cannot establish that Chromium decoded the real image.
+  // Force only archival img elements to load; do not change layout styles.
+  const decoded=await page.locator('img').evaluateAll(async els=>Promise.all(
+    els.map(async el=>{
+      const initial=el.currentSrc||el.src;
+      if(!/^https:\/\/(finalvestige\.com|i0\.wp\.com)\//.test(initial))return null;
+      el.loading='eager';
+      let decodeError=null;
+      try{
+        await Promise.race([
+          el.decode(),
+          new Promise((_,reject)=>setTimeout(()=>reject(new Error('image decode timeout')),20000))
+        ]);
+      }catch(e){decodeError=String(e).slice(0,160);}
+      return {url:el.currentSrc||el.src,complete:el.complete,
+        width:el.naturalWidth,height:el.naturalHeight,decode_error:decodeError};
+    })
+  ));
+  const entries=decoded.filter(x=>x&&mediaHost(x.url));
+  if(entries.length<2)throw new Error('Missing two archival browser image candidates');
+  const cache=new Map(),rows=[];
+  for(const entry of entries){
+    let http=cache.get(entry.url);
+    if(!http){
+      const response=await page.request.get(entry.url,{
+        maxRedirects:2,timeout:30000,failOnStatusCode:false
+      });
+      const body=await response.body();
+      http={status:response.status(),
+        mime:(response.headers()['content-type']||'').split(';')[0],
+        bytes:body.byteLength,sha256:sha(body)};
+      cache.set(entry.url,http);
+    }
+    const pass=entry.complete&&entry.width>0&&entry.height>0&&
+      !entry.decode_error&&http.status===200&&
+      http.mime.startsWith('image/')&&http.bytes>100;
+    rows.push({host:new URL(entry.url).hostname,
+      source_file:new URL(entry.url).pathname.split('/').pop(),
+      ...http,decoded:entry.complete&&entry.width>0&&entry.height>0&&
+      !entry.decode_error,natural_width:entry.width,natural_height:entry.height,
+      decode_error:entry.decode_error,pass});
   }
-  if(rows.length<2)throw new Error('No complete two-source archival image body evidence');
+  if(new Set(rows.map(x=>x.source_file)).size<2)
+    throw new Error('Missing distinct Apollo and Franklin media sources');
+  if(rows.some(x=>!x.pass))
+    throw new Error('Archival image byte or browser decode failure: '+
+      JSON.stringify(rows.filter(x=>!x.pass)));
   return rows;
 }
 async function checkView(page,width,axePath,outputDirectory){
@@ -112,6 +148,15 @@ async function checkView(page,width,axePath,outputDirectory){
           first_position:first?getComputedStyle(first).position:'missing'};
       })()};
   });
+  // Capture SAVED WordPress layout before any assertion or axe failure.
+  // These are not browser-overlay corrected screenshots.
+  await mkdir(outputDirectory,{recursive:true});
+  await page.screenshot({path:join(outputDirectory,`assembler-${width}.png`),
+    animations:'disabled',fullPage:false,timeout:30000});
+  if(width===1440)await page.screenshot({
+    path:join(outputDirectory,'assembler-1440-fullpage.png'),
+    animations:'disabled',fullPage:true,timeout:60000
+  });
   assert.equal(state.chapter_links,7);
   assert.equal(state.chapter_targets,7);
   assert.equal(state.margins,72);
@@ -125,12 +170,10 @@ async function checkView(page,width,axePath,outputDirectory){
     present:true,role:'region',label:'72 synthetic historical fragments',
     tabindex:'0',item_count:72,overflow_y:'auto',first_position:'static'
   },'Synthetic Margins must remain readable and keyboard scrollable without JS');
-  // Capture the ACTUAL, unaltered saved WordPress preview BEFORE any axe
-  // failure, so a failing layout/contrast gate still produces review evidence.
-  // Never overlay browser-only 'fixes' and mistake them for saved CSS.
-  await mkdir(outputDirectory,{recursive:true});
-  await page.screenshot({path:join(outputDirectory,`assembler-${width}.png`),
-    animations:'disabled',fullPage:false});
+  // Preserve HTTP-body AND actual browser decode receipts if axe fails.
+  // Media re-fetched only at desktop to avoid 5x redundant transfers.
+  const media=width===1440?await imageBodies(page):[];
+  if(media.length)console.log(JSON.stringify({event:'EX2_MEDIA_BODY_AND_BROWSER_DECODE',width,media}));
   await page.addScriptTag({path:axePath});
   const scans=await page.evaluate(async()=>{
     if(!window.axe)throw new Error('axe unavailable: fail closed');
@@ -156,7 +199,7 @@ async function checkView(page,width,axePath,outputDirectory){
   });
   if(scans.flagship.length || scans.whole_document.length)
     throw new Error(`Automated axe findings at ${width}: ${JSON.stringify(scans)}`);
-  return {width,state,axe_violations:0,media:await imageBodies(page)};
+  return {width,state,axe_violations:0,media};
 }
 export async function runAssemblerPreview({server,browser,context,draftId,themeDirectory,outputDirectory}){
   assert.ok(Number.isInteger(draftId)&&draftId>0);
@@ -196,6 +239,20 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
       region_tabindex:region?.getAttribute('tabindex'),
       region_role:region?.getAttribute('role')};
   });
+  // No-JS photo and computed readability are from SAVED CSS, not an overlay.
+  await noPage.screenshot({path:join(outputDirectory,'assembler-390-nojs.png'),
+    animations:'disabled',fullPage:false,timeout:30000});
+  const noJSCSS=await noPage.evaluate(()=>{
+    const item=document.querySelector('.fv-margin-strip__item');
+    const windowEl=document.querySelector('.fv-margin-strip__window');
+    return {item_position:item?getComputedStyle(item).position:null,
+      item_opacity:item?getComputedStyle(item).opacity:null,
+      window_overflow:windowEl?getComputedStyle(windowEl).overflowY:null,
+      horizontal_overflow:document.documentElement.scrollWidth>innerWidth+1};
+  });
+  assert.deepEqual(noJSCSS,{item_position:'static',item_opacity:'1',
+    window_overflow:'auto',horizontal_overflow:false},
+    'CSS must keep all 72 synthetic records readable without JavaScript');
   assert.deepEqual(noJS,{chapters:7,margins:72,h1:1,
     saved_layout_styles:1,canvas_width:390,region_tabindex:'0',region_role:'region'});
   await noContext.close();
