@@ -25,7 +25,8 @@ def run(src,out,axe=None):
         for width in (320,390,768,1440,1920):
             for js in (False,True):
                 context=browser.new_context(viewport={'width':width,'height':880},java_script_enabled=js,
-                    reduced_motion='reduce' if width==390 else 'no-preference')
+                    reduced_motion='reduce' if width==390 else 'no-preference',
+                    has_touch=width==390,is_mobile=width==390)
                 page=context.new_page()
                 requests=[];console=[]
                 page.on('request', lambda r:requests.append('OUTSIDE_REQUEST') if r.url.startswith(('https:','http:')) else None)
@@ -46,8 +47,11 @@ def run(src,out,axe=None):
                 assert page.locator('.finding details').first.evaluate('(e)=>e.open'),'R87_NATIVE_OPEN'
                 page.keyboard.press('Enter')
                 assert not page.locator('.finding details').first.evaluate('(e)=>e.open'),'R87_NATIVE_CLOSE'
-                page.locator('.jump a').nth(3).click()
+                page.locator('.jump a').nth(3).focus();page.keyboard.press('Enter')
                 assert page.evaluate('location.hash')=='#r87-04','R87_ANCHOR'
+                if width==390:
+                    page.locator('.jump a').nth(2).tap()
+                    assert page.evaluate('location.hash')=='#r87-03','R87_NATIVE_TOUCH_NAV'
                 bounds=page.locator('.source').evaluate_all('(a)=>a.map(x=>({w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height}))')
                 assert all(b['w']>=44 and b['h']>=44 for b in bounds),'R87_TOUCH_44'
                 assert page.locator('.finding').first.evaluate('(x)=>getComputedStyle(x).backgroundColor')!='rgba(0, 0, 0, 0)','R87_CSS_UNLOADED'
