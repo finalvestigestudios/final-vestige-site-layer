@@ -115,7 +115,7 @@ class Fidelity(unittest.TestCase):
         changed["counts"]["citations"] += 1
         changed["sha256_seal"] = r86.digest(
             {k: v for k, v in changed.items() if k != "sha256_seal"})
-        with self.assertRaises(r86.Gate):
+        with self.assertRaisesRegex(ValueError, "R86 evidence cannot be independently reconstructed"):
             r87.audit(changed)
 
     def test_repeated_ID_does_not_imply_same_claim(self):
