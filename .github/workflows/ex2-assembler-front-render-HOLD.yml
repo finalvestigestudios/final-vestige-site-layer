@@ -14,12 +14,21 @@ jobs:
   isolated-assembler-frontend:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    env:
-      FV_THEME_PARENT: ${{ runner.temp }}/ex2-official-assembler
-      FV_SCREEN_DIR: ${{ runner.temp }}/ex2-synthetic-screens
-      FV_CANDIDATE: ${{ runner.temp }}/ex2-full-source-assembler.html
-      FV_MANIFEST: ${{ runner.temp }}/ex2-full-source-assembler.manifest.json
     steps:
+      # runner.* does not exist when GitHub validates jobs.<job>.env.
+      # Initialize these paths AFTER assignment to a real Ubuntu runner.
+      - name: Initialize runner-scoped isolated paths (pre-run YAML repair)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${RUNNER_TEMP:-}" && test -n "${GITHUB_ENV:-}"
+          test -d "$RUNNER_TEMP"
+          {
+            printf 'FV_THEME_PARENT=%s\\n' "$RUNNER_TEMP/ex2-official-assembler"
+            printf 'FV_SCREEN_DIR=%s\\n' "$RUNNER_TEMP/ex2-synthetic-screens"
+            printf 'FV_CANDIDATE=%s\\n' "$RUNNER_TEMP/ex2-full-source-assembler.html"
+            printf 'FV_MANIFEST=%s\\n' "$RUNNER_TEMP/ex2-full-source-assembler.manifest.json"
+          } >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -34,6 +43,7 @@ jobs:
           set -euo pipefail
           python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
           python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_full_document_axe_gate.py -v
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_assembler_workflow_runtime_paths.py -v
           node --check experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs
           node --check experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_assembler_media_failure_evidence.mjs
@@ -90,7 +100,7 @@ jobs:
             --candidate "$FV_CANDIDATE" --manifest "$FV_MANIFEST" \
             --assembler-dir "$FV_THEME_PARENT/assembler" --evidence-dir "$FV_SCREEN_DIR"
       - name: Store only non-sensitive synthetic candidate screenshots
-        if: always()
+        if: ${{ always() && env.FV_SCREEN_DIR != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ex2-assembler-isolated-source-controlled-only
@@ -98,8 +108,13 @@ jobs:
           if-no-files-found: ignore
           retention-days: 3
       - name: Erase ephemeral source, theme ZIP and evidence
-        if: always()
+        if: ${{ always() && env.FV_THEME_PARENT != '' }}
         run: |
-          rm -rf "$FV_CANDIDATE" "$FV_MANIFEST" "$FV_THEME_PARENT" \
+          set -euo pipefail
+          test "$FV_THEME_PARENT" = "$RUNNER_TEMP/ex2-official-assembler"
+          test "$FV_SCREEN_DIR" = "$RUNNER_TEMP/ex2-synthetic-screens"
+          test "$FV_CANDIDATE" = "$RUNNER_TEMP/ex2-full-source-assembler.html"
+          test "$FV_MANIFEST" = "$RUNNER_TEMP/ex2-full-source-assembler.manifest.json"
+          rm -rf -- "$FV_CANDIDATE" "$FV_MANIFEST" "$FV_THEME_PARENT" \
             "$FV_SCREEN_DIR" "$RUNNER_TEMP/assembler-official.zip"
           echo 'RELEASE HOLD. No live CMS writes, plugin install, merge, deployment or real visitor data.'
