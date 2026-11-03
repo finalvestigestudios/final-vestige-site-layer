@@ -1,0 +1,633 @@
+{
+  "title": "Mind R104 source and claim-to-proof register",
+  "date_checked": "2026-11-03",
+  "status": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "scope": "choice-blindness investigation and exact-offer Zen12 evidence pilot",
+  "sources": [
+    {
+      "id": "C1",
+      "title": "Johansson et al (2005) Science; choice blindness photograph switch",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "kind": "independent_primary"
+    },
+    {
+      "id": "C2",
+      "title": "Hall et al (2010) Cognition; taste/smell substitutions",
+      "url": "https://doi.org/10.1016/j.cognition.2010.06.010",
+      "kind": "independent_primary"
+    },
+    {
+      "id": "C3",
+      "title": "Hall et al (2013) PLOS ONE; political-survey substitutions",
+      "url": "https://doi.org/10.1371/journal.pone.0060554",
+      "kind": "independent_primary"
+    },
+    {
+      "id": "C4",
+      "title": "Published Puységur historical source trail; WP page ID 1377",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "site_existing"
+    },
+    {
+      "id": "C5",
+      "title": "Published Change Blindness article; WP post ID 1922",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "site_existing"
+    },
+    {
+      "id": "C6",
+      "title": "Published Mesmerism article; WP post ID 1924",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "site_existing"
+    },
+    {
+      "id": "C7",
+      "title": "Seven Day Focus Fieldbook; WP page ID 1579",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "site_existing"
+    },
+    {
+      "id": "S1",
+      "title": "Inspire3 official product catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant"
+    },
+    {
+      "id": "S2",
+      "title": "Zen12 exact original sales page",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant"
+    },
+    {
+      "id": "S3",
+      "title": "Zen12 full-course checkout",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant"
+    },
+    {
+      "id": "S4",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant_policy"
+    },
+    {
+      "id": "S5",
+      "title": "Inspire3 Terms of Sale; previously checked in Issue 171; direct fetch intermittently unavailable",
+      "url": "https://inspire3.com/terms/",
+      "kind": "merchant_policy_reverify"
+    },
+    {
+      "id": "S6",
+      "title": "Public Inspire3 affiliate portal; not account acceptance or approved creatives",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "merchant_general"
+    },
+    {
+      "id": "R1",
+      "title": "Ingendoh Posny Heine 2023 systematic review of binaural beats EEG",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "independent_systematic_review"
+    },
+    {
+      "id": "G1",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator"
+    },
+    {
+      "id": "G2",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CB-01",
+      "statement": "2005 experiment involved covert switching of selected faces",
+      "decision": "publish_narrowly",
+      "source_ids": [
+        "C1"
+      ]
+    },
+    {
+      "id": "CB-02",
+      "statement": "Some participants explained a result they had not selected",
+      "decision": "publish_narrowly",
+      "source_ids": [
+        "C1"
+      ]
+    },
+    {
+      "id": "CB-03",
+      "statement": "Choice blindness affects all choices or all people",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "C1"
+      ]
+    },
+    {
+      "id": "CB-04",
+      "statement": "2010 marketplace study manipulated preferred jam/tea samples",
+      "decision": "publish_narrowly",
+      "source_ids": [
+        "C2"
+      ]
+    },
+    {
+      "id": "CB-05",
+      "statement": "No more than about one-third of switched marketplace trials detected",
+      "decision": "publish_study_specific",
+      "source_ids": [
+        "C2"
+      ]
+    },
+    {
+      "id": "CB-06",
+      "statement": "2010 marketplace rate predicts real shopping behavior in general",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "C2"
+      ]
+    },
+    {
+      "id": "CB-07",
+      "statement": "2013 Swedish election survey manipulated respondents answers",
+      "decision": "publish_narrowly",
+      "source_ids": [
+        "C3"
+      ]
+    },
+    {
+      "id": "CB-08",
+      "statement": "2013 manipulation demonstrated permanent voting behavior change",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "C3"
+      ]
+    },
+    {
+      "id": "CB-09",
+      "statement": "Choice blindness proves historic animal magnetism mechanisms",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "C1",
+        "C4"
+      ]
+    },
+    {
+      "id": "CB-10",
+      "statement": "Reflection exercise experimentally tests choice blindness",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "C1"
+      ]
+    },
+    {
+      "id": "ZD-01",
+      "statement": "Inspire3 sells Zen12",
+      "decision": "publish_as_merchant",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "ZD-02",
+      "statement": "Session runtime advertised as twelve minutes",
+      "decision": "publish_as_merchant",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "ZD-03",
+      "statement": "Four audio styles described by merchant",
+      "decision": "publish_as_merchant",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "ZD-04",
+      "statement": "Premium/full course described as twelve levels and forty-eight MP3s",
+      "decision": "publish_as_merchant",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "ZD-05",
+      "statement": "Beginner and advanced versions described as six levels each",
+      "decision": "publish_as_merchant",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "ZD-06",
+      "statement": "Zen12 equivalence of 12 minutes to hour of advanced meditation proven",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "S2",
+        "R1"
+      ]
+    },
+    {
+      "id": "ZD-07",
+      "statement": "Brainwave entrainment mechanism clinically demonstrated by exact Zen12 product",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "ZD-08",
+      "statement": "2023 review evaluated fourteen binaural beats EEG studies",
+      "decision": "publish_independent",
+      "source_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "ZD-09",
+      "statement": "Review 5 supportive 8 contrary 1 mixed",
+      "decision": "publish_independent_study_scope",
+      "source_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "ZD-10",
+      "statement": "Review is direct Zen12 efficacy evaluation",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "ZD-11",
+      "statement": "Zen12 cures anxiety depression insomnia trauma",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "G2"
+      ]
+    },
+    {
+      "id": "ZD-12",
+      "statement": "Zen12 enhances wealth or guarantees financial success",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "G2"
+      ]
+    },
+    {
+      "id": "ZD-13",
+      "statement": "Merchant presents one-year Zen12 refund guarantee",
+      "decision": "publish_seller_policy_recheck",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "id": "ZD-14",
+      "statement": "Actual refund experience independently verified",
+      "decision": "omit_no_personal_test",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "id": "ZD-15",
+      "statement": "Current checkout requests mobile phone",
+      "decision": "publish_observed_checkout",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "ZD-16",
+      "statement": "Seller privacy permits phone or SMS marketing",
+      "decision": "publish_seller_policy",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "id": "ZD-17",
+      "statement": "Seller privacy allows affiliate sharing referred buyer name/email/items",
+      "decision": "publish_seller_policy",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "id": "ZD-18",
+      "statement": "Final Vestige is authorized for affiliate earning links",
+      "decision": "blocked_no_partner_evidence",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "id": "ZD-19",
+      "statement": "The checkout timer guarantees a real expiring promotion",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "ZD-20",
+      "statement": "Seller price is a stable evergreen price",
+      "decision": "omit_unsupported",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "ZD-21",
+      "statement": "A 40-second video increases conversion",
+      "decision": "hypothesis_only_no_data",
+      "source_ids": [
+        "G1"
+      ]
+    },
+    {
+      "id": "ZD-22",
+      "statement": "An untested video or unhosted storyboard is functioning video playback",
+      "decision": "omit_not_implemented",
+      "source_ids": [
+        "G1"
+      ]
+    },
+    {
+      "id": "ZD-23",
+      "statement": "Final Vestige has personally tested Zen12 or processed refunds",
+      "decision": "omit_no_personal_test",
+      "source_ids": []
+    },
+    {
+      "id": "ZD-24",
+      "statement": "Disclosure should sit beside any future earning link",
+      "decision": "publish_required",
+      "source_ids": [
+        "G1"
+      ]
+    },
+    {
+      "id": "ZD-25",
+      "statement": "Without product-specific claims evidence, omit psychological health benefits",
+      "decision": "publish_required",
+      "source_ids": [
+        "G2"
+      ]
+    },
+    {
+      "id": "ZD-26",
+      "statement": "Partner approval equals permission for email or TikTok channels",
+      "decision": "blocked_unverified",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "id": "ZD-27",
+      "statement": "Published Fieldbook exists and supports one existing funnel",
+      "decision": "publish_existing_site",
+      "source_ids": [
+        "C7"
+      ]
+    },
+    {
+      "id": "ZD-28",
+      "statement": "Published Change Blindness is a valid internal article link",
+      "decision": "publish_existing_site",
+      "source_ids": [
+        "C5"
+      ]
+    },
+    {
+      "id": "ZD-29",
+      "statement": "Published Puységur is an appropriate historical-methodology bridge",
+      "decision": "publish_analogy_not_validation",
+      "source_ids": [
+        "C4"
+      ]
+    },
+    {
+      "id": "ZD-30",
+      "statement": "Affiliates can receive buyer PII and site can silently keep it",
+      "decision": "blocked_privacy",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "affiliate_account_acceptance",
+      "status": "CLOSED",
+      "condition": "written FV-specific acceptance and authorized account"
+    },
+    {
+      "id": "authorized_zen12_earning_url",
+      "status": "CLOSED",
+      "condition": "written exact Zen12 approved tracking URL"
+    },
+    {
+      "id": "permitted_website_channel",
+      "status": "CLOSED",
+      "condition": "explicit channel and format authorization"
+    },
+    {
+      "id": "permitted_tiktok_channel",
+      "status": "CLOSED",
+      "condition": "explicit short-video/social authorization"
+    },
+    {
+      "id": "permitted_email_channel",
+      "status": "CLOSED",
+      "condition": "explicit newsletter authorization; Dispatch owns campaign"
+    },
+    {
+      "id": "approved_creative_rights",
+      "status": "CLOSED",
+      "condition": "approved merchant assets or original-only proof"
+    },
+    {
+      "id": "buyer_data_exclusion",
+      "status": "CLOSED",
+      "condition": "written aggregate-only reporting; seller may share identity by policy"
+    },
+    {
+      "id": "affiliate_tracking_terms",
+      "status": "CLOSED",
+      "condition": "no cloaking/redirect/parameter conflicts; consent review"
+    },
+    {
+      "id": "exact_checkout_recheck",
+      "status": "CLOSED",
+      "condition": "reverify package, price/terms without presenting urgency"
+    },
+    {
+      "id": "refund_terms_recheck",
+      "status": "CLOSED",
+      "condition": "current product-specific policy and customer support path"
+    },
+    {
+      "id": "independent_claims_review",
+      "status": "CLOSED",
+      "condition": "no borrowing seller neuroscience efficacy assertions"
+    },
+    {
+      "id": "legal_disclosure_review",
+      "status": "CLOSED",
+      "condition": "prominent disclosure adjacent actual future earning CTA"
+    },
+    {
+      "id": "actual_cms_saved_render_review",
+      "status": "CLOSED",
+      "condition": "WordPress sanitization and frontend readback"
+    },
+    {
+      "id": "real_browser_a11y",
+      "status": "CLOSED",
+      "condition": "WCAG 2.2 AA keyboard/touch, screen reader and focus"
+    },
+    {
+      "id": "browser_360_390_768_1440_1920",
+      "status": "CLOSED",
+      "condition": "five specified viewport tests"
+    },
+    {
+      "id": "lighthouse_mobile",
+      "status": "CLOSED",
+      "condition": "real browser performance and accessibility metrics"
+    },
+    {
+      "id": "real_video_production",
+      "status": "CLOSED",
+      "condition": "film must actually exist as original first-party file"
+    },
+    {
+      "id": "captions_and_transcript",
+      "status": "CLOSED",
+      "condition": "verified VTT against final media timeline"
+    },
+    {
+      "id": "media_host_approved",
+      "status": "CLOSED",
+      "condition": "first-party video host no third party tracking"
+    },
+    {
+      "id": "video_performance",
+      "status": "CLOSED",
+      "condition": "LCP/CLS controls, preload none, poster no forced playback"
+    },
+    {
+      "id": "nojs_and_reducedmotion",
+      "status": "CLOSED",
+      "condition": "real browser test, not structural assumption"
+    },
+    {
+      "id": "source_quotations_review",
+      "status": "CLOSED",
+      "condition": "independent source evidence and study scope verified"
+    },
+    {
+      "id": "internal_link_route_review",
+      "status": "CLOSED",
+      "condition": "published vs proposed route distinction"
+    },
+    {
+      "id": "analytics_privacy_approval",
+      "status": "CLOSED",
+      "condition": "category-only with no source URL or visitor identifiers"
+    },
+    {
+      "id": "outbound_link_activation_review",
+      "status": "CLOSED",
+      "condition": "approved merchant URLs only; no invented link"
+    },
+    {
+      "id": "jetpack_funnel_preservation",
+      "status": "CLOSED",
+      "condition": "one existing focus signup and welcome sequence"
+    },
+    {
+      "id": "homepage_coordination",
+      "status": "CLOSED",
+      "condition": "Issue 150 and PR 49 untouched, art lead informed"
+    },
+    {
+      "id": "site_qa_signoff",
+      "status": "CLOSED",
+      "condition": "Site QA Issue 126 independent review"
+    },
+    {
+      "id": "dispatch_coordination",
+      "status": "CLOSED",
+      "condition": "Issue 174 notified; no newsletter edits or send"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "CLOSED",
+      "condition": "explicit approval for draft publication, links and nav"
+    },
+    {
+      "id": "native_node_ci",
+      "status": "CLOSED",
+      "condition": "tests actually run on source branch with passing status"
+    },
+    {
+      "id": "real_conversion_data",
+      "status": "CLOSED",
+      "condition": "no evidence that A/B causes higher conversion"
+    }
+  ],
+  "attribution": {
+    "current": "disabled synthetic-only",
+    "allowed_fields": [
+      "variant",
+      "source",
+      "topic",
+      "action"
+    ],
+    "excluded": [
+      "ip",
+      "user_agent",
+      "email",
+      "name",
+      "phone",
+      "raw_referrer",
+      "landing_url",
+      "timestamp",
+      "cookie",
+      "session_id",
+      "order_id",
+      "buyer_id",
+      "conversion_id",
+      "amount",
+      "affiliate_id"
+    ],
+    "threshold_min_group": 20,
+    "meaning": "categorical outbound engagement test only; cannot infer sales or conversion rates"
+  },
+  "read_only_wordpress": {
+    "published_posts": 66,
+    "checked": "2026-11-03",
+    "puysegur_page_id": 1377,
+    "focus_page_id": 1579,
+    "change_blindness_post_id": 1922
+  },
+  "approval_evidence": "Generic promotional emails and public affiliate portal are not evidence of Final Vestige-specific program acceptance. Current Gmail targeted search returned no acceptance evidence; cannot prove none exists outside inbox or elsewhere.",
+  "merchant_creatives": "Public affiliate portal prompts login; no verified FV-approved Zen12 creatives or authorized swipe assets retrieved; original editorial artwork only.",
+  "limitations": [
+    "Seller terms page sometimes inaccessible to fresh fetch, prior Issue 171 had direct check; re-verify before go-live",
+    "No real buyer data, affiliate earning URLs, conversion metrics or real playback",
+    "This record does not certify 2026 launch accessibility or performance"
+  ]
+}
