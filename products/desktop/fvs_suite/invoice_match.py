@@ -66,10 +66,12 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
         if not isinstance(record, dict):
             raise ValueError("Invoice source record must be a mapping")
         # Take ownership BEFORE reading any values. A dict subclass can
-        # override .get() to present a different audit identity than its
-        # stored items, or mutate itself while validation is in progress.
-        # Validate precisely the same owned record later used for matching.
-        record = dict(record)
+        # override keys(), __iter__(), __getitem__(), get() or items() to
+        # manufacture a false mapping view. dict(record) can dispatch through
+        # those hooks when copying a subclass. Calling the built-in dict.items
+        # descriptor instead exposes real underlying storage and creates an
+        # ordinary dict before source validation and candidate matching.
+        record = dict(dict.items(record))
         source_row = record.get("row")
         if (not isinstance(source_row, str)
                 or _PHYSICAL_ROW.fullmatch(source_row) is None

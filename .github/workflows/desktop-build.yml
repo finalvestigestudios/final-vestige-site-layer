@@ -48,6 +48,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r166.py
           python -OO products/desktop/scripts/safe_unittest_r166.py
+      - name: R167 verify Invoice Twin underlying dict storage custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r167.py
+          python -OO products/desktop/scripts/safe_unittest_r167.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -340,6 +344,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R166 normal invoice custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r166.py
           if ($LASTEXITCODE -ne 0) { throw "R166 optimized invoice custody tests failed" }
+      - name: R167 verify Invoice Twin underlying dict storage custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r167.py
+          if ($LASTEXITCODE -ne 0) { throw "R167 normal stored-items custody tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r167.py
+          if ($LASTEXITCODE -ne 0) { throw "R167 optimized stored-items custody tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
