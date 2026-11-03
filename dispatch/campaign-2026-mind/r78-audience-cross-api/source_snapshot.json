@@ -1,0 +1,40 @@
+{
+  "schema": "fv_dispatch_audience_cross_api_v1",
+  "recorded_utc": "2026-11-03T00:36:42+00:00",
+  "newsletter_status": {
+    "as_of": "2026-11-03T00:36:37+00:00",
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "recent_sends": 0,
+    "site_can_send": true
+  },
+  "jetpack_followers": {
+    "email": 0,
+    "wpcom": 2,
+    "comment": 0,
+    "total": 2,
+    "partial": false,
+    "publicize": {}
+  },
+  "newsletter_settings": {
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "welcome_fieldbook_configured": true
+  },
+  "private_operator_attestations": {
+    "email_subscribed_and_sending_count": null,
+    "bounced_or_paused_count": null,
+    "received_mail_proven": false,
+    "unsubscribe_functional": false,
+    "valid_publisher_postal_address": false,
+    "final_founder_send_approval": false
+  },
+  "named_product_permissions": {
+    "zen12_email": false,
+    "total_focus_email": false
+  },
+  "observed_source": "Authenticated WordPress newsletter.status, newsletter.get_settings, and wpcom_jetpack_stats_followers; separate APIs, not a verified subscriber row export."
+}
