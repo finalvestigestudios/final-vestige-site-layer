@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-03",
+  "scope": "media recovery read-only exact current 6-slot verification; not visitor Chrome",
+  "inventory_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "word_press": {
+    "post_id": 285,
+    "status": "publish",
+    "modified": "2026-11-02T21:39:59",
+    "context": "edit_read_only",
+    "exact_source_and_alt_match": 6,
+    "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/"
+  },
+  "historic_baseline": {
+    "published_posts": 61,
+    "image_slots": 355,
+    "external_source_slots": 288,
+    "oversized_wp_originals_over_1_5_mib": 13,
+    "reported_broken": 42,
+    "reported_broken_browser_verified": false,
+    "claimed_weight_reduction_percent": 76,
+    "weight_reduction_measured": false,
+    "production_replacements": 0
+  },
+  "observation_protocol": {
+    "method": "independent_web_open_not_guest_browser",
+    "timestamp_date": "2026-11-03",
+    "redirect_wrapper_codes_not_origin": true,
+    "visitor_chromium_executed": false
+  },
+  "rows": [
+    {
+      "image_key": "285:0",
+      "source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "source_host": "live.staticflickr.com",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "retriever_status": "DISPLAYED_INDEPENDENT_VIEWER",
+      "retriever_wrapper_code": null,
+      "retriever_note": "Exact Flickr static JPEG displayed; not proof of public Chrome success.",
+      "browser": {
+        "current_src": null,
+        "origin_http_status": null,
+        "final_image_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "img_decode_ok": null,
+        "cdp_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "primary_candidate": {
+        "authority": "US Nuclear Regulatory Commission",
+        "catalog_url": "https://www.flickr.com/photos/nrcgov/7447166686",
+        "relation": "exact publisher archive record",
+        "creator_copyright_status": "flickr rights need item-specific review",
+        "license": "NOT_VERIFIED",
+        "release_candidate": false
+      },
+      "rights_review": "HOLD",
+      "wordpress_write_authorized": false,
+      "source_cache_authorized": false,
+      "target_max_width_px": 960,
+      "verified_original_width_px": null,
+      "verified_original_height_px": null,
+      "conditional_derivative_width_px": null,
+      "conditional_derivative_height_px": null,
+      "exact_binary_and_crop_equivalence_verified": false
+    },
+    {
+      "image_key": "285:1",
+      "source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "source_host": "i0.wp.com",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "retriever_status": "DISPLAYED_INDEPENDENT_VIEWER",
+      "retriever_wrapper_code": null,
+      "retriever_note": "Exact Jetpack proxy image displayed; outside-host origin remains squawkpoint.com.",
+      "browser": {
+        "current_src": null,
+        "origin_http_status": null,
+        "final_image_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "img_decode_ok": null,
+        "cdp_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "primary_candidate": null,
+      "rights_review": "HOLD",
+      "wordpress_write_authorized": false,
+      "source_cache_authorized": false,
+      "target_max_width_px": 960,
+      "verified_original_width_px": null,
+      "verified_original_height_px": null,
+      "conditional_derivative_width_px": null,
+      "conditional_derivative_height_px": null,
+      "exact_binary_and_crop_equivalence_verified": false
+    },
+    {
+      "image_key": "285:2",
+      "source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "source_host": "blog.ucsusa.org",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "retriever_status": "RETRIEVER_REDIRECT_INACCESSIBLE",
+      "retriever_wrapper_code": 500,
+      "retriever_note": "Retriever wrapper reported 500 following redirect blog.ucsusa.org to blog.ucs.org; NOT proven origin HTTP 500.",
+      "browser": {
+        "current_src": null,
+        "origin_http_status": null,
+        "final_image_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "img_decode_ok": null,
+        "cdp_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "primary_candidate": null,
+      "rights_review": "HOLD",
+      "wordpress_write_authorized": false,
+      "source_cache_authorized": false,
+      "target_max_width_px": 960,
+      "verified_original_width_px": null,
+      "verified_original_height_px": null,
+      "conditional_derivative_width_px": null,
+      "conditional_derivative_height_px": null,
+      "exact_binary_and_crop_equivalence_verified": false
+    },
+    {
+      "image_key": "285:3",
+      "source_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+      "source_host": "i.insider.com",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "retriever_status": "DISPLAYED_INDEPENDENT_VIEWER",
+      "retriever_wrapper_code": null,
+      "retriever_note": "Exact insider.com URL displayed with original unescaped query parameters.",
+      "browser": {
+        "current_src": null,
+        "origin_http_status": null,
+        "final_image_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "img_decode_ok": null,
+        "cdp_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "primary_candidate": {
+        "authority": "StateImpact/NPR AP-caption cross-check",
+        "catalog_url": "https://stateimpact.npr.org/pennsylvania/2019/03/21/photos-a-look-back-at-the-three-mile-island-accident-evacuations-protests-and-cleanup/",
+        "relation": "April 1 1979 Carter visit visual chronology; pixel identity not proven",
+        "creator_copyright_status": "AP/Getty/Everett licensing possible; no permission granted",
+        "license": "RIGHTS_HOLD",
+        "release_candidate": false
+      },
+      "rights_review": "HOLD",
+      "wordpress_write_authorized": false,
+      "source_cache_authorized": false,
+      "target_max_width_px": 960,
+      "verified_original_width_px": null,
+      "verified_original_height_px": null,
+      "conditional_derivative_width_px": null,
+      "conditional_derivative_height_px": null,
+      "exact_binary_and_crop_equivalence_verified": false
+    },
+    {
+      "image_key": "285:4",
+      "source_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+      "source_host": "images.pixels.com",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "retriever_status": "DISPLAYED_INDEPENDENT_VIEWER",
+      "retriever_wrapper_code": null,
+      "retriever_note": "Exact pixels.com image displayed; commercial photography publisher rights unresolved.",
+      "browser": {
+        "current_src": null,
+        "origin_http_status": null,
+        "final_image_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "img_decode_ok": null,
+        "cdp_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "primary_candidate": null,
+      "rights_review": "HOLD",
+      "wordpress_write_authorized": false,
+      "source_cache_authorized": false,
+      "target_max_width_px": 960,
+      "verified_original_width_px": null,
+      "verified_original_height_px": null,
+      "conditional_derivative_width_px": null,
+      "conditional_derivative_height_px": null,
+      "exact_binary_and_crop_equivalence_verified": false
+    },
+    {
+      "image_key": "285:5",
+      "source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "source_host": "images.saymedia-content.com",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "retriever_status": "RETRIEVER_FETCH_404",
+      "retriever_wrapper_code": 404,
+      "retriever_note": "Independent web.open wrapper reported 404 for exact SayMedia cropped asset; no logged-out visitor Image GET.",
+      "browser": {
+        "current_src": null,
+        "origin_http_status": null,
+        "final_image_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "img_decode_ok": null,
+        "cdp_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "primary_candidate": {
+        "authority": "Publisher direct Wikimedia Commons source credit",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+        "publisher_page": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "relation": "publisher directly links this 2010 catalog original, but FV's SayMedia 16:9 crop is not pixel/crop-identical to uncropped 4:3 original",
+        "creator_copyright_status": "Commons uploader Marque1313 self-photographed; PD-self public-domain dedication asserted",
+        "license": "PD_SELF_CATALOG_ASSERTION_ITEM_RIGHTS_REVIEW_REQUIRED",
+        "original_date_claims": [
+          "2010-06-06 in caption",
+          "2010-06-16 in record date"
+        ],
+        "release_candidate": false
+      },
+      "rights_review": "HOLD",
+      "wordpress_write_authorized": false,
+      "source_cache_authorized": false,
+      "target_max_width_px": 960,
+      "verified_original_width_px": 819,
+      "verified_original_height_px": 614,
+      "conditional_derivative_width_px": 819,
+      "conditional_derivative_height_px": 614,
+      "exact_binary_and_crop_equivalence_verified": false,
+      "visual_crop_difference": "Published SayMedia URL explicitly requests 16:9 fill/crop; archival original is 819x614 (~4:3). Do NOT silently replace crop.",
+      "different_scene_historical_option": {
+        "authority": "US Department of Energy (as attributed by Commons)",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+        "archive_original_px": [
+          2592,
+          2488
+        ],
+        "conditional_no_upscale_px": [
+          960,
+          921
+        ],
+        "photo_date": "1979",
+        "license_basis": "Commons DOE federal-government public-domain claim plus DOE usage policy; individual verification pending",
+        "exact_scene_equivalent": false,
+        "publication_allowed": false
+      }
+    }
+  ],
+  "editorial_proposals": [
+    {
+      "image_key": "285:3",
+      "issue": "Image shows President Jimmy Carter and accompanying officials on April 1 1979 visit, not merely anonymous technical personnel during active response.",
+      "proposed_alt": "President Jimmy Carter and accompanying officials inspect the Three Mile Island control room on April 1, 1979, four days after the accident.",
+      "publish_approved": false,
+      "scene_evidence_url": "https://stateimpact.npr.org/pennsylvania/2019/03/21/photos-a-look-back-at-the-three-mile-island-accident-evacuations-protests-and-cleanup/"
+    },
+    {
+      "image_key": "285:5",
+      "issue": "Publisher source depicts station in 2010; historic 1979 DOE photograph is a different scene; don't imply contemporary disaster aerial.",
+      "proposed_alt": "Aerial view of Three Mile Island's four cooling towers and station buildings beside the Susquehanna River, photographed in 2010.",
+      "publish_approved": false,
+      "scene_evidence_url": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy"
+    }
+  ],
+  "provenance_notes": [
+    {
+      "image_key": "285:0",
+      "note": "NRC Flickr calls this an historical 1979 control-room image, but Flickr EXIF 'Taken on April 6 2012' should not be misrepresented as original exposure date.",
+      "source_url": "https://www.flickr.com/photos/nrcgov/7447166686"
+    },
+    {
+      "image_key": "285:4",
+      "note": "Illustrated TMI-2 core end-state graphic has text labels; preservation of full height and label legibility required.",
+      "source_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg"
+    }
+  ]
+}
