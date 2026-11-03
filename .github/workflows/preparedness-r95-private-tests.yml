@@ -1,0 +1,116 @@
+name: Preparedness R95 Full Original DOM Attribute Custody (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r94-original-body-reading-custody-hold-20261103
+    paths:
+      - preparedness/tools/r95_dom_attribute_custody.py
+      - preparedness/tests/test_r95_dom_attribute_custody.py
+      - preparedness/docs/R95_ORIGINAL_DOM_ATTRIBUTE_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r95-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r95-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-read-only:
+    if: ${{ github.event.pull_request.draft == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact R94 parent, all contributor and RC refs, four additive files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          python -I - <<'PY'
+          import os, subprocess
+          assert os.environ["BASE_SHA"] == "3db0e16eea0cfb4e61c304759a92e7ef669a8067"
+          assert os.environ["BASE_REF"] == "review/preparedness-r94-original-body-reading-custody-hold-20261103"
+          assert os.environ["HEAD_REF"] == "review/preparedness-r95-complete-dom-attribute-custody-hold-20261103"
+          rows = subprocess.check_output([
+              "git", "diff", "--name-status", os.environ["BASE_SHA"], "HEAD"
+          ], text=True).splitlines()
+          wanted = {
+              "preparedness/tools/r95_dom_attribute_custody.py",
+              "preparedness/tests/test_r95_dom_attribute_custody.py",
+              "preparedness/docs/R95_ORIGINAL_DOM_ATTRIBUTE_CUSTODY_HOLD.md",
+              ".github/workflows/preparedness-r95-private-tests.yml",
+          }
+          assert len(rows) == 4 and set(rows) == {"A\t" + x for x in wanted}, rows
+          pinned = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":
+                  "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, expected in pinned.items():
+              got = subprocess.check_output([
+                  "git", "rev-parse", "refs/remotes/origin/" + ref
+              ], text=True).strip()
+              assert got == expected, (ref, got, expected)
+              print(ref, got)
+          print("R95 PASS: immutable predecessor, eight exact contributor/RC refs, ADD-only")
+          PY
+      - name: R95 original DOM and link scope adversarial regressions
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in ("preparedness/tools/r95_dom_attribute_custody.py",
+                       "preparedness/tests/test_r95_dom_attribute_custody.py"):
+              compile(Path(path).read_text(encoding="utf-8"), path, "exec")
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r95_dom_attribute_custody.py -v
+      - name: Independent exact full-corpus R95 plus R94 and R93 binding
+        run: |
+          python -I preparedness/tools/r95_dom_attribute_custody.py
+          python -I preparedness/tools/r95_dom_attribute_custody.py --private-json-stdout > "$RUNNER_TEMP/r95-private.json"
+          python -I - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          p = Path(os.environ["RUNNER_TEMP"]) / "r95-private.json"
+          report = json.loads(p.read_text(encoding="utf-8"))
+          assert report["schema"] == "r95-private-original-dom-attribute-custody-hold-v1"
+          assert report["release_state"] == "HOLD" and report["may_publish"] is False
+          assert report["slated_articles"] == report["real_article_drafts"] == 35
+          assert report["planned_tools"] == 6 and report["real_tool_drafts"] == 1
+          assert report["distinct_private_draft_urls"] == 36
+          assert len(report["missing_tool_drafts_NOT_IMPORTABLE"]) == 5
+          assert report["original_reading_blocks_rechecked_R94"] == 4032
+          assert report["rendered_citation_occurrences_rechecked_R93"] == 1959
+          assert report["original_dom_events_preserved"] > 4032
+          assert all(row["may_publish"] is False and row["release_state"] == "HOLD"
+                     for row in report["per_draft_dom_custody_NOT_APPROVED"])
+          seal = report.pop("sha256_seal")
+          raw = json.dumps(report, sort_keys=True, ensure_ascii=False,
+                           separators=(",", ":"), allow_nan=False).encode("utf-8")
+          assert hashlib.sha256(raw).hexdigest() == seal
+          print("R95 PASS: 36 original DOMs, 4032 blocks, 1959 source citations, release HOLD")
+          PY
+          rm -f "$RUNNER_TEMP/r95-private.json"
+      - name: Native validation and offline WordPress DRAFT ONLY build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Source safety and QD release gates remain closed
+        if: always()
+        run: |
+          echo 'PRIVATE diagnostics only; mandatory machine integrity remains separate.'
+          echo 'NO qualified emergency/medical advice verification, independent QD PASS,'
+          echo 'human claim/source review, WordPress/CMS writes, nav/public changes or publication.'
