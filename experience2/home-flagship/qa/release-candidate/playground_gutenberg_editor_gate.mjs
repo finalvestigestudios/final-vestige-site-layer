@@ -107,7 +107,7 @@ if (process.argv.includes('--self-test')) {
   let proof = null;
   try {
     server = await runCLI({
-      command:'server', wp:'6.8', php:'8.3', port:9473, login:true
+      command:'server', wp:'6.8', php:'8.3', port:9473, login:false
     });
     assert.ok(loopback(server.serverUrl), 'Playground server must be HTTP loopback with explicit port');
     await server.playground.writeFile('/wordpress/wp-content/fv-ex2-synthetic-only.marker',
@@ -146,7 +146,13 @@ if (process.argv.includes('--self-test')) {
       }
       const status = res.status();
       if ([301,302,303,307,308].includes(status)) {
-        throw new Error('Refusing second consecutive PHP route redirect ' + status);
+        const location = res.headers()['location'] || '';
+        let next;
+        try { next = new URL(location,u); } catch { next=null; }
+        throw new Error('Refusing second consecutive PHP route redirect ' + status +
+          ' path ' + (next?.pathname || '[invalid]') +
+          ' loopback=' + Boolean(next && loopback(next.origin)) +
+          ' same_action=' + Boolean(next && next.search === u.search));
       }
       const contentType = res.headers()['content-type'] || '';
       if (!contentType.includes('application/json')) {
