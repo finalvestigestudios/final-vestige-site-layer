@@ -1,0 +1,103 @@
+name: Preparedness R84 Literal URL Citation Crosswalk (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r83-citation-placement-context-custody-hold-20261102
+    paths:
+      - preparedness/tools/r84_source_url_citation_edge_custody.py
+      - preparedness/tests/test_r84_source_url_citation_edge_custody.py
+      - preparedness/docs/R84_SOURCE_URL_CITATION_EDGE_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r84-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r84-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  immutable-parent-citation-source-proof-of-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout all historical evidence without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce exact immutable R83 parent and strictly additive four-file scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "783c5b8edd1bfd855b8b2d21fde3eb659818e36d"
+          test "$BASE_REF" = "review/preparedness-r83-citation-placement-context-custody-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r84-source-url-citation-edge-custody-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > "$RUNNER_TEMP/r84-change-scope"
+          python -I - <<'PY'
+          import os
+          from pathlib import Path
+          tokens = Path(os.environ['RUNNER_TEMP'], 'r84-change-scope').read_bytes().split(b'\0')
+          changes = [(tokens[i].decode(), tokens[i+1].decode())
+                     for i in range(0, len(tokens)-1, 2)]
+          expected = {
+              'preparedness/tools/r84_source_url_citation_edge_custody.py',
+              'preparedness/tests/test_r84_source_url_citation_edge_custody.py',
+              'preparedness/docs/R84_SOURCE_URL_CITATION_EDGE_CUSTODY_HOLD.md',
+              '.github/workflows/preparedness-r84-private-tests.yml',
+          }
+          assert len(changes) == 4, changes
+          assert {path for _, path in changes} == expected, changes
+          assert all(status == 'A' for status, _ in changes), changes
+          print('Immutable R83 parent and 4 ADD-only files PASS; no original content edited')
+          PY
+      - name: Compile review module and isolated synthetic tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for file in ('preparedness/tools/r84_source_url_citation_edge_custody.py',
+                       'preparedness/tests/test_r84_source_url_citation_edge_custody.py'):
+              compile(Path(file).read_text(encoding='utf-8'), file, 'exec')
+          print('R84 source citation syntax PASS')
+          PY
+      - name: Run R84 independent synthetic and adversarial tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r84_source_url_citation_edge_custody.py -v
+      - name: Verify all seven exact pinned Claude branches and original RC via sealed R81-R83 history
+        run: python -I preparedness/tools/r83_citation_placement_context_custody.py
+      - name: Rebuild exact four-stage literal URL/source/citation edges without network checks
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r84_source_url_citation_edge_custody.py
+          python -I preparedness/tools/r84_source_url_citation_edge_custody.py --csv-stdout > "$RUNNER_TEMP/R84-PRIVATE-URL-citation-review.csv"
+          python -I - <<'PY'
+          from pathlib import Path
+          import csv
+          import os
+          path = Path(os.environ['RUNNER_TEMP']) / 'R84-PRIVATE-URL-citation-review.csv'
+          with path.open(encoding='utf-8', newline='') as stream:
+              rows = list(csv.DictReader(stream))
+          assert all(row['human_source_and_claim_review'] == 'NOT_REVIEWED'
+                     and row['release'] == 'HOLD' for row in rows)
+          print('Private exact citation/source URL human-review candidate rows:', len(rows))
+          PY
+          rm -f "$RUNNER_TEMP/R84-PRIVATE-URL-citation-review.csv"
+      - name: Execute original native archive safety/citation validator
+        run: python -I preparedness/tools/validate.py
+      - name: Build private offline WordPress-ready drafts (never CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Complete full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Publish decision remains HOLD regardless of diagnostics
+        if: always()
+        run: |
+          echo 'NO LINK CHECKS, NO HUMAN CLAIM VERIFICATION, NO MEDICAL SAFETY APPROVAL.'
+          echo 'NO QD PASS or 13-stage release clearance; no WordPress/CMS/navigation.'
+          echo 'All source/URL/claim rows NOT_REVIEWED; all public actions prohibited.'
