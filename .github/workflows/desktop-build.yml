@@ -209,6 +209,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r159.py
           python -OO products/desktop/scripts/safe_unittest_r159.py
+      - name: R160 SpendMap source category display custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r160.py
+          python -OO products/desktop/scripts/safe_unittest_r160.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -677,6 +681,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R159 native report verification FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r159.py
           if ($LASTEXITCODE -ne 0) { throw "R159 optimized native report verification FAILED" }
+      - name: R160 SpendMap source category display custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r160.py
+          if ($LASTEXITCODE -ne 0) { throw "R160 category custody FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r160.py
+          if ($LASTEXITCODE -ne 0) { throw "R160 optimized category custody FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |

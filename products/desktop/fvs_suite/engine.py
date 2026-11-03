@@ -467,6 +467,17 @@ def spend_map(source,folder):
         records, normalize_vendor=key, parse_date=parse_date,
         parse_money=money, format_money=dollars,
         source_sha256=source_sha256)
+    # A safe spreadsheet export prepends an apostrophe to formula-like
+    # categories. Two DISTINCT source categories ("=A1" and "'=A1")
+    # can therefore become the SAME displayed CSV category, concealing
+    # separate financial buckets. Never publish such an ambiguous report.
+    rendered_categories = {}
+    for row in rows:
+        key_ = (row["vendor_key"], row["month"], safe_cell(row["category"]))
+        prior = rendered_categories.get(key_)
+        if prior is not None and prior != row["category"]:
+            raise ValueError("Ambiguous SpendMap category after CSV formula protection; no report saved")
+        rendered_categories[key_] = row["category"]
     return [save(folder,"spend-map",(
         "vendor_key","month","category","amount","flag",
         "vendor_month_total","baseline_median","history_months",
