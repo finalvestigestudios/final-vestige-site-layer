@@ -77,6 +77,11 @@ class HostedAxeInteractionAdmissionTests(unittest.TestCase):
         self.assertEqual(receipt["axe_automated_violation_gate"], "PASS")
         self.assertEqual(receipt["manual_accessibility_gate"], "HOLD")
         self.assertEqual(receipt["release_gate"], "HOLD")
+        # Browser telemetry POST may be attempted; route guard aborts it.
+        # Denied attempts are not allowed production writes.
+        cases = fixture()
+        cases[0]["blocked_non_get"] = 3
+        self.assertEqual(evaluate(cases)["anonymous_read_only_gate"], "PASS")
 
     def test_missing_width_or_duplicate_case_is_error(self):
         cases = fixture()
