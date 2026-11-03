@@ -335,7 +335,7 @@ def add_generated_mutation_tests():
         "source_candidate_safety":lambda h:h["exact_RC_source_edges_NOT_APPROVED"]["exact_source_edges_NOT_LINK_OR_CLAIM_APPROVED"][0].__setitem__("qualified_safety_review","APPROVED"),
         "duplicate_candidate":lambda h:h["exact_RC_source_edges_NOT_APPROVED"]["exact_source_edges_NOT_LINK_OR_CLAIM_APPROVED"].append(deepcopy(h["exact_RC_source_edges_NOT_APPROVED"]["exact_source_edges_NOT_LINK_OR_CLAIM_APPROVED"][0])),
         "foreign_article_path":lambda h:h.__setitem__("path","../../outside.body.html"),
-        "missing_anchor":lambda h:(h["R83_complete_unabridged_current_to_RC_review"].__setitem__("before_FULL_ANCHOR",None), h["R83_complete_unabridged_current_TO_rc_review"].__setitem__("after_FULL_ANCHOR",None)),
+        "missing_anchor":lambda h:(h["R83_complete_unabridged_current_to_RC_review"].__setitem__("before_FULL_ANCHOR",None), h["R83_complete_unabridged_current_to_RC_review"].__setitem__("after_FULL_ANCHOR",None)),
     }
     for name, fn in doc_mutations.items():
         def test(self, fn=fn):
