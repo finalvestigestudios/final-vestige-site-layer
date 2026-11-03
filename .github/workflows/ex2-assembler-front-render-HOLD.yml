@@ -14,12 +14,21 @@ jobs:
   isolated-assembler-frontend:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    env:
-      FV_THEME_PARENT: ${{ runner.temp }}/ex2-official-assembler
-      FV_SCREEN_DIR: ${{ runner.temp }}/ex2-synthetic-screens
-      FV_CANDIDATE: ${{ runner.temp }}/ex2-full-source-assembler.html
-      FV_MANIFEST: ${{ runner.temp }}/ex2-full-source-assembler.manifest.json
     steps:
+      # runner.* does not exist when GitHub validates jobs.<job>.env.
+      # Initialize these paths AFTER assignment to a real Ubuntu runner.
+      - name: Initialize runner-scoped isolated paths (pre-run YAML repair)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${RUNNER_TEMP:-}" && test -n "${GITHUB_ENV:-}"
+          test -d "$RUNNER_TEMP"
+          {
+            printf 'FV_THEME_PARENT=%s\n' "$RUNNER_TEMP/ex2-official-assembler"
+            printf 'FV_SCREEN_DIR=%s\n' "$RUNNER_TEMP/ex2-synthetic-screens"
+            printf 'FV_CANDIDATE=%s\n' "$RUNNER_TEMP/ex2-full-source-assembler.html"
+            printf 'FV_MANIFEST=%s\n' "$RUNNER_TEMP/ex2-full-source-assembler.manifest.json"
+          } >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -34,6 +43,7 @@ jobs:
           set -euo pipefail
           python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
           python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_full_document_axe_gate.py -v
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_assembler_workflow_runtime_paths.py -v
           node --check experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs
           node --check experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_assembler_media_failure_evidence.mjs
@@ -61,17 +71,45 @@ jobs:
           if archive.stat().st_size > 12_000_000: raise RuntimeError('Theme zip too large')
           with zipfile.ZipFile(archive) as z:
               items=z.infolist()
+              # Names are from an official PUBLIC theme archive; bounded diagnostic
+              # distinguishes vendor packaging differences from malicious paths.
+              print('Official Assembler ZIP first 15 public entries:',repr([x.filename for x in items[:15]]))
               if not 6 <= len(items) <= 1500: raise RuntimeError('Bad theme file count')
+              # Exact inspected archive SHA (2026-11-03): c7bf7da02463...
+              # Official WP.com ZIP roots at assembler-wpcom/, not assembler/.
+              # Re-map ONLY that documented prefix into the disposable
+              # Playground install directory named assembler; never extractall.
               total=0
+              seen=set()
+              target_root=(root/'assembler').resolve()
               for info in items:
-                  parts=pathlib.PurePosixPath(info.filename).parts
-                  if not parts or parts[0]!='assembler' or any(p in ('.','..') for p in parts):
-                      raise RuntimeError('Unsafe theme zip path')
+                  raw=info.filename
+                  parts=pathlib.PurePosixPath(raw).parts
+                  if (not parts or parts[0]!='assembler-wpcom'
+                      or raw.startswith('/') or '\\\\' in raw
+                      or any(p in ('.','..','') for p in raw.split('/')[1:-1])):
+                      raise RuntimeError('Unsafe official theme ZIP path: '+repr(raw))
+                  if len(parts)==1:
+                      if not info.is_dir(): raise RuntimeError('Unexpected root file')
+                      continue
+                  rel=pathlib.Path(*parts[1:])
+                  dest=(target_root/rel).resolve()
+                  if not dest.is_relative_to(target_root) or dest==target_root:
+                      raise RuntimeError('Theme path traversal denied')
+                  if dest in seen: raise RuntimeError('Duplicate theme ZIP path')
+                  seen.add(dest)
                   mode=(info.external_attr >> 16) & 0o170000
-                  if mode == stat.S_IFLNK: raise RuntimeError('Theme symlink denied')
+                  if mode == stat.S_IFLNK or mode not in (0,stat.S_IFDIR,stat.S_IFREG):
+                      raise RuntimeError('Theme symlink/special file denied')
                   total+=info.file_size
-              if total>30_000_000: raise RuntimeError('Theme expanded size too large')
-              z.extractall(root)
+                  if total>30_000_000: raise RuntimeError('Theme expanded size too large')
+                  if info.is_dir():
+                      dest.mkdir(parents=True,exist_ok=True)
+                  else:
+                      dest.parent.mkdir(parents=True,exist_ok=True)
+                      with z.open(info) as src, dest.open('wb') as dst:
+                          import shutil
+                          shutil.copyfileobj(src,dst,1024*1024)
           css=(root/'assembler'/'style.css').read_text()
           if 'Theme Name: Assembler' not in css: raise RuntimeError('Theme identity mismatch')
           print('Assembler theme preflight passed; extracted files:',len(items))
@@ -90,7 +128,7 @@ jobs:
             --candidate "$FV_CANDIDATE" --manifest "$FV_MANIFEST" \
             --assembler-dir "$FV_THEME_PARENT/assembler" --evidence-dir "$FV_SCREEN_DIR"
       - name: Store only non-sensitive synthetic candidate screenshots
-        if: always()
+        if: ${{ always() && env.FV_SCREEN_DIR != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ex2-assembler-isolated-source-controlled-only
@@ -98,8 +136,13 @@ jobs:
           if-no-files-found: ignore
           retention-days: 3
       - name: Erase ephemeral source, theme ZIP and evidence
-        if: always()
+        if: ${{ always() && env.FV_THEME_PARENT != '' }}
         run: |
-          rm -rf "$FV_CANDIDATE" "$FV_MANIFEST" "$FV_THEME_PARENT" \
+          set -euo pipefail
+          test "$FV_THEME_PARENT" = "$RUNNER_TEMP/ex2-official-assembler"
+          test "$FV_SCREEN_DIR" = "$RUNNER_TEMP/ex2-synthetic-screens"
+          test "$FV_CANDIDATE" = "$RUNNER_TEMP/ex2-full-source-assembler.html"
+          test "$FV_MANIFEST" = "$RUNNER_TEMP/ex2-full-source-assembler.manifest.json"
+          rm -rf -- "$FV_CANDIDATE" "$FV_MANIFEST" "$FV_THEME_PARENT" \
             "$FV_SCREEN_DIR" "$RUNNER_TEMP/assembler-official.zip"
           echo 'RELEASE HOLD. No live CMS writes, plugin install, merge, deployment or real visitor data.'
