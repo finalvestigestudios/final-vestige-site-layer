@@ -102,15 +102,60 @@ def validate(root: Path, audit: dict | None = None, crosswalk: dict | None = Non
 def esc(value) -> str:
     return html.escape(str(value), quote=True)
 
+def render_chronology(rows: list[dict]) -> tuple[str, str]:
+    """Group *photograph* dates by precision, never invent an event sequence.
+
+    The January 1967 crew portrait lacks a known day and is deliberately
+    OUTSIDE the ordered list of dated photographs. Same-day exhibits share
+    one dated milestone rather than implying which image preceded another.
+    """
+    dated: dict[str, list[dict]] = {}
+    unresolved: list[dict] = []
+    for row in rows:
+        precision, stamp = row["date_precision"], row["taken_date"]
+        if precision == "DAY" and re.fullmatch(r"\d{4}-\d{2}-\d{2}", stamp):
+            dated.setdefault(stamp, []).append(row)
+        elif precision == "MONTH_ONLY" and re.fullmatch(r"\d{4}-\d{2}", stamp):
+            unresolved.append(row)
+        else:
+            raise ValueError("R80_DATE_PRECISION_NOT_SUPPORTED")
+    if len(dated) != 4 or len(unresolved) != 1 or unresolved[0]["id"] != "01":
+        raise ValueError("R80_UNEXPECTED_CERTAINTY_GROUPS")
+    checkpoints = []
+    for stamp in sorted(dated):
+        items = sorted(dated[stamp], key=lambda row: row["id"])
+        if len({row["date_display"] for row in items}) != 1:
+            raise ValueError("R80_CONFLICTING_SAME_DAY_LABELS")
+        links = "".join(
+            f'<li><a href="#record-{esc(row["id"])}">NASA source {esc(row["id"])}'
+            f' — {esc(row["nasa_page_title"])}</a></li>' for row in items
+        )
+        checkpoints.append(
+            f'<li class="rail-event"><time datetime="{esc(stamp)}">'
+            f'{esc(items[0]["date_display"])}</time>'
+            f'<ul class="rail-same-day">{links}</ul></li>'
+        )
+    one = unresolved[0]
+    month = (
+        '<aside class="rail-unplaced" aria-labelledby="rail-unplaced-title">'
+        '<h3 id="rail-unplaced-title">Date unresolved within the month</h3>'
+        f'<p><time datetime="{esc(one["taken_date"])}">{esc(one["date_display"])}</time>: '
+        'the exact day is not verified. This photograph cannot be positioned '
+        'before or after the dated January 1967 photographs.</p>'
+        f'<p><a href="#record-{esc(one["id"])}">Review NASA source {esc(one["id"])}'
+        ' and its provisional catalog association</a></p></aside>'
+    )
+    return "\n".join(checkpoints), month
+
+
 def render_html(root: Path) -> str:
     rows = validate(root)
     css = (Path(root) / STYLE).read_text()
     if "@import" in css or "url(" in css:
         raise ValueError("R79_CSS_REMOTE_RESOURCE")
-    by_id = {row["id"]: row for row in rows}
-    # Chronology sorts source photographs; a month-only date cannot be asserted within January.
-    order = ("03", "02", "01", "05", "04", "06")
-    rail = "\n".join(f'<li><a href="#record-{idx}"><time>{esc(by_id[idx]["date_display"])}</time></a></li>' for idx in order)
+    # Do NOT insert a month-only source between known day-level observations.
+    # A visual ordered rail can falsely imply precision even with a text disclaimer.
+    rail, unresolved = render_chronology(rows)
     cards = []
     for row in rows:
         idx = row["id"]
@@ -148,8 +193,8 @@ def render_html(root: Path) -> str:
 <p>Source-page evidence for Apollo 1, read from official NASA image-detail records. These are dates of photographs, not a sequence of events during the fire. The crew portrait is dated only to January 1967; its relative order within January is not established.</p>
 <p>No NASA photograph has been reproduced here. <strong>All six photographs require individual reuse review</strong>; neither an active NASA source link nor a NASA catalog number establishes publishing permission or NASA endorsement.</p></header>
 <nav class="rail" aria-label="Apollo photograph source chronology"><h2>Photographic source chronology</h2>
-<p>Dates describe when photographs were taken. This is not an instrument timeline or fire reconstruction. January 1967 contains one undated-within-the-month image, so positions within that month are illustrative, not established ordering.</p>
-<ol>{rail}</ol></nav>
+<p>Only confirmed day-level photograph dates appear in the ordered rail below, never fire-event or instrument timestamps. Photographs taken on the same day share a milestone. A separate notice holds the January 1967 portrait whose day is unconfirmed.</p>
+<ol>{rail}</ol>{unresolved}</nav>
 <section aria-label="Six NASA source page audits" class="cards">{''.join(cards)}</section>
 <footer><p><strong>Editorial evidence gate:</strong> Five PIA fields match their linked official NASA pages. The January 1967 crew image lacks a matching structured PIA field on its NASA page. All photographic reuse reviews remain pending.</p>
 <p>NASA's <a href="https://www.nasa.gov/nasa-brand-center/">media and identity guidance</a> prohibits misleading endorsement and requires review of third-party and personal rights. This document makes no clearance determination. No geographic relationships are asserted.</p>
