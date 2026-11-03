@@ -9,6 +9,7 @@ No external requests, network destinations, credentials or WordPress writes.
 from __future__ import annotations
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 REUSABLE_SLUG = 'fv-apollo-synced-review-private'
@@ -200,9 +201,20 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
             case['pass'] = True
             receipt['cases'].append(case)
         except Exception as exc:
-            write_r81_safe_failure(output, exc, width=width, js=js,
+            diagnostic = write_r81_safe_failure(output, exc, width=width, js=js,
                 expected_apollo=expected_apollo, phase=phase,
                 completed_cases=len(receipt['cases']))
+            # Safe CI classification is discoverable even when an uploaded ZIP
+            # cannot be opened. Never print the original exception or URLs.
+            print('APOLLO_R81_SYNCED_HOLD ' + json.dumps({
+                'code': diagnostic['assertion_code'],
+                'phase': diagnostic['checkpoint'],
+                'width': diagnostic['width'],
+                'js': diagnostic['javascript_enabled'],
+                'expected_apollo': diagnostic['expected_apollo'],
+                'cases_completed': diagnostic['completed_r77_cases'],
+                'source_location_only': diagnostic['code_locations_only'],
+            }, sort_keys=True), file=sys.stderr)
             raise
         finally:
             context.close()
