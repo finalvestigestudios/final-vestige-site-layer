@@ -27,4 +27,4 @@ All eight have original source, stored ALT, official canonical USGS catalog perm
 - **No measured guest HTTP responses, decoded widths, transfer savings, 42 confirmed failures, or 76% savings.** 61/355/288 site-wide reference baseline, 13 >1.5 MiB original files, and **0 production fixes** remain unchanged.
 
 ## QA
-Native Node: `node qa/media-recovery/test_hebgen_407_20261103.cjs` and `node qa/media-recovery/validate_hebgen_407_20261103.cjs`. The isolated JS precommit validator plus 24 deliberate mutation checks passed; native Node CI and logged-out Chrome not run here.
+Native Node: `node qa/media-recovery/test_hebgen_407_20261103.cjs` and `node qa/media-recovery/validate_hebgen_407_20261103.cjs`. The exact GitHub-committed validator, source and regression script passed **26/26 isolated V8 checks** (one baseline and 25 deliberate fail-closed mutations); native Node CI and logged-out Chrome not run here.
