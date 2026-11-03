@@ -17,9 +17,16 @@ def git_blob(contents):
 
 
 class DeskCustodyR67(unittest.TestCase):
-    def test_exact_original_source_is_unchanged(self):
+    def test_current_source_uses_atomic_r84_profile_not_r38(self):
+        # R38 remains an immutable legacy profile in the suite, but its
+        # historical blob cannot be compared with the intentionally revised
+        # native Research Desk chronology.
+        from test_desk_profiles_r52 import EXPECTED
         self.assertEqual(git_blob(DESK.read_bytes()),
-          '4842afb84b4c993cfc4861ce7f5a7a4d7b451871')
+            EXPECTED['r84-chronology-certainty']['templates/ledger.html'])
+        self.assertNotEqual(git_blob(DESK.read_bytes()),
+            EXPECTED['r38-custody-search']['templates/ledger.html'])
+        self.assertIn("'r38-custody-search'", SUITE.read_text())
 
     def test_every_original_custody_field_is_pinned_in_runtime(self):
         text=DESK.read_text()

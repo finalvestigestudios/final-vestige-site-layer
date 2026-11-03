@@ -12,6 +12,7 @@ import json
 import sys
 from pathlib import Path
 from wp_source_parity_r83 import verify_source_parity_r83
+from wp_chronology_r84 import verify_chronology_r84
 
 REUSABLE_SLUG = 'fv-apollo-synced-review-private'
 NEGATIVE_SLUG = 'fv-apollo-unrelated-review-private'
@@ -38,6 +39,7 @@ R81_FAILURE_CODES = frozenset((
     'R77_R83_RIGHTS_CLEARANCE_UNVERIFIED',
     'R77_R83_MEDIA_UNCLEARED', 'R77_R83_GEO_UNVERIFIED',
     'R77_R83_NATIVE_DISCLOSURE_KEYBOARD_FAIL',
+    'R77_R84_CHRONOLOGY_INTEGRITY',
 ))
 R81_PHASES = frozenset((
     'NAVIGATION', 'NETWORK', 'ASSET_DISCOVERY', 'CUSTODY',
@@ -181,6 +183,27 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
                         '.fv-ex2-apollo-suite [data-lat],[data-lon],[data-geo-edge]').count(),
                     suite_heading=page.locator('.fv-ex2-apollo-suite__head').inner_text(),
                     rights_notice=page.locator('.fva-custody-status').inner_text(),
+                )
+                # R84: the actual WordPress Desk chronology must share the
+                # R80 NASA gallery's date-certainty semantics. Reject visual
+                # ordering of the month-only portrait and false 2017 sequence.
+                case['r84_photo_chronology'] = verify_chronology_r84(
+                    ordered_dates=tuple(page.locator(
+                        '.fv-ex2-ledger__chronology > ol > li > a > time, '
+                        '.fv-ex2-ledger__chronology > ol > li.fv-ex2-ledger__chrono-group > time'
+                    ).evaluate_all('(nodes)=>nodes.map(n=>n.getAttribute("datetime"))')),
+                    ordered_targets=tuple(page.locator(
+                        '.fv-ex2-ledger__chronology > ol a[data-fvx-chrono-link]'
+                    ).evaluate_all('(nodes)=>nodes.map(n=>n.getAttribute("href"))')),
+                    same_day_group_count=page.locator('.fv-ex2-ledger__chrono-same-day').count(),
+                    unresolved_count=page.locator('.fv-ex2-ledger__chrono-unplaced').count(),
+                    unresolved_date=page.locator('.fv-ex2-ledger__chrono-unplaced time').get_attribute('datetime'),
+                    unresolved_target=page.locator('.fv-ex2-ledger__chrono-unplaced a[data-fvx-chrono-link]').get_attribute('href'),
+                    ordered_portrait_count=page.locator(
+                        '.fv-ex2-ledger__chronology > ol a[href="#fv-ex2-ledger-apollo1-record-01"]'
+                    ).count(),
+                    rail_warning=page.locator('.fv-ex2-ledger__chronology-head').inner_text(),
+                    unresolved_warning=page.locator('.fv-ex2-ledger__chrono-unplaced').inner_text(),
                 )
                 # Native <details> must remain keyboard-operable with JS off.
                 # Restore disclosure state before legacy axe, print, and LCP.

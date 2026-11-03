@@ -14,7 +14,7 @@ def build(output:Path):
     suite=(output/'fv-ex2-apollo-suite/fv-ex2-apollo-suite.php').read_text()
     js=(output/'fv-ex2-evidence-atlas/assets/atlas.js').read_bytes()
     assert "'assets/atlas.js' => '"+blob(js)+"'" in suite
-    assert blob((output/'fv-ex2-research-desk/templates/ledger.html').read_bytes()) == EXPECTED['r38-custody-search']['templates/ledger.html']
+    assert blob((output/'fv-ex2-research-desk/templates/ledger.html').read_bytes()) == EXPECTED['r84-chronology-certainty']['templates/ledger.html']
     assert len(manifest['files'])==11
     for name,d in manifest['files'].items():
         assert hashlib.sha256((output/name).read_bytes()).hexdigest()==d

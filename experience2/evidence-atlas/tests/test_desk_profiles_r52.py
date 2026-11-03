@@ -25,6 +25,13 @@ EXPECTED = {
         'assets/source-ledger.css':'7b0972fc3a920ded08f9783fddcfc9c609c7ff06',
         'assets/source-ledger.js':'57f4a639d4c37fc4355b10fe7dec085bf87c6eb7',
         'sources/R37_PHOTO_CUSTODY_CROSSWALK.json':'ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea'
+    },
+    'r84-chronology-certainty': {
+        'final-vestige-ex2-research-desk.php':'44a43c63ba262de4193295563f5762df6e731077',
+        'templates/ledger.html':'3372c0c369eedcbf715902e1eb692c57a29c7b6d',
+        'assets/source-ledger.css':'feb9a524cd10437a606fa166e19d4cae5fc24320',
+        'assets/source-ledger.js':'57f4a639d4c37fc4355b10fe7dec085bf87c6eb7',
+        'sources/R37_PHOTO_CUSTODY_CROSSWALK.json':'ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea'
     }
 }
 
@@ -76,14 +83,15 @@ class ExactDeskProfiles(unittest.TestCase):
             self.assertFalse(php({'dir':tmp,'pins':{'../escape':blob(b'foo'),**pins}})['matched'])
             self.assertFalse(php({'dir':tmp,'pins':dict(list(pins.items())[:3])})['matched'])
 
-    def test_r38_repository_files_match_complete_profile_when_available(self):
+    def test_r84_repository_files_match_new_complete_profile(self):
         # Tests the actual source in a checked-out R51/R52 repo, not a synthetic fixture.
         desk = ROOT.parent/'research-desk'
         if not (desk / 'final-vestige-ex2-research-desk.php').is_file():
             self.skipTest('Original Research Desk source not included in standalone R51 archive')
-        for name, expected in EXPECTED['r38-custody-search'].items():
+        for name, expected in EXPECTED['r84-chronology-certainty'].items():
             self.assertEqual(blob((desk/name).read_bytes()), expected, name)
-        self.assertTrue(php({'dir':str(desk),'pins':EXPECTED['r38-custody-search']})['matched'])
+        self.assertTrue(php({'dir':str(desk),'pins':EXPECTED['r84-chronology-certainty']})['matched'])
+        self.assertFalse(php({'dir':str(desk),'pins':EXPECTED['r38-custody-search']})['matched'])
         self.assertFalse(php({'dir':str(desk),'pins':EXPECTED['pr158-original']})['matched'])
 
     def test_production_write_absent(self):
