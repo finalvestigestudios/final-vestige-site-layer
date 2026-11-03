@@ -1,0 +1,38 @@
+name: EX2 read-only published homepage drift guard
+
+on:
+  pull_request:
+    paths:
+      - "experience2/home-flagship/qa/release-candidate/audit_published_homepage.py"
+      - "experience2/home-flagship/qa/release-candidate/test_audit_published_homepage.py"
+      - "experience2/home-flagship/qa/release-candidate/PUBLISHED_PAGE6_DRIFT_GUARD_2026-11-02.md"
+      - ".github/workflows/ex2-page6-published-drift-guard.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-only:
+    name: Offline release-guard tests (no WordPress writes)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact checked-out SHA
+        run: |
+          git rev-parse HEAD
+          test -n "$(git rev-parse HEAD)"
+      - name: Source compile and 11 offline adversarial tests
+        run: |
+          python -m py_compile experience2/home-flagship/qa/release-candidate/audit_published_homepage.py
+          python -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_audit_published_homepage.py -v
+      - name: Print release gate usage only (no production access)
+        run: |
+          python experience2/home-flagship/qa/release-candidate/audit_published_homepage.py --help
