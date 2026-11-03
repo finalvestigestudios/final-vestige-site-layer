@@ -348,7 +348,7 @@ def bounded_probe(axe_source: Path, output: Path, case_timeout: int = 90) -> dic
             q.cancel_join_thread()
         receipt = assemble_bounded(records, auxiliary, errors)
         # Checkpoint *after every case*, including timeouts and exceptions.
-        output.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\\n",
+        output.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n",
                           encoding="utf-8")
         print(f"END CASE {kind}:{value}; complete={receipt['completed_cases']}/"
               f"{receipt['expected_cases']}; errors={len(errors)}", flush=True)
