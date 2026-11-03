@@ -18,6 +18,24 @@ class ReleaseCandidateParityTests(unittest.TestCase):
         self.assertEqual(report["publication"], "HOLD")
         self.assertEqual(report["wordpress_com_host_parity"], "NOT_ESTABLISHED")
 
+    def test_one_scoped_css_block_is_before_the_hero(self):
+        # This experiment changes only parse order, not the editorial
+        # seven-chapter content. A pre-hero stylesheet prevents a late
+        # style recalculation after the opening text has already rendered.
+        text = PAYLOAD.decode("utf-8")
+        self.assertTrue(text.startswith("<!-- wp:html -->\\n<style>"))
+        self.assertEqual(text.count("<style>"), 1)
+        self.assertEqual(text.count("</style>"), 1)
+        self.assertLess(text.index("</style>"), text.index('data-fv-home-flagship'))
+        self.assertEqual(text.count("<script>"), 4)
+        self.assertTrue(text.rstrip().endswith("<!-- /wp:html -->"))
+
+    def test_css_first_boundary_does_not_hide_missing_chapters(self):
+        raw = PAYLOAD.decode("utf-8").replace(
+            '<section class="fv-hf__opening"', '<section class="fv-hf__lost-opening"', 1)
+        with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_CHAPTER_BOUNDARY"):
+            parity.compare_interiors(SOURCE.decode("utf-8"), raw)
+
     def test_independent_repo_fixture_is_accessible(self):
         self.assertEqual(parity.verify_repo(ROOT)["status"],
                          "CHAPTER_BYTES_AND_EDITORIAL_NOTICES_IDENTICAL")
