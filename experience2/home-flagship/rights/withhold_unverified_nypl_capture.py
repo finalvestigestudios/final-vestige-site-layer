@@ -73,7 +73,7 @@ def invariants(raw: str) -> dict:
         "jetpack": raw.count("jetpack/subscriptions"),
         "focus": raw.count("Focus Fieldbook"),
         "catalog_links": raw.count(NYPL_RECORD),
-        "image_controls": raw.count("data-fv-archive-img"),
+        "image_controls": len(IMG.findall(raw)),  # actual <img> tags, not JS selector strings
     }
 
 
