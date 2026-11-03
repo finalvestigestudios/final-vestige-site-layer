@@ -65,6 +65,11 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
             raise ValueError("Too many invoice source records; no report was saved")
         if not isinstance(record, dict):
             raise ValueError("Invoice source record must be a mapping")
+        # Take ownership BEFORE reading any values. A dict subclass can
+        # override .get() to present a different audit identity than its
+        # stored items, or mutate itself while validation is in progress.
+        # Validate precisely the same owned record later used for matching.
+        record = dict(record)
         source_row = record.get("row")
         if (not isinstance(source_row, str)
                 or _PHYSICAL_ROW.fullmatch(source_row) is None
@@ -83,11 +88,10 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
             key = record.get(field)
             if not isinstance(key, str) or _NORMALIZED_KEY.fullmatch(key) is None:
                 raise ValueError("Invoice vendor and invoice keys must be normalized ASCII")
-        # Bind validated evidence to this iteration, not the caller's mutable
-        # mapping. A generator may legally reuse and rewrite one dict for each
-        # CSV row; retaining it would rewrite earlier line citations, monetary
-        # amounts and review candidates *after* their validation.
-        yield dict(record)
+        # The validated owned record is the actual matching evidence. Do
+        # not re-copy the caller's object after validation; the caller may
+        # reuse a mapping, or its .get() method may misrepresent stored data.
+        yield record
 
 
 def candidate_pairs(records: Iterable[dict[str, Any]], *,
