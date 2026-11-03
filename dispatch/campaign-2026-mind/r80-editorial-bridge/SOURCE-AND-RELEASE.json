@@ -1,0 +1,126 @@
+{
+  "id": "fv-dispatch-r80-editorial-bridge-20261102",
+  "status": "HOLD_UNSENT",
+  "type": "optional editorial candidates - not replacement",
+  "parent_pr": 710,
+  "source_master_pr": 175,
+  "master_issue": 174,
+  "companion_issue": 171,
+  "campaign_mix_original": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "replacements_approved": false,
+  "newsletter_send_approved": false,
+  "cms_snapshot": {
+    "checked_utc": "2026-11-03T02:29:23Z",
+    "jetpack": true,
+    "automatic_new_post_email": false,
+    "email_content_format": "excerpt",
+    "sender_name": "Final Vestige",
+    "welcome_fieldbook_52_pages_configured": true,
+    "actual_welcome_delivery_verified": false,
+    "recent_sends": 0,
+    "subscriber_diagnostics": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2
+    },
+    "separate_followers": {
+      "total": 2,
+      "email": 0,
+      "wpcom": 2,
+      "partial": false
+    },
+    "actual_eligible_recipients": "UNKNOWN",
+    "subscriber_data_exported": false
+  },
+  "publisher_address_verified": false,
+  "rendered_unsubscribe_verified": false,
+  "received_email_verified": false,
+  "merchant_email_rights_verified": false,
+  "commercial_guides_approved_and_live": false,
+  "active_affiliate_urls": [],
+  "price_or_refund_copy_authorized": false,
+  "subject_inbox_verified": false,
+  "custom_preheader_control_verified": false,
+  "issues": [
+    {
+      "number": 1,
+      "file": "01-the-conversation-continued.md",
+      "subject": "The person changed. The conversation went on.",
+      "preheader": "A sidewalk experiment asks what the mind leaves out.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence": [
+        "https://doi.org/10.3758/BF03208840",
+        "https://experts.illinois.edu/en/publications/failure-to-detect-changes-to-people-during-a-real-world-interacti/"
+      ],
+      "key_claim": "A specific 1998 field experiment reported that approximately half detected a substituted conversation partner; NOT population rate."
+    },
+    {
+      "number": 2,
+      "file": "02-the-letter-and-the-witness.md",
+      "subject": "A sleeping witness, a letter, and a 1784 puzzle",
+      "preheader": "A remarkable claim survives on paper; proof is another matter.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence": [
+        "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+        "https://doi.org/10.1002/jhbs.21974",
+        "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/"
+      ],
+      "key_claim": "1784 encounter and follow-up letter reported by Puységur; document is primary testimony not independent proof of mechanism; avoid unverified quotation."
+    },
+    {
+      "number": 6,
+      "file": "06-the-boring-days.md",
+      "subject": "Your focus log should include the boring days",
+      "preheader": "A seven-day field note is useful even when nothing dramatic happens.",
+      "cta": "https://finalvestige.com/focus/",
+      "evidence": [
+        "https://finalvestige.com/focus/",
+        "https://finalvestige.com/editorial-standards/",
+        "https://doi.org/10.3758/BF03208840"
+      ],
+      "key_claim": "Suggested self-observation exercise only; NOT an efficacy trial, clinical intervention or medical advice."
+    }
+  ],
+  "official_sales_alignment_notes": {
+    "zen12": {
+      "official_page": "https://zen12.com/hnp",
+      "page_claim": "12 min equals an hour, automatic brainwave effects",
+      "editorial_position": "MERCHANT ASSERTION NOT VERIFIED; commercial issue #03 remains HOLD_MERCHANT; no email permission or approved live guide."
+    },
+    "total_focus": {
+      "official_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "page_claim": "33-minute, 47MB recording; 100% focus and brain reprogramming",
+      "editorial_position": "Format seller-described; outcomes NOT established. Commercial issue #05 remains HOLD_MERCHANT; no email permission or approved live guide."
+    },
+    "affiliate_recruitment": {
+      "public_page": "https://affiliates.inspire3.com/",
+      "conclusion": "Public recruitment does not establish account approval, written email-channel rights, creative permissions, tracking/link format, price, refund policy or payment."
+    }
+  },
+  "verified_guidance": [
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://jetpack.com/support/newsletter/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ],
+  "release_gates_all_false": {
+    "founder_final_creative_approval": false,
+    "founder_sending_approval": false,
+    "eligible_consent_verified": false,
+    "legal_publisher_postal_address_verified": false,
+    "real_received_email_rendering_verified": false,
+    "functioning_unsubscribe_verified": false,
+    "html_plaintext_verified_in_jetpack": false,
+    "custom_excerpt_verified_in_jetpack": false
+  }
+}
