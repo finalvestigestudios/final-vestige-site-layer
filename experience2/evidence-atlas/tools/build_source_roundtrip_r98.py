@@ -21,10 +21,10 @@ VIEWS = {
     'R97_SOURCE_GALLERY.html': 'gallery-',
 }
 CSS = '''/* R98 additive navigation, scoped; no inherited page or theme overrides. */
-.r98-route{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .8rem;margin:.8rem 0 0;padding:.65rem 0 0;border-top:1px solid currentColor;font:600 .86rem/1.5 system-ui,sans-serif}
-.r98-route a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding:.3rem .6rem;border:1px solid currentColor;border-radius:2px;color:inherit;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
+.r98-route{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .8rem;margin:.8rem 0 0;padding:.85rem 1rem 1rem;border-top:1px solid currentColor;font:600 .86rem/1.5 system-ui,sans-serif}
+.r98-route a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding:.35rem .7rem;border:1px solid currentColor;border-radius:2px;color:inherit;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
 .r98-route a:focus-visible{outline:3px solid #f5cb81;outline-offset:3px}
-.r98-route .r98-explainer{width:100%;font-weight:400;font-size:.8rem}
+.r98-route .r98-explainer{width:100%;font-weight:400;font-size:.82rem;line-height:1.5;overflow-wrap:anywhere}
 @media(max-width:430px){.r98-route{display:grid;grid-template-columns:1fr}.r98-route a{max-width:100%}}
 @media(forced-colors:active){.r98-route a{color:LinkText;border-color:CanvasText}.r98-route a:focus-visible{outline:3px solid Highlight}}
 @media(prefers-reduced-motion:reduce){.r98-route *{scroll-behavior:auto!important;transition:none!important}}
