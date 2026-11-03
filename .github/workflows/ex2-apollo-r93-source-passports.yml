@@ -28,17 +28,17 @@ jobs:
           EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          export PYTHONPYCACHEPREFIX="$${{ runner.temp }}/apollo-r93-pycache"
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r93-pycache"
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
           python -m py_compile experience2/evidence-atlas/tools/build_source_passports_r93.py experience2/evidence-atlas/tests/test_source_passports_r93.py experience2/evidence-atlas/tests/browser_source_passports_r93.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_source_passports_r93.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_reciprocal_routes_r92.py -v
-          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$${{ runner.temp }}/r92-base"
-          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$${{ runner.temp }}/r92-base" --out "$${{ runner.temp }}/r93-a" --archive "$${{ runner.temp }}/r93-a.zip"
-          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$${{ runner.temp }}/r92-base" --out "$${{ runner.temp }}/r93-b" --archive "$${{ runner.temp }}/r93-b.zip"
-          cmp "$${{ runner.temp }}/r93-a.zip" "$${{ runner.temp }}/r93-b.zip"
-          sha256sum "$${{ runner.temp }}/r93-a.zip"
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92-base"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92-base" --out "$RUNNER_TEMP/r93-a" --archive "$RUNNER_TEMP/r93-a.zip"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92-base" --out "$RUNNER_TEMP/r93-b" --archive "$RUNNER_TEMP/r93-b.zip"
+          cmp "$RUNNER_TEMP/r93-a.zip" "$RUNNER_TEMP/r93-b.zip"
+          sha256sum "$RUNNER_TEMP/r93-a.zip"
           test -z "$(git status --porcelain)"
       - name: Preserve source-exact deterministic staging package
         uses: actions/upload-artifact@v4
@@ -68,19 +68,19 @@ jobs:
           set -euo pipefail
           python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
           python -m playwright install --with-deps chromium
-          npm install --prefix "$${{ runner.temp }}/r93-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+          npm install --prefix "$RUNNER_TEMP/r93-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
       - name: Run 320-1920 Chromium, no-JS, keyboard/touch, copy, forced-colors, axe and LCP/CLS
         env:
           EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          export PYTHONPYCACHEPREFIX="$${{ runner.temp }}/apollo-r93-browser-pycache"
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r93-browser-pycache"
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
-          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$${{ runner.temp }}/r92-base"
-          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$${{ runner.temp }}/r92-base" --out "$${{ runner.temp }}/r93-preview"
-          python experience2/evidence-atlas/tests/browser_source_passports_r93.py --src "$${{ runner.temp }}/r93-preview" --out "$${{ runner.temp }}/r93-evidence" --axe "$${{ runner.temp }}/r93-axe/node_modules/axe-core/axe.min.js"
-          cat "$${{ runner.temp }}/r93-evidence/R93_BROWSER_RECEIPT.json"
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92-base"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92-base" --out "$RUNNER_TEMP/r93-preview"
+          python experience2/evidence-atlas/tests/browser_source_passports_r93.py --src "$RUNNER_TEMP/r93-preview" --out "$RUNNER_TEMP/r93-evidence" --axe "$RUNNER_TEMP/r93-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r93-evidence/R93_BROWSER_RECEIPT.json"
           test -z "$(git status --porcelain)"
       - name: Preserve screenshots, native PDF, axe and browser receipts even if tests fail
         if: always()
