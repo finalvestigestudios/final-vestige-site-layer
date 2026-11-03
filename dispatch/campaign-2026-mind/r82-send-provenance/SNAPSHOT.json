@@ -1,0 +1,119 @@
+{
+  "schema_version": "r82-2026-11-02-v1",
+  "mode": "READ_ONLY_AGGREGATE",
+  "campaign_status": "HOLD_UNSENT",
+  "snapshot_as_of_utc": "2026-11-03T05:03:04+00:00",
+  "owner_issue": 174,
+  "companion_issue": 171,
+  "original_master_pr": 175,
+  "stack_parent_pr": 721,
+  "site": "https://finalvestige.com",
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "reply_to": "no-reply",
+    "welcome_52_page_fieldbook_configured": true,
+    "actual_welcome_receipt_verified": false
+  },
+  "newsletter_counters": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "follower_counters": {
+    "total": 2,
+    "email": 0,
+    "wpcom": 2,
+    "partial": false
+  },
+  "deliverable_audience": "UNKNOWN",
+  "recent_send_records": [
+    {
+      "post_id": 1926,
+      "title": "Crystal Skulls: What the Evidence Says About Their Age",
+      "scheduled_for": "2026-11-03T04:54:10+00:00",
+      "dispatched_at": null,
+      "status": "never_sent_opted_out",
+      "reason": "send_subscription flag is false",
+      "counts": {
+        "recipients": null,
+        "sent": null,
+        "bounced": null,
+        "blocked_by_recipient": null
+      }
+    },
+    {
+      "post_id": 1924,
+      "title": "Mesmerism: What Franklin’s 1784 Commission Actually Found",
+      "scheduled_for": "2026-11-03T04:52:58+00:00",
+      "dispatched_at": null,
+      "status": "never_sent_opted_out",
+      "reason": "send_subscription flag is false",
+      "counts": {
+        "recipients": null,
+        "sent": null,
+        "bounced": null,
+        "blocked_by_recipient": null
+      }
+    },
+    {
+      "post_id": 1922,
+      "title": "Change Blindness: Why You Miss Big Changes Right in Front of You",
+      "scheduled_for": "2026-11-03T04:51:39+00:00",
+      "dispatched_at": null,
+      "status": "never_sent_opted_out",
+      "reason": "send_subscription flag is false",
+      "counts": {
+        "recipients": null,
+        "sent": null,
+        "bounced": null,
+        "blocked_by_recipient": null
+      }
+    },
+    {
+      "post_id": 1920,
+      "title": "The Lycurgus Cup: The Roman Glass That Changes Color",
+      "scheduled_for": "2026-11-03T04:50:12+00:00",
+      "dispatched_at": null,
+      "status": "never_sent_opted_out",
+      "reason": "send_subscription flag is false",
+      "counts": {
+        "recipients": null,
+        "sent": null,
+        "bounced": null,
+        "blocked_by_recipient": null
+      }
+    },
+    {
+      "post_id": 1917,
+      "title": "The Piri Reis Map: What the 1513 Chart Actually Shows",
+      "scheduled_for": "2026-11-03T04:48:54+00:00",
+      "dispatched_at": null,
+      "status": "never_sent_opted_out",
+      "reason": "send_subscription flag is false",
+      "counts": {
+        "recipients": null,
+        "sent": null,
+        "bounced": null,
+        "blocked_by_recipient": null
+      }
+    }
+  ],
+  "commercial_gates": {
+    "zen12_email_permission": false,
+    "total_focus_email_permission": false,
+    "approved_published_guides": false,
+    "approved_affiliate_links": false,
+    "current_price_refund_verified": false
+  },
+  "shared_gates": {
+    "final_founder_send_approval": false,
+    "founder_postal_address_verified": false,
+    "delivered_unsubscribe_verified": false,
+    "real_received_jetpack_email_verified": false,
+    "email_eligible_audience_verified": false
+  }
+}
