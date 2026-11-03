@@ -261,6 +261,8 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
     limits:['synthetic Margins are not production historical records','stage CSS is not proposed production CSS',
       'not WP.com Atomic parity','not real Jetpack','not real hosted page6 content','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
 }
+// Export a strictly read-only browser-media routine for mock adversarial tests.
+export {imageBodies};
 function selfTest(){
   for(const u of ['http://localhost:3211/','http://127.0.0.1:9473/'])assert.ok(loopback(u));
   for(const u of ['https://finalvestige.com/','http://localhost/','http://localhost:3211@evil.com/'])assert.ok(!loopback(u));
