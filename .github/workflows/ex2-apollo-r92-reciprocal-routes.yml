@@ -18,14 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Exact-head source, adversarial navigation and inherited custody
         env:
-          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r92-pycache"
@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apollo-r92-deterministic-source-STAGING-HOLD
-          path: \${{ runner.temp }}/R92_A.zip
+          path: ${{ runner.temp }}/R92_A.zip
           if-no-files-found: error
           retention-days: 7
   real-chromium-axe-source-traversal:
@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -71,7 +71,7 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/r92-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
       - name: Four real views across 40 cases, 8 axe scans, keyboard/touch, LCP/CLS and PDFs
         env:
-          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r92-browser-cache"
@@ -89,6 +89,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apollo-r92-real-chromium-axe-STAGING-HOLD
-          path: \${{ runner.temp }}/r92-browser-evidence/
+          path: ${{ runner.temp }}/r92-browser-evidence/
           if-no-files-found: warn
           retention-days: 7
