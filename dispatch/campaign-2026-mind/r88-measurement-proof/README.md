@@ -10,6 +10,10 @@ Connected WordPress site 256784396: Jetpack enabled and capable of sending; auto
 
 The source snapshot intentionally contains only source-identifying metadata, aggregate counts and *no* recipients, raw emails, private link tokens, full business postal address or seller links. Customer postal/address proof remains separate, private and unverified. **No email or real test email was sent.**
 
+### Additional signup-form rendering ambiguity — high-priority actual visitor QA
+
+A separate authenticated read on 2026-11-03 found a correctly authored native `<!-- wp:jetpack/subscriptions ... /-->` block in **Dispatch WordPress page #523's raw Gutenberg source**. However, the WordPress REST **rendered** page content represented that component as a same-page **Subscribe hyperlink**, not a visible email input. This discrepancy is **NOT proof that the live visitor-facing form is broken**: the dynamic Jetpack block may render differently in the full frontend and the REST rendering path. A WordPress screenshot endpoint returned a public capture link, but no interactive browser/form submission was performed and no actual recipient was entered. For the high-traffic signup funnel, before enabling the campaign an authorized reviewer should independently inspect real desktop/mobile visitor rendering, keyboard label/focus, confirmation flow and receipt **without adding a subscriber or test email until separately authorized**. Treat current form end-to-end status as **UNVERIFIED**, not working/broken proved.
+
 ### Measurement contract (implement now; activate later only with approval)
 
 | Funnel stage | Correct source of truth | Safe claim | Never infer |
