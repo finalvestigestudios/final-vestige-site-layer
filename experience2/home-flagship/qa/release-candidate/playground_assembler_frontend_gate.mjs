@@ -14,6 +14,20 @@ import {fileURLToPath} from 'node:url';
 const HERE=dirname(fileURLToPath(import.meta.url));
 const ASSEMBLER_ZIP='https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip';
 const WIDTHS=[320,390,768,1440,1920];
+// Explicit, test-only approximation of published full-bleed page layout and
+// readable synthetic Margins. NOT an export of production CSS/settings.
+// Unstyled actual Assembler baseline is separately captured at 390/1440.
+const BRIDGE_CSS=[
+  'body{background:#0c0d0d!important;color:#d8d2c7}',
+  '.wp-block-post-content > .fv-hf{max-width:none!important;width:100vw!important;margin-inline-start:calc(50% - 50vw)!important;margin-inline-end:0!important}',
+  '.wp-block-post-content > .fv-margin-strip{max-width:none!important;width:100vw!important;margin-inline-start:calc(50% - 50vw)!important}',
+  '.fv-margin-strip{background:#0f100f;color:#f4ead9;border-block:1px solid #34322e}',
+  '.fv-margin-strip__inner{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;max-width:1400px;margin:auto;padding:12px 20px}',
+  '.fv-margin-strip__label{font:700 11px/1.5 system-ui;letter-spacing:.12em;text-transform:uppercase;color:#c8a870;white-space:nowrap}',
+  '.fv-margin-strip__window{max-height:88px;min-height:88px;overflow:auto;border-left:1px solid #34322e;padding:0 12px}',
+  '.fv-margin-strip__item{position:static!important;display:block;opacity:1!important;filter:none!important;transform:none!important;animation:none!important;color:#f4ead9!important;font-size:13px;line-height:1.6}',
+  '@media(max-width:600px){.fv-margin-strip__inner{grid-template-columns:1fr;gap:6px}}'
+].join('\n');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const local = value => {
   try {
@@ -169,6 +183,12 @@ else {
       assertPreview(page.url(),server.serverUrl);
       await page.locator('[data-fv-home-flagship]').waitFor({timeout:30000});
       await page.evaluate(()=>document.fonts?.ready);
+      // Save unmodified, narrow default-theme evidence BEFORE any visual bridge.
+      const unstyledWidth=await page.locator('[data-fv-home-flagship]').evaluate(el=>Math.round(el.getBoundingClientRect().width));
+      if(width===390||width===1440) await page.screenshot({
+        path:join(out,'assembler-'+width+'-unaltered.png'),animations:'disabled'
+      });
+      await page.addStyleTag({content:BRIDGE_CSS});
       const state=await page.evaluate(()=>{
         const root=document.querySelector('[data-fv-home-flagship]');
         const nav=[...root.querySelectorAll('.fv-hf__chapter-nav a[href^="#"]')];
@@ -200,6 +220,9 @@ else {
       assert.ok(state.displayed_text>1000);
       assert.ok(state.document_width<=state.viewport_width+1,
         'Horizontal overflow at '+width);
+      // After explicitly isolated bridge, evidence canvas must actually span width.
+      const restoredWidth=await page.locator('[data-fv-home-flagship]').evaluate(el=>Math.round(el.getBoundingClientRect().width));
+      assert.ok(restoredWidth>=width*0.9,'Stage-only layout bridge failed to restore full-width canvas at '+width);
       const shot=join(out,'assembler-'+width+'.png');
       await page.screenshot({path:shot,fullPage:width===320||width===1440,
         animations:'disabled'});
@@ -207,7 +230,10 @@ else {
         const axe=await new AxeBuilder({page}).withTags([
           'wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'
         ]).analyze();
-        const violations=axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length}));
+        const violations=axe.violations.map(v=>({
+          id:v.id,impact:v.impact,nodes:v.nodes.length,
+          selectors:v.nodes.slice(0,4).map(n=>n.target.slice(0,3))
+        }));
         summary.axe.push({width,violation_count:violations.length,violations});
       }
       if(width===390){
@@ -216,7 +242,9 @@ else {
         assert.equal(await caseButton.getAttribute('aria-pressed'),'true');
         assert.equal(await page.locator('[data-fv-case="franklin"]').isVisible(),true);
       }
-      summary.widths.push({width,...state,screenshot:'assembler-'+width+'.png'});
+      summary.widths.push({width,...state,unaltered_canvas_width:unstyledWidth,
+        bridged_canvas_width:restoredWidth,layout_bridge:'BROWSER_ONLY_NOT_SAVED',
+        screenshot:'assembler-'+width+'.png'});
       await writeFile(join(out,'manifest.partial.json'),JSON.stringify(summary,null,2));
       await page.close();
     }
@@ -226,6 +254,7 @@ else {
     const plain=await nojs.newPage();
     await plain.goto(preview.toString(),{waitUntil:'domcontentloaded',timeout:90000});
     assertPreview(plain.url(),server.serverUrl);
+    await plain.addStyleTag({content:BRIDGE_CSS});
     const basic=await plain.evaluate(()=>{
       const root=document.querySelector('[data-fv-home-flagship]');
       return {present:!!root,all_case_panels_visible:!!root &&
@@ -237,7 +266,30 @@ else {
     summary.no_js=basic;
     await plain.screenshot({path:join(out,'assembler-390-nojs.png'),animations:'disabled'});
     await nojs.close();
-    summary.media=[...imgStats.values()].sort((a,b)=>a.path.localeCompare(b.path));
+    // Public, known first-party archival images may be lazy-loaded below the fold.
+    // Make a direct bounded read-only fetch to verify actual decoded image body bytes.
+    const sourceImages=await context.newPage();
+    await sourceImages.goto(preview.toString(),{waitUntil:'domcontentloaded',timeout:90000});
+    const imageUrls=await sourceImages.locator('img[data-fv-archive-img]').evaluateAll(imgs=>[...new Set(imgs.map(i=>i.getAttribute('src')).filter(Boolean))]);
+    await sourceImages.close();
+    const mediaChecks=[];
+    for(const raw of imageUrls){
+      const u=new URL(raw,preview);
+      assert.equal(u.protocol,'https:');
+      assert.equal(u.hostname,'finalvestige.com');
+      assert.ok(u.pathname.startsWith('/wp-content/uploads/'));
+      assert.ok(!u.pathname.toLowerCase().includes('malbone'));
+      let status=0,bytes=0,reason=null;
+      try{
+        const res=await context.request.get(u.toString(),{
+          timeout:45000,maxRedirects:0,failOnStatusCode:false
+        });
+        status=res.status();
+        if(status===200)bytes=(await res.body()).byteLength;
+      }catch(e){reason='FETCH_FAILED';}
+      mediaChecks.push({path:u.pathname,status,bytes,reason});
+    }
+    summary.media=mediaChecks;
     assert.ok(summary.media.some(m=>m.status===200&&m.bytes>0),
       'No real first-party archival image body bytes verified');
     assert.ok(summary.axe.every(x=>x.violation_count===0),
