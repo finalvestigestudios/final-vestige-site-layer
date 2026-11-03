@@ -1,7 +1,7 @@
 import test from "node:test"; import assert from "node:assert/strict"; import{readFileSync}from"node:fs"; import{validateSynthetic,aggregateSynthetic}from"./attribution.mjs";
 const R=n=>readFileSync(new URL(n,import.meta.url),"utf8"),a=R("zen12-a-text.blocks.html"),b=R("zen12-b-film.blocks.html"),core=R("guide-core.html"),m=JSON.parse(R("claim-source-matrix.json"));
 test("A and B preserve exact substantive guide",()=>{assert.ok(a.includes(core));assert.ok(b.includes(core));assert.equal(a.split(core).length,2);assert.equal(b.split(core).length,2)});
-test("both CTAs natively disabled and near-link disclosures present",()=>{for(const s of[a,b]){assert.match(s,/<button\b[^>]*\bdisabled\b[^>]*>/i);assert.match(s,/If you purchase through a future approved link, Final Vestige may earn a commission[\s\S]{0,300}<button\b[^>]*\bdisabled\b/i)}});
+test("both CTAs natively disabled and near-link disclosures present",()=>{for(const s of[a,b]){assert.match(s,/<button\b[^>]*\sdisabled(?:\s|>|=)[^>]*>/i);assert.match(s,/If you purchase through a future approved link, Final Vestige may earn a commission[\s\S]{0,300}<button\b[^>]*\sdisabled(?:\s|>|=)/i)}});
 test("no scripts, forms, embeds, autoplay or active commerce buttons",()=>{for(const s of[a,b]){assert.doesNotMatch(s,/<script\b|<iframe\b|<form\b|<video\b|<source\b|\bautoplay\s*=/i);assert.doesNotMatch(s,/<a\b[^>]*class=["'][^"']*(?:purchase-cta|affiliate-link)/i)}});
 test("B has optional visible accessible transcript; A does not",()=>{assert.match(b,/<details><summary>/);assert.match(b,/00–40/);assert.doesNotMatch(a,/<details><summary>/)});
 test("only pre-existing Focus path; no new signup",()=>{assert.match(a,/https:\/\/finalvestige\.com\/focus\//);assert.match(b,/https:\/\/finalvestige\.com\/focus\//)});
