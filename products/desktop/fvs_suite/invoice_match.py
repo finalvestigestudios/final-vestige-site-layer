@@ -83,7 +83,11 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
             key = record.get(field)
             if not isinstance(key, str) or _NORMALIZED_KEY.fullmatch(key) is None:
                 raise ValueError("Invoice vendor and invoice keys must be normalized ASCII")
-        yield record
+        # Bind validated evidence to this iteration, not the caller's mutable
+        # mapping. A generator may legally reuse and rewrite one dict for each
+        # CSV row; retaining it would rewrite earlier line citations, monetary
+        # amounts and review candidates *after* their validation.
+        yield dict(record)
 
 
 def candidate_pairs(records: Iterable[dict[str, Any]], *,
