@@ -1,0 +1,69 @@
+# R86 — The Dispatch: six-issue inbox reviewer (PLAIN TEXT)
+
+**DRAFT FOR REVIEW, NOT AN EMAIL** · 2026-11-03 · One original Jetpack list, no new service, no permission to send. This mirrors the public-safe copy sketches in `review_board.html` and is *not* original manuscript replacement, native excerpt, or genuine received test. Original campaign [PR #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), owner [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174). Commercial owner [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171).
+
+## 01 — EDITORIAL · HOLD_UNSENT
+**Subject (optional):** The person changed. The conversation went on.
+**Proposed preheader (NOT a verified Jetpack field):** An experiment in seeing, missing, and the stories memory invents.
+
+Imagine speaking to a stranger, then continuing with a different person without noticing. Simons and Levin's 1998 field experiment exposed a gap between looking and registering a change. It doesn't prove every witness is unreliable. It gives us a better question to ask when interpreting evidence.
+
+**One proposed CTA:** Explore the change-blindness investigation: https://finalvestige.com/2026/11/02/change-blindness/
+**Evidence caveat:** Website demonstration is not a reproduction of the research.
+
+## 02 — EDITORIAL · HOLD_UNSENT
+**Subject (optional):** Before hypnosis had a name
+**Proposed preheader:** The strange 1780s accounts and what the record cannot establish.
+
+Puységur's reports invite two easy reactions: believe everything or dismiss everything. Historical work permits neither shortcut. Begin with who wrote an account, when they wrote it, and which observations survive. The document matters even when its author understood the cause differently from modern researchers.
+
+**One proposed CTA:** Read the Puységur archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+**Evidence caveat:** Historical source record, not advice to use nineteenth-century treatments.
+
+## 03 — COMMERCIAL RESERVED · HOLD_UNSENT + HOLD_MERCHANT
+**Subject (optional):** The twelve-minute question: practice before purchase
+**Proposed preheader:** A short routine is testable. A seller's hour-equivalence claim is different.
+
+**Potential commission disclosure (must remain in proposed commercial issue and near offer):** If you purchase through a qualifying link in a future vetted guide, Final Vestige may earn a commission. No approved buying link is active.
+
+Try a twelve-minute routine on three different days and record interruptions and how manageable the sessions felt. Zen12's seller describes twelve-minute audio, twelve levels and four listening formats. That description does not demonstrate that an hour of meditation has been compressed into twelve minutes.
+
+**One proposed CTA — INACTIVE:** Zen12 independent guide is not live or approved. No URL or affiliate link may be inserted.
+**Research source, NOT a recommended buyer CTA:** https://zen12.com/hnp
+**External authorization:** NOT VERIFIED; no email channel permission or approved tracking link.
+
+## 04 — EDITORIAL · HOLD_UNSENT
+**Subject (optional):** Apollo 1: one spark was never the whole story
+**Proposed preheader:** The official investigation separates known hazards from an uncertain ignition.
+
+A simple cause makes a gripping headline. Apollo 1's investigation resists it: oxygen, combustible cabin materials, escape constraints and test conditions all mattered. The precise initiating spark remained uncertain. We should not replace that careful finding with a dramatic but unsupported countdown.
+
+**One proposed CTA:** Investigate the Apollo 1 hatch: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+**Evidence caveat:** Do not publish original unsupported numerical subject.
+
+## 05 — COMMERCIAL RESERVED · HOLD_UNSENT + HOLD_MERCHANT
+**Subject (optional):** A focus recording isn't proof of better focus
+**Proposed preheader:** Understand the format, the claim, and the exit before you press play.
+
+**Potential commission disclosure (must remain in proposed commercial issue and near offer):** If you purchase through a qualifying link in a future vetted guide, Final Vestige may earn a commission. No approved buying link is active.
+
+The seller's Total Focus listing describes a 33-minute, 47-MB recording. It also makes much larger promises about concentration. Before buying any hypnosis audio, separate what's included from what is proven, compare the checkout price to the actual offer, and read the current refund language.
+
+**One proposed CTA — INACTIVE:** Total Focus independent guide is not live or approved. No URL or affiliate link may be inserted.
+**Research source, NOT a recommended buyer CTA:** https://hypnosislive.com/mental-skills/total-focus
+**External authorization:** NOT VERIFIED. Seller's displayed standalone and bundle prices are different; no durable price/discount promise.
+
+## 06 — EDITORIAL · HOLD_UNSENT
+**Subject (optional):** Your focus log should include the boring days
+**Proposed preheader:** Seven sessions of honest notes can tell you what you actually did.
+
+Did you skip day four? Note it. Did the second attempt feel harder? Note that too. A small, imperfect record beats a neat success story invented at week's end. The free Fieldbook provides a routine, seven guided days, and a longer log; it promises a method of observation, not medical or mental transformation.
+
+**One proposed CTA:** Open the free Focus Fieldbook: https://finalvestige.com/focus/
+**Evidence caveat:** The 52-page welcome body is configured, actual welcome receipt NOT VERIFIED.
+
+---
+
+**NO SIGNOFF / NO SEND.** These are review snippets, not verified Jetpack email. The exact publisher postal address and functional unsubscribe must appear in commercial email as actually received, not merely in an HTML prototype. Production still uses excerpt mode and a no-reply address; editing or publishing any post may allow per-post sending even though new-post default sending is off. Actual subscribed recipients UNKNOWN (WordPress diagnostic 2/2/2 vs follower email0/wpcom2). Four editorial + two commercial slots preserved; 03 and 05 have no published vetted guides or verified EMAIL marketing rights. Final owner approval required for exact creative, audience, and sending time. Never contact the list, send a test, publish or schedule a WordPress newsletter based on this preview.
+
+**Standards:** https://finalvestige.com/editorial-standards/  |  **CAN-SPAM:** https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business  |  **WordPress email preview:** https://wordpress.com/support/newsletter/send-newsletter-emails/
