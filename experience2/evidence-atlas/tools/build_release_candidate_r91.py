@@ -98,7 +98,7 @@ def audit_asset_boundary(folder: Path) -> dict:
         if name.endswith('.css'):
             plain = re.sub(r'/\*.*?\*/', '', raw, flags=re.S)
             if (re.search(r'@import\b|url\s*\(|image-set\s*\(|expression\s*\(',
-                          plain, re.I) or '\' in plain):
+                          plain, re.I) or '\\' in plain):
                 raise ValueError('R91_CSS_MEDIA_OR_REMOTE_IMPORT:' + name)
         else:
             if re.search(r'\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|Worker|'
