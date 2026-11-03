@@ -1,0 +1,456 @@
+{
+  "id": "FV-MIND-R92",
+  "checked_on": "2026-11-03",
+  "scope": "Unpublished Zen12 review + optional film storyboard; not legal advice or clinical efficacy proof",
+  "sources": [
+    {
+      "id": "S01",
+      "role": "seller catalog",
+      "url": "https://inspire3.com/",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S02",
+      "role": "Zen12 exact sales page",
+      "url": "https://zen12.com/hnp",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S03",
+      "role": "Zen12 about",
+      "url": "https://zen12.com/about",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S04",
+      "role": "Zen12 research (seller assertion)",
+      "url": "https://zen12.com/research",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S05",
+      "role": "Zen12 get started (seller checkout)",
+      "url": "https://zen12.com/getstarted",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S06",
+      "role": "Inspire3 privacy",
+      "url": "https://inspire3.com/privacy/",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S07",
+      "role": "Inspire3 public affiliate recruitment, not approval",
+      "url": "https://affiliates.inspire3.com/",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S08",
+      "role": "2023 PLOS ONE systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S09",
+      "role": "FTC endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S10",
+      "role": "FTC health guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S11",
+      "role": "Roediger and McDermott 1995 original",
+      "url": "https://doi.org/10.1037/0278-7393.21.4.803",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S12",
+      "role": "Deese 1959",
+      "url": "https://doi.org/10.2466/pr0.1959.5.3.305",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S13",
+      "role": "Robinson and Roediger 1997",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00417.x",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S14",
+      "role": "Loftus Palmer 1974",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S15",
+      "role": "Hyman Pentland 1996",
+      "url": "https://doi.org/10.1006/jmla.1996.0006",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S16",
+      "role": "Published primary historical archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S17",
+      "role": "Published existing Focus/Jetpack funnel",
+      "url": "https://finalvestige.com/focus/",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S18",
+      "role": "Published Mesmerism primary-source-based investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "observed": "2026-11-03"
+    },
+    {
+      "id": "S19",
+      "role": "Published Change Blindness demo and investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "observed": "2026-11-03"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "12-minute audio sessions",
+      "category": "SELLER_DESCRIBED",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://zen12.com/about",
+      "note": "Observed seller About content; duration is product format"
+    },
+    {
+      "id": "Z02",
+      "claim": "12 progressive levels",
+      "category": "SELLER_DESCRIBED",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://zen12.com/hnp",
+      "note": "Sales and About descriptions; do not imply progression effectiveness"
+    },
+    {
+      "id": "Z03",
+      "claim": "48 MP3 complete bundle",
+      "category": "SELLER_DESCRIBED",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://zen12.com/getstarted",
+      "note": "Checkout explicitly describes full course; revalidate before launch"
+    },
+    {
+      "id": "Z04",
+      "claim": "opening package 24 MP3 / first 6 levels",
+      "category": "SELLER_DESCRIBED",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://zen12.com/hnp",
+      "note": "Seller tier; availability can change"
+    },
+    {
+      "id": "Z05",
+      "claim": "advanced package 24 MP3 / final 6 levels",
+      "category": "SELLER_DESCRIBED",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://zen12.com/hnp",
+      "note": "Seller tier; availability can change"
+    },
+    {
+      "id": "Z06",
+      "claim": "four listening styles",
+      "category": "SELLER_DESCRIBED",
+      "decision": "CONTEXT_ONLY",
+      "source": "https://zen12.com/hnp",
+      "note": "Previously cited by project; exact current individual style names not verified in this run"
+    },
+    {
+      "id": "Z07",
+      "claim": "one hour of advanced meditation in twelve minutes",
+      "category": "SELLER_EFFICACY",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/hnp",
+      "note": "No independently verified Zen12-specific equivalence test"
+    },
+    {
+      "id": "Z08",
+      "claim": "audio meditates for you",
+      "category": "SELLER_EFFICACY",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/about",
+      "note": "Promotional metaphor is not scientific finding"
+    },
+    {
+      "id": "Z09",
+      "claim": "automatically shifts brainwaves",
+      "category": "SELLER_EFFICACY",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/research",
+      "note": "Mechanistic claim not substantiated for Zen12"
+    },
+    {
+      "id": "Z10",
+      "claim": "reduces stress / anxiety",
+      "category": "SELLER_HEALTH",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/hnp",
+      "note": "No adequate product-specific clinical substantiation provided"
+    },
+    {
+      "id": "Z11",
+      "claim": "improves health",
+      "category": "SELLER_HEALTH",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/hnp",
+      "note": "Unsupported Zen12-specific health benefit"
+    },
+    {
+      "id": "Z12",
+      "claim": "boosts creativity",
+      "category": "SELLER_COGNITIVE",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/hnp",
+      "note": "No verified Zen12-specific study"
+    },
+    {
+      "id": "Z13",
+      "claim": "increases focus",
+      "category": "SELLER_COGNITIVE",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/hnp",
+      "note": "No verified Zen12-specific controlled result"
+    },
+    {
+      "id": "Z14",
+      "claim": "guarantees results",
+      "category": "SELLER_EFFICACY",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/hnp",
+      "note": "No guaranteed outcome claim permitted"
+    },
+    {
+      "id": "Z15",
+      "claim": "money-back guarantee advertised",
+      "category": "SELLER_TERMS",
+      "decision": "QUALIFY",
+      "source": "https://zen12.com/hnp",
+      "note": "Public page displays representation; full operative conditions not verified"
+    },
+    {
+      "id": "Z16",
+      "claim": "first-party privacy describes possible SMS marketing",
+      "category": "SELLER_PRIVACY",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://inspire3.com/privacy/",
+      "note": "Potential SMS subscription following mobile number submission"
+    },
+    {
+      "id": "Z17",
+      "claim": "referring affiliate may receive buyer name and email",
+      "category": "SELLER_PRIVACY",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://inspire3.com/privacy/",
+      "note": "Explicit policy; FV must not accept buyer-level PII"
+    },
+    {
+      "id": "Z18",
+      "claim": "checkout requests cell/mobile field",
+      "category": "CHECKOUT_OBSERVED",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "source": "https://zen12.com/getstarted",
+      "note": "Observed on main order form, not proof of required field validation"
+    },
+    {
+      "id": "Z19",
+      "claim": "current selling price",
+      "category": "UNVERIFIED_OFFER",
+      "decision": "BLOCK",
+      "source": "https://zen12.com/getstarted",
+      "note": "Prices dynamic; no founder-verified affiliate deal"
+    },
+    {
+      "id": "Z20",
+      "claim": "current discount / timer",
+      "category": "SELLER_PROMOTION",
+      "decision": "OMIT",
+      "source": "https://zen12.com/hnp",
+      "note": "Urgency is not efficacy; no fabricated or copied promotion"
+    },
+    {
+      "id": "Z21",
+      "claim": "commission rate or payout to FV",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Recruitment website generic rates do not establish FV's terms"
+    },
+    {
+      "id": "Z22",
+      "claim": "FV account acceptance",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "No verified approval record"
+    },
+    {
+      "id": "Z23",
+      "claim": "FV authorized Zen12 link",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Never manufacture link or activate generic merchant link"
+    },
+    {
+      "id": "Z24",
+      "claim": "FV website promotion rights",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Channel scope unknown"
+    },
+    {
+      "id": "Z25",
+      "claim": "FV TikTok promotion rights",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Channel scope unknown"
+    },
+    {
+      "id": "Z26",
+      "claim": "FV email promotion rights",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Dispatch may not promote while unknown"
+    },
+    {
+      "id": "Z27",
+      "claim": "FV use of vendor swipe/creative",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Affiliate portal gated; no asset authorization verified"
+    },
+    {
+      "id": "Z28",
+      "claim": "14 EEG studies on binaural beats reviewed in 2023",
+      "category": "INDEPENDENT_SCIENCE",
+      "decision": "ALLOW_WITH_CONTEXT",
+      "source": "https://doi.org/10.1371/journal.pone.0286023",
+      "note": "Scientific background, not Zen12 trial"
+    },
+    {
+      "id": "Z29",
+      "claim": "review study vote 5 supportive / 8 contradictory / 1 mixed",
+      "category": "INDEPENDENT_SCIENCE",
+      "decision": "ALLOW_WITH_CONTEXT",
+      "source": "https://doi.org/10.1371/journal.pone.0286023",
+      "note": "Mechanism result; studies highly heterogeneous"
+    },
+    {
+      "id": "Z30",
+      "claim": "Zen12 is proven by generic binaural-beat research",
+      "category": "INVALID_INFERENCE",
+      "decision": "BLOCK",
+      "source": "https://doi.org/10.1371/journal.pone.0286023",
+      "note": "Not evidence of product-specific effectiveness"
+    },
+    {
+      "id": "Z31",
+      "claim": "FTC requires clear and conspicuous near-link affiliate disclosure",
+      "category": "REGULATORY_GUIDANCE",
+      "decision": "REQUIRE",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Disclosure must be proximate and unambiguous"
+    },
+    {
+      "id": "Z32",
+      "claim": "FTC health-benefit ads need adequate scientific substantiation",
+      "category": "REGULATORY_GUIDANCE",
+      "decision": "REQUIRE",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Review net impression; no unsupported medical claims"
+    },
+    {
+      "id": "Z33",
+      "claim": "existing Focus Fieldbook is free alternative",
+      "category": "FIRST_PARTY_OBSERVED",
+      "decision": "ALLOW",
+      "source": "https://finalvestige.com/focus/",
+      "note": "One original Jetpack/Focus funnel; no additional list"
+    },
+    {
+      "id": "Z34",
+      "claim": "affiliate buyer identity available to FV",
+      "category": "SELLER_POLICY_RISK",
+      "decision": "DO_NOT_COLLECT",
+      "source": "https://inspire3.com/privacy/",
+      "note": "Partner may share; FV implementation rejects buyer PII"
+    },
+    {
+      "id": "Z35",
+      "claim": "partner sales can be inferred from outbound click",
+      "category": "INVALID_ANALYTICS",
+      "decision": "BLOCK",
+      "source": "https://affiliates.inspire3.com/",
+      "note": "Click != conversion; partner report only under approved terms"
+    },
+    {
+      "id": "Z36",
+      "claim": "video variant improves CTR / conversion",
+      "category": "UNTESTED_HYPOTHESIS",
+      "decision": "MEASURE_ONLY",
+      "source": "https://finalvestige.com/",
+      "note": "No performance or outcome claims before live consent-approved comparison"
+    },
+    {
+      "id": "Z37",
+      "claim": "film is hosted and caption-synced",
+      "category": "IMPLEMENTATION",
+      "decision": "BLOCK",
+      "source": "https://finalvestige.com/",
+      "note": "R92 pilot is storyboard/transcript only"
+    },
+    {
+      "id": "Z38",
+      "claim": "exact terms of sale verified",
+      "category": "PARTNER_UNVERIFIED",
+      "decision": "BLOCK",
+      "source": "https://inspire3.com/",
+      "note": "Unreliable terms retrieval, must independently read operative contract before publication"
+    }
+  ],
+  "release_gates": {
+    "affiliate_partner_approved": false,
+    "unique_partner_link_verified": false,
+    "website_channel_authorized": false,
+    "tiktok_channel_authorized": false,
+    "email_channel_authorized": false,
+    "creative_rights_authorized": false,
+    "zero_buyer_pii_contract_review": false,
+    "terms_refund_verified": false,
+    "scientific_claim_review": false,
+    "legal_disclosure_review": false,
+    "founder_release_approval": false,
+    "wordpress_stage_rendered": false,
+    "screenreader_wcag_review": false,
+    "responsive_5_viewports": false,
+    "first_party_video_hosting": false,
+    "video_captions_synced": false,
+    "lighthouse_budget_met": false,
+    "qa_independent_signoff": false,
+    "homepage_art_compatibility": false,
+    "dispatch_174_coordination": false,
+    "no_unauthorized_tracking": false,
+    "merchant_domain_allowlist_review": false,
+    "attribution_privacy_review": false,
+    "no_duplicate_subscribe": false
+  },
+  "activation_mode": "DISABLED",
+  "tracking_mode": "SYNTHETIC_ONLY",
+  "current_live_affiliate_urls": 0
+}
