@@ -44,7 +44,7 @@ SAFE_FALLBACK_MARKER = ('<span class="fv-hf__case-image-fallback" '
     'style="left:clamp(16px,6%,72px);right:clamp(16px,6%,72px);'
     'width:auto;font-size:clamp(17px,2.4vw,30px);overflow-wrap:break-word">')
 BINARY_LABEL = "ARCHIVE IMAGE 03 / NYPL 5003296"
-RECORD_LABEL = "NYPL RECORD 03 / 5003296"
+RECORD_LABEL = "NYPL / 5003296"
 
 
 class UnsafeCandidate(ValueError):
