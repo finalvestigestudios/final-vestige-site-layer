@@ -1,0 +1,456 @@
+{
+  "meta": {
+    "title": "Mind R91 independent source and activation evidence",
+    "reviewed_at": "2026-11-03",
+    "publication_status": "UNPUBLISHED",
+    "destination_slug": "/mind/ (noncanonical draft)",
+    "partner_approval_verified": false,
+    "earning_url": null,
+    "commission_rate": null,
+    "price": null,
+    "conversion_result": null,
+    "first_party_video_url": null,
+    "review_not_product_trial": true
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "Primary experimental paper",
+      "title": "Johansson et al. (2005), choice blindness",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S02",
+      "kind": "University publication record",
+      "title": "Lund University research portal, 2005 paper",
+      "url": "https://portal.research.lu.se/en/publications/failure-to-detect-mismatches-between-intention-and-outcome-in-a-s/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S03",
+      "kind": "Peer-reviewed paper",
+      "title": "Johansson et al. (2006), introspective reports",
+      "url": "https://doi.org/10.1016/j.concog.2006.09.004",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S04",
+      "kind": "Peer-reviewed paper",
+      "title": "Hall et al. (2010), jam/tea choice blindness",
+      "url": "https://doi.org/10.1016/j.cognition.2010.06.010",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S05",
+      "kind": "Peer-reviewed paper",
+      "title": "Hall et al. (2013), manipulated political survey responses",
+      "url": "https://doi.org/10.1371/journal.pone.0060554",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S06",
+      "kind": "Systematic review",
+      "title": "Ingendoh et al. (2023), fourteen EEG studies",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S07",
+      "kind": "Official catalog",
+      "title": "Inspire3 current product family",
+      "url": "https://inspire3.com/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S08",
+      "kind": "Exact seller offer",
+      "title": "Zen12 sales page /hnp",
+      "url": "https://zen12.com/hnp",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S09",
+      "kind": "Seller explanation",
+      "title": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S10",
+      "kind": "Seller research narrative",
+      "title": "Zen12 Research",
+      "url": "https://zen12.com/research",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S11",
+      "kind": "Public checkout preview",
+      "title": "Zen12 getstarted",
+      "url": "https://zen12.com/getstarted",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S12",
+      "kind": "Seller privacy terms",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S13",
+      "kind": "Public affiliate sign-up only",
+      "title": "Inspire3 affiliate portal—not acceptance proof",
+      "url": "https://affiliates.inspire3.com/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S14",
+      "kind": "Consumer regulator",
+      "title": "FTC endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S15",
+      "kind": "Consumer regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S16",
+      "kind": "Published site editorial page",
+      "title": "Puységur animal magnetism archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S17",
+      "kind": "Published site resource",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S18",
+      "kind": "Verified published WP post",
+      "title": "Mesmerism / Franklin 1784",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S19",
+      "kind": "Verified published WP post",
+      "title": "Change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "S20",
+      "kind": "Official exact secondary merchant offer (future comparison only)",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "checked_on": "2026-11-03"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The 2005 face-card study used a covert outcome substitution",
+      "status": "supported_in_studied_task",
+      "source_id": "S01",
+      "editorial_rule": "cite with task context"
+    },
+    {
+      "id": "C02",
+      "claim": "Some participants did not detect mismatch yet supplied reasons",
+      "status": "supported_in_studied_task",
+      "source_id": "S01",
+      "editorial_rule": "no universal incidence claim"
+    },
+    {
+      "id": "C03",
+      "claim": "Choice blindness proves all self-explanations false",
+      "status": "unsupported_excluded",
+      "source_id": "S01",
+      "editorial_rule": "Do not generalize"
+    },
+    {
+      "id": "C04",
+      "claim": "The 2010 supermarket study switched jam and tea samples",
+      "status": "supported_in_studied_task",
+      "source_id": "S04",
+      "editorial_rule": "describe exact manipulation"
+    },
+    {
+      "id": "C05",
+      "claim": "No more than one-third of manipulated supermarket trials detected",
+      "status": "supported_in_studied_task",
+      "source_id": "S04",
+      "editorial_rule": "denominator is manipulated trials, not people"
+    },
+    {
+      "id": "C06",
+      "claim": "2013 experiment manipulated recorded survey answers",
+      "status": "supported_in_studied_task",
+      "source_id": "S05",
+      "editorial_rule": "ethics and scope included"
+    },
+    {
+      "id": "C07",
+      "claim": "Covert substitution works universally for persuasion",
+      "status": "unsupported_excluded",
+      "source_id": "S05",
+      "editorial_rule": "no broad political effectiveness claim"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur historical files present original source trails",
+      "status": "first_party_confirmed",
+      "source_id": "S16",
+      "editorial_rule": "interpretive bridge only"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 is one of Inspire3 official product brands",
+      "status": "seller_catalog_fact",
+      "source_id": "S07",
+      "editorial_rule": "not endorsement"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 markets 12-minute sessions",
+      "status": "seller_product_fact",
+      "source_id": "S08",
+      "editorial_rule": "format only"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 markets 12 levels and four listening styles",
+      "status": "seller_product_fact",
+      "source_id": "S08",
+      "editorial_rule": "format only"
+    },
+    {
+      "id": "C12",
+      "claim": "Complete Zen12 package describes 48 MP3s",
+      "status": "seller_product_fact",
+      "source_id": "S08",
+      "editorial_rule": "check current package"
+    },
+    {
+      "id": "C13",
+      "claim": "Beginner and advanced collections describe 24 MP3 each",
+      "status": "seller_product_fact",
+      "source_id": "S08",
+      "editorial_rule": "check current package"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 12 minutes equals hour of meditation",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "S08",
+      "editorial_rule": "About S09 wording differs; no equivalence proof"
+    },
+    {
+      "id": "C15",
+      "claim": "The seller claims audio controls brainwave state automatically",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "S10",
+      "editorial_rule": "not independently validated for product"
+    },
+    {
+      "id": "C16",
+      "claim": "2023 binaural-beat review included 14 EEG studies",
+      "status": "independent_review_supported",
+      "source_id": "S06",
+      "editorial_rule": "not Zen12"
+    },
+    {
+      "id": "C17",
+      "claim": "Review: five aligned, eight contrary, one mixed",
+      "status": "independent_review_supported",
+      "source_id": "S06",
+      "editorial_rule": "evidence heterogeneous; non-product-specific"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 is demonstrated to treat anxiety or depression",
+      "status": "unsupported_excluded",
+      "source_id": "S06",
+      "editorial_rule": "no therapeutic claims"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 improves wealth, intelligence or creativity",
+      "status": "unsupported_excluded",
+      "source_id": "S08",
+      "editorial_rule": "no outcome promises"
+    },
+    {
+      "id": "C20",
+      "claim": "Seller advertises one-year money-back guarantee",
+      "status": "seller_representation_only",
+      "source_id": "S08",
+      "editorial_rule": "terms & practical processing unverified"
+    },
+    {
+      "id": "C21",
+      "claim": "Checkout preview requests mobile phone and payment details",
+      "status": "seller_page_observation",
+      "source_id": "S11",
+      "editorial_rule": "not a purchase or full checkout audit"
+    },
+    {
+      "id": "C22",
+      "claim": "Seller privacy mentions possible SMS marketing",
+      "status": "seller_privacy_representation",
+      "source_id": "S12",
+      "editorial_rule": "disclose in guide"
+    },
+    {
+      "id": "C23",
+      "claim": "Seller privacy mentions sharing purchaser data with affiliate",
+      "status": "seller_privacy_representation",
+      "source_id": "S12",
+      "editorial_rule": "FV buyer-level data prohibited"
+    },
+    {
+      "id": "C24",
+      "claim": "Public program portal proves Final Vestige approved",
+      "status": "unverified_blocked",
+      "source_id": "S13",
+      "editorial_rule": "never assume approval"
+    },
+    {
+      "id": "C25",
+      "claim": "Official approved affiliate creatives/swipe granted to FV",
+      "status": "unverified_blocked",
+      "source_id": "S13",
+      "editorial_rule": "none verified"
+    },
+    {
+      "id": "C26",
+      "claim": "Seller public affiliate payout or price equals FV terms",
+      "status": "unverified_blocked",
+      "source_id": "S13",
+      "editorial_rule": "not assert commissions/prices"
+    },
+    {
+      "id": "C27",
+      "claim": "FTC requires clear proximate disclosure of material connection",
+      "status": "regulatory_guidance",
+      "source_id": "S14",
+      "editorial_rule": "verify per rendition and placement"
+    },
+    {
+      "id": "C28",
+      "claim": "FTC health claims require appropriate substantiation",
+      "status": "regulatory_guidance",
+      "source_id": "S15",
+      "editorial_rule": "product specific before claim"
+    },
+    {
+      "id": "C29",
+      "claim": "Video increases affiliate conversion",
+      "status": "untested_hypothesis",
+      "source_id": "S14",
+      "editorial_rule": "no performance claim"
+    },
+    {
+      "id": "C30",
+      "claim": "Short listening routines can be observed for preference",
+      "status": "editorial_nonclinical",
+      "source_id": "S17",
+      "editorial_rule": "no clinical inference"
+    },
+    {
+      "id": "C31",
+      "claim": "Choice blindness establishes that Zen12's mechanism is false",
+      "status": "invalid_inference_excluded",
+      "source_id": "S01",
+      "editorial_rule": "studies unrelated"
+    },
+    {
+      "id": "C32",
+      "claim": "WordPress Mind hub is live",
+      "status": "false_release_gate",
+      "source_id": "S16",
+      "editorial_rule": "noncanonical staging only"
+    },
+    {
+      "id": "C33",
+      "claim": "Secondary Total Focus page lists a 33-minute audio file",
+      "status": "seller_product_fact_secondary",
+      "source_id": "S20",
+      "editorial_rule": "future guide only; not this CTA"
+    },
+    {
+      "id": "C34",
+      "claim": "Total Focus '100% focus' is independently proven",
+      "status": "seller_unsubstantiated_excluded",
+      "source_id": "S20",
+      "editorial_rule": "reject guarantee"
+    },
+    {
+      "id": "C35",
+      "claim": "Complete merchant terms and refund transaction tested",
+      "status": "unverified_blocked",
+      "source_id": "S11",
+      "editorial_rule": "inspect legal terms under separate approval"
+    }
+  ],
+  "activation_gates": {
+    "partner_account_fv_acceptance": false,
+    "unique_zen12_earning_url": false,
+    "website_channel_permission": false,
+    "tiktok_channel_permission": false,
+    "email_channel_permission": false,
+    "affiliate_creative_license": false,
+    "affiliate_tracking_terms": false,
+    "buyer_level_data_protection": false,
+    "checkout_terms_verified": false,
+    "refund_terms_verified": false,
+    "price_and_package_verified_at_publish": false,
+    "medical_claims_legal_review": false,
+    "psychological_claims_review": false,
+    "general_affiliate_disclosure_present": false,
+    "near_cta_disclosure_approved": false,
+    "first_party_video_hosting_approved": false,
+    "film_caption_sync_verified": false,
+    "wcag22_aa_browser_audit": false,
+    "nojs_keyboard_screenreader_review": false,
+    "lighthouse_core_web_vitals_review": false,
+    "founder_publication_release": false,
+    "site_QA_approval": false
+  },
+  "required_renditions": [
+    "Gutenberg/WordPress desktop and mobile",
+    "text-only without media",
+    "optional film with transcript",
+    "outbound CTA",
+    "TikTok link context",
+    "Dispatch/email only if separately approved"
+  ],
+  "outbound_tracking": {
+    "enabled": false,
+    "cookies": false,
+    "raw_referrer": false,
+    "visitor_ids": false,
+    "pii": false,
+    "collection": "NONE",
+    "minimum_reporting_group_size": 20
+  },
+  "prohibited_copy": [
+    "guaranteed meditation equivalence",
+    "cure anxiety or depression",
+    "rewire your brain",
+    "proven 100% focus",
+    "risk free unless verified terms",
+    "limited time discount",
+    "automatic profits or wealth",
+    "first-hand product testing"
+  ],
+  "affiliate_status": "HOLD — public portal is not FV-specific approval"
+}
