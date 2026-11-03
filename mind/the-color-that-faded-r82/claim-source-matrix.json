@@ -1,0 +1,511 @@
+{
+  "version": "r82",
+  "review_date": "2026-11-02",
+  "status": "DRAFT_HARD_HOLD",
+  "origin_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "historical-bibliography",
+      "url": "https://doi.org/10.1068/i0679sas",
+      "note": "Cites Troxler 1804 German paper; original publication apparatus not directly examined."
+    },
+    {
+      "id": "S02",
+      "kind": "primary",
+      "url": "https://doi.org/10.1364/JOSAA.31.00A220",
+      "note": "Bachy & Zaidi 2014 peripheral vs foveal color adaptation; intermittent flashes, blur."
+    },
+    {
+      "id": "S03",
+      "kind": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24695173/",
+      "note": "PubMed indexing and original experimental abstract."
+    },
+    {
+      "id": "S04",
+      "kind": "primary-demonstration",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4411984/",
+      "note": "Troxler fading visual demonstration research, PMC sometimes CAPTCHA."
+    },
+    {
+      "id": "S05",
+      "kind": "review",
+      "url": "https://doi.org/10.1038/nrn1348",
+      "note": "Fixational eye movements 2004 review, role of microsaccades not fully settled."
+    },
+    {
+      "id": "S06",
+      "kind": "FV-actual-published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Authenticated read-only WP verified published archive."
+    },
+    {
+      "id": "S07",
+      "kind": "FV-actual-published",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Authenticated WP verified existing Focus Fieldbook and sole Jetpack funnel."
+    },
+    {
+      "id": "S08",
+      "kind": "merchant-catalog",
+      "url": "https://inspire3.com/",
+      "note": "Official catalog lists Zen12, Hypnosis Live, Brainwave Shots."
+    },
+    {
+      "id": "S09",
+      "kind": "merchant-exact-offer",
+      "url": "https://zen12.com/hnp",
+      "note": "Tier contents, 12-minute assertion, four listening styles; marketing claims."
+    },
+    {
+      "id": "S10",
+      "kind": "merchant-about",
+      "url": "https://zen12.com/about",
+      "note": "Seller descriptions, not independent efficacy evidence."
+    },
+    {
+      "id": "S11",
+      "kind": "merchant-research",
+      "url": "https://zen12.com/research",
+      "note": "Seller science narrative; not independent trial of commercial files."
+    },
+    {
+      "id": "S12",
+      "kind": "merchant-checkout",
+      "url": "https://zen12.com/getstarted",
+      "note": "Shown 48 MP3 full course and mobile field; current price/time-sensitive; intentionally omitted."
+    },
+    {
+      "id": "S13",
+      "kind": "merchant-policy",
+      "url": "https://inspire3.com/privacy/",
+      "note": "SMS possibility and referring affiliates may receive purchaser name/email/purchases."
+    },
+    {
+      "id": "S14",
+      "kind": "merchant-terms-UNVERIFIED",
+      "url": "https://inspire3.com/terms/",
+      "note": "Complete terms inaccessible on 2026-11-02; refund procedure must remain a gate."
+    },
+    {
+      "id": "S15",
+      "kind": "systematic-review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "note": "2023 14-study EEG binaural beat synthesis: five supportive, eight contradictory, one mixed."
+    },
+    {
+      "id": "S16",
+      "kind": "systematic-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "note": "Open access underlying review; not Zen12 product-specific."
+    },
+    {
+      "id": "S17",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Near-link clear earning disclosure."
+    },
+    {
+      "id": "S18",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Objective health and effect claims require appropriate scientific substantiation."
+    },
+    {
+      "id": "S19",
+      "kind": "FV-legal",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "Sitewide notice does not replace near-CTA disclosure."
+    },
+    {
+      "id": "S20",
+      "kind": "FV-standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "note": "Independent fact/evidence separation."
+    },
+    {
+      "id": "S21",
+      "kind": "public-affiliate-recruitment-NOT-authorization",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public affiliate recruitment claims are not verified account-specific acceptance, payouts, channel rights or approved swipe assets. Login-only creatives unavailable."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "C01",
+      "claim": "Troxler first described phenomenon in 1804",
+      "assessment": "historical-source-cited",
+      "source": "S01",
+      "limit": "Only historical bibliographic reference verified, no original apparatus reconstruction."
+    },
+    {
+      "id": "C02",
+      "claim": "Fading faster in peripheral than foveal vision under tested conditions",
+      "assessment": "supported-experiment",
+      "source": "S02",
+      "limit": "Do not claim everyone or fixed time threshold."
+    },
+    {
+      "id": "C03",
+      "claim": "Subtle eye movements help refresh retinal input",
+      "assessment": "supported-review-qualify",
+      "source": "S05",
+      "limit": "Microsaccade roles debated; do not present one settled mechanism."
+    },
+    {
+      "id": "C04",
+      "claim": "Flicker and blur influence adaptation",
+      "assessment": "supported-experiment",
+      "source": "S02",
+      "limit": "Under tested conditions only."
+    },
+    {
+      "id": "C05",
+      "claim": "A disappearing percept means the physical object vanished",
+      "assessment": "reject",
+      "source": "S02",
+      "limit": "Source stimulus does not physically vanish."
+    },
+    {
+      "id": "C06",
+      "claim": "Troxler fading proves suggestion or hypnosis",
+      "assessment": "reject",
+      "source": "S02",
+      "limit": "Methodological analogy only."
+    },
+    {
+      "id": "C07",
+      "claim": "Perception demonstration diagnoses eye health",
+      "assessment": "reject",
+      "source": "S05",
+      "limit": "No clinical threshold."
+    },
+    {
+      "id": "C08",
+      "claim": "Our film is original demonstration footage",
+      "assessment": "reject",
+      "source": "S04",
+      "limit": "Illustration; independent research footage not used."
+    },
+    {
+      "id": "C09",
+      "claim": "Published Puységur archive exists",
+      "assessment": "authenticated-published",
+      "source": "S06",
+      "limit": "Historical documentary anchor; not neural trial."
+    },
+    {
+      "id": "C10",
+      "claim": "Existing Focus Fieldbook is live",
+      "assessment": "authenticated-published",
+      "source": "S07",
+      "limit": "Preserve one current Jetpack list."
+    },
+    {
+      "id": "C11",
+      "claim": "Inspire3 officially lists Zen12",
+      "assessment": "merchant-verified",
+      "source": "S08",
+      "limit": "No affiliate approval implied."
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 advertises 12-minute tracks",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "Not product-verified firsthand."
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 advertises 12 levels",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "Package varies by tier."
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 advertises four listening styles",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "Relaxation music, guided meditation, nature and white noise."
+    },
+    {
+      "id": "C15",
+      "claim": "Beginner tier advertises 24 MP3 files / first six levels",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "Verify exact basket tier."
+    },
+    {
+      "id": "C16",
+      "claim": "Premium tier advertises 48 MP3 files / twelve levels",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "Seller also advertises extras."
+    },
+    {
+      "id": "C17",
+      "claim": "Advanced tier advertises 24 MP3 files / last six levels",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "For experienced listeners per seller."
+    },
+    {
+      "id": "C18",
+      "claim": "Premium advertises one-hour training call",
+      "assessment": "seller-description",
+      "source": "S09",
+      "limit": "Actual fulfillment not verified."
+    },
+    {
+      "id": "C19",
+      "claim": "Twelve minutes equals benefits of one hour advanced meditation",
+      "assessment": "not-independent-substantiation",
+      "source": "S09",
+      "limit": "Do not adopt as claim."
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 automatically produces deep meditation",
+      "assessment": "not-independent-substantiation",
+      "source": "S10",
+      "limit": "No product-specific trials identified."
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 reliably treats anxiety",
+      "assessment": "reject-health-claim",
+      "source": "S18",
+      "limit": "No clinical evidence product-specific."
+    },
+    {
+      "id": "C22",
+      "claim": "Zen12 improves health and performance",
+      "assessment": "not-independent-substantiation",
+      "source": "S11",
+      "limit": "Avoid claims in conversion copy."
+    },
+    {
+      "id": "C23",
+      "claim": "Zen12 guarantees results",
+      "assessment": "reject",
+      "source": "S09",
+      "limit": "Seller marketing does not establish efficacy."
+    },
+    {
+      "id": "C24",
+      "claim": "Binaural beats reliably entrain EEG",
+      "assessment": "inconclusive-systematic-review",
+      "source": "S15",
+      "limit": "5 yes / 8 no / 1 mixed heterogeneous."
+    },
+    {
+      "id": "C25",
+      "claim": "A binaural beats study directly validates Zen12",
+      "assessment": "reject",
+      "source": "S16",
+      "limit": "Broad category not exact recordings."
+    },
+    {
+      "id": "C26",
+      "claim": "A meditation study directly validates Zen12",
+      "assessment": "reject",
+      "source": "S16",
+      "limit": "Training modality and dosage not equivalent."
+    },
+    {
+      "id": "C27",
+      "claim": "Zen12 seller advertises one-year refund",
+      "assessment": "seller-description-unverified-terms",
+      "source": "S09",
+      "limit": "Full contractual terms inaccessible."
+    },
+    {
+      "id": "C28",
+      "claim": "Post-90-day refund method verified",
+      "assessment": "not-verified",
+      "source": "S14",
+      "limit": "Do not include detailed PayPal method as current fact."
+    },
+    {
+      "id": "C29",
+      "claim": "Zen12 checkout shows cell/mobile field",
+      "assessment": "merchant-page-current",
+      "source": "S12",
+      "limit": "Do not enter any PII."
+    },
+    {
+      "id": "C30",
+      "claim": "Seller policy allows SMS marketing to numbers provided",
+      "assessment": "merchant-policy",
+      "source": "S13",
+      "limit": "Be precise: may, not always."
+    },
+    {
+      "id": "C31",
+      "claim": "Seller policy permits sharing purchaser name/email with affiliate",
+      "assessment": "merchant-policy",
+      "source": "S13",
+      "limit": "Final Vestige data-minimization gate."
+    },
+    {
+      "id": "C32",
+      "claim": "Final Vestige already receives buyer-level details",
+      "assessment": "reject",
+      "source": "S13",
+      "limit": "No evidence of acceptance or sharing."
+    },
+    {
+      "id": "C33",
+      "claim": "Current checkout total is stable globally",
+      "assessment": "not-verified",
+      "source": "S12",
+      "limit": "Do not reproduce price, countdown, tax or discounts."
+    },
+    {
+      "id": "C34",
+      "claim": "Inspire3 public affiliate recruitment proves FV approval",
+      "assessment": "reject",
+      "source": "S21",
+      "limit": "Partner-specific written authorization needed."
+    },
+    {
+      "id": "C35",
+      "claim": "Exact authorized earning URL exists",
+      "assessment": "not-verified",
+      "source": "S08",
+      "limit": "CTA disabled."
+    },
+    {
+      "id": "C36",
+      "claim": "Website promotion authorization verified",
+      "assessment": "not-verified",
+      "source": "S08",
+      "limit": "No active merchant CTA."
+    },
+    {
+      "id": "C37",
+      "claim": "TikTok promotion authorization verified",
+      "assessment": "not-verified",
+      "source": "S08",
+      "limit": "Do not assume channel rights."
+    },
+    {
+      "id": "C38",
+      "claim": "Email promotion authorization verified",
+      "assessment": "not-verified",
+      "source": "S08",
+      "limit": "Do not assume Jetpack channel rights."
+    },
+    {
+      "id": "C39",
+      "claim": "Public affiliate creative is authorized for reuse",
+      "assessment": "not-verified",
+      "source": "S21",
+      "limit": "Must confirm rights to copy/assets."
+    },
+    {
+      "id": "C40",
+      "claim": "Near-CTA commission disclosure required when earning",
+      "assessment": "FTC-supported",
+      "source": "S17",
+      "limit": "Specific plain-language earning statement close to control."
+    },
+    {
+      "id": "C41",
+      "claim": "General site disclosure alone is sufficient",
+      "assessment": "reject",
+      "source": "S17",
+      "limit": "Keep near link as well."
+    },
+    {
+      "id": "C42",
+      "claim": "Product videos establish brain effectiveness",
+      "assessment": "reject",
+      "source": "S18",
+      "limit": "No efficacy claim from seller video."
+    },
+    {
+      "id": "C43",
+      "claim": "Optional 40s educational film proven to convert",
+      "assessment": "not-tested",
+      "source": "S17",
+      "limit": "A/B test hypothesis only."
+    },
+    {
+      "id": "C44",
+      "claim": "Focus is a second new newsletter signup",
+      "assessment": "reject",
+      "source": "S07",
+      "limit": "Maintain one existing Jetpack funnel."
+    },
+    {
+      "id": "C45",
+      "claim": "Outbound click can be equated to a sale",
+      "assessment": "reject",
+      "source": "S17",
+      "limit": "Attribution semantics separate."
+    },
+    {
+      "id": "C46",
+      "claim": "Buyer personal data should be collected from affiliate dashboard",
+      "assessment": "reject-privacy",
+      "source": "S13",
+      "limit": "Aggregate-only if partner terms permit."
+    },
+    {
+      "id": "C47",
+      "claim": "Exact merchant landing page matches guide tier distinctions",
+      "assessment": "merchant-reviewed",
+      "source": "S09",
+      "limit": "Re-review before go-live."
+    },
+    {
+      "id": "C48",
+      "claim": "Terms-of-sale currently fully verified",
+      "assessment": "not-verified",
+      "source": "S14",
+      "limit": "Hard publication hold."
+    },
+    {
+      "id": "C49",
+      "claim": "Mind hub PR #172 may be overwritten",
+      "assessment": "reject-ownership",
+      "source": "S06",
+      "limit": "Noncanonical prototype only."
+    },
+    {
+      "id": "C50",
+      "claim": "Product is medically indicated for attention deficits",
+      "assessment": "reject-health-claim",
+      "source": "S18",
+      "limit": "No diagnosis or treatment representation."
+    }
+  ],
+  "gates": {
+    "fv_written_partner_acceptance": false,
+    "zen12_named_offer_authorized": false,
+    "approved_exact_partner_earning_url": false,
+    "site_channel_permission": false,
+    "tiktok_channel_permission": false,
+    "email_channel_permission": false,
+    "approved_creative_reuse_rights": false,
+    "independent_product_claim_review": false,
+    "current_terms_and_refund_verified": false,
+    "checkout_total_verified": false,
+    "buyer_pii_not_shared_or_inbound_blocked": false,
+    "first_party_hosted_film_and_vtt": false,
+    "wcag22_browser_keyboard_sr_qa": false,
+    "performance_cwv_review": false,
+    "site_qa_exact_sha": false,
+    "founder_release_approval": false
+  },
+  "notes": [
+    "Seller-described features are not firsthand delivery verification.",
+    "No invented checkout prices, affiliate URL, commission terms, test outcomes or personal use.",
+    "Full Inspire3 terms were inaccessible; do not claim refund mechanics.",
+    "The optional educational film is not efficacy evidence.",
+    "Buyer-level PII is never collected in the proposed attribution architecture."
+  ]
+}
