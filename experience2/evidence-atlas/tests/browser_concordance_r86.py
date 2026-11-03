@@ -101,6 +101,20 @@ def run(src,out,axe):
                             assert all(''.join(x.split()) in compact for x in LINKS),'R86_PDF_SOURCE_URLS'
                             assert '0of6photographs' in compact,'R86_PDF_RIGHTS_HOLD'
                             c['pdf_pages']=len(doc)
+                        # Check actual print CSS, not only text extracted from PDF.
+                        page.emulate_media(media='print')
+                        colors=page.evaluate("""()=>{
+                          const color=s=>getComputedStyle(document.querySelector(s));
+                          return {hold_bg:color('.hold').backgroundColor,
+                                  hold_fg:color('.hold').color,
+                                  caption_fg:color('caption').color,
+                                  source_fg:color('a.primary').color};
+                        }""")
+                        assert colors=={'hold_bg':'rgb(255, 255, 255)',
+                            'hold_fg':'rgb(0, 0, 0)',
+                            'caption_fg':'rgb(0, 0, 0)',
+                            'source_fg':'rgb(0, 0, 0)'},'R86_PRINT_CONTRAST'
+                        page.emulate_media(media='screen')
                 cases.append(c)
                 context.close()
         forced=browser.new_context(viewport={'width':390,'height':850},
