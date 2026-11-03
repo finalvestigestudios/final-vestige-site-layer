@@ -34,7 +34,7 @@ R81_FAILURE_CODES = frozenset((
 ))
 R81_PHASES = frozenset((
     'NAVIGATION', 'NETWORK', 'ASSET_DISCOVERY', 'CUSTODY',
-    'INTERACTION', 'ACCESSIBILITY', 'PERFORMANCE', 'PRINT',
+    'INTERACTION', 'ACCESSIBILITY', 'PERFORMANCE', 'PRINT', 'CLEANUP',
 ))
 def write_r81_safe_failure(output: Path, exc: Exception, *,
                            width: int, js: bool, expected_apollo: bool,
@@ -97,11 +97,14 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
                'individual_nasa_photo_rights_cleared': 0,
                'cases': [], 'screenshots_sha256': {}}
     for width, js, expected_apollo in configurations:
-        context = browser.new_context(viewport={'width': width, 'height': 900},
-            storage_state=storage_state, java_script_enabled=js,
-            reduced_motion='reduce', is_mobile=width <= 390, has_touch=width <= 390)
         phase = 'NAVIGATION'
+        context = None
         try:
+            # R82: context creation itself may fail; keep it inside the
+            # redacted, fail-closed boundary rather than logging raw errors.
+            context = browser.new_context(viewport={'width': width, 'height': 900},
+                storage_state=storage_state, java_script_enabled=js,
+                reduced_motion='reduce', is_mobile=width <= 390, has_touch=width <= 390)
             if js:
                 context.add_init_script("""(()=>{
                   window.__r77lab={lcp:null,cls:0};
@@ -215,9 +218,30 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
                 'cases_completed': diagnostic['completed_r77_cases'],
                 'source_location_only': diagnostic['code_locations_only'],
             }, sort_keys=True), file=sys.stderr)
-            raise
+            # Re-raising the original exception leaks untrusted Playwright /
+            # navigation text to CI stderr even when the JSON is redacted.
+            # Suppress chained context; never convert a failed check to PASS.
+            raise RuntimeError('APOLLO_R82_SYNCED_PATTERN_HOLD') from None
         finally:
-            context.close()
+            if context is not None:
+                try:
+                    context.close()
+                except Exception as cleanup_exc:
+                    # Browser shutdown can itself emit URLs or other sensitive
+                    # process details. Keep the first failure classification
+                    # if the page already failed; otherwise record CLEANUP.
+                    if not (output / 'R81_SYNCED_PATTERN_HOLD.json').exists():
+                        diagnostic = write_r81_safe_failure(output, cleanup_exc,
+                            width=width, js=js, expected_apollo=expected_apollo,
+                            phase='CLEANUP', completed_cases=len(receipt['cases']))
+                        print('APOLLO_R82_CLEANUP_HOLD ' + json.dumps({
+                            'code': diagnostic['assertion_code'],
+                            'phase': diagnostic['checkpoint'],
+                            'width': diagnostic['width'],
+                            'js': diagnostic['javascript_enabled'],
+                            'cases_completed': diagnostic['completed_r77_cases'],
+                        }, sort_keys=True), file=sys.stderr)
+                    raise RuntimeError('APOLLO_R82_SYNCED_PATTERN_HOLD') from None
     assert len(receipt['cases']) == 5 and all(c['pass'] for c in receipt['cases'])
     (output / 'R77_REUSABLE_BLOCK_WORDPRESS_RECEIPT.json').write_text(
         json.dumps(receipt, sort_keys=True, indent=2) + '\n')
