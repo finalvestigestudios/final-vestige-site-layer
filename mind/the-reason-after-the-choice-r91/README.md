@@ -5,7 +5,7 @@
 ## Contents
 - `investigation.md` — **2,070-word original investigation**, `The Reason Came After the Choice`, with dated original scholarly references; zero commerce.
 - `zen12-guide-core.blocks.html` — complete independent, seller-offer-specific buyer guide. Checked exact catalog, sales, About, Research, checkout and privacy pages on Nov. 3.
-- `zen12-text-only.blocks.html` / `zen12-with-film.blocks.html` — Gutenberg Custom HTML **unpublished previews**, substantive core byte-identical; B adds original inline SVG poster, six-scene transcript. No media source until host/caption/approval gates.
+- `zen12-text-only.blocks.html` / `zen12-with-film.blocks.html` — Gutenberg Custom HTML **unpublished previews**, substantive guide byte-identical **after excluding B's optional film figure**; B inserts original inline SVG poster and six-scene transcript immediately after the H1 header, before the decision sections. No media source until host/caption/approval gates.
 - `mind-hub-noncanonical.blocks.html` — four-stream branded /mind/ prototype linking verified live source pages without adding forms.
 - `claims-and-activation.json` — 20 dated primary/official/regulatory sources, 35 claim decisions, 22 gates all false.
 - `attribution.mjs` — OFF synthetic-only categorical event design; group suppression <20, rejects raw URLs/referrers/PII.
@@ -21,7 +21,7 @@
 - ZIP CRC integrity passed; original PNG poster and accessible local HTML review player provided as review attachments, **not WordPress uploads**.
 
 ## Executed tests / limits
-- 10 **exact authenticated GitHub source files fetched**; **33/33 live V8 structural/claims/privacy/a11y assertions passed**; **3/3 adversarial mutations detected**.
+- 10 **exact authenticated GitHub source files fetched**; **37/37 final live V8 structural/claims/privacy/a11y assertions passed**; **4/4 adversarial mutations detected**.
 - Offline native FFprobe confirmed video duration, geometry, frame count, encoding; local zip checked; renderer and VTT Git blob integrity confirmed.
 - Chromium `page.set_content` static/no-JS check at **360/390/768/1440/1920 pixels**: 5/5 without horizontal overflow; six transcript cues; native controls; no autoplay in offline media review.
 - Browser HTTP navigation and actual video playback **blocked** by environment administrator (`ERR_BLOCKED_BY_ADMINISTRATOR`). No claim of visual-caption synchronization in a real player.
