@@ -76,13 +76,15 @@ async function imageBodies(page){
       const initial=el.currentSrc||el.src;
       if(!/^https:\/\/(finalvestige\.com|i0\.wp\.com)\//.test(initial))return null;
       el.loading='eager';
-      let decodeError=null;
+      let decodeError=null,timer;
       try{
         await Promise.race([
           el.decode(),
-          new Promise((_,reject)=>setTimeout(()=>reject(new Error('image decode timeout')),20000))
+          new Promise((_,reject)=>{timer=setTimeout(
+            ()=>reject(new Error('image decode timeout')),20000);})
         ]);
       }catch(e){decodeError=String(e).slice(0,160);}
+      finally{clearTimeout(timer);}
       return {url:el.currentSrc||el.src,complete:el.complete,
         width:el.naturalWidth,height:el.naturalHeight,decode_error:decodeError};
     })
