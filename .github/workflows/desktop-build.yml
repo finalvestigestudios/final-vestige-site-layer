@@ -201,6 +201,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r157.py
           python -OO products/desktop/scripts/safe_unittest_r157.py
+      - name: R158 SpendMap independent visible vendor labels (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r158.py
+          python -OO products/desktop/scripts/safe_unittest_r158.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -653,6 +657,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R157 history review verification FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r157.py
           if ($LASTEXITCODE -ne 0) { throw "R157 optimized history review verification FAILED" }
+      - name: R158 SpendMap independent visible vendor labels (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r158.py
+          if ($LASTEXITCODE -ne 0) { throw "R158 source labels verification FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r158.py
+          if ($LASTEXITCODE -ne 0) { throw "R158 optimized source labels verification FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
