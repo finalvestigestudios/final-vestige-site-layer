@@ -120,4 +120,7 @@ if __name__=='__main__':
     a.add_argument('--axe',type=Path,required=True);a.add_argument('--chromium');args=a.parse_args()
     try:print('R93 browser:',run(args.src,args.out,args.axe,args.chromium)['local_cases'])
     except Exception:
-        print('R93_BROWSER_HOLD:'+':'.join(TRACE.values()),file=sys.stderr);raise SystemExit(1)
+        import traceback
+        print('R93_BROWSER_HOLD:'+':'.join(TRACE.values()),file=sys.stderr)
+        traceback.print_exc(file=sys.stderr)
+        raise SystemExit(1)
