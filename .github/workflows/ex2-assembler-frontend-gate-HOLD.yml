@@ -44,6 +44,8 @@ jobs:
             'https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip' \
             --output "${RUNNER_TEMP}/fv-assembler.zip"
           unzip -tq "${RUNNER_TEMP}/fv-assembler.zip"
+          echo "Archive member paths (first twenty, to identify the installed stylesheet root):"
+          unzip -Z -1 "${RUNNER_TEMP}/fv-assembler.zip" | sed -n '1,20p'
           echo "Assembler ZIP sha256 (theme not pinned to WordPress.com production):"
           sha256sum "${RUNNER_TEMP}/fv-assembler.zip" | cut -d' ' -f1
       - name: Assemble real seven-chapter source with synthetic Margins and Jetpack only
