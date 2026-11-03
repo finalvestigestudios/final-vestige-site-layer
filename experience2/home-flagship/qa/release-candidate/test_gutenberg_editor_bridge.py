@@ -23,6 +23,7 @@ function wp_slash($v) { return $v; }
 function is_wp_error($v) { return false; }
 function get_users($args) { return array((object)array('ID'=>1)); }
 function wp_set_current_user($id) {}
+function current_user_can($cap) { return getenv('FV_CAN_UNFILTERED') !== '0'; }
 function wp_set_auth_cookie($id,$remember,$ssl) {}
 function is_ssl() { return false; }
 function clean_post_cache($id) {}
@@ -144,6 +145,11 @@ class EditorBridge(unittest.TestCase):
 
     def test_site_home_production_refuses(self):
         self.assertEqual(self.call("create",FV_HOME="https://finalvestige.com")["result"],"FAIL")
+
+    def test_unfiltered_html_capability_required(self):
+        r = self.call("create", FV_CAN_UNFILTERED="0")
+        self.assertEqual(r["result"], "FAIL")
+        self.assertFalse((self.root/"db.json").exists())
 
     def test_missing_marker_refuses(self):
         (self.root/"wp-content/fv-ex2-synthetic-only.marker").unlink()
