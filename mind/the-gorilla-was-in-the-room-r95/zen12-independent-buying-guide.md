@@ -7,7 +7,7 @@ After watching a convincing attention demonstration, you may want a practical wa
 
 That is also the best place to begin an honest evaluation of Zen12: **what will you actually receive, what must you supply yourself, and which claimed results have not been shown?** The seller's marketing is an invitation to imagine unusually fast mental change. Final Vestige's role is to separate a described audio format from an established effect.
 
-Our [inattentional-blindness investigation](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) makes a related point about expectations and observation, although that linked historical archive is not evidence concerning Zen12. A perceptual effect can be real while its commercial interpretation is unsupported.
+Our [Puységur historical archive](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) also asks how expectations shape testimony. That historical archive is not evidence concerning Zen12. A perceptual effect can be real while its commercial interpretation is unsupported.
 
 ## What is being sold, precisely?
 
