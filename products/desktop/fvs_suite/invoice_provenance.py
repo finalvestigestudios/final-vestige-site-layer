@@ -52,6 +52,15 @@ def attach_invoice_provenance(
         if any(type(field) is not str for field in dict.keys(row)):
             raise ValueError("Invoice candidate field names must be plain text")
         row = dict(dict.items(row))
+        # Review/display columns are part of the audit report returned to the
+        # caller. Reject non-primitive values rather than returning mutable
+        # aliases or objects with hostile __str__/CSV serialization hooks.
+        # Keep the historical, field-specific errors for row/status fields;
+        # source_sha256 and candidate_ref are untrusted and overwritten below.
+        if any(type(value) is not str for field, value in row.items()
+               if field not in ("row_a", "row_b", "status",
+                                "source_sha256", "candidate_ref")):
+            raise ValueError("Invoice candidate display values must be plain text")
         a, b, status = row.get("row_a"), row.get("row_b"), row.get("status")
         if (type(a) is not str or not _PHYSICAL_LINE.fullmatch(a)
                 or int(a) < 2 or type(b) is not str
