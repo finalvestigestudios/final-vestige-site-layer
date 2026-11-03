@@ -1,0 +1,574 @@
+{
+  "milestone": "R105",
+  "date": "2026-11-03",
+  "branch": "feature/mind-phonemic-restoration-zen12-r105-20261103",
+  "source_verification": "Verified public web for all current URL claims except Inspire3 terms; URL inaccessible, flagged. Seller webpages are not independent trials. No Inspire3 account authorization established.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Warren 1970 phonemic restoration",
+      "type": "primary-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/"
+    },
+    {
+      "id": "S02",
+      "title": "Warren and Obusek 1971",
+      "type": "primary-abstract",
+      "url": "https://doi.org/10.3758/BF03212667"
+    },
+    {
+      "id": "S03",
+      "title": "Samuel 1981 signal detection method",
+      "type": "primary-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6459403/"
+    },
+    {
+      "id": "S04",
+      "title": "Samuel 1981 bottom-up confirmation",
+      "type": "primary-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/"
+    },
+    {
+      "id": "S05",
+      "title": "Trout and Poser 1990",
+      "type": "primary-abstract",
+      "url": "https://doi.org/10.1177/002383099003300202"
+    },
+    {
+      "id": "S06",
+      "title": "Repp 1992 alternative explanations",
+      "type": "primary-paper",
+      "url": "https://doi.org/10.3758/BF03205070"
+    },
+    {
+      "id": "S07",
+      "title": "Phonemic restoration in dementia 2022",
+      "type": "preliminary-study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35611314/"
+    },
+    {
+      "id": "M01",
+      "title": "Inspire3 catalog",
+      "type": "seller",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "M02",
+      "title": "Exact Zen12 /hnp offer",
+      "type": "seller",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "M03",
+      "title": "Zen12 formats and levels",
+      "type": "seller",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "M04",
+      "title": "Exact Zen12 full-course checkout",
+      "type": "dynamic-seller",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "M05",
+      "title": "Inspire3 buyer privacy policy",
+      "type": "seller-policy",
+      "url": "https://inspire3.com/privacy/"
+    },
+    {
+      "id": "M06",
+      "title": "Inspire3 terms - inaccessible in web read",
+      "type": "unverified-current-policy",
+      "url": "https://inspire3.com/terms/"
+    },
+    {
+      "id": "M07",
+      "title": "Ingendoh et al 2023 fourteen-study review",
+      "type": "independent-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "M08",
+      "title": "FTC affiliate endorsement disclosures",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "M09",
+      "title": "FTC health product substantiation",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "M10",
+      "title": "Inspire3 affiliate application",
+      "type": "public-signup-not-approval",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "M11",
+      "title": "Total Focus exact SKU (not Zen12)",
+      "type": "separate-seller-product",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "FV01",
+      "title": "Puységur source archive",
+      "type": "site-existing",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "FV02",
+      "title": "Seven Day Focus Fieldbook",
+      "type": "site-existing",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "FV03",
+      "title": "Change blindness published",
+      "type": "site-existing",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 sessions are 12 minutes",
+      "status": "seller-listed-format",
+      "source_ids": [
+        "M02",
+        "M03"
+      ],
+      "editorial_rule": "Use as seller description only"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 full course has 12 levels and 48 MP3s",
+      "status": "seller-listed-sku",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_rule": "Do not transfer to six-level tiers"
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 four formats: music guided white noise nature",
+      "status": "seller-listed-format",
+      "source_ids": [
+        "M03"
+      ],
+      "editorial_rule": "Format fact, not efficacy"
+    },
+    {
+      "id": "C04",
+      "claim": "Hour of meditation in twelve minutes",
+      "status": "unverified-performance",
+      "source_ids": [
+        "M02",
+        "M07"
+      ],
+      "editorial_rule": "Reject as independently proven"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 treats anxiety or improves health",
+      "status": "unverified-health",
+      "source_ids": [
+        "M02",
+        "M09"
+      ],
+      "editorial_rule": "Omit outcome promise"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 rewires brain or guarantees focus",
+      "status": "unverified-outcome",
+      "source_ids": [
+        "M02",
+        "M07"
+      ],
+      "editorial_rule": "Omit product claim"
+    },
+    {
+      "id": "C07",
+      "claim": "Brainwave entrainment certain or settled",
+      "status": "inconsistent-independent-evidence",
+      "source_ids": [
+        "M07"
+      ],
+      "editorial_rule": "5 studies support, 8 contrary, 1 mixed"
+    },
+    {
+      "id": "C08",
+      "claim": "2023 review tested Zen12",
+      "status": "false-attribution",
+      "source_ids": [
+        "M07"
+      ],
+      "editorial_rule": "Independently did not evaluate product"
+    },
+    {
+      "id": "C09",
+      "claim": "Checkout requests phone number",
+      "status": "seller-form-verified",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_rule": "Disclose before purchase"
+    },
+    {
+      "id": "C10",
+      "claim": "Checkout timer establishes genuine urgency",
+      "status": "unverified-scarcity",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_rule": "Omit urgency language"
+    },
+    {
+      "id": "C11",
+      "claim": "Checkout displayed pricing permanent",
+      "status": "unverified-price",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_rule": "Omit prices and discounts"
+    },
+    {
+      "id": "C12",
+      "claim": "Affiliate may receive buyer names emails items",
+      "status": "seller-privacy-policy",
+      "source_ids": [
+        "M05"
+      ],
+      "editorial_rule": "Written no-PII contract precondition"
+    },
+    {
+      "id": "C13",
+      "claim": "Phone and SMS promotions may occur",
+      "status": "seller-privacy-policy",
+      "source_ids": [
+        "M05"
+      ],
+      "editorial_rule": "Disclosure neutral, not universal"
+    },
+    {
+      "id": "C14",
+      "claim": "One-year guarantee live and fulfilled",
+      "status": "not-verified-current",
+      "source_ids": [
+        "M06"
+      ],
+      "editorial_rule": "Do not confirm or guarantee refund"
+    },
+    {
+      "id": "C15",
+      "claim": "Merchant public affiliate site is FV acceptance",
+      "status": "false-inference",
+      "source_ids": [
+        "M10"
+      ],
+      "editorial_rule": "Named acceptance required"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 affiliate link approved",
+      "status": "unverified-right",
+      "source_ids": [
+        "M10"
+      ],
+      "editorial_rule": "Keep CTA disabled"
+    },
+    {
+      "id": "C17",
+      "claim": "Website channel rights approved",
+      "status": "unverified-right",
+      "source_ids": [
+        "M10"
+      ],
+      "editorial_rule": "Get written permission"
+    },
+    {
+      "id": "C18",
+      "claim": "TikTok channel rights approved",
+      "status": "unverified-right",
+      "source_ids": [
+        "M10"
+      ],
+      "editorial_rule": "Get written permission"
+    },
+    {
+      "id": "C19",
+      "claim": "Email channel rights approved",
+      "status": "unverified-right",
+      "source_ids": [
+        "M10"
+      ],
+      "editorial_rule": "Get written permission"
+    },
+    {
+      "id": "C20",
+      "claim": "Approved vendor creative rights",
+      "status": "unverified-right",
+      "source_ids": [
+        "M10"
+      ],
+      "editorial_rule": "No copied ads"
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige has purchased/tested Zen12",
+      "status": "not-true",
+      "source_ids": [
+        "M01"
+      ],
+      "editorial_rule": "Never assert use"
+    },
+    {
+      "id": "C22",
+      "claim": "Seller testimonial proves typical outcomes",
+      "status": "unsupported-proof",
+      "source_ids": [
+        "M02",
+        "M09"
+      ],
+      "editorial_rule": "Do not generalize"
+    },
+    {
+      "id": "C23",
+      "claim": "Three-occasion listening exercise clinically valid",
+      "status": "untested-editorial-exercise",
+      "source_ids": [],
+      "editorial_rule": "Say preference check only"
+    },
+    {
+      "id": "C24",
+      "claim": "Film improves conversion",
+      "status": "untested-hypothesis",
+      "source_ids": [],
+      "editorial_rule": "Compare ethically only after release"
+    },
+    {
+      "id": "C25",
+      "claim": "R105 contains hosted MP4",
+      "status": "false",
+      "source_ids": [],
+      "editorial_rule": "Poster, captions and transcript only"
+    },
+    {
+      "id": "C26",
+      "claim": "FTC disclosure must appear near specific CTA",
+      "status": "regulatory-rule",
+      "source_ids": [
+        "M08"
+      ],
+      "editorial_rule": "Visible prospect disclosure beside disabled action"
+    },
+    {
+      "id": "C27",
+      "claim": "Warren demonstrated masking restoration",
+      "status": "primary-result",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_rule": "Context-specific, not mind control"
+    },
+    {
+      "id": "C28",
+      "claim": "Samuel discriminated bias and restoration",
+      "status": "primary-result",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "editorial_rule": "Separate sensory sensitivity and decisions"
+    },
+    {
+      "id": "C29",
+      "claim": "Puységur source provenance equals proof of magnetism",
+      "status": "false-historical-transfer",
+      "source_ids": [
+        "FV01"
+      ],
+      "editorial_rule": "Keep mechanisms separate"
+    },
+    {
+      "id": "C30",
+      "claim": "Brainwave Shots/Total Focus evidence transfers to Zen12",
+      "status": "false-cross-sku",
+      "source_ids": [
+        "M11"
+      ],
+      "editorial_rule": "Exact-product analyses only"
+    },
+    {
+      "id": "C31",
+      "claim": "Affiliate outbound click equals sale",
+      "status": "false-conversion-metric",
+      "source_ids": [],
+      "editorial_rule": "Only measure approved aggregates"
+    },
+    {
+      "id": "C32",
+      "claim": "Identifying purchaser rows permitted by FV policy",
+      "status": "prohibited-implementation",
+      "source_ids": [
+        "M05"
+      ],
+      "editorial_rule": "Zero buyer PII; contract gate"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "Named Final Vestige partner acceptance",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G02",
+      "requirement": "Zen12 website right",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G03",
+      "requirement": "Zen12 TikTok right",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G04",
+      "requirement": "Zen12 email right",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G05",
+      "requirement": "Exact trackable link and allowed parameters",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G06",
+      "requirement": "Disclosure terms approved",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G07",
+      "requirement": "Buyer-PII sharing explicitly excluded",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G08",
+      "requirement": "Aggregated measurement authorization",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G09",
+      "requirement": "Creative usage rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G10",
+      "requirement": "Current terms/refund recheck",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G11",
+      "requirement": "Current exact package recheck",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G12",
+      "requirement": "Checkout phone/SMS recheck",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G13",
+      "requirement": "Product-specific claims legal review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G14",
+      "requirement": "Independent editorial factcheck",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G15",
+      "requirement": "Preserve canonical Mind hub PR #172",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G16",
+      "requirement": "360,390,768,1440,1920 responsive browser QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G17",
+      "requirement": "WCAG keyboard/screenreader QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G18",
+      "requirement": "No-JS WordPress rendering QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G19",
+      "requirement": "Optional finished caption-synchronized video",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G20",
+      "requirement": "Approved first-party hosting/performance QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G21",
+      "requirement": "Reduced-motion QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G22",
+      "requirement": "Explicit founder publication approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G23",
+      "requirement": "Explicit founder nav approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G24",
+      "requirement": "Independent site QA issue #126",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G25",
+      "requirement": "Homepage art handoff issue #150",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G26",
+      "requirement": "Dispatch handoff issue #174",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G27",
+      "requirement": "Privacy consent review before any live events",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G28",
+      "requirement": "Aggregate-only approved conversion reports",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G29",
+      "requirement": "A/B assignment ethics design",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G30",
+      "requirement": "Exact SHA release signoff: no merge/deploy",
+      "status": "CLOSED"
+    }
+  ]
+}
