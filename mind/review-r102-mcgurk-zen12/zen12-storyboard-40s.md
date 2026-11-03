@@ -1,5 +1,5 @@
 # Original optional Zen12 pilot film concept — forty seconds
-*R102 | no MP4 rendered or hosted this run | original storyboard, not an Inspire3 advertisement or depiction of the product*
+*R102 | original MP4 rendered OFFLINE, NOT hosted or activated | original storyboard, not an Inspire3 advertisement or depiction of the product*
 
 | Time | Scene & original artwork direction | Spoken/caption narration | Proof boundary |
 |---|---|---|---|
@@ -12,6 +12,6 @@
 
 **Accessibility:** 9:16, optional play control only after separate first-party asset release. No autoplay, preloading metadata at most, subtitles track default where appropriate, transcript always visible without JavaScript, poster visible on pause/no-motion, no flashing or animated text faster than reading speed. Sound-free comprehension required. No seller footage, logo, audio or approved-creative assumption.
 
-**Production status:** STORYBOARD + VTT ONLY. No actual MP4 in this commit. Do not insert an empty video tag or claim hosted caption QA. The previously rendered offline videos remain separate from this R102 concept.
+**Production status:** storyboard + WebVTT + exact source-controlled Python renderer. Original 40.000s silent H.264 MP4, poster and contact sheet rendered locally and packaged for offline review (SHA-256 bf150d6ab395aa5374abdcf40580949289b19f241691c6408163f1f750102567), but binary film is NOT hosted or deployed to WordPress. Do not insert an empty video tag or claim hosted caption QA. The previously rendered offline videos remain separate from this R102 concept.
 
 **Comparison hypothesis:** Text-only A versus identical guide plus optional original short video B. Evaluate on source-informed reader comprehension first (can readers distinguish seller claim from evidence?), then voluntary offer-intent if ever approved. Do not call clicks sales. Consent and accessibility checks precede any live test.
