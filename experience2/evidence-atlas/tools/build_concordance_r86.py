@@ -71,6 +71,12 @@ def validate_component(document,records,name):
         text=' '.join(' '.join(card['text']).split())
         if card['links']!=[r['url']]:hold(name.upper()+'_SOURCE_LINK_'+r['id'])
         if r['catalog'] not in text:hold(name.upper()+'_CATALOG_'+r['id'])
+        if r['component_date_label'] not in text:
+            hold(name.upper()+'_PHOTO_DATE_'+r['id'])
+        rights_notice=('not been individually reviewed or cleared' if name=='desk'
+                       else 'Individual review required')
+        if rights_notice.lower() not in text.lower():
+            hold(name.upper()+'_MEDIA_RIGHTS_'+r['id'])
         if r['id']=='01' and not any(term in text.lower() for term in (
             'provisional','not been confirmed','unconfirmed')):
             hold(name.upper()+'_CREW_IDENTITY')
@@ -81,7 +87,8 @@ def validate_component(document,records,name):
 def verify():
     board=load(HERE/'build_rights_board_r85.py','r85_board_r86')
     sources=board.load_sources()
-    records=board.verify(sources)
+    records=[{**r,'component_date_label':sources['crosswalk']['records'][i]['date_label']}
+             for i,r in enumerate(board.verify(sources))]
     desk_bytes=DESK.read_bytes()
     desk_html=desk_bytes.decode('utf-8')
     desk=validate_component(desk_html,records,'desk')
