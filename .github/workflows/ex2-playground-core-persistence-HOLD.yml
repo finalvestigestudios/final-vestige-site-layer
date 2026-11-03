@@ -1,0 +1,60 @@
+name: EX2 isolated WordPress core save/readback - SYNTHETIC HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/qa/release-candidate/**'
+      - 'experience2/home-flagship/rights/**'
+      - 'experience2/home-flagship/accessibility/margins/**'
+      - '.github/workflows/ex2-playground-core-persistence-HOLD.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ex2-playground-core-persistence-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  synthetic-wordpress-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source preflight and synthetic builder tests
+        run: |
+          set -euo pipefail
+          python -I -m py_compile experience2/home-flagship/qa/release-candidate/write_synthetic_playground_candidate.py
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_build_combined_page6_offline.py -v
+          node --check experience2/home-flagship/qa/release-candidate/playground_core_save_readback.mjs
+          php -l experience2/home-flagship/qa/release-candidate/playground_core_save_readback.php
+      - name: Generate synthetic candidate ONLY (no production data)
+        run: |
+          set -euo pipefail
+          python -I experience2/home-flagship/qa/release-candidate/write_synthetic_playground_candidate.py \
+            --output "${RUNNER_TEMP}/fv-ex2-synthetic-candidate.html" \
+            --manifest "${RUNNER_TEMP}/fv-ex2-synthetic-manifest.json"
+      - name: Install pinned free WordPress Playground runtime
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @wp-playground/cli@3.1.56
+      - name: WordPress 6.8 PHP 8.3 disposable draft save/readback
+        timeout-minutes: 12
+        run: |
+          set -euo pipefail
+          node experience2/home-flagship/qa/release-candidate/playground_core_save_readback.mjs \
+            --candidate "${RUNNER_TEMP}/fv-ex2-synthetic-candidate.html" \
+            --manifest "${RUNNER_TEMP}/fv-ex2-synthetic-manifest.json"
+      - name: Privacy gate - do not archive synthetic HTML or DB
+        if: always()
+        run: |
+          rm -f "${RUNNER_TEMP}/fv-ex2-synthetic-candidate.html" "${RUNNER_TEMP}/fv-ex2-synthetic-manifest.json"
+          echo "No Gutenberg page source, database, user or subscriber data uploaded."
