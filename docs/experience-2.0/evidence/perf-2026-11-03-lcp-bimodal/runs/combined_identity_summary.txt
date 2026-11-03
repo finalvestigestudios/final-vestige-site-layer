@@ -1,0 +1,8 @@
+all      n=110 med 1672 p75 4563 p95 4900 min 1404 max 4952
+slow     n=35 med 4748 p75 4884 p95 4926 min 4404 max 4952
+fast     n=75 med 1664 p75 1672 p95 1698 min 1404 max 1908
+slow share 35 / 110
+fast final LCP element: Counter({'DIV.fv-margin-strip__window': 72, 'P.': 3})
+fast final LCP size: [(210456, 50), (211088, 22), (48093, 3)]
+FCP fast n=75 med 1584 p75 1592 p95 1621 min 1352 max 1644
+FCP slow n=35 med 1592 p75 1618 p95 1660 min 1428 max 1700
