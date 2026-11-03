@@ -31,6 +31,8 @@ def case(width: int) -> dict:
             "fallback_text_visible": True,
             "fallback_within_case": True,
             "frame_relabelled": True,
+            "frame_label_single_line": True,
+            "frame_date_single_line": True,
             "source_heading_retained": True,
             "source_details_retained": True,
             "catalog_links_in_case": 1,
@@ -105,6 +107,18 @@ class HostedRightsSafeCandidateTests(unittest.TestCase):
     def test_unsafe_screenshot_manifest_is_blocked(self):
         broken = copy.deepcopy(self.cases)
         broken[0]["screenshots"]["before"] = "garbage"
+        with self.assertRaises(ValueError):
+            grade(broken)
+
+    def test_orphaned_year_label_is_blocked(self):
+        broken = copy.deepcopy(self.cases)
+        broken[0]["candidate"]["frame_date_single_line"] = False
+        with self.assertRaises(ValueError):
+            grade(broken)
+
+    def test_wrapped_record_label_is_blocked(self):
+        broken = copy.deepcopy(self.cases)
+        broken[0]["candidate"]["frame_label_single_line"] = False
         with self.assertRaises(ValueError):
             grade(broken)
 
