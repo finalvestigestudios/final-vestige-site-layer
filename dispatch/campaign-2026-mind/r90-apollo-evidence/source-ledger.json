@@ -1,0 +1,83 @@
+{
+  "date_utc": "2026-11-03",
+  "campaign": "FV Dispatch six issue weekly draft",
+  "master_pr": 175,
+  "prior_readiness_pr": 201,
+  "stack_parent_pr": 775,
+  "owner_issue": 174,
+  "companion_issue": 171,
+  "issue": 4,
+  "editorial_variant": "OPTIONAL_R90",
+  "approved_replacement": false,
+  "send_status": "HOLD_UNSENT",
+  "merchant_placement": false,
+  "headline_rejected": {
+    "phrase": "Fourteen seconds.",
+    "reason": "No specified pair of measured events, NASA distinguishes fire onset, crew reports, last transmission, vessel rupture and atmospheric lethality; exact duration would mislead.",
+    "reference": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html"
+  },
+  "claims": [
+    {
+      "claim": "Apollo 1 plugs-out ground test Jan 27 1967, unfueled rocket",
+      "classification": "documented",
+      "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
+    },
+    {
+      "claim": "Three named crew members died",
+      "classification": "documented",
+      "source": "https://www.nasa.gov/apollo-1-resources/"
+    },
+    {
+      "claim": "Most probable ignition was electrical arc; exact source not conclusively found",
+      "classification": "probable_not_certain",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+    },
+    {
+      "claim": "Six conditions in board finding incl oxygen, combustibles, wiring, coolant, egress, rescue",
+      "classification": "board_findings",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+    },
+    {
+      "claim": "100% oxygen at approximately 16.7 psia",
+      "classification": "board_measurement",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+    },
+    {
+      "claim": "Three-piece hatch ninety seconds under ideal conditions",
+      "classification": "NASA_retrospective",
+      "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
+    },
+    {
+      "claim": "Atmosphere estimated lethal by approximately 23:31:30 GMT",
+      "classification": "estimated_not_individual_timing",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+    }
+  ],
+  "official_source_links": [
+    "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+    "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+    "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html"
+  ],
+  "cta": {
+    "type": "editorial",
+    "label": "Read the evidence trail: The Hatch Opened Inward",
+    "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "verified_live_at_last_wordpress_check": true,
+    "affiliate": false
+  },
+  "settings_observed_at_utc": "2026-11-03T12:37:33Z",
+  "newsletter_enabled": true,
+  "auto_send_new_posts": false,
+  "email_content_format": "excerpt",
+  "actual_preheader_rendering_verified": false,
+  "received_jetpack_email_verified": false,
+  "welcome_receipt_verified": false,
+  "subscriber_eligible_audience": "UNKNOWN",
+  "business_postal_verified": false,
+  "unsubscribe_render_verified": false,
+  "final_founder_send_approval": false,
+  "merchant_email_permissions_for_issue_03_05": "UNVERIFIED",
+  "warmup_guides_published_for_issue_03_05": false,
+  "editorial_source": "https://finalvestige.com/editorial-standards/",
+  "no_email_or_wordpress_writes": true
+}
