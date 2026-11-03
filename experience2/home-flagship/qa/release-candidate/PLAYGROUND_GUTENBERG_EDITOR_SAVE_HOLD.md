@@ -12,10 +12,10 @@ Only the SYNTHETIC DRAFT TITLE is changed. The stored content must remain byte/S
 ## Safety and reproducibility
 
 - No production page source, accounts, subscribers, secrets, real media, affiliate URLs or production WordPress API calls. Input is generated solely from the upstream synthetic fixture builder in #801.
-- PHP checks HTTP request host AND installed WordPress home host are loopback, requires POST, exact synthetic marker and an ephemeral 256-bit token; only create/login/verify/cleanup actions are allowed.
+- PHP checks HTTP request host AND installed WordPress home host are loopback, requires POST, exact synthetic marker and an ephemeral 256-bit token; only create/login/verify/cleanup actions are allowed. The created draft receives an HMAC-SHA256 ownership marker bound to its numeric ID and the ephemeral token. Cleanup must verify that marker and draft status; it never trusts an editable post title, so even an unexpectedly renamed synthetic draft can be deleted while unrelated pages are refused.
 - The browser authenticates only against an ephemeral local Playground administrator. Do not print credentials, cookies, token, nonce or Gutenberg HTML.
 - The Node runner attempts deletion in finally after every post-create path and refuses success if deletion cannot be verified. Playground is disposed afterward. The existing PR #802 cleanup gate remains independently required.
-- Native PHP adversarial tests exercise legitimate roundtrip+cleanup, no editor-save, changed stored content, wrong token, missing marker, nonlocal host or home URL, GET, duplicate draft, missing source, missing Margin, non-synthetic deletion and failed cleanup. Mock tests do not constitute a real WordPress test.
+- Native PHP adversarial tests exercise legitimate roundtrip+cleanup, no editor-save, changed stored content, wrong token, missing marker, nonlocal host or home URL, GET, duplicate draft, missing source, missing Margin, ownership-token tampering, title-mutation-safe cleanup and failed cleanup. Mock tests do not constitute a real WordPress test.
 - A Node dependency-free --self-test and isolated, read-only GitHub Actions workflow are committed. The workflow pins @wp-playground/cli@3.1.56 and playwright@1.56.1, and runs exact-source PHP and Node checks before attempting real editor Save.
 
 ## Honest evidence status
