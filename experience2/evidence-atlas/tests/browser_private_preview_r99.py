@@ -17,7 +17,7 @@ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 def run(stage,fixture,axe,out):
     out.mkdir(parents=True,exist_ok=True)
-    env=dict(os.environ,APOLLO_R99_STAGE=str(stage))
+    env=dict(os.environ,APOLLO_R99_STAGE=str(stage),APOLLO_R99_AXE=str(axe) if axe else '')
     php=subprocess.Popen(['php','-S','127.0.0.1:8941',str(fixture)],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     try:
         for _ in range(80):
@@ -63,7 +63,7 @@ def run(stage,fixture,axe,out):
                             metrics=page.evaluate('({lcp:window.__r99_lcp ?? null,cls:window.__r99_cls ?? null})') if js else None
                             receipt['configurations'].append({'view':view,'width':width,'js':js,'overflow':False,'metrics':metrics})
                             if view==VIEWS[-1] and width in (390,1440) and js and axe:
-                                page.add_script_tag(path=str(axe))
+                                page.add_script_tag(url=BASE+'?fv_r99_axe=1')
                                 report=page.evaluate("""async()=>{const r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});return {violations:r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length})),passes:r.passes.length}}""")
                                 receipt['axe'].append({'width':width,**report})
                                 assert not report['violations'],report
