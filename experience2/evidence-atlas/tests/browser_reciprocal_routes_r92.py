@@ -90,8 +90,8 @@ def run(src:Path,out:Path,axe:Path,chromium:str|None=None)->dict:
                         TRACE['gate']='NAV_ACTIVATE_TOUCH_OR_POINTER'
                         if width<=390:link.tap()
                         else:link.click()
-                        TRACE['gate']='NAV_LOAD'
-                        page.wait_for_load_state('load')
+                        TRACE['gate']='NAV_WAIT_FOR_TARGET_URL'
+                        page.wait_for_url('**/'+dest+'#'+frag,wait_until='load',timeout=12000)
                         TRACE['gate']='NAV_TARGET_PATH'
                         assert urlparse(page.url).path.endswith('/'+dest),'NAVIGATION_DESTINATION'
                         TRACE['gate']='NAV_TARGET_FRAGMENT'
