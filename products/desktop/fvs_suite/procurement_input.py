@@ -13,7 +13,7 @@ from .event_custody import snapshot_event_record
 # Price tolerances are explicit, ASCII, fixed-point decimals. The engine's
 # quantity and unit-price inputs already cap precision at eight places.
 _POLICY_DECIMAL = re.compile(r"(?:0|[1-9][0-9]{0,2})(?:\.[0-9]{1,8})?\Z")
-_ROW_NUMBER = re.compile(r"[0-9]{1,9}\Z")
+_ROW_NUMBER = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
 _EVENT_TYPES = {
     "invoice": frozenset(("invoice", "credit")),
     "receipt": frozenset(("receipt", "return")),
