@@ -36,6 +36,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r163.py
           python -OO products/desktop/scripts/safe_unittest_r163.py
+      - name: R164 fail-closed YAML action-key custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r164.py
+          python -OO products/desktop/scripts/safe_unittest_r164.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -304,6 +308,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R163 normal runtime contract failed" }
           python -OO products/desktop/scripts/safe_unittest_r163.py
           if ($LASTEXITCODE -ne 0) { throw "R163 optimized runtime contract failed" }
+      - name: R164 fail-closed YAML action-key custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r164.py
+          if ($LASTEXITCODE -ne 0) { throw "R164 normal action-key custody failed" }
+          python -OO products/desktop/scripts/safe_unittest_r164.py
+          if ($LASTEXITCODE -ne 0) { throw "R164 optimized action-key custody failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
