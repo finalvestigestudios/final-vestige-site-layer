@@ -1,0 +1,417 @@
+{
+  "scope": "R86 source-controlled unpublished review only; no CMS publication or affiliate activation",
+  "checked_at": "2026-11-02",
+  "product": "Zen12 (specific public sales page https://zen12.com/hnp)",
+  "sources": [
+    {
+      "id": "research_r1992",
+      "title": "Raymond, Shapiro & Arnell (1992)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "kind": "primary abstract",
+      "verification": "270ms window begins 180ms post-target, target/task conditions",
+      "caveat": "abstract only; no full-text check"
+    },
+    {
+      "id": "research_c1995",
+      "title": "Chun & Potter (1995)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+      "kind": "primary abstract",
+      "verification": "200–500ms T2 deficit; 7 experiments, proposed two-stage model",
+      "caveat": "abstract only; model not definitive"
+    },
+    {
+      "id": "research_s2007",
+      "title": "Slagter et al (2007)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "kind": "primary research abstract",
+      "verification": "3 months intensive mental training, smaller attentional blink and P3b differences",
+      "caveat": "not a Zen12 or audio trial"
+    },
+    {
+      "id": "research_i2023",
+      "title": "Ingendoh et al (2023)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "peer reviewed systematic review",
+      "verification": "14 studies: 5 aligned, 8 contradictory, 1 mixed",
+      "caveat": "heterogeneous binaural EEG research; not product-specific"
+    },
+    {
+      "id": "fvs_puy",
+      "title": "Final Vestige Puységur Archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published internal archive",
+      "verification": "153 source rows, 16 case dossiers in authenticated CMS",
+      "caveat": "historical claims not validated as modern science"
+    },
+    {
+      "id": "fvs_focus",
+      "title": "Final Vestige Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published internal page",
+      "verification": "one existing Fieldbook/Jetpack funnel",
+      "caveat": "downloaded PDF not reviewed this run"
+    },
+    {
+      "id": "seller_catalog",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "verification": "Zen12 named among merchant products",
+      "caveat": "marketing is not efficacy evidence"
+    },
+    {
+      "id": "seller_exact",
+      "title": "Zen12 public offer",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant",
+      "verification": "12 minute sessions, commercial outcome claims",
+      "caveat": "claims not independently verified"
+    },
+    {
+      "id": "seller_about",
+      "title": "Zen12 about",
+      "url": "https://zen12.com/about",
+      "kind": "merchant",
+      "verification": "12 levels, four sound styles",
+      "caveat": "not inspected delivered audio"
+    },
+    {
+      "id": "seller_research",
+      "title": "Zen12 research page",
+      "url": "https://zen12.com/research",
+      "kind": "merchant",
+      "verification": "brainwave entrainment thesis and generalized research citations",
+      "caveat": "does not validate full product"
+    },
+    {
+      "id": "seller_checkout",
+      "title": "Zen12 getstarted",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant",
+      "verification": "48 MP3 course described, personal/contact checkout fields, guarantee marketing",
+      "caveat": "do not publish variable checkout price/refund claim"
+    },
+    {
+      "id": "seller_privacy",
+      "title": "Inspire3 privacy",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant policy",
+      "verification": "SMS marketing possibility and affiliate buyer-name/email/product sharing",
+      "caveat": "publisher policy should decline buyer PII"
+    },
+    {
+      "id": "seller_terms",
+      "title": "Inspire3 terms",
+      "url": "https://inspire3.com/terms/",
+      "kind": "merchant inaccessible",
+      "verification": "full current terms not retrieved",
+      "caveat": "hard hold"
+    },
+    {
+      "id": "affiliate_public",
+      "title": "Inspire3 affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "recruitment page",
+      "verification": "public commission advertising",
+      "caveat": "NOT partner acceptance or approved assets"
+    },
+    {
+      "id": "ftc_endorse",
+      "title": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "verification": "clear conspicuous material-connection disclosure",
+      "caveat": "not legal signoff"
+    },
+    {
+      "id": "ftc_health",
+      "title": "FTC health claims guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "verification": "objective health/product claims require substantiation",
+      "caveat": "not legal signoff"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "AB_WINDOW",
+      "claim": "Original 1992 finding describes a short probe detection deficit",
+      "evidence_status": "confirmed_primary_abstract",
+      "source_ids": [
+        "research_r1992"
+      ],
+      "decision": "approved_with_conditions"
+    },
+    {
+      "id": "AB_CONDITIONS",
+      "claim": "Attention task and distractor timing condition the effect",
+      "evidence_status": "confirmed_primary_abstract",
+      "source_ids": [
+        "research_r1992",
+        "research_c1995"
+      ],
+      "decision": "approved_with_conditions"
+    },
+    {
+      "id": "AB_MECHANISM",
+      "claim": "Two-stage account is the final mechanism",
+      "evidence_status": "not_established",
+      "source_ids": [
+        "research_c1995"
+      ],
+      "decision": "reject"
+    },
+    {
+      "id": "AB_UNIVERSAL",
+      "claim": "All people miss the second target",
+      "evidence_status": "not_established",
+      "source_ids": [
+        "research_r1992"
+      ],
+      "decision": "reject"
+    },
+    {
+      "id": "MEDITATION_TRAINING",
+      "claim": "3-month intensive training correlated with reduced attentional blink in one study",
+      "evidence_status": "study_specific",
+      "source_ids": [
+        "research_s2007"
+      ],
+      "decision": "qualified_only"
+    },
+    {
+      "id": "MEDITATION_TO_ZEN12",
+      "claim": "Zen12 produces the same result as the 2007 intensive training",
+      "evidence_status": "no_product_evidence",
+      "source_ids": [
+        "research_s2007"
+      ],
+      "decision": "reject"
+    },
+    {
+      "id": "Z12_12",
+      "claim": "Zen12 offers 12-minute sessions",
+      "evidence_status": "seller_described",
+      "source_ids": [
+        "seller_exact",
+        "seller_about"
+      ],
+      "decision": "attribute_seller"
+    },
+    {
+      "id": "Z12_12LEVEL",
+      "claim": "Zen12 describes 12 levels",
+      "evidence_status": "seller_described",
+      "source_ids": [
+        "seller_about"
+      ],
+      "decision": "attribute_seller"
+    },
+    {
+      "id": "Z12_FOUR",
+      "claim": "Zen12 describes four audio formats",
+      "evidence_status": "seller_described",
+      "source_ids": [
+        "seller_about"
+      ],
+      "decision": "attribute_seller"
+    },
+    {
+      "id": "Z12_48",
+      "claim": "Full course checkout lists 48 MP3 files",
+      "evidence_status": "seller_described",
+      "source_ids": [
+        "seller_checkout"
+      ],
+      "decision": "attribute_seller"
+    },
+    {
+      "id": "Z12_HOUR",
+      "claim": "12 minutes equals hour advanced meditation",
+      "evidence_status": "unsupported_product_efficacy",
+      "source_ids": [
+        "seller_exact",
+        "research_i2023"
+      ],
+      "decision": "reject"
+    },
+    {
+      "id": "Z12_CLINICAL",
+      "claim": "Zen12 reliably treats anxiety or other medical conditions",
+      "evidence_status": "unsupported_product_efficacy",
+      "source_ids": [
+        "seller_exact"
+      ],
+      "decision": "reject"
+    },
+    {
+      "id": "Z12_BRAIN",
+      "claim": "Zen12 induces predictable EEG entrainment",
+      "evidence_status": "unsupported_product_efficacy",
+      "source_ids": [
+        "seller_research",
+        "research_i2023"
+      ],
+      "decision": "reject"
+    },
+    {
+      "id": "BINAURAL_REVIEW",
+      "claim": "Binaural EEG 14-study literature inconsistent",
+      "evidence_status": "systematic_review",
+      "source_ids": [
+        "research_i2023"
+      ],
+      "decision": "approved_with_caveat_not_Zen12"
+    },
+    {
+      "id": "SELLER_PRIVACY",
+      "claim": "Seller may pass purchaser identity/details to affiliate and market via SMS",
+      "evidence_status": "seller_policy",
+      "source_ids": [
+        "seller_privacy"
+      ],
+      "decision": "cite_as_policy"
+    },
+    {
+      "id": "CHECKOUT_GUARANTEE",
+      "claim": "One-year guarantee advertised on public checkout",
+      "evidence_status": "seller_described",
+      "source_ids": [
+        "seller_checkout",
+        "seller_terms"
+      ],
+      "decision": "mention_with_terms_unverified"
+    },
+    {
+      "id": "REFUND_PROCEDURE",
+      "claim": "Exact refund processes and exceptions",
+      "evidence_status": "unverified_full_terms",
+      "source_ids": [
+        "seller_terms"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "CURRENT_PRICE",
+      "claim": "Single reliable current price or coupon",
+      "evidence_status": "variable_checkout",
+      "source_ids": [
+        "seller_checkout"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "AFFILIATE_ACCEPTED",
+      "claim": "Final Vestige approved as affiliate",
+      "evidence_status": "not_verified",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "AFFILIATE_URL",
+      "claim": "Authorized earning URL and tracking terms supplied",
+      "evidence_status": "not_verified",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "PROMO_CHANNELS",
+      "claim": "Website, TikTok and email promotional rights",
+      "evidence_status": "not_verified",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "PRIVATE_SWIPE",
+      "claim": "Product-specific approved creative/swipe in account",
+      "evidence_status": "not_accessible",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "BUYER_DATA",
+      "claim": "Affiliate reporting will not pass buyer identity",
+      "evidence_status": "not_verified",
+      "source_ids": [
+        "seller_privacy"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "FTC_DISCLOSURE",
+      "claim": "Near-offer transparent commission relationship",
+      "evidence_status": "regulator_guidance",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "decision": "required_before_activation"
+    },
+    {
+      "id": "HEALTH_SUBSTANTIATION",
+      "claim": "Product health/mental benefit claims adequately supported",
+      "evidence_status": "not_established",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "decision": "withhold"
+    },
+    {
+      "id": "AB_TEST",
+      "claim": "Page variation improves buying behavior",
+      "evidence_status": "untested_hypothesis",
+      "source_ids": [],
+      "decision": "test_only_after_release"
+    },
+    {
+      "id": "FIELD_FOCUS",
+      "claim": "Existing free fieldbook route and single funnel",
+      "evidence_status": "cms_verified",
+      "source_ids": [
+        "fvs_focus"
+      ],
+      "decision": "preserve"
+    },
+    {
+      "id": "PUY_BOUNDARY",
+      "claim": "Published archival bridge does not validate magnetism",
+      "evidence_status": "cms_verified",
+      "source_ids": [
+        "fvs_puy"
+      ],
+      "decision": "preserve"
+    }
+  ],
+  "release_gates": {
+    "affiliate_acceptance": false,
+    "approved_exact_product_url": false,
+    "merchant_product_authorization": false,
+    "website_promotion_rights": false,
+    "tiktok_promotion_rights": false,
+    "email_promotion_rights": false,
+    "creative_license": false,
+    "privacy_no_buyer_pii": false,
+    "current_checkout_refund_terms": false,
+    "legal_claims_review": false,
+    "native_node_ci": false,
+    "real_browser_gutenberg_a11y": false,
+    "real_cwv_lighthouse": false,
+    "first_party_mp4_ready": false,
+    "caption_sync_verified": false,
+    "independent_site_QA": false,
+    "homepage_art_review": false,
+    "founder_exact_sha_release": false
+  },
+  "earning_url": null,
+  "commission_rate": null,
+  "current_price": null,
+  "claimed_product_use": false,
+  "actual_visitor_tracking": false
+}
