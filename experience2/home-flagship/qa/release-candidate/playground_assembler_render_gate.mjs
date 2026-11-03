@@ -99,6 +99,8 @@ async function checkView(page,width,axePath){
       main:!!root.querySelector('main'),h1:!!root.querySelector('h1'),
       inline_scripts:root.querySelectorAll('script[data-fv-source]').length,
       document_scripts:document.querySelectorAll('script[data-fv-source]').length,
+      source_script_names:[...document.querySelectorAll('script[data-fv-source]')].map(x=>x.dataset.fvSource).sort(),
+      interactive_enhanced:root.classList.contains('fv-hf--enhanced'),
       root_styles:root.querySelectorAll('style[data-fv-stage-only]').length,
       document_styles:document.querySelectorAll('style[data-fv-stage-only]').length,
       post_content_nodes:document.querySelectorAll('.wp-block-post-content').length};
@@ -109,12 +111,14 @@ async function checkView(page,width,axePath){
   assert.ok(state.focus>=1);
   assert.equal(state.overflow,false,`Horizontal overflow at ${width}`);
   assert.equal(state.main,true);assert.equal(state.h1,true);
-  assert.equal(state.inline_scripts,4,
-    'Gutenberg saved 4 scripts but actual Assembler render differs: '+JSON.stringify({
-      document_scripts:state.document_scripts,root_scripts:state.inline_scripts,
-      root_styles:state.root_styles,document_styles:state.document_styles,
-      post_content_nodes:state.post_content_nodes
-    }));
+  // WordPress serializes script tags in the stored Custom HTML, then the HTML
+  // browser parser can relocate them outside .fv-hf. Verify exact executable
+  // script identities in the rendered DOCUMENT, not an invented DOM hierarchy.
+  assert.deepEqual(state.source_script_names,
+    ['chronicle-lens.js','flagship.js','observer-lab.js','reading-trail.js'],
+    'Gutenberg script custody mismatch in actual rendered document');
+  assert.equal(state.interactive_enhanced,true,
+    'Flagship enhancement did not initialize in Assembler WordPress render');
   await page.addScriptTag({path:axePath});
   const violations=await page.evaluate(async()=>{
     if(!window.axe)throw new Error('axe unavailable: fail closed');
