@@ -1,0 +1,105 @@
+name: Preparedness R82 Four Snapshot Evidence Custody (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r81-frozen-contributor-three-way-provenance-hold-20261102
+    paths:
+      - preparedness/tools/r82_four_snapshot_citation_custody.py
+      - preparedness/tests/test_r82_four_snapshot_citation_custody.py
+      - preparedness/docs/R82_FOUR_SNAPSHOT_CITATION_SOURCE_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r82-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r82-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  four-snapshot-readonly-integrity:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout complete history without retained credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Immutable R81 base + strictly four additive files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "e803a7520cd0954c393d692d80bfb37113d4559f"
+          test "$BASE_REF" = "review/preparedness-r81-frozen-contributor-three-way-provenance-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r82-four-snapshot-citation-custody-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > "$RUNNER_TEMP/r82-diff"
+          python -I - <<'PY'
+          import os
+          from pathlib import Path
+          raw = Path(os.environ['RUNNER_TEMP'], 'r82-diff').read_bytes().split(b'\0')
+          observed = [(raw[i].decode(), raw[i+1].decode())
+                      for i in range(0, len(raw)-1, 2)]
+          desired = {
+              'preparedness/tools/r82_four_snapshot_citation_custody.py',
+              'preparedness/tests/test_r82_four_snapshot_citation_custody.py',
+              'preparedness/docs/R82_FOUR_SNAPSHOT_CITATION_SOURCE_CUSTODY_HOLD.md',
+              '.github/workflows/preparedness-r82-private-tests.yml',
+          }
+          assert len(observed) == 4, observed
+          assert {path for _,path in observed} == desired, observed
+          assert all(status == 'A' for status,_ in observed), observed
+          print('R81 immutable exact base and four ADD-only scoped files PASS')
+          PY
+      - name: Compile new tool and adversarial tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in ('preparedness/tools/r82_four_snapshot_citation_custody.py',
+                       'preparedness/tests/test_r82_four_snapshot_citation_custody.py'):
+              compile(Path(path).read_text(encoding='utf-8'), path, 'exec')
+          print('R82 Python syntax PASS')
+          PY
+      - name: Run standalone synthetic / adversarial four-snapshot tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r82_four_snapshot_citation_custody.py -v
+      - name: Read actual exact frozen, historical, current and RC source/citation Git objects
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r82_four_snapshot_citation_custody.py
+          python -I preparedness/tools/r82_four_snapshot_citation_custody.py --csv-stdout > "$RUNNER_TEMP/r82-PRIVATE-review.csv"
+          python -I - <<'PY'
+          import csv, os
+          from pathlib import Path
+          p = Path(os.environ['RUNNER_TEMP']) / 'r82-PRIVATE-review.csv'
+          with p.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+          articles = [x for x in rows if x['type'] == 'article']
+          sources = [x for x in rows if x['type'] == 'source']
+          assert len(articles) == 29, len(articles)
+          assert len(sources) >= 7, len(sources)
+          assert all(x['human_review'] == 'NOT_REVIEWED'
+                     and x['release'] == 'HOLD' for x in rows)
+          print('Private reviewer crosswalk: 29 authored articles, ' +
+                str(len(sources)) + ' origin-scoped source histories, ALL HOLD')
+          PY
+          rm -f "$RUNNER_TEMP/r82-PRIVATE-review.csv"
+      - name: Original native source and emergency safety validator
+        run: python -I preparedness/tools/validate.py
+      - name: Generate offline WordPress-ready drafts only (NO CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Run all Preparedness Python regression tests
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Mandatory publication HOLD remains
+        if: always()
+        run: |
+          echo 'R82 audit does NOT establish human source support or safety.'
+          echo 'Separate mandatory 13-stage gate remains FAILED CLOSED until independently passed.'
+          echo 'No QA PASS, publication, WordPress/CMS, navigation or homepage writes.'
