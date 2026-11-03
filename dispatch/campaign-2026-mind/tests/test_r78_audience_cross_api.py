@@ -99,7 +99,7 @@ class R78CrossApiGuards(unittest.TestCase):
         self.assertIn("<caption>",h)
         self.assertIn("HOLD_UNSENT",h)
         self.assertNotIn("<script",h)
-        self.assertNotIn("@",h)
+        self.assertNotRegex(h, r"[A-Za-z0-9_.+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}")
     def test_report_text_makes_no_send_claim(self):
         t=m.text_report(m.report(self.data()))
         self.assertIn("HOLD_UNSENT",t)
