@@ -1,0 +1,59 @@
+/* EX2 ISOLATED PLAYGROUND ONLY — NOT A PRODUCTION THEME OVERRIDE.
+ * Saved in the disposable Gutenberg draft (not injected by Playwright).
+ * Scoped to a page which contains the exact source-controlled flagship.
+ * Geometry based on measured Assembler baseline: 620px at 1440px.
+ */
+@supports selector(body:has([data-fv-home-flagship])) {
+  body:has([data-fv-home-flagship]) .wp-block-post-content > .fv-hf,
+  body:has([data-fv-home-flagship]) .wp-block-post-content > .fv-margin-strip {
+    box-sizing: border-box;
+    max-width: none !important;
+    width: 100vw !important;
+    margin-inline-start: calc(50% - 50vw) !important;
+    margin-inline-end: 0 !important;
+  }
+  body:has([data-fv-home-flagship]) .fv-margin-strip {
+    background: #0f100f;
+    color: #f4ead9;
+    border-block: 1px solid #34322e;
+  }
+  body:has([data-fv-home-flagship]) .fv-margin-strip__inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
+    max-width: 1400px;
+    margin-inline: auto;
+    padding: 12px 20px;
+  }
+  body:has([data-fv-home-flagship]) .fv-margin-strip__label {
+    font: 700 11px/1.5 system-ui, sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #c8a870;
+  }
+  body:has([data-fv-home-flagship]) .fv-margin-strip__window {
+    min-height: 6rem;
+    max-height: 8.5rem;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border-inline-start: 1px solid #34322e;
+    padding-inline: 12px;
+  }
+  body:has([data-fv-home-flagship]) .fv-margin-strip__item {
+    position: static !important;
+    display: block;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+    color: #f4ead9 !important;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  @media (max-width: 600px) {
+    body:has([data-fv-home-flagship]) .fv-margin-strip__inner {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+}
