@@ -1,0 +1,94 @@
+# Dedicated, read-only, exact-head Apollo staging checks. Not a deploy workflow.
+name: Apollo R87 verified photograph date rail (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r87*'
+      - 'experience2/evidence-atlas/tests/*r87*'
+      - 'experience2/evidence-atlas/R87_PHOTOGRAPH_DATE_RAIL_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r87-photo-date-rail.yml'
+permissions:
+  contents: read
+jobs:
+  source-identity-and-determinism:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify actual components and date uncertainty before reproducible packaging
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r87-pycache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_chronology_r87.py \
+            experience2/evidence-atlas/tests/test_chronology_r87.py \
+            experience2/evidence-atlas/tests/browser_chronology_r87.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_concordance_r86.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_chronology_r87.py -v
+          python experience2/evidence-atlas/tools/build_chronology_r87.py "$RUNNER_TEMP/r87-stage" "$RUNNER_TEMP/R87_A.zip"
+          python experience2/evidence-atlas/tools/build_chronology_r87.py "$RUNNER_TEMP/r87-stage" "$RUNNER_TEMP/R87_B.zip"
+          cmp "$RUNNER_TEMP/R87_A.zip" "$RUNNER_TEMP/R87_B.zip"
+          sha256sum "$RUNNER_TEMP/R87_A.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r87-deterministic-source-review-STAGING-HOLD
+          path: ${{ runner.temp }}/R87_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  chromium-a11y-print:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: source-identity-and-determinism
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned Chromium/Playwright/PDF/axe versions
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r87-axe" --no-save \
+            --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Actual Chromium 320-1920, keyboard/touch, no-JS, axe, performance, native print
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r87-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_chronology_r87.py "$RUNNER_TEMP/r87-stage"
+          python experience2/evidence-atlas/tests/browser_chronology_r87.py \
+            --src "$RUNNER_TEMP/r87-stage" --out "$RUNNER_TEMP/r87-browser" \
+            --axe "$RUNNER_TEMP/r87-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r87-browser/R87_BROWSER_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Preserve screenshots, accessibility/performance receipt and native print PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r87-real-chromium-accessibility-print-STAGING-HOLD
+          path: ${{ runner.temp }}/r87-browser/
+          if-no-files-found: warn
+          retention-days: 7
