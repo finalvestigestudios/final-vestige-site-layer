@@ -84,6 +84,8 @@ def run(root,out,axe=None,chromium=None):
                             TRACE['gate']='AXE_ACCESSIBILITY'
                             page.add_script_tag(path=str(axe))
                             result=page.evaluate('''async()=>{const x=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});return {violations:x.violations.map(v=>({id:v.id,count:v.nodes.length})),passes:x.passes.length}}''')
+                            if result['violations']:
+                                print('R88_AXE_IDS:'+','.join(x['id'] for x in result['violations']),flush=True)
                             assert not result['violations'],'R88_AXE_VIOLATIONS'
                             case['axe']=result
                         TRACE['gate']='PERFORMANCE_OBSERVERS'
