@@ -140,7 +140,7 @@ def hub(records):
 <details><summary>Open documented source custody</summary><p>{escape(record["scope"])}</p>
 <p><strong>Rights:</strong> INDIVIDUAL REVIEW REQUIRED; this link is not image permission.</p>
 <p class="raw">Official source: {url}</p></details>
-<p class="print-custody"><strong>Official NASA source:</strong> {url} · <strong>Photo-specific rights:</strong> INDIVIDUAL REVIEW REQUIRED</p>
+<p class="print-custody"><span class="print-url"><strong>Official NASA source:</strong> {url}</span><span class="print-rights"><strong>Photo-specific rights:</strong> INDIVIDUAL REVIEW REQUIRED</span></p>
 <nav class="per-source" aria-label="Evidence views for source {rid}">
 <a href="R88_READING_ROOM.html#r88-{rid}">Research Desk · {rid}</a>
 <a href="R87_PHOTOGRAPH_DATE_RAIL.html#r87-record-{rid}">Photo-date rail · {rid}</a>
