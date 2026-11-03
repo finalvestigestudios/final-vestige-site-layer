@@ -196,10 +196,29 @@ def index(lib, parent, *, expected=None, allow_historical_body_drift=False):
         })
     need(allow_historical_body_drift or actual==original,
          'original citation lost, inserted or replaced')
-    need(doc_counts['article']==parent['counts'].get('article') and
-         doc_counts['tool']==parent['counts'].get('tool') and
-         sum(doc_counts.values())==parent['counts'].get('documents'),
-         '41-document scope or tool/article identities changed')
+    # The frozen full-slate reviewer evidence covers 41 planned documents,
+    # but the *current* WordPress draft generator contains 35 articles and
+    # only one implemented tool. The remaining five tools are NOT draft files.
+    # Never counterfeit a WordPress-ready page to satisfy the historical count.
+    planned_tools = {x['slug']:x for x in getattr(lib,'taxonomy',{}).get('tools',[])}
+    current_tools = {slug for slug,meta in lib.articles.items()
+                     if meta.get('kind')=='tool'}
+    missing_tool_plans = sorted(set(planned_tools) - current_tools)
+    if expected is not None:
+        need(doc_counts['article']==35 and doc_counts['tool']==1
+             and len(planned_tools)==6 and len(missing_tool_plans)==5
+             and all(planned_tools[x].get('status')=='not-started'
+                     for x in missing_tool_plans),
+             'actual 35 article + one implemented tool census changed')
+        need(parent['counts'].get('documents')==41 and
+             parent['counts'].get('article')==35 and
+             parent['counts'].get('tool')==6,
+             'frozen 41-document reviewer census changed')
+    else:
+        need(doc_counts['article']==parent['counts'].get('article') and
+             doc_counts['tool']==parent['counts'].get('tool') and
+             sum(doc_counts.values())==parent['counts'].get('documents'),
+             'synthetic document/tool identities changed')
 
     by_url = defaultdict(list)
     for row in cite_rows:
@@ -248,6 +267,7 @@ def index(lib, parent, *, expected=None, allow_historical_body_drift=False):
         'complete_R91_original_evidence_UNABRIDGED_NOT_APPROVED':parent,
         'all_literal_shared_URL_review_dossiers_NOT_APPROVED':dossiers,
         'all_R91_vs_current_raw_body_citation_drift_workorders_NOT_APPROVED':mismatch_rows,
+        'planned_tool_slots_NOT_CURRENT_WORDPRESS_DRAFTS':missing_tool_plans,
         'counts':{
             **{k:parent['counts'][k] for k in (
               'documents','article','tool','citation_occurrences',
@@ -256,6 +276,10 @@ def index(lib, parent, *, expected=None, allow_historical_body_drift=False):
             'raw_source_rows':sum(map(len,source_urls.values())),
             'unique_source_urls':len(source_urls),
             'shared_url_groups':len(dossiers),
+            'current_wordpress_draft_article_files':doc_counts['article'],
+            'current_wordpress_draft_tool_files':doc_counts['tool'],
+            'current_wordpress_draft_document_files':sum(doc_counts.values()),
+            'planned_tools_without_wordpress_draft_files':len(missing_tool_plans),
             'current_raw_body_citation_occurrences':len(actual),
             'historical_raw_body_citation_alignment_review_cues':len(mismatch_rows),
             'shared_url_citation_occurrences':len(cite_rows),
