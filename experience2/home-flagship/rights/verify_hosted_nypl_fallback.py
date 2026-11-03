@@ -43,7 +43,13 @@ MUTATE = r"""() => {
  const fallback = article.querySelector('.fv-hf__case-image-fallback');
  if (cap.length !== 1 || cred.length !== 1 || !frame ||
      frame.textContent.trim() !== 'ARCHIVE IMAGE 03 / NYPL 5003296' || !fallback)
-   throw new Error('SOURCE_OR_FALLBACK_DRIFT');
+   throw new Error('SOURCE_OR_FALLBACK_DRIFT ' + JSON.stringify({
+       caption: cap.length, credit: cred.length,
+       paragraphs: paragraphs.length, frame: !!frame,
+       frame_label: frame?.textContent.trim().slice(0,85) || null,
+       fallback: !!fallback,
+       actual_p: paragraphs.map(p=>p.textContent.trim().slice(0,115))
+     }));
  if (!article.outerHTML.includes(record)) throw new Error('SOURCE_LINK_DRIFT');
  const outerBefore = article.outerHTML;
  imgs[0].remove();
