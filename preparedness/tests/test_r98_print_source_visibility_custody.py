@@ -23,6 +23,8 @@ MINIMAL = """
 .pa-empty[hidden] { display: none; }
 @container (min-width: 700px) { .pa-shell { display: grid; } }
 @media print {
+  .pa { background: #fff !important; color: #000 !important; }
+  .pa *, .pa a { color: #000 !important; background: transparent !important; }
   .pa a[href^="http"]::after { content: " (" attr(href) ")"; }
   .pa-tool, .pa-toc, .pa-filter, .pa-printbar, .pa-skip,
   .pa-card h3 a::after { display: none !important; }
@@ -88,6 +90,10 @@ BAD_DECLARATIONS = [
     ("content_visibility_auto", "content-visibility:auto"),
     ("opacity_integer", "opacity:0"),
     ("opacity_fraction", "opacity:0.0"),
+    ("opacity_tiny", "opacity:.0001"),
+    ("opacity_soft", "opacity:0.8"),
+    ("color_rgba_zero", "color:rgba(255,255,255,0)"),
+    ("color_hsla_zero", "color:hsla(0,100%,50%,0)"),
     ("opacity_var", "opacity:var(--hide)"),
     ("opacity_clamp", "opacity:clamp(0,0,0)"),
     ("scale_zero", "scale:0"),
@@ -170,6 +176,10 @@ BAD_INPUTS = [
     ("screen_review_hidden", MINIMAL + '\n@media screen {.pa-review {opacity:0}}'),
     ("nested_container_hidden", MINIMAL + '\n@container (min-width:400px) {.pa-sources {display:none}}'),
     ("print_hide_head", MINIMAL + '\n@media print {.pa-head {display:none}}'),
+    ("print_white_on_white", MINIMAL + '\n@media print {.pa-review {color:white}}'),
+    ("print_root_black_background", MINIMAL.replace("background: #fff !important", "background: #000 !important")),
+    ("print_root_white_text", MINIMAL.replace("color: #000 !important", "color: #fff !important")),
+    ("print_descendant_white_text", MINIMAL.replace(".pa *, .pa a { color: #000", ".pa *, .pa a { color: #fff")),
     ("wide_media_hide", MINIMAL + '\n@media (min-width:800px) {.pa-sources {visibility:hidden}}'),
     ("nonprint_root_hide", MINIMAL + '\n.pa {display:none}'),
 ]
