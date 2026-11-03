@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     env:
-      FV_THEME_PARENT: ${{ runner.temp }}/ex2-official-assembler
-      FV_SCREEN_DIR: ${{ runner.temp }}/ex2-synthetic-screens
-      FV_CANDIDATE: ${{ runner.temp }}/ex2-full-source-assembler.html
-      FV_MANIFEST: ${{ runner.temp }}/ex2-full-source-assembler.manifest.json
+      FV_THEME_PARENT: /tmp/ex2-official-assembler
+      FV_SCREEN_DIR: /tmp/ex2-synthetic-screens
+      FV_CANDIDATE: /tmp/ex2-full-source-assembler.html
+      FV_MANIFEST: /tmp/ex2-full-source-assembler.manifest.json
     steps:
       - uses: actions/checkout@v4
         with:
