@@ -75,7 +75,7 @@ class InvoiceReportSnapshotCustodyR169(unittest.TestCase):
 
     def test_exact_candidate_id_stable(self):
         self.assertEqual(self.attach(), self.attach())
-        self.assertRegex(self.attach()[0]["candidate_ref"], r"\\A[0-9a-f]{64}\\Z")
+        self.assertRegex(self.attach()[0]["candidate_ref"], r"\A[0-9a-f]{64}\Z")
 
     def test_near_candidate_id_stable(self):
         row = record(status="review_possible_duplicate")
