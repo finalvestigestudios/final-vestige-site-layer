@@ -27,6 +27,18 @@ if ( stripos( $host, 'finalvestige.com' ) !== false || ! in_array( $host, array(
 if ( ! is_file( $fixture_path ) ) {
     fv_ex2_probe_fail( 'Synthetic fixture absent' );
 }
+// WordPress KSES must not silently rewrite the synthetic Custom HTML blocks.
+// The standalone PHP route has no logged-in browser session; set ONLY the
+// ephemeral local Playground administrator after loopback + marker checks.
+// Do not deploy this PHP probe to production.
+$admins = get_users( array( 'role' => 'administrator', 'number' => 1 ) );
+if ( count( $admins ) !== 1 || ! isset( $admins[0]->ID ) ) {
+    fv_ex2_probe_fail( 'Isolated WordPress administrator unavailable' );
+}
+wp_set_current_user( (int) $admins[0]->ID );
+if ( ! current_user_can( 'unfiltered_html' ) ) {
+    fv_ex2_probe_fail( 'Missing isolated unfiltered_html capability' );
+}
 $source = file_get_contents( $fixture_path );
 if ( ! is_string( $source ) || strlen( $source ) < 1000
     || strpos( $source, 'FV-EX2 PAGE6 REVIEW-ONLY' ) === false
