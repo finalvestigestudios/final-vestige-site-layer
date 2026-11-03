@@ -18,7 +18,7 @@ This is a substantive optional copy-review pass for three original campaign slot
 
 ## Verified sources and coordination
 
-2026-11-02 read-only WordPress: Jetpack ON; post automatic emails OFF; email format excerpt; 52-page welcome *configured* (receipt NOT checked); diagnostics 2 total / 2 confirmed / 2 unconfirmed versus separately reported 0 email / 2 WP.com followers. The audiences are not inferable. Publisher address and unsubscribe **not verified**. No production writes or test sends. Mind Studio buyer guides PR #700 (Zen12) and #692 (Total Focus), plus #706 new Zen12 edition, are **OPEN DRAFT / UNPUBLISHED**, not usable CTAs.
+2026-11-02 read-only WordPress: Jetpack ON; post automatic emails OFF; email format excerpt; 52-page welcome *configured* (receipt NOT checked); diagnostics 2 total / 2 confirmed / 2 unconfirmed versus separately reported 0 email / 2 WP.com followers. The audiences are not inferable. Publisher address and unsubscribe **not verified**. No production writes or test sends. Mind Studio buyer guides PR #700 (Zen12) and PR #692 (Total Focus), plus PR #706 new Zen12 edition, are **OPEN DRAFT / UNPUBLISHED**, not usable CTAs.
 
 Sources: https://wordpress.com/support/newsletter/email-appearance/ ; https://wordpress.com/support/newsletter-settings/ ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business . Detailed direct NASA and merchant source links live in each manuscript and in SOURCE-AND-RELEASE.json. The public Inspire3 affiliate recruitment page is not evidence of Final Vestige enrollment or *email* promotion permission.
 
