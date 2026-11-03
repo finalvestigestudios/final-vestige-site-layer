@@ -13,7 +13,7 @@ Authenticated read-only WordPress.com page GET (site 256784396, page 6) returned
 | Jetpack subscription markers | 1 | 1 |
 | Textual Focus Fieldbook references | 5 | 5 |
 | NYPL catalog links | 2 | 2 |
-| `data-fv-archive-img` media controls | 4 | 3 |
+| Actual `<img data-fv-archive-img>` elements | **3** | **2** |\n| Literal `data-fv-archive-img` tokens (including JS selector) | 4 | 3 |
 | NYPL binary filename references | 4 (one `img`, `src+srcset`) | **0** |
 | Unverified NYPL public-domain assertions | 1 | **0** |
 
@@ -21,7 +21,7 @@ Authenticated read-only WordPress.com page GET (site 256784396, page 6) returned
 
 **Independently recomputed in-memory rights-safe candidate SHA-256:** `de7d7a951c780ad4d6a411438ada7d328a05965aa2fc3c3964c535e81089f3ba`
 
-The exact published article matched every precondition in PR #780: one Malbone article, one NYPL image with four responsive filename references, exact caption and unverified credit, one fallback, one image frame label, and linked primary source. Applying its exact four textual substitutions in an independent JavaScript in-memory replay preserved every byte **outside** the Malbone article. All 11 preflight and 7 postflight checks passed. This **does not claim** that PR #780's Python CLI has executed against that full source in a filesystem; the remaining explicit Python source-file run must reproduce the stated candidate hash. Abort if it does not.
+The exact published article matched every precondition in PR #780: one Malbone article, one NYPL image with four responsive filename references, exact caption and unverified credit, one fallback, one image frame label, and linked primary source. Applying its exact four textual substitutions in an independent JavaScript in-memory replay preserved every byte **outside** the Malbone article. All 11 preflight and 7 postflight checks passed. The original script counted four *text occurrences*, but only three are real image elements; the fourth occurs in a JavaScript selector. This branch corrects the image inventory in the parent transformer and adds a regression test. The protected count is now three actual elements before and two afterward. This **does not claim** that PR #780's Python CLI has executed against that full source in a filesystem; the remaining explicit Python source-file run must reproduce the stated candidate hash. Abort if it does not.
 
 ## Why this companion browser check exists
 
