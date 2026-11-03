@@ -90,7 +90,7 @@ jobs:
           wp eval 'if (!shortcode_exists("fv_apollo_r99_review")) { exit(4); } $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"Private research preview is unavailable") === false) { exit(5); } echo "Shortcode private fallback PASS\n";' --path="$WP_ROOT" --allow-root
           # Real WP shortcode execution without inserting, updating or publishing posts.
           # Role switching remains process-local to this disposable WP-CLI invocation.
-          wp eval '$u=get_user_by("login","apollo_editor"); if (!$u) exit(10); wp_set_current_user($u->ID); $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"<iframe")===false || strpos($s,"STAGING")===false) exit(11); echo "Editor shortcode PASS\n";' --path="$WP_ROOT" --allow-root
+          wp eval '$u=get_user_by("login","apollo_editor"); if (!$u) exit(10); wp_set_current_user($u->ID); $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"<iframe")===false || strpos($s,"Staging hold.")===false) exit(11); echo "Editor shortcode PASS\n";' --path="$WP_ROOT" --allow-root
           wp eval '$u=get_user_by("login","apollo_author"); if (!$u) exit(12); wp_set_current_user($u->ID); $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"Private research preview is unavailable")===false || strpos($s,"<iframe")!==false) exit(13); echo "Author fallback PASS\n";' --path="$WP_ROOT" --allow-root
           echo "$WP_ROOT" > "$RUNNER_TEMP/r100-wp-root-path"
           (php -S 127.0.0.1:8955 -t "$WP_ROOT" > "$RUNNER_TEMP/r100-php-server.log" 2>&1 & echo $! > "$RUNNER_TEMP/r100-php-server.pid")
