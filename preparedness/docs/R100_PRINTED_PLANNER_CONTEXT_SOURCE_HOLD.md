@@ -18,7 +18,7 @@ R100 creates a read-only `r100_printed_planner_context_custody.py` inspector. It
 
 ## Test and execution contract
 
-`python -I -m unittest discover -s preparedness/tests -p test_r100_printed_planner_context_custody.py -v` exercises 55 in-memory isolated cases, including adversarial missing/duplicate/escaped form fields, label loss, source/citation changes, source-reading removal, premature publication state, dynamic-output ambiguity, and deterministic report sealing.
+`python -I -m unittest discover -s preparedness/tests -p test_r100_printed_planner_context_custody.py -v` exercises 56 in-memory isolated cases, including adversarial missing/duplicate/escaped form fields, label loss, source/citation changes, source-reading removal, premature publication state, dynamic-output ambiguity, and deterministic report sealing.
 
 `python -I preparedness/tools/r100_printed_planner_context_custody.py --private-json-stdout` re-runs the inherited full R93–R99 **35 article + 1 actual tool** draft custody chain before recording its own workorder; it makes no filesystem changes. Also require `python -I preparedness/tools/validate.py`, `python -I preparedness/tools/build.py`, and complete `python -I -m unittest discover -s preparedness/tests -v`. Offline draft build is not a CMS action. Run against exact PR head, compare SHA pins, and keep mandatory integrity independent. No passing claim is made until actual hosted execution is inspected.
 
