@@ -166,7 +166,7 @@ def dangerous_declaration(selector, key, value, in_print):
     if key == "opacity" and v != "1":
         raise Hold("non-opaque or computed evidence text requires human review: " + selector)
     if key in ("scale", "zoom") and (v in ("0", "0.0", "0%", ".0", "calc(0)") or
-                                      v.startswith(("var(", "env(", "clamp(", "min(", "max(")))):
+                                      v.startswith(("var(", "env(", "clamp(", "min(", "max("))):
         raise Hold("opaque computed scale cannot prove evidence visibility: " + selector)
     if key.startswith(("mask", "-webkit-mask", "clip", "filter", "-webkit-filter")):
         if v not in ("none", "auto"):
