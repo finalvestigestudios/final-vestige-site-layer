@@ -1,0 +1,31 @@
+name: EX2 - rights-safe Malbone candidate (offline only)
+on:
+  pull_request:
+    paths:
+      - "experience2/home-flagship/rights/**"
+      - ".github/workflows/ex2-malbone-rights-safe-candidate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-source-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile isolated candidate transformer
+        run: python -I -m py_compile experience2/home-flagship/rights/withhold_unverified_nypl_capture.py
+      - name: Run rights safety and adversarial tests
+        run: |
+          python -m unittest discover -v \
+            -s experience2/home-flagship/rights \
+            -p "test_withhold_unverified_nypl_capture.py"
+      - name: Assert no network or privileged integrations
+        run: |
+          ! grep -En 'requests|urllib.request|subprocess.run\(\[.*curl|wpcom_|Authorization:|GITHUB_TOKEN' \
+            experience2/home-flagship/rights/withhold_unverified_nypl_capture.py
