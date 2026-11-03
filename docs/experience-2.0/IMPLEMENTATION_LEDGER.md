@@ -5,7 +5,9 @@ Single current record of workstreams, so work is not duplicated and release atte
 
 ## Production status
 
-**Nothing from this directive is live yet.** Live homepage (page 6) read 2026-11-02 through the WordPress.com connector: `modified 2026-10-30T09:14:14`, `content_hash 7afdb933d2ec68fd993ef015c97a6eb9edfe0576`, 6 top-level blocks, block hashes identical to the lock tokens in PR #604's rollback plan. The proposed change would still apply cleanly. It has **not** been applied.
+**LIVE (2026-11-02): the Experience 2.0 flagship homepage** replaced the old Studios hero on page 6; verified anonymously on finalvestige.com. Record: `PR604_LIVE_RELEASE_RECORD.md`. The paragraph below is the state *before* the release and is kept for history.
+
+**Before the release: nothing from this directive was live.** Live homepage (page 6) read 2026-11-02 through the WordPress.com connector: `modified 2026-10-30T09:14:14`, `content_hash 7afdb933d2ec68fd993ef015c97a6eb9edfe0576`, 6 top-level blocks, block hashes identical to the lock tokens in PR #604's rollback plan. The proposed change would still apply cleanly. It has **not** been applied.
 
 ## Decision: canonical homepage = PR #604 (flagship), not PR #49
 
