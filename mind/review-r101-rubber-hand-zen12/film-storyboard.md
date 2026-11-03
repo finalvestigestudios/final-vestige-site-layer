@@ -1,6 +1,6 @@
 # Original 40-second optional film: “A Timer Is Not a Clinical Trial”
 
-**Status:** Unpublished storyboard + captions. No MP4 produced in R101; do not imply otherwise. The source-controlled Zen12 pilot B visibly identifies this as a concept until a first-party file is hosted, tested and founder-approved. This is not an Inspire3 commercial, a licensed seller creative or a statement that Zen12's benefits are proven.
+**Status:** Unpublished storyboard + captions; an actual original 40.000-second H.264 MP4 was rendered **offline** in R101 using the exact committed renderer (Git blob `b3ee855c94d0b88bb54a3c4383974954d0b48dd9`); MP4 SHA-256 `f4ed13c8c0748852689f7c00aae13031ad12f506b18d97930f38251b52fa49be`, 540×960, 12fps, 480 frames, 77,832 bytes. It is **not** publicly hosted, published, or playable on WordPress. The source-controlled Zen12 pilot B visibly identifies its film treatment as a concept until a first-party file is hosted, browser-tested and founder-approved. This is not an Inspire3 commercial, a licensed seller creative or a statement that Zen12's benefits are proven.
 
 ## Narrative / ethics
 
