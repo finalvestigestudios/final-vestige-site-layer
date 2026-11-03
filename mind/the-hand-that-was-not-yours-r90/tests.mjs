@@ -17,6 +17,7 @@ const hub=load("mind-hub-noncanonical.blocks.html"), iv=load("investigation.md")
 const stripOutside=html=>html.slice(html.indexOf('<article class="fv-r90-guide"'),html.indexOf('</article>')+'</article>'.length);
 test("A and B embed byte-identical substantive guide",()=>{assert.equal(stripOutside(a),core);assert.equal(stripOutside(b),core)});
 test("No live affiliate URLs or merchant outbound anchors inside disabled offer",()=>{for(const h of [a,b]){const seg=h.slice(h.indexOf('<section class="fv-r90-offer"'),h.indexOf('</section>',h.indexOf('<section class="fv-r90-offer"'))+10);assert.doesNotMatch(seg,/<a\s/i);assert.doesNotMatch(seg,/(href=|data-affiliate=|onclick=|window\.location)/i)}});
+test("No clickable seller destinations anywhere in either unpublished variant",()=>{for(const h of [a,b]) assert.doesNotMatch(h,/<a\\b[^>]*href=["']https:\\/\\/(?:zen12\\.com|inspire3\\.com|affiliates\\.inspire3\\.com)/i)});
 test("Native disabled control, not merely aria-disabled",()=>{for(const h of [a,b]) assert.match(h,/<button\b[^>]*\bdisabled(?:\s|>|=)/i)});
 test("Clear commission disclosure precedes control in both variants",()=>{for(const h of [a,b]){const p=h.indexOf("If a future authorized earning link");const q=h.indexOf('<button type="button" disabled');assert.ok(p>=0&&q>p&&q-p<350)}});
 test("No third-party media, autoresponse, forms, or executable scripts",()=>{for(const h of [a,b,hub]) assert.doesNotMatch(h,/<(?:script|iframe|form)\b|<video\b[^>]*autoplay|on[a-z]+\s*=|fetch\s*\(/i)});
