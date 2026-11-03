@@ -41,7 +41,8 @@
     "guest_transfer_bytes": null,
     "claimed_42_broken_verified": false,
     "claimed_76_percent_savings_verified": false,
-    "production_replacements": 0
+    "production_replacements": 0,
+    "library_original_storage_bytes": 64900772
   },
   "media_library_index": [
     {
