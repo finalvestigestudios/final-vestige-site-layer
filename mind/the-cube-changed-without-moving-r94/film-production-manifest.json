@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-03",
+  "status": "OFFLINE_RENDERED_NOT_HOSTED",
+  "title": "The Cube Never Moved",
+  "durationSeconds": 40,
+  "frameRate": 12,
+  "frames": 480,
+  "dimensions": [
+    540,
+    960
+  ],
+  "codec": "h264",
+  "audio": "none",
+  "bytes": 131818,
+  "mp4Sha256": "0295a5b66eed21da439c0bb8b2dddd4a8b3d7710c109734acc6b1455dee85e83",
+  "sourcePath": "mind/the-cube-changed-without-moving-r94/render_film.py",
+  "sourceGitBlobSha": "fd9e23da757496ba26b2bba57ad2e71801e7b85d",
+  "captionCues": 6,
+  "captionSyncStatus": "UNVERIFIED_BROWSER",
+  "published": false,
+  "notes": [
+    "Original self-rendered footage: no external creative licensing needed",
+    "No product endorsement or merchant links",
+    "Video file remains an offline review artifact; not uploaded to WordPress or GitHub",
+    "VTT timing matches the six offline scene boundaries; hosted player testing outstanding"
+  ]
+}
