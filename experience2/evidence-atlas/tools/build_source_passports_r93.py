@@ -134,6 +134,7 @@ nav.routes{display:grid;grid-template-columns:minmax(0,1fr)}}
 header{padding:0}h1{font-size:28pt}.wrap{width:100%}.cards{display:block}
 .card{break-inside:avoid;margin:1rem 0;padding:.75rem;border:1px solid #777}
 nav,.download,details,.copy,.copy-state,.skip,footer{display:none!important}
+.card dt,.card a,.boundary strong{color:#000!important}.card a{text-decoration:underline}
 .print-source{display:block!important;color:#000!important;overflow-wrap:anywhere}
 .kicker,.boundary,.lead{color:#000!important}}
 """
