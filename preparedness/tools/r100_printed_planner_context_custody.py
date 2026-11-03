@@ -21,6 +21,22 @@ EXPECTED_FIELDS = frozenset({
     "wp-pets", "wp-petgal", "wp-extra",
 })
 EXPECTED_SOURCES = frozenset({"cdc-water-store", "ready-water", "ready-pets"})
+# Exact author-reviewed reading-scope text is frozen for this draft. Any edit
+# requires a new human source/citation review, not a silent hash refresh.
+EXPECTED_READING_SCOPE = {
+    "cdc-water-store": (
+        "The baseline of 1 gallon per person per day; 3 days minimum and 2 weeks as a goal; "
+        "replace self-stored water every six months."
+    ),
+    "ready-water": (
+        "The baseline; the statement that needs can double in very hot temperatures; "
+        "the six-month replacement of non-commercial water."
+    ),
+    "ready-pets": (
+        "That pets need several days' supply of water, with no quantity given, "
+        "which is why pet and medical allowances are left for you to enter."
+    ),
+}
 
 
 class Hold(ValueError):
@@ -143,7 +159,8 @@ def audit(body, css, meta, css_gate):
     need(type(uses) is dict and set(uses) == EXPECTED_SOURCES and
          all(isinstance(v, str) and v.strip() for v in uses.values()),
          "original planner per-source reading scope changed")
-    need("Print the result" in body and "Printing is the only way" in body,
+    need(uses == EXPECTED_READING_SCOPE,
+         "source reading depth/claim scope changed; independent review required")\n    need("Print the result" in body and "Printing is the only way" in body,
          "original print affordance/copy changed; re-review required")
     report = {
         "schema": SCHEMA, "issue": 136,
