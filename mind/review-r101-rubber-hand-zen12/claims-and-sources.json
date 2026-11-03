@@ -1,0 +1,754 @@
+{
+  "version": "r101.1",
+  "snapshot_date": "2026-11-03",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "canonical_hub_pr": 172,
+  "homepage_pr": 49,
+  "coordination_issues": [
+    126,
+    150,
+    171,
+    174
+  ],
+  "affiliate_url": null,
+  "active_tracking": false,
+  "source_records": [
+    {
+      "id": "S01",
+      "type": "seller",
+      "title": "Inspire3 company product catalog",
+      "url": "https://inspire3.com/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "S02",
+      "type": "seller",
+      "title": "Zen12 exact sales page (/hnp)",
+      "url": "https://zen12.com/hnp",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "S03",
+      "type": "seller",
+      "title": "Zen12 complete-course checkout (/getstarted)",
+      "url": "https://zen12.com/getstarted",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "S04",
+      "type": "seller",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "S05",
+      "type": "seller",
+      "title": "Inspire3 Terms of Sale",
+      "url": "https://inspire3.com/terms/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "S06",
+      "type": "seller",
+      "title": "Inspire3 public affiliate portal; NOT account-specific acceptance",
+      "url": "https://affiliates.inspire3.com/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R01",
+      "type": "independent-research",
+      "title": "Ingendoh et al 2023 systematic review of binaural-beat EEG",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R02",
+      "type": "independent-research",
+      "title": "Botvinick & Cohen 1998 foundational report abstract",
+      "url": "https://doi.org/10.1038/35784",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R03",
+      "type": "independent-research",
+      "title": "Rohde et al 2011 ownership and drift dissociation",
+      "url": "https://doi.org/10.1371/journal.pone.0021659",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R04",
+      "type": "independent-research",
+      "title": "Holle et al 2011 rotated-hand drift finding",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24168532/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R05",
+      "type": "independent-research",
+      "title": "Lush 2020 expectations critique",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R06",
+      "type": "independent-research",
+      "title": "Slater and Ehrsson 2022 multisensory counterinterpretation",
+      "url": "https://doi.org/10.3389/fnhum.2022.834492",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "R07",
+      "type": "independent-research",
+      "title": "Tsuji and Imaizumi 2024 replication and order effects",
+      "url": "https://doi.org/10.1525/collabra.116190",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "C01",
+      "type": "regulator",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "C02",
+      "type": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "FV01",
+      "type": "published-bridge",
+      "title": "Published Puységur Animal Magnetism Files link (origin recorded in issue 171; live site could not be re-fetched by general web)",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "FV02",
+      "type": "published-lead-magnet",
+      "title": "Existing Focus Fieldbook route (origin recorded in issue 171; live site could not be re-fetched by general web)",
+      "url": "https://finalvestige.com/focus/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "FV03",
+      "type": "published-compliance",
+      "title": "Existing affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    },
+    {
+      "id": "FV04",
+      "type": "published-compliance",
+      "title": "Existing editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "accessed": "2026-11-03",
+      "inspection": "R01-R07 scientific records available via scholarly abstract/open article; seller and FTC pages direct read; FV links from authenticated issue 171 inventory, not revalidated by open web."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "Z01",
+      "claim": "12-minute audio sessions",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_format",
+      "decision": "ALLOWED_WITH_EXPLICIT_ATTRIBUTION",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z02",
+      "claim": "12 levels in complete course",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "category": "seller_format",
+      "decision": "ALLOWED_WITH_EXPLICIT_ATTRIBUTION",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z03",
+      "claim": "four audio styles per level",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_format",
+      "decision": "ALLOWED_WITH_EXPLICIT_ATTRIBUTION",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z04",
+      "claim": "Beginner course 6 levels / 24 MP3s",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_format",
+      "decision": "ALLOWED_WITH_EXPLICIT_ATTRIBUTION_REVERIFY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z05",
+      "claim": "Premium course 12 levels / 48 MP3s",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "category": "seller_format",
+      "decision": "ALLOWED_WITH_EXPLICIT_ATTRIBUTION_REVERIFY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z06",
+      "claim": "Advanced course 6 later levels / 24 MP3s",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_format",
+      "decision": "ALLOWED_WITH_EXPLICIT_ATTRIBUTION_REVERIFY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z07",
+      "claim": "twelve minutes yields one hour of advanced meditation",
+      "source_ids": [
+        "S02",
+        "R01"
+      ],
+      "category": "seller_efficacy",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z08",
+      "claim": "specific stress reduction attributable to Zen12",
+      "source_ids": [
+        "S02",
+        "R01"
+      ],
+      "category": "seller_efficacy",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z09",
+      "claim": "specific health benefits attributable to Zen12",
+      "source_ids": [
+        "S02",
+        "R01",
+        "C02"
+      ],
+      "category": "seller_health",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z10",
+      "claim": "enhanced creativity from Zen12",
+      "source_ids": [
+        "S02",
+        "R01"
+      ],
+      "category": "seller_efficacy",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z11",
+      "claim": "improved focus and productivity from Zen12",
+      "source_ids": [
+        "S02",
+        "R01"
+      ],
+      "category": "seller_efficacy",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z12",
+      "claim": "guaranteed change in EEG frequencies",
+      "source_ids": [
+        "S02",
+        "R01"
+      ],
+      "category": "seller_science",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z13",
+      "claim": "2023 review is scientific proof of Zen12",
+      "source_ids": [
+        "R01"
+      ],
+      "category": "independent_evidence",
+      "decision": "REJECT_MISATTRIBUTION",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z14",
+      "claim": "2023 review results inconsistent across 14 EEG studies",
+      "source_ids": [
+        "R01"
+      ],
+      "category": "independent_evidence",
+      "decision": "ALLOWED_STUDY_SPECIFIC",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z15",
+      "claim": "overall meditation research automatically validates commercial audio",
+      "source_ids": [
+        "R01",
+        "C02"
+      ],
+      "category": "inference",
+      "decision": "REJECT_EXTRAPOLATION",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z16",
+      "claim": "seller's complete-course checkout requests mobile phone number",
+      "source_ids": [
+        "S03"
+      ],
+      "category": "seller_privacy",
+      "decision": "ALLOWED_AS_CHECKOUT_OBSERVATION_REVERIFY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z17",
+      "claim": "seller privacy policy permits affiliate receipt of buyer name/email/product",
+      "source_ids": [
+        "S04"
+      ],
+      "category": "seller_privacy",
+      "decision": "ALLOWED_AND_MATERIAL_WARNING",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z18",
+      "claim": "seller displays an order timer",
+      "source_ids": [
+        "S03"
+      ],
+      "category": "seller_ux",
+      "decision": "ALLOWED_AS_OBSERVATION_NOT_GENUINE_SCARCITY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z19",
+      "claim": "Zen12 one-year guarantee in seller Terms",
+      "source_ids": [
+        "S05"
+      ],
+      "category": "seller_terms",
+      "decision": "ALLOWED_ATTRIBUTED_REVERIFY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z20",
+      "claim": "credit card refunds after 90 days manually through PayPal per seller",
+      "source_ids": [
+        "S05"
+      ],
+      "category": "seller_terms",
+      "decision": "ALLOWED_ATTRIBUTED_REVERIFY",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z21",
+      "claim": "Final Vestige earns 60%+ for Zen12",
+      "source_ids": [
+        "S06"
+      ],
+      "category": "affiliate_terms",
+      "decision": "REJECT_UNVERIFIED_ACCOUNT_AND_SKU",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z22",
+      "claim": "Zen12 purchase price is fixed",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "category": "checkout",
+      "decision": "WITHHOLD_PRICE_VARIABLE",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z23",
+      "claim": "merchant-approved social/email/website promotional rights",
+      "source_ids": [
+        "S06"
+      ],
+      "category": "affiliate_rights",
+      "decision": "HOLD_WRITTEN_AUTHORIZATION",
+      "notes": "Owner/permission evidence required before activation."
+    },
+    {
+      "id": "Z24",
+      "claim": "licensed seller swipe/creative reuse",
+      "source_ids": [
+        "S06",
+        "S05"
+      ],
+      "category": "creative_rights",
+      "decision": "HOLD_WRITTEN_PERMISSION",
+      "notes": "Owner/permission evidence required before activation."
+    },
+    {
+      "id": "Z25",
+      "claim": "Final Vestige has personally used Zen12",
+      "source_ids": [],
+      "category": "experience",
+      "decision": "REJECT_FALSE_TESTIMONIAL",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z26",
+      "claim": "buyer identity passed from merchant to Final Vestige",
+      "source_ids": [
+        "S04"
+      ],
+      "category": "privacy",
+      "decision": "BLOCK_UNTIL_WRITTEN_EXCLUSION",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z27",
+      "claim": "near-link plain English commission disclosure",
+      "source_ids": [
+        "C01"
+      ],
+      "category": "compliance",
+      "decision": "REQUIRED_AT_EACH_ACTIVE_LINK",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "Z28",
+      "claim": "original film establishes equivalence result",
+      "source_ids": [],
+      "category": "visual_implied_claim",
+      "decision": "REJECT",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z29",
+      "claim": "unhosted film autoplay or remote embed",
+      "source_ids": [],
+      "category": "a11y_performance",
+      "decision": "REJECT",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "Z30",
+      "claim": "free listening preference notebook",
+      "source_ids": [
+        "editorial-original"
+      ],
+      "category": "exercise",
+      "decision": "ALLOWED_NONCLINICAL_NONDIAGNOSTIC",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "R08",
+      "claim": "1998 rubber hand report supports some subjective effects",
+      "source_ids": [
+        "R02"
+      ],
+      "category": "historical_science",
+      "decision": "ALLOWED_BOUNDED",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "R09",
+      "claim": "drift can dissociate from ownership report",
+      "source_ids": [
+        "R03",
+        "R04"
+      ],
+      "category": "independent_science",
+      "decision": "ALLOWED_BOUNDED",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "R10",
+      "claim": "expectancy challenges control conditions",
+      "source_ids": [
+        "R05",
+        "R07"
+      ],
+      "category": "scientific_dispute",
+      "decision": "ALLOWED_WITH_COUNTERVIEW",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "R11",
+      "claim": "only expectations cause rubber-hand ownership",
+      "source_ids": [
+        "R05",
+        "R06"
+      ],
+      "category": "scientific_dispute",
+      "decision": "REJECT_ONE_SIDED",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    },
+    {
+      "id": "R12",
+      "claim": "multisensory integration is a substantive competing mechanism",
+      "source_ids": [
+        "R06"
+      ],
+      "category": "scientific_dispute",
+      "decision": "ALLOWED_WITH_COUNTERVIEW",
+      "notes": "Narratively qualify, context-check, and reverify before publishing."
+    },
+    {
+      "id": "R13",
+      "claim": "Puységur historic magnetism proves modern perception results",
+      "source_ids": [
+        "FV01",
+        "R02"
+      ],
+      "category": "historical_analogy",
+      "decision": "REJECT_CAUSAL_LINK",
+      "notes": "Do not embed claim or imply it through graphics, testimonials or CTAs."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "explicit founder release approval",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "name": "named Final Vestige Inspire3 affiliate acceptance",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "name": "correct legal affiliate account identity",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "name": "approved Zen12-specific tracking URL",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "name": "merchant website promotional channel rights",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "name": "merchant TikTok/video channel rights",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "name": "merchant email channel rights (Dispatch separately owns issue)",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "name": "current SKU-specific creative-use permissions",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "name": "terms of partner attribution and cookie use",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "name": "contractual buyer-identifying referral report exclusion",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "name": "no purchaser name/email/product reporting",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "name": "no email-list duplication",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "name": "retention-free analytics approval",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "name": "actual complete checkout/refund reconfirmation",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "name": "FTC near-link visible disclosure legal review",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "name": "FTC implied health/outcome claims review",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "name": "seller trademark and visual creative permissions",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "name": "no original investigative article commerce contamination",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G19",
+      "name": "product comparison editorial QA",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G20",
+      "name": "publisher source and quote QA",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G21",
+      "name": "HTML Gutenberg sanitizer test on staging",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G22",
+      "name": "WordPress staging media and CSP QA",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G23",
+      "name": "screen-reader headings/landmarks and controls",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G24",
+      "name": "keyboard focus and touch tests",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G25",
+      "name": "no-JS readability and CTA hold",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G26",
+      "name": "360/390/768/1440/1920 responsive tests",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G27",
+      "name": "reduced-motion and contrast WCAG 2.2 AA",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G28",
+      "name": "first-party 40-second playable MP4 availability",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G29",
+      "name": "poster and WebVTT first-party availability",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G30",
+      "name": "actual caption sync and silent-video transcript QA",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G31",
+      "name": "Lighthouse/LCP and low bandwidth checks",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G32",
+      "name": "independent Site QA sign-off",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G33",
+      "name": "homepage art director review if any module requested",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G34",
+      "name": "Dispatch studio Issue174 coordination",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G35",
+      "name": "publication/menu/navigation freeze until authorized",
+      "state": "HOLD_CLOSED",
+      "evidence": null
+    }
+  ],
+  "notes": "Claims use restrictive seller vs independent research distinctions. Product referral approval and affiliate creative listings remain unavailable publicly; none inferred. Historic site bridge links originate from Issue171 verified inventory but open-web live fetch failed this sprint."
+}
