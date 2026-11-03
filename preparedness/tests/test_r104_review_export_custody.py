@@ -274,6 +274,23 @@ class Adversarial(unittest.TestCase):
         with self.assertRaises(gate.Gate):
             gate.create_payload(bad)
 
+    def test_resealed_original_source_record_forgery(self):
+        bad=copy.deepcopy(self.original)
+        row=bad["groups"][0]["rows"][0]
+        row["source_or_context_original_json_NOT_VERIFIED"] = '{"supports":"approved"}'
+        bad["sha256_seal"]=r102.digest({k:v for k,v in bad.items() if k!="sha256_seal"})
+        with self.assertRaises(gate.Gate):
+            gate.create_payload(bad)
+
+    def test_resealed_citation_reading_scope_forgery(self):
+        bad=copy.deepcopy(self.original)
+        row=next(r for g in bad["groups"] for r in g["rows"]
+                 if r["record_kind"]=="CITATION_OCCURRENCE")
+        row["author_source_use_or_recorded_support"]="invented claim support"
+        bad["sha256_seal"]=r102.digest({k:v for k,v in bad.items() if k!="sha256_seal"})
+        with self.assertRaises(gate.Gate):
+            gate.create_payload(bad)
+
     def test_group_count_change(self):
         bad=copy.deepcopy(self.original)
         bad["literal_url_groups"]=29
