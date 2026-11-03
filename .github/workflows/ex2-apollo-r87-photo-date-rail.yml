@@ -18,14 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Verify actual components and date uncertainty before reproducible packaging
         env:
-          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r87-pycache"
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: apollo-r87-deterministic-source-review-STAGING-HOLD
-          path: \${{ runner.temp }}/R87_A.zip
+          path: ${{ runner.temp }}/R87_A.zip
           if-no-files-found: error
           retention-days: 7
   chromium-a11y-print:
@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -72,7 +72,7 @@ jobs:
             --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
       - name: Actual Chromium 320-1920, keyboard/touch, no-JS, axe, performance, native print
         env:
-          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r87-browser-cache"
@@ -89,6 +89,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apollo-r87-real-chromium-accessibility-print-STAGING-HOLD
-          path: \${{ runner.temp }}/r87-browser/
+          path: ${{ runner.temp }}/r87-browser/
           if-no-files-found: warn
           retention-days: 7
