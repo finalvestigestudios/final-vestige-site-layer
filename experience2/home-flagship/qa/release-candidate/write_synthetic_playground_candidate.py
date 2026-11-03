@@ -9,8 +9,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 
+# Python -I intentionally removes the script directory from sys.path.
+# Import only reviewed, sibling source files from this exact Git checkout,
+# not arbitrary cwd/PYTHONPATH modules. Both independent CI lanes use -I.
+_SCRIPT_DIRECTORY = Path(__file__).resolve().parent
+sys.path.insert(0, str(_SCRIPT_DIRECTORY))
 from build_combined_page6_offline import build_candidate, structural_inventory, CSS_PATH
 from test_build_combined_page6_offline import source_fixture
 
