@@ -123,6 +123,11 @@
           "origin": "food",
           "id": "fsis-power-failure",
           "row_index": 0
+        },
+        {
+          "origin": "shelter",
+          "id": "fsis-power-failure",
+          "row_index": 41
         }
       ],
       "variants": [
@@ -158,6 +163,25 @@
             "human_link_check": false,
             "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds temperature about 48 hours (24 if half full) with the door closed; a refrigerator's freezer compartment may not hold as long; group freezer packages together.",
             "notes": "Short Q&A that points to the longer FSIS emergencies page. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 41,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure? (Ask USDA)",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "published": null,
+            "updated": "2024-12-17",
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+            "notes": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false."
           }
         }
       ]
