@@ -1,0 +1,36 @@
+name: EX2 source-only verified ABBA decision gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/home-flagship/qa/release-candidate/assess_css_abba.py'
+      - 'experience2/home-flagship/qa/release-candidate/test_assess_css_abba.py'
+      - 'experience2/home-flagship/qa/release-candidate/SAVED_CSS_ABBA_INDEPENDENT_ADJUDICATION_2026-11-02.md'
+      - '.github/workflows/ex2-css-abba-evidence-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact reviewed head without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Record actual commit
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and run synthetic adversarial ABBA receipt checks
+        run: |
+          python -m py_compile experience2/home-flagship/qa/release-candidate/assess_css_abba.py
+          python -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_assess_css_abba.py -v
+      - name: Verify read-only CLI (not a performance or release PASS)
+        run: python experience2/home-flagship/qa/release-candidate/assess_css_abba.py --help
