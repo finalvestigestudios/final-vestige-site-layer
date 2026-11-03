@@ -4,7 +4,7 @@
 
 **Subject:** The witness slept. Who verified the story?
 
-**Proposed preheader (NOT an established Jetpack field):** A 1784 case, an 1785 catalog puzzle, and the difference between testimony and proof.
+**Proposed preheader (NOT an established Jetpack field):** A 1784 case, a 1785 catalog puzzle, and the difference between testimony and proof.
 
 **Kind:** editorial — zero offers, zero commercial links
 
