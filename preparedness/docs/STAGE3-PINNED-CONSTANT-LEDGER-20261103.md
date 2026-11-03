@@ -58,3 +58,36 @@ Independent checks behind the numbers: 452 article-to-source pairs was recompute
 1. **Two tests contradict each other on the same safety sentence.** `test_start_here.test_removed_wording_stays_removed` bans `Do not stop, throw away or ration` in `three-day-kit`; `test_start_latest_reconciliation` requires `do not stop`, and commit `d44fc2c5` restored that sentence at QD review 1's request. Separately, the RC rewrote the FEMA-disagreement passage and removed the phrase `the two FEMA sources differ` that `test_start_latest_reconciliation` still requires, and changed the medication alert title and body. These are conflicts on **medication wording**; they were not edited around.
 2. **Start and shelter integrated files do not equal any contributor head.** The 10 shelter paths were first created in the RC integration commit `da334241`; the start paths come from the "Start Here release candidate" line (`242c440d`, `e9bd2d8c`, `92a2eb9d`, `d44fc2c5`). The R14 premise ("only the seven contributors' own articles") does not hold for these two clusters.
 3. Remaining local failures are otherwise Windows-environment artifacts (symlink privilege, `Errno 22`, `write_text` newline translation, git identity in temp repos) that fail identically at frozen #584.
+
+## 5. Stage 4: R14 successor manifest (food, health, hist-home)
+
+The frozen `R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json` is **left unmodified**: `r60_contributor_provenance_drift_docket.py` pins its blob (`83263d77…`) and states "never rebaseline R14", and `R20-…HOLD.json` pins it too. A successor file, `docs/R14R-SEVEN-CLUSTER-REPIN-20261103.json`, carries the re-pinned rows.
+
+| Constant or file | Old | New | Why |
+|---|---|---|---|
+| `private_release_preflight.MANIFEST` | `…/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json` | `…/R14R-SEVEN-CLUSTER-REPIN-20261103.json` | the preflight must read the successor; the original stays as R60/R20 evidence |
+| `cluster_git_parity_gate.REPIN_REFERENCES` (new) | none | `{6739a837…: integration repair stage 3b head}` | a re-pinned cluster may name an integrated reference commit **only** from this code-pinned allowlist, never one chosen by the manifest. Integrated blobs must also equal the blobs at the current head |
+| `cluster_git_parity_gate.EOL_ONLY_STATE` (new) | none | `EOL_ONLY_LF_NORMALIZED` | see below |
+| expected totals in the gate | fixed 71 exact / 1 different | computed `72 - mismatches` | otherwise a proven EOL-only exception could never be registered; the totals must still match the proven mismatches exactly |
+| `check_checkout` dirty-path list | R14 file | R14 file + R14R file | the successor is custody evidence |
+
+Pins in the successor manifest (all blob ids derived from git, none typed):
+
+| Cluster | Old pin | New pin | Scoped paths equal the integrated tree |
+|---|---|---|---|
+| food | `4b009361277e` | `f911ff7a655d` | 10 of 10 (only `CLUSTER-food.md` moved) |
+| health | `d2212d0ca075` | `d5ef5bafd683` | 8 of 8 (only `CLUSTER-health.md` moved) |
+| hist-home | `f654e600f89c` | `7504a5f09959` | 10 of 12 byte-identical; 2 EOL-only (below) |
+
+**hist-home EOL-only differences, confirmed from blob contents:** `root-cellars-cool-storage.body.html` (live 21,383 bytes, integrated 21,281; 102 CRLF, 6 bare LF) and `sanitation-before-germ-theory.body.html` (22,049 vs 21,947; 102 CRLF). For both, `live.replace(CRLF, LF) == integrated` exactly, and the integrated blob contains no CR. They are registered as `EOL_ONLY_LF_NORMALIZED` exceptions, and the gate re-proves each from the blob contents on every run (11 new unit tests; 7 scoped negative controls run against real git, all refused for the right reason).
+
+**Not re-pinned, and still closing the gate:**
+
+| Cluster | Reason |
+|---|---|
+| start | the integrated files are the Start Here release-candidate line (`242c440d`, `e9bd2d8c`, `92a2eb9d`, `d44fc2c5`), not the pinned head `2122d856`; 8 of 10 scoped paths differ from it. This is the first closure: `go-bags.body.html: current integration Git blob drift` |
+| shelter | all 10 integrated paths were first created in RC commit `da334241`; they equal no contributor head, including the `-continuation` and `-followup-evidence` refs |
+| hist-field | the verified corrected head `5c807fbf45` is on `fix/preparedness-hist-field-hastings-route-20261102`; the manifest's ref `claude/prep-hist-field-9db767` is `4e5caf8127`, so the gate's live-ref check would need that branch fast-forwarded or the ref map changed. Integration carries the LF-normalized corrected text |
+| hist-food | held: the three `nchfp-jerky` readings are not declared (`67e116e536` also changes two articles and a source id) |
+
+The real gate therefore still prints `CLOSED`. That is accurate: four of the seven clusters have no reviewed blob-identical head to pin.

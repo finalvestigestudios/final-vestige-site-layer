@@ -23,7 +23,8 @@ from typing import Callable
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 TEST_COUNT = re.compile(r"\bRan\s+(\d+)\s+tests?\s+in\s+\d+(?:\.\d+)?s\b")
 FAIL_WORDS = re.compile(r"\b(?:FAILED|ERROR|Traceback)\b")
-MANIFEST = "preparedness/docs/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json"
+# Stage 4 (2026-11-03): successor of the frozen R14 manifest, which is left unmodified (R60 pins its blob).
+MANIFEST = "preparedness/docs/R14R-SEVEN-CLUSTER-REPIN-20261103.json"
 # Every entry is a fixed local executable, not configurable by a reviewer report.
 STEPS = (
     ("native_validation", "validate.py", "plain"),

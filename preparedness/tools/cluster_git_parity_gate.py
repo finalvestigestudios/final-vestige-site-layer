@@ -39,6 +39,18 @@ EXCEPTION_PATH = 'preparedness/content/articles/preparedness-real-households.met
 EXCEPTION_BRANCH = 'start'
 EXCEPTION_OLD = 'a0c3a09143a825560b5a5ed79d857b7402bfa295'
 EXCEPTION_NEW = 'ba840917f34634ccd634c488eeca4a8a6b3a8fe2'
+# Stage 4 of the custody repair (2026-11-03). A cluster may be re-pinned to a newly reviewed
+# contributor head only by naming an integrated reference commit from this code-pinned
+# allowlist (never a commit chosen by the manifest). The integrated blobs must also equal
+# the blobs at the current head, exactly as for the original R13 reference.
+REPIN_REFERENCES = {
+    '6739a8376b430ebf9ce69200e57249ce0ab0217f':
+        'integration repair stage 3b head (integration/preparedness-custody-repair-20261103)',
+}
+# A contributor blob that stores CRLF against preparedness/.gitattributes (text eol=lf) may
+# differ from the integrated blob ONLY by line endings. The gate proves this from the blob
+# contents; a manifest assertion alone is never enough.
+EOL_ONLY_STATE = 'EOL_ONLY_LF_NORMALIZED'
 SHA1 = re.compile(r'[0-9a-f]{40}\Z')
 SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*\Z')
 MAX_BYTES = 2_000_000
@@ -91,6 +103,20 @@ def git_blob(root: Path, commit: str, path: str) -> str:
     return digest
 
 
+def git_content(root: Path, digest: str) -> bytes:
+    """Bounded, read-only blob bytes by object id (no shell, no checkout change)."""
+    require(is_sha1(digest), 'untrusted blob id')
+    try:
+        p = subprocess.run(['git', '-C', str(root), 'cat-file', 'blob', digest],
+                           stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                           timeout=15, check=False)
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        raise ParityFailure(f'git unavailable or timed out: {exc}') from exc
+    require(p.returncode == 0, 'git blob unavailable')
+    require(0 < len(p.stdout) <= MAX_BYTES, 'blob size outside the allowed range')
+    return p.stdout
+
+
 def git_ref(root: Path, branch: str, *, remote='origin') -> str:
     require(branch in BRANCHES.values(), 'unknown contributor branch')
     require(re.fullmatch(r'[a-zA-Z0-9_-]+', remote) is not None,
@@ -107,7 +133,8 @@ def check_checkout(root: Path, claimed_sha: str) -> str:
     head = _git(root, 'rev-parse', '--verify', 'HEAD^{commit}').decode('ascii').strip()
     require(head == claimed_sha, 'actual checkout HEAD does not match --current-integrated-sha')
     source_paths = ['preparedness/content/articles', 'preparedness/sources/fragments',
-                    'preparedness/docs/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json']
+                    'preparedness/docs/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json',
+                    'preparedness/docs/R14R-SEVEN-CLUSTER-REPIN-20261103.json']
     source_paths.extend(f'preparedness/docs/CLUSTER-{name}.md' for name in EXPECTED)
     dirty = _git(root, 'status', '--porcelain', '--untracked-files=all', '--', *source_paths)
     require(not dirty.strip(), 'uncommitted or untracked contributor evidence content; audit cancelled')
@@ -126,7 +153,8 @@ def _approved_path(path):
     return False
 
 
-def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R14_SHA):
+def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R14_SHA,
+                   content_lookup=None):
     """Return a HOLD receipt or raise; blob_lookup(commit,path), ref_lookup(branch).
 
     Every input is treated as untrusted until rederived from the actual Git
@@ -153,6 +181,7 @@ def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R
 
     seen_branches, seen_paths, seen_articles = set(), set(), set()
     mismatches, actual_counts, checks, digests = [], Counter(), 0, []
+    repinned: set[str] = set()
     for branch in manifest['branches']:
         require(isinstance(branch, dict), 'malformed contributor record')
         name = branch.get('name')
@@ -162,6 +191,11 @@ def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R
         require(is_sha1(commit), f'{name}: invalid contributor SHA')
         require(ref_lookup(BRANCHES[name]) == commit,
                 f'{name}: live contributor branch moved; re-review before integration')
+        reference = branch.get('integrated_reference_sha', R13_SHA)
+        require(reference == R13_SHA or reference in REPIN_REFERENCES,
+                f'{name}: integrated reference commit is not an allowlisted re-pin point')
+        if reference != R13_SHA:
+            repinned.add(name)
         files = branch.get('files')
         require(isinstance(files, list) and len(files) == 2*EXPECTED[name]+2,
                 f'{name}: file inventory changed')
@@ -190,7 +224,7 @@ def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R
             old, new = item.get('contributor_blob_sha'), item.get('integrated_blob_sha')
             require(is_sha1(old) and is_sha1(new), f'{path}: invalid Git object digest')
             require(blob_lookup(commit, path) == old, f'{path}: contributor Git blob mismatch')
-            require(blob_lookup(R13_SHA, path) == new, f'{path}: R13 frozen Git blob mismatch')
+            require(blob_lookup(reference, path) == new, f'{path}: R13 frozen Git blob mismatch')
             require(blob_lookup(integrated_head, path) == new,
                     f'{path}: current integration Git blob drift')
             require(item.get('identical') is (old == new), f'{path}: false equality flag')
@@ -211,11 +245,31 @@ def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R
     require(seen_branches == set(EXPECTED), 'seven cluster names must match exactly')
     require(len(seen_paths) == 72 and len(seen_articles) == 29,
             'lost cluster source file or article')
-    require(mismatches == [(EXCEPTION_BRANCH, EXCEPTION_PATH, EXCEPTION_OLD, EXCEPTION_NEW)],
-            'new or missing Git-blob discrepancy; do not auto-accept article edits')
     exceptions = manifest['exceptions']
-    require(len(exceptions) == 1, 'exception register must retain one unresolved discrepancy')
-    exception = exceptions[0]
+    eol_entries = [e for e in exceptions if isinstance(e, dict) and e.get('state') == EOL_ONLY_STATE]
+    review_entries = [e for e in exceptions
+                      if not (isinstance(e, dict) and e.get('state') == EOL_ONLY_STATE)]
+    eol_tuples = []
+    for e in eol_entries:
+        require(e.get('branch') in repinned and e.get('identical') is False and
+                is_sha1(e.get('contributor_blob_sha')) and is_sha1(e.get('integrated_blob_sha')) and
+                _approved_path(e.get('path')),
+                'EOL-only exception is only allowed on a re-pinned cluster with exact blob ids')
+        require(content_lookup is not None,
+                'EOL-only exception cannot be proven without blob contents')
+        raw_old = content_lookup(e['contributor_blob_sha'])
+        raw_new = content_lookup(e['integrated_blob_sha'])
+        require(isinstance(raw_old, bytes) and isinstance(raw_new, bytes) and raw_old != raw_new and
+                b'\r' not in raw_new and raw_old.replace(b'\r\n', b'\n') == raw_new,
+                f"{e.get('path')}: difference is not line endings only")
+        eol_tuples.append((e['branch'], e['path'], e['contributor_blob_sha'], e['integrated_blob_sha']))
+    require(len(set(eol_tuples)) == len(eol_tuples), 'duplicate EOL-only exception')
+    require(sorted(mismatches) ==
+            sorted([(EXCEPTION_BRANCH, EXCEPTION_PATH, EXCEPTION_OLD, EXCEPTION_NEW)] + eol_tuples),
+            'new or missing Git-blob discrepancy; do not auto-accept article edits')
+    require(len(review_entries) == 1,
+            'exception register must retain one unresolved discrepancy')
+    exception = review_entries[0]
     require(isinstance(exception, dict) and exception.get('branch') == EXCEPTION_BRANCH and
             exception.get('path') == EXCEPTION_PATH and exception.get('state') == 'NEEDS_HUMAN_DIFF_REVIEW' and
             exception.get('contributor_blob_sha') == EXCEPTION_OLD and
@@ -223,12 +277,13 @@ def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R
             exception.get('identical') is False,
             'source explanation discrepancy must remain human-review pending')
     expected_totals = {'contributor_branches': 7, 'cluster_authored_articles': 29,
-                       'scoped_blob_paths': 72, 'exact_matches': 71, 'nonidentical_paths': 1}
+                       'scoped_blob_paths': 72, 'exact_matches': 72 - len(mismatches),
+                       'nonidentical_paths': len(mismatches)}
     require(manifest.get('totals') == expected_totals, 'manifest totals are not canonical')
     return {'schema_version': 1, 'authority': 'GIT_OBJECT_PARITY_ONLY',
             'release_state': 'HOLD', 'may_publish': False,
             'contributor_branches': 7, 'cluster_articles': 29, 'inspected_paths': 72,
-            'git_blob_checks': checks, 'identical_paths': 71,
+            'git_blob_checks': checks, 'identical_paths': 72 - len(mismatches),
             'unresolved_contributor_metadata_differences': 1,
             'exception_state': 'NEEDS_HUMAN_DIFF_REVIEW',
             'other_integration_articles_outside_scope': 6,
@@ -237,7 +292,10 @@ def check_manifest(manifest: dict, blob_lookup, ref_lookup, *, integrated_head=R
             'qualified_safety_review_complete': False,
             'full_native_validator_and_QD_still_required': True,
             'frozen_reference_sha': R13_SHA, 'audited_integration_sha': integrated_head,
-            'verified_rows_digest_sha256': hashlib.sha256('\n'.join(sorted(digests)).encode()).hexdigest()}
+            'verified_rows_digest_sha256': hashlib.sha256('\n'.join(sorted(digests)).encode()).hexdigest(),
+            **({'repinned_clusters_to_allowlisted_reference': sorted(repinned),
+                'eol_only_paths_proven_from_blob_contents': len(eol_tuples)}
+               if repinned or eol_tuples else {})}
 
 
 def main(argv=None):
@@ -260,7 +318,8 @@ def main(argv=None):
         report = check_manifest(manifest,
                                 lambda sha, path: git_blob(args.repo_root, sha, path),
                                 lambda branch: git_ref(args.repo_root, branch, remote=args.remote),
-                                integrated_head=args.current_integrated_sha)
+                                integrated_head=args.current_integrated_sha,
+                                content_lookup=lambda digest: git_content(args.repo_root, digest))
         if args.receipt:
             require(not args.receipt.is_symlink(), 'symlinked report destination forbidden')
             args.receipt.write_text(json.dumps(report, indent=2, sort_keys=True)+'\n', encoding='utf-8')
