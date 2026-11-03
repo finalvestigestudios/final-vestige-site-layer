@@ -165,8 +165,12 @@ class Fidelity(unittest.TestCase):
             "complete_container_text_UNABRIDGED"] = "Changed claim {{cite:s}}"
         raw["sha256_seal"] = r86.digest(
             {k:v for k,v in raw.items() if k!="sha256_seal"})
-        with self.assertRaises(r86.Gate):
-            r87.audit(raw)
+        result = r87.audit(raw)
+        cue = result["all_41_rank_ambiguity_review_packets_NOT_APPROVED"][0][
+            "all_original_citation_and_claim_context_reviews_NOT_APPROVED"][0][
+            "review_cues_NOT_VERDICTS"]
+        self.assertIn("HISTORICAL_CLAIM_CONTAINER_NOT_VERBATIM_IN_RC_BLOCK", cue)
+        self.assertIs(result["may_publish"], False)
 
     def test_malformed_anchor_literal_token_is_cued_not_approved(self):
         raw = with_context()
