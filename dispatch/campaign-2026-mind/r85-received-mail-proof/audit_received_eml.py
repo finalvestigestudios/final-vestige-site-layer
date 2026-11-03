@@ -44,39 +44,56 @@ def canonical_url(value: str) -> str:
 
 
 class VisibleHTML(HTMLParser):
-    """Extract visible text and labeled links without emitting any private values."""
+    """Extract visible text and labeled links, excluding explicitly hidden markup."""
+    VOID_TAGS = {"br", "hr", "img", "input", "meta", "link", "source", "wbr"}
+
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.text = []
         self.links = []
-        self._ignored = 0
+        self._stack = []
         self._active = []
+
+    def _invisible(self):
+        return any(hidden for _, hidden in self._stack)
 
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
-        attrs = dict(attrs)
-        if tag in ("style", "script", "head", "title"):
-            self._ignored += 1
-        if self._ignored:
+        properties = {k.lower(): (v or "") for k, v in attrs}
+        css = re.sub(r"\s+", "", properties.get("style", "").lower())
+        hide = (tag in ("style", "script", "head", "title") or
+                "hidden" in properties or
+                properties.get("aria-hidden", "").lower() == "true" or
+                "display:none" in css or
+                "visibility:hidden" in css or
+                "opacity:0" in css or
+                self._invisible())
+        if tag not in self.VOID_TAGS:
+            self._stack.append((tag, hide))
+        if hide:
             return
         if tag in ("br", "p", "div", "li", "tr"):
             self.text.append(" ")
         if tag == "a":
-            entry = {"url": attrs.get("href", ""), "label": ""}
+            entry = {"url": properties.get("href", ""), "label": ""}
             self.links.append(entry)
             self._active.append(entry)
 
     def handle_data(self, data):
-        if not self._ignored:
+        if not self._invisible():
             self.text.append(data)
             for entry in self._active:
                 entry["label"] += data
 
     def handle_endtag(self, tag):
-        if tag.lower() in ("style", "script", "head", "title") and self._ignored:
-            self._ignored -= 1
-        if tag.lower() == "a" and self._active:
+        tag = tag.lower()
+        if tag == "a" and self._active:
             self._active.pop()
+        for i in range(len(self._stack) - 1, -1, -1):
+            if self._stack[i][0] == tag:
+                del self._stack[i:]
+                break
+
 
 
 def extract_parts(message):
