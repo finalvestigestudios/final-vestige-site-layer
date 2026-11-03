@@ -222,6 +222,12 @@ def audit(report, *, expected=None):
         key = tuple(identity)
         need(key not in historical_keys, "duplicate unpaired historical identity")
         historical_keys.add(key)
+    # Absent populations are explicit zeros, including synthetic tool-only and
+    # uncited documents. Missing keys must never stand in for a zero census.
+    for name in ("article", "tool", "citations", "source_variant_edges",
+                 "blocks", "citation_occurrences_for_human_review",
+                 "repeated_ID_occurrences", "rank_shift_risk_occurrences"):
+        counters.setdefault(name, 0)
     counters["documents"] = len(output)
     counters["unpaired_historical_reviews_preserved"] = len(leftovers)
     counters["historical_source_variants_observed"] = len(all_origins)
