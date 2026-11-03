@@ -1,0 +1,127 @@
+# Apollo R100: staging-only actual WordPress-core E2E. No real WP installations touched.
+name: Apollo R100 real disposable WordPress + source custody browser acceptance
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tests/browser_actual_wordpress_r100.py'
+      - 'experience2/evidence-atlas/R100_REAL_WORDPRESS_QA_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r100-actual-wordpress.yml'
+permissions:
+  contents: read
+jobs:
+  genuine-disposable-wordpress:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    services:
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: local-root-only
+          MARIADB_DATABASE: apollo_r100
+          MARIADB_USER: apollo
+          MARIADB_PASSWORD: local-test-only
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s --health-timeout=5s --health-retries=12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Verify exact source HEAD and prepare pinned build chain
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r100-pycache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tests/browser_actual_wordpress_r100.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_private_preview_r99.py -v
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/r94"
+          python experience2/evidence-atlas/tools/build_source_gallery_r97.py --src "$RUNNER_TEMP/r94" --out "$RUNNER_TEMP/r97"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/r98"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/r100-package-one" --archive "$RUNNER_TEMP/r100-one.zip"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/r100-package-two" --archive "$RUNNER_TEMP/r100-two.zip"
+          cmp "$RUNNER_TEMP/r100-one.zip" "$RUNNER_TEMP/r100-two.zip"
+          php -l "$RUNNER_TEMP/r100-package-one/fv-apollo-r99-private-preview.php"
+          sha256sum "$RUNNER_TEMP/r100-one.zip" | tee "$RUNNER_TEMP/r100-source-sha.txt"
+          test -z "$(git status --porcelain)"
+      - name: Install disposable WordPress core and activate read-only plugin
+        env:
+          WP_CLI_ALLOW_ROOT: '1'
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq php8.3-mysql mariadb-client > /dev/null
+          sudo curl -fsSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp
+          sudo chmod +x /usr/local/bin/wp
+          wp --info
+          export WP_ROOT="$RUNNER_TEMP/r100-real-wordpress"
+          wp core download --version=6.8.3 --path="$WP_ROOT" --allow-root
+          wp config create --dbname=apollo_r100 --dbuser=apollo --dbpass=local-test-only --dbhost=127.0.0.1 --path="$WP_ROOT" --allow-root
+          wp config set FV_APOLLO_R99_PRIVATE_PREVIEW true --raw --path="$WP_ROOT" --allow-root
+          wp core install --url=http://127.0.0.1:8955/ --title='Temporary Apollo R100 QA Only' --admin_user=apollo_admin --admin_password='ephemeral-Apollo-test-2026' --admin_email=qa@localhost.invalid --skip-email --path="$WP_ROOT" --allow-root
+          wp user create apollo_subscriber sub@localhost.invalid --role=subscriber --user_pass='ephemeral-subscriber-2026' --path="$WP_ROOT" --allow-root
+          mkdir -p "$WP_ROOT/wp-content/plugins/fv-apollo-r99-private-preview"
+          cp -a "$RUNNER_TEMP/r100-package-one/." "$WP_ROOT/wp-content/plugins/fv-apollo-r99-private-preview/"
+          wp plugin activate fv-apollo-r99-private-preview --path="$WP_ROOT" --allow-root
+          wp plugin status fv-apollo-r99-private-preview --path="$WP_ROOT" --allow-root
+          # Prove shortcode is registered and fails open for unprivileged WP-CLI session.
+          wp eval 'if (!shortcode_exists("fv_apollo_r99_review")) { exit(4); } $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"Private research preview is unavailable") === false) { exit(5); } echo "Shortcode private fallback PASS\n";' --path="$WP_ROOT" --allow-root
+          echo "$WP_ROOT" > "$RUNNER_TEMP/r100-wp-root-path"
+          (php -S 127.0.0.1:8955 -t "$WP_ROOT" > "$RUNNER_TEMP/r100-php-server.log" 2>&1 & echo $! > "$RUNNER_TEMP/r100-php-server.pid")
+          python - <<'PY'
+          import time,urllib.request
+          for i in range(60):
+              try:
+                  r=urllib.request.urlopen('http://127.0.0.1:8955/wp-login.php',timeout=3)
+                  assert b'user_login' in r.read()
+                  print('Real WordPress HTTP login ready')
+                  break
+              except Exception:
+                  time.sleep(1)
+          else: raise SystemExit('Real WordPress HTTP server not ready')
+          PY
+      - name: Real Chromium, axe, no-JS and source custody inside actual WordPress
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+          PYTHONUNBUFFERED: '1'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r100-axe" --ignore-scripts --no-save --no-package-lock --no-audit --no-fund axe-core@4.14.0
+          mkdir -p "$RUNNER_TEMP/r100-real-wp-evidence"
+          python experience2/evidence-atlas/tests/browser_actual_wordpress_r100.py \
+            --base http://127.0.0.1:8955/ \
+            --stage "$(cat "$RUNNER_TEMP/r100-wp-root-path")/wp-content/plugins/fv-apollo-r99-private-preview" \
+            --axe "$RUNNER_TEMP/r100-axe/node_modules/axe-core/axe.min.js" \
+            --out "$RUNNER_TEMP/r100-real-wp-evidence" \
+            --user apollo_admin --password 'ephemeral-Apollo-test-2026' \
+            --subscriber apollo_subscriber --subscriber-password 'ephemeral-subscriber-2026'
+          cp "$RUNNER_TEMP/r100-source-sha.txt" "$RUNNER_TEMP/r100-real-wp-evidence/R100_PINNED_SOURCE_SHA256.txt"
+          test -z "$(git status --porcelain)"
+      - name: Upload genuine disposable WP browser receipts (STAGING HOLD)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r100-genuine-wordpress-browser-evidence-STAGING-HOLD
+          path: |
+            ${{ runner.temp }}/r100-real-wp-evidence/
+            ${{ runner.temp }}/r100-source-sha.txt
+          if-no-files-found: warn
+          retention-days: 7
