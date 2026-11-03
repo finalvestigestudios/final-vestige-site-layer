@@ -46,7 +46,9 @@ CROSSWALK = 'preparedness/sources/crosswalk.json'
 FRAGMENT_README = 'preparedness/sources/fragments/README.md'
 FRAGMENT_README_GIT_BLOB = 'cec167dd6acaf9f6e92e87a61fa9aeacdad151a5'
 PENDING = 'pending-human-source-and-reading-scope-review'
-EXPECTED = dict(source_rows=224, unique_urls=186, shared_urls=30,
+# Stage 3b (2026-11-03): integrated candidate census (was 224/186/30/15/15); see the
+# stage 3b ledger. The 20 added rows are all read rows, so unread placeholders stay 15.
+EXPECTED = dict(source_rows=244, unique_urls=202, shared_urls=32,
                 duplicate_id_groups=15, unread_placeholders=15)
 
 
@@ -168,7 +170,7 @@ def audit(root: Path, *, expected: dict | None = None,
     # an eighth fragment. Allow no other extras, including hidden/temp files.
     allowed_with_documentation = expected_json | {Path(FRAGMENT_README).name}
     if expected == EXPECTED:
-        # Frozen full 224-row archive must retain its original instructions.
+        # Frozen full integrated archive must retain its original instructions.
         need(observed_files == allowed_with_documentation,
              'original source fragment README missing or unexpected inventory entry')
     else:

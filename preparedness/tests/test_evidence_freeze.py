@@ -31,9 +31,9 @@ class InputFreezeTests(unittest.TestCase):
 
     def test_exact_thirty_five_articles_plus_water_planner(self):
         lock = json.loads((ROOT / "sources" / "article-evidence-lock.json").read_text())
-        self.assertEqual(len(lock["records"]), 36)
+        self.assertEqual(len(lock["records"]), 41)
         self.assertEqual(lock["longform_article_count"], 35)
-        self.assertEqual(lock["local_tool_count"], 1)
+        self.assertEqual(lock["local_tool_count"], 6)
 
     def test_noncolliding_source_claim_change_is_detected(self):
         def change(root):

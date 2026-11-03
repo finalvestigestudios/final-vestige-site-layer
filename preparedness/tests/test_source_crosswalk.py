@@ -26,7 +26,8 @@ class PreparednessCrosswalkTests(unittest.TestCase):
         tools = {slug: m for slug, m in self.lib.articles.items() if m.get("kind") == "tool"}
         self.assertEqual(len(articles), 35)
         self.assertEqual(set(articles), set(self.lib.slate))
-        self.assertEqual(set(tools), {"water-planner"})
+        self.assertEqual(set(tools), {"water-planner", "home-fire-escape-worksheet", "power-outage-planner",
+                                    "family-reunification-card", "reunification-plan", "kit-builder"})
         self.assertEqual({m["status"]["publish"] for m in self.lib.articles.values()}, {"draft"})
 
     def test_every_canonical_path_is_unique(self):
@@ -37,7 +38,7 @@ class PreparednessCrosswalkTests(unittest.TestCase):
     def test_raw_source_rows_not_discarded(self):
         raw = sum(len(versions) for versions in self.lib.source_variants.values())
         self.assertEqual(raw, self.lib.crosswalk["raw_source_rows"])
-        self.assertEqual(raw, 224, "Snapshot must not silently lose contributor rows")
+        self.assertEqual(raw, 244, "Snapshot must not silently lose contributor rows")
         self.assertEqual(len(self.lib.crosswalk["source_files"]), 8)
 
     def test_crosswalk_exhaustively_records_all_shared_urls(self):
@@ -47,8 +48,8 @@ class PreparednessCrosswalkTests(unittest.TestCase):
                 by_url.setdefault(row["url"], []).append(row)
         actual = {url for url, rows in by_url.items() if len(rows) > 1}
         self.assertEqual(actual, set(self.lib.crosswalk_groups))
-        self.assertEqual(len(actual), 30)
-        self.assertEqual(len(by_url), 186)
+        self.assertEqual(len(actual), 32)
+        self.assertEqual(len(by_url), 202)
 
     def test_every_shared_scope_preserves_full_original_record(self):
         for url, group in self.lib.crosswalk_groups.items():

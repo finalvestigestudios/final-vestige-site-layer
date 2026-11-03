@@ -47,7 +47,7 @@ class StartRevisionEvidenceTests(unittest.TestCase):
         self.assertIs(s["human_link_check"], False)
 
     def test_latest_source_row_count_and_no_claimed_human_checks(self):
-        self.assertEqual(len(self.rows), 27)
+        self.assertEqual(len(self.rows), 29)
         self.assertTrue(all(row["human_link_check"] is False for row in self.rows))
 
     def test_fema_url_has_four_preserved_independent_contributor_scopes(self):
@@ -62,13 +62,13 @@ class StartRevisionEvidenceTests(unittest.TestCase):
         )
 
     def test_entire_source_inventory_remains_exhaustive(self):
-        self.assertEqual(self.lib.crosswalk["raw_source_rows"], 224)
-        self.assertEqual(self.lib.crosswalk["unique_source_urls"], 186)
-        self.assertEqual(self.lib.crosswalk["duplicate_url_groups"], 30)
+        self.assertEqual(self.lib.crosswalk["raw_source_rows"], 244)
+        self.assertEqual(self.lib.crosswalk["unique_source_urls"], 202)
+        self.assertEqual(self.lib.crosswalk["duplicate_url_groups"], 32)
         self.assertEqual(self.lib.crosswalk["duplicate_id_groups"], 15)
 
     def test_all_thirty_shared_source_groups_still_pending(self):
-        self.assertEqual(len(self.lib.crosswalk_groups), 30)
+        self.assertEqual(len(self.lib.crosswalk_groups), 32)
         self.assertTrue(all(
             g["review_status"] == "pending-human-source-and-reading-scope-review"
             for g in self.lib.crosswalk_groups.values()
@@ -76,7 +76,7 @@ class StartRevisionEvidenceTests(unittest.TestCase):
 
     def test_all_longform_articles_and_water_planner_remain(self):
         self.assertEqual(sum(m.get("kind") != "tool" for m in self.lib.articles.values()), 35)
-        self.assertEqual(sum(m.get("kind") == "tool" for m in self.lib.articles.values()), 1)
+        self.assertEqual(sum(m.get("kind") == "tool" for m in self.lib.articles.values()), 6)
         for slug, m in self.lib.articles.items():
             if m.get("kind") != "tool":
                 with self.subTest(slug=slug):

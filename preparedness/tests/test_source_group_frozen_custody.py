@@ -188,10 +188,10 @@ class NativeExactCheckout(unittest.TestCase):
         root=TESTS.parents[1]
         if not (root/'.git').exists():
             self.skipTest('not a complete Git checkout; R22 real-corpus check not executed')
-        receipt=gate.audit_frozen(root)
+        receipt=gate.audit_frozen(root,counts=gate.INTEGRATED_COUNTS,tools=gate.INTEGRATED_TOOLS)
         self.assertEqual(receipt['release_state'],'HOLD')
         self.assertIs(receipt['may_publish'],False)
-        self.assertEqual(receipt['shared_source_groups_pending_human_review'],30)
+        self.assertEqual(receipt['shared_source_groups_pending_human_review'],32)
 
 
 if __name__=='__main__':unittest.main()

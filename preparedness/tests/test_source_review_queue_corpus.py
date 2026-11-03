@@ -28,31 +28,31 @@ class CorpusSourceReviewQueueTests(unittest.TestCase):
         self.assertEqual(self.report["errors"], [], self.report["errors"])
 
     def test_complete_article_inventory_remains_35_plus_one_tool(self):
-        self.assertEqual(len(self.lib.articles), 36)
-        self.assertEqual(self.summary["distinct_article_urls"], 36)
+        self.assertEqual(len(self.lib.articles), 41)
+        self.assertEqual(self.summary["distinct_article_urls"], 41)
         self.assertEqual(sum(a.get("kind") != "tool" for a in self.lib.articles.values()), 35)
 
     def test_preserves_every_source_row_and_distinct_literal_url(self):
-        self.assertEqual(self.summary["source_rows"], 224)
-        self.assertEqual(self.summary["unique_literal_urls"], 186)
-        self.assertEqual(self.summary["shared_url_groups"], 30)
-        self.assertEqual(self.summary["machine_verified_source_rows"], 209)
-        # Exact draft corpus: 367 article-to-source pairs across 35 guides + tool.
-        self.assertEqual(self.summary["article_source_citation_pairs"], 367)
+        self.assertEqual(self.summary["source_rows"], 244)
+        self.assertEqual(self.summary["unique_literal_urls"], 202)
+        self.assertEqual(self.summary["shared_url_groups"], 32)
+        self.assertEqual(self.summary["machine_verified_source_rows"], 229)
+        # Exact draft corpus: article-to-source pairs across 35 guides + 6 tools.
+        self.assertEqual(self.summary["article_source_citation_pairs"], 452)
 
     def test_pending_human_review_status_is_not_silently_resolved(self):
-        self.assertEqual(self.summary["shared_scope_reviews_pending"], 30)
-        self.assertEqual(self.summary["human_link_checks_pending"], 224)
+        self.assertEqual(self.summary["shared_scope_reviews_pending"], 32)
+        self.assertEqual(self.summary["human_link_checks_pending"], 244)
         self.assertTrue(all(g["needs_human_scope_reconciliation"] for g in self.report["collisions"]))
         self.assertEqual(self.report["release_state"], "HOLD")
         self.assertFalse(self.report["may_publish"])
         self.assertFalse(self.report["independent_human_safety_review_performed_by_this_tool"])
 
     def test_every_article_and_tool_stays_unpublished_and_review_pending(self):
-        self.assertEqual(self.summary["article_drafts_and_tool_drafts"], 36)
-        # Safety states differ: 30 pending, two founder-recorded approved,
+        self.assertEqual(self.summary["article_drafts_and_tool_drafts"], 41)
+        # Safety states differ: 35 pending (30 articles + 5 tools), two founder-recorded approved,
         # four historical records marked not-required. None grants release.
-        self.assertEqual(self.summary["safety_reviews_pending"], 30)
+        self.assertEqual(self.summary["safety_reviews_pending"], 35)
         self.assertEqual(sum(m["safety_review"]["state"] == "approved" for m in self.lib.articles.values()), 2)
         self.assertEqual(sum(m["safety_review"]["state"] == "not-required" for m in self.lib.articles.values()), 4)
         self.assertTrue(all(meta["status"]["publish"] == "draft" for meta in self.lib.articles.values()))

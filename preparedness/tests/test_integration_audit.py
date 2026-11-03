@@ -23,20 +23,20 @@ class IntegrationReportTests(unittest.TestCase):
         slate = self.report["slate"]
         self.assertEqual(slate["actual_articles"], 35)
         self.assertEqual(slate["expected_articles"], 35)
-        self.assertEqual(slate["tools"], 1)
+        self.assertEqual(slate["tools"], 6)
 
     def test_drafts_never_become_published_from_a_report(self):
         self.assertEqual(self.report["publication"], "HOLD")
-        self.assertEqual(self.report["slate"]["drafts_including_tools"], 36)
+        self.assertEqual(self.report["slate"]["drafts_including_tools"], 41)
         self.assertFalse(self.report["wordpress_published_by_this_tool"])
 
     def test_source_depth_and_review_status_visible(self):
         src = self.report["sources"]
-        self.assertEqual(src["raw_rows"], 224)
-        self.assertEqual(src["verified_by_machine"], 209)
+        self.assertEqual(src["raw_rows"], 244)
+        self.assertEqual(src["verified_by_machine"], 229)
         self.assertEqual(src["human_link_checked_rows"], 0)
-        self.assertEqual(src["shared_url_groups"], 30)
-        self.assertEqual(src["pending_groups"], 30)
+        self.assertEqual(src["shared_url_groups"], 32)
+        self.assertEqual(src["pending_groups"], 32)
 
     def test_never_reports_human_qa_proven(self):
         self.assertFalse(self.report["external_human_qa_proven"])

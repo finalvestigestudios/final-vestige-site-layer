@@ -20,16 +20,16 @@ HOLD = 'HOLD'
 # crosswalk + inventories; the native CLI must never trust hashes supplied by
 # the mutable crosswalk. These are original, independently inspected Git blobs.
 FROZEN_BLOBS = {
-    'preparedness/sources/crosswalk.json': '1d907264dd580ffc95279f6ffb6bc50e8033c555',
-    'preparedness/taxonomy.json': 'eea601e53e16e36cd4fc890876bc249b39632370',
+    'preparedness/sources/crosswalk.json': 'da823671f06e63873e0264dbc0206ac5dad74d08',
+    'preparedness/taxonomy.json': '15c547bb3018ac182b12a51036389cfa39a59168',
     'preparedness/sources/register.json': 'b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77',
-    'preparedness/sources/fragments/start.json': '29574c328cbab0548e6e5d4a026694857d56b6b4',
-    'preparedness/sources/fragments/shelter.json': 'd9eeb4546e58f083031e0767aaea7cf112099e09',
+    'preparedness/sources/fragments/start.json': '96140d6d1872588e5d20d9052445c9157e88934d',
+    'preparedness/sources/fragments/shelter.json': '2a3f1a7ddeab2782add875be1e0e378513504aa1',
     'preparedness/sources/fragments/food.json': 'a1f73c8170932d6b3192e9cd506686d516d23d30',
     'preparedness/sources/fragments/health.json': 'cc29c439372b9d49debf78e63020ffe4d62baeb8',
     'preparedness/sources/fragments/hist-food.json': 'd10628342fea5f177a8d1be00dd906d0c9c7850e',
-    'preparedness/sources/fragments/hist-home.json': '6460d4b0734991675c889f28be2f73a19e3c42c0',
-    'preparedness/sources/fragments/hist-field.json': '4f369122cc0e230ee39654c215f18ffc79b5cc85',
+    'preparedness/sources/fragments/hist-home.json': '8d85fd868508c5caba14a839d119d55f31f14f72',
+    'preparedness/sources/fragments/hist-field.json': '88d4face1385caabb26349b4864679b45fa81f37',
 }
 FROZEN_HEADS = {
     'base': 'ee591e2df5de08aea7603fc4cbf3c5249361e119',
@@ -41,6 +41,16 @@ FROZEN_HEADS = {
     'hist-home': 'f654e600f89c321a480dd8f055be4d13d0673490',
     'hist-field': 'a5ce8a62f168db05c95232e3eb385dccd0d19e7f',
 }
+
+
+# Stage 3b (2026-11-03): the live-checkout path pins the integrated candidate, the
+# synthetic-fixture path keeps the original corpus values as its defaults.
+ORIGINAL_COUNTS = {'rows': 224, 'urls': 186, 'groups': 30, 'id_groups': 15}
+INTEGRATED_COUNTS = {'rows': 244, 'urls': 202, 'groups': 32, 'id_groups': 15}
+ORIGINAL_TOOLS = frozenset({'water-planner'})
+INTEGRATED_TOOLS = frozenset({'water-planner', 'home-fire-escape-worksheet',
+                              'power-outage-planner', 'family-reunification-card',
+                              'reunification-plan', 'kit-builder'})
 
 
 class SourceGateHold(ValueError):
@@ -61,7 +71,7 @@ def git_blob(data):
     return hashlib.sha1(b'blob ' + str(len(data)).encode('ascii') + b'\0' + data).hexdigest()
 
 
-def audit(crosswalk, taxonomy, source_bytes):
+def audit(crosswalk, taxonomy, source_bytes, *, counts=ORIGINAL_COUNTS, tools=ORIGINAL_TOOLS):
     """Require exact row, reading-note and unresolved-state parity with source files."""
     check(type(crosswalk) is dict and crosswalk.get('schema_version') == 1,
           'crosswalk schema unsupported')
@@ -76,11 +86,14 @@ def audit(crosswalk, taxonomy, source_bytes):
           all(type(s) is str and s and '/' not in s for s in slugs),
           'duplicate or invalid article URL slug')
     origins = crosswalk.get('article_origins')
-    check(type(origins) is dict and set(origins) == set(slugs) | {'water-planner'} and
+    check(type(origins) is dict and set(origins) == set(slugs) | set(tools) and
           set(origins.values()) <= set(SOURCE_FILES), 'article origin or water planner loss')
     check(any(t.get('slug') == 'water-planner' and t.get('gate') is True
               for t in taxonomy.get('tools', []) if type(t) is dict),
           'water planner safety gate missing')
+    check(all(any(t.get('slug') == s and t.get('gate') is True
+                  for t in taxonomy.get('tools', []) if type(t) is dict) for s in tools),
+          'a built tool lost its safety gate in the taxonomy')
     check(type(source_bytes) is dict and set(source_bytes) == set(SOURCE_FILES.values()),
           'source inventory missing or unexpected file')
     files = crosswalk.get('source_files')
@@ -121,13 +134,14 @@ def audit(crosswalk, taxonomy, source_bytes):
         by_id[row['source']['id']].append(row)
     repeated = {url: rows for url, rows in by_url.items() if len(rows) > 1}
     id_repeated = {sid for sid, rows in by_id.items() if len(rows) > 1}
-    check(len(all_rows) == crosswalk.get('raw_source_rows') == 224 and
-          len(by_url) == crosswalk.get('unique_source_urls') == 186 and
-          len(repeated) == crosswalk.get('duplicate_url_groups') == 30 and
-          len(id_repeated) == crosswalk.get('duplicate_id_groups') == 15,
+    check(len(all_rows) == crosswalk.get('raw_source_rows') == counts['rows'] and
+          len(by_url) == crosswalk.get('unique_source_urls') == counts['urls'] and
+          len(repeated) == crosswalk.get('duplicate_url_groups') == counts['groups'] and
+          len(id_repeated) == crosswalk.get('duplicate_id_groups') == counts['id_groups'],
           'source total, URL or ID duplicate accounting drift')
     groups = crosswalk.get('groups')
-    check(type(groups) is list and len(groups) == 30, '30 review groups required')
+    check(type(groups) is list and len(groups) == counts['groups'],
+          f"{counts['groups']} review groups required")
     grouped = set()
     queue = []
     for g in groups:
@@ -156,8 +170,9 @@ def audit(crosswalk, taxonomy, source_bytes):
     result = {'schema_version': 1, 'release_state': HOLD, 'may_publish': False,
               'independent_qd_pass': False, 'medical_safety_approved': False,
               'human_link_checks_completed_by_gate': 0,
-              'source_rows': 224, 'distinct_urls': 186, 'shared_url_review_groups': 30,
-              'duplicate_id_groups': 15, 'article_slugs': 35,
+              'source_rows': counts['rows'], 'distinct_urls': counts['urls'],
+              'shared_url_review_groups': counts['groups'],
+              'duplicate_id_groups': counts['id_groups'], 'article_slugs': 35,
               'water_planner_safety_gate': True,
               'known_food_provenance_exception': head['food'] == FIXTURE_FOOD,
               'review_queue': queue}
@@ -166,7 +181,7 @@ def audit(crosswalk, taxonomy, source_bytes):
 
 
 
-def audit_frozen(root):
+def audit_frozen(root, *, counts=ORIGINAL_COUNTS, tools=ORIGINAL_TOOLS):
     """R22 real-checkout trust boundary; never read network or change CMS.
 
     Source blobs and the taxonomy are checked against *external* reviewed
@@ -207,14 +222,15 @@ def audit_frozen(root):
     for group, author in FROZEN_HEADS.items():
         check(heads[group] == author or (group == 'food' and heads[group] == FIXTURE_FOOD),
               'wrong frozen source contributor SHA: ' + group)
-    result = audit(crosswalk, taxonomy, {name: raw[name] for name in SOURCE_FILES.values()})
+    result = audit(crosswalk, taxonomy, {name: raw[name] for name in SOURCE_FILES.values()},
+                   counts=counts, tools=tools)
     check(result.get('release_state') == HOLD and result.get('may_publish') is False,
           'crosswalk gate declared unsupported approval')
     return {'schema_version': 1, 'issue': 136, 'release_state': HOLD,
             'may_publish': False, 'independent_qd_pass': False,
             'medical_safety_approved': False, 'human_source_review_complete': False,
             'source_inputs_pinned': 10, 'article_slugs': 35,
-            'shared_source_groups_pending_human_review': 30,
+            'shared_source_groups_pending_human_review': counts['groups'],
             'food_author_head': AUTHOR_FOOD,
             'food_crosswalk_head': heads['food'],
             'food_provenance_alias_unresolved': heads['food'] == FIXTURE_FOOD,
@@ -357,7 +373,7 @@ def main():
     p.add_argument('--root', type=Path, default=Path('preparedness'))
     a = p.parse_args()
     try:
-        proof = audit_frozen(a.root.parent)
+        proof = audit_frozen(a.root.parent, counts=INTEGRATED_COUNTS, tools=INTEGRATED_TOOLS)
         proof.update(audit_archive_corpus(a.root.parent))
         print(json.dumps(proof, sort_keys=True))
         return 0
