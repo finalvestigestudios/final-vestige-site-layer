@@ -299,9 +299,23 @@ def index(parent):
     counters["multi_citation_DOM_blocks"] = sum(
         len(x["original_citation_ordinals_IN_BLOCK"]) > 1
         for d in output_docs for x in d["all_original_DOM_blocks_UNABRIDGED_NOT_REVIEWED"])
-    for name in ("article","tool","historical_qualifier_lexical_delta_candidates",
+    for name in ("article","tool","citation_occurrences","source_variant_edges",
+                 "historical_qualifier_lexical_delta_candidates",
                  "cited_blocks_with_number_or_unit_occurrences"):
         counters.setdefault(name, 0)
+
+    need(tuple(counters[k] for k in
+         ("documents","article","tool","citation_occurrences",
+          "source_variant_edges","complete_DOM_blocks")) ==
+         tuple(parent["counts"][k] for k in
+         ("documents","article","tool","citations",
+          "source_variant_edges","complete_DOM_blocks")),
+         "original full-document source/citation/DOM census mismatched R88")
+    need(counters["distinct_source_variants"] ==
+         parent["counts"]["distinct_source_variants"] and
+         counters["literal_URL_variant_collision_groups"] ==
+         parent["counts"]["literal_URL_variant_collision_groups"],
+         "source-variant/URL-collision evidence not conserved")
 
     bykey = {(r["kind"],r["slug"],r["citation_ordinal"]):r for r in context_rows}
     dossiers = []
