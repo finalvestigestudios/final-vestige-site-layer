@@ -43,3 +43,31 @@ Needs human judgement and cannot be inferred: the 20 additional source rows and 
 ## Recommendation
 
 Do not attempt the whole re-freeze as a single patch. Proceed in reviewable stages, each a new exact head: (1) crosswalk completeness (the 20 rows and the two changed entries) with the five unchecked sources decided; (2) the contributor re-pin per cluster, starting with the two that already match (food, health); (3) the evidence lock and R-gate constants; (4) the full fail-closed preflight at the exact head. Nothing here moves any article toward publication; `safety_review` stays pending and `may_publish` false.
+
+## Update: stages 1 and 2a done (2026-11-03)
+
+Branch `integration/preparedness-custody-repair-20261103` is now at `97921ca5e1f37535c34de95f12c99769a1bcb74d` (HOLD, unmerged, frozen PR #584 head `ddb3528b` untouched).
+
+### The 72 findings by root cause
+
+| Root cause | Findings | Status |
+|---|---:|---|
+| Crosswalk did not declare the integrated rows: 2 undeclared duplicate-URL groups (FSIS emergencies, NWS winter-during), a missing `start` variant on the CDC power-outage group, one `hist-field` LOC Prairie Traveler row refreshed (the fragment note now says the contents pages were read in full on 2026-11-01), and stale counters (224/186/30 to 244/202/32) | 7 | **Fixed in `30101ba5`**, all new or changed groups stay `pending-human-source-and-reading-scope-review` with no reviewer or date |
+| Five tools (`family-reunification-card`, `home-fire-escape-worksheet`, `power-outage-planner` from shelter; `kit-builder`, `reunification-plan` from start) missing from `article_origins`; the origin was chosen from the `shelter-*` or `start-*` source ids each body cites | 6 (1 taxonomy + 5 unchecked sources) | **Fixed in `30101ba5`** |
+| Evidence lock and raw-source pins describe an earlier tree (`freeze:`) | 59 | **Open, stage 3.** 28 of 80 locked paths differ and every one of them equals the blob in frozen PR #584 (several also equal the live `start` or `hist-home` head), so none is an unexplained edit |
+
+After the fixes `validate.py` reports 59 errors, all `freeze:`.
+
+### Findings worth recording
+
+1. **The `hist-field` "third version" was the pinned head plus nothing.** Compared with the verified corrected head (`5c807fbf45`), the integration differed only by line endings and the single reviewed Hastings correction. Stage 2a (`97921ca5`) applies that correction (1 body line, 2 fragment lines) to the integration.
+2. **The verified contributor heads store some files with CRLF**, which violates `preparedness/.gitattributes` (`text eol=lf`); git reports them as modified immediately after checkout. For `hist-field`, the five scoped paths are CRLF at `5c807fbf45` and `4e5caf81`; for `hist-home`, two article bodies are CRLF at `7504a5f099`. Everything else at those heads is LF. In each case the LF-normalized head equals the integration byte for byte apart from the reviewed correction. The R14 manifest's "SHA-1 blob equality" therefore cannot be satisfied for those files without storing CRLF blobs that no normal checkout will reproduce. A decision is needed, and a reviewer should see it explicitly: either pin the LF-normalized blobs (recommended, text identical) or keep CRLF blobs by plumbing.
+3. `food` (`f911ff7a65`) and `health` (`d5ef5bafd6`) scoped content is already identical to the integration; only the manifest pins are stale.
+
+### Test-suite effect (full discovery, 4,907 tests)
+
+Failing names fell from 98 to 93. Several `setUpClass` crashes were cleared (the loader no longer raises). New failures are all pinned-counter or pinned-byte tests that must move deliberately in stage 3: 30 shared-source groups (now 32), the 35-article slate (now 41 with the tools), and R23 archive-byte drift for four changed files.
+
+### Still needs a person, not a script
+
+The human source-scope review of the 32 duplicate groups; the qualified safety review; the LF-or-CRLF decision above; the `hist-home` "well tinned" precision edit through its owning workflow; `hist-food` (held). Stage 3 (regenerate the evidence lock with `evidence_freeze.py`, move the pinned gate constants, update the R14 manifest and R23 byte freeze, run the full fail-closed preflight) should be done after an independent look at stages 1 and 2a, as it creates new frozen evidence.
