@@ -125,8 +125,23 @@ if (process.argv.includes('--self-test')) {
         headers:{'X-FV-EX2-EDITOR-TOKEN':token}, timeout:90000,
         maxRedirects:0, failOnStatusCode:false
       });
+      const status = res.status();
+      if ([301,302,303,307,308].includes(status)) {
+        const location = res.headers()['location'] || '';
+        let target;
+        try { target = new URL(location,u); } catch { target = null; }
+        // Redacted route-only diagnostic. NEVER follow arbitrary redirects
+        // or print nonce, cookie, query parameters or complete URL.
+        throw new Error('Blocked unexpected Playground PHP redirect ' + status +
+          ' destination path ' + (target?.pathname || '[invalid]'));
+      }
+      const contentType = res.headers()['content-type'] || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Playground PHP route returned non-JSON HTTP ' + status +
+          ' content-type=' + contentType.split(';')[0]);
+      }
       const body = await res.json();
-      return {status:res.status(),body};
+      return {status,body};
     };
     const created = await act('create');
     assert.equal(created.status,200);
