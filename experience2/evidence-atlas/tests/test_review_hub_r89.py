@@ -82,7 +82,7 @@ class IntegratedReviewContracts(unittest.TestCase):
             copy = dest / "copy"
             target = copy / "R89_REVIEW_HUB.html"
             target.write_text(target.read_text().replace(
-                "https://www.nasa.gov/image-detail/", "https://nasa.gov.evil.example/image-detail/", 1))
+                'href="https://www.nasa.gov/image-detail/', 'href="https://nasa.gov.evil.example/image-detail/', 1))
             with self.assertRaisesRegex(ValueError, "UNREVIEWED_EXTERNAL"):
                 r89.audit_pages(copy, self.urls)
 
