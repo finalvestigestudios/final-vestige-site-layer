@@ -75,7 +75,7 @@ Choice blindness was not studied in Puységur's century, and modern researchers 
 
 The parallel lies in an evidentiary problem: when an observer asks a participant to explain an experience within an already supplied framework, the answer may be shaped by the presentation, the questions, and the expectations surrounding the event. That possibility does not license dismissing a historical subject as dishonest. It means the investigator must distinguish the report of an experience from proof of the agent said to cause it.
 
-For an earlier methodological turning point, read Final Vestige's investigation of [Franklin's 1784 animal-magnetism commission](https://finalvestige.com/mesmerism-what-franklins-1784-commission-actually-found/). The commission's tests were not experiments in choice blindness; they were tests of a proposed magnetic mechanism. The connecting idea is that an outcome described in good faith should still be checked against a design capable of distinguishing rival explanations.
+For an earlier methodological turning point, read Final Vestige's investigation of [Franklin's 1784 animal-magnetism commission](https://finalvestige.com/2026/11/02/mesmerism/). The commission's tests were not experiments in choice blindness; they were tests of a proposed magnetic mechanism. The connecting idea is that an outcome described in good faith should still be checked against a design capable of distinguishing rival explanations.
 
 ## A safe experiment that does not trick anybody
 
