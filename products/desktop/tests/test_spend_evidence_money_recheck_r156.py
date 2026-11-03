@@ -90,7 +90,7 @@ class SpendMoneyRecheckR156(unittest.TestCase):
         self.assertEqual(verify_membership(self.source, self.report).buckets_verified, 1)
 
     def test_multiline_records_keep_money_and_line_membership(self):
-        self.write([self.row("15.00", note="first\\nsecond"),
+        self.write([self.row("15.00", note="first\nsecond"),
                     self.row("-4.00", category="Other")])
         self.assertEqual(verify_membership(self.source, self.report).buckets_verified, 2)
 
