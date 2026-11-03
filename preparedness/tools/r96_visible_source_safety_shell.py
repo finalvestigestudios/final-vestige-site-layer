@@ -86,10 +86,14 @@ class Witness(HTMLParser):
             self.article_slug = attrs.get("data-slug")
             need(bool(self.article_slug), "missing rendered article slug")
             in_article = True
+        # A noncritical wrapper may hide an entire critical subtree; propagate
+        # structural invisibility across every ancestor, including ancestors
+        # that wrap the article itself.
+        blocked = invisible(attrs) or bool(parent and parent["blocked"])
         if in_article:
             sensitive_here = bool(classes & SENSITIVE) or self.guarded()
-            if invisible(attrs) and (sensitive_here or "pa-article" in classes
-                                     or "pa-body" in classes):
+            if blocked and (sensitive_here or "pa-article" in classes
+                            or "pa-body" in classes):
                 raise Gate("hidden, inert or aria-hidden critical evidence: " + tag)
             # The existing authoring template has one bounded Print button.
             # It is not a source link or claim and must never accept edits.
@@ -131,7 +135,8 @@ class Witness(HTMLParser):
                      "unsafe or altered outbound source link attributes")
             if "pa-cite" in classes and self.zone("pa-sources"):
                 raise Gate("citation marker inside source list")
-        f = {"tag": tag, "attrs": attrs, "classes": classes, "text": "", "anchors": []}
+        f = {"tag": tag, "attrs": attrs, "classes": classes, "blocked": blocked,
+             "text": "", "anchors": []}
         if in_article and tag == "a":
             marker = self.zone("pa-cite")
             if marker is not None:
