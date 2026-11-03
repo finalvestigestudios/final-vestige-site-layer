@@ -1,0 +1,63 @@
+name: EX2 HOLD full source-controlled 7-chapter Gutenberg Save (isolated)
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/qa/release-candidate/write_source_flagship_playground_candidate.py'
+      - 'experience2/home-flagship/qa/release-candidate/test_source_flagship_playground_candidate.py'
+      - 'experience2/home-flagship/**'
+      - '.github/workflows/ex2-full-source-flagship-gutenberg-HOLD.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ex2-full-source-flagship-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-controlled-full-flagship-save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    steps:
+      - name: Exact PR SHA checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Offline source custody and adversarial tests
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
+          node --check experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs
+          node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs --self-test
+          php -l experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.php
+      - name: Build actual seven chapter source with synthetic-only Margins and Jetpack fixtures
+        run: |
+          set -euo pipefail
+          python -I experience2/home-flagship/qa/release-candidate/write_source_flagship_playground_candidate.py \
+            --output /tmp/fv-ex2-full-source-7chapter.html \
+            --manifest /tmp/fv-ex2-full-source-7chapter.manifest.json
+      - name: Install only free pinned Playground and browser packages
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock --no-audit --no-fund @wp-playground/cli@3.1.56 playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Real Gutenberg Save and byte-exact raw readback with deletion
+        timeout-minutes: 16
+        run: |
+          set -euo pipefail
+          node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs \
+            --candidate /tmp/fv-ex2-full-source-7chapter.html \
+            --manifest /tmp/fv-ex2-full-source-7chapter.manifest.json
+      - name: Destroy staging-only artifact (never publish content or credentials)
+        if: always()
+        run: |
+          rm -f /tmp/fv-ex2-full-source-7chapter.html /tmp/fv-ex2-full-source-7chapter.manifest.json
+          echo "HOLD. Synthetic fixture and real source-controlled seven chapters only. No production writes."
