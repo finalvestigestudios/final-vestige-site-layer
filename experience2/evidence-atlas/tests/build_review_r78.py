@@ -13,6 +13,8 @@ FILES = (
     '.github/workflows/ex2-apollo-real-wp.yml',
     'experience2/evidence-atlas/R77_SYNCED_PATTERN_STAGING_HOLD.md',
     'experience2/evidence-atlas/R78_SYMLINK_CUSTODY_STAGING_HOLD.md',
+    'experience2/evidence-atlas/R81_SYNCED_WORDPRESS_FORENSICS_STAGING_HOLD.md',
+    'experience2/evidence-atlas/R82_REDACTED_FAILURE_TRANSPORT_STAGING_HOLD.md',
     'experience2/evidence-atlas/integration/fv-ex2-apollo-suite.php',
     'experience2/evidence-atlas/tests/build_review_r77.py',
     'experience2/evidence-atlas/tests/build_review_r78.py',
@@ -21,6 +23,8 @@ FILES = (
     'experience2/evidence-atlas/tests/test_nested_reusable_r77.php',
     'experience2/evidence-atlas/tests/test_pinned_file_boundaries_r78.php',
     'experience2/evidence-atlas/tests/test_wp_loopback_r72.py',
+    'experience2/evidence-atlas/tests/test_wp_synced_failure_r81.py',
+    'experience2/evidence-atlas/tests/test_wp_synced_redaction_r82.py',
     'experience2/evidence-atlas/tests/wordpress_r68.py',
     'experience2/evidence-atlas/tests/wp_reusable_r77.py',
 )

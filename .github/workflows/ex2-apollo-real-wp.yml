@@ -55,6 +55,8 @@ jobs:
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_pdf_pagination_r75.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_native_print_r76.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wordpress_r68.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_synced_failure_r81.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_synced_redaction_r82.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p 'test_*.py' -q
           python -m unittest discover -s experience2/evidence-atlas -p test_atlas.py -q
           php -l experience2/evidence-atlas/integration/fv-ex2-apollo-suite.php
