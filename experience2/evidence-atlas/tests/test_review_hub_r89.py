@@ -105,6 +105,16 @@ class IntegratedReviewContracts(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "UNAPPROVED_DUPLICATE_MEDIA"):
                 r89.audit_pages(copy, self.urls)
 
+    def test_print_custody_outside_closed_disclosures(self):
+        page = (self.output / "R89_REVIEW_HUB.html").read_text()
+        blocks = page.split('<article class="source"')[1:]
+        self.assertEqual(len(blocks), 6)
+        for item in blocks:
+            visible = item.split("</details>", 1)[1].split("</article>", 1)[0]
+            self.assertIn('class="print-custody"', visible)
+            self.assertIn("INDIVIDUAL REVIEW REQUIRED", visible)
+            self.assertIn("https://www.nasa.gov/image-detail/", visible)
+
     def test_source_receipt_hashes_are_exact(self):
         for name, digest in self.receipt["file_sha256"].items():
             self.assertEqual(r89.digest((self.output / name).read_bytes()), digest)
