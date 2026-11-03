@@ -113,6 +113,31 @@ else {
     assert.equal(staged.theme,'assembler');
     receipts.theme_version=staged.version;
     const login=await act('login');assert.equal(login.result,'LOGIN_SET');
+    // Save through the actual Gutenberg data-store before checking front-end render.
+    const editorPage=await context.newPage();
+    const editorUrl=new URL('/wp-admin/post.php',server.serverUrl);
+    editorUrl.searchParams.set('post',String(created.draft_id));
+    editorUrl.searchParams.set('action','edit');
+    await editorPage.goto(editorUrl.toString(),{waitUntil:'domcontentloaded',timeout:90000});
+    await editorPage.waitForFunction(id=>{
+      const s=window.wp?.data?.select('core/editor');
+      return s?.getCurrentPostId?.()===id && !s?.isSavingPost?.();
+    },created.draft_id,{timeout:90000});
+    const editorSaved=await editorPage.evaluate(async()=>{
+      const select=window.wp.data.select('core/editor');
+      const dispatch=window.wp.data.dispatch('core/editor');
+      if(!dispatch?.savePost)throw new Error('Gutenberg editor store absent');
+      dispatch.editPost({title:'FV EX2 SYNTHETIC EDITOR SAVED'});
+      await dispatch.savePost();
+      return {success:select.didPostSaveRequestSucceed(),
+        failed:select.didPostSaveRequestFail(),
+        draft:select.getEditedPostAttribute('status')==='draft'};
+    });
+    assert.deepEqual(editorSaved,{success:true,failed:false,draft:true});
+    await editorPage.close();
+    const preflight=await act('verify');
+    assert.equal(preflight.result,'PASS');
+    assert.equal(preflight.stored_sha256,hash(candidate));
     const render=async(width,{javascript=true,reducedMotion=false,tag='regular'}={})=>{
       const c=await browser.newContext({viewport:{width,height:900},javaScriptEnabled:javascript,
         reducedMotion:reducedMotion?'reduce':'no-preference'});
@@ -181,7 +206,7 @@ else {
     for(const width of [320,390,768,1440,1920]) results.push(await render(width));
     results.push(await render(390,{javascript:false,reducedMotion:true,tag:'nojs_reduced'}));
     const verified=await act('verify');
-    assert.equal(verified.result,'FAIL'===verified.result?'': 'PASS');
+    assert.equal(verified.result,'PASS');
     assert.equal(verified.stored_sha256,hash(candidate));
     receipts.render_cases=results;
     receipts.editor_raw_hash_verified=true;
