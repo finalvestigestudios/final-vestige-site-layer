@@ -157,11 +157,16 @@ def audit_document(lib, meta, rendered):
 
     number = {sid: n for n, sid in enumerate(expected_order, 1)}
     snapshots = {}
+    seen_urls = {}
     for n, sid in enumerate(expected_order, 1):
         src = lib.source_for(meta, sid)
         need(src.get("id") == sid and type(src.get("url")) is str and
              src["url"].startswith("https://") and src.get("_origin") is not None,
              slug + ": original contributor-scoped source identity lost: " + sid)
+        if src["url"] in seen_urls:
+            need(src["url"] in lib.crosswalk_groups,
+                 slug + ": same-URL source identities not recorded in crosswalk: " + sid)
+        seen_urls[src["url"]] = sid
         need(type(meta["source_use"][sid]) is str and meta["source_use"][sid].strip(),
              slug + ": missing complete local source scope: " + sid)
         actual = parsed.sources[n - 1]
@@ -179,9 +184,9 @@ def audit_document(lib, meta, rendered):
         need(expected_check in actual["text"],
              slug + ": source human-link status misrepresented: " + sid)
         pending = (lib.crosswalk_groups.get(src["url"]) or {}).get("review_status") != "resolved"
-        if src["url"] in lib.crosswalk_groups and pending:
-            need("Shared-source reading scope: independent review pending" in actual["text"],
-                 slug + ": unresolved URL collision is hidden: " + sid)
+        visible_collision = "Shared-source reading scope: independent review pending" in actual["text"]
+        need(visible_collision == (src["url"] in lib.crosswalk_groups and pending),
+             slug + ": shared-URL reviewer warning missing or misattributed: " + sid)
         snapshots[sid] = src
 
     kind = "tool" if meta.get("kind") == "tool" else "article"
