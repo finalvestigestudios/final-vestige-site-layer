@@ -8,6 +8,8 @@ import re
 from decimal import Decimal, InvalidOperation
 from typing import Mapping
 
+from .event_custody import snapshot_event_record
+
 # Price tolerances are explicit, ASCII, fixed-point decimals. The engine's
 # quantity and unit-price inputs already cap precision at eight places.
 _POLICY_DECIMAL = re.compile(r"(?:0|[1-9][0-9]{0,2})(?:\.[0-9]{1,8})?\Z")
@@ -42,9 +44,18 @@ def event_kind(row: Mapping[str, str], *, source: str) -> str:
     """Classify an explicit movement, without reflecting private CSV values."""
     if source not in _EVENT_TYPES:
         raise ValueError("Unsupported procurement event stream")
-    value = str(row.get("event_type", "") or source).strip().casefold()
+    # Snapshot native stored fields: a dict subclass may forge .get() and
+    # virtual views to reclassify an actual credit/return as an invoice/receipt.
+    owned = snapshot_event_record(row, family="Procurement")
+    raw = owned.get("event_type")
+    if raw is None or (type(raw) is str and raw == ""):
+        raw = source
+    if type(raw) is not str:
+        raise ValueError("Procurement event_type must be plain text")
+    value = raw.strip().casefold()
     if value not in _EVENT_TYPES[source]:
-        raw_line = str(row.get("row", "?"))
-        line = raw_line if _ROW_NUMBER.fullmatch(raw_line) else "?"
+        raw_line = owned.get("row", "?")
+        line = (raw_line if type(raw_line) is str
+                and _ROW_NUMBER.fullmatch(raw_line) and raw_line != "1" else "?")
         raise ValueError(f"Unsupported {source} event_type at input physical row {line}")
     return value
