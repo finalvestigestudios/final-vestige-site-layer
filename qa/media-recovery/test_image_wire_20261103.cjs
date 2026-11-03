@@ -50,18 +50,24 @@ function runTests(){
  invalid('missing after',x=>x.pairs[0].after=[],'unpaired runs');
  invalid('no inventory',x=>x.source_inventory_id='','source inventory');
  invalid('duplicate request',x=>x.pairs[0].before[0].requests.push(copy(x.pairs[0].before[0].requests[0])),'duplicate/missing request');
- d={schema_version:1,source_inventory_id:'SYNTHETIC-61POST-355SLOT',pairs:[]};
- for(let id=1;id<=61;id++){
-   const slots=Array.from({length:id<=50?6:5},(_,i)=>id+':'+i);
-   d.pairs.push(pair(id,slots,3));
+ const inventory=require('./wire_source_inventory_20261030.json');
+ d={schema_version:1,source_inventory_id:inventory.inventory_id,pairs:[]};
+ for(const row of inventory.posts){
+   const p=pair(row.post_id,row.expected_slots,3);p.page_url=row.page_url;d.pairs.push(p);
  }
- result=evaluate(d);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
  eq(result.observed_post_count,61);eq(result.observed_slot_count,355);
  eq(result.sitewide_76_percent_verified,true);eq(result.repetitions,3);passed++;
  d.pairs[0].after[0].requests[0].encoded_data_length=800;
- result=evaluate(d);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');eq(result.sitewide_76_percent_verified,true);passed++;
+ result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');eq(result.sitewide_76_percent_verified,true);passed++;
  d.pairs[0].before[1].conditions.viewport_width=1234;
- result=evaluate(d);eq(result.status,'INSUFFICIENT_DATA');passed++;
+ result=evaluate(d,inventory);eq(result.status,'INSUFFICIENT_DATA');passed++;
+ const frozen=copy(d);frozen.pairs[0].before[1].conditions.viewport_width=1280;
+ result=evaluate(frozen);eq(result.status,'LIMITED_SAMPLE_MEASURED');eq(result.sitewide_76_percent_verified,false);passed++;
+ const altered=copy(frozen);altered.pairs[0].page_url='https://finalvestige.com/another-article/';
+ result=evaluate(altered,inventory);eq(result.status,'LIMITED_SAMPLE_MEASURED');passed++;
+ const altInventory=copy(inventory);altInventory.inventory_id='wrong-fingerprint';
+ result=evaluate(frozen,altInventory);eq(result.status,'LIMITED_SAMPLE_MEASURED');passed++;
  return {passed,source:'synthetic mutations only',real_guest_http_tests:0,real_wire_bytes_measured:false};
 }
 module.exports={runTests};
