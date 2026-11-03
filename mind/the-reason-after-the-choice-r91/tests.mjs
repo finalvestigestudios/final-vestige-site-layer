@@ -41,7 +41,7 @@ test("Hub has exactly four distinct streams and uses known live pages",()=>{for(
 test("No redundant mailing-list forms",()=>{assert.doesNotMatch(hub+a+b,/<form\b/i);assert.match(hub,/existing Dispatch\/Jetpack funnel/)});
 test("Seller, evidence and regulatory sources are distinct",()=>{assert.ok(matrix.sources.length>=20);assert.ok(matrix.claims.length>=30);assert.ok(matrix.sources.find(s=>s.id==="S08").url==="https://zen12.com/hnp");assert.ok(matrix.sources.find(s=>s.id==="S15").url.includes("ftc.gov"));});
 test("No activation gate inadvertently enabled",()=>{assert.ok(Object.keys(matrix.activation_gates).length>=20);assert.ok(Object.values(matrix.activation_gates).every(v=>v===false));assert.equal(matrix.meta.earning_url,null);assert.equal(matrix.meta.partner_approval_verified,false)});
-test("No raw price, commission or claim of product trial",()=>{assert.equal(matrix.meta.price,null);assert.equal(matrix.meta.commission_rate,undefined);assert.equal(matrix.meta.review_not_product_trial,true)});
+test("No raw price, commission or claim of product trial",()=>{assert.equal(matrix.meta.price,null);assert.equal(matrix.meta.commission_rate,null);assert.equal(matrix.meta.review_not_product_trial,true)});
 test("Tracking is disabled and reporting threshold is 20",()=>{assert.equal(ATTRIBUTION_ENABLED,false);assert.equal(MIN_REPORTING_GROUP,20)});
 const valid={topic:"choice-blindness",surface:"organic",action:"guide_view",variant:"text"};
 test("Synthetic permitted event validation",()=>{assert.deepEqual(validateSyntheticEvent(valid),valid)});
