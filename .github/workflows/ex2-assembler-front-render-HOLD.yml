@@ -61,18 +61,24 @@ jobs:
               items=z.infolist()
               if not 6 <= len(items) <= 1500: raise RuntimeError('Bad theme file count')
               total=0
+              roots={pathlib.PurePosixPath(i.filename).parts[0] for i in items if i.filename}
+              if len(roots)!=1 or next(iter(roots)) not in ('assembler','assembler-wpcom'):
+                  raise RuntimeError('Unrecognized official Assembler archive root')
+              slug=next(iter(roots))
               for info in items:
                   parts=pathlib.PurePosixPath(info.filename).parts
-                  if not parts or parts[0]!='assembler' or any(p in ('.','..') for p in parts):
+                  if not parts or parts[0]!=slug or any(p in ('.','..') for p in parts):
                       raise RuntimeError('Unsafe theme zip path')
                   mode=(info.external_attr >> 16) & 0o170000
                   if mode == stat.S_IFLNK: raise RuntimeError('Theme symlink denied')
                   total+=info.file_size
               if total>30_000_000: raise RuntimeError('Theme expanded size too large')
               z.extractall(root)
-          css=(root/'assembler'/'style.css').read_text()
+          css=(root/slug/'style.css').read_text()
           if 'Theme Name: Assembler' not in css: raise RuntimeError('Theme identity mismatch')
-          print('Assembler theme preflight passed; extracted files:',len(items))
+          with open(os.environ['GITHUB_ENV'],'a') as f:
+              f.write('FV_THEME_DIR='+str(root/slug)+'\\n')
+          print('Assembler preflight passed. Slug:',slug,'files:',len(items))
           PY
       - name: Install free pinned browser tooling
         run: |
@@ -86,7 +92,7 @@ jobs:
           set -euo pipefail
           node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs \
             --candidate "$FV_CANDIDATE" --manifest "$FV_MANIFEST" \
-            --assembler-dir "$FV_THEME_PARENT/assembler" --evidence-dir "$FV_SCREEN_DIR"
+            --assembler-dir "$FV_THEME_DIR" --evidence-dir "$FV_SCREEN_DIR"
       - name: Store only non-sensitive synthetic candidate screenshots
         if: always()
         uses: actions/upload-artifact@v4
