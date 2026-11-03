@@ -1,0 +1,93 @@
+name: Preparedness R102 Author-Scoped Citation Collision Workorder (PRIVATE HOLD)
+on:
+  push:
+    branches:
+      - review/preparedness-r102-author-scope-crosswalk-hold-20261103
+  pull_request:
+    branches:
+      - review/preparedness-r101-print-context-preview-hold-20261103
+    paths:
+      - preparedness/tools/r102_author_scoped_collision_workorder.py
+      - preparedness/tests/test_r102_author_scoped_collision_workorder.py
+      - preparedness/docs/R102_AUTHOR_SCOPE_URL_COLLISION_WORKORDER_HOLD.md
+      - .github/workflows/preparedness-r102-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  source-review-draft-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assert eight latest contributor refs and four strictly additive files
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          baseline = "e4e0fc4f6d1441893e020c12baddef542cdaf9f1"
+          expected_paths = {
+              "A\tpreparedness/tools/r102_author_scoped_collision_workorder.py",
+              "A\tpreparedness/tests/test_r102_author_scoped_collision_workorder.py",
+              "A\tpreparedness/docs/R102_AUTHOR_SCOPE_URL_COLLISION_WORKORDER_HOLD.md",
+              "A\t.github/workflows/preparedness-r102-private-tests.yml",
+          }
+          observed = set(subprocess.check_output(
+              ["git", "diff", "--name-status", baseline, "HEAD"], text=True).splitlines())
+          assert observed == expected_paths, ("scope/add-only violation", observed)
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":
+                  "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, expected_sha in pins.items():
+              actual = subprocess.check_output(
+                  ["git", "rev-parse", "refs/remotes/origin/" + ref],
+                  text=True).strip()
+              assert actual == expected_sha, (ref, actual, expected_sha)
+          print("Eight exact remote ref pins, R101 parent and four ADD-only paths PASS.")
+          PY
+      - name: Compile and run author-scope collision adversarial regression
+        run: |
+          python -I -m compileall -q preparedness/tools/r102_author_scoped_collision_workorder.py preparedness/tests/test_r102_author_scoped_collision_workorder.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r102_*.py' -v
+      - name: Produce and verify private sealed thirty-group citation workorder
+        run: |
+          python -I preparedness/tools/r102_author_scoped_collision_workorder.py > "$RUNNER_TEMP/r102-private-HOLD-workorder.json"
+          python -I - <<'PY'
+          import hashlib, json, os, pathlib
+          data = json.loads((pathlib.Path(os.environ["RUNNER_TEMP"]) /
+                             "r102-private-HOLD-workorder.json").read_text())
+          seal = data.pop("sha256_seal")
+          canonical = json.dumps(data, sort_keys=True, ensure_ascii=False,
+                                 separators=(",", ":"), allow_nan=False)
+          assert hashlib.sha256(canonical.encode()).hexdigest() == seal
+          assert len(data["groups"]) == 30
+          assert data["original_article_drafts"] == 35
+          assert data["actual_buildable_tools"] == 1
+          assert data["release_state"] == "HOLD"
+          assert data["may_publish"] is False and data["may_merge"] is False
+          assert data["qualified_safety_review"] == "NOT_REVIEWED"
+          assert data["independent_QD"] == "NOT_REVIEWED"
+          print("Sealed thirty-group author-source workorder PASS, publication remains HOLD.")
+          PY
+      - name: Original Preparedness validator and offline WordPress DRAFT build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Full Python regression suite (35 articles, one actual tool, 36+ tests)
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Preserve independent release / safety QA HOLD
+        if: always()
+        run: |
+          echo 'PRIVATE HOLD: no merges, public WordPress, CMS, navigation, source approval, QD PASS or medical-safety claim.'
