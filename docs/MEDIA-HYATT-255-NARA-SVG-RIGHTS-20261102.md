@@ -1,6 +1,6 @@
 # MEDIA — Hyatt Regency post 255: NARA, Lowery and SVG evidence (2026-11-02)
 
-**Status: source-only HOLD, separate from homepage and Site QA #154.** The frozen authenticated CMS snapshot (2026-10-30) identifies post **255**, *The Load Doubled on Paper*, at <https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/>, with seven exact `Special:Redirect/file` Wikimedia source URLs and all seven ALT descriptions. Snapshot `qa/media-recovery/parts/05.json`, independently verified Git blob `9b16b828342a9ac338f3e65610fd3d8d508355e9`. **This batch did not re-read live WordPress.**
+**Status: source-only HOLD, separate from homepage and Site QA #154.** The frozen authenticated CMS snapshot (2026-10-30) identifies post **255**, *The Load Doubled on Paper*, at <https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/>, with seven exact `Special:Redirect/file` Wikimedia source URLs and all seven ALT descriptions. Snapshot `qa/media-recovery/parts/05.json`, independently verified Git blob `9b16b828342a9ac338f3e65610fd3d8d508355e9`. **Live WordPress independently rechecked on November 2 (authenticated, read-only posts.get): post remains published, modified 2026-10-30T01:11:08, and all 7/7 exact src URLs plus 7/7 ALT strings match the frozen source.**
 
 ## What was actually verified
 
@@ -30,6 +30,6 @@ Seven canonical Commons catalog HTML records were read. All seven *exact publish
 
 ## Tests and safeties
 
-`node --test qa/media-recovery/test_hyatt_255_20261102.cjs` for an actual Node checkout. Separate [offline release validator](../qa/media-recovery/validate_hyatt_255_20261102.cjs) compares all seven URLs, ALTs, slots, type, and catalog identifiers/geometry against the independent frozen part-05 source and retains publication/rights/traffic claims on HOLD. **35/35 exact-committed-source tests passed in an isolated V8 runtime** on Nov 2; actual native Node CI and guest Chrome still outstanding.
+`node --test qa/media-recovery/test_hyatt_255_20261102.cjs` for an actual Node checkout. Separate [offline release validator](../qa/media-recovery/validate_hyatt_255_20261102.cjs) compares all seven URLs, ALTs, slots, type, and catalog identifiers/geometry against the independent frozen part-05 source and retains publication/rights/traffic claims on HOLD. **39/39 exact-committed-source tests passed in an isolated V8 runtime** on Nov 2; actual native Node CI and guest Chrome still outstanding.
 
 **No copyrighted binaries scraped/rehosted, no production CMS writes, no homepage changes, no subscription spend.** PR #183 is an isolated draft; PR #154 owns browser acceptance.
