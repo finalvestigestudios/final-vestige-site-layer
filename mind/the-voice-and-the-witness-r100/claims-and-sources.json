@@ -1,0 +1,625 @@
+{
+  "schema": "fv-mind-r100-v1",
+  "checked_on": "2026-11-03",
+  "intended_publication": false,
+  "affiliate_url": null,
+  "affiliates_approved": false,
+  "source_records": [
+    {
+      "id": "S1",
+      "type": "primary_history",
+      "title": "Émile Coué 1922, Self Mastery Through Conscious Autosuggestion",
+      "url": "https://www.gutenberg.org/ebooks/27203",
+      "verification": "verified_direct_source",
+      "note": "Book records Coué's ideas, not established effectiveness"
+    },
+    {
+      "id": "S2",
+      "type": "primary_history",
+      "title": "James Braid 1843 Neurypnology record",
+      "url": "https://openlibrary.org/books/OL7187745M/Neurypnology",
+      "verification": "verified_bibliography",
+      "note": "Bibliography supports date/title only"
+    },
+    {
+      "id": "S3",
+      "type": "existing_live_fv",
+      "title": "Puységur's Animal Magnetism Files, WP page ID 1377",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verification": "verified_wp_read",
+      "note": "Existing archival interpretation; no changes"
+    },
+    {
+      "id": "S4",
+      "type": "existing_live_fv",
+      "title": "Seven Day Focus Fieldbook, WP page ID 1579",
+      "url": "https://finalvestige.com/focus/",
+      "verification": "verified_wp_read",
+      "note": "Existing lead magnet; no new list"
+    },
+    {
+      "id": "S5",
+      "type": "academic_review",
+      "title": "Zahedi Lynn Sommer 2024 hypnosis theory review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "verification": "verified_abstract",
+      "note": "Competing explanatory models; no audio SKU claims"
+    },
+    {
+      "id": "S6",
+      "type": "academic_review",
+      "title": "Eason and Parris 2019 self-hypnosis trials",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "verification": "verified_abstract",
+      "note": "22 RCTs, passive audio distinct from self-directed training"
+    },
+    {
+      "id": "S7",
+      "type": "academic_review",
+      "title": "Ingendoh Posny Heine 2023 EEG binaural beats",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "verification": "verified_abstract",
+      "note": "14 heterogeneous studies; NOT Zen12 trial"
+    },
+    {
+      "id": "S8",
+      "type": "merchant_brand",
+      "title": "Inspire3 official product catalog",
+      "url": "https://inspire3.com/",
+      "verification": "verified_public_page",
+      "note": "Seller descriptions only"
+    },
+    {
+      "id": "S9",
+      "type": "merchant_offer",
+      "title": "Zen12 precise offer sales page",
+      "url": "https://zen12.com/hnp",
+      "verification": "verified_public_page",
+      "note": "12-minute sessions, levels/styles/package assertions"
+    },
+    {
+      "id": "S10",
+      "type": "merchant_checkout",
+      "title": "Zen12 full-package checkout",
+      "url": "https://zen12.com/getstarted",
+      "verification": "verified_public_page",
+      "note": "48 MP3s shown, mobile number requested, timer present; no quote of price"
+    },
+    {
+      "id": "S11",
+      "type": "merchant_science",
+      "title": "Zen12 vendor research page",
+      "url": "https://zen12.com/research",
+      "verification": "verified_public_page",
+      "note": "Sales explanation not independent validation"
+    },
+    {
+      "id": "S12",
+      "type": "merchant_privacy",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "verification": "verified_public_page",
+      "note": "Affiliate may receive purchaser name/email/items; contract must exclude"
+    },
+    {
+      "id": "S13",
+      "type": "merchant_affiliate",
+      "title": "Inspire3 generic affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "verification": "verified_public_page",
+      "note": "Public offer NOT approval for Final Vestige; no affiliate URL"
+    },
+    {
+      "id": "S14",
+      "type": "regulation",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verification": "verified_regulator",
+      "note": "Disclose earning relationship clearly near recommendation and link"
+    },
+    {
+      "id": "S15",
+      "type": "regulation",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verification": "verified_regulator",
+      "note": "Health claims need adequate support"
+    },
+    {
+      "id": "S16",
+      "type": "site_standard",
+      "title": "Final Vestige Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "verification": "known_site_route",
+      "note": "Independent judgment preserved"
+    },
+    {
+      "id": "S17",
+      "type": "site_policy",
+      "title": "Final Vestige Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "verification": "known_site_route",
+      "note": "Not a substitute for near-link disclosure"
+    },
+    {
+      "id": "S18",
+      "type": "academic_history",
+      "title": "2023 review on self and self-hypnosis",
+      "url": "https://doi.org/10.1016/j.ctcp.2023.101810",
+      "verification": "search_verified_secondary",
+      "note": "Coué historically influential; distinguish his label autosuggestion"
+    },
+    {
+      "id": "S19",
+      "type": "merchant_terms",
+      "title": "Inspire3 operative terms of sale",
+      "url": "https://inspire3.com/",
+      "verification": "not_reverified_exact_terms",
+      "note": "Must verify exact current legal terms before linking"
+    }
+  ],
+  "claims": [
+    {
+      "id": "D01",
+      "claim": "12-minute duration",
+      "type": "advertised format",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "CAN_DESCRIBE_AS_SELLER_FORMAT"
+    },
+    {
+      "id": "D02",
+      "claim": "twelve levels",
+      "type": "advertised format",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "CAN_DESCRIBE_AS_SELLER_FORMAT"
+    },
+    {
+      "id": "D03",
+      "claim": "guided/music/nature/white noise",
+      "type": "advertised format",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "CAN_DESCRIBE_AS_SELLER_FORMAT"
+    },
+    {
+      "id": "D04",
+      "claim": "Premium 48 MP3s",
+      "type": "advertised format",
+      "source_ids": [
+        "S9",
+        "S10"
+      ],
+      "disposition": "CAN_DESCRIBE_AS_SELLER_FORMAT"
+    },
+    {
+      "id": "D05",
+      "claim": "Beginner first six levels 24 files",
+      "type": "advertised format",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "CAN_DESCRIBE_AS_SELLER_FORMAT"
+    },
+    {
+      "id": "D06",
+      "claim": "Advanced last six levels 24 files",
+      "type": "advertised format",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "CAN_DESCRIBE_AS_SELLER_FORMAT"
+    },
+    {
+      "id": "D07",
+      "claim": "One hour meditation from 12 minutes",
+      "type": "seller efficacy claim",
+      "source_ids": [
+        "S9",
+        "S7"
+      ],
+      "disposition": "BLOCK_UNSUBSTANTIATED_PRODUCT_EQUIVALENCE"
+    },
+    {
+      "id": "D08",
+      "claim": "brainwaves automatically synchronize",
+      "type": "seller mechanism",
+      "source_ids": [
+        "S11",
+        "S7"
+      ],
+      "disposition": "BLOCK_PRODUCT_SPECIFIC_CAUSAL_CLAIM"
+    },
+    {
+      "id": "D09",
+      "claim": "Zen12 improves anxiety",
+      "type": "seller health claim",
+      "source_ids": [
+        "S9",
+        "S15"
+      ],
+      "disposition": "BLOCK_NO_PRODUCT_SPECIFIC_CLINICAL_SUPPORT"
+    },
+    {
+      "id": "D10",
+      "claim": "Zen12 treats insomnia",
+      "type": "not established",
+      "source_ids": [
+        "S15"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D11",
+      "claim": "Zen12 guarantees focus",
+      "type": "seller outcome claim",
+      "source_ids": [
+        "S9",
+        "S7"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D12",
+      "claim": "Zen12 guarantees health improvements",
+      "type": "seller health claim",
+      "source_ids": [
+        "S9",
+        "S15"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D13",
+      "claim": "Zen12 improves creativity",
+      "type": "seller outcome claim",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D14",
+      "claim": "Zen12 results proven by 2023 EEG review",
+      "type": "false attribution",
+      "source_ids": [
+        "S7"
+      ],
+      "disposition": "BLOCK_REVIEW_DID_NOT_TEST_PRODUCT"
+    },
+    {
+      "id": "D15",
+      "claim": "Self-hypnosis RCTs prove passive audio works",
+      "type": "invalid generalization",
+      "source_ids": [
+        "S6"
+      ],
+      "disposition": "BLOCK_INTERVENTION_MISMATCH"
+    },
+    {
+      "id": "D16",
+      "claim": "Practice convenience",
+      "type": "editorial inference",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "ALLOW_AS_PREFERENCE_NOT_OUTCOME"
+    },
+    {
+      "id": "D17",
+      "claim": "Year money-back promise",
+      "type": "merchant promise",
+      "source_ids": [
+        "S9",
+        "S10"
+      ],
+      "disposition": "SELLER_STATES_ONLY_REVERIFY_TERMS"
+    },
+    {
+      "id": "D18",
+      "claim": "Refund guaranteed by Final Vestige",
+      "type": "unsupported promise",
+      "source_ids": [
+        "S9"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D19",
+      "claim": "Checkout requests mobile number",
+      "type": "seller checkout observation",
+      "source_ids": [
+        "S10"
+      ],
+      "disposition": "CAN_DESCRIBE_WITH_DATE"
+    },
+    {
+      "id": "D20",
+      "claim": "Marketing phone and SMS possible",
+      "type": "privacy term",
+      "source_ids": [
+        "S12"
+      ],
+      "disposition": "CAN_DESCRIBE_WITH_SOURCE"
+    },
+    {
+      "id": "D21",
+      "claim": "Referring affiliate may receive PII",
+      "type": "privacy term",
+      "source_ids": [
+        "S12"
+      ],
+      "disposition": "CAN_DESCRIBE_WITH_SOURCE"
+    },
+    {
+      "id": "D22",
+      "claim": "Final Vestige receives no buyer PII",
+      "type": "future contract requirement",
+      "source_ids": [
+        "S12"
+      ],
+      "disposition": "NOT_YET_ESTABLISHED_REQUIRE_WRITTEN_EXCLUSION"
+    },
+    {
+      "id": "D23",
+      "claim": "Affiliate accepted",
+      "type": "private account state",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "D24",
+      "claim": "Affiliate earning URL",
+      "type": "private account state",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "NULL_UNVERIFIED"
+    },
+    {
+      "id": "D25",
+      "claim": "Website channel allowed",
+      "type": "partner permission",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "D26",
+      "claim": "TikTok channel allowed",
+      "type": "partner permission",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "D27",
+      "claim": "Email channel allowed",
+      "type": "partner permission",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "D28",
+      "claim": "Approved creatives/swipes",
+      "type": "partner materials",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "NOT_ACCESSIBLE_NO_REUSE"
+    },
+    {
+      "id": "D29",
+      "claim": "Exact price/payout",
+      "type": "time-varying commercial terms",
+      "source_ids": [
+        "S9",
+        "S13"
+      ],
+      "disposition": "OMIT_FROM_COPY"
+    },
+    {
+      "id": "D30",
+      "claim": "Medical or wealth guarantee",
+      "type": "regulated efficacy claim",
+      "source_ids": [
+        "S15"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D31",
+      "claim": "Personal product trial/testimonial",
+      "type": "experience not performed",
+      "source_ids": [],
+      "disposition": "BLOCK_NO_EXPERIENCE"
+    },
+    {
+      "id": "D32",
+      "claim": "Near-CTA earning disclosure",
+      "type": "compliance text",
+      "source_ids": [
+        "S14"
+      ],
+      "disposition": "ALLOW_PROSPECTIVE_NEAR_DISABLED_CTA"
+    },
+    {
+      "id": "D33",
+      "claim": "Live product links on draft",
+      "type": "activation",
+      "source_ids": [
+        "S13"
+      ],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D34",
+      "claim": "Public video hosting",
+      "type": "release permission",
+      "source_ids": [],
+      "disposition": "BLOCK"
+    },
+    {
+      "id": "D35",
+      "claim": "Standalone newsletter signup",
+      "type": "architecture",
+      "source_ids": [
+        "S4"
+      ],
+      "disposition": "BLOCK_NO_DUPLICATE_LIST"
+    },
+    {
+      "id": "D36",
+      "claim": "Buyer-level attribution data",
+      "type": "privacy",
+      "source_ids": [],
+      "disposition": "BLOCK_NO_IDENTIFIABLE_REPORT"
+    },
+    {
+      "id": "D37",
+      "claim": "Public source links to FTC/academic references",
+      "type": "editorial citations",
+      "source_ids": [
+        "S5",
+        "S7",
+        "S14"
+      ],
+      "disposition": "ALLOW"
+    },
+    {
+      "id": "D38",
+      "claim": "Tracked outbound referral clicks",
+      "type": "measurement",
+      "source_ids": [],
+      "disposition": "BLOCK_UNTIL_APPROVED_ALLOWLISTED_DESTINATION"
+    },
+    {
+      "id": "D39",
+      "claim": "One-click no-JS guide reading",
+      "type": "accessibility",
+      "source_ids": [],
+      "disposition": "ALLOW_SOURCE_ONLY"
+    },
+    {
+      "id": "D40",
+      "claim": "A/B winner before actual data",
+      "type": "conversion",
+      "source_ids": [],
+      "disposition": "BLOCK_UNTESTED_HYPOTHESIS"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_final_vestige_affiliate_acceptance",
+      "status": "HOLD"
+    },
+    {
+      "id": "authorized_product_specific_link",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_website_channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_tiktok_channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HOLD"
+    },
+    {
+      "id": "approved_creatives_and_rights",
+      "status": "HOLD"
+    },
+    {
+      "id": "contractual_purchaser_PII_reporting_exclusion",
+      "status": "HOLD"
+    },
+    {
+      "id": "current_checkout_terms_and_refunds_review",
+      "status": "HOLD"
+    },
+    {
+      "id": "legal_and_scientific_claims_review",
+      "status": "HOLD"
+    },
+    {
+      "id": "founder_editorial_publication_approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "homepage_lead_no_interference_ack",
+      "status": "HOLD"
+    },
+    {
+      "id": "site_QA_no_interference_ack",
+      "status": "HOLD"
+    },
+    {
+      "id": "browser_a11y_keyboard_screenreader",
+      "status": "HOLD"
+    },
+    {
+      "id": "360_390_768_1440_1920_visual_QA",
+      "status": "HOLD"
+    },
+    {
+      "id": "WCAG_contrast_review",
+      "status": "HOLD"
+    },
+    {
+      "id": "performance_budget_LCP_CLS",
+      "status": "HOLD"
+    },
+    {
+      "id": "hosted_original_video_approved",
+      "status": "HOLD"
+    },
+    {
+      "id": "hosted_webvtt_caption_synchronization",
+      "status": "HOLD"
+    },
+    {
+      "id": "first_party_media_secure_delivery",
+      "status": "HOLD"
+    },
+    {
+      "id": "WordPress_HTML_block_sanitization_test",
+      "status": "HOLD"
+    },
+    {
+      "id": "cross_platform_privacy_review",
+      "status": "HOLD"
+    },
+    {
+      "id": "outbound_event_activation_permission",
+      "status": "HOLD"
+    },
+    {
+      "id": "real_A_B_experiment_design",
+      "status": "HOLD"
+    },
+    {
+      "id": "dispatch_174_merchant_gate",
+      "status": "HOLD"
+    },
+    {
+      "id": "jetpack_existing_focus_welcome_unchanged",
+      "status": "HOLD"
+    }
+  ],
+  "disclosure": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+  "merchant_copy_policy": "Never quote price, payout, copy or product effectiveness without current permission and product-specific proof."
+}
