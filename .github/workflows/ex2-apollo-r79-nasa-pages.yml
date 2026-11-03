@@ -8,7 +8,9 @@ on:
       - 'experience2/evidence-atlas/sources/R79_NASA_PAGE_AUDIT.json'
       - 'experience2/evidence-atlas/staging/r79-source-review.css'
       - 'experience2/evidence-atlas/tests/*nasa_gallery_r79.py'
+      - 'experience2/evidence-atlas/tests/test_nasa_chronology_r80.py'
       - 'experience2/evidence-atlas/R79_SOURCE_PAGE_REVIEW_STAGING_HOLD.md'
+      - 'experience2/evidence-atlas/R80_CHRONOLOGY_CERTAINTY_STAGING_HOLD.md'
       - '.github/workflows/ex2-apollo-r79-nasa-pages.yml'
 permissions:
   contents: read
@@ -35,8 +37,10 @@ jobs:
           test -z "$(git status --porcelain)"
           python -m py_compile experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
             experience2/evidence-atlas/tests/test_nasa_gallery_r79.py \
+            experience2/evidence-atlas/tests/test_nasa_chronology_r80.py \
             experience2/evidence-atlas/tests/browser_nasa_gallery_r79.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_nasa_gallery_r79.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_nasa_chronology_r80.py -v
           python experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
             --repo . --head "$EXPECTED_HEAD" --out "$RUNNER_TEMP/R79_NASA_A.zip"
           python experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
