@@ -24,10 +24,13 @@
   "native_wordpress_expectation": {
     "post_title_used_as_subject": true,
     "custom_excerpt_can_supply_email_intro": true,
-    "default_excerpt_first_55_words_when_custom_excerpt_absent": true,
     "custom_preheader_control_verified": false,
     "generated_read_more_link_target": "future WordPress post permalink; NOT the editorial_source_url",
-    "actual_mime_verified": false
+    "actual_mime_verified": false,
+    "wpcom_documented_fallback_55_words": true,
+    "jetpack_documented_fallback_350_characters": true,
+    "actual_fallback_model_verified": false,
+    "custom_excerpt_delivery_observed": false
   },
   "campaign_state": "DRAFT_NO_SEND",
   "editorial_count": 4,
