@@ -12,6 +12,7 @@ import re
 import sys
 
 from ci_gate_step_contract import GateStepError, verify_gate_step
+from ci_action_pin_guard import ActionPinError, verify_action_pins
 
 MAX_WORKFLOW_BYTES = 128 * 1024
 SOURCE_CMD = 'python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"'
@@ -75,6 +76,10 @@ def verify_workflow(source: str) -> int:
     if (type(source) is not str or '\x00' in source or '\t' in source or
             len(source.encode('utf-8')) > MAX_WORKFLOW_BYTES):
         raise SourceContractError('Untrusted workflow contents')
+    try:
+        verify_action_pins(source)
+    except ActionPinError as exc:
+        raise SourceContractError('Untrusted mutable or missing GitHub Action') from exc
     jobs = _jobs(source)
     for name, runner in (('source-tests', 'ubuntu-24.04'),
                          ('windows-build', 'windows-latest')):
@@ -99,7 +104,7 @@ def verify_workflow(source: str) -> int:
             if ('mkdir -p "$RUNNER_TEMP/fvs-source"' not in evidence_step or
                     'run: |' not in evidence_step):
                 raise SourceContractError('Private Linux evidence directory not established')
-            if not any('uses: actions/upload-artifact@v4' in step for step in steps[provenance[0] + 1:]):
+            if not any('uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' in step for step in steps[provenance[0] + 1:]):
                 raise SourceContractError('Linux provenance evidence is not retained')
         else:
             provenance = _command_steps(steps, WINDOWS_CMD)
