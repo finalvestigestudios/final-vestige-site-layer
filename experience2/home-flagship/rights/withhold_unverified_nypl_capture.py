@@ -40,8 +40,11 @@ ARTICLE = re.compile(
 IMG = re.compile(r'<img\b[^>]*\bdata-fv-archive-img\b[^>]*>', re.DOTALL)
 MARGINS = re.compile(r'<span class="fv-margin-strip__item" style="--i:(\d+)">')
 MARKER = '<span class="fv-hf__case-image-fallback">'
+SAFE_FALLBACK_MARKER = ('<span class="fv-hf__case-image-fallback" '
+    'style="left:clamp(16px,6%,72px);right:clamp(16px,6%,72px);'
+    'width:auto;font-size:clamp(17px,2.4vw,30px);overflow-wrap:break-word">')
 BINARY_LABEL = "ARCHIVE IMAGE 03 / NYPL 5003296"
-RECORD_LABEL = "SOURCE RECORD 03 / NYPL 5003296"
+RECORD_LABEL = "NYPL / 5003296"
 
 
 class UnsafeCandidate(ValueError):
@@ -73,7 +76,7 @@ def invariants(raw: str) -> dict:
         "jetpack": raw.count("jetpack/subscriptions"),
         "focus": raw.count("Focus Fieldbook"),
         "catalog_links": raw.count(NYPL_RECORD),
-        "image_controls": raw.count("data-fv-archive-img"),
+        "image_controls": len(IMG.findall(raw)),  # actual <img> tags, not JS selector strings
     }
 
 
@@ -110,6 +113,7 @@ def patch_homepage(raw: str) -> tuple[str, dict]:
     edited = edited.replace(UNVERIFIED_CLAIM, REVIEWED_CREDIT, 1)
     edited = edited.replace(ORIGINAL_CAPTION, REPLACEMENT_CAPTION, 1)
     edited = edited.replace(BINARY_LABEL, RECORD_LABEL, 1)
+    edited = edited.replace(MARKER, SAFE_FALLBACK_MARKER, 1)
     candidate = raw[: match.start()] + edited + raw[match.end() :]
 
     after = invariants(candidate)

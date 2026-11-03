@@ -62,7 +62,9 @@ class RightsSafeCandidateTests(unittest.TestCase):
         self.assertIn(REVIEWED_CREDIT, out)
         self.assertIn(REPLACEMENT_CAPTION, out)
         self.assertIn(NYPL_RECORD, out)
-        self.assertIn("SOURCE RECORD 03 / NYPL 5003296", out)
+        self.assertIn("NYPL / 5003296", out)
+        self.assertIn("left:clamp(16px,6%,72px)", out)
+        self.assertIn("overflow-wrap:break-word", out)
         self.assertIn("NYPL DIGITAL COLLECTIONS</span>", out)
         self.assertIn("src=\"apollo.jpg\"", out)
         self.assertEqual(report["protected_after"]["margins"], 72)
@@ -79,6 +81,15 @@ class RightsSafeCandidateTests(unittest.TestCase):
         after = article_on.split("</article>", 1)[1]
         self.assertTrue(out.startswith(before))
         self.assertTrue(out.endswith(after))
+
+    def test_image_control_inventory_does_not_count_script_selector(self):
+        # Production HTML contains 3 img tags, but the selector string in its
+        # inline script adds a fourth textual occurrence of the same marker.
+        with_script = self.raw + "<script>document.querySelectorAll('[data-fv-archive-img]');</script>"
+        out, report = patch_homepage(with_script)
+        self.assertEqual(report["protected_before"]["image_controls"], 2)
+        self.assertEqual(report["protected_after"]["image_controls"], 1)
+        self.assertIn("document.querySelectorAll('[data-fv-archive-img]')", out)
 
     def test_missing_margin_fails(self):
         with self.assertRaises(UnsafeCandidate):
