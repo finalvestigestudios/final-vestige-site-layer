@@ -1,0 +1,95 @@
+name: Preparedness R103 Source/Citation Offline Reviewer Handoff (PRIVATE HOLD)
+on:
+  push:
+    branches:
+      - review/preparedness-r103-collision-handoff-hold-20261103
+  pull_request:
+    branches:
+      - review/preparedness-r102-author-scope-crosswalk-hold-20261103
+    paths:
+      - preparedness/tools/r103_collision_offline_reviewer_handoff.py
+      - preparedness/tests/test_r103_collision_offline_reviewer_handoff.py
+      - preparedness/docs/R103_SHARED_SOURCE_REVIEW_HANDOFF_HOLD.md
+      - .github/workflows/preparedness-r103-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  review-handoff-private-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact eight contributor heads and strict add-only scope
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          baseline="b46adaf6a2c76dec9f50cc0877bcb3694bcd85b9"
+          expected={
+            "A\tpreparedness/tools/r103_collision_offline_reviewer_handoff.py",
+            "A\tpreparedness/tests/test_r103_collision_offline_reviewer_handoff.py",
+            "A\tpreparedness/docs/R103_SHARED_SOURCE_REVIEW_HANDOFF_HOLD.md",
+            "A\t.github/workflows/preparedness-r103-private-tests.yml",
+          }
+          observed=set(subprocess.check_output(
+              ["git","diff","--name-status",baseline,"HEAD"],text=True).splitlines())
+          assert observed==expected,("ADD-ONLY scope or original article/source mutation",observed)
+          pins={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref,sha in pins.items():
+              actual=subprocess.check_output(
+                ["git","rev-parse","refs/remotes/origin/"+ref],text=True).strip()
+              assert actual==sha,(ref,actual,sha)
+          print("R103 strict additive scope + eight exact current reference SHAs: PASS")
+          PY
+      - name: Compile and execute R103 focused source/citation synthetic tests
+        run: |
+          python -I -m compileall -q preparedness/tools/r103_collision_offline_reviewer_handoff.py preparedness/tests/test_r103_collision_offline_reviewer_handoff.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r103_*.py' -v
+      - name: Produce private HTML/CSV outputs outside repository
+        run: |
+          python -I preparedness/tools/r103_collision_offline_reviewer_handoff.py --format html > "$RUNNER_TEMP/r103-private-review-HOLD.html"
+          python -I preparedness/tools/r103_collision_offline_reviewer_handoff.py --format variants-csv > "$RUNNER_TEMP/r103-source-variants-NOT-VERIFIED.csv"
+          python -I preparedness/tools/r103_collision_offline_reviewer_handoff.py --format citations-csv > "$RUNNER_TEMP/r103-source-citations-NOT-VERIFIED.csv"
+          python -I preparedness/tools/r103_collision_offline_reviewer_handoff.py --format summary-json > "$RUNNER_TEMP/r103-summary-HOLD.json"
+          python -I - <<'PY'
+          import csv,json,os,pathlib
+          root=pathlib.Path(os.environ["RUNNER_TEMP"])
+          report=json.loads((root/"r103-summary-HOLD.json").read_text())
+          assert report["release_state"]=="HOLD"
+          assert report["may_publish"] is False and report["may_merge"] is False
+          assert report["literal_url_groups"]==30
+          assert report["original_35_articles_1_buildable_tool"] is True
+          with (root/"r103-source-variants-NOT-VERIFIED.csv").open(newline="") as f:
+              variants=list(csv.DictReader(f))
+          with (root/"r103-source-citations-NOT-VERIFIED.csv").open(newline="") as f:
+              uses=list(csv.DictReader(f))
+          assert len(variants)==report["variant_rows"]
+          assert len(uses)==report["collision_citation_occurrences"]
+          html=(root/"r103-private-review-HOLD.html").read_text()
+          assert html.count("<section>")==30 and "<script" not in html
+          print("R103 private HTML and two source/citation reviewer CSVs: PASS; HUMAN REVIEW STILL REQUIRED")
+          PY
+      - name: Original native validation and WordPress offline DRAFT build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete Preparedness regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Preserve mandatory release HOLD
+        if: always()
+        run: |
+          echo 'R103 PRIVATE HOLD; no merges, WordPress/CMS writes, publishing, QD PASS or medical-safety approval.'
