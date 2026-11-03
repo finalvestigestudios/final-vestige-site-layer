@@ -79,7 +79,7 @@ function main(argv) {
 if (require.main === module) {
   try { process.exitCode = main(process.argv.slice(2)); }
   catch (err) {
-    process.stderr.write(JSON.stringify({ status: 'HOLD', scope: 'source_syntax_only_not_browser', error: String(err.message).slice(0, 100) }) + '\n');
+    process.stderr.write(JSON.stringify({ status: 'HOLD', scope: 'source_syntax_only_not_browser', error: 'input_rejected' }) + '\n');
     process.exitCode = 2;
   }
 }
