@@ -22,6 +22,7 @@ from typing import Sequence
 from .csv_snapshot import read_csv_snapshot
 from .manifest_guard import _hash_regular, MAX_INPUT_BYTES, MAX_REPORT_BYTES
 from .spend_input import validated_spend_rows
+from .spend_review_verify import FIELDS as REVIEW_FIELDS, compute_expected_review_fields
 
 LIMIT = 32
 DOMAIN = b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n"
@@ -95,6 +96,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         # gross/net helpers, or report rendering code. The shared strict CSV
         # parser is intentionally retained to enforce the input schema.
         cents = lambda: Decimal("0.00")
+        review_observations = []
         net_bucket = defaultdict(cents)
         charge_bucket = defaultdict(cents)
         credit_bucket = defaultdict(cents)
@@ -112,6 +114,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                 bucket = (vendor, month, engine.safe_cell(category))
                 groups[group].append(int(record["row"]))
                 buckets[bucket].append(record["row"])
+                review_observations.append((vendor, month, bucket[2], amount, record["vendor"]))
                 net_bucket[bucket] += amount
                 net_month[group] += amount
                 if amount > 0:
@@ -150,12 +153,14 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
             "vendor_month_offset_review": ("review_vendor_month_mixed_sign_offset"
                 if charge_month[group] > 0 and credit_month[group] > 0 else ""),
         }
+    # Recheck historic review flags and baseline statistics independently.
+    expected_review = compute_expected_review_fields(review_observations)
     try:
         decoded = report_bytes.decode("utf-8-sig")
         reader = csv.DictReader(io.StringIO(decoded, newline=""), strict=True)
         headers = reader.fieldnames
         if (headers is None or len(headers) != len(set(headers))
-                or not REQUIRED.issubset(headers)):
+                or not (REQUIRED | REVIEW_FIELDS).issubset(headers)):
             raise ValueError("Missing or ambiguous SpendMap evidence columns")
         seen = set()
         for entry in reader:
@@ -177,6 +182,9 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
             if any(entry[field] != expected_money[bucket][field]
                    for field in MONEY_FIELDS):
                 raise ValueError("SpendMap financial evidence does not match source")
+            if any(entry[field] != expected_review[bucket][field]
+                   for field in REVIEW_FIELDS):
+                raise ValueError("SpendMap historical review evidence does not match source")
     except (UnicodeError, csv.Error, OverflowError) as exc:
         raise ValueError("Malformed local SpendMap evidence") from None
     if seen != set(buckets):
