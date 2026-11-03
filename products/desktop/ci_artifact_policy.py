@@ -25,7 +25,7 @@ ALLOWED = {
     ),
 }
 STEP_RE = re.compile(r"^(\s*)- (?:name|uses):")
-UPLOAD_RE = re.compile(r"^\s*uses:\s*actions/upload-artifact@v4\s*(?:#.*)?$")
+UPLOAD_RE = re.compile(r"^\s*uses:\s*actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\s*(?:#.*)?$")
 USE_RE = re.compile(r"^\s*uses:\s*(.+?)\s*$")
 FIELD_RE = re.compile(r"^(\s*)([a-zA-Z_-]+):(?:\s*(.*))?$")
 
