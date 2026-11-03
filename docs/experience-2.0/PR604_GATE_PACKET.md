@@ -8,7 +8,7 @@ Publishing is one hash-locked write (`RELEASE_AND_ROLLBACK.md`). It happens the 
 |---|---|---|---|
 | 1 | Fresh independent QD review of this exact head and hash | ChatGPT (founder relays) | **Open.** Prompt below. |
 | 2 | Authenticated WordPress.com render and test of the exact block | Founder signs in; Claude runs it | **Done 2026-11-02 for the flagship block on private draft 1902** (exact block stored unstripped, hash `8c0dd5c3...`; render, interactions, images, skip link, widths and console checked). Limits and a lesson about double-wrapping the block are in `PR604_WPCOM_DRAFT_RENDER_EVIDENCE.md`. |
-| 3 | Named-editor NASA item sign-off | A named person | **Open.** Worksheet below, prefilled with facts checked today. |
+| 3 | Named-editor NASA item sign-off | A named person | **Recorded 2026-11-02: APPROVED by Bryan Rhodes, Founder** (see the sign-off below). Note: the founder is acting as the named editor; the independent reviewer may state whether that satisfies the gate. |
 | 4 | Mobile LCP exception (4.58 s) | Founder | **Approved 2026-11-02** as a temporary first-release exception, not a standard. |
 | 5 | Post-release PR targeting mobile LCP of 2.5 s or better, same approved visuals | Claude | Opened after go-live (it must not touch the frozen head). |
 
@@ -50,7 +50,17 @@ For the named editor. Facts below were checked on 2026-11-02; this is evidence, 
 - 473 caption: "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34, January 1967. Credit: NASA (image S67-19766). Editorial use; not an endorsement by NASA."
 - 474 caption: "The Victory Point note from the Franklin expedition (1847, with the 1848 addition), shown from the Wikimedia Commons file marked public domain, a scan of an 1869 printed reproduction. The museum object is held by the Royal Museums Greenwich (HSR/C/9/1)."
 
-**Sign-off** (name, role, date, decision `APPROVED` / `APPROVED WITH CHANGES` / `NOT APPROVED`, and any conditions): ______________________________
+**Sign-off recorded 2026-11-02** (as stated in chat by the founder; recorded verbatim, not inferred):
+
+- **Name and role:** Bryan Rhodes, Founder
+- **Decision:** APPROVED
+- **(a)** Editorial, non-promotional use is the right reading for the homepage investigation section: **yes**
+- **(b)** The on-page credit and non-endorsement line are sufficient: **yes**
+- **(c)** No affiliate, product or Inspire3 link will sit beside the photograph: **yes** ("no product will sit by the photo")
+- **(d)** The S67-19766 identifier question is acceptable (NASA record page and credit confirmed; NASA's image search does not return the id): **yes**; the identifier stays and the block is unchanged
+- **Item 4, media-library captions:** the proposed captions for records 473 and 474 **may be applied with the release**: **yes**. They are not applied yet; they are applied as part of the release step so that one coordinated change has one rollback.
+
+Scope: this is the named-editor sign-off for gate 3 only. It is not independent QD (gate 1), does not alter the open reviewer question about a founder acting as editor, and applies to the images and credits as they appear in head `bdf01b4a3e13fd6179ae9e847c9d4429bbe16176`. Any later change to the images, credits or surrounding copy needs it confirmed again.
 
 ## After the gates: publish and verify
 
