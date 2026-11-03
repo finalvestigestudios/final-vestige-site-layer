@@ -35,7 +35,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
           python -m py_compile experience2/evidence-atlas/tools/build_wp_private_preview_r99.py experience2/evidence-atlas/tests/test_wp_private_preview_r99.py experience2/evidence-atlas/tests/browser_private_preview_r99.py
-          php -l experience2/evidence-atlas/integration/r99-private-preview-template.php
+          # The source PHP is a template containing a mandatory pin placeholder; lint only the generated PHP.
           php -l experience2/evidence-atlas/tests/php_preview_contract_r99.php
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_private_preview_r99.py -v
           python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
