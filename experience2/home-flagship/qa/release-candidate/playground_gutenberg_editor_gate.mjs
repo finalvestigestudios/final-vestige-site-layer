@@ -120,7 +120,7 @@ if (process.argv.includes('--self-test')) {
     context = await browser.newContext({viewport:{width:1440,height:900}});
     const act = async (action) => {
       const u = makeUrl(action);
-      assert.ok(loopback(u.origin+':'+(u.port||'9473')) === false || loopback(u.origin));
+      assert.ok(loopback(u.origin), 'Refusing a non-loopback WordPress POST target');
       const res = await context.request.post(u.toString(),{
         headers:{'X-FV-EX2-EDITOR-TOKEN':token}, timeout:90000,
         maxRedirects:0, failOnStatusCode:false
