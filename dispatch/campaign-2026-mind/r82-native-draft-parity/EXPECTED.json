@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "policy": "REVIEW_ONLY_HOLD_UNSENT",
+  "source_sha": "cc11840848f0f91b04a602fb482d3bd448e42c5d",
+  "based_on": "dispatch/campaign-2026-mind/r81-transport-truth/ISSUE-CARDS.json",
+  "wordpress_site": "https://finalvestige.com",
+  "required_live_format": "excerpt",
+  "preheader_is_native_field": false,
+  "no_real_jetpack_draft_observed": true,
+  "release_clearance": false,
+  "allocation": {
+    "editorial": [
+      "01",
+      "02",
+      "04",
+      "06"
+    ],
+    "commercial_reserved": [
+      "03",
+      "05"
+    ]
+  },
+  "expected_posts": [
+    {
+      "issue": "01",
+      "allocation": "editorial",
+      "editor_title": "The person changed. The conversation went on.",
+      "editor_custom_excerpt": "In a 1998 field experiment, a conversation continued after the person asking for directions was replaced. That result does not establish how every eyewitness behaves. It asks a more useful question: what did this particular witness have a chance to notice? Follow the source, then the inference.",
+      "body_source": "r80-editorial-bridge/01-the-conversation-continued.md",
+      "primary_cta_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "research_source": "https://doi.org/10.3758/BF03208840",
+      "expected_status": "draft",
+      "expected_post_send_to_subscribers": false,
+      "commercial_guide_published": false,
+      "merchant_email_permission_verified": false
+    },
+    {
+      "issue": "02",
+      "allocation": "editorial",
+      "editor_title": "A sleeping witness, a letter, and a 1784 puzzle",
+      "editor_custom_excerpt": "Puységur reported an unusual encounter on May 4, 1784, and described it in a letter dated May 8. The source is worth reading; his interpretation is not independent proof of animal magnetism. Follow the chronology and see what the written record actually supports.",
+      "body_source": "r80-editorial-bridge/02-the-letter-and-the-witness.md",
+      "primary_cta_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "research_source": "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+      "expected_status": "draft",
+      "expected_post_send_to_subscribers": false,
+      "commercial_guide_published": false,
+      "merchant_email_permission_verified": false
+    },
+    {
+      "issue": "03",
+      "allocation": "commercial_reserved",
+      "editor_title": "The twelve-minute question: practice first, purchase later",
+      "editor_custom_excerpt": "Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Twelve minutes can reveal whether a routine fits your schedule; they cannot prove that Zen12 produces its advertised brainwave results. Here's what to check first.",
+      "body_source": "r79-proof-first-editions/03-zen12.md",
+      "primary_cta_url": null,
+      "research_source": "https://zen12.com/hnp",
+      "expected_status": "draft",
+      "expected_post_send_to_subscribers": false,
+      "commercial_guide_published": false,
+      "merchant_email_permission_verified": false
+    },
+    {
+      "issue": "04",
+      "allocation": "editorial",
+      "editor_title": "Apollo 1: one spark was never the whole story",
+      "editor_custom_excerpt": "Apollo 1's fire killed three astronauts during a ground test on January 27, 1967. The review board could not conclusively identify the first ignition source. It did document an oxygen-rich environment, an escape-obstructing hatch, and rescue failures. The system, not merely the spark, explains the danger.",
+      "body_source": "r79-proof-first-editions/04-apollo-1.md",
+      "primary_cta_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "research_source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "expected_status": "draft",
+      "expected_post_send_to_subscribers": false,
+      "commercial_guide_published": false,
+      "merchant_email_permission_verified": false
+    },
+    {
+      "issue": "05",
+      "allocation": "commercial_reserved",
+      "editor_title": "A focus recording isn't proof of better focus",
+      "editor_custom_excerpt": "Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Total Focus is advertised as a 33-minute hypnosis recording. Its format is described by the seller; the promised concentration gains are not independently established for this recording.",
+      "body_source": "r79-proof-first-editions/05-total-focus.md",
+      "primary_cta_url": null,
+      "research_source": "https://hypnosislive.com/mental-skills/total-focus",
+      "expected_status": "draft",
+      "expected_post_send_to_subscribers": false,
+      "commercial_guide_published": false,
+      "merchant_email_permission_verified": false
+    },
+    {
+      "issue": "06",
+      "allocation": "editorial",
+      "editor_title": "Your focus log should include the boring days",
+      "editor_custom_excerpt": "An honest focus log keeps the missed sessions and quiet days, not just the moments that feel transformative. Try three fields for one week: time attempted, interruption noticed, and one next adjustment. This is a record of your routine, not proof that any product improves the brain.",
+      "body_source": "r80-editorial-bridge/06-the-boring-days.md",
+      "primary_cta_url": "https://finalvestige.com/focus/",
+      "research_source": "https://finalvestige.com/editorial-standards/",
+      "expected_status": "draft",
+      "expected_post_send_to_subscribers": false,
+      "commercial_guide_published": false,
+      "merchant_email_permission_verified": false
+    }
+  ]
+}
