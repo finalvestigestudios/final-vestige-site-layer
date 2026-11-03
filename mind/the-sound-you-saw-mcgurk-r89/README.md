@@ -2,7 +2,7 @@
 **2026-11-03; isolate all files under this directory; no CMS write, release, merge or affiliate activation.**
 
 ## Design intention
-An original source-grounded McGurk investigation that exposes the limits of sensory inference, plus a separate Zen12 offer guide matching the actual seller's page rather than generic self-help copy. A/B: identical article guide core; B alone adds an original optional 40s educational video **storyboard, poster and visible transcript**. B is not a playable film and must not be represented as one. There is no test outcome and no performance claim.
+An original source-grounded McGurk investigation that exposes the limits of sensory inference, plus a separate Zen12 offer guide matching the actual seller's page rather than generic self-help copy. A/B: identical article guide core; B alone adds an original optional 40s educational video **completed offline film, poster concept and visible transcript**. B does not embed the offline MP4 and must not be represented as hosted video. There is no test outcome and no performance claim.
 
 ## Source-of-truth
 Official brand https://inspire3.com/ ; exact offer https://zen12.com/hnp ; About https://zen12.com/about ; seller research https://zen12.com/research ; public checkout https://zen12.com/getstarted ; privacy https://inspire3.com/privacy/ . All inspected November 3, 2026. Public https://affiliates.inspire3.com/ is recruitment only; **no FV-specific acceptance or creative rights confirmed**. Exact full refund/terms unavailable. Buyer identity-sharing possibility requires opt-out agreement before approval. Never publish checkout prices or unverified payout links.
@@ -15,10 +15,10 @@ Independent: McGurk and MacDonald 1976 https://doi.org/10.1038/264746a0; Brown e
 - zen12-a.blocks.html: proposed Gutenberg Custom HTML text-only.
 - zen12-b.blocks.html: same text + optional original 40s storyboard and no-JS transcript.
 - mind-hub-noncanonical.blocks.html: four-stream reviewer prototype, never supersedes PR #172.
-- 40-second-film-captions.vtt: contiguous 0–40s captions, not proof of a rendered film.
+- 40-second-film-captions.vtt: contiguous 0–40s captions. The local renderer produced an offline 40.000s H.264 MP4; this draft does not host or embed it.
 - claim-source-permissions.json: line-by-line source and gate matrix.
 - attribution.mjs: synthetic-only disabled aggregation, no network or PII.
-- tests.mjs: source-controlled Node test suite.
+- render.py: exact source-controlled original 40-second video renderer (matches locally executed Git blob).\n- MEDIA-RECEIPT.md: actual MP4/poster/ZIP checks, separate offline reviewer delivery and unverified hosted playback.\n- tests.mjs: source-controlled Node test suite.
 - REVIEW-QA.md: deployment and manual QA checklist.
 
 ## Reproduction / QA
