@@ -121,7 +121,11 @@ def run(root: Path, out: Path, axe: Path, chromium: str | None = None):
                                 text="\n".join(p.get_text() for p in pdf)
                                 assert all(x in text for x in (
                                     "S67-19766", "INDIVIDUAL REVIEW REQUIRED", "NOT FOR PUBLICATION")), "R89_PRINT_CUSTODY_MISSING"
-                                assert text.count("https://www.nasa.gov/image-detail/") == 6, "R89_PRINT_NASA_LINK_COUNT"
+                                expected = re.findall(r'href="(https://www\.nasa\.gov/image-detail/[^"]+)"',
+                                                      (root / PAGES[0]).read_text("utf8"))
+                                flattened = re.sub(r"\s+", "", text)
+                                assert len(expected) == 6 and all(url in flattened for url in expected), "R89_PRINT_EXACT_NASA_URLS"
+                                assert text.count("INDIVIDUAL REVIEW REQUIRED") >= 6, "R89_PRINT_EACH_RIGHTS_STATUS"
                                 printed=len(pdf)
                     cases.append(case)
                     context.close()
