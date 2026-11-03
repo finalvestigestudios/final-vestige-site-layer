@@ -22,7 +22,7 @@
 
 **Regulators:** https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
 
-**Established Final Vestige bridges from Issue #171:** https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ; https://finalvestige.com/focus/ . During R101 the general web tool failed to retrieve these live site routes; don't claim they were freshly validated. Existing 61-post count is **historical baseline**, not freshly recounted.
+**Established Final Vestige bridges from Issue #171:** https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ; https://finalvestige.com/focus/ . During R101, direct web access failed, but authenticated **read-only WordPress connector** verified published Puységur page **ID 1377**, published Focus page **ID 1579**, published Change Blindness post **ID 1922** (https://finalvestige.com/2026/11/02/change-blindness/) and **66 published posts** via the site's posts-search `found_posts`. Issue #171's 61 posts is a historical baseline, not the current count.
 
 ## A vs B: pre-registered conversion hypothesis (NOT an outcome)
 
