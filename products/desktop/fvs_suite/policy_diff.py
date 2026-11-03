@@ -48,7 +48,7 @@ def _read_policy(path):
 
 
 def _visible_source_char(character: str) -> str:
-    """Display invisible formats, variations and non-ASCII spaces faithfully.
+    """Display invisible formats, combining marks, variations and spaces.
 
     Unlike JSON-encoding whole lines, this keeps readable Unicode readable
     while making default-hidden typography explicit. Existing backslash-first
@@ -62,7 +62,10 @@ def _visible_source_char(character: str) -> str:
         return "\\r"
     codepoint = ord(character)
     category = unicodedata.category(character)
-    if (category == "Cf"
+    if (category in ("Cf", "Mn", "Me")
+            # Nonspacing/enclosing marks can disguise canonically equivalent
+            # edits (e.g. precomposed é versus e + U+0301) in a rendered diff.
+            # Escape codepoints only in the display; never alter source bytes.
             # Non-ASCII Unicode spacing separators can be visually identical
             # to an ordinary source space while changing the audited bytes.
             or (category == "Zs" and character != " ")
@@ -190,6 +193,14 @@ def compare_policy_files(old, new, folder, output_path):
         "REVIEW: Source bytes differ but decoded text is identical; verify encoding/BOM or line-ending changes.\n"
         if not delta else ""
     )
+    # A raw-codepoint revision can look identical after Unicode NFC
+    # composition. This is a navigation cue, not a legal equivalence claim;
+    # the escaped diff and independent source fingerprints remain authoritative.
+    normalization_note = (
+        "REVIEW: Text differs at Unicode codepoint level but is NFC-normalization-equivalent; inspect escaped combining marks and both original files.\n"
+        if delta and unicodedata.normalize("NFC", "".join(before)) ==
+                     unicodedata.normalize("NFC", "".join(after)) else ""
+    )
     report = (
         "Text differences only. Not legal advice or a compliance determination.\n"
         "SHA-256 fingerprints cover the exact source bytes read (including any BOM).\n"
@@ -197,7 +208,8 @@ def compare_policy_files(old, new, folder, output_path):
         "Invisible Unicode format and variation characters display as \\uXXXX or \\UXXXXXXXX.\n"
         "Non-ASCII Unicode spacing separators display as \\uXXXX (ordinary spaces remain unchanged).\n"
         "Unicode blank filler glyphs display as \\uXXXX; raw files remain authoritative.\n"
-        + identity_note +
+        "Unicode nonspacing/enclosing combining marks display as \\uXXXX or \\UXXXXXXXX.\n"
+        + identity_note + normalization_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
         + change_index
