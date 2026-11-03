@@ -87,11 +87,16 @@ def run(src:Path,out:Path,axe:Path,chromium:str|None=None)->dict:
                         link=(source.locator('nav.per-source a[href^="R88_READING_ROOM.html#"]').first
                               if view=='R89_REVIEW_HUB.html' else source.locator('nav.r92-evidence-routes a').first)
                         target=link.get_attribute('href');dest,frag=target.split('#',1)
+                        TRACE['gate']='NAV_ACTIVATE_TOUCH_OR_POINTER'
                         if width<=390:link.tap()
                         else:link.click()
+                        TRACE['gate']='NAV_LOAD'
                         page.wait_for_load_state('load')
+                        TRACE['gate']='NAV_TARGET_PATH'
                         assert urlparse(page.url).path.endswith('/'+dest),'NAVIGATION_DESTINATION'
+                        TRACE['gate']='NAV_TARGET_FRAGMENT'
                         assert page.evaluate('location.hash')=='#'+frag,'NAVIGATION_FRAGMENT'
+                        TRACE['gate']='NAV_TARGET_ELEMENT'
                         assert page.locator('#'+frag).count()==1,'FRAGMENT_EXISTS'
                         clicks+=1
                         TRACE['gate']='AXE_PERFORMANCE_PRINT'
