@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-02",
+  "scope": "Black Tom post 256 — exact seven external media sources / canonical catalogs / rights and no-upscale audit",
+  "source_inventory": {
+    "source": "frozen authenticated WordPress source 2026-10-30, NOT a fresh live CMS read",
+    "part_path": "qa/media-recovery/parts/05.json",
+    "part_git_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+    "post_id": 256,
+    "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+    "post_modified": "2026-10-29T15:51:59",
+    "source_image_count": 7,
+    "exact_alt_and_url_from_frozen_census": true
+  },
+  "observation_limitations": {
+    "catalog_html_pages_read": 7,
+    "exact_stored_redirect_urls_tested_by_independent_tool": 7,
+    "redirect_urls_not_accessible_via_tool": 7,
+    "guest_browser_checks": 0,
+    "verified_browser_broken_count": null,
+    "origin_http_responses": null,
+    "no_public_outage_claim": true
+  },
+  "sitewide_context": {
+    "published_investigations": 61,
+    "source_image_slots": 355,
+    "external_origin_slots": 288,
+    "oversized_wp_originals_over_1_5_MiB": 13,
+    "reported_42_broken_guest_verified": false,
+    "claimed_76_percent_weight_savings_guest_measured": false,
+    "production_replacements_this_sprint": 0
+  },
+  "rights_and_release": {
+    "all_item_rights_hold": true,
+    "media_downloads_allowed": false,
+    "first_party_cache_release": false,
+    "production_wp_writes_allowed": false,
+    "homepage_design_modifications_allowed": false,
+    "spend_allowed": false
+  },
+  "preferred_cache_plan": "Keep exact source and ALT unless logged-out browser proves failure; after item-specific rights and historical scene/crop approval, independently inspect binary, create no-upscale <=960px derivative, stage in private WordPress media, compare visuals/ALT/captions and mobile+desktop CDP bytes/screenshots, obtain explicit publishing authorization; only then consider production replacement.",
+  "rows": [
+    {
+      "image_key": "256:0",
+      "post_id": 256,
+      "slot": 0,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%201916.jpg?width=1280",
+      "stored_original_alt": "Destroyed warehouses, rail infrastructure and scattered debris at the Black Tom ammunition terminal after the July 30, 1916 explosion.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_1916.jpg",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Wikimedia Commons (source cited to New Jersey City University historical project)",
+        "primary_record_url": "http://www.njcu.edu/programs/jchistory/Pages/B_Pages/Black_Tom_Explosion.htm",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          800,
+          528
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "Historical 1916 aftermath image; identity established only by matching Commons file title; original photograph custody not established."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "Commons claims U.S. public domain (1916 publication); uploader generic US government author not independently documented; item-level review HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          800,
+          528
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "256:1",
+      "post_id": 256,
+      "slot": 1,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Map%20of%20Black%20Tom%20Island%2C%20Jersey%20City%2C%20New%20Jersey%20-%20showing%20area%20damaged%20by%20explosion%20and%20fire%2C%20July%2030th%201916.%20LOC%202010588272.jpg?width=1280",
+      "stored_original_alt": "1916 Sanborn map of Black Tom Island showing ammunition warehouses, railroad tracks, wharves and the area damaged by the explosion and fire.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Map_of_Black_Tom_Island,_Jersey_City,_New_Jersey_-_showing_area_damaged_by_explosion_and_fire,_July_30th_1916._LOC_2010588272.jpg",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Library of Congress, Geography and Map Division, Sanborn Map Company",
+        "primary_record_url": "https://www.loc.gov/item/2010588272/",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          8385,
+          11736
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "1916 96 x 68 cm survey map; extremely tall, detail/legibility preserved via linked archival viewer; original catalog file is ~10.35 MB, NOT the visitor transfer."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "LOC Geography and Map Division free reuse absent a rights advisory; item-specific clearance and cartographic credits required; HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          960,
+          1344
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "256:2",
+      "post_id": 256,
+      "slot": 2,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20firefighters%20-%201916.jpg?width=1280",
+      "stored_original_alt": "Firefighters working amid wreckage at Black Tom on the day after the 1916 explosion.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_firefighters_-_1916.jpg",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Wikimedia Commons (source cited to New Jersey City University historical project)",
+        "primary_record_url": "http://www.njcu.edu/programs/jchistory/Pages/B_Pages/Black_Tom_Explosion.htm",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          800,
+          537
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "1916 aftermath firefighters, not a proof of full origin ownership."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "Commons claims U.S. public domain (1916 publication); photographer-specific original provenance unverified; HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          800,
+          537
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "256:3",
+      "post_id": 256,
+      "slot": 3,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20Men%20on%20pier%20-%201916.jpg?width=1280",
+      "stored_original_alt": "Men standing on the damaged Black Tom pier amid the aftermath of the 1916 explosion.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_Men_on_pier_-_1916.jpg",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Wikimedia Commons (source cited to New Jersey City University historical project)",
+        "primary_record_url": "http://www.njcu.edu/programs/jchistory/Pages/B_Pages/Black_Tom_Explosion.htm",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          800,
+          545
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "Men on ruined pier; distinct scene, do not substitute other Black Tom photographs."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "Commons claims U.S. public domain (1916 publication); photographer-specific original provenance unverified; HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          800,
+          545
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "256:4",
+      "post_id": 256,
+      "slot": 4,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diving%20at%20Black%20Tom%20LCCN2014702309.jpg?width=1280",
+      "stored_original_alt": "A diver preparing to recover unexploded ammunition from the water at Black Tom after the 1916 explosion.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Diving_at_Black_Tom_LCCN2014702309.jpg",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Library of Congress, Bain News Service, LC-DIG-ggbain-22370",
+        "primary_record_url": "https://www.loc.gov/item/2014702309/",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          5766,
+          4141
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "LOC describes diver recovering shells after blast; published ALT says preparing to recover, a mild editorial tense/framing issue, not grounds for auto-edit."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "LOC Bain News Service record: no known publication restrictions, not a blanket license; review publication credits and actual asset; HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          960,
+          689
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "256:5",
+      "post_id": 256,
+      "slot": 5,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Girl%20with%20relics%20from%20the%20Black%20Tom%20Explosion.png?width=1280",
+      "stored_original_alt": "A young girl holding three shells reportedly found about a mile and a half from Black Tom after the 1916 explosion.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Girl_with_relics_from_the_Black_Tom_Explosion.png",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Evening Star / Chronicling America (Underwood & Underwood photographers)",
+        "primary_record_url": "https://chroniclingamerica.loc.gov/lccn/sn83045462/1916-08-02/ed-1/seq-4/",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          412,
+          720
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "Printed newspaper clipping/portrait, not a modern photo. Do not upscale 412px source or silently replace with a different child portrait."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "Commons US public-domain claim grounded in the August 2, 1916 newspaper publication; jurisdiction-specific rights review HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          412,
+          720
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    },
+    {
+      "image_key": "256:6",
+      "post_id": 256,
+      "slot": 6,
+      "stored_original_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20electrical%20poles%20-%201916.jpg?width=1280",
+      "stored_original_alt": "Wreckage and damaged utility poles at Black Tom after the July 1916 explosion.",
+      "archived_source_part_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "source_snapshot_modified": "2026-10-29T15:51:59",
+      "independent_source_retriever": {
+        "method": "web.open exact stored Special:Redirect URL (not visitor browser)",
+        "checked_on": "2026-11-02",
+        "result": "TOOL_URL_NOT_ACCESSIBLE_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null,
+        "redirect_final_url": null,
+        "bytes_transferred": null
+      },
+      "catalog": {
+        "catalog_page_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_electrical_poles_-_1916.jpg",
+        "html_catalog_page_read": true,
+        "catalog_checked_on": "2026-11-02",
+        "custodian_or_origin": "Wikimedia Commons (source cited to New Jersey City University historical project)",
+        "primary_record_url": "http://www.njcu.edu/programs/jchistory/Pages/B_Pages/Black_Tom_Explosion.htm",
+        "same_commons_file_title_as_stored_source": true,
+        "decoded_binary_identity_verified": false,
+        "original_binary_sha256": null,
+        "master_dimensions_from_catalog_px": [
+          800,
+          535
+        ],
+        "master_dimensions_from_downloaded_binary_px": null,
+        "original_binary_downloaded": false,
+        "source_note": "Utility poles at 1916 damaged pier; no silent scene substitution."
+      },
+      "rights": {
+        "assessment": "HOLD_ITEM_LEVEL_REVIEW",
+        "evidence": "Commons claims U.S. public domain (1916 publication); original creator attribution remains unverified; HOLD.",
+        "credit_required": true,
+        "license_for_mirroring_approved": false
+      },
+      "conditional_derivative": {
+        "max_width_px": 960,
+        "target_dimensions_px": [
+          800,
+          535
+        ],
+        "no_upscale": true,
+        "aspect_ratio_preserved": true,
+        "derivative_created": false,
+        "source_binary_needed_before_final_sizing": true
+      },
+      "browser": {
+        "actual_get_status": null,
+        "final_url": null,
+        "current_src": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "mime_type": null,
+        "request_id": null,
+        "uncached_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authorization": {
+        "replacement_ready": false,
+        "first_party_wordpress_cache_authorized": false,
+        "wordpress_post_rewrite_authorized": false
+      }
+    }
+  ]
+}
