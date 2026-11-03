@@ -11,6 +11,7 @@ from threading import Thread
 from playwright.sync_api import sync_playwright
 import fitz
 WIDTHS=(320,390,768,1440,1920)
+TRACE={'case':'START','gate':'SETUP'}
 NASA=('https://www.nasa.gov/image-detail/apollo-1-crew-honored/',
       'https://www.nasa.gov/image-detail/amf-s67-15717/',
       'https://www.nasa.gov/image-detail/amf-s66-58038/',
@@ -34,6 +35,7 @@ def run(root,out,axe=None,chromium=None):
             browser=p.chromium.launch(**opts)
             for width in WIDTHS:
                 for js in (False,True):
+                    TRACE.update(case=str(width)+'px/'+('JS' if js else 'NOJS'),gate='CONTEXT')
                     context=browser.new_context(viewport={'width':width,'height':860},java_script_enabled=js,
                         reduced_motion='reduce',has_touch=width<=390,is_mobile=width<=390)
                     if js:context.add_init_script('''(()=>{window.__lab={lcp:null,cls:0};
@@ -47,7 +49,9 @@ def run(root,out,axe=None,chromium=None):
                             external.append('UNEXPECTED_OUTBOUND');r.abort()
                         else:r.continue_()
                     page.route(re.compile('^https?://'),route)
+                    TRACE['gate']='LOAD'
                     page.goto(base+'/R88_READING_ROOM.html',wait_until='load')
+                    TRACE['gate']='STATIC_SOURCE'
                     page.wait_for_timeout(120)
                     assert not errors and not external,'R88_BROWSER_NETWORK_OR_JS'
                     assert page.locator('article.record').count()==6,'R88_WRONG_RECORD_COUNT'
@@ -56,6 +60,7 @@ def run(root,out,axe=None,chromium=None):
                     assert page.locator('img,iframe,picture,video,[data-lat],[data-lon],[data-geo-edge]').count()==0,'R88_MEDIA_GEO'
                     assert 'S67-19766' in page.locator('body').inner_text(),'R88_PROVISIONAL_ID_MISSING'
                     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2'),'R88_HORIZONTAL_OVERFLOW'
+                    TRACE['gate']='NATIVE_KEYBOARD'
                     page.locator('details summary').first.focus();page.keyboard.press('Enter')
                     assert page.locator('details').first.evaluate('n=>n.open'),'R88_NATIVE_ENTER_OPEN'
                     page.keyboard.press('Enter')
@@ -63,6 +68,7 @@ def run(root,out,axe=None,chromium=None):
                     case={'width':width,'js':js,'real_chromium':True,'drawer_keyboard':True,
                           'no_overflow':True,'source_links':6,'compare':None,'axe':None,'lcp_ms':None,'cls':None}
                     if js:
+                        TRACE['gate']='TWO_SOURCE_COMPARE'
                         inputs=page.locator('label.compare-choice input')
                         assert inputs.count()==6 and inputs.first.is_visible(),'R88_COMPARE_NOT_ENHANCED'
                         inputs.nth(0).check();inputs.nth(1).check()
@@ -75,13 +81,16 @@ def run(root,out,axe=None,chromium=None):
                         assert page.locator('.comparison-card').count()==0 and not inputs.nth(2).is_checked(),'R88_CLEAR'
                         case['compare']='PASS'
                         if axe:
+                            TRACE['gate']='AXE_ACCESSIBILITY'
                             page.add_script_tag(path=str(axe))
                             result=page.evaluate('''async()=>{const x=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});return {violations:x.violations.map(v=>({id:v.id,count:v.nodes.length})),passes:x.passes.length}}''')
                             assert not result['violations'],'R88_AXE_VIOLATIONS'
                             case['axe']=result
+                        TRACE['gate']='PERFORMANCE_OBSERVERS'
                         lab=page.evaluate('window.__lab');case['lcp_ms']=lab['lcp'];case['cls']=lab['cls']
                         assert lab['cls'] is not None and lab['cls']<=0.1,'R88_CLS_GATE'
                         if width in (390,1440):
+                            TRACE['gate']='SCREENSHOT_PRINT'
                             snap=out/f'R88_READER_{width}.png';page.screenshot(path=str(snap),full_page=True,animations='disabled')
                             shots[str(width)]=checksum(snap)
                             if width==1440:
@@ -93,10 +102,12 @@ def run(root,out,axe=None,chromium=None):
                                     assert 'INDIVIDUAL REVIEW REQUIRED' in text,'R88_RIGHTS_LOST_IN_PRINT'
                                     pages=len(d)
                     else:
+                        TRACE['gate']='NOJS_FALLBACK'
                         assert page.locator('.compare-choice:visible').count()==0,'R88_NOJS_COMPARE_CONFUSION'
                         assert page.locator('.record a.source:visible').count()==6,'R88_NOJS_SOURCE_LOSS'
                     case['nojs_content']='PASS' if not js else 'N/A'
                     cases.append(case);context.close()
+            TRACE.update(case='390px/FORCED',gate='FORCED_COLORS')
             context=browser.new_context(viewport={'width':390,'height':900},forced_colors='active',reduced_motion='reduce')
             p2=context.new_page();p2.goto(base+'/R88_READING_ROOM.html')
             p2.locator('label.compare-choice input').first.check()
@@ -118,5 +129,5 @@ if __name__=='__main__':
         x=run(args.src,args.out,args.axe,args.chromium)
         print('R88: Chromium',x['case_count'],'configs passed, STAGING_HOLD')
     except Exception:
-        print('R88_BROWSER_HOLD: browser acceptance not established',file=__import__('sys').stderr)
+        print('R88_BROWSER_HOLD:'+TRACE['case']+':'+TRACE['gate'],file=__import__('sys').stderr)
         raise SystemExit(1)
