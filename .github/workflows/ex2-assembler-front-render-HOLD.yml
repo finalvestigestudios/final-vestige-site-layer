@@ -77,7 +77,7 @@ jobs:
           css=(root/slug/'style.css').read_text()
           if 'Theme Name: Assembler' not in css: raise RuntimeError('Theme identity mismatch')
           with open(os.environ['GITHUB_ENV'],'a') as f:
-              f.write('FV_THEME_DIR='+str(root/slug)+'\\n')
+              f.write('FV_THEME_DIR='+str(root/slug)+'\n')
           print('Assembler preflight passed. Slug:',slug,'files:',len(items))
           PY
       - name: Install free pinned browser tooling
