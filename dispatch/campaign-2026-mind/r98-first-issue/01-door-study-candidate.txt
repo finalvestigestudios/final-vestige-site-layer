@@ -1,0 +1,54 @@
+INTERNAL REVIEW ONLY — UNSENT / NOT A JETPACK EMAIL
+THE DISPATCH / ISSUE 01 — ALTERNATE CANDIDATE
+
+Subject: The stranger changed. The conversation didn't.
+Preheader proposal ONLY (not confirmed Jetpack capability):
+In a real-world experiment, even a face-to-face change was easy to miss.
+
+A stranger stops you and asks for directions. You begin explaining the route.
+Two workers carry a door between you.
+
+On the other side, a different person is listening.
+
+Would you notice?
+
+In 1998, Daniel Simons and Daniel Levin tested this question during real-world
+interactions. During conversations with pedestrians, the person asking for
+directions was replaced while a door passed between them. In their first
+experiment, only about half noticed the substitution. That finding applies
+to those study conditions; it isn't a universal rate for every conversation.
+
+Seeing an event isn't the same as preserving a complete record of it. A
+witness can be sincere and still miss a substantial change.
+
+In a separate 1997 experiment, Ronald Rensink, J. Kevin O'Regan and James
+Clark alternated versions of a scene with short blank interruptions. Large
+changes could be difficult to detect when the interruption removed the usual
+motion cue. Their work concerns visual attention, not proof that every
+memory is false.
+
+A useful three-part notebook exercise:
+1. What could the witness actually observe?
+2. What might have changed outside their attention?
+3. Which parts of the account are inferences?
+
+This is the same discipline we apply to archival evidence, and we'll use it
+when we turn to Puységur's eighteenth-century witnesses in Issue 02.
+
+READ THE INVESTIGATION:
+Change Blindness: Why You Miss Big Changes Right in Front of You
+https://finalvestige.com/2026/11/02/change-blindness/
+
+SOURCES:
+Simons & Levin (1998), Psychonomic Bulletin & Review:
+https://doi.org/10.3758/BF03208840
+Rensink, O'Regan & Clark (1997), Psychological Science:
+https://doi.org/10.1111/j.1467-9280.1997.tb00427.x
+
+INTERNAL LEGAL-REVIEW PLACEHOLDERS — NEVER SEND AS-IS
+Final Vestige Studios postal address:
+[[VALID_POSTAL_ADDRESS_REQUIRED]]
+Actual verified Jetpack unsubscribe:
+[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+No commercial offer. Subscriber status, actual received email, functional opt-out,
+postal qualification and founder approval remain unverified. HOLD_UNSENT.
