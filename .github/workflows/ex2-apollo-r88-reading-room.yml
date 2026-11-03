@@ -1,0 +1,90 @@
+# Exact-head independent Apollo CI. NEVER DEPLOY.
+name: Apollo R88 comparative source reading room (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r88*'
+      - 'experience2/evidence-atlas/tests/*r88*'
+      - 'experience2/evidence-atlas/R88_READING_ROOM_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r88-reading-room.yml'
+permissions:
+  contents: read
+jobs:
+  custody-and-determinism:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify actual Desk, Atlas, NASA and R87 source custody before deterministic packaging
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r88-pycache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_reading_room_r88.py experience2/evidence-atlas/tests/test_reading_room_r88.py experience2/evidence-atlas/tests/browser_reading_room_r88.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_concordance_r86.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_chronology_r87.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_reading_room_r88.py -v
+          python experience2/evidence-atlas/tools/build_reading_room_r88.py "$RUNNER_TEMP/r88-staging" "$RUNNER_TEMP/R88_A.zip"
+          python experience2/evidence-atlas/tools/build_reading_room_r88.py "$RUNNER_TEMP/r88-staging" "$RUNNER_TEMP/R88_B.zip"
+          cmp "$RUNNER_TEMP/R88_A.zip" "$RUNNER_TEMP/R88_B.zip"
+          sha256sum "$RUNNER_TEMP/R88_A.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r88-deterministic-source-STAGING-HOLD
+          path: ${{ runner.temp }}/R88_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  real-chromium-accessibility:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: custody-and-determinism
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned Chromium and accessibility dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r88-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Real Chromium 320-1920, keyboard, no-JS, compare, axe, CLS/LCP, print
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r88-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_reading_room_r88.py "$RUNNER_TEMP/r88-staging"
+          python experience2/evidence-atlas/tests/browser_reading_room_r88.py --src "$RUNNER_TEMP/r88-staging" --out "$RUNNER_TEMP/r88-evidence" --axe "$RUNNER_TEMP/r88-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r88-evidence/R88_BROWSER_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Save screenshots, accessibility/performance receipts and native PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r88-real-chromium-STAGING-HOLD
+          path: ${{ runner.temp }}/r88-evidence/
+          if-no-files-found: warn
+          retention-days: 7
