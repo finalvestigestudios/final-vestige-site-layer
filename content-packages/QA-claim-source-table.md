@@ -375,3 +375,24 @@ Plus 20 FAQ answers compared with the body and with the visible FAQ (section 3.3
 - McIntosh and Hapgood are cited through the publisher description and through Jolly; the books were not read.
 - The Gutenberg text is a 1785 English translation; no French original was opened.
 - Image-content claims (what an image shows) were checked against Commons metadata only, not by viewing every image; rows that depend on that are marked.
+
+## 7. Resolution (2026-11-02, after the founder's approval to correct)
+All nine UNVERIFIED rows and three PARAPHRASE-OK rows that needed tightening were corrected on the live posts. Full before/after text, post IDs and lock tokens: `CORRECTIONS-LOG.md`. New evidence is quoted there. The McIntosh book was not downloaded (lending-restricted copy), so McIntosh claims still rest on the publisher description.
+
+| Row | Was | Now | Evidence |
+|---|---|---|---|
+| A13 | UNVERIFIED (Wikipedia-only) "later" sea-book | PARAPHRASE-OK, inference stated as inference | Akçura quotes the Bahriye describing the 1517 presentation, so the book postdates it |
+| A37 | UNVERIFIED journal/volume | SUPPORTED: *Skeptical Inquirer* vol. 11, no. 1 (Fall 1986) | the journal's own issue PDF, cover "Vol. XI No. 1/Fall 1986" |
+| A42 | PARAPHRASE-OK "geoscientist" | SUPPORTED: "Steven Dutch of the University of Wisconsin–Green Bay" | Dutch page header |
+| A43 | PARAPHRASE-OK generalised | SUPPORTED: wording now matches Jolly's Finaeus-map statement | Jolly |
+| A48 | UNVERIFIED (Wikipedia-only) caption claim | removed; caption now states that the chart is illustrative only | n/a (claim withdrawn) |
+| A49 | UNVERIFIED alt text | SUPPORTED: description from Commons, "vertical line" from viewing the image | Commons description; image viewed |
+| A50 | UNVERIFIED (Wikipedia-only) | SUPPORTED as a documented absence: the 1935 edition says nothing about 1517–1929 | full-text search of Akçura |
+| A51 | UNVERIFIED (Wikipedia-only) "Book of the Sea" | SUPPORTED: "a work on navigation, the Bahriye" | Akçura |
+| A53 | UNVERIFIED (Wikipedia-only) Columbus map "lost" | SUPPORTED: the 1935 edition says it "has not been found"; our limit stated | Akçura |
+| A54 | UNVERIFIED (Wikipedia-only) "two-thirds" | SUPPORTED: "torn away and lost" (Akçura); "torn in half" attributed to Dutch; fraction called an inference | Akçura; Dutch |
+| B35 | UNVERIFIED nanometre definition | removed | n/a |
+| D49 | PARAPHRASE-OK | SUPPORTED: reworded to what the draft and the cited title establish | draft 1358 text; Routledge title quoted there |
+
+**Counts after correction (226 claims):** supported 197 (188 + 9 resolved to supported), paraphrase-OK 29 (one of which, A13, is the labelled inference), **unverified 0**, not supported 0; two claims (A48, B35) were withdrawn rather than re-sourced. **No Wikipedia-only claim remains in any post** (re-checked by re-reading each live page against the corrected text); the Wikipedia link in post 1917 is stated as locating references only.
+

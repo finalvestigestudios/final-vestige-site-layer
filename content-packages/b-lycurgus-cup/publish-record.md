@@ -23,3 +23,6 @@ British Museum record link refuses scripted HEAD (HTTP 403); the record was open
 1. Set post 1920 back to `draft` with `posts.update` (`status: "draft"`), which removes it from the public site, sitemap and feeds.
 2. To remove permanently, delete the post in wp-admin (`/wp-admin/post.php?post=1920&action=edit`).
 3. Page 6 (homepage), plugins, theme and navigation were not touched by this package, so nothing else needs reverting.
+
+## Revision 2: evidence corrections (2026-11-02, 22:02–22:04)
+Corrected after the QA table; before/after text in `../CORRECTIONS-LOG.md`. Post 1920: modified `2026-11-02T22:04:04`, WordPress content_hash `02525f8f39cc22533480c1c5f4ece85506e3f8ca`. Article source SHA-256 (LF) now `0bb4ce2272bc9d8852c59f5a46afe9abc25f6d3aa87057194cc3d0c5bd97d024`. Re-read live: one Article, one FAQPage, one BreadcrumbList; all text blocks match; FAQ JSON-LD equals the visible FAQ. Rollback of this revision: restore the earlier block text from the log, or revert the post to its 20:xx revision in the WordPress.com revision history.

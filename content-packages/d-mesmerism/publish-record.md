@@ -23,3 +23,6 @@ Source is a 1785 English translation; Public Domain Review essay is interpretive
 1. Set post 1924 back to `draft` with `posts.update` (`status: "draft"`), which removes it from the public site, sitemap and feeds.
 2. To remove permanently, delete the post in wp-admin (`/wp-admin/post.php?post=1924&action=edit`).
 3. Page 6 (homepage), plugins, theme and navigation were not touched by this package, so nothing else needs reverting.
+
+## Revision 2: evidence corrections (2026-11-02, 22:02–22:04)
+Corrected after the QA table; before/after text in `../CORRECTIONS-LOG.md`. Post 1924: modified `2026-11-02T22:04:16`, WordPress content_hash `6c22e567c9848fd9bc7893c57282563c8cb6a563`. Article source SHA-256 (LF) now `492aff79e4c4e3f590d6856b568a96c8fa976a3f5aa1184c68f7635d9cc7f5cc`. Re-read live: one Article, one FAQPage, one BreadcrumbList; all text blocks match; FAQ JSON-LD equals the visible FAQ. Rollback of this revision: restore the earlier block text from the log, or revert the post to its 20:xx revision in the WordPress.com revision history.

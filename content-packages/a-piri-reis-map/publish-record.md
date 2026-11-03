@@ -23,3 +23,6 @@ One external link (Center for Inquiry PDF) refuses HEAD requests from scripts (H
 1. Set post 1917 back to `draft` with `posts.update` (`status: "draft"`), which removes it from the public site, sitemap and feeds.
 2. To remove permanently, delete the post in wp-admin (`/wp-admin/post.php?post=1917&action=edit`).
 3. Page 6 (homepage), plugins, theme and navigation were not touched by this package, so nothing else needs reverting.
+
+## Revision 2: evidence corrections (2026-11-02, 22:02–22:04)
+Corrected after the QA table; before/after text in `../CORRECTIONS-LOG.md`. Post 1917: modified `2026-11-02T22:03:48`, WordPress content_hash `2049decfed3eec105714f3efa9214ba018ef7a8b`. Article source SHA-256 (LF) now `43301ff01da342431ba5773b3c4e61d89e29776659e6e9b39df717c602c96e84`. Re-read live: one Article, one FAQPage, one BreadcrumbList; all text blocks match; FAQ JSON-LD equals the visible FAQ. Rollback of this revision: restore the earlier block text from the log, or revert the post to its 20:xx revision in the WordPress.com revision history.
