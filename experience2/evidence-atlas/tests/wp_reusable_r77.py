@@ -265,7 +265,7 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
                                 and 0 <= lcp < 600000 else None,
                             'field_core_web_vitals': False,
                             'production_acceptance': False,
-                        }, sort_keys=True, indent=2) + '\\n')
+                        }, sort_keys=True, indent=2) + '\n')
                     assert case['lab_not_field_cwv']['lcp'] <= 2500, 'R77_LCP_LAB_GATE'
                     assert case['lab_not_field_cwv']['cls'] <= .1, 'R77_CLS_LAB_GATE'
                     screenshot = page.screenshot(full_page=True, animations='disabled')
