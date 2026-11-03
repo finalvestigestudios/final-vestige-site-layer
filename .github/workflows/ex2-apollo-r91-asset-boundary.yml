@@ -18,14 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Real source build, 24 NASA bindings, 13 asset-mutation tests, reproducible bytes
         env:
-          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r91-python-cache"
@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apollo-r91-deterministic-review-STAGING-HOLD
-          path: \${{ runner.temp }}/R91_A.zip
+          path: ${{ runner.temp }}/R91_A.zip
           if-no-files-found: error
           retention-days: 7
   real-chromium-all-four-surfaces:
@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -70,7 +70,7 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/r91-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
       - name: 40 real contexts, 8 axe scans, screenshots, native print, lab LCP/CLS
         env:
-          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r91-browser-cache"
@@ -85,6 +85,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apollo-r91-all-four-views-browser-STAGING-HOLD
-          path: \${{ runner.temp }}/r91-evidence/
+          path: ${{ runner.temp }}/r91-evidence/
           if-no-files-found: warn
           retention-days: 7
