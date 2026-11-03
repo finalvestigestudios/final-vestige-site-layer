@@ -300,5 +300,63 @@ class AncestorVisibility(unittest.TestCase):
             gate.audit_shell(META, html, [REF])
 
 
+
+
+class ShellExecutableBoundary(unittest.TestCase):
+    def assert_rejected(self, html):
+        with self.assertRaises(gate.Gate):
+            gate.audit_shell(META, html, [REF])
+
+    def test_safe_one_jsonld_remains_unexecutable(self):
+        self.assertEqual(gate.audit_shell(META, fixture(), [REF])["rendered_citations"], 1)
+
+    def test_new_executable_script_in_builder_shell_fails(self):
+        self.assert_rejected(fixture().replace(
+            '<section class="pa-sources"',
+            '<script>alert("counterfeit notice")</script><section class="pa-sources"'))
+
+    def test_new_external_script_in_builder_shell_fails(self):
+        self.assert_rejected(fixture().replace(
+            '<section class="pa-sources"',
+            '<script src="https://example.org/tracker.js"></script><section class="pa-sources"'))
+
+    def test_new_style_in_builder_shell_fails(self):
+        self.assert_rejected(fixture().replace(
+            '<section class="pa-review"',
+            '<style>.pa-review{display:none}</style><section class="pa-review"'))
+
+    def test_new_iframe_in_builder_shell_fails(self):
+        self.assert_rejected(fixture().replace(
+            '<section class="pa-review"',
+            '<iframe src="https://example.org/collect"></iframe><section class="pa-review"'))
+
+    def test_jsonld_with_src_is_not_static(self):
+        self.assert_rejected(fixture().replace(
+            '<script type="application/ld+json">',
+            '<script type="application/ld+json" src="https://example.org/data.js">'))
+
+    def test_executable_jsonld_type_swap_fails(self):
+        self.assert_rejected(fixture().replace(
+            '<script type="application/ld+json">',
+            '<script type="text/javascript">'))
+
+    def test_second_jsonld_in_shell_fails(self):
+        html = fixture().replace(
+            '<script type="application/ld+json">',
+            '<script type="application/ld+json">{}</script>'
+            '<script type="application/ld+json">')
+        self.assert_rejected(html)
+
+    def test_missing_structured_shell_script_fails(self):
+        self.assert_rejected(fixture().replace(
+            '<script type="application/ld+json">{"@type":"Article"}</script>', ''))
+
+    def test_injected_script_outside_article_fails(self):
+        self.assert_rejected('<script>alert(1)</script>' + fixture())
+
+    def test_injected_form_outside_article_fails(self):
+        self.assert_rejected('<form action="/capture"></form>' + fixture())
+
+
 if __name__ == "__main__":
     unittest.main()
