@@ -1,0 +1,497 @@
+{
+  "updated": "2026-11-02",
+  "sources": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "type": "primary",
+      "note": "1987 Wegner experiments",
+      "status": "verified"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8121959/",
+      "type": "theory",
+      "note": "1994 ironic process",
+      "status": "verified"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8295117/",
+      "type": "primary",
+      "note": "1993 cognitive load",
+      "status": "verified"
+    },
+    {
+      "url": "https://journals.sagepub.com/doi/10.1177/1745691619898795",
+      "type": "meta",
+      "note": "2020 31-study meta",
+      "status": "verified"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27835764/",
+      "type": "theory",
+      "note": "monitor-acceptance framework",
+      "status": "verified"
+    },
+    {
+      "url": "https://doi.org/10.1146/annurev-psych-042716-051139",
+      "type": "review",
+      "note": "mindfulness broad review",
+      "status": "verified"
+    },
+    {
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "review",
+      "note": "2023 14-study binaural review",
+      "status": "verified"
+    },
+    {
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "note": "official catalog",
+      "status": "seller only"
+    },
+    {
+      "url": "https://zen12.com/hnp",
+      "type": "seller",
+      "note": "exact main offer",
+      "status": "seller only"
+    },
+    {
+      "url": "https://zen12.com/about",
+      "type": "seller",
+      "note": "styles and levels",
+      "status": "seller only"
+    },
+    {
+      "url": "https://zen12.com/research",
+      "type": "seller",
+      "note": "seller references, not clinical proof",
+      "status": "seller only"
+    },
+    {
+      "url": "https://zen12.com/getstarted",
+      "type": "seller",
+      "note": "checkout package and mobile data",
+      "status": "seller only"
+    },
+    {
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller legal",
+      "note": "SMS and sharing disclosures",
+      "status": "seller only"
+    },
+    {
+      "url": "https://inspire3.com/terms/",
+      "type": "seller legal",
+      "note": "terms inaccessible",
+      "status": "inaccessible"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "note": "material connection disclosure",
+      "status": "verified"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "note": "health substantiation",
+      "status": "verified"
+    },
+    {
+      "url": "https://finalvestige.com/focus/",
+      "type": "site",
+      "note": "existing sole focus funnel",
+      "status": "verified read"
+    },
+    {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "site",
+      "note": "historical evidence bridge",
+      "status": "verified read"
+    },
+    {
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "site",
+      "note": "independent standards",
+      "status": "verified read"
+    },
+    {
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "site",
+      "note": "general disclosure",
+      "status": "known published"
+    },
+    {
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "project",
+      "note": "founder scope",
+      "status": "verified read"
+    },
+    {
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "type": "project",
+      "note": "Dispatch HOLD",
+      "status": "verified read"
+    }
+  ],
+  "decisions": [
+    {
+      "id": 1,
+      "claim": "12-minute session",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 2,
+      "claim": "12 levels",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 3,
+      "claim": "music guided noise nature styles",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 4,
+      "claim": "Premium 48 MP3",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 5,
+      "claim": "Beginner 24 first half",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 6,
+      "claim": "Advanced 24 last half",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 7,
+      "claim": "available download format",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 8,
+      "claim": "user manual offered",
+      "evidence": "seller advertised",
+      "decision": "allowed with seller qualifier"
+    },
+    {
+      "id": 9,
+      "claim": "12 minutes equals hour meditation",
+      "evidence": "no product trial",
+      "decision": "prohibited"
+    },
+    {
+      "id": 10,
+      "claim": "automatically meditates for buyer",
+      "evidence": "seller rhetoric",
+      "decision": "prohibited"
+    },
+    {
+      "id": 11,
+      "claim": "guaranteed focus",
+      "evidence": "no product proof",
+      "decision": "prohibited"
+    },
+    {
+      "id": 12,
+      "claim": "guaranteed creativity",
+      "evidence": "no product proof",
+      "decision": "prohibited"
+    },
+    {
+      "id": 13,
+      "claim": "guaranteed stress remedy",
+      "evidence": "no product proof",
+      "decision": "prohibited"
+    },
+    {
+      "id": 14,
+      "claim": "guaranteed anxiety relief",
+      "evidence": "no product proof",
+      "decision": "prohibited"
+    },
+    {
+      "id": 15,
+      "claim": "brain reprogramming proven",
+      "evidence": "no product proof",
+      "decision": "prohibited"
+    },
+    {
+      "id": 16,
+      "claim": "treats medical condition",
+      "evidence": "no clinical proof",
+      "decision": "prohibited"
+    },
+    {
+      "id": 17,
+      "claim": "Wegner white-bear validates Zen12",
+      "evidence": "unrelated study",
+      "decision": "prohibited"
+    },
+    {
+      "id": 18,
+      "claim": "Wang 31 studies supports rebound",
+      "evidence": "SAGE 2020",
+      "decision": "allowed accurate"
+    },
+    {
+      "id": 19,
+      "claim": "immediate suppression always fails",
+      "evidence": "cognitive load matters",
+      "decision": "prohibited"
+    },
+    {
+      "id": 20,
+      "claim": "binaural review five eight one",
+      "evidence": "PLOS 2023",
+      "decision": "allowed accurate"
+    },
+    {
+      "id": 21,
+      "claim": "binaural review tested Zen12",
+      "evidence": "not studied",
+      "decision": "prohibited"
+    },
+    {
+      "id": 22,
+      "claim": "one year refund described",
+      "evidence": "seller only",
+      "decision": "allowed with limits"
+    },
+    {
+      "id": 23,
+      "claim": "refund detail known",
+      "evidence": "seller terms inaccessible",
+      "decision": "prohibited"
+    },
+    {
+      "id": 24,
+      "claim": "stable price",
+      "evidence": "promo is dynamic",
+      "decision": "prohibited"
+    },
+    {
+      "id": 25,
+      "claim": "discount countdown genuine scarcity",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 26,
+      "claim": "seller requests mobile",
+      "evidence": "seller checkout",
+      "decision": "allowed"
+    },
+    {
+      "id": 27,
+      "claim": "possible SMS marketing",
+      "evidence": "seller privacy",
+      "decision": "allowed"
+    },
+    {
+      "id": 28,
+      "claim": "buyer PII to affiliates possible",
+      "evidence": "seller privacy",
+      "decision": "allowed qualified"
+    },
+    {
+      "id": 29,
+      "claim": "FV buyer PII collection",
+      "evidence": "not allowed",
+      "decision": "prohibited"
+    },
+    {
+      "id": 30,
+      "claim": "FV affiliate membership approved",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 31,
+      "claim": "exact approved affiliate URL",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 32,
+      "claim": "website channel authorized",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 33,
+      "claim": "TikTok channel authorized",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 34,
+      "claim": "email channel authorized",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 35,
+      "claim": "approved creative rights",
+      "evidence": "not verified",
+      "decision": "prohibited"
+    },
+    {
+      "id": 36,
+      "claim": "FV personally tried Zen12",
+      "evidence": "no trial",
+      "decision": "prohibited"
+    },
+    {
+      "id": 37,
+      "claim": "review core same A and B",
+      "evidence": "source check",
+      "decision": "required"
+    },
+    {
+      "id": 38,
+      "claim": "adjacent disclosure",
+      "evidence": "FTC",
+      "decision": "required before link"
+    },
+    {
+      "id": 39,
+      "claim": "buyer guide live",
+      "evidence": "unpublished",
+      "decision": "prohibited"
+    },
+    {
+      "id": 40,
+      "claim": "film conversion uplift",
+      "evidence": "not tested",
+      "decision": "prohibited"
+    },
+    {
+      "id": 41,
+      "claim": "hosted video exists",
+      "evidence": "not hosted",
+      "decision": "prohibited"
+    },
+    {
+      "id": 42,
+      "claim": "one Focus funnel reused",
+      "evidence": "live site",
+      "decision": "required"
+    },
+    {
+      "id": 43,
+      "claim": "second subscriber list",
+      "evidence": "not authorized",
+      "decision": "prohibited"
+    },
+    {
+      "id": 44,
+      "claim": "clicks are sales",
+      "evidence": "no conversion evidence",
+      "decision": "prohibited"
+    },
+    {
+      "id": 45,
+      "claim": "video is original illustrative",
+      "evidence": "storyboard and captions",
+      "decision": "allowed"
+    },
+    {
+      "id": 46,
+      "claim": "seller guarantee proves result",
+      "evidence": "marketing only",
+      "decision": "prohibited"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": 1,
+      "gate": "written FV Inspire3 acceptance",
+      "verified": false
+    },
+    {
+      "id": 2,
+      "gate": "exact approved earning URL",
+      "verified": false
+    },
+    {
+      "id": 3,
+      "gate": "website promotional right",
+      "verified": false
+    },
+    {
+      "id": 4,
+      "gate": "TikTok promotional right",
+      "verified": false
+    },
+    {
+      "id": 5,
+      "gate": "email promotional right",
+      "verified": false
+    },
+    {
+      "id": 6,
+      "gate": "approved creative license",
+      "verified": false
+    },
+    {
+      "id": 7,
+      "gate": "terms/refund re-review",
+      "verified": false
+    },
+    {
+      "id": 8,
+      "gate": "purchaser PII privacy terms",
+      "verified": false
+    },
+    {
+      "id": 9,
+      "gate": "product clinical/FTC claims",
+      "verified": false
+    },
+    {
+      "id": 10,
+      "gate": "founder publication approval",
+      "verified": false
+    },
+    {
+      "id": 11,
+      "gate": "PR #172 hub collaboration",
+      "verified": false
+    },
+    {
+      "id": 12,
+      "gate": "WordPress staging sanitizer",
+      "verified": false
+    },
+    {
+      "id": 13,
+      "gate": "screen reader keyboard WCAG",
+      "verified": false
+    },
+    {
+      "id": 14,
+      "gate": "Lighthouse performance",
+      "verified": false
+    },
+    {
+      "id": 15,
+      "gate": "first-party hosted film captions",
+      "verified": false
+    },
+    {
+      "id": 16,
+      "gate": "attribution privacy approval",
+      "verified": false
+    }
+  ]
+}

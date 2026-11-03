@@ -1,0 +1,4 @@
+/* Synthetic-only private prototype. Do not import into any live page. */
+export const enabled=false;
+const sources=new Set(['organic','direct','tiktok','internal','unknown']);
+export function syntheticAggregate(events){if(enabled)throw Error('gate closed');if(!Array.isArray(events))throw TypeError('array expected');const groups=new Map();for(const row of events){if(!row||Array.isArray(row)||typeof row!=='object')throw Error('invalid row');const keys=Object.keys(row);if(keys.length!==4||keys.some(k=>!['source','variant','topic','event'].includes(k)))throw Error('unexpected or identifying key');if(!sources.has(row.source)||!['A','B'].includes(row.variant)||row.topic!=='white-bear'||row.event!=='synthetic-outbound')throw Error('unknown field');const k=row.source+'|'+row.variant+'|'+row.topic;groups.set(k,(groups.get(k)||0)+1)}return [...groups].filter(([,n])=>n>=20).map(([category,count])=>({category,count}))}
