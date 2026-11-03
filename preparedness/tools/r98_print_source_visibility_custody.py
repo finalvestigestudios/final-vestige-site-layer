@@ -155,9 +155,11 @@ def dangerous_declaration(selector, key, value, in_print):
              "CSS strips evidence region semantics: " + selector)
     if key in ("visibility", "content-visibility") and v in ("hidden", "collapse", "auto"):
         raise Hold("CSS can conceal review/source content: " + selector + " " + key)
-    if key in ("opacity", "scale", "zoom") and (v in ("0", "0.0", "0%", ".0", "calc(0)") or
-                                                 v.startswith(("var(", "env(", "clamp(", "min(", "max("))):
-        raise Hold("opaque computed opacity/scale cannot prove evidence visibility: " + selector)
+    if key == "opacity" and v != "1":
+        raise Hold("non-opaque or computed evidence text requires human review: " + selector)
+    if key in ("scale", "zoom") and (v in ("0", "0.0", "0%", ".0", "calc(0)") or
+                                      v.startswith(("var(", "env(", "clamp(", "min(", "max(")))):
+        raise Hold("opaque computed scale cannot prove evidence visibility: " + selector)
     if key.startswith(("mask", "-webkit-mask", "clip", "filter", "-webkit-filter")):
         if v not in ("none", "auto"):
             raise Hold("CSS clipping or masking requires human review: " + selector)
@@ -171,8 +173,9 @@ def dangerous_declaration(selector, key, value, in_print):
         need(selector == ".pa-body sup.pa-cite",
              "unexpected zero-height text near evidence: " + selector)
     if key in ("color", "-webkit-text-fill-color"):
-        if v == "transparent" or re.fullmatch(r"#[0-9a-f]{3,6}00", v):
-            raise Hold("CSS makes evidence text transparent: " + selector)
+        if (v == "transparent" or re.fullmatch(r"#[0-9a-f]{3,6}00", v) or
+                "rgba(" in v or "hsla(" in v or re.search(r"/0(?:\\.0+)?\\)", v)):
+            raise Hold("CSS text color opacity requires human print/screen review: " + selector)
     if key in ("transform", "translate") and ("scale(0" in v or "translate(-9999" in v):
         raise Hold("CSS moves or scales evidence out of view: " + selector)
     if key == "text-indent" and v.startswith("-"):
@@ -195,6 +198,7 @@ def audit_stylesheet(css):
     print_rules = []
     href_print = []
     hidden_print = []
+    print_palette = []
     seen_rules = 0
 
     def visit(chunk, in_print=False, depth=0):
@@ -220,6 +224,11 @@ def audit_stylesheet(css):
                     dangerous_declaration(selector, key, value, in_print)
                 if in_print:
                     print_rules.append(selector)
+                    if "color" in props:
+                        need(props["color"] in ("#000", "#000000"),
+                             "print text must remain ink-black: " + selector)
+                    if selector in (".pa", ".pa *", ".pa a"):
+                        print_palette.append((selector, props))
                     if selector in PRINT_ALLOW_HIDDEN and props.get("display") == "none":
                         hidden_print.append(selector)
                     if selector == SITE_PRINT_HREF_SELECTOR:
@@ -235,6 +244,14 @@ def audit_stylesheet(css):
          "printed source URL annotation changed or removed")
     need(len(print_rules) > 0 and len(rules) > 0,
          "stylesheet lacks print or regular scoped content rules")
+    need(any(selector == ".pa" and props.get("color") in ("#000", "#000000")
+             and props.get("background") in ("#fff", "#ffffff")
+             for selector, props in print_palette),
+         "print root ink/paper palette missing")
+    need(any(selector == ".pa *" and props.get("color") in ("#000", "#000000")
+             and props.get("background") == "transparent"
+             for selector, props in print_palette),
+         "print evidence descendants must retain opaque black text")
     need(set(hidden_print) <= PRINT_ALLOW_HIDDEN,
          "non-exempt content hidden in printed archive")
     return {
