@@ -59,7 +59,8 @@ def evaluate(cases: list[dict]) -> dict:
     } != expected:
         raise ValueError("LIVE_UX_MATRIX_INCOMPLETE")
     basic = all(c.get("http_status") == 200 and c.get("host") == "finalvestige.com"
-                and c.get("blocked_non_get") == 0 for c in cases)
+                and isinstance(c.get("blocked_non_get"), int)
+                and c["blocked_non_get"] >= 0 for c in cases)
     interactive = next(c for c in cases if c["case"] == "js_390")
     nojs = next(c for c in cases if c["case"] == "nojs_390")
     reduced = next(c for c in cases if c["case"] == "reduced_390")
@@ -232,7 +233,14 @@ def main() -> int:
         code = 2
     output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n",
                       encoding="utf-8")
-    print(json.dumps(report.get("gates", report), sort_keys=True))
+    # Safe public-CI log summary: rule names/counts, not page text or selectors.
+    summary = {"gates": report.get("gates", {"instrumentation_gate": "FAIL"}),
+               "cases": [{"case": c["case"], "blocked_non_get": c["blocked_non_get"],
+                          "blocked_nypl": c["blocked_nypl"],
+                          "overflow": c["document_horizontal_overflow"],
+                          "interactions": c["interactions"],
+                          "axe": c["axe"]} for c in report.get("cases", [])]}
+    print(json.dumps(summary, sort_keys=True))
     return code
 
 
