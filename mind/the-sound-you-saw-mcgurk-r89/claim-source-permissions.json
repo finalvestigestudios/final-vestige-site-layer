@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "checked_on": "2026-11-03",
+  "scope": "unpublished editorial and prospective affiliate guide",
+  "product": "Zen12",
+  "accepted_partner": false,
+  "affiliate_url": null,
+  "commerce_enabled": false,
+  "sources": [
+    {
+      "id": "mcgurk76",
+      "kind": "primary",
+      "url": "https://doi.org/10.1038/264746a0",
+      "checked": "1976-12-23",
+      "note": "original abstract/bibliography, not participant-level data"
+    },
+    {
+      "id": "brown18",
+      "kind": "research",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "checked": "2018-11-12",
+      "note": "open-access research abstract"
+    },
+    {
+      "id": "teramoto23",
+      "kind": "research",
+      "url": "https://doi.org/10.1038/s41598-023-33791-y",
+      "checked": "2023-04-20",
+      "note": "open access paper"
+    },
+    {
+      "id": "inspire3",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-03",
+      "note": "brand product catalog, seller marketing only"
+    },
+    {
+      "id": "zen-offer",
+      "kind": "seller",
+      "url": "https://zen12.com/hnp",
+      "checked": "2026-11-03",
+      "note": "exact product page, no affiliate tracking link"
+    },
+    {
+      "id": "zen-about",
+      "kind": "seller",
+      "url": "https://zen12.com/about",
+      "checked": "2026-11-03",
+      "note": "seller description"
+    },
+    {
+      "id": "zen-research",
+      "kind": "seller",
+      "url": "https://zen12.com/research",
+      "checked": "2026-11-03",
+      "note": "seller's own efficacy framing, not independent validation"
+    },
+    {
+      "id": "zen-checkout",
+      "kind": "seller",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-11-03",
+      "note": "public form/package fields; no payment made"
+    },
+    {
+      "id": "zen-privacy",
+      "kind": "seller",
+      "url": "https://inspire3.com/privacy/",
+      "checked": "2026-11-03",
+      "note": "affiliate PII sharing possibility; must opt out"
+    },
+    {
+      "id": "beats23",
+      "kind": "review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "checked": "2023-05-19",
+      "note": "14-study EEG systematic review; not Zen12 trial"
+    },
+    {
+      "id": "ftc-end",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-03",
+      "note": "plain nearby disclosure; no hidden legal clickthrough"
+    },
+    {
+      "id": "ftc-health",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-03",
+      "note": "objective efficacy claims require fit-for-claim evidence"
+    },
+    {
+      "id": "puy",
+      "kind": "first-party-live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-11-03",
+      "note": "WP read-only confirmed"
+    },
+    {
+      "id": "focus",
+      "kind": "first-party-live",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-11-03",
+      "note": "WP read-only confirmed"
+    },
+    {
+      "id": "mesmerism",
+      "kind": "first-party-live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked": "2026-11-03",
+      "note": "WP published posts read-only"
+    },
+    {
+      "id": "change",
+      "kind": "first-party-live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked": "2026-11-03",
+      "note": "WP published posts read-only"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "claim": "McGurk /ba/ audio + /ga/ lips led to /da/ reports",
+      "status": "support-context",
+      "source_id": "mcgurk76",
+      "reason": "specific classic condition, not universal"
+    },
+    {
+      "id": "D02",
+      "claim": "Reverse McGurk dub produced combination reports",
+      "status": "support-context",
+      "source_id": "mcgurk76",
+      "reason": "abstract says majority in condition"
+    },
+    {
+      "id": "D03",
+      "claim": "Original dated Dec 23 1976",
+      "status": "support",
+      "source_id": "mcgurk76",
+      "reason": "bibliographic"
+    },
+    {
+      "id": "D04",
+      "claim": "Many individual listeners differ greatly",
+      "status": "support-context",
+      "source_id": "brown18",
+      "reason": "group vs individual"
+    },
+    {
+      "id": "D05",
+      "claim": "Individual fusion rates in some studies 0-100%",
+      "status": "support-context",
+      "source_id": "brown18",
+      "reason": "not a single universal prevalence"
+    },
+    {
+      "id": "D06",
+      "claim": "Lipreading articulation skill small predictor",
+      "status": "support-context",
+      "source_id": "brown18",
+      "reason": "observational results"
+    },
+    {
+      "id": "D07",
+      "claim": "2023 visual masking / aftereffect experiment",
+      "status": "support-context",
+      "source_id": "teramoto23",
+      "reason": "not original McGurk"
+    },
+    {
+      "id": "D08",
+      "claim": "Puységur archive has evidence provenance distinctions",
+      "status": "support",
+      "source_id": "puy",
+      "reason": "first-party read"
+    },
+    {
+      "id": "D09",
+      "claim": "Zen12 12-minute session description",
+      "status": "seller-only",
+      "source_id": "zen-offer",
+      "reason": "format only"
+    },
+    {
+      "id": "D10",
+      "claim": "Zen12 twelve levels",
+      "status": "seller-only",
+      "source_id": "zen-offer",
+      "reason": "package description"
+    },
+    {
+      "id": "D11",
+      "claim": "Zen12 four audio styles",
+      "status": "seller-only",
+      "source_id": "zen-offer",
+      "reason": "package description"
+    },
+    {
+      "id": "D12",
+      "claim": "Zen12 full checkout advertises 48 MP3s",
+      "status": "seller-only",
+      "source_id": "zen-checkout",
+      "reason": "do not generalize across tiers"
+    },
+    {
+      "id": "D13",
+      "claim": "Zen12 equivalent to 1 hour of meditation",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "no product-specific evidence"
+    },
+    {
+      "id": "D14",
+      "claim": "Zen12 relieves stress/anxiety",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "health/outcome claim unsupported"
+    },
+    {
+      "id": "D15",
+      "claim": "Zen12 improves health",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "medical claim unsupported"
+    },
+    {
+      "id": "D16",
+      "claim": "Zen12 increases creativity",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "performance claim unsupported"
+    },
+    {
+      "id": "D17",
+      "claim": "Zen12 improves focus",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "performance claim unsupported"
+    },
+    {
+      "id": "D18",
+      "claim": "Brainwave entrainment proven for Zen12",
+      "status": "withhold",
+      "source_id": "zen-research",
+      "reason": "independent product-specific proof missing"
+    },
+    {
+      "id": "D19",
+      "claim": "2023 EEG review included 14 studies",
+      "status": "support-context",
+      "source_id": "beats23",
+      "reason": "not named product"
+    },
+    {
+      "id": "D20",
+      "claim": "2023 review 5 supportive 8 contrary 1 mixed",
+      "status": "support-context",
+      "source_id": "beats23",
+      "reason": "heterogeneous"
+    },
+    {
+      "id": "D21",
+      "claim": "Purchased audio verified by editors",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "no purchased files"
+    },
+    {
+      "id": "D22",
+      "claim": "Customer outcome known",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "no tests/experience"
+    },
+    {
+      "id": "D23",
+      "claim": "Public checkout requests buyer identifying details",
+      "status": "support-context",
+      "source_id": "zen-checkout",
+      "reason": "fields visible"
+    },
+    {
+      "id": "D24",
+      "claim": "Buyer identity may be forwarded to referring affiliate",
+      "status": "support-context",
+      "source_id": "zen-privacy",
+      "reason": "policy permits; no live link"
+    },
+    {
+      "id": "D25",
+      "claim": "Exact refund processing verified",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "full current terms not verified"
+    },
+    {
+      "id": "D26",
+      "claim": "Current price stable",
+      "status": "withhold",
+      "source_id": "zen-checkout",
+      "reason": "volatile; omit"
+    },
+    {
+      "id": "D27",
+      "claim": "Approved affiliate earning URL",
+      "status": "withhold",
+      "source_id": "zen-offer",
+      "reason": "not provided"
+    },
+    {
+      "id": "D28",
+      "claim": "Partner has accepted FV specifically",
+      "status": "withhold",
+      "source_id": "inspire3",
+      "reason": "not verified"
+    },
+    {
+      "id": "D29",
+      "claim": "Web channel rights granted",
+      "status": "withhold",
+      "source_id": "inspire3",
+      "reason": "not verified"
+    },
+    {
+      "id": "D30",
+      "claim": "TikTok channel rights granted",
+      "status": "withhold",
+      "source_id": "inspire3",
+      "reason": "not verified"
+    },
+    {
+      "id": "D31",
+      "claim": "Email channel rights granted",
+      "status": "withhold",
+      "source_id": "inspire3",
+      "reason": "not verified"
+    },
+    {
+      "id": "D32",
+      "claim": "Authorized partner swipe/creative usable",
+      "status": "withhold",
+      "source_id": "inspire3",
+      "reason": "not verified"
+    },
+    {
+      "id": "D33",
+      "claim": "Nearby plain commission disclosure required",
+      "status": "support",
+      "source_id": "ftc-end",
+      "reason": "hypothetical until activation"
+    },
+    {
+      "id": "D34",
+      "claim": "Health or financial gains can be implied by adjacent video",
+      "status": "withhold",
+      "source_id": "ftc-health",
+      "reason": "avoid net impression"
+    },
+    {
+      "id": "D35",
+      "claim": "Editorial film proves an audio benefit",
+      "status": "withhold",
+      "source_id": "mcgurk76",
+      "reason": "McGurk is not Zen12"
+    },
+    {
+      "id": "D36",
+      "claim": "Focus page existing route",
+      "status": "support",
+      "source_id": "focus",
+      "reason": "preserve single Jetpack list"
+    },
+    {
+      "id": "D37",
+      "claim": "Current live change blindness exists",
+      "status": "support",
+      "source_id": "change",
+      "reason": "2026-11-02 article"
+    },
+    {
+      "id": "D38",
+      "claim": "Current live mesmerism exists",
+      "status": "support",
+      "source_id": "mesmerism",
+      "reason": "2026-11-02 article"
+    },
+    {
+      "id": "D39",
+      "claim": "No subscription required to read guide",
+      "status": "support",
+      "source_id": "focus",
+      "reason": "no added gating"
+    },
+    {
+      "id": "D40",
+      "claim": "Film is an authentic McGurk lab stimulus",
+      "status": "withhold",
+      "source_id": "mcgurk76",
+      "reason": "educational storyboard only"
+    },
+    {
+      "id": "D41",
+      "claim": "Prospective affiliate disclosure constitutes acceptance",
+      "status": "withhold",
+      "source_id": "ftc-end",
+      "reason": "no"
+    },
+    {
+      "id": "D42",
+      "claim": "Outbound clicks prove revenue",
+      "status": "withhold",
+      "source_id": "ftc-end",
+      "reason": "no actual sales"
+    },
+    {
+      "id": "D43",
+      "claim": "Stored granular attribution allowed by default",
+      "status": "withhold",
+      "source_id": "zen-privacy",
+      "reason": "do not collect"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "FV-specific written partner acceptance",
+      "verified": false
+    },
+    {
+      "name": "Exact permitted Zen12 tracked link",
+      "verified": false
+    },
+    {
+      "name": "Website channel permission",
+      "verified": false
+    },
+    {
+      "name": "TikTok channel permission",
+      "verified": false
+    },
+    {
+      "name": "Email channel permission",
+      "verified": false
+    },
+    {
+      "name": "Approved rights to seller creatives",
+      "verified": false
+    },
+    {
+      "name": "No buyer PII transmission to FV",
+      "verified": false
+    },
+    {
+      "name": "Current checkout/refund terms reviewed",
+      "verified": false
+    },
+    {
+      "name": "Named-product efficacy claim legal review",
+      "verified": false
+    },
+    {
+      "name": "Site QA independent disclosure audit",
+      "verified": false
+    },
+    {
+      "name": "Staging WordPress Gutenberg validation",
+      "verified": false
+    },
+    {
+      "name": "Native Node tests and hosted CI",
+      "verified": false
+    },
+    {
+      "name": "Keyboard and screen-reader QA",
+      "verified": false
+    },
+    {
+      "name": "360/390/768/1440/1920 responsive QA",
+      "verified": false
+    },
+    {
+      "name": "Optional film actual rendering",
+      "verified": false
+    },
+    {
+      "name": "First-party media host and VTT synchronization",
+      "verified": false
+    },
+    {
+      "name": "Lighthouse/CWV and reduced-motion QA",
+      "verified": false
+    },
+    {
+      "name": "Founder publication permission pinned SHA",
+      "verified": false
+    },
+    {
+      "name": "Explicit founder affiliate activation permission",
+      "verified": false
+    },
+    {
+      "name": "Dispatch #174 separate send approval",
+      "verified": false
+    }
+  ]
+}
