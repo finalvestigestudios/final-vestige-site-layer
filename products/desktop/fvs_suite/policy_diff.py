@@ -141,7 +141,8 @@ def _unified_diff(before, after, old_label, new_label, *, include_index=False):
                 hunks.append(current)
             old_cursor, new_cursor = int(match.group(1)), int(match.group(2))
             current = dict(first_old=None, last_old=None, first_new=None,
-                           last_new=None, deleted=0, inserted=0)
+                           last_new=None, deleted=0, inserted=0,
+                           removed_sources=[], added_sources=[])
         elif index >= 2 and current is not None:
             prefix = fragment[:1]
             if prefix == "-":
@@ -149,12 +150,14 @@ def _unified_diff(before, after, old_label, new_label, *, include_index=False):
                     current["first_old"] = old_cursor
                 current["last_old"] = old_cursor
                 current["deleted"] += 1
+                current["removed_sources"].append((old_cursor, fragment[1:]))
                 old_cursor += 1
             elif prefix == "+":
                 if current["first_new"] is None:
                     current["first_new"] = new_cursor
                 current["last_new"] = new_cursor
                 current["inserted"] += 1
+                current["added_sources"].append((new_cursor, fragment[1:]))
                 new_cursor += 1
             elif prefix == " ":
                 old_cursor += 1
@@ -174,7 +177,8 @@ def _unified_diff(before, after, old_label, new_label, *, include_index=False):
     if current is not None:
         hunks.append(current)
     rendered = "".join(chunks)
-    return (rendered, _render_change_index(hunks)) if include_index else rendered
+    return (rendered, _render_change_index(hunks) +
+            _local_compatibility_evidence(hunks)) if include_index else rendered
 
 
 def _compatibility_codepoint_evidence(before_text: str, after_text: str) -> str:
@@ -204,6 +208,55 @@ def _compatibility_codepoint_evidence(before_text: str, after_text: str) -> str:
     remainder = f" (+{omitted} more)" if omitted else ""
     return ("Compatibility-sensitive codepoints with changed source counts "
             f"(at most 16 shown): {shown}{remainder}.\n")
+
+
+def _local_compatibility_evidence(hunks) -> str:
+    """Bounded, physically cited NFKC-only line candidates inside diff hunks.
+
+    A whole-document NFKC comparison can miss a compatibility substitution
+    when another policy sentence changes. Only pair UNIQUE removed/added
+    source lines within the same existing unified-diff hunk, where NFKC is
+    equal but NFC is not. Never claim that the pair is legally equivalent.
+    Report line numbers and bounded codepoints, not extra raw policy content.
+    """
+    matches = []
+    for number, hunk in enumerate(hunks, 1):
+        removed, added = {}, {}
+        for line, value in hunk["removed_sources"]:
+            removed.setdefault(unicodedata.normalize("NFKC", value), []).append((line, value))
+        for line, value in hunk["added_sources"]:
+            added.setdefault(unicodedata.normalize("NFKC", value), []).append((line, value))
+        for normalized in removed.keys() & added.keys():
+            before_group, after_group = removed[normalized], added[normalized]
+            # Duplicate normalized lines make a one-to-one citation ambiguous.
+            if len(before_group) != 1 or len(after_group) != 1:
+                continue
+            old_line, old_text = before_group[0]
+            new_line, new_text = after_group[0]
+            if old_text == new_text or (
+                    unicodedata.normalize("NFC", old_text) ==
+                    unicodedata.normalize("NFC", new_text)):
+                continue
+            evidence = _compatibility_codepoint_evidence(old_text, new_text).strip()
+            matches.append((number, old_line, new_line, evidence))
+    if not matches:
+        return ""
+    matches.sort(key=lambda row: (row[0], row[1], row[2]))
+    lines = [
+        "LOCAL REVIEW: NFKC-only source-line substitution candidate(s) inside "
+        "changed diff hunks, including mixed policy revisions. These are "
+        "navigation cues, NOT legal or semantic equivalence; inspect the "
+        "original files and exact cited lines. Ambiguous duplicate lines "
+        "are intentionally not paired.\n"
+    ]
+    for number, old_line, new_line, evidence in matches[:16]:
+        lines.append(
+            f"Local hunk {number:03d}: before L{old_line}; after L{new_line}; "
+            f"NFKC-only candidate; {evidence}\n")
+    if len(matches) > 16:
+        lines.append(f"LOCAL REVIEW: +{len(matches) - 16} additional unique "
+                     "candidate pair(s) omitted from bounded navigation.\n")
+    return "".join(lines) + "\n"
 
 
 def compare_policy_files(old, new, folder, output_path):
