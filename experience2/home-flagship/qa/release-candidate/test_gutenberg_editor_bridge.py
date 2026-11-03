@@ -38,6 +38,15 @@ function fv_mock_record() {
     $p=__DIR__.'/db.json';
     return file_exists($p) ? json_decode(file_get_contents($p),true) : null;
 }
+function add_post_meta($id,$key,$value,$unique) {
+    file_put_contents(__DIR__.'/meta.json',json_encode(array($key=>$value)));
+    return true;
+}
+function get_post_meta($id,$key,$single) {
+    $p=__DIR__.'/meta.json';
+    $r=file_exists($p) ? json_decode(file_get_contents($p),true) : array();
+    return $r[$key] ?? '';
+}
 function get_post($id) {
     $r=fv_mock_record();
     return $r && $id === 42 ? (object)$r : null;
@@ -52,6 +61,7 @@ function wp_delete_post($id,$force) {
     $p=__DIR__.'/db.json';
     if (!file_exists($p)) return false;
     unlink($p);
+    @unlink(__DIR__.'/meta.json');
     return (object)array('ID'=>$id);
 }
 function parse_blocks($content) {
@@ -165,9 +175,15 @@ class EditorBridge(unittest.TestCase):
         self.assertFalse(v["checks"]["byte_exact_after_editor_save"])
         self.assertEqual(self.call("cleanup")["result"],"DELETED")
 
-    def test_non_synthetic_title_refuses_delete(self):
+    def test_changed_title_cannot_strand_proven_owned_draft(self):
         self.assertEqual(self.call("create")["result"],"CREATED")
         self.set_saved(post_title="Unrelated title")
+        self.assertEqual(self.call("cleanup")["result"],"DELETED")
+        self.assertFalse((self.root/"db.json").exists())
+
+    def test_tampered_ownership_marker_refuses_delete(self):
+        self.assertEqual(self.call("create")["result"],"CREATED")
+        (self.root/"meta.json").write_text(json.dumps({"_fv_ex2_editor_qa_owner":"tampered"}))
         self.assertEqual(self.call("cleanup")["result"],"FAIL")
         self.assertTrue((self.root/"db.json").exists())
 
