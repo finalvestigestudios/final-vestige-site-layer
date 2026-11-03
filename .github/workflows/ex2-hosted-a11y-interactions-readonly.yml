@@ -1,0 +1,68 @@
+name: EX2 anonymous hosted WCAG and interactions read-only
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/qa/release-candidate/probe_hosted_wcag_interactions.py'
+      - 'experience2/home-flagship/qa/release-candidate/test_probe_hosted_wcag_interactions.py'
+      - 'experience2/home-flagship/qa/release-candidate/HOSTED_WCAG_INTERACTIONS_HOLD.md'
+      - '.github/workflows/ex2-hosted-a11y-interactions-readonly.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact checkout plus adversarial tests
+        run: |
+          git rev-parse HEAD
+          cd experience2/home-flagship/qa/release-candidate
+          python -m py_compile probe_hosted_wcag_interactions.py test_probe_hosted_wcag_interactions.py
+          python -m unittest -v test_probe_hosted_wcag_interactions.py
+
+  hosted:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Local standalone audit tooling only — never installed on WordPress
+        run: |
+          python -m pip install 'playwright==1.56.0'
+          python -m playwright install --with-deps chromium
+          npm install --prefix /tmp/fv-ex2-axe --no-save --ignore-scripts --no-audit --no-fund 'axe-core@4.10.3'
+          test -s /tmp/fv-ex2-axe/node_modules/axe-core/axe.min.js
+      - name: Exact-head anonymous hosted 7-case interaction and WCAG automated observations
+        run: |
+          git rev-parse HEAD
+          python experience2/home-flagship/qa/release-candidate/probe_hosted_wcag_interactions.py \
+            --axe-source /tmp/fv-ex2-axe/node_modules/axe-core/axe.min.js \
+            --output HOSTED_WCAG_INTERACTIONS_HOLD.json
+      - name: Publish privacy-minimized receipt even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-hosted-a11y-interactions-HOLD
+          if-no-files-found: ignore
+          retention-days: 7
+          path: HOSTED_WCAG_INTERACTIONS_HOLD.json
