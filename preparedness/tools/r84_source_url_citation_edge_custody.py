@@ -76,7 +76,9 @@ def url_observation(literal):
         except ValueError:
             port = None
             flags.append("INVALID_PORT_REVIEW")
-        if scheme != "https":
+        # urlsplit normalizes scheme case; the literal wire text must not be
+        # silently treated as the canonical source identity.
+        if scheme != "https" or literal.partition(":")[0] != "https":
             flags.append("NOT_LITERAL_HTTPS_REVIEW")
         if not authority or not hostname:
             flags.append("NO_PARSEABLE_AUTHORITY_REVIEW")
