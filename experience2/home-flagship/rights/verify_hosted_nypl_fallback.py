@@ -37,7 +37,7 @@ MUTATE = r"""() => {
  const paragraphs = [...article.querySelectorAll('.fv-hf__case-source p')];
  const oldCaption = "Image: Brooklyn Rapid Transit system map, 1903; NYPL Digital Collections item 5003296, as published in Final Vestige's Malbone investigation.";
  const oldCredit = "Credit: From The New York Public Library. NYPL believes this item is in the public domain under United States law.";
- const cap = paragraphs.filter(p => p.textContent.trim() === oldCaption);
+ const cap = paragraphs.filter(p => p.textContent.trim().startsWith('Image: Brooklyn Rapid Transit system map, 1903;') && p.textContent.includes('NYPL Digital Collections item 5003296') && p.textContent.includes('Malbone investigation.'));
  const cred = paragraphs.filter(p => p.textContent.trim() === oldCredit);
  const frame = article.querySelector('.fv-hf__image-frame span');
  const fallback = article.querySelector('.fv-hf__case-image-fallback');
