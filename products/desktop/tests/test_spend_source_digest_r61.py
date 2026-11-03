@@ -41,8 +41,14 @@ class SpendSourceSnapshotR61(unittest.TestCase):
         left, right = _summary(rows, DIGEST_A), _summary(rows, DIGEST_B)
         self.assertEqual(left[0]["amount"], right[0]["amount"])
         self.assertNotEqual(left[0]["source_sha256"], right[0]["source_sha256"])
-        self.assertEqual({k: v for k, v in left[0].items() if k != "source_sha256"},
-                         {k: v for k, v in right[0].items() if k != "source_sha256"})
+        # R154 binds complete vendor/month membership to the source hash too.
+        # Both source identity fields MUST change; the actual financial and
+        # review values remain equal for otherwise identical imported rows.
+        self.assertNotEqual(left[0]["vendor_month_evidence_sha256"],
+                            right[0]["vendor_month_evidence_sha256"])
+        identity_fields = {"source_sha256", "vendor_month_evidence_sha256"}
+        self.assertEqual({k: v for k, v in left[0].items() if k not in identity_fields},
+                         {k: v for k, v in right[0].items() if k not in identity_fields})
 
     def test_source_digest_is_not_rehashed_or_reformatted(self):
         digest = "0123456789abcdef" * 4

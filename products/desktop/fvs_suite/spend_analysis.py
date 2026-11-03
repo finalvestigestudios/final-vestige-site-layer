@@ -7,9 +7,9 @@ flag, not a finding of fraud, incorrect spending, or noncompliance.
 from __future__ import annotations
 
 from collections import defaultdict
+from hashlib import sha256
 from decimal import Context, Decimal, localcontext
 from functools import wraps
-from heapq import nsmallest
 import re
 from typing import Callable, Mapping
 
@@ -18,6 +18,23 @@ from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 
 VENDOR_MONTH_EVIDENCE_LIMIT = 32  # Bounded preview; full evidence is in SHA-bound source.
+
+
+def _vendor_month_line_digest(source_sha256: str, vendor: str, month: str,
+                              ordered_lines: list[int]) -> str:
+    """Domain-separated full-membership fingerprint; not a signature or source proof.
+
+    Inputs are ASCII from the strict source-digest, normalized-vendor, month,
+    and canonical physical-row validators. Include the source SHA and group key
+    so equal line positions from different files/groups cannot masquerade as
+    equal evidence. A bounded report preview NEVER replaces this full digest.
+    """
+    digest = sha256(b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n")
+    for element in (source_sha256, vendor, month, str(len(ordered_lines))):
+        digest.update(element.encode("ascii") + b"\n")
+    for line in ordered_lines:
+        digest.update(str(line).encode("ascii") + b"\n")
+    return digest.hexdigest()
 
 
 def _exact_spend_context(operation):
@@ -97,15 +114,18 @@ def summarize_spend(
     # The existing category-only source_rows cannot attest to cross-category
     # vendor/month gross totals. Preview numeric physical lines across all
     # categories; count omitted rows instead of silently claiming full coverage.
-    # nsmallest bounds display work even on a 200,000-row source.
-    month_evidence = {
-        key: (
-            ";".join(str(line) for line in nsmallest(VENDOR_MONTH_EVIDENCE_LIMIT, lines)),
-            str(len(lines)),
-            str(max(0, len(lines) - VENDOR_MONTH_EVIDENCE_LIMIT)),
+    # Sorted once per group, bounded by the global 200,000-record import cap.
+    # The export still previews ONLY the earliest 32 physical start lines;
+    # hash every contributing line in numeric order, including omitted lines.
+    month_evidence = {}
+    for (vendor, month), lines in vendor_month_lines.items():
+        ordered = sorted(lines)
+        month_evidence[(vendor, month)] = (
+            ";".join(str(line) for line in ordered[:VENDOR_MONTH_EVIDENCE_LIMIT]),
+            str(len(ordered)),
+            str(max(0, len(ordered) - VENDOR_MONTH_EVIDENCE_LIMIT)),
+            _vendor_month_line_digest(source_sha256, vendor, month, ordered),
         )
-        for key, lines in vendor_month_lines.items()
-    }
 
     collision = {vendor: normalized_collision(rows, "vendor")
                  for vendor, rows in vendor_rows.items()}
@@ -160,6 +180,7 @@ def summarize_spend(
             "vendor_month_evidence_rows": month_evidence[(vendor, month)][0],
             "vendor_month_evidence_count": month_evidence[(vendor, month)][1],
             "vendor_month_evidence_omitted": month_evidence[(vendor, month)][2],
+            "vendor_month_evidence_sha256": month_evidence[(vendor, month)][3],
             "vendor_month_gross_charges": format_money(vendor_month_charges[vendor][month]),
             "vendor_month_gross_credits": format_money(vendor_month_credits[vendor][month]),
             "vendor_month_offset_review": (

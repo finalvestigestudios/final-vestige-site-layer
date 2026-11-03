@@ -174,10 +174,11 @@ class SpendEvidenceCustodyR153(unittest.TestCase):
         rows, cols = self.report()
         self.assertEqual(rows, [])
         i = cols.index("vendor_month_evidence_rows")
-        self.assertEqual(cols[i:i+6], (
+        self.assertEqual(cols[i:i+7], (
             "vendor_month_evidence_rows",
             "vendor_month_evidence_count",
             "vendor_month_evidence_omitted",
+            "vendor_month_evidence_sha256",
             "vendor_month_gross_charges",
             "vendor_month_gross_credits",
             "vendor_month_offset_review"))

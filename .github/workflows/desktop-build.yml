@@ -185,6 +185,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r153.py
           python -OO products/desktop/scripts/safe_unittest_r153.py
+      - name: R154 SpendMap complete source-line evidence digest (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r154.py
+          python -OO products/desktop/scripts/safe_unittest_r154.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -605,6 +609,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R153 monthly evidence custody FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r153.py
           if ($LASTEXITCODE -ne 0) { throw "R153 optimized evidence custody FAILED" }
+      - name: R154 SpendMap complete source-line evidence digest (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r154.py
+          if ($LASTEXITCODE -ne 0) { throw "R154 evidence digest FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r154.py
+          if ($LASTEXITCODE -ne 0) { throw "R154 optimized evidence digest FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
