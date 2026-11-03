@@ -17,6 +17,7 @@ from build_combined_page6_offline import (  # noqa: E402
     CSS_PATH, MARKER, UnsafeCandidate, build_candidate, structural_inventory,
 )
 from test_withhold_unverified_nypl_capture import fixture  # noqa: E402
+from withhold_unverified_nypl_capture import RECORD_LABEL  # noqa: E402
 
 SCRIPT = HERE / "build_combined_page6_offline.py"
 CSS = CSS_PATH.read_text(encoding="utf-8")
@@ -44,7 +45,7 @@ class CombinedSavedCandidateTests(unittest.TestCase):
         final, report = build_candidate(self.raw, CSS)
         self.assertNotIn("edit-017-v02-nypl-5003296-original.jpg", final)
         self.assertNotIn("NYPL believes this item is in the public domain", final)
-        self.assertIn("SOURCE RECORD 03 / NYPL 5003296", final)
+        self.assertIn(RECORD_LABEL, final)
         self.assertEqual(final.count(MARKER), 1)
         self.assertIn("@keyframes fvMarginContrastSafe", final)
         self.assertIn("@keyframes fvMarginReveal", final)
