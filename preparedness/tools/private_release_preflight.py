@@ -24,6 +24,11 @@ SHA = re.compile(r"[0-9a-f]{40}\Z")
 TEST_COUNT = re.compile(r"\bRan\s+(\d+)\s+tests?\s+in\s+\d+(?:\.\d+)?s\b")
 FAIL_WORDS = re.compile(r"\b(?:FAILED|ERROR|Traceback)\b")
 MANIFEST = "preparedness/docs/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json"
+# R106: keep the 12 non-test gates at their original per-step limit, while
+# allowing the now >9,000-case native suite a separate, finite ceiling.
+# Never skip or shorten that suite to make the receipt appear successful.
+DEFAULT_STEP_TIMEOUT = 180
+NATIVE_UNIT_TIMEOUT = 480
 # Every entry is a fixed local executable, not configurable by a reviewer report.
 STEPS = (
     ("native_validation", "validate.py", "plain"),
@@ -184,11 +189,14 @@ def git_check(root: Path, expected_sha: str, *, run: Callable = subprocess.run) 
 
 
 def execute(root: Path, expected_sha: str, *, run: Callable = subprocess.run,
-            timeout: int = 180, python: str = sys.executable,
-            git_run: Callable | None = None) -> dict:
+            timeout: int = DEFAULT_STEP_TIMEOUT, python: str = sys.executable,
+            git_run: Callable | None = None,
+            native_unit_timeout: int = NATIVE_UNIT_TIMEOUT) -> dict:
     """Do not continue after a failed gate. No CMS, network or release steps exist."""
     require(type(timeout) is int and 10 <= timeout <= 1200,
             "invalid bounded per-gate timeout")
+    require(type(native_unit_timeout) is int and 10 <= native_unit_timeout <= 1200,
+            "invalid bounded native-unit-suite timeout")
     root = checked_root(root)
     observed = []
     git_run = run if git_run is None else git_run
@@ -199,7 +207,9 @@ def execute(root: Path, expected_sha: str, *, run: Callable = subprocess.run,
                 "gate runner is not isolated")
         try:
             proc = run(list(step.command), cwd=str(root), stdout=subprocess.PIPE,
-                       stderr=subprocess.PIPE, timeout=timeout, check=False)
+                       stderr=subprocess.PIPE,
+                       timeout=(native_unit_timeout if step.kind == "tests" else timeout),
+                       check=False)
         except subprocess.TimeoutExpired as exc:
             raise PreflightHold(f"{step.name}: timed out") from exc
         except OSError as exc:
@@ -280,13 +290,16 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, required=True)
     parser.add_argument("--expected-head", required=True)
-    parser.add_argument("--step-timeout", type=int, default=180)
+    parser.add_argument("--step-timeout", type=int, default=DEFAULT_STEP_TIMEOUT)
+    parser.add_argument("--native-unit-timeout", type=int, default=NATIVE_UNIT_TIMEOUT,
+                        help="bounded native unittest ceiling; all 13 gates still required")
     parser.add_argument("--receipt", type=Path,
                         help="Optional new private preparedness/build/R18-PREFLIGHT-*.json file")
     args = parser.parse_args(argv)
     try:
         report = execute(args.repo_root, args.expected_head,
-                         timeout=args.step_timeout)
+                         timeout=args.step_timeout,
+                         native_unit_timeout=args.native_unit_timeout)
         if args.receipt:
             private_receipt(args.receipt, args.repo_root, report)
         print(json.dumps(report, sort_keys=True))
@@ -303,6 +316,10 @@ def main(argv: list[str] | None = None) -> int:
                           "release_state": "HOLD", "may_publish": False,
                           "machine_integrity_result": "INCOMPLETE_OR_FAILED",
                           "failed_step": known_gate or "setup_or_checkout",
+                          "failure_kind": ("TIMEOUT" if detail.endswith(": timed out")
+                                           else "EXIT_NONZERO" if re.search(
+                                               r": exit status -?[0-9]+", detail)
+                                           else "CUSTODY_OR_EXECUTION"),
                           "exception_class": (
                               re.search(r"; exception ([A-Za-z]+)", detail).group(1)
                               if re.search(r"; exception ([A-Za-z]+)", detail) else None),
