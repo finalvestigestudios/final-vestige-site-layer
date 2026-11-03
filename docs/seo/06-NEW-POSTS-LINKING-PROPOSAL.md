@@ -4,7 +4,7 @@ Status: **proposal only. Nothing in this file has been applied.** Hold until the
 
 **Locks go stale.** `expected_modified` / `expected_content_hash` / `index` below were read on 2026-11-02. Any edit to a target (including the QA corrections) invalidates them and the tool will refuse the write. Re-run `post-sections.list` / `page-sections.list` for each target immediately before applying; if the QA changes the number of top-level blocks on a new post, recompute its insertion index (the block just before the closing FAQPage JSON-LD `core/html`).
 
-Scope: the new posts' *body text is not edited*; each change appends one new `core/group` block. Metadata and schema of the new posts are not touched. Counts: 5 outbound blocks (10 links, 2 per post), 9 inbound blocks on existing pages (10 links, 2 per new post).
+Scope: the new posts' *body text is not edited*; each change appends one new `core/group` block. Metadata and schema of the new posts are not touched. Counts: 5 outbound blocks (9 links: 2 per post except the Lycurgus Cup post, whose weaker The Working Order link was dropped), 9 inbound blocks on existing pages (10 links, 2 per new post). Total 19 links.
 
 ## Duplicate check
 
@@ -25,9 +25,8 @@ No link goes to a draft, to anything in the Preparedness Archive, or to the home
 ### Post 1920: The Lycurgus Cup: The Roman Glass That Changes Color
 - `post-sections.insert` at index **24** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T20:50:12`, content_hash `c61b8530eb57d834814d8d09849e13cde83d7e38`; duplicates: none
 - **They Painted Over Archimedes** (`/2026/08/18/they-painted-over-archimedes/`): Both are ancient objects whose real nature was recovered with modern analysis (this post: electron microscopy of the glass).
-- **The Working Order** (`/the-working-order/`): The post discusses how the cup was probably made and what is not known; The Working Order is the site's guide to reconstructing how historical objects and processes were made. Weakest of the ten; drop if the user prefers.
 ```html
-<!-- wp:group {"className":"fv-related-reading","layout":{"type":"constrained"}} --><div class="wp-block-group fv-related-reading"><!-- wp:heading --><h2 class="wp-block-heading">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class="wp-block-list"><li><a href="https://finalvestige.com/2026/08/18/they-painted-over-archimedes/">They Painted Over Archimedes</a></li><li><a href="https://finalvestige.com/the-working-order/">The Working Order</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->
+<!-- wp:group {"className":"fv-related-reading","layout":{"type":"constrained"}} --><div class="wp-block-group fv-related-reading"><!-- wp:heading --><h2 class="wp-block-heading">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class="wp-block-list"><li><a href="https://finalvestige.com/2026/08/18/they-painted-over-archimedes/">They Painted Over Archimedes</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->
 ```
 
 ### Post 1922: Change Blindness: Why You Miss Big Changes Right in Front of You
@@ -124,6 +123,6 @@ No link goes to a draft, to anything in the Preparedness Archive, or to the home
 
 - Pages 499, 501 and 498 are styled "learning" pages built from several custom groups and CSS `html` blocks; an appended plain group should inherit the theme but **must be checked visually** after applying (remove the block if it looks wrong; rollback = `page-sections.remove` of the `fv-related-reading` block).
 - Pages 1122 and 1044 were last modified by my 2026-11-02 meta edit (21:41:04 and 21:40:56), which is why their tokens differ from the earlier snapshot.
-- Weakest relevance: The Working Order from the Lycurgus Cup post. Alternatives if it is dropped: none proposed; two links per post is the minimum, so the post would carry one outbound link in the block plus its existing four.
+- The Lycurgus Cup -> The Working Order link was dropped (no compelling editorial connection). That post's block carries one link (They Painted Over Archimedes); it already has four other internal links.
 - Do not change the sources list, FAQ headings or JSON-LD of the new posts; the proposal inserts before the JSON-LD block and leaves it last.
 - After applying: re-crawl, confirm one Article + one FAQPage + one BreadcrumbList still render on each new post, and record before/after content hashes in the ledger.

@@ -37,22 +37,17 @@
    "expected_modified": "2026-11-02T20:50:12",
    "expected_content_hash": "c61b8530eb57d834814d8d09849e13cde83d7e38",
    "expected_block_type": "core/group",
-   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/they-painted-over-archimedes/\">They Painted Over Archimedes</a></li><li><a href=\"https://finalvestige.com/the-working-order/\">The Working Order</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/they-painted-over-archimedes/\">They Painted Over Archimedes</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
    "links": [
     {
      "to": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
      "title": "They Painted Over Archimedes",
      "reason": "Both are ancient objects whose real nature was recovered with modern analysis (this post: electron microscopy of the glass)."
-    },
-    {
-     "to": "https://finalvestige.com/the-working-order/",
-     "title": "The Working Order",
-     "reason": "The post discusses how the cup was probably made and what is not known; The Working Order is the site's guide to reconstructing how historical objects and processes were made. Weakest of the ten; drop if the user prefers."
     }
    ],
    "duplicates_found": [],
    "insertion_note": "immediately before the closing FAQPage JSON-LD html block, after the sources list",
-   "block_markup_sha1": "f60a0ad775764d22a0fe95b5be3fa6e179ab6890"
+   "block_markup_sha1": "e87c2bb964fd1d62d01087ea5c81b577147d97fc"
   },
   {
    "direction": "outbound",

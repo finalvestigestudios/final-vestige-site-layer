@@ -80,7 +80,7 @@ OUT = {
  1917: [(193, "The post is about reading an old chart's own notes and sources; The Lost Landscape is the site's guide to reconstructing places from old maps."),
         (189, "The Antarctica claim is the classic claim-versus-record case; The Archive Trail is the site's field kit for verifying historical claims.")],
  1920: [(268, "Both are ancient objects whose real nature was recovered with modern analysis (this post: electron microscopy of the glass)."),
-        (1120, "The post discusses how the cup was probably made and what is not known; The Working Order is the site's guide to reconstructing how historical objects and processes were made. Weakest of the ten; drop if the user prefers.")],
+        ],  # The Working Order link dropped on the founder's instruction (no compelling editorial connection); 19 links remain
  1922: [(1029, "The post is about missed observations; The Failure Chain has a section on warning-to-action latency and evidence confidence for reading failures."),
         (1122, "Change blindness is the reason side-by-side photograph comparison fails; The Missing Caption is the site's guide to comparing and dating photographs.")],
  1924: [(189, "The 1784 report is the model of a controlled test of a claim; The Archive Trail is the site's field kit for verifying historical claims."),
@@ -149,7 +149,7 @@ L = ["# 06 - Proposal: link the five 2026-11-02 posts (NOT APPLIED)", "",
      "Status: **proposal only. Nothing in this file has been applied.** Hold until the content QA on posts 1917, 1920, 1922, 1924 and 1926 lands; then re-read every lock, rebuild, show the diffs to the user and apply only with approval.", "",
      "**Locks go stale.** `expected_modified` / `expected_content_hash` / `index` below were read on 2026-11-02. Any edit to a target (including the QA corrections) invalidates them and the tool will refuse the write. Re-run `post-sections.list` / `page-sections.list` for each target immediately before applying; if the QA changes the number of top-level blocks on a new post, recompute its insertion index (the block just before the closing FAQPage JSON-LD `core/html`).", "",
      "Scope: the new posts' *body text is not edited*; each change appends one new `core/group` block. Metadata and schema of the new posts are not touched. Counts: "
-     f"{sum(1 for i in items if i['direction']=='outbound')} outbound blocks (10 links, 2 per post), {sum(1 for i in items if i['direction']=='inbound')} inbound blocks on existing pages (10 links, 2 per new post).", "",
+     f"{sum(1 for i in items if i['direction']=='outbound')} outbound blocks (9 links: 2 per post except the Lycurgus Cup post, whose weaker The Working Order link was dropped), {sum(1 for i in items if i['direction']=='inbound')} inbound blocks on existing pages (10 links, 2 per new post). Total 19 links.", "",
      "## Duplicate check", "",
      "Each proposed link was compared with the links already present in the target's public `<main>` content (new posts fetched live from the public site; existing pages from `evidence/crawl-after-2026-11-02.json`). "
      f"Duplicates found: **{sum(len(i['duplicates_found']) for i in items)}**. For reference, the new posts already link out to these older posts, which are deliberately *not* proposed again: "
@@ -176,7 +176,7 @@ for it in [i for i in items if i["direction"] == "inbound"]:
 L += ["## Risks and checks for when this is applied", "",
       "- Pages 499, 501 and 498 are styled \"learning\" pages built from several custom groups and CSS `html` blocks; an appended plain group should inherit the theme but **must be checked visually** after applying (remove the block if it looks wrong; rollback = `page-sections.remove` of the `fv-related-reading` block).",
       "- Pages 1122 and 1044 were last modified by my 2026-11-02 meta edit (21:41:04 and 21:40:56), which is why their tokens differ from the earlier snapshot.",
-      "- Weakest relevance: The Working Order from the Lycurgus Cup post. Alternatives if it is dropped: none proposed; two links per post is the minimum, so the post would carry one outbound link in the block plus its existing four.",
+      "- The Lycurgus Cup -> The Working Order link was dropped (no compelling editorial connection). That post's block carries one link (They Painted Over Archimedes); it already has four other internal links.",
       "- Do not change the sources list, FAQ headings or JSON-LD of the new posts; the proposal inserts before the JSON-LD block and leaves it last.",
       "- After applying: re-crawl, confirm one Article + one FAQPage + one BreadcrumbList still render on each new post, and record before/after content hashes in the ledger.", ""]
 (ROOT / "06-NEW-POSTS-LINKING-PROPOSAL.md").write_text("\n".join(L), encoding="utf-8")
