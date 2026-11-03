@@ -55,6 +55,27 @@ def valid_candidate(css: str) -> bool:
     )
 
 
+def inject_nojs_css(html: bytes, css: str) -> bytes:
+    """Inject a candidate style in RAM into an anonymous public HTML response.
+
+    Chromium's disabled-JavaScript context can block Playwright's late
+    add_style_tag() call. Rewrite only the verified top-level GET document;
+    never write to WordPress, retain page HTML, or alter external resources.
+    """
+    if not valid_candidate(css) or not isinstance(html, bytes):
+        raise ValueError("UNTRUSTED_NOJS_INPUT")
+    if not 100 <= len(html) < 8_000_000:
+        raise ValueError("NOJS_HTML_SIZE_INVALID")
+    page = html.decode("utf-8", errors="strict")
+    if (page.count("</head>") != 1
+            or "data-fv-home-flagship" not in page
+            or "fv-margin-strip__item" not in page
+            or 'id="fv-nojs-margins-candidate"' in page):
+        raise ValueError("UNEXPECTED_NOJS_HTML")
+    tag = '<style id="fv-nojs-margins-candidate">' + css + '</style>'
+    return page.replace("</head>", tag + "</head>", 1).encode("utf-8")
+
+
 def contrast_rgb(fg: list[float], bg: list[float], alpha: float) -> float:
     if (len(fg) != 3 or len(bg) != 3
             or not all(math.isfinite(x) and 0 <= x <= 255 for x in fg + bg)
@@ -215,16 +236,40 @@ def probe(axe_path: Path) -> dict:
                 ctx = browser.new_context(
                     viewport={"width": 390, "height": 844},
                     reduced_motion="reduce", java_script_enabled=javascript,
-                    service_workers="block", accept_downloads=False)
-                ctx.route("**/*", lambda route: route.continue_()
-                          if not denied(route.request.method, route.request.url)
-                          else route.abort())
+                    service_workers="block", accept_downloads=False,
+                    bypass_csp=True)
+                def reduced_route(route):
+                    request = route.request
+                    if denied(request.method, request.url):
+                        route.abort()
+                    elif (not javascript and request.is_navigation_request()
+                          and request.resource_type == "document"
+                          and urlsplit(request.url).hostname == "finalvestige.com"
+                          and urlsplit(request.url).path in ("", "/")):
+                        # Only an anonymous GET of the actual public document.
+                        # The response is patched in browser memory, never
+                        # persisted or uploaded, so this tests real no-JS CSS.
+                        response = route.fetch(timeout=25000)
+                        if (response.status != 200 or "text/html"
+                                not in response.headers.get("content-type", "").lower()):
+                            raise ValueError("NOJS_DOCUMENT_FETCH_INVALID")
+                        route.fulfill(response=response, body=inject_nojs_css(response.body(), css))
+                    elif not javascript and request.resource_type in (
+                            "script", "image", "media", "font"):
+                        route.abort()  # Nonessential bytes for no-JS strip proof.
+                    else:
+                        route.continue_()
+                ctx.route("**/*", reduced_route)
                 page = ctx.new_page()
                 try:
                     response = page.goto(URL, wait_until="domcontentloaded", timeout=45000)
                     if response is None or response.status != 200:
                         raise ValueError("REDUCED_MOTION_HOST_FAILED")
-                    page.add_style_tag(content=css)
+                    if javascript:
+                        page.add_style_tag(content=css)
+                    elif not page.evaluate(
+                            "() => !!document.getElementById('fv-nojs-margins-candidate')"):
+                        raise ValueError("NOJS_CSS_OVERLAY_MISSING")
                     states = page.evaluate("""() => [...document.querySelectorAll(
                        '.fv-margin-strip__item')].map((e,i) => {
                           let s=getComputedStyle(e);
@@ -356,6 +401,26 @@ def bounded_probe(axe_source: Path, output: Path, case_timeout: int = 90) -> dic
 
 
 class SourceGuards(unittest.TestCase):
+    def test_nojs_response_overlay_only_for_exact_source(self):
+        css = CSS.read_text(encoding="utf-8")
+        html = (b'<!doctype html><html><head><title>Public</title></head>'
+                b'<body><div data-fv-home-flagship><span '
+                b'class="fv-margin-strip__item">source</span></div></body></html>')
+        result = inject_nojs_css(html, css)
+        self.assertEqual(result.count(b'id="fv-nojs-margins-candidate"'), 1)
+        self.assertEqual(result.count(b'fvMarginContrastSafe'), 2)
+        self.assertTrue(result.index(b'<style') < result.index(b'</head>'))
+        self.assertTrue(result.index(b'</head>') < result.index(b'<body>'))
+        self.assertEqual(html.count(b'<style'), 0)  # Never mutate source.
+        for bad in (html.replace(b'</head>', b''),
+                    html.replace(b'data-fv-home-flagship', b'data-broken'),
+                    html.replace(b'fv-margin-strip__item', b'something-else'),
+                    result, b'broken'):
+            with self.assertRaises(ValueError):
+                inject_nojs_css(bad, css)
+        with self.assertRaises(ValueError):
+            inject_nojs_css(html, css + "@import url(//unsafe)")
+
     def test_partial_or_duplicate_bounded_receipts_fail_closed(self):
         r = assemble_bounded([], [], [])
         self.assertEqual(r['gates']['hosted_in_memory_candidate'], 'FAIL')
