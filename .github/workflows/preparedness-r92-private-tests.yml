@@ -1,0 +1,99 @@
+name: Preparedness R92 Shared URL Citation Scope (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r91-citation-claim-boundary-bindings-hold-20261103
+    paths:
+      - preparedness/tools/r92_collision_claim_source_crosswalk.py
+      - preparedness/tests/test_r92_collision_claim_source_crosswalk.py
+      - preparedness/docs/R92_LITERAL_SHARED_URL_SCOPE_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r92-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r92-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-read-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact R91 base, four ADD-only files and eight protected research refs
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          python -I - <<'PY'
+          import os,subprocess
+          assert os.environ['BASE_SHA']=='f4e3577839cef3590f83fca90dca6ab165794bd3'
+          assert os.environ['BASE_REF']=='review/preparedness-r91-citation-claim-boundary-bindings-hold-20261103'
+          assert os.environ['HEAD_REF']=='review/preparedness-r92-literal-url-source-claim-custody-hold-20261103'
+          changed=subprocess.check_output(['git','diff','--name-status',
+              os.environ['BASE_SHA'],'HEAD'],text=True).splitlines()
+          want={
+              'preparedness/tools/r92_collision_claim_source_crosswalk.py',
+              'preparedness/tests/test_r92_collision_claim_source_crosswalk.py',
+              'preparedness/docs/R92_LITERAL_SHARED_URL_SCOPE_CUSTODY_HOLD.md',
+              '.github/workflows/preparedness-r92-private-tests.yml'}
+          assert len(changed)==4 and set(changed)=={'A\t'+x for x in want},changed
+          refs={
+              'claude/prep-start-bbfeb8':'2122d856fce9f64887c16df3d52e64be9f59a55b',
+              'claude/prep-shelter-5e1e0e':'5daeaf2dd5ab71806a6b73c91edfb1d8df5da976',
+              'claude/prep-food-ccdc55':'f911ff7a655de8d81535ea86ec3d65a49ee76648',
+              'claude/prep-health-837444':'d5ef5bafd68361434dd1cc9209915b8e8a4eaf17',
+              'claude/prep-hist-food-b81f19':'67e116e536c7410bed30f8f3b1bb8c166f3c223d',
+              'claude/prep-hist-home-0e0e38':'7504a5f099594d635e3dd7332a33a2e1346c43a2',
+              'claude/prep-hist-field-9db767':'4e5caf812727953aa45e3bda2d382f2c67b6a09c',
+              'integration/preparedness-release-candidate-20261101':'ddb3528ba6494dada1fa1c3a142ce746e3a67706'}
+          for branch,pinned in refs.items():
+              actual=subprocess.check_output(['git','rev-parse','refs/remotes/origin/'+branch],text=True).strip()
+              assert actual==pinned,(branch,actual,pinned)
+              print(branch,actual)
+          print('PASS: exact R91 parent, four ADD-only files, all eight pinned refs')
+          PY
+      - name: Syntax and 36+ independently isolated synthetic/adversarial cases
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in (Path('preparedness/tools/r92_collision_claim_source_crosswalk.py'),
+                    Path('preparedness/tests/test_r92_collision_claim_source_crosswalk.py')):
+              compile(p.read_text(encoding='utf-8'),str(p),'exec')
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r92_collision_claim_source_crosswalk.py -v
+      - name: Full 41-document and 30 literal URL scope crosswalk + zero approvals
+        run: |
+          python -I preparedness/tools/r92_collision_claim_source_crosswalk.py
+          python -I preparedness/tools/r92_collision_claim_source_crosswalk.py --private-csv-stdout > "$RUNNER_TEMP/r92-private.csv"
+          python -I - <<'PY'
+          import csv,os
+          from pathlib import Path
+          path=Path(os.environ['RUNNER_TEMP'])/'r92-private.csv'
+          with path.open(encoding='utf-8',newline='') as f:rows=list(csv.DictReader(f))
+          assert len(rows)==30,len(rows)
+          assert all(x['human_source_review']=='NOT_REVIEWED'
+                     and x['qualified_safety_review']=='NOT_REVIEWED'
+                     and x['may_publish']=='FALSE' for x in rows)
+          print('PASS: 30 exact unapproved shared URL workorders')
+          PY
+          rm -f "$RUNNER_TEMP/r92-private.csv"
+      - name: Native validation and offline WordPress-ready DRAFT build only
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Hold every independent release and medical safety gate
+        if: always()
+        run: |
+          echo 'PRIVATE DIAGNOSTICS ONLY; mandatory integrity NOT overridden.'
+          echo 'No QD PASS, no medical/emergency safety approval, no link or claim verification.'
+          echo 'No article/source/CMS/WordPress/nav/homepage/publication modifications.'
