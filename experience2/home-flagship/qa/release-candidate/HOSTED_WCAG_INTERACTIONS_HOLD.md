@@ -16,7 +16,7 @@ The existing hosted admission checks that chapter anchors, 72 Margins, Focus lin
 ## Preservation and ethical restrictions
 No auth, preloaded cookies, CMS mutation, POST, signup, subscriptions, live settings, theme changes, WordPress installs, merges, or navigation edits. Network routing aborts **every non-GET** and the unresolved NYPL Malbone image URL before retrieval, even when requested by a lazy-loaded tag. Catalog citation links are not conflated with binary reproduction. The browser does not click forms, payments, social or email links.
 
-The receipt contains allowlisted statuses, axe rule IDs/impact/counts, overflow and interaction booleans only. **No screenshots, raw HTML, archive image bytes, DOM snippets, usernames, subscriber data or personal information** leave the browser.
+The receipt contains allowlisted statuses, axe rule IDs/impact/counts, overflow and interaction booleans. To localize an automated contrast failure, the first three affected nodes may carry only a flagship-versus-site-shell flag, tag name, FV-prefixed class tokens and computed CSS colors. Raw axe selectors, failure strings, text and DOM HTML are discarded. **No screenshots, raw HTML, archive image bytes, arbitrary class names, usernames, subscriber data or personal information** leave the browser.
 
 This is not independent QD, screen-reader testing, a true 200% browser zoom test, a physical-device Safari test, performance-budget adjudication or field Core Web Vitals. Hosted Personal WordPress.com has no one-click native staging clone. An isolated WordPress Playground/Assembler clone remains a non-identical pre-release environment.
 
