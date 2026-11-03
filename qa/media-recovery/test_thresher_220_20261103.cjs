@@ -30,7 +30,10 @@ const bads=[
 ["missing row",a=>a.images.pop()],
 ["source not frozen",a=>a.source.not_live_wp_read=false],
 ["changed post",a=>a.source.post_id=999],
-["catalog http presumed",a=>a.images[0].catalog.observation="HTTP 200"]
+["catalog http presumed",a=>a.images[0].catalog.observation="HTTP 200"],
+["tampered frozen blob sha",a=>a.source.blob_sha="ffffffff"],
+["fabricated catalog original",a=>a.images[0].catalog.original_width_px=5000],
+["swapped Navy primary ID",a=>a.images[6].catalog.navy_catalog_id="NH 97545"]
 ];
 for (const [name,mutate] of bads){check(name,()=>{const a=structuredClone(audit);mutate(a);assert.ok(validate(a,frozen).length>0,name)})}
 console.log(passed+"/"+(bads.length+1)+" assertions passed");
