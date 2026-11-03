@@ -2,7 +2,7 @@ name: Preparedness R89 Complete Claim-Block Source Dossiers (PRIVATE HOLD)
 on:
   pull_request:
     branches:
-      - review/preparedness-r89-full-claim-context-workorders-hold-20261102
+      - review/preparedness-r88-source-reuse-workorders-hold-20261102
     paths:
       - preparedness/tools/r89_full_claim_block_source_dossiers.py
       - preparedness/tests/test_r89_full_claim_block_source_dossiers.py
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Immutable R89 parent and exactly four ADD-only R89 files
+      - name: Immutable R88 parent and exactly four ADD-only R89 files
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
@@ -34,7 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           test "$BASE_SHA" = 'a397024314e04af86401aa3499d23c387a5f01e5'
-          test "$BASE_REF" = 'review/preparedness-r89-full-claim-context-workorders-hold-20261102'
+          test "$BASE_REF" = 'review/preparedness-r88-source-reuse-workorders-hold-20261102'
           test "$HEAD_REF" = 'review/preparedness-r89-full-claim-block-source-dossiers-hold-20261102'
           git diff --name-status -z "$BASE_SHA" HEAD > "$RUNNER_TEMP/r89-scope"
           python -I - <<'PY'
@@ -59,7 +59,7 @@ jobs:
                        'preparedness/tests/test_r89_full_claim_block_source_dossiers.py'):
               compile(Path(path).read_text(encoding='utf-8'),path,'exec')
           PY
-          python -I -m unittest discover -s preparedness/tests -p test_r89_source_reuse_review_workorders.py -v
+          python -I -m unittest discover -s preparedness/tests -p test_r89_full_claim_block_source_dossiers.py -v
       - name: Require seven exact contributor commits and independent RC
         run: |
           set -euo pipefail
