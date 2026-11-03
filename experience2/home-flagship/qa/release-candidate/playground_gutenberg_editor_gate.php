@@ -55,6 +55,17 @@ if ($action === 'create') {
         || !str_contains($source, 'fv-hf__chapter-nav')) {
         fv_ex2_editor_refuse('Synthetic candidate fails invariants');
     }
+    // WordPress KSES will silently rewrite custom HTML for anonymous
+    // inserts. Only after loopback/token/marker checks, bind the disposable
+    // WordPress admin to this local synthetic-only request.
+    $admins = get_users(array('role'=>'administrator','number'=>1,'fields'=>'all'));
+    if (count($admins) !== 1 || !isset($admins[0]->ID)) {
+        fv_ex2_editor_refuse('Isolated administrator unavailable');
+    }
+    wp_set_current_user((int)$admins[0]->ID);
+    if (!current_user_can('unfiltered_html')) {
+        fv_ex2_editor_refuse('Isolated editor lacks unfiltered_html capability');
+    }
     $id = wp_insert_post(array(
         'post_type'=>'page',
         'post_title'=>'FV EX2 SYNTHETIC EDITOR PRE-SAVE',
