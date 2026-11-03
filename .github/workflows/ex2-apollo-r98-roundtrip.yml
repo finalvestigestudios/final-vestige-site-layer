@@ -1,0 +1,84 @@
+# Apollo R98 isolated staging-only source router and real-browser acceptance.
+name: Apollo R98 seven-view source roundtrips (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'experience2/evidence-atlas/tools/build_source_roundtrip_r98.py'
+      - 'experience2/evidence-atlas/tests/test_source_roundtrip_r98.py'
+      - 'experience2/evidence-atlas/tests/browser_source_roundtrip_r98.py'
+      - 'experience2/evidence-atlas/R98_SOURCE_ROUNDTRIP_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r98-roundtrip.yml'
+permissions:
+  contents: read
+jobs:
+  custody-and-determinism:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce source custody and deterministic ZIP twice
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r98-cache"
+          python -m py_compile experience2/evidence-atlas/tools/build_source_roundtrip_r98.py experience2/evidence-atlas/tests/test_source_roundtrip_r98.py experience2/evidence-atlas/tests/browser_source_roundtrip_r98.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_source_roundtrip_r98.py -v
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/r94"
+          python experience2/evidence-atlas/tools/build_source_gallery_r97.py --src "$RUNNER_TEMP/r94" --out "$RUNNER_TEMP/r97"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/one" --archive "$RUNNER_TEMP/one.zip"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/two" --archive "$RUNNER_TEMP/two.zip"
+          cmp "$RUNNER_TEMP/one.zip" "$RUNNER_TEMP/two.zip"
+          sha256sum "$RUNNER_TEMP/one.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r98-deterministic-roundtrip-STAGING-HOLD
+          path: ${{ runner.temp }}/one.zip
+          if-no-files-found: error
+          retention-days: 7
+  real-chromium:
+    needs: custody-and-determinism
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install free pinned real browser and axe dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/axe" --ignore-scripts --no-save --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Genuine Chromium routes, responsive, no-JS, axe, LCP/CLS, print
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r98-chromium-cache"
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/r94"
+          python experience2/evidence-atlas/tools/build_source_gallery_r97.py --src "$RUNNER_TEMP/r94" --out "$RUNNER_TEMP/r97"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/r98"
+          python experience2/evidence-atlas/tests/browser_source_roundtrip_r98.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/r98-browser" --axe "$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r98-browser/R98_BROWSER_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apollo-r98-real-chromium-axe-STAGING-HOLD
+          path: ${{ runner.temp }}/r98-browser/
+          if-no-files-found: warn
+          retention-days: 7
