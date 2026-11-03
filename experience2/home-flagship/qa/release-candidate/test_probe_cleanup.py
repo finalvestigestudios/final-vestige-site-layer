@@ -21,6 +21,9 @@ function home_url() { return getenv('FV_TEST_HOST') ?: 'http://localhost/'; }
 function wp_parse_url($value, $component) { return parse_url($value, $component); }
 function parse_blocks($text) { return array(array('blockName'=>'core/html'),array('blockName'=>'core/html')); }
 function wp_slash($value) { return $value; }
+function get_users($args) { return array((object)array('ID'=>1)); }
+function wp_set_current_user($id) { }
+function current_user_can($cap) { return getenv('FV_TEST_CASE') !== 'deny_unfiltered_html'; }
 function wp_insert_post($args, $return_error) {
     if (getenv('FV_TEST_CASE') === 'insert_error') return false;
     file_put_contents(__DIR__ . '/was_saved', $args['post_content']);
@@ -129,6 +132,12 @@ class ProbeCleanup(unittest.TestCase):
 
     def test_production_hostname_refused_before_write(self):
         r, attempted, remains = self.run_case(host='https://finalvestige.com/')
+        self.assertEqual(r['result'], 'FAIL')
+        self.assertFalse(attempted)
+        self.assertFalse(remains)
+
+    def test_denied_unfiltered_html_never_writes(self):
+        r, attempted, remains = self.run_case('deny_unfiltered_html')
         self.assertEqual(r['result'], 'FAIL')
         self.assertFalse(attempted)
         self.assertFalse(remains)
