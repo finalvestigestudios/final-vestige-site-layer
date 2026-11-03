@@ -121,19 +121,32 @@ if (process.argv.includes('--self-test')) {
     const act = async (action) => {
       const u = makeUrl(action);
       assert.ok(loopback(u.origin), 'Refusing a non-loopback WordPress POST target');
-      const res = await context.request.post(u.toString(),{
+      const request = (url) => context.request.post(url.toString(), {
         headers:{'X-FV-EX2-EDITOR-TOKEN':token}, timeout:90000,
         maxRedirects:0, failOnStatusCode:false
       });
-      const status = res.status();
-      if ([301,302,303,307,308].includes(status)) {
+      let res = await request(u);
+      // Playground may canonicalize 127.0.0.1 ↔ localhost. Permit exactly
+      // one same-PHP-route/same-port loopback-host correction. Never follow
+      // redirects to login, external sites or a different action.
+      if ([301,302,303,307,308].includes(res.status())) {
         const location = res.headers()['location'] || '';
         let target;
         try { target = new URL(location,u); } catch { target = null; }
-        // Redacted route-only diagnostic. NEVER follow arbitrary redirects
-        // or print nonce, cookie, query parameters or complete URL.
-        throw new Error('Blocked unexpected Playground PHP redirect ' + status +
-          ' destination path ' + (target?.pathname || '[invalid]'));
+        const safe = target && loopback(target.origin) &&
+          target.pathname === u.pathname && target.port === u.port &&
+          (target.search === u.search || target.search === '') &&
+          !target.username && !target.password;
+        if (!safe) {
+          throw new Error('Blocked unsafe local WordPress redirect ' + res.status() +
+            ' destination path ' + (target?.pathname || '[invalid]'));
+        }
+        const canonical = new URL(u.pathname + u.search, target.origin);
+        res = await request(canonical);
+      }
+      const status = res.status();
+      if ([301,302,303,307,308].includes(status)) {
+        throw new Error('Refusing second consecutive PHP route redirect ' + status);
       }
       const contentType = res.headers()['content-type'] || '';
       if (!contentType.includes('application/json')) {
