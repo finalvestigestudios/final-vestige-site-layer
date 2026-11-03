@@ -82,7 +82,7 @@ def run(src,out,axe=None):
                                 {r[k] for r in rows for k in ('research_url','photo_url')}),'R87_PRINT_URLS'
                             assert all(''.join(r['catalog'].split()) in text for r in rows),'R87_PRINT_CATALOGS'
                             assert 'STAGINGHOLD' in text,'R87_PRINT_HOLD'
-                            assert paper.count('Reproduction rights: PENDING.')==6, 'R87_PRINT_SIX_RIGHTS_DISCLOSURES'\n                            assert 'NASA reference links do not certify reuse permission.' in paper, 'R87_PRINT_NO_LICENSE'\n                            assert len(doc)<=6 and len(doc[-1].get_text().strip())>550, 'R87_TRAILING_ORNAMENTAL_PRINT_PAGE'
+                            assert ''.join(paper.split()).count('Reproductionrights:PENDING.')==6, 'R87_PRINT_SIX_RIGHTS_DISCLOSURES'\n                            assert 'NASAreferencelinksdonotcertifyreusepermission.' in ''.join(paper.split()), 'R87_PRINT_NO_LICENSE'\n                            assert len(doc)<=6 and len(doc[-1].get_text().strip())>550, 'R87_TRAILING_ORNAMENTAL_PRINT_PAGE'
                             case['pdf_pages']=len(doc)
                         page.emulate_media(media='print')
                         contrast=page.evaluate("""()=>({hold_fg:getComputedStyle(document.querySelector('.hold')).color,
