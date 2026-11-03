@@ -63,7 +63,7 @@ function validate(a) {
   assert.equal(s.matched_inline_slots_in_8_checked_posts,10);
   const p=a.scotch_cap_p0_recheck;
   assert.equal(p.post_id,418);
-  assert.equal(p.total_inline_images,5);
+  assert.equal(p.total_inline_images,6);
   assert.equal(p.priority_sources.length,3);
   assert.deepEqual(p.priority_sources.map(x=>x.image_slot),[0,1,2]);
   assert.match(p.priority_sources[1].published_src,/^https:\/\/media\.defense\.gov\/2021\/Mar\/30\/2002610812\//);
