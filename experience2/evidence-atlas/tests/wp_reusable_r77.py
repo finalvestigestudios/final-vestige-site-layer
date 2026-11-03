@@ -241,6 +241,31 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
                     phase = 'PERFORMANCE'
                     page.wait_for_function('window.__r77lab && Number.isFinite(window.__r77lab.lcp)', timeout=10000)
                     case['lab_not_field_cwv'] = page.evaluate('window.__r77lab')
+                    # R102 fail-closed observability: capture only bounded numeric
+                    # laboratory metrics before asserting the unchanged 2.5s gate.
+                    # No URLs, selectors, credentials, DOM, or raw exceptions.
+                    metric = case['lab_not_field_cwv']
+                    lcp = metric.get('lcp')
+                    cls = metric.get('cls')
+                    (output / 'R102_R77_PERFORMANCE_DIAGNOSTIC.json').write_text(
+                        json.dumps({
+                            'schema': 'fv.apollo.r102.r77-local-performance.v1',
+                            'release': 'STAGING_HOLD',
+                            'acceptance_not_implied': True,
+                            'width': width,
+                            'javascript_enabled': js,
+                            'only_disposable_local_wordpress': True,
+                            'lcp_ms_rounded': round(lcp) if isinstance(lcp, (float, int)) and
+                                0 <= lcp < 600000 else None,
+                            'cls_millionths': round(cls * 1000000) if isinstance(cls, (float, int))
+                                and 0 <= cls < 100 else None,
+                            'lcp_budget_ms_unchanged': 2500,
+                            'cls_budget_millionths_unchanged': 100000,
+                            'lcp_budget_exceeded': (lcp > 2500) if isinstance(lcp, (float, int))
+                                and 0 <= lcp < 600000 else None,
+                            'field_core_web_vitals': False,
+                            'production_acceptance': False,
+                        }, sort_keys=True, indent=2) + '\n')
                     assert case['lab_not_field_cwv']['lcp'] <= 2500, 'R77_LCP_LAB_GATE'
                     assert case['lab_not_field_cwv']['cls'] <= .1, 'R77_CLS_LAB_GATE'
                     screenshot = page.screenshot(full_page=True, animations='disabled')

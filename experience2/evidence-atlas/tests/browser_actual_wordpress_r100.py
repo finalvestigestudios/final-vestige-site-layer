@@ -196,6 +196,114 @@ def run(base, stage, axe_path, out, user, password, subscriber, subscriber_passw
         check(page.locator('#atlas-01').count()==1, 'navigated atlas fragment does not exist')
         receipt['checks'].append('Native keyboard gallery-to-atlas navigation retains source 01 fragment.')
 
+        # R102: actual WordPress enhanced gallery + Atlas state acceptance.
+        # Existing 70 cases verified rendering, not comparison/filter behavior.
+        receipt['r102_interaction_cases'] = []
+        for width in (320, 390, 1440, 1920):
+            for js in (True, False):
+                forced = 'active' if width in (320, 1920) else 'none'
+                ctx = browser.new_context(
+                    viewport={'width': width, 'height': 900},
+                    storage_state=admin_context.storage_state(),
+                    java_script_enabled=js, reduced_motion='reduce',
+                    forced_colors=forced, is_mobile=width <= 390,
+                    has_touch=width <= 390, bypass_csp=js,
+                )
+                p = ctx.new_page()
+                outbound = []
+                errors = []
+                p.on('pageerror', lambda _error: errors.append('JS_ERROR'))
+                p.on('request', lambda req: outbound.append(req.resource_type)
+                     if urlparse(req.url).netloc not in ('127.0.0.1:8955', 'localhost:8955') else None)
+                try:
+                    res = p.goto(view_url('R97_SOURCE_GALLERY.html'), wait_until='load')
+                    check(res is not None and res.status == 200, 'R102 gallery HTTP')
+                    check(p.locator('[data-card]:visible').count() == 6, 'R102 gallery records')
+                    check(p.locator('[data-card] img,[data-lat],[data-lon],[data-geo-edge]').count() == 0,
+                          'R102 no images or speculative geography')
+                    if js:
+                        check(p.locator('[data-compare-controls]:visible').count() == 7,
+                              'R102 gallery comparison controls')
+                        check(p.locator('#comparison').is_hidden(), 'R102 comparison initially hidden')
+                        for n in ('01', '02'):
+                            box = p.locator('#compare-' + n)
+                            (box.tap() if width <= 390 else box.check())
+                        check(p.locator('#comparison').is_visible(), 'R102 comparison not revealed')
+                        check(p.locator('[data-heading]').all_text_contents() == ['Source 01', 'Source 02'],
+                              'R102 compared source identities')
+                        check(all(x.strip() for x in p.locator('[data-value]').all_text_contents()),
+                              'R102 comparison custody values')
+                        third = p.locator('#compare-03')
+                        (third.tap() if width <= 390 else third.click())
+                        check(not third.is_checked() and 'Only two records' in p.locator('#compare-status').inner_text(),
+                              'R102 comparison cap/announcement')
+                        if width in (390, 1440):
+                            image = out / f'R102_REAL_WP_COMPARISON_{width}.png'
+                            p.screenshot(path=str(image), full_page=True, animations='disabled')
+                            receipt['screenshots'][image.name] = sha256(image)
+                        reset = p.locator('#compare-reset')
+                        (reset.tap() if width <= 390 else reset.click())
+                        check(p.locator('#comparison').is_hidden() and
+                              p.locator('[data-select]:checked').count() == 0,
+                              'R102 comparison clear')
+                        check(p.evaluate("document.activeElement?.id === 'compare-01'"),
+                              'R102 comparison reset focus')
+                    else:
+                        check(p.locator('[data-compare-controls]:visible').count() == 0,
+                              'R102 no-JS comparison controls not hidden')
+                    res = p.goto(view_url('R94_CURATED_ATLAS.html'), wait_until='load')
+                    check(res is not None and res.status == 200, 'R102 Atlas HTTP')
+                    check(p.locator('#atlas .card').count() == 6, 'R102 Atlas records')
+                    if js:
+                        month = p.locator('[data-filter="month"]')
+                        (month.tap() if width <= 390 else month.click())
+                        check(p.locator('#atlas .card:visible').count() == 1 and
+                              p.locator('#atlas-01').is_visible(), 'R102 month-only certainty')
+                        check(month.get_attribute('aria-pressed') == 'true',
+                              'R102 filter button pressed state')
+                        p.locator('#query').fill('nonsense-catalog-no-match')
+                        check(p.locator('#atlas .card:visible').count() == 0 and
+                              p.locator('#empty').is_visible(), 'R102 empty result announcement')
+                        p.locator('#query').fill('')
+                        day = p.locator('[data-filter="day"]')
+                        (day.tap() if width <= 390 else day.click())
+                        check(p.locator('#atlas .card:visible').count() == 5,
+                              'R102 five known day-specific records')
+                        p.evaluate("location.hash = 'atlas-01'")
+                        p.wait_for_function("!document.querySelector('#atlas-01').hidden")
+                        check(p.locator('#atlas .card:visible').count() == 6 and
+                              p.locator('[data-filter="all"]').get_attribute('aria-pressed') == 'true',
+                              'R102 deep-link reveals filtered source')
+                        check(p.evaluate("document.activeElement?.id === 'atlas-01'"),
+                              'R102 deep-link keyboard focus')
+                        if width in (390, 1440):
+                            result = out / f'R102_REAL_WP_ATLAS_REVEALED_{width}.png'
+                            p.screenshot(path=str(result), full_page=True, animations='disabled')
+                            receipt['screenshots'][result.name] = sha256(result)
+                            p.add_script_tag(path=str(axe_path))
+                            a = p.evaluate('''async () => { const r = await axe.run(document, {
+                                runOnly: {type: 'tag', values: ['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});
+                                return {violations:r.violations.map(v=>({id:v.id, nodes:v.nodes.length})),
+                                        passes:r.passes.length}; }''')
+                            receipt['axe'].append({'width': width, 'view': 'R102_INTERACTIVE_ATLAS', **a})
+                            check(not a['violations'], 'R102 axe interactive Atlas')
+                    else:
+                        check(p.locator('#atlas .card:visible').count() == 6 and
+                              p.locator('#filters').is_hidden(), 'R102 no-JS full Atlas available')
+                    check(p.evaluate('document.documentElement.scrollWidth <= innerWidth + 2'),
+                          'R102 responsive overflow')
+                    check(not outbound and not errors, 'R102 no unexpected requests/errors')
+                    receipt['r102_interaction_cases'].append({
+                        'width': width, 'javascript_enabled': js,
+                        'forced_colors': forced, 'reduced_motion': True,
+                        'gallery_and_atlas_passed': True,
+                    })
+                finally:
+                    ctx.close()
+        check(len(receipt['r102_interaction_cases']) == 8,
+              'R102 incomplete interactive-case acceptance')
+        receipt['checks'].append('R102: eight real WP Gallery+Atlas interaction cases, mobile touch, keyboard focus, no-JS, reduced motion, forced colors and interactive axe.')
+
         # LCP/CLS instrumentation on real WP: install observers before navigation.
         performance = []
         for width in (390, 1440):
