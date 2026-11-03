@@ -11,7 +11,8 @@ import hashlib
 from html.parser import HTMLParser
 import json
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import parse_qs, urljoin, urlsplit
+import re
 
 HOST = "https://finalvestige.com/"
 CHAPTER_TARGETS = (
@@ -137,15 +138,31 @@ def first_party_media_url(src: str, expected_filename: str) -> bool:
     if not isinstance(src, str) or not isinstance(expected_filename, str):
         return False
     p = urlsplit(src)
-    return (p.scheme == "https" and p.hostname == "finalvestige.com"
-            and p.username is None and p.password is None
-            and p.path.startswith("/wp-content/uploads/")
-            and p.path.endswith("/" + expected_filename)
-            and not p.query and not p.fragment)
+    if (p.scheme != "https" or p.username is not None or p.password is not None
+            or p.fragment):
+        return False
+    if p.hostname == "finalvestige.com":
+        return (p.path.startswith("/wp-content/uploads/")
+                and p.path.endswith("/" + expected_filename) and not p.query)
+    # WordPress.com Jetpack rewrites <img src> to i0.wp.com and resized
+    # derivatives. Accept ONLY a proxy path for our exact site and image,
+    # with a tightly scoped WordPress resize query; not an arbitrary CDN URL.
+    if p.hostname != "i0.wp.com":
+        return False
+    if (not p.path.startswith("/finalvestige.com/wp-content/uploads/")
+            or not p.path.endswith("/" + expected_filename)):
+        return False
+    try:
+        params = parse_qs(p.query, strict_parsing=True, keep_blank_values=True)
+    except ValueError:
+        return False
+    return (set(params) == {"resize", "ssl"} and params["ssl"] == ["1"]
+            and len(params["resize"]) == 1
+            and re.fullmatch(r"[1-9]\d{1,4},[1-9]\d{1,4}", params["resize"][0]) is not None)
 
 
 def inspect_first_party_media(context, page) -> dict:
-    """Retrieve approved originals anonymously into memory; never persist bytes."""
+    """Retrieve approved source images/Jetpack derivatives to RAM; no storage."""
     files = {"apollo": "s67-19766.webp", "franklin": "Franklinexpeditionnote.jpg"}
     found = {}
     for name, filename in files.items():
