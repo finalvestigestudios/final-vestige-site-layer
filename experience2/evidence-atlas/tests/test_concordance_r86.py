@@ -29,6 +29,16 @@ class ConcordanceTests(unittest.TestCase):
         self.assert_holds(self.desk.replace('data-fvx-photo-record="01"','data-fvx-photo-record="00"'),'desk')
     def test_fake_catalog_fails(self):
         self.assert_holds(self.desk.replace('NASA S67-15717','NASA UNREVIEWED-99'),'desk')
+    def test_desk_invented_photograph_date_fails(self):
+        self.assert_holds(self.desk.replace('January 3, 1967','January 27, 1967'),'desk')
+    def test_atlas_invented_photograph_date_fails(self):
+        self.assert_holds(self.atlas.replace('January 3, 1967','January 27, 1967'),'atlas')
+    def test_rights_status_removed_from_desk_fails(self):
+        self.assert_holds(self.desk.replace(
+            'not been individually reviewed or cleared','fully approved for publication'),'desk')
+    def test_rights_status_removed_from_atlas_fails(self):
+        self.assert_holds(self.atlas.replace('Individual review required.',
+            'Approved for commercial reuse.'),'atlas')
     def test_fabricated_photo_binary_fails(self):
         self.assert_holds(self.desk.replace('data-fvx-photo-record="01"','<img src="data:,x"> data-fvx-photo-record="01"'),'desk')
     def test_removed_source_fails(self):
