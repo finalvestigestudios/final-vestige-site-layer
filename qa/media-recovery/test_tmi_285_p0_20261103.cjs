@@ -29,4 +29,4 @@ const cases=[
 ];
 for(const [name,mutate] of cases){const x=clone(evidence);mutate(x);assert.ok(validate(x,frozen,sha).length,name+" must fail closed");}
 assert.ok(validate(evidence,frozen,"0".repeat(40)).length,"source SHA mismatch fails");
-console.log("TMI 285 P0 source gate: "+(cases.length+2)+"/"+(cases.length+2)+" native Node checks PASS");
+console.log("TMI 285 P0 source gate: "+(cases.length+2)+"/"+(cases.length+2)+" regression assertions PASS (run with Node or isolated V8 shim)");
