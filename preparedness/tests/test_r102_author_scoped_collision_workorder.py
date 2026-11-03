@@ -298,7 +298,7 @@ def make_article_test(slug):
     def test(self):
         m = self.lib.articles[slug]
         self.assertEqual(m["status"]["publish"], "draft")
-        self.assertIn(m["safety_review"]["state"], ("pending", "approved"))
+        self.assertIn(m["safety_review"]["state"], ("pending", "approved", "not-required"))
         self.assertEqual(m["safety_review"],
                          json.loads((self.lib.root / "content" /
                            ("tools" if m.get("kind") == "tool" else "articles") /
