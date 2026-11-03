@@ -126,7 +126,7 @@ def declarations(body):
         key, value = item.split(":", 1)
         key = key.strip().lower()
         value = re.sub(r"\s*!important\s*$", "", value.strip(), flags=re.I)
-        need(bool(re.fullmatch(r"-?[a-z][a-z0-9-]*", key)) and bool(value),
+        need(bool(re.fullmatch(r"(?:--[a-z][a-z0-9-]*|-?[a-z][a-z0-9-]*)", key)) and bool(value),
              "unknown CSS declaration or empty value")
         need(key not in result, "duplicate CSS property requires manual inspection: " + key)
         result[key] = value.lower()
