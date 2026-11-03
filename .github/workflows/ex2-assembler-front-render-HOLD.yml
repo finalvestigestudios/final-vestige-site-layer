@@ -71,12 +71,15 @@ jobs:
           if archive.stat().st_size > 12_000_000: raise RuntimeError('Theme zip too large')
           with zipfile.ZipFile(archive) as z:
               items=z.infolist()
+              # Names are from an official PUBLIC theme archive; bounded diagnostic
+              # distinguishes vendor packaging differences from malicious paths.
+              print('Official Assembler ZIP first 15 public entries:',repr([x.filename for x in items[:15]]))
               if not 6 <= len(items) <= 1500: raise RuntimeError('Bad theme file count')
               total=0
               for info in items:
                   parts=pathlib.PurePosixPath(info.filename).parts
                   if not parts or parts[0]!='assembler' or any(p in ('.','..') for p in parts):
-                      raise RuntimeError('Unsafe theme zip path')
+                      raise RuntimeError('Unsafe theme zip path: '+repr(info.filename))
                   mode=(info.external_attr >> 16) & 0o170000
                   if mode == stat.S_IFLNK: raise RuntimeError('Theme symlink denied')
                   total+=info.file_size
