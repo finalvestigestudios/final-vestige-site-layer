@@ -33,13 +33,15 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def run(base, stage, axe_path, out, user, password, subscriber, subscriber_password):
+def run(base, stage, axe_path, out, user, password, subscriber, subscriber_password,
+        author, author_password, contributor, contributor_password, editor, editor_password):
     base = base.rstrip('/') + '/'
     host = urlparse(base).netloc
     # No URL can point at production, a remotely accessible hostname, or the Internet.
     check(host in ('127.0.0.1:8955', 'localhost:8955'), 'only disposable loopback WordPress is allowed')
     out.mkdir(parents=True, exist_ok=True)
     receipt = {'testing_scope': 'real disposable WordPress core via HTTP; NOT hosted WordPress.com or Assembler',
+               'permission_boundary': 'Editor/Administrator edit_others_posts only; Author/Contributor/Subscriber denied',
                'visual_widths': list(WIDTHS), 'views': list(VIEWS), 'checks': [],
                'screenshots': {}, 'pdf': {}, 'axe': [], 'blocked_external_requests': []}
     view_url = lambda view: base + '?fv_apollo_r99=' + quote(view)
@@ -78,6 +80,31 @@ def run(base, stage, axe_path, out, user, password, subscriber, subscriber_passw
             check(r is not None and r.status == 404, 'subscriber source leak: '+item)
         sub_ctx.close()
         receipt['checks'].append('Authenticated subscriber lacks editor capability and cannot access resources.')
+
+        # edit_posts is granted to Contributors and Authors; neither may read the
+        # sealed preview. This must run against REAL WordPress roles and HTTP.
+        for role, role_user, role_password in (
+            ('author', author, author_password),
+            ('contributor', contributor, contributor_password),
+        ):
+            role_ctx, role_page = login(role_user, role_password)
+            for item in (VIEWS[0], VIEWS[-1], 'R93_SOURCE_PASSPORTS.json',
+                         'source_gallery_r97.css'):
+                res = role_page.goto(view_url(item), wait_until='domcontentloaded')
+                check(res is not None and res.status == 404,
+                      f'{role} unexpectedly accessed private resource: {item}')
+            role_ctx.close()
+        receipt['checks'].append('Actual WordPress Contributor and Author roles denied HTML, JSON and CSS (edit_posts is insufficient).')
+
+        # Editorial reviewers are expected to retain access. This is a distinct
+        # Editor-role test, not an assumption based on Administrator access.
+        editor_ctx, editor_page = login(editor, editor_password)
+        for item in (VIEWS[0], VIEWS[-1], 'R93_SOURCE_PASSPORTS.json'):
+            res = editor_page.goto(view_url(item), wait_until='domcontentloaded')
+            check(res is not None and res.status == 200,
+                  'WordPress Editor unexpectedly denied private review: '+item)
+        editor_ctx.close()
+        receipt['checks'].append('Actual WordPress Editor role retains source access without administrator capability.')
 
         admin_context, admin = login(user, password)
         # All seven views are served by real WP template_redirect, not a hook shim.
@@ -246,5 +273,13 @@ if __name__ == '__main__':
     p.add_argument('--password',required=True)
     p.add_argument('--subscriber',required=True)
     p.add_argument('--subscriber-password',required=True)
+    p.add_argument('--author',required=True)
+    p.add_argument('--author-password',required=True)
+    p.add_argument('--contributor',required=True)
+    p.add_argument('--contributor-password',required=True)
+    p.add_argument('--editor',required=True)
+    p.add_argument('--editor-password',required=True)
     args=p.parse_args()
-    print(json.dumps(run(args.base,args.stage,args.axe,args.out,args.user,args.password,args.subscriber,args.subscriber_password),indent=2))
+    print(json.dumps(run(args.base,args.stage,args.axe,args.out,args.user,args.password,args.subscriber,args.subscriber_password,
+                              args.author,args.author_password,args.contributor,args.contributor_password,
+                              args.editor,args.editor_password),indent=2))
