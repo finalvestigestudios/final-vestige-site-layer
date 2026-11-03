@@ -112,6 +112,19 @@ class RouteCustody(unittest.TestCase):
             'R85_NASA_SOURCE_REVIEW.html#r85-source-06')
         with self.assertRaises(ValueError):r92.audit(self.stage)
 
+    def test_missing_print_rights_warning_rejected(self):
+        self.replace('R87_PHOTOGRAPH_DATE_RAIL.html',
+            '<p class="r92-print-rights">',
+            '<p class="r92-unreviewed-rights">')
+        with self.assertRaises(ValueError):r92.audit(self.stage)
+
+    def test_print_rights_present_on_all_evidence_cards(self):
+        for view in r92.VIEWS:
+            if view!='R89_REVIEW_HUB.html':
+                content=(self.stage/view).read_text('utf8')
+                self.assertEqual(content.count('class="r92-print-rights"'),6)
+                self.assertEqual(content.count('Photographic reuse: INDIVIDUAL REVIEW REQUIRED.'),6)
+
     def test_routes_only_same_record_no_speculation(self):
         receipt=r92.audit(self.stage)
         self.assertEqual(receipt['new_inferred_historical_edges'],0)
