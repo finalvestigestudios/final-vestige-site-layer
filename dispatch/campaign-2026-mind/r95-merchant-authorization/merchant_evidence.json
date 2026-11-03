@@ -1,0 +1,100 @@
+{
+  "project": "fv-dispatch-r95-proof-hold",
+  "source_as_of": "2026-11-03",
+  "campaign_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "all_issues_status": "HOLD_UNSENT",
+  "recipient_eligibility": null,
+  "product_slots": [
+    {
+      "edition": "03",
+      "product_key": "zen12",
+      "approval_state": "NOT_VERIFIED",
+      "affiliate_url": null,
+      "merchant_sources": [
+        "https://zen12.com/hnp",
+        "https://affiliates.inspire3.com/",
+        "https://inspire3.com/privacy/"
+      ],
+      "material_claim_conflicts": [
+        {
+          "finding": "12-minute session vs hour-of-meditation equivalence is seller advertising, not independently proven product comparison",
+          "resolution": "NOT_VERIFIED"
+        },
+        {
+          "finding": "48 MP3/12-level offering vs 24 MP3/6-level tier: verify authorized landing bundle and checkout",
+          "resolution": "NOT_VERIFIED"
+        },
+        {
+          "finding": "Public affiliate signup is not named acceptance, EMAIL channel permission or buyer-PII exclusion",
+          "resolution": "NOT_VERIFIED"
+        }
+      ],
+      "proofs": {
+        "named_final_vestige_acceptance": false,
+        "email_channel_permission_for_this_product": false,
+        "approved_link_format": false,
+        "creative_reuse_terms": false,
+        "verified_guide_live": false,
+        "buyer_pii_exclusion_in_writing": false,
+        "price_and_terms_reconfirmed": false,
+        "publisher_postal_and_unsubscribe_received": false,
+        "qualified_email_recipients_verified": false,
+        "final_founder_campaign_approval": false,
+        "genuine_jetpack_received_preview": false
+      }
+    },
+    {
+      "edition": "05",
+      "product_key": "hypnosis-live-total-focus",
+      "approval_state": "NOT_VERIFIED",
+      "affiliate_url": null,
+      "merchant_sources": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://hypnosislive.com/faq",
+        "https://inspire3.com/privacy/"
+      ],
+      "material_claim_conflicts": [
+        {
+          "finding": "Official Total Focus describes 33min/47MB; guaranteed concentration is merchant assertion without product-specific independent support",
+          "resolution": "NOT_VERIFIED"
+        },
+        {
+          "finding": "Total Focus page displays $24.44 promotional/$29.95 comparison but general FAQ says typically $22.95; do not quote fixed price",
+          "resolution": "NOT_VERIFIED"
+        },
+        {
+          "finding": "FAQ describes 14-day refund and a five-session annual cap; product page's brief 14-day statement omits cap",
+          "resolution": "NOT_VERIFIED"
+        },
+        {
+          "finding": "FAQ's generic about-40-minute session must not displace Total Focus-specific 33-minute recording",
+          "resolution": "NOT_VERIFIED"
+        }
+      ],
+      "proofs": {
+        "named_final_vestige_acceptance": false,
+        "email_channel_permission_for_this_product": false,
+        "approved_link_format": false,
+        "creative_reuse_terms": false,
+        "verified_guide_live": false,
+        "buyer_pii_exclusion_in_writing": false,
+        "price_and_terms_reconfirmed": false,
+        "publisher_postal_and_unsubscribe_received": false,
+        "qualified_email_recipients_verified": false,
+        "final_founder_campaign_approval": false,
+        "genuine_jetpack_received_preview": false
+      }
+    }
+  ]
+}
