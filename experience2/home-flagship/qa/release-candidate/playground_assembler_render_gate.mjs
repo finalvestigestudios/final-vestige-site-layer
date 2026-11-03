@@ -82,7 +82,7 @@ async function imageBodies(page){
   if(rows.length<2)throw new Error('No complete two-source archival image body evidence');
   return rows;
 }
-async function checkView(page,width,axePath){
+async function checkView(page,width,axePath,outputDirectory){
   await page.setViewportSize({width,height:900});
   await page.goto(page.stageUrl,{waitUntil:'domcontentloaded',timeout:90000});
   await page.locator('[data-fv-home-flagship]').waitFor({timeout:30000});
@@ -103,14 +103,37 @@ async function checkView(page,width,axePath){
   assert.ok(state.focus>=1);
   assert.equal(state.overflow,false,`Horizontal overflow at ${width}`);
   assert.equal(state.main,true);assert.equal(state.h1,true);assert.equal(state.inline_scripts,4);
+  // Capture the ACTUAL, unaltered saved WordPress preview BEFORE any axe
+  // failure, so a failing layout/contrast gate still produces review evidence.
+  // Never overlay browser-only 'fixes' and mistake them for saved CSS.
+  await mkdir(outputDirectory,{recursive:true});
+  await page.screenshot({path:join(outputDirectory,`assembler-${width}.png`),
+    animations:'disabled',fullPage:false});
   await page.addScriptTag({path:axePath});
-  const violations=await page.evaluate(async()=>{
+  const scans=await page.evaluate(async()=>{
     if(!window.axe)throw new Error('axe unavailable: fail closed');
-    const r=await window.axe.run(document.querySelector('[data-fv-home-flagship]'),
-      {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});
-    return r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length}));
+    const opts={runOnly:{type:'tag',
+      values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}};
+    const runBounded=async (scope)=>{
+      let timer;
+      try {
+        const r=await Promise.race([
+          window.axe.run(scope,opts),
+          new Promise((_,reject)=>{timer=setTimeout(
+            ()=>reject(new Error('axe scan exceeded 40s')),40000);})
+        ]);
+        return r.violations.map(v=>({id:v.id,impact:v.impact,
+          nodes:v.nodes.length,selectors:v.nodes.slice(0,3).map(n=>n.target)}));
+      } finally {clearTimeout(timer);}
+    };
+    // A component-only axe pass can MISS the 72 synthetic Margins fragments,
+    // Jetpack stub and Assembler navigation. Require BOTH scoped and full DOM.
+    const flagship=await runBounded(document.querySelector('[data-fv-home-flagship]'));
+    const whole_document=await runBounded(document);
+    return {flagship,whole_document};
   });
-  if(violations.length)throw new Error(`Automated axe findings at ${width}: ${JSON.stringify(violations)}`);
+  if(scans.flagship.length || scans.whole_document.length)
+    throw new Error(`Automated axe findings at ${width}: ${JSON.stringify(scans)}`);
   return {width,state,axe_violations:0,media:await imageBodies(page)};
 }
 export async function runAssemblerPreview({server,browser,context,draftId,themeDirectory,outputDirectory}){
@@ -124,8 +147,7 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   await restrictNetwork(page,blocked);
   const axePath=require.resolve('axe-core/axe.min.js'),responsive=[];
   for(const width of widths){
-    const item=await checkView(page,width,axePath);
-    if([390,1440].includes(width))await page.screenshot({path:join(outputDirectory,`assembler-${width}.png`),animations:'disabled'});
+    const item=await checkView(page,width,axePath,outputDirectory);
     responsive.push(item);
   }
   await page.setViewportSize({width:720,height:450});
