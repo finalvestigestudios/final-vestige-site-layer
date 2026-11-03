@@ -2,7 +2,42 @@
   "mobile-throttled": {
     "runs": [
       {
-        "lcp_ms": 1812,
+        "lcp_ms": 1836,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1780,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1820,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1836,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1660,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1860,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1824,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1772,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
@@ -12,45 +47,35 @@
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1752,
+        "lcp_ms": 1692,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1756,
+        "lcp_ms": 1788,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1840,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1800,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1892,
+        "lcp_ms": 1844,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       }
     ],
-    "lcp_median_ms": 1800,
-    "lcp_max_ms": 1892,
+    "lcp_median_ms": 1810.0,
+    "lcp_max_ms": 1860,
     "cls_median": 0.0731,
     "cls_max": 0.0731
   },
   "desktop": {
     "runs": [
       {
-        "lcp_ms": 408,
+        "lcp_ms": 360,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 404,
+        "lcp_ms": 388,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
@@ -60,28 +85,53 @@
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 440,
+        "lcp_ms": 384,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 432,
+        "lcp_ms": 380,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 624,
+        "lcp_ms": 348,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 476,
+        "lcp_ms": 392,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 376,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 492,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 376,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 396,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 496,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       }
     ],
-    "lcp_median_ms": 432,
-    "lcp_max_ms": 624,
+    "lcp_median_ms": 386.0,
+    "lcp_max_ms": 496,
     "cls_median": 0.0014,
     "cls_max": 0.0014
   },

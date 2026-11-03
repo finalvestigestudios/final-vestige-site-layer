@@ -156,6 +156,21 @@ class Block(unittest.TestCase):
         self.assertIn("human rights review pending", text)
         self.assertNotIn("independent review", text.lower())
 
+    def test_every_unverified_claim_is_flagged_in_its_chapter(self):
+        """Founder rule: documented fact, interpretation and unresolved questions must be separable on the page."""
+        data = lib.load_apollo1()
+        body = (BLOCKS_DIR / "apollo1-investigation" / "01-investigation.block.html").read_text(encoding="utf-8")
+        chapters = re.split(r'(?=<section class="fv-ex2-chapter")', body)
+        for rec in data["records"]:
+            chapter = next(c for c in chapters if f'id="{rec["id"]}"' in c[:200])
+            for row in rec["crosswalk"]:
+                flagged = row["claim"].replace("'", "&#x27;") in chapter and row["status"] != "verified"
+                if row["status"] == "verified":
+                    self.assertNotIn(f'<strong>{row["claim"]}</strong>', chapter, "verified claims are not open questions")
+                else:
+                    self.assertTrue(flagged, f'{rec["id"]}: {row["claim"]}')
+        self.assertIn("Open question", body)
+
     def test_size_budget(self):
         self.assertLess(len(_block().encode()), 110_000)
 

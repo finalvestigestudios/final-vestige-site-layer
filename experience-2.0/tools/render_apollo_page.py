@@ -102,10 +102,11 @@ def _intro(data: dict) -> str:
 <div class="fv-ex2-wrap">
 <div class="fv-ex2-sec__head"><p class="fv-ex2-label">How to read this page</p>
 <h2 class="fv-ex2-sec__title" id="fvx-howto">What is documented, and what is our reading of it</h2>
-<p class="fv-ex2-sec__intro">Each item below carries one of two labels. They describe how it relates to the Apollo 1 fire; they are not a verdict on whether it is true.</p></div>
+<p class="fv-ex2-sec__intro">Items carry one of these labels. The first two describe how an item relates to the Apollo 1 fire; the third marks what is still unresolved. None is a verdict on whether something is true.</p></div>
 <div class="fv-ex2-legend">
 <div>{_badge("documented")}<p>The cited source states it directly, or the item is a record made of the event: the Review Board report, or a photograph taken of the spacecraft after the fire.</p></div>
 <div>{_badge("interpretive")}<p>Final Vestige placed it here. Context photographs and the chronology axis are editorial choices; the archive does not say they belong to this event.</p></div>
+<div style="grid-column:1/-1"><span class="fv-ex2-badge" data-status="partial">Open question</span><p>A claim our sources do not yet fully support. It is flagged inside the chapter and in the Research Desk crosswalk as "article only", "partial" or "editorial note".</p></div>
 </div></div></section>'''
 
 
@@ -131,6 +132,25 @@ def _classification_section(rows: list[dict]) -> str:
 <h2 class="fv-ex2-sec__title" id="fvx-class">How each item is classified</h2>
 <p class="fv-ex2-sec__intro">The Evidence Atlas records why every document is attached to this event. Only one photograph, S67-21294, is documented as showing the aftermath of the fire.</p></div>
 <ul class="fv-ex2-classlist">{"".join(items)}</ul></div></section>'''
+
+
+OPEN_TEXT = {
+    "article-only": "Stated in our published article; not yet matched to a primary source.",
+    "partial": "Partly supported by the sources; the exact wording is not yet confirmed.",
+    "editorial-note": "An editorial question is open. See the Research Desk.",
+}
+
+
+def _open_questions(rec: dict) -> str:
+    """Claims whose crosswalk status is not `verified`, shown in the chapter itself so a reader cannot miss them."""
+    rows = [r for r in rec["crosswalk"] if r["status"] in OPEN_TEXT]
+    if not rows:
+        return ""
+    items = "".join(
+        f'<li><span class="fv-ex2-badge" data-status="{esc(r["status"])}">{esc(r["status"].replace("-", " "))}</span> <strong>{esc(r["claim"])}</strong> '
+        f'<span>{esc(OPEN_TEXT[r["status"]])}</span></li>' for r in rows)
+    return (f'<div class="fv-ex2-callout"><span class="fv-ex2-label">Open question</span>'
+            f'<ul class="fv-ex2-crosswalk">{items}</ul></div>' + NL)
 
 
 def _limits(recs: list[dict]) -> str:
@@ -225,7 +245,14 @@ def render_parts(data: dict, atlas: dict) -> list[tuple[str, str]]:
         basis = (f'<p class="fv-ex2-plate__basis">{_badge(row["rel"]["basis"])}<span class="fv-ex2-caption">{esc(row["rel"]["justification"])}</span></p>'
                  if row else "")
         actions = f'<a class="fv-ex2-button" href="#fv-ex2-desk-{DESK_INSTANCE}-{esc(rec["id"])}">Source record in the Research Desk</a>'
-        chapters.append(_chapter(rec, i, total, nxt, policy, chrono, actions_html=actions + basis))
+        html = _chapter(rec, i, total, nxt, policy, chrono, actions_html=actions + basis)
+        open_html = _open_questions(rec)
+        if open_html:
+            marker = '<div class="fv-ex2-transition">'
+            if html.count(marker) != 1:
+                raise ValueError("chapter markup changed: cannot place the open-question callout")
+            html = html.replace(marker, open_html + marker, 1)
+        chapters.append(html)
     bar_links = "".join(
         f'<li><a href="#{esc(r["id"])}"><span aria-hidden="true">{i + 1:02d}</span>'
         f'<span class="fv-ex2-visually-hidden">Record {i + 1}: {esc(r["title"])}</span></a></li>' for i, r in enumerate(recs))
