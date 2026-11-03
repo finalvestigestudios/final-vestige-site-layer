@@ -45,3 +45,27 @@ Duplicate check at apply time: none of the 10 links was already present in its t
 1. 5 outbound blocks (9 links) from the new posts, waiting for the content session's corrected IDs and block counts; locks and insertion indexes must be recomputed then.
 2. Visual polish of the three hub blocks is optional (see B).
 3. Ahrefs/Search Console data is still unavailable; measurement per `05-GSC-MEASUREMENT-PLAN.md`.
+
+## E. Update: 5 outbound blocks applied (2026-11-03, after content QA)
+
+**Authorization:** the user approved "all 5 blocks" in this session after the diffs in `06-NEW-POSTS-LINKING-PROPOSAL.md` section A were shown with refreshed locks. The orchestrating session relayed the founder's go-ahead earlier; that relay was not treated as approval.
+
+**Locks:** re-listed with `post-sections.list` after the content QA (corrected posts 1917, 1920, 1924; unchanged 1922, 1926), then `modified` re-checked immediately before the writes. Each write carried `expected_modified` and `expected_content_hash`; none was refused; `_content_warnings` empty. Insert point: a new top-level `core/group` immediately before the closing FAQPage JSON-LD `core/html` block (last section), after the sources list. The posts' body text, FAQ blocks and JSON-LD were not touched; the QA corrections are intact.
+
+| Post | Index | Links added | content_hash before | content_hash after | modified after (site time) |
+|---|---|---|---|---|---|
+| 1922 change-blindness | 29 | The Failure Chain; The Missing Caption | `5ff50b4a0571a69beca449fee71acf8e19d17f09` | `9cf8363212860ae650c84b7f9da7b07ddaaeea8f` | 2026-11-03T14:51:34 |
+| 1926 crystal-skulls | 25 | The Findspot; The Paper Witness | `b097f1ad3460780efabad87f24a7d2af57256eda` | `4f2c718a9cc2550b0417bd1f85c4c2927116bc47` | 14:51:37 |
+| 1917 piri-reis-map | 26 | The Lost Landscape; The Archive Trail | `2049decfed3eec105714f3efa9214ba018ef7a8b` | `5291bc58b6c828d5b08d0e8a244309ab06751629` | 14:52:14 |
+| 1920 lycurgus-cup | 24 | They Painted Over Archimedes | `02525f8f39cc22533480c1c5f4ece85506e3f8ca` | `4f04dcd1b831033b574f6869a7bcf5c5542adc8f` | 14:52:17 |
+| 1924 mesmerism | 32 | The Archive Trail; Primary Historical Sources & Archives | `6c22e567c9848fd9bc7893c57282563c8cb6a563` | `eb43a12a12e0d03caedd7e8cb48b71e9dcee98de` | 14:52:20 |
+
+Hashes copied by hand from tool responses; a fresh `post-sections.list` is authoritative. Duplicate check against the corrected live text: 0 of 9 links already present. The Lycurgus Cup -> The Working Order link was not added. Link total across the program of this addendum: **19** (10 inbound + 9 outbound), all applied.
+
+**Verification** (`tools/verify_outbound.py`, public pages, cache-busted): all five return 200; exactly one `fv-related-reading` block each; every link returns 200 with no redirect; exactly one Article, one FAQPage and one BreadcrumbList each; JSON-LD parses; one H1; the block precedes the FAQPage JSON-LD. The first run of the script printed `links_ok: False` because its own cache-busting query string appeared in the final URL; the comparison was fixed and re-run (not a site fault).
+
+**Rollback:** `post-sections.list`, find the last `core/group` with class `fv-related-reading` (just before the final JSON-LD block), `post-sections.remove` it with its `block_hash` and fresh tokens; success = `content_hash` equals the *before* column. Do not use `posts.update` on these posts (it would rewrite the corrected body).
+
+## F. Sitemap note (reported by the content/orchestrating sessions; not verified by me)
+
+As of about 14:38Z on 2026-11-03, `/sitemap.xml` listed `sitemap-1.xml` at lastmod 2026-11-03T01:48:13Z; `sitemap-1.xml` (124 URLs) has not been rebuilt, so it contains neither the five 2026-11-02 posts nor reflects this program's edits. `news-sitemap.xml` lists all five posts; the five have correct canonicals and are indexable. Recheck after the next rebuild. Do not purge or toggle the Jetpack sitemap module. This is a platform/schedule matter; no action was taken.
