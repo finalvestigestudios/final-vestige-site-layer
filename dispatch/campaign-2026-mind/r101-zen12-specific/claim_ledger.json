@@ -1,0 +1,117 @@
+{
+  "id": "fv-dispatch-r101-zen12-product-tier-2026-11-03",
+  "observed_utc": "2026-11-03T23:34:12Z",
+  "edition": 3,
+  "status": "HOLD_UNSENT_HOLD_MERCHANT",
+  "original_master_pr": 175,
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_draft_pr": 852,
+  "coordination_issues": [
+    174,
+    171
+  ],
+  "mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "subject": "Twelve minutes is a duration. Not a result.",
+  "preheader": "What Zen12 actually sells, and four checks before you pay.",
+  "native_preheader_verified": false,
+  "excerpt": "Commercial note: This edition reviews Zen12. If you later buy through a qualifying link in our approved guide, Final Vestige may earn a commission. No earning link or approved guide is active. Here is the difference between a short routine and a proven outcome.",
+  "guide_placeholder": "[[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]",
+  "approved_live_buyer_guide_url": null,
+  "approved_affiliate_merchant_url": null,
+  "affiliate_permissions": {
+    "final_vestige_named_acceptance": false,
+    "email_channel_authorized": false,
+    "zen12_tier_link_approved": false,
+    "creative_rights": false,
+    "aggregate_only_no_purchaser_pii_contract": false
+  },
+  "delivery_evidence": {
+    "actual_received_jetpack_email": false,
+    "unsubscribe_functional": false,
+    "final_vestige_postal_verified": false,
+    "subscriber_count_reconciled": false,
+    "welcome_delivery_confirmed": false,
+    "founder_final_campaign_approval": false
+  },
+  "wp_settings_snapshot": {
+    "newsletter_enabled": true,
+    "new_post_default_send": false,
+    "email_content_format": "excerpt",
+    "subscribers_total": 2,
+    "subscribers_confirmed": 2,
+    "subscribers_unconfirmed": 2,
+    "verified_eligible_recipients": null,
+    "recent_five_sends": "never_sent_opted_out"
+  },
+  "product_seller_features": {
+    "twelve_minute_sessions": "seller-described",
+    "twelve_levels": "seller-described",
+    "four_styles": [
+      "relaxation music",
+      "guided meditation",
+      "nature sounds",
+      "white noise"
+    ],
+    "premium_mp3_count": "48 seller-listed",
+    "beginner_advanced_mp3_count": "24 each, seller-listed",
+    "refundable_for_one_year": "seller promise, no independent fulfillment verification"
+  },
+  "claim_boundaries": {
+    "one_hour_equivalence": "UNVERIFIED SELLER CLAIM",
+    "brainwave_meditation_automation": "UNVERIFIED SELLER CLAIM",
+    "health_and_focus_outcomes": "UNVERIFIED FOR PRODUCT",
+    "ongoing_price_or_refund": "NOT GUARANTEED"
+  },
+  "sources": [
+    {
+      "label": "Zen12 official sales and tier listing",
+      "url": "https://zen12.com/",
+      "supports": "12-minute MP3 description, 12 levels, four styles, Premium 48 MP3s, six-level 24 MP3 tiers, seller one-year guarantee and advertised equivalence",
+      "limitations": "Seller-written description and outcome claims; plan pricing, checkout terms and entitlement are not independently verified; no assertion that seller claims are proven."
+    },
+    {
+      "label": "Inspire3 Terms of Sale",
+      "url": "https://inspire3.com/terms/",
+      "supports": "Merchant-published sale/refund conditions; exact contemporaneous checkout and fulfillment still require private verification",
+      "limitations": "Terms vary by product; do not infer a settled refund, lifetime support or universal conditions from one high-level listing."
+    },
+    {
+      "label": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "supports": "Referring affiliates may receive purchaser name, email and purchased-item information; telephone/SMS data handling",
+      "limitations": "The public privacy policy is not a signed Final Vestige aggregate-only reporting agreement."
+    },
+    {
+      "label": "NIH NCCIH meditation evidence review",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "supports": "Background on meditation research and limits of generalizing results",
+      "limitations": "Not an efficacy trial of Zen12, no product-specific evidence of 12-minutes-equals-one-hour equivalence."
+    },
+    {
+      "label": "FTC CAN-SPAM business compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "supports": "Valid physical mailing address, recognizable opt-out, honest header/subject and promotional disclosures for covered commercial messages",
+      "limitations": "Legal guidance, not approval that Final Vestige's actual Jetpack email complies."
+    },
+    {
+      "label": "Final Vestige Puységur historical source file",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "supports": "Editorial evidence-first historical bridge",
+      "limitations": "Historical testimony is not modern efficacy evidence for Zen12 or brainwave entrainment."
+    }
+  ],
+  "send_authorized": false,
+  "sends_this_run": 0,
+  "tests_are_not_delivery_evidence": true
+}
