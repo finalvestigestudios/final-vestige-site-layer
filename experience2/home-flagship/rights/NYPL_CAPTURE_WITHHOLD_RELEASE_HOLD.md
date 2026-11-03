@@ -6,7 +6,7 @@
 **Source:** Gutenberg raw content, read in-memory with the connected WordPress MCP tool on 2026-11-03. **No production mutation.**  
 **Target:** NYPL digital capture referenced by homepage Malbone evidence case; catalog item **5003296**, item record \`c745e730-d2a9-012f-5ecc-58d385a7bbd0\`.  
 **Source record:** https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0  
-**Institutional reuse policy:** https://www.nypl.org/research/collections/digital-collections/public-domain
+**Institutional reuse policy:** https://digitalcollections.nypl.org/about
 
 ## Exact actual production issue
 
