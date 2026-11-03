@@ -1,0 +1,107 @@
+name: Preparedness R96 Visible Citation and Safety Shell (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r95-complete-dom-attribute-custody-hold-20261103
+    paths:
+      - preparedness/tools/r96_visible_source_safety_shell.py
+      - preparedness/tests/test_r96_visible_source_safety_shell.py
+      - preparedness/docs/R96_VISIBLE_SOURCE_SAFETY_SHELL_HOLD.md
+      - .github/workflows/preparedness-r96-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  private-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact immutable R95 parent, seven contributor refs, RC, and additive-only scope
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          base = "b279629f4567bb18d843652bcfde5fdb2795f07a"
+          assert subprocess.check_output(
+              ["git", "rev-parse", "refs/remotes/origin/review/preparedness-r95-complete-dom-attribute-custody-hold-20261103"],
+              text=True).strip() == base
+          files = set(subprocess.check_output(
+              ["git", "diff", "--name-status", base, "HEAD"], text=True).splitlines())
+          expected = {
+              "preparedness/tools/r96_visible_source_safety_shell.py",
+              "preparedness/tests/test_r96_visible_source_safety_shell.py",
+              "preparedness/docs/R96_VISIBLE_SOURCE_SAFETY_SHELL_HOLD.md",
+              ".github/workflows/preparedness-r96-private-tests.yml",
+          }
+          assert files == {"A\t" + path for path in expected}, files
+          pinned = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":
+                  "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, expected_sha in pinned.items():
+              actual = subprocess.check_output(
+                  ["git", "rev-parse", "refs/remotes/origin/" + ref],
+                  text=True).strip()
+              assert actual == expected_sha, (ref, actual, expected_sha)
+              print(ref, actual)
+          print("R96 pinned eight refs, exact R95, four ADD-only files: PASS")
+          PY
+      - name: Synthetic R96 source/citation visibility attack tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for name in ("preparedness/tools/r96_visible_source_safety_shell.py",
+                       "preparedness/tests/test_r96_visible_source_safety_shell.py"):
+              compile(Path(name).read_text(encoding="utf-8"), name, "exec")
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r96_visible_source_safety_shell.py -v
+      - name: Full corpus with independent R95 R94 R93 preservation
+        run: |
+          python -I preparedness/tools/r96_visible_source_safety_shell.py
+          python -I preparedness/tools/r96_visible_source_safety_shell.py --private-json-stdout > "$RUNNER_TEMP/r96-private.json"
+          python -I - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          p = Path(os.environ["RUNNER_TEMP"]) / "r96-private.json"
+          report = json.loads(p.read_text(encoding="utf-8"))
+          assert report["schema"] == "r96-visible-source-review-shell-private-hold-v1"
+          assert report["release_state"] == "HOLD" and report["may_publish"] is False
+          assert report["real_article_drafts"] == report["full_slate_articles"] == 35
+          assert report["real_tool_drafts"] == 1 and report["planned_tools"] == 6
+          assert len(report["unbuilt_tools_NOT_IMPORTABLE"]) == 5
+          assert report["private_drafts"] == 36
+          assert report["rendered_citations_rechecked_R93_R95_R96"] == 1959
+          assert report["original_dom_events_rechecked_R95"] == 20217
+          assert all(x["may_publish"] is False and x["release_state"] == "HOLD"
+                     for x in report["per_document_NOT_APPROVED"])
+          seal = report.pop("sha256_seal")
+          data = json.dumps(report, sort_keys=True, ensure_ascii=False,
+                            separators=(",", ":"), allow_nan=False).encode("utf-8")
+          assert hashlib.sha256(data).hexdigest() == seal
+          print("R96 full original corpus, visible sources and safety HOLD: PASS")
+          PY
+          rm -f "$RUNNER_TEMP/r96-private.json"
+      - name: Native validation and offline unpublished WordPress-ready drafts only
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete regression
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: QD human claim and emergency-safety approvals remain CLOSED
+        if: always()
+        run: |
+          echo 'PRIVATE diagnostics only; mandatory integrity is separate.'
+          echo 'No source claim review, qualified safety verdict, QD pass,'
+          echo 'WordPress/CMS writes, homepage/nav changes or publishing.'
