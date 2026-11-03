@@ -1,0 +1,115 @@
+name: Preparedness R93 Rendered Citation Fidelity (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r91-citation-claim-boundary-bindings-hold-20261103
+    paths:
+      - preparedness/tools/r93_rendered_citation_fidelity.py
+      - preparedness/tests/test_r93_rendered_citation_fidelity.py
+      - preparedness/docs/R93_RENDERED_CITATION_FIDELITY_HOLD.md
+      - .github/workflows/preparedness-r93-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r93-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-read-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify immutable R91 parent and four additive-only R93 files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          python -I - <<'PY'
+          import os, subprocess
+          assert os.environ["BASE_SHA"] == "f4e3577839cef3590f83fca90dca6ab165794bd3"
+          assert os.environ["BASE_REF"] == "review/preparedness-r91-citation-claim-boundary-bindings-hold-20261103"
+          assert os.environ["HEAD_REF"] == "review/preparedness-r93-rendered-citation-fidelity-hold-20261103"
+          rows = subprocess.check_output(["git", "diff", "--name-status",
+                   os.environ["BASE_SHA"], "HEAD"], text=True).splitlines()
+          allowed = {
+              "preparedness/tools/r93_rendered_citation_fidelity.py",
+              "preparedness/tests/test_r93_rendered_citation_fidelity.py",
+              "preparedness/docs/R93_RENDERED_CITATION_FIDELITY_HOLD.md",
+              ".github/workflows/preparedness-r93-private-tests.yml",
+          }
+          assert len(rows) == 4 and set(rows) == {"A\t"+x for x in allowed}, rows
+          refs = {
+              "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":
+                  "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, pinned in refs.items():
+              actual = subprocess.check_output(
+                  ["git","rev-parse","refs/remotes/origin/"+ref], text=True).strip()
+              assert actual == pinned, (ref, actual, pinned)
+              print(ref, actual)
+          print("PASS: 4 additive-only files and all eight pinned contributor/RC refs")
+          PY
+      - name: Syntax and at least 49 distinct mutation tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in ("preparedness/tools/r93_rendered_citation_fidelity.py",
+                    "preparedness/tests/test_r93_rendered_citation_fidelity.py"):
+              compile(Path(p).read_text(encoding="utf-8"),p,"exec")
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r93_rendered_citation_fidelity.py -v
+      - name: Verify actual draft output versus author-scoped literal citations
+        run: |
+          python -I preparedness/tools/r93_rendered_citation_fidelity.py
+          python -I preparedness/tools/r93_rendered_citation_fidelity.py --private-json-stdout > "$RUNNER_TEMP/r93-private.json"
+          python -I - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"r93-private.json"
+          report=json.loads(p.read_text(encoding="utf-8"))
+          assert report["release_state"]=="HOLD" and report["may_publish"] is False
+          assert report["full_slate_article_count"]==35
+          assert report["actual_article_drafts"]==35
+          assert report["planned_tools"]==6
+          assert report["actual_tool_drafts"]<=6
+          assert len(report["missing_tool_drafts_NOT_WORDPRESS_READY"])==6-report["actual_tool_drafts"]
+          rows=report["unabridged_rendered_source_workorders_NOT_APPROVED"]
+          assert len(rows)==report["literal_citation_occurrences_reconciled_to_rendered_html"]
+          assert len(rows)>=1500, len(rows)
+          assert all(x["may_publish"] is False and x["qualified_safety_review"]=="NOT_REVIEWED"
+                     and x["human_claim_review"]=="NOT_REVIEWED"
+                     and x["independent_QD_review"]=="NOT_REVIEWED" for x in rows)
+          digest=report.pop("sha256_seal")
+          canonical=json.dumps(report,sort_keys=True,ensure_ascii=False,
+                 separators=(",",":"),allow_nan=False).encode("utf-8")
+          assert hashlib.sha256(canonical).hexdigest()==digest
+          print("PASS: original literal source identities match every private rendered citation; HOLD")
+          PY
+          rm -f "$RUNNER_TEMP/r93-private.json"
+      - name: Native validator and offline WordPress draft build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Qualified safety and public-release gates remain closed
+        if: always()
+        run: |
+          echo 'Private transport fidelity diagnostics only, NOT mandatory release-integrity approval.'
+          echo 'No QD PASS, source/claim/human link verification, qualified medical safety or publication.'
+          echo 'No CMS, WordPress, public site, homepage or navigation writes.'
