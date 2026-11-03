@@ -1,0 +1,513 @@
+{
+  "run": "R93",
+  "checked_on": "2026-11-03",
+  "state": "DRAFT_HARD_HOLD",
+  "source_count": 20,
+  "claim_count": 34,
+  "gate_count": 24,
+  "all_current_links_disabled": true,
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "historical-reference",
+      "title": "Troxler 1804 as traced by Anstis & Greenlee",
+      "url": "https://doi.org/10.1068/i0624rep",
+      "notes": "Anstis & Greenlee secondary historical attribution; original 1804 scan not verified"
+    },
+    {
+      "id": "S02",
+      "kind": "peer-reviewed",
+      "title": "Anstis & Greenlee 2014: contour erasure/filling-in",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4249993/",
+      "notes": "Specific demonstrations; avoid single-mechanism certainty"
+    },
+    {
+      "id": "S03",
+      "kind": "peer-reviewed",
+      "title": "Costela et al 2013: microsaccades foveal targets",
+      "url": "https://doi.org/10.7717/peerj.119",
+      "notes": "Eye-movement association, not exclusive cause"
+    },
+    {
+      "id": "S04",
+      "kind": "peer-reviewed",
+      "title": "MIB vs Troxler contrast effects",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24658600/",
+      "notes": "Specific stimuli; rates show opposite contrast directions"
+    },
+    {
+      "id": "S05",
+      "kind": "peer-reviewed",
+      "title": "Devyatko et al 2017, n=69 shared patterns",
+      "url": "https://doi.org/10.1177/0301006616672577",
+      "notes": "Correlational not neural proof"
+    },
+    {
+      "id": "S06",
+      "kind": "live-site",
+      "title": "Puységur Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "notes": "Authenticated WordPress read-only 2026-11-03"
+    },
+    {
+      "id": "S07",
+      "kind": "live-site",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "notes": "Authenticated WP read-only, existing single funnel"
+    },
+    {
+      "id": "S08",
+      "kind": "live-site",
+      "title": "Change Blindness published post",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "notes": "Authenticated published post inventory 2026-11-03"
+    },
+    {
+      "id": "S09",
+      "kind": "live-site",
+      "title": "Mesmerism published post",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "notes": "Authenticated published post inventory 2026-11-03"
+    },
+    {
+      "id": "M01",
+      "kind": "merchant",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "notes": "Product identity only"
+    },
+    {
+      "id": "M02",
+      "kind": "merchant",
+      "title": "Zen12 exact sales page",
+      "url": "https://zen12.com/hnp",
+      "notes": "48 MP3/12 levels/4 formats/full program; seller's claims"
+    },
+    {
+      "id": "M03",
+      "kind": "merchant",
+      "title": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "notes": "seller claims incl hour-equivalence; not independently proven"
+    },
+    {
+      "id": "M04",
+      "kind": "merchant",
+      "title": "Zen12 Research",
+      "url": "https://zen12.com/research",
+      "notes": "vendor research narrative, not product trial"
+    },
+    {
+      "id": "M05",
+      "kind": "merchant-checkout",
+      "title": "Zen12 checkout",
+      "url": "https://zen12.com/getstarted",
+      "notes": "merchant current checkout requests name/email/mobile; no purchase performed"
+    },
+    {
+      "id": "M06",
+      "kind": "merchant-privacy",
+      "title": "Inspire3 privacy",
+      "url": "https://inspire3.com/privacy/",
+      "notes": "read before collection; buyer sharing/communications"
+    },
+    {
+      "id": "M07",
+      "kind": "merchant-affiliate-recruitment",
+      "title": "Inspire3 public affiliate program",
+      "url": "https://affiliates.inspire3.com/",
+      "notes": "public ad != Final Vestige approved partner terms"
+    },
+    {
+      "id": "R01",
+      "kind": "systematic-review",
+      "title": "Ingendoh et al 2023, 14 EEG studies",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "notes": "5 for, 8 against, 1 mixed; no Zen12 trial"
+    },
+    {
+      "id": "R02",
+      "kind": "regulator",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "notes": "Clear adjacent disclosure and honest endorsements"
+    },
+    {
+      "id": "R03",
+      "kind": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "notes": "Product specific substantiation before efficacy claims"
+    },
+    {
+      "id": "R04",
+      "kind": "live-site",
+      "title": "Final Vestige editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "notes": "Existing live site standards, not modified"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 consists of twelve-minute files",
+      "status": "seller-described",
+      "refs": "M02,M03",
+      "action": "qualified format only"
+    },
+    {
+      "id": "C02",
+      "claim": "Twelve levels are offered",
+      "status": "seller-described",
+      "refs": "M02,M03",
+      "action": "check exact checkout"
+    },
+    {
+      "id": "C03",
+      "claim": "Four listening presentations",
+      "status": "seller-described",
+      "refs": "M02,M03",
+      "action": "music, guided, nature, white noise"
+    },
+    {
+      "id": "C04",
+      "claim": "48-MP3 complete package",
+      "status": "seller-described",
+      "refs": "M02,M05",
+      "action": "distinct from six-level versions"
+    },
+    {
+      "id": "C05",
+      "claim": "24-MP3 six-level packages",
+      "status": "seller-described",
+      "refs": "M02",
+      "action": "check checkout route"
+    },
+    {
+      "id": "C06",
+      "claim": "Downloadable MP3 rather than hardware",
+      "status": "seller-described",
+      "refs": "M02,M05",
+      "action": "format only"
+    },
+    {
+      "id": "C07",
+      "claim": "Headphones not required",
+      "status": "seller-described",
+      "refs": "M03",
+      "action": "do not infer mechanism"
+    },
+    {
+      "id": "C08",
+      "claim": "One hour of advanced meditation in twelve minutes",
+      "status": "unsubstantiated product efficacy",
+      "refs": "M02,M03,R01",
+      "action": "exclude from FV claims"
+    },
+    {
+      "id": "C09",
+      "claim": "Guaranteed relief from anxiety/stress",
+      "status": "unsubstantiated health outcome",
+      "refs": "M02,M03,R03",
+      "action": "exclude"
+    },
+    {
+      "id": "C10",
+      "claim": "Brainwave entrainment guarantees deep meditation",
+      "status": "unsubstantiated mechanism/outcome",
+      "refs": "M03,M04,R01",
+      "action": "exclude"
+    },
+    {
+      "id": "C11",
+      "claim": "Brainwave science proven over 100 years",
+      "status": "misleading generalization as product proof",
+      "refs": "M04,R01",
+      "action": "attribute to seller only"
+    },
+    {
+      "id": "C12",
+      "claim": "Binaural evidence 5 supportive / 8 contradictory / 1 mixed",
+      "status": "independent evidence",
+      "refs": "R01",
+      "action": "14-study heterogeneous review; not Zen12"
+    },
+    {
+      "id": "C13",
+      "claim": "EEG entrainment proves cognition improvement",
+      "status": "not established",
+      "refs": "R01,R03",
+      "action": "exclude"
+    },
+    {
+      "id": "C14",
+      "claim": "Deep meditation achieved without effort",
+      "status": "unsubstantiated product outcome",
+      "refs": "M02,M04",
+      "action": "exclude"
+    },
+    {
+      "id": "C15",
+      "claim": "Guaranteed focus and creativity",
+      "status": "unsubstantiated product outcome",
+      "refs": "M02,M03,R03",
+      "action": "exclude"
+    },
+    {
+      "id": "C16",
+      "claim": "Medical benefits of Zen12",
+      "status": "unsubstantiated health claims",
+      "refs": "M02,R03",
+      "action": "exclude"
+    },
+    {
+      "id": "C17",
+      "claim": "One-year money-back guarantee",
+      "status": "seller assertion not verified handling",
+      "refs": "M02,M05",
+      "action": "terms and exceptions hold"
+    },
+    {
+      "id": "C18",
+      "claim": "Current price or discount",
+      "status": "volatile/checkout variant",
+      "refs": "M02,M05",
+      "action": "do not state"
+    },
+    {
+      "id": "C19",
+      "claim": "Buyer mobile number requested",
+      "status": "verified form field",
+      "refs": "M05",
+      "action": "privacy note only"
+    },
+    {
+      "id": "C20",
+      "claim": "Seller may communicate with buyers",
+      "status": "seller privacy representation",
+      "refs": "M06",
+      "action": "require precise consent verification"
+    },
+    {
+      "id": "C21",
+      "claim": "Affiliate partner acceptance for FV",
+      "status": "not established",
+      "refs": "M07",
+      "action": "hold"
+    },
+    {
+      "id": "C22",
+      "claim": "Approved FV earning URL",
+      "status": "not established",
+      "refs": "M07",
+      "action": "hold"
+    },
+    {
+      "id": "C23",
+      "claim": "Email marketing rights",
+      "status": "not established",
+      "refs": "M07",
+      "action": "hold"
+    },
+    {
+      "id": "C24",
+      "claim": "TikTok/social rights",
+      "status": "not established",
+      "refs": "M07",
+      "action": "hold"
+    },
+    {
+      "id": "C25",
+      "claim": "Authorized promo creatives/swipe",
+      "status": "not established",
+      "refs": "M07",
+      "action": "hold"
+    },
+    {
+      "id": "C26",
+      "claim": "Referral commission rate for FV",
+      "status": "not established",
+      "refs": "M07",
+      "action": "hold"
+    },
+    {
+      "id": "C27",
+      "claim": "Actual sales attributed to FV",
+      "status": "unmeasured",
+      "refs": "M07",
+      "action": "no inference from click"
+    },
+    {
+      "id": "C28",
+      "claim": "Reviewed or personally used Zen12",
+      "status": "not done",
+      "refs": "M02",
+      "action": "explicit non-use notice"
+    },
+    {
+      "id": "C29",
+      "claim": "A film improves conversion",
+      "status": "untested hypothesis",
+      "refs": "none",
+      "action": "do not report uplift"
+    },
+    {
+      "id": "C30",
+      "claim": "No-JS useful experience",
+      "status": "implementation design",
+      "refs": "internal QA",
+      "action": "must verify WordPress preview"
+    },
+    {
+      "id": "C31",
+      "claim": "No seller link until acceptance",
+      "status": "mandatory hold",
+      "refs": "R02,M07",
+      "action": "button disabled"
+    },
+    {
+      "id": "C32",
+      "claim": "Single existing Focus/Jetpack funnel",
+      "status": "verified site inventory",
+      "refs": "S07",
+      "action": "do not add signup form"
+    },
+    {
+      "id": "C33",
+      "claim": "Troxler proves meditation efficacy",
+      "status": "invalid cross-domain inference",
+      "refs": "S02,R01",
+      "action": "exclude"
+    },
+    {
+      "id": "C34",
+      "claim": "Cite Puységur for historical method only",
+      "status": "editorial context",
+      "refs": "S06",
+      "action": "no claimed shared cause"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_final_vestige_approved",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "zen12_program_authorized",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "exact_affiliate_url_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "website_channel_permitted",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "tiktok_channel_permitted",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "email_channel_permitted",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "creative_rights_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "swipe_rights_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "commission_terms_confirmed",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "referrer_pii_policy_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "purchaser_data_sharing_blocked",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "current_checkout_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "refund_terms_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "health_claim_review",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "independent_editorial_review",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "site_qa_wcg_22aa",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "site_qa_security_csp",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "nojs_live_preview",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "mobile_360_390_768_1440_1920",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "first_party_video_hosted",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "caption_sync_checked",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "lighthouse_performance_checked",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "founder_release_approved",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "native_ci_green_exact_head",
+      "status": "HARD_HOLD",
+      "proof": null
+    }
+  ]
+}
