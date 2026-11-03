@@ -31,7 +31,7 @@ jobs:
   live-ephemeral:
     needs: source
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 17
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,12 +54,12 @@ jobs:
           git rev-parse HEAD
           python experience2/home-flagship/accessibility/margins/probe_hosted_margin_override.py \
             --axe-source /tmp/fv-ex2-axe/node_modules/axe-core/axe.min.js \
-            --output HOSTED_MARGINS_CANDIDATE_HOLD.json
+            --output HOSTED_MARGINS_CANDIDATE_HOLD.json --case-timeout 90
       - name: Preserve minimized release-HOLD evidence even on error
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ex2-hosted-margins-ephemeral-admission-HOLD
-          if-no-files-found: ignore
+          if-no-files-found: error
           retention-days: 7
           path: HOSTED_MARGINS_CANDIDATE_HOLD.json
