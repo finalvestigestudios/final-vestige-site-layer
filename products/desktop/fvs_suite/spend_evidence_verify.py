@@ -23,13 +23,14 @@ from .csv_snapshot import read_csv_snapshot
 from .manifest_guard import _hash_regular, MAX_INPUT_BYTES, MAX_REPORT_BYTES
 from .spend_input import validated_spend_rows
 from .spend_review_verify import FIELDS as REVIEW_FIELDS, compute_expected_review_fields
+from .spend_label_verify import expected_vendor_labels
 
 LIMIT = 32
 DOMAIN = b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n"
 REQUIRED = frozenset((
     "vendor_key", "month", "category", "source_rows", "source_sha256",
     "vendor_month_evidence_rows", "vendor_month_evidence_count",
-    "vendor_month_evidence_omitted", "vendor_month_evidence_sha256",
+    "vendor_month_evidence_omitted", "vendor_month_evidence_sha256", "source_vendor_labels",
     "amount", "gross_charges", "gross_credits", "vendor_month_total",
     "vendor_month_gross_charges", "vendor_month_gross_credits",
     "credit_offset_review", "vendor_month_offset_review",
@@ -97,6 +98,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         # parser is intentionally retained to enforce the input schema.
         cents = lambda: Decimal("0.00")
         review_observations = []
+        vendor_label_observations = []
         net_bucket = defaultdict(cents)
         charge_bucket = defaultdict(cents)
         credit_bucket = defaultdict(cents)
@@ -115,6 +117,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                 groups[group].append(int(record["row"]))
                 buckets[bucket].append(record["row"])
                 review_observations.append((vendor, month, bucket[2], amount, record["vendor"]))
+                vendor_label_observations.append((vendor, month, bucket[2], record["vendor"]))
                 net_bucket[bucket] += amount
                 net_month[group] += amount
                 if amount > 0:
@@ -155,6 +158,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         }
     # Recheck historic review flags and baseline statistics independently.
     expected_review = compute_expected_review_fields(review_observations)
+    expected_labels = expected_vendor_labels(vendor_label_observations)
     try:
         decoded = report_bytes.decode("utf-8-sig")
         reader = csv.DictReader(io.StringIO(decoded, newline=""), strict=True)
@@ -185,6 +189,8 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
             if any(entry[field] != expected_review[bucket][field]
                    for field in REVIEW_FIELDS):
                 raise ValueError("SpendMap historical review evidence does not match source")
+            if entry["source_vendor_labels"] != expected_labels[bucket]:
+                raise ValueError("SpendMap visible vendor evidence does not match source")
     except (UnicodeError, csv.Error, OverflowError) as exc:
         raise ValueError("Malformed local SpendMap evidence") from None
     if seen != set(buckets):
