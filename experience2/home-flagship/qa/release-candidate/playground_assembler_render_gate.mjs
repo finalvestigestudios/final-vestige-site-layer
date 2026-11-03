@@ -125,7 +125,11 @@ async function checkView(page,width,axePath){
     const r=await window.axe.run(document.querySelector('[data-fv-home-flagship]'),
       {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});
     return r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,
-      targets:v.nodes.slice(0,4).map(n=>n.target.slice(0,3))}));
+      targets:v.nodes.slice(0,4).map(n=>n.target.slice(0,3)),
+      contrast:v.nodes.slice(0,2).flatMap(n=>n.any.filter(c=>c.id==='color-contrast').map(c=>({
+        foreground:c.data?.fgColor,background:c.data?.bgColor,
+        measured:c.data?.contrastRatio,required:c.data?.expectedContrastRatio
+      })))}));
   });
   if(violations.length)throw new Error(`Automated axe findings at ${width}: ${JSON.stringify(violations)}`);
   return {width,state,axe_violations:0,media:await imageBodies(page)};
