@@ -40,7 +40,7 @@ def validate(text):
         errors.append("missing cleanup")
     if "persist-credentials: false" not in text:
         errors.append("checkout token persistence")
-    if "preview" not in text.lower() or "Gutenberg" not in text:
+    if "--assembler-dir" not in text or "Gutenberg" not in text:
         errors.append("missing nonproduction admission gate")
     return errors
 
