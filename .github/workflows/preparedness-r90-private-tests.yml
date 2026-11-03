@@ -1,0 +1,98 @@
+name: Preparedness R90 Claim-Scope Quantity Gate (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r89-full-claim-block-source-dossiers-hold-20261102
+    paths:
+      - preparedness/tools/r90_historical_claim_scope_quantity_sequence.py
+      - preparedness/tests/test_r90_historical_claim_scope_quantity_sequence.py
+      - preparedness/docs/R90_HISTORICAL_CLAIM_SCOPE_QUANTITY_SEQUENCE_HOLD.md
+      - .github/workflows/preparedness-r90-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r90-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  read-only:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Immutable base, exactly four ADD-only R90 files, unchanged seven contributors
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          python -I - <<'PY'
+          import os, subprocess
+          assert os.environ["BASE_SHA"]=="182b6ee5ce6ee620557eace324f5b4a968a21dce"
+          assert os.environ["BASE_REF"]=="review/preparedness-r89-full-claim-block-source-dossiers-hold-20261102"
+          assert os.environ["HEAD_REF"]=="review/preparedness-r90-claim-scope-quantity-sequence-hold-20261103"
+          rows=subprocess.check_output(["git","diff","--name-status","182b6ee5ce6ee620557eace324f5b4a968a21dce","HEAD"],text=True).splitlines()
+          expected={
+            "preparedness/tools/r90_historical_claim_scope_quantity_sequence.py",
+            "preparedness/tests/test_r90_historical_claim_scope_quantity_sequence.py",
+            "preparedness/docs/R90_HISTORICAL_CLAIM_SCOPE_QUANTITY_SEQUENCE_HOLD.md",
+            ".github/workflows/preparedness-r90-private-tests.yml"}
+          assert len(rows)==4 and set(rows)=={"A\t"+p for p in expected},rows
+          refs={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706"}
+          for ref,sha in refs.items():
+            actual=subprocess.check_output(["git","rev-parse","refs/remotes/origin/"+ref],text=True).strip()
+            assert actual==sha,(ref,actual,sha)
+            print(ref,actual)
+          print("exact four additive R90 files; contributor refs and RC match")
+          PY
+      - name: Compile and run 36+ isolated synthetic/adversarial tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for p in ("preparedness/tools/r90_historical_claim_scope_quantity_sequence.py",
+                    "preparedness/tests/test_r90_historical_claim_scope_quantity_sequence.py"):
+            compile(Path(p).read_text(encoding="utf-8"),p,"exec")
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r90_historical_claim_scope_quantity_sequence.py -v
+      - name: Full-slate read-only citation scope/custody and private CSV gates
+        run: |
+          python -I preparedness/tools/r90_historical_claim_scope_quantity_sequence.py
+          python -I preparedness/tools/r90_historical_claim_scope_quantity_sequence.py --private-csv-stdout > "$RUNNER_TEMP/r90-private.csv"
+          python -I - <<'PY'
+          import csv,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"r90-private.csv"
+          rows=list(csv.DictReader(p.open(encoding="utf-8",newline="")))
+          assert len(rows)==2173,len(rows)
+          assert all(r["qualified_safety_review"]=="NOT_REVIEWED" and
+                     r["human_claim_support"]=="NOT_REVIEWED" and
+                     r["may_publish"]=="FALSE" for r in rows)
+          print("2173 PRIVATE reviewer rows; ZERO publication or qualified safety approvals")
+          PY
+          rm -f "$RUNNER_TEMP/r90-private.csv"
+      - name: Native validation and WordPress-ready OFFLINE PRIVATE draft build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Full Preparedness regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Permanent release HOLD even if these diagnostics pass
+        if: always()
+        run: |
+          echo 'PRIVATE diagnostics only, NOT the mandatory 13-stage integrity pass.'
+          echo 'NO qualified emergency review, human source verification, QD PASS or publication.'
+          echo 'NO CMS, WordPress, homepage, navigation or public writes.'
