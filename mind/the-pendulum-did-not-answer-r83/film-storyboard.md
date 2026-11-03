@@ -1,6 +1,6 @@
 # The Hand Below the Pendulum — original short-film source proposal
 
-**Status:** Six-scene, 40.000-second poster/storyboard/captions/transcript only. **No rendered, hosted or playable MP4 is claimed.** Do not place a fake <video> src on WordPress.
+**Status:** Original six-scene 40.000-second storyboard/captions/transcript plus a genuine locally rendered OFFLINE review MP4 (see `FILM-REVIEW.md`). **No hosted or approved WordPress playback is claimed.** Do not place a false or unauthorized `<video>` source on WordPress.
 
 | Time | Original frame direction | Accessibility text |
 |---|---|---|
