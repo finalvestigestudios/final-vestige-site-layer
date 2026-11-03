@@ -1,0 +1,88 @@
+name: Preparedness R104 Exact Offline Packet Custody (PRIVATE HOLD)
+on:
+  push:
+    branches:
+      - review/preparedness-r104-export-custody-hold-20261103
+  pull_request:
+    branches:
+      - review/preparedness-r103-collision-handoff-hold-20261103
+    paths:
+      - preparedness/tools/r104_review_export_custody.py
+      - preparedness/tests/test_r104_review_export_custody.py
+      - preparedness/docs/R104_OFFLINE_REVIEW_PACKET_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r104-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  export-custody-private-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact parent, seven contributors, release candidate and additive scope
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          baseline="ff45d8fa15236b92f2a383690a73affc8694885a"
+          expected={
+            "A\tpreparedness/tools/r104_review_export_custody.py",
+            "A\tpreparedness/tests/test_r104_review_export_custody.py",
+            "A\tpreparedness/docs/R104_OFFLINE_REVIEW_PACKET_CUSTODY_HOLD.md",
+            "A\t.github/workflows/preparedness-r104-private-tests.yml",
+          }
+          observed=set(subprocess.check_output(
+            ["git","diff","--name-status",baseline,"HEAD"],text=True).splitlines())
+          assert observed==expected,("original article/source or scope drift", observed)
+          pins={
+            "claude/prep-start-bbfeb8":"2122d856fce9f64887c16df3d52e64be9f59a55b",
+            "claude/prep-shelter-5e1e0e":"5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+            "claude/prep-food-ccdc55":"f911ff7a655de8d81535ea86ec3d65a49ee76648",
+            "claude/prep-health-837444":"d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+            "claude/prep-hist-food-b81f19":"67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+            "claude/prep-hist-home-0e0e38":"7504a5f099594d635e3dd7332a33a2e1346c43a2",
+            "claude/prep-hist-field-9db767":"4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+            "integration/preparedness-release-candidate-20261101":"ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, expected_sha in pins.items():
+              actual=subprocess.check_output(
+                ["git","rev-parse","refs/remotes/origin/"+ref],text=True).strip()
+              assert actual==expected_sha,(ref,actual,expected_sha)
+          print("R104 strict ADD-ONLY changes and eight current SHA pins PASS")
+          PY
+      - name: Compile and run R104 original-draft and adversarial tests
+        run: |
+          python -I -m compileall -q preparedness/tools/r104_review_export_custody.py preparedness/tests/test_r104_review_export_custody.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r104_*.py' -v
+      - name: Produce and independently verify private scratch bundle
+        run: |
+          python -I preparedness/tools/r104_review_export_custody.py --dry-check
+          review_dir="$(mktemp -d "$RUNNER_TEMP/fv-r104-HOLD.XXXXXXXX")"
+          python -I preparedness/tools/r104_review_export_custody.py --emit-dir "$review_dir"
+          python -I preparedness/tools/r104_review_export_custody.py --verify-dir "$review_dir"
+          python -I - "$review_dir" <<'PY'
+          import json, pathlib, sys
+          directory=pathlib.Path(sys.argv[1])
+          manifest=json.loads((directory/"r104-private-custody-manifest-HOLD.json").read_text())
+          assert manifest["release_state"]=="HOLD"
+          assert manifest["may_publish"] is False and manifest["may_merge"] is False
+          assert manifest["unreviewed_literal_url_groups"]==30
+          assert len(manifest["groups"])==30
+          assert manifest["original_article_drafts"]==35
+          assert manifest["complete_tool_drafts"]==1 and manifest["unfinished_tools"]==5
+          print("Five scratch-only R103 exports + R104 manifest verified: NOT HUMAN SOURCE APPROVAL")
+          PY
+      - name: Original native Preparedness validation and offline WordPress DRAFT build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete Python regression
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Keep independent mandatory release and qualified safety HOLD
+        if: always()
+        run: echo 'PRIVATE HOLD; no merge, CMS, publishing, independent QD or qualified safety approval.'
