@@ -93,9 +93,15 @@ class SpendCategoryR160(unittest.TestCase):
         self.assertEqual(receipt.buckets_verified, 2)
 
     def test_same_display_other_month_allowed(self):
-        _, receipt = self.good([self.row("=A1", month=1),
-                                self.row("'=A1", month=2)])
+        report, receipt = self.good([self.row("=A1", month=1),
+                                     self.row("'=A1", month=2)])
         self.assertEqual(receipt.buckets_verified, 2)
+        # Raw categories remain distinct historical series despite their
+        # identical spreadsheet-safe CSV display category.
+        with report.open(encoding="utf-8-sig", newline="") as f:
+            category_history = [r["category_history_months"]
+                                for r in csv.DictReader(f)]
+        self.assertEqual(category_history, ["0", "0"])
 
     def test_negative_numeric_and_quoted_negative_distinct(self):
         _, receipt = self.good([self.row("-10"), self.row("'-10")])
