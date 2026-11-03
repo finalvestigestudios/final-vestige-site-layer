@@ -1,0 +1,91 @@
+# Source exact, zero production access; R93 child of R92, not homepage PR #49.
+name: Apollo R93 portable source register and real Chromium (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'experience2/evidence-atlas/tools/build_citations_r93.py'
+      - 'experience2/evidence-atlas/tests/*citations_r93.py'
+      - 'experience2/evidence-atlas/R93_CITATION_REGISTER_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r93-citations.yml'
+permissions:
+  contents: read
+jobs:
+  source-custody-and-deterministic-packaging:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact head, source-custody tests and reproducible archive
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r93-pycaches"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -I -m py_compile experience2/evidence-atlas/tools/build_citations_r93.py experience2/evidence-atlas/tests/test_citations_r93.py experience2/evidence-atlas/tests/browser_citations_r93.py
+          python -I -m unittest discover -s experience2/evidence-atlas/tests -p test_citations_r93.py -v
+          python -I -m unittest discover -s experience2/evidence-atlas/tests -p test_reciprocal_routes_r92.py -v
+          python -I experience2/evidence-atlas/tools/build_citations_r93.py "$RUNNER_TEMP/r93-stage" "$RUNNER_TEMP/R93_A.zip"
+          python -I experience2/evidence-atlas/tools/build_citations_r93.py "$RUNNER_TEMP/r93-stage-two" "$RUNNER_TEMP/R93_B.zip"
+          cmp "$RUNNER_TEMP/R93_A.zip" "$RUNNER_TEMP/R93_B.zip"
+          sha256sum "$RUNNER_TEMP/R93_A.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r93-reviewed-source-STAGING-HOLD
+          path: ${{ runner.temp }}/R93_A.zip
+          retention-days: 7
+          if-no-files-found: error
+  genuine-chromium-source-register:
+    needs: source-custody-and-deterministic-packaging
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Pin browser test dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r93-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Real Chromium CSV, source, keyboard, responsive, axe and native print checks
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r93-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -I experience2/evidence-atlas/tools/build_citations_r93.py "$RUNNER_TEMP/r93-stage"
+          python -I experience2/evidence-atlas/tests/browser_citations_r93.py \
+            --src "$RUNNER_TEMP/r93-stage" --out "$RUNNER_TEMP/r93-browser" \
+            --axe "$RUNNER_TEMP/r93-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r93-browser/R93_BROWSER_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Retain real browser evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r93-chromium-axe-source-export-STAGING-HOLD
+          path: ${{ runner.temp }}/r93-browser/
+          retention-days: 7
+          if-no-files-found: warn
