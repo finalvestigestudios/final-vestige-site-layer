@@ -95,7 +95,22 @@ async function checkView(page,width,axePath,outputDirectory){
       focus:(document.body.innerText.match(/Focus Fieldbook/g)||[]).length,
       overflow:document.documentElement.scrollWidth>innerWidth+1,
       main:!!root.querySelector('main'),h1:!!root.querySelector('h1'),
-      inline_scripts:root.querySelectorAll('script[data-fv-source]').length};
+      inline_scripts:root.querySelectorAll('script[data-fv-source]').length,
+      // The styling must exist in the SAVED Gutenberg source; page.addStyleTag
+      // (except axe-core JS below) must never be used as a fake release pass.
+      saved_layout_styles:document.querySelectorAll('style[data-fv-stage-only="assembler-saved-layout"]').length,
+      root_width:Math.round(root.getBoundingClientRect().width),
+      viewport_width:innerWidth,
+      margins_region:(()=>{
+        const region=document.querySelector('.fv-margin-strip__window');
+        if(!region)return {present:false};
+        const first=region.querySelector('.fv-margin-strip__item');
+        return {present:true,role:region.getAttribute('role'),
+          label:region.getAttribute('aria-label'),tabindex:region.getAttribute('tabindex'),
+          item_count:region.querySelectorAll('.fv-margin-strip__item').length,
+          overflow_y:getComputedStyle(region).overflowY,
+          first_position:first?getComputedStyle(first).position:'missing'};
+      })()};
   });
   assert.equal(state.chapter_links,7);
   assert.equal(state.chapter_targets,7);
@@ -103,6 +118,13 @@ async function checkView(page,width,axePath,outputDirectory){
   assert.ok(state.focus>=1);
   assert.equal(state.overflow,false,`Horizontal overflow at ${width}`);
   assert.equal(state.main,true);assert.equal(state.h1,true);assert.equal(state.inline_scripts,4);
+  assert.equal(state.saved_layout_styles,1,'Assembler styles must be persisted in Gutenberg');
+  assert.ok(state.root_width>=width-2 && state.root_width<=width+2,
+    `SAVED Assembler full-bleed canvas failed at ${width}: ${state.root_width}px (620px theme baseline)`);
+  assert.deepEqual(state.margins_region,{
+    present:true,role:'region',label:'72 synthetic historical fragments',
+    tabindex:'0',item_count:72,overflow_y:'auto',first_position:'static'
+  },'Synthetic Margins must remain readable and keyboard scrollable without JS');
   // Capture the ACTUAL, unaltered saved WordPress preview BEFORE any axe
   // failure, so a failing layout/contrast gate still produces review evidence.
   // Never overlay browser-only 'fixes' and mistake them for saved CSS.
@@ -163,14 +185,24 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   await restrictNetwork(noPage,blocked);
   await noPage.goto(new URL(`/?page_id=${draftId}&preview=true`,server.serverUrl).href,
     {waitUntil:'domcontentloaded',timeout:90000});
-  const noJS=await noPage.evaluate(()=>({chapters:document.querySelectorAll('.fv-hf__chapter-nav a').length,
-    margins:document.querySelectorAll('.fv-margin-strip__item').length,
-    h1:document.querySelectorAll('[data-fv-home-flagship] h1').length}));
-  assert.deepEqual(noJS,{chapters:7,margins:72,h1:1});
+  const noJS=await noPage.evaluate(()=>{
+    const root=document.querySelector('[data-fv-home-flagship]');
+    const region=document.querySelector('.fv-margin-strip__window');
+    return {chapters:document.querySelectorAll('.fv-hf__chapter-nav a').length,
+      margins:document.querySelectorAll('.fv-margin-strip__item').length,
+      h1:document.querySelectorAll('[data-fv-home-flagship] h1').length,
+      saved_layout_styles:document.querySelectorAll('style[data-fv-stage-only="assembler-saved-layout"]').length,
+      canvas_width:Math.round(root?.getBoundingClientRect().width || 0),
+      region_tabindex:region?.getAttribute('tabindex'),
+      region_role:region?.getAttribute('role')};
+  });
+  assert.deepEqual(noJS,{chapters:7,margins:72,h1:1,
+    saved_layout_styles:1,canvas_width:390,region_tabindex:'0',region_role:'region'});
   await noContext.close();
   return {type:'ISOLATED_WP_ASSEMBLER_RENDER_SYNTHETIC_ONLY',release:'HOLD',theme,
     responsive,zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
-    limits:['not WP.com Atomic parity','not real Jetpack','not real hosted page6 content','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
+    limits:['synthetic Margins are not production historical records','stage CSS is not proposed production CSS',
+      'not WP.com Atomic parity','not real Jetpack','not real hosted page6 content','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
 }
 function selfTest(){
   for(const u of ['http://localhost:3211/','http://127.0.0.1:9473/'])assert.ok(loopback(u));
