@@ -49,7 +49,25 @@ try {
   await server.playground.writeFile('/wordpress/wp-content/fv-ex2-synthetic-candidate.html', candidate);
   await server.playground.writeFile('/wordpress/fv_ex2_qa_once.php', phpProbe);
   const resultUrl = new URL('/fv_ex2_qa_once.php', url);
-  const response = await fetch(resultUrl, { signal: AbortSignal.timeout(90000), redirect: 'error' });
+  // A redirect is not a successful probe. Allow only a single canonical
+  // loopback host alias correction to the SAME PHP file and port; never a
+  // login page, off-origin URL or changed query. Do not log any secret URL.
+  let response = await fetch(resultUrl, { signal: AbortSignal.timeout(90000), redirect: 'manual' });
+  if ([301,302,303,307,308].includes(response.status)) {
+    const location = response.headers.get('location') || '';
+    let target;
+    try { target = new URL(location, resultUrl); } catch {
+      throw new Error('Playground redirected to an invalid target, HTTP ' + response.status);
+    }
+    const local = target.protocol === 'http:' &&
+      ['127.0.0.1','localhost','[::1]'].includes(target.hostname);
+    if (!local || target.port !== resultUrl.port ||
+        target.pathname !== resultUrl.pathname || target.search || target.username || target.password) {
+      throw new Error('Playground PHP route redirect denied: HTTP ' + response.status +
+        ', destination PATH=' + target.pathname + ' (no query or credentials logged)');
+    }
+    response = await fetch(target, { signal: AbortSignal.timeout(90000), redirect: 'error' });
+  }
   const responseText = await response.text();
   let result;
   try {
