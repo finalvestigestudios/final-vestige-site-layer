@@ -160,7 +160,8 @@ def audit(body, css, meta, css_gate):
          all(isinstance(v, str) and v.strip() for v in uses.values()),
          "original planner per-source reading scope changed")
     need(uses == EXPECTED_READING_SCOPE,
-         "source reading depth/claim scope changed; independent review required")\n    need("Print the result" in body and "Printing is the only way" in body,
+         "source reading depth/claim scope changed; independent review required")
+    need("Print the result" in body and "Printing is the only way" in body,
          "original print affordance/copy changed; re-review required")
     report = {
         "schema": SCHEMA, "issue": 136,
