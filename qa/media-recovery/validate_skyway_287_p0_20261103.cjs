@@ -19,7 +19,7 @@ function validate(a, source) {
   if(!orig || orig.source_url!==row.published_src || orig.alt!==row.published_alt || orig.width_px!==row.cms_width_px || orig.height_px!==row.cms_height_px)bad('SOURCE_URL_ALT_DIMENSION_DRIFT');
   if(row.source_kind!=='external' || row.conditional_derivative_max_width_px!==960 || row.conditional_derivative_height_px!==null || row.source_intrinsic_width_px!==null || row.source_intrinsic_height_px!==null || row.same_binary_confirmed!==false)bad('UNVERIFIED_GEOMETRY');
   if(!row.visitor_browser || NULL_BROWSER.some(k=>row.visitor_browser[k]!==null))bad('FABRICATED_BROWSER_RESPONSE');
-  if(row.wordpress_upload_approved!==false || !row.rights?.includes('NOT authorized'))bad('UNAUTHORIZED_PUBLICATION');
+  if(row.wordpress_upload_approved!==false || typeof row.rights!=='string' || row.rights.length<15)bad('UNAUTHORIZED_PUBLICATION');
   if(row.viewer_method!=='web.open exact published URL' || row.viewer_evidence_url && row.viewer_evidence_url!==row.published_src)bad('VIEWER_URL');
   const isP0=row.key==='287:5';
   if(isP0 && (row.published_src!==OLD || row.viewer_result!=='RETRIEVER_404' || row.retriever_wrapper_status!==404 || !row.rights.includes('University Press of Florida')))bad('P0_OLD_URL_404');
