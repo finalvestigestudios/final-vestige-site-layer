@@ -80,6 +80,15 @@ class RightsSafeCandidateTests(unittest.TestCase):
         self.assertTrue(out.startswith(before))
         self.assertTrue(out.endswith(after))
 
+    def test_image_control_inventory_does_not_count_script_selector(self):
+        # Production HTML contains 3 img tags, but the selector string in its
+        # inline script adds a fourth textual occurrence of the same marker.
+        with_script = self.raw + "<script>document.querySelectorAll('[data-fv-archive-img]');</script>"
+        out, report = patch_homepage(with_script)
+        self.assertEqual(report["protected_before"]["image_controls"], 2)
+        self.assertEqual(report["protected_after"]["image_controls"], 1)
+        self.assertIn("document.querySelectorAll('[data-fv-archive-img]')", out)
+
     def test_missing_margin_fails(self):
         with self.assertRaises(UnsafeCandidate):
             patch_homepage(self.raw.replace('style="--i:71"', 'style="--i:70"'))
