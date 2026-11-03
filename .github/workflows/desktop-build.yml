@@ -60,6 +60,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r169.py
           python -OO products/desktop/scripts/safe_unittest_r169.py
+      - name: R170 reject conflicting Invoice source-pair classifications (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r170.py
+          python -OO products/desktop/scripts/safe_unittest_r170.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -376,6 +380,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R169 normal report snapshot tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r169.py
           if ($LASTEXITCODE -ne 0) { throw "R169 optimized report snapshot tests failed" }
+      - name: R170 reject conflicting Invoice source-pair classifications (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r170.py
+          if ($LASTEXITCODE -ne 0) { throw "R170 normal conflicting-pair tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r170.py
+          if ($LASTEXITCODE -ne 0) { throw "R170 optimized conflicting-pair tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)

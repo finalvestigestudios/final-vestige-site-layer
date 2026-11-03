@@ -37,7 +37,10 @@ def attach_invoice_provenance(
         raise ValueError("Too many invoice review candidates; no report was saved")
     result = []
     seen: set[str] = set()
-    seen_pairs: set[tuple[str, frozenset[str]]] = set()
+    # An unordered physical-row pair has ONE review classification per report.
+    # Including status in this key would allow contradictory exact/near labels
+    # for the same two source rows, each with a plausible candidate_ref.
+    seen_pairs: set[frozenset[str]] = set()
     for row in report_rows:
         if not isinstance(row, dict):
             raise ValueError("Invoice candidate must be a report record")
@@ -56,7 +59,7 @@ def attach_invoice_provenance(
             raise ValueError("Invoice candidate requires two distinct physical CSV rows")
         if type(status) is not str or status not in _CANDIDATE_KINDS:
             raise ValueError("Invoice candidate has an unsupported review classification")
-        unordered = (status, frozenset((a, b)))
+        unordered = frozenset((a, b))
         if unordered in seen_pairs:
             raise ValueError("Duplicate invoice candidate pair; no report was saved")
         seen_pairs.add(unordered)

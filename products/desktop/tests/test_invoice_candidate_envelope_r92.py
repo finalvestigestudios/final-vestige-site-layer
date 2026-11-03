@@ -88,11 +88,11 @@ class InvoiceCandidateEnvelopeR92(unittest.TestCase):
         reverse = self.attach([report("3", "2")])[0]
         self.assertNotEqual(forward["candidate_ref"], reverse["candidate_ref"])
 
-    def test_different_review_classifications_can_share_source_pair(self):
+    def test_different_review_classifications_cannot_share_source_pair(self):
+        # R170: the same physical source pair has one review classification.
         rows = [report("2", "3"), report("3", "2", "review_possible_duplicate")]
-        out = self.attach(rows)
-        self.assertEqual(len(out), 2)
-        self.assertNotEqual(out[0]["candidate_ref"], out[1]["candidate_ref"])
+        with self.assertRaisesRegex(ValueError, "Duplicate invoice candidate"):
+            self.attach(rows)
 
     def test_fails_closed_on_11_digit_csv_line_reference(self):
         for name in ("row_a", "row_b"):
