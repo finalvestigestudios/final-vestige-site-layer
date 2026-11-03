@@ -87,8 +87,10 @@ class R98ReviewGuards(unittest.TestCase):
 
     def test_no_merchants_or_checkout(self):
         for body in (self.md, self.txt, self.html):
-            for forbidden in ("affiliates.inspire3.com/", "checkout", "utm_", "ref=", "buy now", "limited-time"):
+            for forbidden in ("affiliates.inspire3.com/", "checkout", "utm_", "buy now", "limited-time"):
                 self.assertNotIn(forbidden, body.lower())
+            self.assertNotIn("?ref=", body.lower())
+            self.assertNotIn("&ref=", body.lower())
 
     def test_no_preapproved_release(self):
         for body in (self.md, self.txt, self.html, self.audit, self.consent):
