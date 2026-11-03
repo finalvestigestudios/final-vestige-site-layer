@@ -1,0 +1,37 @@
+// Run natively when local Node >=20 is available:
+// node --test mind/the-face-that-changed-when-turned-r87/tests.mjs
+import test from "node:test";
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {join,dirname} from "node:path";
+import {fileURLToPath} from "node:url";
+import {ACTIVE,validateSynthetic,summarizeSyntheticOnly} from "./attribution-synthetic-only.mjs";
+const dir=dirname(fileURLToPath(import.meta.url));
+const read=(name)=>readFileSync(join(dir,name),"utf8");
+const a=read("zen12-a-text.blocks.html"),b=read("zen12-b-film-concept.blocks.html"),core=read("zen12-guide-core.html");
+const hub=read("mind-hub-noncanonical.blocks.html"),inv=read("investigation.md");
+const matrix=JSON.parse(read("claims-sources-permissions.json"));
+const vtt=read("original-film-captions.vtt");
+const guide=(s)=>s.slice(s.indexOf('<section class="fvm-core"'),s.indexOf('</section>',s.indexOf('<section class="fvm-core"'))+10);
+const marker=/https:\/\/(?:www\.)?(?:zen12|inspire3|affiliates\.inspire3)\.com/i;
+const outbound=/<a\b[^>]*\bhref\s*=\s*["']https:\/\/(?:www\.)?(?:zen12|inspire3|affiliates\.inspire3)\.com/i;
+const nativeDisabled=/<button\b[^>]*\sdisabled(?:\s|>)/i;
+test("all merchant/product CTA anchors withheld",()=>{for(const s of [a,b,core,hub])assert.doesNotMatch(s,outbound);});
+test("source-only seller domains in documentation, never active merchant links",()=>{assert.match(read("claims-sources-permissions.json"),marker);assert.doesNotMatch(core,outbound);});
+test("A and B contain identical complete buyer guide",()=>{assert.equal(guide(a),core);assert.equal(guide(b),core);});
+test("both A and B contain actual native-disabled controls",()=>{for(const s of [a,b])assert.match(s,nativeDisabled);});
+test("disclosure appears before CTA and in same offer section",()=>{for(const s of [a,b]){const i=s.indexOf("Prospective affiliate disclosure:"),j=s.indexOf("Visit the verified offer");assert.ok(i>0&&j>i&&j-i<850);}});
+test("no javascript, forms, redirects, autoplay or third-party embeds",()=>{for(const s of [a,b,hub]){assert.doesNotMatch(s,/<(?:script|iframe|form)\b/i);assert.doesNotMatch(s,/\bonclick=|\bonload=|\bautoplay\b|meta\s+http-equiv=["']refresh/i);}});
+test("no duplicate newsletter capture",()=>{for(const s of [a,b,hub])assert.doesNotMatch(s,/<input\b|newsletter\.signup/i);});
+test("B explicitly marks video as unhosted, not a fake player",()=>{assert.match(b,/No hosted MP4 exists/);assert.doesNotMatch(b,/<video\b|<source\b/i);assert.match(b,/00–06 seconds/);});
+test("A has no film section and B has complete accessible transcript",()=>{assert.doesNotMatch(a,/class="fvm-film"/);assert.match(b,/aria-label="Time-coded six-scene transcript"/);assert.equal((b.match(/<li><strong>\d\d–\d\d seconds\./g)||[]).length,6);});
+test("four evidence-led streams and two actual live mind crosslinks",()=>{for(const x of ["PERCEPTION","SUGGESTION","REFLECTION","TOOLS UNDER REVIEW","2026/11/02/change-blindness","2026/11/02/mesmerism"])assert.ok(hub.includes(x));});
+test("investigation has editorial firewall and primary sources",()=>{assert.match(inv,/Editorial firewall/);for(const x of ["p090483","p6659","0956797613501521","p7755"])assert.ok(inv.includes(x));assert.doesNotMatch(inv,/(?:affiliate link|commission may be earned)/i);});
+test("matrix has sufficient research/decision coverage and all release gates disabled",()=>{assert.ok(matrix.sources.length>=18);assert.ok(matrix.claims.length>=35);assert.ok(Object.keys(matrix.gates).length>=18);assert.ok(Object.values(matrix.gates).every(x=>x===false));assert.equal(matrix.public_affiliate_url,null);});
+test("caption timings six monotone cues covering 40 seconds",()=>{const times=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.\d+ --> (\d\d):(\d\d):(\d\d)\.\d+/g)].map(m=>[+m[1]*3600+ +m[2]*60+ +m[3],+m[4]*3600+ +m[5]*60+ +m[6]]);assert.equal(times.length,6);assert.equal(times[0][0],0);assert.equal(times.at(-1)[1],40);for(let i=0;i<times.length;i++){assert.ok(times[i][1]>times[i][0]);if(i)assert.equal(times[i][0],times[i-1][1]);}});
+test("privacy module remains disabled",()=>assert.equal(ACTIVE,false));
+test("synthetic attribution groups by fixed categories with min 20 cells",()=>{assert.equal(summarizeSyntheticOnly([{event:"guide_open",topic:"zen12",surface:"direct",variant:"A",count:19}]).length,0);assert.equal(summarizeSyntheticOnly([{event:"guide_open",topic:"zen12",surface:"direct",variant:"A",count:10},{event:"guide_open",topic:"zen12",surface:"direct",variant:"A",count:12}])[0].total,22);});
+test("privacy rejects PII and URL-like unexpected keys",()=>{const row={event:"guide_open",topic:"zen12",surface:"direct",variant:"A",count:20};for(const bad of ["email","ip","userId","referrer","session","url","utm_campaign","timestamp"]){assert.throws(()=>validateSynthetic({...row,[bad]:"x"}));}});
+test("privacy rejects freeform enumerations, noncount integers and bad inputs",()=>{const row={event:"guide_open",topic:"zen12",surface:"direct",variant:"A",count:20};for(const change of [{surface:"https://example.com"},{count:0},{count:1.5},{variant:"user42"},{topic:"binaural-fraud"},{event:"sale"}])assert.throws(()=>validateSynthetic({...row,...change}));assert.throws(()=>summarizeSyntheticOnly([row],1));});
+test("native disabled is separate from aria-disabled",()=>{assert.doesNotMatch('<button aria-disabled="true">Go</button>',nativeDisabled);assert.match('<button disabled>Stop</button>',nativeDisabled);});
+test("coordinated hold on homepage, original canonical hub and Dispatch",()=>{const doc=read("AB-UX-QA-RELEASE.md");for(const x of ["#49","#150","#172","#174","NO CMS","HARD HOLD"])assert.ok(doc.includes(x));});

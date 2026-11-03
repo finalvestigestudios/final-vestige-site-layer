@@ -1,0 +1,476 @@
+{
+  "name": "Mind R87, Thatcher illusion + exact Zen12",
+  "date": "2026-11-02",
+  "production_modified": false,
+  "focus_existing_jetpack_preserved": true,
+  "public_affiliate_url": null,
+  "affiliates_active": false,
+  "outbound_attribution_active": false,
+  "pricing": null,
+  "commission": null,
+  "sources": [
+    {
+      "id": "thompson1980",
+      "type": "primary",
+      "url": "https://doi.org/10.1068/p090483",
+      "review_scope": "1980 original short Thatcher illusion description; abstract and metadata reviewed, full text not uniformly inspected",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "wong2010",
+      "type": "primary",
+      "url": "https://doi.org/10.1068/p6659",
+      "review_scope": "2010 nonface object comparison; publisher abstract inspected",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "psaltafmri2014",
+      "type": "primary",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "review_scope": "superior temporal sulcus fMRI adaptation; publisher abstract inspected",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "psaltaexpr2014",
+      "type": "primary",
+      "url": "https://doi.org/10.1068/p7755",
+      "review_scope": "facial expression and feature inversion; publisher abstract inspected",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "zen12offer",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "review_scope": "specific public sales promises; seller statements only",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "zen12about",
+      "type": "seller",
+      "url": "https://zen12.com/about",
+      "review_scope": "12 levels and four advertised listening formats; seller statements only",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "zen12research",
+      "type": "seller",
+      "url": "https://zen12.com/research",
+      "review_scope": "seller explanation is not independent product validation",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "zen12checkout",
+      "type": "seller",
+      "url": "https://zen12.com/getstarted",
+      "review_scope": "public checkout displays 12-level/48-MP3 bundle and phone field; no test purchase",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "inspire3home",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "review_scope": "official catalog and related exact-brand distinction",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "inspire3privacy",
+      "type": "seller-policy",
+      "url": "https://inspire3.com/privacy/",
+      "review_scope": "seller may share buyer PII with affiliates and send SMS",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "inspire3terms",
+      "type": "seller-terms-blocked",
+      "url": "https://inspire3.com/terms/",
+      "review_scope": "not accessible in this review; exact processing terms unverified",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "inspire3affiliates",
+      "type": "public-recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "review_scope": "public partner recruitment is not account approval or promotion permission",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "ingendoh2023",
+      "type": "systematic-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "review_scope": "14 EEG studies, five supportive, eight contradictory, one mixed; product not tested",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "ftcendorse",
+      "type": "regulatory-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "review_scope": "material-connection disclosure",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "ftchealth",
+      "type": "regulatory-guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "review_scope": "product objective health claims need adequate scientific support",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "puysegur",
+      "type": "published-owned",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "review_scope": "published 153-row primary-source historical project; no causal validation",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "focus",
+      "type": "published-owned",
+      "url": "https://finalvestige.com/focus/",
+      "review_scope": "existing Seven Day Focus Fieldbook; preserve one existing Jetpack funnel",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "changeblindness",
+      "type": "published-owned",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "review_scope": "existing mind-adjacent public post",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "mesmerism",
+      "type": "published-owned",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "review_scope": "existing mind-adjacent public post",
+      "last_checked": "2026-11-02"
+    },
+    {
+      "id": "editorial",
+      "type": "published-owned",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "review_scope": "existing editorial standards",
+      "last_checked": "2026-11-02"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "Thatcher effect originated as a published 1980 illusion",
+      "status": "supported-by-source",
+      "source_id": "thompson1980",
+      "limitation": "investigation only"
+    },
+    {
+      "id": "c02",
+      "claim": "eyes and mouth locally inverted can seem less grotesque when whole face inverted",
+      "status": "supported-by-source",
+      "source_id": "thompson1980",
+      "limitation": "avoid universal rate"
+    },
+    {
+      "id": "c03",
+      "claim": "effect is present in nonface categories under studied conditions",
+      "status": "supported-by-source",
+      "source_id": "wong2010",
+      "limitation": "no claim that face processing is identical"
+    },
+    {
+      "id": "c04",
+      "claim": "2010 effect magnitude not uniquely larger for faces",
+      "status": "supported-by-source",
+      "source_id": "wong2010",
+      "limitation": "task-specific"
+    },
+    {
+      "id": "c05",
+      "claim": "fMRI adaptation response orientation-dependent in studied STS region",
+      "status": "supported-by-source",
+      "source_id": "psaltafmri2014",
+      "limitation": "not a complete neural explanation"
+    },
+    {
+      "id": "c06",
+      "claim": "expression recognition may differ from grotesque impression",
+      "status": "supported-by-source",
+      "source_id": "psaltaexpr2014",
+      "limitation": "population/task limitation"
+    },
+    {
+      "id": "c07",
+      "claim": "illusion proves subconscious reprogramming",
+      "status": "unsupported-prohibited",
+      "source_id": "thompson1980",
+      "limitation": "never publish"
+    },
+    {
+      "id": "c08",
+      "claim": "illusion predicts intelligence or gullibility",
+      "status": "unsupported-prohibited",
+      "source_id": "thompson1980",
+      "limitation": "never publish"
+    },
+    {
+      "id": "c09",
+      "claim": "original Thatcher photograph is freely reusable",
+      "status": "unverified-blocked",
+      "source_id": "thompson1980",
+      "limitation": "use new art only"
+    },
+    {
+      "id": "c10",
+      "claim": "Puységur archive has primary-source provenance and source rows",
+      "status": "supported-site-record",
+      "source_id": "puysegur",
+      "limitation": "does not prove magnetic causal claims"
+    },
+    {
+      "id": "c11",
+      "claim": "Zen12 is an Inspire3 listed product",
+      "status": "seller-described",
+      "source_id": "inspire3home",
+      "limitation": "catalog only"
+    },
+    {
+      "id": "c12",
+      "claim": "Zen12 sessions are 12 minutes",
+      "status": "seller-described",
+      "source_id": "zen12offer",
+      "limitation": "not delivered-product verified"
+    },
+    {
+      "id": "c13",
+      "claim": "Zen12 advertises 12 levels",
+      "status": "seller-described",
+      "source_id": "zen12about",
+      "limitation": "not independently tested"
+    },
+    {
+      "id": "c14",
+      "claim": "Zen12 advertises four listening styles",
+      "status": "seller-described",
+      "source_id": "zen12about",
+      "limitation": "not independently auditioned"
+    },
+    {
+      "id": "c15",
+      "claim": "full checkout advertises 48 MP3s",
+      "status": "seller-described",
+      "source_id": "zen12checkout",
+      "limitation": "fulfillment unverified"
+    },
+    {
+      "id": "c16",
+      "claim": "checkout advertises support and bonuses",
+      "status": "seller-described",
+      "source_id": "zen12checkout",
+      "limitation": "fulfillment unverified"
+    },
+    {
+      "id": "c17",
+      "claim": "Zen12 equals one hour of advanced meditation in 12 minutes",
+      "status": "seller-claim-unsubstantiated",
+      "source_id": "zen12offer",
+      "limitation": "do not repeat as fact or headline promise"
+    },
+    {
+      "id": "c18",
+      "claim": "Zen12 audio automatically shifts brainwaves for every listener",
+      "status": "seller-claim-unsubstantiated",
+      "source_id": "zen12research",
+      "limitation": "no adequate product-specific support"
+    },
+    {
+      "id": "c19",
+      "claim": "Zen12 reduces anxiety, fixes health or boosts intelligence",
+      "status": "seller-claim-unsubstantiated",
+      "source_id": "zen12offer",
+      "limitation": "no treatment promises"
+    },
+    {
+      "id": "c20",
+      "claim": "Zen12 increases earning ability or guarantees wealth",
+      "status": "unsupported-prohibited",
+      "source_id": "inspire3home",
+      "limitation": "no financial guarantee"
+    },
+    {
+      "id": "c21",
+      "claim": "2023 generic EEG review showed inconsistent results",
+      "status": "independent-review-supported",
+      "source_id": "ingendoh2023",
+      "limitation": "general study; not product-specific"
+    },
+    {
+      "id": "c22",
+      "claim": "the EEG review validates named Zen12 tracks",
+      "status": "false-prohibited",
+      "source_id": "ingendoh2023",
+      "limitation": "must not infer"
+    },
+    {
+      "id": "c23",
+      "claim": "12-minute sessions are easier to schedule than longer sessions for everyone",
+      "status": "untested-generalization",
+      "source_id": "zen12offer",
+      "limitation": "may be a buyer preference, not universal"
+    },
+    {
+      "id": "c24",
+      "claim": "nonclinical free listening exercise is a preference activity, not therapy",
+      "status": "original-editorial-exercise",
+      "source_id": "focus",
+      "limitation": "no controlled-trial claim"
+    },
+    {
+      "id": "c25",
+      "claim": "Zen12 public checkout requests mobile and name/email",
+      "status": "seller-page-observed",
+      "source_id": "zen12checkout",
+      "limitation": "no buyer details collected"
+    },
+    {
+      "id": "c26",
+      "claim": "Inspire3 privacy says mobile SMS marketing possible",
+      "status": "seller-policy-observed",
+      "source_id": "inspire3privacy",
+      "limitation": "quote context accurately"
+    },
+    {
+      "id": "c27",
+      "claim": "Inspire3 privacy says buyer PII may be shared with affiliate",
+      "status": "seller-policy-observed",
+      "source_id": "inspire3privacy",
+      "limitation": "Final Vestige should opt out/not ingest"
+    },
+    {
+      "id": "c28",
+      "claim": "complete refund processing and terms are verified",
+      "status": "unverified-blocked",
+      "source_id": "inspire3terms",
+      "limitation": "terms inaccessible"
+    },
+    {
+      "id": "c29",
+      "claim": "checkout advertises one-year money-back guarantee",
+      "status": "seller-described",
+      "source_id": "zen12checkout",
+      "limitation": "terms and fulfillment not verified"
+    },
+    {
+      "id": "c30",
+      "claim": "current price and discounts authorized to advertise",
+      "status": "unverified-blocked",
+      "source_id": "zen12checkout",
+      "limitation": "display is volatile; omit"
+    },
+    {
+      "id": "c31",
+      "claim": "public recruitment guarantees FV is affiliate-approved",
+      "status": "false-prohibited",
+      "source_id": "inspire3affiliates",
+      "limitation": "needs individualized written acceptance"
+    },
+    {
+      "id": "c32",
+      "claim": "affiliate earning link exists and is permitted in website posts",
+      "status": "unverified-blocked",
+      "source_id": "inspire3affiliates",
+      "limitation": "null URL"
+    },
+    {
+      "id": "c33",
+      "claim": "affiliate earning link permitted on TikTok",
+      "status": "unverified-blocked",
+      "source_id": "inspire3affiliates",
+      "limitation": "channel-specific permission"
+    },
+    {
+      "id": "c34",
+      "claim": "affiliate earning link permitted in email",
+      "status": "unverified-blocked",
+      "source_id": "inspire3affiliates",
+      "limitation": "Dispatch remains HOLD"
+    },
+    {
+      "id": "c35",
+      "claim": "official swipe/creatives are approved for FV",
+      "status": "unverified-blocked",
+      "source_id": "inspire3affiliates",
+      "limitation": "no private login access or rights"
+    },
+    {
+      "id": "c36",
+      "claim": "FTC material connection disclosure needed near recommendation",
+      "status": "regulatory-guidance",
+      "source_id": "ftcendorse",
+      "limitation": "future earning link only"
+    },
+    {
+      "id": "c37",
+      "claim": "FTC demands adequate evidence for objective health-related claims",
+      "status": "regulatory-guidance",
+      "source_id": "ftchealth",
+      "limitation": "final legal review still needed"
+    },
+    {
+      "id": "c38",
+      "claim": "Final Vestige has used Zen12 or can report results",
+      "status": "false-prohibited",
+      "source_id": "zen12offer",
+      "limitation": "never fabricate experience"
+    },
+    {
+      "id": "c39",
+      "claim": "customer purchases can be inferred from outbound clicks",
+      "status": "false-prohibited",
+      "source_id": "inspire3affiliates",
+      "limitation": "affiliate reports distinct"
+    },
+    {
+      "id": "c40",
+      "claim": "an A/B optional short film improves conversion",
+      "status": "untested-hypothesis",
+      "source_id": "zen12offer",
+      "limitation": "needs ethical randomized analysis"
+    },
+    {
+      "id": "c41",
+      "claim": "the site presently has 61 published posts",
+      "status": "stale-inventory",
+      "source_id": "changeblindness",
+      "limitation": "read-only WordPress returned 66 on Nov 2; audit counts before launch"
+    },
+    {
+      "id": "c42",
+      "claim": "new published posts include Mesmerism and Change Blindness",
+      "status": "supported-site-record",
+      "source_id": "mesmerism",
+      "limitation": "read-only WordPress list, don't duplicate posts"
+    }
+  ],
+  "gates": {
+    "founder_release_approval_exact_sha": false,
+    "site_qa_a11y_contrast_review": false,
+    "homepage_art_alignment_only": false,
+    "wordpress_preview_review": false,
+    "merchant_written_finalvestige_approval": false,
+    "merchant_zen12_product_permission": false,
+    "merchant_website_channel_permission": false,
+    "merchant_tiktok_channel_permission": false,
+    "merchant_email_channel_permission": false,
+    "merchant_authorized_earning_url": false,
+    "merchant_approved_creative_rights": false,
+    "merchant_buyer_pii_optout_policy": false,
+    "checkout_actual_terms_refund": false,
+    "checkout_current_price_if_ever_mentioned": false,
+    "health_claim_legal_review": false,
+    "hosted_native_ci": false,
+    "first_party_video_rights_and_caption_sync": false,
+    "live_privacy_analytics_approval": false,
+    "ab_experiment_consent_and_design": false
+  },
+  "notes": [
+    "Public recruitment page advertises generic payout; do not repeat as partner-specific rate or approval.",
+    "Exact merchant HTML examined; private product swipe/affiliate dashboard unavailable, no creative permissions inferred.",
+    "The static B concept requires source-controlled renderer, approved hosted media, real captions and no-JS fallback before play control.",
+    "Read-only WP returned 66 published posts on Nov 2, differing from original #171 baseline of 61; avoid stale inventory claim."
+  ]
+}
