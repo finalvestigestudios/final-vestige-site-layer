@@ -199,7 +199,23 @@ if (process.argv.includes('--self-test')) {
     const checked = await act('verify');
     assert.equal(checked.status,200,'Stored editor content was not admitted');
     checkEditorReceipt(checked.body,digest);
+    // Optional additional REAL front-end browser gate; still disposable and
+    // staged. A failure here must trigger the original mandatory draft cleanup.
+    let assemblerEvidence = null;
+    const assemblerIdx=process.argv.indexOf('--assembler-dir');
+    if(assemblerIdx !== -1){
+      const evidenceIdx=process.argv.indexOf('--evidence-dir');
+      assert.ok(process.argv[assemblerIdx+1] && evidenceIdx>0 &&
+        process.argv[evidenceIdx+1], 'Assembler rendering requires theme and evidence dirs');
+      const mod=await import('./playground_assembler_render_gate.mjs');
+      assemblerEvidence=await mod.runAssemblerPreview({
+        server,browser,context,draftId,
+        themeDirectory:resolve(process.argv[assemblerIdx+1]),
+        outputDirectory:resolve(process.argv[evidenceIdx+1])
+      });
+    }
     proof = {result:'PASS',draft_removed:false,release:'HOLD',
+      assembler_render:assemblerEvidence,
       type:checked.body.test_type,sha256:digest,checks:checked.body.checks,
       candidate_bytes:checked.body.source_bytes};
   } catch(e) {
