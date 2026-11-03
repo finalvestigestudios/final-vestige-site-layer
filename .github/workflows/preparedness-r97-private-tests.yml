@@ -1,0 +1,100 @@
+name: Preparedness R97 Metadata and Route Custody (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r96-visible-source-safety-shell-hold-20261103
+    paths:
+      - preparedness/tools/r97_structured_data_route_custody.py
+      - preparedness/tests/test_r97_structured_data_route_custody.py
+      - preparedness/docs/R97_STRUCTURED_DATA_ROUTE_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r97-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  private-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Immutable R96, seven original cluster heads, RC and additive-only scope
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          base = "ba4c3937b6cf3c1fed6fc7cd93df9f50bfa6bf70"
+          got = subprocess.check_output(["git", "rev-parse", "refs/remotes/origin/review/preparedness-r96-visible-source-safety-shell-hold-20261103"], text=True).strip()
+          assert got == base, ("base", got, base)
+          changes = set(subprocess.check_output(["git", "diff", "--name-status", base, "HEAD"], text=True).splitlines())
+          expected = {
+              "preparedness/tools/r97_structured_data_route_custody.py",
+              "preparedness/tests/test_r97_structured_data_route_custody.py",
+              "preparedness/docs/R97_STRUCTURED_DATA_ROUTE_CUSTODY_HOLD.md",
+              ".github/workflows/preparedness-r97-private-tests.yml",
+          }
+          assert changes == {"A\t" + x for x in expected}, changes
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":
+                  "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, sha in pins.items():
+              got = subprocess.check_output(["git", "rev-parse", "refs/remotes/origin/" + ref], text=True).strip()
+              assert got == sha, (ref, got, sha)
+              print(ref, got)
+          print("R97 exact base and 8 pinned source snapshots; 4 ADD-only paths PASS")
+          PY
+      - name: R97 in-memory safety, metadata, and route adversarial tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in ("preparedness/tools/r97_structured_data_route_custody.py",
+                       "preparedness/tests/test_r97_structured_data_route_custody.py"):
+              compile(Path(path).read_text(encoding="utf-8"), path, "exec")
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r97_structured_data_route_custody.py -v
+      - name: Complete R93-R97 article, citation and generated route corpus audit
+        run: |
+          python -I preparedness/tools/r97_structured_data_route_custody.py
+          python -I preparedness/tools/r97_structured_data_route_custody.py --private-json-stdout > "$RUNNER_TEMP/r97-private.json"
+          python -I - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          data = json.loads((Path(os.environ["RUNNER_TEMP"])/"r97-private.json").read_text(encoding="utf-8"))
+          assert data["schema"] == "r97-private-structured-data-route-custody-hold-v1"
+          assert data["release_state"] == "HOLD" and data["may_publish"] is False
+          assert data["article_drafts"] == 35 and data["tool_drafts"] == 1
+          assert data["private_draft_pages"] == data["pages_with_structured_data"] == 36
+          assert data["unique_canonical_draft_routes"] == 36
+          assert data["generated_breadcrumb_items"] == 144
+          assert data["prior_rendered_citations_conserved_R96"] == 1959
+          assert len(data["unbuilt_tools_NOT_IMPORTABLE"]) == 5
+          assert all(x["release_state"] == "HOLD" and x["may_publish"] is False
+                     for x in data["per_document_NOT_APPROVED"])
+          seal = data.pop("sha256_seal")
+          value = json.dumps(data, sort_keys=True, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8")
+          assert hashlib.sha256(value).hexdigest() == seal
+          print("R97 private metadata/route audit across 36 drafts PASS; publication HOLD")
+          PY
+          rm -f "$RUNNER_TEMP/r97-private.json"
+      - name: Native validation and local WordPress-ready draft build ONLY
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Full Python regression suite (at least 36 actual tests)
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Human review and publishing remain blocked
+        if: always()
+        run: |
+          echo 'R97 diagnostics only; independent mandatory integrity remains separate.'
+          echo 'No safety approval, QD PASS, WordPress writes, nav or public site changes.'
