@@ -38,6 +38,8 @@ def validate(doc: dict) -> list[str]:
         for key in ("qualified_publisher_postal_address_verified", "actual_jetpack_email_preview_verified", "received_email_unsubscribe_verified", "founder_final_send_approval"):
             block(cfg[key] is not False, "unsatisfied evidence gate: "+key)
         block(native["custom_preheader_control_verified"] is not False, "Jetpack custom preheader not established")
+        block(native["wpcom_documented_fallback_55_words"] is not True or native["jetpack_documented_fallback_350_characters"] is not True, "official fallback documentation divergence must remain visible")
+        block(native["actual_fallback_model_verified"] is not False or native["custom_excerpt_delivery_observed"] is not False, "native site-specific excerpt rendering remains unverified")
         block(native["post_title_used_as_subject"] is not True or native["custom_excerpt_can_supply_email_intro"] is not True, "WordPress contract changed")
         block(len(issues) != 6 or doc["editorial_count"] != 4 or doc["commercial_count"] != 2, "4:2 mix invalid")
         block([i["number"] for i in issues] != [1,2,3,4,5,6], "edition order invalid")
