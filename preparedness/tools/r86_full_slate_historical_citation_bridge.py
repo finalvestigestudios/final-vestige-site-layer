@@ -245,6 +245,11 @@ def bridge_documents(docs, historical_rows, *, enforce_census=False):
             for key, row in history if key not in used_history]
     need(len(used_history) + len(left) == len(historical_rows),
          "R85 historical rank comparisons discarded")
+    # Explicit zero counts are part of the deterministic schema, including
+    # synthetic empty-citation documents; absence must not masquerade as zero.
+    for field in ("article", "tool", "citations", "source_edges", "blocks",
+                  "citation_review_rows"):
+        counts.setdefault(field, 0)
     counts["documents"] = len(out)
     counts["matched_historical_rows"] = len(used_history)
     counts["historical_only_or_unpaired_rows"] = len(left)
