@@ -182,7 +182,9 @@ def dangerous_declaration(selector, key, value, in_print):
              "CSS moves source or review content offscreen: " + selector)
     if key == "position" and v == "fixed":
         raise Hold("fixed overlay can occlude source/review content: " + selector)
-    if key in ("animation", "animation-name", "animation-timeline", "pointer-events"):
+    if key == "pointer-events" and v != "auto":
+        raise Hold("CSS removes interactions needed for source access: " + selector)
+    if key in ("animation", "animation-name", "animation-timeline"):
         if v not in ("none", "auto"):
             raise Hold("dynamic CSS cannot prove critical evidence visibility: " + selector)
 
