@@ -1,0 +1,98 @@
+# Independent Apollo R85 offline source/rights workbench; no CMS writes.
+name: Apollo R85 NASA rights review board (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r85*'
+      - 'experience2/evidence-atlas/tests/*r85*'
+      - 'experience2/evidence-atlas/R85_NASA_RIGHTS_REVIEW_BOARD_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r85-rights-board.yml'
+permissions:
+  contents: read
+jobs:
+  source-and-deterministic-build:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate exact head and adversarial image-use custody
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r85-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_rights_board_r85.py \
+            experience2/evidence-atlas/tests/test_rights_board_r85.py \
+            experience2/evidence-atlas/tests/browser_rights_board_r85.py \
+            experience2/evidence-atlas/tests/package_rights_r85.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_rights_board_r85.py -v
+          python experience2/evidence-atlas/tools/build_rights_board_r85.py "$RUNNER_TEMP/r85-board"
+          python experience2/evidence-atlas/tests/package_rights_r85.py \
+            --built "$RUNNER_TEMP/r85-board" --out "$RUNNER_TEMP/R85_REVIEW_A.zip"
+          python experience2/evidence-atlas/tests/package_rights_r85.py \
+            --built "$RUNNER_TEMP/r85-board" --out "$RUNNER_TEMP/R85_REVIEW_B.zip"
+          cmp "$RUNNER_TEMP/R85_REVIEW_A.zip" "$RUNNER_TEMP/R85_REVIEW_B.zip"
+          sha256sum "$RUNNER_TEMP/R85_REVIEW_A.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r85-deterministic-source-rights-board-STAGING-HOLD
+          path: ${{ runner.temp }}/R85_REVIEW_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  chromium-axe-and-print:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: source-and-deterministic-build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned offline browser test packages
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/apollo-r85-axe" --no-save \
+            --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Real Chromium 320–1920 no-JS, axe, keyboard, screenshots, PDF
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r85-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_rights_board_r85.py "$RUNNER_TEMP/r85-board"
+          python experience2/evidence-atlas/tests/browser_rights_board_r85.py \
+            --src "$RUNNER_TEMP/r85-board" \
+            --out "$RUNNER_TEMP/r85-chromium" \
+            --axe "$RUNNER_TEMP/apollo-r85-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r85-chromium/R85_CHROMIUM_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Preserve genuine Chromium receipts, screenshots, and printed PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r85-real-chromium-accessibility-STAGING-HOLD
+          path: ${{ runner.temp }}/r85-chromium/
+          if-no-files-found: warn
+          retention-days: 7
