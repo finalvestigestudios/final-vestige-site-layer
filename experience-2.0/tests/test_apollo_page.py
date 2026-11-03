@@ -227,6 +227,31 @@ class Block(unittest.TestCase):
         self.assertIn("Open question", blocks["01-investigation"])
         self.assertIn("A test claim.", blocks["01-investigation"])
 
+    def test_no_character_that_wordpress_rewrites(self):
+        """WordPress's content filters turn a bare ampersand into &#038;. In an inline script that breaks the syntax (`&&` became `&#038;&#038;`
+        on draft 2017), so no block may contain one outside a valid entity, and the script must still compile after a conversion pass."""
+        entity = re.compile(r"&(?:#[0-9]+|#x[0-9a-fA-F]+|[a-zA-Z][a-zA-Z0-9]{1,31});")
+        for b in _entry()["blocks"]:
+            text = (BLOCKS_DIR / b["file"]).read_text(encoding="utf-8")
+            self.assertNotIn("&", entity.sub("", text), f'{b["file"]}: bare ampersand')
+        script = _block().split("<script>", 1)[1].rsplit("</script>", 1)[0]
+        self.assertNotIn("&&", script)
+
+    def test_inline_script_compiles_before_and_after_a_wordpress_style_conversion(self):
+        import pathlib, shutil, subprocess, tempfile
+        node = shutil.which("node")
+        self.assertTrue(node, "node is required to compile the inline script; this check cannot be skipped")
+        script = _block().split("<script>", 1)[1].rsplit("</script>", 1)[0]
+        converted = script
+        for _ in range(2):
+            converted = re.sub(r"&([^#])(?![a-zA-Z1-4]{1,8};)", r"&#038;\1", converted)
+        self.assertEqual(converted, script, "a conversion pass must change nothing")
+        with tempfile.TemporaryDirectory() as d:
+            f = pathlib.Path(d) / "inline.js"
+            f.write_text(converted, encoding="utf-8")
+            proc = subprocess.run([node, "--check", str(f)], capture_output=True, text=True)
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+
     def test_size_budget(self):
         self.assertLess(len(_block().encode()), 110_000)
 

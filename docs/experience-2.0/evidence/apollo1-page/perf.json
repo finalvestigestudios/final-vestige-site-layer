@@ -2,138 +2,138 @@
   "mobile-throttled": {
     "runs": [
       {
-        "lcp_ms": 1796,
-        "cls": 0.0731,
+        "lcp_ms": 1804,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1628,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1532,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1772,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1672,
-        "cls": 0.0731,
+        "lcp_ms": 1980,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
         "lcp_ms": 1768,
-        "cls": 0.0731,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
         "lcp_ms": 1896,
-        "cls": 0.0731,
+        "cls": 0.0532,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1884,
+        "cls": 0.0532,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1820,
+        "cls": 0.0532,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1868,
+        "cls": 0.0532,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1904,
+        "cls": 0.0532,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1916,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
         "lcp_ms": 1792,
-        "cls": 0.0731,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1672,
-        "cls": 0.0731,
+        "lcp_ms": 1660,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1804,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1760,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1792,
-        "cls": 0.0731,
+        "lcp_ms": 1800,
+        "cls": 0.0532,
         "lcp_element": "P.fv-ex2-hero__dek"
       }
     ],
-    "lcp_median_ms": 1770.0,
-    "lcp_max_ms": 1896,
-    "cls_median": 0.0731,
-    "cls_max": 0.0731
+    "lcp_median_ms": 1844.0,
+    "lcp_max_ms": 1980,
+    "cls_median": 0.0532,
+    "cls_max": 0.0532
   },
   "desktop": {
     "runs": [
       {
-        "lcp_ms": 380,
-        "cls": 0.0014,
+        "lcp_ms": 432,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 384,
-        "cls": 0.0014,
+        "lcp_ms": 368,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 392,
-        "cls": 0.0014,
+        "lcp_ms": 512,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
         "lcp_ms": 388,
-        "cls": 0.0014,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 416,
-        "cls": 0.0014,
+        "lcp_ms": 388,
+        "cls": 0.0015,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 396,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
         "lcp_ms": 412,
-        "cls": 0.0014,
+        "cls": 0.0015,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 460,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
         "lcp_ms": 392,
-        "cls": 0.0014,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 424,
-        "cls": 0.0014,
+        "lcp_ms": 428,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
         "lcp_ms": 420,
-        "cls": 0.0014,
-        "lcp_element": "H1.fv-ex2-hero__title"
-      },
-      {
-        "lcp_ms": 408,
-        "cls": 0.0014,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
         "lcp_ms": 384,
-        "cls": 0.0014,
-        "lcp_element": "H1.fv-ex2-hero__title"
-      },
-      {
-        "lcp_ms": 384,
-        "cls": 0.0014,
+        "cls": 0.0015,
         "lcp_element": "H1.fv-ex2-hero__title"
       }
     ],
-    "lcp_median_ms": 392.0,
-    "lcp_max_ms": 424,
-    "cls_median": 0.0014,
-    "cls_max": 0.0014
+    "lcp_median_ms": 404.0,
+    "lcp_max_ms": 512,
+    "cls_median": 0.0015,
+    "cls_max": 0.0015
   },
   "_method": "Playwright/Edge, live theme shell served from localhost, analytics aborted, cache off. mobile-throttled = 390x844, 4x CPU, 150 ms RTT, 1.6 Mbps down / 750 kbps up (the method fixed by the founder on 2026-11-02). Lab numbers, not field data. Threshold: LCP <= 2500 ms and CLS <= 0.1 in every run."
 }

@@ -58,11 +58,11 @@
         "sha256": "cf2f3b4d3610a5ff3cfe760c09e88c82cfdfdb64a12159dd015521e690d76b91"
       },
       {
-        "bytes": 9656,
+        "bytes": 9751,
         "file": "apollo1-investigation/07-script.block.html",
         "order": 8,
-        "sha1": "d2957e9fd184cdf5567c591a075a1f9f4a2ca633",
-        "sha256": "c95c1f386f2b65a37656808533b36f50f8df686697d2be3cd09ce478200dc8b0"
+        "sha1": "93c95de544437ef7215438c212540efe4f0cb0a4",
+        "sha256": "34a5093c520dd6e783c135b8f62c8d51cef7842e74c64a83d1da08806020d4fc"
       }
     ],
     "note": "Plugin-free: top-level core/html blocks only. Store each block byte-for-byte; never wrap one inside another block.",
@@ -72,10 +72,10 @@
       "title": "Apollo 1: The Evidence Atlas"
     },
     "page_content": {
-      "bytes": 88109,
+      "bytes": 88204,
       "join": "blocks concatenated in order, separated by one newline",
-      "sha1": "bc1d40d0102476ffd7bdc579ed41564399e42080",
-      "sha256": "cef09888501bd48f9ac145bcd186d8806b35505fa675d66d1f51876a4bc1ca1b"
+      "sha1": "4df60e9f07c59ae11d4c15c91c968f0c58a482f7",
+      "sha256": "d06613cba4c276645440813192512c49ac3331459a14fd91efbd304c1e45ddfb"
     },
     "sources": {
       "apollo1_sha256": "dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721",

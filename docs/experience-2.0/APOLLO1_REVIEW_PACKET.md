@@ -10,7 +10,7 @@
 | Head to review | the full SHA is stated in the PR comment that links this packet (a docs file cannot name its own commit); the code and block files it refers to are the ones hashed below |
 | WordPress draft | page **2017**, private draft, `apollo-1-evidence-atlas`. Preview (signed-in only): https://finalvestige.com/?page_id=2017&preview=true . Signed-out: 404 |
 | Mechanism | **nine** top-level `core/html` blocks, no plugin; no header, navigation, homepage, global-style or template change |
-| Draft readback | `page-sections.list` after the final write: all nine `block_hash` values equal the SHA-1 column below. Draft last modified 2026-11-03T07:38:19 |
+| Draft readback | `page-sections.list` after the final write: all nine `block_hash` values equal the SHA-1 column below; `pages.get` in `context=edit` and `context=view` re-read and compared (section 9). Draft last modified 2026-11-03T14:18:31 |
 | Homepage page 6 block 1 | SHA-1 `8c0dd5c3adce073fd58f5001e0f90d523ffad277`, never touched by this work |
 
 ### Block hashes (stored form = file without its trailing newline; WordPress `block_hash` = its SHA-1)
@@ -25,11 +25,11 @@
 | 04-rights | 4,193 | `ab57e96b46fab88bbbba9061bb0696268be1e9a7` | `166779789a8839183649338a580a04bddfd8b1634c6b87bf180bfee6b66262db` | `e6babbf1ac89b95d270834979f9fb0bbec2012fb72b5f016fde1ead7ce2bf9b3` |
 | 05-related | 1,890 | `3ccc0c6ce3d9f3fef520b26501c93e5927867d4a` | `6b5b9e53d336d4a32aeb248a54151ebd7c648f670c271eb24cb6009463fe6a05` | `05054781ba29931e8619179f443d2689bbaa01cbaa1be37dfbaef61f96c67cc8` |
 | 06-footer | 496 | `10351c226f0be67a780c89aba99b8942e5ee2fec` | `d557a650ad2367254ce6b990ea33671b734b15a0961d83e2d66e3283675bce23` | `cf2f3b4d3610a5ff3cfe760c09e88c82cfdfdb64a12159dd015521e690d76b91` |
-| 07-script | 9,655 | `2f4df25d143a4d559005aca8fb46d4d49f75b4ba` | `e6169fec1bb92471fecb4d32eeacb3de611d0b8bcc6ba865a664f534885e8c93` | `c95c1f386f2b65a37656808533b36f50f8df686697d2be3cd09ce478200dc8b0` |
+| 07-script | 9,750 | `d8f1ddea4f13ae283072093b2bb8d597e558a38e` | `f0e37c2d90ace6d2b6cd014951bcd1e67c87741789bcd463091e389b7b685296` | `34a5093c520dd6e783c135b8f62c8d51cef7842e74c64a83d1da08806020d4fc` |
 
-Whole page content (committed files joined by one newline, 88,109 bytes): SHA-1 `bc1d40d0102476ffd7bdc579ed41564399e42080`, SHA-256 `cef09888501bd48f9ac145bcd186d8806b35505fa675d66d1f51876a4bc1ca1b`. Blocks 00 and 07 are byte-identical to the previous revision (the stored hashes did not change); `00b` is new and holds the two CSS rules for text-only chapters.
+Whole page content (committed files joined by one newline, 88,204 bytes): SHA-1 `4df60e9f07c59ae11d4c15c91c968f0c58a482f7`, SHA-256 `d06613cba4c276645440813192512c49ac3331459a14fd91efbd304c1e45ddfb`. Block 00 is byte-identical to the first revision; `00b` holds the two CSS rules for text-only chapters; block 07 changed in revision 3 (below).
 
-Sources of the build (SHA-256): `data/apollo1.json` `dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721`; `atlas/data/atlas.json` `ec1f6513fa790d7416dd1fa4f4aea7fa60be9b36507e0baa08ab453b3eb4d40f`; `page-blocks/image-signoffs.json` `578d9dbe3239332218d130f1b97707f495f3ca3fa550fa6e22e5a38e640f1cf9` (no approvals); `page-blocks/manifest.json` `a932454099926c12de5c76a5ddad65c4a39355aaf6e427f16227ddfe4706142e`.
+Sources of the build (SHA-256): `data/apollo1.json` `dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721`; `atlas/data/atlas.json` `ec1f6513fa790d7416dd1fa4f4aea7fa60be9b36507e0baa08ab453b3eb4d40f`; `page-blocks/image-signoffs.json` `578d9dbe3239332218d130f1b97707f495f3ca3fa550fa6e22e5a38e640f1cf9` (no approvals); `page-blocks/manifest.json` `1ceb6ffba47ad1d9cf240a48f0c219be29e56b9dc2e7d295619c1cbe13043d6f`.
 
 ## 2. How each point of the HOLD was handled
 
@@ -85,3 +85,15 @@ Per the founder's rule, an image without a named-editor sign-off is omitted. **N
 ## 8. Questions for the reviewer
 
 1. Do the nine stored hashes equal the committed files at the reviewed head? 2. Is each claim on the page matched by a quote in its crosswalk row that you can find at the cited NASA URL? 3. Is the "About fifteen seconds" chapter clear about which interval is meant? 4. Is any visitor text still an internal note? 5. Is a page with no photographs acceptable as the first release, and is the decision sheet's default (omit all) right? 6. Does anything outside these nine blocks change?
+
+## 9. Revision 3: the `&&` rendering defect (found by the independent reviewer on `40c891e9`)
+
+**Defect.** WordPress's output filters rewrite a bare ampersand to `&#038;`. In the served inline script two of the 14 `&&` operators (the source-drawer Next handler and the timeline "upcoming marker" test) became `&#038;&#038;`, a JavaScript syntax error that would stop the script. The stored block was correct; the damage happened on render. The page's own content stays readable because it is complete HTML first, but the interactions (chronology slider, desk search, chapter bar) would not have started.
+
+**Fix, narrowest form.** Every `&&` in the shared source `design-system/src/js/fv-ex2.js` is now an explicit `if` or conditional expression with the same meaning (13 lines; the script now contains **no ampersand at all**). No design, NASA citation, historical text or interaction changed. Block 07 is the only block whose bytes changed; the other eight stored hashes are unchanged. The staging-plugin copy of the script and its manifest regenerate from the same source.
+
+**Evidence.**
+- Reproduction before the fix (local, not the server): the committed script compiles with node as stored, and fails to compile after a conversion pass that rewrites bare ampersands; the reviewer's observation on the served draft is the primary evidence.
+- Draft 2017 after the fix: block 07 rewritten, `block_hash` `d8f1ddea4f13ae283072093b2bb8d597e558a38e` = source. `pages.get` `context=view` (87,895 characters, saved to a file and processed locally): **0 occurrences of `&#038;`**, the served inline script is **identical to the source script** and passes `node --check`. `pages.get` `context=edit`: all nine stored blocks are byte-identical to the committed files; the served and stored scripts and style blocks are identical.
+- Two new tests in `test_apollo_page`: no bare ampersand in any block outside a valid entity, and the script compiles with node both as committed and after a conversion pass that changes nothing. They require `node` and fail without it (no skip).
+- Local browser acceptance and repository tests are in section 4's list, re-run on this head. **The page has no source drawer** (no dialog and no source buttons), so the drawer's Next handler is not reachable here; it is exercised by the repository's drawer tests on the flagship page, which pass with the fixed script.

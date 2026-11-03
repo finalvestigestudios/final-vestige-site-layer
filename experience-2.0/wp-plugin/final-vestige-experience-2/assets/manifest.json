@@ -8,9 +8,9 @@
     "apollo1": "dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721"
   },
   "js": {
-    "bytes": 9602,
-    "gzip_bytes": 3303,
-    "sha256": "c2c961a9d8c3600bf720307ea6143b141146edbc17b4b11377e921a1fcc1893b"
+    "bytes": 9697,
+    "gzip_bytes": 3321,
+    "sha256": "e358b15a8de5952319742805ba4159b29b283e7805cfa6544480b83e52874044"
   },
   "templates": {
     "atlas": {
