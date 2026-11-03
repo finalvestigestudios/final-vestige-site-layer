@@ -89,7 +89,7 @@ def check_parent(parent):
          'R91 full original evidence unavailable')
 
 
-def index(lib, parent, *, expected=None):
+def index(lib, parent, *, expected=None, allow_historical_body_drift=False):
     """Recompute collision-to-article literal links, preserving full sealed R91.
 
     The library may be the original read-only build.Library or a synthetic
@@ -130,7 +130,7 @@ def index(lib, parent, *, expected=None):
     need(parent['counts'].get('citation_occurrences') == len(original),
          'R91 citation census mismatch')
 
-    cite_rows, actual, document_routes = [], {}, set()
+    cite_rows, actual, document_routes, mismatch_rows = [], {}, set(), []
     doc_counts = Counter()
     for slug, meta in sorted(lib.articles.items()):
         need(type(slug) is str and type(meta) is dict and
@@ -149,7 +149,19 @@ def index(lib, parent, *, expected=None):
             key = (kind,slug,ordinal)
             need(key not in actual, 'duplicate original citation location')
             actual[key]=sid
-            need(original.get(key)==sid, 'citation ID/ordinal differs from sealed R91: '+repr((key,sid,original.get(key))))
+            if original.get(key) != sid:
+                mismatch_rows.append({
+                    'kind':kind,'slug':slug,'citation_ordinal':ordinal,
+                    'current_literal_body_source_ID_NOT_EQUIVALENT':sid,
+                    'sealed_R91_source_ID_OR_NONE':original.get(key),
+                    'lexical_drift_cue_NOT_ERROR_VERDICT':
+                        'BODY_CITATION_DIFFERS_FROM_FROZEN_R91_CONTEXT',
+                    'human_claim_support':REVIEW,'qualified_safety_review':REVIEW,
+                    'may_publish':False,
+                })
+                need(allow_historical_body_drift,
+                     'citation ID/ordinal differs from sealed R91: '+
+                     repr((key,sid,original.get(key))))
             source = lib.source_for(meta,sid)
             snapshot = source_row(source)
             url = snapshot['source']['url']
@@ -165,12 +177,25 @@ def index(lib, parent, *, expected=None):
                     'citation_ordinal':ordinal,'literal_source_ID':sid,
                     'literal_url_UNMODIFIED':url,
                     'source_variant_SHA256':digest(snapshot),
+                    'R91_prior_literal_source_ID_NOT_EQUIVALENT':original.get(key),
+                    'source_match_to_R91_claim_NOT_PROVEN':original.get(key)==sid,
                     'source_origin':snapshot['origin'],
                     'article_author_origin':own,
                     'human_source_review':REVIEW,'human_link_check':REVIEW,
                     'qualified_safety_review':REVIEW,'may_publish':False,
                 })
-    need(actual==original, 'original citation lost, inserted or replaced')
+    for key in sorted(set(original)-set(actual)):
+        mismatch_rows.append({
+            'kind':key[0],'slug':key[1],'citation_ordinal':key[2],
+            'current_literal_body_source_ID_NOT_EQUIVALENT':None,
+            'sealed_R91_source_ID_OR_NONE':original[key],
+            'lexical_drift_cue_NOT_ERROR_VERDICT':
+                'FROZEN_R91_CITATION_NOT_IN_CURRENT_RAW_BODY',
+            'human_claim_support':REVIEW,'qualified_safety_review':REVIEW,
+            'may_publish':False,
+        })
+    need(allow_historical_body_drift or actual==original,
+         'original citation lost, inserted or replaced')
     need(doc_counts['article']==parent['counts'].get('article') and
          doc_counts['tool']==parent['counts'].get('tool') and
          sum(doc_counts.values())==parent['counts'].get('documents'),
@@ -222,6 +247,7 @@ def index(lib, parent, *, expected=None):
         'qualified_safety_approvals':0,'independent_QD_approvals':0,
         'complete_R91_original_evidence_UNABRIDGED_NOT_APPROVED':parent,
         'all_literal_shared_URL_review_dossiers_NOT_APPROVED':dossiers,
+        'all_R91_vs_current_raw_body_citation_drift_workorders_NOT_APPROVED':mismatch_rows,
         'counts':{
             **{k:parent['counts'][k] for k in (
               'documents','article','tool','citation_occurrences',
@@ -230,6 +256,8 @@ def index(lib, parent, *, expected=None):
             'raw_source_rows':sum(map(len,source_urls.values())),
             'unique_source_urls':len(source_urls),
             'shared_url_groups':len(dossiers),
+            'current_raw_body_citation_occurrences':len(actual),
+            'historical_raw_body_citation_alignment_review_cues':len(mismatch_rows),
             'shared_url_citation_occurrences':len(cite_rows),
             'shared_urls_with_rc_citations':sum(bool(d[
               'all_literal_release_candidate_citation_links_NOT_APPROVED']) for d in dossiers),
@@ -243,7 +271,7 @@ def index(lib, parent, *, expected=None):
     return report
 
 
-def verify(report, lib, parent, *, expected=None):
+def verify(report, lib, parent, *, expected=None, allow_historical_body_drift=False):
     need(type(report) is dict and report.get('schema')==SCHEMA
          and report.get('issue')==136 and report.get('release_state')==HOLD
          and report.get('may_publish') is False
@@ -256,7 +284,8 @@ def verify(report, lib, parent, *, expected=None):
     need(report.get('sha256_seal')==digest(
          {k:v for k,v in report.items() if k!='sha256_seal'}),
          'R92 evidence digest mismatch')
-    need(report==index(lib,parent,expected=expected),
+    need(report==index(lib,parent,expected=expected,
+         allow_historical_body_drift=allow_historical_body_drift),
          'R92 literal URL, citation or source evidence changed')
 
 
@@ -269,13 +298,14 @@ def live():
     sys.path.insert(0,str(Path(__file__).resolve().parent))
     import build
     lib=build.Library()
-    report=index(lib,parent,expected=EXPECTED)
-    verify(report,lib,parent,expected=EXPECTED)
+    report=index(lib,parent,expected=EXPECTED,allow_historical_body_drift=True)
+    verify(report,lib,parent,expected=EXPECTED,allow_historical_body_drift=True)
     return report,lib,parent
 
 
-def private_csv(report,lib,parent,*,expected=None):
-    verify(report,lib,parent,expected=expected)
+def private_csv(report,lib,parent,*,expected=None,allow_historical_body_drift=False):
+    verify(report,lib,parent,expected=expected,
+           allow_historical_body_drift=allow_historical_body_drift)
     stream=io.StringIO(newline='')
     writer=csv.writer(stream,lineterminator='\n')
     writer.writerow(('literal_url_UNMODIFIED','original_source_records',
@@ -298,7 +328,8 @@ def main(argv=None):
     args=parser.parse_args(argv)
     report,lib,parent=live()
     if args.private_csv_stdout:
-        print(private_csv(report,lib,parent,expected=EXPECTED),end='')
+        print(private_csv(report,lib,parent,expected=EXPECTED,
+                  allow_historical_body_drift=True),end='')
     else:
         print(json.dumps({'schema':SCHEMA,'release_state':HOLD,
              'may_publish':False,'counts':report['counts'],
