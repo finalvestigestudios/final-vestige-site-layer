@@ -97,10 +97,15 @@ def run(root,out,axe=None,chromium=None):
                             shots[str(width)]=checksum(snap)
                             if width==1440:
                                 pdf=out/'R88_READER_PRINT.pdf'
+                                TRACE['gate']='PDF_EXPORT'
                                 page.pdf(path=str(pdf),format='A4',print_background=True)
+                                TRACE['gate']='PDF_CUSTODY'
                                 with fitz.open(pdf) as d:
                                     text='\n'.join(p.get_text() for p in d)
-                                    assert all(url in text for url in NASA),'R88_NASA_URLS_LOST_IN_PRINT'
+                                    missing=[str(i+1) for i,url in enumerate(NASA) if url not in text]
+                                    if missing: print('R88_PDF_MISSING_SOURCE_IDS:'+','.join(missing),flush=True)
+                                    assert not missing,'R88_NASA_URLS_LOST_IN_PRINT'
+                                    TRACE['gate']='PDF_RIGHTS'
                                     assert 'INDIVIDUAL REVIEW REQUIRED' in text,'R88_RIGHTS_LOST_IN_PRINT'
                                     pages=len(d)
                     else:
