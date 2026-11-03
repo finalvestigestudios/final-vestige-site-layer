@@ -90,7 +90,7 @@ class R91Guards(unittest.TestCase):
         for i in LEDGER["issues"]:
             n=f'{i["number"]:02d}'
             c=(ROOT/f"issue-{n}.html").read_text(encoding="utf-8")
-            self.assertEqual(c.count('href="'+i["cta"]+'"'),1)
+            self.assertEqual(c.count('href="'+i["cta"]+'" style="display:inline-block'),1)
     def test_excerpts_are_not_claimed_actual_received(self):
         r=(ROOT/"README.md").read_text(encoding="utf-8").lower()
         self.assertIn("not jetpack output",r)
