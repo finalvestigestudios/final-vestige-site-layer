@@ -142,6 +142,8 @@ def verify(desk_html=None, report=None):
         gate(all(official(x['href']) for x in links), 'OFFICIAL_DOMAIN_' + number)
         summary = ' '.join(''.join(card['summary']).split())
         boundary = ' '.join(''.join(card['boundary']).split())
+        gate(boundary.startswith('EVIDENCE LIMITATION'), 'BOUNDARY_LABEL_' + number)
+        boundary = boundary.removeprefix('EVIDENCE LIMITATION').strip()
         gate(35 <= len(summary) <= 500 and 30 <= len(boundary) <= 400 and
              summary != boundary, 'CLAIM_LIMITATION_' + number)
         if number == '05':
