@@ -1,0 +1,344 @@
+{
+  "schema": "fv-westloch-370-v1",
+  "audit_date": "2026-11-03",
+  "source": {
+    "post_id": 370,
+    "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+    "last_modified": "2026-10-29T15:27:15",
+    "snapshot": "qa/media-recovery/parts/02.json",
+    "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "read_only_snapshot": true,
+    "no_fresh_wordpress_read": true
+  },
+  "metrics": {
+    "stored_slots": 8,
+    "external_direct_navy": 4,
+    "already_first_party": 4,
+    "guest_broken_confirmed": 0,
+    "visitor_bytes_measured": 0
+  },
+  "policy": {
+    "max_width_px": 960,
+    "no_upscale": true,
+    "rights_approved": false,
+    "caching_allowed": false,
+    "production_writes": false
+  },
+  "images": [
+    {
+      "key": "370:0",
+      "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+      "original_alt": "Aerial view of Pearl Harbor's West Loch on May 21, 1944, showing burning LSTs at berths T-8 and T-9 while other landing ships maneuver away.",
+      "source_kind": "external",
+      "transport": {
+        "method": "web.open exact URL",
+        "outcome": "web_timeout_400_wrapper",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": {
+        "id": "80-G-276907",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276907.html",
+        "custody": "Navy official; NARA",
+        "visual_match": "accession_match_binary_crop_unverified",
+        "original_px": null,
+        "notes": null
+      },
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg"
+      }
+    },
+    {
+      "key": "370:1",
+      "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-200000%2F80-G-202485&rendition=cq5dam.web.1280.1280.jpeg",
+      "original_alt": "U.S. Marines wading ashore from USS LST-353 at Empress Augusta Bay, Bougainville, on November 6, 1943.",
+      "source_kind": "external",
+      "transport": {
+        "method": "web.open exact URL",
+        "outcome": "web_inaccessible_no_http",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": {
+        "id": "80-G-202485",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/80-G-202000/80-G-202485.html",
+        "custody": "Navy official; NARA",
+        "visual_match": "accession_match_binary_crop_unverified",
+        "original_px": null,
+        "notes": "LST-353 Bougainville Nov 1943; two NHHC catalog TIFF dimension claims 5860x4890 and 2851x2280"
+      },
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-200000%2F80-G-202485&rendition=cq5dam.web.1280.1280.jpeg"
+      }
+    },
+    {
+      "key": "370:2",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-lst-39-burning.jpg",
+      "original_alt": "Smoke rising from the wreck of USS LST-480 as tugs and other craft fight fires in West Loch, with burning USS LST-39 at left.",
+      "source_kind": "first_party",
+      "transport": {
+        "method": "not_tested",
+        "outcome": "not_tested",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": null,
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-lst-39-burning.jpg"
+      }
+    },
+    {
+      "key": "370:3",
+      "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg",
+      "original_alt": "Burned-out USS LST-39 grounded near the Pearl Harbor Naval Ammunition Depot on May 22, 1944.",
+      "source_kind": "external",
+      "transport": {
+        "method": "web.open exact URL",
+        "outcome": "web_timeout_400_wrapper",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": {
+        "id": "80-G-276940",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276940.html",
+        "custody": "Navy official; NARA",
+        "visual_match": "accession_match_binary_crop_unverified",
+        "original_px": null,
+        "notes": null
+      },
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg"
+      }
+    },
+    {
+      "key": "370:4",
+      "source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FSC-400000%2FSC-427947&rendition=cq5dam.web.1280.1280.jpeg",
+      "original_alt": "Firefighters working aboard a destroyed landing ship in West Loch on the morning after the 1944 explosions.",
+      "source_kind": "external",
+      "transport": {
+        "method": "web.open exact URL",
+        "outcome": "web_inaccessible_no_http",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": {
+        "id": "SC 427947",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/sc-series/SC-400000/SC-427947.html",
+        "custody": "Army Signal Corps Collection; NARA",
+        "visual_match": "accession_match_binary_crop_unverified",
+        "original_px": null,
+        "notes": "NHHC says MAY BE LST-480; probably USCGC Woodbine"
+      },
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FSC-400000%2FSC-427947&rendition=cq5dam.web.1280.1280.jpeg"
+      }
+    },
+    {
+      "key": "370:5",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-afire-again.jpg",
+      "original_alt": "The wreck of USS LST-480 burning again in West Loch on May 23, 1944, with the sunken remains of LST-353 nearby.",
+      "source_kind": "first_party",
+      "transport": {
+        "method": "not_tested",
+        "outcome": "not_tested",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": null,
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-afire-again.jpg"
+      }
+    },
+    {
+      "key": "370:6",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-overhead.jpg",
+      "original_alt": "Overhead view of the burning hulk of USS LST-480 in West Loch, Pearl Harbor, on May 22, 1944.",
+      "source_kind": "first_party",
+      "transport": {
+        "method": "not_tested",
+        "outcome": "not_tested",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": null,
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-lst-480-overhead.jpg"
+      }
+    },
+    {
+      "key": "370:7",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-unidentified-headstone.jpg",
+      "original_alt": "Headstone marking two unidentified West Loch disaster victims.",
+      "source_kind": "first_party",
+      "transport": {
+        "method": "not_tested",
+        "outcome": "not_tested",
+        "origin_http": null,
+        "guest_http": null,
+        "decoded": null,
+        "current_src": null,
+        "wire_bytes": null
+      },
+      "archive": {
+        "id": "DPAA 241007-A-EX720-1263",
+        "catalog_url": "https://www.dpaa.mil/Multimedia/Photo-Gallery/igphoto/2003567495/",
+        "custody": "DPAA",
+        "visual_match": "related_subject_not_same_photo",
+        "original_px": null,
+        "notes": null
+      },
+      "rights": {
+        "permission_verified": false,
+        "credits_verified": false,
+        "copy_allowed": false
+      },
+      "derivative": {
+        "source_width": null,
+        "source_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "no_upscale": true
+      },
+      "release": {
+        "download": "HOLD",
+        "rehost": "HOLD",
+        "swap": "HOLD",
+        "rollback_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/west-loch-unidentified-headstone.jpg"
+      }
+    }
+  ]
+}
