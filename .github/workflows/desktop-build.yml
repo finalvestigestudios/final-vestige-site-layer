@@ -197,6 +197,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r156.py
           python -OO products/desktop/scripts/safe_unittest_r156.py
+      - name: R157 SpendMap independent history/collision review evidence (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r157.py
+          python -OO products/desktop/scripts/safe_unittest_r157.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -641,6 +645,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R156 exact Decimal recheck FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r156.py
           if ($LASTEXITCODE -ne 0) { throw "R156 optimized exact Decimal recheck FAILED" }
+      - name: R157 SpendMap independent history/collision review evidence (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r157.py
+          if ($LASTEXITCODE -ne 0) { throw "R157 history review verification FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r157.py
+          if ($LASTEXITCODE -ne 0) { throw "R157 optimized history review verification FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
