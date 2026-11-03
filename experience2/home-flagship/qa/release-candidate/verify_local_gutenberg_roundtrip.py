@@ -13,6 +13,7 @@ import subprocess
 from urllib.parse import urlsplit
 from verify_saved_frontend_admission import check_saved_frontend
 from verify_saved_gutenberg_lab import run_saved_native_lab
+from verify_saved_css_order_abba import run_css_order_abba
 
 FIXTURE = 'experience2/home-flagship/qa/release-candidate/fixtures/proposed-production-block-pr604.html'
 SITE = 'http://127.0.0.1:9400'
@@ -155,6 +156,12 @@ def run(page, repo: Path, expected_sha: str, out: Path, axe_script: Path) -> dic
         notes['saved_native_cdp_lab_status'] = saved_lab['status']
         notes['saved_native_cdp_lab_profiles'] = len(saved_lab['samples'])
         notes['saved_native_cdp_lab_any_budget_missed'] = saved_lab['any_lab_budget_missed']
+        # Controlled single-runtime comparison: same native Gutenberg URL,
+        # same markup and archival image bytes, only CSS parse order changes.
+        # ABBA is exploratory, NEVER an authorization to release.
+        abba = run_css_order_abba(page, page_id, candidate, probe, out, expected_sha)
+        notes['css_order_abba_receipt'] = 'GUTENBERG_SAVED_CSS_ORDER_ABBA.json'
+        notes['css_order_abba_median_ms'] = abba['comparison_ms']
         if not all(notes[k] for k in ('persisted_gutenberg_bytes_exact',
                     'frontend_flagship_dom_visible', 'authored_inline_script_present_in_frontend')):
             raise ValueError('LOCAL_WORDPRESS_PERSISTENCE_HOLD')

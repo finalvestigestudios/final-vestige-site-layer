@@ -12,6 +12,9 @@ from pathlib import Path
 from verify_saved_frontend_admission import CHAPTERS, validate_saved_preview
 
 PERF_INIT = r"""(() => {
+  // Repeated same-run ABBA measurements register this init script multiple times.
+  // Each navigation must create exactly ONE observer pair, not double-count CLS.
+  if (window.__fvSavedNativeLab) return;
   window.__fvSavedNativeLab = { lcp: null, cls: 0 };
   try {
     new PerformanceObserver(list => {
