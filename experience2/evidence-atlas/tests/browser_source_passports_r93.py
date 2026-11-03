@@ -58,7 +58,10 @@ def run(src:Path,out:Path,axe:Path,chromium:str|None=None):
                         assert nasa.count()==2 and all(a.get_attribute('href')==r['url'] for a in nasa.all())
                         links=c.locator('nav.routes a')
                         assert links.count()==4
+                        # Touch targets are measurable only after opening native closed disclosures.
+                        c.locator('details').evaluate('(e)=>e.open=true')
                         assert all(l.evaluate('(e)=>e.getBoundingClientRect().height')>=42 for l in links.all())
+                        c.locator('details').evaluate('(e)=>e.open=false')
                     summary=page.locator('#passport-02 summary')
                     summary.focus();page.keyboard.press('Enter')
                     assert page.locator('#passport-02 details').evaluate('(e)=>e.open')
