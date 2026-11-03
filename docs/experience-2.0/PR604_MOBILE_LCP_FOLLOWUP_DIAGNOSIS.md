@@ -68,6 +68,12 @@ Adverse effects to check before any release: with `font-display: fallback` the f
 
 Open: the preload is emitted early in `<head>` by WordPress or the platform, not by `theme.json` (which has no preload setting) and not by the page block. The mechanism that emits it has not been identified, so there is no live implementation yet. Candidate paths: a small, reversible plugin using the proper hook, or a platform setting. Installing a plugin on production is a configuration change that has not been done.
 
+## Addendum 2026-11-03: the throttled LCP is bimodal, so a median understates it
+
+Repeated throttled runs (same conditions as above, 390 px, CPU 4x, 150 ms RTT, 1.6 Mbps, cache off) of the live page, served from a saved copy and with analytics requests aborted, show two modes. In most runs the LCP is about 1.6 to 1.7 s (the Hidden in the Margins strip, FCP about 1.6 s). In roughly a third to a half of runs a later LCP candidate, the hero paragraph `P.fv-hf__opening-dek`, is reported at 4.5 to 5.3 s. Counts: old HTML 2 of 10 runs high, current HTML 5 of 10 (the difference is within noise at this sample size; FCP is identical at about 1.59 s); a 12-run sample of the current page had 4 of 12 high. With the Inter font file blocked the high mode still occurs in 4 of 12 runs but at 3.0 to 3.2 s, so the web font delays it but is not its cause. The FREE EBOOK header change did not change FCP.
+
+Consequence: a median of about 1.6 to 1.9 s is true of the typical run, but a p75 of these lab runs is above 2.5 s (about 3 to 4.6 s). The founder's long-term standard is p75 of mobile field LCP, so the "meets the lab goal" statement should be read as a median and not as a p75. The cause of the late hero-paragraph paint has not been identified (candidates: a script-gated reveal or a re-render of the hero text; the flagship block and its CSS/JS are the first place to look). This belongs to the post-release performance PR, not to PR #604's frozen head.
+
 ## Not yet done
 
 * A like-for-like Lighthouse measurement of any candidate change (nothing has been changed).
