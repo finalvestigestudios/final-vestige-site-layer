@@ -11,6 +11,8 @@ import argparse
 from collections import Counter
 from pathlib import Path
 import re
+
+from ci_action_key_guard_r164 import ActionKeyError, verify_action_key_shape
 import sys
 
 MAX_WORKFLOW_BYTES = 128 * 1024
@@ -32,6 +34,10 @@ def verify_action_pins(source: str) -> int:
     if (type(source) is not str or "\x00" in source or "\t" in source
             or len(source.encode("utf-8")) > MAX_WORKFLOW_BYTES):
         raise ActionPinError("Invalid desktop workflow")
+    try:
+        verify_action_key_shape(source)
+    except ActionKeyError as exc:
+        raise ActionPinError("Noncanonical YAML action keys") from exc
     counts: Counter[str] = Counter()
     for line in source.splitlines():
         if line.lstrip().startswith("#"):
