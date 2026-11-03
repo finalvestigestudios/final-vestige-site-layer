@@ -16,11 +16,16 @@ FILES = (
     'experience2/evidence-atlas/R81_SYNCED_WORDPRESS_FORENSICS_STAGING_HOLD.md',
     'experience2/evidence-atlas/R82_REDACTED_FAILURE_TRANSPORT_STAGING_HOLD.md',
     'experience2/evidence-atlas/R83_SYNCED_SOURCE_CUSTODY_STAGING_HOLD.md',
+    'experience2/evidence-atlas/R84_DESK_CHRONOLOGY_CERTAINTY_STAGING_HOLD.md',
     'experience2/evidence-atlas/integration/fv-ex2-apollo-suite.php',
+    'experience2/evidence-atlas/tests/build_full_staging_r64.py',
+    'experience2/evidence-atlas/tests/build_full_staging_r67.py',
     'experience2/evidence-atlas/tests/build_review_r77.py',
     'experience2/evidence-atlas/tests/build_review_r78.py',
     'experience2/evidence-atlas/tests/test_build_review_r77.py',
     'experience2/evidence-atlas/tests/test_build_review_r78.py',
+    'experience2/evidence-atlas/tests/test_desk_chronology_r84.py',
+    'experience2/evidence-atlas/tests/test_desk_profiles_r52.py',
     'experience2/evidence-atlas/tests/test_nested_reusable_r77.php',
     'experience2/evidence-atlas/tests/test_pinned_file_boundaries_r78.php',
     'experience2/evidence-atlas/tests/test_wp_loopback_r72.py',
@@ -28,8 +33,11 @@ FILES = (
     'experience2/evidence-atlas/tests/test_wp_synced_failure_r81.py',
     'experience2/evidence-atlas/tests/test_wp_synced_redaction_r82.py',
     'experience2/evidence-atlas/tests/wordpress_r68.py',
+    'experience2/evidence-atlas/tests/wp_chronology_r84.py',
     'experience2/evidence-atlas/tests/wp_reusable_r77.py',
     'experience2/evidence-atlas/tests/wp_source_parity_r83.py',
+    'experience2/research-desk/assets/source-ledger.css',
+    'experience2/research-desk/templates/ledger.html',
 )
 
 def git(root: Path, *args: str) -> bytes:

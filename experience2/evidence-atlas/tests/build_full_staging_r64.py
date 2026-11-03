@@ -17,11 +17,12 @@ sys.path.insert(0,str(HERE));sys.path.insert(0,str(HERE/'tests'))
 import build_wordpress_stage
 from test_desk_profiles_r52 import EXPECTED,blob
 
-RESEARCH_FILES=tuple(sorted(EXPECTED['r38-custody-search']))
+ACTIVE_DESK_PROFILE='r84-chronology-certainty'
+RESEARCH_FILES=tuple(sorted(EXPECTED[ACTIVE_DESK_PROFILE]))
 SUITE_FILES=('integration/fv-ex2-apollo-suite.php','integration/apollo-suite.css')
 
 def build(output:Path):
-    for relative,sha in EXPECTED['r38-custody-search'].items():
+    for relative,sha in EXPECTED[ACTIVE_DESK_PROFILE].items():
         source=DESK/relative
         if not source.is_file() or blob(source.read_bytes())!=sha:
             raise ValueError('Do not stage unverified original R38 file: '+relative)
@@ -45,6 +46,8 @@ def build(output:Path):
     manifest={'schema':'fv.apollo.r64.wp-triplet.v1','release':'STAGING_HOLD',
               'wordpress_installed':False,'axe_certified':False,'media_rights_unreviewed':6,
               'embedded_images':0,'geographic_pins':0,'R38_git_blobs':EXPECTED['r38-custody-search'],
+              'active_desk_profile':ACTIVE_DESK_PROFILE,
+              'active_desk_git_blobs':EXPECTED[ACTIVE_DESK_PROFILE],
               'atlas_crosswalk_git_blob':atlas_manifest['source_crosswalk_blob'],
               'plugin_directories':['fv-ex2-evidence-atlas','fv-ex2-research-desk','fv-ex2-apollo-suite'],
               'shortcode':'[fv_ex2_apollo_suite]','files':paths}

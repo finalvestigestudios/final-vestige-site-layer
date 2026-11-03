@@ -68,3 +68,22 @@
 .fv-ex2-ledger__clear:hover{background:#322c1e}
 .fv-ex2-ledger__clear[hidden]{display:none!important}
 @media(max-width:760px){.fv-ex2-ledger__clear{width:100%}}
+
+/* R84: certainty-safe native Desk chronology. Unknown-day portraits are NOT ordered. */
+.fv-ex2-ledger__chronology > ol{grid-template-columns:repeat(4,minmax(0,1fr))}
+.fv-ex2-ledger__chrono-group{border:1px solid #756343;padding:10px;min-width:0}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-group > time{display:block;color:var(--fvx-gold);font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.07em;padding:4px 2px 9px}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-same-day{display:grid;grid-template-columns:1fr;gap:7px;list-style:none;margin:0;padding:0}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-same-day li{min-width:0}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-same-day a{padding:10px;min-height:44px;height:auto;justify-content:center}
+.fv-ex2-ledger__chrono-unplaced{margin-top:14px;border:1px dashed var(--fvx-gold);border-left:4px solid var(--fvx-gold);padding:14px 18px;background:#211e18}
+.fv-ex2-ledger__chrono-unplaced h3{margin:0 0 7px;color:var(--fvx-paper);font:400 clamp(19px,2vw,25px)/1.2 Georgia,serif}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-unplaced p{max-width:85ch;margin:0 0 6px}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-unplaced a{display:inline-flex;height:auto;min-height:44px;gap:6px;padding:10px 0;border:0;color:var(--fvx-gold)}
+.fv-ex2-ledger__chronology .fv-ex2-ledger__chrono-unplaced a time{font-weight:700}
+@media(max-width:1000px){.fv-ex2-ledger__chronology > ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.fv-ex2-ledger__chronology > ol{grid-template-columns:1fr}.fv-ex2-ledger__chrono-unplaced{padding:12px}}
+@media(forced-colors:active){.fv-ex2-ledger__chrono-group,.fv-ex2-ledger__chrono-unplaced{border-color:CanvasText}}
+@media print{.fv-ex2-ledger__chrono-group,.fv-ex2-ledger__chrono-unplaced{background:#fff;color:#000;border-color:#555}
+ .fv-ex2-ledger__chrono-unplaced h3,.fv-ex2-ledger__chrono-unplaced p{color:#000}
+ .fv-ex2-ledger__chrono-unplaced a,.fv-ex2-ledger__chrono-group > time{color:#000}}

@@ -33,6 +33,13 @@ function fv_ex2_apollo_desk_profiles(): array {
             'assets/source-ledger.js' => '57f4a639d4c37fc4355b10fe7dec085bf87c6eb7',
             'sources/R37_PHOTO_CUSTODY_CROSSWALK.json' => 'ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea',
         ),
+        'r84-chronology-certainty' => array(
+            'final-vestige-ex2-research-desk.php' => '44a43c63ba262de4193295563f5762df6e731077',
+            'templates/ledger.html' => '3372c0c369eedcbf715902e1eb692c57a29c7b6d',
+            'assets/source-ledger.css' => 'feb9a524cd10437a606fa166e19d4cae5fc24320',
+            'assets/source-ledger.js' => '57f4a639d4c37fc4355b10fe7dec085bf87c6eb7',
+            'sources/R37_PHOTO_CUSTODY_CROSSWALK.json' => 'ca00a51d8d47d02f9ccc2fbb55df31a0ed36e7ea',
+        ),
     );
 }
 
