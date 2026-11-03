@@ -8,7 +8,7 @@
   "census_origin": "qa/media-recovery/parts/05.json",
   "census_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
   "census_snapshot_date": "2026-10-30",
-  "fresh_wordpress_read": false,
+  "fresh_wordpress_read": true,
   "total_image_refs": 7,
   "external_refs": 7,
   "archived_authoritative_canonical_catalogs": 7,
@@ -20,6 +20,7 @@
   "wordpress_write_approved": false,
   "rights_review_completed": false,
   "notes": [
+    "Authenticated read-only WordPress posts.get(context=edit) recheck on November 2: published post 255 contains 7/7 src URLs and 7/7 ALT strings matching frozen inventory; last modified 2026-10-30T01:11:08.",
     "All seven catalog pages opened as text via web search; all seven exact published Special:Redirect/file URL calls inaccessible through web.open wrapper. A retriever access error is not an origin 404, not an HTTP status, and not a failed visitor-browser decode.",
     "Four archival photographs carry NARA identifiers; two photographs are credited to Lee Lowery Jr; one diagram is a third-party-authored SVG. Do not conflate their different licensing chains.",
     "The SVG catalog warns of invalid SVG markup; do not classify as broken in Chrome without actual rendered decode test. Preserve mathematical labels and engineering relationships.",
@@ -327,5 +328,15 @@
       "rights_signed_off": false,
       "localization_approved": false
     }
-  ]
+  ],
+  "live_wp_recheck": {
+    "method": "WordPress.com posts.get context edit include_fields read-only",
+    "date": "2026-11-02",
+    "post_status": "publish",
+    "post_modified": "2026-10-30T01:11:08",
+    "matched_image_source_urls": 7,
+    "matched_image_alts": 7,
+    "observed_inline_image_count": 7,
+    "content_write": false
+  }
 }
