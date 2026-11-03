@@ -59,6 +59,7 @@ class Witness(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack = []
         self.article_count = 0
+        self.article_slug = None
         self.counts = {k: 0 for k in ("pa-head", "pa-body", "pa-sources", "pa-review")}
         self.sections = {}
         self.cites = []
@@ -82,6 +83,8 @@ class Witness(HTMLParser):
             need(not in_article and self.article_count == 0 and tag == "div",
                  "duplicate or nested article root")
             self.article_count += 1
+            self.article_slug = attrs.get("data-slug")
+            need(bool(self.article_slug), "missing rendered article slug")
             in_article = True
         if in_article:
             sensitive_here = bool(classes & SENSITIVE) or self.guarded()
@@ -201,6 +204,7 @@ def audit_shell(meta, rendered, source_rows):
     p.feed(rendered)
     p.close()
     p.finish()
+    need(p.article_slug == slug, slug + ": rendered article slug changed")
     need(len(p.rows) == len(ids), slug + ": source-footnote list incomplete")
     need(len(p.cites) == len(literals), slug + ": inserted citation count changed")
     head = p.sections["pa-head"]["text"]
@@ -234,6 +238,9 @@ def audit_shell(meta, rendered, source_rows):
         need(link["attrs"]["href"] == src["url"] and src["url"].startswith("https://")
              and link["text"] == src["title"],
              slug + ": source URL, text or provenance changed")
+        need(type(meta["source_use"][sid]) is str and
+             bool(meta["source_use"][sid].strip()),
+             slug + ": original source reading scope empty")
         need("Used for: " + meta["source_use"][sid] in li["text"],
              slug + ": authored source reading scope disappeared")
         marker = ("Human source-link check complete" if src.get("human_link_check") is True
