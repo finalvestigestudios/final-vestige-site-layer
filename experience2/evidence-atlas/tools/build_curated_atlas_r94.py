@@ -5,7 +5,58 @@ from pathlib import Path
 from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):return json.loads(p.read_text())
+
+# R95: explicit R92/R93 staging input contract. These are inherited artifact names,
+# not permission for a caller to attach arbitrary browser-executable assets.
+R92_INPUTS=frozenset((
+    "R85_NASA_SOURCE_REVIEW.html","R85_RIGHTS_RECEIPT.json",
+    "R87_PHOTOGRAPH_DATE_RAIL.html","R87_RAIL_RECEIPT.json",
+    "R88_READING_ROOM.html","R88_READING_ROOM_RECEIPT.json",
+    "R89_INTEGRITY_RECEIPT.json","R89_REVIEW_HUB.html",
+    "R91_ASSET_BOUNDARY_RECEIPT.json","R92_RECIPROCAL_ROUTES_RECEIPT.json",
+    "chronology_r87.css","reading_room_r88.css","reading_room_r88.js",
+    "review_hub_r89.css","rights_board_r85.css",
+))
+R93_INPUTS=frozenset((
+    "R93_SOURCE_PASSPORTS.html","R93_SOURCE_PASSPORTS.json",
+    "R93_NASA_REFERENCES.txt","R93_PASSPORT_RECEIPT.json",
+    "source_passports_r93.css","source_passports_r93.js",
+))
+R91_PINNED_ASSETS=frozenset((
+    "R85_NASA_SOURCE_REVIEW.html","R87_PHOTOGRAPH_DATE_RAIL.html",
+    "R88_READING_ROOM.html","R89_REVIEW_HUB.html",
+    "chronology_r87.css","reading_room_r88.css","reading_room_r88.js",
+    "review_hub_r89.css","rights_board_r85.css",
+))
+def verify_input_inventory(src):
+    """Admit the complete sealed input set; reject extra scripts, files, dirs and links."""
+    if src.is_symlink() or not src.is_dir():
+        raise ValueError("R94_UNREVIEWED_ASSET:SOURCE_NOT_DIRECTORY")
+    actual={p.name:p for p in src.iterdir()}
+    expected=R92_INPUTS|R93_INPUTS
+    extra=sorted(actual.keys()-expected)
+    missing=sorted(expected-actual.keys())
+    if extra:raise ValueError("R94_UNREVIEWED_ASSET:"+extra[0])
+    if missing:raise ValueError("R94_CUSTODY_FILE_MISSING:"+missing[0])
+    for name,p in actual.items():
+        if p.is_symlink() or not p.is_file():
+            raise ValueError("R94_UNREVIEWED_ASSET:NONREGULAR:"+name)
+    custody=read(src/"R91_ASSET_BOUNDARY_RECEIPT.json")
+    if (custody.get("schema")!="fv.apollo.r91.asset-boundary.v1"
+        or custody.get("release")!="STAGING_HOLD"
+        or custody.get("photographic_rights_cleared")!=0
+        or custody.get("network_asset_dependencies")!=0
+        or custody.get("deployment_allowed") is not False
+        or custody.get("source_bindings_inherited")!=24
+        or set(custody.get("files",{}))!=R91_PINNED_ASSETS):
+        raise ValueError("R94_INHERITED_ASSET_CUSTODY_GATE")
+    for name,meta in custody["files"].items():
+        if not isinstance(meta,dict) or sha(src/name)!=meta.get("sha256"):
+            raise ValueError("R94_INHERITED_ASSET_HASH_MISMATCH:"+name)
+    return [actual[name] for name in sorted(actual)]
+
 def load(src):
+    verified_files=verify_input_inventory(src)
     p=read(src/"R93_PASSPORT_RECEIPT.json");r=read(src/"R92_RECIPROCAL_ROUTES_RECEIPT.json")
     rights=read(src/"R85_RIGHTS_RECEIPT.json");book=read(src/"R93_SOURCE_PASSPORTS.json")
     if (p.get("schema")!="fv.apollo.r93.build.v1" or p.get("release")!="STAGING_HOLD"
@@ -64,17 +115,14 @@ def build(src,out,archive=None):
     if out.exists() and any(out.iterdir()):raise ValueError("R94_NONEMPTY_OUTPUT")
     if archive and archive.exists():raise ValueError("R94_ARCHIVE_EXISTS")
     data=load(src);out.mkdir(parents=True,exist_ok=True)
-    for p in sorted(src.iterdir()):
-        if p.is_file():
-            if p.suffix.lower() not in (".html",".css",".js",".json",".txt"):
-                raise ValueError("R94_UNREVIEWED_ASSET:"+p.name)
-            (out/p.name).write_bytes(p.read_bytes())
+    for p in verify_input_inventory(src):
+        (out/p.name).write_bytes(p.read_bytes())
     new={"R94_CURATED_ATLAS.html":render(data),"curated_atlas_r94.css":CSS,"curated_atlas_r94.js":JS}
     for n,s in new.items():(out/n).write_text(s)
     receipt={"schema":"fv.apollo.r94.curated-atlas.v1","release":"STAGING_HOLD","publication_approved":False,
       "photo_rights_cleared":0,"geo_pins":0,"inferred_edges":0,"source_count":6,
       "precision":{"day":5,"month":1},"r93_receipt_sha256":sha(src/"R93_PASSPORT_RECEIPT.json"),
-      "files":{n:sha(out/n) for n in sorted(new)}}
+      "files":{p.name:sha(p) for p in sorted(out.iterdir()) if p.is_file()}}
     (out/"R94_ATLAS_RECEIPT.json").write_text(json.dumps(receipt,sort_keys=True,indent=2)+"\n")
     if archive:
         archive.parent.mkdir(parents=True,exist_ok=True)
