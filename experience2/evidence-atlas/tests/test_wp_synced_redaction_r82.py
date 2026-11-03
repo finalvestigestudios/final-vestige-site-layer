@@ -15,6 +15,7 @@ from pathlib import Path
 
 from wp_reusable_r77 import accept_synced_patterns
 from wp_source_parity_r83 import NASA_SOURCE_URLS, CITE_IDS
+from wp_chronology_r84 import DATED, ORDERED_TARGETS, PORTRAIT
 
 PRIVATE = "COOKIE=apollo-secret; https://private.invalid/wp-admin"
 
@@ -34,12 +35,29 @@ class StubR83Locator:
         return []
     @property
     def first(self): return self
-    def get_attribute(self, attr): return None
+    def get_attribute(self, attr):
+        if self.selector == '.fv-ex2-ledger__chrono-unplaced time' and attr == 'datetime':
+            return '1967-01'
+        if self.selector == '.fv-ex2-ledger__chrono-unplaced a[data-fvx-chrono-link]' and attr == 'href':
+            return PORTRAIT
+        return None
+
+    def evaluate_all(self, script):
+        if self.selector.startswith('.fv-ex2-ledger__chronology > ol > li > a > time'):
+            return list(DATED)
+        if self.selector == '.fv-ex2-ledger__chronology > ol a[data-fvx-chrono-link]':
+            return list(ORDERED_TARGETS)
+        raise AssertionError('UNEXPECTED_STUB_LIST_EVALUATION')
+
     def inner_text(self):
         if self.selector == '.fv-ex2-apollo-suite__head':
             return 'no image-use rights are asserted; unconfirmed S67-19766'
         if self.selector == '.fva-custody-status':
             return '0 of 6; not a human link check, photograph inspection, or rights clearance'
+        if self.selector == '.fv-ex2-ledger__chronology-head':
+            return 'Photographs, not events during the fire; their order that day is unknown.'
+        if self.selector == '.fv-ex2-ledger__chrono-unplaced':
+            return 'Crew portrait cannot be placed before or after; catalog unconfirmed.'
         return ''
     def focus(self): self.page.focused = self.selector
     def evaluate(self, script):
@@ -94,9 +112,18 @@ class StubSuccessfulPage:
             ".fva-card__external": 6, "[data-fva-cite-id]": 6,
             "[data-fva-drawer]": 6, "[data-fva-drawer] summary": 6,
             "[data-fvx-record]:visible": 6, "[data-fva-record]:visible": 6,
+            ".fv-ex2-ledger__chrono-same-day": 1,
+            ".fv-ex2-ledger__chrono-unplaced": 1,
+            '.fv-ex2-ledger__chronology > ol a[href="#fv-ex2-ledger-apollo1-record-01"]': 0,
         }
         if selector not in counts and selector not in (
-            '.fv-ex2-apollo-suite__head', '.fva-custody-status'):
+            '.fv-ex2-apollo-suite__head', '.fva-custody-status',
+            '.fv-ex2-ledger__chronology-head',
+            '.fv-ex2-ledger__chrono-unplaced time',
+            '.fv-ex2-ledger__chrono-unplaced a[data-fvx-chrono-link]',
+            '.fv-ex2-ledger__chronology > ol > li > a > time, '
+            '.fv-ex2-ledger__chronology > ol > li.fv-ex2-ledger__chrono-group > time',
+            '.fv-ex2-ledger__chronology > ol a[data-fvx-chrono-link]'):
             raise AssertionError("UNEXPECTED_STUB_SELECTOR")
         return StubR83Locator(self, selector, counts)
 
