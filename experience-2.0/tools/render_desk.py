@@ -5,7 +5,7 @@ from fvx_lib import BadRecord, INSTANCE_PLACEHOLDER, INSTANCE_RE, esc, safe_http
 from render_flagship import _crosswalk
 
 
-def render_desk(data: dict, instance: str = "apollo1", fragment: bool = False) -> str:
+def render_desk(data: dict, instance: str = "apollo1", fragment: bool = False, with_footer: bool = True) -> str:
     """`fragment=True` renders for embedding in a WordPress post: the heading drops to h2 because the post owns the h1."""
     if instance != INSTANCE_PLACEHOLDER and not INSTANCE_RE.fullmatch(instance):
         raise BadRecord("Instance identifier must be a lowercase ASCII slug")
@@ -33,6 +33,8 @@ def render_desk(data: dict, instance: str = "apollo1", fragment: bool = False) -
 <p class="fv-ex2-record__links"><a href="{esc(safe_https(img["record_url"]))}" target="_blank" rel="noopener noreferrer">NASA archive record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a>
 <a href="{esc(safe_https(rec["report"]))}" target="_blank" rel="noopener noreferrer">Institutional research<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p>
 </article>''')
+    footer = f'''<footer class="fv-ex2-footer"><div class="fv-ex2-footer__inner"><p>Source-backed integration candidate. Not published.</p>
+<p><a href="{esc(safe_https(inv["url"]))}">Read the original investigation &#8599;</a> &middot; <a href="{esc(safe_https(report["url"]))}">NASA Review Board &#8599;</a></p></div></footer>''' if with_footer else ""
     open_main, close_main = ("", "") if fragment else ("<main>\n", "\n</main>")
     return open_main + f'''<section class="fv-ex2" data-fvx="desk" data-fvx-noun="evidence records" aria-labelledby="{prefix}-title">
 <div class="fv-ex2-wrap">
@@ -47,6 +49,5 @@ def render_desk(data: dict, instance: str = "apollo1", fragment: bool = False) -
 <p class="fv-ex2-status" data-fvx-status role="status" aria-live="polite"></p></div>
 <div class="fv-ex2-desk__grid" id="{prefix}-grid">{"".join(cards)}</div>
 <p class="fv-ex2-desk__empty" data-fvx-empty hidden>No matching evidence records. Try a different search.</p>
-<footer class="fv-ex2-footer"><div class="fv-ex2-footer__inner"><p>Source-backed integration candidate. Not published.</p>
-<p><a href="{esc(safe_https(inv["url"]))}">Read the original investigation &#8599;</a> &middot; <a href="{esc(safe_https(report["url"]))}">NASA Review Board &#8599;</a></p></div></footer>
+{footer}
 </div></section>''' + close_main

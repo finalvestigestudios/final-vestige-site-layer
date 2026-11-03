@@ -1,0 +1,89 @@
+{
+  "mobile-throttled": {
+    "runs": [
+      {
+        "lcp_ms": 1812,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1800,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1752,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1756,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1840,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1800,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1892,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      }
+    ],
+    "lcp_median_ms": 1800,
+    "lcp_max_ms": 1892,
+    "cls_median": 0.0731,
+    "cls_max": 0.0731
+  },
+  "desktop": {
+    "runs": [
+      {
+        "lcp_ms": 408,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 404,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 396,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 440,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 432,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 624,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 476,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      }
+    ],
+    "lcp_median_ms": 432,
+    "lcp_max_ms": 624,
+    "cls_median": 0.0014,
+    "cls_max": 0.0014
+  },
+  "_method": "Playwright/Edge, live theme shell served from localhost, analytics aborted, cache off. mobile-throttled = 390x844, 4x CPU, 150 ms RTT, 1.6 Mbps down / 750 kbps up (the method fixed by the founder on 2026-11-02). Lab numbers, not field data. Threshold: LCP <= 2500 ms and CLS <= 0.1 in every run."
+}

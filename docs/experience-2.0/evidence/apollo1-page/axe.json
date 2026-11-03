@@ -1,0 +1,51 @@
+{
+  "360-reduce": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  },
+  "390-reduce": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  },
+  "768-reduce": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  },
+  "1024-reduce": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  },
+  "1440-reduce": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  },
+  "1920-reduce": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  },
+  "1440-no-preference": {
+    "block_violations": [],
+    "page_violations": [],
+    "block_incomplete": [],
+    "passes": 32,
+    "axe": "4.10.2"
+  }
+}

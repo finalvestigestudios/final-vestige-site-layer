@@ -67,9 +67,11 @@ def _drawer_template(rec: dict, idx: int, total: int, desk_url: str, article_url
 </template>'''
 
 
-def _chapter(rec: dict, idx: int, total: int, nxt: dict | None, policy: dict, chrono_html: str) -> str:
+def _chapter(rec: dict, idx: int, total: int, nxt: dict | None, policy: dict, chrono_html: str, actions_html: str | None = None) -> str:
     img = rec["image"]
     rid = rec["id"]
+    if actions_html is None:
+        actions_html = f'<button type="button" class="fv-ex2-button" data-fvx-open-source="{esc(rid)}" hidden>Inspect source</button>'
     transition = ""
     if nxt:
         transition = (f'<div class="fv-ex2-transition"><a class="fv-ex2-transition__next" href="#{esc(nxt["id"])}">'
@@ -85,7 +87,7 @@ def _chapter(rec: dict, idx: int, total: int, nxt: dict | None, policy: dict, ch
 <span class="fv-ex2-plate__caption">{esc(img["caption"])}</span>
 <span class="fv-ex2-plate__id">NASA {esc(img["nasa_id"])} &middot; {esc(img["credit"])}</span></figcaption></figure>
 <details><summary>Source record and rights</summary>{_provenance(rec, policy)}</details>
-<div class="fv-ex2-plate__actions"><button type="button" class="fv-ex2-button" data-fvx-open-source="{esc(rid)}" hidden>Inspect source</button></div>
+<div class="fv-ex2-plate__actions">{actions_html}</div>
 </div></div>
 <div class="fv-ex2-chapter__text">
 <p class="fv-ex2-chapter__index">Record {idx + 1:02d} / {total:02d} &middot; {esc(rec["eyebrow"])}</p>
