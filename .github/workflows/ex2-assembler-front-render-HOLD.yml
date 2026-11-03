@@ -33,6 +33,7 @@ jobs:
         run: |
           set -euo pipefail
           python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_full_document_axe_gate.py -v
           node --check experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs
           node --check experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs
           node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs --self-test
