@@ -77,6 +77,7 @@ class Trace(HTMLParser):
         self.scripts = []
         self.h1 = []
         self.skip = []
+        self.skip_text = []
 
     def zone(self, name):
         return any(name in f["classes"] for f in self.stack)
@@ -115,6 +116,7 @@ class Trace(HTMLParser):
             self.handle_endtag(tag)
 
     def handle_data(self, data):
+        need(self.stack or not data.strip(), "unattributed text outside article root")
         self.events.append(("text", data))
         for frame in self.stack:
             frame["text"] += data
@@ -130,6 +132,8 @@ class Trace(HTMLParser):
              "truncated or misnested private HTML: " + tag)
         frame = self.stack.pop()
         self.events.append(("end", tag))
+        if tag == "a" and "pa-skip" in frame["classes"]:
+            self.skip_text.append(frame["text"])
         kind = next((k for k in ("pa-crumbs", "pa-toc", "pa-related")
                      if k in frame["classes"]), None)
         if kind is not None:
@@ -295,8 +299,9 @@ def audit_page(meta, page, lib):
     p.finish()
     need(p.root_attrs == expectations["root_attrs"],
          slug + ": root track, section or slug attributes changed")
-    need(p.skip == [{"class": "pa-skip", "href": "#pa-main"}],
-         slug + ": skip-to-guide destination changed")
+    need(p.skip == [{"class": "pa-skip", "href": "#pa-main"}]
+         and p.skip_text == ["Skip to the guide"],
+         slug + ": skip-to-guide destination or label changed")
     need(p.h1 == [meta["h1"]], slug + ": visible article headline changed")
     for key, expected in (("pa-crumbs", expectations["breadcrumbs"]),
                           ("pa-toc", expectations["toc"]),
