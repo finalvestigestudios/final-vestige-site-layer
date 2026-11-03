@@ -31,7 +31,7 @@ HEADER = ("group_number", "group_sha256", "literal_source_url_NOT_VERIFIED",
           "source_or_context_original_json_NOT_VERIFIED",
           "original_record_sha256", "human_source_review", "human_claim_review",
           "qualified_safety_review", "may_publish")
-DANGEROUS = re.compile(r"^[\\s\\uFEFF\\u200B]*[=+@\\-]", re.UNICODE)
+DANGEROUS = re.compile(r"^[\s\uFEFF\u200B]*[=+@\-]", re.UNICODE)
 
 
 class Gate(ValueError):
