@@ -1,5 +1,7 @@
 # Apollo 1 investigation page: plugin-free draft (2026-11-02)
 
+**Update (later 2026-11-02):** block 01 was changed to add the third label ("Open question") inside every chapter that has an unverified claim; the stored hash was read back (`7ce8f575...`). The tables below carry the current hashes. Review packet: `APOLLO1_REVIEW_PACKET.md`. Mobile perf on the final block: 12 runs median 1,810 ms, max 1,860 ms; an earlier 7-run batch on the same block had one 2,716 ms outlier.
+
 **Status: PRIVATE DRAFT, not published. No independent QD review exists and none is claimed (no `FVSL-QD-PASS`).** Branch `feature/atlas-apollo1-live` (cut from `feature/experience-2-living-archive-sprint5`), commit `79c0a017` plus this record. Worktree `Projects/fv-atlas-live`.
 
 ## 1. Decision: no production plugin
@@ -26,7 +28,7 @@ Each block was written with the WordPress.com content tools (`pages.create` for 
 | Block | Bytes (as stored) | SHA-1 (= WordPress `block_hash`) | SHA-256 (as stored) | SHA-256 (committed file, +trailing `\n`) |
 |---|---:|---|---|---|
 | 00-style | 23,748 | `bbf054a2f48f970fb560466102899d2c413a33fa` | `9c345e7d09b01c71953e80fc93d8cf5ecd0421d7985fb5b8b0df942a9ab95f8b` | `bd76f0a27c4430bdea43d8edbe217b320eae279eb9af469add2893e46d37aeef` |
-| 01-investigation | 30,383 | `af508c51b04e83abd63e67190fe97fc136524e52` | `1e57c403acd2dcf48d5a42f47d26be773be51e2b3610f010c5a3d710a8f15bf0` | `3feda9407b231d4d1b9ed1c1eed73781b59f738978451f01c7cdb2006f9d1bfa` |
+| 01-investigation | 32,669 | `7ce8f575b8ae075699785672020c571691c8ba1f` | `c8ffc9a84bd5530aadb4ec348eb918e1b0dd143be58206e3146a982588ec67a6` | `006e6474bf52a842759d118639808e9f3309c51116446263da2d81a9693dfc40` |
 | 02-classification | 3,503 | `dc62ad1669b81ac1d84e0ba9be486cdad47c4cda` | `89db03241291c38fa2c6f699f515193af4b87315df698a12f3fed47a90454b36` | `9aad27071d522d9695fe10e705e55a75f6de32ce7f8b11b4fcdf748c8514bca0` |
 | 03-research-desk | 22,550 | `4abe3e8ea0f17a2277f0135a1bca9ee8135fdc2f` | `1b1a358a6c01650181a1834eaa186f9502a94ba40ba9a807e508732b7f639bd4` | `bc1ae2cb0a2209ae5fb9a8f9acb2ea912c3a51329ea01f8da2fc17af2d2d977e` |
 | 04-rights | 8,318 | `dd84742473035a78ecea66ec7c03296f6ce84b20` | `bb0cab82b1ee0b495ee520c80cfb879582ad36fb8df1d68fb158250321732e13` | `3315f3df3bf2d0f296c4e5d67ef0b48a03e1b465df9fdbb6a34117bbb80a5729` |
@@ -34,7 +36,7 @@ Each block was written with the WordPress.com content tools (`pages.create` for 
 | 06-footer | 564 | `b0c723e2b898eaf47bea17dcf3809001b98e7190` | `3434198cb9a09ba031219be4570c0257b63803258f58fcd8345a7aac455a0338` | `0dfb6749b34b88f099e8d25825d8439a9ef17f1b938f9fa474aedf0bdf3ba967` |
 | 07-script | 9,655 | `2f4df25d143a4d559005aca8fb46d4d49f75b4ba` | `e6169fec1bb92471fecb4d32eeacb3de611d0b8bcc6ba865a664f534885e8c93` | `c95c1f386f2b65a37656808533b36f50f8df686697d2be3cd09ce478200dc8b0` |
 
-Whole page content (committed blocks joined by one newline, 100,762 bytes): SHA-1 `6377fb4bc33e1a1fe733fb8f0901ce50f8b5e78f`, SHA-256 `5776f2c09fa1b05cda1e93d272743bceec3497ecbcf299472e2d99cefa643bbb`. WordPress's own page `content_hash` differs because it joins blocks its own way; the per-block hashes are the proof.
+Whole page content (committed blocks joined by one newline, 103,048 bytes): SHA-1 `fc93015a77e55fae8a50d64b120ea748df6eea22`, SHA-256 `5ac375e00f31d0bee9e89b5248502296397a1ea2b290094167142192b68b1cbf`. WordPress's own page `content_hash` differs because it joins blocks its own way; the per-block hashes are the proof.
 
 Live page 6 (homepage) was not touched: re-read after the writes, block 1 SHA-1 is still `8c0dd5c3adce073fd58f5001e0f90d523ffad277`, `modified 2026-11-02T17:48:13`, earlier than every write here. Draft 1902 (earlier probe) was not touched.
 
