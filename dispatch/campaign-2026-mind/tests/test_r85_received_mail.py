@@ -87,6 +87,26 @@ class ReceivedMailAudit(unittest.TestCase):
         raw = make_mail(plain="No disclosure. " + CTA, html=html)
         self.assertFalse(scan(raw)["checks"]["commission_disclosure_present"])
 
+    def test_hidden_commercial_disclosure_not_counted_as_visible_html(self):
+        hidden = '<div style="display: none">' + DISCLOSURE + '</div>'
+        for wrapper in (
+            hidden,
+            '<div hidden>' + DISCLOSURE + '</div>',
+            '<div aria-hidden="true"><span>' + DISCLOSURE + '</span></div>',
+            '<div style="visibility: hidden">' + DISCLOSURE + '</div>',
+            '<div style="opacity:0">' + DISCLOSURE + '</div>',
+        ):
+            with self.subTest(wrapper=wrapper[:40]):
+                raw = make_mail(plain="No commercial statement.", html=wrapper + '<p>Read this.</p>')
+                self.assertFalse(scan(raw)["checks"]["commission_disclosure_present"])
+                self.assertFalse(scan(raw)["checks"]["commission_disclosure_in_first_350_visible_chars"])
+
+    def test_hidden_links_do_not_count_as_real_ctas(self):
+        html = ('<div style="display:none"><a href="' + CTA + '">Hidden CTA</a></div>'
+                '<p>Visible, but no CTA.</p>')
+        r = scan(make_mail(plain="No links here.", html=html))
+        self.assertFalse(r["checks"]["expected_first_party_cta_present"])
+
     def test_html_unsubscribe_labeled_link_detected(self):
         html = '<a href="https://wordpress.com/unsubscribe/x">Unsubscribe from newsletter</a>'
         self.assertTrue(scan(make_mail(html=html, plain="no unsubscribe here"))["checks"][
