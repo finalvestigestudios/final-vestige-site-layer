@@ -64,6 +64,13 @@ if ($action === 'create') {
     if (is_wp_error($id) || !is_int($id) || $id < 1) {
         fv_ex2_editor_refuse('Could not insert disposable draft');
     }
+    // Title may change in Gutenberg. Own the draft via a private HMAC marker
+    // bound to this one-time token and inserted ID, never by its editable title.
+    $proof = hash_hmac('sha256', (string)$id, $expected_token);
+    if (!add_post_meta($id, '_fv_ex2_editor_qa_owner', $proof, true)) {
+        wp_delete_post($id, true);
+        fv_ex2_editor_refuse('Could not establish draft ownership');
+    }
     if (file_put_contents($id_file, (string)$id, LOCK_EX) === false) {
         wp_delete_post($id, true);
         fv_ex2_editor_refuse('Could not track disposable draft');
@@ -89,9 +96,11 @@ if ($action === 'verify' || $action === 'cleanup') {
     if (!preg_match('/^[1-9]\d*$/D', $id_str)) fv_ex2_editor_refuse('Invalid disposable draft identifier');
     $id = (int)$id_str;
     $post = get_post($id);
-    if (!$post || $post->post_type !== 'page'
-        || !str_starts_with((string)$post->post_title, 'FV EX2 SYNTHETIC EDITOR')) {
-        fv_ex2_editor_refuse('Refusing an unknown or non-synthetic draft');
+    $owner = get_post_meta($id, '_fv_ex2_editor_qa_owner', true);
+    $proof = hash_hmac('sha256', (string)$id, $expected_token);
+    if (!$post || $post->post_type !== 'page' || $post->post_status !== 'draft'
+        || !is_string($owner) || !hash_equals($proof, $owner)) {
+        fv_ex2_editor_refuse('Refusing an unowned or non-draft WordPress page');
     }
     if ($action === 'cleanup') {
         $deleted = wp_delete_post($id, true);
