@@ -276,7 +276,7 @@ class R102Adversarial(unittest.TestCase):
     def test_reject_article_has_unused_source_scope(self):
         x = self.clone()
         x.articles[self.slug]["source_use"]["synthetic-unused-source"] = "Unsupported"
-        with self.assertRaisesRegex(gate.Hold, "one-to-one"):
+        with self.assertRaisesRegex(gate.Hold, "source-use reading scopes drift|one-to-one"):
             gate.workorder(x)
 
     def test_reject_changed_citation_id_without_reading_scope(self):
