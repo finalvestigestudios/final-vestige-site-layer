@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import fitz
 from playwright.sync_api import sync_playwright
 
 WIDTHS = (320, 390, 768, 1440, 1920)
@@ -107,6 +108,16 @@ def run(src: Path, out: Path, axe: Path) -> dict:
                         pdf=out/"R85_RIGHTS_BOARD_PRINT.pdf"
                         page.pdf(path=str(pdf),format="A4",print_background=True)
                         assert pdf.stat().st_size>5000,"R85_PRINT_PDF"
+                        with fitz.open(pdf) as document:
+                            printed = "".join(page.get_text() for page in document)
+                            compact = "".join(printed.split())
+                            for catalog in EXPECTED:
+                                assert catalog in compact, "R85_PRINT_CATALOG_LOST"
+                            for link in links:
+                                assert "".join(link.split()) in compact, "R85_PRINT_URL_LOST"
+                            assert "0of6photographs" in compact, "R85_PRINT_HOLD_LOST"
+                            case["pdf_pages"] = len(document)
+                            case["pdf_nasa_links_visible"] = 6
                 cases.append(case)
                 context.close()
         forced=browser.new_context(viewport={"width":390,"height":844},
