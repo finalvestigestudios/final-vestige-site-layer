@@ -6,7 +6,7 @@ $apollo_routes = [];
 function add_action($hook, $callable, $priority=10) { $GLOBALS['apollo_routes'][$hook]=$callable; }
 function add_shortcode($shortcode, $callable) { $GLOBALS['apollo_routes'][$shortcode]=$callable; }
 function current_user_can($capability) {
-    return $capability === 'edit_posts' && ($_COOKIE['apollo_r99_fixture_auth'] ?? '') === 'contract-only';
+    return $capability === 'edit_others_posts' && ($_COOKIE['apollo_r99_fixture_auth'] ?? '') === 'contract-only';
 }
 function status_header($code) { http_response_code($code); }
 function nocache_headers() {}
