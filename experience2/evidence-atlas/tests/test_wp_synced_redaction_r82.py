@@ -14,11 +14,54 @@ import unittest
 from pathlib import Path
 
 from wp_reusable_r77 import accept_synced_patterns
+from wp_source_parity_r83 import NASA_SOURCE_URLS, CITE_IDS
 
 PRIVATE = "COOKIE=apollo-secret; https://private.invalid/wp-admin"
 
 
+class StubR83Locator:
+    def __init__(self, page, selector, counts):
+        self.page = page
+        self.selector = selector
+        self.counts = counts
+
+    def count(self): return self.counts.get(self.selector, 0)
+    def all(self):
+        if self.selector == '.fva-card__external':
+            return [StubR83Element(value, 'href') for value in NASA_SOURCE_URLS]
+        if self.selector == '[data-fva-cite-id]':
+            return [StubR83Element(value, 'data-fva-cite-id') for value in CITE_IDS]
+        return []
+    @property
+    def first(self): return self
+    def get_attribute(self, attr): return None
+    def inner_text(self):
+        if self.selector == '.fv-ex2-apollo-suite__head':
+            return 'no image-use rights are asserted; unconfirmed S67-19766'
+        if self.selector == '.fva-custody-status':
+            return '0 of 6; not a human link check, photograph inspection, or rights clearance'
+        return ''
+    def focus(self): self.page.focused = self.selector
+    def evaluate(self, script):
+        if self.selector == '[data-fva-drawer]': return self.page.drawer_open
+        if self.selector == '[data-fva-drawer] summary': return self.page.focused == self.selector
+        return 'rgb(9, 10, 10)'
+
+class StubR83Element:
+    def __init__(self, value, attr): self.value, self.attr = value, attr
+    def get_attribute(self, attr): return self.value if self.attr == attr else None
+
+class StubKeyboard:
+    def __init__(self, page): self.page = page
+    def press(self, key):
+        if key == 'Enter' and self.page.focused == '[data-fva-drawer] summary':
+            self.page.drawer_open = not self.page.drawer_open
+
 class StubSuccessfulPage:
+    def __init__(self):
+        self.drawer_open = False
+        self.focused = None
+        self.keyboard = StubKeyboard(self)
     """Minimal first-case no-JS control; exercises teardown-only failure."""
 
     def on(self, *args):
@@ -48,14 +91,14 @@ class StubSuccessfulPage:
             "[data-fva-drawer] dd": 54,
             ".fv-ex2-apollo-suite img": 0,
             ".fv-ex2-apollo-suite [data-lat],[data-lon],[data-geo-edge]": 0,
+            ".fva-card__external": 6, "[data-fva-cite-id]": 6,
+            "[data-fva-drawer]": 6, "[data-fva-drawer] summary": 6,
             "[data-fvx-record]:visible": 6, "[data-fva-record]:visible": 6,
         }
-        if selector not in counts:
+        if selector not in counts and selector not in (
+            '.fv-ex2-apollo-suite__head', '.fva-custody-status'):
             raise AssertionError("UNEXPECTED_STUB_SELECTOR")
-        return type("LocalLocator", (), {
-            "count": lambda instance: counts[selector],
-            "evaluate": lambda instance, script: "rgb(9, 10, 10)",
-        })()
+        return StubR83Locator(self, selector, counts)
 
 
 class StubContext:
