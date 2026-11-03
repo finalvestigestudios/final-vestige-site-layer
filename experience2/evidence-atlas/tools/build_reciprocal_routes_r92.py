@@ -40,7 +40,7 @@ CSS='''
 .r92-evidence-routes a:focus-visible{outline:3px solid currentColor;outline-offset:3px}
 @media(max-width:480px){.r92-evidence-routes{display:grid;grid-template-columns:minmax(0,1fr)}.r92-evidence-routes a{width:100%}}
 @media(forced-colors:active){.r92-evidence-routes a{border-color:LinkText;color:LinkText}}
-@media print{.r92-evidence-routes{display:none!important}}
+.r92-print-rights{display:none}\n@media print{.r92-evidence-routes{display:none!important}.r92-print-rights{display:block!important;color:#000!important;background:#fff!important;font:normal 10pt/1.4 system-ui,sans-serif;padding:4pt 0;break-inside:avoid}}
 '''
 ARTICLE=re.compile(r'(<article\b[^>]*\bid="(?P<id>[^"]+)"[^>]*>)(?P<content>.*?)(</article>)',re.S|re.I)
 
@@ -75,7 +75,7 @@ def postprocess(folder:Path)->None:
             links=''.join('<a href="'+escape(source_href(target,record),quote=True)+'">'+
                 escape(title)+'</a>' for target,(_,_,title) in VIEWS.items() if target!=view)
             nav='<nav class="r92-evidence-routes" aria-label="Other evidence views for source '+record+'">'+links+'</nav>'
-            return match.group(1)+match.group('content')+'\n'+nav+'\n'+match.group(4)
+            return match.group(1)+match.group('content')+'\n'+nav+'\n'+('<p class="r92-print-rights"><strong>Photographic reuse: INDIVIDUAL REVIEW REQUIRED.</strong> This link is not media clearance.</p>')+'\n'+match.group(4)
         modified,count=ARTICLE.subn(add,html)
         if count!=6 or seen!={prefix+f'{i:02}' for i in range(1,7)}:
             raise ValueError('R92_INCOMPLETE_SOURCE_IDS:'+view)
@@ -153,6 +153,8 @@ def audit(folder:Path)->dict:
                 if item.get('nav_label')!='Other evidence views for source '+n or item['routes']!=expected_routes:
                     raise ValueError('R92_CROSS_VIEW_ROUTE_CORRUPT:'+view+'/'+n)
                 routecount+=len(item['routes'])
+        if view!='R89_REVIEW_HUB.html' and raw.count('class="r92-print-rights"')!=6:
+            raise ValueError('R92_PRINT_RIGHTS_INCOMPLETE:'+view)
         files[view]=digest((folder/view).read_bytes())
         files[css]=digest((folder/css).read_bytes())
     if routecount!=54 or sourcecount!=24:raise ValueError('R92_BAD_ROUTE_COUNTS')
