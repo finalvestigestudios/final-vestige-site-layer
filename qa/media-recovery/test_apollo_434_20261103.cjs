@@ -20,3 +20,7 @@ test('reject 434:3 mockup-caption mismatch erasure',()=>mutate(x=>x.images[3].hi
 test('reject post-publication permission',()=>mutate(x=>x.permissions.wordpress_write=true));
 test('reject invented upstream origin 404',()=>mutate(x=>x.images[2].original_url_observation.origin_http_status=404));
 test('reject wrong NASA photo ID',()=>mutate(x=>x.images[3].nasa_identifier='KSC-2017-0124-PH_KLS01-0129'));
+test('reject forged retriever display',()=>mutate(x=>x.images[2].original_url_observation.result='displayed'));
+test('reject incorrect 1967 NASA photographer credit',()=>mutate(x=>x.images[4].rights.credit='NASA/Kim Shiflett'));
+test('reject invented NASA catalog pixels',()=>mutate(x=>x.images[4].catalog_pixel_dimensions_px=[1920,1297]));
+test('reject forged archival pin',()=>mutate(x=>x.archive.git_blob_sha='a'.repeat(40)));
