@@ -1,0 +1,37 @@
+'use strict';
+const {validate}=require('./validate_silver_bridge_258_20261103.cjs');
+const baseline=require('./silver_bridge_258_ntsb_fhwa_20261103.json');
+const clone=()=>JSON.parse(JSON.stringify(baseline));
+let count=0;
+function t(label,edit){
+ const a=clone();if(edit) edit(a);const e=validate(a);
+ if(edit?e.length===0:e.length!==0)throw Error(label+': '+JSON.stringify(e));
+ count++;
+}
+t('baseline');
+t('fake 404',a=>a.images[1].original_observation.origin_http_status=404);
+t('fake browser status',a=>a.images[1].original_observation.guest_browser_status=200);
+t('fake decode',a=>a.images[2].original_observation.decode_verified=true);
+t('fake encoded bytes',a=>a.images[2].original_observation.encoded_transfer_bytes=4000);
+t('fake viewer result',a=>a.images[1].original_observation.result='viewer_displayed');
+t('stale source URL',a=>a.images[1].source_url=a.images[1].candidate.url);
+t('wrong image key',a=>a.images[1].key='258:9');
+t('missing image',a=>a.images.pop());
+t('post identity changed',a=>a.wp_live.id=333);
+t('unpinned image source',a=>a.pinned_source_blob='bogus');
+t('allow image upload',a=>a.images[1].candidate.wp_upload_approved=true);
+t('license clearance invented',a=>a.images[1].candidate.rights_cleared=true);
+t('crop equivalence invented',a=>a.images[3].candidate.exact_bytes_or_crop_verified=true);
+t('invent derivative pixels',a=>a.images[1].candidate.conditional_derivative_px=[960,600]);
+t('upscale tiny image',a=>a.images[0].candidate.conditional_derivative_px=[960,517]);
+t('oversize derivative',a=>a.images[5].candidate.conditional_derivative_px=[1920,1212]);
+t('distorted derivative',a=>a.images[5].candidate.conditional_derivative_px=[960,500]);
+t('wrong DPLA source width',a=>a.images[5].candidate.original_intrinsic_px=[6000,3000]);
+t('pretend DPLA rights clear',a=>a.images[5].candidate.rights_note='Public domain');
+t('wrong NTSB migration',a=>a.images[1].candidate.url='https://example.net/other.jpg');
+t('claim browser broken',a=>a.totals.browser_confirmed_broken=3);
+t('claim 76 percent',a=>a.totals.measured_reduction_percent=76);
+t('change baseline',a=>a.baseline.external_origins=42);
+t('false 42 verified',a=>a.baseline.reported_42_broken='CONFIRMED');
+t('false 76 measured',a=>a.baseline.reported_76_percent='MEASURED');
+console.log('Silver Bridge image evidence: '+count+'/'+count+' PASS');
