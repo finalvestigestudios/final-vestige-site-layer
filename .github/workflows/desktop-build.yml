@@ -68,6 +68,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r171.py
           python -OO products/desktop/scripts/safe_unittest_r171.py
+      - name: R172 premium event native custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r172.py
+          python -OO products/desktop/scripts/safe_unittest_r172.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -400,6 +404,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R171 normal value custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r171.py
           if ($LASTEXITCODE -ne 0) { throw "R171 optimized value custody tests failed" }
+      - name: R172 premium event native custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r172.py
+          if ($LASTEXITCODE -ne 0) { throw "R172 normal premium event tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r172.py
+          if ($LASTEXITCODE -ne 0) { throw "R172 optimized premium event tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
