@@ -169,6 +169,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r149.py
           python -OO products/desktop/scripts/safe_unittest_r149.py
+      - name: R150 Policy Delta compatibility-folding source evidence (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r150.py
+          python -OO products/desktop/scripts/safe_unittest_r150.py
       - name: R111 offline Defender scan custody contracts (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_defender_candidate_scan_r111.py' > /dev/null 2>&1
@@ -557,6 +561,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R149 policy Unicode evidence FAILED" }
           python -OO products/desktop/scripts/safe_unittest_r149.py
           if ($LASTEXITCODE -ne 0) { throw "R149 optimized policy Unicode evidence FAILED" }
+      - name: R150 Policy Delta compatibility-folding source evidence (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r150.py
+          if ($LASTEXITCODE -ne 0) { throw "R150 policy compatibility review FAILED" }
+          python -OO products/desktop/scripts/safe_unittest_r150.py
+          if ($LASTEXITCODE -ne 0) { throw "R150 optimized compatibility review FAILED" }
       - name: R111 offline Defender scanner and privacy contracts (normal and -OO)
         shell: pwsh
         run: |
