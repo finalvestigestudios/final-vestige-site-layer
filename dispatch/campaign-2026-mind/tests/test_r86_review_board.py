@@ -109,7 +109,7 @@ class R86BoardTests(unittest.TestCase):
         for s in ("NOT native WordPress", "NOT received Jetpack email", "NOT approved"):
             # Either board or plaintext explanation must make the distinction.
             self.assertIn(s, HTML + PLAIN)
-        self.assertIn("actual received", HTML + PLAIN)
+        self.assertIn("genuine received email", HTML + PLAIN)
         self.assertIn("HOLD_UNSENT", HTML)
         self.assertIn("HOLD_UNSENT", PLAIN)
 
