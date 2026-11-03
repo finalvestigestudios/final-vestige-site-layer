@@ -1,0 +1,78 @@
+# Isolated Apollo R103 staging only; no production, CMS, or paid-service writes.
+name: Apollo R103 rights-safe mobile source comparison and Chromium
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/build_mobile_gallery_r103.py'
+      - 'experience2/evidence-atlas/tests/test_mobile_gallery_r103.py'
+      - 'experience2/evidence-atlas/tests/browser_mobile_gallery_r103.py'
+      - 'experience2/evidence-atlas/R103_MOBILE_GALLERY_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r103-mobile-gallery.yml'
+permissions:
+  contents: read
+jobs:
+  exact-head-mobile-gallery:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Exact commit and sealed seven-view Apollo build
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r103-pycache"
+          python -m py_compile experience2/evidence-atlas/tools/build_mobile_gallery_r103.py experience2/evidence-atlas/tests/browser_mobile_gallery_r103.py
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/r94"
+          python experience2/evidence-atlas/tools/build_source_gallery_r97.py --src "$RUNNER_TEMP/r94" --out "$RUNNER_TEMP/r97"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/r98"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/r99"
+          APOLLO_R103_R99="$RUNNER_TEMP/r99" python -m unittest discover -s experience2/evidence-atlas/tests -p test_mobile_gallery_r103.py -v
+          python experience2/evidence-atlas/tools/build_mobile_gallery_r103.py --src "$RUNNER_TEMP/r99" --out "$RUNNER_TEMP/r103-one" --archive "$RUNNER_TEMP/r103-one.zip" > "$RUNNER_TEMP/r103-source-receipt.json"
+          python experience2/evidence-atlas/tools/build_mobile_gallery_r103.py --src "$RUNNER_TEMP/r99" --out "$RUNNER_TEMP/r103-two" --archive "$RUNNER_TEMP/r103-two.zip" > /dev/null
+          cmp "$RUNNER_TEMP/r103-one.zip" "$RUNNER_TEMP/r103-two.zip"
+          sha256sum "$RUNNER_TEMP/r103-one.zip" | tee "$RUNNER_TEMP/r103-source-sha256.txt"
+          php -l "$RUNNER_TEMP/r103-one/fv-apollo-r99-private-preview.php"
+          test -z "$(git status --porcelain)"
+      - name: Genuine Chromium responsive, touch, keyboard, no-JS, axe
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python -m pip install --disable-pip-version-check playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r103-axe" --ignore-scripts --no-save --no-package-lock --no-audit --no-fund axe-core@4.14.0
+          python experience2/evidence-atlas/tests/browser_mobile_gallery_r103.py \
+            --package "$RUNNER_TEMP/r103-one" \
+            --out "$RUNNER_TEMP/r103-browser" \
+            --axe "$RUNNER_TEMP/r103-axe/node_modules/axe-core/axe.min.js"
+          cp "$RUNNER_TEMP/r103-source-receipt.json" "$RUNNER_TEMP/r103-browser/"
+          cp "$RUNNER_TEMP/r103-source-sha256.txt" "$RUNNER_TEMP/r103-browser/"
+          test -z "$(git status --porcelain)"
+      - name: Preserve deterministic source and browser evidence (STAGING HOLD)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r103-mobile-gallery-CHROMIUM-STAGING-HOLD
+          path: |
+            ${{ runner.temp }}/r103-browser/
+            ${{ runner.temp }}/r103-one.zip
+            ${{ runner.temp }}/r103-source-sha256.txt
+          if-no-files-found: warn
+          retention-days: 7
