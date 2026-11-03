@@ -54,6 +54,11 @@ SEO concept: title `The Word That Was Never Read: The Science of False Memory`; 
 
 TikTok 40-second storyboard: word-list setup (0–6), closing notebook (6–12), absent term (12–19), two-column source/report (19–26), study context (26–33), evidence call-to-action (33–40). On screen: “Based on laboratory word-list experiments, not an individual diagnosis.” **Never imply that a short commercial meditation audio solves false memory.**
 
+
+## Original 40-second film: rendered offline, still not hosted
+
+The R92 original educational film *The Missing Word* is actually rendered in an offline review package: 40.000 seconds, 540×960, 12 fps, 480 H.264 frames. The original poster and six-cue WebVTT cover 0–40 seconds. The executing film renderer and captions are GitHub blob-identical to the source-controlled files here. This is not evidence of Zen12 effectiveness or a recording of the original experiments. The media ZIP is for offline review only. The B Gutenberg draft intentionally retains its no-JS poster and transcript instead of embedding an unhosted MP4. Hosted caption synchronization and accessibility remain unverified. No activation gate changes.
+
 ## QA checklist and remaining HARD HOLD
 
 Code must pass source-integrity, 360/390/768/1440/1920 layout, keyboard/visible focus, no-JS, screen reader, reduced motion, disabled-CTA, accessibility, XSS/target rel and privacy tests in staging. Release review should include real first-party MP4/VTT/browser playback if B becomes a real video treatment. This package alone does not verify Lighthouse, WordPress Gutenberg rendering, email consent or sales outcomes.
