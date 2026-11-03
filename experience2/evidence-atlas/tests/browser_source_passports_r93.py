@@ -90,6 +90,11 @@ def run(src:Path,out:Path,axe:Path,chromium:str|None=None):
                             page.screenshot(path=str(png),full_page=True,animations='disabled')
                             screens[png.name]=sha(png)
                             if width==1440:
+                                # Real print-media contrast gate; previous export left gold/muted labels faint.
+                                page.emulate_media(media='print')
+                                for selector in ('.card dt','.card a','.boundary strong'):
+                                    observed=page.locator(selector).first.evaluate('(e)=>getComputedStyle(e).color')
+                                    assert observed=='rgb(0, 0, 0)',f'PRINT_CONTRAST:{selector}:{observed}'
                                 pdf=out/'R93_SOURCE_PASSPORTS_PRINT.pdf'
                                 page.pdf(path=str(pdf),format='A4',print_background=True)
                                 import fitz
