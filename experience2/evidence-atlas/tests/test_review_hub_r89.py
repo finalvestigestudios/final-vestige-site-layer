@@ -73,7 +73,7 @@ class IntegratedReviewContracts(unittest.TestCase):
     def test_html_has_no_embedded_media_or_geo(self):
         for name in r89.PAGES:
             text = (self.output / name).read_text()
-            self.assertIsNone(re.search(r"<(?:img|video|iframe|picture|audio)\\b|data-(?:lat|lon|geo-edge)\\b",text,re.I))
+            self.assertIsNone(re.search(r"<(?:img|video|iframe|picture|audio)\b|data-(?:lat|lon|geo-edge)\b",text,re.I))
 
     def test_tampered_primary_link_fails_closed(self):
         with tempfile.TemporaryDirectory() as folder:
