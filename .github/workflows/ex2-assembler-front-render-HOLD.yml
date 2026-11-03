@@ -75,16 +75,41 @@ jobs:
               # distinguishes vendor packaging differences from malicious paths.
               print('Official Assembler ZIP first 15 public entries:',repr([x.filename for x in items[:15]]))
               if not 6 <= len(items) <= 1500: raise RuntimeError('Bad theme file count')
+              # Exact inspected archive SHA (2026-11-03): c7bf7da02463...
+              # Official WP.com ZIP roots at assembler-wpcom/, not assembler/.
+              # Re-map ONLY that documented prefix into the disposable
+              # Playground install directory named assembler; never extractall.
               total=0
+              seen=set()
+              target_root=(root/'assembler').resolve()
               for info in items:
-                  parts=pathlib.PurePosixPath(info.filename).parts
-                  if not parts or parts[0]!='assembler' or any(p in ('.','..') for p in parts):
-                      raise RuntimeError('Unsafe theme zip path: '+repr(info.filename))
+                  raw=info.filename
+                  parts=pathlib.PurePosixPath(raw).parts
+                  if (not parts or parts[0]!='assembler-wpcom'
+                      or raw.startswith('/') or '\\\\' in raw
+                      or any(p in ('.','..','') for p in raw.split('/')[1:-1])):
+                      raise RuntimeError('Unsafe official theme ZIP path: '+repr(raw))
+                  if len(parts)==1:
+                      if not info.is_dir(): raise RuntimeError('Unexpected root file')
+                      continue
+                  rel=pathlib.Path(*parts[1:])
+                  dest=(target_root/rel).resolve()
+                  if not dest.is_relative_to(target_root) or dest==target_root:
+                      raise RuntimeError('Theme path traversal denied')
+                  if dest in seen: raise RuntimeError('Duplicate theme ZIP path')
+                  seen.add(dest)
                   mode=(info.external_attr >> 16) & 0o170000
-                  if mode == stat.S_IFLNK: raise RuntimeError('Theme symlink denied')
+                  if mode == stat.S_IFLNK or mode not in (0,stat.S_IFDIR,stat.S_IFREG):
+                      raise RuntimeError('Theme symlink/special file denied')
                   total+=info.file_size
-              if total>30_000_000: raise RuntimeError('Theme expanded size too large')
-              z.extractall(root)
+                  if total>30_000_000: raise RuntimeError('Theme expanded size too large')
+                  if info.is_dir():
+                      dest.mkdir(parents=True,exist_ok=True)
+                  else:
+                      dest.parent.mkdir(parents=True,exist_ok=True)
+                      with z.open(info) as src, dest.open('wb') as dst:
+                          import shutil
+                          shutil.copyfileobj(src,dst,1024*1024)
           css=(root/'assembler'/'style.css').read_text()
           if 'Theme Name: Assembler' not in css: raise RuntimeError('Theme identity mismatch')
           print('Assembler theme preflight passed; extracted files:',len(items))
