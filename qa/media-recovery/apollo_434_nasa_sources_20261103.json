@@ -1,0 +1,313 @@
+{
+  "schema": "fv-apollo-434-live-nasa-dependency-v1",
+  "observed_date": "2026-11-03",
+  "wordpress": {
+    "post_id": 434,
+    "link": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "modified": "2026-11-02T21:37:20",
+    "status": "publish",
+    "source_reconciled_6_of_6": true,
+    "read_only": true
+  },
+  "archive": {
+    "inventory_file": "qa/media-recovery/parts/01.json",
+    "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "inventory_date": "2026-10-30"
+  },
+  "images": [
+    {
+      "key": "434:0",
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+      "stored_alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during training in January 1967.",
+      "stored_dimensions_px": [
+        1041,
+        810
+      ],
+      "source_kind": "first_party",
+      "nasa_identifier": null,
+      "canonical_catalog_url": null,
+      "catalog_id_match": false,
+      "catalog_pixel_dimensions_px": null,
+      "catalog_scene_description": null,
+      "original_url_observation": {
+        "method": "independent_web_image_retriever",
+        "result": "not_tested",
+        "retriever_timestamp_date": "2026-11-03",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_decode_ok": null,
+        "guest_natural_width_px": null,
+        "guest_wire_bytes": null
+      },
+      "conditional_derivative_px": [
+        960,
+        747
+      ],
+      "derivative_basis": "stored_html_dimensions_only",
+      "derivative_max_width_px": 960,
+      "upscale_prohibited": true,
+      "historical_caption_conflict": null,
+      "proposed_alt_review_only": null,
+      "rights": {
+        "status": "ITEM_REVIEW_REQUIRED",
+        "claim": "NASA government-photography provenance candidate; individual rights and NASA brand/endorsement limits must be checked",
+        "credit": "NASA",
+        "reuse_authorized": false
+      },
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "434:1",
+      "source_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "stored_alt": "Apollo Command and Service Module 012 during preflight processing before the Apollo 1 launch-pad fire.",
+      "stored_dimensions_px": [
+        1514,
+        1920
+      ],
+      "source_kind": "external_nasa",
+      "nasa_identifier": "S67-15717",
+      "canonical_catalog_url": "https://www.nasa.gov/gallery/apollo-1/",
+      "catalog_id_match": true,
+      "catalog_pixel_dimensions_px": null,
+      "catalog_scene_description": "Apollo Spacecraft 012 processing",
+      "original_url_observation": {
+        "method": "independent_web_image_retriever",
+        "result": "displayed",
+        "retriever_timestamp_date": "2026-11-03",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_decode_ok": null,
+        "guest_natural_width_px": null,
+        "guest_wire_bytes": null
+      },
+      "conditional_derivative_px": [
+        960,
+        1217
+      ],
+      "derivative_basis": "stored_html_dimensions_only",
+      "derivative_max_width_px": 960,
+      "upscale_prohibited": true,
+      "historical_caption_conflict": null,
+      "proposed_alt_review_only": null,
+      "rights": {
+        "status": "ITEM_REVIEW_REQUIRED",
+        "claim": "NASA government-photography provenance candidate; individual rights and NASA brand/endorsement limits must be checked",
+        "credit": "NASA",
+        "reuse_authorized": false
+      },
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "434:2",
+      "source_url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+      "stored_alt": "The Apollo 1 crew preparing to enter a command module during preflight training in 1966.",
+      "stored_dimensions_px": [
+        1920,
+        1546
+      ],
+      "source_kind": "external_nasa",
+      "nasa_identifier": "S66-58038",
+      "canonical_catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_crew_prepare_to_enter_their_spacecraft_in_the_altitude_chamber_at_Kennedy_Space_Center.jpg",
+      "catalog_id_match": true,
+      "catalog_pixel_dimensions_px": [
+        3000,
+        2417
+      ],
+      "catalog_scene_description": "Apollo 1 prime crew altitude-chamber training (1966)",
+      "original_url_observation": {
+        "method": "independent_web_image_retriever",
+        "result": "inaccessible_no_origin_status",
+        "retriever_timestamp_date": "2026-11-03",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_decode_ok": null,
+        "guest_natural_width_px": null,
+        "guest_wire_bytes": null
+      },
+      "conditional_derivative_px": [
+        960,
+        773
+      ],
+      "derivative_basis": "commons_catalog_record",
+      "derivative_max_width_px": 960,
+      "upscale_prohibited": true,
+      "historical_caption_conflict": null,
+      "proposed_alt_review_only": null,
+      "rights": {
+        "status": "ITEM_REVIEW_REQUIRED",
+        "claim": "NASA government-photography provenance candidate; individual rights and NASA brand/endorsement limits must be checked",
+        "credit": "NASA",
+        "reuse_authorized": false
+      },
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "434:3",
+      "source_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+      "stored_alt": "Apollo 1 tribute displaying the original three-part Block I hatch associated with the command module fire.",
+      "stored_dimensions_px": [
+        1920,
+        1280
+      ],
+      "source_kind": "external_nasa",
+      "nasa_identifier": "KSC-20170124-PH_KLS01_0164",
+      "canonical_catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_Tribute_spacecraft_mockup.JPG",
+      "catalog_id_match": true,
+      "catalog_pixel_dimensions_px": [
+        6720,
+        4480
+      ],
+      "catalog_scene_description": "Apollo spacecraft mockup at 2017 Apollo 1 tribute (NOT identified as original three-piece hatch)",
+      "original_url_observation": {
+        "method": "independent_web_image_retriever",
+        "result": "inaccessible_no_origin_status",
+        "retriever_timestamp_date": "2026-11-03",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_decode_ok": null,
+        "guest_natural_width_px": null,
+        "guest_wire_bytes": null
+      },
+      "conditional_derivative_px": [
+        960,
+        640
+      ],
+      "derivative_basis": "commons_catalog_record",
+      "derivative_max_width_px": 960,
+      "upscale_prohibited": true,
+      "historical_caption_conflict": "NASA ID KSC-20170124-PH_KLS01_0164 is catalogued as an Apollo spacecraft mockup, whereas live ALT describes the original three-part Apollo 1 hatch. Editorial visual review required.",
+      "proposed_alt_review_only": "Apollo spacecraft mockup displayed in the Apollo 1 tribute at Kennedy Space Center in January 2017.",
+      "rights": {
+        "status": "ITEM_REVIEW_REQUIRED",
+        "claim": "NASA government-photography provenance candidate; individual rights and NASA brand/endorsement limits must be checked",
+        "credit": "NASA/Kim Shiflett",
+        "reuse_authorized": false
+      },
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "434:4",
+      "source_url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+      "stored_alt": "Interior of Apollo Command Module 012 after the January 27, 1967 fire, showing severe heat and fire damage.",
+      "stored_dimensions_px": [
+        1920,
+        1297
+      ],
+      "source_kind": "external_nasa",
+      "nasa_identifier": "S67-21294",
+      "canonical_catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_fire.jpg",
+      "catalog_id_match": true,
+      "catalog_pixel_dimensions_px": [
+        4000,
+        2702
+      ],
+      "catalog_scene_description": "Apollo 1 damaged command module interior (January 28, 1967)",
+      "original_url_observation": {
+        "method": "independent_web_image_retriever",
+        "result": "inaccessible_no_origin_status",
+        "retriever_timestamp_date": "2026-11-03",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_decode_ok": null,
+        "guest_natural_width_px": null,
+        "guest_wire_bytes": null
+      },
+      "conditional_derivative_px": [
+        960,
+        648
+      ],
+      "derivative_basis": "commons_catalog_record",
+      "derivative_max_width_px": 960,
+      "upscale_prohibited": true,
+      "historical_caption_conflict": null,
+      "proposed_alt_review_only": null,
+      "rights": {
+        "status": "ITEM_REVIEW_REQUIRED",
+        "claim": "NASA government-photography provenance candidate; individual rights and NASA brand/endorsement limits must be checked",
+        "credit": "NASA/Kim Shiflett",
+        "reuse_authorized": false
+      },
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "434:5",
+      "source_url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+      "stored_alt": "Redesigned unified Apollo hatch developed after the Apollo 1 fire to open outward within seconds.",
+      "stored_dimensions_px": [
+        1280,
+        1920
+      ],
+      "source_kind": "external_nasa",
+      "nasa_identifier": "KSC-20170124-PH_KLS01_0090",
+      "canonical_catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_Tribute_Block_II_hatch.JPG",
+      "catalog_id_match": true,
+      "catalog_pixel_dimensions_px": [
+        4480,
+        6720
+      ],
+      "catalog_scene_description": "Redesigned Block II hatch in 2017 memorial",
+      "original_url_observation": {
+        "method": "independent_web_image_retriever",
+        "result": "inaccessible_no_origin_status",
+        "retriever_timestamp_date": "2026-11-03",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_decode_ok": null,
+        "guest_natural_width_px": null,
+        "guest_wire_bytes": null
+      },
+      "conditional_derivative_px": [
+        960,
+        1440
+      ],
+      "derivative_basis": "commons_catalog_record",
+      "derivative_max_width_px": 960,
+      "upscale_prohibited": true,
+      "historical_caption_conflict": null,
+      "proposed_alt_review_only": null,
+      "rights": {
+        "status": "ITEM_REVIEW_REQUIRED",
+        "claim": "NASA government-photography provenance candidate; individual rights and NASA brand/endorsement limits must be checked",
+        "credit": "NASA/Kim Shiflett",
+        "reuse_authorized": false
+      },
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false
+    }
+  ],
+  "scoped_totals": {
+    "inline_images": 6,
+    "external_nasa": 5,
+    "exact_source_displayed_by_independent_retriever": 1,
+    "retriever_inaccessible_without_origin_status": 4,
+    "first_party_untested": 1,
+    "guest_browser_confirmed_broken": 0,
+    "production_replacements": 0
+  },
+  "sitewide_context": {
+    "posts": 61,
+    "inline_slots": 355,
+    "external_origin_refs": 288,
+    "oversized_originals_1_5MiB": 13,
+    "alleged_broken_42_guest_confirmed": false,
+    "claimed_wire_reduction_76_percent_measured": false
+  },
+  "permissions": {
+    "download_third_party_binaries": false,
+    "republish": false,
+    "wordpress_write": false,
+    "subscription_spend": false
+  },
+  "status": "EVIDENCE_ONLY_HOLD"
+}
