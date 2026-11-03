@@ -24,6 +24,13 @@ PRINT_ALLOW_HIDDEN = frozenset({
     ".pa-skip", ".pa-card h3 a::after",
 })
 DYNAMIC_ALLOW_HIDDEN = frozenset({".pa-card[hidden]", ".pa-empty[hidden]"})
+# Exactly five existing decorative heading flourishes; never extend this
+# exemption to real source text, warnings, review blocks or print output.
+DECORATIVE_PSEUDO_HIDE_ALLOWLIST = frozenset({
+    ".pa-act h2::before", ".pa-verdict-head h2::before",
+    ".pa-sources h2::before", ".pa-review h2::before",
+    ".pa-related h2::before",
+})
 SOURCE_SELECTORS = (
     ".pa-sources", ".pa-src-meta", ".pa-src-use", ".pa-cite",
     ".pa-review", ".pa-alert", ".pa-act", ".pa-verdict",
@@ -146,7 +153,8 @@ def dangerous_declaration(selector, key, value, in_print):
     # Existing print-only removal of ancillary widgets is not evidence that
     # their content is safe to omit; report the calculator exception separately.
     if key == "display" and v == "none":
-        allowed = PRINT_ALLOW_HIDDEN if in_print else DYNAMIC_ALLOW_HIDDEN
+        allowed = (PRINT_ALLOW_HIDDEN if in_print else
+                   DYNAMIC_ALLOW_HIDDEN | DECORATIVE_PSEUDO_HIDE_ALLOWLIST)
         need(selector in allowed,
              "CSS hides non-exempt source, review or article content: " + selector)
         return
@@ -158,7 +166,7 @@ def dangerous_declaration(selector, key, value, in_print):
     if key == "opacity" and v != "1":
         raise Hold("non-opaque or computed evidence text requires human review: " + selector)
     if key in ("scale", "zoom") and (v in ("0", "0.0", "0%", ".0", "calc(0)") or
-                                      v.startswith(("var(", "env(", "clamp(", "min(", "max(")))):
+                                      v.startswith(("var(", "env(", "clamp(", "min(", "max("))):
         raise Hold("opaque computed scale cannot prove evidence visibility: " + selector)
     if key.startswith(("mask", "-webkit-mask", "clip", "filter", "-webkit-filter")):
         if v not in ("none", "auto"):
@@ -201,7 +209,7 @@ def audit_stylesheet(css):
     print_palette = []
     seen_rules = 0
 
-    def visit(chunk, in_print=False, depth=0):
+    def visit(chunk, in_print=False, print_unconditional=True, depth=0):
         nonlocal seen_rules
         need(depth <= 8, "CSS nesting exceeds trusted review bound")
         for head, body in split_top(chunk):
@@ -209,29 +217,42 @@ def audit_stylesheet(css):
                 name = head.split(maxsplit=1)[0].lower()
                 need(name in ("@media", "@container"),
                      "unreviewed CSS at-rule: " + head[:60])
-                next_print = in_print or bool(re.fullmatch(r"@media\s+print", head, re.I))
-                visit(body, next_print, depth + 1)
+                exact_print = bool(re.fullmatch(r"@media\s+print", head, re.I))
+                next_print = in_print or exact_print
+                # A print citation under screen/width/container conditions
+                # cannot prove it will appear on a printed page.
+                unconditional = print_unconditional and name == "@media" and exact_print
+                visit(body, next_print, unconditional, depth + 1)
                 continue
             options = selectors(head)
             need(options, "empty CSS selector")
             props = declarations(body)
             for selector in options:
-                need(bool(re.search(r"\.pa(?:\b|[-\w])", selector)),
+                need(bool(re.match(r"^\.pa(?:\b|[-\w])", selector)),
                      "unscoped CSS selector could affect another site pillar: " + selector)
+                # Functional/relational selectors can select ancestors or
+                # non-archive elements despite a .pa mention inside them.
+                need(not re.search(r":(?:has|is|where|not|host|global)\s*\(", selector, re.I),
+                     "complex selector requires manual scope audit: " + selector)
                 seen_rules += 1
                 need(seen_rules <= 2000, "stylesheet exceeds audited selector budget")
                 for key, value in props.items():
                     dangerous_declaration(selector, key, value, in_print)
                 if in_print:
                     print_rules.append(selector)
+                    for background_key in ("background", "background-color"):
+                        if background_key in props:
+                            need(props[background_key] in (
+                                "transparent", "none", "#fff", "#ffffff"),
+                                "print background may obscure dark evidence text: " + selector)
                     if "color" in props:
                         need(props["color"] in ("#000", "#000000"),
                              "print text must remain ink-black: " + selector)
-                    if selector in (".pa", ".pa *", ".pa a"):
+                    if print_unconditional and selector in (".pa", ".pa *", ".pa a"):
                         print_palette.append((selector, props))
                     if selector in PRINT_ALLOW_HIDDEN and props.get("display") == "none":
                         hidden_print.append(selector)
-                    if selector == SITE_PRINT_HREF_SELECTOR:
+                    if selector == SITE_PRINT_HREF_SELECTOR and print_unconditional:
                         href_print.append(props)
                 else:
                     rules.append(selector)
@@ -240,8 +261,8 @@ def audit_stylesheet(css):
     need(len(href_print) == 1,
          "print view must expose each external source hyperlink's full URL")
     content = re.sub(r"\s+", "", href_print[0].get("content", ""))
-    need('attr(href)' in content and 'none' not in content,
-         "printed source URL annotation changed or removed")
+    need(content == '"("attr(href)")"',
+         "printed source URL annotation must use the exact, non-editorial href formatter")
     need(len(print_rules) > 0 and len(rules) > 0,
          "stylesheet lacks print or regular scoped content rules")
     need(any(selector == ".pa" and props.get("color") in ("#000", "#000000")
@@ -260,6 +281,8 @@ def audit_stylesheet(css):
         "print_selectors_audited": len(print_rules),
         "print_external_source_url_annotation": True,
         "print_hidden_ancillary_selectors": sorted(set(hidden_print)),
+        "screen_only_decorative_pseudo_hide_exceptions_NOT_SAFETY_APPROVAL":
+            sorted(DECORATIVE_PSEUDO_HIDE_ALLOWLIST),
         "calculator_hidden_on_print_REVIEW_REQUIRED": ".pa-tool" in hidden_print,
         "static_css_diagnostics_only": True,
         "browser_print_QA": "NOT_REVIEWED",

@@ -217,5 +217,106 @@ class InvalidTypes(unittest.TestCase):
             audit(MINIMAL + "@media print { .pa-review {display:none} }")
 
 
+
+# R99 baseline regression and conservative print-eligibility gates.
+# The existing CSS hides five *decoration-only* ::before flourishes; previously
+# the R98 gate rejected its own original stylesheet before corpus testing.
+DECORATIVE_PSEUDOS = (
+    ".pa-act h2::before", ".pa-verdict-head h2::before",
+    ".pa-sources h2::before", ".pa-review h2::before",
+    ".pa-related h2::before",
+)
+
+class R99ActualBaseline(unittest.TestCase):
+    def test_all_five_existing_decorative_exceptions_are_exact_and_reported(self):
+        css = (ROOT / "assets" / "preparedness.css").read_text(encoding="utf-8")
+        report = audit(css)
+        self.assertEqual(
+            report["screen_only_decorative_pseudo_hide_exceptions_NOT_SAFETY_APPROVAL"],
+            sorted(DECORATIVE_PSEUDOS),
+        )
+        self.assertEqual(report["browser_print_QA"], "NOT_REVIEWED")
+        self.assertIs(report["may_publish"], False)
+
+    def test_outside_print_color_schemes_unchanged(self):
+        self.assertTrue(audit(MINIMAL + "\n.pa-alert { background: #000; }")[
+            "static_css_diagnostics_only"])
+
+    def test_literal_print_annotation_is_not_qualified_source_approval(self):
+        result = audit(MINIMAL)
+        self.assertEqual(result["release_state"], "HOLD")
+        self.assertNotIn("source_verified", result)
+
+
+class R99RejectPseudoOrCondition(unittest.TestCase):
+    pass
+
+for i, selector in enumerate(DECORATIVE_PSEUDOS):
+    def test_allow(self, selector=selector):
+        report = audit(MINIMAL + "\n" + selector + " { display:none; }")
+        self.assertFalse(report["may_publish"])
+    setattr(R99ActualBaseline, "test_exact_decorative_exception_" + str(i), test_allow)
+
+    def test_deny_print(self, selector=selector):
+        with self.assertRaises(gate.Hold):
+            audit(MINIMAL + "\n@media print {" + selector + "{display:none;}}")
+    setattr(R99RejectPseudoOrCondition, "test_no_print_decoration_exception_" + str(i), test_deny_print)
+
+for i, selector in enumerate((".pa-review h3::before", ".pa-sources h2",
+                               ".pa-alert::before", ".pa-act h2",
+                               ".pa-related h2::after", ".pa-review dt")):
+    def test_deny(self, selector=selector):
+        with self.assertRaises(gate.Hold):
+            audit(MINIMAL + "\n" + selector + "{display:none;}")
+    setattr(R99RejectPseudoOrCondition, "test_no_other_hidden_selector_" + str(i), test_deny)
+
+for i, prefix in enumerate(("@media screen { ", "@media (max-width: 1000px) { ",
+                             "@media (prefers-reduced-motion: no-preference) { ",
+                             "@container (min-width: 600px) { ")):
+    def test_unreachable(self, prefix=prefix):
+        css = MINIMAL.replace("@media print {", prefix + "@media print {", 1) + "\n}"
+        with self.assertRaises(gate.Hold):
+            audit(css)
+    setattr(R99RejectPseudoOrCondition, "test_conditional_print_wrapper_" + str(i), test_unreachable)
+
+for i, selector in enumerate(("body:has(.pa)", "html:where(.pa)", ":is(.pa)",
+                               "main:has(.pa-review)", "body .pa + section",
+                               ".pa:has(body)", ".pa:is(body)")):
+    def test_scope(self, selector=selector):
+        with self.assertRaises(gate.Hold):
+            audit(MINIMAL + "\n" + selector + "{color:red;}")
+    setattr(R99RejectPseudoOrCondition, "test_complex_or_leaky_scope_" + str(i), test_scope)
+
+for i, declaration in enumerate(("background:#000", "background-color:#000",
+                                 "background:var(--pa-bg)",
+                                 "background-color:rgba(0,0,0,1)",
+                                 "background:linear-gradient(#000,#000)",
+                                 "background:#123456!important")):
+    def test_background(self, declaration=declaration):
+        with self.assertRaises(gate.Hold):
+            audit(MINIMAL + "\n@media print { .pa-review {" + declaration + ";}}")
+    setattr(R99RejectPseudoOrCondition, "test_black_or_opaque_print_background_" + str(i), test_background)
+
+for i, value in enumerate(('"VERIFIED " attr(href)', '"ref: " attr(href)',
+                           'attr(href) " (official)"',
+                           '" (reference) " attr(href) ")"',
+                           '" (" attr(href) ") " attr(title)')):
+    def test_annotation(self, value=value):
+        css = MINIMAL.replace('" (" attr(href) ")"', value)
+        with self.assertRaises(gate.Hold):
+            audit(css)
+    setattr(R99RejectPseudoOrCondition, "test_nonliteral_print_annotation_" + str(i), test_annotation)
+
+def test_implicit_print_container_suppression(self):
+    css = MINIMAL.replace(PRINT_URL, "") + (
+        "\n@media print { @container (min-width: 600px) {"
+        + PRINT_URL + "} }")
+    with self.assertRaises(gate.Hold):
+        audit(css)
+
+setattr(R99RejectPseudoOrCondition,
+        "test_print_url_under_conditional_container_not_sufficient",
+        test_implicit_print_container_suppression)
+
 if __name__ == "__main__":
     unittest.main()
