@@ -15,9 +15,9 @@ import sys
 
 MAX_WORKFLOW_BYTES = 128 * 1024
 APPROVED = {
-    "actions/checkout": "11bd71901bbe5b1630ceea73d27597364c9af683",  # v4.2.2
-    "actions/setup-python": "a26af69be951a213d495a4c3e4e4022e16d87065",  # v5.6.0
-    "actions/upload-artifact": "ea165f8d65b6e75b540449e92b4886f43607fa02",  # v4.6.2
+    "actions/checkout": "08c6903cd8c0fde910a37f88322edcfb5dd907a8",  # v5.0.0 · node24
+    "actions/setup-python": "e797f83bcb11b83ae66e0230d6156d7c80228e7c",  # v6.0.0 · node24
+    "actions/upload-artifact": "b7c566a772e6b6bfb58ed0dc250532a479d7789f",  # v6.0.0 · node24
 }
 EXPECTED_COUNTS = {name: 2 for name in APPROVED}
 USES = re.compile(r"^\s*(?:-\s*)?uses:\s*(.*?)\s*$")
