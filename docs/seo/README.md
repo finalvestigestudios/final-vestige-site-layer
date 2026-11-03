@@ -9,6 +9,7 @@ Branch `feature/seo-competitor-implementation`, cut from `feature/experience-2-l
 | `03-INTERNAL-LINK-MAP.md` | Clusters, hubs and exactly which pages link where; what was deliberately not done |
 | `04-CHANGESET-DIFFS.md` | Exact before/after of every change (generated) |
 | `SEO_IMPLEMENTATION_LEDGER.md` | What was applied, hashes before/after, public-site verification, rollback (generated) |
+| `06-NEW-POSTS-LINKING-PROPOSAL.md` | **Unapplied** proposal to link the five 2026-11-02 posts (1917, 1920, 1922, 1924, 1926): 14 blocks, 20 links, relevance reasons, lock tokens, duplicate check |
 | `05-GSC-MEASUREMENT-PLAN.md` | Search Console before/after plan with groups and decision rules fixed in advance |
 | `evidence/` | Crawls before and after, pre-edit snapshot, change set, execution results, verification |
 | `tools/` | `crawl_public_site.py`, `build_changeset.py`, `build_ledger.py` |

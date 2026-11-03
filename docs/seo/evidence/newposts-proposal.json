@@ -1,0 +1,339 @@
+{
+ "status": "PROPOSED, NOT APPLIED",
+ "locks_read": "2026-11-02 (stale after any edit)",
+ "items": [
+  {
+   "direction": "outbound",
+   "target_id": 1917,
+   "target_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+   "op": "post-sections.insert",
+   "index": 26,
+   "expected_modified": "2026-11-02T20:48:54",
+   "expected_content_hash": "087bd41bbb4e66433ac377d82eeebbfe81fa5d7c",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/the-lost-landscape/\">The Lost Landscape</a></li><li><a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/the-lost-landscape/",
+     "title": "The Lost Landscape",
+     "reason": "The post is about reading an old chart's own notes and sources; The Lost Landscape is the site's guide to reconstructing places from old maps."
+    },
+    {
+     "to": "https://finalvestige.com/the-archive-trail/",
+     "title": "The Archive Trail",
+     "reason": "The Antarctica claim is the classic claim-versus-record case; The Archive Trail is the site's field kit for verifying historical claims."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "immediately before the closing FAQPage JSON-LD html block, after the sources list",
+   "block_markup_sha1": "4e81c07a648f35dfdf1b5c9d1f478862a4ad503e"
+  },
+  {
+   "direction": "outbound",
+   "target_id": 1920,
+   "target_url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+   "op": "post-sections.insert",
+   "index": 24,
+   "expected_modified": "2026-11-02T20:50:12",
+   "expected_content_hash": "c61b8530eb57d834814d8d09849e13cde83d7e38",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/they-painted-over-archimedes/\">They Painted Over Archimedes</a></li><li><a href=\"https://finalvestige.com/the-working-order/\">The Working Order</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+     "title": "They Painted Over Archimedes",
+     "reason": "Both are ancient objects whose real nature was recovered with modern analysis (this post: electron microscopy of the glass)."
+    },
+    {
+     "to": "https://finalvestige.com/the-working-order/",
+     "title": "The Working Order",
+     "reason": "The post discusses how the cup was probably made and what is not known; The Working Order is the site's guide to reconstructing how historical objects and processes were made. Weakest of the ten; drop if the user prefers."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "immediately before the closing FAQPage JSON-LD html block, after the sources list",
+   "block_markup_sha1": "f60a0ad775764d22a0fe95b5be3fa6e179ab6890"
+  },
+  {
+   "direction": "outbound",
+   "target_id": 1922,
+   "target_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+   "op": "post-sections.insert",
+   "index": 29,
+   "expected_modified": "2026-11-02T20:51:39",
+   "expected_content_hash": "5ff50b4a0571a69beca449fee71acf8e19d17f09",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a></li><li><a href=\"https://finalvestige.com/the-missing-caption/\">The Missing Caption</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/the-failure-chain/",
+     "title": "The Failure Chain",
+     "reason": "The post is about missed observations; The Failure Chain has a section on warning-to-action latency and evidence confidence for reading failures."
+    },
+    {
+     "to": "https://finalvestige.com/the-missing-caption/",
+     "title": "The Missing Caption",
+     "reason": "Change blindness is the reason side-by-side photograph comparison fails; The Missing Caption is the site's guide to comparing and dating photographs."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "immediately before the closing FAQPage JSON-LD html block, after the sources list",
+   "block_markup_sha1": "220122b26c0d1714548d6cf515771700aa41f643"
+  },
+  {
+   "direction": "outbound",
+   "target_id": 1924,
+   "target_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+   "op": "post-sections.insert",
+   "index": 32,
+   "expected_modified": "2026-11-02T20:52:58",
+   "expected_content_hash": "3d8f41cf528f27baf08ed4170079006f76834198",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a></li><li><a href=\"https://finalvestige.com/watch/primary-sources/\">Primary Historical Sources &amp; Archives</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/the-archive-trail/",
+     "title": "The Archive Trail",
+     "reason": "The 1784 report is the model of a controlled test of a claim; The Archive Trail is the site's field kit for verifying historical claims."
+    },
+    {
+     "to": "https://finalvestige.com/watch/primary-sources/",
+     "title": "Primary Historical Sources & Archives",
+     "reason": "The commission's report is a primary source (cited from Project Gutenberg); this is the site's primary-sources hub."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "immediately before the closing FAQPage JSON-LD html block, after the sources list",
+   "block_markup_sha1": "df5d171cbc716b4c3d80e34e4b1677027e86c358"
+  },
+  {
+   "direction": "outbound",
+   "target_id": 1926,
+   "target_url": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+   "op": "post-sections.insert",
+   "index": 25,
+   "expected_modified": "2026-11-02T20:54:10",
+   "expected_content_hash": "b097f1ad3460780efabad87f24a7d2af57256eda",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/the-findspot/\">The Findspot</a></li><li><a href=\"https://finalvestige.com/the-paper-witness/\">The Paper Witness</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/the-findspot/",
+     "title": "The Findspot",
+     "reason": "The skulls' central problem is missing find context; The Findspot is the site's guide to documenting finds without losing context."
+    },
+    {
+     "to": "https://finalvestige.com/the-paper-witness/",
+     "title": "The Paper Witness",
+     "reason": "The 2008 paper traces the skull's dealer and sale records; The Paper Witness is the site's guide to document provenance."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "immediately before the closing FAQPage JSON-LD html block, after the sources list",
+   "block_markup_sha1": "99c76342dbf2b32f02b617a6603e8ee360513f7a"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 499,
+   "target_url": "https://finalvestige.com/watch/maps-places/",
+   "target_title": "Historical Maps & Place Research",
+   "op": "page-sections.insert",
+   "index": 10,
+   "expected_modified": "2026-10-29T21:22:26",
+   "expected_content_hash": "a12b1816450fb6f9138d44d3d0a2b9494a2b31a1",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/piri-reis-map/\">The Piri Reis Map: What the 1513 Chart Actually Shows</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+     "title": "The Piri Reis Map: What the 1513 Chart Actually Shows",
+     "reason": "The hub for historical maps and place research has no link to any map case study; this is the site's map-and-chart case study."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "915ef7fa7cde45e751fc048e9b6fb88d42b21caa"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 193,
+   "target_url": "https://finalvestige.com/the-lost-landscape/",
+   "target_title": "The Lost Landscape",
+   "op": "page-sections.insert",
+   "index": 2,
+   "expected_modified": "2026-08-26T11:16:25",
+   "expected_content_hash": "bcc5bbea15f18003d74919b89c0225e62d09a6e6",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/piri-reis-map/\">The Piri Reis Map: What the 1513 Chart Actually Shows</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+     "title": "The Piri Reis Map: What the 1513 Chart Actually Shows",
+     "reason": "The old-maps method guide: a worked example of a single historical chart and what it does and does not show."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "915ef7fa7cde45e751fc048e9b6fb88d42b21caa"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 501,
+   "target_url": "https://finalvestige.com/watch/objects-archaeology/",
+   "target_title": "Archaeology, Objects & Museum Collections",
+   "op": "page-sections.insert",
+   "index": 10,
+   "expected_modified": "2026-08-31T22:32:56",
+   "expected_content_hash": "bfe9a11f9c5cd27c704e15b7bcce6d72c825dbb4",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case studies</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/lycurgus-cup/\">The Lycurgus Cup: The Roman Glass That Changes Color</a></li><li><a href=\"https://finalvestige.com/2026/11/02/crystal-skulls/\">Crystal Skulls: What the Evidence Says About Their Age</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+     "title": "The Lycurgus Cup: The Roman Glass That Changes Color",
+     "reason": "Objects hub: the Lycurgus Cup is an object case study."
+    },
+    {
+     "to": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+     "title": "Crystal Skulls: What the Evidence Says About Their Age",
+     "reason": "Objects hub: crystal skulls are an object-authenticity case study (same block as the Lycurgus Cup)."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "6f83da7696f02a22cc2a034dfea9dda5628f0f7e"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 254,
+   "target_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+   "target_title": "The Lump Had Gears",
+   "op": "post-sections.insert",
+   "index": 40,
+   "expected_modified": "2026-10-29T15:50:32",
+   "expected_content_hash": "e7be9cf3b7159f9e4f6bfed0bedd5ea31a37ce74",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/lycurgus-cup/\">The Lycurgus Cup: The Roman Glass That Changes Color</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+     "title": "The Lycurgus Cup: The Roman Glass That Changes Color",
+     "reason": "Both are ancient objects that modern analysis explained; the Antikythera post already points readers at what instruments reveal."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "b92a5578c006bee0aa25951f24c5c529a180139d"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 1122,
+   "target_url": "https://finalvestige.com/the-missing-caption/",
+   "target_title": "The Missing Caption",
+   "op": "page-sections.insert",
+   "index": 3,
+   "expected_modified": "2026-11-02T21:41:04",
+   "expected_content_hash": "325dbd1f21c0c9bbdae3b708ad7e47b379cefac2",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/change-blindness/\">Change Blindness: Why You Miss Big Changes Right in Front of You</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/change-blindness/",
+     "title": "Change Blindness: Why You Miss Big Changes Right in Front of You",
+     "reason": "Photograph-comparison guide; change blindness explains why people miss differences between two images."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "3687f0fa188d49995e5dc4612867a0f230c9bdfc"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 1338,
+   "target_url": "https://finalvestige.com/free-resources/research-sources/",
+   "target_title": "Research Sources",
+   "op": "page-sections.insert",
+   "index": 3,
+   "expected_modified": "2026-10-29T12:50:46",
+   "expected_content_hash": "4c4f8f303c55ac56d3472b9f5db81038be33c064",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/change-blindness/\">Change Blindness: Why You Miss Big Changes Right in Front of You</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/change-blindness/",
+     "title": "Change Blindness: Why You Miss Big Changes Right in Front of You",
+     "reason": "Research Sources is where the change-blindness post already sends readers from its side; this makes the link reciprocal."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "3687f0fa188d49995e5dc4612867a0f230c9bdfc"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 1377,
+   "target_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+   "target_title": "Puységur’s Animal Magnetism Files",
+   "op": "page-sections.insert",
+   "index": 1,
+   "expected_modified": "2026-10-23T02:10:19",
+   "expected_content_hash": "108c81d667f53b52a9d3c0cdbdbb9414195f1e34",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/mesmerism/\">Mesmerism: What Franklin’s 1784 Commission Actually Found</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/mesmerism/",
+     "title": "Mesmerism: What Franklin’s 1784 Commission Actually Found",
+     "reason": "The Puységur files page is the continuation of the Mesmer story (Mesmer's follower); the post already links to it, this makes it reciprocal."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "9d49540a8f2458d5086f86489ec1a321b1ea0e6f"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 498,
+   "target_url": "https://finalvestige.com/watch/primary-sources/",
+   "target_title": "Primary Historical Sources & Archives",
+   "op": "page-sections.insert",
+   "index": 12,
+   "expected_modified": "2026-10-29T21:21:30",
+   "expected_content_hash": "20e9fd2b28d39779763e0d1d2d259f5b97a64df1",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/mesmerism/\">Mesmerism: What Franklin’s 1784 Commission Actually Found</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/mesmerism/",
+     "title": "Mesmerism: What Franklin’s 1784 Commission Actually Found",
+     "reason": "Primary-sources hub: the 1784 commission report is a primary source."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "9d49540a8f2458d5086f86489ec1a321b1ea0e6f"
+  },
+  {
+   "direction": "inbound",
+   "target_id": 1044,
+   "target_url": "https://finalvestige.com/the-findspot/",
+   "target_title": "The Findspot",
+   "op": "page-sections.insert",
+   "index": 6,
+   "expected_modified": "2026-11-02T21:40:56",
+   "expected_content_hash": "fd368ad49a80029260dbc344369a23c2eaddf13a",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related case study</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/11/02/crystal-skulls/\">Crystal Skulls: What the Evidence Says About Their Age</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "links": [
+    {
+     "to": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+     "title": "Crystal Skulls: What the Evidence Says About Their Age",
+     "reason": "Find-context guide: crystal skulls are the standard example of objects with no recorded find context."
+    }
+   ],
+   "duplicates_found": [],
+   "insertion_note": "appended as the last top-level block",
+   "block_markup_sha1": "3a0be90c3a7cfb03d78bf0f388d52b6f9495ce06"
+  }
+ ]
+}
