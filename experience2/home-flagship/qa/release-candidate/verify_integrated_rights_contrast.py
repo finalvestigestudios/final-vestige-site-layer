@@ -59,7 +59,7 @@ def grade(cases: list[dict], css_digest: str) -> dict:
             and c.get("nypl_source_links", 0) >= 2
             and c.get("images_before") == 3 and c.get("images_after") == 2
             and c.get("overflow_after") is False
-            and c.get("nypl_transferred_bytes") == 0
+            and c.get("nypl_http_responses") == 0
             and q.get("nypl_file_absent") is True
             and q.get("original_claim_absent") is True
             and q.get("corrected_credit_present") is True
@@ -136,7 +136,7 @@ def capture(out: Path, axe_path: Path) -> tuple[list[dict], str]:
                     reduced_motion="reduce",
                     service_workers="block", accept_downloads=False,
                 )
-                blocked = {"nypl": 0, "non_get": 0}
+                blocked = {"nypl": 0, "non_get": 0, "nypl_http_responses": 0}
                 def route_guard(route):
                     req = route.request
                     if refuse_request(req.method, req.url):
@@ -148,6 +148,10 @@ def capture(out: Path, axe_path: Path) -> tuple[list[dict], str]:
                     else:
                         route.continue_()
                 context.route("**/*", route_guard)
+                def observe_response(response):
+                    if NYPL_FILE.lower() in response.url.lower():
+                        blocked["nypl_http_responses"] += 1
+                context.on("response", observe_response)
                 try:
                     page = context.new_page()
                     response = page.goto(URL, wait_until="domcontentloaded", timeout=45000)
@@ -177,7 +181,7 @@ def capture(out: Path, axe_path: Path) -> tuple[list[dict], str]:
                         "chapters": chapters, "margins": records,
                         "focus_links": links, "nypl_source_links": source_links,
                         "images_before": images_before, "images_after": images_after,
-                        "nypl_transferred_bytes": 0,
+                        "nypl_http_responses": blocked["nypl_http_responses"],
                         "blocked_nypl_requests": blocked["nypl"],
                         "blocked_non_get_requests": blocked["non_get"],
                         "non_get_requests_allowed": 0,
