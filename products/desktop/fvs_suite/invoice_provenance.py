@@ -26,10 +26,12 @@ def attach_invoice_provenance(
     Uses CSV physical line numbers from the verified source snapshot. An ID
     is a deterministic locator, NOT a signature or fraud/compliance finding.
     An empty report remains empty; still validate the supplied digest.
+    Direct API source records are copied from native dictionary storage and
+    must use exact built-in audit identity types, never subclassed views.
     """
-    if not isinstance(source_sha256, str) or not _SHA256.fullmatch(source_sha256):
+    if type(source_sha256) is not str or not _SHA256.fullmatch(source_sha256):
         raise ValueError("Invoice source SHA-256 must be canonical lowercase hex")
-    if not isinstance(report_rows, list):
+    if type(report_rows) is not list:
         raise ValueError("Invoice candidate report must be a list")
     if len(report_rows) > MAX_CANDIDATES:
         raise ValueError("Too many invoice review candidates; no report was saved")
@@ -39,12 +41,20 @@ def attach_invoice_provenance(
     for row in report_rows:
         if not isinstance(row, dict):
             raise ValueError("Invoice candidate must be a report record")
+        # A direct API caller can supply a dict subclass whose get(), items(),
+        # keys(), __iter__() or __getitem__() manufactures a benign view.
+        # Inspect real storage through built-in descriptors before copying; this
+        # is the same source-custody rule enforced before candidate discovery.
+        # Subclassed str field names can forge hash/equality with "row_a".
+        if any(type(field) is not str for field in dict.keys(row)):
+            raise ValueError("Invoice candidate field names must be plain text")
+        row = dict(dict.items(row))
         a, b, status = row.get("row_a"), row.get("row_b"), row.get("status")
-        if (not isinstance(a, str) or not _PHYSICAL_LINE.fullmatch(a)
-                or int(a) < 2 or not isinstance(b, str)
+        if (type(a) is not str or not _PHYSICAL_LINE.fullmatch(a)
+                or int(a) < 2 or type(b) is not str
                 or not _PHYSICAL_LINE.fullmatch(b) or int(b) < 2 or a == b):
             raise ValueError("Invoice candidate requires two distinct physical CSV rows")
-        if not isinstance(status, str) or status not in _CANDIDATE_KINDS:
+        if type(status) is not str or status not in _CANDIDATE_KINDS:
             raise ValueError("Invoice candidate has an unsupported review classification")
         unordered = (status, frozenset((a, b)))
         if unordered in seen_pairs:
