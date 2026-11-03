@@ -113,9 +113,9 @@ def render_chronology(rows: list[dict]) -> tuple[str, str]:
     unresolved: list[dict] = []
     for row in rows:
         precision, stamp = row["date_precision"], row["taken_date"]
-        if precision == "DAY" and re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", stamp):
+        if precision == "DAY" and re.fullmatch(r"\d{4}-\d{2}-\d{2}", stamp):
             dated.setdefault(stamp, []).append(row)
-        elif precision == "MONTH_ONLY" and re.fullmatch(r"\\d{4}-\\d{2}", stamp):
+        elif precision == "MONTH_ONLY" and re.fullmatch(r"\d{4}-\d{2}", stamp):
             unresolved.append(row)
         else:
             raise ValueError("R80_DATE_PRECISION_NOT_SUPPORTED")
@@ -145,7 +145,7 @@ def render_chronology(rows: list[dict]) -> tuple[str, str]:
         f'<p><a href="#record-{esc(one["id"])}">Review NASA source {esc(one["id"])}'
         ' and its provisional catalog association</a></p></aside>'
     )
-    return "\\n".join(checkpoints), month
+    return "\n".join(checkpoints), month
 
 
 def render_html(root: Path) -> str:
