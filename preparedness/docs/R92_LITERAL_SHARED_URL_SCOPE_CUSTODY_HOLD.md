@@ -2,7 +2,7 @@
 
 **Issue:** #136 | **Ancestor:** R91 Draft PR #760, exact base f4e3577839cef3590f83fca90dca6ab165794bd3 | **Release:** HOLD, draft only.
 
-R91 preserved 41 complete reviewer packets and 2,173 original citation occurrences. R92 binds the **30 original shared-URL collision groups** to the exact citation occurrences within the original release-candidate drafts. The repeated URL records are **not** merged, canonicalized, altered, equated, or automatically approved. The complete nested R91 -> R90 -> R89 -> R88 -> R80 original evidence remains present and digest-sealed.
+The sealed R91 *historical reviewer ledger* preserves 41 document-review packets (35 articles, six tool slots) and 2,173 original citation occurrences. **An independent actual-content check found only 36 WordPress-ready draft files: 35 articles + one implemented tool (`water-planner`). The other five taxonomy tools have `not-started` status and lack draft files.** These must not be represented as WordPress-ready pages or silently fabricated; R92 preserves the 41 historical review packets while also recording the missing five actual draft files. R92 binds the **30 original shared-URL collision groups** to actual current draft citation occurrences without conflating the two ledgers. The repeated URL records are **not** merged, canonicalized, altered, equated, or automatically approved. The complete nested R91 -> R90 -> R89 -> R88 -> R80 original evidence remains present and digest-sealed.
 
 ## Safeguards introduced
 
@@ -16,7 +16,9 @@ R91 preserved 41 complete reviewer packets and 2,173 original citation occurrenc
 
 | Quantity | Expected |
 |---|---:|
-| Article drafts / tool drafts / total | 35 / 6 / 41 |
+| Sealed R91 historical article packets / planned tool slots / total review packets | 35 / 6 / 41 |
+| Current WordPress-ready article drafts / implemented tools / actual draft files | **35 / 1 / 36** |
+| Planned tool slots without any implemented draft file | **5** |
 | Unabridged original article DOM blocks, preserved in R91 | 4,070 |
 | Original literal citation occurrences | 2,173 |
 | Distinct original origin-scoped citation-to-source edges | 2,359 |
@@ -48,3 +50,9 @@ Recheck the exact seven Claude contributor head SHAs, standalone RC PR #584, ind
 Five advanced/frozen contributor provenance discrepancies, 30 unresolved URL groups, 15 safety exceptions, 22 editorial decisions, human external source and claim review, qualified medical and emergency safety assessment, real WordPress browser/a11y QA, independent QD, mandatory integrity and release authorization remain **OPEN**.
 
 No article body, original source file, taxonomy, navigation, homepage, CMS, WordPress or public website changes. No published URLs, false source approvals, falsely claimed medical safety, QD PASS or automatic branch merging.
+
+## Newly confirmed release inventory discrepancy (human reconciliation required)
+
+The actual `preparedness/content/articles/` directory contains 35 article metadata/body pairs. `preparedness/content/tools/` contains only `water-planner.meta.json` and `water-planner.body.html`. Taxonomy declares six tools and marks five as `not-started`: `pantry-worksheet`, `reunification-plan`, `kit-builder`, `checklists`, and `offline-reference`. The sealed R91 historical review evidence reports six tool packets; those records are **preserved**, not reclassified as currently available drafts. R92 fails closed if the actual 35+1 census unexpectedly changes, or if the five pending taxonomy slots cease being explicitly `not-started` without corresponding accountable draft reconciliation. No phantom WordPress pages, navigation entries or pretend tool implementation may be created to close this gap.
+
+The first hosted diagnostic also found a historical-vs-current-body citation ordinal disagreement at `family-communication-plan` #16 (`shelter-cdc-chemical-sip` in the frozen reviewer ledger versus `shelter-cdc-reunification` in the raw body). R92 preserves both literal IDs and requires human before/after claim review. Further discrepancy counts are determined by actual hosted diagnostics, not assumed.
