@@ -9,12 +9,15 @@ from __future__ import annotations
 from collections import defaultdict
 from decimal import Context, Decimal, localcontext
 from functools import wraps
+from heapq import nsmallest
 import re
 from typing import Callable, Mapping
 
 from .review import ascii_case_identity, labels_for_report, normalized_collision, raw_values
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
+
+VENDOR_MONTH_EVIDENCE_LIMIT = 32  # Bounded preview; full evidence is in SHA-bound source.
 
 
 def _exact_spend_context(operation):
@@ -61,6 +64,7 @@ def summarize_spend(
         lambda: defaultdict(lambda: Decimal(0)))
     vendor_month_credits: dict[str, dict[str, Decimal]] = defaultdict(
         lambda: defaultdict(lambda: Decimal(0)))
+    vendor_month_lines: dict[tuple[str, str], list[int]] = defaultdict(list)
     members: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     vendor_rows: dict[str, list[dict[str, str]]] = defaultdict(list)
     monthly: dict[str, dict[str, Decimal]] = defaultdict(
@@ -74,6 +78,7 @@ def summarize_spend(
             records, normalize_vendor=normalize_vendor,
             parse_date=parse_date, parse_money=parse_money):
         bucket = (vendor, month, category)
+        vendor_month_lines[(vendor, month)].append(int(record["row"]))
         totals[bucket] += amount
         if amount > 0:
             gross_charges[bucket] += amount
@@ -88,6 +93,19 @@ def summarize_spend(
         category_monthly[(vendor, category)][month] += amount
         members[bucket].append(record)
         vendor_rows[vendor].append(record)
+
+    # The existing category-only source_rows cannot attest to cross-category
+    # vendor/month gross totals. Preview numeric physical lines across all
+    # categories; count omitted rows instead of silently claiming full coverage.
+    # nsmallest bounds display work even on a 200,000-row source.
+    month_evidence = {
+        key: (
+            ";".join(str(line) for line in nsmallest(VENDOR_MONTH_EVIDENCE_LIMIT, lines)),
+            str(len(lines)),
+            str(max(0, len(lines) - VENDOR_MONTH_EVIDENCE_LIMIT)),
+        )
+        for key, lines in vendor_month_lines.items()
+    }
 
     collision = {vendor: normalized_collision(rows, "vendor")
                  for vendor, rows in vendor_rows.items()}
@@ -139,6 +157,9 @@ def summarize_spend(
             "credit_offset_review": (
                 "review_mixed_sign_offset"
                 if gross_charges[bucket] > 0 and gross_credits[bucket] > 0 else ""),
+            "vendor_month_evidence_rows": month_evidence[(vendor, month)][0],
+            "vendor_month_evidence_count": month_evidence[(vendor, month)][1],
+            "vendor_month_evidence_omitted": month_evidence[(vendor, month)][2],
             "vendor_month_gross_charges": format_money(vendor_month_charges[vendor][month]),
             "vendor_month_gross_credits": format_money(vendor_month_credits[vendor][month]),
             "vendor_month_offset_review": (
