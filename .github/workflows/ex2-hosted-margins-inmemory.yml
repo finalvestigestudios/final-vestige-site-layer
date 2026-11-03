@@ -1,0 +1,65 @@
+name: EX2 hosted Margins ephemeral CSS A-B admission (HOLD)
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/accessibility/margins/**'
+      - '.github/workflows/ex2-hosted-margins-inmemory.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and run adversarial tests at exact commit
+        run: |
+          git rev-parse HEAD
+          python -m py_compile experience2/home-flagship/accessibility/margins/probe_hosted_margin_override.py
+          python experience2/home-flagship/accessibility/margins/probe_hosted_margin_override.py --self-test
+
+  live-ephemeral:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install local-only browser and pinned axe; never on WordPress
+        run: |
+          python -m pip install 'playwright==1.56.0'
+          python -m playwright install --with-deps chromium
+          npm install --prefix /tmp/fv-ex2-axe --no-save --ignore-scripts --no-audit --no-fund 'axe-core@4.10.3'
+          test -s /tmp/fv-ex2-axe/node_modules/axe-core/axe.min.js
+      - name: Compare actual hosted shell to browser-only patch at five widths
+        run: |
+          git rev-parse HEAD
+          python experience2/home-flagship/accessibility/margins/probe_hosted_margin_override.py \
+            --axe-source /tmp/fv-ex2-axe/node_modules/axe-core/axe.min.js \
+            --output HOSTED_MARGINS_CANDIDATE_HOLD.json
+      - name: Preserve minimized release-HOLD evidence even on error
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-hosted-margins-ephemeral-admission-HOLD
+          if-no-files-found: ignore
+          retention-days: 7
+          path: HOSTED_MARGINS_CANDIDATE_HOLD.json
