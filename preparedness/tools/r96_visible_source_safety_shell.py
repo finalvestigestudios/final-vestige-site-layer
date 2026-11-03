@@ -88,10 +88,16 @@ class Witness(HTMLParser):
             if invisible(attrs) and (sensitive_here or "pa-article" in classes
                                      or "pa-body" in classes):
                 raise Gate("hidden, inert or aria-hidden critical evidence: " + tag)
-            if sensitive_here and tag in FORBIDDEN_CONTENT:
+            # The existing authoring template has one bounded Print button.
+            # It is not a source link or claim and must never accept edits.
+            print_button = (tag == "button" and parent is not None and
+                            "pa-printbar" in parent["classes"] and attrs == {
+                                "type": "button", "class": "pa-btn pa-btn--ghost",
+                                "onclick": "window.print()"})
+            if sensitive_here and tag in FORBIDDEN_CONTENT and not print_button:
                 raise Gate("active/opaque element in critical evidence: " + tag)
-            if sensitive_here and any(k.startswith("on") or k in ("ping", "download")
-                                      for k in attrs):
+            if sensitive_here and not print_button and any(
+                    k.startswith("on") or k in ("ping", "download") for k in attrs):
                 raise Gate("event handler or link side effect in critical evidence: " + tag)
             for name in self.counts:
                 if name in classes:
