@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-02",
+  "scope": "Camp Century post 290: source fidelity, visual historical truth, no production writes",
+  "source_attestation": {
+    "method": "fresh_authenticated_read_only_wordpress_posts_get_context_edit",
+    "post_id": 290,
+    "status": "publish",
+    "modified": "2026-08-31T03:32:37",
+    "permalink": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+    "title": "The City Kept Moving",
+    "source_part": "qa/media-recovery/parts/03.json",
+    "source_part_git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "exact_source_and_alt_matches_frozen": 6,
+    "total_inline_images": 6
+  },
+  "counts": {
+    "displayed_through_independent_retriever": 4,
+    "source_timed_out_no_http": 1,
+    "source_disabled_no_http": 1,
+    "actual_guest_browser_confirmed_broken": 0,
+    "visitor_browser_verified_any": 0,
+    "published_edits": 0,
+    "reported_42_browser_broken_proven": false,
+    "claimed_76_percent_transfer_reduction_measured": false
+  },
+  "sources_of_record": [
+    "https://science.nasa.gov/earth/earth-observatory/new-view-of-the-city-under-the-ice-153616/",
+    "https://www.govinfo.gov/content/pkg/GOVPUB-D103-PURL-gpo86535/pdf/GOVPUB-D103-PURL-gpo86535.pdf",
+    "https://commons.wikimedia.org/wiki/File:Camp_Century_trench_deformation.png",
+    "https://dataverse.geus.dk/dataset.xhtml?persistentId=doi:10.22008/FK2/ZSODKR",
+    "https://www.campcentury.org/press/photos",
+    "https://www.nasa.gov/nasa-brand-center/"
+  ],
+  "rights_notes": "NASA imagery generally available under NASA guidelines but credits, third-party content and non-endorsement apply; GEUS CC0 covers named dataset only, not automatically journal figures; Camp Century project press photos expressly prohibit commercial use without permission; no historic image localizations approved.",
+  "sitewide_context": {
+    "published_posts": 61,
+    "stored_inline_refs": 355,
+    "stored_offsite_refs": 288,
+    "wordpress_originals_above_1_5_mib": 13,
+    "alleged_broken_count": 42,
+    "alleged_broken_verified": false,
+    "claimed_reduction_percent": 76,
+    "claimed_reduction_measured": false,
+    "production_repairs": 0
+  },
+  "rows": [
+    {
+      "image_key": "290:0",
+      "post_id": 290,
+      "exact_published_source_url": "https://www.popsci.com/wp-content/uploads/2024/11/campcentury_aerial_radar_lrg.jpg",
+      "exact_published_alt": "Airborne radar view revealing structural elements of Camp Century beneath the Greenland Ice Sheet.",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web.open rendered binary or failed independent retriever; NOT logged-out Chrome",
+        "observation": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "actual_visitor_browser": {
+        "http_status": null,
+        "current_src": null,
+        "final_image_request_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authoritative_recovery_candidate": {
+        "authority": "NASA Earth Observatory, NASA Earth science image 153616 (radar composite); image uses NASA/JPL-Caltech UAVSAR and IceBridge data",
+        "url": "https://science.nasa.gov/earth/earth-observatory/new-view-of-the-city-under-the-ice-153616/",
+        "kind": "same_apparent_composite_not_binary_match",
+        "rights": "NASA Media Usage Guidelines; composite, contributors and possible third-party notices require per-item check",
+        "visual": "Published photo displays aircraft wing over Greenland plus radar inset: a composite, not one single radar photograph",
+        "geometry": null,
+        "go": "PRESERVE_AND_TEST",
+        "exact_binary_sha256_verified": false,
+        "item_specific_rights_review": "HOLD",
+        "wordPress_media_upload_authorized": false
+      },
+      "dimensions": {
+        "catalog_original_px": null,
+        "conditional_derivative_px": null,
+        "max_width_px": 960,
+        "requires_binary_decode_before_derivative": true,
+        "preserve_full_image_no_crop": true,
+        "never_upscale": true
+      },
+      "proposed_alt_review": null,
+      "release_gates": {
+        "rights_clearance": false,
+        "exact_scene_and_crop_approved": false,
+        "browser_failure_verified": false,
+        "asset_checksum_verified": false,
+        "wordPress_edit_authorized": false
+      }
+    },
+    {
+      "image_key": "290:1",
+      "post_id": 290,
+      "exact_published_source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/archetype/GDXA2BRAMRAU7HKJBA3QPMH5IA.png",
+      "exact_published_alt": "U.S. Army engineers constructing a steel-roofed trench at Camp Century on the Greenland Ice Sheet.",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web.open rendered binary or failed independent retriever; NOT logged-out Chrome",
+        "observation": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "actual_visitor_browser": {
+        "http_status": null,
+        "current_src": null,
+        "final_image_request_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authoritative_recovery_candidate": {
+        "authority": "U.S. Army CRREL Technical Report 174 figure 14 (1965 report); related construction scene, NOT confirmed identical",
+        "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D103-PURL-gpo86535/pdf/GOVPUB-D103-PURL-gpo86535.pdf",
+        "kind": "related_subject_only_different_scene_not_replacement",
+        "rights": "Official U.S. Army report; provenance of exact Arcpublishing photograph unverified",
+        "visual": "Published source displays personnel at curved steel-roof trench while constructing Camp Century; report figure only a contextual recovery lead",
+        "geometry": null,
+        "go": "PRESERVE_AND_TEST",
+        "exact_binary_sha256_verified": false,
+        "item_specific_rights_review": "HOLD",
+        "wordPress_media_upload_authorized": false
+      },
+      "dimensions": {
+        "catalog_original_px": null,
+        "conditional_derivative_px": null,
+        "max_width_px": 960,
+        "requires_binary_decode_before_derivative": true,
+        "preserve_full_image_no_crop": true,
+        "never_upscale": true
+      },
+      "proposed_alt_review": null,
+      "release_gates": {
+        "rights_clearance": false,
+        "exact_scene_and_crop_approved": false,
+        "browser_failure_verified": false,
+        "asset_checksum_verified": false,
+        "wordPress_edit_authorized": false
+      }
+    },
+    {
+      "image_key": "290:2",
+      "post_id": 290,
+      "exact_published_source_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Camp_Century_trench_deformation.png",
+      "exact_published_alt": "Camp Century trench deformation showing steel arches distorted inward by the surrounding firn and ice.",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web.open rendered binary or failed independent retriever; NOT logged-out Chrome",
+        "observation": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "actual_visitor_browser": {
+        "http_status": null,
+        "current_src": null,
+        "final_image_request_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authoritative_recovery_candidate": {
+        "authority": "U.S. Army CRREL Technical Report 174 figures 28 and 29; Commons exact filename catalog",
+        "url": "https://commons.wikimedia.org/wiki/File:Camp_Century_trench_deformation.png",
+        "kind": "same_named_source_and_matching_composition_binary_unverified",
+        "rights": "Commons catalog attributes figure to 1965 Army report and U.S. federal-employee public-domain rationale; review figure provenance before WordPress cache",
+        "visual": "Two technical diagrams of deforming Camp Century trench cross sections, with dates and inch/foot markings; NEVER crop map keys or captions",
+        "geometry": {
+          "width": 1573,
+          "height": 1132
+        },
+        "go": "PRESERVE_AND_TEST",
+        "exact_binary_sha256_verified": false,
+        "item_specific_rights_review": "HOLD",
+        "wordPress_media_upload_authorized": false
+      },
+      "dimensions": {
+        "catalog_original_px": {
+          "width": 1573,
+          "height": 1132
+        },
+        "conditional_derivative_px": {
+          "width": 960,
+          "height": 691
+        },
+        "max_width_px": 960,
+        "requires_binary_decode_before_derivative": true,
+        "preserve_full_image_no_crop": true,
+        "never_upscale": true
+      },
+      "proposed_alt_review": null,
+      "release_gates": {
+        "rights_clearance": false,
+        "exact_scene_and_crop_approved": false,
+        "browser_failure_verified": false,
+        "asset_checksum_verified": false,
+        "wordPress_edit_authorized": false
+      }
+    },
+    {
+      "image_key": "290:3",
+      "post_id": 290,
+      "exact_published_source_url": "https://www.vol.at/2024/11/camp-century-plans.jpg",
+      "exact_published_alt": "U.S. Army layout plan of Camp Century showing its underground corridors and facilities.",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web.open rendered binary or failed independent retriever; NOT logged-out Chrome",
+        "observation": "RETRIEVER_TIMEOUT_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "actual_visitor_browser": {
+        "http_status": null,
+        "current_src": null,
+        "final_image_request_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authoritative_recovery_candidate": {
+        "authority": "U.S. Army CRREL Technical Report 174 figure 26 (historical trench network plan)",
+        "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D103-PURL-gpo86535/pdf/GOVPUB-D103-PURL-gpo86535.pdf",
+        "kind": "related_plan_not_confirmed_identical",
+        "rights": "Original published plan image from vol.at, photographer/creator/license of that binary unknown; Army report must not be assumed identical",
+        "visual": "Current exact image timed out in independent retriever; distinguish 1960s army plan from georeferenced 2017 survey map",
+        "geometry": null,
+        "go": "BROWSER_CHECK_FIRST",
+        "exact_binary_sha256_verified": false,
+        "item_specific_rights_review": "HOLD",
+        "wordPress_media_upload_authorized": false
+      },
+      "dimensions": {
+        "catalog_original_px": null,
+        "conditional_derivative_px": null,
+        "max_width_px": 960,
+        "requires_binary_decode_before_derivative": true,
+        "preserve_full_image_no_crop": true,
+        "never_upscale": true
+      },
+      "proposed_alt_review": null,
+      "release_gates": {
+        "rights_clearance": false,
+        "exact_scene_and_crop_approved": false,
+        "browser_failure_verified": false,
+        "asset_checksum_verified": false,
+        "wordPress_edit_authorized": false
+      }
+    },
+    {
+      "image_key": "290:4",
+      "post_id": 290,
+      "exact_published_source_url": "https://scitechdaily.com/images/Camp-Century-Ice-Cores.jpg",
+      "exact_published_alt": "Camp Century scientists handling deep ice core material recovered from the Greenland Ice Sheet.",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web.open rendered binary or failed independent retriever; NOT logged-out Chrome",
+        "observation": "RETRIEVER_IMAGE_DISPLAYED",
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "actual_visitor_browser": {
+        "http_status": null,
+        "current_src": null,
+        "final_image_request_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authoritative_recovery_candidate": {
+        "authority": "NASA Earth Observatory / National Archives historic photo 404791598, described as a Camp Century thermal drill",
+        "url": "https://science.nasa.gov/earth/earth-observatory/new-view-of-the-city-under-the-ice-153616/",
+        "kind": "same_apparent_drill_scene_binary_unverified",
+        "rights": "NASA page credits historical National Archives photo ID 404791598; federal custody does not by itself resolve underlying photographer or reproduction rights",
+        "visual": "Published image actually shows two workers handling thermal drilling apparatus in Camp Century tunnel, NOT workers inspecting or handling recovered ice core material",
+        "geometry": null,
+        "go": "EDITORIAL_ALT_REVIEW",
+        "exact_binary_sha256_verified": false,
+        "item_specific_rights_review": "HOLD",
+        "wordPress_media_upload_authorized": false
+      },
+      "dimensions": {
+        "catalog_original_px": null,
+        "conditional_derivative_px": null,
+        "max_width_px": 960,
+        "requires_binary_decode_before_derivative": true,
+        "preserve_full_image_no_crop": true,
+        "never_upscale": true
+      },
+      "proposed_alt_review": {
+        "status": "EDITORIAL_ONLY_NOT_PUBLISHED",
+        "suggested": "Workers handling a thermal drill inside a Camp Century tunnel in Greenland.",
+        "reason": "Original ALT says scientists handling recovered deep ice cores, but exact published photograph and NASA/NARA caption depict thermal drilling apparatus."
+      },
+      "release_gates": {
+        "rights_clearance": false,
+        "exact_scene_and_crop_approved": false,
+        "browser_failure_verified": false,
+        "asset_checksum_verified": false,
+        "wordPress_edit_authorized": false
+      }
+    },
+    {
+      "image_key": "290:5",
+      "post_id": 290,
+      "exact_published_source_url": "https://www.researchgate.net/profile/Nanna-Karlsson/publication/333896089/figure/fig18/AS:771826441658368@1561031015362/As-built-map-of-Camp-Century-geo-referenced-to-August-2017-position-using-radar-data.jpg",
+      "exact_published_alt": "Camp Century map georeferenced to the 2017 radar-detected position beneath the moving Greenland Ice Sheet.",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web.open rendered binary or failed independent retriever; NOT logged-out Chrome",
+        "observation": "RETRIEVER_DISABLED_NO_ORIGIN_STATUS",
+        "origin_http_status": null,
+        "visitor_http_status": null
+      },
+      "actual_visitor_browser": {
+        "http_status": null,
+        "current_src": null,
+        "final_image_request_url": null,
+        "content_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "authoritative_recovery_candidate": {
+        "authority": "Geological Survey of Denmark and Greenland (GEUS) 2017 georeferenced Camp Century as-built map dataset, DOI 10.22008/FK2/ZSODKR",
+        "url": "https://doi.org/10.22008/FK2/ZSODKR",
+        "kind": "published_researchgate_journal_figure_not_verified_identical_to_cc0_dataset",
+        "rights": "GEUS source dataset marked CC0; license of ResearchGate-hosted article figure/crop is separately unverified, do not conflate",
+        "visual": "2017 geo-referenced layout map, not an original 1960s Army engineering plan; current image is inaccessible to independent retriever",
+        "geometry": null,
+        "go": "BROWSER_CHECK_FIRST",
+        "exact_binary_sha256_verified": false,
+        "item_specific_rights_review": "HOLD",
+        "wordPress_media_upload_authorized": false
+      },
+      "dimensions": {
+        "catalog_original_px": null,
+        "conditional_derivative_px": null,
+        "max_width_px": 960,
+        "requires_binary_decode_before_derivative": true,
+        "preserve_full_image_no_crop": true,
+        "never_upscale": true
+      },
+      "proposed_alt_review": null,
+      "release_gates": {
+        "rights_clearance": false,
+        "exact_scene_and_crop_approved": false,
+        "browser_failure_verified": false,
+        "asset_checksum_verified": false,
+        "wordPress_edit_authorized": false
+      }
+    }
+  ]
+}
