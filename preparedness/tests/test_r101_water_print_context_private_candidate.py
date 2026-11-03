@@ -137,6 +137,31 @@ class R101(unittest.TestCase):
             self.assertEqual(receipt["release_state"], "HOLD")
             self.assertFalse(receipt["wordpress_import_authorized"])
 
+    def test_scratch_output_refuses_preexisting_file_without_overwrite(self):
+        with tempfile.TemporaryDirectory() as temp:
+            existing = Path(temp) / "water-planner-R101-PRIVATE-DRAFT.html"
+            existing.write_text("prior independent review", encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, "-I", str(ROOT / "tools" /
+                 "r101_water_print_context_private_candidate.py"), "--out-dir", temp],
+                cwd=ROOT, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2)
+            self.assertEqual(existing.read_text(encoding="utf-8"),
+                             "prior independent review")
+            self.assertIn("refusing to overwrite", result.stderr)
+
+    def test_scratch_directory_symlink_refused(self):
+        with tempfile.TemporaryDirectory() as temp:
+            destination = Path(temp) / "real"
+            destination.mkdir()
+            shortcut = Path(temp) / "link"
+            try:
+                shortcut.symlink_to(destination, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest("symlinks prohibited by this platform")
+            with self.assertRaises(gate.Hold):
+                gate.safe_output_dir(str(shortcut))
+
     def test_inspect_only_produces_no_artifact(self):
         result = subprocess.run(
             [sys.executable, "-I", str(ROOT / "tools" /
