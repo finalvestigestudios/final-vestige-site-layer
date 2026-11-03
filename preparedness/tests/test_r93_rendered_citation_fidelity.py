@@ -138,7 +138,7 @@ class SyntheticAuditTests(unittest.TestCase):
         repaired = unchanged.replace(
             '<span class="pa-src-meta">Human source-link check pending</span>',
             '<span class="pa-src-meta">Human source-link check pending</span>'
-            '<span>Shared-source reading scope: independent review pending</span>')
+            '<span>Shared-source reading scope: independent review pending</span>', 2)
         self.assertEqual(len(self.check(repaired)), 7)
 
     def test_raw_body_must_be_literal(self):
