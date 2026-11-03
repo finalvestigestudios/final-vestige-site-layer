@@ -131,9 +131,9 @@ def compare(before, after):
                     flags.append("SAME_CITATION_ORDER_MOVED_ACROSS_CLAUSE_BOUNDARY_REVIEW_ONLY")
                 if left["claim_clause_without_citation_SHA256"] != right["claim_clause_without_citation_SHA256"]:
                     flags.append("SAME_CITATION_ORDER_CLAIM_CONTEXT_CHANGED_REVIEW_ONLY")
-                if left["token_start_CODEPOINT_OFFSET"] != right["token_start_CODEPOINT_OFFSET"] and (
-                    left["claim_clause_without_citation_SHA256"] ==
-                    right["claim_clause_without_citation_SHA256"]):
+                if (left["clause_ordinal_LEXICAL_ONLY"] ==
+                    right["clause_ordinal_LEXICAL_ONLY"] and
+                    left["token_start_CODEPOINT_OFFSET"] != right["token_start_CODEPOINT_OFFSET"]):
                     flags.append("SAME_CITATION_ORDER_REPOSITIONED_IN_SAME_CLAUSE_REVIEW_ONLY")
             if any(x.count(k) > 1 for k in set(x)):
                 flags.append("REPEATED_SOURCE_RANK_DOES_NOT_PROVE_SAME_CLAIM_REVIEW_ONLY")
