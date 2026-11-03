@@ -220,7 +220,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         print("SPEND MEMBERSHIP HOLD: selected local evidence cannot be verified.",
               file=sys.stderr)
         return 1
-    print(f"SPEND EVIDENCE VERIFIED (source membership and exact sums; not approval/signature): "
+    print(f"SPEND MEMBERSHIP VERIFIED (source membership and exact sums; not approval/signature): "
           f"groups={receipt.groups_verified} buckets={receipt.buckets_verified} "
           f"source_sha256={receipt.source_sha256} report_sha256={receipt.report_sha256}")
     return 0
