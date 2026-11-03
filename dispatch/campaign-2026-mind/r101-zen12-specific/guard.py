@@ -38,8 +38,8 @@ def validate(ledger,md,txt,html):
         for term in ("zen12","twelve","48 mp3s","24 mp3s","one-year","commission","seller","not established","aggregate-only",TOKEN.lower(),POSTAL.lower(),UNSUB.lower()):
             if term not in low:errors.append("missing "+term)
         if x.count(TOKEN)!=1:errors.append("unapproved CTA count")
-        if x.index(TOKEN)>x.index("commercial disclosure:") or "commission" not in x[x.index(TOKEN):x.index(TOKEN)+450].lower():errors.append("disclosure not next to CTA")
-        if re.search(r"\\$\\s*\\d+",x):errors.append("fixed price in copy")
+        if x.index(TOKEN)>low.index("commercial disclosure:") or "commission" not in x[x.index(TOKEN):x.index(TOKEN)+450].lower():errors.append("disclosure not next to CTA")
+        if re.search(r"\$\s*\d+",x):errors.append("fixed price in copy")
         for banned in ("clinically proven","guaranteed results","free trial","dozens of proven health gains","48 mp3s in every tier","buy now","one hour of meditation in twelve minutes is proven"):
             if banned in low:errors.append("unsubstantiated/hype phrase "+banned)
     h=Markup();h.feed(html)
