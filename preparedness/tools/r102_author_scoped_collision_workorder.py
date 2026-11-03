@@ -111,9 +111,21 @@ def workorder(lib: build.Library) -> dict:
     uses_by_url: dict[str, list[dict]] = {u: [] for u in collisions}
     all_cites = 0
     for slug, meta in sorted(lib.articles.items()):
-        need(meta.get("status", {}).get("publish") == "draft" and
-             meta.get("safety_review", {}).get("state") == "pending",
-             "private draft / pending human safety state changed: " + slug)
+        need(meta.get("status", {}).get("publish") == "draft",
+             "private draft publication state changed: " + slug)
+        # Preserve the *actual* author safety state exactly. Some originals
+        # already contain a founder approval record; R102 cannot revoke it,
+        # invent a new one or represent it as independent qualified review.
+        folder = "tools" if meta.get("kind") == "tool" else "articles"
+        authored_path = lib.root / "content" / folder / (slug + ".meta.json")
+        need(authored_path.is_file() and not authored_path.is_symlink(),
+             "authored safety/source metadata unavailable: " + slug)
+        authored = json.loads(authored_path.read_text(encoding="utf-8"))
+        need(meta.get("safety_review") == authored.get("safety_review") and
+             meta.get("status") == authored.get("status"),
+             "original author safety review or draft state drift: " + slug)
+        need(meta.get("source_use") == authored.get("source_use"),
+             "original author source-use reading scopes drift: " + slug)
         origin = lib.article_origins[slug]
         body = meta["_body"]
         citations = list(CITE.finditer(body))
@@ -133,6 +145,8 @@ def workorder(lib: build.Library) -> dict:
                     "article_slug": slug,
                     "article_origin": origin,
                     "article_track": meta["track"],
+                    "existing_article_safety_state_without_new_approval":
+                        meta["safety_review"]["state"],
                     "original_body_sha256": digest(body),
                     "citation_ordinal_in_article": occurrence,
                     "source_id_as_authored": sid,
