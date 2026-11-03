@@ -1,0 +1,109 @@
+name: EX2 HOLD real Assembler rendered seven-chapter Playground QA
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/**'
+      - '.github/workflows/ex2-assembler-front-render-HOLD.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ex2-assembler-full-flagship-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  isolated-assembler-frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      FV_THEME_PARENT: /tmp/ex2-official-assembler
+      FV_SCREEN_DIR: /tmp/ex2-synthetic-screens
+      FV_CANDIDATE: /tmp/ex2-full-source-assembler.html
+      FV_MANIFEST: /tmp/ex2-full-source-assembler.manifest.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source fidelity and browser harness self-test
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
+          node --check experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs
+          node --check experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs
+          node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs --self-test
+          node experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs --self-test
+          php -l experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.php
+      - name: Assemble actual eleven source-controlled flagship files with synthetic Margins and Jetpack
+        run: |
+          set -euo pipefail
+          python -I experience2/home-flagship/qa/release-candidate/write_source_flagship_playground_candidate.py \
+            --output "$FV_CANDIDATE" --manifest "$FV_MANIFEST"
+      - name: Fetch free official Assembler theme with safe ZIP preflight
+        run: |
+          set -euo pipefail
+          mkdir -p "$FV_THEME_PARENT"
+          curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 --max-time 90 \
+            'https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip' \
+            -o "$RUNNER_TEMP/assembler-official.zip"
+          echo "Official theme archive SHA-256:"
+          sha256sum "$RUNNER_TEMP/assembler-official.zip"
+          python - <<'PY'
+          import os, pathlib, zipfile, stat
+          root=pathlib.Path(os.environ['FV_THEME_PARENT']).resolve()
+          archive=pathlib.Path(os.environ['RUNNER_TEMP'])/'assembler-official.zip'
+          if archive.stat().st_size > 12_000_000: raise RuntimeError('Theme zip too large')
+          with zipfile.ZipFile(archive) as z:
+              items=z.infolist()
+              if not 6 <= len(items) <= 1500: raise RuntimeError('Bad theme file count')
+              total=0
+              roots={pathlib.PurePosixPath(i.filename).parts[0] for i in items if i.filename}
+              if len(roots)!=1 or next(iter(roots)) not in ('assembler','assembler-wpcom'):
+                  raise RuntimeError('Unrecognized official Assembler archive root')
+              slug=next(iter(roots))
+              for info in items:
+                  parts=pathlib.PurePosixPath(info.filename).parts
+                  if not parts or parts[0]!=slug or any(p in ('.','..') for p in parts):
+                      raise RuntimeError('Unsafe theme zip path')
+                  mode=(info.external_attr >> 16) & 0o170000
+                  if mode == stat.S_IFLNK: raise RuntimeError('Theme symlink denied')
+                  total+=info.file_size
+              if total>30_000_000: raise RuntimeError('Theme expanded size too large')
+              z.extractall(root)
+          css=(root/slug/'style.css').read_text()
+          if 'Theme Name: Assembler' not in css: raise RuntimeError('Theme identity mismatch')
+          with open(os.environ['GITHUB_ENV'],'a') as f:
+              f.write('FV_THEME_DIR='+str(root/slug)+'\n')
+          print('Assembler preflight passed. Slug:',slug,'files:',len(items))
+          PY
+      - name: Install free pinned browser tooling
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock --no-audit --no-fund \
+            @wp-playground/cli@3.1.56 playwright@1.56.1 axe-core@4.10.3
+          npx playwright install --with-deps chromium
+      - name: Actual isolated WordPress Gutenberg Save then Assembler render/axe/media/no-JS
+        timeout-minutes: 22
+        run: |
+          set -euo pipefail
+          node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs \
+            --candidate "$FV_CANDIDATE" --manifest "$FV_MANIFEST" \
+            --assembler-dir "$FV_THEME_DIR" --evidence-dir "$FV_SCREEN_DIR"
+      - name: Store only non-sensitive synthetic candidate screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-assembler-isolated-source-controlled-only
+          path: ${{ env.FV_SCREEN_DIR }}/*.png
+          if-no-files-found: ignore
+          retention-days: 3
+      - name: Erase ephemeral source, theme ZIP and evidence
+        if: always()
+        run: |
+          rm -rf "$FV_CANDIDATE" "$FV_MANIFEST" "$FV_THEME_PARENT" \
+            "$FV_SCREEN_DIR" "$RUNNER_TEMP/assembler-official.zip"
+          echo 'RELEASE HOLD. No live CMS writes, plugin install, merge, deployment or real visitor data.'

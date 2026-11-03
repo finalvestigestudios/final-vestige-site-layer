@@ -64,6 +64,19 @@ class FullSourceFlagshipTests(unittest.TestCase):
             compose(self.index.replace('href="#fv-hf-mind-title"', 'href="#wrong"', 1),
                     self.css, self.js)
 
+    def test_masthead_gold_cta_paints_its_own_dark_backdrop(self):
+        # Structural regression for the actual 1440px Assembler axe finding.
+        # Contrast itself must still pass the real browser axe gate.
+        css = self.css["flagship.css"]
+        start = css.index(".fv-hf__mast-cta{")
+        normal = css[start:css.index("}", start)]
+        self.assertIn("background:#0a0a09;", normal)
+        self.assertIn("color:var(--hf-gold);", normal)
+        self.assertIn(
+            ".fv-hf__mast-cta:hover{background:var(--hf-gold);color:#090a0a}",
+            css,
+        )
+
     def test_missing_script_file_fails_closed(self):
         altered = dict(self.js)
         del altered["reading-trail.js"]
