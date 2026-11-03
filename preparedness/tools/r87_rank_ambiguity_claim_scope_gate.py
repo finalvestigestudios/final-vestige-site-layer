@@ -62,6 +62,26 @@ def _input_guard(report, r86):
          and type(report.get("all_unpaired_R85_historical_citation_reviews_UNABRIDGED")) is list,
          "R86 original complete populations unavailable")
 
+    # A matching digest alone is not proof. Independently reconstruct R86
+    # from the unabridged originals carried within its own sealed packets.
+    packets = report["all_41_unabridged_document_review_bridges_NOT_APPROVED"]
+    leftovers = report["all_unpaired_R85_historical_citation_reviews_UNABRIDGED"]
+    docs, rows = [], []
+    for packet in packets:
+        docs.append(packet["R80_complete_original_document_UNABRIDGED_NOT_APPROVED"])
+        for link in packet["R80_citation_to_R85_impact_crosswalk_NOT_APPROVED"]:
+            historical = link["R85_original_four_stage_impact_UNABRIDGED_NOT_APPROVED"]
+            if historical is not None:
+                rows.append(historical)
+    rows.extend(row["R85_original_comparison_UNABRIDGED_NOT_APPROVED"]
+                for row in leftovers)
+    need(len(rows) == report["counts"]["matched_historical_rows"] + len(leftovers),
+         "original historical comparison rows lost")
+    r86.verify(report, docs, rows,
+               r80_fingerprint=report["R80_unabridged_full_slate_evidence_fingerprint"],
+               r85_seal=report["R85_unabridged_historical_citation_source_seal"])
+
+
 
 def audit(report, *, expected=None):
     """Pure complete overlay; rank matching is NEVER equivalent to claim matching."""
