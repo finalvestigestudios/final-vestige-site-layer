@@ -1,0 +1,42 @@
+name: EX2 saved-Gutenberg combined candidate - OFFLINE HOLD
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/qa/release-candidate/build_combined_page6_offline.py'
+      - 'experience2/home-flagship/qa/release-candidate/test_build_combined_page6_offline.py'
+      - 'experience2/home-flagship/rights/**'
+      - 'experience2/home-flagship/accessibility/margins/**'
+      - '.github/workflows/ex2-saved-gutenberg-candidate-HOLD.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-synthetic-source-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Python syntax checks
+        run: |
+          python -I -m py_compile \
+            experience2/home-flagship/rights/withhold_unverified_nypl_capture.py \
+            experience2/home-flagship/qa/release-candidate/build_combined_page6_offline.py \
+            experience2/home-flagship/qa/release-candidate/test_build_combined_page6_offline.py
+      - name: Adversarial offline synthetic-only candidate tests
+        run: |
+          python -I -m unittest discover \
+            -s experience2/home-flagship/qa/release-candidate \
+            -p test_build_combined_page6_offline.py -v
+      - name: Non-production release qualification label
+        run: |
+          echo 'OFFLINE SYNTHETIC SOURCE TESTS ONLY.'
+          echo 'NOT an actual saved WordPress readback, browser performance test,'
+          echo 'legal media clearance, independent QD, or authorization to publish.'
+          echo 'PRODUCTION RELEASE: HOLD.'
