@@ -36,7 +36,7 @@ def run(src,out,axe=None,chromium=None):
     Thread(target=server.serve_forever,daemon=True).start()
     origin=f'http://127.0.0.1:{server.server_port}'
     data={'release':'STAGING_HOLD','transport':'REAL_HTTP_CHROMIUM','cases':[],
-          'cross_document_navigations':0,'axe':[],'screenshots':{},'pdf':None,
+          'cross_document_navigations':0,'touch_navigations':0,'axe':[],'screenshots':{},'pdf':None,
           'external_requests':[],'errors':[]}
     try:
         with sync_playwright() as pw:
@@ -122,6 +122,13 @@ def run(src,out,axe=None,chromium=None):
                                         assert page.locator('[id="'+dest.split('#')[1]+'"]').count()==1
                                         assert page.evaluate('location.hash')=='#'+dest.split('#')[1]
                                         data['cross_document_navigations']+=1
+                                    page.goto(origin+'/'+filename,wait_until='load')
+                                    page.locator('[id="'+prefix+'02"] .r98-route a').first.tap()
+                                    touch_dest=('R85_NASA_SOURCE_REVIEW.html#r85-source-02' if filename=='R97_SOURCE_GALLERY.html'
+                                                else 'R97_SOURCE_GALLERY.html#gallery-02')
+                                    page.wait_for_url(origin+'/'+touch_dest)
+                                    assert page.locator('[id="'+touch_dest.split('#')[1]+'"]').count()==1
+                                    data['touch_navigations']+=1
                                     if filename=='R97_SOURCE_GALLERY.html' and js:
                                         page.goto(origin+'/R94_CURATED_ATLAS.html',wait_until='load')
                                         query=page.locator('#query')
@@ -138,6 +145,7 @@ def run(src,out,axe=None,chromium=None):
                 browser.close()
         assert len(data['cases'])==70,len(data['cases'])
         assert data['cross_document_navigations']==84,data['cross_document_navigations']
+        assert data['touch_navigations']==14,data['touch_navigations']
         assert len(data['screenshots'])==4
         assert data['pdf'] and not data['external_requests']
         if axe:assert len(data['axe'])==3
