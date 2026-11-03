@@ -76,6 +76,10 @@ def contrast(foreground,background,opacity=1):
     hi,lo=sorted((luminance(mixed),luminance(bg)),reverse=True)
     return (hi+0.05)/(lo+0.05)
 
+def screenshot_path(directory: str, corrected: bool) -> Path:
+    """Join whole filename to directory (avoid Path + str TypeError)."""
+    return Path(directory) / ("corrected_390.png" if corrected else "baseline_390.png")
+
 def browser_probe(screenshots: str | None = None) -> dict:
     from playwright.sync_api import sync_playwright
     receipt={"fixture":"Synthetic 72-slot replay of Nov 2 page-6 strip CSS",
@@ -108,7 +112,7 @@ def browser_probe(screenshots: str | None = None) -> dict:
                         page.set_content(fixture(corrected))
                         page.evaluate(OBSERVE,2.5 if corrected else 0.74)
                         page.wait_for_timeout(65)
-                        page.screenshot(path=str(Path(screenshots)/("corrected" if corrected else "baseline")+"_390.png"))
+                        page.screenshot(path=str(screenshot_path(screenshots, corrected)))
                     if corrected:
                         passed=all(s["visible_indexes"]==[int(s["phase"]//5)%72]
                                    and s["contrast"]>=4.5 and s["unblurred"] and not s["overflow"]
