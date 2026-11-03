@@ -54,15 +54,16 @@
 
 **Not tested:** screen readers, Safari, iOS and real devices; the subscription form was **not submitted** (no real address used); Lighthouse on the live URL; field Core Web Vitals (none exist yet for the new page). Verification used a fresh anonymous browser, so the logged-in admin bar was not present.
 
-## Performance baseline after release (lab; Playwright in Edge; cache disabled; not field data)
+## Performance baseline after release (lab; Playwright in Edge; browser cache disabled; not field data)
 
-| Profile | LCP | FCP | CLS | TTFB |
+**Correction (same day):** the first baseline in this record used a `?fvperf=` query string, which bypasses the site's page cache (`x-ac ... MISS`, no cache headers) and inflated TTFB to about 1 s. The figures below are from the **plain, cacheable URL** that real visitors request (`cache-control: max-age=251, must-revalidate`, gzip). The earlier "TTFB is about 1 s" statement, including in the PR #604 status comment, was wrong and is withdrawn.
+
+| Profile (3 runs each) | LCP | FCP | CLS | TTFB |
 |---|---|---|---|---|
-| Desktop, 3 runs | 1.48 to 1.61 s | same as LCP | 0.003 | 1.03 to 1.14 s |
-| Mobile 390 px, 4x CPU, about Slow 4G, 3 runs | 2.42 to 3.14 s | 1.79 to 2.31 s | 0 | 0.93 to 1.41 s |
+| Desktop 1440 px | 0.48 to 0.75 s | same as LCP | 0.003 | 0.14 to 0.22 s |
+| Mobile 390 px, 4x CPU, about Slow 4G | 2.06 to 2.25 s | 1.96 to 2.12 s | 0 | 0.13 to 0.18 s |
 
-**The LCP element is text, not an image:** the hero heading's emphasised words on desktop and the opening paragraph (`p.fv-hf__opening-dek`) on mobile. Server TTFB is about 1 s and the HTML is about 89 KB over the wire. This is a different picture from the earlier Lighthouse "simulate" figure of 4.58 s, which is a model, not a measurement. Implication for the follow-up PR: image optimization is not the lever; look at time to first byte and cache behaviour, render-blocking inline CSS, and font loading for that text.
-
+**The LCP element is text, not an image:** the hero heading's emphasised words on desktop and the opening paragraph (`p.fv-hf__opening-dek`) on mobile. LCP equals first contentful paint, so the metric is gated by how soon the browser can first paint, not by any image or by the server. Under mobile throttling, about 1.8 s passes between the first byte and first paint with an 89 KB gzipped HTML document. Candidate levers for the follow-up PR, to be tested one at a time and not assumed: render-blocking CSS and scripts ahead of the hero (the theme and plugin stylesheets, the 100 KB-plus inline block CSS), the placement of the flagship's own CSS, and web-font loading for the hero text. The earlier Lighthouse "simulate" figure of 4.58 s is a model, not a measurement, and measures differently from the throttled runs above; the follow-up must state which tool and mode its 2.5 s claim uses.
 ## Rollback (ready, not needed)
 
 Re-read page 6 (`modified` will be `2026-11-02T17:48:13` or later), then either restore the private backup bytes through the REST client, or replace block 1 with `original-block-index1.html` (SHA-1 `1c97fec5...`), or restore WordPress revision 1899. Success is proven when `content_hash` returns to `7afdb933d2ec68fd993ef015c97a6eb9edfe0576`. Triggers: a broken interaction, stripped markup, layout or form regression, or the founder's request.
