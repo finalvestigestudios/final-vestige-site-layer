@@ -174,12 +174,12 @@ thead{background:#242322} .scroller{overflow-x:auto}
 small{color:#dfd4c2} .tag{font-weight:700;color:#f2ca87} </style></head><body><main>
 <h1>Dispatch: evidence-only scorecard</h1>
 <p class='tag'>ALL SIX HOLD_UNSENT · ISSUES 03/05 HOLD_MERCHANT</p>
-<p>Verified source observation: {}. Eligible email audience: <strong>UNKNOWN</strong>. Newsletter and follower counters classify their audience differently; totals are not additive. No send, recipient export, link activation or affiliate attribution has occurred.</p>
+<p>Verified source observation: __AS_OF__. Eligible email audience: <strong>UNKNOWN</strong>. Newsletter and follower counters classify their audience differently; totals are not additive. No send, recipient export, link activation or affiliate attribution has occurred.</p>
 <p>UNKNOWN means unverified; SUPPRESSED means a verified aggregate below five is hidden. Never interpret WordPress Reader followers as deliverable email recipients. Opens are directional only and cannot substitute for confirmed delivery or sales.</p>
 <div class='scroller' tabindex='0' role='region' aria-label='Per-edition evidence table'><table>
-<caption>Six-issue pilot — no fabricated measurements or release authorizations</caption><thead><tr><th scope='col'>Issue</th><th scope='col'>Original subject</th><th scope='col'>Gate</th><th scope='col'>Recipients</th><th scope='col'>Email clicks</th><th scope='col'>Partner sales</th></tr></thead><tbody>{}</tbody></table></div>
+<caption>Six-issue pilot — no fabricated measurements or release authorizations</caption><thead><tr><th scope='col'>Issue</th><th scope='col'>Original subject</th><th scope='col'>Gate</th><th scope='col'>Recipients</th><th scope='col'>Email clicks</th><th scope='col'>Partner sales</th></tr></thead><tbody>__ROWS__</tbody></table></div>
 <p><small>Source: connected WordPress newsletter status and follower stats, separately, November 3, 2026. Founder-approved 4:2 editorial/commercial allocation unchanged. This static review is neither a genuine Jetpack received email nor proof of legal compliance.</small></p>
-</main></body></html>""".format(html.escape(board["source_time"]),rows)
+</main></body></html>""".replace("__AS_OF__", html.escape(board["source_time"])).replace("__ROWS__", rows)
 
 
 def main():
