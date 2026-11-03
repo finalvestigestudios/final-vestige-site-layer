@@ -1,0 +1,59 @@
+FINAL VESTIGE DISPATCH — R82 SOURCE → NATIVE EDITOR REVIEW
+ALL SIX HOLD_UNSENT; 03/05 ALSO HOLD_MERCHANT
+NOT A RECEIVED JETPACK EMAIL; NOT A SEND APPROVAL
+Original PR #175 is unchanged. Six optional R81 subjects and excerpts below; native preheader support is unverified.
+
+ISSUE 01 — editorial
+Proposed subject: The person changed. The conversation went on.
+Proposed editor custom excerpt (NOT delivered): In a 1998 field experiment, a conversation continued after the person asking for directions was replaced. That result does not establish how every eyewitness behaves. It asks a more useful question: what did this particular witness have a chance to notice? Follow the source, then the inference.
+Full source candidate: r80-editorial-bridge/01-the-conversation-continued.md
+Editorial CTA: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+Research citation: https://doi.org/10.3758/BF03208840
+Status: HOLD_UNSENT
+
+ISSUE 02 — editorial
+Proposed subject: A sleeping witness, a letter, and a 1784 puzzle
+Proposed editor custom excerpt (NOT delivered): Puységur reported an unusual encounter on May 4, 1784, and described it in a letter dated May 8. The source is worth reading; his interpretation is not independent proof of animal magnetism. Follow the chronology and see what the written record actually supports.
+Full source candidate: r80-editorial-bridge/02-the-letter-and-the-witness.md
+Editorial CTA: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+Research citation: https://catalogue.bnf.fr/ark:/12148/cb31160297p
+Status: HOLD_UNSENT
+
+ISSUE 03 — commercial_reserved
+Proposed subject: The twelve-minute question: practice first, purchase later
+Proposed editor custom excerpt (NOT delivered): Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Twelve minutes can reveal whether a routine fits your schedule; they cannot prove that Zen12 produces its advertised brainwave results. Here's what to check first.
+Full source candidate: r79-proof-first-editions/03-zen12.md
+Editorial CTA: NONE — unpublished guide; commercial hold
+Research citation: https://zen12.com/hnp
+Status: HOLD_UNSENT + HOLD_MERCHANT
+
+ISSUE 04 — editorial
+Proposed subject: Apollo 1: one spark was never the whole story
+Proposed editor custom excerpt (NOT delivered): Apollo 1's fire killed three astronauts during a ground test on January 27, 1967. The review board could not conclusively identify the first ignition source. It did document an oxygen-rich environment, an escape-obstructing hatch, and rescue failures. The system, not merely the spark, explains the danger.
+Full source candidate: r79-proof-first-editions/04-apollo-1.md
+Editorial CTA: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+Research citation: https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+Status: HOLD_UNSENT
+
+ISSUE 05 — commercial_reserved
+Proposed subject: A focus recording isn't proof of better focus
+Proposed editor custom excerpt (NOT delivered): Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Total Focus is advertised as a 33-minute hypnosis recording. Its format is described by the seller; the promised concentration gains are not independently established for this recording.
+Full source candidate: r79-proof-first-editions/05-total-focus.md
+Editorial CTA: NONE — unpublished guide; commercial hold
+Research citation: https://hypnosislive.com/mental-skills/total-focus
+Status: HOLD_UNSENT + HOLD_MERCHANT
+
+ISSUE 06 — editorial
+Proposed subject: Your focus log should include the boring days
+Proposed editor custom excerpt (NOT delivered): An honest focus log keeps the missed sessions and quiet days, not just the moments that feel transformative. Try three fields for one week: time attempted, interruption noticed, and one next adjustment. This is a record of your routine, not proof that any product improves the brain.
+Full source candidate: r80-editorial-bridge/06-the-boring-days.md
+Editorial CTA: https://finalvestige.com/focus/
+Research citation: https://finalvestige.com/editorial-standards/
+Status: HOLD_UNSENT
+
+Publisher postal address: UNVERIFIED
+Real delivered unsubscribe: UNVERIFIED
+Real native received email: UNVERIFIED
+True eligible audience: UNKNOWN
+Final founder send approval: NOT GIVEN
+No mail, publishing, merchant links or WordPress changes. All simulated.
