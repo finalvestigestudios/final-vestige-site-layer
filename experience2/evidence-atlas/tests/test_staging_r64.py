@@ -22,8 +22,9 @@ class StageR64Tests(unittest.TestCase):
             self.assertEqual(manifest['geographic_pins'],0)
             self.assertEqual(manifest['embedded_images'],0)
             self.assertEqual(len(manifest['plugin_directories']),3)
-            self.assertEqual(len(manifest['files']),4+len(EXPECTED['r38-custody-search'])+2)
-            for relative,sha in EXPECTED['r38-custody-search'].items():
+            self.assertEqual(manifest['active_desk_profile'],'r84-chronology-certainty')
+            self.assertEqual(len(manifest['files']),4+len(EXPECTED['r84-chronology-certainty'])+2)
+            for relative,sha in EXPECTED['r84-chronology-certainty'].items():
                 self.assertEqual(blob((output/'fv-ex2-research-desk'/relative).read_bytes()),sha)
             for filename,hash_ in manifest['files'].items():
                 self.assertEqual(hashlib.sha256((output/filename).read_bytes()).hexdigest(),hash_)
@@ -43,14 +44,14 @@ class StageR64Tests(unittest.TestCase):
                 process=subprocess.run(['php',str(probe),mode],env=env,
                     capture_output=True,text=True,check=True)
                 info=json.loads(process.stdout)
-                self.assertTrue(info['original_r38_pinned'])
+                self.assertTrue(info['active_r84_pinned'])
                 self.assertTrue(info['built_atlas_pinned'])
                 self.assertTrue(info['suite_rendered'])
                 self.assertEqual(info['desk_records'],6)
                 self.assertEqual(info['atlas_records'],6)
                 self.assertTrue(info['no_embedded_media'])
-    def test_source_files_untouched(self):
-        for path,sha in EXPECTED['r38-custody-search'].items():
+    def test_source_files_pinned_to_current_r84_profile(self):
+        for path,sha in EXPECTED['r84-chronology-certainty'].items():
             self.assertEqual(blob((stage.DESK/path).read_bytes()),sha)
 
 if __name__=='__main__': unittest.main()

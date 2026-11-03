@@ -1,6 +1,6 @@
 <?php
 /**
- * R59 CLI WordPress API contract probe using ORIGINAL, SHA-pinned R38 Desk and
+ * R59 CLI WordPress API contract probe using CURRENT SHA-pinned R84 Desk and
  * SOURCE-BUILT Atlas plus the unchanged R58 suite adapter. This is NOT WP core.
  * One PHP process per scenario to avoid static shortcode singleton side effects.
  */
@@ -60,6 +60,7 @@ $allStyles=array_keys($GLOBALS['enqueued_styles']);
 $allScripts=array_keys($GLOBALS['enqueued_scripts']);
 $result=array(
   'mode'=>$mode,'original_r38_pinned'=>$verifiedDesk!==null && realpath($verifiedDesk)===realpath($desk.'/final-vestige-ex2-research-desk.php'),
+  'active_r84_pinned'=>$verifiedDesk!==null && realpath($verifiedDesk)===realpath($desk.'/final-vestige-ex2-research-desk.php'),
   'built_atlas_pinned'=>$verifiedAtlas!==null && realpath($verifiedAtlas)===realpath($atlas.'/final-vestige-ex2-evidence-atlas.php'),
   'prehead_styles'=>$earlyStyles,'prehead_scripts'=>$earlyScripts,
   'after_shortcode_styles'=>$allStyles,'after_shortcode_scripts'=>$allScripts,
