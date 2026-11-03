@@ -1,0 +1,959 @@
+{
+ "meta": [
+  {
+   "id": 14,
+   "url": "https://finalvestige.com/affiliate-disclosure/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "87ceb91d5a34187f6249b66f3b396cf696a0ef51",
+   "after_meta_sha1": "cd1a3a7bdac10009650c17fdc1fc5f5b05780f71",
+   "content_sha1_unchanged_by_meta_edit": "e4bdf82fd79ce3701b6aaec99e6740e07a64920c",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 15,
+   "url": "https://finalvestige.com/privacy-policy/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "5c4559dfba9e78155fefddd028f2de815ba9a31d",
+   "after_meta_sha1": "d75a789f16a4a9744392786ca50d2378f05c4fd2",
+   "content_sha1_unchanged_by_meta_edit": "a2cb0db7a62f5cd9848bbbf81e3a0f01b3ceebcd",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 16,
+   "url": "https://finalvestige.com/terms-disclaimer/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "20022d3f662245c0bd231aa6d1da345bbee97ed8",
+   "after_meta_sha1": "ddf92a43450d3763bbd3d8e3dd322581112ef8bf",
+   "content_sha1_unchanged_by_meta_edit": "8bc00dd0e3ab5a85a835a0939199ae0cc8854c54",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 156,
+   "url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "c908cd9605a665651eb4d3f9674691021db7b4a2",
+   "after_meta_sha1": "4bc8f1bf541e68ff62421be8a167037b8831f988",
+   "content_sha1_unchanged_by_meta_edit": "cb83889bec50b1fa1ad202dfce99fe02348a1909",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 166,
+   "url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "83a35851c08d680d8f1025e8838fdaff71e95705",
+   "after_meta_sha1": "4b54f057e0b839fd968b325bf7b8792677f18e1b",
+   "content_sha1_unchanged_by_meta_edit": "28f3e97e6e981f88e1dae836aad892a14c1ccc85",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 190,
+   "url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "88a8ff7be2b27fe5740f390de0f8082a04129256",
+   "after_meta_sha1": "345c731da0b020314761d0e7ca6d9e3725716c11",
+   "content_sha1_unchanged_by_meta_edit": "720e4164454035e073df91cc89900746ba442312",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 211,
+   "url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "31d4299360bd9ad96e99338d3cc337d1ce7f0fdd",
+   "after_meta_sha1": "424c898e516fc772e2057ba5cdb852d19b2b50f4",
+   "content_sha1_unchanged_by_meta_edit": "771d8c33e4878685be9a4fed30a3534142a6b3df",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 214,
+   "url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "d33398c05c900d9253d383c5fabb07291d510649",
+   "after_meta_sha1": "b8eb43bbf4f8c2ffca1cb4c48bfba17c1b87942e",
+   "content_sha1_unchanged_by_meta_edit": "d26e4de88f651536e1f1f15691e15963a2ef7160",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 216,
+   "url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "4d612918a204d6c0790cb30d4eb0ea64205fcf70",
+   "after_meta_sha1": "f70737119a4b44c3e5ea6b3677f980630411114f",
+   "content_sha1_unchanged_by_meta_edit": "daa08c453aa173b41aacd4c354d52084f6424577",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 220,
+   "url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "6dbe11698a6071bfcbb0ee4cc2879e0ac42a1213",
+   "after_meta_sha1": "a7d73e80ff5c290cc4db6dcae67383a1d891da81",
+   "content_sha1_unchanged_by_meta_edit": "28f790a5210063e74cb24ba38c3db063d77f68d0",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 221,
+   "url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "f816962338898543cb18b9f74063086464fd2572",
+   "after_meta_sha1": "95ee6be1e2de1af24544f0a74e10e3442b0d13e7",
+   "content_sha1_unchanged_by_meta_edit": "133047d2abc2fb478c013b19a325be09ae23e2a0",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 252,
+   "url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "e205d78a155136ff442faa91afd07c6568c9e204",
+   "after_meta_sha1": "e030115b3bc183d59fb283e389553f1acc3726b4",
+   "content_sha1_unchanged_by_meta_edit": "09b3ee19ccc13b6278bb07e8ae810394f4d1e075",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 253,
+   "url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "919626b61419253158d4b6d6382381d5d355336f",
+   "after_meta_sha1": "5150293cf76255c6533a42e7c8bdc4034c67d567",
+   "content_sha1_unchanged_by_meta_edit": "bfe99eb83719595508126a7a9d8ca07519730b3b",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 256,
+   "url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "4f7d5ae52eaa7be22e96b38a742f8bf4c2fed2c1",
+   "after_meta_sha1": "65e2a817d5a977c2dba9a8908cdbb4e39260fdbe",
+   "content_sha1_unchanged_by_meta_edit": "842050fc2266906a3bf1271e99348b8832cb5433",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 258,
+   "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "d316d77143e5fd5d8b726978c9d8598add964c66",
+   "after_meta_sha1": "6b6b0a37c6f2810491562fc043cc23eafb57320b",
+   "content_sha1_unchanged_by_meta_edit": "89f6444bcac960847c815372c3ae7cc78a7a49ea",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 269,
+   "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "4fa56004db195f340e79dcb61395269cfe3239ae",
+   "after_meta_sha1": "8716c86d9eb281d0d124b6f206184835f654935d",
+   "content_sha1_unchanged_by_meta_edit": "9c2344aac7c2800f2e62208257c10ab708dd1218",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 274,
+   "url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "f4de658a5c05fba9d0555081f78870141dea0811",
+   "after_meta_sha1": "c2bfa57831a98cc3b6a999dc77226dc9a43c7cb1",
+   "content_sha1_unchanged_by_meta_edit": "529aef4e2943af8566e0a471179a09580e855748",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 278,
+   "url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "0d0cd4d354484d446d981827b5e7e7274c87fa1d",
+   "after_meta_sha1": "35a8318ec2732a2d8956828461f1271233081090",
+   "content_sha1_unchanged_by_meta_edit": "5875cc5baaeb720ae2b38461c19a2900f2a74454",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 279,
+   "url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "c011b7a12e66c83c2ffde5d8ef31499afc6e0d22",
+   "after_meta_sha1": "eaa0ee7aec15cd9807aede2d990c146ad51a4677",
+   "content_sha1_unchanged_by_meta_edit": "2748479a6b4bc40483d6e4a3b2060a5b23ecc6da",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 280,
+   "url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "9c24e73d72aa7e15029b26bdcfb1b3fa7b80e20e",
+   "after_meta_sha1": "b21957e6ad2c2e8c44b93aa8dd5a2324e3551858",
+   "content_sha1_unchanged_by_meta_edit": "69afc40cd0b2432c0f854eb26f12924056072dd7",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 283,
+   "url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "ed7d86c8433415a39a80227e3959e90fedb85b4d",
+   "after_meta_sha1": "5c4971f09358610c5352558d97013ccaf2e3001d",
+   "content_sha1_unchanged_by_meta_edit": "bce2fefb430457866ee6fbfbf9300840e792d67f",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 285,
+   "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+   "fields": [
+    "description",
+    "title"
+   ],
+   "before_meta_sha1": "225da231c82227b9fe152fa8f61839514717d197",
+   "after_meta_sha1": "0087f261ea4765a63919393eac3b4e1c421054ed",
+   "content_sha1_unchanged_by_meta_edit": "458dbcd1a6e50f8c3b23495cc265eccd936f0208",
+   "verified": true,
+   "notes": "title OK; desc OK"
+  },
+  {
+   "id": 287,
+   "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "072f7a865c14ccd4f087475209e483c7a51e61a3",
+   "after_meta_sha1": "132b7ef8d1cbaa5bd86ec563d7fb708220a2ea40",
+   "content_sha1_unchanged_by_meta_edit": "a544fcd0a386d312bfae8ea40b385890be7d9170",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 290,
+   "url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "6b01820f3c7bc1e044cd2f683895726ddd7f8333",
+   "after_meta_sha1": "aa16c28a4707baf91e730ced32a28ed7ecae9322",
+   "content_sha1_unchanged_by_meta_edit": "cfc438d15cd7ab7cca179b4094f62f37949365c4",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 299,
+   "url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "683cc5f9d29b359626cce5b148b3fc8546b254d6",
+   "after_meta_sha1": "16a39fd871745930e47dc0ee297f81f1a37d1311",
+   "content_sha1_unchanged_by_meta_edit": "def238f31265cc85d7b1a74486547a4e389a5a62",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 370,
+   "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "e297a98a027ea21b3218784ebc7d48c19a62c50f",
+   "after_meta_sha1": "88d501178f8014e614ea04e5927415754001aaea",
+   "content_sha1_unchanged_by_meta_edit": "8587cc960d2b32825faf18c42b4441edffd2923b",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 747,
+   "url": "https://finalvestige.com/community/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "c85b236812730eed602aec965c7a846722bd144a",
+   "content_sha1_unchanged_by_meta_edit": "c3f619d4c3876ec73c333a3e99d1c8694f090273",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1027,
+   "url": "https://finalvestige.com/the-turning-screw/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "53c4b23b6b07ba56a4513819199c094f4b307601",
+   "after_meta_sha1": "ed85dbf208fcc0dff02288336537cb47e78c3c95",
+   "content_sha1_unchanged_by_meta_edit": "1e30dd8b60f0f59c692116b2f486d6d36ae80793",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1029,
+   "url": "https://finalvestige.com/the-failure-chain/",
+   "fields": [
+    "description",
+    "schema"
+   ],
+   "before_meta_sha1": "71c79236fb39f89ae864cd1409d6327a52c5e4ec",
+   "after_meta_sha1": "aa1730fa99fab03950814fd1b1c7ad1d4e9b1822",
+   "content_sha1_unchanged_by_meta_edit": "20e04c63d57dea59c4554015eed2779fdab4ed3b",
+   "verified": true,
+   "notes": "desc OK; Article JSON-LD present"
+  },
+  {
+   "id": 1033,
+   "url": "https://finalvestige.com/the-signal-chain/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "da16321f14e30cd78567e4edc6f2ae7ac0fee6c3",
+   "after_meta_sha1": "645b550338491f6599c5a69c6d805507d68ffe86",
+   "content_sha1_unchanged_by_meta_edit": "aeaaba5af9397d7a02d79052a533c753fcc2cf1e",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1044,
+   "url": "https://finalvestige.com/the-findspot/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "f593e39753b413ee66a636d937287dfdee41f20d",
+   "after_meta_sha1": "6c33a9694496aef65bff5b3a875cd69acc9882f6",
+   "content_sha1_unchanged_by_meta_edit": "fd368ad49a80029260dbc344369a23c2eaddf13a",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1054,
+   "url": "https://finalvestige.com/the-old-line/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "88b8b4e17d03db43c3836c47c37e6ac7681b8996",
+   "after_meta_sha1": "0a3ba8c385618d5125d60b6e5e2ad39d3bd4cd16",
+   "content_sha1_unchanged_by_meta_edit": "5dfbe75e1324fb94db2541ea91b333b7fe312784",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1060,
+   "url": "https://finalvestige.com/the-open-account/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "6811f5aa6b29d8db4b9a2bc15481c77bc3555fd3",
+   "after_meta_sha1": "8f583532f201a2d90f0fe3b1c085b2a2d23025a5",
+   "content_sha1_unchanged_by_meta_edit": "a01acd00d6be790364743b81909aab37adeb0a2b",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1120,
+   "url": "https://finalvestige.com/the-working-order/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "c9329d69ac8fceeee761631516ff99b2d25156a0",
+   "after_meta_sha1": "e0eba1ac1c90ba12e3d0781be73986686b2c3eb7",
+   "content_sha1_unchanged_by_meta_edit": "ea9770867d03ba4d64c1f33b51545b8f1db834c9",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1122,
+   "url": "https://finalvestige.com/the-missing-caption/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "acf77cc0a56e8e1460a0b296daeeb9f9c49dd5bb",
+   "after_meta_sha1": "43f21fff8f1167835b2a102b732def405419ef50",
+   "content_sha1_unchanged_by_meta_edit": "325dbd1f21c0c9bbdae3b708ad7e47b379cefac2",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1123,
+   "url": "https://finalvestige.com/the-paper-witness/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "ac69b3b841c24b8abe6200b669ddc6648911d1c4",
+   "after_meta_sha1": "2829059eb4b795ae521efa282752bbc843f16431",
+   "content_sha1_unchanged_by_meta_edit": "5ba6c8feaac15a41a1680142f9eaa7378b5b749d",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1125,
+   "url": "https://finalvestige.com/the-builders-trace/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "05f697317ee4c02277df548db32e59bb9578126e",
+   "after_meta_sha1": "b256bc9a70c5bc815406ec3da9a4db27d1eddb9f",
+   "content_sha1_unchanged_by_meta_edit": "0650a6af829e16c147db187cf55f01d291f4403e",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1127,
+   "url": "https://finalvestige.com/the-enumerators-block/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "810755c04ed6b410b5ada65523caf1e293917632",
+   "after_meta_sha1": "d88e59aad261ad8f7091a08f39b4807e7e6555df",
+   "content_sha1_unchanged_by_meta_edit": "2fa69a7dd7aac1fd30bc112e5a280ef9013c41a4",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1148,
+   "url": "https://finalvestige.com/archive-shelf/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "cb0399b7423133fc305c0aac301ee4b3931a21b3",
+   "after_meta_sha1": "7262c9fc51f72e79ecb6ff74b9334ca15c620c18",
+   "content_sha1_unchanged_by_meta_edit": "bb55a32f0ec77ba37ead3393649cf686f76a73ad",
+   "verified": true,
+   "notes": "desc OK"
+  },
+  {
+   "id": 1304,
+   "url": "https://finalvestige.com/accountability/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "8b2ffa96e21146e52e4684aacf858aebd806707c",
+   "content_sha1_unchanged_by_meta_edit": "516af85535f0b14801783e04878d96f99d5cc69c",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1305,
+   "url": "https://finalvestige.com/accountability/failures-to-protect/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "722543cb158dc678d562cd31ca053550594294fe",
+   "content_sha1_unchanged_by_meta_edit": "b156d60bf9923c1f69bb1d6a6a188090c86b8f6e",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1306,
+   "url": "https://finalvestige.com/accountability/public-money-private-power/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "a44cb2600ee814f358d3915a6ded92efbce6bab5",
+   "content_sha1_unchanged_by_meta_edit": "e5db5433c497d0b660c2c7c553e13ec0e17a1e73",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1307,
+   "url": "https://finalvestige.com/accountability/abuse-of-power/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "a584204210338abd4d02cb4ce7147cecb4a2c693",
+   "content_sha1_unchanged_by_meta_edit": "5c2695fcdfe1551170619956bbf732fc1033d71f",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1308,
+   "url": "https://finalvestige.com/accountability/votes-decisions/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "58072040622ed9939e81b620ea376da3f7c65f89",
+   "content_sha1_unchanged_by_meta_edit": "e16caf69ab2b973922f96144008e8a3cabbbaf33",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1309,
+   "url": "https://finalvestige.com/accountability/watch/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "8d85d36b62e021f382c30b0af1f4ec9a94186cb5",
+   "content_sha1_unchanged_by_meta_edit": "0e61c64c036591ae3d345251c8b3d3b3e576c4e4",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1310,
+   "url": "https://finalvestige.com/accountability/ledger/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "4ee883c2023fd0463a4d67a40d1921fea6d5f7db",
+   "content_sha1_unchanged_by_meta_edit": "2181f3a1e5ecf54d5b2ebfc6e7a6c543a30ee2cd",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1311,
+   "url": "https://finalvestige.com/accountability/evidence/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "0d91092e93f1edc1842d8ab327726affef014101",
+   "content_sha1_unchanged_by_meta_edit": "64ba625da8ac096c0f03d195843bf51da3c3e119",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1312,
+   "url": "https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "7c9ff5945fd9d9b5bdaf24f4bec50f14e4ad59f4",
+   "content_sha1_unchanged_by_meta_edit": "ba8880bab634294ddf0c836cbabc0b69146dec44",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1313,
+   "url": "https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "6f7a6cb5935534eb6dcab84abb257f756f6f2e63",
+   "content_sha1_unchanged_by_meta_edit": "d29b4a61c1f00a7fb85de0df754e0944d50ad9a7",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1314,
+   "url": "https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "3d90380aa014f8fef7a5d7e29eedf14b2bf03ca2",
+   "content_sha1_unchanged_by_meta_edit": "4991836cbdf14dfcde89c47f76426c87d4248b63",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1315,
+   "url": "https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "6bc62254cf952362f4b548c5f341fe560937cbc0",
+   "content_sha1_unchanged_by_meta_edit": "0597b9c12712a80854a176f0ea58798ac81947a4",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1316,
+   "url": "https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "c8f94ee69d287e2317c01b56096cba7df0bc3321",
+   "content_sha1_unchanged_by_meta_edit": "a2bfcb96e36b1f1cd2429fc27fbecf23eae78cba",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1480,
+   "url": "https://finalvestige.com/podcast/",
+   "fields": [
+    "title"
+   ],
+   "before_meta_sha1": "7351e6d944417c8a52570189cd521af516974b99",
+   "after_meta_sha1": "eae2c9eb5e695e2249f27f9a5b1d35c907db3a38",
+   "content_sha1_unchanged_by_meta_edit": "190deb49ddf9ef29975c58f600a90cc6c084c045",
+   "verified": true,
+   "notes": "title OK"
+  },
+  {
+   "id": 1484,
+   "url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+   "fields": [
+    "description"
+   ],
+   "before_meta_sha1": "35ec721e8acadc7d74a80e633c994529408bdab8",
+   "after_meta_sha1": "4f78971851371b1deb8d8dfbd015e75559114b53",
+   "content_sha1_unchanged_by_meta_edit": "5c29bccba5fe75248ce12cd58bb16e0a7a3953e5",
+   "verified": true,
+   "notes": "desc OK"
+  }
+ ],
+ "inserts": [
+  {
+   "id": 291,
+   "url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+   "op": "post-sections.insert",
+   "index": 151,
+   "content_hash_before": "fdead53668fec705179fed0f784d1ead01f70b25",
+   "content_hash_after": "54c40d4d3a24e4b99344d84f3881d812bf7ec5cc",
+   "modified_before": "2026-08-28T15:14:59",
+   "modified_after": "2026-11-02T21:36:09",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 18,
+   "internal_links_after": 22,
+   "verified": true
+  },
+  {
+   "id": 166,
+   "url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+   "op": "post-sections.insert",
+   "index": 71,
+   "content_hash_before": "28f3e97e6e981f88e1dae836aad892a14c1ccc85",
+   "content_hash_after": "de78a48874c4fddd3ea31cbcb7293d2ee766cc19",
+   "modified_before": "2026-10-29T17:32:42",
+   "modified_after": "2026-11-02T21:36:59",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 15,
+   "internal_links_after": 19,
+   "verified": true
+  },
+  {
+   "id": 146,
+   "url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+   "op": "post-sections.insert",
+   "index": 124,
+   "content_hash_before": "b6ca5ffa5eb33def75505cf08770739e2630a1cb",
+   "content_hash_after": "db8d44d37c4853d4e299fb76530dea147a898dad",
+   "modified_before": "2026-08-25T18:49:09",
+   "modified_after": "2026-11-02T21:37:02",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 17,
+   "internal_links_after": 21,
+   "verified": true
+  },
+  {
+   "id": 258,
+   "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+   "op": "post-sections.insert",
+   "index": 47,
+   "content_hash_before": "89f6444bcac960847c815372c3ae7cc78a7a49ea",
+   "content_hash_after": "6e1eb769633dd1d06a6363101f3e8ec00b996bd1",
+   "modified_before": "2026-10-29T14:43:40",
+   "modified_after": "2026-11-02T21:37:05",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 17,
+   "internal_links_after": 21,
+   "verified": true
+  },
+  {
+   "id": 276,
+   "url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+   "op": "post-sections.insert",
+   "index": 127,
+   "content_hash_before": "c89c04a114edc7b4af5290d2d71f8604eddd6b44",
+   "content_hash_after": "0e89882fde3796088df36dfa88e40ecf6f1d34f7",
+   "modified_before": "2026-10-29T18:28:26",
+   "modified_after": "2026-11-02T21:37:08",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 17,
+   "internal_links_after": 21,
+   "verified": true
+  },
+  {
+   "id": 287,
+   "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+   "op": "post-sections.insert",
+   "index": 150,
+   "content_hash_before": "a544fcd0a386d312bfae8ea40b385890be7d9170",
+   "content_hash_after": "ffda2830ae5f3391940e2ee631a7a8747ead5006",
+   "modified_before": "2026-10-29T18:42:40",
+   "modified_after": "2026-11-02T21:37:10",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 18,
+   "internal_links_after": 22,
+   "verified": true
+  },
+  {
+   "id": 285,
+   "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+   "op": "post-sections.insert",
+   "index": 174,
+   "content_hash_before": "458dbcd1a6e50f8c3b23495cc265eccd936f0208",
+   "content_hash_after": "3695c914530aee2489f51f7988e717d76fefa058",
+   "modified_before": "2026-09-08T10:06:47",
+   "modified_after": "2026-11-02T21:37:13",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 17,
+   "internal_links_after": 21,
+   "verified": true
+  },
+  {
+   "id": 221,
+   "url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+   "op": "post-sections.insert",
+   "index": 87,
+   "content_hash_before": "133047d2abc2fb478c013b19a325be09ae23e2a0",
+   "content_hash_after": "4e4e5c7c0f01dd292682ae62b6c1372c2174e99b",
+   "modified_before": "2026-08-25T14:15:25",
+   "modified_after": "2026-11-02T21:37:16",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 16,
+   "internal_links_after": 20,
+   "verified": true
+  },
+  {
+   "id": 434,
+   "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+   "op": "post-sections.insert",
+   "index": 109,
+   "content_hash_before": "9d6d843d2aa9498d1a4b451be498092d87d26144",
+   "content_hash_after": "150e8e23ef66b45180bfad2b61b48d252d44c568",
+   "modified_before": "2026-09-08T02:51:21",
+   "modified_after": "2026-11-02T21:37:20",
+   "links_added": 3,
+   "links_found_on_public_page": 3,
+   "missing": [],
+   "internal_links_before": 19,
+   "internal_links_after": 22,
+   "verified": true
+  },
+  {
+   "id": 269,
+   "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+   "op": "post-sections.insert",
+   "index": 88,
+   "content_hash_before": "9c2344aac7c2800f2e62208257c10ab708dd1218",
+   "content_hash_after": "5ef9456e91e18efb657db47acab319a8d0195637",
+   "modified_before": "2026-10-29T20:59:49",
+   "modified_after": "2026-11-02T21:37:23",
+   "links_added": 3,
+   "links_found_on_public_page": 3,
+   "missing": [],
+   "internal_links_before": 16,
+   "internal_links_after": 19,
+   "verified": true
+  },
+  {
+   "id": 433,
+   "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+   "op": "post-sections.insert",
+   "index": 116,
+   "content_hash_before": "01679145e2a884a79547f3b3a408c3d9cb5db773",
+   "content_hash_after": "ad8b8783c717b910c7186e5d84275f259633f4fc",
+   "modified_before": "2026-10-29T16:31:22",
+   "modified_after": "2026-11-02T21:37:26",
+   "links_added": 3,
+   "links_found_on_public_page": 3,
+   "missing": [],
+   "internal_links_before": 17,
+   "internal_links_after": 20,
+   "verified": true
+  },
+  {
+   "id": 1029,
+   "url": "https://finalvestige.com/the-failure-chain/",
+   "op": "page-sections.insert",
+   "index": 3,
+   "content_hash_before": "20e04c63d57dea59c4554015eed2779fdab4ed3b",
+   "content_hash_after": "7fa7dde522c8da474c08a096d2fe68c6740179c7",
+   "modified_before": "2026-10-29T13:12:34",
+   "modified_after": "2026-11-02T21:37:59",
+   "links_added": 9,
+   "links_found_on_public_page": 9,
+   "missing": [],
+   "internal_links_before": 3,
+   "internal_links_after": 12,
+   "verified": true
+  },
+  {
+   "id": 189,
+   "url": "https://finalvestige.com/the-archive-trail/",
+   "op": "page-sections.insert",
+   "index": 2,
+   "content_hash_before": "eaaa1ba9a9d83e0256ba3b03be9968617ed1b0de",
+   "content_hash_after": "9b9ecb82aa352184ed8b1a96af92507b8228ad1e",
+   "modified_before": "2026-08-26T11:14:25",
+   "modified_after": "2026-11-02T21:38:01",
+   "links_added": 3,
+   "links_found_on_public_page": 3,
+   "missing": [],
+   "internal_links_before": 2,
+   "internal_links_after": 5,
+   "verified": true
+  },
+  {
+   "id": 1313,
+   "url": "https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/",
+   "op": "page-sections.insert",
+   "index": 1,
+   "content_hash_before": "d29b4a61c1f00a7fb85de0df754e0944d50ad9a7",
+   "content_hash_after": "1e8a3fa35dd88491b40634fb95a194e98113a074",
+   "modified_before": "2026-09-10T21:22:43",
+   "modified_after": "2026-11-02T21:38:04",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 0,
+   "internal_links_after": 4,
+   "verified": true
+  },
+  {
+   "id": 1314,
+   "url": "https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/",
+   "op": "page-sections.insert",
+   "index": 1,
+   "content_hash_before": "4991836cbdf14dfcde89c47f76426c87d4248b63",
+   "content_hash_after": "e95d3f281035d00d2c98cf1e0e300f335f45b6bb",
+   "modified_before": "2026-09-10T21:22:49",
+   "modified_after": "2026-11-02T21:38:07",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 0,
+   "internal_links_after": 4,
+   "verified": true
+  },
+  {
+   "id": 1316,
+   "url": "https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/",
+   "op": "page-sections.insert",
+   "index": 1,
+   "content_hash_before": "a2bfcb96e36b1f1cd2429fc27fbecf23eae78cba",
+   "content_hash_after": "1d8291fa36d3e26c7e98c672279e22caadd342bb",
+   "modified_before": "2026-10-29T12:50:41",
+   "modified_after": "2026-11-02T21:38:10",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 0,
+   "internal_links_after": 4,
+   "verified": true
+  },
+  {
+   "id": 1315,
+   "url": "https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/",
+   "op": "page-sections.insert",
+   "index": 1,
+   "content_hash_before": "0597b9c12712a80854a176f0ea58798ac81947a4",
+   "content_hash_after": "405c2007e90679f806163d2e3fa13f8c09fc0f9f",
+   "modified_before": "2026-09-10T21:22:56",
+   "modified_after": "2026-11-02T21:38:13",
+   "links_added": 4,
+   "links_found_on_public_page": 4,
+   "missing": [],
+   "internal_links_before": 0,
+   "internal_links_after": 4,
+   "verified": true
+  },
+  {
+   "id": 1312,
+   "url": "https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/",
+   "op": "page-sections.insert",
+   "index": 1,
+   "content_hash_before": "ba8880bab634294ddf0c836cbabc0b69146dec44",
+   "content_hash_after": "edc7ad2fa75e679825d3cb54430b9587009325c3",
+   "modified_before": "2026-09-10T21:22:36",
+   "modified_after": "2026-11-02T21:38:16",
+   "links_added": 3,
+   "links_found_on_public_page": 3,
+   "missing": [],
+   "internal_links_before": 0,
+   "internal_links_after": 3,
+   "verified": true
+  }
+ ],
+ "failures": [],
+ "regression": {
+  "urls_after": 140,
+  "non_200": [],
+  "no_h1": [],
+  "canonical_mismatch": [],
+  "untouched_pages_changed_title_or_desc": [],
+  "new_since_baseline": []
+ }
+}

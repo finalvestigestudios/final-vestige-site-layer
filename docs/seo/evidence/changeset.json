@@ -1,0 +1,957 @@
+{
+ "generated_from": "evidence/seo-prestate-2026-11-02.json",
+ "meta": [
+  {
+   "id": 14,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/affiliate-disclosure/",
+   "modified_before": "2026-09-07T09:42:06",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Affiliate Disclosure | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "Final Vestige affiliate disclosure and standards for product recommendations.",
+     "Some Final Vestige links are affiliate links. How commissions work, why the seller sets the price, and why affiliates never control editorial conclusions."
+    ]
+   }
+  },
+  {
+   "id": 15,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/privacy-policy/",
+   "modified_before": "2026-09-07T09:42:55",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Privacy Policy | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "Final Vestige privacy policy.",
+     "How Final Vestige receives and uses information you provide, such as an email address for The Dispatch, plus technical data collected by service providers."
+    ]
+   }
+  },
+  {
+   "id": 16,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/terms-disclaimer/",
+   "modified_before": "2026-09-07T09:42:28",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Terms & Disclaimer | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "Final Vestige terms of use and disclaimer.",
+     "Final Vestige terms of use: what it publishes, the limits of historical records, and why content is not professional legal, medical or engineering advice."
+    ]
+   }
+  },
+  {
+   "id": 156,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+   "modified_before": "2026-10-29T14:45:54",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "They Lifted the City: How Galveston Raised Itself After the 1900 Hurricane | Final Vestige",
+     "How Galveston Raised Itself After the 1900 Hurricane | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 166,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+   "modified_before": "2026-10-29T17:32:42",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "They Checked the Dam That Morning: The 1928 St. Francis Dam Disaster | Final Vestige",
+     "St. Francis Dam Disaster, 1928: Checked That Morning | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 190,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+   "modified_before": "2026-10-29T14:46:47",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Hoses That Wouldn’t Fit: How the 1904 Baltimore Fire Changed Firefighting Standards | Final Vestige",
+     "1904 Baltimore Fire: How It Changed Firefighting Standards | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 211,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+   "modified_before": "2026-10-29T17:37:13",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Men Who Wouldn’t Turn Left: Port Chicago and the 1944 Mutiny Trial | Final Vestige",
+     "Port Chicago Disaster and the 1944 Mutiny Trial | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 214,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+   "modified_before": "2026-10-29T16:30:42",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Lifeboats Never Left the Deck: The SS Eastland Disaster of 1915 | Final Vestige",
+     "SS Eastland Disaster of 1915 and the Lifeboats | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 216,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+   "modified_before": "2026-10-30T01:13:09",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Fire Department Was Already There: The 1947 Texas City Disaster | Final Vestige",
+     "1947 Texas City Disaster: The Fire Department | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "When the Grandcamp caught fire in Texas City in 1947, the city sent all four of its fire trucks to the docks. Minutes later the ship exploded, leaving a burning industrial city without its own fire department.",
+     "When the Grandcamp caught fire in Texas City in 1947, the city sent all four of its fire trucks to the docks. Minutes later the ship exploded."
+    ]
+   }
+  },
+  {
+   "id": 220,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+   "modified_before": "2026-10-29T18:25:46",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "Too Deep for the Rescue Bell: USS Thresher and the Birth of SUBSAFE | Final Vestige",
+     "USS Thresher and the Birth of SUBSAFE | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 221,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+   "modified_before": "2026-08-25T14:15:25",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Rod Was Supposed to Move Four Inches: The SL-1 Nuclear Reactor Accident | Final Vestige",
+     "SL-1 Nuclear Reactor Accident (1961): The Four-Inch Rod | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "At Idaho’s SL-1 reactor in 1961, a maintenance procedure allowed the central control rod to move only four inches. Investigators later found it about twenty inches withdrawn. Three men died, and reactor safety changed.",
+     "At Idaho’s SL-1 reactor in 1961, a procedure allowed the control rod only four inches of travel. Investigators found it about twenty inches withdrawn."
+    ]
+   }
+  },
+  {
+   "id": 252,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+   "modified_before": "2026-10-30T01:12:06",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "They Thought the Books Were Charcoal: Reading the Herculaneum Scrolls | Final Vestige",
+     "Herculaneum Scrolls: Mistaken for Charcoal | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 253,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+   "modified_before": "2026-10-29T16:03:55",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Life Preservers Had Passed Inspection: The General Slocum Disaster | Final Vestige",
+     "The General Slocum Disaster and Its Life Preservers | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 256,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+   "modified_before": "2026-10-29T15:51:59",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Torch Never Reopened: The Black Tom Explosion and the Statue of Liberty | Final Vestige",
+     "Black Tom Explosion and the Statue of Liberty | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 258,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+   "modified_before": "2026-10-29T14:43:40",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "Inside the Joint: The Silver Bridge Collapse and the Crack Inspectors Couldn’t See | Final Vestige",
+     "Silver Bridge Collapse: The Crack Inspectors Couldn’t See | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 269,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+   "modified_before": "2026-10-29T20:59:49",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Watch Lost Its Hands: Vincent Coleman and the Halifax Explosion | Final Vestige",
+     "Vincent Coleman and the Halifax Explosion | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "Vincent Coleman died after warning the railway about the Halifax Explosion. Whether he saved the famous 300-passenger train is disputed. What his last message definitely did may have mattered even more.",
+     "Vincent Coleman died after warning the railway about the Halifax Explosion. Whether he saved a train is disputed. What his last message did may matter more."
+    ]
+   }
+  },
+  {
+   "id": 274,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+   "modified_before": "2026-10-29T16:02:05",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "Twenty-Four Feet from Air: USS Tang, the Torpedo That Came Back, and the Escape from the Bottom | Final Vestige",
+     "USS Tang: The Torpedo That Came Back and the Escape | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 278,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+   "modified_before": "2026-08-21T00:32:59",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "They Walked Beyond the Search: Lady Be Good and the Crew Lost in the Sahara | Final Vestige",
+     "Lady Be Good: The Crew Lost in the Sahara | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 279,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+   "modified_before": "2026-09-08T10:06:54",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Geologists Found the Spy Satellite: Cosmos 954 and Operation Morning Light | Final Vestige",
+     "Cosmos 954 and Operation Morning Light | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 280,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+   "modified_before": "2026-09-07T09:43:49",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Sledgehammers Broke First: USS Pueblo and the Intelligence They Couldn’t Destroy | Final Vestige",
+     "USS Pueblo and the Intelligence They Couldn’t Destroy | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 283,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+   "modified_before": "2026-08-21T00:33:14",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Crowd Became the Lock: The Iroquois Theatre Fire and the Door Hardware It Changed | Final Vestige",
+     "Iroquois Theatre Fire: The Door Hardware It Changed | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 285,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+   "modified_before": "2026-09-08T10:06:47",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Light Said Closed: Three Mile Island and the Indicator That Wasn’t the Valve | Final Vestige",
+     "Three Mile Island: The Indicator That Wasn’t the Valve | Final Vestige"
+    ],
+    "advanced_seo_description": [
+     "At Three Mile Island in 1979, the control room indicated that a relief valve had closed. It had not. That gap between the display and the machine helped turn a routine shutdown into a partial meltdown.",
+     "At Three Mile Island in 1979, the control room indicated a relief valve had closed. It had not, and that gap helped turn a shutdown into a partial meltdown."
+    ]
+   }
+  },
+  {
+   "id": 287,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+   "modified_before": "2026-10-29T18:42:40",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The Warning Was a Man Waving: The 1980 Sunshine Skyway Bridge Disaster | Final Vestige",
+     "The 1980 Sunshine Skyway Bridge Disaster | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 290,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+   "modified_before": "2026-08-31T03:32:37",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "The City Kept Moving: Camp Century, Project Iceworm and the Base Beneath Greenland | Final Vestige",
+     "Camp Century & Project Iceworm: The Base Beneath Greenland | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 299,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+   "modified_before": "2026-09-08T10:07:10",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "Thirty Men Were Enough: Why the Warship Vasa Sank on Its Maiden Voyage | Final Vestige",
+     "Why the Warship Vasa Sank on Its Maiden Voyage | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 370,
+   "type": "post",
+   "op": "posts.update",
+   "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+   "modified_before": "2026-10-29T15:27:15",
+   "changes": {
+    "advanced_seo_description": [
+     "When LST-353 exploded at Pearl Harbor in 1944, nearby landing ships needed to separate. Fire made some of their forward mooring lines unreachable, helping turn one explosion into a harbor-wide disaster.",
+     "When LST-353 exploded at Pearl Harbor in 1944, fire left some mooring lines unreachable, helping turn one explosion into a harbor-wide disaster."
+    ]
+   }
+  },
+  {
+   "id": 747,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/community/",
+   "modified_before": "2026-10-11T22:42:42",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "The Exchange: History & Engineering Community | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1027,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-turning-screw/",
+   "modified_before": "2026-10-29T13:12:29",
+   "changes": {
+    "advanced_seo_description": [
+     "A free illustrated field guide for identifying historical screw threads, bolts, machine screws and power screws; comparing Whitworth, Sellers, Unified, metric, Acme, square and buttress forms; and separating original hardware from later repairs.",
+     "A free field guide to identifying historical screw threads and fasteners (Whitworth, Sellers, Unified, metric, Acme) and separating originals from repairs."
+    ]
+   }
+  },
+  {
+   "id": 1029,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-failure-chain/",
+   "modified_before": "2026-10-29T13:12:34",
+   "changes": {
+    "advanced_seo_description": [
+     "A free illustrated field guide for reconstructing historical engineering failures using configuration records, event clocks, warning timelines, cause stacks, official reports, evidence-confidence grading and recommendation tracking.",
+     "A free guide to reconstructing historical engineering failures: event clocks, cause stacks, official reports, evidence grading and recommendation tracking."
+    ],
+    "jetpack_seo_schema_type": [
+     "",
+     "article"
+    ]
+   }
+  },
+  {
+   "id": 1033,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-signal-chain/",
+   "modified_before": "2026-10-29T13:12:41",
+   "changes": {
+    "advanced_seo_description": [
+     "A free illustrated field manual for building a resilient emergency communication plan using backup paths, an out-of-area contact, message relays, acknowledgment states, check-in windows, power planning and no-comms fallbacks.",
+     "A free field manual for building an emergency communication plan: backup paths, an out-of-area contact, check-in windows, power planning and no-comms fallbacks."
+    ]
+   }
+  },
+  {
+   "id": 1044,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-findspot/",
+   "modified_before": "2026-10-29T14:06:36",
+   "changes": {
+    "advanced_seo_description": [
+     "A free illustrated field manual for documenting accidental historical and archaeological finds: photos, location, context, disturbance, research, reporting, legal and safety boundaries, and field cards.",
+     "A free field manual for documenting accidental historical finds without losing their context: photos, location, disturbance, reporting and legal boundaries."
+    ]
+   }
+  },
+  {
+   "id": 1054,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-old-line/",
+   "modified_before": "2026-10-29T13:59:07",
+   "changes": {
+    "advanced_seo_description": [
+     "A free illustrated field manual for researching historical property boundaries, PLSS township-range-section descriptions, government lots, GLO survey plats, land patents, tract books, cancelled entries, monuments and resurveys.",
+     "A free field manual for researching historical property boundaries: PLSS descriptions, GLO survey plats, land patents, tract books, monuments and resurveys."
+    ]
+   }
+  },
+  {
+   "id": 1060,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-open-account/",
+   "modified_before": "2026-10-29T14:03:38",
+   "changes": {
+    "advanced_seo_description": [
+     "A free research-grade field manual for interpreting historical store ledgers, daybooks, cash books, debit and credit entries, payment in kind, running balances, merchant inventories and community credit networks.",
+     "A free field manual for reading historical store ledgers, daybooks and cash books: debits, credits, payment in kind, running balances and merchant inventories."
+    ]
+   }
+  },
+  {
+   "id": 1120,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-working-order/",
+   "modified_before": "2026-10-29T14:09:52",
+   "changes": {
+    "advanced_seo_description": [
+     "A research-grade field manual for reconstructing historical machines and industrial processes through material, power, information, and labor flows, HAER records, patents, photographs, production evidence, and change history.",
+     "A field manual for reconstructing historical machines and industrial processes with HAER records, patents, photographs, production evidence and change history."
+    ]
+   }
+  },
+  {
+   "id": 1122,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-missing-caption/",
+   "modified_before": "2026-10-29T14:04:53",
+   "changes": {
+    "advanced_seo_description": [
+     "A research-grade guide to identifying, dating, locating and documenting historical photographs using captions, neighboring frames, call numbers, directories, maps, visual clues, rights records and confidence grades.",
+     "A research guide to identifying and dating historical photographs using captions, neighboring frames, call numbers, directories, maps and confidence grades."
+    ]
+   }
+  },
+  {
+   "id": 1123,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-paper-witness/",
+   "modified_before": "2026-10-29T14:08:53",
+   "changes": {
+    "advanced_seo_description": [
+     "A research-grade guide to historical paper evidence: laid and wove structure, watermarks, folds, annotations, provenance, later repairs, digital-surrogate limits and responsible authentication language.",
+     "A research guide to historical paper evidence: laid and wove structure, watermarks, folds, provenance, later repairs and responsible authentication language."
+    ]
+   }
+  },
+  {
+   "id": 1125,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-builders-trace/",
+   "modified_before": "2026-10-29T14:01:46",
+   "changes": {
+    "advanced_seo_description": [
+     "A research-grade guide to reading old-building evidence: construction seams, blocked openings, paint and plaster ghosts, trim scars, utility upgrades, phase mapping, documentary corroboration, and safe non-destructive investigation.",
+     "A research guide to reading old-building evidence: construction seams, blocked openings, paint and plaster ghosts, phase mapping and non-destructive methods."
+    ]
+   }
+  },
+  {
+   "id": 1127,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/the-enumerators-block/",
+   "modified_before": "2026-10-29T14:16:36",
+   "changes": {
+    "advanced_seo_description": [
+     "A research-grade guide to reconstructing historical households and city blocks using census schedules, enumeration district maps, city directories, Sanborn maps, address evidence, and source-controlled neighborhood analysis.",
+     "A research guide to reconstructing historical households and city blocks with census schedules, enumeration district maps, city directories and Sanborn maps."
+    ]
+   }
+  },
+  {
+   "id": 1148,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/archive-shelf/",
+   "modified_before": "2026-10-29T12:50:52",
+   "changes": {
+    "advanced_seo_description": [
+     "Browse 205 curated historical manuals, technical reports, government investigations, periodicals and primary sources selected by Final Vestige for research value, with subject filters and direct Internet Archive access.",
+     "Browse 205 curated historical manuals, technical reports, government investigations and primary sources, with subject filters and direct Internet Archive links."
+    ]
+   }
+  },
+  {
+   "id": 1304,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/",
+   "modified_before": "2026-10-29T13:16:58",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "The Public Record: Evidence-First Investigations | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1305,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/failures-to-protect/",
+   "modified_before": "2026-09-10T21:21:52",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Failures to Protect | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1306,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/public-money-private-power/",
+   "modified_before": "2026-09-10T21:21:58",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Public Money & Private Power | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1307,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/abuse-of-power/",
+   "modified_before": "2026-09-10T21:22:06",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Abuse of Power: Document-Driven Investigations | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1308,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/votes-decisions/",
+   "modified_before": "2026-10-29T17:18:57",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Votes & Decisions | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1309,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/watch/",
+   "modified_before": "2026-09-10T21:22:20",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Accountability Watch | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1310,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/ledger/",
+   "modified_before": "2026-09-10T21:22:27",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "The Accountability Ledger | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1311,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/evidence/",
+   "modified_before": "2026-10-29T12:50:43",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Evidence Room: Primary Sources Behind The Public Record | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1312,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/",
+   "modified_before": "2026-09-10T21:22:36",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Gabriel Fernandez: Warnings Already in the System | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1313,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/",
+   "modified_before": "2026-09-10T21:22:43",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Watergate: The Plumbers and Abuse of Power | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1314,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/",
+   "modified_before": "2026-09-10T21:22:49",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Iraq WMD Intelligence vs. Public Claims | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1315,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/",
+   "modified_before": "2026-09-10T21:22:56",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Maximus: Public Money, Private Infrastructure | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1316,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/",
+   "modified_before": "2026-10-29T12:50:41",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Andrew Do and Orange County COVID Relief Funds | Final Vestige"
+    ]
+   }
+  },
+  {
+   "id": 1480,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/podcast/",
+   "modified_before": "2026-10-11T21:24:09",
+   "changes": {
+    "jetpack_seo_html_title": [
+     "",
+     "Final Vestige Podcast | Evidence-First True Stories"
+    ]
+   }
+  },
+  {
+   "id": 1484,
+   "type": "page",
+   "op": "pages.update",
+   "url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+   "modified_before": "2026-10-29T21:20:10",
+   "changes": {
+    "advanced_seo_description": [
+     "The 1937 New London investigation could identify the probable ignition path beneath the school—but it did not prove exactly where the gas came from. Follow the federal evidence, sources, transcript, and aftermath.",
+     "The 1937 New London inquiry found a probable ignition path beneath the school but not where the gas came from. Federal evidence, sources and transcript."
+    ]
+   }
+  }
+ ],
+ "inserts": [
+  {
+   "id": 291,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 151,
+   "expected_modified": "2026-08-28T15:14:59",
+   "expected_content_hash": "fdead53668fec705179fed0f784d1ead01f70b25",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/\">They Checked the Dam That Morning</a></li><li><a href=\"https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/\">The Dam That Didn’t Fail</a></li><li><a href=\"https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/\">Add No More Load</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "824fb6bce62b34ed76b09d4348d867f6af392537",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 166,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 71,
+   "expected_modified": "2026-10-29T17:32:42",
+   "expected_content_hash": "28f3e97e6e981f88e1dae836aad892a14c1ccc85",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/\">One Bulldozer Never Came Back</a></li><li><a href=\"https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/\">The Dam That Didn’t Fail</a></li><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "8713995bbca04e140dad6bddb54c09125da589a1",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 146,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 124,
+   "expected_modified": "2026-08-25T18:49:09",
+   "expected_content_hash": "b6ca5ffa5eb33def75505cf08770739e2630a1cb",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/\">One Bulldozer Never Came Back</a></li><li><a href=\"https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/\">They Checked the Dam That Morning</a></li><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "980eb402119935bcacf567f9d509bf8371835f0d",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 258,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 47,
+   "expected_modified": "2026-10-29T14:43:40",
+   "expected_content_hash": "89f6444bcac960847c815372c3ae7cc78a7a49ea",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/\">Add No More Load</a></li><li><a href=\"https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/\">The Warning Was a Man Waving</a></li><li><a href=\"https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/\">One Bulldozer Never Came Back</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "969d14030d6e48e5bd4b832951c2b869563156f3",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 276,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 127,
+   "expected_modified": "2026-10-29T18:28:26",
+   "expected_content_hash": "c89c04a114edc7b4af5290d2d71f8604eddd6b44",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li><li><a href=\"https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/\">The Warning Was a Man Waving</a></li><li><a href=\"https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/\">They Checked the Dam That Morning</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "034dcb91e66cb028e7c9417033b90ac07994a2b3",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 287,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 150,
+   "expected_modified": "2026-10-29T18:42:40",
+   "expected_content_hash": "a544fcd0a386d312bfae8ea40b385890be7d9170",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li><li><a href=\"https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/\">Add No More Load</a></li><li><a href=\"https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/\">The Light Said Closed</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "90a9a5d7d542f9d69ccf45ff13a8a7e4781612d9",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 285,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 174,
+   "expected_modified": "2026-09-08T10:06:47",
+   "expected_content_hash": "458dbcd1a6e50f8c3b23495cc265eccd936f0208",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/\">The Rod Was Supposed to Move Four Inches</a></li><li><a href=\"https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/\">The Warning Was a Man Waving</a></li><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "46d09e0e6968cdb8c2b6b46308b5fc1aa18715eb",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 221,
+   "kind": "failure-chain",
+   "op": "post-sections.insert",
+   "index": 87,
+   "expected_modified": "2026-08-25T14:15:25",
+   "expected_content_hash": "133047d2abc2fb478c013b19a325be09ae23e2a0",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-failure-chain/\">The Failure Chain</a>, a free guide to reconstructing historical engineering failures from the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/\">The Light Said Closed</a></li><li><a href=\"https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/\">One Bulldozer Never Came Back</a></li><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "effcaa612f33a6d04314788ee7d7b314adfff469",
+   "note": "post -> The Failure Chain + 3 case studies"
+  },
+  {
+   "id": 434,
+   "kind": "archive-trail",
+   "op": "post-sections.insert",
+   "index": 109,
+   "expected_modified": "2026-09-08T02:51:21",
+   "expected_content_hash": "9d6d843d2aa9498d1a4b451be498092d87d26144",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a>, a field kit for verifying historical claims and tracing contradictions in the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/\">The Watch Lost Its Hands</a></li><li><a href=\"https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/\">All Well Was Written First</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "7d92c0676c31ab4657ba6c0f32a6ff64490e8026",
+   "note": "post -> The Archive Trail + 2 posts with disputed or incomplete records"
+  },
+  {
+   "id": 269,
+   "kind": "archive-trail",
+   "op": "post-sections.insert",
+   "index": 88,
+   "expected_modified": "2026-10-29T20:59:49",
+   "expected_content_hash": "9c2344aac7c2800f2e62208257c10ab708dd1218",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a>, a field kit for verifying historical claims and tracing contradictions in the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/\">The Hatch Opened Inward</a></li><li><a href=\"https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/\">All Well Was Written First</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "5d02d99da6bc8d10ec4bb4737a63dafd2c058814",
+   "note": "post -> The Archive Trail + 2 posts with disputed or incomplete records"
+  },
+  {
+   "id": 433,
+   "kind": "archive-trail",
+   "op": "post-sections.insert",
+   "index": 116,
+   "expected_modified": "2026-10-29T16:31:22",
+   "expected_content_hash": "01679145e2a884a79547f3b3a408c3d9cb5db773",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Method: <a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a>, a field kit for verifying historical claims and tracing contradictions in the record.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/\">The Hatch Opened Inward</a></li><li><a href=\"https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/\">The Watch Lost Its Hands</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "7b3324e217301ed74e4a3064a5e9bfa36dbab5ca",
+   "note": "post -> The Archive Trail + 2 posts with disputed or incomplete records"
+  },
+  {
+   "id": 1029,
+   "kind": "failure-chain-hub",
+   "op": "page-sections.insert",
+   "index": 3,
+   "expected_modified": "2026-10-29T13:12:34",
+   "expected_content_hash": "20e04c63d57dea59c4554015eed2779fdab4ed3b",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Worked examples on Final Vestige</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Case studies on this site that apply these methods to specific failures.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/\">One Bulldozer Never Came Back</a></li><li><a href=\"https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/\">They Checked the Dam That Morning</a></li><li><a href=\"https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/\">The Dam That Didn’t Fail</a></li><li><a href=\"https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/\">Inside the Joint</a></li><li><a href=\"https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/\">Add No More Load</a></li><li><a href=\"https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/\">The Warning Was a Man Waving</a></li><li><a href=\"https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/\">The Light Said Closed</a></li><li><a href=\"https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/\">The Rod Was Supposed to Move Four Inches</a></li><li><a href=\"https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/\">Six Miles an Hour</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "7ea3fedf354d0afff77f6f8ef0faa223be5ff20f",
+   "note": "guide page -> 9 case studies"
+  },
+  {
+   "id": 189,
+   "kind": "archive-trail-hub",
+   "op": "page-sections.insert",
+   "index": 2,
+   "expected_modified": "2026-08-26T11:14:25",
+   "expected_content_hash": "eaaa1ba9a9d83e0256ba3b03be9968617ed1b0de",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Case studies where the record is disputed or incomplete</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Posts on this site that show these verification habits in use.</p><!-- /wp:paragraph --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/\">The Hatch Opened Inward</a></li><li><a href=\"https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/\">The Watch Lost Its Hands</a></li><li><a href=\"https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/\">All Well Was Written First</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "2544fdabdba040863e524101595712a2b3ce4888",
+   "note": "guide page -> 3 case studies"
+  },
+  {
+   "id": 1313,
+   "kind": "accountability",
+   "op": "page-sections.insert",
+   "index": 1,
+   "expected_modified": "2026-09-10T21:22:43",
+   "expected_content_hash": "d29b4a61c1f00a7fb85de0df754e0944d50ad9a7",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">More from The Public Record</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/accountability/abuse-of-power/\">Abuse of Power</a></li><li><a href=\"https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/\">Iraq WMD: What the Intelligence Said and What the Public Was Told</a></li><li><a href=\"https://finalvestige.com/accountability/evidence/\">Evidence Room</a></li><li><a href=\"https://finalvestige.com/accountability/\">The Public Record</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "959f26fb6be6788ca6a7ecca3e82d9e3d050145d",
+   "note": "case page -> parent hub, sibling case, Evidence Room, The Public Record"
+  },
+  {
+   "id": 1314,
+   "kind": "accountability",
+   "op": "page-sections.insert",
+   "index": 1,
+   "expected_modified": "2026-09-10T21:22:49",
+   "expected_content_hash": "4991836cbdf14dfcde89c47f76426c87d4248b63",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">More from The Public Record</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/accountability/abuse-of-power/\">Abuse of Power</a></li><li><a href=\"https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/\">Watergate: The Plumbers and the Abuse of Presidential Power</a></li><li><a href=\"https://finalvestige.com/accountability/evidence/\">Evidence Room</a></li><li><a href=\"https://finalvestige.com/accountability/\">The Public Record</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "bbdf4c90875fb8293d9ab1167248483f401b55cd",
+   "note": "case page -> parent hub, sibling case, Evidence Room, The Public Record"
+  },
+  {
+   "id": 1316,
+   "kind": "accountability",
+   "op": "page-sections.insert",
+   "index": 1,
+   "expected_modified": "2026-10-29T12:50:41",
+   "expected_content_hash": "a2bfcb96e36b1f1cd2429fc27fbecf23eae78cba",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">More from The Public Record</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/accountability/public-money-private-power/\">Public Money &amp; Private Power</a></li><li><a href=\"https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/\">Maximus: Public Money, Private Infrastructure</a></li><li><a href=\"https://finalvestige.com/accountability/evidence/\">Evidence Room</a></li><li><a href=\"https://finalvestige.com/accountability/\">The Public Record</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "3b9154e8e07f23897f207928d2f1588bc917d8a5",
+   "note": "case page -> parent hub, sibling case, Evidence Room, The Public Record"
+  },
+  {
+   "id": 1315,
+   "kind": "accountability",
+   "op": "page-sections.insert",
+   "index": 1,
+   "expected_modified": "2026-09-10T21:22:56",
+   "expected_content_hash": "0597b9c12712a80854a176f0ea58798ac81947a4",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">More from The Public Record</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/accountability/public-money-private-power/\">Public Money &amp; Private Power</a></li><li><a href=\"https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/\">Andrew Do and Orange County COVID Relief Funds</a></li><li><a href=\"https://finalvestige.com/accountability/evidence/\">Evidence Room</a></li><li><a href=\"https://finalvestige.com/accountability/\">The Public Record</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "22780325a418cc53204086d9b715a1930bd576df",
+   "note": "case page -> parent hub, sibling case, Evidence Room, The Public Record"
+  },
+  {
+   "id": 1312,
+   "kind": "accountability",
+   "op": "page-sections.insert",
+   "index": 1,
+   "expected_modified": "2026-09-10T21:22:36",
+   "expected_content_hash": "ba8880bab634294ddf0c836cbabc0b69146dec44",
+   "expected_block_type": "core/group",
+   "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">More from The Public Record</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/accountability/failures-to-protect/\">Failures to Protect</a></li><li><a href=\"https://finalvestige.com/accountability/evidence/\">Evidence Room</a></li><li><a href=\"https://finalvestige.com/accountability/\">The Public Record</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
+   "block_markup_sha1": "2f687bc3b5aa0773ecfe176fca65c321d1d4b8ab",
+   "note": "case page -> parent hub, sibling case, Evidence Room, The Public Record"
+  }
+ ]
+}
