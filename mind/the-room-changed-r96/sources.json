@@ -1,0 +1,170 @@
+[
+  {
+    "id": "S01",
+    "type": "research",
+    "title": "Radvansky, Krawietz & Tamplin (2011) Walking through Doorways Causes Forgetting",
+    "url": "https://doi.org/10.1080/17470218.2011.571267",
+    "evidence": "object memory after location changes",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S02",
+    "type": "research",
+    "title": "McFadyen et al. (2021) Doorways do not always cause forgetting",
+    "url": "https://doi.org/10.1186/s40359-021-00536-3",
+    "evidence": "four experiments; effect conditional on load and task",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S03",
+    "type": "research",
+    "title": "Lamont & Bilkey (2026) Spatial boundaries and memory in VR",
+    "url": "https://doi.org/10.3758/s13421-026-01852-y",
+    "evidence": "90 participants; distracting mid-room vs at doorway",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S04",
+    "type": "research",
+    "title": "Crockett et al. (2026) Walking through doorways helps remembering, but not for long",
+    "url": "https://doi.org/10.3758/s13421-025-01832-8",
+    "evidence": "limited, short-lived benefit for words near a boundary",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S05",
+    "type": "research",
+    "title": "Pettijohn & Radvansky (2018) active/passive interaction",
+    "url": "https://doi.org/10.1080/20445911.2018.1540492",
+    "evidence": "passive observers smaller spatial updating effect",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S06",
+    "type": "research",
+    "title": "University of Notre Dame (2011) study account",
+    "url": "https://provost.nd.edu/news/walking-through-doorways-causes-forgetting-new-research-shows/",
+    "evidence": "summary of controlled tasks, original room return",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S07",
+    "type": "merchant",
+    "title": "Inspire3 catalog",
+    "url": "https://inspire3.com/",
+    "evidence": "official brand listing",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S08",
+    "type": "merchant",
+    "title": "Zen12 exact hnp offer",
+    "url": "https://zen12.com/hnp",
+    "evidence": "12 minutes, twelve levels, four formats and 24/48 MP3 variants",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S09",
+    "type": "merchant",
+    "title": "Zen12 About",
+    "url": "https://zen12.com/about",
+    "evidence": "seller benefits and driving warning",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S10",
+    "type": "merchant",
+    "title": "Zen12 Research",
+    "url": "https://zen12.com/research",
+    "evidence": "seller theory and references; not product efficacy",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S11",
+    "type": "merchant",
+    "title": "Zen12 full course checkout",
+    "url": "https://zen12.com/getstarted",
+    "evidence": "48 MP3, mobile number, visible countdown",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S12",
+    "type": "merchant",
+    "title": "Inspire3 Privacy",
+    "url": "https://inspire3.com/privacy/",
+    "evidence": "buyer contact sharing with affiliates and SMS marketing",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S13",
+    "type": "merchant",
+    "title": "Inspire3 Terms of Sale",
+    "url": "https://inspire3.com/terms/",
+    "evidence": "one-year Zen12 refund statement; after-90-day card refund by PayPal; IP rights",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S14",
+    "type": "merchant",
+    "title": "Inspire3 public affiliate network",
+    "url": "https://affiliates.inspire3.com/",
+    "evidence": "recruitment only, not account acceptance",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S15",
+    "type": "research",
+    "title": "Ingendoh, Posny & Heine 2023 EEG binaural beat review",
+    "url": "https://doi.org/10.1371/journal.pone.0286023",
+    "evidence": "heterogeneous evidence across 14 studies, not Zen12 testing",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S16",
+    "type": "regulatory",
+    "title": "FTC Endorsement Guides FAQ",
+    "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "evidence": "clear conspicuous commission disclosure",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S17",
+    "type": "regulatory",
+    "title": "FTC Health Products Compliance Guidance",
+    "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "evidence": "substantiation required for implied health outcomes",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S18",
+    "type": "live",
+    "title": "Puységur Animal Magnetism Files",
+    "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "evidence": "existing published 153-source-row historical archive",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S19",
+    "type": "live",
+    "title": "Seven Day Focus Fieldbook",
+    "url": "https://finalvestige.com/focus/",
+    "evidence": "existing lead magnet; one Jetpack funnel",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S20",
+    "type": "live",
+    "title": "Change Blindness Investigation",
+    "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "evidence": "published editorial bridge",
+    "checked": "2026-11-03"
+  },
+  {
+    "id": "S21",
+    "type": "live",
+    "title": "Mesmerism Investigation",
+    "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "evidence": "published history bridge",
+    "checked": "2026-11-03"
+  }
+]
