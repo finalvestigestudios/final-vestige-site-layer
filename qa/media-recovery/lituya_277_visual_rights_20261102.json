@@ -332,7 +332,7 @@
         "master_height_px": 480,
         "conditional_width_px": 720,
         "conditional_height_px": 480,
-        "source_catalog_file_size_bytes": 489000
+        "source_catalog_file_size_label": "489 KB (Commons catalog display; not CDP transfer bytes)"
       },
       "rights_review": {
         "status": "HOLD",
