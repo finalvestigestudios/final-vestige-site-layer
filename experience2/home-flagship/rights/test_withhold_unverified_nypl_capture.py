@@ -62,7 +62,7 @@ class RightsSafeCandidateTests(unittest.TestCase):
         self.assertIn(REVIEWED_CREDIT, out)
         self.assertIn(REPLACEMENT_CAPTION, out)
         self.assertIn(NYPL_RECORD, out)
-        self.assertIn("NYPL RECORD 03 / 5003296", out)
+        self.assertIn("NYPL / 5003296", out)
         self.assertIn("left:clamp(16px,6%,72px)", out)
         self.assertIn("overflow-wrap:break-word", out)
         self.assertIn("NYPL DIGITAL COLLECTIONS</span>", out)
