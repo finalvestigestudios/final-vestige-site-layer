@@ -90,8 +90,74 @@ def load(src):
         if n in ("04","06") and a["date"]!="January 24, 2017":raise ValueError("R94_TRIBUTE_SEQUENCE_INVENTED")
     return rows
 def e(v):return html.escape(str(v),quote=True)
-CSS="""*{box-sizing:border-box}body{margin:0;background:#181b1d;color:#f0e9d9;font:16px/1.6 system-ui,sans-serif}a{color:#f4d089;overflow-wrap:anywhere;text-underline-offset:.2em}a:focus-visible,summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #f8d68f;outline-offset:4px}.shell{width:min(1180px,calc(100% - 2rem));margin:auto}.skip{position:absolute;top:-10rem;left:1rem;padding:1rem;background:#fff;color:#111}.skip:focus{top:1rem}header{padding:clamp(2.5rem,7vw,6rem) 0 2rem;border-bottom:1px solid #746a56}.kicker,.index{font-size:.78rem;letter-spacing:.09em;color:#edc782;font-weight:700}h1{font:normal clamp(2.5rem,6vw,5rem)/1.1 Georgia,serif}h1 em{color:#edc782}h2{font:normal clamp(1.8rem,3.2vw,2.6rem)/1.2 Georgia,serif}h3{font:normal 1.6rem/1.3 Georgia,serif}.lead{max-width:800px;font-size:1.14rem;color:#e5d8c6}.hold{max-width:950px;padding:1.1rem 1.3rem;background:#39332a;border-left:5px solid #edc782}.jump,.routes,.buttons{display:flex;flex-wrap:wrap;gap:.6rem}.jump a,.routes a,.source{min-height:44px;display:inline-flex;align-items:center;border:1px solid #ac9470;padding:.55rem .85rem}.jump{margin:1.7rem 0}.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin:2rem 0}.head>div{max-width:700px}.status{border:1px solid #988364;padding:.7rem 1rem}.filters{border:1px solid #958364;background:#252b2c;padding:1.2rem;margin:1.5rem 0}.filters[hidden],.card[hidden],.empty[hidden]{display:none!important}button{min-height:44px;font:inherit;color:#f0e9d9;border:1px solid #a79374;background:#192023;padding:.6rem .9rem;cursor:pointer}button[aria-pressed=true]{background:#edc782;color:#1d2223;font-weight:bold}label{display:block;font-weight:bold;margin:1rem 0 .3rem}input{width:min(100%,420px);min-height:44px;padding:.65rem;font:inherit;background:#fff;color:#111}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{min-width:0;background:#22282a;border:1px solid #7c6c54;padding:clamp(1rem,2.5vw,2rem);scroll-margin-top:1rem}.card:target{outline:2px solid #edc782;outline-offset:3px}.card dt,.card strong{color:#f4d089}.card dl{display:grid;grid-template-columns:minmax(8rem,.5fr) minmax(0,1fr);gap:.3rem .8rem}.card dd{margin:0;overflow-wrap:anywhere}.card details{padding:.5rem;border:1px solid #958364}.card summary{min-height:44px;padding:.65rem;cursor:pointer}.routes{margin:.8rem 0}.method{max-width:810px;border-top:1px solid #958364;margin:4rem 0 2rem}footer{border-top:1px solid #958364;padding:2rem 0;color:#e5d8c6}.print{display:none}@media(max-width:730px){.grid{grid-template-columns:1fr}.head{display:block}.card dl{grid-template-columns:1fr}.jump a{flex:1 1 110px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}@media(forced-colors:active){.card,.filters,.hold{border-color:CanvasText}a{color:LinkText}button[aria-pressed=true]{background:Highlight;color:HighlightText}}@media print{html,body,.card,.hold{background:#fff!important;color:#000!important}.shell{width:100%}h1{font-size:26pt}h3{font-size:16pt}.card,.card[hidden]{display:block!important;break-inside:avoid;margin:.5rem 0;padding:.7rem;border:1px solid #555}.grid{display:block}.jump,.filters,.method,.status,.source,.card details,footer{display:none!important}.card dt,.card strong,.index{color:#000!important}.print{display:block!important;color:#000!important;overflow-wrap:anywhere}}"""
-JS='''"use strict";(()=>{const panel=document.querySelector("#filters"),cards=[...document.querySelectorAll(".card")],buttons=[...document.querySelectorAll("[data-filter]")],search=document.querySelector("#query"),status=document.querySelector("#count"),empty=document.querySelector("#empty");if(!panel||cards.length!==6||buttons.length!==3||!search||!status||!empty)return;let mode="all";function update(){let n=0;const q=search.value.trim().toLocaleLowerCase();cards.forEach(c=>{const show=(mode==="all"||c.dataset.precision===mode)&&c.dataset.search.includes(q);c.hidden=!show;if(show)n++});buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.filter===mode)));status.textContent="Showing "+n+" of 6 records.";empty.hidden=n!==0}buttons.forEach(b=>b.addEventListener("click",()=>{if(!["all","day","month"].includes(b.dataset.filter))return;mode=b.dataset.filter;update()}));search.addEventListener("input",update);panel.hidden=false;update()})();'''
+CSS="""*{box-sizing:border-box}body{margin:0;background:#181b1d;color:#f0e9d9;font:16px/1.6 system-ui,sans-serif}a{color:#f4d089;overflow-wrap:anywhere;text-underline-offset:.2em}a:focus-visible,summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #f8d68f;outline-offset:4px}.shell{width:min(1180px,calc(100% - 2rem));margin:auto}.skip{position:absolute;top:-10rem;left:1rem;padding:1rem;background:#fff;color:#111}.skip:focus{top:1rem}header{padding:clamp(2.5rem,7vw,6rem) 0 2rem;border-bottom:1px solid #746a56}.kicker,.index{font-size:.78rem;letter-spacing:.09em;color:#edc782;font-weight:700}h1{font:normal clamp(2.5rem,6vw,5rem)/1.1 Georgia,serif}h1 em{color:#edc782}h2{font:normal clamp(1.8rem,3.2vw,2.6rem)/1.2 Georgia,serif}h3{font:normal 1.6rem/1.3 Georgia,serif}.lead{max-width:800px;font-size:1.14rem;color:#e5d8c6}.hold{max-width:950px;padding:1.1rem 1.3rem;background:#39332a;border-left:5px solid #edc782}.jump,.routes,.buttons{display:flex;flex-wrap:wrap;gap:.6rem}.jump a,.routes a,.source{min-height:44px;display:inline-flex;align-items:center;border:1px solid #ac9470;padding:.55rem .85rem}.jump{margin:1.7rem 0}.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin:2rem 0}.head>div{max-width:700px}.status{border:1px solid #988364;padding:.7rem 1rem}.filters{border:1px solid #958364;background:#252b2c;padding:1.2rem;margin:1.5rem 0}.filters[hidden],.card[hidden],.empty[hidden]{display:none!important}button{min-height:44px;font:inherit;color:#f0e9d9;border:1px solid #a79374;background:#192023;padding:.6rem .9rem;cursor:pointer}button[aria-pressed=true]{background:#edc782;color:#1d2223;font-weight:bold}label{display:block;font-weight:bold;margin:1rem 0 .3rem}input{width:min(100%,420px);min-height:44px;padding:.65rem;font:inherit;background:#fff;color:#111}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{min-width:0;background:#22282a;border:1px solid #7c6c54;padding:clamp(1rem,2.5vw,2rem);scroll-margin-top:1rem}.card:target,.card:focus{outline:2px solid #edc782;outline-offset:3px}.card dt,.card strong{color:#f4d089}.card dl{display:grid;grid-template-columns:minmax(8rem,.5fr) minmax(0,1fr);gap:.3rem .8rem}.card dd{margin:0;overflow-wrap:anywhere}.card details{padding:.5rem;border:1px solid #958364}.card summary{min-height:44px;padding:.65rem;cursor:pointer}.routes{margin:.8rem 0}.method{max-width:810px;border-top:1px solid #958364;margin:4rem 0 2rem}footer{border-top:1px solid #958364;padding:2rem 0;color:#e5d8c6}.print{display:none}@media(max-width:730px){.grid{grid-template-columns:1fr}.head{display:block}.card dl{grid-template-columns:1fr}.jump a{flex:1 1 110px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}@media(forced-colors:active){.card,.filters,.hold{border-color:CanvasText}a{color:LinkText}button[aria-pressed=true]{background:Highlight;color:HighlightText}}@media print{html,body,.card,.hold{background:#fff!important;color:#000!important}.shell{width:100%}h1{font-size:26pt}h3{font-size:16pt}.card,.card[hidden]{display:block!important;break-inside:avoid;margin:.5rem 0;padding:.7rem;border:1px solid #555}.grid{display:block}.jump,.filters,.method,.status,.source,.card details,footer{display:none!important}.card dt,.card strong,.index{color:#000!important}.print{display:block!important;color:#000!important;overflow-wrap:anywhere}}"""
+JS='''"use strict";
+(() => {
+  const panel = document.querySelector("#filters");
+  const cards = [...document.querySelectorAll(".card")];
+  const buttons = [...document.querySelectorAll("[data-filter]")];
+  const search = document.querySelector("#query");
+  const status = document.querySelector("#count");
+  const empty = document.querySelector("#empty");
+  // Enhancement is optional; partial markup leaves all evidence readable.
+  if (!panel || cards.length !== 6 || buttons.length !== 3 ||
+      !search || !status || !empty) return;
+  let mode = "all";
+  function update() {
+    const q = search.value.trim().toLocaleLowerCase();
+    let visible = 0;
+    for (const card of cards) {
+      const show = (mode === "all" || card.dataset.precision === mode) &&
+                   (card.dataset.search || "").includes(q);
+      card.hidden = !show;
+      if (show) visible += 1;
+    }
+    for (const button of buttons)
+      button.setAttribute("aria-pressed", String(button.dataset.filter === mode));
+    status.textContent = "Showing " + visible + " of 6 records.";
+    empty.hidden = visible !== 0;
+  }
+  // A filter must never strand an evidence citation at a hidden fragment.
+  function targetFor(hash) {
+    if (!/^#atlas-0[1-6]$/.test(hash || "")) return null;
+    const node = document.getElementById(hash.slice(1));
+    return cards.includes(node) ? node : null;
+  }
+  function reveal(node, focus) {
+    if (!node) return;
+    if (node.hidden) {
+      mode = "all";
+      search.value = "";
+      update();
+    }
+    if (focus) {
+      node.focus({preventScroll: true});
+      node.scrollIntoView({block: "start"});
+    }
+  }
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      if (!["all", "day", "month"].includes(button.dataset.filter)) return;
+      mode = button.dataset.filter;
+      update();
+    });
+  }
+  search.addEventListener("input", update);
+  // Same-fragment clicks do not dispatch hashchange; reveal before native jump.
+  for (const link of document.querySelectorAll('a[href^="#atlas-"]')) {
+    link.addEventListener("click", () => {
+      const node = targetFor(link.getAttribute("href"));
+      if (!node) return;
+      reveal(node, false);
+      requestAnimationFrame(() => node.focus({preventScroll: true}));
+    });
+  }
+  window.addEventListener("hashchange", () => reveal(targetFor(location.hash), true));
+  panel.hidden = false;
+  update();
+  // Direct links preserve source identity even when JavaScript is enabled.
+  reveal(targetFor(location.hash), Boolean(location.hash));
+})();'''
 def render(rows):
     parts=[]
     for a in rows:
@@ -99,7 +165,7 @@ def render(rows):
         routes="".join('<a href="'+path+"#"+prefix+n+'">'+label+"</a>" for path,prefix,label in [
            ("R93_SOURCE_PASSPORTS.html","passport-","Source passport"),("R88_READING_ROOM.html","r88-","EvidencePlate"),
            ("R87_PHOTOGRAPH_DATE_RAIL.html","r87-record-","ChronologyRail"),("R85_NASA_SOURCE_REVIEW.html","r85-source-","Rights board")])
-        parts.append('<article class="card" id="atlas-'+n+'" data-precision="'+kind+'" data-search="'+e((a["title"]+" "+a["catalog"]).casefold())+'">'+
+        parts.append('<article tabindex="-1" class="card" id="atlas-'+n+'" data-precision="'+kind+'" data-search="'+e((a["title"]+" "+a["catalog"]).casefold())+'">'+
           '<p class="index">SOURCE '+n+' / 06 · REUSE PENDING</p><h3>'+e(a["title"])+'</h3>'+
           '<dl><dt>NASA catalog claim</dt><dd>'+e(a["catalog"])+(" · provisional" if a["provisional"] else "")+'</dd>'+
           '<dt>Photo date</dt><dd>'+e(a["date"])+'</dd><dt>Date certainty</dt><dd>'+("Month only; exact day unknown" if a["provisional"] else "Specific photographic day")+'</dd></dl>'+

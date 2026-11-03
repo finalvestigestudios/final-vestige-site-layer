@@ -1,0 +1,108 @@
+# Read-only isolated Apollo R96 acceptance. Never deploy or write WordPress.
+name: Apollo R96 evidence-fragment accessibility (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'experience2/evidence-atlas/tools/build_curated_atlas_r94.py'
+      - 'experience2/evidence-atlas/tests/test_atlas_deeplinks_r96.py'
+      - 'experience2/evidence-atlas/tests/browser_curated_atlas_r94.py'
+      - '.github/workflows/ex2-apollo-r96-fragment-navigation.yml'
+permissions:
+  contents: read
+jobs:
+  source-custody:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Exact source and deterministic twice-built artifacts
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r96-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_curated_atlas_r94.py experience2/evidence-atlas/tests/test_atlas_deeplinks_r96.py
+          node experience2/evidence-atlas/tests/node_atlas_nav_r96.cjs
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_atlas_deeplinks_r96.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_asset_inventory_r95.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_curated_atlas_r94.py -v
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/a" --archive "$RUNNER_TEMP/a.zip"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/b" --archive "$RUNNER_TEMP/b.zip"
+          cmp "$RUNNER_TEMP/a.zip" "$RUNNER_TEMP/b.zip"
+          node --check "$RUNNER_TEMP/a/curated_atlas_r94.js"
+          python - "$RUNNER_TEMP/a" <<'PY'
+          import hashlib,json,sys
+          from pathlib import Path
+          p=Path(sys.argv[1])
+          x=json.loads((p/'R94_ATLAS_RECEIPT.json').read_text())
+          assert len(x['files'])==24 and x['release']=='STAGING_HOLD'
+          assert x['photo_rights_cleared']==x['geo_pins']==x['inferred_edges']==0
+          for n,h in x['files'].items():
+              assert hashlib.sha256((p/n).read_bytes()).hexdigest()==h,n
+          print('R96_ALL_24_EXPORT_HASHES_VERIFIED')
+          PY
+          sha256sum "$RUNNER_TEMP/a.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r96-deterministic-source-STAGING-HOLD
+          path: ${{ runner.temp }}/a.zip
+          if-no-files-found: error
+          retention-days: 7
+  real-chromium:
+    needs: source-custody
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned browser/accessibility dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/axe" --ignore-scripts --no-save --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Actual responsive 320-1920, JS/no-JS, hash history, axe, LCP, CLS and PDF
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r96-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/preview"
+          python experience2/evidence-atlas/tests/browser_curated_atlas_r94.py --src "$RUNNER_TEMP/preview" --out "$RUNNER_TEMP/evidence" --axe "$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/evidence/R94_CHROMIUM_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apollo-r96-real-chromium-STAGING-HOLD
+          path: ${{ runner.temp }}/evidence/
+          if-no-files-found: warn
+          retention-days: 7
