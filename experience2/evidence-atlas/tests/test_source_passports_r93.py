@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Adversarial R93 Apollo passport tests; execute from exact PR head only."""
 from __future__ import annotations
-import hashlib, importlib.util, json, pathlib, re, shutil, subprocess, sys, tempfile, unittest
+import hashlib, html, importlib.util, json, pathlib, re, shutil, subprocess, sys, tempfile, unittest
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 TOOLS=ROOT/'experience2/evidence-atlas/tools'
 spec=importlib.util.spec_from_file_location('apollo_passports_r93',TOOLS/'build_source_passports_r93.py')
@@ -66,7 +66,7 @@ class PassportChecks(unittest.TestCase):
             for x in records:
                 self.assertIn(x['url'],text)
                 self.assertIn('INDIVIDUAL REVIEW REQUIRED',m.citation(x))
-                self.assertIn(x['cannot'],(out/'R93_SOURCE_PASSPORTS.html').read_text())
+                self.assertIn(x['cannot'],html.unescape((out/'R93_SOURCE_PASSPORTS.html').read_text()))
 
     def test_deterministic_archives(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -92,7 +92,7 @@ class PassportChecks(unittest.TestCase):
             m.verified_records(src)
 
     def test_provisional_identity_cannot_be_certified(self):
-        temp,src=self.mutated('R88_READING_ROOM.html','S67-19766','S67-19767',True)
+        temp,src=self.mutated('R88_READING_ROOM.html','data-catalog="S67-19766"','data-catalog="S67-19767"',True)
         with temp,self.assertRaisesRegex(ValueError,'R93_CROSS_VIEW_DISAGREEMENT|R93_PROVISIONAL'):
             m.verified_records(src)
 
