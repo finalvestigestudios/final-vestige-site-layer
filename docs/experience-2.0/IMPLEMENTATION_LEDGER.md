@@ -21,6 +21,8 @@ Single current record of workstreams, so work is not duplicated and release atte
 
 **Preparedness repair (2026-11-03):** branch `integration/preparedness-custody-repair-20261103` at `6a6c63bc86c9fbb08f1e0c9a7ccac7618e6a20e5` (pushed, #584 untouched). `validate.py` 59 to 0 errors; local suite 93 to 68 failing names (54 Windows-environment); real `private_release_preflight.py` still fails closed at step 3. Nothing published, `may_publish` false. Open human decisions: three-day-kit medication wording, start and shelter files matching no reviewed contributor head, a successor census for the 35+1 gates and R23, a named qualified reviewer, hist-field ref map, hist-food readings. Wave 1 candidates (non-actionable history, after independent review): `navigation-before-gps`, `pioneer-supply-chains-failed`.
 
+**CORRECTION (2026-11-03): the throttled-LCP "bimodal" claim is withdrawn.** It came from serving a local copy uncompressed (406 KB vs about 89 KB live). Live URL, n=30, 4x CPU: median 1.81 s, p75 1.88 s, p95 2.07 s (lab, field unverified). Findings in draft PR #810; no production change; correction posted to PR #604.
+
 **Before the release: nothing from this directive was live.** Live homepage (page 6) read 2026-11-02 through the WordPress.com connector: `modified 2026-10-30T09:14:14`, `content_hash 7afdb933d2ec68fd993ef015c97a6eb9edfe0576`, 6 top-level blocks, block hashes identical to the lock tokens in PR #604's rollback plan. The proposed change would still apply cleanly. It has **not** been applied.
 
 ## Decision: canonical homepage = PR #604 (flagship), not PR #49

@@ -74,6 +74,10 @@ Repeated throttled runs (same conditions as above, 390 px, CPU 4x, 150 ms RTT, 1
 
 Consequence: a median of about 1.6 to 1.9 s is true of the typical run, but a p75 of these lab runs is above 2.5 s (about 3 to 4.6 s). The founder's long-term standard is p75 of mobile field LCP, so the "meets the lab goal" statement should be read as a median and not as a p75. The cause of the late hero-paragraph paint has not been identified (candidates: a script-gated reveal or a re-render of the hero text; the flagship block and its CSS/JS are the first place to look). This belongs to the post-release performance PR, not to PR #604's frozen head.
 
+## Correction 2026-11-03 (later): the "bimodal" addendum above is withdrawn
+
+The bimodal finding was an artifact of my local harness, which served the saved homepage HTML uncompressed (406 KB, about 9 s to arrive under the throttle) while the live site delivers about 89 KB compressed. On the live URL and on a gzip-served copy the LCP is unimodal under identical conditions: live n=30 median 1.81 s, p75 1.88 s, p95 2.07 s (6x CPU p75 about 3.0 s); lab only, field unverified. The findings, scripts and raw runs are in draft PR #810 (`PERF_MOBILE_LCP_BIMODAL_FINDINGS_2026-11-03.md`). Hoisting the flagship CSS gave no gain; no production change is proposed. The earlier local Inter-preload numbers (0.13 s LCP, 0.3 s FCP) came from the same uncompressed method and are unreliable. The scripts committed under `evidence/perf-2026-11-02/` (`whatif.py`, `ab_header.py`, `lcp_modes.py`) serve uncompressed HTML and should not be used for LCP comparisons.
+
 ## Not yet done
 
 * A like-for-like Lighthouse measurement of any candidate change (nothing has been changed).
