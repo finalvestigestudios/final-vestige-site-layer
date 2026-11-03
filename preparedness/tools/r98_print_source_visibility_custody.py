@@ -174,7 +174,7 @@ def dangerous_declaration(selector, key, value, in_print):
              "unexpected zero-height text near evidence: " + selector)
     if key in ("color", "-webkit-text-fill-color"):
         if (v == "transparent" or re.fullmatch(r"#[0-9a-f]{3,6}00", v) or
-                "rgba(" in v or "hsla(" in v or re.search(r"/0(?:\\.0+)?\\)", v)):
+                "rgba(" in v or "hsla(" in v or re.search(r"/0(?:\.0+)?\)", v)):
             raise Hold("CSS text color opacity requires human print/screen review: " + selector)
     if key in ("transform", "translate") and ("scale(0" in v or "translate(-9999" in v):
         raise Hold("CSS moves or scales evidence out of view: " + selector)
