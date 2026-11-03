@@ -1,0 +1,102 @@
+name: Preparedness R83 Citation Context Custody (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r82-four-snapshot-citation-custody-hold-20261102
+    paths:
+      - preparedness/tools/r83_citation_placement_context_custody.py
+      - preparedness/tests/test_r83_citation_placement_context_custody.py
+      - preparedness/docs/R83_CITATION_PLACEMENT_CONTEXT_CUSTODY_HOLD.md
+      - .github/workflows/preparedness-r83-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r83-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  exact-parent-evidence-custody:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout full immutable provenance without retained credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact immutable R82 base and strict four ADD-only review files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "33012631e9711168cd2e73edc4992e123f26c664"
+          test "$BASE_REF" = "review/preparedness-r82-four-snapshot-citation-custody-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r83-citation-placement-context-custody-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > "$RUNNER_TEMP/r83-diff"
+          python -I - <<'PY'
+          import os
+          from pathlib import Path
+          raw = Path(os.environ['RUNNER_TEMP'], 'r83-diff').read_bytes().split(b'\0')
+          observed = [(raw[i].decode(), raw[i + 1].decode())
+                      for i in range(0, len(raw) - 1, 2)]
+          expected = {
+              'preparedness/tools/r83_citation_placement_context_custody.py',
+              'preparedness/tests/test_r83_citation_placement_context_custody.py',
+              'preparedness/docs/R83_CITATION_PLACEMENT_CONTEXT_CUSTODY_HOLD.md',
+              '.github/workflows/preparedness-r83-private-tests.yml',
+          }
+          assert len(observed) == 4, observed
+          assert {path for _, path in observed} == expected, observed
+          assert all(status == 'A' for status, _ in observed), observed
+          print('R83 immutable parent and exactly four ADD-only review files PASS')
+          PY
+      - name: Compile tool and adversarial tests before execution
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for name in ('preparedness/tools/r83_citation_placement_context_custody.py',
+                       'preparedness/tests/test_r83_citation_placement_context_custody.py'):
+              compile(Path(name).read_text(encoding='utf-8'), name, 'exec')
+          print('R83 syntax PASS')
+          PY
+      - name: Run independent synthetic and adversarial claim-context tests
+        run: python -I -m unittest discover -s preparedness/tests -p test_r83_citation_placement_context_custody.py -v
+      - name: Reconstruct exact frozen integrated current and RC citations as review-only data
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r83_citation_placement_context_custody.py
+          python -I preparedness/tools/r83_citation_placement_context_custody.py --csv-stdout > "$RUNNER_TEMP/r83-PRIVATE-context-review.csv"
+          python -I - <<'PY'
+          import csv
+          import os
+          from pathlib import Path
+          file = Path(os.environ['RUNNER_TEMP']) / 'r83-PRIVATE-context-review.csv'
+          with file.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+          assert all(row['human_review'] == 'NOT_REVIEWED'
+                     and row['release'] == 'HOLD' for row in rows)
+          print('R83 private citation-context triage queue:', len(rows),
+                'human-review candidates; never safety verdicts')
+          PY
+          rm -f "$RUNNER_TEMP/r83-PRIVATE-context-review.csv"
+      - name: Run original native source and emergency safety validator
+        run: python -I preparedness/tools/validate.py
+      - name: Generate offline WordPress-ready drafts (NO CMS writes)
+        run: python -I preparedness/tools/build.py
+      - name: Run entire Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Mandatory publication HOLD remains
+        if: always()
+        run: |
+          echo 'NO citations proved, no medical safety approval, no QD PASS.'
+          echo 'Separate mandatory 13-stage integrity must independently PASS before release.'
+          echo 'No PR merge, WordPress/CMS, navigation or public publishing.'
