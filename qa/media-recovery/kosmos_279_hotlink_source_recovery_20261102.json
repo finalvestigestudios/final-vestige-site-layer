@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-02",
+  "title": "Kosmos 954 / Operation Morning Light: six exact source dependency and scene provenance review",
+  "article": {
+    "post_id": 279,
+    "title": "The Geologists Found the Spy Satellite",
+    "url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+    "modified_at_frozen": "2026-09-08T10:06:54"
+  },
+  "census": {
+    "source": "qa/media-recovery/parts/03.json",
+    "source_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "matched_slots": 6,
+    "match_type": "exact frozen source URL and ALT",
+    "fresh_wordpress_readback": false
+  },
+  "review_basis": "Published source census plus web image renderer and external museum/Commons catalog metadata, not CDP/visitor HTTP",
+  "summary": {
+    "slots": 6,
+    "retriever_displays": 5,
+    "retriever_inaccessible": 1,
+    "confirmed_guest_browser_broken": 0,
+    "guest_browser_image_statuses_observed": 0,
+    "known_same_scene_authoritative_leads": 1,
+    "proposed_alt_corrections": 2,
+    "rights_clearances": 0,
+    "production_fixes": 0
+  },
+  "source_rights_notes": [
+    "Ingenium 1988.1334.001 commercial image rights are restricted (CC BY-NC terms); do not substitute or copy for commercial Final Vestige.",
+    "DOE Commons files are 576px and 562px wide, respectively; never upscale to 960px.",
+    "LLNL is a national laboratory; federal-employee public domain assumption must be confirmed item-by-item."
+  ],
+  "rows": [
+    {
+      "key": "279:0",
+      "post_id": 279,
+      "stored_image_url": "https://cdn-sw.spidersweb.pl/2024/02/kosmos_954.jpg",
+      "stored_alt": "Operation Morning Light personnel searching Arctic terrain for radioactive debris from Cosmos 954.",
+      "origin_host": "cdn-sw.spidersweb.pl",
+      "source_kind": "external",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web_open_image_display_NOT_VISITOR_BROWSER",
+        "outcome": "IMAGE_DISPLAYED",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "observed": false,
+        "current_src": null,
+        "image_http_status": null,
+        "mime": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "archive_candidate_assets": [
+        {
+          "catalog": "https://commons.wikimedia.org/wiki/File:Cosmos_954_-_Recovery_001.jpg",
+          "catalog_identifier": "DOE/NV1198 / Cosmos 954 - Recovery 001.jpg",
+          "relation": "SAME_SCENE_VISUALLY_VERIFIED_NOT_BINARY",
+          "catalog_original_px": {
+            "width": 576,
+            "height": 452
+          },
+          "conditional_preview_px": {
+            "width": 576,
+            "height": 452
+          },
+          "rights": "Commons labels PD U.S. DOE; verify DOE/LLNL authorship, source attribution and exact item before commercial republishing",
+          "reuse_approved": false
+        }
+      ],
+      "visual_integrity_issue": null,
+      "max_target_width_px": 960,
+      "no_upscale": true,
+      "source_binary_sha256": null,
+      "pixel_identity_verified": false,
+      "rights_approved": false,
+      "wordpress_cache_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "279:1",
+      "post_id": 279,
+      "stored_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Short_SC.7_Skyvan_C-FQSL_TOR_27.07.75_edited-2.jpg",
+      "stored_alt": "A Short Skyvan aircraft of the type used in Canadian airborne geophysical survey work during the 1970s.",
+      "origin_host": "upload.wikimedia.org",
+      "source_kind": "external",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web_open_image_display_NOT_VISITOR_BROWSER",
+        "outcome": "IMAGE_DISPLAYED",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "observed": false,
+        "current_src": null,
+        "image_http_status": null,
+        "mime": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "archive_candidate_assets": [],
+      "visual_integrity_issue": null,
+      "max_target_width_px": 960,
+      "no_upscale": true,
+      "source_binary_sha256": null,
+      "pixel_identity_verified": false,
+      "rights_approved": false,
+      "wordpress_cache_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "279:2",
+      "post_id": 279,
+      "stored_image_url": "https://bkimg.cdn.bcebos.com/pic/024f78f0f736afc379317e1bd848fcc4b74543a9b436",
+      "stored_alt": "Technical illustration of a Soviet nuclear-powered radar ocean reconnaissance satellite similar to Cosmos 954.",
+      "origin_host": "bkimg.cdn.bcebos.com",
+      "source_kind": "external",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web_open_image_display_NOT_VISITOR_BROWSER",
+        "outcome": "IMAGE_DISPLAYED",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "observed": false,
+        "current_src": null,
+        "image_http_status": null,
+        "mime": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "archive_candidate_assets": [
+        {
+          "catalog": "https://commons.wikimedia.org/wiki/File:Cosmos-954_scheme.jpg",
+          "catalog_identifier": "NNSA / DOE Cosmos-954 scheme (different satellite schematic)",
+          "relation": "DIFFERENT_SCENE_EDITORIAL_ALTERNATIVE_ONLY",
+          "catalog_original_px": {
+            "width": 868,
+            "height": 608
+          },
+          "conditional_preview_px": {
+            "width": 868,
+            "height": 608
+          },
+          "rights": "Commons says PD-USGov; verify item-level authorship, not a same-image replacement",
+          "reuse_approved": false
+        }
+      ],
+      "visual_integrity_issue": null,
+      "max_target_width_px": 960,
+      "no_upscale": true,
+      "source_binary_sha256": null,
+      "pixel_identity_verified": false,
+      "rights_approved": false,
+      "wordpress_cache_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "279:3",
+      "post_id": 279,
+      "stored_image_url": "https://www.spaceacademy.net.au/watch/debris/oml.jpg",
+      "stored_alt": "Operation Morning Light aircraft, search personnel and recovered debris during the 1978 Cosmos 954 response.",
+      "origin_host": "www.spaceacademy.net.au",
+      "source_kind": "external",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web_open_image_display_NOT_VISITOR_BROWSER",
+        "outcome": "IMAGE_DISPLAYED",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "observed": false,
+        "current_src": null,
+        "image_http_status": null,
+        "mime": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "archive_candidate_assets": [
+        {
+          "catalog": "https://commons.wikimedia.org/wiki/File:Cosmos_954_-_Recovery_002.jpg",
+          "catalog_identifier": "DOE/NV1198 / Recovery 002.jpg",
+          "relation": "DIFFERENT_SCENE_EDITORIAL_ALTERNATIVE_ONLY",
+          "catalog_original_px": {
+            "width": 562,
+            "height": 453
+          },
+          "conditional_preview_px": {
+            "width": 562,
+            "height": 453
+          },
+          "rights": "Commons marks DOE public domain; original is not the four-panel composite and cannot replace it without editorial approval",
+          "reuse_approved": false
+        }
+      ],
+      "visual_integrity_issue": {
+        "type": "ALT_MISDESCRIBES_COLLAGE",
+        "existing": "Mentions aircraft and recovered debris, neither clearly identifiable in displayed four-panel collage",
+        "suggested": "Four-panel Operation Morning Light collage showing teams at work in snow, a search landscape and the operation's emblem.",
+        "approved": false
+      },
+      "max_target_width_px": 960,
+      "no_upscale": true,
+      "source_binary_sha256": null,
+      "pixel_identity_verified": false,
+      "rights_approved": false,
+      "wordpress_cache_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "279:4",
+      "post_id": 279,
+      "stored_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Cosmos-954_Reactor.png",
+      "stored_alt": "U.S. government technical reconstruction of the BES-5 BUK nuclear reactor used in Soviet RORSAT satellites.",
+      "origin_host": "upload.wikimedia.org",
+      "source_kind": "external",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web_open_image_display_NOT_VISITOR_BROWSER",
+        "outcome": "IMAGE_DISPLAYED",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "observed": false,
+        "current_src": null,
+        "image_http_status": null,
+        "mime": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "archive_candidate_assets": [
+        {
+          "catalog": "https://commons.wikimedia.org/wiki/File:Cosmos-954_Reactor.png",
+          "catalog_identifier": "Cosmos-954 Reactor.png / LLNL-attributed schematic",
+          "relation": "EXACT_PUBLISHED_SOURCE_CATALOG",
+          "catalog_original_px": {
+            "width": 640,
+            "height": 958
+          },
+          "conditional_preview_px": {
+            "width": 640,
+            "height": 958
+          },
+          "rights": "Commons PD-USGov tag is not standalone proof that LLNL contractor-authored work qualifies for federal employee copyright exception",
+          "reuse_approved": false
+        }
+      ],
+      "visual_integrity_issue": {
+        "type": "ALT_OVERSTATES_RECONSTRUCTION_CERTAINTY",
+        "existing": "Calls a diagram a technical reconstruction without warning about labels marked assumed",
+        "suggested": "Schematic attributed to Lawrence Livermore National Laboratory depicting the BES-5 reactor, with several components labeled as assumed.",
+        "approved": false
+      },
+      "max_target_width_px": 960,
+      "no_upscale": true,
+      "source_binary_sha256": null,
+      "pixel_identity_verified": false,
+      "rights_approved": false,
+      "wordpress_cache_authorized": false,
+      "wordpress_post_edit_authorized": false
+    },
+    {
+      "key": "279:5",
+      "post_id": 279,
+      "stored_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQHmW14R-yIi1g/article-inline_image-shrink_1000_1488/B4DZctCqx_q4AM-/0/1748804514162?e=2147483647&v=beta&t=cK4Wg6FhyvLGIEHJU44N_Rj9uCSsywcjtMc_ZoQSgaA",
+      "stored_alt": "Operation Morning Light search personnel preparing radiological equipment beside an aircraft.",
+      "origin_host": "media.licdn.com",
+      "source_kind": "external",
+      "independent_retriever": {
+        "date": "2026-11-02",
+        "method": "web_open_image_display_NOT_VISITOR_BROWSER",
+        "outcome": "RETRIEVER_INACCESSIBLE",
+        "numeric_origin_http_status": null
+      },
+      "guest_browser": {
+        "observed": false,
+        "current_src": null,
+        "image_http_status": null,
+        "mime": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "encoded_transfer_bytes": null,
+        "visibly_broken": null
+      },
+      "archive_candidate_assets": [],
+      "visual_integrity_issue": null,
+      "max_target_width_px": 960,
+      "no_upscale": true,
+      "source_binary_sha256": null,
+      "pixel_identity_verified": false,
+      "rights_approved": false,
+      "wordpress_cache_authorized": false,
+      "wordpress_post_edit_authorized": false
+    }
+  ],
+  "release": {
+    "status": "HOLD",
+    "require": "logged-out browser currentSrc/HTTP/decoded pixels/transfer bytes, exact scene and crop verification, source item license, attribution, editorial ALT signoff, staged 960px no-upscale preview and rollback",
+    "downloads_performed": false,
+    "wordpress_writes": false,
+    "homepage_changed": false,
+    "subscription_spend": false,
+    "site_qa_pr154_edited": false
+  },
+  "site_wide_context": {
+    "published_articles": 61,
+    "stored_image_slots": 355,
+    "external_origin_references": 288,
+    "wordpress_originals_over_1_5_mib": 13,
+    "reported_42_broken_not_browser_verified": true,
+    "claimed_76pct_not_measured": true
+  }
+}
