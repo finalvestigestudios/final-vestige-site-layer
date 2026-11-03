@@ -1,0 +1,108 @@
+name: Preparedness R98 Print Source and Review Visibility (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r97-structured-route-jsonld-custody-hold-20261103
+    paths:
+      - preparedness/tools/r98_print_source_visibility_custody.py
+      - preparedness/tests/test_r98_print_source_visibility_custody.py
+      - preparedness/docs/R98_PRINT_OFFLINE_SOURCE_CSS_HOLD.md
+      - .github/workflows/preparedness-r98-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  private-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact R97 ancestry, seven Claude source refs, RC and additive-only contract
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          base = "e64b7f009a044332d5b66b02781e4eaafbfa5763"
+          got = subprocess.check_output(["git", "rev-parse", "refs/remotes/origin/review/preparedness-r97-structured-route-jsonld-custody-hold-20261103"], text=True).strip()
+          assert got == base, ("R97 base drift", got, base)
+          changes = set(subprocess.check_output(["git", "diff", "--name-status", base, "HEAD"], text=True).splitlines())
+          expected = {
+              "preparedness/tools/r98_print_source_visibility_custody.py",
+              "preparedness/tests/test_r98_print_source_visibility_custody.py",
+              "preparedness/docs/R98_PRINT_OFFLINE_SOURCE_CSS_HOLD.md",
+              ".github/workflows/preparedness-r98-private-tests.yml",
+          }
+          assert changes == {"A\t" + x for x in expected}, changes
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101":
+                  "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, pin in pins.items():
+              actual = subprocess.check_output(["git", "rev-parse", "refs/remotes/origin/" + ref], text=True).strip()
+              assert actual == pin, (ref, actual, pin)
+              print(ref, actual)
+          print("R98 four additive paths, exact R97 base and 8 snapshots validated")
+          PY
+      - name: Compile and exercise isolated CSS adversarial mutations
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in ("preparedness/tools/r98_print_source_visibility_custody.py",
+                       "preparedness/tests/test_r98_print_source_visibility_custody.py"):
+              compile(Path(path).read_text(encoding="utf-8"), path, "exec")
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r98_print_source_visibility_custody.py -v
+      - name: Reconcile actual 35+1 draft source, HTML, route and print custody
+        run: |
+          python -I preparedness/tools/r98_print_source_visibility_custody.py
+          python -I preparedness/tools/r98_print_source_visibility_custody.py --private-json-stdout > "$RUNNER_TEMP/r98-private.json"
+          python -I - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          p = Path(os.environ["RUNNER_TEMP"]) / "r98-private.json"
+          data = json.loads(p.read_text(encoding="utf-8"))
+          assert data["schema"] == "r98-print-offline-source-review-css-hold-v1"
+          assert data["release_state"] == "HOLD" and data["may_publish"] is False
+          assert data["protected_article_drafts"] == 35 and data["protected_real_tool_drafts"] == 1
+          assert data["private_wordpress_ready_drafts_NOT_PUBLISHED"] == 36
+          assert data["prior_citation_occurrences_preserved_R93_R97"] == 1959
+          assert data["prior_canonical_draft_destinations_preserved_R97"] == 36
+          assert len(data["planned_tools_without_drafts_NOT_IMPORTABLE"]) == 5
+          assert data["actual_browser_print_check"] == "NOT_REVIEWED"
+          assert data["human_source_claim_review"] == "NOT_REVIEWED"
+          assert data["qualified_emergency_safety_review"] == "NOT_REVIEWED"
+          assert data["independent_QD"] == "NOT_REVIEWED"
+          css = data["css_custody"]
+          assert css["release_state"] == "HOLD" and css["may_publish"] is False
+          assert css["print_external_source_url_annotation"] is True
+          assert css["calculator_hidden_on_print_REVIEW_REQUIRED"] is True
+          assert data["print_content_exception_workorder_NOT_APPROVED"]
+          checksum = data.pop("sha256_seal")
+          canonical = json.dumps(data, sort_keys=True, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8")
+          assert hashlib.sha256(canonical).hexdigest() == checksum
+          print("R98 offline/print source and warning custody PASS (machine-only), human release HOLD")
+          PY
+          rm -f "$RUNNER_TEMP/r98-private.json"
+      - name: Native source and safety metadata validation plus offline private build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete Python suite (at least 36 actual tests)
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Human review, print QA and publication remain BLOCKED
+        if: always()
+        run: |
+          echo 'Static print source/citation visibility diagnostics only, NOT a browser print PASS.'
+          echo 'Mandatory 13-stage integrity, qualified review, and independent QD remain separate HOLD gates.'
+          echo 'No WordPress, publication, CMS, navigation, homepage, or live changes.'
