@@ -177,7 +177,7 @@ def render(rows):
 <a class="source" href="{e(r['photo_url'])}" target="_blank" rel="noopener noreferrer">Open NASA image-detail page ↗</a></section></div>
 <details><summary>Inspect the photograph's evidentiary limit and reuse status</summary>
 <p>{e(r['photo_limit'])}</p><p><strong>Media reuse:</strong> Individual assessment not completed. An official source link does not license reproduction.</p>
-<p><strong>Attribution:</strong> NASA photo metadata is kept separate from the research report. The proposed S67-19766 portrait association is provisional.</p></details></article>''')
+<p><strong>Attribution:</strong> NASA photo metadata is kept separate from the research report. The proposed S67-19766 portrait association is provisional.</p></details>\n<p class="print-custody"><strong>Reproduction rights: PENDING.</strong> Photographic limitation: {e(r['photo_limit'])} NASA reference links do not certify reuse permission.</p></article>''')
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>Apollo | Document versus Photograph — PRIVATE STAGING HOLD</title>
 <link rel="stylesheet" href="claim_boundary_r87.css"></head><body><a class="skip" href="#findings">Skip to evidence findings</a>
