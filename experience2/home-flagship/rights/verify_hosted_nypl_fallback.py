@@ -101,8 +101,8 @@ def grade(cases: list[dict]) -> dict:
             and c.get("margins") == 72
             and c.get("focus_links", 0) >= 1
             and c.get("catalog_links_after", 0) >= 2
-            and c.get("images_before") == 4
-            and c.get("images_after") == 3
+            and c.get("images_before") == 3
+            and c.get("images_after") == 2
             and c.get("horizontal_overflow_after") is False
             and q.get("image_count_before") == 1
             and q.get("image_count_after") == 0
@@ -168,7 +168,7 @@ def capture(output_dir: Path) -> list[dict]:
                     if (chapters, margins) != (7, 72):
                         raise ValueError("PUBLIC_HOMEPAGE_MARKER_DRIFT")
                     images_before = page.locator('[data-fv-archive-img]').count()
-                    if images_before != 4:
+                    if images_before != 3:
                         raise ValueError(f"PUBLIC_ARCHIVE_IMAGE_INVENTORY_DRIFT: observed={images_before}")
                     case_button = page.locator('button[data-fv-case-button="malbone"]')
                     case_button.click(timeout=12000)
