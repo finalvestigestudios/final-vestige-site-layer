@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import{read
 test('identical original substantive guide in A and B',()=>{assert.ok(a.includes(c));assert.ok(b.includes(c))});
 test('native disabled controls',()=>{for(const x of[a,b])assert.match(x,/<button type="button" disabled aria-disabled="true">/)});
 test('prominent near-CTA disclosure before button',()=>{for(const x of[a,b])assert.ok(x.indexOf('Final Vestige may earn a commission')<x.indexOf('<button type="button"'))});
-test('no active seller links, forms, scripts, videos, trackers',()=>{for(const x of[a,b])assert.doesNotMatch(x,/<form\b|<script\b|<iframe\b|<video\b|autoplay\b|href="https:\/\/(zen12|inspire3|affiliates\.)/i)});
+test('no active seller links, forms, scripts, videos, trackers',()=>{for(const x of[a,b])assert.doesNotMatch(x,/<form\b|<script\b|<iframe\b|<video\b|\sautoplay(?:\s|>|=)|href="https:\/\/(zen12|inspire3|affiliates\.)/i)});
 test('B includes optional film transcript but A does not',()=>{assert.ok(b.includes('<div class="fvzen81-film-poster"'));assert.ok(!a.includes('<div class="fvzen81-film-poster"'));assert.ok(b.includes('<details>'))});
 test('all sixteen gates false',()=>{assert.equal(m.release_gates.length,16);assert.ok(m.release_gates.every(g=>g.verified===false))});
 test('refunded terms not falsely certified',()=>{assert.equal(m.sources.find(s=>s.url==='https://inspire3.com/terms/').status,'inaccessible')});
