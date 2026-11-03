@@ -7,6 +7,8 @@ Single current record of workstreams, so work is not duplicated and release atte
 
 **LIVE (2026-11-02): the Experience 2.0 flagship homepage** replaced the old Studios hero on page 6; verified anonymously on finalvestige.com. Record: `PR604_LIVE_RELEASE_RECORD.md`. The paragraph below is the state *before* the release and is kept for history.
 
+**Reconciliation (2026-11-02, later):** page 6 block 1 is the approved replacement (SHA-1 `8c0dd5c3adce073fd58f5001e0f90d523ffad277`, 108,155 B), independently confirmed by ChatGPT; the anonymous public re-verification was re-run and is identical to the first record. PR #604 stays open, draft and frozen at `bdf01b4a3e`; the corrected performance record was posted to it as an addendum (comment 6594692945). **Performance policy (founder decision):** the binding benchmark is real throttled mobile LCP at or below 2.5 s (about 1.9 s measured; 4.58 s was a proxy figure, 8.4 s is Lighthouse `simulate` on the live page; see `PR604_MOBILE_LCP_FOLLOWUP_DIAGNOSIS.md`); non-block optimization proceeds in a separate PR, one measured reversible change at a time, without disabling instrumentation.
+
 **Before the release: nothing from this directive was live.** Live homepage (page 6) read 2026-11-02 through the WordPress.com connector: `modified 2026-10-30T09:14:14`, `content_hash 7afdb933d2ec68fd993ef015c97a6eb9edfe0576`, 6 top-level blocks, block hashes identical to the lock tokens in PR #604's rollback plan. The proposed change would still apply cleanly. It has **not** been applied.
 
 ## Decision: canonical homepage = PR #604 (flagship), not PR #49

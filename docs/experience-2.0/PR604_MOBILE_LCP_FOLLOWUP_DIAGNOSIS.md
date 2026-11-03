@@ -49,6 +49,25 @@ Lighthouse `simulate`, live, 1 run each (noisy; indicative only):
 3. Every lever that matters sits **outside page 6's block**: the Inter preload and render-blocking CSS belong to the Assembler theme and plugins; the analytics tags are site-level; the three eager thumbnails come from the page's query-loop blocks (core adds `fetchpriority=high` to the first). A change to those is a site or other-block edit, not a PR #604 follow-up that leaves the approved block alone.
 4. The 202 KB inline `<style>` (the page's own CSS) is a real cost for parse and for the simulated CPU graph; it was not isolated in these tests.
 
+## Founder decision (2026-11-02) and first one-change-at-a-time test
+
+The binding benchmark is **real throttled mobile LCP of 2.5 s or better**; p75 field LCP becomes the standard once enough field data exists. Lighthouse `simulate` is reported separately. Non-block surfaces (font delivery, render-blocking CSS, thumbnails, analytics scheduling) may be optimized in a separate PR if isolated, measured and reversible, with tracking preserved.
+
+What-if harness (`evidence/perf-2026-11-02/whatif.py`): serves a saved copy of the live HTML from localhost with exactly one edit, 390x844, CPU 4x, 150 ms RTT, 1.6 Mbps, cache off, 8 runs per variant in alternating order. Analytics collection requests are aborted so the tests add no data to production analytics. The live site was not changed.
+
+| Variant | FCP median (range) | LCP median (range) | CLS | Inter loaded |
+|---|---:|---:|---:|---:|
+| v0 baseline | 1560 (1544-1640) | 1634 (1620-4684) | 0 | 8/8 |
+| v1 remove the Inter `<link rel=preload>` only | **1270** (1192-2348) | **1506** (1416-3468) | 0 | 8/8 |
+| v2 lazy-load the 3 query-loop thumbnails, drop `fetchpriority=high` | 1572 | 1668 | 0 | 8/8 |
+| v3 v1 + v2 | 1234 | 1434 | 0 | 8/8 |
+
+Reading: removing only the font preload gains about 0.3 s FCP and 0.13 s LCP in this method and the font still loads (the earlier "block the file" test also removed the font, which changes typography and is not a valid candidate). The thumbnail change alone does nothing measurable. These runs use a local copy of the HTML, so absolute values are lower than the live-URL runs; compare variants only with each other. Outliers (LCP up to 4.7 s in single runs) occurred in v0 and v1.
+
+Adverse effects to check before any release: with `font-display: fallback` the first paint uses the fallback face and swaps to Inter when it arrives (measured CLS 0, but a visible swap on slow connections must be judged against the approved typography); the italic face is declared by the theme but was not requested in any run.
+
+Open: the preload is emitted early in `<head>` by WordPress or the platform, not by `theme.json` (which has no preload setting) and not by the page block. The mechanism that emits it has not been identified, so there is no live implementation yet. Candidate paths: a small, reversible plugin using the proper hook, or a platform setting. Installing a plugin on production is a configuration change that has not been done.
+
 ## Not yet done
 
 * A like-for-like Lighthouse measurement of any candidate change (nothing has been changed).
