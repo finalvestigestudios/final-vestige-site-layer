@@ -1,0 +1,630 @@
+{
+  "milestone": "R103",
+  "checked_on": "2026-11-03",
+  "draft": true,
+  "live_changes": false,
+  "affiliate_links": [],
+  "sources": {
+    "seller_catalog": {
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "checked": "2026-11-03"
+    },
+    "seller_offer": {
+      "url": "https://zen12.com/hnp",
+      "type": "seller_sales",
+      "checked": "2026-11-03"
+    },
+    "seller_checkout": {
+      "url": "https://zen12.com/getstarted",
+      "type": "seller_checkout_public",
+      "checked": "2026-11-03"
+    },
+    "seller_privacy": {
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller_privacy",
+      "checked": "2026-11-03"
+    },
+    "independent_binaural_review": {
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "peer_reviewed_systematic_review",
+      "checked": "2026-11-03"
+    },
+    "deese1959": {
+      "url": "https://doi.org/10.1037/h0046671",
+      "type": "primary_experiment",
+      "checked": "2026-11-03"
+    },
+    "roediger1995": {
+      "url": "https://doi.org/10.1037/0278-7393.21.4.803",
+      "type": "primary_experiment",
+      "checked": "2026-11-03"
+    },
+    "loftus1974": {
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "type": "primary_experiment",
+      "checked": "2026-11-03"
+    },
+    "robinson1997": {
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00417.x",
+      "type": "primary_experiment",
+      "checked": "2026-11-03"
+    },
+    "ftc_endorsement": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory_guidance",
+      "checked": "2026-11-03"
+    },
+    "ftc_health": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory_guidance",
+      "checked": "2026-11-03"
+    },
+    "puysegur": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_existing",
+      "checked": "historical issue 171 only; require live recheck"
+    },
+    "focus": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_existing",
+      "checked": "historical issue 171 only; require live recheck"
+    },
+    "affiliate_program": {
+      "url": "https://inspire3.com/affiliates/",
+      "type": "merchant_program",
+      "checked": "UNVERIFIED; do not rely"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 12-minute session format",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "can describe contents only"
+    },
+    {
+      "id": "C02",
+      "claim": "12-level entire program",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_offer",
+        "seller_checkout"
+      ],
+      "restriction": "may differ by package"
+    },
+    {
+      "id": "C03",
+      "claim": "Full checkout 48 MP3s",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_checkout"
+      ],
+      "restriction": "must recheck at activation"
+    },
+    {
+      "id": "C04",
+      "claim": "Four listening styles per level",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "format not efficacy"
+    },
+    {
+      "id": "C05",
+      "claim": "Beginner package six levels, 24 MP3s",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "verify selected SKU"
+    },
+    {
+      "id": "C06",
+      "claim": "Advanced package six levels, 24 MP3s",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "verify selected SKU"
+    },
+    {
+      "id": "C07",
+      "claim": "Full-course support guidance bonuses",
+      "status": "seller_described",
+      "source_refs": [
+        "seller_checkout"
+      ],
+      "restriction": "verify operative fulfillment"
+    },
+    {
+      "id": "C08",
+      "claim": "MP3s play on user's device",
+      "status": "partial_seller_description",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "individual compatibility not personally tested"
+    },
+    {
+      "id": "C09",
+      "claim": "12 minutes = one hour advanced meditation",
+      "status": "not_substantiated",
+      "source_refs": [
+        "seller_offer",
+        "independent_binaural_review"
+      ],
+      "restriction": "DO NOT state as fact"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 automatically mediates for listener",
+      "status": "not_substantiated",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "DO NOT endorse"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 reliably lowers stress or anxiety",
+      "status": "not_substantiated",
+      "source_refs": [
+        "seller_offer",
+        "ftc_health"
+      ],
+      "restriction": "no product-specific suitable trials"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 improves focus",
+      "status": "not_substantiated",
+      "source_refs": [
+        "seller_offer",
+        "ftc_health"
+      ],
+      "restriction": "no product-specific suitable trials"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 cures or treats any health disorder",
+      "status": "prohibited_without_evidence",
+      "source_refs": [
+        "ftc_health"
+      ],
+      "restriction": "DO NOT use"
+    },
+    {
+      "id": "C14",
+      "claim": "Entrainment EEG results mixed in 14-study review",
+      "status": "independent_supported",
+      "source_refs": [
+        "independent_binaural_review"
+      ],
+      "restriction": "5 supportive/8 contrary/1 mixed"
+    },
+    {
+      "id": "C15",
+      "claim": "14-study review studied Zen12",
+      "status": "false",
+      "source_refs": [
+        "independent_binaural_review"
+      ],
+      "restriction": "not Zen12-specific"
+    },
+    {
+      "id": "C16",
+      "claim": "Meditation equivalence measured in 2023 review",
+      "status": "false",
+      "source_refs": [
+        "independent_binaural_review"
+      ],
+      "restriction": "review outcome EEG, not equivalence"
+    },
+    {
+      "id": "C17",
+      "claim": "Checkout currently requests mobile phone",
+      "status": "seller_checkout_observation",
+      "source_refs": [
+        "seller_checkout"
+      ],
+      "restriction": "2026-11-03; recheck"
+    },
+    {
+      "id": "C18",
+      "claim": "Seller may send SMS marketing to mobile",
+      "status": "seller_policy",
+      "source_refs": [
+        "seller_privacy"
+      ],
+      "restriction": "policy can change"
+    },
+    {
+      "id": "C19",
+      "claim": "Seller may share buyer identity/products with affiliate",
+      "status": "seller_policy",
+      "source_refs": [
+        "seller_privacy"
+      ],
+      "restriction": "refuse identifiable data by contract"
+    },
+    {
+      "id": "C20",
+      "claim": "One-year guarantee appears on offer",
+      "status": "seller_marketing_promise",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "not FV guarantee; terms not independently verified"
+    },
+    {
+      "id": "C21",
+      "claim": "Countdown proves deal expires",
+      "status": "unsupported",
+      "source_refs": [
+        "seller_checkout"
+      ],
+      "restriction": "DO NOT assert"
+    },
+    {
+      "id": "C22",
+      "claim": "Price is evergreen",
+      "status": "unsupported",
+      "source_refs": [
+        "seller_checkout"
+      ],
+      "restriction": "DO NOT publish"
+    },
+    {
+      "id": "C23",
+      "claim": "Final Vestige accepted Inspire3 affiliate partner",
+      "status": "unverified",
+      "source_refs": [
+        "affiliate_program"
+      ],
+      "restriction": "HOLD"
+    },
+    {
+      "id": "C24",
+      "claim": "Final Vestige has approved Zen12 tracking URL",
+      "status": "unverified",
+      "source_refs": [
+        "affiliate_program"
+      ],
+      "restriction": "HOLD; never invent"
+    },
+    {
+      "id": "C25",
+      "claim": "Website, TikTok, email rights granted",
+      "status": "unverified",
+      "source_refs": [
+        "affiliate_program"
+      ],
+      "restriction": "HOLD by channel"
+    },
+    {
+      "id": "C26",
+      "claim": "Approved seller creatives/swipe cleared for reuse",
+      "status": "unverified",
+      "source_refs": [
+        "affiliate_program"
+      ],
+      "restriction": "no copied ad text or third-party graphics"
+    },
+    {
+      "id": "C27",
+      "claim": "Affiliate sales conversions proven",
+      "status": "unverified",
+      "source_refs": [],
+      "restriction": "cannot infer sales from clicks"
+    },
+    {
+      "id": "C28",
+      "claim": "FTC requires clear material connection disclosure",
+      "status": "regulatory_guidance",
+      "source_refs": [
+        "ftc_endorsement"
+      ],
+      "restriction": "disclose near any eventual earning CTA"
+    },
+    {
+      "id": "C29",
+      "claim": "Health efficacy must have substantiation",
+      "status": "regulatory_guidance",
+      "source_refs": [
+        "ftc_health"
+      ],
+      "restriction": "no health promises absent competent evidence"
+    },
+    {
+      "id": "C30",
+      "claim": "DRM study exp1 40 percent critical lure recall",
+      "status": "primary_supported_scope_limited",
+      "source_refs": [
+        "roediger1995"
+      ],
+      "restriction": "1995 laboratory materials only"
+    },
+    {
+      "id": "C31",
+      "claim": "DRM study exp2 55 percent critical lure recall",
+      "status": "primary_supported_scope_limited",
+      "source_refs": [
+        "roediger1995"
+      ],
+      "restriction": "1995 laboratory materials only"
+    },
+    {
+      "id": "C32",
+      "claim": "DRM result predicts individual autobiography falsehood",
+      "status": "invalid_extrapolation",
+      "source_refs": [
+        "roediger1995"
+      ],
+      "restriction": "do not extrapolate"
+    },
+    {
+      "id": "C33",
+      "claim": "Question wording affects certain accident recall outcomes",
+      "status": "primary_supported_scope_limited",
+      "source_refs": [
+        "loftus1974"
+      ],
+      "restriction": "film experiments, not universal"
+    },
+    {
+      "id": "C34",
+      "claim": "False memory disproves Puységur magnetism mechanism",
+      "status": "invalid_extrapolation",
+      "source_refs": [
+        "puysegur",
+        "roediger1995"
+      ],
+      "restriction": "strictly methodological analogy"
+    },
+    {
+      "id": "C35",
+      "claim": "Original free association list validated",
+      "status": "unverified",
+      "source_refs": [],
+      "restriction": "explicitly described as unvalidated"
+    },
+    {
+      "id": "C36",
+      "claim": "R103 video concept is a completed hosted film",
+      "status": "false",
+      "source_refs": [],
+      "restriction": "storyboard/poster only, no hosted media"
+    },
+    {
+      "id": "C37",
+      "claim": "A/B film produces higher conversions",
+      "status": "unverified",
+      "source_refs": [],
+      "restriction": "hypothesis; no visitor data"
+    },
+    {
+      "id": "C38",
+      "claim": "Publisher receives no buyer identities by contract",
+      "status": "unverified",
+      "source_refs": [
+        "seller_privacy"
+      ],
+      "restriction": "must obtain explicit contractual protection"
+    },
+    {
+      "id": "C39",
+      "claim": "Existing Focus uses established newsletter funnel",
+      "status": "fv_existing",
+      "source_refs": [
+        "focus"
+      ],
+      "restriction": "preserve one Jetpack list; no duplicate"
+    },
+    {
+      "id": "C40",
+      "claim": "Refund conditions currently operative",
+      "status": "unverified",
+      "source_refs": [
+        "seller_offer"
+      ],
+      "restriction": "fresh independent verification required"
+    }
+  ],
+  "gates": [
+    {
+      "id": "founder_release",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "affiliate_named_acceptance",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "exact_product_tracking_url",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "tiktok_channel_permission",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "youtube_channel_permission",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "approved_creatives",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "affiliate_reporting_aggregate_only",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "contractual_no_buyer_pii",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "merchant_checkout_verification",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "seller_terms_and_refund",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "product_claims_independent_editorial_QA",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "FTC_disclosure_proximity",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "FTC_health_evidence",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "legal_privacy_review",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "original_poster_rights",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "first_party_video_hosting",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "caption_sync_in_browser",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "no_JS_readability",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "keyboard_screenreader_QA",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "contrast_WCAG_22_AA",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "mobile_360",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "mobile_390",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "tablet_768",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "desktop_1440",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "desktop_1920",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "reduced_motion",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "security_CSP",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "Lighthouse_CWV",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "performance_budget",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "privacy_attribution_QA",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "site_QA_independent",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "homepage_art_lead_review",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "dispatch_coordination",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "WordPress_admin_approval",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "no_duplicate_jetpack",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "no_live_menu_mutation",
+      "status": "CLOSED",
+      "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    }
+  ]
+}
