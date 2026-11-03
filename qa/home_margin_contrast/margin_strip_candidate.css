@@ -1,0 +1,42 @@
+/* REVIEW-ONLY candidate for the live 72-item FV margin rotator.
+   DO NOT inject this file or publish CSS before founder/QD authorization.
+   Existing five-second cadence is preserved. Visible glyphs stay fully opaque;
+   discrete visibility transitions avoid partially blended text triggering contrast failures. */
+.fv-margin-strip--rotator .fv-margin-strip__item {
+  filter: none;
+  visibility: hidden;
+  animation: fvMarginRevealAccessible 360s steps(1, end) infinite;
+  animation-delay: calc(var(--i) * 5s);
+}
+
+@keyframes fvMarginRevealAccessible {
+  0%    { opacity: 0; visibility: hidden; transform: translateY(-50%); }
+  0.02% { opacity: 1; visibility: visible; transform: translateY(-50%); }
+  1.36% { opacity: 1; visibility: visible; transform: translateY(-50%); }
+  1.38% { opacity: 0; visibility: hidden; transform: translateY(-50%); }
+  100%  { opacity: 0; visibility: hidden; transform: translateY(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fv-margin-strip--rotator .fv-margin-strip__window {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+  .fv-margin-strip--rotator .fv-margin-strip__item {
+    position: relative;
+    display: none;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    filter: none;
+    animation: none;
+    padding: 2px 0 6px 16px;
+  }
+  .fv-margin-strip--rotator .fv-margin-strip__item:nth-child(1) {
+    display: block;
+  }
+}
