@@ -1,0 +1,106 @@
+name: Preparedness R101 Printable Assumptions Candidate (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r100-planner-print-assumptions-hold-20261103
+    paths:
+      - preparedness/tools/r101_water_print_context_private_candidate.py
+      - preparedness/tests/test_r101_water_print_context_private_candidate.py
+      - preparedness/docs/R101_PRINT_CONTEXT_DRAFT_REVIEW_HOLD.md
+      - .github/workflows/preparedness-r101-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  draft-review-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact original source pins and four ADD-only private files
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          base = "76c5cd499ed18e3171705d69fdddaa50a2cd5650"
+          branch = "review/preparedness-r100-planner-print-assumptions-hold-20261103"
+          observed_base = subprocess.check_output(
+              ["git", "rev-parse", "refs/remotes/origin/" + branch], text=True).strip()
+          assert observed_base == base, (branch, observed_base, base)
+          expected = {
+              "A\tpreparedness/tools/r101_water_print_context_private_candidate.py",
+              "A\tpreparedness/tests/test_r101_water_print_context_private_candidate.py",
+              "A\tpreparedness/docs/R101_PRINT_CONTEXT_DRAFT_REVIEW_HOLD.md",
+              "A\t.github/workflows/preparedness-r101-private-tests.yml",
+          }
+          observed = set(subprocess.check_output(
+              ["git", "diff", "--name-status", base, "HEAD"], text=True).splitlines())
+          assert observed == expected, ("non-additive or out-of-scope change", observed)
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, pin in pins.items():
+              observed_sha = subprocess.check_output(
+                  ["git", "rev-parse", "refs/remotes/origin/" + ref], text=True).strip()
+              assert observed_sha == pin, ("branch drift", ref, observed_sha, pin)
+          print("PRIVATE HOLD: source pins and four-file boundary verified.")
+          PY
+      - name: Compile and test isolated R101 attack and Node DOM scenarios
+        run: |
+          python -I -m compileall -q preparedness/tools/r101_water_print_context_private_candidate.py preparedness/tests/test_r101_water_print_context_private_candidate.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r101_water_print_context_private_candidate.py' -v
+      - name: Independently re-run R100 original 35+1 source/citation and print gates
+        run: |
+          python -I preparedness/tools/r100_printed_planner_context_custody.py --private-json-stdout > "$RUNNER_TEMP/private-r100.json"
+          python -I - <<'PY'
+          import json, os, pathlib
+          r = json.loads((pathlib.Path(os.environ["RUNNER_TEMP"]) / "private-r100.json").read_text())
+          assert r["release_state"] == "HOLD" and r["may_publish"] is False
+          assert r["prior_36_draft_custody_seal"] and r["sha256_seal"]
+          assert r["assumption_field_count"] == 8
+          assert r["qualified_water_and_medical_safety_review"] == "NOT_REVIEWED"
+          assert r["independent_QD"] == "NOT_REVIEWED"
+          PY
+      - name: Emit scratch-only private candidate and sealed HOLD receipt
+        run: |
+          python -I preparedness/tools/r101_water_print_context_private_candidate.py --out-dir "$RUNNER_TEMP/preparedness-r101-candidate" > "$RUNNER_TEMP/private-r101.json"
+          python -I - <<'PY'
+          import hashlib, json, os, pathlib
+          temp = pathlib.Path(os.environ["RUNNER_TEMP"]) / "preparedness-r101-candidate"
+          report = json.loads((pathlib.Path(os.environ["RUNNER_TEMP"]) / "private-r101.json").read_text())
+          assert report["release_state"] == "HOLD" and report["may_publish"] is False
+          assert report["independent_QD"] == "NOT_REVIEWED"
+          assert report["qualified_water_and_medical_safety_review"] == "NOT_REVIEWED"
+          assert not report["wordpress_import_authorized"]
+          assert len(list(temp.iterdir())) == 3
+          check = (
+              ("water-planner-R101-PRIVATE-DRAFT.html", "candidate_wp_draft_sha256"),
+              ("water-planner-R101-LOCAL-REVIEW.html", "candidate_local_preview_sha256"),
+          )
+          for name, key in check:
+              assert hashlib.sha256((temp / name).read_bytes()).hexdigest() == report[key]
+          print("Isolated candidate generated and hashes verified; still HOLD, not browser-tested.")
+          PY
+      - name: Original native validation and offline private WordPress-ready build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete Python suite (36+ cases, 35 original articles plus tool)
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Human source, qualified safety, browser QA, QD and release integrity NOT APPROVED
+        if: always()
+        run: echo 'R101 PRIVATE HOLD: no CMS, WordPress writes, publishing, nav, qualified safety or QD PASS.'
