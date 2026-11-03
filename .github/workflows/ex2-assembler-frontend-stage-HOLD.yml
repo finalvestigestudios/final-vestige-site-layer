@@ -1,0 +1,88 @@
+name: EX2 HOLD — actual Assembler WordPress Playground front-end gate
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/**'
+      - '.github/workflows/ex2-assembler-frontend-stage-HOLD.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ex2-assembler-front-end-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  isolated-assembler-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Exact-head source checkout (no credentials persisted)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source-inventory tests, PHP lint and offline Node security tests
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
+          node --check experience2/home-flagship/qa/release-candidate/playground_assembler_visual_gate.mjs
+          node experience2/home-flagship/qa/release-candidate/playground_assembler_visual_gate.mjs --self-test
+          php -l experience2/home-flagship/qa/release-candidate/playground_assembler_theme_gate.php
+          php -l experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.php
+      - name: Generate authentic 11-source seven-chapter fixture with synthetic Margins and Jetpack
+        run: |
+          set -euo pipefail
+          python -I experience2/home-flagship/qa/release-candidate/write_source_flagship_playground_candidate.py \
+            --output "${RUNNER_TEMP}/fv-ex2-assembler-full-candidate.html" \
+            --manifest "${RUNNER_TEMP}/fv-ex2-assembler-manifest.json"
+      - name: Fetch free official Assembler theme package for isolated local WP only
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error --retry 2 --max-time 120 \
+            "https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip" \
+            -o "${RUNNER_TEMP}/fv-ex2-assembler.zip"
+          test "$(stat -c %s "${RUNNER_TEMP}/fv-ex2-assembler.zip")" -gt 10000
+          unzip -t "${RUNNER_TEMP}/fv-ex2-assembler.zip" > /dev/null
+          unzip -Z1 "${RUNNER_TEMP}/fv-ex2-assembler.zip" | grep -qx 'assembler/style.css'
+          printf 'OFFICIAL_ASSEMBLER_ZIP_SHA256='
+          sha256sum "${RUNNER_TEMP}/fv-ex2-assembler.zip" | cut -d' ' -f1
+          unzip -p "${RUNNER_TEMP}/fv-ex2-assembler.zip" assembler/style.css | grep -m1 -i 'Version:' || true
+      - name: Install pinned free WordPress Playground, Chromium and axe
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock --no-audit --no-fund \
+            @wp-playground/cli@3.1.56 playwright@1.56.1 axe-core@4.10.3
+          npx playwright install --with-deps chromium
+      - name: Render real seven chapters in isolated Assembler with actual browser, axe and image bodies
+        timeout-minutes: 19
+        run: |
+          set -euo pipefail
+          node experience2/home-flagship/qa/release-candidate/playground_assembler_visual_gate.mjs \
+            --candidate "${RUNNER_TEMP}/fv-ex2-assembler-full-candidate.html" \
+            --manifest "${RUNNER_TEMP}/fv-ex2-assembler-manifest.json" \
+            --theme-zip "${RUNNER_TEMP}/fv-ex2-assembler.zip" \
+            --out "${RUNNER_TEMP}/fv-ex2-assembler-evidence"
+      - name: Upload only synthetic staging viewport screenshots and redacted QA manifest
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-assembler-front-end-SYNTHETIC-ONLY
+          path: ${{ runner.temp }}/fv-ex2-assembler-evidence
+          if-no-files-found: error
+          retention-days: 7
+      - name: Erase locally generated test sources, theme ZIP and screenshots
+        if: always()
+        run: |
+          rm -rf "${RUNNER_TEMP}/fv-ex2-assembler-evidence"
+          rm -f "${RUNNER_TEMP}/fv-ex2-assembler-full-candidate.html" \
+            "${RUNNER_TEMP}/fv-ex2-assembler-manifest.json" \
+            "${RUNNER_TEMP}/fv-ex2-assembler.zip"
+          echo "RELEASE HOLD. No production WordPress, database, user, subscriber or secret export."
