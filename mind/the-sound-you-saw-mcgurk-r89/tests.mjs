@@ -9,7 +9,7 @@ const A=read('zen12-a.blocks.html'), B=read('zen12-b.blocks.html'), guide=read('
 const matrix=JSON.parse(read('claim-source-permissions.json')), VTT=read('40-second-film-captions.vtt'),article=read('investigation.md');
 const mk=(n,values={})=>Array.from({length:n},()=>({provenance:'synthetic_test',event:'guide_view',source:'organic_search',topic:'zen12',variant:'A',...values}));
 test('Both A/B include byte-identical substantive guide',()=>{assert.ok(A.includes(guide));assert.ok(B.includes(guide))});
-test('Only B includes film storyboard and all-visible transcript',()=>{assert.doesNotMatch(A,/class="fv89-film"/);assert.match(B,/class="fv89-film"/);assert.match(B,/id="fv89-film-transcript"/);assert.match(B,/currently an <strong>unrendered storyboard/);});
+test('Only B includes film storyboard and all-visible transcript',()=>{assert.doesNotMatch(A,/class="fv89-film"/);assert.match(B,/class="fv89-film"/);assert.match(B,/id="fv89-film-transcript"/);assert.match(B,/original 40-second silent film for offline review/);});
 test('Film exists after guide and before adjacent disclosure/CTA',()=>{assert.ok(B.indexOf('id="fv89-title"')<B.indexOf('class="fv89-film"'));assert.ok(B.indexOf('class="fv89-film"')<B.indexOf('class="fv89-ethics"'))});
 test('No active purchasing URL or merchant links',()=>{for(const s of [A,B])assert.doesNotMatch(s,/<a[^>]+href=["']https?:\/\/(?:www\.)?(?:inspire3|zen12|hypnosislive)\./i)});
 test('No JS, forms, video embedding or autoplay',()=>{for(const s of [A,B,hub])assert.doesNotMatch(s,/<(?:script|iframe|form|video|input)\b|\bautoplay\s*=/i)});
