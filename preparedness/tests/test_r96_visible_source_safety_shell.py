@@ -262,5 +262,43 @@ for _name, _pair in sorted(CASES.items()):
     setattr(AttackCases, "test_reject_" + _name, make_attack(_name, _pair))
 
 
+
+
+class AncestorVisibility(unittest.TestCase):
+    def test_safe_outer_container_remains_allowed(self):
+        html = '<div class="offline-preview">' + fixture() + '</div>'
+        self.assertEqual(gate.audit_shell(META, html, [REF])["rendered_sources"], 1)
+
+    def test_hidden_outer_container_fails(self):
+        with self.assertRaises(gate.Gate):
+            gate.audit_shell(META, '<div hidden>' + fixture() + '</div>', [REF])
+
+    def test_aria_hidden_outer_container_fails(self):
+        with self.assertRaises(gate.Gate):
+            gate.audit_shell(META, '<div aria-hidden="true">' + fixture() + '</div>', [REF])
+
+    def test_inert_outer_container_fails(self):
+        with self.assertRaises(gate.Gate):
+            gate.audit_shell(META, '<div inert>' + fixture() + '</div>', [REF])
+
+    def test_hidden_pa_shell_ancestor_fails(self):
+        html = fixture().replace(
+            '<div class="pa-body" id="pa-main">',
+            '<div class="pa-shell" hidden><div class="pa-body" id="pa-main">'
+        ).replace('</p></div><section class="pa-sources"',
+                  '</p></div></div><section class="pa-sources"')
+        with self.assertRaisesRegex(gate.Gate, "hidden, inert or aria-hidden"):
+            gate.audit_shell(META, html, [REF])
+
+    def test_inert_pa_shell_ancestor_fails(self):
+        html = fixture().replace(
+            '<div class="pa-body" id="pa-main">',
+            '<div class="pa-shell" inert><div class="pa-body" id="pa-main">'
+        ).replace('</p></div><section class="pa-sources"',
+                  '</p></div></div><section class="pa-sources"')
+        with self.assertRaisesRegex(gate.Gate, "hidden, inert or aria-hidden"):
+            gate.audit_shell(META, html, [REF])
+
+
 if __name__ == "__main__":
     unittest.main()
