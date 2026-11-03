@@ -43,6 +43,8 @@ if ( ! preg_match_all( $record_pattern, $source, $matches ) || count( $matches[0
     fv_ex2_probe_fail( 'Synthetic Margins record count drift' );
 }
 $created_id = 0;
+$report = null;
+$cleanup = array( 'attempted' => false, 'deleted' => false, 'verified_absent' => false );
 try {
     $created_id = wp_insert_post(
         array(
@@ -54,12 +56,12 @@ try {
         true
     );
     if ( is_wp_error( $created_id ) || ! is_int( $created_id ) || $created_id < 1 ) {
-        fv_ex2_probe_fail( 'WordPress core draft insertion failed' );
+        throw new RuntimeException( 'WordPress core draft insertion failed' );
     }
     clean_post_cache( $created_id );
     $stored = get_post_field( 'post_content', $created_id, 'raw' );
     if ( ! is_string( $stored ) ) {
-        fv_ex2_probe_fail( 'WordPress core failed to return raw post content' );
+        throw new RuntimeException( 'WordPress core failed to return raw post content' );
     }
     $after_blocks = parse_blocks( $stored );
     $html_blocks = array_values( array_filter(
@@ -100,14 +102,34 @@ try {
         'parsed_blocks_after'  => count( $after_blocks ),
         'checks'       => $checks,
     );
-    if ( 'FAIL' === $report['result'] ) {
-        http_response_code( 422 );
-    }
-    echo wp_json_encode( $report );
 } catch ( Throwable $error ) {
-    fv_ex2_probe_fail( 'WordPress synthetic core exception: ' . get_class( $error ) );
+    // NEVER exit here: PHP's exit skips finally, which would strand the draft.
+    $report = array(
+        'result' => 'FAIL',
+        'reason' => 'WordPress synthetic core exception: ' . get_class( $error ),
+        'data_class' => 'SYNTHETIC_TEST_FIXTURE_ONLY',
+        'test_type' => 'WORDPRESS_CORE_DRAFT_SAVE_READBACK_NOT_GUTENBERG_EDITOR',
+        'release' => 'HOLD',
+    );
 } finally {
     if ( is_int( $created_id ) && $created_id > 0 ) {
-        wp_delete_post( $created_id, true );
+        $cleanup['attempted'] = true;
+        try {
+            $deleted = wp_delete_post( $created_id, true );
+            $cleanup['deleted'] = ! empty( $deleted );
+            $cleanup['verified_absent'] = ! get_post( $created_id );
+        } catch ( Throwable $cleanup_error ) {
+            // Refuse PASS if cleanup throws. Never leak environment details.
+            $cleanup['verified_absent'] = false;
+        }
     }
 }
+$report['cleanup'] = $cleanup;
+if ( $cleanup['attempted'] && ( ! $cleanup['deleted'] || ! $cleanup['verified_absent'] ) ) {
+    $report['result'] = 'FAIL';
+    $report['reason'] = 'Disposable draft cleanup could not be verified';
+}
+if ( 'PASS' !== $report['result'] ) {
+    http_response_code( 422 );
+}
+echo wp_json_encode( $report );
