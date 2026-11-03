@@ -74,6 +74,21 @@ class R101(unittest.TestCase):
                          gate.digest(gate.canonical({k: v for k, v in a[2].items()
                                                      if k != "sha256_seal"})))
 
+    def test_calculator_algorithm_pinned_and_fails_closed_on_drift(self):
+        pure = (ROOT / "tools" / "water_planner.js").read_text(encoding="utf-8")
+        self.assertEqual(gate.check_original_calculator(pure),
+                         gate.EXPECTED_ORIGINAL_CALCULATOR_GIT_BLOB)
+        for old, new in (("veryHot ? 2 : 1", "veryHot ? 3 : 1"),
+                         ("0, 100000", "0, 1000000"),
+                         ("Math.round(clamp(input.days", "Math.ceil(clamp(input.days"),
+                         ("* 8.34", "* 7.34"),
+                         ("function nextReplacementDate", "function fakeReplacementDate")):
+            self.assertIn(old, pure)
+            with self.assertRaises(gate.Hold):
+                gate.check_original_calculator(pure.replace(old, new))
+        self.assertEqual(self.candidate()[2]["original_calculator_pinned_blob_sha1"],
+                         gate.EXPECTED_ORIGINAL_CALCULATOR_GIT_BLOB)
+
     def test_all_original_citations_and_navigation_survive(self):
         wp, preview, receipt = self.candidate()
         self.assertEqual(receipt["original_citation_occurrences"], 7)
