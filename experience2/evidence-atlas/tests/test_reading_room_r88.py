@@ -71,6 +71,9 @@ class ReaderContracts(unittest.TestCase):
             dest=Path(work)/'render';r88.build(dest)
             a=Path(work)/'a.zip';b=Path(work)/'b.zip'
             self.assertEqual(r88.package(dest,a),r88.package(dest,b))
+            r88.build(dest)  # Repeat the build into a nonempty destination.
+            self.assertEqual(r88.package(dest,a),r88.package(dest,b))
+            c=Path(work)/'c.zip';self.assertEqual(r88.package(dest,a),r88.package(dest,c))
             receipt=json.loads((dest/'R88_READING_ROOM_RECEIPT.json').read_text())
             self.assertFalse(receipt['publication_approved'])
             self.assertFalse(receipt['hosted_wordpress_verified'])
