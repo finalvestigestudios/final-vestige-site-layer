@@ -59,6 +59,7 @@ class Witness(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack = []
         self.article_count = 0
+        self.shell_jsonld_count = 0
         self.article_slug = None
         self.counts = {k: 0 for k in ("pa-head", "pa-body", "pa-sources", "pa-review")}
         self.sections = {}
@@ -90,7 +91,25 @@ class Witness(HTMLParser):
         # structural invisibility across every ancestor, including ancestors
         # that wrap the article itself.
         blocked = invisible(attrs) or bool(parent and parent["blocked"])
+        if not in_article and tag in ("script", "style", "iframe", "object",
+                                     "embed", "form"):
+            raise Gate("active element outside private draft root: " + tag)
         if in_article:
+            # The authored .pa-body can contain one original local-only tool
+            # script; R95 separately protects its exact original DOM. No new
+            # executable scripts or externally fetched resources may enter the
+            # builder-created shell, even outside the source/review sections.
+            if not self.zone("pa-body"):
+                if tag == "script":
+                    need(not self.guarded() and attrs == {
+                        "type": "application/ld+json"},
+                        "unexpected executable or duplicate-capable shell script")
+                    self.shell_jsonld_count += 1
+                    need(self.shell_jsonld_count == 1,
+                         "duplicate JSON-LD shell script")
+                elif tag in ("style", "iframe", "object", "embed", "form",
+                             "input", "svg", "canvas"):
+                    raise Gate("active/opaque element outside authored body: " + tag)
             sensitive_here = bool(classes & SENSITIVE) or self.guarded()
             if blocked and (sensitive_here or "pa-article" in classes
                             or "pa-body" in classes):
@@ -185,6 +204,7 @@ class Witness(HTMLParser):
     def finish(self):
         need(not self.stack, "truncated HTML document")
         need(self.article_count == 1, "rendered article root missing")
+        need(self.shell_jsonld_count == 1, "missing exactly one static JSON-LD shell script")
         need(all(v == 1 for v in self.counts.values()),
              "missing/duplicate critical shell regions: " + str(self.counts))
         return self
