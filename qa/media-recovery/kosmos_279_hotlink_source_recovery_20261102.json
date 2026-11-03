@@ -303,7 +303,18 @@
       "pixel_identity_verified": false,
       "rights_approved": false,
       "wordpress_cache_authorized": false,
-      "wordpress_post_edit_authorized": false
+      "wordpress_post_edit_authorized": false,
+      "publisher_context_lead": {
+        "article_url": "https://www.linkedin.com/pulse/1978-operation-morning-light-riccardo-bevilacqua-cy4sf",
+        "article_date": "2025-04-20",
+        "image_asset_identifier": "D4D12AQHmW14R-yIi1g",
+        "evidence": "Image search displays a different LinkedIn delivery URL using same media asset identifier: three radiological-protection-suited people posed beside aircraft nose; context article is readable. The exact published 279:5 delivery link remains inaccessible to the independent retriever.",
+        "relationship": "SAME_LINKEDIN_ASSET_IDENTIFIER_ONLY_NOT_BINARY_VERIFIED",
+        "original_author_rights": "UNKNOWN_DO_NOT_CACHE_OR_REHOST",
+        "original_image_dimensions_px": null,
+        "conditional_derivative_width_px": null,
+        "visitor_browser_http_status": null
+      }
     }
   ],
   "release": {
