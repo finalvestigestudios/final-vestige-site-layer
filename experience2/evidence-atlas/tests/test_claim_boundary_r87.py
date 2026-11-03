@@ -28,6 +28,7 @@ class ClaimBoundaryTests(unittest.TestCase):
             self.assertNotEqual(r['research_url'], r['photo_url'])
             self.assertEqual(r['research_url'], m.EXPECTED_RESEARCH[r['id']])
             self.assertTrue(m.official(r['research_url']))
+            self.assertFalse(r['limit'].startswith('EVIDENCE LIMITATION'))
 
     def test_swap_institutional_source_with_photo_rejected(self):
         self.reject(self.desk.replace(m.EXPECTED_RESEARCH['01'],
