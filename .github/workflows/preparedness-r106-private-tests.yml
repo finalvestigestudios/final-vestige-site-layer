@@ -1,0 +1,89 @@
+name: Preparedness R106 bounded native gate diagnostics (PRIVATE HOLD)
+on:
+  push:
+    branches:
+      - review/preparedness-r106-bounded-native-suite-timeout-hold-20261103
+  pull_request:
+    branches:
+      - review/preparedness-r105-deterministic-offline-transport-hold-20261103
+    paths:
+      - preparedness/tools/private_release_preflight.py
+      - preparedness/tests/test_r106_bounded_mandatory_native_timeout.py
+      - preparedness/docs/R106_BOUNDED_MANDATORY_TIMEOUT_HOLD.md
+      - .github/workflows/preparedness-r106-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  private-native-timeout-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Verify R105 ancestry, four-file modification scope and eight exact contributors
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          parent = "d12e39f9b90455e9c12dc6914f121cc6546bc77d"
+          changed = set(subprocess.check_output(
+              ["git", "diff", "--name-status", parent, "HEAD"],
+              text=True).splitlines())
+          expected = {
+              "M\tpreparedness/tools/private_release_preflight.py",
+              "A\tpreparedness/tests/test_r106_bounded_mandatory_native_timeout.py",
+              "A\tpreparedness/docs/R106_BOUNDED_MANDATORY_TIMEOUT_HOLD.md",
+              "A\t.github/workflows/preparedness-r106-private-tests.yml",
+          }
+          assert changed == expected, ("content/source/safety/workflow scope drift", changed)
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, expected_sha in pins.items():
+              observed = subprocess.check_output(
+                  ["git", "rev-parse", "refs/remotes/origin/" + ref],
+                  text=True).strip()
+              assert observed == expected_sha, (ref, observed, expected_sha)
+          print("R106 4-file scope, seven contributor SHA pins and RC pin PASS")
+          PY
+      - name: Compile and execute all R106 synthetic/adversarial timeout tests
+        run: |
+          python -I -m compileall -q preparedness/tools/private_release_preflight.py preparedness/tests/test_r106_bounded_mandatory_native_timeout.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r106_*.py' -v
+      - name: Run original native validator and private WordPress draft build only
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Execute all 13 required gates with bounded native suite and frozen R19 receipt contract
+        shell: bash
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python -I -B preparedness/tools/workflow_contract_gate.py --repo-root .
+          python -I -B preparedness/tools/private_release_preflight.py \
+            --repo-root . --expected-head "$GITHUB_SHA" \
+            > "$RUNNER_TEMP/r106-private-hold.json"
+          python -I -B preparedness/tools/workflow_contract_gate.py \
+            --repo-root . --expected-head "$GITHUB_SHA" \
+            --receipt "$RUNNER_TEMP/r106-private-hold.json"
+          echo 'All 13 machine gates executed. SOURCE/SAFETY/QD/PUBLICATION HOLD remains.'
+      - name: This was machine custody only; no publishing
+        if: always()
+        run: echo 'PRIVATE HOLD. No merges, CMS, WordPress, QD or source/medical safety approvals.'
