@@ -50,6 +50,16 @@ class HostedPublicAdmissionTests(unittest.TestCase):
         self.assertTrue(first_party_media_url(
             "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
             "s67-19766.webp"))
+        self.assertTrue(first_party_media_url(
+            "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/"
+            "s67-19766.webp?resize=1041%2C810&ssl=1", "s67-19766.webp"))
+        for bad_cdn in (
+            "https://i0.wp.com/evil.test/wp-content/uploads/2026/08/s67-19766.webp?resize=1041%2C810&ssl=1",
+            "https://i0.wp.com.evil.test/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?resize=1041%2C810&ssl=1",
+            "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?resize=1041%2C810&ssl=0",
+            "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?resize=oops&ssl=1",
+        ):
+            self.assertFalse(first_party_media_url(bad_cdn, "s67-19766.webp"))
         for candidate in ("https://evil.test/wp-content/uploads/2026/08/s67-19766.webp",
                           "https://finalvestige.com.evil.test/wp-content/uploads/2026/08/s67-19766.webp",
                           "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
