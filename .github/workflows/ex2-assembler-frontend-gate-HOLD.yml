@@ -1,0 +1,85 @@
+name: EX2 HOLD real Assembler-front-end QA (local Gutenberg source)
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/**'
+      - '.github/workflows/ex2-assembler-frontend-gate-HOLD.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ex2-assembler-front-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-assembler-front-end:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Exact PR head checkout without retained credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Admission and adversarial source tests
+        run: |
+          set -euo pipefail
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_source_flagship_playground_candidate.py -v
+          node --check experience2/home-flagship/qa/release-candidate/playground_assembler_frontend_gate.mjs
+          node experience2/home-flagship/qa/release-candidate/playground_assembler_frontend_gate.mjs --self-test
+          php -l experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.php
+      - name: Verify official free Assembler package download (not WordPress.com install)
+        run: |
+          set -euo pipefail
+          curl --proto '=https' --tlsv1.2 --fail --location --silent --show-error --retry 2 \
+            --connect-timeout 15 --max-time 75 \
+            'https://public-api.wordpress.com/rest/v1/themes/download/assembler.zip' \
+            --output "${RUNNER_TEMP}/fv-assembler.zip"
+          unzip -tq "${RUNNER_TEMP}/fv-assembler.zip"
+          echo "Archive member paths (first twenty, to identify the installed stylesheet root):"
+          unzip -Z -1 "${RUNNER_TEMP}/fv-assembler.zip" | sed -n '1,20p'
+          echo "Assembler ZIP sha256 (theme not pinned to WordPress.com production):"
+          sha256sum "${RUNNER_TEMP}/fv-assembler.zip" | cut -d' ' -f1
+      - name: Assemble real seven-chapter source with synthetic Margins and Jetpack only
+        run: |
+          set -euo pipefail
+          python -I experience2/home-flagship/qa/release-candidate/write_source_flagship_playground_candidate.py \
+            --output "${RUNNER_TEMP}/fv-ex2-assembler-candidate.html" \
+            --manifest "${RUNNER_TEMP}/fv-ex2-assembler-manifest.json"
+      - name: Install pinned free Playground, Chromium and axe packages
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock --no-audit --no-fund \
+            @wp-playground/cli@3.1.56 playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Render real Assembler theme and capture bounded front-end evidence
+        timeout-minutes: 20
+        run: |
+          set -euo pipefail
+          node experience2/home-flagship/qa/release-candidate/playground_assembler_frontend_gate.mjs \
+            --candidate "${RUNNER_TEMP}/fv-ex2-assembler-candidate.html" \
+            --manifest "${RUNNER_TEMP}/fv-ex2-assembler-manifest.json" \
+            --out "${RUNNER_TEMP}/fv-ex2-assembler-evidence"
+      - name: Preserve screenshots and concise QA results even if gate fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-isolated-assembler-front-end-${{ github.sha }}
+          path: ${{ runner.temp }}/fv-ex2-assembler-evidence/
+          retention-days: 4
+          if-no-files-found: warn
+      - name: Destroy disposable candidate and theme package
+        if: always()
+        run: |
+          rm -f "${RUNNER_TEMP}/fv-ex2-assembler-candidate.html" \
+            "${RUNNER_TEMP}/fv-ex2-assembler-manifest.json" \
+            "${RUNNER_TEMP}/fv-assembler.zip"
+          echo "RELEASE HOLD — temporary Playground only; never touch WordPress.com production."
