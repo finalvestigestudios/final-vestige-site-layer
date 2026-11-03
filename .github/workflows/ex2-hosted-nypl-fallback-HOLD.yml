@@ -1,0 +1,56 @@
+name: EX2 NYPL rights-safe Malbone ephemeral hosted preview (HOLD)
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/rights/verify_hosted_nypl_fallback.py'
+      - 'experience2/home-flagship/rights/test_verify_hosted_nypl_fallback.py'
+      - 'experience2/home-flagship/rights/HOSTED_NYPL_FALLBACK_HOLD.md'
+      - '.github/workflows/ex2-hosted-nypl-fallback-HOLD.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact source tests and output gate
+        run: |
+          git rev-parse HEAD
+          python -m py_compile experience2/home-flagship/rights/verify_hosted_nypl_fallback.py experience2/home-flagship/rights/test_verify_hosted_nypl_fallback.py
+          python -m unittest discover -v -s experience2/home-flagship/rights -p 'test_verify_hosted_nypl_fallback.py'
+  hosted:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated Chromium runner, not a WordPress plugin
+        run: |
+          python -m pip install 'playwright==1.56.0'
+          python -m playwright install --with-deps chromium
+      - name: Public-host browser preview; block NYPL binary and ALL non-GET
+        run: |
+          git rev-parse HEAD
+          python experience2/home-flagship/rights/verify_hosted_nypl_fallback.py --output-dir nypl_visual_hold
+      - name: Preserve receipts including partial failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-nypl-malbone-fallback-HOLD
+          retention-days: 7
+          if-no-files-found: ignore
+          path: nypl_visual_hold/
