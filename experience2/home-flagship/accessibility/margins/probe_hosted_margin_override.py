@@ -124,10 +124,19 @@ def sample_style(page, phase: float) -> dict:
     """Return only primitive computed styles; never return actual historical text."""
     page.evaluate("""phase => {
       document.querySelectorAll('.fv-margin-strip__item').forEach((e,i) => {
-        e.style.animationDelay = (i * 5 - phase) + 's';
+        // Freeze the actual CSS animation at exactly the virtual time, not
+        // phase minus wall-clock drift: the 359.5s wrap probe otherwise
+        // measures the next record after ~500ms of ordinary browser work.
+        e.style.animationDelay = (i * 5) + 's';
+        const animations = e.getAnimations().filter(
+          a => a.animationName === 'fvMarginContrastSafe'
+        );
+        if (animations.length !== 1) throw new Error('CSS_ANIMATION_MISSING');
+        const animation = animations[0];
+        animation.pause();
+        animation.currentTime = phase * 1000;
       });
     }""", phase)
-    page.wait_for_timeout(95)
     raw = page.evaluate("""() => {
        const items = Array.from(document.querySelectorAll('.fv-margin-strip__item'));
        const holder = document.querySelector('.fv-margin-strip');
@@ -401,6 +410,15 @@ def bounded_probe(axe_source: Path, output: Path, case_timeout: int = 90) -> dic
 
 
 class SourceGuards(unittest.TestCase):
+    def test_sampling_uses_exact_paused_virtual_timeline(self):
+        # A 359.5s wrap sample must not advance into 360s while the runner
+        # performs its own layout/style observation work.
+        import inspect
+        sampler = inspect.getsource(sample_style)
+        self.assertIn("animation.pause()", sampler)
+        self.assertIn("animation.currentTime = phase * 1000", sampler)
+        self.assertNotIn("wait_for_timeout", sampler)
+
     def test_nojs_response_overlay_only_for_exact_source(self):
         css = CSS.read_text(encoding="utf-8")
         html = (b'<!doctype html><html><head><title>Public</title></head>'
