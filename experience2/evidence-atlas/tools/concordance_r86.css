@@ -36,7 +36,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 50px;color:var(--cream)}
 @media print{html,body{background:white!important;color:black!important}.wrap{width:100%}
 h1{font-size:34pt}.table-wrap{overflow:visible}table{min-width:0;font-size:9pt}
 .grid{display:block}.evidence{background:white!important;color:black!important;break-inside:avoid;page-break-inside:avoid;padding:12px;margin:10px 0}
-.hold,.evidence,.table-wrap{border-color:black}p,dt,dd,th,td,.eyebrow,h1 em,footer,.lead{color:black!important}
+.hold,.evidence,.table-wrap{border-color:black}.hold{background:white!important;color:black!important}.hold strong{color:black!important}a,.mast,.stats span,caption{color:black!important}p,dt,dd,th,td,.eyebrow,h1 em,footer,.lead{color:black!important}
 details>*{display:block!important}details{display:block}
 .primary{display:block;overflow-wrap:anywhere;color:black!important}
 .primary::after{content:attr(href);display:block;font:8pt/1.35 ui-monospace,monospace;overflow-wrap:anywhere}
