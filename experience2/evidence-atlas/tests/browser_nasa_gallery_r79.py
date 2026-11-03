@@ -94,6 +94,18 @@ def _browse(markup, out, axe, chromium, host, require_navigation, require_axe):
                             page = ctx.new_page()
                             page.set_content(markup, wait_until="load")
                         assert page.locator(".card").count() == 6
+                        # R80: a month-only image must never appear between dated
+                        # sources in an ordered chronology, on screen OR with JS off.
+                        rail_dates = page.locator(".rail > ol > li.rail-event > time").evaluate_all(
+                            "(items) => items.map(t => t.getAttribute('datetime'))")
+                        assert rail_dates == ["1966-10-18", "1967-01-03", "1967-01-28", "2017-01-24"], "R80_DAY_LEVEL_CHRONOLOGY_DRIFT"
+                        ordered_links = page.locator(".rail > ol a[href^='#record-']").evaluate_all(
+                            "(items) => items.map(a => a.getAttribute('href'))")
+                        assert ordered_links == ["#record-03", "#record-02", "#record-05", "#record-04", "#record-06"], "R80_ORDERED_SOURCE_ID_DRIFT"
+                        assert page.locator('.rail > ol a[href="#record-01"]').count() == 0, "R80_INVENTED_PORTRAIT_POSITION"
+                        assert page.locator('.rail-unplaced time[datetime="1967-01"]').count() == 1, "R80_UNKNOWN_DATE_SUPPRESSED"
+                        assert page.locator('.rail-unplaced a[href="#record-01"]').count() == 1, "R80_PROVISIONAL_SOURCE_NAV_MISSING"
+                        assert page.locator('.rail > ol > li.rail-event').last.locator('a[href^="#record-"]').count() == 2, "R80_FALSE_2017_SEQUENCE"
                         assert page.locator("details.source-drawer").count() == 6
                         assert page.locator("a.source-link").count() == 6
                         assert page.locator("img,script,iframe,video,canvas").count() == 0
@@ -105,6 +117,9 @@ def _browse(markup, out, axe, chromium, host, require_navigation, require_axe):
                         assert "pia catalog" in page.locator(".card").nth(1).locator(".topline").inner_text().lower()
                         case = {"browser_navigation": navigated, "width": width,
                                 "javascript_enabled": js, "no_js_fully_readable": True,
+                                "chronology_day_checkpoints": rail_dates,
+                                "month_only_portrait_outside_ordered_rail": True,
+                                "same_day_tributes_grouped": True,
                                 "horizontal_overflow": False, "external_requests": 0,
                                 "uncleared_media_embeds": 0, "unverified_geo": 0}
                         if js:
