@@ -72,7 +72,7 @@ def compose(index: str, css: dict[str, str], js: dict[str, str]) -> tuple[str, d
         raise ValueError("Unreviewed external stylesheet/script link or asset order drift")
     if NYPL_FILE in body or 'NYPL believes this item is in the public domain' in body:
         raise ValueError("Unverified capture or unsupported public-domain assertion")
-    if body.count(NYPL_RECORD) != 1:
+    if body.count(NYPL_RECORD) != 2:
         raise ValueError("Require the real original NYPL primary-source reference")
     for name, value in [*css.items(), *js.items()]:
         if not value.strip() or "</style" in value.lower() or "</script" in value.lower():
@@ -98,17 +98,9 @@ def compose(index: str, css: dict[str, str], js: dict[str, str]) -> tuple[str, d
         '<script data-fv-source="' + name + '">\n' + js[name] + '\n</script>'
         for name in JS_FILES
     )
-    # Extra NYPL catalog link is conspicuously labelled QA-only so the
-    # existing 2-source-link test contract is preserved without fabricating a
-    # second historical source. This is NEVER a publishing candidate.
-    qa_source = (
-        '<p data-fv-stage-only="source-custody" class="fv-hf__source-qa">'
-        'ISOLATED QA · verify the <a href="' + NYPL_RECORD +
-        '">NYPL catalog record</a>; not a facsimile or a published page.</p>'
-    )
     section = (
         '<style data-fv-stage-only="source-css">\n' + inline_css + '\n</style>\n'
-        + '<!-- ' + STAGING_ONLY + ' -->\n' + body + '\n' + qa_source + '\n'
+        + '<!-- ' + STAGING_ONLY + ' -->\n' + body + '\n'
         + inline_js
     )
     candidate = prefix + '<!-- wp:html -->\n' + section + '\n' + END_BLOCK + suffix
