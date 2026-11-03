@@ -6,11 +6,13 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-/** Explicit private configuration flag + editorial capability; disabled by default. */
+/** Explicit private flag + Editor/Administrator capability; disabled by default.
+ * edit_posts is NOT sufficient: Authors and Contributors also have that permission.
+ */
 function fv_apollo_r99_permitted(): bool {
     return defined('FV_APOLLO_R99_PRIVATE_PREVIEW')
         && FV_APOLLO_R99_PRIVATE_PREVIEW === true
-        && function_exists('current_user_can') && current_user_can('edit_posts');
+        && function_exists('current_user_can') && current_user_can('edit_others_posts');
 }
 
 /** Compiled-in, immutable SHA-256 source custody; no mutable manifest is trusted at runtime. */

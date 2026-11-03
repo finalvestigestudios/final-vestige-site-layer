@@ -6,7 +6,7 @@ $apollo_routes = [];
 function add_action($hook, $callable, $priority=10) { $GLOBALS['apollo_routes'][$hook]=$callable; }
 function add_shortcode($shortcode, $callable) { $GLOBALS['apollo_routes'][$shortcode]=$callable; }
 function current_user_can($capability) {
-    return $capability === 'edit_posts' && ($_COOKIE['apollo_r99_fixture_auth'] ?? '') === 'contract-only';
+    return $capability === 'edit_others_posts' && ($_COOKIE['apollo_r99_fixture_auth'] ?? '') === 'contract-only';
 }
 function status_header($code) { http_response_code($code); }
 function nocache_headers() {}
@@ -17,7 +17,7 @@ function add_query_arg($key, $value, $base) { return $base . '?' . rawurlencode(
 // This fixture is NEVER installed with the generated WordPress adapter.
 if (isset($_GET['fv_r99_axe'])) {
     $axe=getenv('APOLLO_R99_AXE');
-    if (!current_user_can('edit_posts') || !$axe || !is_file($axe)) { http_response_code(404); exit; }
+    if (!current_user_can('edit_others_posts') || !$axe || !is_file($axe)) { http_response_code(404); exit; }
     header('Content-Type: text/javascript; charset=utf-8');
     header('Cache-Control: no-store');
     readfile($axe); exit;

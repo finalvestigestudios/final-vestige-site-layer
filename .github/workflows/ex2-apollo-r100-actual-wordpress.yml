@@ -5,6 +5,10 @@ on:
     types: [opened, synchronize, reopened]
     paths:
       - 'experience2/evidence-atlas/tests/browser_actual_wordpress_r100.py'
+      - 'experience2/evidence-atlas/integration/r99-private-preview-template.php'
+      - 'experience2/evidence-atlas/tests/php_preview_contract_r99.php'
+      - 'experience2/evidence-atlas/tests/test_wp_private_preview_r99.py'
+      - 'experience2/evidence-atlas/R101_EDITOR_CAPABILITY_STAGING_HOLD.md'
       - 'experience2/evidence-atlas/R100_REAL_WORDPRESS_QA_STAGING_HOLD.md'
       - '.github/workflows/ex2-apollo-r100-actual-wordpress.yml'
 permissions:
@@ -75,12 +79,19 @@ jobs:
           wp config set FV_APOLLO_R99_PRIVATE_PREVIEW true --raw --path="$WP_ROOT" --allow-root
           wp core install --url=http://127.0.0.1:8955/ --title='Temporary Apollo R100 QA Only' --admin_user=apollo_admin --admin_password='ephemeral-Apollo-test-2026' --admin_email=qa@localhost.invalid --skip-email --path="$WP_ROOT" --allow-root
           wp user create apollo_subscriber sub@localhost.invalid --role=subscriber --user_pass='ephemeral-subscriber-2026' --path="$WP_ROOT" --allow-root
+          wp user create apollo_author author@localhost.invalid --role=author --user_pass='ephemeral-author-2026' --path="$WP_ROOT" --allow-root
+          wp user create apollo_contributor contributor@localhost.invalid --role=contributor --user_pass='ephemeral-contributor-2026' --path="$WP_ROOT" --allow-root
+          wp user create apollo_editor editor@localhost.invalid --role=editor --user_pass='ephemeral-editor-2026' --path="$WP_ROOT" --allow-root
           mkdir -p "$WP_ROOT/wp-content/plugins/fv-apollo-r99-private-preview"
           cp -a "$RUNNER_TEMP/r100-package-one/." "$WP_ROOT/wp-content/plugins/fv-apollo-r99-private-preview/"
           wp plugin activate fv-apollo-r99-private-preview --path="$WP_ROOT" --allow-root
           wp plugin status fv-apollo-r99-private-preview --path="$WP_ROOT" --allow-root
           # Prove shortcode is registered and fails open for unprivileged WP-CLI session.
           wp eval 'if (!shortcode_exists("fv_apollo_r99_review")) { exit(4); } $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"Private research preview is unavailable") === false) { exit(5); } echo "Shortcode private fallback PASS\n";' --path="$WP_ROOT" --allow-root
+          # Real WP shortcode execution without inserting, updating or publishing posts.
+          # Role switching remains process-local to this disposable WP-CLI invocation.
+          wp eval '$u=get_user_by("login","apollo_editor"); if (!$u) exit(10); wp_set_current_user($u->ID); $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"<iframe")===false || strpos($s,"Staging hold.")===false) exit(11); echo "Editor shortcode PASS\n";' --path="$WP_ROOT" --allow-root
+          wp eval '$u=get_user_by("login","apollo_author"); if (!$u) exit(12); wp_set_current_user($u->ID); $s=do_shortcode("[fv_apollo_r99_review]"); if (strpos($s,"Private research preview is unavailable")===false || strpos($s,"<iframe")!==false) exit(13); echo "Author fallback PASS\n";' --path="$WP_ROOT" --allow-root
           echo "$WP_ROOT" > "$RUNNER_TEMP/r100-wp-root-path"
           (php -S 127.0.0.1:8955 -t "$WP_ROOT" > "$RUNNER_TEMP/r100-php-server.log" 2>&1 & echo $! > "$RUNNER_TEMP/r100-php-server.pid")
           python - <<'PY'
@@ -112,7 +123,10 @@ jobs:
             --axe "$RUNNER_TEMP/r100-axe/node_modules/axe-core/axe.min.js" \
             --out "$RUNNER_TEMP/r100-real-wp-evidence" \
             --user apollo_admin --password 'ephemeral-Apollo-test-2026' \
-            --subscriber apollo_subscriber --subscriber-password 'ephemeral-subscriber-2026'
+            --subscriber apollo_subscriber --subscriber-password 'ephemeral-subscriber-2026' \
+            --author apollo_author --author-password 'ephemeral-author-2026' \
+            --contributor apollo_contributor --contributor-password 'ephemeral-contributor-2026' \
+            --editor apollo_editor --editor-password 'ephemeral-editor-2026'
           cp "$RUNNER_TEMP/r100-source-sha.txt" "$RUNNER_TEMP/r100-real-wp-evidence/R100_PINNED_SOURCE_SHA256.txt"
           test -z "$(git status --porcelain)"
       - name: Upload genuine disposable WP browser receipts (STAGING HOLD)

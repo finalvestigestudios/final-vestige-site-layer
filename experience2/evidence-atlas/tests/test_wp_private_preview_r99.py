@@ -57,7 +57,11 @@ class PrivatePreviewR99(unittest.TestCase):
             self.assertEqual(receipt['images_embedded'],0)
             self.assertEqual(len(receipt['files']),len(list((p/'one/review').iterdir()))+1)
             php=(p/'one/fv-apollo-r99-private-preview.php').read_text()
-            self.assertIn('current_user_can(\'edit_posts\')',php)
+            self.assertIn('current_user_can(\'edit_others_posts\')',php)
+            self.assertNotIn('current_user_can(\'edit_posts\')',php)
+            fixture=(TEMPLATE.parent.parent/'tests/php_preview_contract_r99.php').read_text()
+            self.assertIn("current_user_can('edit_others_posts')",fixture)
+            self.assertNotIn("current_user_can('edit_posts')",fixture)
             self.assertNotIn('update_option(',php)
             self.assertNotIn('wp_insert_post(',php)
             for name,sha in receipt['files'].items():
