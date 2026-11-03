@@ -1,8 +1,9 @@
 """R155 offline verification of SpendMap vendor/month evidence membership.
 
-Unlike exact report replay, checks source-line membership independently of
-financial totals or the report-generator's digest helper. This is NOT an audit,
-a validation of reported monetary values, a signature, or payment approval.
+Unlike exact report replay, independently rechecks source-line membership,
+exact Decimal net/gross totals, and offset flags without calling the report
+summarizer or its digest helper. This is NOT a signature, fraud determination,
+full report replay, or payment approval.
 """
 from __future__ import annotations
 
@@ -14,6 +15,7 @@ import sys
 import tempfile
 from collections import defaultdict
 from dataclasses import dataclass
+from decimal import Context, Decimal, localcontext
 from pathlib import Path
 from typing import Sequence
 
@@ -27,7 +29,15 @@ REQUIRED = frozenset((
     "vendor_key", "month", "category", "source_rows", "source_sha256",
     "vendor_month_evidence_rows", "vendor_month_evidence_count",
     "vendor_month_evidence_omitted", "vendor_month_evidence_sha256",
+    "amount", "gross_charges", "gross_credits", "vendor_month_total",
+    "vendor_month_gross_charges", "vendor_month_gross_credits",
+    "credit_offset_review", "vendor_month_offset_review",
 ))
+MONEY_FIELDS = (
+    "amount", "gross_charges", "gross_credits", "vendor_month_total",
+    "vendor_month_gross_charges", "vendor_month_gross_credits",
+    "credit_offset_review", "vendor_month_offset_review",
+)
 
 
 @dataclass(frozen=True)
@@ -52,7 +62,7 @@ def _digest(source_sha: str, vendor: str, month: str, lines: list[int]) -> str:
 
 
 def verify_membership(source: str | Path, report: str | Path) -> MembershipReceipt:
-    """Check all source groups, each category bucket, and report evidence fields.
+    """Check source membership plus independently recomputed financial fields.
 
     Hash/metadata pin originals, process a private copy of pinned source bytes,
     and recheck both selected original paths afterward. Fail closed on empty
@@ -81,12 +91,36 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
 
         groups: dict[tuple[str, str], list[int]] = defaultdict(list)
         buckets: dict[tuple[str, str, str], list[str]] = defaultdict(list)
-        for record, vendor, month, category, _amount in validated_spend_rows(
-                records, normalize_vendor=engine.key, parse_date=engine.parse_date,
-                parse_money=engine.money):
-            groups[(vendor, month)].append(int(record["row"]))
-            # The CSV exporter protects leading spreadsheet formulas.
-            buckets[(vendor, month, engine.safe_cell(category))].append(record["row"])
+        # Independent Decimal aggregation: do not call summarize_spend, its
+        # gross/net helpers, or report rendering code. The shared strict CSV
+        # parser is intentionally retained to enforce the input schema.
+        cents = lambda: Decimal("0.00")
+        net_bucket = defaultdict(cents)
+        charge_bucket = defaultdict(cents)
+        credit_bucket = defaultdict(cents)
+        net_month = defaultdict(cents)
+        charge_month = defaultdict(cents)
+        credit_month = defaultdict(cents)
+        # 200k transactions x <= 1e12 each: a 64-digit context keeps cents
+        # exact even when a caller configures low precision or traps.
+        with localcontext(Context(prec=64)):
+            for record, vendor, month, category, amount in validated_spend_rows(
+                    records, normalize_vendor=engine.key, parse_date=engine.parse_date,
+                    parse_money=engine.money):
+                group = (vendor, month)
+                # The CSV exporter protects leading spreadsheet formulas.
+                bucket = (vendor, month, engine.safe_cell(category))
+                groups[group].append(int(record["row"]))
+                buckets[bucket].append(record["row"])
+                net_bucket[bucket] += amount
+                net_month[group] += amount
+                if amount > 0:
+                    charge_bucket[bucket] += amount
+                    charge_month[group] += amount
+                elif amount < 0:
+                    magnitude = amount.copy_negate()
+                    credit_bucket[bucket] += magnitude
+                    credit_month[group] += magnitude
 
     if not groups:
         raise ValueError("Header-only report cannot establish source custody")
@@ -99,6 +133,23 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
             str(max(0, len(ordered) - LIMIT)),
             _digest(before_source[0], key[0], key[1], ordered),
         )
+    # Recompute only exact monetary evidence, not behavioral outlier scoring.
+    # All source amounts are already validated canonical Decimal cents.
+    expected_money = {}
+    for bucket in buckets:
+        group = bucket[:2]
+        expected_money[bucket] = {
+            "amount": format(net_bucket[bucket], ".2f"),
+            "gross_charges": format(charge_bucket[bucket], ".2f"),
+            "gross_credits": format(credit_bucket[bucket], ".2f"),
+            "vendor_month_total": format(net_month[group], ".2f"),
+            "vendor_month_gross_charges": format(charge_month[group], ".2f"),
+            "vendor_month_gross_credits": format(credit_month[group], ".2f"),
+            "credit_offset_review": ("review_mixed_sign_offset"
+                if charge_bucket[bucket] > 0 and credit_bucket[bucket] > 0 else ""),
+            "vendor_month_offset_review": ("review_vendor_month_mixed_sign_offset"
+                if charge_month[group] > 0 and credit_month[group] > 0 else ""),
+        }
     try:
         decoded = report_bytes.decode("utf-8-sig")
         reader = csv.DictReader(io.StringIO(decoded, newline=""), strict=True)
@@ -123,6 +174,9 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                     or entry["vendor_month_evidence_omitted"] != omitted
                     or entry["vendor_month_evidence_sha256"] != digest):
                 raise ValueError("SpendMap group evidence does not match source")
+            if any(entry[field] != expected_money[bucket][field]
+                   for field in MONEY_FIELDS):
+                raise ValueError("SpendMap financial evidence does not match source")
     except (UnicodeError, csv.Error, OverflowError) as exc:
         raise ValueError("Malformed local SpendMap evidence") from None
     if seen != set(buckets):
@@ -156,7 +210,7 @@ class _PrivateParser(argparse.ArgumentParser):
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = _PrivateParser(
-        description="Offline SpendMap source-line evidence membership check; not a compliance audit.")
+        description="Offline SpendMap source-line and exact-money evidence check; not a compliance audit.")
     parser.add_argument("--source", required=True)
     parser.add_argument("--report", required=True)
     try:
@@ -166,7 +220,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         print("SPEND MEMBERSHIP HOLD: selected local evidence cannot be verified.",
               file=sys.stderr)
         return 1
-    print(f"SPEND MEMBERSHIP VERIFIED (not financial audit or signature): "
+    print(f"SPEND EVIDENCE VERIFIED (source membership and exact sums; not approval/signature): "
           f"groups={receipt.groups_verified} buckets={receipt.buckets_verified} "
           f"source_sha256={receipt.source_sha256} report_sha256={receipt.report_sha256}")
     return 0
