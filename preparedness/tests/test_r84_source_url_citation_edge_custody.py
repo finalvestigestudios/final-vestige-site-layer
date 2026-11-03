@@ -143,7 +143,9 @@ class SourceCatalog(unittest.TestCase):
             r84.catalog([altered])
 
     def test_missing_url_refused_not_guessed(self):
-        with self.assertRaises(r84.Hold):
+        # The immutable R82 parent correctly rejects a missing URL before
+        # our R84 catalog receives the malformed fragment.
+        with self.assertRaises((r82.Hold, r84.Hold)):
             r84.catalog([fragment(records=[{"id": "s", "kind": "nonprofit"}])])
 
     def test_no_source_human_approval(self):
