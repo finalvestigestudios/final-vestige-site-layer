@@ -459,7 +459,7 @@ def invoice_twins(source,folder, *, window_days=7):
     ),rows)]
 
 def spend_map(source,folder):
-    """Expose exact net/gross spend, credit offsets, source rows and spikes."""
+    """Expose exact bucket and vendor-month gross flows for human review."""
     from .spend_analysis import summarize_spend
     records, source_sha256=table(source,("vendor","amount","date"),("category",),
                                 include_digest=True)
@@ -472,6 +472,8 @@ def spend_map(source,folder):
         "vendor_month_total","baseline_median","history_months",
         "category_history_months","category_baseline_median","category_review_flag",
         "gross_charges","gross_credits","credit_offset_review",
+         "vendor_month_gross_charges","vendor_month_gross_credits",
+         "vendor_month_offset_review",
         "source_rows","source_vendor_labels","vendor_label_variants",
         "source_sha256"
     ),rows)]

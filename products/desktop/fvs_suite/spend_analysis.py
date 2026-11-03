@@ -56,6 +56,11 @@ def summarize_spend(
     # Do not treat either a matched sign or a refund as a compliance finding.
     gross_charges: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
     gross_credits: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
+    # Per-vendor/month gross figures reveal cross-category credits obscuring charges.
+    vendor_month_charges: dict[str, dict[str, Decimal]] = defaultdict(
+        lambda: defaultdict(lambda: Decimal(0)))
+    vendor_month_credits: dict[str, dict[str, Decimal]] = defaultdict(
+        lambda: defaultdict(lambda: Decimal(0)))
     members: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     vendor_rows: dict[str, list[dict[str, str]]] = defaultdict(list)
     monthly: dict[str, dict[str, Decimal]] = defaultdict(
@@ -72,10 +77,13 @@ def summarize_spend(
         totals[bucket] += amount
         if amount > 0:
             gross_charges[bucket] += amount
+            vendor_month_charges[vendor][month] += amount
         elif amount < 0:
             # copy_negate never rounds the original Decimal under hostile
             # caller contexts; this magnitude is not a new source amount.
-            gross_credits[bucket] += amount.copy_negate()
+            credit = amount.copy_negate()
+            gross_credits[bucket] += credit
+            vendor_month_credits[vendor][month] += credit
         monthly[vendor][month] += amount
         category_monthly[(vendor, category)][month] += amount
         members[bucket].append(record)
@@ -131,6 +139,12 @@ def summarize_spend(
             "credit_offset_review": (
                 "review_mixed_sign_offset"
                 if gross_charges[bucket] > 0 and gross_credits[bucket] > 0 else ""),
+            "vendor_month_gross_charges": format_money(vendor_month_charges[vendor][month]),
+            "vendor_month_gross_credits": format_money(vendor_month_credits[vendor][month]),
+            "vendor_month_offset_review": (
+                "review_vendor_month_mixed_sign_offset"
+                if vendor_month_charges[vendor][month] > 0
+                and vendor_month_credits[vendor][month] > 0 else ""),
             "flag": ";".join(flags),
             "vendor_month_total": format_money(monthly[vendor][month]),
             # An even-sized median may be half a cent; do not round evidence.
