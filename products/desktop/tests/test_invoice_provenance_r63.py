@@ -145,11 +145,12 @@ class InvoiceProvenanceR63(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate invoice candidate"):
             self.attach(rows)
 
-    def test_distinct_status_same_row_pair_is_distinguishable(self):
+    def test_distinct_status_same_row_pair_is_rejected(self):
+        # R170: competing classifications of the identical pair fail closed.
         rows = example_rows()
         rows[1]["row_a"], rows[1]["row_b"] = "2", "5"
-        result = self.attach(rows)
-        self.assertNotEqual(result[0]["candidate_ref"], result[1]["candidate_ref"])
+        with self.assertRaisesRegex(ValueError, "Duplicate invoice candidate"):
+            self.attach(rows)
 
     def test_identifier_changes_only_for_auditable_tuple_not_display_text(self):
         rows = example_rows()
