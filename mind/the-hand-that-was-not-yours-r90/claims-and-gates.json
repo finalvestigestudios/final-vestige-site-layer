@@ -136,6 +136,13 @@
       "title": "Inspire3 affiliates public portal",
       "url": "https://affiliates.inspire3.com/",
       "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s19",
+      "type": "Exact public checkout preview",
+      "title": "Zen12 secure order preview: bundle and checkout fields",
+      "url": "https://zen12.com/getstarted",
+      "checked_on": "2026-11-03"
     }
   ],
   "claims": [
@@ -486,6 +493,15 @@
         "s13"
       ],
       "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c39",
+      "claim": "Public Zen12 checkout preview requests mobile phone, postal code, contact and payment details",
+      "status": "verified_public_checkout_preview_no_submission",
+      "source_ids": [
+        "s19"
+      ],
+      "editorial_action": "qualify_to_scope"
     }
   ],
   "release_gates": {
