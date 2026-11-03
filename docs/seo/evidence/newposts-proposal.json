@@ -8,8 +8,8 @@
    "target_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
    "op": "post-sections.insert",
    "index": 26,
-   "expected_modified": "2026-11-02T20:48:54",
-   "expected_content_hash": "087bd41bbb4e66433ac377d82eeebbfe81fa5d7c",
+   "expected_modified": "2026-11-02T22:03:48",
+   "expected_content_hash": "2049decfed3eec105714f3efa9214ba018ef7a8b",
    "expected_block_type": "core/group",
    "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/the-lost-landscape/\">The Lost Landscape</a></li><li><a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
    "links": [
@@ -34,8 +34,8 @@
    "target_url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
    "op": "post-sections.insert",
    "index": 24,
-   "expected_modified": "2026-11-02T20:50:12",
-   "expected_content_hash": "c61b8530eb57d834814d8d09849e13cde83d7e38",
+   "expected_modified": "2026-11-02T22:04:04",
+   "expected_content_hash": "02525f8f39cc22533480c1c5f4ece85506e3f8ca",
    "expected_block_type": "core/group",
    "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/2026/08/18/they-painted-over-archimedes/\">They Painted Over Archimedes</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
    "links": [
@@ -81,8 +81,8 @@
    "target_url": "https://finalvestige.com/2026/11/02/mesmerism/",
    "op": "post-sections.insert",
    "index": 32,
-   "expected_modified": "2026-11-02T20:52:58",
-   "expected_content_hash": "3d8f41cf528f27baf08ed4170079006f76834198",
+   "expected_modified": "2026-11-02T22:04:16",
+   "expected_content_hash": "6c22e567c9848fd9bc7893c57282563c8cb6a563",
    "expected_block_type": "core/group",
    "block_markup": "<!-- wp:group {\"className\":\"fv-related-reading\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group fv-related-reading\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class=\"wp-block-list\"><li><a href=\"https://finalvestige.com/the-archive-trail/\">The Archive Trail</a></li><li><a href=\"https://finalvestige.com/watch/primary-sources/\">Primary Historical Sources &amp; Archives</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->",
    "links": [

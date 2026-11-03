@@ -39,13 +39,13 @@ def live_links(url):
 # ---- the five new posts: id, url, title, lock tokens as read, insertion index (immediately before the closing FAQPage JSON-LD html block)
 NEW = {
  1917: dict(url=f"{BASE}/2026/11/02/piri-reis-map/", title="The Piri Reis Map: What the 1513 Chart Actually Shows",
-            modified="2026-11-02T20:48:54", hash="087bd41bbb4e66433ac377d82eeebbfe81fa5d7c", sections=27, index=26),
+            modified="2026-11-02T22:03:48", hash="2049decfed3eec105714f3efa9214ba018ef7a8b", sections=27, index=26),
  1920: dict(url=f"{BASE}/2026/11/02/lycurgus-cup/", title="The Lycurgus Cup: The Roman Glass That Changes Color",
-            modified="2026-11-02T20:50:12", hash="c61b8530eb57d834814d8d09849e13cde83d7e38", sections=25, index=24),
+            modified="2026-11-02T22:04:04", hash="02525f8f39cc22533480c1c5f4ece85506e3f8ca", sections=25, index=24),
  1922: dict(url=f"{BASE}/2026/11/02/change-blindness/", title="Change Blindness: Why You Miss Big Changes Right in Front of You",
             modified="2026-11-02T20:51:39", hash="5ff50b4a0571a69beca449fee71acf8e19d17f09", sections=30, index=29),
  1924: dict(url=f"{BASE}/2026/11/02/mesmerism/", title="Mesmerism: What Franklin’s 1784 Commission Actually Found",
-            modified="2026-11-02T20:52:58", hash="3d8f41cf528f27baf08ed4170079006f76834198", sections=33, index=32),
+            modified="2026-11-02T22:04:16", hash="6c22e567c9848fd9bc7893c57282563c8cb6a563", sections=33, index=32),
  1926: dict(url=f"{BASE}/2026/11/02/crystal-skulls/", title="Crystal Skulls: What the Evidence Says About Their Age",
             modified="2026-11-02T20:54:10", hash="b097f1ad3460780efabad87f24a7d2af57256eda", sections=26, index=25),
 }

@@ -15,7 +15,7 @@ No link goes to a draft, to anything in the Preparedness Archive, or to the home
 ## A. Outbound: from each new post to existing pages
 
 ### Post 1917: The Piri Reis Map: What the 1513 Chart Actually Shows
-- `post-sections.insert` at index **26** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T20:48:54`, content_hash `087bd41bbb4e66433ac377d82eeebbfe81fa5d7c`; duplicates: none
+- `post-sections.insert` at index **26** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T22:03:48`, content_hash `2049decfed3eec105714f3efa9214ba018ef7a8b`; duplicates: none
 - **The Lost Landscape** (`/the-lost-landscape/`): The post is about reading an old chart's own notes and sources; The Lost Landscape is the site's guide to reconstructing places from old maps.
 - **The Archive Trail** (`/the-archive-trail/`): The Antarctica claim is the classic claim-versus-record case; The Archive Trail is the site's field kit for verifying historical claims.
 ```html
@@ -23,7 +23,7 @@ No link goes to a draft, to anything in the Preparedness Archive, or to the home
 ```
 
 ### Post 1920: The Lycurgus Cup: The Roman Glass That Changes Color
-- `post-sections.insert` at index **24** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T20:50:12`, content_hash `c61b8530eb57d834814d8d09849e13cde83d7e38`; duplicates: none
+- `post-sections.insert` at index **24** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T22:04:04`, content_hash `02525f8f39cc22533480c1c5f4ece85506e3f8ca`; duplicates: none
 - **They Painted Over Archimedes** (`/2026/08/18/they-painted-over-archimedes/`): Both are ancient objects whose real nature was recovered with modern analysis (this post: electron microscopy of the glass).
 ```html
 <!-- wp:group {"className":"fv-related-reading","layout":{"type":"constrained"}} --><div class="wp-block-group fv-related-reading"><!-- wp:heading --><h2 class="wp-block-heading">Related reading</h2><!-- /wp:heading --><!-- wp:list --><ul class="wp-block-list"><li><a href="https://finalvestige.com/2026/08/18/they-painted-over-archimedes/">They Painted Over Archimedes</a></li></ul><!-- /wp:list --></div><!-- /wp:group -->
@@ -38,7 +38,7 @@ No link goes to a draft, to anything in the Preparedness Archive, or to the home
 ```
 
 ### Post 1924: Mesmerism: What Franklin’s 1784 Commission Actually Found
-- `post-sections.insert` at index **32** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T20:52:58`, content_hash `3d8f41cf528f27baf08ed4170079006f76834198`; duplicates: none
+- `post-sections.insert` at index **32** (immediately before the closing FAQPage JSON-LD html block, after the sources list); lock: modified `2026-11-02T22:04:16`, content_hash `6c22e567c9848fd9bc7893c57282563c8cb6a563`; duplicates: none
 - **The Archive Trail** (`/the-archive-trail/`): The 1784 report is the model of a controlled test of a claim; The Archive Trail is the site's field kit for verifying historical claims.
 - **Primary Historical Sources & Archives** (`/watch/primary-sources/`): The commission's report is a primary source (cited from Project Gutenberg); this is the site's primary-sources hub.
 ```html
