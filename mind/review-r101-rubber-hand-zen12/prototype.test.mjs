@@ -41,7 +41,7 @@ test("required no-JS and disclosure proximity checks",()=>{
 });
 test("optional film is a truthful unhosted storyboard with transcript",()=>{
  assert.doesNotMatch(A,/fv101-film-h/);
- assert.match(B,/film is not hosted or playable yet/);
+ assert.match(B,/video is not hosted or playable yet/);
  assert.match(B,/<details class="fv101-transcript" open>/);
  assert.match(B,/<summary>/);
  assert.doesNotMatch(B,/<video\b/);
