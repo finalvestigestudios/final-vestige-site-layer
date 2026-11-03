@@ -1,0 +1,41 @@
+name: EX2 nonproduction Margins contrast repair experiment
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/accessibility/margins/**'
+      - '.github/workflows/ex2-margin-contrast-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser tooling; never install on production
+        run: |
+          python -m pip install 'playwright==1.56.0'
+          python -m playwright install --with-deps chromium
+      - name: Exact checkout source and isolated 72-slot Chromium lab
+        working-directory: experience2/home-flagship/accessibility/margins
+        run: |
+          git rev-parse HEAD
+          python -m unittest -v test_margin_strip_contrast_safe.py
+          python probe_margin_strip_contrast.py --output CONTRAST_QA_RECEIPT.json --screenshots ./screenshots
+      - name: Retain offline evidence on failed or successful run
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-margins-local-candidate-HOLD
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            experience2/home-flagship/accessibility/margins/CONTRAST_QA_RECEIPT.json
+            experience2/home-flagship/accessibility/margins/screenshots/*.png

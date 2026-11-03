@@ -1,0 +1,36 @@
+/* Final Vestige Studios — unmerged, non-production margin-strip contrast repair.
+   Add AFTER the existing published page-6 strip CSS only upon an approved release.
+   Preserve the 72 original span records and 5-second, 360-second cycle.
+   The old opacity/blur keyframes remain unused; no partly transparent text is drawn.
+   This CSS is a candidate, NOT a claim of WCAG 2.2 AA conformance. */
+.fv-margin-strip--rotator .fv-margin-strip__item {
+  opacity: 1;
+  visibility: hidden;
+  filter: none;
+  will-change: visibility;
+  animation-name: fvMarginContrastSafe;
+  animation-timing-function: steps(1, end);
+}
+@keyframes fvMarginContrastSafe {
+  0%, 1.38% {
+    visibility: visible;
+    opacity: 1;
+    filter: none;
+    transform: translateY(-50%);
+  }
+  1.39%, 100% {
+    visibility: hidden;
+    opacity: 1;
+    filter: none;
+    transform: translateY(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fv-margin-strip--rotator .fv-margin-strip__item {
+    visibility: hidden;
+    animation: none;
+  }
+  .fv-margin-strip--rotator .fv-margin-strip__item:first-child {
+    visibility: visible;
+  }
+}
