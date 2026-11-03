@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Upload internal source-only evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: final-vestige-desktop-source-only
           path: ${{ runner.temp }}/fvs-source/offline-source-suite.json
@@ -28,7 +28,7 @@ jobs:
         shell: pwsh
         run: echo building
       - name: Upload internal pre-release evidence only
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: final-vestige-desktop-windows-internal
           path: |
@@ -64,7 +64,7 @@ class ArtifactPolicyTests(unittest.TestCase):
 
     def test_reject_injected_extra_artifact(self):
         injected = """      - name: Upload all
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: leakage
           path: dist/*
@@ -84,7 +84,7 @@ class ArtifactPolicyTests(unittest.TestCase):
         self.check_bad(GOOD.replace("dist/SHA256SUMS.txt", "${{ github.workspace }}/dist/*"))
 
     def test_reject_different_upload_action_version(self):
-        self.check_bad(GOOD.replace("upload-artifact@v4", "upload-artifact@main"))
+        self.check_bad(GOOD.replace("upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02", "upload-artifact@main"))
 
     def test_reject_unknown_upload_option(self):
         self.check_bad(GOOD.replace("          retention-days: 7", "          include-hidden-files: true\n          retention-days: 7"))
