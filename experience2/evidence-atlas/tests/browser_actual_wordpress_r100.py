@@ -234,7 +234,7 @@ def run(base, stage, axe_path, out, user, password, subscriber, subscriber_passw
                         check(all(x.strip() for x in p.locator('[data-value]').all_text_contents()),
                               'R102 comparison custody values')
                         third = p.locator('#compare-03')
-                        (third.tap() if width <= 390 else third.check())
+                        (third.tap() if width <= 390 else third.click())
                         check(not third.is_checked() and 'Only two records' in p.locator('#compare-status').inner_text(),
                               'R102 comparison cap/announcement')
                         if width in (390, 1440):
