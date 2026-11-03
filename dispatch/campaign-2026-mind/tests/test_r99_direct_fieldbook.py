@@ -120,7 +120,7 @@ class DirectFieldbookReview(unittest.TestCase):
             self.assertNotIn("clinically proven", lower)
             self.assertNotIn("brainwaves will", lower)
             self.assertNotIn("guaranteed results", lower)
-            self.assertIn("not a clinical", lower)
+            self.assertTrue("not a clinical" in lower or "isn\u0027t a clinical" in lower)
 
     def test_all_formats_still_unsent(self):
         for body in [self.markdown, self.plaintext, self.html]:
@@ -160,7 +160,7 @@ class DirectFieldbookReview(unittest.TestCase):
 
     def test_separate_founder_approval_obligation(self):
         self.assertIn("founder's explicit final decision", self.markdown)
-        self.assertIn("founder approval", self.memo.lower())
+        self.assertIn("final founder approval", self.memo.lower())
 
     def test_no_hidden_send_action(self):
         for body in [self.html, self.plaintext, self.markdown]:
