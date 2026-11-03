@@ -1,0 +1,509 @@
+{
+  "sprint": "r94",
+  "date": "2026-11-03",
+  "sources": [
+    {
+      "id": "N1",
+      "title": "Necker original 1832 publication",
+      "kind": "historical metadata",
+      "url": "https://doi.org/10.1080/14786443208647909",
+      "limits": "bibliographic record, original full text not independently transcribed"
+    },
+    {
+      "id": "N1a",
+      "title": "1832 archived paper reproduction",
+      "kind": "historical scan",
+      "url": "https://zenodo.org/records/1430991",
+      "limits": "archival landing only"
+    },
+    {
+      "id": "N2",
+      "title": "Mount chapter",
+      "kind": "historical interpretation",
+      "url": "https://doi.org/10.37050/ci-08_03",
+      "limits": "Necker-to-Brewster letter context"
+    },
+    {
+      "id": "N3",
+      "title": "Ellis and Stark 1978",
+      "kind": "scientific primary",
+      "url": "https://doi.org/10.1068/p070575",
+      "limits": "eye-movement fixation findings"
+    },
+    {
+      "id": "N4",
+      "title": "Einhäuser, Martin and König 2004",
+      "kind": "scientific primary",
+      "url": "https://doi.org/10.1111/j.1460-9568.2004.03722.x",
+      "limits": "bidirectional coupling interpretation"
+    },
+    {
+      "id": "N5",
+      "title": "Toppino 2022",
+      "kind": "scientific primary",
+      "url": "https://doi.org/10.1177/03010066221109990",
+      "limits": "voluntary control limited; two experiments"
+    },
+    {
+      "id": "N6",
+      "title": "Liebert and Burk 1985",
+      "kind": "scientific primary",
+      "url": "https://doi.org/10.2466/pms.1985.61.3f.1307",
+      "limits": "control over reversible figures, not perfect"
+    },
+    {
+      "id": "N7",
+      "title": "Wallace 1988",
+      "kind": "scientific primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3210000/",
+      "limits": "group reports, n=50+50, not a treatment"
+    },
+    {
+      "id": "M1",
+      "title": "Inspire3 catalog",
+      "kind": "merchant description",
+      "url": "https://inspire3.com/",
+      "limits": "not independent efficacy"
+    },
+    {
+      "id": "M2",
+      "title": "Zen12 exact sales offer",
+      "kind": "merchant description",
+      "url": "https://zen12.com/hnp",
+      "limits": "12 min equivalence is unsubstantiated seller claim"
+    },
+    {
+      "id": "M3",
+      "title": "Zen12 About",
+      "kind": "merchant description",
+      "url": "https://zen12.com/about",
+      "limits": "levels and styles as marketed"
+    },
+    {
+      "id": "M4",
+      "title": "Zen12 Research",
+      "kind": "merchant claim",
+      "url": "https://zen12.com/research",
+      "limits": "mechanism assertions not independent product proof"
+    },
+    {
+      "id": "M5",
+      "title": "Zen12 checkout",
+      "kind": "merchant description",
+      "url": "https://zen12.com/getstarted",
+      "limits": "48 MP3 full-course and collected fields, final terms unverified"
+    },
+    {
+      "id": "M6",
+      "title": "Inspire3 privacy",
+      "kind": "merchant policy",
+      "url": "https://inspire3.com/privacy/",
+      "limits": "SMS, calls, purchaser-info affiliate sharing"
+    },
+    {
+      "id": "M7",
+      "title": "Inspire3 affiliate recruitment",
+      "kind": "merchant recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "limits": "public recruitment not brand approval or channel rights"
+    },
+    {
+      "id": "S1",
+      "title": "Ingendoh Posny Heine 2023",
+      "kind": "independent systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "limits": "14 EEG studies, 5 supportive 8 contradictory 1 mixed; not Zen12"
+    },
+    {
+      "id": "F1",
+      "title": "FTC endorsement guidance",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limits": "commission disclosures next to earning links"
+    },
+    {
+      "id": "F2",
+      "title": "FTC health claims guidance",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limits": "competent reliable scientific evidence for health benefits"
+    },
+    {
+      "id": "FV1",
+      "title": "Puységur historical files",
+      "kind": "published first-party",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limits": "historical bridge not efficacy"
+    },
+    {
+      "id": "FV2",
+      "title": "Focus Fieldbook",
+      "kind": "published first-party",
+      "url": "https://finalvestige.com/focus/",
+      "limits": "one existing lead magnet"
+    },
+    {
+      "id": "FV3",
+      "title": "Change Blindness investigation",
+      "kind": "published first-party",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limits": "published archive"
+    },
+    {
+      "id": "FV4",
+      "title": "Mesmerism Franklin commission investigation",
+      "kind": "published first-party",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limits": "historical evidence"
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "12-minute audio length",
+      "class": "seller format",
+      "sourceIds": "M2,M3",
+      "disposition": "report as seller description only"
+    },
+    {
+      "claim": "12 levels",
+      "class": "seller format",
+      "sourceIds": "M3,M5",
+      "disposition": "report with checkout caveat"
+    },
+    {
+      "claim": "4 styles",
+      "class": "seller format",
+      "sourceIds": "M3",
+      "disposition": "avoid assigning unverified technical details"
+    },
+    {
+      "claim": "48 MP3 full package",
+      "class": "seller package",
+      "sourceIds": "M5",
+      "disposition": "avoid claiming every offer identical"
+    },
+    {
+      "claim": "1-hour equivalence",
+      "class": "seller efficacy",
+      "sourceIds": "M2",
+      "disposition": "OMIT as factual outcome; mention critically only"
+    },
+    {
+      "claim": "automatic deep meditation",
+      "class": "seller efficacy",
+      "sourceIds": "M3,M4",
+      "disposition": "OMIT as outcome"
+    },
+    {
+      "claim": "cures anxiety or depression",
+      "class": "medical",
+      "sourceIds": "none",
+      "disposition": "PROHIBITED"
+    },
+    {
+      "claim": "brainwave entrainment specific to Zen12",
+      "class": "mechanism",
+      "sourceIds": "M4,S1",
+      "disposition": "UNVERIFIED; do not assert"
+    },
+    {
+      "claim": "general binaural EEG findings",
+      "class": "independent mixed",
+      "sourceIds": "S1",
+      "disposition": "state study count and methodological limits"
+    },
+    {
+      "claim": "stress or focus improvement with Zen12",
+      "class": "product efficacy",
+      "sourceIds": "none",
+      "disposition": "UNVERIFIED; omit"
+    },
+    {
+      "claim": "personal use or review",
+      "class": "experience",
+      "sourceIds": "none",
+      "disposition": "PROHIBITED; we have not used"
+    },
+    {
+      "claim": "one-year guarantee",
+      "class": "seller offer",
+      "sourceIds": "M5",
+      "disposition": "seller says only; terms unverified"
+    },
+    {
+      "claim": "current price or discount",
+      "class": "transaction",
+      "sourceIds": "none",
+      "disposition": "WITHHOLD; varies"
+    },
+    {
+      "claim": "affiliate commission rate",
+      "class": "partner agreement",
+      "sourceIds": "M7",
+      "disposition": "WITHHOLD; public recruitment not agreement"
+    },
+    {
+      "claim": "approved Zen12 unique tracking URL",
+      "class": "partner agreement",
+      "sourceIds": "none",
+      "disposition": "HARD HOLD"
+    },
+    {
+      "claim": "paid promotional channels rights",
+      "class": "partner agreement",
+      "sourceIds": "none",
+      "disposition": "HARD HOLD"
+    },
+    {
+      "claim": "creative reuse/swipe permissions",
+      "class": "partner agreement",
+      "sourceIds": "none",
+      "disposition": "HARD HOLD"
+    },
+    {
+      "claim": "merchant customer-name disclosure",
+      "class": "privacy",
+      "sourceIds": "M6",
+      "disposition": "must opt out/refuse identified buyer data"
+    },
+    {
+      "claim": "mobile number on checkout",
+      "class": "merchant checkout",
+      "sourceIds": "M5",
+      "disposition": "point out as consumer consideration"
+    },
+    {
+      "claim": "FTC adjacent commission disclosure",
+      "class": "regulation",
+      "sourceIds": "F1",
+      "disposition": "require within visual proximity"
+    },
+    {
+      "claim": "clinical outcomes require substantiation",
+      "class": "regulation",
+      "sourceIds": "F2",
+      "disposition": "omit unsubstantiated outcomes"
+    },
+    {
+      "claim": "Necker cube dated article",
+      "class": "historic metadata",
+      "sourceIds": "N1,N1a",
+      "disposition": "metadata verified; do not pretend full transcription"
+    },
+    {
+      "claim": "eye position relation",
+      "class": "independent experiment",
+      "sourceIds": "N3,N4",
+      "disposition": "association and coupling interpretation, no one-way proof"
+    },
+    {
+      "claim": "limited voluntary control",
+      "class": "independent experiment",
+      "sourceIds": "N5,N6",
+      "disposition": "not mind-control claim"
+    },
+    {
+      "claim": "hypnotic susceptibility association",
+      "class": "independent experiment",
+      "sourceIds": "N7",
+      "disposition": "group report only, no recording inference"
+    },
+    {
+      "claim": "buyer-level affiliate conversion data",
+      "class": "privacy",
+      "sourceIds": "M6",
+      "disposition": "PROHIBIT storage or ingestion"
+    },
+    {
+      "claim": "conversion uplift video vs text",
+      "class": "experiment",
+      "sourceIds": "none",
+      "disposition": "HYPOTHESIS; no measurement"
+    },
+    {
+      "claim": "video originality",
+      "class": "media",
+      "sourceIds": "internal",
+      "disposition": "storyboard/illustration original, no rendered MP4 yet"
+    },
+    {
+      "claim": "live WordPress publish",
+      "class": "release",
+      "sourceIds": "none",
+      "disposition": "HARD HOLD"
+    },
+    {
+      "claim": "Focus signup duplication",
+      "class": "funnel",
+      "sourceIds": "FV2",
+      "disposition": "PROHIBITED"
+    },
+    {
+      "claim": "merchant public research citations in unpublished MD",
+      "class": "source audit",
+      "sourceIds": "M1-M6",
+      "disposition": "source ledger only; HTML has zero links to merchants"
+    },
+    {
+      "claim": "merchant checkout/refund terms",
+      "class": "merchant",
+      "sourceIds": "M5",
+      "disposition": "unverified; require fresh terms before release"
+    },
+    {
+      "claim": "TikTok/emails offer promotion",
+      "class": "channels",
+      "sourceIds": "none",
+      "disposition": "HARD HOLD without specific written authorization"
+    },
+    {
+      "claim": "Native buyer event instrumentation",
+      "class": "privacy",
+      "sourceIds": "none",
+      "disposition": "HARD HOLD no client-side event listener"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "Written Final Vestige-specific Inspire3 acceptance",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G02",
+      "gate": "Authorized Zen12 final tracking URL",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G03",
+      "gate": "Approved website promotional channel",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G04",
+      "gate": "Approved TikTok promotional channel",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G05",
+      "gate": "Approved email promotional channel",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G06",
+      "gate": "Specific creative/media rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G07",
+      "gate": "Operative checkout package check",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G08",
+      "gate": "Price and tax checkout accuracy",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G09",
+      "gate": "Final legally operative refund terms",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G10",
+      "gate": "Buyer-data exclusion agreement",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G11",
+      "gate": "No incoming purchaser-level identities",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G12",
+      "gate": "FTC near-link disclosure reviewer",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G13",
+      "gate": "Independent claims review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G14",
+      "gate": "Product-specific benefit substantiation or removed claims",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G15",
+      "gate": "First-party film rendered",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G16",
+      "gate": "First-party film approved hosting",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G17",
+      "gate": "Hosted VTT synchronization",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G18",
+      "gate": "Keyboard and screen-reader review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G19",
+      "gate": "Mobile 360/390/768/1440/1920 review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G20",
+      "gate": "Actual no-JS WordPress preview",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G21",
+      "gate": "Performance/Lighthouse budget pass",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G22",
+      "gate": "Security CSP and outbound-URL review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G23",
+      "gate": "A/B measurement approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G24",
+      "gate": "Explicit founder production publish approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G25",
+      "gate": "Independent site QA review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G26",
+      "gate": "Homepage lead no-regression coordination",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G27",
+      "gate": "Dispatch rights independent confirmation",
+      "status": "CLOSED"
+    }
+  ],
+  "activation": {
+    "affiliate_authorized": false,
+    "merchant_destinations_enabled": false,
+    "wordpress_publish_authorized": false,
+    "attribution_collecting": false
+  }
+}
