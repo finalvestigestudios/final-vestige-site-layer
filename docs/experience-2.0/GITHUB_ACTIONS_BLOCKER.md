@@ -28,3 +28,9 @@ Repository `finalvestigestudios/final-vestige-site-layer`. This is an account-le
 - No further jobs are dispatched on purpose; sessions are told to push once per review-ready head, since every push starts another blocked run.
 - No code or test assertion is changed to get around it. Local results are labeled local and are not hosted CI.
 - Work that does not use GitHub Actions continues: WordPress.com edits, local browser testing, source corrections.
+
+## Confirmed cause (founder screenshot of GitHub Billing, 2026-11-03)
+
+The billing page shows "You've used 100% of your Actions budget. Additional usage will be stopped." Overview for November 1 to 30: current metered usage $23.36, current included usage $18.36 (so the net charged usage is $5.00, which suggests a $5 Actions budget; the budget amount itself was not shown). Subscriptions: GitHub Pro $4.00 per month, Copilot Free $0.00. Copilot usage is $0. So this is an exhausted Actions budget, not a failed payment method. The only fix is to raise the Actions budget ("Update your budget") or wait for the monthly reset on December 1; raising it is a spending decision for the account owner and was not changed by this session.
+
+Usage notes for the owner's decision: each pushed commit on a pull-request branch starts both a `push` and a `pull_request` run of the same workflow, which doubles minutes; Windows jobs (for example `windows-build` in `Desktop suite build (internal)`) use a higher minute multiplier than Linux; about 30 jobs ran in the half hour before the block. Reducing duplicate triggers or heavy jobs would stretch a given budget; this was not changed.
