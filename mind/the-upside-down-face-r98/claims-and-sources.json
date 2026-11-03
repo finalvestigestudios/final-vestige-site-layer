@@ -1,0 +1,625 @@
+{
+  "revision": "R98",
+  "date": "2026-11-03",
+  "release_status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "Seller catalog",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-03",
+      "note": "Inspire3 product names and seller framing; not efficacy"
+    },
+    {
+      "id": "S2",
+      "kind": "Exact Zen12 sales",
+      "url": "https://zen12.com/hnp",
+      "checked": "2026-11-03",
+      "note": "12-minute/12-level/four styles, packages; efficacy seller claim"
+    },
+    {
+      "id": "S3",
+      "kind": "Zen12 checkout",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-11-03",
+      "note": "12 levels/48 MP3, mobile field, countdown; dynamic terms"
+    },
+    {
+      "id": "S4",
+      "kind": "Independent systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked": "2023-05-19",
+      "note": "14 EEG binaural beat studies; five support/eight contradict/one mixed; NOT Zen12"
+    },
+    {
+      "id": "S5",
+      "kind": "Seller Terms of Sale",
+      "url": "https://inspire3.com/terms/",
+      "checked": "2026-11-03",
+      "note": "Seller refund/processing; page access intermittent; reverify"
+    },
+    {
+      "id": "S6",
+      "kind": "Seller Privacy",
+      "url": "https://inspire3.com/privacy/",
+      "checked": "2026-11-03",
+      "note": "SMS and named buyer data to affiliates possible"
+    },
+    {
+      "id": "S7",
+      "kind": "FTC endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-03",
+      "note": "Clear nearby disclosure and honest endorsements"
+    },
+    {
+      "id": "S8",
+      "kind": "FTC health claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-03",
+      "note": "Objective health claims require scientific support"
+    },
+    {
+      "id": "S9",
+      "kind": "Thompson primary 1980",
+      "url": "https://doi.org/10.1068/p090483",
+      "checked": "1980-08",
+      "note": "Publisher record, full article restricted"
+    },
+    {
+      "id": "S10",
+      "kind": "Lewis Johnston 1997",
+      "url": "https://doi.org/10.1068/p260225",
+      "checked": "1997-02",
+      "note": "Speeded feature discrimination and negative images"
+    },
+    {
+      "id": "S11",
+      "kind": "Wong et al 2010",
+      "url": "https://doi.org/10.1068/p6659",
+      "checked": "2010",
+      "note": "Nonface Thatcher-like effects"
+    },
+    {
+      "id": "S12",
+      "kind": "Psalta et al 2014",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "checked": "2013-11-21",
+      "note": "Orientation-dependence fMRI-adaptation results"
+    },
+    {
+      "id": "S13",
+      "kind": "Rakover 1999",
+      "url": "https://doi.org/10.1068/p2774",
+      "checked": "1999-10",
+      "note": "Alternative processing account"
+    },
+    {
+      "id": "S14",
+      "kind": "Live Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-11-03",
+      "note": "Verified WP page ID 1377, historical source bridge"
+    },
+    {
+      "id": "S15",
+      "kind": "Live Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-11-03",
+      "note": "Verified WP page ID 1579, sole existing Jetpack funnel"
+    },
+    {
+      "id": "S16",
+      "kind": "Live Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked": "2026-11-03",
+      "note": "Verified WP post ID 1922"
+    },
+    {
+      "id": "S17",
+      "kind": "Live Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked": "2026-11-03",
+      "note": "Verified WP post ID 1924"
+    },
+    {
+      "id": "S18",
+      "kind": "Official affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-03",
+      "note": "Public portal NOT acceptance or creative license"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 advertises 12-minute audio sessions",
+      "source_ids": [
+        "S2"
+      ],
+      "evidence": "seller-format-description",
+      "decision": "may describe with attribution"
+    },
+    {
+      "id": "C02",
+      "claim": "Premium package advertised 12 levels and 48 MP3s",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "evidence": "seller-format-description",
+      "decision": "check exact package"
+    },
+    {
+      "id": "C03",
+      "claim": "Beginner and Advanced six-level 24-MP3 alternatives",
+      "source_ids": [
+        "S2"
+      ],
+      "evidence": "seller-format-description",
+      "decision": "do not imply every tier has full library"
+    },
+    {
+      "id": "C04",
+      "claim": "Four listening styles: music/guided/nature/white noise",
+      "source_ids": [
+        "S2"
+      ],
+      "evidence": "seller-format-description",
+      "decision": "okay as product listing"
+    },
+    {
+      "id": "C05",
+      "claim": "Twelve minutes equals an hour advanced meditation",
+      "source_ids": [
+        "S2"
+      ],
+      "evidence": "unsubstantiated product efficacy",
+      "decision": "EXCLUDE as fact"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 automatically entrains listener brainwaves",
+      "source_ids": [
+        "S2",
+        "S4"
+      ],
+      "evidence": "unsubstantiated product efficacy",
+      "decision": "seller claim only, no endorsement"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 relieves clinical anxiety/health symptoms",
+      "source_ids": [
+        "S2",
+        "S8"
+      ],
+      "evidence": "health claim unsupported product-specific",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 guarantees increased creativity/focus",
+      "source_ids": [
+        "S2",
+        "S8"
+      ],
+      "evidence": "unsupported outcome",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C09",
+      "claim": "Independent 2023 review looked at 14 EEG studies",
+      "source_ids": [
+        "S4"
+      ],
+      "evidence": "independent review finding",
+      "decision": "quote 5/8/1 with scope"
+    },
+    {
+      "id": "C10",
+      "claim": "2023 review tested Zen12",
+      "source_ids": [
+        "S4"
+      ],
+      "evidence": "false implication",
+      "decision": "DO NOT CLAIM"
+    },
+    {
+      "id": "C11",
+      "claim": "Checkout asks mobile number",
+      "source_ids": [
+        "S3"
+      ],
+      "evidence": "seller-current-form",
+      "decision": "verified on 2026-11-03; recheck"
+    },
+    {
+      "id": "C12",
+      "claim": "Checkout timer means sale expires",
+      "source_ids": [
+        "S3"
+      ],
+      "evidence": "unverified scarcity",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C13",
+      "claim": "Policy may share buyer name/email/product with referrer",
+      "source_ids": [
+        "S6"
+      ],
+      "evidence": "merchant privacy policy",
+      "decision": "contractual PII refusal gate"
+    },
+    {
+      "id": "C14",
+      "claim": "Policy may send marketing SMS",
+      "source_ids": [
+        "S6"
+      ],
+      "evidence": "seller policy",
+      "decision": "describe as possibility"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 one-year refund representation",
+      "source_ids": [
+        "S2",
+        "S5"
+      ],
+      "evidence": "seller contract claim",
+      "decision": "reverify and attribute, no FV guarantee"
+    },
+    {
+      "id": "C16",
+      "claim": "Fixed public pricing or discount",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "evidence": "volatile commercial term",
+      "decision": "OMIT"
+    },
+    {
+      "id": "C17",
+      "claim": "Any affiliate commission rate",
+      "source_ids": [
+        "S18"
+      ],
+      "evidence": "unverified",
+      "decision": "OMIT"
+    },
+    {
+      "id": "C18",
+      "claim": "Any authorized FV link or promo channel",
+      "source_ids": [
+        "S18"
+      ],
+      "evidence": "unverified",
+      "decision": "activation disabled"
+    },
+    {
+      "id": "C19",
+      "claim": "FTC material connections must be disclosed conspicuously",
+      "source_ids": [
+        "S7"
+      ],
+      "evidence": "regulatory guidance",
+      "decision": "near potential CTA"
+    },
+    {
+      "id": "C20",
+      "claim": "Health benefit advertising needs competent reliable science",
+      "source_ids": [
+        "S8"
+      ],
+      "evidence": "regulatory guidance",
+      "decision": "do not inherit vendor claim"
+    },
+    {
+      "id": "C21",
+      "claim": "Thompson published Thatcher illusion in 1980",
+      "source_ids": [
+        "S9"
+      ],
+      "evidence": "publisher bibliographic",
+      "decision": "cite"
+    },
+    {
+      "id": "C22",
+      "claim": "Inverted face obscures recognition of inverted features",
+      "source_ids": [
+        "S9",
+        "S10"
+      ],
+      "evidence": "peer reviewed experimental",
+      "decision": "condition- and stimulus-bounded"
+    },
+    {
+      "id": "C23",
+      "claim": "Nonface Thatcher-like effects were reported",
+      "source_ids": [
+        "S11"
+      ],
+      "evidence": "peer reviewed study",
+      "decision": "avoid face-exclusive mechanism"
+    },
+    {
+      "id": "C24",
+      "claim": "Superior temporal sulcus shows orientation-sensitive response",
+      "source_ids": [
+        "S12"
+      ],
+      "evidence": "peer reviewed fMRI",
+      "decision": "specific contrast only"
+    },
+    {
+      "id": "C25",
+      "claim": "Puységur documentation proves Thatcher mechanism",
+      "source_ids": [
+        "S14"
+      ],
+      "evidence": "false historical analogy",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C26",
+      "claim": "Self-created stylized illustration replicates published effect",
+      "source_ids": [
+        "S9"
+      ],
+      "evidence": "not established",
+      "decision": "label illustrative not validated"
+    },
+    {
+      "id": "C27",
+      "claim": "The existing Focus Fieldbook is the optional free route",
+      "source_ids": [
+        "S15"
+      ],
+      "evidence": "WordPress published page",
+      "decision": "link existing only"
+    },
+    {
+      "id": "C28",
+      "claim": "Live Change Blindness and Mesmerism editorial crosslinks",
+      "source_ids": [
+        "S16",
+        "S17"
+      ],
+      "evidence": "WordPress published posts",
+      "decision": "link actual URLs"
+    },
+    {
+      "id": "C29",
+      "claim": "Video outperforms text guide",
+      "source_ids": [
+        "S7"
+      ],
+      "evidence": "untested hypothesis",
+      "decision": "AB test only once approved"
+    },
+    {
+      "id": "C30",
+      "claim": "Buyer PII can be read into outbound attribution",
+      "source_ids": [
+        "S6"
+      ],
+      "evidence": "privacy risk",
+      "decision": "forbid"
+    },
+    {
+      "id": "C31",
+      "claim": "Merchant promo swipe content is licensed for FV",
+      "source_ids": [
+        "S18"
+      ],
+      "evidence": "unverified creative right",
+      "decision": "do not use"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "FV named affiliate acceptance",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G02",
+      "requirement": "approved tracking URL",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G03",
+      "requirement": "written web promotion permission",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G04",
+      "requirement": "written TikTok promotion permission",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G05",
+      "requirement": "written EMAIL permission",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G06",
+      "requirement": "creative/swipe/logo rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G07",
+      "requirement": "product-specific copy approval where required",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G08",
+      "requirement": "zero receipt of purchaser-identifying data in contract",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G09",
+      "requirement": "checkout-current package",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G10",
+      "requirement": "refund-current terms",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G11",
+      "requirement": "price if published independently verified",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G12",
+      "requirement": "no health/psychological/wealth guarantees",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G13",
+      "requirement": "FTC on-page disclosure review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G14",
+      "requirement": "independent science/claim legal QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G15",
+      "requirement": "founder editorial approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G16",
+      "requirement": "founder explicit WordPress publication approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G17",
+      "requirement": "site QA independent review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G18",
+      "requirement": "art lead /mind/ review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G19",
+      "requirement": "preserve PR #49",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G20",
+      "requirement": "preserve PR #172",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G21",
+      "requirement": "preserve Issue #150",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G22",
+      "requirement": "preserve Jetpack Focus funnel",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G23",
+      "requirement": "preserve Dispatch #174",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G24",
+      "requirement": "no duplicate subscriber form",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G25",
+      "requirement": "HTML Gutenberg sanitizer preview",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G26",
+      "requirement": "mobile 360 and 390",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G27",
+      "requirement": "tablet 768",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G28",
+      "requirement": "desktop 1440 and 1920",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G29",
+      "requirement": "keyboard screen reader",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G30",
+      "requirement": "WCAG contrast review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G31",
+      "requirement": "reduced motion + no JS",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G32",
+      "requirement": "CSP/security DOM review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G33",
+      "requirement": "performance Lighthouse real browser",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G34",
+      "requirement": "film actually produced",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G35",
+      "requirement": "film captions synced",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G36",
+      "requirement": "first party media hosting",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G37",
+      "requirement": "A/B test consent/privacy review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G38",
+      "requirement": "zero live analytics until approval",
+      "status": "CLOSED"
+    }
+  ],
+  "merchant_authorization": {
+    "account": "UNVERIFIED",
+    "tracking_url": null,
+    "permissions": [],
+    "buyer_pii_exclusion_signed": false
+  },
+  "measurement": {
+    "environment": "synthetic_only",
+    "installed": false,
+    "threshold": 20
+  }
+}
