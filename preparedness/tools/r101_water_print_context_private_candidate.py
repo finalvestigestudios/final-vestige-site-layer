@@ -253,11 +253,12 @@ def build_candidate(lib, builder, r100, css_gate):
 
 
 def safe_output_dir(name):
-    out = Path(name).expanduser().resolve()
+    raw = Path(name).expanduser()
+    need(not raw.is_symlink(), "output directory cannot be a symlink")
+    out = raw.resolve()
     root = ROOT.resolve()
     need(out != root and root not in out.parents and out not in root.parents,
          "output cannot be inside or be an ancestor of the repository")
-    need(not out.is_symlink(), "output directory cannot be a symlink")
     return out
 
 
@@ -278,10 +279,20 @@ def main(argv=None):
     if args.out_dir:
         out = safe_output_dir(args.out_dir)
         out.mkdir(parents=True, exist_ok=True)
-        (out / "water-planner-R101-PRIVATE-DRAFT.html").write_text(wp, encoding="utf-8")
-        (out / "water-planner-R101-LOCAL-REVIEW.html").write_text(preview, encoding="utf-8")
-        (out / "water-planner-R101-HOLD-receipt.json").write_text(
-            json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        documents = {
+            "water-planner-R101-PRIVATE-DRAFT.html": wp,
+            "water-planner-R101-LOCAL-REVIEW.html": preview,
+            "water-planner-R101-HOLD-receipt.json":
+                json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+        }
+        need(all(not (out / name).exists() and not (out / name).is_symlink()
+                 for name in documents),
+             "refusing to overwrite existing private review artifact")
+        for name, body in documents.items():
+            # Exclusive creation prevents a parallel review run from replacing
+            # another worker's candidate or receipt, including symlink races.
+            with (out / name).open("x", encoding="utf-8", newline="\n") as file:
+                file.write(body)
     print(canonical(receipt))
     return 0
 
