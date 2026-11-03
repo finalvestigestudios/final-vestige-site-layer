@@ -1,0 +1,32 @@
+# Media Recovery — auditable inline-image wire reduction gate (2026-11-03)
+
+**Scope:** engineering owned by Media Recovery PR #183 only. Independently sourced read-only WordPress media inventory; Site QA PR #154 owns browser collection; interim lead owns homepage design. No production writes, no media copying, no automated replacements, no spend.
+
+## New artifact and real-source manifest
+
+The [five-URL capture manifest](../qa/media-recovery/first_party_wire_capture_manifest_20261103.json) pins exactly five published source URLs from live WordPress, their post/slot and media IDs, current original storage bytes, 1672×941 intrinsic geometry, 0 registered WordPress subsizes, and **conditional** 960×540 derivatives. Source is [110-media audit](../qa/media-recovery/live_110_media_13_oversize_scotch418_20261103.json), Git blob `b2d4b8f02c63b566eff494c205ac1a45e541ee7b` (read-only authenticated Nov 3 census); none of the source URLs was fetched as a binary. Post IDs 34–38, media IDs 39–43, **13,267,538 original-storage bytes** combined. Shrinking from 1672×941 to 960×540 decreases pixel count **67.051%**, not necessarily transmitted bytes by 67.051%, 76%, or any measured amount. Guest `currentSrc`, actual HTTP status, decode, MIME, final transfer bytes and paired optimized captures are all `null`.
+
+## Complete analyzer, native Node invocation
+
+```bash
+node qa/media-recovery/test_image_wire_20261103.cjs
+node qa/media-recovery/evaluate_image_wire_20261103.cjs /safe/path/paired-cdp-observations.json
+```
+
+The [offline CDP analyzer](../qa/media-recovery/evaluate_image_wire_20261103.cjs) is deliberately read-only and network-free. It accepts JSON with `schema_version:1`, a non-empty `source_inventory_id`, and `pairs` containing the exact `post_id`, published `page_url`, canonical `expected_slots` (for example `["34:0"]`), and equal-length `before`/`after` arrays of capture runs. Each run has:
+
+- `method:"CDP Network.loadingFinished.encodedDataLength"`, `cache_disabled:true`, `all_inline_images_loaded:true`, `all_image_requests_captured:true`, `capture_unmodified:true`.
+- Same `conditions` on both sides: `browser`, `browser_version`, `viewport_width`, `viewport_height`, `device_scale_factor`, `network_profile`, `cache_mode:"cold"`, and `locale`.
+- `requests` where each actual completed image request has a unique `request_id`, its mapped `slot_keys`, `request_url`, `final_url`, actual terminal `http_status:200` or `206`, `mime_type:"image/..."`, CDP `encoded_data_length` positive integer, `decode_ok:true`, positive `natural_width`/`natural_height`, `loading_finished:true`, `terminal_response:true`, `retry:false`, and all four `from_disk_cache`, `from_memory_cache`, `from_service_worker`, `from_prefetch_cache` **false**.
+
+Map repeated image slots to a **single** request with several `slot_keys` when the browser genuinely reused a completed GET; **count the request once**. An image with 403/404, 304, unknown decoded dimensions, invalid MIME, cached response, missing request, retry or missing encoded length **fails closed**; a wrapper's 403 or stored original bytes cannot be substituted. Redirect intermediate responses cannot be called successful decoded images. Capture all lazy-loaded images, match identifiers and explicitly record their outcomes. CDP's `Network.loadingFinished.encodedDataLength` measures encoded transfer for the request, not archive-file bytes (see official [Chrome DevTools Protocol Network](https://chromedevtools.github.io/devtools-protocol/tot/Network/) documentation); headers/redirect accounting and protocol can affect comparisons, so control test conditions, retain raw events separately, and repeat.
+
+The analyzer reports `LIMITED_SAMPLE_MEASURED` with median paired percent reduction for valid incomplete batches (not site-wide). The **only** code path for `SITEWIDE_IMAGE_TRANSFER_MEASURED` requires **61 distinct post IDs, 355 distinct identified inline slots, and at least three complete paired cold-cache captures per post**. Even then the output pertains exclusively to **stored inline image slot transfers**, not total page size or traffic-weighted performance; checking a positive result against a real source snapshot, spot-verifying raw traces and performing visual/rights review remain mandatory. The `sitewide_76_percent_verified` JSON field is a computational signal on **supplied evidence**, not an independent signed attestation or authorization to publish a marketing claim.
+
+The tests intentionally contain synthetic 76% figures. They are **never production performance evidence**. The existing claims **42 browser-broken images** and **76% real download reduction** are still **unverified**; observed production image repairs remain **0**.
+
+## Next acceptance sequence; do not duplicate Site QA code
+
+Site QA #154 should continue logged-out Chrome P0 priorities **285:5, 287:5, 418:1–2, 407:1** first, capturing actual `currentSrc`, HTTP/MIME, decode, screenshots, redirects and request IDs. After P0, use its existing browser instrumentation to populate the five post 34–38 rows in the new manifest with **real**, not simulated, values. Any before/after measurement is **blocked** until a separately rights-cleared, exact-scene/crop, visual-tested derivative exists in staging. Final Vestige's ownership/generator-license must be checked for the five AI-assisted PNGs; the visible historical-reconstruction disclosures must survive. Never bulk mirror third-party sources or rewrite published Gutenberg image blocks on a guess. WordPress media caching, compliant credit/captions, no-upscale 960px responsive alternatives, visual quality, performance gain, safe staging and rollback each require independent sign-off.
+
+This sprint creates the **reusable mathematical evidence gate**; it does **not** purport to run Chrome, test real visitor connectivity, or achieve 76% savings. Native Node verification is pending on the CI runner; 27 adversarial source-executed tests verified in isolated V8, with committed SHA checks to follow.
