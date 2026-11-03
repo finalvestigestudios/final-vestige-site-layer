@@ -56,6 +56,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r168.py
           python -OO products/desktop/scripts/safe_unittest_r168.py
+      - name: R169 bind Invoice report IDs to native stored snapshots (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r169.py
+          python -OO products/desktop/scripts/safe_unittest_r169.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -364,6 +368,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R168 normal exact-primitive tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r168.py
           if ($LASTEXITCODE -ne 0) { throw "R168 optimized exact-primitive tests failed" }
+      - name: R169 bind Invoice report IDs to native stored snapshots (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r169.py
+          if ($LASTEXITCODE -ne 0) { throw "R169 normal report snapshot tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r169.py
+          if ($LASTEXITCODE -ne 0) { throw "R169 optimized report snapshot tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
