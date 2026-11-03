@@ -7,7 +7,7 @@ Publishing is one hash-locked write (`RELEASE_AND_ROLLBACK.md`). It happens the 
 | # | Gate | Owner | State |
 |---|---|---|---|
 | 1 | Fresh independent QD review of this exact head and hash | ChatGPT (founder relays) | **Open.** Prompt below. |
-| 2 | Authenticated WordPress.com render and test of the exact block | Founder signs in; Claude runs it | **Open.** Steps below. |
+| 2 | Authenticated WordPress.com render and test of the exact block | Founder signs in; Claude runs it | **Done 2026-11-02 for the flagship block on private draft 1902** (exact block stored unstripped, hash `8c0dd5c3...`; render, interactions, images, skip link, widths and console checked). Limits and a lesson about double-wrapping the block are in `PR604_WPCOM_DRAFT_RENDER_EVIDENCE.md`. |
 | 3 | Named-editor NASA item sign-off | A named person | **Open.** Worksheet below, prefilled with facts checked today. |
 | 4 | Mobile LCP exception (4.58 s) | Founder | **Approved 2026-11-02** as a temporary first-release exception, not a standard. |
 | 5 | Post-release PR targeting mobile LCP of 2.5 s or better, same approved visuals | Claude | Opened after go-live (it must not touch the frozen head). |
