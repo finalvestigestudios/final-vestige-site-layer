@@ -1,0 +1,452 @@
+{
+  "as_of": "2026-11-03",
+  "release": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "s01",
+      "kind": "merchant-catalog",
+      "url": "https://inspire3.com/",
+      "finding": "Zen12 catalog item; overall seller marketing not external proof",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s02",
+      "kind": "merchant-exact-offer",
+      "url": "https://zen12.com/hnp",
+      "finding": "12-minute sessions, 12 levels, four styles; stronger meditation-equivalence assertions",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s03",
+      "kind": "merchant-about",
+      "url": "https://zen12.com/about",
+      "finding": "four variants, 12 levels; regular-meditation equivalence wording",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s04",
+      "kind": "merchant-research",
+      "url": "https://zen12.com/research",
+      "finding": "seller interpretation of entrainment; not a product-controlled RCT",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s05",
+      "kind": "merchant-order-preview",
+      "url": "https://zen12.com/getstarted",
+      "finding": "48 MP3 complete package, mobile/contact/payment fields, dynamic checkout, advertised guarantee",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s06",
+      "kind": "merchant-privacy",
+      "url": "https://inspire3.com/privacy/",
+      "finding": "SMS marketing and potential affiliate buyer-level data sharing",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s07",
+      "kind": "merchant-public-affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "finding": "public signup is not FV-specific acceptance/terms/creative rights",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s08",
+      "kind": "independent-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "finding": "14-study EEG entrainment review inconsistent; not a Zen12 efficacy trial",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s09",
+      "kind": "primary-memory",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "finding": "Loftus and Palmer 1974 accident questions",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s10",
+      "kind": "primary-memory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "finding": "Loftus, Miller and Burns 1978, 1,242 participants",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s11",
+      "kind": "replication",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41021526/",
+      "finding": "2025 online / 2026 issue replication, response-demand and mechanism caveats",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s12",
+      "kind": "systematic-review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38696106/",
+      "finding": "2024 systematic review, nine studies on cognitive susceptibility",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s13",
+      "kind": "primary-attention",
+      "url": "https://doi.org/10.1177/0956797615593705",
+      "finding": "2015 mindfulness and false-memory task findings",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s14",
+      "kind": "replication-attention",
+      "url": "https://doi.org/10.1177/0956797620929302",
+      "finding": "2020 preregistered follow-up and null primary findings",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s15",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "finding": "clear and conspicuous near endorsement disclosure",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s16",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "finding": "competent reliable science needed for objective health claims",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s17",
+      "kind": "first-party-existing",
+      "url": "https://finalvestige.com/focus/",
+      "finding": "existing Focus/Jetpack funnel; current public HTTP fetch unsuccessful",
+      "checked": "2026-11-03",
+      "access_note": "Previous confirmed published URL, public web fetch blocked this run"
+    },
+    {
+      "id": "s18",
+      "kind": "first-party-existing",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "finding": "historical bridge; current public HTTP fetch unsuccessful",
+      "checked": "2026-11-03",
+      "access_note": "Previous confirmed published URL, public web fetch blocked this run"
+    },
+    {
+      "id": "s19",
+      "kind": "dispatch-coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "finding": "commercial drafts HOLD_MERCHANT, no CMS/email edits",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s20",
+      "kind": "other-offer-specific",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "finding": "Total Focus separate 33-minute, 47MB offering, not Zen12",
+      "checked": "2026-11-03",
+      "access_note": "Public source inspected or scholarly abstract verified"
+    },
+    {
+      "id": "s21",
+      "kind": "first-party-affiliate-disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "finding": "general disclosure exists, not substitute for near-link copy",
+      "checked": "2026-11-03",
+      "access_note": "Previous confirmed published URL, public web fetch blocked this run"
+    },
+    {
+      "id": "s22",
+      "kind": "first-party-editorial-policy",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "finding": "published evidence-first editorial standards",
+      "checked": "2026-11-03",
+      "access_note": "Previous confirmed published URL, public web fetch blocked this run"
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "Zen12 MP3 audio format",
+      "evidence": "SELLER",
+      "decision": "QUALIFY",
+      "source_id": "s02"
+    },
+    {
+      "claim": "12-minute sessions",
+      "evidence": "SELLER",
+      "decision": "QUALIFY",
+      "source_id": "s02"
+    },
+    {
+      "claim": "12 levels",
+      "evidence": "SELLER",
+      "decision": "QUALIFY",
+      "source_id": "s03"
+    },
+    {
+      "claim": "four listening styles",
+      "evidence": "SELLER",
+      "decision": "QUALIFY",
+      "source_id": "s03"
+    },
+    {
+      "claim": "complete 48 MP3 package",
+      "evidence": "SELLER",
+      "decision": "QUALIFY",
+      "source_id": "s05"
+    },
+    {
+      "claim": "support and extras",
+      "evidence": "SELLER",
+      "decision": "QUALIFY; RECHECK CHECKOUT",
+      "source_id": "s05"
+    },
+    {
+      "claim": "transient advertised price",
+      "evidence": "DYNAMIC",
+      "decision": "WITHHOLD",
+      "source_id": "s05"
+    },
+    {
+      "claim": "seller countdown",
+      "evidence": "DYNAMIC",
+      "decision": "DO NOT INHERIT",
+      "source_id": "s05"
+    },
+    {
+      "claim": "seller one-year guarantee",
+      "evidence": "SELLER",
+      "decision": "QUALIFY; TERMS UNVERIFIED",
+      "source_id": "s05"
+    },
+    {
+      "claim": "hour-equivalence",
+      "evidence": "UNSUPPORTED EFFICACY",
+      "decision": "REJECT",
+      "source_id": "s02"
+    },
+    {
+      "claim": "automatic brainwave effect",
+      "evidence": "UNSUPPORTED EFFICACY",
+      "decision": "REJECT",
+      "source_id": "s04"
+    },
+    {
+      "claim": "clinical treatment",
+      "evidence": "UNSUPPORTED EFFICACY",
+      "decision": "REJECT",
+      "source_id": "s04"
+    },
+    {
+      "claim": "guaranteed concentration",
+      "evidence": "UNSUPPORTED EFFICACY",
+      "decision": "REJECT",
+      "source_id": "s02"
+    },
+    {
+      "claim": "guaranteed creativity",
+      "evidence": "UNSUPPORTED EFFICACY",
+      "decision": "REJECT",
+      "source_id": "s02"
+    },
+    {
+      "claim": "wealth benefits",
+      "evidence": "UNSUPPORTED EFFICACY",
+      "decision": "REJECT",
+      "source_id": "s01"
+    },
+    {
+      "claim": "14-study review",
+      "evidence": "INDEPENDENT CATEGORY",
+      "decision": "CITE WITH LIMITATIONS",
+      "source_id": "s08"
+    },
+    {
+      "claim": "EEG review proves Zen12",
+      "evidence": "INVALID EXTRAPOLATION",
+      "decision": "REJECT",
+      "source_id": "s08"
+    },
+    {
+      "claim": "personal experience with recordings",
+      "evidence": "NOT TESTED",
+      "decision": "DO NOT CLAIM",
+      "source_id": "s02"
+    },
+    {
+      "claim": "seller testimonials prove efficacy",
+      "evidence": "MERCHANT ENDORSEMENT",
+      "decision": "DO NOT INHERIT",
+      "source_id": "s03"
+    },
+    {
+      "claim": "public program commission applies to FV",
+      "evidence": "UNVERIFIED PERMISSION",
+      "decision": "REJECT",
+      "source_id": "s07"
+    },
+    {
+      "claim": "exact earning URL",
+      "evidence": "UNVERIFIED PERMISSION",
+      "decision": "WITHHOLD",
+      "source_id": "s07"
+    },
+    {
+      "claim": "website channel permission",
+      "evidence": "UNVERIFIED PERMISSION",
+      "decision": "WITHHOLD",
+      "source_id": "s07"
+    },
+    {
+      "claim": "TikTok channel permission",
+      "evidence": "UNVERIFIED PERMISSION",
+      "decision": "WITHHOLD",
+      "source_id": "s07"
+    },
+    {
+      "claim": "email channel permission",
+      "evidence": "UNVERIFIED PERMISSION",
+      "decision": "WITHHOLD",
+      "source_id": "s07"
+    },
+    {
+      "claim": "official creative swipe permission",
+      "evidence": "UNVERIFIED PERMISSION",
+      "decision": "WITHHOLD",
+      "source_id": "s07"
+    },
+    {
+      "claim": "refund processing rules",
+      "evidence": "UNVERIFIED TERMS",
+      "decision": "WITHHOLD",
+      "source_id": "s05"
+    },
+    {
+      "claim": "mobile/SMS marketing may apply",
+      "evidence": "SELLER DISCLOSURE",
+      "decision": "CITE QUALIFIED",
+      "source_id": "s06"
+    },
+    {
+      "claim": "possible sharing buyer data with affiliate",
+      "evidence": "SELLER DISCLOSURE",
+      "decision": "CITE QUALIFIED",
+      "source_id": "s06"
+    },
+    {
+      "claim": "collect buyer-level data",
+      "evidence": "PRIVACY PROHIBITION",
+      "decision": "REJECT",
+      "source_id": "s06"
+    },
+    {
+      "claim": "near-link commission notice",
+      "evidence": "FTC",
+      "decision": "MANDATORY BEFORE ACTIVATION",
+      "source_id": "s15"
+    },
+    {
+      "claim": "general disclosure footer alone",
+      "evidence": "FTC RISK",
+      "decision": "INADEQUATE",
+      "source_id": "s15"
+    },
+    {
+      "claim": "Zen12 can treat anxiety",
+      "evidence": "HEALTH CLAIM",
+      "decision": "REJECT",
+      "source_id": "s16"
+    },
+    {
+      "claim": "automatic autoplay film",
+      "evidence": "ACCESSIBILITY RISK",
+      "decision": "REJECT",
+      "source_id": "s19"
+    },
+    {
+      "claim": "guide readable without JS",
+      "evidence": "ACCESSIBILITY",
+      "decision": "REQUIRED",
+      "source_id": "s19"
+    },
+    {
+      "claim": "B performs better than A",
+      "evidence": "UNTESTED HYPOTHESIS",
+      "decision": "DO NOT CLAIM",
+      "source_id": "s19"
+    },
+    {
+      "claim": "duplicate Focus list",
+      "evidence": "SCOPE VIOLATION",
+      "decision": "REJECT",
+      "source_id": "s17"
+    },
+    {
+      "claim": "all memories are false",
+      "evidence": "INVALID GENERALIZATION",
+      "decision": "REJECT",
+      "source_id": "s10"
+    },
+    {
+      "claim": "Puységur proves animal magnetism",
+      "evidence": "INVALID CAUSAL INFERENCE",
+      "decision": "REJECT",
+      "source_id": "s18"
+    },
+    {
+      "claim": "Total Focus and Zen12 interchangeable",
+      "evidence": "OFFER MISMATCH",
+      "decision": "REJECT",
+      "source_id": "s20"
+    },
+    {
+      "claim": "founder approved publication",
+      "evidence": "NOT GIVEN",
+      "decision": "REJECT",
+      "source_id": "s19"
+    }
+  ],
+  "gates": {
+    "partner_acceptance": false,
+    "exact_earning_url": false,
+    "website_permission": false,
+    "tiktok_permission": false,
+    "email_permission": false,
+    "creative_rights": false,
+    "tracking_terms": false,
+    "checkout_verification": false,
+    "refund_terms": false,
+    "buyer_data_policy": false,
+    "FTC_disclosure_review": false,
+    "FTC_claims_review": false,
+    "founder_editorial_approval": false,
+    "founder_publication_approval": false,
+    "PR172_hub_review": false,
+    "issue150_art_review": false,
+    "site_QA_independent_review": false,
+    "native_node_tests": false,
+    "hosted_CI": false,
+    "WCAG_keyboard_screenreader": false,
+    "mobile_360_390_768_1440_1920": false,
+    "reduced_motion_noJS": false,
+    "first_party_video_hosting": false,
+    "caption_synchronization": false,
+    "Lighthouse_core_web_vitals": false,
+    "attribution_privacy_review": false
+  }
+}
