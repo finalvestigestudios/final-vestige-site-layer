@@ -65,9 +65,14 @@ def main():
                 suite.run(result)
         passed = (result.wasSuccessful() and result.testsRun == len(EXPECTED)
                   and not result.skipped and not result.unexpectedSuccesses)
+        # Print ONLY static test method names, never an exception traceback,
+        # synthetic client cell, source path or user's financial information.
+        failed_names = sorted({case._testMethodName
+                               for case, _ in (*result.errors, *result.failures)})
         print(f"R160 SpendMap category display custody {'PASS' if passed else 'FAIL'}; "
               f"methods={result.testsRun}; issues="
-              f"{len(result.errors)+len(result.failures)+len(result.skipped)}")
+              f"{len(result.errors)+len(result.failures)+len(result.skipped)}; "
+              f"failed_methods={','.join(failed_names)}")
         return 0 if passed else 1
     except Exception:
         print("R160 SpendMap category display custody HOLD: required tests unavailable")
