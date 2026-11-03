@@ -2,7 +2,7 @@
   "schema_version": "0.1.0",
   "generated_from": {
     "wp_snapshot_sha256": "b2bb946b70521a7e3d082d33f78d71c49b178d54a454532ceca1c70d16accfef",
-    "apollo1_sha256": "7744053580fbe4a2430217cbf87da76c9da5a98aadd051030ff785bcc135316a",
+    "apollo1_sha256": "dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721",
     "curation_sha256": "fe5905ebf869a1ce6a674bc6c14acd330bca51b47530707c7c55e1e5e4ab2448",
     "snapshot_retrieved_at": "2026-10-30T16:15:59Z"
   },
@@ -370,6 +370,46 @@
       "retrieved_on": "2026-10-30"
     },
     {
+      "id": "src-nasa-board-findings",
+      "kind": "institutional_report",
+      "title": "Apollo 204 Review Board: Findings, Determinations and Recommendations",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-board-investigation",
+      "kind": "institutional_report",
+      "title": "Apollo 204 Review Board: Investigation and Analysis (Part V)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-history-aftermath",
+      "kind": "published_article",
+      "title": "55 Years Ago: The Apollo 1 Fire and its Aftermath (NASA History, 3 February 2022)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-apollo1-crew-bios",
+      "kind": "published_article",
+      "title": "Detailed Biographies of the Apollo 1 Crew (NASA History Office)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/detailed-biographies-of-the-apollo-1-crew/",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-history-flammability",
+      "kind": "published_article",
+      "title": "50 Years Ago: Apollo Flammability Tests (NASA History, 14 February 2018)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+      "retrieved_on": "2026-11-03"
+    },
+    {
       "id": "src-nasa-S67-19766",
       "kind": "archive_record",
       "title": "NASA image record S67-19766",
@@ -443,7 +483,7 @@
       "depicts_event": false,
       "credit": "NASA",
       "rights_basis": "NASA Media Usage Guidelines",
-      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "rights_status": "editorial-use basis recorded; image-specific editor sign-off required before display",
       "review_status": "unreviewed"
     },
     {
@@ -458,7 +498,7 @@
       "depicts_event": false,
       "credit": "NASA",
       "rights_basis": "NASA Media Usage Guidelines",
-      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "rights_status": "editorial-use basis recorded; image-specific editor sign-off required before display",
       "review_status": "unreviewed"
     },
     {
@@ -473,7 +513,7 @@
       "depicts_event": false,
       "credit": "NASA",
       "rights_basis": "NASA Media Usage Guidelines",
-      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "rights_status": "editorial-use basis recorded; image-specific editor sign-off required before display",
       "review_status": "unreviewed"
     },
     {
@@ -488,7 +528,7 @@
       "depicts_event": false,
       "credit": "NASA / Kim Shiflett",
       "rights_basis": "NASA Media Usage Guidelines",
-      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "rights_status": "editorial-use basis recorded; image-specific editor sign-off required before display",
       "review_status": "unreviewed"
     },
     {
@@ -503,7 +543,7 @@
       "depicts_event": true,
       "credit": "NASA",
       "rights_basis": "NASA Media Usage Guidelines",
-      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "rights_status": "editorial-use basis recorded; image-specific editor sign-off required before display",
       "review_status": "unreviewed"
     },
     {
@@ -518,7 +558,7 @@
       "depicts_event": false,
       "credit": "NASA / Kim Shiflett",
       "rights_basis": "NASA Media Usage Guidelines",
-      "rights_status": "editorial-use basis recorded; human rights review pending",
+      "rights_status": "editorial-use basis recorded; image-specific editor sign-off required before display",
       "review_status": "unreviewed"
     },
     {
@@ -540,12 +580,23 @@
     {
       "id": "clm-record-01-1",
       "investigation_id": "inv-434",
-      "text": "The test was a plugs-out countdown rehearsal with an unfueled Saturn IB.",
-      "status": "article-only",
+      "text": "The January 27, 1967 Plugs-Out Test was run with the launch vehicle unfueled.",
+      "status": "verified",
       "source_ids": [
-        "src-wp-434"
+        "src-nasa-history-aftermath",
+        "src-nasa-board-report"
       ],
-      "caveat": "Final Vestige article; not re-checked against the Board text in Sprint 5."
+      "caveat": "NASA History (2022): \"Because the test took place with the rocket unfueled, it had been considered non-hazardous\". Board report, Part IV: the Plugs-Out Test was not classified as hazardous because only tests involving fueled vehicles were."
+    },
+    {
+      "id": "clm-record-01-2",
+      "investigation_id": "inv-434",
+      "text": "The innermost hatch took 90 seconds to open under ideal conditions.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-history-aftermath"
+      ],
+      "caveat": "NASA History (2022): the innermost hatch opened inward \"and taking 90 seconds to open under ideal conditions\"."
     },
     {
       "id": "clm-record-02-1",
@@ -553,9 +604,9 @@
       "text": "The test used a 16.7 psia, 100 percent oxygen atmosphere.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-findings"
       ],
-      "caveat": "Board report: 'The test was conducted with a 16.7 pounds per square inch absolute, 100-percent oxygen atmosphere.'"
+      "caveat": "Board report, Finding 2: \"The test was conducted with a 16.7 pounds per square inch absolute, 100-percent oxygen atmosphere.\""
     },
     {
       "id": "clm-record-02-2",
@@ -563,9 +614,19 @@
       "text": "The test conditions were extremely hazardous.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-findings"
       ],
-      "caveat": "Board determination under Finding 2."
+      "caveat": "Board report, Finding 2, Determination: \"The test conditions were extremely hazardous.\""
+    },
+    {
+      "id": "clm-record-02-3",
+      "investigation_id": "inv-434",
+      "text": "The atmosphere presents severe fire hazards if combustibles are not restricted and controlled.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-findings"
+      ],
+      "caveat": "Board report, Finding 9, Determination: \"This atmosphere presents severe fire hazards if the amount and location of combustibles in the Command Module are not restricted and controlled.\""
     },
     {
       "id": "clm-record-03-1",
@@ -573,9 +634,9 @@
       "text": "The first verbal fire report began at 23:31:04.7 GMT.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-investigation"
       ],
-      "caveat": "Board report, chronology: 'the transmission reporting the fire which began at 23:31:04.7 GMT (6:31:04.7 p.m. EST)'."
+      "caveat": "Board report, Part V: \"This transmission began at 23:31:04.7 GMT with an exclamatory remark.\""
     },
     {
       "id": "clm-record-03-2",
@@ -583,9 +644,9 @@
       "text": "The first pressure increase was recorded about 6 seconds after the report.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-investigation"
       ],
-      "caveat": "Board report, Cabin Pressure Rise: 'about 6 seconds after the crew first reported the fire'. The NASA web text prints the clock time as 23:21:11, an apparent typographical error for 23:31:11; the interval is unaffected."
+      "caveat": "Board report, Part V, Cabin Pressure Rise: \"about 6 seconds after the crew first reported the fire\". The NASA web text prints the clock time as 23:21:11, an apparent typographical error for 23:31:11; the interval is unaffected."
     },
     {
       "id": "clm-record-03-3",
@@ -593,9 +654,9 @@
       "text": "Pressure exceeded the transducer range (17 psia cabin) by 23:31:16 GMT.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-investigation"
       ],
-      "caveat": "Board report, Cabin Pressure Rise."
+      "caveat": "Board report, Part V, Cabin Pressure Rise."
     },
     {
       "id": "clm-record-03-4",
@@ -603,79 +664,110 @@
       "text": "The cabin ruptured at about 23:31:19 GMT at a pressure of at least 29 psia.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-investigation"
       ],
-      "caveat": "Board report: 'ruptured at a time of about 23:31:19 GMT and at a pressure of at least 29 psia'; another passage gives 23:31:19.4."
+      "caveat": "Board report, Part V: \"The cabin ruptured at a time of about 23:31:19 GMT and at a pressure of at least 29 psia.\""
     },
     {
       "id": "clm-record-03-5",
       "investigation_id": "inv-434",
-      "text": "Chapter title says fourteen seconds.",
-      "status": "editorial-note",
+      "text": "The first stage of the fire ended approximately 15 seconds after the verbal report.",
+      "status": "verified",
       "source_ids": [
-        "src-wp-434"
+        "src-nasa-board-investigation"
       ],
-      "caveat": "The Board says the first stage ended 'approximately 15 seconds after the verbal report'; its own stamps (04.7 to 19.4) give 14.7 s. Title unchanged pending editorial decision."
+      "caveat": "Board report, Part V, Chronology of the Fire: the first stage \"terminated approximately 15 seconds after the verbal report of fire\". The interval between the 04.7 and 19.4 time marks is 14.7 seconds; this page uses the Board's wording, \"about fifteen\"."
     },
     {
       "id": "clm-record-04-1",
       "investigation_id": "inv-434",
-      "text": "Due to internal pressure the inner hatch could not be opened before rupture.",
+      "text": "The innermost hatch opened inward.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-history-aftermath"
       ],
-      "caveat": "Board Finding 4: 'Due to internal pressure, the Command Module inner hatch could not be opened prior to rupture of the Command Module.'"
+      "caveat": "NASA History (2022): \"with the innermost one opening inward and taking 90 seconds to open under ideal conditions\"."
     },
     {
       "id": "clm-record-04-2",
       "investigation_id": "inv-434",
-      "text": "The Block I hatch opened inward.",
-      "status": "article-only",
+      "text": "Due to internal pressure the inner hatch could not be opened before rupture.",
+      "status": "verified",
       "source_ids": [
-        "src-wp-434"
+        "src-nasa-board-findings"
       ],
-      "caveat": "Not located in the Board report landing-page text; source from NASA history or exhibit text before publication."
+      "caveat": "Board report, Finding 4: \"Due to internal pressure, the Command Module inner hatch could not be opened prior to rupture of the Command Module.\""
+    },
+    {
+      "id": "clm-record-04-3",
+      "investigation_id": "inv-434",
+      "text": "Ed White, as Senior Pilot, was responsible for opening the hatch in an emergency.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-investigation",
+        "src-nasa-apollo1-crew-bios"
+      ],
+      "caveat": "Board report, Part V: \"Emergency procedures called for the Senior Pilot, occupying the center couch, to unlatch and remove the hatch\". NASA crew biographies: \"Ed White was selected as Senior Pilot for the first Apollo flight.\""
+    },
+    {
+      "id": "clm-record-04-4",
+      "investigation_id": "inv-434",
+      "text": "The Senior Pilot's harness buckle was found unopened, indicating that he had begun the standard hatch-opening procedure.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-investigation"
+      ],
+      "caveat": "Board report, Part V: \"The Senior Pilot's harness buckle was found unopened after the fire indicating that he initiated the standard hatch opening procedure.\""
     },
     {
       "id": "clm-record-05-1",
       "investigation_id": "inv-434",
-      "text": "The Board's search for the specific initiator was unsuccessful.",
+      "text": "The Board determined that the most probable initiator was an electrical arc in the sector between the -Y and +Z spacecraft axes.",
       "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-findings"
       ],
-      "caveat": "Board report: 'A great deal of effort has been expended in an attempt to find this specific initiator. Although unsuccessful in this search...'"
+      "caveat": "Board report, Finding 1, Determination: \"The most probable initiator was an electrical arc in the sector between -Y and +Z spacecraft axes.\""
     },
     {
       "id": "clm-record-05-2",
       "investigation_id": "inv-434",
-      "text": "An electrical arc was the most likely initiator.",
-      "status": "partial",
+      "text": "No single ignition source of the fire was conclusively identified.",
+      "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-board-findings"
       ],
-      "caveat": "Board text found: arcing considered as a possible cause of transients; electrostatic discharge, spontaneous combustion, mechanical heat and impact heat 'eliminated as reasonable possibilities'. The exact 'most probable' arc sentence was not located in the extracted text; confirm wording."
+      "caveat": "Board report, Finding 1: \"No single ignition source of the fire was conclusively identified.\""
+    },
+    {
+      "id": "clm-record-05-3",
+      "investigation_id": "inv-434",
+      "text": "The crew was never capable of effecting emergency egress.",
+      "status": "verified",
+      "source_ids": [
+        "src-nasa-board-findings"
+      ],
+      "caveat": "Board report, Finding 4, Determination: \"The crew was never capable of effecting emergency egress because of the pressurization before rupture and their loss of consciousness soon after rupture.\""
     },
     {
       "id": "clm-record-06-1",
       "investigation_id": "inv-434",
-      "text": "NASA redesigned the hatch to open outward quickly.",
-      "status": "partial",
+      "text": "NASA replaced the inward-opening hatch with a unified hatch that opened outward and could be opened from inside or outside in three seconds.",
+      "status": "verified",
       "source_ids": [
-        "src-nasa-board-report"
+        "src-nasa-history-aftermath"
       ],
-      "caveat": "Exhibit text in NASA image KSC-20170124-PH_KLS01_0090 (Block II designed to open in 5 seconds); outward direction not located in the Board landing-page text."
+      "caveat": "NASA History (2022): \"a unified hatch that could be opened from inside or outside the spacecraft in three seconds\"; the astronauts cited \"the new outward-opening unified hatch\". Exhibit text photographed at Kennedy Space Center gives 5 seconds for the Block II hatch; this page uses NASA's article."
     },
     {
       "id": "clm-record-06-2",
       "investigation_id": "inv-434",
-      "text": "102 deliberate ignition tests of boilerplate 1224, Dec 1967 to Feb 1968.",
-      "status": "article-only",
+      "text": "102 deliberate ignitions of Boilerplate 1224 between December 1967 and February 1968.",
+      "status": "verified",
       "source_ids": [
-        "src-wp-434"
+        "src-nasa-history-flammability"
       ],
-      "caveat": "Final Vestige article; not re-checked in Sprint 5."
+      "caveat": "NASA History (2018): \"three series of tests comprising 102 deliberate ignitions between December 1967 and February 1968\"."
     }
   ],
   "relationships": [

@@ -16,6 +16,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import fvx_lib as lib  # noqa: E402
+from render_apollo_page import manifest as page_manifest, render_blocks  # noqa: E402
 from render_atlas import render_atlas  # noqa: E402
 from render_desk import render_desk  # noqa: E402
 from render_flagship import render_flagship  # noqa: E402
@@ -23,6 +24,7 @@ from render_gallery import render_gallery  # noqa: E402
 
 DIST = lib.EX2 / "dist"
 PLUGIN = lib.EX2 / "wp-plugin" / "final-vestige-experience-2"
+PAGE_BLOCKS = lib.EX2 / "page-blocks"  # plugin-free: one core/html block per page, committed so its hash is reviewable
 
 
 def outputs() -> dict[Path, str]:
@@ -59,6 +61,10 @@ def outputs() -> dict[Path, str]:
         "data_sources": {"apollo1": __import__("hashlib").sha256((lib.DATA / "apollo1.json").read_bytes()).hexdigest()},
     })
     files[PLUGIN / "assets" / "manifest.json"] = json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+    blocks = render_blocks()
+    for name, markup in blocks:
+        files[PAGE_BLOCKS / "apollo1-investigation" / f"{name}.block.html"] = markup
+    files[PAGE_BLOCKS / "manifest.json"] = json.dumps({"apollo1-investigation": page_manifest(blocks)}, indent=2, sort_keys=True) + chr(10)
     files[DIST / "atlas-report.json"] = json.dumps(atlas_report, indent=2, sort_keys=True) + "\n"
     return files
 
@@ -70,7 +76,7 @@ def main() -> int:
     files = outputs()
     if args.check:
         stale = [str(p.relative_to(lib.EX2)) for p, text in files.items()
-                 if PLUGIN in p.parents and (not p.exists() or p.read_text(encoding="utf-8") != text)]
+                 if (PLUGIN in p.parents or PAGE_BLOCKS in p.parents) and (not p.exists() or p.read_text(encoding="utf-8") != text)]
         if stale:
             print("STALE plugin payload (run tools/build_all.py):", *stale, sep="\n  ")
             return 1

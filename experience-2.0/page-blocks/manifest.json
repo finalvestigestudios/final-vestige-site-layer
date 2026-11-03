@@ -1,0 +1,86 @@
+{
+  "apollo1-investigation": {
+    "blocks": [
+      {
+        "bytes": 23749,
+        "file": "apollo1-investigation/00-style.block.html",
+        "order": 0,
+        "sha1": "7e0047b672e9000ac3e42752b1bc827b1a942c14",
+        "sha256": "bd76f0a27c4430bdea43d8edbe217b320eae279eb9af469add2893e46d37aeef"
+      },
+      {
+        "bytes": 261,
+        "file": "apollo1-investigation/00b-style-text.block.html",
+        "order": 1,
+        "sha1": "78aa4398a40f068930b19916b555c41305142997",
+        "sha256": "2122ef64ba74dce3c7a7efb4d13ecbf7ea447420a3e0b25f220c79f26b6e12fd"
+      },
+      {
+        "bytes": 18677,
+        "file": "apollo1-investigation/01-investigation.block.html",
+        "order": 2,
+        "sha1": "06eec74493281c1a741cb831f388848fec2a1756",
+        "sha256": "eb8ee9d5a0638d57d70f2821744d1f4e2369c5f90e23726f4354ce7cf6554bb3"
+      },
+      {
+        "bytes": 1217,
+        "file": "apollo1-investigation/02-classification.block.html",
+        "order": 3,
+        "sha1": "4ae2ce71b87d396a00ade03ff80fe815f6901527",
+        "sha256": "9317d7a17e24a76a50b259168d9eaee0782790eaa7802abaf9416f462d7dbfc5"
+      },
+      {
+        "bytes": 27959,
+        "file": "apollo1-investigation/03-research-desk.block.html",
+        "order": 4,
+        "sha1": "0240acd4a9d5acc6640f1c3994eb10cb916949c3",
+        "sha256": "9d2ff551b85a2ca395a4ae0756571cbc3a6bbd35ceab09c148df193dbfa0d9ca"
+      },
+      {
+        "bytes": 4194,
+        "file": "apollo1-investigation/04-rights.block.html",
+        "order": 5,
+        "sha1": "9e192431d23077b9be65a3745f448733605f55be",
+        "sha256": "e6babbf1ac89b95d270834979f9fb0bbec2012fb72b5f016fde1ead7ce2bf9b3"
+      },
+      {
+        "bytes": 1891,
+        "file": "apollo1-investigation/05-related.block.html",
+        "order": 6,
+        "sha1": "41f4e700f4dd0ccca7ca4fd92b6a8162d0ed373c",
+        "sha256": "05054781ba29931e8619179f443d2689bbaa01cbaa1be37dfbaef61f96c67cc8"
+      },
+      {
+        "bytes": 497,
+        "file": "apollo1-investigation/06-footer.block.html",
+        "order": 7,
+        "sha1": "994ad9b0906fbcc748b8e1556114be84fac4594a",
+        "sha256": "cf2f3b4d3610a5ff3cfe760c09e88c82cfdfdb64a12159dd015521e690d76b91"
+      },
+      {
+        "bytes": 9751,
+        "file": "apollo1-investigation/07-script.block.html",
+        "order": 8,
+        "sha1": "93c95de544437ef7215438c212540efe4f0cb0a4",
+        "sha256": "34a5093c520dd6e783c135b8f62c8d51cef7842e74c64a83d1da08806020d4fc"
+      }
+    ],
+    "note": "Plugin-free: top-level core/html blocks only. Store each block byte-for-byte; never wrap one inside another block.",
+    "page": {
+      "slug": "apollo-1-evidence-atlas",
+      "status_when_created": "draft",
+      "title": "Apollo 1: The Evidence Atlas"
+    },
+    "page_content": {
+      "bytes": 88204,
+      "join": "blocks concatenated in order, separated by one newline",
+      "sha1": "4df60e9f07c59ae11d4c15c91c968f0c58a482f7",
+      "sha256": "d06613cba4c276645440813192512c49ac3331459a14fd91efbd304c1e45ddfb"
+    },
+    "sources": {
+      "apollo1_sha256": "dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721",
+      "atlas_sha256": "ec1f6513fa790d7416dd1fa4f4aea7fa60be9b36507e0baa08ab453b3eb4d40f",
+      "image_signoffs_sha256": "578d9dbe3239332218d130f1b97707f495f3ca3fa550fa6e22e5a38e640f1cf9"
+    }
+  }
+}

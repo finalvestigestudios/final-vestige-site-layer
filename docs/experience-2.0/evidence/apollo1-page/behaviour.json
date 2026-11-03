@@ -1,0 +1,41 @@
+{
+  "desk search filters records": {
+    "pass": true,
+    "seen": "1 visible, status='1 of 6 evidence records'"
+  },
+  "desk empty state": {
+    "pass": true,
+    "seen": "empty message shown"
+  },
+  "plate link lands on its desk record": {
+    "pass": true,
+    "seen": "#fv-ex2-desk-apollo1-record-01"
+  },
+  "chronology slider never interpolates": {
+    "pass": true,
+    "seen": "At +8 s. Last recorded marker: 2, First indication of a cabin pressure increase (+6 s). Nothing is recorded between markers. Next marker: Pr"
+  },
+  "chapter bar marks at most one chapter": {
+    "pass": true,
+    "seen": 1
+  },
+  "JavaScript off: complete document, optional controls hidden": {
+    "pass": true,
+    "seen": {
+      "h1": 1,
+      "chapters": 7,
+      "records": 6,
+      "hiddenTools": true,
+      "related": 5,
+      "overflow": 0
+    }
+  },
+  "keyboard focus reaches the page (first stop is the theme's own)": {
+    "pass": true,
+    "seen": "A:skip-link screen-reader-text"
+  },
+  "buttons, summaries, inputs and chapter links are at least 24px tall (WCAG 2.5.8; inline text links fall under its inline exception and axe target-size passes)": {
+    "pass": true,
+    "seen": []
+  }
+}

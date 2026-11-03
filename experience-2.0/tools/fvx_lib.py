@@ -68,6 +68,9 @@ def load_apollo1(data: dict | None = None) -> dict:
     safe_https(data["investigation"]["url"])
     safe_https(data["primary_report"]["url"])
     safe_https(data["rights_policy"]["basis_url"])
+    for src in data.get("claim_sources", []):
+        _need(src, ["id", "kind", "title", "url"], "claim_sources")
+        safe_https(src["url"])
     seen = set()
     if len(data["records"]) != 6:
         raise BadRecord("Apollo 1 experience requires exactly six records")
@@ -94,6 +97,13 @@ def load_apollo1(data: dict | None = None) -> dict:
             if row.get("status") not in VALID_CROSSWALK:
                 raise BadRecord(f"{rid}: crosswalk status must be one of {sorted(VALID_CROSSWALK)}")
             _need(row, ["claim", "source"], f"{rid}.crosswalk")
+            if row.get("url"):
+                safe_https(row["url"])
+            if not isinstance(row.get("source_ids", []), list):
+                raise BadRecord(f"{rid}: crosswalk source_ids must be a list")
+            for sid in row.get("source_ids", []):
+                if sid != "src-nasa-board-report" and sid not in {s["id"] for s in data.get("claim_sources", [])}:
+                    raise BadRecord(f"{rid}: crosswalk cites unknown source {sid!r}")
     chrono = data["chronology"]
     last = -1.0
     lo, hi = chrono["range"]

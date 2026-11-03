@@ -62,6 +62,7 @@ def main() -> int:
         unittest_stage("builders, data validation, CSS/JS static analysis", "test_builders.py"),
         unittest_stage("atlas model, invariants, ingestion", "test_atlas.py"),
         unittest_stage("WordPress plugin (real PHP, WordPress stubs)", "test_plugin.py"),
+        unittest_stage("plugin-free Apollo 1 page block (static)", "test_apollo_page.py"),
         unittest_stage("browser: responsive, behaviour, fail-open, a11y (axe-core)", "test_browser.py"),
     ]
     if args.offline:

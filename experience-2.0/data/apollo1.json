@@ -17,7 +17,7 @@
     "basis_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
     "retrieved_on": "2026-10-30",
     "summary": "NASA content is generally not subject to copyright in the United States and may be used editorially with NASA acknowledged as the source and without implying endorsement. Clearances may be needed where images include NASA logos or NASA employees and are used as cover art or in promotional content. Names and likenesses of deceased astronauts may be controlled by their estates for commercial use.",
-    "status": "editorial-use basis recorded; human rights review pending",
+    "status": "editorial-use basis recorded; image-specific editor sign-off required before display",
     "restriction": "Editorial use only. Do not use these images in promotional, product or merchandise contexts."
   },
   "records": [
@@ -26,8 +26,8 @@
       "eyebrow": "THE CREW",
       "when": "JANUARY 1967",
       "title": "Three men. One ground test.",
-      "dek": "This was a countdown rehearsal, not a launch. The rocket was unfueled; the spacecraft was not free of danger.",
-      "detail": "Gus Grissom, Ed White and Roger Chaffee prepared to rehearse an Apollo countdown at Launch Complex 34. The plugs-out test was treated as comparatively nonhazardous because the Saturn IB was not fueled. The spacecraft still contained a dense oxygen environment, combustible materials and an escape hatch that could not be opened quickly under pressure.",
+      "dek": "This was a ground test, not a launch. The rocket was unfueled; the spacecraft was not free of danger.",
+      "detail": "Gus Grissom, Ed White and Roger Chaffee prepared for the Plugs-Out Test at Launch Complex 34. The test had not been classified as hazardous because only tests involving fueled vehicles were, and the launch vehicle was unfueled. The spacecraft still held a 100 percent oxygen atmosphere, combustible materials and an innermost hatch that took 90 seconds to open under ideal conditions.",
       "caution": "An unfueled launch vehicle did not mean a safe cabin.",
       "kind": "DOCUMENTED CONTEXT",
       "image": {
@@ -44,11 +44,29 @@
         "credit": "NASA",
         "date_text": "January 1967",
         "record_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
-        "identity_note": "NASA record page confirms the credit and caption. The identifier S67-19766 appears in the record page markup but was not found through the NASA Image API nasa_id search; confirm before publication. Delivered from the Final Vestige media library."
+        "identity_note": "The NASA record page \"Apollo 1 Crew Honored\" gives the caption and credit; the identifier appears in the image file name on that page. The copy is served from the Final Vestige media library."
       },
       "report": "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/",
       "crosswalk": [
-        {"claim": "The test was a plugs-out countdown rehearsal with an unfueled Saturn IB.", "status": "article-only", "source": "Final Vestige article; not re-checked against the Board text in Sprint 5."}
+        {
+          "claim": "The January 27, 1967 Plugs-Out Test was run with the launch vehicle unfueled.",
+          "status": "verified",
+          "source": "NASA History (2022): \"Because the test took place with the rocket unfueled, it had been considered non-hazardous\". Board report, Part IV: the Plugs-Out Test was not classified as hazardous because only tests involving fueled vehicles were.",
+          "url": "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+          "source_ids": [
+            "src-nasa-history-aftermath",
+            "src-nasa-board-report"
+          ]
+        },
+        {
+          "claim": "The innermost hatch took 90 seconds to open under ideal conditions.",
+          "status": "verified",
+          "source": "NASA History (2022): the innermost hatch opened inward \"and taking 90 seconds to open under ideal conditions\".",
+          "url": "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+          "source_ids": [
+            "src-nasa-history-aftermath"
+          ]
+        }
       ]
     },
     {
@@ -57,7 +75,7 @@
       "when": "16.7 PSIA",
       "title": "An atmosphere built for a different risk.",
       "dek": "One hundred percent oxygen at elevated ground-test pressure greatly increased the fire hazard inside Command Module 012.",
-      "detail": "The 1967 Review Board documented a 100 percent oxygen cabin atmosphere at 16.7 pounds per square inch absolute during the ground test. Combustible materials and potential ignition sources were present. This was not the same pressure regime the spacecraft would use in orbit.",
+      "detail": "The 1967 Review Board documented a 100 percent oxygen cabin atmosphere at 16.7 pounds per square inch absolute during the ground test, and determined that the test conditions were extremely hazardous. It also determined that this atmosphere presents severe fire hazards if the amount and location of combustibles in the Command Module are not restricted and controlled.",
       "caution": "Oxygen accelerated combustion; it was not itself the ignition spark.",
       "kind": "PRIMARY REVIEW BOARD RECORD",
       "image": {
@@ -67,9 +85,18 @@
         "nasa_id": "S67-15717",
         "src": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
         "variants": [
-          {"url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~small.jpg", "w": 504},
-          {"url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~medium.jpg", "w": 1009},
-          {"url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg", "w": 1514}
+          {
+            "url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~small.jpg",
+            "w": 504
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~medium.jpg",
+            "w": 1009
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+            "w": 1514
+          }
         ],
         "width": 1514,
         "height": 1920,
@@ -82,17 +109,42 @@
       },
       "report": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
       "crosswalk": [
-        {"claim": "The test used a 16.7 psia, 100 percent oxygen atmosphere.", "status": "verified", "source": "Board report: 'The test was conducted with a 16.7 pounds per square inch absolute, 100-percent oxygen atmosphere.'"},
-        {"claim": "The test conditions were extremely hazardous.", "status": "verified", "source": "Board determination under Finding 2."}
+        {
+          "claim": "The test used a 16.7 psia, 100 percent oxygen atmosphere.",
+          "status": "verified",
+          "source": "Board report, Finding 2: \"The test was conducted with a 16.7 pounds per square inch absolute, 100-percent oxygen atmosphere.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        },
+        {
+          "claim": "The test conditions were extremely hazardous.",
+          "status": "verified",
+          "source": "Board report, Finding 2, Determination: \"The test conditions were extremely hazardous.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        },
+        {
+          "claim": "The atmosphere presents severe fire hazards if combustibles are not restricted and controlled.",
+          "status": "verified",
+          "source": "Board report, Finding 9, Determination: \"This atmosphere presents severe fire hazards if the amount and location of combustibles in the Command Module are not restricted and controlled.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        }
       ]
     },
     {
       "id": "record-03",
       "eyebrow": "THE SECONDS",
       "when": "6:31 P.M.",
-      "title": "Fourteen seconds changed the system.",
+      "title": "About fifteen seconds changed the system.",
       "dek": "The surviving instrument record describes an extraordinarily rapid pressure-and-fire sequence.",
-      "detail": "The first fire transmission began at approximately 23:31:04.7 GMT. About six seconds later the cabin-pressure sensor showed a clear rise; by approximately 23:31:16 its range was exceeded. The pressure vessel ruptured at least 29 psia around 23:31:19. These timings are approximate marks from the Board account, not a reconstructed second-by-second animation.",
+      "detail": "The first fire transmission began at 23:31:04.7 GMT. About six seconds later the cabin-pressure sensor showed a clear rise; by about 23:31:16 its range was exceeded. The pressure vessel ruptured, at a pressure of at least 29 psia, at about 23:31:19 GMT. The Board describes the first stage of the fire as ending approximately 15 seconds after the verbal report. Counting from the 23:31:04.7 report to the 23:31:19.4 rupture mark gives 14.7 seconds. These are approximate marks from the Board account, not a reconstructed second-by-second animation.",
       "caution": "The timeline reports observed markers. The intervals between them are not interpolated sensor measurements.",
       "kind": "INSTRUMENT CHRONOLOGY",
       "image": {
@@ -102,9 +154,18 @@
         "nasa_id": "S66-58038",
         "src": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
         "variants": [
-          {"url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~small.jpg", "w": 640},
-          {"url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~medium.jpg", "w": 1280},
-          {"url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg", "w": 1920}
+          {
+            "url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~small.jpg",
+            "w": 640
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~medium.jpg",
+            "w": 1280
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+            "w": 1920
+          }
         ],
         "width": 1920,
         "height": 1546,
@@ -117,11 +178,51 @@
       },
       "report": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
       "crosswalk": [
-        {"claim": "The first verbal fire report began at 23:31:04.7 GMT.", "status": "verified", "source": "Board report, chronology: 'the transmission reporting the fire which began at 23:31:04.7 GMT (6:31:04.7 p.m. EST)'."},
-        {"claim": "The first pressure increase was recorded about 6 seconds after the report.", "status": "verified", "source": "Board report, Cabin Pressure Rise: 'about 6 seconds after the crew first reported the fire'. The NASA web text prints the clock time as 23:21:11, an apparent typographical error for 23:31:11; the interval is unaffected."},
-        {"claim": "Pressure exceeded the transducer range (17 psia cabin) by 23:31:16 GMT.", "status": "verified", "source": "Board report, Cabin Pressure Rise."},
-        {"claim": "The cabin ruptured at about 23:31:19 GMT at a pressure of at least 29 psia.", "status": "verified", "source": "Board report: 'ruptured at a time of about 23:31:19 GMT and at a pressure of at least 29 psia'; another passage gives 23:31:19.4."},
-        {"claim": "Chapter title says fourteen seconds.", "status": "editorial-note", "source": "The Board says the first stage ended 'approximately 15 seconds after the verbal report'; its own stamps (04.7 to 19.4) give 14.7 s. Title unchanged pending editorial decision."}
+        {
+          "claim": "The first verbal fire report began at 23:31:04.7 GMT.",
+          "status": "verified",
+          "source": "Board report, Part V: \"This transmission began at 23:31:04.7 GMT with an exclamatory remark.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation"
+          ]
+        },
+        {
+          "claim": "The first pressure increase was recorded about 6 seconds after the report.",
+          "status": "verified",
+          "source": "Board report, Part V, Cabin Pressure Rise: \"about 6 seconds after the crew first reported the fire\". The NASA web text prints the clock time as 23:21:11, an apparent typographical error for 23:31:11; the interval is unaffected.",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation"
+          ]
+        },
+        {
+          "claim": "Pressure exceeded the transducer range (17 psia cabin) by 23:31:16 GMT.",
+          "status": "verified",
+          "source": "Board report, Part V, Cabin Pressure Rise.",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation"
+          ]
+        },
+        {
+          "claim": "The cabin ruptured at about 23:31:19 GMT at a pressure of at least 29 psia.",
+          "status": "verified",
+          "source": "Board report, Part V: \"The cabin ruptured at a time of about 23:31:19 GMT and at a pressure of at least 29 psia.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation"
+          ]
+        },
+        {
+          "claim": "The first stage of the fire ended approximately 15 seconds after the verbal report.",
+          "status": "verified",
+          "source": "Board report, Part V, Chronology of the Fire: the first stage \"terminated approximately 15 seconds after the verbal report of fire\". The interval between the 04.7 and 19.4 time marks is 14.7 seconds; this page uses the Board's wording, \"about fifteen\".",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation"
+          ]
+        }
       ]
     },
     {
@@ -129,8 +230,8 @@
       "eyebrow": "THE HATCH",
       "when": "DESIGN CONSTRAINT",
       "title": "The hatch opened inward.",
-      "dek": "A seal intended to help contain pressure became an obstacle when pressure rose during the fire.",
-      "detail": "The Block I command module used an inward-opening pressure hatch. The Review Board found that pressure relief could not keep up with the fire-driven pressure rise, so the hatch could not be opened before the pressure vessel ruptured. Ed White was responsible for opening the hatch; investigators observed movement consistent with an attempt to begin the procedure.",
+      "dek": "The innermost hatch opened inward, and the Board found that, with the cabin pressurized, it could not be opened before rupture.",
+      "detail": "NASA's history of the accident says the innermost of the command module's hatches opened inward and took 90 seconds to open under ideal conditions. The Review Board found that, due to internal pressure, the inner hatch could not be opened before the pressure vessel ruptured. Emergency procedures assigned the hatch to the Senior Pilot, Ed White. The Board found his harness buckle unopened after the fire, which indicated that he had begun the standard hatch-opening procedure.",
       "caution": "The hatch was one of several interacting hazards, not a standalone explanation of the fire.",
       "kind": "HARDWARE AND DESIGN FINDING",
       "image": {
@@ -140,9 +241,18 @@
         "nasa_id": "KSC-20170124-PH_KLS01_0129",
         "src": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~large.jpg",
         "variants": [
-          {"url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~small.jpg", "w": 640},
-          {"url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~medium.jpg", "w": 1280},
-          {"url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~large.jpg", "w": 1920}
+          {
+            "url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~small.jpg",
+            "w": 640
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~medium.jpg",
+            "w": 1280
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0129/KSC-20170124-PH_KLS01_0129~large.jpg",
+            "w": 1920
+          }
         ],
         "width": 1920,
         "height": 1280,
@@ -151,12 +261,47 @@
         "credit": "NASA / Kim Shiflett",
         "date_text": "24 January 2017",
         "record_url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129",
-        "identity_note": "NASA Image API nasa_id KSC-20170124-PH_KLS01_0129 (record page is the NASA Image Library detail page; a nasa.gov image-detail page was not found for this asset); NASA description: 'The three-part hatch that was in place on the Apollo 1 spacecraft is shown in a tribute'. Replaces KSC-20170124-PH_KLS01_0164 used in the prototype, which shows a spacecraft mockup, not the hatch. Verified 2026-10-30."
+        "identity_note": "NASA Image API nasa_id KSC-20170124-PH_KLS01_0129; the record is the NASA Image Library detail page. NASA description: \"The three-part hatch that was in place on the Apollo 1 spacecraft is shown in a tribute\". Verified 2026-10-30."
       },
       "report": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
       "crosswalk": [
-        {"claim": "Due to internal pressure the inner hatch could not be opened before rupture.", "status": "verified", "source": "Board Finding 4: 'Due to internal pressure, the Command Module inner hatch could not be opened prior to rupture of the Command Module.'"},
-        {"claim": "The Block I hatch opened inward.", "status": "article-only", "source": "Not located in the Board report landing-page text; source from NASA history or exhibit text before publication."}
+        {
+          "claim": "The innermost hatch opened inward.",
+          "status": "verified",
+          "source": "NASA History (2022): \"with the innermost one opening inward and taking 90 seconds to open under ideal conditions\".",
+          "url": "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+          "source_ids": [
+            "src-nasa-history-aftermath"
+          ]
+        },
+        {
+          "claim": "Due to internal pressure the inner hatch could not be opened before rupture.",
+          "status": "verified",
+          "source": "Board report, Finding 4: \"Due to internal pressure, the Command Module inner hatch could not be opened prior to rupture of the Command Module.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        },
+        {
+          "claim": "Ed White, as Senior Pilot, was responsible for opening the hatch in an emergency.",
+          "status": "verified",
+          "source": "Board report, Part V: \"Emergency procedures called for the Senior Pilot, occupying the center couch, to unlatch and remove the hatch\". NASA crew biographies: \"Ed White was selected as Senior Pilot for the first Apollo flight.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation",
+            "src-nasa-apollo1-crew-bios"
+          ]
+        },
+        {
+          "claim": "The Senior Pilot's harness buckle was found unopened, indicating that he had begun the standard hatch-opening procedure.",
+          "status": "verified",
+          "source": "Board report, Part V: \"The Senior Pilot's harness buckle was found unopened after the fire indicating that he initiated the standard hatch opening procedure.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+          "source_ids": [
+            "src-nasa-board-investigation"
+          ]
+        }
       ]
     },
     {
@@ -164,8 +309,8 @@
       "eyebrow": "THE INVESTIGATION",
       "when": "1967 REVIEW",
       "title": "The spark was never conclusively identified.",
-      "dek": "Investigators found probable evidence of electrical arcing, but the final ignition source remained unproven.",
-      "detail": "The Apollo 204 Review Board identified an electrical arc in or near the probable origin area as the most likely initiator. Fire damage destroyed crucial physical evidence; it did not conclusively establish one wire or arc as the ignition source. The Board nevertheless documented vulnerable wiring, combustible materials, the hazardous oxygen environment and inadequate egress provisions.",
+      "dek": "The Board determined that the most probable initiator was an electrical arc, and also found that no single ignition source was conclusively identified.",
+      "detail": "The Apollo 204 Review Board determined that the most probable initiator of the fire was an electrical arc in the sector between the -Y and +Z spacecraft axes. It also found that no single ignition source was conclusively identified. The Board documented the extremely hazardous test conditions and the severe fire hazard of combustibles in that atmosphere, and determined that the crew was never capable of effecting emergency egress.",
       "caution": "Probable is not proven. This experience deliberately keeps the uncertainty visible.",
       "kind": "EVIDENCE BOUNDARY",
       "image": {
@@ -175,9 +320,18 @@
         "nasa_id": "S67-21294",
         "src": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
         "variants": [
-          {"url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~small.jpg", "w": 640},
-          {"url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~medium.jpg", "w": 1280},
-          {"url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg", "w": 1920}
+          {
+            "url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~small.jpg",
+            "w": 640
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~medium.jpg",
+            "w": 1280
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+            "w": 1920
+          }
         ],
         "width": 1920,
         "height": 1297,
@@ -190,8 +344,33 @@
       },
       "report": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
       "crosswalk": [
-        {"claim": "The Board's search for the specific initiator was unsuccessful.", "status": "verified", "source": "Board report: 'A great deal of effort has been expended in an attempt to find this specific initiator. Although unsuccessful in this search...'"},
-        {"claim": "An electrical arc was the most likely initiator.", "status": "partial", "source": "Board text found: arcing considered as a possible cause of transients; electrostatic discharge, spontaneous combustion, mechanical heat and impact heat 'eliminated as reasonable possibilities'. The exact 'most probable' arc sentence was not located in the extracted text; confirm wording."}
+        {
+          "claim": "The Board determined that the most probable initiator was an electrical arc in the sector between the -Y and +Z spacecraft axes.",
+          "status": "verified",
+          "source": "Board report, Finding 1, Determination: \"The most probable initiator was an electrical arc in the sector between -Y and +Z spacecraft axes.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        },
+        {
+          "claim": "No single ignition source of the fire was conclusively identified.",
+          "status": "verified",
+          "source": "Board report, Finding 1: \"No single ignition source of the fire was conclusively identified.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        },
+        {
+          "claim": "The crew was never capable of effecting emergency egress.",
+          "status": "verified",
+          "source": "Board report, Finding 4, Determination: \"The crew was never capable of effecting emergency egress because of the pressurization before rupture and their loss of consciousness soon after rupture.\"",
+          "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+          "source_ids": [
+            "src-nasa-board-findings"
+          ]
+        }
       ]
     },
     {
@@ -199,8 +378,8 @@
       "eyebrow": "THE RESPONSE",
       "when": "1967–1968",
       "title": "Inward became outward.",
-      "dek": "The redesigned Block II hatch could be opened outward quickly; the safety overhaul extended far beyond the hatch.",
-      "detail": "NASA replaced the complex inward-opening hatch with an outward-opening, quick-release assembly. It also changed materials, wiring protection, rescue preparation and safety review. The Apollo investigation article notes 102 deliberate ignition tests of Command Module boilerplate 1224 from December 1967 through February 1968—an example of testing how fire would actually spread rather than assuming it could always be prevented.",
+      "dek": "NASA replaced the inward-opening hatch with a unified hatch that opened outward, from inside or outside, in three seconds.",
+      "detail": "NASA's history of the accident describes a new unified, outward-opening hatch that could be opened from inside or outside the spacecraft in three seconds. NASA's history of the flammability tests records 102 deliberate ignitions of Command Module Boilerplate 1224 between December 1967 and February 1968, in three series of tests. Our reading: these tests show NASA examining how fire would actually behave rather than assuming it could always be prevented.",
       "caution": "The improvements were part of a broad redesign; Apollo 1 did not create every safety innovation from nothing.",
       "kind": "ENGINEERING RESPONSE",
       "image": {
@@ -210,9 +389,18 @@
         "nasa_id": "KSC-20170124-PH_KLS01_0090",
         "src": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
         "variants": [
-          {"url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~small.jpg", "w": 426},
-          {"url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~medium.jpg", "w": 853},
-          {"url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg", "w": 1280}
+          {
+            "url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~small.jpg",
+            "w": 426
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~medium.jpg",
+            "w": 853
+          },
+          {
+            "url": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+            "w": 1280
+          }
         ],
         "width": 1280,
         "height": 1920,
@@ -225,8 +413,24 @@
       },
       "report": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
       "crosswalk": [
-        {"claim": "NASA redesigned the hatch to open outward quickly.", "status": "partial", "source": "Exhibit text in NASA image KSC-20170124-PH_KLS01_0090 (Block II designed to open in 5 seconds); outward direction not located in the Board landing-page text."},
-        {"claim": "102 deliberate ignition tests of boilerplate 1224, Dec 1967 to Feb 1968.", "status": "article-only", "source": "Final Vestige article; not re-checked in Sprint 5."}
+        {
+          "claim": "NASA replaced the inward-opening hatch with a unified hatch that opened outward and could be opened from inside or outside in three seconds.",
+          "status": "verified",
+          "source": "NASA History (2022): \"a unified hatch that could be opened from inside or outside the spacecraft in three seconds\"; the astronauts cited \"the new outward-opening unified hatch\". Exhibit text photographed at Kennedy Space Center gives 5 seconds for the Block II hatch; this page uses NASA's article.",
+          "url": "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+          "source_ids": [
+            "src-nasa-history-aftermath"
+          ]
+        },
+        {
+          "claim": "102 deliberate ignitions of Boilerplate 1224 between December 1967 and February 1968.",
+          "status": "verified",
+          "source": "NASA History (2018): \"three series of tests comprising 102 deliberate ignitions between December 1967 and February 1968\".",
+          "url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+          "source_ids": [
+            "src-nasa-history-flammability"
+          ]
+        }
       ]
     }
   ],
@@ -235,14 +439,87 @@
     "title": "The recorded markers",
     "origin_label": "First verbal fire report began 23:31:04.7 GMT",
     "unit": "seconds after the first verbal fire report",
-    "range": [0, 15],
+    "range": [
+      0,
+      15
+    ],
     "notice": "Only these four markers are documented in the Board account. The spaces between them are not sensor measurements and nothing is interpolated.",
     "source_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
     "markers": [
-      {"id": "report", "t": 0, "clock": "23:31:04.7 GMT", "precision": "stated", "label": "First verbal report of fire", "note": "The crew gave the first verbal indication of an emergency."},
-      {"id": "pressure-rise", "t": 6, "clock": "about 23:31:11 GMT", "precision": "approximate", "label": "First indication of a cabin pressure increase", "note": "About 6 seconds after the report, per the Board account."},
-      {"id": "range-exceeded", "t": 11.3, "clock": "by 23:31:16 GMT", "precision": "approximate", "label": "Pressure exceeded the sensors' range", "note": "The cabin transducer range was 17 psia; the battery compartment transducer range was 21 psia."},
-      {"id": "rupture", "t": 14.7, "clock": "about 23:31:19 GMT", "precision": "approximate", "label": "Command Module pressure vessel ruptured", "note": "At a pressure of at least 29 psia. The Board gives both 'about 23:31:19' and 23:31:19.4."}
+      {
+        "id": "report",
+        "t": 0,
+        "clock": "23:31:04.7 GMT",
+        "precision": "stated",
+        "label": "First verbal report of fire",
+        "note": "The crew gave the first verbal indication of an emergency."
+      },
+      {
+        "id": "pressure-rise",
+        "t": 6,
+        "clock": "about 23:31:11 GMT",
+        "precision": "approximate",
+        "label": "First indication of a cabin pressure increase",
+        "note": "About 6 seconds after the report, per the Board account."
+      },
+      {
+        "id": "range-exceeded",
+        "t": 11.3,
+        "clock": "by 23:31:16 GMT",
+        "precision": "approximate",
+        "label": "Pressure exceeded the sensors' range",
+        "note": "The cabin transducer range was 17 psia; the battery compartment transducer range was 21 psia."
+      },
+      {
+        "id": "rupture",
+        "t": 14.7,
+        "clock": "about 23:31:19 GMT",
+        "precision": "approximate",
+        "label": "Command Module pressure vessel ruptured",
+        "note": "At a pressure of at least 29 psia. The Board gives both 'about 23:31:19' and 23:31:19.4."
+      }
     ]
-  }
+  },
+  "claim_sources": [
+    {
+      "id": "src-nasa-board-findings",
+      "kind": "institutional_report",
+      "title": "Apollo 204 Review Board: Findings, Determinations and Recommendations",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-board-investigation",
+      "kind": "institutional_report",
+      "title": "Apollo 204 Review Board: Investigation and Analysis (Part V)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-history-aftermath",
+      "kind": "published_article",
+      "title": "55 Years Ago: The Apollo 1 Fire and its Aftermath (NASA History, 3 February 2022)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-apollo1-crew-bios",
+      "kind": "published_article",
+      "title": "Detailed Biographies of the Apollo 1 Crew (NASA History Office)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/detailed-biographies-of-the-apollo-1-crew/",
+      "retrieved_on": "2026-11-03"
+    },
+    {
+      "id": "src-nasa-history-flammability",
+      "kind": "published_article",
+      "title": "50 Years Ago: Apollo Flammability Tests (NASA History, 14 February 2018)",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-flammability-tests/",
+      "retrieved_on": "2026-11-03"
+    }
+  ]
 }
