@@ -1,0 +1,107 @@
+name: Preparedness R87 Rank Ambiguity and Claim Scope (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r86-full-slate-citation-bridge-hold-20261102
+    paths:
+      - preparedness/tools/r87_rank_ambiguity_claim_scope_gate.py
+      - preparedness/tests/test_r87_rank_ambiguity_claim_scope_gate.py
+      - preparedness/docs/R87_RANK_AMBIGUITY_CLAIM_SCOPE_HOLD.md
+      - .github/workflows/preparedness-r87-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r87-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  review-only-citation-rank-triage:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assert immutable R86 base and exactly four ADD-only files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "3796b8eca20b56bb49ac880f1dc848194de243bc"
+          test "$BASE_REF" = "review/preparedness-r86-full-slate-citation-bridge-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r87-rank-ambiguity-evidence-hold-20261102"
+          git diff --name-status -z "$BASE_SHA" HEAD > "$RUNNER_TEMP/r87-scope"
+          python -I - <<'PY'
+          from pathlib import Path
+          import os
+          rows=(Path(os.environ["RUNNER_TEMP"])/"r87-scope").read_bytes().split(b"\0")
+          files=[(rows[i].decode(),rows[i+1].decode()) for i in range(0,len(rows)-1,2)]
+          expected={
+            "preparedness/tools/r87_rank_ambiguity_claim_scope_gate.py",
+            "preparedness/tests/test_r87_rank_ambiguity_claim_scope_gate.py",
+            "preparedness/docs/R87_RANK_AMBIGUITY_CLAIM_SCOPE_HOLD.md",
+            ".github/workflows/preparedness-r87-private-tests.yml"}
+          assert len(files)==4 and {path for _,path in files}==expected,files
+          assert all(mode=="A" for mode,path in files),files
+          print("R87 isolated additions only, original preparedness and public pages untouched")
+          PY
+      - name: Compile new module and 72 tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in ("preparedness/tools/r87_rank_ambiguity_claim_scope_gate.py",
+                       "preparedness/tests/test_r87_rank_ambiguity_claim_scope_gate.py"):
+              compile(Path(path).read_text(encoding="utf-8"),path,"exec")
+          print("Python source compiles")
+          PY
+      - name: Synthetic adverse mutations, provenance and rank ambiguity
+        run: python -I -m unittest discover -s preparedness/tests -p test_r87_rank_ambiguity_claim_scope_gate.py -v
+      - name: Reconfirm exact seven contributor refs and original RC
+        run: |
+          set -euo pipefail
+          for pair in \
+            'claude/prep-start-bbfeb8 2122d856fce9f64887c16df3d52e64be9f59a55b' \
+            'claude/prep-shelter-5e1e0e 5daeaf2dd5ab71806a6b73c91edfb1d8df5da976' \
+            'claude/prep-food-ccdc55 f911ff7a655de8d81535ea86ec3d65a49ee76648' \
+            'claude/prep-health-837444 d5ef5bafd68361434dd1cc9209915b8e8a4eaf17' \
+            'claude/prep-hist-food-b81f19 67e116e536c7410bed30f8f3b1bb8c166f3c223d' \
+            'claude/prep-hist-home-0e0e38 7504a5f099594d635e3dd7332a33a2e1346c43a2' \
+            'claude/prep-hist-field-9db767 4e5caf812727953aa45e3bda2d382f2c67b6a09c' \
+            'integration/preparedness-release-candidate-20261101 ddb3528ba6494dada1fa1c3a142ce746e3a67706'; do
+            ref="${pair%% *}"
+            expected="${pair##* }"
+            actual="$(git rev-parse "refs/remotes/origin/$ref")"
+            test "$actual" = "$expected"
+            echo "$ref -> $actual"
+          done
+      - name: Complete lossless R87 private source/citation triage
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r87_rank_ambiguity_claim_scope_gate.py
+          python -I preparedness/tools/r87_rank_ambiguity_claim_scope_gate.py --private-csv-stdout > "$RUNNER_TEMP/r87-private-review.csv"
+          python -I - <<'PY'
+          import csv,os
+          from pathlib import Path
+          rows=list(csv.DictReader((Path(os.environ["RUNNER_TEMP"])/"r87-private-review.csv").open(encoding="utf-8",newline="")))
+          assert all(row["human_claim_review"]=="NOT_REVIEWED" and row["may_publish"]=="FALSE" for row in rows)
+          print("PRIVATE review queue only:",len(rows))
+          PY
+          rm -f "$RUNNER_TEMP/r87-private-review.csv"
+      - name: Native Preparedness validator and offline WP-ready DRAFT build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete Preparedness Python test suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Remind release HOLD even when diagnostics pass
+        if: always()
+        run: |
+          echo "Diagnostic only: no mandatory release integrity PASS, no QD PASS, no CMS write."
+          echo "Unreviewed preparedness advice is NOT medically or otherwise safety-approved."
+          echo "DO NOT publish, merge, deploy, or change WordPress/navigation."
