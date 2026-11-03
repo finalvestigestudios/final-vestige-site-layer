@@ -329,8 +329,7 @@ def excel_safe(value):
     stripped = value.lstrip(" \t\r\n\ufeff\u200b\u2060\u200e\u200f")
     return "'" + value if (stripped.startswith(("=", "+", "-", "@"))
            or (value and ord(value[0]) < 32)
-           or value.startswith(("\ufeff", "\u200b", "\u2060", "\u200e", "\u200f")))
-           else value
+           or value.startswith(("\ufeff", "\u200b", "\u2060", "\u200e", "\u200f"))) else value
 
 
 def live():
