@@ -1,0 +1,62 @@
+name: EX2 anonymous hosted homepage read-only admission
+
+on:
+  pull_request:
+    paths:
+      - 'experience2/home-flagship/qa/release-candidate/probe_hosted_page6.py'
+      - 'experience2/home-flagship/qa/release-candidate/test_probe_hosted_page6.py'
+      - 'experience2/home-flagship/qa/release-candidate/HOSTED_ANONYMOUS_PAGE6_ADMISSION.md'
+      - '.github/workflows/ex2-anonymous-homepage-readonly.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact checkout and run 13 offline adversarial tests
+        run: |
+          git rev-parse HEAD
+          cd experience2/home-flagship/qa/release-candidate
+          python -m py_compile probe_hosted_page6.py test_probe_hosted_page6.py
+          python -m unittest -v test_probe_hosted_page6.py
+
+  anonymous-hosted:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated Chromium browser only
+        run: |
+          python -m pip install 'playwright==1.56.0'
+          python -m playwright install --with-deps chromium
+      - name: Exact HEAD and anonymous GET-only six-case hosted observation
+        run: |
+          git rev-parse HEAD
+          python experience2/home-flagship/qa/release-candidate/probe_hosted_page6.py \
+            --output HOSTED_PAGE6_ANONYMOUS_AUDIT.json
+      - name: Upload allowlisted receipt only, including on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ex2-hosted-public-page6-readonly-HOLD
+          if-no-files-found: ignore
+          retention-days: 7
+          path: HOSTED_PAGE6_ANONYMOUS_AUDIT.json
