@@ -16,7 +16,8 @@ jobs:
   source-tests:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
       - name: Verify mandatory two-mode CI source gate (R57)
         run: python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml
       - name: Run full normal and optimized source suite (R57)
@@ -24,14 +25,14 @@ jobs:
           mkdir -p "$RUNNER_TEMP/fvs-source"
           python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"
       - name: Upload internal source-only evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: final-vestige-desktop-source-only
           path: ${{ runner.temp }}/fvs-source/offline-source-suite.json
   windows-build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Verify mandatory two-mode CI source gate (R57)
         run: python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml
       - name: Verify full source suite before packaging (R57)
@@ -44,6 +45,11 @@ jobs:
         shell: pwsh
         run: |
           python -I -m PyInstaller --noconfirm --onefile Example.py
+      - name: Upload Windows evidence only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: final-vestige-desktop-windows-internal
+          path: dist/SHA256SUMS.txt
 '''
 
 
