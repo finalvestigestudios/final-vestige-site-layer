@@ -71,9 +71,14 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
         # those hooks when copying a subclass. Calling the built-in dict.items
         # descriptor instead exposes real underlying storage and creates an
         # ordinary dict before source validation and candidate matching.
+        # Check native stored field names before copying. Subclassed str keys
+        # may redefine equality/hash and masquerade as another audit field.
+        # Built-in dict.keys avoids consulting a caller's override.
+        if any(type(name) is not str for name in dict.keys(record)):
+            raise ValueError("Invoice source field names must be plain text")
         record = dict(dict.items(record))
         source_row = record.get("row")
-        if (not isinstance(source_row, str)
+        if (type(source_row) is not str
                 or _PHYSICAL_ROW.fullmatch(source_row) is None
                 or int(source_row) < 2):
             raise ValueError("Invoice source requires a canonical physical CSV row")
@@ -83,13 +88,16 @@ def _validated_records(records: Iterable[dict[str, Any]]) -> Iterable[dict[str, 
         if type(record.get("dt")) is not date:
             raise ValueError("Candidate date must be a parsed calendar date")
         amount = record.get("amt")
-        if not isinstance(amount, Decimal) or not amount.is_finite():
+        if type(amount) is not Decimal or not amount.is_finite():
             raise ValueError("Invoice amount must be a finite exact Decimal")
         _validate_amount_envelope(amount)
         for field in ("v", "inv"):
             key = record.get(field)
-            if not isinstance(key, str) or _NORMALIZED_KEY.fullmatch(key) is None:
+            if type(key) is not str or _NORMALIZED_KEY.fullmatch(key) is None:
                 raise ValueError("Invoice vendor and invoice keys must be normalized ASCII")
+        # Exact built-in row/key/amount types are important here: str and
+        # Decimal subclasses can redefine hash/equality, forging candidate
+        # groups even when regex and numerical envelope checks pass.
         # The validated owned record is the actual matching evidence. Do
         # not re-copy the caller's object after validation; the caller may
         # reuse a mapping, or its .get() method may misrepresent stored data.
