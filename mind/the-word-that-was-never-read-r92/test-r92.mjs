@@ -22,7 +22,7 @@ test("A and B share identical substantive HTML",()=>{assert.match(B,figure);asse
 test("A has no optional video figure, B exactly one",()=>{assert.doesNotMatch(A,figure);assert.equal((B.match(/data-fv-optional-film=/g)||[]).length,1)});
 test("B has accessible text-first headings",()=>{assert.ok(B.indexOf("<h1 ")<B.indexOf("<figure "));assert.match(B,/role="img" aria-labelledby=/)});
 test("B transcript includes all six timed scenes",()=>{for(const time of ["00–06s","06–12s","12–19s","19–26s","26–33s","33–40s"])assert.ok(B.includes(time))});
-test("no unreachable, fake, autoplaying, external video element",()=>{for(const p of publicPages){assert.doesNotMatch(p,/<video\b|autoplay|player\.vimeo|youtube\.com\/embed/i)}});
+test("no unreachable, fake, autoplaying, external video element",()=>{for(const p of publicPages){assert.doesNotMatch(p,/<video\b|<iframe\b|<[^>]+\sautoplay(?:\s|=|>)|src=["\x27]https?:\/\/(?:player\.vimeo|youtube\.com\/embed)/i)}});
 test("no merchant destination in any public candidate",()=>{for(const p of publicPages)assert.doesNotMatch(p,vendorHref)});
 test("near-CTA affiliate disclosure within same aside",()=>{for(const p of [A,B]){const m=p.match(/<aside class="checkout"[\s\S]*?<\/aside>/);assert.ok(m);assert.match(m[0],/may earn a commission at no additional cost/);assert.match(m[0],/<button[^>]*\sdisabled\s/) }});
 test("purchase controls are native disabled buttons not aria-only",()=>{for(const p of [A,B])assert.match(p,/<button type="button" disabled/)});
