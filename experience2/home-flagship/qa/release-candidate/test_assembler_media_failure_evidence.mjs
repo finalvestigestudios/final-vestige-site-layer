@@ -5,7 +5,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {imageBodies} from './playground_assembler_render_gate.mjs';
+import {imageBodies,renderedScriptNames,assertRenderedScriptNames,collectViewportEvidence}
+  from './playground_assembler_render_gate.mjs';
 
 const APOLLO='https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp';
 const FRANKLIN='https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg';
@@ -101,4 +102,72 @@ test('saved-style screenshots precede ALL layout assertions and axe',()=>{
   assert.ok(code.includes("runBounded(document)"));
   assert.ok(code.includes("width===1440?await imageBodies(page):[]"));
   assert.ok(!code.includes("page.addStyleTag("),'No browser-only style overlay permitted');
+});
+
+
+test('document-level source custody: four Gutenberg sibling scripts survive root closure',()=>{
+  const names=['flagship.js','observer-lab.js','chronicle-lens.js','reading-trail.js'];
+  const doc={querySelectorAll(selector){
+    assert.equal(selector,'script[data-fv-source]');
+    return names.map(name=>({getAttribute(attr){
+      assert.equal(attr,'data-fv-source');return name;
+    }}));
+  }};
+  // Document returns all four; a scoped flagship root would return zero.
+  const root={querySelectorAll:()=>[]};
+  assert.equal(root.querySelectorAll('script[data-fv-source]').length,0);
+  assert.deepEqual(renderedScriptNames(doc),names);
+  assert.doesNotThrow(()=>assertRenderedScriptNames(renderedScriptNames(doc)));
+});
+
+test('missing, duplicate, reordered or substituted inline JS fails closed',()=>{
+  const good=['flagship.js','observer-lab.js','chronicle-lens.js','reading-trail.js'];
+  const bad=[[],good.slice(0,3),[...good,'extra.js'],
+    [good[0],good[0],...good.slice(2)],
+    [good[1],good[0],...good.slice(2)],
+    [good[0],'unsafe-thirdparty.js',...good.slice(2)]];
+  for(const names of bad)
+    assert.throws(()=>assertRenderedScriptNames(names),/Missing, duplicated, reordered or unauthorized/);
+});
+
+test('actual browser implementation inspects DOM at document level, not root',()=>{
+  const code=readFileSync(new URL('./playground_assembler_render_gate.mjs',import.meta.url),'utf8');
+  assert.match(code,/documentScope\.querySelectorAll\('script\[data-fv-source\]'\)/);
+  assert.match(code,/page\.evaluate\(renderedScriptNames\)/);
+  assert.match(code,/assertRenderedScriptNames\(sourceScripts\)/);
+  assert.doesNotMatch(code,/root\.querySelectorAll\('script\[data-fv-source\]'\)/);
+  assert.match(code,/EX2_RENDERED_SCRIPT_CUSTODY/);
+});
+
+
+test('real viewport errors do not prevent later screenshots or falsely pass matrix',async()=>{
+  const called=[];
+  const result=await collectViewportEvidence([320,390,768,1440,1920],async width=>{
+    called.push(width);
+    if(width===768)throw new Error('serious whole-document axe list violation');
+    if(width===1440)throw new Error('real archival image HTTP/decode failure');
+    return {width,axe_violations:0};
+  });
+  assert.deepEqual(called,[320,390,768,1440,1920]);
+  assert.deepEqual(result.completed.map(x=>x.width),[320,390,1920]);
+  assert.deepEqual(result.failures.map(x=>x.width),[768,1440]);
+  assert.match(result.failures[0].reason,/axe list/);
+  assert.match(result.failures[1].reason,/image/);
+});
+
+test('viewport matrix collector reports success only with no failures',async()=>{
+  const widths=[320,390,768,1440,1920];
+  const {completed,failures}=await collectViewportEvidence(widths,async width=>({width}));
+  assert.equal(failures.length,0);
+  assert.deepEqual(completed.map(x=>x.width),widths);
+});
+
+test('the complete real browser gate remains fail closed on aggregated axe/media failures',()=>{
+  const code=readFileSync(new URL('./playground_assembler_render_gate.mjs',import.meta.url),'utf8');
+  assert.match(code,/await collectViewportEvidence\(/);
+  assert.match(code,/throw new Error\('ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD '/);
+  assert.match(code,/if\(viewportFailures\.length\)/);
+  assert.match(code,/EX2_VIEWPORT_EVIDENCE_MATRIX/);
+  assert.match(code,/await noContext\.close\(\);[\s\S]*if\(viewportFailures\.length\)/);
+  assert.match(code,/throw new Error\(`Automated axe findings at/);
 });
