@@ -130,7 +130,10 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                 source_categories_by_display[bucket] = category
                 groups[group].append(int(record["row"]))
                 buckets[bucket].append(record["row"])
-                review_observations.append((vendor, month, bucket[2], amount, record["vendor"]))
+                # History must be keyed by ORIGINAL category text, even
+                # across different months. Two raw labels may share the same
+                # CSV-safe rendering without belonging to the same category.
+                review_observations.append((vendor, month, category, amount, record["vendor"]))
                 vendor_label_observations.append((vendor, month, bucket[2], record["vendor"]))
                 net_bucket[bucket] += amount
                 net_month[group] += amount
@@ -171,7 +174,12 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                 if charge_month[group] > 0 and credit_month[group] > 0 else ""),
         }
     # Recheck historic review flags and baseline statistics independently.
-    expected_review = compute_expected_review_fields(review_observations)
+    raw_review = compute_expected_review_fields(review_observations)
+    expected_review = {
+        bucket: raw_review[(bucket[0], bucket[1],
+                            source_categories_by_display[bucket])]
+        for bucket in buckets
+    }
     expected_labels = expected_vendor_labels(vendor_label_observations)
     try:
         decoded = report_bytes.decode("utf-8-sig")
