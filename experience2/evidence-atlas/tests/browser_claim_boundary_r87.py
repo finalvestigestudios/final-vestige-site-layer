@@ -82,6 +82,7 @@ def run(src,out,axe=None):
                                 {r[k] for r in rows for k in ('research_url','photo_url')}),'R87_PRINT_URLS'
                             assert all(''.join(r['catalog'].split()) in text for r in rows),'R87_PRINT_CATALOGS'
                             assert 'STAGINGHOLD' in text,'R87_PRINT_HOLD'
+                            assert len(doc)<=4 and len(doc[-1].get_text().strip())>550, 'R87_TRAILING_ORNAMENTAL_PRINT_PAGE'
                             case['pdf_pages']=len(doc)
                         page.emulate_media(media='print')
                         contrast=page.evaluate("""()=>({hold_fg:getComputedStyle(document.querySelector('.hold')).color,
