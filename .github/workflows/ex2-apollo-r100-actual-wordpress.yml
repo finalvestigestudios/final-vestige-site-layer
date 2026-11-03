@@ -74,7 +74,7 @@ jobs:
           wp config create --dbname=apollo_r100 --dbuser=apollo --dbpass=local-test-only --dbhost=127.0.0.1 --path="$WP_ROOT" --allow-root
           wp config set FV_APOLLO_R99_PRIVATE_PREVIEW true --raw --path="$WP_ROOT" --allow-root
           wp core install --url=http://127.0.0.1:8955/ --title='Temporary Apollo R100 QA Only' --admin_user=apollo_admin --admin_password='ephemeral-Apollo-test-2026' --admin_email=qa@localhost.invalid --skip-email --path="$WP_ROOT" --allow-root
-          wp user create apollo_subscriber sub@localhost.invalid --role=subscriber --user_pass='ephemeral-subscriber-2026' --skip-email --path="$WP_ROOT" --allow-root
+          wp user create apollo_subscriber sub@localhost.invalid --role=subscriber --user_pass='ephemeral-subscriber-2026' --path="$WP_ROOT" --allow-root
           mkdir -p "$WP_ROOT/wp-content/plugins/fv-apollo-r99-private-preview"
           cp -a "$RUNNER_TEMP/r100-package-one/." "$WP_ROOT/wp-content/plugins/fv-apollo-r99-private-preview/"
           wp plugin activate fv-apollo-r99-private-preview --path="$WP_ROOT" --allow-root
