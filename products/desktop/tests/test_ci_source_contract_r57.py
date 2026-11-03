@@ -33,6 +33,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
       - name: Verify mandatory two-mode CI source gate (R57)
         run: python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml
       - name: Verify full source suite before packaging (R57)
