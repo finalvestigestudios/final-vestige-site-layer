@@ -66,6 +66,7 @@ def page(records):
 <dt>Exact NASA link</dt><dd class="raw-url">{e(r['url'])}</dd></dl></details>
 <div class="actions"><a class="source" href="{e(r['url'])}" target="_blank" rel="noopener noreferrer">NASA source {e(r['id'])} ↗</a>
 <a class="rail-link" href="R87_PHOTOGRAPH_DATE_RAIL.html#r87-record-{e(r['id'])}">Find in photograph-date rail</a></div>
+<p class="print-url"><strong>Official NASA source:</strong> {e(r['url'])} · <strong>Photo-specific rights:</strong> INDIVIDUAL REVIEW REQUIRED</p>
 <label class="compare-choice" hidden><input type="checkbox" value="{e(r['id'])}"> Select for side-by-side source comparison</label>
 </article>''')
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
