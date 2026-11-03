@@ -1,0 +1,482 @@
+{
+  "milestone": 85,
+  "date": "2026-11-02",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "product": "Zen12",
+  "source_scope": "public merchant pages, FTC, scholarly references, authenticated WP read-only",
+  "source_links": [
+    {
+      "id": "s1",
+      "label": "Stroop 1935, original text",
+      "url": "https://psychclassics.yorku.ca/Stroop/",
+      "access": "primary accessible"
+    },
+    {
+      "id": "s2",
+      "label": "Stroop 1935 publisher",
+      "url": "https://doi.org/10.1037/h0054651",
+      "access": "abstract accessible"
+    },
+    {
+      "id": "s3",
+      "label": "MacLeod 1991 review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2034749/",
+      "access": "citation accessible"
+    },
+    {
+      "id": "s4",
+      "label": "Raturi et al. 2024 review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38874567/",
+      "access": "abstract accessible; full text not independently audited"
+    },
+    {
+      "id": "s5",
+      "label": "Ingendoh et al. 2023 review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "access": "accessible abstract"
+    },
+    {
+      "id": "s6",
+      "label": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "access": "merchant live 2026-11-02"
+    },
+    {
+      "id": "s7",
+      "label": "Zen12 precise offer",
+      "url": "https://zen12.com/hnp",
+      "access": "merchant live 2026-11-02"
+    },
+    {
+      "id": "s8",
+      "label": "Zen12 about",
+      "url": "https://zen12.com/about",
+      "access": "merchant live 2026-11-02"
+    },
+    {
+      "id": "s9",
+      "label": "Zen12 research",
+      "url": "https://zen12.com/research",
+      "access": "merchant live 2026-11-02"
+    },
+    {
+      "id": "s10",
+      "label": "Zen12 checkout",
+      "url": "https://zen12.com/getstarted",
+      "access": "merchant live 2026-11-02; no order placed"
+    },
+    {
+      "id": "s11",
+      "label": "Inspire3 privacy",
+      "url": "https://inspire3.com/privacy/",
+      "access": "merchant live 2026-11-02"
+    },
+    {
+      "id": "s12",
+      "label": "Inspire3 terms",
+      "url": "https://inspire3.com/terms/",
+      "access": "inaccessible; not verified"
+    },
+    {
+      "id": "s13",
+      "label": "Inspire3 affiliate public portal",
+      "url": "https://affiliates.inspire3.com/",
+      "access": "recruitment only; no account approval"
+    },
+    {
+      "id": "s14",
+      "label": "FTC endorsement staff guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "access": "official guidance"
+    },
+    {
+      "id": "s15",
+      "label": "FTC health compliance guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "access": "official guidance"
+    },
+    {
+      "id": "s16",
+      "label": "Puységur existing live page",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "access": "WordPress authenticated read-only verified page #1377"
+    },
+    {
+      "id": "s17",
+      "label": "Focus existing live page",
+      "url": "https://finalvestige.com/focus/",
+      "access": "WordPress authenticated read-only verified page #1579"
+    },
+    {
+      "id": "s18",
+      "label": "Final Vestige editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "access": "site known; current page not re-inspected"
+    },
+    {
+      "id": "s19",
+      "label": "Final Vestige affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "access": "site known; current page not re-inspected"
+    }
+  ],
+  "claims": [
+    {
+      "id": "stroop_time",
+      "claim": "100 ink-name response comparison difference 47 sec and ~74%",
+      "type": "independent-primary",
+      "status": "supported in specific historical setting",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "decision": "publish context-qualified"
+    },
+    {
+      "id": "stroop_reverse",
+      "claim": "incongruent ink slows reading words only 2.3 sec, not reliable",
+      "type": "independent-primary",
+      "status": "supported",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "decision": "publish context-qualified"
+    },
+    {
+      "id": "stroop_practice",
+      "claim": "practice reduced but did not eliminate interference",
+      "type": "independent-primary",
+      "status": "supported",
+      "sources": [
+        "s1"
+      ],
+      "decision": "publish context-qualified"
+    },
+    {
+      "id": "suggestion_19",
+      "claim": "2024 review covered 19 studies",
+      "type": "independent-review",
+      "status": "supported from abstract",
+      "sources": [
+        "s4"
+      ],
+      "decision": "publish with population and outcome limits"
+    },
+    {
+      "id": "suggestion_14",
+      "claim": "2024 meta-analysis 14 studies of Stroop interference",
+      "type": "independent-review",
+      "status": "supported from abstract",
+      "sources": [
+        "s4"
+      ],
+      "decision": "publish with limits"
+    },
+    {
+      "id": "suggestion_product",
+      "claim": "suggestion studies verify Zen12 effectiveness",
+      "type": "product-efficacy",
+      "status": "unsupported",
+      "sources": [
+        "s4",
+        "s7"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "zen12_dur",
+      "claim": "12-minute sessions",
+      "type": "merchant-feature",
+      "status": "seller-described",
+      "sources": [
+        "s7",
+        "s8"
+      ],
+      "decision": "attribute to seller"
+    },
+    {
+      "id": "zen12_lvls",
+      "claim": "12 levels",
+      "type": "merchant-feature",
+      "status": "seller-described",
+      "sources": [
+        "s7"
+      ],
+      "decision": "attribute to seller"
+    },
+    {
+      "id": "zen12_choices",
+      "claim": "four listening options per level",
+      "type": "merchant-feature",
+      "status": "seller-described",
+      "sources": [
+        "s7",
+        "s8"
+      ],
+      "decision": "attribute to seller"
+    },
+    {
+      "id": "zen12_prem",
+      "claim": "Premium 48 MP3 files",
+      "type": "merchant-package",
+      "status": "seller-described",
+      "sources": [
+        "s7",
+        "s10"
+      ],
+      "decision": "attribute to seller; verify checkout"
+    },
+    {
+      "id": "zen12_begin",
+      "claim": "Beginner 24 MP3 first six levels",
+      "type": "merchant-package",
+      "status": "seller-described",
+      "sources": [
+        "s7"
+      ],
+      "decision": "attribute to seller"
+    },
+    {
+      "id": "zen12_adv",
+      "claim": "Advanced 24 MP3 last six levels",
+      "type": "merchant-package",
+      "status": "seller-described",
+      "sources": [
+        "s7"
+      ],
+      "decision": "attribute to seller"
+    },
+    {
+      "id": "zen12_extra",
+      "claim": "support and bonuses included as described",
+      "type": "merchant-package",
+      "status": "seller-described",
+      "sources": [
+        "s7"
+      ],
+      "decision": "attribute; no guarantee of delivery"
+    },
+    {
+      "id": "hour_eq",
+      "claim": "12 minutes has benefits equivalent to 1 hour advanced meditation",
+      "type": "product-efficacy",
+      "status": "not independently substantiated",
+      "sources": [
+        "s7",
+        "s5"
+      ],
+      "decision": "OMIT as adopted claim; mention only for critical evaluation"
+    },
+    {
+      "id": "auto_meditate",
+      "claim": "audio meditates for you automatically",
+      "type": "product-efficacy",
+      "status": "seller assertion not independently substantiated",
+      "sources": [
+        "s7",
+        "s9"
+      ],
+      "decision": "OMIT as adopted claim"
+    },
+    {
+      "id": "health_effect",
+      "claim": "Zen12 cures anxiety or guarantees medical benefits",
+      "type": "health-efficacy",
+      "status": "unsupported",
+      "sources": [
+        "s7",
+        "s15"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "brainwaves",
+      "claim": "specific Zen12 sound demonstrably entrains listener EEG",
+      "type": "product-efficacy",
+      "status": "no named product trial found",
+      "sources": [
+        "s5",
+        "s7"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "review_mixed",
+      "claim": "2023 binaural review conflicting EEG evidence",
+      "type": "independent-review",
+      "status": "supported; not product-specific",
+      "sources": [
+        "s5"
+      ],
+      "decision": "publish with qualifying language"
+    },
+    {
+      "id": "buyer_sms",
+      "claim": "provided mobile number may lead to marketing SMS",
+      "type": "policy",
+      "status": "seller privacy policy states possibility",
+      "sources": [
+        "s11"
+      ],
+      "decision": "publish precise caveat"
+    },
+    {
+      "id": "buyer_sharing",
+      "claim": "name email and purchased item may be shared with affiliate",
+      "type": "policy",
+      "status": "seller privacy policy states possibility",
+      "sources": [
+        "s11"
+      ],
+      "decision": "publish cautious caveat"
+    },
+    {
+      "id": "buyer_cart",
+      "claim": "Zen12 checkout requests name email mobile post code payment fields",
+      "type": "checkout",
+      "status": "observed public checkout",
+      "sources": [
+        "s10"
+      ],
+      "decision": "publish snapshot caveat"
+    },
+    {
+      "id": "one_year",
+      "claim": "one year refund advertised",
+      "type": "merchant-policy",
+      "status": "seller sales-page promise; details unverified",
+      "sources": [
+        "s7",
+        "s12"
+      ],
+      "decision": "attribute to seller; full terms HOLD"
+    },
+    {
+      "id": "price",
+      "claim": "current sale price or discount guaranteed",
+      "type": "transaction",
+      "status": "not stable or independently verified",
+      "sources": [
+        "s7",
+        "s10"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "earnings",
+      "claim": "final vestige approved commission rate",
+      "type": "publisher-authorization",
+      "status": "unverified",
+      "sources": [
+        "s13"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "affiliate_rights",
+      "claim": "Final Vestige approved for product, website, TikTok and email",
+      "type": "authorization",
+      "status": "unverified",
+      "sources": [
+        "s13"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "approved_swipe",
+      "claim": "public affiliate recruitment establishes approved creative license",
+      "type": "authorization",
+      "status": "false",
+      "sources": [
+        "s13"
+      ],
+      "decision": "HOLD"
+    },
+    {
+      "id": "linked_affiliate",
+      "claim": "verified earning URL available",
+      "type": "authorization",
+      "status": "unverified",
+      "sources": [],
+      "decision": "HOLD"
+    },
+    {
+      "id": "purchaser_pii",
+      "claim": "FV can receive individual purchaser details",
+      "type": "privacy",
+      "status": "prohibit unless explicit consent/privacy process",
+      "sources": [
+        "s11"
+      ],
+      "decision": "DO NOT ACCEPT"
+    },
+    {
+      "id": "focus_single",
+      "claim": "Focus Fieldbook is one existing funnel",
+      "type": "site",
+      "status": "verified authenticated read-only",
+      "sources": [
+        "s17"
+      ],
+      "decision": "link existing only"
+    },
+    {
+      "id": "puy_bridge",
+      "claim": "Puységur historical page is an evidence-methodology bridge",
+      "type": "editorial",
+      "status": "verified authenticated read-only",
+      "sources": [
+        "s16"
+      ],
+      "decision": "method comparison only"
+    },
+    {
+      "id": "disclosure",
+      "claim": "commission connection must be clearly disclosed near offer",
+      "type": "compliance",
+      "status": "FTC official",
+      "sources": [
+        "s14"
+      ],
+      "decision": "present near disabled future CTA"
+    },
+    {
+      "id": "medical_substantiation",
+      "claim": "health efficacy claims need reliable scientific support",
+      "type": "compliance",
+      "status": "FTC official",
+      "sources": [
+        "s15"
+      ],
+      "decision": "gate unsupported claims"
+    }
+  ],
+  "activation_gates": {
+    "publisher_affiliate_accepted": false,
+    "zen12_product_authorized": false,
+    "website_channel_authorized": false,
+    "tiktok_channel_authorized": false,
+    "email_channel_authorized": false,
+    "approved_creative_rights": false,
+    "tracking_url_verified": false,
+    "affiliate_terms_verified": false,
+    "commission_terms_verified": false,
+    "customer_data_exposure_assessed": false,
+    "full_current_merchant_terms_verified": false,
+    "refund_checkout_reviewed": false,
+    "efficacy_and_compliance_review_passed": false,
+    "first_party_video_hosted": false,
+    "captions_synced_and_tested": false,
+    "accessibility_aa_audited": false,
+    "site_qa_approved": false,
+    "founder_publish_approved": false
+  },
+  "affiliate_url": null,
+  "partner_acceptance": null,
+  "price": null,
+  "commissions": null,
+  "affiliate_swipe_approval": null,
+  "buyer_pii_collection": false,
+  "release_decision": "HOLD"
+}
