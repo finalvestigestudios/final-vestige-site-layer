@@ -1,0 +1,567 @@
+{
+  "status": "HARD_HOLD",
+  "product": "Zen12",
+  "affiliate_url": null,
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Product owned/listed by Inspire3",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S07"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C02",
+      "claim": "12-minute audio sessions advertised",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C03",
+      "claim": "12 levels advertised",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C04",
+      "claim": "4 sound options advertised",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C05",
+      "claim": "48 MP3 complete checkout",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S11"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C06",
+      "claim": "24 MP3 six-level packages separately advertised",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C07",
+      "claim": "Guaranteed one-hour equivalence",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C08",
+      "claim": "Automatic deep meditation claimed",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "S09"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C09",
+      "claim": "Mental-health benefits for Zen12",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "S10"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C10",
+      "claim": "Cognitive performance benefits for Zen12",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C11",
+      "claim": "2023 binaural beat review is a Zen12 trial",
+      "status": "FALSE",
+      "sources": [
+        "S15"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C12",
+      "claim": "2023 mechanism evidence is heterogeneous",
+      "status": "RESEARCH_SUPPORTED",
+      "sources": [
+        "S15"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C13",
+      "claim": "No headphones required per seller About",
+      "status": "SELLER_DESCRIPTION",
+      "sources": [
+        "S09"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C14",
+      "claim": "Do not use while driving",
+      "status": "SELLER_SAFETY",
+      "sources": [
+        "S09"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C15",
+      "claim": "Mobile number at checkout",
+      "status": "SELLER_CHECKOUT",
+      "sources": [
+        "S11"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C16",
+      "claim": "Countdown visible at checkout",
+      "status": "SELLER_CHECKOUT_NOT_SCARCITY_PROOF",
+      "sources": [
+        "S11"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C17",
+      "claim": "Marketing SMS possibility",
+      "status": "SELLER_PRIVACY",
+      "sources": [
+        "S12"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C18",
+      "claim": "Possible buyer personal data shared with affiliate",
+      "status": "SELLER_PRIVACY",
+      "sources": [
+        "S12"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C19",
+      "claim": "1-year refund guarantee currently described for Zen12",
+      "status": "SELLER_TERMS",
+      "sources": [
+        "S13"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C20",
+      "claim": "Card refund after 90 days handled via PayPal",
+      "status": "SELLER_TERMS",
+      "sources": [
+        "S13"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C21",
+      "claim": "Price can safely be promised for future buyers",
+      "status": "FALSE_EXCLUDE",
+      "sources": [
+        "S11"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C22",
+      "claim": "FTC disclosure near commission link",
+      "status": "GUIDANCE",
+      "sources": [
+        "S16"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C23",
+      "claim": "Health outcomes require scientific substantiation",
+      "status": "GUIDANCE",
+      "sources": [
+        "S17"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate portal public sign-up exists",
+      "status": "PUBLIC_ONLY",
+      "sources": [
+        "S14"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C25",
+      "claim": "Final Vestige affiliate acceptance verified",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S14"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C26",
+      "claim": "Authorized product tracking URL verified",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S14"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C27",
+      "claim": "Website affiliate promotion permitted",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S14"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C28",
+      "claim": "TikTok affiliate promotion permitted",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S14"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C29",
+      "claim": "Email affiliate promotion permitted",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S14"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C30",
+      "claim": "Official swipe license granted",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S13"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C31",
+      "claim": "Purchaser PII delivery contractually prohibited",
+      "status": "UNVERIFIED_MUST_PROHIBIT",
+      "sources": [
+        "S12"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C32",
+      "claim": "Doorway affects all memory in all circumstances",
+      "status": "FALSE",
+      "sources": [
+        "S02"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C33",
+      "claim": "2011 controlled tasks found location updating effect",
+      "status": "RESEARCH_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C34",
+      "claim": "2021 conceptual replication has conditional effect",
+      "status": "RESEARCH_SUPPORTED",
+      "sources": [
+        "S02"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C35",
+      "claim": "2026 VR study sampled 90 participants",
+      "status": "RESEARCH_SUPPORTED",
+      "sources": [
+        "S03"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C36",
+      "claim": "2026 word-boundary advantage is brief and localized",
+      "status": "RESEARCH_SUPPORTED",
+      "sources": [
+        "S04"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C37",
+      "claim": "Doorway study proves Zen12 effectiveness",
+      "status": "FALSE",
+      "sources": [
+        "S01"
+      ],
+      "handling": "Do not activate or claim"
+    },
+    {
+      "id": "C38",
+      "claim": "Published Puységur source bridge exists",
+      "status": "WP_VERIFIED",
+      "sources": [
+        "S18"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C39",
+      "claim": "Existing Focus Fieldbook remains one funnel",
+      "status": "WP_VERIFIED",
+      "sources": [
+        "S19"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C40",
+      "claim": "Published Change Blindness article exists",
+      "status": "WP_VERIFIED",
+      "sources": [
+        "S20"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C41",
+      "claim": "Optional film conversion uplift known",
+      "status": "UNTESTED",
+      "sources": [
+        "S16"
+      ],
+      "handling": "Use precisely with source attribution"
+    },
+    {
+      "id": "C42",
+      "claim": "Final Vestige personally used Zen12",
+      "status": "FALSE_EXCLUDE",
+      "sources": [
+        "S08"
+      ],
+      "handling": "Do not activate or claim"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "FV Inspire3 account acceptance",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "name": "Signed partner terms",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "name": "Approved website channel",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "name": "Approved TikTok channel",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "name": "Approved email channel",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "name": "Authorized Zen12 earning URL",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "name": "Tracking syntax and restrictions",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "name": "Licensed product creatives",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "name": "Buyer-PII exclusion in reporting",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "name": "No named purchaser exports",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "name": "Health claims counsel/evidence",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "name": "Refund/checkout current QA",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "name": "No false offer urgency",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "name": "FTC near-link disclosure",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "name": "Independent editorial source audit",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "name": "WordPress block sanitizer QA",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G17",
+      "name": "Screen-reader/keyboard audit",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G18",
+      "name": "WCAG 2.2 AA visual QA",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G19",
+      "name": "Mobile 360/390/768/1440/1920 checks",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G20",
+      "name": "Native Node suite on exact SHA",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G21",
+      "name": "Hosted CI green on exact SHA",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G22",
+      "name": "Optional MP4 production",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G23",
+      "name": "First-party hosting and VTT sync",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G24",
+      "name": "Performance/Core Web Vitals",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G25",
+      "name": "Privacy legal and attribution governance",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G26",
+      "name": "Valid A/B protocol, no uplift claim",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G27",
+      "name": "Site QA independent sign-off",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G28",
+      "name": "Homepage art owner sign-off",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G29",
+      "name": "Dispatch promotional alignment",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G30",
+      "name": "Explicit founder CMS publishing approval",
+      "status": "CLOSED",
+      "proof": null
+    }
+  ]
+}
