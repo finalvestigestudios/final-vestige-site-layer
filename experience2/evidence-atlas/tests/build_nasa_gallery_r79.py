@@ -34,7 +34,7 @@ RECORD_KEYS = frozenset(("id", "catalog_claim", "identity_status", "nasa_page_pi
  "credit_on_page", "nasa_page_last_updated", "evidence_scope", "limitation", "reuse_status"))
 
 def blob(data: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 def safe_nasa_url(value: str, slug: str) -> bool:
     if not isinstance(value, str):
@@ -110,7 +110,7 @@ def render_html(root: Path) -> str:
     by_id = {row["id"]: row for row in rows}
     # Chronology sorts source photographs; a month-only date cannot be asserted within January.
     order = ("03", "02", "01", "05", "04", "06")
-    rail = "\\n".join(f'<li><a href="#record-{idx}"><time>{esc(by_id[idx]["date_display"])}</time></a></li>' for idx in order)
+    rail = "\n".join(f'<li><a href="#record-{idx}"><time>{esc(by_id[idx]["date_display"])}</time></a></li>' for idx in order)
     cards = []
     for row in rows:
         idx = row["id"]
@@ -127,7 +127,7 @@ def render_html(root: Path) -> str:
             ("Image reuse", "Individual media-rights assessment NOT completed. NASA page access is not permission to claim NASA endorsement."),
             ("NASA source URL", row["nasa_url"]),
         )
-        dl = "\\n".join(f"<dt>{esc(k)}</dt><dd>{esc(v)}</dd>" for k, v in custody)
+        dl = "\n".join(f"<dt>{esc(k)}</dt><dd>{esc(v)}</dd>" for k, v in custody)
         printed = " | ".join(f"{k}: {v}" for k, v in custody)
         cards.append(f"""<article class="card{' provisional' if idx == '01' else ''}" id="record-{idx}" aria-labelledby="heading-{idx}">
 <div class="topline"><span>NASA Source {esc(idx)} / 06</span><span>{esc(status)}</span></div>
@@ -183,7 +183,7 @@ def build(root: Path, dest: Path, head: str | None = None) -> dict:
         "wordPress_installed": False, "hosted_field_cwv": False, "production_deployed": False,
         "outputs": {name: hashlib.sha256(payload).hexdigest() for name, payload in outputs.items()}
     }
-    outputs["R79_MANIFEST.json"] = (json.dumps(manifest, sort_keys=True, indent=2) + "\\n").encode()
+    outputs["R79_MANIFEST.json"] = (json.dumps(manifest, sort_keys=True, indent=2) + "\n").encode()
     dest.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(dest, "w", compression=zipfile.ZIP_STORED) as archive:
         for name, payload in sorted(outputs.items()):
