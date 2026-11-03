@@ -24,7 +24,7 @@ from .manifest_guard import _hash_regular, MAX_INPUT_BYTES, MAX_REPORT_BYTES
 from .spend_input import validated_spend_rows
 from .spend_review_verify import FIELDS as REVIEW_FIELDS, compute_expected_review_fields
 from .spend_label_verify import expected_vendor_labels
-from .spend_report_envelope import COLUMNS as NATIVE_SPEND_COLUMNS
+from .spend_report_envelope import COLUMNS as NATIVE_SPEND_COLUMNS, NativeSpendCsvDigest
 
 LIMIT = 32
 DOMAIN = b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n"
@@ -192,6 +192,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         # the canonical deterministic native export.
         expected_order = iter((vendor, month, engine.safe_cell(category))
                               for vendor, month, category in sorted(native_buckets))
+        canonical = NativeSpendCsvDigest()
         seen = set()
         for entry in reader:
             if None in entry or any(value is None for value in entry.values()):
@@ -201,6 +202,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                 raise ValueError("SpendMap report rows are not in native export order")
             if bucket in seen or bucket not in buckets:
                 raise ValueError("Duplicate or unexpected category evidence")
+            canonical.add_row(entry)
             seen.add(bucket)
             month_key = bucket[:2]
             preview, count, omitted, digest = expected[month_key]
@@ -219,6 +221,10 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                 raise ValueError("SpendMap historical review evidence does not match source")
             if entry["source_vendor_labels"] != expected_labels[bucket]:
                 raise ValueError("SpendMap visible vendor evidence does not match source")
+        # Parsed-cell checks can miss blank rows, BOM changes and re-quoting.
+        # Require exact canonical native bytes (length + SHA256) as well.
+        if not canonical.matches(report_bytes):
+            raise ValueError("Noncanonical native SpendMap report bytes")
     except (UnicodeError, csv.Error, OverflowError) as exc:
         raise ValueError("Malformed local SpendMap evidence") from None
     if seen != set(buckets):
