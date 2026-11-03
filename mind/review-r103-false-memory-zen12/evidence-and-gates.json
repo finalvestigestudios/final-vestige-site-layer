@@ -74,6 +74,11 @@
       "url": "https://inspire3.com/affiliates/",
       "type": "merchant_program",
       "checked": "UNVERIFIED; do not rely"
+    },
+    "seller_terms": {
+      "url": "https://inspire3.com/terms/",
+      "type": "seller_terms",
+      "checked": "2026-11-03"
     }
   },
   "claims": [
@@ -257,9 +262,10 @@
       "claim": "One-year guarantee appears on offer",
       "status": "seller_marketing_promise",
       "source_refs": [
-        "seller_offer"
+        "seller_offer",
+        "seller_terms"
       ],
-      "restriction": "not FV guarantee; terms not independently verified"
+      "restriction": "Seller's published Zen12 terms agree with 1-year period; actual refund fulfillment not verified"
     },
     {
       "id": "C21",
@@ -433,6 +439,52 @@
         "seller_offer"
       ],
       "restriction": "fresh independent verification required"
+    },
+    {
+      "id": "C41",
+      "claim": "Seller terms list 1-year Zen12 refund period",
+      "status": "seller_contract_public",
+      "source_refs": [
+        "seller_terms"
+      ],
+      "restriction": "Current published term only; no actual refund audited"
+    },
+    {
+      "id": "C42",
+      "claim": "After 90 days, card refunds handled manually via PayPal",
+      "status": "seller_contract_public",
+      "source_refs": [
+        "seller_terms"
+      ],
+      "restriction": "Check payment procedure and changes before activation"
+    },
+    {
+      "id": "C43",
+      "claim": "Seller may tag digital MP3s/PDFs with purchaser data",
+      "status": "seller_contract_public",
+      "source_refs": [
+        "seller_terms"
+      ],
+      "restriction": "Buyer privacy implications; no download inspected"
+    },
+    {
+      "id": "C44",
+      "claim": "Seller terms describe SMS marketing frequency 3-4 times weekly",
+      "status": "seller_contract_public",
+      "source_refs": [
+        "seller_terms"
+      ],
+      "restriction": "May vary; disclosure not guarantee"
+    },
+    {
+      "id": "C45",
+      "claim": "Affiliate sharing of purchaser identity contractually refused",
+      "status": "not_yet_verified",
+      "source_refs": [
+        "seller_privacy",
+        "seller_terms"
+      ],
+      "restriction": "Publisher must reject PII for activation"
     }
   ],
   "gates": [
@@ -625,6 +677,11 @@
       "id": "no_live_menu_mutation",
       "status": "CLOSED",
       "reason": "Requires independent evidence/approval or remains intentionally inactive"
+    },
+    {
+      "id": "merchant_merchant_file_identity_tagging_disclosure",
+      "status": "CLOSED",
+      "reason": "Independent privacy review of merchant-delivered digital downloads and clear buyer disclosure"
     }
   ]
 }
