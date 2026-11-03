@@ -18,6 +18,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = "r101-water-print-context-private-candidate-v1"
+EXPECTED_ORIGINAL_CALCULATOR_GIT_BLOB = "9cd2944e7b5c5061ae041669c327069d488c2062"
 FIELDS = (
     ("wp-people", "People in household", "integer", 100),
     ("wp-days", "Days to cover", "integer", 365),
@@ -192,10 +193,31 @@ def patch_body(body):
     return out
 
 
+def check_original_calculator(text):
+    """Pin the pure calculator implementation mirrored by the print snapshot.
+
+    A changed algorithm MUST require a new qualified source/claim and QA
+    review; it cannot silently inherit previous preview normalization bounds.
+    """
+    need(type(text) is str, "missing original pure calculator JavaScript")
+    raw = text.encode("utf-8")
+    actual_blob = hashlib.sha1(
+        b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw
+    ).hexdigest()
+    need(actual_blob == EXPECTED_ORIGINAL_CALCULATOR_GIT_BLOB,
+         "original calculator algorithm changed; re-review print normalization")
+    return actual_blob
+
+
 def assess(lib, r100, css_gate):
     original = lib.articles["water-planner"]
     original_body = original["_body"]
     original_status = original["status"].get("publish")
+    pure_js_path = ROOT / "tools" / "water_planner.js"
+    need(pure_js_path.is_file() and not pure_js_path.is_symlink(),
+         "original pure water calculator unavailable or linked")
+    pure_js = pure_js_path.read_text(encoding="utf-8")
+    check_original_calculator(pure_js)
     prior = r100.audit(original_body, lib.css, original, css_gate)
     need(prior["release_state"] == "HOLD" and prior["may_publish"] is False,
          "R100 review state unexpected")
@@ -236,6 +258,7 @@ def build_candidate(lib, builder, r100, css_gate):
         "independent_QD": "NOT_REVIEWED",
         "original_body_sha256": digest(original),
         "r100_unapproved_assumption_custody_seal": prior["sha256_seal"],
+        "original_calculator_pinned_blob_sha1": EXPECTED_ORIGINAL_CALCULATOR_GIT_BLOB,
         "candidate_body_sha256": digest(candidate),
         "candidate_wp_draft_sha256": digest(wordpress),
         "candidate_local_preview_sha256": digest(preview),
