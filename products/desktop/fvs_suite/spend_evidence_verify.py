@@ -95,6 +95,9 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         groups: dict[tuple[str, str], list[int]] = defaultdict(list)
         # Preserve pre-CSV-escape category order of the native report writer.
         native_buckets: set[tuple[str, str, str]] = set()
+        # Independent fail-closed check: distinct raw category names must
+        # never collapse into the same spreadsheet-safe report bucket.
+        source_categories_by_display: dict[tuple[str, str, str], str] = {}
         buckets: dict[tuple[str, str, str], list[str]] = defaultdict(list)
         # Independent Decimal aggregation: do not call summarize_spend, its
         # gross/net helpers, or report rendering code. The shared strict CSV
@@ -116,8 +119,15 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                     parse_money=engine.money):
                 group = (vendor, month)
                 native_buckets.add((vendor, month, category))
-                # The CSV exporter protects leading spreadsheet formulas.
+                # The CSV exporter protects leading spreadsheet formulas,
+                # but that escaping is NOT injective: "=A1" and "'=A1"
+                # have the same visible label. Source custody must fail
+                # closed instead of merging the two financial categories.
                 bucket = (vendor, month, engine.safe_cell(category))
+                prior_category = source_categories_by_display.get(bucket)
+                if prior_category is not None and prior_category != category:
+                    raise ValueError("Ambiguous SpendMap source category presentation")
+                source_categories_by_display[bucket] = category
                 groups[group].append(int(record["row"]))
                 buckets[bucket].append(record["row"])
                 review_observations.append((vendor, month, bucket[2], amount, record["vendor"]))
