@@ -9,6 +9,7 @@ import {ACTIVATION,verifySynthetic,aggregateSynthetic,activateMerchantLink,colle
 const dir=dirname(fileURLToPath(import.meta.url));
 const read=n=>readFileSync(join(dir,n),"utf8");
 const A=read("zen12-A-text.blocks.html"),B=read("zen12-B-film-concept.blocks.html"),hub=read("mind-hub-noncanonical.blocks.html"),claims=JSON.parse(read("claims-and-permissions.json")),article=read("investigation.md"),guide=read("zen12-guide.md");
+const captions=read("film-captions.vtt"),renderer=read("film-renderer.py");
 const publicPages=[A,B,hub];
 const vendorHref=/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i;
 const figure=/<figure class="film"[^>]*>[\s\S]*?<\/figure>/;
@@ -36,3 +37,6 @@ test("only categorical fields accepted",()=>{assert.deepEqual(verifySynthetic(sa
 test("small cells suppressed, 20 distinct synthetic entries produce aggregate",()=>{const x=Array.from({length:19},()=>sample());assert.deepEqual(aggregateSynthetic(x),[]);x.push(sample());assert.deepEqual(aggregateSynthetic(x),[{dimensions:["guide_view","zen12-guide","organic-search","A"],count:20}])});
 test("cannot lower privacy suppression threshold",()=>assert.throws(()=>aggregateSynthetic([sample()],19)));
 test("no live events, merchant links, or conversion inference can be activated",()=>{assert.throws(activateMerchantLink);assert.throws(collectLiveEvent);assert.throws(inferSalesFromClicks)});
+
+test("source-controlled renderer spans 480 frames and no network",()=>{assert.match(renderer,/W,H,FPS,SECS=540,960,12,40/);assert.match(renderer,/range\(FPS\*SECS\)/);assert.doesNotMatch(renderer,/requests\.|https:\/\/|urllib\.|socket\./i)});
+test("six WebVTT cues cover exact full forty seconds",()=>{assert.match(captions,/^WEBVTT/);assert.equal((captions.match(/-->/g)||[]).length,6);assert.match(captions,/00:00:00\.000 --> 00:00:06\.000/);assert.match(captions,/00:00:33\.000 --> 00:00:40\.000/)});
