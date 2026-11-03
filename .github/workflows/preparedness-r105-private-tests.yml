@@ -1,0 +1,96 @@
+name: Preparedness R105 Offline Source Transport (PRIVATE HOLD)
+on:
+  push:
+    branches:
+      - review/preparedness-r105-deterministic-offline-transport-hold-20261103
+  pull_request:
+    branches:
+      - review/preparedness-r104-export-custody-hold-20261103
+    paths:
+      - preparedness/tools/r105_private_packet_zip_custody.py
+      - preparedness/tests/test_r105_private_packet_zip_custody.py
+      - preparedness/docs/R105_PRIVATE_DETERMINISTIC_ZIP_TRANSPORT_HOLD.md
+      - .github/workflows/preparedness-r105-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  zip-source-custody-private-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact R104 immutable parent, seven contributor pins, release candidate, four add-only paths
+        run: |
+          python -I - <<'PY'
+          import subprocess
+          parent = "a5122db07951cab5c825bcbfb13cfbd7c3cea0c9"
+          expected = {
+              "A\tpreparedness/tools/r105_private_packet_zip_custody.py",
+              "A\tpreparedness/tests/test_r105_private_packet_zip_custody.py",
+              "A\tpreparedness/docs/R105_PRIVATE_DETERMINISTIC_ZIP_TRANSPORT_HOLD.md",
+              "A\t.github/workflows/preparedness-r105-private-tests.yml",
+          }
+          changes = set(subprocess.check_output(
+              ["git", "diff", "--name-status", parent, "HEAD"],
+              text=True).splitlines())
+          assert changes == expected, ("unauthorized original content/source modification", changes)
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+          }
+          for ref, sha in pins.items():
+              actual = subprocess.check_output(
+                  ["git", "rev-parse", "refs/remotes/origin/" + ref],
+                  text=True).strip()
+              assert actual == sha, (ref, actual, sha)
+          print("R105 original file scope and eight SHA pins PASS")
+          PY
+      - name: Compile and run exact R105 private/adversarial tests
+        run: |
+          python -I -m compileall -q preparedness/tools/r105_private_packet_zip_custody.py preparedness/tests/test_r105_private_packet_zip_custody.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r105_*.py' -v
+      - name: Private byte-deterministic scratch ZIP, no archive upload or extraction
+        run: |
+          python -I preparedness/tools/r105_private_packet_zip_custody.py --dry-check
+          tmp="$(mktemp -d "$RUNNER_TEMP/fv-r105-HOLD.XXXXXXXX")"
+          python -I preparedness/tools/r105_private_packet_zip_custody.py --emit-dir "$tmp"
+          python -I preparedness/tools/r105_private_packet_zip_custody.py --verify-zip "$tmp/r105-private-source-citation-packet-HOLD.zip"
+          python -I - "$tmp" <<'PY'
+          from pathlib import Path
+          import json
+          import sys
+          import zipfile
+          tmp = Path(sys.argv[1])
+          names = list(tmp.iterdir())
+          assert len(names) == 1 and names[0].name == "r105-private-source-citation-packet-HOLD.zip"
+          with zipfile.ZipFile(names[0], "r") as zf:
+              assert len(zf.namelist()) == 5
+              manifest = json.loads(zf.read("r104-private-custody-manifest-HOLD.json"))
+              assert manifest["unreviewed_literal_url_groups"] == 30
+              assert manifest["original_article_drafts"] == 35
+              assert manifest["complete_tool_drafts"] == 1
+              assert manifest["may_publish"] is False
+              assert manifest["human_claim_review"] == "NOT_REVIEWED"
+          print("PRIVATE no-extract five-entry ZIP and 30-group review HOLD verified")
+          PY
+      - name: Native preparedness validator and offline WordPress DRAFT build only
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Complete repository Preparedness Python regression
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Human safety, independent QD and mandatory pipeline remain HOLD
+        if: always()
+        run: echo 'NO merge, no WordPress/CMS, no public publishing. ZIP custody is not source or qualified safety approval.'
