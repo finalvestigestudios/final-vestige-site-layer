@@ -11,6 +11,7 @@ import hashlib
 import json
 import sys
 from pathlib import Path
+from wp_source_parity_r83 import verify_source_parity_r83
 
 REUSABLE_SLUG = 'fv-apollo-synced-review-private'
 NEGATIVE_SLUG = 'fv-apollo-unrelated-review-private'
@@ -31,6 +32,12 @@ R81_FAILURE_CODES = frozenset((
     'R77_FILTER_FAIL', 'R77_RESET_FAIL', 'R77_AXE_VIOLATIONS',
     'R77_LCP_LAB_GATE', 'R77_CLS_LAB_GATE', 'R77_NOJS_DESK_LOST',
     'R77_NOJS_ATLAS_LOST',
+    'R77_R83_LINK_CUSTODY_CHANGED', 'R77_R83_CITATIONS_MISSING',
+    'R77_R83_SOURCE_DRAWERS_MISSING', 'R77_R83_RIGHTS_NOTICE_MISSING',
+    'R77_R83_PROVISIONAL_NOTICE_MISSING',
+    'R77_R83_RIGHTS_CLEARANCE_UNVERIFIED',
+    'R77_R83_MEDIA_UNCLEARED', 'R77_R83_GEO_UNVERIFIED',
+    'R77_R83_NATIVE_DISCLOSURE_KEYBOARD_FAIL',
 ))
 R81_PHASES = frozenset((
     'NAVIGATION', 'NETWORK', 'ASSET_DISCOVERY', 'CUSTODY',
@@ -159,6 +166,34 @@ def accept_synced_patterns(browser, storage_state, output: Path, base: str,
                 assert page.locator('.fv-ex2-apollo-suite').evaluate(
                     'e=>getComputedStyle(e).backgroundColor') == 'rgb(9, 10, 10)', 'R77_CSS_NOT_APPLIED'
                 phase = 'CUSTODY'
+                # R83: original fourteen cases pinned outgoing NASA links;
+                # the nested Gutenberg cases checked counts but not source
+                # identity. Recheck URLs, citations, rights and uncertainty
+                # for every JS/no-JS synced render before interaction gates.
+                case['r83_source_custody'] = verify_source_parity_r83(
+                    nasa_links=tuple(link.get_attribute('href') for link in
+                        page.locator('.fva-card__external').all()),
+                    citation_ids=tuple(el.get_attribute('data-fva-cite-id') for el in
+                        page.locator('[data-fva-cite-id]').all()),
+                    drawer_count=page.locator('[data-fva-drawer]').count(),
+                    images=page.locator('.fv-ex2-apollo-suite img').count(),
+                    geographic_claims=page.locator(
+                        '.fv-ex2-apollo-suite [data-lat],[data-lon],[data-geo-edge]').count(),
+                    suite_heading=page.locator('.fv-ex2-apollo-suite__head').inner_text(),
+                    rights_notice=page.locator('.fva-custody-status').inner_text(),
+                )
+                # Native <details> must remain keyboard-operable with JS off.
+                # Restore disclosure state before legacy axe, print, and LCP.
+                source_drawer = page.locator('[data-fva-drawer]').first
+                source_summary = page.locator('[data-fva-drawer] summary').first
+                source_summary.focus()
+                initially_open = source_drawer.evaluate('e=>e.open')
+                assert source_summary.evaluate('e=>document.activeElement===e'), 'R77_R83_NATIVE_DISCLOSURE_KEYBOARD_FAIL'
+                page.keyboard.press('Enter')
+                assert source_drawer.evaluate('e=>e.open') != initially_open, 'R77_R83_NATIVE_DISCLOSURE_KEYBOARD_FAIL'
+                page.keyboard.press('Enter')
+                assert source_drawer.evaluate('e=>e.open') == initially_open, 'R77_R83_NATIVE_DISCLOSURE_KEYBOARD_FAIL'
+                case['r83_source_custody']['native_keyboard_with_js_or_nojs'] = True
                 case['prehead_suite_css'] = True
                 case['source_records'] = 12
                 case['custody_values'] = 84
