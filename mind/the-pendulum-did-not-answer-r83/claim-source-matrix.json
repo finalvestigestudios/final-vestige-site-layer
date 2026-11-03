@@ -1,0 +1,348 @@
+{
+  "as_of": "2026-11-02",
+  "status": "DRAFT_HARD_HOLD",
+  "sources": [
+    {
+      "id": "carpenter1852",
+      "url": "https://wellcomecollection.org/works/k532hmn2",
+      "type": "primary_history",
+      "note": "1852 surviving pamphlet record"
+    },
+    {
+      "id": "easton1976",
+      "url": "https://doi.org/10.1080/00221309.1976.9710871",
+      "type": "primary_study_abstract",
+      "note": "60 students; full paper access restricted"
+    },
+    {
+      "id": "olson2017",
+      "url": "https://doi.org/10.1093/nc/nix014",
+      "type": "primary_study",
+      "note": "N=80/40; 57 vs 53 percent first study"
+    },
+    {
+      "id": "olsonInstitute",
+      "url": "https://digitalcommons.chapman.edu/psychology_articles/82/",
+      "type": "institutional",
+      "note": "Study summary alternate"
+    },
+    {
+      "id": "shenefelt2011",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "type": "secondary_history",
+      "note": "Not independent product efficacy"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_existing",
+      "note": "GitHub #171 inventory; direct public browser fetch failed"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_existing",
+      "note": "GitHub #171 verified route; direct public browser fetch failed"
+    },
+    {
+      "id": "editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "fv_existing",
+      "note": "GitHub #171"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "fv_existing",
+      "note": "GitHub #171"
+    },
+    {
+      "id": "inspireCatalog",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "note": "current catalog"
+    },
+    {
+      "id": "zen12Sales",
+      "url": "https://zen12.com/hnp",
+      "type": "seller",
+      "note": "exact offer/tier description"
+    },
+    {
+      "id": "zen12About",
+      "url": "https://zen12.com/about",
+      "type": "seller",
+      "note": "seller mechanism claims"
+    },
+    {
+      "id": "zen12Research",
+      "url": "https://zen12.com/research",
+      "type": "seller",
+      "note": "general evidence not product trial"
+    },
+    {
+      "id": "zen12Checkout",
+      "url": "https://zen12.com/getstarted",
+      "type": "seller",
+      "note": "mobile field/promotions"
+    },
+    {
+      "id": "privacy",
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller_policy",
+      "note": "SMS/affiliate purchaser PII sharing"
+    },
+    {
+      "id": "terms",
+      "url": "https://inspire3.com/terms/",
+      "type": "unverified",
+      "note": "browser inaccessible"
+    },
+    {
+      "id": "affiliateRecruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller_recruitment",
+      "note": "not FV authorization"
+    },
+    {
+      "id": "binauralReview",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic_review",
+      "note": "2023 14 studies inconsistent; not Zen12 trial"
+    },
+    {
+      "id": "ftcDisclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "note": "material connection disclosures"
+    },
+    {
+      "id": "ftcHealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "note": "health claim proof"
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "Carpenter argued about suggestion and voluntary movement",
+      "decision": "historically_documented",
+      "source_ids": [
+        "carpenter1852"
+      ]
+    },
+    {
+      "claim": "Chevreul exact quotations and staging",
+      "decision": "withheld_without_primary",
+      "source_ids": [
+        "carpenter1852"
+      ]
+    },
+    {
+      "claim": "1976 pendulum study 60 students",
+      "decision": "primary_publisher_abstract",
+      "source_ids": [
+        "easton1976"
+      ]
+    },
+    {
+      "claim": "2017 pendulum visual study 80+40",
+      "decision": "primary_study",
+      "source_ids": [
+        "olson2017"
+      ]
+    },
+    {
+      "claim": "2017 first-study 57% verbal/53% pendulum",
+      "decision": "primary_study",
+      "source_ids": [
+        "olson2017"
+      ]
+    },
+    {
+      "claim": "Pendulum predicts unseen answers reliably",
+      "decision": "excluded_unsubstantiated",
+      "source_ids": [
+        "olson2017"
+      ]
+    },
+    {
+      "claim": "Pendulum detects medical or wealth facts",
+      "decision": "excluded_unsubstantiated",
+      "source_ids": [
+        "ftcHealth"
+      ]
+    },
+    {
+      "claim": "Puységur proves pendulum mechanism",
+      "decision": "excluded_conflation",
+      "source_ids": [
+        "puysegur"
+      ]
+    },
+    {
+      "claim": "Zen12 twelve-minute sessions",
+      "decision": "seller_described",
+      "source_ids": [
+        "zen12Sales"
+      ]
+    },
+    {
+      "claim": "Zen12 twelve levels",
+      "decision": "seller_described",
+      "source_ids": [
+        "zen12Sales"
+      ]
+    },
+    {
+      "claim": "Zen12 four styles",
+      "decision": "seller_described",
+      "source_ids": [
+        "zen12Sales"
+      ]
+    },
+    {
+      "claim": "Premium 48 MP3s",
+      "decision": "seller_described",
+      "source_ids": [
+        "zen12Sales",
+        "zen12Checkout"
+      ]
+    },
+    {
+      "claim": "Beginner 24 MP3s",
+      "decision": "seller_described",
+      "source_ids": [
+        "zen12Sales"
+      ]
+    },
+    {
+      "claim": "Advanced 24 MP3s",
+      "decision": "seller_described",
+      "source_ids": [
+        "zen12Sales"
+      ]
+    },
+    {
+      "claim": "Zen12 independently delivery-audited",
+      "decision": "not_tested",
+      "source_ids": [
+        "zen12Sales"
+      ]
+    },
+    {
+      "claim": "Twelve minutes equals an hour advanced meditation",
+      "decision": "excluded_unsubstantiated",
+      "source_ids": [
+        "zen12Sales",
+        "binauralReview"
+      ]
+    },
+    {
+      "claim": "Zen12 reliably entrains brainwaves",
+      "decision": "excluded_unsubstantiated",
+      "source_ids": [
+        "zen12Research",
+        "binauralReview"
+      ]
+    },
+    {
+      "claim": "Zen12 heals anxiety or illness",
+      "decision": "excluded_unsubstantiated",
+      "source_ids": [
+        "ftcHealth"
+      ]
+    },
+    {
+      "claim": "Zen12 improves finances or productivity",
+      "decision": "excluded_unsubstantiated",
+      "source_ids": [
+        "ftcHealth"
+      ]
+    },
+    {
+      "claim": "Binaural review 5 consistent, 8 contradictory, 1 mixed",
+      "decision": "supported_systematic_review",
+      "source_ids": [
+        "binauralReview"
+      ]
+    },
+    {
+      "claim": "Checkout asks for phone number",
+      "decision": "seller_observation",
+      "source_ids": [
+        "zen12Checkout"
+      ]
+    },
+    {
+      "claim": "Potential SMS marketing",
+      "decision": "seller_policy",
+      "source_ids": [
+        "privacy"
+      ]
+    },
+    {
+      "claim": "Potential purchaser PII transfer to affiliate",
+      "decision": "seller_policy",
+      "source_ids": [
+        "privacy"
+      ]
+    },
+    {
+      "claim": "Refund binding conditions",
+      "decision": "unverified_terms_inaccessible",
+      "source_ids": [
+        "zen12Sales",
+        "terms"
+      ]
+    },
+    {
+      "claim": "Specific final consumer price",
+      "decision": "withheld_dynamic_offer",
+      "source_ids": [
+        "zen12Checkout"
+      ]
+    },
+    {
+      "claim": "FV accepted as Zen12 affiliate",
+      "decision": "unverified_not_authorized",
+      "source_ids": [
+        "affiliateRecruitment"
+      ]
+    },
+    {
+      "claim": "Near-CTA prospective earning disclosure",
+      "decision": "draft_only_review_needed",
+      "source_ids": [
+        "ftcDisclosure"
+      ]
+    },
+    {
+      "claim": "Video conversion uplift",
+      "decision": "untested_hypothesis",
+      "source_ids": []
+    }
+  ],
+  "release_gates": {
+    "Named FV partner acceptance": false,
+    "Zen12 product-specific permission": false,
+    "Website promotional rights": false,
+    "TikTok promotional rights": false,
+    "Email promotional rights": false,
+    "Issued partner affiliate URL and parameters": false,
+    "Approved merchant creative rights": false,
+    "Current legal terms/refund mechanics": false,
+    "Current checkout pricing and privacy": false,
+    "Buyer PII refusal/data agreement": false,
+    "Independent source/claims review": false,
+    "Independent accessibility review": false,
+    "WordPress staging sanitizer and rendered QA": false,
+    "First-party film + synced captions": false,
+    "Lighthouse/CWV performance budget": false,
+    "Founder exact-SHA release approval": false
+  },
+  "affiliate_url": null,
+  "price": null,
+  "commission": null,
+  "conversion_results": null
+}
