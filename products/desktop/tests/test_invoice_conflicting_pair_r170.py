@@ -42,7 +42,7 @@ class ForgedGet(dict):
 
 class InvoiceConflictingPairR170(unittest.TestCase):
     def reject(self, records):
-        with self.assertRaisesRegex(ValueError, "Duplicate or conflicting invoice candidate pair"):
+        with self.assertRaisesRegex(ValueError, "Duplicate invoice candidate pair"):
             refs(records)
 
     def test_conflicting_same_orientation_exact_first(self):
