@@ -1,0 +1,558 @@
+{
+  "artifact": "FV Mind R102 source/claims/permission ledger",
+  "date": "2026-11-03",
+  "affiliate_url": null,
+  "active_tracking": false,
+  "active_product_skus": [],
+  "product": "Zen12 (seller specific hnp/getstarted)",
+  "sources": [
+    {
+      "id": "M01",
+      "title": "1976 McGurk and MacDonald Nature",
+      "url": "https://doi.org/10.1038/264746a0",
+      "kind": "primary experimental report",
+      "support": "AV mismatch can influence reported syllable",
+      "limit": "historical lab, not universal response",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "M02",
+      "title": "2017 MacDonald retrospective",
+      "url": "https://doi.org/10.1163/22134808-00002548",
+      "kind": "original investigator historical perspective",
+      "support": "discovery and interpretation",
+      "limit": "retrospective, not new intervention study",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "M03",
+      "title": "2015 Variability and stability McGurk",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4580505/",
+      "kind": "empirical replication/variability",
+      "support": "participant, stimulus, choice variability",
+      "limit": "nonclinical",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "M04",
+      "title": "2018 Brown et al individual differences",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "kind": "independent research",
+      "support": "small contribution of lipreading-related skill",
+      "limit": "correlational",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "M05",
+      "title": "2022 Moving beyond McGurk",
+      "url": "https://doi.org/10.1121/10.0015262",
+      "kind": "methodological perspective",
+      "support": "classic syllable stimulus not proxy for natural conversation",
+      "limit": "research commentary",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "M06",
+      "title": "2018 Magnotti and Beauchamp",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6145544/",
+      "kind": "methodological study",
+      "support": "selection can inflate estimated group differences",
+      "limit": "modeling and empirical data",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "Z01",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "support": "brand and product descriptions",
+      "limit": "seller claims only",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "Z02",
+      "title": "Zen12 official sales page hnp",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant exact offer",
+      "support": "12-minute product and hour-equivalence claim",
+      "limit": "efficacy not independently verified",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "Z03",
+      "title": "Zen12 exact checkout getstarted",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant checkout inspected read only",
+      "support": "12 levels 48 MP3 and mobile field",
+      "limit": "dynamic checkout, reconfirm every activation",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "Z04",
+      "title": "Inspire3 privacy",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant official policy",
+      "support": "SMS, sharing buyer name email/product details with affiliate",
+      "limit": "contract needs opt out from identifiable data",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "Z05",
+      "title": "2023 binaural-beats systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "independent systematic review",
+      "support": "heterogeneous/inconsistent entrainment evidence",
+      "limit": "NOT a Zen12 trial",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "C01",
+      "title": "FTC affiliate endorsements Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "US regulator guidance",
+      "support": "conspicuous disclosure close to earning link",
+      "limit": "not general legal clearance",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "C02",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "US regulator guidance",
+      "support": "claims require competent reliable scientific evidence",
+      "limit": "not product clearance",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "F01",
+      "title": "FV Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "internal published route Issue #171",
+      "support": "historical methodology analogy only",
+      "limit": "browser retrieval blocked this run; QA must validate",
+      "checked": "2026-11-03"
+    },
+    {
+      "id": "F02",
+      "title": "FV Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "internal published route Issue #171",
+      "support": "single existing lead asset",
+      "limit": "browser retrieval blocked this run; no edits",
+      "checked": "2026-11-03"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "claim": "Zen12 exists in Inspire3 catalog",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "source_ids": [
+        "Z01"
+      ],
+      "reason": "attributed seller catalog only"
+    },
+    {
+      "id": "D02",
+      "claim": "Zen12 sessions advertised as twelve minutes",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "source_ids": [
+        "Z02"
+      ],
+      "reason": "not equivalence"
+    },
+    {
+      "id": "D03",
+      "claim": "12 levels and 48 MP3 in full checkout",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "source_ids": [
+        "Z03"
+      ],
+      "reason": "specific package, recheck before launch"
+    },
+    {
+      "id": "D04",
+      "claim": "hour of advanced meditation equivalent in 12 minutes",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "Z02",
+        "Z05"
+      ],
+      "reason": "no Zen12-specific validation"
+    },
+    {
+      "id": "D05",
+      "claim": "automatic significant mental health benefit",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "Z02",
+        "C02"
+      ],
+      "reason": "no product-specific health trial"
+    },
+    {
+      "id": "D06",
+      "claim": "guaranteed creativity and focus improvement",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "Z02",
+        "C02"
+      ],
+      "reason": "claims excluded"
+    },
+    {
+      "id": "D07",
+      "claim": "binaural-beat brainwave entrainment universally proven",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "Z05"
+      ],
+      "reason": "systematic evidence inconsistent"
+    },
+    {
+      "id": "D08",
+      "claim": "we personally listened to Zen12",
+      "decision": "REJECT_FALSE_ENDORSEMENT",
+      "source_ids": [],
+      "reason": "no firsthand use"
+    },
+    {
+      "id": "D09",
+      "claim": "pricing or discount guarantee",
+      "decision": "REJECT_DYNAMIC",
+      "source_ids": [
+        "Z03"
+      ],
+      "reason": "do not preserve checkout timer as scarcity"
+    },
+    {
+      "id": "D10",
+      "claim": "full-course order asks for mobile number",
+      "decision": "ALLOW_MERCHANT_DESCRIPTION",
+      "source_ids": [
+        "Z03"
+      ],
+      "reason": "field visible; submission not tested"
+    },
+    {
+      "id": "D11",
+      "claim": "merchant may send SMS marketing",
+      "decision": "ALLOW_MERCHANT_POLICY",
+      "source_ids": [
+        "Z04"
+      ],
+      "reason": "seller policy"
+    },
+    {
+      "id": "D12",
+      "claim": "merchant may send buyer identity/product details to affiliate",
+      "decision": "ALLOW_MERCHANT_POLICY",
+      "source_ids": [
+        "Z04"
+      ],
+      "reason": "buyer PII opt-out contract required"
+    },
+    {
+      "id": "D13",
+      "claim": "final checkout refund exception terms",
+      "decision": "HOLD_RECHECK",
+      "source_ids": [
+        "Z03"
+      ],
+      "reason": "terms page unavailable in web this run"
+    },
+    {
+      "id": "D14",
+      "claim": "commission rate",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [],
+      "reason": "never invent"
+    },
+    {
+      "id": "D15",
+      "claim": "authorized affiliate tracking URL",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [],
+      "reason": "must not activate"
+    },
+    {
+      "id": "D16",
+      "claim": "publisher affiliate acceptance",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [],
+      "reason": "named evidence needed"
+    },
+    {
+      "id": "D17",
+      "claim": "email promotional permission",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [],
+      "reason": "coordinate with Issue #174"
+    },
+    {
+      "id": "D18",
+      "claim": "TikTok/social promotional permission",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [],
+      "reason": "need channel-specific terms"
+    },
+    {
+      "id": "D19",
+      "claim": "approved creative use",
+      "decision": "HOLD_UNVERIFIED",
+      "source_ids": [],
+      "reason": "original text/storyboard only"
+    },
+    {
+      "id": "D20",
+      "claim": "affiliate disclosure adjacent to recommendation",
+      "decision": "IMPLEMENTED_IN_DRAFT",
+      "source_ids": [
+        "C01"
+      ],
+      "reason": "prospective, disabled link only"
+    },
+    {
+      "id": "D21",
+      "claim": "clinical/money promise",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "C02"
+      ],
+      "reason": "never claim"
+    },
+    {
+      "id": "D22",
+      "claim": "McGurk fusion response in some mismatches",
+      "decision": "ALLOW_RESEARCH",
+      "source_ids": [
+        "M01",
+        "M03"
+      ],
+      "reason": "not universal"
+    },
+    {
+      "id": "D23",
+      "claim": "McGurk susceptibility measures real-world listening ability",
+      "decision": "REJECT_OVERGENERALIZATION",
+      "source_ids": [
+        "M03",
+        "M05"
+      ],
+      "reason": "invalid transfer"
+    },
+    {
+      "id": "D24",
+      "claim": "Puységur supports modern entrainment mechanism",
+      "decision": "REJECT_UNSUPPORTED",
+      "source_ids": [
+        "F01"
+      ],
+      "reason": "historical analogy only"
+    },
+    {
+      "id": "D25",
+      "claim": "affiliate purchaser ID reporting",
+      "decision": "BLOCK_PRIVACY",
+      "source_ids": [
+        "Z04"
+      ],
+      "reason": "aggregate-only contractual refusal"
+    },
+    {
+      "id": "D26",
+      "claim": "existing Focus path only",
+      "decision": "ALLOW_EXISTING",
+      "source_ids": [
+        "F02"
+      ],
+      "reason": "no new Jetpack stack"
+    },
+    {
+      "id": "D27",
+      "claim": "A/B video gives higher conversion",
+      "decision": "HYPOTHESIS_UNTESTED",
+      "source_ids": [],
+      "reason": "no conversion data"
+    },
+    {
+      "id": "D28",
+      "claim": "McGurk demonstration still image reproduces illusion",
+      "decision": "REJECT_FAKE_TEST",
+      "source_ids": [
+        "M01"
+      ],
+      "reason": "needs synchronized source AV"
+    },
+    {
+      "id": "D29",
+      "claim": "animated film proves Zen12 works",
+      "decision": "REJECT_FAKE_EVIDENCE",
+      "source_ids": [
+        "Z05"
+      ],
+      "reason": "storyboard illustrative only"
+    },
+    {
+      "id": "D30",
+      "claim": "checkout has timer",
+      "decision": "ALLOW_MERCHANT_OBSERVATION",
+      "source_ids": [
+        "Z03"
+      ],
+      "reason": "does not prove genuine scarcity"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "founder release approval",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G02",
+      "gate": "named Inspire3 written acceptance",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G03",
+      "gate": "approved exact Zen12 SKU",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G04",
+      "gate": "approved earning URL",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G05",
+      "gate": "permitted website channel",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G06",
+      "gate": "permitted TikTok channel",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G07",
+      "gate": "permitted YouTube channel",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G08",
+      "gate": "permitted email channel",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G09",
+      "gate": "aggregate only reporting contractual agreement",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G10",
+      "gate": "exclude buyer name",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G11",
+      "gate": "exclude buyer email",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G12",
+      "gate": "exclude buyer purchased SKU data",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G13",
+      "gate": "approved creative rights",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G14",
+      "gate": "exact checkout terms refresh",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G15",
+      "gate": "terms of sale refund refresh",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G16",
+      "gate": "independent efficacy claims review",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G17",
+      "gate": "internal link QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G18",
+      "gate": "contrast WCAG AA browser audit",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G19",
+      "gate": "keyboard and screen reader QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G20",
+      "gate": "no JavaScript QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G21",
+      "gate": "360px responsive browser QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G22",
+      "gate": "390px responsive browser QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G23",
+      "gate": "768px responsive browser QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G24",
+      "gate": "1440px responsive browser QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G25",
+      "gate": "1920px responsive browser QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G26",
+      "gate": "privacy/legal QA",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G27",
+      "gate": "hosted first party film",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G28",
+      "gate": "verified WebVTT synchronization",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G29",
+      "gate": "Lighthouse/CWV audit",
+      "state": "HOLD_CLOSED"
+    },
+    {
+      "id": "G30",
+      "gate": "consented conversion test methodology",
+      "state": "HOLD_CLOSED"
+    }
+  ]
+}
