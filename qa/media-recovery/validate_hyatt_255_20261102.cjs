@@ -12,7 +12,14 @@ function validateHyatt255(audit, frozenImages) {
    ||audit.census_origin!=='qa/media-recovery/parts/05.json'
    ||audit.census_blob_sha!==CENSUS_BLOB||audit.total_image_refs!==7||audit.external_refs!==7
    ||audit.archived_authoritative_canonical_catalogs!==7) bad('header_census');
- if(audit?.fresh_wordpress_read!==false||audit?.publish_approved!==false
+ if(audit?.fresh_wordpress_read!==true
+   ||audit?.live_wp_recheck?.post_status!=='publish'
+   ||audit?.live_wp_recheck?.post_modified!=='2026-10-30T01:11:08'
+   ||audit?.live_wp_recheck?.matched_image_source_urls!==7
+   ||audit?.live_wp_recheck?.matched_image_alts!==7
+   ||audit?.live_wp_recheck?.observed_inline_image_count!==7
+   ||audit?.live_wp_recheck?.content_write!==false
+   ||audit?.publish_approved!==false
    ||audit?.media_download_or_cache_approved!==false||audit?.wordpress_write_approved!==false
    ||audit?.rights_review_completed!==false) bad('release_hold');
  if(audit?.confirmed_visitor_broken_count!==0||audit?.reported_broken_42!=='NOT_VERIFIED'
