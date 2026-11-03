@@ -175,7 +175,11 @@ else {
         const ids=nav.map(a=>a.getAttribute('href').slice(1));
         const ok=ids.every(id=>document.getElementById(id));
         const doc=document.documentElement;
-        return {assembler:document.body.classList.contains('wp-theme-assembler'),
+        return {assembler:document.body.classList.contains('wp-theme-assembler-wpcom') &&
+            [...document.querySelectorAll('link[rel="stylesheet"]')].some(l=>{
+              try { return new URL(l.href).pathname==='/wp-content/themes/assembler-wpcom/style.css'; }
+              catch { return false; }
+            }),
           theme_body_classes:[...document.body.classList].filter(x=>x.startsWith('wp-theme-')),
           theme_css_paths:[...document.querySelectorAll('link[rel="stylesheet"]')].map(x=>x.getAttribute('href')||'').filter(x=>x.includes('/themes/')).map(x=>new URL(x,location.href).pathname).slice(0,6),
           chapter_links:nav.length,targets_resolve:ok,
