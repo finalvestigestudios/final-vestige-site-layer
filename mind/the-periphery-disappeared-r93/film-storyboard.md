@@ -1,5 +1,5 @@
 # The circle that did not leave — 40s optional film concept
-**Not rendered or hosted; not product advertising. No claims of Zen12 efficacy.**
+**Originally rendered offline and NOT hosted or published; not product advertising. No claims of Zen12 efficacy.**
 
 Scene 1, 00:00–00:06
 - Visual: A stationary charcoal field; a pale ring and central cross appear.
@@ -25,4 +25,4 @@ Scene 6, 00:34–00:40
 - Visual: Visible restoration and credit card.
 - Caption/narration: Try the free static test. No product is required.
 
-Delivery specification: 540×960 9:16 H.264 MP4, 30–45 seconds, web-first source asset; 6-cue WebVTT, static SVG poster, transcript inline, native video controls, preload="none", no autoplay, no loop. Publish ONLY after first-party host, exact caption/browser verification and founder release approval. An unhosted video is represented only by its static poster and full transcript in Variant B; never use a broken video player or a hotlinked merchant media host.
+Verified offline production: 540×960 H.264 MP4, 40.000 seconds, 12 fps, 480 frames, silent; renderer in `render_film.py`, MP4 SHA-256 `35476a2944eada4e82b071d5df4c94e98f37d358ff05323a1d62a46178467e76`. Delivery specification: 6-cue WebVTT, static SVG poster, transcript inline, native video controls, preload="none", no autoplay, no loop. Publish ONLY after first-party host, exact caption/browser verification and founder release approval. An unhosted video is represented only by its static poster and full transcript in Variant B; never use a broken video player or a hotlinked merchant media host.
