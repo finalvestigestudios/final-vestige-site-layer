@@ -25,8 +25,8 @@ cover all failure paths. **Passing R81 CI cannot verify a failure-only path.**
 - Guard context teardown similarly. An independent teardown-only error is
   classified as `CLEANUP`. If teardown fails after a prior browser failure,
   keep the first allowlisted receipt instead of overwriting it.
-- Add five offline, hostile-lifecycle tests for failed browser construction,
-  failed page creation, a known assert, teardown double-failure, and
+- Add six offline, hostile-lifecycle tests for failed browser construction,
+  failed page creation, a known assert, teardown-only failure, teardown double-failure, and
   non-passing case accounting. These tests inspect both JSON and CI stderr
   and formatted Python traceback for secret strings, not just output files.
 - Retain **every original** NASA identity, rights, source-custody, Gutenberg,
