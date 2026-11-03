@@ -19,8 +19,8 @@ def case(width: int) -> dict:
         "margins": 72,
         "focus_links": 4,
         "catalog_links_after": 2,
-        "images_before": 4,
-        "images_after": 3,
+        "images_before": 3,
+        "images_after": 2,
         "horizontal_overflow_after": False,
         "candidate": {
             "image_count_before": 1,
@@ -62,7 +62,7 @@ class HostedRightsSafeCandidateTests(unittest.TestCase):
 
     def test_missing_archival_image_is_blocked(self):
         broken = copy.deepcopy(self.cases)
-        broken[1]["images_before"] = 3
+        broken[1]["images_before"] = 4
         with self.assertRaises(ValueError):
             grade(broken)
 
