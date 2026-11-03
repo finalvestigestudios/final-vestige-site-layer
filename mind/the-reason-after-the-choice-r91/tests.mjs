@@ -15,7 +15,7 @@ const a=file("zen12-text-only.blocks.html"), b=file("zen12-with-film.blocks.html
 const hub=file("mind-hub-noncanonical.blocks.html"), investigation=file("investigation.md");
 const matrix=JSON.parse(file("claims-and-activation.json"));
 const articleSegment=h=>h.slice(h.indexOf('<article class="fv-r91-guide"'),h.indexOf('</article>')+'</article>'.length);
-test("A/B contain byte-identical guide",()=>{assert.equal(articleSegment(a),core);assert.equal(articleSegment(b),core)});
+test("A/B contain identical substantive guide after removing optional film",()=>{assert.equal(articleSegment(a),core);assert.equal(articleSegment(b).replace(/\n<figure class="fv-r91-film"[\s\S]*?<\/figure>/,""),core)});
 test("A/B both carry disclosure adjacent to a genuinely disabled button",()=>{
  for(const h of [a,b]){const section=h.match(/<section class="fv-r91-offer"[^>]*>[\s\S]*?<\/section>/)?.[0];assert.ok(section);assert.match(section,/Affiliate disclosure:/);
  const buttons=[...section.matchAll(/<button\b([^>]*)>/g)];assert.equal(buttons.length,1);assert.match(buttons[0][1],/(?:^|\s)disabled(?:\s|=|$)/);
