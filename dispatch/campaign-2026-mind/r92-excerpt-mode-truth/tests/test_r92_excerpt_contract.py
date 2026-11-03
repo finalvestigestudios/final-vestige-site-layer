@@ -38,7 +38,7 @@ class ExcerptContractTests(unittest.TestCase):
     def test_prevent_status(self): self.reject(lambda d:d["issues"][0].update(status="READY"))
     def test_prevent_commercial_shuffle(self): self.reject(lambda d:d["issues"][1].update(kind="commercial-review-pending"))
     def test_prevent_missing_disclosure(self): self.reject(lambda d:d["issues"][2].update(excerpt_text="Try short sessions each morning and compare how you feel throughout the next week, without making clinical claims about effectiveness."))
-    def test_prevent_hidden_disclosure(self): self.reject(lambda d:d["issues"][2].update(excerpt_text=d["issues"][2]["excerpt_text"].replace("Commercial note:", ""))
+    def test_prevent_hidden_disclosure(self): self.reject(lambda d:d["issues"][2].update(excerpt_text=d["issues"][2]["excerpt_text"].replace("Commercial note:", "")))
     def test_prevent_vendor_guarantee(self): self.reject(lambda d:d["issues"][2].update(excerpt_text=d["issues"][2]["excerpt_text"]+" Guaranteed benefits."))
     def test_prevent_url_in_excerpt(self): self.reject(lambda d:d["issues"][0].update(excerpt_text=d["issues"][0]["excerpt_text"]+" https://inspire3.com"))
     def test_prevent_tracking(self): self.reject(lambda d:d["issues"][0].update(excerpt_text=d["issues"][0]["excerpt_text"]+" utm_source=mail"))
