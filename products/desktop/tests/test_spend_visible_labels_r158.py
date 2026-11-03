@@ -96,14 +96,14 @@ class SpendLabelR158(unittest.TestCase):
                          r"AC\u003BME; ACME")
 
     def test_source_backslash_remains_distinguishable(self):
-        self.write([self.row(r"A\u200BCME"), self.row("ACME")])
+        self.write([self.row(r"A\CME"), self.row("ACME")])
         text = self.report_rows()[1][0]["source_vendor_labels"]
-        self.assertIn(r"A\\u200BCME", text)
+        self.assertIn(r"A\\CME", text)
         self.assertEqual(text.count("; "), 1)
 
     def test_actual_zero_width_vs_literal_escape_differ(self):
         self.write([self.row("A\u200BCME"), self.row(r"A\u200BCME")])
-        labels = self.report_rows()[1][0]["source_vendor_labels"]
+        labels = {row["source_vendor_labels"] for row in self.report_rows()[1]}
         self.assertIn(r"A\u200BCME", labels)
         self.assertIn(r"A\\u200BCME", labels)
 
