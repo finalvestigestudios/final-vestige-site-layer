@@ -17,6 +17,7 @@ HOME = HERE.parents[1]
 sys.path.insert(0, str(HERE))
 from write_source_flagship_playground_candidate import (  # noqa: E402
     CSS_FILES, JS_FILES, NAV_TARGETS, NYPL_FILE, STAGING_ONLY,
+    STAGING_ASSEMBLER_STYLE, ASSEMBLER_STAGE_CSS,
     compose, digest, read_sources, write,
 )
 
@@ -54,6 +55,41 @@ class FullSourceFlagshipTests(unittest.TestCase):
         for name in JS_FILES:
             self.assertIn('data-fv-source="' + name + '"', candidate)
         self.assertIn("ARCHIVAL REFERENCE", candidate)
+
+    def test_saved_assembler_css_and_keyboard_margin_region(self):
+        candidate, manifest = compose(self.index, self.css, self.js)
+        stage_css = ASSEMBLER_STAGE_CSS.read_text(encoding="utf-8")
+        self.assertEqual(candidate.count(STAGING_ASSEMBLER_STYLE), 1)
+        self.assertIn(stage_css, candidate)
+        self.assertEqual(
+            manifest["assembler_saved_stage_css_sha256"],
+            digest(stage_css.encode("utf-8"))
+        )
+        self.assertIn('role="region" aria-label="72 synthetic historical fragments" tabindex="0"', candidate)
+        self.assertEqual(candidate.count('class="fv-margin-strip__window"'), 1)
+        self.assertEqual(candidate.count("Historic fragment "), 72)
+        self.assertIn('.wp-block-post-content > .fv-hf', candidate)
+        self.assertIn('@supports selector(body:has(', candidate)
+
+    def test_refuse_unsafe_stage_css(self):
+        stage_css = ASSEMBLER_STAGE_CSS.read_text(encoding="utf-8")
+        for attack in [
+            stage_css + "</style><script>alert(1)</script>",
+            stage_css + "\\n@import 'https://attacker.invalid/style.css';",
+            stage_css + "\\nbody{background:url(https://attacker.invalid/x)}",
+            "body{width:100vw!important;}",
+        ]:
+            with self.subTest(attack=attack[-60:]):
+                with self.assertRaisesRegex(ValueError, "unsafe isolated Assembler"):
+                    compose(self.index, self.css, self.js,assembler_css=attack)
+
+    def test_source_inventory_excludes_test_stage_css(self):
+        candidate, manifest = compose(self.index, self.css, self.js)
+        self.assertEqual(len(manifest["source_sha256"]), 11)
+        self.assertNotIn("assembler_saved_layout_playground_only.css",
+                         manifest["source_sha256"])
+        self.assertEqual(candidate.count("<style "), 2)
+        self.assertIn("SYNTHETIC FRAGMENTS", candidate)
 
     def test_missing_chapter_target_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "chapter"):
