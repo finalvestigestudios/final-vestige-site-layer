@@ -81,7 +81,7 @@ def verified_records(src:Path)->list[dict]:
             or not b[1].startswith('What it cannot establish:')
             or b[1].removeprefix('What it cannot establish:').strip()!=rec['limit']):
             raise ValueError('R93_EVIDENCE_LIMIT_CHANGED:'+n)
-        if 'INDIVIDUAL REVIEW REQUIRED' not in part:
+        if part.count('INDIVIDUAL REVIEW REQUIRED') < 2:
             raise ValueError('R93_RIGHTS_GATE_CHANGED:'+n)
         if n=='01' and (rec['catalog']!='S67-19766' or
                          rec['date']!='January 1967 — day unconfirmed' or 'provisional' not in part.lower()):
