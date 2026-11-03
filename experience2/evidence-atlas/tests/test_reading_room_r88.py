@@ -35,7 +35,7 @@ class ReaderContracts(unittest.TestCase):
     def test_no_unsafe_geography_or_embedded_media(self):
         self.assertIsNone(re.search(r'<(?:img|iframe|picture|video)\b|data-(?:lat|lon|geo-edge)',self.page,re.I))
     def test_rights_pending(self):
-        self.assertEqual(self.page.count('INDIVIDUAL REVIEW REQUIRED'),6)
+        self.assertEqual(self.page.count('INDIVIDUAL REVIEW REQUIRED'),12)  # drawer plus print custody per source
         self.assertIn('0/6 individual photo-use assessments',self.page)
     def test_nojs_content_complete(self):
         self.assertEqual(self.page.count('<article class="record"'),6)
