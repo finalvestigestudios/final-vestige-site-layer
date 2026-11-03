@@ -228,6 +228,17 @@ async function checkView(page,width,axePath,outputDirectory){
     throw new Error(`Automated axe findings at ${width}: ${JSON.stringify(scans)}`);
   return {width,state,axe_violations:0,media};
 }
+// Continue independent viewports after a real defect so visual evidence is
+// collected for the whole page. Return failures explicitly; callers MUST
+// throw after the matrix and must not translate a partial pass into a pass.
+export async function collectViewportEvidence(viewports,check){
+  const completed=[],failures=[];
+  for(const width of viewports){
+    try{completed.push(await check(width));}
+    catch(e){failures.push({width,reason:String(e?.message||e).slice(0,1500)});}
+  }
+  return {completed,failures};
+}
 export async function runAssemblerPreview({server,browser,context,draftId,themeDirectory,outputDirectory}){
   assert.ok(Number.isInteger(draftId)&&draftId>0);
   assert.ok(loopback(server.serverUrl));
@@ -237,11 +248,14 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   page.stageUrl=new URL(`/?page_id=${draftId}&preview=true`,server.serverUrl).href;
   if(!loopback(page.stageUrl))throw new Error('Unsafe preview URL');
   await restrictNetwork(page,blocked);
-  const axePath=require.resolve('axe-core/axe.min.js'),responsive=[];
-  for(const width of widths){
-    const item=await checkView(page,width,axePath,outputDirectory);
-    responsive.push(item);
-  }
+  const axePath=require.resolve('axe-core/axe.min.js');
+  const {completed:responsive,failures:viewportFailures}=await collectViewportEvidence(
+    widths,width=>checkView(page,width,axePath,outputDirectory));
+  // A serious Assembler theme issue at one breakpoint must not erase screenshots
+  // or the media decode results from every later breakpoint. All failures are
+  // kept as explicit HOLDs; there is no suppression of failed axe rules.
+  console.log(JSON.stringify({event:'EX2_VIEWPORT_EVIDENCE_MATRIX',
+    requested:widths,completed:responsive.map(x=>x.width),failures:viewportFailures}));
   await page.setViewportSize({width:720,height:450});
   await page.goto(page.stageUrl,{waitUntil:'domcontentloaded',timeout:90000});
   const reflow=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth+1,
@@ -283,6 +297,9 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   assert.deepEqual(noJS,{chapters:7,margins:72,h1:1,
     saved_layout_styles:1,canvas_width:390,region_tabindex:'0',region_role:'region'});
   await noContext.close();
+  if(viewportFailures.length)
+    throw new Error('ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD '+
+      JSON.stringify(viewportFailures));
   return {type:'ISOLATED_WP_ASSEMBLER_RENDER_SYNTHETIC_ONLY',release:'HOLD',theme,
     responsive,zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
     limits:['synthetic Margins are not production historical records','stage CSS is not proposed production CSS',
