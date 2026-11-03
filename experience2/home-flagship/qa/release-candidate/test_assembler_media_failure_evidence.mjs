@@ -5,7 +5,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {imageBodies} from './playground_assembler_render_gate.mjs';
+import {imageBodies,renderedScriptNames,assertRenderedScriptNames}
+  from './playground_assembler_render_gate.mjs';
 
 const APOLLO='https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp';
 const FRANKLIN='https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg';
@@ -101,4 +102,39 @@ test('saved-style screenshots precede ALL layout assertions and axe',()=>{
   assert.ok(code.includes("runBounded(document)"));
   assert.ok(code.includes("width===1440?await imageBodies(page):[]"));
   assert.ok(!code.includes("page.addStyleTag("),'No browser-only style overlay permitted');
+});
+
+
+test('document-level source custody: four Gutenberg sibling scripts survive root closure',()=>{
+  const names=['flagship.js','observer-lab.js','chronicle-lens.js','reading-trail.js'];
+  const doc={querySelectorAll(selector){
+    assert.equal(selector,'script[data-fv-source]');
+    return names.map(name=>({getAttribute(attr){
+      assert.equal(attr,'data-fv-source');return name;
+    }}));
+  }};
+  // Document returns all four; a scoped flagship root would return zero.
+  const root={querySelectorAll:()=>[]};
+  assert.equal(root.querySelectorAll('script[data-fv-source]').length,0);
+  assert.deepEqual(renderedScriptNames(doc),names);
+  assert.doesNotThrow(()=>assertRenderedScriptNames(renderedScriptNames(doc)));
+});
+
+test('missing, duplicate, reordered or substituted inline JS fails closed',()=>{
+  const good=['flagship.js','observer-lab.js','chronicle-lens.js','reading-trail.js'];
+  const bad=[[],good.slice(0,3),[...good,'extra.js'],
+    [good[0],good[0],...good.slice(2)],
+    [good[1],good[0],...good.slice(2)],
+    [good[0],'unsafe-thirdparty.js',...good.slice(2)]];
+  for(const names of bad)
+    assert.throws(()=>assertRenderedScriptNames(names),/Missing, duplicated, reordered or unauthorized/);
+});
+
+test('actual browser implementation inspects DOM at document level, not root',()=>{
+  const code=readFileSync(new URL('./playground_assembler_render_gate.mjs',import.meta.url),'utf8');
+  assert.match(code,/documentScope\.querySelectorAll\('script\[data-fv-source\]'\)/);
+  assert.match(code,/page\.evaluate\(renderedScriptNames\)/);
+  assert.match(code,/assertRenderedScriptNames\(sourceScripts\)/);
+  assert.doesNotMatch(code,/root\.querySelectorAll\('script\[data-fv-source\]'\)/);
+  assert.match(code,/EX2_RENDERED_SCRIPT_CUSTODY/);
 });
