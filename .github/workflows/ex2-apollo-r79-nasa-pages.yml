@@ -1,0 +1,96 @@
+# Apollo R79 source-only NASA page audit and non-deployed browser acceptance.
+# Completely independent of homepage PR #49 and WordPress production.
+name: Apollo R79 NASA page custody and offline gallery (HOLD)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/sources/R79_NASA_PAGE_AUDIT.json'
+      - 'experience2/evidence-atlas/staging/r79-source-review.css'
+      - 'experience2/evidence-atlas/tests/*nasa_gallery_r79.py'
+      - 'experience2/evidence-atlas/R79_SOURCE_PAGE_REVIEW_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r79-nasa-pages.yml'
+permissions:
+  contents: read
+jobs:
+  r79-source-custody:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact head, immutable source records, adversarial cases
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
+            experience2/evidence-atlas/tests/test_nasa_gallery_r79.py \
+            experience2/evidence-atlas/tests/browser_nasa_gallery_r79.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_nasa_gallery_r79.py -v
+          python experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
+            --repo . --head "$EXPECTED_HEAD" --out "$RUNNER_TEMP/R79_NASA_A.zip"
+          python experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
+            --repo . --head "$EXPECTED_HEAD" --out "$RUNNER_TEMP/R79_NASA_B.zip"
+          cmp "$RUNNER_TEMP/R79_NASA_A.zip" "$RUNNER_TEMP/R79_NASA_B.zip"
+          sha256sum "$RUNNER_TEMP/R79_NASA_A.zip"
+      - name: Retain exact-head deterministic staging artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r79-source-only-gallery-STAGING-HOLD
+          path: ${{ runner.temp }}/R79_NASA_A.zip
+          if-no-files-found: error
+          retention-days: 7
+
+  r79-real-chromium:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: r79-source-custody
+    runs-on: ubuntu-24.04
+    timeout-minutes: 19
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install real Chromium, PDF inspection and pinned axe
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/apollo-r79-axe" --no-save \
+            --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Run real-navigation browser/axe and source-preserving PDF
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          mkdir -p "$RUNNER_TEMP/r79-browser"
+          python experience2/evidence-atlas/tests/browser_nasa_gallery_r79.py \
+            --repo . --out "$RUNNER_TEMP/r79-browser" \
+            --axe "$RUNNER_TEMP/apollo-r79-axe/node_modules/axe-core/axe.min.js" \
+            --require-navigation --require-axe
+          cat "$RUNNER_TEMP/r79-browser/R79_CHROMIUM_RECEIPT.json"
+      - name: Preserve screenshots/axe/real-browser performance/print evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r79-chromium-axe-print-STAGING-HOLD
+          path: ${{ runner.temp }}/r79-browser/
+          if-no-files-found: warn
+          retention-days: 7
