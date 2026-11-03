@@ -153,7 +153,6 @@ def render_html(root: Path) -> str:
     css = (Path(root) / STYLE).read_text()
     if "@import" in css or "url(" in css:
         raise ValueError("R79_CSS_REMOTE_RESOURCE")
-    by_id = {row["id"]: row for row in rows}
     # Do NOT insert a month-only source between known day-level observations.
     # A visual ordered rail can falsely imply precision even with a text disclaimer.
     rail, unresolved = render_chronology(rows)
