@@ -13,6 +13,15 @@ function nocache_headers() {}
 function home_url($path='/') { return 'http://127.0.0.1:8941/'; }
 function esc_url($url) { return htmlspecialchars($url, ENT_QUOTES, 'UTF-8'); }
 function add_query_arg($key, $value, $base) { return $base . '?' . rawurlencode($key) . '=' . rawurlencode($value); }
+// Test-only same-origin axe endpoint: obey the reviewed document's strict CSP.
+// This fixture is NEVER installed with the generated WordPress adapter.
+if (isset($_GET['fv_r99_axe'])) {
+    $axe=getenv('APOLLO_R99_AXE');
+    if (!current_user_can('edit_posts') || !$axe || !is_file($axe)) { http_response_code(404); exit; }
+    header('Content-Type: text/javascript; charset=utf-8');
+    header('Cache-Control: no-store');
+    readfile($axe); exit;
+}
 $stage=getenv('APOLLO_R99_STAGE');
 if (!$stage || !is_file($stage.'/fv-apollo-r99-private-preview.php')) { http_response_code(503); exit; }
 require $stage.'/fv-apollo-r99-private-preview.php';
