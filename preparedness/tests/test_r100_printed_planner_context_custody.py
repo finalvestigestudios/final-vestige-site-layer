@@ -28,7 +28,7 @@ BODY = """<p>Print the result. Printing is the only way to retain the output.</p
 <script>computeWaterPlan({}); out.innerHTML = ''; window.print();</script>"""
 META = {"slug": "water-planner", "kind": "tool", "status": {"publish": "draft"},
         "safety_review": {"state": "pending"},
-        "source_use": {s: "Original reading scope" for s in SOURCES}}
+        "source_use": dict(gate.EXPECTED_READING_SCOPE)}
 
 class StubCss:
     report = {"release_state": "HOLD", "may_publish": False,
@@ -125,6 +125,7 @@ for name, change in (
     ("wrong_kind", {"kind": "article"}),
     ("missing_reading_scope", {"source_use": {s: "" for s in SOURCES}}),
     ("unknown_source", {"source_use": {**META["source_use"], "other": "a"}}),
+    ("misstated_reading_scope", {"source_use": {**META["source_use"], "ready-water": "This source fully verifies every medical allowance."}}),
 ):
     add_mutation(name, lambda body, meta, c=change: (body, {**meta, **c}))
 
