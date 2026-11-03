@@ -39,7 +39,9 @@ ARTICLE = re.compile(
 )
 IMG = re.compile(r'<img\b[^>]*\bdata-fv-archive-img\b[^>]*>', re.DOTALL)
 MARGINS = re.compile(r'<span class="fv-margin-strip__item" style="--i:(\d+)">')
-MARKER = '<span class="fv-hf__case-image-fallback">'\nSAFE_FALLBACK_MARKER = ('<span class="fv-hf__case-image-fallback" '\n    'style="left:clamp(16px,6%,72px);right:clamp(16px,6%,72px);'\n    'width:auto;font-size:clamp(17px,2.4vw,30px);overflow-wrap:break-word">')
+MARKER = '<span class="fv-hf__case-image-fallback">'
+SAFE_FALLBACK_MARKER = ('<span class="fv-hf__case-image-fallback" '
+    'style="left:clamp(16px,6%,72px);right:clamp(16px,6%,72px);'\n    'width:auto;font-size:clamp(17px,2.4vw,30px);overflow-wrap:break-word">')
 BINARY_LABEL = "ARCHIVE IMAGE 03 / NYPL 5003296"
 RECORD_LABEL = "NYPL RECORD 03 / 5003296"
 
@@ -109,7 +111,8 @@ def patch_homepage(raw: str) -> tuple[str, dict]:
     edited = segment.replace(image, "", 1)
     edited = edited.replace(UNVERIFIED_CLAIM, REVIEWED_CREDIT, 1)
     edited = edited.replace(ORIGINAL_CAPTION, REPLACEMENT_CAPTION, 1)
-    edited = edited.replace(BINARY_LABEL, RECORD_LABEL, 1)\n    edited = edited.replace(MARKER, SAFE_FALLBACK_MARKER, 1)
+    edited = edited.replace(BINARY_LABEL, RECORD_LABEL, 1)
+    edited = edited.replace(MARKER, SAFE_FALLBACK_MARKER, 1)
     candidate = raw[: match.start()] + edited + raw[match.end() :]
 
     after = invariants(candidate)
