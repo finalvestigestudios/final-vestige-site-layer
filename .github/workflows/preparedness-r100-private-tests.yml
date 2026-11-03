@@ -53,7 +53,7 @@ jobs:
               assert actual_ref == pin, (ref, actual_ref, pin)
           print("R100 exact parent and eight source refs verified; release HOLD.")
           PY
-      - name: Compile and execute 55 isolated R100 adversarial tests
+      - name: Compile and execute 56 isolated R100 adversarial tests
         run: |
           python -I -m compileall -q preparedness/tools/r100_printed_planner_context_custody.py preparedness/tests/test_r100_printed_planner_context_custody.py
           python -I -m unittest discover -s preparedness/tests -p test_r100_printed_planner_context_custody.py -v
