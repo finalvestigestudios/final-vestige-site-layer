@@ -56,6 +56,31 @@ def run(src,out,axe):
                     assert page.locator(".card:visible").count()==0 and page.locator("#empty").is_visible()
                     page.get_by_role("button",name="All six").click();page.locator("#query").fill("")
                     assert page.locator(".card:visible").count()==6
+                    # R96: a native anchor clicked again must reveal a filtered-out
+                    # evidence record even if the URL fragment does not change.
+                    page.locator('nav.jump a[href="#atlas-01"]').click()
+                    assert page.evaluate('document.activeElement.id')=="atlas-01"
+                    page.get_by_role("button",name="Specific-day records (5)").click()
+                    page.locator("#query").fill("no-match-xxx")
+                    assert page.locator("#atlas-01").is_hidden()
+                    page.locator('nav.jump a[href="#atlas-01"]').click()
+                    assert page.locator("#atlas-01").is_visible()
+                    assert page.locator(".card:visible").count()==6
+                    assert page.locator("#query").input_value()==""
+                    assert page.evaluate('document.activeElement.id')=="atlas-01"
+                    # Navigation/history to a different hidden source also resets
+                    # filters without altering the archival claim or target URL.
+                    page.get_by_role("button",name="Month only (1)").click()
+                    page.locator("#query").fill("not-found")
+                    page.evaluate("location.hash='#atlas-05'")
+                    page.wait_for_function("document.activeElement.id==='atlas-05'")
+                    assert page.locator("#atlas-05").is_visible()
+                    assert page.locator(".card:visible").count()==6
+                    assert page.locator("#query").input_value()==""
+                    assert page.url.endswith("#atlas-05")
+                    page.go_back()
+                    page.wait_for_function("document.activeElement.id==='atlas-01'")
+                    assert page.locator("#atlas-01").is_visible()
                 assert page.evaluate("document.documentElement.scrollWidth<=innerWidth+1")
                 if js and width==390:
                     page.locator("#atlas-02 summary").tap()
