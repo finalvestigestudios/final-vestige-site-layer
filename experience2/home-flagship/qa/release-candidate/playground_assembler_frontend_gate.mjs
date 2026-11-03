@@ -176,6 +176,8 @@ else {
         const ok=ids.every(id=>document.getElementById(id));
         const doc=document.documentElement;
         return {assembler:document.body.classList.contains('wp-theme-assembler'),
+          theme_body_classes:[...document.body.classList].filter(x=>x.startsWith('wp-theme-')),
+          theme_css_paths:[...document.querySelectorAll('link[rel="stylesheet"]')].map(x=>x.getAttribute('href')||'').filter(x=>x.includes('/themes/')).map(x=>new URL(x,location.href).pathname).slice(0,6),
           chapter_links:nav.length,targets_resolve:ok,
           margins:document.querySelectorAll('.fv-margin-strip__item').length,
           document_width:doc.scrollWidth,viewport_width:innerWidth,
@@ -184,7 +186,7 @@ else {
           case_panels:root.querySelectorAll('[data-fv-case]').length,
           displayed_text:root.innerText.length};
       });
-      assert.equal(state.assembler,true,'Actual Assembler theme did not render');
+      assert.equal(state.assembler,true,'Actual Assembler theme did not render. CSS='+JSON.stringify(state.theme_css_paths)+' classes='+JSON.stringify(state.theme_body_classes));
       assert.equal(state.chapter_links,7);
       assert.equal(state.targets_resolve,true);
       assert.equal(state.margins,72);
