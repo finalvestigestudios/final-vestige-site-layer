@@ -1,0 +1,469 @@
+{
+  "reviewed_on": "2026-11-03",
+  "status": "UNPUBLISHED/HARD_HOLD",
+  "owner": "Mind & Affiliate Studio Issue #171",
+  "source_scope": "Direct public merchant pages, peer-reviewed research abstracts, primary historical text, read-only existing WordPress pages. Neither private affiliate portal approval nor checkout completion occurred.",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://inspire3.com/",
+      "type": "seller_catalog"
+    },
+    {
+      "id": "S2",
+      "url": "https://zen12.com/hnp",
+      "type": "seller_exact_sales"
+    },
+    {
+      "id": "S3",
+      "url": "https://zen12.com/about",
+      "type": "seller_exact_about"
+    },
+    {
+      "id": "S4",
+      "url": "https://zen12.com/getstarted",
+      "type": "seller_checkout_public"
+    },
+    {
+      "id": "S5",
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller_privacy"
+    },
+    {
+      "id": "S6",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller_exact_sku"
+    },
+    {
+      "id": "S7",
+      "url": "https://hypnosislive.com/faq",
+      "type": "seller_generic_faq"
+    },
+    {
+      "id": "S8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "independent_review"
+    },
+    {
+      "id": "S9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25928681/",
+      "type": "independent_theory"
+    },
+    {
+      "id": "S10",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "type": "independent_theory_review"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "type": "primary_1784"
+    },
+    {
+      "id": "S12",
+      "url": "https://doi.org/10.1002/jhbs.21974",
+      "type": "independent_history"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory_guidance"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory_guidance"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "published_internal"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/focus/",
+      "type": "published_internal"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "published_internal"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published_internal"
+    }
+  ],
+  "claims": [
+    {
+      "product": "zen12",
+      "claim": "12-minute sessions advertised",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "classification": "seller_format",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Seller describes twelve-minute listening sessions; not a finding of equivalence."
+    },
+    {
+      "product": "zen12",
+      "claim": "12 levels, 4 audio styles",
+      "source_ids": [
+        "S3"
+      ],
+      "classification": "seller_format",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Seller lists 12 levels and guided/music/white-noise/nature options."
+    },
+    {
+      "product": "zen12",
+      "claim": "48-MP3 full checkout",
+      "source_ids": [
+        "S4"
+      ],
+      "classification": "seller_checkout",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Public full-course checkout displays 12 levels and 48 MP3s; recheck before publication."
+    },
+    {
+      "product": "zen12",
+      "claim": "24-MP3 smaller variant exists",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "classification": "seller_format_variant",
+      "disposition": "RECHECK",
+      "copy": "Do not infer identical package across offer variants."
+    },
+    {
+      "product": "zen12",
+      "claim": "12 minutes equals hour advanced meditation",
+      "source_ids": [
+        "S2",
+        "S8"
+      ],
+      "classification": "seller_efficacy",
+      "disposition": "REJECT_UNSUPPORTED",
+      "copy": "No product-specific independent equivalence evidence identified."
+    },
+    {
+      "product": "zen12",
+      "claim": "automatically rewires brainwave state",
+      "source_ids": [
+        "S2",
+        "S8"
+      ],
+      "classification": "seller_efficacy",
+      "disposition": "REJECT_UNSUPPORTED",
+      "copy": "Binaural-beat entrainment review finds inconsistent research; no Zen12 trial."
+    },
+    {
+      "product": "zen12",
+      "claim": "reduces anxiety or treats illness",
+      "source_ids": [
+        "S2",
+        "S14"
+      ],
+      "classification": "seller_health_claim",
+      "disposition": "REJECT_UNSUPPORTED",
+      "copy": "No product-specific adequate medical substantiation verified."
+    },
+    {
+      "product": "zen12",
+      "claim": "one-year refund advertising",
+      "source_ids": [
+        "S4"
+      ],
+      "classification": "seller_contract",
+      "disposition": "ALLOW_WITH_CAVEAT",
+      "copy": "Seller advertises one-year guarantee; operative terms not reverified and not an FV guarantee."
+    },
+    {
+      "product": "zen12",
+      "claim": "checkout asks mobile phone",
+      "source_ids": [
+        "S4"
+      ],
+      "classification": "seller_privacy",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Public checkout displays mobile-number field."
+    },
+    {
+      "product": "zen12",
+      "claim": "countdown means genuine deadline",
+      "source_ids": [
+        "S4"
+      ],
+      "classification": "seller_scarcity",
+      "disposition": "REJECT_UNVERIFIED",
+      "copy": "Do not use seller countdown as proof of scarcity."
+    },
+    {
+      "product": "total_focus",
+      "claim": "33-minute 47-MB named MP3",
+      "source_ids": [
+        "S6"
+      ],
+      "classification": "seller_exact_sku",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Specific Total Focus page lists 33 min and 47 MB."
+    },
+    {
+      "product": "total_focus",
+      "claim": "recorded by J.A. Amos",
+      "source_ids": [
+        "S6"
+      ],
+      "classification": "seller_credit",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Product page credits J. A. Amos; no independent credential verification."
+    },
+    {
+      "product": "total_focus",
+      "claim": "generic sessions are mostly 40 minutes",
+      "source_ids": [
+        "S7",
+        "S6"
+      ],
+      "classification": "seller_generic_conflict",
+      "disposition": "REJECT_FOR_SKU",
+      "copy": "Generic FAQ must not override 33-minute product listing."
+    },
+    {
+      "product": "total_focus",
+      "claim": "100% razor-sharp concentration",
+      "source_ids": [
+        "S6",
+        "S9",
+        "S10"
+      ],
+      "classification": "seller_efficacy",
+      "disposition": "REJECT_UNSUPPORTED",
+      "copy": "Research did not evaluate this MP3's claimed results."
+    },
+    {
+      "product": "total_focus",
+      "claim": "reprograms brain for better career prospects",
+      "source_ids": [
+        "S6"
+      ],
+      "classification": "seller_mental_financial",
+      "disposition": "REJECT_UNSUPPORTED",
+      "copy": "No evidence for specific work/career promises; omit."
+    },
+    {
+      "product": "total_focus",
+      "claim": "14-day refunds with five-session annual cap",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "classification": "seller_contract",
+      "disposition": "ALLOW_WITH_CAVEAT",
+      "copy": "Seller states 14-day policy, FAQ limits to five refunded sessions/year; verify checkout."
+    },
+    {
+      "product": "total_focus",
+      "claim": "bundle includes Ultra-Fast Learning",
+      "source_ids": [
+        "S6"
+      ],
+      "classification": "seller_purchase_variant",
+      "disposition": "ALLOW_QUALIFIED",
+      "copy": "Optional bundle listed; do not imply included with single MP3."
+    },
+    {
+      "product": "both",
+      "claim": "seller may share affiliate buyer name/email/items",
+      "source_ids": [
+        "S5"
+      ],
+      "classification": "privacy_compliance",
+      "disposition": "HARD_BLOCK",
+      "copy": "Require signed aggregate-only data/reporting exclusion and safe scope before link activation."
+    },
+    {
+      "product": "both",
+      "claim": "seller may send SMS/phone marketing",
+      "source_ids": [
+        "S5"
+      ],
+      "classification": "privacy_compliance",
+      "disposition": "ALLOW_WITH_CAVEAT",
+      "copy": "Disclose current seller policy and reverify."
+    },
+    {
+      "product": "both",
+      "claim": "Final Vestige affiliate membership authorized",
+      "source_ids": [],
+      "classification": "partner_contract",
+      "disposition": "HARD_BLOCK",
+      "copy": "No signed-in named approval or authorized links found."
+    },
+    {
+      "product": "both",
+      "claim": "approved TikTok, website and email channel permissions",
+      "source_ids": [],
+      "classification": "partner_contract",
+      "disposition": "HARD_BLOCK",
+      "copy": "Product-specific written permissions absent."
+    },
+    {
+      "product": "both",
+      "claim": "payout, price and checkout savings",
+      "source_ids": [],
+      "classification": "volatile_commerce",
+      "disposition": "WITHHOLD",
+      "copy": "Never quote prices, percentages or commissions without contemporaneous approved terms."
+    },
+    {
+      "product": "both",
+      "claim": "FTC near-link relationship disclosure",
+      "source_ids": [
+        "S13"
+      ],
+      "classification": "regulatory",
+      "disposition": "REQUIRED_PRE_ACTIVATION",
+      "copy": "Clear commission disclosure immediately next to an earning recommendation."
+    },
+    {
+      "product": "both",
+      "claim": "health claims substantiation",
+      "source_ids": [
+        "S14"
+      ],
+      "classification": "regulatory",
+      "disposition": "REQUIRED_PRE_ACTIVATION",
+      "copy": "Avoid unsubstantiated explicit or implied health/mental claims."
+    },
+    {
+      "product": "both",
+      "claim": "independent authors personally used products",
+      "source_ids": [],
+      "classification": "authenticity",
+      "disposition": "REJECT_UNTRUE",
+      "copy": "No personal use or outcome stated."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "Written Final Vestige-specific Inspire3 partner acceptance",
+      "pass": false
+    },
+    {
+      "id": "Official SKU-level affiliate link format",
+      "pass": false
+    },
+    {
+      "id": "Website-channel permission",
+      "pass": false
+    },
+    {
+      "id": "TikTok-channel permission",
+      "pass": false
+    },
+    {
+      "id": "Email-channel permission",
+      "pass": false
+    },
+    {
+      "id": "Creative rights approval",
+      "pass": false
+    },
+    {
+      "id": "No PII buyer data to FV contract",
+      "pass": false
+    },
+    {
+      "id": "No raw conversion-level identity feed",
+      "pass": false
+    },
+    {
+      "id": "Current exact Total Focus checkout terms",
+      "pass": false
+    },
+    {
+      "id": "Current exact Zen12 checkout terms",
+      "pass": false
+    },
+    {
+      "id": "Current final refund wording",
+      "pass": false
+    },
+    {
+      "id": "Independent editorial claim audit",
+      "pass": false
+    },
+    {
+      "id": "Disclosures reviewed in final page",
+      "pass": false
+    },
+    {
+      "id": "Keyboard and screen-reader testing",
+      "pass": false
+    },
+    {
+      "id": "360/390/768/1440/1920 browser review",
+      "pass": false
+    },
+    {
+      "id": "Caption synchronization on first-party media",
+      "pass": false
+    },
+    {
+      "id": "No-JS content and offer restrictions",
+      "pass": false
+    },
+    {
+      "id": "CSP/security review on deployed preview",
+      "pass": false
+    },
+    {
+      "id": "Lighthouse/CWV test on exact candidate",
+      "pass": false
+    },
+    {
+      "id": "Founder release approval",
+      "pass": false
+    },
+    {
+      "id": "Independent Site QA signoff",
+      "pass": false
+    },
+    {
+      "id": "Homepage art lead scoped visual approval",
+      "pass": false
+    },
+    {
+      "id": "Dispatch named guide destination approval",
+      "pass": false
+    }
+  ],
+  "tracking_policy": {
+    "live_enabled": false,
+    "allowed": [
+      "topic_enum",
+      "variant_enum",
+      "event_enum",
+      "count_aggregate_ge20"
+    ],
+    "blocked": [
+      "email",
+      "phone",
+      "name",
+      "IP",
+      "user_id",
+      "session_id",
+      "click_id",
+      "referrer_url",
+      "user_agent",
+      "merchant_order_id",
+      "raw_query"
+    ],
+    "minimum_group_size": 20,
+    "mode": "synthetic_offline_only"
+  }
+}
