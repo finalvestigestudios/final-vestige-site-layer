@@ -21,9 +21,82 @@ class IntegratedReviewContracts(unittest.TestCase):
         cls.receipt = r89.build(cls.output)
         cls.board = r89.module("build_rights_board_r85.py", "r85_r89_test")
         cls.urls = {r["url"] for r in cls.board.verify(cls.board.load_sources())}
+        r88 = r89.module("build_reading_room_r88.py", "r88_r90_tests")
+        _, report, _, _ = r88.verified_records()
+        cls.records = report["records"]
     @classmethod
     def tearDownClass(cls):
         cls.work.cleanup()
+
+
+    def _mutate_card(self, page, modify, expected):
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / "review"
+            shutil.copytree(self.output, target)
+            file = target / page
+            original = file.read_text("utf8")
+            changed = modify(original)
+            self.assertNotEqual(original, changed, "Mutation must be effective")
+            file.write_text(changed, encoding="utf8")
+            with self.assertRaisesRegex(ValueError, expected):
+                r89.audit_source_bindings(target, self.records)
+
+    def test_r90_card_scoped_link_custody_all_24_bindings(self):
+        result = r89.audit_source_bindings(self.output, self.records)
+        self.assertEqual(len(result), 24)
+        for page, prefix in (("R89_REVIEW_HUB.html", "r89-source-"),
+                             ("R88_READING_ROOM.html", "r88-"),
+                             ("R87_PHOTOGRAPH_DATE_RAIL.html", "r87-record-"),
+                             ("R85_NASA_SOURCE_REVIEW.html", "r85-source-")):
+            for source in self.records:
+                self.assertEqual(result[page + "#" + prefix + source["id"]]["record"],
+                                 source["id"])
+        self.assertEqual(self.receipt["record_source_bindings"], result)
+        self.assertEqual(self.receipt["source_urls_by_id"],
+                         {r["id"]: r["url"] for r in self.records})
+
+    def test_r90_swapped_official_nasa_links_rejected_in_all_four_surfaces(self):
+        # Both destinations remain genuine NASA URLs, so the old aggregate
+        # six-URL set check passed. Each record now fails its own custody check.
+        first, second = [r["url"] for r in self.records[:2]]
+        for page in r89.PAGES:
+            def swap(contents):
+                marker = 'href="' + first + '"'
+                other = 'href="' + second + '"'
+                return contents.replace(marker, 'href="R90-TEMP"', 1).replace(
+                    other, marker, 1).replace('href="R90-TEMP"', other, 1)
+            with self.subTest(page=page):
+                self._mutate_card(page, swap, "R90_CARD_SOURCE_URL_SWAPPED")
+
+    def test_r90_source_card_title_mislabelling_rejected(self):
+        self._mutate_card("R89_REVIEW_HUB.html",
+            lambda text: text.replace('id="r89-title-01">Apollo 1 Crew Honored',
+                                      'id="r89-title-01">Different NASA subject', 1),
+            "R90_CARD_TITLE_DRIFT")
+
+    def test_r90_day_precision_change_rejected(self):
+        self._mutate_card("R88_READING_ROOM.html",
+            lambda text: text.replace('data-date="January 1967 — day unconfirmed"',
+                                      'data-date="January 27, 1967"', 1).replace(
+                                          '<strong>Photograph date:</strong> January 1967 — day unconfirmed',
+                                          '<strong>Photograph date:</strong> January 27, 1967', 1),
+            "R90_CARD_EVIDENCE_DRIFT")
+
+    def test_r90_removed_photo_rights_hold_rejected(self):
+        self._mutate_card("R85_NASA_SOURCE_REVIEW.html",
+            lambda text: text.replace("REUSE REVIEW PENDING", "REUSE APPROVED", 1),
+            "R90_CARD_RIGHTS_HOLD_REMOVED")
+
+    def test_r90_claim_boundary_drift_rejected(self):
+        self._mutate_card("R89_REVIEW_HUB.html",
+            lambda text: text.replace(self.records[4]["limitation"],
+                                      "A photograph proves the ignition mechanism.", 1),
+            "R90_CARD_EVIDENCE_DRIFT")
+
+    def test_r90_duplicate_source_card_id_rejected(self):
+        self._mutate_card("R89_REVIEW_HUB.html",
+            lambda text: text.replace('id="r89-source-02"', 'id="r89-source-01"', 1),
+            "R90_MISSING_DUPLICATE_OR_MALFORMED_CARD")
 
     def test_four_complete_readable_views(self):
         for name in r89.PAGES:

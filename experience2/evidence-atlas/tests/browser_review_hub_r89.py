@@ -22,6 +22,9 @@ def checksum(file):
 def run(root: Path, out: Path, axe: Path, chromium: str | None = None):
     assert all((root / name).is_file() for name in PAGES), "R89_BUILD_INCOMPLETE"
     assert axe.is_file(), "R89_AXE_MISSING"
+    audit_receipt=json.loads((root / "R89_INTEGRITY_RECEIPT.json").read_text("utf8"))
+    expected_urls=audit_receipt["source_urls_by_id"]
+    assert len(audit_receipt["record_source_bindings"])==24 and len(expected_urls)==6, "R90_SOURCE_RECEIPT_INCOMPLETE"
     out.mkdir(parents=True, exist_ok=True)
     class Silent(SimpleHTTPRequestHandler):
         def log_message(self, *args):
@@ -70,6 +73,10 @@ def run(root: Path, out: Path, axe: Path, chromium: str | None = None):
                     assert page.locator("main article.source").count() == 6, "R89_SIX_SOURCES"
                     assert page.locator("article.source details").count() == 6, "R89_SOURCE_DRAWERS"
                     assert page.locator("article.source a[href^='https://www.nasa.gov/image-detail/']").count()==6, "R89_NASA_SOURCE_CUSTODY"
+                    for identity, url in sorted(expected_urls.items()):
+                        card=page.locator(f"#r89-source-{identity}")
+                        assert card.count()==1, "R90_CARD_ID_MISSING"
+                        assert card.locator("a[href^='https://www.nasa.gov/image-detail/']").get_attribute("href")==url, "R90_BROWSER_SOURCE_SWAP"
                     assert page.locator("img,iframe,picture,video,[data-lat],[data-lon],[data-geo-edge]").count()==0, "R89_MEDIA_OR_GEO"
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth+2"), "R89_OVERFLOW_HUB"
                     TRACE["gate"] = "NATIVE_KEYBOARD"
