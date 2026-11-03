@@ -39,3 +39,10 @@ details{border-top:1px solid var(--border);margin-top:18px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media(forced-colors:active){.warning,.card,.meta span,.jump a,.badge,.buttonlink{border:1px solid CanvasText}a:focus-visible,summary:focus-visible{outline:3px solid Highlight}}
 @media print{html,body{background:white!important;color:black!important}.container{width:100%}.cards{grid-template-columns:1fr}.card,.warning{background:white!important;color:black!important;break-inside:avoid;border-color:black}.card p,.footer,.lede,dt,.kicker{color:black!important}a{color:black!important}.jump{display:none}details{display:block}details>*{display:block!important}.buttonlink{border:1px solid black}.card{padding:14px}}
+
+/* Research-print custody: make the destination independently visible on paper,
+   not merely an invisible PDF hyperlink annotation. Never print an image. */
+@media print{
+  .buttonlink{display:block;max-width:100%;white-space:normal}
+  .buttonlink::after{content:attr(href);display:block;font:8pt/1.4 ui-monospace,monospace;overflow-wrap:anywhere;white-space:normal}
+}
