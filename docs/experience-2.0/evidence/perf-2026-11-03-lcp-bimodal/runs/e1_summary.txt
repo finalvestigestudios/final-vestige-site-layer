@@ -1,0 +1,22 @@
+== variant=base cache=cold cpu=4 enc=none  runs=40
+LCP all                            n= 40 min  1456 med  1676 p75  4530 p95  4876 max  4904
+LCP fast (<3000)                   n= 27 min  1456 med  1664 p75  1676 p95  1695 max  1908
+LCP slow (>=3000)                  n= 13 min  4444 med  4748 p75  4856 p95  4890 max  4904
+slow share 13/40 = 32%
+FCP all                            n= 40 min  1408 med  1586 p75  1596 p95  1660 max  1700
+FCP fast                           n= 27 min  1408 med  1584 p75  1590 p95  1617 max  1632
+FCP slow                           n= 13 min  1456 med  1592 p75  1628 p95  1676 max  1700
+final LCP element: {'P.fv-hf__opening-dek': 13, 'P.': 2, 'DIV.fv-margin-strip__window': 25}
+nav responseEnd                    n= 40 min  8871 med  9290 p75  9356 p95  9384 max  9396
+load event                         n= 40 min 12504 med 12794 p75 12828 p95 12912 max 12926
+== variant=ctl cache=cold cpu=4 enc=none  runs=40
+LCP all                            n= 40 min  1404 med  1674 p75  4653 p95  4924 max  4932
+LCP fast (<3000)                   n= 22 min  1404 med  1662 p75  1668 p95  1676 max  1712
+LCP slow (>=3000)                  n= 18 min  4404 med  4698 p75  4879 p95  4925 max  4932
+slow share 18/40 = 45%
+FCP all                            n= 40 min  1352 med  1588 p75  1601 p95  1629 max  1644
+FCP fast                           n= 22 min  1352 med  1586 p75  1592 p95  1615 max  1644
+FCP slow                           n= 18 min  1428 med  1588 p75  1610 p95  1630 max  1640
+final LCP element: {'P.fv-hf__opening-dek': 18, 'DIV.fv-margin-strip__window': 21, 'P.': 1}
+nav responseEnd                    n= 40 min  8230 med  9288 p75  9317 p95  9382 max  9409
+load event                         n= 40 min 12273 med 12778 p75 12846 p95 12923 max 12973

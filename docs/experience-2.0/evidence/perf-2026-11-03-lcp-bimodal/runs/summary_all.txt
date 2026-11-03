@@ -1,0 +1,187 @@
+##### e1_identity_light
+== variant=base cache=cold cpu=4 enc=none  runs=40
+LCP all                            n= 40 min  1456 med  1676 p75  4530 p95  4876 max  4904
+LCP fast (<3000)                   n= 27 min  1456 med  1664 p75  1676 p95  1695 max  1908
+LCP slow (>=3000)                  n= 13 min  4444 med  4748 p75  4856 p95  4890 max  4904
+slow share 13/40 = 32%
+FCP all                            n= 40 min  1408 med  1586 p75  1596 p95  1660 max  1700
+FCP fast                           n= 27 min  1408 med  1584 p75  1590 p95  1617 max  1632
+FCP slow                           n= 13 min  1456 med  1592 p75  1628 p95  1676 max  1700
+final LCP element: {'P.fv-hf__opening-dek': 13, 'P.': 2, 'DIV.fv-margin-strip__window': 25}
+nav responseEnd                    n= 40 min  8871 med  9290 p75  9356 p95  9384 max  9396
+load event                         n= 40 min 12504 med 12794 p75 12828 p95 12912 max 12926
+== variant=ctl cache=cold cpu=4 enc=none  runs=40
+LCP all                            n= 40 min  1404 med  1674 p75  4653 p95  4924 max  4932
+LCP fast (<3000)                   n= 22 min  1404 med  1662 p75  1668 p95  1676 max  1712
+LCP slow (>=3000)                  n= 18 min  4404 med  4698 p75  4879 p95  4925 max  4932
+slow share 18/40 = 45%
+FCP all                            n= 40 min  1352 med  1588 p75  1601 p95  1629 max  1644
+FCP fast                           n= 22 min  1352 med  1586 p75  1592 p95  1615 max  1644
+FCP slow                           n= 18 min  1428 med  1588 p75  1610 p95  1630 max  1640
+final LCP element: {'P.fv-hf__opening-dek': 18, 'DIV.fv-margin-strip__window': 21, 'P.': 1}
+nav responseEnd                    n= 40 min  8230 med  9288 p75  9317 p95  9382 max  9409
+load event                         n= 40 min 12273 med 12778 p75 12846 p95 12923 max 12973
+##### e2_gzip_light
+== variant=base cache=cold cpu=4 enc=gzip  runs=20
+LCP all                            n= 20 min  1792 med  1964 p75  2070 p95  2258 max  2364
+LCP fast (<3000)                   n= 20 min  1792 med  1964 p75  2070 p95  2258 max  2364
+LCP slow (>=3000)                  n=0
+slow share 0/20 = 0%
+FCP all                            n= 20 min  1792 med  1942 p75  1996 p95  2083 max  2364
+FCP fast                           n= 20 min  1792 med  1942 p75  1996 p95  2083 max  2364
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 20}
+nav responseEnd                    n= 20 min   608 med  1134 p75  1188 p95  1235 max  1289
+load event                         n= 20 min  7299 med  7484 p75  7608 p95  7656 max  7665
+== variant=ctl cache=cold cpu=4 enc=gzip  runs=20
+LCP all                            n= 20 min  1576 med  1860 p75  2062 p95  2183 max  2468
+LCP fast (<3000)                   n= 20 min  1576 med  1860 p75  2062 p95  2183 max  2468
+LCP slow (>=3000)                  n=0
+slow share 0/20 = 0%
+FCP all                            n= 20 min  1576 med  1860 p75  1957 p95  2077 max  2252
+FCP fast                           n= 20 min  1576 med  1860 p75  1957 p95  2077 max  2252
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 20}
+nav responseEnd                    n= 20 min   590 med  1127 p75  1181 p95  1289 max  1333
+load event                         n= 20 min  7253 med  7420 p75  7536 p95  7630 max  7908
+##### e3_live_light
+== variant=live cache=cold cpu=4 enc=none  runs=30
+LCP all                            n= 30 min  1904 med  2138 p75  2307 p95  2548 max  2700
+LCP fast (<3000)                   n= 30 min  1904 med  2138 p75  2307 p95  2548 max  2700
+LCP slow (>=3000)                  n=0
+slow share 0/30 = 0%
+FCP all                            n= 30 min  1668 med  2076 p75  2192 p95  2336 max  2416
+FCP fast                           n= 30 min  1668 med  2076 p75  2192 p95  2336 max  2416
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 30}
+nav responseEnd                    n= 30 min   736 med  1206 p75  1351 p95  1611 max  1671
+load event                         n= 30 min  7152 med  7321 p75  7430 p95  7988 max 10917
+##### e3b_live_light
+== variant=live cache=cold cpu=4 enc=none  runs=30
+LCP all                            n= 30 min  1604 med  1810 p75  1875 p95  2074 max  2236
+LCP fast (<3000)                   n= 30 min  1604 med  1810 p75  1875 p95  2074 max  2236
+LCP slow (>=3000)                  n=0
+slow share 0/30 = 0%
+FCP all                            n= 30 min  1604 med  1810 p75  1875 p95  2074 max  2236
+FCP fast                           n= 30 min  1604 med  1810 p75  1875 p95  2074 max  2236
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 30}
+nav responseEnd                    n= 30 min  1063 med  1316 p75  1361 p95  1456 max  1469
+load event                         n= 30 min  7327 med  7516 p75  7544 p95  7597 max  7627
+##### e5_gzip_hoist
+== variant=base cache=cold cpu=4 enc=gzip  runs=30
+LCP all                            n= 30 min  1476 med  1890 p75  1933 p95  2196 max  2312
+LCP fast (<3000)                   n= 30 min  1476 med  1890 p75  1933 p95  2196 max  2312
+LCP slow (>=3000)                  n=0
+slow share 0/30 = 0%
+FCP all                            n= 30 min  1476 med  1852 p75  1868 p95  2147 max  2276
+FCP fast                           n= 30 min  1476 med  1852 p75  1868 p95  2147 max  2276
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 30}
+nav responseEnd                    n= 30 min   716 med  1130 p75  1220 p95  1271 max  1275
+load event                         n= 30 min  7034 med  7184 p75  7326 p95  7513 max  7634
+== variant=hoist_css cache=cold cpu=4 enc=gzip  runs=30
+LCP all                            n= 30 min  1596 med  1910 p75  2029 p95  2095 max  2196
+LCP fast (<3000)                   n= 30 min  1596 med  1910 p75  2029 p95  2095 max  2196
+LCP slow (>=3000)                  n=0
+slow share 0/30 = 0%
+FCP all                            n= 30 min  1512 med  1868 p75  1966 p95  2040 max  2080
+FCP fast                           n= 30 min  1512 med  1868 p75  1966 p95  2040 max  2080
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 30}
+nav responseEnd                    n= 30 min   953 med  1140 p75  1159 p95  1195 max  1220
+load event                         n= 30 min  7060 med  7172 p75  7378 p95  7487 max  7527
+##### e6_identity_hoist
+== variant=base cache=cold cpu=4 enc=none  runs=30
+LCP all                            n= 30 min  1476 med  1668 p75  1680 p95  4892 max  4952
+LCP fast (<3000)                   n= 26 min  1476 med  1666 p75  1675 p95  1701 max  1708
+LCP slow (>=3000)                  n=  4 min  4652 med  4892 p75  4910 p95  4944 max  4952
+slow share 4/30 = 13%
+FCP all                            n= 30 min  1408 med  1584 p75  1603 p95  1622 max  1624
+FCP fast                           n= 26 min  1408 med  1584 p75  1599 p95  1620 max  1624
+FCP slow                           n=  4 min  1428 med  1592 p75  1609 p95  1621 max  1624
+final LCP element: {'DIV.fv-margin-strip__window': 26, 'P.fv-hf__opening-dek': 4}
+nav responseEnd                    n= 30 min  9066 med  9305 p75  9335 p95  9400 max  9411
+load event                         n= 30 min 12733 med 12832 p75 12851 p95 12946 max 13049
+== variant=hoist_css cache=cold cpu=4 enc=none  runs=30
+LCP all                            n= 30 min  1536 med  1676 p75  2470 p95  2851 max  2916
+LCP fast (<3000)                   n= 30 min  1536 med  1676 p75  2470 p95  2851 max  2916
+LCP slow (>=3000)                  n=0
+slow share 0/30 = 0%
+FCP all                            n= 30 min  1452 med  1586 p75  1604 p95  1614 max  1620
+FCP fast                           n= 30 min  1452 med  1586 p75  1604 p95  1614 max  1620
+FCP slow                           n=0
+final LCP element: {'DIV.fv-margin-strip__window': 22, 'P.fv-hf__opening-dek': 8}
+nav responseEnd                    n= 30 min  6629 med  6742 p75  6783 p95  6803 max  7311
+load event                         n= 30 min  9757 med  9955 p75 10032 p95 10159 max 10796
+##### e7_gzip_warm
+== variant=base cache=warm cpu=4 enc=gzip  runs=20
+LCP all                            n= 20 min   976 med  1106 p75  1158 p95  1248 max  1408
+LCP fast (<3000)                   n= 20 min   976 med  1106 p75  1158 p95  1248 max  1408
+LCP slow (>=3000)                  n=0
+slow share 0/20 = 0%
+FCP all                            n= 20 min   856 med  1034 p75  1075 p95  1145 max  1172
+FCP fast                           n= 20 min   856 med  1034 p75  1075 p95  1145 max  1172
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 20}
+nav responseEnd                    n= 20 min  1172 med  1364 p75  1400 p95  1421 max  1435
+load event                         n= 20 min  7003 med  7134 p75  7146 p95  7152 max  7168
+##### e8_gzip_cpu6
+== variant=base cache=cold cpu=6.0 enc=gzip  runs=20
+LCP all                            n= 20 min  2212 med  2734 p75  2978 p95  3343 max  3620
+LCP fast (<3000)                   n= 15 min  2212 med  2636 p75  2810 p95  2956 max  2964
+LCP slow (>=3000)                  n=  5 min  3020 med  3200 p75  3328 p95  3562 max  3620
+slow share 5/20 = 25%
+FCP all                            n= 20 min  1944 med  2486 p75  2809 p95  3028 max  3188
+FCP fast                           n= 15 min  1944 med  2412 p75  2548 p95  2812 max  2848
+FCP slow                           n=  5 min  2796 med  3020 p75  3020 p95  3154 max  3188
+final LCP element: {'P.fv-hf__opening-dek': 20}
+nav responseEnd                    n= 20 min   833 med  1078 p75  1111 p95  1185 max  1189
+load event                         n= 20 min  7630 med  8888 p75  9016 p95  9186 max  9303
+##### e9_gzip_cpu2
+== variant=base cache=cold cpu=2.0 enc=gzip  runs=20
+LCP all                            n= 20 min  1168 med  1446 p75  1506 p95  1649 max  1740
+LCP fast (<3000)                   n= 20 min  1168 med  1446 p75  1506 p95  1649 max  1740
+LCP slow (>=3000)                  n=0
+slow share 0/20 = 0%
+FCP all                            n= 20 min  1168 med  1446 p75  1502 p95  1617 max  1708
+FCP fast                           n= 20 min  1168 med  1446 p75  1502 p95  1617 max  1708
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 20}
+nav responseEnd                    n= 20 min   610 med  1189 p75  1237 p95  1265 max  1321
+load event                         n= 20 min  7046 med  7174 p75  7179 p95  7192 max  7222
+##### e10_gzip_net08
+== variant=base cache=cold cpu=4 enc=gzip  runs=20
+LCP all                            n= 20 min  1960 med  2270 p75  2390 p95  2571 max  2712
+LCP fast (<3000)                   n= 20 min  1960 med  2270 p75  2390 p95  2571 max  2712
+LCP slow (>=3000)                  n=0
+slow share 0/20 = 0%
+FCP all                            n= 20 min  1316 med  2132 p75  2243 p95  2513 max  2528
+FCP fast                           n= 20 min  1316 med  2132 p75  2243 p95  2513 max  2528
+FCP slow                           n=0
+final LCP element: {'P.fv-hf__opening-dek': 20}
+nav responseEnd                    n= 20 min  2248 med  2470 p75  2648 p95  3851 max  4291
+load event                         n= 20 min 13995 med 14152 p75 14235 p95 20319 max 20462
+##### e13_identity_stripfirst
+== variant=base cache=cold cpu=4 enc=none  runs=25
+LCP all                            n= 25 min  1612 med  1684 p75  4732 p95  4822 max  4848
+LCP fast (<3000)                   n= 18 min  1612 med  1672 p75  1684 p95  1713 max  1716
+LCP slow (>=3000)                  n=  7 min  4732 med  4788 p75  4818 p95  4841 max  4848
+slow share 7/25 = 28%
+FCP all                            n= 25 min  1540 med  1592 p75  1604 p95  1640 max  1644
+FCP fast                           n= 18 min  1540 med  1592 p75  1610 p95  1641 max  1644
+FCP slow                           n=  7 min  1560 med  1596 p75  1600 p95  1604 max  1604
+final LCP element: {'DIV.fv-margin-strip__window': 18, 'P.fv-hf__opening-dek': 7}
+nav responseEnd                    n= 25 min  9140 med  9306 p75  9352 p95  9413 max  9424
+load event                         n= 25 min 12701 med 12781 p75 12795 p95 12818 max 12849
+== variant=strip_css_first cache=cold cpu=4 enc=none  runs=25
+LCP all                            n= 25 min  4560 med  4880 p75  4928 p95  4977 max  4988
+LCP fast (<3000)                   n=0
+LCP slow (>=3000)                  n= 25 min  4560 med  4880 p75  4928 p95  4977 max  4988
+slow share 25/25 = 100%
+FCP all                            n= 25 min  1480 med  1588 p75  1604 p95  1644 max  1656
+FCP fast                           n=0
+FCP slow                           n= 25 min  1480 med  1588 p75  1604 p95  1644 max  1656
+final LCP element: {'P.fv-hf__opening-dek': 25}
+nav responseEnd                    n= 25 min  9135 med  9321 p75  9382 p95  9422 max  9427
+load event                         n= 25 min 12636 med 12775 p75 12799 p95 12827 max 12830

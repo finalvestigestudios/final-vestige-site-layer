@@ -1,0 +1,16 @@
+  0 base       FCP 1644 LCP 1696 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1588], ['done', 11758]] cpu=37.5
+  1 base       FCP 1636 LCP 4708 P.fv-hf__opening-dek n=3 fonts=[['loading', 1602], ['done', 11759]] cpu=35.6
+  2 base       FCP 1616 LCP 1684 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1598], ['done', 11921]] cpu=33.8
+  3 base       FCP 1544 LCP 1612 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1515], ['done', 12077]] cpu=32.2
+  4 base       FCP 1608 LCP 1656 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1589], ['done', 12159]] cpu=34.9
+  5 base       FCP 1608 LCP 4632 P.fv-hf__opening-dek n=3 fonts=[['loading', 1598], ['done', 12089]] cpu=29.1
+  6 base       FCP 1604 LCP 1704 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1601], ['done', 12091]] cpu=36.9
+  7 base       FCP 1612 LCP 3916 P.fv-hf__opening-dek n=3 fonts=[['loading', 1611], ['done', 12517]] cpu=28.8
+  8 base       FCP 2080 LCP 3212 P.fv-hf__opening-dek n=1 fonts=[['loading', 2073], ['done', 11881]] cpu=41.3
+  9 base       FCP 1608 LCP 1660 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1575], ['done', 12134]] cpu=30.8
+ 10 base       FCP 1596 LCP 1664 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1571], ['done', 12037]] cpu=30.5
+ 11 base       FCP 1612 LCP 1676 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1593], ['done', 12122]] cpu=29.8
+ 12 base       FCP 1620 LCP 1672 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1590], ['done', 11963]] cpu=40.4
+ 13 base       FCP 1600 LCP 1652 DIV.fv-margin-strip__window n=1 fonts=[['loading', 1572], ['done', 12150]] cpu=24.8
+ 14 base       FCP 1580 LCP 4404 P.fv-hf__opening-dek n=2 fonts=[['loading', 1561], ['done', 12110]] cpu=21.0
+ 15 base       FCP 1428 LCP 4268 P.fv-hf__opening-dek n=2 fonts=[['loading', 1407], ['done', 12110]] cpu=21.6
