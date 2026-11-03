@@ -1,0 +1,97 @@
+# Independent Apollo R86: actual Research Desk ↔ Atlas ↔ NASA concordance. No deployments.
+name: Apollo R86 cross-component source concordance (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r86*'
+      - 'experience2/evidence-atlas/tests/*r86*'
+      - 'experience2/evidence-atlas/R86_CROSS_COMPONENT_CONCORDANCE_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r86-concordance.yml'
+permissions:
+  contents: read
+jobs:
+  source-custody-and-determinism:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact-head real component parity + adversarial tests + deterministic review
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r86-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_concordance_r86.py \
+            experience2/evidence-atlas/tests/test_concordance_r86.py \
+            experience2/evidence-atlas/tests/browser_concordance_r86.py \
+            experience2/evidence-atlas/tests/package_concordance_r86.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_concordance_r86.py -v
+          python experience2/evidence-atlas/tools/build_concordance_r86.py "$RUNNER_TEMP/r86-stage"
+          python experience2/evidence-atlas/tests/package_concordance_r86.py \
+            --built "$RUNNER_TEMP/r86-stage" --out "$RUNNER_TEMP/R86_A.zip"
+          python experience2/evidence-atlas/tests/package_concordance_r86.py \
+            --built "$RUNNER_TEMP/r86-stage" --out "$RUNNER_TEMP/R86_B.zip"
+          cmp "$RUNNER_TEMP/R86_A.zip" "$RUNNER_TEMP/R86_B.zip"
+          sha256sum "$RUNNER_TEMP/R86_A.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r86-actual-component-concordance-deterministic-STAGING-HOLD
+          path: ${{ runner.temp }}/R86_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  chromium-accessibility-and-print:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: source-custody-and-determinism
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned Playwright, Chromium, axe-core and PDF inspector
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r86-axe" --no-save \
+            --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Real Chromium 320–1920, no-JS, keyboard/touch, axe, LCP/CLS, PDF
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r86-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_concordance_r86.py "$RUNNER_TEMP/r86-stage"
+          python experience2/evidence-atlas/tests/browser_concordance_r86.py \
+            --src "$RUNNER_TEMP/r86-stage" --out "$RUNNER_TEMP/r86-browser" \
+            --axe "$RUNNER_TEMP/r86-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r86-browser/R86_BROWSER_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Preserve exact-head screenshots, axe/metric receipts and native PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r86-real-chromium-concordance-STAGING-HOLD
+          path: ${{ runner.temp }}/r86-browser/
+          if-no-files-found: warn
+          retention-days: 7
