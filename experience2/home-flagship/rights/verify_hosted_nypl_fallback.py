@@ -243,7 +243,7 @@ def main() -> int:
                    "source_raw_sha256_at_readback":
                       "c9a6cd57582cce2801620381212193d54b9e6446236b24aff1880a12ff1d3b7e",
                    "expected_offline_candidate_sha256":
-                      "de7d7a951c780ad4d6a411438ada7d328a05965aa2fc3c3964c535e81089f3ba",
+                      "dc2c6ff17639d114794f9c1b78b4a6ab77962ca7129473bef10a5d20a859be19",
                    "authentication": "none",
                    "wordpress_writes": 0,
                    "nypl_image_fetches_allowed": False,
