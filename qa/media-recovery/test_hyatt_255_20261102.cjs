@@ -46,4 +46,8 @@ mutation('reject distortive derivative aspect ratio',a=>a.images[4].catalog.cond
 mutation('reject mislabeled vector as federal photo',a=>a.images[1].catalog.source_kind='federal_photo');
 mutation('reject changed Commons catalog URL',a=>a.images[6].catalog.url='https://example.com/file');
 mutation('reject unverified original treated as match',a=>a.images[1].catalog.relationship='binary_exact');
-mutation('reject claimed live CMS read',a=>a.fresh_wordpress_read=true);
+mutation('reject lost live CMS evidence',a=>a.fresh_wordpress_read=false);
+mutation('reject partial live source matching',a=>a.live_wp_recheck.matched_image_source_urls=6);
+mutation('reject partial ALT matching',a=>a.live_wp_recheck.matched_image_alts=6);
+mutation('reject forged CMS edit marker',a=>a.live_wp_recheck.content_write=true);
+mutation('reject changed live post modified',a=>a.live_wp_recheck.post_modified='2026-10-31T00:00:00');
