@@ -55,7 +55,7 @@ MUTATE = r"""() => {
  imgs[0].remove();
  cap[0].innerHTML = '<strong>Catalog record:</strong> Brooklyn Rapid Transit system map, 1903; NYPL Digital Collections item 5003296. The source is linked, not reproduced here.';
  cred[0].innerHTML = '<strong>Source:</strong> From The New York Public Library; 1903 Brooklyn Rapid Transit system map, catalog item 5003296. <strong>Reuse:</strong> The digital image\'s specific rights status is not verified. The reproduction is withheld pending review.';
- frame.textContent = 'SOURCE RECORD 03 / NYPL 5003296';
+ frame.textContent = 'NYPL RECORD 03 / 5003296';\n fallback.style.left = 'clamp(16px, 6%, 72px)';\n fallback.style.right = 'clamp(16px, 6%, 72px)';\n fallback.style.width = 'auto';\n fallback.style.fontSize = 'clamp(17px, 2.4vw, 30px)';\n fallback.style.overflowWrap = 'break-word';
  const outerAfter = article.outerHTML;
  const fallbackRect = fallback.getBoundingClientRect();
  const imageRect = article.querySelector('.fv-hf__case-image').getBoundingClientRect();
@@ -73,7 +73,7 @@ MUTATE = r"""() => {
        fallbackRect.width > 0 && fallbackRect.height > 0,
     fallback_within_case: fallbackRect.left >= imageRect.left - 2 &&
       fallbackRect.right <= imageRect.right + 2,
-    frame_relabelled: frame.textContent.trim() === 'SOURCE RECORD 03 / NYPL 5003296',
+    frame_relabelled: frame.textContent.trim() === 'NYPL RECORD 03 / 5003296',
     source_heading_retained: !!article.querySelector('#fv-hf-malbone-title'),
     source_details_retained: article.querySelectorAll('details summary').length === 1
  };
