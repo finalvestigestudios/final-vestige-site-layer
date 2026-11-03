@@ -4,6 +4,8 @@ function validate(a, frozen) {
   const fail=(condition,msg)=>{if(!condition)e.push(msg)};
   const orig=frozen.images.filter(x=>x.post_id===220).sort((x,y)=>x.slot-y.slot);
   const p=frozen.posts.find(x=>x.id===220);
+  const expected=[["NH 97545",4918,6136],["NH 97552",740,574],["NH 97310",578,737],["NH 97567",740,532],[null,1700,1349],["NH 97570",739,574],["NH 97557",740,576]];
+  fail(a.source.blob_sha==="9b16b828342a9ac338f3e65610fd3d8d508355e9","pinned frozen blob sha");
   fail(a.schema==="fv-media-recovery-thresher-220-v1","schema");
   fail(a.source.post_id===220 && a.source.post_url===p?.url,"post identity");
   fail(a.source.snapshot==="qa/media-recovery/parts/05.json" && a.source.not_live_wp_read===true,"frozen source provenance");
@@ -18,6 +20,7 @@ function validate(a, frozen) {
     fail(!unique.has(r.key),"duplicate "+i);unique.add(r.key);
     const o=r.retrieval,c=r.catalog,u=r.rights,x=r.proposed;
     fail(o.observed==="web_tool_internal_error_no_response" && o.origin_http_status===null && o.guest_browser_http_status===null && o.guest_browser_decoded===null && o.guest_image_wire_bytes===null && o.guest_current_src===null,"unverified transport "+i);
+    fail(c.navy_catalog_id===expected[i][0] && c.original_width_px===expected[i][1] && c.original_height_px===expected[i][2],"fixed cited catalog ID and dimensions "+i);
     fail(c.observation==="catalog_html_accessible" && c.url.startsWith("https://commons.wikimedia.org/wiki/File:") && c.navy_primary_url.startsWith("https://www.history.navy.mil/"),"archival URLs "+i);
     fail(Number.isInteger(c.original_width_px)&&Number.isInteger(c.original_height_px)&&c.original_width_px>0&&c.original_height_px>0,"catalog dimensions "+i);
     const width=Math.min(960,c.original_width_px);
