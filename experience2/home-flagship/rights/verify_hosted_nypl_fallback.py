@@ -64,6 +64,9 @@ MUTATE = r"""() => {
  const outerAfter = article.outerHTML;
  const fallbackRect = fallback.getBoundingClientRect();
  const imageRect = article.querySelector('.fv-hf__case-image').getBoundingClientRect();
+ const dateLabel = article.querySelector('.fv-hf__image-frame span:last-child');
+ const frameLabelRect = frame.getBoundingClientRect();
+ const dateLabelRect = dateLabel?.getBoundingClientRect();
  return {
     article_before_chars: outerBefore.length,
     article_after_chars: outerAfter.length,
@@ -79,6 +82,8 @@ MUTATE = r"""() => {
     fallback_within_case: fallbackRect.left >= imageRect.left - 2 &&
       fallbackRect.right <= imageRect.right + 2,
     frame_relabelled: frame.textContent.trim() === 'NYPL / 5003296',
+    frame_label_single_line: frameLabelRect.height <= parseFloat(getComputedStyle(frame).lineHeight) + 2,
+    frame_date_single_line: !!dateLabelRect && dateLabelRect.height <= parseFloat(getComputedStyle(dateLabel).lineHeight) + 2,
     source_heading_retained: !!article.querySelector('#fv-hf-malbone-title'),
     source_details_retained: article.querySelectorAll('details summary').length === 1
  };
@@ -121,6 +126,7 @@ def grade(cases: list[dict]) -> dict:
                 "nypl_file_absent", "original_claim_absent",
                 "corrected_credit_present", "fallback_text_visible",
                 "fallback_within_case", "frame_relabelled",
+                "frame_label_single_line", "frame_date_single_line",
                 "source_heading_retained", "source_details_retained"
             ))
             and q.get("catalog_links_in_case") == 1
