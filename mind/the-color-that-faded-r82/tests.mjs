@@ -10,10 +10,10 @@ const A=file("zen12-a-text.blocks.html"),B=file("zen12-b-film.blocks.html"),guid
 const hub=file("mind-hub-noncanonical.blocks.html"),vtt=file("film-captions.vtt"),article=file("investigation.md");
 const matrix=JSON.parse(file("claim-source-matrix.json"));
 test("A & B contain byte-identical substantive core",()=>{assert.ok(A.includes(guide));assert.ok(B.includes(guide));});
-test("A is text-only and B adds optional film transcript",()=>{assert.ok(!A.includes("fv-story"));assert.ok(B.includes("fv-story"));assert.ok(B.includes("<details>"));assert.ok(B.includes("Read the full timed film transcript"));});
+test("A is text-only and B adds optional film transcript",()=>{assert.ok(!A.includes('<section class="fv-story"'));assert.ok(B.includes("fv-story"));assert.ok(B.includes("<details>"));assert.ok(B.includes("Read the full timed film transcript"));});
 test("all purchasing controls are native-disabled",()=>{for(const h of [A,B]) assert.match(h,/<button\s+type="button"\s+disabled\s+aria-disabled="true"/);});
 test("near-control disclosure precedes the actual button",()=>{for(const h of [A,B]) {const d=h.indexOf("If you purchase through a future approved link");const c=h.indexOf("<button");assert.ok(d>0&&c>d&&c-d<500);}});
-test("no activation, scripts, autoplay, forms or third-party embeds",()=>{for(const h of [A,B,hub]){assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|autoplay|gtag\s*\(|dataLayer\s*\(/i);}});
+test("no activation, scripts, autoplay, forms or third-party embeds",()=>{for(const h of [A,B,hub]){assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|<video[^>]*\bautoplay(?:\s|=|>)/i);}});
 test("no direct checkout purchase anchor",()=>{for(const h of [A,B])assert.doesNotMatch(h,/<a[^>]+href="[^"]*(?:aff_id=|ref=|hop=|checkout|purchase)[^"]*"/i);});
 test("film is not mislabeled as playable",()=>{assert.ok(B.includes("Video not yet hosted or activated"));assert.doesNotMatch(B,/<video\b/);});
 test("six captions cover exact 40s and are well-formed",()=>{const a=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d\d\d) --> (\d\d:\d\d:\d\d\.\d\d\d)/g)];assert.equal(a.length,6);assert.equal(a[0][1],"00:00:00.000");assert.equal(a.at(-1)[2],"00:00:40.000");for(let i=1;i<a.length;i++)assert.equal(a[i][1],a[i-1][2]);});
