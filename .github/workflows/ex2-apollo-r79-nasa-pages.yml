@@ -30,6 +30,7 @@ jobs:
           EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r79-python-cache"
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
           python -m py_compile experience2/evidence-atlas/tests/build_nasa_gallery_r79.py \
