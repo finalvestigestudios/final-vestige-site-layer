@@ -64,13 +64,13 @@ def verified_records(src:Path)->list[dict]:
     hub=(src/'R89_REVIEW_HUB.html').read_text()
     records=[]
     for n,rec in sorted(parser.cards.items()):
-        matches=re.findall(r'<article\\b[^>]*id="r89-source-'+n+r'"[^>]*>(.*?)</article>',hub,re.S|re.I)
+        matches=re.findall(r'<article\b[^>]*id="r89-source-'+n+r'"[^>]*>(.*?)</article>',hub,re.S|re.I)
         if len(matches)!=1:raise ValueError('R93_HUB_RECORD_MISSING:'+n)
         part=matches[0]
-        expressions={'title':r'<h3\\b[^>]*>(.*?)</h3>',
-          'catalog':r'<strong>NASA catalog claim:</strong>\\s*(.*?)</p>',
-          'date':r'<strong>Photograph date:</strong>\\s*(.*?)</p>',
-          'limit':r'<strong>Evidence limitation:</strong>\\s*(.*?)</p>'}
+        expressions={'title':r'<h3\b[^>]*>(.*?)</h3>',
+          'catalog':r'<strong>NASA catalog claim:</strong>\s*(.*?)</p>',
+          'date':r'<strong>Photograph date:</strong>\s*(.*?)</p>',
+          'limit':r'<strong>Evidence limitation:</strong>\s*(.*?)</p>'}
         for field,regex in expressions.items():
             found=re.search(regex,part,re.S)
             if not found or clean(found.group(1))!=rec[field]:
