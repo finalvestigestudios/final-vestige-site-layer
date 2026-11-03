@@ -1,0 +1,103 @@
+name: Preparedness R85 Changed Source to Citation Impact (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r84-source-url-citation-edge-custody-hold-20261102
+    paths:
+      - preparedness/tools/r85_source_change_citation_impact.py
+      - preparedness/tests/test_r85_source_change_citation_impact.py
+      - preparedness/docs/R85_SOURCE_CHANGE_CITATION_IMPACT_HOLD.md
+      - .github/workflows/preparedness-r85-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r85-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  private-source-impact-provenance-proof:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout original historical research without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce exact frozen R84 parent and strictly additive source-only scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = "22ec7cbeb6094247b49d9239de143697a797940f"
+          test "$BASE_REF" = "review/preparedness-r84-source-url-citation-edge-custody-hold-20261102"
+          test "$HEAD_REF" = "review/preparedness-r85-source-change-citation-impact-hold-20261102"
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          git diff --name-status -z "$BASE_SHA" "$HEAD_SHA" > "$RUNNER_TEMP/r85-change-scope"
+          python -I - <<'PY'
+          import os
+          from pathlib import Path
+          tokens = Path(os.environ['RUNNER_TEMP'], 'r85-change-scope').read_bytes().split(b'\0')
+          changes = [(tokens[i].decode(), tokens[i+1].decode())
+                     for i in range(0, len(tokens)-1, 2)]
+          expected = {
+              'preparedness/tools/r85_source_change_citation_impact.py',
+              'preparedness/tests/test_r85_source_change_citation_impact.py',
+              'preparedness/docs/R85_SOURCE_CHANGE_CITATION_IMPACT_HOLD.md',
+              '.github/workflows/preparedness-r85-private-tests.yml',
+          }
+          assert len(changes) == len(expected), changes
+          assert {path for _, path in changes} == expected, changes
+          assert all(status == 'A' for status, _ in changes), changes
+          print('R84 immutable base / exactly four ADD-only files / original article-source integrity PASS')
+          PY
+      - name: Compile exact new module and tests without writing pycache
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for file in ('preparedness/tools/r85_source_change_citation_impact.py',
+                       'preparedness/tests/test_r85_source_change_citation_impact.py'):
+              compile(Path(file).read_text(encoding='utf-8'), file, 'exec')
+          print('R85 Python syntax PASS')
+          PY
+      - name: R85 synthetic and adversarial tests plus original historical Git custody
+        run: python -I -m unittest discover -s preparedness/tests -p test_r85_source_change_citation_impact.py -v
+      - name: Reverify seven exact pinned Claude origin refs and separate RC snapshot
+        run: python -I preparedness/tools/r83_citation_placement_context_custody.py
+      - name: Build private source-impact crosswalk and one-way reviewer queue
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r85_source_change_citation_impact.py
+          python -I preparedness/tools/r85_source_change_citation_impact.py --csv-stdout > "$RUNNER_TEMP/r85-private-review.csv"
+          python -I - <<'PY'
+          from pathlib import Path
+          import csv
+          import os
+          path = Path(os.environ['RUNNER_TEMP']) / 'r85-private-review.csv'
+          with path.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+          assert all(row['human_claim_review'] == 'NOT_REVIEWED'
+                     and row['release_state'] == 'HOLD' for row in rows)
+          print('Private review candidates, NOT verified errors or approvals:', len(rows))
+          PY
+          rm -f "$RUNNER_TEMP/r85-private-review.csv"
+      - name: Original native safety, citation and URL validator
+        run: python -I preparedness/tools/validate.py
+      - name: Original offline WordPress-ready private draft build (NO CMS)
+        run: python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite, no timeout waiver
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Final publication prohibition is unconditional
+        if: always()
+        run: |
+          echo 'R85 DIAGNOSTIC ONLY: original 13-stage release integrity and independent QD separate.'
+          echo 'Human claim/link/medical/qualified safety approvals 0, source evidence NOT_REVIEWED.'
+          echo 'Do not merge, deploy, publish, write CMS/navigation, or assert safe guidance.'
