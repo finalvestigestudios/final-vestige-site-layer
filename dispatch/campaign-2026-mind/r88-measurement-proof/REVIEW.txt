@@ -1,0 +1,29 @@
+FINAL VESTIGE | THE DISPATCH | EVIDENCE-ONLY SCORECARD
+DRAFT · November 3, 2026, 10:31 UTC · No email ever authorized by this board
+
+Newsletter status: enabled; post-level auto-send DEFAULT OFF, NOT sitewide locked.
+Actual email-eligible audience: UNKNOWN.
+Newsletter counters: total 2, confirmed 2, unconfirmed 2 (not additive).
+Follower classifications: total 2, email followers 0, WordPress.com followers 2.
+Recent five posts: never_sent_opted_out; not proof that nothing ever sent.
+52-page Focus Fieldbook welcome CONFIGURED, genuine receipt UNKNOWN.
+Native Jetpack delivered-email HTML/plaintext/unsubscribe/postal: NOT VERIFIED.
+Affiliate email promotion permission and guide status: NOT VERIFIED / NOT LIVE.
+
+ISSUE   ORIGINAL SUBJECT                             GATE             RECIPIENTS  EMAIL CLICKS  PARTNER SALES
+01      The mind is not a camera                     HOLD_UNSENT       UNKNOWN     UNKNOWN       UNKNOWN
+02      Before hypnosis had a name                  HOLD_UNSENT       UNKNOWN     UNKNOWN       UNKNOWN
+03      The twelve-minute meditation question       HOLD_MERCHANT     UNKNOWN     UNKNOWN       UNKNOWN
+04      Fourteen seconds. A much longer explanation. HOLD_UNSENT       UNKNOWN     UNKNOWN       UNKNOWN
+05      Before you press play on a hypnosis audio   HOLD_MERCHANT     UNKNOWN     UNKNOWN       UNKNOWN
+06      What did seven days of attention reveal?    HOLD_UNSENT       UNKNOWN     UNKNOWN       UNKNOWN
+
+No invented opens, clickthrough, ROI, A/B significance or merchant revenue.
+UNKNOWN is not zero. Follower email=0 is not proof of no eligible subscribers.
+Proposed campaign key fv_dispatch_pilot_2026; NOT ACTIVATED.
+No send, recipient access, link activation, signup list, tracking or expenses.
+
+Sources: connected WordPress.com newsletter + follower reports 2026-11-03 10:31 UTC.
+Reading: https://wordpress.com/support/subscribers/ and https://wordpress.com/support/stats/view-subscriber-stats/
+Original manuscripts: GitHub PR #175. Gate: #201. Owner: Issue #174, merchant: #171.
+All six HOLD_UNSENT. Issues 03 and 05 additionally HOLD_MERCHANT.

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "as_of_utc": "2026-11-03T10:31:28Z",
+  "site": "https://finalvestige.com",
+  "report_type": "RESEARCH_ONLY_NO_SEND",
+  "source_paths": {
+    "newsletter": "connected WordPress.com Jetpack newsletter status/get_settings 2026-11-03T10:31Z",
+    "followers": "connected WordPress.com Jetpack follower stats 2026-11-03T10:31Z"
+  },
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "new_post_default_send": false,
+    "email_content_format": "excerpt",
+    "reply_to": "no-reply",
+    "welcome_pdf_configured": true,
+    "welcome_receipt_verified": false,
+    "count_total": 2,
+    "count_confirmed": 2,
+    "count_unconfirmed": 2,
+    "suppressed": 0,
+    "recent_post_ids_never_sent_opted_out": [1926, 1924, 1922, 1920, 1917]
+  },
+  "followers": {
+    "total": 2,
+    "email": 0,
+    "wpcom": 2,
+    "partial": false
+  },
+  "email_eligible_audience": null,
+  "real_received_email_verified": false,
+  "real_unsubscribe_verified": false,
+  "publisher_postal_verified": false,
+  "founder_send_approval": false,
+  "affiliate_email_permission_verified": false,
+  "affiliate_guides_live": false,
+  "attribution_activated": false,
+  "issues": [
+    {"id":"01","kind":"editorial","subject":"The mind is not a camera","cta_state":"first_party_live","merchant_url":null,"metrics":{}},
+    {"id":"02","kind":"editorial","subject":"Before hypnosis had a name","cta_state":"first_party_live","merchant_url":null,"metrics":{}},
+    {"id":"03","kind":"commercial_reserved","subject":"The twelve-minute meditation question","cta_state":"merchant_guide_unpublished","merchant_url":null,"metrics":{}},
+    {"id":"04","kind":"editorial","subject":"Fourteen seconds. A much longer explanation.","cta_state":"first_party_live","merchant_url":null,"metrics":{}},
+    {"id":"05","kind":"commercial_reserved","subject":"Before you press play on a hypnosis audio","cta_state":"merchant_guide_unpublished","merchant_url":null,"metrics":{}},
+    {"id":"06","kind":"editorial","subject":"What did seven days of attention reveal?","cta_state":"first_party_live","merchant_url":null,"metrics":{}}
+  ]
+}
