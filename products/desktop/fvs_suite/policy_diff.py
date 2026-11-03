@@ -177,6 +177,35 @@ def _unified_diff(before, after, old_label, new_label, *, include_index=False):
     return (rendered, _render_change_index(hunks)) if include_index else rendered
 
 
+def _compatibility_codepoint_evidence(before_text: str, after_text: str) -> str:
+    """Bounded codepoint navigation, not a claim that characters mean the same.
+
+    Count only characters whose NFKC differs from their NFC form, so an
+    ordinary canonical accent is never mislabeled as a compatibility edit.
+    This executes only if the entire source texts are NFKC-equal but not
+    NFC-equal; input is already size bounded by the policy reader.
+    """
+    def counts(text):
+        found = {}
+        for character in text:
+            if unicodedata.normalize("NFKC", character) != unicodedata.normalize("NFC", character):
+                codepoint = ord(character)
+                found[codepoint] = found.get(codepoint, 0) + 1
+        return found
+
+    old_counts, new_counts = counts(before_text), counts(after_text)
+    changed = sorted(cp for cp in old_counts.keys() | new_counts.keys()
+                     if old_counts.get(cp, 0) != new_counts.get(cp, 0))
+    if not changed:
+        return ("Compatibility-sensitive codepoint totals did not change; "
+                "inspect ordering and exact physical diff lines.\n")
+    shown = ", ".join(f"U+{cp:04X}" for cp in changed[:16])
+    omitted = len(changed) - 16
+    remainder = f" (+{omitted} more)" if omitted else ""
+    return ("Compatibility-sensitive codepoints with changed source counts "
+            f"(at most 16 shown): {shown}{remainder}.\n")
+
+
 def compare_policy_files(old, new, folder, output_path):
     """Write one deterministic, provenance-rich report after both inputs pass.
 
@@ -196,10 +225,28 @@ def compare_policy_files(old, new, folder, output_path):
     # A raw-codepoint revision can look identical after Unicode NFC
     # composition. This is a navigation cue, not a legal equivalence claim;
     # the escaped diff and independent source fingerprints remain authoritative.
+    before_text, after_text = "".join(before), "".join(after)
+    nfc_equal = bool(delta) and (
+        unicodedata.normalize("NFC", before_text) ==
+        unicodedata.normalize("NFC", after_text))
     normalization_note = (
         "REVIEW: Text differs at Unicode codepoint level but is NFC-normalization-equivalent; inspect escaped combining marks and both original files.\n"
-        if delta and unicodedata.normalize("NFC", "".join(before)) ==
-                     unicodedata.normalize("NFC", "".join(after)) else ""
+        if nfc_equal else ""
+    )
+    # Compatibility normalization can collapse materially different symbols:
+    # fullwidth forms, superscripts, circled numbers, styled letters and
+    # ligatures. Keep this separate from canonical NFC equivalence, flag it
+    # only when WHOLE raw source texts fold equally, and never infer policy
+    # equivalence, fraud, or compliance.
+    compatibility_note = (
+        "REVIEW: Text differs and is NFKC-compatibility-equivalent ONLY "
+        "(not NFC-equivalent). Compatibility folding may collapse distinct "
+        "symbols, quantities or typography; this is NOT legal or semantic "
+        "equivalence. Inspect the original files and cited physical lines.\n"
+        + _compatibility_codepoint_evidence(before_text, after_text)
+        if delta and not nfc_equal and
+           unicodedata.normalize("NFKC", before_text) ==
+           unicodedata.normalize("NFKC", after_text) else ""
     )
     report = (
         "Text differences only. Not legal advice or a compliance determination.\n"
@@ -209,7 +256,7 @@ def compare_policy_files(old, new, folder, output_path):
         "Non-ASCII Unicode spacing separators display as \\uXXXX (ordinary spaces remain unchanged).\n"
         "Unicode blank filler glyphs display as \\uXXXX; raw files remain authoritative.\n"
         "Unicode nonspacing/enclosing combining marks display as \\uXXXX or \\UXXXXXXXX.\n"
-        + identity_note + normalization_note +
+        + identity_note + normalization_note + compatibility_note +
         f"Before: {before_name} | SHA-256: {before_hash} | lines: {len(before)}\n"
         f"After: {after_name} | SHA-256: {after_hash} | lines: {len(after)}\n\n"
         + change_index
