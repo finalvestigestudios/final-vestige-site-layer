@@ -10,6 +10,8 @@ function validate(a) {
   assert.equal(a.source_retrieval.media_count, 110);
   assert.deepEqual(a.source_retrieval.checked_post_ids, [34,35,36,37,38,299,621,418]);
   assert.equal(items.length, 110);
+  assert.equal(items.reduce((n,x)=>n+x.original_bytes,0),64900772,'library original bytes mismatch');
+  assert.equal(s.library_original_storage_bytes,64900772,'not visitor transfer bytes');
   assert.equal(new Set(items.map(x=>x.id)).size, 110);
   assert.equal(new Set(items.map(x=>x.source_url)).size, 110);
   for (const x of items) {
