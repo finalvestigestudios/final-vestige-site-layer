@@ -1,0 +1,85 @@
+name: Apollo R87 historical claim-photo boundary (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r87*'
+      - 'experience2/evidence-atlas/tests/*r87*'
+      - 'experience2/evidence-atlas/R87_CLAIM_PHOTO_BOUNDARY_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r87-claim-boundary.yml'
+permissions:
+  contents: read
+jobs:
+  source-and-deterministic-package:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate exact head, adversarial source gates, and deterministic packaging
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r87-pycache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_claim_boundary_r87.py experience2/evidence-atlas/tests/test_claim_boundary_r87.py experience2/evidence-atlas/tests/browser_claim_boundary_r87.py experience2/evidence-atlas/tests/package_claim_boundary_r87.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_claim_boundary_r87.py -v
+          python experience2/evidence-atlas/tools/build_claim_boundary_r87.py "$RUNNER_TEMP/r87-build"
+          python experience2/evidence-atlas/tests/package_claim_boundary_r87.py --built "$RUNNER_TEMP/r87-build" --out "$RUNNER_TEMP/R87_A.zip"
+          python experience2/evidence-atlas/tests/package_claim_boundary_r87.py --built "$RUNNER_TEMP/r87-build" --out "$RUNNER_TEMP/R87_B.zip"
+          cmp "$RUNNER_TEMP/R87_A.zip" "$RUNNER_TEMP/R87_B.zip"
+          sha256sum "$RUNNER_TEMP/R87_A.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r87-claim-photo-review-source-STAGING-HOLD
+          path: ${{ runner.temp }}/R87_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  real-chromium-a11y-and-print:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: source-and-deterministic-package
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned Playwright and axe-core
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r87-axe" --no-save --ignore-scripts --no-audit --no-fund axe-core@4.14.0
+      - name: Generate read-only source review and test real Chromium
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r87-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_claim_boundary_r87.py "$RUNNER_TEMP/r87-build"
+          python experience2/evidence-atlas/tests/browser_claim_boundary_r87.py --src "$RUNNER_TEMP/r87-build" --out "$RUNNER_TEMP/r87-browser" --axe "$RUNNER_TEMP/r87-axe/node_modules/axe-core/axe.min.js"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r87-real-chromium-evidence-STAGING-HOLD
+          path: ${{ runner.temp }}/r87-browser/
+          if-no-files-found: error
+          retention-days: 7
