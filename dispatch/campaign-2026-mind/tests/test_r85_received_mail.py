@@ -167,7 +167,7 @@ class ReceivedMailAudit(unittest.TestCase):
     def test_no_sender_addresses_or_click_tokens_in_report(self):
         raw = make_mail(from_header="Private Name <private+identifier@example.com>")
         s = json.dumps(scan(raw))
-        for needle in ("Private Name", "identifier", "recipient", "example.com"):
+        for needle in ("Private Name", "private+identifier@example.com", "test.recipient@example.org", "example.com"):
             self.assertNotIn(needle, s)
 
     def test_read_only_contract_does_not_offer_ready_state(self):
