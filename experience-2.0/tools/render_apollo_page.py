@@ -16,10 +16,10 @@ from datetime import date
 
 import fvx_lib as lib
 from fvx_lib import esc, safe_https
-from render_atlas import _date_text
 from render_desk import render_desk
 from render_flagship import _chapter, _provenance, render_chronology
 
+SIGNOFFS = lib.EX2 / "page-blocks" / "image-signoffs.json"
 DESK_INSTANCE = "apollo1"
 DESK_ID = "research-desk"
 
@@ -66,6 +66,7 @@ PAGE_CSS = """
 .fv-ex2-pagefoot { padding-block: var(--fvx-s-6); border-top: 1px solid var(--fvx-line); display: grid; gap: var(--fvx-s-2); font-size: var(--fvx-fs-small); color: var(--fvx-text-muted); }
 /* The Assembler theme sets `.wp-site-blocks main * { min-width: 0 }`, which would collapse the 44px chapter links. */
 .fv-ex2-page .fv-ex2-chapterbar a { min-width: 2.75rem; }
+
 /* Chromium confines a sticky grid item to the grid container, not its row, so the sticky plate slid over the chronology below it.
    Stretch the grid item to its row and make the plate inside it the sticky element. */
 @media (min-width: 60rem) and (min-height: 40rem) {
@@ -73,6 +74,23 @@ PAGE_CSS = """
   .fv-ex2-page .fv-ex2-chapter__plate > .fv-ex2-plate { position: sticky; top: var(--fvx-sticky-top); }
 }
 @media (max-width: 48rem) { .fv-ex2-legend, .fv-ex2-rights, .fv-ex2-related { grid-template-columns: minmax(0, 1fr); } }
+"""
+
+
+def approved_images(data: dict, path=SIGNOFFS) -> set:
+    """NASA ids an editor has signed off for this page. A photograph with no complete sign-off is not shown (founder rule)."""
+    known = {r["image"]["nasa_id"] for r in data["records"]}
+    ok = set()
+    for item in json.loads(path.read_text(encoding="utf-8")).get("approved", []):
+        if item.get("nasa_id") in known and all(str(item.get(k, "")).strip() for k in ("editor", "date", "contextual_use")):
+            ok.add(item["nasa_id"])
+    return ok
+
+
+# Kept in its own block so the main style block (and its stored hash) did not change when text-only chapters were added.
+TEXT_CHAPTER_CSS = """
+.fv-ex2-page .fv-ex2-chapter__grid--text { grid-template-columns: minmax(0, 1fr); }
+.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text { grid-column: 1; grid-row: auto; justify-self: start; max-width: 46rem; }
 """
 
 
@@ -86,27 +104,37 @@ def _badge(basis: str) -> str:
     return f'<span class="fv-ex2-badge" data-status="{esc(basis)}">{esc(BASIS_TEXT[basis])}</span>'
 
 
-def _classification(atlas: dict, inv_id: str) -> list[dict]:
+def _classification(atlas: dict, inv_id: str, shown: set) -> list[dict]:
     """Relationships about this investigation's event, joined to their documents, in dataset order."""
     docs = {d["id"]: d for d in atlas["documents"]}
     event_ids = {e["id"] for e in atlas["events"] if e["investigation_id"] == inv_id}
     rows = []
     for rel in atlas["relationships"]:
-        if rel["object"] in event_ids:
-            rows.append({"rel": rel, "doc": docs[rel["subject"]]})
+        doc = docs[rel["subject"]]
+        if rel["object"] in event_ids and (doc["document_type"] != "photograph" or doc["archive_id"] in shown):
+            rows.append({"rel": rel, "doc": doc})
     return rows
 
 
-def _intro(data: dict) -> str:
+def _intro(data: dict, shown: set, any_open: bool) -> str:
+    documented = "The cited source states it directly, or the item is a record made of the event: the Review Board report" + (
+        ", or a photograph taken of the spacecraft after the fire." if any(r["image"]["depicts_event"] and r["image"]["nasa_id"] in shown for r in data["records"]) else ".")
+    interp = ("Final Vestige placed it here. " + ("Context photographs and the chronology axis are editorial choices; the archive does not say they belong to this event."
+              if shown else "The chronology axis is an editorial arrangement of the Board's time marks; the archive does not present it that way."))
+    labels = "the third marks what is still unresolved" if any_open else "every claim on this page is matched to a named source"
+    open_card = ('<div style="grid-column:1/-1"><span class="fv-ex2-badge" data-status="partial">Open question</span><p>A claim our sources do not yet fully support. It is flagged '
+                 'inside the chapter and in the Research Desk crosswalk as "article only", "partial" or "editorial note".</p></div>') if any_open else ""
+    lead = ("Items carry one of these labels. The first two describe how an item relates to the Apollo 1 fire; " + labels + ". None is a verdict on whether something is true."
+            if any_open else "Items carry one of two labels describing how they relate to the Apollo 1 fire; " + labels + ", and the Research Desk shows each match. Neither label is a verdict on whether something is true.")
     return f'''<section class="fv-ex2-sec" aria-labelledby="fvx-howto">
 <div class="fv-ex2-wrap">
 <div class="fv-ex2-sec__head"><p class="fv-ex2-label">How to read this page</p>
 <h2 class="fv-ex2-sec__title" id="fvx-howto">What is documented, and what is our reading of it</h2>
-<p class="fv-ex2-sec__intro">Items carry one of these labels. The first two describe how an item relates to the Apollo 1 fire; the third marks what is still unresolved. None is a verdict on whether something is true.</p></div>
+<p class="fv-ex2-sec__intro">{esc(lead)}</p></div>
 <div class="fv-ex2-legend">
-<div>{_badge("documented")}<p>The cited source states it directly, or the item is a record made of the event: the Review Board report, or a photograph taken of the spacecraft after the fire.</p></div>
-<div>{_badge("interpretive")}<p>Final Vestige placed it here. Context photographs and the chronology axis are editorial choices; the archive does not say they belong to this event.</p></div>
-<div style="grid-column:1/-1"><span class="fv-ex2-badge" data-status="partial">Open question</span><p>A claim our sources do not yet fully support. It is flagged inside the chapter and in the Research Desk crosswalk as "article only", "partial" or "editorial note".</p></div>
+<div>{_badge("documented")}<p>{esc(documented)}</p></div>
+<div>{_badge("interpretive")}<p>{esc(interp)}</p></div>
+{open_card}
 </div></div></section>'''
 
 
@@ -117,7 +145,7 @@ def _basis_for_image(rows: list[dict], nasa_id: str) -> dict | None:
     return None
 
 
-def _classification_section(rows: list[dict]) -> str:
+def _classification_section(rows: list[dict], shown: set) -> str:
     items = []
     for row in rows:
         rel, doc = row["rel"], row["doc"]
@@ -126,11 +154,13 @@ def _classification_section(rows: list[dict]) -> str:
             f'<li><div class="fv-ex2-classlist__head">{_badge(rel["basis"])}<span class="fv-ex2-classlist__title">{esc(title)}</span></div>'
             f'<p>{esc(rel["justification"])}</p>'
             f'<p>Atlas review status: {esc(REVIEW_TEXT.get(rel["review_status"], rel["review_status"]))}.</p></li>')
+    intro = ("The Evidence Atlas records why every document is attached to this event. Only one photograph, S67-21294, is documented as showing the aftermath of the fire."
+             if "S67-21294" in shown else "The Evidence Atlas records why each document is attached to this event. No photographs are shown in this release.")
     return f'''<section class="fv-ex2 fv-ex2-page alignfull fv-ex2-sec" id="classification" aria-labelledby="fvx-class">
 <div class="fv-ex2-wrap">
 <div class="fv-ex2-sec__head"><p class="fv-ex2-label">Evidence Atlas</p>
 <h2 class="fv-ex2-sec__title" id="fvx-class">How each item is classified</h2>
-<p class="fv-ex2-sec__intro">The Evidence Atlas records why every document is attached to this event. Only one photograph, S67-21294, is documented as showing the aftermath of the fire.</p></div>
+<p class="fv-ex2-sec__intro">{esc(intro)}</p></div>
 <ul class="fv-ex2-classlist">{"".join(items)}</ul></div></section>'''
 
 
@@ -161,27 +191,40 @@ def _limits(recs: list[dict]) -> str:
 <h2 class="fv-ex2-chapter__title" id="limits-title">What the record can and cannot establish</h2>
 <p class="fv-ex2-chapter__dek">Every chapter carries a limit. Read together, they are the shape of what is actually known.</p>
 <ol class="fv-ex2-crosswalk" style="gap:var(--fvx-s-5)">{limits}</ol>
-<div class="fv-ex2-hero__actions"><a class="fv-ex2-button fv-ex2-button--primary" href="#{DESK_ID}">Inspect every source in the Research Desk</a><a class="fv-ex2-button" href="#rights">Image sources and rights</a></div>
+<div class="fv-ex2-hero__actions"><a class="fv-ex2-button fv-ex2-button--primary" href="#{DESK_ID}">Inspect every source in the Research Desk</a><a class="fv-ex2-button" href="#rights">Sources and rights</a></div>
 </div></div></section>'''
 
 
-def _rights(data: dict) -> str:
+def _rights(data: dict, shown: set) -> str:
     policy = data["rights_policy"]
-    items = []
+    items, held = [], []
     for i, rec in enumerate(data["records"]):
         img = rec["image"]
-        items.append(f'<li id="rights-{esc(rec["id"])}"><p class="fv-ex2-label">Image {i + 1:02d} &middot; {esc(img["role_label"])}</p>'
-                     f'<h3>{esc(img["nasa_id"])}</h3><p class="fv-ex2-caption">{esc(img["caption"])}</p>'
-                     f'{_provenance(rec, policy)}<p class="fv-ex2-caption">Identity check: {esc(img["identity_note"])}</p></li>')
+        if img["nasa_id"] in shown:
+            items.append(f'<li id="rights-{esc(rec["id"])}"><p class="fv-ex2-label">Image {i + 1:02d} &middot; {esc(img["role_label"])}</p>'
+                         f'<h3>{esc(img["nasa_id"])}</h3><p class="fv-ex2-caption">{esc(img["caption"])}</p>'
+                         f'{_provenance(rec, policy)}<p class="fv-ex2-caption">Identity check: {esc(img["identity_note"])}</p></li>')
+        else:
+            held.append(f'<li id="rights-{esc(rec["id"])}"><p class="fv-ex2-label">Not shown &middot; {esc(img["role_label"])}</p>'
+                        f'<h3>{esc(img["nasa_id"])}</h3><p class="fv-ex2-caption">{esc(img["role_label"])}. {esc(img["date_text"])}.</p>'
+                        f'<p class="fv-ex2-caption"><a href="{esc(safe_https(img["record_url"]))}" target="_blank" rel="noopener noreferrer">NASA image record'
+                        f'<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li>')
+    intro = (f"{len(items)} of {len(data['records'])} photographs are shown, all credited to NASA. Each links to its original archive record." if items
+             else "This release shows no photographs. The six NASA photographs in the research record are listed below, with their archive records.")
+    shown_html = f'<ul class="fv-ex2-rights">{"".join(items)}</ul>' if items else ""
+    held_html = (f'<div class="fv-ex2-sec__head" style="margin-top:var(--fvx-s-7)"><h3 class="fv-ex2-sec__title" style="font-size:var(--fvx-fs-h3)">Photographs not shown in this release</h3>'
+                 f'<p class="fv-ex2-sec__intro">Each is added only after a named editor has signed off its use on this page.</p></div>'
+                 f'<ul class="fv-ex2-rights">{"".join(held)}</ul>') if held else ""
+    title = "Where every image comes from" if items else "Sources and image rights"
     return f'''<section class="fv-ex2 fv-ex2-page alignfull fv-ex2-sec" id="rights" aria-labelledby="fvx-rights">
 <div class="fv-ex2-wrap">
 <div class="fv-ex2-sec__head"><p class="fv-ex2-label">Sources and rights</p>
-<h2 class="fv-ex2-sec__title" id="fvx-rights">Where every image comes from</h2>
-<p class="fv-ex2-sec__intro">Six images, all credited to NASA. Each links to its original archive record.</p></div>
+<h2 class="fv-ex2-sec__title" id="fvx-rights">{title}</h2>
+<p class="fv-ex2-sec__intro">{esc(intro)}</p></div>
 <div class="fv-ex2-policy"><span class="fv-ex2-label">Rights basis &middot; retrieved {esc(policy["retrieved_on"])}</span>
 <p>{esc(policy["summary"])}</p>
-<p><strong>{esc(policy["restriction"])}</strong> Status: {esc(policy["status"])}. Basis: <a href="{esc(safe_https(policy["basis_url"]))}" target="_blank" rel="noopener noreferrer">{esc(policy["basis_title"])}<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></div>
-<ul class="fv-ex2-rights">{"".join(items)}</ul></div></section>'''
+<p><strong>{esc(policy["restriction"])}</strong> Basis: <a href="{esc(safe_https(policy["basis_url"]))}" target="_blank" rel="noopener noreferrer">{esc(policy["basis_title"])}<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></div>
+{shown_html}{held_html}</div></section>'''
 
 
 def _related(atlas: dict, inv: dict) -> str:
@@ -197,7 +240,7 @@ def _related(atlas: dict, inv: dict) -> str:
         ev = events[other["event_ids"][0]]
         cards.append(f'<li><p class="fv-ex2-label">Shared theme: {esc(", ".join(shared))}</p>'
                      f'<h3><a href="{esc(safe_https(other["url"]))}">{esc(other["title"])}</a></h3>'
-                     f'<p>{esc(ev["label"])}. {esc(_date_text(ev))}.</p><p>Published {esc(other["published"])}.</p></li>')
+                     f'<p>{esc(ev["label"])}.</p><p>Published {esc(other["published"])}.</p></li>')
     places = atlas["places"]
     from validate_atlas import map_eligible  # noqa: PLC0415  (path is set up by render_atlas)
     eligible = sum(1 for p in places if map_eligible(p))
@@ -236,7 +279,9 @@ def render_parts(data: dict, atlas: dict) -> list[tuple[str, str]]:
     total = len(recs)
     policy = data["rights_policy"]
     atlas_inv = next(i for i in atlas["investigations"] if i["wordpress_post_id"] == inv["wordpress_post_id"])
-    rows = _classification(atlas, atlas_inv["id"])
+    shown = approved_images(data)
+    rows = _classification(atlas, atlas_inv["id"], shown)
+    any_open = any(r["status"] != "verified" for rec in recs for r in rec["crosswalk"])
     chapters = []
     for i, rec in enumerate(recs):
         nxt = recs[i + 1] if i + 1 < total else None
@@ -244,41 +289,49 @@ def render_parts(data: dict, atlas: dict) -> list[tuple[str, str]]:
         row = _basis_for_image(rows, rec["image"]["nasa_id"])
         basis = (f'<p class="fv-ex2-plate__basis">{_badge(row["rel"]["basis"])}<span class="fv-ex2-caption">{esc(row["rel"]["justification"])}</span></p>'
                  if row else "")
-        actions = f'<a class="fv-ex2-button" href="#fv-ex2-desk-{DESK_INSTANCE}-{esc(rec["id"])}">Source record in the Research Desk</a>'
-        html = _chapter(rec, i, total, nxt, policy, chrono, actions_html=actions + basis)
-        open_html = _open_questions(rec)
-        if open_html:
-            marker = '<div class="fv-ex2-transition">'
-            if html.count(marker) != 1:
-                raise ValueError("chapter markup changed: cannot place the open-question callout")
-            html = html.replace(marker, open_html + marker, 1)
+        desk_link = f'<a class="fv-ex2-button" href="#fv-ex2-desk-{DESK_INSTANCE}-{esc(rec["id"])}">Source record in the Research Desk</a>'
+        html = _chapter(rec, i, total, nxt, policy, chrono, actions_html=desk_link + basis)
+        marker = '<div class="fv-ex2-transition">'
+        if html.count(marker) != 1:
+            raise ValueError("chapter markup changed: cannot place the callouts")
+        extra = _open_questions(rec)
+        if rec["image"]["nasa_id"] not in shown:
+            # No signed-off photograph: drop the plate and let the text use the full measure.
+            start, end = html.index('<div class="fv-ex2-chapter__plate">'), html.index('<div class="fv-ex2-chapter__text">')
+            html = html[:start] + html[end:]
+            html = html.replace('fv-ex2-chapter__grid"', 'fv-ex2-chapter__grid fv-ex2-chapter__grid--text"', 1)
+            extra += f'<p>{desk_link}</p>' + NL
+        html = html.replace(marker, extra + marker, 1)
         chapters.append(html)
     bar_links = "".join(
         f'<li><a href="#{esc(r["id"])}"><span aria-hidden="true">{i + 1:02d}</span>'
         f'<span class="fv-ex2-visually-hidden">Record {i + 1}: {esc(r["title"])}</span></a></li>' for i, r in enumerate(recs))
-    desk = render_desk(data, DESK_INSTANCE, fragment=True, with_footer=False)
+    desk = render_desk(data, DESK_INSTANCE, fragment=True, with_footer=False, show_images=shown)
     css = "".join(_minify(p.read_text(encoding="utf-8")) for p in sorted(lib.CSS_SRC.glob("*.css")) if p.name not in UNUSED_CSS) + _minify(PAGE_CSS)
     js = lib.bundle_js().strip()
     if "</script" in js.lower() or "<!--" in js:
         raise ValueError("Script contains a sequence that cannot be inlined safely")
+    foot_images = (f'<p>Images: NASA, editorial use under the <a href="{esc(safe_https(policy["basis_url"]))}">NASA Media Usage Guidelines</a>. {esc(policy["restriction"])}</p>'
+                   if shown else '<p>Primary source: the <a href="' + esc(safe_https(data["primary_report"]["url"])) + '">Apollo 204 Review Board report</a> on nasa.gov.</p>')
     page = f'class="fv-ex2 fv-ex2-page alignfull"'
     return [
         ("00-style", f"<style>{css}</style>"),
+        ("00b-style-text", f"<style>{_minify(TEXT_CHAPTER_CSS)}</style>"),
         ("01-investigation", f'''<div {page} data-fvx="flagship" data-fvx-investigation="{int(inv["wordpress_post_id"])}">
 {_hero(data)}
-{_intro(data)}
+{_intro(data, shown, any_open)}
 <nav class="fv-ex2-chapterbar" data-fvx-chapterbar aria-label="Apollo 1 records"><div class="fv-ex2-wrap fv-ex2-chapterbar__inner"><ol>{bar_links}</ol><span class="fv-ex2-chapterbar__title" data-fvx-chapter-title aria-hidden="true"></span></div></nav>
 <div class="fv-ex2-chapters">
 {"".join(chapters)}
 </div>
 {_limits(recs)}
 </div>'''),
-        ("02-classification", _classification_section(rows)),
+        ("02-classification", _classification_section(rows, shown)),
         ("03-research-desk", f'<div id="{DESK_ID}" class="fv-ex2 fv-ex2-page alignfull fv-ex2-sec">{desk}</div>'),
-        ("04-rights", _rights(data)),
+        ("04-rights", _rights(data, shown)),
         ("05-related", _related(atlas, atlas_inv)),
         ("06-footer", f'''<div {page}><div class="fv-ex2-wrap fv-ex2-pagefoot"><p>A companion to the published investigation <a href="{esc(safe_https(inv["url"]))}">{esc(inv["title"])}</a>. It does not replace the full article.</p>
-<p>Images: NASA, editorial use under the <a href="{esc(safe_https(policy["basis_url"]))}">NASA Media Usage Guidelines</a>. {esc(policy["restriction"])}</p></div></div>'''),
+{foot_images}</div></div>'''),
         ("07-script", "<script>" + NL + js + NL + "</script>"),
     ]
 
@@ -313,7 +366,8 @@ def manifest(blocks: list[tuple[str, str]]) -> dict:
         "page_content": {**fingerprints(content), "join": "blocks concatenated in order, separated by one newline"},
         "blocks": [{"order": i, "file": f"apollo1-investigation/{name}.block.html", **fingerprints(markup)} for i, (name, markup) in enumerate(blocks)],
         "sources": {"apollo1_sha256": hashlib.sha256((lib.DATA / "apollo1.json").read_bytes()).hexdigest(),
-                    "atlas_sha256": hashlib.sha256(atlas_path.read_bytes()).hexdigest()},
+                    "atlas_sha256": hashlib.sha256(atlas_path.read_bytes()).hexdigest(),
+                    "image_signoffs_sha256": hashlib.sha256(SIGNOFFS.read_bytes()).hexdigest()},
         "note": "Plugin-free: top-level core/html blocks only. Store each block byte-for-byte; never wrap one inside another block.",
     }
 

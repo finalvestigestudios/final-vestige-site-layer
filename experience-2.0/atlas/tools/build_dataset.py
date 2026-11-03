@@ -69,6 +69,9 @@ def assemble() -> dict:
     policy = apollo["rights_policy"]
     sources.append({"id": "src-nasa-board-report", "kind": "institutional_report", "title": report["title"], "institution": "NASA",
                     "url": report["url"], "retrieved_on": policy["retrieved_on"]})
+    for cs in apollo.get("claim_sources", []):
+        sources.append({"id": cs["id"], "kind": cs["kind"], "title": cs["title"], "institution": cs["institution"], "url": cs["url"],
+                        "retrieved_on": cs["retrieved_on"]})
     documents = [{"id": "doc-board-report", "title": report["title"], "institution": "NASA", "archive_id": "Apollo 204 Review Board Final Report",
                   "original_url": report["url"], "document_type": "report", "date_text": "1967", "evidence_class": "original_document",
                   "rights_basis": policy["basis_title"], "review_status": "unreviewed"}]
@@ -84,7 +87,7 @@ def assemble() -> dict:
                           "depicts_event": img["depicts_event"], "credit": img["credit"], "rights_basis": policy["basis_title"],
                           "rights_status": policy["status"], "review_status": "unreviewed"})
         for n, row in enumerate(rec["crosswalk"], 1):
-            cited = ["src-nasa-board-report"] if row["status"] in {"verified", "partial"} else ["src-wp-434"]
+            cited = row.get("source_ids") or (["src-nasa-board-report"] if row["status"] in {"verified", "partial"} else ["src-wp-434"])
             claims.append({"id": f"clm-{rec['id']}-{n}", "investigation_id": "inv-434", "text": row["claim"], "status": row["status"],
                            "source_ids": cited, "caveat": row["source"]})
     documents.append({"id": "doc-apollo1-chronology", "title": apollo["chronology"]["title"], "institution": "Final Vestige Studios",

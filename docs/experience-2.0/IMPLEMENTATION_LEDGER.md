@@ -74,6 +74,8 @@ No preparedness page was published. The archive is not cleared for any wave: the
 |---|---|---|---|---|---|
 | Apollo 1 investigation page, plugin-free (`APOLLO1_PAGE_DRAFT_RECORD.md`) | `feature/atlas-apollo1-live` (from the Sprint 5 branch) | `43548df7` (+ records, packet `APOLLO1_REVIEW_PACKET.md`) | eight top-level `core/html` blocks (100,762 B), private WordPress draft **page 2017**, every stored block hash equals the local SHA-1 (page content SHA-1 `fc93015a...`); unverified claims labelled "Open question" in their chapters; live-theme harness: 6 widths clean, axe 0 violations / 0 incomplete, mobile throttled LCP 1.80 s median (max 1.89 s), CLS 0.073; repository tests pass (13 page, 19 builders, 22 atlas, 31 browser) | **DRAFT, not published; no QD claimed**; page 6 and draft 1902 untouched; no plugin | founder signs in for the WordPress.com render; independent review of the block hashes; editor decisions on the data notes in section 5; then one publish call |
 
+**Revision 2 (2026-11-03, after the independent HOLD):** claims re-sourced to NASA pages with quotes, "About fifteen seconds", internal notes removed, no photographs shown (decision sheet), nine blocks matching the draft (page content SHA-1 `bc1d40d0...`); authenticated WordPress.com review still open; hosted CI blocked by GitHub billing. See `APOLLO1_REVIEW_PACKET.md`.
+
 The staging-only `final-vestige-experience-2` plugin is **not** installed and not required for this page (founder decision: no new production plugin for a minor gain).
 
 ## Growth status

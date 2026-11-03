@@ -39,9 +39,14 @@ def plate_frame(rec: dict, *, sizes: str) -> str:
 
 
 def _crosswalk(rec: dict) -> str:
+    def source(r: dict) -> str:
+        link = (f' <a href="{esc(safe_https(r["url"]))}" target="_blank" rel="noopener noreferrer">NASA source<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a>'
+                if r.get("url") else "")
+        return f'<span>{esc(r["source"])}{link}</span>'
+
     items = "".join(
         f'<li><span><span class="fv-ex2-badge" data-status="{esc(r["status"])}">{esc(r["status"].replace("-", " "))}</span> '
-        f'<strong>{esc(r["claim"])}</strong></span><span>{esc(r["source"])}</span></li>'
+        f'<strong>{esc(r["claim"])}</strong></span>{source(r)}</li>'
         for r in rec["crosswalk"]
     )
     return f'<ul class="fv-ex2-crosswalk">{items}</ul>'

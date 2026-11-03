@@ -1,5 +1,7 @@
 # Apollo 1 investigation page: plugin-free draft (2026-11-02)
 
+**Revision 2 (2026-11-03), after the independent HOLD on `65f98aad`:** every claim now cites a named NASA source with a verbatim quote and link (Board Findings and Investigation pages, NASA History 2022 and 2018 articles, crew biographies); "Fourteen seconds" is now "About fifteen seconds"; internal notes are gone from visitor text; the six photographs are omitted pending named-editor sign-off (`APOLLO1_IMAGE_DECISION_SHEET.md`, `page-blocks/image-signoffs.json`); the draft now has nine blocks, all read back equal to the source. The hash tables further down describe the previous revision and are superseded by `APOLLO1_REVIEW_PACKET.md`. Authenticated WordPress.com review is still outstanding (browser not signed in).
+
 **Update (later 2026-11-02):** block 01 was changed to add the third label ("Open question") inside every chapter that has an unverified claim; the stored hash was read back (`7ce8f575...`). The tables below carry the current hashes. Review packet: `APOLLO1_REVIEW_PACKET.md`. Mobile perf on the final block: 12 runs median 1,810 ms, max 1,860 ms; an earlier 7-run batch on the same block had one 2,716 ms outlier.
 
 **Status: PRIVATE DRAFT, not published. No independent QD review exists and none is claimed (no `FVSL-QD-PASS`).** Branch `feature/atlas-apollo1-live` (cut from `feature/experience-2-living-archive-sprint5`), commit `79c0a017` plus this record. Worktree `Projects/fv-atlas-live`.

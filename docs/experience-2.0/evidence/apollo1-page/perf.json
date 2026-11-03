@@ -2,37 +2,17 @@
   "mobile-throttled": {
     "runs": [
       {
-        "lcp_ms": 1836,
+        "lcp_ms": 1796,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1780,
+        "lcp_ms": 1628,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1820,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1836,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1660,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1860,
-        "cls": 0.0731,
-        "lcp_element": "P.fv-ex2-hero__dek"
-      },
-      {
-        "lcp_ms": 1824,
+        "lcp_ms": 1532,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
@@ -42,45 +22,55 @@
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1800,
+        "lcp_ms": 1672,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1692,
+        "lcp_ms": 1768,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1788,
+        "lcp_ms": 1896,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       },
       {
-        "lcp_ms": 1844,
+        "lcp_ms": 1792,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1672,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1804,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1760,
+        "cls": 0.0731,
+        "lcp_element": "P.fv-ex2-hero__dek"
+      },
+      {
+        "lcp_ms": 1792,
         "cls": 0.0731,
         "lcp_element": "P.fv-ex2-hero__dek"
       }
     ],
-    "lcp_median_ms": 1810.0,
-    "lcp_max_ms": 1860,
+    "lcp_median_ms": 1770.0,
+    "lcp_max_ms": 1896,
     "cls_median": 0.0731,
     "cls_max": 0.0731
   },
   "desktop": {
     "runs": [
       {
-        "lcp_ms": 360,
-        "cls": 0.0014,
-        "lcp_element": "H1.fv-ex2-hero__title"
-      },
-      {
-        "lcp_ms": 388,
-        "cls": 0.0014,
-        "lcp_element": "H1.fv-ex2-hero__title"
-      },
-      {
-        "lcp_ms": 396,
+        "lcp_ms": 380,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
@@ -90,12 +80,22 @@
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 380,
+        "lcp_ms": 392,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 348,
+        "lcp_ms": 388,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 416,
+        "cls": 0.0014,
+        "lcp_element": "H1.fv-ex2-hero__title"
+      },
+      {
+        "lcp_ms": 412,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
@@ -105,33 +105,33 @@
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 376,
+        "lcp_ms": 424,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 492,
+        "lcp_ms": 420,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 376,
+        "lcp_ms": 408,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 396,
+        "lcp_ms": 384,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       },
       {
-        "lcp_ms": 496,
+        "lcp_ms": 384,
         "cls": 0.0014,
         "lcp_element": "H1.fv-ex2-hero__title"
       }
     ],
-    "lcp_median_ms": 386.0,
-    "lcp_max_ms": 496,
+    "lcp_median_ms": 392.0,
+    "lcp_max_ms": 424,
     "cls_median": 0.0014,
     "cls_max": 0.0014
   },

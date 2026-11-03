@@ -1,118 +1,87 @@
-# Apollo 1 Evidence Atlas page: independent review packet
+# Apollo 1 Evidence Atlas page: independent review packet (revision 2, responds to the HOLD on `65f98aad`)
 
-**Status: READY FOR INDEPENDENT REVIEW. Not published. No QD PASS exists and none is claimed by the author (`FVSL-QD-PASS: NO` until a reviewer other than the author records it).** Prepared 2026-11-02. Author's full record: `APOLLO1_PAGE_DRAFT_RECORD.md`.
+**`FVSL-QD-PASS: NO`.** No independent reviewer has cleared this revision; the author issues no pass. Page 2017 is a **private, unpublished draft**. Prepared 2026-11-03. Earlier verdict being answered: HOLD, PR #798 comment 6607291873, head `65f98aad79369c9c8a3ef9dad4bea1f136bf43c5`. Author's full record: `APOLLO1_PAGE_DRAFT_RECORD.md`. Image decisions: `APOLLO1_IMAGE_DECISION_SHEET.md`.
 
 ## 1. Exact subject
 
 | | |
 |---|---|
-| Repository / branch | `finalvestigestudios/final-vestige-site-layer`, `feature/atlas-apollo1-live` (not pushed at the time of writing) |
-| Code head to review | **`43548df7a6be3b8074706cb45520ae176e25ac24`** (this packet and the record are docs-only commits on top; review the files below at that commit) |
-| Committed blocks | `experience-2.0/page-blocks/apollo1-investigation/00..07*.block.html`, manifest `experience-2.0/page-blocks/manifest.json` |
-| WordPress draft | page **2017**, private draft, title "Apollo 1: The Evidence Atlas", slug `apollo-1-evidence-atlas`. Edit: https://finalvestige.com/wp-admin/post.php?post=2017&action=edit . Preview (signed-in only): https://finalvestige.com/?page_id=2017&preview=true . Signed-out it is 404. |
-| Mechanism | eight top-level `core/html` blocks, inline CSS and JS, **no plugin**, no template, header, navigation, homepage or global-style change |
-| Draft last modified | 2026-11-02T23:15:36 |
+| Branch / PR | `feature/atlas-apollo1-live`, draft PR #798, base `feature/experience-2-living-archive-sprint5` |
+| Head to review | the full SHA is stated in the PR comment that links this packet (a docs file cannot name its own commit); the code and block files it refers to are the ones hashed below |
+| WordPress draft | page **2017**, private draft, `apollo-1-evidence-atlas`. Preview (signed-in only): https://finalvestige.com/?page_id=2017&preview=true . Signed-out: 404 |
+| Mechanism | **nine** top-level `core/html` blocks, no plugin; no header, navigation, homepage, global-style or template change |
+| Draft readback | `page-sections.list` after the final write: all nine `block_hash` values equal the SHA-1 column below. Draft last modified 2026-11-03T07:38:19 |
+| Homepage page 6 block 1 | SHA-1 `8c0dd5c3adce073fd58f5001e0f90d523ffad277`, never touched by this work |
 
-### Block hashes (stored form = the block without the file's trailing newline; WordPress `block_hash` is the SHA-1 of that form and **was read back and equals this table for all eight blocks**)
+### Block hashes (stored form = file without its trailing newline; WordPress `block_hash` = its SHA-1)
 
-| Block | Bytes | SHA-1 (= WordPress `block_hash`) | SHA-256 (stored form) |
-|---|---:|---|---|
-| 00-style | 23,748 | `bbf054a2f48f970fb560466102899d2c413a33fa` | `9c345e7d09b01c71953e80fc93d8cf5ecd0421d7985fb5b8b0df942a9ab95f8b` |
-| 01-investigation | 32,669 | `7ce8f575b8ae075699785672020c571691c8ba1f` | `c8ffc9a84bd5530aadb4ec348eb918e1b0dd143be58206e3146a982588ec67a6` |
-| 02-classification | 3,503 | `dc62ad1669b81ac1d84e0ba9be486cdad47c4cda` | `89db03241291c38fa2c6f699f515193af4b87315df698a12f3fed47a90454b36` |
-| 03-research-desk | 22,550 | `4abe3e8ea0f17a2277f0135a1bca9ee8135fdc2f` | `1b1a358a6c01650181a1834eaa186f9502a94ba40ba9a807e508732b7f639bd4` |
-| 04-rights | 8,318 | `dd84742473035a78ecea66ec7c03296f6ce84b20` | `bb0cab82b1ee0b495ee520c80cfb879582ad36fb8df1d68fb158250321732e13` |
-| 05-related | 2,026 | `173982203da9eb3a8dff4e91d82725148d4afa86` | `851d7dcc51acb0be5f5bcea8b3f79026f1cbf162c73f5a8dae20c804cc04dd8a` |
-| 06-footer | 564 | `b0c723e2b898eaf47bea17dcf3809001b98e7190` | `3434198cb9a09ba031219be4570c0257b63803258f58fcd8345a7aac455a0338` |
-| 07-script | 9,655 | `2f4df25d143a4d559005aca8fb46d4d49f75b4ba` | `e6169fec1bb92471fecb4d32eeacb3de611d0b8bcc6ba865a664f534885e8c93` |
+| Block | Bytes | SHA-1 (= WordPress `block_hash`) | SHA-256 (stored form) | SHA-256 (committed file, +`\n`) |
+|---|---:|---|---|---|
+| 00-style | 23,748 | `bbf054a2f48f970fb560466102899d2c413a33fa` | `9c345e7d09b01c71953e80fc93d8cf5ecd0421d7985fb5b8b0df942a9ab95f8b` | `bd76f0a27c4430bdea43d8edbe217b320eae279eb9af469add2893e46d37aeef` |
+| 00b-style-text | 260 | `81cce82b98d1a20ceac5ce81c1b92db5c1d6430a` | `ddc89f367d4b3c75841a3e2063fd0e35c89d8ac9f62a3d1228856193558af2c3` | `2122ef64ba74dce3c7a7efb4d13ecbf7ea447420a3e0b25f220c79f26b6e12fd` |
+| 01-investigation | 18,676 | `1514f90217616678da8070201b0aeaa78504037c` | `a695928e1f9a73e4fd24209d6af86a326f459781783b01c5eca22272fe833ce7` | `eb8ee9d5a0638d57d70f2821744d1f4e2369c5f90e23726f4354ce7cf6554bb3` |
+| 02-classification | 1,216 | `29e44fc0d5309c433850ef107cb75e6e907283c9` | `d1a13f733de52c0bae1feecbeb411b6143191d666807c90e9c8b828ee0002ed2` | `9317d7a17e24a76a50b259168d9eaee0782790eaa7802abaf9416f462d7dbfc5` |
+| 03-research-desk | 27,958 | `2b20e5dc8127f96dec7308af7f74203f42a635ae` | `02a1ebe59bf5c7c66e4958efc4d2ea7f9a64a9ed675d3b50cef82165b4f02e85` | `9d2ff551b85a2ca395a4ae0756571cbc3a6bbd35ceab09c148df193dbfa0d9ca` |
+| 04-rights | 4,193 | `ab57e96b46fab88bbbba9061bb0696268be1e9a7` | `166779789a8839183649338a580a04bddfd8b1634c6b87bf180bfee6b66262db` | `e6babbf1ac89b95d270834979f9fb0bbec2012fb72b5f016fde1ead7ce2bf9b3` |
+| 05-related | 1,890 | `3ccc0c6ce3d9f3fef520b26501c93e5927867d4a` | `6b5b9e53d336d4a32aeb248a54151ebd7c648f670c271eb24cb6009463fe6a05` | `05054781ba29931e8619179f443d2689bbaa01cbaa1be37dfbaef61f96c67cc8` |
+| 06-footer | 496 | `10351c226f0be67a780c89aba99b8942e5ee2fec` | `d557a650ad2367254ce6b990ea33671b734b15a0961d83e2d66e3283675bce23` | `cf2f3b4d3610a5ff3cfe760c09e88c82cfdfdb64a12159dd015521e690d76b91` |
+| 07-script | 9,655 | `2f4df25d143a4d559005aca8fb46d4d49f75b4ba` | `e6169fec1bb92471fecb4d32eeacb3de611d0b8bcc6ba865a664f534885e8c93` | `c95c1f386f2b65a37656808533b36f50f8df686697d2be3cd09ce478200dc8b0` |
 
-Committed files include one trailing newline each; their SHA-256 values are in the manifest. Whole page content (committed files joined by one newline, 103,048 bytes): SHA-1 `fc93015a77e55fae8a50d64b120ea748df6eea22`, SHA-256 `5ac375e00f31d0bee9e89b5248502296397a1ea2b290094167142192b68b1cbf`.
+Whole page content (committed files joined by one newline, 88,109 bytes): SHA-1 `bc1d40d0102476ffd7bdc579ed41564399e42080`, SHA-256 `cef09888501bd48f9ac145bcd186d8806b35505fa675d66d1f51876a4bc1ca1b`. Blocks 00 and 07 are byte-identical to the previous revision (the stored hashes did not change); `00b` is new and holds the two CSS rules for text-only chapters.
 
-Live homepage page 6 block 1: SHA-1 `8c0dd5c3adce073fd58f5001e0f90d523ffad277`, untouched (re-read after every write).
+Sources of the build (SHA-256): `data/apollo1.json` `dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721`; `atlas/data/atlas.json` `ec1f6513fa790d7416dd1fa4f4aea7fa60be9b36507e0baa08ab453b3eb4d40f`; `page-blocks/image-signoffs.json` `578d9dbe3239332218d130f1b97707f495f3ca3fa550fa6e22e5a38e640f1cf9` (no approvals); `page-blocks/manifest.json` `a932454099926c12de5c76a5ddad65c4a39355aaf6e427f16227ddfe4706142e`.
 
-## 2. How it was tested, and what the method is not
+## 2. How each point of the HOLD was handled
 
-`tools/verify_apollo_page.py` serves the **live Assembler shell** (GET of a published page: header, footer, theme CSS) from localhost with the eight committed blocks placed in `entry-content` exactly as WordPress prints `core/html`. Analytics hosts are blocked. Playwright + Edge + axe-core 4.10.2. **This is signed-out-equivalent. It is not the WordPress.com render of draft 2017**: that needs the founder's signed-in browser (gate below). Raw JSON: `docs/experience-2.0/evidence/apollo1-page/{structure,axe,behaviour,perf}.json`. Reproduce: `python experience-2.0/tools/verify_apollo_page.py all --runs 7` (needs network, Playwright, Edge or Chrome).
-
-### Six widths (360, 390, 768, 1024, 1440, 1920), all PASS
-
-One `h1`, valid heading order, no duplicate ids, no horizontal overflow (`scrollWidth - innerWidth = 0`), 6 of 6 images load, page root equals the viewport width, no page errors, both modules `data-fvx-ready=true`, every `target=_blank` link has `noopener noreferrer`.
-
-### axe-core 4.10.2 (tags wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa, best-practice)
-
-0 violations and 0 incomplete at each of the six widths and at 1440 with motion enabled, for the block scope and for the whole page. (An earlier build had 12 "incomplete" contrast checks caused by a decorative gradient over the hero photograph; the photograph and gradient were removed.)
-
-### Real throttled mobile method (390x844, 4x CPU, 150 ms RTT, 1.6 Mbps down, 750 kbps up, cache off; LCP read before any scripted scroll, CLS after)
-
-| Runs on the final block | LCP | CLS |
+| HOLD point | Result | NASA source used (verbatim quotes are in the Research Desk crosswalk on the page) |
 |---|---|---|
-| 12-run batch | median **1,810 ms**, max 1,860 ms | 0.0731 in every run |
-| earlier 7-run batch on the same block | median 1,800 ms, **max 2,716 ms (one outlier)** | 0.0731 |
+| Inward-opening Block I hatch | Stated on the page and marked verified: "the innermost one opening inward and taking 90 seconds to open under ideal conditions" | NASA History, "55 Years Ago: The Apollo 1 Fire and its Aftermath" (J. Uri, 3 Feb 2022) |
+| Unfueled test | Verified; also the Board's own Part IV statement that the Plugs-Out Test was not classified hazardous because only tests involving fueled vehicles were. The "Saturn IB" and "countdown rehearsal" wording, which no source I could read confirms, was removed | same NASA History article; Board report Part IV |
+| Ed White and the hatch | Verified in two steps: the Board says emergency procedures called for the Senior Pilot to unlatch and remove the hatch and that his harness buckle was found unopened, indicating he began the procedure; the NASA crew biography names White as Senior Pilot. **The biography does not say White opened the hatch during the fire**, so the page does not claim it | Board report Part V (invest.html); NASA, Detailed Biographies of the Apollo 1 Crew |
+| Probable arc and no single source | Both stated: Finding 1 Determination, "The most probable initiator was an electrical arc in the sector between -Y and +Z spacecraft axes", and "No single ignition source of the fire was conclusively identified" | Board, Findings, Determinations and Recommendations (find.html), read in full |
+| Outward-opening quick hatch | Stated as NASA's article words it: a unified hatch openable from inside or outside "in three seconds", with "the new outward-opening unified hatch". The article does not say "quick-release"; the page does not either. **Discrepancy recorded:** the 2017 museum exhibit text gives 5 seconds for the Block II hatch; the page uses NASA's article and the exhibit photograph is not shown | same NASA History article |
+| 102 flammability tests | Stated as NASA words it: "three series of tests comprising 102 deliberate ignitions between December 1967 and February 1968", Boilerplate 1224. The page says "ignitions", not "tests" | NASA History, "50 Years Ago: Apollo Flammability Tests" (14 Feb 2018) |
+| "Fourteen seconds" heading | Now **"About fifteen seconds changed the system."** The chapter states both measures: the Board's "approximately 15 seconds after the verbal report" for the first stage, and 14.7 seconds counting 23:31:04.7 to 23:31:19.4 | Board report Part V, Chronology of the Fire |
+| Internal notes in visitor text | Removed from every block: no "Sprint 5", "not re-checked", "confirm", "candidate", "human rights review pending", "integration candidate", "prototype". Related-investigation lines no longer print Atlas date status. A test fails if any returns | n/a |
+| Three labels | Documented / Interpretive stay; **no claim is left "open"** because every claim now cites a named NASA source. The Open-question label still exists in the renderer and a test proves it would appear if an unverified claim ever returned | n/a |
 
-18 of 19 runs are at or under 1.89 s; one run reached 2.72 s, over the 2.5 s limit, and was not reproduced in the 12 runs that followed. **Please treat the p95 as unproven**; the limit is the founder's (LCP <= 2.5 s, CLS <= 0.10). LCP element: `p.fv-ex2-hero__dek` (text). Desktop 1440: LCP median about 0.4 s, CLS 0.0014. These are lab numbers on a local copy of the theme, not field data and not the WordPress.com origin.
+Two corrections to my own earlier text, found while checking sources: I had removed an unsourced sentence about orbital pressure ("not the same regime the spacecraft would use in orbit") and an unsourced statement that fire "destroyed crucial physical evidence"; neither is on the page now. Also, NASA pages disagree on cabin pressure (16.7 psia in the Board's Finding 2, 16.2 psi on the flammability article); the page uses the Board's figure.
 
-### Behaviour and fail-open
+**What I could not close:** the NASA History article's three-second and "inward" wording was read in full text by a second pass but both of my passes went through an automated fetch tool, not a browser; the reviewer's own check of the same sentences is the independent confirmation. The Board's Part VI and appendices were not read beyond Findings 1, 2, 4 and 9.
 
-Desk search and empty state, anchor from each plate to its desk record, chronology slider reports "Nothing is recorded between markers", one current chapter, **JavaScript disabled: complete document** (7 chapters, 6 records, 5 related), optional controls hidden, buttons and chapter links at least 24 px.
+## 3. Image rights: the first release shows no photographs
 
-### Repository tests
+Per the founder's rule, an image without a named-editor sign-off is omitted. **No row is signed, so all six NASA photographs are omitted** and the page stands as text and documents. The six-row decision sheet (use, credit, record URL, identity evidence, risk points, recommendation, blank decision fields) is `APOLLO1_IMAGE_DECISION_SHEET.md`; the homepage sign-off is explicitly not carried over. Signing a row is a one-line entry in `page-blocks/image-signoffs.json` (tested: entries missing editor, date or use are ignored), after which the plate appears with its caption, credit and provenance. The rights block lists the six photographs as "not shown" with their NASA record links and the editorial-use restriction.
 
-`test_apollo_page` 14, `test_builders` 19, `test_atlas` 22, `test_browser` 31: pass. `build_all.py --check` OK. 9 plugin tests (PHP) error only because PHP is not installed on the author's machine; the plugin is not part of this change. One transient `test_builders` error was seen once and did not recur in 6 reruns.
+## 4. Local evidence (not hosted CI)
 
-## 3. What the page claims, and how each claim is labelled
+`tools/verify_apollo_page.py` serves the live Assembler shell (GET) with the nine committed blocks as `entry-content`; analytics hosts are blocked. **This is not the WordPress.com render.** Raw JSON in `docs/experience-2.0/evidence/apollo1-page/`.
 
-Three labels, all derived from the committed data, not typed by hand: **Documented**, **Interpretive** (Atlas relationship `basis`, with its stored justification; Atlas `review_status` is `unreviewed` for every item and the page says "Not yet reviewed"), and **Open question** (every crosswalk row that is not `verified`, shown inside its chapter and again in the Research Desk). A test fails if an unverified row is not flagged in its chapter.
+- Six widths 360, 390, 768, 1024, 1440, 1920: one `h1`, valid heading order, no duplicate ids, no horizontal overflow, no page errors, both modules ready, all external links `noopener noreferrer`, no images (none are shown).
+- axe-core 4.10.2 (wcag2a/aa, 21a/aa, 22aa, best-practice): **0 violations, 0 incomplete** at all six widths and with motion on, block scope and whole page.
+- Real throttled mobile method (390x844, 4x CPU, 150 ms RTT, 1.6 Mbps, cache off; LCP read before any scripted scroll): **12 runs, LCP median 1,770 ms, max 1,896 ms; CLS 0.0731 in every run.** Earlier batches on near-identical blocks produced one 2,716 ms outlier in 19 runs, so the 95th percentile against 2.5 s is still not demonstrated. Desktop median LCP about 0.4 s.
+- Behaviour: desk search and empty state, anchors to each desk record, chronology slider ("Nothing is recorded between markers"), one current chapter, JavaScript off gives a complete document, controls at least 24 px.
+- Repository: `test_apollo_page` 18, `test_atlas` 22, `test_browser` 31 pass; `test_builders` 19 pass (it fails intermittently with `OSError: Invalid argument` while writing `dist/apollo-1/index.html`, which looks like a file lock on the OneDrive-synced folder, not an assertion; it passed on the reruns). `build_all.py --check` OK; `build_dataset.py --check` OK; `validate_atlas.py` OK. The 9 PHP plugin tests cannot run on the author's machine (no PHP).
+- **Hosted CI did not run on the previous head and has not run on this one: GitHub reports the jobs never start because recent account payments failed or the spending limit needs raising. That is a billing restriction, not a code failure. Local results above are not hosted CI and must not be described as such.**
 
-### Open questions on the page, and what the author could and could not check against NASA's text
+## 5. Shared files changed (the plugin is staging-only and is not installed)
 
-The author fetched the Board report page on nasa.gov (verbatim text of Part IV and Part V sections 1 to 3; Part V section 4 and Part VI only as a model-extracted summary; the summary PDF has no text layer; the appendices were not read).
+`fvx_lib.py` (validates optional `claim_sources`, row `url` and `source_ids`), `render_flagship._crosswalk` (a "NASA source" link when a row has a `url`), `render_desk(show_images=)`, `atlas/tools/build_dataset.py` (adds the five NASA claim sources and row-level source ids), `data/apollo1.json` (claims, wording, `claim_sources`), regenerated `atlas.json`, and the regenerated staging-plugin template and manifest (the crosswalk now carries source links). No existing assertion was edited.
 
-| Claim shown as open | Status on page | Finding |
-|---|---|---|
-| Plugs-out rehearsal with an unfueled Saturn IB (ch. 1) | article only | not checked against the report in this pass |
-| The Block I hatch opened inward (ch. 4, and the page title) | article only | **No sentence stating the opening direction was found** in the readable text. Nearest: "opening the inner hatch is impossible because of the resulting force on the hatch" (Part IV section 4), and Finding 4 (summary): "Due to internal pressure, the Command Module inner hatch could not be opened prior to rupture of the Command Module." Direction would need NASA history or the appendices |
-| An electrical arc was the most likely initiator (ch. 5) | partial | Found only in the **extracted summary, not verbatim-verified**: Part VI Finding 1 "The most probable initiator was an electrical arc in the sector between -Y and +Z spacecraft axes". Verbatim in Part V section 3: arcing named as one possible cause of the electromagnetic change, not as the conclusion. Needs the appendix or PDF text to close |
-| NASA redesigned the hatch to open outward quickly (ch. 6) | partial | **Not found** in the Board text; the 5-second figure rests on the museum exhibit photograph only |
-| 102 ignition tests of boilerplate 1224, Dec 1967 to Feb 1968 (ch. 6) | article only | not checked in this pass |
-| Chapter title "Fourteen seconds" vs the Board's "approximately 15 seconds" (ch. 3) | editorial note | open editorial decision |
+## 6. Gates still open (none waived)
 
-The data files were **not edited** by this pass (they are the Sprint 5 evidence record). The two findings above (arc wording located in the summary; direction and outward redesign still absent) should be applied to `atlas/data/curation.json` by a reviewer or the editor before publication if accepted.
+1. **Authenticated WordPress.com browser review of the revised draft: NOT DONE.** The in-app browser is not signed in (preview returns "Page not found" with no admin bar) and an assistant cannot enter credentials. To perform: founder signs in; then check the nine `block_hash` values, one `h1`, interaction, six widths, links, console and network, and that header, footer and navigation are unchanged.
+2. Independent QD of this revision's exact head and hashes.
+3. Named-editor sign-offs (or the documented omission) for the six images.
+4. CI: billing fixed and hosted `experience-2` green on the exact head.
+5. Founder approval to publish; title, slug, indexability.
 
-**Decision the reviewer or founder should make:** the page ships the story as the published article tells it, with each unresolved claim visibly labelled. The founder's alternative rule is to remove an element whose claim is unresolved. If chosen, the elements to drop are the sentence "The Block I command module used an inward-opening pressure hatch" and "Ed White was responsible for opening the hatch..." (chapter 4; the second has no crosswalk row at all), the "outward-opening" and "102 ignition tests" sentences (chapter 6), and the chapter and page titles that assert the direction. That edit is small but it changes titles that match the live article, so it is not applied without a decision.
+## 7. Apply and rollback
 
-## 4. Image register (named-editor sign-off still required for every row)
+- **Apply** (only after the gates): one `pages.update` on page 2017 with `status: publish`; then verify signed-out (HTTP 200, one `h1`, `page-sections.list` shows nine matching hashes, page 6 block 1 still `8c0dd5c3...`, sitemap entry), then the links from the Research Desk, Discovery Library and the related investigations as separate steps. The header and homepage go through their owner.
+- **Add an image later:** sign its row, rebuild, `page-sections.replace` the changed blocks against their recorded `block_hash`, re-read.
+- **Rollback now:** `pages.delete` on 2017 (trash, restorable). After publish: `pages.update` to `draft`, confirm the slug is 404 and page 6 is unchanged. No other object changes; nothing to deactivate.
 
-NASA Media Usage Guidelines (retrieved 2026-10-30): editorial use with NASA acknowledged and no implied endorsement; not for promotional, product or merchandise use. Status in the data for all six: "editorial-use basis recorded; human rights review pending". **No named editor has signed any row.**
+## 8. Questions for the reviewer
 
-| # | NASA ID | Shown as | Credit | Identity evidence | Sign-off |
-|---|---|---|---|---|---|
-| 1 | S67-19766 | Interpretive, crew near LC-34, served from finalvestige.com | NASA | NASA record page `apollo-1-crew-honored` carries caption and "Image Credit: NASA"; the ID appears only in the file name `s67-19766.jpg`, not as printed catalogue text, and the NASA Image API did not return it | open |
-| 2 | S67-15717 | Interpretive, Spacecraft 012 processing | NASA | NASA Image API match, JSC, 1967-01-03 (verified 2026-10-30) | open |
-| 3 | S66-58038 | Interpretive, altitude-chamber training, 1966-10-18 | NASA | NASA Image API match | open |
-| 4 | KSC-20170124-PH_KLS01_0129 | Interpretive, 2017 museum hatch display | NASA / Kim Shiflett | NASA Image API match | open |
-| 5 | S67-21294 | **Documented**, interior of CM 012 after the fire, no people | NASA | NASA Image API match, 1967-01-28 | open |
-| 6 | KSC-20170124-PH_KLS01_0090 | Interpretive, 2017 redesigned-hatch display | NASA / Kim Shiflett | NASA Image API match | open |
-
-If a sign-off is withheld for a row, that plate can be removed without touching the others: it is one `<figure>` in block 01, one row in block 04 and one desk card; regenerate with `build_all.py` after removing the record's image, and re-hash.
-
-## 5. Findings the reviewer should weigh
-
-- The Desk and rights sections show data strings that read as internal notes to a visitor ("not re-checked in Sprint 5", "confirm before publication", "confirm wording", Atlas date status "candidate"). They are sourced and honest but unpolished.
-- Mobile CLS 0.073 has little headroom (cause: web-font swap in the hero under the harshest throttle).
-- The theme texturizes quotes on output; the local harness cannot reproduce that. Layout and axe are unaffected, but only the WordPress.com render shows it.
-- The page replaces nothing: title, slug, indexability, and whether the Apollo 1 post links to it are open decisions. No nav entry was added (the founder owns navigation).
-
-## 6. Gates still open
-
-1. **Authenticated WordPress.com render of draft 2017**, same procedure as `PR604_WPCOM_DRAFT_RENDER_EVIDENCE.md`: needs the founder signed in; check `block_hash` of all eight blocks, one `h1`, console and network, screenshots at the six widths.
-2. **Independent QD** of the exact hashes in section 1.
-3. **Named-editor sign-off** per image (section 4) and the editor decision on section 3.
-4. Founder approval to publish.
-
-## 7. Rollback and publication
-
-Nothing is live. Rollback now: `pages.delete` on 2017 (trash, restorable). After a publish: `pages.update` 2017 to `draft` (or trash), then confirm the slug returns 404 and page 6 block 1 is still `8c0dd5c3...`; no other object is changed, no plugin exists to deactivate. Publication, once all gates are clear: a single `pages.update` with `status: publish`, then verify signed-out (HTTP 200, one `h1`, eight block hashes via `page-sections.list`, sitemap entry) and record it.
-
-## 8. Reviewer's questions
-
-1. Do the stored hashes equal the committed files at `43548df7`? 2. Does the signed-in render match the harness? 3. Is any sentence on the page stronger than its crosswalk status allows? 4. Is the "documented" label used only where the source states it? 5. Are the open-question labels sufficient, or must the section 3 elements be removed? 6. Does anything outside the eight blocks change (diff the page list and page 6)?
+1. Do the nine stored hashes equal the committed files at the reviewed head? 2. Is each claim on the page matched by a quote in its crosswalk row that you can find at the cited NASA URL? 3. Is the "About fifteen seconds" chapter clear about which interval is meant? 4. Is any visitor text still an internal note? 5. Is a page with no photographs acceptable as the first release, and is the decision sheet's default (omit all) right? 6. Does anything outside these nine blocks change?

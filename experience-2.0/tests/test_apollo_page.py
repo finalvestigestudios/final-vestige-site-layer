@@ -115,28 +115,90 @@ class Block(unittest.TestCase):
         for phrase in ("Integration candidate", "Not published", "not published", "FVSL-QD-PASS", "approved by"):
             self.assertNotIn(phrase, text, phrase)
 
-    def test_every_image_is_a_record_image_with_its_rights_row(self):
+    def test_no_photograph_without_a_named_editor_signoff(self):
+        """Founder rule: an image with no sign-off is omitted and the text-and-document page stands without it."""
         data = lib.load_apollo1()
+        approved = page.approved_images(data)
         text = _block()
         for rec in data["records"]:
             img = rec["image"]
-            self.assertIn(img["src"], text)
+            shown = img["nasa_id"] in approved
+            self.assertEqual(img["src"] in text, shown, img["nasa_id"])
             self.assertIn(f'id="rights-{rec["id"]}"', text)
             self.assertIn(img["record_url"], text)
-            self.assertIn(img["credit"], text)
+        if not approved:
+            self.assertNotIn("<img", text)
+            self.assertIn("Photographs not shown in this release", text)
         self.assertIn(data["rights_policy"]["restriction"], text)
+
+    def test_signoff_rules(self):
+        import tempfile, pathlib
+        data = lib.load_apollo1()
+        nid = data["records"][1]["image"]["nasa_id"]
+        def run(items):
+            with tempfile.TemporaryDirectory() as d:
+                p = pathlib.Path(d) / "s.json"
+                p.write_text(json.dumps({"approved": items}), encoding="utf-8")
+                return page.approved_images(data, p)
+        self.assertEqual(run([]), set())
+        self.assertEqual(run([{"nasa_id": nid}]), set(), "no editor, date or use: not approved")
+        self.assertEqual(run([{"nasa_id": nid, "editor": "A. Editor", "date": "2026-11-03", "contextual_use": " "}]), set())
+        self.assertEqual(run([{"nasa_id": "NOT-A-RECORD", "editor": "A", "date": "d", "contextual_use": "u"}]), set())
+        self.assertEqual(run([{"nasa_id": nid, "editor": "A. Editor", "date": "2026-11-03", "contextual_use": "Context plate, chapter 2"}]), {nid})
+
+    def test_an_approved_photograph_renders_its_plate_and_rights_row(self):
+        import tempfile, pathlib
+        data = lib.load_apollo1()
+        atlas = json.loads(ATLAS.read_text(encoding="utf-8"))
+        nid = data["records"][4]["image"]["nasa_id"]
+        orig = page.SIGNOFFS
+        with tempfile.TemporaryDirectory() as d:
+            p = pathlib.Path(d) / "s.json"
+            p.write_text(json.dumps({"approved": [{"nasa_id": nid, "editor": "A. Editor", "date": "2026-11-03", "contextual_use": "Plate 5"}]}), encoding="utf-8")
+            page.SIGNOFFS = p
+            try:
+                import fvx_lib
+                original = page.approved_images
+                page.approved_images = lambda data, path=p: original(data, path)
+                blocks = dict(page.render_blocks(data, atlas))
+            finally:
+                page.approved_images = original
+                page.SIGNOFFS = orig
+        self.assertIn(data["records"][4]["image"]["src"], blocks["01-investigation"])
+        self.assertEqual(blocks["01-investigation"].count("<img"), 1)
+        self.assertIn("Documented", blocks["02-classification"])
+        self.assertIn("S67-21294 is documented", blocks["02-classification"].replace("photograph, S67-21294,", "S67-21294"))
+
+    def test_no_internal_notes_reach_visitors(self):
+        text = _block()
+        for phrase in ("Sprint 5", "not re-checked", "Not re-checked", "confirm before publication", "Confirm before publication", "confirm wording",
+                       "Confirm wording", "candidate", "human rights review pending", "integration candidate", "Fourteen seconds", "fourteen seconds",
+                       "prototype", "was not found through the NASA Image API"):
+            self.assertNotIn(phrase, text, phrase)
+        self.assertIn("About fifteen seconds changed the system.", text)
+        self.assertIn("approximately 15 seconds after the verbal report", text)
+
+    def test_every_claim_names_its_nasa_source(self):
+        data = lib.load_apollo1()
+        ids = {s["id"] for s in data.get("claim_sources", [])} | {"src-nasa-board-report"}
+        for rec in data["records"]:
+            for row in rec["crosswalk"]:
+                self.assertEqual(row["status"], "verified", f'{rec["id"]}: {row["claim"]}: ship only claims matched to a NASA source, or remove them')
+                self.assertTrue(row.get("url", "").startswith("https://www.nasa.gov/"), row["claim"])
+                self.assertTrue(row.get("source_ids") and set(row["source_ids"]) <= ids, row["claim"])
 
     def test_classification_matches_the_atlas_relationships(self):
         atlas = json.loads(ATLAS.read_text(encoding="utf-8"))
         rels = [r for r in atlas["relationships"] if r["object"] == "evt-apollo1-fire"]
-        text = _block()
-        body = text.split("</style>", 1)[1]
-        documented = sum(1 for r in rels if r["basis"] == "documented")
-        # legend + the one documented photograph's plate + the classification list (the Board report has no plate)
-        self.assertEqual(body.count('data-status="documented"'), 1 + 1 + documented)
+        docs = {d["id"]: d for d in atlas["documents"]}
+        approved = page.approved_images(lib.load_apollo1())
+        listed = [r for r in rels if docs[r["subject"]]["document_type"] != "photograph" or docs[r["subject"]]["archive_id"] in approved]
+        body = _block().split("</style>", 1)[1]
+        for r in listed:
+            self.assertIn(r["justification"].replace("'", "&#x27;"), body)
         for r in rels:
-            self.assertIn(r["justification"].replace("'", "&#x27;"), text)
-        self.assertEqual(sum(1 for r in rels if r["basis"] == "documented"), 2)
+            if r not in listed:
+                self.assertNotIn(r["justification"].replace("'", "&#x27;"), body, "a photograph that is not shown must not be classified on the page")
 
     def test_related_posts_are_atlas_investigations_sharing_a_theme(self):
         atlas = json.loads(ATLAS.read_text(encoding="utf-8"))
@@ -153,23 +215,17 @@ class Block(unittest.TestCase):
     def test_the_page_does_not_overstate_review(self):
         text = _block()
         self.assertIn("Not yet reviewed", text)
-        self.assertIn("human rights review pending", text)
         self.assertNotIn("independent review", text.lower())
 
-    def test_every_unverified_claim_is_flagged_in_its_chapter(self):
-        """Founder rule: documented fact, interpretation and unresolved questions must be separable on the page."""
-        data = lib.load_apollo1()
-        body = (BLOCKS_DIR / "apollo1-investigation" / "01-investigation.block.html").read_text(encoding="utf-8")
-        chapters = re.split(r'(?=<section class="fv-ex2-chapter")', body)
-        for rec in data["records"]:
-            chapter = next(c for c in chapters if f'id="{rec["id"]}"' in c[:200])
-            for row in rec["crosswalk"]:
-                flagged = row["claim"].replace("'", "&#x27;") in chapter and row["status"] != "verified"
-                if row["status"] == "verified":
-                    self.assertNotIn(f'<strong>{row["claim"]}</strong>', chapter, "verified claims are not open questions")
-                else:
-                    self.assertTrue(flagged, f'{rec["id"]}: {row["claim"]}')
-        self.assertIn("Open question", body)
+    def test_unverified_claims_would_be_flagged_in_their_chapter(self):
+        """If a non-verified crosswalk row ever returns, the renderer must flag it in its chapter (legend and callout)."""
+        import copy
+        data = copy.deepcopy(lib.load_apollo1())
+        data["records"][3]["crosswalk"].append({"claim": "A test claim.", "status": "article-only", "source": "Our article."})
+        atlas = json.loads(ATLAS.read_text(encoding="utf-8"))
+        blocks = dict(page.render_blocks(data, atlas))
+        self.assertIn("Open question", blocks["01-investigation"])
+        self.assertIn("A test claim.", blocks["01-investigation"])
 
     def test_size_budget(self):
         self.assertLess(len(_block().encode()), 110_000)

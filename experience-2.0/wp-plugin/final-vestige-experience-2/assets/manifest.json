@@ -5,7 +5,7 @@
     "sha256": "437dbe1ecfd9db96566b1f388648cb06929801aa642fbef62d3dc042bba3137c"
   },
   "data_sources": {
-    "apollo1": "7744053580fbe4a2430217cbf87da76c9da5a98aadd051030ff785bcc135316a"
+    "apollo1": "dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721"
   },
   "js": {
     "bytes": 9602,
@@ -17,7 +17,7 @@
       "sha256": "997b0eeef1b21cd35d55a016b471b8bf41c8518086a2af84c02b80cbaf44119c"
     },
     "research-desk": {
-      "sha256": "6702a85fe6d787f27e92373a0f1a1f135f9a45c54b50d343a0371ba12a7aedfc"
+      "sha256": "96ac1e65184ac889f22d1ac1741b4bf979a6173dca6a78a99acb10eccc4f59a7"
     }
   },
   "version": "0.5.0-sprint5"

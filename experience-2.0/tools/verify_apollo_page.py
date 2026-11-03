@@ -167,7 +167,7 @@ def cmd_behaviour(browser, base):
     ctx, page = new_page(browser, 1440, 900, reduced="reduce")
     page.goto(f"{base}/index.html", wait_until="load", timeout=120000)
     settle(page)
-    page.fill("[data-fvx-search]", "S67-21294")
+    page.fill("[data-fvx-search]", "most probable initiator")
     page.wait_for_timeout(200)
     status = page.locator("[data-fvx-status]").inner_text()
     shown = page.locator("[data-fvx-item]:visible").count()
