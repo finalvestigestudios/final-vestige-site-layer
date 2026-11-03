@@ -23,7 +23,7 @@ class ReleaseCandidateParityTests(unittest.TestCase):
         # seven-chapter content. A pre-hero stylesheet prevents a late
         # style recalculation after the opening text has already rendered.
         text = PAYLOAD.decode("utf-8")
-        self.assertTrue(text.startswith("<!-- wp:html -->\\n<style>"))
+        self.assertTrue(text.startswith("<!-- wp:html -->\n<style>"))
         self.assertEqual(text.count("<style>"), 1)
         self.assertEqual(text.count("</style>"), 1)
         self.assertLess(text.index("</style>"), text.index('data-fv-home-flagship'))
