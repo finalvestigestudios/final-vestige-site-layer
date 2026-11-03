@@ -169,7 +169,7 @@ def capture(output_dir: Path) -> list[dict]:
                         raise ValueError("PUBLIC_HOMEPAGE_MARKER_DRIFT")
                     images_before = page.locator('[data-fv-archive-img]').count()
                     if images_before != 4:
-                        raise ValueError("PUBLIC_ARCHIVE_IMAGE_INVENTORY_DRIFT")
+                        raise ValueError(f"PUBLIC_ARCHIVE_IMAGE_INVENTORY_DRIFT: observed={images_before}")
                     case_button = page.locator('button[data-fv-case-button="malbone"]')
                     case_button.click(timeout=12000)
                     case = page.locator('article.fv-hf__case[data-fv-case="malbone"]')
