@@ -1,0 +1,193 @@
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Change blindness is the failure to notice a large change in something you are looking at. The change can be big and obvious once someone points it out. It simply goes unseen, typically when an eye movement, a film cut, a blank screen or an interruption separates the “before” from the “after.”</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Two classic experiments from the 1990s show the effect. In one, people stared at flickering pictures for seconds without seeing a change. In the other, half the people giving directions to a stranger on a campus did not notice when the stranger was swapped for a different person in mid-conversation. Below is what each study actually did and found, what the authors themselves cautioned, and a demonstration you can try.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Try it: the flicker test</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">This is an original illustration built for this page, not one of the original researchers’ images. One thing in the scene changes every time the picture comes back. Press <strong>Start</strong>, then press <strong>I see it</strong> when you find the change. The test starts only when you press the button, and it flickers more slowly than the original lab version (see the note after the demo).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="fv-cb" id="fv-cb" role="group" aria-label="Change blindness flicker demonstration">
+<style>
+.fv-cb{max-width:640px;margin:1.2em 0;font:inherit}
+.fv-cb canvas{display:block;width:100%;height:auto;border:1px solid rgba(128,128,128,.5);background:#8a8a8a}
+.fv-cb__row{display:flex;flex-wrap:wrap;gap:.5em;margin:.6em 0}
+.fv-cb button{font:inherit;padding:.5em .9em;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;border-radius:3px}
+.fv-cb button:focus-visible{outline:3px solid #b8955e;outline-offset:2px}
+.fv-cb button[disabled]{opacity:.45;cursor:default}
+.fv-cb__status{min-height:2.6em;margin:.4em 0 0}
+</style>
+<canvas id="fv-cb-c" width="640" height="360" role="img" aria-label="A drawn landscape with a lake, hills, a cabin, a boat and a tree. When the test runs it alternates with a nearly identical version with one difference."></canvas>
+<div class="fv-cb__row">
+<button type="button" id="fv-cb-start">Start</button>
+<button type="button" id="fv-cb-see" disabled>I see it</button>
+<button type="button" id="fv-cb-reveal" disabled>Show me the change</button>
+<button type="button" id="fv-cb-new">New scene</button>
+</div>
+<p class="fv-cb__status" id="fv-cb-status" role="status" aria-live="polite">Ready. Press Start.</p>
+<script>
+(function(){
+var c=document.getElementById('fv-cb-c'); if(!c||!c.getContext) return;
+var g=c.getContext('2d'),W=c.width,H=c.height;
+var bS=document.getElementById('fv-cb-start'),bI=document.getElementById('fv-cb-see'),bR=document.getElementById('fv-cb-reveal'),bN=document.getElementById('fv-cb-new'),st=document.getElementById('fv-cb-status');
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var KINDS=['tree','boat','door','flag','cloud'];
+var kind,timer=null,alt=0,t0=0,showB=false,stepIdx=0,running=false;
+function pick(){kind=KINDS[Math.floor(Math.random()*KINDS.length)];}
+function scene(v){
+ var b=v==='B';
+ var s=g.createLinearGradient(0,0,0,H*0.55);s.addColorStop(0,'#6fa3d6');s.addColorStop(1,'#cfe3f2');g.fillStyle=s;g.fillRect(0,0,W,H);
+ g.fillStyle='#f6e27a';g.beginPath();g.arc(540,70,34,0,7);g.fill();
+ g.fillStyle='#ffffff';[[120,70,36],[160,62,28],[88,76,24]].forEach(function(o){g.beginPath();g.arc(o[0],o[1],o[2],0,7);g.fill();});
+ if(kind==='cloud'&&b){g.fillStyle='#ffffff';[[330,48,30],[366,42,24],[300,54,20]].forEach(function(o){g.beginPath();g.arc(o[0],o[1],o[2],0,7);g.fill();});}
+ g.fillStyle='#6b7f6a';g.beginPath();g.moveTo(0,215);g.lineTo(130,120);g.lineTo(250,215);g.fill();
+ g.fillStyle='#55695a';g.beginPath();g.moveTo(180,215);g.lineTo(360,100);g.lineTo(520,215);g.fill();
+ g.fillStyle='#4f89b4';g.fillRect(0,215,W,60);
+ g.fillStyle='#5b8f4d';g.fillRect(0,275,W,H-275);
+ var bx=(kind==='boat'&&b)?420:300;
+ g.fillStyle='#7a4a2b';g.beginPath();g.moveTo(bx,245);g.lineTo(bx+70,245);g.lineTo(bx+58,262);g.lineTo(bx+12,262);g.fill();
+ g.fillStyle='#f2f2f2';g.beginPath();g.moveTo(bx+35,200);g.lineTo(bx+35,243);g.lineTo(bx+62,243);g.fill();
+ g.fillStyle='#d9c7a0';g.fillRect(70,240,150,100);
+ g.fillStyle='#8c3b2e';g.beginPath();g.moveTo(55,240);g.lineTo(145,185);g.lineTo(235,240);g.fill();
+ g.fillStyle=(kind==='door'&&b)?'#2e5fa8':'#a8342e';g.fillRect(125,285,38,55);
+ g.fillStyle='#3d5a73';g.fillRect(85,262,28,28);g.fillRect(180,262,28,28);
+ if(!(kind==='tree'&&b)){g.fillStyle='#5a4630';g.fillRect(560,255,16,85);
+ g.fillStyle='#2f6b34';g.beginPath();g.arc(568,235,44,0,7);g.fill();}
+ g.fillStyle='#4c4c4c';g.fillRect(398,190,4,90);
+ g.fillStyle=(kind==='flag'&&b)?'#e6c200':'#c42b2b';g.fillRect(402,192,36,22);
+}
+function blank(){g.fillStyle='#8a8a8a';g.fillRect(0,0,W,H);}
+function draw(v){scene(v);}
+/* sequence A, blank, A, blank, B, blank, B, blank ... (image 300 ms, blank 100 ms) */
+var seq=['A','_','A','_','B','_','B','_'];
+function tick(){var s=seq[stepIdx%seq.length];if(s==='_')blank();else{draw(s);} if(stepIdx%seq.length===0&&stepIdx>0)alt++; stepIdx++;
+ timer=setTimeout(tick,s==='_'?100:300);}
+function stop(){clearTimeout(timer);timer=null;running=false;}
+function start(){stop();stepIdx=0;alt=0;running=true;t0=Date.now();bS.disabled=true;bI.disabled=false;bR.disabled=false;st.textContent='Running. Press “I see it” as soon as you find the change.';tick();}
+bS.onclick=function(){ if(reduce){showManual();} else start(); };
+bI.onclick=function(){var sec=((Date.now()-t0)/1000).toFixed(1);stop();var pairs=Math.floor(stepIdx/8);draw('B');bS.disabled=false;bI.disabled=true;
+ st.textContent='You stopped after about '+sec+' seconds ('+pairs+(pairs===1?' full A/B cycle':' full A/B cycles')+'). Press “Show me the change” to check that you found the right thing.';};
+bR.onclick=function(){stop();bS.disabled=false;bI.disabled=true;var names={tree:'the tree on the right disappears',boat:'the boat moves to the right',door:'the cabin door changes colour',flag:'the flag changes colour',cloud:'an extra cloud appears at the top'};
+ draw('A');setTimeout(function(){draw('B');},900);st.textContent='The change: '+names[kind]+'. The picture is showing the first version, then the second.';};
+bN.onclick=function(){stop();pick();draw('A');bS.disabled=false;bI.disabled=true;bR.disabled=true;st.textContent='New scene ready. Press Start.';};
+var manualOn=false;
+function showManual(){stop();manualOn=true;draw('A');bI.disabled=false;bI.textContent='Switch picture';bR.disabled=false;var cur='A';
+ st.textContent='Reduced-motion mode: the picture will not flicker. Use “Switch picture” to compare the two versions yourself.';
+ bI.onclick=function(){cur=cur==='A'?'B':'A';blank();setTimeout(function(){draw(cur);},120);};}
+pick();draw('A');
+})();
+</script>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph"><em>About the demo:</em> in the original lab version, pictures stayed on screen for 240 milliseconds with an 80-millisecond blank between them. Here the pictures stay for 300 ms with a 100 ms blank, which keeps the flash rate under three per second. If your system is set to reduce motion, the demo gives you a manual switch instead.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Study 1: the flicker paradigm (Rensink, O’Regan and Clark, 1997)</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Ronald Rensink, J. Kevin O’Regan and James Clark wanted to find out why people miss changes between views of a scene. Their method was to show an original photograph and a modified version in alternation, with a gray blank field between them. Each image appeared for 240 ms and each blank for 80 ms, and each image was shown twice before switching. They used 48 color photographs of real-world scenes, each altered in one way: an object could appear or disappear, change color, or shift position. Ten naive observers took part in each experiment and pressed a key when they saw the change.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">The effect was large. When the changed part of the scene was one of marginal interest, observers needed an average of 17.1 alternations (about 10.9 seconds) to find it, and for some images more than 80 alternations (about 50 seconds), even though the change was obvious once seen. Changes to the central interest of the scene were noticed faster, in an average of 7.3 alternations (4.7 seconds). Central and marginal interest were defined by asking five other observers to describe each scene: items three or more of them mentioned were “central,” and items none mentioned were “marginal.” When the blank fields were removed, the same changes were identified in an average of 1.4 alternations (0.9 seconds).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">The authors concluded that the critical factor is attention: to see an object change, you have to attend to it, and the blank between views removes the local flicker that would normally draw attention to the changed spot. You can see the researcher’s own examples on <a href="https://www.cs.ubc.ca/~rensink/flicker/">Ronald Rensink’s flicker demonstration page</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Study 2: the door experiment (Simons and Levin, 1998)</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Daniel Simons and Daniel Levin asked whether change blindness was only an artifact of looking at pictures on a screen. On the Cornell University campus, an experimenter carrying a map approached a pedestrian and asked for directions to a building. After 10 to 15 seconds, two other experimenters carrying a door rudely walked between them. The first experimenter grabbed the back of the door and walked away with it, and the person who had been carrying the door took his place and continued the conversation. The door blocked the pedestrian’s view for about one second. The two experimenters wore different clothing, differed in height by about 5 cm, and had clearly different voices.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Of 15 pedestrians, only 7 reported noticing the change. Those who noticed were all students about the same age as the experimenters, roughly 20 to 30. Those who did not were older, about 35 to 65. Pedestrians who missed it were surprised to learn that the person in front of them had changed.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">In a second experiment, the same two experimenters dressed as construction workers, and only students took part. Of 12 pedestrians, 4 said they noticed when asked whether they had seen anything unusual. Three more said they had noticed nothing but then claimed to have seen the switch when asked directly; they could not accurately describe any difference, which the authors take as a sign they probably had not noticed. The authors suggest the students sorted the experimenters into a category (“construction worker”) rather than recording individual features. One participant who missed the change said just that.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">The authors’ conclusion is that attention alone does not suffice for change detection, even in the real world. Detecting a change likely requires effortful encoding of the features that distinguish the original from the replacement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What the studies do not show</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><li><strong>They are small.</strong> The door experiment used 15 and 12 people at one university. Percentages such as “half” and “33 percent” come from those small groups.</li><li><strong>The authors raised objections to their own result.</strong> Simons and Levin discuss the possibility that people noticed but did not say so for social reasons, and that giving directions distracted them. They argue the first is unlikely, since the pressure of the situation seemed to push people to claim a change, not to hide one, and they say ongoing work was testing the second.</li><li><strong>It does not mean you see nothing.</strong> The flicker study found that changes to a scene’s central interest were noticed faster, and that without the blank the same changes were found almost at once. Change blindness describes a failure under particular conditions, not blindness in general.</li><li><strong>The inferences are debated.</strong> A 2005 review by Simons and Ronald Rensink states that the phenomenon’s counterintuitive nature has also produced confusion about what conclusions legitimately follow from it. This article covers the two original reports and that review’s abstract only; it is not a survey of later replications.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Change blindness vs. inattentional blindness</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">They are related but not identical. Change blindness is failing to detect a change between two views. Inattentional blindness is failing to perceive an unexpected object at all when your attention is elsewhere, as in Daniel Simons and Christopher Chabris’s 1999 “gorillas in our midst” study. Their abstract states that the likelihood of noticing an unexpected object depends on how similar it is to the other objects in the display and on how hard the monitoring task is.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">If you are interested in how people read evidence, see our <a href="https://finalvestige.com/free-resources/research-sources/">research sources library</a> and our <a href="https://finalvestige.com/editorial-standards/">editorial standards</a>. For a case study in what operators can and cannot see on a panel, read <a href="https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/">The Light Said Closed</a>. That story is about an indicator, not about change blindness, and we make no claim that this effect caused any part of it.</p>
+<!-- /wp:paragraph -->
+
+<h2 class="wp-block-heading" id="faq">Common questions</h2>
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">What is change blindness?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">It is the striking failure to see large changes that would normally be noticed easily. It was shown in the 1990s with flickering photographs and with a real-world swap of the person giving directions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">How many people missed the swap in the door experiment?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">In the first experiment, 7 of 15 pedestrians noticed the change, so 8 did not. In the second, with the experimenters dressed as construction workers, 4 of 12 students noticed when first asked.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">What is the flicker paradigm?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">It is a method in which an original and a modified picture alternate, with a brief blank between them. In the 1997 study the images showed for 240 ms and the blanks for 80 ms.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Is change blindness the same as inattentional blindness?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">No. Change blindness is missing a change between views; inattentional blindness is missing an unexpected object when attention is elsewhere. Both are linked to what we attend to.</p>
+<!-- /wp:paragraph -->
+
+<h2 class="wp-block-heading fv-source-heading" id="sources">Sources &amp; Further Reading</h2>
+
+<!-- wp:list -->
+<ul class="wp-block-list"><li><a href="https://www.cs.ubc.ca/~rensink/publications/download/PsychSci.rr.pdf">Ronald A. Rensink, J. Kevin O’Regan and James J. Clark, “To See or Not to See: The Need for Attention to Perceive Changes in Scenes,” <em>Psychological Science</em> 8 (1997), 368–373</a> — author-hosted copy; source for the flicker method and the alternation counts.</li><li><a href="https://link.springer.com/article/10.3758/BF03208840">Daniel J. Simons and Daniel T. Levin, “Failure to detect changes to people during a real-world interaction,” <em>Psychonomic Bulletin &amp; Review</em> 5 (1998), 644–649</a> — source for the door experiments.</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/15639436/">Daniel J. Simons and Ronald A. Rensink, “Change blindness: past, present, and future,” <em>Trends in Cognitive Sciences</em> 9 (2005), 16–20</a> — abstract only.</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/10694957/">Daniel J. Simons and Christopher F. Chabris, “Gorillas in our midst: sustained inattentional blindness for dynamic events,” <em>Perception</em> 28 (1999), 1059–1074</a> — abstract only.</li><li><a href="https://www.cs.ubc.ca/~rensink/flicker/">Ronald Rensink, flicker paradigm demonstrations</a> — the researcher’s own examples.</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:html -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is change blindness?","acceptedAnswer":{"@type":"Answer","text":"It is the striking failure to see large changes that would normally be noticed easily. It was shown in the 1990s with flickering photographs and with a real-world swap of the person giving directions."}},{"@type":"Question","name":"How many people missed the swap in the door experiment?","acceptedAnswer":{"@type":"Answer","text":"In the first experiment, 7 of 15 pedestrians noticed the change, so 8 did not. In the second, with the experimenters dressed as construction workers, 4 of 12 students noticed when first asked."}},{"@type":"Question","name":"What is the flicker paradigm?","acceptedAnswer":{"@type":"Answer","text":"It is a method in which an original and a modified picture alternate, with a brief blank between them. In the 1997 study the images showed for 240 ms and the blanks for 80 ms."}},{"@type":"Question","name":"Is change blindness the same as inattentional blindness?","acceptedAnswer":{"@type":"Answer","text":"No. Change blindness is missing a change between views; inattentional blindness is missing an unexpected object when attention is elsewhere. Both are linked to what we attend to."}}]}</script>
+<!-- /wp:html -->

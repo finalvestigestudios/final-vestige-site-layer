@@ -92,3 +92,24 @@ Not done: competitor research, keyword packages A-F, Evidence Atlas integration 
 | Homepage QD, signed-in render, NASA sign-off | `ACCEPTANCE_MATRIX.md` section D; live page unchanged | verified live hashes; confirmed procedure still applies | atlas/experience work, preparedness diagnosis |
 | Preparedness integrity gate | `ValueError` above, reproduced at `ddb3528b` | root-caused to one undeclared crosswalk variant | proposing the change to the owning workstream |
 | Qualified safety review of preparedness | no approval exists in the repo | none: cannot be self-issued | Wave 1 scoping |
+
+## Content packages A-F (2026-11-02)
+
+Branch `feature/content-packages-a-f`, folder `content-packages/`. Page 6 (homepage block) was not touched (modified timestamp still 2026-11-02T17:48:13). No plugin, theme, navigation or subscriber email change. Subscriber email and social auto-share were disabled on each new post.
+
+| Pkg | Topic | State | URL | Post ID | Article SHA-256 (LF) |
+|---|---|---|---|---|---|
+| A | Piri Reis map | published, read-back verified | https://finalvestige.com/2026/11/02/piri-reis-map/ | 1917 | `862691b6abb1bcf115d60298ecb2f17dcf9e9dcf0f2d5cd445196103729e9f37` |
+| B | Lycurgus Cup | published, verified | https://finalvestige.com/2026/11/02/lycurgus-cup/ | 1920 | `a10d1c02cdf5888476b492e0f5bef86c27df4688785db7c630a5d6edd2cc0643` |
+| C | Change blindness | published, verified (inline demo executed from served markup) | https://finalvestige.com/2026/11/02/change-blindness/ | 1922 | `083201378d6c2d3b81461865c3e539b46a7dc266049eb264b2776ea44e34030d` |
+| D | Mesmerism | published, verified | https://finalvestige.com/2026/11/02/mesmerism/ | 1924 | `51d458a6b76b11ed400e29c1b76fd8308f9c45303cf000104c4c66ce825ea067` |
+| E | Crystal skulls | published, verified | https://finalvestige.com/2026/11/02/crystal-skulls/ | 1926 | `865247ca9bc74602c34d2ca423c736dbc70832268019521d9af06aab1c2ced58` |
+| F | Long-term water storage | **draft, not published** | none | none | n/a |
+
+Sources, claim maps, image rights, live-text hashes and per-post rollback are in each package's `evidence.md` and `publish-record.md`. Rollback for any of A-E: set the post back to `draft` (removes it from the public site); nothing else was changed.
+
+**F blocker (exact):** the Preparedness Archive already holds a governed article on this subject, `two-week-water-storage`, with `safety_review.state = pending` and no qualified reviewer, inside a release candidate that is on HOLD. A second article would duplicate it, so F is an SEO/FAQ upgrade proposal (`proposed-meta.json`, `faq-schema.draft.json`, `package.md`) built only from statements re-verified against the live CDC page (updated 2025-06-27) and Ready.gov (updated 2021-02-22) on 2026-11-02. Key finding: official guidance gives a six-month rotation cycle for self-filled water, not a long shelf life, so the "long-term" keyword cannot be chased with years-long claims. Needs the Preparedness workstream to merge the fields and a named qualified safety reviewer.
+
+**Open items:** no Search Console, ranking or traffic number was measured; new URLs were not yet in `sitemap-1.xml` at the time of checking (sitemap refresh lag, to re-check); FAQPage markup is not expected to produce rich results (Google limits them to government and health sites); a competing Wikipedia-only source was removed from every article's claims; D's draft sibling post 1358 (Puységur memoir, noindex) was left as is.
+
+**Update (2026-11-02, evening): evidence corrections.** After `content-packages/QA-claim-source-table.md` (226 claims: 188 supported, 29 paraphrase-OK, 9 unverified, 0 unsupported) the nine unverified claims and three loose paraphrases were corrected on live posts 1917, 1920 and 1924 (12 single-block replacements, each locked to modified time, content hash and block hash). Result: 0 unverified, no Wikipedia-only claim left. Before/after text and lock tokens: `content-packages/CORRECTIONS-LOG.md`. Posts 1922 and 1926 unchanged. Block counts unchanged (27, 25, 30, 33, 26 for 1917, 1920, 1922, 1924, 1926).
