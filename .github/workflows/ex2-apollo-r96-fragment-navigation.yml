@@ -35,6 +35,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
           python -m py_compile experience2/evidence-atlas/tools/build_curated_atlas_r94.py experience2/evidence-atlas/tests/test_atlas_deeplinks_r96.py
+          node experience2/evidence-atlas/tests/node_atlas_nav_r96.cjs
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_atlas_deeplinks_r96.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_asset_inventory_r95.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_curated_atlas_r94.py -v
