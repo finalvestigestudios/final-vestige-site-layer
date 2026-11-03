@@ -4,7 +4,7 @@
   "as_of": "2026-10-30",
   "authority": "GIT_BLOB_INPUT_BASELINE_NOT_A_HUMAN_SOURCE_CHECK_OR_SAFETY_APPROVAL",
   "longform_article_count": 35,
-  "local_tool_count": 1,
+  "local_tool_count": 6,
   "records": [
     {
       "slug": "emergency-hygiene-sanitation",
@@ -25,13 +25,13 @@
       "origin": "shelter",
       "body": {
         "path": "preparedness/content/articles/family-communication-plan.body.html",
-        "git_blob_sha": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
-        "bytes": 23180
+        "git_blob_sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+        "bytes": 26822
       },
       "metadata": {
         "path": "preparedness/content/articles/family-communication-plan.meta.json",
-        "git_blob_sha": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
-        "bytes": 3524
+        "git_blob_sha": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+        "bytes": 4489
       }
     },
     {
@@ -67,8 +67,8 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/go-bags.body.html",
-        "git_blob_sha": "5135639786bbafa4e03939a74659cd0f31df3564",
-        "bytes": 24931
+        "git_blob_sha": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+        "bytes": 26443
       },
       "metadata": {
         "path": "preparedness/content/articles/go-bags.meta.json",
@@ -95,13 +95,13 @@
       "origin": "shelter",
       "body": {
         "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
-        "git_blob_sha": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
-        "bytes": 26250
+        "git_blob_sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+        "bytes": 31595
       },
       "metadata": {
         "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
-        "git_blob_sha": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
-        "bytes": 3127
+        "git_blob_sha": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+        "bytes": 3711
       }
     },
     {
@@ -123,8 +123,8 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/household-emergency-plan.body.html",
-        "git_blob_sha": "8ca5c261dba56eeaf79c445332381a74867233de",
-        "bytes": 23176
+        "git_blob_sha": "f81cd43516e8295104230412f18776919148f905",
+        "bytes": 24695
       },
       "metadata": {
         "path": "preparedness/content/articles/household-emergency-plan.meta.json",
@@ -156,8 +156,8 @@
       },
       "metadata": {
         "path": "preparedness/content/articles/making-water-safer.meta.json",
-        "git_blob_sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
-        "bytes": 2987
+        "git_blob_sha": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+        "bytes": 3523
       }
     },
     {
@@ -179,8 +179,8 @@
       "origin": "hist-field",
       "body": {
         "path": "preparedness/content/articles/navigation-before-gps.body.html",
-        "git_blob_sha": "64c6b2c7004bc5549eea5a47d9095183e7436750",
-        "bytes": 21735
+        "git_blob_sha": "3c02e58c30d1d608224944142f31fbead44a1252",
+        "bytes": 21752
       },
       "metadata": {
         "path": "preparedness/content/articles/navigation-before-gps.meta.json",
@@ -193,13 +193,13 @@
       "origin": "shelter",
       "body": {
         "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
-        "git_blob_sha": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
-        "bytes": 31428
+        "git_blob_sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+        "bytes": 33137
       },
       "metadata": {
         "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
-        "git_blob_sha": "77dd194b096bb60ea99728a5b0042adf016b905e",
-        "bytes": 4568
+        "git_blob_sha": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+        "bytes": 5155
       }
     },
     {
@@ -235,13 +235,13 @@
       "origin": "hist-home",
       "body": {
         "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
-        "git_blob_sha": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
-        "bytes": 18560
+        "git_blob_sha": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "bytes": 21293
       },
       "metadata": {
         "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
-        "git_blob_sha": "4b955811459017df83a28704aaf1e69ddb036c29",
-        "bytes": 2542
+        "git_blob_sha": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+        "bytes": 2838
       }
     },
     {
@@ -249,13 +249,13 @@
       "origin": "hist-field",
       "body": {
         "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
-        "git_blob_sha": "1332df3540a903fdecdb3527fb22347d57968fb0",
-        "bytes": 22205
+        "git_blob_sha": "7b63826c91a306322e486efe57717c663e833055",
+        "bytes": 25037
       },
       "metadata": {
         "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
-        "git_blob_sha": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
-        "bytes": 2830
+        "git_blob_sha": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+        "bytes": 3162
       }
     },
     {
@@ -277,8 +277,8 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/preparedness-real-households.body.html",
-        "git_blob_sha": "70d03c366e10db623929f118501becfa26c48bab",
-        "bytes": 24269
+        "git_blob_sha": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+        "bytes": 25659
       },
       "metadata": {
         "path": "preparedness/content/articles/preparedness-real-households.meta.json",
@@ -319,13 +319,13 @@
       "origin": "hist-home",
       "body": {
         "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
-        "git_blob_sha": "e28548b4e5014f36ffd12becb9261ae696480efa",
-        "bytes": 18847
+        "git_blob_sha": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+        "bytes": 21281
       },
       "metadata": {
         "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
-        "git_blob_sha": "705e1157f9394b615ecb74ffd25be8500453e18a",
-        "bytes": 2314
+        "git_blob_sha": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+        "bytes": 2538
       }
     },
     {
@@ -352,8 +352,8 @@
       },
       "metadata": {
         "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
-        "git_blob_sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
-        "bytes": 2897
+        "git_blob_sha": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+        "bytes": 3433
       }
     },
     {
@@ -361,13 +361,13 @@
       "origin": "hist-home",
       "body": {
         "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
-        "git_blob_sha": "15852c158708270d72d5f9723d90e5cb6083a766",
-        "bytes": 21687
+        "git_blob_sha": "d56df76647d2598f35cfd4609f91649cef063f12",
+        "bytes": 21947
       },
       "metadata": {
         "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
-        "git_blob_sha": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
-        "bytes": 2635
+        "git_blob_sha": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+        "bytes": 2962
       }
     },
     {
@@ -375,13 +375,13 @@
       "origin": "shelter",
       "body": {
         "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
-        "git_blob_sha": "b8acf07e533eea43795aa242f39fd926b080130f",
-        "bytes": 24382
+        "git_blob_sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+        "bytes": 31374
       },
       "metadata": {
         "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
-        "git_blob_sha": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
-        "bytes": 3398
+        "git_blob_sha": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+        "bytes": 3938
       }
     },
     {
@@ -417,13 +417,13 @@
       "origin": "start",
       "body": {
         "path": "preparedness/content/articles/three-day-kit.body.html",
-        "git_blob_sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
-        "bytes": 24783
+        "git_blob_sha": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+        "bytes": 27644
       },
       "metadata": {
         "path": "preparedness/content/articles/three-day-kit.meta.json",
-        "git_blob_sha": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
-        "bytes": 3865
+        "git_blob_sha": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+        "bytes": 4215
       }
     },
     {
@@ -509,6 +509,76 @@
         "git_blob_sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
         "bytes": 3142
       }
+    },
+    {
+      "slug": "family-reunification-card",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/tools/family-reunification-card.body.html",
+        "git_blob_sha": "be8698ac5d020476ff649d85813810e2000c6f98",
+        "bytes": 19145
+      },
+      "metadata": {
+        "path": "preparedness/content/tools/family-reunification-card.meta.json",
+        "git_blob_sha": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15",
+        "bytes": 2401
+      }
+    },
+    {
+      "slug": "home-fire-escape-worksheet",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/tools/home-fire-escape-worksheet.body.html",
+        "git_blob_sha": "01161948b6de6ffbd1b053c9b83a420758e707e4",
+        "bytes": 36155
+      },
+      "metadata": {
+        "path": "preparedness/content/tools/home-fire-escape-worksheet.meta.json",
+        "git_blob_sha": "397c7d3072fb237b490a5a316c93fc863c101be9",
+        "bytes": 1917
+      }
+    },
+    {
+      "slug": "power-outage-planner",
+      "origin": "shelter",
+      "body": {
+        "path": "preparedness/content/tools/power-outage-planner.body.html",
+        "git_blob_sha": "aa8f866aaaaab9253f41c4363d31919029c69234",
+        "bytes": 39172
+      },
+      "metadata": {
+        "path": "preparedness/content/tools/power-outage-planner.meta.json",
+        "git_blob_sha": "8796bba2b323cce096639997002c402bd853e50f",
+        "bytes": 3033
+      }
+    },
+    {
+      "slug": "kit-builder",
+      "origin": "start",
+      "body": {
+        "path": "preparedness/content/tools/kit-builder.body.html",
+        "git_blob_sha": "2cb531174d6828fa5185c47bd2b742a0befa8353",
+        "bytes": 51947
+      },
+      "metadata": {
+        "path": "preparedness/content/tools/kit-builder.meta.json",
+        "git_blob_sha": "e9be8a497df737b36d7d399fccc4a00000ce8eac",
+        "bytes": 3175
+      }
+    },
+    {
+      "slug": "reunification-plan",
+      "origin": "start",
+      "body": {
+        "path": "preparedness/content/tools/reunification-plan.body.html",
+        "git_blob_sha": "3305578369183edb1d427c8f8f8002eaacee420f",
+        "bytes": 13745
+      },
+      "metadata": {
+        "path": "preparedness/content/tools/reunification-plan.meta.json",
+        "git_blob_sha": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+        "bytes": 2040
+      }
     }
   ],
   "reconciliation_20261030": {
@@ -535,5 +605,36 @@
     ],
     "human_source_link_review": false,
     "clinically_reviewed": false
+  },
+  "reconciliation_20261103_stage3": {
+    "purpose": "Stage 3 of the custody repair on integration/preparedness-custody-repair-20261103: re-freeze the git-blob inputs to the integrated tree at the stage 2a head. Git input identity ONLY; not a source check, safety review or publication permit.",
+    "stage_input_head": "97921ca5e1f37535c34de95f12c99769a1bcb74d",
+    "changed_locked_paths": 24,
+    "changed_source_fragments": [
+      "start",
+      "shelter",
+      "hist-home",
+      "hist-field"
+    ],
+    "paths_equal_to_frozen_pr_584_blob": 26,
+    "paths_differing_from_pr_584": [
+      "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+      "preparedness/sources/fragments/hist-field.json"
+    ],
+    "paths_differing_reason": "the reviewed hist-field Hastings route correction (stage 2a, contributor commit 5c807fbf45), LF-normalized",
+    "tool_records_added": [
+      "family-reunification-card",
+      "home-fire-escape-worksheet",
+      "power-outage-planner",
+      "kit-builder",
+      "reunification-plan"
+    ],
+    "local_tool_count_before_after": [
+      1,
+      6
+    ],
+    "longform_article_count_unchanged": 35,
+    "review_reapproval_required": true,
+    "advice_not_assessed_safe": true
   }
 }

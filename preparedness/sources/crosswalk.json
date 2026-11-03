@@ -24,14 +24,14 @@
     {
       "origin": "start",
       "path": "preparedness/sources/fragments/start.json",
-      "git_blob_sha": "29574c328cbab0548e6e5d4a026694857d56b6b4",
-      "count": 27
+      "git_blob_sha": "96140d6d1872588e5d20d9052445c9157e88934d",
+      "count": 29
     },
     {
       "origin": "shelter",
       "path": "preparedness/sources/fragments/shelter.json",
-      "git_blob_sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
-      "count": 31
+      "git_blob_sha": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+      "count": 45
     },
     {
       "origin": "food",
@@ -54,14 +54,14 @@
     {
       "origin": "hist-home",
       "path": "preparedness/sources/fragments/hist-home.json",
-      "git_blob_sha": "6460d4b0734991675c889f28be2f73a19e3c42c0",
-      "count": 27
+      "git_blob_sha": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "count": 29
     },
     {
       "origin": "hist-field",
       "path": "preparedness/sources/fragments/hist-field.json",
-      "git_blob_sha": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
-      "count": 26
+      "git_blob_sha": "88d4face1385caabb26349b4864679b45fa81f37",
+      "count": 28
     }
   ],
   "raw_source_rows": 244,
