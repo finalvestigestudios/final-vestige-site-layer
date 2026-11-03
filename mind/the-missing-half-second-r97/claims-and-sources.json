@@ -1,0 +1,657 @@
+{
+  "review_date": "2026-11-03",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "pilot": "r97_zen12",
+  "sources": [
+    {
+      "id": "R1",
+      "type": "primary_study",
+      "title": "Raymond, Shapiro, Arnell 1992, RSVP attentional blink",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "R2",
+      "type": "scholarly_review",
+      "title": "Dux & Marois 2009, attentional blink theories",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19933555/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "R3",
+      "type": "primary_study",
+      "title": "Olivers et al. 2007, spreading the sparing",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "R4",
+      "type": "primary_commentary",
+      "title": "Dux et al. 2009, resource account response",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19543438/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "R5",
+      "type": "primary_study",
+      "title": "Dux & Marois 2008 distractor inhibition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18833325/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "R6",
+      "type": "primary_study",
+      "title": "Slagter et al. 2007 intensive meditation training",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "R7",
+      "type": "scholarly_review",
+      "title": "Ingendoh et al. 2023 binaural beats EEG synthesis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "M1",
+      "type": "seller_catalog",
+      "title": "Official Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "M2",
+      "type": "seller_sales",
+      "title": "Zen12 exact product offer, hnp",
+      "url": "https://zen12.com/hnp",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "M3",
+      "type": "seller_about",
+      "title": "Zen12 about and format",
+      "url": "https://zen12.com/about",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "M4",
+      "type": "seller_research",
+      "title": "Zen12 self-published research discussion",
+      "url": "https://zen12.com/research",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "M5",
+      "type": "seller_checkout",
+      "title": "Zen12 current full-course checkout",
+      "url": "https://zen12.com/getstarted",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "M6",
+      "type": "seller_terms",
+      "title": "Inspire3 Terms of Sale (Zen12 line)",
+      "url": "https://inspire3.com/terms/",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "M7",
+      "type": "seller_privacy",
+      "title": "Inspire3 Privacy Policy",
+      "url": "https://inspire3.com/privacy/",
+      "checked_on": "2026-11-03",
+      "role": "Seller's description/policy; not independent efficacy proof"
+    },
+    {
+      "id": "P1",
+      "type": "regulator",
+      "title": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "P2",
+      "type": "regulator",
+      "title": "FTC health claims guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_on": "2026-11-03",
+      "role": "Source checked via public abstracts/pages"
+    },
+    {
+      "id": "FV1",
+      "type": "published_existing",
+      "title": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_on": "2026-11-03",
+      "role": "Verified published route via WordPress read-only search"
+    },
+    {
+      "id": "FV2",
+      "type": "published_existing",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked_on": "2026-11-03",
+      "role": "Verified published route via WordPress read-only search"
+    },
+    {
+      "id": "FV3",
+      "type": "published_existing",
+      "title": "Change Blindness Investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked_on": "2026-11-03",
+      "role": "Verified published route via WordPress read-only search"
+    },
+    {
+      "id": "FV4",
+      "type": "published_existing",
+      "title": "Mesmerism Investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked_on": "2026-11-03",
+      "role": "Verified published route via WordPress read-only search"
+    },
+    {
+      "id": "FV5",
+      "type": "published_existing",
+      "title": "Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "checked_on": "2026-11-03",
+      "role": "Verified published route via WordPress read-only search"
+    },
+    {
+      "id": "FV6",
+      "type": "published_existing",
+      "title": "Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "checked_on": "2026-11-03",
+      "role": "Verified published route via WordPress read-only search"
+    }
+  ],
+  "claims": [
+    {
+      "id": "AB1",
+      "claim": "First-target identification can reduce detection of a second RSVP target in a short interval",
+      "status": "supported_in_context",
+      "sources": [
+        "R1",
+        "R2"
+      ],
+      "limit": "Describe task and timing; not an everyday memory diagnosis"
+    },
+    {
+      "id": "AB2",
+      "claim": "1992 probe detection impaired in a 270-ms window beginning 180 ms after first target",
+      "status": "supported_primary_abstract",
+      "sources": [
+        "R1"
+      ],
+      "limit": "Original task-specific value, not general human constant"
+    },
+    {
+      "id": "AB3",
+      "claim": "Attentional blink generally discussed in 200–500ms task window",
+      "status": "supported_review",
+      "sources": [
+        "R2"
+      ],
+      "limit": "Approximate range and context"
+    },
+    {
+      "id": "AB4",
+      "claim": "Lag-1 sparing depends on immediate sequential target and task design",
+      "status": "supported_review",
+      "sources": [
+        "R2",
+        "R3"
+      ],
+      "limit": "Avoid universal claim"
+    },
+    {
+      "id": "AB5",
+      "claim": "Multiple successive targets sometimes spread sparing",
+      "status": "supported_primary",
+      "sources": [
+        "R3"
+      ],
+      "limit": "Depends on distractors"
+    },
+    {
+      "id": "AB6",
+      "claim": "Single universal capacity depletion mechanism settled",
+      "status": "rejected",
+      "sources": [
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "limit": "Competing theories"
+    },
+    {
+      "id": "AB7",
+      "claim": "Differences in distractor inhibition correlate with variation in blink",
+      "status": "supported_primary",
+      "sources": [
+        "R5"
+      ],
+      "limit": "No fixed personal focus score"
+    },
+    {
+      "id": "AB8",
+      "claim": "Three months intensive meditation linked with smaller blink and smaller T1 P3b",
+      "status": "supported_primary",
+      "sources": [
+        "R6"
+      ],
+      "limit": "Population/intervention-specific"
+    },
+    {
+      "id": "AB9",
+      "claim": "A 12-minute commercial audio reproduces three months of meditation",
+      "status": "rejected",
+      "sources": [
+        "R6",
+        "M2"
+      ],
+      "limit": "Different intervention and no Zen12 trial"
+    },
+    {
+      "id": "P1",
+      "claim": "Zen12 seller advertises 12-minute sessions",
+      "status": "seller_format",
+      "sources": [
+        "M2",
+        "M3"
+      ],
+      "limit": "Not independent efficacy proof"
+    },
+    {
+      "id": "P2",
+      "claim": "Seller describes 12 levels and four audio styles",
+      "status": "seller_format",
+      "sources": [
+        "M2",
+        "M3"
+      ],
+      "limit": "Descriptions only"
+    },
+    {
+      "id": "P3",
+      "claim": "Seller checkout lists 48 MP3 full program",
+      "status": "seller_format",
+      "sources": [
+        "M5"
+      ],
+      "limit": "Not independently audited download"
+    },
+    {
+      "id": "P4",
+      "claim": "Seller also lists 24 MP3 6-level variants",
+      "status": "seller_format",
+      "sources": [
+        "M2"
+      ],
+      "limit": "Package mismatch risk"
+    },
+    {
+      "id": "P5",
+      "claim": "Zen12's audio brings benefits of 1h meditation in 12m",
+      "status": "seller_only_unsubstantiated",
+      "sources": [
+        "M2",
+        "M3"
+      ],
+      "limit": "DO NOT repeat as fact"
+    },
+    {
+      "id": "P6",
+      "claim": "Product-specific stress/anxiety/focus/medical outcomes",
+      "status": "seller_only_unsubstantiated",
+      "sources": [
+        "M2",
+        "M4",
+        "P2"
+      ],
+      "limit": "Avoid health benefits claim"
+    },
+    {
+      "id": "P7",
+      "claim": "14-study EEG binaural beat synthesis had 5 supportive 8 contradictory 1 mixed",
+      "status": "supported_review",
+      "sources": [
+        "R7"
+      ],
+      "limit": "Not Zen12 trial"
+    },
+    {
+      "id": "P8",
+      "claim": "Binaural beat EEG findings prove Zen12 effectiveness",
+      "status": "rejected",
+      "sources": [
+        "R7",
+        "M2"
+      ],
+      "limit": "No demonstrated direct transfer"
+    },
+    {
+      "id": "P9",
+      "claim": "Zen12 refund guarantee advertised as 1 year",
+      "status": "seller_terms_not_guaranteed",
+      "sources": [
+        "M6",
+        "M2"
+      ],
+      "limit": "Recheck checkout and terms; FV cannot guarantee"
+    },
+    {
+      "id": "P10",
+      "claim": "After 90 days seller states card refund manually via PayPal",
+      "status": "seller_terms_not_guaranteed",
+      "sources": [
+        "M6"
+      ],
+      "limit": "Do not promise operational handling"
+    },
+    {
+      "id": "P11",
+      "claim": "Checkout asks for mobile phone number",
+      "status": "seller_checkout_dynamic",
+      "sources": [
+        "M5"
+      ],
+      "limit": "Recheck at release"
+    },
+    {
+      "id": "P12",
+      "claim": "Seller privacy may share purchaser name/email/product with referring affiliate",
+      "status": "seller_policy",
+      "sources": [
+        "M7"
+      ],
+      "limit": "Require written PII exclusion"
+    },
+    {
+      "id": "P13",
+      "claim": "Seller privacy contemplates SMS/telephone marketing",
+      "status": "seller_policy",
+      "sources": [
+        "M7"
+      ],
+      "limit": "Reader privacy decision"
+    },
+    {
+      "id": "P14",
+      "claim": "Checkout countdown proves time-limited offer",
+      "status": "rejected",
+      "sources": [
+        "M5"
+      ],
+      "limit": "No independent scarcity proof"
+    },
+    {
+      "id": "P15",
+      "claim": "Current public price/discount permanently accurate",
+      "status": "rejected",
+      "sources": [
+        "M2",
+        "M5"
+      ],
+      "limit": "Volatile routes/taxes"
+    },
+    {
+      "id": "A1",
+      "claim": "Final Vestige accepted as affiliate and approved earning URL exists",
+      "status": "blocked_unverified",
+      "sources": [],
+      "limit": "Need account-specific written approval and URL"
+    },
+    {
+      "id": "A2",
+      "claim": "Website, TikTok, email channels authorized per product",
+      "status": "blocked_unverified",
+      "sources": [],
+      "limit": "Written promotional permissions"
+    },
+    {
+      "id": "A3",
+      "claim": "Affiliate disclosure next to any approved earning link",
+      "status": "required",
+      "sources": [
+        "P1"
+      ],
+      "limit": "Test location and contrast"
+    },
+    {
+      "id": "A4",
+      "claim": "FTC supports independent product health claims from generic research",
+      "status": "rejected",
+      "sources": [
+        "P2"
+      ],
+      "limit": "Product-specific substantiation"
+    },
+    {
+      "id": "A5",
+      "claim": "Original creative/swipes approved for use",
+      "status": "blocked_unverified",
+      "sources": [],
+      "limit": "Do not copy existing ads"
+    },
+    {
+      "id": "A6",
+      "claim": "Video version will convert better than text",
+      "status": "untested_hypothesis",
+      "sources": [],
+      "limit": "Measure only post-approval with proper privacy"
+    },
+    {
+      "id": "A7",
+      "claim": "Pilot tracks visitors/conversions",
+      "status": "false_currently",
+      "sources": [],
+      "limit": "Synthetic model only; no network"
+    },
+    {
+      "id": "A8",
+      "claim": "Original published Focus funnel must remain sole signup",
+      "status": "policy_preserved",
+      "sources": [
+        "FV2"
+      ],
+      "limit": "No signup added to pilots"
+    },
+    {
+      "id": "A9",
+      "claim": "Investigation independently establishes affiliate product efficacy",
+      "status": "rejected",
+      "sources": [
+        "R1",
+        "R6",
+        "R7"
+      ],
+      "limit": "Science and commerce are separate"
+    },
+    {
+      "id": "A10",
+      "claim": "A/B pages link out to merchant",
+      "status": "false_currently",
+      "sources": [],
+      "limit": "Zero clickable merchant links"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "final_vestige_affiliate_acceptance",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "product_specific_authorized_tracking_url",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "approved_website_channel",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "approved_tiktok_channel",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "approved_email_channel",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "written_buyer_pii_exclusion",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "approved_creatives_and_rights",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "current_checkout_terms_capture",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "verified_refund_process",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "current_price_terms_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "full_health_claim_substantiation",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "independent_legal_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "scientific_copy_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "human_editorial_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "founder_publication_approval",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "wp_gutenberg_sanitizer_test",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "wcag_2_2_aa_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "keyboard_screenreader_qa",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "mobile_360_390_768_1440_1920",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "no_javascript_fallback",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "lighthouse_cwv_evidence",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "approved_first_party_video_render",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "hosted_caption_synchronization",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "original_poster_license_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "wordPress_released_page_url",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "attribution_privacy_risk_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "analytics_release_approval",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "affiliate_redirect_policy_review",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "qa_owner_signoff",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "homepage_art_lead_coordination",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    },
+    {
+      "name": "dispatch_lane_coordination",
+      "state": "CLOSED",
+      "reason": "Requires separately recorded evidence and approval. Never auto-enable."
+    }
+  ],
+  "allowed_affiliate_urls": [],
+  "commission_rate": null,
+  "current_price": null,
+  "visitor_data_collected": false,
+  "authorized_channels": [],
+  "evidence_notes": "Seller descriptions do not establish efficacy. Public pages consulted directly; product trial absent. WordPress live routes verified through read-only connector search. No affiliate account authentication or license."
+}
