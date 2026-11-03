@@ -1,0 +1,148 @@
+{
+  "id": "dispatch-r91-two-records-two-logs",
+  "status": "REVIEW_ONLY_HOLD_UNSENT",
+  "master_pr": 175,
+  "first_release_gate_pr": 201,
+  "parent_pr": 782,
+  "issue": 174,
+  "mind_issue": 171,
+  "as_of_utc": "2026-11-03T13:34:48Z",
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "approved_substitution": false,
+  "merchant_email_permission_verified": false,
+  "real_jetpack_received_email_verified": false,
+  "verified_publisher_postal_address": false,
+  "eligible_email_recipients_verified": false,
+  "founder_final_send_approval": false,
+  "wordpress": {
+    "newsletter_enabled": true,
+    "automatic_new_post_email": false,
+    "delivery_format": "excerpt",
+    "reply_to": "no-reply",
+    "subscriber_summary": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2
+    },
+    "stats": {
+      "email_followers": 0,
+      "wpcom_followers": 2
+    },
+    "eligible_actual": "UNKNOWN",
+    "recent_send_samples": "five never_sent_opted_out; not lifetime send count",
+    "welcome_fieldbook": "configured but receipt UNKNOWN"
+  },
+  "issues": [
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "The witness slept. Who verified the story?",
+      "proposed_preheader": "A 1784 case, an 1785 catalog puzzle, and the difference between testimony and proof.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_count": 1,
+      "source_refs": [
+        "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+        "https://www.ncbi.nlm.nih.gov/nlmcatalog/440836",
+        "https://wellcomecollection.org/works/enhgscmf",
+        "https://doi.org/10.1002/jhbs.21974"
+      ],
+      "release_state": "HOLD_UNSENT",
+      "preheader_real_jetpack_control": "NOT_VERIFIED"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "Seven days of focus: what actually changed?",
+      "proposed_preheader": "A five-field log that makes ordinary days useful, without claiming a miracle.",
+      "cta": "https://finalvestige.com/focus/",
+      "cta_count": 1,
+      "source_refs": [
+        "https://finalvestige.com/focus/",
+        "https://finalvestige.com/editorial-standards/"
+      ],
+      "release_state": "HOLD_UNSENT",
+      "preheader_real_jetpack_control": "NOT_VERIFIED"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "BnF catalog records two Mémoires volumes as 1784–1785",
+      "status": "catalog_metadata_verified",
+      "source": "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+      "scope": "bibliography not independent verification of reported experiments"
+    },
+    {
+      "id": "C02",
+      "claim": "NLM lists one copy as 1784 [i.e. 1785], with 4 Feb 1785 dated note",
+      "status": "catalog_metadata_verified",
+      "source": "https://www.ncbi.nlm.nih.gov/nlmcatalog/440836",
+      "scope": "a separate cataloged copy; do not assume bibliographic records are identical editions"
+    },
+    {
+      "id": "C03",
+      "claim": "Witness described calm responsive state and extraordinary abilities",
+      "status": "witness_claim_not_independently_verified",
+      "source": "https://doi.org/10.1002/jhbs.21974",
+      "scope": "do not imply magnetic fluid or product efficacy is demonstrated"
+    },
+    {
+      "id": "C04",
+      "claim": "Franklin commission examined animal magnetism associated with Deslon, not Puységur's Victor case",
+      "status": "commission_scope_verified",
+      "source": "https://wellcomecollection.org/works/enhgscmf",
+      "scope": "avoid portraying it as a direct test of that anecdote"
+    },
+    {
+      "id": "C05",
+      "claim": "Focus Fieldbook is a free existing 52-page resource with journaling components",
+      "status": "published_page_and_configured_welcome",
+      "source": "https://finalvestige.com/focus/",
+      "scope": "no actual email receipt proven"
+    },
+    {
+      "id": "C06",
+      "claim": "Seven-day focus log is self-observation, not a controlled effectiveness trial",
+      "status": "methodological_caution",
+      "source": "https://finalvestige.com/editorial-standards/",
+      "scope": "no medical, neurological or causal conclusions"
+    },
+    {
+      "id": "C07",
+      "claim": "FTC CAN-SPAM guidance requires valid postal address and functioning unsubscribe for covered commercial email",
+      "status": "official_guidance",
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "scope": "publisher identity; Automattic address is not publisher's address"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 and Total Focus product-specific seller pages have not established Final Vestige email-rights",
+      "status": "PERMISSION_NOT_VERIFIED",
+      "source": "https://zen12.com/hnp",
+      "scope": "merchant marketing materials != account permission"
+    },
+    {
+      "id": "C09",
+      "claim": "Total Focus seller page is not evidence of product-specific effectiveness",
+      "status": "VENDOR_CLAIM_ONLY",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "do not imply independently proven benefits"
+    }
+  ],
+  "actions": {
+    "send": false,
+    "test_send": false,
+    "publish": false,
+    "subscriber_import": false,
+    "wordpress_write": false,
+    "affiliate_activation": false,
+    "metrics_fabrication": false
+  },
+  "legal_hard_stop_placeholders": [
+    "[[VALID_POSTAL_ADDRESS_REQUIRED]]",
+    "[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"
+  ]
+}
