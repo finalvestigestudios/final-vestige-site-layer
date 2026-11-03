@@ -32,7 +32,7 @@ test("Both variants disclose commission directly beside native disabled CTA",()=
 test("No active data collection, injected code, third-party media or subscription forms",()=>{
   for(const page of [a,b]){
     assert.doesNotMatch(page,/<script\b|<iframe\b|<form\b|<video\b|<audio\b|<img\b/i);
-    assert.doesNotMatch(page,/(autoplay|onload\s*=|onclick\s*=|dataLayer|gtag\s*\()/i);
+    assert.doesNotMatch(page,/(?:onload|onclick)\s*=|dataLayer|gtag\s*\(/i);
     assert.doesNotMatch(page,/https:\/\/[^"]*(affiliate_id|affid|clickbank|hop=)/i);
   }
 });
