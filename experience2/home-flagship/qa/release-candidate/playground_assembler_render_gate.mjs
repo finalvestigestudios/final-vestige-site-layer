@@ -6,7 +6,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFile, readdir, mkdir} from 'node:fs/promises';
-import {join, relative, resolve, sep} from 'node:path';
+import {join, relative, resolve, sep, basename} from 'node:path';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -36,10 +36,12 @@ function themeVersion(css){
 }
 async function activateTheme(server,themeDirectory){
   const base=resolve(themeDirectory);
+  const themeSlug=basename(base);
+  assert.ok(['assembler','assembler-wpcom'].includes(themeSlug),'Unrecognized official Assembler ZIP root');
   const version=themeVersion(await readFile(join(base,'style.css'),'utf8'));
   const files=await walk(base);
   assert.ok(files.length>5&&files.length<900,'Unexpected theme file inventory');
-  const root='/wordpress/wp-content/themes/assembler',dirs=new Set([root]);
+  const root='/wordpress/wp-content/themes/'+themeSlug,dirs=new Set([root]);
   let bytes=0;
   for(const f of files){
     const parts=relative(base,f).split(sep);
@@ -50,15 +52,15 @@ async function activateTheme(server,themeDirectory){
   assert.ok(bytes>1000&&bytes<30_000_000,'Unexpected theme bytes');
   for(const dir of [...dirs].sort((a,b)=>a.length-b.length))await server.playground.mkdir(dir);
   for(const f of files)await server.playground.writeFile(root+'/'+relative(base,f).split(sep).join('/'),await readFile(f));
-  const php=`<?php require '/wordpress/wp-load.php'; switch_theme('assembler'); $t=wp_get_theme(); echo wp_json_encode(array('stylesheet'=>get_stylesheet(),'template'=>get_template(),'version'=>$t->get('Version'),'home'=>home_url('/')));`;
+  const php=`<?php require '/wordpress/wp-load.php'; switch_theme('${themeSlug}'); $t=wp_get_theme(); echo wp_json_encode(array('stylesheet'=>get_stylesheet(),'template'=>get_template(),'version'=>$t->get('Version'),'home'=>home_url('/')));`;
   const result=await server.playground.run({code:php});
   let obj;
   try {obj=JSON.parse(result.text);}catch{throw new Error('WordPress theme activation receipt invalid');}
-  assert.equal(obj.stylesheet,'assembler');
-  assert.equal(obj.template,'assembler');
+  assert.equal(obj.stylesheet,themeSlug);
+  assert.equal(obj.template,themeSlug);
   assert.equal(obj.version,version);
   assert.ok(loopback(obj.home));
-  return {version,files:files.length,bytes,provenance:'WordPress.com free official Assembler download (not version-pinned)'};
+  return {version,theme_slug:themeSlug,files:files.length,bytes,provenance:'WordPress.com free official Assembler download (not version-pinned)'};
 }
 function restrictNetwork(page,blocked){
   return page.route('**/*',route=>{
