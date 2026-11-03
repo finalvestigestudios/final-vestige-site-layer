@@ -149,7 +149,7 @@ def index(lib, parent, *, expected=None):
             key = (kind,slug,ordinal)
             need(key not in actual, 'duplicate original citation location')
             actual[key]=sid
-            need(original.get(key)==sid, 'citation ID/ordinal differs from sealed R91')
+            need(original.get(key)==sid, 'citation ID/ordinal differs from sealed R91: '+repr((key,sid,original.get(key))))
             source = lib.source_for(meta,sid)
             snapshot = source_row(source)
             url = snapshot['source']['url']
