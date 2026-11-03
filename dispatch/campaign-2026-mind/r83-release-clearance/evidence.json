@@ -1,0 +1,168 @@
+{
+  "schema": "fv-dispatch-r83-1",
+  "review_only": true,
+  "release_decision": "HOLD_UNSENT",
+  "source_control": {
+    "master_pr": 175,
+    "first_gate_pr": 201,
+    "previous_pr": 732,
+    "issue": 174,
+    "companion_issue": 171,
+    "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "base_sha": "2a177a81dc4d29a43d5149481a86654e1c7f5852"
+  },
+  "verified_wordpress": {
+    "as_of_utc": "2026-11-03T05:35:31Z",
+    "site": "https://finalvestige.com",
+    "newsletter_on": true,
+    "automatic_new_post_email": false,
+    "format": "excerpt",
+    "sender_display": "Final Vestige",
+    "reply_to": "no-reply",
+    "site_can_send": true,
+    "dispatch_page_id": 523,
+    "focus_page_id": 1579,
+    "standards_page_id": 17,
+    "welcome_fieldbook_52_pages_configured": true,
+    "welcome_received_verified": false,
+    "newsletter_counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "follower_counts": {
+      "total": 2,
+      "email": 0,
+      "wpcom": 2,
+      "partial": false
+    },
+    "email_eligible_count": "UNKNOWN",
+    "recent_posts": [
+      {
+        "id": 1926,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "id": 1924,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "id": 1922,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "id": 1920,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "id": 1917,
+        "status": "never_sent_opted_out"
+      }
+    ],
+    "campaign_received_messages_verified": 0,
+    "dispatch_mentions_potential_affiliate": false,
+    "focus_mentions_potential_affiliate": true
+  },
+  "release_attestations": {
+    "verified_publisher_postal_address": false,
+    "actual_recipient_eligibility": false,
+    "actual_jetpack_html_and_plaintext_received": false,
+    "functional_optout_verified": false,
+    "actual_welcome_delivery": false,
+    "approved_subjects_and_excerpts": false,
+    "founder_final_campaign_send_approval": false,
+    "commercial_buyer_guides_live": false,
+    "subscriber_expectations_aligned": false
+  },
+  "issues": [
+    {
+      "id": "01",
+      "kind": "editorial",
+      "recommended_subject": "The person changed. The conversation went on.",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "id": "02",
+      "kind": "editorial",
+      "recommended_subject": "A sleeping witness, a letter, and a 1784 puzzle",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source": "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "id": "03",
+      "kind": "commercial_reserved",
+      "recommended_subject": "The twelve-minute question: practice first, purchase later",
+      "primary_cta": null,
+      "source": "https://zen12.com/hnp",
+      "release": "HOLD_UNSENT_HOLD_MERCHANT",
+      "affiliate_link": null,
+      "merchant_authorized_email": false,
+      "buyer_guide_live": false
+    },
+    {
+      "id": "04",
+      "kind": "editorial",
+      "recommended_subject": "Apollo 1: one spark was never the whole story",
+      "primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "id": "05",
+      "kind": "commercial_reserved",
+      "recommended_subject": "A focus recording isn't proof of better focus",
+      "primary_cta": null,
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "release": "HOLD_UNSENT_HOLD_MERCHANT",
+      "affiliate_link": null,
+      "merchant_authorized_email": false,
+      "buyer_guide_live": false
+    },
+    {
+      "id": "06",
+      "kind": "editorial",
+      "recommended_subject": "Your focus log should include the boring days",
+      "primary_cta": "https://finalvestige.com/focus/",
+      "source": "https://finalvestige.com/editorial-standards/",
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "merchant_review": {
+    "zen12": {
+      "source": "https://zen12.com/hnp",
+      "seller_describes": "12-minute sessions, 12 levels; the seller says 12 minutes yields benefits equivalent to an hour of advanced meditation.",
+      "independent_named_product_efficacy_verified": false,
+      "merchant_account_accepted_verified": false,
+      "named_product_email_promotional_rights_verified": false,
+      "affiliate_link_format_verified": false,
+      "authorized_creatives_verified": false,
+      "price_checkout_refund_verified": false,
+      "current_buyer_guide_published": false
+    },
+    "total_focus": {
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_describes": "A 33-minute 47-MB recording; the seller asserts brain reprogramming and extraordinary concentration. Pricing varies by storefront placement and bundle.",
+      "independent_named_product_efficacy_verified": false,
+      "merchant_account_accepted_verified": false,
+      "named_product_email_promotional_rights_verified": false,
+      "affiliate_link_format_verified": false,
+      "authorized_creatives_verified": false,
+      "price_checkout_refund_verified": false,
+      "current_buyer_guide_published": false
+    }
+  },
+  "rules": {
+    "no_send_or_test_email": true,
+    "no_post_or_site_changes": true,
+    "no_subscriber_import_or_export": true,
+    "no_merchant_contact": true,
+    "no_offer_urls": true,
+    "no_synthetic_performance": true,
+    "unobserved_metrics": "UNOBSERVED",
+    "home_page_pr49_untouched": true
+  }
+}
