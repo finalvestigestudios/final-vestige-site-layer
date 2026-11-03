@@ -40,6 +40,16 @@ def validate(text):
         errors.append("missing cleanup")
     if "persist-credentials: false" not in text:
         errors.append("checkout token persistence")
+    # Official archive is verified as assembler-wpcom/; safe rebasing must
+    # prevent both archive traversal and silent wrong-theme activation.
+    if "parts[0]!='assembler-wpcom'" not in text:
+        errors.append("official theme ZIP root mismatch")
+    if "dest.is_relative_to(target_root)" not in text:
+        errors.append("theme escape validation missing")
+    if "Duplicate theme ZIP path" not in text or "Theme symlink/special file denied" not in text:
+        errors.append("theme ZIP structural validation missing")
+    if "z.extractall(" in text:
+        errors.append("raw ZIP extraction prohibited")
     if "--assembler-dir" not in text or "Gutenberg" not in text:
         errors.append("missing nonproduction admission gate")
     return errors
@@ -76,6 +86,15 @@ class WorkflowRuntimePathsTests(unittest.TestCase):
 
     def test_missing_github_env_fails(self):
         self.assertTrue(validate(self.original.replace('>> "$GITHUB_ENV"', '>> "$RUNNER_TEMP/unused"')))
+
+    def test_theme_archive_prefix_must_match_observed_official_zip(self):
+        self.assertTrue(validate(self.original.replace("parts[0]!='assembler-wpcom'", "parts[0]!='assembler'")))
+
+    def test_theme_rebase_cannot_use_raw_extractall(self):
+        self.assertTrue(validate(self.original.replace("shutil.copyfileobj(src,dst,1024*1024)", "z.extractall(root)")))
+
+    def test_theme_path_escape_check_is_mandatory(self):
+        self.assertTrue(validate(self.original.replace("dest.is_relative_to(target_root)", "True")))
 
 if __name__ == "__main__":
     unittest.main()
