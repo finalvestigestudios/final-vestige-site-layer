@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-03",
+  "type": "SOURCE_CENSUS_RECONCILIATION_NOT_VISITOR_BROWSER_AUDIT",
+  "site_qa_source": {
+    "pr": 154,
+    "branch": "qa/media-source-dependency-20261029-2347",
+    "path": "qa/media/cms_image_census_20261030.csv",
+    "git_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "post_count": 61,
+    "image_count": 355,
+    "offsite_count": 286
+  },
+  "media_source": {
+    "pr": 183,
+    "branch": "qa/media-recovery-reviewed-20261030-1158",
+    "paths": "qa/media-recovery/parts/01.json through 08.json",
+    "post_count": 61,
+    "image_count": 355,
+    "offsite_count": 288
+  },
+  "reconciliation": {
+    "per_post_differences": 2,
+    "all_other_posts_match": 59,
+    "delta_slots": 2,
+    "origin": "External upstream sites reached through the i0.wp.com Jetpack image CDN",
+    "historical_cause": "UNRESOLVED: source snapshots are from separate reads; old raw markup not retained in QA CSV. Could involve source changes or earlier proxy classification.",
+    "counts_reconciled": true
+  },
+  "evidence_limits": {
+    "all_61_posts_just_ref_count_snapshot": true,
+    "raw_browser_http_or_decode_count": 0,
+    "reported_42_broken_image_count_verified": false,
+    "reported_76pct_weight_reduction_verified": false,
+    "original_wp_over_1_5MiB_count": 13,
+    "live_production_repairs": 0
+  },
+  "delta_rows": [
+    {
+      "post_id": 291,
+      "image_key": "291:0",
+      "post_title": "One Bulldozer Never Came Back",
+      "post_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "live_wordpress_last_modified": "2026-11-02T21:36:09",
+      "published": true,
+      "siteqa_offsite": 5,
+      "media_offsite": 6,
+      "exact_current_source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "delivery_host": "i0.wp.com",
+      "upstream_original_host": "text-message.blogs.archives.gov",
+      "independent_viewer": "DISPLAYED_2026_11_03_NOT_BROWSER_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "browser_broken": null,
+      "alt": "A rapidly enlarging breach reaching the crest of Teton Dam shortly before its collapse on June 5, 1976.",
+      "candidate": {
+        "primary_catalog": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+        "archival_naid": "28894685",
+        "candidate_relationship": "Photographic sequence catalog caption matches pictured breach reaching crest; source binary identity and exact crop NOT verified",
+        "rights_basis": "National Archives holds images by contractor employee Jerry Dursteller; federal hosting does not itself settle copyright; review actual item.",
+        "retention_action": "PRESERVE_CURRENT_VISUAL_AND_CREDIT_PENDING_REVIEW"
+      },
+      "intrinsic_source_width_px": null,
+      "intrinsic_source_height_px": null,
+      "output_max_width_px": 960,
+      "output_height_px": null,
+      "no_upscaling": true,
+      "pixel_identity_verified": false,
+      "rights_clearance": "HOLD",
+      "wordpress_upload_authorized": false,
+      "wordpress_edit_authorized": false
+    },
+    {
+      "post_id": 285,
+      "image_key": "285:1",
+      "post_title": "The Light Said Closed",
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "live_wordpress_last_modified": "2026-11-02T21:39:59",
+      "published": true,
+      "siteqa_offsite": 5,
+      "media_offsite": 6,
+      "exact_current_source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "delivery_host": "i0.wp.com",
+      "upstream_original_host": "squawkpoint.com",
+      "independent_viewer": "DISPLAYED_2026_11_03_NOT_BROWSER_HTTP",
+      "origin_http_status": null,
+      "guest_browser_http_status": null,
+      "browser_broken": null,
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "candidate": {
+        "primary_catalog": "https://www.flickr.com/photos/nrcgov/7447591188",
+        "archival_naid": null,
+        "candidate_relationship": "NRC historical 1979 control-room photograph. Same subject, NOT verified same frame. Do not silently replace original.",
+        "rights_basis": "NRC federal photo release/attribution review; Squawkpoint copy has separate reuse/crop uncertainty.",
+        "retention_action": "PRESERVE_CURRENT_VISUAL_AND_CREDIT_PENDING_REVIEW"
+      },
+      "intrinsic_source_width_px": null,
+      "intrinsic_source_height_px": null,
+      "output_max_width_px": 960,
+      "output_height_px": null,
+      "no_upscaling": true,
+      "pixel_identity_verified": false,
+      "rights_clearance": "HOLD",
+      "wordpress_upload_authorized": false,
+      "wordpress_edit_authorized": false
+    }
+  ],
+  "qa_request": "Site QA #154: keep higher-priority 285:5 and 287:5 browser checks; when testing 285:1 and 291:0, record actual currentSrc, requestId/final HTTP MIME, decode, encoded wire bytes and screenshot. Avoid counting i0.wp.com as first-party without parsing embedded upstream host.",
+  "wordpress_cached_media_plan": "HOLD. Only if exact-scene, rights, attribution and <=960px/no-upscale geometry are independently approved: create a versioned optimized WordPress derivative in staging, map one source URL to one approved media ID, compare browser screenshot/ALT/crop, get explicit publication approval, verify after publish and preserve rollback URL."
+}
