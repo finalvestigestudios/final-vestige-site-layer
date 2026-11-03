@@ -1,0 +1,650 @@
+{
+  "version": "R95-2026-11-03",
+  "release": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "peer-reviewed original",
+      "name": "Simons & Chabris 1999",
+      "url": "https://doi.org/10.1068/p281059",
+      "scope": "dynamic selective attention",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S02",
+      "kind": "peer-reviewed replication",
+      "name": "Simons 2010",
+      "url": "https://doi.org/10.1068/i0386",
+      "scope": "foreknowledge of gorilla did not generalize to unexpected changes",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S03",
+      "kind": "peer-reviewed historical",
+      "name": "Neisser & Becklen 1975",
+      "url": "https://doi.org/10.1016/0010-0285(75)90019-5",
+      "scope": "selective looking precursor (historical account)",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S04",
+      "kind": "peer-reviewed primary",
+      "name": "Drew Võ Wolfe 2013",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "scope": "24 radiologists and artificial unexpected image",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S05",
+      "kind": "indexed peer-reviewed",
+      "name": "Working-memory susceptibility study 2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21299325/",
+      "scope": "study context and subgroup detection",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S06",
+      "kind": "seller catalog",
+      "name": "Inspire3 current catalog",
+      "url": "https://inspire3.com/",
+      "scope": "product names, merchant language only",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S07",
+      "kind": "seller offer",
+      "name": "Zen12 exact offer hnp",
+      "url": "https://zen12.com/hnp",
+      "scope": "12 minutes, 12 levels, 4 styles, differentiated packages, seller refund representation",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S08",
+      "kind": "seller about",
+      "name": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "scope": "four styles and level descriptions",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S09",
+      "kind": "seller research copy",
+      "name": "Zen12 Research",
+      "url": "https://zen12.com/research",
+      "scope": "proposed entrainment and outcome seller claims",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S10",
+      "kind": "seller checkout",
+      "name": "Zen12 Get Started",
+      "url": "https://zen12.com/getstarted",
+      "scope": "48-file full course, mobile field, countdown, displayed offer not guaranteed final price",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S11",
+      "kind": "seller privacy",
+      "name": "Inspire3 Privacy",
+      "url": "https://inspire3.com/privacy/",
+      "scope": "affiliate customer data may be shared, SMS marketing terms",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S12",
+      "kind": "separate seller offer",
+      "name": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "33min/47MB attributed J.A. Amos; not interchangeable with Zen12",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S13",
+      "kind": "systematic review",
+      "name": "Ingendoh Posny Heine 2023",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "14 EEG studies: five support eight contradict one mixed; not Zen12",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S14",
+      "kind": "regulatory",
+      "name": "FTC Endorsement Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "clear conspicuous adjacent affiliate disclosure",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S15",
+      "kind": "regulatory",
+      "name": "FTC Health Products Compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "competent and reliable evidence for health-related claims",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S16",
+      "kind": "live site existing",
+      "name": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "historical bridge only; not proof of product efficacy",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S17",
+      "kind": "live site existing",
+      "name": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "single existing free funnel",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S18",
+      "kind": "live site policy",
+      "name": "Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "site-wide context never substitutes near-link notice",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    },
+    {
+      "id": "S19",
+      "kind": "live site policy",
+      "name": "Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "scope": "independent review policy",
+      "checked": "2026-11-03",
+      "note": "Verified publicly available page or attributed scholarly bibliographic record; no private affiliate privileges established."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "product": "Zen12",
+      "claim": "Twelve-minute session duration",
+      "status": "seller-described feature",
+      "evidence": "S07 S08",
+      "decision": "may state as seller's format, not scientific result"
+    },
+    {
+      "id": "C02",
+      "product": "Zen12",
+      "claim": "Twelve levels, four presentation styles",
+      "status": "seller-described feature",
+      "evidence": "S07 S08",
+      "decision": "qualified package description"
+    },
+    {
+      "id": "C03",
+      "product": "Zen12",
+      "claim": "48 MP3s in full course; 24 in six-level offers",
+      "status": "seller-described package feature",
+      "evidence": "S07 S10",
+      "decision": "distinguish actual selected checkout"
+    },
+    {
+      "id": "C04",
+      "product": "Zen12",
+      "claim": "One hour of advanced meditation in twelve minutes",
+      "status": "unsubstantiated product-specific outcome",
+      "evidence": "S07 S09 S13",
+      "decision": "EXCLUDE as factual benefit"
+    },
+    {
+      "id": "C05",
+      "product": "Zen12",
+      "claim": "Automatic brainwave entrainment",
+      "status": "unsubstantiated product-specific mechanism",
+      "evidence": "S09 S13",
+      "decision": "EXCLUDE efficacy language"
+    },
+    {
+      "id": "C06",
+      "product": "Zen12",
+      "claim": "Anxiety relief / health gains",
+      "status": "unsubstantiated product-specific health claim",
+      "evidence": "S07 S15",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C07",
+      "product": "Zen12",
+      "claim": "Guaranteed concentration, creativity or productivity",
+      "status": "unsubstantiated outcome",
+      "evidence": "S07 S15",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C08",
+      "product": "Zen12",
+      "claim": "Meditation scientifically measured at a particular depth",
+      "status": "unsupported device/product claim",
+      "evidence": "S09 S13",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C09",
+      "product": "Zen12",
+      "claim": "Price or promotional discount",
+      "status": "not independently guaranteed current final checkout",
+      "evidence": "S07 S10",
+      "decision": "DO NOT QUOTE"
+    },
+    {
+      "id": "C10",
+      "product": "Zen12",
+      "claim": "One-year refund representation",
+      "status": "seller-described; legal terms unverified",
+      "evidence": "S07 S10",
+      "decision": "may describe only as seller representation"
+    },
+    {
+      "id": "C11",
+      "product": "Zen12",
+      "claim": "Countdown indicates a genuinely limited offer",
+      "status": "unsupported scarcity",
+      "evidence": "S10",
+      "decision": "EXCLUDE; explicitly reject urgency"
+    },
+    {
+      "id": "C12",
+      "product": "Zen12",
+      "claim": "Checkout shows a mobile number field",
+      "status": "observed exact checkout",
+      "evidence": "S10",
+      "decision": "may state with current-date qualifier"
+    },
+    {
+      "id": "C13",
+      "product": "Inspire3",
+      "claim": "Purchaser identifiers may be shared with referring affiliate",
+      "status": "published privacy policy",
+      "evidence": "S11",
+      "decision": "warn buyers; do not collect buyer data"
+    },
+    {
+      "id": "C14",
+      "product": "Zen12",
+      "claim": "Lifetime support etc.",
+      "status": "seller representation",
+      "evidence": "S10",
+      "decision": "avoid independent guarantee"
+    },
+    {
+      "id": "C15",
+      "product": "Total Focus",
+      "claim": "33-minute 47-MB MP3 by J.A. Amos",
+      "status": "seller-described format",
+      "evidence": "S12",
+      "decision": "distinguish from Zen12"
+    },
+    {
+      "id": "C16",
+      "product": "Total Focus",
+      "claim": "Brain reprogramming / guaranteed productivity",
+      "status": "unsubstantiated outcome",
+      "evidence": "S12",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C17",
+      "product": "Total Focus",
+      "claim": "Specific price/refund terms",
+      "status": "dynamic seller representation",
+      "evidence": "S12",
+      "decision": "DO NOT COPY or equate with Zen12"
+    },
+    {
+      "id": "C18",
+      "product": "Binaural beats",
+      "claim": "Published EEG findings",
+      "status": "independent research, heterogeneous",
+      "evidence": "S13",
+      "decision": "five support eight contradict one mixed; not Zen12"
+    },
+    {
+      "id": "C19",
+      "product": "Mind",
+      "claim": "Gorilla missed by some viewers",
+      "status": "peer-reviewed experimental finding",
+      "evidence": "S01 S02",
+      "decision": "avoid universal percentage or diagnosis"
+    },
+    {
+      "id": "C20",
+      "product": "Mind",
+      "claim": "Prior knowledge generalized noticing",
+      "status": "not supported by 2010 study",
+      "evidence": "S02",
+      "decision": "state research contradicted blanket immunity"
+    },
+    {
+      "id": "C21",
+      "product": "Mind",
+      "claim": "Radiologist gorilla n=24 83% missed",
+      "status": "specific artificial laboratory task",
+      "evidence": "S04",
+      "decision": "not general clinical error rate"
+    },
+    {
+      "id": "C22",
+      "product": "Mind",
+      "claim": "Attentional blindness cured by audio/hypnosis",
+      "status": "no product-specific evidence",
+      "evidence": "S01 S13",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C23",
+      "product": "FTC",
+      "claim": "Near-CTA commission relationship disclosure",
+      "status": "regulatory practice",
+      "evidence": "S14",
+      "decision": "required before any earning links"
+    },
+    {
+      "id": "C24",
+      "product": "Channel",
+      "claim": "Affiliate acceptance for Final Vestige",
+      "status": "no verified acceptance",
+      "evidence": "S06",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C25",
+      "product": "Channel",
+      "claim": "Website, TikTok and email promotional rights",
+      "status": "no written terms verified",
+      "evidence": "S06",
+      "decision": "BLOCK separately"
+    },
+    {
+      "id": "C26",
+      "product": "Channel",
+      "claim": "Approved swipe assets and media usage rights",
+      "status": "no verified package",
+      "evidence": "S06",
+      "decision": "BLOCK; original-only"
+    },
+    {
+      "id": "C27",
+      "product": "Conversion",
+      "claim": "Optional educational film increases affiliate purchases",
+      "status": "hypothesis, not measured",
+      "evidence": "none",
+      "decision": "DO NOT CLAIM efficacy"
+    },
+    {
+      "id": "C28",
+      "product": "Conversion",
+      "claim": "Click means affiliate sale",
+      "status": "false attribution assumption",
+      "evidence": "none",
+      "decision": "NEVER INFER"
+    },
+    {
+      "id": "C29",
+      "product": "Data",
+      "claim": "Receive buyer email/name/product from merchant",
+      "status": "policy disallows",
+      "evidence": "S11",
+      "decision": "BLOCK and require partner opt-out"
+    },
+    {
+      "id": "C30",
+      "product": "Site",
+      "claim": "Duplicate Focus/Jetpack signup",
+      "status": "disallowed by founder",
+      "evidence": "S17",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C31",
+      "product": "Publication",
+      "claim": "Edit live WordPress/menus",
+      "status": "requires approval",
+      "evidence": "none",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C32",
+      "product": "History",
+      "claim": "Puységur accounts explain laboratory blindness",
+      "status": "unsupported historical extrapolation",
+      "evidence": "S16",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C33",
+      "product": "Marketing",
+      "claim": "Product playback has been tested",
+      "status": "no purchased/tested access",
+      "evidence": "none",
+      "decision": "NEVER CLAIM"
+    },
+    {
+      "id": "C34",
+      "product": "Marketing",
+      "claim": "Seller testimonials imply typical results",
+      "status": "unreviewed advertiser claims",
+      "evidence": "S10 S14",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C35",
+      "product": "Creative",
+      "claim": "40-second concept is a finished MP4",
+      "status": "false",
+      "evidence": "none",
+      "decision": "label storyboard; no hosted media"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Partner acceptance in Final Vestige legal/account name",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G02",
+      "name": "Zen12 product-specific earning URL",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G03",
+      "name": "Zen12 official channel permissions: website",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G04",
+      "name": "Zen12 official channel permissions: TikTok/social",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G05",
+      "name": "Zen12 official channel permissions: email",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G06",
+      "name": "Hypnosis Live Total Focus distinct affiliate eligibility",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G07",
+      "name": "Hypnosis Live email promotional permission",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G08",
+      "name": "Approved creative assets and allowed alterations",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G09",
+      "name": "Merchant purchaser-data shared-to-affiliate disabled or approved minimization",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G10",
+      "name": "Tracking link format and terms",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G11",
+      "name": "Full terms of sale/refund workflow independently checked",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G12",
+      "name": "Actual checkout flow verified without purchase or sensitive data",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G13",
+      "name": "Product-specific objective efficacy claims substantiated or removed",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G14",
+      "name": "Independent editorial source/medical claim review",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G15",
+      "name": "Founder final publication approval",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G16",
+      "name": "Site QA independent accessibility WCAG audit",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G17",
+      "name": "Site QA original CSS/browser responsive screenshot audit",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G18",
+      "name": "Native test suite on CI",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G19",
+      "name": "Source media owned/original film render",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G20",
+      "name": "First-party video hosting approved",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G21",
+      "name": "Browser video and captions synchronized",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G22",
+      "name": "Media performance/LCP and lazy load validated",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G23",
+      "name": "Attribution events legally approved and privacy tested",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G24",
+      "name": "Analytics schema locked; no PII",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G25",
+      "name": "Single Jetpack/Focus funnel preserved",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G26",
+      "name": "Homepage PR #49 and Issue #150 isolation confirmed",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G27",
+      "name": "Mind canonical PR #172 isolation confirmed",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G28",
+      "name": "Dispatch issue #174 channel coordination verified",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G29",
+      "name": "No live CMS mutations or deployment",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    },
+    {
+      "id": "G30",
+      "name": "No merchant links including sources on unpublished landing variants",
+      "status": "CLOSED",
+      "reason": "Not authorized for release in this branch; independent verification/review still required."
+    }
+  ],
+  "affiliate_urls": {
+    "zen12": null,
+    "total_focus": null,
+    "brainwave_shots": null
+  },
+  "commission_terms": null,
+  "approval_evidence": null,
+  "editorial_vs_commerce": "Investigations never link to a merchant; buyer guides use disabled commercial controls and disclose hypothetical future commission.",
+  "data_policy": "No live collection or buyer PII; partner must not send customer identities."
+}
