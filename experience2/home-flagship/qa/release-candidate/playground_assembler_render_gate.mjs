@@ -97,14 +97,24 @@ async function checkView(page,width,axePath){
       focus:(document.body.innerText.match(/Focus Fieldbook/g)||[]).length,
       overflow:document.documentElement.scrollWidth>innerWidth+1,
       main:!!root.querySelector('main'),h1:!!root.querySelector('h1'),
-      inline_scripts:root.querySelectorAll('script[data-fv-source]').length};
+      inline_scripts:root.querySelectorAll('script[data-fv-source]').length,
+      document_scripts:document.querySelectorAll('script[data-fv-source]').length,
+      root_styles:root.querySelectorAll('style[data-fv-stage-only]').length,
+      document_styles:document.querySelectorAll('style[data-fv-stage-only]').length,
+      post_content_nodes:document.querySelectorAll('.wp-block-post-content').length};
   });
   assert.equal(state.chapter_links,7);
   assert.equal(state.chapter_targets,7);
   assert.equal(state.margins,72);
   assert.ok(state.focus>=1);
   assert.equal(state.overflow,false,`Horizontal overflow at ${width}`);
-  assert.equal(state.main,true);assert.equal(state.h1,true);assert.equal(state.inline_scripts,4);
+  assert.equal(state.main,true);assert.equal(state.h1,true);
+  assert.equal(state.inline_scripts,4,
+    'Gutenberg saved 4 scripts but actual Assembler render differs: '+JSON.stringify({
+      document_scripts:state.document_scripts,root_scripts:state.inline_scripts,
+      root_styles:state.root_styles,document_styles:state.document_styles,
+      post_content_nodes:state.post_content_nodes
+    }));
   await page.addScriptTag({path:axePath});
   const violations=await page.evaluate(async()=>{
     if(!window.axe)throw new Error('axe unavailable: fail closed');
