@@ -1,0 +1,108 @@
+name: Preparedness R89 Complete Claim-Block Source Dossiers (PRIVATE HOLD)
+on:
+  pull_request:
+    branches:
+      - review/preparedness-r89-full-claim-context-workorders-hold-20261102
+    paths:
+      - preparedness/tools/r89_full_claim_block_source_dossiers.py
+      - preparedness/tests/test_r89_full_claim_block_source_dossiers.py
+      - preparedness/docs/R89_COMPLETE_CLAIM_SOURCE_REVIEW_DOSSIERS_HOLD.md
+      - .github/workflows/preparedness-r89-private-tests.yml
+permissions:
+  contents: read
+concurrency:
+  group: preparedness-r89-private-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  full-claim-context-read-only-diagnostics:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Immutable R89 parent and exactly four ADD-only R89 files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          test "$BASE_SHA" = 'a397024314e04af86401aa3499d23c387a5f01e5'
+          test "$BASE_REF" = 'review/preparedness-r89-full-claim-context-workorders-hold-20261102'
+          test "$HEAD_REF" = 'review/preparedness-r89-full-claim-block-source-dossiers-hold-20261102'
+          git diff --name-status -z "$BASE_SHA" HEAD > "$RUNNER_TEMP/r89-scope"
+          python -I - <<'PY'
+          import os
+          from pathlib import Path
+          rows=(Path(os.environ['RUNNER_TEMP'])/'r89-scope').read_bytes().split(b'\0')
+          files=[(rows[i].decode(),rows[i+1].decode()) for i in range(0,len(rows)-1,2)]
+          expected={
+             'preparedness/tools/r89_full_claim_block_source_dossiers.py',
+             'preparedness/tests/test_r89_full_claim_block_source_dossiers.py',
+             'preparedness/docs/R89_COMPLETE_CLAIM_SOURCE_REVIEW_DOSSIERS_HOLD.md',
+             '.github/workflows/preparedness-r89-private-tests.yml'}
+          assert len(files)==4 and {p for status,p in files}==expected,files
+          assert all(status=='A' for status,p in files),files
+          print('exact four additive R89 files; original source data/site untouched')
+          PY
+      - name: Compile and execute 80+ isolated synthetic/adversarial tests
+        run: |
+          python -I - <<'PY'
+          from pathlib import Path
+          for path in ('preparedness/tools/r89_full_claim_block_source_dossiers.py',
+                       'preparedness/tests/test_r89_full_claim_block_source_dossiers.py'):
+              compile(Path(path).read_text(encoding='utf-8'),path,'exec')
+          PY
+          python -I -m unittest discover -s preparedness/tests -p test_r89_source_reuse_review_workorders.py -v
+      - name: Require seven exact contributor commits and independent RC
+        run: |
+          set -euo pipefail
+          for pair in \
+            'claude/prep-start-bbfeb8 2122d856fce9f64887c16df3d52e64be9f59a55b' \
+            'claude/prep-shelter-5e1e0e 5daeaf2dd5ab71806a6b73c91edfb1d8df5da976' \
+            'claude/prep-food-ccdc55 f911ff7a655de8d81535ea86ec3d65a49ee76648' \
+            'claude/prep-health-837444 d5ef5bafd68361434dd1cc9209915b8e8a4eaf17' \
+            'claude/prep-hist-food-b81f19 67e116e536c7410bed30f8f3b1bb8c166f3c223d' \
+            'claude/prep-hist-home-0e0e38 7504a5f099594d635e3dd7332a33a2e1346c43a2' \
+            'claude/prep-hist-field-9db767 4e5caf812727953aa45e3bda2d382f2c67b6a09c' \
+            'integration/preparedness-release-candidate-20261101 ddb3528ba6494dada1fa1c3a142ce746e3a67706'; do
+            ref="${pair%% *}"
+            expected="${pair##* }"
+            actual="$(git rev-parse "refs/remotes/origin/$ref")"
+            test "$actual" = "$expected"
+            echo "$ref -> $actual"
+          done
+      - name: Sealed original-evidence 41-document citation/reuse census (PRIVATE)
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r89_full_claim_block_source_dossiers.py
+          python -I preparedness/tools/r89_full_claim_block_source_dossiers.py --private-csv-stdout > "$RUNNER_TEMP/r89-private.csv"
+          python -I - <<'PY'
+          import csv,os
+          from pathlib import Path
+          rows=list(csv.DictReader((Path(os.environ['RUNNER_TEMP'])/'r89-private.csv').open(encoding='utf-8',newline='')))
+          assert len(rows)==2173,len(rows)
+          assert all(r['human_claim_review']=='NOT_REVIEWED' and
+                     r['qualified_safety_review']=='NOT_REVIEWED' and
+                     r['may_publish']=='FALSE' for r in rows)
+          print('2,173 PRIVATE reviewer citations, ZERO safety or publication approvals')
+          PY
+          rm -f "$RUNNER_TEMP/r89-private.csv"
+      - name: Native validation and OFFLINE WordPress-ready PRIVATE draft build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Full Preparedness Python regression suite
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Permanent release HOLD, regardless of diagnostic result
+        if: always()
+        run: |
+          echo 'PRIVATE DIAGNOSTIC ONLY; NOT a mandatory release-integrity pass.'
+          echo 'NO public WordPress/CMS writes, merges, navigation or publication.'
+          echo 'NO verified medical safety advice, human source support, or QD approval.'
