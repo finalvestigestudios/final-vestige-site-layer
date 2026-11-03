@@ -74,7 +74,7 @@ class SourceChronologyCertainty(unittest.TestCase):
             lambda r: r[5].__setitem__("date_display", "January 25, 2017"),
             lambda r: r[2].__setitem__("taken_date", "1966-10"),
             lambda r: r[1].__setitem__("date_precision", "MONTH_ONLY"),
-            lambda r: r.pop(),
+            lambda r: r.pop(4),
         ):
             rows = copy.deepcopy(self.rows)
             mutate(rows)
