@@ -29,11 +29,11 @@ def _vendor_month_line_digest(source_sha256: str, vendor: str, month: str,
     so equal line positions from different files/groups cannot masquerade as
     equal evidence. A bounded report preview NEVER replaces this full digest.
     """
-    digest = sha256(b"FVS-SPEND-VENDOR-MONTH-LINES-v1\\n")
+    digest = sha256(b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n")
     for element in (source_sha256, vendor, month, str(len(ordered_lines))):
-        digest.update(element.encode("ascii") + b"\\n")
+        digest.update(element.encode("ascii") + b"\n")
     for line in ordered_lines:
-        digest.update(str(line).encode("ascii") + b"\\n")
+        digest.update(str(line).encode("ascii") + b"\n")
     return digest.hexdigest()
 
 
