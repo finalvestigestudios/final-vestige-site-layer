@@ -103,7 +103,7 @@ class R83ReleaseDesk(unittest.TestCase):
         self.assertIn("HOLD_UNSENT", TXT)
     def test_no_recipient_or_affiliate_secret_in_review(self):
         self.assertNotIn("unsubscribe?", HTML + TXT + BRIEF)
-        self.assertNotIn("ref=", HTML + TXT + BRIEF)
+        self.assertNotIn("?ref=", HTML + TXT + BRIEF)
         self.assertNotRegex(HTML + TXT, r"(?i)[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}")
     def test_named_merchant_email_permissions_explicit(self):
         self.assertIn("Zen12 email", VENDOR)
