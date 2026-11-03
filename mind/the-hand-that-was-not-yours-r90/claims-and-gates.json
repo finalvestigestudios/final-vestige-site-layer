@@ -1,0 +1,520 @@
+{
+  "meta": {
+    "title": "Mind R90 evidence-and-permissions ledger",
+    "date": "2026-11-03",
+    "state": "UNPUBLISHED",
+    "seller_page": "https://zen12.com/hnp",
+    "independent_trial_of_zen12_reviewed": false,
+    "affiliate_url": null,
+    "commission": null,
+    "price": null,
+    "film_conversion_lift": null
+  },
+  "sources": [
+    {
+      "id": "s01",
+      "type": "Primary experiment",
+      "title": "Botvinick and Cohen (1998)",
+      "url": "https://doi.org/10.1038/35784",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s02",
+      "type": "Theory plus experimental test",
+      "title": "Samad et al. (2015)",
+      "url": "https://doi.org/10.1371/journal.pone.0117178",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s03",
+      "type": "Meta-analysis of measures",
+      "title": "Tosi et al. (2023)",
+      "url": "https://doi.org/10.1177/17470218231156849",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s04",
+      "type": "Expectancy quasi-experiment",
+      "title": "Lush (2020)",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s05",
+      "type": "Replication & order effects",
+      "title": "Collabra: Psychology (2024)",
+      "url": "https://online.ucpress.edu/collabra/article/10/1/116190/200587/Order-Effects-on-the-Rubber-Hand-Illusion",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s06",
+      "type": "Binaural-beat systematic review",
+      "title": "Ingendoh et al. (2023)",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s07",
+      "type": "Official seller catalog",
+      "title": "Inspire3 homepage",
+      "url": "https://inspire3.com/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s08",
+      "type": "Exact offer",
+      "title": "Zen12 sales page",
+      "url": "https://zen12.com/hnp",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s09",
+      "type": "Seller product details",
+      "title": "Zen12 About",
+      "url": "https://zen12.com/about",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s10",
+      "type": "Seller explanation",
+      "title": "Zen12 Research",
+      "url": "https://zen12.com/research",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s11",
+      "type": "Seller privacy",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s12",
+      "type": "FTC material relationship",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s13",
+      "type": "FTC health claims substantiation",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s14",
+      "type": "Live historical resource",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s15",
+      "type": "Live existing lead magnet",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s16",
+      "type": "Live mind-related investigation",
+      "title": "Mesmerism Franklin Commission",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s17",
+      "type": "Live perception investigation",
+      "title": "Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked_on": "2026-11-03"
+    },
+    {
+      "id": "s18",
+      "type": "Public program is not partner acceptance",
+      "title": "Inspire3 affiliates public portal",
+      "url": "https://affiliates.inspire3.com/",
+      "checked_on": "2026-11-03"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "A false hand can sometimes feel owned under organized multisensory conditions",
+      "status": "supported_experiment",
+      "source_ids": [
+        "s01"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c02",
+      "claim": "Rubber hand experiment proves other consumer products work",
+      "status": "rejected_inference",
+      "source_ids": [
+        "s01"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c03",
+      "claim": "A causal-inference model predicts some ownership without touch",
+      "status": "supported_in_study_scope",
+      "source_ids": [
+        "s02"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c04",
+      "claim": "Ownership reports and proprioceptive drift are identical",
+      "status": "rejected_overgeneralization",
+      "source_ids": [
+        "s03"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c05",
+      "claim": "Some original rubber hand controls could be confounded by expectancy",
+      "status": "supported_methodological_challenge",
+      "source_ids": [
+        "s04",
+        "s05"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c06",
+      "claim": "Expectation accounts show the illusion is entirely fake or deception",
+      "status": "rejected_inference",
+      "source_ids": [
+        "s04",
+        "s05"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c07",
+      "claim": "Zen12 is described as 12 minutes per session",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s08",
+        "s09"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c08",
+      "claim": "Zen12 is described as 12 levels",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s08",
+        "s09"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c09",
+      "claim": "Zen12 advertises four audio styles",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c10",
+      "claim": "Complete Zen12 seller offer specifies 48 MP3s",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c11",
+      "claim": "Beginner and advanced six-level offers each describe 24 MP3s",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c12",
+      "claim": "Zen12 equals one hour of advanced meditation",
+      "status": "unsubstantiated_seller_claim_excluded",
+      "source_ids": [
+        "s08",
+        "s09",
+        "s06"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c13",
+      "claim": "Zen12 automatically controls brainwaves",
+      "status": "unsubstantiated_seller_claim_excluded",
+      "source_ids": [
+        "s10",
+        "s06"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c14",
+      "claim": "Zen12 treats anxiety, stress, depression, or sleep disorders",
+      "status": "not_product_substantiated_excluded",
+      "source_ids": [
+        "s08",
+        "s06",
+        "s13"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c15",
+      "claim": "Zen12 improves focus creativity or productivity in specific quantified amounts",
+      "status": "not_product_substantiated_excluded",
+      "source_ids": [
+        "s08",
+        "s06",
+        "s13"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c16",
+      "claim": "2023 binaural review included 14 heterogeneous EEG studies",
+      "status": "supported_systematic_review",
+      "source_ids": [
+        "s06"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c17",
+      "claim": "2023 review found five consistent, eight inconsistent, one mixed study",
+      "status": "supported_systematic_review",
+      "source_ids": [
+        "s06"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c18",
+      "claim": "Review is an independent clinical trial of Zen12",
+      "status": "false_excluded",
+      "source_ids": [
+        "s06"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c19",
+      "claim": "Zen12 page advertises one-year money-back guarantee",
+      "status": "seller_description_unverified_checkout",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c20",
+      "claim": "A particular refund will be paid or processed under certain conditions",
+      "status": "unverified_excluded",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c21",
+      "claim": "Zen12 current price, discount or commission can be safely quoted",
+      "status": "unverified_dynamic_excluded",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c22",
+      "claim": "Inspire3 privacy policy describes purchase data collection",
+      "status": "seller_policy_description",
+      "source_ids": [
+        "s11"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c23",
+      "claim": "Inspire3 policy contemplates sharing certain buyer data with partners",
+      "status": "seller_policy_description",
+      "source_ids": [
+        "s11"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c24",
+      "claim": "Public affiliate program proves FV-specific acceptance",
+      "status": "false_excluded",
+      "source_ids": [
+        "s18"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c25",
+      "claim": "FV permitted website promotion and merchant link",
+      "status": "not_verified_gate_closed",
+      "source_ids": [
+        "s18"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c26",
+      "claim": "FV permitted email promotion",
+      "status": "not_verified_gate_closed",
+      "source_ids": [
+        "s18"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c27",
+      "claim": "FV permitted TikTok promotion",
+      "status": "not_verified_gate_closed",
+      "source_ids": [
+        "s18"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c28",
+      "claim": "FV approved creative/swipe usage rights",
+      "status": "not_verified_gate_closed",
+      "source_ids": [
+        "s18"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c29",
+      "claim": "FTC calls for clear commission disclosures near endorsement links",
+      "status": "supported_guidance",
+      "source_ids": [
+        "s12"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c30",
+      "claim": "Scientific health efficacy advertising requires appropriate support",
+      "status": "supported_guidance",
+      "source_ids": [
+        "s13"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c31",
+      "claim": "FV Puységur archive is already published",
+      "status": "verified_read_only_wordpress",
+      "source_ids": [
+        "s14"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c32",
+      "claim": "FV Focus lead magnet already published uses one existing funnel",
+      "status": "verified_read_only_wordpress_and_issue171",
+      "source_ids": [
+        "s15"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c33",
+      "claim": "Publisher has personally listened to or tested Zen12",
+      "status": "no_evidence_never_claim",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c34",
+      "claim": "Optional short film yields more sales than text only",
+      "status": "hypothesis_only_no_data",
+      "source_ids": [],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c35",
+      "claim": "A buyer-level conversion or actual affiliate sale can be inferred from outbound clicks",
+      "status": "invalid_excluded",
+      "source_ids": [],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c36",
+      "claim": "Public checkout terms and complete refund processing verified",
+      "status": "not_verified_gate_closed",
+      "source_ids": [
+        "s08"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    },
+    {
+      "id": "c37",
+      "claim": "No-JS film transcript can be read without video playback",
+      "status": "source_control_testable",
+      "source_ids": [],
+      "editorial_action": "qualify_to_scope"
+    },
+    {
+      "id": "c38",
+      "claim": "The rubber-hand research medically treats disturbed body ownership",
+      "status": "unsupported_medical_excluded",
+      "source_ids": [
+        "s01",
+        "s13"
+      ],
+      "editorial_action": "omit_or_explicitly_label"
+    }
+  ],
+  "release_gates": {
+    "partner_acceptance_written": false,
+    "site_channel_permission_written": false,
+    "tiktok_channel_permission_written": false,
+    "email_channel_permission_written": false,
+    "authorized_partner_url_verified": false,
+    "exact_tracking_parameters_verified": false,
+    "creative_usage_rights_verified": false,
+    "current_checkout_reviewed": false,
+    "returns_terms_reviewed": false,
+    "sale_price_reviewed": false,
+    "product_claims_legal_reviewed": false,
+    "buyer_level_data_blocked_by_terms": false,
+    "FTC_disclosure_reviewed": false,
+    "external_link_safety_reviewed": false,
+    "staging_browser_a11y_reviewed": false,
+    "native_node_test_ci_passed": false,
+    "first_party_video_hosted": false,
+    "video_caption_sync_verified": false,
+    "founder_editorial_release_approval": false,
+    "production_deploy_approval": false
+  },
+  "accountability": {
+    "commercial_guide": "mind/the-hand-that-was-not-yours-r90/zen12-guide-core.html",
+    "investigation": "mind/the-hand-that-was-not-yours-r90/investigation.md",
+    "jetpack_signup": "existing only",
+    "metrics": "synthetic only, zero visitor collection",
+    "newsletter": "Issue #174 is separate; no writes"
+  }
+}
