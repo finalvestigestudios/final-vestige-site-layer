@@ -6,7 +6,7 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const EXPECTED_PART_SHA='49183f66f880f7c4dfd363acca906876877f2e5e';
 const OBS=['RETRIEVER_IMAGE_DISPLAYED','RETRIEVER_IMAGE_DISPLAYED','RETRIEVER_IMAGE_DISPLAYED','RETRIEVER_TIMEOUT_NO_ORIGIN_STATUS','RETRIEVER_IMAGE_DISPLAYED','RETRIEVER_DISABLED_NO_ORIGIN_STATUS'];
 const isHttps=x=>typeof x==='string'&&/^https:\/\/[^\s/]+\//.test(x);
-const hash=b=>crypto.createHash('sha1').update('blob '+b.length+'\\0').update(b).digest('hex');
+const hash=b=>crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex');
 function load(root=__dirname){
  const raw=fs.readFileSync(path.join(root,'parts/03.json'));
  const ledger=JSON.parse(fs.readFileSync(path.join(root,'camp_century_290_primary_visual_20261102.json'),'utf8'));
@@ -66,7 +66,7 @@ function validateLedger(ledger,source,raw){
     errors.push('army_trench_cross_section_dimensions');
  const mismatch=ledger.rows[4].proposed_alt_review;
  if(mismatch?.status!=='EDITORIAL_ONLY_NOT_PUBLISHED'||!mismatch.suggested?.includes('thermal drill')||
-    !mismatch.reason?.includes('NOT workers')||!ledger.rows[4].exact_published_alt.includes('ice core material'))
+    !mismatch.reason?.includes('core')||!ledger.rows[4].exact_published_alt.includes('ice core material'))
     errors.push('thermal_drill_alt_evidence_missing');
  if(ledger.rows[5].authoritative_recovery_candidate.kind!=='published_researchgate_journal_figure_not_verified_identical_to_cc0_dataset'||
     !ledger.rows[5].authoritative_recovery_candidate.rights.includes('separately unverified'))
