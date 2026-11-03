@@ -112,7 +112,7 @@ def build(out):
         'chronology_milestones':[d for d,_ in groups],
         'unplaced_ids':[r['id'] for r in uncertain],
         'component_provenance':report['sha256'],
-        'files':{p.name:sha(p.read_bytes()) for p in sorted(out.iterdir()) if p.is_file()}}
+        'files':{p.name:sha(p.read_bytes()) for p in sorted(out.iterdir()) if p.is_file() and p.name != 'R88_READING_ROOM_RECEIPT.json'}}
     (out/'R88_READING_ROOM_RECEIPT.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n',encoding='utf8')
     return receipt
 
