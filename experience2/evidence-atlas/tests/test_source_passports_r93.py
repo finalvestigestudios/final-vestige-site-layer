@@ -52,7 +52,7 @@ class PassportChecks(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             out=pathlib.Path(tmp)/'out';receipt=m.build(self.src,out)
             raw=(out/'R93_SOURCE_PASSPORTS.html').read_text()
-            self.assertFalse(re.search(r'<(img|svg|canvas|iframe|video)\\b',raw))
+            self.assertFalse(re.search(r'<(img|svg|canvas|iframe|video)\b',raw))
             self.assertEqual(receipt['new_geo_pins'],0)
             self.assertEqual(receipt['new_historical_edges'],0)
             self.assertNotIn('data-lat=',raw)
@@ -87,7 +87,7 @@ class PassportChecks(unittest.TestCase):
 
     def test_manipulated_r92_receipt_still_catches_swapped_nasa(self):
         original=m.verified_records(self.src)
-        temp,src=self.mutated('R88_READING_ROOM.html',original[0]['url'],original[1]['url'],True)
+        temp,src=self.mutated('R88_READING_ROOM.html','href="'+original[0]['url']+'"','href="'+original[1]['url']+'"',True)
         with temp,self.assertRaisesRegex(ValueError,'R93_NASA_LINK_CHANGED'):
             m.verified_records(src)
 
