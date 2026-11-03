@@ -51,7 +51,6 @@ The transformer:
 ### Manual invocation — only after independently obtaining allowed PUBLIC page-6 raw HTML
 
 \`\`\`bash
-python -m hashlib /dev/null  # example placeholder; DO NOT use for the source
 python - <<'PY'
 from hashlib import sha256
 from pathlib import Path
