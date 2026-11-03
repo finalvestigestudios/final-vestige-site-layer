@@ -68,6 +68,14 @@ The design intent ("preserve every original record; never merge their claims") m
 
 No preparedness page was published. The archive is not cleared for any wave: the machine gate fails, consequential citations are under review (R76), and there is no qualified safety review. Wave 1 (landing, Start Here, household plan) is the right first release once the crosswalk fix and its dependent gates pass; it must not wait for Wave 2 or 3 material.
 
+### Evidence Atlas and Research Desk in a real investigation (2026-11-02, later)
+
+| Workstream | Branch | Commit | Result | Status | Next |
+|---|---|---|---|---|---|
+| Apollo 1 investigation page, plugin-free (`APOLLO1_PAGE_DRAFT_RECORD.md`) | `feature/atlas-apollo1-live` (from the Sprint 5 branch) | `79c0a017` + record | eight top-level `core/html` blocks (100,762 B), private WordPress draft **page 2017**, every stored block hash equals the local SHA-1; live-theme harness: 6 widths clean, axe 0 violations / 0 incomplete, mobile throttled LCP 1.80 s median (max 1.89 s), CLS 0.073; repository tests pass (13 page, 19 builders, 22 atlas, 31 browser) | **DRAFT, not published; no QD claimed**; page 6 and draft 1902 untouched; no plugin | founder signs in for the WordPress.com render; independent review of the block hashes; editor decisions on the data notes in section 5; then one publish call |
+
+The staging-only `final-vestige-experience-2` plugin is **not** installed and not required for this page (founder decision: no new production plugin for a minor gain).
+
 ## Growth status
 
 Baseline read from the live site on 2026-11-02 (read-only):
