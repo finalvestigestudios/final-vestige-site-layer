@@ -79,6 +79,7 @@ async function imageBodies(page){
     rows.push({host:new URL(url).hostname,status:res.status(),mime,bytes:body.byteLength,sha256:sha(body),pass});
     if(!pass)throw new Error('First-party archival media body unreadable');
   }
+  if(rows.length<2)throw new Error('No complete two-source archival image body evidence');
   return rows;
 }
 async function checkView(page,width,axePath){
