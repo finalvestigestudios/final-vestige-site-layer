@@ -83,7 +83,8 @@ def run(src,out,axe=None):
                             assert all(''.join(r['catalog'].split()) in text for r in rows),'R87_PRINT_CATALOGS'
                             assert 'STAGINGHOLD' in text,'R87_PRINT_HOLD'
                             assert ''.join(paper.split()).count('Reproductionrights:PENDING.')==6, 'R87_PRINT_SIX_RIGHTS_DISCLOSURES'
-                            assert 'NASAreferencelinksdonotcertifyreusepermission.' in ''.join(paper.split()), 'R87_PRINT_NO_LICENSE'\n                            assert len(doc)<=6 and len(doc[-1].get_text().strip())>550, 'R87_TRAILING_ORNAMENTAL_PRINT_PAGE'
+                            assert 'NASAreferencelinksdonotcertifyreusepermission.' in ''.join(paper.split()), 'R87_PRINT_NO_LICENSE'
+                            assert len(doc)<=6 and len(doc[-1].get_text().strip())>550, 'R87_TRAILING_ORNAMENTAL_PRINT_PAGE'
                             case['pdf_pages']=len(doc)
                         page.emulate_media(media='print')
                         contrast=page.evaluate("""()=>({hold_fg:getComputedStyle(document.querySelector('.hold')).color,
