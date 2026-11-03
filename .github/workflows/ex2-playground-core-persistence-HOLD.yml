@@ -37,6 +37,7 @@ jobs:
           python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_build_combined_page6_offline.py -v
           node --check experience2/home-flagship/qa/release-candidate/playground_core_save_readback.mjs
           php -l experience2/home-flagship/qa/release-candidate/playground_core_save_readback.php
+          python -I -m unittest discover -s experience2/home-flagship/qa/release-candidate -p test_probe_cleanup.py -v
       - name: Generate synthetic candidate ONLY (no production data)
         run: |
           set -euo pipefail
