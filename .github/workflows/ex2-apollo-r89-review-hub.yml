@@ -1,0 +1,92 @@
+# Apollo R89 exact-head source and real-browser acceptance. NO DEPLOYMENT.
+name: Apollo R89 integrated evidence review (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r89*'
+      - 'experience2/evidence-atlas/tests/*r89*'
+      - 'experience2/evidence-atlas/R89_INTEGRATED_REVIEW_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r89-review-hub.yml'
+permissions:
+  contents: read
+jobs:
+  source-custody-and-determinism:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Actual Research Desk, Atlas, six NASA rights records, cross-document links, reproducible package
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r89-python-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_review_hub_r89.py experience2/evidence-atlas/tests/test_review_hub_r89.py experience2/evidence-atlas/tests/browser_review_hub_r89.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_concordance_r86.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_chronology_r87.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_reading_room_r88.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_review_hub_r89.py -v
+          python experience2/evidence-atlas/tools/build_review_hub_r89.py "$RUNNER_TEMP/r89-A" "$RUNNER_TEMP/R89_A.zip"
+          python experience2/evidence-atlas/tools/build_review_hub_r89.py "$RUNNER_TEMP/r89-B" "$RUNNER_TEMP/R89_B.zip"
+          cmp "$RUNNER_TEMP/R89_A.zip" "$RUNNER_TEMP/R89_B.zip"
+          sha256sum "$RUNNER_TEMP/R89_A.zip"
+          test -z "$(git status --porcelain)"
+      - name: Retain deterministic source build
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r89-source-reviewed-STAGING-HOLD
+          path: ${{ runner.temp }}/R89_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  real-browser-integrated-acceptance:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: source-custody-and-determinism
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned Chromium accessibility/PDF tooling
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r89-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Real 320-1920px navigation, no-JS, keyboard/touch, axe, reduced-motion, forced-colors, LCP/CLS, PDF
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r89-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_review_hub_r89.py "$RUNNER_TEMP/r89-view"
+          python experience2/evidence-atlas/tests/browser_review_hub_r89.py --src "$RUNNER_TEMP/r89-view" --out "$RUNNER_TEMP/r89-evidence" --axe "$RUNNER_TEMP/r89-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r89-evidence/R89_BROWSER_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Retain exact-head true Chromium evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r89-real-chromium-STAGING-HOLD
+          path: ${{ runner.temp }}/r89-evidence/
+          if-no-files-found: warn
+          retention-days: 7
