@@ -44,12 +44,23 @@ def fake_article(origin, slug, stage, sources=None, body=None, meta=None):
 def fake_suite():
     fragments = [fake_sources(origin, stage)
                  for origin in ORIGINS for stage in r82.STAGES]
+    # Match the production crosswalk: every synthetic citation carries the
+    # complete same-stage source-origin candidates before it is sealed.
+    indices = {stage: {} for stage in r82.STAGES}
+    for fragment in fragments:
+        stage = fragment["stage"]
+        for reading in fragment["source_readings_UNABRIDGED"]:
+            key = reading["raw_source_id"]
+            indices[stage].setdefault(key, []).append({
+                "origin": fragment["origin"], "source_id": key,
+                "reading_sha256": reading["reading_sha256"]})
     snapshots = []
     for number in range(29):
         origin = ORIGINS[number % 7]
         slug = "synthetic-" + str(number)
         for stage in r82.STAGES:
-            snapshots.append(fake_article(origin, slug, stage))
+            snapshots.append(fake_article(origin, slug, stage,
+                                          sources=indices[stage]))
     parent = {"branch_reviews": [{"origin": v} for v in ORIGINS],
               "counts": {"rc_fragment_source_readings_UNREVIEWED": 7},
               "sha256_seal": "f" * 64,
