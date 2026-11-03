@@ -124,6 +124,109 @@ def audit_pages(folder: Path, allowed_sources: set[str]):
             raise ValueError("R89_SOURCE_DEEP_LINK_MISSING:" + rid)
     return checks
 
+
+def _space(value):
+    """Normalize HTMLParser text without weakening source identity constraints."""
+    return re.sub(r"\\s+", " ", html.unescape(str(value))).strip()
+
+
+class ScopedSourceCards(HTMLParser):
+    """Read the clickable NASA destination inside EACH article, not the whole page."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.cards = {}
+        self.active = None
+        self.heading = False
+        self.malformed = False
+
+    def handle_starttag(self, tag, attrs):
+        data = dict(attrs)
+        if tag == "article":
+            if self.active is not None:
+                self.malformed = True
+            self.active = {"id": data.get("id"), "text": [], "heading": [],
+                           "links": []}
+        elif self.active is not None:
+            if tag in ("h3", "h4"):
+                self.heading = True
+            if tag == "a":
+                self.active["links"].append(data.get("href", ""))
+
+    def handle_data(self, data):
+        if self.active is not None:
+            self.active["text"].append(data)
+            if self.heading:
+                self.active["heading"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag in ("h3", "h4"):
+            self.heading = False
+        if tag == "article" and self.active is not None:
+            ident = self.active["id"]
+            if not ident or ident in self.cards:
+                self.malformed = True
+            else:
+                self.active["text"] = _space(" ".join(self.active["text"]))
+                self.active["heading"] = _space(" ".join(self.active["heading"]))
+                self.cards[ident] = self.active
+            self.active = None
+
+
+def audit_source_bindings(folder: Path, records: list[dict]):
+    """Fail closed if a valid NASA link migrates onto another valid source card.
+
+    R89's original aggregate set check could not distinguish swapped URLs.
+    This check requires each card's exact source link, identity, photograph
+    date, and evidence limitation to match the R88/R86 verified register.
+    """
+    if len(records) != 6 or sorted(r["id"] for r in records) != [
+            f"{i:02}" for i in range(1, 7)]:
+        raise ValueError("R90_INVALID_SIX_RECORD_REGISTER")
+    links = [r["url"] for r in records]
+    if len(set(links)) != 6 or any(not u.startswith(
+            "https://www.nasa.gov/image-detail/") for u in links):
+        raise ValueError("R90_INVALID_NASA_REGISTER")
+    prefixes = {
+        "R89_REVIEW_HUB.html": "r89-source-",
+        "R88_READING_ROOM.html": "r88-",
+        "R87_PHOTOGRAPH_DATE_RAIL.html": "r87-record-",
+        "R85_NASA_SOURCE_REVIEW.html": "r85-source-",
+    }
+    verified = {}
+    for page, prefix in prefixes.items():
+        parsed = ScopedSourceCards()
+        parsed.feed((folder / page).read_text(encoding="utf8"))
+        parsed.close()
+        if parsed.malformed or parsed.active is not None or set(parsed.cards) != {
+                prefix + row["id"] for row in records}:
+            raise ValueError("R90_MISSING_DUPLICATE_OR_MALFORMED_CARD:" + page)
+        for row in records:
+            ident = prefix + row["id"]
+            card = parsed.cards[ident]
+            if card["heading"] != _space(row["title"]):
+                raise ValueError("R90_CARD_TITLE_DRIFT:" + page + ":" + ident)
+            if any(_space(row[k]) not in card["text"] for k in (
+                    "catalog", "date", "limitation")):
+                raise ValueError("R90_CARD_EVIDENCE_DRIFT:" + page + ":" + ident)
+            rights = "REUSE REVIEW PENDING" if page.startswith("R85_") else (
+                "INDIVIDUAL REVIEW REQUIRED")
+            if rights not in card["text"]:
+                raise ValueError("R90_CARD_RIGHTS_HOLD_REMOVED:" + page + ":" + ident)
+            if row["id"] == "01" and "provisional" not in card["text"].lower():
+                raise ValueError("R90_CREW_PORTRAIT_CERTAINTY_DRIFT:" + page)
+            external = [u for u in card["links"] if u.startswith(
+                ("https:", "http:"))]
+            if external != [row["url"]]:
+                raise ValueError("R90_CARD_SOURCE_URL_SWAPPED:" + page + ":" + ident)
+            verified[page + "#" + ident] = {
+                "record": row["id"],
+                "nasa_url_sha256": digest(row["url"].encode("utf8")),
+            }
+    if len(verified) != 24:
+        raise ValueError("R90_EXPECTED_TWENTY_FOUR_SOURCE_BINDINGS")
+    return dict(sorted(verified.items()))
+
+
 def hub(records):
     rows = []
     for record in records:
@@ -206,12 +309,15 @@ def build(destination: Path):
         (stage / "R89_REVIEW_HUB.html").write_text(hub(report["records"]), encoding="utf8")
         (stage / "review_hub_r89.css").write_bytes(CSS.read_bytes())
         audit = audit_pages(stage, allowed)
+        bindings = audit_source_bindings(stage, report["records"])
         receipt = {
             "schema": "fv.apollo.r89.integrated-review.v1", "release": "STAGING_HOLD",
             "publication_approved": False, "photo_rights_cleared": 0,
             "hosted_wordpress_verified": False, "production_cwv_verified": False,
             "images_embedded": 0, "geo_pins": 0, "inferred_edges": 0,
             "nasa_sources": 6, "verified_page_links": audit,
+            "record_source_bindings": bindings,
+            "source_urls_by_id": {r["id"]: r["url"] for r in report["records"]},
             "desk_atlas_source_sha256": report["sha256"],
             "source_git_blobs": {k: v[1] for k, v in r85.SOURCES.items()},
             "file_sha256": {p.name: digest(p.read_bytes()) for p in sorted(stage.iterdir())
