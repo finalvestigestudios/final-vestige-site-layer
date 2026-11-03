@@ -17,7 +17,7 @@ function add_query_arg($key, $value, $base) { return $base . '?' . rawurlencode(
 // This fixture is NEVER installed with the generated WordPress adapter.
 if (isset($_GET['fv_r99_axe'])) {
     $axe=getenv('APOLLO_R99_AXE');
-    if (!current_user_can('edit_posts') || !$axe || !is_file($axe)) { http_response_code(404); exit; }
+    if (!current_user_can('edit_others_posts') || !$axe || !is_file($axe)) { http_response_code(404); exit; }
     header('Content-Type: text/javascript; charset=utf-8');
     header('Cache-Control: no-store');
     readfile($axe); exit;
