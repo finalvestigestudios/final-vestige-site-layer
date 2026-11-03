@@ -1,0 +1,104 @@
+# R99 private source-review adapter (STAGING HOLD)
+name: Apollo R99 read-only private preview source + browser contract
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/build_wp_private_preview_r99.py'
+      - 'experience2/evidence-atlas/integration/r99-private-preview-template.php'
+      - 'experience2/evidence-atlas/tests/test_wp_private_preview_r99.py'
+      - 'experience2/evidence-atlas/tests/php_preview_contract_r99.php'
+      - 'experience2/evidence-atlas/tests/browser_private_preview_r99.py'
+      - 'experience2/evidence-atlas/R99_READ_ONLY_WP_PREVIEW_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r99-private-review.yml'
+permissions:
+  contents: read
+jobs:
+  pinned-source-and-php:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate exact-head, input custody, deterministic PHP preview and regressions
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r99-pycache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_wp_private_preview_r99.py experience2/evidence-atlas/tests/test_wp_private_preview_r99.py experience2/evidence-atlas/tests/browser_private_preview_r99.py
+          php -l experience2/evidence-atlas/integration/r99-private-preview-template.php
+          php -l experience2/evidence-atlas/tests/php_preview_contract_r99.php
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_private_preview_r99.py -v
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/r94"
+          python experience2/evidence-atlas/tools/build_source_gallery_r97.py --src "$RUNNER_TEMP/r94" --out "$RUNNER_TEMP/r97"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/r98"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/one" --archive "$RUNNER_TEMP/one.zip"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/two" --archive "$RUNNER_TEMP/two.zip"
+          cmp "$RUNNER_TEMP/one.zip" "$RUNNER_TEMP/two.zip"
+          php -l "$RUNNER_TEMP/one/fv-apollo-r99-private-preview.php"
+          sha256sum "$RUNNER_TEMP/one.zip"
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r99-private-contract-deterministic-source-STAGING-HOLD
+          path: ${{ runner.temp }}/one.zip
+          if-no-files-found: error
+          retention-days: 7
+  actual-http-chromium-contract:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    needs: pinned-source-and-php
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - uses: actions/download-artifact@v4
+        with:
+          name: apollo-r99-private-contract-deterministic-source-STAGING-HOLD
+          path: ${{ runner.temp }}/r99-package
+      - name: Install pinned free Chromium and accessibility dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/axe" --ignore-scripts --no-save --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: Genuine HTTP Chromium against PHP WordPress-hook contract fixture (NOT WP.com)
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          mkdir -p "$RUNNER_TEMP/r99-stage" "$RUNNER_TEMP/r99-evidence"
+          unzip -q "$RUNNER_TEMP/r99-package/one.zip" -d "$RUNNER_TEMP/r99-stage"
+          php -l "$RUNNER_TEMP/r99-stage/fv-apollo-r99-private-preview.php"
+          python experience2/evidence-atlas/tests/browser_private_preview_r99.py \
+            --stage "$RUNNER_TEMP/r99-stage" \
+            --fixture experience2/evidence-atlas/tests/php_preview_contract_r99.php \
+            --axe "$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js" \
+            --out "$RUNNER_TEMP/r99-evidence"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apollo-r99-php-contract-chromium-STAGING-HOLD
+          path: ${{ runner.temp }}/r99-evidence/
+          if-no-files-found: warn
+          retention-days: 7
