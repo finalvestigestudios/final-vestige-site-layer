@@ -1,0 +1,507 @@
+{
+  "reviewed_on": "2026-11-02",
+  "status": "DRAFT_HOLD",
+  "sources": [
+    {
+      "id": "hist-1",
+      "type": "primary-historical",
+      "url": "https://en.wikisource.org/wiki/Self_Mastery_Through_Conscious_Autosuggestion/Self_Mastery_Through_Conscious_Autosuggestion",
+      "scope": "Coue's original assertions; no efficacy verification"
+    },
+    {
+      "id": "hist-2",
+      "type": "archival-facsimile-metadata",
+      "url": "https://commons.wikimedia.org/wiki/File:Self_mastery_through_conscious_autosuggestion_(IA_cu31924098498979).pdf",
+      "scope": "1922 edition provenance"
+    },
+    {
+      "id": "fv-1",
+      "type": "published-editorial-source-bridge",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "historical archive; not product efficacy"
+    },
+    {
+      "id": "fv-2",
+      "type": "published-existing-funnel",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "single Focus lead magnet; no new forms"
+    },
+    {
+      "id": "fv-3",
+      "type": "published-editorial-source-bridge",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "source interpretation"
+    },
+    {
+      "id": "fv-4",
+      "type": "published-editorial-source-bridge",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "attention research bridge"
+    },
+    {
+      "id": "independent-1",
+      "type": "systematic-review",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "scope": "Eason and Parris 2019 self-hypnosis RCTs, not Zen12 trial"
+    },
+    {
+      "id": "independent-2",
+      "type": "systematic-review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "scope": "Zahedi et al. 2024 theoretical models, contested mechanisms"
+    },
+    {
+      "id": "independent-3",
+      "type": "systematic-review",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1330238",
+      "scope": "Rosendahl 2024 therapeutic outcomes; not merchant product"
+    },
+    {
+      "id": "independent-4",
+      "type": "systematic-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "Ingendoh 2023 heterogeneous EEG entrainment research; not Zen12 trial"
+    },
+    {
+      "id": "seller-1",
+      "type": "seller-catalog",
+      "url": "https://inspire3.com/",
+      "scope": "brands/offers only, marketing promises NOT proof"
+    },
+    {
+      "id": "seller-2",
+      "type": "seller-exact-offer",
+      "url": "https://zen12.com/hnp",
+      "scope": "Zen12 sales claims, 12 minute sessions, 12 levels, styles"
+    },
+    {
+      "id": "seller-3",
+      "type": "seller-about",
+      "url": "https://zen12.com/about",
+      "scope": "seller narrative re formats"
+    },
+    {
+      "id": "seller-4",
+      "type": "seller-research",
+      "url": "https://zen12.com/research",
+      "scope": "seller theory page, NOT independent validation"
+    },
+    {
+      "id": "seller-5",
+      "type": "seller-checkout",
+      "url": "https://zen12.com/getstarted",
+      "scope": "48 MP3 full course, support, personal/mobile fields, dynamic price omitted"
+    },
+    {
+      "id": "seller-6",
+      "type": "seller-privacy",
+      "url": "https://inspire3.com/privacy/",
+      "scope": "potential SMS, referrer purchase-level PII"
+    },
+    {
+      "id": "seller-7",
+      "type": "seller-other-exact-offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Total Focus 33-min/47MB seller listing; NOT Zen12"
+    },
+    {
+      "id": "seller-8",
+      "type": "seller-public-affiliate-recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "not account-specific acceptance or approved creatives"
+    },
+    {
+      "id": "reg-1",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "near-link material connection disclosure"
+    },
+    {
+      "id": "reg-2",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "product-specific competent reliable scientific evidence"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "R88-01",
+      "claim": "Coue authored 1922 autosuggestion claims",
+      "category": "historical_statement",
+      "source_id": "hist-1",
+      "status": "ALLOW_ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "R88-02",
+      "claim": "Coue's claims cure all illnesses",
+      "category": "efficacy",
+      "source_id": "hist-1",
+      "status": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "R88-03",
+      "claim": "Puysegur dossier validates modern treatment",
+      "category": "historical_causal",
+      "source_id": "fv-1",
+      "status": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "R88-04",
+      "claim": "Self-hypnosis 2019 review screened 576/selected 22 RCTs",
+      "category": "independent_summary",
+      "source_id": "independent-1",
+      "status": "ALLOW_WITH_SCOPE"
+    },
+    {
+      "id": "R88-05",
+      "claim": "Self-directed skill not equivalent to passive recorded hypnosis",
+      "category": "interpretation",
+      "source_id": "independent-1",
+      "status": "ALLOW_QUALIFIED"
+    },
+    {
+      "id": "R88-06",
+      "claim": "Hypnotic mechanism fully understood",
+      "category": "scientific_certainty",
+      "source_id": "independent-2",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-07",
+      "claim": "All consumer hypnosis cures medical illness",
+      "category": "medical",
+      "source_id": "independent-3",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-08",
+      "claim": "All recordings identical to researcher-guided treatment",
+      "category": "extrapolation",
+      "source_id": "independent-3",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-09",
+      "claim": "Zen12 seller advertises 12-minute sessions",
+      "category": "seller_format",
+      "source_id": "seller-2",
+      "status": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "R88-10",
+      "claim": "Zen12 seller advertises 12 levels",
+      "category": "seller_format",
+      "source_id": "seller-2",
+      "status": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "R88-11",
+      "claim": "Zen12 seller describes four sound formats",
+      "category": "seller_format",
+      "source_id": "seller-2",
+      "status": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "R88-12",
+      "claim": "Zen12 48 MP3s in full bundle",
+      "category": "seller_format",
+      "source_id": "seller-5",
+      "status": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "R88-13",
+      "claim": "Zen12 equals hour of advanced meditation",
+      "category": "efficacy",
+      "source_id": "seller-2",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "R88-14",
+      "claim": "Zen12 causes immediate stress relief for all",
+      "category": "medical",
+      "source_id": "seller-2",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "R88-15",
+      "claim": "Zen12 rewires brain automatically",
+      "category": "mechanism",
+      "source_id": "seller-2",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "R88-16",
+      "claim": "Zen12 increases creativity and productivity",
+      "category": "performance",
+      "source_id": "seller-2",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "R88-17",
+      "claim": "2023 systematic review 5 supportive/8 contradictory/1 mixed",
+      "category": "independent_summary",
+      "source_id": "independent-4",
+      "status": "ALLOW_WITH_SCOPE"
+    },
+    {
+      "id": "R88-18",
+      "claim": "2023 brainwave review is trial of Zen12",
+      "category": "product-specific",
+      "source_id": "independent-4",
+      "status": "REJECT_FALSE"
+    },
+    {
+      "id": "R88-19",
+      "claim": "Zen12 package always priced at fixed offer",
+      "category": "commerce",
+      "source_id": "seller-5",
+      "status": "WITHHOLD_DYNAMIC_PRICE"
+    },
+    {
+      "id": "R88-20",
+      "claim": "Zen12 merchant guarantees individual result",
+      "category": "commerce_health",
+      "source_id": "seller-2",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-21",
+      "claim": "Checkout requests phone contact",
+      "category": "privacy",
+      "source_id": "seller-5",
+      "status": "ALLOW_DISCLOSE"
+    },
+    {
+      "id": "R88-22",
+      "claim": "Privacy policy contemplates marketing SMS",
+      "category": "privacy",
+      "source_id": "seller-6",
+      "status": "ALLOW_DISCLOSE"
+    },
+    {
+      "id": "R88-23",
+      "claim": "Privacy policy contemplates buyer PII to affiliate",
+      "category": "privacy",
+      "source_id": "seller-6",
+      "status": "ALLOW_DISCLOSE"
+    },
+    {
+      "id": "R88-24",
+      "claim": "Final Vestige may receive buyer identity",
+      "category": "privacy_permission",
+      "source_id": "seller-6",
+      "status": "BLOCK_UNTIL_NEGOTIATED"
+    },
+    {
+      "id": "R88-25",
+      "claim": "Detailed refund conditions independently verified",
+      "category": "terms",
+      "source_id": "seller-5",
+      "status": "REJECT_NOT_VERIFIED"
+    },
+    {
+      "id": "R88-26",
+      "claim": "Merchant affiliate recruitment equals FV acceptance",
+      "category": "permissions",
+      "source_id": "seller-8",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-27",
+      "claim": "Exact FV tracking URL authorized",
+      "category": "permissions",
+      "source_id": "seller-8",
+      "status": "BLOCK"
+    },
+    {
+      "id": "R88-28",
+      "claim": "Affiliate creative/swipe reuse authorized",
+      "category": "permissions",
+      "source_id": "seller-8",
+      "status": "BLOCK"
+    },
+    {
+      "id": "R88-29",
+      "claim": "Website promotional channel approved",
+      "category": "permissions",
+      "source_id": "seller-8",
+      "status": "BLOCK"
+    },
+    {
+      "id": "R88-30",
+      "claim": "TikTok promotional channel approved",
+      "category": "permissions",
+      "source_id": "seller-8",
+      "status": "BLOCK"
+    },
+    {
+      "id": "R88-31",
+      "claim": "Email promotional channel approved",
+      "category": "permissions",
+      "source_id": "seller-8",
+      "status": "BLOCK"
+    },
+    {
+      "id": "R88-32",
+      "claim": "Total Focus is the Zen12 product",
+      "category": "product_mismatch",
+      "source_id": "seller-7",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-33",
+      "claim": "Total Focus 33 minutes 47MB",
+      "category": "seller_format",
+      "source_id": "seller-7",
+      "status": "ALLOW_PRODUCT_SPECIFIC_ONLY"
+    },
+    {
+      "id": "R88-34",
+      "claim": "Total Focus focus outcome scientifically established",
+      "category": "performance",
+      "source_id": "seller-7",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "R88-35",
+      "claim": "FTC material connection disclosure near CTA",
+      "category": "compliance",
+      "source_id": "reg-1",
+      "status": "REQUIRE_RELEASE_CHECK"
+    },
+    {
+      "id": "R88-36",
+      "claim": "FTC efficacy claims need product relevant proof",
+      "category": "compliance",
+      "source_id": "reg-2",
+      "status": "REQUIRE_RELEASE_CHECK"
+    },
+    {
+      "id": "R88-37",
+      "claim": "Focus Fieldbook is existing published route",
+      "category": "internal_navigation",
+      "source_id": "fv-2",
+      "status": "ALLOW_LINK"
+    },
+    {
+      "id": "R88-38",
+      "claim": "Existing Puysegur is product endorsement",
+      "category": "editorial_independence",
+      "source_id": "fv-1",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-39",
+      "claim": "Video's effects imply Zen12 works",
+      "category": "implied_claim",
+      "source_id": "reg-2",
+      "status": "REJECT"
+    },
+    {
+      "id": "R88-40",
+      "claim": "A/B video improves purchases",
+      "category": "conversion",
+      "source_id": "reg-2",
+      "status": "UNTESTED_HYPOTHESIS"
+    },
+    {
+      "id": "R88-41",
+      "claim": "No-JS visible transcript and poster",
+      "category": "accessibility",
+      "source_id": "reg-1",
+      "status": "REQUIRE_TEST"
+    },
+    {
+      "id": "R88-42",
+      "claim": "Outbound attribution should accept buyer PII",
+      "category": "privacy",
+      "source_id": "seller-6",
+      "status": "REJECT"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "fv-specific accepted partnership",
+      "verified": false
+    },
+    {
+      "gate": "exact Zen12 tracked URL",
+      "verified": false
+    },
+    {
+      "gate": "website channel permission",
+      "verified": false
+    },
+    {
+      "gate": "TikTok channel permission",
+      "verified": false
+    },
+    {
+      "gate": "email channel permission",
+      "verified": false
+    },
+    {
+      "gate": "approved creative rights",
+      "verified": false
+    },
+    {
+      "gate": "no purchaser PII received",
+      "verified": false
+    },
+    {
+      "gate": "actual current checkout/terms/refund reviewed",
+      "verified": false
+    },
+    {
+      "gate": "legal and product-specific claim review",
+      "verified": false
+    },
+    {
+      "gate": "source-line independent editorial QA",
+      "verified": false
+    },
+    {
+      "gate": "site QA WCAG2.2AA",
+      "verified": false
+    },
+    {
+      "gate": "native Node tests and CI",
+      "verified": false
+    },
+    {
+      "gate": "real Gutenberg staging render",
+      "verified": false
+    },
+    {
+      "gate": "360/390/768/1440/1920 responsive browser evidence",
+      "verified": false
+    },
+    {
+      "gate": "keyboard and reduced motion browser test",
+      "verified": false
+    },
+    {
+      "gate": "first-party film render and hosting",
+      "verified": false
+    },
+    {
+      "gate": "caption sync and screen reader QA",
+      "verified": false
+    },
+    {
+      "gate": "founder exact SHA release approval",
+      "verified": false
+    },
+    {
+      "gate": "merger and deployment approval",
+      "verified": false
+    }
+  ],
+  "affiliate_url": null,
+  "accepted_partner": false,
+  "sales_reporting": false,
+  "video_effect": "UNTESTED",
+  "terms_review": "UNVERIFIED",
+  "checkout_price": "OMITTED_DYNAMIC",
+  "first_party_video": "STORYBOARD_AND_VTT_ONLY"
+}
