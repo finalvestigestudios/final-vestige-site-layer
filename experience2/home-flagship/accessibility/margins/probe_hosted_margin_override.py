@@ -11,6 +11,8 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import multiprocessing as mp
+from queue import Empty
 import re
 import sys
 import unittest
@@ -20,6 +22,7 @@ from urllib.parse import urlsplit
 URL = "https://finalvestige.com/"
 WIDTHS = (320, 390, 768, 1440, 1920)
 PHASES = (0.5, 2.5, 4.5, 5.5, 17.5, 355.5, 359.5, 360.5)
+REDUCED_JS = (False, True)
 NYPL = ("edit-017-v02-nypl-5003296", "nypl-5003296-original")
 HERE = Path(__file__).resolve().parent
 CSS = HERE / "margin_strip_contrast_safe.css"
@@ -208,7 +211,7 @@ def probe(axe_path: Path) -> dict:
                     ctx.close()
             # Reduced motion with and without page scripts. Exact public HTML,
             # local CSS only; never run any signup or editorial POST interaction.
-            for javascript in (False, True):
+            for javascript in REDUCED_JS:
                 ctx = browser.new_context(
                     viewport={"width": 390, "height": 844},
                     reduced_motion="reduce", java_script_enabled=javascript,
@@ -259,7 +262,116 @@ def probe(axe_path: Path) -> dict:
     }
 
 
+# Each remote-browser phase runs in its own killable process. The first
+# hosted workflow ran over 24 minutes without a receipt before cancellation;
+# a Playwright/axe stall must never hide which individual case was reached.
+def _bounded_worker(kind: str, value: int | bool, axe_source: str, out) -> None:
+    global WIDTHS, REDUCED_JS
+    if kind == "width":
+        WIDTHS, REDUCED_JS = (int(value),), ()
+    elif kind == "reduced":
+        WIDTHS, REDUCED_JS = (), (bool(value),)
+    else:
+        out.put({"error": "UNSUPPORTED_CASE"})
+        return
+    try:
+        r = probe(Path(axe_source))
+        out.put({"cases": r["cases"], "reduced_motion": r["reduced_motion"]})
+    except BaseException as exc:
+        # Never retain page text, URLs, credentials, or exception messages.
+        out.put({"error": type(exc).__name__})
+
+
+def assemble_bounded(cases: list[dict], auxiliary: list[dict], errors: list[dict]) -> dict:
+    widths = [r.get("width") for r in cases]
+    complete = sorted(widths) == sorted(WIDTHS) and len(cases) == len(WIDTHS)
+    motions = sorted((r.get("javascript") for r in auxiliary)) if len(auxiliary) == 2 else []
+    motion_ok = motions == [False, True] and all(r.get("passed") is True for r in auxiliary)
+    axe_targets = [r.get("axe") for r in cases if r.get("width") in (390, 1440)]
+    axe_ok = len(axe_targets) == 2 and all(
+        isinstance(a, dict) and a.get("contrast_rule_executed") is True
+        and a.get("violation_rules") == 0 for a in axe_targets)
+    valid = complete and not errors and motion_ok and all(evaluate_case(r) for r in cases)
+    return {
+        "scope": "ANONYMOUS_HOSTED_IN_MEMORY_MARGINS_BOUNDED_ADMISSION",
+        "hosted": True, "site_modified": False, "external_css_published": False,
+        "raw_html_retained": False, "media_bytes_retained": False,
+        "visitor_data_retained": False, "axe_node_html_retained": False,
+        "completed_cases": len(cases) + len(auxiliary), "expected_cases": len(WIDTHS) + 2,
+        "cases": cases, "reduced_motion": auxiliary, "errors": errors,
+        "gates": {
+            "hosted_in_memory_candidate": "PASS" if valid and axe_ok else "FAIL",
+            "contrast_axe_instrumentation": "PASS" if axe_ok else "FAIL",
+            "editorial_rights": "HOLD", "manual_wcag_22_aa": "HOLD",
+            "independent_qd": "HOLD", "production_release": "HOLD",
+        }
+    }
+
+
+def bounded_probe(axe_source: Path, output: Path, case_timeout: int = 90) -> dict:
+    if not 15 <= case_timeout <= 120:
+        raise ValueError("INVALID_CASE_TIMEOUT")
+    if not axe_source.is_file() or axe_source.stat().st_size < 10000:
+        raise ValueError("AXE_MISSING_FAIL_CLOSED")
+    records: list[dict] = []
+    auxiliary: list[dict] = []
+    errors: list[dict] = []
+    jobs = [("width", n) for n in WIDTHS] + [("reduced", n) for n in REDUCED_JS]
+    ctx = mp.get_context("spawn")
+    for kind, value in jobs:
+        print(f"START CASE {kind}:{value}", flush=True)
+        q = ctx.Queue()
+        child = ctx.Process(target=_bounded_worker,
+                            args=(kind, value, str(axe_source), q), daemon=True)
+        try:
+            child.start()
+            child.join(case_timeout)
+            if child.is_alive():
+                child.terminate()
+                child.join(4)
+                if child.is_alive():
+                    child.kill()
+                    child.join(2)
+                errors.append({"case": f"{kind}:{value}", "reason": "CASE_TIMEOUT"})
+            else:
+                try:
+                    observed = q.get(timeout=3)
+                except Empty:
+                    observed = {"error": "NO_CASE_RECEIPT"}
+                if "error" in observed:
+                    errors.append({"case": f"{kind}:{value}", "reason": observed["error"]})
+                else:
+                    records.extend(observed["cases"])
+                    auxiliary.extend(observed["reduced_motion"])
+        finally:
+            q.close()
+            q.cancel_join_thread()
+        receipt = assemble_bounded(records, auxiliary, errors)
+        # Checkpoint *after every case*, including timeouts and exceptions.
+        output.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\\n",
+                          encoding="utf-8")
+        print(f"END CASE {kind}:{value}; complete={receipt['completed_cases']}/"
+              f"{receipt['expected_cases']}; errors={len(errors)}", flush=True)
+    return assemble_bounded(records, auxiliary, errors)
+
+
 class SourceGuards(unittest.TestCase):
+    def test_partial_or_duplicate_bounded_receipts_fail_closed(self):
+        r = assemble_bounded([], [], [])
+        self.assertEqual(r['gates']['hosted_in_memory_candidate'], 'FAIL')
+        self.assertEqual(r['completed_cases'], 0)
+        sample = {'width': 390, 'status': 200, 'count': 72}
+        r = assemble_bounded([sample, sample], [], [])
+        self.assertEqual(r['gates']['hosted_in_memory_candidate'], 'FAIL')
+        self.assertEqual(r['gates']['contrast_axe_instrumentation'], 'FAIL')
+        self.assertEqual(r['gates']['production_release'], 'HOLD')
+
+    def test_bounded_timeout_validation(self):
+        with self.assertRaises(ValueError):
+            bounded_probe(Path('/missing/axe.js'), Path('/tmp/none'), case_timeout=121)
+        with self.assertRaises(ValueError):
+            bounded_probe(Path('/missing/axe.js'), Path('/tmp/none'), case_timeout=14)
+
     def test_reject_non_get(self):
         self.assertTrue(denied("POST", URL))
         self.assertTrue(denied("DELETE", URL))
@@ -310,6 +422,7 @@ def main() -> int:
     p.add_argument("--axe-source")
     p.add_argument("--output")
     p.add_argument("--self-test", action="store_true")
+    p.add_argument("--case-timeout", type=int, default=90)
     args = p.parse_args()
     if args.self_test:
         suite = unittest.defaultTestLoader.loadTestsFromTestCase(SourceGuards)
@@ -317,7 +430,7 @@ def main() -> int:
     if not args.axe_source or not args.output:
         p.error("hosted run requires --axe-source and --output")
     try:
-        receipt = probe(Path(args.axe_source))
+        receipt = bounded_probe(Path(args.axe_source), Path(args.output), args.case_timeout)
     except Exception as exc:
         receipt = {"scope": "ANONYMOUS_HOSTED_IN_MEMORY_MARGINS",
                    "status": "INSTRUMENTATION_FAILURE",
