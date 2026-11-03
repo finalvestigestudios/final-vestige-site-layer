@@ -24,10 +24,10 @@ jobs:
           test -n "${RUNNER_TEMP:-}" && test -n "${GITHUB_ENV:-}"
           test -d "$RUNNER_TEMP"
           {
-            printf 'FV_THEME_PARENT=%s\\n' "$RUNNER_TEMP/ex2-official-assembler"
-            printf 'FV_SCREEN_DIR=%s\\n' "$RUNNER_TEMP/ex2-synthetic-screens"
-            printf 'FV_CANDIDATE=%s\\n' "$RUNNER_TEMP/ex2-full-source-assembler.html"
-            printf 'FV_MANIFEST=%s\\n' "$RUNNER_TEMP/ex2-full-source-assembler.manifest.json"
+            printf 'FV_THEME_PARENT=%s\n' "$RUNNER_TEMP/ex2-official-assembler"
+            printf 'FV_SCREEN_DIR=%s\n' "$RUNNER_TEMP/ex2-synthetic-screens"
+            printf 'FV_CANDIDATE=%s\n' "$RUNNER_TEMP/ex2-full-source-assembler.html"
+            printf 'FV_MANIFEST=%s\n' "$RUNNER_TEMP/ex2-full-source-assembler.manifest.json"
           } >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
