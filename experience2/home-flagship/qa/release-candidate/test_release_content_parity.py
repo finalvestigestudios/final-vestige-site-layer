@@ -33,7 +33,7 @@ class ReleaseCandidateParityTests(unittest.TestCase):
     def test_css_first_boundary_does_not_hide_missing_chapters(self):
         raw = PAYLOAD.decode("utf-8").replace(
             '<section class="fv-hf__opening"', '<section class="fv-hf__lost-opening"', 1)
-        with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_CHAPTER_BOUNDARY"):
+        with self.assertRaisesRegex(ValueError, "RELEASE_PARITY_WRAPPER_MISSING"):
             parity.compare_interiors(SOURCE.decode("utf-8"), raw)
 
     def test_independent_repo_fixture_is_accessible(self):
