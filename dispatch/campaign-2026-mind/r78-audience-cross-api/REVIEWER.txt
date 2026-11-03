@@ -1,0 +1,42 @@
+FINAL VESTIGE STUDIOS — THE DISPATCH
+R78 | November 2, 2026 | AUDIENCE STATUS: HOLD_UNSENT
+This is a reviewer board, NOT a newsletter email or permission to send.
+
+WHAT WE KNOW FROM THREE AUTHENTICATED WORDPRESS OPERATIONS
+newsletter.status, November 3, 00:36:37 UTC:
+  total 2 | confirmed 2 | unconfirmed 2 | suppressed 0
+  site_can_send true | recent_sends 0
+newsletter.get_settings, November 3, 00:36:42 UTC:
+  Jetpack on | new-post auto-email off | excerpt delivery
+  52-page Focus Fieldbook welcome message configured (receipt NOT verified)
+wpcom_jetpack_stats_followers, same audit:
+  total 2 | email 0 | WordPress.com 2 | comment 0
+  partial false
+
+INTERPRETATION
+The two APIs describe different categories and are in disagreement
+about the email audience. Do NOT infer that 0, 2, or 4 people will
+receive the newsletter. Confirmed, unconfirmed and total are NOT additive.
+EMAIL-ELIGIBLE COUNT: UNKNOWN.
+
+FIRST NEXT ACTION (READ-ONLY)
+Jetpack > Newsletter > Subscribers: filter Email Subscription = Subscribed.
+Separately filter Not sending (any reason), including bounced/paused.
+Record aggregate counts, filter criteria, interface, and observation time.
+Do NOT export names, addresses, CSV, private opt-out tokens, or partner URLs.
+
+RELEASE HOLDS
+Four editorial and two commercial-reserved pilot issues.
+ALL SIX: HOLD_UNSENT. Issues 03 / 05: HOLD_MERCHANT.
+Authorized real received email: NO.
+Publisher postal address and functional opt-out: NOT VERIFIED.
+Final Vestige partner email rights and live approved pre-sell guides: NOT VERIFIED.
+Founder final approval: NOT GIVEN.
+No sends, test emails, scheduled posts, WordPress settings writes, tracking,
+subscriber imports, merchant contact, or changes to homepage PR #49.
+
+Sources:
+https://wordpress.com/support/subscribers/
+https://wordpress.com/support/newsletter/email-appearance/
+https://wordpress.com/support/newsletter/send-newsletter-emails/
+https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
