@@ -57,6 +57,10 @@ def original_packet() -> dict:
 
 
 def create_payload(workorder: dict) -> dict[str, bytes]:
+    # An amended/resealed input packet cannot establish its own provenance.
+    # Reconstruct from the actual authored sources before rendering any bytes.
+    need(workorder == original_packet(),
+         "R103 reviewer workorder differs from independently replayed sources")
     need(workorder.get("schema") == r103.SCHEMA
          and workorder.get("release_state") == HOLD
          and workorder.get("may_publish") is False
