@@ -19,7 +19,7 @@ def healthy():
             "width": width, "http_status": 200, "host": HOST,
             "chapters": 7, "margins": 72, "focus_links": 5,
             "nypl_source_links": 2, "images_before": 3,
-            "images_after": 2, "nypl_transferred_bytes": 0,
+            "images_after": 2, "nypl_http_responses": 0,
             "blocked_nypl_requests": 1, "blocked_non_get_requests": 0,
             "non_get_requests_allowed": 0, "overflow_after": False,
             "nypl": {
@@ -127,9 +127,9 @@ class IntegratedQualificationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "WIDTH_768"):
             self.accept(rows)
 
-    def test_nypl_bytes_rejected(self):
+    def test_unexpected_nypl_http_response_rejected(self):
         rows = healthy()
-        rows[-1]["nypl_transferred_bytes"] = 12
+        rows[-1]["nypl_http_responses"] = 1
         with self.assertRaisesRegex(ValueError, "WIDTH_1920"):
             self.accept(rows)
 
