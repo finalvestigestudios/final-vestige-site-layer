@@ -40,7 +40,12 @@ class CompleteDocumentAxeRegression(unittest.TestCase):
         axe = self.script.index("await page.addScriptTag({path:axePath})")
         self.assertLess(screenshot, axe)
         self.assertIn("fullPage:false", self.script)
-        self.assertIn("const item=await checkView(page,width,axePath,outputDirectory)", self.script)
+        self.assertIn("width=>checkView(page,width,axePath,outputDirectory)", self.script)
+        self.assertIn("collectViewportEvidence(", self.script)
+        self.assertIn("if(viewportFailures.length)", self.script)
+        self.assertIn("ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD", self.script)
+        self.assertLess(self.script.index("await noContext.close();"),
+                        self.script.index("if(viewportFailures.length)"))
 
     def test_existing_branch_still_requires_disposable_loopback(self):
         self.assertIn("assert.ok(loopback(server.serverUrl))", self.script)
