@@ -76,8 +76,8 @@ class R101(unittest.TestCase):
 
     def test_all_original_citations_and_navigation_survive(self):
         wp, preview, receipt = self.candidate()
-        self.assertEqual(receipt["original_citation_occurrences"], 6)
-        self.assertEqual(receipt["candidate_citation_occurrences"], 6)
+        self.assertEqual(receipt["original_citation_occurrences"], 7)
+        self.assertEqual(receipt["candidate_citation_occurrences"], 7)
         self.assertEqual(receipt["eight_assumptions"], [x[0] for x in gate.FIELDS])
         self.assertIn("cdc-water-store", self.original)
         self.assertIn("ready-pets", self.original)
@@ -271,9 +271,17 @@ for field in (x[0] for x in gate.FIELDS):
     add_bad_source_mutation(
         "missing_input_" + safe,
         lambda b, m, f=field: (b.replace('id="' + f + '"', 'id="wrong-' + f + '"'), m))
-    add_bad_source_mutation(
-        "lost_label_" + safe,
-        lambda b, m, f=field: (b.replace('for="' + f + '"', 'for="unknown-' + f + '"'), m))
+    if field == "wp-hot":
+        # The checkbox is inside a wrapping <label>, not linked by for=.
+        add_bad_source_mutation(
+            "lost_label_" + safe,
+            lambda b, m: (b.replace('<label class="pa-tool-check"><input id="wp-hot"',
+                                    '<span class="pa-tool-check"><input id="wp-hot"'), m))
+    else:
+        add_bad_source_mutation(
+            "lost_label_" + safe,
+            lambda b, m, f=field: (b.replace('for="' + f + '"',
+                                            'for="unknown-' + f + '"'), m))
     add_bad_source_mutation(
         "duplicate_input_" + safe,
         lambda b, m, f=field: (b.replace('<button type="button" class="pa-btn" id="wp-print">',
