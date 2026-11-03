@@ -123,6 +123,12 @@
       "kind": "FV-standards",
       "url": "https://finalvestige.com/editorial-standards/",
       "note": "Independent fact/evidence separation."
+    },
+    {
+      "id": "S21",
+      "kind": "public-affiliate-recruitment-NOT-authorization",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public affiliate recruitment claims are not verified account-specific acceptance, payouts, channel rights or approved swipe assets. Login-only creatives unavailable."
     }
   ],
   "decisions": [
@@ -361,7 +367,7 @@
       "id": "C34",
       "claim": "Inspire3 public affiliate recruitment proves FV approval",
       "assessment": "reject",
-      "source": "S08",
+      "source": "S21",
       "limit": "Partner-specific written authorization needed."
     },
     {
@@ -396,7 +402,7 @@
       "id": "C39",
       "claim": "Public affiliate creative is authorized for reuse",
       "assessment": "not-verified",
-      "source": "S08",
+      "source": "S21",
       "limit": "Must confirm rights to copy/assets."
     },
     {
