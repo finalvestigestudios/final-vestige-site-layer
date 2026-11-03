@@ -104,7 +104,7 @@ def verify_workflow(source: str) -> int:
             if ('mkdir -p "$RUNNER_TEMP/fvs-source"' not in evidence_step or
                     'run: |' not in evidence_step):
                 raise SourceContractError('Private Linux evidence directory not established')
-            if not any('uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' in step for step in steps[provenance[0] + 1:]):
+            if not any('uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f' in step for step in steps[provenance[0] + 1:]):
                 raise SourceContractError('Linux provenance evidence is not retained')
         else:
             provenance = _command_steps(steps, WINDOWS_CMD)
