@@ -1,5 +1,8 @@
 name: Preparedness R101 Printable Assumptions Candidate (PRIVATE HOLD)
 on:
+  push:
+    branches:
+      - review/preparedness-r101-print-context-preview-hold-20261103
   pull_request:
     branches:
       - review/preparedness-r100-planner-print-assumptions-hold-20261103
