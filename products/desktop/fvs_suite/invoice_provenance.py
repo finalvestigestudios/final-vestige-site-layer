@@ -61,7 +61,7 @@ def attach_invoice_provenance(
             raise ValueError("Invoice candidate has an unsupported review classification")
         unordered = frozenset((a, b))
         if unordered in seen_pairs:
-            raise ValueError("Duplicate or conflicting invoice candidate pair; no report was saved")
+            raise ValueError("Duplicate invoice candidate pair; no report was saved")
         seen_pairs.add(unordered)
         locator = json.dumps(
             {"row_a": a, "row_b": b, "status": status},
