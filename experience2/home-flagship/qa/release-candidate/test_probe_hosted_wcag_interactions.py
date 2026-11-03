@@ -62,6 +62,28 @@ class HostedAxeInteractionAdmissionTests(unittest.TestCase):
         self.assertNotIn("secret", str(report))
         self.assertNotIn("private", str(report))
 
+    def test_localized_contrast_hint_leaks_no_html_or_selectors(self):
+        raw = {
+            "violations": [{
+                "id": "color-contrast", "impact": "serious",
+                "nodes": [{"html": "<private>subscriber</private>",
+                           "target": ["#account-123"],
+                           "location_probe": {
+                               "scope": "flagship", "tag": "span",
+                               "fv_classes": ["fv-hf__label", "secret-email-abc"],
+                               "color": "rgb(255, 255, 255)",
+                               "background": "rgb(10, 10, 10)"}}],
+            }],
+            "incomplete": [], "passes": [],
+        }
+        result = compact_axe(raw)
+        item = result["violations"][0]["safe_locations"][0]
+        self.assertEqual(item["fv_classes"], ["fv-hf__label"])
+        self.assertEqual(item["scope"], "flagship")
+        self.assertNotIn("account", str(result))
+        self.assertNotIn("subscriber", str(result))
+        self.assertNotIn("secret-email", str(result))
+
     def test_missing_axe_must_fail_closed(self):
         for bad in (None, {}, {"violations": [], "incomplete": []},
                     {"violations": [{"id": "color-contrast"}],
