@@ -53,7 +53,7 @@ class SyncedPatternHoldTests(unittest.TestCase):
         self.assertIn('R77_AXE_VIOLATIONS', R81_FAILURE_CODES)
         self.assertEqual(R81_PHASES, {
             'NAVIGATION','NETWORK','ASSET_DISCOVERY','CUSTODY',
-            'INTERACTION','ACCESSIBILITY','PERFORMANCE','PRINT',
+            'INTERACTION','ACCESSIBILITY','PERFORMANCE','PRINT','CLEANUP',
         })
         self.assertTrue(all(s.startswith('R77_') for s in R81_FAILURE_CODES))
 
