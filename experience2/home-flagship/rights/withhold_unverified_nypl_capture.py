@@ -154,15 +154,16 @@ def main() -> None:
         ap.error("Refusing to overwrite source or use source as report")
     if len(args.expected_sha256) != 64 or not all(c in "0123456789abcdef" for c in args.expected_sha256):
         ap.error("Expected lowercase 64-character source SHA-256")
-    raw = args.source.read_text(encoding="utf-8")
-    actual = hashlib.sha256(raw.encode("utf-8")).hexdigest()
+    raw_bytes = args.source.read_bytes()
+    actual = hashlib.sha256(raw_bytes).hexdigest()
     if actual != args.expected_sha256:
         ap.error("Exact source SHA-256 mismatch; abort without writing candidate")
+    raw = raw_bytes.decode("utf-8")  # Do not normalize Windows CRLF.
     candidate, report = patch_homepage(raw)
     if args.output.exists() or args.report.exists():
         ap.error("Output/report already exists; refuse overwrite")
-    args.output.write_text(candidate, encoding="utf-8")
-    args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    args.output.write_bytes(candidate.encode("utf-8"))
+    args.report.write_bytes((json.dumps(report, indent=2) + "\n").encode("utf-8"))
     print(json.dumps(report, indent=2))
 
 
