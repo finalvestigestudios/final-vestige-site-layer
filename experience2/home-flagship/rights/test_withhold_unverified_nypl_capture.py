@@ -171,6 +171,25 @@ class RightsSafeCandidateTests(unittest.TestCase):
             again = subprocess.run(cmd, capture_output=True, text=True)
             self.assertNotEqual(again.returncode, 0)
 
+    def test_cli_windows_crlf_exact_byte_preservation(self):
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            raw_path = base / "raw-crlf.html"
+            output = base / "candidate-crlf.html"
+            report = base / "report-crlf.json"
+            raw_bytes = self.raw.replace("><", ">\r\n<").encode("utf-8")
+            raw_path.write_bytes(raw_bytes)
+            sha = hashlib.sha256(raw_bytes).hexdigest()
+            run = subprocess.run(
+                [sys.executable, str(SCRIPT), "--source", str(raw_path),
+                 "--output", str(output), "--report", str(report),
+                 "--expected-sha256", sha],
+                capture_output=True, text=True
+            )
+            self.assertEqual(run.returncode, 0, run.stderr)
+            self.assertIn(b"\r\n", output.read_bytes())
+            self.assertEqual(json.loads(report.read_text())["source_sha256"], sha)
+
     def test_cli_wrong_hash_never_writes(self):
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
