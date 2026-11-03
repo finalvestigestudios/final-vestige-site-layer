@@ -18,6 +18,8 @@ def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 class MobileGalleryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        if not os.environ.get('APOLLO_R103_R99'):
+            raise unittest.SkipTest('R103 sealed fixture required; dedicated R103 CI supplies APOLLO_R103_R99')
         cls.src=Path(os.environ['APOLLO_R103_R99']).resolve()
         validate(cls.src)
 
