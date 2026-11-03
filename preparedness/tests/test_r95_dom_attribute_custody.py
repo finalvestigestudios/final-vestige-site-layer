@@ -199,8 +199,15 @@ for _kind, _old, _new in MUTATIONS:
         def _case(self, kind=_kind, old=_old, new=_new, i=_i):
             needle = old.format(i=i)
             replacement = new.format(i=i)
-            self.assertIn(needle, self.out, (kind, i))
-            changed = self.out.replace(needle, replacement, 1)
+            # Select the exact source paragraph/section for this ordinal. Generic
+            # attributes must not make all eight cases mutate only item 1.
+            start_tag = '<section data-slot="' + str(i) + '">'
+            start = self.out.index(start_tag)
+            end = self.out.index('</section>', start) + len('</section>')
+            targeted = self.out[start:end]
+            self.assertIn(needle, targeted, (kind, i))
+            changed = (self.out[:start] + targeted.replace(needle, replacement, 1)
+                       + self.out[end:])
             with self.assertRaises(gate.Gate,
                                    msg="DOM/attribute mutation escaped: " + kind + " " + str(i)):
                 self.check(rendered=changed)
