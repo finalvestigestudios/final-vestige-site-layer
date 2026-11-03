@@ -131,6 +131,51 @@ class R92HappyPath(unittest.TestCase):
         self.assertTrue(all(x['may_publish'] is False for x in r['all_literal_shared_URL_review_dossiers_NOT_APPROVED']))
 
 
+    def test_025_frozen_R91_body_drift_explicitly_review_only(self):
+        lib,p=sample()
+        p['all_literal_citation_claim_boundary_review_rows_NOT_APPROVED'][0]['literal_source_ID']='prior-s'
+        p['sha256_seal']=r92.digest({k:v for k,v in p.items() if k!='sha256_seal'})
+        r=r92.index(lib,p,allow_historical_body_drift=True)
+        self.assertEqual(r['counts']['historical_raw_body_citation_alignment_review_cues'],1)
+        self.assertEqual(r['all_R91_vs_current_raw_body_citation_drift_workorders_NOT_APPROVED'][0]['sealed_R91_source_ID_OR_NONE'],'prior-s')
+        self.assertEqual(r['all_literal_shared_URL_review_dossiers_NOT_APPROVED'][0]['all_literal_release_candidate_citation_links_NOT_APPROVED'][0]['source_match_to_R91_claim_NOT_PROVEN'],False)
+
+    def test_026_frozen_R91_drift_refuses_to_claim_equivalence(self):
+        lib,p=sample()
+        p['all_literal_citation_claim_boundary_review_rows_NOT_APPROVED'][0]['literal_source_ID']='prior-s'
+        p['sha256_seal']=r92.digest({k:v for k,v in p.items() if k!='sha256_seal'})
+        with self.assertRaises(r92.Gate):
+            r92.index(lib,p)
+        report=r92.index(lib,p,allow_historical_body_drift=True)
+        r92.verify(report,lib,p,allow_historical_body_drift=True)
+
+    def test_027_extra_raw_body_citation_kept_unpaired(self):
+        lib,p=sample()
+        lib.articles['alpha']['_body']='Synthetic words {{cite:s}} {{cite:s}}'
+        report=r92.index(lib,p,allow_historical_body_drift=True)
+        self.assertEqual(report['counts']['current_raw_body_citation_occurrences'],2)
+        self.assertEqual(report['counts']['historical_raw_body_citation_alignment_review_cues'],1)
+        self.assertEqual(report['counts']['citation_occurrences'],1)
+
+    def test_028_missing_raw_body_citation_keeps_sealed_parent(self):
+        lib,p=sample()
+        lib.articles['alpha']['_body']='Synthetic words'
+        report=r92.index(lib,p,allow_historical_body_drift=True)
+        self.assertEqual(report['counts']['current_raw_body_citation_occurrences'],0)
+        self.assertEqual(report['counts']['historical_raw_body_citation_alignment_review_cues'],1)
+        self.assertEqual(report['all_R91_vs_current_raw_body_citation_drift_workorders_NOT_APPROVED'][0]['sealed_R91_source_ID_OR_NONE'],'s')
+
+    def test_029_resealed_tampered_mismatch_workorder_rejected(self):
+        lib,p=sample()
+        p['all_literal_citation_claim_boundary_review_rows_NOT_APPROVED'][0]['literal_source_ID']='prior-s'
+        p['sha256_seal']=r92.digest({k:v for k,v in p.items() if k!='sha256_seal'})
+        report=r92.index(lib,p,allow_historical_body_drift=True)
+        report['all_R91_vs_current_raw_body_citation_drift_workorders_NOT_APPROVED'][0]['may_publish']=True
+        report['sha256_seal']=r92.digest({k:v for k,v in report.items() if k!='sha256_seal'})
+        with self.assertRaises(r92.Gate):
+            r92.verify(report,lib,p,allow_historical_body_drift=True)
+
+
 # Each independently named test guards a concrete evidence-tampering mutation.
 MUTATIONS={
     'parent_schema':lambda l,p:p.__setitem__('schema','untrusted'),
