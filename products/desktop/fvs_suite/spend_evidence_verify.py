@@ -143,6 +143,8 @@ class _PrivateParser(argparse.ArgumentParser):
 
     def parse_args(self, args: Sequence[str] | None = None, namespace=None):
         tokens = list(sys.argv[1:] if args is None else args)
+        if len(tokens) == 1 and tokens[0] in ("--help", "-h"):
+            return super().parse_args(tokens, namespace)
         options = [t.partition("=")[0] for t in tokens]
         if (any(type(t) is not str for t in tokens)
                 or any(options.count(flag) != 1 for flag in ("--source", "--report"))
