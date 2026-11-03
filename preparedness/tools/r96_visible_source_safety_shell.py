@@ -99,8 +99,14 @@ class Witness(HTMLParser):
             if sensitive_here and not print_button and any(
                     k.startswith("on") or k in ("ping", "download") for k in attrs):
                 raise Gate("event handler or link side effect in critical evidence: " + tag)
-            for name in self.counts:
+            if sensitive_here and attrs.get("role") in ("presentation", "none"):
+                raise Gate("critical evidence removed from accessibility tree: " + tag)
+            region_tags = {"pa-head": "header", "pa-body": "div",
+                           "pa-sources": "section", "pa-review": "section"}
+            for name, expected_tag in region_tags.items():
                 if name in classes:
+                    need(tag == expected_tag,
+                         "wrong element kind for critical shell region: " + name)
                     need(self.counts[name] == 0, "duplicate critical shell region: " + name)
                     self.counts[name] += 1
             if "pa-cite" in classes:
