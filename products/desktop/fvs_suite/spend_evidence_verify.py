@@ -24,6 +24,7 @@ from .manifest_guard import _hash_regular, MAX_INPUT_BYTES, MAX_REPORT_BYTES
 from .spend_input import validated_spend_rows
 from .spend_review_verify import FIELDS as REVIEW_FIELDS, compute_expected_review_fields
 from .spend_label_verify import expected_vendor_labels
+from .spend_report_envelope import COLUMNS as NATIVE_SPEND_COLUMNS
 
 LIMIT = 32
 DOMAIN = b"FVS-SPEND-VENDOR-MONTH-LINES-v1\n"
@@ -92,6 +93,8 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
             raise ValueError("Private source snapshot mismatch")
 
         groups: dict[tuple[str, str], list[int]] = defaultdict(list)
+        # Preserve pre-CSV-escape category order of the native report writer.
+        native_buckets: set[tuple[str, str, str]] = set()
         buckets: dict[tuple[str, str, str], list[str]] = defaultdict(list)
         # Independent Decimal aggregation: do not call summarize_spend, its
         # gross/net helpers, or report rendering code. The shared strict CSV
@@ -112,6 +115,7 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
                     records, normalize_vendor=engine.key, parse_date=engine.parse_date,
                     parse_money=engine.money):
                 group = (vendor, month)
+                native_buckets.add((vendor, month, category))
                 # The CSV exporter protects leading spreadsheet formulas.
                 bucket = (vendor, month, engine.safe_cell(category))
                 groups[group].append(int(record["row"]))
@@ -163,14 +167,20 @@ def verify_membership(source: str | Path, report: str | Path) -> MembershipRecei
         decoded = report_bytes.decode("utf-8-sig")
         reader = csv.DictReader(io.StringIO(decoded, newline=""), strict=True)
         headers = reader.fieldnames
-        if (headers is None or len(headers) != len(set(headers))
-                or not (REQUIRED | REVIEW_FIELDS).issubset(headers)):
-            raise ValueError("Missing or ambiguous SpendMap evidence columns")
+        if tuple(headers or ()) != NATIVE_SPEND_COLUMNS:
+            raise ValueError("Unexpected native SpendMap evidence schema")
+        # Native export sorts on source category before spreadsheet escaping.
+        # Do not accept a rearranged yet numerically correct audit report as
+        # the canonical deterministic native export.
+        expected_order = iter((vendor, month, engine.safe_cell(category))
+                              for vendor, month, category in sorted(native_buckets))
         seen = set()
         for entry in reader:
             if None in entry or any(value is None for value in entry.values()):
                 raise ValueError("Malformed SpendMap evidence row")
             bucket = (entry["vendor_key"], entry["month"], entry["category"])
+            if bucket != next(expected_order, None):
+                raise ValueError("SpendMap report rows are not in native export order")
             if bucket in seen or bucket not in buckets:
                 raise ValueError("Duplicate or unexpected category evidence")
             seen.add(bucket)
