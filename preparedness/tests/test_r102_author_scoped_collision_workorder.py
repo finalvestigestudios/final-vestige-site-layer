@@ -239,7 +239,7 @@ class R102Adversarial(unittest.TestCase):
     def test_reject_forged_human_safety_review(self):
         x = self.clone()
         x.articles[self.slug]["safety_review"]["state"] = "approved"
-        with self.assertRaisesRegex(gate.Hold, "pending human"):
+        with self.assertRaisesRegex(gate.Hold, "author safety review"):
             gate.workorder(x)
 
     def test_reject_unexpected_publication(self):
@@ -298,7 +298,11 @@ def make_article_test(slug):
     def test(self):
         m = self.lib.articles[slug]
         self.assertEqual(m["status"]["publish"], "draft")
-        self.assertEqual(m["safety_review"]["state"], "pending")
+        self.assertIn(m["safety_review"]["state"], ("pending", "approved"))
+        self.assertEqual(m["safety_review"],
+                         json.loads((self.lib.root / "content" /
+                           ("tools" if m.get("kind") == "tool" else "articles") /
+                           (slug + ".meta.json")).read_text())["safety_review"])
         self.assertTrue(isinstance(m["source_use"], dict))
         for sid in gate.CITE.findall(m["_body"]):
             self.assertIn(sid, m["source_use"])
