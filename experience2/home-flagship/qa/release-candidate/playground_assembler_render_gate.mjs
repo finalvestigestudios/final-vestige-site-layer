@@ -120,6 +120,22 @@ async function imageBodies(page){
       JSON.stringify(rows.filter(x=>!x.pass)));
   return rows;
 }
+// The builder appends all four executable sources AFTER the closed flagship
+// root. They are Gutenberg custom HTML block siblings, not descendants of
+// [data-fv-home-flagship]. Never mistake a root-scoped count of zero for
+// evidence that WordPress stripped source JS. Still fail closed if any are
+// truly absent, duplicated, reordered, or replaced in the rendered document.
+const EXPECTED_RENDERED_SCRIPTS=Object.freeze([
+  'flagship.js','observer-lab.js','chronicle-lens.js','reading-trail.js'
+]);
+export function renderedScriptNames(documentScope=globalThis.document){
+  return [...documentScope.querySelectorAll('script[data-fv-source]')]
+    .map(s=>s.getAttribute('data-fv-source'));
+}
+export function assertRenderedScriptNames(names){
+  assert.deepEqual(names,EXPECTED_RENDERED_SCRIPTS,
+    'Missing, duplicated, reordered or unauthorized rendered flagship JS');
+}
 async function checkView(page,width,axePath,outputDirectory){
   await page.setViewportSize({width,height:900});
   await page.goto(page.stageUrl,{waitUntil:'domcontentloaded',timeout:90000});
@@ -133,7 +149,8 @@ async function checkView(page,width,axePath,outputDirectory){
       focus:(document.body.innerText.match(/Focus Fieldbook/g)||[]).length,
       overflow:document.documentElement.scrollWidth>innerWidth+1,
       main:!!root.querySelector('main'),h1:!!root.querySelector('h1'),
-      inline_scripts:root.querySelectorAll('script[data-fv-source]').length,
+      // Executable sources are Gutenberg siblings AFTER the flagship root.
+      // Inspect them independently at DOCUMENT scope below.
       // The styling must exist in the SAVED Gutenberg source; page.addStyleTag
       // (except axe-core JS below) must never be used as a fake release pass.
       saved_layout_styles:document.querySelectorAll('style[data-fv-stage-only="assembler-saved-layout"]').length,
@@ -150,6 +167,13 @@ async function checkView(page,width,axePath,outputDirectory){
           first_position:first?getComputedStyle(first).position:'missing'};
       })()};
   });
+  const sourceScripts=await page.evaluate(renderedScriptNames);
+  state.inline_scripts=sourceScripts.length;
+  state.inline_script_names=sourceScripts;
+  // The receipt is safe metadata only: file basenames, no source, credentials,
+  // subscriber data, or DOM content. It survives later accessibility failure.
+  console.log(JSON.stringify({event:'EX2_RENDERED_SCRIPT_CUSTODY',width,
+    names:sourceScripts}));
   // Capture SAVED WordPress layout before any assertion or axe failure.
   // These are not browser-overlay corrected screenshots.
   await mkdir(outputDirectory,{recursive:true});
@@ -164,7 +188,8 @@ async function checkView(page,width,axePath,outputDirectory){
   assert.equal(state.margins,72);
   assert.ok(state.focus>=1);
   assert.equal(state.overflow,false,`Horizontal overflow at ${width}`);
-  assert.equal(state.main,true);assert.equal(state.h1,true);assert.equal(state.inline_scripts,4);
+  assert.equal(state.main,true);assert.equal(state.h1,true);
+  assertRenderedScriptNames(sourceScripts);
   assert.equal(state.saved_layout_styles,1,'Assembler styles must be persisted in Gutenberg');
   assert.ok(state.root_width>=width-2 && state.root_width<=width+2,
     `SAVED Assembler full-bleed canvas failed at ${width}: ${state.root_width}px (620px theme baseline)`);
