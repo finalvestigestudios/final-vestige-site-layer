@@ -1,6 +1,6 @@
 """Source-level regression checks; browser acceptance runs in the companion workflow."""
 import unittest
-from probe_margin_strip_contrast import BASE_CSS, CSS, WIDTHS, PHASES, fixture, contrast
+from probe_margin_strip_contrast import BASE_CSS, CSS, WIDTHS, PHASES, fixture, contrast, screenshot_path
 
 class MarginStripRemedyTests(unittest.TestCase):
     @classmethod
@@ -53,6 +53,12 @@ class MarginStripRemedyTests(unittest.TestCase):
     def test_contrast_math_is_sensitive_to_alpha(self):
         self.assertLess(contrast("rgb(216, 210, 199)","rgb(15, 16, 15)",.42),4.5)
         self.assertGreater(contrast("rgb(216, 210, 199)","rgb(15, 16, 15)",1.0),7.0)
+
+    def test_screenshot_path_is_valid_and_uses_filename_inside_directory(self):
+        self.assertEqual(str(screenshot_path("/tmp/demo", True)),
+                         "/tmp/demo/corrected_390.png")
+        self.assertEqual(str(screenshot_path("/tmp/demo", False)),
+                         "/tmp/demo/baseline_390.png")
 
     def test_matrix_has_mobile_desktop_and_wraparound(self):
         self.assertEqual(WIDTHS,(320,390,768,1440,1920))
