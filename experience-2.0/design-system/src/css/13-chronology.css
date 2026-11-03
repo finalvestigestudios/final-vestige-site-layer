@@ -1,0 +1,31 @@
+/* Interactive chronology. The list is the content; the axis and slider are optional enhancements.
+   Marker positions are proportional to documented times. The line between markers is dashed on purpose:
+   nothing is measured there. */
+.fv-ex2-chronology { display: grid; gap: var(--fvx-s-5); padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--fvx-raised); border: 1px solid var(--fvx-line); }
+.fv-ex2-chronology__title { font-size: var(--fvx-fs-h3); }
+.fv-ex2-chronology__axis { position: relative; height: 3.25rem; margin-inline: 1.25rem; }
+.fv-ex2-chronology__line { position: absolute; left: 0; right: 0; top: 50%; border-top: 2px dashed var(--fvx-line-strong); }
+.fv-ex2-chronology__dot {
+  position: absolute; top: 50%; left: calc(var(--fvx-p) * 1%); transform: translate(-50%, -50%);
+  width: 1.75rem; height: 1.75rem; display: grid; place-items: center; border-radius: 50%;
+  background: var(--fvx-ink); border: 2px solid var(--fvx-gold-deep); color: var(--fvx-text);
+  font-family: var(--fvx-font-catalog); font-size: 0.75rem; font-weight: 700;
+  transition: background-color var(--fvx-dur-fast) var(--fvx-ease), color var(--fvx-dur-fast) var(--fvx-ease);
+}
+.fv-ex2-chronology__dot[data-passed="true"] { background: var(--fvx-gold); color: var(--fvx-paper-ink); border-color: var(--fvx-gold); }
+.fv-ex2-chronology__cursor { position: absolute; top: 0; bottom: 0; left: calc(var(--fvx-p) * 1%); width: 0; border-left: 2px solid var(--fvx-text); transition: left var(--fvx-dur-fast) linear; }
+.fv-ex2-chronology__tool { display: grid; gap: var(--fvx-s-3); }
+.fv-ex2-chronology__tool label { font-size: var(--fvx-fs-small); font-weight: 600; }
+.fv-ex2-chronology__range { width: 100%; min-height: 2.75rem; accent-color: var(--fvx-gold); background: transparent; }
+.fv-ex2-chronology__readout { padding: var(--fvx-s-4); border: 1px solid var(--fvx-line-strong); font-size: var(--fvx-fs-small); line-height: 1.6; min-height: 5.5rem; }
+.fv-ex2-chronology__list { display: grid; gap: 0; counter-reset: fvx-marker; }
+.fv-ex2-chronology__item {
+  counter-increment: fvx-marker; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: var(--fvx-s-1) var(--fvx-s-4);
+  padding-block: var(--fvx-s-4); border-top: 1px solid var(--fvx-line);
+}
+.fv-ex2-chronology__item::before { content: counter(fvx-marker); grid-row: span 3; font-family: var(--fvx-font-catalog); color: var(--fvx-gold); font-weight: 700; }
+.fv-ex2-chronology__time { font-family: var(--fvx-font-catalog); font-size: 0.8125rem; color: var(--fvx-gold); }
+.fv-ex2-chronology__label { font-weight: 600; color: var(--fvx-text); }
+.fv-ex2-chronology__note { font-size: var(--fvx-fs-small); color: var(--fvx-text-muted); }
+.fv-ex2-chronology__item[data-passed="true"] .fv-ex2-chronology__label { color: var(--fvx-gold); }
+.fv-ex2-chronology__notice { font-size: var(--fvx-fs-small); color: var(--fvx-text-muted); border-left: 3px solid var(--fvx-amber); padding-left: var(--fvx-s-4); }

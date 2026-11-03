@@ -1,0 +1,26 @@
+/* Cinematic editorial hero. The background photograph is decorative (alt=""), and its credit is printed on the page. */
+.fv-ex2-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--fvx-ink); min-height: min(52rem, 88svh); display: grid; align-items: end; }
+.fv-ex2-hero__media { position: absolute; inset: 0; z-index: -2; }
+.fv-ex2-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 34%; opacity: 0.45; }
+.fv-ex2-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(9, 10, 10, 0.72) 0%, rgba(9, 10, 10, 0.55) 40%, rgba(9, 10, 10, 0.92) 78%, var(--fvx-surface) 100%),
+    linear-gradient(90deg, rgba(9, 10, 10, 0.82) 0%, rgba(9, 10, 10, 0) 70%);
+}
+.fv-ex2-hero__inner { padding-block: clamp(5rem, 14vw, 11rem) clamp(2.5rem, 6vw, 5rem); display: grid; gap: var(--fvx-s-5); }
+.fv-ex2-hero__title { font-size: var(--fvx-fs-display); line-height: var(--fvx-lh-tight); letter-spacing: -0.035em; max-width: 14ch; }
+.fv-ex2-hero__title em { color: var(--fvx-gold); font-style: italic; }
+.fv-ex2-hero__dek { font-size: var(--fvx-fs-lede); line-height: 1.55; color: var(--fvx-text); max-width: 36rem; }
+.fv-ex2-hero__meta { display: flex; flex-wrap: wrap; gap: var(--fvx-s-2) var(--fvx-s-6); padding-top: var(--fvx-s-5); border-top: 1px solid var(--fvx-gold-deep); }
+.fv-ex2-hero__meta dt { font-family: var(--fvx-font-catalog); font-size: var(--fvx-fs-label); letter-spacing: var(--fvx-tracking-label); text-transform: uppercase; color: var(--fvx-text-muted); }
+.fv-ex2-hero__meta dd { font-size: var(--fvx-fs-small); color: var(--fvx-text); }
+.fv-ex2-hero__credit { font-size: 0.8125rem; color: var(--fvx-text-muted); max-width: 40rem; }
+.fv-ex2-hero__actions { display: flex; flex-wrap: wrap; gap: var(--fvx-s-3); }
+
+/* Hero entrance: opacity/translate only, applied once on load; removed under reduced motion by the base rule. */
+@keyframes fvx-hero-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.fv-ex2-hero__inner > * { animation: fvx-hero-in var(--fvx-dur-chapter) var(--fvx-ease) both; }
+.fv-ex2-hero__inner > *:nth-child(2) { animation-delay: 90ms; }
+.fv-ex2-hero__inner > *:nth-child(3) { animation-delay: 180ms; }
+.fv-ex2-hero__inner > *:nth-child(n+4) { animation-delay: 260ms; }

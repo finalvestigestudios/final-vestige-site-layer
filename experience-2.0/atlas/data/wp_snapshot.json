@@ -1,0 +1,452 @@
+{
+  "snapshot_of": "https://finalvestige.com",
+  "retrieved_at": "2026-10-30T16:15:59Z",
+  "posts": [
+    {
+      "wordpress_post_id": 37,
+      "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "slug": "how-petra-made-water-flow-through-stone",
+      "title": "How Petra Made Water Flow Through Stone",
+      "published": "2026-08-16T23:15:15",
+      "modified": "2026-10-29T17:07:17",
+      "categories": [
+        {
+          "name": "Discovery",
+          "slug": "discovery"
+        },
+        {
+          "name": "Ingenuity",
+          "slug": "ingenuity"
+        }
+      ],
+      "content_sha256": "66787fe9427c02851ee94f333856e73b5081f2e1ef27006c9342cfd373d6f09c",
+      "content_chars": 7746,
+      "outbound_sources": [
+        {
+          "url": "https://whc.unesco.org/en/list/326/",
+          "host": "whc.unesco.org",
+          "text": "UNESCO World Heritage Centre — Petra",
+          "institution": "UNESCO World Heritage Centre"
+        },
+        {
+          "url": "https://www.unesco.org/en/articles/preserving-petras-nabatean-architectural-heritage",
+          "host": "unesco.org",
+          "text": "UNESCO — Preserving Petra’s Nabataean architectural heritage",
+          "institution": null
+        },
+        {
+          "url": "https://whc.unesco.org/en/intassistance/781",
+          "host": "whc.unesco.org",
+          "text": "UNESCO World Heritage Centre — flood-control conservation at Petra",
+          "institution": "UNESCO World Heritage Centre"
+        }
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "wordpress_post_id": 269,
+      "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "slug": "the-watch-lost-its-hands-halifax-explosion",
+      "title": "The Watch Lost Its Hands",
+      "published": "2026-08-18T21:05:43",
+      "modified": "2026-10-29T20:59:49",
+      "categories": [
+        {
+          "name": "Catastrophe",
+          "slug": "catastrophe"
+        },
+        {
+          "name": "Ingenuity",
+          "slug": "ingenuity"
+        },
+        {
+          "name": "Survival",
+          "slug": "survival"
+        }
+      ],
+      "content_sha256": "47f2e5a7d9c01f2231619369b050371d251909635b87c43f25b345cf4e5dfa7f",
+      "content_chars": 27420,
+      "outbound_sources": [
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "host": "creativecommons.org",
+          "text": "CC BY 4.0",
+          "institution": null
+        },
+        {
+          "url": "https://maritimemuseum.novascotia.ca/stories/vincent-coleman-and-halifax-explosion",
+          "host": "maritimemuseum.novascotia.ca",
+          "text": "Maritime Museum of the Atlantic, “Vincent Coleman and the Halifax Explosion”",
+          "institution": null
+        },
+        {
+          "url": "https://archives.novascotia.ca/explosion/",
+          "host": "archives.novascotia.ca",
+          "text": "Nova Scotia Archives, Halifax Explosion collections",
+          "institution": null
+        },
+        {
+          "url": "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?id=15176&i=74273",
+          "host": "pc.gc.ca",
+          "text": "Parks Canada, Halifax Explosion National Historic Event",
+          "institution": null
+        },
+        {
+          "url": "https://www.canada.ca/en/navy/services/history/naval-service-1910-2010/first-ww.html",
+          "host": "canada.ca",
+          "text": "Royal Canadian Navy historical material on the First World War",
+          "institution": null
+        }
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "wordpress_post_id": 370,
+      "url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "slug": "the-lines-were-in-the-fire-west-loch",
+      "title": "The Lines Were in the Fire",
+      "published": "2026-08-19T23:42:52",
+      "modified": "2026-10-29T15:27:15",
+      "categories": [
+        {
+          "name": "Catastrophe",
+          "slug": "catastrophe"
+        },
+        {
+          "name": "Conflict",
+          "slug": "conflict"
+        }
+      ],
+      "content_sha256": "182502c77a1061d5e05e318568e990462ee3035cfc13005ac3538e73e925c51d",
+      "content_chars": 31766,
+      "outbound_sources": [
+        {
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276907.html",
+          "host": "history.navy.mil",
+          "text": "",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/south-southwestern-pacific/bougainville-campaign/bougainville-land-campaign/80-g-202485.html",
+          "host": "history.navy.mil",
+          "text": "",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276940.html",
+          "host": "history.navy.mil",
+          "text": "",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/sc-series/SC-400000/SC-427947.html",
+          "host": "history.navy.mil",
+          "text": "",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276945.html",
+          "host": "history.navy.mil",
+          "text": "",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.dpaa.mil/Multimedia/Photo-Gallery/igphoto/2003567495/",
+          "host": "dpaa.mil",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1944/west-loch.html",
+          "host": "history.navy.mil",
+          "text": "Naval History and Heritage Command, “Pearl Harbor Ablaze Again: The West Loch Disaster.”",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.history.navy.mil/content/history/nhhc/about-us/leadership/director/directors-corner/h-grams/h-gram-029/h-029-5.html",
+          "host": "history.navy.mil",
+          "text": "NHHC, “H-029-5: A Brief History of Major U.S. Navy Ordnance Accidents.”",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://cnrh.cnic.navy.mil/About/History/West-Loch-Disaster/index.html",
+          "host": "cnrh.cnic.navy.mil",
+          "text": "Commander, Navy Region Hawaii, “West Loch Disaster.”",
+          "institution": null
+        },
+        {
+          "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/v/valve.html",
+          "host": "history.navy.mil",
+          "text": "NHHC, USS Valve ship history.",
+          "institution": "U.S. Navy Naval History and Heritage Command"
+        },
+        {
+          "url": "https://www.dpaa.mil/News-Stories/Our-Stories/Article/3940189/a-search-for-answers-dpaa-begins-disinterment-of-west-loch-disaster-unknowns/",
+          "host": "dpaa.mil",
+          "text": "Defense POW/MIA Accounting Agency, “A Search for Answers: DPAA Begins Disinterment of West Loch Disaster Unknowns.”",
+          "institution": null
+        },
+        {
+          "url": "https://www.dpaa.mil/News-Stories/ID-Announcements/Article/4473555/marine-accounted-for-from-world-war-ii-reed-r/",
+          "host": "dpaa.mil",
+          "text": "Defense POW/MIA Accounting Agency, “Marine Accounted For From World War II (Reed, R.).”",
+          "institution": null
+        }
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "wordpress_post_id": 433,
+      "url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "slug": "all-well-was-written-first-franklin-expedition",
+      "title": "All Well Was Written First",
+      "published": "2026-08-20T12:41:02",
+      "modified": "2026-10-29T16:31:22",
+      "categories": [
+        {
+          "name": "Discovery",
+          "slug": "discovery"
+        },
+        {
+          "name": "Lost",
+          "slug": "lost"
+        },
+        {
+          "name": "Survival",
+          "slug": "survival"
+        }
+      ],
+      "content_sha256": "eeb8cc0bfbe5b52580bdf4dbb1986878bcbef58cf1e01de67676ea0d5455ca0b",
+      "content_chars": 25530,
+      "outbound_sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+          "host": "commons.wikimedia.org",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+          "host": "commons.wikimedia.org",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Dr_John_Rae,_with_relics_from_the_Franklin_Expedition,_gold_medal,_and_map,_August_1886_(PORTRAITS_2459).jpg",
+          "host": "commons.wikimedia.org",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:(1860)_Map_of_the_probable_routes_taken_by_HMS_Erebus_and_HMS_Terror_during_Franklin%27s_lost_expedition_%26_results_of_McClintock%27s_Arctic_Expedition.jpg",
+          "host": "commons.wikimedia.org",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:L23402-c8qmb-t3-05-rx.jpg",
+          "host": "commons.wikimedia.org",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://www.thecanadianencyclopedia.ca/en/article/franklin-search/",
+          "host": "thecanadianencyclopedia.ca",
+          "text": "",
+          "institution": null
+        },
+        {
+          "url": "https://parks.canada.ca/lhn-nhs/nu/epaveswrecks/culture/archeologie-archeology/recherche-search",
+          "host": "parks.canada.ca",
+          "text": "Parks Canada, “Searching for Franklin.”",
+          "institution": null
+        },
+        {
+          "url": "https://parks.canada.ca/lhn-nhs/nu/epaveswrecks/culture/inuit",
+          "host": "parks.canada.ca",
+          "text": "Parks Canada, Inuit knowledge and the Franklin expedition.",
+          "institution": null
+        },
+        {
+          "url": "https://uwaterloo.ca/news/media/dna-matches-identify-four-more-sailors-franklin-expedition",
+          "host": "uwaterloo.ca",
+          "text": "University of Waterloo, “DNA matches identify four more sailors from Franklin expedition,” 2026.",
+          "institution": null
+        },
+        {
+          "url": "https://www.cambridge.org/core/journals/polar-record/article/some-very-hard-ground-to-heave-dna-identification-of-harry-peglar-captain-of-the-foretop-hms-terror/2A079C8AFB0C9B3C561B4796949B37D4",
+          "host": "cambridge.org",
+          "text": "Stenton and colleagues, Harry Peglar DNA identification, Polar Record (2026).",
+          "institution": null
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S2352409X24003766",
+          "host": "sciencedirect.com",
+          "text": "Stenton, Fratpietro and Park, James Fitzjames identification (2024).",
+          "institution": null
+        },
+        {
+          "url": "https://parks.canada.ca/lhn-nhs/nu/epaveswrecks/culture/archeologie-archeology",
+          "host": "parks.canada.ca",
+          "text": "Parks Canada, Wrecks of HMS Erebus and HMS Terror archaeology program.",
+          "institution": null
+        }
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "wordpress_post_id": 434,
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "slug": "the-hatch-opened-inward-apollo-1",
+      "title": "The Hatch Opened Inward",
+      "published": "2026-08-20T12:42:48",
+      "modified": "2026-09-08T02:51:21",
+      "categories": [
+        {
+          "name": "Catastrophe",
+          "slug": "catastrophe"
+        },
+        {
+          "name": "Discovery",
+          "slug": "discovery"
+        },
+        {
+          "name": "Ingenuity",
+          "slug": "ingenuity"
+        }
+      ],
+      "content_sha256": "f18117c739c6e85993cd21a1ab5a50ecb0874fbbf14fb3642f514ddaab70657f",
+      "content_chars": 25623,
+      "outbound_sources": [
+        {
+          "url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+          "host": "nasa.gov",
+          "text": "",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+          "host": "nasa.gov",
+          "text": "",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+          "host": "nasa.gov",
+          "text": "",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+          "host": "nasa.gov",
+          "text": "",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+          "host": "nasa.gov",
+          "text": "",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+          "host": "nasa.gov",
+          "text": "",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+          "host": "nasa.gov",
+          "text": "Apollo 204 Review Board Final Report",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/",
+          "host": "nasa.gov",
+          "text": "NASA, “55 Years Ago: Tragedy on the Launch Pad.”",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+          "host": "sma.nasa.gov",
+          "text": "NASA Safety and Mission Assurance, Apollo 1.",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/gallery/apollo-1/",
+          "host": "nasa.gov",
+          "text": "NASA Apollo 1 image gallery.",
+          "institution": "NASA"
+        },
+        {
+          "url": "https://www.nasa.gov/news-release/nasa-unveils-tribute-to-crew-of-apollo-1/",
+          "host": "nasa.gov",
+          "text": "NASA, Apollo 1 tribute exhibit.",
+          "institution": "NASA"
+        }
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "wordpress_post_id": 621,
+      "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "slug": "six-miles-an-hour-malbone-street-wreck",
+      "title": "Six Miles an Hour",
+      "published": "2026-08-23T04:11:57",
+      "modified": "2026-09-09T12:03:35",
+      "categories": [
+        {
+          "name": "Catastrophe",
+          "slug": "catastrophe"
+        }
+      ],
+      "content_sha256": "95325b895cccbaaa239f212cd7d73317176a3a53f16a9e2f3a5acafd7e1ac74b",
+      "content_chars": 36485,
+      "outbound_sources": [
+        {
+          "url": "https://www.nytransitmuseum.org/malbone-st-wreck/",
+          "host": "nytransitmuseum.org",
+          "text": "Open source",
+          "institution": null
+        },
+        {
+          "url": "https://www.nytransitmuseum.org/program/prospectsub-0929/",
+          "host": "nytransitmuseum.org",
+          "text": "Open source",
+          "institution": null
+        },
+        {
+          "url": "https://www.smithsonianmag.com/history/malbone-street-wreck-1918-180970675/",
+          "host": "smithsonianmag.com",
+          "text": "Open source",
+          "institution": null
+        },
+        {
+          "url": "https://www.pbs.org/wgbh/americanexperience/features/nyunderground-death-beneath-streets/",
+          "host": "pbs.org",
+          "text": "Open source",
+          "institution": null
+        },
+        {
+          "url": "https://www.nycsubway.org/wiki/Malbone_Street_Wreck_(New_York_Times,_1918)",
+          "host": "nycsubway.org",
+          "text": "Open source",
+          "institution": null
+        },
+        {
+          "url": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+          "host": "digitalcollections.nypl.org",
+          "text": "Open source",
+          "institution": "New York Public Library"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Malbone_Street_wreck",
+          "host": "commons.wikimedia.org",
+          "text": "Open source",
+          "institution": null
+        }
+      ],
+      "review_status": "unreviewed"
+    }
+  ]
+}

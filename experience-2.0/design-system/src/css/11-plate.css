@@ -1,0 +1,28 @@
+/* Evidence plate (museum-paper mat + catalogue label) and source provenance list. */
+.fv-ex2-plate { background: var(--fvx-paper); color: var(--fvx-paper-ink); padding: clamp(0.5rem, 1.2vw, 0.875rem); box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45); }
+/* The frame reserves the image's aspect ratio from --fvx-w/--fvx-h (set inline from the declared dimensions), so the
+   label and controls below never move when the file arrives. The image fills the reserved box. */
+.fv-ex2-plate__frame { background: #14120f; aspect-ratio: var(--fvx-w, 4) / var(--fvx-h, 3); margin-inline: auto; width: 100%; }
+.fv-ex2-plate__frame img { width: 100%; height: 100%; object-fit: contain; }
+.fv-ex2-plate__label { padding: var(--fvx-s-4) var(--fvx-s-2) var(--fvx-s-2); display: grid; gap: var(--fvx-s-2); }
+.fv-ex2-plate__role {
+  justify-self: start; font-family: var(--fvx-font-catalog); font-size: var(--fvx-fs-label); font-weight: 700; letter-spacing: var(--fvx-tracking-label);
+  text-transform: uppercase; padding: var(--fvx-s-1) var(--fvx-s-2); background: var(--fvx-paper-ink); color: var(--fvx-paper);
+}
+.fv-ex2-plate__caption { font-size: var(--fvx-fs-small); line-height: 1.5; color: var(--fvx-paper-ink); }
+.fv-ex2-plate__id { font-family: var(--fvx-font-catalog); font-size: 0.8125rem; color: #4a4336; overflow-wrap: anywhere; }
+.fv-ex2-plate__actions { display: flex; flex-wrap: wrap; gap: var(--fvx-s-3); padding: var(--fvx-s-2); }
+.fv-ex2-plate .fv-ex2-button { color: var(--fvx-paper-ink); border-color: var(--fvx-paper-ink); }
+.fv-ex2-plate .fv-ex2-button:hover { background: var(--fvx-paper-ink); color: var(--fvx-paper); border-color: var(--fvx-paper-ink); }
+.fv-ex2-plate a { color: #5a4416; }
+.fv-ex2-plate :focus-visible { outline-color: var(--fvx-paper-ink); }
+
+.fv-ex2-provenance { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--fvx-s-2) var(--fvx-s-5); font-size: var(--fvx-fs-small); }
+.fv-ex2-provenance dt { font-family: var(--fvx-font-catalog); font-size: var(--fvx-fs-label); letter-spacing: var(--fvx-tracking-label); text-transform: uppercase; color: var(--fvx-text-muted); padding-top: 0.2em; }
+.fv-ex2-provenance dd { color: var(--fvx-text); overflow-wrap: anywhere; }
+.fv-ex2-plate .fv-ex2-provenance dt { color: #4a4336; }
+.fv-ex2-plate .fv-ex2-provenance dd { color: var(--fvx-paper-ink); }
+.fv-ex2-plate details { border-top: 1px solid rgba(28, 25, 19, 0.3); margin: var(--fvx-s-2) var(--fvx-s-2) 0; padding-top: var(--fvx-s-3); }
+.fv-ex2-plate summary { cursor: pointer; font-weight: 600; font-size: var(--fvx-fs-small); padding-block: var(--fvx-s-2); }
+.fv-ex2-plate details[open] summary { margin-bottom: var(--fvx-s-3); }
+@media (max-width: 30rem) { .fv-ex2-provenance { grid-template-columns: minmax(0, 1fr); gap: 0; } .fv-ex2-provenance dd { margin-bottom: var(--fvx-s-3); } }

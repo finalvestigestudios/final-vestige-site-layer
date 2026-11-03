@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://finalvestige.com/schemas/atlas/0.1.0",
+  "title": "Final Vestige Evidence Atlas dataset",
+  "description": "Canonical model for investigations, events, places, sources, documents, claims and relationships. Structural shape only; cross-entity rules (referential integrity, map eligibility, relationship basis) are enforced by tools/validate_atlas.py.",
+  "type": "object",
+  "required": ["schema_version", "generated_from", "investigations", "events", "places", "sources", "documents", "claims", "relationships"],
+  "x-enums": {
+    "location_status": ["verified_coordinate", "approximate_region", "unverified_reference"],
+    "date_precision": ["day", "month", "year", "range", "approximate", "unknown"],
+    "date_status": ["documented", "candidate"],
+    "evidence_class": ["original_document", "later_depiction", "editorial_reconstruction", "secondary_account"],
+    "relationship_basis": ["documented", "interpretive"],
+    "predicate": ["documents", "depicts", "occurred_at", "mentions", "corroborates", "contradicts", "interprets", "related_editorially"],
+    "interpretive_only_predicates": ["interprets", "related_editorially"],
+    "forbidden_predicates": ["caused_by", "caused", "shares_location", "shares_date", "same_place", "same_date", "adjacent_to"],
+    "review_status": ["unreviewed", "approved", "rejected"],
+    "claim_status": ["verified", "partial", "article-only", "editorial-note"],
+    "source_kind": ["institutional_report", "archive_record", "published_article"]
+  },
+  "properties": {
+    "schema_version": {"type": "string"},
+    "generated_from": {"type": "object"},
+    "investigations": {"type": "array", "items": {"type": "object", "required": ["id", "wordpress_post_id", "url", "title", "themes", "event_ids", "content_sha256", "editorial_status"]}},
+    "events": {"type": "array", "items": {"type": "object", "required": ["id", "investigation_id", "label", "date_precision", "date_status", "place_id"]}},
+    "places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "location_status", "geometry", "review"],
+        "properties": {
+          "geometry": {"description": "null unless location_status is verified_coordinate (Point) or approximate_region (Polygon/BBox).", "type": ["object", "null"]},
+          "precision_note": {"type": "string"},
+          "geography_source_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "sources": {"type": "array", "items": {"type": "object", "required": ["id", "kind", "title", "institution", "url"]}},
+    "documents": {"type": "array", "items": {"type": "object", "required": ["id", "title", "institution", "archive_id", "original_url", "evidence_class", "review_status"]}},
+    "claims": {"type": "array", "items": {"type": "object", "required": ["id", "investigation_id", "text", "status", "source_ids"]}},
+    "relationships": {"type": "array", "items": {"type": "object", "required": ["id", "subject", "predicate", "object", "basis", "justification", "source_ids", "review_status"]}}
+  }
+}

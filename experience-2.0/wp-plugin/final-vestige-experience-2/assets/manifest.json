@@ -1,0 +1,24 @@
+{
+  "css": {
+    "bytes": 22981,
+    "gzip_bytes": 4798,
+    "sha256": "437dbe1ecfd9db96566b1f388648cb06929801aa642fbef62d3dc042bba3137c"
+  },
+  "data_sources": {
+    "apollo1": "7744053580fbe4a2430217cbf87da76c9da5a98aadd051030ff785bcc135316a"
+  },
+  "js": {
+    "bytes": 9602,
+    "gzip_bytes": 3303,
+    "sha256": "c2c961a9d8c3600bf720307ea6143b141146edbc17b4b11377e921a1fcc1893b"
+  },
+  "templates": {
+    "atlas": {
+      "sha256": "997b0eeef1b21cd35d55a016b471b8bf41c8518086a2af84c02b80cbaf44119c"
+    },
+    "research-desk": {
+      "sha256": "6702a85fe6d787f27e92373a0f1a1f135f9a45c54b50d343a0371ba12a7aedfc"
+    }
+  },
+  "version": "0.5.0-sprint5"
+}

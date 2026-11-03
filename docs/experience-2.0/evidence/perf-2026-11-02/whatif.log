@@ -1,0 +1,5 @@
+﻿mobile throttled (390x844, CPU 4x, 150 ms RTT, 1.6 Mbps, cache off), 8 runs each, alternating order, local copy of the live HTML
+v0 baseline (saved live HTML, unchanged)                                FCP med  1560 [1544-1640] LCP med  1634 [1620-4684] CLS max 0 Inter loaded in 8/8
+v1 remove the Inter preload link only (font still loads on demand)      FCP med  1270 [1192-2348] LCP med  1506 [1416-3468] CLS max 0 Inter loaded in 8/8
+v2 lazy-load the query-loop thumbnails, drop fetchpriority=high         FCP med  1572 [1516-1604] LCP med  1668 [1632-4664] CLS max 0 Inter loaded in 8/8
+v3 v1 + v2                                                              FCP med  1234 [1156-1336] LCP med  1434 [1364-1528] CLS max 0 Inter loaded in 8/8

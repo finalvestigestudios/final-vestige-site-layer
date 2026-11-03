@@ -1,0 +1,177 @@
+{
+ "url_final": "https://finalvestige.com/",
+ "attempts": 1,
+ "structure": {
+  "flagship": 1,
+  "h1": [
+   "Find what others miss."
+  ],
+  "mains": 1,
+  "headers": 2,
+  "footers": 1,
+  "margins": 72,
+  "jetpackForm": true,
+  "subscribeEmail": true,
+  "focusLinks": 4,
+  "candidateText": false,
+  "oldHero": false,
+  "chapterLinks": 7,
+  "orgJsonLd": 2,
+  "details": 8,
+  "skipZ": "100001",
+  "title": "Final Vestige Studios | Research, Software, Media & Public-Interest Tools"
+ },
+ "console_errors_first_load": [],
+ "failed_requests_first_load": [],
+ "cases": [
+  {
+   "visible": [
+    "apollo"
+   ],
+   "img": [
+    890,
+    693
+   ],
+   "pressed": [
+    "true",
+    "false",
+    "false"
+   ]
+  },
+  {
+   "visible": [
+    "franklin"
+   ],
+   "img": [
+    890,
+    1416
+   ],
+   "pressed": [
+    "false",
+    "true",
+    "false"
+   ]
+  },
+  {
+   "visible": [
+    "malbone"
+   ],
+   "img": [
+    890,
+    602
+   ],
+   "pressed": [
+    "false",
+    "false",
+    "true"
+   ]
+  }
+ ],
+ "franklin_compare_pressed": "true",
+ "observer_frameB_pressed": "true",
+ "anchors": [
+  [
+   "#fv-hf-title",
+   110
+  ],
+  [
+   "#fv-hf-chronicle",
+   110
+  ],
+  [
+   "#fv-hf-evidence",
+   110
+  ],
+  [
+   "#fv-hf-inquiry",
+   84
+  ],
+  [
+   "#fv-hf-method-title",
+   110
+  ],
+  [
+   "#fv-hf-observer",
+   110
+  ],
+  [
+   "#fv-hf-mind-title",
+   110
+  ]
+ ],
+ "skip": {
+  "tabsToReach": 15,
+  "rect": [
+   9,
+   9,
+   218,
+   45
+  ],
+  "topmost": [
+   true,
+   true,
+   true
+  ],
+  "outline": "solid 3px"
+ },
+ "widths": {
+  "320": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  },
+  "360": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  },
+  "390": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  },
+  "768": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  },
+  "1024": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  },
+  "1440": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  },
+  "1920": {
+   "overflow": 0,
+   "h1": 1,
+   "flagship": 1
+  }
+ },
+ "axe": {
+  "1440#0": [],
+  "1440#1": [],
+  "390#0": [],
+  "390#1": []
+ },
+ "nojs": {
+  "flagship": 1,
+  "margins": 72,
+  "caseButtonsVisible": 0,
+  "photos": [
+   true,
+   true,
+   true
+  ],
+  "jetpackForm": true,
+  "sourceLinks": 30
+ },
+ "links": {
+  "https://finalvestige.com/focus/": 200,
+  "https://finalvestige.com/sitemap.xml": 200,
+  "https://finalvestige.com/robots.txt": 200
+ }
+}

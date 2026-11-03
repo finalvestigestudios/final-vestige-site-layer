@@ -1,0 +1,65 @@
+/* Final Vestige Experience 2.0 - design tokens.
+   Namespace rules: every selector starts with `.fv-ex2`; every custom property starts with `--fvx-`.
+   Direction: Black Dossier (provisional, not founder-approved). Museum paper surfaces are used for
+   evidence plates; Observatory line work is reserved for the Atlas. */
+.fv-ex2 {
+  /* Colour: surfaces */
+  --fvx-ink: #090a0a;
+  --fvx-surface: #0c0d0d;
+  --fvx-raised: #171715;
+  --fvx-raised-2: #1f1d19;
+  --fvx-paper: #e9e0d1;
+  --fvx-paper-ink: #1c1913;
+  /* Colour: text and accents */
+  --fvx-text: #f4efe6;
+  --fvx-text-muted: #b8b1a6;
+  --fvx-gold: #c7a66c;
+  --fvx-gold-deep: #b8955e;
+  --fvx-amber: #e0b25a;
+  /* Colour: lines. `line` is decorative; `line-strong` meets 3:1 for control borders. */
+  --fvx-line: #3a362f;
+  --fvx-line-strong: #8a7d63;
+
+  /* Typography */
+  --fvx-font-display: Fraunces, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --fvx-font-ui: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fvx-font-catalog: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, monospace;
+  --fvx-fs-display: clamp(2.9rem, 8.2vw, 8.25rem);
+  --fvx-fs-h2: clamp(2rem, 4.6vw, 4rem);
+  --fvx-fs-h3: clamp(1.35rem, 2.2vw, 1.75rem);
+  --fvx-fs-lede: clamp(1.15rem, 1.7vw, 1.5rem);
+  --fvx-fs-body: clamp(1.0625rem, 1.15vw, 1.1875rem);
+  --fvx-fs-small: 0.9375rem;
+  --fvx-fs-label: 0.75rem;
+  --fvx-lh-tight: 1.02;
+  --fvx-lh-snug: 1.25;
+  --fvx-lh-body: 1.7;
+  --fvx-tracking-label: 0.14em;
+
+  /* Spacing scale (4px base) */
+  --fvx-s-1: 0.25rem;
+  --fvx-s-2: 0.5rem;
+  --fvx-s-3: 0.75rem;
+  --fvx-s-4: 1rem;
+  --fvx-s-5: 1.5rem;
+  --fvx-s-6: 2rem;
+  --fvx-s-7: 3rem;
+  --fvx-s-8: 4.5rem;
+  --fvx-s-section: clamp(4.5rem, 9vw, 9.5rem);
+
+  /* Layout */
+  --fvx-measure: 38rem;
+  --fvx-wide: 90rem;
+  --fvx-gutter: clamp(1.25rem, 4vw, 4rem);
+  --fvx-sticky-top: 5.5rem;
+
+  /* Motion. Durations are shortened to ~0 under prefers-reduced-motion (see 01-base.css). */
+  --fvx-dur-fast: 140ms;
+  --fvx-dur-reveal: 320ms;
+  --fvx-dur-chapter: 520ms;
+  --fvx-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Focus */
+  --fvx-focus: 3px solid var(--fvx-gold);
+  --fvx-focus-offset: 3px;
+}
