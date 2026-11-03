@@ -35,6 +35,8 @@ NAV_TARGETS = (
     "fv-hf-method-title", "fv-hf-observer", "fv-hf-mind-title",
 )
 STAGING_ONLY = "FV EX2 SOURCE-CONTROLLED FULL FLAGSHIP — ISOLATED REVIEW ONLY"
+ASSEMBLER_STAGE_CSS = HERE / "assembler_saved_layout_playground_only.css"
+STAGING_ASSEMBLER_STYLE = 'data-fv-stage-only="assembler-saved-layout"'
 SECOND_BLOCK = '<!-- wp:html --><div class="fv-hf"'
 END_BLOCK = "<!-- /wp:html -->"
 
@@ -51,7 +53,8 @@ def read_sources(home: Path) -> tuple[str, dict[str, str], dict[str, str]]:
     return index, css, js
 
 
-def compose(index: str, css: dict[str, str], js: dict[str, str]) -> tuple[str, dict]:
+def compose(index: str, css: dict[str, str], js: dict[str, str],
+            assembler_css: str | None = None) -> tuple[str, dict]:
     if set(css) != set(CSS_FILES) or set(js) != set(JS_FILES):
         raise ValueError("One or more source-controlled assets missing or unexpected")
     matches = re.findall(r"<body(?:\s[^>]*)?>(.*?)</body>", index, re.S | re.I)
@@ -93,13 +96,42 @@ def compose(index: str, css: dict[str, str], js: dict[str, str]) -> tuple[str, d
     if not suffix.endswith('<!-- wp:jetpack/subscriptions {"className":"is-style-split"} /-->'):
         raise ValueError("Synthetic Focus/Jetpack tail drift")
 
+    # The first Gutenberg block uses SYNTHETIC records, not production page-6
+    # markup. Give its 72 records a labeled, keyboard-focusable scroll region.
+    # This is only a development fixture; never treat it as hosted DOM parity.
+    opening = '<div class="fv-margin-strip">'
+    ending = '</div><style>'
+    if prefix.count(opening) != 1 or prefix.count(ending) != 1:
+        raise ValueError("Synthetic Margins block structure changed")
+    prefix = prefix.replace(
+        opening, opening +
+        '<div class="fv-margin-strip__inner">'
+        '<span class="fv-margin-strip__label">72 SYNTHETIC FRAGMENTS</span>'
+        '<div class="fv-margin-strip__window" role="region" '
+        'aria-label="72 synthetic historical fragments" tabindex="0">', 1
+    ).replace(ending, '</div></div>' + ending, 1)
+
+    # This CSS is actually saved in Gutenberg, NOT pasted into Chromium.
+    # It is deliberately disjoint from the eleven authentic flagship assets.
+    # Fail closed on HTML breakout or external/unreviewed CSS fetches.
+    if assembler_css is None:
+        assembler_css = ASSEMBLER_STAGE_CSS.read_text(encoding="utf-8")
+    if (not assembler_css.startswith("/* EX2 ISOLATED PLAYGROUND ONLY") or
+            any(x in assembler_css.lower()
+                for x in ("</style", "<script", "@import", "url(", "javascript:",
+                          "<!-- wp:", "https://", "http://")) or
+            ".wp-block-post-content > .fv-hf" not in assembler_css or
+            ".fv-margin-strip__window" not in assembler_css or
+            "@supports selector(body:has(" not in assembler_css):
+        raise ValueError("Unreviewed or unsafe isolated Assembler saved CSS")
     inline_css = "\n".join("/* SOURCE: " + name + " */\n" + css[name] for name in CSS_FILES)
     inline_js = "\n".join(
         '<script data-fv-source="' + name + '">\n' + js[name] + '\n</script>'
         for name in JS_FILES
     )
     section = (
-        '<style data-fv-stage-only="source-css">\n' + inline_css + '\n</style>\n'
+        '<style ' + STAGING_ASSEMBLER_STYLE + '>\n' + assembler_css + '\n</style>\n'
+        + '<style data-fv-stage-only="source-css">\n' + inline_css + '\n</style>\n'
         + '<!-- ' + STAGING_ONLY + ' -->\n' + body + '\n'
         + inline_js
     )
@@ -117,8 +149,11 @@ def compose(index: str, css: dict[str, str], js: dict[str, str]) -> tuple[str, d
         raise ValueError("Executable script source changed or duplicated")
     if candidate.count(MARKER) != 1 or NYPL_FILE in candidate:
         raise ValueError("Contrast repair or NYPL rights guard missing")
-    if candidate.count(STAGING_ONLY) != 1:
-        raise ValueError("Missing synthetic-only marker")
+    if candidate.count(STAGING_ONLY) != 1 or candidate.count(STAGING_ASSEMBLER_STYLE) != 1:
+        raise ValueError("Missing isolated saved-styling or synthetic marker")
+    if (candidate.count('class="fv-margin-strip__window"') != 1 or
+            candidate.count('aria-label="72 synthetic historical fragments" tabindex="0"') != 1):
+        raise ValueError("Synthetic no-JS Margins scroll region not accessible")
     sources = {"index.html": index, **css, **js}
     fingerprints = {
         name: digest(value.encode("utf-8")) for name, value in sorted(sources.items())
@@ -129,6 +164,7 @@ def compose(index: str, css: dict[str, str], js: dict[str, str]) -> tuple[str, d
         "page6_live_content_included": False,
         "real_source_controlled_flagship": True,
         "source_sha256": fingerprints,
+        "assembler_saved_stage_css_sha256": digest(assembler_css.encode("utf-8")),
         "candidate_sha256": digest(candidate.encode("utf-8")),
         "candidate_bytes": len(candidate.encode("utf-8")),
         "margin_items": 72,
