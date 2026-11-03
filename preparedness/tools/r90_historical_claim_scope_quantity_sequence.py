@@ -208,7 +208,7 @@ def index(parent):
         original_blocks += len(blocks)
         doc_index[identity] = doc
 
-    identities, reverse, output, flagged = set(), defaultdict(list), [], Counter()
+    identities, row_index, reverse, output, flagged = set(), {}, defaultdict(list), [], Counter()
     for row in contexts:
         need(type(row) is dict and row.get("may_publish") is False
              and row.get("human_source_review") == REVIEW
@@ -221,6 +221,7 @@ def index(parent):
         need((kind, slug) in doc_index and type(ordinal) is int and ordinal > 0
              and key not in identities, "duplicate/orphan original citation ordinal")
         identities.add(key)
+        row_index[key] = row
         doc = doc_index[(kind,slug)]
         blocks = doc["all_original_DOM_blocks_UNABRIDGED_NOT_REVIEWED"]
         block_id = row["original_DOM_block_ID"]
@@ -270,10 +271,11 @@ def index(parent):
              and s.get("may_publish") is False,
              "source dossier falsely approved")
         uses = s["all_unabridged_cited_claim_blocks_IN_ORIGINAL_ORDER_NOT_REVIEWED"]
-        need(type(uses) is list
+        need(key in reverse and len(reverse[key]) > 0 and type(uses) is list
              and sorted((x["kind"], x["slug"], x["citation_ordinal"]) for x in uses) ==
                  sorted(reverse[key])
-             and all(x in contexts for x in uses),
+             and all(row_index.get((x["kind"],x["slug"],x["citation_ordinal"])) == x
+                     for x in uses),
              "source reverse impact usage or full claim context changed")
 
     need(variant_keys == set(reverse), "some source variants were lost or substituted")
