@@ -39,9 +39,26 @@ def compact_axe(results: dict) -> dict:
             raise ValueError("AXE_RULE_INVALID")
         if not isinstance(entry.get("nodes"), list):
             raise ValueError("AXE_NODE_LIST_INVALID")
+        safe_locations = []
+        for node in entry["nodes"][:3]:
+            loc = node.get("location_probe") if isinstance(node, dict) else None
+            if isinstance(loc, dict):
+                safe_locations.append({
+                    "scope": loc.get("scope") if loc.get("scope") in ("flagship", "site_shell")
+                    else "unknown",
+                    "tag": loc.get("tag") if loc.get("tag") in (
+                        "a", "p", "span", "small", "div", "button", "label",
+                        "h1", "h2", "h3", "li", "input") else "other",
+                    "fv_classes": [v for v in loc.get("fv_classes", [])[:3]
+                                   if isinstance(v, str) and v.startswith("fv-")
+                                   and len(v) < 80],
+                    "computed_foreground": loc.get("color", "")[:40],
+                    "computed_background": loc.get("background", "")[:40],
+                })
         violations.append({
             "rule": entry["id"], "impact": entry.get("impact"),
             "affected_elements": len(entry["nodes"]),
+            "safe_locations": safe_locations,
         })
     return {
         "violations": sorted(violations, key=lambda item: item["rule"]),
@@ -146,9 +163,29 @@ def run_browser(axe_script: Path) -> list[dict]:
                         axe_raw = page.evaluate("""async (tags) => {
                             if (!window.axe || typeof window.axe.run !== 'function')
                                 throw new Error('AXE_DID_NOT_INITIALIZE');
-                            return await window.axe.run(document, {
+                            const data = await window.axe.run(document, {
                                 runOnly: {type: 'tag', values: tags}
                             });
+                            // Do not export axe target selectors, HTML, failure text or page words.
+                            for (const issue of data.violations) {
+                                for (const node of issue.nodes) {
+                                    let el = null;
+                                    try {
+                                        if (Array.isArray(node.target) && node.target[0])
+                                            el = document.querySelector(node.target[0]);
+                                    } catch (_) {}
+                                    if (!el) continue;
+                                    const style = getComputedStyle(el);
+                                    node.location_probe = {
+                                        scope: el.closest('[data-fv-home-flagship]') ? 'flagship' : 'site_shell',
+                                        tag: el.tagName.toLowerCase(),
+                                        fv_classes: [...el.classList].filter(x => x.startsWith('fv-')).slice(0, 3),
+                                        color: style.color,
+                                        background: style.backgroundColor
+                                    };
+                                }
+                            }
+                            return data;
                         }""", list(AXE_TAGS))
                         record["axe"] = compact_axe(axe_raw)
                     if case == "js_390":
