@@ -84,7 +84,7 @@ def page(records):
 <section class="compare-panel" id="r88-compare" hidden aria-labelledby="r88-compare-title">
 <h2 id="r88-compare-title">Compare two records</h2><p>Select up to two checkboxes; the comparison is a reading aid, not a new claim of historical connection.</p>
 <p class="compare-status" aria-live="polite" aria-atomic="true">No sources selected.</p>
-<div class="comparison" aria-label="Selected source comparison"></div>
+<div class="comparison" role="group" aria-label="Selected source comparison"></div>
 <button type="button" class="clear">Clear selections</button></section>
 <section class="method" id="r88-method" aria-labelledby="r88-method-title"><h2 id="r88-method-title">How source custody was checked</h2>
 <p>Before this page is generated, the build compares each evidence plate with the actual Research Desk markup, the generated Evidence Atlas and the R37/R79/R55 NASA source and rights registers. A source identity, photographic date, unresolved right, or catalog-status mismatch prevents output.</p>
