@@ -59,7 +59,7 @@ def run(src,out,axe):
                     # R96: a native anchor clicked again must reveal a filtered-out
                     # evidence record even if the URL fragment does not change.
                     page.locator('nav.jump a[href="#atlas-01"]').click()
-                    assert page.evaluate('document.activeElement.id')=="atlas-01"
+                    page.wait_for_function("document.activeElement.id==='atlas-01'")
                     page.get_by_role("button",name="Specific-day records (5)").click()
                     page.locator("#query").fill("no-match-xxx")
                     assert page.locator("#atlas-01").is_hidden()
