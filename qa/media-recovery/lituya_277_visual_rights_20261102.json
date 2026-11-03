@@ -1,0 +1,368 @@
+{
+  "schema": "fv.media.lituya277.provenance.v1",
+  "date_local": "2026-11-02",
+  "scope": "Frozen WordPress Gutenberg source snapshot, NOT fresh authenticated WordPress or guest browser run",
+  "snapshot": {
+    "path": "qa/media-recovery/parts/04.json",
+    "git_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "post_id": 277,
+    "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+    "post_modified_at_snapshot": "2026-08-21T00:32:52",
+    "expected_slots": 6
+  },
+  "result": {
+    "source_slots": 6,
+    "independent_viewer_displayed": 4,
+    "independent_viewer_unresolved": 2,
+    "confirmed_visitor_broken": null,
+    "verified_visitor_wire_bytes": null,
+    "percent_weight_reduction": null,
+    "production_repairs": 0
+  },
+  "machine_readable_legend": "Independent web viewer success/refusal does NOT equal browser status. Null means unmeasured, not zero.",
+  "sources": {
+    "usgs_record": "https://www.usgs.gov/media/images/lituya-bay-1958",
+    "nasa_article": "https://science.nasa.gov/earth/earth-observatory/lituya-bays-apocalyptic-wave-147557/",
+    "nasa_usage": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "commons_277_5": "https://commons.wikimedia.org/wiki/File:Lituyabay_Earth_Observatory_image_2020.jpg"
+  },
+  "images": [
+    {
+      "image_key": "277:0",
+      "post_id": 277,
+      "slot": 0,
+      "original_src": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+      "original_alt": "Aerial view of Lituya Bay after the July 1958 megatsunami showing the stripped shoreline and runup scar.",
+      "original_kind": "external",
+      "independent_viewer": {
+        "date_local": "2026-11-02",
+        "result": "IMAGE_RENDERED_IN_INDEPENDENT_VIEWER",
+        "numeric_origin_http_status": null,
+        "visual_observation": "This is a multi-panel science illustration, with explanatory metric arrows/labels and inset photograph; it is not a single unannotated aerial photograph."
+      },
+      "guest_browser": {
+        "actual_http_status": null,
+        "final_url": null,
+        "current_src": null,
+        "decode_success": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_data_length_bytes": null,
+        "desktop_screenshot": null,
+        "mobile_screenshot": null
+      },
+      "editorial": {
+        "finding": "MISLEADING_IMAGE_TYPE",
+        "proposed_alt_not_published": "Annotated scientific composite of Lituya Bay showing tsunami runup geometry and an inset aerial photograph of the stripped shoreline."
+      },
+      "primary_source_candidate": null,
+      "rights_review": {
+        "status": "HOLD",
+        "note": "Third-party composite creator and license not verified; no rehosting."
+      },
+      "optimization": {
+        "hard_max_width_px": 960,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "crop_requires_approval": true
+      },
+      "publication": {
+        "wordpress_upload_approved": false,
+        "source_rewrite_approved": false,
+        "cache_approved": false,
+        "binary_sha256": null
+      }
+    },
+    {
+      "image_key": "277:1",
+      "post_id": 277,
+      "slot": 1,
+      "original_src": "https://www.researchgate.net/profile/Tim-Davies-4/publication/258771194/figure/fig10/AS:669504034914309@1536632655693/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph.png",
+      "original_alt": "Scientific aerial view of Lituya Bay showing the fjord, Cenotaph Island and tsunami damage.",
+      "original_kind": "external",
+      "independent_viewer": {
+        "date_local": "2026-11-02",
+        "result": "RETRIEVAL_DISABLED_NO_HTTP",
+        "numeric_origin_http_status": null,
+        "visual_observation": "ResearchGate figure could not be inspected in this independent viewer."
+      },
+      "guest_browser": {
+        "actual_http_status": null,
+        "final_url": null,
+        "current_src": null,
+        "decode_success": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_data_length_bytes": null,
+        "desktop_screenshot": null,
+        "mobile_screenshot": null
+      },
+      "editorial": {
+        "finding": "UNVERIFIED",
+        "proposed_alt_not_published": null
+      },
+      "primary_source_candidate": null,
+      "rights_review": {
+        "status": "HOLD",
+        "note": "Journal/author figure copyright and reuse terms not established."
+      },
+      "optimization": {
+        "hard_max_width_px": 960,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "crop_requires_approval": true
+      },
+      "publication": {
+        "wordpress_upload_approved": false,
+        "source_rewrite_approved": false,
+        "cache_approved": false,
+        "binary_sha256": null
+      }
+    },
+    {
+      "image_key": "277:2",
+      "post_id": 277,
+      "slot": 2,
+      "original_src": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+      "original_alt": "The enormous landslide and runup scar at the head of Lituya Bay.",
+      "original_kind": "external",
+      "independent_viewer": {
+        "date_local": "2026-11-02",
+        "result": "IMAGE_RENDERED_IN_INDEPENDENT_VIEWER",
+        "numeric_origin_http_status": null,
+        "visual_observation": "Black-and-white close view of mountainside rockslide scar with glacier, consistent with existing ALT; original photographer and rehost rights not verified."
+      },
+      "guest_browser": {
+        "actual_http_status": null,
+        "final_url": null,
+        "current_src": null,
+        "decode_success": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_data_length_bytes": null,
+        "desktop_screenshot": null,
+        "mobile_screenshot": null
+      },
+      "editorial": {
+        "finding": "NO_VISUAL_MISMATCH_OBSERVED",
+        "proposed_alt_not_published": null
+      },
+      "primary_source_candidate": null,
+      "rights_review": {
+        "status": "HOLD",
+        "note": "Third-party Amazon S3 image source; no item-level reuse license established."
+      },
+      "optimization": {
+        "hard_max_width_px": 960,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "crop_requires_approval": true
+      },
+      "publication": {
+        "wordpress_upload_approved": false,
+        "source_rewrite_approved": false,
+        "cache_approved": false,
+        "binary_sha256": null
+      }
+    },
+    {
+      "image_key": "277:3",
+      "post_id": 277,
+      "slot": 3,
+      "original_src": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+      "original_alt": "Shoreline stripped of mature forest by the 1958 Lituya Bay tsunami.",
+      "original_kind": "external",
+      "independent_viewer": {
+        "date_local": "2026-11-02",
+        "result": "VIEWER_URL_INACCESSIBLE_NO_HTTP",
+        "numeric_origin_http_status": null,
+        "visual_observation": "Greeting-card derivative not available at exact current URL in independent retriever; retailer image previews are not rights grants."
+      },
+      "guest_browser": {
+        "actual_http_status": null,
+        "final_url": null,
+        "current_src": null,
+        "decode_success": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_data_length_bytes": null,
+        "desktop_screenshot": null,
+        "mobile_screenshot": null
+      },
+      "editorial": {
+        "finding": "UNVERIFIED",
+        "proposed_alt_not_published": null
+      },
+      "primary_source_candidate": {
+        "url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+        "relation": "Official same-event aerial, different composition from claimed shoreline close-up; not an identical replacement.",
+        "custodian": "U.S. Geological Survey",
+        "credit": "Don J. Miller",
+        "source_rights": "USGS record labels its own item Public Domain",
+        "master_width_px": null,
+        "master_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null
+      },
+      "rights_review": {
+        "status": "HOLD",
+        "note": "Commercial Science Photo Library/retailer derivative rights not established; cannot copy."
+      },
+      "optimization": {
+        "hard_max_width_px": 960,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "crop_requires_approval": true
+      },
+      "publication": {
+        "wordpress_upload_approved": false,
+        "source_rewrite_approved": false,
+        "cache_approved": false,
+        "binary_sha256": null
+      }
+    },
+    {
+      "image_key": "277:4",
+      "post_id": 277,
+      "slot": 4,
+      "original_src": "https://miro.medium.com/v2/resize:fit:1400/1*NtiMuQy8rJhpG_xg-nv92g.png",
+      "original_alt": "Aerial photograph showing the pale band left where the 1958 wave stripped forest around Lituya Bay.",
+      "original_kind": "external",
+      "independent_viewer": {
+        "date_local": "2026-11-02",
+        "result": "IMAGE_RENDERED_IN_INDEPENDENT_VIEWER",
+        "numeric_origin_http_status": null,
+        "visual_observation": "Black-and-white historical USGS aerial photograph with two colored arrows overlaid; current ALT omits added arrows."
+      },
+      "guest_browser": {
+        "actual_http_status": null,
+        "final_url": null,
+        "current_src": null,
+        "decode_success": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_data_length_bytes": null,
+        "desktop_screenshot": null,
+        "mobile_screenshot": null
+      },
+      "editorial": {
+        "finding": "OMITS_MODERN_ANNOTATION",
+        "proposed_alt_not_published": "Annotated 1958 aerial photograph of Lituya Bay with red and yellow arrows pointing toward the landslide scar and deforested shoreline."
+      },
+      "primary_source_candidate": {
+        "url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+        "original_display_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/lituya-bay58.jpg",
+        "relation": "Visually matching underlying historic aerial composition, but current Medium image adds red/yellow arrows not on USGS archival original; NOT pixel-identical.",
+        "custodian": "U.S. Geological Survey",
+        "credit": "Don J. Miller",
+        "source_rights": "USGS media catalog says Public Domain for its unannotated original",
+        "master_width_px": null,
+        "master_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null
+      },
+      "rights_review": {
+        "status": "HOLD",
+        "note": "Do not rehost current annotated Medium derivative; ownership of arrow overlays unknown."
+      },
+      "optimization": {
+        "hard_max_width_px": 960,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null,
+        "conditional_width_px": null,
+        "conditional_height_px": null,
+        "no_upscale": true,
+        "crop_requires_approval": true
+      },
+      "publication": {
+        "wordpress_upload_approved": false,
+        "source_rewrite_approved": false,
+        "cache_approved": false,
+        "binary_sha256": null
+      }
+    },
+    {
+      "image_key": "277:5",
+      "post_id": 277,
+      "slot": 5,
+      "original_src": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Lituyabay_Earth_Observatory_image_2020.jpg",
+      "original_alt": "Modern satellite view of Lituya Bay, Alaska, with forest regrown around the shoreline.",
+      "original_kind": "external",
+      "independent_viewer": {
+        "date_local": "2026-11-02",
+        "result": "IMAGE_RENDERED_IN_INDEPENDENT_VIEWER",
+        "numeric_origin_http_status": null,
+        "visual_observation": "False-color, labeled NASA Landsat 8 satellite composite, with 524 m arrow, landslide and forest trimline labels; not a natural-color satellite photograph."
+      },
+      "guest_browser": {
+        "actual_http_status": null,
+        "final_url": null,
+        "current_src": null,
+        "decode_success": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "encoded_data_length_bytes": null,
+        "desktop_screenshot": null,
+        "mobile_screenshot": null
+      },
+      "editorial": {
+        "finding": "OMITS_FALSE_COLOR_AND_ANNOTATIONS",
+        "proposed_alt_not_published": "Annotated false-color Landsat 8 image of Lituya Bay in 2020, marking the 1958 landslide area, 524-meter runup and forest trimline."
+      },
+      "primary_source_candidate": {
+        "url": "https://science.nasa.gov/earth/earth-observatory/lituya-bays-apocalyptic-wave-147557/",
+        "commons_catalog": "https://commons.wikimedia.org/wiki/File:Lituyabay_Earth_Observatory_image_2020.jpg",
+        "relation": "Commons catalog directly identifies the exact published Wikimedia image and NASA Earth Observatory source.",
+        "custodian": "NASA Earth Observatory",
+        "credit": "Lauren Dauphin, using USGS Landsat 8 data",
+        "source_rights": "Commons marks NASA-created file public domain in U.S.; NASA brand/media restrictions and third-party material still apply.",
+        "master_width_px": 720,
+        "master_height_px": 480,
+        "conditional_width_px": 720,
+        "conditional_height_px": 480,
+        "source_catalog_file_size_bytes": 489000
+      },
+      "rights_review": {
+        "status": "HOLD",
+        "note": "NASA-created file labeled public domain in U.S.; perform item and context review before first-party cache."
+      },
+      "optimization": {
+        "hard_max_width_px": 960,
+        "verified_original_width_px": 720,
+        "verified_original_height_px": 480,
+        "conditional_width_px": 720,
+        "conditional_height_px": 480,
+        "no_upscale": true,
+        "crop_requires_approval": true
+      },
+      "publication": {
+        "wordpress_upload_approved": false,
+        "source_rewrite_approved": false,
+        "cache_approved": false,
+        "binary_sha256": null
+      }
+    }
+  ],
+  "release_gates": {
+    "site_qa_guest_chrome_evidence_required": true,
+    "item_rights_review_required": true,
+    "binary_and_crop_review_required": true,
+    "editorial_alt_approval_required": true,
+    "production_changes_forbidden": true,
+    "site_qa_pr154_unchanged": true,
+    "homepage_design_unchanged": true,
+    "subscription_spend_usd": 0
+  }
+}
