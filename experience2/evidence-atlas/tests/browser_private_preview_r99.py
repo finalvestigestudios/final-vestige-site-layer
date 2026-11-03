@@ -75,17 +75,19 @@ def run(stage,fixture,axe,out):
                 page=context.new_page();page.goto(url('R97_SOURCE_GALLERY.html'))
                 link=page.locator('nav.r98-route a').first
                 link.focus()
-                with page.expect_navigation(url='**fv_apollo_r99=R85_NASA_SOURCE_REVIEW.html#r85-source-01',wait_until='commit'):
+                with page.expect_navigation(wait_until='commit'):
                     page.keyboard.press('Enter')
                 page.wait_for_load_state('domcontentloaded')
+                assert page.url == url('R85_NASA_SOURCE_REVIEW.html')+'#r85-source-01',page.url
                 assert page.locator('#r85-source-01').count()==1
                 context.close()
                 context=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)
                 context.add_cookies([{'name':'apollo_r99_fixture_auth','value':'contract-only','url':BASE}])
                 page=context.new_page();page.goto(url('R97_SOURCE_GALLERY.html'))
-                with page.expect_navigation(url='**fv_apollo_r99=R85_NASA_SOURCE_REVIEW.html#r85-source-01',wait_until='commit'):
+                with page.expect_navigation(wait_until='commit'):
                     page.locator('nav.r98-route a').first.tap()
                 page.wait_for_load_state('domcontentloaded')
+                assert page.url == url('R85_NASA_SOURCE_REVIEW.html')+'#r85-source-01',page.url
                 receipt['keyboard_roundtrip']=True;receipt['touch_roundtrip']=True
                 context.close()
             finally:browser.close()
