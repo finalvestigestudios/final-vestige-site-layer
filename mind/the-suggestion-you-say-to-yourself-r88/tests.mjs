@@ -14,6 +14,7 @@ const mk=(n,changes={})=>Array.from({length:n},()=>({provenance:'synthetic_test'
 test('A/B have exact common substantive core',()=>{assert.ok(A.includes(core));assert.ok(B.includes(core))});
 test('A/B are not identical to each other',()=>assert.notEqual(A,B));
 test('Only B includes optional storyboard and full transcript',()=>{assert.ok(!A.includes('<section class="fv88-film"'));assert.match(B,/class="fv88-transcript"/);assert.match(B,/no player or autoplay/i)});
+test('Video follows primary H1 guide and precedes disclosed offer',()=>{assert.ok(B.indexOf('<h1>') < B.indexOf('<h2'));assert.ok(B.indexOf('class="fv88-guide-body"') < B.indexOf('class="fv88-film"'));assert.ok(B.indexOf('class="fv88-film"') < B.indexOf('class="fv88-ethics"'))});
 test('No merchant anchors or purchase links in either variant',()=>{for(const s of [A,B])assert.doesNotMatch(s,/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive)\./i)});
 test('No active link, form, script, iframe or video autoplay',()=>{for(const s of [A,B,hub]){assert.doesNotMatch(s,/<(?:form|script|iframe)\b/i);assert.doesNotMatch(s,/<video\b|\bautoplay\b\s*=/i)}});
 test('Native-disabled purchase CTA both variants',()=>{for(const s of [A,B])assert.match(s,/<button\s+type="button"\s+disabled\s+aria-describedby="fv88-button-note"/)});
