@@ -1,0 +1,90 @@
+# Isolated Apollo review. No deployment credentials, tokens or CMS access.
+name: Apollo R91 asset boundary and all-view Chromium (STAGING HOLD)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'experience2/evidence-atlas/tools/*r91*'
+      - 'experience2/evidence-atlas/tests/*r91*'
+      - 'experience2/evidence-atlas/R91_ASSET_BOUNDARY_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r91-asset-boundary.yml'
+permissions:
+  contents: read
+jobs:
+  deterministic-source-and-adversarial:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: \${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Real source build, 24 NASA bindings, 13 asset-mutation tests, reproducible bytes
+        env:
+          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r91-python-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/build_release_candidate_r91.py experience2/evidence-atlas/tests/test_release_candidate_r91.py experience2/evidence-atlas/tests/browser_release_candidate_r91.py
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_release_candidate_r91.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_review_hub_r89.py -v
+          python experience2/evidence-atlas/tools/build_release_candidate_r91.py "$RUNNER_TEMP/r91-a" "$RUNNER_TEMP/R91_A.zip"
+          python experience2/evidence-atlas/tools/build_release_candidate_r91.py "$RUNNER_TEMP/r91-b" "$RUNNER_TEMP/R91_B.zip"
+          cmp "$RUNNER_TEMP/R91_A.zip" "$RUNNER_TEMP/R91_B.zip"
+          sha256sum "$RUNNER_TEMP/R91_A.zip"
+          test -z "$(git status --porcelain)"
+      - name: Retain deterministic source and review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r91-deterministic-review-STAGING-HOLD
+          path: \${{ runner.temp }}/R91_A.zip
+          if-no-files-found: error
+          retention-days: 7
+  real-chromium-all-four-surfaces:
+    needs: deterministic-source-and-adversarial
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: \${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.0'
+      - name: Install pinned Playwright, axe and PDF tooling
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check playwright==1.55.0 pymupdf==1.26.7
+          python -m playwright install --with-deps chromium
+          npm install --prefix "$RUNNER_TEMP/r91-axe" --no-save --ignore-scripts --no-package-lock --no-audit --no-fund axe-core@4.14.0
+      - name: 40 real contexts, 8 axe scans, screenshots, native print, lab LCP/CLS
+        env:
+          EXPECTED_HEAD: \${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r91-browser-cache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python experience2/evidence-atlas/tools/build_release_candidate_r91.py "$RUNNER_TEMP/r91-review"
+          python experience2/evidence-atlas/tests/browser_release_candidate_r91.py --src "$RUNNER_TEMP/r91-review" --out "$RUNNER_TEMP/r91-evidence" --axe "$RUNNER_TEMP/r91-axe/node_modules/axe-core/axe.min.js"
+          cat "$RUNNER_TEMP/r91-evidence/R91_BROWSER_MATRIX_RECEIPT.json"
+          test -z "$(git status --porcelain)"
+      - name: Retain real Chromium evidence, including on failed acceptance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r91-all-four-views-browser-STAGING-HOLD
+          path: \${{ runner.temp }}/r91-evidence/
+          if-no-files-found: warn
+          retention-days: 7
