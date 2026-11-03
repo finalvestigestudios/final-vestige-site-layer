@@ -109,8 +109,13 @@ def citations(raw: bytes) -> list[dict]:
         raw.decode("utf-8")
     except UnicodeError as exc:
         raise Hold("article body is not UTF-8") from exc
+    # Do not silently drop an empty/malformed complete citation marker.
+    possible_markers = re.findall(rb"\{\{cite:[^{}]*\}\}", raw)
     output = []
-    for n, match in enumerate(CITE.finditer(raw)):
+    matches = list(CITE.finditer(raw))
+    need(len(possible_markers) == len(matches),
+         "empty or malformed citation marker")
+    for n, match in enumerate(matches):
         try:
             ident = match.group(1).decode("utf-8")
         except UnicodeError as exc:
@@ -142,6 +147,9 @@ def metadata(raw: bytes, origin: str, stage: str) -> dict:
 
 def record_changes(before: dict | None, after: dict | None) -> dict:
     """Differentiate missing/add/remove from same-ID mutation, never alias IDs."""
+    if before is None and after is None:
+        return {"presence": "ABSENT_IN_BOTH",
+                "changed_fields": [], "different_reading": False}
     if before is None or after is None:
         return {"presence": ("ADDED" if before is None else "REMOVED"),
                 "changed_fields": [], "different_reading": True}
@@ -302,11 +310,23 @@ def verify(report: dict) -> None:
           counts["unabridged_source_fragments"]) == (7, 29, 116, 28)
          and len(fragments) == 28 and len(rows) == 29,
          "source / authored article inventory incomplete")
+    source_stage = {}
     for item in fragments:
         raw = item["complete_source_fragment_UTF8"].encode("utf-8")
         need(item["fragment_sha256"] == sha(raw)
              and item == fragment(raw, item["origin"], item["stage"]),
              "source fragment reconstruction mismatch")
+        key = (item["origin"], item["stage"])
+        need(key not in source_stage, "duplicate source snapshot")
+        source_stage[key] = item
+    need(report["all_four_snapshot_source_histories_NOT_ALIASED"] ==
+         compare_sources(source_stage), "source drift rows not reconstructed")
+    stage_indices = {stage: defaultdict(list) for stage in STAGES}
+    for item in fragments:
+        for src in item["source_readings_UNABRIDGED"]:
+            stage_indices[item["stage"]][src["raw_source_id"]].append({
+                "origin": item["origin"], "source_id": src["raw_source_id"],
+                "reading_sha256": src["reading_sha256"]})
     seen = set()
     for group in rows:
         need(group["may_publish"] is False
@@ -323,14 +343,18 @@ def verify(report: dict) -> None:
             meta = row["metadata"]["complete_metadata_UTF8"].encode("utf-8")
             need(sha(body) == row["body_sha256"]
                  and sha(meta) == row["metadata"]["metadata_sha256"]
-                 and row["citation_count"] == len(citations(body))
-                 and [e["raw_source_id"] for e in row["citations_in_original_order"]]
-                     == [e["raw_source_id"] for e in citations(body)]
-                 and row["may_publish"] is False
-                 and row["claim_review"] == REVIEW
-                 and row["qualified_safety_review"] == REVIEW,
+                 and row == article(body, meta, group["origin"],
+                                    group["path"], stage, stage_indices[stage]),
                  "unabridged article/citation/metadata custody mismatch")
+        need(group["drift"] == compare_articles(four),
+             "article citation drift classification altered")
     need(len(seen) == 116, "article count inconsistent")
+    need(counts["origin_scoped_RC_readings"] ==
+         sum(item["source_count"] for item in fragments if item["stage"] == "rc"),
+         "source reading count changed")
+    need(counts["source_ID_histories"] ==
+         len(report["all_four_snapshot_source_histories_NOT_ALIASED"]),
+         "source identity history lost")
 
 
 def live_report(root: Path | None = None) -> dict:
