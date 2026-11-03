@@ -127,7 +127,7 @@ def audit_pages(folder: Path, allowed_sources: set[str]):
 
 def _space(value):
     """Normalize HTMLParser text without weakening source identity constraints."""
-    return re.sub(r"\\s+", " ", html.unescape(str(value))).strip()
+    return re.sub(r"\s+", " ", html.unescape(str(value))).strip()
 
 
 class ScopedSourceCards(HTMLParser):
