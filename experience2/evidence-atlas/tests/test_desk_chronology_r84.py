@@ -55,11 +55,11 @@ class DeskPhotoChronologyR84(unittest.TestCase):
 
     def test_actual_source_markup_uses_unplaced_aside_and_single_2017_date(self):
         page=LEDGER.read_text()
-        rail=re.search(r'<nav class="fv-ex2-ledger__chronology"[\\s\\S]*?</nav>',page)
+        rail=re.search(r'<nav class="fv-ex2-ledger__chronology"[\s\S]*?</nav>',page)
         self.assertIsNotNone(rail)
         rail=rail.group(0)
-        dated=re.search(r'<ol>[\\s\\S]*?</ol>',rail).group(0)
-        self.assertEqual(re.findall(r'<time datetime="(\\d{4}-\\d{2}-\\d{2})"',dated),list(DATED))
+        dated=re.search(r'<ol>[\s\S]*?</ol>',rail).group(0)
+        self.assertEqual(re.findall(r'<time datetime="(\d{4}-\d{2}-\d{2})"',dated),list(DATED))
         self.assertEqual(dated.count('datetime="2017-01-24"'),1)
         self.assertNotIn('href="'+PORTRAIT+'"',dated)
         self.assertEqual(dated.count('data-fvx-chrono-link'),5)
