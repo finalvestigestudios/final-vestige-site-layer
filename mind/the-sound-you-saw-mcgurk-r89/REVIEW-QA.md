@@ -3,7 +3,7 @@
 ### Design/security/accessibility properties provided
 - All HTML is under a `.fv89` class; scoped CSS, responsive max widths, no external fonts, images, remote embeds or scripts.
 - Native disabled, not merely aria-disabled, merchant control; clear prospective compensation disclosure directly above disabled control.
-- A/B share exact full guide core; film only in B. Film is **not rendered**, so B honestly presents an illustrated text storyboard and always-visible transcript rather than a broken player.
+- A/B share exact full guide core; film only in B. Film **has been rendered offline**, but B honestly presents an illustrated text storyboard and always-visible transcript rather than a broken player.
 - Links go only to verified first-party destinations and scholarly/regulatory sources; no merchant earning anchors, injected tracking pixels, autoplay, iframes, newsletter forms or cookies.
 - Focus exists; no replacement welcome automation or second email list. Motion reduced via media query.
 - B film text does not depict itself as actual experimental footage; no suggestion the McGurk effect proves Zen12's outcome.
@@ -13,7 +13,7 @@
 - McGurk 1976 original abstract, Brown 2018 abstract and open peer-reviewed material, Teramoto & Ernst 2023 open methods, Zen12 public offer/About/Research/checkout, Inspire3 privacy, and both FTC guidance pages inspected November 3, 2026. Literature does not validate Zen12.
 - Full paid MP3s NOT tested. Partner acceptance, channel-specific rights, earning URL, approved creatives, full terms, refund implementation, privacy opt-out, legal signoff missing.
 - No current paid program price embedded because volatile and subject to checkout changes.
-- R89 40-second film **storyboard/VTT only**, no MP4, no actual audio, no playable video. Production and hosted VTT browser sync remain required.
+- R89 40-second silent film **rendered offline**, 40.000s H.264 540x960 12fps, but NO first-party site host or playable video in A/B. Local static preview exists in the offline review ZIP; real hosted VTT browser sync remains required.
 - Native Node, actual Gutenberg render, full keyboard/screen reader, Lighthouse and conversions require independent execution; do not inflate tests.
 
 ### A/B acceptance plan (not an experiment that has occurred)
