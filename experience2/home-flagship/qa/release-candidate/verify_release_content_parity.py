@@ -19,7 +19,7 @@ SOURCE = HOME / "index.html"
 RELEASE_FIXTURE = HOME / "qa/release-candidate/fixtures/proposed-production-block-pr604.html"
 PRODUCTION_RELEASE_HEAD = "5f87f1b0a48ed2f17ecca49a60c44a482ca530de"  # historical origin only, not current blob
 PRODUCTION_SOURCE_BLOB = "978e25e69cd6b077863515158a9e696a5c4e9a8c"
-PRODUCTION_BLOCK_BLOB = "ebe62f4b145fddf6925efc1b8502abef4a2177a8"
+PRODUCTION_BLOCK_BLOB = "2f22e66f8d21a677e16e62c999afa38dbad88b9a"  # CSS-first staging experiment
 OPENING = '<section class="fv-hf__opening"'
 CLOSING = "</section>"
 RIGHTS = {
@@ -36,11 +36,15 @@ def chapter_interior(source: str, *, inline_block: bool) -> str:
     # Intentionally strict and deterministic: changing the wrapper contract
     # requires a new review, not a permissive HTML normalization that could
     # erase attribution or alter semantic content.
-    end_marker = "<style>" if inline_block else "</main>"
-    end = source.find(end_marker)
+    # The WordPress block may place its *single* scoped stylesheet before
+    # hero markup. Bound editorial content by the first trailing script,
+    # never by the CSS location; source HTML remains bounded by </main>.
+    first = source.find(OPENING)
+    if first < 0:
+        raise ValueError("RELEASE_PARITY_WRAPPER_MISSING")
+    end = source.find("<script>", first) if inline_block else source.find("</main>", first)
     if end < 0:
         raise ValueError("RELEASE_PARITY_WRAPPER_MISSING")
-    first = source.find(OPENING)
     last = source.rfind(CLOSING, 0, end)
     if first < 0 or last < first or source.find(OPENING, first + 1) != -1:
         raise ValueError("RELEASE_PARITY_CHAPTER_BOUNDARY")
