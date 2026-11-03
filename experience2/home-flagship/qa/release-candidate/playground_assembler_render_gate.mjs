@@ -124,7 +124,8 @@ async function checkView(page,width,axePath){
     if(!window.axe)throw new Error('axe unavailable: fail closed');
     const r=await window.axe.run(document.querySelector('[data-fv-home-flagship]'),
       {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});
-    return r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length}));
+    return r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,
+      targets:v.nodes.slice(0,4).map(n=>n.target.slice(0,3))}));
   });
   if(violations.length)throw new Error(`Automated axe findings at ${width}: ${JSON.stringify(violations)}`);
   return {width,state,axe_violations:0,media:await imageBodies(page)};
