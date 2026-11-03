@@ -25,6 +25,11 @@ SCENES = [
 def centered(draw, xy, title, font, fill):
     x,y=xy
     bb=draw.textbbox((0,0),title,font=font)
+    # Preserve safe typography margins on the 540px portrait canvas.
+    if bb[2]-bb[0] > W-100:
+        original=font
+        font=ImageFont.truetype(SERIF,max(16,int(original.size*(W-100)/(bb[2]-bb[0]))))
+        bb=draw.textbbox((0,0),title,font=font)
     draw.text((x-(bb[2]-bb[0])/2, y),title,font=font,fill=fill)
 
 def frame(num):
