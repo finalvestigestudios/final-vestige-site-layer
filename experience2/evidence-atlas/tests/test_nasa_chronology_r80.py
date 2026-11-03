@@ -83,7 +83,7 @@ class SourceChronologyCertainty(unittest.TestCase):
 
     def test_rendered_page_retains_nojs_custody_and_certain_links(self):
         page = render_html(ROOT)
-        self.assertEqual(page.count('class="card'), 6)
+        self.assertEqual(page.count('<article class="card'), 6)
         self.assertEqual(page.count('class="source-drawer"'), 6)
         self.assertEqual(page.count('class="rail-event"'), 4)
         self.assertIn('aria-labelledby="rail-unplaced-title"', page)
