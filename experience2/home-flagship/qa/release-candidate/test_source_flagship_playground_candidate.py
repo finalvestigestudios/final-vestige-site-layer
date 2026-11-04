@@ -6,6 +6,7 @@ production source or archived live visitor records.
 from __future__ import annotations
 
 import hashlib
+from html import escape
 import json
 import sys
 import tempfile
@@ -17,8 +18,8 @@ HOME = HERE.parents[1]
 sys.path.insert(0, str(HERE))
 from write_source_flagship_playground_candidate import (  # noqa: E402
     CSS_FILES, JS_FILES, NAV_TARGETS, NYPL_FILE, STAGING_ONLY,
-    STAGING_ASSEMBLER_STYLE, ASSEMBLER_STAGE_CSS,
-    compose, digest, read_sources, write,
+    STAGING_ASSEMBLER_STYLE, ASSEMBLER_STAGE_CSS, PUBLIC_MARGINS_JSON,
+    compose, digest, load_public_margins, read_sources, write,
 )
 
 
@@ -31,6 +32,8 @@ class FullSourceFlagshipTests(unittest.TestCase):
         candidate, manifest = compose(self.index, self.css, self.js)
         self.assertTrue(manifest["real_source_controlled_flagship"])
         self.assertFalse(manifest["page6_live_content_included"])
+        self.assertTrue(manifest["public_page6_margins_texts_included"])
+        self.assertFalse(manifest["other_page6_content_included"])
         self.assertEqual(manifest["release"], "HOLD")
         self.assertEqual(manifest["margin_items"], 72)
         self.assertEqual(manifest["script_source_count"], 4)
@@ -65,9 +68,10 @@ class FullSourceFlagshipTests(unittest.TestCase):
             manifest["assembler_saved_stage_css_sha256"],
             digest(stage_css.encode("utf-8"))
         )
-        self.assertIn('role="region" aria-label="72 synthetic historical fragments" tabindex="0"', candidate)
+        self.assertIn('role="region" aria-label="72 published historical fragments in isolated review" tabindex="0"', candidate)
         self.assertEqual(candidate.count('class="fv-margin-strip__window"'), 1)
-        self.assertEqual(candidate.count("Historic fragment "), 72)
+        self.assertEqual(candidate.count("Historic fragment "), 0)
+        self.assertEqual(candidate.count('class="fv-margin-strip__item"'), 72)
         self.assertIn('.wp-block-post-content > .fv-hf', candidate)
         self.assertIn('@supports selector(body:has(', candidate)
 
@@ -89,7 +93,51 @@ class FullSourceFlagshipTests(unittest.TestCase):
         self.assertNotIn("assembler_saved_layout_playground_only.css",
                          manifest["source_sha256"])
         self.assertEqual(candidate.count("<style "), 2)
-        self.assertIn("SYNTHETIC FRAGMENTS", candidate)
+        self.assertIn("PUBLISHED MARGINS · TEST FIXTURE", candidate)
+
+
+    def test_public_page6_margins_are_exact_and_not_live_jetpack(self):
+        texts, provenance = load_public_margins()
+        candidate, manifest = compose(self.index, self.css, self.js)
+        self.assertEqual(len(texts), 72)
+        self.assertEqual(len(set(texts)), 72)
+        self.assertEqual(manifest["public_fragment_fixture_sha256"],
+                         hashlib.sha256(PUBLIC_MARGINS_JSON.read_bytes()).hexdigest())
+        self.assertEqual(manifest["published_margins_source_modified"],
+                         provenance["source_modified"])
+        self.assertIn("PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE",
+                      manifest["data_classification"])
+        for text in (texts[0], texts[19], texts[35], texts[71]):
+            self.assertIn(escape(text, quote=False), candidate)
+        self.assertIn("Nearly 4,000 years ago, Nanni filed a clay complaint", candidate)
+        self.assertIn("living people's information", candidate)
+        self.assertIn("72 PUBLISHED MARGINS · TEST FIXTURE", candidate)
+        self.assertEqual(candidate.count("jetpack/subscriptions"), 1)
+        self.assertEqual(manifest["data_classification"],
+                         "PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE")
+
+    def test_public_margins_custody_mutations_fail_closed(self):
+        original = json.loads(PUBLIC_MARGINS_JSON.read_text(encoding="utf-8"))
+        mutations = [
+            lambda d: d["items"].pop(),
+            lambda d: d["items"][15].update(index=14),
+            lambda d: d["items"][9].update(text=d["items"][8]["text"]),
+            lambda d: d["items"][0].update(text="<script>alert(1)</script>"),
+            lambda d: d["items"][0].update(text=""),
+            lambda d: d.update(source_page_id=7),
+            lambda d: d.update(source_url="https://attacker.invalid/"),
+            lambda d: d.update(status="PRODUCTION"),
+            lambda d: d.update(fragment_count=71),
+        ]
+        for alter in mutations:
+            bad = json.loads(json.dumps(original))
+            alter(bad)
+            with tempfile.TemporaryDirectory() as d:
+                fp = Path(d) / "untrusted.json"
+                fp.write_text(json.dumps(bad), encoding="utf-8")
+                with self.subTest(mutation=str(alter)):
+                    with self.assertRaises(ValueError):
+                        load_public_margins(fp)
 
     def test_missing_chapter_target_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "chapter"):
