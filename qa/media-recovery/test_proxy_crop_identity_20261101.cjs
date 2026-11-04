@@ -15,7 +15,8 @@ const dom=(u,decoded=0)=>[{src:u,currentSrc:u,dataSrc:'',alt:'Specific archival 
 
 test('identical original URL is identical',()=>assert.ok(sameSource(plain,plain)));
 test('static size/quality changes remain equivalent',()=>assert.ok(sameSource(plain,plain+'?w=960&q=80')));
-test('first-party Jetpack resize remains a source match',()=>assert.ok(sameSource('https://finalvestige.com/wp-content/uploads/a.jpg','https://i0.wp.com/finalvestige.com/wp-content/uploads/a.jpg?resize=960%2C540&ssl=1')));
+test('Jetpack resize is crop-capable: do not equate its result with an uncropped original',()=>assert.equal(sameSource('https://finalvestige.com/wp-content/uploads/a.jpg','https://i0.wp.com/finalvestige.com/wp-content/uploads/a.jpg?resize=960%2C540&ssl=1'),false));
+test('identical crop-capable resize through Jetpack variants remains identifiable',()=>assert.ok(sameSource('https://i0.wp.com/finalvestige.com/wp-content/uploads/a.jpg?resize=960%2C540&ssl=1','https://i1.wp.com/finalvestige.com/wp-content/uploads/a.jpg?resize=960%2C540&ssl=1')));
 test('cross-proxy wrappers retain original static source identity',()=>assert.ok(sameSource('https://i0.wp.com/archive.example.org/photo.jpg?ssl=1','https://i1.wp.com/archive.example.org/photo.jpg?w=960&ssl=1')));
 test('crop selectors distinguish two regions of one archival source',()=>assert.equal(sameSource(cropA,cropB),false));
 test('a cropped photograph is not certified equivalent to the full image',()=>assert.equal(sameSource(plain,cropA),false));
