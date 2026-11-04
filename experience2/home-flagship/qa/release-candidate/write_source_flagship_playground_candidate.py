@@ -179,13 +179,27 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
         '<script data-fv-source="' + name + '">\n' + js[name] + '\n</script>'
         for name in JS_FILES
     )
+    # The standalone art-direction HTML has one <main>, correctly. Gutenberg
+    # renders its custom HTML INSIDE Assembler's own main landmark; nesting the
+    # standalone <main> produces a second main landmark for screen readers.
+    # Transform ONLY the isolated WordPress payload, never index.html itself.
+    if body.count("<main>") != 1 or body.count("</main>") != 1:
+        raise ValueError("Standalone flagship main landmark boundary changed")
+    embedded_body = body.replace(
+        "<main>", '<div data-fv-embedded-main="wordpress-assembler">', 1
+    ).replace("</main>", "</div>", 1)
+    if re.search(r"</?main(?:\\s|>)", embedded_body, re.I):
+        raise ValueError("Nested main landmark remains in WordPress embed")
+
     section = (
         '<style ' + STAGING_ASSEMBLER_STYLE + '>\n' + assembler_css + '\n</style>\n'
         + '<style data-fv-stage-only="source-css">\n' + inline_css + '\n</style>\n'
-        + '<!-- ' + STAGING_ONLY + ' -->\n' + body + '\n'
+        + '<!-- ' + STAGING_ONLY + ' -->\n' + embedded_body + '\n'
         + inline_js
     )
     candidate = prefix + '<!-- wp:html -->\n' + section + '\n' + END_BLOCK + suffix
+    if candidate.count('data-fv-embedded-main="wordpress-assembler"') != 1:
+        raise ValueError("WordPress embed main boundary missing or duplicated")
     inv = structural_inventory(candidate)
     if inv["margin_indices"] != list(range(72)):
         raise ValueError("Synthetic 72-item Margins/contrast source drift")
@@ -229,6 +243,7 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
         "chapter_targets": list(NAV_TARGETS),
         "style_source_count": len(CSS_FILES),
         "script_source_count": len(JS_FILES),
+        "wordpress_main_landmark_adapted": True,
         "wordpress_theme_parity": "NOT_TESTED",
         "production_source_or_subscribers": "ONLY_PUBLIC_MARGINS_NO_PRIVATE_DATA",
         "accessibility_performance_approval": "NOT_GRANTED",
