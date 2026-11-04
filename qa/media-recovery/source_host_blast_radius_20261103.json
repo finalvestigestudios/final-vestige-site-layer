@@ -1,0 +1,2604 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "method": "frozen Gutenberg src dependency topology; NOT HTTP/browser outage test",
+  "frozen_part_paths": [
+    "qa/media-recovery/parts/01.json",
+    "qa/media-recovery/parts/02.json",
+    "qa/media-recovery/parts/03.json",
+    "qa/media-recovery/parts/04.json",
+    "qa/media-recovery/parts/05.json",
+    "qa/media-recovery/parts/06.json",
+    "qa/media-recovery/parts/07.json",
+    "qa/media-recovery/parts/08.json"
+  ],
+  "source_count": {
+    "posts": 61,
+    "stored_inline_image_refs": 355,
+    "recorded_external_origins": 288,
+    "first_party_direct": 60,
+    "first_party_jetpack": 7,
+    "external_direct": 170,
+    "wikimedia_special_redirect": 118,
+    "distinct_stored_source_hosts": 80,
+    "all_external_posts": 36,
+    "fully_single_external_host_posts": 17
+  },
+  "caveats": {
+    "browser_broken_42": "UNVERIFIED",
+    "wire_weight_savings_76_percent": "UNMEASURED",
+    "saved_image_binary_status": "NOT_INSPECTED",
+    "rendered_currentSrc_redirects": "NOT_MEASURED",
+    "source_host_exposure_is_not_outage": true,
+    "no_wordpress_writes": true,
+    "media_rehost_approved": false
+  },
+  "hosts": [
+    {
+      "source_host": "commons.wikimedia.org",
+      "stored_reference_count": 118,
+      "post_ids": [
+        166,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        268,
+        367,
+        425,
+        431
+      ],
+      "slot_keys": [
+        "166:2",
+        "166:3",
+        "166:4",
+        "166:5",
+        "166:6",
+        "214:1",
+        "214:2",
+        "214:3",
+        "214:5",
+        "215:0",
+        "215:1",
+        "215:2",
+        "215:3",
+        "215:4",
+        "215:5",
+        "216:0",
+        "216:1",
+        "216:2",
+        "216:3",
+        "216:4",
+        "216:5",
+        "217:0",
+        "217:1",
+        "217:2",
+        "217:3",
+        "217:4",
+        "217:5",
+        "218:0",
+        "218:1",
+        "218:2",
+        "218:3",
+        "218:4",
+        "218:5",
+        "219:0",
+        "219:1",
+        "219:2",
+        "219:3",
+        "219:4",
+        "219:5",
+        "220:0",
+        "220:1",
+        "220:2",
+        "220:3",
+        "220:4",
+        "220:5",
+        "220:6",
+        "221:0",
+        "221:1",
+        "221:2",
+        "221:3",
+        "221:4",
+        "221:5",
+        "221:6",
+        "252:0",
+        "252:1",
+        "252:2",
+        "252:3",
+        "252:4",
+        "252:5",
+        "253:0",
+        "253:1",
+        "253:2",
+        "253:3",
+        "253:4",
+        "253:5",
+        "253:6",
+        "254:0",
+        "254:1",
+        "254:2",
+        "254:3",
+        "254:4",
+        "254:5",
+        "254:6",
+        "255:0",
+        "255:1",
+        "255:2",
+        "255:3",
+        "255:4",
+        "255:5",
+        "255:6",
+        "256:0",
+        "256:1",
+        "256:2",
+        "256:3",
+        "256:4",
+        "256:5",
+        "256:6",
+        "257:0",
+        "257:1",
+        "257:2",
+        "257:3",
+        "257:4",
+        "257:5",
+        "257:6",
+        "258:0",
+        "258:5",
+        "268:0",
+        "268:2",
+        "268:3",
+        "268:5",
+        "268:6",
+        "268:9",
+        "367:1",
+        "367:2",
+        "367:3",
+        "367:5",
+        "367:6",
+        "367:7",
+        "367:8",
+        "425:1",
+        "425:2",
+        "425:3",
+        "425:4",
+        "425:5",
+        "425:6",
+        "425:7",
+        "425:8",
+        "431:5"
+      ],
+      "source_kind_counts": {
+        "wikimedia_redirect": 118
+      },
+      "example_exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Frank_Slide_from_NW_flank_of_Turtle_Mountain.jpg?width=1280",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 20
+    },
+    {
+      "source_host": "finalvestige.com",
+      "stored_reference_count": 60,
+      "post_ids": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        101,
+        108,
+        139,
+        142,
+        146,
+        151,
+        156,
+        166,
+        269,
+        299,
+        330,
+        367,
+        370,
+        413,
+        425,
+        428,
+        431,
+        433,
+        434,
+        621
+      ],
+      "slot_keys": [
+        "101:0",
+        "101:3",
+        "101:5",
+        "108:0",
+        "108:1",
+        "139:0",
+        "139:1",
+        "142:0",
+        "142:1",
+        "142:2",
+        "146:0",
+        "146:1",
+        "146:2",
+        "151:0",
+        "151:1",
+        "151:2",
+        "156:0",
+        "156:1",
+        "156:2",
+        "156:3",
+        "166:0",
+        "269:0",
+        "269:1",
+        "269:2",
+        "269:3",
+        "269:4",
+        "269:5",
+        "269:6",
+        "299:6",
+        "330:0",
+        "330:1",
+        "330:2",
+        "330:3",
+        "330:4",
+        "330:5",
+        "330:6",
+        "330:7",
+        "34:0",
+        "35:0",
+        "367:0",
+        "36:0",
+        "370:2",
+        "370:5",
+        "370:6",
+        "370:7",
+        "37:0",
+        "38:0",
+        "413:0",
+        "413:2",
+        "425:0",
+        "428:0",
+        "431:0",
+        "433:0",
+        "434:0",
+        "621:0",
+        "621:1",
+        "621:2",
+        "621:3",
+        "621:4",
+        "621:5"
+      ],
+      "source_kind_counts": {
+        "first_party": 60
+      },
+      "example_exact_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 25
+    },
+    {
+      "source_host": "upload.wikimedia.org",
+      "stored_reference_count": 18,
+      "post_ids": [
+        101,
+        213,
+        274,
+        277,
+        278,
+        279,
+        289,
+        290,
+        431,
+        433
+      ],
+      "slot_keys": [
+        "101:1",
+        "101:2",
+        "101:4",
+        "101:6",
+        "213:3",
+        "274:0",
+        "274:5",
+        "277:5",
+        "278:2",
+        "279:1",
+        "279:4",
+        "289:0",
+        "290:2",
+        "431:2",
+        "433:1",
+        "433:2",
+        "433:3",
+        "433:4"
+      ],
+      "source_kind_counts": {
+        "external": 18
+      },
+      "example_exact_source_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/HMS_Erebus_and_Terror_-_ILN_1845.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 10
+    },
+    {
+      "source_host": "www.history.navy.mil",
+      "stored_reference_count": 15,
+      "post_ids": [
+        274,
+        280,
+        288,
+        370
+      ],
+      "slot_keys": [
+        "274:1",
+        "274:2",
+        "274:4",
+        "280:0",
+        "280:1",
+        "280:2",
+        "280:3",
+        "280:4",
+        "280:5",
+        "288:0",
+        "288:2",
+        "370:0",
+        "370:1",
+        "370:3",
+        "370:4"
+      ],
+      "source_kind_counts": {
+        "external": 15
+      },
+      "example_exact_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 4
+    },
+    {
+      "source_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "stored_reference_count": 9,
+      "post_ids": [
+        407,
+        418
+      ],
+      "slot_keys": [
+        "407:0",
+        "407:1",
+        "407:2",
+        "407:3",
+        "407:4",
+        "407:5",
+        "407:6",
+        "407:7",
+        "418:5"
+      ],
+      "source_kind_counts": {
+        "external": 9
+      },
+      "example_exact_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 2
+    },
+    {
+      "source_host": "i0.wp.com",
+      "stored_reference_count": 9,
+      "post_ids": [
+        285,
+        291,
+        299
+      ],
+      "slot_keys": [
+        "285:1",
+        "291:0",
+        "299:0",
+        "299:1",
+        "299:2",
+        "299:3",
+        "299:4",
+        "299:5",
+        "299:7"
+      ],
+      "source_kind_counts": {
+        "jetpack_proxy": 7,
+        "external": 2
+      },
+      "example_exact_source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 3
+    },
+    {
+      "source_host": "cdn.loc.gov",
+      "stored_reference_count": 7,
+      "post_ids": [
+        190,
+        214
+      ],
+      "slot_keys": [
+        "190:0",
+        "190:2",
+        "190:3",
+        "190:4",
+        "190:5",
+        "214:0",
+        "214:4"
+      ],
+      "source_kind_counts": {
+        "external": 7
+      },
+      "example_exact_source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 2
+    },
+    {
+      "source_host": "tile.loc.gov",
+      "stored_reference_count": 7,
+      "post_ids": [
+        166,
+        190,
+        413,
+        428
+      ],
+      "slot_keys": [
+        "166:1",
+        "190:1",
+        "413:1",
+        "413:3",
+        "413:4",
+        "413:5",
+        "428:5"
+      ],
+      "source_kind_counts": {
+        "external": 7
+      },
+      "example_exact_source_url": "https://tile.loc.gov/image-services/iiif/service%3Agmd%3Agmd427m%3Ag4274m%3Ag4274wm%3Ag016871905%3A01687_1905-0001/full/pct%3A25/0/default.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 4
+    },
+    {
+      "source_host": "www.floridamemory.com",
+      "stored_reference_count": 7,
+      "post_ids": [
+        432
+      ],
+      "slot_keys": [
+        "432:0",
+        "432:1",
+        "432:2",
+        "432:3",
+        "432:4",
+        "432:5",
+        "432:6"
+      ],
+      "source_kind_counts": {
+        "external": 7
+      },
+      "example_exact_source_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.nps.gov",
+      "stored_reference_count": 6,
+      "post_ids": [
+        211
+      ],
+      "slot_keys": [
+        "211:0",
+        "211:1",
+        "211:2",
+        "211:3",
+        "211:4",
+        "211:5"
+      ],
+      "source_kind_counts": {
+        "external": 6
+      },
+      "example_exact_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "images-assets.nasa.gov",
+      "stored_reference_count": 5,
+      "post_ids": [
+        434
+      ],
+      "slot_keys": [
+        "434:1",
+        "434:2",
+        "434:3",
+        "434:4",
+        "434:5"
+      ],
+      "source_kind_counts": {
+        "external": 5
+      },
+      "example_exact_source_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "media.defense.gov",
+      "stored_reference_count": 5,
+      "post_ids": [
+        278,
+        289,
+        418
+      ],
+      "slot_keys": [
+        "278:0",
+        "278:1",
+        "278:6",
+        "289:4",
+        "418:1"
+      ],
+      "source_kind_counts": {
+        "external": 5
+      },
+      "example_exact_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 3
+    },
+    {
+      "source_host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "stored_reference_count": 4,
+      "post_ids": [
+        287,
+        290,
+        291
+      ],
+      "slot_keys": [
+        "287:1",
+        "290:1",
+        "291:2",
+        "291:5"
+      ],
+      "source_kind_counts": {
+        "external": 4
+      },
+      "example_exact_source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 3
+    },
+    {
+      "source_host": "objects.lib.uidaho.edu",
+      "stored_reference_count": 4,
+      "post_ids": [
+        428
+      ],
+      "slot_keys": [
+        "428:1",
+        "428:2",
+        "428:3",
+        "428:4"
+      ],
+      "source_kind_counts": {
+        "external": 4
+      },
+      "example_exact_source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "archimedespalimpsest.org",
+      "stored_reference_count": 3,
+      "post_ids": [
+        268
+      ],
+      "slot_keys": [
+        "268:1",
+        "268:7",
+        "268:8"
+      ],
+      "source_kind_counts": {
+        "external": 3
+      },
+      "example_exact_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "stored_reference_count": 3,
+      "post_ids": [
+        213
+      ],
+      "slot_keys": [
+        "213:1",
+        "213:2",
+        "213:6"
+      ],
+      "source_kind_counts": {
+        "external": 3
+      },
+      "example_exact_source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-fire-progression-map.jpg?VersionId=nXjGkeGzQeXNCaBmxg9oBNzb6As7WcRA",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "research.fs.usda.gov",
+      "stored_reference_count": 3,
+      "post_ids": [
+        213
+      ],
+      "slot_keys": [
+        "213:0",
+        "213:4",
+        "213:5"
+      ],
+      "source_kind_counts": {
+        "external": 3
+      },
+      "example_exact_source_url": "https://research.fs.usda.gov/sites/default/files/2024-08/firelab-northface-manngulch-printable.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.fhwa.dot.gov",
+      "stored_reference_count": 3,
+      "post_ids": [
+        258
+      ],
+      "slot_keys": [
+        "258:2",
+        "258:3",
+        "258:4"
+      ],
+      "source_kind_counts": {
+        "external": 3
+      },
+      "example_exact_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1_thumb.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.history.uscg.mil",
+      "stored_reference_count": 3,
+      "post_ids": [
+        418
+      ],
+      "slot_keys": [
+        "418:0",
+        "418:2",
+        "418:3"
+      ],
+      "source_kind_counts": {
+        "external": 3
+      },
+      "example_exact_source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "cdn2.picryl.com",
+      "stored_reference_count": 2,
+      "post_ids": [
+        276
+      ],
+      "slot_keys": [
+        "276:0",
+        "276:4"
+      ],
+      "source_kind_counts": {
+        "external": 2
+      },
+      "example_exact_source_url": "https://cdn2.picryl.com/photo/1907/12/31/quebec-bridge-hs85-10-18815-460e1c-1024.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "historicbridges.org",
+      "stored_reference_count": 2,
+      "post_ids": [
+        276
+      ],
+      "slot_keys": [
+        "276:1",
+        "276:5"
+      ],
+      "source_kind_counts": {
+        "external": 2
+      },
+      "example_exact_source_url": "https://historicbridges.org/quebec/quebec/oldbridge3.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "miro.medium.com",
+      "stored_reference_count": 2,
+      "post_ids": [
+        277,
+        283
+      ],
+      "slot_keys": [
+        "277:4",
+        "283:1"
+      ],
+      "source_kind_counts": {
+        "external": 2
+      },
+      "example_exact_source_url": "https://miro.medium.com/v2/resize:fit:1400/1*IcflN4VAkB2zIyMzIbcmyQ.jpeg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 2
+    },
+    {
+      "source_host": "www.geoinstitute.org",
+      "stored_reference_count": 2,
+      "post_ids": [
+        431
+      ],
+      "slot_keys": [
+        "431:1",
+        "431:3"
+      ],
+      "source_kind_counts": {
+        "external": 2
+      },
+      "example_exact_source_url": "https://www.geoinstitute.org/sites/default/files/inline-images/Image%2003_3.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.researchgate.net",
+      "stored_reference_count": 2,
+      "post_ids": [
+        277,
+        290
+      ],
+      "slot_keys": [
+        "277:1",
+        "290:5"
+      ],
+      "source_kind_counts": {
+        "external": 2
+      },
+      "example_exact_source_url": "https://www.researchgate.net/profile/Nanna-Karlsson/publication/333896089/figure/fig18/AS:771826441658368@1561031015362/As-built-map-of-Camp-Century-geo-referenced-to-August-2017-position-using-radar-data.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 2
+    },
+    {
+      "source_host": "2.bp.blogspot.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        283
+      ],
+      "slot_keys": [
+        "283:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://2.bp.blogspot.com/-vFf9zOG42QU/W2shS055U-I/AAAAAAAACc0/uHswGJB19E4OgUANkDatBX7LSCIEswfZgCLcBGAs/s1600/Fire%2BEscape%2BDoors%2BPortrait%2BMode.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "ahoy.tk-jk.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        288
+      ],
+      "slot_keys": [
+        "288:1"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://ahoy.tk-jk.net/Images8/Honda/DelphiAndNicholasAtHondaPoint.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        287
+      ],
+      "slot_keys": [
+        "287:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "bkimg.cdn.bcebos.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        279
+      ],
+      "slot_keys": [
+        "279:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://bkimg.cdn.bcebos.com/pic/024f78f0f736afc379317e1bd848fcc4b74543a9b436",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "blog.ucsusa.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        285
+      ],
+      "slot_keys": [
+        "285:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "bloximages.chicago2.vip.townnews.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        283
+      ],
+      "slot_keys": [
+        "283:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "brightspotcdn.byui.edu",
+      "stored_reference_count": 1,
+      "post_ids": [
+        291
+      ],
+      "slot_keys": [
+        "291:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "cdn-sw.spidersweb.pl",
+      "stored_reference_count": 1,
+      "post_ids": [
+        279
+      ],
+      "slot_keys": [
+        "279:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://cdn-sw.spidersweb.pl/2024/02/kosmos_954.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "cgaviationhistory.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        292
+      ],
+      "slot_keys": [
+        "292:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://cgaviationhistory.org/wp-content/uploads/MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "chicagology.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        283
+      ],
+      "slot_keys": [
+        "283:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://chicagology.com/wp-content/themes/revolution-20/chicagoimages2/iroquoispromenade.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "d1ldvf68ux039x.cloudfront.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        289
+      ],
+      "slot_keys": [
+        "289:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1307/985674/1000w_q95.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "d3d0lqu00lnqvz.cloudfront.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        433
+      ],
+      "slot_keys": [
+        "433:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://d3d0lqu00lnqvz.cloudfront.net/media/media/cea975ac-62ed-4c2f-bf13-67a0f3a90092.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "dmt55mxnkgbz2.cloudfront.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        291
+      ],
+      "slot_keys": [
+        "291:1"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "florencekelley.northwestern.edu",
+      "stored_reference_count": 1,
+      "post_ids": [
+        283
+      ],
+      "slot_keys": [
+        "283:6"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://florencekelley.northwestern.edu/img/galleries/historical/iroquois/i36009aa.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "i.insider.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        285
+      ],
+      "slot_keys": [
+        "285:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "ids.si.edu",
+      "stored_reference_count": 1,
+      "post_ids": [
+        276
+      ],
+      "slot_keys": [
+        "276:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "imagerenderer.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        277
+      ],
+      "slot_keys": [
+        "277:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "images.pixels.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        285
+      ],
+      "slot_keys": [
+        "285:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "images.pubble.cloud",
+      "stored_reference_count": 1,
+      "post_ids": [
+        292
+      ],
+      "slot_keys": [
+        "292:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "images.saymedia-content.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        285
+      ],
+      "slot_keys": [
+        "285:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "images2.minutemediacdn.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        283
+      ],
+      "slot_keys": [
+        "283:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/627134-wikimedia-iroquois-fire-66b8dccd06d18b8b1200a566c6d50b53.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "img.connatix.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        287
+      ],
+      "slot_keys": [
+        "287:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "indomgb.s3.amazonaws.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        277
+      ],
+      "slot_keys": [
+        "277:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "k-static.appmobile.cn",
+      "stored_reference_count": 1,
+      "post_ids": [
+        289
+      ],
+      "slot_keys": [
+        "289:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://k-static.appmobile.cn/uploads3/allimg/2603/15/1K1364K1-2.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "k.sinaimg.cn",
+      "stored_reference_count": 1,
+      "post_ids": [
+        289
+      ],
+      "slot_keys": [
+        "289:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?by=cms_fixed_width",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "live.staticflickr.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        285
+      ],
+      "slot_keys": [
+        "285:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "media.licdn.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        279
+      ],
+      "slot_keys": [
+        "279:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://media.licdn.com/dms/image/v2/D4D12AQHmW14R-yIi1g/article-inline_image-shrink_1000_1488/B4DZctCqx_q4AM-/0/1748804514162?e=2147483647&v=beta&t=cK4Wg6FhyvLGIEHJU44N_Rj9uCSsywcjtMc_ZoQSgaA",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "nationalcoastguardmuseum.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        292
+      ],
+      "slot_keys": [
+        "292:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/DF-SN-86-12843-header-image-900x675.jpeg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "navalunderseamuseum.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        367
+      ],
+      "slot_keys": [
+        "367:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "qmmuseum.army.mil",
+      "stored_reference_count": 1,
+      "post_ids": [
+        278
+      ],
+      "slot_keys": [
+        "278:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "quebecblogue.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        276
+      ],
+      "slot_keys": [
+        "276:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://quebecblogue.com/files/2023/04/tragedie-pont-quebec.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "scitechdaily.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        290
+      ],
+      "slot_keys": [
+        "290:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://scitechdaily.com/images/Camp-Century-Ice-Cores.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "skywaydisaster.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        287
+      ],
+      "slot_keys": [
+        "287:2"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://skywaydisaster.com/images/timeline2.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "specials-images.forbesimg.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        289
+      ],
+      "slot_keys": [
+        "289:1"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://specials-images.forbesimg.com/imageserve/69a2157d5ca34a424f6e4791/0x0.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "stadsarchief.rotterdam.nl",
+      "stored_reference_count": 1,
+      "post_ids": [
+        292
+      ],
+      "slot_keys": [
+        "292:1"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg?h=3e6ca723&itok=wjXwUo3w",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "static.ags.aer.ca",
+      "stored_reference_count": 1,
+      "post_ids": [
+        431
+      ],
+      "slot_keys": [
+        "431:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://static.ags.aer.ca/files/styles/wysiwyg_image/azblob/image-content/figure-46-720px.jpg?itok=vVXzpUCQ",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "static.thisdayinaviation.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        292
+      ],
+      "slot_keys": [
+        "292:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://static.thisdayinaviation.com/wp-content/uploads/tdia/2020/10/Screen-Shot-2020-10-03-at-14.51.27.png",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "stpetecatalyst.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        287
+      ],
+      "slot_keys": [
+        "287:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "unwritten-record.blogs.archives.gov",
+      "stored_reference_count": 1,
+      "post_ids": [
+        278
+      ],
+      "slot_keys": [
+        "278:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "warfarehistorynetwork.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        274
+      ],
+      "slot_keys": [
+        "274:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www-d.ntsb.gov",
+      "stored_reference_count": 1,
+      "post_ids": [
+        258
+      ],
+      "slot_keys": [
+        "258:1"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www-d.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.archimedespalimpsest.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        268
+      ],
+      "slot_keys": [
+        "268:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.datosfreak.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        277
+      ],
+      "slot_keys": [
+        "277:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.flmd.uscourts.gov",
+      "stored_reference_count": 1,
+      "post_ids": [
+        287
+      ],
+      "slot_keys": [
+        "287:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.hawaiimagazine.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        418
+      ],
+      "slot_keys": [
+        "418:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.ibiblio.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        288
+      ],
+      "slot_keys": [
+        "288:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/h84000/h84822.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.ladybegood.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        278
+      ],
+      "slot_keys": [
+        "278:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.navsource.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        288
+      ],
+      "slot_keys": [
+        "288:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.navsource.net/archives/05/pix1/0531104.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.popsci.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        290
+      ],
+      "slot_keys": [
+        "290:0"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.popsci.com/wp-content/uploads/2024/11/campcentury_aerial_radar_lrg.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.rexburgonline.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        291
+      ],
+      "slot_keys": [
+        "291:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.spaceacademy.net.au",
+      "stored_reference_count": 1,
+      "post_ids": [
+        279
+      ],
+      "slot_keys": [
+        "279:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.spaceacademy.net.au/watch/debris/oml.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.travelserver.net",
+      "stored_reference_count": 1,
+      "post_ids": [
+        292
+      ],
+      "slot_keys": [
+        "292:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.travelserver.net/travelpage/aspgallery/pictures/Ad_1981_12.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.usni.org",
+      "stored_reference_count": 1,
+      "post_ids": [
+        288
+      ],
+      "slot_keys": [
+        "288:5"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.usni.org/sites/default/files/styles/hero_image/public/LWF-PRO-3-20%201_0.jpg?itok=ex2XHVlK",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.vol.at",
+      "stored_reference_count": 1,
+      "post_ids": [
+        290
+      ],
+      "slot_keys": [
+        "290:3"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.vol.at/2024/11/camp-century-plans.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.warhistoryonline.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        274
+      ],
+      "slot_keys": [
+        "274:6"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    },
+    {
+      "source_host": "www.wttw.com",
+      "stored_reference_count": 1,
+      "post_ids": [
+        283
+      ],
+      "slot_keys": [
+        "283:4"
+      ],
+      "source_kind_counts": {
+        "external": 1
+      },
+      "example_exact_source_url": "https://www.wttw.com/sites/default/files/csdd-investigators_02.jpg",
+      "origin_http_status": null,
+      "guest_browser_broken_verified": false,
+      "distinct_post_count": 1
+    }
+  ],
+  "posts": [
+    {
+      "post_id": 34,
+      "title": "The Morning San Francisco Lost Its Water",
+      "page_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "stored_image_count": 1,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 35,
+      "title": "The Boat That Refused to Die",
+      "page_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "stored_image_count": 1,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 36,
+      "title": "The City That Went Underground",
+      "page_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "stored_image_count": 1,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 37,
+      "title": "How Petra Made Water Flow Through Stone",
+      "page_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "stored_image_count": 1,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 38,
+      "title": "The Cisterns Beneath San Francisco",
+      "page_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "stored_image_count": 1,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 101,
+      "title": "Six Inches of Water",
+      "page_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 4,
+      "source_host_counts": {
+        "finalvestige.com": 3,
+        "upload.wikimedia.org": 4
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 108,
+      "title": "The Richest Ship Couldn’t Buy Another Hour",
+      "page_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/",
+      "stored_image_count": 2,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 2
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 139,
+      "title": "The Rescue Machine Nobody Had Ever Needed",
+      "page_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/",
+      "stored_image_count": 2,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 2
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 142,
+      "title": "Almost Home",
+      "page_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/",
+      "stored_image_count": 3,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 3
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 146,
+      "title": "The Dam That Didn’t Fail",
+      "page_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+      "stored_image_count": 3,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 3
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 151,
+      "title": "They Taught the Lake to Breathe",
+      "page_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/",
+      "stored_image_count": 3,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 3
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 156,
+      "title": "They Lifted the City",
+      "page_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+      "stored_image_count": 4,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 4
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 166,
+      "title": "They Checked the Dam That Morning",
+      "page_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "tile.loc.gov": 1,
+        "commons.wikimedia.org": 5
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 190,
+      "title": "The Hoses That Wouldn’t Fit",
+      "page_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "cdn.loc.gov": 5,
+        "tile.loc.gov": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 211,
+      "title": "The Men Who Wouldn’t Turn Left",
+      "page_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "www.nps.gov": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "www.nps.gov"
+    },
+    {
+      "post_id": 213,
+      "title": "The Fire He Lit Himself",
+      "page_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "research.fs.usda.gov": 3,
+        "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com": 3,
+        "upload.wikimedia.org": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 214,
+      "title": "The Lifeboats Never Left the Deck",
+      "page_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "cdn.loc.gov": 2,
+        "commons.wikimedia.org": 4
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 215,
+      "title": "A Wall in the Dark",
+      "page_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 216,
+      "title": "The Fire Department Was Already There",
+      "page_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 217,
+      "title": "The Gas Had No Smell",
+      "page_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 218,
+      "title": "The Rock Had to Be Real",
+      "page_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 219,
+      "title": "The Airship Had No Life Jackets",
+      "page_url": "https://finalvestige.com/2026/08/18/the-airship-had-no-life-jackets/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 220,
+      "title": "Too Deep for the Rescue Bell",
+      "page_url": "https://finalvestige.com/2026/08/18/too-deep-for-the-rescue-bell/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 221,
+      "title": "The Rod Was Supposed to Move Four Inches",
+      "page_url": "https://finalvestige.com/2026/08/18/the-rod-was-supposed-to-move-four-inches/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 252,
+      "title": "They Thought the Books Were Charcoal",
+      "page_url": "https://finalvestige.com/2026/08/18/they-thought-the-books-were-charcoal/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 253,
+      "title": "The Life Preservers Had Passed Inspection",
+      "page_url": "https://finalvestige.com/2026/08/18/the-life-preservers-had-passed-inspection/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 254,
+      "title": "The Lump Had Gears",
+      "page_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 255,
+      "title": "The Load Doubled on Paper",
+      "page_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 256,
+      "title": "The Torch Never Reopened",
+      "page_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 257,
+      "title": "The Numbers Came Back",
+      "page_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "commons.wikimedia.org": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "commons.wikimedia.org"
+    },
+    {
+      "post_id": 258,
+      "title": "Inside the Joint",
+      "page_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "commons.wikimedia.org": 2,
+        "www-d.ntsb.gov": 1,
+        "www.fhwa.dot.gov": 3
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 268,
+      "title": "They Painted Over Archimedes",
+      "page_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_image_count": 10,
+      "external_origin_image_count": 10,
+      "source_host_counts": {
+        "commons.wikimedia.org": 6,
+        "archimedespalimpsest.org": 3,
+        "www.archimedespalimpsest.org": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 269,
+      "title": "The Watch Lost Its Hands",
+      "page_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 7
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 274,
+      "title": "Twenty-Four Feet from Air",
+      "page_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "upload.wikimedia.org": 2,
+        "www.history.navy.mil": 3,
+        "warfarehistorynetwork.com": 1,
+        "www.warhistoryonline.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 276,
+      "title": "Add No More Load",
+      "page_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "cdn2.picryl.com": 2,
+        "historicbridges.org": 2,
+        "ids.si.edu": 1,
+        "quebecblogue.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 277,
+      "title": "The Boat Went Over the Trees",
+      "page_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "www.datosfreak.org": 1,
+        "www.researchgate.net": 1,
+        "indomgb.s3.amazonaws.com": 1,
+        "imagerenderer.com": 1,
+        "miro.medium.com": 1,
+        "upload.wikimedia.org": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 278,
+      "title": "They Walked Beyond the Search",
+      "page_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "media.defense.gov": 3,
+        "upload.wikimedia.org": 1,
+        "qmmuseum.army.mil": 1,
+        "www.ladybegood.net": 1,
+        "unwritten-record.blogs.archives.gov": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 279,
+      "title": "The Geologists Found the Spy Satellite",
+      "page_url": "https://finalvestige.com/2026/08/19/the-geologists-found-the-spy-satellite/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "cdn-sw.spidersweb.pl": 1,
+        "upload.wikimedia.org": 2,
+        "bkimg.cdn.bcebos.com": 1,
+        "www.spaceacademy.net.au": 1,
+        "media.licdn.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 280,
+      "title": "The Sledgehammers Broke First",
+      "page_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "www.history.navy.mil": 6
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "www.history.navy.mil"
+    },
+    {
+      "post_id": 283,
+      "title": "The Crowd Became the Lock",
+      "page_url": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "2.bp.blogspot.com": 1,
+        "miro.medium.com": 1,
+        "chicagology.com": 1,
+        "bloximages.chicago2.vip.townnews.com": 1,
+        "www.wttw.com": 1,
+        "images2.minutemediacdn.com": 1,
+        "florencekelley.northwestern.edu": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 285,
+      "title": "The Light Said Closed",
+      "page_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "live.staticflickr.com": 1,
+        "i0.wp.com": 1,
+        "blog.ucsusa.org": 1,
+        "i.insider.com": 1,
+        "images.pixels.com": 1,
+        "images.saymedia-content.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 287,
+      "title": "The Warning Was a Man Waving",
+      "page_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com": 1,
+        "cloudfront-us-east-1.images.arcpublishing.com": 1,
+        "skywaydisaster.com": 1,
+        "img.connatix.com": 1,
+        "www.flmd.uscourts.gov": 1,
+        "stpetecatalyst.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 288,
+      "title": "The Bearing Was Right",
+      "page_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "www.history.navy.mil": 2,
+        "ahoy.tk-jk.net": 1,
+        "www.navsource.net": 1,
+        "www.ibiblio.org": 1,
+        "www.usni.org": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 289,
+      "title": "They Thought They Had Ten Minutes",
+      "page_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "upload.wikimedia.org": 1,
+        "specials-images.forbesimg.com": 1,
+        "k.sinaimg.cn": 1,
+        "k-static.appmobile.cn": 1,
+        "media.defense.gov": 1,
+        "d1ldvf68ux039x.cloudfront.net": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 290,
+      "title": "The City Kept Moving",
+      "page_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "www.popsci.com": 1,
+        "cloudfront-us-east-1.images.arcpublishing.com": 1,
+        "upload.wikimedia.org": 1,
+        "www.vol.at": 1,
+        "scitechdaily.com": 1,
+        "www.researchgate.net": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 291,
+      "title": "One Bulldozer Never Came Back",
+      "page_url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "i0.wp.com": 1,
+        "dmt55mxnkgbz2.cloudfront.net": 1,
+        "cloudfront-us-east-1.images.arcpublishing.com": 2,
+        "brightspotcdn.byui.edu": 1,
+        "www.rexburgonline.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 292,
+      "title": "They Marked the Empty Boats",
+      "page_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "nationalcoastguardmuseum.org": 1,
+        "stadsarchief.rotterdam.nl": 1,
+        "images.pubble.cloud": 1,
+        "cgaviationhistory.org": 1,
+        "www.travelserver.net": 1,
+        "static.thisdayinaviation.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 299,
+      "title": "Thirty Men Were Enough",
+      "page_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "stored_image_count": 8,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "i0.wp.com": 7,
+        "finalvestige.com": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 330,
+      "title": "The Filter Was at the Top",
+      "page_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "stored_image_count": 8,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 8
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 367,
+      "title": "They Found the Bomb Twice",
+      "page_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_image_count": 9,
+      "external_origin_image_count": 8,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "commons.wikimedia.org": 7,
+        "navalunderseamuseum.org": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 370,
+      "title": "The Lines Were in the Fire",
+      "page_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "stored_image_count": 8,
+      "external_origin_image_count": 4,
+      "source_host_counts": {
+        "www.history.navy.mil": 4,
+        "finalvestige.com": 4
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 407,
+      "title": "The Lake Wasn’t There Yesterday",
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_image_count": 8,
+      "external_origin_image_count": 8,
+      "source_host_counts": {
+        "d9-wret.s3.us-west-2.amazonaws.com": 8
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "d9-wret.s3.us-west-2.amazonaws.com"
+    },
+    {
+      "post_id": 413,
+      "title": "The Cell Was Built to Hold a Man",
+      "page_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 4,
+      "source_host_counts": {
+        "finalvestige.com": 2,
+        "tile.loc.gov": 4
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 418,
+      "title": "The Lighthouse Was Gone at Dawn",
+      "page_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 6,
+      "source_host_counts": {
+        "www.history.uscg.mil": 3,
+        "media.defense.gov": 1,
+        "www.hawaiimagazine.com": 1,
+        "d9-wret.s3.us-west-2.amazonaws.com": 1
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 425,
+      "title": "The Word Came Out of the Mine",
+      "page_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_image_count": 9,
+      "external_origin_image_count": 8,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "commons.wikimedia.org": 8
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 428,
+      "title": "The Way Out Was Underground",
+      "page_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 5,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "objects.lib.uidaho.edu": 4,
+        "tile.loc.gov": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 431,
+      "title": "The Mountain Buried the Door",
+      "page_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 5,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "www.geoinstitute.org": 2,
+        "upload.wikimedia.org": 1,
+        "static.ags.aer.ca": 1,
+        "commons.wikimedia.org": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 432,
+      "title": "They Buried the Dead Apart",
+      "page_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "stored_image_count": 7,
+      "external_origin_image_count": 7,
+      "source_host_counts": {
+        "www.floridamemory.com": 7
+      },
+      "fully_externally_sourced": true,
+      "single_external_source_host": "www.floridamemory.com"
+    },
+    {
+      "post_id": 433,
+      "title": "All Well Was Written First",
+      "page_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 5,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "upload.wikimedia.org": 4,
+        "d3d0lqu00lnqvz.cloudfront.net": 1
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 434,
+      "title": "The Hatch Opened Inward",
+      "page_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 5,
+      "source_host_counts": {
+        "finalvestige.com": 1,
+        "images-assets.nasa.gov": 5
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    },
+    {
+      "post_id": 621,
+      "title": "Six Miles an Hour",
+      "page_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "stored_image_count": 6,
+      "external_origin_image_count": 0,
+      "source_host_counts": {
+        "finalvestige.com": 6
+      },
+      "fully_externally_sourced": false,
+      "single_external_source_host": null
+    }
+  ],
+  "frozen_blob_shas": [
+    {
+      "path": "qa/media-recovery/parts/01.json",
+      "sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+    },
+    {
+      "path": "qa/media-recovery/parts/02.json",
+      "sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+    },
+    {
+      "path": "qa/media-recovery/parts/03.json",
+      "sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+    },
+    {
+      "path": "qa/media-recovery/parts/04.json",
+      "sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+    },
+    {
+      "path": "qa/media-recovery/parts/05.json",
+      "sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+    },
+    {
+      "path": "qa/media-recovery/parts/06.json",
+      "sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+    },
+    {
+      "path": "qa/media-recovery/parts/07.json",
+      "sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+    },
+    {
+      "path": "qa/media-recovery/parts/08.json",
+      "sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+    }
+  ],
+  "metadata": {
+    "source_script_git_blob_sha": "f075b165c568bee0d109c47716cc6f9561225c81",
+    "site_qa_pr": "#154",
+    "media_pr": "#183",
+    "production_changes": 0,
+    "editorial_note": "Exact URLs are preserved in source parts; example URLs are NOT browser-confirmed loads."
+  }
+}
