@@ -153,7 +153,7 @@ def run(html,out,exe,axe=None):
                     # must produce only the student worksheet, with its own source-custody notice.
                     if js and w in (390,1440):
                         page.emulate_media(media='screen')
-                        page.evaluate("window.__fv_print_calls=0;window.print=()=>{window.__fv_print_calls++}")
+                        page.evaluate("window.__fv_print_calls=0;window.print=()=>{window.__fv_print_calls++};null")
                         page.locator('[data-fv-print-student]').click()
                         require(page.evaluate("document.body.classList.contains('fv-worksheet-only')") and
                                 page.evaluate("window.__fv_print_calls") == 1,
