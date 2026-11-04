@@ -75,7 +75,7 @@ def navigate_actual_page(page,url,label):
     return response
 
 def run(html,out,exe,axe=None):
-    body=html.read_text(encoding='utf-8');out.mkdir(parents=True,exist_ok=True)
+    out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
                 browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
                 source_identity='UNCHECKED',navigation_mode='REQUIRED_LOOPBACK_HTTP',
@@ -208,6 +208,15 @@ def run(html,out,exe,axe=None):
                         page.locator('#student-print-preview').press('Escape')
                         require(not page.locator('#student-print-preview').is_visible(),
                                 label+': Escape did not close preview')
+                        # R125: Escape must also work after the reader has focused a control
+                        # outside the preview. An opt-in, nonmodal preview has no focus trap.
+                        preview.click()
+                        page.locator('[data-fv-primary-cta]').focus()
+                        page.keyboard.press('Escape')
+                        require(not page.locator('#student-print-preview').is_visible() and
+                                preview.get_attribute('aria-expanded')=='false' and
+                                preview.evaluate('(e)=>document.activeElement===e'),
+                                label+': global Escape failed after focus left preview')
                     else:
                         require(not preview.is_visible() and not close_preview.is_visible(),
                                 label+': no-JS preview controls stranded user')
