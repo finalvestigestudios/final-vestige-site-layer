@@ -111,15 +111,27 @@ function evaluate(data,verifiedSourceInventory){
  base.observed_post_count=posts.size;base.observed_slot_count=slots.size;
  if(beforeTotals.some(x=>!Number.isSafeInteger(x)||x<1)||afterTotals.some(x=>!Number.isSafeInteger(x)||x<1))
    errors.push('bad aggregate transfer bytes');
+ // Sum actual CDP bytes across all repeats. A median of percentages can
+ // claim 76% savings even when nearly all transferred bytes were unchanged.
+ const pooledBaselineBytes=beforeTotals.reduce((sum,x)=>sum+x,0);
+ const pooledCandidateBytes=afterTotals.reduce((sum,x)=>sum+x,0);
+ if(!Number.isSafeInteger(pooledBaselineBytes)||pooledBaselineBytes<=0||
+    !Number.isSafeInteger(pooledCandidateBytes)||pooledCandidateBytes<=0)
+   errors.push('unsafe pooled transfer bytes');
  if(errors.length)return base;
  const reductions=beforeTotals.map((x,i)=>100*(x-afterTotals[i])/x);
- const pct=Number(median(reductions).toFixed(3));
+ const pooledReduction=100*(pooledBaselineBytes-pooledCandidateBytes)/pooledBaselineBytes;
+ const pct=Number(pooledReduction.toFixed(3));
  const wide=posts.size===61&&slots.size===355&&repeats>=3&&exactFrozenCensus(data,verifiedSourceInventory);
  return {status:wide?'SITEWIDE_IMAGE_TRANSFER_MEASURED':'LIMITED_SAMPLE_MEASURED',
    source_inventory_id:data.source_inventory_id,observed_post_count:posts.size,observed_slot_count:slots.size,
    repetitions:repeats,baseline_bytes_by_repeat:beforeTotals,candidate_bytes_by_repeat:afterTotals,
    reductions_percent_by_repeat:reductions.map(x=>Number(x.toFixed(3))),
-   measured_reduction_percent:pct,sitewide_76_percent_verified:wide&&pct>=76,
+   pooled_baseline_bytes:pooledBaselineBytes,pooled_candidate_bytes:pooledCandidateBytes,
+   median_repeat_reduction_percent:Number(median(reductions).toFixed(3)),
+   minimum_repeat_reduction_percent:Number(Math.min(...reductions).toFixed(3)),
+   measured_reduction_percent:pct,
+   sitewide_76_percent_verified:wide&&pooledReduction>=76&&reductions.every(x=>x>=76),
    scope:'stored inline img slots only; not total page weight, CSS backgrounds, or visitor-weighted traffic',
    can_claim_total_page_savings:false,production_replacement_approved:false,reason_codes:[]};
 }
