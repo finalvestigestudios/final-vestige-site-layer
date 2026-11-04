@@ -4,6 +4,7 @@
  * Not WordPress.com hosting, real Jetpack, live page6, field CWV or manual WCAG.
  */
 import assert from 'node:assert/strict';
+import {correctIsolatedNavigation} from './assembler_nav_native_fixture.mjs';
 import {createHash} from 'node:crypto';
 import {readFile, readdir, mkdir} from 'node:fs/promises';
 import {join, relative, resolve, sep} from 'node:path';
@@ -249,6 +250,12 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   if(!loopback(page.stageUrl))throw new Error('Unsafe preview URL');
   await restrictNetwork(page,blocked);
   const axePath=require.resolve('axe-core/axe.min.js');
+  // The real unmodified vendor theme has a serious list-semantic defect in
+  // its default fallback navigation. Measure and preserve that baseline first.
+  // Configure a real native WP navigation + template-part override ONLY in this
+  // disposable loopback Playground, never by rewriting browser DOM or source.
+  // Full-document axe remains enabled for the entire five-width matrix.
+  const navigationFixture=await correctIsolatedNavigation({server,page,axePath,outputDirectory});
   const {completed:responsive,failures:viewportFailures}=await collectViewportEvidence(
     widths,width=>checkView(page,width,axePath,outputDirectory));
   // A serious Assembler theme issue at one breakpoint must not erase screenshots
@@ -301,9 +308,9 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
     throw new Error('ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD '+
       JSON.stringify(viewportFailures));
   return {type:'ISOLATED_WP_ASSEMBLER_RENDER_SYNTHETIC_ONLY',release:'HOLD',theme,
-    responsive,zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
+    responsive,navigation_fixture:navigationFixture,zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
     limits:['synthetic Margins are not production historical records','stage CSS is not proposed production CSS',
-      'not WP.com Atomic parity','not real Jetpack','not real hosted page6 content','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
+      'not WP.com Atomic parity','the local Assembler header is intentionally overridden via native WP template part; unmodified-vendor axe remains FAIL','not real Jetpack','not real hosted page6 content','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
 }
 // Export a strictly read-only browser-media routine for mock adversarial tests.
 export {imageBodies};
