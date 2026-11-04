@@ -30,8 +30,8 @@ function audit({article,decision,html,registry,contract}) {
   const linkHrefs=[...html.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map(m=>m[1]);
   test("only existing first-party Focus link",linkHrefs.length===1&&linkHrefs[0]==="https://finalvestige.com/focus/");
   test("no seller URL clickable, including ordinary offer",!/<a\b[^>]*href="https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i.test(html));
-  test("disabled purchase button",/<button\b[^>]*\bdisabled\b[^>]*>Merchant review pending/.test(html));
-  test("prospective commission adjacent to disabled button",/Prospective affiliate disclosure:[\s\S]{1,300}Final Vestige may earn a commission[\s\S]{1,250}<button\b[^>]*\bdisabled\b/.test(html));
+  test("disabled purchase button",/<button\b[^>]*\sdisabled(?:\s|>)[^>]*>Merchant review pending/.test(html));
+  test("prospective commission adjacent to disabled button",/Prospective affiliate disclosure:[\s\S]{1,300}Final Vestige may earn a commission[\s\S]{1,250}<button\b[^>]*\sdisabled(?:\s|>)/.test(html));
   test("clear source/claim separation",html.includes("not evidence")&&html.includes("What remains unproved"));
   test("no duplicate email/signup form",!/<form\b/i.test(html)&&!/<input\b/i.test(html));
   test("no added analytics tracking script",!/<script\b|<iframe\b|<link\b[^>]*https?:/i.test(html));
