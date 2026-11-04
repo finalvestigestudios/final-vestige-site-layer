@@ -32,6 +32,15 @@ def source_identity(html):
         return 'GIT_HEAD_UNAVAILABLE'
     return ('EXACT_GIT_HEAD' if hashlib.sha256(result.stdout).hexdigest()==sha(html)
             else 'HEAD_SOURCE_MISMATCH')
+def git_head_sha():
+    try:
+        result=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,
+                              text=True,check=False,timeout=10)
+    except (OSError,subprocess.TimeoutExpired):
+        return None
+    value=result.stdout.strip().lower()
+    return value if result.returncode==0 and len(value)==40 and all(c in '0123456789abcdef' for c in value) else None
+
 def require(ok,message):
     if not ok:raise AssertionError(message)
 
@@ -78,12 +87,12 @@ def run(html,out,exe,axe=None):
     out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
                 browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
-                source_identity='UNCHECKED',navigation_mode='REQUIRED_LOOPBACK_HTTP',
+                source_identity='UNCHECKED',git_head_sha=git_head_sha(),navigation_mode='REQUIRED_LOOPBACK_HTTP',
                 complete=False,failure_code=None,worksheet_pdf=None)
     journal=out/'R113_BROWSER_RECEIPT.json'
     def checkpoint():journal.write_text(json.dumps(record,indent=2,sort_keys=True)+'\n',encoding='utf-8')
     record['source_identity']=source_identity(html)
-    if record['source_identity']!='EXACT_GIT_HEAD':
+    if record['source_identity']!='EXACT_GIT_HEAD' or not record['git_head_sha']:
         record['failure_code']='UNVERIFIED_SOURCE_IDENTITY'
         checkpoint()
         raise AssertionError('actual-source release QA requires canonical file identical to git HEAD; '+record['source_identity'])
