@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-03",
+  "lane": "FV Media Recovery",
+  "type": "frozen_source_cdp_binding_release_guard",
+  "baseline": {
+    "published_posts": 61,
+    "inline_image_slots": 355,
+    "stored_external_origin_refs": 288,
+    "wordpress_originals_gt_1_5_MiB": 13,
+    "claimed_broken_images": 42,
+    "claimed_broken_guest_verified": false,
+    "claimed_image_wire_reduction_percent": 76,
+    "claimed_reduction_measured": false
+  },
+  "finding": {
+    "severity": "HIGH_RELEASE_INTEGRITY",
+    "description": "The standalone CDP aggregator previously permitted sitewide 76% verification on image-looking request records whose slot mappings were not tied to frozen original photo URLs or the browser DOM currentSrc. Smaller unrelated photos could satisfy byte arithmetic without preserving historical-image identity.",
+    "proof": "synthetic 61-post 355-slot mutation: full baseline source bindings pass new gate, one after-phase historical slot swapped to unrelated source blocks the badge. Missing bindings downgrade the output to limited-sample.",
+    "new_gate": "qa/media-recovery/claim_source_identity_gate_20261103.cjs",
+    "evaluator": "qa/media-recovery/evaluate_image_wire_20261103.cjs",
+    "requirements": [
+      "61 posts and 355 slots reconcile to pinned frozen census",
+      "exact historical source URL retained in both phases",
+      "per-request DOM currentSrc exact-match to observed CDP request URL",
+      "no missing/extra DOM slot keys",
+      "no unrelated frozen original photographs merged as one request",
+      "three paired cold repeats still required",
+      "CLI checks Git SHA1 blob identities of eight original census parts"
+    ]
+  },
+  "verification": {
+    "method": "isolated V8 CommonJS compatibility runner using exact postcommit GitHub blobs, synthetic inputs only",
+    "source_gate_tests_passed": 12,
+    "evaluator_tests_passed": 38,
+    "synthetic_total_passed": 50,
+    "native_node_tests_run": false,
+    "guest_chrome_run": false,
+    "actual_visitor_browser_statuses_observed": 0,
+    "actual_wire_bytes_measured": false,
+    "all_61_captured_in_real_browser": false
+  },
+  "priority_recheck": {
+    "post_id": 287,
+    "slot": "287:5",
+    "published_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "published_original_retriever_observation": "NOV_03_RETRIEVER_WRAPPER_404_NOT_ORIGIN_HTTP",
+    "known_publisher_page": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+    "same_publisher_migrated_asset": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "independent_migrated_asset_recheck": "VISIBLE_IN_WEB_RETRIEVER_2026_11_03",
+    "publisher_image_credit": "University Press of Florida",
+    "same_binary_verified": false,
+    "item_rights_and_caching_permission_verified": false,
+    "original_dimensions_px": null,
+    "candidate_960px_height": null,
+    "guest_http_status": null,
+    "guest_natural_width": null,
+    "guest_current_src": null,
+    "guest_cdp_bytes": null,
+    "alt_historical_mismatch": "Published alt mentions later replacement bridge; publisher image visibly depicts the 1980 collision wreckage and surviving original truss, not the new 1987 cable-stayed bridge.",
+    "action": "KEEP_HOLD_AND_REQUEST_VISITOR_BROWSER_PROOF_BEFORE_PUBLISHER_SOURCE_REPAIR"
+  },
+  "sha_log": [
+    {
+      "commit": "093bf9f9fba51e16a508e7a11ae89f8d2b2559ce",
+      "change": "new source binding gate"
+    },
+    {
+      "commit": "41479cba534631cad1745cfeaf759704e4b23024",
+      "change": "12 synthetic adversarial source-binding tests"
+    },
+    {
+      "commit": "fb02f5b7d9c82c6a4c0b7e3828c91282d932f278",
+      "change": "integrate gate into sitewide badge"
+    },
+    {
+      "commit": "0026c2bd9b35eb0875c9ecb5b54613925dc6ca74",
+      "change": "38 test evaluator suite with frozen sources"
+    },
+    {
+      "commit": "7db385b7428aa0f9eefc154e0ff6c94bc5322e72",
+      "change": "correct Git hash object NUL separator"
+    }
+  ],
+  "release": {
+    "pull_request": 183,
+    "isolated_branch": "qa/media-recovery-reviewed-20261030-1158",
+    "wordpress_production_writes": 0,
+    "published_image_replacements": 0,
+    "third_party_media_downloads": 0,
+    "homepage_visual_changes": 0,
+    "paid_subscriptions": 0,
+    "rights_republication_permission_granted": false,
+    "automated_caching_enabled": false
+  },
+  "qa_handoff": {
+    "site_qa_pr": 154,
+    "existing_priority_queue": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "site_qa_drafts_changed": false,
+    "action": "Use guest Chromium 390px/1440px currentSrc, naturalWidth, requestId, image MIME/status, screenshots and cold encoded bytes. New aggregator fields dom_stored_sources and dom_current_sources required before sitewide badge."
+  }
+}
