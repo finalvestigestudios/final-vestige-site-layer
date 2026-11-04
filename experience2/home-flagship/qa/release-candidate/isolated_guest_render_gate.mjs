@@ -119,7 +119,7 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
     for(const width of [360,390,768,1440,1920]) {
       const page=await context.newPage();
       try {
-        await page.setViewportSize({width,height:900});
+        await page.setViewportSize({width,height:width<=390?844:900});
         await restrictVisitorNetwork(page,server.serverUrl,blocked);
         await page.goto(receipt.url,{waitUntil:'domcontentloaded',timeout:90000});
         await page.locator('[data-fv-home-flagship]').waitFor({timeout:30000});
@@ -127,20 +127,36 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
           const root=document.querySelector('[data-fv-home-flagship]');
           const cta=root?.querySelector('.fv-hf__mast-cta');
           const box=cta?.getBoundingClientRect();
+          const cx=box?(box.left+box.right)/2:0;
+          const cy=box?(box.top+box.bottom)/2:0;
+          const pointed=(cx>=0&&cx<innerWidth&&cy>=0&&cy<innerHeight)?
+            document.elementFromPoint(cx,cy):null;
+          const css=cta?getComputedStyle(cta):null;
           return {admin_bar:!!document.querySelector('#wpadminbar'),
             logged_in:document.body.classList.contains('logged-in'),
             chapters:root?.querySelectorAll('.fv-hf__chapter-nav a').length||0,
             margins:document.querySelectorAll('.fv-margin-strip__item').length,
-            cta_href:cta?.getAttribute('href'),cta_visible:!!box&&box.width>0&&box.height>=44,
-            cta_top:box?.top,cta_height:box?.height,
+            cta_href:cta?.getAttribute('href'),
+            cta_visible:!!box&&box.width>=44&&box.height>=44&&box.top>=0&&
+              box.bottom<=innerHeight&&css?.visibility==='visible'&&
+              Number(css?.opacity)>0&&!!pointed&&cta.contains(pointed),
+            cta_top:box?.top,cta_height:box?.height,cta_width:box?.width,
             horizontal_overflow:document.documentElement.scrollWidth>innerWidth+1};
         });
         await page.screenshot({path:join(outputDirectory,`assembler-guest-${width}.png`),
           animations:'disabled',fullPage:false,timeout:30000});
         if(state.admin_bar||state.logged_in||state.chapters!==7||state.margins!==72||
           state.cta_href!=='https://finalvestige.com/focus/'||!state.cta_visible||
-          state.horizontal_overflow||state.cta_top>=900)throw new Error('Guest admission '+JSON.stringify(state));
+          state.horizontal_overflow)throw new Error('Guest admission '+JSON.stringify(state));
         assert.ok(isCookieFreeGuest(await context.cookies()));
+        // Test the real focus order, not merely the href or CSS rectangle.
+        const mastCTA=page.locator('.fv-hf__mast-cta');
+        await mastCTA.focus();
+        assert.equal(await page.evaluate(()=>document.activeElement?.classList.contains('fv-hf__mast-cta')),true,
+          'Guest Focus CTA cannot receive keyboard focus');
+        await page.keyboard.press('Tab');
+        assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('href')), '#fv-hf-title',
+          'Guest Focus CTA must lead into seven-chapter keyboard navigation');
         await page.addScriptTag({path:axePath});
         const violations=await page.evaluate(async()=>{
           if(!window.axe)throw new Error('axe unavailable; fail closed');
