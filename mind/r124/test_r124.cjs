@@ -22,6 +22,6 @@ test('only existing first party conversion resource is active',()=>{assert(html.
 test('document is useful without javascript and keyboard contrast intent',()=>{assert(/<h2\b/.test(html));assert(/:focus-visible/.test(html));assert(/prefers-reduced-motion/.test(html));assert(/<style>/.test(html));});
 test('utm schema has asset_id and avoids claims of monetization',()=>{assert(creators.includes('utm_content={immutable asset_id}'));assert(creators.includes('All fields presently UNKNOWN'));});
 test('privacy and PII controls are documented',()=>{assert(guide.includes('aggregate'));assert(guide.includes('no')||guide.includes('No'));assert(matrix.sources.some(s=>s.id==='privacy'));});
-test('adversarial enabled CTA detection',()=>{const mutant=html.replace(/\bdisabled\s+aria-disabled="true"/,'aria-disabled="false"');assert(!/<button\b[^>]*\bdisabled\b[^>]*>/i.test(mutant));});
+test('adversarial enabled CTA detection',()=>{const mutant=html.replace(/\bdisabled\s+aria-disabled="true"/,'aria-disabled="false"');assert(!/<button\b[^>]*\sdisabled(?:\s|>)[^>]*>/i.test(mutant));});
 test('adversarial missing disclosure detection',()=>{const mutant=html.replace('If you purchase through a future approved link','');assert(!mutant.includes('If you purchase through a future approved link'));});
 test('adversarial unauthorized merchant link detection',()=>{const mutant=html.replace('</div>\n<p><small>','<a href="https://zen12.com/hnp">buy</a></div>\n<p><small>');assert(/<a\b[^>]*href=["'][^"']*zen12\.com/i.test(mutant));});
