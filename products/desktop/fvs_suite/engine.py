@@ -8,6 +8,7 @@ from functools import wraps
 from pathlib import Path
 
 from .review import labels_for_report, normalized_collision, price_exceeds_tolerance, reconciliation_status
+from .identity_inputs import normalize_key, parse_date as _parse_date_native
 from .audit_display import _escape_source_character
 from .csv_diagnostics import csv_input_error
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
@@ -159,26 +160,10 @@ def qty(value):
         raise ValueError("Quantity precision exceeds eight decimal places")
     return number
 
-def key(value): return re.sub(r"[^A-Z0-9]+","",str(value).upper())
+def key(value): return normalize_key(value)
 def dollars(value): return format(_cent_value(value), ".2f")
-_DATE_FORMATS = (
-    (re.compile(r"[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}\Z"), "%Y-%m-%d"),
-    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}\Z"), "%m/%d/%Y"),
-    (re.compile(r"[0-9]{1,2}/[0-9]{1,2}/[0-9]{2}\Z"), "%m/%d/%y"),
-)
-
 def parse_date(value):
-    """Validate exact ASCII calendar text; never echo private input on failure."""
-    raw = str(value).strip()
-    if not raw or len(raw) > 32:
-        raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
-    for pattern, fmt in _DATE_FORMATS:
-        if pattern.fullmatch(raw):
-            try:
-                return datetime.strptime(raw, fmt).date()
-            except ValueError:
-                break
-    raise ValueError("Invalid date (use YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)")
+    return _parse_date_native(value)
 
 def table(path, required, optional=(), *, include_headers=False, include_digest=False,
           id_column=None, amount_column=None, include_columns=False):
