@@ -164,3 +164,24 @@
 @media(prefers-reduced-motion:reduce){
  .fv-hf__case-image--malbone .fv-hf__source-plate{animation:none;transition:none}
 }
+
+/* Conversion-first release blocker #150/#820: a 44px Focus touch target must
+   survive 320px no-JS without clipping the cairn/brand. Scoped to EX2 only. */
+.fv-hf .fv-hf__mast-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35em;
+  min-height: 44px;
+  min-width: 44px;
+}
+@media (max-width: 600px) {
+  .fv-hf .fv-hf__masthead { flex-wrap: wrap; row-gap: 12px; }
+}
+@media (max-width: 420px) {
+  .fv-hf .fv-hf__mast-cta {
+    flex: 1 1 100%;
+    margin-left: 0;
+    width: 100%;
+  }
+}
