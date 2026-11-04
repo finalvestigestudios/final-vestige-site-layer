@@ -1,0 +1,40 @@
+name: Preparedness R115 private markup safety source audit
+on:
+  push:
+    branches:
+      - review/preparedness-r115-markup-surface-hold-20261104
+  pull_request:
+    paths:
+      - preparedness/tools/r115_markup_executable_surface_gate.py
+      - preparedness/tests/test_r115_markup_executable_surface_gate.py
+      - preparedness/docs/R115_MARKUP_EXECUTABLE_SURFACE_AND_CONVERSION_HOLD.md
+      - .github/workflows/preparedness-r115-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  r115-private-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: R115 focused 80 adversarial and custody tests
+        run: python -I -m unittest discover -s preparedness/tests -p 'test_r115_*.py' -v
+      - name: Native source and safety validation
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress draft build only
+        run: python -I preparedness/tools/build.py
+      - name: Complete Python regression suite no selective skips
+        run: timeout 480s python -I -m unittest discover -s preparedness/tests -q
+      - name: Original R111 seven-branch and 30 shared-URL evidence
+        run: python -I preparedness/tools/r111_converged_source_review_gate.py --repo-root .
+      - name: R114 independent 35-article renderer and citation audit
+        run: python -I preparedness/tools/r114_full_slate_rendered_citation_gate.py --repo-root .
+      - name: R115 full 35-article executable markup and metadata audit
+        run: python -I preparedness/tools/r115_markup_executable_surface_gate.py --repo-root .
+      - name: Never infer public release permission
+        run: echo 'R115 ENGINEERING DIAGNOSTIC ONLY - source, safety, mandatory integrity and QD remain HOLD'

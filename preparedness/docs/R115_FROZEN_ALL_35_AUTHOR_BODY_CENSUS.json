@@ -1,0 +1,340 @@
+{
+  "schema": "fv-preparedness-r115-35-article-frozen-read-census-NOT-SAFETY-v1",
+  "issue": 136,
+  "business_issue": 820,
+  "reference_commit": "8f42bd2d4bd2a5a3a9781b1ac28cd8ec80d25620",
+  "verification_method": "GitHub connector read-only fetched each original body and metadata at exact ref; raw regex counts only, no rendered/browser/source-claim truth verified",
+  "article_count": 35,
+  "raw_citation_occurrences_total": 1952,
+  "article_scoped_source_id_total_NOT_GLOBAL_UNIQUE": 364,
+  "all_metadata_publish_states": "draft",
+  "self_reported_safety_metadata_counts": {
+    "pending": 29,
+    "approved": 2,
+    "not_required": 4
+  },
+  "unscoped_citation_occurrences_observed": 0,
+  "inline_event_handler_or_script_form_embed_regex_flags_observed": 0,
+  "source_claim_truth_verified": false,
+  "qualified_safety_review_verified": false,
+  "independent_QD_PASS": false,
+  "release_state": "HOLD",
+  "may_publish": false,
+  "rows_NOT_APPROVED": [
+    {
+      "n": 1,
+      "slug": "household-emergency-plan",
+      "section": "start-here",
+      "track": "modern",
+      "body_git_blob_oid": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "raw_citation_occurrences": 57,
+      "distinct_author_scoped_source_ids": 14
+    },
+    {
+      "n": 2,
+      "slug": "three-day-kit",
+      "section": "start-here",
+      "track": "modern",
+      "body_git_blob_oid": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "raw_citation_occurrences": 75,
+      "distinct_author_scoped_source_ids": 16
+    },
+    {
+      "n": 3,
+      "slug": "water-math",
+      "section": "water",
+      "track": "modern",
+      "body_git_blob_oid": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "raw_citation_occurrences": 33,
+      "distinct_author_scoped_source_ids": 5
+    },
+    {
+      "n": 4,
+      "slug": "two-week-water-storage",
+      "section": "water",
+      "track": "modern",
+      "body_git_blob_oid": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "raw_citation_occurrences": 28,
+      "distinct_author_scoped_source_ids": 3
+    },
+    {
+      "n": 5,
+      "slug": "water-advisories-explained",
+      "section": "water",
+      "track": "modern",
+      "body_git_blob_oid": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "raw_citation_occurrences": 30,
+      "distinct_author_scoped_source_ids": 4
+    },
+    {
+      "n": 6,
+      "slug": "making-water-safer",
+      "section": "water",
+      "track": "modern",
+      "body_git_blob_oid": "f85d158fc8752200a227282e640f6df48277daf5",
+      "raw_citation_occurrences": 52,
+      "distinct_author_scoped_source_ids": 8
+    },
+    {
+      "n": 7,
+      "slug": "homemade-water-filters",
+      "section": "water",
+      "track": "modern",
+      "body_git_blob_oid": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+      "raw_citation_occurrences": 51,
+      "distinct_author_scoped_source_ids": 6
+    },
+    {
+      "n": 8,
+      "slug": "pantry-rotation",
+      "section": "food",
+      "track": "modern",
+      "body_git_blob_oid": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "raw_citation_occurrences": 68,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 9,
+      "slug": "food-safety-power-outage",
+      "section": "food",
+      "track": "modern",
+      "body_git_blob_oid": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "raw_citation_occurrences": 69,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 10,
+      "slug": "pressure-canning-low-acid",
+      "section": "food",
+      "track": "modern",
+      "body_git_blob_oid": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "raw_citation_occurrences": 74,
+      "distinct_author_scoped_source_ids": 17
+    },
+    {
+      "n": 11,
+      "slug": "safe-jerky-dehydration",
+      "section": "food",
+      "track": "modern",
+      "body_git_blob_oid": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "raw_citation_occurrences": 71,
+      "distinct_author_scoped_source_ids": 11
+    },
+    {
+      "n": 12,
+      "slug": "outage-heat-cold-generators",
+      "section": "shelter-power",
+      "track": "modern",
+      "body_git_blob_oid": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "raw_citation_occurrences": 116,
+      "distinct_author_scoped_source_ids": 16
+    },
+    {
+      "n": 13,
+      "slug": "home-fire-escape-plan",
+      "section": "family-communication",
+      "track": "modern",
+      "body_git_blob_oid": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "raw_citation_occurrences": 70,
+      "distinct_author_scoped_source_ids": 10
+    },
+    {
+      "n": 14,
+      "slug": "shelter-or-evacuate",
+      "section": "shelter-power",
+      "track": "modern",
+      "body_git_blob_oid": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "raw_citation_occurrences": 50,
+      "distinct_author_scoped_source_ids": 13
+    },
+    {
+      "n": 15,
+      "slug": "family-communication-plan",
+      "section": "family-communication",
+      "track": "modern",
+      "body_git_blob_oid": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "raw_citation_occurrences": 62,
+      "distinct_author_scoped_source_ids": 14
+    },
+    {
+      "n": 16,
+      "slug": "go-bags",
+      "section": "start-here",
+      "track": "modern",
+      "body_git_blob_oid": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "raw_citation_occurrences": 72,
+      "distinct_author_scoped_source_ids": 18
+    },
+    {
+      "n": 17,
+      "slug": "medication-and-devices",
+      "section": "health-sanitation",
+      "track": "modern",
+      "body_git_blob_oid": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "raw_citation_occurrences": 68,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 18,
+      "slug": "emergency-hygiene-sanitation",
+      "section": "health-sanitation",
+      "track": "modern",
+      "body_git_blob_oid": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "raw_citation_occurrences": 62,
+      "distinct_author_scoped_source_ids": 7
+    },
+    {
+      "n": 19,
+      "slug": "warnings-radios-offline-maps",
+      "section": "family-communication",
+      "track": "modern",
+      "body_git_blob_oid": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "raw_citation_occurrences": 55,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 20,
+      "slug": "preparedness-real-households",
+      "section": "start-here",
+      "track": "modern",
+      "body_git_blob_oid": "70d03c366e10db623929f118501becfa26c48bab",
+      "raw_citation_occurrences": 64,
+      "distinct_author_scoped_source_ids": 17
+    },
+    {
+      "n": 21,
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "raw_citation_occurrences": 49,
+      "distinct_author_scoped_source_ids": 10
+    },
+    {
+      "n": 22,
+      "slug": "ships-biscuit-and-hardtack",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "raw_citation_occurrences": 42,
+      "distinct_author_scoped_source_ids": 8
+    },
+    {
+      "n": 23,
+      "slug": "lewis-and-clark-salt-works",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "raw_citation_occurrences": 49,
+      "distinct_author_scoped_source_ids": 11
+    },
+    {
+      "n": 24,
+      "slug": "pioneer-travel-rations",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "raw_citation_occurrences": 39,
+      "distinct_author_scoped_source_ids": 10
+    },
+    {
+      "n": 25,
+      "slug": "pemmican-and-dried-meats",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "raw_citation_occurrences": 46,
+      "distinct_author_scoped_source_ids": 11
+    },
+    {
+      "n": 26,
+      "slug": "smokehouses-salting-curing",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "raw_citation_occurrences": 36,
+      "distinct_author_scoped_source_ids": 11
+    },
+    {
+      "n": 27,
+      "slug": "root-cellars-cool-storage",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "raw_citation_occurrences": 37,
+      "distinct_author_scoped_source_ids": 7
+    },
+    {
+      "n": 28,
+      "slug": "pickling-fermentation-old-recipes",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "raw_citation_occurrences": 42,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 29,
+      "slug": "rain-barrels-and-cisterns",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "raw_citation_occurrences": 44,
+      "distinct_author_scoped_source_ids": 7
+    },
+    {
+      "n": 30,
+      "slug": "water-purification-through-history",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "raw_citation_occurrences": 76,
+      "distinct_author_scoped_source_ids": 14
+    },
+    {
+      "n": 31,
+      "slug": "fire-making-across-time",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "raw_citation_occurrences": 67,
+      "distinct_author_scoped_source_ids": 11
+    },
+    {
+      "n": 32,
+      "slug": "navigation-before-gps",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "raw_citation_occurrences": 47,
+      "distinct_author_scoped_source_ids": 10
+    },
+    {
+      "n": 33,
+      "slug": "sanitation-before-germ-theory",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "raw_citation_occurrences": 47,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 34,
+      "slug": "pioneer-supply-chains-failed",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "raw_citation_occurrences": 57,
+      "distinct_author_scoped_source_ids": 9
+    },
+    {
+      "n": 35,
+      "slug": "history-of-food-preservation",
+      "section": "lost-ways",
+      "track": "lost-ways",
+      "body_git_blob_oid": "273b246a069e834d8476bfc2854308732f5137ab",
+      "raw_citation_occurrences": 47,
+      "distinct_author_scoped_source_ids": 12
+    }
+  ]
+}
