@@ -35,7 +35,7 @@ for(const [name,s] of [['A',A],['B',B]]){
  test(name+' only authorized existing Focus free resource',()=>demand(/href="https:\/\/finalvestige\.com\/focus\/"/.test(s)));
  test(name+' no duplicate signup form',()=>demand(!/<form\b/i.test(s)));
  test(name+' no clickable merchant URL',()=>demand(!/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|affiliates\.inspire3\.com|hypnosislive\.com)(?:\/|["'])/i.test(s)));
- test(name+' disclosure adjacent to natively disabled CTA',()=>{const p=s.indexOf('Prospective affiliate disclosure:'),b=s.indexOf('<button type="button"');demand(p>=0&&b>p&&b-p<650&&/<button[^>]*\bdisabled\b/.test(s.slice(b,b+180)));});
+ test(name+' disclosure adjacent to natively disabled CTA',()=>{const p=s.indexOf('Prospective affiliate disclosure:'),b=s.indexOf('<button type="button"');demand(p>=0&&b>p&&b-p<650&&/<button[^>]*\sdisabled(?:\s|>|=)/.test(s.slice(b,b+180)));});
  test(name+' support no JS and reduced motion',()=>demand(/prefers-reduced-motion/.test(s)&&/<h1>/.test(s)&&/focus-visible/.test(s)));
  test(name+' no real sales or medical promises',()=>demand(!/guaranteed (increase|cure|wealth)|clinically proven to fix/i.test(s)));
 }
@@ -50,7 +50,7 @@ test('commercial metric is net revenue per thousand qualified visits',()=>demand
 test('measurement distinguishes affiliate click vs actual paid conversion',()=>demand(/affiliate_outbound_click/.test(plan)&&/merchant_confirmed_paid_conversion/.test(plan)));
 test('no PII fields proposed for analytics',()=>demand(/Exclude name, email, IP/.test(plan)));
 test('both candidate HTML pages have only one free Focus CTA',()=>demand((A.match(/href="https:\/\/finalvestige\.com\/focus\/"/g)||[]).length===1&&(B.match(/href="https:\/\/finalvestige\.com\/focus\/"/g)||[]).length===1));
-function mutationGuard(s){return /<button[^>]*\bdisabled\b/.test(s)&&/Prospective affiliate disclosure:/.test(s)&&!/href\s*=\s*["']https:\/\/zen12\.com\//.test(s);}
+function mutationGuard(s){return /<button[^>]*\sdisabled(?:\s|>|=)/.test(s)&&/Prospective affiliate disclosure:/.test(s)&&!/href\s*=\s*["']https:\/\/zen12\.com\//.test(s);}
 test('adversarial enabled buy button is caught',()=>demand(!mutationGuard(A.replace(' disabled aria-disabled="true"',' aria-disabled="false"'))));
 test('adversarial missing disclosure is caught',()=>demand(!mutationGuard(A.replace('Prospective affiliate disclosure:',''))));
 test('adversarial live merchant URL is caught',()=>demand(!mutationGuard(A.replace('</button>','</button><a href="https://zen12.com/hnp">Buy</a>'))));
