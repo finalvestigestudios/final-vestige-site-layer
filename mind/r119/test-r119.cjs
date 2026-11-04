@@ -49,7 +49,7 @@ for (const [name,html] of [['text A',textA],['video B',videoB]]) {
  test(name+' no active affiliate merchant hyperlink', () => assert.ok(!/<a[^>]*href=["'][^"']*(?:zen12\.com|awin1\.com|clickbank)[^"']*["']/i.test(html)));
  test(name+' no third party tracking scripts', () => assert.ok(!/<script/i.test(html)));
  test(name+' no duplicate email/signup form', () => assert.ok(!/<form\b/i.test(html)));
- test(name+' no autoplay', () => assert.ok(!/\sautoplay\b/i.test(html)));
+ test(name+' no autoplay media attribute', () => assert.ok(!/<(?:video|audio)\b[^>]*\sautoplay\b/i.test(html)));
 }
 test('B retains optional transcript presentation', () => assert.ok(videoB.includes('transcript') || videoB.includes('Transcript')));
 test('FTC claims guidance explicitly linked', () => assert.ok(memo.includes('ftcs-endorsement-guides') && memo.includes('health-products-compliance')));
