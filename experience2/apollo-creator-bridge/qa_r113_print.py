@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Actual Apollo HTML Chromium print regression — offline, no HTTP, no writes to CMS."""
+"""Apollo actual-source offline Chromium regression. Full PASS requires axe, touch, performance and print."""
 import argparse, hashlib, json, math
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -20,7 +20,7 @@ def require(ok,message):
 def run(html,out,exe,axe=None):
     body=html.read_text(encoding='utf-8');out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
-                browser=None,modes=[],screenshots={},pdf=None,performance=[],axe='NOT_RUN_NO_APPROVED_BUNDLE',
+                browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
                 complete=False,failure_code=None)
     journal=out/'R113_BROWSER_RECEIPT.json'
     def checkpoint():journal.write_text(json.dumps(record,indent=2,sort_keys=True)+'\n',encoding='utf-8')
@@ -32,7 +32,7 @@ def run(html,out,exe,axe=None):
             for w in WIDTHS:
                 for js in (False,True):
                     label=f'{w}px-js-{int(js)}'
-                    ctx=browser.new_context(viewport={'width':w,'height':850},java_script_enabled=js,reduced_motion='reduce')
+                    ctx=browser.new_context(viewport={'width':w,'height':850},java_script_enabled=js,reduced_motion='reduce',has_touch=True)
                     page=ctx.new_page();page.set_content(body,wait_until='load')
                     require(page.locator('[data-fv-claim]').count()==4,label+': four claims')
                     require(not page.locator('.print-custody').is_visible(),label+': print-only rights notice leaked onto screen')
@@ -44,8 +44,18 @@ def run(html,out,exe,axe=None):
                             label+': unapproved form or commerce')
                     page.locator('[data-fv-primary-cta]').focus();page.keyboard.press('Enter')
                     require(page.evaluate('location.hash')=='#classroom-preview',label+': classroom CTA keyboard navigation')
+                    require(page.locator('#classroom-preview').evaluate('(e)=>document.activeElement===e'),
+                            label+': classroom destination did not receive focus')
+                    require(page.locator('#classroom-preview').is_visible(),label+': classroom exercise not visible')
+                    require(page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),
+                            label+': document horizontally overflows; table must scroll independently')
+                    require(page.evaluate("getComputedStyle(document.documentElement).scrollBehavior")=='auto',
+                            label+': reduced-motion scroll override missing')
                     page.locator('[data-fv-photo-record="05"]').focus();page.keyboard.press('Enter')
                     require(page.evaluate('location.hash')=='#photo-source-05',label+': photo source keyboard navigation')
+                    page.locator('[data-fv-primary-cta]').tap()
+                    require(page.evaluate('location.hash')=='#classroom-preview',
+                            label+': real touch activation did not reach classroom')
                     if js:
                         require(page.locator('[data-fv-lens]').is_visible(),label+': lens missing')
                         page.locator('[data-fv-mode="limit"]').click()
@@ -71,13 +81,6 @@ def run(html,out,exe,axe=None):
                         require(pdf.read_bytes().startswith(b'%PDF-'),'invalid PDF')
                         record['pdf']={'name':pdf.name,'sha256':sha(pdf)}
                     record['modes'].append(label);checkpoint();ctx.close()
-            if axe and axe.is_file():
-                ctx=browser.new_context(viewport={'width':390,'height':850})
-                page=ctx.new_page();page.set_content(body);page.add_script_tag(content=axe.read_text())
-                result=page.evaluate('async()=>await axe.run(document)')
-                record['axe']={'violations':len(result['violations']),
-                               'ids':[v['id'] for v in result['violations']]}
-                require(not result['violations'],'axe violation');ctx.close()
             for w in (390,1440):
                 for trial in (1,2,3):
                     ctx=browser.new_context(viewport={'width':w,'height':850},reduced_motion='reduce')
@@ -92,10 +95,36 @@ def run(html,out,exe,axe=None):
                                                   'cls':round(cls,5),'lab_only':True})
                     checkpoint();require(lcp<=2500 and cls<=0.1,f'lab budget failed {w}/{trial}')
                     ctx.close()
-            require(len(record['modes'])==14 and len(record['performance'])==6,'incomplete matrix')
+            # An incomplete accessibility scan must never produce a green acceptance receipt.
+            if not axe or not axe.is_file():
+                record['failure_code']='AXE_BUNDLE_REQUIRED'
+                checkpoint()
+                raise AssertionError('approved local axe bundle required for full acceptance')
+            record['axe_bundle_status']='LOCAL_APPROVED_BUNDLE_PROVIDED'
+            for width in (390,1440):
+                ctx=browser.new_context(viewport={'width':width,'height':850})
+                page=ctx.new_page()
+                page.set_content(body,wait_until='load')
+                page.add_script_tag(content=axe.read_text(encoding='utf-8'))
+                for state in ('all','limit'):
+                    if state=='limit':
+                        require(page.locator('[data-fv-lens]').is_visible(),
+                                f'axe {width}: enhancement missing')
+                        page.locator('[data-fv-mode="limit"]').click()
+                    result=page.evaluate('async()=>await axe.run(document)')
+                    violations=[str(x['id']) for x in result['violations']]
+                    record['axe_scans'].append({'width':width,'state':state,
+                                                'violations':len(violations),'ids':violations})
+                    checkpoint()
+                    require(not violations,f'axe violations {width}/{state}')
+                ctx.close()
+            require(len(record['modes'])==14 and len(record['performance'])==6 and
+                    len(record['axe_scans'])==4,'incomplete matrix')
+            require(len(record['screenshots'])==2 and record['pdf'] is not None,
+                    'missing reproducible screenshots or printable PDF')
             record['complete']=True
         except Exception:
-            record['failure_code']='ACCEPTANCE_FAILED';checkpoint();raise
+            record['failure_code']=record['failure_code'] or 'ACCEPTANCE_FAILED';checkpoint();raise
         finally:
             checkpoint();browser.close()
     return record
