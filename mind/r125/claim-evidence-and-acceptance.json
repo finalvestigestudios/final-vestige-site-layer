@@ -1,0 +1,392 @@
+{
+  "schema": "fv-mind-r125-claim-evidence-1.0",
+  "as_of": "2026-11-04",
+  "editorial": "independent",
+  "commerce": "HARD_HOLD",
+  "pilot": {
+    "candidate": "Zen12 Premium",
+    "audience": "Adult actively evaluating a short guided meditation-audio course; not a casual optical-illusion viewer",
+    "offer_page": "https://zen12.com/hnp",
+    "affiliate_url": null,
+    "final_checkout_price": null,
+    "approved_referrer_id": null,
+    "approved_media_ids": [],
+    "partner_account_accepted": null,
+    "owned_payhip_paid_mind_sku": null
+  },
+  "sources": [
+    {
+      "id": "thompson",
+      "kind": "primary_science",
+      "url": "https://doi.org/10.1068/pmktho",
+      "notes": "1980 Thompson original cited in 2009 reflection"
+    },
+    {
+      "id": "bartlett",
+      "kind": "independent_experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "notes": "1993 configuration and inversion experiments"
+    },
+    {
+      "id": "boutsen",
+      "kind": "independent_experiment",
+      "url": "https://doi.org/10.1080/02724980244000774",
+      "notes": "2003 normal vs Thatcherized matching"
+    },
+    {
+      "id": "psalta2014",
+      "kind": "independent_experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25301017/",
+      "notes": "2014 feature orientation work"
+    },
+    {
+      "id": "expression2014",
+      "kind": "independent_experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25549504/",
+      "notes": "2014 expression recognition"
+    },
+    {
+      "id": "wong2010",
+      "kind": "independent_experiment",
+      "url": "https://doi.org/10.1068/p6659",
+      "notes": "2010 non-face Thatcher-effect generality"
+    },
+    {
+      "id": "cornes2011",
+      "kind": "independent_experiment",
+      "url": "https://doi.org/10.1037/a0020985",
+      "notes": "2011 perceptual vs decisional factors"
+    },
+    {
+      "id": "merchant",
+      "kind": "merchant_exact_offer",
+      "url": "https://zen12.com/hnp",
+      "notes": "Zen12 /hnp seller page retrieved 2026-11-04"
+    },
+    {
+      "id": "promo",
+      "kind": "merchant_conditional_offer",
+      "url": "https://zen12.com/secret/",
+      "notes": "Alternative promotional landing; not universal checkout"
+    },
+    {
+      "id": "catalog",
+      "kind": "merchant_catalog",
+      "url": "https://inspire3.com/",
+      "notes": "Manufacturer product descriptions; efficacy claims not independently validated"
+    },
+    {
+      "id": "affiliateportal",
+      "kind": "merchant_affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "notes": "Public signup marketing; no Final Vestige acceptance proof"
+    },
+    {
+      "id": "privacy",
+      "kind": "merchant_policy",
+      "url": "https://inspire3.com/privacy/",
+      "notes": "Policy may share buyers name/email/product with affiliate"
+    },
+    {
+      "id": "ftc_endorse",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "notes": "Disclose material relationships near recommendation"
+    },
+    {
+      "id": "ftc_health",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "notes": "Health objective claims require scientific support"
+    },
+    {
+      "id": "review2023",
+      "kind": "systematic_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "notes": "EEG binaural beats entrainment findings inconsistent"
+    },
+    {
+      "id": "focus",
+      "kind": "first_party_live",
+      "url": "https://finalvestige.com/focus/",
+      "notes": "Free existing single Jetpack signup path"
+    },
+    {
+      "id": "puysegur",
+      "kind": "first_party_live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "notes": "Historical evidence landing"
+    },
+    {
+      "id": "change",
+      "kind": "first_party_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "notes": "Published related research"
+    },
+    {
+      "id": "mesmer",
+      "kind": "first_party_live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "notes": "Published related research"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "source": "thompson",
+      "claim": "Thatcher illusion named for Thompson's 1980 image",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D02",
+      "source": "bartlett",
+      "claim": "Inverted local facial features harder to notice in globally inverted faces in studied tasks",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D03",
+      "source": "boutsen",
+      "claim": "Task/feature conditions change observed inversion performance",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D04",
+      "source": "psalta2014",
+      "claim": "Effect present with isolated eye/mouth regions under study conditions",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D05",
+      "source": "expression2014",
+      "claim": "Expression recognition and perceived grotesqueness not interchangeable",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D06",
+      "source": "wong2010",
+      "claim": "Thatcher-like effect reported beyond face objects",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D07",
+      "source": "cornes2011",
+      "claim": "Discrimination may involve perceptual and decisional factors",
+      "decision": "publish_with_citation"
+    },
+    {
+      "id": "D08",
+      "source": "merchant",
+      "claim": "Zen12 offers 12 levels, four formats, 48 Premium MP3s",
+      "decision": "seller_feature_only"
+    },
+    {
+      "id": "D09",
+      "source": "merchant",
+      "claim": "Zen12 /hnp displays Premium $87.99",
+      "decision": "dated_seller_observation_only"
+    },
+    {
+      "id": "D10",
+      "source": "promo",
+      "claim": "Alternate /secret/ page displays conditional $37 coupon offer",
+      "decision": "do_not_use_as_universal_price"
+    },
+    {
+      "id": "D11",
+      "source": "merchant",
+      "claim": "12 minutes equals one hour advanced meditation",
+      "decision": "exclude_no_product_specific_proof"
+    },
+    {
+      "id": "D12",
+      "source": "catalog",
+      "claim": "Proprietary audio independently guaranteed to improve cognition, wealth or health",
+      "decision": "exclude_no_product_specific_proof"
+    },
+    {
+      "id": "D13",
+      "source": "review2023",
+      "claim": "Binaural beat EEG entrainment literature shows inconsistent findings",
+      "decision": "publish_with_citation_and_limits"
+    },
+    {
+      "id": "D14",
+      "source": "affiliateportal",
+      "claim": "Public affiliate portal advertises rates / EPC",
+      "decision": "do_not_impute_to_FV"
+    },
+    {
+      "id": "D15",
+      "source": "affiliateportal",
+      "claim": "Final Vestige named merchant partner approval",
+      "decision": "unverified_do_not_activate"
+    },
+    {
+      "id": "D16",
+      "source": "privacy",
+      "claim": "Policy permits disclosure of referred buyer name/email/product",
+      "decision": "publish_cautious_policy_summary"
+    },
+    {
+      "id": "D17",
+      "source": "ftc_endorse",
+      "claim": "Prospective near-link disclosure required for material affiliate connection",
+      "decision": "must_disclose_if_activated"
+    },
+    {
+      "id": "D18",
+      "source": "ftc_health",
+      "claim": "Objective health claims require appropriate substantiation",
+      "decision": "must_not_claim_unverified_outcomes"
+    },
+    {
+      "id": "D19",
+      "source": "focus",
+      "claim": "Current Focus resource offered as free guide and existing Jetpack funnel",
+      "decision": "verified_live_page_not_confirmed_leads"
+    },
+    {
+      "id": "D20",
+      "source": "puysegur",
+      "claim": "Historical case does not establish modern product efficacy",
+      "decision": "editorial_separation"
+    },
+    {
+      "id": "D21",
+      "source": "affiliateportal",
+      "claim": "Affiliate click equals merchant paid commission",
+      "decision": "prohibited_false_equivalence"
+    },
+    {
+      "id": "D22",
+      "source": "merchant",
+      "claim": "Seller refund and buyer checkout final terms",
+      "decision": "must_verify_exact_checkout"
+    },
+    {
+      "id": "D23",
+      "source": "ftc_endorse",
+      "claim": "Prior promotional marketing email with order-like subject equals real purchaser sale",
+      "decision": "prohibited_without_receipt"
+    },
+    {
+      "id": "D24",
+      "source": "change",
+      "claim": "Change blindness readers automatically have meditation purchase intent",
+      "decision": "unsupported_do_not_target_as_buyers"
+    },
+    {
+      "id": "D25",
+      "source": "mesmer",
+      "claim": "Hypnotic history archives are evidence for marketed hypnotherapy cures",
+      "decision": "exclude_category_error"
+    }
+  ],
+  "gates": {
+    "named_fv_affiliate_acceptance": {
+      "passed": false,
+      "evidence": null
+    },
+    "permitted_channels": {
+      "passed": false,
+      "evidence": null
+    },
+    "authorized_fv_tracking_url": {
+      "passed": false,
+      "evidence": null
+    },
+    "approved_creatives_review": {
+      "passed": false,
+      "evidence": null
+    },
+    "net_commission_terms_verified": {
+      "passed": false,
+      "evidence": null
+    },
+    "return_clawback_terms_verified": {
+      "passed": false,
+      "evidence": null
+    },
+    "aggregate_only_partner_reporting_agreed": {
+      "passed": false,
+      "evidence": null
+    },
+    "buyer_privacy_protection_agreed": {
+      "passed": false,
+      "evidence": null
+    },
+    "actual_merchant_checkout_final_price": {
+      "passed": false,
+      "evidence": null
+    },
+    "qualified_grok_asset_id": {
+      "passed": false,
+      "evidence": null
+    },
+    "real_qualified_human_sessions": {
+      "passed": false,
+      "evidence": null
+    },
+    "real_mobile_merchant_qa": {
+      "passed": false,
+      "evidence": null
+    },
+    "accessibility_and_no_js_browser_qa": {
+      "passed": false,
+      "evidence": null
+    },
+    "founder_publication_approval": {
+      "passed": false,
+      "evidence": null
+    },
+    "founder_commercial_activation_approval": {
+      "passed": false,
+      "evidence": null
+    },
+    "actual_video_mp4_and_accessible_captions": {
+      "passed": false,
+      "evidence": null
+    },
+    "owner_payhip_paid_sku_authenticated": {
+      "passed": false,
+      "evidence": null
+    },
+    "owner_payhip_rights_cleared": {
+      "passed": false,
+      "evidence": null
+    },
+    "merchant_confirmed_paid_order": {
+      "passed": false,
+      "evidence": null
+    },
+    "merchant_fees_refunds_reconciled": {
+      "passed": false,
+      "evidence": null
+    }
+  },
+  "measurement": {
+    "qualified_human_sessions": null,
+    "affiliate_clicks": null,
+    "confirmed_leads": null,
+    "verified_orders": null,
+    "verified_commissions": null,
+    "merchant_refunds": null,
+    "merchant_fees": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "status": "NOT_COMPUTABLE",
+    "unit": "USD per 1000 qualified human sessions",
+    "windows_days": [
+      7,
+      30
+    ],
+    "privacy": "no raw buyer/customer identifiers, unapproved pixels, emails or IP addresses"
+  },
+  "safety_notes": [
+    "Marketing email subject lines that imitate orders may be promotional. Never count Gmail marketing as paid orders.",
+    "FTC near-link disclosure sits with a disabled offer CTA until named approval.",
+    "R125 Thatcher article contains no product recommendation, performance guarantee, or paid link.",
+    "Do not create new signup forms; preserve Focus Fieldbook single Jetpack list.",
+    "No unapproved WordPress, social, Dispatch, analytics, payment, PR merge or deploy.",
+    "Public merchant promotional rate language is not FV contract, accepted account or earned commission."
+  ]
+}
