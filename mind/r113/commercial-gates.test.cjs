@@ -28,7 +28,7 @@ test('captions/transcript concept is optional and accessible without JS',()=>{as
 test('responsive and system contrast support',()=>{assert.match(html,/@media\(max-width:660px\)/);assert.match(html,/@media\(forced-colors:active\)/);});
 test('free resource is a genuine existing FV path',()=>assert.match(html,/<a class="free" href="https:\/\/finalvestige\.com\/focus\/"/));
 test('scientific editorial is separate from commerce',()=>{assert.doesNotMatch(article,/https?:\/\/zen12\.com|https?:\/\/inspire3\.com|sponsored href=/i);assert.match(article,/no affiliate link, sponsored recommendation/i);});
-test('clinical RCT evidence is not equated with named audio',()=>assert.match(article,/not a randomized test of a named consumer product/i));
+test('clinical RCT evidence is not equated with named audio',()=>assert.match(article,/\\*\\*not\\*\\* a randomized test of a named consumer product/i));
 test('review source URLs are present',()=>{assert.match(article,/eprints\.bournemouth\.ac\.uk\/31277/);assert.match(article,/pubmed\.ncbi\.nlm\.nih\.gov\/37205669/);});
 test('actual social asset IDs must be established',()=>assert.equal(ledger.gates.confirmed_grok_asset_ids,false));
 test('qualification distinguishes affiliate outbound from paid commission',()=>assert.equal(ledger.measurement.affiliate_click_is_sale,false));
