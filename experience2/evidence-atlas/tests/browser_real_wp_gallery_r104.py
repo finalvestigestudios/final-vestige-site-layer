@@ -289,9 +289,13 @@ def run(base, out, axe_path, user, password):
             and len(receipt['performance_lab_samples']) == 6,
             'R104: incomplete acceptance matrix')
     receipt['screenshots_sha256'] = dict(sorted(receipt['screenshots_sha256'].items()))
+    # The secondary human-readable QA report is emitted only AFTER the strict
+    # R106 journal gate accepts every viewport, scan, LCP/CLS and artifact.
+    # Failure leaves only the sanitized, explicitly incomplete progress journal.
+    journal.complete(receipt)
+    receipt['r106_isolated_core_contract'] = 'verified; production/hosted release HOLD'
     (out / 'R104_REAL_WP_GALLERY_QA.json').write_text(
         json.dumps(receipt, sort_keys=True, indent=2) + '\n', encoding='utf-8')
-    journal.complete(receipt)
     return receipt
 
 
@@ -306,9 +310,11 @@ if __name__ == '__main__':
     try:
         result = run(args.base, args.out, args.axe, args.user, args.password)
     except Exception as exc:
-        # Redact exception text; CI always uploads the last atomic checkpoint.
+        # Preserve only the exception type in the journal. A raw Playwright
+        # traceback may contain private HTTP URLs, page HTML or login fields;
+        # never echo it into public CI logs. Last checkpoint gives triage context.
         EvidenceJournal(args.out).fail(type(exc).__name__)
-        raise
+        raise SystemExit('R106_WORDPRESS_QA_FAILED: inspect sanitized R105_QA_PROGRESS.json (STAGING HOLD)') from None
     print(json.dumps({
         'schema': result['schema'], 'cases': len(result['r103_interaction_cases']),
         'axe_scans': len(result['axe']),
