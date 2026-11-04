@@ -1,0 +1,40 @@
+name: Preparedness R114 full-slate render and source-scope diagnostics
+on:
+  push:
+    branches:
+      - review/preparedness-r114-full-slate-render-citation-hold-20261103
+  pull_request:
+    paths:
+      - preparedness/tools/r114_full_slate_rendered_citation_gate.py
+      - preparedness/tests/test_r114_full_slate_rendered_citation_gate.py
+      - preparedness/docs/R114_FULL_SLATE_RENDER_CITATION_HOLD.md
+      - .github/workflows/preparedness-r114-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  r114-private-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 74 focused full-slate and adversarial citation tests
+        run: python -I -m unittest discover -s preparedness/tests -p 'test_r114_*.py' -v
+      - name: Native source, safety and provenance validation
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready draft build; NO CMS
+        run: python -I preparedness/tools/build.py
+      - name: Complete Python regression suite not skipped
+        run: timeout 480s python -I -m unittest discover -s preparedness/tests -q
+      - name: Exact frozen household guide
+        run: python -I preparedness/tools/r113_preparedness_landing_custody.py --repo-root .
+      - name: R111 seven-branch, 35-article, shared-URL source crosswalk
+        run: python -I preparedness/tools/r111_converged_source_review_gate.py --repo-root .
+      - name: NEW R114 actual 35-article renderer/source-scope audit
+        run: python -I preparedness/tools/r114_full_slate_rendered_citation_gate.py --repo-root .
+      - name: Explicit release hold
+        run: echo 'R114 PRIVATE AUDIT ONLY - QD, source/medical review and publishing remain HOLD'
