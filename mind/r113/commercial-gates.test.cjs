@@ -18,7 +18,7 @@ test('key paid outcome stays uncomputable',()=>assert.equal(ledger.net_revenue_p
 test('all partner/merchant/release gates closed',()=>assert.ok(Object.values(ledger.gates).every(v=>v===false)));
 test('claims explicitly reject hour-equivalence as independently proven',()=>assert.ok(ledger.claims.find(c=>c.id==='C4').judgment==='REJECT_AS_EDITORIAL_FACT'));
 test('affiliate identifier cannot leak into page markup',()=>assert.doesNotMatch(html,/awinaffid|affiliate_id|clickbankid|hoplink|utm_content=|affiliate_click\s*\(/i));
-test('merchant URL exists only as nonclickable source text',()=>assert.doesNotMatch(html,/<a\s+[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3)\.com/i));
+test('merchant URL exists only as nonclickable source text',()=>assert.doesNotMatch(html,/<a\s+[^>]*href=["']https?:\/\/(?:www\.)?zen12\.com/i));
 test('explicit purchase CTA is disabled',()=>assert.match(html,/<button[^>]*\sdisabled\s+aria-disabled="true"[^>]*>/i));
 test('near-button disclosure is understandable and visible by default',()=>{assert.match(html,/class="disclosure"[^>]*>If Final Vestige later uses an approved earning link/i);assert.ok(html.indexOf('class="disclosure"')<html.indexOf('Merchant link unavailable'));});
 test('no extra signup form',()=>assert.doesNotMatch(html,/<form\b|<input\b|jetpack-subscriptions/i));
@@ -28,7 +28,7 @@ test('captions/transcript concept is optional and accessible without JS',()=>{as
 test('responsive and system contrast support',()=>{assert.match(html,/@media\(max-width:660px\)/);assert.match(html,/@media\(forced-colors:active\)/);});
 test('free resource is a genuine existing FV path',()=>assert.match(html,/<a class="free" href="https:\/\/finalvestige\.com\/focus\/"/));
 test('scientific editorial is separate from commerce',()=>{assert.doesNotMatch(article,/https?:\/\/zen12\.com|https?:\/\/inspire3\.com|sponsored href=/i);assert.match(article,/no affiliate link, sponsored recommendation/i);});
-test('clinical RCT evidence is not equated with named audio',()=>assert.match(article,/\\*\\*not\\*\\* a randomized test of a named consumer product/i));
+test('clinical RCT evidence is not equated with named audio',()=>assert.match(article,/is \*\*not\*\* a randomized test of a named consumer product/i));
 test('review source URLs are present',()=>{assert.match(article,/eprints\.bournemouth\.ac\.uk\/31277/);assert.match(article,/pubmed\.ncbi\.nlm\.nih\.gov\/37205669/);});
 test('actual social asset IDs must be established',()=>assert.equal(ledger.gates.confirmed_grok_asset_ids,false));
 test('qualification distinguishes affiliate outbound from paid commission',()=>assert.equal(ledger.measurement.affiliate_click_is_sale,false));
