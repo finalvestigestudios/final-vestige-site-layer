@@ -9,6 +9,7 @@ const {selectCdpImageRequests}=require('./cdp_image_request_scope.cjs');
 const {selectScreenshotTarget}=require('./screenshot_target_core.cjs');
 const {MAX_STEPS,nextScrollTarget,evaluateCoverage}=require('./scroll_coverage_core.cjs');
 const {assessPage,assessRun}=require('./image_census_coverage_core.cjs');
+const {DOCUMENT_START_SCRIPT,READ_EXPRESSION,interpretVisualLab}=require('./lab_visual_metrics_20261104.cjs');
 const {buildPriorityPlan}=require('./probe_p0_queue_core.cjs');
 const auditedReleaseQueue=require('./p0_restoration_release_queue_20261101.json');
 const nap=ms=>new Promise(done=>setTimeout(done,ms)),now=()=>new Date().toISOString();
@@ -104,9 +105,13 @@ function monitor(cdp){
 }
 async function inspect(cdp,page,outputDir){
  const started=now(),net=monitor(cdp);
+ const readVisualLab=async()=>{try{return await evaluate(cdp,READ_EXPRESSION)}catch{return null}};
  try{
   await cdp.send('Page.navigate',{url:page.url},12000);await nap(1800);
   let doc=await evaluate(cdp,domScript),steps=0;
+ // Snapshot BEFORE synthetic scrolling: subsequent shifts are diagnostic lab
+ // events, not field CLS. Missing browser observer support stays null.
+ const firstVisualLab=await readVisualLab();
   let coverage={complete:false,state:'no_article',reason:'article_element_missing'};
   if(doc?.hasArticle){
    let scanError=null;
@@ -124,6 +129,7 @@ async function inspect(cdp,page,outputDir){
    const endMetrics=await evaluate(cdp,scrollMetricsScript);
    coverage=evaluateCoverage({...endMetrics,steps,scanError});
   }
+  const lastVisualLab=await readVisualLab();
   const records=net.records(),fail=net.docFailures();
   const verified=pageHostVerified(page.url,doc?.title,doc?.url,doc?.hasArticle,fail[0]?.error);
   // Only CDP Image resources may certify historical-photo load or failure.
@@ -167,7 +173,9 @@ async function inspect(cdp,page,outputDir){
    screenshot_captured_count:screenshots.filter(x=>x.result==='captured').length,
    screenshot_unattempted_count:Math.max(0,broken.length-MAX_SCREENSHOTS_PER_POST),
    screenshot_limit_per_post:MAX_SCREENSHOTS_PER_POST,
-   image_census:evidence,known_broken_count:evidence.known_broken_count,
+   image_census:evidence,
+   visual_lab:interpretVisualLab(firstVisualLab,lastVisualLab,verified),
+   known_broken_count:evidence.known_broken_count,
    confirmed_broken_count:evidence.confirmed_broken_count,
    browser_wire_bytes_total:verified&&coverage.complete?countTransfer(records):null,
    image_wire_bytes_total:verified&&coverage.complete?countTransfer(imageRecords):null,
@@ -184,6 +192,7 @@ async function inspect(cdp,page,outputDir){
  }catch(e){
   return{post_id:page.id,url:page.url,started,completed:now(),page_result:'probe_error',
    error:String(e.message||e),stored_image_count:page.stored.length,stored_images:[],
+   visual_lab:interpretVisualLab(null,null,false),
    confirmed_broken_count:null,browser_wire_bytes_total:null,image_wire_bytes_total:null};
  }finally{net.close()}
 }
@@ -202,12 +211,16 @@ async function main(){
  try{
   browser=await launch();const c=browser.cdp;
   await c.send('Page.enable');await c.send('Network.enable');await c.send('Runtime.enable');
+  // Document-start observers see initial LCP/unsized-image shifts. Runtime
+  // snapshots after navigation/automated scrolling are NOT real-user CWV.
+  await c.send('Page.addScriptToEvaluateOnNewDocument',{source:DOCUMENT_START_SCRIPT});
   await c.send('Network.setCacheDisabled',{cacheDisabled:true});
   await c.send('Network.setBypassServiceWorker',{bypass:true});
   const browserInfo=await c.send('Browser.getVersion',{},12000);
   result.browser_product=browserInfo.product||null;
   result.run_profile={cache_disabled:true,service_worker_bypassed:true,
-    scroll_step_px:720,scroll_wait_ms:220,settle_wait_ms:1000};
+    scroll_step_px:720,scroll_wait_ms:220,settle_wait_ms:1000,
+    document_start_visual_lab_observer:true,field_cwv_claim_permitted:false};
   await c.send('Emulation.setDeviceMetricsOverride',desktop?
    {width:1440,height:900,deviceScaleFactor:1,mobile:false}:
    {width:390,height:844,deviceScaleFactor:2,mobile:true});
