@@ -136,6 +136,38 @@ def run(html,out,exe,axe=None):
                     page.locator('[data-fv-primary-cta]').tap()
                     require(page.evaluate('location.hash')=='#classroom-preview',
                             label+': real touch activation did not reach classroom')
+                    # R124: actual landing worksheet inspection is deliberately opt-in, not a signup.
+                    preview=page.locator('[data-fv-preview-student]')
+                    close_preview=page.locator('[data-fv-preview-close]')
+                    require(preview.count()==1 and close_preview.count()==1,
+                            label+': source worksheet preview controls missing')
+                    require(not page.locator('#student-print-preview').is_visible(),
+                            label+': print-only sheet leaked on screen before opt-in')
+                    if js:
+                        require(preview.is_visible() and preview.get_attribute('aria-expanded')=='false',
+                                label+': preview unavailable or falsely expanded')
+                        preview.click()
+                        require(page.locator('#student-print-preview').is_visible() and
+                                preview.get_attribute('aria-expanded')=='true',
+                                label+': worksheet preview not visible/announced')
+                        require(page.locator('#student-print-preview').evaluate('(e)=>document.activeElement===e'),
+                                label+': preview focus not sent to handout')
+                        require(close_preview.is_visible(),
+                                label+': preview lacks close control')
+                        require(page.locator('#student-print-preview [data-fv-student-photo]').count()==6,
+                                label+': preview missing six photographic references')
+                        close_preview.click()
+                        require(not page.locator('#student-print-preview').is_visible() and
+                                preview.get_attribute('aria-expanded')=='false' and
+                                page.locator('[data-fv-preview-student]').evaluate('(e)=>document.activeElement===e'),
+                                label+': closing preview failed to restore trigger focus')
+                        preview.click()
+                        page.locator('#student-print-preview').press('Escape')
+                        require(not page.locator('#student-print-preview').is_visible(),
+                                label+': Escape did not close preview')
+                    else:
+                        require(not preview.is_visible() and not close_preview.is_visible(),
+                                label+': no-JS preview controls stranded user')
                     if js:
                         require(page.locator('[data-fv-lens]').is_visible(),label+': lens missing')
                         page.locator('[data-fv-mode="limit"]').click()
