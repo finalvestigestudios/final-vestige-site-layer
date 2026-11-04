@@ -111,6 +111,9 @@ def validate(html_text: str, ledger: dict) -> dict:
     require("NASA/Kim Shiflett" in html_text and
             "SourceDrawer: media provenance and rights limitations" in html_text,
             "RIGHTS_SOURCE_DRAWER")
+    require("@media print{" in html_text and
+            "small,.muted{color:#111!important}" in html_text,
+            "PRINT_CREDIT_CONTRAST")
 
     return {
         "classification": "OFFLINE_SOURCE_CONTRACT_ONLY",
