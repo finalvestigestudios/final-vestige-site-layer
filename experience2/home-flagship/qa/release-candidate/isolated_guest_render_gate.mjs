@@ -28,59 +28,113 @@ export function phpGuestCopy(draftId) {
   assert.ok(Number.isSafeInteger(draftId)&&draftId>0);
   return `<?php
 require '/wordpress/wp-load.php';
-function ex2_guest_refuse($s){ echo wp_json_encode(array('error'=>$s)); exit; }
+function ex2_guest_refuse($s){ echo wp_json_encode(array('error'=>$s,'release'=>'HOLD')); exit; }
 $u=wp_parse_url(home_url('/'));
 if (!is_array($u)||($u['scheme']??'')!=='http'||
  !in_array($u['host']??'',array('localhost','127.0.0.1','::1'),true)||
  empty($u['port'])||is_multisite()||get_stylesheet()!=='assembler')
  ex2_guest_refuse('Not isolated local Assembler');
+$marker='/tmp/fv-ex2-synthetic-only.marker';
+$token_path='/tmp/fv-ex2-editor-token';
+$copy_path='/tmp/fv-ex2-guest-copy-id';
+if (!is_file($marker)||
+ trim((string)file_get_contents($marker))!=='SYNTHETIC_TEST_FIXTURE_ONLY'||
+ !is_file($token_path)||is_file($copy_path))
+ ex2_guest_refuse('Missing private fixture or an outstanding guest copy');
+$token=trim((string)file_get_contents($token_path));
+if (strlen($token)!==64||!ctype_xdigit($token))
+ ex2_guest_refuse('Invalid private fixture token');
 $id=${draftId};
 $draft=get_post($id);
 if (!$draft||$draft->post_type!=='page'||$draft->post_status!=='draft'||
  $draft->post_title!=='FV EX2 SYNTHETIC EDITOR SAVED')
  ex2_guest_refuse('Not a verified Gutenberg candidate draft');
+$owner=get_post_meta($id,'_fv_ex2_editor_qa_owner',true);
+if (!is_string($owner)||!hash_equals(hash_hmac('sha256',(string)$id,$token),$owner))
+ ex2_guest_refuse('Guest copy source is not HMAC-owned by this fixture');
 $content=$draft->post_content;
 if (!is_string($content)||
  substr_count($content,'data-fv-home-flagship')<1||
  substr_count($content,'72 published historical fragments in isolated review')<1||
  substr_count($content,'data-fv-source=')!==4||
  substr_count($content,'jetpack/subscriptions')!==1)
- ex2_guest_refuse('Missing synthetic fixture custody markers');
+ ex2_guest_refuse('Missing public-Margins/synthetic-Jetpack fixture custody markers');
+// WordPress can strip <script>/<style> on an anonymous wp_insert_post.
+// Bind ONLY this validated local fixture to its one disposable administrator.
+$admins=get_users(array('role'=>'administrator','number'=>1,'fields'=>'all'));
+if (count($admins)!==1||!isset($admins[0]->ID))
+ ex2_guest_refuse('Disposable administrator unavailable');
+wp_set_current_user((int)$admins[0]->ID);
+if (!current_user_can('unfiltered_html'))
+ ex2_guest_refuse('Isolated Gutenberg editor cannot retain original HTML');
 $source_sha=hash('sha256',$content);
 $copy=wp_insert_post(array('post_type'=>'page','post_status'=>'publish',
  'post_name'=>'fv-ex2-anonymous-review-'.wp_generate_password(12,false,false),
  'post_title'=>'EX2 ANONYMOUS LOCAL REVIEW — NOT A PUBLIC WEBSITE',
- 'post_content'=>$content,'ping_status'=>'closed','comment_status'=>'closed',
+ 'post_content'=>wp_slash($content),'ping_status'=>'closed','comment_status'=>'closed',
  'to_ping'=>'','pinged'=>''),true);
-if (is_wp_error($copy)||!$copy)ex2_guest_refuse('Local copy creation failed');
+if (is_wp_error($copy)||!is_int($copy)||$copy<1)
+ ex2_guest_refuse('Local copy creation failed');
 $created=get_post($copy);
 if (!$created||hash('sha256',$created->post_content)!==$source_sha||
  $created->post_status!=='publish'){
  wp_delete_post($copy,true);
  ex2_guest_refuse('Local copy custody mismatch');
 }
+$copy_owner=hash_hmac('sha256','guest:'.(string)$copy,$token);
+if (!add_post_meta($copy,'_fv_ex2_guest_copy_owner',$copy_owner,true)){
+ wp_delete_post($copy,true);
+ ex2_guest_refuse('Could not establish guest copy ownership');
+}
+if (file_put_contents($copy_path,(string)$copy,LOCK_EX)===false){
+ wp_delete_post($copy,true);
+ ex2_guest_refuse('Could not track the disposable guest copy');
+}
 echo wp_json_encode(array('type'=>'EPHEMERAL_LOOPBACK_ANONYMOUS_COPY',
  'copy_id'=>$copy,'source_draft_id'=>$id,'source_sha256'=>$source_sha,
  'copy_sha256'=>hash('sha256',$created->post_content),
  'url'=>get_permalink($copy),'release'=>'HOLD'));`;
 }
-export function phpGuestDelete(copyId) {
-  assert.ok(Number.isSafeInteger(copyId)&&copyId>0);
+export function phpGuestDelete(copyId=null) {
+  assert.ok(copyId===null||(Number.isSafeInteger(copyId)&&copyId>0));
+  const expected = copyId===null?'null':String(copyId);
   return `<?php
 require '/wordpress/wp-load.php';
+function ex2_guest_cleanup_reply($data){echo wp_json_encode($data);exit;}
 $u=wp_parse_url(home_url('/'));
 if (!is_array($u)||($u['scheme']??'')!=='http'||
  !in_array($u['host']??'',array('localhost','127.0.0.1','::1'),true)||
- empty($u['port'])||is_multisite()||get_stylesheet()!=='assembler'){
- echo wp_json_encode(array('error'=>'Not local Playground'));exit;
-}
-$id=${copyId};$p=get_post($id);
-if (!$p||$p->post_type!=='page'||$p->post_status!=='publish'||
- !str_starts_with($p->post_title,'EX2 ANONYMOUS LOCAL REVIEW')){
- echo wp_json_encode(array('error'=>'Not a generated review copy'));exit;
-}
-wp_delete_post($id,true);
-echo wp_json_encode(array('deleted'=>get_post($id)===null,'id'=>$id));`;
+ empty($u['port'])||is_multisite()||get_stylesheet()!=='assembler')
+ ex2_guest_cleanup_reply(array('error'=>'Not isolated local Assembler'));
+$marker='/tmp/fv-ex2-synthetic-only.marker';
+$token_path='/tmp/fv-ex2-editor-token';
+$copy_path='/tmp/fv-ex2-guest-copy-id';
+if (!is_file($marker)||
+ trim((string)file_get_contents($marker))!=='SYNTHETIC_TEST_FIXTURE_ONLY'||
+ !is_file($token_path)||!is_file($copy_path))
+ ex2_guest_cleanup_reply(array('error'=>'No verified private guest copy tracker'));
+$token=trim((string)file_get_contents($token_path));
+if (strlen($token)!==64||!ctype_xdigit($token))
+ ex2_guest_cleanup_reply(array('error'=>'Invalid private guest copy token'));
+$id_str=trim((string)file_get_contents($copy_path));
+if (!preg_match('/^[1-9]\\d*$/D',$id_str))
+ ex2_guest_cleanup_reply(array('error'=>'Invalid private guest copy ID'));
+$id=(int)$id_str;
+if (${expected} !== null && $id !== ${expected})
+ ex2_guest_cleanup_reply(array('error'=>'Guest receipt/tracker identity mismatch'));
+$p=get_post($id);
+$owner=get_post_meta($id,'_fv_ex2_guest_copy_owner',true);
+$proof=hash_hmac('sha256','guest:'.(string)$id,$token);
+if (!$p||$p->post_type!=='page'||
+ !str_starts_with($p->post_title,'EX2 ANONYMOUS LOCAL REVIEW')||
+ !is_string($owner)||!hash_equals($proof,$owner))
+ ex2_guest_cleanup_reply(array('error'=>'Refusing deletion of an unowned guest copy'));
+$deleted=wp_delete_post($id,true);
+clean_post_cache($id);
+if (!$deleted||get_post($id)!==null)
+ ex2_guest_cleanup_reply(array('error'=>'Guest copy deletion was not verified'));
+@unlink($copy_path);
+ex2_guest_cleanup_reply(array('deleted'=>true,'verified_absent'=>true,'id'=>$id,'release'=>'HOLD'));`;
 }
 export function validateGuestReceipt(receipt,draftId,serverUrl) {
   assert.equal(receipt?.type,'EPHEMERAL_LOOPBACK_ANONYMOUS_COPY');
@@ -113,14 +167,15 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
   const fixture=JSON.parse(await readFile(
     new URL('./public_page6_margins_20261102.json',import.meta.url),'utf8'));
   const publishedMargins=validatePublishedMarginsFixture(fixture);
-  const raw=await server.playground.run({code:phpGuestCopy(draftId)});
-  let receipt;
-  try {receipt=JSON.parse(raw.text);}catch{throw new Error('Invalid local guest-copy receipt');}
-  // A malformed response with a copy ID still must be deleted in the finally.
-  const copyId=Number.isSafeInteger(receipt?.copy_id)?receipt.copy_id:null;
-  let context=null;
+  // Arm cleanup before the PHP create call. A damaged/lost receipt must not
+  // bypass removal of a copy already created inside the disposable Playground.
+  let copyAttempted=false,copyId=null,context=null,receipt;
   const blocked=new Set(),checks=[],failures=[];
   try {
+    copyAttempted=true;
+    const raw=await server.playground.run({code:phpGuestCopy(draftId)});
+    try {receipt=JSON.parse(raw.text);}catch{throw new Error('Invalid local guest-copy receipt');}
+    copyId=Number.isSafeInteger(receipt?.copy_id)&&receipt.copy_id>0?receipt.copy_id:null;
     validateGuestReceipt(receipt,draftId,server.serverUrl);
     context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'});
     assert.ok(isCookieFreeGuest(await context.cookies()));
@@ -258,11 +313,18 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
     } finally {await noContext.close();}
   } finally {
     if(context)await context.close();
-    if(copyId) {
-      let deleted;
-      try{const r=await server.playground.run({code:phpGuestDelete(copyId)});deleted=JSON.parse(r.text).deleted===true;}
-      catch{deleted=false;}
-      if(!deleted)throw new Error('FAIL CLOSED: temporary guest page cleanup unverified');
+    if(copyAttempted) {
+      let deleted=false;
+      try {
+        // PHP reads a PRIVATE tracker if the create receipt never arrived.
+        // A mismatched ID or missing HMAC ownership fails closed.
+        const r=await server.playground.run({code:phpGuestDelete(copyId)});
+        const c=JSON.parse(r.text);
+        deleted=c.deleted===true&&c.verified_absent===true&&
+          c.release==='HOLD'&&Number.isSafeInteger(c.id)&&c.id>0&&
+          (copyId===null||copyId===c.id);
+      } catch {deleted=false;}
+      if(!deleted)throw new Error('FAIL CLOSED: owned temporary guest page cleanup unverified');
     }
   }
   if(failures.length)throw new Error('ANONYMOUS_VISITOR_RELEASE_HOLD '+JSON.stringify(failures));
