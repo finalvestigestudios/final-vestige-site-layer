@@ -61,5 +61,8 @@
   "merchant_approved": false,
   "affiliate_links": [],
   "founder_final_campaign_approval": false,
-  "created_for": "SOURCE-LED HUMAN REVIEW ONLY"
+  "created_for": "SOURCE-LED HUMAN REVIEW ONLY",
+  "preexisting_stacked_master_revision_origin_pr": 178,
+  "current_stacked_master_not_blob_identical_to_pr175": true,
+  "founder_approval_of_alternate_master_revisions": false
 }
