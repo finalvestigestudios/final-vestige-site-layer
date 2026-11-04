@@ -10,8 +10,8 @@ function collect(html, regex) {
   const map = new Map();
   for (const match of html.matchAll(regex)) {
     assert(!map.has(match[1]), 'duplicate source id ' + match[1]);
-    assert(urlRE.test(match[2]), 'missing official NASA URL in ' + match[1]);
-    map.set(match[1], match[2].match(urlRE)[1]);
+    assert(urlRE.test(match[0]), 'missing official NASA URL in ' + match[1]);
+    map.set(match[1], match[0].match(urlRE)[1]);
   }
   return map;
 }
