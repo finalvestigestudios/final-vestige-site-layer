@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex,nofollow">
+<title>Dispatch R111 — Private subscriber proof board (offline review)</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#101314;color:#f4eee4}
+*{box-sizing:border-box}body{margin:0;line-height:1.6}
+a{color:#e8c78f;text-underline-offset:.2em}a:focus-visible{outline:3px solid #ffe2a0;outline-offset:4px}
+main,footer{width:min(100% - 36px,1050px);margin-inline:auto}
+header{border-bottom:1px solid #514939;background:#171b1b;padding:1.2rem max(18px,calc((100% - 1014px)/2))}
+header small{font-weight:700;letter-spacing:.13em;color:#d9bc89}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(2rem,5vw,3.3rem);line-height:1.14;margin:.6rem 0}
+h2{font-family:Georgia,serif;font-weight:400;font-size:1.7rem;margin:2rem 0 .5rem}
+.lede{max-width:67ch;color:#d1c9bc}.flag{font-weight:750;color:#ffc0a9}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1rem;margin-top:1.5rem}
+.card{background:#1c2221;border:1px solid #4b4b40;padding:1.1rem;min-width:0}
+.card p{margin:.4rem 0}.sub{font-size:.91rem;color:#c9c2b5}
+.kpi{font:2rem Georgia,serif;color:#f3d1a0}
+.badge{display:inline-block;background:#4c2521;color:#ffded7;border:1px solid #dc8273;border-radius:3px;padding:.2rem .55rem;font-weight:700;font-size:.85rem}
+table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.95rem}
+th,td{text-align:left;padding:.9rem .75rem;border-bottom:1px solid #555147;vertical-align:top}
+th{color:#f8d5a3}tbody tr:nth-child(odd){background:#1b201f}
+.scroller{overflow-x:auto}.evidence{color:#e6baa0}
+code{overflow-wrap:anywhere}.note{padding:.8rem 1.2rem;border-left:3px solid #cca86f;background:#242521}
+footer{margin-block:3rem;padding-top:1rem;border-top:1px solid #4b4b40;color:#c3bbb0}
+@media(max-width:560px){table{font-size:.87rem}th,td{padding:.7rem .5rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><small>FINAL VESTIGE STUDIOS • INTERNAL DRAFT • R111</small><h1>The Dispatch / Proof Before Reach</h1><p class="lede">A confirmed opt-in is not a delivered email. This source-controlled board is a static, offline review of the current newsletter release gates. It neither contains recipients nor contacts them.</p><span class="badge">ALL SIX UNSENT · OFFLINE REVIEW ONLY</span></header>
+<main id="main">
+<h2>Current authenticated evidence</h2>
+<p class="sub">Connected WordPress newsletter status and settings inspected November 4, 2026 at 10:34 UTC. These are source-reported aggregates, not distinct recipient records. The board does not fetch live data.</p>
+<div class="cards" role="list">
+<section class="card" role="listitem" aria-label="Newsletter reported total"><p class="sub">Newsletter total</p><p class="kpi">2</p><p>Confirmed: 2 · Unconfirmed: 2</p><p class="sub">Unconfirmed excluded from total per WordPress documentation; do not add to infer four subscribers.</p></section>
+<section class="card" role="listitem" aria-label="Separate follower metric"><p class="sub">Separate follower summary</p><p class="kpi">2 / 0</p><p>WordPress Reader / email follower summary</p><p class="sub">A follower counter is not a verified email recipient list.</p></section>
+<section class="card" role="listitem" aria-label="Reachability status"><p class="sub">Confirmed email-reachable audience</p><p class="kpi">Unknown</p><p>Native subscribed/paused/bounced status filter needed.</p><p class="sub">Do not substitute a total of 2, a follower count of 0, or button clicks.</p></section>
+<section class="card" role="listitem" aria-label="Financial proof status"><p class="sub">Realized net revenue per 1,000 qualified sessions</p><p class="kpi">N/A</p><p>No independently confirmed source-joined paid orders or verified denominator.</p></section>
+</div>
+<h2>Subscriber-to-customer release gates</h2>
+<div class="scroller"><table><caption>Evidence status, without exposing subscriber information</caption><thead><tr><th scope="col">Funnel stage</th><th scope="col">Evidence</th><th scope="col">Decision</th><th scope="col">Owner</th></tr></thead>
+<tbody>
+<tr><th scope="row">Focus opt-in</th><td>One native block, consent; native confirmed-status event not inspected</td><td class="evidence">UNKNOWN</td><td>Dispatch / Claude</td></tr>
+<tr><th scope="row">Fieldbook welcome</th><td>52-page PDF link configured; received MIME unverified</td><td class="evidence">HOLD</td><td>Dispatch / QA</td></tr>
+<tr><th scope="row">Actual email delivery</th><td>Excerpt format; 5 recent post sends <code>never_sent_opted_out</code></td><td class="evidence">NO SEND VERIFIED</td><td>Dispatch / Claude</td></tr>
+<tr><th scope="row">Commercial legal footer</th><td>Publisher postal address, actual unsub and suppression unverified</td><td class="evidence">HOLD</td><td>Founder / QA</td></tr>
+<tr><th scope="row">Zen12 guide → paid order</th><td>Named approval, email-channel rights, earning URL, buyer privacy, guide and merchant sale not established</td><td class="evidence">HOLD MERCHANT</td><td>Mind / Claude</td></tr>
+<tr><th scope="row">Grok asset → net revenue</th><td>Asset ID, attributable eligible visit and merchant-settled order not joined</td><td class="evidence">N/A</td><td>Grok / Praxxis / Claude</td></tr>
+</tbody></table></div>
+<p class="note"><strong>Release contract:</strong> The six existing manuscripts remain four editorial and two commercially reserved. The email preview must be an actual native Jetpack/received MIME proof, not this simulated board. All send authorization remains with the founder. No list import, analytics installation, page update, affiliate activation, email send or test message is authorized here.</p>
+<h2>Source-of-truth links</h2>
+<p><a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch master issue #174</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175">Six original manuscripts #175</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201">Readiness gate #201</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171">Mind offer owner #171</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820">Revenue attribution #820</a>.</p>
+<p><a href="https://wordpress.com/support/subscribers/">Official WordPress subscriber definitions</a> · <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">FTC commercial email requirements</a> · <a href="https://inspire3.com/privacy/">Merchant buyer privacy</a>.</p>
+</main>
+<footer><p>Static reviewer preview • No tracking pixels, external scripts, forms, personal data, payment links or publishing hooks • Awaiting final creative and compliance approval.</p></footer>
+</body></html>
