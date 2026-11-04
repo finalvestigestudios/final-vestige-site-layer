@@ -9,7 +9,7 @@ const conditions={browser:'Chrome',browser_version:'142',viewport_width:1280,vie
  device_scale_factor:1,network_profile:'unthrottled',cache_mode:'cold',locale:'en-US'};
 function run(slots,bytes){return {method:SOURCE,all_inline_images_loaded:true,all_image_requests_captured:true,
  cache_disabled:true,capture_unmodified:true,conditions:copy(conditions),
- requests:[{request_id:'CDP-1',slot_keys:slots.slice(),request_url:'https://finalvestige.com/a.png',
+ requests:[{request_id:'CDP-1',resource_type:'Image',slot_keys:slots.slice(),request_url:'https://finalvestige.com/a.png',
  final_url:'https://finalvestige.com/a.png',http_status:200,mime_type:'image/png',
  encoded_data_length:bytes,decode_ok:true,natural_width:960,natural_height:540,
  from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
@@ -34,6 +34,8 @@ function runTests(){
  invalid('prefetch',x=>x.pairs[0].after[0].requests[0].from_prefetch_cache=true,'cached/unknown');
  invalid('real HTTP failure',x=>x.pairs[0].after[0].requests[0].http_status=404,'not successful');
  invalid('bad MIME',x=>x.pairs[0].after[0].requests[0].mime_type='text/html','wrong MIME');
+ invalid('XHR spoof',x=>x.pairs[0].after[0].requests[0].resource_type='Fetch','not CDP Image');
+ invalid('missing CDP type',x=>delete x.pairs[0].before[0].requests[0].resource_type,'not CDP Image');
  invalid('decode failed',x=>x.pairs[0].before[0].requests[0].decode_ok=false,'decode/dimensions');
  invalid('unknown bytes',x=>x.pairs[0].before[0].requests[0].encoded_data_length=null,'unknown actual CDP');
  invalid('zero bytes',x=>x.pairs[0].before[0].requests[0].encoded_data_length=0,'unknown actual CDP');
@@ -56,6 +58,11 @@ function runTests(){
    const p=pair(row.post_id,row.expected_slots,3);p.page_url=row.page_url;d.pairs.push(p);
  }
  result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ const mixed=copy(d);
+ for(const phase of ['before','after'])for(const run of mixed.pairs[1][phase])run.conditions.viewport_width=1920;
+ const mixedResult=evaluate(mixed,inventory);
+ eq(mixedResult.status,'INSUFFICIENT_DATA');
+ check(mixedResult.reason_codes.some(x=>x.includes('unequal cross-post browser conditions')),'cross-post mixed viewport not blocked');passed++;
  eq(result.observed_post_count,61);eq(result.observed_slot_count,355);
  eq(result.sitewide_76_percent_verified,true);eq(result.repetitions,3);passed++;
  d.pairs[0].after[0].requests[0].encoded_data_length=800;
