@@ -1,0 +1,42 @@
+'use strict';
+/** R113 release guards. Run: node --test mind/r113/commercial-gates.test.cjs
+ * Static-only checks; they do NOT substitute for browser, merchant, CI, native Jetpack or pricing verification.
+ */
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const dir=__dirname;
+const html=fs.readFileSync(path.join(dir,'zen12-approval-gated-buyer-preview.html'),'utf8');
+const article=fs.readFileSync(path.join(dir,'the-voice-you-give-yourself.md'),'utf8');
+const plan=fs.readFileSync(path.join(dir,'conversion-first-acceptance.md'),'utf8');
+const ledger=JSON.parse(fs.readFileSync(path.join(dir,'commercial-evidence-ledger.json'),'utf8'));
+test('commercial activation remains hard hold',()=>assert.equal(ledger.activation,'HARD_HOLD'));
+test('does not falsely treat missing paid orders as zero',()=>assert.equal(ledger.verified_paid_orders,null));
+test('does not falsely treat unknown affiliate commissions as zero',()=>assert.equal(ledger.verified_affiliate_commissions,null));
+test('key paid outcome stays uncomputable',()=>assert.equal(ledger.net_revenue_per_1000_qualified_human_sessions,null));
+test('all partner/merchant/release gates closed',()=>assert.ok(Object.values(ledger.gates).every(v=>v===false)));
+test('claims explicitly reject hour-equivalence as independently proven',()=>assert.ok(ledger.claims.find(c=>c.id==='C4').judgment==='REJECT_AS_EDITORIAL_FACT'));
+test('affiliate identifier cannot leak into page markup',()=>assert.doesNotMatch(html,/awinaffid|affiliate_id|clickbankid|hoplink|utm_content=|affiliate_click\s*\(/i));
+test('merchant URL exists only as nonclickable source text',()=>assert.doesNotMatch(html,/<a\s+[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3)\.com/i));
+test('explicit purchase CTA is disabled',()=>assert.match(html,/<button[^>]*\sdisabled\s+aria-disabled="true"[^>]*>/i));
+test('near-button disclosure is understandable and visible by default',()=>{assert.match(html,/class="disclosure"[^>]*>If Final Vestige later uses an approved earning link/i);assert.ok(html.indexOf('class="disclosure"')<html.indexOf('Merchant link unavailable'));});
+test('no extra signup form',()=>assert.doesNotMatch(html,/<form\b|<input\b|jetpack-subscriptions/i));
+test('no external JavaScript/pixels/cookies',()=>assert.doesNotMatch(html,/<script\b|<iframe\b|navigator\.sendBeacon|document\.cookie|pixel\.gif/i));
+test('no autoplay media, no external embeds',()=>assert.doesNotMatch(html,/<(?:video|audio)[^>]*autoplay|<iframe\b/i));
+test('captions/transcript concept is optional and accessible without JS',()=>{assert.match(html,/<details>\s*<summary>/i);assert.match(html,/40-second transcript/i);assert.match(html,/prefers-reduced-motion/);});
+test('responsive and system contrast support',()=>{assert.match(html,/@media\(max-width:660px\)/);assert.match(html,/@media\(forced-colors:active\)/);});
+test('free resource is a genuine existing FV path',()=>assert.match(html,/<a class="free" href="https:\/\/finalvestige\.com\/focus\/"/));
+test('scientific editorial is separate from commerce',()=>{assert.doesNotMatch(article,/https?:\/\/zen12\.com|https?:\/\/inspire3\.com|sponsored href=/i);assert.match(article,/no affiliate link, sponsored recommendation/i);});
+test('clinical RCT evidence is not equated with named audio',()=>assert.match(article,/not a randomized test of a named consumer product/i));
+test('review source URLs are present',()=>{assert.match(article,/eprints\.bournemouth\.ac\.uk\/31277/);assert.match(article,/pubmed\.ncbi\.nlm\.nih\.gov\/37205669/);});
+test('actual social asset IDs must be established',()=>assert.equal(ledger.gates.confirmed_grok_asset_ids,false));
+test('qualification distinguishes affiliate outbound from paid commission',()=>assert.equal(ledger.measurement.affiliate_click_is_sale,false));
+test('signup click is not counted as confirmed lead',()=>assert.equal(ledger.measurement.signup_click_is_lead,false));
+test('no PII collected in event contract',()=>assert.equal(ledger.measurement.personal_identifiers,'FORBIDDEN'));
+test('minimum aggregate reporting size is 20',()=>assert.equal(ledger.measurement.report_threshold,20));
+test('7 and 30 day cohorts mandatory',()=>assert.ok(JSON.stringify(ledger.measurement.cohorts_days)==='[7,30]'));
+test('same offer across pilot designs with no claim of A/B winner',()=>{assert.match(plan,/A is canonical evidence-first guide/i);assert.match(plan,/No conversion result, video optional/i);});
+test('source evidence distinguishes catalog, checkout and FTC',()=>{assert.ok(ledger.sources.some(s=>s.kind==='official_seller_catalog'));assert.ok(ledger.sources.some(s=>s.kind==='FTC_disclosure'));assert.ok(ledger.sources.some(s=>s.kind==='FV_collection'));});
+test('no publisher-owned commerce price presented as current',()=>assert.doesNotMatch(html,/\$87\.99|\$37|\$67|\$87/));
+test('live WordPress homepage and Jetpack remain untouched',()=>{assert.equal(ledger.production_write,false);assert.match(plan,/no existing TASKS changes/i);});
