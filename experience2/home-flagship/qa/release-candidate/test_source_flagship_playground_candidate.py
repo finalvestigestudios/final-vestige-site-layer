@@ -116,6 +116,39 @@ class FullSourceFlagshipTests(unittest.TestCase):
         self.assertEqual(manifest["data_classification"],
                          "PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE")
 
+    def test_real_gutenberg_editor_admits_actual_public_margins_manifest(self):
+        """Regression: producer and editor gate must agree on *actual* data class.
+
+        Previously the builder emitted PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_...
+        while the WordPress editor runner required SYNTHETIC_TEST_FIXTURE_ONLY.
+        That made the real Assembler/Gutenberg path fail before any browser QA.
+        """
+        candidate, manifest = compose(self.index, self.css, self.js)
+        cls = "PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE"
+        self.assertEqual(manifest["data_classification"], cls)
+        self.assertTrue(manifest["public_page6_margins_texts_included"])
+        self.assertFalse(manifest["other_page6_content_included"])
+        self.assertFalse(manifest["page6_live_content_included"])
+        self.assertEqual(manifest["public_fragment_fixture_sha256"],
+                         hashlib.sha256(PUBLIC_MARGINS_JSON.read_bytes()).hexdigest())
+        self.assertEqual(hashlib.sha256(candidate.encode()).hexdigest(),
+                         manifest["candidate_sha256"])
+        runner = (HERE / "playground_gutenberg_editor_gate.mjs").read_text("utf-8")
+        php = (HERE / "playground_gutenberg_editor_gate.php").read_text("utf-8")
+        self.assertIn("const DATA_CLASS='" + cls + "';", runner)
+        self.assertIn("assert.equal(manifest.data_classification,DATA_CLASS", runner)
+        self.assertIn("assert.equal(manifest.public_fragment_fixture_sha256,sha(fixtureBytes)", runner)
+        self.assertIn("checkManifest(manifest,candidate,fixtureBytes);", runner)
+        self.assertIn("assert.equal(receipt.data_class,DATA_CLASS)", runner)
+        self.assertNotIn("assert.equal(receipt.data_class, \'SYNTHETIC_TEST_FIXTURE_ONLY\')", runner)
+        self.assertIn("await selfTest();", runner)
+        # The synthetic-only *marker* guards the local environment. It must
+        # never be mistaken for the provenance of the public page-6 records.
+        self.assertIn("SYNTHETIC_TEST_FIXTURE_ONLY", php)
+        self.assertEqual(php.count("'data_class'=>'" + cls + "'"), 2)
+        self.assertNotIn("'data_class'=>'SYNTHETIC_TEST_FIXTURE_ONLY'", php)
+        self.assertNotIn("assert.equal(manifest.data_classification, 'SYNTHETIC_TEST_FIXTURE_ONLY')", runner)
+
     def test_public_margins_custody_mutations_fail_closed(self):
         original = json.loads(PUBLIC_MARGINS_JSON.read_text(encoding="utf-8"))
         mutations = [

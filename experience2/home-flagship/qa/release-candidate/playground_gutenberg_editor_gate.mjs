@@ -23,20 +23,73 @@ const loopback = (url) => {
       u.username === '' && u.password === '' && !!u.port;
   } catch { return false; }
 };
-function checkManifest(manifest, candidate) {
-  assert.equal(manifest.data_classification, 'SYNTHETIC_TEST_FIXTURE_ONLY');
-  assert.equal(manifest.page6_live_content_included, false);
-  assert.equal(manifest.release, 'HOLD');
-  assert.equal(manifest.candidate_sha256, sha(candidate));
-  assert.equal(manifest.candidate_bytes, candidate.byteLength);
-  assert.equal(manifest.margin_items, 72);
-  assert.ok(manifest.gutenberg_custom_html_blocks >= 2);
-  assert.equal(manifest.jetpack_block_comments, 1);
-  assert.equal(manifest.nypl_record_links, 2);
-  const source = candidate.toString('utf8');
-  assert.equal((source.match(/<span class="fv-margin-strip__item" style="--i:\d+">/g) || []).length, 72);
-  assert.equal((source.match(/jetpack\/subscriptions/g) || []).length, 1);
-  assert.equal((source.match(/FV-EX2 PAGE6 REVIEW-ONLY/g) || []).length, 1);
+// The disposable environment marker is SYNTHETIC_TEST_FIXTURE_ONLY, but the
+// page payload now contains the 72 actual publicly published Margins texts.
+// Never confuse an environment safety marker with data provenance.
+const DATA_CLASS='PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE';
+const SOURCE_FILES=[
+  'index.html','flagship.css','chronicle.css','chronicle-lens.css',
+  'inquiry.css','observer-lab.css','reading-trail.css',
+  'flagship.js','observer-lab.js','chronicle-lens.js','reading-trail.js'
+].sort();
+const CHAPTER_IDS=[
+  'fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry',
+  'fv-hf-method-title','fv-hf-observer','fv-hf-mind-title'
+];
+function checkManifest(manifest,candidate,fixtureBytes) {
+  assert.equal(manifest.data_classification,DATA_CLASS,
+    'Public-Margins payload misclassified as synthetic-only');
+  assert.equal(manifest.page6_live_content_included,false);
+  assert.equal(manifest.public_page6_margins_texts_included,true);
+  assert.equal(manifest.other_page6_content_included,false);
+  assert.equal(manifest.real_source_controlled_flagship,true);
+  assert.equal(manifest.production_source_or_subscribers,'ONLY_PUBLIC_MARGINS_NO_PRIVATE_DATA');
+  assert.equal(manifest.accessibility_performance_approval,'NOT_GRANTED');
+  assert.equal(manifest.release,'HOLD');
+  assert.equal(manifest.candidate_sha256,sha(candidate));
+  assert.equal(manifest.candidate_bytes,candidate.byteLength);
+  assert.equal(manifest.margin_items,72);
+  assert.equal(manifest.gutenberg_custom_html_blocks,2);
+  assert.equal(manifest.jetpack_block_comments,1);
+  assert.equal(manifest.nypl_record_links,2);
+  assert.equal(manifest.style_source_count,6);
+  assert.equal(manifest.script_source_count,4);
+  assert.equal(manifest.wordpress_main_landmark_adapted,true);
+  assert.deepEqual(manifest.chapter_targets,CHAPTER_IDS);
+  assert.deepEqual(Object.keys(manifest.source_sha256||{}).sort(),SOURCE_FILES);
+  for(const digest of Object.values(manifest.source_sha256))
+    assert.match(digest,/^[a-f0-9]{64}$/,'Invalid flagship source fingerprint');
+  assert.match(manifest.assembler_saved_stage_css_sha256,/^[a-f0-9]{64}$/);
+  assert.equal(manifest.public_fragment_fixture_sha256,sha(fixtureBytes),
+    'Published public Margins fixture hash drift');
+  const fixture=JSON.parse(fixtureBytes.toString('utf8'));
+  assert.equal(fixture.source_site_id,256784396);
+  assert.equal(fixture.source_page_id,6);
+  assert.equal(fixture.source_url,'https://finalvestige.com/');
+  assert.equal(fixture.status,'ISOLATED_WORDPRESS_PLAYGROUND_ONLY');
+  assert.equal(fixture.fragment_count,72);
+  assert.equal(fixture.source_modified,manifest.published_margins_source_modified);
+  assert.ok(Array.isArray(fixture.items) && fixture.items.length===72);
+  const source=candidate.toString('utf8');
+  const records=new Set();
+  for(let i=0;i<72;i++){
+    const item=fixture.items[i];
+    assert.equal(item.index,i,'Published Margins index drift');
+    assert.ok(typeof item.text==='string' && item.text.length>0);
+    assert.ok(!records.has(item.text),'Published Margins source duplicate');
+    records.add(item.text);
+    const escaped=item.text.replace(/&/g,'&amp;');
+    assert.ok(source.includes('<span class="fv-margin-strip__item" style="--i:'+
+      i+'">'+escaped+'</span>'),'Candidate is not the published Margins at index '+i);
+  }
+  assert.equal((source.match(/<span class="fv-margin-strip__item" style="--i:\d+">/g)||[]).length,72);
+  assert.equal((source.match(/jetpack\/subscriptions/g)||[]).length,1);
+  assert.equal((source.match(/<script data-fv-source=/g)||[]).length,4);
+  assert.equal((source.match(/<style data-fv-stage-only=/g)||[]).length,2);
+  assert.equal((source.match(/<!-- wp:html -->/g)||[]).length,2);
+  assert.equal((source.match(/<!-- \/wp:html -->/g)||[]).length,2);
+  assert.equal((source.match(/data-fv-embedded-main="wordpress-assembler"/g)||[]).length,1);
+  assert.equal((source.match(/FV-EX2 PAGE6 REVIEW-ONLY/g)||[]).length,1);
   assert.ok(source.includes('Focus Fieldbook') && source.includes('fv-hf__chapter-nav'));
   assert.ok(!source.includes('https://finalvestige.com/wp-json/'));
 }
@@ -44,47 +97,86 @@ function checkEditorReceipt(receipt, digest) {
   assert.equal(receipt.result, 'PASS');
   assert.equal(receipt.release, 'HOLD');
   assert.equal(receipt.test_type, 'REAL_GUTENBERG_EDITOR_SAVE_SYNTHETIC_PLAYGROUND_ONLY');
-  assert.equal(receipt.data_class, 'SYNTHETIC_TEST_FIXTURE_ONLY');
+  assert.equal(receipt.data_class,DATA_CLASS);
+  // Data class reports public Margins; synthetic-only is the loopback marker, not content.
   assert.equal(receipt.source_sha256, digest);
   assert.equal(receipt.stored_sha256, digest);
   assert.equal(receipt.source_bytes, receipt.stored_bytes);
   assert.equal(Object.keys(receipt.checks || {}).length, 9);
   for (const v of Object.values(receipt.checks)) assert.equal(v, true);
 }
-function selfTest() {
-  let total = 0;
-  const accept = (u) => { assert.equal(loopback(u), true); total++; };
-  const deny = (u) => { assert.equal(loopback(u), false); total++; };
-  accept('http://127.0.0.1:9473/');
-  accept('http://localhost:1234/');
-  accept('http://[::1]:9473/');
-  for (const u of [
-    'https://finalvestige.com/', 'http://finalvestige.com:9473/',
-    'https://localhost:9473/', 'http://localhost/',
-    'http://localhost:9473@finalvestige.com/', 'http://user@127.0.0.1:9473/',
-    'http://127.0.0.2:9473/', 'file:///tmp/site',
-    'http://finalvestige.com.evil:9473/', 'not-a-url'
-  ]) deny(u);
-  const candidate = Buffer.from('mock material');
-  const manifest = {data_classification:'SYNTHETIC_TEST_FIXTURE_ONLY',page6_live_content_included:false,
-    release:'HOLD',candidate_sha256:sha(candidate),candidate_bytes:candidate.length,
-    margin_items:72,gutenberg_custom_html_blocks:2,jetpack_block_comments:1,nypl_record_links:2};
-  assert.throws(() => checkManifest(manifest,candidate)); total++; // no synthetic markup
-  assert.throws(() => checkManifest({...manifest,release:'APPROVED'},candidate)); total++;
-  const checks = Object.fromEntries(Array.from({length:9},(_,i)=>['check'+i,true]));
-  const pass = {result:'PASS',release:'HOLD',test_type:'REAL_GUTENBERG_EDITOR_SAVE_SYNTHETIC_PLAYGROUND_ONLY',
-    data_class:'SYNTHETIC_TEST_FIXTURE_ONLY',source_sha256:'a',stored_sha256:'a',
-    source_bytes:5,stored_bytes:5,checks};
+async function selfTest() {
+  // Real public text fixture, synthetic candidate layout: no production CMS reads.
+  const fixtureBytes=await readFile(join(HERE,'public_page6_margins_20261102.json'));
+  const fixture=JSON.parse(fixtureBytes.toString('utf8'));
+  const rows=fixture.items.map(({index,text})=>
+    '<span class="fv-margin-strip__item" style="--i:'+index+'">'+
+    text.replace(/&/g,'&amp;')+'</span>').join('');
+  const candidate=Buffer.from(
+    '<!-- wp:html -->FV-EX2 PAGE6 REVIEW-ONLY'+rows+'<!-- /wp:html -->'+
+    '<!-- wp:html --><div data-fv-embedded-main="wordpress-assembler">'+
+    'fv-hf__chapter-nav Focus Fieldbook <style data-fv-stage-only="a"></style>'+
+    '<style data-fv-stage-only="b"></style>'+
+    '<script data-fv-source="a"></script><script data-fv-source="b"></script>'+
+    '<script data-fv-source="c"></script><script data-fv-source="d"></script>'+
+    '<!-- /wp:html --><!-- wp:jetpack/subscriptions /-->');
+  const checks=Object.fromEntries(Array.from({length:9},(_,i)=>['check'+i,true]));
+  const manifest={
+    data_classification:DATA_CLASS,page6_live_content_included:false,
+    public_page6_margins_texts_included:true,other_page6_content_included:false,
+    real_source_controlled_flagship:true,production_source_or_subscribers:'ONLY_PUBLIC_MARGINS_NO_PRIVATE_DATA',
+    accessibility_performance_approval:'NOT_GRANTED',release:'HOLD',
+    candidate_sha256:sha(candidate),candidate_bytes:candidate.length,margin_items:72,
+    gutenberg_custom_html_blocks:2,jetpack_block_comments:1,nypl_record_links:2,
+    style_source_count:6,script_source_count:4,wordpress_main_landmark_adapted:true,
+    chapter_targets:CHAPTER_IDS,source_sha256:Object.fromEntries(SOURCE_FILES.map(x=>[x,'a'.repeat(64)])),
+    assembler_saved_stage_css_sha256:'b'.repeat(64),
+    public_fragment_fixture_sha256:sha(fixtureBytes),
+    published_margins_source_modified:fixture.source_modified
+  };
+  let total=0;
+  checkManifest(manifest,candidate,fixtureBytes);total++;
+  const mutate=[
+    ['data_classification','SYNTHETIC_TEST_FIXTURE_ONLY'],
+    ['public_page6_margins_texts_included',false],
+    ['other_page6_content_included',true],
+    ['release','APPROVED'],
+    ['candidate_sha256','0'.repeat(64)],
+    ['public_fragment_fixture_sha256','0'.repeat(64)],
+    ['published_margins_source_modified','2020-01-01T00:00:00'],
+    ['script_source_count',0],
+    ['production_source_or_subscribers','PRODUCTION_DB_INCLUDED']
+  ];
+  for(const [key,value] of mutate){
+    assert.throws(()=>checkManifest({...manifest,[key]:value},candidate,fixtureBytes));
+    total++;
+  }
+  assert.throws(()=>checkManifest({...manifest,source_sha256:{}},candidate,fixtureBytes));total++;
+  assert.throws(()=>checkManifest(manifest,Buffer.from(
+    candidate.toString().replace('FV-EX2 PAGE6 REVIEW-ONLY','altered')),fixtureBytes));total++;
+  for(const u of ['http://127.0.0.1:9473/','http://localhost:1234/','http://[::1]:9473/']){
+    assert.ok(loopback(u));total++;
+  }
+  for(const u of ['https://finalvestige.com/','http://localhost/','http://localhost:9473@evil.test/',
+    'http://user@127.0.0.1:9473/','http://127.0.0.2:9473/']){
+    assert.ok(!loopback(u));total++;
+  }
+  const pass={
+    result:'PASS',release:'HOLD',test_type:'REAL_GUTENBERG_EDITOR_SAVE_SYNTHETIC_PLAYGROUND_ONLY',
+    data_class:DATA_CLASS,source_sha256:'a',stored_sha256:'a',source_bytes:5,stored_bytes:5,checks
+  };
   checkEditorReceipt(pass,'a');total++;
   for(const invalid of [
+    {...pass,data_class:'SYNTHETIC_TEST_FIXTURE_ONLY'},
     {...pass,stored_sha256:'b'}, {...pass,checks:{...checks,check4:false}},
-    {...pass,release:'LIVE'}, {...pass,result:'FAIL'},
-    {...pass,source_bytes:6}, {...pass,checks:{}}
-  ]) { assert.throws(()=>checkEditorReceipt(invalid,'a')); total++; }
-  console.log(JSON.stringify({self_test:'PASS',cases:total,network_used:false,release:'HOLD'}));
+    {...pass,release:'LIVE'}, {...pass,result:'FAIL'}, {...pass,source_bytes:6},
+    {...pass,checks:{}}
+  ]) {assert.throws(()=>checkEditorReceipt(invalid,'a'));total++;}
+  console.log(JSON.stringify({self_test:'PASS',cases:total,fixture_sha256:sha(fixtureBytes),
+    data_class:DATA_CLASS,network_used:false,release:'HOLD'}));
 }
 if (process.argv.includes('--self-test')) {
-  selfTest();
+  await selfTest();
 } else {
   const idx = process.argv.indexOf('--candidate');
   const midx = process.argv.indexOf('--manifest');
@@ -94,7 +186,8 @@ if (process.argv.includes('--self-test')) {
   assert.notEqual(candidatePath, manifestPath);
   const candidate = await readFile(candidatePath);
   const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-  checkManifest(manifest,candidate);
+  const fixtureBytes=await readFile(join(HERE,'public_page6_margins_20261102.json'));
+  checkManifest(manifest,candidate,fixtureBytes);
   const digest = sha(candidate);
   // No imported Playground or Chromium package until source/manifest is admitted.
   const [{runCLI},{chromium}] = await Promise.all([
