@@ -32,6 +32,15 @@ _TAG_ATTRIBUTES = {
     "strong": frozenset(), "a": frozenset(("href",)),
 }
 _VOID_TAGS = frozenset(("hr",))
+_APPROVED_BLOCK_COMMENTS = frozenset((
+    'wp:group {"align":"wide","layout":{"type":"constrained"}}', '/wp:group',
+    'wp:paragraph', 'wp:paragraph {"fontSize":"small"}',
+    'wp:paragraph {"fontSize":"medium"}', '/wp:paragraph',
+    'wp:heading {"level":1,"fontSize":"x-large"}',
+    'wp:heading {"level":2}', 'wp:heading {"level":3}', '/wp:heading',
+    'wp:separator', '/wp:separator', 'wp:columns', '/wp:columns',
+    'wp:column', '/wp:column',
+))
 _BIDI = frozenset(chr(n) for n in (
     0x200E, 0x200F, 0x202A, 0x202B, 0x202C, 0x202D, 0x202E,
     0x2066, 0x2067, 0x2068, 0x2069,
@@ -148,8 +157,7 @@ class _Catalog(HTMLParser):
         # WordPress Gutenberg serialization only. Reject hidden hand-coded
         # comments that could disguise downloads or executable markup.
         self.comments += 1
-        if (len(data) > 600 or self.comments > 100
-                or not re.fullmatch(r"\s*/?wp:[A-Za-z0-9_-]+(?:\s+\{[^<>]*\})?\s*", data)):
+        if self.comments > 100 or data.strip() not in _APPROVED_BLOCK_COMMENTS:
             _reject()
 
     def handle_decl(self, decl):
