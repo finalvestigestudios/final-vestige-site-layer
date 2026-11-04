@@ -14,6 +14,7 @@ class PolicyConfusableR180(unittest.TestCase):
         value = render([hunk([(2, "PAYMENT\n")], [(3, "PАYMENT\n")])])
         self.assertIn("before L2; after L3", value)
         self.assertIn("column 2 U+0041->U+0410", value)
+        self.assertNotIn("omitted", value)
 
     def test_cyrillic_to_latin_a(self):
         self.assertIn("U+0410->U+0041", render([hunk([(1, "А\n")], [(1, "A\n")])]))
