@@ -128,6 +128,29 @@ def main():
                     source_disclosure.press("Enter")
                     check(source_disclosure.evaluate("(x) => x.parentNode.open"),
                         label + ": NASA rights/source disclosure cannot open by keyboard")
+                    # R112: inspect the actual static provenance rail in all 14 browser
+                    # modes; navigation may not depend on JS or fabricate chronology.
+                    rail = page.locator('[data-fv-photo-record]')
+                    check(rail.count() == 6, label + ": photo custody period rail incomplete")
+                    for record in ("01", "02", "03", "04", "05", "06"):
+                        destination = page.locator(f"#photo-source-{record}")
+                        check(destination.count() == 1 and destination.get_attribute("tabindex") == "-1",
+                              label + ": custody row lacks native anchor/focus target " + record)
+                        check(page.locator(f'a[data-fv-photo-record="{record}"]').get_attribute("href")
+                              == f"#photo-source-{record}", label + ": photo navigation not paired with source row")
+                    period_link = page.locator('a[data-fv-photo-record="05"]')
+                    if width <= 390 and js:
+                        period_link.tap()
+                    else:
+                        period_link.focus()
+                        period_link.press("Enter")
+                    page.wait_for_function("location.hash === '#photo-source-05'")
+                    check(page.locator("#photo-source-05").is_visible(),
+                          label + ": post-fire source anchor inaccessible")
+                    check("Jan 28, 1967" in page.locator("#photo-source-05").inner_text(),
+                          label + ": post-fire date does not match custody record")
+                    check(page.locator("nav.photo-provenance img").count() == 0,
+                          label + ": rights-unreviewed imagery inserted in provenance navigation")
                     check(page.locator("[data-fv-claim]:visible").count() == 4, label + ": initial evidence hidden")
                     summary = page.locator("#classroom-preview summary").first
                     summary.focus()
