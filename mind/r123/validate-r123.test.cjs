@@ -12,7 +12,7 @@ const b=at('zen12-guide-B-storyboard.html');
 const hub=at('mind-hub-wordpress-custom-html-draft.html');
 const ledger=JSON.parse(at('claim-proof-and-eligibility.json'));
 const plan=at('conversion-release-and-creator-handoff.md');
-const noSellerAnchor=/\<a\s[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)\/[^"']*["']/i;
+const noSellerAnchor=/\<a\s[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)\/[^"']*["']/i;
 const merchantButton=/<button\s[^>]*disabled\b[^>]*>Zen12 purchasing link unavailable<\/button>/i;
 const stripFilm = s=>s.replace(/<section class="storyboard"[\s\S]*?<\/section>/,'');
 function checks(){
