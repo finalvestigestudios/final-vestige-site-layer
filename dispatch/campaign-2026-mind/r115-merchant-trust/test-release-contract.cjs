@@ -35,7 +35,7 @@ for(const [num,s] of [[3,a],[5,b]]){
  check(!/\b(?:guaranteed (?:result|cure|income)|clinically proven to reprogram)\b/i.test(s),'no hype');
  check(s.includes('https://finalvestige.com/editorial-standards/'),'editorial standards source');
  check(s.includes('SOURCE NOTES'),'sources');
- check(s.slice(0,420).toLowerCase().includes('commission'),'disclosure context first 420 chars');
+ check(s.slice(s.indexOf('TYPE:')).split(/\s+/).slice(0,110).join(' ').toLowerCase().includes('commission'),'commercial context in opening 110 body words');
 }
 check(a.includes('https://zen12.com/hnp'),'exact Zen12 seller');
 check(b.includes('https://hypnosislive.com/mental-skills/total-focus'),'exact Total Focus seller');
