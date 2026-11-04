@@ -21,7 +21,8 @@
       "commercial_photo_reuse": "NOT_AUTHORIZED_BY_THIS_LEDGER",
       "latitude": null,
       "longitude": null,
-      "relationship_edges": []
+      "relationship_edges": [],
+      "display_date": "Jan 1967; day unconfirmed"
     },
     {
       "id": "02",
@@ -37,7 +38,8 @@
       "commercial_photo_reuse": "NOT_AUTHORIZED_BY_THIS_LEDGER",
       "latitude": null,
       "longitude": null,
-      "relationship_edges": []
+      "relationship_edges": [],
+      "display_date": "Jan 3, 1967"
     },
     {
       "id": "03",
@@ -53,7 +55,8 @@
       "commercial_photo_reuse": "NOT_AUTHORIZED_BY_THIS_LEDGER",
       "latitude": null,
       "longitude": null,
-      "relationship_edges": []
+      "relationship_edges": [],
+      "display_date": "Oct 18, 1966"
     },
     {
       "id": "04",
@@ -69,7 +72,8 @@
       "commercial_photo_reuse": "NOT_AUTHORIZED_BY_THIS_LEDGER",
       "latitude": null,
       "longitude": null,
-      "relationship_edges": []
+      "relationship_edges": [],
+      "display_date": "Jan 24, 2017"
     },
     {
       "id": "05",
@@ -85,7 +89,8 @@
       "commercial_photo_reuse": "NOT_AUTHORIZED_BY_THIS_LEDGER",
       "latitude": null,
       "longitude": null,
-      "relationship_edges": []
+      "relationship_edges": [],
+      "display_date": "Jan 28, 1967"
     },
     {
       "id": "06",
@@ -101,7 +106,8 @@
       "commercial_photo_reuse": "NOT_AUTHORIZED_BY_THIS_LEDGER",
       "latitude": null,
       "longitude": null,
-      "relationship_edges": []
+      "relationship_edges": [],
+      "display_date": "Jan 24, 2017"
     }
   ]
 }
