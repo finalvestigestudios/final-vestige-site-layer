@@ -1,4 +1,26 @@
 {
   "note": "A photograph is shown on the Apollo 1 page only if it has an entry here with a named editor, a date and the contextual use that was approved. Empty means: no photographs. See docs/experience-2.0/APOLLO1_IMAGE_DECISION_SHEET.md.",
-  "approved": []
+  "approved": [
+    {
+      "nasa_id": "S66-58038",
+      "editor": "Bryan Rhodes",
+      "date": "2026-11-04",
+      "placement": "chronology",
+      "contextual_use": "Apollo 1 evidence timeline contextual photo of October 1966 crew training; explicitly not a depiction of the fire."
+    },
+    {
+      "nasa_id": "S67-15717",
+      "editor": "Bryan Rhodes",
+      "date": "2026-11-04",
+      "placement": "chronology",
+      "contextual_use": "Apollo 1 evidence timeline contextual photo of Spacecraft 012 January 1967 processing; not time-marked fire evidence."
+    },
+    {
+      "nasa_id": "KSC-20170124-PH_KLS01_0129",
+      "editor": "Bryan Rhodes",
+      "date": "2026-11-04",
+      "placement": "chronology",
+      "contextual_use": "Apollo 1 evidence timeline contextual photo of the preserved three-part hatch at the 2017 exhibit; credit NASA / Kim Shiflett, no implied 1967 incident photo."
+    }
+  ]
 }
