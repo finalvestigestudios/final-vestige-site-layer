@@ -82,6 +82,9 @@ def run(html,out,exe,axe=None):
                     require('NASA/Kim Shiflett' in page.locator('#photo-source-04').inner_text() and
                             'NASA/Kim Shiflett' in page.locator('#photo-source-06').inner_text(),
                             label+': PRINT PHOTO CREDIT LOSS')
+                    require(page.locator('#photo-source-04 small').evaluate(
+                            '(e)=>getComputedStyle(e).color')=='rgb(17, 17, 17)',
+                            label+': PRINT PHOTO CREDIT CONTRAST LOSS')
                     require(page.locator('table').evaluate('(t)=>getComputedStyle(t).minWidth')=='0px',
                             label+': printed source register too wide')
                     require(page.locator('.table-scroll').evaluate('(t)=>getComputedStyle(t).overflowX')=='visible',
