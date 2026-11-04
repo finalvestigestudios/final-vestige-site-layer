@@ -113,11 +113,11 @@ def main():
                     ctx = browser.new_context(viewport={"width": width, "height": 900},
                         java_script_enabled=True, reduced_motion="reduce")
                     pg = ctx.new_page()
-                    pg.add_init_script("""() => {
+                    pg.add_init_script("""(() => {
                       window.__fvCLS=0;window.__fvLCP=null;
                       new PerformanceObserver(l=>l.getEntries().forEach(e=>{if(!e.hadRecentInput)window.__fvCLS+=e.value})).observe({type:'layout-shift',buffered:true});
                       new PerformanceObserver(l=>l.getEntries().forEach(e=>window.__fvLCP=e.startTime)).observe({type:'largest-contentful-paint',buffered:true});
-                    }""")
+                    })()""")
                     pg.goto(base, wait_until="load")
                     pg.wait_for_timeout(350)
                     result = pg.evaluate("({lcp_ms:window.__fvLCP,cls:window.__fvCLS})")
