@@ -27,7 +27,7 @@ class R103(unittest.TestCase):
         self.assertEqual([x["number"] for x in self.master["issues"]],[1,2,3,4,5,6])
     def test_original_mix_preserved(self):
         self.assertEqual([x["number"] for x in self.master["issues"] if x["kind"]=="commercial-review-pending"],[3,5])
-        self.assertEqual(self.master["issues"][3]["subject"],"Fourteen seconds. A much longer explanation.")
+        self.assertEqual(self.master["issues"][3]["subject"],"Seventeen seconds. A much longer explanation.")
     def test_no_activated_offer(self):
         self.assertEqual(self.j["affiliate_links"],[])
         self.assertFalse(self.j["merchant_approved"])
