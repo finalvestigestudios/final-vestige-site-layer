@@ -130,7 +130,11 @@ def audit(crosswalk, taxonomy, parts, *, candidate_root=None):
 def run(root, candidate_root=None):
     root = Path(root)
     source = root / 'preparedness' / 'sources' / 'crosswalk.json'
-    taxonomy = root / 'preparedness' / 'taxonomy.json'
+    # This stacked reviewer branch and the frozen RC have different taxonomy bytes.
+    # Never substitute the branch's historical taxonomy for the candidate's
+    # exact evidence. Require an explicit, independently checked RC checkout.
+    demand(candidate_root is not None, 'CANDIDATE_ROOT_REQUIRED_EXACT_RC584')
+    taxonomy = Path(candidate_root) / 'preparedness' / 'taxonomy.json'
     c, t = parse(source), parse(taxonomy)
     c['_observed_blob_sha'] = git_blob(source.read_bytes())
     t['_observed_blob_sha'] = git_blob(taxonomy.read_bytes())
