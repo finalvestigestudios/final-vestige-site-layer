@@ -41,7 +41,7 @@ def _changes(before: str, after: str) -> str:
     shown = ", ".join(f"column {position} U+{old:04X}->U+{new:04X}"
                       for position, old, new in changes[:_MAX_GLYPHS])
     omitted = len(changes) - _MAX_GLYPHS
-    return shown + (f" (+{omitted} substitution(s) omitted)" if omitted else "")
+    return shown + (f" (+{omitted} substitution(s) omitted)" if omitted > 0 else "")
 
 
 def render_local_confusable_evidence(hunks: list[dict]) -> str:
