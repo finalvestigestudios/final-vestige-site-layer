@@ -1,0 +1,275 @@
+{
+  "milestone": "R115",
+  "checked_at": "2026-11-04",
+  "status": "DRAFT_UNPUBLISHED_NO_MERCHANT_ACTIVATION",
+  "source_register": [
+    {
+      "id": "C1",
+      "type": "merchant_catalog",
+      "url": "https://inspire3.com/",
+      "summary": "Inspire3 describes Zen12, Subliminal Guru, Hypnosis Live and Brainwave Shots; descriptions are vendor representations."
+    },
+    {
+      "id": "C2",
+      "type": "exact_merchant_offer",
+      "url": "https://zen12.com/hnp",
+      "summary": "Zen12 branded twelve-minute sessions, twelve levels, four styles and premium 48 MP3s; hour-equivalence claim is a seller claim; promotions and prices vary."
+    },
+    {
+      "id": "C3",
+      "type": "merchant_privacy",
+      "url": "https://inspire3.com/privacy/",
+      "summary": "Seller says referred buyer name/email/purchased-product information may be shared with affiliates."
+    },
+    {
+      "id": "C4",
+      "type": "exact_merchant_store",
+      "url": "https://subliminalguru.com/",
+      "summary": "Subliminal Guru shop markets 350 MP3 recordings with confidence/money/memory/health themes and strong efficacy language. No exact SKU audited for a current price."
+    },
+    {
+      "id": "R1",
+      "type": "independent_primary",
+      "url": "https://doi.org/10.1111/j.1467-9280.1991.tb00112.x",
+      "summary": "Three double-blind replications with N=237 did not find claim-specific effects from subliminal self-help tapes; improvement perceptions often followed label."
+    },
+    {
+      "id": "R2",
+      "type": "independent_primary",
+      "url": "https://doi.org/10.1207/s15324834basp1503_3",
+      "summary": "Five-week n=78 double-blind test: no claim-consistent performance differences; perception followed labels."
+    },
+    {
+      "id": "R3",
+      "type": "independent_primary",
+      "url": "https://doi.org/10.1177/074391569201100203",
+      "summary": "Double-blind field studies showed no claimed subliminal-content-specific outcomes."
+    },
+    {
+      "id": "R4",
+      "type": "independent_primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15574667/",
+      "summary": "Masked visual affective primes influenced beverage behavior under motivational conditions; cannot generalize to self-help audio."
+    },
+    {
+      "id": "R5",
+      "type": "independent_primary",
+      "url": "https://doi.org/10.1016/j.jesp.2005.12.002",
+      "summary": "Masked visual brand prime influenced beverage selection under thirst conditions, not unrestricted influence."
+    },
+    {
+      "id": "R6",
+      "type": "independent_systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "summary": "2023 binaural beat EEG evidence inconsistent, 14 studies; not an evaluation of Zen12."
+    },
+    {
+      "id": "F1",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "summary": "Honesty and clear material-relationship disclosures required."
+    },
+    {
+      "id": "F2",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "summary": "Objective health claims require competent and reliable, appropriately specific science."
+    }
+  ],
+  "claim_matrix": [
+    {
+      "id": "ZEN_FORMAT",
+      "product": "Zen12",
+      "claim": "The seller offers twelve-minute sessions, twelve levels, four styles and a 48 MP3 premium collection.",
+      "support": "SELLER_DESCRIPTION_ONLY",
+      "sources": [
+        "C1",
+        "C2"
+      ],
+      "editorial_action": "ATTRIBUTE_TO_SELLER",
+      "status": "descriptive_not_outcome"
+    },
+    {
+      "id": "ZEN_EQUIVALENCE",
+      "product": "Zen12",
+      "claim": "Twelve minutes of Zen12 equates to one hour of advanced meditation.",
+      "support": "NOT_INDEPENDENTLY_ESTABLISHED",
+      "sources": [
+        "C2",
+        "R6"
+      ],
+      "editorial_action": "EXCLUDE_AS_FV_ENDORSED_CLAIM",
+      "status": "blocked"
+    },
+    {
+      "id": "ZEN_HEALTH",
+      "product": "Zen12",
+      "claim": "Zen12 causes clinically meaningful stress/anxiety/health improvements.",
+      "support": "NOT_PRODUCT_SUBSTANTIATED",
+      "sources": [
+        "C2",
+        "R6",
+        "F2"
+      ],
+      "editorial_action": "EXCLUDE",
+      "status": "blocked"
+    },
+    {
+      "id": "SUB_CATALOG",
+      "product": "Subliminal Guru",
+      "claim": "The seller advertises hundreds of subliminal recordings with themes including confidence, money and memory.",
+      "support": "SELLER_DESCRIPTION_ONLY",
+      "sources": [
+        "C1",
+        "C4"
+      ],
+      "editorial_action": "ATTRIBUTE_TO_SELLER_WITH_NO_EFFICACY_INFERENCE",
+      "status": "descriptive_not_outcome"
+    },
+    {
+      "id": "SUB_SELF_HELP",
+      "product": "Subliminal Guru",
+      "claim": "Masked subliminal albums produce lasting memory/self-esteem gains.",
+      "support": "NO_PRODUCT_SPECIFIC_EVIDENCE; HISTORIC COMMERCIAL_TAPE_TRIALS_NEGATIVE",
+      "sources": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "editorial_action": "EXCLUDE_AS_POSITIVE_CLAIM",
+      "status": "blocked"
+    },
+    {
+      "id": "SUB_PRIMING",
+      "product": "Subliminal Guru",
+      "claim": "Brief masked visual priming proves self-help audio albums change habits.",
+      "support": "INVALID_STIMULUS_AND_OUTCOME_EXTRAPOLATION",
+      "sources": [
+        "R4",
+        "R5"
+      ],
+      "editorial_action": "EXPLICITLY_REBUT",
+      "status": "blocked"
+    },
+    {
+      "id": "SUB_FINANCIAL",
+      "product": "Subliminal Guru",
+      "claim": "Listening generates wealth or predictable financial gains.",
+      "support": "NO_INDEPENDENT_PRODUCT_EVIDENCE",
+      "sources": [
+        "C4",
+        "F2"
+      ],
+      "editorial_action": "EXCLUDE",
+      "status": "blocked"
+    },
+    {
+      "id": "PARTNER_AUTH",
+      "product": "all",
+      "claim": "Final Vestige has approved affiliate status and an authorized link.",
+      "support": "NOT_VERIFIED",
+      "sources": [],
+      "editorial_action": "DO_NOT_PUBLISH_LINK",
+      "status": "blocked"
+    },
+    {
+      "id": "BUYER_PII",
+      "product": "all",
+      "claim": "Merchant will not share personal purchaser data with referring affiliate.",
+      "support": "CONTRADICTED_BY_PUBLISHED_PRIVACY_POSSIBILITY",
+      "sources": [
+        "C3"
+      ],
+      "editorial_action": "REQUIRE_WRITTEN_AGGREGATE_ONLY_AGREEMENT",
+      "status": "blocked"
+    },
+    {
+      "id": "PRICE_TERMS",
+      "product": "all",
+      "claim": "Exact live price, checkout requirements and refund fulfillment have been tested.",
+      "support": "NOT_VERIFIED_FOR_CURRENT_CHECKOUT",
+      "sources": [
+        "C2",
+        "C4"
+      ],
+      "editorial_action": "NO_UNDATED_PRICE_OR_REFUND_GUARANTEE",
+      "status": "blocked"
+    }
+  ],
+  "revenue_offer": {
+    "primary_candidate": "Zen12 premium",
+    "exact_merchant_presentation": "https://zen12.com/hnp",
+    "public_recommendation": "NOT_AUTHORIZED",
+    "authorized_affiliate_url": null,
+    "commercial_cta_enabled": false,
+    "draft_disclosure": "If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.",
+    "draft_cta_label": "Purchase link unavailable pending verification",
+    "merchant_acceptance_document": null,
+    "approved_channels": null,
+    "approved_creatives": null,
+    "aggregate_only_buyer_reporting_agreement": null,
+    "verified_current_checkout_price": null,
+    "verified_refund_processing": null,
+    "verified_paid_order_count": null,
+    "verified_commissions": null,
+    "verified_qualified_sessions": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "owned_product_fallback": {
+    "sku": null,
+    "listing_url": null,
+    "rights_manifest": null,
+    "verified_price": null,
+    "checkout_proof": null,
+    "refund_terms": null,
+    "fulfillment_proof": null,
+    "merchant_settlement": null,
+    "status": "NOT_VERIFIED_SALEABLE_MIND_PRODUCT",
+    "no_activation": true
+  },
+  "unmet_release_gates": [
+    "named_partner_acceptance",
+    "authorized_affiliate_url",
+    "approved_promotional_channels",
+    "approved_creative_rights",
+    "merchant_buyer_PII_protection",
+    "retested_checkout_price_terms",
+    "product_claim_independent_review",
+    "independent_a11y_mobile_QA",
+    "one_existing_jetpack_funnel",
+    "founder_publish_approval",
+    "real_cohort_denominator",
+    "settled_order_commission_refund_fee_proof"
+  ],
+  "traffic_event_contract": {
+    "source": "Grok TASK-008 actual immutable asset_id (not invented)",
+    "allowlist_utm": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "unknown_asset_ids_are_null": true,
+    "no_raw_referrer_storage": true,
+    "no_IP_or_identifiers": true,
+    "event_names": [
+      "campaign_landing",
+      "article_to_focus_click",
+      "confirmed_signup",
+      "offer_guide_view",
+      "affiliate_outbound",
+      "merchant_confirmed_paid_order",
+      "merchant_confirmed_affiliate_commission",
+      "refund_or_chargeback"
+    ],
+    "outbound_is_sale": false,
+    "confirmed_signup_is_sale": false,
+    "merchant_reconciled_orders_required": true,
+    "release_control": "Claude #820 owns production instrumentation; Mind proposal only",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "tiny_sample_caution": true
+  }
+}
