@@ -31,7 +31,8 @@ class FullSourceFlagshipTests(unittest.TestCase):
     def test_genuine_source_controlled_seven_chapters(self):
         candidate, manifest = compose(self.index, self.css, self.js)
         self.assertTrue(manifest["real_source_controlled_flagship"])
-        self.assertEqual(manifest["page6_live_content_included"], "72_PUBLIC_MARGINS_TEXTS_ONLY")
+        self.assertFalse(manifest["page6_live_content_included"])
+        self.assertTrue(manifest["public_page6_margins_texts_included"])
         self.assertFalse(manifest["other_page6_content_included"])
         self.assertEqual(manifest["release"], "HOLD")
         self.assertEqual(manifest["margin_items"], 72)
