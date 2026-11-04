@@ -22,4 +22,4 @@ fail(d=>d.metrics.claimed_76percent_wire_measured=true,'fabricated reduction');
 fail(d=>d.rows[5].catalog_record_url=d.rows[4].catalog_record_url,'duplicate wrong catalog');
 fail(d=>d.rows.pop(),'omitted image');
 fail(d=>d.verified_wp_state.html_width_height_pairs=6,'invented dimensions');
-console.log(count+'/'+count+' positive+adversarial Azorian checks PASS (native Node)');
+console.log(count+'/'+count+' positive+adversarial Azorian checks PASS');
