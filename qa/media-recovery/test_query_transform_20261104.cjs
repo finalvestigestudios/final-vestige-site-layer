@@ -1,0 +1,24 @@
+'use strict';
+// Native Node offline regression suite; synthetic mutations of pinned repository inventory.
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {validateTransformCensus}=require('./validate_query_transform_20261104.cjs');
+const dir=__dirname;
+const read=f=>JSON.parse(fs.readFileSync(path.join(dir,f),'utf8'));
+const audit=read('query_transform_126_slot_census_20261104.json');
+const parts=Array.from({length:8},(_,i)=>read('parts/'+String(i+1).padStart(2,'0')+'.json'));
+const copy=()=>JSON.parse(JSON.stringify(audit));
+const fail=(mutate)=>{const a=copy();mutate(a);const r=validateTransformCensus(a,parts);assert.equal(r.pass,false);assert.ok(r.errors.length);};
+test('pinned full 61-post/355-image/126-query snapshot validates',()=>{const r=validateTransformCensus(audit,parts);assert.equal(r.pass,true,r.errors.join(';'));assert.equal(r.query_image_count,126);});
+test('invented visitor HTTP 404 rejected',()=>fail(a=>a.rows[0].http_status=404));
+test('invented browser loaded status rejected',()=>fail(a=>a.rows[0].visitor_broken=false));
+test('invented network bytes rejected',()=>fail(a=>a.rows[0].downloaded_bytes=20));
+test('unapproved image caching rejected',()=>fail(a=>a.rows[0].allowed_to_copy_or_cache=true));
+test('unsupported copyright grant rejected',()=>fail(a=>a.rows[0].rights_clearance='PUBLIC_DOMAIN'));
+test('fabricated derivative permission rejected',()=>fail(a=>a.rows[0].approved_960px_derivative=true));
+test('oversized proposed derivative width rejected',()=>fail(a=>a.rows[0].proposed_max_width_px=1280));
+test('historical source substitution rejected',()=>fail(a=>a.rows[0].source_url='https://example.com/fake.jpg'));
+test('missing image in source census rejected',()=>fail(a=>a.rows.pop()));
+test('wrong crop transform category rejected',()=>fail(a=>{a.rows.find(x=>x.image_key==='283:3').transform_family='other_query_or_dynamic_selector'}));
+test('Rotterdam unreviewed copyright cannot be cleared',()=>fail(a=>a.verified_subject_level_candidate.wordpress_cache_upload_rewrite_authorized=true));
+test('Rotterdam dimensions must not be invented',()=>fail(a=>a.verified_subject_level_candidate.proposed_height_px=970));
+test('false 76% savings evidence rejected',()=>fail(a=>a.performance_claims.reported_76_percent_byte_savings='VERIFIED'));
