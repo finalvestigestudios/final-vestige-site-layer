@@ -141,14 +141,16 @@ def workorder(manifest, drift, *, is_ancestor, integrated_blob):
          and drift.get("changed_file_count") == len(changes),
          "missing or oversized exact Git progression changes")
     observed = {key: branches[key]["contributor_commit_sha"] for key in branches}
+    moved_seen = set()
     for m in moved:
         origin = m.get("cluster")
-        need(origin in branches and m.get("frozen_commit_sha") ==
+        need(origin in branches and origin not in moved_seen and m.get("frozen_commit_sha") ==
              branches[origin]["contributor_commit_sha"] and
              type(m.get("observed_commit_sha")) is str and
              SHA.fullmatch(m["observed_commit_sha"]) and
              m["observed_commit_sha"] != observed[origin],
              "untrusted moved branch evidence")
+        moved_seen.add(origin)
         observed[origin] = m["observed_commit_sha"]
     need(observed == EXPECTED_HEADS and len(moved) == 5,
          "live contributor SHA moved since this human-review workorder was pinned")
