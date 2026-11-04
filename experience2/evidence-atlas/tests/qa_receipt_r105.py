@@ -152,7 +152,7 @@ class EvidenceJournal:
             if not file.is_file():
                 raise ValueError('R106_MISSING_ARTIFACT')
             content = file.read_bytes()
-            if (name.endswith('.png') and not content.startswith(b'\\x89PNG\\r\\n\\x1a\\n')) or (name.endswith('.pdf') and not content.startswith(b'%PDF-')):
+            if (name.endswith('.png') and not content.startswith(b'\x89PNG\r\n\x1a\n')) or (name.endswith('.pdf') and not content.startswith(b'%PDF-')):
                 raise ValueError('R106_INVALID_ARTIFACT_TYPE')
             if hashlib.sha256(content).hexdigest() != digest:
                 raise ValueError('R106_ARTIFACT_HASH_MISMATCH')
