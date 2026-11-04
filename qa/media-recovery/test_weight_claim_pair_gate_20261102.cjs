@@ -53,8 +53,49 @@ test('61/355 full identical benchmark, 80% actual CDP wire reduction qualifies',
  assert.equal(r.measured_sitewide_image_bytes_before,355000);
  assert.equal(r.measured_sitewide_image_bytes_after,71000);
  assert.equal(r.savings_bytes,284000);assert.equal(r.savings_percent,80);
- assert.equal(r.claim_76_percent_supported,true);
+ // The measured 80% byte delta is real *within this synthetic fixture*,
+ // but has zero approved source changes. Never attribute it to a release.
+ assert.equal(r.claim_76_percent_supported,false);
+ assert.equal(r.optimization_claim_attributable,false);
+ assert.ok(r.approved_source_attribution.reasons.includes('no_approved_changed_image_sources'));
  assert.equal(r.production_changes_approved_by_this_tool,false);
+});
+function approveSources(base,next,limit=Infinity){
+ const approvals=[];let updated=0;
+ for(const page of next.pages)for(let i=0;i<page.stored_images.length;i++){
+   if(updated>=limit)continue;
+   const s=page.stored_images[i], prior=base.pages.find(p=>p.post_id===page.post_id).stored_images[i];
+   const newUrl='https://finalvestige.com/wp-content/uploads/2026/08/approved-'+s.image_key.replace(':','-')+'.webp';
+   approvals.push({image_key:s.image_key,before_source_url:prior.stored_url,
+    after_source_url:newUrl,rights_clearance_recorded:true,same_scene_crop_review_passed:true,
+    no_upscale_confirmed:true,publication_authorized:true,derivative_width_px:960,derivative_height_px:540});
+   s.stored_url=newUrl;s.current_src=newUrl;s.request_url=newUrl;
+   const network=page.network_images.find(x=>x.request_id===s.request_id);
+   if(!network)throw Error('bad fixture');
+   network.url=newUrl;
+   updated++;
+ }
+ return approvals;
+}
+test('synthetic all-355 approved swaps can attribute measured 80% to changed sources',()=>{
+ const {base,next}=fixture();adjust(next,200);
+ const approvals=approveSources(base,next);
+ const r=assessPair(base,next,approvals);
+ assert.equal(r.status,'MEASURED',JSON.stringify(r));
+ assert.equal(r.claim_76_percent_supported,true);
+ assert.equal(r.optimization_claim_attributable,true);
+ assert.equal(r.approved_source_attribution.approved_source_savings_bytes,284000);
+ assert.equal(r.approved_source_attribution.changed_image_source_slots,355);
+});
+test('one approved change cannot attribute 80% savings across 355 images',()=>{
+ const {base,next}=fixture();adjust(next,200);
+ const approvals=approveSources(base,next,1);
+ const r=assessPair(base,next,approvals);
+ assert.equal(r.status,'MEASURED');
+ assert.equal(r.savings_percent,80);
+ assert.equal(r.claim_76_percent_supported,false);
+ assert.equal(r.optimization_claim_attributable,false);
+ assert.ok(r.approved_source_attribution.reasons.some(x=>x.startsWith('unattributed_unchanged_source_wire_delta')));
 });
 test('75% is measured but cannot support the 76% claim',()=>{
  const {base,next}=fixture();adjust(next,250);const r=assessPair(base,next);
