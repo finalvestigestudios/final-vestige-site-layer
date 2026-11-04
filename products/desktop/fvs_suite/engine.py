@@ -50,7 +50,15 @@ def _exact_amount(value):
     currency symbol, and correctly grouped thousands. Reject mixed signs,
     malformed grouping, scientific notation, and partial parentheses.
     """
-    if isinstance(value, (float, bool)):
+    # CSV values are native strings; direct API callers may also supply native
+    # integers or Decimals. Subclasses and arbitrary objects can override
+    # __str__ to forge a monetary amount before the lexical parser sees it.
+    # Reject them before invoking any user-defined conversion hook.
+    if type(value) not in (str, int, Decimal):
+        raise ValueError("Invalid amount format")
+    # Avoid Python's huge-int conversion limit (and arbitrary conversion work)
+    # for a direct API integer that cannot possibly fit our 80-character cap.
+    if type(value) is int and value.bit_length() > 269:
         raise ValueError("Invalid amount format")
     raw = str(value).strip()
     if not raw or len(raw) > 80:
@@ -132,7 +140,11 @@ def qty(value):
     Reject exponent forms, mixed punctuation, excessive precision, and binary
     floats; these change the interpretation of invoice/receipt movements.
     """
-    if isinstance(value, (float, bool)):
+    # Quantity conversion shares the same direct-API trust boundary as money.
+    # Only native built-in storage may reach str() and Decimal parsing.
+    if type(value) not in (str, int, Decimal):
+        raise ValueError("Invalid quantity format")
+    if type(value) is int and value.bit_length() > 269:
         raise ValueError("Invalid quantity format")
     raw = str(value).strip()
     if not raw or len(raw) > 80 or _QUANTITY_FORMAT.fullmatch(raw) is None:
