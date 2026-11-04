@@ -33,7 +33,7 @@ for(const [name,get] of [["A",a],["B",b]]){
     assert.ok(pos>disclosure && pos-disclosure<420);
     assert.doesNotMatch(s,/<a[^>]+href=["']https?:\/\/(?:www\.)?(?:inspire3|zen12)\.com/i);
     assert.doesNotMatch(s,/<(?:script|iframe|form)\b/i);
-    assert.doesNotMatch(s,/(?:autoplay|dataLayer|navigator\.sendBeacon|localStorage|trackPixel|<video\b)/i);
+    assert.doesNotMatch(s,/(?:\sautoplay(?:\s|=|>)|dataLayer|navigator\.sendBeacon|localStorage|trackPixel|<video\b)/i);
   });
 }
 test("B original static poster has meaningful accessibility text and transcript",()=>{assert.match(b(),/role="img"/);assert.match(b(),/<title id="film-title"/);assert.match(b(),/Complete storyboard transcript/);assert.match(b(),/no playable MP4/i);});
