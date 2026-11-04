@@ -1,7 +1,6 @@
 """R112 staging source contracts (not a substitute for browser, axe or WP tests)."""
 from html.parser import HTMLParser
 from pathlib import Path
-import re
 import unittest
 
 HTML = (Path(__file__).parent / "landing-preview.html").read_text(encoding="utf-8")
@@ -13,30 +12,17 @@ class Collector(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.ids = []
         self.records = {}
-        self.anchors = []
-        self.photo_nav = False
-        self.stack = []
         self.rail_links = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        self.stack.append(tag)
         if "id" in a:
             self.ids.append(a["id"])
-        if tag == "nav" and a.get("class") == "photo-provenance":
-            self.photo_nav = True
         if tag == "tr" and a.get("id", "").startswith("photo-source-"):
             self.records[a["id"]] = a
         if tag == "a":
-            self.anchors.append(a)
             if "data-fv-photo-record" in a:
                 self.rail_links.append(a)
-
-    def handle_endtag(self, tag):
-        if tag == "nav" and self.photo_nav:
-            self.photo_nav = False
-        if tag in self.stack:
-            self.stack = self.stack[:len(self.stack) - 1 - self.stack[::-1].index(tag)]
 
 
 class PhotoPeriodContract(unittest.TestCase):
@@ -96,7 +82,7 @@ class PhotoPeriodContract(unittest.TestCase):
         self.assertIn("0 <= cls <= 0.1", HTTP_RUNNER)
 
     def test_commercial_boundary_unchanged(self):
-        self.assertNotRegex(HTML, r'(?i)href=["\']https://payhip\\.com/')
+        self.assertNotIn('payhip.com', HTML.lower())
         self.assertIn("product hypothesis, not a listing", HTML)
         self.assertIn("not affiliated with or endorsed by NASA", HTML)
 
