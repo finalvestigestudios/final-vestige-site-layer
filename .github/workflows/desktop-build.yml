@@ -133,6 +133,11 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
+      - name: R188 reject plaintext release URLs, binaries and claims (53 tests, normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_visible*188.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_visible*188.py'
+          python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -595,6 +600,16 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R187 dual-job source contract failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
           if ($LASTEXITCODE -ne 0) { throw "R187 optimized dual-job source contract failed" }
+      - name: R188 reject plaintext release URLs, binaries and claims (53 tests, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_visible*188.py'
+          if ($LASTEXITCODE -ne 0) { throw "R188 visible-text preflight tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_visible*188.py'
+          if ($LASTEXITCODE -ne 0) { throw "R188 optimized visible-text tests failed" }
+          python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
+          if ($LASTEXITCODE -ne 0) { throw "R188 original six-card catalog preflight failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)

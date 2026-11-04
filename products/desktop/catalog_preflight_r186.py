@@ -13,6 +13,8 @@ import re
 import stat
 import sys
 
+from catalog_visible_hold_r188 import check_visible_hold
+
 MAX_CATALOG_BYTES = 80 * 1024
 CONTACT_URL = "https://finalvestige.com/contact/"
 APPS = (
@@ -188,6 +190,13 @@ def verify_catalog(raw: bytes) -> dict[str, object]:
     except (ValueError, AssertionError):
         _reject()
     if parser.stack or parser.heading_tag or parser.strong_active or parser.pending_app:
+        _reject()
+    # HTMLParser yields decoded visible text even when a URL is not an <a>
+    # element. Reject plainly pasted premium destinations, executables,
+    # premature release claims, and invisible format controls before QD.
+    try:
+        check_visible_hold(parser.visible)
+    except ValueError:
         _reject()
     expected_headings = [
         ("h1", "Tools for work that cannot afford guesswork."),
