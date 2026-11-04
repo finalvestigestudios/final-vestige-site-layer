@@ -27,6 +27,17 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
 .worksheet-print-trigger:focus-visible{outline:3px solid #ffde91;outline-offset:4px}
 .worksheet-standalone-rights{display:none}
 .student-source-index{margin-top:1rem;border-top:1px solid var(--edge);padding-top:.7rem}.student-source-index h4{margin:.25rem 0}.student-source-index ol{padding-left:1.3rem}.student-source-index li{margin:.35rem 0;overflow-wrap:anywhere}
+/* R124: inspect the exact printable student handout on screen before using Print. */
+.worksheet-preview-trigger{min-height:44px;padding:.65rem .9rem;background:#202322;color:var(--ink);border:1px solid var(--gold);font:inherit;cursor:pointer;margin:.2rem .4rem .2rem 0}
+.worksheet-preview-trigger:focus-visible{outline:3px solid #ffde91;outline-offset:4px}
+@media screen{
+ .student-print-sheet.fv-student-preview{display:block;margin:1.4rem 0;padding:clamp(1rem,3vw,2rem);background:#202322;border:2px solid var(--gold);border-radius:.2rem;color:var(--ink);scroll-margin-top:1rem}
+ .student-print-sheet.fv-student-preview .response-lines span{display:block;height:1.4rem;border-bottom:1px solid var(--edge)}
+ .student-print-sheet.fv-student-preview .worksheet-standalone-rights{display:block;border-top:1px solid var(--edge);margin-top:1rem;padding-top:1rem}
+ .student-print-sheet.fv-student-preview:focus{outline:3px solid var(--gold);outline-offset:3px}
+}
+@media print{[data-fv-preview-close], [data-fv-preview-student]{display:none!important}}
+
 
 @media print{
  body.fv-worksheet-only>.skip,body.fv-worksheet-only>.brand,body.fv-worksheet-only>footer,
@@ -123,13 +134,13 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
   <section id="classroom-preview" tabindex="-1" aria-labelledby="classroom-title">
     <p class="kicker">One relevant next action / original educational value</p><h2 id="classroom-title">Use the evidence, not just the story</h2>
     <div class="callout">
-      <h3>Free source-analysis exercise</h3><p><button class="worksheet-print-trigger" type="button" data-fv-print-student aria-describedby="student-print-guidance" hidden>Print the student worksheet only</button></p><p class="footnote" id="student-print-guidance">For a paper classroom handout, use your browser’s Print command. The printed record includes <strong>all four findings</strong> even when the on-screen evidence filter is active; check source URLs and rights limits before distributing NASA photographs.</p><p>Before deciding, <a href="#source-custody">review the NASA source register</a> and distinguish each photograph’s date from the fire chronology. The source record remains open without signup.</p>
+      <h3>Free source-analysis exercise</h3><p><button class="worksheet-preview-trigger" type="button" data-fv-preview-student aria-controls="student-print-preview" aria-expanded="false" hidden>Preview the student worksheet</button></p><p><button class="worksheet-print-trigger" type="button" data-fv-print-student aria-describedby="student-print-guidance" hidden>Print the student worksheet only</button></p><p class="footnote" id="student-print-guidance">For a paper classroom handout, use your browser’s Print command. The printed record includes <strong>all four findings</strong> even when the on-screen evidence filter is active; check source URLs and rights limits before distributing NASA photographs.</p><p>Before deciding, <a href="#source-custody">review the NASA source register</a> and distinguish each photograph’s date from the fire chronology. The source record remains open without signup.</p>
       <p><strong>Question:</strong> Why is “the hatch caused the Apollo 1 fire” an incomplete conclusion?</p>
       <details><summary>Reveal a suggested evidence-based answer</summary><p>The inward-opening hatch complicated escape as pressure rose. The investigation also identified the high-pressure oxygen atmosphere, flammable materials, possible ignition hazards and gaps in test and rescue planning. The exact ignition source was not established. Separate the conditions that promoted fire, the event sequence, the escape barrier and unresolved evidence.</p></details>
       <details><summary>Teaching prompts: claim · source · uncertainty</summary><ol><li>Identify one direct finding in the Apollo 204 Review Board report.</li><li>Distinguish a photographic source's date from the 1967 event timeline.</li><li>Describe a claim that the evidence does <em>not</em> establish.</li></ol><p>Check responses against the NASA source links, not this page alone.</p></details>
       <p class="footnote">A possible paid teacher-ready casefile (editable handouts, differentiated readings, answer guide and rubric) remains a <strong>product hypothesis, not a listing</strong>. This preview includes no email form, product price, checkout link, or affiliate CTA. Commercial activation requires an existing relevant verified offer or a separately approved paid pilot with merchant-delivery and rights evidence.</p>
     </div>
-    <article class="student-print-sheet" aria-labelledby="student-print-title" data-fv-student-print>
+    <article class="student-print-sheet" id="student-print-preview" tabindex="-1" aria-labelledby="student-print-title" data-fv-student-print><button type="button" class="worksheet-preview-trigger" data-fv-preview-close hidden>Close worksheet preview</button>
       <p class="kicker">Apollo 1 / student edition / print only</p>
       <h3 id="student-print-title">Evidence worksheet: a claim is not a cause</h3>
       <p>Read the investigation and the source register before answering. Use at least two distinct NASA sources, including the Apollo 204 Review Board. Distinguish evidence from inference. No NASA photographs are reproduced in this worksheet.</p>
@@ -216,6 +227,34 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
     pending=true;
     document.body.classList.add('fv-worksheet-only');
     try{window.print();}catch(error){restore();}
+  });
+})();
+
+/* R124: user-initiated screen preview; the print/no-JS path remains independent. */
+(function(){
+  'use strict';
+  var openButton=document.querySelector('[data-fv-preview-student]');
+  var closeButton=document.querySelector('[data-fv-preview-close]');
+  var sheet=document.querySelector('#student-print-preview[data-fv-student-print]');
+  if(!openButton||!closeButton||!sheet)return;
+  function closePreview(){
+    sheet.classList.remove('fv-student-preview');
+    openButton.setAttribute('aria-expanded','false');
+    closeButton.hidden=true;
+    openButton.focus();
+  }
+  openButton.hidden=false;
+  openButton.addEventListener('click',function(){
+    if(sheet.classList.contains('fv-student-preview')){closePreview();return;}
+    sheet.classList.add('fv-student-preview');
+    openButton.setAttribute('aria-expanded','true');
+    closeButton.hidden=false;
+    sheet.focus({preventScroll:true});
+    sheet.scrollIntoView({block:'start',behavior:'instant'});
+  });
+  closeButton.addEventListener('click',closePreview);
+  sheet.addEventListener('keydown',function(event){
+    if(event.key==='Escape'&&sheet.classList.contains('fv-student-preview')){event.preventDefault();closePreview();}
   });
 })();
 </script>
