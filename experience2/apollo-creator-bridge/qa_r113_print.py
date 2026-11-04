@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Apollo actual-source offline Chromium regression. Full PASS requires axe, touch, performance and print."""
 import argparse, hashlib, json, math, subprocess
+from datetime import datetime
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent
@@ -54,8 +55,48 @@ def run(html,out,exe,axe=None):
                     ctx=browser.new_context(viewport={'width':w,'height':850},java_script_enabled=js,reduced_motion='reduce',has_touch=True)
                     page=ctx.new_page();page.set_content(body,wait_until='load')
                     require(page.locator('[data-fv-claim]').count()==4,label+': four claims')
+                    # R123: validate the ACTUAL NASA Board timeline, precision and epistemic boundaries.
+                    rail=page.locator('[data-fv-board-clock-rail]')
+                    points=rail.locator('li[data-fv-board-time]')
+                    require(points.count()==5,label+': five Board clock points required')
+                    expected=('power-interruption','fire-report','intense-fire','rupture','telemetry-loss')
+                    names=points.evaluate_all('(a)=>a.map(n=>n.dataset.fvBoardTime)')
+                    require(tuple(names)==expected,label+': historical clock order/IDs changed')
+                    times=points.locator('time').evaluate_all('(a)=>a.map(n=>n.dateTime)')
+                    require(len(times)==5,label+': missing machine-readable times')
+                    moments=[datetime.fromisoformat(x.replace('Z','+00:00')) for x in times]
+                    require(all(t.tzinfo is not None and t.utcoffset().total_seconds()==0 for t in moments)
+                            and moments==sorted(moments),label+': not monotonically increasing UTC')
+                    seconds=(moments[3]-moments[1]).total_seconds()
+                    require(13.5<=seconds<=15.0,label+': fire-report-to-rupture interval contradicts source')
+                    require(points.nth(1).get_attribute('data-fv-event-status')=='observed'
+                            and points.nth(3).get_attribute('data-fv-event-status')=='approximate'
+                            and points.nth(4).get_attribute('data-fv-event-status')=='bounded',
+                            label+': timeline certainty labels inaccurate')
+                    clock_custody=page.locator('[data-fv-clock-custody]')
+                    require(clock_custody.is_visible()
+                            and 'approximately 15 seconds' in clock_custody.inner_text()
+                            and 'ignition' in clock_custody.inner_text().lower(),
+                            label+': clock-precision caveat absent')
+                    require(page.locator('#event-sequence a[href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"]').count()==1,
+                            label+': technical chronology missing its NASA primary source link')
                     require(not page.locator('.print-custody').is_visible(),label+': print-only rights notice leaked onto screen')
                     require(page.locator('[data-fv-photo-record]').count()==6,label+': six source rail links')
+
+                    # R123 parity with Atlas R80: known-day photographs only in ordered rail.
+                    days=page.locator('[data-fv-photo-day-sequence] > li')
+                    require(days.count()==4,label+': photo day rail must have exactly four checkpoints')
+                    photo_days=days.evaluate_all('(a)=>a.map(n=>n.dataset.fvPhotoDay)')
+                    require(photo_days==['1966-10-18','1967-01-03','1967-01-28','2017-01-24'],
+                            label+': photo day sequence false precision or chronology drift')
+                    require(days.nth(3).locator('[data-fv-photo-record]').count()==2,
+                            label+': same-day 2017 retrospective photographs not grouped')
+                    unresolved=page.locator('[data-fv-photo-month-uncertain]')
+                    require(unresolved.count()==1 and unresolved.locator('time[datetime="1967-01"]').count()==1
+                            and unresolved.locator('[data-fv-photo-record="01"]').count()==1,
+                            label+': month-only crew portrait not segregated')
+                    require(days.locator('[data-fv-photo-record="01"]').count()==0,
+                            label+': unverified portrait day falsely ordered among known days')
                     require(page.locator("[id^='photo-source-']").count()==6,label+': six photo rows')
                     # Verify exact NASA source identities and visible credit/producer custody on actual HTML.
                     for rid, credit in (('01','Image Credit: NASA'),('02','Producer: JSC'),
