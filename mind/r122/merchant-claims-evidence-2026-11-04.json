@@ -1,0 +1,301 @@
+{
+  "milestone": "Mind R122",
+  "date": "2026-11-04",
+  "status": "DRAFT_NO_LIVE_ACTIVATION",
+  "primary_candidate": "Zen12 Premium (conditional, NOT ELIGIBLE)",
+  "verified_observations": [
+    {
+      "id": "S01",
+      "type": "merchant_catalog",
+      "url": "https://inspire3.com/",
+      "observation": "Inspire3 lists Zen12, Hypnosis Live, Brainwave Shots, Subliminal Guru, others.",
+      "scope": "seller description only"
+    },
+    {
+      "id": "S02",
+      "type": "exact_merchant_offer",
+      "url": "https://zen12.com/hnp",
+      "observation": "Premium described as twelve levels, four styles each, 48 MP3s, guided materials, support; displayed promotional $87.99.",
+      "scope": "2026-11-04 displayed seller webpage, not final checkout"
+    },
+    {
+      "id": "S03",
+      "type": "alternate_merchant_offer",
+      "url": "https://zen12.com/secret/",
+      "observation": "Conditional coupon landing shows $37 with named code alongside higher anchor price.",
+      "scope": "2026-11-04 seller page only, not universal eligibility"
+    },
+    {
+      "id": "S04",
+      "type": "merchant_privacy",
+      "url": "https://inspire3.com/privacy/",
+      "observation": "Policy says it MAY share referred purchaser name, email and purchased-product details with affiliate.",
+      "scope": "policy statement not proof of actual receipt"
+    },
+    {
+      "id": "S05",
+      "type": "merchant_affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "observation": "Public signup and login portal, not evidence of a named Final Vestige accepted account.",
+      "scope": "no named approval/approved creatives/link verified"
+    },
+    {
+      "id": "S06",
+      "type": "competitor_offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "observation": "Seller describes 33-minute Total Focus hypnosis MP3; displayed price $17.95 and stated 14-day guarantee.",
+      "scope": "seller snapshot, product-specific outcomes not corroborated"
+    },
+    {
+      "id": "S07",
+      "type": "competitor_offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "observation": "Seller describes 15- and 30-minute Focus Shot and brainwave-only variants; displayed $17.99 and stated one-year guarantee.",
+      "scope": "seller snapshot, product-specific outcomes not corroborated"
+    },
+    {
+      "id": "S08",
+      "type": "merchant_precautions",
+      "url": "https://brainwaveshots.com/faq",
+      "observation": "Merchant warns against listening when needing to stay awake and says people with epilepsy should not use Brainwave Shots.",
+      "scope": "seller precautions are product-specific and not extrapolated to Zen12"
+    },
+    {
+      "id": "S09",
+      "type": "independent_science",
+      "url": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
+      "observation": "2024 meta-analysis: five brief audio mindfulness induction studies, n=277, limited attentional evidence; bias/low certainty.",
+      "scope": "not Zen12"
+    },
+    {
+      "id": "S10",
+      "type": "independent_science",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "observation": "111 RCTs with n=9538 tested mindfulness training interventions; effects vary across cognition outcomes and comparators.",
+      "scope": "not one-session retail audio"
+    },
+    {
+      "id": "S11",
+      "type": "independent_science",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "observation": "2023 EEG review on binaural beat entrainment reports inconsistent evidence across 14 studies.",
+      "scope": "does not establish product-level effects"
+    },
+    {
+      "id": "S12",
+      "type": "independent_science",
+      "url": "https://doi.org/10.1111/acps.13225",
+      "observation": "2020 adverse-events review: 83 included studies, 6703 participants; estimates varied substantially across study designs.",
+      "scope": "not valid product-specific rate"
+    },
+    {
+      "id": "S13",
+      "type": "independent_science",
+      "url": "https://doi.org/10.1007/s12671-022-01915-6",
+      "observation": "2022 review 61 selected studies 8620 participants on negative effects in meditation and mind-body practices.",
+      "scope": "study-selection prevents universal incidence estimate"
+    },
+    {
+      "id": "S14",
+      "type": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observation": "Commercial relationships require clear/conspicuous material connection disclosure in context.",
+      "scope": "FTC guidance"
+    },
+    {
+      "id": "S15",
+      "type": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "observation": "Objective health-related outcome claims must be supported by competent/reliable scientific evidence.",
+      "scope": "FTC guidance"
+    },
+    {
+      "id": "S16",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/focus/",
+      "observation": "Authenticated WordPress page ID1579 published; existing free 52-page Seven Day Focus Fieldbook, with single established Jetpack route.",
+      "scope": "no confirmed paid sale"
+    },
+    {
+      "id": "S17",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observation": "Authenticated WordPress page ID1377 published Puységur archive.",
+      "scope": "historical not clinical validation"
+    },
+    {
+      "id": "S18",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "observation": "Authenticated WordPress post ID1922 published.",
+      "scope": "perception research, not product outcome"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Zen12 Premium contains 48 MP3s / 12 levels / 4 styles",
+      "decision": "ALLOW_AS_ATTRIBUTED_SELLER_DESCRIPTION",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "claim": "Zen12 costs $87.99 to any buyer",
+      "decision": "REJECT_UNIVERSAL_PRICE",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "claim": "Secret coupon $37 applies for every reader",
+      "decision": "REJECT_UNIVERSAL_DISCOUNT",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "claim": "Zen12 refunds guaranteed in every circumstance",
+      "decision": "REJECT_UNQUALIFIED_REFUND_PROMISE",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "claim": "12 minutes of Zen12 equals 60 minutes of expert meditation",
+      "decision": "EXCLUDE_UNSUPPORTED_EFFICACY",
+      "sources": [
+        "S02",
+        "S11"
+      ]
+    },
+    {
+      "claim": "Product is clinically proven to improve concentration",
+      "decision": "EXCLUDE_NO_PRODUCT_TRIAL",
+      "sources": [
+        "S09",
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "claim": "All forms of meditation are harmless",
+      "decision": "EXCLUDE",
+      "sources": [
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "claim": "Meditation produces adverse events in exactly 8.3% of casual Zen12 listeners",
+      "decision": "EXCLUDE_UNJUSTIFIED_TRANSFER",
+      "sources": [
+        "S12"
+      ]
+    },
+    {
+      "claim": "Meditation training can affect measured cognitive outcomes in some studies",
+      "decision": "ALLOW_QUALIFIED_TRAINING_ONLY",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "claim": "Short audio mindfulness inductions improved attention conclusively",
+      "decision": "EXCLUDE_INSUFFICIENT_EVIDENCE",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "claim": "Binaural beats are proven to entrain EEG reliably",
+      "decision": "EXCLUDE_INCONSISTENT_EEG",
+      "sources": [
+        "S11"
+      ]
+    },
+    {
+      "claim": "Inspire3 may share referred buyer identifiers with affiliates",
+      "decision": "ALLOW_AS_POLICY_WORDING",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "claim": "FV affiliate application is approved",
+      "decision": "UNVERIFIED_HOLD",
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "claim": "FV owns a licensed paid Mind Payhip product",
+      "decision": "UNVERIFIED_HOLD",
+      "sources": []
+    },
+    {
+      "claim": "FV received an actual affiliate commission / paid order",
+      "decision": "UNVERIFIED_HOLD",
+      "sources": []
+    },
+    {
+      "claim": "Final Vestige tried or endorses Zen12 from experience",
+      "decision": "EXCLUDE_NO_FIRSTHAND_TEST",
+      "sources": []
+    },
+    {
+      "claim": "Buyer guide may preserve one free first-party Focus link",
+      "decision": "ALLOW_NO_DUPLICATE_FORM",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "claim": "Commercial affiliate recommendations must have proximate disclosure",
+      "decision": "REQUIRED_ON_ACTIVATION",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "claim": "Health claims may be inherited from seller",
+      "decision": "EXCLUDE_UNLESS_PRODUCT_SPECIFIC_SUPPORT",
+      "sources": [
+        "S15"
+      ]
+    }
+  ],
+  "permissions": {
+    "named_affiliate_approval": false,
+    "approved_earning_url": false,
+    "approved_content_and_email_channels": false,
+    "approved_creatives": false,
+    "privacy_safe_reporting_written": false,
+    "checkout_price_tested": false,
+    "return_terms_verified_at_checkout": false,
+    "editorial_release_approved": false,
+    "production_publish_approved": false,
+    "video_mp4_produced": false,
+    "caption_file_produced": false,
+    "accessibility_real_browser_verified": false,
+    "attribution_7_30_day_verified": false,
+    "qualified_human_sessions_observed": false,
+    "verified_settled_affiliate_sale": false,
+    "verified_payhip_order": false,
+    "paid_owned_mind_sku_authenticated": false
+  },
+  "gates": {
+    "live_affiliate_CTA": "CLOSED",
+    "live_wp_write": "CLOSED",
+    "dispatch_send": "CLOSED",
+    "grok_post": "CLOSED",
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "quantitative_status": {
+    "real_transactions": null,
+    "verified_leads": null,
+    "qualified_sessions": null,
+    "verified_net_revenue": null
+  },
+  "explicit_non_inference": "Any user engagement, outbound click, CTA, email signup, 7/30-day UTM source or synthetic test cannot be called a confirmed paid order/settled commission without merchant evidence."
+}
