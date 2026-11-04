@@ -119,6 +119,52 @@ function checkCreatedReceipt(created,digest) {
     'Disposable WordPress draft ID invalid');
   return body.draft_id;
 }
+/** Shared fail-closed disposable HTTP transport, including final cleanup. */
+async function postLocalAction(context,serverUrl,action,token) {
+      const u = new URL('/fv_ex2_editor_qa_once.php?action='+action,serverUrl);
+      assert.ok(loopback(u.origin), 'Refusing a non-loopback WordPress POST target');
+      const request = (url) => context.request.post(url.toString(), {
+        headers:{'X-FV-EX2-EDITOR-TOKEN':token}, timeout:90000,
+        maxRedirects:0, failOnStatusCode:false
+      });
+      let res = await request(u);
+      // Playground may canonicalize 127.0.0.1 ↔ localhost. Permit exactly
+      // one same-PHP-route/same-port loopback-host correction. Never follow
+      // redirects to login, external sites or a different action.
+      if ([301,302,303,307,308].includes(res.status())) {
+        const location = res.headers()['location'] || '';
+        let target;
+        try { target = new URL(location,u); } catch { target = null; }
+        const safe = target && loopback(target.origin) &&
+          target.pathname === u.pathname && target.port === u.port &&
+          (target.search === u.search || target.search === '') &&
+          !target.username && !target.password;
+        if (!safe) {
+          throw new Error('Blocked unsafe local WordPress redirect ' + res.status() +
+            ' destination path ' + (target?.pathname || '[invalid]'));
+        }
+        const canonical = new URL(u.pathname + u.search, target.origin);
+        res = await request(canonical);
+      }
+      const status = res.status();
+      if ([301,302,303,307,308].includes(status)) {
+        const location = res.headers()['location'] || '';
+        let next;
+        try { next = new URL(location,u); } catch { next=null; }
+        throw new Error('Refusing second consecutive PHP route redirect ' + status +
+          ' path ' + (next?.pathname || '[invalid]') +
+          ' loopback=' + Boolean(next && loopback(next.origin)) +
+          ' same_action=' + Boolean(next && next.search === u.search));
+      }
+      const contentType = res.headers()['content-type'] || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Playground PHP route returned non-JSON HTTP ' + status +
+          ' content-type=' + contentType.split(';')[0]);
+      }
+      const body = await res.json();
+      return {status,body};
+}
+
 async function selfTest() {
   // Real public text fixture, synthetic candidate layout: no production CMS reads.
   const fixtureBytes=await readFile(join(HERE,'public_page6_margins_20261102.json'));
@@ -203,6 +249,48 @@ async function selfTest() {
     {...pass,release:'LIVE'}, {...pass,result:'FAIL'}, {...pass,source_bytes:6},
     {...pass,checks:{}}
   ]) {assert.throws(()=>checkEditorReceipt(invalid,'a'));total++;}
+
+  // Asynchronous transport simulations: no network/WordPress required.
+  const fake=(responses,hits=[])=>({request:{post:async(url,opts)=>{
+    hits.push({url,opts});
+    if(!responses.length)throw Error('Unexpected request');
+    const r=responses.shift();
+    return {status:()=>r.status,headers:()=>({'location':r.location||'',
+      'content-type':r.contentType||'application/json'}),json:async()=>r.body};
+  }}});
+  const testToken='a'.repeat(64),deletedBody={result:'DELETED',verified_absent:true,release:'HOLD'};
+  const directHits=[];
+  const direct=await postLocalAction(fake([{status:200,body:deletedBody}],directHits),
+    'http://127.0.0.1:9473/','cleanup',testToken);
+  assert.equal(direct.body.verified_absent,true);
+  assert.equal(directHits.length,1);
+  assert.equal(directHits[0].opts.maxRedirects,0);total++;
+  const canonicalHits=[];
+  const canonical=await postLocalAction(fake([
+    {status:301,location:'http://localhost:9473/fv_ex2_editor_qa_once.php'},
+    {status:200,body:deletedBody}
+  ],canonicalHits),'http://127.0.0.1:9473/','cleanup',testToken);
+  assert.equal(canonical.body.result,'DELETED');
+  assert.equal(canonicalHits.length,2);
+  assert.ok(canonicalHits[1].url.includes('localhost:9473/fv_ex2_editor_qa_once.php?action=cleanup'));total++;
+  for(const location of [
+    'https://finalvestige.com/fv_ex2_editor_qa_once.php?action=cleanup',
+    'http://evil.example:9473/fv_ex2_editor_qa_once.php?action=cleanup',
+    'http://localhost:9474/fv_ex2_editor_qa_once.php?action=cleanup',
+    'http://localhost:9473/wp-admin/',
+    'http://localhost:9473/fv_ex2_editor_qa_once.php?action=create',
+    'http://user@localhost:9473/fv_ex2_editor_qa_once.php?action=cleanup'
+  ]){
+    await assert.rejects(()=>postLocalAction(fake([{status:302,location}]),
+      'http://127.0.0.1:9473/','cleanup',testToken),/unsafe local WordPress redirect/);total++;
+  }
+  await assert.rejects(()=>postLocalAction(fake([
+    {status:301,location:'http://localhost:9473/fv_ex2_editor_qa_once.php'},
+    {status:302,location:'http://127.0.0.1:9473/fv_ex2_editor_qa_once.php'}
+  ]),'http://127.0.0.1:9473/','cleanup',testToken),/second consecutive/);total++;
+  await assert.rejects(()=>postLocalAction(fake([
+    {status:200,contentType:'text/html',body:deletedBody}
+  ]),'http://127.0.0.1:9473/','cleanup',testToken),/non-JSON/);total++;
   console.log(JSON.stringify({self_test:'PASS',cases:total,fixture_sha256:sha(fixtureBytes),
     data_class:DATA_CLASS,network_used:false,release:'HOLD'}));
 }
@@ -226,7 +314,7 @@ if (process.argv.includes('--self-test')) {
   ]);
   const token = randomBytes(32).toString('hex');
   const probe = await readFile(join(HERE,'playground_gutenberg_editor_gate.php'));
-  let server, browser, context, draftCreated = false;
+  let server, browser, context, draftCreated = false, act;
   let failure = null;
   let proof = null;
   try {
@@ -242,50 +330,7 @@ if (process.argv.includes('--self-test')) {
     const makeUrl = (action) => new URL('/fv_ex2_editor_qa_once.php?action='+action,server.serverUrl);
     browser = await chromium.launch({headless:true});
     context = await browser.newContext({viewport:{width:1440,height:900}});
-    const act = async (action) => {
-      const u = makeUrl(action);
-      assert.ok(loopback(u.origin), 'Refusing a non-loopback WordPress POST target');
-      const request = (url) => context.request.post(url.toString(), {
-        headers:{'X-FV-EX2-EDITOR-TOKEN':token}, timeout:90000,
-        maxRedirects:0, failOnStatusCode:false
-      });
-      let res = await request(u);
-      // Playground may canonicalize 127.0.0.1 ↔ localhost. Permit exactly
-      // one same-PHP-route/same-port loopback-host correction. Never follow
-      // redirects to login, external sites or a different action.
-      if ([301,302,303,307,308].includes(res.status())) {
-        const location = res.headers()['location'] || '';
-        let target;
-        try { target = new URL(location,u); } catch { target = null; }
-        const safe = target && loopback(target.origin) &&
-          target.pathname === u.pathname && target.port === u.port &&
-          (target.search === u.search || target.search === '') &&
-          !target.username && !target.password;
-        if (!safe) {
-          throw new Error('Blocked unsafe local WordPress redirect ' + res.status() +
-            ' destination path ' + (target?.pathname || '[invalid]'));
-        }
-        const canonical = new URL(u.pathname + u.search, target.origin);
-        res = await request(canonical);
-      }
-      const status = res.status();
-      if ([301,302,303,307,308].includes(status)) {
-        const location = res.headers()['location'] || '';
-        let next;
-        try { next = new URL(location,u); } catch { next=null; }
-        throw new Error('Refusing second consecutive PHP route redirect ' + status +
-          ' path ' + (next?.pathname || '[invalid]') +
-          ' loopback=' + Boolean(next && loopback(next.origin)) +
-          ' same_action=' + Boolean(next && next.search === u.search));
-      }
-      const contentType = res.headers()['content-type'] || '';
-      if (!contentType.includes('application/json')) {
-        throw new Error('Playground PHP route returned non-JSON HTTP ' + status +
-          ' content-type=' + contentType.split(';')[0]);
-      }
-      const body = await res.json();
-      return {status,body};
-    };
+    act = (action) => postLocalAction(context,server.serverUrl,action,token);
     const created = await act('create');
     // A CREATED response means a temporary draft may exist. Arm cleanup
     // BEFORE validating the receipt: corrupted data-class or digest must
@@ -344,15 +389,12 @@ if (process.argv.includes('--self-test')) {
     failure = e;
   } finally {
     let cleaned = !draftCreated;
-    if(draftCreated && server && context) {
+    if(draftCreated && server && context && act) {
       try {
-        const u = new URL('/fv_ex2_editor_qa_once.php?action=cleanup',server.serverUrl);
-        const res = await context.request.post(u.toString(),{
-          headers:{'X-FV-EX2-EDITOR-TOKEN':token},
-          timeout:30000,maxRedirects:0,failOnStatusCode:false
-        });
-        const b = await res.json();
-        cleaned = res.status()===200 && b.result==='DELETED' && b.verified_absent===true;
+        // Reuse the same guarded POST and canonicalization policy as create.
+        const deleted=await act('cleanup');
+        cleaned=deleted.status===200 && deleted.body.result==='DELETED' &&
+          deleted.body.verified_absent===true && deleted.body.release==='HOLD';
       } catch {cleaned=false; }
     }
     if(!cleaned) failure = new Error('FAIL CLOSED: disposable Gutenberg draft deletion unverified');
