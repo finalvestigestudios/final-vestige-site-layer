@@ -62,7 +62,7 @@ class CompleteDocumentAxeRegression(unittest.TestCase):
         self.assertNotIn("wpcom_mcp_pages_update", self.script)
 
     def test_staging_language_is_not_parity_claim(self):
-        self.assertIn("ISOLATED_WP_ASSEMBLER_RENDER_SYNTHETIC_ONLY", self.script)
+        self.assertIn("ISOLATED_WP_ASSEMBLER_PUBLIC_MARGINS_SYNTHETIC_JETPACK", self.script)
         self.assertIn("not WP.com Atomic parity", self.script)
         self.assertIn("not manual WCAG 2.2 AA", self.script)
 
