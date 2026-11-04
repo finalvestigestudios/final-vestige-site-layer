@@ -12,6 +12,8 @@ The CLI reads all eight frozen census part files and checks each raw file's Git 
 
 New per-request fields: `dom_stored_sources: {"287:5":"<exact Gutenberg stored URL>"}` and `dom_current_sources: {"287:5":"<actual img.currentSrc>"}`. Keys must match `slot_keys` exactly. CurrentSrc must equal the CDP request URL. DOM evidence itself is still a supplied assertion, **not independent proof of a browser run**. A legitimate historical-image replacement requires separate provenance, rights, same-scene/crop and manual release approval; this fast-path deliberately refuses silent source changes.
 
+**Additional fail-closed hardening:** A complete frozen 61/355 capture that omits DOM/source bindings or substitutes an original now returns `INSUFFICIENT_DATA`, with `measured_reduction_percent:null`, rather than exposing even a potentially misleading limited-sample percentage. Code commit `a31179264e603b8fe7bdbe0678b3c56aed8f6a0b`, test commit `739c32fde00a3740f4cb8e191915dddbd62f0e72`; existing 38/38 V8 regression suite remains green. Native Node/CDP remain pending.
+
 ## Verification
 
 **50/50 synthetic checks passed** against exact committed GitHub blobs in isolated V8 CommonJS compatibility execution: 12 source binding cases and 38 wire-byte evaluator cases. The 355-slot positive fixture and decoy/missing-binding mutations ran successfully. This is not native Node CI. There are no actual guest Chromium network recordings or measured before/after wire bytes. Consequently **42 alleged broken images are not established** and **76% achieved savings cannot be claimed**. Stored originals (13 over 1.5 MiB) are not visitor page-transfer measurements.
