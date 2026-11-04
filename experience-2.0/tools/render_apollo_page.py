@@ -90,7 +90,7 @@ def approved_images(data: dict, path=SIGNOFFS) -> set:
 # Kept in its own block so the main style block (and its stored hash) did not change when text-only chapters were added.
 TEXT_CHAPTER_CSS = """
 .fv-ex2-page .fv-ex2-chapter__grid--text { grid-template-columns: minmax(0, 1fr); }
-.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text { grid-column: 1; grid-row: auto; justify-self: start; max-width: 46rem; }
+.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text { grid-column: 1; grid-row: auto; justify-self: center; width: 100%; max-width: 46rem; }
 """
 
 
