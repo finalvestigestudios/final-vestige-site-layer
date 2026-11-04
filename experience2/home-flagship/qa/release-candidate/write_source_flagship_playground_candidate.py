@@ -8,6 +8,7 @@ copy production DB/settings, or treat a Playground Save as hosted acceptance.
 from __future__ import annotations
 
 import argparse
+from html import escape
 import hashlib
 import json
 import re
@@ -36,6 +37,7 @@ NAV_TARGETS = (
 )
 STAGING_ONLY = "FV EX2 SOURCE-CONTROLLED FULL FLAGSHIP — ISOLATED REVIEW ONLY"
 ASSEMBLER_STAGE_CSS = HERE / "assembler_saved_layout_playground_only.css"
+PUBLIC_MARGINS_JSON = HERE / "public_page6_margins_20261102.json"
 STAGING_ASSEMBLER_STYLE = 'data-fv-stage-only="assembler-saved-layout"'
 SECOND_BLOCK = '<!-- wp:html --><div class="fv-hf"'
 END_BLOCK = "<!-- /wp:html -->"
@@ -51,6 +53,43 @@ def read_sources(home: Path) -> tuple[str, dict[str, str], dict[str, str]]:
     css = {name: (home / name).read_text(encoding="utf-8") for name in CSS_FILES}
     js = {name: (home / name).read_text(encoding="utf-8") for name in JS_FILES}
     return index, css, js
+
+
+
+def load_public_margins(path: Path = PUBLIC_MARGINS_JSON) -> tuple[list[str], dict]:
+    """Import only the publicly visible page-6 Margins spans; never a site dump."""
+    raw = path.read_bytes()
+    try:
+        data = json.loads(raw)
+    except (ValueError, UnicodeDecodeError) as exc:
+        raise ValueError("Invalid public Margins provenance JSON") from exc
+    if (not isinstance(data, dict) or data.get("source_site_id") != 256784396 or
+            data.get("source_page_id") != 6 or
+            data.get("source_url") != "https://finalvestige.com/" or
+            data.get("status") != "ISOLATED_WORDPRESS_PLAYGROUND_ONLY" or
+            data.get("fragment_count") != 72 or
+            not re.fullmatch(r"20\d\d-\d\d-\d\dT\d\d:\d\d:\d\d",
+                             str(data.get("source_modified", "")))):
+        raise ValueError("Untrusted public Margins source provenance")
+    rows = data.get("items")
+    if not isinstance(rows, list) or len(rows) != 72:
+        raise ValueError("Public Margins record count drift")
+    texts = []
+    for i, row in enumerate(rows):
+        if not isinstance(row, dict) or set(row) != {"index", "text"} or row["index"] != i:
+            raise ValueError("Public Margins indices or structure drift")
+        value = row["text"]
+        if (not isinstance(value, str) or not value or len(value) > 550 or
+                "<" in value or ">" in value or
+                re.search(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", value)):
+            raise ValueError("Unsafe published Margins text at index " + str(i))
+        texts.append(value)
+    if len(set(texts)) != 72:
+        raise ValueError("Public Margins duplicate text")
+    return texts, {
+        "source_modified": data["source_modified"],
+        "public_fragment_fixture_sha256": digest(raw),
+    }
 
 
 def compose(index: str, css: dict[str, str], js: dict[str, str],
@@ -86,6 +125,7 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
     # The fixture contains *invented synthetic Margins text*, not real page-6
     # records. First apply the previously tested rights + contrast transforms.
     # Then replace only its tiny simulated flagship with the real source code.
+    public_margins, public_receipt = load_public_margins()
     tiny, _ = build_candidate(source_fixture(), CSS_PATH.read_text(encoding="utf-8"))
     if tiny.count(SECOND_BLOCK) != 1:
         raise ValueError("Synthetic Gutenberg flagship boundary drift")
@@ -96,8 +136,18 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
     if not suffix.endswith('<!-- wp:jetpack/subscriptions {"className":"is-style-split"} /-->'):
         raise ValueError("Synthetic Focus/Jetpack tail drift")
 
-    # The first Gutenberg block uses SYNTHETIC records, not production page-6
-    # markup. Give its 72 records a labeled, keyboard-focusable scroll region.
+    # Replace only the 72 invented synthetic text nodes with text already
+    # publicly published on page 6. Keep the synthetic Gutenberg wrapper,
+    # mock Jetpack block and all protected release gates separate.
+    for i, value in enumerate(public_margins):
+        needle = ">Historic fragment " + str(i) + "</span>"
+        if prefix.count(needle) != 1:
+            raise ValueError("Synthetic Margins source boundary drift at " + str(i))
+        prefix = prefix.replace(needle, ">" + escape(value, quote=False) + "</span>", 1)
+    if "Historic fragment " in prefix:
+        raise ValueError("Unreplaced synthetic Margins placeholder")
+    # Give the published text a labeled, keyboard-focusable scroll region.
+    # This does NOT reproduce the live Margins rotator, styling, or JS.
     # This is only a development fixture; never treat it as hosted DOM parity.
     opening = '<div class="fv-margin-strip">'
     ending = '</div><style>'
@@ -106,9 +156,9 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
     prefix = prefix.replace(
         opening, opening +
         '<div class="fv-margin-strip__inner">'
-        '<span class="fv-margin-strip__label">72 SYNTHETIC FRAGMENTS</span>'
+        '<span class="fv-margin-strip__label">72 PUBLISHED MARGINS · TEST FIXTURE</span>'
         '<div class="fv-margin-strip__window" role="region" '
-        'aria-label="72 synthetic historical fragments" tabindex="0">', 1
+        'aria-label="72 published historical fragments in isolated review" tabindex="0">', 1
     ).replace(ending, '</div></div>' + ending, 1)
 
     # This CSS is actually saved in Gutenberg, NOT pasted into Chromium.
@@ -152,16 +202,19 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
     if candidate.count(STAGING_ONLY) != 1 or candidate.count(STAGING_ASSEMBLER_STYLE) != 1:
         raise ValueError("Missing isolated saved-styling or synthetic marker")
     if (candidate.count('class="fv-margin-strip__window"') != 1 or
-            candidate.count('aria-label="72 synthetic historical fragments" tabindex="0"') != 1):
+            candidate.count('aria-label="72 published historical fragments in isolated review" tabindex="0"') != 1):
         raise ValueError("Synthetic no-JS Margins scroll region not accessible")
     sources = {"index.html": index, **css, **js}
     fingerprints = {
         name: digest(value.encode("utf-8")) for name, value in sorted(sources.items())
     }
     return candidate, {
-        "data_classification": "SYNTHETIC_TEST_FIXTURE_ONLY",
+        "data_classification": "PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE",
         "release": "HOLD",
-        "page6_live_content_included": False,
+        "page6_live_content_included": "72_PUBLIC_MARGINS_TEXTS_ONLY",
+        "published_margins_source_modified": public_receipt["source_modified"],
+        "public_fragment_fixture_sha256": public_receipt["public_fragment_fixture_sha256"],
+        "other_page6_content_included": False,
         "real_source_controlled_flagship": True,
         "source_sha256": fingerprints,
         "assembler_saved_stage_css_sha256": digest(assembler_css.encode("utf-8")),
@@ -176,7 +229,7 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
         "style_source_count": len(CSS_FILES),
         "script_source_count": len(JS_FILES),
         "wordpress_theme_parity": "NOT_TESTED",
-        "production_source_or_subscribers": "NOT_INCLUDED",
+        "production_source_or_subscribers": "ONLY_PUBLIC_MARGINS_NO_PRIVATE_DATA",
         "accessibility_performance_approval": "NOT_GRANTED",
     }
 
