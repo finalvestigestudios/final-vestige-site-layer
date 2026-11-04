@@ -1,7 +1,7 @@
 # Media Recovery — crop-preserving source identity, 2026-11-04
 
 ## Scope and critical finding
-PR #183's offline browser identity classifier previously treated every static-photo `resize=` value as *size-only*, discarding it when comparing a stored historical image with a runtime `currentSrc` or redirected CDP image response. That is not safe: a resizing endpoint may **crop** rather than only proportionally scale. The documented WordPress Site Accelerator behavior explicitly distinguishes `?resize=W,H` (exact dimensions with crop) from `?fit=W,H` (preserve aspect ratio). Reference: https://developer.wordpress.com/docs/site-accelerator/ . This is a *conservative identity rule*, not a finding that all third-party `resize` endpoints crop.
+PR #183's offline browser identity classifier previously treated every static-photo `resize=` value as *size-only*, discarding it when comparing a stored historical image with a runtime `currentSrc` or redirected CDP image response. That is not safe: a resizing endpoint may **crop** rather than only proportionally scale. The documented WordPress Site Accelerator behavior explicitly distinguishes `?resize=W,H` (exact dimensions with crop) from `?fit=W,H` (preserve aspect ratio). Reference: https://developer.wordpress.com/docs/developer-tools/site-accelerator-api/ . This is a *conservative identity rule*, not a finding that all third-party `resize` endpoints crop.
 
 Specific frozen source example: Iroquois Theatre post **283**, image **283:3**:
 `https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804`
