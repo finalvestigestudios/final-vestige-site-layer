@@ -23,7 +23,10 @@
     "guest_browser_failures_verified": 0,
     "independent_image_search_displays": 2,
     "editorial_review_flags": 2,
-    "production_replacements": 0
+    "production_replacements": 0,
+    "live_cms_src_matches": 6,
+    "live_cms_alt_matches": 6,
+    "html_image_dimension_attributes_present": 0
   },
   "rights_guidance_urls": [
     "https://www.history.navy.mil/our-collections/photography.html",
@@ -327,5 +330,19 @@
       },
       "review_flag": null
     }
-  ]
+  ],
+  "live_wordpress_readonly": {
+    "method": "WordPress posts.get context=edit, read-only; no production writes",
+    "checked_at": "2026-11-04",
+    "post_id": 280,
+    "status": "publish",
+    "modified_utc": "2026-11-02T21:39:55",
+    "html_image_tags": 6,
+    "exact_src_matches_frozen": 6,
+    "exact_alt_matches_frozen": 6,
+    "images_with_html_width_and_height": 0,
+    "loaded_image_bytes": null,
+    "guest_browser_successes": null,
+    "origin_statuses": null
+  }
 }
