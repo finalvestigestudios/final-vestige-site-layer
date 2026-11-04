@@ -69,13 +69,29 @@ class LibraryTests(unittest.TestCase):
                 build.Library(root=sandbox)
 
     def test_register_fragments_cannot_duplicate_ids(self):
-        frag = ROOT / "sources" / "fragments" / "_dup_test.json"
-        frag.write_text('{"sources": [{"id": "cdc-water-store", "title": "x", "url": "https://example.gov/x", "kind": "regulator", "publisher": "x", "verified_on": "2026-10-29", "supports": "x"}]}', encoding="utf-8")
-        try:
-            with self.assertRaises(ValueError):
-                build.Library()
-        finally:
-            frag.unlink()
+        """A conflicting real source ID must fail; fixtures cannot touch shared sources.
+
+        This test previously wrote _dup_test.json under the repository's actual
+        sources/fragments directory. That races validators, builds, and parallel
+        worktrees, and a crashed test could leave a contaminating source behind.
+        """
+        import shutil
+        import tempfile
+
+        with tempfile.TemporaryDirectory(prefix="fvs-preparedness-duplicate-test-") as td:
+            sandbox = Path(td) / "preparedness"
+            shutil.copytree(ROOT, sandbox, ignore=shutil.ignore_patterns(
+                "build", "__pycache__"))
+            frag = sandbox / "sources" / "fragments" / "_dup_test.json"
+            frag.write_text(
+                '{"sources": [{"id": "cdc-water-store", "title": "x", '
+                '"url": "https://example.gov/x", "kind": "regulator", '
+                '"publisher": "x", "verified_on": "2026-10-29", '
+                '"supports": "Synthetic duplicate-ID rejection fixture."}]}',
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "duplicate source id"):
+                build.Library(root=sandbox)
 
     def test_no_article_is_published_without_review(self):
         for slug, meta in self.lib.articles.items():
