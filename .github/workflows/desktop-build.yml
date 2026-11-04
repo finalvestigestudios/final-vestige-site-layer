@@ -112,6 +112,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r182.py
           python -OO products/desktop/scripts/safe_unittest_r182.py
+      - name: R183 Policy Delta global source-coordinate custody (25 methods, normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r183.py
+          python -OO products/desktop/scripts/safe_unittest_r183.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -532,6 +536,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R182 source-coordinate custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r182.py
           if ($LASTEXITCODE -ne 0) { throw "R182 optimized source-coordinate custody tests failed" }
+      - name: R183 Policy Delta global source-coordinate custody (25 methods, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r183.py
+          if ($LASTEXITCODE -ne 0) { throw "R183 global source-coordinate custody tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r183.py
+          if ($LASTEXITCODE -ne 0) { throw "R183 optimized global source-coordinate custody tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
