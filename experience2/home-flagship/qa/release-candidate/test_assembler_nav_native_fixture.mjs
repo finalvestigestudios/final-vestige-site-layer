@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
 import {isIsolatedLoopback,requiresSemanticCorrection,phpFixtureSource,
   correctIsolatedNavigation} from './assembler_nav_native_fixture.mjs';
 
@@ -117,4 +118,10 @@ test('missing or corrupt resolved header hash fails closed',async()=>{
       /assert|regular expression/i);
     assert.equal(x.getRunCount(),1);
   }
+});
+
+test('entire native WP inline PHP (including pinned fallback) parses with host PHP',()=>{
+  const check=spawnSync('php',['-l'],{input:phpFixtureSource(),encoding:'utf8',timeout:10000});
+  assert.equal(check.status,0,'PHP syntax error or missing PHP tool: '+(check.stderr||check.stdout||check.error));
+  assert.match(check.stdout,/No syntax errors detected/);
 });
