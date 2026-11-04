@@ -21,7 +21,7 @@ def run(html,out,exe,axe=None):
     body=html.read_text(encoding='utf-8');out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
                 browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
-                complete=False,failure_code=None)
+                complete=False,failure_code=None,worksheet_pdf=None)
     journal=out/'R113_BROWSER_RECEIPT.json'
     def checkpoint():journal.write_text(json.dumps(record,indent=2,sort_keys=True)+'\n',encoding='utf-8')
     checkpoint()
@@ -48,6 +48,9 @@ def run(html,out,exe,axe=None):
                         require(row.locator('a[href^="https://www.nasa.gov/image-detail/"]').count()==1,
                                 label+': NASA photograph source link mismatch '+rid)
                     require(page.locator('[data-fv-primary-cta]').count()==1,label+': one classroom CTA')
+                    require(page.locator('[data-fv-print-student]').count()==1,label+': one opt-in print utility')
+                    require(page.locator('[data-fv-print-student]').is_visible()==js,
+                            label+': print utility must fail open with no JavaScript')
                     require(page.locator("a[href^='https://www.nasa.gov/']").count()>=6,label+': NASA source links')
                     require(page.locator('form').count()==0 and page.locator("a[href*='payhip']").count()==0,
                             label+': unapproved form or commerce')
@@ -112,6 +115,39 @@ def run(html,out,exe,axe=None):
                                  margin={'top':'10mm','bottom':'10mm','left':'10mm','right':'10mm'})
                         require(pdf.read_bytes().startswith(b'%PDF-'),'invalid PDF')
                         record['pdf']={'name':pdf.name,'sha256':sha(pdf)}
+                    # R120: ordinary Print contains the complete register. Opt-in Print
+                    # must produce only the student worksheet, with its own source-custody notice.
+                    if js and w in (390,1440):
+                        page.emulate_media(media='screen')
+                        page.evaluate("window.print=()=>{window.__fv_print_invoked=true}")
+                        page.locator('[data-fv-print-student]').click()
+                        require(page.evaluate("document.body.classList.contains('fv-worksheet-only')") and
+                                page.evaluate("window.__fv_print_invoked") is True,
+                                label+': student-only print mode did not activate')
+                        page.emulate_media(media='print')
+                        require(page.locator('[data-fv-student-print]').is_visible(),
+                                label+': standalone worksheet missing')
+                        require(not page.locator('#source-custody').is_visible() and
+                                not page.locator('.hero').is_visible() and
+                                not page.locator('#classroom-preview .callout').is_visible(),
+                                label+': source packet or teacher answer leaked into student print')
+                        require(page.locator('.worksheet-standalone-rights').is_visible(),
+                                label+': standalone rights notice absent')
+                        rights=page.locator('.worksheet-standalone-rights').inner_text()
+                        require('0/6' in rights and 'S67-19766' in rights and
+                                'not NASA-endorsed' in rights and 'Review Board' in rights,
+                                label+': standalone source custody incomplete')
+                        require(page.locator('[data-fv-student-print] a[href^="https://www.nasa.gov/"]').count()>=2,
+                                label+': standalone worksheet missing its source URLs')
+                        if w==390:
+                            student_pdf=out/'R120_STUDENT_ONLY_PRINT_390.pdf'
+                            page.pdf(path=str(student_pdf),format='Letter',print_background=False,
+                                     margin={'top':'10mm','bottom':'10mm','left':'10mm','right':'10mm'})
+                            require(student_pdf.read_bytes().startswith(b'%PDF-'),'invalid worksheet PDF')
+                            record['worksheet_pdf']={'name':student_pdf.name,'sha256':sha(student_pdf)}
+                        page.evaluate("window.dispatchEvent(new Event('afterprint'))")
+                        require(not page.evaluate("document.body.classList.contains('fv-worksheet-only')"),
+                                label+': afterprint left worksheet-only mode active')
                     record['modes'].append(label);checkpoint();ctx.close()
             for w in (390,1440):
                 for trial in (1,2,3):
@@ -152,7 +188,8 @@ def run(html,out,exe,axe=None):
                 ctx.close()
             require(len(record['modes'])==14 and len(record['performance'])==6 and
                     len(record['axe_scans'])==4,'incomplete matrix')
-            require(len(record['screenshots'])==2 and record['pdf'] is not None,
+            require(len(record['screenshots'])==2 and record['pdf'] is not None and
+                    record['worksheet_pdf'] is not None,
                     'missing reproducible screenshots or printable PDF')
             record['complete']=True
         except Exception:
