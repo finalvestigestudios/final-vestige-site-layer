@@ -125,8 +125,16 @@ function evaluate(data,verifiedSourceInventory,verifiedSourceParts){
  const pct=Number(pooledReduction.toFixed(3));
  // Reject unrelated placeholders even when their reported CDP bytes look favorable.
  const binding=verifiedSourceParts?validateClaimSourceBindings(data,verifiedSourceInventory,verifiedSourceParts):null;
- const wide=posts.size===61&&slots.size===355&&repeats>=3&&
-   exactFrozenCensus(data,verifiedSourceInventory)&&binding?.pass===true;
+ const censusScope=posts.size===61&&slots.size===355&&repeats>=3&&
+   exactFrozenCensus(data,verifiedSourceInventory);
+ // A full benchmark that swaps photographs is NOT a valid limited-sample
+ // measurement: even publishing its percentage would mislead reviewers.
+ if(censusScope&&binding?.pass!==true){
+  const why=binding?.reason_codes?.length?binding.reason_codes:['missing frozen census/DOM source binding evidence'];
+  return {...base,observed_post_count:posts.size,observed_slot_count:slots.size,
+   reason_codes:['unverifiable historical photo source identity',...why]};
+ }
+ const wide=censusScope&&binding?.pass===true;
  return {status:wide?'SITEWIDE_IMAGE_TRANSFER_MEASURED':'LIMITED_SAMPLE_MEASURED',
    source_inventory_id:data.source_inventory_id,observed_post_count:posts.size,observed_slot_count:slots.size,
    frozen_dom_source_binding_verified:wide,source_binding_reason_codes:binding?.reason_codes||['missing frozen census source bindings'],
