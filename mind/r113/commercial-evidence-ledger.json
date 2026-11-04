@@ -1,0 +1,196 @@
+{
+  "milestone": "R113",
+  "as_of": "2026-11-03 PST",
+  "branch": "feature/mind-r113-self-hypnosis-commercial-gates-20261103",
+  "activation": "HARD_HOLD",
+  "production_write": false,
+  "verified_paid_orders": null,
+  "verified_affiliate_commissions": null,
+  "paid_conversion_rate": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "official_seller_catalog",
+      "url": "https://inspire3.com/",
+      "observation": "Zen12, Hypnosis Live and Brainwave Shots seller product categories; benefit claims not independently proved"
+    },
+    {
+      "id": "S2",
+      "kind": "exact_seller_offer",
+      "url": "https://zen12.com/?no-popup=1",
+      "observation": "12-minute audio and 12 levels / 48 MP3 premium described by merchant; do not reuse efficacy claims"
+    },
+    {
+      "id": "S3",
+      "kind": "alternate_seller_promo",
+      "url": "https://zen12.com/secret/",
+      "observation": "different observed promotional price on seller pathway; price not portable across offers or sessions"
+    },
+    {
+      "id": "S4",
+      "kind": "seller_privacy",
+      "url": "https://inspire3.com/privacy/",
+      "observation": "seller may share referred purchaser name, email and purchased products with affiliate"
+    },
+    {
+      "id": "S5",
+      "kind": "seller_terms",
+      "url": "https://inspire3.com/terms/",
+      "observation": "Prior verified 1-year Zen12 money-back statement; fresh source fetch failed; reconfirm exact current terms at approved offer before use"
+    },
+    {
+      "id": "S6",
+      "kind": "2019_review",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "observation": "22 RCTs across heterogenous self-hypnosis interventions, not Zen12"
+    },
+    {
+      "id": "S7",
+      "kind": "2023_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "observation": "5 supportive / 8 contradict / 1 mixed binaural-beats EEG entrainment evidence; not product trial"
+    },
+    {
+      "id": "S8",
+      "kind": "historical",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8085546/",
+      "observation": "retrospective analysis of Mesmer self-magnetization account"
+    },
+    {
+      "id": "S9",
+      "kind": "FTC_disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observation": "clear prominent material-connection disclosure near specific recommendation"
+    },
+    {
+      "id": "S10",
+      "kind": "FTC_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "observation": "objective health claims require adequate substantiation"
+    },
+    {
+      "id": "S11",
+      "kind": "FV_collection",
+      "url": "https://finalvestige.com/collection/",
+      "observation": "Authenticated WordPress page 78: Focus 52-page PDF free with existing Dispatch; Suunto affiliate compass not relevant to Mind; no paid Mind offer displayed"
+    },
+    {
+      "id": "S12",
+      "kind": "FV_focus",
+      "url": "https://finalvestige.com/focus/",
+      "observation": "Authenticated WordPress published page 1579, existing Jetpack signup, not a paid order"
+    },
+    {
+      "id": "S13",
+      "kind": "FV_history",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observation": "Authenticated WordPress published page 1377, source archive; do not equate historical reports with modern efficacy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Self-hypnosis review included 22 RCTs",
+      "source": "S6",
+      "judgment": "PUBLISH_WITH_CONTEXT",
+      "limit": "heterogeneous clinical interventions; not named commercial recordings"
+    },
+    {
+      "id": "C2",
+      "claim": "Commercial self-hypnosis MP3 reliably treats anxiety",
+      "source": null,
+      "judgment": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C3",
+      "claim": "Zen12 uses 12-minute listening sessions and premium course 48 MP3s",
+      "source": "S2",
+      "judgment": "SELLER_DESCRIBED_ONLY"
+    },
+    {
+      "id": "C4",
+      "claim": "12 minutes Zen12 equals one hour advanced meditation",
+      "source": "S2",
+      "judgment": "REJECT_AS_EDITORIAL_FACT",
+      "limit": "seller claim; no product-specific equivalence evidence"
+    },
+    {
+      "id": "C5",
+      "claim": "Binaural beats consistently entrain EEG",
+      "source": "S7",
+      "judgment": "REJECT",
+      "limit": "2023 systematic review inconsistent"
+    },
+    {
+      "id": "C6",
+      "claim": "Zen12 current fixed price $87.99",
+      "source": "S2",
+      "judgment": "WITHHOLD",
+      "limit": "different seller promotion pages; prior price dated, current checkout unverified"
+    },
+    {
+      "id": "C7",
+      "claim": "One-year refund guarantee current exact offer",
+      "source": "S5",
+      "judgment": "WITHHOLD_UNTIL_RECONFIRMED"
+    },
+    {
+      "id": "C8",
+      "claim": "Buyer information may be shared with referring affiliate",
+      "source": "S4",
+      "judgment": "PUBLISH_AS_SELLER_POLICY"
+    },
+    {
+      "id": "C9",
+      "claim": "FV accepted Inspire3 affiliate partner",
+      "source": null,
+      "judgment": "NOT_VERIFIED_HOLD"
+    },
+    {
+      "id": "C10",
+      "claim": "FV owns a currently merchant-verifiable paid Mind Payhip product",
+      "source": null,
+      "judgment": "NOT_VERIFIED_HOLD"
+    },
+    {
+      "id": "C11",
+      "claim": "Focus is a free 52-page edition via existing list",
+      "source": "S11",
+      "judgment": "PUBLISH",
+      "limit": "no confirmed lead until authoritative subscriber transition"
+    },
+    {
+      "id": "C12",
+      "claim": "FV verified paid transactions/commissions",
+      "source": null,
+      "judgment": "UNOBSERVABLE"
+    }
+  ],
+  "gates": {
+    "named_partner_acceptance": false,
+    "authorized_exact_affiliate_url": false,
+    "allowed_social_and_email_channels": false,
+    "written_aggregate_only_buyer_reporting": false,
+    "rights_cleared_paid_owned_sku": false,
+    "paid_merchant_settlement_access": false,
+    "confirmed_grok_asset_ids": false,
+    "merchant_refund_fee_records": false,
+    "independent_QA": false,
+    "founder_publication_release": false
+  },
+  "measurement": {
+    "primary": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "numerator_definition": "merchant-confirmed settled gross paid revenue or commission minus refunds, chargebacks, payment/affiliate fees attributable to cohort",
+    "denominator_definition": "consented privacy-safe qualified human sessions (not raw views) crosswalked by permitted campaign + immutable asset_id",
+    "affiliate_click_is_sale": false,
+    "signup_click_is_lead": false,
+    "required_reconciliation": "merchant-originated paid conversion and fees/refunds; no invented zero on missing data",
+    "personal_identifiers": "FORBIDDEN",
+    "report_threshold": 20
+  }
+}
