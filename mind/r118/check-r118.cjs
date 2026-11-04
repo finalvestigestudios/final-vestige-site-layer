@@ -21,12 +21,12 @@ function checkAll(files){
   const cases=[];
   function check(label,fn){try{if(!fn())throw Error('assertion false');cases.push({label,pass:true})}catch(e){cases.push({label,pass:false,error:String(e.message||e)})}}
   check('original article has meaningful length',()=>a.trim().split(/\s+/).length>=1800);
-  check('article is unpublished editorial only',()=>a.includes('UNPUBLISHED EDITORIAL DRAFT')&&a.includes('No commercial recommendation or purchase offer'));
+  check('article is unpublished editorial only',()=>a.includes('UNPUBLISHED EDITORIAL DRAFT')&&a.includes('no product recommendation or purchase offer'));
   check('article contains original free reflection',()=>a.includes('free field observation')&&a.includes('not a validated psychological instrument'));
   check('article cites original experience sampling',()=>a.includes('10.1126/science.1192439'));
   check('article cites independent review',()=>a.includes('annurev-psych-010814-015331'));
-  check('article cites RCT with limitation',()=>a.includes('23538911/')&&a.includes('not a Zen12 audio trial'));
-  check('article marks merchant benefits unproven',()=>a.includes('does not establish Zen12-specific effects')&&a.includes('hour of advanced meditation'));
+  check('article cites RCT with limitation',()=>a.includes('23538911/')&&a.includes('They did not simply purchase'));
+  check('article marks merchant benefits unproven',()=>a.includes('did not establish Zen12-specific effects')&&a.includes('hour of advanced meditation'));
   check('article links existing Focus only as optional',()=>a.includes('https://finalvestige.com/focus/')&&a.includes('no need to subscribe'));
   check('plan chooses one actual merchant product',()=>p.includes('https://zen12.com/hnp')&&p.includes('Zen12 Premium'));
   check('plan explicitly rejects invented paid FV product',()=>p.includes('No Payhip seller-dashboard connector')&&p.includes('NOT VERIFIED'));
