@@ -1,0 +1,65 @@
+{
+  "version": "R103-2026-11-03",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stack_parent_pr": 865,
+  "stack_parent_sha": "2c5a5b3e0f87488e98c240fd823b0c36d5eddf56",
+  "issue_number": 4,
+  "kind": "editorial",
+  "status": "HOLD_UNSENT",
+  "proposed_only": true,
+  "post_title_candidate": "The test they called nonhazardous",
+  "preheader_candidate": "Apollo 1 carried no rocket fuel that day. That was not the whole risk.",
+  "preheader_native_supported": "UNVERIFIED",
+  "only_primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+  "word_count": 470,
+  "source_urls": [
+    "https://www.nasa.gov/mission/apollo-1/",
+    "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+    "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/",
+    "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/"
+  ],
+  "claim_decisions": [
+    {
+      "claim": "AS-204 test involved unfueled Saturn IB and plugs-out rehearsal",
+      "classification": "NASA DOCUMENTED"
+    },
+    {
+      "claim": "Test considered nonhazardous and underreviewed",
+      "classification": "NASA DOCUMENTED"
+    },
+    {
+      "claim": "Pure-oxygen atmosphere, combustibles, wiring risks",
+      "classification": "NASA DOCUMENTED"
+    },
+    {
+      "claim": "Exact ignition source identified",
+      "classification": "NOT ESTABLISHED — DO NOT STATE"
+    },
+    {
+      "claim": "90 seconds minimum ideal hatch release, impossible with rising pressure",
+      "classification": "NASA DOCUMENTED"
+    },
+    {
+      "claim": "14 seconds definitive time to death",
+      "classification": "DO NOT STATE"
+    }
+  ],
+  "wordpress": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "actual_eligible_email_recipients": null,
+    "received_email_verified": false,
+    "valid_fv_postal_address_verified": false,
+    "unsubscribe_function_verified": false
+  },
+  "merchant_issue_numbers": [
+    3,
+    5
+  ],
+  "merchant_approved": false,
+  "affiliate_links": [],
+  "founder_final_campaign_approval": false,
+  "created_for": "SOURCE-LED HUMAN REVIEW ONLY"
+}
