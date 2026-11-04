@@ -18,6 +18,31 @@ const mediaHost=(raw)=>{
   try {const u=new URL(raw);return u.protocol==='https:'&&['finalvestige.com','i0.wp.com'].includes(u.hostname)&&!u.username&&!u.password&&/\.(webp|png|jpe?g|svg)$/i.test(u.pathname);}catch{return false;}
 };
 const widths=[320,390,768,1440,1920];
+export const PUBLISHED_MARGINS_LABEL='72 published historical fragments in isolated review';
+// This verifies REAL published page-6 text provenance, not merely 72 placeholders.
+// No production requests, user records or credentials; fixture contains public text.
+export function validatePublishedMarginsFixture(data){
+  assert.equal(data?.source_site_id,256784396,'Unexpected Margins site');
+  assert.equal(data?.source_page_id,6,'Unexpected Margins page');
+  assert.equal(data?.source_url,'https://finalvestige.com/','Unexpected Margins origin');
+  assert.equal(data?.status,'ISOLATED_WORDPRESS_PLAYGROUND_ONLY');
+  assert.equal(data?.fragment_count,72);
+  assert.ok(Array.isArray(data?.items)&&data.items.length===72,'Margins fixture must have 72 records');
+  const texts=data.items.map((entry,i)=>{
+    assert.ok(entry&&entry.index===i&&typeof entry.text==='string'&&entry.text.length>0,
+      'Margins fixture index/content mismatch at '+i);
+    return entry.text;
+  });
+  assert.equal(new Set(texts).size,72,'Duplicate published Margins');
+  return texts;
+}
+export function firstMarginMismatch(actual,expected){
+  assert.ok(Array.isArray(actual)&&Array.isArray(expected),'Margins arrays required');
+  for(let i=0;i<Math.max(actual.length,expected.length);i++){
+    if(actual[i]!==expected[i])return i;
+  }
+  return -1;
+}
 async function walk(base,dir=base){
   const out=[];
   for(const d of await readdir(dir,{withFileTypes:true})){
@@ -137,7 +162,7 @@ export function assertRenderedScriptNames(names){
   assert.deepEqual(names,EXPECTED_RENDERED_SCRIPTS,
     'Missing, duplicated, reordered or unauthorized rendered flagship JS');
 }
-async function checkView(page,width,axePath,outputDirectory){
+async function checkView(page,width,axePath,outputDirectory,expectedMargins){
   await page.setViewportSize({width,height:900});
   await page.goto(page.stageUrl,{waitUntil:'domcontentloaded',timeout:90000});
   await page.locator('[data-fv-home-flagship]').waitFor({timeout:30000});
@@ -195,9 +220,14 @@ async function checkView(page,width,axePath,outputDirectory){
   assert.ok(state.root_width>=width-2 && state.root_width<=width+2,
     `SAVED Assembler full-bleed canvas failed at ${width}: ${state.root_width}px (620px theme baseline)`);
   assert.deepEqual(state.margins_region,{
-    present:true,role:'region',label:'72 synthetic historical fragments',
+    present:true,role:'region',label:PUBLISHED_MARGINS_LABEL,
     tabindex:'0',item_count:72,overflow_y:'auto',first_position:'static'
-  },'Synthetic Margins must remain readable and keyboard scrollable without JS');
+  },'Published Margins fixture must remain readable and keyboard scrollable without JS');
+  // 72 visible nodes alone cannot prove real page-6 data survived Gutenberg.
+  // Compare all 72 exact published strings; report only a mismatch index.
+  const mismatch=firstMarginMismatch(
+    await page.locator('.fv-margin-strip__item').allTextContents(),expectedMargins);
+  assert.equal(mismatch,-1,'Published Margins DOM text drift at index '+mismatch);
   // Preserve HTTP-body AND actual browser decode receipts if axe fails.
   // Media re-fetched only at desktop to avoid 5x redundant transfers.
   const media=width===1440?await imageBodies(page):[];
@@ -219,7 +249,7 @@ async function checkView(page,width,axePath,outputDirectory){
           nodes:v.nodes.length,selectors:v.nodes.slice(0,3).map(n=>n.target)}));
       } finally {clearTimeout(timer);}
     };
-    // A component-only axe pass can MISS the 72 synthetic Margins fragments,
+    // A component-only axe pass can MISS the 72 published Margins fragments,
     // Jetpack stub and Assembler navigation. Require BOTH scoped and full DOM.
     const flagship=await runBounded(document.querySelector('[data-fv-home-flagship]'));
     const whole_document=await runBounded(document);
@@ -243,6 +273,9 @@ export async function collectViewportEvidence(viewports,check){
 export async function runAssemblerPreview({server,browser,context,draftId,themeDirectory,outputDirectory}){
   assert.ok(Number.isInteger(draftId)&&draftId>0);
   assert.ok(loopback(server.serverUrl));
+  const publishedFixture=JSON.parse(await readFile(
+    new URL('./public_page6_margins_20261102.json',import.meta.url),'utf8'));
+  const expectedMargins=validatePublishedMarginsFixture(publishedFixture);
   const theme=await activateTheme(server,themeDirectory);
   await mkdir(outputDirectory,{recursive:true});
   const blocked=new Set(),page=await context.newPage();
@@ -257,7 +290,7 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   // Full-document axe remains enabled for the entire five-width matrix.
   const navigationFixture=await correctIsolatedNavigation({server,page,axePath,outputDirectory});
   const {completed:responsive,failures:viewportFailures}=await collectViewportEvidence(
-    widths,width=>checkView(page,width,axePath,outputDirectory));
+    widths,width=>checkView(page,width,axePath,outputDirectory,expectedMargins));
   // A serious Assembler theme issue at one breakpoint must not erase screenshots
   // or the media decode results from every later breakpoint. All failures are
   // kept as explicit HOLDs; there is no suppression of failed axe rules.
@@ -298,19 +331,22 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
       window_overflow:windowEl?getComputedStyle(windowEl).overflowY:null,
       horizontal_overflow:document.documentElement.scrollWidth>innerWidth+1};
   });
+  const noJSMismatch=firstMarginMismatch(
+    await noPage.locator('.fv-margin-strip__item').allTextContents(),expectedMargins);
+  assert.equal(noJSMismatch,-1,'Published Margins no-JS text drift at index '+noJSMismatch);
   assert.deepEqual(noJSCSS,{item_position:'static',item_opacity:'1',
     window_overflow:'auto',horizontal_overflow:false},
-    'CSS must keep all 72 synthetic records readable without JavaScript');
+    'CSS must keep all 72 published fixture records readable without JavaScript');
   assert.deepEqual(noJS,{chapters:7,margins:72,h1:1,
     saved_layout_styles:1,canvas_width:390,region_tabindex:'0',region_role:'region'});
   await noContext.close();
   if(viewportFailures.length)
     throw new Error('ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD '+
       JSON.stringify(viewportFailures));
-  return {type:'ISOLATED_WP_ASSEMBLER_RENDER_SYNTHETIC_ONLY',release:'HOLD',theme,
+  return {type:'ISOLATED_WP_ASSEMBLER_PUBLIC_MARGINS_SYNTHETIC_JETPACK',release:'HOLD',theme,
     responsive,navigation_fixture:navigationFixture,zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
-    limits:['synthetic Margins are not production historical records','stage CSS is not proposed production CSS',
-      'not WP.com Atomic parity','the local Assembler header is intentionally overridden via native WP template part; unmodified-vendor axe remains FAIL','not real Jetpack','not real hosted page6 content','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
+    limits:['72 Margins texts match published page 6 but are not independently re-fact-checked','stage CSS is not proposed production CSS',
+      'not WP.com Atomic parity','the local Assembler header is intentionally overridden via native WP template part; unmodified-vendor axe remains FAIL','not real Jetpack','not complete hosted page6 or live Margins rotator parity','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
 }
 // Export a strictly read-only browser-media routine for mock adversarial tests.
 export {imageBodies};
