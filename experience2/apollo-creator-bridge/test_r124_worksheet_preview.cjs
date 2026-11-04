@@ -1,0 +1,27 @@
+'use strict';
+// R124 source contract. node --test experience2/apollo-creator-bridge/test_r124_worksheet_preview.cjs
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const html=fs.readFileSync(path.join(__dirname,'landing-preview.html'),'utf8');
+const py=fs.readFileSync(path.join(__dirname,'qa_r113_print.py'),'utf8');
+const has=(s)=>assert.ok(html.includes(s),s);
+test('Single educator CTA unchanged',()=>assert.equal((html.match(/data-fv-primary-cta/g)||[]).length,1));
+test('Opt-in preview control is initially hidden for no JS',()=>has('data-fv-preview-student aria-controls="student-print-preview" aria-expanded="false" hidden'));
+test('Preview target has matching id and focus destination',()=>has('id="student-print-preview" tabindex="-1"'));
+test('Preview content hidden until opted in',()=>has('.student-print-sheet{display:none}'));
+test('Screen-only preview displays sheet',()=>has('.student-print-sheet.fv-student-preview{display:block'));
+test('Close button initially hidden for no JS',()=>has('data-fv-preview-close hidden'));
+test('Preview close and trigger do not print',()=>has('@media print{[data-fv-preview-close], [data-fv-preview-student]{display:none!important}}'));
+test('Preview uses no external image resource or analytics',()=>{assert.doesNotMatch(html,/<form\b|<iframe\b|<script\b[^>]*src=|sendBeacon\s*\(/i);});
+test('Preview returns focus to trigger when closed',()=>has('openButton.focus()'));
+test('Opening preview moves focus to worksheet',()=>has('sheet.focus({preventScroll:true})'));
+test('Motion does not animate the scroll',()=>has("behavior:'instant'"));
+test('Escape closes preview',()=>has("event.key==='Escape'"));
+test('No JavaScript still prints a complete handout',()=>has('.student-print-sheet{display:block!important'));
+test('Six NASA photographic references are still available to worksheet',()=>assert.equal((html.match(/data-fv-student-photo="0[1-6]"/g)||[]).length,6));
+test('No hypothetical paid casefile is offered for sale',()=>assert.doesNotMatch(html,/<a[^>]+payhip/i));
+test('Full browser runner checks preview focus and closing',()=>assert.match(py,/preview focus not sent to handout/));
+test('Full browser runner checks no JS controls remain hidden',()=>assert.match(py,/no-JS preview controls stranded user/));
+test('Full browser runner keeps source identity acceptance gate',()=>assert.match(py,/EXACT_GIT_HEAD/));
