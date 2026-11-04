@@ -45,7 +45,7 @@ test('commercial KPI stays unknown, never silently zero',()=>{
  assert.equal(matrix.measurement.net_revenue_per_1000_qualified_sessions,null);
 });
 test('seller discount explicitly conditional and not advertised as universal',()=>{
- assert(/conditional \$37/i.test(guide));assert(/$87\.99/i.test(guide));assert(/not universally verified/i.test(guide));
+ assert(/conditional \$37/i.test(guide));assert(guide.includes('$87.99'));assert(/not universally verified/i.test(guide));
 });
 test('seller privacy and FTC sources present',()=>{
  for(const s of ['https://inspire3.com/privacy/','https://affiliates.inspire3.com/'])assert(guide.includes(s));assert(html.includes('ftc.gov'));
