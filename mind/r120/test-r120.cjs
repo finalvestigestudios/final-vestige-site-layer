@@ -50,7 +50,7 @@ function audit(files) {
   check('panel no autoplay',!/<(?:video|audio)\b[^>]*\sautoplay\b/i.test(H));
   check('panel declares noindex',/noindex,nofollow/.test(H));
   check('panel native details disclosure',/<details>/.test(H)&&/<summary>/.test(H));
-  check('panel clear prospective commission disclosure',/Affiliate disclosure:/.test(H)&&/may earn a commission at no additional cost/.test(H));
+  check('panel clear prospective commission disclosure',/affiliate disclosure:/i.test(H)&&/may earn a commission at no additional cost/.test(H));
   check('panel disclosure adjacent to disabled purchase',H.indexOf('Prospective affiliate disclosure:')>0&&H.indexOf('Prospective affiliate disclosure:')<H.indexOf('Purchasing unavailable pending partner verification'));
   check('panel purchasing button disabled',/<button\b[^>]*disabled[^>]*>Purchasing unavailable pending partner verification<\/button>/.test(H));
   check('panel actual affiliate earning URL not present',!/(?:hop\.clickbank|awin1\.com|clickbank\.net|referral_code|aff_id=|affiliate_id=)/i.test(H));
