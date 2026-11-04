@@ -112,7 +112,8 @@ class FullSourceFlagshipTests(unittest.TestCase):
         self.assertIn("living people's information", candidate)
         self.assertIn("72 PUBLISHED MARGINS · TEST FIXTURE", candidate)
         self.assertEqual(candidate.count("jetpack/subscriptions"), 1)
-        self.assertIn("SYNTHETIC", candidate, "Fixture provenance must remain prominent")
+        self.assertEqual(manifest["data_classification"],
+                         "PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE")
 
     def test_public_margins_custody_mutations_fail_closed(self):
         original = json.loads(PUBLIC_MARGINS_JSON.read_text(encoding="utf-8"))
