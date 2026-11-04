@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "kind": "read_only_cms_rendered_source_transport_and_primary_archive_review_NOT_BROWSER_PROOF",
+  "reviewed_on": "2026-11-03",
+  "article": {
+    "post_id": 211,
+    "title": "The Men Who Wouldn’t Turn Left",
+    "status": "publish",
+    "url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+    "wp_last_modified": "2026-11-02T21:39:32",
+    "frozen_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+    "live_images_count": 6,
+    "rendered_jp_proxy_upstreams": 6,
+    "html_missing_width_height_slots": [
+      "211:4"
+    ],
+    "original_master_ratio_conflict_slots": [
+      "211:1"
+    ]
+  },
+  "primary_sources": [
+    "https://www.nps.gov/poch/learn/photosmultimedia/colorized-photographs.htm",
+    "https://www.nps.gov/poch/learn/historyculture/the-mutiny-trial.htm",
+    "https://www.nps.gov/media/photo/gallery-item.htm?gid=F43C40BA-155D-4519-3E65DCCAA9DF3210&id=F43F8E40-155D-4519-3EEE18A86D8D0AEF&pg=21928",
+    "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm"
+  ],
+  "summary": {
+    "published_slots": 6,
+    "upstream_verified_path_matches": 6,
+    "independent_retriever_inaccessible_without_origin_status": 6,
+    "nps_item_ids": 5,
+    "missing_html_dimensions": 1,
+    "possible_visual_ratio_conflict": 1,
+    "confirmed_guest_broken_images": 0,
+    "confirmed_guest_broken_images_observed": false,
+    "wordpress_replacements_made": 0,
+    "weight_reduction_pct_measured": null
+  },
+  "baseline": {
+    "site_posts": 61,
+    "stored_image_refs": 355,
+    "stored_offsite_refs": 288,
+    "oversized_wp_originals": 13,
+    "purported_broken_42_browser_verified": false,
+    "purported_image_wire_savings_76_measured": false
+  },
+  "rows": [
+    {
+      "image_key": "211:0",
+      "post_id": 211,
+      "archived_20261030_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "wp_api_rendered_img_url": "https://i0.wp.com/www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?resize=1024%2C799&ssl=1",
+      "wp_api_rendered_alt": "African American sailors loading munitions onto a ship at Port Chicago Naval Magazine during World War II.",
+      "archived_alt": "African American sailors loading munitions onto a ship at Port Chicago Naval Magazine during World War II.",
+      "origin_host": "www.nps.gov",
+      "effective_rendered_src_host": "i0.wp.com",
+      "proxy_upstream_host": "www.nps.gov",
+      "same_upstream_path_as_frozen": true,
+      "wp_html_img_width_px": 1024,
+      "wp_html_img_height_px": 799,
+      "wp_html_ratio": 1.2816,
+      "registered_nps_item_id": "POCH 2.078",
+      "nps_primary_catalog_url": "https://www.nps.gov/poch/learn/photosmultimedia/colorized-photographs.htm",
+      "nps_gallery_master_candidate": null,
+      "master_aspect_ratio_conflict": false,
+      "exact_master_binary_or_crop_verified": false,
+      "original_intrinsic_width_px": null,
+      "original_intrinsic_height_px": null,
+      "conditional_960_derivative": {
+        "width_px": 960,
+        "height_px": 749,
+        "based_on": "live_rendered_HTML_geometry_not_original_pixel_dimensions",
+        "source_intrinsic_unverified": true,
+        "no_upscale_pending": true
+      },
+      "source_transport": {
+        "method": "independent_text_web_retriever",
+        "checked_on": "2026-11-03",
+        "outcome": "TOOL_INACCESSIBLE_NO_ORIGIN_HTTP",
+        "numeric_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_cdp_uncached_wire_bytes": null
+      },
+      "rights": {
+        "item_level_rights_approved": false,
+        "ref": "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm",
+        "rationale": "NPS warns individual gallery items may not be public domain and require rights/credit checks; the historic Navy/NARA trial photo is credited outside NPS.",
+        "manual_credit_review_required": true
+      },
+      "hold": {
+        "original_replacement": false,
+        "wordpress_upload": false,
+        "wordpress_post_edit": false,
+        "duplicate_or_cropped_candidate": false
+      }
+    },
+    {
+      "image_key": "211:1",
+      "post_id": 211,
+      "archived_20261030_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80A5458E-F39E-DB01-9A32F52ABA3482BE/80A5458E-F39E-DB01-9A32F52ABA3482BE.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "wp_api_rendered_img_url": "https://i0.wp.com/www.nps.gov/common/uploads/pwr/park/poch/80A5458E-F39E-DB01-9A32F52ABA3482BE/80A5458E-F39E-DB01-9A32F52ABA3482BE.jpg?resize=1024%2C816&ssl=1",
+      "wp_api_rendered_alt": "African American sailors handling munitions at Port Chicago Naval Magazine during World War II.",
+      "archived_alt": "African American sailors handling munitions at Port Chicago Naval Magazine during World War II.",
+      "origin_host": "www.nps.gov",
+      "effective_rendered_src_host": "i0.wp.com",
+      "proxy_upstream_host": "www.nps.gov",
+      "same_upstream_path_as_frozen": true,
+      "wp_html_img_width_px": 1024,
+      "wp_html_img_height_px": 816,
+      "wp_html_ratio": 1.2549,
+      "registered_nps_item_id": "POCH 2.115",
+      "nps_primary_catalog_url": "https://www.nps.gov/poch/learn/photosmultimedia/colorized-photographs.htm",
+      "nps_gallery_master_candidate": {
+        "width_px": 1588,
+        "height_px": 2026,
+        "source": "https://www.nps.gov/media/photo/gallery-item.htm?gid=F43C40BA-155D-4519-3E65DCCAA9DF3210&id=F43F8E40-155D-4519-3EEE18A86D8D0AEF&pg=21928",
+        "source_record": "POCH 2.115",
+        "proven_same_binary": false
+      },
+      "master_aspect_ratio_conflict": true,
+      "exact_master_binary_or_crop_verified": false,
+      "original_intrinsic_width_px": null,
+      "original_intrinsic_height_px": null,
+      "conditional_960_derivative": {
+        "width_px": 960,
+        "height_px": 765,
+        "based_on": "live_rendered_HTML_geometry_not_original_pixel_dimensions",
+        "source_intrinsic_unverified": true,
+        "no_upscale_pending": true
+      },
+      "source_transport": {
+        "method": "independent_text_web_retriever",
+        "checked_on": "2026-11-03",
+        "outcome": "TOOL_INACCESSIBLE_NO_ORIGIN_HTTP",
+        "numeric_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_cdp_uncached_wire_bytes": null
+      },
+      "rights": {
+        "item_level_rights_approved": false,
+        "ref": "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm",
+        "rationale": "NPS warns individual gallery items may not be public domain and require rights/credit checks; the historic Navy/NARA trial photo is credited outside NPS.",
+        "manual_credit_review_required": true
+      },
+      "hold": {
+        "original_replacement": false,
+        "wordpress_upload": false,
+        "wordpress_post_edit": false,
+        "duplicate_or_cropped_candidate": false
+      }
+    },
+    {
+      "image_key": "211:2",
+      "post_id": 211,
+      "archived_20261030_url": "https://www.nps.gov/common/uploads/pwr/park/poch/ED8E4950-C94B-14B3-1E358F1265D3F870/ED8E4950-C94B-14B3-1E358F1265D3F870.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "wp_api_rendered_img_url": "https://i0.wp.com/www.nps.gov/common/uploads/pwr/park/poch/ED8E4950-C94B-14B3-1E358F1265D3F870/ED8E4950-C94B-14B3-1E358F1265D3F870.jpg?resize=1024%2C863&ssl=1",
+      "wp_api_rendered_alt": "Wreckage, destroyed structures, and damaged automobiles at Port Chicago after the July 17, 1944 explosion.",
+      "archived_alt": "Wreckage, destroyed structures, and damaged automobiles at Port Chicago after the July 17, 1944 explosion.",
+      "origin_host": "www.nps.gov",
+      "effective_rendered_src_host": "i0.wp.com",
+      "proxy_upstream_host": "www.nps.gov",
+      "same_upstream_path_as_frozen": true,
+      "wp_html_img_width_px": 1024,
+      "wp_html_img_height_px": 863,
+      "wp_html_ratio": 1.1866,
+      "registered_nps_item_id": "POCH 2-113",
+      "nps_primary_catalog_url": "https://www.nps.gov/poch/learn/photosmultimedia/colorized-photographs.htm",
+      "nps_gallery_master_candidate": null,
+      "master_aspect_ratio_conflict": false,
+      "exact_master_binary_or_crop_verified": false,
+      "original_intrinsic_width_px": null,
+      "original_intrinsic_height_px": null,
+      "conditional_960_derivative": {
+        "width_px": 960,
+        "height_px": 809,
+        "based_on": "live_rendered_HTML_geometry_not_original_pixel_dimensions",
+        "source_intrinsic_unverified": true,
+        "no_upscale_pending": true
+      },
+      "source_transport": {
+        "method": "independent_text_web_retriever",
+        "checked_on": "2026-11-03",
+        "outcome": "TOOL_INACCESSIBLE_NO_ORIGIN_HTTP",
+        "numeric_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_cdp_uncached_wire_bytes": null
+      },
+      "rights": {
+        "item_level_rights_approved": false,
+        "ref": "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm",
+        "rationale": "NPS warns individual gallery items may not be public domain and require rights/credit checks; the historic Navy/NARA trial photo is credited outside NPS.",
+        "manual_credit_review_required": true
+      },
+      "hold": {
+        "original_replacement": false,
+        "wordpress_upload": false,
+        "wordpress_post_edit": false,
+        "duplicate_or_cropped_candidate": false
+      }
+    },
+    {
+      "image_key": "211:3",
+      "post_id": 211,
+      "archived_20261030_url": "https://www.nps.gov/common/uploads/pwr/park/poch/14DAEF66-B99F-637F-316D6B52D59F0C1E/14DAEF66-B99F-637F-316D6B52D59F0C1E.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "wp_api_rendered_img_url": "https://i0.wp.com/www.nps.gov/common/uploads/pwr/park/poch/14DAEF66-B99F-637F-316D6B52D59F0C1E/14DAEF66-B99F-637F-316D6B52D59F0C1E.jpg?resize=1024%2C828&ssl=1",
+      "wp_api_rendered_alt": "Railroad tracks and debris at Port Chicago Naval Magazine after the 1944 ammunition explosion.",
+      "archived_alt": "Railroad tracks and debris at Port Chicago Naval Magazine after the 1944 ammunition explosion.",
+      "origin_host": "www.nps.gov",
+      "effective_rendered_src_host": "i0.wp.com",
+      "proxy_upstream_host": "www.nps.gov",
+      "same_upstream_path_as_frozen": true,
+      "wp_html_img_width_px": 1024,
+      "wp_html_img_height_px": 828,
+      "wp_html_ratio": 1.2367,
+      "registered_nps_item_id": "POCH 2-056",
+      "nps_primary_catalog_url": "https://www.nps.gov/poch/learn/photosmultimedia/colorized-photographs.htm",
+      "nps_gallery_master_candidate": null,
+      "master_aspect_ratio_conflict": false,
+      "exact_master_binary_or_crop_verified": false,
+      "original_intrinsic_width_px": null,
+      "original_intrinsic_height_px": null,
+      "conditional_960_derivative": {
+        "width_px": 960,
+        "height_px": 776,
+        "based_on": "live_rendered_HTML_geometry_not_original_pixel_dimensions",
+        "source_intrinsic_unverified": true,
+        "no_upscale_pending": true
+      },
+      "source_transport": {
+        "method": "independent_text_web_retriever",
+        "checked_on": "2026-11-03",
+        "outcome": "TOOL_INACCESSIBLE_NO_ORIGIN_HTTP",
+        "numeric_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_cdp_uncached_wire_bytes": null
+      },
+      "rights": {
+        "item_level_rights_approved": false,
+        "ref": "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm",
+        "rationale": "NPS warns individual gallery items may not be public domain and require rights/credit checks; the historic Navy/NARA trial photo is credited outside NPS.",
+        "manual_credit_review_required": true
+      },
+      "hold": {
+        "original_replacement": false,
+        "wordpress_upload": false,
+        "wordpress_post_edit": false,
+        "duplicate_or_cropped_candidate": false
+      }
+    },
+    {
+      "image_key": "211:4",
+      "post_id": 211,
+      "archived_20261030_url": "https://www.nps.gov/poch/learn/historyculture/images/Mutiny-Trial.jpeg?autorotate=false&maxwidth=650",
+      "wp_api_rendered_img_url": "https://i0.wp.com/www.nps.gov/poch/learn/historyculture/images/Mutiny-Trial.jpeg?ssl=1",
+      "wp_api_rendered_alt": "The Port Chicago 50 seated in a Navy courtroom during the 1944 mutiny trial at Treasure Island.",
+      "archived_alt": "The Port Chicago 50 seated in a Navy courtroom during the 1944 mutiny trial at Treasure Island.",
+      "origin_host": "www.nps.gov",
+      "effective_rendered_src_host": "i0.wp.com",
+      "proxy_upstream_host": "www.nps.gov",
+      "same_upstream_path_as_frozen": true,
+      "wp_html_img_width_px": null,
+      "wp_html_img_height_px": null,
+      "wp_html_ratio": null,
+      "registered_nps_item_id": null,
+      "nps_primary_catalog_url": "https://www.nps.gov/poch/learn/historyculture/the-mutiny-trial.htm",
+      "nps_gallery_master_candidate": null,
+      "master_aspect_ratio_conflict": false,
+      "exact_master_binary_or_crop_verified": false,
+      "original_intrinsic_width_px": null,
+      "original_intrinsic_height_px": null,
+      "conditional_960_derivative": {
+        "width_px": null,
+        "height_px": null,
+        "based_on": "unknown_source_geometry",
+        "source_intrinsic_unverified": true,
+        "no_upscale_pending": true
+      },
+      "source_transport": {
+        "method": "independent_text_web_retriever",
+        "checked_on": "2026-11-03",
+        "outcome": "TOOL_INACCESSIBLE_NO_ORIGIN_HTTP",
+        "numeric_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_cdp_uncached_wire_bytes": null
+      },
+      "rights": {
+        "item_level_rights_approved": false,
+        "ref": "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm",
+        "rationale": "NPS warns individual gallery items may not be public domain and require rights/credit checks; the historic Navy/NARA trial photo is credited outside NPS.",
+        "manual_credit_review_required": true
+      },
+      "hold": {
+        "original_replacement": false,
+        "wordpress_upload": false,
+        "wordpress_post_edit": false,
+        "duplicate_or_cropped_candidate": false
+      }
+    },
+    {
+      "image_key": "211:5",
+      "post_id": 211,
+      "archived_20261030_url": "https://www.nps.gov/common/uploads/pwr/park/poch/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "wp_api_rendered_img_url": "https://i0.wp.com/www.nps.gov/common/uploads/pwr/park/poch/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C.jpg?resize=1024%2C818&ssl=1",
+      "wp_api_rendered_alt": "Destroyed pier and debris along the waterfront at Port Chicago after the July 1944 explosion.",
+      "archived_alt": "Destroyed pier and debris along the waterfront at Port Chicago after the July 1944 explosion.",
+      "origin_host": "www.nps.gov",
+      "effective_rendered_src_host": "i0.wp.com",
+      "proxy_upstream_host": "www.nps.gov",
+      "same_upstream_path_as_frozen": true,
+      "wp_html_img_width_px": 1024,
+      "wp_html_img_height_px": 818,
+      "wp_html_ratio": 1.2518,
+      "registered_nps_item_id": "POCH 2-055",
+      "nps_primary_catalog_url": "https://www.nps.gov/poch/learn/photosmultimedia/colorized-photographs.htm",
+      "nps_gallery_master_candidate": null,
+      "master_aspect_ratio_conflict": false,
+      "exact_master_binary_or_crop_verified": false,
+      "original_intrinsic_width_px": null,
+      "original_intrinsic_height_px": null,
+      "conditional_960_derivative": {
+        "width_px": 960,
+        "height_px": 767,
+        "based_on": "live_rendered_HTML_geometry_not_original_pixel_dimensions",
+        "source_intrinsic_unverified": true,
+        "no_upscale_pending": true
+      },
+      "source_transport": {
+        "method": "independent_text_web_retriever",
+        "checked_on": "2026-11-03",
+        "outcome": "TOOL_INACCESSIBLE_NO_ORIGIN_HTTP",
+        "numeric_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_decoded": null,
+        "guest_current_src": null,
+        "guest_cdp_uncached_wire_bytes": null
+      },
+      "rights": {
+        "item_level_rights_approved": false,
+        "ref": "https://www.nps.gov/poch/learn/photosmultimedia/photogallery.htm",
+        "rationale": "NPS warns individual gallery items may not be public domain and require rights/credit checks; the historic Navy/NARA trial photo is credited outside NPS.",
+        "manual_credit_review_required": true
+      },
+      "hold": {
+        "original_replacement": false,
+        "wordpress_upload": false,
+        "wordpress_post_edit": false,
+        "duplicate_or_cropped_candidate": false
+      }
+    }
+  ],
+  "release_gate": {
+    "rights_per_item_required": true,
+    "visual_subject_crop_match_required": true,
+    "max_width_px": 960,
+    "no_upscale_required": true,
+    "guest_chrome_actual_get_decode_and_cdp_bytes_required": true,
+    "site_qa_pr_154_owns_browser_tests": true,
+    "wp_production_write_authorized": false,
+    "homepage_design_unchanged": true,
+    "no_spend": true
+  }
+}
