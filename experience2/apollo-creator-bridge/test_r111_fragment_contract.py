@@ -69,7 +69,7 @@ class R111Contract(unittest.TestCase):
         self.assertIn('len(receipts) == 14 and len(metrics) == 6 and len(screen) == 6', RUNNER)
 
     def test_no_new_tracking_script(self):
-        self.assertEqual(len(re.findall(r'<script\\b', HTML)), 1)
+        self.assertEqual(HTML.count('<script>'), 1)
         self.assertNotIn('analytics.js', HTML)
         self.assertNotIn('googletagmanager', HTML)
 
