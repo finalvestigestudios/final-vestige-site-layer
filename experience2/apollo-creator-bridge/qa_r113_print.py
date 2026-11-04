@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Apollo actual-source offline Chromium regression. Full PASS requires axe, touch, performance and print."""
-import argparse, hashlib, json, math
+import argparse, hashlib, json, math, subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent
@@ -15,15 +15,34 @@ new PerformanceObserver(l=>{for(const e of l.getEntries())
 .observe({type:'layout-shift',buffered:true});
 }"""
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def source_identity(html):
+    """Release-acceptance evidence must correspond to the tracked HEAD bytes, not a renamed fixture."""
+    if html.resolve() != (ROOT/'landing-preview.html').resolve():
+        return 'NOT_CANONICAL_LANDING'
+    try:
+        result=subprocess.run(['git','show','HEAD:experience2/apollo-creator-bridge/landing-preview.html'],
+                              cwd=ROOT,capture_output=True,check=False,timeout=10)
+    except (OSError,subprocess.TimeoutExpired):
+        return 'GIT_HEAD_UNAVAILABLE'
+    if result.returncode:
+        return 'GIT_HEAD_UNAVAILABLE'
+    return ('EXACT_GIT_HEAD' if hashlib.sha256(result.stdout).hexdigest()==sha(html)
+            else 'HEAD_SOURCE_MISMATCH')
 def require(ok,message):
     if not ok:raise AssertionError(message)
 def run(html,out,exe,axe=None):
     body=html.read_text(encoding='utf-8');out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
                 browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
+                source_identity='UNCHECKED',
                 complete=False,failure_code=None,worksheet_pdf=None)
     journal=out/'R113_BROWSER_RECEIPT.json'
     def checkpoint():journal.write_text(json.dumps(record,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+    record['source_identity']=source_identity(html)
+    if record['source_identity']!='EXACT_GIT_HEAD':
+        record['failure_code']='UNVERIFIED_SOURCE_IDENTITY'
+        checkpoint()
+        raise AssertionError('actual-source release QA requires canonical file identical to git HEAD; '+record['source_identity'])
     checkpoint()
     with sync_playwright() as p:
         browser=p.chromium.launch(executable_path=exe,headless=True,args=['--no-sandbox'])
@@ -134,10 +153,10 @@ def run(html,out,exe,axe=None):
                     # must produce only the student worksheet, with its own source-custody notice.
                     if js and w in (390,1440):
                         page.emulate_media(media='screen')
-                        page.evaluate("window.print=()=>{window.__fv_print_invoked=true}")
+                        page.evaluate("window.__fv_print_calls=0;window.print=()=>{window.__fv_print_calls++}")
                         page.locator('[data-fv-print-student]').click()
                         require(page.evaluate("document.body.classList.contains('fv-worksheet-only')") and
-                                page.evaluate("window.__fv_print_invoked") is True,
+                                page.evaluate("window.__fv_print_calls") == 1,
                                 label+': student-only print mode did not activate')
                         page.emulate_media(media='print')
                         require(page.locator('[data-fv-student-print]').is_visible(),
@@ -169,6 +188,26 @@ def run(html,out,exe,axe=None):
                         page.evaluate("window.dispatchEvent(new Event('afterprint'))")
                         require(not page.evaluate("document.body.classList.contains('fv-worksheet-only')"),
                                 label+': afterprint left worksheet-only mode active')
+                        # Simulate a cancelled print sheet that emits no afterprint or media event.
+                        page.emulate_media(media='screen')
+                        page.locator('[data-fv-print-student]').click()
+                        page.locator('[data-fv-print-student]').click()
+                        require(page.evaluate("window.__fv_print_calls")==3 and
+                                page.evaluate("document.body.classList.contains('fv-worksheet-only')"),
+                                label+': omitted afterprint blocked second deliberate print')
+                        page.evaluate("""document.dispatchEvent(new KeyboardEvent('keydown',
+                             {key:'p',ctrlKey:true,bubbles:true}))""")
+                        require(not page.evaluate("document.body.classList.contains('fv-worksheet-only')"),
+                                label+': native Ctrl+P did not reset prior worksheet mode')
+                        page.locator('[data-fv-print-student]').click()
+                        page.evaluate("window.dispatchEvent(new Event('pagehide'))")
+                        require(not page.evaluate("document.body.classList.contains('fv-worksheet-only')"),
+                                label+': pagehide left stale worksheet mode')
+                        page.locator('[data-fv-print-student]').click()
+                        page.evaluate("window.dispatchEvent(new Event('focus'))")
+                        page.wait_for_timeout(850)
+                        require(not page.evaluate("document.body.classList.contains('fv-worksheet-only')"),
+                                label+': focus recovery failed after abandoned print')
                     record['modes'].append(label);checkpoint();ctx.close()
             for w in (390,1440):
                 for trial in (1,2,3):
