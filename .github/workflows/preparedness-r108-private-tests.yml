@@ -1,0 +1,114 @@
+name: Preparedness R108 exact-Git source citation impact crosswalk (PRIVATE HOLD)
+on:
+  push:
+    branches:
+      - review/preparedness-r108-source-impact-crosswalk-hold-20261103
+  pull_request:
+    branches:
+      - review/preparedness-r107-contributor-progression-review-hold-20261103
+permissions:
+  contents: read
+jobs:
+  r108-private-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Exact R107 parent and strictly additive four-file engineering scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import subprocess
+          parent = "59615dde882b14cc033a14222eb7e95eada87701"
+          expected = {
+              "A\tpreparedness/tools/r108_source_citation_change_impact_crosswalk.py",
+              "A\tpreparedness/tests/test_r108_source_citation_change_impact_crosswalk.py",
+              "A\tpreparedness/docs/R108_SOURCE_CITATION_CHANGE_IMPACT_HOLD.md",
+              "A\t.github/workflows/preparedness-r108-private-tests.yml",
+          }
+          got = set(subprocess.check_output(
+              ["git", "diff", "--name-status", parent, "HEAD"],
+              text=True).splitlines())
+          assert got == expected, ("Source/site/CMS scope changed", got)
+          pins = {
+              "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+              "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+              "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+              "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+              "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+              "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+              "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+              "integration/preparedness-release-candidate-20261101": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+              "review/preparedness-start-safety-20261030": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+              "review/preparedness-food-fixture-isolation-20261030": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+              "feature/vestige-assembly-home-v1": "10495883299d53596992c26a8987f629b2904670",
+              "release/homepage-flagship-candidate-20261102": "bdf01b4a3e13fd6179ae9e847c9d4429bbe16176",
+          }
+          for ref, expected_sha in pins.items():
+              sha = subprocess.check_output(
+                  ["git", "rev-parse", "--verify", "refs/remotes/origin/" + ref],
+                  text=True).strip()
+              assert sha == expected_sha, ("Current contributor/QA/homepage SHA moved", ref, sha)
+          print("R108 four additive paths, no article/site modifications, 12 external SHA pins verified")
+          PY
+      - name: Compile and execute R108 adversarial in-memory suite
+        run: |
+          python -I -m compileall -q preparedness/tools/r108_source_citation_change_impact_crosswalk.py preparedness/tests/test_r108_source_citation_change_impact_crosswalk.py
+          python -I -m unittest discover -s preparedness/tests -p 'test_r108_*.py' -v
+      - name: Independently read frozen and revised contributor Git blobs, classify impacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I preparedness/tools/r108_source_citation_change_impact_crosswalk.py --repo-root .
+          python -I preparedness/tools/r108_source_citation_change_impact_crosswalk.py --repo-root . --json > "$RUNNER_TEMP/r108-private-impact.json"
+          python -I - "$RUNNER_TEMP/r108-private-impact.json" <<'PY'
+          import hashlib, json, sys
+          d=json.load(open(sys.argv[1], encoding='utf-8'))
+          digest=d.pop("sha256_NOT_A_SIGNATURE")
+          raw=json.dumps(d,sort_keys=True,ensure_ascii=False,allow_nan=False,separators=(',',':')).encode()
+          assert hashlib.sha256(raw).hexdigest()==digest
+          assert d["row_count"]==23
+          assert d["may_publish"] is False
+          assert d["qualified_emergency_safety_approved"] is False
+          assert d["independent_QD_PASS"] is False
+          assert d["factual_claim_support_approved"] is False
+          assert {k:sum(x["category"]==k for x in d["rows_NOT_APPROVED"])
+                  for k in ("body","meta","fragment","doc","test")} == {
+                      "body":7,"meta":6,"fragment":3,"doc":5,"test":2}
+          assert all(x["human_source_or_claim_review"]=="NOT_REVIEWED" and
+                     x["human_safety_review"]=="NOT_REVIEWED" and
+                     x["may_publish"] is False for x in d["rows_NOT_APPROVED"])
+          print("R108 exact 23 changed Git blobs independently read, all review states HOLD")
+          PY
+      - name: Native validator and non-public WordPress-ready draft build
+        run: |
+          python -I preparedness/tools/validate.py
+          python -I preparedness/tools/build.py
+      - name: Every existing Preparedness regression including new R108 tests
+        run: python -I -m unittest discover -s preparedness/tests -v
+      - name: Strict original contributor parity must fail closed on moved refs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if python -I preparedness/tools/cluster_git_parity_gate.py \
+             --repo-root . \
+             --manifest preparedness/docs/R14-SEVEN-CLUSTER-GIT-BLOB-PARITY.json \
+             --current-integrated-sha "$GITHUB_SHA" \
+             > "$RUNNER_TEMP/r108-r15-out.json" \
+             2> "$RUNNER_TEMP/r108-r15-err.log"; then
+            echo "UNEXPECTED strict historical parity pass"; exit 1
+          fi
+          grep -q 'live contributor branch moved' "$RUNNER_TEMP/r108-r15-err.log"
+          echo "Original R15 historical parity remains FAIL CLOSED (no source adoption)"
+      - name: No publishing or QD claim
+        if: always()
+        run: echo 'PRIVATE HOLD; no site/CMS writes, no human source/safety/QD approvals, no merge.'
