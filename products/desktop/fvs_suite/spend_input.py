@@ -75,8 +75,14 @@ def validated_spend_rows(
         if type(category) is not str:
             raise ValueError(f"Spend category must be imported text at physical row {physical_row}")
 
-    # After collection-wide structural preflight, parse from the immutable
-    # per-row copies. Original physical row order and callback order remain.
+    # Precompute every semantic result *before* yielding the first one.
+    # Previously the first valid row escaped to a direct iterator consumer
+    # before a later callback/date/Decimal failure became known. A consumer
+    # could write partial evidence while believing it had validated the file.
+    # The CSV-reader bound caps this additional in-memory result collection.
+    # Callback side effects cannot be rolled back: callbacks must be trusted
+    # and source authenticity remains a separate descriptor-verified concern.
+    prepared_rows: list[tuple[Mapping[str, str], str, str, str, Decimal]] = []
     for record in frozen_records:
         physical_row = record["row"]
         category = record.get("category", "")
@@ -137,5 +143,8 @@ def validated_spend_rows(
         if has_subcent:
             raise ValueError(f"Spend amount must have cent precision at physical row {physical_row}")
 
-        yield (record, vendor, calendar_day.strftime("%Y-%m"),
-               category or "Uncategorized", amount)
+        prepared_rows.append((record, vendor, calendar_day.strftime("%Y-%m"),
+                              category or "Uncategorized", amount))
+
+    # No caller can consume or export a partially parsed source collection.
+    yield from prepared_rows
