@@ -124,6 +124,20 @@
         else text = 'At +' + fmt(t) + ' s. Last recorded marker: ' + (last + 1) + ', ' + markers[last].label + ' (+' + fmt(markers[last].t) + ' s). Nothing is recorded between markers.';
         if (upcoming ? !exact : false) text += ' Next marker: ' + upcoming.label + ' at +' + fmt(upcoming.t) + ' s.';
         out.textContent = text;
+        /* Historical context views: these photos are NOT time-stamped fire evidence. */
+        const photos = $(box, '[data-fvx-chrono-photo]');
+        if (photos.length === 3) {
+          const index = t < 6 ? 0 : (t < 11.3 ? 1 : 2);
+          photos.forEach((photo, i) => {
+            photo.hidden = i !== index;
+            photo.classList.toggle('is-current', i === index);
+          });
+          const position = $(box, '[data-fvx-chrono-position]');
+          if (position) {
+            position.hidden = false;
+            position.textContent = 'Context photo ' + (index + 1) + ' of 3 · These photographs do not depict the marked seconds.';
+          }
+        }
       };
       range.addEventListener('input', update);
       update();
