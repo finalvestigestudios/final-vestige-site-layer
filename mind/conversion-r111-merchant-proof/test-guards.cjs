@@ -1,0 +1,14 @@
+const {test}=require('node:test'), assert=require('node:assert/strict'), fs=require('node:fs'), path=require('node:path');
+const base=__dirname, m=JSON.parse(fs.readFileSync(path.join(base,'eligibility-and-claims.json'),'utf8'));
+const d=fs.readFileSync(path.join(base,'zen12-buyer-evidence-audit.md'),'utf8');
+const p=fs.readFileSync(path.join(base,'commercial-conversion-contract.md'),'utf8');
+test('No activated commerce and no income fiction',()=>{assert.equal(m.no_active_affiliate_links,true);assert.equal(m.no_live_cms_write,true);assert.equal(m.revenue.realized_net,null);assert.equal(m.revenue.realized_net_per_1000_qualified_sessions,null);});
+test('All release gates are closed',()=>assert.ok(Object.values(m.release_gates).every(x=>x===false)));
+test('All cited claim IDs resolve',()=>{const ids=new Set(m.sources.map(s=>s.id));for(const c of m.claims) if(c.source) assert.ok(ids.has(c.source));});
+test('Dated prices are never represented as current checkout',()=>{assert.equal(m.dated_seller_snapshot.date,'2026-11-03');assert.equal(m.dated_seller_snapshot.actual_current_checkout_tax_and_terms,'REVERIFY');assert.match(d,/dated web observations/);});
+test('Exact offer and FTC and primary studies cited',()=>{for(const u of ['https://zen12.com/hnp/','https://inspire3.com/terms/','https://inspire3.com/privacy/','https://pubmed.ncbi.nlm.nih.gov/37205669/','https://pubmed.ncbi.nlm.nih.gov/17488185/'])assert.ok(d.includes(u));assert.match(d,/FTC endorsement guidance/);});
+test('Buyer PII constraint blocks partner',()=>{assert.equal(m.partner.aggregate_only_buyer_data_terms,null);assert.equal(m.partner.tracking_url,null);assert.match(d,/no identifiable purchaser data/i);});
+test('Free Focus stays distinct from paid sale',()=>{assert.equal(m.lead_magnet.price_status,'FREE');assert.equal(m.owned_alternative.status,'UNVERIFIED_NOT_REJECTED');assert.match(p,/not a paid conversion/i);});
+test('Grok asset IDs remain genuinely unknown',()=>{assert.match(p,/PENDING TASK-008/);assert.match(p,/Do not invent IDs/);});
+test('No unverified health guarantee',()=>{assert.match(d,/does not establish/i);assert.match(d,/No. That study used three months/);assert.doesNotMatch(d,/Zen12 will cure|guaranteed wealth|I personally used Zen12/i);});
+test('Revenue contract preserves unknown denominator',()=>{assert.equal(m.revenue.eligible_human_sessions,null);assert.match(p,/NOT COMPUTABLE/);assert.match(p,/Never replace null with 0/);});
