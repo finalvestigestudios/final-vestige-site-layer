@@ -1,4 +1,4 @@
-"""Fail-closed 30-method R185 canonical source custody gate; synthetic only."""
+"""Fail-closed 32-method R185 canonical source custody gate; synthetic only."""
 from __future__ import annotations
 
 import contextlib
@@ -26,6 +26,8 @@ EXPECTED = frozenset((
     "test_line_over_50000_rejected",
     "test_line_50000_accepted",
     "test_dict_subclass_rejected_without_hook",
+    "test_hostile_dict_key_collision_rejected_before_comparison",
+    "test_non_text_dictionary_key_rejected",
     "test_list_subclass_rejected_without_iter",
     "test_row_tuple_subclass_rejected_without_iter",
     "test_text_subclass_rejected",
@@ -57,7 +59,7 @@ def main():
         )
         cases = list(flatten(suite))
         names = [case._testMethodName for case in cases]
-        if (len(cases) != 30 or len(set(names)) != 30
+        if (len(cases) != 32 or len(set(names)) != 32
                 or set(names) != EXPECTED
                 or any(type(case).__name__ != "CanonicalCustodyR185"
                        for case in cases)):
@@ -66,7 +68,7 @@ def main():
         with open(os.devnull, "w", encoding="utf-8") as sink:
             with contextlib.redirect_stdout(sink), contextlib.redirect_stderr(sink):
                 suite.run(result)
-        passed = (result.testsRun == 30 and result.wasSuccessful()
+        passed = (result.testsRun == 32 and result.wasSuccessful()
                   and not result.skipped and not result.unexpectedSuccesses)
         print(f"R185 canonical source custody {'PASS' if passed else 'FAIL'}; "
               f"methods={result.testsRun}; failures={len(result.failures)}; "
