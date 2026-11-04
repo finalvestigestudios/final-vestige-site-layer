@@ -124,12 +124,12 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r185.py
           python -OO products/desktop/scripts/safe_unittest_r185.py
-      - name: R186 six-app static catalog publication gate (36 cases, normal and -OO)
+      - name: R186 six-app static catalog publication gate (38 cases, normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-      - name: R186 six-app static catalog publication gate (36 cases, normal and -OO)
+      - name: R186 six-app static catalog publication gate (38 cases, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
