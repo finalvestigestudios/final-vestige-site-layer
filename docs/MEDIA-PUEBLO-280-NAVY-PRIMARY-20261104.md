@@ -10,6 +10,10 @@ On November 4, 2026, independent `web.open` probes of the **exact published JPEG
 
 [Machine-readable complete six URL/ALT/transport/rights ledger](../qa/media-recovery/pueblo_280_nhhc_primary_20261104.json) and [fail-closed validator](../qa/media-recovery/validate_pueblo_280_20261104.cjs) preserve this distinction.
 
+## Confirmed live CMS integrity (read-only)
+
+A fresh **WordPress `posts.get(context=edit)` read** on November 4 confirms **post 280 is published**, last modified **2026-11-02T21:39:55**, with **6/6 exact image `src` URLs and 6/6 exact ALT values** matching the pinned October 30 frozen snapshot. **All six `<img>` tags lack width/height attributes**, establishing a factual HTML sizing omission and a *potential* layout-shift concern; **no measured CLS** is claimed. The first naive ALT parser misread the apostrophe in “ship's”; final HTML extraction correctly matches paired quote delimiters and confirms all six ALT strings. This live CMS check does **not** establish whether the image files load for visitors.
+
 ## Exact preservation and primary archive mappings
 
 | Published slot | Official catalog reference | Verified archive subject | Derivative maximum (conditional) | Concern |
@@ -37,6 +41,6 @@ No source binary SHA-256, matching decoded pixels, crop equality, or actual brow
 
 ## Regression evidence
 
-`node qa/media-recovery/test_pueblo_280_20261104.cjs` is the native Node entrypoint. The committed [test file](../qa/media-recovery/test_pueblo_280_20261104.cjs) includes frozen Git blob SHA verification, a valid-ledger baseline, **36 adversarial mutations**, wrong live SHA and drifted frozen source. **40/40** logical assertions passed in a V8 CommonJS compatibility runner against the exact GitHub-committed audit/validator/tests; the runner substituted the GitHub-reported blob SHA for Node's native SHA1 implementation. **Native Node execution, CI and guest-browser verification remain pending**.
+`node qa/media-recovery/test_pueblo_280_20261104.cjs` is the native Node entrypoint. The committed [test file](../qa/media-recovery/test_pueblo_280_20261104.cjs) includes frozen Git blob SHA verification, a valid-ledger baseline, **40 adversarial mutations**, wrong live SHA and drifted frozen source. **44/44** logical assertions passed in a V8 CommonJS compatibility runner against the exact GitHub-committed audit/validator/tests; the runner substituted the GitHub-reported blob SHA for Node's native SHA1 implementation. **Native Node execution, CI and guest-browser verification remain pending**.
 
 **Boundary:** Media Recovery #183 owns provenance, rights, derivative sizing, and measurement release safeguards. Site QA #154 owns logged-out browser inspection; homepage Interim Engineering owns visual design. Do not modify their drafts or ship unapproved WordPress changes.
