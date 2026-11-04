@@ -31,10 +31,10 @@ def source_identity(html):
             else 'HEAD_SOURCE_MISMATCH')
 def require(ok,message):
     if not ok:raise AssertionError(message)
-def run(html,out,exe,axe=None):
+def run(html,out,exe,axe=None,axe_sha256=None):
     body=html.read_text(encoding='utf-8');out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
-                browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
+                browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',axe_bundle_sha256=None,
                 source_identity='UNCHECKED',
                 complete=False,failure_code=None,worksheet_pdf=None)
     journal=out/'R113_BROWSER_RECEIPT.json'
@@ -301,7 +301,14 @@ def run(html,out,exe,axe=None):
                 record['failure_code']='AXE_BUNDLE_REQUIRED'
                 checkpoint()
                 raise AssertionError('approved local axe bundle required for full acceptance')
-            record['axe_bundle_status']='LOCAL_APPROVED_BUNDLE_PROVIDED'
+            # A local filename alone is not approval. Require an operator-supplied
+            # independently reviewed SHA-256 and record the exact bytes scanned.
+            record['axe_bundle_sha256']=sha(axe)
+            if not axe_sha256 or axe_sha256.lower()!=record['axe_bundle_sha256']:
+                record['failure_code']='AXE_DIGEST_REQUIRED_OR_MISMATCH'
+                checkpoint()
+                raise AssertionError('axe bundle requires an independently verified --axe-sha256 digest')
+            record['axe_bundle_status']='LOCAL_BUNDLE_HASH_MATCHED'
             for width in (390,1440):
                 ctx=browser.new_context(viewport={'width':width,'height':850})
                 page=ctx.new_page()
@@ -312,12 +319,20 @@ def run(html,out,exe,axe=None):
                         require(page.locator('[data-fv-lens]').is_visible(),
                                 f'axe {width}: enhancement missing')
                         page.locator('[data-fv-mode="limit"]').click()
+                    version=page.evaluate('axe.version')
+                    require(isinstance(version,str) and version.startswith('4.'),
+                            f'axe runtime identity unavailable or unsupported: {version}')
                     result=page.evaluate('async()=>await axe.run(document)')
-                    violations=[str(x['id']) for x in result['violations']]
-                    record['axe_scans'].append({'width':width,'state':state,
-                                                'violations':len(violations),'ids':violations})
+                    violations=[str(x['id']) for x in result.get('violations',[])]
+                    incomplete=[str(x['id']) for x in result.get('incomplete',[])]
+                    passes=result.get('passes',[])
+                    record['axe_scans'].append({'width':width,'state':state,'version':version,
+                                                'violations':len(violations),'ids':violations,
+                                                'incomplete':len(incomplete),'incomplete_ids':incomplete,
+                                                'passes':len(passes)})
                     checkpoint()
-                    require(not violations,f'axe violations {width}/{state}')
+                    require(not violations and not incomplete and len(passes)>=30,
+                            f'axe violations, incomplete rules or non-execution {width}/{state}')
                 ctx.close()
             require(len(record['modes'])==14 and len(record['performance'])==6 and
                     len(record['axe_scans'])==4,'incomplete matrix')
@@ -336,5 +351,6 @@ if __name__=='__main__':
     a.add_argument('--out',type=Path,default=ROOT/'qa-r113-evidence')
     a.add_argument('--chromium',default='/usr/bin/chromium')
     a.add_argument('--axe',type=Path,default=None)
+    a.add_argument('--axe-sha256',default=None,help='independently verified SHA-256 of local axe bundle')
     opts=a.parse_args()
-    print(json.dumps(run(opts.html,opts.out,opts.chromium,opts.axe),indent=2))
+    print(json.dumps(run(opts.html,opts.out,opts.chromium,opts.axe,opts.axe_sha256),indent=2))
