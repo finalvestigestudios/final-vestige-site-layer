@@ -1,0 +1,57 @@
+{
+  "as_of_utc": "2026-11-04T13:31:48Z",
+  "source": "authenticated WordPress connector: Jetpack status/get_settings, pages_get, media_list",
+  "privacy": "aggregate only; no subscriber identities",
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post_email": false,
+    "delivery": "excerpt",
+    "sender_display": "Final Vestige",
+    "reply_to": "no-reply",
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "email_reachable": null,
+    "add_counts": false,
+    "recent_post_notifications": "5 never_sent_opted_out",
+    "verified_welcome_receipt": false
+  },
+  "landing_pages": {
+    "dispatch": {
+      "id": 523,
+      "published": true,
+      "subscription_block_present": true,
+      "affiliate_expectations_disclosed": false
+    },
+    "focus": {
+      "id": 1579,
+      "published": true,
+      "subscription_block_present": true,
+      "affiliate_expectations_disclosed": true,
+      "download_link_in_page": true
+    }
+  },
+  "media": {
+    "id": 1737,
+    "mime_type": "application/pdf",
+    "file_size_bytes": 599946,
+    "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "http_get_verified": false,
+    "pdf_52_pages_verified": false,
+    "received_in_welcome_verified": false
+  },
+  "affiliate": {
+    "named_merchant_acceptance_verified": false,
+    "email_promotional_rights_verified": false,
+    "approved_live_zen12_guide_verified": false,
+    "approved_live_hypnosis_guide_verified": false,
+    "verified_paid_orders": false
+  },
+  "campaign": {
+    "original_six_issues_unchanged": true,
+    "editorial_count": 4,
+    "commercial_reserved_count": 2,
+    "all_hold_unsent": true
+  }
+}
