@@ -118,7 +118,7 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
   <section id="classroom-preview" tabindex="-1" aria-labelledby="classroom-title">
     <p class="kicker">One relevant next action / original educational value</p><h2 id="classroom-title">Use the evidence, not just the story</h2>
     <div class="callout">
-      <h3>Free source-analysis exercise</h3><p><button class="worksheet-print-trigger" type="button" data-fv-print-student hidden>Print the student worksheet only</button></p><p class="footnote">For a paper classroom handout, use your browser’s Print command. The printed record includes <strong>all four findings</strong> even when the on-screen evidence filter is active; check source URLs and rights limits before distributing NASA photographs.</p><p>Before deciding, <a href="#source-custody">review the NASA source register</a> and distinguish each photograph’s date from the fire chronology. The source record remains open without signup.</p>
+      <h3>Free source-analysis exercise</h3><p><button class="worksheet-print-trigger" type="button" data-fv-print-student aria-describedby="student-print-guidance" hidden>Print the student worksheet only</button></p><p class="footnote" id="student-print-guidance">For a paper classroom handout, use your browser’s Print command. The printed record includes <strong>all four findings</strong> even when the on-screen evidence filter is active; check source URLs and rights limits before distributing NASA photographs.</p><p>Before deciding, <a href="#source-custody">review the NASA source register</a> and distinguish each photograph’s date from the fire chronology. The source record remains open without signup.</p>
       <p><strong>Question:</strong> Why is “the hatch caused the Apollo 1 fire” an incomplete conclusion?</p>
       <details><summary>Reveal a suggested evidence-based answer</summary><p>The inward-opening hatch complicated escape as pressure rose. The investigation also identified the high-pressure oxygen atmosphere, flammable materials, possible ignition hazards and gaps in test and rescue planning. The exact ignition source was not established. Separate the conditions that promoted fire, the event sequence, the escape barrier and unresolved evidence.</p></details>
       <details><summary>Teaching prompts: claim · source · uncertainty</summary><ol><li>Identify one direct finding in the Apollo 204 Review Board report.</li><li>Distinguish a photographic source's date from the 1967 event timeline.</li><li>Describe a claim that the evidence does <em>not</em> establish.</li></ol><p>Check responses against the NASA source links, not this page alone.</p></details>
@@ -178,21 +178,39 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
   }
   buttons.forEach(function(b){b.addEventListener('click',function(){select(b.getAttribute('data-fv-mode'));});});
 })();
-/* R120: use native browser print only after an explicit teacher action; ordinary Print remains complete. */
+/* R122: recover an interrupted native print; never strand future complete-record printing. */
 (function(){
+  'use strict';
   var button=document.querySelector('[data-fv-print-student]');
   var sheet=document.querySelector('[data-fv-student-print]');
   if(!button||!sheet||typeof window.print!=='function')return;
   var pending=false;
-  window.addEventListener('afterprint',function(){
-    if(pending){document.body.classList.remove('fv-worksheet-only');pending=false;}
+  var media=typeof window.matchMedia==='function'?window.matchMedia('print'):null;
+  function restore(){
+    if(!pending)return;
+    document.body.classList.remove('fv-worksheet-only');
+    pending=false;
+  }
+  window.addEventListener('afterprint',restore);
+  window.addEventListener('pagehide',restore);
+  /* Browsers differ on whether a cancelled print sheet emits afterprint. */
+  if(media&&typeof media.addEventListener==='function'){
+    media.addEventListener('change',function(event){if(!event.matches)restore();});
+  }
+  window.addEventListener('focus',function(){
+    if(!pending)return;
+    window.setTimeout(function(){if(pending&&(!media||!media.matches))restore();},750);
+  });
+  document.addEventListener('keydown',function(event){
+    if(pending&&(event.ctrlKey||event.metaKey)&&String(event.key).toLowerCase()==='p')restore();
   });
   button.hidden=false;
   button.addEventListener('click',function(){
-    if(pending)return;
-    pending=true;document.body.classList.add('fv-worksheet-only');
-    try{window.print();}
-    catch(error){document.body.classList.remove('fv-worksheet-only');pending=false;}
+    /* A new deliberate click also recovers if the earlier dialog omitted all exit events. */
+    if(pending)restore();
+    pending=true;
+    document.body.classList.add('fv-worksheet-only');
+    try{window.print();}catch(error){restore();}
   });
 })();
 </script>
