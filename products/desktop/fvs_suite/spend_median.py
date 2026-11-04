@@ -2,12 +2,29 @@
 
 Two heaps keep historical month baselines at O(log n) insertion and O(1)
 median lookup, rather than sorting an ever-growing history every month.
-Financial values must remain finite Decimal instances; never use floats.
+Financial values must be finite, native, bounded Decimals; never use floats.
 """
 from __future__ import annotations
 
 from decimal import Context, Decimal, localcontext
 from heapq import heappop, heappush
+
+# Source CSV amounts are bounded; even a 200k-row monthly total remains far
+# below this direct-API envelope. Existing historical 70-digit synthetic
+# precision tests also remain valid. Enforce it BEFORE heap insertion so
+# hostile Decimal subclasses or huge exponents cannot reach comparisons or
+# context-dependent median arithmetic.
+_MAX_MONTH_DIGITS = 80
+_MAX_MONTH_EXPONENT = 80
+
+
+def _validate_month_total(value: Decimal) -> None:
+    if type(value) is not Decimal or not value.is_finite():
+        raise ValueError("Monthly total must be a finite native Decimal")
+    parts = value.as_tuple()
+    if (len(parts.digits) > _MAX_MONTH_DIGITS
+            or not -_MAX_MONTH_EXPONENT <= parts.exponent <= _MAX_MONTH_EXPONENT):
+        raise ValueError("Monthly total exceeds bounded Decimal envelope")
 
 
 def _exact_midpoint(left: Decimal, right: Decimal) -> Decimal:
@@ -39,8 +56,7 @@ class RunningDecimalMedian:
 
     def add(self, value: Decimal) -> None:
         """Add a complete, validated monthly total without lossy conversion."""
-        if not isinstance(value, Decimal) or not value.is_finite():
-            raise ValueError("Monthly total must be a finite Decimal")
+        _validate_month_total(value)
         # Unary - applies the ambient Decimal precision and can *silently*
         # round a heap key. copy_negate preserves the original coefficient.
         if not self._lower or value <= self._lower[0].copy_negate():
