@@ -54,7 +54,7 @@ function audit(files) {
   check('panel disclosure adjacent to disabled purchase',H.indexOf('Prospective affiliate disclosure:')>0&&H.indexOf('Prospective affiliate disclosure:')<H.indexOf('Purchasing unavailable pending partner verification'));
   check('panel purchasing button disabled',/<button\b[^>]*disabled[^>]*>Purchasing unavailable pending partner verification<\/button>/.test(H));
   check('panel actual affiliate earning URL not present',!/(?:hop\.clickbank|awin1\.com|clickbank\.net|referral_code|aff_id=|affiliate_id=)/i.test(H));
-  check('panel withholds clickable merchant purchase or offer href',!/<a\\b[^>]*href=[\"']https?:\\/\\/(?:www\\.)?zen12\\.com[^\"']*[\"']/i.test(H));
+  check('panel withholds clickable merchant purchase or offer href', !H.includes('href="https://zen12.com/') && !H.includes("href='https://zen12.com/"));
   check('panel first-party Focus link rather than new form',/href="https:\/\/finalvestige\.com\/focus\/"/.test(H));
   check('panel references seller privacy and terms',H.includes('https://inspire3.com/privacy/')&&H.includes('https://inspire3.com/terms/'));
   check('panel has skip link and visible focus',H.includes('class="skip"')&&H.includes(':focus-visible'));
