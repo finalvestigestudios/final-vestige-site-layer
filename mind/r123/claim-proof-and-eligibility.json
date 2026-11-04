@@ -1,0 +1,341 @@
+{
+  "version": "r123",
+  "review_date": "2026-11-04",
+  "sourcing_note": "Original research/offer/policies freshly web-checked; first-party WP links based on earlier authenticated read-only project evidence because public web tool returned errors. No affiliate acceptance inferred.",
+  "sources": [
+    {
+      "id": "s01",
+      "type": "primary_research",
+      "title": "Raymond et al., 1992 attentional blink",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/"
+    },
+    {
+      "id": "s02",
+      "type": "research_synthesis",
+      "title": "Shapiro et al., 1997 attentional blink",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21223931/"
+    },
+    {
+      "id": "s03",
+      "type": "expert_secondary",
+      "title": "Attentional blink by researchers in Scholarpedia",
+      "url": "https://www.scholarpedia.org/article/Attentional_blink"
+    },
+    {
+      "id": "s04",
+      "type": "primary_research",
+      "title": "Slagter et al. 2007 three months intensive meditation",
+      "url": "https://doi.org/10.1371/journal.pbio.0050138"
+    },
+    {
+      "id": "s05",
+      "type": "systematic_review",
+      "title": "Ingendoh et al., 2023 binaural beats EEG systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "s06",
+      "type": "seller_catalog",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "s07",
+      "type": "seller_offer",
+      "title": "Zen12 primary official Premium offer",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "s08",
+      "type": "seller_conditional_offer",
+      "title": "Zen12 separate /secret/ conditional promotional presentation",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "s09",
+      "type": "seller_policy",
+      "title": "Inspire3 affiliate buyer-data sharing",
+      "url": "https://inspire3.com/privacy/"
+    },
+    {
+      "id": "s10",
+      "type": "official_guidance",
+      "title": "FTC endorsement guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "s11",
+      "type": "official_guidance",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "s12",
+      "type": "first_party_historical",
+      "title": "Puységur source collection",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "s13",
+      "type": "first_party_resource",
+      "title": "Existing free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "s14",
+      "type": "first_party_live_content",
+      "title": "Published Change Blindness investigation (prior WP audit)",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "s15",
+      "type": "first_party_live_content",
+      "title": "Published Mesmerism investigation (prior WP audit)",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "s16",
+      "type": "seller_affiliate_portal",
+      "title": "Public portal exists but not account approval",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "s17",
+      "type": "coordination_issue",
+      "title": "Commercial source of truth",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "s18",
+      "type": "coordination_issue",
+      "title": "Mind & Perception release gates",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    }
+  ],
+  "claims": [
+    {
+      "id": "research_attentional_blink",
+      "claim": "rapid serial target report can drop for second target following first",
+      "status": "SUPPORTED_LAB",
+      "source_id": "s01",
+      "limit": "Specific RSVP conditions; not all real-world noticing."
+    },
+    {
+      "id": "research_window",
+      "claim": "roughly a few hundred milliseconds is usual experimental vulnerability",
+      "status": "SUPPORTED_LAB",
+      "source_id": "s01",
+      "limit": "Timings are paradigm dependent; no universal sensory blackout."
+    },
+    {
+      "id": "research_lag1",
+      "claim": "immediate second target may be spared",
+      "status": "SUPPORTED_REVIEW",
+      "source_id": "s03",
+      "limit": "Not always; depends on paradigm."
+    },
+    {
+      "id": "meditation_training",
+      "claim": "intensive three-month meditation training altered AB and ERP in a 2007 study",
+      "status": "SUPPORTED_SPECIFIC",
+      "source_id": "s04",
+      "limit": "Training population, study design and task matter; not Zen12."
+    },
+    {
+      "id": "binaural_entrainment",
+      "claim": "binaural stimulation reliably entrains brain rhythms",
+      "status": "NOT_ESTABLISHED",
+      "source_id": "s05",
+      "limit": "2023 review 5 supportive, 8 contradictory, 1 mixed."
+    },
+    {
+      "id": "zen12_format",
+      "claim": "seller offers 12 levels × 4 listening styles with 48 Premium MP3s",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "s07",
+      "limit": "Package/bundle can change, verify checkout before publication."
+    },
+    {
+      "id": "zen12_12_minutes",
+      "claim": "individual Zen12 sessions are described as 12 minutes",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "s07",
+      "limit": "No equivalence to one-hour practice established."
+    },
+    {
+      "id": "zen12_one_hour_equivalence",
+      "claim": "12 minutes gives one hour advanced meditation benefits",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source_id": "s07",
+      "limit": "Specific product trial lacking; do not repeat as a benefit."
+    },
+    {
+      "id": "zen12_health",
+      "claim": "Zen12 improves health, anxiety, brainpower or treatment outcomes",
+      "status": "REJECT_UNSUBSTANTIATED",
+      "source_id": "s07",
+      "limit": "Do not assert clinical effects."
+    },
+    {
+      "id": "zen12_hnp_price",
+      "claim": "2026-11-04 captured seller-page advertised $87.99 for Premium",
+      "status": "DATED_SELLER_OBSERVATION",
+      "source_id": "s07",
+      "limit": "Not a final checkout price, cannot be permanent guarantee."
+    },
+    {
+      "id": "zen12_secret_price",
+      "claim": "alternative /secret/ page displays conditional $37 promo coupon",
+      "status": "CONDITIONAL_SELLER_OBSERVATION",
+      "source_id": "s08",
+      "limit": "Not same offer or generally accessible final price; no special savings claims."
+    },
+    {
+      "id": "zen12_refund",
+      "claim": "one year money back guarantee advertised",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "s07",
+      "limit": "Verify exact terms and practical merchant processing before any buyer link."
+    },
+    {
+      "id": "affiliate_open",
+      "claim": "public Inspire3 portal provides FV-approved affiliation",
+      "status": "FALSE_INFERENCE",
+      "source_id": "s16",
+      "limit": "Public portal is not named authorization."
+    },
+    {
+      "id": "merchant_privacy",
+      "claim": "seller policy permits name,email,product sharing with affiliates",
+      "status": "DIRECT_POLICY_TEXT",
+      "source_id": "s09",
+      "limit": "Seek contract terms that prevent collection of buyer PII by FV."
+    },
+    {
+      "id": "funnel_focus",
+      "claim": "Focus Fieldbook is existing free first-party route",
+      "status": "PREVIOUS_WP_READ_ONLY_VERIFICATION",
+      "source_id": "s13",
+      "limit": "This run could not re-open on public web; no new form."
+    },
+    {
+      "id": "compliance_disclosure",
+      "claim": "when commercial affiliation exists, disclosure adjacent to recommendation",
+      "status": "FTC_REQUIREMENT",
+      "source_id": "s10",
+      "limit": "Test both mobile and desktop placement."
+    },
+    {
+      "id": "compliance_efficacy",
+      "claim": "objective benefit claims need appropriate science",
+      "status": "FTC_REQUIREMENT",
+      "source_id": "s11",
+      "limit": "Product-specific substantiation; do not borrow from unrelated research."
+    },
+    {
+      "id": "monetization",
+      "claim": "clicks or provisional leads equal paid commissions",
+      "status": "REJECT",
+      "source_id": "s17",
+      "limit": "Only merchant-confirmed net paid transactions count."
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "CLOSED",
+      "evidence": "Authenticated FV partner account/document not supplied."
+    },
+    {
+      "id": "authorized_offer_url",
+      "status": "CLOSED",
+      "evidence": "Tracking link not supplied/verified; no outbound merchant anchors."
+    },
+    {
+      "id": "permitted_social_email_channels",
+      "status": "CLOSED",
+      "evidence": "Merchant terms for each channel unverified."
+    },
+    {
+      "id": "approved_creatives",
+      "status": "CLOSED",
+      "evidence": "No authenticated swipes or creatives clearance."
+    },
+    {
+      "id": "aggregate_only_affiliate_reporting",
+      "status": "CLOSED",
+      "evidence": "Merchant allows buyer PII disclosure by policy; contract restrictions absent."
+    },
+    {
+      "id": "checkout_final_total",
+      "status": "CLOSED",
+      "evidence": "Variable promotion; no authenticated checkout evidence."
+    },
+    {
+      "id": "refund_terms_and_process",
+      "status": "CLOSED",
+      "evidence": "Seller guarantee reviewed, transactional application not verified."
+    },
+    {
+      "id": "purchased_product_payout_net",
+      "status": "CLOSED",
+      "evidence": "No independently confirmed paid affiliate commission."
+    },
+    {
+      "id": "owned_payhip_paid_sku",
+      "status": "CLOSED",
+      "evidence": "Authenticated rights, paid listing, fulfillment, fees/returns not supplied."
+    },
+    {
+      "id": "video_master",
+      "status": "CLOSED",
+      "evidence": "No produced MP4; optional storyboard only."
+    },
+    {
+      "id": "real_browser_a11y",
+      "status": "CLOSED",
+      "evidence": "Not executed on staging."
+    },
+    {
+      "id": "native_ci",
+      "status": "CLOSED",
+      "evidence": "Not observed for this branch yet."
+    },
+    {
+      "id": "founder_release",
+      "status": "CLOSED",
+      "evidence": "No release authorization for product commerce."
+    },
+    {
+      "id": "grok_immutable_ids",
+      "status": "CLOSED",
+      "evidence": "Source assets and live URL not verified."
+    },
+    {
+      "id": "confirmed_lead_attribution",
+      "status": "CLOSED",
+      "evidence": "Current Jetpack lead records not connected to source campaign."
+    },
+    {
+      "id": "qualified_session_denominator",
+      "status": "CLOSED",
+      "evidence": "Human-validated unique sessions not established."
+    },
+    {
+      "id": "realized_net_revenue",
+      "status": "CLOSED",
+      "evidence": "Merchant settlement/fees/refunds not reconciled."
+    }
+  ],
+  "experiment": {
+    "primary_metric": "verified_realized_net_revenue_per_1000_qualified_human_sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "A": "text-only",
+    "B": "same text + optional 40s non-autoplay film storyboard; no playable MP4",
+    "paid_outcome_verified": false,
+    "assignments": "Grok owns videos, Claude owns production instrumentation, founder owns commercial release"
+  }
+}
