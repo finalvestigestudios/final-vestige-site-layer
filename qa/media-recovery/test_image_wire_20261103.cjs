@@ -83,6 +83,13 @@ function runTests(){
  result=evaluate(pooledCheck,inventory);
  eq(result.measured_reduction_percent,76);
  eq(result.pooled_baseline_bytes,183000);eq(result.pooled_candidate_bytes,43920);passed++;
+ const overflow=copy(pooledCheck);
+ for(const p of overflow.pairs){
+  for(const run of p.before)run.requests[0].encoded_data_length=100000000000000;
+  for(const run of p.after)run.requests[0].encoded_data_length=24000000000000;
+ }
+ result=evaluate(overflow,inventory);eq(result.status,'INSUFFICIENT_DATA');
+ check(result.reason_codes.some(x=>x.includes('unsafe pooled transfer bytes')),'unsafe pooled integer should fail closed');passed++;
  d.pairs[0].before[1].conditions.viewport_width=1234;
  result=evaluate(d,inventory);eq(result.status,'INSUFFICIENT_DATA');passed++;
  const frozen=copy(d);frozen.pairs[0].before[1].conditions.viewport_width=1280;
