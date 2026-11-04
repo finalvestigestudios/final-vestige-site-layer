@@ -1,0 +1,127 @@
+{
+  "schema": "fv.apollo.r126.research_desk.source_custody",
+  "release_status": "STAGING_HOLD",
+  "source": {
+    "pr": 158,
+    "path": "experience2/research-desk/templates/ledger.html",
+    "branch": "feature/experience-2-source-ledger-pilot-20261030",
+    "blob_sha": "403d128c57b9bc82dac7c619651689070edef86c"
+  },
+  "usage": {
+    "source_type": "staging candidate template only",
+    "javascript_optional": true,
+    "rights_reviews_complete": 0,
+    "rights_reviews_required": 6,
+    "photo_binaries_embedded": false
+  },
+  "geo": {
+    "verified_pins": [],
+    "verified_edges": []
+  },
+  "records": [
+    {
+      "id": "01",
+      "photo": {
+        "url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+        "record_label": "NASA crew portrait; proposed S67-19766, not corroborated on source page",
+        "recorded_date": "1967-01",
+        "precision": "month_only",
+        "role": "visual_context",
+        "commercial_reuse": "individual_review_required"
+      },
+      "claim_source": {
+        "url": "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/",
+        "type": "nasa_historical_overview"
+      },
+      "limitation": "Crew training context; not evidence that the ground-test conditions were safe. The proposed catalog ID remains unconfirmed."
+    },
+    {
+      "id": "02",
+      "photo": {
+        "url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+        "record_label": "NASA photo S67-15717 · preparation context",
+        "recorded_date": "1967-01-03",
+        "precision": "day",
+        "role": "visual_context",
+        "commercial_reuse": "individual_review_required"
+      },
+      "claim_source": {
+        "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+        "type": "apollo_204_review_board"
+      },
+      "limitation": "Photo is not a cabin pressure or oxygen sensor measurement. Technical findings require the separate Board report."
+    },
+    {
+      "id": "03",
+      "photo": {
+        "url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+        "record_label": "NASA photo S66-58038 · earlier rehearsal",
+        "recorded_date": "1966-10-18",
+        "precision": "day",
+        "role": "visual_context",
+        "commercial_reuse": "individual_review_required"
+      },
+      "claim_source": {
+        "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+        "type": "apollo_204_review_board"
+      },
+      "limitation": "Earlier rehearsal photo is not the fire-event sensor trace; the Board report supplies the clock chronology."
+    },
+    {
+      "id": "04",
+      "photo": {
+        "url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+        "record_label": "NASA/Kim Shiflett · 2017 hatch-exhibit photo",
+        "recorded_date": "2017-01-24",
+        "precision": "day",
+        "role": "visual_context",
+        "commercial_reuse": "individual_review_required"
+      },
+      "claim_source": {
+        "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+        "type": "apollo_204_review_board"
+      },
+      "limitation": "A 2017 retrospective exhibit is not a photograph taken during the 1967 accident. The Board report supports the hatch finding."
+    },
+    {
+      "id": "05",
+      "photo": {
+        "url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+        "record_label": "NASA photo S67-21294 · post-fire context",
+        "recorded_date": "1967-01-28",
+        "precision": "day",
+        "role": "visual_context",
+        "commercial_reuse": "individual_review_required"
+      },
+      "claim_source": {
+        "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+        "type": "apollo_204_review_board"
+      },
+      "limitation": "Post-fire interior photograph cannot by itself establish which electrical arc, if any, initiated the fire."
+    },
+    {
+      "id": "06",
+      "photo": {
+        "url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+        "record_label": "NASA/Kim Shiflett · 2017 redesigned-hatch exhibit",
+        "recorded_date": "2017-01-24",
+        "precision": "day",
+        "role": "visual_context",
+        "commercial_reuse": "individual_review_required"
+      },
+      "claim_source": {
+        "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+        "type": "apollo_204_review_board"
+      },
+      "limitation": "A 2017 retrospective exhibit is not a contemporary photo of the 1967 fire; engineering history needs separate sources."
+    }
+  ],
+  "conversion": {
+    "target": "secondary educators",
+    "grok_asset_id": "UNASSIGNED",
+    "utm_campaign": "history_pilot_2026_11",
+    "action": "free classroom worksheet",
+    "paid_offer": "UNVERIFIED_NOT_ACTIVATED",
+    "revenue_attribution": "NOT_ESTABLISHED"
+  }
+}
