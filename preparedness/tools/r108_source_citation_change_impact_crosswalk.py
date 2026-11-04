@@ -278,17 +278,55 @@ def crosswalk(queue, fetch_blob):
             "human_safety_review": "NOT_REVIEWED",
             "may_publish": False,
         })
+    # Independently connect changed citation occurrences, author-specific
+    # source-use descriptions and source-fragment records by literal source ID.
+    # This is an IMPACT join, never a statement that the URL supports a claim.
+    source_impacts = {}
+    def mark(source_id, row, reason):
+        need(type(source_id) is str and re.fullmatch(r"[a-z0-9-]+", source_id),
+             "invalid changed source identity")
+        source_impacts.setdefault(source_id, []).append({
+            "origin": row["origin"], "path": row["path"],
+            "category": row["category"], "reason": reason,
+            "human_review": "NOT_REVIEWED",
+        })
+    for item in output:
+        diff = item["change_indicators_NOT_FACT_VERDICTS"]
+        if item["category"] == "body" and "citations_added" in diff:
+            for side in ("citations_added", "citations_removed"):
+                for sid in diff[side]:
+                    mark(sid, item, side)
+        if item["category"] == "meta" and "source_use_added" in diff:
+            for side in ("source_use_added", "source_use_removed",
+                         "source_use_reinterpreted"):
+                for sid in diff[side]:
+                    mark(sid, item, side)
+        if item["category"] == "fragment" and "source_ids_added" in diff:
+            for side in ("source_ids_added", "source_ids_removed",
+                         "source_ids_changed", "literal_urls_changed",
+                         "reading_support_changed",
+                         "human_link_check_value_changed", "verified_date_changed"):
+                for sid in diff[side]:
+                    mark(sid, item, side)
+    index = {sid: sorted(records, key=lambda x: (x["origin"], x["path"],
+                                                 x["category"], x["reason"]))
+             for sid, records in sorted(source_impacts.items())}
+    intersections = {sid: sorted({rec["category"] for rec in records})
+                     for sid, records in index.items()
+                     if len({rec["category"] for rec in records}) > 1}
     result = {
         "schema": SCHEMA, "issue": 136, "release_state": "HOLD",
         "may_publish": False, "factual_claim_support_approved": False,
         "qualified_emergency_safety_approved": False, "independent_QD_PASS": False,
         "source_records_transferred_to_CMS": False,
         "R107_queue_sha256_NOT_A_SIGNATURE": queue["sha256_NOT_A_SIGNATURE"],
-        "original_35_article_slate_unchanged": True,
+        "draft_content_modified_by_this_tool": False,
         "scope": "EXACT_CHANGED_CONTRIBUTOR_PATHS_ONLY_NOT_FULL_35_FACT_AUDIT",
         "original_historical_metadata_exception_open": True,
         "unreviewed_shared_source_url_groups": 30,
         "row_count": len(output),
+        "source_id_change_impact_index_NOT_APPROVED": index,
+        "cross_file_source_id_intersections_NOT_APPROVED": intersections,
         "rows_NOT_APPROVED": sorted(output, key=lambda x: (x["origin"], x["path"])),
         "review_instructions": (
             "Compare each revised passage with its original source and reading "
