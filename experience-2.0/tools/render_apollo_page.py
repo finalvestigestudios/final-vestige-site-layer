@@ -89,8 +89,10 @@ def approved_images(data: dict, path=SIGNOFFS) -> set:
     return ok
 
 
-def approved_timeline_images(data: dict, path=SIGNOFFS) -> set:
+def approved_timeline_images(data: dict, path=None) -> set:
     """Approve only separately documented chronology-context images."""
+    if path is None:
+        path = SIGNOFFS
     known = {r["image"]["nasa_id"] for r in data["records"]}
     return {item["nasa_id"] for item in json.loads(path.read_text(encoding="utf-8")).get("approved", [])
             if item.get("placement") == "chronology" and item.get("nasa_id") in known
