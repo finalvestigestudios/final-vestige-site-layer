@@ -84,12 +84,12 @@
     {
       "id": "S13",
       "url": "https://finalvestige.com/focus/",
-      "type": "owned route reported published by earlier authenticated WP; external web fetch this run failed"
+      "type": "authenticated WordPress page ID1579 published and Collection ID78 free-52-page proof, 2026-11-04; public web fetch failed"
     },
     {
       "id": "S14",
       "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
-      "type": "owned archive route reported by WP; external web fetch this run failed"
+      "type": "authenticated WordPress page ID1377 published, 2026-11-04; public web fetch failed"
     }
   ],
   "claims": [
@@ -227,11 +227,11 @@
     {
       "id": "C15",
       "text": "FV Focus is a free existing resource",
-      "status": "PRIOR_AUTHENTICATED_WP_NO_FRESH_WEB_PROOF",
+      "status": "VERIFIED_AUTHENTICATED_WP_NOT_PAID_PRODUCT",
       "sources": [
         "S13"
       ],
-      "allowed_wording": "Earlier authenticated WP audit identifies Focus as a free 52-page signup resource."
+      "allowed_wording": "Authenticated WordPress Collection ID78 confirms free 52-page Fieldbook delivered through Dispatch; focus page ID1579 is published."
     },
     {
       "id": "C16",
@@ -384,5 +384,14 @@
     "approval": false,
     "privacy_safe": true,
     "disclose_next_to_link": true
+  },
+  "cms_inventory": {
+    "checked_at": "2026-11-04",
+    "published_posts": 66,
+    "focus_page_id": 1579,
+    "puysegur_page_id": 1377,
+    "collection_page_id": 78,
+    "published_url_proof": true,
+    "payhip_sales_data": false
   }
 }
