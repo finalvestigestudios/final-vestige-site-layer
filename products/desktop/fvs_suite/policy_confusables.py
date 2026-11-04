@@ -21,6 +21,9 @@ _TO_LATIN = {
 _MAX_LINE_CHARS = 4096
 _MAX_PAIRS = 16
 _MAX_GLYPHS = 8
+# Exactly mirrors Policy Delta Desk's reader limit. Only source-owned
+# physical line positions may be cited, never forged or ambiguous identities.
+_MAX_SOURCE_LINE = 50_000
 
 
 def _skeleton(raw: str) -> str | None:
@@ -53,22 +56,50 @@ def _changes(before: str, after: str) -> str:
     return shown + (f" (+{omitted} substitution(s) omitted)" if omitted > 0 else "")
 
 
+def _owned_rows(hunk: dict, field: str) -> dict[str, list[tuple[int, str]]] | None:
+    """Index only unambiguous physical source rows from the canonical diff.
+
+    Direct helper callers must not supply a fabricated line identity, an
+    iterable with side effects, or two source texts claiming the same physical
+    line. A malformed side invalidates the entire hunk rather than permitting
+    a misleading before/after citation from its remaining rows. Long *valid*
+    source lines are skipped without suppressing other independent candidates.
+    """
+    if type(hunk) is not dict:
+        return None
+    rows = hunk.get(field)
+    if type(rows) is not list:
+        return None
+    grouped: dict[str, list[tuple[int, str]]] = {}
+    seen: set[int] = set()
+    for row in rows:
+        if type(row) is not tuple or len(row) != 2:
+            return None
+        line, raw = row
+        if (type(line) is not int or not 1 <= line <= _MAX_SOURCE_LINE
+                or type(raw) is not str or line in seen):
+            return None
+        seen.add(line)
+        key = _skeleton(raw)
+        if key is not None:
+            grouped.setdefault(key, []).append((line, raw))
+    return grouped
+
+
 def render_local_confusable_evidence(hunks: list[dict]) -> str:
     """Cite uniquely paired substitutions inside the *same* source diff hunk.
 
     Pairs are navigational hints only. Exact raw text, SHA-256 and human
     judgment decide whether an apparent look-alike matters to a policy.
     """
+    if type(hunks) is not list:
+        return ""
     found: list[tuple[int, int, int, str]] = []
     for hunk_no, hunk in enumerate(hunks, 1):
-        removed: dict[str, list[tuple[int, str]]] = {}
-        added: dict[str, list[tuple[int, str]]] = {}
-        for rows, groups in ((hunk["removed_sources"], removed),
-                             (hunk["added_sources"], added)):
-            for line, raw in rows:
-                key = _skeleton(raw)
-                if key is not None and type(line) is int and line > 0:
-                    groups.setdefault(key, []).append((line, raw))
+        removed = _owned_rows(hunk, "removed_sources")
+        added = _owned_rows(hunk, "added_sources")
+        if removed is None or added is None:
+            continue  # Never claim provenance from a malformed source hunk.
         for key in removed.keys() & added.keys():
             prior, following = removed[key], added[key]
             if len(prior) != 1 or len(following) != 1:
