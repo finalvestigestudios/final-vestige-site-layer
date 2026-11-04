@@ -52,9 +52,18 @@ test('PHP refuses production, wrong theme and multisite before native writes',()
   for(const token of ["require '/wordpress/wp-load.php'","is_multisite()",
     "get_stylesheet() !== 'assembler'","'localhost','127.0.0.1','::1'",
     "'wp_navigation'","'wp_template_part'","'wp_theme'",
-    'wp:navigation-link','wp_json_encode','wp_clean_post_cache'])
+    'wp:navigation-link','wp_json_encode','clean_post_cache($post)'])
     assert.ok(src.includes(token),'missing '+token);
   assert.equal(src.includes('finalvestige.com'),false);
+});
+test('native WordPress post-cache invalidation uses real core API (regression #864)',()=>{
+  const php=phpFixtureSource();
+  assert.match(php,/\bclean_post_cache\(\$post\);/,
+    'wp_template_part must use WordPress core clean_post_cache()');
+  assert.doesNotMatch(php,/\bwp_clean_post_cache\s*\(/,
+    'Invented wp_clean_post_cache() fatals in actual WP/Chromium');
+  assert.ok(php.indexOf("wp_set_post_terms($post") < php.indexOf('clean_post_cache($post);'),
+    'Invalidate post cache only after successful Assembler taxonomy binding');
 });
 test('captures real baseline before isolated native WP override',async()=>{
   const x=mock();

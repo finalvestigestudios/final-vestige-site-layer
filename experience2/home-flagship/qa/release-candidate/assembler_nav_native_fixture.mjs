@@ -156,7 +156,7 @@ $post=wp_insert_post(array('post_type'=>'wp_template_part','post_name'=>'header'
 if (is_wp_error($post) || !$post) ex2_abort('Failed creating local template-part override');
 $terms=wp_set_post_terms($post,array('assembler'),'wp_theme',false);
 if (is_wp_error($terms) || !$terms) ex2_abort('Failed binding local template part to Assembler');
-wp_clean_post_cache($post);
+clean_post_cache($post);
 echo wp_json_encode(array('status'=>'ISOLATED_NAVIGATION_TEMPLATE_ONLY',
   'part_slug'=>'header','menu_id'=>$menu,'header_override_id'=>$post,
   'original_sha256'=>hash('sha256',$source),'modified_sha256'=>hash('sha256',$replaced),
