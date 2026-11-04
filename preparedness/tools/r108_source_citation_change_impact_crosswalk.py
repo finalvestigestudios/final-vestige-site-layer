@@ -224,6 +224,8 @@ def crosswalk(queue, fetch_blob):
         need(type(x) is dict and x.get("origin") in r107.EXPECTED_HEADS and
              x.get("origin") not in tip and
              x.get("observed_commit_sha") == r107.EXPECTED_HEADS[x["origin"]] and
+             type(x.get("frozen_commit_sha")) is str and
+             r107.SHA.fullmatch(x["frozen_commit_sha"]) and
              x.get("is_direct_descendant") is True and
              x.get("human_lineage_approval") == "NOT_REVIEWED",
              "untrusted contributor SHA/lineage approval")
@@ -248,8 +250,11 @@ def crosswalk(queue, fetch_blob):
              (new_sha is None or (type(new_sha) is str and r107.SHA.fullmatch(new_sha))) and
              (old_sha is not None or new_sha is not None) and old_sha != new_sha,
              "missing/invalid Git object SHA pair")
-        old = fetch_blob(tip[row["origin"]]["frozen_commit_sha"], row["path"]) if old_sha else None
-        new = fetch_blob(tip[row["origin"]]["observed_commit_sha"], row["path"]) if new_sha else None
+        try:
+            old = fetch_blob(tip[row["origin"]]["frozen_commit_sha"], row["path"]) if old_sha else None
+            new = fetch_blob(tip[row["origin"]]["observed_commit_sha"], row["path"]) if new_sha else None
+        except (OSError, ValueError, KeyError, AssertionError) as exc:
+            raise Hold("exact Git object could not be read for queued path") from exc
         for raw, oid in ((old, old_sha), (new, new_sha)):
             if oid:
                 need(type(raw) is bytes and len(raw) <= MAX_BYTES and
