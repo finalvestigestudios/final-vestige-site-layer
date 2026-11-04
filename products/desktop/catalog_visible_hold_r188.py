@@ -9,6 +9,8 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from catalog_fragment_custody_r189 import check_fragmented_claims
+
 # All text from HTMLParser.handle_data is joined without delimiters, so link
 # fragments concealed across innocent inline tags do not evade this check.
 _URI = re.compile(r"(?:https?|ftps?|file|data|javascript|mailto|s3|gs):|www\.", re.I)
@@ -55,3 +57,5 @@ def check_visible_hold(chunks: list[str]) -> None:
     if (_URI.search(compact) or _ARTIFACT.search(compact)
             or _ARTIFACT.search(spaced) or _RELEASE.search(spaced)):
         raise ValueError(_FAILURE)
+    # R189 closes claims/installer suffixes concealed across inline-node edges.
+    check_fragmented_claims(chunks)
