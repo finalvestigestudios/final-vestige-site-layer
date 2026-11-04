@@ -6,7 +6,7 @@ import {isIsolatedLoopback,requiresSemanticCorrection,phpFixtureSource,
 const baseline={topology:[{tag:'ul',nested_list_count:1,link_count:1,children:['ul','li']}],
   violations:[{id:'list',impact:'serious',selectors:[['.wp-block-navigation__container']]}]};
 const safe={topology:[{tag:'ul',nested_list_count:0,link_count:1,children:['li']}],violations:[]};
-function mock({host='http://127.0.0.1:21234/',nativeError=false}={}){
+function mock({host='http://127.0.0.1:21234/',nativeError=false,source='pinned_installed_theme_header',resolvedHash='a'.repeat(64)}={}){
   let stage=0,runCount=0;const history=[];
   const page={stageUrl:host+'?page_id=3&preview=true',
     async setViewportSize(v){history.push('size:'+v.width)},
@@ -23,7 +23,8 @@ function mock({host='http://127.0.0.1:21234/',nativeError=false}={}){
     return {text:JSON.stringify(nativeError?{error:'not found'}:{
       status:'ISOLATED_NAVIGATION_TEMPLATE_ONLY',part_slug:'header',
       navigation_block_replacements:1,original_sha256:'b'.repeat(64),
-      modified_sha256:'c'.repeat(64)})};
+      modified_sha256:'c'.repeat(64),header_source:source,
+      resolved_header_sha256:resolvedHash})};
   }}};
   return {page,server,history,getRunCount:()=>runCount};
 }
@@ -77,4 +78,43 @@ test('cross-origin preview denied before WordPress writes',async()=>{
   const x=mock();x.page.stageUrl='https://finalvestige.com/?preview=true';
   await assert.rejects(correctIsolatedNavigation({...x,axePath:'axe',outputDirectory:'/tmp'}),/exact isolated/);
   assert.equal(x.getRunCount(),0);
+});
+
+test('pattern-only resolved header can use ONLY pinned installed theme file',()=>{
+  const php=phpFixtureSource();
+  for(const marker of [
+    "($original->source ?? '') !== 'theme'",
+    "realpath(get_stylesheet_directory().'/parts/header.html')",
+    "dirname(dirname($header_path)) !== $theme_dir",
+    "get_stylesheet() !== 'assembler'",
+    "3b983fa0d9d6ce9b2bc1024e215d9d63d9ecba2ad11f881ec59e87a40c28c2aa",
+    "hash('sha256',$vendor)!==$expected_header_sha256",
+    "preg_match_all($pattern,$vendor,$vendor_matches,PREG_SET_ORDER)!==1",
+    "$header_source='pinned_installed_theme_header'",
+    "header_source'=>$header_source"
+  ]) assert.ok(php.includes(marker),'Missing fail-closed source custody: '+marker);
+  assert.ok(php.indexOf("get_stylesheet() !== 'assembler'") <
+            php.indexOf("file_get_contents($header_path)"),
+    'Must reject foreign theme before reading vendor file');
+  assert.ok(php.indexOf("hash('sha256',$vendor)!==$expected_header_sha256") <
+            php.indexOf("$source=$vendor"),
+    'Must pin official template before replacing content');
+});
+test('unknown WordPress header provenance fails closed before completion',async()=>{
+  for(const source of [null,'unreviewed_remote_header','']){
+    const x=mock({source});
+    await assert.rejects(
+      correctIsolatedNavigation({...x,axePath:'axe',outputDirectory:'/tmp'}),
+      /Unrecognized source provenance/);
+    assert.equal(x.getRunCount(),1);
+  }
+});
+test('missing or corrupt resolved header hash fails closed',async()=>{
+  for(const hash of ['', 'deadbeef', 'x'.repeat(64)]){
+    const x=mock({resolvedHash:hash});
+    await assert.rejects(
+      correctIsolatedNavigation({...x,axePath:'axe',outputDirectory:'/tmp'}),
+      /assert|regular expression/i);
+    assert.equal(x.getRunCount(),1);
+  }
 });
