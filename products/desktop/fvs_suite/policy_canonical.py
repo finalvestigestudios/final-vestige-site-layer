@@ -48,7 +48,6 @@ def _canonical_codepoint_cue(before: str, after: str) -> str:
             (f" (+{omitted} omitted)" if omitted > 0 else ""))
 
 
-
 def _verified_canonical_hunks(hunks: list[dict]) -> list[tuple[int, dict, dict]] | None:
     """Snapshot exact source primitives; reject contradictory physical citations.
 
