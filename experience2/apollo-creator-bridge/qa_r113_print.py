@@ -49,6 +49,14 @@ def run(html,out,exe,axe=None):
                                 label+': NASA photograph source link mismatch '+rid)
                     require(page.locator('[data-fv-primary-cta]').count()==1,label+': one classroom CTA')
                     require(page.locator('[data-fv-print-student]').count()==1,label+': one opt-in print utility')
+                    photo_index=page.locator('[data-fv-student-photo-index]')
+                    require(photo_index.count()==1 and
+                            photo_index.locator('[data-fv-student-photo]').count()==6,
+                            label+': standalone worksheet needs six photograph records')
+                    require(not photo_index.is_visible(),
+                            label+': print-only photographic index leaked onto screen')
+                    require(photo_index.locator('a[href^="https://www.nasa.gov/image-detail/"]').count()==6,
+                            label+': standalone photo index must carry six NASA links')
                     require(page.locator('[data-fv-print-student]').is_visible()==js,
                             label+': print utility must fail open with no JavaScript')
                     require(page.locator("a[href^='https://www.nasa.gov/']").count()>=6,label+': NASA source links')
@@ -89,6 +97,13 @@ def run(html,out,exe,axe=None):
                             label+': teacher answer/notes leaked into student handout')
                     require(page.locator('[data-fv-student-prompts] > li').count()==3,
                             label+': student prompts incomplete')
+                    require(photo_index.is_visible() and
+                            photo_index.locator('[data-fv-student-photo]').count()==6,
+                            label+': printed handout lost photographic source index')
+                    require('not a fire-event timeline' in photo_index.inner_text() and
+                            'unconfirmed' in photo_index.inner_text() and
+                            'NASA/Kim Shiflett' in photo_index.inner_text(),
+                            label+': printed photo-index chronology or provenance missing')
                     require(page.locator('[data-fv-student-print] .response-lines span').count()==9,
                             label+': written response space missing')
                     worksheet=page.locator('[data-fv-student-print]').inner_text()
@@ -137,6 +152,12 @@ def run(html,out,exe,axe=None):
                         require('0/6' in rights and 'S67-19766' in rights and
                                 'not NASA-endorsed' in rights and 'Review Board' in rights,
                                 label+': standalone source custody incomplete')
+                        require(photo_index.is_visible() and
+                                photo_index.locator('a[href^="https://www.nasa.gov/image-detail/"]').count()==6,
+                                label+': standalone PDF must carry six original photographic record links')
+                        require('The complete source register is available on the investigation page' in
+                                page.locator('[data-fv-student-print]').inner_text(),
+                                label+': standalone handout falsely claims hidden register is printed')
                         require(page.locator('[data-fv-student-print] a[href^="https://www.nasa.gov/"]').count()>=2,
                                 label+': standalone worksheet missing its source URLs')
                         if w==390:
