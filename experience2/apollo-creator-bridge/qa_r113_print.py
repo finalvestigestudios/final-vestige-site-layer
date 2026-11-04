@@ -38,6 +38,15 @@ def run(html,out,exe,axe=None):
                     require(not page.locator('.print-custody').is_visible(),label+': print-only rights notice leaked onto screen')
                     require(page.locator('[data-fv-photo-record]').count()==6,label+': six source rail links')
                     require(page.locator("[id^='photo-source-']").count()==6,label+': six photo rows')
+                    # Verify exact NASA source identities and visible credit/producer custody on actual HTML.
+                    for rid, credit in (('01','Image Credit: NASA'),('02','Producer: JSC'),
+                                        ('03','Producer: JSC'),('04','NASA/Kim Shiflett'),
+                                        ('05','Producer: JSC'),('06','NASA/Kim Shiflett')):
+                        row=page.locator('#photo-source-'+rid)
+                        require(row.count()==1 and credit in row.inner_text(),
+                                label+': NASA custody credit missing '+rid)
+                        require(row.locator('a[href^="https://www.nasa.gov/image-detail/"]').count()==1,
+                                label+': NASA photograph source link mismatch '+rid)
                     require(page.locator('[data-fv-primary-cta]').count()==1,label+': one classroom CTA')
                     require(page.locator("a[href^='https://www.nasa.gov/']").count()>=6,label+': NASA source links')
                     require(page.locator('form').count()==0 and page.locator("a[href*='payhip']").count()==0,
@@ -70,6 +79,9 @@ def run(html,out,exe,axe=None):
                     rights=page.locator('.print-custody').inner_text()
                     require('0/6' in rights and 'S67-19766' in rights and 'not NASA-endorsed' in rights,label+': PRINT RIGHTS NOTICE INCOMPLETE')
                     require(page.locator('[data-fv-claim]:visible').count()==4,label+': PRINT EVIDENCE LOSS')
+                    require('NASA/Kim Shiflett' in page.locator('#photo-source-04').inner_text() and
+                            'NASA/Kim Shiflett' in page.locator('#photo-source-06').inner_text(),
+                            label+': PRINT PHOTO CREDIT LOSS')
                     require(page.locator('table').evaluate('(t)=>getComputedStyle(t).minWidth')=='0px',
                             label+': printed source register too wide')
                     require(page.locator('.table-scroll').evaluate('(t)=>getComputedStyle(t).overflowX')=='visible',
