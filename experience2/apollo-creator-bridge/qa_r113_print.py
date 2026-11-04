@@ -35,6 +35,7 @@ def run(html,out,exe,axe=None):
                     ctx=browser.new_context(viewport={'width':w,'height':850},java_script_enabled=js,reduced_motion='reduce')
                     page=ctx.new_page();page.set_content(body,wait_until='load')
                     require(page.locator('[data-fv-claim]').count()==4,label+': four claims')
+                    require(not page.locator('.print-custody').is_visible(),label+': print-only rights notice leaked onto screen')
                     require(page.locator('[data-fv-photo-record]').count()==6,label+': six source rail links')
                     require(page.locator("[id^='photo-source-']").count()==6,label+': six photo rows')
                     require(page.locator('[data-fv-primary-cta]').count()==1,label+': one classroom CTA')
@@ -55,6 +56,9 @@ def run(html,out,exe,axe=None):
                         img=out/f'R113_WEB_{w}.png';page.screenshot(path=str(img),full_page=True)
                         record['screenshots'][img.name]=sha(img)
                     page.emulate_media(media='print')
+                    require(page.locator('.print-custody').count()==1 and page.locator('.print-custody').is_visible(),label+': PRINT RIGHTS NOTICE MISSING')
+                    rights=page.locator('.print-custody').inner_text()
+                    require('0/6' in rights and 'S67-19766' in rights and 'not NASA-endorsed' in rights,label+': PRINT RIGHTS NOTICE INCOMPLETE')
                     require(page.locator('[data-fv-claim]:visible').count()==4,label+': PRINT EVIDENCE LOSS')
                     require(page.locator('table').evaluate('(t)=>getComputedStyle(t).minWidth')=='0px',
                             label+': printed source register too wide')
