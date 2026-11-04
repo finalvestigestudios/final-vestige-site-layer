@@ -14,14 +14,14 @@ import shutil
 import sys
 
 WIDTHS = (320, 360, 390, 420, 600, 720, 768, 1440, 1920)
-CSS_LINK = re.compile(r'<link\\s+rel="stylesheet"\\s+href="\\./([a-z0-9._-]+\\.css)"\\s*/?>', re.I)
+CSS_LINK = re.compile(r'<link\s+rel="stylesheet"\s+href="\./([a-z0-9._-]+\.css)"\s*/?>', re.I)
 FOCUS = 'https://finalvestige.com/focus/'
 
 
 def source_html(root):
     html = (root / 'index.html').read_text(encoding='utf-8')
     assert html.count('class="fv-hf__chapter-nav"') == 1, 'Missing seven-chapter navigation'
-    assert len(re.findall(r'<a\\s+href="#fv-hf-', html)) >= 7, 'Seven chapter links missing'
+    assert len(re.findall(r'<a\s+href="#fv-hf-', html)) >= 7, 'Seven chapter links missing'
     assert 'fv-hf__mast-cta' in html and FOCUS in html, 'Focus source missing'
     count = 0
 
@@ -32,7 +32,7 @@ def source_html(root):
         if '</style' in css.lower():
             raise ValueError('Unexpected closing style tag in '+name)
         count += 1
-        return '<style data-source-css="'+name+'">\\n'+css+'\\n</style>'
+        return '<style data-source-css="'+name+'">\n'+css+'\n</style>'
 
     prepared = CSS_LINK.sub(inline, html)
     assert count == 6, 'Expected all six real source stylesheets; got '+str(count)
