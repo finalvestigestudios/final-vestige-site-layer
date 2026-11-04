@@ -121,8 +121,8 @@ class PolicyCodepointNavigationR179(unittest.TestCase):
         self.assertNotIn("Canonical hunk 017", result)
 
     def test_reordered_hunk_storage_produces_deterministic_report(self):
-        items = [hunk([(9, "é\n"), (2, "Café\n")],
-                      [(9, "e\u0301\n"), (2, "Cafe\u0301\n")])]
+        items = [hunk([(2, "Café\n"), (9, "é\n")],
+                      [(2, "Cafe\u0301\n"), (9, "e\u0301\n")])]
         self.assertEqual(render(items), render(items))
         self.assertLess(render(items).index("before L2"), render(items).index("before L9"))
 
