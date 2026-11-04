@@ -1,0 +1,296 @@
+{
+  "schema_version": "mind-revenue-evidence-v1",
+  "inspected_on": "2026-11-04",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "editorial_topic": "illusory truth / repeated claims",
+  "canonical_paid_candidate": "Zen12 Premium — seller format only; not an authorized FV earning offer",
+  "source_registry": [
+    {
+      "id": "s1977",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+      "kind": "original_experiment",
+      "supports": "both true and false repeated plausible statements gained validity ratings"
+    },
+    {
+      "id": "s2010",
+      "url": "https://doi.org/10.1177/1088868309352251",
+      "kind": "meta_analysis",
+      "supports": "51 study synthesis; truth-rating outcomes depend on experimental comparison"
+    },
+    {
+      "id": "s2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "kind": "original_experiment",
+      "supports": "familiarity can affect truth judgments despite relevant knowledge"
+    },
+    {
+      "id": "s2018",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6279465/",
+      "kind": "original_experiment",
+      "supports": "prior exposure increased perceived headline accuracy in experimental tasks, with plausibility limit"
+    },
+    {
+      "id": "s2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31473395/",
+      "kind": "original_experiment",
+      "supports": "early accuracy focus prevented illusory truth under studied knowledge condition"
+    },
+    {
+      "id": "s2023beat",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "systematic_review",
+      "supports": "mixed EEG entrainment findings across 14 studies; NOT Zen12 trial"
+    },
+    {
+      "id": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "supports": "Zen12 in seller catalog"
+    },
+    {
+      "id": "seller_hnp",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant_offer",
+      "supports": "seller advertises 12 levels/4 formats/48 Premium MP3s and displayed $87.99 promotion"
+    },
+    {
+      "id": "seller_secret",
+      "url": "https://zen12.com/secret/",
+      "kind": "conditional_merchant_offer",
+      "supports": "different $37 seller coupon promotion; no verified final checkout"
+    },
+    {
+      "id": "seller_affiliates",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_affiliate_signup",
+      "supports": "program invites registration; does not show named FV acceptance"
+    },
+    {
+      "id": "seller_privacy",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant_policy",
+      "supports": "affiliate MAY receive referred buyer name/email/purchased products"
+    },
+    {
+      "id": "ftc_endorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory_guidance",
+      "supports": "material financial connection disclosures near recommendations"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory_guidance",
+      "supports": "objective health claims must have adequate evidence"
+    },
+    {
+      "id": "internal_171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "project_governance",
+      "supports": "evidence first and no unapproved live writes"
+    },
+    {
+      "id": "internal_820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "project_governance",
+      "supports": "confirmed purchase vs click and qualified-human attribution"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "IT1",
+      "text": "Repetition increased perceived truth ratings of plausible statements",
+      "classification": "ALLOW_EXPERIMENT_BOUND",
+      "support": [
+        "s1977",
+        "s2010"
+      ]
+    },
+    {
+      "id": "IT2",
+      "text": "Knowing the correct answer always prevents illusory truth",
+      "classification": "REJECT",
+      "support": [
+        "s2015"
+      ]
+    },
+    {
+      "id": "IT3",
+      "text": "Repeated headlines invariably change convictions or behavior",
+      "classification": "REJECT_OVERGENERALIZATION",
+      "support": [
+        "s2018"
+      ]
+    },
+    {
+      "id": "IT4",
+      "text": "Early accuracy consideration can help in bounded conditions",
+      "classification": "ALLOW_WITH_LIMITS",
+      "support": [
+        "s2020"
+      ]
+    },
+    {
+      "id": "Z1",
+      "text": "Zen12 seller describes 48 MP3s across 12 levels and 4 styles",
+      "classification": "SELLER_DESCRIPTION_ONLY",
+      "support": [
+        "seller_hnp"
+      ]
+    },
+    {
+      "id": "Z2",
+      "text": "Zen12 delivers the benefit of an hour of advanced meditation in 12 minutes",
+      "classification": "DO_NOT_ASSERT_UNSUBSTANTIATED",
+      "support": [
+        "seller_hnp",
+        "s2023beat"
+      ]
+    },
+    {
+      "id": "Z3",
+      "text": "Zen12 treats anxiety, heals disease or makes users wealthier",
+      "classification": "DO_NOT_ASSERT_UNSUBSTANTIATED",
+      "support": [
+        "ftc_health"
+      ]
+    },
+    {
+      "id": "Z4",
+      "text": "Zen12 Premium always costs $87.99",
+      "classification": "REJECT_PRICE_VARIABILITY",
+      "support": [
+        "seller_hnp",
+        "seller_secret"
+      ]
+    },
+    {
+      "id": "Z5",
+      "text": "The $37 secret-page coupon is universally available",
+      "classification": "REJECT_PRICE_VARIABILITY",
+      "support": [
+        "seller_secret"
+      ]
+    },
+    {
+      "id": "Z6",
+      "text": "Inspire3 publicly operates an affiliate registration portal",
+      "classification": "ALLOW",
+      "support": [
+        "seller_affiliates"
+      ]
+    },
+    {
+      "id": "Z7",
+      "text": "Final Vestige Studios is a named approved Inspire3 affiliate",
+      "classification": "UNVERIFIED_NO_PUBLISH",
+      "support": [
+        "seller_affiliates"
+      ]
+    },
+    {
+      "id": "Z8",
+      "text": "Buyer personal information may be shared to referring affiliate",
+      "classification": "ALLOW_POLICY_WARNING",
+      "support": [
+        "seller_privacy"
+      ]
+    },
+    {
+      "id": "Z9",
+      "text": "FV can track and report paid sale from affiliate_click",
+      "classification": "REJECT",
+      "support": [
+        "internal_820"
+      ]
+    },
+    {
+      "id": "Z10",
+      "text": "Prospective earning recommendation requires clear near-link disclosure",
+      "classification": "REQUIRED",
+      "support": [
+        "ftc_endorsement"
+      ]
+    }
+  ],
+  "approvals": {
+    "named_partner_approval": false,
+    "allowed_channels_verified": false,
+    "earning_url_verified": false,
+    "licensed_creatives_verified": false,
+    "contract_prohibits_buyer_pii_reporting": false,
+    "exact_checkout_and_refund_verified": false,
+    "product_specific_efficacy_substantiated": false,
+    "paid_fv_mind_payhip_sku_verified": false,
+    "rights_cleared_paid_sku_verified": false,
+    "checkout_fulfillment_verified": false,
+    "qualified_human_sessions_observed": false,
+    "consent_reviewed_first_party_attribution": false,
+    "actual_grok_asset_ids_verified": false,
+    "merchant_confirmed_attributable_paid_orders": false,
+    "merchant_settlement_refunds_fees_verified": false,
+    "founder_release_authorization": false,
+    "real_browser_a11y_qa": false,
+    "optional_video_rendered_captioned_tested": false
+  },
+  "affiliate_cta": {
+    "active": false,
+    "authorized_url": null,
+    "button_disabled": true,
+    "near_link_disclosure": "If Final Vestige later offers a purchase link and you buy through it, Final Vestige may earn a commission at no additional cost to you.",
+    "buyer_pii_collected": false
+  },
+  "revenue": {
+    "status": "NOT_COMPUTABLE",
+    "window_days": [
+      7,
+      30
+    ],
+    "qualified_human_sessions": null,
+    "paid_orders": null,
+    "affiliate_commissions_settled": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000": null
+  },
+  "creator_topic_fit": [
+    {
+      "id": "change-blindness",
+      "live_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "platform_url": null,
+      "merchant_eligibility": "HOLD",
+      "direct_purchase_fit": "LOW",
+      "existing_free_focus": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "mesmerism-puysegur",
+      "live_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "supporting_archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "asset_id": null,
+      "platform_url": null,
+      "merchant_eligibility": "HOLD",
+      "direct_purchase_fit": "LOW_TO_MEDIUM",
+      "existing_free_focus": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "attentional-blink",
+      "live_article": null,
+      "asset_id": null,
+      "platform_url": null,
+      "merchant_eligibility": "HOLD",
+      "direct_purchase_fit": "POSSIBLE_HIGH_INTENT_ONLY_AFTER_QUALIFICATION",
+      "existing_free_focus": "https://finalvestige.com/focus/"
+    }
+  ],
+  "risks": [
+    "Seller marketing does not equal independent clinical evidence",
+    "Two official Zen12 presentations show different offers",
+    "Merchant policy permits buyer PII sharing with affiliates",
+    "Public signup does not prove named affiliate acceptance",
+    "One free Jetpack list must remain unchanged",
+    "No public URL for unpublished editorial",
+    "All sales/commissions/qualified visitors remain unverified"
+  ]
+}
