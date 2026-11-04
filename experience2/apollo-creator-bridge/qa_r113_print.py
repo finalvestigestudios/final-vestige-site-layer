@@ -74,7 +74,24 @@ def run(html,out,exe,axe=None):
                     if js and w in (390,1440):
                         img=out/f'R113_WEB_{w}.png';page.screenshot(path=str(img),full_page=True)
                         record['screenshots'][img.name]=sha(img)
+                    require(page.locator('[data-fv-student-print]').count()==1 and
+                            not page.locator('[data-fv-student-print]').is_visible(),
+                            label+': student handout leaked into screen rendering')
+                    # Simulate a teacher opening the answer before printing; it must not leak.
+                    page.locator('#classroom-preview .callout details').first.evaluate('(e)=>e.open=true')
                     page.emulate_media(media='print')
+                    require(page.locator('[data-fv-student-print]').is_visible(),
+                            label+': printable student worksheet missing')
+                    require(not page.locator('#classroom-preview .callout').is_visible(),
+                            label+': teacher answer/notes leaked into student handout')
+                    require(page.locator('[data-fv-student-prompts] > li').count()==3,
+                            label+': student prompts incomplete')
+                    require(page.locator('[data-fv-student-print] .response-lines span').count()==9,
+                            label+': written response space missing')
+                    worksheet=page.locator('[data-fv-student-print]').inner_text()
+                    require('Apollo 204 Review Board' in worksheet and
+                            'January 27' in worksheet and 'Two independently identified sources' in worksheet,
+                            label+': worksheet source or uncertainty prompt missing')
                     require(page.locator('.print-custody').count()==1 and page.locator('.print-custody').is_visible(),label+': PRINT RIGHTS NOTICE MISSING')
                     rights=page.locator('.print-custody').inner_text()
                     require('0/6' in rights and 'S67-19766' in rights and 'not NASA-endorsed' in rights,label+': PRINT RIGHTS NOTICE INCOMPLETE')
