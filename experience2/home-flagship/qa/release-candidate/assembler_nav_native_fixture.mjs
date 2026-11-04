@@ -57,9 +57,9 @@ if (!is_array($u) || ($u['scheme'] ?? '') !== 'http' ||
 $original=get_block_template('assembler//header','wp_template_part');
 if (!$original || empty($original->content)) ex2_abort('Assembler header template part missing');
 $source=$original->content;
-$pattern='~<!-- wp:navigation(?:\s+({[^>]*?}))?\s*-->(.*?)<!-- /wp:navigation -->~s';
+$pattern='~<!-- wp:navigation(?:\s+(\{[^>]*\}))?\s*(?:/-->|-->.*?<!-- /wp:navigation -->)~s';
 if (preg_match_all($pattern,$source,$matches,PREG_SET_ORDER)!==1) {
-    ex2_abort('Unexpected header navigation block shape; no blind replacement');
+    ex2_abort('Unexpected header navigation block shape; wrapped='.preg_match_all('~<!-- wp:navigation(?:\\s|>)~',$source).' closing='.substr_count($source,'<!-- /wp:navigation -->').' selfclosing='.preg_match_all('~<!-- wp:navigation[^>]*?/-->~s',$source));
 }
 $attrs=json_decode($matches[0][1] ?: '{}',true);
 if (!is_array($attrs)) ex2_abort('Unexpected header navigation block attributes');
