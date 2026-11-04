@@ -26,7 +26,9 @@ def exact_policy_limit(value: object, name: str, maximum: Decimal) -> Decimal:
     No exponent, sign, leading zero, whitespace, Unicode digit, excessive
     precision, boolean, float or unbounded numeric text is accepted.
     """
-    if isinstance(value, (bool, float)) or not isinstance(value, (str, int)):
+    # Only native JSON primitive identities may set finance review limits.
+    # A str/int subclass can forge __str__ and misstate its stored threshold.
+    if type(value) not in (str, int):
         raise ValueError(f"{name} must be an ASCII fixed-point decimal string or integer")
     raw = str(value)
     if len(raw) > 16 or _POLICY_DECIMAL.fullmatch(raw) is None:
@@ -42,7 +44,8 @@ def exact_policy_limit(value: object, name: str, maximum: Decimal) -> Decimal:
 
 def event_kind(row: Mapping[str, str], *, source: str) -> str:
     """Classify an explicit movement, without reflecting private CSV values."""
-    if source not in _EVENT_TYPES:
+    # Reject hostile str subclasses before hashing/comparing stream identity.
+    if type(source) is not str or source not in _EVENT_TYPES:
         raise ValueError("Unsupported procurement event stream")
     # Snapshot native stored fields: a dict subclass may forge .get() and
     # virtual views to reclassify an actual credit/return as an invoice/receipt.
