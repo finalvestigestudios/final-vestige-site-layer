@@ -68,7 +68,8 @@ def inline_local_styles(html):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--out", type=Path, default=Path("/tmp/ex2-mobile-explore"))
-    p.add_argument("--chromium", default="/usr/bin/chromium")
+    p.add_argument("--chromium", default=None,
+                   help="Optional Chromium executable; defaults to pinned Playwright browser")
     args = p.parse_args()
     from playwright.sync_api import sync_playwright
 
@@ -80,8 +81,8 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     results, failures = [], []
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True, executable_path=args.chromium,
-                                     args=["--no-sandbox"])
+        options = {"executable_path": args.chromium} if args.chromium else {}
+        browser = pw.chromium.launch(headless=True, args=["--no-sandbox"], **options)
         try:
             for width in WIDTHS:
                 context = browser.new_context(viewport={"width": width, "height": 900},
