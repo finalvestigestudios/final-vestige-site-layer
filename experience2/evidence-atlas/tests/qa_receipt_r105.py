@@ -167,13 +167,7 @@ class EvidenceJournal:
             if hashlib.sha256(content).hexdigest() != digest:
                 raise ValueError('R106_ARTIFACT_HASH_MISMATCH')
             if name.endswith('.png'):
-                expected_width = int(re.search(r'_(320|390|1440)\.png        self.checkpoint(record, 'all-gates-verified')
-        payload = self._read()
-        payload.update(status='completed', complete=True,
-                       artifact_sha256={**images, **documents},
-                       note='Isolated WordPress QA evidence complete; release remains STAGING HOLD.')
-        self._write(payload)
-, name).group(1))
+                expected_width = int(re.search(r'_(320|390|1440)\.png$', name).group(1))
                 check_png(file, expected_width)
             else:
                 check_pdf(file)
