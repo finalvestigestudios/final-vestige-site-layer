@@ -37,7 +37,7 @@ const mutations=[
   ['hide custody notice',s=>s.replace('body.fv-worksheet-only .worksheet-standalone-rights{display:block!important','body.fv-worksheet-only .worksheet-standalone-rights{display:none!important')],
   ['invent reuse clearance',s=>s.replace('individually uncleared for reproduction (0/6)','approved for reproduction (6/6)')],
   ['overclaim portrait',s=>s.replace('proposed S67-19766 portrait identity is provisional','S67-19766 portrait identity is confirmed')],
-  ['invent endorsement',s=>s.replace('not NASA-endorsed','NASA-endorsed')],
+  ['invent endorsement',s=>s.replace('This independent worksheet is not NASA-endorsed','This independent worksheet is NASA-endorsed')],
   ['disable afterprint cleanup',s=>s.replace("window.addEventListener('afterprint'","window.addEventListener('foobar'")],
   ['remove explicit action',s=>s.replace("button.addEventListener('click'","button.addEventListener('mouseover'")],
   ['remove guard',s=>s.replace("if(!button||!sheet||typeof window.print!=='function')return;",'')],
