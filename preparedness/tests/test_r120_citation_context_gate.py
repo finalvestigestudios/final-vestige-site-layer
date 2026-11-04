@@ -209,5 +209,26 @@ for index, slug in enumerate(CHANGED):
 for index, slug in enumerate(SLUGS[13:]):
     setattr(R120Integrity, f"test_untracked_unchanged_body_{index:02d}", make_extra_test(slug))
 
+
+
+class R120ActualFrozenCorpus(unittest.TestCase):
+    def test_35_original_routes_against_two_exact_object_manifests(self):
+        root = Path(__file__).resolve().parents[1]
+        snapshot = root / "docs" / "R117_NINE_SNAPSHOT_GIT_OBJECT_CUSTODY_HOLD.json"
+        a = root / "docs" / "r120" / "CITATION_CONTEXT_CHANGED_BODIES_PART_A_HOLD.json"
+        b = root / "docs" / "r120" / "CITATION_CONTEXT_CHANGED_BODIES_PART_B_HOLD.json"
+        if not snapshot.exists() or not a.exists() or not b.exists():
+            self.skipTest("full repository / frozen manifest files not mounted")
+        report = gate.check(gate.strict_json(snapshot),
+                            [gate.strict_json(a), gate.strict_json(b)])
+        self.assertEqual(report["article_count"], 35)
+        self.assertEqual(report["changed_body_count"], 13)
+        self.assertEqual(report["unmodified_body_count"], 22)
+        self.assertEqual(report["total_added_citation_tokens"], 48)
+        self.assertEqual(report["source_occurrence_delta_articles"], 10)
+        self.assertEqual(report["source_context_drift_articles"], 8)
+        self.assertEqual(report["state"], "HOLD")
+        self.assertFalse(report["may_publish"])
+
 if __name__ == "__main__":
     unittest.main()
