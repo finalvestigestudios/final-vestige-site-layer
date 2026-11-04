@@ -20,7 +20,7 @@ test('rejected hour-equivalence claim documented',()=>assert.match(L.claim_decis
 test('distinct product terms not blended',()=>assert.match(L.claim_decisions.find(x=>x.id==='C16').decision,/REJECT/));
 test('A/B share same copy except optional B film',()=>assert.equal(B.slice(0,filmStart)+B.slice(filmEnd),A));
 for (const [tag,html] of [['A',A],['B',B]]){
- test(tag+' no merchant earning href',()=>assert.doesNotMatch(html,/<a[^>]+href=["']https?:\\/\\/(?:zen12|affiliates\.inspire3)[^"']*["']/i));
+ test(tag+' no merchant earning href',()=>{assert.ok(!html.includes('href="https://zen12.com'));assert.ok(!html.includes('href="https://affiliates.inspire3.com'));});
  test(tag+' disabled offer control',()=>assert.match(html,/<button[^>]+disabled\b/));
  test(tag+' near-button prospective disclosure',()=>assert.ok(html.includes('we may earn a commission when you buy')&&html.indexOf('we may earn a commission when you buy')<html.indexOf('Merchant link unavailable')));
  test(tag+' has no script/embed/form',()=>assert.doesNotMatch(html,/<script\b|<iframe\b|<form\b/));
