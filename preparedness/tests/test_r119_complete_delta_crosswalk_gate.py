@@ -151,9 +151,9 @@ class CandidateOnlyBlindspotTests(unittest.TestCase):
         self.assertFalse(out["may_publish"])
     def test_candidate_only_source_fragment_cannot_be_skipped(self):
         s,w=fixture()
-        s["snapshots"][1]["source_fragments"]["food.json"]=D
+        s["snapshots"][1]["source_fragments"]["start.json"]=D
         out=gate.build_crosswalk(s,w)
-        p=gate.SOURCE_PREFIX+"food.json"
+        p=gate.SOURCE_PREFIX+"start.json"
         self.assertIn(p,[r["path"] for r in out["review_decisions"]])
         self.assertIn(p,out["candidate_only_blindspots"])
         self.assertEqual(out["candidate_changed_files"],2)
