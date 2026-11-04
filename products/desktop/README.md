@@ -1,3 +1,6 @@
+## R184 — Restore inherited R180 test compatibility without weakening physical source custody (DRAFT / HARD HOLD)
+R184 reconciles one R180 synthetic unit fixture with the stricter R182/R183 strictly increasing physical source-line requirement: corrected test input is L2, L9 rather than invalid L9, L2. R180's original fixture failed 1 of 27 unit methods on exact R183 code; corrected 27/27 and 20 new custody regressions now pass in both normal and optimized Python locally (94/94 total focused executions). [R184 evidence, CI and release hold](docs/POLICY_R180_ORDER_COMPAT_R184.md). Full inherited integration, Ubuntu/Windows CI and six executable builds remain unverified; **all six applications are UNRELEASED**.
+
 ## R182 — Policy Delta source-line identity custody (DRAFT / HARD HOLD)
 Source-cited cross-script review cues now **reject malformed or duplicated physical line coordinates and deceptive non-native source containers**, rather than presenting contradictory before/after evidence. The reader's 50,000-line boundary, private-text-free diagnostics, deterministic Unicode names, original fingerprints and mandatory human review remain intact. [R182 38-case tests, exact local execution evidence and release/QD hold](docs/POLICY_SOURCE_COORDINATE_CUSTODY_R182.md). Full Ubuntu/Windows CI and six executable builds remain unverified; **all apps are UNRELEASED**.
 
