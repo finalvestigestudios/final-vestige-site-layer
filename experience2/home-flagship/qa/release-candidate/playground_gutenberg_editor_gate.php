@@ -1,8 +1,10 @@
 <?php
 /**
- * FV EX2 Gutenberg EDITOR SAVE gate for a disposable synthetic-only Playground.
+ * FV EX2 Gutenberg EDITOR SAVE gate for an isolated disposable Playground.
  * NEVER upload, include, or run this file on WordPress.com or a real website.
- * Requires a loopback WordPress host, a synthetic marker, and a fresh token.
+ * Requires loopback WordPress, a synthetic-environment marker and fresh token.
+ * The payload contains only 72 PUBLIC page-6 Margins texts plus mock Jetpack;
+ * do not label those real public records as invented synthetic text.
  * POST-only create/login/verify/cleanup; one temporary draft, never publish.
  */
 header('Content-Type: application/json; charset=utf-8');
@@ -89,7 +91,7 @@ if ($action === 'create') {
     fv_ex2_editor_reply(200, array(
         'result'=>'CREATED','draft_id'=>$id,'release'=>'HOLD',
         'source_sha256'=>hash('sha256', $source),
-        'data_class'=>'SYNTHETIC_TEST_FIXTURE_ONLY'
+        'data_class'=>'PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE'
     ));
 }
 if ($action === 'login') {
@@ -142,7 +144,7 @@ if ($action === 'verify' || $action === 'cleanup') {
         'result'=>$success?'PASS':'FAIL',
         'release'=>'HOLD',
         'test_type'=>'REAL_GUTENBERG_EDITOR_SAVE_SYNTHETIC_PLAYGROUND_ONLY',
-        'data_class'=>'SYNTHETIC_TEST_FIXTURE_ONLY',
+        'data_class'=>'PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE',
         'source_sha256'=>hash('sha256',$source),
         'stored_sha256'=>hash('sha256',$stored),
         'source_bytes'=>strlen($source),
