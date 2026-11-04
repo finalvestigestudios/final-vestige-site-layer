@@ -4,7 +4,26 @@
  * Source dependencies only: NO browser HTTP, media download, rights approval or
  * inference that a shared host is broken. Site QA owns browser verification.
  */
-const fs=require('node:fs'),path=require('node:path');
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const FROZEN_PART_BLOBS=[
+ '948bc1b65b42799aa40cfdb810ddf6ffd80886b6',
+ '48e1ebf07207e948ba5802e714eb39659d2e1c1d',
+ '49183f66f880f7c4dfd363acca906876877f2e5e',
+ '6df3251e5a67a971d87a516a1ba4a0cc32f51f96',
+ '9b16b828342a9ac338f3e65610fd3d8d508355e9',
+ '0f3dfe398a76838049cebba7cb773d5c5a0c8c69',
+ '21095161e633aba093b74c0ead9936c9f6186d00',
+ '5659ec243c188928be3f89c0f96354b660608ca2'
+];
+function loadPinnedParts(directory){
+ return FROZEN_PART_BLOBS.map((expected,i)=>{
+  const bytes=fs.readFileSync(path.join(directory,'parts',String(i+1).padStart(2,'0')+'.json'));
+  const gitSha=crypto.createHash('sha1')
+   .update(Buffer.from('blob '+bytes.length+'\\0')).update(bytes).digest('hex');
+  if(gitSha!==expected)throw Error('frozen Git blob mismatch part '+(i+1));
+  return JSON.parse(bytes.toString('utf8'));
+ });
+}
 function buildHostConcentration(parts){
  if(!Array.isArray(parts)||parts.length!==8)throw Error('eight frozen parts required');
  const hosts=new Map(), posts=new Map(), seenSlots=new Set(), kinds={};
@@ -68,9 +87,8 @@ function buildHostConcentration(parts){
   hosts:hostRows,posts:postRows
  };
 }
-module.exports={buildHostConcentration};
+module.exports={buildHostConcentration,loadPinnedParts,FROZEN_PART_BLOBS};
 if(require.main===module){
- const parts=Array.from({length:8},(_,i)=>JSON.parse(fs.readFileSync(
-  path.join(__dirname,'parts',String(i+1).padStart(2,'0')+'.json'),'utf8')));
+ const parts=loadPinnedParts(__dirname);
  process.stdout.write(JSON.stringify(buildHostConcentration(parts),null,2)+'\n');
 }
