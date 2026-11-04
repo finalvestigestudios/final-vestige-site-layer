@@ -1,0 +1,84 @@
+{
+  "schema": "fv-dispatch-master-stack-provenance-v1",
+  "observed_at_utc": "2026-11-04",
+  "original_pr": 175,
+  "original_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_pr": 975,
+  "stacked_head_sha": "cfe5134da69476e8c8d92f0b986b750b00c7ac86",
+  "original_file_count": 7,
+  "edited_since_master": 7,
+  "meaning": "Master PR #175 remains at the same SHA, but stacked PR #975 contains later changes in the original campaign files. This is lineage drift, NOT evidence of unauthorized editing or approval. Do not substitute one set for the other without explicit editorial selection.",
+  "release_condition": "HOLD_ALL_UNSENT_UNTIL_CANONICAL_COPY_SELECTED_AND_TESTED",
+  "files": [
+    {
+      "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "master_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "stacked_blob": "2a573f6b7043c101ece49703f2dd1262ec2b0ee6",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "master_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "stacked_blob": "fb8cf1503acb2338a4884cac58b7c3b2cec95af7",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "master_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "stacked_blob": "b86572c15d05316801a007c00e9a2689a5de27c3",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "master_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "stacked_blob": "7de77ccdc312e5bdf77a9aaa355c3a9ba4efa2c8",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "master_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "stacked_blob": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "master_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "stacked_blob": "94b2e31594f0cdea1ec49f654429fa5f3a7b89c6",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/manifest.json",
+      "master_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+      "stacked_blob": "2fe3c10a26cb2c9e2406e8444a5734eabb21f209",
+      "identical": false,
+      "master_subject": null,
+      "stack_subject": null,
+      "master_preheader": null,
+      "stack_preheader": null
+    }
+  ]
+}
