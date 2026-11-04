@@ -119,7 +119,7 @@ jobs:
           for folder in ('parts','patterns'):
               d=root/'assembler'/folder
               if d.exists():
-                  for p in sorted(d.glob('*.html')):
+                  for p in sorted(q for ext in ('*.html','*.php') for q in d.glob(ext)):
                       t=p.read_text(encoding='utf-8')
                       if any(m in t for m in ('wp:navigation','wp:page-list','wp:pattern')):
                           print('EX2_VENDOR_BLOCK_SOURCE',
