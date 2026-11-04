@@ -48,6 +48,7 @@ function deleteInvariants(php){
     "hash_equals($proof,$owner)",
     "wp_delete_post($id,true)",
     "get_post($id)!==null",
+    "!@unlink($copy_path)||is_file($copy_path)",
     "'release'=>'HOLD'"
   ]);
   assert.ok(!php.includes('https://finalvestige.com'),'Do not contact WordPress production');
