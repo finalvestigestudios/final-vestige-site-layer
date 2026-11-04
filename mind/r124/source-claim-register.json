@@ -1,0 +1,185 @@
+{
+  "as_of": "2026-11-04",
+  "scope": "mind/r124",
+  "commercial_status": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "braid",
+      "kind": "historical_primary_catalog",
+      "url": "https://wellcomecollection.org/works/grytzqh4"
+    },
+    {
+      "id": "inspire3",
+      "kind": "merchant_catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "hl",
+      "kind": "merchant_exact_FAQ",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "zen",
+      "kind": "merchant_exact_offer",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "secret",
+      "kind": "merchant_conditional_offer",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "privacy",
+      "kind": "merchant_policy",
+      "url": "https://inspire3.com/privacy/"
+    },
+    {
+      "id": "review2024",
+      "kind": "systematic_review",
+      "url": "https://doi.org/10.1097/PR9.0000000000001185"
+    },
+    {
+      "id": "review2023",
+      "kind": "systematic_review",
+      "url": "https://doi.org/10.1016/j.ctcp.2023.101771"
+    },
+    {
+      "id": "review2026",
+      "kind": "systematic_review",
+      "url": "https://doi.org/10.1002/ejp.70369"
+    },
+    {
+      "id": "eeg2023",
+      "kind": "systematic_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "ftc",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "ftchealth",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "decisions": [
+    {
+      "claim": "Braid published Neurypnology in 1843",
+      "source": "braid",
+      "status": "historically_supported",
+      "permission": "editorial_only"
+    },
+    {
+      "claim": "Clinical adjunctive hypnosis may have small benefits in some pain comparisons",
+      "source": "review2024",
+      "status": "context_limited",
+      "permission": "editorial_only"
+    },
+    {
+      "claim": "Clinical hypnosis benefits are universal",
+      "source": "review2023",
+      "status": "contradicted_by_variation",
+      "permission": "reject"
+    },
+    {
+      "claim": "2026 pain review supports commercial audio SKU efficacy",
+      "source": "review2026",
+      "status": "not_product_specific",
+      "permission": "reject"
+    },
+    {
+      "claim": "Hypnosis Live sells over 200 themed downloadable recordings",
+      "source": "inspire3",
+      "status": "seller_description_only",
+      "permission": "attributed_factual"
+    },
+    {
+      "claim": "Hypnosis Live sessions typically cost $22.95 and have a 14-day refund term max five annually",
+      "source": "hl",
+      "status": "seller_observation_2026_11_04",
+      "permission": "only_with_dated_qualification"
+    },
+    {
+      "claim": "Hypnosis Live personal health wealth and IQ outcomes guaranteed",
+      "source": "hl",
+      "status": "not_independently_substantiated",
+      "permission": "reject"
+    },
+    {
+      "claim": "Zen12 includes 12 levels and 48 Premium MP3 recordings",
+      "source": "zen",
+      "status": "seller_description_only",
+      "permission": "attributed_factual"
+    },
+    {
+      "claim": "Zen12 12 minutes equals one hour of advanced meditation",
+      "source": "zen",
+      "status": "not_independently_substantiated",
+      "permission": "reject"
+    },
+    {
+      "claim": "Binaural audio entrainment consistently improves EEG outcomes",
+      "source": "eeg2023",
+      "status": "research_inconsistent",
+      "permission": "reject"
+    },
+    {
+      "claim": "Zen12 official conditional coupon price is universal checkout total",
+      "source": "secret",
+      "status": "not_verified",
+      "permission": "reject"
+    },
+    {
+      "claim": "Affiliate referring buyer name/email/product can be shared by merchant",
+      "source": "privacy",
+      "status": "policy_stated",
+      "permission": "purchaser_notice_required"
+    },
+    {
+      "claim": "Published FTC affiliate disclosure must be near recommendation",
+      "source": "ftc",
+      "status": "regulator_guidance",
+      "permission": "required"
+    },
+    {
+      "claim": "Exact product benefit/health claims need sufficient support",
+      "source": "ftchealth",
+      "status": "regulator_guidance",
+      "permission": "required"
+    }
+  ],
+  "gates": {
+    "named_inspire3_partner_acceptance": false,
+    "approved_earning_link": false,
+    "affiliate_channel_rights": false,
+    "aggregate_only_reporting_terms": false,
+    "merchant_checkout_verified": false,
+    "paid_fv_mind_sku_verified": false,
+    "paid_fv_sku_rights_verified": false,
+    "merchant_transaction_export_verified": false,
+    "fees_refunds_reconciled": false,
+    "grok_asset_ids_verified": false,
+    "qualified_human_session_attribution": false,
+    "confirmed_jetpack_leads_attributed": false,
+    "native_browser_accessibility_test": false,
+    "video_mp4_captions_test": false,
+    "founder_commerce_release": false,
+    "founder_wp_release": false
+  },
+  "kpi": {
+    "name": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "value": null,
+    "status": "NOT_COMPUTABLE",
+    "reason": "No linked merchant-confirmed settled transaction, refunded/fees net, or qualified attributable cohort evidence"
+  },
+  "pilot": {
+    "offer": "Zen12 Premium conditional",
+    "target_intent": "adults seeking structured meditation audio",
+    "primary_action": "merchant_confirmed_paid_purchase_only_after_authorization",
+    "control": "existing text-only buyer guide",
+    "variant": "same guide plus optional 40-second storyboard",
+    "test_status": "NOT_STARTED"
+  }
+}
