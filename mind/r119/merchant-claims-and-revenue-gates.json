@@ -1,0 +1,428 @@
+{
+  "schema": "fv.mind.commercial-gates.v1",
+  "as_of": "2026-11-04",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "branch": "feature/mind-r119-inattentional-blindness-conversion-audit-20261104",
+  "primary_intent": "time-constrained adults considering a structured meditation-audio purchase",
+  "commercial_offer": "Zen12 Premium",
+  "merchant": "Inspire3 Ltd",
+  "merchant_product_url_public_nonaffiliate_reference": "https://zen12.com/hnp",
+  "buyer_offer_observation": {
+    "date": "2026-11-04",
+    "seller_displayed_price_usd": 87.99,
+    "price_basis": "seller webpage Premium offer only; NOT confirmed final checkout or taxes",
+    "seller_described": "48 MP3 recordings across 12 levels and 4 listening styles (music, guided, nature, white noise)",
+    "seller_described_guarantee": "one-year money-back guarantee; real-world fulfillment unverified",
+    "seller_claims_not_endorsed": [
+      "one hour of advanced meditation in twelve minutes",
+      "automatically guaranteed deep meditation",
+      "immediate focus, stress, health improvements"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "purpose": "Original selective-monitoring inattentional-blindness research"
+    },
+    {
+      "id": "S2",
+      "kind": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11294235/",
+      "purpose": "Feature similarity and selective ignoring"
+    },
+    {
+      "id": "S3",
+      "kind": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23397479/",
+      "purpose": "Known gorilla does not generalize to other unexpected events"
+    },
+    {
+      "id": "S4",
+      "kind": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23863753/",
+      "purpose": "Expert-observer attention research"
+    },
+    {
+      "id": "S5",
+      "kind": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37216543/",
+      "purpose": "2023 high-powered counterbalance: fast unexpected objects"
+    },
+    {
+      "id": "S6",
+      "kind": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21261412/",
+      "purpose": "Age difference, bounded"
+    },
+    {
+      "id": "BB1",
+      "kind": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "purpose": "Mixed evidence for binaural-beat EEG entrainment, not Zen12 test"
+    },
+    {
+      "id": "SELLER1",
+      "kind": "seller_page",
+      "url": "https://inspire3.com/",
+      "purpose": "Brand catalog, not evidence of efficacy"
+    },
+    {
+      "id": "SELLER2",
+      "kind": "seller_page",
+      "url": "https://zen12.com/hnp",
+      "purpose": "Specific sales page, feature and offer observation"
+    },
+    {
+      "id": "SELLER3",
+      "kind": "seller_policy",
+      "url": "https://inspire3.com/privacy/",
+      "purpose": "Buyer identifying-data may be provided to referring affiliates"
+    },
+    {
+      "id": "FTC1",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "purpose": "Adjacent material connection disclosures"
+    },
+    {
+      "id": "FTC2",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "purpose": "Independent support for objective benefits and qualified claims"
+    },
+    {
+      "id": "WP1",
+      "kind": "authenticated_wp_read",
+      "url": "https://finalvestige.com/collection/",
+      "purpose": "Live Collection confirms free Focus PDF; no paid Mind SKU"
+    },
+    {
+      "id": "WP2",
+      "kind": "authenticated_wp_read",
+      "url": "https://finalvestige.com/focus/",
+      "purpose": "Published Focus page; signups not independently tested"
+    },
+    {
+      "id": "WP3",
+      "kind": "authenticated_wp_read",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "purpose": "Published historical archive"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "1999 sustained inattentional blindness influenced by task and similarity",
+      "status": "SUPPORTED_FOR_STUDY_CONTEXT",
+      "source_ids": [
+        "S1"
+      ],
+      "page": "investigation"
+    },
+    {
+      "id": "C02",
+      "statement": "Prior awareness of gorilla does not make people notice every change",
+      "status": "SUPPORTED_FOR_STUDY_CONTEXT",
+      "source_ids": [
+        "S3"
+      ],
+      "page": "investigation"
+    },
+    {
+      "id": "C03",
+      "statement": "Expert radiologists may miss an unexpected object in experimental image search",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "source_ids": [
+        "S4"
+      ],
+      "page": "investigation"
+    },
+    {
+      "id": "C04",
+      "statement": "Fast unexpected objects were more readily detected in 3 studies N=4493",
+      "status": "SUPPORTED_FOR_STUDY_CONTEXT",
+      "source_ids": [
+        "S5"
+      ],
+      "page": "investigation"
+    },
+    {
+      "id": "C05",
+      "statement": "Older adults universally have poor attention",
+      "status": "REJECTED_UNWARRANTED_GENERALIZATION",
+      "source_ids": [
+        "S6"
+      ],
+      "page": "none"
+    },
+    {
+      "id": "C06",
+      "statement": "Zen12 sales page offers 48 MP3s in Premium; four styles",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "SELLER2"
+      ],
+      "page": "conditional_offer_guide"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 Premium costs $87.99 all-in",
+      "status": "REJECTED_NO_CHECKOUT_TOTAL",
+      "source_ids": [
+        "SELLER2"
+      ],
+      "page": "none"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 seller page displays promotional $87.99 on 2026-11-04",
+      "status": "DATED_SELLER_PAGE_OBSERVATION",
+      "source_ids": [
+        "SELLER2"
+      ],
+      "page": "conditional_offer_guide"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 one hour of meditation in twelve minutes",
+      "status": "UNSUPPORTED_SELLER_EFFICACY_CLAIM_DO_NOT_REPEAT_AS_FACT",
+      "source_ids": [
+        "SELLER2",
+        "BB1"
+      ],
+      "page": "conditional_offer_guide"
+    },
+    {
+      "id": "C10",
+      "statement": "Brainwave entrainment proven, guaranteed for all Zen12 buyers",
+      "status": "REJECTED",
+      "source_ids": [
+        "BB1",
+        "SELLER2"
+      ],
+      "page": "none"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 guarantee fulfilled in every case",
+      "status": "NOT_INDEPENDENTLY_VERIFIED",
+      "source_ids": [
+        "SELLER2"
+      ],
+      "page": "none"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 seller advertises 1-year refund promise",
+      "status": "SELLER_POLICY_NOT_OUTCOME",
+      "source_ids": [
+        "SELLER2"
+      ],
+      "page": "conditional_offer_guide"
+    },
+    {
+      "id": "C13",
+      "statement": "Affiliate may receive buyers' name/email/purchased-product details",
+      "status": "SELLER_POLICY_VERIFIED",
+      "source_ids": [
+        "SELLER3"
+      ],
+      "page": "conditional_offer_guide"
+    },
+    {
+      "id": "C14",
+      "statement": "FV has written Inspire3 approval, tracking URL and permitted channels",
+      "status": "UNVERIFIED_ACTIVATION_HOLD",
+      "source_ids": [],
+      "page": "none"
+    },
+    {
+      "id": "C15",
+      "statement": "An existing paid FV Mind digital product is rights-cleared and checkout validated",
+      "status": "UNVERIFIED_AUTHENTICATED_PAYHIP_REQUIRED",
+      "source_ids": [
+        "WP1"
+      ],
+      "page": "none"
+    },
+    {
+      "id": "C16",
+      "statement": "Focus Fieldbook is currently free via existing Dispatch subscription",
+      "status": "WP_LIVE_VERIFIED_NO_PAID_ORDER_IMPLIED",
+      "source_ids": [
+        "WP1",
+        "WP2"
+      ],
+      "page": "editorial_bridge"
+    },
+    {
+      "id": "C17",
+      "statement": "Outbound affiliate click indicates a paid sale",
+      "status": "REJECTED_DISTINCT_EVENTS",
+      "source_ids": [],
+      "page": "none"
+    },
+    {
+      "id": "C18",
+      "statement": "Commission or Payhip paid purchase exists",
+      "status": "NO_QUALIFYING_TRANSACTION_EVIDENCE_IN_THIS_RUN",
+      "source_ids": [],
+      "page": "none"
+    },
+    {
+      "id": "C19",
+      "statement": "Commercial health or focus outcomes from original gorilla studies",
+      "status": "REJECTED_NONSEQUITUR",
+      "source_ids": [
+        "S1",
+        "S4",
+        "FTC2"
+      ],
+      "page": "none"
+    },
+    {
+      "id": "C20",
+      "statement": "FTC disclosure adjacent to eventual earning link",
+      "status": "FUTURE_REQUIREMENT",
+      "source_ids": [
+        "FTC1"
+      ],
+      "page": "conditional_offer_guide"
+    }
+  ],
+  "gates": [
+    {
+      "id": "MERCHANT_ACCEPTANCE",
+      "open": false,
+      "proof_needed": "named Final Vestige partner account or signed approval"
+    },
+    {
+      "id": "ALLOWED_CHANNELS",
+      "open": false,
+      "proof_needed": "approved website/social/Dispatch promotional channel rights"
+    },
+    {
+      "id": "LINK_FORMAT",
+      "open": false,
+      "proof_needed": "merchant-issued live permitted tracking URL without cloak"
+    },
+    {
+      "id": "CREATIVE_RIGHTS",
+      "open": false,
+      "proof_needed": "approved product creative use or original-only assets"
+    },
+    {
+      "id": "PAYOUT_TERMS",
+      "open": false,
+      "proof_needed": "commission/attribution window/currency/refund and payout verification"
+    },
+    {
+      "id": "BUYER_PRIVACY",
+      "open": false,
+      "proof_needed": "written confirmation of no buyer PII exposure or vetted compliant minimal-data processing"
+    },
+    {
+      "id": "FV_PAID_PRODUCT",
+      "open": false,
+      "proof_needed": "authenticated Payhip SKU, price, fulfillment, rights and refund policy"
+    },
+    {
+      "id": "PAID_ORDER_PROOF",
+      "open": false,
+      "proof_needed": "merchant-confirmed transaction, net fees, refunds, settlement"
+    },
+    {
+      "id": "UTM_ASSET_ID",
+      "open": false,
+      "proof_needed": "actual Grok asset IDs and URLs from TASK-008"
+    },
+    {
+      "id": "QUALIFIED_SESSION",
+      "open": false,
+      "proof_needed": "privacy-safe independent qualified human denominators"
+    },
+    {
+      "id": "FOCUS_CONFIRMED_LEAD",
+      "open": false,
+      "proof_needed": "consented confirmed Jetpack signup evidence without new list or test subscriber"
+    },
+    {
+      "id": "STAGING_A11Y",
+      "open": false,
+      "proof_needed": "real 360/390/768/1440 browser, keyboard, screen reader, WCAG 2.2 AA review"
+    },
+    {
+      "id": "STAGING_PERFORMANCE",
+      "open": false,
+      "proof_needed": "Lighthouse and media load cost on staging, no autoplay"
+    },
+    {
+      "id": "FOUNDERS_RELEASE",
+      "open": false,
+      "proof_needed": "explicit authorized release for each production commercial change"
+    }
+  ],
+  "creator_to_offer": [
+    {
+      "topic": "change_blindness",
+      "hook": "What changed while you were watching?",
+      "article_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "verified_asset_url": null,
+      "resource_url": "https://finalvestige.com/focus/",
+      "product_guide_url": null,
+      "commercial_status": "HOLD"
+    },
+    {
+      "topic": "mesmer_puysegur",
+      "hook": "A historical trance is testimony, not proof",
+      "article_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "asset_id": null,
+      "verified_asset_url": null,
+      "resource_url": "https://finalvestige.com/focus/",
+      "archive_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "product_guide_url": null,
+      "commercial_status": "HOLD"
+    },
+    {
+      "topic": "invisible_gorilla",
+      "hook": "Knowing about the gorilla doesn't make you notice everything else",
+      "article_url": null,
+      "draft_article_path": "mind/r119/the-gorilla-you-were-looking-through.md",
+      "asset_id": null,
+      "verified_asset_url": null,
+      "resource_url": "https://finalvestige.com/focus/",
+      "product_guide_url": null,
+      "commercial_status": "UNPUBLISHED"
+    }
+  ],
+  "measurement": {
+    "qualified_human_sessions": null,
+    "article_visits": null,
+    "cta_clicks": null,
+    "confirmed_subscribers": null,
+    "affiliate_outbound_clicks": null,
+    "verified_affiliate_commissions": null,
+    "merchant_confirmed_orders": null,
+    "refunds": null,
+    "fees": null,
+    "net_realized_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "explicit_no_pii_fields": [
+      "email",
+      "ip",
+      "name",
+      "order_customer_id",
+      "phone",
+      "address",
+      "persistent_visitor_fingerprint"
+    ],
+    "existing_first_party_only": true
+  }
+}
