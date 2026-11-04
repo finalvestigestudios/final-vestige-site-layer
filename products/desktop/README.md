@@ -1,3 +1,6 @@
+## R178 — Policy Delta Desk local canonical Unicode edit citations (DRAFT / HARD HOLD)
+Policy Delta now identifies unique NFC-only source-line edit candidates *within each existing diff hunk*, including mixed substantive revisions, rather than relying only on whole-document equivalence. The bounded (16) navigation index cites physical before/after lines, suppresses ambiguous duplicates, never repeats private line text and makes no legal/compliance claims. [R178 tests and operator limitations](docs/POLICY_LOCAL_CANONICAL_R178.md) require Ubuntu and Windows normal/-OO Python. **All six apps remain UNRELEASED** pending independent Windows accessibility, EDR, signing, protected premium delivery, QD and founder approval.
+
 ## R177 — Financial identity/date primitives (DRAFT / HARD HOLD)
 The five financial tools now reject Python `str` subclasses and arbitrary executable string-conversion hooks before generating normalized keys or parsed calendar values in direct-API calls, without changing genuine CSV string behavior. [R177 source-owned 30-method test gate](docs/NATIVE_IDENTITY_DATE_CUSTODY_R177.md) is required on Ubuntu/Windows normal/-OO Python. **All six apps remain UNRELEASED** pending native Windows 11 accessibility, EDR, signing, protected premium delivery, independent QD and founder authorization.
 
