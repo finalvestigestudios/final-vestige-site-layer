@@ -200,5 +200,26 @@ class FullSourceFlagshipTests(unittest.TestCase):
                 write(HOME, path, path)
 
 
+    def test_wordpress_embed_uses_theme_main_without_nested_flagship_landmark(self):
+        # Standalone version must retain its own semantic main region.
+        self.assertEqual(self.index.count("<main>"), 1)
+        self.assertEqual(self.index.count("</main>"), 1)
+        candidate, manifest = compose(self.index, self.css, self.js)
+        self.assertTrue(manifest["wordpress_main_landmark_adapted"])
+        self.assertEqual(candidate.count('data-fv-embedded-main="wordpress-assembler"'), 1)
+        self.assertNotIn("<main>", candidate)
+        self.assertNotIn("</main>", candidate)
+        self.assertEqual(candidate.count('class="fv-hf__chapter-nav"'), 1)
+        self.assertGreaterEqual(candidate.count('href="https://finalvestige.com/focus/"'),
+                         self.index.count('href="https://finalvestige.com/focus/"'))
+        for bad in (
+            self.index.replace("<main>", "<section>", 1),
+            self.index.replace("</main>", "</section>", 1),
+            self.index.replace("<main>", "<main><main>", 1),
+        ):
+            with self.subTest(main_mutation=bad.count("<main>")):
+                with self.assertRaisesRegex(ValueError, "main landmark boundary changed"):
+                    compose(bad, self.css, self.js)
+
 if __name__ == "__main__":
     unittest.main()

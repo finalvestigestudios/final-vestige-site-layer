@@ -40,12 +40,21 @@ class CompleteDocumentAxeRegression(unittest.TestCase):
         axe = self.script.index("await page.addScriptTag({path:axePath})")
         self.assertLess(screenshot, axe)
         self.assertIn("fullPage:false", self.script)
-        self.assertIn("width=>checkView(page,width,axePath,outputDirectory)", self.script)
+        self.assertIn("width=>checkView(page,width,axePath,outputDirectory,expectedMargins)", self.script)
         self.assertIn("collectViewportEvidence(", self.script)
-        self.assertIn("if(viewportFailures.length)", self.script)
+        self.assertIn("if(viewportFailures.length || guestFailure)", self.script)
         self.assertIn("ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD", self.script)
         self.assertLess(self.script.index("await noContext.close();"),
-                        self.script.index("if(viewportFailures.length)"))
+                        self.script.index("if(viewportFailures.length || guestFailure)"))
+
+    def test_theme_owned_single_main_landmark_is_mandatory(self):
+        # Gutenberg custom HTML is nested in Assembler's existing main landmark.
+        # A second descendant <main> cannot pass the anonymous admission gate.
+        self.assertIn("main_landmarks:document.querySelectorAll('main').length", self.script)
+        self.assertIn("nested_main_landmarks:root.querySelectorAll('main').length", self.script)
+        self.assertIn("assert.equal(state.main_landmarks,1", self.script)
+        self.assertIn("assert.equal(state.nested_main_landmarks,0", self.script)
+        self.assertIn("data-fv-embedded-main", self.script)
 
     def test_existing_branch_still_requires_disposable_loopback(self):
         self.assertIn("assert.ok(loopback(server.serverUrl))", self.script)
@@ -53,7 +62,7 @@ class CompleteDocumentAxeRegression(unittest.TestCase):
         self.assertNotIn("wpcom_mcp_pages_update", self.script)
 
     def test_staging_language_is_not_parity_claim(self):
-        self.assertIn("ISOLATED_WP_ASSEMBLER_RENDER_SYNTHETIC_ONLY", self.script)
+        self.assertIn("ISOLATED_WP_ASSEMBLER_PUBLIC_MARGINS_SYNTHETIC_JETPACK", self.script)
         self.assertIn("not WP.com Atomic parity", self.script)
         self.assertIn("not manual WCAG 2.2 AA", self.script)
 
