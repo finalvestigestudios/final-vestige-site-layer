@@ -62,3 +62,15 @@
 @media(max-width:900px){.fv-hf__observer-intro{grid-template-columns:1fr;gap:22px}.fv-hf__observer-dek{max-width:650px}.fv-hf__observer-reading{grid-template-columns:1fr}.fv-hf__observer-exit{grid-template-columns:1fr;gap:18px}.fv-hf__observer-exit a{justify-self:start}}
 @media(max-width:580px){.fv-hf__observer{padding-inline:18px}.fv-hf__observer-mast span:last-child,.fv-hf__observer-workbench-top span:last-child{display:none}.fv-hf__observer-intro h2{font-size:clamp(47px,12.8vw,74px)}.fv-hf__observer-frames{grid-template-columns:1fr}.fv-hf__observer-paper{min-height:315px}.fv-hf__observer-frames .fv-hf__observer-frame+.fv-hf__observer-frame{margin-top:10px}.fv-hf__observer-controls{gap:13px}.fv-hf__observer-switches{width:100%}.fv-hf__observer-switches button{flex:1;padding-inline:10px}.fv-hf__observer-reveal summary{grid-template-columns:1fr 23px;gap:10px}.fv-hf__observer-reveal summary strong{grid-column:1;grid-row:2}.fv-hf__observer-plus{grid-column:2;grid-row:1/3}.fv-hf__observer-exit p{font-size:29px}}
 @media(prefers-reduced-motion:reduce){.fv-hf__observer *, .fv-hf__observer *::before,.fv-hf__observer *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* DRAFT #150 conversion review: evidence-adjacent Focus bridge, no tracking.
+   Restyle ONLY the existing observer exit; no new chapter, JS, image or offer. */
+.fv-hf__observer-exit-copy{min-width:0}
+.fv-hf__observer-exit-copy small{display:block;max-width:62ch;margin-top:13px;color:#c9c1b5;font:400 13px/1.6 ui-sans-serif,system-ui,sans-serif}
+.fv-hf__observer-exit-actions{display:grid;gap:11px;align-items:start;min-width:0}
+.fv-hf__observer-exit .fv-hf__observer-exit-actions a{display:inline-flex;align-items:center;justify-content:center;text-align:center;justify-self:stretch;max-width:none;min-height:48px;padding:12px 14px;border:1px solid #bb9c68;text-decoration:underline;text-underline-offset:.22em;font:700 13px/1.4 ui-sans-serif,system-ui,sans-serif;overflow-wrap:anywhere}
+.fv-hf__observer-exit .fv-hf__observer-exit-actions .fv-hf__observer-exit-primary{color:#14120e;background:#d4ad73;text-decoration:none}
+.fv-hf__observer-exit .fv-hf__observer-exit-actions .fv-hf__observer-exit-primary:hover{background:#eed09a}
+.fv-hf__observer-exit .fv-hf__observer-exit-actions small{color:#c9c1b5;font:400 12px/1.5 ui-sans-serif,system-ui,sans-serif}
+@media(max-width:900px){.fv-hf__observer-exit .fv-hf__observer-exit-actions{width:100%;max-width:440px}}
+@media(forced-colors:active){.fv-hf__observer-exit .fv-hf__observer-exit-actions a{border:2px solid LinkText}.fv-hf__observer-exit .fv-hf__observer-exit-actions .fv-hf__observer-exit-primary{color:ButtonText;background:ButtonFace}}
