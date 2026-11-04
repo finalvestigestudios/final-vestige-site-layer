@@ -1,0 +1,25 @@
+// Run with: node --test mind/review-r107-invisible-gorilla-zen12/pilot.test.mjs
+import {test} from "node:test";
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {dirname,join} from "node:path";
+import {fileURLToPath} from "node:url";
+import {LIVE_CAPTURE_ENABLED,parseSynthetic,summarizeSynthetic,captureLive} from "./attribution.mjs";
+const dir=dirname(fileURLToPath(import.meta.url)),get=n=>readFileSync(join(dir,n),"utf8");
+const value={event:"guide_view",topic:"zen12",channel:"search",variant:"text"};
+test("live disabled",()=>{assert.equal(LIVE_CAPTURE_ENABLED,false);assert.equal(captureLive().recorded,false)});
+test("synthetic valid",()=>assert.equal(parseSynthetic(value).topic,"zen12"));
+test("reject buyer email",()=>assert.equal(parseSynthetic({...value,email:"a@b.com"}),null));
+test("reject ip",()=>assert.equal(parseSynthetic({...value,ip:"1.2.3.4"}),null));
+test("reject arbitrary referrer",()=>assert.equal(parseSynthetic({...value,channel:"https://example.com?email=x"}),null));
+test("reject purchase event",()=>assert.equal(parseSynthetic({...value,event:"purchase"}),null));
+test("reject null",()=>assert.equal(parseSynthetic(null),null));
+test("no sub-20 group",()=>assert.deepEqual(summarizeSynthetic(Array(19).fill(value)).groups,[]));
+test("20 aggregate only",()=>assert.equal(summarizeSynthetic(Array(20).fill(value)).groups[0].count,20));
+test("cannot downgrade privacy",()=>assert.throws(()=>summarizeSynthetic([],10)));
+test("variants have exactly same full substantive buying guide",()=>{const a=get("pilot-a.blocks.html"),b=get("pilot-b.blocks.html");let re=/<div class="fv-r107-full-guide">([\s\S]*?)<\/div>/;assert.equal(a.match(re)[1],b.match(re)[1])});
+test("disabled CTA with near-link disclosure",()=>{for(let name of ["pilot-a.blocks.html","pilot-b.blocks.html"]){let s=get(name);assert.match(s,/Prospective commission disclosure:[\s\S]{0,250}<button[^>]*disabled/);assert.doesNotMatch(s,/<a[^>]+href="https:\/\/(?:zen12|inspire3|affiliates\.inspire3)/i)}});
+test("no live forms/scripts/pixels or simulated video",()=>{for(let name of ["pilot-a.blocks.html","pilot-b.blocks.html"]){let s=get(name);assert.doesNotMatch(s,/<(?:script|iframe|video|form)(?:\s|>)/i)}});
+test("B is accessible static poster and transcript",()=>{let s=get("pilot-b.blocks.html");assert.match(s,/<svg[^>]*role="img"/);assert.match(s,/<details>/);assert.match(s,/transcript/i)});
+test("six consecutive captions cover forty seconds",()=>{let x=get("video-concept.vtt"),entries=x.match(/\d\d:\d\d:\d\d\.\d\d\d --> \d\d:\d\d:\d\d\.\d\d\d/g)||[];assert.equal(entries.length,6);assert.ok(entries.at(-1).endsWith("00:00:40.000"))});
+test("hard gates remain closed",()=>{let x=JSON.parse(get("claim-matrix.json"));assert.ok(x.gates.every(g=>g.status==="CLOSED"));assert.equal(x.affiliate_url,null)});
