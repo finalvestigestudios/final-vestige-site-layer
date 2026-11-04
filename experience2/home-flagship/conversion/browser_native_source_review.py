@@ -34,7 +34,7 @@ def source_html():
     # These scripts require hosted context; keep full static meaning and
     # explicitly omit enhancement *from offline diagnostic copy only*.
     raw, number = re.subn(
-        r'<script src="\\./[^"]+\\.js" defer></script>', "", raw)
+        r'<script src="\./[^"]+\.js" defer></script>', "", raw)
     if number != 4:
         raise ValueError("Expected 4 enhancements; source changed")
     if raw.count('data-fv-destination="focus"') != 1:
@@ -110,7 +110,7 @@ def main():
         "signups": "NOT_TESTED", "paid_orders": "UNKNOWN",
         "widths": results, "release": "HOLD"}
     (output / "receipt.json").write_text(
-        json.dumps(receipt, indent=2) + "\\n", encoding="utf-8")
+        json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(receipt, indent=2))
 
 
