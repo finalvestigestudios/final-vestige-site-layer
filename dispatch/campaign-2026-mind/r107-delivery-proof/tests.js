@@ -48,3 +48,12 @@ return {passed:a.filter(x=>x.ok).length,total:a.length,failed:a.filter(x=>!x.ok)
 }
 root.FVDispatchR107Tests={run};
 })(typeof globalThis==="object"?globalThis:this);
+
+/* Optional native Node execution: node tests.js. Never sends or calls a network API. */
+if (typeof process !== "undefined" && process.versions && process.versions.node &&
+    typeof require === "function" && require.main === module) {
+  require("./gate.js");
+  const result = globalThis.FVDispatchR107Tests.run(globalThis.FVDispatchR107);
+  console.log(JSON.stringify(result, null, 2));
+  if (result.failed.length) process.exitCode = 1;
+}
