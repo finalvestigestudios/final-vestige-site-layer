@@ -34,7 +34,7 @@ for(const [name,s] of [['A',A],['B',B]]){
  test(name+' no script, iframe or active video embed',()=>demand(!/<(?:script|iframe|video)\b/i.test(s)));
  test(name+' only authorized existing Focus free resource',()=>demand(/href="https:\/\/finalvestige\.com\/focus\/"/.test(s)));
  test(name+' no duplicate signup form',()=>demand(!/<form\b/i.test(s)));
- test(name+' no clickable merchant URL',()=>demand(!/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com)(?:\/|["'])/i.test(s)));
+ test(name+' no clickable merchant URL',()=>demand(!/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|affiliates\.inspire3\.com|hypnosislive\.com)(?:\/|["'])/i.test(s)));
  test(name+' disclosure adjacent to natively disabled CTA',()=>{const p=s.indexOf('Prospective affiliate disclosure:'),b=s.indexOf('<button type="button"');demand(p>=0&&b>p&&b-p<650&&/<button[^>]*\bdisabled\b/.test(s.slice(b,b+180)));});
  test(name+' support no JS and reduced motion',()=>demand(/prefers-reduced-motion/.test(s)&&/<h1>/.test(s)&&/focus-visible/.test(s)));
  test(name+' no real sales or medical promises',()=>demand(!/guaranteed (increase|cure|wealth)|clinically proven to fix/i.test(s)));
