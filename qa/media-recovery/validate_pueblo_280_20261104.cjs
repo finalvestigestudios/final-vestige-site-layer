@@ -22,6 +22,20 @@ function validate(audit,part,actualBlobSha) {
   check(audit?.frozen?.post_id===PINS.post && audit?.frozen?.original_refs===6,'post_pin');
   check(audit?.frozen?.baseline_posts===61 && audit?.frozen?.baseline_images===355 &&
         audit?.frozen?.external_refs===288 && audit?.frozen?.oversize_originals===13,'baseline');
+  check(audit?.live_wordpress_readonly?.method==='WordPress posts.get context=edit, read-only; no production writes' &&
+        audit?.live_wordpress_readonly?.status==='publish' &&
+        audit?.live_wordpress_readonly?.post_id===280 &&
+        audit?.live_wordpress_readonly?.modified_utc==='2026-11-02T21:39:55' &&
+        audit?.live_wordpress_readonly?.html_image_tags===6 &&
+        audit?.live_wordpress_readonly?.exact_src_matches_frozen===6 &&
+        audit?.live_wordpress_readonly?.exact_alt_matches_frozen===6 &&
+        audit?.live_wordpress_readonly?.images_with_html_width_and_height===0 &&
+        audit?.live_wordpress_readonly?.loaded_image_bytes===null &&
+        audit?.live_wordpress_readonly?.guest_browser_successes===null &&
+        audit?.live_wordpress_readonly?.origin_statuses===null,'live_wordpress_read_only_integrity');
+  check(audit?.results?.live_cms_src_matches===6 &&
+        audit?.results?.live_cms_alt_matches===6 &&
+        audit?.results?.html_image_dimension_attributes_present===0,'live_rendered_img_dimensions');
   check(audit?.frozen?.reported_broken_42==='UNVERIFIED' &&
         audit?.frozen?.claimed_wire_reduction_76_percent==='UNMEASURED','unverified_claims');
   check(audit?.results?.origin_http_codes_verified===0 &&
