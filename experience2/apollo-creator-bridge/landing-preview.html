@@ -71,15 +71,17 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
     </div>
   </section>
   <section id="event-sequence" aria-labelledby="event-title">
-    <p class="kicker">ChronologyRail / ground-test event, not photo dates</p><h2 id="event-title">The sequence recorded by instruments</h2>
-    <p>These are approximate historical observations from the Review Board, not interpolated measurements or an animation. Times are in GMT/UTC, January 27, 1967.</p>
-    <ol class="timeline">
-      <li><time datetime="1967-01-27T23:31:04Z">~23:31:04 GMT</time><p>First reported fire from the spacecraft. The precise ignition moment remains unknown.</p></li>
-      <li><time datetime="1967-01-27T23:31:12Z">~23:31:12 GMT</time><p>NASA's Board describes the fire as intense by about this point.</p></li>
-      <li><time datetime="1967-01-27T23:31:19Z">~23:31:19 GMT</time><p>Pressure vessel rupture; approximate chronology rather than a precisely resolved onset time.</p></li>
+    <p class="kicker">ChronologyRail / Apollo 204 Review Board · not photograph dates</p><h2 id="event-title">Five documented clock points—one unresolved ignition</h2>
+    <p>The Review Board records both timed observations and approximations. These are historical GMT/UTC clock readings on January 27, 1967, not a real-time animation or interpolated telemetry. A power interruption is a clue, <strong>not proof of when or where ignition occurred</strong>.</p>
+    <ol class="timeline" aria-label="Apollo 204 Review Board clock readings and evidence limits" data-fv-board-clock-rail>
+      <li data-fv-board-time="power-interruption" data-fv-event-status="observed"><time datetime="1967-01-27T23:30:55Z">23:30:55 GMT</time><p><strong>Observed electrical event:</strong> Momentary power interruption. The Board considered this potentially related to initiation, but could not conclusively identify a specific ignition source.</p></li>
+      <li data-fv-board-time="fire-report" data-fv-event-status="observed"><time datetime="1967-01-27T23:31:04.700Z">23:31:04.7 GMT</time><p><strong>First verbal fire report:</strong> The crew gave its first recorded indication of the emergency. This is <em>not</em> the proven instant of ignition.</p></li>
+      <li data-fv-board-time="intense-fire" data-fv-event-status="approximate"><time datetime="1967-01-27T23:31:12Z">about 23:31:12 GMT</time><p><strong>Fire intensity:</strong> The Board reported that measurements do not show the fire becoming intense until about this point.</p></li>
+      <li data-fv-board-time="rupture" data-fv-event-status="approximate"><time datetime="1967-01-27T23:31:19Z">about 23:31:19 GMT</time><p><strong>Cabin rupture:</strong> The pressure vessel ruptured. This reading is approximate, not a precisely resolved onset time.</p></li>
+      <li data-fv-board-time="telemetry-loss" data-fv-event-status="bounded"><time datetime="1967-01-27T23:31:22.400Z">by 23:31:22.4 GMT</time><p><strong>Loss of transmissions:</strong> Voice and data transmissions from the spacecraft had ended by this time. Do not treat this as a certified time of death.</p></li>
     </ol>
-    <p class="qualifier">The approximately fourteen-second interval refers to the first recorded fire report through cabin rupture, <strong>not</strong> a measured ignition-to-death interval. The time of ignition was not established.</p>
-    <p><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/">Inspect the Board's chronology and uncertainties</a>.</p>
+    <aside class="callout" data-fv-clock-custody aria-label="Clock precision and evidentiary limitations"><h3>What “fourteen seconds” means—and doesn't</h3><p>The first verbal fire report at 23:31:04.7 and the approximate 23:31:19 rupture yield roughly <strong>14 seconds</strong> when compared as displayed. The Review Board describes the first fire stage as approximately <strong>15 seconds</strong> after the report. Those rounded descriptions are compatible; neither establishes the exact ignition time or the moment of death.</p><p>Source-custody rule: do not treat electrical interruption as identified ignition, the first spoken warning as ignition, or loss of communications as time of death.</p></aside>
+    <p><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/">Read the original Apollo 204 Review Board chronology and determinations (NASA)</a>.</p>
   </section>
   <section id="source-custody" aria-labelledby="custody-title">
     <p class="kicker">Research Desk / source custody and photo-date rail</p><h2 id="custody-title">Six source links, none presented as fire footage</h2>
