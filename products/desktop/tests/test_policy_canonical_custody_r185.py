@@ -76,6 +76,20 @@ class CanonicalCustodyR185(unittest.TestCase):
                 raise AssertionError("unsafe dictionary hook")
         self.assertEqual(render([Trap(hunk([(1, "é\n")], [(1, "e\u0301\n")]))]), "")
 
+    def test_hostile_dict_key_collision_rejected_before_comparison(self):
+        class Trap:
+            def __hash__(self):
+                return hash("removed_sources")
+            def __eq__(self, other):
+                raise AssertionError("unsafe key comparison")
+        value = {Trap(): "bad", "added_sources": [(1, "e\u0301\n")]}
+        self.assertEqual(render([value]), "")
+
+    def test_non_text_dictionary_key_rejected(self):
+        value = hunk([(1, "é\n")], [(1, "e\u0301\n")])
+        value[7] = "not a real source field"
+        self.assertEqual(render([value]), "")
+
     def test_list_subclass_rejected_without_iter(self):
         class Trap(list):
             def __iter__(self):
