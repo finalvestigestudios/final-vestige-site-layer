@@ -246,6 +246,9 @@ def crosswalk(queue, fetch_blob):
              "altered source path/classification or forged approval")
         seen.add((row["origin"], row["path"]))
         old_sha, new_sha = row.get("frozen_blob_sha"), row.get("current_blob_sha")
+        need(type(row.get("original_72_path_scope")) is bool and
+             (not row["original_72_path_scope"] or old_sha is not None),
+             "original author-scoped evidence may not disappear from the frozen snapshot")
         need((old_sha is None or (type(old_sha) is str and r107.SHA.fullmatch(old_sha))) and
              (new_sha is None or (type(new_sha) is str and r107.SHA.fullmatch(new_sha))) and
              (old_sha is not None or new_sha is not None) and old_sha != new_sha,
