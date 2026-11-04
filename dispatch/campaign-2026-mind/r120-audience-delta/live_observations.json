@@ -1,0 +1,76 @@
+{
+  "schema": "fv-dispatch-audience-delta-v1",
+  "privacy": "AGGREGATE_ONLY_NO_EMAIL_ADDRESSES",
+  "observed_at_utc": "2026-11-04T19:33:44Z",
+  "previous": {
+    "source": "GitHub Issue #174 R119 evidence",
+    "reported_time_utc": "2026-11-04T18:33Z (minute precision)",
+    "subscribers": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "paid": 0
+    },
+    "email_eligible": null,
+    "welcome_received": null
+  },
+  "current": {
+    "source": "WordPress connected Newsletter diagnostic 2026-11-04T19:33:44Z",
+    "subscribers": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "paid": 0,
+      "imported_last_24h": 1
+    },
+    "follower_summary": {
+      "email": 0,
+      "wpcom": 3,
+      "total": 3,
+      "partial": false
+    },
+    "email_eligible": null,
+    "welcome_received": null
+  },
+  "unchanged_configuration": {
+    "newsletter_enabled": true,
+    "new_post_email_default": false,
+    "delivery_format": "excerpt",
+    "sender": "Final Vestige",
+    "reply_to": "no-reply",
+    "recent_notifications": [
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out"
+    ]
+  },
+  "reconciliation": {
+    "confirmed_delta": 1,
+    "total_delta": 1,
+    "unconfirmed_delta": 0,
+    "imported_last_24h": 1,
+    "interpretation": "COUNT_INCREASE_OBSERVED; ORIGIN_AND_CONSENT_NOT_VERIFIED",
+    "not_permitted_inferences": [
+      "confirmed_signup",
+      "email_delivered",
+      "unique_human_lead",
+      "attributed_grok_lead",
+      "paid_sale"
+    ]
+  },
+  "holds": {
+    "all_six": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_MERCHANT",
+    "wordPress_writes": false,
+    "send_or_test_email": false
+  },
+  "references": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  ]
+}
