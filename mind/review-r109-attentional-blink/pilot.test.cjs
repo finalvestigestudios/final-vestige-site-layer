@@ -23,7 +23,7 @@ test('both variants have a focus indicator and small mobile breakpoint',()=>{for
 test('hub has four streams only and no seller URL',()=>{assert.equal((hub.match(/class="card" role="listitem"/g)||[]).length,4);assert.doesNotMatch(hub,/href=["']https?:\/\/(?:zen12|inspire3)/i)});
 test('hub is not an alternative live newsletter form',()=>{assert.doesNotMatch(hub,/<form\b/i);assert.match(hub,/established Jetpack signup/);});
 test('matrix explicitly treats seller claims as seller statements',()=>{assert.equal(M.claim_decisions.find(x=>x.id==='C04').decision,'OMIT_AS_BENEFIT')});
-test('matrix has 20 identified sources and all links valid HTTPS',()=>{assert.equal(M.source_register.length,20);for(const s of M.source_register)assert.ok(s.url.startsWith('https://'))});
+test('matrix has 21 identified sources and all links valid HTTPS',()=>{assert.equal(M.source_register.length,21);for(const s of M.source_register)assert.ok(s.url.startsWith('https://'))});
 test('matrix has no release-approved gate',()=>{assert.ok(M.release_gates.length>=20);assert.ok(M.release_gates.every(g=>g.status==='CLOSED'))});
 test('all claim source identifiers resolve',()=>{const ids=new Set(M.source_register.map(s=>s.id));for(const c of M.claim_decisions)for(const id of c.evidence)assert.ok(ids.has(id))});
 test('VTT exactly six chronological cues, from 0 to 40',()=>{const stamps=[...cue.matchAll(/(\d\d:\d\d:\d\d\.\d\d\d) --> (\d\d:\d\d:\d\d\.\d\d\d)/g)];assert.equal(stamps.length,6);assert.equal(stamps[0][1],'00:00:00.000');assert.equal(stamps.at(-1)[2],'00:00:40.000');for(let i=1;i<stamps.length;i++)assert.equal(stamps[i-1][2],stamps[i][1])});
@@ -34,6 +34,7 @@ test('malformed days and forged impossible dates rejected',()=>{for(const day of
 test('suppression of cells <20 and emission of 20 synthetic events',()=>{assert.deepEqual(m.aggregateSynthetic(Array.from({length:19},()=>sample())),[]);assert.equal(m.aggregateSynthetic(Array.from({length:20},()=>sample()))[0].events,20)});
 test('aggregation does not combine distinct variants or topics to exceed threshold',()=>{const rows=[...Array.from({length:19},()=>sample()),...Array.from({length:19},()=>sample({variant:'B'}))];assert.deepEqual(m.aggregateSynthetic(rows),[])});
 test('no live tracking or purchaser data can ever be submitted through module',()=>{assert.throws(()=>m.recordLive(sample()));assert.throws(()=>m.recordPurchase({order:'abc'}))});
+test('published vendor Terms of Sale support refund and file-tag caution',()=>{assert.equal(M.merchant_terms_verified_on,'2026-11-03');assert.equal(M.claim_decisions.find(x=>x.id==='C13').decision,'ATTRIBUTE_AND_RECHECK');assert.ok(M.source_register.some(x=>x.id==='S21'&&x.url==='https://inspire3.com/terms/'))});
 test('documented scientific sources are not commercial product trials',()=>{const claim=M.claim_decisions.find(x=>x.id==='C09');assert.match(claim.qualification,/cannot transfer effect/);assert.ok(M.limitations.some(x=>x.includes('actual audio files')))});
 test('the untested conversion hypothesis is not a reported uplift',()=>{assert.equal(M.claim_decisions.find(x=>x.id==='C26').decision,'UNTESTED')});
 test('no live merchant activation or CMS work in this prototype',()=>{for(const h of [A,B])assert.match(h,/data-commercial-release="HOLD"/);assert.match(hub,/data-release="DRAFT-HOLD"/)});
