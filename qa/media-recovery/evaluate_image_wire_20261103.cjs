@@ -1,4 +1,5 @@
 'use strict';
+const {validateClaimSourceBindings}=require('./claim_source_identity_gate_20261103.cjs');
 // Pure, read-only CDP evidence aggregator. It neither probes image hosts nor edits WordPress.
 const SOURCE='CDP Network.loadingFinished.encodedDataLength';
 const url=s=>typeof s==='string'&&/^https?:\/\/[^\s/?#]+/i.test(s);
@@ -62,7 +63,7 @@ function exactFrozenCensus(data,inventory){
  }
  return true;
 }
-function evaluate(data,verifiedSourceInventory){
+function evaluate(data,verifiedSourceInventory,verifiedSourceParts){
  const errors=[],base={status:'INSUFFICIENT_DATA',reason_codes:errors,
   observed_post_count:0,observed_slot_count:0,measured_reduction_percent:null,
   sitewide_76_percent_verified:false,can_claim_total_page_savings:false};
@@ -122,9 +123,13 @@ function evaluate(data,verifiedSourceInventory){
  const reductions=beforeTotals.map((x,i)=>100*(x-afterTotals[i])/x);
  const pooledReduction=100*(pooledBaselineBytes-pooledCandidateBytes)/pooledBaselineBytes;
  const pct=Number(pooledReduction.toFixed(3));
- const wide=posts.size===61&&slots.size===355&&repeats>=3&&exactFrozenCensus(data,verifiedSourceInventory);
+ // Reject unrelated placeholders even when their reported CDP bytes look favorable.
+ const binding=verifiedSourceParts?validateClaimSourceBindings(data,verifiedSourceInventory,verifiedSourceParts):null;
+ const wide=posts.size===61&&slots.size===355&&repeats>=3&&
+   exactFrozenCensus(data,verifiedSourceInventory)&&binding?.pass===true;
  return {status:wide?'SITEWIDE_IMAGE_TRANSFER_MEASURED':'LIMITED_SAMPLE_MEASURED',
    source_inventory_id:data.source_inventory_id,observed_post_count:posts.size,observed_slot_count:slots.size,
+   frozen_dom_source_binding_verified:wide,source_binding_reason_codes:binding?.reason_codes||['missing frozen census source bindings'],
    repetitions:repeats,baseline_bytes_by_repeat:beforeTotals,candidate_bytes_by_repeat:afterTotals,
    reductions_percent_by_repeat:reductions.map(x=>Number(x.toFixed(3))),
    pooled_baseline_bytes:pooledBaselineBytes,pooled_candidate_bytes:pooledCandidateBytes,
@@ -139,8 +144,15 @@ module.exports={evaluate,SOURCE};
 if(require.main===module){
  const fs=require('node:fs');
  if(!process.argv[2]){process.stderr.write('Usage: node evaluate_image_wire_20261103.cjs paired-cdp.json\n');process.exitCode=2;}
- else try{const inventory=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'wire_source_inventory_20261030.json'),'utf8'));
- const result=evaluate(JSON.parse(fs.readFileSync(process.argv[2],'utf8')),inventory);
+ else try{const path=require('node:path'),crypto=require('node:crypto');
+ const inventory=JSON.parse(fs.readFileSync(path.join(__dirname,'wire_source_inventory_20261030.json'),'utf8'));
+ const parts=inventory.source_parts.map(p=>{
+  const raw=fs.readFileSync(path.join(__dirname,p.path));
+  const sha=crypto.createHash('sha1').update('blob '+raw.length+'\\0').update(raw).digest('hex');
+  if(sha!==p.blob_sha)throw Error('Frozen source Git blob SHA mismatch: '+p.path);
+  return JSON.parse(raw.toString('utf8'));
+ });
+ const result=evaluate(JSON.parse(fs.readFileSync(process.argv[2],'utf8')),inventory,parts);
   process.stdout.write(JSON.stringify(result,null,2)+'\n');
   if(result.status==='INSUFFICIENT_DATA')process.exitCode=1;
  }catch(e){process.stderr.write('Invalid input: '+e.message+'\n');process.exitCode=2;}
