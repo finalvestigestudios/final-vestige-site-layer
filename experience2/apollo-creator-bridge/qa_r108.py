@@ -58,6 +58,20 @@ def main():
     base = f"http://127.0.0.1:{server.server_port}/landing-preview.html"
     receipts, metrics, screen = [], [], []
     axe_scans = []
+    def checkpoint(stage):
+        """Atomic partial QA receipt: no credentials, PII, or false PASS on failure."""
+        safe = {"schema": "fv.apollo.creator_bridge.r110.partial.v1",
+                "status": "INCOMPLETE_STAGING_HOLD", "stage": stage,
+                "source_sha256": digest(HTML),
+                "completed_modes": list(receipts), "completed_lab_trials": list(metrics),
+                "screenshots": list(screen), "axe_scans": list(axe_scans),
+                "merchant_orders": "NOT_OBSERVABLE",
+                "hosted_wordpress": "NOT_TESTED"}
+        final = out / "r110-partial-qa-receipt.json"
+        temporary = out / "r110-partial-qa-receipt.tmp"
+        temporary.write_text(json.dumps(safe, sort_keys=True, indent=2) + "\n", encoding="utf8")
+        temporary.replace(final)
+    checkpoint("STARTED")
     try:
         with sync_playwright() as pw:
             browser = pw.chromium.launch(headless=True)
@@ -137,6 +151,7 @@ def main():
                         "first_party_action": receipt_action,
                         "merchant_order_verified": False, "external_requests": 0})
                     context.close()
+                    checkpoint("RESPONSIVE_MODE_COMPLETED")
             # Separate repeated lab navs, no JS interception of reader content.
             for width in (390, 1440):
                 for trial in (1, 2, 3):
@@ -158,6 +173,7 @@ def main():
                         "R108 CLS missing/exceeds unchanged 0.1 lab budget")
                     metrics.append({"width": width, "trial": trial, "lcp_ms": lcp, "cls": cls})
                     ctx.close()
+                    checkpoint("PERFORMANCE_TRIAL_COMPLETED")
             version = browser.version
             browser.close()
     finally:
@@ -175,8 +191,10 @@ def main():
     }
     check(len(receipts) == 14 and len(metrics) == 6 and len(screen) == 6,
           "R108 incomplete authoritative browser matrix")
+    # Only the complete matrix may emit an authoritative acceptance receipt.
     (out / "r108-local-http-browser-receipt.json").write_text(
          json.dumps(result, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    checkpoint("COMPLETE_MATRIX_STILL_STAGING_HOLD")
     print("R110-enhanced R108 browser: 14/14 CTA navigation modes, 6 local HTTP lab trials; release STAGING HOLD")
     return result
 
