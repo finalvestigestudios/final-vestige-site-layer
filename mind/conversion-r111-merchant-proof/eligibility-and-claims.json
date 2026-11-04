@@ -1,0 +1,171 @@
+{
+  "run": "2026-11-03T21:45-08:00",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "primary_candidate": "Zen12",
+  "merchant": "Inspire3",
+  "topic_fit": "adult consumers specifically comparing short-session meditation audio",
+  "verified_public_offer": "https://zen12.com/hnp/",
+  "dated_seller_snapshot": {
+    "date": "2026-11-03",
+    "currency": "USD",
+    "beginner": {
+      "levels": 6,
+      "mp3": 24,
+      "displayed_amount": 67.77
+    },
+    "premium": {
+      "levels": 12,
+      "mp3": 48,
+      "displayed_amount": 87.99
+    },
+    "advanced": {
+      "levels": 6,
+      "mp3": 24,
+      "displayed_amount": 67.77
+    },
+    "actual_current_checkout_tax_and_terms": "REVERIFY",
+    "guarantee_policy_url": "https://inspire3.com/terms/"
+  },
+  "sources": [
+    {
+      "id": "seller",
+      "url": "https://zen12.com/hnp/",
+      "proves": "seller's package descriptions and observed displayed amounts; NOT actual results"
+    },
+    {
+      "id": "catalog",
+      "url": "https://inspire3.com/",
+      "proves": "Inspire3 marketing presentation, NOT independent efficacy"
+    },
+    {
+      "id": "terms",
+      "url": "https://inspire3.com/terms/",
+      "proves": "published 1-year Zen12 policy, 90-day card-refund processing, possible file tagging and SMS"
+    },
+    {
+      "id": "privacy",
+      "url": "https://inspire3.com/privacy/",
+      "proves": "affiliate buyer-name/email/purchase-data sharing is permitted by seller policy"
+    },
+    {
+      "id": "review2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "proves": "heterogeneous 14 EEG studies, five supportive/eight contradictory/one mixed; no Zen12"
+    },
+    {
+      "id": "slagter2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "proves": "intensive mental training over 3 months; not Zen12"
+    },
+    {
+      "id": "ftc1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "proves": "near-offer disclosure"
+    },
+    {
+      "id": "ftc2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "proves": "objective health claims need appropriate substantiation"
+    },
+    {
+      "id": "fvcollection",
+      "url": "https://finalvestige.com/collection/",
+      "proves": "only free Mind-aligned Focus shown in authenticated live Collection ID 78"
+    },
+    {
+      "id": "fvfocus",
+      "url": "https://finalvestige.com/focus/",
+      "proves": "live free 52-page Fieldbook + existing opt-in"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Zen12 premium contains 48 MP3s spanning 12 levels",
+      "grade": "SELLER_DESCRIPTION_ONLY",
+      "source": "seller"
+    },
+    {
+      "text": "12 minutes is scientifically equivalent to 60 minutes of expert meditation",
+      "grade": "UNSUBSTANTIATED_PRODUCT_SPECIFIC",
+      "source": "catalog",
+      "publish_as_fact": false
+    },
+    {
+      "text": "Brainwave entrainment consistently demonstrated for binaural beats",
+      "grade": "FALSE_IMPRESSION_FROM_INCONSISTENT_RESEARCH",
+      "source": "review2023",
+      "publish_as_fact": false
+    },
+    {
+      "text": "After three months of meditation training attentional blink changed in a study",
+      "grade": "PRIMARY_STUDY_CONDITIONAL",
+      "source": "slagter2007"
+    },
+    {
+      "text": "Zen12 sellers state 1-year money-back guarantee",
+      "grade": "SELLER_TERMS",
+      "source": "terms",
+      "cannot_guarantee_refund_outcome": true
+    },
+    {
+      "text": "Inspire3 may share referred buyer names and emails with affiliates",
+      "grade": "SELLER_PRIVACY_POLICY",
+      "source": "privacy",
+      "block_if_not_contractually_excluded": true
+    },
+    {
+      "text": "Current FV paid Mind Payhip SKU is sellable and rights-cleared",
+      "grade": "NOT_ESTABLISHED",
+      "source": null
+    },
+    {
+      "text": "Final Vestige is authorized Inspire3 Zen12 affiliate",
+      "grade": "NOT_ESTABLISHED",
+      "source": null
+    }
+  ],
+  "owned_alternative": {
+    "named_paid_fv_mind_sku": null,
+    "payhip_product_url": null,
+    "price": null,
+    "license_and_rights_evidence": null,
+    "fulfillment_proof": null,
+    "refund_policy": null,
+    "status": "UNVERIFIED_NOT_REJECTED"
+  },
+  "partner": {
+    "named_affiliate_acceptance": null,
+    "approved_channels": null,
+    "tracking_url": null,
+    "creative_rights": null,
+    "aggregate_only_buyer_data_terms": null,
+    "status": "NOT_AUTHORIZED"
+  },
+  "lead_magnet": {
+    "name": "Seven Day Focus Fieldbook",
+    "price_status": "FREE",
+    "url": "https://finalvestige.com/focus/",
+    "newsletter": "EXISTING_JETPACK_ONLY"
+  },
+  "revenue": {
+    "eligible_human_sessions": null,
+    "merchant_confirmed_orders": null,
+    "merchant_confirmed_affiliate_commissions": null,
+    "known_fees": null,
+    "verified_refunds": null,
+    "realized_net": null,
+    "realized_net_per_1000_qualified_sessions": null
+  },
+  "release_gates": {
+    "claimed_approval": false,
+    "licensed_tracking_url": false,
+    "no_buyer_pii_contract": false,
+    "qualified_human_denominator": false,
+    "merchant_paid_source": false,
+    "mobile_a11y_qa": false,
+    "hosted_video_caption_qa": false,
+    "founder_release": false
+  },
+  "no_active_affiliate_links": true,
+  "no_live_cms_write": true
+}
