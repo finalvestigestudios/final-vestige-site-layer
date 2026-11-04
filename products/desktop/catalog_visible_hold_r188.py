@@ -48,6 +48,10 @@ def check_visible_hold(chunks: list[str]) -> None:
     # Whitespace-separated schemes/extensions are not safe either. URL text
     # split across <strong> or WordPress blocks must still fail closed.
     compact = "".join(ch for ch in visible if not ch.isspace())
-    normalized = " ".join(visible.split())
-    if _URI.search(compact) or _ARTIFACT.search(compact) or _RELEASE.search(normalized):
+    # Also preserve boundaries between HTMLParser data nodes. Concatenation
+    # alone can turn ".msix" + "Pilot" into ".msixPilot" and hide a suffix,
+    # or "Download " + "now" + "Pilot" into "Download nowPilot".
+    spaced = " ".join(chunks)
+    if (_URI.search(compact) or _ARTIFACT.search(compact)
+            or _ARTIFACT.search(spaced) or _RELEASE.search(spaced)):
         raise ValueError(_FAILURE)
