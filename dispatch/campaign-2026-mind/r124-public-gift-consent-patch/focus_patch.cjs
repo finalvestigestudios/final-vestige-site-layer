@@ -30,7 +30,7 @@ function inspect(html) {
     mobile_count: count(html,FAQ_MOBILE), signup_ctas:signup.length,
     pdf_link_count:count(html,PDF), pdf_click_count:count(html,'data-fv-event="focus_pdf_click"'),
     old_location_count:count(html,'data-fv-location="after_signup"'),
-    subscription_blocks:count(html,'wp-block-jetpack-subscriptions'),
+    subscription_blocks:count(html,'class="wp-block-jetpack-subscriptions'),
     script_matches_expected: matches.length===1 && 
       matches[0][0].includes("new URLSearchParams(window.location.search).get('subscribe')") &&
       matches[0][0].includes('if(q){if(bad.indexOf(q)<0){show();}}') &&
@@ -61,7 +61,7 @@ function proposePatch(html) {
   if(count(out,PDF)!==1 || count(out,'data-fv-event="focus_pdf_click"')!==1 ||
       count(out,'data-fv-location="public_pdf"')!==1 ||
       count(out,'Join The Dispatch (free)')!==5 ||
-      count(out,'wp-block-jetpack-subscriptions')!==before.subscription_blocks ||
+      count(out,'class="wp-block-jetpack-subscriptions')!==before.subscription_blocks ||
       count(out,'fvf-gift-v2')!==0 || count(out,'focus_signup_click')!==5 ||
       count(out,GIFT_REPLACE)!==1 ||
       out.includes('sign up again.') || out.includes('after you confirm your email.') ||
